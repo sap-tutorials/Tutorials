@@ -275,17 +275,6 @@ The PAL functions are really strict on the input dataset format, so you will cre
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition as describe in the following tutorial group:
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-[DONE]
-[ACCORDION-END]
-
-
 [ACCORDION-BEGIN [Step 2: ](Run the APRIORI PAL function)]
 
 While assessing the available data, we found out that only the ratings can be used to build our collaborative filtering an content-based filter scenarios.

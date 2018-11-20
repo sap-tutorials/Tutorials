@@ -1,9 +1,9 @@
 ---
-title: Use a message broker in SAP Data Hub 2
-description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, trial edition.
+title: Use a message broker in SAP Data Hub, trial edition 2.3
+description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
 ## Details
@@ -62,7 +62,7 @@ From the instance details page, note down the **Primary Internal IP** of this VM
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
 
 Remove the connection between **Data Generator** operator and the **Terminal** operator.
 

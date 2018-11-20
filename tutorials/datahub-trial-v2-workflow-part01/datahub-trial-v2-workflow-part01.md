@@ -1,9 +1,9 @@
 ---
-title: Create Workflow (part 1), Enrich data with Data Transform in SAP Data Hub 2
-description: Build a pipeline to enrich device data with country information by using SAP Data Hub, trial edition.
+title: Create Workflow (part 1), Enrich data with Data Transform in SAP Data Hub, trial edition 2.3
+description: Build a pipeline to enrich device data with country information by using SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
 ## Details
@@ -18,7 +18,7 @@ During this tutorial, you will learn how to create a Data Transform. This will e
 [ACCORDION-BEGIN [Step 1: ](Add Data Transform and Trigger)]
 Open the modelling environment for building pipelines via SAP Data Hub Modeler (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon.
 

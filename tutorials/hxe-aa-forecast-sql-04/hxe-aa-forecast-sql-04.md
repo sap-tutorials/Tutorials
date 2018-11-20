@@ -305,7 +305,7 @@ insert into apl_cashflow_operation_config values ('APL/LastTrainingTimePoint' , 
 insert into apl_cashflow_operation_config values ('APL/Horizon'               , '21'        , null);
 
 truncate table apl_cashflow_variable_desc;
-insert into apl_cashflow_variable_desc values (0, 'CASHDATE' , 'datetime' , 'continuous', 1, 1, null, null, null, null);
+insert into apl_cashflow_variable_desc values (0, 'CASHDATE' , 'date'     , 'continuous', 1, 1, null, null, null, null);
 insert into apl_cashflow_variable_desc values (1, 'CASH'     , 'number'   , 'continuous', 0, 0, null, null, null, null);
 
 truncate table apl_cashflow_variable_roles;

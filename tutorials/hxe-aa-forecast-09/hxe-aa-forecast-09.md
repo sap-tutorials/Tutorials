@@ -125,7 +125,7 @@ BEGIN
         exec 'insert into #forecast_variable_descs select * from "aa.forecast.db.data::KxDesc_' || :DatasetName || '";';
     end if;
 
-    insert into #forecast_variable_descs values (0, 'signal_time'  , 'datetime' , 'continuous', 1, 1, null, null, null, null);
+    insert into #forecast_variable_descs values (0, 'signal_time'  , 'date'     , 'continuous', 1, 1, null, null, null, null);
     insert into #forecast_variable_descs values (1, 'signal_value' , 'number'   , 'continuous', 0, 0, null, null, null, null);
 
     insert into  #forecast_variable_roles values ('signal_time'  , 'input' , NULL, NULL, '#1');
@@ -170,7 +170,7 @@ Right click on **`forecast.hdbprocedure`**  and select **Build Selected Files**.
 The console should display at the end the following message:
 
 ```
-(Builder) Build of /movielens/db completed successfully.
+(Builder) Build of /forecast/db completed successfully.
 ```
 
 [DONE]
@@ -465,7 +465,7 @@ Then, right click the selection, then use the **Build Selected Files** menu.
 The console should display at the end the following message:
 
 ```
-(Builder) Build of /movielens/db completed successfully.
+(Builder) Build of /forecast/db completed successfully.
 ```
 
 [DONE]

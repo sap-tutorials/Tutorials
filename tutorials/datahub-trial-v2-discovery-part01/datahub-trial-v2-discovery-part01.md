@@ -1,9 +1,9 @@
 ---
-title: Explore data in Google Cloud Storage in SAP Data Hub 2
-description: Explore data in Google Cloud Storage (including profiling) by using SAP Data Hub, trial edition.
+title: Explore data in Google Cloud Storage in SAP Data Hub, trial edition 2.3
+description: Explore data in Google Cloud Storage (including profiling) by using SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
 ## Next Steps

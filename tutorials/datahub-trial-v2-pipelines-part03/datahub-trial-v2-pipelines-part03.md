@@ -1,9 +1,9 @@
 ---
-title: Store sensor data in Google Cloud Storage in SAP Data Hub 2
-description: Use Google Cloud Storage to store sensor data by using SAP Data Hub, trial edition.
+title: Store sensor data in Google Cloud Storage in SAP Data Hub, trial edition 2.3
+description: Use Google Cloud Storage to store sensor data by using SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
 ## Details
@@ -34,7 +34,7 @@ If you don't already have the JSON Key, refer the [**Getting Started with SAP Da
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
 
 Remove the connection between the **Kafka Consumer 2** operator and the `ToString Converter` operator. Now drag and drop **Write File** operator to the existing graph, and connect `message` output port of the `Kafka Consumer2` to the `inFile` input port of the **Write File**
 

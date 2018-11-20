@@ -56,7 +56,7 @@ The sample app repository contains a basic deployment descriptor, but you'll nee
 
 Open the `manifest.yml` file with an editor of your choice.
 
-Enter the value of the `name` parameter that exists already in the `manifest.yml` in the field below and choose **Validate**.
+What is the value of the `name` parameter that exists already in the `manifest.yml`?
 
 [VALIDATE_4]
 [ACCORDION-END]

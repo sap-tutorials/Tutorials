@@ -44,13 +44,19 @@ cf create-service-key <service-name> <key-name>
 
 [ACCORDION-BEGIN [Step 2: ](Get to know the service in the SAP Cloud Platform cockpit)]
 Navigate to the space that contains your service instance in the SAP Cloud Platform cockpit and click on  **Service Instances**  (under **Services**) on the panel on the left-hand side.
+
 ![service](services.png)
 
 Access the service details page by clicking the name of your service on the service overview.
+
 ![service](service-created-main.png)
+
 You can use the left-hand panel to navigate between two pages. The first one will show all applications which are bound to this service. For now, this list is probably empty.
+
 ![service](no-app-bound.png)
+
 The second page shows all service keys that exist for this service. Service keys can be seen as "credentials" to configure consumers of marketplace services manually. This list should also be empty after you created a new service.
+
 ![service](empty-service-keys.png)
 
 [DONE]
@@ -60,10 +66,15 @@ The second page shows all service keys that exist for this service. Service keys
 [ACCORDION-BEGIN [Step 3: ](Discover the service dashboard)]
 
 You can access the service dashboard via the first button in the **Actions** column of the service overview (or alternatively via the **Open Dashboard** button on the service details page).
+
 ![service](service-created-dashboard.png)
+
 On the new page, you will be prompted for you SAP Cloud Platform credentials.
+
 ![login](dashboard-login.png)
+
 After logging in you can see the service dashboard, which provides several pieces of information, such as the service ID, the container size of the service instance, and its logs. The logging information is especially useful when you need to debug your applications.
+
 ![dashboard](rabbitmq-dashboard.png)
 
 [VALIDATE_3]

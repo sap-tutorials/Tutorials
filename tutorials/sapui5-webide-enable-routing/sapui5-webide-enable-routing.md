@@ -144,6 +144,3 @@ You have to add a routing configuration to the descriptor file and initialize th
 
 ## Next Steps
 - The next tutorial in this series is Part 6: [Display List Details](https://www.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
-
-## Additional Information
-- [Additional reading and details on Routing and Navigation](https://sapui5.netweaver.ondemand.com/docs/guide/3d18f20bd2294228acb6910d8e8a5fb5.html)
