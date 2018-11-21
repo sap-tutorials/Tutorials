@@ -1,5 +1,5 @@
 ---
-title: MovieLens with SAP HANA PAL Apriori
+title: MovieLens with SAP HANA PAL Apriori (MovieLens SQL)
 description: Understand the capabilities and options made available with the SAP HANA SAP HANA Predictive Analytics Library (PAL), find the algorithm to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -274,17 +274,6 @@ The PAL functions are really strict on the input dataset format, so you will cre
 
 [DONE]
 [ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition as describe in the following tutorial group:
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-[DONE]
-[ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Run the APRIORI PAL function)]
 

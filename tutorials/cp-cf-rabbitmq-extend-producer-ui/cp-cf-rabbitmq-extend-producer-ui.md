@@ -17,7 +17,7 @@ The app will display a select control to choose the queue and a text input field
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Bootstrap SAPUI5)]
+[ACCORDION-BEGIN [Step : ](Bootstrap SAPUI5)]
 
 
 Create a new file named `index.html` in the `webapp` folder of your project and insert the following content.
@@ -58,62 +58,103 @@ Run `npm start` from the project root folder and access `http://localhost:3000` 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement a simple page layout)]
+[ACCORDION-BEGIN [Step : ](Implement a page layout)]
 
 
-Replace then entire content of the second `<script>` tag with the following code. This code aggregates several SAPUI5 controls like pages, labels, inputs and a vertical box to a simple form.
+Replace then entire content of the second `<script>` tag with the following code. This code aggregates several SAPUI5 controls like pages, labels, inputs and two tabs in a tab bar to the user interface.
 
 
 ```javascript
 sap.ui.getCore().attachInit(function () {
-    new sap.m.App({
-        pages: new sap.m.Page({
-            title: 'Producer',
-            content: new sap.m.VBox({
-                items: [
-                    new sap.m.Label({
-                        text: 'Queue',
-                        width: '100%',
-                    }),
-                    new sap.m.Select({
-                        width: '100%',
-                        items: [new sap.ui.core.Item({
-                            key: 'Queue_1',
-                            text: 'Queue_1'
+  new sap.m.App({
+    pages: new sap.m.Page({
+        title: 'Producer',
+        content: new sap.m.IconTabBar({
+          items: [
+            new sap.m.IconTabFilter({
+              text: "Send Messages",
+              key: "send",
+              content:
+                  new sap.m.VBox({
+                    items: [
+                        new sap.m.Label({
+                            text: 'Queue',
+                            width: '100%',
                         }),
-                        new sap.ui.core.Item({
-                            key: 'Queue_2',
-                            text: 'Queue_2'
+                        new sap.m.Select({
+                            width: '100%',
+                            items: [
+                              new sap.ui.core.Item({
+                                key: 'Queue_1',
+                                text: 'Queue_1'
+                              }),
+                              new sap.ui.core.Item({
+                                  key: 'Queue_2',
+                                  text: 'Queue_2'
+                              }),
+                              new sap.ui.core.Item({
+                                  key: 'Queue_3',
+                                  text: 'Queue_3'
+                              })
+                            ]
                         }),
-                        new sap.ui.core.Item({
-                            key: 'Queue_3',
-                            text: 'Queue_3'
-                        })]
-                    }),
-                    new sap.m.Label({
-                        width: '100%',
-                        text: 'Message'
-                    }),
-                    new sap.m.TextArea({
-                        width: '100%',
-                        height: '250px',
-                    }),
-                    new sap.m.Button({
-                        width: '100%',
-                        text: 'Send',
-                        type: 'Accept'
+                        new sap.m.Label({
+                            text: 'Require response',
+                            width: '100%',
+                        }),
+                        new sap.m.Switch({
+                            width: '100%',
+                        }),
+                        new sap.m.Label({
+                            width: '100%',
+                            text: 'Message'
+                        }),
+                        new sap.m.Button({
+                            width: '100%',
+                            text: 'Send',
+                            type: 'Accept'
+                        })
+                    ]
+                  })
+              }).addStyleClass('sapUiSmallMargin')
+            }),
+            new sap.m.IconTabFilter({
+              text: "Outbox",
+                key: "outbox",
+              content: new sap.m.Table({
+                columns: [
+                  new sap.m.Column({
+                    header: new sap.m.Text({
+                      text: 'Queue'
                     })
-
-                ]
-            }).addStyleClass('sapUiSmallMargin')
+                  }),
+                  new sap.m.Column({
+                    header: new sap.m.Text({
+                      text: 'Message'
+                    })
+                  }),
+                  new sap.m.Column({
+                    header: new sap.m.Text({
+                      text: 'Correlation ID'
+                    })
+                  }),
+                  new sap.m.Column({
+                    header: new sap.m.Text({
+                      text: 'Response'
+                    })
+                  })
+                ],
+              })
+            })
+          ]
         })
-    }).placeAt('content');
+  }).placeAt('content');
 });
 ```
 
 [VALIDATE_2]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Add a model to the application)]
+[ACCORDION-BEGIN [Step : ](Add a model to the application)]
 
 >Model-binding is a very comfortable way to separate the layout from the data that is displayed in it. This model will also be available to all child controls of this parent control. In this case the model will be available to the label, select box, text area and the button.
 
@@ -134,11 +175,12 @@ new sap.m.App({
     }]
   })).placeAt('content');
 ```
+
 >The model only needs to define "deep" hierarchies, for example, nested objects. Properties on the root level of the model are assumed to be `undefined` and can still be used for model binding.
 
 [VALIDATE_3]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 4: ](Make use of the model binding feature)]
+[ACCORDION-BEGIN [Step : ](Make use of the model binding feature)]
 
 First, you want to populate the select options (aggregated controls) of the `sap.m.Select` control. You want to have one option / child control for each queue you have defined in the model. Therefore, you bind the items aggregation to the **`/queues`** property of the model (the '/' refers to the root of the model).
 
@@ -171,9 +213,17 @@ new sap.m.TextArea({
 })
 ```
 
+The state property of the `sap.m.Switch` control also needs to be bound.
+```javascript
+new sap.m.Switch({
+    state: '{/reqResponse}',
+    width: '100%',
+}),
+```
+
 [VALIDATE_4]
 [ACCORDION-END]
-[ACCORDION-BEGIN  [Step 5:  ](Read the user input from the model)]
+[ACCORDION-BEGIN  [Step :  ](Read the user input from the model)]
 
 >Some SAPUI5 controller like select boxes or checkboxes are able to trigger events (e.g., when the user interacts with them). So, can the `sap.m.Button` control when it's being clicked. You can listen on these events with callback functions.
 
@@ -185,17 +235,17 @@ new sap.m.Button({
     text: 'Send',
     type: 'Accept',
     press: function () {
-        var oModel = this.getModel();
+      var oModel = this.getModel();
+          var oPayload = {
+              msg: oModel.getProperty('/message'),
+              queue: oModel.getProperty('/queue'),
+              reqResponse: oModel.getProperty('/reqResponse')
+          };
 
-        var oPayload = {
-            msg: oModel.getProperty('/message'),
-            queue: oModel.getProperty('/queue')
-        };
-
-        $.post('/send', oPayload, function() {
-          oModel.setProperty('/message', '');
-          sap.m.MessageToast.show('Delivered!')
-        })
+          $.post('/send', oPayload, function() {
+            oModel.setProperty('/message', '');
+            sap.m.MessageToast.show('Delivered!')
+          })
     }
 })
 ```
@@ -203,19 +253,54 @@ new sap.m.Button({
 
 [VALIDATE_5]
 [ACCORDION-END]
-[ACCORDION-BEGIN  [Step 6: ](Test the application locally)]
+[ACCORDION-BEGIN  [Step : ](Show the sent messages)]
+
+Update the content model of the outbox whenever the user clicks on the corresponding icon in the tab bar. Update the declaration of the `sap.m.IconTabBar` to add this functionality.
+
+```javascript
+new sap.m.IconTabBar({
+  select: function(oEvent){
+    if(oEvent.getParameter('selectedKey') === 'outbox'){
+      var oHistoryModel = oEvent.getSource().setModel(new sap.ui.model.json.JSONModel('/outbox'), 'outbox');
+    }
+  },
+```
+
+Now, bind the items of the `sap.m.Table` to this new model.
+```javascript
+new sap.m.Table({
+  columns: ...
+  items: {
+    path: 'outbox>/',
+    template: new sap.m.ColumnListItem({
+      cells: [
+        new sap.m.Text({text: '{outbox>queue}'}),
+        new sap.m.Text({text: '{outbox>message}'}),
+        new sap.m.Text({text: '{outbox>correlationId}'}),
+        new sap.m.Text({text: '{outbox>response}'})
+      ]
+    })
+  }
+})
+```
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN  [Step : ](Test the application locally)]
 
 Now you should be able to test the application on your local machine fully. First, make sure you are running a local RabbitMQ service:
 ```bash
 docker run -it --rm -p 5672:5672 -p 15672:15672 rabbitmq
 ```
 Now you should be able to use the web-based form to write messages to RabbitMQ and see them in your application log:
+
 ![locallog](locallog.png)
+
 ![localApp](ui-local.png)
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 7: ](Re-deploy the updated application to Cloud Foundry)]
+[ACCORDION-BEGIN [Step : ](Re-deploy the updated application to Cloud Foundry)]
 You can simply update the application with `cf push` (from the root folder of the project) since you already created the `manifest.yml` file.
 
 Now, use your browser to double check that the deployment was successful. You should see the same form here as well.

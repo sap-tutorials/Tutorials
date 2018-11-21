@@ -1,5 +1,5 @@
 ---
-auto_validation: true 
+auto_validation: true
 title: Create a Developer User in SAP Cloud Platform ABAP Environment
 description: Create a developer user with the developer role in SAP Cloud Platform ABAP environment.
 primary_tag: topic>abap-development
@@ -20,10 +20,17 @@ time: 10
 
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Log in to SAP Fiori launchpad as administrator)]
-
-Log in with admin user to the SAP Fiori launchpad.
-![Login to Fiori](Picture1.png)
+[ACCORDION-BEGIN [Step 1: ](Log in to SAP Fiori Launchpad as administrator)]
+1. Open eclipse and do right click on your system and navigate to **Properties**.
+![Open eclipse](Picture17.png)
+2. Navigate to **ABAP Development** and copy the **System URL**.
+![System URL](Picture18.png)
+3. Copy this URL in a browser and change the URL like this:
+Add `-web` after `.abap` and `/ui` at the end of URL.
+`https://<your-system>.abap-web.eu10.hana.ondemand.com/ui`
+![Change URL](Picture20.png)
+7. Login with admin user and password in SAP Fiori Launchpad.
+![Login to SAP Fiori Launchpad](Picture19.png)
 
 [DONE]
 [ACCORDION-END]

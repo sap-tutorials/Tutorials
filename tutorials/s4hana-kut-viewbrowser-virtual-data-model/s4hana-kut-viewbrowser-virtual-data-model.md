@@ -18,34 +18,34 @@ First you need to log into the SAP Fiori launchpad.
 
 1. Open the Windows Start Menu and search for **Remote Desktop Connection** and start the Desktop app
 
-    ![Fiori Launchpad login preparation](kut_search_01_01_01.png)
+   ![Fiori Launchpad login preparation](kut_search_01_01_01.png)
 
 2. In the **Remote Desktop Connection** maintain the field Computer with the alias `techedappspace` and click on the **Connect** button.
 
-    ![Fiori Launchpad login preparation1](kut_search_01_01_02.png)
+   ![Fiori Launchpad login preparation1](kut_search_01_01_02.png)
 
 3. The Windows Security screen opens. On the Security screen click on the field labeled with **More choices**.
 
-    ![Fiori Launchpad login preparation2](kut_search_01_01_03.png)
+   ![Fiori Launchpad login preparation2](kut_search_01_01_03.png)
+
 
 4. On the Security screen select **Use a different account** and maintain the fields as follow:
 
-    > Please be aware that you should replace **xx** with your desktop number.
+> Please be aware that you should replace **xx** with your desktop number.
 
-    |  Field Name                | Value
-    |  :-------------------------| :-------------
-    |  User Name                 | `.\train-xx`
-    |  Password                  | `The password will be given to you by your instructor`
+|  Field Name                | Value
+|  :-------------------------| :-------------
+|  User Name                 | `.\train-xx`
+|  Password                  | `The password will be given to you by your instructor`
+afterwards click on the **OK** button.
 
-    Afterwards, click **OK**.
-
-    ![Fiori Launchpad login continue1 ](kut_search_01_01_04.png)  
+   ![Fiori Launchpad login continue1 ](kut_search_01_01_04.png)  
 
 5. You are now redirected to the SAP FIORI Launchpad.
 
-    You should see this page:
+   You should see this page:
 
-    ![Fiori Launchpad login continue](kut_search_01_02.png)
+   ![Fiori Launchpad login continue](kut_search_01_02.png)
 
 6. Login now with your user and password
 
@@ -57,7 +57,7 @@ First you need to log into the SAP Fiori launchpad.
 
 [ACCORDION-BEGIN [Step 2: ](Execute the App View browser)]
 
-In the Fiori Launchpad, from the group Query Design select the App View Browser and double click on it as on the below picture:
+In the Fiori Launchpad, from the group Query Design select the App View Browser and click on it as on the below picture:
 
 ![Apps on the Fiori Launchpad](kut_search_02.png)
 
@@ -88,9 +88,9 @@ After you have successfully executed the App View Browser, the below window gets
 
     ![Cross reference displayed](kut_search_11.png)
 
-4. Now, you would like to see the content of the view **`ZZ1_APSEMTAGSTATISTIC_XXX`**. To do so, you must click on **Show Content** which will open Design Studio to display the multi-dimensional report as this CDS view is an analytical query.
+4. Now, you would like to see the content of the view **`ZZ1_APSEMTAGSTATISTIC_XXXX`**. To do so, you must click on **Show Content** which will open Design Studio to display the multi-dimensional report as this CDS view is an analytical query.
 
-    ![Apps on the Fiori Launchpad](kut_search_04.png)
+    ![Apps on the Fiori Launchpad](kut_search_11.png)
 
 5. The **Prompts** window of the report to maintain the selection parameters gets open as shown below:
 
@@ -119,7 +119,7 @@ The content of the selected view is shown after clicking **OK** from the previou
 
 ![Apps on the Fiori Launchpad](kut_search_07.png)
 
-You can also have a graphical holistic view of your result set including all available **Cost Center** values.
+You can also have a graphical holistic view of your result set including all available **Cost Center** values(To have the Cost Center shown, you have to move per drag and drop  **Cost Center** from the column **Dimension** to the column labeled with **Rows**).
 To do so, you have to click the chart icon. Afterwards, the expected graphic with its legend are displayed in the result set as well.
 
 ![Result set graphic and table](kut_search_13.png)

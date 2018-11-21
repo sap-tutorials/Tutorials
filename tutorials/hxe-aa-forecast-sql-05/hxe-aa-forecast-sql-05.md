@@ -1,5 +1,5 @@
 ---
-title: Time Series with SAP HANA PAL
+title: Time Series with SAP HANA PAL (Forecast SQL)
 description: Understand the capabilities and options made available with the SAP HANA Predictive Analytics Library (PAL), which algorithm can be used to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -166,19 +166,6 @@ There are multiple Time Series algorithms that can be used in PAL, but here are 
  - **Auto Exponential Smoothing**: calculate optimal parameters for Single, Double and Triple Exponential Smoothing functions
 
 However, before selecting one, you will need to address the existence of a trend, a seasonal component or white noise which can be achieved using the **Seasonality Test** function.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this tutorial, you will need to setup a SQL query tool for SAP HANA, express edition.
-
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
 
 [DONE]
 [ACCORDION-END]

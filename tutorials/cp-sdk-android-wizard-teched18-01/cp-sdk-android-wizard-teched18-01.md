@@ -13,6 +13,10 @@ time: 15
 
 ---
 
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+
+
+
 [ACCORDION-BEGIN [Step 1: ](Set up development tools)]
 
 If Android Studio is running, close it.
@@ -71,7 +75,7 @@ On the **Cloud Configuration** tab, select **Use Existing** and set the Applicat
 
 ![Cloud configuration](cloud-configuration.png)
 
-The application configuration has already been created and has added multiple features of the SAP Cloud Platform Mobile Services.
+The application configuration page for the `com.sap.wizapp` is shown below that is referenced from the above screen of the wizard.  It has already been created and has added multiple features of the SAP Cloud Platform Mobile Services.
 
 ![App features](appFeatures.png)
 
@@ -93,6 +97,8 @@ On the **Project Configuration** tab, provide the following configuration data:
 | Enable Logging | check |
 | Enable Upload | check |
 | Enable Push | check and browse to `C:\AndroidStudioProjects\google-services.json` |
+
+If for some reason this file is missing, it can be downloaded from <a target="_blank" href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-sdk-android-wizard-teched18-01/google-services.json">google-services.json</a>.
 
 
 ![Project configuration](project-configuration.png)
@@ -144,6 +150,8 @@ Tap on `Products` to reach the below list screen.
 Tap on a list item to show an editable detail screen.
 
 ![Category detail](product-detail.png)
+
+Congratulations!  You have created your first Android app using the SAP Cloud Platform SDK for Android!
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -1,6 +1,6 @@
 ---
-title: Display from the XS OData service
-description: Understand and implement the basics of an SAPUI5 application to display your `Movielens` recommendation results exposed with an XS OData service
+title: Display from the XS OData service (Forecast App)
+description: Understand and implement the basics of an SAPUI5 application to display your Forecasting results exposed with an XS OData service
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
@@ -527,14 +527,14 @@ Using fragments in SAPUI5 application enables re-usability of display components
 
 The XS OData services results are one good example of components that could be defined as fragments and re-used over and over.
 
-Expand the **`movielens/html/resources/webapp/fragment`** folder.
+Expand the **`forecast/html/resources/webapp/fragment`** folder.
 
 Create a new file **`display_list.fragment.xml`**.
 
 This is the full path of the created file:
 
 ```
-movielens/html/resources/webapp/fragment/display_list.fragment.xml
+forecast/html/resources/webapp/fragment/display_list.fragment.xml
 ```
 
 Paste the following content:
@@ -582,7 +582,7 @@ Create a new file **`display_data.fragment.xml`**.
 This is the full path of the created file:
 
 ```
-movielens/html/resources/webapp/fragment/display_data.fragment.xml
+forecast/html/resources/webapp/fragment/display_data.fragment.xml
 ```
 
 Paste the following content:
@@ -635,14 +635,14 @@ Paste the following content:
 
 Save the file using the ![save](00-save.png) icon from the menu.
 
-Expand the **`movielens/html/resources/webapp/fragment/data`** folder.
+Expand the **`forecast/html/resources/webapp/fragment/data`** folder.
 
 Create a new file **`CashFlows_extrapredictors.fragment.xml`**.
 
 This is the full path of the created file:
 
 ```
-movielens/html/resources/webapp/fragment/data/CashFlows_extrapredictors.fragment.xml
+forecast/html/resources/webapp/fragment/data/CashFlows_extrapredictors.fragment.xml
 ```
 
 Paste the following content:

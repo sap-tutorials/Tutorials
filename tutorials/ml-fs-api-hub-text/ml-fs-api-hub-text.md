@@ -1,5 +1,5 @@
 ---
-title: Text Processing services on the API Business Hub
+title: Text Processing services with the API Business Hub console
 description: Discover how to test SAP Leonardo Machine Learning Foundation service on the SAP API Business Hub
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
@@ -20,8 +20,9 @@ In this tutorial, you will learn where to find and test the **SAP Leonardo Machi
 
 The **Topic Detection API** Machine Learning Functional Services will be used as an example to demonstrate how to consume text content, but you will be able to transpose this tutorial to other services which also consume content like :
 
- - the **Document Feature Extraction API**
- - the **Product Text Classification API**
+  - **[Machine Translation](https://api.sap.com/api/translation_api/resource)**
+  - **[Language Detection](https://api.sap.com/api/language_detection_api/resource)**
+  - **[Product Text Classification API](https://api.sap.com/api/product_text_classification_api/resource)**
 
 The **Topic Detection** service allows you to extracts topics from documents and scores them according to the most relevant topics.
 
@@ -83,19 +84,7 @@ A series of options are also required for the following parameters:
 
 [ACCORDION-BEGIN [Step 3: ](Test the service)]
 
-In the top right corner of the page, click on the **Log On** button.
-
-You will be prompted for your SAP Cloud Platform credentials.
-
-Scroll down to the **Parameters** section.
-
-In the **options** field enter the following:
-
-```JSON
-{"numTopics":3, "numTopicsPerDoc":3, "numKeywordsPerTopic":5}
-```
-
-Now let's build an archive with at least 3 text files (as `numTopics` is equal to 3).
+First, let's build an archive with at least 3 text files (so that we can set `numTopics` equal to 3).
 
 If you are missing some inspiration, use the following articles content to create your text files:
 
@@ -105,9 +94,21 @@ If you are missing some inspiration, use the following articles content to creat
 
 Create a zip out of these text files.
 
-Click on the **Choose File** button next to `files` parameter and pick your zip file.
+In the top right corner of the page, click on the **Log On** button.
 
-Now, scroll down and click on **Try out**.
+You will be prompted for your SAP credentials (you can use your SAP Cloud Platform credentials for example).
+
+Scroll down to the **Parameters** section and click on the **Try out** button, then you can use the **Choose File** button next to `files` parameter to select your zip file.
+
+In the **options** field enter the following:
+
+```JSON
+{"numTopics":3, "numTopicsPerDoc":3, "numKeywordsPerTopic":5}
+```
+
+Now, scroll down and click on **Execute**.
+
+![API Hub](04.png)
 
 In the **Response Body**, you will get for each file, the associated keywords, topics and score.
 
@@ -115,7 +116,7 @@ The output will be sorted by descending topic score.
 
 For example here, for the `cheesecake.txt` document, the first list of keywords represent to top topic (with id 1) and it's score is 1.0059799604699027.
 
-```JSON
+```
 {
   "_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "processed_time": "Mon, 31 Jul 2017 14:52:20 GMT",
@@ -208,12 +209,9 @@ Provide an answer to the question below then click on **Validate**.
 
 You can also try the following Machine Learning Functional Services consuming text content:
 
-  - **Inference Service for Customizable Text Classification**
-  - **Inference Service for Document Feature Extraction**
-  - **Inference Service for Scene Text Recognition**
-  - **Inference Service for Machine Translation**
-  - **Inference Service for Language Detection**
-  - **Product Text Classification API**
+  - **[Machine Translation](https://api.sap.com/api/translation_api/resource)**
+  - **[Language Detection](https://api.sap.com/api/language_detection_api/resource)**
+  - **[Product Text Classification API](https://api.sap.com/api/product_text_classification_api/resource)**
 
 For more information, you can also check the online [SAP Leonardo Machine Learning Foundation documentation](https://help.sap.com/viewer/product/SAP_LEONARDO_MACHINE_LEARNING_FOUNDATION/1.0/en-US)
 

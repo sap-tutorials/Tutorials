@@ -1,16 +1,13 @@
 ---
-title: Create workflow (part 4), Monitor task and workflow execution
+title: Create workflow (part 4), Monitor task and workflow execution in SAP Data Hub 1.4
 description: Monitor taks and workflow execution using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Create workflow (part 3): Build a task workflow](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part03.html)
-
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 During this tutorial, you will build get to know how to monitor the execution of tasks and task workflows. You will also learn how to (regularly) schedule workflows.
 

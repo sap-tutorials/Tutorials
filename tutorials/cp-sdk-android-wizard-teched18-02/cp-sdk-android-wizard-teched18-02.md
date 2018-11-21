@@ -13,6 +13,9 @@ time: 20
 
 ---
 
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+
+
 [ACCORDION-BEGIN [Step 1: ](Change master property for customer's screen)]
 If your application is still running on your emulator then return to the entity list screen by pressing the back button twice. If you restarted your application or restarted the emulator the first screen of the app will be the entity list screen.
 
@@ -44,7 +47,7 @@ Each customer is displayed in an <a target="_blank" href="https://help.sap.com/d
 
 ![Object Cell](object-cell.png)
 
-As seen above, an Object Cell can display more than one field.  In the next two sections, the app will be modified to display different content in the Object Cells and a separator decoration will be added between rows.
+As seen above, an Object Cell can display more than one field.  In the next two sections, the app will be modified to display different content in the Object Cells and a separator decoration will be added between rows.  Another good source of info on Object Cells and other Fiori for Android controls is <a target="_blank" href="https://experience.sap.com/fiori-design-android/object-cell/">Fiori Android Design Guidelines</a>.
 
 [DONE]
 [ACCORDION-END]
@@ -107,15 +110,16 @@ else {
 }
 ```
 
+Below the just pasted code, comment out (select and press Ctrl /) the lines that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
+
+![comment Headline](commentHeadline.png)
+
+
 Notice that two of the classes, `ESPMContainerMetadata` and `Drawable` cannot be resolved and are shown in red.  
 
 ![ESPMContainerMetadata](CustomersUIConnector.png)
 
 Select each class and press **`Alt+Enter`** to make use of Android Studio quick fix to add the missing imports.
-
-Comment out (select and press Ctrl /) the lines (around line 400) that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
-
-![comment Headline](commentHeadline.png)
 
 Run the app and notice the Customer's screen has been customized.
 
@@ -141,6 +145,8 @@ Notice that two of the classes, `LinearLayoutManager` and `DividerItemDecoration
 Run the app and notice that each row in the Recycler View has a divider.
 
 ![Customers screen with divider](customer-with-divider.png)
+
+Congratulations! You have customized the display of a Fiori for Android Object Cell.
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -28,9 +28,21 @@ Replace `Your App name goes here` with an application name of your choice and pr
 
 ![portal app name](./ms-portal-app-name.png)
 
-You are now forwarded to the configuration of your application. Navigate to the **Platforms** sections and add the URL of your SAPUI5 application. You can also add `localhost:8000` in case you wish to test the application locally as well.
+ Navigate to the **Platforms** sections and click on **Add Platform**.
+
+![portal-app-platform-details](./ms_portal_add_platform.png)
+
+Select **Web** in order to configure a new application.
+
+![portal-web-platform-details](./ms_portal_web_platform.png)
+
+You are now forwarded to the configuration of your application. Add the URL of your SAPUI5 application you have deployed in the previous tutorial.
 
 ![portal-app-platform-details](./ms-portal-callbacks.png)
+
+> You can also add `localhost:8000` as an additional Redirect URL in case you wish to test the application locally as well.
+
+
 To enable your application to search for emails navigate to `Microsoft Graph Permissions`, click on **Add** and select the **`Mail.read`** permission.
 
 ![portal app name](./ms-portal-add-permission.png)
@@ -39,7 +51,7 @@ Save the changes and scroll to the top to save app id in your clipboard or a new
 
 ![appid](./appid.png)
 
-> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com>
+> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com> [for Microsoft Office 365 users] or <https://account.live.com/consent/Manage> [for outlook.com users] 
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -54,7 +66,7 @@ Navigate to back to your SAP Web IDE and create a new folder named **`msal`** in
 window.msalconfig = {
     clientID: "<YOUR APP ID>",
     redirectUri: location.origin,
-    graphBaseEndpoint: "https://graph.microsoft.com/beta/",
+    graphBaseEndpoint: "https://graph.microsoft.com/v1.0/",
     userInfoSuffix: "me/",
     queryMessagesSuffix: "me/messages?$search=\"$1\"&$top=150",
     graphAPIScopes: ['User.Read', 'Mail.Read']
@@ -72,7 +84,7 @@ This file contains constants you need later in this tutorial.
 
 [ACCORDION-BEGIN [Step](Load Microsoft Authentication Library)]
 
-Copy the following two lines of code right below the existing `script-tag` in the `index.html` file.
+Copy the following two lines of code right below the first `script-tag` in the `index.html` file.
 
 ```html
 <script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.2.3/js/msal.min.js"></script>
@@ -118,7 +130,7 @@ Copy the following two lines of code right below the existing `script-tag` in th
         this.oUserAgentApplication.redirectUri = msalconfig.redirectUri;
       }
       // If page is refreshed, continue to display user info
-      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window && !window.opener) {
+      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window) {
         var user = this.oUserAgentApplication.getUser();
         if (user) {
           this.fetchUserInfo();
@@ -362,6 +374,7 @@ Now you are able to click on a property on the details page to search for this t
 ![redeployed application](./redeploy.png)
 
 > **IMPORTANT:** Please make sure that there are mails in your outlook account (any folder is fine) which match the keywords you might search for. Otherwise your search request will return an empty result set.
+
 
 [VALIDATE_12]
 [ACCORDION-END]

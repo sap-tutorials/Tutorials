@@ -219,13 +219,19 @@ For more details about standalone SSH client option, you can check the [Connecti
 
 [ACCORDION-BEGIN [Step 6: ](Configure your server)]
 
-Once you have established an SSH session, use user `ec2-user` to log in
+Once you have established an SSH session, use the **`ec2-user`** user to log in:
 
 ![PuTTY](_19.png)
 
-Change the password for `hxeadm` using the following command:
+The prompt should become:
 
 ```
+ec2-user@hxehost:~>
+```
+
+Change the password for `hxeadm` using the following command:
+
+```shell
 sudo passwd hxeadm
 ```
 
@@ -392,3 +398,7 @@ Log in with user `XSA_DEV` and the password you provided during the initial setu
 [ACCORDION-END]
 
 If anything is going wrong, [check the questions and answers from the community](https://answers.sap.com/index.html).
+
+> ### **Warning:** When using the SAP HANA, express edition AMI from AWS, you will be charged for both the EC2 instance and the provisioned EBS volumes used by this instance.
+Therefore, even if you ***suspend*** your EC2 instance running your SAP HANA, express edition instance, you will still be charged for the provisioned EBS volumes.
+Only detaching and deleting the EBS volumes will prevent that but your SAP HANA, express edition will no longer be usable.

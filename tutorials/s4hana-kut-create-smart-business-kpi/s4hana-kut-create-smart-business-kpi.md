@@ -20,33 +20,34 @@ First you need to log into the SAP Fiori launchpad.
 
 1. Open the Windows Start Menu and search for **Remote Desktop Connection** and start the Desktop app
 
-    ![Fiori Launchpad login preparation](kut_smbkpi_01_01_01.png)
+   ![Fiori Launchpad login preparation](kut_smbkpi_01_01_01.png)
 
 2. In the **Remote Desktop Connection** maintain the field Computer with the alias `techedappspace` and click on the **Connect** button.
 
-    ![Fiori Launchpad login preparation1](kut_smbkpi_01_01_02.png)
+   ![Fiori Launchpad login preparation1](kut_smbkpi_01_01_02.png)
 
 3. The Windows Security screen opens. On the Security screen click on the field labeled with **More choices**.
 
-    ![Fiori Launchpad login preparation2](kut_smbkpi_01_01_03.png)
+   ![Fiori Launchpad login preparation2](kut_smbkpi_01_01_03.png)
+
 
 4. On the Security windows select **Use a different account** and maintain the fields as follow:
 
-    > Please be aware that you should replace **xx** with your desktop number.
+> Please be aware that you should replace **xx** with your desktop number.
 
-    |  Field Name                | Value
-    |  :-------------------------| :-------------
-    |  User Name                 | `.\train-xx`
-    |  Password                  | `The password will be given to you by your instructor`
-    afterwards click on the **OK** button.
+|  Field Name                | Value
+|  :-------------------------| :-------------
+|  User Name                 | `.\train-xx`
+|  Password                  | `The password will be given to you by your instructor`
+afterwards click on the **OK** button.
 
-    ![Fiori Launchpad login continue1 ](kut_smbkpi_01_01_04.png)  
+   ![Fiori Launchpad login continue1 ](kut_smbkpi_01_01_04.png)  
 
 5. You are now redirected to the SAP FIORI Launchpad.
 
-    You should see this page:
+   You should see this page:
 
-    ![Fiori Launchpad login continue](kut_smbkpi_01_02.png)
+  ![Fiori Launchpad login continue](kut_smbkpi_01_02.png)
 
 6. Login now with your user and password
 
@@ -69,8 +70,7 @@ In the Fiori Launchpad, from the group KPI Design select the App KPI Workspace a
 [ACCORDION-BEGIN [Step 3: ](Get started with KPI Creation)]
 
 1. After you have successfully executed the App KPI Workspace, the below window gets open.
-
-    ![Apps on the Fiori Launchpad](kut_smbkpi_03.png)
+![Apps on the Fiori Launchpad](kut_smbkpi_03.png)
 
 2. In the KPI Workplace window, click on the + Add on the bottom left toolbar to create a KPI as depicted below:
 
@@ -85,8 +85,8 @@ In the Fiori Launchpad, from the group KPI Design select the App KPI Workspace a
 
     |  Field Name         | Value
     |  :------------------| :-------------
-    |  Title              | `XXXX_ APSEMTAGSTATISTIC`
-    |  Description        | `XXXX_ APSEMTAGSTATISTIC`
+    |  Title              | `XXXX_APSEMTAGSTATISTIC`
+    |  Description        | `XXXX_APSEMTAGSTATISTIC`
 
     > Replace **`XXXX`** with your initials !
     ![Maintain Parameters](kut_smbkpi_05.png)
@@ -151,7 +151,7 @@ The evaluation would define the KPI based on **`NetIncomeAmtByNumberofEmpl`**, o
     |  Field Name                | Value
     |  :-------------------------| :-------------
     |  To-Period                 | `007`
-    |  Category                  | `ATC01`
+    |  Category                  | `ACT01`
     |  Fin Statement Version     | `L000`
     |  Fiscal Year               | `2018`
     |  Controlling Area          | `A000`
@@ -163,7 +163,7 @@ The evaluation would define the KPI based on **`NetIncomeAmtByNumberofEmpl`**, o
     |  Field Name         | Value
     |  :------------------| :-------------
     |  Target             | `525000`
-    |  Warning            | `500000`
+    |  Warning            | `425000`
     |  Critical           | `50000`
 
     ![Maintain Threshold](kut_smbkpi_16.png)
@@ -187,7 +187,7 @@ In this step you would choose from the various visualization options for the eva
     |  Field Name         | Value
     |  :------------------| :-------------
     |  Title Format       | `Numeric Tile`
-    |  Title              | `XXX_ APSEMTAGSTATISTIC`
+    |  Title              | `XXXX_ APSEMTAGSTATISTIC`
     |  Subtile            | `Evaluation_XXXX`
     |  Catalog            | `X-SAP-UI2-CATALOGPAGE:Z_MONJE_TEC`
     |  Cache Duration     | `5 Minutes`
@@ -197,6 +197,8 @@ In this step you would choose from the various visualization options for the eva
 
     > Select the right catalogue by pushing the drill-down menu for **Catalog**.
     Enter `Z_MONJE_TEC` in the search line and press the magnifying glass button.
+
+    >Replace  XXXX with your initial
 
     ![Maintain the Tile Configuration](kut_smbkpi_19.png)
 
@@ -273,3 +275,5 @@ as it is shown on the similar picture below.
 
 [DONE]
 [ACCORDION-END]
+
+## Next Steps

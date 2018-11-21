@@ -1,5 +1,5 @@
 ---
-title: Time Series with SAP HANA APL Forecast
+title: Time Series with SAP HANA APL Forecast (Forecast SQL)
 description: Understand the capabilities and options made available with the SAP HANA Automated Predictive Library (APL), which algorithm can be used to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -305,7 +305,7 @@ insert into apl_cashflow_operation_config values ('APL/LastTrainingTimePoint' , 
 insert into apl_cashflow_operation_config values ('APL/Horizon'               , '21'        , null);
 
 truncate table apl_cashflow_variable_desc;
-insert into apl_cashflow_variable_desc values (0, 'CASHDATE' , 'datetime' , 'continuous', 1, 1, null, null, null, null);
+insert into apl_cashflow_variable_desc values (0, 'CASHDATE' , 'date'     , 'continuous', 1, 1, null, null, null, null);
 insert into apl_cashflow_variable_desc values (1, 'CASH'     , 'number'   , 'continuous', 0, 0, null, null, null, null);
 
 truncate table apl_cashflow_variable_roles;

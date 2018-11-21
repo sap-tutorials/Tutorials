@@ -1,5 +1,5 @@
 ---
-title: Expose procedures as XSJS and views as XS OData
+title: Expose procedures as XSJS and views as XS OData (Forecast App)
 description: Understand and implement some of the options available with SAP HANA to expose your algorithm procedures and views
 auto_validation: true
 primary_tag: topic>machine-learning

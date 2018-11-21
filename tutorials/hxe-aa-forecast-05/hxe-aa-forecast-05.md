@@ -1,5 +1,5 @@
 ---
-title: Time Series with SAP HANA APL
+title: Time Series with SAP HANA APL (Forecast App)
 description: Understand the capabilities and options made available with the SAP HANA Automated Predictive Library (APL), which algorithm can be used to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -401,7 +401,7 @@ insert into #operation_config values ('APL/ApplyExtraMode'        , 'Forecasts a
 insert into #operation_config values ('APL/LastTrainingTimePoint' , '2001-12-28', null);
 insert into #operation_config values ('APL/Horizon'               , '21'        , null);
 
-insert into #variable_descs values (0, 'signal_time'  , 'datetime' , 'continuous', 1, 1, null, null, null, null);
+insert into #variable_descs values (0, 'signal_time'  , 'date'     , 'continuous', 1, 1, null, null, null, null);
 insert into #variable_descs values (1, 'signal_value' , 'number'   , 'continuous', 0, 0, null, null, null, null);
 
 insert into  #variable_roles values ('signal_time'  , 'input' , NULL, NULL, '#1');
