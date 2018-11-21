@@ -2,7 +2,7 @@
 auto_validation: true
 title: Create Your First ABAP Console Application
 description: Create an ABAP package and an ABAP class in the SAP Cloud Platform ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
-primary_tag: topic>abap-development
+primary_tag: topic>sap-cloud-platform-abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
 time: 5
 ---
@@ -60,15 +60,14 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create ABAP Cloud project in ADT)]
-Go to ADT and, select the menu path **File** > **New** > **Other**, filter and select ABAP Cloud Project from the wizard and then click **Next**.
-
+Go to ADT and, select the menu path File > New > Other, filter and select ABAP Cloud Project from the wizard and then click Next.
 ![Create an ABAP Cloud project in ADT](eclipse.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select service instance connection)]
-In the next wizard screen, select **SAP Cloud Platform Cloud Foundry Environment** and click **Next**.
+In the next wizard screen, select SAP Cloud Platform Cloud Foundry Environment and click Next.
 
 ![Select service instance connection](servicekey.png)
 
@@ -77,26 +76,20 @@ In the next wizard screen, select **SAP Cloud Platform Cloud Foundry Environment
 
 [ACCORDION-BEGIN [Step 5: ](Provide connection settings)]
   1. Maintain the SAP Cloud Platform Foundry connection information and click **Next**:
-
-      - Region: **`<your_region>`**
-
-      - Email: **`<your_email_address>`**
-
-      - Password: **`<your_password>`**
+        - Region: **`<your_region>`**
+        - Email: **`<your_email_address>`**
+        - Password: **`<your_password>`**
 
       ![Setup connection settings](connect.png)
 
   2. Maintain the required Service Instance details by selecting the appropriate values from the drop-down lists and move on with **Next**.
-
-      - Organization: **`<your_organization>`**
-
-      - Space: **`<your_space>`**
-
-      - Service Instance: **`<your_service_instance>`**
+        - Organization: **`<your_organization>`**
+        - Space: **`<your_space>`**
+        - Service Instance: **`<your_service_instance>`**
 
       ![Select service instance details](details.png)
 
-  3. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and click **Log On**.
+  3. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press Log On.
 
       ![Enter login credentials](login.png)
 
@@ -112,7 +105,7 @@ In the next wizard screen, select **SAP Cloud Platform Cloud Foundry Environment
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create ABAP package)]
-  1. Right-click on the `ZLocal` package and select **New** > **ABAP Package** from the context menu.
+  1. Right-click on the `ZLocal` package and select New > ABAP Package from the context menu.
 
       ![Add ABAP package](package.png)
 

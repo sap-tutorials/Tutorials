@@ -2,7 +2,7 @@
 auto_validation: true
 title: Expose a Standard Core Data Service for ABAP Environment
 description: Create a service definition, service binding and communication scenario to expose a Core Data Services (CDS) view in SAP Cloud Platform ABAP Environment.
-primary_tag: topic>abap-development
+primary_tag: topic>sap-cloud-platform-abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
