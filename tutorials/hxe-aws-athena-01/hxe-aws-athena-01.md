@@ -11,7 +11,23 @@ time: 10
 ### You will learn  
   - Create a User in IAM
   - Create and configure a S3 bucket
-  - Launch your SAP HANA, express edition instance on AWS
+
+
+**If you are attending SAP TechEd, come by the AWS booth to get an AWS credit voucher to cover the cost.**
+---
+<div align="center">
+<b><span style="color:red;align:middle">Warning: Please read carefully before starting!</span></b>
+</div>
+
+**Before, you get started, please be aware that completing this tutorial track will incur a charge estimated between 10 and 20 USD on your AWS account.**
+
+**And if you are not planning to complete the all track, be aware that when using the SAP HANA, express edition AMI from AWS, charges for both the EC2 instance and the provisioned EBS volumes used by this instance will incur.**
+
+**And because of the EBS volumes types in use, even if you _stop_ your EC2 instance running your SAP HANA, express edition instance, you will still be charged for the provisioned EBS volumes. Only detaching and deleting the EBS volumes will prevent that. But, your SAP HANA, express edition will no longer be usable.**
+
+Make sure to check the <a href="https://developers.sap.com/tutorials/hxe-aws-athena-07.html" target="&#95;blank">Cleanup before you leave</a> tutorial if you plan to stop before finishing the track.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Sign in or Create an Account on AWS)]
 
