@@ -170,19 +170,6 @@ However, before selecting one, you will need to address the existence of a trend
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this tutorial, you will need to setup a SQL query tool for SAP HANA, express edition.
-
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 2: ](Create configuration table and input data views)]
 
 In order to proceed whit the next steps, you will first need to create a series of tables and views that will be reused over the rest of the tutorial.

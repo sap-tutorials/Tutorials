@@ -401,7 +401,7 @@ insert into #operation_config values ('APL/ApplyExtraMode'        , 'Forecasts a
 insert into #operation_config values ('APL/LastTrainingTimePoint' , '2001-12-28', null);
 insert into #operation_config values ('APL/Horizon'               , '21'        , null);
 
-insert into #variable_descs values (0, 'signal_time'  , 'datetime' , 'continuous', 1, 1, null, null, null, null);
+insert into #variable_descs values (0, 'signal_time'  , 'date'     , 'continuous', 1, 1, null, null, null, null);
 insert into #variable_descs values (1, 'signal_value' , 'number'   , 'continuous', 0, 0, null, null, null, null);
 
 insert into  #variable_roles values ('signal_time'  , 'input' , NULL, NULL, '#1');

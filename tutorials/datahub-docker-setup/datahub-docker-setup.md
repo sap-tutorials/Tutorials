@@ -1,18 +1,18 @@
 ---
-title: Set up SAP Data Hub, developer edition
-description: Download and install SAP Data Hub, developer edition.
+title: Set up SAP Data Hub, developer edition 1.4
+description: Download and install SAP Data Hub, developer edition 1.4.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Next Steps
  - [Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
 
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (end of-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to download SAP Data Hub, developer edition, from SAP Store and run it on your local computer as a Docker container.
 
@@ -75,7 +75,7 @@ Open a terminal window and navigate to the directory where you have unpacked the
 docker build --build-arg VORA_USERNAME=vora --build-arg VORA_PASSWORD=SomeNicePassword19920706 --tag datahub .
 ```
 
-After 30-60 minutes (depending on the speed of your internet connection) the build completes. Verify that your local Docker registry now includes a new image (called `datahub`) for SAP Data Hub, developer edition by entering the following.
+After 5-10 minutes (depending on the speed of your internet connection) the build completes. Verify that your local Docker registry now includes a new image (called `datahub`) for SAP Data Hub, developer edition by entering the following.
 
 ```sh
 docker images
@@ -145,4 +145,3 @@ docker logs datahub
 [ACCORDION-END]
 
 ---
-

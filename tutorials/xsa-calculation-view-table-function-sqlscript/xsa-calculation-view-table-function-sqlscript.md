@@ -18,7 +18,7 @@ time: 25
   - Create a replacement to the former Scripted Views in previous versions of SAP HANA
   - Apply the `DENSE_RANK` function, to establish the ranking of a row relative to a partition of a dataset
 
-This tutorial assumes general knowledge of the modelling tool has been acquired through completion of the [beginner and intermediate tutorials about calculation views](https://www.sap.com/developer/groups/hana-xsa-calculation-view-modeling.html).
+This tutorial assumes general knowledge of the modeling tool has been acquired through completion of the [beginner and intermediate tutorials about calculation views](https://developers.sap.com/group.hana-xsa-calculation-view-modeling.html).
 
 ---
 

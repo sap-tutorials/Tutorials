@@ -1,0 +1,184 @@
+{
+  "level": [
+    {
+      "name": "Beginner",
+      "value": " tutorial>beginner"
+    }, {
+      "name": "Intermediate",
+      "value": " tutorial>intermediate"
+    }, {
+      "name": "Advanced",
+      "value": " tutorial>advanced"
+    }
+  ],
+  "common": [
+    {
+      "name": "iOS",
+      "value": "operating-system>ios"
+    },
+    {
+      "name": "Android",
+      "value": "operating-system>android"
+    },
+    {
+      "name": "Project (not Tutorial)",
+      "value": "tutorial:type/project"
+    },
+    {
+      "name": "ABAP Development",
+      "value": "topic>abap-development"
+    },
+    {
+      "name": "ABAP Extensibility",
+      "value": "topic>abap-extensibility"
+    },
+    {
+      "name": "Big Data",
+      "value": "topic>big-data"
+    },
+    {
+      "name": "Cloud",
+      "value": "topic>cloud"
+    },
+    {
+      "name": "HTML5",
+      "value": "topic>html5"
+    },
+    {
+      "name": "Internet of Things",
+      "value": "topic>internet-of-things"
+    },
+    {
+      "name": "Java",
+      "value": "topic>java"
+    },
+    {
+      "name": "Machine Learning",
+      "value": "topic>machine-learning"
+    },
+    {
+      "name": "Mobile",
+      "value": "topic>mobile"
+    },
+    {
+      "name": "OData",
+      "value": "topic>odata"
+    },
+    {
+      "name": "SAPUI5",
+      "value": "topic>sapui5"
+    },
+    {
+      "name": "Security",
+      "value": "topic>security"
+    },
+    {
+      "name": "SQL",
+      "value": "topic>sql"
+    },
+    {
+      "name": "BUILD",
+      "value": "products>build"
+    },
+    {
+      "name": "SAP API Management",
+      "value": "products>sap-api-management"
+    },
+    {
+      "name": "SAP BusinessObjects Design Studio",
+      "value": "products>sap-businessobjects-design-studio"
+    },
+    {
+      "name": "SAP BusinessObjects Lumira",
+      "value": "products>sap-businessobjects-lumira"
+    },
+    {
+      "name": "SAP Cloud Platform",
+      "value": "products>sap-cloud-platform"
+    },
+    {
+      "name": "SAP Cloud Platform Predictive service",
+      "value": "products>sap-cloud-platform-predictive-service"
+    },
+    {
+      "name": "SAP Cloud Platform Connectivity",
+      "value": "products>sap-cloud-platform-connectivity"
+    },
+    {
+      "name": "SAP Fiori",
+      "value": "products>sap-fiori"
+    },
+    {
+      "name": "SAP Gateway",
+      "value": "products>sap-gateway"
+    },
+    {
+      "name": "SAP HANA",
+      "value": "products>sap-hana"
+    },
+    {
+      "name": "SAP HANA, dynamic tiering",
+      "value": "products>sap-hana-dynamic-tiering"
+    },
+    {
+      "name": "SAP HANA streaming analytics",
+      "value": "products>sap-hana-streaming-analytics"
+    },
+    {
+      "name": "SAP HANA, express edition",
+      "value": "products>sap-hana\\,-express-edition"
+    },
+    {
+      "name": "SAP HANA Studio",
+      "value": "products>sap-hana-studio"
+    },
+    {
+      "name": "SAP Jam",
+      "value": "products>sap-jam"
+    },
+    {
+      "name": "SAP Jam Collaboration",
+      "value": "products>sap-jam-collaboration"
+    },
+    {
+      "name": "SAP Vora",
+      "value": "products>sap-vora"
+    },
+    {
+      "name": "SAP Screen Personas",
+      "value": "products>sap-screen-personas>sap-screen-personas"
+    },
+    {
+      "name": "SAP S/4HANA",
+      "value": "products>sap-s-4hana"
+    },
+    {
+      "name": "SAP S/4HANA Cloud SDK",
+      "value": "products>sap-s-4hana-cloud-sdk"
+    },
+    {
+      "name": "SAP SQL Anywhere",
+      "value": "products>data-management>sap-sql-anywhere"
+    },
+    {
+      "name": "SAP Web IDE",
+      "value": "products>sap-web-ide"
+    },
+    {
+      "name": "SAP Web IDE plugins",
+      "value": "products>sap-web-ide-plug-ins"
+    },
+    {
+      "name": "SAP Translation Hub",
+      "value": "products>sap-translation-hub>sap-translation-hub"
+    },
+    {
+      "name": "Sybase ASE",
+      "value": "products>sybase-adaptive-server-enterprise"
+    },
+    {
+      "name": "YaaS",
+      "value": "products>sap-hybris-as-a-service-on-sap-cloud-platform"
+    }
+  ]
+}

@@ -51,7 +51,7 @@ Save the changes and scroll to the top to save app id in your clipboard or a new
 
 ![appid](./appid.png)
 
-> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com>
+> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com> [for Microsoft Office 365 users] or <https://account.live.com/consent/Manage> [for `outlook.com` users] 
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -66,7 +66,7 @@ Navigate to back to your SAP Web IDE and create a new folder named **`msal`** in
 window.msalconfig = {
     clientID: "<YOUR APP ID>",
     redirectUri: location.origin,
-    graphBaseEndpoint: "https://graph.microsoft.com/beta/",
+    graphBaseEndpoint: "https://graph.microsoft.com/v1.0/",
     userInfoSuffix: "me/",
     queryMessagesSuffix: "me/messages?$search=\"$1\"&$top=150",
     graphAPIScopes: ['User.Read', 'Mail.Read']
@@ -130,7 +130,7 @@ Copy the following two lines of code right below the first `script-tag` in the `
         this.oUserAgentApplication.redirectUri = msalconfig.redirectUri;
       }
       // If page is refreshed, continue to display user info
-      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window && !window.opener) {
+      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window) {
         var user = this.oUserAgentApplication.getUser();
         if (user) {
           this.fetchUserInfo();

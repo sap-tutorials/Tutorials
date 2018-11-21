@@ -31,7 +31,7 @@ After this tutorial you can choose either the On-Premise or the Cloud route.
 
 Refer to the Tessel website <https://t1-start.tessel.io/install> for detailed information on getting your Tessel connected for your operating system.
 
->In rare cases of problems with automatic installation of the driver on Windows machines please use [`Zadig` utility](http://zadig.akeo.ie/) to manually install `WinUSB` driver for the Tessel device in Windows OS.
+>In rare cases of problems with automatic installation of the driver on Windows machines please use [`Zadig` utility](http://zadig.akeo.ie) to manually install `WinUSB` driver for the Tessel device in Windows OS.
 >If Tessel is not visible on the list of devices in `Zadig`, then go to **Options** and select **List All Devices**.
 
 

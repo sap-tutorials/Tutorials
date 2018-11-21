@@ -1,18 +1,19 @@
 ---
-title: Generate sensor data
-description: Generate sensor data and display it in a terminal by using SAP Data Hub, developer edition
+title: Generate sensor data in SAP Data Hub, developer edition 1.4
+description: Generate sensor data and display it in a terminal by using SAP Data Hub, developer edition 1.4.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
+
  - You have successfully installed SAP Data Hub, developer edition.
 
 ## Next Steps
  - [Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (end of-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to use a **Data Generator** to generate random sample data and how to visualize the generated data via a **Terminal**
 
