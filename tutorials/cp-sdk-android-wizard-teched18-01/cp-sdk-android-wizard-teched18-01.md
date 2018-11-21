@@ -2,8 +2,8 @@
 title: Use SAP Wizard to Create Your First Android Application
 description: Create an Android application that will be connected to an OData backend.
 auto_validation: true
-primary_tag: operating-system>android
-tags: [  tutorial>beginner, operating-system>android ]
+primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [  tutorial>beginner, operating-system>android, products>sap-cloud-platform-sdk-for-android ]
 time: 15
 ---
 
@@ -13,9 +13,9 @@ time: 15
 
 ---
 
-**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need on our desktop machines, including an SAP Cloud Platform account credentials with the required cloud services enabled.  If you are using a personal machine with our shared credentials YOU WILL STILL NEED LOCAL PROGRAMS such as Android Studio as described in <a target="_blank" href="https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html">this</a> Android tutorial.
 
-
+Unfortunately we will not be able to troubleshoot your computer.
 
 [ACCORDION-BEGIN [Step 1: ](Set up development tools)]
 
