@@ -2,7 +2,7 @@
 title: Create a Business Service with Node.js using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite. Use the SAP Cloud Application Programming Model and develop on your local environment.
 auto_validation: true
-primary_tag: topic>cloud
+primary_tag: topic>SAP Cloud Application Programming Model
 tags: [  tutorial>intermediate, topic>node-js ]
 time: 30
 ---
@@ -74,7 +74,7 @@ time: 30
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Start a project)]
+[ACCORDION-BEGIN [Step 3: ](Start a project)]
 
 1. Open a command line window and run the following command in a folder of your choice:
 
@@ -92,7 +92,7 @@ time: 30
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Define your service)]
+[ACCORDION-BEGIN [Step 4: ](Define your first service)]
 
 You will create a simplistic all-in-one service definition.
 
@@ -143,83 +143,6 @@ You will create a simplistic all-in-one service definition.
 1. To test your service, go to <http://localhost:4004>
 
     You won't see data, because you have not added a data model yet. However, click on the available links and confirm the service is running.
-
-6. To stop the service and go back to your project directory, press `CTRL+C`.
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Define a data model)]
-
-Your entity definitions should be added in a separate data model. You can then adapt your service definition to expose views on the entities defined in your data model.
-
-1. Choose **New File** and type **`db/data-model.cds`**.
-
-    ![Add new file](new-file2.png)
-
-    This creates a folder called **db** and a file called **`data-model.cds`**. Your project structure should look like this:
-
-    ![Project structure](project-structure.png)
-
-1. Add the following code to the **`data-model.cds`** file:
-
-    ```CDS
-    namespace my.bookshop;
-    using { Country, managed } from '@sap/cds/common';
-
-    entity Books {
-      key ID : Integer;
-      title  : localized String;
-      author : Association to Authors;
-      stock  : Integer;
-    }
-
-    entity Authors {
-      key ID : Integer;
-      name   : String;
-      books  : Association to many Books on books.author = $self;
-    }
-
-    entity Orders : managed {
-      key ID  : UUID;
-      book    : Association to Books;
-      country : Country;
-      amount  : Integer;
-    }
-    ```
-
-3. Save the file.
-
-[VALIDATE_1]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Adapt your service model)]
-
-1. Open `cat-service.cds` and replace the code with:
-
-    ```CDS
-    using my.bookshop as my from '../db/data-model';
-
-    service CatalogService {
-      entity Books @readonly as projection on my.Books;
-      entity Authors @readonly as projection on my.Authors;
-      entity Orders @insertonly as projection on my.Orders;
-    }
-    ```
-
-3. Save the file.
-
-4. Run the service again:
-
-    ```CDS
-    cds run
-    ```
-
-    Go to <http://localhost:4004>. You still won't see any data, but the different links on the page work.
-
-    > When clicking the `Orders` link, you will see an error.  This is expected since we have defined the `Orders` entity as `insertonly`.
 
 6. To stop the service and go back to your project directory, press `CTRL+C`.
 
@@ -278,7 +201,64 @@ Add service provider logic to return mock data.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add a Database)]
+[ACCORDION-BEGIN [Step 6: ](Add a data model and adapt your service definition)]
+
+To get started quickly, you have already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
+
+1. Choose **New File** and type **`db/data-model.cds`**.
+
+    ![Add new file](new-file2.png)
+
+    This creates a folder called **db** and a file called **`data-model.cds`**. Your project structure should look like this:
+
+    ![Project structure](project-structure.png)
+
+1. Add the following code to the **`data-model.cds`** file:
+
+    ```CDS
+    namespace my.bookshop;
+    using { Country, managed } from '@sap/cds/common';
+
+    entity Books {
+      key ID : Integer;
+      title  : localized String;
+      author : Association to Authors;
+      stock  : Integer;
+    }
+
+    entity Authors {
+      key ID : Integer;
+      name   : String;
+      books  : Association to many Books on books.author = $self;
+    }
+
+    entity Orders : managed {
+      key ID  : UUID;
+      book    : Association to Books;
+      country : Country;
+      amount  : Integer;
+    }
+    ```
+
+1. Open `cat-service.cds` and replace the code with:
+
+    ```CDS
+    using my.bookshop as my from '../db/data-model';
+
+    service CatalogService {
+      entity Books @readonly as projection on my.Books;
+      entity Authors @readonly as projection on my.Authors;
+      entity Orders @insertonly as projection on my.Orders;
+    }
+    ```
+
+>Remember to save your files.
+
+[VALIDATE_1]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Add a Database)]
 
 The `cds` runtime includes built-in generic handlers that automatically serve all CRUD requests. After installing `SQLite3` packages, you can deploy your data model.
 
@@ -311,7 +291,7 @@ The `cds` runtime includes built-in generic handlers that automatically serve al
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add initial data)]
+[ACCORDION-BEGIN [Step 8: ](Add initial data)]
 
 Add plain CSV files under **`db/csv`** to fill your database tables with initial data.
 
@@ -336,28 +316,23 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
     271;Catweazle;170;22
     ```
 
-    > Make sure you now have a folder hierarchy `db/csv/...`.
-
-1. **Remove the code with mock data in `cat-service.js`**, because we want to see the actual data coming from the database.
-
-1. Save the files.
-
-1. Deploy the data model again to add this initial data:
-
-    ```bash
-    cds deploy
-    ```
-
-> The `csv` files must be named like the database tables and must be located inside the `db/csv` folder.
+    >Make sure you now have a folder hierarchy `db/csv/...`. And remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the generic service provider)]
+[ACCORDION-BEGIN [Step 9: ](Test generic handlers with Postman)]
 
-After connecting to a real database, you can test your service without the mock data.
+Your service is now backed by a fully functional database. This means you can remove the mock data handlers from `cat-service.js` and see the generic handlers shipped with the SAP Cloud Application Programming Model in action.
 
+1. **Remove the code with mock data in `cat-service.js`**, because we want to see the actual data coming from the database.
+
+1. Deploy the data model again to add your initial data:
+
+    ```bash
+    cds deploy
+    ```
 
 1. Run the service again:
 
@@ -372,15 +347,7 @@ After connecting to a real database, you can test your service without the mock 
 
     - <http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)>
 
-In the text area below, enter the title for `Book ID 207`:
-
-[VALIDATE_2]    
-
->If you have trouble answering this question, make sure that you have removed the mock data code from `cat-service.js` as indicated above.
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Test requests with the Postman application)]
+    >You should see a book titled Jane Eyre. If this is not the case, make sure you have removed the mock data from `cat-service.js` as indicated above.
 
 1. Download the [Postman application](https://www.getpostman.com/).
 
@@ -409,22 +376,27 @@ In the text area below, enter the title for `Book ID 207`:
 1. Add the following code in the **`srv/cat-service.js`** file:
 
     ```javascript
-    module.exports = (srv) => {
+      module.exports = (srv) => {
 
       const {Books} = cds.entities ('my.bookshop')
 
-      // for new orders decrease the book stock by the given amount, unless there are too few left
+      // Reduce stock of ordered books
       srv.before ('CREATE', 'Orders', async (req) => {
-        if (req.data.amount) {
-          const tx = cds.transaction (req)
-          const affectedRows = await tx.run (
-            UPDATE (Books)
-              .set   ('stock -=', req.data.amount)
-              .where ('ID =', req.data.book_ID, 'AND stock >=', req.data.amount)
-            )
-            if (affectedRows === 0)  req.error (409, "Sold out, sorry")
-          }
-        })
+        const order = req.data
+        if (!order.amount || order.amount <= 0)  return req.error (400, 'Order at least 1 book')
+        const tx = cds.transaction(req)
+        const affectedRows = await tx.run (
+          UPDATE (Books)
+            .set   ({ stock: {'-=': order.amount}})
+            .where ({ stock: {'>=': order.amount},/*and*/ ID: order.book_ID})
+        )
+        if (affectedRows === 0)  req.error (409, "Sold out, sorry")
+      })
+
+      // Add some discount for overstocked books
+      srv.after ('READ', 'Books', each => {
+        if (each.stock > 111)  each.title += ' -- 11% discount!'
+      })
 
     }
     ```
