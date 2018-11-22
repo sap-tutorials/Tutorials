@@ -140,7 +140,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpressxsa:2.00.031.00.20180712.1
+sudo docker pull store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -267,7 +267,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpressxsa:2.00.031.00.20180712.1 \
+store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 \
 --agree-to-sap-license \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --proxy-host <proxy_hostname> \
@@ -287,7 +287,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpressxsa:2.00.031.00.20180712.1 \
+store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 \
 --agree-to-sap-license \
 --passwords-url file:///hana/password.json \
 --proxy-host <proxy_hostname> \
@@ -420,12 +420,18 @@ If you are prompted to change your password, follow the instructions.
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 14: ]((Optional) Update Your Docker Image)]
+
+To update your Docker image, refer to the [SAP HANA, express edition Getting Started Guide](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION) updating section.
+
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Docker Run Usage: ](-Help Command)]
 
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpressxsa` command.
 
 ```
-docker run store/saplabs/hanaexpressxsa:2.00.031.00.20180712.1 -h
+docker run store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 -h
 usage: [options]
 
 --dont-check-consistency           Skip consistency check between mount points

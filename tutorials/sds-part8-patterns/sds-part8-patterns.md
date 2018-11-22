@@ -3,13 +3,10 @@ title: Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Dat
 description: Part 8 of 9. Define and watch for patterns in events. Use CCL Editor.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
+time: 15
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part7-testing.html)
-
-## Next Steps
- - **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part9-flex-operators.html)
 
 ## Details
 ### You will learn  
@@ -17,8 +14,6 @@ tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-h
  - Defining contents of the event to produce when a pattern has been detected.
  - Using the CCL Editor to modify the project.
 
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -121,7 +116,3 @@ tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-h
 20. Click Compile Project button to check for errors. Please refer to part 7 of this tutorial group on how to run and re-test the updated project.
 
     ![compile](event-patterns/20-compile.png)
-
-
-## Next Steps
- - **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part9-flex-operators.html)

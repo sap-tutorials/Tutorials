@@ -1,5 +1,5 @@
 ---
-title: MovieLens with SAP HANA PAL Apriori
+title: MovieLens with SAP HANA PAL Apriori (MovieLens SQL)
 description: Understand the capabilities and options made available with the SAP HANA SAP HANA Predictive Analytics Library (PAL), find the algorithm to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -12,7 +12,6 @@ time: 30
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Predictive Analytics Library
 - How to call SAP HANA Predictive Analytics Library functions from SQL
 - Identify which algorithm options are available for recommendation engines
@@ -276,17 +275,6 @@ The PAL functions are really strict on the input dataset format, so you will cre
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition as describe in the following tutorial group:
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-[DONE]
-[ACCORDION-END]
-
-
 [ACCORDION-BEGIN [Step 2: ](Run the APRIORI PAL function)]
 
 While assessing the available data, we found out that only the ratings can be used to build our collaborative filtering an content-based filter scenarios.
@@ -549,7 +537,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
--BEGIN [Step 8: ](Validate the content-based filtering results)]
+[ACCORDION-BEGIN [Step 8: ](Validate the content-based filtering results)]
 
 In order to be consistent, we should validate the same details that you will verify with other models results.
 
@@ -606,5 +594,6 @@ As you can see, the movies with no recommendations have up to 92 ratings, and th
 [ACCORDION-END]
 
 > ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-05/hxe-aa-movielens-sql-05.ipynb) to run most of the SQL statement listed in the tutorial.
+You can follow the [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)) tutorial for more details.
 
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.

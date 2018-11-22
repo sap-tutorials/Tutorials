@@ -74,6 +74,9 @@
 		"resources": {
 			"css": [{
 				"uri": "css/style.css"
+			}],
+			"js": [{
+					"uri": "controller/demo.controller.js"
 			}]
 		}
 	}

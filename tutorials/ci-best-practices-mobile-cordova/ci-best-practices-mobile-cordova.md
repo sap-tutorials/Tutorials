@@ -4,6 +4,7 @@ title: Continuous Integration (CI) Best Practices with SAP - SAP Fiori Hybrid Ap
 description: Part 4.8 - Basic CI setup for SAP Fiori Hybrid Apps with the SAP Mobile Platform SDK
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>intermediate, tutorial:type/project ]
+time: 120
 
 ---
 
@@ -11,11 +12,11 @@ tags: [ tutorial>intermediate, tutorial:type/project ]
 
   - **Proficiency:** Intermediate
   - [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
-  
+
 ## Next Steps
- 
+
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
 ---
 
 ### 1. Introduction
@@ -606,6 +607,5 @@ Since the project we created is maintained in Git, we can check it out in SAP We
 ## Next Steps
 
   You can read through the remaining guides in order to proceed with advanced automation topics such as Git-related workflows (e.g. branching strategies and code reviews) and setting up pipelines. In addition, we recommend proceeding with the [Mobile Interactive Tutorials](https://www.sap.com/developer/tutorial-navigator/mobile-interactive-tutorials.html) in order to learn how to integrate additional features such as online and offline backend data access, logging capabilities, and push notifications. If you would like to learn more about our cloud-based build tooling, there is [a blog explaining on how to create and offline-enable a Fiori app in SAP Web IDE using the Cloud Build feature of Mobile Services](https://blogs.sap.com/2018/05/22/creating-an-offline-crud-hybrid-mobile-app-in-sap-web-ide-full-stack-with-hybrid-application-toolkit/).
- 
+
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  

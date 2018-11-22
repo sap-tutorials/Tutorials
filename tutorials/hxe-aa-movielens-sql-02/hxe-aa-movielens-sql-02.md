@@ -1,5 +1,5 @@
 ---
-title: Import the MovieLens dataset
+title: Import the MovieLens dataset (MovieLens SQL)
 description: Learn how to easily import flat dataset files in your SAP HANA, express edition instance
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -15,7 +15,6 @@ time: 15
 
 ## Details
 ### You will learn
-
 - Create a Multi-Target Application Project
 - Save your Web IDE project in a GIT repository
 
@@ -50,7 +49,7 @@ However, this would require the ***Eclipse IDE*** to be locally installed and pr
 
 Then, you would need to know the complete data file format description in order to create the tables with the proper columns structure. And, last but not least, any changes would require to recreate the all structure and reload the data.
 
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
+If you want to learn more about this import method, you can check the following tutorial: **Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse**
 
 - ***SAP HANA HDB Client***
 
@@ -58,36 +57,16 @@ The **SAP HANA HDB Client** provides an ***IMPORT FROM*** statement allowing you
 
 However, this method requires that the table are created before the execution of the command.
 
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
+If you want to learn more about this import method, you can check the following tutorial: **Import CSV into SAP HANA, express edition using IMPORT FROM SQL command**.
 
 #### ***Solution***
 
-Both options are valid and will be described here. To learn more about these options, you can refer to:
+Both options are valid but for the sake of simplicity only the Eclipse option will be described here.
+
+To learn more about these options, you can refer to:
 
 - [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
 - [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Download the dataset CSV files)]
-
-As the dataset files get updated periodically, and in order to ensure consistency of content and validation, a copy of the data is available under the <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hxe-aa-movielens-sql-02/data" target="new">data</a> directory within the SAP Tutorial GitHub repository.
-
-Download the following files locally (right click on the link, then use the ***Save link as*** option):
-
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/data/links.csv" target="new">links</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/data/movies.csv" target="new">movies</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/data/ratings.csv" target="new">ratings</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/data/tags.csv" target="new">tags</a>
-
-Again, before using these files, make sure you have reviewed the dataset <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> file for the usage licenses and other details.
-
-If you are planning on using the ***IMPORT FROM*** statement from the SAP HANA HDB Client, then you will need to transfer the file using an FTP client to following location on the HXE server:
-
-```
-/usr/sap/HXE/HDB90/work/data/
-```
 
 [DONE]
 [ACCORDION-END]
@@ -142,14 +121,32 @@ create column table movielens_tags(
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Import the Dataset)]
 
-Depending on your the import method option you have selected, complete one of the following steps.
+As the dataset files get updated periodically, and in order to ensure consistency of content and validation, a copy of the data is available under the <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hxe-aa-movielens-sql-02/data" target="new">data</a> directory within the SAP Tutorial GitHub repository.
 
-### **Using the SAP HANA Tools for Eclipse**
+Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
-You can import the data using the [SAP HANA Tools for Eclipse Import feature](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html) using the following details:
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/data/links.csv" target="new">links</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/data/movies.csv" target="new">movies</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/data/ratings.csv" target="new">ratings</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/data/tags.csv" target="new">tags</a>
+
+Using the  **File > Import...** menu, select **SAP HANA Content > Data From Local File**.
+
+You can also use the search field to locate the entry.
+
+![image Step 3](03-0.png)
+
+Click on **Next**.
+
+Select the Target System connection **HXE @ HXE (`ML_USER`)**.
+
+![image Step 3](03-1.png)
+
+Click on **Next**.
+
+The following panel allows you to set a series of import options:
 
 - **File Details:**
 
@@ -170,55 +167,7 @@ The source files should be mapped with the following target tables:
 | `ratings.csv`                 | `ML_USER.MOVIELENS_RATINGS`
 | `tags.csv`                    | `ML_USER.MOVIELENS_TAGS`
 
-### **Using the IMPORT FROM SQL command**
-
-The dataset files should be located in: **`/usr/sap/HXE/HDB90/work/data/movielens/`**
-
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials using your SQL query tool.
-
-Execute the following SQL statement:
-
-```SQL
-import from csv file '/usr/sap/HXE/HDB90/work/data/movielens/links.csv' into movielens_links
-with
-   record delimited by '\n'
-   field delimited by ','
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/links.csv.err'
-;
-
-import from csv file '/usr/sap/HXE/HDB90/work/data/movielens/movies.csv' into movielens_movies
-with
-   record delimited by '\n'
-   field delimited by ','
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/movies.csv.err'
-;
-
-import from csv file '/usr/sap/HXE/HDB90/work/data/movielens/ratings.csv' into movielens_ratings
-with
-   record delimited by '\n'
-   field delimited by ','
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/ratings.csv.err'
-;
-
-import from csv file '/usr/sap/HXE/HDB90/work/data/movielens/tags.csv' into movielens_tags
-with
-   record delimited by '\n'
-   field delimited by ','
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/tags.csv.err'
-;
-```
+**Repeat this operation for each dataset files.**
 
 [DONE]
 [ACCORDION-END]
@@ -243,3 +192,4 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 
 > ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/hxe-aa-movielens-sql-02.ipynb) to run most of the SQL statement listed in the tutorial.
+You can follow the [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)) tutorial for more details.

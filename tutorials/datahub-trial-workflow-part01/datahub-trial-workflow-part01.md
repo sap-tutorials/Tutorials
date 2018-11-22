@@ -1,18 +1,13 @@
 ---
-title: Create workflow (part 1), Enrich data with flowgraph
+title: Create workflow (part 1), Enrich data with flowgraph in SAP Data Hub 1.4
 description: Build a flowgraph to enrich device data with country information by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Next Steps
- - [Create workflow (part 2): Aggregate data with flowgraph ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part02.html)
-
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to create a flowgraph. This will enrich the `Devices.csv` file, which you have taken a look at during one of the previous tutorials, with country information.
 
@@ -211,6 +206,3 @@ You see that (in contrast to the `Devices` data set) the `EnrichedDevices` data 
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Create workflow (part 2): Aggregate data with flowgraph ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part02.html)

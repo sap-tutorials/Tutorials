@@ -1,5 +1,5 @@
 ---
-title: Create a Multi-Target Application Project and Modules in the Web IDE
+title: Create a Multi-Target Application Project and Modules in the Web IDE (MovieLens App)
 description: Learn how to create a Multi-Target Application Project and link it to your GitHub repository
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -15,7 +15,6 @@ time: 15
 
 ## Details
 ### You will learn
-
 - Create a Multi-Target Application Project
 - Save your Web IDE project in a GIT repository
 

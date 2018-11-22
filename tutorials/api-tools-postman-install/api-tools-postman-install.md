@@ -2,7 +2,7 @@
 title: Install Postman extension for Google Chrome as a REST client
 description: Install Postman extension for Google Chrome as a REST client
 primary_tag: topic>cloud
-tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-management, products>sap-cloud-platform, products>sap-predictive-service ]
+tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-management, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
   - **Proficiency:** Beginner

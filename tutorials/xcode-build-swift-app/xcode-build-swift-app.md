@@ -3,22 +3,18 @@ title: Build a basic Swift app with Xcode
 description: Build your first iOS app using the Swift programming language in Xcode.
 primary_tag: operating-system>ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
+author_name: Robin van het Hof
+author_profile: https://github.com/qualiture
+time: 10
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
  - **Tutorials:** [Introduction to iOS development resources and Xcode](https://www.sap.com/developer/tutorials/xcode-introduction.html)
-
-## Next Steps
- - [Debug and deploy the iOS app to an iPad](https://www.sap.com/developer/tutorials/xcode-debug-deploy.html)
 
 ## Details
 ### You will learn  
 In the previous tutorial, you have created a single view application. In this tutorial, you will create a second view, and learn how the concept of Storyboards helps in the development.  
 You will also learn how to use actions and outlets, and tie them all together to create a basic application with navigation.
-
-### Time to Complete
-**10 Min**.
 
 ---
 
@@ -356,6 +352,3 @@ The table view is now assigned to the view controller.
 
 
 [ACCORDION-END]
-
-### Next Steps
- - [Debug and deploy the iOS app to an iPad](https://www.sap.com/developer/tutorials/xcode-debug-deploy.html)

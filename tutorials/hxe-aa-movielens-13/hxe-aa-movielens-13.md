@@ -1,5 +1,5 @@
 ---
-title: Execute the Recommendations algorithm
+title: Execute the Recommendations algorithm (MovieLens App)
 description: Understand and implement the basics of an SAPUI5 application to generate your `Movielens` recommendation results using XSJS services
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -15,9 +15,9 @@ time: 10
 
 ## Details
 ### You will learn
-
-- How to add a SAPUI5 controller and interact with an XSJS service
-- How to add a SAPUI5 view and interact with an XSJS service
+- Create and use Fragments
+- Create a SAPUI5 controller and interact with an XSJS service
+- Create a SAPUI5 view and interact with an XSJS service
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 
@@ -666,7 +666,7 @@ Paste the following content:
     <content>
       <Bar>
         <contentMiddle>
-          <Title text="Execute The APL Forecast Algorithm"/>
+          <Title text="Execute The APL Recommendation Algorithm"/>
         </contentMiddle>
         <contentLeft>
           <Button icon="sap-icon://menu" press="handlePressOpenMenu"/>

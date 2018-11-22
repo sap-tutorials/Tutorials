@@ -4,6 +4,7 @@ title: Continuous Integration (CI) Best Practices with SAP – Landscape Configu
 description: Part 3.4 – Configuring the CI Component Landscape.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
+time: 15
 
 ---
 

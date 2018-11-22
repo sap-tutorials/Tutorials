@@ -1,5 +1,5 @@
 ---
-title: Time Series with SAP HANA APL Forecast
+title: Time Series with SAP HANA APL Forecast (Forecast SQL)
 description: Understand the capabilities and options made available with the SAP HANA Automated Predictive Library (APL), which algorithm can be used to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -15,7 +15,6 @@ time: 30
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Automated Predictive Library
 - How to call SAP HANA Automated Predictive Library functions from SQL
 - Identify which algorithm options are available for recommendation engines
@@ -194,24 +193,28 @@ Name                          | Description
 
 [ACCORDION-BEGIN [Pre-requisite: ](Install SAP HANA APL package)]
 
-If not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+The installation requires you to have access to the system using a SSH client like ***`PuTTY`***, but also to have access to the ***`hxeadm`*** user with ***`sudo`*** rights configured.
+
+To run the download manager you will need Java t be installed on the system.
 
 The installation will trigger a restart of your SAP HANA instance, so make sure to save your current work before.
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
+[ACCORDION-BEGIN [Step 1: ](Add the APL Role to your User)]
 
-As you will mostly execute SQL commands during this tutorial, you will need to setup a SQL query tool for SAP HANA, express edition.
+To execute APL functions, you need add the **`APL_EXECUTE`** role to your user.
 
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statements.
 
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
+```sql
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
+```
 
 [DONE]
 [ACCORDION-END]
@@ -302,7 +305,7 @@ insert into apl_cashflow_operation_config values ('APL/LastTrainingTimePoint' , 
 insert into apl_cashflow_operation_config values ('APL/Horizon'               , '21'        , null);
 
 truncate table apl_cashflow_variable_desc;
-insert into apl_cashflow_variable_desc values (0, 'CASHDATE' , 'datetime' , 'continuous', 1, 1, null, null, null, null);
+insert into apl_cashflow_variable_desc values (0, 'CASHDATE' , 'date'     , 'continuous', 1, 1, null, null, null, null);
 insert into apl_cashflow_variable_desc values (1, 'CASH'     , 'number'   , 'continuous', 0, 0, null, null, null, null);
 
 truncate table apl_cashflow_variable_roles;
@@ -466,35 +469,6 @@ Where you have:
  - the training data set (green)
  - the forecasted values (blue)
  - the error bar (red)
-
-The above graph was generated using the following Python code:
-
-```python
-forecast = %sql select \
-      c.cashdate \
-    , c.cash \
-    , kts_1                  as forecast \
-    , "kts_1_lowerlimit_95%" as lower_limit \
-    , "kts_1_upperlimit_95%" as upper_limit \
-from \
-     forecast_cashflow c \
-join apl_cashflow_result f \
-on   c.cashdate = f.cashdate \
-order by c.cashdate asc;
-
-cashdate         = matplotlib.dates.date2num(forecast.cashdate)
-
-fig, ax = plt.subplots()
-ax.plot(cashdate, forecast.cash       , 'ro-', markersize=2, color='green')
-ax.plot(cashdate, forecast.forecast   , 'ro-', markersize=2, color='blue')
-ax.plot(cashdate, forecast.lower_limit, 'ro-', markersize=2, color='red')
-ax.plot(cashdate, forecast.upper_limit, 'ro-', markersize=2, color='red')
-ax.xaxis_date()
-
-fig.autofmt_xdate()
-fig.set_size_inches(20, 15)
-plt.show()
-```
 
 Now let's run the same algorithm but the **"Extra Predictors"**
 
@@ -898,35 +872,6 @@ Where you have:
  - the error bar (red)
 
 You can notice that the error bar is only available till the forecast has reached the maximum horizon.
-
-The above graph was generated using the following Python code:
-
-```python
-forecast = %sql select \
-      f.time \
-    , c.reading \
-    , kts_1                  as forecast \
-    , "kts_1_lowerlimit_95%" as lower_limit \
-    , "kts_1_upperlimit_95%" as upper_limit \
-from \
-     apl_ozone_result f \
-left outer join forecast_ozone c \
-on   c.time = f.time \
-order by f.time asc;
-
-time         = matplotlib.dates.date2num(forecast.time)
-
-fig, ax = plt.subplots()
-ax.plot(time, forecast.reading    , 'ro-', markersize=2, color='green')
-ax.plot(time, forecast.forecast   , 'ro-', markersize=2, color='blue')
-ax.plot(time, forecast.lower_limit, 'ro-', markersize=2, color='red')
-ax.plot(time, forecast.upper_limit, 'ro-', markersize=2, color='red')
-ax.xaxis_date()
-
-fig.autofmt_xdate()
-fig.set_size_inches(20, 20)
-plt.show()
-```
 
 Provide an answer to the question below then click on **Validate**.
 

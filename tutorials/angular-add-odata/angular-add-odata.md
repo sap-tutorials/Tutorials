@@ -157,5 +157,3 @@ Second, when the browser attempts to get data from <https://services.odata.org/>
 
 We work around this by having SAP Cloud Platform talk to <http://services.odata.org/> directly.  This avoids the HTTPS connection, and works around the bug.
 
-## Next Steps
- - **Tutorials** [Add a Header and Detail Modal Dialog](https://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)

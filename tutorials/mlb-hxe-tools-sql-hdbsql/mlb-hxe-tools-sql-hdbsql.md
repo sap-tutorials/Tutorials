@@ -16,7 +16,6 @@ SAP HANA HDBSQL is a command line tool for executing commands on SAP HANA databa
 
 For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
----
 
 [ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
 
@@ -161,6 +160,7 @@ Alternatively, you can use a **Secure User Store** (`a.k.a.` ***`hdbuserstore`**
 When using the ***`hdbuserstore`***, your credentials (including your user name and server details) are saved and secured in a store that can used directly from the HDBSQL tool but not only.
 
 [DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Connection String: ](The options)]
 
@@ -169,4 +169,4 @@ For more information about the **HDBSQL options**, you can check the <a href="ht
 You also can check the [SAP HANA HDBSQL (Command-Line Reference)](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/c22c67c3bb571014afebeb4a76c3d95d.html) for more details.
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]

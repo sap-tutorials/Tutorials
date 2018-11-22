@@ -8,14 +8,11 @@ time: 10
 ---
 
 ## Prerequisites  
-- Proficiency: beginner
 - [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
-### You will learn
-
-In this tutorial, you will learn how to download and import the SAP Predictive Analytics Text Coding sample dataset into your SAP HANA, express edition instance.
-
 ## Details
+### You will learn
+In this tutorial, you will learn how to download and import the SAP Predictive Analytics Text Coding sample dataset into your SAP HANA, express edition instance.
 
 ---
 

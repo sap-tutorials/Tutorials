@@ -1,5 +1,5 @@
 ---
-title: Expose procedures as XSJS and views as XS OData
+title: Expose procedures as XSJS and views as XS OData (MovieLens App)
 description: Understand and implement some of the options available with SAP HANA to expose your algorithm procedures and views
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -15,7 +15,6 @@ time: 15
 
 ## Details
 ### You will learn
-
  - Create a Node.js Module
  - Add a dependency to the SAP HANA Database Module
  - Create a XS OData service

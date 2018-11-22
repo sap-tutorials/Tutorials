@@ -93,5 +93,3 @@ The remainder of the process is similar to the backup we performed in **Step 1**
 [ACCORDION-END]
 -->
 
-## Next Steps
- - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://www.sap.com/developer/tutorials/dt-backup-recovery-part3.html)

@@ -1,15 +1,16 @@
 ---
-title: Store sensor data in SAP Vora
-description: Use SAP Vora to store sensor data by using SAP Data Hub, developer edition.
+title: Store sensor data in SAP Vora in SAP Data Hub, developer edition 1.4
+description: Use SAP Vora to store sensor data by using SAP Data Hub, developer edition 1.4.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
+
  - You have completed [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (end of-November 2018).**
 ### You will learn  
 During this tutorial, you will store sensor data in SAP Vora. Thereto you will load the data which you have stored in HDFS to SAP Vora.
 

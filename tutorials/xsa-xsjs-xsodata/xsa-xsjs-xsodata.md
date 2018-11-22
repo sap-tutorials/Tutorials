@@ -53,7 +53,7 @@ In the `Requires` section of the web module, add `core_xsjs-api`
 Add `destinations` in the field group and the following key-value pairs as the properties for the `core_xsjs-api` module:
 
 ```
-name: core-backend
+name: core-xsjs-backend
 url: ~{url}
 forwardAuthToken: true
 ```
@@ -108,7 +108,7 @@ This is what the section should like:
 
 [ACCORDION-BEGIN [Step 3: ](Enable authentication in your service)]
 
-Return to the `js` folder that you created in this exercise. Like the other applications, this one also starts with a `package.json` file. Different this time is the fact that the startup script is not an SAP provided central node application, but one that you have created via the module creation wizard.
+Return to the `core-xsjs` folder that you created in this exercise. Like the other applications, this one also starts with a `package.json` file. Different this time is the fact that the startup script is not an SAP provided central node application, but one that you have created via the module creation wizard.
 
 ![js folder](7.png)
 
@@ -124,7 +124,9 @@ Remember to **Save.**
 
 [ACCORDION-BEGIN [Step 4: ](Create an OData service)]
 
-In the lib folder, create a sub-folder called `xsodata`. Create a file named `purchaseOrder.xsodata`. In the latest versions of Web IDE, you can create both objects at the same time using `New->File` as follows:
+In the lib folder, **create a sub-folder** called `xsodata`.
+
+**Create a file** named `purchaseOrder.xsodata`. In the latest versions of Web IDE, you can create both objects at the same time using `New->File` as follows:
 
 ![New file](new.png)
 
@@ -151,7 +153,11 @@ service {
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create an XSJS service)]
-In the lib folder, create a sub-folder called `xsjs` and a file named `hdb.xsjs`.  Here is the source code for this file.
+In the lib folder, **create a sub-folder** called `xsjs` and a file named `hdb.xsjs`.  
+
+![New file](new2.png)
+
+Here is the source code for this file.
 
 ```sql
 /*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/

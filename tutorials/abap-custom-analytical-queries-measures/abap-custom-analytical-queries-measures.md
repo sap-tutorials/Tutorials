@@ -3,14 +3,12 @@ title: Custom Analytical Queries Calculated Measures
 description: Create a Custom Analytical Queries with Calculated Measures.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 15
 ---
 
 ## Prerequisites  
 The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query Designer.
 Furthermore `ABAP Custom Analytical Queries` as a tutorial reveals another Prerequisite.
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 The Application Custom Analytical Queries characterizes the usage of reporting and analysis.
@@ -19,8 +17,6 @@ By using Custom Analytical Queries you do not need to understand the technical d
 
 ### You will learn  
 This tutorial teaches you the creation of a Custom Analytical Query and the addition of a Calculated Measures. You will also be able to edit your calculated Measures and define an Exception Aggregation.
-### Time to Complete
-**15 Min**.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open Custom Analytical Queries Application)]

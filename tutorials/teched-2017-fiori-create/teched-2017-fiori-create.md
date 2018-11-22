@@ -25,7 +25,7 @@ Back in your SAP Cloud Platform cockpit, go to the **Services** page.
 
 ![service in Cloud Platform cockpit](1.png)
 
-In the search menu, search for **Fiori**.
+In the search menu, search for **Portal**.
 
 ![service search for Fiori](2.png)
 
@@ -40,7 +40,11 @@ From the filtered down list of services, find the **Portal** service under the *
 
 ![Portal tile in services](3.png)
 
-Make sure to enable the service if is not already enabled. Once you see the green Enabled status, click **Go to service** to launch the Fiori Launchpad Portal.
+Make sure that the service is enabled, and if not click on **Enable**.
+
+![Portal tile in services](3_1.png)
+
+Once you see the green Enabled status, click on **Go to service** to launch the Fiori Launchpad Portal.
 
 ![service overview for portal](4.png)
 

@@ -27,8 +27,8 @@ You will learn how to download and configure am open source database client and 
 This tutorial series will use the client `DBeaver`. You can choose to install any other client that allows you to connect to your SAP HANA, express edition, database and enter SQL commands.
 
 > Here are some suggestions for other tools to connect with the SAP HANA, express edition database:
-> - [Install the HANA plugin for Microsoft Visual Studio](https://sap.com/developer/groups/hxe-install-hana-plugin-microsoft-visual-studio.html)
-> - [Use plugin for Eclipse](https://sap.com/developer/tutorials/hxe-howto-eclipse.html)
+> - [Install the HANA plugin for Microsoft Visual Studio](https://developers.sap.com/group.hxe-install-hana-plugin-microsoft-visual-studio.html)
+> - [Use plugin for Eclipse](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 [Download `DBeaver`](http://dbeaver.jkiss.org/download/) and follow the instructions to install it.
 

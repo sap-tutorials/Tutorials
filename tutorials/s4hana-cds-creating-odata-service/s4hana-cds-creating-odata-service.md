@@ -3,9 +3,9 @@ title: Creating OData Services
 description: Creating OData Services(Core Data Services)
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner, products>sap-s-4hana ]
+time: 20
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [Core Data Services, creating Associations (Joins)](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
 
 ## Next Steps
@@ -13,11 +13,7 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 
 ## Details
 ### You will learn
-
-How to create OData Services based on the exposure of Consumption views.
-
-### Time to Complete
-**15-20 Min**
+  - How to create OData Services based on the exposure of consumption views
 
 ---
 

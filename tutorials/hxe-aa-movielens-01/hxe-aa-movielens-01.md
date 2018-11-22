@@ -12,7 +12,6 @@ time: 20
 
 ## Details
 ### You will learn
-
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series
 - Complete a series of required post-installation task
 - Enable the builders for the development space
@@ -38,61 +37,78 @@ If you don't have an instance up and running, be aware that you don't need to co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Setup the XS CLI API endpoint and login)]
+[ACCORDION-BEGIN [Step 1: ](Login with XS CLI)]
 
 In order to complete the next steps, you will be using the XS CLI client which is locally installed with your SAP HANA 2.0, express edition instance.
 
-Therefore, you can run these commands on the server using a terminal console, or remotely using `PuTTY` for example.
+Therefore, you can run these commands directly from the server using a SSH client like `PuTTY` for example.
 
-> ### **Note:** You may prefer to run XS CLI commands remotely (from your local desktop for example). To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
+First, make sure to switch to the `hxeadm` user:
 
-Execute the following series of XS CLI commands.
+```shell
+sudo su - hxeadm
+```
+
+> ### **Note:** You may prefer to run XS CLI commands from your local desktop for example. To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
+
+Execute the following XS CLI command.
 
 #### Set the API endpoint:
 
 ```shell
-xs api https://hxehost:39030
+xs login -a https://hxehost:39030 -o HANAExpress -s SAP -u XSA_ADMIN --cacert /hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
 ```
+
+You will be prompted for the ***`XSA_ADMIN`*** password (which is initially set to the master password during the first boot initialization).
 
 > ### **Note:** if you receive the following error when executing the previous command:
 >&nbsp;
 ```
 FAILED: SSL connection error (supposedly untrusted connection, check the certificates)
 ```
->As describe in the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html) tutorial, you will need to use the SSL certificate with the **`cacert`** command switch, and issue a command like this instead:
->&nbsp;
-```shell
-xs api https://hxehost:39030 -cacert <path>/default.root.crt.pem
-```
-Where the default path for the certificate on the server is:
+>This probably mean that your `default.root.crt.pem` is not located in:
 >
- - `/hana/shared/HXE/xs/controller_data/controller/ssl-pub/router`
+ - `/hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem`
 >
+>Locate the file and use the relevant path.
 
-#### Login to your organization and space:
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Stop & Rescale processes)]
+
+If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands to stop certain services, rescale the memory used by some processes and run the memory collector.
+
+#### Stop services:
+
+The following services can be stopped as you won't leverage them in this tutorial series.
 
 ```shell
-xs login -o HANAExpress -s SAP -u XSA_ADMIN
+xs stop sap-portal-static-resources
+xs stop cockpit-telemetry-svc
 ```
 
-> ### **Note:**
->You will be prompted for the ***`XSA_ADMIN`*** password (which is initially set to the master password during the first boot initialization).
->&nbsp;
->You can get the list of organizations using the following command:
-&nbsp;
+#### Rescale services:
+
+The following services can be scaled up to ensure a better user experience during this tutorial series.
+
 ```shell
-xs orgs
+xs scale di-runner -m 512M -f -w
+xs scale di-core -m 512M -f -w
 ```
-> and the list of spaces using:
-&nbsp;
+
+#### Run the memory collector script:
+
+The following script can be executed at any time to collected back unused process memory.
+
 ```shell
-xs spaces
+/usr/sap/HXE/home/bin/hxe_gc.sh
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Verify the builders deployment)]
+[ACCORDION-BEGIN [Step 1: ](Verify the builders deployment)]
 
 With some installations, the builders are not deployed in the ***development*** space which will prevent you from successfully building and running your projects in the SAP Web IDE.
 
@@ -114,7 +130,7 @@ Showing status and information about "di-space-enablement-ui"
   memory:           16.0 MB
   disk:             <unlimited>
   buildpack:        ***************
-  urls:             https://hxehost:51024
+  urls:             https://hxehost:510XX
 ```
 
 #### Start the app:
@@ -139,7 +155,7 @@ Showing status and information about "di-space-enablement-ui"
   memory:           16.0 MB
   disk:             <unlimited>
   buildpack:        ***************
-  urls:             https://hxehost:51024
+  urls:             https://hxehost:510XX
 
 Instances of droplet 1 created at Apr 4, 2018 5:36:52 PM
 index  created                 state    os user
@@ -151,7 +167,7 @@ index  created                 state    os user
 
 You can now access the application ***`urls`*** displayed in the previous command output.
 
-From the previous output, the URL is: `https://hxehost:51024`
+From the previous output, the URL is: `https://hxehost:510XX` (make sure to adjust the URL based on your current output).
 
 Login using the **`XSA_ADMIN`** credentials.
 
@@ -176,42 +192,13 @@ Based on the outputs returned previously, provide an answer to the question belo
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Rescale processes)]
-
-If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands to stop certain services, rescale the memory used by some processes and run the memory collector.
-
-#### Stop services:
-
-The following services can be stopped as you won't leverage them in this tutorial series.
-
-```shell
-xs stop sap-portal-static-resources
-xs stop cockpit-telemetry-svc
-```
-
-#### Stop services:
-
-The following services can be scaled up to ensure a better user experience during this tutorial series.
-
-```shell
-xs scale di-runner -m 512M -f -w
-xs scale di-core -m 512M -f -w
-```
-
-#### Run the memory collector script:
-
-The following script can be executed at any time to collected back unused process memory.
-
-```shell
-/usr/sap/HXE/home/bin/hxe_gc.sh
-```
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 4: ](Access the SAP HANA XS Advanced Cockpit)]
 
-From the XSA Controller page, access the **SAP HANA XS Advanced Cockpit***.
+From the XSA Controller page, access the **SAP HANA XS Advanced Cockpit**.
+
+As a reminder the default URL for the SAP HANA XS Advanced Cockpit is:
+
+ - `https://hxehost:39030`
 
 ![XSA Controller](04-01.png)
 
@@ -223,18 +210,14 @@ Once logged in, you will get access to the SAP HANA XS Advanced Cockpit:
 
 ![SAP HANA XS Advanced Cockpit](04-03.png)
 
-As a reminder the default URL for the SAP HANA XS Advanced Cockpit is:
-
- - `https://hxehost:51036`
-
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Update the XSA tenant configuration)]
 
-By default, the *SYSTEMDB* will be used when deploying or running your XSA application using HDI containers.
+By default, the ***SYSTEMDB*** will be used when deploying or running your XSA application using HDI containers.
 
-However, in order to leverage the SAP HANA AFL libraries, you will need to enable the *Script Server*, which is not possible on the *SYSTEMDB*.
+However, in order to leverage the SAP HANA AFL libraries, you will need to enable the *Script Server*, which is not possible on the ***SYSTEMDB***.
 
 Therefore, you will need to map the HXE tenant to your development space.
 
@@ -248,7 +231,7 @@ As you can notice, by default, the HXE tenant is not enabled for XSA and is not 
 
 Click on the **Enable** icon ![SAP HANA XS Advanced Cockpit](00-xsa-tenant-enable.png) for the **HXE** tenant.
 
-Provide the SYSTEM user credentials for the HXE tenant ( ***Tenant Database*** ) and the SYSTEMDB ( ***Physical Database*** ).
+Provide the ***SYSTEM*** user credentials for the HXE tenant (in the ***Tenant Database*** section) and the SYSTEMDB (in the ***Physical Database*** section).
 
 ![SAP HANA XS Advanced Cockpit](05-03.png)
 
@@ -335,7 +318,7 @@ Select **SAP HANA Database (Multitenant)** as ***Database Type***.
 
 Enter the HXE host name and instance number (default value is 90).
 
-Select **Tenant Database**.
+Select **Tenant Database** and enter **HXE** as name.
 
 Enter the **SYSTEM** user name and password (which is initially set to the master password during the first boot initialization).
 
@@ -376,7 +359,13 @@ Paste the following SQL statement in the console and click on the ***Run*** icon
 ALTER DATABASE HXE ADD 'scriptserver';
 ```
 
-Now, you can now verify that the service is started using the first SQL statement.
+Select the **HXE** tenant connection in the ***Database Explorer*** panel, then click on the **Open SQL Console** icon ![Database Explorer](00-dbexplorer-sql.png) (or press ***CTRL+ALT+C***).
+
+Now, you can now verify that the service is started using the following SQL statement.
+
+```sql
+SELECT SERVICE_NAME, PORT, ACTIVE_STATUS FROM SYS.M_SERVICES ORDER BY 1;
+```
 
 The result should return a list of service names, their associated port numbers and their statuses including an entry for the `scriptserver`.
 

@@ -3,10 +3,10 @@ title: An Open Data Protocol (OData) primer for developers
 description: Learn how to explore the data in an OData service, and the functionality included in the service.
 primary_tag: topic>odata
 tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
+time: 15
 ---
 
 ## Prerequisites
-- **Proficiency:** Intermediate
 - **Tutorials:** [Localizing your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
 
 ## Next Steps
@@ -33,9 +33,6 @@ There is a wealth of information available at [http://www.odata.org](http://www.
     - `$select`
     - `$expand`
 
-
-### Time to Complete
-**10-15 min**
 
 ---
 

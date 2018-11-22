@@ -1,18 +1,23 @@
 ---
 title: Adding a Custom Login Screen to your HXE system
 description: See how quickly and easily you can customize your HXE Server Only image and add a custom login screen.
-primary_tag: products>sap-hana\,-express-edition 
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition  ]
+time: 10
 ---
 ## Prerequisites  
  - **Systems used:** SAP HANA, express edition
 
 
-## How-To Details
+## Details
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
+
 The following steps will show you how to customize the login screen of your individual instance. Why might you want to do that? Well for starters if you have multiple systems this would help you distinguish between them or perhaps you simply want to make your system unique and your own.
 
-### Time to Complete
-**10 Min**.
 
 ---
 
@@ -88,4 +93,3 @@ The following steps will show you how to customize the login screen of your indi
 11. If you modify the configuration again you will notice we have something specifically for today, Halloween.
 
 	![halloween](16.png)
-

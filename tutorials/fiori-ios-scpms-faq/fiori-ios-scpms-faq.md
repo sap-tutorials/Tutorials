@@ -3,6 +3,7 @@ title: SAP Cloud Platform SDK for iOS - FAQ
 description: Frequently Asked Questions on the  SAP Cloud Platform SDK for iOS
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
+time: 15
 ---
 
 

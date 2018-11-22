@@ -4,16 +4,16 @@ description: Provide details on the import data feature available via the IMPORT
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition ]
+time: 10
 ---
 
 ## Prerequisites  
-- Proficiency: beginner
 - SSH and FTP client installed, running and properly connected to your SAP HANA, express edition.
 - [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 - [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
+## Details
 ### You will learn
-
 In this tutorial, you will learn how to use the IMPORT FROM SQL command and load data set files to your SAP HANA, express edition.
 
 The IMPORT FROM SQL command requires the files to be physically located on your SAP HANA, express edition host.
@@ -26,11 +26,6 @@ As an alternate solution, you can also use the ***SAP HANA Tools*** for Eclipse 
 However, it allows you to import data directly from your client and not the AP HANA, express edition host.
 
 For more information, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
-
-## Details
-
-### Time to Complete
-**10 Min**.
 
 [ACCORDION-BEGIN [Prerequisite: ](Prepare your environment)]
 

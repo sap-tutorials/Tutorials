@@ -3,10 +3,10 @@ title: Calculate and display a new field in an SAPUI5 app
 description: Compute a new field from data in the OData service and display it in your app.
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
+time: 15
 ---
 
 ## Prerequisites
-- **Proficiency:** Intermediate
 - **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)
 
 ## Next Steps
@@ -30,8 +30,6 @@ The field is calculated each time the detail view is displayed and is not persis
 
 ![Calculated Field Example](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_0.png)
 
-### Time to Complete
-**10-15 min**
 
 ---
 

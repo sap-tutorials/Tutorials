@@ -3,9 +3,9 @@ title: SAP UI5 - Create an empty UI5 Web IDE project
 description: Start working with the Web IDE editor, and create a new empty UI5 Web IDE project
 primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
+time: 5
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
 - **Tutorials:**  [Open the SAP Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 - **Tutorials:**  [Configure the Northwind Destination](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
 
@@ -14,10 +14,7 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 
 ## Details
 ### You will learn  
-How to create a new, empty, SAP Web IDE project.  
-
-### Time to Complete
-**2-3 Minutes**.
+  - How to create a new, empty, SAP Web IDE project  
 
 ---
 > **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)

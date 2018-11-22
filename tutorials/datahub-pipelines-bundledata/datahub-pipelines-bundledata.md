@@ -1,18 +1,19 @@
 ---
-title: Bundle data (via JavaScript)
-description: Bundle sensor data before storing it in HDFS by using SAP Data Hub, developer edition.
+title: Bundle data (via JavaScript) in SAP Data Hub, developer edition 1.4
+description: Bundle sensor data before storing it in HDFS by using SAP Data Hub, developer edition 1.4.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
+
  - You have completed [Store sensor data in HDFS](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
 
 ## Next Steps
 - [Store sensor data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (end of-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how you can "bundle" (in the sense that not each single sensor record creates a new file) the sensor data before you store it in HDFS. You will use a **JavaScript Operator** for this.
 
@@ -106,6 +107,3 @@ hdfs dfs -cat /tmp/hdfsManager/test_1.txt
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Store sensor data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)

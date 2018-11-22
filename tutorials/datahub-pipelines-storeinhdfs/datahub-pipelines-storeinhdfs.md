@@ -1,18 +1,19 @@
 ---
-title: Store sensor data in HDFS
-description: Use HDFS to store sensor data by using SAP Data Hub, developer edition.
+title: Store sensor data in HDFS in SAP Data Hub, developer edition 1.4
+description: Use HDFS to store sensor data by using SAP Data Hub, developer edition 1.4.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
+
  - You have completed [Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
 
 ## Next Steps
  - [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (end of-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to store sensor data in the Hadoop Distributed File System (HDFS). You will use an **HDFS Producer** operator for this.
 
@@ -86,6 +87,3 @@ Stop the pipeline by pressing the **Stop** button.
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)

@@ -1,18 +1,18 @@
 ---
-title: Navigate around SAP Data Hub, developer edition
-description: Find your way around SAP Data Hub, developer edition.
+title: Navigate around SAP Data Hub, developer edition 1.4
+description: Find your way around SAP Data Hub, developer edition 1.4.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - You have completed [Set up SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-setup.html)
 
 ## Next Steps
  - [Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (end of-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to find your way around SAP Data Hub, developer edition. You will also learn how to troubleshoot problems.
 
@@ -95,6 +95,3 @@ To troubleshoot problems, take a look at the logs inside the Docker container. Y
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)

@@ -1,5 +1,5 @@
 ---
-title: Image Classification example with SAPUI5
+title: Image Classification with SAPUI5
 description: Discover how to implement SAP Leonardo Machine Learning Foundation service in a SAPUI5 application
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation

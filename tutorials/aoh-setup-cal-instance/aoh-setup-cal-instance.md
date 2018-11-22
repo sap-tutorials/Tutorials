@@ -103,5 +103,3 @@ Proceed to add the 90-day trial license as described in the Getting Started Guid
 
 ---
 
-## Next Steps
-- [Connect to Eclipse and Create a Project](https://www.sap.com/developer/tutorials/abap-create-project.html)

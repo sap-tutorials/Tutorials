@@ -1,25 +1,19 @@
 ---
 title: Create a Destination for an External API (Slack)
-description: Create a destination in SAP Cloud Platform to connect with an external API
+description: Create a destination in SAP Cloud Platform to connect with an external API.
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
+time: 10
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** This is the first tutorial in this series.  
-
-## Next Steps
- - [Register your App with an External API](https://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
 
 ## Details
 ### You will learn  
 Please note that while this is a beginner level tutorial, it is recommended that you start with another tutorial series for SAPUI5 for your first application. If you have built a UI5 application before, it will be beneficial in completing this tutorial series.
 
 You will create a destination in your SAP Cloud Platform that will connect you to the external API for Slack. This will be used in a later tutorial to complete a REST call. If you do not have a Slack or do not wish to connect to the Slack API, you can modify this tutorial to adapt it for the external API you are attempting to connect to. See the Optional steps to learn how to modify your destination for other APIs and other API destination examples.
-
-### Time to Complete
-**10 Min**.
 
 ---
 
@@ -136,6 +130,3 @@ See some other examples below of destination details for other APIs.
 
 [DONE]
 [ACCORDION-END]
-
-## Next Steps
- - [Register your App with an External API](https://www.sap.com/developer/tutorials/sapui5-register-app-api.html)

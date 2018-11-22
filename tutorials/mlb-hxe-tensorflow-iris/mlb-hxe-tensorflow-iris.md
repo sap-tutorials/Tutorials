@@ -3,13 +3,13 @@ title: Deploy a TensorFlow Iris Classifier in SAP HANA, express edition
 description: Provide details on the deployment of a classifier model based on the Iris dataset in SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
 time: 20
 ---
 
 ## Details
 ### You will learn
-  - How to build and deploy a TensorFlow Deep Neural Network Classifier for the Iris dataset and then integrate it with SAP HANA, express edition
+During this tutorial, you will learn how to build and deploy a TensorFlow Deep Neural Network Classifier for the Iris dataset and then integrate it with SAP HANA, express edition.
 
 As part of the [TensorFlow models repository](https://github.com/tensorflow/models), you can find the script for a simple Deep Neural Network using the Iris dataset for classification.
 
@@ -20,8 +20,6 @@ However, this script doesn't include a step to export the model using the `Saved
 Therefore, you will use a modified version of the script to train then export the model in the right format.
 
 The SAP HANA External Machine Learning integration also requires the of the ***raw*** tensors in the model signature instead of the `tf.train.Example` approach.
-
----
 
 [ACCORDION-BEGIN [Step 1: ](Build and Export a TensorFlow Model)]
 

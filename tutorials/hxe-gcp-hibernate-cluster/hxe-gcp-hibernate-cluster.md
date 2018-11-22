@@ -3,7 +3,7 @@ title: Add spatial clustering with Hibernate
 description: Make use of the SAP HANA geospatial clustering capabilities.
 auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition ]
 time: 20
 ---
 
@@ -114,41 +114,111 @@ Save the `IncidentClusterRepository.java` file.
 [ACCORDION-BEGIN [Step 2: ](Enable the cluster tab on the web UI)]
 To make the clustering accessible in the web UI, the corresponding navigation tab needs to be enabled.
 
-Open the file `navigationPanel.html` from the directory `src/main/resources/templates`.
+Open the file `selectPanel.html` from the directory `src/main/resources/templates`.
 
 ```html
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-</head>
-<body>
-	<ul class="nav nav-tabs" th:fragment="navigationPanel(active)">
-		<li role="presentation" th:classappend="${active == null || #strings.isEmpty(active) || active == 'visualize'} ? active : inactive"><a href="/"><strong th:text="${visualizeText} ?: 'Visualize'">Visualize</strong></a></li>
-		<li role="presentation" th:classappend="${active == 'analyze'} ? active : inactive"><a href="/analyze"><strong th:text="${analyzeText} ?: 'Analyze'">Analyze</strong></a></li>
-		<!-- <li role="presentation" th:classappend="${active == 'cluster'} ? active : inactive"><a href="/cluster"><strong th:text="${clusterText} ?: 'Cluster'">Cluster</strong></a></li> -->
-	</ul>
-</body>
-</html>
+<!---8<---*snip*---8<--->
+
+<div class="row justify-content-center">
+  <div class="col align-middle"><span class="h3 text-nowrap">SFPD Police Data Analyzer</span></div>
+  <div class="col">
+    <ul class="nav nav-pills nav-fill">
+      <li role="presentation" class="nav-item border-left border-right px-1">
+        <div th:switch="${active == null || #strings.isEmpty(active) || active == 'visualize'}">
+          <a th:case="${true}" class="nav-link active collapsed" href="#" data-toggle="collapse" data-target="#selectForm" aria-expanded="true" aria-controls="selectForm">
+            <span th:text="${visualizeText} ?: 'Visualize'">Visualize</span> <span id="ddArrow">&#x25B4;</span>
+          </a>
+          <a th:case="*" class="nav-link inactive collapsed" href="/">
+            <span th:text="${visualizeText} ?: 'Visualize'">Visualize</span>
+          </a>
+        </div>
+      </li>
+      <li role="presentation" class="nav-item border-right px-1">
+        <div th:switch="${active == 'analyze'}">
+          <a th:case="${true}" class="nav-link active collapsed" href="#" data-toggle="collapse" data-target="#selectForm" aria-expanded="true" aria-controls="selectForm">
+            <span th:text="${analyzeText} ?: 'Analyze'">Analyze</span> <span id="ddArrow">&#x25B4;</span>
+          </a>
+          <a th:case="*" class="nav-link inactive collapsed" href="/analyze">
+            <span th:text="${analyzeText} ?: 'Analyze'">Analyze</span>
+          </a>
+        </div>
+      </li>
+      <!-- <li role="presentation" class="nav-item border-right px-1">
+        <div th:switch="${active == 'cluster'}">
+          <a th:case="${true}" class="nav-link active collapsed" href="#" data-toggle="collapse" data-target="#selectForm" aria-expanded="true" aria-controls="selectForm">
+            <span th:text="${clusterText} ?: 'Cluster'">Cluster</span> <span id="ddArrow">&#x25B4;</span>
+          </a>
+          <a th:case="*" class="nav-link inactive collapsed" href="/cluster">
+            <span th:text="${clusterText} ?: 'Cluster'">Cluster</span>
+          </a>
+        </div>
+      </li>-->
+    </ul>
+  </div>
+  <div class="col text-right align-middle">
+    <div class="form-check form-check-inline align-middle mt-2">
+      <label class="form-check-label text-secondary text-nowrap" for="autoCollapseCheckbox">auto collapse</label>
+      <input class="form-check-input ml-1" type="checkbox" id="autoCollapseCheckbox" value="true" checked="checked">
+    </div>
+  </div>
+</div>
+
+<!---8<---*snip*---8<--->
 ```
 
 Remove the comment tags around the last navigation item.
 
 ```html
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-</head>
-<body>
-	<ul class="nav nav-tabs" th:fragment="navigationPanel(active)">
-		<li role="presentation" th:classappend="${active == null || #strings.isEmpty(active) || active == 'visualize'} ? active : inactive"><a href="/"><strong th:text="${visualizeText} ?: 'Visualize'">Visualize</strong></a></li>
-		<li role="presentation" th:classappend="${active == 'analyze'} ? active : inactive"><a href="/analyze"><strong th:text="${analyzeText} ?: 'Analyze'">Analyze</strong></a></li>
-		<li role="presentation" th:classappend="${active == 'cluster'} ? active : inactive"><a href="/cluster"><strong th:text="${clusterText} ?: 'Cluster'">Cluster</strong></a></li>
-	</ul>
-</body>
-</html>
+<!---8<---*snip*---8<--->
+
+<div class="row justify-content-center">
+  <div class="col align-middle"><span class="h3 text-nowrap">SFPD Police Data Analyzer</span></div>
+  <div class="col">
+    <ul class="nav nav-pills nav-fill">
+      <li role="presentation" class="nav-item border-left border-right px-1">
+        <div th:switch="${active == null || #strings.isEmpty(active) || active == 'visualize'}">
+          <a th:case="${true}" class="nav-link active collapsed" href="#" data-toggle="collapse" data-target="#selectForm" aria-expanded="true" aria-controls="selectForm">
+            <span th:text="${visualizeText} ?: 'Visualize'">Visualize</span> <span id="ddArrow">&#x25B4;</span>
+          </a>
+          <a th:case="*" class="nav-link inactive collapsed" href="/">
+            <span th:text="${visualizeText} ?: 'Visualize'">Visualize</span>
+          </a>
+        </div>
+      </li>
+      <li role="presentation" class="nav-item border-right px-1">
+        <div th:switch="${active == 'analyze'}">
+          <a th:case="${true}" class="nav-link active collapsed" href="#" data-toggle="collapse" data-target="#selectForm" aria-expanded="true" aria-controls="selectForm">
+            <span th:text="${analyzeText} ?: 'Analyze'">Analyze</span> <span id="ddArrow">&#x25B4;</span>
+          </a>
+          <a th:case="*" class="nav-link inactive collapsed" href="/analyze">
+            <span th:text="${analyzeText} ?: 'Analyze'">Analyze</span>
+          </a>
+        </div>
+      </li>
+      <li role="presentation" class="nav-item border-right px-1">
+        <div th:switch="${active == 'cluster'}">
+          <a th:case="${true}" class="nav-link active collapsed" href="#" data-toggle="collapse" data-target="#selectForm" aria-expanded="true" aria-controls="selectForm">
+            <span th:text="${clusterText} ?: 'Cluster'">Cluster</span> <span id="ddArrow">&#x25B4;</span>
+          </a>
+          <a th:case="*" class="nav-link inactive collapsed" href="/cluster">
+            <span th:text="${clusterText} ?: 'Cluster'">Cluster</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col text-right align-middle">
+    <div class="form-check form-check-inline align-middle mt-2">
+      <label class="form-check-label text-secondary text-nowrap" for="autoCollapseCheckbox">auto collapse</label>
+      <input class="form-check-input ml-1" type="checkbox" id="autoCollapseCheckbox" value="true" checked="checked">
+    </div>
+  </div>
+</div>
+
+<!---8<---*snip*---8<--->
 ```
 
-Save the `navigationPanel.html` file.
+Save the `selectPanel.html` file.
 
 [DONE]
 

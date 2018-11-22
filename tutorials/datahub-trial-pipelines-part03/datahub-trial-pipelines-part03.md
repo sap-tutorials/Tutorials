@@ -1,19 +1,13 @@
 ---
-title: Store sensor data in Google Cloud Storage
+title: Store sensor data in Google Cloud Storage in SAP Data Hub 1.4
 description: Use Google Cloud Storage to store sensor data by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Use a message broker](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part02.html)
-
-## Next Steps
-- [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part04.html)
-
-## Details
+## Details#
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 - How to store sensor data in **Google Cloud Storage**
 - How to use the operators **GCS Consumer** and **GCS Producer**
@@ -149,6 +143,3 @@ Stop the pipeline by clicking **Stop**.
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-- [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part04.html)

@@ -3,9 +3,9 @@ title: Core Data  Services, Preparing views for Associations/Joins
 description: Core Data  Services, Preparing views for Associations/Joins
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner, products>sap-s-4hana ]
+time: 20
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:**
  - [Creating basic view](https://www.sap.com/developer/tutorials/s4hana-cds-creating-basic-view.html)  
  - [Creating consumption view](https://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
@@ -16,10 +16,7 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 
 ## Details
 ### You will learn  
-You will prepare a basic view for Association; in other words, for joining with other views.
-
-### Time to Complete
-**15-25 Min**
+  - How to prepare a basic view for Association; in other words, for joining with other views
 
 ---
 

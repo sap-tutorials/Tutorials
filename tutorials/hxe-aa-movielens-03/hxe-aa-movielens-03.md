@@ -1,5 +1,5 @@
 ---
-title: Import the MovieLens dataset
+title: Import the MovieLens dataset (MovieLens App)
 description: Learn how to easily import flat dataset files in your SAP HANA, express edition instance using the Design-Time objects and Core Data Services (CDS) features
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -15,11 +15,10 @@ time: 20
 
 ## Details
 ### You will learn
-
 - How to create CDS artifacts to expose your dataset as CDS entities.
 - How to load your dataset content in the CDS entities.
 
-[ACCORDION-BEGIN [Info: ](Which MovieLens dataset?)]
+[ACCORDION-BEGIN [Step 1:](Which MovieLens dataset?)]
 
 In order to build your movie recommendation engine, you will be using one of the `MovieLens` dataset.
 
@@ -38,7 +37,7 @@ Before using these data sets, please review the <a href="http://files.grouplens.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](SAP HANA data import options)]
+[ACCORDION-BEGIN [Step 1:](SAP HANA data import options)]
 
 There are multiple ways to import data set files inside of your SAP HANA, express edition instance.
 
@@ -117,14 +116,14 @@ Click on **Finish**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create the folder structure)]
+[ACCORDION-BEGIN [Step 1: ](Create the folder structure)]
 
 Expand the **`movielens/db/src`** folder.
 
 Create the following directory structure:
 
 ```
-|-- movielens/db
+|-- movielens/db/src
     |-- data
     |-- hdb
         |-- apl
@@ -145,7 +144,7 @@ Enter the folder name, then click on **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import the dataset CSV files)]
+[ACCORDION-BEGIN [Step 1: ](Import the dataset CSV files)]
 
 As the dataset files get updated periodically, and in order to ensure consistency of content and validation, a copy of the data is available under the <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hxe-aa-movielens-03/data" target="new">data</a> directory within the SAP Tutorial GitHub repository.
 
@@ -158,7 +157,7 @@ Download the following files locally (right click on the link, then use the ***S
 
 Again, before using these files, make sure you have reviewed the dataset <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> file for the usage licenses and other details.
 
-In the left side panel, expand the **`movielens/db/src/hdb/data`** tree node.
+In the left side panel, expand the **`movielens/db/src/data`** tree node.
 
 Right click on the **`data`** folder, and use the **Import** > **File or Project** menu item.
 
@@ -185,7 +184,7 @@ Your package structure should now look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the CDS Entity Artifacts)]
+[ACCORDION-BEGIN [Step 1: ](Create the CDS Entity Artifacts)]
 
 > #### **CDS Entities Artifacts**
 >
@@ -203,7 +202,7 @@ Your package structure should now look like this:
 >&nbsp;
 >For additional details, check the [CDS Entities in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/df46a790f0694b0d9820487b385d138c.html) documentation.
 
-Create a new file named **`data.hdbcds`** in the **`moveilens/db/src/hdb`** folder.
+Create a new file named **`data.hdbcds`** in the **`movielens/db/src/hdb`** folder.
 
 By default the ***Graphical Editor*** will open. Close it, and right click on the **`data.hdbcds`** file, and go to **Open with > Code Editor**.
 
@@ -252,7 +251,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the Table Data Artifacts)]
+[ACCORDION-BEGIN [Step 1: ](Create the Table Data Artifacts)]
 
 > #### **Table Data Artifact**
 >
@@ -260,7 +259,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 >&nbsp;
 >For additional details, check the [Table Data in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/35c4dd829d2046f29fc741505302f74d.html) documentation.
 
-Create a new file named **`data.hdbtabledata`** in the **`moveilens/db/src/hdb`** folder.
+Create a new file named **`data.hdbtabledata`** in the **`movielens/db/src/hdb`** folder.
 
 This is the full path of the created file:
 
@@ -349,7 +348,7 @@ Save the file using the ![plus](00-save.png) icon from the menu.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Build the SAP HANA Database Module)]
+[ACCORDION-BEGIN [Step 1: ](Build the SAP HANA Database Module)]
 
 Right click on the **`db`** folder and select **Build**.
 
@@ -364,7 +363,7 @@ The console should display at the end the following message:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Open the Database Explorer)]
+[ACCORDION-BEGIN [Step 1: ](Open the Database Explorer)]
 
 On the left side bar, click on the Database Explorer icon ![Web IDE](00-dbexplorer-icon.png) icon.
 
@@ -383,7 +382,7 @@ Select the **Tables** element, and your tables should appear in the list.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Validate the import)]
+[ACCORDION-BEGIN [Step 1: ](Validate the import)]
 
 Let's now validate that the data was properly loaded.
 
@@ -406,7 +405,7 @@ Based on the result returned by the above SQL statement, provide an answer to th
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Commit your changes)]
+[ACCORDION-BEGIN [Step 1: ](Commit your changes)]
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 

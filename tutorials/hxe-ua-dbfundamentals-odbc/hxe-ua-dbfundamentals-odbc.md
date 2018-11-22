@@ -1,6 +1,7 @@
 ---
 title: Install and Configure unixODBC
 description: Learn how to complete common tasks when setting up a new database. In this tutorial, you will install and configure unixODBC.
+auto_validation: true
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
@@ -54,7 +55,7 @@ On your client machine(s), do the following:
     sudo sh - c 'echo <ip_address_of_host>    <alias> >> /etc/hosts'
     ```
 
-
+[DONE]
 [ACCORDION-END]
 
 > **Note:**
@@ -96,7 +97,7 @@ On your client machine(s), do the following:
 
     ![unixODBC install success](odbcinst.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create the .odbc.ini File)]
@@ -137,7 +138,7 @@ On your client machine(s), do the following:
     databasename = client
     ```
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -159,5 +160,5 @@ If successful, a list of commands displays:
 
 ![Successful Connection](odbcconnect_success.png)
 
-
+[VALIDATE_1]
 [ACCORDION-END]

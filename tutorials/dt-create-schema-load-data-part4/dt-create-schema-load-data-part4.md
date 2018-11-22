@@ -121,5 +121,3 @@ You can look at the columns: `TABLE_NAME`, `REFERENCED_TABLE_NAME` and `CONSTRAI
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part5.html)

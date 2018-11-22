@@ -3,20 +3,20 @@ title: SAP HANA Studio, Display your Application
 description: Import Data to your SAP HANA system
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition , products>sap-hana-studio ]
+time: 10
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [SAP HANA Studio, Import your data](https://www.sap.com/developer/tutorials/studio-import-data.html)
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
 Now that you have data it's time to display it in some way as well as enable access to your data.
 
-### Time to Complete
-**10 Min**.
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
 
 ---
 
@@ -99,7 +99,3 @@ Now that you have data it's time to display it in some way as well as enable acc
 5. With a bit of magic you should now be able to see your data on a map once you have saved and activated it to the server.
 
 	![New file](6.png)
-
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

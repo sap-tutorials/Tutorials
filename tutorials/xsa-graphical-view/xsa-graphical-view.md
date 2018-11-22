@@ -1,25 +1,19 @@
 ---
-title: SAP HANA XS Advanced, Creating a Dimension Graphical Calculation View
-description: Creating a Graphical Calculation View with a Dimension data type
+title: Create a Dimension Graphical Calculation View (XS Advanced)
+description: Create a graphical calculation view with a dimension data type.
 primary_tag: products>sap-hana
 auto_validation: true
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Intermediate
 - **Tutorials:** [Import SHINE tables and data](https://www.sap.com/developer/tutorials/xsa-import-shine-data.html)
-
-## Next Steps
-- [Creating a Calculation View with a Cube data type and Star Join](https://www.sap.com/developer/tutorials/xsa-graphical-cube-view.html)
 
 ## Details
 ### You will learn  
 - How to create a calculation view with a Dimension data type
 - How to perform the basic modelling operations, such as projections and joins
 - This tutorial is also available for [SPS01 as a video](https://youtube.com/watch?v=c520hUfd88E)
-
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -186,6 +180,3 @@ The output should be similar to the following. Copy the SQL statement produced b
 
 
 ---
-
-## Next Steps
-- [Creating a Calculation View with a Cube data type and Star Join](https://www.sap.com/developer/tutorials/xsa-graphical-cube-view.html)

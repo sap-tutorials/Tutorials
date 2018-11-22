@@ -3,6 +3,7 @@ title: Create a CDS view (ABAP)
 description: You will learn how to use the Core Data Services (CDS) tools in ABAP in Eclipse.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
+time: 15
 ---
 
 ## Prerequisites  
@@ -24,6 +25,7 @@ You will add the following:
 You can find more information about CDS in the [ABAP keyword documentation](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/abencds.htm) and the [SAP Community](https://www.sap.com/community/topic/abap.html).
 
 ---
+
 [ACCORDION-BEGIN [Step 1: ](Create a CDS view)]
   1. In the context menu of your package choose **New** and then choose **Other ABAP Repository Object**.
   ![Image depicting step1-newObject](step1-newObject.png)
@@ -149,6 +151,3 @@ Open the CDS View in the Data Preview by choosing **F8**. Your CDS View should l
 ![Image depicting step 15-data-preview](step 15-data-preview.png)
 
 [ACCORDION-END]
-
-## Next Steps
-- [Display a CDS view using ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)

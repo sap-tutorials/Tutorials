@@ -1,5 +1,5 @@
 ---
-title: Time Series with SAP HANA PAL
+title: Time Series with SAP HANA PAL (Forecast SQL)
 description: Understand the capabilities and options made available with the SAP HANA Predictive Analytics Library (PAL), which algorithm can be used to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -12,7 +12,6 @@ time: 30
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Predictive Analytics Library
 - How to call SAP HANA Predictive Analytics Library functions from SQL
 - Identify which algorithm options are available for recommendation engines
@@ -167,19 +166,6 @@ There are multiple Time Series algorithms that can be used in PAL, but here are 
  - **Auto Exponential Smoothing**: calculate optimal parameters for Single, Double and Triple Exponential Smoothing functions
 
 However, before selecting one, you will need to address the existence of a trend, a seasonal component or white noise which can be achieved using the **Seasonality Test** function.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this tutorial, you will need to setup a SQL query tool for SAP HANA, express edition.
-
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
 
 [DONE]
 [ACCORDION-END]
@@ -382,20 +368,6 @@ Where you have:
  - the trend component (blue)
  - the random component (orange)
 
-The above graph was generated using the following Python code:
-
-```python
-results= %sql select * from pal_seasonality_decomposed_ozone;
-
-fig, ax = plt.subplots()
-ax.plot(results.timestamp, results.seasonal , 'ro-', markersize=2, color='green')
-ax.plot(results.timestamp, results.trend    , 'ro-', markersize=2, color='blue')
-ax.plot(results.timestamp, results.random   , 'ro-', markersize=2, color='orange')
-
-fig.set_size_inches(20, 12)
-plt.show()
-```
-
 ##### **Conclusion**
 
 A few interesting information can be extracted here:
@@ -564,30 +536,6 @@ Where you have:
  - the forecasted values (blue)
  - the error bar (red)
 
-The above graph was generated using the following Python code:
-
-```python
-results = %sql select \
-    timestamp, signal, forecast as forecast, pi1_lower, pi1_upper, pi2_lower, pi2_upper \
-from  \
-     pal_auto_expsmooth_forecast_cashflow f \
-left outer join pal_input_data_cashflow d  \
-on   d.time = f.timestamp \
-order by timestamp asc; \
-
-fig, ax = plt.subplots()
-ax.plot(results.timestamp, results.signal    , 'ro-', markersize=2, color='green')
-ax.plot(results.timestamp, results.forecast  , 'ro-', markersize=2, color='blue')
-ax.plot(results.timestamp, results.pi1_lower , 'ro-', markersize=2, color='orange')
-ax.plot(results.timestamp, results.pi1_upper , 'ro-', markersize=2, color='orange')
-ax.plot(results.timestamp, results.pi2_lower , 'ro-', markersize=2, color='red')
-ax.plot(results.timestamp, results.pi2_upper , 'ro-', markersize=2, color='red')
-
-fig.set_size_inches(20, 20)
-plt.show()
-```
-
-
 ### **Auto Exponential Smoothing on Ozone**
 
 #### **Set the algorithm parameters**
@@ -677,29 +625,6 @@ Where you have:
  - the training data set (green)
  - the forecasted values (blue)
  - the error bar (red)
-
-The above graph was generated using the following Python code:
-
-```python
-results = %sql select \
-    timestamp, signal, forecast as forecast, pi1_lower, pi1_upper, pi2_lower, pi2_upper \
-from  \
-     pal_auto_expsmooth_forecast_ozone f \
-left outer join pal_input_data_ozone d  \
-on   d.time = f.timestamp \
-order by timestamp asc; \
-
-fig, ax = plt.subplots()
-ax.plot(results.timestamp, results.signal    , 'ro-', markersize=2, color='green')
-ax.plot(results.timestamp, results.forecast  , 'ro-', markersize=2, color='blue')
-ax.plot(results.timestamp, results.pi1_lower , 'ro-', markersize=2, color='orange')
-ax.plot(results.timestamp, results.pi1_upper , 'ro-', markersize=2, color='orange')
-ax.plot(results.timestamp, results.pi2_lower , 'ro-', markersize=2, color='red')
-ax.plot(results.timestamp, results.pi2_upper , 'ro-', markersize=2, color='red')
-
-fig.set_size_inches(20, 20)
-plt.show()
-```
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -912,31 +837,6 @@ Where you have:
  - the forecasted values (blue)
  - the error bar at 80% (orange) and at 95%(red)
 
-The above graph was generated using the following Python code:
-
-```python
-results = %sql select \
-    time, signal as signal, null as forecast, null as se, null as lo80, null as hi80, null as lo95, null as hi95 \
-from  \
-    pal_input_data_cashflow d \
-union all \
-select  \
-    d.cnt + time, null as signal, forecast, se, lo80, hi80, lo95, hi95 \
-from \
-    pal_arima_forecast_cashflow f, (select count(1)+1 as cnt from pal_input_data_cashflow) d;
-
-fig, ax = plt.subplots()
-ax.plot(results.time, results.signal    , 'ro-', markersize=2, color='green')
-ax.plot(results.time, results.forecast  , 'ro-', markersize=2, color='blue')
-ax.plot(results.time, results.lo80      , 'ro-', markersize=2, color='orange')
-ax.plot(results.time, results.hi80      , 'ro-', markersize=2, color='orange')
-ax.plot(results.time, results.lo95      , 'ro-', markersize=2, color='red')
-ax.plot(results.time, results.hi95      , 'ro-', markersize=2, color='red')
-
-fig.set_size_inches(20, 12)
-plt.show()
-```
-
 ### **Auto Exponential Smoothing on Ozone**
 
 #### **Run the Auto ARIMA training function**
@@ -1053,31 +953,6 @@ Where you have:
  - the training data set (green)
  - the forecasted values (blue)
  - the error bar at 80% (orange) and at 95%(red)
-
-The above graph was generated using the following Python code:
-
-```python
-results = %sql select \
-    time, signal as signal, null as forecast, null as se, null as lo80, null as hi80, null as lo95, null as hi95 \
-from  \
-    pal_input_data_ozone d \
-union all \
-select  \
-    d.cnt + time, null as signal, forecast, se, lo80, hi80, lo95, hi95 \
-from \
-    pal_arima_forecast_ozone f, (select count(1)+1 as cnt from pal_input_data_ozone) d;
-
-fig, ax = plt.subplots()
-ax.plot(results.time, results.signal    , 'ro-', markersize=2, color='green')
-ax.plot(results.time, results.forecast  , 'ro-', markersize=2, color='blue')
-ax.plot(results.time, results.lo80      , 'ro-', markersize=2, color='orange')
-ax.plot(results.time, results.hi80      , 'ro-', markersize=2, color='orange')
-ax.plot(results.time, results.lo95      , 'ro-', markersize=2, color='red')
-ax.plot(results.time, results.hi95      , 'ro-', markersize=2, color='red')
-
-fig.set_size_inches(20, 12)
-plt.show()
-```
 
 Provide an answer to the question below then click on **Validate**.
 
