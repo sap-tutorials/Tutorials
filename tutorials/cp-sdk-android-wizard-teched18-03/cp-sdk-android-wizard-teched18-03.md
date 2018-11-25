@@ -2,8 +2,8 @@
 title: Add Notification Service to Your Application
 description: Add foreground and background notifications to your application with help of Google Firebase.
 auto_validation: true
-primary_tag: operating-system>android
-tags: [  tutorial>beginner, operating-system>android ]
+primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [  tutorial>beginner, operating-system>android, products>sap-cloud-platform-sdk-for-android ]
 time: 10
 ---
 
