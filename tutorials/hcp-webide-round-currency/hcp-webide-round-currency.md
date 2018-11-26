@@ -103,7 +103,3 @@ If the numbers are not rounded, remember to clear the cache as described at the 
 
 [ACCORDION-END]
 
-
-
-## Next Steps:
-- [Insert a currency symbol for display](https://www.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)

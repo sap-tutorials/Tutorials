@@ -269,7 +269,3 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
-## Next Steps
-
-  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

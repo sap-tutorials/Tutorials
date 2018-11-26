@@ -225,5 +225,3 @@ If you now click on one of the **Supplier** entities, it will display the **Deta
 [VALIDATE_11]
 [ACCORDION-END]
 
-## Next Steps
-- [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)

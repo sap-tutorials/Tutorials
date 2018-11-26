@@ -514,5 +514,3 @@ The list should now be filtered based on the scanned results:
 [VALIDATE_11]
 [ACCORDION-END]
 
-## Next Steps
-- [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)

@@ -92,7 +92,3 @@ The `CREATE EXTENDED STORAGE` statement creates the warm store and the required 
 
 [ACCORDION-END]
 
-## Next Steps
- - **Tutorials:** [Create Tables and Import Data](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-3.html)
-
----

@@ -159,5 +159,3 @@ You see that (in contrast to the `Devices` data set) the `EnrichedDevices` data 
 
 ---
 
-## Next Steps
-[Create Workflow (part 2): Aggregate data with Data Transform ](https://developers.sap.com/tutorials/datahub-trial-v2-workflow-part02.html)

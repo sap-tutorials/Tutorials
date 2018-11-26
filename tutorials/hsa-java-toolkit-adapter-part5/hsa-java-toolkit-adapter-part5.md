@@ -96,5 +96,3 @@ Click the **Done** button below once you have completed this tutorial.
 
 [ACCORDION-END]
 
-## Next Steps
- - [Test the Custom Java Toolkit Adapter](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part6.html)

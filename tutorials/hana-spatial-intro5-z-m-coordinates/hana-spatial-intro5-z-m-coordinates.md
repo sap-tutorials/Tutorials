@@ -134,5 +134,3 @@ SELECT NEW ST_Point('POINT Z(0 0 0.5)').ST_Buffer(2).ST_CoordDim() from DUMMY;
 - Check SAP HANA Spatial Reference at <https://help.sap.com/hana_platform>
 
 
-## Next Steps
- - [Intro to SAP HANA Geospatial: Spatial Reference Systems](https://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)

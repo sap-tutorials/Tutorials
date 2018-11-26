@@ -97,7 +97,3 @@ For Example:`/xsodata/businessPartners.xsodata/BP?$top=3&$skip=5&$format=json`
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Create and OData Service with Entity Relationship](https://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)

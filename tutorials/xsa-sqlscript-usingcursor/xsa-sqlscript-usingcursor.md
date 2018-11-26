@@ -148,7 +148,3 @@ You will notice that using cursors takes quite a bit of time.
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Using Arrays](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)

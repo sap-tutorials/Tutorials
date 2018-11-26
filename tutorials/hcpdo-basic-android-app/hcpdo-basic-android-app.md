@@ -126,7 +126,3 @@ Selecting one of the items in the list will show the detail screen:
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)

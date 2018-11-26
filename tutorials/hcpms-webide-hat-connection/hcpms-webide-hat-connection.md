@@ -91,7 +91,3 @@ Open the `SAP_HAT_local-1.xx.x/config.json` file and confirm that the `webIdeHos
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](https://www.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)

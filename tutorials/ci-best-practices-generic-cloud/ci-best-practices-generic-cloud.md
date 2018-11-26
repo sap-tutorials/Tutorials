@@ -152,6 +152,3 @@ Figure 2 illustrates the mechanics of pull requests.
 Figure 2: The CI process with pull requests in GitHub.
 
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

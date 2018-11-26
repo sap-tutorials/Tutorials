@@ -107,8 +107,3 @@ You will learn more about different kinds of spatial aggregations in a separate 
 ### Optional
 - You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/7a13f280787c10148dc893063dfed1c4.html). Make sure you review documentation for the version of SAP HANA you run.
 
-
----
-
-## Next Steps
- - [Computation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-compute.html)

@@ -744,5 +744,3 @@ int main() {
 [ACCORDION-END]
 ---
 
-## Next Steps
- - [Build and Test Custom C/C++ Adapter for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-c-adapter-part3.html)

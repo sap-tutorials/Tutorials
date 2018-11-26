@@ -215,5 +215,3 @@ And the result of `ST_EnvelopeAggr()`:
 - Example: [Calculating number π by throwing darts](https://blogs.sap.com/2016/12/14/calculating-number-%cf%80-by-throwing-darts-digitally-in-sap-hana/)
 - Read [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US)
 
-## Next Steps
-- [Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)

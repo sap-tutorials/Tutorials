@@ -62,5 +62,3 @@ Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password 
 
 ---
 
-## Next Steps
-[Navigate around SAP Data Hub, trial edition 2.3](https://developers.sap.com/germany/tutorials/datahub-trial-v2-navigation.html)

@@ -83,5 +83,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 ---
 
-## Next Steps
-   - [Build and Deploy Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)

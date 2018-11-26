@@ -64,5 +64,3 @@ How to prepare an Amazon Web Services account on which you will setup an ABAP on
 
 [ACCORDION-END]
 
-## Next Steps
-[Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)

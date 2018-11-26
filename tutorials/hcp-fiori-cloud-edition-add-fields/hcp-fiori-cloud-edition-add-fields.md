@@ -196,5 +196,3 @@ Congratulations, you've successfully extended an SAP standard Fiori app.
 
 
 
-## Next Steps
-- [Hide view element from a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-hide-element.html)

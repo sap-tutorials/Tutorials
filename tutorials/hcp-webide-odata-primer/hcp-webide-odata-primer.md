@@ -338,8 +338,6 @@ Use Collection(XYZ) to return a specific record number |  <http://services.odata
 A combination example with `$format`, `$select`, `$expand` and `$filter` |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier&$filter=startswith(Supplier/CompanyName,%20%27Grand%27)>
 
 
-
-
 ## Optional
 If you would like to build an app similar to what you have done in this tutorial series but with "SAP-like" data, you can register for a free SAP Gateway trial. See the [Create an account on the gateway Demo System](https://www.sap.com/developer/tutorials/gateway-demo-signup.html) tutorial.
 
@@ -356,5 +354,3 @@ To build an app like what you have now, but with data from SAP Gateway you simpl
 - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`
 
 
-## Next Steps
-- [Inserting OData query options into your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
