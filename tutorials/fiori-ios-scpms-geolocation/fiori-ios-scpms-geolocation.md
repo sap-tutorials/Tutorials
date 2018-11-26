@@ -1088,6 +1088,3 @@ Or use the event to trigger a separate REST service on SAP Cloud Platform which 
 [DONE]
 [ACCORDION-END]
 
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

@@ -82,6 +82,3 @@ Deploy/publish your changes. Please explicitly stop and start the server, as you
 [ACCORDION-END]
 
 
-
-## Next Steps
-- [End-to-End Weather App Scenario Part 8](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)

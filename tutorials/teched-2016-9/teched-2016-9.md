@@ -3,14 +3,11 @@ title: Internet of Things (IoT) made easy
 description: The idea behind this tutorial is quickly show how to add a device and capture sensor data in the cloud.
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platform ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [ABC Analysis with SAP HANA PAL](https://www.sap.com/developer/tutorials/teched-2016-10.html)
-
-## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [ABC Analysis with SAP HANA PAL](https://www.sap.com/developer/tutorials/teched-2016-10.html)
 
 ## Details
 ### You will learn  
@@ -25,8 +22,6 @@ In this tutorial, we have decided to use a Tessel 2 device.
 
 However, you could just as easily use a Raspberry Pi, Arduino, or any number of other `micro-controller` devices available on the market today.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -291,5 +286,3 @@ The table with your data will match the **Message Type** id generated earlier.
 
 [ACCORDION-END]
 
-## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

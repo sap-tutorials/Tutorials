@@ -116,7 +116,3 @@ Notice the execution time is a little bit less than when doing the calculation u
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Using Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)

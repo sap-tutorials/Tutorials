@@ -132,6 +132,3 @@ If you have implemented a [second tab](https://www.sap.com/developer/tutorials/h
 
 [ACCORDION-END]
 
-
-## Next Steps
-- Continue with the SAP Web IDE series [Add labels and a new field to your app](https://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.

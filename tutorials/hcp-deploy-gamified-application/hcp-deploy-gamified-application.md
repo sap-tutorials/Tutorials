@@ -121,5 +121,3 @@ Select **Overview** from the left-hand navigation and click on the URL provided 
 [ACCORDION-END]
 
 
-## Next Steps
-- [Customize game mechanics of HelpDesk application in SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)

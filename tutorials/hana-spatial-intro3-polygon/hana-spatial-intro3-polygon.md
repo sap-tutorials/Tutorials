@@ -158,5 +158,3 @@ The point (1, 1) is in the circle with the center point of (0, 0) and the radius
 ### Optional
 - Review [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/)
 
-## Next Steps
-- [Spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)

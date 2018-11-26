@@ -94,7 +94,3 @@ If the currency symbol does not show up, remember to clear the cache as describe
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Implementing labels using the i18n (internationalization) features of SAPUI5](https://www.sap.com/developer/tutorials/hcp-webide-labels-i18n.html)

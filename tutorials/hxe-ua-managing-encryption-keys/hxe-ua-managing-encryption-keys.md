@@ -3,24 +3,18 @@ title: Managing Encryption Keys
 description: This tutorial will cover how to change the encryption keys to your SAP HANA, express edition installation.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 10
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html) **or**
+  - [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html) **or**
  [Installing SAP HANA 2.0, express edition (Binary Installer Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html)
- [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+  - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-How to change the encryption keys to your SAP HANA, express edition installation to make it more secure.
-
-### Time to Complete
-**10 Min**
+  - How to change the encryption keys to your SAP HANA, express edition installation to make it more secure
 
 SAP HANA, express edition shares the same encryption keys across installations. For security purposes, generate new encryption keys for your SAP HANA, express edition installation.
 
@@ -113,6 +107,3 @@ The `RESET_COUNT` for the `KEY_TYPE` `DPAPI` will increase by 1.
 
 [ACCORDION-END]
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

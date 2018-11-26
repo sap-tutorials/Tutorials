@@ -123,5 +123,3 @@ Stop the pipeline by clicking **Stop**.
 
 ---
 
-## Next Steps
-- [Store sensor data in GCS](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part03.html)

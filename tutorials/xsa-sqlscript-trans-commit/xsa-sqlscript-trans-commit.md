@@ -123,7 +123,3 @@ As you can see not only was the new record inserted into the `log.errors` table,
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Using Autonomous Transactions](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)

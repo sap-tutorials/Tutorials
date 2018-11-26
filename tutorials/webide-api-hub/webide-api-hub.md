@@ -4,22 +4,18 @@ description: Learn how to use the SAP API Business Hub integration with Web IDE
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide  ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **How-Tos:** Enable the SAP Web IDE Full-Stack
  - **Tutorials:** [Add API Business Hub API to a UI5 Application](https://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
-In this tutorial, you will explore some of the new features that are part of the SAP Web IDE Full-Stack. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of SAP Web IDE. Create and run an SAPUI5/Fiori Application.
-
-### Time to Complete
-**15 Min**
+  - How to explore some of the new features that are part of the SAP Web IDE Full-Stack
+  - How to use the SAP API Business Hub services catalog that is available out of the box in this version of SAP Web IDE
+  - How to create and run an SAPUI5/Fiori application
 
 ---
 
@@ -147,6 +143,3 @@ When your application loads, you will see a list of employee names and emails pu
 [VALIDATE_7]
 [ACCORDION-END]
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

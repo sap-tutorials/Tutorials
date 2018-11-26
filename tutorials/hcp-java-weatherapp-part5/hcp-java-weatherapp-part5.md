@@ -166,5 +166,3 @@ Navigate to the following URL: `http://localhost:8080/weatherapp/api/v1/auth`. A
 
 
 
-## Next Steps
-- [End-to-End Weather App Scenario Part 6](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)

@@ -189,6 +189,3 @@ You can keep these edits if you would like, or to roll back to the previous stat
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Manually creating a data model to use in SAP Web IDE's Mock Data server](https://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)

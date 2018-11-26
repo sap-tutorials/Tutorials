@@ -3,24 +3,21 @@ title: Sample Project
 description: For this beginner tutorial, you will load data onto your SAP HANA 2.0, express edition installation and preview that data. You will learn how to create a new user, create a schema,  upload .csv data to your SAP HANA 2.0, express edition installation, create a new package, load and connect the .csv data to that package, and then edit and preview that data.
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 
 ## Prerequisites  
- - **How To's:** [Install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
- - **Files:** Download the `.csv` files from the SAP HANA Academy GitHub page: <https://github.com/saphanaacademy/HXE/tree/master/STS>.
+ - [Install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+ - Download the `.csv` files from the SAP HANA Academy GitHub page: <https://github.com/saphanaacademy/HXE/tree/master/STS>.
 
 
 ## Next Steps
  - [Create a Tenant Database](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-How to use SAP HANA Studio to load data onto your SAP HANA 2.0, express edition installation and create the proper user and schema, create a package, load data to that package, and preview that data.
-.
+  - How to use SAP HANA Studio to load data onto your SAP HANA 2.0, express edition installation and create the proper user and schema, create a package, load data to that package, and preview that data
 
-### Time to Complete
-**15 Min**
 
 ---
 In SAP HANA Studio, do the following:

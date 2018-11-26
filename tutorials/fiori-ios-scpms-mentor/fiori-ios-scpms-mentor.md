@@ -234,5 +234,3 @@ Build and run the application. After logging in, click the **Product Categories*
 [ACCORDION-END]
 
 
-## Next Steps
-- [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)

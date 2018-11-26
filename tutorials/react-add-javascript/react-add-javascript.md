@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 
 ## Details
 ### You will learn  
-In this tutorial series, we will explore another technology for Single Page Application (SPA) development - React.  React is another popular web framework, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an OData back end service.
+In this tutorial series, we will explore another technology for Single Page Application (SPA) development - React.  React is another popular web framework, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using React, and connecting it to an OData back end service.
 
 ### Time to Complete
 **15 Min**.
@@ -37,7 +37,7 @@ This will involve the following steps:
 
 Open the Web IDE, and then open your `index.html` page.
 
-First, we need to add Angular to our application.  Add the following to the `<head>` section of your HTML page:
+First, we need to add React to our application.  Add the following to the `<head>` section of your HTML page:
 
 ```html
 <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>

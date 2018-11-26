@@ -144,5 +144,3 @@ Congratulations, you've successfully hid a view element from a SAP Standard Fior
 
 
 
-## Next Steps
-- [Extend controller of a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)

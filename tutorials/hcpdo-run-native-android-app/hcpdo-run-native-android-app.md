@@ -3,24 +3,22 @@ title: Compile and run a native Android app on SAP Cloud Platform
 description: Clone a GitHub repository, import it into your project, run it on SAP Cloud Platform mobile services for development and operations then review the main classes and methods.
 primary_tag: operating-system>android
 tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform, operating-system>android ]
-
+time: 20
 ---
 
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
-- Download and install the [GitHub Desktop Client](https://desktop.github.com/)
-- Android device or Android Emulator on your development machine
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+  - [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
+  - Download and install the [GitHub Desktop Client](https://desktop.github.com/)
+  - Android device or Android Emulator on your development machine
 
 ## Details
 ### You will learn  
+  - How to run a native Android version of the Northwind hybrid app and run it on SAP Cloud Platform mobile services for development and operations
 
-In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](https://www.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials.
 
-If you have not completed the tutorials in [Mobile Groups 1-3](https://www.sap.com/developer/tutorial-navigator.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
+In this tutorial, you will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials.
+
+If you have not completed the previous tutorials, it would be best to work through those first to become familiar with the OData service used.
 
 The final version of the app will look like this:
 
@@ -28,8 +26,6 @@ The final version of the app will look like this:
 
 The source code is available in GitHub, and after a walk-through of the code in this tutorial, you will have the opportunity to make some changes and see their effect.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -532,5 +528,3 @@ A few key online help documents:
 - OData consumption: ([Android](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/41/1d6619789c4b138069588bb13d3abb/content.htm?frameset=/en/dd/00cdc8192c40f2bcddd6374ec1f4e6/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=279&show_children=false)), ([iOS](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/dd/00cdc8192c40f2bcddd6374ec1f4e6/content.htm?frameset=/en/7c/05845970061014a4fba37e8d86fdfb/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=59&show_children=false))
 
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

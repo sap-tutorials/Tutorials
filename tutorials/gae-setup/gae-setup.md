@@ -120,5 +120,3 @@ Once it is cloned you will see the code in your directory.
 [ACCORDION-END]
 
 
-## Next Steps
- - [Google App Engine install HDB](https://www.sap.com/developer/tutorials/gae-nodehdb.html)

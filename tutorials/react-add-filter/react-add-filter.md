@@ -3,21 +3,16 @@ title: Examine child to parent communication
 description: Add a filter, use it to show parent-child-parent component communication.
 primary_tag: topic>html5
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
+time: 20
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorial:** [Create child components](https://www.sap.com/developer/tutorials/react-child-components.html)
-
-## Next Steps
-- This is the end of the tutorial series.  [Return to the tutorial navigator.](https://www.sap.com/developer/tutorial-navigator.html)
+- [Create child components](https://www.sap.com/developer/tutorials/react-child-components.html)
 
 
 ## Details
 ### You will learn  
-In this tutorial series, we will explore another technology for Single Page Application (SPA) development - React.  React is another popular web framework, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an OData back end service.
+  - The basics for another technology for Single Page Application (SPA) development - React.  React is another popular web framework, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an OData back end service.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -479,6 +474,3 @@ document.getElementById('product-list')
 
 
 ---
-
-## Next Steps
-- [Return to the tutorial navigator.](https://www.sap.com/developer/tutorial-navigator.html)

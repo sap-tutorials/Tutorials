@@ -45,5 +45,3 @@ The **SAP Cloud Platform SDK for iOS Assistant** will be covered in detail in on
 [VALIDATE_1]
 [ACCORDION-END]
 
-## Next Steps
- - [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)

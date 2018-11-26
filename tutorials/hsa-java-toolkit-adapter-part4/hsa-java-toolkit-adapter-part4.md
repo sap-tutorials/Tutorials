@@ -274,5 +274,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 [ACCORDION-END]
 
-## Next Steps
- - [Where to Place the Custom Adapter Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part5.html)

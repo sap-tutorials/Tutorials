@@ -4,6 +4,7 @@ description: Learn how to complete common tasks when setting up a new database. 
 auto_validation: true
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition  ]
+time: 15
 ---
 
 
@@ -13,14 +14,11 @@ tags: [ tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition 
 
 ## Next Steps
  - [Install and Configure ODBC](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-odbc.html)
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
-How to create a backup for you database using either HANA Cockpit, HANA Studio, or a SQL command line.
+  - How to create a backup for you database using either HANA Cockpit, HANA Studio, or a SQL command line
 
-### Time to Complete
-**15 Min**
 
 ---
 

@@ -68,7 +68,3 @@ SELECT "TPCH"."ORDERS_ALL_VIEW".* FROM "TPCH"."ORDERS_ALL_VIEW"
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Multi-Store Tables](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-7.html)
-
----

@@ -114,7 +114,3 @@ Once the application is created, click the **Home** navigation bar and you will 
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Create a basic native Android master-detail app](https://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html)

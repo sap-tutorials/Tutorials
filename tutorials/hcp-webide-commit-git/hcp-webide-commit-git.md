@@ -190,6 +190,3 @@ You will see a confirmation alert appear briefly in the top-right corner of the 
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Localizing your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)

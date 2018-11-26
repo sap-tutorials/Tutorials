@@ -519,5 +519,3 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 
 [ACCORDION-END]
 
-## Next Steps
- - [Editing Adapter Configuration Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part4.html)

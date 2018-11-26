@@ -67,5 +67,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 [ACCORDION-END]
 
-## Next Steps
- - [Creating Custom Adapter Modules](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part2.html)
