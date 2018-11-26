@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Use abapGit to transform ABAP source code to the Cloud
-description: How to transform ABAP source code from on-premise SAP system to a SAP Cloud Platform ABAP Environment instance.
+title: Use abapGit to Transform ABAP Source Code to the Cloud
+description: Transform ABAP source code from on-premise SAP system to a SAP Cloud Platform ABAP Environment instance.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner,  topic>abap-development, products>sap-cloud-platform ]
 time: 15
@@ -11,13 +11,13 @@ time: 15
  - `github.com` or similar account
  - SAP Cloud Platform ABAP Environment system and user with developer role
  - `on-premise` system with user and required root CA of `Git` server (STRUST)
- - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). see `https://tools.hana.ondemand.com/#abap`
+ - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 
 ## Details
 ### You will learn  
-  - how to create content in an `on-premise` system and push it to `Git` repository.
-  - how to import the content from `Git` repository into a SAP Cloud Platform ABAP Environment instance.
+  - How to create content in an `on-premise` system and push it to `Git` repository
+  - How to import the content from `Git` repository into a SAP Cloud Platform ABAP Environment instance
 
 ---
 
@@ -39,7 +39,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install and setup abapGit)]
+[ACCORDION-BEGIN [Step 2: ](Install and set up abapGit)]
 
   As next you need to install `abapGit` on our `on-premise` system.
 
@@ -137,7 +137,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Install abapGit Eclipse Plugin)]
+[ACCORDION-BEGIN [Step 6: ](Install abapGit Eclipse plugin)]
 
   1. Open your Eclipse with installed ADT.
 
@@ -165,7 +165,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Clone Git repository with abapGit ADT Plugin into SAP Cloud Platform ABAP Environment System)]
+[ACCORDION-BEGIN [Step 8: ](Clone Git repository into SAP Cloud Platform ABAP Environment)]
 
   1. Click the clone button (green + button) in the `abapGit` repositories view.
 
