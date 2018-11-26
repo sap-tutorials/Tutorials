@@ -323,6 +323,8 @@ What is the product name (value of element `<d:Name>`) of product ID `HT-7030` i
 
 [ACCORDION-BEGIN [Step 7: ](Troubleshooting and monitoring (optional))]
 
+#### Troubleshooting
+
 If you are new to SAP Cloud Platform (like myself) you might appreciate some troubleshooting hints.
 
 1. If something went wrong during the deployment of your application, SAP Cloud Platform might have managed to upload your files, but could not deploy or start your application. If so, navigate to your application and choose **`Logs`**. Scroll down to the latest messages which often helps to figure out what went wrong during the deployment.
@@ -334,6 +336,8 @@ If you are new to SAP Cloud Platform (like myself) you might appreciate some tro
 3. Insufficient authentication - depending on where it happens - will also be visible in logs and trace files you can check in the Cloud Connector Administration UI:
 
     ![Troubleshoot](7-troubleshoot-002.png)
+
+#### Monitoring
 
 To monitor performance you can check which calls required how much time and in which step.
 
