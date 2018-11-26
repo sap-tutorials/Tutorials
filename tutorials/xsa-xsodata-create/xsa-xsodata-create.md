@@ -3,20 +3,16 @@ title: SAP HANA XS Advanced, Creating an OData Service with Create Operation and
 description: Creating an the basic database artifacts, an OData Service with Create Operation and XSJS Exit to insert data into Entities
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
-## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Creating an OData Service with an Entity Relationship](https://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
 
-## Next Steps
-- [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.html)
+## Prerequisites  
+  - **Tutorials:** [Creating an OData Service with an Entity Relationship](https://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
 
 ## Details
 ### You will learn  
-Now to expand your code to include an XSJS exit.
+  - Now to expand your code to include an XSJS exit
 
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -171,6 +167,3 @@ Save and run the Node.js and then run the web module. Change the URL to `/xsodat
 
 [ACCORDION-END]  
 
-
-## Next Steps
-- [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.html)

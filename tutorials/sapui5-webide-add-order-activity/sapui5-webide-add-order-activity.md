@@ -3,14 +3,11 @@ title: SAPUI5 - Add an order activity
 description: Add a button to a detail page, to trigger an process
 primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
+time: 10
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
 - **How-To** [Start this tutorial series](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 - **Tutorials:** This tutorial is part of a series.  The previous tutorial is step 9: [SAPUI5 - Add a search field](https://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
-
-## Next Steps
- - This is the end of this tutorial series.  Return to the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -18,8 +15,6 @@ You will add a footer bar (a Bar control within the footer aggregation of the Pa
 
 In that bar, you will add a Button control to the right side of the footer bar in the Detail view, and in the corresponding controller we'll define the function to be called (`handleOrder`) when the Button's 'press' event is fired. Then you will simulate the order process by displaying a `MessageBox` pop-up control and then showing a `MessageToast`. For this, you will need to show some texts. Hence, you will add placeholders into the `i18n.properties` file we set up earlier.
 
-### Time to Complete
-**10 Minutes**.
 
 ---
 >  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)

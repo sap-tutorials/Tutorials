@@ -3,25 +3,22 @@ title: Predictive Analytics Using Application Function Modeler
 description: This tutorial series will cover a pair of sample projects utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to use a Application Function Modeler to access the predictive analytics library.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Predictive Analytics Using SQL Script]
+  - [Predictive Analytics Using SQL Script]
 
 
 ## Next Steps
  - Find more Predictive Analysis Library tutorials on the [SAP HANA Academy YouTube Channel](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g)
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-How to use the Predictive Analysis Library through SAP HANA Studio.
+  - How to use the Predictive Analysis Library through SAP HANA Studio
 
 This tutorial creates the same models as the previous tutorial by only using template modules within SAP HANA Studio. For more tutorials on using Predictive Analysis Library, see the [SAP HANA Academy YouTube Playlist](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g).
 
-### Time to Complete
-**20 Min**
 
 ---
 
@@ -251,4 +248,3 @@ Click the __Activate__ icon ![Activate](activate.png) and continue with the tuto
 
 ## Next Steps
 - Find more Predictive Analysis Library tutorials on the [SAP HANA Academy YouTube Channel](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g)
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

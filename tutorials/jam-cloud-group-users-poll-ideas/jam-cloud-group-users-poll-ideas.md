@@ -3,26 +3,21 @@ title: Using Groups in SAP Jam Collaboration Developer Edition
 description: Create a Group to collaborate with other users.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
 
 ## Details
 ### You will learn
 In this tutorial you will learn how to perform the following tasks in your SAP Jam Collaboration instance:
-- Create a Group.
-- Invite users to your group.
-- Add content to your group.
-- Create a poll in your group.
-- Add ideas to your group.
+  - Create a group
+  - Invite users to your group
+  - Add content to your group
+  - Create a poll in your group
+  - Add ideas to your group
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -274,6 +269,3 @@ Figure 3: A group with content, decision-making tools, and comments
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
