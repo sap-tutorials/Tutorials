@@ -13,9 +13,6 @@ tags: [  tutorial>beginner, topic>abap-development  ]
  - [Testing API Business Hub APIs with Curl](https://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
 
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
 In this tutorial, you will learn how to use the pre-generated code from the SAP API Business Hub in an ABAP report. You will need to have configured your ABAP system to make an HTTP request.
@@ -139,5 +136,3 @@ If you see a message returned with data, and not an error, you have successfully
 [ACCORDION-END]
 
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

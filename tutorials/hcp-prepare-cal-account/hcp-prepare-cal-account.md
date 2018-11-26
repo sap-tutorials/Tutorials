@@ -94,13 +94,10 @@ Details how to connect and use the AWS image are described in [this PDF document
 
 [ACCORDION-END]
 
-## Next Steps
-[Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector](https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html)
-
 ## Related Information
 
-1. [Amazon Web Services](https://aws.amazon.com/)
-2. [SAP Cloud Appliance Library (CAL)](https://scn.sap.com/community/cloud-appliance-library)
-3. [Alternative AWS Deployment for SAP Trials provided as Virtual Appliance](https://scn.sap.com/docs/DOC-46908)
-4. [Virtual Private Cloud with VPN Access for SAP Trials provided as Virtual Appliance](https://scn.sap.com/docs/DOC-46629)
-5. [Getting Started with SAP NetWeaver 7.50 SP1 AS ABAP and SAP BW on SAP HANA SPS10 Developer Edition](https://scn.sap.com/docs/DOC-69777)
+  - [Amazon Web Services](https://aws.amazon.com/)
+  - [SAP Cloud Appliance Library (CAL)](https://scn.sap.com/community/cloud-appliance-library)
+  - [Alternative AWS Deployment for SAP Trials provided as Virtual Appliance](https://scn.sap.com/docs/DOC-46908)
+  - [Virtual Private Cloud with VPN Access for SAP Trials provided as Virtual Appliance](https://scn.sap.com/docs/DOC-46629)
+  - [Getting Started with SAP NetWeaver 7.50 SP1 AS ABAP and SAP BW on SAP HANA SPS10 Developer Edition](https://scn.sap.com/docs/DOC-69777)

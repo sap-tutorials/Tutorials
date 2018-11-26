@@ -111,5 +111,3 @@ One Product is now available.
 [ACCORDION-END]
 
 
-## Next Steps
-- [Protect your API Proxy by adding an Application Key Verification](https://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)

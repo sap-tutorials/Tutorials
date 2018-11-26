@@ -569,6 +569,3 @@ Replace the `hdbalm import` command in the release job with the `hdbalm transpor
 
     Replace `<route id>` by the number obtained from the step above.
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

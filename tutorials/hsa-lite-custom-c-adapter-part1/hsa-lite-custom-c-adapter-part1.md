@@ -86,5 +86,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 ---
 
-## Next Steps
- - [Code Custom C/C++ Adapter for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-c-adapter-part2.html)

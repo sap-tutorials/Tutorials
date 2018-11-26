@@ -103,5 +103,3 @@ Click the **Products** item. You should now see the master list with **Object Ce
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- [Using the SAP Fiori for iOS Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)

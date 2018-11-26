@@ -83,5 +83,3 @@ You can now enter the application URL in your mobile device browser to see it ru
 
 
 
-## Next Steps
-- [Add labels and a field to your app](https://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)

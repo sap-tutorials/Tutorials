@@ -130,7 +130,3 @@ The browser cache will frequently prevent changes from showing up. There are a f
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Round the currency field using JavaScript](https://www.sap.com/developer/tutorials/hcp-webide-round-currency.html)

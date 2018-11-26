@@ -3,21 +3,16 @@ title: Use SAP Web IDE with SAP Jam Collaboration
 description: This tutorial shows how to build and run a new project with SAP Jam Collaboration UI5 sample applications.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Activate SAP Web IDE plugins on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-plugins-activate.html)
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Activate SAP Web IDE plugins on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-plugins-activate.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn how to build and run a new project with SAP Jam Collaboration UI5 sample applications.
+  - How to build and run a new project with SAP Jam Collaboration UI5 sample applications
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -147,6 +142,3 @@ You are done\! Run your application\! You should now be able to navigate from a 
 
 
 ---
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -11,9 +11,6 @@ tags: [  tutorial>intermediate, operating-system>ios, products>sap-cloud-platfor
  - **Tutorials:** [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-scpms-saml-oauth.html)
 
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
 In this tutorial, you will first create and store configuration data into SAP Cloud Platform Mobile Secure. Then you will extend your app to load that configuration data using the SAP Cloud Platform SDK for iOS [Configuration Provider](https://help.sap.com/doc/978e4f6c968c4cc5a30f9d324aa4b1d7/Latest/en-US/Documents/Frameworks/SAPFoundation/Configuration%20Provider.html) functionality.
@@ -191,5 +188,3 @@ Then you simply print the retrieved configuration `Dictionary` object to the deb
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

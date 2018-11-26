@@ -1243,6 +1243,3 @@ module.exports = function (grunt) {
 
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

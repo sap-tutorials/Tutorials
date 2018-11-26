@@ -125,6 +125,3 @@ If you just add in the above line and try to run the code, you will find it does
 [ACCORDION-END]
 
 
-## Next Steps
- - [Add API Business Hub API to a UI5 Application](https://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
- - [Using ABAP with the SAP API Business Hub](https://www.sap.com/developer/tutorials/hcp-abh-abap.html)

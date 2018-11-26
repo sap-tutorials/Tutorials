@@ -242,7 +242,3 @@ As described in the introduction for this tutorial, when a user opens your app U
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [An Open Data Protocol (OData) primer for developers](https://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)

@@ -586,6 +586,3 @@ Make the following changes to the job `CI_neo-java-web-sdk-samples_master_releas
 5. Start the job by pushing a small change.
 
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

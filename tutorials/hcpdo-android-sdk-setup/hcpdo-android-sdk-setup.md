@@ -193,6 +193,3 @@ You can check the libraries were added in the `build.gradle` file located in the
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Compile and run a native Android app on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)

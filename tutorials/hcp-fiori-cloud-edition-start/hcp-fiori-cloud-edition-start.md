@@ -95,5 +95,3 @@ Congratulations, you're ready to go and start extending the SAP standard Fiori a
 
 
 
-## Next Steps
-- [Add custom fields to a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)

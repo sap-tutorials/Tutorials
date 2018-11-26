@@ -74,6 +74,3 @@ Another "Chuck" record was not inserted.  "Chuck Norris's" record was removed by
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [SAP HANA XS Advanced Creating an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)

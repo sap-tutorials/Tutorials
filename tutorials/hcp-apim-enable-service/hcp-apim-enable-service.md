@@ -73,6 +73,3 @@ and the SAP API Management Dev Portal
 [ACCORDION-END]
 
 
-## Next Steps
-- Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
-- [Continue in SAP Cloud Platform, API Management by creating an API Provider](https://www.sap.com/developer/tutorials/hcp-apim-create-provider.html)

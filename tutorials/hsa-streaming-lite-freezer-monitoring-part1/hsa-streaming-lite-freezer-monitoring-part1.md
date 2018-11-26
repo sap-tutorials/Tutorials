@@ -51,5 +51,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 ---
 
-## Next Steps
-  - [Install Streaming Lite and Setup Freezer Lite](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part2.html)

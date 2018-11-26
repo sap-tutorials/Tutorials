@@ -136,5 +136,3 @@ You should now see our Streaming Lite project running:
 
 ---
 
-## Next Steps
-- [Test Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part4.html)

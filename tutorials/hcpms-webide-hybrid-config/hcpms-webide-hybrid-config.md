@@ -89,6 +89,3 @@ Leave the Preferences section unchanged, click **Save** and then **Close**.
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Connecting SAP Web IDE to the Hybrid App Toolkit](https://www.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)

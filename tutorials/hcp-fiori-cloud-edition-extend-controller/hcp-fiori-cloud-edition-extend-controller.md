@@ -193,5 +193,3 @@ Congratulations, you've successfully extended a controller of a SAP Standard Fio
 
 
 
-## Next Steps
-- [Add extended app to the SAP Fiori Launchpad](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
