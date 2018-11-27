@@ -3,20 +3,13 @@ title: Use Open Social in a SAP Cloud Platform HTML5 application to integrate Yo
 description: Build and run a YouTube Open Social URL Gadget in a SAP Cloud Platform HTML5 application
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
+time: 15
 ---
-
-## Prerequisites  
- - **Proficiency:** Intermediate
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn
-In this tutorial you will learn how to build and run a YouTube Open Social URL Gadget in a SAP Cloud Platform HTML5 application.
+  - How to build and run a YouTube Open Social URL Gadget in a SAP Cloud Platform HTML5 application
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -110,6 +103,3 @@ Feel free to modify, upload, and run this source code as much as you like. For m
 
 ---
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

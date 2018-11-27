@@ -71,5 +71,3 @@ Click on **Run** and the project should build successfully.
 
 
 
-## Next Steps
-- [End-to-End Weather App Scenario Part 5](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)

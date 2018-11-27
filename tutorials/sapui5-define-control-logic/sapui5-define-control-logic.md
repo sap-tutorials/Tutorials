@@ -3,22 +3,16 @@ title: Finalize your new UI5 Control by specifying the control logic
 description: Part 4 of 4. In this tutorial you will write logic and extend the created control in your application.
 primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5 ]
+time: 15
 ---
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:** [SAPUI5 Creating Control](https://www.sap.com/developer/tutorials/sapui5-creating-control.html)
- - Should have basic understanding of HTML, CSS and JavaScript.
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+  - **Tutorials:** [SAPUI5 Creating Control](https://www.sap.com/developer/tutorials/sapui5-creating-control.html)
+  - You should have basic understanding of HTML, CSS and JavaScript.
 
 ## Details
 ### You will learn
+  - How to extend controls in your application. In the below tutorial you will define controllers and it's logic to use it for generating and validating text-based captcha
 
-  You will learn how to extend controls in your application. In the below tutorial you will define controllers and it's logic to use it for generating and validating text-based captcha.
-
-### Time to Complete
-  **15 Min**.
 
 ---
 
@@ -145,5 +139,3 @@ tags: [  tutorial>beginner, topic>html5 ]
 
 ---
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

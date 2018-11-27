@@ -89,7 +89,3 @@ Notice the execution time is a little bit less than when doing the calculation u
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Using Exception Handling](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)

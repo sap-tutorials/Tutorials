@@ -6,10 +6,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 time: 20
 ---
 ## Prerequisites  
- - **Tutorials:** [Creating simple tiles within Fiori Launchpad](https://www.sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html)
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Creating simple tiles within Fiori Launchpad](https://www.sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html)
 
 ## Details
 ### You will learn  
@@ -157,6 +154,3 @@ On the right side of the screen you will see the newly created tile with a Fligh
 
 [ACCORDION-END]
 
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

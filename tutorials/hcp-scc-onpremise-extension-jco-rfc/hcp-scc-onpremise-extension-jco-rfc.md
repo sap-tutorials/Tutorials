@@ -3,22 +3,19 @@ title: Deploy an JCo / RFC based on-premise extension using SAP HANA Cloud Conne
 description: Deploy an on-premise extension which uses RFC via JCo. The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform-connectivity ]
+time: 20
 ---
 
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:**
   - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
   - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
 
 
-## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
-
 ### You will learn  
-In this tutorial, you will deploy an on-premise extension which uses RFC via JCo. This includes the setup of an SAP HANA Cloud Connector instance. The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
+  - How to deploy an on-premise extension which uses RFC via JCo, which includes the setup of an SAP HANA Cloud Connector instance 
+
+The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
 
 It is assumed that you are using the SAP Cloud Appliance Library to get an ABAP test system plus pre-installed SAP HANA Cloud Connector, as described in the tutorial [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html). The overall landscape of this on-premise extension scenario is then looking like in the figure below:
 
@@ -26,8 +23,6 @@ It is assumed that you are using the SAP Cloud Appliance Library to get an ABAP 
 
 The components are explained in greater detail at the end of this tutorial.
 
-### Time to Complete
-**20 Min**
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Log on to the AWS instance)]
@@ -214,11 +209,6 @@ Note that the `JCoFlightProvider` class not only fetches data from the ABAP syst
 
 
 [ACCORDION-END]
-
----
-
-## Next Steps
-Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ---
 

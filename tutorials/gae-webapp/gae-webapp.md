@@ -10,9 +10,6 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, product
  - **Tutorials:** [Google App Engine Install HDB](https://www.sap.com/developer/tutorials/gae-nodehdb.html)
 
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
 Now to modify your code to implement a full web application with port listening and continuous interaction with SAP HANA
@@ -130,5 +127,3 @@ Clicking the URL in the right corner will load the app itself.
 [ACCORDION-END]
 
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

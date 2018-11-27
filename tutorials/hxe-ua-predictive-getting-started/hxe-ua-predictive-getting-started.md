@@ -1,26 +1,18 @@
 ---
 title: Getting Started with Predictive Analytics
 description: This tutorial series will cover two approaches to a sample project utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to configure your installation for the sample projects by creating a tenant database and a new user to manage that database.
-
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:**
- [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
-
-## Next Steps
- - [Predictive Analytics Using SQL Script]
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+  - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Details
 ### You will learn  
-How to prepare your SAP HANA, express edition installation for Predictive Analytics.
+  - How to prepare your SAP HANA, express edition installation for Predictive Analytics
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -194,7 +186,3 @@ GRANT SELECT, INSERT, DELETE ON SCHEMA <NEW_USER> TO _SYS_REPO;
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Predictive Analytics Using SQL Script]
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

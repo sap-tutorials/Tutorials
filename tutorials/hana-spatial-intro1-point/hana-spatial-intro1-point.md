@@ -104,5 +104,3 @@ There are more spatial methods that can be applied to `ST_POINT` objects. For no
 ### Optional
 - Check the [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US)
 
-## Next Steps
-- [Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)

@@ -1,25 +1,16 @@
 ---
-title: Updating SAP HANA, express edition (Binary Installer)
+title: Update SAP HANA, express edition (Binary Installer)
 description: Update your SAP HANA 2.0, express edition binary installation when new patches are released.
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
-Update SAP HANA 2.0, express edition when new patches are released.
+  - How to update SAP HANA 2.0, express edition when new patches are released
 
-> Note:
 > If you are updating to SAP HANA, express edition 2.0 SP 02, the `libgcc_s1` and `libstdc++6` packages must be version 6.2 or newer. To update these packages, register your system with SUSE and run `zypper install libgcc_s1 libstdc++6`. For registration instructions, see the SUSE Linux Enterprise Server 12 documentation.
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -81,5 +72,3 @@ Follow the prompts to complete the server update.
 
 ---
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

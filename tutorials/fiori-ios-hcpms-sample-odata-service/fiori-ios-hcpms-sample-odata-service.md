@@ -135,5 +135,3 @@ For now, this complements this tutorial step. In the following tutorials, you wi
 [VALIDATE_9]
 [ACCORDION-END]
 
-## Next Steps
- - [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)

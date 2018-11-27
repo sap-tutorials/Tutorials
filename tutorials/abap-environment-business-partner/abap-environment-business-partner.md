@@ -2,7 +2,7 @@
 auto_validation: true
 title: Create Business Partner in S/4HANA Cloud using ABAP Environment Data
 description: Create a business partner in an S/4HANA Cloud system based on a business user in SAP Cloud Platform ABAP Environment.
-primary_tag: topic>abap-development
+primary_tag: topic>sap-cloud-platform-abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, topic>abap-extensibility ]
 time: 20
 ---
@@ -252,7 +252,7 @@ ENDCLASS.
 
       ![Copy the link](Picture9.png)
 
-  2. Enter Business User email and password and click on Log on.
+  2. Enter business user email and password and click Log on.
 
       business user requires the `SAP_BR_BUPA_MASTER_SPECIALIST` business role.
       This User has the same email-address for both S/4 HANA and SAP Cloud Platform ABAP Environment.

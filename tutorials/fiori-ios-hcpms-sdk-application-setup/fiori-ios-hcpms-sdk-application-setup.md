@@ -118,5 +118,3 @@ Click on the **Connectivity** row, and you will notice the OData endpoint for th
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- [Creating an app using the SAP Cloud Platform SDK for iOS Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)

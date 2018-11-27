@@ -3,23 +3,14 @@ title: Updating SAP HANA, express edition (Virtual Machine)
 description: Update your SAP HANA 2.0, express edition VM installation when new patches are released.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 15
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
-
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 Update SAP HANA 2.0, express edition when new support packages and patches are released. Upgrading is supported only for SAP HANA, express edition 2.0 (SP 00 onward). Upgrading from SAP HANA, express edition 1.0 SP 12 is not supported.
 
-> Note:
 > If you are updating to SAP HANA, express edition 2.0 SP 02, the `libgcc_s1` and `libstdc++6` packages must be version 6.2 or newer. To update these packages, register your system with SUSE and run `zypper install libgcc_s1 libstdc++6`. For registration instructions, see the SUSE Linux Enterprise Server 12 documentation.
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -76,7 +67,6 @@ sudo ./hxe_upgrade.sh
 
 Follow the prompts to complete the server update.
 
->**Note**
 >`hxe_upgrade.sh` detects the Server-only and Applications packages. The script will upgrade the server and XSA (if available).
 
 
@@ -85,5 +75,3 @@ Follow the prompts to complete the server update.
 
 ---
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

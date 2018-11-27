@@ -145,5 +145,3 @@ Once SQL statements above are executed successfully you should see these new `SR
 - Read [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US)
 - Read blog [Spatial Reference Systems – Background Knowledge and the use in SAP HANA](https://archive.sap.com/documents/docs/DOC-75363)
 
-## Next Steps
-- Introduction to [SAP HANA Spatial methods](https://www.sap.com/developer/groups/hana-aa-spatial-methods.html)

@@ -2,8 +2,8 @@
 title: Use Fiori for Android Controls to Enhance Your Application.
 description: Enhance your application with the Object Cell and add a divider to cells in a list for customers.
 auto_validation: true
-primary_tag: operating-system>android
-tags: [  tutorial>beginner, operating-system>android ]
+primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [  tutorial>beginner, operating-system>android, products>sap-cloud-platform-sdk-for-android ]
 time: 20
 ---
 

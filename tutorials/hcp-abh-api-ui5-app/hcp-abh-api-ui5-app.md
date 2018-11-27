@@ -252,5 +252,3 @@ self.getView().getModel("results").setProperty("/data", jsonResults);
 [ACCORDION-END]
 
 
-## Next Steps
-- [Using API Hub with Web IDE](https://www.sap.com/developer/tutorials/webide-api-hub.html)

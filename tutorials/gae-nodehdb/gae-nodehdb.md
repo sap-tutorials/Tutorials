@@ -204,5 +204,3 @@ Client closed
 
 
 
-## Next Steps
-- [Google App Engine Website](https://www.sap.com/developer/tutorials/gae-webapp.html))

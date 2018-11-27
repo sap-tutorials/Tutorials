@@ -272,6 +272,3 @@ public class AppTest
 ```
 
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

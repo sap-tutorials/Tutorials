@@ -54,7 +54,3 @@ Associations can be an excellent way to load child elements on demand; however t
 
 [ACCORDION-END]  
 
-
-
-## Next Steps
-- [Creating an OData Service with Create Operation and XSJS Exit](https://www.sap.com/developer/tutorials/xsa-xsodata-create.html)

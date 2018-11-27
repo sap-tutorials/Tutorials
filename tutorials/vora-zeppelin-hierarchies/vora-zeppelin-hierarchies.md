@@ -3,20 +3,15 @@ title: Using hierarchies in SAP Vora
 description: Hierarchical data structures define a parent-child relationship between different data items, providing an abstraction that makes it possible to perform complex computations on different levels of data.
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
+time: 5
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Loading sample data from different file formats](https://www.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Loading sample data from different file formats](https://www.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)
 
 ## Details
 ### You will learn  
-You will learn how to load tables with parent-child relationship between data items, and then create and query hierarchies.
+  - How to load tables with parent-child relationship between data items, and then create and query hierarchies
 
-### Time to Complete
-**5 Min**.
 
 ---
 
@@ -94,5 +89,3 @@ You will learn how to load tables with parent-child relationship between data it
 
     ![Query mixing joins and UDFs](vorahier06.jpg)
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

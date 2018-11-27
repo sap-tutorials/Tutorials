@@ -189,6 +189,3 @@ To add the data back to your project, you can simply open and replace the conten
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Switch your app from mock data to a live OData service](https://www.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)

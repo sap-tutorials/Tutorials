@@ -74,5 +74,3 @@ Now you have lowered the logging levels, try run your iOS application again, and
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
- - [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)

@@ -204,7 +204,3 @@ For clean-up, you can remove the `debugger;` statement in `Detail.controller.js`
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Commit your project files to your SAP Cloud Platform Git repository](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)

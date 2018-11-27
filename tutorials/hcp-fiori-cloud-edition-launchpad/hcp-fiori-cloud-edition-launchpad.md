@@ -3,23 +3,19 @@ title: Add extended app to SAP Fiori launchpad
 description: Deploy your exteded app to the SAP Fiori launchpad
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide, products>sap-cloud-platform ]
+time: 5
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:** [Extend controller of a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+- [Extend controller of a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to deploy an extended app to the SAP Fiori launchpad. The key steps are:
+  - How to deploy an extended app to the SAP Fiori launchpad
 
-- Deploy the app to the SAP Cloud Platform
-- Deploy the app to the SAP Fiori launchpad
+The key steps for deploying an extended app to the SAP Fiori launchpad are:
+  - Deploy the app to the SAP Cloud Platform
+  - Deploy the app to the SAP Fiori launchpad
 
-### Time to Complete
-**5 Min**.
 
 ---
 You successful tested the app you've extended in the [Add custom fields to a standard SAP Fiori app] tutorial? Now it is time to deploy it the SAP Cloud Platform.
@@ -99,5 +95,3 @@ Congratulations, you've successfully added your extended app to the standard SAP
 
 [ACCORDION-END]
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

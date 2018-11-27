@@ -175,5 +175,3 @@ Now you can see one API Provider in the list of available API Providers.
 
 [ACCORDION-END]
 
-## Next Steps
-- [Create an API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-api.html)
