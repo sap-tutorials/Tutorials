@@ -152,6 +152,7 @@ If you run the app now you can navigate to your map view and back.
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-15.png)
 
 [VALIDATE_1]
+
 [ACCORDION-END]
 
 ---
