@@ -13,7 +13,7 @@ time: 20
 
 ## Details
 ### You will learn  
-  - How to use the storyboard to add a map view to your app
+  - How to use the storyboard to add a map view to your app 
   - How to use outlet connections to refer to controls in code
 
 [ACCORDION-BEGIN [Step 1: ](Create a new view controller class for the tracking map view)]
