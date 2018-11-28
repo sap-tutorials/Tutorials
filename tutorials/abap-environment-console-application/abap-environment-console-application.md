@@ -20,6 +20,7 @@ time: 5
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open ABAP Development Tools in Eclipse)]
