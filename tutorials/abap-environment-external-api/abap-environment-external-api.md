@@ -2,9 +2,11 @@
 title: Call an External API
 description: Point to an external API and display its output in the console.
 auto_validation: true
-primary_tag: topic>sap-cloud-platform-abap-environment
+primary_tag: products>sap-cloud-platform-abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
 time: 30
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
