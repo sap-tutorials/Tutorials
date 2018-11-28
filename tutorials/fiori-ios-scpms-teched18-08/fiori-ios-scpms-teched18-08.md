@@ -3,7 +3,7 @@ title: Add Map Support to the App - Part 2
 description: Build MapView extensions of the SAPFiori Framework into your app.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios  ]
 time: 20
 ---
 

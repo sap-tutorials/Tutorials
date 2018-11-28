@@ -3,7 +3,7 @@ title: Add Data Visualization to the App - Part 2
 description: Implement the static data to display them in the FUIChartView.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios  ]
 time: 20
 ---
 

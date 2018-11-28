@@ -3,7 +3,7 @@ title: Add Map Support to the App - Part 1
 description: Use the storyboard to build the UI for the Map.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios  ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios   ]
 time: 20
 ---
 
@@ -13,7 +13,7 @@ time: 20
 
 ## Details
 ### You will learn  
-  - How to use the storyboard to add a map view to your app 
+  - How to use the storyboard to add a map view to your app
   - How to use outlet connections to refer to controls in code
 
 [ACCORDION-BEGIN [Step 1: ](Create a new view controller class for the tracking map view)]

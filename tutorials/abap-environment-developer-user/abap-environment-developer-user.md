@@ -2,7 +2,7 @@
 auto_validation: true
 title: Create a Developer User in SAP Cloud Platform ABAP Environment
 description: Create a developer user with the developer role in SAP Cloud Platform ABAP Environment.
-primary_tag: topic>sap-cloud-platform-abap-environment
+primary_tag: products>sap-cloud-platform-abap-environment
 tags: [  tutorial>beginner, topic>abap-development,  products>sap-cloud-platform ]
 time: 10
 ---
