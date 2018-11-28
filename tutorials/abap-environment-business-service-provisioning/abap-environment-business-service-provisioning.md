@@ -2,7 +2,7 @@
 auto_validation: true
 title: Expose a Standard Core Data Service for ABAP Environment
 description: Create a service definition, service binding and communication scenario to expose a Core Data Services (CDS) view in SAP Cloud Platform ABAP Environment.
-primary_tag: topic>abap-development
+primary_tag: product>sap-cloud-platform-abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
@@ -121,7 +121,7 @@ We want to create service binding to bind service to a protocol and preview.
 [ACCORDION-BEGIN [Step 6: ](Publish your service binding)]
 Click **Publish locally**, and then you will see the service name and service URL in the table.
 
-![Publish Service Binding](Picture8.png)
+![Publish Service Binding](Picture8a.png)
 
 [DONE]
 [ACCORDION-END]
