@@ -1,6 +1,6 @@
 ---
 title: Add Map Support to the App - Part 1
-description: Use the storyboard to build the UI for the Map
+description: Use the storyboard to build the UI for the Map.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -13,8 +13,8 @@ time: 20
 
 ## Details
 ### You will learn  
-  - How to use the storyboard to add a map view to your app.
-  - How to use outlet connections to refer to controls in code.
+  - How to use the storyboard to add a map view to your app
+  - How to use outlet connections to refer to controls in code
 
 [ACCORDION-BEGIN [Step 1: ](Create a new view controller class for the tracking map view)]
 
@@ -35,6 +35,9 @@ Then, change the **Class** to `TrackingMapViewController`.
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-2.png)
 
 Click **Next** to continue. Check that the file is saved in the `ViewControllers` group, and click **Create** to create the class. The new file will open now.
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add the view controller to the storyboard)]
 
@@ -71,6 +74,9 @@ With the segue selected, go to the attributes inspector and provide the name `sh
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-9.png)
 
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 4: ](Implement the code for the detail table view cell)]
 
 Next you'll add the code for displaying the table view cell that navigates to the map view. This is very similar to the code you wrote for the cell that navigates to the chart view.
@@ -99,6 +105,8 @@ case 6:
     mapNavigationCell.textLabel?.textColor = .preferredFioriColor(forStyle: .primary1)
     return mapNavigationCell
 ```
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add the map view to the new view controller)]
 
@@ -115,6 +123,9 @@ To do this, select the map view and click on the **Add New Constraints** button 
 Enter **0** for each field to add 4 new constraints, and deselect **Constrain to margins** to make the MKMapView the size of the parent `UIViewController`. Then click the **Add Constraints** button.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-12.png)
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add an outlet connection for the map view)]
 
