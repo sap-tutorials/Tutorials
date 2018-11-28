@@ -100,5 +100,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 ---
 
-## Next Steps
-- [Code the Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part3.html)

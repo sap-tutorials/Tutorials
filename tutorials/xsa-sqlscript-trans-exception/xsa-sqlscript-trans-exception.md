@@ -239,7 +239,3 @@ You should see an error message in your table. This means that the exception was
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Using COMMIT Statement](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)

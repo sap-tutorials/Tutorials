@@ -387,7 +387,3 @@ IMPORT FROM CSV FILE '/hana/shared/<SID>/HDB00/work/TPCH_DATA/PartSupp.csv'
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-4.html)
-
----

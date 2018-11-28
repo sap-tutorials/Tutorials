@@ -168,5 +168,3 @@ Click on **Save** to save the changes to the API and enforce the new policies.
 ### Optional
 - When you now open the API Proxy in a browser you will get an error message stating that you need to pass an API Key in the header `APIKey`.
 
-## Next Steps
-- [Consume the API Proxy in SAP Web IDE](https://www.sap.com/developer/tutorials/hcp-apim-webide-int.html)

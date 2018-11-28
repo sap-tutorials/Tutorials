@@ -172,6 +172,3 @@ For some scenarios, you need an upload of the build artifacts to Nexus. The uplo
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

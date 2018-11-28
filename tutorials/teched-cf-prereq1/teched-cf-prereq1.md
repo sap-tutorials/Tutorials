@@ -113,7 +113,7 @@ Click on the **Cloud Foundry** option under **Workspace Preferences**.
 
 ![cloud foundry preference highlighted](8.png)
 
-Start by selecting the API Endpoint of the Cloud Foundry space you configured in a previous tutorial.
+Start by selecting the API Endpoint of the Cloud Foundry space you configured earlier.
 
 ![cloud foundry page with API Endpoint highlighted](9.png)
 

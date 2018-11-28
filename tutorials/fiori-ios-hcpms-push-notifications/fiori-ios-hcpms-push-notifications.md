@@ -290,5 +290,3 @@ If you click **Send**, your device should now receive a new push notification:
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- [Application logging and tracing](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)

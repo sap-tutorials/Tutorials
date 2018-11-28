@@ -52,5 +52,3 @@ Return to the cockpit by clicking on your User ID "breadcrumb" link near the top
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
- - [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)

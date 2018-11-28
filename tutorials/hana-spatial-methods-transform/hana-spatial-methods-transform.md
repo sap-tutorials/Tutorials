@@ -262,5 +262,3 @@ select
 
 ---
 
-## Next Steps
- - Spatial predicates (coming soon)

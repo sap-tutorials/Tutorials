@@ -3,20 +3,16 @@ title: Customize game mechanics of HelpDesk application in SAP Cloud Platform
 description: Manually customize the game mechanics of the gamified HelpDesk application using the Gamification Workbench on the SAP Cloud Platform.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+time: 20
 ---
-## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:** [Deploy gamified HelpDesk application to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+## Prerequisites  
+- **Tutorials:** [Deploy gamified HelpDesk application to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
 
 ## Details
 ### You will learn  
 In this tutorial, you will tweak the game mechanics of the HelpDesk application manually using the Gamification Workbench on the SAP Cloud Platform. You will increase the number of experience points the user receives for solving sample tickets and increase the total points for solving sample critical tickets. As a result of that change, you will also have to adapt the game levels.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -176,5 +172,3 @@ In your profile, you should see the new levels (green box) as well as the increa
 [ACCORDION-END]
 
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

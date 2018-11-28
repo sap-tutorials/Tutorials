@@ -95,6 +95,3 @@ Verify that **User** is your SAP ID user and replace the default **Password** ma
 [ACCORDION-END]
 
 
-## Next Steps
-
-- [Create the gamified HelpDesk application](https://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)

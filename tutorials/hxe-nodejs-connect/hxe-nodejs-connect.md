@@ -3,22 +3,17 @@ title: Connect to HXE using Node.js
 description: Use Node.js to connect and read data from your SAP HANA express edition
 primary_tag: products>sap-hana\,-express-edition 
 tags: [  tutorial>beginner, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:**  [Setup Node.js to connect to HXE](https://www.sap.com/developer/tutorials/hxe-nodejs-connect.html)
+ - [Setup Node.js to connect to HXE](https://www.sap.com/developer/tutorials/hxe-nodejs-connect.html)
 
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-Now that your system is setup to work with both Node.js and the HDB library it is time to make your initial application and make your connection.
+Now that your system is set up to work with both Node.js and the HDB library, it is time to make your initial application and make your connection.
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -164,6 +159,3 @@ npm start
 
 
 [ACCORDION-END]
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

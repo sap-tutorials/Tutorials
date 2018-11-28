@@ -52,7 +52,7 @@ Therefore, even if you ***stop*** your EC2 instance running your SAP HANA, expre
 
 Only detaching and deleting the EBS volumes will prevent that but your SAP HANA, express edition will no longer be usable.
 
-Therefore it is recommended that you **terminate** your SAP HANA, express edition instance when you won't need to use it anymore or for a while
+Therefore it is recommended that you **terminate** your SAP HANA, express edition instance when you won't need to use it anymore or for a while.
 
 To do so, access the **<a href="https://console.aws.amazon.com/ec2" target="&#95;blank">EC2 Dashboard</a>**.
 

@@ -10,9 +10,6 @@ tags: [ tutorial>beginner, topic>abap-development ]
  - **Tutorials:** [Create an ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
 In the following exercise you will make your program more readable by learning how to maintain ABAP Doc. You will also learn how to synchronize the documentation and to display it, both in the ABAP Development Tools (ADT) and in SAP GUI.

@@ -3,20 +3,15 @@ title: Deploying your Java app to SAP Cloud Platform
 description: Deploying your Java app to SAP Cloud Platform
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+time: 10
 ---
 
 ## Prerequisites  
 - [End-to-End Weather App Scenario Part 9](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
 In the final part of this tutorial series you will learn how to deploy your Java application to SAP Cloud Platform.
-
-### Time to Complete
-**10 min**
 
 ---
 
@@ -84,5 +79,3 @@ Finally publish the application to the (remote) server and run it. You app shoul
 
 
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

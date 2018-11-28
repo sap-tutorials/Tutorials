@@ -149,5 +149,3 @@ You should now see the authorized client application for `hcpms`, as well as the
 [ACCORDION-END]
 
 
-## Next Steps
-- [Read SAP Mobile Secure configuration data](https://www.sap.com/developer/tutorials/fiori-ios-scpms-configprovider.html)

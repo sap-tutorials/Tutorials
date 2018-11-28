@@ -248,7 +248,4 @@ You can run the same tests on both the `ORDERS_CS` and `ORDERS_DT` tables.
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-6.html)
 
----

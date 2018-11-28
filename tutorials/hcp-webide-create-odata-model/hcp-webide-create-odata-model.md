@@ -550,5 +550,3 @@ ToRole="BusinessPartner"/>
 ### Optional
 - Read up on the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm)
 
-## Next Steps
-- [Build an SAPUI5 app based on your data model and run it with mock data](https://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)

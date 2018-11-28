@@ -132,5 +132,3 @@ Click on **Finish**. The internal browser is now started and displays the tradit
 
 
 
-## Next Steps
-- [End-to-End Weather App Scenario Part 2](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)

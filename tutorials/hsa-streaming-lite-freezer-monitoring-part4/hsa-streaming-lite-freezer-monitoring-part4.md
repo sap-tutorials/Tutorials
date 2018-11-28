@@ -4,11 +4,11 @@ description: Test the Streaming Lite Project by using the `streamingsubscribe` c
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial:** [Build and Deploy Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)
+ - [Build and Deploy Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)
 
 ## Details
 ### You will learn  
@@ -17,11 +17,6 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 - How to send event records into our Streaming Lite project
 - To wrap up our Streaming Lite projects
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -122,7 +117,3 @@ In the future, we will be adding a Streaming Web Service output adapter onto thi
 
 [ACCORDION-END]
 
----
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -3,22 +3,15 @@ title: Merging branches back into master branch in GitHub using Pull Requests
 description: Collaborative Development Using GitHub and SAP Web IDE
 primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+time: 10
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:**
-     - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-github-branching.html)
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+  - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-github-branching.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how to create and send pull requests so that the changes in branches will be merged into the master branch
+  - How to create and send pull requests so that the changes in branches will be merged into the master branch
 
-
-### Time to Complete
-**10 Min**.
 
 ---
 
@@ -64,5 +57,3 @@ In this tutorial, you'll learn how to create and send pull requests so that the 
 
     ![Switch to master](p6_8c.png)
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

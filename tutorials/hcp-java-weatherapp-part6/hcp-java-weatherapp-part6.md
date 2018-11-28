@@ -279,7 +279,3 @@ Once you execute the call, you'll see two empty brackets "[]" (indicating an emp
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [End-to-End Weather App Scenario Part 7](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)

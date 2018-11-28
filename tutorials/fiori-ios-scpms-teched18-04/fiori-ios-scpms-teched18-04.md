@@ -1,272 +1,221 @@
 ---
-title: Enhance App with Data Visualization Capabilities
-description: Use the data visualization capabilities to display bar charts in your app.
+title: Use SAP Fiori Mentor App to Extend the Application
+description: Use the SAP Fiori Mentor app to implement a timeline into the previously generated application.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
-time: 20
+time: 25
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
+- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 3.0
 
 ## Details
 ### You will learn  
-  - About the data visualization capabilities of the SDK
-
-For brevity, static data is used, but this can easily be changed to OData entities, like you did with the implementation of the timeline cell in the previous steps.
+  - How to use the SAP Fiori Mentor iPad app to explore the `FUITimelineCell`
+  - How to use the sample code to extend the previously generated app to show tracking information in a nice and clear way
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Data visualization example)]
+[ACCORDION-BEGIN [Step 1: ](Change sort order)]
 
-In the **Project navigator**, navigate to the `MyDeliveries/ViewControllers/PackagesType` folder. Control-click (or right-click) this folder, and from the context menu, select **New File...**
+By default, if the user taps on the **`DeliveryStatus`** row in the detail page for a selected package, the related entities are displayed in whatever order the OData service returns them. Ideally, these would be sorted, with the latest status update on top.
 
-In the dialog, select **Cocoa Touch Class**:
+In Xcode, open `PackagesTypeDetailViewController.swift` and locate the function `tableView(_:didSelectRowAt:)`.
 
-![New View Controller subclass](fiori-ios-scpms-create-app-teched18-part4-29.png)
+> **Hint:** You can use the `Open Quickly` feature of Xcode to search for the `PackagesTypeDetailViewController` class with `Command + Shift + O`. Once you've opened the file, you can quickly jump to the `tableView(_:didSelectRowAt:)` function by using the **jump bar** at the top of the editor area pane.
 
-Click **Next**.
+**FIXME: INSERT JUMP BAR SCREENSHOT HERE**
 
-First, set the **Subclass** to `UIViewController`.
+![Jump bar](fiori-ios-scpms-create-app-teched18-part4-0.png)
 
-Then, change the **Class** to `ChartViewController`.
+When the user runs the application, selects a package, and taps on the 5th row of the package detail (**`DeliveryStatus`**), this function is called. It loads the associated storyboard for displaying the delivery status UI, and it sets up code that will load the package's related delivery status entities by way of the `self.deliveryService.loadProperty` function.
 
-![New View Controller subclass](fiori-ios-scpms-create-app-teched18-part4-58.png)
-
-Click **Next** to continue. Check that the file is saved in the `PackagesType` group, and click **Create** to create the class. The new file will open now.
-
-In order to show the SDK's data visualizations, it should subclass `FUIChartFloorplanViewController`.
-
-First add the necessary import statements:
+Inside the `tableView(_:didSelectRowAt:)` function, look for the following lines, which load the `deliveryStatus` property:
 
 ```swift
-import SAPFoundation
-import SAPFiori
-import SAPCommon
-```
-
-Then change the signature of the class so it now extends from `FUIChartFloorplanViewController`:
-
-```swift
-class ChartViewController: FUIChartFloorplanViewController {
-
-```
-
-Now you have the scaffolding for the data visualizations class. We'll leave it for now, the actual implementation will be finalized in a later step.
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Add view controller to storyboard)]
-
-Open the `PackagesType.storyboard` file, and click the **Object Library** button in the right area of the toolbar. Drag a **View Controller** onto the storyboard.
-
-![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-46-1.png)
-
-Select the new **View Controller** and go to the **Attributes Inspector**. Set the **Title** to **Chart View**:
-
-![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-46.png)
-
-Now switch to the **Identity Inspector**, enter `ChartViewController` for the **Custom Class**, and press Return. Be sure to get the spelling right; if it's correct, you'll see the Module change to `MyDeliveries` (the name of your project):
-
-![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-47.png)
-
-Use the **Object Library** to drag a single **Table View Cell** onto the **Detail Table View**, and set the following properties in the attribute inspector:
-
-| Field | Value |
-|----|----|
-| Identifier | `NavToShowChart` |
-| Accessory | `Disclosure Indicator` |
-
-![Create Table View Cell](fiori-ios-scpms-create-app-teched18-part4-48.png)
-
-Hold down the Control key and drag from the just added **Table View Cell** to the **Chart View Scene**, creating a connection line between them. From the **Segue** dialog, choose **Show**.
-
-With the segue selected, go to the attributes inspector and provide the name `showChart` as its **Identifier**.
-
-![Create Segue](fiori-ios-scpms-create-app-teched18-part4-49.png)
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Implement Table View Cell for Chart)]
-
-Open file `./MyDeliveries/ViewControllers/PackagesType/PackagesTypeDetailViewController.swift`.
-
-Locate the function `tableView(_: UITableView, numberOfRowsInSection _: Int)`. Currently it returns **5** rows, the total number of properties the `Package` entity has. However, since you added an extra Table View Cell to navigate to the Chart View scene, you want to make this extra cell visible.
-
-Set the return value to `6`:
-
-```swift
-override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-  return 6
+self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity) { error in
+  self.hideFioriLoadingIndicator()
+  if let error = error {
+    completionHandler(nil, error)
+    return
+  }
+  completionHandler(self.entity.deliveryStatus, nil)
 }
 ```
-Next, locate the function `tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)`.
 
-To display the added Table View Cell, add an extra `case` statement, just above the `default:` switch:
+Currently, the `loadProperty` function receives two arguments: the associated property (`PackagesType.deliveryStatus`) and the `entity` into which the results should be stored (the object for the currently selected package). However, the function can receive a 3rd argument with a `DataQuery` instance, which further modifies the query used to fetch the related entities. Since we want the results in descending order, we'll add a data query that specifies descending order for the delivery timestamps.
+
+Create a new `sortQuery` constant for the data query just **above** those lines:
 
 ```swift
-case 5:
-  let chartNavigationCell = tableView.dequeueReusableCell(withIdentifier: "NavToShowChart", for: indexPath)
-  chartNavigationCell.textLabel?.text = "Waiting Time"
-  chartNavigationCell.textLabel?.textColor = .preferredFioriColor(forStyle: .primary1)
-
-  return chartNavigationCell
+let sortQuery = DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp, .descending)
 ```
+
+Then insert the `sortQuery` constant as the 3rd argument to the `self.deliveryService.loadProperty` function:
+
+```swift
+self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity, query: sortQuery) { error in
+```
+
+The function now receives a query object, indicating you want to sort on the `deliveryTimestamp` field of the `DeliveryStatusType` entity, in descending order.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement Chart View Controller)]
+[ACCORDION-BEGIN [Step 2: ](Explore timeline cells with SAP Fiori Mentor app)]
 
-In the **Project navigator**, navigate to the `MyDeliveries/ViewControllers/PackagesType` folder and open the `ChartViewController.swift` file you have created in step 18.
+Since we want to display the `DeliveryStatus` items in a timeline, the best way to achieve this is to use the SDK's `FUITimeline` table view cell control. A great tool for exploring SAP Fiori for iOS controls and help implementing these into your project is the **SAP Fiori Mentor app**. This is a companion tool to the SDK, and can be downloaded for iPad from the App Store.
 
-Replace the `viewDidLoad` function with the following:
+Open the SAP Fiori Mentor app on your iPad. Upon opening, the app shows an overview page:
+
+![Mentor app](fiori-ios-scpms-create-app-teched18-part4-1.png)
+
+Tap on **See All** next to the **UI Components** section, and scroll down until you see the **Timeline Cell** tile:
+
+![Mentor app](fiori-ios-scpms-create-app-teched18-part4-2.png)
+
+Tap the **Timeline Cell** tile. You now see a page with a representation of the SAP Fiori Timeline cell, and a couple of preset styles to change the look and feel for the control.
+
+![Mentor app](fiori-ios-scpms-create-app-teched18-part4-3.png)
+
+You can also customize the look and feel on a more granular level. Tap the **button with three dots** in the lower right corner. This will bring a pop up where you can specify different settings for the control. The control's look and feel is instantly updated, giving you an idea of the final result:
+
+![Mentor app](fiori-ios-scpms-create-app-teched18-part4-4.png)
+
+When you're happy with the final result, tap the **Code button** (the one labeled `</>`). This will bring a pop up with a sample `UITableViewController` class, and all the properties you have set or enabled in the **Control Settings** pop-up are reflected in the generated code:
+
+![Mentor app](fiori-ios-scpms-create-app-teched18-part4-5.png)
+
+If you are using your own Mac and iPad that are both logged into the same iCloud account, you can tap the **Share** button in the top-right, and tap **Copy** to copy the code to the Universal Clipboard. You can then paste it directly into Xcode on your Mac.
+
+![Mentor app](fiori-ios-scpms-create-app-teched18-part4-6.png)
+
+> **Note:** For this exercise, you don't need to do this yourself. The code to implement will be provided in the next step.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Implement the FUITimelineCell into your UITableView)]
+
+In this step, you implement the Fiori Timeline cells to show the `DeliveryStatus` entities in a logical way. To do that we have to implement the right code into the `DeliveryStatusTypeMasterViewController.swift` class.
+
+Open the file `./MyDeliveries/ViewControllers/DeliveryStatusType/DeliveryStatusTypeMasterViewController.swift` and locate the function `viewDidLoad()`. You can also use the `Open Quickly` feature of Xcode to search for the `DeliveryStatusTypeMasterViewController.swift` class with `Command + Shift + O`.
+
+Locate the line `self.tableView.estimatedRowHeight = 98` and remove it.
+
+In place of the just removed line of code, add the following:
 
 ```swift
-override func viewDidLoad() {
-  super.viewDidLoad()
-
-  title = "Waiting Time"
-  chartView.chartType = .bar
-
-  chartView.dataSource = self
-  summaryView.dataSource = self
-
-  titleText.text = "Duration"
-  status.text = "Click chart for details"
-  categoryAxisTitle.text = "Location"
-  valuesAxisTitle.text = "Waiting time in hours"
-}
+self.tableView.register(FUITimelineCell.self, forCellReuseIdentifier:"FUITimelineCell")
+self.tableView.register(FUITimelineMarkerCell.self, forCellReuseIdentifier: "FUITimelineMarkerCell")
+self.tableView.estimatedRowHeight = 44
+self.tableView.backgroundColor = UIColor.preferredFioriColor(forStyle: .backgroundBase)
+self.tableView.separatorStyle = .none
 ```
 
-This sets the default settings for the chart, in this case, a bar chart.
+> The above code originated from the **SAP Fiori for iOS Mentor** app, but has been slightly modified to show both `FUITimelineCell` and `FUITimelineMarkerCell` control.
 
-A couple of errors are now shown. That is because the chart's data source is not yet implemented.
+[DONE]
+[ACCORDION-END]
 
-For this tutorial we will just use sample data. Add the following variables just below the `viewDidLoad` function:
+[ACCORDION-BEGIN [Step 4: ](Implement FUITimelineCell logic)]
 
-```swift
-// MARK: - Sample Data
-
-let chartSeriesTitles = ["Actual", "Target"]
-
-let chartCategoryTitles = ["Shipment picked up", "HONG-KONG", "AMSTERDAM", "LONDON-HEATHROW", "READING", "Delivered"]
-
-let chartData = [[2.0, 42.0, 32.0, 7.0, 5.0, 1.0]]
-
-```
-
-The following extension contains functions used for formatting the required data in to the correct format.
-Copy and paste it below the actual closing bracket of the class.
+Next, locate the function `tableView(_:cellForRowAt:)` and replace the existing function with the code below:
 
 ```swift
-// MARK: - Formatters
-
-private extension ChartViewController {
-
-    private static let measurementFormatter: MeasurementFormatter = {
-        let formatter = MeasurementFormatter()
-        formatter.numberFormatter.maximumFractionDigits = 0
-        formatter.unitOptions = .providedUnit
-        formatter.unitStyle = .long
-        return formatter
-    }()
-
-    private static let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.maximumFractionDigits = 0
-        return formatter
-    }()
-}
-
-```
-
-The `FUIChartSummaryDataSource` extension is used for the actual drawing of the data.
-Copy and paste it below the actual closing bracket of the class.
-
-```swift
-// MARK: - FUIChartSummaryDataSource implementation
-
-extension ChartViewController: FUIChartSummaryDataSource {
-
-    func chartView(_ chartView: FUIChartView, summaryItemForCategory categoryIndex: Int) -> FUIChartSummaryItem? {
-
-        let item = FUIChartSummaryItem()
-        item.categoryIndex = categoryIndex
-        item.isPreservingTrendHeight = false
-
-        switch categoryIndex {
-
-        case -1:
-            item.isEnabled = false
-            let values: [Measurement<UnitDuration>] = chartView.series.compactMap { series in
-                let categoriesUpperBound = series.numberOfValues - 1
-                guard let valuesInSeries = series.valuesInCategoryRange(0...categoriesUpperBound, dimension: 0) else { return nil }
-                let hours = valuesInSeries.lazy.compactMap { $0 }.reduce(0.0, +)
-                return Measurement(value: hours, unit: UnitDuration.hours)
-            }
-            item.valuesText = values.map { ChartViewController.measurementFormatter.string(from: $0) }
-            item.title.text = "Total wait time"
-
-        default:
-            item.isEnabled = true
-            let values = chartView.series.map { $0.valueForCategory(categoryIndex, dimension: 0)! }
-            item.valuesText = values.map { ChartViewController.numberFormatter.string(for: $0)! }
-            item.title.text = chartCategoryTitles[categoryIndex]
-        }
-        return item
-    }
-}
-
-```
-
-The third extension is the actual DataSource, responsible for providing the data to the chart.
-Copy and paste it below the actual closing bracket of the class.
-
-```swift
-// MARK: - FUIChartViewDataSource implementation
-
-extension ChartViewController: FUIChartViewDataSource {
-
-    func numberOfSeries(in: FUIChartView) -> Int {
-        return chartData.count
-    }
-
-    func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
-        return chartData[seriesIndex].count
-    }
-
-    func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
-        return chartData[seriesIndex][categoryIndex]
-    }
-
-    func chartView(_ chartView: FUIChartView, formattedStringForValue value: Double, axis: FUIChartAxisId) -> String? {
-        return ChartViewController.numberFormatter.string(for: value)!
-    }
-
-    func chartView(_ chartView: FUIChartView, titleForCategory categoryIndex: Int, inSeries seriesIndex: Int) -> String? {
-        return chartCategoryTitles[categoryIndex]
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let deliveryStatusType = self.entities[indexPath.row]
+    if deliveryStatusType.selectable != 0 {
+        return timelineCell(representing: deliveryStatusType, forRowAt: indexPath)
+    } else {
+        return timelineMarkerCell(representing: deliveryStatusType, forRowAt: indexPath)
     }
 }
 ```
 
-If you build and run the application, and tap on one of the **Packages** entities, you can see the added cell which navigates to the chart:
+Add the following functions right below the `tableView(_:cellForRowAt:)` function:
 
-![Chart View](fiori-ios-scpms-create-app-teched18-part4-50.png)
+```swift
 
-If you tap the **Waiting Time** cell, you will see the bar chart with the delivery waiting times, and calculated total waiting time (89 hours):
+private lazy var dateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MM/dd HH:mm"
+    return formatter
+}()
 
-![Chart View](fiori-ios-scpms-create-app-teched18-part4-51.png)
+private func timelineMarkerCell(representing deliveryStatusType: DeliveryStatusType, forRowAt indexPath: IndexPath) -> FUITimelineMarkerCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineMarkerCell", for: indexPath) as! FUITimelineMarkerCell
 
-If you now tap on one of the bars in the chart, the item's details are shown in the summary header:
+    cell.nodeImage = nodeImage(for: deliveryStatusType)
+    cell.showLeadingTimeline = indexPath.row != 0
+    cell.showTrailingTimeline = indexPath.row != (self.entities.count - 1)
+    cell.eventText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
+    cell.titleText = deliveryStatusType.status
 
-![Chart View](fiori-ios-scpms-create-app-teched18-part4-52.png)
+    return cell
+}
+
+private func timelineCell(representing deliveryStatusType: DeliveryStatusType, forRowAt indexPath: IndexPath) -> FUITimelineCell {
+
+    let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineCell", for: indexPath) as! FUITimelineCell
+
+    cell.nodeImage = nodeImage(for: deliveryStatusType)
+    cell.eventText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
+    cell.headlineText = deliveryStatusType.status
+    cell.subheadlineText = deliveryStatusType.location
+
+    return cell
+}
+
+private func nodeImage(for deliveryStatusType: DeliveryStatusType) -> UIImage {
+    switch deliveryStatusType.statusType! {
+    case "start"    : return FUITimelineNode.start
+    case "inactive" : return FUITimelineNode.inactive
+    case "complete" : return FUITimelineNode.complete
+    case "earlyEnd" : return FUITimelineNode.earlyEnd
+    case "end"      : return FUITimelineNode.end
+    default         : return FUITimelineNode.open
+    }
+}
+
+```
+
+The changed function `tableView(_:cellForRowAt:)` decides based on `DeliveryStatus` property `selectable` which specific timeline cell to render. The rendering is done via two private functions `timelineMarkerCell(representing:forRowAt:)` and `timelineCell(representing:forRowAt:)`.
+
+> These two private functions are implemented based on the code from the **SAP Fiori for iOS Mentor** app, but the code from the Mentor app has been split into two separate functions and control binding has already been implemented for easier implementation in this tutorial.
+
+The final two private functions are helpers to format the timestamp into something more readable, and to get the correct `FUITimelineNode` image indicator based on the `DeliveryStatus` property `StatusType`.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Remove the DeliveryStatusType from the collections screen)]
+
+Since you're not interested in displaying the whole collection of `DeliveryStatusType` objects from the Collections screen, you may want to change it so you only have the `Packages` visible.
+
+Open the file `./MyDeliveries/ViewControllers/CollectionsViewController.swift` and change the following line:
+
+```swift
+private var collections = CollectionType.all
+```
+
+...to the following:
+
+```swift
+private let collections = [CollectionType.packages]
+```
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 6: ](Run the application)]
+
+Build and run the application. Navigate to the `Packages` master page and select a package. If you now tap on the `DeliveryStatus` cell, you'll navigate to the `DeliveryStatusTypeMasterViewController`, and the package's related `DeliveryStatus` records are now shown in descending order using two flavors of the **Fiori Timeline** cell control.
+
+![Timeline](fiori-ios-scpms-create-app-teched18-part4-7.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

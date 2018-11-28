@@ -3,21 +3,15 @@ title: Consume an OData Service with Create Option
 description: Consume an OData Service with Create Option
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Intermediate
 - **Tutorials:** [Use OData Metadata to dynamically create the columns](https://www.sap.com/developer/tutorials/xsa-sapui5-metadata.html)
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-Consume an OData Service with Create Option
+  - How to consume an OData service with create option
 
-
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -264,6 +258,3 @@ Try both creating a new record and editing existing records. Also try creating a
 
 [ACCORDION-END]
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

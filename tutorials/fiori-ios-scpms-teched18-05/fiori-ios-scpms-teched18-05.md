@@ -1,6 +1,6 @@
 ---
-title: Apply a Custom Theme to Your iOS App
-description: Apply a custom theme to your iOS app using the SAP Cloud Platform SDK for iOS.
+title: Add Data Visualization to the App - Part 1
+description: Use Storyboards to build the UI for the static data to display
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -8,157 +8,116 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
+- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 3.0
 
 ## Details
 ### You will learn  
-  - How to apply a custom theme to your iOS app using [`NUI`](https://github.com/tombenner/nui).
-
-`NUI` enables you to style iOS components with Style sheets similar to CSS. `NUI` is already integrated in the SAP Cloud Platform SDK for iOS so you don't need to install anything.
+  - About the data visualization capabilities of the SDK
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a NUI stylesheet)]
+[ACCORDION-BEGIN [Step 1: ](Data visualization example)]
 
-In Xcode, right-click the `MyDeliveries` folder and from the context menu, select **New File...**. In the dialog, scroll down to the **Other** section and select the **Empty** template:
+In the **Project navigator**, navigate to the `MyDeliveries/ViewControllers/PackagesType` folder. Control-click (or right-click) this folder, and from the context menu, select **New File...**
 
-![Create a NUI stylesheet](fiori-ios-scpms-create-app-teched18-part5-53.png)
+In the dialog, select **Cocoa Touch Class**:
 
-Click **Next** to proceed.
+![New View Controller subclass](fiori-ios-scpms-create-app-teched18-part6-1.png)
 
-In the next screen, provide the following details:
+Click **Next**.
+
+First, set the **Subclass** to `UIViewController`.
+
+Then, change the **Class** to `ChartViewController`.
+
+![New View Controller subclass](fiori-ios-scpms-create-app-teched18-part6-7.png)
+
+Click **Next** to continue. Check that the file is saved in the `PackagesType` group, and click **Create** to create the class. The new file will open now.
+
+In order to show the SDK's data visualizations, it should subclass `FUIChartFloorplanViewController`.
+
+First add the necessary import statements:
+
+```swift
+import SAPFoundation
+import SAPFiori
+import SAPCommon
+```
+
+Then change the signature of the class so it now extends from `FUIChartFloorplanViewController`:
+
+```swift
+class ChartViewController: FUIChartFloorplanViewController {
+
+```
+
+Now you have the scaffolding for the data visualizations class. We'll leave it for now, the actual implementation will be finalized in a later step.
+
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Add view controller to storyboard)]
+
+Open the `PackagesType.storyboard` file, and click the **Object Library** button in the right area of the toolbar. Drag a **View Controller** onto the storyboard.
+
+![Create View Controller](fiori-ios-scpms-create-app-teched18-part6-2.png)
+
+Select the new **View Controller** and go to the **Attributes Inspector**. Set the **Title** to **Chart View**:
+
+![Create View Controller](fiori-ios-scpms-create-app-teched18-part6-3.png)
+
+Now switch to the **Identity Inspector**, enter `ChartViewController` for the **Custom Class**, and press Return. Be sure to get the spelling right; if it's correct, you'll see the Module change to `MyDeliveries` (the name of your project):
+
+![Create View Controller](fiori-ios-scpms-create-app-teched18-part6-4.png)
+
+Use the **Object Library** to drag a single **Table View Cell** onto the **Detail Table View**, and set the following properties in the attribute inspector:
 
 | Field | Value |
 |----|----|
-| File Name | `CustomTheme.nss` |
+| Identifier | `NavToShowChart` |
+| Accessory | `Disclosure Indicator` |
 
-![Create a NUI stylesheet](fiori-ios-scpms-create-app-teched18-part5-54.png)
+![Create Table View Cell](fiori-ios-scpms-create-app-teched18-part6-5.png)
 
-Make sure it is saved in the `MyDeliveries` group and click **Create**. The new `CustomTheme.nss` file is now created in the root of your project.
+Hold down the Control key and drag from the just added **Table View Cell** to the **Chart View Scene**, creating a connection line between them. From the **Segue** dialog, choose **Show**.
 
-[DONE]
-[ACCORDION-END]
+With the segue selected, go to the attributes inspector and provide the name `showChart` as its **Identifier**.
 
-[ACCORDION-BEGIN [Step 2: ](Add styles to the stylesheet)]
-
-The styles in the stylesheet can be applied to both standard iOS components such as `UINavigationBar`, `UITableView` etc. as well as SAP Fiori for iOS components.
-
-For a reference of the standard iOS components classes, you can refer to [NUI style classes](https://github.com/tombenner/nui#style-classes).
-
-For SAP Fiori for iOS components style classes, the following conventions should be followed:
-
-- Global definitions
-   - `fdl<lower camelcase enum name>_<property name>`
-   - example: `fdlFontStyle_subheadline`
-
-- SAP Fiori component specific definitions
-   - `fdl<class name>_<property name>`
-   - example: `fdlFUIWelcomeScreen_primaryActionButton`
-
-Open the just created `CustomTheme.nss` file, and add the following:
-
-```css
-NavigationBar {
-  bar-tint-color: #B0D450;
-}
-
-BarButton {
-  font-color: #3A835B;
-}
-
-/* Onboarding Welcome Screen */
-fdlFUIWelcomeScreen_headlineLabel {
-  font-color: #3A835B;
-}
-
-/* Fiori subheadline */
-fdlFontStyle_subheadline {
-  font-style: subheadline;
-  font-color: #3A835B;
-}
-
-/* Fiori Timeline cells */
-fdlFUITimelineCell, fdlFUITimelineMarkerCell {
-  background-color: #E0F0B9;
-}
-
-fdlFUITimelineCell_timelineBackground,
-fdlFUITimelineMarkerCell_cardBackground,
-fdlFUITimelineMarkerCell_timelineBackground {
-  background-color: #E0F0B9;
-}
-
-/* Fiori Data Vizualization */
-fdlFUIChartFloorplanViewController_title,
-fdlFUIChartFloorplanViewController_seriesTitles,
-fdlFUIChartFloorplanViewController_valuesAxisTitle,
-fdlFUIChartFloorplanViewController_categoryAxisTitle {
-  font-color: #3A835B;
-}
-```
-
-This adds a light-green tint to the standard iOS navigation bar as well as a darker green for the navigation bar buttons.
-
-The standard SAP Fiori `subheadline` font style (member of the SDK's `SAPFiori FDLFontStyle` enum) is also changed to green, as is the onboarding's application title and primary action button.
-
-The SAP Fiori Timeline cells get a light green background, and the SAP Fiori Data Visualization chart texts will be the same dark green as the headlines.
+![Create Segue](fiori-ios-scpms-create-app-teched18-part6-6.png)
 
 [DONE]
+
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Implement Table View Cell for Chart)]
 
-[ACCORDION-BEGIN [Step 3: ](Change chart bar color)]
+Open file `./MyDeliveries/ViewControllers/PackagesType/PackagesTypeDetailViewController.swift`.
 
-The chart bars are normally not styled with a stylesheet, since you would rather have them colored based on their context and/or value.
+Locate the function `tableView(_:numberOfRowsInSection:)`. Again, you can use the jump bar above the editor pane to quickly find this function.
 
-However, you could easily change the default Fiori blue to a dark green color by adding the following line in the body of the `viewDidLoad` function inside the `ChartViewController`:
+Currently this returns **5** rows, the total number of properties the `Package` entity has. However, since you added an extra Table View Cell to navigate to the Chart View scene, you want to make this extra cell visible.
+
+Set the return value to `6`:
 
 ```swift
-chartView.series.colors = [UIColor(hexString: "#3A835B")]
+override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+    return 6
+}
 ```
+Next, locate the function `tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)`.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Load stylesheet)]
-
-In order for your app to apply the custom styles, you need to tell your app to use the custom stylesheet.
-
-Open the app's `AppDelegate.swift` file, and in function `application(_:didFinishLaunchingWithOptions:)`, at the top of the function's body, add the following line:
+To display the added Table View Cell, add an extra `case` statement, just above the `default:` switch:
 
 ```swift
-NUISettings.initWithStylesheet(name: "CustomTheme")
+case 5:
+    let chartNavigationCell = tableView.dequeueReusableCell(withIdentifier: "NavToShowChart", for: indexPath)
+    chartNavigationCell.textLabel?.text = "Waiting Time"
+    chartNavigationCell.textLabel?.textColor = .preferredFioriColor(forStyle: .primary1)
+
+    return chartNavigationCell
 ```
-
-This tells your app to use `NUI` with your custom stylesheet `CustomTheme.nss`.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Build and run the app)]
-
-First, remove the app from your device, so you will go through the onboarding again.
-
-Then build and run the app.
-
-When launched, you should see the restyled onboarding screen with the new theme:
-
-![Create a NUI stylesheet](fiori-ios-scpms-create-app-teched18-part5-55.png)
-
-If you proceed further, you will see the navigation bar is also styled:
-
-![Create a NUI stylesheet](fiori-ios-scpms-create-app-teched18-part5-56.png)
-
-And, unsurprisingly, the custom UI you have created earlier follows the same theme:
-
-![Create a NUI stylesheet](fiori-ios-scpms-create-app-teched18-part5-57.png)
-
-![Create a NUI stylesheet](fiori-ios-scpms-create-app-teched18-part5-59.png)
-
-> For more on theming SAP Fiori for iOS components, see [Branding & Theming](https://help.sap.com/doc/978e4f6c968c4cc5a30f9d324aa4b1d7/Latest/en-US/Documents/Frameworks/SAPFiori/Branding%20and%20Theming.html)
-
-> For more on `NUI`, see [NUI readme](https://github.com/tombenner/nui/)
 
 [VALIDATE_1]
 [ACCORDION-END]
