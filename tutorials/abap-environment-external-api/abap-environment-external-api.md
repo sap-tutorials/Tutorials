@@ -5,6 +5,8 @@ auto_validation: true
 primary_tag: products>sap-cloud-platform-abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
 time: 30
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
