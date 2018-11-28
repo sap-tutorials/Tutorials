@@ -35,6 +35,9 @@ Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.on
 
 ![SCPms landing page](fiori-ios-scpms-create-app-teched18-part1-01.png)
 
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 2: ](Setup your Mobile Services account in the iOS Assistant)]
 
 The SAP Cloud Platform SDK for iOS includes an Assistant app for generating and managing iOS apps that use the Mobile Services. To get started with the Assistant, you'll need to configure it for your account. Part of this configuration can be imported automatically.
