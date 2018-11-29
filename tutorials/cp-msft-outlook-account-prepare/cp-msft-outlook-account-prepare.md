@@ -49,6 +49,7 @@ You can now create your own `@outlook.com` mail address which will later be used
 ![create mail adress](alias.png)
 
 Write the name of the created `@outlook.com` address in the text field below then click **Validate**.
+
 [VALIDATE_1]
 
 [ACCORDION-END]
