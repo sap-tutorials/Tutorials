@@ -146,7 +146,3 @@ public Response getWeatherInformation(@PathParam(value = "id") String id,    @Co
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [End-to-End Weather App Scenario Part 9](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)

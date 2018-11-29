@@ -2,9 +2,11 @@
 title: Create an HTTP Service
 description: Create an HTTP service in the ABAP environment that can be called from the browser.
 auto_validation: true
-primary_tag: topic>abap-development
+primary_tag: products>sap-cloud-platform-abap-environment
 tags: [  tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
 time: 15
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  

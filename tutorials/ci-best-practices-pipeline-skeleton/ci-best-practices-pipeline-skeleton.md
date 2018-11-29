@@ -294,6 +294,3 @@ In practice, only very few changes are finally released. The journey for most ch
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

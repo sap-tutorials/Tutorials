@@ -153,5 +153,3 @@ Now, when you navigate to the `HelloWorldServlet` with the URL `http://localhost
 [ACCORDION-END]
 
 
-## Next Steps
-- [End-to-End Weather App Scenario Part 4](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)

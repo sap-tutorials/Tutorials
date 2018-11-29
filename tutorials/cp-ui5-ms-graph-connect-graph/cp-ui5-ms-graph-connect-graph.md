@@ -40,7 +40,7 @@ You are now forwarded to the configuration of your application. Add the URL of y
 
 ![portal-app-platform-details](./ms-portal-callbacks.png)
 
-> You can also add `localhost:8000` as an additional Redirect URL in case you wish to test the application locally as well.
+> You can also add `http://localhost:8000` as an additional Redirect URL in case you wish to test the application locally as well.
 
 
 To enable your application to search for emails navigate to `Microsoft Graph Permissions`, click on **Add** and select the **`Mail.read`** permission.
@@ -51,7 +51,7 @@ Save the changes and scroll to the top to save app id in your clipboard or a new
 
 ![appid](./appid.png)
 
-> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com> [for Microsoft Office 365 users] or <https://account.live.com/consent/Manage> [for outlook.com users] 
+> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com> [for Microsoft Office 365 users] or <https://account.live.com/consent/Manage> [for `outlook.com` users]
 
 [VALIDATE_1]
 [ACCORDION-END]

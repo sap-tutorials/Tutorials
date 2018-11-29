@@ -73,5 +73,3 @@ For security reasons and for the sake of housekeeping you should remove all <wel
 
 
 
-## Next Steps
-- [End-to-End Weather App Scenario Part 3](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)

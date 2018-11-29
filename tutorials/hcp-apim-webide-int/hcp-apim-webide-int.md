@@ -4,22 +4,14 @@ description: In this tutorial you will learn how to consume the API Proxy create
 auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, products>sap-api-management ]
+time: 20
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
 - **Tutorials:** [Protect your API Proxy by adding an Application Key Verification](https://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)
-
-## Next Steps
-- This is the end of this series
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 
 ## Details
 ### You will learn  
 Since SAP Cloud Platform, API Management is one of many services on the SAP Cloud Platform it also offers a deep integration in SAP Web IDE. With this integration you can easily browse and consume services from SAP Cloud Platform, API Management and directly create SAP Fiori like SAPUI5 applications leveraging one of the templates offered in SAP Web IDE.
-
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -362,7 +354,3 @@ You should see a Fiori app connecting via SAP API Management to the SAP Gateway 
 [ACCORDION-END]
 
 
-
-## Next Steps
-- This is the end of this series
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

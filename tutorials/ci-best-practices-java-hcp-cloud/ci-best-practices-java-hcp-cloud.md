@@ -715,6 +715,3 @@ More sophisticated control mechanisms are provided by the Travis build matrix:
 > [Travis Documentation: Build Matrix](https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix)
 
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

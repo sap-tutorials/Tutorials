@@ -128,5 +128,3 @@ topic = 'test' ;
 
 [ACCORDION-END]
 
-## Next Steps
- - [Further Readings on Custom Adapters](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part7.html)

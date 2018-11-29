@@ -132,5 +132,3 @@ You can learn more on this topic in tutorial [Configure the behavior of the Offl
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- [Offline OData - Configuration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-config.html)

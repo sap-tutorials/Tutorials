@@ -284,6 +284,3 @@ You can now re-deploy the app to SAP Cloud Platform so you will be able to see y
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Calculate and display a new field in an SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)

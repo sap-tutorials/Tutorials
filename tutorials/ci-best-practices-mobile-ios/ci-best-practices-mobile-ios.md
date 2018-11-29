@@ -625,8 +625,3 @@ In your Jenkins web interface, you should now see a new build pop up under the l
 
 *Figure 36: Log of the successful Jenkins build stage*
 
-## Next Steps
-
-  You can read through the remaining guides in order to proceed with advanced automation topics such as Git-related workflows (e.g. branching strategies and code reviews) and setting up pipelines.
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

@@ -84,7 +84,3 @@ Publish/deploy your updated app and navigate your browser to the root URL: `http
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [End-to-End Weather App Scenario Part 10](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)

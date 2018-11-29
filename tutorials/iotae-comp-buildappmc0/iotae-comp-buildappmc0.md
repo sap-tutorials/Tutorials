@@ -3,22 +3,17 @@ title: Building freestyle IoT application
 description: Building freestyle IoT application using SAP Web IDE Full-Stack in SAP Cloud Platform
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide  ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html) (you can also use other people's data coming from this tutorial)
 
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
-You will learn the workflow of building the freestyle IoT application using SAP Web IDE Full-Stack
+  - How to build the freestyle IoT application using SAP Web IDE Full-Stack
 
-### Time to Complete
-**20 Min**
 
 ---
 
@@ -159,6 +154,3 @@ You can play now with different parameters in the Layout Editor and see how it c
 
 [ACCORDION-END]
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -101,5 +101,3 @@ settings.load(for: .application)
 
 [ACCORDION-END]
 
-## Next Steps
- - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)

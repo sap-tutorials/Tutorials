@@ -222,7 +222,3 @@ Congratulations! You've developed your application that shows the products and s
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Deploy an app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)

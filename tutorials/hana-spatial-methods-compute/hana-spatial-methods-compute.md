@@ -176,5 +176,3 @@ order by 3 asc;
 
 ---
 
-## Next Steps
- - [Transformation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-transform.html)

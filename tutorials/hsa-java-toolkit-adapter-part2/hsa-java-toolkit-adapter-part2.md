@@ -361,5 +361,3 @@ public class MqttFormatter extends RowFormatter {
 
 [ACCORDION-END]
 
-## Next Steps
- - [Creating Custom Adapter Configuration Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part3.html)

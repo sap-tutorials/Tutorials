@@ -119,5 +119,3 @@ Respond to each message in your queue and verify that points and badges are awar
 
 [ACCORDION-END]
 
-## Next Steps
-- [Deploy gamified HelpDesk application to the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)

@@ -11,7 +11,7 @@ time: 20
 - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 - [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 - **Development environment:** Android Studio
-- **SAP Cloud Platform SDK for Android:** Version 1.1.x
+- **SAP Cloud Platform SDK for Android:** Version `1.1.x`
 
 ## Details
 ### You will learn  
@@ -21,7 +21,7 @@ time: 20
 
 > Before you start, make sure you have:
 
-> - Downloaded <a target="_blank" href="https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html">SAP Cloud Platform SDK for Android</a> **version 1.1.0**.
+> - Downloaded <a target="_blank" href="https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html">SAP Cloud Platform SDK for Android</a> **version `1.1.x`**.
 > - Followed the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/installing.html">Installing the SAP Cloud Platform SDK for Android</a> instructions.
 > - Created a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for more information.
 > - Enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html) for more information.
@@ -40,7 +40,7 @@ Choose **Start a new SAP Cloud Platform Android project**.
 
 
 The wizard can save the server connection details for multiple servers. Fill in the required fields as shown below.
-> **Note**: Ensure you have completed the prerequisites for this tutorial before continuing to guarantee that you have an account.
+>Ensure you have completed the prerequisites for this tutorial before continuing to guarantee that you have an account.
 
 | Field | Value |
 |----|----|
@@ -138,7 +138,7 @@ Now browse for the **`google-services.json`** file in the wizard. This will enab
 
 ![Add google-services.json file to wizard](wizard-google-services-added.png)
 
-> **Note**: The push configuration on the server will be added in the tutorial Send notifications to your application.
+>The push configuration on the server will be added in the tutorial Send notifications to your application.
 
 
 Click **Finish**.
@@ -157,7 +157,7 @@ Click the **Run** toolbar icon.
 
 
 Choose the emulator to run the app on.  
-> **Note**: For more information on creating Virtual Devices that run in the Android Emulator, see <a href="https://developer.android.com/studio/run/managing-avds">here</a>.
+>For more information on creating Virtual Devices that run in the Android Emulator, see <a href="https://developer.android.com/studio/run/managing-avds">here</a>.
 
 ![Deployment target](choose-emulator.png)
 
@@ -193,7 +193,7 @@ Tap on a list item to show an editable detail screen.
 
 ![Category detail](product-detail.png)
 
-> **Note**: Further information on the generate application can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/creating_an_app.html">Running the Wizard</a> and the `WizardAppReadme.md` file located in the generated app.
+>Further information on the generate application can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/creating_an_app.html">Running the Wizard</a> and the `WizardAppReadme.md` file located in the generated app.
 
 
 Congratulations!  You have created your first Android app using the SAP Cloud Platform SDK for Android!

@@ -4,11 +4,11 @@ description: Learn how to deploy our Custom Java Adapter by creating a .jar file
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial:** [Code the Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part3.html)
+ - [Code the Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part3.html)
 
 ## Details
 ### You will learn  
@@ -16,11 +16,6 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - How to transfer the .jar file to our Raspberry Pi
  - How to test our Custom Java Adapter by subscribing to the event streams
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -95,5 +90,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 ---
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -11,12 +11,7 @@ tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
-
 ## Details
-
 ### You will learn  
 
 In the preceding tutorials you created a custom business object with a simple data structure and its persistence. Afterwards you generated an UI for this business object and exposed it as an Fiori Launchpad application.

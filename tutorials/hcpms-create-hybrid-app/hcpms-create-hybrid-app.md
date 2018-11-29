@@ -112,7 +112,3 @@ You have successfully created the application in Development & Operations. Click
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Configure an SAP Web IDE project for hybrid builds](https://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)

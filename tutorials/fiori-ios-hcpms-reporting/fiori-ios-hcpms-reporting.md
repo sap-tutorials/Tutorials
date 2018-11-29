@@ -72,5 +72,3 @@ Click the **Push Statistics** tile. Here you can review notification counts by a
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- [Introduction to Offline OData](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)

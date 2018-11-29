@@ -145,11 +145,10 @@ applications:
   instances: 1
   buildpack: nodejs_buildpack
   command: node app.js
-
 services:
    - pubsub-messagingservice
-
 ```
+
 >The property `random-route` will generate a route, which does not conflict with any other application in the same Cloud Foundry instance.
 
 This file contains all the deployment information, which are required by the Cloud Foundry environment.

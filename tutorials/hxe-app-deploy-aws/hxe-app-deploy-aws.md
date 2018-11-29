@@ -272,5 +272,3 @@ This tutorial will guide you through the process of deploying a sample `HANA, ex
 
 ---
 
-## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page

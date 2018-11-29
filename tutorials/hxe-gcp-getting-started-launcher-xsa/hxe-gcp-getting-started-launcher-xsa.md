@@ -78,7 +78,7 @@ sudo su - hxeadm
 
 Hit **Enter**. Follow the prompts to change password. **IMPORTANT: SAP HANA will not be usable if this step is ignored**.
 
-> ### **Note: Please check the password policy to avoid errors**
+> ### Please check the password policy to avoid errors**
 >
 > SAP HANA, express edition requires a very strong password that complies with these rules:
 >
@@ -88,7 +88,7 @@ Hit **Enter**. Follow the prompts to change password. **IMPORTANT: SAP HANA will
 > - At least 1 number
 > - Can contain special characters, but not _&grave;_ (backtick), _&#36;_ (dollar sign),  _&#92;_ (backslash), _&#39;_ (single quote), or _&quot;_ (double quotes)
 > - Cannot contain dictionary words
-> - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order. Please review password requirements in [the SAP Help](http://help-legacy.sap.com/saphelp_hanaplatform/helpdata/en/61/662e3032ad4f8dbdb5063a21a7d706/frameset.htm)
+> - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order. Please review password requirements in [the SAP Help](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.00/en-US/61662e3032ad4f8dbdb5063a21a7d706.html)
 
 ![Change password](4.png)
 
@@ -156,7 +156,7 @@ Add the IP address followed by the name of the host, which will be `hxehost`:
 
 **Save** and close the editor.
 
-> Note: If Notepad asks you to create a new file you do not have enough permissions to save the file. Creating a new file will not alter the configuration as intended.
+> If Notepad asks you to create a new file you do not have enough permissions to save the file. Creating a new file will not alter the configuration as intended.
 
 </br>
 
@@ -170,7 +170,7 @@ You can test you have successfully modified your configuration by entering the f
 
 You can use the link to the SAP Web IDE (`https://hxehost:53075/`) to open it
 
->Note: If you get a 503 error, service unavailable, the service is probably still starting. Try again in a couple of minutes.
+>If you get a 503 error, service unavailable, the service is probably still starting. Try again in a couple of minutes.
 
 Log in with `XSA_DEV` and the master password.
 
@@ -190,7 +190,7 @@ sudo passwd hxeadm
 
 ![Change password](change pass.png)
 
->Note: The default `hxeadm` password is `HXEHana1`
+>The default `hxeadm` password is `HXEHana1`
 
 [DONE]
 [ACCORDION-END]
@@ -275,7 +275,7 @@ Once you are finished editing, press `Esc` and write `:wq` to save your changes.
 
 ![change hosts name](vi2.png)
 
->Note: If you are not comfortable with this text editor, you can download the file, edit it and upload it again using a root user.
+>If you are not comfortable with this text editor, you can download the file, edit it and upload it again using a root user.
 
 Back in the console prompt, navigate to the Downloads folder, extract the installation files:
 

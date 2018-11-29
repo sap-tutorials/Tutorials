@@ -204,7 +204,3 @@ Git is installed on your local computer. If the computer is running on Linux, in
 
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
-## Next Steps
-
-  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

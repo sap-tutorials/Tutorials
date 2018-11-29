@@ -696,6 +696,3 @@ The `build-result` parameter informs the MTA archive builder about the location 
 
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
