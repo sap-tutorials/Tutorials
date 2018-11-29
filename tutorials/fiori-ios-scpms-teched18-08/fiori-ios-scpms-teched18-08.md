@@ -18,7 +18,7 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a mock location to the TrackingInfoViewController)]
+[ACCORDION-BEGIN [Step 1: ](Add a mock location to the TrackingMapViewController)]
 
 For this exercise, a static (mock) location will be used. As a challenge on your own, once you've got the map displaying the mock location, try implementing it with OData entities, like you did with the the timeline cell in previous tutorials.
 
@@ -153,7 +153,7 @@ private func setupDetailPanel() {
 }
 ```
 
-At the end of the `viewDidAppear()` function, call your new setup function:
+At the end of the `viewDidLoad()` function, call your new setup function:
 
 ```swift
 setupDetailPanel()
