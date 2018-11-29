@@ -56,6 +56,7 @@ You are now done with the registration for an Microsoft account.
 ![registration portal](registration_portal.png)
 
 Copy the URL of your Application Registration Portal (`https://apps.dev.microsoft.com`) and paste it in the text field below, then click on **Validate**.
+
 [VALIDATE_2]
 
 [ACCORDION-END]
