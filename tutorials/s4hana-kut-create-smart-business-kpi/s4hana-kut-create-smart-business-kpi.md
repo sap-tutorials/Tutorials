@@ -276,4 +276,3 @@ as it is shown on the similar picture below.
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
