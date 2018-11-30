@@ -39,15 +39,15 @@ The **SAP Cloud Platform Business Application** template is your starting point.
 
 1. Open SAP Web IDE and choose **File** | **New** | **Project from Template**.
 
-2. Choose **SAP Cloud Platform Business Application**, and in the **Basic Information** tab, specify **`SampleApp`** as the Project Name.
+1. Choose **SAP Cloud Platform Business Application**, and in the **Basic Information** tab, specify **`SampleApp`** as the Project Name.
 
     ![Select the project template](web-ide-template.png)
 
-3. Complete the **Project Details** tab as shown in the screenshot:
+1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the "Include sample files in project" checkbox is checked as shown.
 
     ![Complete the project details](project-details.png)
 
-5. Choose **Finish**.
+1. Choose **Finish**.
 
 [DONE]
 
