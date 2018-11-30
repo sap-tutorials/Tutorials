@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Get a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
  - [Set Up Cloud Foundry and SAP Web IDE](https://developers.sap.com/tutorials/teched-cf-prereq1.html)
 
 ## Details
@@ -33,7 +33,7 @@ time: 10
 
 1. In the **Template Customization** tab leave the default values.
 
-1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the "Include sample files in project" checkbox is checked as shown.
+1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the **Include sample files in project** checkbox is checked.
 
     ![Complete the project details](project-details.png)
 
