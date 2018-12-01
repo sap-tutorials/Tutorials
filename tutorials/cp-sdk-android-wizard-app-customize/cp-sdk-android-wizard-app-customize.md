@@ -157,7 +157,7 @@ Run the app and notice that each row in the Recycler View has a divider.
 
 ![Customers screen with divider](customer-with-divider.png)
 
-> **Note**: Further information on Fiori for Android can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html">Fiori UI Overview</a> and <a target="_blank" href="https://experience.sap.com/fiori-design-android/object-cell/">Fiori Android Design Guidelines</a>.
+>Further information on Fiori for Android can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html">Fiori UI Overview</a>, <a target="_blank" href="https://experience.sap.com/fiori-design-android/object-cell/">Fiori Android Design Guidelines</a> and <a target="_blank" href="https://github.com/SAP/cloud-sdk-android-fiori-ui-components">Fiori UI Demo Application</a>.
 
 Congratulations! You have customized the display of a Fiori for Android Object Cell.
 
