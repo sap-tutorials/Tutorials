@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
 time: 5
 ---
 ## Prerequisites  
- - [Loading sample data from different file formats](https://www.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)
+ - [Loading sample data from different file formats](https://developers.sap.com/tutorials/vora-zeppelin-load-file-formats.html)
 
 ## Details
 ### You will learn  

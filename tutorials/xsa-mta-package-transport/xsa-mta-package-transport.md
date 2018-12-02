@@ -7,7 +7,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - **Tutorials:** [SAP HANA XS Advanced tutorial - Getting started](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or [SAP HANA XS Advanced tutorial - Node.js](https://www.sap.com/developer/groups/hana-xsa-nodejs.html) or [SAP HANA XS Advanced tutorial - SAPUI5](https://www.sap.com/developer/groups/hana-xsa-sapui5.html)
+ - **Tutorials:** [SAP HANA XS Advanced tutorial - Getting started](https://developers.sap.com/group.hana-xsa-get-started.html) or [SAP HANA XS Advanced tutorial - Node.js](https://developers.sap.com/group.hana-xsa-nodejs.html) or [SAP HANA XS Advanced tutorial - SAPUI5](https://developers.sap.com/group.hana-xsa-sapui5.html)
 
 
 ## Details

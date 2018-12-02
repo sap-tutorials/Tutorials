@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Trial Account** You will need a SAP Cloud Platform trial account for this tutorial series.  [Create an SAP Cloud Platform Trial Account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Trial Account** You will need a SAP Cloud Platform trial account for this tutorial series.  [Create an SAP Cloud Platform Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 
 ## Next Steps
-- **Tutorial** [Create the Bootstrap Template](https://www.sap.com/developer/tutorials/react-bootstrap-template.html)
+- **Tutorial** [Create the Bootstrap Template](https://developers.sap.com/tutorials/react-bootstrap-template.html)
 
 ## Details
 ### You will learn  

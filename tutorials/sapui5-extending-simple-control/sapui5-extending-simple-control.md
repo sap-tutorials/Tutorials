@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5 ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials** [Configuring Eclipse with SAPUI5](https://www.sap.com/developer/tutorials/sapui5-install-eclipse.html)
+- **Tutorials** [Configuring Eclipse with SAPUI5](https://developers.sap.com/tutorials/sapui5-install-eclipse.html)
 - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
- - [SAPUI5 extending `TextField`, `PasswordField` and `Button` Controls with events](https://www.sap.com/developer/tutorials/sapui5-extending-button-control.html)
+ - [SAPUI5 extending `TextField`, `PasswordField` and `Button` Controls with events](https://developers.sap.com/tutorials/sapui5-extending-button-control.html)
 
 ## Details
 ### You will learn  

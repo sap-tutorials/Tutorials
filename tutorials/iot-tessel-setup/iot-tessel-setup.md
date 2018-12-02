@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana, product
  - None
 
 ## Next Steps
- - [Setup Your Tessel](http://www.sap.com/developer/tutorials/iot-tessel.html)
+ - [Setup Your Tessel](http://developers.sap.com/tutorials/iot-tessel.html)
 
 
 ## How-To Details

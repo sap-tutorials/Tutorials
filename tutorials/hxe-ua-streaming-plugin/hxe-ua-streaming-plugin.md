@@ -8,11 +8,11 @@ tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
-    - [Installing SAP HANA Streaming Analytics for SAP HANA, Express Edition](https://www.sap.com/developer/tutorials/hxe-ua-installing-streaming.html)
-    - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+    - [Installing SAP HANA Streaming Analytics for SAP HANA, Express Edition](https://developers.sap.com/tutorials/hxe-ua-installing-streaming.html)
+    - [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Next Steps
- - [Create a Streaming Project with SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
+ - [Create a Streaming Project with SAP HANA Streaming Analytics](https://developers.sap.com/tutorials/sds-create-streaming-project.html)
 
 ## Details
 Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.

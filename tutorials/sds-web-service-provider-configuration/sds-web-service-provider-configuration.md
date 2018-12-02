@@ -10,10 +10,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - **System:** Ensure you have access to a HANA System with the Smart Data Streaming option installed and configured.
  - **Web Application:** Access to SAP HANA Cockpit
  - **Tutorial:**
- - [Using the Streaming Web Service](https://www.sap.com/developer/tutorials/sds-streaming-web-service.html)
+ - [Using the Streaming Web Service](https://developers.sap.com/tutorials/sds-streaming-web-service.html)
 
 ## Next Steps
-- **Tutorials** : [Publish Events to SDS via the REST Interface](https://www.sap.com/developer/tutorials/sds-rest-publish.html)
+- **Tutorials** : [Publish Events to SDS via the REST Interface](https://developers.sap.com/tutorials/sds-rest-publish.html)
 
 ## Details
 

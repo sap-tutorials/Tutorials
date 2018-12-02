@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Anonymous Blocks](https://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
+- **Tutorials:** [Anonymous Blocks](https://developers.sap.com/tutorials/xsa-sqlscript-anonymous.html)
 
 ## Next Steps
-- [Using Execute Immediate](https://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
+- [Using Execute Immediate](https://developers.sap.com/tutorials/xsa-sqlscript-execute.html)
 
 ## Details
 ### You will learn  

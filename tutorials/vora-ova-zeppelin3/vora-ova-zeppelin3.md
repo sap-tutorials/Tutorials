@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with ORC and Parquet Files using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)
+ - [Working with ORC and Parquet Files using Apache Zeppelin](https://developers.sap.com/tutorials/vora-ova-zeppelin6.html)
 
 
 ## Next Steps
- - [Working with Hierarchies using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)
+ - [Working with Hierarchies using Apache Zeppelin](https://developers.sap.com/tutorials/vora-ova-zeppelin2.html)
 
 ## Details
 ### You will learn  

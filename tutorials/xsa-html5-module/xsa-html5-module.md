@@ -8,7 +8,7 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data,
 ---
 
 ## Prerequisites  
- - You have created a  Multi-Target Application as explained in this tutorial: [SAP HANA XS Advanced Connect to Web IDE and clone Git Repository](https://www.sap.com/developer/tutorials/xsa-connecting-webide.html)
+ - You have created a  Multi-Target Application as explained in this tutorial: [SAP HANA XS Advanced Connect to Web IDE and clone Git Repository](https://developers.sap.com/tutorials/xsa-connecting-webide.html)
 
 
 ## Details
@@ -77,7 +77,7 @@ Click **Finish** and you will see your instance is created.
 
 Alternatively, if you do not have the XS Advanced Cockpit in your server, you can use the Command Line Interface:
 
-This can be downloaded from the SAP HANA Developer Edition directly, using the Download Manager and choosing "Clients" from the [SAP HANA, Express Edition, getting started](https://www.sap.com/developer/topics/sap-hana-express.html) or via the [SAP Service Marketplace](https://websmp208.sap-ag.de/~SAPIDP/002006825000000234912001E)
+This can be downloaded from the SAP HANA Developer Edition directly, using the Download Manager and choosing "Clients" from the [SAP HANA, Express Edition, getting started](https://developers.sap.com/topics/sap-hana-express.html) or via the [SAP Service Marketplace](https://websmp208.sap-ag.de/~SAPIDP/002006825000000234912001E)
 
 ```
 xs login -a http://<hostname>:3XX30 -o HANAExpress -s development -u XSA_ADMIN

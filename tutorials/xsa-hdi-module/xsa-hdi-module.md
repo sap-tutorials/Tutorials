@@ -9,10 +9,10 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data,
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA XS Advanced Create an HTML5 Module](https://www.sap.com/developer/tutorials/xsa-html5-module.html)
+ - **Tutorials:** [SAP HANA XS Advanced Create an HTML5 Module](https://developers.sap.com/tutorials/xsa-html5-module.html)
 
 ## Next Steps
- - [SAP HANA XS Advanced - Create a Node.js module](https://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
+ - [SAP HANA XS Advanced - Create a Node.js module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 
 
 ## Details

@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 time: 15
 ---
 ## Prerequisites  
-- **How-To** [Start this tutorial series](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](https://www.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
+- **How-To** [Start this tutorial series](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](https://developers.sap.com/tutorials/sapui5-webide-enable-routing.html)
 
 ## Next Steps
- - Part 7 is next: [Update Internationalization](https://www.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
+ - Part 7 is next: [Update Internationalization](https://developers.sap.com/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,7 @@ You will also add a Detail view and controller as well as alter the `View1` view
 
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/view/View1.view.xml` file, and change the `<StandardListItem type="Active">` tag to read:

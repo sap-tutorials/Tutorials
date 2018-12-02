@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [SAPUI5 User Interface](https://www.sap.com/developer/tutorials/xsa-sapui5.html)
+- **Tutorials:** [SAPUI5 User Interface](https://developers.sap.com/tutorials/xsa-sapui5.html)
 
 ## Next Steps
-- [Use OData Metadata to dynamically create the columns](https://www.sap.com/developer/tutorials/xsa-sapui5-metadata.html)
+- [Use OData Metadata to dynamically create the columns](https://developers.sap.com/tutorials/xsa-sapui5-metadata.html)
 
 ## Details
 ### You will learn  

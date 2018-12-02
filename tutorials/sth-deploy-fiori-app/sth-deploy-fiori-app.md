@@ -7,17 +7,17 @@ tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-web-id
 
 ## Prerequisites  
  - **Proficiency:** intermediate
- - **Tutorials:** [Prepare an SAP Fiori app for translation](https://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
+ - **Tutorials:** [Prepare an SAP Fiori app for translation](https://developers.sap.com/tutorials/sth-prepare-fiori-app-translation.html)
 
 ## Next Steps
- - **Tutorials:** [Translate an SAP Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
+ - **Tutorials:** [Translate an SAP Fiori app](https://developers.sap.com/tutorials/sth-translate-fiori-app.html)
 
 
 ## Details
 ### You will learn  
 You'll learn how to create a Git repository on SAP Cloud Platform and synchronize your project in SAP Web IDE with the Git repository on SAP Cloud Platform.
 
-These steps are required for the next tutorial: [Translate an SAP Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html).
+These steps are required for the next tutorial: [Translate an SAP Fiori app](https://developers.sap.com/tutorials/sth-translate-fiori-app.html).
 
 
 ### Time to Complete

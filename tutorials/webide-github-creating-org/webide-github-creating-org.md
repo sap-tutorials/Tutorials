@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-hana, products>sap-web-ide,
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Create a Git repository within the GitHub Organization](https://www.sap.com/developer/tutorials/webide-github-create-git-repo.html)
+ - [Create a Git repository within the GitHub Organization](https://developers.sap.com/tutorials/webide-github-create-git-repo.html)
 
 ## Details
 ### You will learn  

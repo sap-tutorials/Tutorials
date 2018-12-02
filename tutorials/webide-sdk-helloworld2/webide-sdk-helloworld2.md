@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>s
 ---
 
 ## Prerequisites  
- - [Create a New Plugin Project](https://www.sap.com/developer/tutorials/webide-sdk-helloworld1.html)
+ - [Create a New Plugin Project](https://developers.sap.com/tutorials/webide-sdk-helloworld1.html)
 
 
 ## Next Steps
-- [Deploying a Feature to SAP Cloud Platform](https://www.sap.com/developer/tutorials/webide-sdk-helloworld3.html)
+- [Deploying a Feature to SAP Cloud Platform](https://developers.sap.com/tutorials/webide-sdk-helloworld3.html)
 
 ## Details
 ### You will learn  

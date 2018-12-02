@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Commit your project to Git and deploy to the cloud](https://www.sap.com/developer/tutorials/teched-2016-6.html)
+ - **Tutorials:** [Commit your project to Git and deploy to the cloud](https://developers.sap.com/tutorials/teched-2016-6.html)
 
 
 ## Next Steps
- - [Add a map display to your app](https://www.sap.com/developer/tutorials/teched-2016-7.html)
+ - [Add a map display to your app](https://developers.sap.com/tutorials/teched-2016-7.html)
 
 ## Details
 ### You will learn  

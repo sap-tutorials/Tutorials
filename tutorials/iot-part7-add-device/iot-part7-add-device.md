@@ -8,12 +8,12 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [SAP Cloud Platform IoT for Neo: Enable and configure](https://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Enable and configure](https://developers.sap.com/tutorials/iot-part6-hcp-services.html)
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://developers.sap.com/tutorials/iot-part8-hcp-services-tessel.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://developers.sap.com/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Details
 ### You will learn  
@@ -239,5 +239,5 @@ You can switch as well to a chart view of received values.
 [ACCORDION-END]
 
 ### Additional Information
-- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://developers.sap.com/tutorials/iot-part8-hcp-services-tessel.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://developers.sap.com/tutorials/iot-part11-hcp-services-ti.html)

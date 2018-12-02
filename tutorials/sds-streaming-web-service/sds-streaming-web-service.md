@@ -11,7 +11,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - `-` Have the ability to connect to the Linux host running the Smart Data Streaming as the `<sid>adm` user.
 
 ## Next Steps
-- **Tutorials** : [Configuring the Web Service Provider (WSP)](https://www.sap.com/developer/tutorials/sds-web-service-provider-configuration.html)
+- **Tutorials** : [Configuring the Web Service Provider (WSP)](https://developers.sap.com/tutorials/sds-web-service-provider-configuration.html)
 
 ## Details
 ### You will learn

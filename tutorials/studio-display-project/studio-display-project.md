@@ -6,14 +6,14 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 time: 10
 ---
 ## Prerequisites  
- - **Tutorials:** [SAP HANA Studio, Import your data](https://www.sap.com/developer/tutorials/studio-import-data.html)
+ - **Tutorials:** [SAP HANA Studio, Import your data](https://developers.sap.com/tutorials/studio-import-data.html)
 
 ## Details
 ### You will learn  
 Now that you have data it's time to display it in some way as well as enable access to your data.
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 

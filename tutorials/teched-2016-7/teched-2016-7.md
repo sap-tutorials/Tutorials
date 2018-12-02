@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>
 ---
 
 ## Prerequisites  
- - [Add an XML fragment for a tab in your app](https://www.sap.com/developer/tutorials/teched-2016-6.html)
+ - [Add an XML fragment for a tab in your app](https://developers.sap.com/tutorials/teched-2016-6.html)
 
 
 ## Next Steps
- - [Translate your app into multiple languages](https://www.sap.com/developer/tutorials/teched-2016-8.html)
+ - [Translate your app into multiple languages](https://developers.sap.com/tutorials/teched-2016-8.html)
 
 
 ## Details
@@ -277,7 +277,7 @@ When you click on an item for more details, your page should look like the image
 
 [ACCORDION-BEGIN [Step 10: ](Commit your edits to Git)]
 
-Once you are satisfied with how your app looks, commit your changes to the Git repository. You can refer to the [previous tutorial](https://www.sap.com/developer/tutorials/teched-2016-5.html) (steps 10-14).
+Once you are satisfied with how your app looks, commit your changes to the Git repository. You can refer to the [previous tutorial](https://developers.sap.com/tutorials/teched-2016-5.html) (steps 10-14).
 
 In addition to being a best practice (creating snapshots of your project in Git that you can revert to in case errors are injected later), the edits to the `i18n.properties` file will be available for translation in the next tutorial.
 

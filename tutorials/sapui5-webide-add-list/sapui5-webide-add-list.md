@@ -6,11 +6,11 @@ tags: [ tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfor
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **How-To** [Start this tutorial series](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 3: [Set up the data source in the Application](https://www.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
+- **How-To** [Start this tutorial series](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 3: [Set up the data source in the Application](https://developers.sap.com/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Next Steps
-- The next tutorial in the series is Part 5: [Enable Routing](https://www.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
+- The next tutorial in the series is Part 5: [Enable Routing](https://developers.sap.com/tutorials/sapui5-webide-enable-routing.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,7 @@ Add a list to first XML view (`View1.xml`). The list will display data from the 
 **15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the file `webapp/view/View1.view.xml` in your editor.  

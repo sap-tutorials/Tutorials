@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Enable the SAP Translation Hub service](https://www.sap.com/developer/tutorials/sth-enable.html)
+ - **Tutorials:** [Enable the SAP Translation Hub service](https://developers.sap.com/tutorials/sth-enable.html)
 
 ## Next Steps
-- [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
+- [Deploy an SAP Fiori app to SAP Cloud Platform](https://developers.sap.com/tutorials/sth-deploy-fiori-app.html)
 
 ## Details
 ### You will learn  

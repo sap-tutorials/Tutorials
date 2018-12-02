@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorial:** [Define the Bootstrap Template](https://www.sap.com/developer/tutorials/react-bootstrap-template.html)
+- **Tutorial:** [Define the Bootstrap Template](https://developers.sap.com/tutorials/react-bootstrap-template.html)
 
 ## Next Steps
-- **Tutorial:** [Separate the files](https://www.sap.com/developer/tutorials/react-separate-files.html)
+- **Tutorial:** [Separate the files](https://developers.sap.com/tutorials/react-separate-files.html)
 
 
 ## Details

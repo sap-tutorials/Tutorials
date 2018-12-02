@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Loading sample data using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)
+ - **Tutorials:** [Loading sample data using Apache Zeppelin](https://developers.sap.com/tutorials/vora-zeppelin-load-sample-data.html)
  - Understanding basics of Apache Spark
 
 ## Next Steps
- - [Getting started with SAP Vora Modeler: Creating SQL views](https://www.sap.com/developer/tutorials/vora-modeler-getting-started.html)
+ - [Getting started with SAP Vora Modeler: Creating SQL views](https://developers.sap.com/tutorials/vora-modeler-getting-started.html)
 
 ## Details
 ### You will learn  

@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>html5 ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [SAPUI5 extending `TextField`, `PasswordField` and `Button` Controls with events](https://www.sap.com/developer/tutorials/sapui5-extending-button-control.html)
+ - **Tutorials:** [SAPUI5 extending `TextField`, `PasswordField` and `Button` Controls with events](https://developers.sap.com/tutorials/sapui5-extending-button-control.html)
  - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
-  - [Finalize your new UI5 Control by specifying the control logic](https://www.sap.com/developer/tutorials/sapui5-define-control-logic.html)
+  - [Finalize your new UI5 Control by specifying the control logic](https://developers.sap.com/tutorials/sapui5-define-control-logic.html)
 
 ## Details
 ### You will learn

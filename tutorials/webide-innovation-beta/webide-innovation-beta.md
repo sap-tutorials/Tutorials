@@ -7,7 +7,7 @@ time: 5
 ---
 
 ## Prerequisites  
-You have access to an SAP Cloud Platform trial account. If you don't have an account, you can open one. See the [tutorial](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
+You have access to an SAP Cloud Platform trial account. If you don't have an account, you can open one. See the [tutorial](https://developers.sap.com/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
 
 ## Details
 The new SAP Web IDE multi-cloud version supports additional scenarios, and includes additional features for improving the build process and creating full-stack applications.

@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Using Execute Immediate](https://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
+- **Tutorials:** [Using Execute Immediate](https://developers.sap.com/tutorials/xsa-sqlscript-execute.html)
 
 ## Next Steps
-- [SQL vs Cursors vs Arrays vs Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
+- [SQL vs Cursors vs Arrays vs Index-based Cell Access](https://developers.sap.com/tutorials/xsa-sqlscript-sql-cursor.html)
 
 ## Details
 ### You will learn  

@@ -7,7 +7,7 @@ time: 15
 
 ---
 ## Next Steps
-- [Parallel Processing and Parameters](https://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
+- [Parallel Processing and Parameters](https://developers.sap.com/tutorials/xsa-sqlscript-parallel.html)
 
 ## Details
 ### You will learn  

@@ -6,14 +6,14 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [SAP HANA XS Advanced, Creating a Node.js Module](https://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
+- **Tutorials:** [SAP HANA XS Advanced, Creating a Node.js Module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 
 ## Next Steps
-- [HANA Database Access from Node.js](https://www.sap.com/developer/tutorials/xsa-node-dbaccess.html)
+- [HANA Database Access from Node.js](https://developers.sap.com/tutorials/xsa-node-dbaccess.html)
 
 ## Details
 
-In a previous tutorial you created [a Node.js Module](https://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html), but didn't really do much Node.js specific programming.  You were only using Node.js to run XSJS and XSODATA services. The support for XSJS and XSODATA is an important feature for XS Advanced. It not only allows backward compatible support for much of your existing development, but it also provides a simplified programming model as an alternative to the non-block I/O event-driven programming model normally used by Node.js, but you certainly aren't limited to only the functionality provided by XSJS and XSODATA. You have access to the full programming model of Node.js as well. In this section you will learn how to extend your existing Node.js module in the SAP Web IDE for SAP HANA.
+In a previous tutorial you created [a Node.js Module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html), but didn't really do much Node.js specific programming.  You were only using Node.js to run XSJS and XSODATA services. The support for XSJS and XSODATA is an important feature for XS Advanced. It not only allows backward compatible support for much of your existing development, but it also provides a simplified programming model as an alternative to the non-block I/O event-driven programming model normally used by Node.js, but you certainly aren't limited to only the functionality provided by XSJS and XSODATA. You have access to the full programming model of Node.js as well. In this section you will learn how to extend your existing Node.js module in the SAP Web IDE for SAP HANA.
 
 You will learn about how to create and use reusable code in the form of Node.js modules. You will use `package.json` to define dependencies to these modules which make the installation of them quite easy. You will use one of the most popular modules – **express** - which helps with the setup the handling of the request and response object. You will use `express` to handle multiple HTTP handlers in the same service by using routes.
 

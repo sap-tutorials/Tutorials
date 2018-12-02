@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Working with the SAP Vora Tools](https://www.sap.com/developer/tutorials/vora-ova-toolsintro.html)
+ - **Tutorials:** [Working with the SAP Vora Tools](https://developers.sap.com/tutorials/vora-ova-toolsintro.html)
 
 
 ## Next Steps
- - [Using Spark Shell to run SAP Vora examples](https://www.sap.com/developer/tutorials/vora-ova-spark-shell.html)
+ - [Using Spark Shell to run SAP Vora examples](https://developers.sap.com/tutorials/vora-ova-spark-shell.html)
 
 ## Details
 ### You will learn  

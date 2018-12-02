@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Graph Engine using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin4.html)
+ - [Working with Graph Engine using Apache Zeppelin](https://developers.sap.com/tutorials/vora-ova-zeppelin4.html)
 
 
 ## Next Steps
- - [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-ova-hana-datasource.html)
+ - [Working with SAP HANA data source](https://developers.sap.com/tutorials/vora-ova-hana-datasource.html)
 
 ## Details
 ### You will learn  

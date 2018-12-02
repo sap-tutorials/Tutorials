@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - You setup a virtual machine with [SAP Vora 1.4, developer edition](https://www.sap.com/developer/tutorials/vora-ova-install.html)
+ - You setup a virtual machine with [SAP Vora 1.4, developer edition](https://developers.sap.com/tutorials/vora-ova-install.html)
 
 
 ## Next Steps
- - [Working with ORC and Parquet Files using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)
+ - [Working with ORC and Parquet Files using Apache Zeppelin](https://developers.sap.com/tutorials/vora-ova-zeppelin6.html)
 
 ## Details
 ### You will learn  
