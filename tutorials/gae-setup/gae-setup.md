@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, product
 
 
 ## Next Steps
- - [Google App Engine install HDB](https://www.sap.com/developer/tutorials/gae-nodehdb.html)
+ - [Google App Engine install HDB](https://developers.sap.com/tutorials/gae-nodehdb.html)
 
 
 ## Details

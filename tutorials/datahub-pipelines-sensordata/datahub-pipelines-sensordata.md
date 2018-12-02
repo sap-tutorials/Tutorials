@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - You have successfully installed SAP Data Hub, developer edition.
 
 ## Next Steps
- - [Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
+ - [Use a message broker](https://developers.sap.com/tutorials/datahub-pipelines-broker.html)
 
 ## Details
 **This tutorial is obsolete and will be removed shortly (end of-November 2018).**

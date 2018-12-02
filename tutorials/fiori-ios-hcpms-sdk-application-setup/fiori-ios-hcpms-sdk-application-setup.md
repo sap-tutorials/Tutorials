@@ -9,10 +9,10 @@ tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, p
  - **Proficiency:** Beginner
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - **Tutorials:** [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Next Steps
- - [Creating an app using the SAP Cloud Platform SDK for iOS Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - [Creating an app using the SAP Cloud Platform SDK for iOS Assistant](https://developers.sap.com/tutorials/fiori-ios-hcpms-sdk-assistant.html)
 
 ## Details
 ### You will learn  

@@ -7,14 +7,14 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
 
 ## Prerequisites
 - **Proficiency:** Intermediate
-- **Tutorials:** [Install SAP NetWeaver in openSUSE](https://www.sap.com/developer/tutorials/cp-s4-ext-install-nw.html)
+- **Tutorials:** [Install SAP NetWeaver in openSUSE](https://developers.sap.com/tutorials/cp-s4-ext-install-nw.html)
 - **Systems, Tools, Services:**
     -  SAP GUI
     -  Web browser (Google Chrome)
     -  SAP NetWeaver AS ABAP 7.50 SP2
 
 ## Next Steps
-[SAP S/4HANA on-premises UI extension (Part 2): Exposing Back-End APIs to the Cloud](https://www.sap.com/developer/tutorials/cp-s4-ext-ui2-cloud-connector.html)
+[SAP S/4HANA on-premises UI extension (Part 2): Exposing Back-End APIs to the Cloud](https://developers.sap.com/tutorials/cp-s4-ext-ui2-cloud-connector.html)
 
 ## Details
 ### You will learn
@@ -210,4 +210,4 @@ In this step you will learn to find out, which OData service is used by a SAP Fi
 
 [ACCORDION-END]
 
-You have now successfully completed this tutorial and exposed the **`EPM_REF_APPS_PROD_MAN_SRV`** OData service from your SAP NetWeaver system. You may now continue with the next tutorial in this series to learn how to make this service accessible on SAP Cloud Platform: [Expose OData services to SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui2-cloud-connector.html)
+You have now successfully completed this tutorial and exposed the **`EPM_REF_APPS_PROD_MAN_SRV`** OData service from your SAP NetWeaver system. You may now continue with the next tutorial in this series to learn how to make this service accessible on SAP Cloud Platform: [Expose OData services to SAP Cloud Platform](https://developers.sap.com/tutorials/cp-s4-ext-ui2-cloud-connector.html)

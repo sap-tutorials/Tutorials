@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
 
- - You have completed [Generate sensor data](https://www.sap.com/developer/tutorials/datahub-pipelines-sensordata.html)
+ - You have completed [Generate sensor data](https://developers.sap.com/tutorials/datahub-pipelines-sensordata.html)
 
 ## Next Steps
- - [Store sensor data in HDFS](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
+ - [Store sensor data in HDFS](https://developers.sap.com/tutorials/datahub-pipelines-storeinhdfs.html)
 
 ## Details
 **This tutorial is obsolete and will be removed shortly (end of-November 2018).**

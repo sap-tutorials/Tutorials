@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Create a Destination for the Northwind OData Services](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- **Tutorials:** [Create a Destination for the Northwind OData Services](https://developers.sap.com/tutorials/hcp-create-destination.html)
 
 ## Details
 ### You will learn
@@ -16,9 +16,9 @@ time: 20
 - How service tasks and destinations are connected
 - How to access properties in a workflow's context
 
-This tutorial assumes you've already completed the tutorials in the group [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html). This means you're familiar with general Workflow service concepts, the workflow definition tooling in SAP Web IDE, and you have the `MyInbox` and `Workflow Monitor` apps set up on an SAP Fiori launchpad site on the Portal service.
+This tutorial assumes you've already completed the tutorials in the group [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html). This means you're familiar with general Workflow service concepts, the workflow definition tooling in SAP Web IDE, and you have the `MyInbox` and `Workflow Monitor` apps set up on an SAP Fiori launchpad site on the Portal service.
 
-It also assumes you have set up a Connectivity service destination for Northwind OData services, as described in [Create a Destination for the Northwind OData Services](https://www.sap.com/developer/tutorials/hcp-create-destination.html).
+It also assumes you have set up a Connectivity service destination for Northwind OData services, as described in [Create a Destination for the Northwind OData Services](https://developers.sap.com/tutorials/hcp-create-destination.html).
 
 You will use one of the [Northwind OData services](https://services.odata.org) as the external service in this tutorial, creating a simple workflow that queries for product information in a hypothetical order processing situation.
 
@@ -28,7 +28,7 @@ You will use one of the [Northwind OData services](https://services.odata.org) a
 
 [ACCORDION-BEGIN [Step 1: ](Start up SAP Web IDE)]
 
-Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -76,7 +76,7 @@ There's actually very little you need to provide in the rest of the wizard. In t
 
 [ACCORDION-BEGIN [Step 4: ](Specify sample context data)]
 
-In the tutorial [Add a user task to your workflow](https://www.sap.com/developer/tutorials/cp-workflow-add-usertask.html), you will have seen the standard sample book data that is presented automatically when initiating a workflow instance in the `Monitor Workflows` app.
+In the tutorial [Add a user task to your workflow](https://developers.sap.com/tutorials/cp-workflow-add-usertask.html), you will have seen the standard sample book data that is presented automatically when initiating a workflow instance in the `Monitor Workflows` app.
 
 ![standard sample data for a new instance](start-new-instance.png)
 
@@ -123,7 +123,7 @@ A message will appear noting that deployment was successful. If it was not succe
 
 [ACCORDION-BEGIN [Step 6: ](Initiate a workflow instance)]
 
-It's now time to test out the simple definition by creating an instance of it. The `Monitor Workflows` app in your Fiori launchpad that you set up in the tutorial [Add a user task to your workflow](https://www.sap.com/developer/tutorials/cp-workflow-add-usertask.html) is what you'll need.
+It's now time to test out the simple definition by creating an instance of it. The `Monitor Workflows` app in your Fiori launchpad that you set up in the tutorial [Add a user task to your workflow](https://developers.sap.com/tutorials/cp-workflow-add-usertask.html) is what you'll need.
 
 Use the instructions in the first step of this tutorial to get to your default Fiori launchpad site. Alternatively, if the launchpad site was your first site with the Portal service and you chose default settings, your site URL will look like this, and you can go straight to it in the browser:
 
@@ -158,7 +158,7 @@ Below the WORKFLOW CONTEXT is the EXECUTION LOG, which shows a trail of every st
 
 [ACCORDION-BEGIN [Step 7: ](Call an external service via a service task)]
 
-It's now time to enhance the workflow definition and add a step to call an external service. The service you'll use is an Northwind OData service that you explored in [Learn about OData fundamentals](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html):
+It's now time to enhance the workflow definition and add a step to call an external service. The service you'll use is an Northwind OData service that you explored in [Learn about OData fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html):
 
 <https://services.odata.org/V3/Northwind/Northwind.svc/>
 
@@ -218,7 +218,7 @@ Use menu path **File** > **Save** to save these values.
 
 Taking the values one at at time, here are the explanations:
 
-- `Northwind` is the name of the destination that you set up in [Create a Destination for the Northwind OData Services](https://www.sap.com/developer/tutorials/hcp-create-destination.html).
+- `Northwind` is the name of the destination that you set up in [Create a Destination for the Northwind OData Services](https://developers.sap.com/tutorials/hcp-create-destination.html).
 - The path specification is the relative URL for the version 3 Northwind OData service, specifically requesting an individual `Product` entity. The specification of an individual entity is done with a combination of the entity set name (`Products`) followed by the value of the key property, in brackets. Here the value is dynamically inserted from the `ProductID` property in the workflow context. The expression style used (`${context.ProductID}`) is described in the Workflow service documentation in the Help Portal under the [Configure Service Tasks](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/a8a6267f537841fbb22c159ba2af8835.html) topic. Note the `$format` system query option requesting JSON format in the response - this is so the response can be stored in the context.
 - The HTTP Method is `GET`, used for either an OData query or read operation. Because of the specification of a specific entity in the URL, this is a read operation.
 - The response data must be stored in the workflow context, and `${context.stockinfo}` states that it should be stored in the context's `stockinfo` property.

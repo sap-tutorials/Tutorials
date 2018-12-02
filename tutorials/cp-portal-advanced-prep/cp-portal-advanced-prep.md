@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
-- You have created an SAP Cloud Platform trial account, as described in [Get a Free Trial Account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html).
+- You have created an SAP Cloud Platform trial account, as described in [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
 
 
 ## Details
@@ -23,7 +23,7 @@ time: 20
 
 [ACCORDION-BEGIN [Step 1: ](Create an Account on the Gateway Demo System)]
 
-1. Create an account on the SAP Gateway demo system (ES5). For more information, see [Create an Account on the Gateway Demo System](https://www.sap.com/developer/tutorials/gateway-demo-signup.html).
+1. Create an account on the SAP Gateway demo system (ES5). For more information, see [Create an Account on the Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html).
 
 2. Save your final user-password details for step #3.
 

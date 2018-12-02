@@ -9,8 +9,8 @@ time: 10
 
 ## Prerequisites  
 - A text editor (e.g., Notepad, Atom, Sublime)
-- **Tutorials:** [Sign up](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for a free trial account on SAP Cloud Platform
-- **Tutorials:**  [Install](https://www.sap.com/developer/tutorials/hcp-cf-getting-started.html) the Cloud Foundry CLI
+- **Tutorials:** [Sign up](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for a free trial account on SAP Cloud Platform
+- **Tutorials:**  [Install](https://developers.sap.com/tutorials/hcp-cf-getting-started.html) the Cloud Foundry CLI
 
 
 ## Details

@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 ## Prerequisites
  - **Proficiency:** Advanced
- - **Tutorials** [Getting Started with SAP HANA Dynamic Tiering](https://www.sap.com/developer/groups/dt-get-started.html) to set up your extended storage and [Creating Database Backups](https://www.sap.com/developer/groups/dt-backup-recovery.html)
+ - **Tutorials** [Getting Started with SAP HANA Dynamic Tiering](https://developers.sap.com/group.dt-get-started.html) to set up your extended storage and [Creating Database Backups](https://developers.sap.com/group.dt-backup-recovery.html)
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
 ## Details
@@ -36,7 +36,7 @@ The instances in the secondary system operate in recovery mode, which means all 
 
 System Replication enables recovery from a data center outage by switching to a secondary site, in which the following prerequisites need to be met:
 
-- The primary and secondary system are both installed and configured. You have verified that both are independently up and running. Ensure that Dynamic Tiering is created for the secondary system; if it is not enabled, follow the tutorial series: [Getting Started with SAP HANA Dynamic Tiering](https://www.sap.com/developer/groups/dt-get-started.html) to enable the extended storage.
+- The primary and secondary system are both installed and configured. You have verified that both are independently up and running. Ensure that Dynamic Tiering is created for the secondary system; if it is not enabled, follow the tutorial series: [Getting Started with SAP HANA Dynamic Tiering](https://developers.sap.com/group.dt-get-started.html) to enable the extended storage.
 - The number of hosts must be the same in the primary and secondary systems.
 - Multiple services of the same kind (for example, index servers) on one host are not supported.
 - The software version of the secondary has to be equal or newer to the version on the primary system.
@@ -48,7 +48,7 @@ System Replication enables recovery from a data center outage by switching to a 
 > Repeat the process for the Secondary System and any tenants in the Primary System . Your Systems Panel should now appear similar to the one below.
 ![Systems Panel with Descriptions](systems-panel-with-descriptions.png)
 - System replication between two systems on the same host is not supported.
-- You have performed a data backup or storage snapshot on the primary system. In multiple-container systems, the system database and all tenant databases must be backed up. This is necessary to start creating log backups. If you have not yet backed up your primary system, follow [Creating Database Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part2.html).
+- You have performed a data backup or storage snapshot on the primary system. In multiple-container systems, the system database and all tenant databases must be backed up. This is necessary to start creating log backups. If you have not yet backed up your primary system, follow [Creating Database Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part2.html).
 - Prepare the secondary system for authentication by copying the system `PKI SSFS` .key and the .dat file from the primary system to the secondary system.
 > Note: To copy system `PKI SSFS` key and dat file from the primary site to the secondary site, you can find the files at the following locations.
 > `/usr/sap/<SID>/SYS/global/security/rsecssfs/data/SSFS_<SID>.DAT`
@@ -60,7 +60,7 @@ System Replication enables recovery from a data center outage by switching to a 
 
 [ACCORDION-BEGIN [Step 3: ](Set Up System Replication with HANA Studio)]
 
-With both the Primary and Secondary System added in your SAP HANA studio, navigate to the Systems Panel. Right-click the Primary System's `SystemDB`. Ensure you select a user with the `DATA ADMIN` privileges (Refer to [Create a New User and Assign Permissions](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html) for help on assigning permissions) - for the purposes of this tutorial, we will use the SYSTEM user. Select **Configuration and Monitoring*** > **Configure System Replication**.
+With both the Primary and Secondary System added in your SAP HANA studio, navigate to the Systems Panel. Right-click the Primary System's `SystemDB`. Ensure you select a user with the `DATA ADMIN` privileges (Refer to [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html) for help on assigning permissions) - for the purposes of this tutorial, we will use the SYSTEM user. Select **Configuration and Monitoring*** > **Configure System Replication**.
 
 ![Configure System Replication](configure-system-replication.png)
 

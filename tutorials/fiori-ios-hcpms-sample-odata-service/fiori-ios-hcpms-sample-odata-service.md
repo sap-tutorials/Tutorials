@@ -9,10 +9,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **Proficiency:** Beginner
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
+ - **Tutorials:** [Create an application definition](https://developers.sap.com/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
 
 ## Next Steps
- - [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - [Create an app using the SDK Assistant](https://developers.sap.com/tutorials/fiori-ios-hcpms-sdk-assistant.html)
 
 ## Details
 ### You will learn  

@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-api-managemen
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:**  [Create an API Provider System](https://www.sap.com/developer/tutorials/hcp-apim-create-provider.html)
+- **Tutorials:**  [Create an API Provider System](https://developers.sap.com/tutorials/hcp-apim-create-provider.html)
 
 ## Next Steps
-- [Add the API Proxy to a product](https://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
+- [Add the API Proxy to a product](https://developers.sap.com/tutorials/hcp-apim-create-product.html)
 
 
 ## Details

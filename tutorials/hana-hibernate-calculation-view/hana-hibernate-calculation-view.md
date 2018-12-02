@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>java, products>sap-hana, products>sap-hana
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Get started with Hibernate on SAP HANA, express edition](https://www.sap.com/developer/groups/hana-hibernate-getting-started.html) & [SAP HANA XS Advanced, Creating a Graphical Calculation View](https://www.sap.com/developer/tutorials/xsa-graphical-view.html)
+ - **Tutorials:** [Get started with Hibernate on SAP HANA, express edition](https://developers.sap.com/group.hana-hibernate-getting-started.html) & [SAP HANA XS Advanced, Creating a Graphical Calculation View](https://developers.sap.com/tutorials/xsa-graphical-view.html)
 
 ## Details
 ### You will learn  
@@ -21,9 +21,9 @@ In this tutorial you will learn how to create an application that reads data fro
 
 [ACCORDION-BEGIN [Prerequisites: ](Tutorials)]
 
-If you haven't done so, please complete the tutorial [SAP HANA XS Advanced, Creating a Graphical Calculation View](https://www.sap.com/developer/tutorials/xsa-graphical-view.html). This tutorial builds on top of the calculation view created in that tutorial.
+If you haven't done so, please complete the tutorial [SAP HANA XS Advanced, Creating a Graphical Calculation View](https://developers.sap.com/tutorials/xsa-graphical-view.html). This tutorial builds on top of the calculation view created in that tutorial.
 
-This tutorial builds upon the other tutorials in the tutorial group [Get started with Hibernate on SAP HANA, express edition](https://www.sap.com/developer/groups/hana-hibernate-getting-started.html). Please complete these tutorials before starting this one.
+This tutorial builds upon the other tutorials in the tutorial group [Get started with Hibernate on SAP HANA, express edition](https://developers.sap.com/group.hana-hibernate-getting-started.html). Please complete these tutorials before starting this one.
 
 [DONE]
 [ACCORDION-END]

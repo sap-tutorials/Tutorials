@@ -8,14 +8,14 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
 ## Prerequisites
 - **Proficiency:** Intermediate
 - **Tutorials:**
-    -  [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-    -  [SAP S/4HANA on-premises UI extension (Part 1): Enabling OData APIs in SAP NetWeaver](https://www.sap.com/developer/tutorials/cp-s4-ext-ui1-expose-odata.html)
+    -  [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+    -  [SAP S/4HANA on-premises UI extension (Part 1): Enabling OData APIs in SAP NetWeaver](https://developers.sap.com/tutorials/cp-s4-ext-ui1-expose-odata.html)
 - **Systems, Tools, Services:**
     -  On host OS: VirtualBox, SAP Development Tools
     -  In Google Chrome browser: SAP Cloud Platform Cockpit (SAP CP Cockpit), SAP Cloud Connector Administrator
 
 ## Next Steps
-[SAP S/4HANA on-premises UI extension (Part 3): Creating an SAP Fiori Launchpad in the Cloud](https://www.sap.com/developer/tutorials/cp-s4-ext-ui3-cloud-portal.html)
+[SAP S/4HANA on-premises UI extension (Part 3): Creating an SAP Fiori Launchpad in the Cloud](https://developers.sap.com/tutorials/cp-s4-ext-ui3-cloud-portal.html)
 
 ## Details
 ### You will
@@ -89,7 +89,7 @@ Once SAP Cloud Connector has been installed and the connector daemon has been st
 
     ![SCC Admin 4](./images/w2-u3-s2/pic02-chrome-sccadmin-initial-setup.png)
 
-6.  Add the credentials for your SAP Cloud Platform trial account here. If you don't have an account yet, please follow this tutorial first: ([Create a trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html))
+6.  Add the credentials for your SAP Cloud Platform trial account here. If you don't have an account yet, please follow this tutorial first: ([Create a trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html))
 
     **First Account**
 
@@ -324,4 +324,4 @@ With the HTTP destination in place you can use SAP Web IDE to browse the OData s
 
 [ACCORDION-END]
 
-You have now successfully completed this tutorial. In the next part of the tutorial, you will learn how to set up a SAP Fiori Launchpad on SAP Cloud Platform using the Cloud Portal service: [Create SAP Fiori Launchpad on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui3-cloud-portal.html)
+You have now successfully completed this tutorial. In the next part of the tutorial, you will learn how to set up a SAP Fiori Launchpad on SAP Cloud Platform using the Cloud Portal service: [Create SAP Fiori Launchpad on SAP Cloud Platform](https://developers.sap.com/tutorials/cp-s4-ext-ui3-cloud-portal.html)

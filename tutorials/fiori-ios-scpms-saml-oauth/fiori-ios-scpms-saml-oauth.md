@@ -10,11 +10,11 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>securi
  - **Proficiency:** Intermediate
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Offline OData - Error handling](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-errorhandling.html)
+ - **Tutorials:** [Offline OData - Error handling](https://developers.sap.com/tutorials/fiori-ios-hcpms-offline-odata-errorhandling.html)
 
 
 ## Next Steps
-- [Read SAP Mobile Secure configuration data](https://www.sap.com/developer/tutorials/fiori-ios-scpms-configprovider.html)
+- [Read SAP Mobile Secure configuration data](https://developers.sap.com/tutorials/fiori-ios-scpms-configprovider.html)
 
 ## Details
 ### You will learn  

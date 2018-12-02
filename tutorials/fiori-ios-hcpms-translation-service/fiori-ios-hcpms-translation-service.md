@@ -6,7 +6,7 @@ primary_tag: operating-system>ios
 tags: [  tutorial>how-to, tutorial>intermediate, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
-- [Introduction to iOS development resources and Xcode](https://www.sap.com/developer/tutorials/xcode-introduction.html)
+- [Introduction to iOS development resources and Xcode](https://developers.sap.com/tutorials/xcode-introduction.html)
 
 
 ## How-To Details
