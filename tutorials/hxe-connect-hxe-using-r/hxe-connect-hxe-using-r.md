@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
   - **Proficiency:** Beginner
 
 ## Next Steps
- - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
+ - [View similar How-Tos](http://developers.sap.com/tutorials.html) or [View all How-Tos](http://developers.sap.com/tutorials.html)
 
 
 ## How-To Details

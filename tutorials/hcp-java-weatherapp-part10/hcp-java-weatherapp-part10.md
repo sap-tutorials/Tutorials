@@ -7,7 +7,7 @@ time: 10
 ---
 
 ## Prerequisites  
-- [End-to-End Weather App Scenario Part 9](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
+- [End-to-End Weather App Scenario Part 9](https://developers.sap.com/tutorials/hcp-java-weatherapp-part9.html)
 
 ## Details
 ### You will learn  

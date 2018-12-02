@@ -8,7 +8,7 @@ tags: [products>sap-cloud-platform, topic>cloud, topic>mobile, tutorial>intermed
 - **Proficiency:** Intermediate
 
 ## Next Steps
-- [Create an app in SAP Cloud Platform mobile services](https://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
+- [Create an app in SAP Cloud Platform mobile services](https://developers.sap.com/tutorials/hcpms-create-hybrid-app.html)
 
 ## Details
 ### You will learn  

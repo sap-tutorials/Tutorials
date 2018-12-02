@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Next Steps
- - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
+ - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
 ## Details
 ### You will learn
@@ -30,7 +30,7 @@ Therefore, the **Server only** is the minimum required.
 
 However, if you have a **Server + Apps** instance, you can use it too.
 
-You can check the [SAP HANA, express edition installation flowchart](https://www.sap.com/developer/topics/sap-hana-express.html#flowchart) to find all the installation details.
+You can check the [SAP HANA, express edition installation flowchart](https://developers.sap.com/topics/sap-hana-express.html#flowchart) to find all the installation details.
 
 If you don't have an instance up and running, be aware that you don't need to complete the installation of all the optional packages (this will be described when needed in the series).
 

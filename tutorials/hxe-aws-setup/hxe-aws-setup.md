@@ -39,7 +39,7 @@ After you perform the search, you will be presented with two options. The right 
 
       This option requires more resources.
 
-      For details about this option, go to the following tutorial: <https://www.sap.com/developer/tutorials/hxe-xsa-aws-setup.html>
+      For details about this option, go to the following tutorial: <https://developers.sap.com/tutorials/hxe-xsa-aws-setup.html>
 
 Select the **SAP HANA, express edition** option.
 

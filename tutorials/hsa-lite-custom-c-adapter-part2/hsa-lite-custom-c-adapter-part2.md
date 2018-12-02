@@ -7,10 +7,10 @@ time: 30
 ---
 
 ## Prerequisites  
- - **Tutorial:** [Introduction to Custom C/C++ Adapters for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-c-adapter-part1.html)
+ - **Tutorial:** [Introduction to Custom C/C++ Adapters for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part1.html)
 
 ## Next Steps
- - [Build and Test Custom C/C++ Adapter for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-c-adapter-part3.html)
+ - [Build and Test Custom C/C++ Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part3.html)
 
 ## Details
 
@@ -20,7 +20,7 @@ The full source for `custom_c_adapter.cpp` is available in the **Appendix** sect
 
 [ACCORDION-BEGIN [Step 1: ](Create File)]
 
-Remember how we created a `Makefile` in the root directory `(/home/pi)` in the previous tutorial [Introduction to Custom `C/C++` Adapters for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-c-adapter-part1.html). Now inside of the same folder, create another new blank file called `"custom_c_adapter.cpp"`.
+Remember how we created a `Makefile` in the root directory `(/home/pi)` in the previous tutorial [Introduction to Custom `C/C++` Adapters for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part1.html). Now inside of the same folder, create another new blank file called `"custom_c_adapter.cpp"`.
 
 Save the file, and close the window. (You may need to type something and then delete it in order to save the blank file).
 

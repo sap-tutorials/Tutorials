@@ -11,13 +11,13 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 
 ## Next Steps
- - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
- - **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/tutorials/hxe-gcp-eclipse-tenant-connect.html)
- - **Additional languages?**: Build applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)
- - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
+ - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+ - **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://developers.sap.com/tutorials/hxe-gcp-eclipse-tenant-connect.html)
+ - **Additional languages?**: Build applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
+ - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 ## Disclaimer
-The image only includes the SAP HANA database engine. Extended Application Services, advanced model (XS Advanced) is not installed in this image. Check the following tutorial to setup the full image that includes XS Advanced: [Launch SAP HANA, express edition on GCP including XS Advanced applications](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher-xsa.html)
+The image only includes the SAP HANA database engine. Extended Application Services, advanced model (XS Advanced) is not installed in this image. Check the following tutorial to setup the full image that includes XS Advanced: [Launch SAP HANA, express edition on GCP including XS Advanced applications](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher-xsa.html)
 
 ## Details
 ### You will learn  
@@ -36,7 +36,7 @@ Navigate to [Google Cloud Launcher](https://console.cloud.google.com/launcher) a
 You will be presented with two options:
 
 - **SAP HANA, express edition (server-only)**: You can connect using SQL clients like SAP HANA Studio or any other client. Includes the Predictive Analytic Library, Machine learning libraries and other advanced analytics.
-- **SAP HANA, express edition + XS Advanced Applications** (also referred to as XSA): Includes all of the other features plus the Cloud Foundry based development platform,  SAP Web IDE for SAP HANA, administration cockpit among other applications like SHINE and Smart Data Streaming. OData support, Node.js and Java runtime environments are also included. This option requires more resources and is covered [in this other tutorial](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher-xsa.html).
+- **SAP HANA, express edition + XS Advanced Applications** (also referred to as XSA): Includes all of the other features plus the Cloud Foundry based development platform,  SAP Web IDE for SAP HANA, administration cockpit among other applications like SHINE and Smart Data Streaming. OData support, Node.js and Java runtime environments are also included. This option requires more resources and is covered [in this other tutorial](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher-xsa.html).
 
 Click on the **SAP HANA, express edition** tile:
 
@@ -130,7 +130,7 @@ Alternatively, click on the `Learn more` and follow the steps to create a static
 
 ![IP Address](7.png)
 
-Your SAP HANA, express edition instance is now up and running. You can continue to [explore tutorials to get you started](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) or perform the optional steps below.
+Your SAP HANA, express edition instance is now up and running. You can continue to [explore tutorials to get you started](https://developers.sap.com/topics/sap-hana-express.tutorials.html) or perform the optional steps below.
 
 [DONE]
 [ACCORDION-END]
@@ -212,7 +212,7 @@ CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper','WORKSHOP_01')
 [ACCORDION-END]
 
 ### Additional Information
-- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Sample applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)
-- **Access from HANA Studio**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/tutorials/hxe-gcp-eclipse-tenant-connect.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **OPTIONAL:** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
+- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
+- **Access from HANA Studio**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://developers.sap.com/tutorials/hxe-gcp-eclipse-tenant-connect.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **OPTIONAL:** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

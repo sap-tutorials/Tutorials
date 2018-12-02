@@ -21,7 +21,7 @@ For more information about accessing a `NoSQL` storage using SQL and other capab
 
 [ACCORDION-BEGIN [Step 1: ](Log on to the HXE database)]
 
-> For easier execution of SQL statements, in this tutorial it is assumed you have installed [`Jupyter`](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html), [`DBeaver`](https://www.sap.com/developer/tutorials/hxe-cj1-download-sql-client.html), [`SQLPad`](https://blogs.sap.com/2018/02/05/sqlpad-meets-sap-hana/) or any SQL editor you feel comfortable with when connecting to SAP HANA.
+> For easier execution of SQL statements, in this tutorial it is assumed you have installed [`Jupyter`](https://developers.sap.com/tutorials/mlb-hxe-tools-jupyter.html), [`DBeaver`](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html), [`SQLPad`](https://blogs.sap.com/2018/02/05/sqlpad-meets-sap-hana/) or any SQL editor you feel comfortable with when connecting to SAP HANA.
 
 > **Note**: The `hdbsql` console is meant for administration tasks and is not recommended for development tasks.
 

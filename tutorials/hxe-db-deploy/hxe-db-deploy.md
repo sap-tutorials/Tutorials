@@ -17,7 +17,7 @@ This How-To consolidates the links to tutorials that show how to install the HAN
 ### Time to Complete
 **1 Min**.
 
-- To run HANA, express edition database on premise, follow the HANA, express edition [virtual machine installation instructions](https://www.sap.com/developer/groups/hxe-install-vm.html) or [binary installation instructions](https://www.sap.com/developer/groups/hxe-install-binary.html).
+- To run HANA, express edition database on premise, follow the HANA, express edition [virtual machine installation instructions](https://developers.sap.com/group.hxe-install-vm.html) or [binary installation instructions](https://developers.sap.com/group.hxe-install-binary.html).
 
 - To run HANA, express edition on Google Cloud Platform go to [Google Cloud Platform SAP HANA, express edition](https://console.cloud.google.com/launcher/details/sap-public/sap-hana-express) for instructions on how to launch SAP HANA, express edition on Google Cloud Platform.
 

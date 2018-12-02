@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - **Tutorial:** [Code Custom C/C++ Adapter for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-c-adapter-part2.html)
+ - **Tutorial:** [Code Custom C/C++ Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part2.html)
 
 ---
 

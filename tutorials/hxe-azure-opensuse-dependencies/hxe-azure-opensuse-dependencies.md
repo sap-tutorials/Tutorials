@@ -7,12 +7,12 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Installing SAP HANA, express edition, on Microsoft Azure and openSUSE](https://www.sap.com/developer/tutorials/hxe-azure-open-suse.html)
- - [**OPTIONAL** - Setup PuTTY and WinSCP to access your HANA Express Edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)  
+ - **Tutorials:** [Installing SAP HANA, express edition, on Microsoft Azure and openSUSE](https://developers.sap.com/tutorials/hxe-azure-open-suse.html)
+ - [**OPTIONAL** - Setup PuTTY and WinSCP to access your HANA Express Edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)  
 
 
 ## Next Steps
- - [Extract the binaries and execute the installation script](https://www.sap.com/developer/tutorials/hxe-azure-opensuse-extract-install.html)
+ - [Extract the binaries and execute the installation script](https://developers.sap.com/tutorials/hxe-azure-opensuse-extract-install.html)
 
 
 ## Details
