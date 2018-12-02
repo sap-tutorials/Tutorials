@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Prepare to build a translytical application with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-setup.html)
+- **Tutorials:** [Prepare to build a translytical application with Hibernate](https://developers.sap.com/tutorials/hxe-gcp-hibernate-setup.html)
 
 ## Details
 ### You will learn  
@@ -264,7 +264,7 @@ After the deployment has succeeded you can navigate to `https://<your project ID
 While the application now processes the incidents correctly, it does so rather slowly. The reason for this is the way that the geospatial data is stored inside the database. In the next steps you'll implement improvements for dealing with the geospatial data.
 
 For an introduction of what spatial reference systems (SRS) are, check out the tutorial [
-Spatial Reference Systems](https://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html).
+Spatial Reference Systems](https://developers.sap.com/tutorials/hana-spatial-intro6-srs.html).
 
 The default spatial reference system used by the application is [WGS 84](http://epsg.io/4326) (SRID 4326). It is a round-earth SRS which means that the calculations are reasonably accurate, but computationally expensive.
 

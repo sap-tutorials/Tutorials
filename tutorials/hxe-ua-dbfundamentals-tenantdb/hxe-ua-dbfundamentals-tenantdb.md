@@ -6,11 +6,11 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition
 time: 15
 ---
 ## Prerequisites  
- - [Sample Project](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-sample-project.html)
+ - [Sample Project](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-sample-project.html)
 
 
 ## Next Steps
- - [Create a Backup](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-backups.html)
+ - [Create a Backup](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-backups.html)
 
 ## Details
 ### You will learn  

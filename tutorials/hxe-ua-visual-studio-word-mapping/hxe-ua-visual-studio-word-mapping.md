@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-debugging.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
 
 ## Next Steps
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-google-cloud.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform](https://developers.sap.com/tutorials/hxe-ua-visual-studio-google-cloud.html)
 
 
 ## Details

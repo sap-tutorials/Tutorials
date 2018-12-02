@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-destination-configure.html)
+ - **Tutorials:** [Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform](https://developers.sap.com/tutorials/jam-cloud-webide-destination-configure.html)
 
 ## Next Steps
-- [Using SAP Web IDE with SAP Jam Collaboration](https://www.sap.com/developer/tutorials/jam-cloud-ui5-sample-build-project.html)
+- [Using SAP Web IDE with SAP Jam Collaboration](https://developers.sap.com/tutorials/jam-cloud-ui5-sample-build-project.html)
 
 ## Details
 ### You will learn  

@@ -7,12 +7,12 @@ tags: [  tutorial>beginner, products>sap-api-management, topic>internet-of-thing
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Install Postman Rest Client](https://www.sap.com/developer/tutorials/api-tools-postman-install.html)
+ - **Tutorials:** [Install Postman Rest Client](https://developers.sap.com/tutorials/api-tools-postman-install.html)
  - Access to a tenant specific to SAP IoT Application Enablement. In this tutorial, tenant `sap-iotaehandson2` is used.
 
 ## Details
 ### You will learn  
-In [previous tutorials](https://www.sap.com/developer/groups/iotae-computer-as-thing.html), you learned about using Thing Modeler to onboard a computer as the IoT thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to use Postman to access SAP IoT Application Enablement service APIs.
+In [previous tutorials](https://developers.sap.com/group.iotae-computer-as-thing.html), you learned about using Thing Modeler to onboard a computer as the IoT thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to use Postman to access SAP IoT Application Enablement service APIs.
 
 ### Application Router
 Access to SAP IoT Application Enablement is usually routed through an application router as the single entry point for consumers. The application router handles the user authentication against **SAP User Account and Authentication Service (UAA)**. In addition, the service retains the generated JWT token for the duration of the client logon session. You can define multiple application routers per tenant and you can use one of the router to access IoT Application Enablement services.

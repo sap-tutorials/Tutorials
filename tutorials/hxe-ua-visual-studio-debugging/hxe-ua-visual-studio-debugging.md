@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-tables.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://developers.sap.com/tutorials/hxe-ua-visual-studio-tables.html)
 
 ## Next Steps
- - [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-word-mapping.html)
+ - [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://developers.sap.com/tutorials/hxe-ua-visual-studio-word-mapping.html)
 
 
 ## Details

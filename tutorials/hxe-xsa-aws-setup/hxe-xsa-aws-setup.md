@@ -31,7 +31,7 @@ After you perform the search, you will be presented with two options. The right 
 
       You can use the database services and the advanced analytics processing engines (e.g., geospatial, text analytics, Extended Machine Library or Predictive Analytics Library, etc.).
 
-      For details about this option, go to the following tutorial: <https://www.sap.com/developer/tutorials/hxe-aws-setup.html>
+      For details about this option, go to the following tutorial: <https://developers.sap.com/tutorials/hxe-aws-setup.html>
 
   -  **SAP HANA, express edition (server + applications):**
 
@@ -320,7 +320,7 @@ You should see (at least) the following processes:
 
 Although the database is running, the XS Advanced applications and services may still be loading. Check the progress by running the following command in the XS Command Line Interface.
 
-> ### **Note**: You can also execute the CLI locally from your computer. Make sure to download it from the [download site using the Download Manager](https://www.sap.com/developer/topics/sap-hana-express.html) and to map your hosts file as explained in step 9.
+> ### **Note**: You can also execute the CLI locally from your computer. Make sure to download it from the [download site using the Download Manager](https://developers.sap.com/topics/sap-hana-express.html) and to map your hosts file as explained in step 9.
 
 ```
 xs-admin-login

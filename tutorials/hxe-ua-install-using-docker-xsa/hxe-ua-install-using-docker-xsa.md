@@ -10,8 +10,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
-- [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
-- [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+- [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
+- [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ How to install SAP HANA, express edition on your preferred Docker setup.
 
 This tutorial will show you how to install an installation of SAP HANA, express edition with XSA on your Docker installation. This version of SAP HANA, express edition does not contain XSC.
 
-If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html) or [Binary Method](https://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html) installation guides.
+If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) or [Binary Method](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html) installation guides.
 
 Before you begin, ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
@@ -456,5 +456,5 @@ usage: [options]
 [ACCORDION-END]
 
 ### Additional Information
-- [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
-- [Download and Install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+- [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
+- [Download and Install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)

@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-lumira ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Download and install SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-install.html)
+- **Tutorials:** [Download and install SAP BusinessObjects Lumira](https://developers.sap.com/tutorials/lumira-install.html)
 
 ## Next Steps
-- [Initial data exploration in SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
+- [Initial data exploration in SAP BusinessObjects Lumira](https://developers.sap.com/tutorials/lumira-initial-data-exploration.html)
 
 ## Details
 ### You will learn  

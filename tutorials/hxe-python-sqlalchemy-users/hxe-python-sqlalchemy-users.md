@@ -9,7 +9,7 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
  - Setup: `HANA, express edition` must be running.
 
 ## Next Steps
- - This is a standalone How-To on basic integration of the SQLAlchemy Object Relational Mapper (ORM) with HANA, express edition. [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
+ - This is a standalone How-To on basic integration of the SQLAlchemy Object Relational Mapper (ORM) with HANA, express edition. [View similar How-Tos](http://developers.sap.com/tutorials.html) or [View all How-Tos](http://developers.sap.com/tutorials.html)
 
 
  __ NOTE: SAP HANA, express edition version 2.0 implications on 'How-Tos' and 'Tutorials' __
@@ -30,7 +30,7 @@ This tutorial relies on the experimental packages [`pyhdb`](https://github.com/S
 `SQLAlchemy` is an Object Relational Mapper (ORM) that maps python objects to SQL database management system entities. This how-to tutorial will show you how to:
 - configure `SQLAlchemy` settings for HANA, express edition
 - complete [the SQLAlchemy Project tutorial](http://docs.sqlalchemy.org/en/latest/orm/tutorial.html) using HANA, express edition as the database.
-This tutorial assumes that you are installing `SQLAlchemy` and `SQLAlchemy` HANA packages on your client operating system and not on the HANA, express edition virtual machine itself. If you intend to install `SQLAlchemy` on your HANA, express edition virtual machine, you should review the tutorial ["Installing Python Modules on HANA, express edition"](http://www.sap.com/developer/topics/sap-hana-express.tutorials.html) to prepare the virtual machine for installing Python packages from `pypi`.
+This tutorial assumes that you are installing `SQLAlchemy` and `SQLAlchemy` HANA packages on your client operating system and not on the HANA, express edition virtual machine itself. If you intend to install `SQLAlchemy` on your HANA, express edition virtual machine, you should review the tutorial ["Installing Python Modules on HANA, express edition"](http://developers.sap.com/topics/sap-hana-express.tutorials.html) to prepare the virtual machine for installing Python packages from `pypi`.
 
 
 ### Time to Complete

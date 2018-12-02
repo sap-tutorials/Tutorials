@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Download Using the Download Manager (GUI Mode)](http://www.sap.com/developer/tutorials/hxe-ua-download-vm.html) 
+ - **Tutorials:** You have completed [Download Using the Download Manager (GUI Mode)](http://developers.sap.com/tutorials/hxe-ua-download-vm.html) 
 
 ## Details
 ### You will learn

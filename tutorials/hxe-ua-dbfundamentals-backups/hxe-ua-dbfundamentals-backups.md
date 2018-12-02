@@ -9,11 +9,11 @@ time: 15
 
 
 ## Prerequisites  
- - [Create a Tenant Database](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
+ - [Create a Tenant Database](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
 
 
 ## Next Steps
- - [Install and Configure ODBC](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-odbc.html)
+ - [Install and Configure ODBC](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-odbc.html)
 
 ## Details
 ### You will learn  
@@ -57,7 +57,7 @@ time: 15
 [ACCORDION-BEGIN [Option 2: ](SAP HANA Studio)]
 
 > Note:
-> This option requires you to have completed the [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) How-To.
+> This option requires you to have completed the [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) How-To.
 
 1. On SAP HANA Studio, log on to your SAP HANA, express edition installation.
 

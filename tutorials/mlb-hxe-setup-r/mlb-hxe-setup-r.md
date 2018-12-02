@@ -8,7 +8,7 @@ time: 45
 ---
 
 ## Prerequisites  
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 ## Details
 ### You will learn

@@ -7,7 +7,7 @@ time: 20
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html) (you can also use other people's data coming from this tutorial)
+ - **Tutorials:** [Send the CPU usage data to SAP IoT Application Enablement](https://developers.sap.com/tutorials/iotae-comp-sendpy0.html) (you can also use other people's data coming from this tutorial)
 
 
 ## Details

@@ -8,11 +8,11 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:**  [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html), or
-- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- **Tutorials:**  [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://developers.sap.com/tutorials/iot-part8-hcp-services-tessel.html), or
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://developers.sap.com/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](https://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](https://developers.sap.com/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 
 ## Details

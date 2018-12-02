@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Onboarding a computer as the IoT thing](https://www.sap.com/developer/tutorials/iotae-comp-thingmodeler0.html)
+ - **Tutorials:** [Onboarding a computer as the IoT thing](https://developers.sap.com/tutorials/iotae-comp-thingmodeler0.html)
 
 
 ## Next Steps
-- [Build freestyle IoT application](https://www.sap.com/developer/tutorials/iotae-comp-buildappmc0.html)
+- [Build freestyle IoT application](https://developers.sap.com/tutorials/iotae-comp-buildappmc0.html)
 
 ## Details
 ### You will learn  

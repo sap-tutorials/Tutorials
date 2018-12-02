@@ -369,9 +369,9 @@ In the following it is described how the payload looks like for sending data to 
     }
     ```
 
-    The message is now sent to the previously created sensor. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT](https://www.sap.com/developer/tutorials/iot-cf-send-data-mqtt.html) and [Send Data with REST](https://www.sap.com/developer/tutorials/iot-cf-send-data-rest.html).
+    The message is now sent to the previously created sensor. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT](https://developers.sap.com/tutorials/iot-cf-send-data-mqtt.html) and [Send Data with REST](https://developers.sap.com/tutorials/iot-cf-send-data-rest.html).
 
-2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html).
+2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html).
 
 
 **Send Data to an Automatically Created Sensor**
@@ -404,9 +404,9 @@ In the following it is described how the payload looks like for sending data to 
     }
     ```
 
-    The message is now sent to a newly created sensor. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT](https://www.sap.com/developer/tutorials/iot-cf-send-data-mqtt.html) and [Send Data with REST](https://www.sap.com/developer/tutorials/iot-cf-send-data-rest.html).
+    The message is now sent to a newly created sensor. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT](https://developers.sap.com/tutorials/iot-cf-send-data-mqtt.html) and [Send Data with REST](https://developers.sap.com/tutorials/iot-cf-send-data-rest.html).
 
-2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html).
+2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html).
 
 [VALIDATE_1]
 

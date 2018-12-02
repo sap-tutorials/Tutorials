@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Advanced geospatial processing with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-spatial.html)
+- **Tutorials:** [Advanced geospatial processing with Hibernate](https://developers.sap.com/tutorials/hxe-gcp-hibernate-spatial.html)
 
 ## Details
 ### You will learn  

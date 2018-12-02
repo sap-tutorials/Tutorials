@@ -11,9 +11,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://developers.sap.com/topics/sap-hana-express.html)
+- **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://developers.sap.com/tutorials/xsa-explore-basics.html)
 
 ## Details
 ### You will learn  
@@ -200,14 +200,14 @@ Use command `quit` to exit the SQL console.
 
 [ACCORDION-BEGIN [Step 6: ](Follow the startup progress)]
 
-After the machine appears as active, it will take about 10 minutes before the services are available. If you have connected to the server using SSH or have [downloaded the XS Command Line Interface from the Download Manager](https://www.sap.com/developer/topics/sap-hana-express.html) you can check the progress by logging in to the CLI and using the `xs apps` command.
+After the machine appears as active, it will take about 10 minutes before the services are available. If you have connected to the server using SSH or have [downloaded the XS Command Line Interface from the Download Manager](https://developers.sap.com/topics/sap-hana-express.html) you can check the progress by logging in to the CLI and using the `xs apps` command.
 
 ```ssh
 sudo su - hxeadm
 xs login -a https://localhost:39030 --skip-ssl-validation -u XSA_ADMIN
 ```
 
->Note: You can **optionally**  download the CLI using the download manager. You can get the download manager from the [HANA Express download site](https://www.sap.com/developer/topics/sap-hana-express.html) after you register. Choose `clients.zip` to download it. If you downloaded the CLI and are connecting from your local computer, replace `localhost` with `vhcalhxedb`
+>Note: You can **optionally**  download the CLI using the download manager. You can get the download manager from the [HANA Express download site](https://developers.sap.com/topics/sap-hana-express.html) after you register. Choose `clients.zip` to download it. If you downloaded the CLI and are connecting from your local computer, replace `localhost` with `vhcalhxedb`
 
 As follows:
 
@@ -250,6 +250,6 @@ The instances in the Cloud Appliance Library have additional applications pre-in
 [ACCORDION-END]
 
 ### Additional Information
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://developers.sap.com/topics/sap-hana-express.html)
+- **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://developers.sap.com/tutorials/xsa-explore-basics.html)

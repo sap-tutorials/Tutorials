@@ -24,9 +24,9 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 - **User in SAP IoT AE trial tenant**
   Go to <https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html> and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
 - **Tools**
-  Please check step 4 in <https://www.sap.com/developer/groups/iotae-computer-as-thing.html> to have the Postman tooling ready.
+  Please check step 4 in <https://developers.sap.com/group.iotae-computer-as-thing.html> to have the Postman tooling ready.
 - **SAP API Business Hub**
-  New to API Business Hub? Check <https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html> first.
+  New to API Business Hub? Check <https://developers.sap.com/tutorials/hcp-abh-getting-started.html> first.
   Please note, that screenshots used in this tutorial are based on the classic design UI of the website: <https://api.sap.com/?ui=oldUI>
 
 For further questions regarding these APIs, please refer to the latest documentation:
