@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Enable SAP Web IDE for S/4HANA system via OAuth`](https://www.sap.com/developer/tutorials/abap-custom-ui-communication-arrangement.html )
+- **Tutorials:** [`Enable SAP Web IDE for S/4HANA system via OAuth`](https://developers.sap.com/tutorials/abap-custom-ui-communication-arrangement.html )
 - **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user represents the prerequisites.
 
 

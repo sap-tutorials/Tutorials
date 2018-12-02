@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, topic>abap-development, topic>internet-of-things
 ---
 
 ## Prerequisites
-- [Create an ABAP project in Eclipse](https://www.sap.com/developer/tutorials/abap-create-project.html)
+- [Create an ABAP project in Eclipse](https://developers.sap.com/tutorials/abap-create-project.html)
 - The ABAP MQTT Client is available on **ABAP Platform 1809** and above.
 - You need to use **ABAP Development Tools**.
 

@@ -8,7 +8,7 @@ time: 40
 ---
 
 ## Prerequisites  
- - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://www.sap.com/developer/tutorials/cp-connectivity-configure-fiori-reference-apps.html)
+ - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html)
  - [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
  - [Create a Cloud Foundry Account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
  - [Connect your ABAP System with SAP Cloud Platform Using a Secure Tunnel](https://developers.sap.com/tutorials/cp-connectivity-create-secure-tunnel.html)
@@ -23,8 +23,8 @@ time: 40
 
 |Component        | Configured Entity (Value)   |  As Shown in Tutorial              |
 |:----------------|:----------------------------|------------------------------------|
-| ABAP system |Path of OData service (`http://<your server>:<your port>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Products`)     |  [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://www.sap.com/developer/tutorials/cp-connectivity-configure-fiori-reference-apps.html) |
-| ABAP system |User name and password of the technical user that is allowed to access the service (`DEMO`, `<your password>`) | [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://www.sap.com/developer/tutorials/cp-connectivity-configure-fiori-reference-apps.html) |
+| ABAP system |Path of OData service (`http://<your server>:<your port>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Products`)     |  [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html) |
+| ABAP system |User name and password of the technical user that is allowed to access the service (`DEMO`, `<your password>`) | [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html) |
 | Cloud Connector |Virtual host and port of the access control for your ABAP system (`http://abap-as-eu01:443`) | Connect your ABAP System with SAP Cloud Platform using a Secure Tunnel |
 
   To configure the access of the OData service applications require several services on SAP Cloud Platform (see picture below): After a user starts the application (1), the Authorization & Trust Management service (also known as XSUAA service) is used to authenticate the user for the on-premise call (2). The application then requests technical information about the virtual host of the ABAP system that needs to be accessed from the destination service (3), and finally uses the connectivity service to connect to the Cloud Connector through the secure tunnel (4-7).

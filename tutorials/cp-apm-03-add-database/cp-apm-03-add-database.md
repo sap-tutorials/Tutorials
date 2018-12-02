@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Add a UI to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-02-add-ui.html)
+ - [Add a UI to Your Business Application](https://developers.sap.com/tutorials/cp-apm-02-add-ui.html)
 
 ## Details
 ### You will learn  

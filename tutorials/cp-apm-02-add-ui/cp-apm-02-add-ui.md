@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Create a Business Service Using CDS](https://www.sap.com/developer/tutorials/cp-apm-01-create-business-service.html)
+ - [Create a Business Service Using CDS](https://developers.sap.com/tutorials/cp-apm-01-create-business-service.html)
 
 ## Details
 ### You will learn  

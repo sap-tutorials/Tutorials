@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
  - [Set Up Cloud Foundry and SAP Web IDE](https://developers.sap.com/tutorials/teched-cf-prereq1.html)
 
 ## Details

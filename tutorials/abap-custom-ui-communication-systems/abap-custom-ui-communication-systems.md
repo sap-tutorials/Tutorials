@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Set up trust between identity authentication and SAP Cloud Platform subaccount`](https://www.sap.com/developer/tutorials/abap-custom-ui-trust-settings.html)
+- **Tutorials:** [`Set up trust between identity authentication and SAP Cloud Platform subaccount`](https://developers.sap.com/tutorials/abap-custom-ui-trust-settings.html)
 - **Authorizations:** You must assign business catalog **`SAP_CORE_BC_COM`** to your user.
 
 ## Details

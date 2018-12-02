@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Create custom UI for S/4HANA on SAP Cloud Platform`](https://www.sap.com/developer/tutorials/abap-custom-ui-tile.html)
+- **Tutorials:** [`Create custom UI for S/4HANA on SAP Cloud Platform`](https://developers.sap.com/tutorials/abap-custom-ui-tile.html)
 
 
 ## Details

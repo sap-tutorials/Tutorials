@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites
-- **Tutorials:** [`Create OAuth communication system and user`](https://www.sap.com/developer/tutorials/abap-custom-ui-communication-systems.html)
+- **Tutorials:** [`Create OAuth communication system and user`](https://developers.sap.com/tutorials/abap-custom-ui-communication-systems.html)
 - **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`** represents the prerequisites for the usage of communication arrangement.
 
 
