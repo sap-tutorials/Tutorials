@@ -98,5 +98,3 @@ You should notice that Austria has been added as a filter in **Filters bar**. Re
 ### Optional
 - You can learn more about data exploration from the product's official [user guide](https://help.sap.com/lumira#section2) for SAP BusinessObjects Lumira
 
-## Next Steps
-- [Basics of data visualization](https://www.sap.com/developer/tutorials/lumira-initial-data-visualization.html)

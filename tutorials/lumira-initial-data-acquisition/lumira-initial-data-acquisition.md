@@ -89,6 +89,3 @@ Save the current document locally at your computer as `Tutorial1`.
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Initial data exploration in SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)

@@ -298,6 +298,3 @@ Save the extension in your computer. You can then use the extension in Lumira as
 
 [ACCORDION-END]
 
-
-## Next Steps
-- Adapt a D3 Chart for Lumira with SAP Web IDE (coming soon)

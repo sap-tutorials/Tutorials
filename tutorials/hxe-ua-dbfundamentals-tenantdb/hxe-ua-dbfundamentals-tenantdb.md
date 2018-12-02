@@ -72,5 +72,3 @@ This creates the tenant database "TENANTDB" with the SYSTEM user password "`Pass
 
 [ACCORDION-END]
 
-## Next Steps
- - [Create a Backup](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-backups.html)

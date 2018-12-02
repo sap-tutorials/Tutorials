@@ -265,7 +265,3 @@ After the deployment has succeeded you can navigate to `https://<your project ID
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Advanced geospatial processing with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-spatial.html)

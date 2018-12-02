@@ -102,6 +102,3 @@ Now that you have verified the installation of Django and verified connectivity 
     >Note: As a result of this change, there will be time zone values shown in the online tutorial that do not show in your results.*
 
 
-## Next Steps
- - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
- - [Complete the Django tutorials](https://docs.djangoproject.com/en/1.10/intro/tutorial01/)

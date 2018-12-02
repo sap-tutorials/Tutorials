@@ -46,9 +46,3 @@ Learn how to enable and then navigate to the SAP Web IDE inside of SAP Cloud Pla
 
     ![SAP Cloud PlatformConsole - services button](web_ide_start_screen.png)
 
-
-
-
-
-## Next Steps
- - Start the SAPUI5 with Web IDE series: [Set up the Northwind Destination](https://www.sap.com/developer/tutorials/hcp-create-destination.html)

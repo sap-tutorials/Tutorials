@@ -263,6 +263,6 @@ Here is an example: ![Data Preview](preview_data1.png)
 [ACCORDION-END]
 
 
-## Next Steps
+### Additional Information
 - [Create a Tenant Database](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
 - Select another SAP HANA 2.0, express edition tutorial from the [Tutorial Navigator](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)

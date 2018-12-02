@@ -486,6 +486,3 @@ JavaScript:
 
 [ACCORDION-END]
 
-
-## Next Steps
-- **Tutorial:** [Create child components](https://www.sap.com/developer/tutorials/react-child-components.html)

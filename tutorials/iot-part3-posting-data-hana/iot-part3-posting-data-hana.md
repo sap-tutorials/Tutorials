@@ -100,7 +100,3 @@ You can modify the values in the POST body and send a few more requests to add a
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Internet of Things (IoT) Check your data](https://www.sap.com/developer/tutorials/iot-part4-checking-data.html)

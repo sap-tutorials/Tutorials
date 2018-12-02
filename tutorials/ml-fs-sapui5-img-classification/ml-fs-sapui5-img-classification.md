@@ -652,5 +652,5 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 [ACCORDION-END]
 
 
-## Next Steps
+### Additional Information
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)

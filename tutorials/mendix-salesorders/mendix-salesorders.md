@@ -391,5 +391,3 @@ The application will automatically bind to the Connectivity, XSUAA and PostgreSQ
 
 [ACCORDION-END]
 
-## Next Steps
-- Read more about using Mendix at [https://docs.mendix.com/howto/](https://docs.mendix.com/howto/).

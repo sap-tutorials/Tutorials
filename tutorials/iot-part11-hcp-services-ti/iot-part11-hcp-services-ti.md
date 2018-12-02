@@ -237,5 +237,3 @@ node readTags.js
 
 [ACCORDION-END]
 
-## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data from device](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

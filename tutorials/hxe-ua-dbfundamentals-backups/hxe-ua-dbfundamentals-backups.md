@@ -169,6 +169,3 @@ time: 15
 [VALIDATE_3]
 [ACCORDION-END]
 
-
-## Next Steps
- - [Create a Tenant Database](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-odbc.html)

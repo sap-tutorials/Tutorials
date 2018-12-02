@@ -455,6 +455,6 @@ usage: [options]
 
 [ACCORDION-END]
 
-## Next Steps
+### Additional Information
 - [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
 - [Download and Install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)

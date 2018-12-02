@@ -411,8 +411,3 @@ Bootstrap:
 
 [ACCORDION-END]
 
-
-
-
-## Next Steps
-- **Tutorial:** [Separate the files](https://www.sap.com/developer/tutorials/react-separate-files.html)

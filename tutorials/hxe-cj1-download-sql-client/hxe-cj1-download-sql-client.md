@@ -131,6 +131,3 @@ Here are some suggestions:
 
 [ACCORDION-END]
 
-
-## Next Steps
- - [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)

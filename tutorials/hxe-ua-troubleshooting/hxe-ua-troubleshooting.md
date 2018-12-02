@@ -286,6 +286,3 @@ You can also move your SAP HANA, express edition installation to a cloud provide
 You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html) homepage to view cloud offerings.
 
 [ACCORDION-END]
-
-## Next Steps
-- [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)

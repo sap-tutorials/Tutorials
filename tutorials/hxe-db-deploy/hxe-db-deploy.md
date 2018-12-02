@@ -25,6 +25,3 @@ This How-To consolidates the links to tutorials that show how to install the HAN
 
 - To run `HANA, express edition` on Amazon Web Services, go to [SAP Cloud Appliance Library solutions](https://cal.sap.com/catalog#/solutions/d6f5e149-784a-43eb-9dce-58b377d8f440) and select the Amazon Web Services appliance.
 
-## Next Steps
- - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
-

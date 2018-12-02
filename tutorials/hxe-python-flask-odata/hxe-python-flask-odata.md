@@ -180,6 +180,3 @@ You now have a working Python/Flask application connecting to SAP HANA, Express 
 [ACCORDION-END]
 
 ---
-
-## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page

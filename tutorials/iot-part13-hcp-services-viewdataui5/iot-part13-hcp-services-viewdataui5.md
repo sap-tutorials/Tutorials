@@ -106,7 +106,3 @@ You can now use your expertise with SAPUI5 and start making modifications. Such 
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](https://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

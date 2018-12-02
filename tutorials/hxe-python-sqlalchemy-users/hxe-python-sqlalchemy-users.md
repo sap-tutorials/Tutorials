@@ -115,6 +115,3 @@ class User(Base):
 
 ```
 
-## Next Steps
- - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
- - [Complete the Django tutorials](https://docs.djangoproject.com/en/1.10/intro/tutorial01/)

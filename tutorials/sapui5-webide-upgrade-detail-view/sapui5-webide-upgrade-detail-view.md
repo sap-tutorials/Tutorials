@@ -58,10 +58,7 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
 	 ![View of detail screen](4b.png)
 
 
-## Next Steps
- - The next tutorial is Part 9: [Add a search field](https://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
-
-## Additional Information
+### Additional Information
 - [Expression Binding](http://anz.mygraebe.de/new-ui5/#7)
 - [`<List>` element](https://sapui5.hana.ondemand.com/explored.html#/entity/sap.m.List/samples)
 - [`<ObjectHeader>` element](https://sapui5.hana.ondemand.com/explored.html#/entity/sap.m.ObjectHeader/samples)

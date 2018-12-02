@@ -128,6 +128,3 @@ You will learn how to extend an existing control i.e Button in your application,
 
     ![finalrunning](ss-8.png)
 
----
-## Next Steps
- - [SAPUI5 creating a new UI5 control](https://www.sap.com/developer/tutorials/sapui5-creating-control.html)

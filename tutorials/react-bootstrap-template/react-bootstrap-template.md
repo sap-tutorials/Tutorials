@@ -465,8 +465,3 @@ font-weight: bold;
 
 [ACCORDION-END]
 
-
----
-
-## Next Steps
-- **Tutorial:** [Add the React JavaScript](https://www.sap.com/developer/tutorials/react-add-javascript.html)

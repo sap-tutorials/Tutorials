@@ -331,8 +331,3 @@ document.getElementById('product-list')
 
 [ACCORDION-END]
 
-
----
-
-## Next Steps
-- **Tutorial:** [Add REST OData retrieval](https://www.sap.com/developer/tutorials/react-add-odata.html)

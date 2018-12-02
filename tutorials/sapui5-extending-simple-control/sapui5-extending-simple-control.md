@@ -90,7 +90,3 @@ Understand the basic flow of control and it's required parameters.
 
      ![finaloutput](img-7.png)
 
----
-
-## Next Steps
- - [SAPUI5 extending `TextField`, `PasswordField` and `Button` Controls with events](https://www.sap.com/developer/tutorials/sapui5-extending-button-control.html)

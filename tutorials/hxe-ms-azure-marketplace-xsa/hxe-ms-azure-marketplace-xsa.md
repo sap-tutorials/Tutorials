@@ -344,8 +344,7 @@ You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
 
 [ACCORDION-END]
 
-
-## Next Steps
+### Additional Information
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
 - **Intro to XS Advanced HANA Native Development:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
 - **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)

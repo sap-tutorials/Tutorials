@@ -175,6 +175,3 @@ To better understand IoT Application Enablement APIs you can go to SAP API Hub a
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Build freestyle IoT application](https://www.sap.com/developer/tutorials/iotae-comp-buildappmc0.html)

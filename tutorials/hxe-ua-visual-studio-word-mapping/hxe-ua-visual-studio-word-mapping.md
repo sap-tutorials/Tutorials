@@ -118,7 +118,3 @@ After a few moments, the word map for your Twitter account displays.
 [ACCORDION-END]
 
 
----
-
-## Next Steps
-- [SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-google-cloud.html)

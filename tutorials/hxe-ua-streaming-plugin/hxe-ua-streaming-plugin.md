@@ -194,8 +194,3 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
 [ACCORDION-END]
 
-
----
-
-## Next Steps
- - [Create a Streaming Project with SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-create-streaming-project.html)

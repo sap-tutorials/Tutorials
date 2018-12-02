@@ -39,6 +39,6 @@ How to download the SAP BusinessObjects Lumira Desktop, and install it on your p
     > ### Note
     > For further reference information about the installation of SAP BusinessObjects Lumira Desktop, please refer to the documentation: [Installation and Upgrade Information](https://help.sap.com/lumira#section3)
 
-## Next Steps
+### Additional Information
 - [Initial data acquisition in SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-initial-data-acquisition.html) if you are just learning basics of SAP BusinessObjects Lumira
 - [Install and Deploy SAP BusinessObjects Lumira extensions](https://www.sap.com/developer/tutorials/lumira-extensions-intro.html) if you want to continue with development of extensions

@@ -132,6 +132,3 @@ Confirm connection as shown below:
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)

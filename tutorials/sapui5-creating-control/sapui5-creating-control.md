@@ -85,5 +85,3 @@ tags: [  tutorial>beginner, topic>html5 ]
 
   In the next Tutorial you will define all the functions to extend and add logic to your program.
 
-## Next Steps
-  - [Finalize your new UI5 Control by specifying the control logic](https://www.sap.com/developer/tutorials/sapui5-define-control-logic.html)

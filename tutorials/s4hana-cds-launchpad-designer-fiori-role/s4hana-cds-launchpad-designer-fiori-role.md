@@ -183,7 +183,3 @@ You will also see the group `Z_RDS_BCG`.
 
 [ACCORDION-END]
 
-
-## Next Steps
-
-[Building simple tile](https://www.sap.com/developer/tutorials/s4hana-cds-building-simple-tile.html)

@@ -238,8 +238,6 @@ You can switch as well to a chart view of received values.
 
 [ACCORDION-END]
 
-
-
-## Next Steps
+### Additional Information
 - [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
 - [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)

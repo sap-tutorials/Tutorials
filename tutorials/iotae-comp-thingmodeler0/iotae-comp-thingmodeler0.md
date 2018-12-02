@@ -132,7 +132,3 @@ You can find the official user guide at https://help.sap.com/viewer/p/SAP_IOT_AP
 
 
 [ACCORDION-END]
-
-
-## Next Steps
- - [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)

@@ -105,8 +105,3 @@ Follow the prompts to configure your installation.
 
 [ACCORDION-END]
 
-
----
-
-## Next Steps
-- [Install and Configure the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)

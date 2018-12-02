@@ -62,7 +62,3 @@ Figure 1: Import your destination configuration file into SAP Cloud Platform
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Activate SAP Web IDE plugins on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-plugins-activate.html)

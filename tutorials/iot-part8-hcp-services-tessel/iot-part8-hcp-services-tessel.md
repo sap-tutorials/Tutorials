@@ -165,6 +165,3 @@ You can switch as well from table display to live chart to see climate data chan
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

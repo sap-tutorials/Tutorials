@@ -107,6 +107,3 @@ Check the official documentation at <https://help.sap.com/viewer/product/SAP_CP_
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Configuring the device for laptop sensors data - coming soon]

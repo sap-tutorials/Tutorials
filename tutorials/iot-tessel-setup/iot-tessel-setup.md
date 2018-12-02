@@ -31,5 +31,3 @@ Here you will prepare your development environment on a laptop to work with a Te
 
 1. Sign up for your free developer edition of [SAP HANA in the cloud via AWS or Azure](https://developers.sap.com/topics/sap-hana.html)
 
-## Next Steps
- - [Setup Your Tessel](http://www.sap.com/developer/tutorials/iot-tessel.html)

@@ -276,7 +276,3 @@ document.getElementById('product-list')
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- **Tutorial:** [Add a header and a detail modal dialog](https://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)

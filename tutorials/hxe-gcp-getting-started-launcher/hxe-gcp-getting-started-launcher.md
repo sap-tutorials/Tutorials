@@ -211,7 +211,7 @@ CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper','WORKSHOP_01')
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
+### Additional Information
 - **Drivers and connectors for Python, Node.js, .NET, Java and others**: Sample applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)
 - **Access from HANA Studio**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/tutorials/hxe-gcp-eclipse-tenant-connect.html)
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)

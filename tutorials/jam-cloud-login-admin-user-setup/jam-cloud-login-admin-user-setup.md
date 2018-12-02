@@ -159,7 +159,3 @@ Figure 6: Remove a user by setting their 'status' to 'Alumni'
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Using Groups in SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)

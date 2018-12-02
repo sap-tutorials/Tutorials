@@ -132,7 +132,5 @@ The results should look like below.
 
 You now have a working Ruby on Rails application that connects to SAP HANA, Express Edition using OData services.
 
----
 
-## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page
+

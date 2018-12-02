@@ -164,6 +164,6 @@ In particular the Climate sensor you will enhance later in the exercises to prov
 
 
 
-## Next Steps
+### Additional Information
 - [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
 - [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://www.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)

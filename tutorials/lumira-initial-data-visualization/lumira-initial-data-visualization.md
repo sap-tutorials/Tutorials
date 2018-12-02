@@ -127,6 +127,3 @@ Save the document.
 [ACCORDION-END]
 
 
-
-## Next Steps
-- Time dimension and data drilling (coming soon)

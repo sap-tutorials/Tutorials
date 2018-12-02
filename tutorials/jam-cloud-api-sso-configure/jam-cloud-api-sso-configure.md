@@ -99,7 +99,3 @@ Connectivity destinations are a part of the SAP Cloud Platform connectivity serv
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-destination-configure.html)

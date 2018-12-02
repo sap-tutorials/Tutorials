@@ -84,8 +84,5 @@ In that bar, you will add a Button control to the right side of the footer bar i
 That is all for this series!  Return to the tutorial catalog for more tutorials on SAPUI5.
 
 
-## Next Steps
- - This is the end of this tutorial series.  
-
-## Additional Information
+### Additional Information
 - [`Footer`](https://sapui5.hana.ondemand.com/explored.html#/sample/sap.m.sample.Page/preview)- [`MessageBox`](https://sapui5.hana.ondemand.com/#/api/sap.m.MessageBox)- [`MessageToast`](https://sapui5.hana.ondemand.com/#/api/sap.m.MessageToast)

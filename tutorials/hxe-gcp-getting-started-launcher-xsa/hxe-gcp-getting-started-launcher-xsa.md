@@ -310,7 +310,7 @@ You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
+### Additional Information
  - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
  -  [Get started with XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
  - Generate test data and check a sample enterprise application [deploying the SAP HANA INteractive Education model on XS Advanced](https://www.sap.com/developer/tutorials/xsa-ml-e2e-access-shine.html)

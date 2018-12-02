@@ -163,7 +163,3 @@ This is not the only way to do, but that is a matter for you to explore and disc
 
 [ACCORDION-END]
 
-￼
-
-## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](https://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)

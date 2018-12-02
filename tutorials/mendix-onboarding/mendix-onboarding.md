@@ -171,5 +171,3 @@ You build apps using the Mendix Desktop Modeler, which is an application install
 
 [ACCORDION-END]
 
-## Next Steps
-- Read more about using Mendix at [https://docs.mendix.com/howto/](https://docs.mendix.com/howto/).

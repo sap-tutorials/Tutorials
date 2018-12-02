@@ -264,10 +264,9 @@ block content
 [ACCORDION-END]
 
 ---
-## Next Steps
+### Additional Information
  - If you intend to deploy your application to Google App Engine, go to the [Google App Engine deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-gcp.html)
  - If you intend to deploy your application to Azure App Service, go to the [Azure App Service deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-azure.html)
  - If you intend to deploy your application to AWS Elastic Beanstalk, go to the [AWS Elastic Beanstalk deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-aws.html)
  - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
-
  - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page

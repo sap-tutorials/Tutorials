@@ -244,7 +244,3 @@ The web view is shown here. Note that since this pages uses the SAPUI5 JavaScrip
 
 
 [ACCORDION-END]
-
-
-## Next Steps
-- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](https://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)

@@ -174,9 +174,6 @@ You will also add a Detail view and controller as well as alter the `View1` view
 
     ![Current application - detail view](12b.png)
 
-## Next Steps
- - Part 7 is next: [Update Internationalization](https://www.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
-
-## Additional Reading
+### Additional Reading
 - [Routing with mandatory parameters](https://help.sap.com/saphelp_nw75/helpdata/en/f9/6d2522a5ca4382a274ae3c6d002ca0/content.htm)
 - [`<VBox>`](https://sapui5.hana.ondemand.com/#/api/sap.m.VBox)

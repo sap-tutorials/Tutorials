@@ -216,5 +216,3 @@ For more information, you can also check the online [SAP Leonardo Machine Learni
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)

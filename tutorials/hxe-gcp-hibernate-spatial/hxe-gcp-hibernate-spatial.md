@@ -515,7 +515,3 @@ In the text area below enter the name of the Hibernate Spatial function that is 
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Full-text search queries with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-text-search.html)

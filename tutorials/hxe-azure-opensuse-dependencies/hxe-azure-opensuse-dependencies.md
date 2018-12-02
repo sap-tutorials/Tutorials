@@ -72,7 +72,3 @@ Press enter on `libltdl7` and then F10 to accept
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Extract the binaries and execute the installation script](https://www.sap.com/developer/tutorials/hxe-azure-opensuse-extract-install.html)

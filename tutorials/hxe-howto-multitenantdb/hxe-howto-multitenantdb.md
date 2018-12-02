@@ -45,5 +45,3 @@ Provides instruction on how to create a `multitenant` container database in `HAN
     ![image 1](3.png)
 
 
-## Next Steps
- - Go to the [`SAP HANA, express edition tutorials page`](http://www.sap.com/developer/topics/sap-hana-express.tutorials.html)

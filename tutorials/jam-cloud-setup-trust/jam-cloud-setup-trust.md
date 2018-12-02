@@ -78,7 +78,3 @@ The purpose of the trust configuration is the support of principal propagation, 
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO](https://www.sap.com/developer/tutorials/jam-cloud-api-sso-configure.html)

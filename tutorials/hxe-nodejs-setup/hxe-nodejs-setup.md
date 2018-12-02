@@ -72,7 +72,3 @@ This command lists all of the modules that are installed on your system and in t
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Connect to HXE using Node.js](https://www.sap.com/developer/tutorials/hxe-nodejs-connect.html)

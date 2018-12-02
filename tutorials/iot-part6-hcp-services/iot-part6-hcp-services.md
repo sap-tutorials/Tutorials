@@ -102,7 +102,3 @@ Once user is assigned to the role, stop and start `iotmms` application.
 ![Start/stop](p6_10.png)
 
 [ACCORDION-END]
-
-
-## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)

@@ -491,7 +491,3 @@ document.getElementById('product-list')
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- **Tutorial:** [Examine child to parent communication](https://www.sap.com/developer/tutorials/react-add-filter.html)

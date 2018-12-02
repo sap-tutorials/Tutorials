@@ -86,5 +86,3 @@ In this tutorial, you will learn how to use an example viz extension (Bullet Cha
  - You can explore as well open sourced visual extensions provided by community, like <https://github.com/michalkorzen/lumira-sankey-advanced>
  - Think about contributing your own viz extensions as open source as well
 
-## Next Steps
- - [Creating a new viz extension project](https://www.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)

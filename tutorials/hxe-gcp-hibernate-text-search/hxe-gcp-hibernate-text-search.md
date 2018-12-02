@@ -241,7 +241,3 @@ You will see that the search now also returns results when searching for terms l
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Spatial clustering with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-cluster.html)

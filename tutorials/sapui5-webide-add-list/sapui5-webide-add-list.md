@@ -62,10 +62,7 @@ Add a list to first XML view (`View1.xml`). The list will display data from the 
 
     ![Alert pop-up](5.png)
 
-## Next Steps
- - The next tutorial in the series is Part 5: [Enable Routing](https://www.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
 
-
-## Additional Reading
+### Additional Reading
 - [Data Binding](https://sapui5.netweaver.ondemand.com/#docs/guide/68b9644a253741e8a4b9e4279a35c247.html)- [`<List>`](https://sapui5.netweaver.ondemand.com/#docs/guide/295e44b2d0144318bcb7bdd56bfa5189.html)- [`<StandardListItem>`](https://sapui5.netweaver.ondemand.com/explored.html#/entity/sap.m.StandardListItem/properties)
 - [`sap.m.MessageBox`](https://sapui5.netweaver.ondemand.com/sdk/#docs/api/symbols/sap.m.MessageBox.html)

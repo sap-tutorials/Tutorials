@@ -358,6 +358,3 @@ Your project should now contain three files.  Here is the complete text of each 
 
 [ACCORDION-END]
 
-
-## Next Steps
-- **Tutorial:** [Convert components from static to dynamic](https://www.sap.com/developer/tutorials/react-dynamic-components.html)

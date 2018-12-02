@@ -141,6 +141,3 @@ To access the developer support communities, where you can post your questions, 
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)

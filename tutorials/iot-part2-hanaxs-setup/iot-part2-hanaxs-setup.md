@@ -199,7 +199,3 @@ Click the **+** symbol under the **Granted Roles** tab and search for the role y
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Internet of Things (IoT) Posting data with a REST Client](https://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)

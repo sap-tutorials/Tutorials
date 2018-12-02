@@ -141,6 +141,3 @@ You have to add a routing configuration to the descriptor file and initialize th
 16. After this tutorial, you should be able to run your application again, but you will not see any changes.  All of the routing work occurs "behind the scenes" and is not visible to the user.   
 
 
-
-## Next Steps
-- The next tutorial in this series is Part 6: [Display List Details](https://www.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)

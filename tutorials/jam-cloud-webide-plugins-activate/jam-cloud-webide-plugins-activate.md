@@ -41,7 +41,3 @@ In this tutorial, you will learn how to activate SAP Web IDE plugins on SAP Clou
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Using SAP Web IDE with SAP Jam Collaboration](https://www.sap.com/developer/tutorials/jam-cloud-ui5-sample-build-project.html)

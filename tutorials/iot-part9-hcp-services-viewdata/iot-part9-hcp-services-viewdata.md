@@ -258,8 +258,3 @@ When it has started up, click on the URL that is under Application URLs.
 
 [ACCORDION-END]
 
-
-
-
-## Next Steps
-- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](https://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

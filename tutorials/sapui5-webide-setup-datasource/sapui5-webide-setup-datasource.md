@@ -163,6 +163,3 @@ There are two ways to create a model:  in the JavaScript code, or by using the `
  - **Don't forget to save your files!**  If a file name has a * next to it, the file isn't saved.  
 
 
-## Next Steps
-
-- **Tutorial** Part 3: [Add a list to the current view](https://www.sap.com/developer/tutorials/sapui5-webide-add-list.html)

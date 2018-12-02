@@ -223,9 +223,7 @@ Add the IP address followed by the name of the host, `hxehost`:
 
 [ACCORDION-END]
 
-
-
-## Next Steps
+### Additional Information
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
 - **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/tutorials/hxe-gcp-eclipse-tenant-connect.html)
 - **Additional languages?**: Build applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)

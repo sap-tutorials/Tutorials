@@ -67,6 +67,3 @@ A Microsoft visual studio project can connect to SAP database using SAP HANA Cli
 - If for any reason you want to remove the tables, views, and procedures set up in the previous step, then click **Remove demo objects**.
 
 
-## Next Steps
- - View additional .NET [sample projects](http://scn.sap.com/docs/DOC-53652).
- - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)

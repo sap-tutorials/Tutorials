@@ -40,9 +40,6 @@ Set proper titles to `View1` and `Detail` page by updating the resource model (a
 
 
 
-## Next Steps
- - The next tutorial is Step 8: [Improve the list and detail view](https://www.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
-
-##Additional Information
+### Additional Information
 - [Data-binding](http://help.sap.de/saphelp_uiaddon10/helpdata/en/91/f0f3cd6f4d1014b6dd926db0e91070/content.htm)
 - [Internationalization (i18n)](https://sapui5.netweaver.ondemand.com/sdk/#docs/guide/91f217c46f4d1014b6dd926db0e91070.html)

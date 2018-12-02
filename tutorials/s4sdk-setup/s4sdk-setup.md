@@ -117,7 +117,7 @@ After finishing these steps, you are ready to start the development of your SAP 
 
 ---
 
-## Next Steps
+### Additional Information
 Choose your next step depending on whether you would like to deploy to Cloud Foundry or Neo:
   - **Tutorial for Cloud Foundry:** [Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-cloud-foundry-sample-application.html)
   - **Tutorial for Neo:** [Create a sample application on SCP Neo using SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-scp-neo-sample-application.html)
