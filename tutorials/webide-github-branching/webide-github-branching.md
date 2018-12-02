@@ -79,5 +79,3 @@ In this tutorial, you'll learn how your collaborators can create branches in Git
 7. Similarly you can address other remaining issues targeted for `m1` milestone and commit and push the changes.
 
 
-## Next Steps
- - [Merging branches back into master branch in GitHub using Pull Requests](https://www.sap.com/developer/tutorials/webide-github-merge-pull-request.html)

@@ -87,6 +87,3 @@ Click the **Run** button.  You will notice that you get no results from the call
 [ACCORDION-END]
 
 
-
-## Next Steps
-- [Using Execute Immediate](https://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)

@@ -70,7 +70,3 @@ Features and plugins that are not provided by SAP are under the responsibility o
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Activate a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)

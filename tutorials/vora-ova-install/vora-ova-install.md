@@ -357,5 +357,3 @@ There is also the SAP Vora documentation for SAP Vora product, and not only abou
 
 [ACCORDION-END]
 
-## Next Steps
-- [Getting started with SAP Vora 1.4 virtual machine](https://www.sap.com/developer/groups/vora-ova-get-started.html)

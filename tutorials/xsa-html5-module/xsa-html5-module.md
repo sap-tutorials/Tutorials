@@ -185,5 +185,3 @@ A new tab will open and you will see the default **Hello World** button has been
 
 [ACCORDION-END]
 
-## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)

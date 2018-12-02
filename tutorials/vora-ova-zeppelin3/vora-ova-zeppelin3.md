@@ -56,6 +56,3 @@ ON COMPLAINTS_DISK.COMPLAINT_ID = PRODUCTS.COMPLAINT_ID
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Working with Hierarchies using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)

@@ -78,6 +78,3 @@ Save the view. Now preview what you have done so far by clicking on the **Previe
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-ova-hana-datasource.html)

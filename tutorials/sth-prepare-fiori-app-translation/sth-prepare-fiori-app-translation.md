@@ -161,5 +161,3 @@ To make things look more realistic, the app uses mock data.
 [ACCORDION-END]
 
 
-## Next Steps
-- [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)

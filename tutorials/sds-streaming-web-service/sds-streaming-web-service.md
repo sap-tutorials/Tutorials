@@ -74,5 +74,3 @@ In the next step, we will test the Streaming Web Service via the REST Interface.
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials** : [Configuring the Web Service Provider (WSP)](https://www.sap.com/developer/tutorials/sds-web-service-provider-configuration.html)

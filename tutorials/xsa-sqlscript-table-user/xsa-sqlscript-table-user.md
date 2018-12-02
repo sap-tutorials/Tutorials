@@ -156,6 +156,3 @@ The results of your table function are then shown.
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Debugging Stored Procedures](https://www.sap.com/developer/tutorials/xsa-sqlscript-debugging.html)

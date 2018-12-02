@@ -87,6 +87,3 @@ You will notice that the SQLScript code is executed and results are shown.  Agai
 [ACCORDION-END]
 
 
-
-## Next Steps
-- [Using Dynamic SQL vs Dynamic Filtering](https://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)

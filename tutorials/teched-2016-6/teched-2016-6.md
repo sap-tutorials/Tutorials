@@ -320,5 +320,3 @@ Map tab:
 
 [ACCORDION-END]
 
-## Next Steps
- - [Add a map display to your app](https://www.sap.com/developer/tutorials/teched-2016-7.html)

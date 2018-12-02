@@ -63,5 +63,3 @@ You will learn how to use Modeler artifacts to create Group By, Aggregations, Or
 
     ![Results screen](voraaggr07.jpg)
 
-## Next Steps
-- [Loading sample data from different file formats](https://www.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)

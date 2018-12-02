@@ -44,5 +44,3 @@ Run and complete the remainder of the paragraphs in this notebook.
 
 [ACCORDION-END]
 
-## Next Steps
-- [Working with Graph Engine using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin4.html)

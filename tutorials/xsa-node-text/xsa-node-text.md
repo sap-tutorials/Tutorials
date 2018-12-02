@@ -150,7 +150,3 @@ Repeat the process raising Japanese `[ja]` to the top of the list and refresh th
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [SAP HANA XS Advanced - Web Sockets](https://www.sap.com/developer/tutorials/xsa-node-websockets.html)

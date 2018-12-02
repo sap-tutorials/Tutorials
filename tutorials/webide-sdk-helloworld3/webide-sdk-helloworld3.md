@@ -49,5 +49,3 @@ The application URL is shown under **Active Version**. Save this link for later 
 [ACCORDION-END]
 
 
-## Next Steps
-- [Creating a Destination for Consuming a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld4.html)

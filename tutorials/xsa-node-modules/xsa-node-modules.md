@@ -288,5 +288,3 @@ You can also test the newly added router by adding `/node` to the URL:
 
 [ACCORDION-END]
 
-## Next Steps
-- [HANA Database Access from Node.js](https://www.sap.com/developer/tutorials/xsa-node-dbaccess.html)

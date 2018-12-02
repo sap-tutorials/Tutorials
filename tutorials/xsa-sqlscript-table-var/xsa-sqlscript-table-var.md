@@ -111,7 +111,3 @@ The results are then shown.
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Creating Scalar User Defined Functions](https://www.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)

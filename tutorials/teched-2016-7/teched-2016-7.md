@@ -326,5 +326,3 @@ And the `color` indicates the highway geometry color.
 
 [ACCORDION-END]
 
-## Next Steps
- - [Translate your app into multiple languages](https://www.sap.com/developer/tutorials/teched-2016-8.html)

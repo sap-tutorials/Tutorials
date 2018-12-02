@@ -71,5 +71,3 @@ You will learn how to load sample data from Parquet and ORC file formats.
 
     ```    
 
-## Next Steps
- - [Using hierarchies in SAP Vora](https://www.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)

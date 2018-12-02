@@ -185,7 +185,3 @@ You might have noticed that the default Node.js programming approach is to use c
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Asynchronous Non-Blocking I/O](https://www.sap.com/developer/tutorials/xsa-node-async.html)

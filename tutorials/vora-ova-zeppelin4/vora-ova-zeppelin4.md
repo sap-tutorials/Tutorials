@@ -119,6 +119,3 @@ You can also use aggregations in your `SELECT` statement and in combination of a
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Working with the SAP HANA Vora Tools](https://www.sap.com/developer/tutorials/vora-ova-toolsintro.html)

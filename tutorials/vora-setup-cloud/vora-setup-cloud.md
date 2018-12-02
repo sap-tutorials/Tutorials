@@ -97,5 +97,3 @@ SAP Vora leverages and extends the Apache Spark execution framework to provide e
  - Review the [SAP Vora documentation](https://help.sap.com/hana_vora_re)
  - Review the [SAP Cloud Appliance Library (CAL) documentation](https://calstatic.hana.ondemand.com/res/~1472020269624~/docEN/index.html)
 
-## Next Steps
- - [Connect to SAP Vora instance to manage it] (https://www.sap.com/developer/tutorials/vora-connect.html)

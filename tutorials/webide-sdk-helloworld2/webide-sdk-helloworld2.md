@@ -57,5 +57,3 @@ You can open the same dialog as in the previous tutorial, but now the menu item 
 
 [ACCORDION-END]
 
-## Next Steps
-- [Deploying a Feature to SAP Cloud Platform](https://www.sap.com/developer/tutorials/webide-sdk-helloworld3.html)

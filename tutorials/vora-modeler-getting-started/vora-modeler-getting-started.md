@@ -88,5 +88,3 @@ You will learn how to use Modeler artifacts to create SQL views with joins. It w
 
     Compare results of both statements.
 
-## Next Steps
- - [SAP Vora Modeler: Unions in SQL View](https://www.sap.com/developer/tutorials/vora-modeler-view-union.html)

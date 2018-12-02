@@ -45,5 +45,3 @@ In this tutorial, you'll learn how to create a Git repository within a GitHub or
 
 6. Your Git repository is ready!
 
-## Next Steps
- - [Creating project in SAP Web IDE and importing it into GitHub](https://www.sap.com/developer/tutorials/webide-github-import-project.html)

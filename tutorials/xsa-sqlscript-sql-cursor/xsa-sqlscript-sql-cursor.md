@@ -130,7 +130,3 @@ Take note of the run time.
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Using Cursors](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingcursor.html)

@@ -78,5 +78,3 @@ You will learn how to connect to your SAP Vora instance to manage it. There are 
 
     ![ssh into SAP Vora instance](voraconnect05.jpg)
 
-## Next Steps
- - [Loading sample data using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)

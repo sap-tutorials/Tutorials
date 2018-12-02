@@ -361,7 +361,3 @@ In the running tab, you should see the `index.html` from earlier. Adjust the URL
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Consume a Basic OData Service](https://www.sap.com/developer/tutorials/xsa-sapui5-odata.html)

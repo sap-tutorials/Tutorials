@@ -90,7 +90,3 @@ Check the execution time again, you may notice that it is a bit faster this time
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Intermediate Table Variables](https://www.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)

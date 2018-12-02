@@ -75,7 +75,3 @@ In the new browser tab, use the plugin by going to the **Tools** menu and select
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Change Code in a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)

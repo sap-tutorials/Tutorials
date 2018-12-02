@@ -64,5 +64,3 @@ You will learn how to start SAP Vora Tools and using two of them: SQL Editor and
 
     ![Browsing data](voratools04.jpg)
 
-## Next Steps
- - [Getting started with SAP Vora Modeler: Creating SQL views](https://www.sap.com/developer/tutorials/vora-modeler-getting-started.html)

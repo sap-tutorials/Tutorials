@@ -79,7 +79,3 @@ You will notice the count is now much higher, 106.  This illustrates the possibi
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Using APPLY FILTER](https://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)

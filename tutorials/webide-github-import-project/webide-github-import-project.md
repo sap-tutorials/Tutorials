@@ -83,5 +83,3 @@ In this tutorial, you'll learn how to import an existing SAP Web IDE project int
 12. Go to the Organization GitHub URL and you will notice that the changes are now published.
 
 
-## Next Steps
- - [Using issues, setting milestones and assigning issues to collaborators](https://www.sap.com/developer/tutorials/webide-github-issues-milestones.html)

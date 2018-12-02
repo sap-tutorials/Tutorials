@@ -65,6 +65,3 @@ Select data by hierarchy level (`4` in this example).
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Working with Time Series using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin5.html)

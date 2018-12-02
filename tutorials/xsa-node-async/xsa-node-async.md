@@ -1011,7 +1011,3 @@ Test your `databaseAsync2.js` from the test UI. The execution is similar to befo
 
 [ACCORDION-END]
 
-
-
-## Next Steps
- - [Text Bundles](https://www.sap.com/developer/tutorials/xsa-node-text.html)

@@ -75,6 +75,3 @@ Final step of this tutorial is to create a table from your ORC based file and se
 
 [ACCORDION-END]
 
-
-## Next Steps
- - [Working with Disk Engine using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin3.html)

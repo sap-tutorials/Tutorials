@@ -42,5 +42,3 @@ Next determine the trend of sales over a time period, multi column analysis of S
 
 [ACCORDION-END]
 
-## Next Steps
-- [Working with Document Store Engine in SAP HANA Vora](https://www.sap.com/developer/tutorials/vora-ova-zeppelin7.html)

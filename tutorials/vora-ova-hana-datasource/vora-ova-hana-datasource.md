@@ -78,5 +78,3 @@ SELECT * FROM HANADATA;
 
 [ACCORDION-END]
 
-## Next Steps
-- [Using Spark Shell to run SAP Vora examples](https://www.sap.com/developer/tutorials/vora-ova-spark-shell.html)

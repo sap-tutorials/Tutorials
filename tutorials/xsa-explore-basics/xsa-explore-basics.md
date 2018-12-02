@@ -140,5 +140,3 @@ Use `F8` or the green **run** icon to execute the query. Enter the result of the
 [VALIDATE_1]
 [ACCORDION-END]
 
-## Next Steps
-- [Get started with SAP HANA, XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)

@@ -52,5 +52,3 @@ You will learn how to open Apache Zeppelin and how to load sample data.
 
     ![All tables created](vorazeppelin05.jpg)
 
-## Next Steps
- - [Getting started with SAP Vora Tools](https://www.sap.com/developer/tutorials/vora-tools-getting-started.html)

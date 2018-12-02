@@ -106,6 +106,3 @@ You will notice you now get an error message when passing 'OR 1 = 1' to the proc
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [SQL vs Cursors vs Arrays vs Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)

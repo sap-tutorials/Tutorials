@@ -76,7 +76,3 @@ Save the files you have modified and run the web module:
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Consume an OData Service with Create Option](https://www.sap.com/developer/tutorials/xsa-sapui5-consume.html)

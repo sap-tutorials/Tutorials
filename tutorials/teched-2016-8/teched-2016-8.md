@@ -155,5 +155,3 @@ If your device is set to either the German or Spanish locale, then the app will 
 
 [ACCORDION-END]
 
-## Next Steps
- - [ABC Analysis with SAP HANA PAL](https://www.sap.com/developer/tutorials/teched-2016-10.html)

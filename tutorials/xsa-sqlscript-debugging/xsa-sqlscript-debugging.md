@@ -154,6 +154,3 @@ Execution of the procedure is now completed. Return to the SQL tab and check the
 [ACCORDION-END]
 
 
-
-## Next Steps
-- [Anonymous Blocks](https://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)

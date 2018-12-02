@@ -87,5 +87,3 @@ You will learn how to use Modeler artifacts to add union to previously created S
 
     ![Execute view with union](voraunion09.jpg)
 
-## Next Steps
- - [SAP Vora Modeler: Aggregation in SQL View](https://www.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)

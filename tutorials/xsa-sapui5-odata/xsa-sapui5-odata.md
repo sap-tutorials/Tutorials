@@ -445,6 +445,3 @@ Which you can solve in the next tutorial. You will then see the model based on t
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Use OData Metadata to dynamically create the columns](https://www.sap.com/developer/tutorials/xsa-sapui5-metadata.html)

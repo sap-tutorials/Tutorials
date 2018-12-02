@@ -99,7 +99,3 @@ Notice the `FULLNAME` column, it shows the results of the scalar `UDF` logic.
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Creating Table User Defined Functions](https://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)

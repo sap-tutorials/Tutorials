@@ -108,6 +108,3 @@ Note the execution time.
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Parallel Processing and Parameters](https://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)

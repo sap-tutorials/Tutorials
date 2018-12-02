@@ -452,6 +452,3 @@ What was the total gross amount?
 [ACCORDION-END]
 
 
-
-## Next Steps
- - [SAP HANA XS Advanced - Create a Node.js module](https://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)

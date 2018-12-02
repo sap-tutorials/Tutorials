@@ -114,6 +114,3 @@ Create a CUBE called `PROD_FININS_CUBE` that joins fact table and dimension view
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Working with ORC and Parquet Files using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)

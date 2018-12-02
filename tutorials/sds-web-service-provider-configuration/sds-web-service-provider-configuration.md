@@ -196,5 +196,3 @@ If you are using HTTPS, fill out the properties in the Security section. If you 
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials** : [Publish Events to SDS via the REST Interface](https://www.sap.com/developer/tutorials/sds-rest-publish.html)

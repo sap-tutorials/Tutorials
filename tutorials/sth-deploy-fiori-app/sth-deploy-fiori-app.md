@@ -182,5 +182,3 @@ You've now prepared everything for the translation step.
 
 [ACCORDION-END]
 
-## Next Steps
-- [Translate an SAP Fiori app with SAP Translation Hub](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
