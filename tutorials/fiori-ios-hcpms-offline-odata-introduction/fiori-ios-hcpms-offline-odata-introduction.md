@@ -120,8 +120,5 @@ However, it is possible to tune the configuration of offline applications to opt
 - Column indexes for the client database
 - Common user data to cache on the server to reduce the amount of data that needs to be synchronized with the back end.
 
-You can learn more on this topic in tutorial [Configure the behavior of the Offline OData Service](https://developers.sap.com/tutorials/fiori-ios-hcpms-offline-odata-config.html)
-
-
 [DONE]
 [ACCORDION-END]
