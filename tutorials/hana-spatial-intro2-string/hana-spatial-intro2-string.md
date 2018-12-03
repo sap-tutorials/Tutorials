@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Points](https://www.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
+- **Tutorials:** [Points](https://developers.sap.com/tutorials/hana-spatial-intro1-point.html)
 
 ## Next Steps
-- [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- [Polygons](https://developers.sap.com/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Details
 ### You will learn  

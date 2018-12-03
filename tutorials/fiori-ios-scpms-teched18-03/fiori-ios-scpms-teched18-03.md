@@ -152,7 +152,7 @@ There is also an association between packages and delivery statuses, where a sin
 
 Data is retrieved from the cloud platform using the OData protocol, using the SDK's `SAPOData` framework. Similar to executing SQL statements, the SDK provides a "fluent interface" or "method chaining" approach to constructing queries.
 
-For example, a hypothetical SQL query to get all DeliveryStatus entities for a particular Package might look something like this:
+For example, a hypothetical SQL query to get all `DeliveryStatus` entities for a particular Package might look something like this:
 
 ```
 SELECT *

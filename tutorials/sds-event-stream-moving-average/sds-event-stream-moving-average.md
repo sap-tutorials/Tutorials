@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streamin
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Join an Event Stream to a HANA Table](https://www.sap.com/developer/tutorials/sds-stream-table-join.html)
+ - **Tutorials:** [Join an Event Stream to a HANA Table](https://developers.sap.com/tutorials/sds-stream-table-join.html)
 
 ## Next Steps
-- **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
+- **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics](https://developers.sap.com/tutorials/sds-event-stream-alerts.html)
 
 
 ## Details

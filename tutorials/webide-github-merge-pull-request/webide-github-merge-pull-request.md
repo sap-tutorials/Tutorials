@@ -6,7 +6,7 @@ tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-
 time: 10
 ---
 ## Prerequisites  
-  - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-github-branching.html)
+  - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](https://developers.sap.com/tutorials/webide-github-branching.html)
 
 ## Details
 ### You will learn  

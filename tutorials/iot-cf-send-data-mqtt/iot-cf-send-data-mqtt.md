@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Install the Paho Client](https://www.sap.com/developer/tutorials/iot-cf-install-paho-client.html) and [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
+ - **Tutorials:** You have completed [Install the Paho Client](https://developers.sap.com/tutorials/iot-cf-install-paho-client.html) and [Install OpenSSL](https://developers.sap.com/tutorials/iot-cf-install-openssl.html).
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 20 min
 
 ## Next Steps
-- **Tutorials:** [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html)
+- **Tutorials:** [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html)
 
 ---
 
@@ -194,9 +194,9 @@ In the following a sensor entity is created. The sensor is assigned to the previ
 
 **Prerequisites:**
 
--   You have installed the MQTT client (Paho). A description of how to install the Paho client can be found in the tutorial [Install the Paho Client](https://www.sap.com/developer/tutorials/iot-cf-install-paho-client.html).
+-   You have installed the MQTT client (Paho). A description of how to install the Paho client can be found in the tutorial [Install the Paho Client](https://developers.sap.com/tutorials/iot-cf-install-paho-client.html).
 
--   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
+-   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL](https://developers.sap.com/tutorials/iot-cf-install-openssl.html).
 
 -   You have created the device model in step 1-4.
 

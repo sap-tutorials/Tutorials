@@ -26,7 +26,7 @@ You'll create a very simple app based on a Northwind OData service, and in doing
 
 [ACCORDION-BEGIN [Step 1: ](Start up the SAP Web IDE)]
 
-Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -89,7 +89,7 @@ In this step's configuration, there are various possibilities for the data sourc
 
 The app to be generated should use a Northwind OData service - in other words, a generic OData service. Any OData service that is to be defined via the **Service URL** or **Service Catalog** sources must be available via a destination definition in the Connectivity service of the SAP Cloud Platform.
 
-In the [Create a destination for the Northwind OData services](https://www.sap.com/developer/tutorials/hcp-create-destination.html) tutorial, you will have done exactly this for the generic Northwind service endpoint. You'll now use this destination, indirectly, in this step of the wizard.
+In the [Create a destination for the Northwind OData services](https://developers.sap.com/tutorials/hcp-create-destination.html) tutorial, you will have done exactly this for the generic Northwind service endpoint. You'll now use this destination, indirectly, in this step of the wizard.
 
 Select the **Service URL** source, then find and choose the Northwind destination.
 

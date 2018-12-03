@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 ## Details
 ### You will learn
@@ -20,9 +20,9 @@ In this tutorial, you will learn how to proceed to import the sample dataset int
 
 The steps detailed in this tutorial and the related links will assume that you have completed the following tutorial:
 
-- [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html)
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
-- [Configure the SAP HANA R integration with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-setup-r.html)
+- [Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html)
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
+- [Configure the SAP HANA R integration with SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-setup-r.html)
 
 [DONE]
 [ACCORDION-END]

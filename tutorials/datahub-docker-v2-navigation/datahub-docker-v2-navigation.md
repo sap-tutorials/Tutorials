@@ -1,7 +1,6 @@
 ---
 title: Navigate around SAP Data Hub, developer edition 2.3
 description: Find your way around SAP Data Hub, developer edition 2.3.
-auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -26,7 +25,6 @@ To access the different user interfaces running inside the Docker container use 
 
 Where necessary enter **Username** and **Password** which you have set while running the Docker image.
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -39,7 +37,6 @@ docker exec -it datahub /bin/bash
 
 Afterwards you are logged into the container as `root` user. To leave the container, you simply use the `exit` command.
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -58,8 +55,6 @@ Now delete `test.txt` from your local computer. Afterwards copy the file from th
 ```sh
 docker cp datahub:/tmp/test.txt test.txt
 ```
-
-[DONE]
 
 [ACCORDION-END]
 
@@ -97,14 +92,12 @@ Finally delete `test.txt` from HDFS again (you can verify the deletion via `http
 ```sh
 hdfs dfs -rm /tmp/test.txt
 ```
-[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Troubleshoot problems and show logs)]
 To troubleshoot problems, take a look at the logs inside the Docker container. You find the logs related to SAP Data Hub (and SAP Vora) inside the directory `/var/log/vora`.
 
-[DONE]
 
 [ACCORDION-END]
 

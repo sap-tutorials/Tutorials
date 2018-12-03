@@ -107,7 +107,7 @@ Select the proper space (for HANA express, `development`) from the list of avail
 
 ![Select development space](6.png)
 
-> If you cannot find an appropriate space, you may either lack the `SpaceDeveloper` role to one or may need to [create one](https://www.sap.com/developer/tutorials/xsa-setup-new-space.html). By default, SAP HANA, express edition brings a development space that is implicitly mapped to the system database. If you are planning on using any of the advanced analytics features (such as Machine Learning), you need to [map the space to a tenant database](https://www.sap.com/canada/developer/tutorials/xsa-tenant-db-space.html), such as the default one, HXE.
+> If you cannot find an appropriate space, you may either lack the `SpaceDeveloper` role to one or may need to [create one](https://developers.sap.com/tutorials/xsa-setup-new-space.html). By default, SAP HANA, express edition brings a development space that is implicitly mapped to the system database. If you are planning on using any of the advanced analytics features (such as Machine Learning), you need to [map the space to a tenant database](https://developers.sap.com/tutorials/xsa-tenant-db-space.html), such as the default one, HXE.
 
 Click **Save**.
 

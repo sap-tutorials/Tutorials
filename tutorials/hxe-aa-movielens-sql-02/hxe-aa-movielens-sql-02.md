@@ -8,10 +8,10 @@ time: 15
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://developers.sap.com/group.hxe-aa-movielens-sql.html)
 
 ## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://developers.sap.com/group.hxe-aa-movielens-sql.html)
 
 ## Details
 ### You will learn
@@ -65,8 +65,8 @@ Both options are valid but for the sake of simplicity only the Eclipse option wi
 
 To learn more about these options, you can refer to:
 
-- [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
-- [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
+- [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html)
+- [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://developers.sap.com/tutorials/mlb-hxe-import-data-sql-import.html)
 
 [DONE]
 [ACCORDION-END]
@@ -192,4 +192,4 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 
 > ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/hxe-aa-movielens-sql-02.ipynb) to run most of the SQL statement listed in the tutorial.
-You can follow the [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)) tutorial for more details.
+You can follow the [Use Jupyter Notebook with SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-jupyter.html)) tutorial for more details.

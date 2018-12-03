@@ -23,7 +23,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-  1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://www.sap.com/developer/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
+  1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://developers.sap.com/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
   `root`
 
       ![Open Eclipse](eclipse.png)

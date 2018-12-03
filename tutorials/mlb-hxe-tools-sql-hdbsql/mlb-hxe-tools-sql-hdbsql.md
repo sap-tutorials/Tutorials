@@ -14,12 +14,12 @@ time: 10
 
 SAP HANA HDBSQL is a command line tool for executing commands on SAP HANA databases. The HDBSQL tools support an interactive mode, a non-interactive mode, and a file mode. HDBSQL provide a large number of features like variable substitution, use of input and output files, formatting options, and more.
 
-For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 
 [ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
 
-Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) group.
+Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) group.
 
 [DONE]
 [ACCORDION-END]

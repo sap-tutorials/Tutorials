@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ## Prerequisites  
 
 ## Next Steps
- - [Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
+ - [Navigate around SAP Data Hub, developer edition](https://developers.sap.com/tutorials/datahub-docker-navigation.html)
 
 
 ## Details

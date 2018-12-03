@@ -8,13 +8,13 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ## Prerequisites  
 - **Proficiency:** Beginner
 
-- **Setup:** This tutorial assumes that you have followed the [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) group tutorials to install the HANA, express edition client software.
+- **Setup:** This tutorial assumes that you have followed the [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) group tutorials to install the HANA, express edition client software.
 
 - **Setup:** You must have Microsoft Visual Studio 2010 or later installed on your computer.
 - **Setup:** You must have Microsoft .NET Framework installed on your computer (Generally .NET     Framework will be installed when you install Microsoft Visual Studio).
 
 ## Next Steps
- - This is a standalone How-To on establishing basic connectivity to ADO and ODBC compliant SAP database servers.[View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
+ - This is a standalone How-To on establishing basic connectivity to ADO and ODBC compliant SAP database servers.[View similar How-Tos](http://developers.sap.com/tutorials.html) or [View all How-Tos](http://developers.sap.com/tutorials.html)
 
 
 ## How-To Details
@@ -67,6 +67,3 @@ A Microsoft visual studio project can connect to SAP database using SAP HANA Cli
 - If for any reason you want to remove the tables, views, and procedures set up in the previous step, then click **Remove demo objects**.
 
 
-## Next Steps
- - View additional .NET [sample projects](http://scn.sap.com/docs/DOC-53652).
- - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)

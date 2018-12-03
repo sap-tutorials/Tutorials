@@ -9,7 +9,7 @@ time: 15
 
 ## Prerequisites  
  - **How-Tos:** Enable the SAP Web IDE Full-Stack
- - **Tutorials:** [Add API Business Hub API to a UI5 Application](https://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
+ - **Tutorials:** [Add API Business Hub API to a UI5 Application](https://developers.sap.com/tutorials/hcp-abh-api-ui5-app.html)
 
 ## Details
 ### You will learn  

@@ -7,7 +7,7 @@ tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, 
 time: 20
 ---
 ## Prerequisites  
-- **Tutorials:** [Protect your API Proxy by adding an Application Key Verification](https://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)
+- **Tutorials:** [Protect your API Proxy by adding an Application Key Verification](https://developers.sap.com/tutorials/hcp-apim-verify-api.html)
 
 ## Details
 ### You will learn  
@@ -69,7 +69,7 @@ Provide the following information to create a destination for the API Management
 Name | `APIM_DevPortal_Trial`
 Type | HTTP
 Description | Destination to API Developer Portal
-URL | take the URL of the Developer Portal seen in [Activate SAP Cloud Platform, API Management on SAP Cloud Platform Trial]( https://www.sap.com/developer/tutorials/hcp-apim-enable-service.html), e.g. `https://devportalu34f5b50f-<your-P-User>trial.hanatrial.ondemand.com`
+URL | take the URL of the Developer Portal seen in [Activate SAP Cloud Platform, API Management on SAP Cloud Platform Trial]( https://developers.sap.com/tutorials/hcp-apim-enable-service.html), e.g. `https://devportalu34f5b50f-<your-P-User>trial.hanatrial.ondemand.com`
 Proxy Type | Internet
 Authentication | `AppToAppSSO`
 
@@ -201,7 +201,7 @@ From the **Service Catalog** drop-down, select the **Destination to API Develope
 
 [ACCORDION-BEGIN [Step 13: ](Select service and subscribe)]
 
-Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-api.html) and click on **Subscribe**. From there select the related Product from [Add the API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
+Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](https://developers.sap.com/tutorials/hcp-apim-create-api.html) and click on **Subscribe**. From there select the related Product from [Add the API Proxy](https://developers.sap.com/tutorials/hcp-apim-create-product.html)
 
 ![Select service and click on Subscribe](20-Subscribe.png)
 

@@ -20,7 +20,7 @@ time: 10
 
 Start by [logging into SAP Cloud Platform](https://account.hanatrial.ondemand.com/).
 
->If you don't have an account on SAP Cloud Platform yet, go to the [Get a Free Trial Account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
+>If you don't have an account on SAP Cloud Platform yet, go to the [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
 
 ![Log onto SAP Cloud Platform](1c.png)
 

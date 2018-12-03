@@ -14,8 +14,8 @@ time: 15
 
 ## Next Steps
 
-  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 

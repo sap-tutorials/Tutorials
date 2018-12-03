@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 time: 20
 ---
 ## Prerequisites  
-- [Create child components](https://www.sap.com/developer/tutorials/react-child-components.html)
+- [Create child components](https://developers.sap.com/tutorials/react-child-components.html)
 
 
 ## Details

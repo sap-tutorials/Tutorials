@@ -161,7 +161,7 @@ setupDetailPanel()
 
 As the code above specifies, this view controller will supply the data for the detail panel's table view. To do this, you will need to implement the `UITableViewDataSource` and `UITableViewDelegate` protocols. In Swift, protocol implementations are often done as extensions.
 
-Add the following lines of code **after the final closing brace** of the **TrackingMapViewController** class:
+Add the following lines of code **after the final closing brace** of the `TrackingMapViewController` class:
 
 ```swift
 extension TrackingMapViewController: UITableViewDataSource {

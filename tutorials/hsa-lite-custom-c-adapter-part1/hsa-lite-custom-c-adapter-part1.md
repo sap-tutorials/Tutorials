@@ -8,8 +8,8 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Streaming Analytics: Freezer Monitoring Tutorial](https://www.sap.com/developer/groups/sds-hxe-get-started.html)
- - **Tutorial:** [Freezer Monitoring Lite Tutorial for Streaming Lite](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)
+ - **Tutorial:** [Streaming Analytics: Freezer Monitoring Tutorial](https://developers.sap.com/group.sds-hxe-get-started.html)
+ - **Tutorial:** [Freezer Monitoring Lite Tutorial for Streaming Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)
  - SAP HANA 2.0 system with minimum version SP02
  - Streaming Analytics server running on SAP HANA
  - C/C++ editor of your choice
@@ -18,7 +18,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - Setup `Raspberry Pi` user as `"Pi"`, and root directory as `"/home/pi"`
 
 ## Next Steps
- - [Code Custom C/C++ Adapter for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-c-adapter-part2.html)
+ - [Code Custom C/C++ Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-c-adapter-part2.html)
 
 ## Details
 ### You will learn  

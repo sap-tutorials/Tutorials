@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
@@ -30,7 +30,7 @@ As you may already know, SAP HANA, express edition comes in two different flavor
 
  - **Server + XSA Applications**
 
-You can check the [SAP HANA, express edition installation flowchart](https://www.sap.com/developer/topics/sap-hana-express.html#flowchart) to find all the installation details.
+You can check the [SAP HANA, express edition installation flowchart](https://developers.sap.com/topics/sap-hana-express.html#flowchart) to find all the installation details.
 
 If you don't have an instance up and running, be aware that you don't need to complete the installation of all optional packages (this will be described when needed).
 
@@ -49,7 +49,7 @@ First, make sure to switch to the `hxeadm` user:
 sudo su - hxeadm
 ```
 
-> ### **Note:** You may prefer to run XS CLI commands from your local desktop for example. To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
+> ### **Note:** You may prefer to run XS CLI commands from your local desktop for example. To do so, you can complete the [XS CLI Client installation](https://developers.sap.com/tutorials/hxe-ua-install-xs-xli-client.html)
 
 Execute the following XS CLI command.
 

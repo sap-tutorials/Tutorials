@@ -5,7 +5,7 @@ primary_tag: topic>html5
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Tutorials:** [Bootstrap Forms](https://www.sap.com/developer/tutorials/angular-forms-intro.html)
+ - **Tutorials:** [Bootstrap Forms](https://developers.sap.com/tutorials/angular-forms-intro.html)
 
 ## Details
 ### You will learn  

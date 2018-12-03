@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Install the Paho Client](https://www.sap.com/developer/tutorials/iot-cf-install-paho-client.html) and [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
+ - **Tutorials:** You have completed [Install the Paho Client](https://developers.sap.com/tutorials/iot-cf-install-paho-client.html) and [Install OpenSSL](https://developers.sap.com/tutorials/iot-cf-install-openssl.html).
 
 ## Details
 ### You will learn

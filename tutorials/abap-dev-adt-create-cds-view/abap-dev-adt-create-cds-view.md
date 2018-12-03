@@ -7,10 +7,10 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Create a global ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
+ - [Create a global ABAP Class](https://developers.sap.com/tutorials/abap-dev-create-new-class.html)
 
 ## Next Steps
- - [Display a CDS view using ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
+ - [Display a CDS view using ALV with IDA](https://developers.sap.com/tutorials/abap-dev-adt-use-cds-view.html)
 
 
 ## Details

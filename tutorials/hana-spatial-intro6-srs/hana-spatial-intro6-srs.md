@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Prerequisites  
 - **Proficiency:** Beginner
- - **Tutorials:** [Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+ - **Tutorials:** [Z and M coordinates](https://developers.sap.com/tutorials/hana-spatial-intro5-z-m-coordinates.html)
 
 
 ## Next Steps
-- Introduction to [SAP HANA Spatial methods](https://www.sap.com/developer/groups/hana-aa-spatial-methods.html)
+- Introduction to [SAP HANA Spatial methods](https://developers.sap.com/group.hana-aa-spatial-methods.html)
 
 ## Details
 ### You will learn  

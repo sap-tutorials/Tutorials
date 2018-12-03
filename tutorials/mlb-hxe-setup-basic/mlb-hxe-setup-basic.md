@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
-- [Select and Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+- [Select and Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 ## Details
 ### You will learn
@@ -18,7 +18,7 @@ In this tutorial, you will enable your SAP HANA, express edition instance to use
 
 In order to interact with your SAP HANA, express edition instance, you will be running a series of SQL statement.
 
-As a number of options are available, you can check the following link: [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+As a number of options are available, you can check the following link: [Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 [DONE]
 [ACCORDION-END]

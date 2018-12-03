@@ -10,10 +10,10 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Apple ID:** A paid Apple developer account is required
- - **Tutorials:** [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)
+ - **Tutorials:** [List Report Floorplan](https://developers.sap.com/tutorials/fiori-ios-scpms-floorplan.html)
 
 ## Next Steps
- - [Application logging and tracing](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
+ - [Application logging and tracing](https://developers.sap.com/tutorials/fiori-ios-hcpms-application-logging.html)
 
 ## Details
 ### You will learn  

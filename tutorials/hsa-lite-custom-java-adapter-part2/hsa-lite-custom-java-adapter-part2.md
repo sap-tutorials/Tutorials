@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Introduction to Writing a Custom Java Adapter for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part1.html)
+ - **Tutorial:** [Introduction to Writing a Custom Java Adapter for Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part1.html)
 
 ## Details
 ### You will learn  
@@ -16,7 +16,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 - How to prepare the HANA Studio for Custom Java Adapter development
 
 ## Next Steps
-- [Code the Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part3.html)
+- [Code the Streaming Lite Custom Java Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part3.html)
 
 ### Time to Complete
 **15 Min**

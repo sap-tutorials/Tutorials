@@ -576,7 +576,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step 1: ](Test your XSJS service )]
 
-Open your preferred REST client, like **`cURL`**, and if don't have one yet you can [install and use Postman](https://www.sap.com/developer/tutorials/api-tools-postman-install.html).
+Open your preferred REST client, like **`cURL`**, and if don't have one yet you can [install and use Postman](https://developers.sap.com/tutorials/api-tools-postman-install.html).
 
 #### Using Postman
 

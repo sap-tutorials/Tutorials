@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Prerequisites  
 - **Proficiency:** Beginner
- - **Tutorials:** [Intro to SAP HANA Spatial: Spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+ - **Tutorials:** [Intro to SAP HANA Spatial: Spatial columns](https://developers.sap.com/tutorials/hana-spatial-intro4-columns.html)
 
 
 ## Next Steps
- - [Intro to SAP HANA Geospatial: Spatial Reference Systems](https://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)
+ - [Intro to SAP HANA Geospatial: Spatial Reference Systems](https://developers.sap.com/tutorials/hana-spatial-intro6-srs.html)
 
 ## Details
 ### You will learn  

@@ -8,10 +8,10 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana, products>sap-hana-dyna
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-5.html)
+ - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-5.html)
 
 ## Next Steps
- - **Tutorials:** [Multi-Store Tables](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-7.html)
+ - **Tutorials:** [Multi-Store Tables](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-7.html)
 
 ## Details
 ### You will learn  

@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Edit the Hosts File](http://www.sap.com/developer/tutorials/hxe-ua-hosts.html)
+ - **Tutorials:** You have completed [Edit the Hosts File](http://developers.sap.com/tutorials/hxe-ua-hosts.html)
 
 ## Details
 ### You will learn
@@ -33,7 +33,7 @@ Check that the XSEngine is running. From your host OS (not the VM guest) open a 
 http://<hxehost IP address>:8090
 ```
 
-You recorded the IP address earlier in [Start SAP HANA, express edition Server](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm-xsa.html). A success page displays. This indicates that XSC is running:
+You recorded the IP address earlier in [Start SAP HANA, express edition Server](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm-xsa.html). A success page displays. This indicates that XSC is running:
 
 ![loio511f9acd6591413db454e05b8dc8368c_HiRes](loio511f9acd6591413db454e05b8dc8368c_HiRes.png)
 
@@ -67,7 +67,7 @@ You recorded the IP address earlier in [Start SAP HANA, express edition Server](
 
 2.   When prompted for the `XSA_ADMIN` password, enter the master password
 
-    You specified this password when you were prompted for the HANA database master password earlier in [Start SAP HANA, express edition Server](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm-xsa.html).
+    You specified this password when you were prompted for the HANA database master password earlier in [Start SAP HANA, express edition Server](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm-xsa.html).
 
 [ACCORDION-END]
 
@@ -113,7 +113,7 @@ xs start messaging-service-broker
 
 4.   For *HANA Username*, enter `XSA_DEV`.
 
-    You specified this password when you were prompted for `HANA database master password` in [Start SAP HANA, express edition Server](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm-xsa.html).
+    You specified this password when you were prompted for `HANA database master password` in [Start SAP HANA, express edition Server](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm-xsa.html).
 
     Web IDE displays.![loioc06ad641e44240b99da7bd10cd275377_LowRes](loioc06ad641e44240b99da7bd10cd275377_LowRes.png)
 
@@ -179,6 +179,6 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 3.   Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the eclipse executable file.
 
-4.   Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/tutorials/hxe-howto-eclipse.html).
+4.   Follow the tutorial [How to download and install the HANA Eclipse plugin](http://developers.sap.com/tutorials/hxe-howto-eclipse.html).
 
 [ACCORDION-END]

@@ -7,12 +7,12 @@ tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating a Custom Business Object ](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-create.html)
+ - **Tutorials:** [Creating a Custom Business Object ](https://developers.sap.com/tutorials/abap-extensibility-cbo-create.html)
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
 
 ## Next Steps
-  - [Implementing logic for a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-logic.html)
+  - [Implementing logic for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-logic.html)
 
 
 ## Details

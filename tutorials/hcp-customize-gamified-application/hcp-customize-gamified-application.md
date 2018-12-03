@@ -7,7 +7,7 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Deploy gamified HelpDesk application to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
+- **Tutorials:** [Deploy gamified HelpDesk application to SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-deploy-gamified-application.html)
 
 ## Details
 ### You will learn  

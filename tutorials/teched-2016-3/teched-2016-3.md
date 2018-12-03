@@ -8,7 +8,7 @@ time: 5
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Create an Account on the Gateway Demo System](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
+- **Tutorials:** [Create an Account on the Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
 
 ## Details
 ### You will learn  
@@ -16,9 +16,9 @@ time: 5
 - What some of the Web IDE specific properties are
 - How to specify the Web IDE usage parameter for a Gateway based OData service
 
-If you've also completed the tutorial [Create a destination for the Northwind OData services](https://www.sap.com/developer/tutorials/hcp-create-destination.html) you'll find this one similar, but for another type of OData server endpoint. This time, the endpoint is the SAP Gateway Demo server you may have already signed up for access to in the tutorial [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html).
+If you've also completed the tutorial [Create a destination for the Northwind OData services](https://developers.sap.com/tutorials/hcp-create-destination.html) you'll find this one similar, but for another type of OData server endpoint. This time, the endpoint is the SAP Gateway Demo server you may have already signed up for access to in the tutorial [Create an account on the Gateway Demo system](https://developers.sap.com/tutorials/gateway-demo-signup.html).
 
-The SAP Gateway Demo system contains a set of EPM OData services, including the one you may have already explored by hand in the tutorial [Continue your OData exploration with EPM](https://www.sap.com/developer/tutorials/odata-02-exploration-epm.html).
+The SAP Gateway Demo system contains a set of EPM OData services, including the one you may have already explored by hand in the tutorial [Continue your OData exploration with EPM](https://developers.sap.com/tutorials/odata-02-exploration-epm.html).
 
 > The current incarnation of the SAP Gateway Demo server is known as `ES5`.
 

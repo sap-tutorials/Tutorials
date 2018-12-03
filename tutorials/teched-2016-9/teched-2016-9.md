@@ -7,7 +7,7 @@ time: 20
 ---
 
 ## Prerequisites  
- - [ABC Analysis with SAP HANA PAL](https://www.sap.com/developer/tutorials/teched-2016-10.html)
+ - [ABC Analysis with SAP HANA PAL](https://developers.sap.com/tutorials/teched-2016-10.html)
 
 ## Details
 ### You will learn  

@@ -9,11 +9,11 @@ tags: [  tutorial>intermediate, topic>cloud, topic>mobile, products>sap-cloud-pl
 ## Prerequisites  
 - **Proficiency:** Intermediate
 - **Tutorials:**
-- [Sign up for an account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-- [Enable SAP Cloud Platform mobile services for development and operations](https://www.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
+- [Sign up for an account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+- [Enable SAP Cloud Platform mobile services for development and operations](https://developers.sap.com/tutorials/hcpms-enable-mobile-services.html)
 
 ## Next Steps
-- [Create a basic native Android master-detail app](https://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
+- [Create a basic native Android master-detail app](https://developers.sap.com/tutorials/hcpdo-basic-android-app.html)
 
 ## Details
 ### You will learn  

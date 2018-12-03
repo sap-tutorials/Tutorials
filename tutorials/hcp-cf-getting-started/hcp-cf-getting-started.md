@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Do this tutorial first](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Do this tutorial first](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 
 ## Details
@@ -22,7 +22,7 @@ time: 15
 
 Start by [logging in to the SAP Cloud Platform](https://account.hanatrial.ondemand.com/).
 
-> **Note**: If you don't have an account on SAP Cloud Platform yet, go to the [Sign up for a free trial account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
+> **Note**: If you don't have an account on SAP Cloud Platform yet, go to the [Sign up for a free trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
 
 ![Log on to the SAP Cloud Platform](1b.png)
 

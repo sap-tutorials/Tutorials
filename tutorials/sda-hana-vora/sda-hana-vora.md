@@ -28,7 +28,7 @@ The SAP HANA, express edition version used here is 2.0 SPS0.
 
 The following tutorial will guide you with the download & installation instructions:
 
-  - [Installing SAP HANA 2.0, express edition(Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
+  - [Installing SAP HANA 2.0, express edition(Virtual Machine Method)](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html)
 
 But before going to the next tutorial "Start Using SAP HANA 2.0, express edition (Virtual Machine Method)", we will need to adjust the network settings.
 
@@ -40,7 +40,7 @@ If you are using `VMWare`, go to "Virtual Machine Setting" > "Hardware" > "Netwo
 
 If you are using `VirtualBox`, go to "Settings" > "Network" and select "NAT", and save your changes.
 
-Now, you can move to [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html).
+Now, you can move to [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html).
 
 Make a note of the SAP HANA virtual machine IP address and the hostname running the following commands:
 
@@ -87,7 +87,7 @@ Again, we will need to adjust a few steps to setup the environment for our scena
 
 The following tutorial will guide you with the download & installation instructions:
 
-  - [How to setup the SAP Vora developer edition virtual machine](https://www.sap.com/developer/tutorials/vora-ova-install.html)
+  - [How to setup the SAP Vora developer edition virtual machine](https://developers.sap.com/tutorials/vora-ova-install.html)
 
 In step 4, instead of selecting the "Host-only" option, you should choose "NAT".
 
@@ -342,7 +342,7 @@ You should now be able to ping the SAP HANA machine using this new  host name fr
 
 [ACCORDION-BEGIN [Step 8: ](Verify your SAP HANA installation)]
 
-In the [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) tutorial, you will find instructions regarding how to install and configure the HANA Eclipse plugin, so you will be able to connect to you HANA system.
+In the [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) tutorial, you will find instructions regarding how to install and configure the HANA Eclipse plugin, so you will be able to connect to you HANA system.
 
 
 [ACCORDION-END]

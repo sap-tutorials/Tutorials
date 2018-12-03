@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **How-To** [Start this tutorial series](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 4: [Add a list to the view](https://www.sap.com/developer/tutorials/sapui5-webide-add-list.html)
+- **How-To** [Start this tutorial series](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 4: [Add a list to the view](https://developers.sap.com/tutorials/sapui5-webide-add-list.html)
 
 ## Next Steps
- - The next tutorial in this series is Part 6: [Display List Details](https://www.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
+ - The next tutorial in this series is Part 6: [Display List Details](https://developers.sap.com/tutorials/sapui5-webide-display-list-details.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,7 @@ In order to enable navigating from one view to another, our app needs to be enab
 **15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
 
 
 You have to add a routing configuration to the descriptor file and initialize the router instance within the component definition (`webapp/Component.js`).
@@ -141,6 +141,3 @@ You have to add a routing configuration to the descriptor file and initialize th
 16. After this tutorial, you should be able to run your application again, but you will not see any changes.  All of the routing work occurs "behind the scenes" and is not visible to the user.   
 
 
-
-## Next Steps
-- The next tutorial in this series is Part 6: [Display List Details](https://www.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)

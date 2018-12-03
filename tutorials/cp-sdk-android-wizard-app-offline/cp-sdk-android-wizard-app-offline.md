@@ -42,7 +42,8 @@ ndk {
 
 On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and enter **`SAPServiceManager`** to open `SAPServiceManager.java`.
 
-Add the following imports.  Note they will appear grey until they are used in the following steps.
+Add the following imports.  
+>They will appear grey until they are used in the following steps.
 
 ```Java
 import android.content.Context;
@@ -147,7 +148,7 @@ On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and enter **`Log
 
 On Windows press **`Ctrl+F`** or on a Mac press **`command+F`**  and enter **`openODataStore`**.
 
-In the `startEntitySetListActivity` method, add the application context to the `openODataStore` call as a parameter as shown below.   Note, this can be done by replacing the second last line of the method with the below code.
+In the `startEntitySetListActivity` method, add the application context to the `openODataStore` call as a parameter as shown below.   This can be done by replacing the second last line of the method with the below code.
 
 ![getApplicationContext() parameter added](application-context-parameter.png)
 
@@ -162,12 +163,12 @@ In the `startEntitySetListActivity` method, add the application context to the `
 [ACCORDION-BEGIN [Step 3: ](Run the offline enabled application)]
 Run the application.  Upon reaching the home screen, it may take a few moments for the offline store to open.
 
-> **Note:** The first time the app is opened it will take longer to open the offline store as it needs to be created and populated.  Make sure Wi-Fi is enabled. Consult the `Logcat` log (filter by the term `SAPServiceManager` as shown to refine the `Logcat` output) and wait for the following messages to appear:
+>The first time the app is opened it will take longer to open the offline store as it needs to be created and populated.  Make sure Wi-Fi is enabled. Consult the `Logcat` log (filter by the term `SAPServiceManager` as shown to refine the `Logcat` output) and wait for the following messages to appear:
 
 ![Log Message from Opening offline store](offline-store-opened.png)
 
 
-> **Note:**   The entities screen is generated from the file `res/raw/com_sap_edm_sampleservice_v2.xml` and does not make a network request which is why it can be displayed before the offline store is opened.
+>The entities screen is generated from the file `res/raw/com_sap_edm_sampleservice_v2.xml` and does not make a network request which is why it can be displayed before the offline store is opened.
 
 ![Home screen of the app](entities-screen1.png)
 
@@ -182,7 +183,7 @@ Navigate to the list of customers by tapping the "Customers" row.  Notice that t
 ![tap on customer](entities-screen2.png)
 
 
-> **Note:**  The customer's screen shown below will look different if the tutorial `cp-sdk-android-wizard-app-customize` was not completed.
+>The customer's screen shown below will look different if the tutorial `cp-sdk-android-wizard-app-customize` was not completed.
 
 ![Customers screen](customers.png)
 
@@ -208,7 +209,7 @@ Re-open the app and check the `Logcat`. It shows the upload and download operati
 
 ![Successful upload/download](upload-successful.png)
 
-> **Note:** This example does not handle conflicts. Details on this topic are available at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html">Offline OData Conflicts</a>.
+>This example does not handle conflicts. Details on this topic are available at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html">Offline OData Conflicts</a>.
 
 [VALIDATE_3]
 [VALIDATE_4]
@@ -406,7 +407,7 @@ Alternatively, when the Offline Store opens successfully, the user will be autom
 
 ![Home screen of the app](entities-screen.png)
 
-> **Note**: Further information on Offline OData can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Introduction.html">Offline API</a>.
+>Further information on Offline OData can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Introduction.html">Offline API</a>.
 
 Congratulations! You have created an offline enabled application.
 

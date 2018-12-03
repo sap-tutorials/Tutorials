@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Activate SAP Web IDE plugins on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-plugins-activate.html)
+ - [Activate SAP Web IDE plugins on SAP Cloud Platform](https://developers.sap.com/tutorials/jam-cloud-webide-plugins-activate.html)
 
 ## Details
 ### You will learn  
