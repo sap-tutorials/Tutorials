@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Computation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-compute.html)
+ - **Tutorial:** [Computation methods](https://developers.sap.com/tutorials/hana-spatial-methods-compute.html)
 
 ## Next Steps
  - Spatial predicates (coming soon)
@@ -262,5 +262,3 @@ select
 
 ---
 
-## Next Steps
- - Spatial predicates (coming soon)

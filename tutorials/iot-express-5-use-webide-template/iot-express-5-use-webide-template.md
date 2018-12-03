@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>sapui5, products>sap-we
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [SAP IoT Application Enablement: Onboarding - Setting up Your Account](https://help.sap.com/viewer/9dfedbe95cbe4a9f9a5ceddbef7f88e5/latest/en-US/c5b72d23880240dcb4b0d7b9523b065a.html).
- - **Tutorials:** [Create Thing Model](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html)
+ - **Tutorials:** [Create Thing Model](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html)
 
 ## Details
 ### You will learn
@@ -110,7 +110,7 @@ The example below shows 2 patterns -- the light sensor in this case seems to jum
 
 You will discover that if you collect sensor data from the real world, there will always be surprises, both in that you cannot see what you thought you would find in the data, and also that you see patterns in the data that you did not expect to see.
 
-For more support on in-depth topics on building an IoT Application, refer to [http://developer.sap.com/](http://developer.sap.com/) under **IoT**.
+For more support on in-depth topics on building an IoT Application, refer to [http://developers.sap.com/](http://developers.sap.com/) under **IoT**.
 
 [VALIDATE_1]
 

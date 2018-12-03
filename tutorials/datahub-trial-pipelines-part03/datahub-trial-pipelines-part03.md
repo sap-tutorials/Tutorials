@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 - How to store sensor data in **Google Cloud Storage**
 - How to use the operators **GCS Consumer** and **GCS Producer**
 
-Please note that this tutorial is similar to the `Store sensor data in HDFS` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Store sensor data in HDFS` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 ### Time to Complete
 **30 Mins**

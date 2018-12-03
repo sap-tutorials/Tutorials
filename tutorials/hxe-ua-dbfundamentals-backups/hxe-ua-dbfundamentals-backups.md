@@ -4,23 +4,21 @@ description: Learn how to complete common tasks when setting up a new database. 
 auto_validation: true
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition  ]
+time: 15
 ---
 
 
 ## Prerequisites  
- - [Create a Tenant Database](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
+ - [Create a Tenant Database](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
 
 
 ## Next Steps
- - [Install and Configure ODBC](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-odbc.html)
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Install and Configure ODBC](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-odbc.html)
 
 ## Details
 ### You will learn  
-How to create a backup for you database using either HANA Cockpit, HANA Studio, or a SQL command line.
+  - How to create a backup for you database using either HANA Cockpit, HANA Studio, or a SQL command line
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -59,7 +57,7 @@ How to create a backup for you database using either HANA Cockpit, HANA Studio, 
 [ACCORDION-BEGIN [Option 2: ](SAP HANA Studio)]
 
 > Note:
-> This option requires you to have completed the [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) How-To.
+> This option requires you to have completed the [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) How-To.
 
 1. On SAP HANA Studio, log on to your SAP HANA, express edition installation.
 
@@ -171,6 +169,3 @@ How to create a backup for you database using either HANA Cockpit, HANA Studio, 
 [VALIDATE_3]
 [ACCORDION-END]
 
-
-## Next Steps
- - [Create a Tenant Database](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-odbc.html)

@@ -7,11 +7,11 @@ tags: [  tutorial>beginner ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - [**Register and Download SAP HANA, express edition,**](https://www.sap.com/developer/topics/sap-hana-express.html)
+ - [**Register and Download SAP HANA, express edition,**](https://developers.sap.com/topics/sap-hana-express.html)
 
 
 ## Next Steps
-- [Install dependencies for SAP HANA, express edition, in open SUSE](https://www.sap.com/developer/tutorials/hxe-azure-opensuse-dependencies.html)
+- [Install dependencies for SAP HANA, express edition, in open SUSE](https://developers.sap.com/tutorials/hxe-azure-opensuse-dependencies.html)
 
 
 ## Details
@@ -133,6 +133,3 @@ In the example below, instance number `00` has been chosen:
 [ACCORDION-END]
 
 
-
-## Next Steps
-- [Install dependencies for SAP HANA, express edition, in Open SUSE](https://www.sap.com/developer/tutorials/hxe-azure-opensuse-dependencies.html)

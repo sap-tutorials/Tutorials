@@ -7,12 +7,12 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials** [Creating Database Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part2.html)
+ - **Tutorials** [Creating Database Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part2.html)
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
 
 ## Next Steps
-  - **Tutorials** [Reviewing Available Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part4.html)
+  - **Tutorials** [Reviewing Available Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part4.html)
 
 ## Details
 ### You will learn

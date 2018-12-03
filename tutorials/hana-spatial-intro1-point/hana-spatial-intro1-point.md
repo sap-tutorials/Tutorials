@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html), or [SAP HANA MDC instance in SAP Cloud Platform Trial account](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html).
+- **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html), or [SAP HANA MDC instance in SAP Cloud Platform Trial account](https://developers.sap.com/tutorials/hana-web-development-workbench.html).
 
 ## Next Steps
-- [Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+- [Strings](https://developers.sap.com/tutorials/hana-spatial-intro2-string.html)
 
 ## Details
 ### You will learn  
@@ -104,5 +104,3 @@ There are more spatial methods that can be applied to `ST_POINT` objects. For no
 ### Optional
 - Check the [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US)
 
-## Next Steps
-- [Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)

@@ -11,7 +11,23 @@ time: 10
 ### You will learn  
   - Create a User in IAM
   - Create and configure a S3 bucket
-  - Launch your SAP HANA, express edition instance on AWS
+
+
+**If you are attending SAP TechEd, come by the AWS booth to get an AWS credit voucher to cover the cost.**
+---
+<div align="center">
+<b><span style="color:red;align:middle">Warning: Please read carefully before starting!</span></b>
+</div>
+
+**Before, you get started, please be aware that completing this tutorial track will incur a charge estimated between 10 and 20 USD on your AWS account.**
+
+**And if you are not planning to complete the all track, be aware that when using the SAP HANA, express edition AMI from AWS, charges for both the EC2 instance and the provisioned EBS volumes used by this instance will incur.**
+
+**And because of the EBS volumes types in use, even if you _stop_ your EC2 instance running your SAP HANA, express edition instance, you will still be charged for the provisioned EBS volumes. Only detaching and deleting the EBS volumes will prevent that. But, your SAP HANA, express edition will no longer be usable.**
+
+Make sure to check the <a href="https://developers.sap.com/tutorials/hxe-aws-athena-07.html" target="&#95;blank">Cleanup before you leave</a> tutorial if you plan to stop before finishing the track.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Sign in or Create an Account on AWS)]
 
@@ -109,7 +125,7 @@ You can use the user ARN numerical identifier from the previous step as ***&lt;m
 For the sake of simplicity, choose **US East (N. Virginia)** as the region.
 
 > #### **Note:**
-> Please note that in order to use your S3 bucket with Amazon Athena, they will need to be located in the same region. Here is the list of regions where Amazon Athena is available: 
+> Please note that in order to use your S3 bucket with Amazon Athena, they will need to be located in the same region. Here is the list of regions where Amazon Athena is available:
 >
 >  - Northern Virginia
 >  - Ohio
@@ -175,31 +191,4 @@ Click on **Save**.
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Launch an SAP HANA, express edition instance)]
-
-In order to complete this tutorial series, you need to use as a minimum version:
-
- - **SAP HANA, express edition 2.0 SPS03**
-
-SAP HANA, express edition which is available on the <a href="https://aws.amazon.com/marketplace" target="&#95;blank">AWS Marketplace</a> comes in two different flavors, a **database core server** and a **server + applications** flavor.
-
-During this series, you will mostly be running series of SQL statements.
-
-So technically, you can use the **SAP HANA, express edition**. but you will need to install a SQL Query tool on top.
-
-Therefore, in order to benefit from the SAP Web IDE, you could use the **SAP HANA, express edition (server + applications)**.
-
-Before starting to follow the next tutorial (named **Set up SAP HANA, express edition, on Amazon Web Services**), make sure that:
-
- - you use the **SAP HANA, express edition (server + applications)** AMI
- - you say *no* when prompted about waiting for XSA configuration completion
-
-Once completed, you should have access to your instance using:
-
-  - a SSH client like ***`PuTTY`***
-  - the SAP Web IDE from the following URL `https://hxehost:53075`
-
-[DONE]
 [ACCORDION-END]

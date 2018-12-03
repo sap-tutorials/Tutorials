@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 time: 15
 ---
 ## Prerequisites  
-- **Tutorials:** [Create a calculation view of data type Dimension](https://www.sap.com/developer/tutorials/xsa-graphical-view.html)
+- **Tutorials:** [Create a calculation view of data type Dimension](https://developers.sap.com/tutorials/xsa-graphical-view.html)
 
 
 ## Details

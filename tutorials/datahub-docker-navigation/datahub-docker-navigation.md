@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Prerequisites  
- - You have completed [Set up SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-setup.html)
+ - You have completed [Set up SAP Data Hub, developer edition](https://developers.sap.com/tutorials/datahub-docker-setup.html)
 
 ## Next Steps
- - [Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+ - [Run example pipelines in SAP Data Hub, developer edition](https://developers.sap.com/tutorials/datahub-docker-examples.html)
 
 ## Details
 **This tutorial is obsolete and will be removed shortly (end of-November 2018).**

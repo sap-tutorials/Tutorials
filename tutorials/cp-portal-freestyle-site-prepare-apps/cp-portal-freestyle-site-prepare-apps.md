@@ -1,15 +1,15 @@
 ---
-title: Prepare an SAP Fiori App to Add to Your Launchpad Page
+title: Deploy an SAP Fiori App to SAP Cloud Platform
 description: Deploy a SAPUI5 app to your SAP Cloud Platform subaccount to use in a Portal freestyle site.
 primary_tag: products>sap-cloud-platform-portal
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal ]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 time: 10
 ---
 
 ## Prerequisites  
- - You have signed up to the SAP Gateway system. For more information, see [Create an account on the Gateway Demo system] (https://www.sap.com/developer/tutorials/gateway-demo-signup.html#_blank)
+ - You have signed up to the SAP Gateway system. For more information, see [Create an account on the Gateway Demo system] (https://developers.sap.com/tutorials/gateway-demo-signup.html#_blank)
 
 
 ## Details   
@@ -102,7 +102,7 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
     <ol type="a"></li><li>Select all of the included files (Ctrl^A).
     </li><li>Right-click and select **Add to `productlist.zip`**.</li></ol><br>
 
-        ![CREATE ZIP](11-11-zip-all-files.png)
+      ![CREATE ZIP](11-11-zip-all-files.png)
 
 3. A new ZIP file named `productlist.zip` is created inside the folder.
 

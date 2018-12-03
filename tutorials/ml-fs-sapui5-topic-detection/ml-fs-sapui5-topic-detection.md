@@ -1,29 +1,27 @@
 ---
-title: Topic Detection example with SAPUI5
+title: Topic Detection with SAPUI5
 description: Discover how to implement SAP Leonardo Machine Learning Foundation service in a SAPUI5 application
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - [Sign up for an free trial account on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+  - [Sign up for an free trial account on the SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://developers.sap.com/group.ml-fs-api-hub.html), [Java](https://developers.sap.com/group.ml-fs-java.html) or [SAPUI5](https://developers.sap.com/group.ml-fs-sapui5.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn how to quickly integrate the **Topic Detection** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application.
+  - How to quickly integrate the **Topic Detection** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application
 
 The **Topic Detection** service allows you to extracts topics from documents and scores them according to the most relevant topics.
 
 You will then be able to substitute the **Topic Detection** services with any other SAP Leonardo Machine Learning Functional Services that consumes text content.
 
-### Time to Complete
-**15 Min**
+---
 
 [ACCORDION-BEGIN [Step 1: ](Get The API Sandbox URL And API Key)]
 
@@ -472,7 +470,7 @@ sap.ui.define([
 
       if (oControlEvent.getParameters().status === 200) {
         // get the resvice respnse as JSON
-        var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).topicDetection;
+        var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).predictions;
 
         // create a JSON model
         var documents = new Array(oTopicDetection.length);
@@ -481,7 +479,6 @@ sap.ui.define([
             "name": oTopicDetection[iTopicDetection].docName
           };
           oTopicDetectionDocument.topics = [];
-
           for (var iTopics = 0; iTopics < oTopicDetection[iTopicDetection].topics.length; iTopics++) {
             var oTopicDetectionTopic = {
               "rank": iTopics,
@@ -489,16 +486,17 @@ sap.ui.define([
               "score": oTopicDetection[iTopicDetection].scores[iTopics],
               "keywords": oTopicDetection[iTopicDetection].keywords[iTopics]
             };
+
             oTopicDetectionDocument.topics.push(oTopicDetectionTopic);
           }
-          documents.push(oTopicDetectionDocument);
+          documents[iTopicDetection] = oTopicDetectionDocument;
         }
         oView.getModel("demo").setProperty("/result", documents);
         // display the result table
         oView.getModel("demo").setProperty("/resultVisible", true);
       } else {
         oView.getModel("demo").setProperty("/resultVisible", false);
-        MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
+                MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
       }
       this.oBusyIndicator.close();
     }
@@ -543,6 +541,5 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+### Additional Information
+ - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://developers.sap.com/group.ml-fs-api-hub.html), [Java](https://developers.sap.com/group.ml-fs-java.html) or [SAPUI5](https://developers.sap.com/group.ml-fs-sapui5.html)

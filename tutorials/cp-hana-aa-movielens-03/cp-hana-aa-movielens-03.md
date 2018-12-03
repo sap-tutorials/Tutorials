@@ -1,6 +1,6 @@
 ---
 title: SAP HANA APL & the MovieLens dataset
-description: Understand the capabilities and options made available with SAP HANA APL and apply them to the data set to build your recommendation engine 
+description: Understand the capabilities and options made available with SAP HANA APL and apply them to the data set to build your recommendation engine
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Next Steps
-- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://developers.sap.com/group.cp-hana-aa-movielens.html)
 
 ## Details
 ### You will learn

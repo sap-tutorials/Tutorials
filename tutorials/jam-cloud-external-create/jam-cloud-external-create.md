@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, t
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Register for SAP Cloud Platform and SAP Jam Collaboration developer access](https://www.sap.com/developer/tutorials/jam-cloud-setup.html)
+ - **Tutorials:** [Register for SAP Cloud Platform and SAP Jam Collaboration developer access](https://developers.sap.com/tutorials/jam-cloud-setup.html)
 
 ## Next Steps
 

@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](https://www.sap.com/developer/tutorials/sds-event-stream-pattern-detection.html)
+- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](https://developers.sap.com/tutorials/sds-event-stream-pattern-detection.html)
 
 ## Next Steps
-- **Tutorial:** [Publish events to SDS via the REST interface](https://www.sap.com/developer/tutorials/sds-rest-publish.html)
+- **Tutorial:** [Publish events to SDS via the REST interface](https://developers.sap.com/tutorials/sds-rest-publish.html)
 
 ## Details
 ### You will learn  

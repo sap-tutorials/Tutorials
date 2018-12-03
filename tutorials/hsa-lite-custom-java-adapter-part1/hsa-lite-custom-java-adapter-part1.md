@@ -8,8 +8,8 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Streaming Analytics: Freezer Monitoring Tutorial](https://www.sap.com/developer/groups/sds-hxe-get-started.html)
- - **Tutorial:** [Freezer Monitoring Lite Tutorial for Streaming Lite](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)
+ - **Tutorial:** [Streaming Analytics: Freezer Monitoring Tutorial](https://developers.sap.com/group.sds-hxe-get-started.html)
+ - **Tutorial:** [Freezer Monitoring Lite Tutorial for Streaming Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)
  - SAP HANA 2.0 system with minimum version SP02
  - Streaming Analytics server running on SAP HANA
  - HANA Studio development environment, `PuTTY`, and `WinSCP`
@@ -22,7 +22,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 - The steps in order to create and deploy a Custom Java Adapter
 
 ## Next Steps
-- [Set Up the Eclipse Project for Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part2.html)
+- [Set Up the Eclipse Project for Streaming Lite Custom Java Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part2.html)
 
 ### Time to Complete
 **15 Min**
@@ -43,7 +43,7 @@ The remote device we will be using is a Raspberry Pi, running on `Raspbian` 7.8.
 
 First, we will obtain the necessary Java SDK files from our Smart Data Streaming installation on our SAP HANA system. We will then develop a Java class called `"JavaAdapter"`, inside `Eclipse/HANA Studio` on our personal computer. Finally, we will export the source file into a `.jar`, and deploy the project onto the Raspberry Pi to be run.
 
-The project we are creating this Java Adapter for is called `freezer_monitoring_lite`, and has been created in previous tutorial [Streaming Lite: Freezer Monitoring Lite]((https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)). The specific stream we are connecting to is called `isFreezerTemperatureReading`. Here is the `CCL` for the stream:
+The project we are creating this Java Adapter for is called `freezer_monitoring_lite`, and has been created in previous tutorial [Streaming Lite: Freezer Monitoring Lite]((https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)). The specific stream we are connecting to is called `isFreezerTemperatureReading`. Here is the `CCL` for the stream:
 
 ```SQL
 
@@ -64,5 +64,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 ---
 
-## Next Steps
-- [Set Up the Eclipse Project for Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part2.html)

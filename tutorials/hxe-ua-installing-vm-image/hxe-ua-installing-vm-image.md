@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:**  Open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://www.sap.com/developer/groups/hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://www.sap.com/developer/groups/hxe-install-vm.html) tutorial group. 
+ - **Tutorials:**  Open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://developers.sap.com/group.hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://developers.sap.com/group.hxe-install-vm.html) tutorial group. 
 
 ## Details
 ### You will learn
@@ -32,7 +32,7 @@ You'll decide whether the virtual machine installation method is best for you, y
 The SAP HANA 2.0, express edition VM image is platform-independent. You can install it to a Windows, OS X, or Linux machine, provided your laptop meets the storage and memory prerequisites. Choose the VM installation method if you want the simplest `on-premise` installation experience.
 
 > Note:
-> If you need a custom on-premise setup, use the Binary Installer Method, which is for Linux machines – running specific installations – that meet certain storage and memory prerequisites. See [Install SAP HANA, express edition on a native Linux machine](https://www.sap.com/developer/groups/hxe-install-binary.html) or [Install SAP HANA, express edition on a native Linux machine (with SAP HANA XS Advanced)](https://www.sap.com/developer/groups/hxe-install-binary-xsa.html).
+> If you need a custom on-premise setup, use the Binary Installer Method, which is for Linux machines – running specific installations – that meet certain storage and memory prerequisites. See [Install SAP HANA, express edition on a native Linux machine](https://developers.sap.com/group.hxe-install-binary.html) or [Install SAP HANA, express edition on a native Linux machine (with SAP HANA XS Advanced)](https://developers.sap.com/group.hxe-install-binary-xsa.html).
 > 
 > 
 
@@ -64,7 +64,7 @@ If you're familiar with the older 1.0 SPS 12 version, note this important change
 -   The instance number has changed from 00 to 90.
 
 
-See the [release notes](https://www.sap.com/developer/topics/sap-hana-express.release-notes.html) for information on what's new and changed in this release of SAP HANA 2.0, express edition.
+See the [release notes](https://developers.sap.com/topics/sap-hana-express.release-notes.html) for information on what's new and changed in this release of SAP HANA 2.0, express edition.
 
 [ACCORDION-END]
 
@@ -128,7 +128,7 @@ Example installation procedure for `VMware Workstation Player 12.x`:
 
 [ACCORDION-BEGIN [Step 6: ](Go to the next tutorial)]
 
-1.   If you don't have the parent tutorial group open already, open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://www.sap.com/developer/groups/hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://www.sap.com/developer/groups/hxe-install-vm.html) tutorial group. 
+1.   If you don't have the parent tutorial group open already, open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://developers.sap.com/group.hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://developers.sap.com/group.hxe-install-vm.html) tutorial group. 
 
 2.   Click the next tutorial in the sequence 
 

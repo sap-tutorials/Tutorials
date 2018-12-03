@@ -13,6 +13,12 @@ time: 15
 
 ---
 
+> **Make the most of your time at TechEd!**
+Running this Tutorial series requires a number of locally installed tools to support mobile development. You can download and install those separately after the show has ended. These prerequisite tools are all described at [Installing the SAP Cloud Platform SDK for Android](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/installing.html).
+Be aware: If you do install those tools while at the show and run into any unforeseen issue, unfortunately, we don't have the resources to help you diagnose your personal machine on the show floor (although, we're always happy to take such questions on the [SAP Community Q&A](https://www.sap.com/community/tag.html?id=73555000100800001281&tag=type:question)).  
+To save time, find us at the TechEd Developer Garage and use one of our preconfigured development machines to step right into the Android SDK experience.  See you here!
+
+
 [ACCORDION-BEGIN [Step 1: ](Set up development tools)]
 
 If Android Studio is running, close it.
@@ -71,7 +77,7 @@ On the **Cloud Configuration** tab, select **Use Existing** and set the Applicat
 
 ![Cloud configuration](cloud-configuration.png)
 
-The application configuration has already been created and has added multiple features of the SAP Cloud Platform Mobile Services.
+The application configuration page for the `com.sap.wizapp` is shown below that is referenced from the above screen of the wizard.  It has already been created and has added multiple features of the SAP Cloud Platform Mobile Services.
 
 ![App features](appFeatures.png)
 
@@ -93,6 +99,8 @@ On the **Project Configuration** tab, provide the following configuration data:
 | Enable Logging | check |
 | Enable Upload | check |
 | Enable Push | check and browse to `C:\AndroidStudioProjects\google-services.json` |
+
+If for some reason this file is missing, it can be downloaded from <a target="_blank" href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-sdk-android-wizard-teched18-01/google-services.json">google-services.json</a>.
 
 
 ![Project configuration](project-configuration.png)

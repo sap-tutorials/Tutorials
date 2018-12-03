@@ -1,23 +1,19 @@
 ---
 title: Activate a Plugin
-description: In this tutorial, you will activate a plugin in your SAP Web IDE environment. Once you or an administrator have created a destination to a plugin, the plugin becomes visible in your SAP Web IDE and you can activate it.
+description: Activate a plugin in your SAP Web IDE environment. Once you or an administrator have created a destination to a plugin, the plugin becomes visible in your SAP Web IDE and you can activate it.
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
+time: 3
 ---
 
 ## Prerequisites  
- - [Creating a Destination for Consuming a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld4.html)
+ - [Creating a Destination for Consuming a Plugin](https://developers.sap.com/tutorials/webide-sdk-helloworld4.html)
 
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
   - How to activate a plugin
 
-### Time to Complete
-**3 Min**
 
 ---
 
@@ -60,7 +56,3 @@ Refresh the SAP Web IDE. Now you should see the new **Greetings** menu in the **
 
 
 [ACCORDION-END]
-
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

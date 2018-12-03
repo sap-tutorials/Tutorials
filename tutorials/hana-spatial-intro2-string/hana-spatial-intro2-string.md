@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Points](https://www.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
+- **Tutorials:** [Points](https://developers.sap.com/tutorials/hana-spatial-intro1-point.html)
 
 ## Next Steps
-- [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- [Polygons](https://developers.sap.com/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Details
 ### You will learn  
@@ -169,5 +169,3 @@ SELECT ST_GeomFromText( 'CircularString (0 0, 3 4, 0 0)' ).ST_GeometryType() as 
 ### Optional
 - Review [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/)
 
-## Next Steps
-- [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)

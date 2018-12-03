@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [SQL vs Cursors vs Arrays vs Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
+- **Tutorials:** [SQL vs Cursors vs Arrays vs Index-based Cell Access](https://developers.sap.com/tutorials/xsa-sqlscript-sql-cursor.html)
 
 ## Next Steps
-- [Using Arrays](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
+- [Using Arrays](https://developers.sap.com/tutorials/xsa-sqlscript-usingarrays.html)
 
 ## Details
 ### You will learn  
@@ -148,7 +148,3 @@ You will notice that using cursors takes quite a bit of time.
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Using Arrays](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)

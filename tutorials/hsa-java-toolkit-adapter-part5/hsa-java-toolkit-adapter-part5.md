@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ---
 
 ## Prerequisites
- - **Tutorial:** [Editing Adapter Configuration Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part4.html)
+ - **Tutorial:** [Editing Adapter Configuration Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part4.html)
 
 ## Next Steps
- - [Test the Custom Java Toolkit Adapter](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part6.html)
+ - [Test the Custom Java Toolkit Adapter](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part6.html)
 
 ## Details
 ### You will learn
@@ -96,5 +96,3 @@ Click the **Done** button below once you have completed this tutorial.
 
 [ACCORDION-END]
 
-## Next Steps
- - [Test the Custom Java Toolkit Adapter](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part6.html)

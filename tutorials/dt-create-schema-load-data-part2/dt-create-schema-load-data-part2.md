@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Create Extended Storage](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part1.html)
+ - **Tutorials:** [Create Extended Storage](https://developers.sap.com/tutorials/dt-create-schema-load-data-part1.html)
 
 ## Next Steps
- - **Tutorials:** [Create Tables and Import Data](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part3.html)
+ - **Tutorials:** [Create Tables and Import Data](https://developers.sap.com/tutorials/dt-create-schema-load-data-part3.html)
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create the TPCH User)]
-This tutorial is a continuation from the [Create Extended Storage](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part1.html) tutorial. You should be logged in as the SYSTEM user by default which has all the necessary roles and privileges assigned to it when you install Dynamic Tiering. Creating tables under the SYSTEM user is an option, but you will create a new user to organize the tables and permissions.
+This tutorial is a continuation from the [Create Extended Storage](https://developers.sap.com/tutorials/dt-create-schema-load-data-part1.html) tutorial. You should be logged in as the SYSTEM user by default which has all the necessary roles and privileges assigned to it when you install Dynamic Tiering. Creating tables under the SYSTEM user is an option, but you will create a new user to organize the tables and permissions.
 
 Go to **SAP HANA Administration Console**, then the **Systems** view on the left side. Click on the drop-down arrow of your system to expand the tree list. Then expand to **Security** > **Users**. Right click on the **Users** and select **New Users** to add a new user.
 

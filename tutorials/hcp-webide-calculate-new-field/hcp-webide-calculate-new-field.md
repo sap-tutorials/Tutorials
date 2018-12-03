@@ -7,10 +7,10 @@ time: 15
 ---
 
 ## Prerequisites
-- **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)
+- **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-add-tab.html)
 
 ## Next Steps
-- [Commit your project files to your SAP Cloud Platform Git repository](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+- [Commit your project files to your SAP Cloud Platform Git repository](https://developers.sap.com/tutorials/hcp-webide-commit-git.html)
 
 ## Details
 
@@ -204,7 +204,3 @@ For clean-up, you can remove the `debugger;` statement in `Detail.controller.js`
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Commit your project files to your SAP Cloud Platform Git repository](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)

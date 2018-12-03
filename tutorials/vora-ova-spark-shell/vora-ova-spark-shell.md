@@ -3,22 +3,16 @@ title: Using Spark Shell
 description: Examples in Scala that you can run and examine in Spark Shell (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-ova-hana-datasource.html)
-
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Working with SAP HANA data source](https://developers.sap.com/tutorials/vora-ova-hana-datasource.html)
 
 ## Details
 ### You will learn  
-You will learn how to open the Spark shell and try out some Scala code that uses SAP Vora engines
+  - How to open the Spark shell and try out some Scala code that uses SAP Vora engines
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -299,7 +293,3 @@ The **SAP Vora Tutorial** notebook will give you a quick introduction into Vora 
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

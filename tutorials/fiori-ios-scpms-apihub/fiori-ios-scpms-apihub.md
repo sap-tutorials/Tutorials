@@ -8,7 +8,7 @@ tags: [  tutorial>how-to, tutorial>intermediate, operating-system>ios, topic>clo
 ## Prerequisites  
 - **Proficiency:** Intermediate
 - **Device:** A physical iOS device (required to use the Camera)
-- **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+- **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
 
 
 ## How-To Details

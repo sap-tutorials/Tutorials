@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
 
- - You have completed [Store sensor data in HDFS](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
+ - You have completed [Store sensor data in HDFS](https://developers.sap.com/tutorials/datahub-pipelines-storeinhdfs.html)
 
 ## Next Steps
-- [Store sensor data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
+- [Store sensor data in SAP Vora](https://developers.sap.com/tutorials/datahub-pipelines-storeinvora.html)
 
 ## Details
 **This tutorial is obsolete and will be removed shortly (end of-November 2018).**

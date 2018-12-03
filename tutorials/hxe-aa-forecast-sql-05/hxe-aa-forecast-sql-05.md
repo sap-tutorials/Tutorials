@@ -8,7 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
+ - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
 ## Details
 ### You will learn
@@ -166,19 +166,6 @@ There are multiple Time Series algorithms that can be used in PAL, but here are 
  - **Auto Exponential Smoothing**: calculate optimal parameters for Single, Double and Triple Exponential Smoothing functions
 
 However, before selecting one, you will need to address the existence of a trend, a seasonal component or white noise which can be achieved using the **Seasonality Test** function.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this tutorial, you will need to setup a SQL query tool for SAP HANA, express edition.
-
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
 
 [DONE]
 [ACCORDION-END]

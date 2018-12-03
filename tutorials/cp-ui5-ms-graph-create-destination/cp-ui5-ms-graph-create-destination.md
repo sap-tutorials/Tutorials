@@ -8,7 +8,7 @@ time: 5
 ---
 
 ## Prerequisites  
- - [Know the concepts of OData](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html)
+ - [Know the concepts of OData](https://developers.sap.com/tutorials/odata-01-intro-origins.html)
 
 ## Details
 ### You will learn  

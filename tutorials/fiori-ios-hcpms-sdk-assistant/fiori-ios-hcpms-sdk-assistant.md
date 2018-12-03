@@ -9,10 +9,10 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Proficiency:** Intermediate
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Create an application definition)](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
+ - **Tutorials:** [Create an application definition)](https://developers.sap.com/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
 
 ## Next Steps
- - [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+ - [Push Notifications](https://developers.sap.com/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Details
 ### You will learn  
@@ -225,5 +225,3 @@ If you now click on one of the **Supplier** entities, it will display the **Deta
 [VALIDATE_11]
 [ACCORDION-END]
 
-## Next Steps
-- [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)

@@ -4,15 +4,14 @@ description: Discover how to implement SAP Leonardo Machine Learning Foundation 
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [ tutorial>beginner, topic>java, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, topic>java, products>sap-api-management]
+time: 15
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - [Sign up for an free trial account on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Sign up for an free trial account on the SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://developers.sap.com/group.ml-fs-api-hub.html), [Java](https://developers.sap.com/group.ml-fs-java.html) or [SAPUI5](https://developers.sap.com/group.ml-fs-sapui5.html)
 
 ## Details
 ### You will learn
@@ -30,8 +29,7 @@ You can of course substitute the Eclipse IDE &trade; with alternate tools and ad
 
 In this tutorial, you will learn the basics of making API calls against the Machine Learning Functional Services published in SAP API Business Hub.
 
-### Time to Complete
-**15 Min**
+---
 
 [ACCORDION-BEGIN [Step 1: ](Get The Code Snippet And the API key)]
 
@@ -502,6 +500,5 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+### Additional Information
+ - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://developers.sap.com/group.ml-fs-api-hub.html), [Java](https://developers.sap.com/group.ml-fs-java.html) or [SAPUI5](https://developers.sap.com/group.ml-fs-sapui5.html)

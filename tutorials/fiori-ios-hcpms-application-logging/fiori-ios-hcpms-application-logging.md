@@ -8,10 +8,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **Proficiency:** Beginner
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+ - **Tutorials:** [Push Notifications](https://developers.sap.com/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Next Steps
- - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
+ - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-logging.html)
 
 ## Details
 ### You will learn  
@@ -101,5 +101,3 @@ settings.load(for: .application)
 
 [ACCORDION-END]
 
-## Next Steps
- - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)

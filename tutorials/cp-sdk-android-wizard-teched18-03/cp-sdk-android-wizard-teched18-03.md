@@ -14,6 +14,9 @@ time: 10
 
 ---
 
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+
+
 [ACCORDION-BEGIN [Step 1: ](Send a notification)]
 
 Open the <a target="_blank" href="https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html">SAP Cloud Platform Mobile Services management cockpit</a> by right-clicking on the link and choose **Open link in incognito window**.

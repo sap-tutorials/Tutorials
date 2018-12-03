@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Introduction to SAP HANA Spatial data types](https://www.sap.com/developer/groups/hana-aa-spatial-get-started.html)
+ - **Tutorials:** [Introduction to SAP HANA Spatial data types](https://developers.sap.com/group.hana-aa-spatial-get-started.html)
 
 ## Next Steps
- - [Computation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-compute.html)
+ - [Computation methods](https://developers.sap.com/tutorials/hana-spatial-methods-compute.html)
 
 ## Details
 ### You will learn  
@@ -107,8 +107,3 @@ You will learn more about different kinds of spatial aggregations in a separate 
 ### Optional
 - You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/7a13f280787c10148dc893063dfed1c4.html). Make sure you review documentation for the version of SAP HANA you run.
 
-
----
-
-## Next Steps
- - [Computation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-compute.html)

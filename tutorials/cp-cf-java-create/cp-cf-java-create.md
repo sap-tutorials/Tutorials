@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Getting Started with SAP Web IDE](https://www.sap.com/developer/tutorials/webide-onboarding-mc.html)
+ - [Getting Started with SAP Web IDE](https://developers.sap.com/tutorials/webide-onboarding-mc.html)
 
 ## Details
 ### You will learn  

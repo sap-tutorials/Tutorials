@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Compare Prepared and Executed Plan](https://www.sap.com/developer/tutorials/dt-query-processing-part2.html)
+ - **Tutorials:** [Compare Prepared and Executed Plan](https://developers.sap.com/tutorials/dt-query-processing-part2.html)
 
 ## Next Steps
- - **Tutorials:** [Detailed Query Plan and Indexes](https://www.sap.com/developer/tutorials/dt-query-processing-part4.html)
+ - **Tutorials:** [Detailed Query Plan and Indexes](https://developers.sap.com/tutorials/dt-query-processing-part4.html)
 
 ## Details
 ### You will learn

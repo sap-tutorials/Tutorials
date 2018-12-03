@@ -39,7 +39,7 @@ After you perform the search, you will be presented with two options. The right 
 
       This option requires more resources.
 
-      For details about this option, go to the following tutorial: <https://www.sap.com/developer/tutorials/hxe-xsa-aws-setup.html>
+      For details about this option, go to the following tutorial: <https://developers.sap.com/tutorials/hxe-xsa-aws-setup.html>
 
 Select the **SAP HANA, express edition** option.
 
@@ -308,3 +308,7 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 
 If anything is going wrong, [check the questions and answers from the community](https://answers.sap.com/index.html).
+
+> ### **Warning:** When using the SAP HANA, express edition AMI from AWS, you will be charged for both the EC2 instance and the provisioned EBS volumes used by this instance.
+Therefore, even if you ***suspend*** your EC2 instance running your SAP HANA, express edition instance, you will still be charged for the provisioned EBS volumes.
+Only detaching and deleting the EBS volumes will prevent that but your SAP HANA, express edition will no longer be usable.

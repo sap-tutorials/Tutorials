@@ -6,10 +6,10 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating OData based on CDS Views. ](https://www.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
+ - **Tutorials:** [Creating OData based on CDS Views. ](https://developers.sap.com/tutorials/s4hana-cds-creating-odata-service.html)
 
 ## Next Steps
- [Building simple tiles](https://www.sap.com/developer/tutorials/s4hana-cds-building-simple-tile.html)
+ [Building simple tiles](https://developers.sap.com/tutorials/s4hana-cds-building-simple-tile.html)
 
 ## Details
 ### You will learn  
@@ -183,7 +183,3 @@ You will also see the group `Z_RDS_BCG`.
 
 [ACCORDION-END]
 
-
-## Next Steps
-
-[Building simple tile](https://www.sap.com/developer/tutorials/s4hana-cds-building-simple-tile.html)

@@ -8,10 +8,10 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://developers.sap.com/group.hxe-aa-movielens-sql.html)
 
 ## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://developers.sap.com/group.hxe-aa-movielens-sql.html)
 
 ## Details
 ### You will learn
@@ -216,7 +216,7 @@ The installation will trigger a restart of your SAP HANA instance, so make sure 
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
-So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-apl-binary.html).
 
 [DONE]
 [ACCORDION-END]
@@ -676,6 +676,6 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 
 > ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-04/hxe-aa-movielens-sql-04.ipynb) to run most of the SQL statement listed in the tutorial.
-You can follow the [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)) tutorial for more details.
+You can follow the [Use Jupyter Notebook with SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-jupyter.html)) tutorial for more details.
 
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.

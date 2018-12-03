@@ -3,22 +3,16 @@ title: SAP HANA XS Advanced - Package your MTA application for transport
 description: Transport your XS Advanced application for transport
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner ]
+time: 10
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [SAP HANA XS Advanced tutorial - Getting started](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or [SAP HANA XS Advanced tutorial - Node.js](https://www.sap.com/developer/groups/hana-xsa-nodejs.html) or [SAP HANA XS Advanced tutorial - SAPUI5](https://www.sap.com/developer/groups/hana-xsa-sapui5.html)
+ - **Tutorials:** [SAP HANA XS Advanced tutorial - Getting started](https://developers.sap.com/group.hana-xsa-get-started.html) or [SAP HANA XS Advanced tutorial - Node.js](https://developers.sap.com/group.hana-xsa-nodejs.html) or [SAP HANA XS Advanced tutorial - SAPUI5](https://developers.sap.com/group.hana-xsa-sapui5.html)
 
-
-## Next Steps
- - [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-This tutorial will show you how to migrate your Multi Target Application into another server
-
-### Time to Complete
-**10 Min**
+  - How to migrate your Multi Target Application into another server
 
 ---
 
@@ -78,6 +72,3 @@ And the application using `xs apps` in the corresponding space (for example, dev
 
 [ACCORDION-END]
 
-
-## Next Steps
- - [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

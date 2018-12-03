@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 
 ## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page
+ - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
 
 ## Details
 ### You will learn  
@@ -114,7 +114,3 @@ This tutorial will guide you through the process to deploy a sample application 
 
 
 [ACCORDION-END]
----
-
-## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page

@@ -14,8 +14,8 @@ time: 15
 
 ## Next Steps
 
-  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -89,12 +89,8 @@ This document refers to a Nexus 2 release.
 
 9. To make Nexus productively runnable and secure, please follow the post-install checklist of the official documentation.
 
-    > [Nexus Post-Install Checklist](https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html)  
+   [Nexus Post-Install Checklist](https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html)  
 
 
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
-## Next Steps
-
-  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

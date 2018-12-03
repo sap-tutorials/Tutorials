@@ -7,11 +7,11 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, operating
 ## Prerequisites  
 - **Proficiency:** Intermediate
 - **Tutorials:**
-- [Create a native app in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/hcpdo-create-native-app.html)
+- [Create a native app in SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/hcpdo-create-native-app.html)
 - Download and install [Android Studio](https://developer.android.com/studio/index.html)
 
 ## Next Steps
-- [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
+- [Configure Android Studio for mobile development](https://developers.sap.com/tutorials/hcpdo-android-sdk-setup.html)
 
 ## Details
 ### You will learn  
@@ -126,7 +126,3 @@ Selecting one of the items in the list will show the detail screen:
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)

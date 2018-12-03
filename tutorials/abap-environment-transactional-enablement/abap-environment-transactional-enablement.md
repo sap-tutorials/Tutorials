@@ -2,7 +2,7 @@
 auto_validation: true
 title: Add Transactional Behavior to Your Core Data Services
 description: Create a behavior implementation in SAP Cloud Platform ABAP Environment.
-primary_tag: topic>abap-development
+primary_tag: products>sap-cloud-platform-abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
 time: 10
 ---
@@ -23,7 +23,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-  1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://www.sap.com/developer/tutorials/abap-environment-create-cds-view.html)and open your data definition `ZI_BOOKING_XXX` to add following statement:
+  1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://developers.sap.com/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
   `root`
 
       ![Open Eclipse](eclipse.png)
@@ -44,7 +44,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create behavior definition)]
-  1. Navigate to **Core Data Services**, select **data definition** and press **Next**.
+  1. Navigate to **Core Data Services**, select **Behavior Definition** and press **Next**.
 
       ![Create behavior definition](definition.png)
 
@@ -64,7 +64,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement behavior definition)]
-  1. Provide an alias (`booking`) and specify the lock master. Define the table field **`LastChangedAt`** for the `etag` handling. Replace the following coding:
+  1. Provide an alias (`booking`) and specify the lock master. Define the table field **`LastChangedAt`** for the `ETag` handling. Replace the following coding:
 
     ```swift
         implementation unmanaged;
@@ -131,15 +131,33 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
     Add also the final statement to your **`lcl_handler`** class.
 
-  4. Enhance the definition of the local class **`lcl_handler`**. Enhance the parameter interface of the method modify with importing parameters **`roots_to_create`**, **`roots_to_update`** and **`roots_to_delete`** for the different operations. Add the read method.
+  4. Enhance the definition of the local class **`lcl_handler`**.
+     Enhance the parameter interface of the method modify with importing parameters **`roots_to_create`**, **`roots_to_update`** and **`roots_to_delete`** for the different operations.
+     Add the methods **read** and **lock** as specified below.
 
       ![Enhance local class](code4.png)
+
+    ```swift
+      CLASS lcl_handler DEFINITION final INHERITING FROM cl_abap_behavior_handler.
+        PRIVATE SECTION.
+          METHODS modify FOR BEHAVIOR IMPORTING
+            roots_to_create   FOR CREATE booking
+            roots_to_update   FOR UPDATE booking
+            roots_to_delete   FOR DELETE booking.
+
+          METHODS read FOR BEHAVIOR
+            IMPORTING it_booking_key FOR READ booking RESULT et_booking.
+
+          METHODS lock FOR BEHAVIOR
+            IMPORTING it_booking_key FOR LOCK booking.
+      ENDCLASS.
+    ```
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Implement methods in handler class)]
-  1. Implement the modify method in your **`lcl_handler`** implementation class.
+  1. Implement the delete handling in the **modify** method of your **`lcl_handler`** implementation class.
 
     ```swift
     " handle delete
@@ -165,7 +183,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
         ENDLOOP.
     ```
 
-  2. Add also following code to your **`lcl_handler`** implementation class (modify method).
+  2. Implement the create handling in the **modify** method of your **`lcl_handler`** implementation class.
 
     ```swift
     " handle create
@@ -192,7 +210,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
     ENDLOOP.
     ```
 
-  3. Create a handle update by adding following coding:
+  3. Implement the update handling in the **modify** method of your **`lcl_handler`** implementation class.
 
     ```swift
     " handle update
@@ -226,12 +244,12 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
           <ls_buffer>-currencycode = ls_update-currencycode.
         ENDIF.      
         GET TIME STAMP FIELD DATA(zv_tsl2).
-        <ls_buffer>-lastchangedat = zv_tsl2. "handling for field LastChangedAt (for eTag)
+        <ls_buffer>-lastchangedat = zv_tsl2. "handling for field LastChangedAt (for ETag)
       ENDLOOP.
     ENDIF.
 
     ```
-  4. Implement the method read in your **`lcl_handler`** implementation class. Save your changes.
+  4. Implement the method **read** in your **`lcl_handler`** implementation class. Save your changes.
 
     ```swift
     METHOD read.
@@ -250,7 +268,14 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
         ENDIF.
       ENDLOOP.
     ENDMETHOD.
-    ENDCLASS.
+    ```
+
+  5. Provide an empty implementation of the method **lock** in your **`lcl_handler`** implementation class as it is not is required in the present exercise, but the method must be provided.
+
+    ```swift
+      METHOD lock.
+       "provide the appropriate lock handling if required
+      ENDMETHOD.
     ```
 
 [DONE]
@@ -318,9 +343,12 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
         METHODS read FOR BEHAVIOR
           IMPORTING it_booking_key FOR READ booking RESULT et_booking.
+
+        METHODS lock FOR BEHAVIOR
+          IMPORTING it_booking_key FOR LOCK booking.
     ENDCLASS.
 
-    class lcl_handler implementation.
+    CLASS lcl_handler implementation.
       METHOD modify.
 
         LOOP AT roots_to_delete INTO DATA(ls_delete).
@@ -388,7 +416,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
             <ls_buffer>-lastchangedat = zv_tsl2.
           ENDLOOP.
         ENDIF.
-      endmethod.
+      ENDMETHOD.
 
       METHOD read.
         LOOP AT it_booking_key INTO DATA(ls_booking_key).
@@ -405,6 +433,10 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
             ENDIF.
           ENDIF.
         ENDLOOP.
+      ENDMETHOD.
+
+      METHOD lock.
+       "provide the appropriate lock handling if required
       ENDMETHOD.
     ENDCLASS.
 
@@ -456,7 +488,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Test yourself)]
-Define an unmanaged implementation of a behavior definition for following in the right order (without the lock master statement and `etag` handling):
+Define an unmanaged implementation of a behavior definition for following in the right order (without the lock master statement and `ETag` handling):
 
  - `ZI_TEST` alias `test`
  - Methods:

@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Create a Business Service Using CDS](https://www.sap.com/developer/tutorials/cp-apm-01-create-business-service.html)
+ - [Create a Business Service Using CDS](https://developers.sap.com/tutorials/cp-apm-01-create-business-service.html)
 
 ## Details
 ### You will learn  
@@ -51,7 +51,7 @@ time: 10
 
 [ACCORDION-BEGIN [Step 2: ](Test-run the UI)]
 
-1. Right-click the **app** module and choose **Run | Web Application**.
+1. Right-click the **app** module and choose **Run | SAP Fiori Launchpad Sandbox**.
 
 2. Choose **`flpSandbox.html`**.
 
@@ -111,7 +111,9 @@ time: 10
 
 [ACCORDION-BEGIN [Step 5: ](Re-open your app)]
 
-1. Open the app from the SAP Fiori Launchpad and choose **Settings** to add the columns you want to see.
+1. Open the app from the SAP Fiori Launchpad.
+
+1. Choose **Settings** to add the columns you want to see.
 
 2. Choose **OK**.
 

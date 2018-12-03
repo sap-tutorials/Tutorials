@@ -8,10 +8,10 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Tutorial:** [Set Up the Eclipse Project for Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part2.html)
+- **Tutorial:** [Set Up the Eclipse Project for Streaming Lite Custom Java Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part2.html)
 
 ## Next Steps
- - [Deploy and Test the Streaming Lite Custom Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part4.html)
+ - [Deploy and Test the Streaming Lite Custom Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part4.html)
 
 ## Details
 

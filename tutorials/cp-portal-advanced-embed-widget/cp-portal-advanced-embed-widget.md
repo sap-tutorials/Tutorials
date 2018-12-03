@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
-  - You have created a destination to the gateway service. For more information, see [Create an SAP Cloud Platform destination pointing to an SAP Gateway](https://www.sap.com/developer/tutorials/teched-2016-3.html#_blank)
+  - You have created a destination to the gateway service. For more information, see [Create an SAP Cloud Platform destination pointing to an SAP Gateway](https://developers.sap.com/tutorials/teched-2016-3.html#_blank)
 
 ## Details
 ### You will learn  

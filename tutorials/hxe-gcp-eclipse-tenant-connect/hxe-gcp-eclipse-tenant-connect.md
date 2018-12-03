@@ -5,8 +5,8 @@ primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, tutorial>how-to, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
- - [Create a HANA Express instance using the Google Cloud Launcher](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html)
- - [Download and install Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+ - [Create a HANA Express instance using the Google Cloud Launcher](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html)
+ - [Download and install Eclipse](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 
 ## How-To Details

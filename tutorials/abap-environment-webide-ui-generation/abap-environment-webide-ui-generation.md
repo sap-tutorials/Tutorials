@@ -2,7 +2,7 @@
 auto_validation: true
 title: Create a UI that Consumes an Exposed ABAP Service
 description: Use SAP Web IDE Full-Stack to create a SAP Fiori Elements app on top of an OData service exposed in the SAP Cloud Platform ABAP Environment.
-primary_tag: topic>abap-development
+primary_tag: products>sap-cloud-platform-abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
@@ -53,7 +53,6 @@ Switch to destinations and click **New Destination**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add destination data)]
-
 Enter following data to your destination.
 
 | ---------------------------- | --------------------------------------------------------------- |
@@ -66,25 +65,25 @@ Enter following data to your destination.
 |    **User**                  |                 Equals your communication user                  |
 | **Password**                 |              Password of your communication user                |
 
-> - Use `DEST_XXX` (where `XXX` is your group number) as name of your destination.
-> - Remove `-api` from the URL.
+  1. Use `DEST_XXX` (where `XXX` is your group number) as name of your destination.
 
-![Destination Data](Picture2.png)
+  2. Remove `-api` from the URL.
+
+      ![Destination Data](Picture2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add additional properties)]
-1. Enter additional properties by clicking on **New Property**.
+  1. Enter additional properties by click on **New Property**.
 
-    | -------------------------- | -------------------------------|
-    |      `WebIDEEnabled`       |            `true`              |
-    |       `WebIDEUsage`        |     `odata_gen,odata_abap`     |
+  2. Click on **Save**.
 
-2. Click on **Save**.
+      ![additional properties](Picture3.png)
 
-![additional properties](Picture3.png)
-
+| -------------------------- | -------------------------------|
+|      `WebIDEEnabled`       |            `true`              |
+|       `WebIDEUsage`        |     `odata_gen,odata_abap`     |
 
 [DONE]
 [ACCORDION-END]
@@ -169,7 +168,19 @@ If you don´t see your created destination, you should restart your browser and 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Run the webapp)]
+[ACCORDION-BEGIN [Step 13: ](Annotation selection and template customization)]
+  1. Click on **Next**.
+
+      ![Annotation Selection](Picture24.png)
+
+  2. Choose **Currency** as OData Collection and Click on **Finish**.
+
+      ![Template Customization](Picture25.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 14: ](Run the webapp)]
   1. Run your application by clicking the **Run** button.
 
       ![Run the Webapp](Picture12.png)
@@ -181,7 +192,7 @@ If you don´t see your created destination, you should restart your browser and 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Open your application)]
+[ACCORDION-BEGIN [Step 15: ](Open your application)]
 Navigate to your application.
 
 ![Open your application](Picture14.png)
@@ -189,7 +200,7 @@ Navigate to your application.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Select fields to be displayed on UI)]
+[ACCORDION-BEGIN [Step 16: ](Select fields to be displayed on UI)]
   1. To set some filters click on settings icon.
 
       ![set Settings](Picture15.png)
@@ -201,7 +212,7 @@ Navigate to your application.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Test your UI)]
+[ACCORDION-BEGIN [Step 17: ](Test your UI)]
 Click on **GO**.
 
 ![GO button](Picture17.png)
@@ -213,7 +224,7 @@ You can see the filtered data on UI.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Test yourself)]
+[ACCORDION-BEGIN [Step 18: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

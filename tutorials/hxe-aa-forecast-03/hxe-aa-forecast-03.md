@@ -8,10 +8,10 @@ time: 20
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
 
 ## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
 
 ## Details
 ### You will learn
@@ -82,7 +82,7 @@ However, this would require the ***Eclipse IDE*** to be locally installed and pr
 
 Then, you would need to know the complete data file format description in order to create the tables with the proper columns structure. And, last but not least, any changes would require to recreate the all structure and reload the data.
 
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
+If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html)
 
 - ***SAP HANA HDB Client***
 
@@ -90,7 +90,7 @@ The **SAP HANA HDB Client** provides an ***IMPORT FROM*** statement allowing you
 
 However, this method requires that the table are created before the execution of the command.
 
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
+If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://developers.sap.com/tutorials/mlb-hxe-import-data-sql-import.html)
 
 - ***SAP HANA Persistence Model***
 

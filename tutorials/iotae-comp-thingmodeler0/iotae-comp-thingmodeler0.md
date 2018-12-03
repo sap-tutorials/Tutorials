@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)
+ - [Send the CPU usage data to SAP IoT Application Enablement](https://developers.sap.com/tutorials/iotae-comp-sendpy0.html)
 
 ## Details
 ### You will learn  
@@ -132,7 +132,3 @@ You can find the official user guide at https://help.sap.com/viewer/p/SAP_IOT_AP
 
 
 [ACCORDION-END]
-
-
-## Next Steps
- - [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)

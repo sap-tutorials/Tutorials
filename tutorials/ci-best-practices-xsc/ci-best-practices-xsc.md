@@ -9,20 +9,20 @@ time: 15
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
-  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [CD Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)
-  - [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Source Code Versioning System](https://developers.sap.com/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](https://developers.sap.com/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](https://developers.sap.com/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html)
+  - [CD Pipeline Skeleton](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html)
+  - [Generic Project](https://developers.sap.com/tutorials/ci-best-practices-generic.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
-> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
+> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](https://developers.sap.com/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 For SAP HANA Extended Application Services (XS) classic model (XSC) development you can use either the SAP HANA Studio or the SAP HANA Development Workbench. For more details about installing and getting started, please refer to the product documentation.
 
@@ -49,7 +49,7 @@ After successful testing, the delivery manager determines whether to release the
 
 Figure: The CD process flow for SAP HANA XSC
 
-The landscape setup required for this process is described in [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton, as described in [Sample Pipeline Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
+The landscape setup required for this process is described in [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton, as described in [Sample Pipeline Configuration](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html).
 
 ![component setup](component-setup.png)
 
@@ -203,7 +203,7 @@ The steps below are preparation steps that bring the `SHINE` sources into a Gerr
 
 ##### Creating of the Gerrit project
 
-1. Create a project in Gerrit as described in [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
+1. Create a project in Gerrit as described in [Generic Project](https://developers.sap.com/tutorials/ci-best-practices-generic.html).
 
 2. Clone the project to your local PC.
 
@@ -230,7 +230,7 @@ The steps below are preparation steps that bring the `SHINE` sources into a Gerr
     </project>
     ```
 
-    Enter appropriate values for `groupID` and `version`. The details are described in the part [CD Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
+    Enter appropriate values for `groupID` and `version`. The details are described in the part [CD Pipeline Skeleton](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html).
 
 7. In the local Git workspace, perform `git add`. Ensure that the directory `._SYS_REGI_settings`, which was created automatically by the SAP HANA Studio, is not committed into Git, since the existence of this directory will prevent other developers to create an own HANA repository workspace. Best practice is to add the pattern `._SYS_REGI_settings/*` into the `.gitignore` file. Perform a commit, and push the change into the central repository. The Gerrit project is now filled with the `SHINE` sources.
 
@@ -569,6 +569,3 @@ Replace the `hdbalm import` command in the release job with the `hdbalm transpor
 
     Replace `<route id>` by the number obtained from the step above.
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

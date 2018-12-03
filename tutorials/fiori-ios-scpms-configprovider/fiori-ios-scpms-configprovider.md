@@ -8,11 +8,8 @@ tags: [  tutorial>intermediate, operating-system>ios, products>sap-cloud-platfor
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-scpms-saml-oauth.html)
+ - **Tutorials:** [SAML and OAuth 2 authentication](https://developers.sap.com/tutorials/fiori-ios-scpms-saml-oauth.html)
 
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -191,5 +188,3 @@ Then you simply print the retrieved configuration `Dictionary` object to the deb
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

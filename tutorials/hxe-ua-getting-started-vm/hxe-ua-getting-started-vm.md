@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Set Keyboard and Time Zone](http://www.sap.com/developer/tutorials/hxe-ua-keyboard-vm.html) 
+ - **Tutorials:** You have completed [Set Keyboard and Time Zone](http://developers.sap.com/tutorials/hxe-ua-keyboard-vm.html) 
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ You'll learn how to start the server. At the end of this tutorial you'll be read
 
 This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
-This is an on-premise installation tutorial. Other installation methods are available. See [https://www.sap.com/developer/topics/sap-hana-express.html](https://www.sap.com/developer/topics/sap-hana-express.html).
+This is an on-premise installation tutorial. Other installation methods are available. See [https://developers.sap.com/topics/sap-hana-express.html](https://developers.sap.com/topics/sap-hana-express.html).
 
 [ACCORDION-BEGIN [Step 1: ](Note the VM IP address)]
 
@@ -107,7 +107,7 @@ SAP HANA 2.0, express edition is now running.
 
 [ACCORDION-BEGIN [Step 8: ](Test XSC)]
 
-1.  Edit the `/etc/hosts` file. See [Edit the Hosts File](https://www.sap.com/developer/tutorials/hxe-ua-hosts.html). 
+1.  Edit the `/etc/hosts` file. See [Edit the Hosts File](https://developers.sap.com/tutorials/hxe-ua-hosts.html). 
 
 2.  Check that the `XSEngine` is running. From your host OS (not the VM guest) open a browser and enter:
 

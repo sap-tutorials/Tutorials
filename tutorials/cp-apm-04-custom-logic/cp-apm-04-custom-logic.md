@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Add a Database to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-03-add-database.html)
+ - [Add a Database to Your Business Application](https://developers.sap.com/tutorials/cp-apm-03-add-database.html)
 
 ## Details
 ### You will learn  

@@ -6,11 +6,11 @@ tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermedi
 ---
 
 ## Prerequisites  
-- [Getting Started with the SAP Cloud Platform Tools for Java](https://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
+- [Getting Started with the SAP Cloud Platform Tools for Java](https://developers.sap.com/tutorials/hcp-java-eclipse-setup.html)
 - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install [JDK 1.7](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk7-downloads-1880260.html) and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 2](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
+- [End-to-End Weather App Scenario Part 2](https://developers.sap.com/tutorials/hcp-java-weatherapp-part2.html)
 
 ## Details
 ### You will learn  
@@ -132,5 +132,3 @@ Click on **Finish**. The internal browser is now started and displays the tradit
 
 
 
-## Next Steps
-- [End-to-End Weather App Scenario Part 2](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)

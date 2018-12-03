@@ -11,7 +11,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
  - You will need a credit card and email account.
 
 ## Next Steps
- - [Create Device Model](https://www.sap.com/developer/tutorials/iot-express-2-create-device-model.html)
+ - [Create Device Model](https://developers.sap.com/tutorials/iot-express-2-create-device-model.html)
 
 ## Details
 ### You will learn  

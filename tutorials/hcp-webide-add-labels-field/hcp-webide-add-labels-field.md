@@ -7,10 +7,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Deploy your mobile web app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+- **Tutorials:** [Deploy your mobile web app to SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Next Steps
-- [Round the currency field using JavaScript](https://www.sap.com/developer/tutorials/hcp-webide-round-currency.html)
+- [Round the currency field using JavaScript](https://developers.sap.com/tutorials/hcp-webide-round-currency.html)
 
 ## Details
 
@@ -130,7 +130,3 @@ The browser cache will frequently prevent changes from showing up. There are a f
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Round the currency field using JavaScript](https://www.sap.com/developer/tutorials/hcp-webide-round-currency.html)

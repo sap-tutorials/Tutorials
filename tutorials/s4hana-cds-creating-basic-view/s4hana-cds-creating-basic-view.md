@@ -7,7 +7,7 @@ time: 20
 ---
 
 ## Next Steps
-[Creating consumption view based on basic/interface view. ](https://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
+[Creating consumption view based on basic/interface view. ](https://developers.sap.com/tutorials/s4hana-cds-creating-consumption-view.html)
 
 
 ## Details

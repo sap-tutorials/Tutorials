@@ -20,7 +20,7 @@ We will now generate a `SQL` select statement for our `AV_ORDERS` calculation vi
 
 We will then visualize the plan, and show again that data is being queried from both in-memory and extended storage.
 
-Before we begin, open a SQL console, and run our `Migrate_Aged_Orders()` function created from our previous tutorial, [Migrate Records in Related Tables Using Stored Procedure](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part6.html). This will ensure that all data older than one year is moved from `ORDERS_CS` into `ORDERS_DT`.
+Before we begin, open a SQL console, and run our `Migrate_Aged_Orders()` function created from our previous tutorial, [Migrate Records in Related Tables Using Stored Procedure](https://developers.sap.com/tutorials/dt-create-schema-load-data-part6.html). This will ensure that all data older than one year is moved from `ORDERS_CS` into `ORDERS_DT`.
 
 Click execute, to run the statement.
 

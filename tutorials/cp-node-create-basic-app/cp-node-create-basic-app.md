@@ -9,8 +9,8 @@ time: 10
 
 ## Prerequisites  
 - A text editor (e.g., Notepad, Atom, Sublime)
-- **Tutorials:** [Sign up](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for a free trial account on SAP Cloud Platform
-- **Tutorials:**  [Install](https://www.sap.com/developer/tutorials/hcp-cf-getting-started.html) the Cloud Foundry CLI
+- **Tutorials:** [Sign up](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for a free trial account on SAP Cloud Platform
+- **Tutorials:**  [Install](https://developers.sap.com/tutorials/hcp-cf-getting-started.html) the Cloud Foundry CLI
 
 
 ## Details
@@ -121,7 +121,7 @@ npm -v
 
     const port = process.env.PORT || 3000;;
     app.listen(port, function () {
-      console.log(`myapp listening on port ${port});
+      console.log(`myapp listening on port ${port}`);
     });
     ```
 

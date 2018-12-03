@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 - How to bundle the sensor data before storing in Google Cloud Storage
 - How to use a **JavaScript operator**
 
-Please note that this tutorial is similar to the `Bundle data (via JavaScript)` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Bundle data (via JavaScript)` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 ### Time to Complete
 **15 Mins**
@@ -108,4 +108,4 @@ You can open any of the generated file by clicking on the filename which opens i
 
 [ACCORDION-END]
 
----
+

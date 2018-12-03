@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>abap-development, topic>cloud, topic>java, pro
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Get your own free Developer Account for SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Get your own free Developer Account for SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-[Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
+[Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://developers.sap.com/tutorials/hcp-prepare-cal-account.html)
 
 ## Details
 ### You will learn  
@@ -64,5 +64,3 @@ How to prepare an Amazon Web Services account on which you will setup an ABAP on
 
 [ACCORDION-END]
 
-## Next Steps
-[Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)

@@ -3,21 +3,16 @@ title: SAP HANA XS Advanced - Web Sockets within Node.js SAP HANA applications
 description: Using web sockets with Node.js and SAP HANA
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
-## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Text Bundles](https://www.sap.com/developer/tutorials/xsa-node-text.html)
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+## Prerequisites  
+- **Tutorials:** [Text Bundles](https://developers.sap.com/tutorials/xsa-node-text.html)
 
 ## Details
 ### You will learn  
 This section will demonstrate the ease at which you can tap into the powerful web sockets capabilities of Node.js You will use web sockets to build a simple chat application. Any message sent from the SAPUI5 client side application will be propagated by the server to all listening clients.
 
-
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -346,7 +341,3 @@ All messages are being pushed out into all listeners. You can open a third chat 
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -64,4 +64,4 @@ In the SAP Data Hub Launchpad, find and open the link **Modeler**. Copy the URL 
 
 [ACCORDION-END]
 
----
+
