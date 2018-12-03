@@ -2,6 +2,7 @@
 title: Create Workflow (part 3), Build a task Workflow in SAP Data Hub, trial edition 2.3
 description: Build a task Workflow using SAP Data Hub, trial edition 2.3.
 primary_tag: products>sap-data-hub
+auto_validation: false
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
@@ -53,4 +54,3 @@ We have now executed the **Workflow 3** but you will notice in the above screens
 [VALIDATE_1]
 
 [ACCORDION-END]
-
