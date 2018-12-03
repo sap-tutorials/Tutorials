@@ -2,6 +2,7 @@
 title: Bundle data (via JavaScript) in SAP Data Hub, trial edition 2.3
 description: Bundle sensor data before storing it in Google Cloud Storage by using SAP Data Hub, trial edition 2.3.
 primary_tag: products>sap-data-hub
+auto_validation: false
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
@@ -107,5 +108,3 @@ You can open any of the generated file by clicking on the filename which opens i
 [VALIDATE_1]
 
 [ACCORDION-END]
-
-

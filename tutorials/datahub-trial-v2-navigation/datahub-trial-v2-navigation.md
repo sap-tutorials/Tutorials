@@ -51,6 +51,8 @@ Check the below screenshot and answer the question based on the same :
 
 >Hint : You can hover over the button icon to know more about it.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](SAP Vora Tools)]
