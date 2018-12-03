@@ -191,7 +191,7 @@ Download the following files locally (right click on the link, then use the ***S
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclicAndWn.csv" target="new">`TrendAndCyclicAndWn.csv`</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclicAnd_4Wn.csv" target="new">`TrendAndCyclicAnd_4Wn.csv`</a>
 
-> ###**Note**: If you want to import your own data files, make sure it uses the  **`csv`** file extension.
+> ### **Note**: If you want to import your own data files, make sure it uses the  **`csv`** file extension.
 
 In the left side panel, expand the **`forecast/db/src/hdb/data`** tree node.
 
