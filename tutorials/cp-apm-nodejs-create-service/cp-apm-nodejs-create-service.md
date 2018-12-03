@@ -3,17 +3,17 @@ title: Create a Business Service with Node.js using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite. Use the SAP Cloud Application Programming Model and develop on your local environment.
 auto_validation: true
 primary_tag: topic>node-js
-tags: [  tutorial>intermediate, topic>node-js   ]
+tags: [  tutorial>intermediate, topic>node-js  ]
 time: 30
 ---
 
-## Prerequisites  
+## Prerequisites
 - You have installed [Node.js](https://nodejs.org/en/) version 8 or higher.
 - You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows users only) You have installed the [`SQLite`](https://sqlite.org/download.html) tools for Windows.
 
 ## Details
-### You will learn  
+### You will learn
   - How to do develop a sample business service using the SAP Cloud Application Programming Model and `Node.js`
   - Define a simple data model and a service that exposes the entities you created in your data model
   - Run your service locally
@@ -183,7 +183,7 @@ Add service provider logic to return mock data.
 
 4. Run the `CatalogService` again:
 
-    ```CDS
+    ```bash
     cds run
     ```
 
@@ -264,13 +264,13 @@ The `cds` runtime includes built-in generic handlers that automatically serve al
 
 1. Install `SQLite3` packages
 
-    ```CDS
+    ```bash
     npm i sqlite3 -D
     ```
 
 1. Deploy the data model to a `SQLite` database:
 
-    ```CDS
+    ```bash
     cds deploy --to sqlite:db/my-bookshop.db
     ```
 
@@ -279,7 +279,7 @@ The `cds` runtime includes built-in generic handlers that automatically serve al
 
 2. Open `SQLite` and view the newly created database:
 
-    ```CDS
+    ```bash
     sqlite3 db/my-bookshop.db -cmd .dump
     ```
 
@@ -409,13 +409,13 @@ Your service is now backed by a fully functional database. This means you can re
     cds run
     ```
 
-1. In Postman, execute the `GET Books` request.  
+1. In Postman, execute the `GET Books` request.
 
     Take a look at the stock of book `201`.
 
     ![Test the request](postman-get-books.png)
 
-1. Execute one of the `POST Orders` requests.  
+1. Execute one of the `POST Orders` requests.
 
     This will trigger the logic above and reduce the stock.
 
