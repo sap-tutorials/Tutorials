@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Create an ABAP project in ADT](https://www.sap.com/developer/tutorials/abap-create-project.html)
+ - **Tutorial:** [Create an ABAP project in ADT](https://developers.sap.com/tutorials/abap-create-project.html)
 
 ## Details
 ### You will learn  

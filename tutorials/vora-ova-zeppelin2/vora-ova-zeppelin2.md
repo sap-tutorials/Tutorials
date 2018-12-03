@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Disk Engine using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin3.html)
+ - [Working with Disk Engine using Apache Zeppelin](https://developers.sap.com/tutorials/vora-ova-zeppelin3.html)
 
 
 ## Next Steps
- - [Working with Time Series using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin5.html)
+ - [Working with Time Series using Apache Zeppelin](https://developers.sap.com/tutorials/vora-ova-zeppelin5.html)
 
 ## Details
 ### You will learn  
@@ -65,6 +65,3 @@ Select data by hierarchy level (`4` in this example).
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Working with Time Series using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin5.html)

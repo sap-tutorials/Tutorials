@@ -12,18 +12,18 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 
 ## Next Steps
--  **Build your first app:** [Get started with XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
-- [Explore the basic tools in the XS Advanced platform](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
-- Generate test data and check a sample enterprise application [deploying the SAP HANA `INteractive` Education model on XS Advanced](https://www.sap.com/developer/tutorials/xsa-ml-e2e-access-shine.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
+-  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
+- [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
+- Generate test data and check a sample enterprise application [deploying the SAP HANA `INteractive` Education model on XS Advanced](https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 
 ## Details
 ### You will learn  
 Learn how to launch your own instance of SAP HANA, express edition including the Extended Application Services, advanced model (XS Advanced) on the Compute Engine in the Google Cloud Platform. Configure your instance and your computer to follow tutorials on development with XS Advanced.
 
-If you are looking for the database server and do not need the XS Advanced application development platform, follow [this tutorial ](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html) instead.
+If you are looking for the database server and do not need the XS Advanced application development platform, follow [this tutorial ](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html) instead.
 
 ### Time to Complete
 **15 Min**
@@ -36,7 +36,7 @@ Navigate to [Google Cloud Launcher](https://console.cloud.google.com/launcher) a
 
 You will be presented with two options:
 
-- **SAP HANA, express edition (database server)**: You can connect using SQL clients like SAP HANA Studio or any other client. Includes the Predictive Analytic Library, Machine learning libraries and other advanced analytics. Follow [this tutorial if you prefer this option](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html)
+- **SAP HANA, express edition (database server)**: You can connect using SQL clients like SAP HANA Studio or any other client. Includes the Predictive Analytic Library, Machine learning libraries and other advanced analytics. Follow [this tutorial if you prefer this option](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html)
 - **SAP HANA, express edition (Database + XS Advanced Applications)** (also referred to as XSA): Includes all of the other features plus the Cloud Foundry based development platform,  SAP Web IDE for SAP HANA, administration cockpit among other applications like SHINE and Smart Data Streaming. OData support, Node.js and Java runtime environments are also included. This option requires more resources.
 
 Click on the option that includes applications:
@@ -176,7 +176,7 @@ Log in with `XSA_DEV` and the master password.
 
 ![test web ide](12.png)
 
-You can now start to use your SAP HANA, express edition or continue with the optional steps. You can get started with your [first end-to-end XS Advanced application](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html).
+You can now start to use your SAP HANA, express edition or continue with the optional steps. You can get started with your [first end-to-end XS Advanced application](https://developers.sap.com/group.hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/sap-hana-express.tutorials.html).
 [DONE]
 [ACCORDION-END]
 
@@ -310,8 +310,8 @@ You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
- - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
- -  [Get started with XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
- - Generate test data and check a sample enterprise application [deploying the SAP HANA INteractive Education model on XS Advanced](https://www.sap.com/developer/tutorials/xsa-ml-e2e-access-shine.html)
- - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
+### Additional Information
+ - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+ -  [Get started with XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
+ - Generate test data and check a sample enterprise application [deploying the SAP HANA INteractive Education model on XS Advanced](https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html)
+ - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

@@ -9,10 +9,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **System** Access to SAP Web IDE for the HANA System you are working with.
- - **Tutorials:** [Create a New User and Assign Permissions](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-1.html)
+ - **Tutorials:** [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-1.html)
 
 ## Next Steps
- - **Tutorials:** [Create Tables and Import Data](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-3.html)
+ - **Tutorials:** [Create Tables and Import Data](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-3.html)
 
 ## Details
 ### You will learn  

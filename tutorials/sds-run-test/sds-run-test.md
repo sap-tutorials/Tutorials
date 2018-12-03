@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streamin
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Capture Streaming Output in the HANA Database](https://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
+ - **Tutorials:** [Capture Streaming Output in the HANA Database](https://developers.sap.com/tutorials/sds-event-stream-tables.html)
 
 ## Next Steps
-**Tutorial:** [Join an Event Stream to a HANA Table](https://www.sap.com/developer/tutorials/sds-stream-table-join.html)
+**Tutorial:** [Join an Event Stream to a HANA Table](https://developers.sap.com/tutorials/sds-stream-table-join.html)
 
 
 ## Details

@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Asynchronous Non-Blocking I/O](https://www.sap.com/developer/tutorials/xsa-node-async.html)
+- **Tutorials:** [Asynchronous Non-Blocking I/O](https://developers.sap.com/tutorials/xsa-node-async.html)
 
 ## Next Steps
-- [Web Sockets](https://www.sap.com/developer/tutorials/xsa-node-websockets.html)
+- [Web Sockets](https://developers.sap.com/tutorials/xsa-node-websockets.html)
 
 ## Details
 ### You will learn  
@@ -150,7 +150,3 @@ Repeat the process raising Japanese `[ja]` to the top of the list and refresh th
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [SAP HANA XS Advanced - Web Sockets](https://www.sap.com/developer/tutorials/xsa-node-websockets.html)

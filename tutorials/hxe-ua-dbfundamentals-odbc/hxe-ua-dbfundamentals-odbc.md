@@ -7,7 +7,7 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition
 time: 15
 ---
 ## Prerequisites  
- - [Create a Backup](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-backups.html)
+ - [Create a Backup](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-backups.html)
  - A registered version of SUSE. See the [SAP HANA Academy](https://www.youtube.com/watch?v=e6SIsAFVPoY) video for details.
 
 

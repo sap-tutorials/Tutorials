@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Maintain platform subaccounts and SAP Web IDE permissions`](https://www.sap.com/developer/tutorials/abap-custom-ui-subaccount-permission.html)
+- **Tutorials:** [`Maintain platform subaccounts and SAP Web IDE permissions`](https://developers.sap.com/tutorials/abap-custom-ui-subaccount-permission.html)
 
 ## Details
 ### You will learn

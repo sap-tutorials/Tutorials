@@ -7,10 +7,10 @@ time: 15
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Develop your first SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - **Tutorials:** [Develop your first SAP HANA XSC application](https://developers.sap.com/tutorials/hana-web-development-workbench.html)
 
 ## Next Steps
-- [Enable XSODATA in your SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-xsodata.html)
+- [Enable XSODATA in your SAP HANA XSC application](https://developers.sap.com/tutorials/hana-xsodata.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ time: 15
 3. Preparing and executing a very simple SQL query on the table.
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 

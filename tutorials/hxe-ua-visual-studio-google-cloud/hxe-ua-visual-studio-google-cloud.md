@@ -7,7 +7,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-word-mapping.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://developers.sap.com/tutorials/hxe-ua-visual-studio-word-mapping.html)
 
 ## Details
 ### You will learn  

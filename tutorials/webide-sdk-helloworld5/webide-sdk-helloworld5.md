@@ -7,7 +7,7 @@ time: 3
 ---
 
 ## Prerequisites  
- - [Creating a Destination for Consuming a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld4.html)
+ - [Creating a Destination for Consuming a Plugin](https://developers.sap.com/tutorials/webide-sdk-helloworld4.html)
 
 
 ## Details

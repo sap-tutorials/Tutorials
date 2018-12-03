@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Make ABAP custom business object service's consumable on SAP Cloud Platform via OAuth`](https://www.sap.com/developer/tutorials/abap-custom-ui-service-consumption.html)
+- **Tutorials:** [`Make ABAP custom business object service's consumable on SAP Cloud Platform via OAuth`](https://developers.sap.com/tutorials/abap-custom-ui-service-consumption.html)
 - **Authorizations:** Your user needs a business role with Unrestricted Write Access and business catalog Extensibility - Fiori App Development (ID: `SAP_CORE_BC_EXT_UI`). Access to a SAP Web IDE account is expected as a prerequisite.
 
 

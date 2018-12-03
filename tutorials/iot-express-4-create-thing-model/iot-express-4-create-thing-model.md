@@ -8,7 +8,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Assemble and Configure Device Hardware](https://www.sap.com/developer/tutorials/iot-express-3-configure-device.html) or at least [Create a Simple IoT Device Model](https://www.sap.com/developer/tutorials/iot-express-2-create-device-model.html)
+ - **Tutorials:** [Assemble and Configure Device Hardware](https://developers.sap.com/tutorials/iot-express-3-configure-device.html) or at least [Create a Simple IoT Device Model](https://developers.sap.com/tutorials/iot-express-2-create-device-model.html)
  - **Configuration** You or someone else that is an administrator in your global account has walked through the following end-to-end configuration and onboarding guide: [SAP IoT Application Enablement: Onboarding - Setting up Your Account](https://help.sap.com/viewer/9dfedbe95cbe4a9f9a5ceddbef7f88e5/latest/en-US/c5b72d23880240dcb4b0d7b9523b065a.html).
 
 ### Time to Complete
@@ -18,7 +18,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
  
  
 ## Next Steps
-- **Tutorials:** [Build an IoT Condition Monitoring App](https://www.sap.com/developer/tutorials/iot-express-5-use-webide-template.html)
+- **Tutorials:** [Build an IoT Condition Monitoring App](https://developers.sap.com/tutorials/iot-express-5-use-webide-template.html)
 
 ## Details
 ### You will learn

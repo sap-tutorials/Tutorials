@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Code the Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part3.html)
+ - [Code the Streaming Lite Custom Java Adapter](https://developers.sap.com/tutorials/hsa-lite-custom-java-adapter-part3.html)
 
 ## Details
 ### You will learn  

@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition, products>sap-ha
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Setup the SAP HANA Plugin for Microsoft Visual Studio](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio.html)
+ - **Tutorials:** [Setup the SAP HANA Plugin for Microsoft Visual Studio](https://developers.sap.com/tutorials/hxe-ua-visual-studio.html)
 
 ## Next Steps
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-debugging.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
 
 ## Details
 ### You will learn  
@@ -163,7 +163,3 @@ When you run the code again, it runs successfully and calculates the average His
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-debugging.html)

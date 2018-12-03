@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-ova-hana-datasource.html)
+ - [Working with SAP HANA data source](https://developers.sap.com/tutorials/vora-ova-hana-datasource.html)
 
 ## Details
 ### You will learn  

@@ -11,14 +11,14 @@ time: 15
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
-  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Source Code Versioning System](https://developers.sap.com/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](https://developers.sap.com/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](https://developers.sap.com/tutorials/ci-best-practices-artifacts.html)
 
 
 ## Next Steps
 
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 

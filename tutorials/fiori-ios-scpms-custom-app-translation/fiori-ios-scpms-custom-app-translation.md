@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://www.sap.com/developer/groups/ios-sdk-custom.html) group
+ - This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://developers.sap.com/group.ios-sdk-custom.html) group
  &nbsp;
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
@@ -16,7 +16,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ## Details
 In this tutorial, you will use the SAP Cloud Platform's integration with SAP Translation Hub to add multilingual features to your iOS app generated with the SDK Assistant. This way, you can run your app in many languages, depending on your device's preferred language.
 
->To view the entire series of tutorials, see the [Customize UI's, themes and onboarding for iOS apps](https://www.sap.com/developer/groups/ios-sdk-custom.html) tutorial group.
+>To view the entire series of tutorials, see the [Customize UI's, themes and onboarding for iOS apps](https://developers.sap.com/group.ios-sdk-custom.html) tutorial group.
 
 ### You will learn  
 

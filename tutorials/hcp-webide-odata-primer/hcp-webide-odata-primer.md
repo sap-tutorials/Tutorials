@@ -7,10 +7,10 @@ time: 15
 ---
 
 ## Prerequisites
-- **Tutorials:** [Localizing your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
+- **Tutorials:** [Localizing your SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-localizing-app.html)
 
 ## Next Steps
-- [Inserting OData query options into your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
+- [Inserting OData query options into your SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-inserting-query-options.html)
 
 ## Details
 
@@ -339,7 +339,7 @@ A combination example with `$format`, `$select`, `$expand` and `$filter` |  <htt
 
 
 ## Optional
-If you would like to build an app similar to what you have done in this tutorial series but with "SAP-like" data, you can register for a free SAP Gateway trial. See the [Create an account on the gateway Demo System](https://www.sap.com/developer/tutorials/gateway-demo-signup.html) tutorial.
+If you would like to build an app similar to what you have done in this tutorial series but with "SAP-like" data, you can register for a free SAP Gateway trial. See the [Create an account on the gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html) tutorial.
 
 The two OData Service document URLs are:
 
@@ -348,7 +348,7 @@ The two OData Service document URLs are:
 
 To build an app like what you have now, but with data from SAP Gateway you simply need to:
 
-- Create an SAP Cloud Platform destination pointing to `https://sapes5.sapdevcenter.com` following an [earlier tutorial procedure](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- Create an SAP Cloud Platform destination pointing to `https://sapes5.sapdevcenter.com` following an [earlier tutorial procedure](https://developers.sap.com/tutorials/hcp-create-destination.html)
 - Enter the remaining part of the URL in the Data Connection portion of the Web IDE template customization. For the two URLs above, they would be:
 - `/sap/opu/odata/IWBEP/GWDEMO`
 - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`

@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Install cURL](https://www.sap.com/developer/tutorials/iot-cf-install-curl.html) and [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
+ - **Tutorials:** You have completed [Install cURL](https://developers.sap.com/tutorials/iot-cf-install-curl.html) and [Install OpenSSL](https://developers.sap.com/tutorials/iot-cf-install-openssl.html).
 
 ## Details
 ### You will learn
@@ -176,9 +176,9 @@ In the following a sensor is created. The sensor is assigned to the previously c
 
 **Prerequisites:**
 
--   You have installed the REST client (cURL). A description of how to install the cURL client can be found in the tutorial [Install cURL](https://www.sap.com/developer/tutorials/iot-cf-install-curl.html).
+-   You have installed the REST client (cURL). A description of how to install the cURL client can be found in the tutorial [Install cURL](https://developers.sap.com/tutorials/iot-cf-install-curl.html).
 
--   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
+-   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL](https://developers.sap.com/tutorials/iot-cf-install-openssl.html).
 
 -   You have created the device model in step 1-4.
 
@@ -224,7 +224,7 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
     < HTTP/1.1 200 OK
     ```
 
-3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html).
+3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html).
 
 
 **Send data using cURL (only for cURL with SecureTransport on macOS).**
@@ -259,7 +259,7 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
     < HTTP/1.1 200 OK
     ```
 
-3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html).
+3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html).
 
 [DONE]
 

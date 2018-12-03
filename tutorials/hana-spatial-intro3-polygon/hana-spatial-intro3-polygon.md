@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+- **Tutorials:** [Strings](https://developers.sap.com/tutorials/hana-spatial-intro2-string.html)
 
 ## Next Steps
-- [Spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+- [Spatial columns](https://developers.sap.com/tutorials/hana-spatial-intro4-columns.html)
 
 ## Details
 ### You will learn  

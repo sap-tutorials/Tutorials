@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Setup Node.js to connect to HXE](https://www.sap.com/developer/tutorials/hxe-nodejs-connect.html)
+ - [Setup Node.js to connect to HXE](https://developers.sap.com/tutorials/hxe-nodejs-connect.html)
 
 
 ## Details

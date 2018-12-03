@@ -7,7 +7,7 @@ time: 5
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Creating a Node.js Module](https://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
+ - **Tutorials:** [Creating a Node.js Module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 
 ## Details
 ### You will learn  

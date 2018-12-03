@@ -9,7 +9,7 @@ time: 20
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Installing and Configuring the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)
+ - **Tutorials:** [Installing and Configuring the Streaming Studio Plugin](https://developers.sap.com/tutorials/hxe-ua-streaming-plugin.html)
 
 ## Details
 ### You will learn  

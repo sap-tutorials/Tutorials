@@ -8,8 +8,8 @@ time: 25
 ---
 
 ## Prerequisites  
- - [Getting started with SAP HANA, XS Advanced Development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
- - [Import sample data from the SHINE model](https://www.sap.com/developer/tutorials/xsa-import-shine-data.html)
+ - [Getting started with SAP HANA, XS Advanced Development](https://developers.sap.com/group.hana-xsa-get-started.html)
+ - [Import sample data from the SHINE model](https://developers.sap.com/tutorials/xsa-import-shine-data.html)
 
 ## Details
 ### You will learn  

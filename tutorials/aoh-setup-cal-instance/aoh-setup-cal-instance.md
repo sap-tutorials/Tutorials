@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>abap-development, products>sap-hana ]
 
 
 ## Next Steps
-- [Connect to Eclipse and Create a Project](https://www.sap.com/developer/tutorials/abap-create-project.html)
+- [Connect to Eclipse and Create a Project](https://developers.sap.com/tutorials/abap-create-project.html)
 
 ## Details
 ### You will learn  

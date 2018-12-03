@@ -7,7 +7,7 @@ time: 20
 ---
 
 ## Prerequisites  
-  - [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
+  - [Configure Android Studio for mobile development](https://developers.sap.com/tutorials/hcpdo-android-sdk-setup.html)
   - Download and install the [GitHub Desktop Client](https://desktop.github.com/)
   - Android device or Android Emulator on your development machine
 
@@ -43,11 +43,11 @@ If you have the GitHub Desktop Client installed, you can click the **Open in Des
 
 [ACCORDION-BEGIN [Step 2: ](Replace generated files)]
 
-Since you have already completed the [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html) tutorial you already have the basic app framework in place. For these instructions, we will assume the path to your project is: `~/devel/Northwind_Android`. Please substitute your real path accordingly.
+Since you have already completed the [Configure Android Studio for mobile development](https://developers.sap.com/tutorials/hcpdo-android-sdk-setup.html) tutorial you already have the basic app framework in place. For these instructions, we will assume the path to your project is: `~/devel/Northwind_Android`. Please substitute your real path accordingly.
 
 What you will do next is replace the generated source files with those you just cloned from GitHub.
 
-Navigate to the project folder created in the [Create a basic native Android master-detail app](https://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html) tutorial, and move and rename the `~/devel/Northwind_Android/NWAndroid/app/src/main` directory back up the directory tree to `~/devel/Northwind_Android/NWAndroid/main_old`. This will preserve the generated files in case you want to refer to them later or do a `diff` to examine the changes made in the cloned source.
+Navigate to the project folder created in the [Create a basic native Android master-detail app](https://developers.sap.com/tutorials/hcpdo-basic-android-app.html) tutorial, and move and rename the `~/devel/Northwind_Android/NWAndroid/app/src/main` directory back up the directory tree to `~/devel/Northwind_Android/NWAndroid/main_old`. This will preserve the generated files in case you want to refer to them later or do a `diff` to examine the changes made in the cloned source.
 
 
 [ACCORDION-END]
@@ -413,7 +413,7 @@ List entities = feed.getEntities();
 
 [ACCORDION-BEGIN [Step 24: ](Populating the Product object)]
 
-In the `getProducts()` method, a `for` loop steps through each entity received from an OData request, and stores the value in the appropriate field in a `Product` object. As was done in the [Round the currency field using JavaScript](https://www.sap.com/developer/tutorials/hcp-webide-round-currency.html) tutorial for the SAPUI5 app, the unit price is rounded to two decimal places, and the `Product` object is added to the `ITEMS ArrayList`.
+In the `getProducts()` method, a `for` loop steps through each entity received from an OData request, and stores the value in the appropriate field in a `Product` object. As was done in the [Round the currency field using JavaScript](https://developers.sap.com/tutorials/hcp-webide-round-currency.html) tutorial for the SAPUI5 app, the unit price is rounded to two decimal places, and the `Product` object is added to the `ITEMS ArrayList`.
 
 The last method called in the `try` block is `storeData()`, which adds each `Product` object in the `ArrayList` to the `ITEM_MAP HashMap`. Note that storing the data in the `ArrayList` *and* the `HashMap` is not ideal for large datasets – the approach used in the Android Studio template was preserved for consistency.
 

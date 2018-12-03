@@ -270,8 +270,3 @@ mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-Da
 ```
 
 [ACCORDION-END]
-
----
-
-## Next Steps
- - **Tutorial:** [Connect to OData service on Cloud Foundry using SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-odata-service-cloud-foundry.html)

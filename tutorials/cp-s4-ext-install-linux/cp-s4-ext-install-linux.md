@@ -7,14 +7,14 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create a trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Create a trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
  -  **System Requirements:**
    * 64 bit Windows / Mac OS
    * 8 GB RAM (better: 16 GB RAM)
    * 100 GB available disk space
 
 ## Next Steps
- - [Install SAP NetWeaver in openSUSE](https://www.sap.com/developer/tutorials/cp-s4-ext-install-nw.html)
+ - [Install SAP NetWeaver in openSUSE](https://developers.sap.com/tutorials/cp-s4-ext-install-nw.html)
 
 ## Details
 ### You will learn
@@ -29,7 +29,7 @@ In this tutorial, you will install and set up a Linux operating system (openSUSE
 
 To enable also users working with Windows or Mac OS X operation system to install `SAP NetWeaver AS ABAP`, we describe here how to make use of `Oracle VM VirtualBox` (VirtualBox), where the ABAP system then is installed and run on a Linux Virtual Machine (VM).
 
-> **Hint:** If you have already a 64 bit Linux OS then you might be able to skip this tutorial and begin directly with [Install SAP NetWeaver in openSUSE](https://www.sap.com/developer/tutorials/cp-s4-ext-install-nw.html). However, please note that we haven't tested or documented this.
+> **Hint:** If you have already a 64 bit Linux OS then you might be able to skip this tutorial and begin directly with [Install SAP NetWeaver in openSUSE](https://developers.sap.com/tutorials/cp-s4-ext-install-nw.html). However, please note that we haven't tested or documented this.
 
 **System Requirements:**
 
@@ -382,4 +382,4 @@ Before you continue with the ABAP installation specific steps, you should enable
 
 [ACCORDION-END]
 
-You have now successfully completed this tutorial and set up openSUSE in a VirtualBox VM. You can now proceed with installing a SAP NetWeaver system in this VM, as described in this next tutorial: [Install SAP NetWeaver in openSUSE](https://www.sap.com/developer/tutorials/cp-s4-ext-install-nw.html)
+You have now successfully completed this tutorial and set up openSUSE in a VirtualBox VM. You can now proceed with installing a SAP NetWeaver system in this VM, as described in this next tutorial: [Install SAP NetWeaver in openSUSE](https://developers.sap.com/tutorials/cp-s4-ext-install-nw.html)

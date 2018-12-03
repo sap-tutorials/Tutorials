@@ -145,7 +145,7 @@ Field Name  |Entry Value
 ----------- | -------------
 Name        | `yMKT_Credential`
 Description | `Hybris Marketing User`
-User        |  The user created in the [Set up a Hybris Marketing Cloud system](https://www.sap.com/developer/tutorials/cpi-sentiment-analysis-s4.html) tutorial]  
+User        |  The user created in the [Set up a Hybris Marketing Cloud system](https://developers.sap.com/tutorials/cpi-sentiment-analysis-s4.html) tutorial]  
 Password    | Password of your technical user
 
 Choose **OK**.

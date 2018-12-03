@@ -9,11 +9,11 @@ time: 10
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Get an SAP HANA, express edition, instance with XS Advanced applications](https://www.sap.com/developer/topics/sap-hana-express.html)
+ - **Tutorials:** [Get an SAP HANA, express edition, instance with XS Advanced applications](https://developers.sap.com/topics/sap-hana-express.html)
 
 
 ## Next Steps
- - [Get started with SAP HANA, XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
+ - [Get started with SAP HANA, XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
 
 
 ## Details
@@ -140,5 +140,3 @@ Use `F8` or the green **run** icon to execute the query. Enter the result of the
 [VALIDATE_1]
 [ACCORDION-END]
 
-## Next Steps
-- [Get started with SAP HANA, XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)

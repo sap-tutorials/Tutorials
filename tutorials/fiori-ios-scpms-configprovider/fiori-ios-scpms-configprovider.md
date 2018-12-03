@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, operating-system>ios, products>sap-cloud-platfor
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-scpms-saml-oauth.html)
+ - **Tutorials:** [SAML and OAuth 2 authentication](https://developers.sap.com/tutorials/fiori-ios-scpms-saml-oauth.html)
 
 
 ## Details

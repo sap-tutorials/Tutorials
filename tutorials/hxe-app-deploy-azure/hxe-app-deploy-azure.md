@@ -10,11 +10,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
  - You have a working application to connect to SAP HANA, Express Edition.
  - You have a Azure Account and/or have registered for the free trial.
  - You have a project created on the AWS and billing is enabled.
- - **Tutorials:**  [Create a new project using the Azure App Service](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-overview) and [SAP HANA, express edition, in Azure](https://www.sap.com/developer/tutorials/hxe-azure-open-suse.html)
+ - **Tutorials:**  [Create a new project using the Azure App Service](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-overview) and [SAP HANA, express edition, in Azure](https://developers.sap.com/tutorials/hxe-azure-open-suse.html)
 
 
 ## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page
+ - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
 
 ## Details
 ### You will learn  

@@ -7,10 +7,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Add labels and a new field to your app](https://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
+- **Tutorials:** [Add labels and a new field to your app](https://developers.sap.com/tutorials/hcp-webide-add-labels-field.html)
 
 ## Next Steps
-- [Insert a currency symbol for display](https://www.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
+- [Insert a currency symbol for display](https://developers.sap.com/tutorials/hcp-webide-insert-currency-symbol.html)
 
 ## Details
 
@@ -98,7 +98,7 @@ Save your edits, click on `index.html` and click the **Run** button to test this
 
 [ACCORDION-BEGIN [Step 5: ](Clear the cache)]
 
-If the numbers are not rounded, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](https://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
+If the numbers are not rounded, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](https://developers.sap.com/tutorials/hcp-webide-add-labels-field.html) tutorial.
 
 
 [ACCORDION-END]

@@ -42,7 +42,7 @@ Now scroll down to find this OData service node:
 
 `EPM_REF_APPS_SHOP_SRV`
 
-This is the OData service you will explore. It is an EPM based service for a reference app called "Shop", which explains most of the node's name. The last part, `SRV`, short for "service", is common for OData services served from ABAP systems. This is similar to the convention you may have noticed with the Northwind service in the tutorial [Learn about OData fundamentals](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html) where the end part of the OData service name was `svc`.
+This is the OData service you will explore. It is an EPM based service for a reference app called "Shop", which explains most of the node's name. The last part, `SRV`, short for "service", is common for OData services served from ABAP systems. This is similar to the convention you may have noticed with the Northwind service in the tutorial [Learn about OData fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html) where the end part of the OData service name was `svc`.
 
 Use the information in the node hierarchy that leads down to the `EPM_REF_APPS_SHOP_SRV` node to form the part of the OData service URL that will be relative to the SAP Gateway demo system base URL:
 

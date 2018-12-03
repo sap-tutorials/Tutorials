@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide, pro
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Hide view element from a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-hide-element.html)
+- **Tutorials:** [Hide view element from a standard SAP Fiori app](https://developers.sap.com/tutorials/hcp-fiori-cloud-edition-hide-element.html)
 
 ## Next Steps
-- [Add extended app to the SAP Fiori Launchpad](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Add extended app to the SAP Fiori Launchpad](https://developers.sap.com/tutorials/hcp-fiori-cloud-edition-launchpad.html)
 
 ## Details
 ### You will learn  
@@ -27,7 +27,7 @@ In this tutorial you will learn how to extend the controller of a standard SAP F
 
 [ACCORDION-BEGIN [Step 1: ](Log into the SAP Fiori Demo Cloud Edition)]
 
-If you've already worked through the tutorial **Hide view element from a standard SAP Fiori app** you can skip the steps 1 to 6. Please make sure that you have worked through the tutorial [Getting started with the SAP Fiori, Demo Cloud Edition](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html). Log into the SAP Fiori Demo Cloud Edition and locate the group **Human Capital Management**. Click on the **My Leave Requests** tile.
+If you've already worked through the tutorial **Hide view element from a standard SAP Fiori app** you can skip the steps 1 to 6. Please make sure that you have worked through the tutorial [Getting started with the SAP Fiori, Demo Cloud Edition](https://developers.sap.com/tutorials/hcp-fiori-cloud-edition-start.html). Log into the SAP Fiori Demo Cloud Edition and locate the group **Human Capital Management**. Click on the **My Leave Requests** tile.
 
 ![SAP Fiori launchpad group Human Capital Management](Launchpag-My-Leave-Requests.png)
 

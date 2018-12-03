@@ -8,11 +8,11 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
 ## Prerequisites
  - **Proficiency:** Beginner
  - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed.
- - **Tutorial**: [Getting Started with SAP HANA Dynamic Tiering](https://www.sap.com/developer/groups/dt-get-started.html) to set up your extended storage.
+ - **Tutorial**: [Getting Started with SAP HANA Dynamic Tiering](https://developers.sap.com/group.dt-get-started.html) to set up your extended storage.
 - **Credentials:** Have access to "`<SID>adm`" for a SSH session on the HANA hosts.
 
 ## Next Steps
- - **Tutorials** [Creating Database Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part2.html)
+ - **Tutorials** [Creating Database Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part2.html)
 
 ## Details
 ### You will learn
@@ -32,7 +32,7 @@ The overall HANA system including Dynamic Tiering is a single database system wh
 - Cannot create a data backup while one host is down – if a host is entirely down, and there is no stand by, HANA does not allow any data backup. Eg: if your Dynamic Tiering host is down, HANA will not allow you to create any data backup.
 - The SAP HANA System is installed in Multiple-Container mode, meaning that it is a Multi-Tenant Database. A Multi-Tenant Database contains exactly one **System** database, and can have multiple **Tenant** databases.
 - Backup and recoveries performed on the **Tenant** database can only be done through its **System** database.
-- Your user should have the following system privileges:(Refer to the [Create a New User and Assign Permissions](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html)) lesson to view how the privileges are assigned.)
+- Your user should have the following system privileges:(Refer to the [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html)) lesson to view how the privileges are assigned.)
     - BACKUP ADMIN and BACKUP OPERATOR
     - CATALOG READ
 
@@ -55,7 +55,7 @@ To view the currently configured directory paths for the HANA and Dynamic Tierin
 
 
 [ACCORDION-BEGIN [Step 3: ](Backup Permissions)]
-You will need to assign the TPCH user the required roles and permissions to create a backup. If you need a quick refresh on how to assign permissions, refer to [Create a New User and Assign Permissions](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html). Under the **System Privilege** tab, grant the following permissions to access the backup editor and to execute backup properly:
+You will need to assign the TPCH user the required roles and permissions to create a backup. If you need a quick refresh on how to assign permissions, refer to [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html). Under the **System Privilege** tab, grant the following permissions to access the backup editor and to execute backup properly:
 
   - `BACKUP ADMIN`
   - `BACKUP OPERATOR`

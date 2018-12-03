@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, topic>sapui5, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
+- **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](https://developers.sap.com/tutorials/hcp-fiori-cloud-edition-start.html)
 
 ## Next Steps
-- [Hide view element from a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-hide-element.html)
+- [Hide view element from a standard SAP Fiori app](https://developers.sap.com/tutorials/hcp-fiori-cloud-edition-hide-element.html)
 
 ## Details
 ### You will learn  

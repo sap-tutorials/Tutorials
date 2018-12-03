@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
-  - [Enable the SAP Translation Hub service](https://www.sap.com/developer/tutorials/sth-enable.html)
+  - [Enable the SAP Translation Hub service](https://developers.sap.com/tutorials/sth-enable.html)
   - [Install and configure Eclipse environment](https://github.com/SAP/cloud-espm-v2#1-quick-start-guide) Complete the **1. Quick start guide** section.
 
 ## Details

@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Enable SAP Cloud Platform Internet of Things for Cloud Foundry](https://www.sap.com/developer/tutorials/iot-cf-enable-iot-service.html).
+ - **Tutorials:** You have completed [Enable SAP Cloud Platform Internet of Things for Cloud Foundry](https://developers.sap.com/tutorials/iot-cf-enable-iot-service.html).
 
 
 ## Details

@@ -8,9 +8,9 @@ tags: [  tutorial>beginner, topic>abap-development ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have a running ABAP application server (AS). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://www.sap.com/developer/trials-downloads.html)
- - **Tutorial**: [Create an ABAP project](https://www.sap.com/developer/tutorials/abap-create-project.html)
- - **Tutorial (Recommended)**: [Exploring the ABAP Dictionary](https://www.sap.com/developer/tutorials/abap-dev-learn-ddic.html)
+ - You have a running ABAP application server (AS). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://developers.sap.com/trials-downloads.html)
+ - **Tutorial**: [Create an ABAP project](https://developers.sap.com/tutorials/abap-create-project.html)
+ - **Tutorial (Recommended)**: [Exploring the ABAP Dictionary](https://developers.sap.com/tutorials/abap-dev-learn-ddic.html)
 
 
 ## Details
@@ -184,7 +184,7 @@ In the text area below, enter the following text exactly, then click **Validate*
 [ACCORDION-END]
 
 And that's it. You should now be familiar with the most important ABAP Repository objects and the relationship between them.
-You can now work through the tutorial group [Get started with ABAP development](https://www.sap.com/developer/groups/abap-basic-app.html), where you will learn how to create:
+You can now work through the tutorial group [Get started with ABAP development](https://developers.sap.com/group.abap-basic-app.html), where you will learn how to create:
 
   1.	An ABAP application
   2.	Data Dictionary structure

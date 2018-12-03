@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Download and connect SQL client ](https://www.sap.com/developer/tutorials/hxe-cj1-download-sql-client.html)
+ - [Download and connect SQL client ](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html)
 
 
 ## Details

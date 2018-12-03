@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Install dependencies for SAP HANA Express Edition in openSUSE](https://www.sap.com/developer/tutorials/hxe-azure-opensuse-dependencies.html)
+ - [Install dependencies for SAP HANA Express Edition in openSUSE](https://developers.sap.com/tutorials/hxe-azure-opensuse-dependencies.html)
 
 
 ## Details

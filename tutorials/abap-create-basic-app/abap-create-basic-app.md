@@ -7,7 +7,7 @@ time: 10
 ---
 
 ## Prerequisites  
-[Create an ABAP project in Eclipse](https://www.sap.com/developer/tutorials/abap-create-project.html)
+[Create an ABAP project in Eclipse](https://developers.sap.com/tutorials/abap-create-project.html)
 
 ## Details
 ### You will learn  

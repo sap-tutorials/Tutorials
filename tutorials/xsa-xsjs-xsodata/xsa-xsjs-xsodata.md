@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-
 ---
 ## Prerequisites  
  - **Proficiency:** beginner
- - **Tutorials:** [SAP HANA XS Advanced, Creating an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - **Tutorials:** [SAP HANA XS Advanced, Creating an HDI Module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
 
 ## Next Steps
- - [Create a simple OData service](https://www.sap.com/developer/tutorials/xsa-xsodata.html)
+ - [Create a simple OData service](https://developers.sap.com/tutorials/xsa-xsodata.html)
 
 ## Details
 ### You will learn  
@@ -63,7 +63,7 @@ The complete section for the web module should now look like this:
 ![MTA module updated](3_2.png)
 
 > ### What is this configuration for?
-> The `approuter` is a module that serves as a single point of entry to a Multi-Target Application. In this case, the [web module](https://www.sap.com/developer/tutorials/xsa-html5-module.html) contains the call to this module in the `package.json` file. The `approuter ` will use routes to determine the destination for a request coming from, for example, a web browser. The configuration you have just entered is naming the Node.js destination as `core-backend`, URL is picking up the value from the `provides` URL, which is in turn taking it from the reserved environment variable, `default-url`.
+> The `approuter` is a module that serves as a single point of entry to a Multi-Target Application. In this case, the [web module](https://developers.sap.com/tutorials/xsa-html5-module.html) contains the call to this module in the `package.json` file. The `approuter ` will use routes to determine the destination for a request coming from, for example, a web browser. The configuration you have just entered is naming the Node.js destination as `core-backend`, URL is picking up the value from the `provides` URL, which is in turn taking it from the reserved environment variable, `default-url`.
 >
 > Later at deploy, the destination routing builds a dependency and navigation ability between the two services without ever having to hard code the URLs or ports. They are assigned at deploy time and all references are automatically updated.
 
