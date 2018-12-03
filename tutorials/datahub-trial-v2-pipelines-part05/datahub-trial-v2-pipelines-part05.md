@@ -193,6 +193,8 @@ This will display all the sensor data that we have attached as a `datasource` to
 
 [DONE]
 
+[VALIDATE_1]
+
 [ACCORDION-END]
 
 ---

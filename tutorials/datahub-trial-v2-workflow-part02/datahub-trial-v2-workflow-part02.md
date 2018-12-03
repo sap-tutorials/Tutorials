@@ -212,6 +212,3 @@ You will notice that the table has records per country for events Humidity and T
 
 
 ---
-
-## Next Steps
-[Create Workflow (part 3): Build a Workflow ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part03.html)

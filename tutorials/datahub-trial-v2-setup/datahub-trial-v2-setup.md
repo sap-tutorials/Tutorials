@@ -56,11 +56,12 @@ Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password 
 
 ![picture_01](./datahub-trial-v2-setup_01.png)  
 
+In the SAP Data Hub Launchpad, find and open the link **Modeler**. Copy the URL from the webpage address bar and paste it in the frame below and click on **Validate**.
+
+[VALIDATE_1]
+
 [DONE]
 
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Navigate around SAP Data Hub, trial edition 2.3](https://developers.sap.com/germany/tutorials/datahub-trial-v2-navigation.html)

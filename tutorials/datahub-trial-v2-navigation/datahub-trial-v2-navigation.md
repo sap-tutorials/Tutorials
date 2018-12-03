@@ -47,7 +47,7 @@ Check the below screenshot and answer the question based on the same :
 
 ![picture_03](./datahub-trial-v2-navigation_03.png)
 
-[VALIDATE_2]
+[VALIDATE_1]
 
 >Hint : You can hover over the button icon to know more about it.
 
@@ -57,10 +57,6 @@ Check the below screenshot and answer the question based on the same :
 The SAP Vora Tools (direct link: `https://sapdatahubtrial/app/vora-tools`) provide you with a data modeling environment for creating and maintaining tables and views.
 
 ![picture_04](./datahub-trial-v2-navigation_04.png)  
-
-[VALIDATE_3]
-
->Hint : You can check the welcome page of SAP Vora Tools to find the answer
 
 [ACCORDION-END]
 

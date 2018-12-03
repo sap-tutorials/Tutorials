@@ -32,7 +32,6 @@ Click **Save (1)**. Then enter a **Name** `(test.myFirstPipeline)` and **Descrip
 
 ![picture02](datahub-trial-v2-pipelines-part01-2.png)
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -58,7 +57,6 @@ The sample data represents sensors for humidity, temperature etc.
 
 Close the tab for the JavaScript snippet.
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -71,7 +69,6 @@ Add a **Terminal** operator to the pipeline by drag & drop (you find this also i
 
 Afterwards click **Save (1)**.
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -87,11 +84,7 @@ When the **Status (2)** tab indicates that the pipeline is running, use the cont
 
 Stop the pipeline by clicking **Stop** (you find it next to the **Run** button).
 
-[DONE]
 
 [ACCORDION-END]
 
 ---
-
-## Next Steps
- - [Use a message broker](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part02.html)

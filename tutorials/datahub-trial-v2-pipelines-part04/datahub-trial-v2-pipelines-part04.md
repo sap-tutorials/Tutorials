@@ -104,9 +104,8 @@ You can open any of the generated file by clicking on the filename which opens i
 
 [DONE]
 
+[VALIDATE_1]
+
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-- [Store sensor data in SAP Vora](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part05.html)

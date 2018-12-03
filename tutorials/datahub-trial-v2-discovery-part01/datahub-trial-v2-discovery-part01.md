@@ -85,6 +85,3 @@ Next also profile the content of the two other files and afterwards take a look 
 
 [ACCORDION-END]
 ---
-
-## Next Steps
-[Explore data in SAP Vora](https://developers.sap.com/germany/tutorials/datahub-trial-v2-discovery-part02.html)
