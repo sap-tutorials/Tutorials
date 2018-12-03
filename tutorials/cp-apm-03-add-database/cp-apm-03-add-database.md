@@ -24,15 +24,21 @@ Right-click the **`db`** module and choose **Build**.
 
 Wait for the notification that says the build was successful.
 
-> **Especially for Developer Garage attendees at SAP TechEd Bangalore** - If the build is unsuccessful, check the console log for errors. Errors like this: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows ... 
+**Especially for Developer Garage attendees at SAP TechEd Bangalore**
 
-> First, ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**. Then, expand the folder `db/src/` to find the file `.hdiconfig`.
+If the build is unsuccessful, check the console log for errors. Errors like this: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
 
->![finding the .hdiconfig file](hdiconfig.png)
+1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
 
-> Next, open the file and check the value of the `plugin_version` property at the top of the file. It must to be `2.0.2.0`, so change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (i.e. just change the value inside the double quotes).
+1. Expand the folder `db/src/` to find the file `.hdiconfig`.
 
-> Finally, **save** the file, and re-try the build.
+    ![finding the .hdiconfig file](hdiconfig.png)
+
+1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
+
+1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
+
+1. **Save** the file, and re-try the build.
 
 [DONE]
 
@@ -50,7 +56,7 @@ To view the generated deployment artifacts, SAP HANA database explorer must be e
 
 1. Choose **Save**. You may be prompted to refresh SAP Web IDE. If you are, do so.
 
-1. While still in the Preferences, choose the Database Explorer item and make sure the Cloud Foundry region is set to the one you are using for this mission.
+1. While still in **Preferences**, choose **Database Explorer** and make sure the **Cloud Foundry Region** is set to the one you are using for this mission.
 
     ![database explorer preferences](database-explorer-preferences.png)
 

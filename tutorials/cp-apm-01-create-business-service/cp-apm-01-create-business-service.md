@@ -33,7 +33,7 @@ time: 10
 
 1. In the **Template Customization** tab leave the default values.
 
-1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the "Include sample files in project" checkbox is checked as shown.
+1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the **Include sample files in project** checkbox is checked.
 
     ![Complete the project details](project-details.png)
 

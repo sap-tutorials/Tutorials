@@ -29,7 +29,7 @@ time: 30
 1. Configure the NPM registry by executing the following command:
 
     ```bash
-    npm set @sap:registry https://npm.sap.com
+    npm set @sap:registry=https://npm.sap.com
     ```
 
 2. Install the CDS command-line tools by executing the following command:

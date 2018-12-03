@@ -111,7 +111,9 @@ time: 10
 
 [ACCORDION-BEGIN [Step 5: ](Re-open your app)]
 
-1. Open the app from the SAP Fiori Launchpad and choose **Settings** to add the columns you want to see.
+1. Open the app from the SAP Fiori Launchpad.
+
+1. Choose **Settings** to add the columns you want to see.
 
 2. Choose **OK**.
 
