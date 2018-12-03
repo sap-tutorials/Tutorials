@@ -42,5 +42,7 @@ Using the highlighted button **(2)**, you can fetch more information regarding a
 
 You can directly jump to the modeler and open the source graph for this instance. Graphs and processes can also be filtered using date and time range.
 
+[VALIDATE_1]
+
 [ACCORDION-END]
 ---

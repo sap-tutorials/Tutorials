@@ -1,7 +1,6 @@
 ---
 title: Run example pipelines in SAP Data Hub, developer edition 2.3
 description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition 2.3.
-auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -28,7 +27,6 @@ The modelling environment consists of four main parts:
  - **Configuration / documentation (3)**: You use this part of the modelling environment to configure pipelines as well as operators inside pipelines and to access the documentation. The two buttons on the right help you to switch between configuration and documentation.
  - **Status messages, logs, traces (4)**: You use this part of the modelling environment to monitor the execution of pipelines.
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -39,7 +37,6 @@ Open the documentation of the pipeline (use the context menu of the pipeline ins
 
 Very often the example pipelines run "out of the box". Sometimes you have to configure the examples first (as described in the documentation).
 
-[DONE]
 
 [ACCORDION-END]
 

@@ -21,7 +21,7 @@ Please note that this tutorial is similar to the `Bundle data (via JavaScript)` 
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`)
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
 Remove the connection between the **Kafka Consumer 2** operator and the **Write File** operator.
 
@@ -104,7 +104,8 @@ You can open any of the generated file by clicking on the filename which opens i
 
 [DONE]
 
+[VALIDATE_1]
+
 [ACCORDION-END]
 
----
 

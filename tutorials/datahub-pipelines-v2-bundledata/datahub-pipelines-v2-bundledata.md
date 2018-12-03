@@ -1,7 +1,6 @@
 ---
 title: Bundle data (via JavaScript) SAP Data Hub, developer edition 2.3
 description: Bundle sensor data before storing it in HDFS by using SAP Data Hub, developer edition 2.3.
-auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -27,8 +26,6 @@ Add a **`ToString` Converter** operator to the pipeline by drag & drop. Also add
 Connect the `message` out port of the **`Kafka Consumer2`** operator to the `ininterface` in port of the **`ToString` Converter** operator. Connect the `outstring` out port of the **`ToString` Converter** operator to the `input` in port of the **JavaScript Operator**. Connect the `output` out port of the **JavaScript Operator** to the `inFile` in port of the **Write File** operator.
 
 ![picture_01](./datahub-pipelines-v2-bundledata_01.png)  
-
-[DONE]
 
 [ACCORDION-END]
 
@@ -60,8 +57,6 @@ function onInput(ctx,s) {
 ```
 
 **Close** the window with the JavaScript snippet. Afterwards press the **Save** button to save the graph.
-
-[DONE]
 
 [ACCORDION-END]
 
@@ -96,8 +91,6 @@ Open `http://localhost:50070` and display the `/tmp/hdfsManager` directory. You 
 
 Stop the pipeline by pressing the **Stop** button.
 
-[DONE]
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Check the created files in HDFS)]
@@ -111,8 +104,6 @@ hdfs dfs -cat /tmp/hdfsManager/test_1.txt
 ![picture_03](./datahub-pipelines-v2-bundledata_03.png)  
 
 **Attention:** You might notice that the first line of file `test_1.txt` does not necessarily have the counter `0` (that is the first column of the file and in the above screenshot it has the counter `123`) as one might expect when looking at the JavaScript snippet which is executed by the **Data Generator**. The reason for this can be that the **Kafka Producer** had sent a message to Kafka, but then you most likely stopped the pipeline before the **Kafka Consumer** consumed the message. When you afterwards restarted the pipeline, the **Kafka Consumer** first of all processed this "previous" message. For the sake of this tutorial you do not have to bother about this behavior.
-
-[DONE]
 
 [ACCORDION-END]
 
