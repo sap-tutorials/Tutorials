@@ -4,14 +4,14 @@ description: Find your way around SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+time: 15
 ---
 
 ## Details
 ### You will learn  
-During this tutorial, you will learn how to find your way around SAP Data Hub, trial edition. You will also learn how to troubleshoot problems.
+  - How to find your way around SAP Data Hub, trial edition
+  - How to troubleshoot problems
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -49,9 +49,9 @@ Check the below screenshot and answer the question based on the same :
 
 [VALIDATE_1]
 
->Hint : You can hover over the button icon to know more about it.
+>**Hint:** You can hover over the button icon to know more about it.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -59,6 +59,8 @@ Check the below screenshot and answer the question based on the same :
 The SAP Vora Tools (direct link: `https://sapdatahubtrial/app/vora-tools`) provide you with a data modeling environment for creating and maintaining tables and views.
 
 ![picture_04](./datahub-trial-v2-navigation_04.png)  
+
+[DONE]
 
 [ACCORDION-END]
 
