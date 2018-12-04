@@ -1,6 +1,6 @@
 ---
-title: Test Tutorial
-description: From GitHub.
+title: Title of test -- LOCAL LOCAL (and more local)
+description: asj;kasdjd;k
 time: 20
 tags: [tutorial>beginner, operating-system>ios  ]
 primary_tag: operating-system>ios
@@ -10,6 +10,7 @@ primary_tag: operating-system>ios
  - Prerequisite 1rtyrtyrt
  - Prerequisite 2
  - Add test from local
+ - Add local prereq
 
 ## Details
 ### You will learn
