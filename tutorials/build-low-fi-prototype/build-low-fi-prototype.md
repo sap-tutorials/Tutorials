@@ -4,17 +4,14 @@ description: Use SAP Build to turn your app idea sketches into a low-fidelity pr
 auto_validation: true
 primary_tag: products>sap-build
 tags: [  tutorial>beginner, products>sap-build ]
+time: 15
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
 SAP Build enables you to take your sketches from a piece of paper to a functioning prototype. Learn how to upload your sketches, add navigation and hot zones, and share your low fidelity prototype.
 
-### Time to Complete
-**15 Min**
 
 ---
 
