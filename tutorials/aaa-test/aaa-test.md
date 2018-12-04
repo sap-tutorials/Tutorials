@@ -1,5 +1,5 @@
 ---
-title: Title of test -- LOCAL LOCAL (and more local)
+title: Title of test -- LOCAL LOCAL LOCAL
 description: asj;kasdjd;k
 time: 20
 tags: [tutorial>beginner, operating-system>ios  ]
@@ -7,7 +7,7 @@ primary_tag: operating-system>ios
 ---
 
 ## Prerequisites
- - Prerequisite 1rtyrtyrt
+ - Prerequisite 1rtyrtyrt cvbcvbcvbcbcvbcv cbcvb
  - Prerequisite 2
  - Add test from local
  - Add local prereq
@@ -15,9 +15,11 @@ primary_tag: operating-system>ios
 ## Details
 ### You will learn
   - How to do something
-  - Why this technology is helpful
+  - Why this technology is helpfuldssf
 
 Add additional information: Background information, longer prerequisites
+
+This is local stuff
 
 ---
 
@@ -39,7 +41,7 @@ Add additional information: Background information, longer prerequisites
 [ACCORDION-BEGIN [Step 3: ](XXXXX)]
 
 
-
+xzxzxzzxzxxzzxxz
 [DONE]
 [ACCORDION-END]
 
