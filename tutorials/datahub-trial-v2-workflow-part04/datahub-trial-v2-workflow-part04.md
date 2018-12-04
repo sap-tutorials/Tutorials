@@ -4,14 +4,13 @@ description: Monitor task execution using SAP Data Hub, trial edition 2.3.
 primary_tag: products>sap-data-hub
 auto_validation: false
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+time: 15
 ---
 
 ## Details
 ### You will learn  
-During this tutorial, you will build get to know how to monitor the execution of tasks.
+  - How to build get to know how to monitor the execution of tasks
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -28,6 +27,8 @@ Navigate to **Monitoring** by clicking on the highlighted tile in the above scre
 The **Monitoring Dashboard** is displayed. From here you can see the status of executed tasks, data pipelines. This page gives you a consolidated view of the executions in the system.
 
 ![picture_02](./datahub-trial-v2-workflow-part04_02.png)
+
+[DONE]
 
 [ACCORDION-END]
 
