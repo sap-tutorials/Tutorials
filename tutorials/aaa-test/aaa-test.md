@@ -1,6 +1,6 @@
 ---
-title: Title of test -- LOCAL LOCAL (and more local)
-description: asj;kasdjd;k
+title: Test Tutorial
+description: From GitHub.
 time: 20
 tags: [tutorial>beginner, operating-system>ios  ]
 primary_tag: operating-system>ios
