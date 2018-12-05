@@ -79,7 +79,7 @@ The **SAP HANA APL** function that you will be using is:
 
 The ***Forecast*** function provides multiple configuration options like:
 
-Name                          | Description
+Name                         | Description
 -----------------------------|-----------------------------
 **Time Point Column Name**   | Name of the column in the dataset that contains the time points of the time series
 **Horizon**                  | Number of forecast time points
