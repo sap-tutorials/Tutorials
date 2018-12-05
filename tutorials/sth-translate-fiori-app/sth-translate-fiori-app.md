@@ -3,22 +3,17 @@ title: Translate an SAP Fiori app
 description: Use SAP Translation Hub to translate your SAP Fiori app.
 primary_tag: products>sap-translation-hub
 tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
+time: 10
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
-  - **Tutorials:** [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+  - [Deploy an SAP Fiori app to SAP Cloud Platform](https://developers.sap.com/tutorials/sth-deploy-fiori-app.html)
 
 
 ## Details
 ### You will learn  
-You'll learn how to translate an SAP Fiori app using SAP Translation Hub.
+  - How to translate an SAP Fiori app using SAP Translation Hub
 
-### Time to Complete
-**10 Min**.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open overview screen of cockpit)]
@@ -122,7 +117,7 @@ Enter your Git password and choose **Submit**.
 
 To see the translations in SAP Web IDE, you need to pull the translations from the Git repository.
 
-In SAP Web IDE (see where you left off in [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)), select the root folder (`sample.ApprovePurchaseOrders`) of your project.
+In SAP Web IDE (see where you left off in [Deploy an SAP Fiori app to SAP Cloud Platform](https://developers.sap.com/tutorials/sth-deploy-fiori-app.html)), select the root folder (`sample.ApprovePurchaseOrders`) of your project.
 
 Open the Git pane by choosing the icon under the magnifying glass at the right of the screen. Confirm that `sample.ApprovePurchaseOrders` appears under **Repository** and then choose **Pull**.
 
@@ -161,6 +156,3 @@ Now open the **Approve Purchase Orders** app. The example below shows the app in
 
 [ACCORDION-END]
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

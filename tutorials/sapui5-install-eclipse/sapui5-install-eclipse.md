@@ -80,6 +80,3 @@ Congratulations: You have now installed the SAPUI5 Library and are ready to star
  - [Eclipse Downloads](http://www.eclipse.org/downloads)
  - (Tools) [Installing the SDK](https://tools.hana.ondemand.com)
 
-
-## Next Steps
- - [SAPUI5 Extending a simple control](https://www.sap.com/developer/tutorials/sapui5-extending-simple-control.html)

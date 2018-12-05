@@ -6,15 +6,15 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>s
 ---
 
 ## Prerequisites  
- - [Create a New Plugin Project](https://www.sap.com/developer/tutorials/webide-sdk-helloworld1.html)
+ - [Create a New Plugin Project](https://developers.sap.com/tutorials/webide-sdk-helloworld1.html)
  or
- - [Change Code in a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)
+ - [Change Code in a Plugin](https://developers.sap.com/tutorials/webide-sdk-helloworld2.html)
  or
  - Create a working plugin.
 
 
 ## Next Steps
- - [Creating a Destination for Consuming a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld4.html)
+ - [Creating a Destination for Consuming a Plugin](https://developers.sap.com/tutorials/webide-sdk-helloworld4.html)
 
 ## Details
 ### You will learn  
@@ -49,5 +49,3 @@ The application URL is shown under **Active Version**. Save this link for later 
 [ACCORDION-END]
 
 
-## Next Steps
-- [Creating a Destination for Consuming a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld4.html)

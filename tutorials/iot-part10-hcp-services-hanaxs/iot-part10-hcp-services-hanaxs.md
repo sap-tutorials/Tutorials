@@ -8,10 +8,10 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](https://developers.sap.com/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](https://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](https://developers.sap.com/tutorials/iot-part12-hcp-services-xsgraph.html)
 
 
 
@@ -96,7 +96,7 @@ Now start (or restart) the `iotmms` Java application.
 
 [ACCORDION-BEGIN [Step 8: ](View your tables)] ￼
 
-With previous step finished you should be able to go back to your MDC instance and select the "Catalog" under the menu options along the top of the page and see your tables now listed under "SYSTEM" schema - if not return to the IoT Services and send another test message. ([see tutorial](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)). So provided you received the "200" status in your messages then you should now have data in your tables and can begin working on your XS application.
+With previous step finished you should be able to go back to your MDC instance and select the "Catalog" under the menu options along the top of the page and see your tables now listed under "SYSTEM" schema - if not return to the IoT Services and send another test message. ([see tutorial](https://developers.sap.com/tutorials/iot-part7-add-device.html)). So provided you received the "200" status in your messages then you should now have data in your tables and can begin working on your XS application.
 
 ![Tables](9.png)
 
@@ -163,7 +163,3 @@ This is not the only way to do, but that is a matter for you to explore and disc
 
 [ACCORDION-END]
 
-￼
-
-## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](https://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)

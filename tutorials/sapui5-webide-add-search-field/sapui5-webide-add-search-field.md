@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **How-To** [Start this tutorial series](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 6: [Upgrade the Detail view](https://www.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
+- **How-To** [Start this tutorial series](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 6: [Upgrade the Detail view](https://developers.sap.com/tutorials/sapui5-webide-upgrade-detail-view.html)
 
 ## Next Steps
-- The next tutorial in the series is Part 10: [Add an Order Activity to the form](https://www.sap.com/developer/tutorials/sapui5-webide-add-order-activity.html)
+- The next tutorial in the series is Part 10: [Add an Order Activity to the form](https://developers.sap.com/tutorials/sapui5-webide-add-order-activity.html)
 
 ## Details
 ### You will learn  
@@ -21,7 +21,7 @@ You will add a `<SearchField>` control to the initial page of the application. W
 **10 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/view/View1.view.xml` file, and add the following code to the `<Page>` element:
@@ -60,9 +60,6 @@ You will add a `<SearchField>` control to the initial page of the application. W
     ![Search field is displayed](3.png)
 
 
-## Next Steps
-- The next tutorial in the series is Part 10: [Add an Order Activity to the form](https://www.sap.com/developer/tutorials/sapui5-webide-add-order-activity.html)
-
-## Additional Information
+### Additional Information
 - [`<SearchField>` element](https://sapui5.hana.ondemand.com/#/api/sap.m.SearchField)
 - [Model filter](https://sapui5.hana.ondemand.com/#/api/sap.ui.model.Filter)

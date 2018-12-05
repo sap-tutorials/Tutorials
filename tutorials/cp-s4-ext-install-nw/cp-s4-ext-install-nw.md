@@ -7,11 +7,11 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 
 ## Prerequisites
 -   **Proficiency:** Intermediate
--   **Tutorials:** [Install openSUSE in VirtualBox Virtual Machine](https://www.sap.com/developer/tutorials/cp-s4-ext-install-linux.html)
+-   **Tutorials:** [Install openSUSE in VirtualBox Virtual Machine](https://developers.sap.com/tutorials/cp-s4-ext-install-linux.html)
 
 ## Next Steps
--   [Tutorial Group: Create custom UI extension for Business Suite app on Cloud Platform](https://www.sap.com/developer/groups/cp-s4-ext-ui.html)
--   [Tutorial Group: Create SAP S/4HANA data mart on SAP Cloud Platform](https://www.sap.com/developer/groups/cp-s4-ext-datamart.html)
+-   [Tutorial Group: Create custom UI extension for Business Suite app on Cloud Platform](https://developers.sap.com/group.cp-s4-ext-ui.html)
+-   [Tutorial Group: Create SAP S/4HANA data mart on SAP Cloud Platform](https://developers.sap.com/group.cp-s4-ext-datamart.html)
 
 ## Details
 ### You will learn

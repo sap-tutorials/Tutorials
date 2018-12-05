@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streamin
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a Streaming project with SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
+ - **Tutorials:** [Create a Streaming project with SAP HANA Streaming Analytics](https://developers.sap.com/tutorials/sds-create-streaming-project.html)
 
 
 ## Next Steps
- - [Run and Test a Streaming Project](https://www.sap.com/developer/tutorials/sds-run-test.html)
+ - [Run and Test a Streaming Project](https://developers.sap.com/tutorials/sds-run-test.html)
 
 ## Details
 ### You will learn  

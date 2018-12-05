@@ -7,11 +7,11 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ## Prerequisites
 - **Proficiency:** Intermediate
 - **Tutorials:**
-  - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-  - [Install SAP NetWeaver in openSUSE](https://www.sap.com/developer/tutorials/cp-s4-ext-install-nw.html)
+  - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+  - [Install SAP NetWeaver in openSUSE](https://developers.sap.com/tutorials/cp-s4-ext-install-nw.html)
 
 ## Next Steps
-[Data Mart Scenario (Part 2): Replicate data using SLT](https://www.sap.com/developer/tutorials/cp-s4-ext-slt2-setup-slt.html)
+[Data Mart Scenario (Part 2): Replicate data using SLT](https://developers.sap.com/tutorials/cp-s4-ext-slt2-setup-slt.html)
 
 ## Details
 ### You will learn

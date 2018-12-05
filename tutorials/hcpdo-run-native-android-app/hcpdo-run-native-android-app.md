@@ -3,24 +3,22 @@ title: Compile and run a native Android app on SAP Cloud Platform
 description: Clone a GitHub repository, import it into your project, run it on SAP Cloud Platform mobile services for development and operations then review the main classes and methods.
 primary_tag: operating-system>android
 tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform, operating-system>android ]
-
+time: 20
 ---
 
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
-- Download and install the [GitHub Desktop Client](https://desktop.github.com/)
-- Android device or Android Emulator on your development machine
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+  - [Configure Android Studio for mobile development](https://developers.sap.com/tutorials/hcpdo-android-sdk-setup.html)
+  - Download and install the [GitHub Desktop Client](https://desktop.github.com/)
+  - Android device or Android Emulator on your development machine
 
 ## Details
 ### You will learn  
+  - How to run a native Android version of the Northwind hybrid app and run it on SAP Cloud Platform mobile services for development and operations
 
-In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](https://www.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials.
 
-If you have not completed the tutorials in [Mobile Groups 1-3](https://www.sap.com/developer/tutorial-navigator.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
+In this tutorial, you will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials.
+
+If you have not completed the previous tutorials, it would be best to work through those first to become familiar with the OData service used.
 
 The final version of the app will look like this:
 
@@ -28,8 +26,6 @@ The final version of the app will look like this:
 
 The source code is available in GitHub, and after a walk-through of the code in this tutorial, you will have the opportunity to make some changes and see their effect.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -47,11 +43,11 @@ If you have the GitHub Desktop Client installed, you can click the **Open in Des
 
 [ACCORDION-BEGIN [Step 2: ](Replace generated files)]
 
-Since you have already completed the [Configure Android Studio for mobile development](https://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html) tutorial you already have the basic app framework in place. For these instructions, we will assume the path to your project is: `~/devel/Northwind_Android`. Please substitute your real path accordingly.
+Since you have already completed the [Configure Android Studio for mobile development](https://developers.sap.com/tutorials/hcpdo-android-sdk-setup.html) tutorial you already have the basic app framework in place. For these instructions, we will assume the path to your project is: `~/devel/Northwind_Android`. Please substitute your real path accordingly.
 
 What you will do next is replace the generated source files with those you just cloned from GitHub.
 
-Navigate to the project folder created in the [Create a basic native Android master-detail app](https://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html) tutorial, and move and rename the `~/devel/Northwind_Android/NWAndroid/app/src/main` directory back up the directory tree to `~/devel/Northwind_Android/NWAndroid/main_old`. This will preserve the generated files in case you want to refer to them later or do a `diff` to examine the changes made in the cloned source.
+Navigate to the project folder created in the [Create a basic native Android master-detail app](https://developers.sap.com/tutorials/hcpdo-basic-android-app.html) tutorial, and move and rename the `~/devel/Northwind_Android/NWAndroid/app/src/main` directory back up the directory tree to `~/devel/Northwind_Android/NWAndroid/main_old`. This will preserve the generated files in case you want to refer to them later or do a `diff` to examine the changes made in the cloned source.
 
 
 [ACCORDION-END]
@@ -417,7 +413,7 @@ List entities = feed.getEntities();
 
 [ACCORDION-BEGIN [Step 24: ](Populating the Product object)]
 
-In the `getProducts()` method, a `for` loop steps through each entity received from an OData request, and stores the value in the appropriate field in a `Product` object. As was done in the [Round the currency field using JavaScript](https://www.sap.com/developer/tutorials/hcp-webide-round-currency.html) tutorial for the SAPUI5 app, the unit price is rounded to two decimal places, and the `Product` object is added to the `ITEMS ArrayList`.
+In the `getProducts()` method, a `for` loop steps through each entity received from an OData request, and stores the value in the appropriate field in a `Product` object. As was done in the [Round the currency field using JavaScript](https://developers.sap.com/tutorials/hcp-webide-round-currency.html) tutorial for the SAPUI5 app, the unit price is rounded to two decimal places, and the `Product` object is added to the `ITEMS ArrayList`.
 
 The last method called in the `try` block is `storeData()`, which adds each `Product` object in the `ArrayList` to the `ITEM_MAP HashMap`. Note that storing the data in the `ArrayList` *and* the `HashMap` is not ideal for large datasets – the approach used in the Android Studio template was preserved for consistency.
 
@@ -532,5 +528,3 @@ A few key online help documents:
 - OData consumption: ([Android](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/41/1d6619789c4b138069588bb13d3abb/content.htm?frameset=/en/dd/00cdc8192c40f2bcddd6374ec1f4e6/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=279&show_children=false)), ([iOS](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/dd/00cdc8192c40f2bcddd6374ec1f4e6/content.htm?frameset=/en/7c/05845970061014a4fba37e8d86fdfb/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=59&show_children=false))
 
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>odata, topic>sapu
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - Create a Node.js module to expose an OData service (https://www.sap.com/developer/tutorials/xsa-xsodata.html)
+ - Create a Node.js module to expose an OData service (https://developers.sap.com/tutorials/xsa-xsodata.html)
 
 ## Details
 ### You will learn  
@@ -35,7 +35,7 @@ Remove the logics for the button
 
 [ACCORDION-BEGIN [Step 2: ](Bind the OData model to a table)]
 
-In [this previous tutorial](https://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html), you created an XSJS compatible Node.js module to expose an OData V2 service that provides data from your database module. Consuming that model using SAP UI5 is simplified thanks to the concept of binding.
+In [this previous tutorial](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html), you created an XSJS compatible Node.js module to expose an OData V2 service that provides data from your database module. Consuming that model using SAP UI5 is simplified thanks to the concept of binding.
 
 Take a look at the output of the OData service in JSON format
 

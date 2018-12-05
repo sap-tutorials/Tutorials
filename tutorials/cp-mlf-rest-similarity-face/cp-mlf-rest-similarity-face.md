@@ -173,41 +173,26 @@ You should receive a response that includes for each input image an entry with a
 ```
 
 Each entry in the response represents a box that identify one of the face.
+
 <table border="0">
 	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="SAP_TechEd_LV2018_10751.jpg">Image SAP_TechEd_LV2018_10751</a></td></tr>
-	<tr><td><img id="SAP_TechEd_LV2018_10751.jpg"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10751.jpg"/></td></tr>
+	<tr><td><img id="SAP_TechEd_LV2018_10751.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10751.jpg"/></td></tr>
 	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="SAP_TechEd_LV2018_10772.jpg">Image SAP_TechEd_LV2018_10772</a></td></tr>
-	<tr><td><img id="SAP_TechEd_LV2018_10772.jpg"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/></td></tr>
+	<tr><td><img id="SAP_TechEd_LV2018_10772.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/></td></tr>
 	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="SAP_TechEd_LV2018_10779.jpg">Image SAP_TechEd_LV2018_10779</a></td></tr>
-	<tr><td><img id="SAP_TechEd_LV2018_10779.jpg"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10779.jpg"/></td></tr>				
+	<tr><td><img id="SAP_TechEd_LV2018_10779.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10779.jpg"/></td></tr>				
 </table>
 
 <script>
 var fontSize = 14;
 
-function drawImage(imagId) {
-	var oImg    = document.getElementById(imagId);;
-	var oCanvas = document.getElementById("canvas_" + imagId);
-
-	oCanvas.width  = oImg.width;
-	oCanvas.height = oImg.height;
-
-	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height );
-    ctx.lineWidth="3";
-    ctx.strokeStyle="red";
-	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
-
-	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
-    oImg.style.display = "none";
-    return ctx;
-}
 var response = {
+    "id": "e24a976f-b147-4bd9-7ec2-d8882cb3d61f",
     "predictions": [
         {
             "faces": [
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
                         "bottom": 663,
                         "left": 959,
@@ -222,27 +207,30 @@ var response = {
         {
             "faces": [
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 676,
-                        "left": 551,
-                        "right": 737,
-                        "top": 490
+                        "bottom": 696,
+                        "left": 572,
+                        "right": 758,
+                        "top": 511
                     }
                 },
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 649,
-                        "left": 115,
-                        "right": 270,
-                        "top": 494
+                        "bottom": 696,
+                        "left": 77,
+                        "right": 262,
+                        "top": 511
                     }
                 },
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 655,
+                        "bottom": 696,
                         "left": 923,
                         "right": 1109,
-                        "top": 469
+                        "top": 511
                     }
                 }
             ],
@@ -252,6 +240,7 @@ var response = {
         {
             "faces": [
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
                         "bottom": 676,
                         "left": 324,
@@ -260,62 +249,94 @@ var response = {
                     }
                 },
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 649,
-                        "left": 769,
-                        "right": 924,
-                        "top": 494
+                        "bottom": 666,
+                        "left": 786,
+                        "right": 941,
+                        "top": 511
                     }
                 },
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 632,
-                        "left": 1078,
-                        "right": 1233,
-                        "top": 477
+                        "bottom": 655,
+                        "left": 1088,
+                        "right": 1274,
+                        "top": 469
                     }
                 }
             ],
             "name": "SAP_TechEd_LV2018_10779.jpg",
             "numberOfFaces": 3
         }
-    ]
+    ],
+    "processedTime": "2018-11-14T16:07:16.381410+00:00",
+    "status": "DONE"
 };
 
-window.onload = function() {
-	var oImages = ["SAP_TechEd_LV2018_10751", "SAP_TechEd_LV2018_10772", "SAP_TechEd_LV2018_10779"];
-	var oImages = new Map();
-    oImages.set("SAP_TechEd_LV2018_10751.jpg", "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132");
-    oImages.set("SAP_TechEd_LV2018_10772.jpg", "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134");
-    oImages.set("SAP_TechEd_LV2018_10779.jpg", "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135");
+function drawCanvas(imageId) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
 
+	oCanvas.width  = oImg.width;
+	oCanvas.height = oImg.height;
+
+	var ctx = oCanvas.getContext("2d");
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
+
+    ctx.lineWidth="3";
+    ctx.strokeStyle="red";
+	ctx.fillStyle = "white";
+	ctx.font = fontSize + "px Arial";
+
+    oImg.style.display = "none";
+    return ctx;
+}
+function drawBoundingBox(ctx, imageId, item, text) {
+
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
+    var heightRatio = oCanvas.height / oImg.naturalHeight;
+
+    // get the box attributes
+    var left = item.face_location.left * widthRatio;
+    var top  = item.face_location.top  * heightRatio;
+    var width  = (item.face_location.right  - item.face_location.left) * widthRatio;
+    var height = (item.face_location.bottom - item.face_location.top ) * heightRatio;
+
+    // draw the box
+    ctx.strokeRect(left, top, width, height);
+
+    // write the text with the box angle
+    ctx.save();
+    ctx.fillStyle = 'red';
+    ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+    // write the text in the box
+    ctx.fillStyle = "white";
+    ctx.fillText(text, left, top + fontSize);
+    ctx.restore();
+}
+
+window.onload = function() {
 	for (var idx = 0; idx < response.predictions.length; idx++) {
-        var oImg = document.getElementById(response.predictions[idx].name);
-        oImg.onload = (function (faces) {
-            return function () {
-                var ctx = drawImage(this.id);               
-                for (var i = 0; i < faces.length; i++) {
-                    ctx.strokeRect(
-                        faces[i].face_location.left,
-                        faces[i].face_location.top,
-                        faces[i].face_location.right  - faces[i].face_location.left,
-                        faces[i].face_location.bottom - faces[i].face_location.top
-                    );
-                    // write the text with the box angle
-                    var text = "Face #" + i;
-                    ctx.save();
-                    // draw the background box
-                    ctx.fillStyle = 'red';
-                    ctx.fillRect(faces[i].face_location.left, faces[i].face_location.top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
-                    // write the text in the box
-                    ctx.fillStyle = "white";
-                    ctx.fillText(text, faces[i].face_location.left, faces[i].face_location.top + fontSize);
-                    ctx.restore();
+        var items = response.predictions[idx].faces;
+        var name = response.predictions[idx].name;
+        var oImg = document.getElementById(name);
+        if(oImg){
+            oImg.onload = (function (name_, items_) {
+                return function () {
+                    var ctx = drawCanvas(name_);
+                    for (var i = 0; i < items_.length; i++) {
+                        drawBoundingBox(ctx, name_, items_[i], "Face #" + i);
+                    }                
                 }
-            };
-        })(response.predictions[idx].faces);
-        oImg.src = oImages.get(oImg.id);
-	}
+            })(name, items);
+            oImg.src = oImg.src;
+        }
+    }
 };
 </script>
 
@@ -323,41 +344,26 @@ Here is a simple HTML code you can use to visualize other results:
 
 ```HTML
 <html>
-<body><table border="0">
+<body>
+<table border="0">
 	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="SAP_TechEd_LV2018_10751.jpg">Image SAP_TechEd_LV2018_10751</a></td></tr>
-	<tr><td><img id="SAP_TechEd_LV2018_10751.jpg"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10751.jpg"/></td></tr>
+	<tr><td><img id="SAP_TechEd_LV2018_10751.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10751.jpg"/></td></tr>
 	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="SAP_TechEd_LV2018_10772.jpg">Image SAP_TechEd_LV2018_10772</a></td></tr>
-	<tr><td><img id="SAP_TechEd_LV2018_10772.jpg"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/></td></tr>
+	<tr><td><img id="SAP_TechEd_LV2018_10772.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/></td></tr>
 	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="SAP_TechEd_LV2018_10779.jpg">Image SAP_TechEd_LV2018_10779</a></td></tr>
-	<tr><td><img id="SAP_TechEd_LV2018_10779.jpg"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10779.jpg"/></td></tr>				
+	<tr><td><img id="SAP_TechEd_LV2018_10779.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135"/></td></tr><tr><td><canvas id="canvas_SAP_TechEd_LV2018_10779.jpg"/></td></tr>				
 </table>
 
 <script>
 var fontSize = 14;
 
-function drawImage(imagId) {
-	var oImg    = document.getElementById(imagId);;
-	var oCanvas = document.getElementById("canvas_" + imagId);
-
-	oCanvas.width  = oImg.width;
-	oCanvas.height = oImg.height;
-
-	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height );
-    ctx.lineWidth="3";
-    ctx.strokeStyle="red";
-	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
-
-	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
-    oImg.style.display = "none";
-    return ctx;
-}
 var response = {
+    "id": "e24a976f-b147-4bd9-7ec2-d8882cb3d61f",
     "predictions": [
         {
             "faces": [
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
                         "bottom": 663,
                         "left": 959,
@@ -372,27 +378,30 @@ var response = {
         {
             "faces": [
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 676,
-                        "left": 551,
-                        "right": 737,
-                        "top": 490
+                        "bottom": 696,
+                        "left": 572,
+                        "right": 758,
+                        "top": 511
                     }
                 },
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 649,
-                        "left": 115,
-                        "right": 270,
-                        "top": 494
+                        "bottom": 696,
+                        "left": 77,
+                        "right": 262,
+                        "top": 511
                     }
                 },
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 655,
+                        "bottom": 696,
                         "left": 923,
                         "right": 1109,
-                        "top": 469
+                        "top": 511
                     }
                 }
             ],
@@ -402,6 +411,7 @@ var response = {
         {
             "faces": [
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
                         "bottom": 676,
                         "left": 324,
@@ -410,62 +420,94 @@ var response = {
                     }
                 },
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 649,
-                        "left": 769,
-                        "right": 924,
-                        "top": 494
+                        "bottom": 666,
+                        "left": 786,
+                        "right": 941,
+                        "top": 511
                     }
                 },
                 {
+                    "face_feature": [ "..."],
                     "face_location": {
-                        "bottom": 632,
-                        "left": 1078,
-                        "right": 1233,
-                        "top": 477
+                        "bottom": 655,
+                        "left": 1088,
+                        "right": 1274,
+                        "top": 469
                     }
                 }
             ],
             "name": "SAP_TechEd_LV2018_10779.jpg",
             "numberOfFaces": 3
         }
-    ]
+    ],
+    "processedTime": "2018-11-14T16:07:16.381410+00:00",
+    "status": "DONE"
 };
 
-window.onload = function() {
-	var oImages = ["SAP_TechEd_LV2018_10751", "SAP_TechEd_LV2018_10772", "SAP_TechEd_LV2018_10779"];
-	var oImages = new Map();
-    oImages.set("SAP_TechEd_LV2018_10751.jpg", "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132");
-    oImages.set("SAP_TechEd_LV2018_10772.jpg", "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134");
-    oImages.set("SAP_TechEd_LV2018_10779.jpg", "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135");
+function drawCanvas(imageId) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
 
+	oCanvas.width  = oImg.width;
+	oCanvas.height = oImg.height;
+
+	var ctx = oCanvas.getContext("2d");
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
+
+    ctx.lineWidth="3";
+    ctx.strokeStyle="red";
+	ctx.fillStyle = "white";
+	ctx.font = fontSize + "px Arial";
+
+    oImg.style.display = "none";
+    return ctx;
+}
+function drawBoundingBox(ctx, imageId, item, text) {
+
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
+    var heightRatio = oCanvas.height / oImg.naturalHeight;
+
+    // get the box attributes
+    var left = item.face_location.left * widthRatio;
+    var top  = item.face_location.top  * heightRatio;
+    var width  = (item.face_location.right  - item.face_location.left) * widthRatio;
+    var height = (item.face_location.bottom - item.face_location.top ) * heightRatio;
+
+    // draw the box
+    ctx.strokeRect(left, top, width, height);
+
+    // write the text with the box angle
+    ctx.save();
+    ctx.fillStyle = 'red';
+    ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+    // write the text in the box
+    ctx.fillStyle = "white";
+    ctx.fillText(text, left, top + fontSize);
+    ctx.restore();
+}
+
+window.onload = function() {
 	for (var idx = 0; idx < response.predictions.length; idx++) {
-        var oImg = document.getElementById(response.predictions[idx].name);
-        oImg.onload = (function (faces) {
-            return function () {
-                var ctx = drawImage(this.id);               
-                for (var i = 0; i < faces.length; i++) {
-                    ctx.strokeRect(
-                        faces[i].face_location.left,
-                        faces[i].face_location.top,
-                        faces[i].face_location.right  - faces[i].face_location.left,
-                        faces[i].face_location.bottom - faces[i].face_location.top
-                    );
-                    // write the text with the box angle
-                    var text = "Face #" + i;
-                    ctx.save();
-                    // draw the background box
-                    ctx.fillStyle = 'red';
-                    ctx.fillRect(faces[i].face_location.left, faces[i].face_location.top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
-                    // write the text in the box
-                    ctx.fillStyle = "white";
-                    ctx.fillText(text, faces[i].face_location.left, faces[i].face_location.top + fontSize);
-                    ctx.restore();
+        var items = response.predictions[idx].faces;
+        var name = response.predictions[idx].name;
+        var oImg = document.getElementById(name);
+        if(oImg){
+            oImg.onload = (function (_name, _items) {
+                return function () {
+                    var ctx = drawCanvas(_name);
+                    for (var i = 0; i < _items.length; i++) {
+                        drawBoundingBox(ctx, _name, _items[i], "Face #" + i);
+                    }                
                 }
-            };
-        })(response.predictions[idx].faces);
-        oImg.src = oImages.get(oImg.id);
-	}
+            })(name, items);
+            oImg.src = oImg.src;
+        }
+    }
 };
 </script>
 </body>

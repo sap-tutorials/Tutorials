@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials** [Add a Header and Detail Modal Dialog](https://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
+ - **Tutorials** [Add a Header and Detail Modal Dialog](https://developers.sap.com/tutorials/angular-add-header-detail-dialog.html)
 
 ## Next Steps
- - **Tutorials** [AngularJS Filters](https://www.sap.com/developer/tutorials/angular-filters.html)
+ - **Tutorials** [AngularJS Filters](https://developers.sap.com/tutorials/angular-filters.html)
 
 ## Details
 ### You will learn  

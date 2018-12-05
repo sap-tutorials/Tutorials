@@ -10,11 +10,11 @@ tags: [  tutorial>how-to, tutorial>beginner, topic>big-data, topic>cloud, produc
  - You have a working application to connect to SAP HANA, Express Edition.
  - You have a Google Account and/or have registered for the free trial on `cloud.google.com`.
  - You have a project created on the Google Cloud Platform and billing is enabled.
- - **Tutorials:**  [Create a new project using the Cloud Platform Console](https://cloud.google.com/resource-manager/docs/creating-managing-projects) and [SAP HANA, express edition, in Google Cloud Platform Launcher](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html)
+ - **Tutorials:**  [Create a new project using the Cloud Platform Console](https://cloud.google.com/resource-manager/docs/creating-managing-projects) and [SAP HANA, express edition, in Google Cloud Platform Launcher](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html)
 
 
 ## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page
+ - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
 
 ## Details
 ### You will learn  
@@ -312,5 +312,3 @@ gcloud app browse
 [ACCORDION-END]
 ---
 
-## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page

@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Expose custom business object as external web service`](https://www.sap.com/developer/tutorials/abap-custom-ui-business-object.html)
+- **Tutorials:** [`Expose custom business object as external web service`](https://developers.sap.com/tutorials/abap-custom-ui-business-object.html)
 - **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user represents the prerequisites.
 
 

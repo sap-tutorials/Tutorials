@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a New User and Assign Permissions](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html)
+ - **Tutorials:** [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html)
  - **Files:** Download the [Data Files](https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip) zip and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host ("`<SID>`" is your system's System Id). This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
 ## Next Steps
- - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part4.html)
+ - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://developers.sap.com/tutorials/dt-create-schema-load-data-part4.html)
 
 ## Details
 ### You will learn

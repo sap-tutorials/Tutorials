@@ -87,7 +87,7 @@ Here is a basic Application Security Descriptor that you will be using, as you w
 >
 However, you may prefer to run commands remotely (from your local desktop for example).
 >
-To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
+To do so, you can complete the [XS CLI Client installation](https://developers.sap.com/tutorials/hxe-ua-install-xs-xli-client.html)
 
 Execute the following series of XS CLI command:
 

@@ -1,7 +1,6 @@
 ---
 title: Generate sensor data in SAP Data Hub, developer edition 2.3
 description: Generate sensor data and display it in a terminal by using SAP Data Hub, developer edition 2.3.
-auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -29,8 +28,6 @@ Press the **Save (1)** button. Then enter a **Name** (`test.myFirstPipeline`) an
 
 ![picture_02](./datahub-pipelines-v2-sensordata_02.png)  
 
-[DONE]
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Data Generator)]
@@ -54,8 +51,6 @@ The sample data represents sensors for humidity, temperature etc.
 
 Close the tab for the JavaScript snippet.
 
-[DONE]
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Terminal)]
@@ -64,8 +59,6 @@ Add a **Terminal** operator to the pipeline by drag & drop (you find this also i
 ![picture_06](./datahub-pipelines-v2-sensordata_06.png)  
 
 Afterwards press the **Save (1)** button.
-
-[DONE]
 
 [ACCORDION-END]
 
@@ -79,8 +72,6 @@ When the **Status (2)** tab indicates that the pipeline is running, use the cont
 ![picture_08](./datahub-pipelines-v2-sensordata_08.png)  
 
 Stop the pipeline by pressing the **Stop** button (you find it next to the **Run** button).
-
-[DONE]
 
 [ACCORDION-END]
 

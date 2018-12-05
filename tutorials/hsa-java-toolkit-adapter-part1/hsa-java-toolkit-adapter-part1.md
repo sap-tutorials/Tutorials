@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Get started with SAP HANA streaming analytics for SAP HANA, express edition](https://www.sap.com/developer/groups/sds-hxe-get-started.html)
+ - **Tutorial:** [Get started with SAP HANA streaming analytics for SAP HANA, express edition](https://developers.sap.com/group.sds-hxe-get-started.html)
  - A running SAP HANA Streaming Analytics Server built on SAP HANA 2.0 with a minimum version SPS02
  - [Java Runtime Environment (JRE)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) version 8 or newer
  - A Java IDE, such as [Eclipse](https://eclipse.org/)
@@ -16,7 +16,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - Java [PAHO](https://eclipse.org/paho/clients/java/) Library
 
 ## Next Steps
- - [Creating Custom Adapter Modules](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part2.html)
+ - [Creating Custom Adapter Modules](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part2.html)
 
 ## Details
 ### You will learn
@@ -67,5 +67,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 [ACCORDION-END]
 
-## Next Steps
- - [Creating Custom Adapter Modules](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part2.html)

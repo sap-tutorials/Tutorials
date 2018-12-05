@@ -2,6 +2,7 @@
 title: Bundle data (via JavaScript) in SAP Data Hub, trial edition 2.3
 description: Bundle sensor data before storing it in Google Cloud Storage by using SAP Data Hub, trial edition 2.3.
 primary_tag: products>sap-data-hub
+auto_validation: false
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
@@ -10,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 - How to bundle the sensor data before storing in Google Cloud Storage
 - How to use a **JavaScript operator**
 
-Please note that this tutorial is similar to the `Bundle data (via JavaScript)` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Bundle data (via JavaScript)` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 ### Time to Complete
 **15 Mins**
@@ -21,7 +22,7 @@ Please note that this tutorial is similar to the `Bundle data (via JavaScript)` 
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`)
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
 Remove the connection between the **Kafka Consumer 2** operator and the **Write File** operator.
 
@@ -104,9 +105,6 @@ You can open any of the generated file by clicking on the filename which opens i
 
 [DONE]
 
+[VALIDATE_1]
+
 [ACCORDION-END]
-
----
-
-## Next Steps
-- [Store sensor data in SAP Vora](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part05.html)

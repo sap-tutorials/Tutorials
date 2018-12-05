@@ -8,8 +8,8 @@ time: 20
 ---
 
 ## Prerequisites  
-- [Select and Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
-- [Optional - Configure the SAP HANA R integration with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-setup-r.html).
+- [Select and Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
+- [Optional - Configure the SAP HANA R integration with SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-setup-r.html).
 
 ## Details
 ### You will learn
@@ -492,7 +492,7 @@ For more details about the R kernel in Jupyter you can check the site : [https:/
 
 All the steps from the [installation guide](https://irkernel.github.io/installation/) are to be executed in a R console as the `jupyteradm` user.
 
-It assumes that you have a local R installation. If not done yet, you can use the instructions from the following tutorial: [Configure the SAP HANA R integration with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-setup-r.html)
+It assumes that you have a local R installation. If not done yet, you can use the instructions from the following tutorial: [Configure the SAP HANA R integration with SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-setup-r.html)
 
 Once the installation is completed successfully, you will first need to restart `JupyterLab`.
 
@@ -532,7 +532,7 @@ install.packages("RODBC")
 
 Then you will need to configure an ODBC DSN for you target database.
 
-If not done yet, you can use the instructions from the following tutorial: [Use an ODBC based querying tools for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-odbc.html)
+If not done yet, you can use the instructions from the following tutorial: [Use an ODBC based querying tools for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-odbc.html)
 
 Then you can use the following sample a R kernel notebook from `JupyterLab`:
 

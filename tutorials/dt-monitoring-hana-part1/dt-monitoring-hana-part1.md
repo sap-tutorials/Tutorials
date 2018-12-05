@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 - **Credentials:** Have a cockpit admin user and password with access to your HANA system and access to "`<SID>adm`" for a SSH session
 
 ## Next Steps
- - **Tutorials:** [Creating and Removing Extended Storage](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part2.html)
+ - **Tutorials:** [Creating and Removing Extended Storage](https://developers.sap.com/tutorials/dt-monitoring-hana-part2.html)
 
 ## Details
 ### You will learn

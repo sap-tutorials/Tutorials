@@ -6,10 +6,10 @@ tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermedi
 ---
 
 ## Prerequisites  
-- [End-to-End Weather App Scenario Part 1](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part1.html)
+- [End-to-End Weather App Scenario Part 1](https://developers.sap.com/tutorials/hcp-java-weatherapp-part1.html)
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 3](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)
+- [End-to-End Weather App Scenario Part 3](https://developers.sap.com/tutorials/hcp-java-weatherapp-part3.html)
 
 ## Details
 ### You will learn  
@@ -73,5 +73,3 @@ For security reasons and for the sake of housekeeping you should remove all <wel
 
 
 
-## Next Steps
-- [End-to-End Weather App Scenario Part 3](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)

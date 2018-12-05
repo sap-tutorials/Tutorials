@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** You will need a SAP Cloud Platform (HCP) trial account for this tutorial series.  [Create an SAP Cloud Platform trial Account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** You will need a SAP Cloud Platform (HCP) trial account for this tutorial series.  [Create an SAP Cloud Platform trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
 #### AngularJS Series
- - **Tutorials:** [Create the Bootstrap Template](https://www.sap.com/developer/tutorials/angular-bootstrap-template.html)
+ - **Tutorials:** [Create the Bootstrap Template](https://developers.sap.com/tutorials/angular-bootstrap-template.html)
 
 ## Details
 ### You will learn  

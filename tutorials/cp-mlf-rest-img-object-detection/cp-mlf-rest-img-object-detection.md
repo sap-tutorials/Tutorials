@@ -125,91 +125,97 @@ Each entry in the detection box represents a box that identify one of the person
 
 Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397" target="blank" download="SAP_TechEd_BCN2018_03504.jpg">Image `SAP_TechEd_BCN2018_03504`</a>:
 
-<table border="0">
-	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
-</table>
-
+<img id="SAP_TechEd_BCN2018_03504.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397"/>
+<canvas id="canvas_SAP_TechEd_BCN2018_03504.jpg"/>
 <script>
 var fontSize = 14;
 
-function drawImage(imagId) {
-	var oImg = document.getElementById("img_" + imagId);;
-	var oCanvas = document.getElementById("canvas_" + imagId);
-	oCanvas.width = oImg.width;
-	oCanvas.height = oImg.height * oImg.width / oImg.naturalWidth;
+var response = {
+    "detection_boxes": [
+        [
+            0.2735770344734192,
+            0.10513334721326828,
+            0.8366726636886597,
+            0.2314799576997757
+        ],
+        [
+            0,
+            0.4907439947128296,
+            0.8411328196525574,
+            0.9973546266555786
+        ],
+        [
+            0.06066185235977173,
+            0.1283799558877945,
+            0.8287661671638489,
+            0.6976333260536194
+        ]
+    ],
+    "detection_classes": [
+        "bottle",
+        "person",
+        "tvmonitor"
+    ],
+    "detection_scores": [
+        0.9997833371162415,
+        0.9976527094841003,
+        0.9811497926712036
+    ]
+};
+
+function drawCanvas(imageId) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+	oCanvas.width  = oImg.width;
+	oCanvas.height = oImg.height;
 
 	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height * oImg.width / oImg.naturalWidth);
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
 	ctx.font = fontSize + "px Arial";
 
-	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
+function drawBoundingBox(ctx, imageId, item, text) {
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+    // get the box attributes
+    var left = item[1] * oCanvas.width  ;
+    var top  = item[0] * oCanvas.height ;
+    var width  = (item[3] * oCanvas.width  - item[1] * oCanvas.width  );
+    var height = (item[2] * oCanvas.height - item[0] * oCanvas.height );
+
+    // draw the box
+    ctx.strokeRect(left, top, width, height);
+
+    // write the text with the box angle
+    ctx.save();
+    ctx.fillStyle = 'red';
+    ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+    // write the text in the box
+    ctx.fillStyle = "white";
+    ctx.fillText(text, left, top + fontSize);
+    ctx.restore();
+}
 
 window.onload = function() {
-	var oImg    = document.getElementById("img_1");
-	var oCanvas = document.getElementById("canvas_1");
-
-    var response = {
-	    "detection_boxes": [
-	        [
-	            0.2735770344734192,
-	            0.10513334721326828,
-	            0.8366726636886597,
-	            0.2314799576997757
-	        ],
-	        [
-	            0,
-	            0.4907439947128296,
-	            0.8411328196525574,
-	            0.9973546266555786
-	        ],
-	        [
-	            0.06066185235977173,
-	            0.1283799558877945,
-	            0.8287661671638489,
-	            0.6976333260536194
-	        ]
-	    ],
-	    "detection_classes": [
-	        "bottle",
-	        "person",
-	        "tvmonitor"
-	    ],
-	    "detection_scores": [
-	        0.9997833371162415,
-	        0.9976527094841003,
-	        0.9811497926712036
-	    ]
-	};
-	oImg.onload = function(){
-		var ctx = drawImage("1")
-		for (var i = 0; i < response.detection_boxes.length; i++) {
-			var text = "#" + i  + ": " + response.detection_classes[i] + " " + ( response.detection_scores[i] * 100 ).toFixed(2) + "%";
-            ctx.strokeRect(
-	            response.detection_boxes[i][1] * oCanvas.width,
-	            response.detection_boxes[i][0] * oCanvas.height,
-	            response.detection_boxes[i][3] * oCanvas.width  - response.detection_boxes[i][1] * oCanvas.width,
-	            response.detection_boxes[i][2] * oCanvas.height - response.detection_boxes[i][0] * oCanvas.height
-
-	        );
-            // write the text with the box angle
-            ctx.save();
-            // draw the background box
-            ctx.fillStyle = 'red';
-            ctx.fillRect(response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
-            // write the text in the box
-            ctx.fillStyle = "white";
-            ctx.fillText(text, response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height + fontSize);
-            ctx.restore();			
-		}
+    var name = "SAP_TechEd_BCN2018_03504.jpg";
+    var oImg = document.getElementById(name);
+    if(oImg){
+        oImg.onload = function(){
+            var ctx = drawCanvas(name);
+            for (var i = 0; i < response.detection_boxes.length; i++) {
+                var text = "#" + i  + ": " + response.detection_classes[i] + " " + ( response.detection_scores[i] * 100 ).toFixed(2) + "%";
+                drawBoundingBox(ctx, name, response.detection_boxes[i], text);
+            }                
+        }
+        oImg.src = oImg.src;
     }
-	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397";
 };
 </script>
 
@@ -218,91 +224,97 @@ Here is a simple HTML code you can use to visualize other results:
 ```HTML
 <html>
 <body>
-<table border="0">
-	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
-</table>
-
+<img id="SAP_TechEd_BCN2018_03504.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397"/>
+<canvas id="canvas_SAP_TechEd_BCN2018_03504.jpg"/>
 <script>
 var fontSize = 14;
 
-function drawImage(imagId) {
-	var oImg = document.getElementById("img_" + imagId);;
-	var oCanvas = document.getElementById("canvas_" + imagId);
-	oCanvas.width = oImg.width;
-	oCanvas.height = oImg.height * oImg.width / oImg.naturalWidth;
+var response = {
+    "detection_boxes": [
+        [
+            0.2735770344734192,
+            0.10513334721326828,
+            0.8366726636886597,
+            0.2314799576997757
+        ],
+        [
+            0,
+            0.4907439947128296,
+            0.8411328196525574,
+            0.9973546266555786
+        ],
+        [
+            0.06066185235977173,
+            0.1283799558877945,
+            0.8287661671638489,
+            0.6976333260536194
+        ]
+    ],
+    "detection_classes": [
+        "bottle",
+        "person",
+        "tvmonitor"
+    ],
+    "detection_scores": [
+        0.9997833371162415,
+        0.9976527094841003,
+        0.9811497926712036
+    ]
+};
+
+function drawCanvas(imageId) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+	oCanvas.width  = oImg.width;
+	oCanvas.height = oImg.height;
 
 	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height * oImg.width / oImg.naturalWidth);
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
 	ctx.font = fontSize + "px Arial";
 
-	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
+function drawBoundingBox(ctx, imageId, item, text) {
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+    // get the box attributes
+    var left = item[1] * oCanvas.width  ;
+    var top  = item[0] * oCanvas.height ;
+    var width  = (item[3] * oCanvas.width  - item[1] * oCanvas.width  );
+    var height = (item[2] * oCanvas.height - item[0] * oCanvas.height );
+
+    // draw the box
+    ctx.strokeRect(left, top, width, height);
+
+    // write the text with the box angle
+    ctx.save();
+    ctx.fillStyle = 'red';
+    ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+    // write the text in the box
+    ctx.fillStyle = "white";
+    ctx.fillText(text, left, top + fontSize);
+    ctx.restore();
+}
 
 window.onload = function() {
-	var oImg    = document.getElementById("img_1");
-	var oCanvas = document.getElementById("canvas_1");
-
-    var response = {
-	    "detection_boxes": [
-	        [
-	            0.2735770344734192,
-	            0.10513334721326828,
-	            0.8366726636886597,
-	            0.2314799576997757
-	        ],
-	        [
-	            0,
-	            0.4907439947128296,
-	            0.8411328196525574,
-	            0.9973546266555786
-	        ],
-	        [
-	            0.06066185235977173,
-	            0.1283799558877945,
-	            0.8287661671638489,
-	            0.6976333260536194
-	        ]
-	    ],
-	    "detection_classes": [
-	        "bottle",
-	        "person",
-	        "tvmonitor"
-	    ],
-	    "detection_scores": [
-	        0.9997833371162415,
-	        0.9976527094841003,
-	        0.9811497926712036
-	    ]
-	};
-	oImg.onload = function(){
-		var ctx = drawImage("1")
-		for (var i = 0; i < response.detection_boxes.length; i++) {
-			ctx.strokeRect(
-	            response.detection_boxes[i][1] * oCanvas.width,
-	            response.detection_boxes[i][0] * oCanvas.height,
-	            response.detection_boxes[i][3] * oCanvas.width  - response.detection_boxes[i][1] * oCanvas.width,
-	            response.detection_boxes[i][2] * oCanvas.height - response.detection_boxes[i][0] * oCanvas.height
-
-	        );
-            // write the text with the box angle
-            var text = "#" + i  + ": " + response.detection_classes[i] + " " + ( response.detection_scores[i] * 100 ).toFixed(2) + "%";
-            ctx.save();
-            // draw the background box
-            ctx.fillStyle = 'red';
-            ctx.fillRect(response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
-            // write the text in the box
-            ctx.fillStyle = "white";
-            ctx.fillText(text, response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height + fontSize);
-            ctx.restore();			
-		}
+    var name = "SAP_TechEd_BCN2018_03504.jpg";
+    var oImg = document.getElementById(name);
+    if(oImg){
+        oImg.onload = function(){
+            var ctx = drawCanvas(name);
+            for (var i = 0; i < response.detection_boxes.length; i++) {
+                var text = "#" + i  + ": " + response.detection_classes[i] + " " + ( response.detection_scores[i] * 100 ).toFixed(2) + "%";
+                drawBoundingBox(ctx, name, response.detection_boxes[i], text);
+            }                
+        }
+        oImg.src = oImg.src;
     }
-	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397";
 };
 </script>
 </body>

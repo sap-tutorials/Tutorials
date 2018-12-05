@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Debugging Stored Procedures](https://www.sap.com/developer/tutorials/xsa-sqlscript-debugging.html)
+- **Tutorials:** [Debugging Stored Procedures](https://developers.sap.com/tutorials/xsa-sqlscript-debugging.html)
 
 ## Next Steps
-- [Using Dynamic SQL vs Dynamic Filtering](https://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
+- [Using Dynamic SQL vs Dynamic Filtering](https://developers.sap.com/tutorials/xsa-sqlscript-dynamic.html)
 
 ## Details
 ### You will learn  
@@ -87,6 +87,3 @@ You will notice that the SQLScript code is executed and results are shown.  Agai
 [ACCORDION-END]
 
 
-
-## Next Steps
-- [Using Dynamic SQL vs Dynamic Filtering](https://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)

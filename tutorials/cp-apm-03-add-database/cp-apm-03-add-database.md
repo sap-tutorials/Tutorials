@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Add a UI to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-02-add-ui.html)
+ - [Add a UI to Your Business Application](https://developers.sap.com/tutorials/cp-apm-02-add-ui.html)
 
 ## Details
 ### You will learn  
@@ -24,6 +24,22 @@ Right-click the **`db`** module and choose **Build**.
 
 Wait for the notification that says the build was successful.
 
+**Especially for Developer Garage attendees at SAP TechEd Bangalore**
+
+If the build is unsuccessful, check the console log for errors. Errors like this: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
+
+1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
+
+1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+
+    ![finding the .hdiconfig file](hdiconfig.png)
+
+1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
+
+1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
+
+1. **Save** the file, and re-try the build.
+
 [DONE]
 
 [ACCORDION-END]
@@ -34,11 +50,15 @@ To view the generated deployment artifacts, SAP HANA database explorer must be e
 
 1. Go to **Tools | Preferences | Features**.
 
-2. Search for the database explorer and enable it.
+1. Search for the database explorer and enable it.
 
     ![Enable the database explorer](enable-database-explorer.png)
 
-3. Choose **Save**.
+1. Choose **Save**. You may be prompted to refresh SAP Web IDE. If you are, do so.
+
+1. While still in **Preferences**, choose **Database Explorer** and make sure the **Cloud Foundry Region** is set to the one you are using for this mission.
+
+    ![database explorer preferences](database-explorer-preferences.png)
 
 [DONE]
 
@@ -48,17 +68,10 @@ To view the generated deployment artifacts, SAP HANA database explorer must be e
 
 1. Go to **Tools | Database Explorer**.
 
-1. Expand **Cloud Foundry API Endpoint** and choose the URL of the Cloud Foundry API for the region, where you created your space.
-
-    It should be `https://api.cf.us10.hana.ondemand.com` if you followed the suggested values for this tutorial group.
-
-    ![Connect to the database](connect-database.png)
-
-1. Choose **Connect**.
-
-1. Choose **Yes**.
+1. If you haven't added any database before, you'll be prompted to do so - select **Yes** in the dialog box to continue (if you already have databases listed, you can add another one with the plus symbol at the top of the list).
 
     ![Add a Database](database-explorer-popup.png)
+
 
 1. Select the bookshop database.
 

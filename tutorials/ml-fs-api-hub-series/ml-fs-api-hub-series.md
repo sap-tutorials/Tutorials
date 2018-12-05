@@ -4,19 +4,18 @@ description: Discover how to test SAP Leonardo Machine Learning Foundation servi
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform]
+time: 10
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - [Sign up for an free trial account on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Sign up for an free trial account on the SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://developers.sap.com/group.ml-fs-api-hub.html), [Java](https://developers.sap.com/group.ml-fs-java.html) or [SAPUI5](https://developers.sap.com/group.ml-fs-sapui5.html)
 
 ## Details
 ### You will learn
-In this tutorial, you will learn where to find and test the **SAP Leonardo Machine Learning Functional Services** published on the SAP API Business Hub that consumes series data content.
+  - Where to find and test the **SAP Leonardo Machine Learning Functional Services** published on the SAP API Business Hub that consumes series data content
 
 The **Similarity Scoring** service will be used as an example to demonstrate how to consume series data content, and it will be applied to the outcome of the **[Image Feature Extraction](https://api.sap.com/api/img_feature_extraction_api/resource)** service  but you will be able to transpose this tutorial to other services which also consume content like :
 
@@ -25,8 +24,6 @@ The **Similarity Scoring** service will be used as an example to demonstrate how
 
 The **Similarity Scoring** service allows you to compare vectors using a similarity score (cosine distance) ranging from -1 to 1.
 
-### Time to Complete
-**10 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Search the SAP API Business Hub - Image Feature Extraction)]
 
@@ -320,6 +317,3 @@ For more information, you can also check the online [SAP Leonardo Machine Learni
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

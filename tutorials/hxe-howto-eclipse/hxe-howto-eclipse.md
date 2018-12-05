@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana\, express-edition ]
 - Setup: Eclipse Mars or Neon version are expected to be installed and running before starting this tutorial to add the HANA Plugin.
 
 ## Next Steps
-- [Go to tutorials](http://www.sap.com/developer/tutorials.html)
+- [Go to tutorials](http://developers.sap.com/tutorials.html)
 
 ## How-To Details
 Provides instruction on how to install and update the SAP HANA Tools plugin for Eclipse and connect `HANAExpress`.
@@ -132,6 +132,3 @@ Confirm connection as shown below:
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)

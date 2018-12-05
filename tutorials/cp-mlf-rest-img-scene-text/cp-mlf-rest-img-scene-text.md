@@ -148,112 +148,137 @@ You should receive a response that includes a series of entries:
 Each entry in the response represents a box that identify a bounding box with an associated text.
 
 <table border="0">
-	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
+	<tr><td><img id="SAP_TechEd_BCN2018_01020.jpg" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006"/></div></td></tr><tr><td><canvas id="canvas_SAP_TechEd_BCN2018_01020.jpg"/></td></tr>
 </table>
 
 <script>
-var fontSize = 10;
+var fontSize = 14;
 
-function drawImage(imagId) {
-	var oImg = document.getElementById("img_" + imagId);;
-	var oCanvas = document.getElementById("canvas_" + imagId);
-	oCanvas.width = oImg.width;
-	oCanvas.height = oImg.height * oImg.width / oImg.naturalWidth;
+var response = {
+    "id": "37ec14b4-0fd5-45ad-4c36-1c7775a35a1a",
+    "predictions": [
+        {
+            "imageName": "SAP_TechEd_BCN2018_01020.jpg",
+            "results": [
+                {
+                    "bboxAccuracy": 0.9788690209388733,
+                    "boundingBox": {
+                        "x1": 1139,
+                        "x2": 1477,
+                        "x3": 1482,
+                        "x4": 1144,
+                        "y1": 291,
+                        "y2": 276,
+                        "y3": 402,
+                        "y4": 417
+                    },
+                    "text": "Check-ll"
+                },
+                {
+                    "bboxAccuracy": 0.981939971446991,
+                    "boundingBox": {
+                        "x1": 799,
+                        "x2": 1098,
+                        "x3": 1104,
+                        "x4": 804,
+                        "y1": 381,
+                        "y2": 365,
+                        "y3": 477,
+                        "y4": 493
+                    },
+                    "text": "Registration"
+                },
+                {
+                    "bboxAccuracy": 0.977262020111084,
+                    "boundingBox": {
+                        "x1": 530,
+                        "x2": 632,
+                        "x3": 640,
+                        "x4": 538,
+                        "y1": 472,
+                        "y2": 458,
+                        "y3": 516,
+                        "y4": 530
+                    },
+                    "text": "TECHED"
+                }
+            ]
+        }
+    ],
+    "processedTime": "2018-11-14T15:49:03.027874+00:00",
+    "status": "DONE"
+};
+
+function drawCanvas(imageId) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+	oCanvas.width  = oImg.width;
+	oCanvas.height = oImg.height;
 
 	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height * oImg.width / oImg.naturalWidth);
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
+	ctx.fillStyle = "white";
 	ctx.font = fontSize + "px Arial";
-	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
-    oImg.style.display = "none";
 
+    oImg.style.display = "none";
     return ctx;
+}
+function drawBoundingBox(ctx, imageId, item, text) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
+    var heightRatio = oCanvas.height / oImg.naturalHeight;
+
+    // draw the box
+    ctx.moveTo(item.x1 * widthRatio, item.y1 * heightRatio);
+    ctx.lineTo(item.x2 * widthRatio, item.y2 * heightRatio);
+    ctx.lineTo(item.x3 * widthRatio, item.y3 * heightRatio);
+    ctx.lineTo(item.x4 * widthRatio, item.y4 * heightRatio);
+    ctx.lineTo(item.x1 * widthRatio, item.y1 * heightRatio);
+    ctx.stroke();
+
+    // write the text with the box angle
+    ctx.save();
+    ctx.translate(item.x1 * widthRatio, item.y1 * heightRatio);
+    // do some trigonometry to calculate the angle in radian
+    var ab = Math.abs(item.x2 - item.x1);
+    var ac = Math.abs(item.y2 - item.y1);
+    var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
+    var clockwise = (item.y2 - item.y1 > 0 ? 1 : -1);
+    var radian = Math.acos(ab / bc);
+    ctx.rotate( clockwise * radian );
+    // draw the background box
+    ctx.fillStyle = 'red';
+    ctx.fillRect(0, 0, ctx.measureText(text).width, parseInt(fontSize*1.5));
+
+    // write the text in the box
+    ctx.fillStyle = "white";
+    ctx.fillText(text, 0, fontSize * heightRatio);
+    ctx.restore();
 }
 
 window.onload = function() {
-	var oImg    = document.getElementById("img_1");
-	var oCanvas = document.getElementById("canvas_1");
-
-    var response = {
-        "imageName": "SAP_TechEd_BCN2018_01020.jpg",
-        "predictions": [
-            {
-                "bboxAccuracy": 0.9788690209388733,
-                "boundingBox": {
-                    "x1": 1139,
-                    "x2": 1477,
-                    "x3": 1482,
-                    "x4": 1144,
-                    "y1": 291,
-                    "y2": 276,
-                    "y3": 402,
-                    "y4": 417
-                },
-                "text": "Check-ll"
-            },
-            {
-                "bboxAccuracy": 0.981939971446991,
-                "boundingBox": {
-                    "x1": 799,
-                    "x2": 1098,
-                    "x3": 1104,
-                    "x4": 804,
-                    "y1": 381,
-                    "y2": 365,
-                    "y3": 477,
-                    "y4": 493
-                },
-                "text": "Registration"
-            },
-            {
-                "bboxAccuracy": 0.977262020111084,
-                "boundingBox": {
-                    "x1": 530,
-                    "x2": 632,
-                    "x3": 640,
-                    "x4": 538,
-                    "y1": 472,
-                    "y2": 458,
-                    "y3": 516,
-                    "y4": 530
-                },
-                "text": "TECHED"
+	for (var idx = 0; idx < response.predictions.length; idx++) {
+        var items = response.predictions[idx].results;
+        var name = response.predictions[idx].imageName;
+        var oImg = document.getElementById(name);
+        if(oImg){
+            oImg.onload = function(){
+                var ctx = drawCanvas(name);
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var text = "#" + i  + ": " + item.text + " " + ( item.bboxAccuracy * 100 ).toFixed(2) + "%";
+                    drawBoundingBox(ctx, name, item.boundingBox, text);
+                }                
             }
-        ]
-    };
-	oImg.onload = function(){
-		var ctx = drawImage("1")
-		for (var i = 0; i < response.predictions.length; i++) {
-            // draw the bouding box
-			ctx.moveTo(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1);
-			ctx.lineTo(response.predictions[i].boundingBox.x2, response.predictions[i].boundingBox.y2);
-			ctx.lineTo(response.predictions[i].boundingBox.x3, response.predictions[i].boundingBox.y3);
-			ctx.lineTo(response.predictions[i].boundingBox.x4, response.predictions[i].boundingBox.y4);
-			ctx.lineTo(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1);
-			ctx.stroke();
-
-            // write the text with the box angle
-			var text =  "#" + i  + ": " + response.predictions[i].text + " " + ( response.predictions[i].bboxAccuracy * 100 ).toFixed(2) + "%";
-			ctx.save();
-            // do some trigonometry to calculate the angle
-            var ab = Math.abs(response.predictions[i].boundingBox.x2 - response.predictions[i].boundingBox.x1);
-            var ac = Math.abs(response.predictions[i].boundingBox.y2 - response.predictions[i].boundingBox.y1);
-            var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
-            var clockwise = (response.predictions[i].boundingBox.y2 - response.predictions[i].boundingBox.y1 > 0 ? 1 : -1);
-			var angle = Math.acos(ab /  bc);
-			ctx.rotate( clockwise * angle );
-            // draw the background box
-            ctx.fillStyle = 'red';
-            ctx.fillRect(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1, ctx.measureText(text).width, parseInt(fontSize*1.5));
-            // write the text in the box
-            ctx.fillStyle = "white";
-            ctx.fillText(text, response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1 + fontSize);
-            ctx.restore();
-		}
+            oImg.src = oImg.src;
+        }
     }
-	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006";
 };
 </script>
 
@@ -262,115 +287,138 @@ Here is a simple HTML code you can use to visualize other results:
 ```HTML
 <html>
 <body>
-
 <table border="0">
-	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
+	<tr><td><img id="SAP_TechEd_BCN2018_01020.jpg" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006"/></div></td></tr><tr><td><canvas id="canvas_SAP_TechEd_BCN2018_01020.jpg"/></td></tr>
 </table>
 
 <script>
-var fontSize = 10;
+var fontSize = 14;
 
-function drawImage(imagId) {
-	var oImg = document.getElementById("img_" + imagId);;
-	var oCanvas = document.getElementById("canvas_" + imagId);
-	oCanvas.width = oImg.width;
-	oCanvas.height = oImg.height * oImg.width / oImg.naturalWidth;
+var response = {
+    "id": "37ec14b4-0fd5-45ad-4c36-1c7775a35a1a",
+    "predictions": [
+        {
+            "imageName": "SAP_TechEd_BCN2018_01020.jpg",
+            "results": [
+                {
+                    "bboxAccuracy": 0.9788690209388733,
+                    "boundingBox": {
+                        "x1": 1139,
+                        "x2": 1477,
+                        "x3": 1482,
+                        "x4": 1144,
+                        "y1": 291,
+                        "y2": 276,
+                        "y3": 402,
+                        "y4": 417
+                    },
+                    "text": "Check-ll"
+                },
+                {
+                    "bboxAccuracy": 0.981939971446991,
+                    "boundingBox": {
+                        "x1": 799,
+                        "x2": 1098,
+                        "x3": 1104,
+                        "x4": 804,
+                        "y1": 381,
+                        "y2": 365,
+                        "y3": 477,
+                        "y4": 493
+                    },
+                    "text": "Registration"
+                },
+                {
+                    "bboxAccuracy": 0.977262020111084,
+                    "boundingBox": {
+                        "x1": 530,
+                        "x2": 632,
+                        "x3": 640,
+                        "x4": 538,
+                        "y1": 472,
+                        "y2": 458,
+                        "y3": 516,
+                        "y4": 530
+                    },
+                    "text": "TECHED"
+                }
+            ]
+        }
+    ],
+    "processedTime": "2018-11-14T15:49:03.027874+00:00",
+    "status": "DONE"
+};
+
+function drawCanvas(imageId) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+	oCanvas.width  = oImg.width;
+	oCanvas.height = oImg.height;
 
 	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height * oImg.width / oImg.naturalWidth);
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
+	ctx.fillStyle = "white";
 	ctx.font = fontSize + "px Arial";
-	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
-    oImg.style.display = "none";
 
+    oImg.style.display = "none";
     return ctx;
+}
+function drawBoundingBox(ctx, imageId, item, text) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
+    var heightRatio = oCanvas.height / oImg.naturalHeight;
+
+    // draw the box
+    ctx.moveTo(item.x1 * widthRatio, item.y1 * heightRatio);
+    ctx.lineTo(item.x2 * widthRatio, item.y2 * heightRatio);
+    ctx.lineTo(item.x3 * widthRatio, item.y3 * heightRatio);
+    ctx.lineTo(item.x4 * widthRatio, item.y4 * heightRatio);
+    ctx.lineTo(item.x1 * widthRatio, item.y1 * heightRatio);
+    ctx.stroke();
+
+    // write the text with the box angle
+    ctx.save();
+    ctx.translate(item.x1 * widthRatio, item.y1 * heightRatio);
+    // do some trigonometry to calculate the angle in radian
+    var ab = Math.abs(item.x2 - item.x1);
+    var ac = Math.abs(item.y2 - item.y1);
+    var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
+    var clockwise = (item.y2 - item.y1 > 0 ? 1 : -1);
+    var radian = Math.acos(ab / bc);
+    ctx.rotate( clockwise * radian );
+    // draw the background box
+    ctx.fillStyle = 'red';
+    ctx.fillRect(0, 0, ctx.measureText(text).width, parseInt(fontSize*1.5));
+
+    // write the text in the box
+    ctx.fillStyle = "white";
+    ctx.fillText(text, 0, fontSize * heightRatio);
+    ctx.restore();
 }
 
 window.onload = function() {
-	var oImg    = document.getElementById("img_1");
-	var oCanvas = document.getElementById("canvas_1");
-
-    var response = {
-        "imageName": "SAP_TechEd_BCN2018_01020.jpg",
-        "predictions": [
-            {
-                "bboxAccuracy": 0.9788690209388733,
-                "boundingBox": {
-                    "x1": 1139,
-                    "x2": 1477,
-                    "x3": 1482,
-                    "x4": 1144,
-                    "y1": 291,
-                    "y2": 276,
-                    "y3": 402,
-                    "y4": 417
-                },
-                "text": "Check-ll"
-            },
-            {
-                "bboxAccuracy": 0.981939971446991,
-                "boundingBox": {
-                    "x1": 799,
-                    "x2": 1098,
-                    "x3": 1104,
-                    "x4": 804,
-                    "y1": 381,
-                    "y2": 365,
-                    "y3": 477,
-                    "y4": 493
-                },
-                "text": "Registration"
-            },
-            {
-                "bboxAccuracy": 0.977262020111084,
-                "boundingBox": {
-                    "x1": 530,
-                    "x2": 632,
-                    "x3": 640,
-                    "x4": 538,
-                    "y1": 472,
-                    "y2": 458,
-                    "y3": 516,
-                    "y4": 530
-                },
-                "text": "TECHED"
+	for (var idx = 0; idx < response.predictions.length; idx++) {
+        var items = response.predictions[idx].results;
+        var name = response.predictions[idx].imageName;
+        var oImg = document.getElementById(name);
+        if(oImg){
+            oImg.onload = function(){
+                var ctx = drawCanvas(name);
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var text = "#" + i  + ": " + item.text + " " + ( item.bboxAccuracy * 100 ).toFixed(2) + "%";
+                    drawBoundingBox(ctx, name, item.boundingBox, text);
+                }                
             }
-        ]
-    };
-	oImg.onload = function(){
-		var ctx = drawImage("1")
-		for (var i = 0; i < response.predictions.length; i++) {
-            // draw the bouding box
-			ctx.moveTo(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1);
-			ctx.lineTo(response.predictions[i].boundingBox.x2, response.predictions[i].boundingBox.y2);
-			ctx.lineTo(response.predictions[i].boundingBox.x3, response.predictions[i].boundingBox.y3);
-			ctx.lineTo(response.predictions[i].boundingBox.x4, response.predictions[i].boundingBox.y4);
-			ctx.lineTo(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1);
-			ctx.stroke();
-
-            // write the text with the box angle
-			var text =  "#" + i  + ": " + response.predictions[i].text + " " + ( response.predictions[i].bboxAccuracy * 100 ).toFixed(2) + "%";
-            ctx.save();
-            // do some trigonometry to calculate the angle
-            var ab = Math.abs(response.predictions[i].boundingBox.x2 - response.predictions[i].boundingBox.x1);
-            var ac = Math.abs(response.predictions[i].boundingBox.y2 - response.predictions[i].boundingBox.y1);
-            var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
-            var clockwise = (response.predictions[i].boundingBox.y2 - response.predictions[i].boundingBox.y1 > 0 ? 1 : -1);
-			var angle = Math.acos(ab /  bc);
-			ctx.rotate( clockwise * angle );
-
-            // draw the background box
-            ctx.fillStyle = 'red';
-            ctx.fillRect(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1, ctx.measureText(text).width, parseInt(fontSize*1.5));
-            // write the text in the box
-            ctx.fillStyle = "white";
-            ctx.fillText(text, response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1 + fontSize);
-            ctx.restore();
-		}
+            oImg.src = oImg.src;
+        }
     }
-	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006";
 };
 </script>
 </body>

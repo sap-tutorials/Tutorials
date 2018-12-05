@@ -11,34 +11,34 @@ time: 15
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
-  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)
-  - [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Source Code Versioning System](https://developers.sap.com/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](https://developers.sap.com/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](https://developers.sap.com/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html)
+  - [Pipeline Skeleton](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html)
+  - [Generic Project](https://developers.sap.com/tutorials/ci-best-practices-generic.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
 ### Introduction
 
-> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
+> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](https://developers.sap.com/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 
 The example shown here uses samples that are delivered as part of the SDK installation for Java Web development. These samples contain some web applications that are built using Maven and share a common parent `pom.xml`. Documentation and resources for Java web application development:
 
 > [Java: Getting Started](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e66f3eecbb5710148397a19b46c4979b.html)  
-> [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-java-basic-app.html)  
+> [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-java-basic-app.html)  
 > [Install the SDK for Java Development](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
 > [SDK Download](https://tools.hana.ondemand.com/#cloud)  
 
 The samples can be built without any further prerequisites. The dependencies listed in the `pom.xml` are all available on the Maven central repository. This includes the SAP Java Web SDK itself that does not need to be installed on the build server.
 
-We will setup a Continuous Delivery pipeline for one of the sample applications applying what was shown in the [Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part. We will use the following infrastructure:
+We will setup a Continuous Delivery pipeline for one of the sample applications applying what was shown in the [Pipeline Skeleton](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html) part. We will use the following infrastructure:
 
 ![Java Web on SAP Cloud Platform, CI Process Landscape](java-hcp-1.png)
 
@@ -68,7 +68,7 @@ SAP Cloud Platform offers two ways to achieve zero downtime blue-green deploymen
 
 - Automatic – the so called rolling update. The entire process switch is automated. The system automatically chooses and disables the processes of the old version while simultaneously enabling the new version.
 
-We apply the steps which are described in the [Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part to
+We apply the steps which are described in the [Pipeline Skeleton](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html) part to
 our scenario. The following illustration depicts the flow implementing the CI/CD process:
 
 ![CI/CD process flow](java-hcp-4.png)
@@ -88,7 +88,7 @@ We just mention the possibility and will not go into the details.
 
 ### Preparation of the Project
 
-We will call our project `neo-java-web-sdk-samples`. To set up the Gerrit project, execute the corresponding steps as described in [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html). The `samples` folder in the SAP Cloud Platform SDK contains a Maven parent project with a couple of modules. We do not want to build all the modules in this example but restrict ourselves on the `explore-ui5` module only. The others do not need to be included into the Gerrit project, and in the parent `pom.xml`, place them into comments:
+We will call our project `neo-java-web-sdk-samples`. To set up the Gerrit project, execute the corresponding steps as described in [Generic Project](https://developers.sap.com/tutorials/ci-best-practices-generic.html). The `samples` folder in the SAP Cloud Platform SDK contains a Maven parent project with a couple of modules. We do not want to build all the modules in this example but restrict ourselves on the `explore-ui5` module only. The others do not need to be included into the Gerrit project, and in the parent `pom.xml`, place them into comments:
 
 ```
     <modules>
@@ -109,7 +109,7 @@ We do not use Maven snapshot versions, hence ensure that the version number in t
 
 ### Voter Build: Preparation of the Java Compilation
 
-To configure the voter build, execute the corresponding steps as described in part [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html), but take `neo-java-web-sdk-samples` as project name and use the sources from the sample. We assume now that a voter job is created on Jenkins with the name `VO_neo-java-web-sdk-samples_master_build`.
+To configure the voter build, execute the corresponding steps as described in part [Generic Project](https://developers.sap.com/tutorials/ci-best-practices-generic.html), but take `neo-java-web-sdk-samples` as project name and use the sources from the sample. We assume now that a voter job is created on Jenkins with the name `VO_neo-java-web-sdk-samples_master_build`.
 
 
 ### Voter Build: Scenario Tests on the Build Server
@@ -350,7 +350,7 @@ You can use the voter build as a template for the CI build job by making a copy 
 
 - The merge into the `master` branch is the event that triggers the build.
 
-- The CI build is part of the continuous delivery pipeline, and thus configuration for archiving the artifact and definition of the subsequent job as described in [Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) is needed.
+- The CI build is part of the continuous delivery pipeline, and thus configuration for archiving the artifact and definition of the subsequent job as described in [Pipeline Skeleton](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html) is needed.
 
 - The CI build deploys to a different SAP Cloud Platform account. We assume in this example that the user credentials remain unchanged, but you may decide to use different deploy users.
 
@@ -358,7 +358,7 @@ You can use the voter build as a template for the CI build job by making a copy 
 
 1. Open the job definition.
 
-2. Change the **Gerrit Trigger** section according to the needs of the CI build as described in [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
+2. Change the **Gerrit Trigger** section according to the needs of the CI build as described in [Generic Project](https://developers.sap.com/tutorials/ci-best-practices-generic.html).
 
 3. In the Post-build Actions section, select **Add post-build action > Archive the artifacts**. Enter
 
@@ -486,7 +486,7 @@ It differs from the latter in the productive SAP Cloud Platform account as deplo
 
 ### Setup of the pipeline
 
-We apply the steps which are described in the [Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part to
+We apply the steps which are described in the [Pipeline Skeleton](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html) part to
 our scenario.
 
 #### Procedure
@@ -586,6 +586,3 @@ Make the following changes to the job `CI_neo-java-web-sdk-samples_master_releas
 5. Start the job by pushing a small change.
 
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

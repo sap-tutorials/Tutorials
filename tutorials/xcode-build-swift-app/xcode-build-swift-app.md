@@ -9,7 +9,7 @@ time: 10
 ---
 ## Prerequisites  
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Introduction to iOS development resources and Xcode](https://www.sap.com/developer/tutorials/xcode-introduction.html)
+ - **Tutorials:** [Introduction to iOS development resources and Xcode](https://developers.sap.com/tutorials/xcode-introduction.html)
 
 ## Details
 ### You will learn  

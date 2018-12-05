@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ---
 
 ## Prerequisites
- - **Tutorial:** [Creating Custom Adapter Configuration Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part3.html)
+ - **Tutorial:** [Creating Custom Adapter Configuration Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part3.html)
 
 ## Next Steps
- - [Where to Place the Custom Adapter Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part5.html)
+ - [Where to Place the Custom Adapter Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part5.html)
 
 ## Details
 ### You will learn
@@ -274,5 +274,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 [ACCORDION-END]
 
-## Next Steps
- - [Where to Place the Custom Adapter Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part5.html)

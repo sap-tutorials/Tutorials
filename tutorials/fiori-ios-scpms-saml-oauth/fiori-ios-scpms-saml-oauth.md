@@ -4,17 +4,16 @@ description: Show the differences in generating an application with the SDK Assi
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>security, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+time: 30
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Offline OData - Error handling](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-errorhandling.html)
 
 
 ## Next Steps
-- [Read SAP Mobile Secure configuration data](https://www.sap.com/developer/tutorials/fiori-ios-scpms-configprovider.html)
+- [Read SAP Mobile Secure configuration data](https://developers.sap.com/tutorials/fiori-ios-scpms-configprovider.html)
 
 ## Details
 ### You will learn  
@@ -22,8 +21,6 @@ In this tutorial, you will learn the differences in generating an application wi
 
 Then you will recreate the same application, but now with an OAuth 2 provider.
 
-### Time to Complete
-**30 Min**
 
 ---
 
@@ -147,7 +144,3 @@ You should now see the authorized client application for `hcpms`, as well as the
 
 [VALIDATE_5]
 [ACCORDION-END]
-
-
-## Next Steps
-- [Read SAP Mobile Secure configuration data](https://www.sap.com/developer/tutorials/fiori-ios-scpms-configprovider.html)

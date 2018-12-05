@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>html5 ]
  - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
-  - [SAPUI5 creating a new UI5 control](https://www.sap.com/developer/tutorials/sapui5-creating-control.html)
+  - [SAPUI5 creating a new UI5 control](https://developers.sap.com/tutorials/sapui5-creating-control.html)
 
 ## Details
 ### You will learn  
@@ -128,6 +128,3 @@ You will learn how to extend an existing control i.e Button in your application,
 
     ![finalrunning](ss-8.png)
 
----
-## Next Steps
- - [SAPUI5 creating a new UI5 control](https://www.sap.com/developer/tutorials/sapui5-creating-control.html)

@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
+ - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html)
  - Select a Cloud Foundry space. See [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
 
 ## Details
@@ -21,7 +21,7 @@ time: 20
 
 You'll use SAP Web IDE, and a particular feature relating to building business apps with CDS.
 
-The model and service you'll create is deliberately a very simple one, based on a small subset of something you've seen before if you've followed previous OData tutorials (in particular the [Learn about OData Fundamentals](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html) tutorial) - the product information from the Northwind service.
+The model and service you'll create is deliberately a very simple one, based on a small subset of something you've seen before if you've followed previous OData tutorials (in particular the [Learn about OData Fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html) tutorial) - the product information from the Northwind service.
 
 > In this tutorial and others the general name "SAP Web IDE" is used. Specifically, the "Full-Stack" version is implied throughout.
 
@@ -29,7 +29,7 @@ The model and service you'll create is deliberately a very simple one, based on 
 
 [ACCORDION-BEGIN [Step 1: ](Start up the SAP Web IDE)]
 
-Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 

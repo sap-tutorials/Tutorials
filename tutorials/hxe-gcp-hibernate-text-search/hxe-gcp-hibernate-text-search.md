@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Advanced geospatial processing with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-spatial.html)
+- **Tutorials:** [Advanced geospatial processing with Hibernate](https://developers.sap.com/tutorials/hxe-gcp-hibernate-spatial.html)
 
 ## Details
 ### You will learn  
@@ -241,7 +241,3 @@ You will see that the search now also returns results when searching for terms l
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Spatial clustering with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-cluster.html)

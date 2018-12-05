@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, t
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO](https://www.sap.com/developer/tutorials/jam-cloud-api-sso-configure.html)
+ - **Tutorials:** [Configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO](https://developers.sap.com/tutorials/jam-cloud-api-sso-configure.html)
 
 ## Next Steps
-- [Activate SAP Web IDE plugins on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-plugins-activate.html)
+- [Activate SAP Web IDE plugins on SAP Cloud Platform](https://developers.sap.com/tutorials/jam-cloud-webide-plugins-activate.html)
 
 ## Details
 ### You will learn  
@@ -62,7 +62,3 @@ Figure 1: Import your destination configuration file into SAP Cloud Platform
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [Activate SAP Web IDE plugins on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-plugins-activate.html)

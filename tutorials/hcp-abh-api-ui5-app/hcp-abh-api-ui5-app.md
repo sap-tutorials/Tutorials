@@ -10,11 +10,11 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Testing API Business Hub APIs with Curl](https://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
+- **Tutorials:** [Testing API Business Hub APIs with Curl](https://developers.sap.com/tutorials/hcp-abh-test-locally.html)
 
 
 ## Next Steps
- - [Using API Hub with Web IDE](https://www.sap.com/developer/tutorials/webide-api-hub.html)
+ - [Using API Hub with Web IDE](https://developers.sap.com/tutorials/webide-api-hub.html)
 
 ## Details
 ### You will learn  
@@ -252,5 +252,3 @@ self.getView().getModel("results").setProperty("/data", jsonResults);
 [ACCORDION-END]
 
 
-## Next Steps
-- [Using API Hub with Web IDE](https://www.sap.com/developer/tutorials/webide-api-hub.html)

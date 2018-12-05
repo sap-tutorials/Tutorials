@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-- [Create the gamified HelpDesk application](https://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
+- [Create the gamified HelpDesk application](https://developers.sap.com/tutorials/hcp-gamification-sample-application.html)
 
 ## Details
 ### You will learn  
@@ -95,6 +95,3 @@ Verify that **User** is your SAP ID user and replace the default **Password** ma
 [ACCORDION-END]
 
 
-## Next Steps
-
-- [Create the gamified HelpDesk application](https://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)

@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - **Integrated Development Environment:** Basic working knowledge of SAP HANA Studio. E.g. You should be able to connect to your HANA instance from SAP HANA Studio and feel comfortable with executing simple queries.
 
 ## Next Steps
- - **Tutorials:** [Create a New User and Assign Permissions](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html)
+ - **Tutorials:** [Create a New User and Assign Permissions](https://developers.sap.com/tutorials/dt-create-schema-load-data-part2.html)
 
 ## Details
 ### You will learn

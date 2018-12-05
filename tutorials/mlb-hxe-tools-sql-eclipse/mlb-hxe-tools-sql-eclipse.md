@@ -16,7 +16,7 @@ In this tutorial, you will install and configure the SAP HANA Tools for Eclipse.
 
 Then, you will learn how to connect to the System database and the HXE tenant of your SAP HANA, express edition instance.
 
-For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 [ACCORDION-BEGIN [Prerequisite: ](Eclipse IDE)]
 

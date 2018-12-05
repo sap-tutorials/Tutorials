@@ -3,28 +3,21 @@ title: Switch your app from mock data to a live OData service
 description: After running your app with mock data, learn how to switch it to a live OData service
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, products>sap-gateway, tutorial>intermediate ]
+time: 15
 ---
 
 ## Prerequisites  
-- **Proficiency:** Intermediate
 - **Tutorials:**
-- [Build an SAPUI5 app based on your data model and run it with mock data](https://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
-- [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+- [Build an SAPUI5 app based on your data model and run it with mock data](https://developers.sap.com/tutorials/hcp-webide-build-app-mock-data.html)
+- [Create an account on the Gateway Demo system](https://developers.sap.com/tutorials/gateway-demo-signup.html)
 
 ## Details
-
 ### You will learn  
 
 The previous two tutorials introduced a scenario where app development was going to precede the availability of an OData service. To work in parallel with the service development, you created an OData model (which would have been based on Design Thinking sessions with the users) and then built your SAPUI5 app based on that model. You also were able to run it against the SAP Web IDE mock data server. This tutorial will show you how to configure your finished application to run against a live service.
 
 Converting an app built on mock data to a live service requires editing only two files if there is perfect agreement between the OData models (the one you created by hand, and the model in the final service). For completeness, the metadata model in the app project should also be updated (but it is not downloaded to the client or used when the app runs). In this tutorial, you will make a third required change to show how to accommodate a less than perfect alignment between the models.
 
-### Time to Complete
-
-**15 Min**.
 
 ---
 
@@ -76,8 +69,8 @@ Field Name       | Value
 
 To establish a baseline for the source code you have written so far, you will deploy it to SAP Cloud Platform and commit the project to Git. If you aren't sure how to do this, refer to the two tutorials below:
 
-- [SAP Cloud Platform Deployment tutorial](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
-- Commit the code to Git following the [Git Tutorial](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+- [SAP Cloud Platform Deployment tutorial](https://developers.sap.com/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
+- Commit the code to Git following the [Git Tutorial](https://developers.sap.com/tutorials/hcp-webide-commit-git.html)
 
 
 [ACCORDION-END]
@@ -214,6 +207,3 @@ You should now commit and push your edits to Git and redeploy the app to SAP Clo
 [ACCORDION-END]
 
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

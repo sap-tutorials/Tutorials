@@ -8,10 +8,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Introduction to Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)
+ - **Tutorial:** [Introduction to Freezer Monitoring Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part1.html)
 
 ## Next Steps
-   - [Build and Deploy Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)
+   - [Build and Deploy Streaming Lite Project](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)
 
 ## Details
 ### You will learn  
@@ -83,5 +83,3 @@ For the question below, select the correct answer, and click **Validate**.
 
 ---
 
-## Next Steps
-   - [Build and Deploy Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)

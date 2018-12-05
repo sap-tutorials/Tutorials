@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Table Statistics and its Effect on Query Plans](https://www.sap.com/developer/tutorials/dt-query-processing-part3.html)
+ - **Tutorials:** [Table Statistics and its Effect on Query Plans](https://developers.sap.com/tutorials/dt-query-processing-part3.html)
 
 ## Next Steps
  - **Tutorials:**

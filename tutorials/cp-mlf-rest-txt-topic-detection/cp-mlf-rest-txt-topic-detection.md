@@ -31,7 +31,7 @@ This is the list of accepted file extensions:
 
 |Name                  | Description
 |----------------------|--------------------
-| **Archive file**     | `zip`, `tar` or `tar`
+| **Archive file**     | `zip`, `tar` or `tar.gz`
 
 A series of settings can also be provided as part of the form data (named ***options*** in the form data)  using a JSON string format.
 

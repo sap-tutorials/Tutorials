@@ -6,17 +6,17 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 time: 10
 ---
 ## Prerequisites  
- - **Tutorials:** [SAP HANA Studio, Deploy your project](https://www.sap.com/developer/tutorials/studio-deploy-project.html)
+ - **Tutorials:** [SAP HANA Studio, Deploy your project](https://developers.sap.com/tutorials/studio-deploy-project.html)
 
 ## Next Steps
- - [SAP HANA Studio, Display your project](https://www.sap.com/developer/tutorials/studio-display-project.html)
+ - [SAP HANA Studio, Display your project](https://developers.sap.com/tutorials/studio-display-project.html)
 
 ## Details
 ### You will learn  
 Now to expand your application to include data objects and import your sample data.
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 

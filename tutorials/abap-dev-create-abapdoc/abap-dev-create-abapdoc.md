@@ -7,11 +7,8 @@ tags: [ tutorial>beginner, topic>abap-development ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create an ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
+ - **Tutorials:** [Create an ABAP Class](https://developers.sap.com/tutorials/abap-dev-create-new-class.html)
 
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -23,7 +20,7 @@ In the following exercise you will make your program more readable by learning h
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open your ABAP class)]
-First, open your ABAP class, which you created in [Create an ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html):
+First, open your ABAP class, which you created in [Create an ABAP Class](https://developers.sap.com/tutorials/abap-dev-create-new-class.html):
 
 ![Image depicting step-1-open-class](step-1-open-class.png)
 

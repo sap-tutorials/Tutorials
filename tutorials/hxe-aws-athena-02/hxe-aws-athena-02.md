@@ -98,6 +98,6 @@ select count(distinct year) from gdelt_athena.events
 ```
 
 Provide an answer to the question below then click on **Validate**.
-
+ 
 [VALIDATE_1]
 [ACCORDION-END]

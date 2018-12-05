@@ -10,11 +10,11 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
  - **Proficiency:** Intermediate
  - **Device:** Apple iPad running iOS 10
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Implement Fiori for iOS controls](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-fioriuikit.html)
+ - **Tutorials:** [Implement Fiori for iOS controls](https://developers.sap.com/tutorials/fiori-ios-hcpms-fioriuikit.html)
 
 
 ## Next Steps
- - [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)
+ - [List Report Floorplan](https://developers.sap.com/tutorials/fiori-ios-scpms-floorplan.html)
 
 ## Details
 ### You will learn  
@@ -234,5 +234,3 @@ Build and run the application. After logging in, click the **Product Categories*
 [ACCORDION-END]
 
 
-## Next Steps
-- [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)

@@ -6,7 +6,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ---
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Data Mart Scenario (Part 1): Set up SAP HANA database on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-slt1-hana-mdc.html)
+ - **Tutorials:** [Data Mart Scenario (Part 1): Set up SAP HANA database on SAP Cloud Platform](https://developers.sap.com/tutorials/cp-s4-ext-slt1-hana-mdc.html)
  - **Systems, Tools, Services:**
    -   SAP HANA database in SAP Cloud Platform trial account
    -   SAP S/4HANA backend system in `VirtualBox`
@@ -15,7 +15,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
    -   SAP Landscape Transformation Replication Server
 
 ## Next Steps
-- [Data Mart Scenario (Part 3): Create an OData Service in SAP HANA](https://www.sap.com/developer/tutorials/cp-s4-ext-slt3-hana-odata.html)
+- [Data Mart Scenario (Part 3): Create an OData Service in SAP HANA](https://developers.sap.com/tutorials/cp-s4-ext-slt3-hana-odata.html)
 
 ## Details
 ### You will learn
@@ -103,7 +103,7 @@ In this step you will ensure that the SAP HANA database you created in the previ
 
 In this step you will install the current version of `SAP Cloud Connnector` and set up a `Service Channel`. This service allows your SAP NetWeaver backend system to connect to the HANA database running in your SAP Cloud Platform account.
 
-1.  Install SAP Cloud Connector as described in [this tutorial](https://www.sap.com/germany/developer/tutorials/hcp-cloud-connector-setup.html). You may chose to install this in your host operating system, or in the openSUSE Linux running in your `VirtualBox` VM.
+1.  Install SAP Cloud Connector as described in [this tutorial](https://developers.sap.com/tutorials/hcp-cloud-connector-setup.html). You may chose to install this in your host operating system, or in the openSUSE Linux running in your `VirtualBox` VM.
 
 2.  Connect the SAP Cloud COnnector to your SAP Cloud Platform trial account.
 

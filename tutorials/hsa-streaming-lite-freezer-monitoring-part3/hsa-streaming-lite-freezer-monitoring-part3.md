@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Install Streaming Lite and Setup Freezer Lite](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part2.html)
+ - **Tutorial:** [Install Streaming Lite and Setup Freezer Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part2.html)
 
 ## Details
 ### You will learn  
@@ -16,7 +16,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 - How to deploy our project on `Raspberry Pi 2`
 
 ## Next Steps
-- [Test Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part4.html)
+- [Test Streaming Lite Project](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part4.html)
 
 ### Time to Complete
 **15 Min**
@@ -29,7 +29,7 @@ Streaming Lite runs `.ccx` files, which come from standard HANA Studio Streaming
 
   1. Create project `"freezer_monitoring_lite"`
 
-    In HANA Studio, create a new HANA Streaming Analytics project called `"freezer_monitoring_lite"`, in the "default" workspace. For detailed instructions on creating a project, you can refer back to the [Streaming Analytics: Run and Test a Streaming Project](https://www.sap.com/developer/tutorials/sds-run-test.html) tutorial.
+    In HANA Studio, create a new HANA Streaming Analytics project called `"freezer_monitoring_lite"`, in the "default" workspace. For detailed instructions on creating a project, you can refer back to the [Streaming Analytics: Run and Test a Streaming Project](https://developers.sap.com/tutorials/sds-run-test.html) tutorial.
 
   2. Copy `CCL` code
 
@@ -136,5 +136,3 @@ You should now see our Streaming Lite project running:
 
 ---
 
-## Next Steps
-- [Test Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part4.html)

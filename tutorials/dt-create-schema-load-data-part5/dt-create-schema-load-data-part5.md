@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part4.html)
+ - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://developers.sap.com/tutorials/dt-create-schema-load-data-part4.html)
 
 ## Next Steps
- - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part6.html)
+ - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](https://developers.sap.com/tutorials/dt-create-schema-load-data-part6.html)
 
 ## Details
 ### You will learn

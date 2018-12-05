@@ -8,10 +8,10 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
+ - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
 ## Next Steps
- - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
+ - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
 ## Details
 ### You will learn
@@ -201,7 +201,7 @@ The installation will trigger a restart of your SAP HANA instance, so make sure 
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
-So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-apl-binary.html).
 
 [DONE]
 [ACCORDION-END]

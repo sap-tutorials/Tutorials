@@ -11,10 +11,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
  - You have an account on Amazon Web Services(AWS). If you do not already have an AWS account, you can go to the [AWS Home Page](https://aws.amazon.com/) and set one up.
  - You have familiarized yourself with [AWS Elastic Beanstalk documentation](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html).
  - You have installed the Elastic Beanstalk command line interface (EBCLI). If you have not already done so, you can follow [these instructions](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html).
- - You have a `HANA, express edition` database that can be reached from the AWS Elastic Beanstalk environment. If you do not have one set up, see the [HANA Express database deploy tutorial](https://www.sap.com/developer/tutorials/hxe-db-deploy.html).
+ - You have a `HANA, express edition` database that can be reached from the AWS Elastic Beanstalk environment. If you do not have one set up, see the [HANA Express database deploy tutorial](https://developers.sap.com/tutorials/hxe-db-deploy.html).
 
 ## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page
+ - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
 
 ## Details
 ### You will learn  
@@ -272,5 +272,3 @@ This tutorial will guide you through the process of deploying a sample `HANA, ex
 
 ---
 
-## Next Steps
- - Go to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) tutorials page

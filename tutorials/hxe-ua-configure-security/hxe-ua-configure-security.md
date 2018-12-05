@@ -3,20 +3,16 @@ title: Configure SAP HANA 2.0, express edition Security
 description: Your SAP HANA, express edition installation has several preconfigured security settings. Before using SAP HANA, express edition, complete these security tasks.
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
+time: 5
 ---
-## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:** [Start Using SAP HANA 2.0, express edition](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+## Prerequisites  
+- [Start Using SAP HANA 2.0, express edition](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)
 
 ## Details
 ### You will learn  
-How to perform security tasks to ensure that your security settings are not known outside your organization.
+  - How to perform security tasks to ensure that your security settings are not known outside your organization
 
-### Time to Complete
-**5 Min**.
 
 ---
 
@@ -117,7 +113,3 @@ Use the new admin user to deactivate the SYSTEM user:
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

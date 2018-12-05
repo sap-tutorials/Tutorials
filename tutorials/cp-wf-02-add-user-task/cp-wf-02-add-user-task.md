@@ -13,7 +13,7 @@ time: 15
 - How a simple UI5 app can provide a basic UI for user tasks
 - What script tasks are and how to reference the workflow context within them
 
-In the beginner tutorial group [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html) you added a basic user task to a simple workflow definition, and initially, in the user interface details, you specified dummy entries (`test`) which caused a default task display mechanism to be used in the `MyInbox` app. Later on you used the [Workflow Forms](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/bc57d645aee44e11afc8992fd27e544c.html) feature to build an approval UI. The Workflow Forms feature is great for building UIs without any coding, but if you want to take the first steps towards building your own custom UIs, this tutorial will show you what's involved. 
+In the beginner tutorial group [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html) you added a basic user task to a simple workflow definition, and initially, in the user interface details, you specified dummy entries (`test`) which caused a default task display mechanism to be used in the `MyInbox` app. Later on you used the [Workflow Forms](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/bc57d645aee44e11afc8992fd27e544c.html) feature to build an approval UI. The Workflow Forms feature is great for building UIs without any coding, but if you want to take the first steps towards building your own custom UIs, this tutorial will show you what's involved. 
 
 In this tutorial, you'll create and deploy a simple UI5 app that can be used for user tasks. The app has just enough functionality for you to display information from within the contexts of your running workflow instances, and to allow decisions by marking the tasks as **Complete** (which would move the instances on from the user task into the status **Completed**, in the case of this workflow definition).
 
@@ -31,7 +31,7 @@ This is what you're aiming for, that is, what a user task will look like in `MyI
 
 [ACCORDION-BEGIN [Step 1: ](Start up SAP Web IDE)]
 
-Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL, which will look like this:
+Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL, which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -93,7 +93,7 @@ This file is known as the [Application Descriptor File](https://help.sap.com/vie
 - Requests to URLs starting `/resources` (for UI5 runtime artefacts) or `/test-resources` (for UI5 support artefacts) are routed to the appropriate entry paths within the `sapui5` service
 - Requests to URLs starting `/bpmworkflowruntime` are routed to the root of the [Workflow API](https://api.sap.com/api/SAP_CP_Workflow/overview) via the `bpmworkflowruntime` destination
 
-The `bpmworkflowruntime` destination will have been set up automatically for you in the Connectivity service within your trial account when you enabled the Workflow service in [Prepare to create workflows in SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-workflow-getting-started.html). If you want to check, it should look something like this:
+The `bpmworkflowruntime` destination will have been set up automatically for you in the Connectivity service within your trial account when you enabled the Workflow service in [Prepare to create workflows in SAP Cloud Platform](https://developers.sap.com/tutorials/cp-workflow-getting-started.html). If you want to check, it should look something like this:
 
 ![bpmworkflowruntime destination](bpmworkflowruntime-destination.png)
 
@@ -444,7 +444,7 @@ In the **DETAILS** section:
 | Description  | **`Please confirm the order for '${context.stockinfo.ProductName}'.`**
 | Users        | (Your trial user name, e.g. P999999 - use upper case for the initial letter)
 
-> You will have encountered expressions like those in this section in the previous tutorial [Create a Workflow Definition Using an External Service](https://www.sap.com/developer/tutorials/cp-wf-01-create-definition.html). Find out more about these expressions in the SAP Help Portal, under the [Configure Service Tasks](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/a8a6267f537841fbb22c159ba2af8835.html) topic.
+> You will have encountered expressions like those in this section in the previous tutorial [Create a Workflow Definition Using an External Service](https://developers.sap.com/tutorials/cp-wf-01-create-definition.html). Find out more about these expressions in the SAP Help Portal, under the [Configure Service Tasks](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/a8a6267f537841fbb22c159ba2af8835.html) topic.
 
 In the **USER INTERFACE** section:
 

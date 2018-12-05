@@ -3,22 +3,16 @@ title: Create tables and upload data (SAP HANA, express edition, server-only)
 description: This tutorial will walk you through the steps to create tables and upload data using SQL
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Download and connect SQL client ](https://www.sap.com/developer/tutorials/hxe-cj1-download-sql-client.html)
+ - [Download and connect SQL client ](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html)
 
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-Describe what the user will learn from your tutorial and what the outcome will be.
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -793,6 +787,3 @@ You can check the data has been imported into the table if no errors have occurr
 
 [ACCORDION-END]
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

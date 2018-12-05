@@ -7,14 +7,14 @@ time: 10
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Enable XSODATA in your SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-xsodata.html)
+- **Tutorials:** [Enable XSODATA in your SAP HANA XSC Application](https://developers.sap.com/tutorials/hana-xsodata.html)
 
 ## Details
 ### You will learn  
   - How to consume a simple `xsodata` service
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 

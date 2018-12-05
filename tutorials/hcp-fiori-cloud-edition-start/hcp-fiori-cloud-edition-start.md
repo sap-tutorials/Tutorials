@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-- [Add custom fields to a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
+- [Add custom fields to a standard SAP Fiori app](https://developers.sap.com/tutorials/hcp-fiori-cloud-edition-add-fields.html)
 
 ## Details
 ### You will learn  
@@ -57,7 +57,7 @@ Now click the **Get started!** button
 
 ![Get started!](2.png)
 
-You will be asked to log on or register. If you already have a user for the SAP Community Network (SCN) or the SAP Service Marketplace you can use that user. Otherwise check out this tutorial on how to [create your SAP Cloud Platform Trial account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html). Then Log On with your credentials.
+You will be asked to log on or register. If you already have a user for the SAP Community Network (SCN) or the SAP Service Marketplace you can use that user. Otherwise check out this tutorial on how to [create your SAP Cloud Platform Trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html). Then Log On with your credentials.
 
 ![Log On screen](3.png)
 
@@ -95,5 +95,3 @@ Congratulations, you're ready to go and start extending the SAP standard Fiori a
 
 
 
-## Next Steps
-- [Add custom fields to a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)

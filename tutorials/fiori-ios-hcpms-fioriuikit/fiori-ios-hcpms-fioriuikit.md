@@ -9,10 +9,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **Proficiency:** Intermediate
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - **Tutorials:** [Create an app using the SDK Assistant](https://developers.sap.com/tutorials/fiori-ios-hcpms-sdk-assistant.html)
 
 ## Next Steps
- - [Using the SAP Fiori for iOS Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)
+ - [Using the SAP Fiori for iOS Mentor app](https://developers.sap.com/tutorials/fiori-ios-scpms-mentor.html)
 
 ## Details
 ### You will learn  
@@ -103,5 +103,3 @@ Click the **Products** item. You should now see the master list with **Object Ce
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- [Using the SAP Fiori for iOS Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)

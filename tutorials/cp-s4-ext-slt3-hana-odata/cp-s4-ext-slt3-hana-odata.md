@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ## Prerequisites
  - **Proficiency:** Intermediate
  - **Tutorials:**
-   - [Data Mart Scenario (Part 2): Replicate data using SLT](https://www.sap.com/developer/tutorials/cp-s4-ext-slt2-setup-slt.html)
+   - [Data Mart Scenario (Part 2): Replicate data using SLT](https://developers.sap.com/tutorials/cp-s4-ext-slt2-setup-slt.html)
  - **Systems, Tools, Services:**
    -   SAP HANA database in SAP Cloud Platform trial account
    -   SAP S/4HANA backend system in VirtualBox
@@ -51,7 +51,7 @@ In this step you will ensure that the SAP HANA database operating in your SAP Cl
 
 In this step you will verify that your SAP NetWeaver system is running and operational. If you took a longer break or shut down your system, you might want to restore the VirtualBox snapshot `ABAP with SCC and SLT Replication` before you continue.
 
-1.  Log on to your SAP NetWeaver backend system as described in step 5 of the preceding tutorial [Replicate Data using SLT](https://www.sap.com/developer/tutorials/cp-s4-ext-slt2-setup-slt.html).
+1.  Log on to your SAP NetWeaver backend system as described in step 5 of the preceding tutorial [Replicate Data using SLT](https://developers.sap.com/tutorials/cp-s4-ext-slt2-setup-slt.html).
 
 2.  If you cannot log on to the system, then open your `openSUSE` desktop in `VirtualBox`, otherwise you may continue with step 3 below.
 

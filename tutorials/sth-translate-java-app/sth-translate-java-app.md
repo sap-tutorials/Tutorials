@@ -3,22 +3,17 @@ title: Translate a Java app
 description: Use SAP Translation Hub to translate the UI texts for a Java app that you develop in Eclipse.
 primary_tag: products>sap-translation-hub
 tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>java ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
-  - **Tutorials:** [Enable the SAP Translation Hub service](https://www.sap.com/developer/tutorials/sth-enable.html)
- - **Tutorials:** [Install and configure Eclipse environment](https://github.com/SAP/cloud-espm-v2#1-quick-start-guide) Complete the **1. Quick start guide** section.
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+  - [Enable the SAP Translation Hub service](https://developers.sap.com/tutorials/sth-enable.html)
+  - [Install and configure Eclipse environment](https://github.com/SAP/cloud-espm-v2#1-quick-start-guide) Complete the **1. Quick start guide** section.
 
 ## Details
 ### You will learn  
-You'll learn how to translate the properties file of a Java app using the file upload scenario in SAP Translation Hub.
+  - How to translate the properties file of a Java app using the file upload scenario in SAP Translation Hub
 
-### Time to Complete
-**15 Min**.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Locate properties file)]
@@ -245,6 +240,3 @@ The French version of the app appears:
 
 [ACCORDION-END]
 
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

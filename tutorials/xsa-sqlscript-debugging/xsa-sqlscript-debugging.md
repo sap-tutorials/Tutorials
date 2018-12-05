@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Creating Table User Defined Functions](https://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
+- **Tutorials:** [Creating Table User Defined Functions](https://developers.sap.com/tutorials/xsa-sqlscript-table-user.html)
 
 ## Next Steps
-- [Anonymous Blocks](https://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
+- [Anonymous Blocks](https://developers.sap.com/tutorials/xsa-sqlscript-anonymous.html)
 
 ## Details
 ### You will learn  
@@ -154,6 +154,3 @@ Execution of the procedure is now completed. Return to the SQL tab and check the
 [ACCORDION-END]
 
 
-
-## Next Steps
-- [Anonymous Blocks](https://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)

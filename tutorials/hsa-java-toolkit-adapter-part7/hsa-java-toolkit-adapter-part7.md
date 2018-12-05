@@ -4,13 +4,11 @@ description: Learn more about features of Custom Adapters like enabling guarante
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
+time: 30
 ---
 
 ## Prerequisites
- - **Tutorial:** [Test the Custom Java Toolkit Adapter](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part6.html)
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Test the Custom Java Toolkit Adapter](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part6.html)
 
 ## Details
 ### You will learn
@@ -21,8 +19,6 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - Pre-defined Transporter and Formatter modules
  - How to debug a Custom Adapter
 
-### Time to Complete
-**30 Min**
 
 ---
 
@@ -280,5 +276,3 @@ Click the **Done** button below once you have completed this tutorial.
 
 [ACCORDION-END]
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

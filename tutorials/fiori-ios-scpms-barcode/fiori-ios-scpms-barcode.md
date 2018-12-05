@@ -12,9 +12,6 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
  - **Target device:** A physical iPad or iPhone running iOS 10
 
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
 In this tutorial, you learn how to implement the `FUISearchBarcodeScanner` protocol to scan barcodes and QR codes. This tutorial is not intended as a real-world example, but merely shows the working of the barcode functionality.
@@ -259,5 +256,3 @@ And it also works with QR codes:
 [ACCORDION-END]
 
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

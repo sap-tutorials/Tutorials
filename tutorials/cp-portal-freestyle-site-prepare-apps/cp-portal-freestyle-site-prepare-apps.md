@@ -9,7 +9,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - You have signed up to the SAP Gateway system. For more information, see [Create an account on the Gateway Demo system] (https://www.sap.com/developer/tutorials/gateway-demo-signup.html#_blank)
+ - You have signed up to the SAP Gateway system. For more information, see [Create an account on the Gateway Demo system] (https://developers.sap.com/tutorials/gateway-demo-signup.html#_blank)
 
 
 ## Details   

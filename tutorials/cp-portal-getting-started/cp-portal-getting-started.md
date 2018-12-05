@@ -8,7 +8,7 @@ tags: [tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have created a SAP Cloud Platform trial account. See [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html).
+ - You have created a SAP Cloud Platform trial account. See [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
 
 ## Details
 ### You will learn  

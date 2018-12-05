@@ -25,7 +25,7 @@ Then delete the local copy of the file.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](SAP HANA, express edition Key Pair)]
+[ACCORDION-BEGIN [Step 1: ](EC2 Instance Key Pair)]
 
 When creating your SAP HANA, express edition, you had to :
 
@@ -52,7 +52,7 @@ Therefore, even if you ***stop*** your EC2 instance running your SAP HANA, expre
 
 Only detaching and deleting the EBS volumes will prevent that but your SAP HANA, express edition will no longer be usable.
 
-Therefore it is recommended that you **terminate** your SAP HANA, express edition instance when you won't need to use it anymore or for a while
+Therefore it is recommended that you **terminate** your SAP HANA, express edition instance when you won't need to use it anymore or for a while.
 
 To do so, access the **<a href="https://console.aws.amazon.com/ec2" target="&#95;blank">EC2 Dashboard</a>**.
 
@@ -64,27 +64,35 @@ Right click on the running instance, then select **Instance State > Terminate**.
 
 ![Amazon Web Services EC2 Dashboard](05.png)
 
-After a few seconds the instance will be marked as ***stopped***.
+You will be notified that with EBS backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated.
+
+However, SAP HANA, express edition AMI uses EBS volumes which do not have **Delete on Termination** set to true will persist after this instance is terminated which may incur an EBS cost.
+
+Click on **Yes, Terminate**.
+
+![Amazon Web Services EC2 Dashboard](05-1.png)
+
+After a few seconds the instance will be marked as ***terminated***.
 
 ![Amazon Web Services EC2 Dashboard](06.png)
 
-Go back to the **<a href="https://console.aws.amazon.com/ec2" target="&#95;blank">EC2 Dashboard</a>**.
-
-Click on **2 Volumes**.
+Go to the **<a href="https://console.aws.amazon.com/ec2/home?#Volumes" target="&#95;blank">EC2 Dashboard - Volumes</a>**.
 
 ![Amazon Web Services EC2 Dashboard](07.png)
 
-Select both volumes then use the **Actions > Detach Volumes** button.
+By default, your SAP HANA, express edition uses 2 disks, as displayed below.
 
 ![Amazon Web Services EC2 Dashboard](08.png)
 
-After a few seconds, they will both be marked as **available**.
+But after the termination of the instance, one will be automatically deleted but not the other.
+
+Please note down, what capacity (in `GiB`) the remainder disk is as this will be part of the validation below.
+
+Select the **Volume** associated to your SAP HANA, express edition EC2 instance, then use the **Actions > Delete Volumes** menu.
 
 ![Amazon Web Services EC2 Dashboard](09.png)
 
 Provide an answer to the question below then click on **Validate**.
-
-Select both volumes then use the **Actions > Delete** button.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -122,7 +130,7 @@ You will be prompted to type (or paste) the bucket name to confirm your action t
 
 ![Amazon Web Services S3 Dashboard](10.png)
 
-You can repeat the operation for all buckets where the name include **`athena`**.
+**Repeat the operation for all buckets where the name include *`athena`*** like the ones with names starting ***`aws-athena-query-results`***.
 
 [DONE]
 [ACCORDION-END]

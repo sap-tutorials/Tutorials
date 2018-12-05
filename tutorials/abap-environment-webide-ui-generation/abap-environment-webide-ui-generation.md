@@ -2,7 +2,7 @@
 auto_validation: true
 title: Create a UI that Consumes an Exposed ABAP Service
 description: Use SAP Web IDE Full-Stack to create a SAP Fiori Elements app on top of an OData service exposed in the SAP Cloud Platform ABAP Environment.
-primary_tag: topic>abap-development
+primary_tag: products>sap-cloud-platform-abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
@@ -53,7 +53,6 @@ Switch to destinations and click **New Destination**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add destination data)]
-
 Enter following data to your destination.
 
 | ---------------------------- | --------------------------------------------------------------- |
@@ -66,25 +65,25 @@ Enter following data to your destination.
 |    **User**                  |                 Equals your communication user                  |
 | **Password**                 |              Password of your communication user                |
 
-> - Use `DEST_XXX` (where `XXX` is your group number) as name of your destination.
-> - Remove `-api` from the URL.
+  1. Use `DEST_XXX` (where `XXX` is your group number) as name of your destination.
 
-![Destination Data](Picture2.png)
+  2. Remove `-api` from the URL.
+
+      ![Destination Data](Picture2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add additional properties)]
-1. Enter additional properties by clicking on **New Property**.
+  1. Enter additional properties by click on **New Property**.
 
-    | -------------------------- | -------------------------------|
-    |      `WebIDEEnabled`       |            `true`              |
-    |       `WebIDEUsage`        |     `odata_gen,odata_abap`     |
+  2. Click on **Save**.
 
-2. Click on **Save**.
+      ![additional properties](Picture3.png)
 
-![additional properties](Picture3.png)
-
+| -------------------------- | -------------------------------|
+|      `WebIDEEnabled`       |            `true`              |
+|       `WebIDEUsage`        |     `odata_gen,odata_abap`     |
 
 [DONE]
 [ACCORDION-END]

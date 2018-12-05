@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
 
- - You have completed [Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
+ - You have completed [Use a message broker](https://developers.sap.com/tutorials/datahub-pipelines-broker.html)
 
 ## Next Steps
- - [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
+ - [Bundle data (via JavaScript)](https://developers.sap.com/tutorials/datahub-pipelines-bundledata.html)
 
 ## Details
 **This tutorial is obsolete and will be removed shortly (end of-November 2018).**
