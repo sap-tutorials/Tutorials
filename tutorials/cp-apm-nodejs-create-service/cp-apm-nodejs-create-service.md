@@ -351,6 +351,9 @@ Your service is now backed by a fully functional database. This means you can re
 
 1. Download the [Postman application](https://www.getpostman.com/).
 
+    >Note that you can use any other HTTP client than Postman.
+
+
 1. Click on the following link and save the file to a folder of your choice:  [`postman.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
 
 1. In the Postman app, use the **Import** button in the toolbar:
