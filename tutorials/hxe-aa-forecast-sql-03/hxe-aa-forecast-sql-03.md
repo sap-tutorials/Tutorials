@@ -56,7 +56,7 @@ The Cash Flows file (`CashFlows.txt`) presents daily measures of cash flows from
 | <nobr>`LastWMonth`</nobr>, </br><nobr>`BeforeLastWMonth`</nobr>                   | Boolean variables that indicate if the information is true or false | 1 if the information is true.
 | <nobr>`WorkingDaysIndices`</nobr>, </br><nobr>`ReverseWorkingDaysIndices`</nobr>  | Indices or reverse indices of the working days | An integer value
 | <nobr>`MondayMonthInd`</nobr>, </br><nobr>`TuesdayMonthInd`</nobr>, </br><nobr>`WednesdayMonthInd`</nobr>, </br><nobr>`ThursdayMonthInd`</nobr>, </br><nobr>`FridayMonthInd`</nobr> | Indices of the week days in the month | An integer value
-| <nobr>`Last5WDaysInd`</nobr>, </br><nobr>`Last4WDaysInd`</nobr>                   | Indices of the 5 or 4 last working days of the month | An integer value
+| <nobr>`Last5WDaysInd`</nobr>, </br><nobr>`Last4WDaysInd`</nobr>                   | Indices of the 5 or 4 last working days of the month | An integer value 
 
 #### **Los Angeles Ozone**
 
