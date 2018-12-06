@@ -9,10 +9,7 @@ time: 30
 
 
 ## Prerequisites
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
 
 ## Details
 ### You will learn
