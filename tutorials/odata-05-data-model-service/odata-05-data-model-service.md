@@ -206,6 +206,19 @@ Do this by using the context menu on the `db` folder and choosing **Build** > **
 
 This will cause all sorts of informational messages to be written to the Console; keep an eye on them to get a feel for what's going on. Towards the end of the messages you'll notice a deployment taking place.
 
+> If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
+
+> 1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
+
+> 1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+![finding the .hdiconfig file](hdiconfig.png)
+
+> 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
+
+> 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
+like
+> 1. **Save** the file, and re-try the build.
+
 You may wish to check the results of this activity in the Cloud Foundry environment from the SAP Cloud Platform cockpit. Navigate there to your space (see earlier in this tutorial) and request a list of the service instances from the menu. You should see your database instance listed, something like this:
 
 ![HANA trial service instance](hanatrial-service-instance.png)
