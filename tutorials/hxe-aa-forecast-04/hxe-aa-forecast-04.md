@@ -7,6 +7,7 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 30
 ---
 
+
 ## Prerequisites
  - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
 
@@ -82,7 +83,6 @@ Each observation is characterized by 2 variables described in the following tabl
 :-------------|---------------------------|--------------------------
 | `TIME`      | The date of the readings  | A date
 | `Signal`    | the signal value          | A numerical value
-
 
 [DONE]
 [ACCORDION-END]
