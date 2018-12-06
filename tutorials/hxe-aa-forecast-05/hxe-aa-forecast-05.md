@@ -37,7 +37,7 @@ For more details about the SAP HANA APL function, check the online <a href="http
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: (Calling AFL functions from HDI containers)]
+[ACCORDION-BEGIN [Step 1: ](Calling AFL functions from HDI containers)]
 
 In order to use any ***SAP HANA APL*** functions, ultimately an AFL wrapper must be created and then invoked.
 
@@ -54,7 +54,7 @@ For more details, you can check the [AFL Language Procedures](https://help.sap.c
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: (Time Series analysis with SAP HANA APL)]
+[ACCORDION-BEGIN [Step 1: ](Time Series analysis with SAP HANA APL)]
 
 As stated previously, the ***SAP HANA Automated Predictive Library*** (APL) uses the data mining capabilities provided by the ***SAP Predictive Analytics*** automated analytics engine.
 
