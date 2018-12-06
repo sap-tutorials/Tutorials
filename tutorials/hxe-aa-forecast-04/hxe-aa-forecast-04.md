@@ -789,7 +789,7 @@ group by tile
 
 Provide an answer to the question below then click on **Validate**.
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 Based on this series of elements, you have found out that these datasets :
