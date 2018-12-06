@@ -224,21 +224,18 @@ Right-click the **`db`** module and choose **Build**.
 
 ![Build the `db` module](build-db-module.png)
 
-**Especially for Developer Garage attendees at SAP TechEd Bangalore**
+> If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
 
-If the build is unsuccessful, check the console log for errors. Errors like this: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
+> 1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
 
-1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
+> 1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+![finding the .hdiconfig file](hdiconfig.png)
 
-1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+> 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
 
-    ![finding the .hdiconfig file](hdiconfig.png)
-
-1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
-
-1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
-
-1. **Save** the file, and re-try the build.
+> 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
+like
+> 1. **Save** the file, and re-try the build.
 
 [DONE]
 
