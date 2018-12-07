@@ -1,5 +1,5 @@
 ---
-title: Create theme for your Portal freestyle site
+title: Create Theme for your Portal Freestyle Site
 description: Create and customize a theme and then import it into your Portal freestyle site.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
@@ -20,9 +20,14 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
 ### Time to Complete
 **15 Min**
 
-[ACCORDION-BEGIN [Step 1: ](Save the site URL)]
-  1. Navigate to the Site Directory in your SAP Cloud Platform Portal Admin Space.
-  2. In the Supplier Portal site, navigate to **Services and Tools** and select the UI Theme Designer tool.
+[ACCORDION-BEGIN [Step 1: ](Access the UI theme designer tool)]
+
+1. From the side panel of your Supplier Portal site, select **Services and Tools**.
+
+2. Open the UI Theme Designer tool by hovering over the tile and clicking **Configure**.
+
+    ![Open UI Theme Designer](1-launch-theme-designer.png)
+
 
 [DONE]
 
@@ -30,28 +35,25 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
 
 [ACCORDION-BEGIN [Step 2: ](Create a theme)]
 
-  1. Launch the UI Theme Designer as follows:
-    <ol type="a"><li>Click on **Services and Tools** in the left side panel.
-    </li><li>Hover over the **UI Theme Designer** tile and click  **Configure** to open the designer in a new browser tab.
-    If a message appears, you can click **OK** and ignore it.
-![Launch UI Theme Designer](2-launch-theme-designer.png)
-</li></ol>
+1. Click **Create a New Theme**.
 
-  2. Create a new theme as follows:
-    <ol type="a"><li>Click **Create a New Theme**.
     ![Create new theme](3-create-theme.png)
-    </li><li>For **Base Theme** select SAP Belize and click **Step 2** to proceed.
+
+2. Select SAP Belize as the **Base Theme** and click **Step 2** to proceed.
     ![Base theme](4-base-theme.png)
-    </li><li>Enter the following values:
+
+3. Enter the following values:
 
     |Field |Value |
     |----|-----|
     |**Theme ID** |**`velotics`** |
     |**Title** |**`velotics`** |
-    ![Theme values](5-theme-values.png)</li></ol>
-  3. Click **Create Theme**.
 
-A new theme named **`velotics`** is created as a copy of the SAP Belize theme with the custom properties that you entered.
+4. Click **Create Theme**.
+
+    ![Theme values](5-theme-values.png)
+
+>A new theme named **`velotics`** is created as a copy of the SAP Belize theme with the custom properties that you entered.
 
 
 [DONE]
@@ -61,18 +63,33 @@ A new theme named **`velotics`** is created as a copy of the SAP Belize theme wi
 [ACCORDION-BEGIN [Step 3: ](Customize the theme)]
 To design and modify the theme, you need to first define a Target Page that will serve as a canvas upon which you can perform these changes. You will then use the quick theming mode to easily change color scheme, background image, or logo.
 
-  1. Enter the **Link to Application**. This is the runtime URL of your site that you copied previously.
-  2. Click **Add** to create the target page.
-  ![Add target page](6-target-pages.png)
-  3. From the panel on the far right, select the paint brush icon to switch to quick theming.
-  ![Quick theming](7-quick-theming.png)
-  4.	Change the company logo by clicking on the right of the **Company Logo** field.
-  5.	In the **Assign Image** dialog, click on the left to open the file system browser.
-  ![Assign image](8-save-image.png)
-  6.	Select the `logo-velotics.png` image file from our resources. Notice that that image has been added to the list of available images.
-  8.	Click the image to select it.
-  9.	Click **OK** to apply your changes. Notice that the change has been applied and the icon has changed.
->To apply the new theme to your Portal site, you will need to publish it from the UI Theme Designer and then apply it from the Portal Theme Manager.
+1. Enter the **Link to Application**. This is the runtime URL of your site that you copied previously.
+
+2. Click **Add** to create the target page.
+
+    ![Add target page](6-target-pages.png)
+
+3. From the panel on the far right, select the paint brush icon to switch to quick theming.
+
+    ![Quick theming](7-quick-theming.png)
+
+4.	Change the company logo by clicking on the right of the **Company Logo** field.
+
+    ![Add logo](7a-add-logo.png)
+
+5.	In the **Assign Image** dialog, open the file system browser.
+
+6.	Select the `logo-velotics.png` image file from our resources. Notice that that image has been added to the list of available images.
+
+    ![Assign image](8-save-image.png)
+
+7.	Click the image to select it.
+
+8.	Click **OK** to apply your changes. Notice that the change has been applied and the icon has changed.
+
+    ![Preview logo](9b-preview-logo.png)
+
+>To apply the new theme to your Portal site, you will need to publish it from the UI Theme Designer and then apply it to your site from the Portal Theme Manager.
 
 [DONE]
 
@@ -80,10 +97,16 @@ To design and modify the theme, you need to first define a Target Page that will
 
 [ACCORDION-BEGIN [Step 4: ](Publish the theme)]
 
-  1. In the Theme Designer top level menu click on **Theme** and then **Save & Publish**.
-  ![Save and Publish](9-save-and-publish.png)
-  2. From the **Save & Publish** dialog, verify the theme parameters.
-  3. Click **Save & Publish** to publish the **`Velotics`** theme.
+1. In the UI Theme Designer top level menu select **Theme** and then **Save & Publish**.
+
+    ![Save and Publish](9-save-and-publish.png)
+
+2. From the **Save & Publish** dialog, verify the theme parameters.
+
+3. Click **Save & Publish** to publish the **`Velotics`** theme.
+
+    ![Click Save and Publish](9a-click-publish.png)
+
 >Publishing the theme might take several moments.
 
 [DONE]
@@ -93,17 +116,35 @@ To design and modify the theme, you need to first define a Target Page that will
 
   [ACCORDION-BEGIN [Step 5: ](Apply the theme to your site)]
 
-  1. Open the Site Designer of your site.
-  2. From **Services and Tools** launch the **Theme Manager**.
-  ![Launch Theme Manager](10-launch-theme-manager.png)
-  3. Click **OK** on the message.
-  4. Notice that the **`velotics`** theme that you created and published is available in the site's **Theme Manager**.
-  5. Select the **`velotics`** theme.
-  6. Click **Assign to Site**.
-  7. Click **Publish** to publish the latest changes.
-  ![Publish changes](11-publish-changes.png)
-  8. Click **Publish** to only apply the changes. Select **Publish and Open** to publish your site and review the latest changes you have made to your site.
-  ![Publish and Open](12-publish-and-open.png)
+1. Go back to the Site Designer of your site.
+
+2. From **Services and Tools** launch the **Theme Manager**.
+
+    ![Launch Theme Manager](10-launch-theme-manager.png)
+
+3. Click **OK** on the message.
+
+4. Notice that the **`velotics`** theme that you created and published is available in the site's **Theme Manager**.
+
+    ![Velotics Theme](10a-velotics-theme.png)
+
+5. Select the **`velotics`** theme.
+
+6. Click **Assign to Site**.
+
+    ![Assign to site](10b-assign-to-site.png)
+
+7. Click **Publish** to publish the latest changes.
+
+    ![Publish changes](11-publish-changes.png)
+
+8. Click **Publish** to only apply the changes. Select **Publish and Open** to publish your site and review the latest changes you have made to your site.
+
+    ![Publish and Open](12-publish-and-open.png)
+
+9. View your branded Site
+
+    ![Branded Site](13-branded-site.png)
 
 [VALIDATE_1]
 

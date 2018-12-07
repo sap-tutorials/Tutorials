@@ -9,9 +9,9 @@ time: 5
 
 ## Prerequisites  
  - A text editor (e.g., Notepad, Atom, Sublime)
- - **Tutorials:** [Install the Cloud Foundry Command Line Interface (CLI)]
- - **Tutorials:** [Learn the Fundamentals of the Cloud Foundry Environment]
- - A `Node.js` app, like the one described in [Create a Basic Node.js App].
+ - **Tutorials:** [Install the Cloud Foundry Command Line Interface (CLI)](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
+ - **Tutorials:** [Learn the Fundamentals of the Cloud Foundry Environment](https://developers.sap.com/tutorials/cp-cf-fundamentals.html)
+ - A `Node.js` app, like the one described in [Create a Basic Node.js App](https://developers.sap.com/tutorials/cp-node-create-basic-app.html).
 
 ## Details
 ### You will learn  

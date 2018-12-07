@@ -1,6 +1,7 @@
 ---
 title: Add a Fiori Launchpad Page to Your Portal Freestyle Site
 description: Add an SAP Fiori launchpad page to your Portal site and add apps to it.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
 author_name: Lindsay Bert
@@ -41,7 +42,7 @@ In this tutorial you're going to create a launchpad page in your Portal freestyl
 
 The `Supplier Self Service` page is added to the list of pages.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new group for launchpad tiles)]
@@ -74,9 +75,7 @@ In this step you will create a new tile group. Tile groups logically aggregate t
 
     ![New group is created](10-save-group.png)
 
-
-
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -96,7 +95,7 @@ In this step you will add the SAP Fiori launchpad page (named **Supplier Self Se
 
     > The **Menu Editor** is opened with a new menu entry named **Supplier Self Service** added at the bottom of the menu list. The new entry points to the newly created page.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Publish your site)]
@@ -115,7 +114,7 @@ In this step we will publish the site so that you can see how the new launchpad 
 
     ![Display launchpad page](15-display-page.png)
 
-
+[VALIDATE_1]
 [ACCORDION-END]
 
 

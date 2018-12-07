@@ -1,6 +1,7 @@
 ---
 title: Deploy an SAP Fiori App to SAP Cloud Platform
 description: Deploy a SAPUI5 app to your SAP Cloud Platform subaccount to use in a Portal freestyle site.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
 author_name: Lindsay Bert
@@ -64,8 +65,7 @@ First set up a destination and its parameters for making a connection to the SAP
 
     ![Connection to ES5 established](4-4-connection-to-ES5-established.png)  
 
-
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the Portal tutorials repository)]
@@ -91,6 +91,7 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
 
     `cloud-portal-tutorial-samples-master\TECHED2018\productslist`.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a ZIP file from the application)]
@@ -108,6 +109,7 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
 
     ![NEW ZIP CREATED](10-10-new-zip-created.png).    
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open SAP Web IDE)]
@@ -122,6 +124,7 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
 
 >You've opened your development environment, now let's import our `ProductsList` SAPUI5 app into it.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Import the SAPUI5 App to SAP Web IDE)]
@@ -144,6 +147,7 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
 
 >You have imported the `ProductsList` app and now you need to deploy it into your subaccount.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Deploy the app to your subaccount)]
@@ -162,6 +166,7 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
 
 >Now that the `Products List` app exists in your SAP Cloud Platform subaccount, you will be able to add it to the launchpad page in your Portal freestyle site.
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 
