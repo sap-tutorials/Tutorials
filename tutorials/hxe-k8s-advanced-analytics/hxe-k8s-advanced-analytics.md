@@ -1,6 +1,6 @@
 ---
 title: Help Thomas Get Started with SAP HANA, express edition
-description: Use SAP HANA, express edition to help Thomas get started with help from other developers in the community using Kubernetes, text analytics, graph and geospatial.
+description: Use SAP HANA, express edition to help Thomas get started with help from other developers in the community using Kubernetes, text analytics, graph and geospatial.A
 auto_validation: true
 time: 45
 tags: [tutorial>beginner, products>sap-hana]
@@ -12,6 +12,11 @@ primary_tag: products>sap-hana
  - You have registered for [Docker](https://store.docker.com/signup)
 
 ## Details
+
+Let us help our fellow developer Thomas to learn SAP HANA. On his journey he will find other developers of the community with similar interests, explore who is learning from whom and who are close by. To make it fun and useful we do this all with SAP HANA express edition.
+
+![How do we help Thomas](thomas.png)
+
 ### You will learn
   - How to easily deploy SAP HANA, express edition and SQLPAD from Docker into Google Kubernetes Cluster
   - How to configure persistency and services in Kubernetes for the two containers in the same pod
@@ -19,6 +24,16 @@ primary_tag: products>sap-hana
   - Explore advanced analytics features in SAP HANA, including the document store, geospatial, graph and linguistic text search functions
 
 This tutorial will use Google Kubernetes Engine to deploy SAP HANA, express edition and an SQL client. If you do not want to use this method, you can check other [available options to download or install SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html).
+
+## How do we help Thomas?
+Like most developers, Thomas wants to stay on top of the latest technologies. The first step is to get started with tutorials, like this one. The second step he wants to take is connect with other developers and experts in the SAP Community to share experiences and learn together.
+
+Fellow developers from all around the world connect daily to exchange information. We will find out if they share our interest for SAP HANA and related topics by using text analytics on their opinions in the community.
+
+Thanks to the multiple engines in SAP HANA, we will combine text analytics with graph analytics to find out how community members are connected.
+
+Finally, we will use the geospatial capabilities in SAP HANA to find out developers closer to Thomas' location in Munich.
+
 
 ---
 
@@ -90,7 +105,7 @@ Click **Save**.
 
 
 > **What is going on?**
-> &nbsp;
+
 > You are creating a Kubernetes cluster with computing capacity for SAP HANA, express edition and a web SQL client, SQLPAD, in a single node. The images for these containers will be pulled from the public `Docker` repository and store. The containers will be connected to each other and have some ports exposed to the internet.
 
 
@@ -312,8 +327,6 @@ You should get a message saying **secret `docker-secret` created**.
 
 ![Saved file](12.png)
 
-
-
 [DONE]
 [ACCORDION-END]
 
@@ -340,14 +353,15 @@ kubectl describe pods
 Give it a couple of minutes for the database to start. Here is some reading you can do in the meantime:
 
 > **What is going on?**
-> &nbsp;
+
 > Kubernetes is an open source platform to manage containerized workloads and services. In this case, you have used two containers, one for SAP HANA, express edition and the other for SQLPAD. SAP HANA needs persistency and you want that persistency to remain accessible even if the container disappears.
-> &nbsp;
+
 >This is why you created a persistent volume and attached a portion of it to a container using a claim. With the proper mechanisms, this would also allow you to restore the log and data files in the database from an upgraded version of the Docker container.
-> &nbsp;
+
 > You also want SAP HANA to have some ports accessible from outside the Kubernetes environment. In Kubernetes language, your containers are deployed in a pod. Physically, in this example, these are the two Docker containers in a virtual machine. Within the pod, containers can connect to each other but you want to be able to access SQLPAD from the external network.
-> &nbsp;
+
 >Services provide a mechanism to define a policy to access the pod from the outside world and expose specific ports for each of the applications. For example, SAP HANA express edition will be listening to JDBC connections on port 39041 while SQLPAD will be listening for web requests on port 3000
+
 > ![Pod diagram](pod.png)
 
 Use the following command to get the name of the pod that has been created:
@@ -463,9 +477,7 @@ You should see the schemata on the left side panel indicating the connection has
 
 ![Connect to sqlpad](26.png)
 
-> **Errors?**
-> &nbsp;
-> Make sure you are using the external IP address for SAP HANA and that there are no spaces before or after the IP address or port.
+> **Errors?** Make sure you are using the external IP address for SAP HANA and that there are no spaces before or after the IP address or port.
 
 [DONE]
 [ACCORDION-END]
@@ -492,22 +504,23 @@ IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/json.csv' INTO system.hints WITH b
 ![Connect to sqlpad](a1.png)
 
 > **What is going on?**
-> &nbsp;
+
 > Document store allows you to store all of the information related to the same record in the same document. These documents do not have a predefined format or number of fields like a table.
-> &nbsp;
+
 > Here is a sample document you inserted in the document store with the import command:
-> &nbsp;
+
 > ![Connect to sqlpad](a2.png)
 > &nbsp;
-> Document stores do not have tables or schemas, they use collections and documents. Documents in the same collection may no have the same amount of key-value pairs, a different structure and data type.
+> Document stores do not have tables or schemas, they use collections and documents. Documents in the same collection may have different structures and data types.
 > &nbsp;
 > This is particularly useful when relationships across documents are not too relevant and data structure needs to be flexible. For example, data for user accounts where fields like the phone number may not be entered and may not be stored at all. In this same scenario, there is no need for foreign keys and relations between the user records.
 > &nbsp;
-> This type of database is also referred to as `NoSQL` because data operations are not performed using SQL. However, SAP HANA uses SQL for CRUD operations in JSON document store.
+> This type of database is also referred to as `NoSQL` because data operations are not performed using SQL in other platforms. However, SAP HANA uses SQL for CRUD operations in JSON document store.
 > &nbsp;
 > For more information about the document store in SAP HANA, [refer to the help](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.03/en-US/5e783b7f5a9749bcbfffe167524aeccc.html)
 
 Use the following statement to complete the validation below:
+
 
 ```sql
  select TO_NVARCHAR("hint"), TO_NVARCHAR("office") from hints where "name"  = 'Maria';
@@ -518,7 +531,7 @@ Use the following statement to complete the validation below:
 
 [ACCORDION-BEGIN [Step 11: ]( SQL time! Select people in the community with at least one year of experience)]
 
-Free resources, like this tutorial, are a great way to get started. People in the community with more experience and willing to help are a great complement for a learning journey.
+Free resources, like this tutorial, are a great way to get started. People in the community with more experience and willing to help are a great complement to a learning journey.
 
 You will select the people whose experience is 2 years or more. You will also move those records into a columnar table so you can perform advanced analytics only available in the columnar store.
 
@@ -619,7 +632,7 @@ CREATE GRAPH WORKSPACE "HANA_GRAPH"
 
 There are some known algorithms to apply on a graph. One of them is the `strongly connected components`. As this is a directed graph (the `learns_from` establishes has a direction from one node to the other), you can establish an index with the most strongly connected members.
 
-In this example, who are the developers more people are connected to by learning from them either directly or indirectly.
+In this example, you will find out who are the developers more people are connected to by learning from them either directly or indirectly.
 
 One of the methods to execute calculations on graph workspaces is through a calculation node. These can be created both graphically in SAP Web IDE for SAP HANA and using SQL and an XML definition.
 
