@@ -1,6 +1,6 @@
 ---
 title: Help Thomas Get Started with SAP HANA, express edition
-description: Use SAP HANA, express edition to help Thomas get started with help from other developers in the community using Kubernetes, text analytics, graph and geospatial.A
+description: Use SAP HANA, express edition to help Thomas get started with help from other developers in the community using Kubernetes, text analytics, graph and geospatial.
 auto_validation: true
 time: 45
 tags: [tutorial>beginner, products>sap-hana]
