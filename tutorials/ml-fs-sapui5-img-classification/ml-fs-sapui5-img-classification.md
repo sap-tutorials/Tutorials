@@ -12,14 +12,13 @@ time: 20
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn how to quickly integrate the **Image Classification** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application.
+  - How to quickly integrate the **Image Classification** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application
 
 The **Image Classification** service allows you to calculates and returns a list of classifications/labels along with their probabilities for a given image.
 
 You will then be able to substitute the **Image Classification** services with any other SAP Leonardo Machine Learning Functional Services that consumes images content.
 
 ---
-
 
 [ACCORDION-BEGIN [Step 1: ](Get The API Sandbox URL And API Key)]
 
@@ -278,7 +277,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
-Edit the `manifest.json` file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** and locate the `models` section (around line 55), and update the section like this:
+Edit the **`manifest.json`** file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** and locate the `models` section (around line 55), and update the section like this:
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -305,7 +304,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 The view will contain a canvas to display the selected image along with table to display the results.
 
-Edit the `demo.view.xml` file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** > **`view`** and replace the existing code with the below code.
+Edit the **`demo.view.xml`** file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** > **`view`** and replace the existing code with the below code.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -350,7 +349,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
             <content>
               <unified:FileUploader buttonOnly="true" buttonText="Upload Picture" sameFilenameAllowed="true" multiple="false" fileType="{demo>/fileType}"
                 mimeType="{demo>/mimeType}" typeMissmatch="fileTypeMissmatch" change="fileUploaderChange" uploadComplete="fileUploaderComplete" name="files"
-                uploadUrl="{demo>/url}" useMultipart="true" sendXHR="true" uploadOnChange="true" uploadAborted="test">
+                uploadUrl="{demo>/url}" useMultipart="true" sendXHR="true" uploadOnChange="true">
                 <unified:headerParameters>
                   <unified:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
                   <unified:FileUploaderParameter name="Accept" value="{demo>/accept}"/>
@@ -644,7 +643,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Solution: ](Project files)]
 
-In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-classification/sapui5ml-imageclassifier).
+In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-classification/source).
 
 However, this is not a repository you can clone and run the code.
 
