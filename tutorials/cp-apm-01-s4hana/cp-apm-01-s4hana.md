@@ -14,9 +14,9 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to extend your bookshop application so that it can access and consume the [OData Service for Business Partner](https://api.sap.com/api/API_BUSINESS_PARTNER/resource?section=OVERVIEW) using SAP API Business Hub. This service exposes an SAP S/4HANA Cloud system through APIs.
-  - How to query master data related to Suppliers (of books) in an SAP S/4HANA system.
-  - How to read supplier information (in SAP S/4HANA) of an order (stored in your SAP HANA database).
+  - How to extend your bookshop application so that it can access and consume the [OData Service for Business Partner](https://api.sap.com/api/API_BUSINESS_PARTNER/resource?section=OVERVIEW) using SAP API Business Hub
+  - How to query master data related to suppliers (of books) in an SAP S/4HANA system
+  - How to read supplier information (in SAP S/4HANA) of an order (stored in your SAP HANA database)
 
 ---
 
@@ -30,7 +30,9 @@ Let's start off by creating a new business application project from a template.
 3. Enter `s4bookshop` as the project name and choose **Next**.
 4. Leave the default MTA details and choose **Next**.
 5. In the **Project Details** step, enter `my.s4bookshop` as the **Java Package** name.
+
     ![Complete the project details](project-details.png)
+
     > Leave the default option of including sample files in project selected.
 
 6. Choose **Finish**.
@@ -176,7 +178,8 @@ Let's configure a destination that points to the SAP S/4HANA system. We will use
 
 8. Add an additional property **TrustAll** with the value **TRUE**.
 9. Choose **Save**.
-![S/4HANA Destination](s4hana-destination.png)
+
+    ![S/4HANA Destination](s4hana-destination.png)
 
 [DONE]
 
@@ -251,7 +254,7 @@ Add a custom handler that implements the query operation on the `Suppliers` enti
 2. Choose **New > Java Class**.
 3. Enter **`S4BookshopService`** as the class name and choose **Next**.
 4. Choose **Finish**.
-> The `S4BookshopService.java` file is created.
+    > The `S4BookshopService.java` file is created.
 
 5. Open the new `S4BookshopService.java` file and replace the template with the following code:
 
