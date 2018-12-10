@@ -61,7 +61,7 @@ Then, the following pop-up should appear. Click on the **Copy Key and Close** bu
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Analyze the service)]
+[ACCORDION-BEGIN [Step 1: ](Analyze the service)]
 
 As you can notice the API has only one resource (or service): `/topic-detection`.
 
@@ -91,7 +91,7 @@ A series of options are also required for the following parameters:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Access the SAP Cloud Platform Cockpit)]
 
 Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
@@ -108,7 +108,7 @@ You are now in your ***SAP Cloud Platform developer*** account!
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure your destination)]
+[ACCORDION-BEGIN [Step 1: ](Configure your destination)]
 
 You will need to create a destination in your SAP Cloud Platform account that allow will your applications to connect to external APIs such as the SAP API Business Hub.
 
@@ -146,7 +146,7 @@ You should receive a ***connection established*** message with potentially a ***
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Open the Web IDE)]
+[ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 
 On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
 
@@ -163,7 +163,7 @@ You will get access to the **SAP Web IDE** main page:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a project using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 1: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section or use the **File** > **New** > **Project from Template**.
 
@@ -194,7 +194,7 @@ View Name            | `demo`
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
+[ACCORDION-BEGIN [Step 1: ](Extend the application resource roots)]
 
 In order to ease the use of the provided code, we will add a new SAPUI5 resource roots. The main reason for this is that the rule used to generate the initial resource root by the project template has change many time over the time.
 
@@ -215,7 +215,7 @@ Click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Configure your SAPUI5 application)]
+[ACCORDION-BEGIN [Step 1: ](Configure your SAPUI5 application)]
 
 In order to use the previously configured destination, we need to add its declaration into the `neo-app.json` file along with the header white list configuration that will prevent HTTP header parameters to be filtered out.
 
@@ -267,7 +267,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
+[ACCORDION-BEGIN [Step 1: ](Store your API setting in a JSON model)]
 
 There are multiple options to achieve this goal. Here we will use a pre-loaded JSON model configured in the `manifest.json` file.
 
@@ -315,7 +315,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Extend the main SAPUI5 view)]
+[ACCORDION-BEGIN [Step 1: ](Extend the main SAPUI5 view)]
 
 The view will contain a table to display the results along with a canvas to display the selected image (if a single one is selected) and 2 buttons, one to import a snapshot and the other one to take snapshot using the webcam (if any, this button won't be visible on mobile device because it is not supported).
 
@@ -427,7 +427,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Extend the main SAPUI5 controller)]
+[ACCORDION-BEGIN [Step 1: ](Extend the main SAPUI5 controller)]
 
 Edit the `demo.controller.js` file located under **`Workspace`** > **`sapui5ml-topicdetection`** > **`webapp`** > **`controller`** and replace the existing code with the below code.
 
@@ -494,7 +494,7 @@ sap.ui.define([
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test the application)]
+[ACCORDION-BEGIN [Step 1: ](Test the application)]
 
 Click on the **Run** icon ![Run Applications](00-run.png) or press `ALT+F5`.
 
@@ -507,7 +507,7 @@ The service will be called, and the result displayed in a table.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Validation)]
+[ACCORDION-BEGIN [Step 1: ](Validation)]
 
 Provide an answer to the question below then click on **Validate**.
 
