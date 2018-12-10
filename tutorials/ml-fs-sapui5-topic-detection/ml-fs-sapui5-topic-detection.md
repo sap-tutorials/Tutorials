@@ -10,9 +10,6 @@ time: 15
 ## Prerequisites  
   - [Sign up for an free trial account on the SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://developers.sap.com/group.ml-fs-api-hub.html), [Java](https://developers.sap.com/group.ml-fs-java.html) or [SAPUI5](https://developers.sap.com/group.ml-fs-sapui5.html)
-
 ## Details
 ### You will learn  
   - How to quickly integrate the **Topic Detection** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application
@@ -201,7 +198,7 @@ View Name            | `demo`
 
 In order to ease the use of the provided code, we will add a new SAPUI5 resource roots. The main reason for this is that the rule used to generate the initial resource root by the project template has change many time over the time.
 
-Edit the `index.html` file located under **`Workspace`** > **`sapui5ml`** > **`webapp`** and add the below element to the existing `data-sap-ui-resourceroots` property around line 15 (don't forget the comma in between the existing element and the new one).
+Edit the **`index.html`** file located under **`Workspace`** > **`sapui5ml`** > **`webapp`** and add the below element to the existing `data-sap-ui-resourceroots` property around line 15 (don't forget the comma in between the existing element and the new one).
 
 ```JavaScript
 "sapui5ml": ""
@@ -210,7 +207,7 @@ Edit the `index.html` file located under **`Workspace`** > **`sapui5ml`** > **`w
 It should eventually look something like this:
 
 ```
-data-sap-ui-resourceroots='{"xxxx": "", "sapui5ml": ""}'
+data-sap-ui-resourceroots='{"demo.sapui5ml-topicdetection": "./", "sapui5ml": ""}'
 ```
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
@@ -222,7 +219,7 @@ Click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 In order to use the previously configured destination, we need to add its declaration into the `neo-app.json` file along with the header white list configuration that will prevent HTTP header parameters to be filtered out.
 
-Edit the `neo-app.json` file located under **`Workspace`** > **`sapui5ml-topicdetection`** and replace the current content with the below code.
+Edit the **`neo-app.json`** file located under **`Workspace`** > **`sapui5ml-topicdetection`** and replace the current content with the below code.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -280,19 +277,22 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url": "/ml-dest/topicdetection/topic-detection",
-  "APIKey": "<<<<< COPY YOUR API KEY >>>>>",
-  "options": {
-    "numTopics": 3,
-    "numTopicsPerDoc": 3,
-    "numKeywordsPerTopic": 15,
-    "numFeatures" : 20
-  },
-  "optionsJs": "{\"numTopics\":3,\"numTopicsPerDoc\":1, \"numKeywordsPerTopic\":15}"
+	"defaultOptions": {
+		"numTopics": 3,
+		"numTopicsPerDoc": 3,
+		"numKeywordsPerTopic": 15,
+		"numFeatures": 20
+	},
+	"url": "/ml-dest/topicdetection/topic-detection",
+	"method": "POST",
+	"accept": "application/json",
+	"fileType": "zip,tar",
+	"mimeType": "application/x-zip-compressed,application/zip,application/octet-stream",
+	"APIKey": "<<<<< COPY YOUR API KEY >>>>>"
 }
 ```
 
-Edit the `manifest.json` file located under **`Workspace`** > **`sapui5ml-topicdetection`** > **`webapp`** and locate the `models` section (around line 55), and update the section like this:
+Edit the **`manifest.json`* file located under **`Workspace`** > **`sapui5ml-topicdetection`** > **`webapp`** and locate the `models` section (around line 55), and update the section like this:
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -319,13 +319,12 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 The view will contain a table to display the results along with a canvas to display the selected image (if a single one is selected) and 2 buttons, one to import a snapshot and the other one to take snapshot using the webcam (if any, this button won't be visible on mobile device because it is not supported).
 
-Edit the `demo.view.xml` file located under **`Workspace`** > **`sapui5ml-topicdetection`** > **`webapp`** > **`view`** and replace the existing code with the below code.
+Edit the **`demo.view.xml`** file located under **`Workspace`** > **`sapui5ml-topicdetection`** > **`webapp`** > **`view`** and replace the existing code with the below code.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```XML
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
-	xmlns:u="sap.ui.unified" xmlns="sap.m" controllerName="sapui5ml.controller.demo" displayBlock="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:micro="sap.suite.ui.microchart" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="sapui5ml.controller.demo" displayBlock="true">
 	<App>
 		<pages>
 			<Page title="Topic Detection">
@@ -339,25 +338,25 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 							<ColumnListItem >
 								<cells>
 									<Label text="Total number of topics to be detected"/>
-									<StepInput value="{demo>/options/numTopics}" required="true"/>
+									<StepInput value="{demo>/defaultOptions/numTopics}" required="true"/>
 								</cells>
 							</ColumnListItem>
 							<ColumnListItem>
 								<cells>
 									<Label text="Number of most relevant topics to be listed per document"/>
-									<StepInput value="{demo>/options/numTopicsPerDoc}" required="true"/>
+									<StepInput value="{demo>/defaultOptions/numTopicsPerDoc}" required="true"/>
 								</cells>
 							</ColumnListItem>
 							<ColumnListItem>
 								<cells>
 									<Label text="Number of keywords to be listed per topic"/>
-									<StepInput value="{demo>/options/numKeywordsPerTopic}" required="true"/>
+									<StepInput value="{demo>/defaultOptions/numKeywordsPerTopic}" required="true"/>
 								</cells>
 							</ColumnListItem>
 							<ColumnListItem>
 								<cells>
 									<Label text="Maximum number of keywords to be extracted from documents in total"/>
-									<StepInput value="{demo>/options/numFeatures}"/>
+									<StepInput value="{demo>/defaultOptions/numFeatures}"/>
 								</cells>
 							</ColumnListItem>
 						</items>
@@ -385,7 +384,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 												<table:Column sortProperty="score" filterProperty="score">
 													<Label text="Score"/>
 													<table:template>
-														<Text text="{demo>score}"/>
+														<micro:RadialMicroChart size="XS" fraction="{demo>score}" total="1" class="sapUiSmallMargin"/>
 													</table:template>
 												</table:Column>
 												<table:Column>
@@ -405,17 +404,17 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 				<footer>
 					<Toolbar width="100%">
 						<content>
-							<u:FileUploader id="idFileUpload" buttonOnly="true" buttonText="Upload Text File Archive" name="files" uploadUrl="{demo>/url}"
-								sameFilenameAllowed="true" useMultipart="true" sendXHR="true" uploadOnChange="true" accept="zip,tar" change="fileUploadChange"
-								uploadComplete="fileUploadComplete">
-								<u:headerParameters>
-									<u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
-									<u:FileUploaderParameter name="Accept" value="application/json"/>
-								</u:headerParameters>
-								<u:parameters>
-									<u:FileUploaderParameter name="options" value="{demo>/optionsJs}"/>
-								</u:parameters>
-							</u:FileUploader>
+							<unified:FileUploader buttonOnly="true" buttonText="Upload Text File Archive" sameFilenameAllowed="true" multiple="false"
+								fileType="{demo>/fileType}" mimeType="{demo>/mimeType}" typeMissmatch="fileTypeMissmatch" change="fileUploaderChange"
+								uploadComplete="fileUploaderComplete" name="files" uploadUrl="{demo>/url}" useMultipart="true" sendXHR="true" uploadOnChange="true">
+								<unified:headerParameters>
+									<unified:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
+									<unified:FileUploaderParameter name="Accept" value="{demo>/accept}"/>
+								</unified:headerParameters>
+								<unified:parameters>
+									<unified:FileUploaderParameter name="options" value="{demo>/options}"/>
+								</unified:parameters>
+							</unified:FileUploader>
 						</content>
 					</Toolbar>
 				</footer>
@@ -423,7 +422,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 		</pages>
 	</App>
 </mvc:View>
-
 ```
 
 [DONE]
@@ -437,70 +435,59 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JavaScript
 sap.ui.define([
-  "sap/ui/core/mvc/Controller",
-  "sap/m/MessageBox",
-  "sap/m/Image"
-], function(Controller, MessageBox, Image) {
-  "use strict";
-  return Controller.extend("sapui5ml.controller.demo", {
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageBox",
+	"sap/m/Image"
+], function (Controller, MessageBox, Image) {
+	"use strict";
+	return Controller.extend("sapui5ml.controller.demo", {
+		fileUploaderChange: function (oControlEvent) {
+			// get the current view
+			var oView = this.getView();
+			// start the busy indicator
+			var oBusyIndicator = new sap.m.BusyDialog();
+			oBusyIndicator.open();
+			// generate the options and stringify
+			oView.getModel("demo").setProperty("/options", JSON.stringify(oView.getModel("demo").getProperty("/defaultOptions")));
+			// keep a reference in the view to close it later
+			this.oBusyIndicator = oBusyIndicator;
+		},
+		fileUploaderComplete: function (oControlEvent) {
+			// get the current view
+			var oView = this.getView();
+			if (oControlEvent.getParameters().status === 200) {
+				// get the resvice respnse as JSON
+				var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).predictions;
 
-    fileUploadChange: function(oControlEvent) {
-      // get the current view
-      var oView = this.getView();
-
-      // start the busy indicator
-      var oBusyIndicator = new sap.m.BusyDialog();
-      oBusyIndicator.open();
-
-      // generate the options and stringify
-      var options = {
-        "numTopics": oView.getModel("demo").getProperty("/options/numTopics"),
-        "numTopicsPerDoc": oView.getModel("demo").getProperty("/options/numTopicsPerDoc"),
-        "numKeywordsPerTopic": oView.getModel("demo").getProperty("/options/numKeywordsPerTopic"),
-        "numFeatures": oView.getModel("demo").getProperty("/options/numFeatures")
-      };
-      oView.getModel("demo").setProperty("/optionsJs", JSON.stringify(options));
-
-      // keep a reference in the view to close it later
-      this.oBusyIndicator = oBusyIndicator;
-    },
-    fileUploadComplete: function(oControlEvent) {
-      // get the current view
-      var oView = this.getView();
-
-      if (oControlEvent.getParameters().status === 200) {
-        // get the resvice respnse as JSON
-        var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).predictions;
-
-        // create a JSON model
-        var documents = new Array(oTopicDetection.length);
-        for (var iTopicDetection = 0; iTopicDetection < oTopicDetection.length; iTopicDetection++) {
-          var oTopicDetectionDocument = {
-            "name": oTopicDetection[iTopicDetection].docName
-          };
-          oTopicDetectionDocument.topics = [];
-          for (var iTopics = 0; iTopics < oTopicDetection[iTopicDetection].topics.length; iTopics++) {
-            var oTopicDetectionTopic = {
-              "rank": iTopics,
-              "id": oTopicDetection[iTopicDetection].topics[iTopics],
-              "score": oTopicDetection[iTopicDetection].scores[iTopics],
-              "keywords": oTopicDetection[iTopicDetection].keywords[iTopics]
-            };
-
-            oTopicDetectionDocument.topics.push(oTopicDetectionTopic);
-          }
-          documents[iTopicDetection] = oTopicDetectionDocument;
-        }
-        oView.getModel("demo").setProperty("/result", documents);
-        // display the result table
-        oView.getModel("demo").setProperty("/resultVisible", true);
-      } else {
-        oView.getModel("demo").setProperty("/resultVisible", false);
-                MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
-      }
-      this.oBusyIndicator.close();
-    }
-  });
+				// create a JSON model
+				var documents = new Array(oTopicDetection.length);
+				for (var iTopicDetection = 0; iTopicDetection < oTopicDetection.length; iTopicDetection++) {
+					var oTopicDetectionDocument = {
+						"name": oTopicDetection[iTopicDetection].docName
+					};
+					oTopicDetectionDocument.topics = [];
+					for (var iTopics = 0; iTopics < oTopicDetection[iTopicDetection].topics.length; iTopics++) {
+						var oTopicDetectionTopic = {
+							"rank": iTopics,
+							"id": oTopicDetection[iTopicDetection].topics[iTopics],
+							"score": oTopicDetection[iTopicDetection].scores[iTopics],
+							"keywords": oTopicDetection[iTopicDetection].keywords[iTopics]
+						};
+						oTopicDetectionDocument.topics.push(oTopicDetectionTopic);
+					}
+					documents[iTopicDetection] = oTopicDetectionDocument;
+				}
+				oView.getModel("demo").setProperty("/result", documents);
+				// display the result table
+				oView.getModel("demo").setProperty("/resultVisible", true);
+			} else {
+				oView.getModel("demo").setProperty("/resultVisible", false);
+				var response = JSON.parse(oControlEvent.getParameters().responseRaw);
+				MessageBox.show("Error " + response.error.code + " : " + response.error.message);
+			}
+			this.oBusyIndicator.close();
+		}
+	});
 });
 ```
 
@@ -527,10 +514,9 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Solution: ](Project files)]
 
-In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-topic-detection/sapui5ml-topicdetection).
+In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-topic-detection/source).
 
 However, this is not a repository you can clone and run the code.
 
@@ -540,6 +526,3 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 
 [DONE]
 [ACCORDION-END]
-
-### Additional Information
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://developers.sap.com/group.ml-fs-api-hub.html), [Java](https://developers.sap.com/group.ml-fs-java.html) or [SAPUI5](https://developers.sap.com/group.ml-fs-sapui5.html)
