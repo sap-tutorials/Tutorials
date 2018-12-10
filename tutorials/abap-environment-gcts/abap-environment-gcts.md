@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Transport a Software Component between two SAP Cloud Platform ABAP Environment instances.
+title: Transport a Software Component Between Two ABAP Instances.
 description: Create and import a new software component into an SAP Cloud Platform ABAP Environment instance, add ABAP sources and export it to a new SAP Cloud Platform ABAP Environment instance.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
@@ -19,7 +19,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create and import a new software component via SAP Fiori launchpad)]
+[ACCORDION-BEGIN [Step 1: ](Create software component via SAP Fiori launchpad)]
   1. Open **Manage Software Components** app on your first instance's Fiori launchpad.
 
       ![manage SC](SC1.png)
@@ -47,7 +47,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add ABAP sources and export software component)]
+[ACCORDION-BEGIN [Step 2: ](Add ABAP sources and export component)]
   1. Open Eclipse and connect with your developer user to your first ABAP system and add your imported software component to your **Favorite Packages**.
 
       ![add to favorites](eclipse1.png)
