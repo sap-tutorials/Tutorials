@@ -4,8 +4,8 @@ author_profile: https://github.com/Chuergo
 title: Build a Business App by Reusing a CDS Model
 description: Develop a sample business application by reusing a Core Data and Service (CDS) model and extending an existing service using the application programming model.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform, software-product-function>sap-cloud-application-programming-model ]
 time: 20
 ---
 
