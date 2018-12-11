@@ -24,11 +24,15 @@ time: 15
 Let's start off by creating a new business application project from a template.
 
 1. In SAP Web IDE choose **File** | **New** | **Project from Template**.
+
 2. Search for **SAP Cloud Platform Business Application** and select it.
+
     > If you do not see the template, make sure **All Categories** is selected from the **Category** drop-down menu and try again.
 
 3. Enter `s4bookshop` as the project name and choose **Next**.
+
 4. Leave the default MTA details and choose **Next**.
+
 5. In the **Project Details** step, enter `my.s4bookshop` as the **Java Package** name.
 
     ![Complete the project details](project-details.png)
@@ -73,6 +77,7 @@ This model simply represents the bookshop application and consists of the Books,
     ```
 
 2. Save the file.
+
     > A build of the CDS files runs automatically and you may see a build error. This is because there is sample code in the service model (`srv/my-service.cds`) that needs to be updated. We will resolve this in step 4.
 
 [VALIDATE_1]
@@ -87,17 +92,23 @@ To complete the data model, we need to get the Suppliers entity which is availab
     ![Data Model from External Service](data-model.png)
 
 2. Select **SAP API Business Hub** as the source.
+
 3. Select the **SAP S/4HANA Cloud** API package.
+
 4. Search for **OData Service for Business Partner** and select it.
+
     > When prompted, log on to SAP API Business Hub with your SAP Community User credentials in order to access the service.
 
     ![OData Service for Business Partner](business-partner.png)
 
 5. Choose **Next**.
+
 6. Deselect the **Generate Virtual Data Model classes** checkbox.
+
     > This is not needed for our tutorial as the API endpoint (`A_Supplier`) that we will use is a whitelisted one. This means that we can access it without having to download the corresponding VDM class into our project.
 
 7. Choose **Finish**.
+
     > The data model from the external S/4HANA service is retrieved and stored in your project.
 
 [VALIDATE_2]
@@ -127,6 +138,7 @@ Now, let's define a service model that builds on top of the data models from the
     > From this model, you can see that the `S4BookshopService` exposes Books, Authors, and Orders entities that are projections on the entities from your SAP HANA database. The Suppliers entity, on the other hand, is a projection on the corresponding entity from S/4HANA. The function `GetSupplier` exposed by the service returns the supplier information corresponding to an order.
 
 2. Save the file.
+
     > A build of the CDS files runs automatically and you will see a notification that it completed successfully.
 
 [DONE]
@@ -137,6 +149,7 @@ Now, let's define a service model that builds on top of the data models from the
 Let's create the SAP HANA database for our application and fill it with initial data.
 
 1. Right-click the `db` module and choose **Build**.
+
     > Wait for the notification that says the build was successful.
 
 2. Download the following files:
@@ -150,12 +163,17 @@ Let's create the SAP HANA database for our application and fill it with initial 
     [`Data.hdbtabledata`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-01-s4hana/csv/Data.hdbtabledata)
 
 3. In your workspace, go to `s4bookshop/db/src/`, right-click on the **`src`** folder and choose **Import | File or Project**.
+
 4. Browse to the location where you have saved the `Authors.csv` file.
+
 5. In the **Import to** field, add `/csv` to the default location and choose **OK**.
+
     > This creates a `/csv` folder under `/s4bookshop/db/src` and adds the `Authors.csv` file to that location.
 
 6. Repeat steps 4 and 5 to add the remaining 3 files to the `/csv` folder.
+
 7. Right-click the `db` module and choose **Build**.
+
     > Wait for the notification that says the build was successful. This fills the tables with the data from the `csv` files.
 
 [DONE]
@@ -166,17 +184,25 @@ Let's create the SAP HANA database for our application and fill it with initial 
 Let's configure a destination that points to the SAP S/4HANA system. We will use this destination in a later step when writing custom code to query the Supplier information.
 
 1. Open your subaccount in the Cloud Foundry environment in the SAP Cloud Platform cockpit.
+
     > For more information, see [Navigate to Global Accounts and Subaccounts in the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/0874895f1f78459f9517da55a11ffebd.html).
 
 2. From the navigation menu, select **Connectivity > Destinations**.
+
 3. Choose **New Destination**.
+
 4. Enter `APIHubBP` as the name for the destination.
+
 5. Enter `https://sandbox.api.sap.com/s4hanacloud` as the URL. This URL points to the SAP S/4HANA Cloud package on SAP API Business Hub.
+
 6. Select **Internet** as the proxy type.
+
 7. Select **`NoAuthentication`**.
+
     > In a productive scenario, select the appropriate authentication option to your system.
 
 8. Add an additional property **TrustAll** with the value **TRUE**.
+
 9. Choose **Save**.
 
     ![S/4HANA Destination](s4hana-destination.png)
@@ -251,9 +277,13 @@ Now, let's bind a destination service to your application. This service lets you
 Add a custom handler that implements the query operation on the `Suppliers` entity defined in your service. Let's also add a function that accepts Order ID from the request URL, reads the associated order information from SAP HANA database and then reads the corresponding supplier information from SAP S/4HANA system.
 
 1. In the `srv` module, go to `src/main/java/my/s4bookshop` and open the context menu.
+
 2. Choose **New > Java Class**.
+
 3. Enter **`S4BookshopService`** as the class name and choose **Next**.
+
 4. Choose **Finish**.
+
     > The `S4BookshopService.java` file is created.
 
 5. Open the new `S4BookshopService.java` file and replace the template with the following code:
@@ -397,22 +427,23 @@ Add a custom handler that implements the query operation on the `Suppliers` enti
 Finally, let's run the application to see it all come together.
 
 1. Right-click the `srv` module and choose **Run > Java Application**.
-2. Choose **View > Run Console** and click on the application URL.
-    > A new browser window opens containing a link to the OData endpoint.
 
-3. Click on the service link. The service URL is of the format: `https://host/odata/v2/S4BookshopService`.
-    > The OData service document opens.
+2. Choose **View > Run Console** and click on the application URL.
+
+3. Click on the service link to open the OData service document. The service URL is of the format: `https://host/odata/v2/S4BookshopService`.
 
 4. Add `/$metadata` to the URL and open it. The URL is of the format: `https://host/odata/v2/S4BookshopService/$metadata`.
-    > The OData metadata document opens in EDMX format.
 
 5. Replace `/$metadata` with `/Suppliers` and open it. The URL is of the format: `https://host/odata/v2/S4BookshopService/Suppliers`.
+
     > The suppliers data from SAP S/4HANA is displayed.
 
 6. Retrieve just the top 5 suppliers using the URL format: `https://host/odata/v2/S4BookshopService/Suppliers?$top=5`.
+
     > The top 5 suppliers from SAP S/4HANA is displayed.
 
 7. Now, let's retrieve the supplier information corresponding to a specific order (`ID=46262d7a-0fe3-11e8-b642-0ed5f89f718b`) using the function `GetSupplier`. The URL format for this is `https://host/odata/v2/S4BookshopService/GetSupplier?OrderID=guid'46262d7a-0fe3-11e8-b642-0ed5f89f718b'`.
+
     > The supplier information (from SAP S/4HANA) corresponding to the order (in SAP HANA database) is displayed.
 
 [DONE]
