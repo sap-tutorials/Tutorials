@@ -3,7 +3,7 @@ title: Create a Business Service with Node.js using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite. Use the SAP Cloud Application Programming Model and develop on your local environment.
 auto_validation: true
 primary_tag: topic>node-js
-tags: [  tutorial>intermediate, topic>node-js  ]
+tags: [  tutorial>intermediate, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
 time: 30
 ---
 
@@ -22,7 +22,7 @@ time: 30
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up your local development environment)]
+[ACCORDION-BEGIN [Step 1: ](Set up your development environment)]
 
 1. Before you start, make sure you have completed the prerequisites.
 

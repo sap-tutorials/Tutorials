@@ -8,9 +8,6 @@ sap.ui.define([
 		fileTypeMissmatch: function (oControlEvent) {
 			MessageBox.show("Wrong file type!");
 		},
-		getServiceName: function () {
-			return this.getView().getModel("demo").getProperty("/service");
-		},
 		clearPredictions: function () {
 			this.getView().getModel("demo").setProperty("/predictions", null);
 			this.getView().getModel("demo").setProperty("/visible", false);
@@ -123,7 +120,7 @@ sap.ui.define([
 			this.oErrors = [];
 
 			for (var i = 0; i < oFiles.length; i++) {
-				oFiles[i].contentUrl = URL.createObjectURL(oFiles[i]);
+				this.oFiles[i].contentUrl = URL.createObjectURL(this.oFiles[i]);
 				this.callService(this, mode, this.oFiles[i], this.processResults);
 			}
 		},
@@ -131,7 +128,6 @@ sap.ui.define([
 			// create the form data to be sent in the request
 			var formData = new window.FormData();
 			formData.append("files", file, file.name);
-			console.log(file.name);
 
 			var url = oController.getView().getModel("demo").getProperty("/url");
 			var type = oController.getView().getModel("demo").getProperty("/method");
