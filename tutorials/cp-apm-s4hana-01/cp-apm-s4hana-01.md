@@ -154,13 +154,13 @@ Let's create the SAP HANA database for our application and fill it with initial 
 
 2. Download the following files:
 
-    [`Authors.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-01-s4hana/csv/Authors.csv)
+    [`Authors.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-s4hana-01/csv/Authors.csv)
 
-    [`Books.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-01-s4hana/csv/Books.csv)
+    [`Books.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-s4hana-01/csv/Books.csv)
 
-    [`Orders.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-01-s4hana/csv/Orders.csv)
+    [`Orders.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-s4hana-01/csv/Orders.csv)
 
-    [`Data.hdbtabledata`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-01-s4hana/csv/Data.hdbtabledata)
+    [`Data.hdbtabledata`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-s4hana-01/csv/Data.hdbtabledata)
 
 3. In your workspace, go to `s4bookshop/db/src/`, right-click on the **`src`** folder and choose **Import | File or Project**.
 
