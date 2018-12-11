@@ -25,7 +25,7 @@ In order to use the built-in debugger, you need to add a breakpoint. For this tu
 
 ![click-line-for-breakpoint](click-line-for-breakpoint.png)
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Setting debugger options)]
@@ -83,7 +83,7 @@ Now let's summarize the options described in this step in a single view of the S
 
 ![add-break-point-and-run](add-break-point-and-run.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 
