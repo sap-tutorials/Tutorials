@@ -2,8 +2,8 @@
 title: Add a UI to Your Business Application
 description: Create the UI for your business application using SAP Web IDE Full-Stack and the Annotation Modeler.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>html5, topic>java, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>intermediate, topic>html5, topic>java, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
 time: 10
 ---
 
@@ -51,7 +51,7 @@ time: 10
 
 [ACCORDION-BEGIN [Step 2: ](Test-run the UI)]
 
-1. Right-click the **app** module and choose **Run | SAP Fiori Launchpad Sandbox**.
+1. Right-click the **app** module and choose **Run | Web Application**.
 
 2. Choose **`flpSandbox.html`**.
 
