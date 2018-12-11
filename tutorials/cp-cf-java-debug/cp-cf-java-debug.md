@@ -59,8 +59,7 @@ Or another option is to right-click the file name and select **Run > Java Applic
 
 [ACCORDION-BEGIN [Step 3: ](Open debugger)]
 
-In addition to selecting **Run in debug mode**, there are a few quick options to access the debugger window.
-
+In addition to selecting **Run in debug mode**, there are a few quick options to access the debugger window. 
 You can select the **bug** icon to far right bar, or you can select **View > Debugger** from the menu bar.
 
 ![open-debug](open-debug.png)
