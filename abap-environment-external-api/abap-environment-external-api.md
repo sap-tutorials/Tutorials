@@ -2,7 +2,7 @@
 title: Call an External API
 description: Point to an external API and display its output in the console.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-abap-environment
+primary_tag: products>sap-cloud-platform-abap--environment
 tags: [  tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
 time: 30
 author_name: Julie Plummer
@@ -84,7 +84,7 @@ Now, you will create an ABAP class that will call your destination, and which yo
 
 The class is displayed in a new editor:
 
-    ![Image depicting step-4d-class-editor](step-4d-class-editor.png)
+![Image depicting step-4d-class-editor](step-4d-class-editor.png)
 
 [DONE]
 
