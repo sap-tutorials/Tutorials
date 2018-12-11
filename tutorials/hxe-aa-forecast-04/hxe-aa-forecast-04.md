@@ -7,11 +7,9 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 30
 ---
 
-## Prerequisites
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
 
-## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
+## Prerequisites
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
 
 ## Details
 ### You will learn
@@ -54,12 +52,12 @@ The Cash Flows file (`CashFlows.txt`) presents daily measures of cash flows from
 :---------------------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------
 | Date                                                                            | Day, month and year of the readings                                | A date
 | <nobr>`Cash`</nobr>                                                             | Cash flow                                                          | A numerical value with n decimals
-| <nobr>`BeforeLastMonday`</nobr> <br><nobr>`LastMonday`</nobr> <br><nobr>`BeforeLastTuesday`</nobr> <br><nobr>`LastTuesday`</nobr> <br><nobr>`BeforeLastWednesday`</nobr> <br><nobr>`LastWednesday`</nobr> <br><nobr>`BeforeLastThursday`</nobr> <br><nobr>`LastThursday`</nobr> <br><nobr>`BeforeLastFriday`</nobr> <br><nobr>`LastFriday`</nobr> | Boolean variables that indicate if the information is true or false   | 1 if the information is true.
-| <nobr>`Last5WDays`</nobr><br><nobr>`Last4WDays`</nobr>                         | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
-| <nobr>`LastWMonth`</nobr><br><nobr>`BeforeLastWMonth`</nobr>                   | Boolean variables that indicate if the information is true or false | 1 if the information is true.
-| <nobr>`WorkingDaysIndices`</nobr><br><nobr>`ReverseWorkingDaysIndices`</nobr>  | Indices or reverse indices of the working days | An integer value
-| <nobr>`MondayMonthInd`</nobr><br><nobr>`TuesdayMonthInd`</nobr><br><nobr>`WednesdayMonthInd`</nobr><br><nobr>`ThursdayMonthInd`</nobr><br><nobr>`FridayMonthInd`</nobr> | Indices of the week days in the month | An integer value
-| <nobr>`Last5WDaysInd`</nobr><br><nobr>`Last4WDaysInd`</nobr>                   | Indices of the 5 or 4 last working days of the month | An integer value
+| <nobr>`BeforeLastMonday`</nobr>, </br> <nobr>`LastMonday`</nobr>, </br><nobr>`BeforeLastTuesday`</nobr>, </br><nobr>`LastTuesday`</nobr>, </br><nobr>`BeforeLastWednesday`</nobr>, </br><nobr>`LastWednesday`</nobr>, </br><nobr>`BeforeLastThursday`</nobr>, </br><nobr>`LastThursday`</nobr>, </br><nobr>`BeforeLastFriday`</nobr>, </br><nobr>`LastFriday`</nobr> | Boolean variables that indicate if the information is true or false   | 1 if the information is true.
+| <nobr>`Last5WDays`</nobr>, </br><nobr>`Last4WDays`</nobr>                         | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
+| <nobr>`LastWMonth`</nobr>, </br><nobr>`BeforeLastWMonth`</nobr>                   | Boolean variables that indicate if the information is true or false | 1 if the information is true.
+| <nobr>`WorkingDaysIndices`</nobr>, </br><nobr>`ReverseWorkingDaysIndices`</nobr>  | Indices or reverse indices of the working days | An integer value
+| <nobr>`MondayMonthInd`</nobr>, </br><nobr>`TuesdayMonthInd`</nobr>, </br><nobr>`WednesdayMonthInd`</nobr>, </br><nobr>`ThursdayMonthInd`</nobr>, </br><nobr>`FridayMonthInd`</nobr> | Indices of the week days in the month | An integer value
+| <nobr>`Last5WDaysInd`</nobr>, </br><nobr>`Last4WDaysInd`</nobr>                   | Indices of the 5 or 4 last working days of the month | An integer value
 
 #### **Los Angeles Ozone**
 
@@ -82,7 +80,6 @@ Each observation is characterized by 2 variables described in the following tabl
 :-------------|---------------------------|--------------------------
 | `TIME`      | The date of the readings  | A date
 | `Signal`    | the signal value          | A numerical value
-
 
 [DONE]
 [ACCORDION-END]
@@ -789,7 +786,7 @@ group by tile
 
 Provide an answer to the question below then click on **Validate**.
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 Based on this series of elements, you have found out that these datasets :

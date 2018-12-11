@@ -7,9 +7,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 15
 ---
 
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://developers.sap.com/group.hxe-aa-movielens-sql.html)
-
 ## Details
 ### You will learn
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series

@@ -10,9 +10,6 @@ time: 30
 ## Prerequisites
  - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
-## Next Steps
- - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
-
 ## Details
 ### You will learn
 - Understand the basics about the SAP HANA Automated Predictive Library

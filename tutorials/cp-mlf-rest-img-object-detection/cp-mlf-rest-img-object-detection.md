@@ -125,6 +125,7 @@ Each entry in the detection box represents a box that identify one of the person
 
 Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397" target="blank" download="SAP_TechEd_BCN2018_03504.jpg">Image `SAP_TechEd_BCN2018_03504`</a>:
 
+<div>
 <img id="SAP_TechEd_BCN2018_03504.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397"/>
 <canvas id="canvas_SAP_TechEd_BCN2018_03504.jpg"/>
 <script>
@@ -218,6 +219,7 @@ window.onload = function() {
     }
 };
 </script>
+</div>
 
 Here is a simple HTML code you can use to visualize other results:
 

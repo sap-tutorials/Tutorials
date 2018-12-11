@@ -122,6 +122,7 @@ Each entry in the response represents a box that identify one of the face.
 
 Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image SAP_TechEd_LV2018_10772">Image `SAP_TechEd_LV2018_10772`</a>
 
+<div>
 <img id="SAP_TechEd_LV2018_10772.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134"/>
 <canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/>
 <script>
@@ -219,6 +220,7 @@ window.onload = function() {
 	}
 };
 </script>
+</div>
 
 Here is a simple HTML code you can use to visualize other results:
 

@@ -1,0 +1,8 @@
+{
+	"url": "/ml-dest/imageclassification/classification",
+	"method": "POST",
+	"accept": "application/json",
+	"fileType": "zip,png,jpeg,jpe,jpg,bmp,tiff,tif",
+	"mimeType": "application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff",
+	"APIKey": "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
+}

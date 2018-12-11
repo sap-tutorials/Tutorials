@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 time: 20
 ---
 
-## Next Steps
+## Prerequisites
 - [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://developers.sap.com/group.cp-hana-aa-movielens.html)
 
 ## Details
@@ -640,4 +640,4 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_2]
 [ACCORDION-END]
 
-For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.
+For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform!

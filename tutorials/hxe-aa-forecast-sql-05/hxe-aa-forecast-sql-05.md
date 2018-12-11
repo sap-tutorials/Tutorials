@@ -965,5 +965,4 @@ Provide an answer to the question below then click on **Validate**.
 - [Auto Exponential Smoothing](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-05/hxe-aa-forecast-sql-05-AutoExponentialSmoothing.ipynb)
 - [Auto ARIMA](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-05/hxe-aa-forecast-sql-05-AutoARIMA.ipynb)
 
-
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.

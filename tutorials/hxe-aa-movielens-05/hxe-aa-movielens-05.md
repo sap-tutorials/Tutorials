@@ -10,9 +10,6 @@ time: 30
 ## Prerequisites
  - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
-
 ## Details
 ### You will learn
 - Understand the basics about the SAP HANA Automated Predictive Library
