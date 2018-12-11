@@ -12,7 +12,8 @@ tags: [  tutorial>beginner, topic>abap-development ]
 
 ## Details
 ### You will learn  
-- How to create **ABAP packages** and **transport requests** and why they are important. You will create an ABAP package and add it to your *Favorite packages* list in ABAP Development Tools (ADT).
+- How to create  an ABAP package and add it to your *Favorite packages* list in ABAP Development Tools (ADT)
+- About ABAP packages and transport requests and why they are important 
 
 You will create a package in the ABAP Development Tools. Later, you will use this package to group all the subsequent development objects you create in this group of tutorials.
 Generally you create one **project** for each backend connection, and then, inside that project, one **package** for each self-contained development unit – containing all the relevant development objects. A set of packages delivered together form a **software component**.
@@ -24,17 +25,14 @@ A **transport layer** is a package property that defines the transport behavior 
 
 To export (or import) ABAP development objects into/from another system, you **transport** them, by adding them to a **transport request**. In these tutorials, you simply bundle all your objects in one request. However, in the real world, you cannot change a running system. Therefore, you generally have at least 3 systems: **Development, Consolidation**, and **Production**. These 3 systems all form one **transport layer**.
 
-A **transport layer** is a package property that defines the transport behavior of a package – whether and how a package and all its development objects are transported.
+A **transport layer** is a package property that defines the transport behavior of a package – whether and how a package and all its development objects are transported. The following graphic shows a single transport layer:
 
   ![Image depicting step0-one-transport-layer](step0-one-transport-layer.png)
 
-  *One transport layer*
-
-In the AS ABAP developer edition, we offer only one layer, **SAP**, the standard layer for SAP applications. In a real-world system, you will get a whole list of layers. Why? Well, you often want to transport objects to several different production systems. For example, you may want to transport some of the same objects to both a Financials system and an HCM system. To do this, you create several transport layers:
+In the AS ABAP developer edition, we offer only one layer, **SAP**, the standard layer for SAP applications. In a real-world system, you will get a whole list of layers. Why? Well, you often want to transport objects to several different production systems. For example, you may want to transport some of the same objects to both a Financials system and an HCM system. To do this, you create several transport layers. The following graphic shows a two transport layers:
 
   ![Image depicting step0b-two-transport-layers](step0b-two-transport-layers.png)
 
-  *Two transport layers*
 
 In the AS ABAP developer edition, we offer only one layer, SAP, the standard layer for SAP applications. In a real-world system, you will get a whole list of layers.
 For more information, see [SAP Library: Transport layer](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.5.10/en-US/4ec218e26e391014adc9fffe4e204223.html)
@@ -49,8 +47,9 @@ A software component defines a delivery and product unit of a SAP software produ
 
 [ACCORDION-BEGIN [Step 1: ](Create a package)]
 
-Select the project you created previously, then choose *<Project>* > **New > ABAP Package**:
-  ![Image depicting step1-new-package](step1-new-package.png)
+Select the project you created previously, then choose **<Project> > New > ABAP Package**:
+
+![Image depicting step1-new-package](step1-new-package.png)
 
 [DONE]
 
@@ -85,9 +84,9 @@ Select the project you created previously, then choose *<Project>* > **New > ABA
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add to favorite packages)]
-(Optional, but recommended): Finally, add this new packages to your **Favorite packages**:
+Finally, add this new package to your favorite packages:
 
-1. In your project, select (right-click on)  **Favorite packages**, then choose  **Add a package…**:
+1. In your project, select (right-click on) **Favorite packages**, then choose  **Add a package…**:
 
     ![Image depicting step4-add-fave-package](step4-add-fave-package.png)
 
