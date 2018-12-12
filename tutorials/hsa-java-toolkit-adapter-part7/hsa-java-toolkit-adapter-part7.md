@@ -8,7 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Test the Custom Java Toolkit Adapter](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part6.html)
+ - [Test the Custom Java Toolkit Adapter](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part6.html)
 
 ## Details
 ### You will learn

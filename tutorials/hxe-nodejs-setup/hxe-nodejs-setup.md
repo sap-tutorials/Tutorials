@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>sql, products>sap-hana, products>sap-hana\,-ex
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA, express edition, server-only: Create tables and upload data](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)
+ - **Tutorials:** [SAP HANA, express edition, server-only: Create tables and upload data](https://developers.sap.com/tutorials/hxe-cj1-create-table-upload-data.html)
 
 
 ## Next Steps
- - [Connect to HXE using Node.js](https://www.sap.com/developer/tutorials/hxe-nodejs-connect.html)
+ - [Connect to HXE using Node.js](https://developers.sap.com/tutorials/hxe-nodejs-connect.html)
 
 ## Details
 ### You will learn  
@@ -72,7 +72,3 @@ This command lists all of the modules that are installed on your system and in t
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Connect to HXE using Node.js](https://www.sap.com/developer/tutorials/hxe-nodejs-connect.html)

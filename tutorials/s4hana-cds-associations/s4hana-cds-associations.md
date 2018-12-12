@@ -7,11 +7,11 @@ time: 20
 ---
 ## Prerequisites  
  - **Tutorials:**
- - [Core Data  Services](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
- - [Preparing views for Associations/Joins](https://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
+ - [Core Data  Services](https://developers.sap.com/tutorials/s4hana-cds-associations.html)
+ - [Preparing views for Associations/Joins](https://developers.sap.com/tutorials/s4hana-cds-preparing-views-associations.html)
 
 ## Next Steps
-[Creating OData-Service based on `CDS-view`](https://www.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
+[Creating OData-Service based on `CDS-view`](https://developers.sap.com/tutorials/s4hana-cds-creating-odata-service.html)
 
 
 ## Details

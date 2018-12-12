@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](https://www.sap.com/developer/tutorials/xsa-xsodata-create.html)
+- **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](https://developers.sap.com/tutorials/xsa-xsodata-create.html)
 
 ## Next Steps
-- [Consume a Basic OData Service](https://www.sap.com/developer/tutorials/xsa-sapui5-odata.html)
+- [Consume a Basic OData Service](https://developers.sap.com/tutorials/xsa-sapui5-odata.html)
 
 ## Details
 ### You will learn  
@@ -361,7 +361,3 @@ In the running tab, you should see the `index.html` from earlier. Adjust the URL
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Consume a Basic OData Service](https://www.sap.com/developer/tutorials/xsa-sapui5-odata.html)

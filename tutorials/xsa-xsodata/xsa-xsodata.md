@@ -7,11 +7,11 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-han
 ## Prerequisites  
 - **Proficiency:** Intermediate
 - **Tutorials:**
-- [Import tables and large Datasets](https://www.sap.com/developer/tutorials/xsa-import-shine-data.html)
-- [SAP HANA XS Advanced, Creating a Node.js Module](https://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
+- [Import tables and large Datasets](https://developers.sap.com/tutorials/xsa-import-shine-data.html)
+- [SAP HANA XS Advanced, Creating a Node.js Module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 
 ## Next Steps
-- [Create and OData Service with Entity Relationship](https://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
+- [Create and OData Service with Entity Relationship](https://developers.sap.com/tutorials/xsa-xsodata-entity.html)
 
 ## Details
 ### You will learn  

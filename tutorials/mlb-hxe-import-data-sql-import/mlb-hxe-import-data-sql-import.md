@@ -9,8 +9,8 @@ time: 10
 
 ## Prerequisites  
 - SSH and FTP client installed, running and properly connected to your SAP HANA, express edition.
-- [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+- [Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 ## Details
 ### You will learn
@@ -25,7 +25,7 @@ For more details on the available options you can check the [SAP HANA SQL and Sy
 As an alternate solution, you can also use the ***SAP HANA Tools*** for Eclipse which provides a subset of features available in the IMPORT FROM SQL command.
 However, it allows you to import data directly from your client and not the AP HANA, express edition host.
 
-For more information, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
+For more information, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html)
 
 [ACCORDION-BEGIN [Prerequisite: ](Prepare your environment)]
 
@@ -33,8 +33,8 @@ In order to run the IMPORT FROM SQL command, you will be running a series of SQL
 
 The steps detailed in this tutorial will assume that you have completed the following tutorial:
 
-- [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html)
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+- [Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html)
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 This will let you reuse existing database user and schema.
 

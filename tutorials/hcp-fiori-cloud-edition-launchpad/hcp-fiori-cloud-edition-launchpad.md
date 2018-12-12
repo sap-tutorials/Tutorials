@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide, pro
 time: 5
 ---
 ## Prerequisites  
-- [Extend controller of a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)
+- [Extend controller of a standard SAP Fiori app](https://developers.sap.com/tutorials/hcp-fiori-cloud-edition-extend-controller.html)
 
 ## Details
 ### You will learn  

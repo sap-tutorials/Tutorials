@@ -9,7 +9,7 @@ time: 20
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](https://www.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
+ - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](https://developers.sap.com/tutorials/sds-part4-hana-table-event-streaming.html)
 
 ## Details
 ### You will learn  

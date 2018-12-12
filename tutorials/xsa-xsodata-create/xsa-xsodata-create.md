@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
-  - **Tutorials:** [Creating an OData Service with an Entity Relationship](https://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
+  - **Tutorials:** [Creating an OData Service with an Entity Relationship](https://developers.sap.com/tutorials/xsa-xsodata-entity.html)
 
 ## Details
 ### You will learn  

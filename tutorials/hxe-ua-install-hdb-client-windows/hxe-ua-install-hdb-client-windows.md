@@ -11,7 +11,7 @@ time: 10
 <!-- loio45dafcf13cb6489cb25149a2a62a442e -->
 
 ## Prerequisites
- - **Tutorials:** You have completed [Start SAP HANA, express edition Server (VM installations)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html) or [Test the Installation (Native Linux installations)](http://www.sap.com/developer/tutorials/hxe-ua-test-binary.html)
+ - **Tutorials:** You have completed [Start SAP HANA, express edition Server (VM installations)](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html) or [Test the Installation (Native Linux installations)](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)
 
 ## Details
 ### You will learn
@@ -122,9 +122,9 @@ Connect to a SAP HANA 2.0, express edition system using either JDBC or Python.
 
 See these `Tutorials`:
 
--   [Connect to SAP HANA, express edition using JDBC](http://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html)
+-   [Connect to SAP HANA, express edition using JDBC](http://developers.sap.com/tutorials/hxe-connect-hxe-using-jdbc.html)
 
--   [Connect to SAP HANA, express edition using Python](http://www.sap.com/developer/tutorials/hxe-python-connection.html)
+-   [Connect to SAP HANA, express edition using Python](http://developers.sap.com/tutorials/hxe-python-connection.html)
 
 
 [ACCORDION-END]

@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana-streaming-analytics ]
  **Proficiency:** Beginner
 
 ## Next Steps
- [Create a Streaming Project with SAP HANA streaming analytics](https://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
+ [Create a Streaming Project with SAP HANA streaming analytics](https://developers.sap.com/tutorials/sds-create-streaming-project.html)
 
 ## Details
 Install the streaming analytics plugin for SAP HANA studio, add a connection to the streaming analytics server, and create a HANA service.

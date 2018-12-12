@@ -7,7 +7,7 @@ time: 10
 ---
 
 ## Prerequisites  
-- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](https://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](https://developers.sap.com/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 ## Details
 ### You will learn  

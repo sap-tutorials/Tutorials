@@ -7,14 +7,14 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
 
 ## Prerequisites
 - **Proficiency:** Intermediate
-- **Tutorials:** [SAP S/4HANA on-premises UI extension (Part 2): Expose OData services to SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui2-cloud-connector.html)
+- **Tutorials:** [SAP S/4HANA on-premises UI extension (Part 2): Expose OData services to SAP Cloud Platform](https://developers.sap.com/tutorials/cp-s4-ext-ui2-cloud-connector.html)
 - **Systems, Tools, Services:**
     - SAP Web IDE
     - SAP CP cockpit
     - SAP CP Portal Service
 
 ## Next Steps
-    -  [SAP S/4HANA on-premises UI extension (Part 4): Extend an SAPUI5 application](https://www.sap.com/developer/tutorials/cp-s4-ext-ui4-build-ui.html)
+    -  [SAP S/4HANA on-premises UI extension (Part 4): Extend an SAPUI5 application](https://developers.sap.com/tutorials/cp-s4-ext-ui4-build-ui.html)
 
 ## Details
 ### You will learn
@@ -205,4 +205,4 @@ In this page you will publish the configured SAP Fiori Launchpad in your SAP Clo
 
 [ACCORDION-END]
 
-You have now successfully completed this tutorial. In the next tutorial you will learn how to import a SAPUI5 application from your SAP NetWeaver backend, register the application to the SAP Fiori Launchpad, and then extend the application by implementing sorting and filtering capabilities: [Extend an SAPUI5 application](https://www.sap.com/developer/tutorials/cp-s4-ext-ui4-build-ui.html)
+You have now successfully completed this tutorial. In the next tutorial you will learn how to import a SAPUI5 application from your SAP NetWeaver backend, register the application to the SAP Fiori Launchpad, and then extend the application by implementing sorting and filtering capabilities: [Extend an SAPUI5 application](https://developers.sap.com/tutorials/cp-s4-ext-ui4-build-ui.html)

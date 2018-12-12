@@ -7,8 +7,8 @@ tags: [  tutorial>intermediate,, products>sap-web-ide  ]
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - [Create a multi-target application](https://www.sap.com/developer/tutorials/xsa-connecting-webide.html)
- - [Create a database module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - [Create a multi-target application](https://developers.sap.com/tutorials/xsa-connecting-webide.html)
+ - [Create a database module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
 
 ## Details
 ### You will learn  
@@ -22,7 +22,7 @@ You will learn how to set up the roles, synonyms and deployment configuration to
 
 [ACCORDION-BEGIN [Step 1: ](Create the target container as a resource)]
 
-This tutorial uses the SAP HANA `INteractive` Education model as an example for a target container. You can learn how to import the SHINE model [in this tutorial](http://www.sap.com/developer/tutorials/xsa-ml-e2e-access-shine.html). This tutorial will refer to this container as the **target** container.
+This tutorial uses the SAP HANA `INteractive` Education model as an example for a target container. You can learn how to import the SHINE model [in this tutorial](http://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html). This tutorial will refer to this container as the **target** container.
 
 Your current database module will use two containers, the `hdi-container` created with the database module and the target container from the SHINE application.
 

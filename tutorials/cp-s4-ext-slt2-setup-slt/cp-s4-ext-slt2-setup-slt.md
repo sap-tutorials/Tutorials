@@ -6,7 +6,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ---
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Data Mart Scenario (Part 1): Set up SAP HANA database on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-slt1-hana-mdc.html)
+ - **Tutorials:** [Data Mart Scenario (Part 1): Set up SAP HANA database on SAP Cloud Platform](https://developers.sap.com/tutorials/cp-s4-ext-slt1-hana-mdc.html)
  - **Systems, Tools, Services:**
    -   SAP HANA database in SAP Cloud Platform trial account
    -   SAP S/4HANA backend system in `VirtualBox`
@@ -15,7 +15,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
    -   SAP Landscape Transformation Replication Server
 
 ## Next Steps
-- [Data Mart Scenario (Part 3): Create an OData Service in SAP HANA](https://www.sap.com/developer/tutorials/cp-s4-ext-slt3-hana-odata.html)
+- [Data Mart Scenario (Part 3): Create an OData Service in SAP HANA](https://developers.sap.com/tutorials/cp-s4-ext-slt3-hana-odata.html)
 
 ## Details
 ### You will learn

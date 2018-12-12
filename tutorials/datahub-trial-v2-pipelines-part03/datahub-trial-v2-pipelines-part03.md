@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 - How to store sensor data in **Google Cloud Storage**
 - How to use the operators **Write File** and **Read File**
 
-Please note that this tutorial is similar to the `Store sensor data in HDFS` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Store sensor data in HDFS` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 ### Time to Complete
 **30 Mins**
@@ -24,7 +24,7 @@ The SAP Data Hub, trial edition is deployed on Google Cloud Platform. Therefore 
 - **GCS Bucket Details**
 - **GCS JSON Key**
 
-If you don't already have the JSON Key, refer the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide, which contains step-by-step explanation to download the key and get the bucket details.
+If you don't already have the JSON Key, refer the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide, which contains step-by-step explanation to download the key and get the bucket details.
 
 [DONE]
 
@@ -34,7 +34,7 @@ If you don't already have the JSON Key, refer the [**Getting Started with SAP Da
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
 Remove the connection between the **Kafka Consumer 2** operator and the `ToString Converter` operator. Now drag and drop **Write File** operator to the existing graph, and connect `message` output port of the `Kafka Consumer2` to the `inFile` input port of the **Write File**
 
@@ -108,6 +108,4 @@ Open the output **Terminal**. Copy any row from the output and paste it in the f
 Stop the pipeline by clicking **Stop**.
 
 [ACCORDION-END]
-
----
 

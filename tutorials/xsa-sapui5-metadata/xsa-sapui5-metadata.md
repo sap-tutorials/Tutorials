@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Consume a Basic OData Service](https://www.sap.com/developer/tutorials/xsa-sapui5-odata.html)
+- **Tutorials:** [Consume a Basic OData Service](https://developers.sap.com/tutorials/xsa-sapui5-odata.html)
 
 ## Next Steps
-- [Consume an OData Service with Create Option](https://www.sap.com/developer/tutorials/xsa-sapui5-consume.html)
+- [Consume an OData Service with Create Option](https://developers.sap.com/tutorials/xsa-sapui5-consume.html)
 
 ## Details
 ### You will learn  
@@ -76,7 +76,3 @@ Save the files you have modified and run the web module:
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Consume an OData Service with Create Option](https://www.sap.com/developer/tutorials/xsa-sapui5-consume.html)

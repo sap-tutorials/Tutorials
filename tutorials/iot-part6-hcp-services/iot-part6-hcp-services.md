@@ -8,11 +8,11 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Setup the Tessel device](https://www.sap.com/developer/tutorials/iot-tessel.html)
+- **Tutorials:** [Setup the Tessel device](https://developers.sap.com/tutorials/iot-tessel.html)
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://developers.sap.com/tutorials/iot-part7-add-device.html)
 
 ## Details
 ### You will learn
@@ -102,7 +102,3 @@ Once user is assigned to the role, stop and start `iotmms` application.
 ![Start/stop](p6_10.png)
 
 [ACCORDION-END]
-
-
-## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)

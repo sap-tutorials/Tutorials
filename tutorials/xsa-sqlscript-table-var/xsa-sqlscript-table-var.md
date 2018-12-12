@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Parallel Processing and Parameters](https://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
+- **Tutorials:** [Parallel Processing and Parameters](https://developers.sap.com/tutorials/xsa-sqlscript-parallel.html)
 
 ## Next Steps
-- [Creating Scalar User Defined Functions](https://www.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)
+- [Creating Scalar User Defined Functions](https://developers.sap.com/tutorials/xsa-sqlscript-scalar.html)
 
 ## Details
 ### You will learn  
@@ -111,7 +111,3 @@ The results are then shown.
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Creating Scalar User Defined Functions](https://www.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)

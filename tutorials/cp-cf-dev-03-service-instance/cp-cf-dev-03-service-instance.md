@@ -20,7 +20,7 @@ PostgreSQL is a service that is available and to make use of it you create an in
 
 [ACCORDION-BEGIN [Step 1: ](Open service bindings for your app)]
 
-In the SAP Cloud Platform Cockpit, navigate to the page for your app, as you learned to do in the [Deploy an App to SAP Cloud Platform Cloud Foundry Environment](https://www.sap.com/developer/tutorials/cp-cf-dev-02-deploy-app.html) tutorial.
+In the SAP Cloud Platform Cockpit, navigate to the page for your app, as you learned to do in the [Deploy an App to SAP Cloud Platform Cloud Foundry Environment](https://developers.sap.com/tutorials/cp-cf-dev-02-deploy-app.html) tutorial.
 
 Choose **Service Bindings** in the navigation area.
 

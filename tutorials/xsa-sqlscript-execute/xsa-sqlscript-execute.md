@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Using Dynamic SQL vs Dynamic Filtering](https://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
+- **Tutorials:** [Using Dynamic SQL vs Dynamic Filtering](https://developers.sap.com/tutorials/xsa-sqlscript-dynamic.html)
 
 ## Next Steps
-- [Using APPLY FILTER](https://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
+- [Using APPLY FILTER](https://developers.sap.com/tutorials/xsa-sqlscript-applyfilter.html)
 
 ## Details
 ### You will learn  
@@ -79,7 +79,3 @@ You will notice the count is now much higher, 106.  This illustrates the possibi
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Using APPLY FILTER](https://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)

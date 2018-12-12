@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Modules and Express](https://www.sap.com/developer/tutorials/xsa-node-modules.html)
+- **Tutorials:** [Modules and Express](https://developers.sap.com/tutorials/xsa-node-modules.html)
 
 ## Next Steps
-- [Asynchronous Non-Blocking I/O](https://www.sap.com/developer/tutorials/xsa-node-async.html)
+- [Asynchronous Non-Blocking I/O](https://developers.sap.com/tutorials/xsa-node-async.html)
 
 ## Details
 ### You will learn  
@@ -25,9 +25,9 @@ Learn how to connect to the SAP HANA database using Node.js and the HANA databas
 
 
 [ACCORDION-BEGIN [Step 1: ](Add handler for new example request)]
-In the [previous tutorial](https://www.sap.com/developer/tutorials/xsa-node-modules.html), you added a handler for a path called `/node` by modifying the files `myNode.js`.
+In the [previous tutorial](https://developers.sap.com/tutorials/xsa-node-modules.html), you added a handler for a path called `/node` by modifying the files `myNode.js`.
 
-Add a new route for `example1` to get the database `connection/client` from the express request object (`req.db`). Then create a prepared statement for the SELECT of `SESSION_USER` from dummy (dummy is the synonym created in the initial [HDI tutorial](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)). Execute the statement and send the results as JSON in the response object.
+Add a new route for `example1` to get the database `connection/client` from the express request object (`req.db`). Then create a prepared statement for the SELECT of `SESSION_USER` from dummy (dummy is the synonym created in the initial [HDI tutorial](https://developers.sap.com/tutorials/xsa-hdi-module.html)). Execute the statement and send the results as JSON in the response object.
 
 
 ```javascript
@@ -185,7 +185,3 @@ You might have noticed that the default Node.js programming approach is to use c
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Asynchronous Non-Blocking I/O](https://www.sap.com/developer/tutorials/xsa-node-async.html)

@@ -8,7 +8,7 @@ author_profile: https://github.com/BillJiangSAP
 time: 20
 ---
 ## Prerequisites  
- - **Tutorials:** [Configure SAP HANA Smart Data Streaming Server Connection](https://www.sap.com/developer/tutorials/sds-part1-configure-streaming-server.html)
+ - **Tutorials:** [Configure SAP HANA Smart Data Streaming Server Connection](https://developers.sap.com/tutorials/sds-part1-configure-streaming-server.html)
 
 ## Details
 ### You will learn  

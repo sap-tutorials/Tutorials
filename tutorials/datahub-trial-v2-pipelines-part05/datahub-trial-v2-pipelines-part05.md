@@ -2,6 +2,7 @@
 title: Store sensor data in SAP Vora in SAP Data Hub, trial edition 2.3
 description: Use SAP Vora to store sensor data by using SAP Data Hub, trial edition 2.3.
 primary_tag: products>sap-data-hub
+auto_validation: false
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
@@ -10,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 - How to store the data in SAP VORA from Google Cloud Storage
 - How to use a **SAP Vora Client**
 
-Please note that this tutorial is similar to the `Store sensor data in SAP Vora` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Store sensor data in SAP Vora` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 ### Time to Complete
 **45 Mins**
@@ -61,7 +62,7 @@ As we don't have a `SAP Vora HdfsLoader Operator` equivalent for `GCS-Vora`, we 
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`)
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
 Add a **JavaScript Operator** and a **`ToString Operator`** to the pipeline by drag & drop. Also add a **SAP Vora Client** operator similarly. Then connect the `outFilename` port of the **Read File** (this is an unused port in the Read File operator) to the `ininterface` in port of the **`ToString Operator`**. Then connect the `outstring` out port of the **`ToString Operator`** to the `input` in port of the **JavaScript Operator**. Also connect the `output` out port of the **JavaScript Operator** to the `sql` port of the **SAP Vora Client Operator**
 
@@ -192,6 +193,8 @@ This will display all the sensor data that we have attached as a `datasource` to
 >Please note that all the output files in GCS are attached as data sources to this VORA table and you can remove them all with the command `ALTER TABLE sensordata DROP DATASOURCE ALL`.
 
 [DONE]
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 

@@ -12,20 +12,19 @@ time: 10
   - Create a User in IAM
   - Create and configure a S3 bucket
 
-
-**If you are attending SAP TechEd, come by the AWS booth to get an AWS credit voucher to cover the cost.**
 ---
+
 <div align="center">
 <b><span style="color:red;align:middle">Warning: Please read carefully before starting!</span></b>
 </div>
 
-**Before, you get started, please be aware that completing this tutorial track will incur a charge estimated between 10 and 20 USD on your AWS account.**
+**Before, you get started, please be aware that using SAP HANA, express AMI on AWS is not covered by the AWS Free tier, and therefore charges for both the EC2 instance and the provisioned EBS volumes used by this instance will incur.**
 
-**And if you are not planning to complete the all track, be aware that when using the SAP HANA, express edition AMI from AWS, charges for both the EC2 instance and the provisioned EBS volumes used by this instance will incur.**
+**Also, with the EBS volumes types in use, even if your EC2 instance running your SAP HANA, express edition is _stopped_, charges will be incurred for the provisioned EBS volumes. Only detaching and deleting the EBS volumes will prevent charges. However, this will make your  SAP HANA, express edition no longer usable.**
 
-**And because of the EBS volumes types in use, even if you _stop_ your EC2 instance running your SAP HANA, express edition instance, you will still be charged for the provisioned EBS volumes. Only detaching and deleting the EBS volumes will prevent that. But, your SAP HANA, express edition will no longer be usable.**
+**Please be aware that completing this tutorial track will incur a charge estimated between 10 and 20 USD on your AWS account.**
 
-Make sure to check the <a href="https://developers.sap.com/tutorials/hxe-aws-athena-07.html" target="&#95;blank">Cleanup before you leave</a> tutorial if you plan to stop before finishing the track.
+**Make sure to complete the <a href="https://developers.sap.com/tutorials/hxe-aws-athena-07.html" target="&#95;blank">Cleanup before you leave</a> tutorial if you are not planning to complete the track.**
 
 ---
 

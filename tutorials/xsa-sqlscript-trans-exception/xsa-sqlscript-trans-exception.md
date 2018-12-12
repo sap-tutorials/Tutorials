@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Using Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
+- **Tutorials:** [Using Index-based Cell Access](https://developers.sap.com/tutorials/xsa-sqlscript-usingindexbased.html)
 
 ## Next Steps
-- [Using COMMIT Statement](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
+- [Using COMMIT Statement](https://developers.sap.com/tutorials/xsa-sqlscript-trans-commit.html)
 
 ## Details
 ### You will learn  

@@ -11,11 +11,11 @@ time: 15
 ## Prerequisites
 
   - **Proficiency:** Intermediate
-  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 

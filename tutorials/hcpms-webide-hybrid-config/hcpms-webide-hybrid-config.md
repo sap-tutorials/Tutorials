@@ -7,11 +7,11 @@ tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>htm
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Create an app in SAP Cloud Platform mobile services](https://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
+- **Tutorials:** [Create an app in SAP Cloud Platform mobile services](https://developers.sap.com/tutorials/hcpms-create-hybrid-app.html)
 
 
 ## Next Steps
-- [Connecting SAP Web IDE to the Hybrid App Toolkit](https://www.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
+- [Connecting SAP Web IDE to the Hybrid App Toolkit](https://developers.sap.com/tutorials/hcpms-webide-hat-connection.html)
 
 ## Details
 ### You will learn  

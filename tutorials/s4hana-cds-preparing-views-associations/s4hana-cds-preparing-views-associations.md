@@ -7,11 +7,11 @@ time: 20
 ---
 ## Prerequisites  
  - **Tutorials:**
- - [Creating basic view](https://www.sap.com/developer/tutorials/s4hana-cds-creating-basic-view.html)  
- - [Creating consumption view](https://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
+ - [Creating basic view](https://developers.sap.com/tutorials/s4hana-cds-creating-basic-view.html)  
+ - [Creating consumption view](https://developers.sap.com/tutorials/s4hana-cds-creating-consumption-view.html)
 
 ## Next Steps
-[Creating views association](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
+[Creating views association](https://developers.sap.com/tutorials/s4hana-cds-associations.html)
 
 
 ## Details

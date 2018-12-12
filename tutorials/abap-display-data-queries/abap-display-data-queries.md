@@ -6,10 +6,10 @@ primary_tag: topic>abap-development
 ---
 
 ## Prerequisites  
-[Create and run an ABAP application](https://www.sap.com/developer/tutorials/abap-create-basic-app.html)
+[Create and run an ABAP application](https://developers.sap.com/tutorials/abap-create-basic-app.html)
 
 ## Next Steps
-[Create a new Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
+[Create a new Data Dictionary structure](https://developers.sap.com/tutorials/abap-dev-adt-create-new-structure.html)
 
 
 ## Details

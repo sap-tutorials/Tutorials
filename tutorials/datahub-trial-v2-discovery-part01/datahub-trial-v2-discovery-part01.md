@@ -35,10 +35,6 @@ From the quick links, click on **Browse Connections**
 
 Click the `Google_Cloud_Storage` connection to display the directories / files on Google Cloud Storage. Once the connection opens, click on your bucket from GCS.
 
-- [`Customers.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/datahub-trial-setup/Customers.csv)
-- [`Devices.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/datahub-trial-setup/Devices.csv)
-- [`Events.parquet`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/datahub-trial-setup/Events.parquet)
-
 [DONE]
 
 [ACCORDION-END]
@@ -85,4 +81,3 @@ Next also profile the content of the two other files and afterwards take a look 
 
 [ACCORDION-END]
 ---
-

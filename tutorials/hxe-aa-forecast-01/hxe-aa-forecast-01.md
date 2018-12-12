@@ -7,9 +7,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 20
 ---
 
-## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
-
 ## Details
 ### You will learn
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series
@@ -30,7 +27,7 @@ As you may already know, SAP HANA, express edition comes in two different flavor
 
  - **Server + XSA Applications**
 
-You can check the [SAP HANA, express edition installation flowchart](https://www.sap.com/developer/topics/sap-hana-express.html#flowchart) to find all the installation details.
+You can check the [SAP HANA, express edition installation flowchart](https://developers.sap.com/topics/sap-hana-express.html#flowchart) to find all the installation details.
 
 If you don't have an instance up and running, be aware that you don't need to complete the installation of all optional packages (this will be described when needed).
 
@@ -49,7 +46,7 @@ First, make sure to switch to the `hxeadm` user:
 sudo su - hxeadm
 ```
 
-> ### **Note:** You may prefer to run XS CLI commands from your local desktop for example. To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
+> ### **Note:** You may prefer to run XS CLI commands from your local desktop for example. To do so, you can complete the [XS CLI Client installation](https://developers.sap.com/tutorials/hxe-ua-install-xs-xli-client.html)
 
 Execute the following XS CLI command.
 
@@ -71,39 +68,6 @@ FAILED: SSL connection error (supposedly untrusted connection, check the certifi
  - `/hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem`
 >
 >Locate the file and use the relevant path.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Stop & Rescale processes)]
-
-If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands to stop certain services, rescale the memory used by some processes and run the memory collector.
-
-#### Stop services:
-
-The following services can be stopped as you won't leverage them in this tutorial series.
-
-```shell
-xs stop sap-portal-static-resources
-xs stop cockpit-telemetry-svc
-```
-
-#### Rescale services:
-
-The following services can be scaled up to ensure a better user experience during this tutorial series.
-
-```shell
-xs scale di-runner -m 512M -f -w
-xs scale di-core -m 512M -f -w
-```
-
-#### Run the memory collector script:
-
-The following script can be executed at any time to collected back unused process memory.
-
-```shell
-/usr/sap/HXE/home/bin/hxe_gc.sh
-```
 
 [DONE]
 [ACCORDION-END]
@@ -372,4 +336,16 @@ The result should return a list of service names, their associated port numbers 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Run the memory collector script)]
+
+If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands at any time to collect back unused process memory.
+
+```shell
+/usr/sap/HXE/home/bin/hxe_gc.sh
+```
+
+[DONE]
 [ACCORDION-END]

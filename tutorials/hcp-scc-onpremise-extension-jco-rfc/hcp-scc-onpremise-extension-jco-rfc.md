@@ -7,8 +7,8 @@ time: 20
 ---
 
 ## Prerequisites  
-  - [Sign up for a free Neo trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-  - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
+  - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+  - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://developers.sap.com/tutorials/hcp-prepare-cal-account.html)
 
 
 ## Details

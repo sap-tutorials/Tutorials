@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
+ - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html)
  - Select a Cloud Foundry space. See [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
 
 ## Details
@@ -21,7 +21,7 @@ time: 20
 
 You'll use SAP Web IDE, and a particular feature relating to building business apps with CDS.
 
-The model and service you'll create is deliberately a very simple one, based on a small subset of something you've seen before if you've followed previous OData tutorials (in particular the [Learn about OData Fundamentals](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html) tutorial) - the product information from the Northwind service.
+The model and service you'll create is deliberately a very simple one, based on a small subset of something you've seen before if you've followed previous OData tutorials (in particular the [Learn about OData Fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html) tutorial) - the product information from the Northwind service.
 
 > In this tutorial and others the general name "SAP Web IDE" is used. Specifically, the "Full-Stack" version is implied throughout.
 
@@ -29,7 +29,7 @@ The model and service you'll create is deliberately a very simple one, based on 
 
 [ACCORDION-BEGIN [Step 1: ](Start up the SAP Web IDE)]
 
-Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -205,6 +205,19 @@ Do this by using the context menu on the `db` folder and choosing **Build** > **
 ![choosing context menu path Build > Build](build-build.png)
 
 This will cause all sorts of informational messages to be written to the Console; keep an eye on them to get a feel for what's going on. Towards the end of the messages you'll notice a deployment taking place.
+
+> If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
+
+> 1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
+
+> 1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+![finding the .hdiconfig file](hdiconfig.png)
+
+> 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
+
+> 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
+like
+> 1. **Save** the file, and re-try the build.
 
 You may wish to check the results of this activity in the Cloud Foundry environment from the SAP Cloud Platform cockpit. Navigate there to your space (see earlier in this tutorial) and request a list of the service instances from the menu. You should see your database instance listed, something like this:
 

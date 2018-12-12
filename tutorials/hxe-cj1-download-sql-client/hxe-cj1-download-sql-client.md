@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-expre
 
 
 ## Next Steps
- - [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)
+ - [Create a Table and Upload data into SAP HANA, express edition ](https://developers.sap.com/tutorials/hxe-cj1-create-table-upload-data.html)
 
 ## Details
 ### You will learn  
@@ -125,12 +125,9 @@ Replace the login details with those of the new user:
 You are now set to start development. Check the [tutorial section in the Developer Center](https://sap.com/developer/topics/sap-hana.tutorials.html#tutorials).
 
 Here are some suggestions:
-- [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)
+- [Create a Table and Upload data into SAP HANA, express edition ](https://developers.sap.com/tutorials/hxe-cj1-create-table-upload-data.html)
 - [Get started with Geospatial](https://sap.com/developer/tutorials/hana-spatial-intro1-point.html)
 
 
 [ACCORDION-END]
 
-
-## Next Steps
- - [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)

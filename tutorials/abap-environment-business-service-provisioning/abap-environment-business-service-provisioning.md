@@ -2,7 +2,7 @@
 auto_validation: true
 title: Expose a Standard Core Data Service for ABAP Environment
 description: Create a service definition, service binding and communication scenario to expose a Core Data Services (CDS) view in SAP Cloud Platform ABAP Environment.
-primary_tag: products>sap-cloud-platform-abap-environment
+primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
@@ -15,7 +15,7 @@ time: 15
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
-Create all business services with ABAP namespace `Z...`.
+Create all business services with ABAP namespace `Z...`. 
 
 ---
 
@@ -27,8 +27,24 @@ You need to create an OData service by defining and binding a service based on t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create your own ABAP package)]
-Mark the steps 1 as completed by pressing `Done` if you have already created the package `Z_Package_XXX` (where XXX is your group number) in the previous tutorials.
+[ACCORDION-BEGIN [Step 2: ](Install ADT)]
+  1. In Eclipse, choose in the menu bar **Help** > **Install New Software...**.
+
+      ![install new software](newSoftware.png)
+
+  2. For Eclipse Photon, add the URL `https://tools.hana.ondemand.com/photon` and press enter to display available features. Select **ABAP Development Tools** and choose **Next**.
+
+      ![choose ADT](ADT.png)      
+
+  3. confirm the license agreements and choose **Finish** to start the installation. You will need to restart your Eclipse.
+
+      ![license](license.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Create your own ABAP package)]
+Mark this steps as completed by pressing `Done` if you have already created the package `Z_Package_XXX` (where XXX is your group number) in the previous tutorials.
 
   1. Open Eclipse and connect to your system.
 
@@ -57,7 +73,7 @@ Add your package to **Favorite Packages**.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a service definition)]
+[ACCORDION-BEGIN [Step 4: ](Create a service definition)]
 We want to create service definition to expose CDS entities and their behavior.
 
   1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Definition**.
@@ -82,7 +98,7 @@ The Service definition is now created.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Expose CDS View)]
+[ACCORDION-BEGIN [Step 5: ](Expose CDS View)]
 Exposition of the CDS view `I_Currency` and provide Currency as alias.
 Do not forget to save and activate!
 
@@ -97,7 +113,7 @@ define service Z_DEF_XXX {
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create a service binding)]
+[ACCORDION-BEGIN [Step 6: ](Create a service binding)]
 We want to create service binding to bind service to a protocol and preview.
 
   1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Binding**.
@@ -118,7 +134,7 @@ We want to create service binding to bind service to a protocol and preview.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Publish your service binding)]
+[ACCORDION-BEGIN [Step 7: ](Publish your service binding)]
 Click **Publish locally**, and then you will see the service name and service URL in the table.
 
 ![Publish Service Binding](Picture8a.png)
@@ -127,7 +143,7 @@ Click **Publish locally**, and then you will see the service name and service UR
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Preview your service binding)]
+[ACCORDION-BEGIN [Step 8: ](Preview your service binding)]
 After publishing the business service, you can preview the published business service as SAP Fiori Elements app in the Service Binding editor:
 
   1. Go to the **Service Details** on the right side
@@ -161,7 +177,7 @@ After publishing the business service, you can preview the published business se
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Create a communication scenario)]
+[ACCORDION-BEGIN [Step 9: ](Create a communication scenario)]
   1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Communication Management** > **Communication Scenario**.
 
   2. Click **Next**.
@@ -180,7 +196,7 @@ After publishing the business service, you can preview the published business se
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Add inbound into communication scenario)]
+[ACCORDION-BEGIN [Step 10: ](Add inbound into communication scenario)]
  1. Open the created communication scenario and navigate to **Inbound** tab.
 
  2. Check **Basic** under **Supported Authentication Methods**.
@@ -197,7 +213,7 @@ After publishing the business service, you can preview the published business se
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Publish communication scenario)]
+[ACCORDION-BEGIN [Step 11: ](Publish communication scenario)]
 Navigate to the **Overview** tab and publish the scenario locally.
 
 ![publish](Picture13.png)
@@ -205,7 +221,7 @@ Navigate to the **Overview** tab and publish the scenario locally.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+[ACCORDION-BEGIN [Step 12: ](Test yourself)]
 Define a service definition with following information:
 
       - annotation: `@EndUserText.label`: `Test`

@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition, products>sap-ha
  - **Proficiency:** Beginner
 
 ## Next Steps
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-tables.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://developers.sap.com/tutorials/hxe-ua-visual-studio-tables.html)
 
 ## Details
 ### You will learn  
@@ -88,7 +88,3 @@ For __Login information__, the __User name:__ is __SYSTEM__ and the __Password:_
 
 [ACCORDION-END]
 
----
-
-## Next Steps
-- [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-tables.html)

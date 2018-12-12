@@ -1,22 +1,21 @@
 ---
-title: Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition
+title: Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition (Native Linux Machine)
 description: If you installed the Applications package, you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 <!-- loio8f68fc9f49774010a5d438fea258f61f -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Test the Installation](http://www.sap.com/developer/tutorials/hxe-ua-test-binary.html)  
+ - **Tutorials:**  You have completed [Test the Installation](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)  
 
 ## Details
 ### You will learn
 You will learn how to download, install, and configure the `eadesigner.tgz` SAP EA Designer package.
-
-### Time to Complete
-15 min
 
 ---
 
@@ -129,5 +128,3 @@ A success message displays when installation completes.
 
 
 [ACCORDION-END]
-
-

@@ -2,13 +2,13 @@
 title: Add Custom Logic to Your Service
 description: Add custom handlers for specific situations that are not covered by the generic service provider.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
 time: 10
 ---
 
 ## Prerequisites  
- - [Add a Database to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-03-add-database.html)
+ - [Add a Database to Your Business Application](https://developers.sap.com/tutorials/cp-apm-03-add-database.html)
 
 ## Details
 ### You will learn  

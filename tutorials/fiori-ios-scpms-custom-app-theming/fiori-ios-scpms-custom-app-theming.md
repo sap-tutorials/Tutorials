@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://www.sap.com/developer/groups/ios-sdk-custom.html) group
+- This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://developers.sap.com/group.ios-sdk-custom.html) group
 &nbsp;
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 2.0
@@ -16,7 +16,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ## Details
 In this tutorial, you will apply a custom theme to your iOS app (generated with the SDK Assistant) using [`NUI`](https://github.com/tombenner/nui). `NUI` enables you to style iOS components with style sheets similar to CSS. `NUI` is already integrated in the SAP Cloud Platform SDK for iOS so you don't need to install anything. In addition, you will change the app's on-boarding behavior by changing certain client policies in SAP Cloud Platform mobile service for development and operations.
 
->To view the entire series of tutorials, see the [Customize UI's, themes and onboarding for iOS apps](https://www.sap.com/developer/groups/ios-sdk-custom.html) tutorial group.
+>To view the entire series of tutorials, see the [Customize UI's, themes and onboarding for iOS apps](https://developers.sap.com/group.ios-sdk-custom.html) tutorial group.
 
 ### You will learn  
 

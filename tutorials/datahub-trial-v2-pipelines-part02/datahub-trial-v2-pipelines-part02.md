@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ### You will learn  
   - How to use a message broker within a pipeline.
 
-Please note that this tutorial is similar to the `Use a message broker` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Use a message broker` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 ### Time to Complete
 **30 Mins**
@@ -62,7 +62,7 @@ From the instance details page, note down the **Primary Internal IP** of this VM
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
 Remove the connection between **Data Generator** operator and the **Terminal** operator.
 
@@ -121,5 +121,4 @@ Stop the pipeline by clicking **Stop**.
 
 [ACCORDION-END]
 
----
 

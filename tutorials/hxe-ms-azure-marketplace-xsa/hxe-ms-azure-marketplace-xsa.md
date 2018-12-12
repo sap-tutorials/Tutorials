@@ -11,9 +11,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://developers.sap.com/topics/sap-hana-express.html)
+- **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
 
 ## Details
 ### You will learn  
@@ -32,7 +32,7 @@ Connect to your account in [MS Azure](https://portal.azure.com/) and click **Cre
 
 You will be presented with **two options**:
 
-- **SAP HANA, express edition (server-only)**: You can connect using SQL clients like SAP HANA Studio or any other client. Includes the Predictive Analytic Library, Machine learning libraries and other advanced analytics. You can find this option in [this other tutorial](https://www.sap.com/developer/tutorials/hxe-ms-azure-marketplace-getting-started.html)
+- **SAP HANA, express edition (server-only)**: You can connect using SQL clients like SAP HANA Studio or any other client. Includes the Predictive Analytic Library, Machine learning libraries and other advanced analytics. You can find this option in [this other tutorial](https://developers.sap.com/tutorials/hxe-ms-azure-marketplace-getting-started.html)
 - **SAP HANA, express edition + XS Advanced Applications** (also referred to as XSA): Includes all of the other features plus the Cloud Foundry based development platform,  SAP Web IDE for SAP HANA, administration cockpit among other applications like SHINE and Smart Data Streaming. OData support, Node.js and Java runtime environments are also included. This option requires more resources. **This version is covered in this tutorial**.
 
 
@@ -200,7 +200,7 @@ Log in with `XSA_DEV` and the master password. You will see the Web IDE.
 
 You can now start to use your SAP HANA, express edition. The additional steps in this tutorial are only required if you are using additional components.
 
-You can get started with your [first end-to-end XS Advanced application](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html).
+You can get started with your [first end-to-end XS Advanced application](https://developers.sap.com/group.hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/sap-hana-express.tutorials.html).
 
 
 [ACCORDION-END]
@@ -344,8 +344,7 @@ You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **Intro to XS Advanced HANA Native Development:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+### Additional Information
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **Intro to XS Advanced HANA Native Development:** [ Get started with XS Advanced development](https://developers.sap.com/topics/sap-hana-express.html)
+- **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)

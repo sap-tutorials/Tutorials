@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Register](http://www.sap.com/developer/tutorials/hxe-ua-register.html)
+ - **Tutorials:** You have completed [Register](http://developers.sap.com/tutorials/hxe-ua-register.html)
 
 ## Details
 ### You will learn
@@ -78,7 +78,7 @@ Select one or more of the following packages:
 Skip to the next step unless you are an advanced user.
 
 > Note:
-> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](https://www.sap.com/developer/tutorials/hxe-ua-packages-vm-xsa.html) tutorial later in the installation workflow, once your server is installed and running.
+> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](https://developers.sap.com/tutorials/hxe-ua-packages-vm-xsa.html) tutorial later in the installation workflow, once your server is installed and running.
 >
 >
 

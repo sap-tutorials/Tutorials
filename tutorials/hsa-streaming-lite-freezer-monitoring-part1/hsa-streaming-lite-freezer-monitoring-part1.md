@@ -15,7 +15,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - Setup `Raspberry Pi` user as `"Pi"`, and root directory as `"/home/pi"`
 
 ## Next Steps
-  - [Install Streaming Lite and Setup Freezer Lite](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part2.html)
+  - [Install Streaming Lite and Setup Freezer Lite](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part2.html)
 
 ## Details
 ### You will learn  

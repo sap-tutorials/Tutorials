@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
@@ -85,7 +85,7 @@ Here is a basic Application Security Descriptor that you will be using, as you w
 >
 However, you may prefer to run commands remotely (from your local desktop for example).
 >
-To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
+To do so, you can complete the [XS CLI Client installation](https://developers.sap.com/tutorials/hxe-ua-install-xs-xli-client.html)
 
 Execute the following series of XS CLI command:
 

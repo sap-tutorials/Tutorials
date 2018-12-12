@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, products>sap
 
 ## Prerequisites  
  - **Proficiency:** intermediate
- - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9.3 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.2
 
@@ -18,7 +18,7 @@ In this tutorial, you will learn how to create universal links for use in an iOS
 
 To prepare your app to support universal links, you will create a new (or modify an existing) app ID on [Apple Developer Portal](https://developer.apple.com/), modify the application definition on SAP Cloud Platform mobile service for development and operations, and modify the app's entitlements in Xcode.
 
-For this tutorial, you can use any iOS app you have previously created with the SAP Cloud Platform SDK for iOS Assistant. However, the screenshots and parameters used in this tutorial are taken from the `OfflineDemo` app created in tutorial [Create an iOS App with Offline Capabilities](https://www.sap.com/developer/tutorials/fiori-ios-scpms-offline-odata.html). If you want to follow this tutorial to the letter, make sure you have finished creating the `OfflineDemo` app.
+For this tutorial, you can use any iOS app you have previously created with the SAP Cloud Platform SDK for iOS Assistant. However, the screenshots and parameters used in this tutorial are taken from the `OfflineDemo` app created in tutorial [Create an iOS App with Offline Capabilities](https://developers.sap.com/tutorials/fiori-ios-scpms-offline-odata.html). If you want to follow this tutorial to the letter, make sure you have finished creating the `OfflineDemo` app.
 
 ### Time to Complete
 **15 Min**

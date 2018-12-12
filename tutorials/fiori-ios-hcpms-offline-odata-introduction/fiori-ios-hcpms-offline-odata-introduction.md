@@ -4,24 +4,18 @@ description: Offline OData consists of many pieces at the back-end and the front
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
+ - **Tutorials:** [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-reporting.html)
 
-
-## Next Steps
- - [Offline OData - Configuration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-config.html)
 
 ## Details
 ### You will learn  
-You will learn how the Fiori iOS SDK creates an offline store on the mobile device, how it keeps data in sync and how data entered locally is flushed back to the originating OData service.
-
-### Time to Complete
-**15 Min**
+  - How the Fiori iOS SDK creates an offline store on the mobile device, how it keeps data in sync, and how data entered locally is flushed back to the originating OData service
 
 ---
 
@@ -126,9 +120,5 @@ However, it is possible to tune the configuration of offline applications to opt
 - Column indexes for the client database
 - Common user data to cache on the server to reduce the amount of data that needs to be synchronized with the back end.
 
-You can learn more on this topic in tutorial [Configure the behavior of the Offline OData Service](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-config.html)
-
-
 [DONE]
 [ACCORDION-END]
-

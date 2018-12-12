@@ -10,7 +10,7 @@ tags: [  tutorial>intermediate, topic>abap-extensibility, topic>cloud, products>
  - **Proficiency:** Intermediate
  - **Authorizations:** Your SAP S/4HANA key user needs a business role with business catalogs `Extensibility` (ID: `SAP_CORE_BC_EXT`) and `Communication Management` (ID: `SAP_CORE_BC_COM`). You need a user on SAP API Business Hub.
  - **Example Objects:** Existence of custom business object `Bonus Entitlement` as described in this [tutorial](https://blogs.sap.com/2017/02/20/part-iv-associated-business-objects-bonus-entitlement-with-plan-sales-order/) (Blog)
- - **Knowledge:** (optional) [Tutorial: Getting started with the SAP API Business Hub](https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html)
+ - **Knowledge:** (optional) [Tutorial: Getting started with the SAP API Business Hub](https://developers.sap.com/tutorials/hcp-abh-getting-started.html)
  - **SAP S/4HANA Release:** 1805 (tutorial's last update)
 
 ## Details

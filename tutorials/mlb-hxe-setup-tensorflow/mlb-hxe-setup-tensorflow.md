@@ -8,7 +8,7 @@ time: 120
 ---
 
 ## Prerequisites  
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 ## Details
 ### You will learn
@@ -81,11 +81,11 @@ sudo su -l hxeadm
 
 #### Download & Install the SAP HANA HDB client
 
-Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client for Linux** from the [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) group.
+Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client for Linux** from the [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) group.
 
 #### SAP HANA External Machine Learning AFL
 
-Before you can proceed with the next steps, you will need to complete the [Install the SAP HANA External Machine Learning Library Package for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-eml-vm.html).
+Before you can proceed with the next steps, you will need to complete the [Install the SAP HANA External Machine Learning Library Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-eml-vm.html).
 
 To confirm that the SAP HANA EML functions were installed successfully, you can check the following public views:
 
@@ -547,7 +547,7 @@ For operational systems, it is highly recommended to use two separate type of  u
 
 Each type of user will require dedicated roles to be granted.
 
-In your case, you will be reusing the `ML_USER` created during the [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html) tutorial for both roles.
+In your case, you will be reusing the `ML_USER` created during the [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html) tutorial for both roles.
 
 Make also sure that the Script Server has been enabled for your instance.
 

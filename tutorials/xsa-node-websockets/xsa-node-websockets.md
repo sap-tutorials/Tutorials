@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Text Bundles](https://www.sap.com/developer/tutorials/xsa-node-text.html)
+- **Tutorials:** [Text Bundles](https://developers.sap.com/tutorials/xsa-node-text.html)
 
 ## Details
 ### You will learn  

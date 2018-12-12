@@ -7,16 +7,16 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 ## Prerequisites  
 - **Proficiency:** Intermediate
 - **Tutorials:**
-- [Connecting SAP Web IDE to the Hybrid App Toolkit](https://www.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
+- [Connecting SAP Web IDE to the Hybrid App Toolkit](https://developers.sap.com/tutorials/hcpms-webide-hat-connection.html)
 - Additionally, you must have completed the tutorials below in the Web IDE series.  
-- [Create a Destination on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
-- [Build an app from an SAP Web IDE template](https://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-- [Deploy your mobile web app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+- [Create a Destination on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-destination.html)
+- [Build an app from an SAP Web IDE template](https://developers.sap.com/tutorials/hcp-template-mobile-web-app.html)
+- [Deploy your mobile web app to SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-deploy-mobile-web-app.html)
 
 
 
 ## Next Steps
-- Continue with the SAP Web IDE series [Add labels and a new field to your app](https://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
+- Continue with the SAP Web IDE series [Add labels and a new field to your app](https://developers.sap.com/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
 
 ## Details
 ### You will learn  
@@ -124,7 +124,7 @@ Click on one of the items in the list to view the details page, and scroll down 
 
 [ACCORDION-BEGIN [Step 9: ](View data on other tab)]
 
-If you have implemented a [second tab](https://www.sap.com/developer/tutorials/hcp-webide-add-tab.html) in your app, click it to see the data there.
+If you have implemented a [second tab](https://developers.sap.com/tutorials/hcp-webide-add-tab.html) in your app, click it to see the data there.
 
 ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/11.png)
 

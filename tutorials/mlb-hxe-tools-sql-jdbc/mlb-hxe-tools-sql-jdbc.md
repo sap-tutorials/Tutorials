@@ -12,13 +12,13 @@ time: 10
 
 In this tutorial, you will install the SAP HANA client for SAP HANA, express edition.
 
-Then, you will learn how to connect your SAP HANA, express edition instance using Eclipse as a JDBC based querying tool (instead of the [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html)).
+Then, you will learn how to connect your SAP HANA, express edition instance using Eclipse as a JDBC based querying tool (instead of the [SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-eclipse.html)).
 
 The **Eclipse IDE** provides a built-in perspective named **Data Source Explorer** which can be used as a JDBC based querying tool too.
 
 This will help you configure your favorite JDBC based querying tool as they are all very similar in term of configuration needs.
 
-Just to name a few, here are some tools you might have already considered as alternatives to the [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html):
+Just to name a few, here are some tools you might have already considered as alternatives to the [SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-eclipse.html):
 
  - [`DBeaver`](http://dbeaver.jkiss.org/download/) (more details in [SQL Clients and SAP HANA 2.0 by Craig Cmehil](https://blogs.sap.com/2017/03/24/march-tip-sql-clients-and-sap-hana-2.0/))
  - [`SQLPad`](https://rickbergfalk.github.io/sqlpad/) (more details in [`SQLPad` meets SAP HANA by Craig Cmehil ](https://blogs.sap.com/2018/02/05/sqlpad-meets-sap-hana/))
@@ -33,11 +33,11 @@ This does not represent an exhaustive list of tools able to connect to SAP HANA,
 
 In most scenario, if the SAP HANA JDBC driver is not already pre-configured, you will need to add it before establishing your connection.
 
-For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 [ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
 
-Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) group.
+Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) group.
 
 [DONE]
 [ACCORDION-END]

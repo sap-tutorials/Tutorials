@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 time: 20
 ---
 ## Prerequisites  
- - [Core Data Services, creating Associations (Joins)](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
+ - [Core Data Services, creating Associations (Joins)](https://developers.sap.com/tutorials/s4hana-cds-associations.html)
 
 ## Details
 ### You will learn

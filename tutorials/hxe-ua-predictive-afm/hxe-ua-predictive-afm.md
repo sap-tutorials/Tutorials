@@ -246,5 +246,5 @@ Click the __Activate__ icon ![Activate](activate.png) and continue with the tuto
 
 [ACCORDION-END]
 
-## Next Steps
+### Additional Information
 - Find more Predictive Analysis Library tutorials on the [SAP HANA Academy YouTube Channel](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g)

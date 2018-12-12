@@ -87,7 +87,7 @@ Select the User Registrations tab to send the notification to your app.
 
 ![Send notification](send-notification.png)
 
-> **Note**: It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, click through a few screens in the application and then press the **GO** button to refresh the display or select all of them and send a greeting to all the registrations.
+>It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, click through a few screens in the application and then press the **GO** button to refresh the display or select all of them and send a greeting to all the registrations.
 
 
 Specify the notification text to send to the app.
@@ -127,7 +127,7 @@ Custom logic could be added to the app to decide on the action to take, such as 
 ![Show Notification Code](show-notification-code.png)
 
 
-> **Note**: Further information on push can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/remotenotification.html">Push Notifications</a>, <a target="_blank" href="https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html">Push API Notification Scenarios</a>, and <a target="_blank" href="https://firebase.google.com/docs/cloud-messaging/concept-options">About FCM Messages</a>.
+>Further information on push can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/remotenotification.html">Push Notifications</a>, <a target="_blank" href="https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html">Push API Notification Scenarios</a>, and <a target="_blank" href="https://firebase.google.com/docs/cloud-messaging/concept-options">About FCM Messages</a>.
 
 
 Congratulations! You have seen how an app can make use of foreground and background notifications.

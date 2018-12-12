@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-- [Developing and Deploying a basic Java application on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-java-basic-app.html)
+- [Developing and Deploying a basic Java application on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-java-basic-app.html)
 
 ## Details
 ### You will learn  

@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 15
 ---
 
+## Prerequisites
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
+
 ## Details
 ### You will learn
 - How to use inheritance in controller

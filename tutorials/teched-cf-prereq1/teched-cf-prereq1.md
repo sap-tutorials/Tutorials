@@ -23,7 +23,7 @@ time: 20
 
 Start by [logging into SAP Cloud Platform](https://account.hanatrial.ondemand.com/).
 
->If you don't have an account on SAP Cloud Platform yet, go to the [Get a Free Trial Account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
+>If you don't have an account on SAP Cloud Platform yet, go to the [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
 
 ![Log onto SAP Cloud Platform](1c.png)
 
@@ -43,11 +43,7 @@ The opening screen will appear.  Choose **Cloud Foundry Trial** as the type of a
 
 Clicking on the Cloud Foundry trial link will bring up the **Start Cloud Foundry Trial** dialog box.  Choose one of regions from this list.    
 
-We suggest that you use the _US East (VA)_ region.  
-
 > Each Cloud Foundry region has a different list of available services.  If you want to use a different region with a particular service, [check to be certain it has the services you want before selecting it](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html?3b642f68227b4b1398d2ce1a5351389a.html).
-
-![Choose a nearby region](2b-east.png)
 
 You will then see a dialog box while the account is set up.  When complete, the dialog box will look like this.  Click **Go To Space** to continue.
 

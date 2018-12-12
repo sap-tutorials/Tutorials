@@ -8,18 +8,18 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites 
  - **Proficiency:** Beginner
  - **Development Environment:** ABAP Development Tools, AS ABAP 7.50 or higher
- - **Tutorials:** [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
+ - **Tutorials:** [Create an ABAP Data Dictionary structure](https://developers.sap.com/tutorials/abap-dev-adt-create-new-structure.html)
 
 ## Next Steps
-- [Create a data element](https://www.sap.com/developer/tutorials/abap-dev-adt-create-data-element.html)
+- [Create a data element](https://developers.sap.com/tutorials/abap-dev-adt-create-data-element.html)
 
 ## Details
 ### You will learn  
 In previous tutorials, you learned how to:
 
-1. [Create and run an ABAP program](https://www.sap.com/developer/tutorials/abap-create-basic-app.html)
-2. [Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
-3. [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
+1. [Create and run an ABAP program](https://developers.sap.com/tutorials/abap-create-basic-app.html)
+2. [Display database content and run SQL queries](https://developers.sap.com/tutorials/abap-display-data-queries.html)
+3. [Create an ABAP Data Dictionary structure](https://developers.sap.com/tutorials/abap-dev-adt-create-new-structure.html)
 
 Now, you will put all these together. In the ABAP program, you will:
 
@@ -37,7 +37,7 @@ Finally, you will learn how to display the data in a SAP List Viewer ("`ALV Grid
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open your ABAP program)]
-First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the previous tutorial, [Create and run an ABAP application](https://www.sap.com/developer/tutorials/abap-create-basic-app.html).
+First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the previous tutorial, [Create and run an ABAP application](https://developers.sap.com/tutorials/abap-create-basic-app.html).
 
 ![Image depicting step1-open-abap-program](step1-open-abap-program.png)
 
@@ -112,7 +112,7 @@ This method does not yet exist so we will create it with a Quick Assist as follo
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add the method implementation)]
-In a previous tutorial ([Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)), you generated a `SELECT` statement using the SQL console. The advantage of using the SQL console is that you can reduce errors by defining clauses - like `JOIN, WHERE, or ORDER BY` - simply by manipulating the Data Preview. The SQL Console automatically generates the correct SELECT statement for you.
+In a previous tutorial ([Display database content and run SQL queries](https://developers.sap.com/tutorials/abap-display-data-queries.html)), you generated a `SELECT` statement using the SQL console. The advantage of using the SQL console is that you can reduce errors by defining clauses - like `JOIN, WHERE, or ORDER BY` - simply by manipulating the Data Preview. The SQL Console automatically generates the correct SELECT statement for you.
 
 You will now use this generated `SELECT` statement in your class to retrieve the data from the database.
 
@@ -162,7 +162,7 @@ Now you can format (that is, "pretty-print") the source code. Open the **Source*
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Declare the local variable explicitly)]
-In a previous tutorial ([Create a structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)), you created an ABAP Data Dictionary structure. Now, you will use this structure.
+In a previous tutorial ([Create a structure](https://developers.sap.com/tutorials/abap-dev-adt-create-new-structure.html)), you created an ABAP Data Dictionary structure. Now, you will use this structure.
 
 First, we will declare a local variable, `lt_result`, explicitly. Then, using this structure, we will define the type. of the returning parameter for your method `get_items_from_db`.
 
@@ -191,7 +191,7 @@ It also replaces `INTO TABLE @DATA(lt_result)` with `INTO TABLE @lt_result`
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Replace helper_type with Dictionary structure)]
-In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)).
+In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial [Create an ABAP Data Dictionary structure](https://developers.sap.com/tutorials/abap-dev-adt-create-new-structure.html)).
 
 Still in the editor of your invoice retrieval class `ZCL_INVOICE_RETRIEVAL`:
 

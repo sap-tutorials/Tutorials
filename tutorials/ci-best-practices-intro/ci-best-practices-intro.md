@@ -13,48 +13,48 @@ time: 15
 
 ## Outline
 
-1. [Introduction and Navigator (this document)](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+1. [Introduction and Navigator (this document)](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 2. Continuous Integration and Delivery  
 
-    2.1. [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)  
+    2.1. [CI/CD Practices](https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html)  
 
-    2.2. [Pipeline Suggestions](https://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
+    2.2. [Pipeline Suggestions](https://developers.sap.com/tutorials/ci-best-practices-pipelines.html)
 
 3. CI/CD Landscape - Component Setup
 
-    3.1. [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
+    3.1. [Source Code Versioning System](https://developers.sap.com/tutorials/ci-best-practices-scm.html)
 
-    3.2. [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+    3.2. [Build Scheduler](https://developers.sap.com/tutorials/ci-best-practices-build.html)
 
-    3.3. [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)  
+    3.3. [Artifact Repository](https://developers.sap.com/tutorials/ci-best-practices-artifacts.html)  
 
-    3.4. [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)  
+    3.4. [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html)  
 
-    3.5. [CD Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)  
+    3.5. [CD Pipeline Skeleton](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html)  
 
 4. CI/CD Process Setup  
-    4.1. [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)  
+    4.1. [Generic Project](https://developers.sap.com/tutorials/ci-best-practices-generic.html)  
     
-    4.2. [Java Web on SAP Cloud Platform](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp.html)
+    4.2. [Java Web on SAP Cloud Platform](https://developers.sap.com/tutorials/ci-best-practices-java-hcp.html)
 
-    4.3. [SAP HANA Extended Application Services (XS), classic model](https://www.sap.com/developer/tutorials/ci-best-practices-xsc.html)  
+    4.3. [SAP HANA Extended Application Services (XS), classic model](https://developers.sap.com/tutorials/ci-best-practices-xsc.html)  
 
-    4.4. [SAPUI5/SAP Fiori on ABAP Front End Server](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-abap.html)
+    4.4. [SAPUI5/SAP Fiori on ABAP Front End Server](https://developers.sap.com/tutorials/ci-best-practices-fiori-abap.html)
 
-    4.5. [SAPUI5/SAP Fiori on SAP Cloud Platform](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-sapcp.html)  
+    4.5. [SAPUI5/SAP Fiori on SAP Cloud Platform](https://developers.sap.com/tutorials/ci-best-practices-fiori-sapcp.html)  
 
-    4.6. [SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA](https://www.sap.com/developer/tutorials/ci-best-practices-xsa.html)  
+    4.6. [SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA](https://developers.sap.com/tutorials/ci-best-practices-xsa.html)  
 
-    4.7. [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html)
+    4.7. [SAP Cloud Platform SDK for iOS](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html)
 
-    4.8. [SAP Fiori Hybrid Apps with SAP Mobile Platform SDK](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-cordova.html)
+    4.8. [SAP Fiori Hybrid Apps with SAP Mobile Platform SDK](https://developers.sap.com/tutorials/ci-best-practices-mobile-cordova.html)
 
 5. CI/CD Process Setup using SCM and build services on the cloud  
 
-    5.1. [Generic Project with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)  
+    5.1. [Generic Project with CI using Cloud Services](https://developers.sap.com/tutorials/ci-best-practices-generic-cloud.html)  
 
-    5.2. [Java Web on SAP Cloud Platform with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html)  
+    5.2. [Java Web on SAP Cloud Platform with CI using Cloud Services](https://developers.sap.com/tutorials/ci-best-practices-java-hcp-cloud.html)  
 
 ---
 
@@ -98,24 +98,24 @@ Role: The part is of interest for the stated role
 
 Part of the Guide      | Roles of interest
 :--------------------- | :----------------
-**1. [Introduction and Navigator (this document)](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)** | **Manager, Quality Manager, Delivery Manager, Build Operator, Build Engineer, Developer**
+**1. [Introduction and Navigator (this document)](https://developers.sap.com/tutorials/ci-best-practices-intro.html)** | **Manager, Quality Manager, Delivery Manager, Build Operator, Build Engineer, Developer**
 **2. Continuous Integration and Delivery** |
-2.1. [CI/CD Practices: The Practices and Principles of CI and CD](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)   | **Manager, Quality Manager, Delivery Manager**, Build Operator, Build Engineer, Developer
-2.2. [Pipeline Suggestions: Patterns for a CI/CD pipeline](https://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)   | Manager, **Quality Manager, Delivery Manager**, Build Operator, **Build Engineer**, Developer
+2.1. [CI/CD Practices: The Practices and Principles of CI and CD](https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html)   | **Manager, Quality Manager, Delivery Manager**, Build Operator, Build Engineer, Developer
+2.2. [Pipeline Suggestions: Patterns for a CI/CD pipeline](https://developers.sap.com/tutorials/ci-best-practices-pipelines.html)   | Manager, **Quality Manager, Delivery Manager**, Build Operator, **Build Engineer**, Developer
 **3. CI/CD Landscape - Component Setup**   |
-3.1. [Source Code Versioning System: Setting up a Git/Gerrit Instance](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)     | **Build Operator**
-3.2. [Build Scheduler: Setting up a Jenkins Instance](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)       | **Build Operator**
-3.3. [Artifact Repository: Setting up a Nexus Instance](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)       | **Build Operator**
-3.4. [Landscape Configuration: Configuring the CI Component Landscape](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)       | **Build Operator**, Build Engineer
-3.5. [CD Pipeline Skeleton: Setup of a continuous delivery pipeline](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)       | **Build Operator**, Build Engineer
+3.1. [Source Code Versioning System: Setting up a Git/Gerrit Instance](https://developers.sap.com/tutorials/ci-best-practices-scm.html)     | **Build Operator**
+3.2. [Build Scheduler: Setting up a Jenkins Instance](https://developers.sap.com/tutorials/ci-best-practices-build.html)       | **Build Operator**
+3.3. [Artifact Repository: Setting up a Nexus Instance](https://developers.sap.com/tutorials/ci-best-practices-artifacts.html)       | **Build Operator**
+3.4. [Landscape Configuration: Configuring the CI Component Landscape](https://developers.sap.com/tutorials/ci-best-practices-landscape.html)       | **Build Operator**, Build Engineer
+3.5. [CD Pipeline Skeleton: Setup of a continuous delivery pipeline](https://developers.sap.com/tutorials/ci-best-practices-pipeline-skeleton.html)       | **Build Operator**, Build Engineer
 **4. CI/CD Process Setup**                |
-4.1. [Generic Project: Configuring the CI System for Maven-based Generic Java Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)                 | Build Operator, **Build Engineer**, Developer
-4.2. [Java Web on SAP Cloud Platform: Configuring the CI System for Maven-based Java Web Project](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) | Build Operator, **Build Engineer**, Developer
-4.3. [SAP HANA Extended Application Services (XS), Classic Model: Configuring the CI System](https://www.sap.com/developer/tutorials/ci-best-practices-xsc.html) | Build Operator, **Build Engineer**, Developer
-4.4. [SAPUI5/SAP Fiori on ABAP Front End Server: Implementing the CI Pipeline](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-abap.html) | Build Operator, **Build Engineer**, Developer
-4.5. [SAPUI5/SAP Fiori on SAP Cloud Platform: Implementing the CI Pipeline](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-sapcp.html) | Build Operator, **Build Engineer**, Developer
-4.6. [SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA: Implementing the CI Pipeline](https://www.sap.com/developer/tutorials/ci-best-practices-xsa.html) | Build Operator, **Build Engineer**, Developer
-4.7. [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html) | Build Operator, **Build Engineer**, Developer
+4.1. [Generic Project: Configuring the CI System for Maven-based Generic Java Project](https://developers.sap.com/tutorials/ci-best-practices-generic.html)                 | Build Operator, **Build Engineer**, Developer
+4.2. [Java Web on SAP Cloud Platform: Configuring the CI System for Maven-based Java Web Project](https://developers.sap.com/tutorials/ci-best-practices-java-hcp.html) | Build Operator, **Build Engineer**, Developer
+4.3. [SAP HANA Extended Application Services (XS), Classic Model: Configuring the CI System](https://developers.sap.com/tutorials/ci-best-practices-xsc.html) | Build Operator, **Build Engineer**, Developer
+4.4. [SAPUI5/SAP Fiori on ABAP Front End Server: Implementing the CI Pipeline](https://developers.sap.com/tutorials/ci-best-practices-fiori-abap.html) | Build Operator, **Build Engineer**, Developer
+4.5. [SAPUI5/SAP Fiori on SAP Cloud Platform: Implementing the CI Pipeline](https://developers.sap.com/tutorials/ci-best-practices-fiori-sapcp.html) | Build Operator, **Build Engineer**, Developer
+4.6. [SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA: Implementing the CI Pipeline](https://developers.sap.com/tutorials/ci-best-practices-xsa.html) | Build Operator, **Build Engineer**, Developer
+4.7. [SAP Cloud Platform SDK for iOS](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html) | Build Operator, **Build Engineer**, Developer
 **5. CI/CD Process Setup using SCM and build services on the cloud**  |
-5.1. [Generic Project with CI using Cloud Services: Configuring the CI infrastructure for a generic Java project using the cloud services of GitHub and Travis CI](https://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html) | Build Operator, **Build Engineer**, Developer
-5.2. [Java Web on SAP Cloud Platform with CI using Cloud Services: Configuring the CI infrastructure for a Java web project on SAP Cloud Platform using the cloud services of GitHub and Travis CI](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html) | Build Operator, **Build Engineer**, Developer
+5.1. [Generic Project with CI using Cloud Services: Configuring the CI infrastructure for a generic Java project using the cloud services of GitHub and Travis CI](https://developers.sap.com/tutorials/ci-best-practices-generic-cloud.html) | Build Operator, **Build Engineer**, Developer
+5.2. [Java Web on SAP Cloud Platform with CI using Cloud Services: Configuring the CI infrastructure for a Java web project on SAP Cloud Platform using the cloud services of GitHub and Travis CI](https://developers.sap.com/tutorials/ci-best-practices-java-hcp-cloud.html) | Build Operator, **Build Engineer**, Developer
