@@ -1,6 +1,8 @@
 ---
+author_name: André Pfohlmann
+author_profile: https://github.com/Apfohlmann
 title: Add a UI to Your Business Application
-description: Create the UI for your business application using SAP Web IDE Full-Stack and the Annotation Modeler.
+description: Create the UI for your business application using SAP Web IDE Full-Stack, the SAP Cloud Application Programming Model and the Annotation Modeler.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [  tutorial>intermediate, topic>html5, topic>java, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]

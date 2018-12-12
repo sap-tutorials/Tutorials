@@ -1,8 +1,8 @@
 ---
-author_name: Cecilia Huergo
-author_profile: https://github.com/Chuergo
+author_name: André Pfohlmann
+author_profile: https://github.com/Apfohlmann
 title: Build a Business App by Reusing a CDS Model
-description: Develop a sample business application by reusing a Core Data and Service (CDS) model and extending an existing service using the application programming model.
+description: Develop a sample business application by reusing a Core Data and Service (CDS) model and extending an existing service using the SAP Cloud Application Programming Model.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform, software-product-function>sap-cloud-application-programming-model ]
