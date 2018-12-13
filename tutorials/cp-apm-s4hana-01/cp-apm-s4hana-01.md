@@ -1,9 +1,9 @@
 ---
 title: Extend a Business App to Consume an S/4HANA Service
-description: Develop a business application that consumes an S/4HANA service from SAP API Business Hub using the application programming model.
+description: Develop a business application that consumes an S/4HANA service from SAP API Business Hub using the SAP Cloud Application Programming Model.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [ tutorial>intermediate, topic>java, software-product-function>sap-cloud-application-programming-model, products>sap-web-ide ]
 time: 15
 ---
 

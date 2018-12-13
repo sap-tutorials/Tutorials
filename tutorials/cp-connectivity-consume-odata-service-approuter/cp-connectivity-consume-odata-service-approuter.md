@@ -1,6 +1,6 @@
 ---
-title: Use the Application Router in Cloud Foundry to Connect to ABAP System through Secure Tunnel
-description: After setting up a secure tunnel between your ABAP system and SAP Cloud Platform with the Cloud Connector, you can access released OData services of you ABAP system on SAP Cloud Platform. We will use the application router to demonstrate what you need to configure before consuming such services in your Cloud Foundry applications.
+title: Use the Application Router in Cloud Foundry to Connect to ABAP System
+description: Use the application router on SAP Cloud Platform to access released OData services of your ABAP system through the Cloud Connector.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, products>sap-cloud-platform,products>sap-cloud-platform-connectivity ]

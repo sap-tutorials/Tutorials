@@ -1,6 +1,6 @@
 ---
-title: Set up Secure Tunnel between ABAP System and SAP Cloud Platform (CF)
-description: Set up your SAP Cloud Platform account and the Cloud Connector to establish a secure tunnel between SAP Cloud Platform and the Application Server ABAP in your system landscape.
+title: Connect an ABAP System with SAP Cloud Platform Using a Secure Tunnel (Neo)
+description: Set up your SAP Cloud Platform account (Neo) and the Cloud Connector to establish a secure tunnel between SAP Cloud Platform and the Appplication Server ABAP in your system landscape.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
@@ -8,45 +8,44 @@ time: 15
 ---
 
 ## Prerequisites  
-  - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html)
   - [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
-  - [Create a Cloud Foundry Account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
+  - [Get a Free Trial Account on SAP Cloud Platform (Neo)](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Details
 ### You will learn  
-  - How to connect the Cloud Connector to your trial cloud foundry account on SAP Cloud Platform
-  - How to connect the Cloud Connector to your ABAP system
-
+- How to connect the Cloud Connector to your trial Neo account on SAP Cloud Platform
+- How to connect the Cloud Connector to your ABAP system
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Connect Cloud Connector with trial subaccount)]
 
-Before you can access data from the Cloud Connector in an application on SAP Cloud Platform, you must establish a trust between your SAP Cloud Platform subaccount and the Cloud Connector that is installed in your system landscape. To do so, you need your subaccount ID.
+Before you can access data from the Cloud Connector in an application on SAP Cloud Platform (Neo), you must establish a trust between your SAP Cloud Platform subaccount and the Cloud Connector that is installed in your system landscape.
 
-1. Go to [Your SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit) | **Cloud Foundry Trial**, and navigate to your subaccount.
+1. Go to [Your SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit) | **Neo Trial**, and navigate to your subaccount.
 
-1. The card with your subaccount information will show the sub-account name **trial** by default. If the card shows the subdomain instead of your subaccount's ID choose the flip icon:
+1. Copy your technical subaccount name from the title to a local text editor:
 
-    ![subaccount ID](step-01-Find-Trial-ID-001.png)
+    ![Technical subaccount name](step-01-Find-Trial-ID-001.png)
 
-1. Select the ID and copy it:
+1. Open your user information in the upper right corner:
 
-    ![subaccount ID](step-01-Find-Trial-ID-002.png)
+    ![User Information](step-01-Find-Trial-ID-002.png)
+
+2. Copy your user ID from your user information to a local text editor:
+
+    ![User ID](step-01-Find-Trial-ID-003.png)
 
 1. Log on to the Cloud Connector administration UI and choose **Connector** | **Define Subaccount** (if you already have defined a subaccount for another purpose, choose **Connector** | **Add Subaccount**). Enter the following information:
 
     |  Field Name            | Value                                                                   |
     |:-----------------------|:------------------------------------------------------------------------|
-    |  **Region**            | `cf.eu10.hana.ondemand.com` or `cf.us10.hana.ondemand.com`              |
-    |  **Subaccount**        | The subaccount ID you copied in the last step.                          |
+    |  **Region**            | `hanatrial.ondemand.com`                                                |
+    |  **Subaccount**        | The technical subaccount name you copied earlier                        |
     |  **Display Name**      | This will be displayed in the Cloud Connector administration UI         |
-    |  **Subaccount User**   | Email address of your subaccount user. You can find it in the `User Information`. |
+    |  **Subaccount User**   | The user ID you copied earlier.                                         |
     |  **Password**          | Password of your subaccount user                                        |
     |  **Location ID**       | not required in this tutorial                                           |
-    > You can find the `User Information` here:
-    >
-    >  ![User Information](step-01-Find-Trial-ID-003.png)
 
 1. Choose `Save`.
 
@@ -82,7 +81,7 @@ In this step we do not provide any password information. It will have to be prov
 1. Enter the internal host and port of your ABAP system and choose **`Next`**.
 
     ![Access-Control-OP](step-03-Configure-OP-Connection-004.png)
-    > To check this again, choose **`Call Browser`** for OData service `ZEPM_REF_APPS_PROD_MAN_SRV` in transaction `/n/IWFND/MAINT_SERVICE` of the ABAP system where you configured your OData services.
+    > To be sure that this information is correct, you could call your ABAP service in a Web browser first. If this works you can take the host address and port from the link you used.
 
 1. Enter a **`Virtual Host`** and a **`Virtual Port`**.
 
@@ -119,7 +118,7 @@ Before applications on SAP Cloud Platform can access any services of the ABAP sy
 
     ![Access-Control-OP](step-03-Configure-OP-Connection-010.png)
 
-1. Add the following resource and choose **`Save`**.
+1. If your service is an OData service, add the following resource and choose **`Save`**.
 
     | Field Name                     | Value                              |
     |:-------------------------------|:-----------------------------------|
@@ -128,13 +127,13 @@ Before applications on SAP Cloud Platform can access any services of the ABAP sy
     | **`Access Policy`**            | **`Path and all sub-paths`**       |
 
     ![Access-Control-OP](step-03-Configure-OP-Connection-011.png)
-    > For now we will only add path `/sap/opu/odata` as resource path to be able to access the output of the OData service. You can add more paths later, for example, because you would also like to allow access to related images stored in the ABAP system.
+    > Path `/sap/opu/odata` is the basic resource path to be able to access the output of the OData service. You can add more paths later, for example, if you would like to allow access to related images stored in the ABAP system.
 
 1. Your configuration should now look like this:
 
     ![Access-Control-OP](step-03-Configure-OP-Connection-012.png)
 
-As a result, you now have configured a secure tunnel between your ABAP system and your subaccount on SAP Cloud Platform.  
+As a result, you now have configured a secure tunnel between your ABAP system and your Neo subaccount on SAP Cloud Platform.  
 
 [VALIDATE_3]
 
