@@ -97,6 +97,10 @@
       "value": "products>sap-cloud-platform"
     },
     {
+      "name": "SAP Cloud Platform ABAP Environment",
+      "value": "products>sap-cloud-platform--abap-environment"
+    },
+    {
       "name": "SAP Cloud Platform Predictive service",
       "value": "products>sap-cloud-platform-predictive-service"
     },
