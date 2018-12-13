@@ -1,6 +1,6 @@
 ---
 title: Create a Database Table
-description: You will learn how to create a table from scratch
+description: Create a database table from scratch using the ABAP Development Tools (ADT)
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
@@ -9,19 +9,26 @@ time: 60
 
 ## Details
 ### You will learn  
-How to create a table in ABAP, representing a table in your database, including an input check.
+- How to create a table in ABAP, representing a table in your database
+- How to add an input check to a field
 
-Tables are defined independently of the database in the ABAP Dictionary. When you activate the table in the Data Dictionary, the table is created in the underlying database. There is no need for any code to define the data in the database, nor for any vendor-specific code. Your database tables will be created in any database supported by the ABAP server.
+Tables are defined independently of the database in the ABAP Dictionary. When you activate the table in the Data Dictionary, the table is created in the underlying database.
 
-The table in this tutorial will store bank account details for customers. The table will have the following columns (or **fields**): `Company_name`, `account_number`, `balance`, `bank_name`, `account_category`, `city`, `last_entry`.
+The table in this tutorial will store bank account details for customers. The table will have the following columns (or **fields**):
 
-**Client-specific tables**: Tables can be cross-client or client-specific. Each client is a self-contained unit within an organization. In business terms, each client can represent a subsidiary of a company or can represent a legally independent company within a corporate group. For client-specific tables, the client is the first key field in the table.
-This table is client-specific.
+- `Company_name`
+- `account_number`
+- `balance`
+- `bank_name`
+- `account_category`
+- `city`
+-  `last_entry`
 
-For more information on database tables and their properties, see the [SAP Help Portal: Database Tables](https://help.sap.com/viewer/ec1c9c8191b74de98feb94001a95dd76/7.5.9/en-US/cf21ea43446011d189700000e8322d00.html).
+For more information on:
 
-For more information on using the ABAP  Development Tools (ADT) editor for database tables, see the application help in ADT: click on the editor and choose `F1`.
+- Database tables and their properties, see the [SAP Help Portal: Database Tables](https://help.sap.com/viewer/ec1c9c8191b74de98feb94001a95dd76/7.5.9/en-US/cf21ea43446011d189700000e8322d00.html)
 
+- Using the ABAP  Development Tools (ADT) editor for database tables, see the application help in ADT: click on the editor and choose `F1`
 
 ---
 
@@ -61,8 +68,9 @@ One key field has been added automatically:
 
 `client : abap.clnt;`
 
+This specifies that the table is client-specific. 
+Tables can be cross-client or client-specific. Each client is a self-contained unit within an organization, such as a subsidiary. For client-specific tables, the client is the first key field in the table.
 
-This specifies that the table is client-specific.
 The field is also specified as `not null x`. This means that the field cannot be left blank. In this case, `abap.clnt` is automatically filled with the value of the current client (such as 001).
 
 [DONE]

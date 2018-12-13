@@ -9,7 +9,9 @@ time: 10
 
 ## Details
 ### You will learn  
-- How to create **ABAP packages** and **transport requests** and why they are important. You will create an ABAP package and add it to your *Favorite packages* list in ABAP Development Tools (ADT).
+- How to create **ABAP packages**
+- How to create **transport requests**
+- How to add an ABAP package to your *Favorite packages* list in ABAP Development Tools (ADT)
 
 You will create a package in the ABAP Development Tools. Later, you will use this package to group all the subsequent development objects you create in this group of tutorials.
 
@@ -25,13 +27,15 @@ To export (or import) ABAP development objects into/from another system, you tra
 
   ![Image depicting step0-one-transport-layer](step0-one-transport-layer.png)
 
-In the AS ABAP developer edition, we offer only one layer, **SAP**, the standard layer for SAP applications. In a real-world system, you will get a whole list of layers. Why? Well, you often want to transport objects to several different production systems. For example, you may want to transport some of the same objects to both a Financials system and an HCM system. To do this, you create two or more transport layers, as shown in the following image:
+In the AS ABAP developer edition, we offer only one layer, **SAP**. In a real-world system, you may want to transport objects to several different production systems - for example, to transport some of the same objects to both a Financials system and an HCM system. To do this, you create two or more transport layers, as shown in the following image:
 
   ![Image depicting step0b-two-transport-layers](step0b-two-transport-layers.png)
 
-For more information, see [SAP Library: Transport Layer](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.5.10/en-US/4ec218e26e391014adc9fffe4e204223.html)
+**Software component**: Defines a delivery and product unit of a SAP software product. It comprises a set of packages that are delivered in a single unit.
 
-**Software component**: Defines a delivery and product unit of a SAP software product. It comprises a set of packages that are delivered in a single unit. (You do not need to know the details of software components to complete this tutorial, but if you need more information, see [SAP Library: Software Component](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.5.10/en-US/4ec1e23b6e391014adc9fffe4e204223.html)
+For more information, see
+- [SAP Library: Transport Layer](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.5.10/en-US/4ec218e26e391014adc9fffe4e204223.html)
+- [SAP Library: Software Component](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.5.10/en-US/4ec1e23b6e391014adc9fffe4e204223.html)
 
 ---
 
