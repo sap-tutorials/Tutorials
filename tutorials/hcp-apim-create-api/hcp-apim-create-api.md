@@ -132,4 +132,33 @@ A new API Proxy has been created
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 10: ](Deploy Created API Proxy)]
 
+Click on action button from right side and select **Deploy**
+
+![Deploy Proxy](12-Deployproxy.png)
+
+API proxy is deployed.
+
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Test your API Proxy)]
+
+To Test your API proxy, navigate to **Test** from navigation bar.
+![Navigate Test](13-Navtest.png)
+
+Select your API and provide the user name and password and click **OK**.
+
+![Test Authentication](14-Testauth.png)
+
+Click on Send.
+
+![Get Request](15-Send.png)
+
+You should get the response.
+
+[DONE]
+
+[ACCORDION-END]
