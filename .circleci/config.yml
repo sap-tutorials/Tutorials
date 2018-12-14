@@ -1,6 +1,24 @@
 version: 2
 jobs:
-  build:
+  build-last-commit:
+    docker:
+      - image: circleci/node:9.6.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: npm install --production
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+          - node_modules
+      - run:
+          name: Run test tool on the last commit affected files
+          command: npm run test-last-commit
+          no_output_timeout: '15m'
+  build-all:
     docker:
       - image: circleci/node:9.6.1
     steps:
@@ -15,11 +33,51 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Run test tool
+          name: Run test tool on the all tutorials
           command: npm run test
-          no_output_timeout: '20m'
+          no_output_timeout: '15m'
+  build:
+    docker:
+      - image: circleci/node:9.6.1
+    steps:
+      - run: echo "RUN_BUILD is ${RUN_BUILD}"
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: |
+            if [[ ${RUN_BUILD} ]]; then
+              npm install --production
+            fi
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run test tool on the all tutorials
+          command: |
+            if [[ ${RUN_BUILD} ]]; then
+              npm run test
+            fi
+          no_output_timeout: '15m'
+
 notify:
   webhooks:
     # gitter hook
     - url: https://webhooks.gitter.im/e/15f197634234d80a32fa
-
+workflows:
+  version: 2
+  nightly:
+    triggers:
+    - schedule:
+        cron: "0 0 * * *"
+        filters:
+          branches:
+            only:
+              - master
+    jobs:
+      - build-all
+  commitly:
+    jobs:
+      - build-last-commit
