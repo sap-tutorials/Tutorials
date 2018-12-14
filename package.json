@@ -27,6 +27,7 @@
     "command-line-args": "^4.0.7",
     "cp-file": "^5.0.0",
     "fs-extra": "^6.0.0",
+    "gitlog": "^3.1.2",
     "html-entities": "^1.2.1",
     "inquirer": "^3.3.0",
     "markdown-link-check": "^3.6.2",
