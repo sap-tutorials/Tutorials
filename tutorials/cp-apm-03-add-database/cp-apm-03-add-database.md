@@ -36,7 +36,7 @@ Wait for the notification that says the build was successful.
 > 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
 
 > 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
-like
+
 > 1. **Save** the file, and re-try the build.
 
 [DONE]
