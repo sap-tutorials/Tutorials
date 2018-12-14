@@ -50,7 +50,7 @@ This model simply represents the bookshop application and consists of the Books,
 
 1. Open `db/data-model.cds` and replace the template with the following CDS definitions:
 
-    ```
+    ```cds
     namespace my.s4bookshop;
 
     entity Books {
@@ -120,7 +120,7 @@ Now, let's define a service model that builds on top of the data models from the
 
 1. Open `srv/my-service.cds` and replace the template with the following CDS definitions:
 
-    ```
+    ```cds
     using my.s4bookshop from '../db/data-model';
     using API_BUSINESS_PARTNER as bp from '../srv/external/csn/ODataServiceforBusinessPartner';
 
@@ -218,7 +218,7 @@ Now, let's bind a destination service to your application. This service lets you
 
 2. Under the **requires** section of the `srv` module, specify the name of the destination and XSUAA services.
 
-    ```
+    ```yaml
     [...]
     modules:
       [...]
@@ -232,7 +232,7 @@ Now, let's bind a destination service to your application. This service lets you
 
 3. Under the **resources** section, add the configuration for the destination and XSUAA services.
 
-    ```
+    ```yaml
     [...]
     resources:
       [...]
@@ -254,7 +254,7 @@ Now, let's bind a destination service to your application. This service lets you
 
 4. Add the environment variable `ALLOW_MOCKED_AUTH_HEADER` to the **properties** section of the `srv` module.
 
-    ```
+    ```yaml
     [...]
     modules:
       [...]
