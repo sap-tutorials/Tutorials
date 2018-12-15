@@ -24,6 +24,7 @@ You will learn how to use Python script to send sensor data to SAP Cloud Platfor
 
 [ACCORDION-BEGIN [Step 1: ](Check prerequisites)]
 Your computer, which is going to play a role of the IoT device, should have:
+
  - Python - a programming language: <https://www.python.org/downloads/>
  - `requests` - HTTP library for Python: <https://github.com/requests/requests/#installation>
  - `psutil` - the (process and system utilities) is a cross-platform Python's library: <https://github.com/giampaolo/psutil#quick-links>
@@ -31,7 +32,8 @@ Your computer, which is going to play a role of the IoT device, should have:
 
 If you need to install above fresh these steps describe what you need to do:
 
-On a Mac python 2 is already installed by default. Only the library manager pip and the additional libraries have to be installed with these steps:
+On a **Mac** Python 2 is already installed by default. Only the library manager pip and the additional libraries have to be installed with these steps:
+
  - Request privileges with the Privileges app
  - Connect to the internet without a proxy (e.g. mobile phone hot spot)
  - In the terminal app do the following:
@@ -40,7 +42,7 @@ On a Mac python 2 is already installed by default. Only the library manager pip 
  - Enter `pip install requests`
  - Enter `pip install psutil`
 
-On the PC follow these steps:
+On the **PC** follow these steps:
 
  - Download `Python 2.x` installer (you need version `2.x`, not `3.y`)
  - Start the installation
@@ -50,7 +52,7 @@ On the PC follow these steps:
  - Enter **`pip install requests`**
  - Enter **`pip install psutil`**
  - Change (`cd ..`) to the directory where you installed python
- - Enter **`python -v`** to check that python is running and which version you have installed
+ - Enter **`python -V`** to check that python is running and which version you have installed
 
 [ACCORDION-END]
 
@@ -156,9 +158,9 @@ You can find corresponding value in the output of the Python's script as well.
 [ACCORDION-BEGIN [Step 5: ](Check posted values in the API)]
 The power of SAP IoT Application Enablement is in its rich set of APIs available to build powerful customer applications on top of data from devices.
 
-E.g. to check last 5 values posted open following URL in the browser, like Chrome: <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('591188FC5CEF413E9D5AE3F641429BB5')/sap.iotaehandson2.computeriotdevice:generic_computer_3/resource_sensors_2?timerange=1H&$top=5>
+E.g. to check last 5 values posted open following URL in the browser, like Chrome: <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('919AC78BD9C44EC78CE96957CDFFDE5B')/sap.iotaehandson2.computeriotdevice:generic_computer_3/resource_sensors_2?timerange=1H&$top=5>
 
-You need to modify the thing id from `591188FC5CEF413E9D5AE3F641429BB5` to your own. Properly formatted URL will return results like this to authorized user.
+You need to modify the thing id from `919AC78BD9C44EC78CE96957CDFFDE5B` to your own. Properly formatted URL will return results like this to authorized user.
 ![Values in API](iotaecomppy0040.jpg)
 
 
@@ -174,4 +176,3 @@ To better understand IoT Application Enablement APIs you can go to SAP API Hub a
 
 
 [ACCORDION-END]
-
