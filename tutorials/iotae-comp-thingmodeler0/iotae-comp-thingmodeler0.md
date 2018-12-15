@@ -107,6 +107,7 @@ Now it's time for a few configuration activities.
 Firstly, update the master data of the thing. Go to **Basic Data** of your thing. Expand `Default` category. Provide the common name, like computer's name, in the **Value** column of the property `common_name`.
 
 >To find the computer name you can type command `hostname` in its terminal.
+>
 >![hostname](iotaecomptm0110.jpg)
 
 
