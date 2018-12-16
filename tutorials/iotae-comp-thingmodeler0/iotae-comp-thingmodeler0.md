@@ -47,6 +47,7 @@ The shared package `computeriotdevice` has been already created for you. You can
 While in the Package Manager click on the **Open in Thing Properties Catalog** icon of the `computeriotdevice` package.
 
 ![Open in ](iotaecomptm0030.jpg)
+
 The property sets have been already preconfigured for you. The package contains three property sets among them:
 
  1. `Default` of the type Basic Data - with one property `common_name`

@@ -158,9 +158,10 @@ You can find corresponding value in the output of the Python's script as well.
 [ACCORDION-BEGIN [Step 5: ](Check posted values in the API)]
 The power of SAP IoT Application Enablement is in its rich set of APIs available to build powerful customer applications on top of data from devices.
 
-E.g. to check last 5 values posted open following URL in the browser, like Chrome: <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('919AC78BD9C44EC78CE96957CDFFDE5B')/sap.iotaehandson2.computeriotdevice:generic_computer_3/resource_sensors_2?timerange=1H&$top=5>
+E.g. to check last 5 values posted open following URL in the web browser, like Chrome: <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('919AC78BD9C44EC78CE96957CDFFDE5B')/sap.iotaehandson2.computeriotdevice:generic_computer_3/resource_sensors_2?timerange=1H&$top=5>
 
 You need to modify the thing id from `919AC78BD9C44EC78CE96957CDFFDE5B` to your own. Properly formatted URL will return results like this to authorized user.
+
 ![Values in API](iotaecomppy0040.jpg)
 
 
