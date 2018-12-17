@@ -15,11 +15,11 @@ primary_tag: products>sap-leonardo-machine-learning-foundation
 ## Details
 ### You will learn
   - Call an API from a REST client like Postman
-  - The basics about Machine Learning Foundation Service for Human Detection
+  - The basics about Machine Learning Foundation Service for Object Detection
 
 > ### **Note:** This service was in alpha version when this tutorial was released.
 
-[ACCORDION-BEGIN [Step](The Human Detection Service)]
+[ACCORDION-BEGIN [Step](The Object Detection Service)]
 
 The Object Detection service can be used for detecting objects in an image or a set of images and returns information declaring boundary box around the objects in every image.
 
@@ -36,11 +36,11 @@ If an archive file is provided, no additional files can be provided.
 
 The input file (or the archive file) is provided using form data (as an element named ***file*** in the form data).
 
-The service will return a JSON response that includes the bounding boxes coordinates for the identified humans.
+The service will return a JSON response that includes the bounding boxes coordinates for the identified objects.
 
 For more details, you can check the following links:
 
- - [Inference Service for Human Detection on the SAP API Business Hub](https://api.sap.com/api/object_detection_api/resource)
+ - [Inference Service for Object Detection on the SAP API Business Hub](https://api.sap.com/api/object_detection_api/resource)
  - [Swagger documentation](https://mlftrial-retrain-od-inference.cfapps.eu10.hana.ondemand.com)
 
 [DONE]

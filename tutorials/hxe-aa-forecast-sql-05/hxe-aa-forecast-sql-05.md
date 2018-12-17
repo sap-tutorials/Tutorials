@@ -310,7 +310,7 @@ The decomposed signal will provide you value of the seasonal, the trend and the 
 select * from pal_seasonality_statistics_cashflow;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-01.png)
 
@@ -358,7 +358,7 @@ select * from pal_seasonality_statistics_ozone;
 select * from pal_seasonality_decomposed_ozone;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-02.png)
 
@@ -526,7 +526,7 @@ The forecasted value are generated along with a lower & upper limit at 80 and 95
 select * from pal_auto_expsmooth_forecast_cashflow;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](07-01.png)
 
@@ -616,7 +616,7 @@ Compared to the SAP HANA APL Forecast function, the MAPE was 0.182721.
 select * from pal_auto_expsmooth_forecast_ozone;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](07-02.png)
 
@@ -827,7 +827,7 @@ The forecast is provided along with the standard error, the high and low at 80% 
 select * from pal_arima_forecast_cashflow;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](08-01.png)
 
@@ -944,7 +944,7 @@ The forecast is provided along with the standard error, the high and low at 80% 
 select * from pal_arima_forecast_ozone;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](08-01.png)
 
@@ -964,5 +964,6 @@ Provide an answer to the question below then click on **Validate**.
 - [Seasonality Test](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-05/hxe-aa-forecast-sql-05-SeasonalityTest.ipynb)
 - [Auto Exponential Smoothing](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-05/hxe-aa-forecast-sql-05-AutoExponentialSmoothing.ipynb)
 - [Auto ARIMA](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-05/hxe-aa-forecast-sql-05-AutoARIMA.ipynb)
+
 
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.

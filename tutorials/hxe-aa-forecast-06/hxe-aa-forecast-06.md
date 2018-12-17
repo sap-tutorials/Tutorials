@@ -698,7 +698,7 @@ The decomposed signal will provide you value of the seasonal, the trend and the 
 select * from #decomposed_seasonality;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-01.png)
 
@@ -744,7 +744,7 @@ select * from #seasonality_statistics;
 select * from #decomposed_seasonality;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-02.png)
 

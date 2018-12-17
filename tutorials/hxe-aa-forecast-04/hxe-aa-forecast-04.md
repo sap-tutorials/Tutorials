@@ -159,7 +159,7 @@ from   "aa.forecast.db.data::CashFlows"
 order by "signal_time" asc;
 ```
 
-And in a graphical way:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](02-01.png)
 
@@ -252,7 +252,7 @@ The result should be:
 
 As you can notice the average and median values are not in the same range of values which may imply a skewed data distribution.
 
-And in a graphical way, the values in ascending order:
+And using a generated graph from the Python Math Plot library (`matplotlib`), the values in ascending order:
 
 ![Jupyter](02-02.png)
 
@@ -322,7 +322,7 @@ Let's have a look at the data using the following SQL:
 select "signal_time", "signal_value" from "aa.forecast.db.data::Ozone" order by "signal_time" asc;
 ```
 
-And in a graphical way:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](03-01.png)
 
@@ -405,7 +405,7 @@ The result should be:
 
 As you can notice the average and median values are in the same range of values.
 
-And in a graphical way, the ozone values in ascending order:
+And using a generated graph from the Python Math Plot library (`matplotlib`), the ozone values in ascending order:
 
 ![Jupyter](03-02.png)
 
@@ -478,7 +478,7 @@ join "aa.forecast.db.data::Lag1AndCyclesAndWn" l1cwn
 on l1cnn."signal_time" = l1cwn."signal_time"
 ```
 
-And in a graphical way:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](04-01.png)
 
@@ -550,7 +550,7 @@ The result should be:
 
 As you can notice the average and median values are in the same range of values for both datasets.
 
-And in a graphical way, the values in ascending order:
+And using a generated graph from the Python Math Plot library (`matplotlib`), the values in ascending order:
 
 ![Jupyter](04-02.png)
 
@@ -646,7 +646,7 @@ join "aa.forecast.db.data::TrendAndCyclicAndWn"  tcwn on tcnn."signal_time" = tc
 join "aa.forecast.db.data::TrendAndCyclicAnd_4Wn" tc4n on tcnn."signal_time" = tc4n."signal_time"
 ```
 
-And in a graphical way:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](05-01.png)
 
@@ -719,7 +719,7 @@ The result should be:
 
 As you can notice the average and median values are all in the same range of values for each datasets.
 
-And in a graphical way, the values in ascending order:
+And using a generated graph from the Python Math Plot library (`matplotlib`), the values in ascending order:
 
 ![Jupyter](05-02.png)
 

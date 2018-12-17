@@ -49,20 +49,23 @@ While in the Package Manager click on the **Open in Thing Properties Catalog** i
 ![Open in ](iotaecomptm0030.jpg)
 
 The property sets have been already preconfigured for you. The package contains three property sets among them:
+
  1. `Default` of the type Basic Data - with one property `common_name`
  2. `resource_sensors_2` of the type Measured Data - with one property `cpu_usage` and another one called `cpu_type`
 
 The property `cpu_usage` is what we want to measure and has
+
  - ___float___ data type,
  - ___percentage___ unit of measure.
 
 
 [ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 4: ](Thing type `generic_computer_3`)]
+
 In the Thing Properties Catalog click on the **Thing Modeler** (the button is in the lower right corner).
 
-In the **Thing Types** pane you will see `generic_computer_3` (please do not use `generic_computer` anymore, for `generic_computer` ingestion is not working anymore due to a misconfiguration issue) thing type defined with:
+In the **Thing Types** pane you will see `generic_computer_3` thing type defined with:
+
  - Basic Data properties from the `Default` set,
  - Measured Values properties from the `resource_sensors_2` set.
 
@@ -77,8 +80,9 @@ From **Thing Type** overview for `generic_computer_3` click on the **New Thing**
 Populate the name `computer_[userid]` and the description `[Name]'s computer` of the newly created thing.
 
 Choose:
+
  - Authorization Group: `laptoptutorial`
- - Select Provider: `IoT Service 2.0`
+ - Select Provider: `SAP Cloud Platform IoT Service for Neo Environment`
  - Account: `a2667617c`
 
 These values will create the device in SAP Cloud Platform account `a2667617c` using IoT Service for Neo Environment.
@@ -87,7 +91,7 @@ These values will create the device in SAP Cloud Platform account `a2667617c` us
 
 Click **Save**. After a few seconds the new thing will be created and its technical device id and authorization token for the API calls will be displayed. Copy these values using your mouse and control-c/command-c.
 
-![technical ids](iotaecomptm0090.jpg)
+![technical ids](iotaecomptm0091.png)
 
 This authorization token is displayed only once!
 
@@ -104,6 +108,7 @@ Now it's time for a few configuration activities.
 Firstly, update the master data of the thing. Go to **Basic Data** of your thing. Expand `Default` category. Provide the common name, like computer's name, in the **Value** column of the property `common_name`.
 
 >To find the computer name you can type command `hostname` in its terminal.
+>
 >![hostname](iotaecomptm0110.jpg)
 
 
@@ -128,7 +133,7 @@ Optionally, you can scroll to **Image** and add a picture of your thing.
 
 
 [ACCORDION-BEGIN [Step 7: ](Review Thing Modeler user guide)]
-You can find the official user guide at https://help.sap.com/viewer/p/SAP_IOT_APPLICATION_SERVICES > End-User Information > Thing Modeler Apps
+You can find the official user guide at https://help.sap.com/viewer/p/SAP_IOT_APPLICATION_SERVICES > End-User Information > Thing Modeler Apps (REST version)
 
 
 [ACCORDION-END]

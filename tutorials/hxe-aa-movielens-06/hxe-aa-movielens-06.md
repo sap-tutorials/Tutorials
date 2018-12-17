@@ -265,7 +265,7 @@ Enter **`afllang`** as the folder name, then click on **OK**.
 
 Right click on the **`afllang`** folder and select **New > File**.
 
-Enter **`apriori_afl.hdbafllangprocedure`** as the file name, then click on **OK**.
+Enter **`apriori.hdbafllangprocedure`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 

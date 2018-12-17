@@ -103,7 +103,7 @@ In this step you will ensure that the SAP HANA database you created in the previ
 
 In this step you will install the current version of `SAP Cloud Connnector` and set up a `Service Channel`. This service allows your SAP NetWeaver backend system to connect to the HANA database running in your SAP Cloud Platform account.
 
-1.  Install SAP Cloud Connector as described in [this tutorial](https://developers.sap.com/tutorials/hcp-cloud-connector-setup.html). You may chose to install this in your host operating system, or in the openSUSE Linux running in your `VirtualBox` VM.
+1.  Install SAP Cloud Connector as described in [this tutorial](https://www.sap.com/developer/tutorials/cp-connectivity-install-cloud-connector.html). You may chose to install this in your host operating system, or in the openSUSE Linux running in your `VirtualBox` VM.
 
 2.  Connect the SAP Cloud COnnector to your SAP Cloud Platform trial account.
 

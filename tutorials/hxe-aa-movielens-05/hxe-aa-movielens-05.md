@@ -701,7 +701,7 @@ select * from "aa.movielens.db.hdb.apl::recommendation.indicators";
 When performing some of the APL operation, a result might be returned in the operation result table. In the recommendation scenario, the returned result is the SQL to extract results from the links table.
 
 ```sql
-select * from "aa.movielens.db.hdb.apl::recommendation.reco_sql_code";
+select * from "aa.movielens.db.hdb.apl::recommendation.model_sql_code";
 ```
 
 [DONE]
