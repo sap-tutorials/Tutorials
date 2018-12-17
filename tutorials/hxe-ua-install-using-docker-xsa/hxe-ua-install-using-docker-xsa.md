@@ -5,7 +5,7 @@ primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 
@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 - [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Details
-### You will learn  
+### You will learn
 How to install SAP HANA, express edition on your preferred Docker setup.
 
 This tutorial will show you how to install an installation of SAP HANA, express edition with XSA on your Docker installation. This version of SAP HANA, express edition does not contain XSC.
@@ -203,19 +203,19 @@ Create the `json` file:
 vi <file_name>.json
 ```
 
-Press `i` to start editing and use one of the following formats to create the file:  
+Press `i` to start editing and use one of the following formats to create the file:
 
 ```
 {
 "master_password" : "<password>"
-}  
+}
 ```
 
-or:  
+or:
 
 ```
 {
-"system_user_password" : "<password",
+"system_user_password" : "<password>",
 "default_tenant_system_user_password" : "<second_password>"
 }
 ```
@@ -295,7 +295,7 @@ store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 \
 --no-proxy <no_proxy>
 ```
 
-This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.  
+This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
 
 > **Note:**
 > If you placed the password file in `/data/<directory_name>/<file_name>.json`, substitute  `file://<path_to_json_file>` with `file:///hana/mounts/<file_name>.json`.
