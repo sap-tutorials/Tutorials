@@ -119,7 +119,7 @@ Set your hostname ( ***`hxehost`***), the instance number ( ***90***).
 
 Select **Multiple containers**, then select **Tenant database**, and enter **HXE** in the name field.
 
-![image Step 2](03-1.png)
+![image Step 2](03-4.png)
 
 Click on **Next**.
 
@@ -213,7 +213,7 @@ Set your hostname ( ***`hxehost`***), the instance number ( ***90***).
 
 Select **Multiple containers**, then select **Tenant database**, and enter **HXE** in the name field.
 
-![image Step 2](03-1.png)
+![image Step 2](03-4.png)
 
 Click on **Next**.
 
