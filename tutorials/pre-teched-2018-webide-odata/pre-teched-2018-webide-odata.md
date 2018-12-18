@@ -3,15 +3,15 @@ title: Change from a mock server to live OData service for TechEd
 description: Connect to a live backend system for your application
 auto_validation: true
 primary_tag: topic>sapui5
-tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide  ]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 
 ## Details
-### You will learn  
+### You will learn
 Change your data source from a mock server created by BUILD to a live OData service. It is important to know how to configure the connection to the backend of an application, which you will learn here.
 
 ### Time to Complete
@@ -106,7 +106,7 @@ You need to update the navigation properties to match the new entity name of **S
 
 ![places to update in Component file](8.png)
 
-Change the word `ToysSet` to **`Sets`** in line 18.
+Change the word `ToysSet` to **`Sets`** in line 11.
 
 ![changes in Component file](9.png)
 
