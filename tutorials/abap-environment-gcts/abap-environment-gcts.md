@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Transport a Software Component Between Two ABAP Instances.
+title: Transport a Software Component Between Two ABAP Instances
 description: Create and import a new software component into an SAP Cloud Platform ABAP Environment instance, add ABAP sources and export it to a new SAP Cloud Platform ABAP Environment instance.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
@@ -89,7 +89,15 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test yourself)]
+[ACCORDION-BEGIN [Step 4: ](Check the imported software component)]
+  1. Open Eclipse and connect with your developer user to your second ABAP system and add your imported software component to your **Favorite Packages**. Check if all objects are imported.
+
+      ![add to favorites](eclipse4.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
