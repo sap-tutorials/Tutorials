@@ -24,7 +24,7 @@ gitLog(options, function (error, commits) {
 
   const [lastCommit] = commits;
   const { files } = lastCommit;
-  const mdFiles = files.filter(f => f.toLowerCase().endsWith('.md'));
+  const mdFiles = files.filter(f => f.toLowerCase().endsWith('.md') && !f.includes('work-in-progress'));
 
   if (mdFiles.length > 0) {
     return testTool
