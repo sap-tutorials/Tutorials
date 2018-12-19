@@ -38,7 +38,7 @@ time: 15
 
     You can use `Z`-, `Y`- or `/DMO/`-Name
 
-  5. Select your created software component and press **Import**. Click **OK** on Import popup.
+  5. Select your created software component and press **Import**. Click **OK** on **Import** popup.
 
       ![import popup](SC6.png)
 
