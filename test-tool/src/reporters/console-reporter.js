@@ -52,12 +52,12 @@ const generateReport = (checkResult, filesCount) => {
                 const critical = linkCheckResult.filter(result => result.code == 404 && !result.isTrusted);
                 const common = linkCheckResult.filter(result => result.code != 404 && !result.isTrusted);
                 const warn = linkCheckResult.filter(result => result.isTrusted);
-                files.push({
-                    fileName,
-                    criticalDeadLink: critical.map(({ link, code, line }) => linkError(link, code, line)),
-                    deadLink: common.map(({ link, code, line }) => linkError(link, code, line)),
-                    warnDeadLink: warn.map(({ link, code, line }) => linkError(link, code, line)),
-                });
+              files.push({
+                fileName,
+                criticalDeadLink: critical.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
+                deadLink: common.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
+                warnDeadLink: warn.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
+              });
             }
         }
     });
