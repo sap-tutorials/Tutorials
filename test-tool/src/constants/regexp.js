@@ -57,6 +57,10 @@ module.exports = {
                 existence: 'missed local image',
             }
         },
+        internalLink: {
+            regexp: new RegExp('(sap\.corp)'),
+            message: 'internal link'
+        },
     },
     validation: {
         auto_validation: /auto_validation:\s(.*)\r?\n/i,

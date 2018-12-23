@@ -1,8 +1,8 @@
 const https = require('https');
-
+const url = require('url');
 const fetch = require('node-fetch');
 
-const { regexp, linkCheck } = require('../constants');
+const { regexp: { content: { internalLink } }, linkCheck } = require('../constants');
 const { domains } = require('../../config/trusted.links.json');
 const { linkUtils } = require('../utils');
 
@@ -17,18 +17,29 @@ const checkLinks = async (links, onCheck) => {
     }));
   }
   const processedResults = await Promise.all(processingLinks);
-  const results = processedResults.filter(({ err, code }) => err || !linkUtils.is2xx(code)).map(({ link, code, err }) => {
-    const isTrusted = !!domains.find(domain => link.includes(domain))
+  const results = processedResults.filter(({ err, code }) => err || !linkUtils.is2xx(code)).map(({ link, code, err}) => {
+    const isTrusted = !!domains.find(domain => link.includes(domain));
     return {
       link,
       code,
       isTrusted,
+      reason: (err && (err.message || err )),
     };
   });
   return results;
 };
 
 const checkLink = (link, reqOptions = {}, maxAttempts = 2) => {
+  const { hostname } = url.parse(link);
+
+  if (internalLink.regexp.test(hostname)) {
+    return {
+      link,
+      code: 0,
+      err: internalLink.message,
+    };
+  }
+
   return checkAttempt({ ...reqOptions, uri: link }, 1, maxAttempts);
 };
 
