@@ -1,21 +1,24 @@
 ---
-title: Create a Database Multi target Application
+title: SAP HANA Service, Create a Database Multi target Application
 description: Create an application with a Database Module
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana]
+tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
 primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
  - You have created a trial instance of SAP Cloud Platform, SAP HANA Service
- - You are logged in to SAP Web IDE
+ - You are logged in to SAP Web IDE Full Stack and have [configured the access to the subaccount in Cloud Foundry](https://developers.sap.com/tutorials/webide-multi-cloud.html )
+ - You have enabled the `SAP HANA Database Development tools` and `SAP HANA Database explorer` in the `Features` section in the settings for SAP Web IDE
+ - Optionally, you have [downloaded and setup the Command Line Interface for Cloud Foundry](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
 
 ## Details
 ### You will learn
-  - How to do something
-  - Why this technology is helpful
-
+  - How to create a Multi-target Application with a database module in SAP Web IDE Full-stack
+  - How to create a columnar table using declarative SQL
+  - How to load data for testing into a columnar table from a CSV file
+  - How to access the database explorer to browse your tables, data and use SQL statements
 
 ---
 
@@ -59,12 +62,12 @@ Right-click on the `src` folder, choose `New -> File`
 Use the following name
 
 ```text
-data/performance.hdbdd
+data/performance.hdbtable
 ```
 
 ![New DB artifact](7.png)
 
-This will create both a folder and a file. Paste the following content into the `hdbdd` file to define a new table:
+This will create both a folder and a file. Paste the following content into the `hdbtable` file to define a new table:
 
 ```sql
 column table "PERFORMANCE" (
@@ -84,6 +87,7 @@ COMMENT 'Performance evaluation record'
 ![New DB artifact](8.png)
 
 > **What is going on?**
+> &nbsp;
 > You have created a database module and a design time artifact representing a table. When this module is built, Web IDE will automatically create an HDI container and bind it as resource to the database module. It will also create the runtime object (a physical table) in the schema associated to the HDI container.
 > &nbsp;
 > This approach allows you to modify the structure of the table without worrying about underlying adaptation operations.
@@ -148,12 +152,13 @@ Right-click on the database module and choose **Build**.
 ![Build db](13.png)
 
 > **What is going on?**
-> The console on the bottom will show the progress. First, an HDI container will be created and bound to builder. Scroll up the log to see it in your screen:
+>&nbsp;
+> The console on the bottom will show the progress. First, an HDI container will be created and bound to the builder. Scroll up the log to see it in your screen:
 >&nbsp;
 >  ![Build db](17.png)
 >&nbsp;
 >  The container is called `hana-hdi`, which is the name you specified in the deployment configuration file, `mta.yaml`.
-> If you continue to scroll down, you will see how the table and text index you have created using design-time artifacts are prepared for deployment and created in a schema called `DM_HDI_DB_1`. Finally, you will see a success message:
+> If you continue to scroll down, you will see how the table and text index you have created using design-time artifacts are prepared for deployment.  A physical schema called `DM_HDI_DB_1` has been created. Finally, you will see a success message:
 >
 >&nbsp;
 >
@@ -200,7 +205,7 @@ Paste the following content into it:
 }		
 ```
 
-Download this `csv` file into your computer. Upload it into the **loads** folder using the `Import` option
+Download this `csv` [file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-create-db-mta/performance.csv) into your computer. Upload it into the **loads** folder using the `Import` option
 
 ![Data load](20.png)
 

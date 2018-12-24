@@ -69,7 +69,7 @@ The Database Explorer will automatically open a SQL console connected to your te
 
 For development purposes, you can install the data provisioning agent on your local computer. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloudintegration), in the **Cloud Integration** tab. Scroll down to **Data Integration Downloads**.
 
-> ##Note: It is recommended that you uninstall any previous agent before installing this new version.
+> It is recommended that you uninstall any previous agent before installing this new version.
 
 Download the **SDI Data Provisioning Agent** for your operating system.
 
@@ -113,8 +113,8 @@ Wait until installation finishes and you get confirmation that **Installation fi
 You will use the command-line tool to configure the data provisioning agent to connect to your SAP HANA instance using a secure JDBC connection.
 
 Open a command line or terminal with administration rights.
-> For Windows, search for `cmd` and use the context menu to choose `Run as Administrator`
-> ![Run as admin](cmd.png)
+> For Windows, search for `cmd` and use the context menu to choose `Run as Administrator`  
+>   ![Run as admin](cmd.png)
 
 Use the following commands to set the environment variables to the installation path you specified in step 2:
 
@@ -142,7 +142,7 @@ Navigate into the **`bin`** directory. Execute the configuration script `agentcl
 
 ```sh
 cd bin
-agentcli.bat --configAgent
+agentcli --configAgent
 ```
 
 ![Download SDI](13.png)
@@ -187,7 +187,7 @@ The configuration agent will connect and create the user. Press **enter** when p
 
 ![Download SDI](22.png)
 
-> ##Note: Make sure the IP address from which you are connecting the agent is whitelisted.
+>  Make sure the IP address from which you are connecting the agent is whitelisted.
 
 Enter **`b`** to go back to the main menu. Choose option **7. Agent Registration** and follow the instructions to register your local computer as an agent.
 

@@ -9,8 +9,8 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 
 ## Prerequisites
  - You have access to the database and SAP Cloud Platform Cockpit
- - You have created a Multi-Target Application with a database module as in this tutorial
- - Optionally, you have created a remote source as explained in this tutorial
+ - You have created a Multi-Target Application with a database module [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html)
+ - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html)
 
 ## Details
 ### You will learn
@@ -21,6 +21,8 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 This tutorial is meant to be an example of cross-container access. Simple data models and loading mechanisms were chosen to simulate a schema replicated using tools such as SAP Landscape Transformation or an ABAP schema.
 
 For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/a260b05631a24a759bba932aa6d81b64.html)
+
+If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html)
 
 ---
 
@@ -34,14 +36,14 @@ Connect to SAP Web IDE Full Stack and enter the Database Explorer. You will see 
 
 Use the following code to create a schema and a user with permissions to it. You will also create a simple table to use as an example for cross-container access.
 
-You can optionally use a SQL role as a best practice. You will create a SQL role and assign it to the user `PLUSR` with the permissions granted manually before. This user will be used for the connection between the HDI container and the plain schema, an will grant the role to the HDI container technical user.
+You can optionally use a SQL role as a best practice. You will create a SQL role and assign it to the user `PLUSR` with the permissions granted manually before. This user will be used for the connection between the HDI container and the plain schema, and will grant the role to the HDI container technical user.
 
 ```sql
 CREATE SCHEMA "PLAIN";
 CREATE USER PLUSR PASSWORD "HanaRocks01" NO FORCE_FIRST_PASSWORD_CHANGE ;
 GRANT SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO "PLUSR" with grant OPTION;
 
-CREATE COLUMN TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
+CREATE ROW TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
 
 CREATE ROLE CCROLE;
 grant  SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO CCROLE;
@@ -58,7 +60,7 @@ Use the green play button or press **`F8`** to execute the statement.
 
 [ACCORDION-BEGIN [Step 2: ](Load data)]
 
-Download this CSV file into your local computer.
+Download [this CSV file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-access-cross-container-schema/plain.csv) into your local computer.
 
 Use the search help to locate schema `PLAIN`.
 
@@ -96,7 +98,7 @@ Right-click on the table and choose **Open Data** to see the records loaded into
 
 [ACCORDION-BEGIN [Step 3: ](Create a user-provided service)]
 
-You now have a schema with a table and data into it. You have also created a user called `PLUSR` with permissions to perform basic operations on that schema. You will now create a user-provided service to access the schema through the user `PLUSR` from your Multi-Target Application.
+You now have a schema with a table and data in it. You have also created a user called `PLUSR` with permissions to perform basic operations on that schema. You will now create a user-provided service to access the schema through the user `PLUSR` from your Multi-Target Application.
 
 Use  **`Tools -> SAP Cloud Platform Cockpit`**  to open the cockpit.
 
@@ -124,7 +126,7 @@ Call the service **`CC_ACCESS`** and use the code below in **Credentials**
 
 ![user provided service](cc.png)
 
-> ##Note:  You can use the Command Line Interface instead of the graphical tools. The sample command for this to prompt for each of the values would be
+> You can use the Command Line Interface instead of the graphical tools. The sample command for this to prompt for each of the values would be:
 > ```ssh
 > cf cups CC_ACCESS -p  "user","password","tags","schema"
 > ```
@@ -160,9 +162,11 @@ Use the following key value pair as **properties**.
 
 **Save the file.**
 
+Click on the **Modules** tab and add `external_access` in the **`Requires`**  section.
+
 ![DB Explorer](16.png)
 
-Click on the **Modules** tab and add `external_access` in the **`Requires`**  section. Use `SERVICE_REPLACEMENTS` as the value for **Groups**.
+ Use `SERVICE_REPLACEMENTS` as the value for **Groups**.
 
 | Name | Group |
 |:------|:---------|
@@ -189,7 +193,7 @@ Click **Save**
 
 If you switch to the **Code Editor** for the `mta.yaml` file, it should look similar to this:
 
-![MTA yaml](20.png)
+![MTA yaml](19.png)
 
 [DONE]
 [ACCORDION-END]
@@ -230,15 +234,15 @@ And use the following code in it:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](OPTIONAL -  Grant access to remote source)]
+[ACCORDION-BEGIN [Step 6: ](OPTIONAL -  Grant access to a remote source)]
 
-If you have created a remote source to access a text file using Smart Data Integration, go back to the Database Explorer and open a new SQL console to your instance of SAP HANA Service.
+**This step works only if** you have created a remote source to access a text file [using Smart Data Integration in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html), go back to the Database Explorer and open a new SQL console to your instance of SAP HANA Service.
 
 Execute the following SQL command
 
 ```sql
 
-grant create virtual table, drop  on remote source "LocalFile" to PLUSR;
+grant create virtual table, drop  on remote source "LocalFile" to PLUSR with grant option;
 ```
 
 ![Grant roles](grant2.png)
@@ -285,7 +289,8 @@ Add a new record with name `REGIONS`, object name `REGIONS` and schema `PLAIN`
 
 ![Create synonym](syn2.png)
 
-> ##Note: Alternatively, you can use the value help under `Object name`...
+> Alternatively, you can use the value help under `Object name`...
+>&nbsp;
 > ![Create synonym](23.png)
 >
 > ...and check `CC_ACCESS` in the drop-down menu for external services.
@@ -324,11 +329,11 @@ VIEW "RegionTextsView"
 
 Right-click on the view and choose **Open HDI Container**.
 
-![Create synonym](31.png)
+![Create synonym](32.png)
 
 Right-click on the view and choose **Open Data**. Paste the generated SQL statement in the box below to complete the validation.
 
-![Create synonym](32.png)
+![Create synonym](33.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
