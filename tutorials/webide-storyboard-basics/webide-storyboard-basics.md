@@ -177,15 +177,15 @@ For this you need to return to the Storyboard.
 
 3. In the **Configure Navigation** dialog box, do the following:
 
-    a. In the **Control** field, click the **Show all controls in this view** icon  and then in the **Select Control** dialog box that opens, select **`ColumnListItem`**, where the navigation will begin.
+    - In the **Control** field, click the **Show all controls in this view** icon  and then in the **Select Control** dialog box that opens, select **`ColumnListItem`**, where the navigation will begin.
 
-    b. In the **Event** dropdown list, select **press**.
+    - In the **Event** dropdown list, select **press**.
 
-    c. In the **Navigate To** dropdown list, select the new view. Leave the **Target Control** and **Open Target At** fields as is; they are populated automatically when you select the "Navigate To" view.
+    - In the **Navigate To** dropdown list, select the new view. Leave the **Target Control** and **Open Target At** fields as is; they are populated automatically when you select the "Navigate To" view.
 
-    d. Select the **Propagate context binding** checkbox to propagate the `SalesOrder` entity.
+    - Select the **Propagate context binding** checkbox to propagate the `SalesOrder` entity.
 
-    e. Choose **Configure Navigation** to close the dialog.
+    - Choose **Configure Navigation** to close the dialog.
 
     ![Configure Navigation dialog](step7-d-configure-navigation.png)
 
