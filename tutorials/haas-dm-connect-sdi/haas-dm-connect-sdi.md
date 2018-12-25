@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Service, configure Smart Data Integration
-description: Configure the data provisioning agent and create a remote source
+title: Configure Smart Data Integration with the SAP HANA Service
+description: Configure the data provisioning agent and create a remote source.
 auto_validation: true
 time: 35
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
@@ -8,10 +8,10 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
-- You have a productive account in SAP Cloud Platform, a subaccount in Cloud Foundry and a space with a
-- You have access to the database cockpit for your SAP HANA Service database instance
-- You have enabled Data Provisioning Server in your SAP HANA Service
-- You have administration rights in your local computer
+- You have a productive account in SAP Cloud Platform, a subaccount in Cloud Foundry and a space.
+- You have access to the database cockpit for your SAP HANA service database instance.
+- You have enabled Data Provisioning Server in your SAP HANA service.
+- You have administration rights in your local computer.
 
 
 ## Details
@@ -20,7 +20,7 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 - How to configure the file adapter to load text files
 - How to create a remote source in SAP HANA using the Database Explorer
 
-This tutorial is based on SAP Cloud Platform, SAP HANA Service currently available only in productive accounts.
+This tutorial is based on SAP Cloud Platform, SAP HANA service currently available only in productive accounts.
 
 ---
 
@@ -113,7 +113,9 @@ Wait until installation finishes and you get confirmation that **Installation fi
 You will use the command-line tool to configure the data provisioning agent to connect to your SAP HANA instance using a secure JDBC connection.
 
 Open a command line or terminal with administration rights.
-> For Windows, search for `cmd` and use the context menu to choose `Run as Administrator`  
+
+> For Windows, search for `cmd` and use the context menu to choose `Run as Administrator`.
+>
 >   ![Run as admin](cmd.png)
 
 Use the following commands to set the environment variables to the installation path you specified in step 2:
@@ -147,15 +149,15 @@ agentcli --configAgent
 
 ![Download SDI](13.png)
 
-Start with option 2 and start the agent with option 1:
+Start with option 2 and start the agent with option 1.
 
 ![Download SDI](start.png)
 
-Use **`b`** to go back to the main menu. Continue with option 6:
+Use **`b`** to go back to the main menu. Continue with option 6.
 
 ![Download SDI](14.png)
 
-Choose option 3 for **JDBC**
+Choose option 3 for **JDBC**.
 
 ![Download SDI](15.png)
 
@@ -171,7 +173,7 @@ As separate parameters:
 
 ![Download SDI](18.png)
 
-Use `SYSTEM` (or an administration user in a non-trial environment) and its credentials
+Use `SYSTEM` (or an administration user in a non-trial environment) and its credentials.
 
 ![Download SDI](20.png)
 
@@ -183,7 +185,7 @@ Enter user `JDCBUSR` and a password. Choose **true**. This user will be created 
 
 ![Download SDI](21.png)
 
-The configuration agent will connect and create the user. Press **enter** when prompted
+The configuration agent will connect and create the user. Press **Enter** when prompted.
 
 ![Download SDI](22.png)
 
@@ -193,7 +195,7 @@ Enter **`b`** to go back to the main menu. Choose option **7. Agent Registration
 
 ![Download SDI](23.png)
 
-Finally, register an adapter using option 8:
+Finally, register an adapter using option 8.
 
 ![Download SDI](filead.png)
 

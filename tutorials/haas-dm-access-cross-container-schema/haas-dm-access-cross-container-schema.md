@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Service, access a classic schema from SAP Web IDE Full-stack
-description: Access data in a plain or replicated schema from an HDI Container
+title: Access a Classic Schema from SAP Web IDE Full-Stack with the SAP HANA Service
+description: Access data in a plain or replicated schema from an HDI container.
 auto_validation: true
 time: 40
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
@@ -8,9 +8,9 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
- - You have access to the database and SAP Cloud Platform Cockpit
- - You have created a Multi-Target Application with a database module [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html)
- - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html)
+ - You have access to the database and SAP Cloud Platform cockpit.
+ - You have created a multi-target application with a database module [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html).
+ - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html).
 
 ## Details
 ### You will learn
@@ -98,7 +98,7 @@ Right-click on the table and choose **Open Data** to see the records loaded into
 
 [ACCORDION-BEGIN [Step 3: ](Create a user-provided service)]
 
-You now have a schema with a table and data in it. You have also created a user called `PLUSR` with permissions to perform basic operations on that schema. You will now create a user-provided service to access the schema through the user `PLUSR` from your Multi-Target Application.
+You now have a schema with a table and data in it. You have also created a user called `PLUSR` with permissions to perform basic operations on that schema. You will now create a user-provided service to access the schema through the user `PLUSR` from your multi-target application.
 
 Use  **`Tools -> SAP Cloud Platform Cockpit`**  to open the cockpit.
 
@@ -236,7 +236,7 @@ And use the following code in it:
 
 [ACCORDION-BEGIN [Step 6: ](OPTIONAL -  Grant access to a remote source)]
 
-**This step works only if** you have created a remote source to access a text file [using Smart Data Integration in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html), go back to the Database Explorer and open a new SQL console to your instance of SAP HANA Service.
+**This step works only if** you have created a remote source to access a text file [using Smart Data Integration in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html), go back to the Database Explorer and open a new SQL console to your instance of SAP HANA service.
 
 Execute the following SQL command
 
@@ -285,15 +285,15 @@ Call it `regions.hdbsynonym`.
 
 ![Create synonym](22.png)
 
-Add a new record with name `REGIONS`, object name `REGIONS` and schema `PLAIN`
+Add a new record with name `REGIONS`, object name `REGIONS` and schema `PLAIN`.
 
 ![Create synonym](syn2.png)
 
-> Alternatively, you can use the value help under `Object name`...
->&nbsp;
+> Alternatively, you can use the value help under `Object name` ...
+>
 > ![Create synonym](23.png)
 >
-> ...and check `CC_ACCESS` in the drop-down menu for external services.
+> ... and check `CC_ACCESS` in the drop-down menu for external services.
 >
 > ![Create synonym](24.png)
 

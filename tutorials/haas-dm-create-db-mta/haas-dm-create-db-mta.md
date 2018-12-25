@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Service, Create a Database Multi target Application
-description: Create an application with a Database Module
+title: Create a Database Multi-Target Application with the SAP HANA Service
+description: Create an application with a database module.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
@@ -8,14 +8,14 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have created a trial instance of SAP Cloud Platform, SAP HANA Service
- - You are logged in to SAP Web IDE Full Stack and have [configured the access to the subaccount in Cloud Foundry](https://developers.sap.com/tutorials/webide-multi-cloud.html )
- - You have enabled the `SAP HANA Database Development tools` and `SAP HANA Database explorer` in the `Features` section in the settings for SAP Web IDE
- - Optionally, you have [downloaded and setup the Command Line Interface for Cloud Foundry](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
+ - You have created a trial instance of SAP Cloud Platform, SAP HANA service.
+ - You are logged in to SAP Web IDE Full Stack and have [configured the access to the subaccount in Cloud Foundry](https://developers.sap.com/tutorials/webide-multi-cloud.html).
+ - You have enabled the `SAP HANA Database Development tools` and `SAP HANA Database explorer` in the `Features` section in the settings for SAP Web IDE.
+ - Optionally, you have [downloaded and setup the Command Line Interface for Cloud Foundry](https://developers.sap.com/tutorials/cp-cf-download-cli.html).
 
 ## Details
 ### You will learn
-  - How to create a Multi-target Application with a database module in SAP Web IDE Full-stack
+  - How to create a multi-target application with a database module in SAP Web IDE Full-Stack
   - How to create a columnar table using declarative SQL
   - How to load data for testing into a columnar table from a CSV file
   - How to access the database explorer to browse your tables, data and use SQL statements
@@ -28,7 +28,7 @@ Click `File->New` and choose **Project from Template**.
 
 ![New project from template](1.png)
 
-Choose **SAP HANA Multi target application** and click **Next**.
+Choose **SAP HANA Multi-Target Application** and click **Next**.
 
 ![New project from template](2.png)
 
