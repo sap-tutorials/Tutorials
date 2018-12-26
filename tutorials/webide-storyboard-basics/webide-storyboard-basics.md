@@ -13,8 +13,8 @@ primary_tag: products>sap-web-ide
 
 ## Details
 ### You will learn
-  - How to create a new SAP Web IDE project from a template.
-  - Why using the Storyboard helps you add a new view and configure it with no need to write code.
+  - How to create a new SAP Web IDE project from a template
+  - Why using the Storyboard helps you add a new view and configure it with no need to write code
 
   The Storyboard perspective is one of the most powerful features of SAP Web IDE Full-Stack.
 
@@ -33,11 +33,14 @@ In SAP Web IDE Full-Stack:
 3. Give the project a name, title, and namespace and click **Next**.
 4. Select the ES5 Gateway Demo System and the `GWSAMPLE_BASIC` service. For more information, see the prerequisites.
 5. Select App Type to be **Standalone App**.
-6. Select:
-    - Object Collection: `SalesOrderSet`
-    - Object Title: `CustomerName`
-    - Object Numeric Attribute: `NetAmount`
-    - Object Unit of Measure: `CurrencyCode`
+6. Under **Data Binding**, select the following:
+
+    | Field | Value |
+    |:------|:------|
+    |Object Collection|`SalesOrderSet`|
+    |Object Title|`CustomerName`|
+    |Object Numeric Attribute|`NetAmount`|
+    |Object Unit of Measure|`CurrencyCode`|
 7. Click **Finish**.
 
 >Optional: You can run the app at this point to see what it looks like (when prompted to select the file to run, select the `index.html` file).
@@ -74,15 +77,15 @@ You can see the new view was added in the Storyboard.
 [ACCORDION-BEGIN [Step 4: ](Build the new view)]
 In this step, you want to present a list of sales orders where each row in the list has a link that lets you navigate to a view that displays the sales order items.
 
-1. You need to build your new view to present the sales order items. While in the Storyboard, hover over the new view and click on the Pencil icon. This opens the view in the layout editor.
+1. You need to build your new view to present the sales order items. While in the Storyboard, hover over the new view and click the pencil icon. This opens the view in the layout editor.
 
-     ![Click the Pencil icon](step4-a-open-layout-editor.png)
+     ![Click the pencil icon](step4-a-open-layout-editor.png)
 
 2. On the left, search for a list, then drag and drop it onto the canvas.
 
 3. Click the list in the canvas in order to select the `Standard List Item` property.
 
-4. On the right, in the Properties pane, click to select the entity set to which you want to bind the `Standard List Item` property.
+4. On the right, in the **Properties** pane, click to select the entity set to which you want to bind the `Standard List Item` property.
 
     ![Bind entity set](step4-b-bind.png)
 
@@ -98,22 +101,21 @@ Click **OK** to close the dialog box.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Bind the title and description)]
-1. In the Properties pane, click on the **Binding** button of the **Title** property.
+1. In the **Properties** pane, click the **Binding** button of the **Title** property.
 
      ![Bind title](step5-a-title.png)
 
-2. Delete **List Item 1** and double-click the **`ProductID`** property, then
-click **OK**.
+2. Delete **List Item 1** and double-click the **`ProductID`** property, then click **OK**.
 
      ![Data Binding dialog](step5-b-bind-title.png)
 
-3. In the same manner, bind the **Description** property to two properties: **Quantity** and **`QuantityUnit`**, then click **OK**.
+3. In the same manner, bind the **Description** property to two properties: **`Quantity`** and **`QuantityUnit`**, then click **OK**.
 
 
      ![Bind description](step5-c-bind-description.png)
 
 
-The current type of the `StandardListItem` property is configured as a navigation, but it's better not to navigate using this list, so change it to **Inactive** in the Properties pane (you may need to scroll down a bit).
+The current type of the `StandardListItem` property is configured as a navigation, but it's better not to navigate using this list, so change it to **Inactive** in the **Properties** pane (you may need to scroll down a bit).
 
 
 
@@ -142,15 +144,13 @@ This can be done on the canvas or in the **Outline** tab on the left (select the
      ![Enter string values](step6-c-enter-values.png)
 
 
-4. Delete the **Title** string from the **Expression** text area, and double-click the new `i18n` string you just added. It is added to the **Expression** text area.
-Click **Bind**.
+4. Delete the **Title** string from the **Expression** text area, and double-click the new `i18n` string you just added. It is added to the **Expression** text area. Click **Bind**.
 
-      ![Delete title string](step6-d-delete-title.png)
-
+    ![Delete title string](step6-d-delete-title.png)
 
     The new view should look like this:
 
-      ![New view](step6-e-new-view.png)
+    ![New view](step6-e-new-view.png)
 
 
 
@@ -160,10 +160,9 @@ Click **Bind**.
 [ACCORDION-BEGIN [Step 7: ](Configure navigation)]
 Now that you finished modeling your new view, you need to "connect" it to the app; in other words, make it part of the flow.
 
-You need to configure a navigation from the `Worklist.view.xml` file to your new view.
-For this you need to return to the Storyboard.
+You need to configure a navigation from the `Worklist.view.xml` file to your new view. For this you need to return to the Storyboard.
 
-1. On the upper-right corner, click on the **Storyboard** tab.
+1. On the upper-right corner, click the **Storyboard** tab.
 
     ![Storyboard tab](step7-a-storyboard-tab.png)
 
@@ -171,7 +170,7 @@ For this you need to return to the Storyboard.
 
     ![New entity set](step7-b-entity-set.png)
 
-2. Now you need to configure the navigation in just a few clicks. First, hover over **`Worklist.view.xml`** and click the **Configure navigation** \(arrow\) button.
+2. Now you need to configure the navigation in just a few clicks. First, hover over **`Worklist.view.xml`** and click the **Configure Navigation** \(arrow\) button.
 
     ![Configure navigation button](step7-c-arrow-button.png)
 
@@ -181,7 +180,7 @@ For this you need to return to the Storyboard.
 
     - In the **Event** dropdown list, select **press**.
 
-    - In the **Navigate To** dropdown list, select the new view. Leave the **Target Control** and **Open Target At** fields as is; they are populated automatically when you select the "Navigate To" view.
+    - In the **Navigate To** dropdown list, select the new view. Leave the **Target Control** and **Open Target At** fields as is; they are populated automatically when you select the **Navigate To** view.
 
     - Select the **Propagate context binding** checkbox to propagate the `SalesOrder` entity.
 
@@ -198,20 +197,20 @@ For this you need to return to the Storyboard.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Optional: Configure back navigation)]
-Click the pencil icon to edit the new view again.
+[ACCORDION-BEGIN [Step 8: ](Configure back navigation (Optional))]
+1. Click the pencil icon to edit the new view again.
 
-Make sure the **Page** control is selected.
+2. Make sure the **Page** control is selected.
 
-Change the **Show Nav Button** property to `True`.
+3. Change the **Show Nav Button** property to `True`.
 
-In the Storyboard, configure the navigation from the new view to the `Worklist.view.xml` file with the following values:
+4. In the Storyboard, configure the navigation from the new view to the `Worklist.view.xml` file with the following values:
 
-Field | Value
------------- | -------------
-**Control** | `Page`
-**Event** | `navButtonPress`
-**Navigate To** | `Worklist`
+    |Field |Value |
+    |:------------|:-------------|
+    |**Control** | `Page`|
+    |**Event** | `navButtonPress`|
+    |**Navigate To** | `Worklist`|
 
 [DONE]
 [ACCORDION-END]
