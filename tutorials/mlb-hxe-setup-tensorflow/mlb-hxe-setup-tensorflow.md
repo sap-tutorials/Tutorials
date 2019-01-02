@@ -65,60 +65,6 @@ A TensorFlow `ModelServer` (TMS) makes TensorFlow exported models accessible for
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Install SAP HANA Required Packages)]
-
-To download SAP HANA, express edition required packages, you can use the Download Manager either with the GUI mode or the command line mode as documented the setup tutorials.
-
-The SAP HANA, express edition Download Manager is also now provided as part of your SAP HANA, express edition installation and located in: `/usr/sap/HXE/home/bin/`.
-
-Here, it is assumed that the SAP HANA, express edition machine is used to install and TensorFlow Serving.
-
-First, you will need to open a terminal console on your server and switch to the `hxeadm` user:
-
-```bash
-sudo su -l hxeadm
-```
-
-#### Download & Install the SAP HANA HDB client
-
-Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client for Linux** from the [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) group.
-
-#### SAP HANA External Machine Learning AFL
-
-Before you can proceed with the next steps, you will need to complete the [Install the SAP HANA External Machine Learning Library Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-eml-vm.html).
-
-To confirm that the SAP HANA EML functions were installed successfully, you can check the following public views:
-
-- `sys.afl_areas`
-- `sys.afl_packages`
-- `sys.afl_functions`
-
-Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
-
-```SQL
-SELECT * FROM "SYS"."AFL_AREAS" WHERE AREA_NAME = 'EML';
-SELECT * FROM "SYS"."AFL_PACKAGES" WHERE AREA_NAME = 'EML';
-SELECT * FROM "SYS"."AFL_FUNCTIONS" WHERE AREA_NAME = 'EML';
-```
-
-The `AFL_AREAS` & `AFL_PACKAGES` should return 1 row each, and the `AFL_FUNCTIONS` should return 6 rows.
-
-#### Run the Memory Management Script
-
-After the installation is completed, it is recommended to run the ***Memory Management Script*** as described in the ***Best Practice*** to release all unused resources and free up some memory.
-
-```bash
-sudo su -l hxeadm
-
-cd /usr/sap/HXE/home/bin
-./hxe_gc.sh
-
-exit
-```
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 2: ](Create a Dedicated User)]
 
 As a best practice, it is recommended to create a dedicated user to run your TensorFlow activities.
@@ -128,7 +74,8 @@ This will help avoiding side any effect on the `hxeadm` user that is running the
 To create a TensorFlow Serving `ModelServer` administrator user `tmsadm`, you can execute the following commands:
 
 ```shell
-sudo useradd -m -d /home/tmsadm -c "TensorFlow Administrator" tmsadm     
+sudo useradd -m -d /home/tmsadm -c "TensorFlow Administrator" tmsadm  
+sudo bash -c 'echo "PATH=/home/tmsadm/.local/bin:/home/tmsadm/bin:$PATH" >>/home/tmsadm/.bashrc'   
 sudo passwd tmsadm
 ```
 
@@ -147,63 +94,76 @@ sudo su -l tmsadm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Install TensorFlow Serving dependencies)]
+[ACCORDION-BEGIN [Step 1: ](Install C Compiler & Required Packages)]
 
-In order to successfully compile TensorFlow Serving `ModelServer`, you will need to install a C/C++ compiler.
+To complete the Jupyter setup, you will need some additional Python utilities packages.
 
-Most Linux distributions provide a downloadable package group for this.
+By default, SAP HANA, express edition setup a Python 2.7 version, but this one doesn't include the `pip` or `virtualenv` package.
 
-Python and related tools are also required to complete the TensorFlow compilation and setup.
+Therefore, you will now add the missing packages.
 
-By default, SAP HANA, express edition setup a Python 2.7 version, but this one doesn't include the `numpy`, `pip`, `virtualenv` & `devel` packages.
+### **For SUSE Linux Enterprise Server (including the SAP HANA, express edition VM):**
 
-Therefore, you will add these missing packages too.
-
-#### For Debian or Ubuntu system:
-
-If you are planning on running TensorFlow Serving on `Debian` or `Ubuntu` system, you can simply follow the **Packages** section details from the [TensorFlow Serving setup instructions](https://www.tensorflow.org/serving/setup#packages).
-
-Then, install the `virtualenv` package using the following command:
+First, you will need to check your current status using the following command:
 
 ```shell
-sudo apt-get install virtualenv
+sudo SUSEConnect --status-text
 ```
 
-Make sure that you have a Python 2.7 installation:
+It should return the following information in the console:
+
+```
+Installed Products:
+------------------------------------------
+  SUSE Linux Enterprise Server for SAP Applications 12 SP3
+  (SLES_SAP/12.3/x86_64)
+
+  Registered
+------------------------------------------
+```
+
+If your system is marked as *Not Registered*, then you will need to register  with `SUSEConnect` using your registration code and email:
 
 ```shell
-sudo apt-get install python-numpy python-dev python-pip python-wheel
+sudo SUSEConnect -r <registration code> -e <registration email>
 ```
 
-#### For SUSE Linux Enterprise Server (including the SAP HANA, express edition VM):
+Once registered, you will be able to list the available extensions using the following command:
 
-First, you need to add the required software repositories and then install the package group.
+```shell
+sudo SUSEConnect --list-extension
+```
 
-The following extensions/repositories are required to install the `Basis-Devel` package group and some additional packages in a later step:
+You can then activate these extensions/repositories using the following commands:
 
-- SUSE Linux Enterprise Software Development Kit
-- SUSE Linux Package Hub
+The following extensions/repositories are required to install the Python packages dependencies:
+
+- SUSE Linux Package for SAP Applications 12 SP2
+
+	```shell
+	sudo SUSEConnect -p SLES_SAP/12.2/x86_64
+	```
+
+- SUSE Linux Enterprise Software Development Kit 12 SP2
+
+	```shell
+	sudo SUSEConnect -p sle-sdk/12.2/x86_64
+	```
+
 - `Toolchain` Module
 
-You can add these extensions/repositories using the following commands:
+	```shell
+	sudo SUSEConnect -p sle-module-toolchain/12/x86_64
+	```
 
-```shell
-sudo SUSEConnect -p PackageHub/12.2/x86_64
-sudo SUSEConnect -p sle-sdk/12.2/x86_64
-sudo SUSEConnect -p sle-module-toolchain/12/x86_64
-```
+Make sure to adjust the version/extension name based on the result from the ***`--list-extension`*** result.
+
+These commands will be successful only if you have registered your system with `SUSEConnect`:
 
 Then, you can clean and refresh the repository cache:
 
 ```shell
-sudo zypper clean
 sudo zypper refresh
-```
-
-These commands will be successful only if you have registered your system with `SUSEConnect`:
-
-```shell
-sudo SUSEConnect -r <registration code> -e <registration email>
 ```
 
 Then, you can execute the following command to install the compiler:
@@ -212,7 +172,7 @@ Then, you can execute the following command to install the compiler:
 sudo zypper install --type pattern Basis-Devel
 ```
 
-The following additional dependencies are also required:
+Then, install the Python `devel` and additional tools packages using the following command:
 
 ```shell
 sudo zypper install \
@@ -222,13 +182,7 @@ sudo zypper install \
     freetype-devel \
     libpng12-devel \
     swig \
-    zip
-```
-
-Regarding Python tools, you can install them using the following command:
-
-```shell
-sudo zypper install \
+    zip \
     python \
     python-devel \
     python-numpy \
@@ -236,32 +190,7 @@ sudo zypper install \
     python-setuptools
 ```
 
-As Python Pip and Virtual Environments are not part of the default SUSE repositories, you will use the ***openSUSE Python Development*** repository.
-
-You can add the Python Modules repository using the following command:
-
-```shell
-sudo zypper addrepo 'https://download.opensuse.org/repositories/devel:/languages:/python/SLE_12_SP2/devel:languages:python.repo'
-sudo zypper refresh
-```
-
-Then, install the packages using the following command:
-
-```shell
-sudo zypper install \
-    python-pip \
-    python-virtualenv
-```
-
-And finally remove the Python Modules repository using the following command:
-
-```shell
-sudo zypper rr 'devel_languages_python'
-```
-
-#### For Red Hat Enterprise Linux:
-
-First, you need to add the required software repositories and then install the package group.
+### **For Red Hat Enterprise Linux:**
 
 The following extensions/repositories are required to install the `Development Tools` package group and some additional packages in a later step:
 
@@ -285,18 +214,6 @@ Then, you can execute the following command to install the compiler:
 sudo yum groupinstall "Development Tools"
 ```
 
-The following additional dependencies are also required:
-
-```shell
-sudo yum install \
-    wget \
-    curl \
-    git \
-    freetype-devel \
-    swig \
-    zip
-```
-
 As Python Pip is not part of the default Red Hat repositories, you will use the ***Extra Packages for Enterprise Linux*** (EPEL) as described in the Red Hat solution note [3358](https://access.redhat.com/solutions/3358).
 
 EPEL has an `epel-release` package that includes the `gpg` keys for package signing and repository information.
@@ -309,15 +226,158 @@ Execute the following command to install the `epel-release` package:
 sudo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
 
-Then, you can install Python tools using the following command:
+Then, install the Python `devel` and additional tools packages using the following command:
 
 ```shell
 sudo yum install \
+    wget \
+    curl \
+    git \
+    freetype-devel \
+    swig \
+    zip \
     numpy \
     python \
-    python-devel \
-    python-pip \
-    python-virtualenv
+    python-devel
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Install Python Pip and Virtual Environment)]
+
+As Python Pip and Virtual Environments are not part of the default SUSE repositories, you will be building from the source.
+
+First, you will need to download the install script, run it then install `virtualenv` using the following command:
+
+```shell
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py --user
+pip install --user virtualenv
+rm get-pip.py
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Install SAP HANA Client)]
+
+To download SAP HANA, express edition  components, you can use the Download Manager either with the GUI mode or the command line mode as documented in one of the setup tutorials.
+
+The SAP HANA, express edition Download Manager is now provided as part of your SAP HANA, express edition installation in: `/usr/sap/HXE/home/bin/`.
+
+You can then download the packages using the following command:
+
+```bash
+/usr/sap/HXE/home/bin/HXEDownloadManager_linux.bin linuxx86_64 installer \
+    -d . \
+	clients_linux_x86_64.tgz
+```
+
+Once completed, you can proceed with the installation.
+
+#### SAP HANA Client
+
+The downloaded archive for the client package contains both the ***SAP HANA HDB Client*** and the ***SAP HANA XS CLI***.
+
+Here you will only install the ***SAP HANA HDB Client***.
+
+The ***SAP HANA HDB Client*** software package includes the following connectivity/drivers:
+
+ - SQLDBC
+ - ODBC
+ - JDBC
+ - Python (`PyDBAPI`)
+ - Node.js
+ - Ruby
+
+Then, you need to extract the contents of `clients_linux_x86_64.tgz` into the ***`/opt/hxe`*** directory using the following command:
+
+```bash
+tar -xvzf ./clients_linux_x86_64.tgz -C .
+```
+
+The following files will be extracted:
+
+ - ***`hdb_client_linux_x86_64.tgz`*** : the *SAP HANA HDB Client* software package
+ - ***`xs.onpremise.runtime.client_linuxx86_64.zip`*** : the *SAP HANA XS CLI* software package
+
+You need now to decompress the *SAP HANA HDB Client* package executing the following command:
+
+```bash
+tar -xvzf ./hdb_client_linux_x86_64.tgz -C .
+```
+
+And now you can run the installer program executing the following commands:
+
+```bash
+cd ./HDB_CLIENT_LINUX_X86_64
+./hdbinst
+```
+
+Accept the prompts default values to configure your installation:
+
+ - Installation Path : `/home/tmsadm/sap/hdbclient`
+
+
+Once the installation is completed, you should get the following elements in your console:
+
+```
+Installation done
+```
+
+You can then run the following cleanup commands:
+
+```bash
+rm -r ./HDB_CLIENT_LINUX_X86_64
+rm hdb_client_linux_x86_64.tgz hana_ml-1.0.3.tar.gz clients_linux_x86_64.tgz xs.onpremise.runtime.client_linuxx86_64.zip
+```
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Install SAP HANA External Machine Learning AFL)]
+
+Before you can proceed with the next steps, you will need to complete the [Install the SAP HANA External Machine Learning Library Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-eml-vm.html).
+
+To confirm that the SAP HANA EML functions were installed successfully, you can check the following public views:
+
+- `sys.afl_areas`
+- `sys.afl_packages`
+- `sys.afl_functions`
+
+Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
+
+```SQL
+SELECT * FROM "SYS"."AFL_AREAS" WHERE AREA_NAME = 'EML';
+SELECT * FROM "SYS"."AFL_PACKAGES" WHERE AREA_NAME = 'EML';
+SELECT * FROM "SYS"."AFL_FUNCTIONS" WHERE AREA_NAME = 'EML';
+```
+
+The `AFL_AREAS` & `AFL_PACKAGES` should return 1 row each, and the `AFL_FUNCTIONS` should return 6 rows.
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Run the Memory Management Script)]
+
+After the installation is completed, it is recommended to run the ***Memory Management Script*** as described in the ***Best Practice*** to release all unused resources and free up some memory.
+
+```bash
+sudo su -l hxeadm
+
+cd /usr/sap/HXE/home/bin
+./hxe_gc.sh
+```
+
+Provide the ***System database user (SYSTEM)***.
+
+Once completed, use the ***exit*** command to return to the previous session:
+
+```bash
+exit
 ```
 
 [DONE]
@@ -339,26 +399,6 @@ Your terminal prompt should now look like the following:
 
 ```
 (tms) tmsadm@hxehost:~>
-```
-
-#### Pip:
-
-Now, you need to check the Pip version using the following command:
-
-```shell
-pip --version
-```
-
-The minimum version required is pip 9.0.1 and the output should look like this:
-
-```
-pip 9.0.1 from /home/tmsadm/tms/lib/python2.7/site-packages (python 2.7)
-```
-
-If you don't match this version you can run the following command to upgrade pip:
-
-```shell
-pip install --upgrade pip
 ```
 
 #### `gRPC`:
@@ -408,7 +448,6 @@ As stated previously, TensorFlow Serving `ModelServer` installable binaries are 
 
 Therefore, on SUSE Linux Enterprise Server or Red Hat Enterprise Linux, you will need to compile the binary locally as detailed in this step.
 
-
 If you are planning on running TensorFlow Serving on `Debian` or `Ubuntu`system, you can simply following the [TensorFlow Serving setup instructions](https://www.tensorflow.org/serving/setup#installing_using_apt-get) and move to the next step.
 
 #### Bazel:
@@ -418,15 +457,15 @@ If you are planning on running TensorFlow Serving on `Debian` or `Ubuntu`system,
 
 TensorFlow uses `Bazel` for its compilation. You can find the `Bazel` installation instructions [online](https://docs.bazel.build/versions/master/install.html).
 
-You can install `Bazel` 0.11.1 in a *user* mode using the following commands:
+You can install `Bazel` 0.5.4 in a *user* mode using the following commands:
 
 ```shell
 cd ~/
-curl -L https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -o ~/bazel-0.11.1-installer-linux-x86_64.sh
-chmod +x ~/bazel-0.11.1-installer-linux-x86_64.sh
-./bazel-0.11.1-installer-linux-x86_64.sh --user
+curl -L https://github.com/bazelbuild/bazel/releases/download/0.5.4/bazel-0.5.4-installer-linux-x86_64.sh -o ~/bazel-installer-linux-x86_64.sh
+chmod +x ~/bazel-installer-linux-x86_64.sh
+~/bazel-installer-linux-x86_64.sh --user
 export PATH="$PATH:$HOME/bin"
-rm ~/bazel-0.11.1-installer-linux-x86_64.sh
+rm ~/bazel-installer-linux-x86_64.sh
 ```
 
 You can now check that `Bazel` 0.11.1 was properly installed using the following command:
@@ -438,8 +477,8 @@ bazel version
 The output should look like the following:
 
 ```
-Build label: 0.11.1
-Build target: bazel-out/k8-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
+Build label: 0.5.4
+Build target: bazel-out/local-fastbuild/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
 Build time: ...
 Build timestamp: ...
 Build timestamp as int: ...
@@ -451,7 +490,7 @@ The first step is to clone the TensorFlow Serving `ModelServer` locally using th
 
 ```shell
 cd ~/
-git clone --recurse-submodules https://github.com/tensorflow/serving
+git clone -b r1.5 --recurse-submodules https://github.com/tensorflow/serving
 cd ~/serving
 ```
 
@@ -461,19 +500,6 @@ Then you will compile the source code with `Bazel` using the following command:
 
 ```shell
 bazel build -c opt tensorflow_serving/...
-```
-
-Alternatively, you can compile the source code with the following recommended optimization parameters:
-
-```shell
-bazel build -c opt \
-    --copt=-msse4.1 \
-    --copt=-msse4.2 \
-    --copt=-mavx \
-    --copt=-mavx2 \
-    --copt=-mfma \
-    --copt=-O3  \
-    tensorflow_serving/...
 ```
 
 > ### Warning: Depending on your machine resources, the compilation takes between 2 and 4 hours.
@@ -515,7 +541,7 @@ Create a model export directory where you will store your TensorFlow Serving con
 mkdir -p ~/export
 ```
 
-First, create the following empty model configuration file `/home/tmsadm/export/config.cnf` and add the following content:
+First, create the following empty model configuration file **`/home/tmsadm/export/config.cnf`** and add the following content:
 
 ```js
 model_config_list: {

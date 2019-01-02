@@ -8,9 +8,9 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Enable SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html)
-- Select a Cloud Foundry space. See [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
-- Enable SAP API Business Hub feature in SAP Web IDE. See [Enable Additional Features](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/90999000744441c6b1fe486d43428b4b.html).
+- [Enable SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html)
+- [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
+- [Enable SAP API Business Hub feature in SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/90999000744441c6b1fe486d43428b4b.html)
 
 ## Details
 ### You will learn  
@@ -50,7 +50,7 @@ This model simply represents the bookshop application and consists of the Books,
 
 1. Open `db/data-model.cds` and replace the template with the following CDS definitions:
 
-    ```cds
+    ```CDS
     namespace my.s4bookshop;
 
     entity Books {
@@ -120,7 +120,7 @@ Now, let's define a service model that builds on top of the data models from the
 
 1. Open `srv/my-service.cds` and replace the template with the following CDS definitions:
 
-    ```cds
+    ```CDS
     using my.s4bookshop from '../db/data-model';
     using API_BUSINESS_PARTNER as bp from '../srv/external/csn/ODataServiceforBusinessPartner';
 
@@ -218,7 +218,7 @@ Now, let's bind a destination service to your application. This service lets you
 
 2. Under the **requires** section of the `srv` module, specify the name of the destination and XSUAA services.
 
-    ```yaml
+    ```YAML
     [...]
     modules:
       [...]
@@ -230,9 +230,11 @@ Now, let's bind a destination service to your application. This service lets you
           [...]
     ```
 
+    ![Configuring mta.yaml](bind-managed-services.png)
+
 3. Under the **resources** section, add the configuration for the destination and XSUAA services.
 
-    ```yaml
+    ```YAML
     [...]
     resources:
       [...]
@@ -254,7 +256,7 @@ Now, let's bind a destination service to your application. This service lets you
 
 4. Add the environment variable `ALLOW_MOCKED_AUTH_HEADER` to the **properties** section of the `srv` module.
 
-    ```yaml
+    ```YAML
     [...]
     modules:
       [...]
@@ -288,7 +290,7 @@ Add a custom handler that implements the query operation on the `Suppliers` enti
 
 5. Open the new `S4BookshopService.java` file and replace the template with the following code:
 
-    ```java
+    ```Java
     package my.s4bookshop;
 
     import java.util.*;
@@ -426,7 +428,7 @@ Add a custom handler that implements the query operation on the `Suppliers` enti
 [ACCORDION-BEGIN [Step 9: ](Run the application)]
 Finally, let's run the application to see it all come together.
 
-1. Right-click the `srv` module and choose **Run > Java Application**.
+1. Right-click the `srv` module and choose **Run > Run as Java Application**.
 
 2. Choose **View > Run Console** and click on the application URL.
 
