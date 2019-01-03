@@ -1,6 +1,6 @@
 ---
 title: Deploy UI to Cloud Foundry
-description: Create UI in Neo and Deploy it to Cloud Foundry.
+description: Create UI in Neo and deploy it to Cloud Foundry.
 auto_validation: true
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
@@ -13,14 +13,14 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to create UI on Neo.
-  - How to deploy the UI form Neo to the Cloud Foundry.
+  - How to create UI on Neo
+  - How to deploy the UI form Neo to the Cloud Foundry
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Multi Target Application)]
+[ACCORDION-BEGIN [Step 1: ](Create multi-target application)]
 
-  1. Log in to your SAP Cloud Platform Cockpit with your global account and choose your Neo subaccount.
+  1. Log in to your SAP Cloud Platform Cockpit with your global account and choose your Neo subaccount. 
 
   2. Click on **Services** and choose **SAP Web IDE Full-Stack**.
 
@@ -49,7 +49,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create HTML5 Module)]
+[ACCORDION-BEGIN [Step 2: ](Create HTML5 module)]
 
   1. Open HTML5 Module with a right click on project name > **New** > **HTML5 Module**.
 
@@ -77,7 +77,7 @@ time: 15
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create index.html file in Webapp folder)]
+[ACCORDION-BEGIN [Step 3: ](Create index.html file in webapp folder)]
 
   1. Do a right click on `webapp` folder under your application and choose **New** > **File**, enter a **File Name** like `index.html` and click on **OK**.
 
@@ -163,7 +163,7 @@ time: 15
 
       ![run Application](runAs.png)
 
-  2. Click on setting button and choose the fields which should be shown on UI and click on **OK** and then click on **GO** to see the fields.
+  2. Click on setting button and choose the fields which should be shown on UI and click on **OK** and then click on **Go** to see the fields.
 
       ![UI Setting](UISetting.png)
 
@@ -174,9 +174,9 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Adapt AppRouter Configuration)]
+[ACCORDION-BEGIN [Step 7: ](Adapt app router configuration)]
 
-  1. Remove destination from MTA modules and resources. For that open the `mta.yaml` file and remove `dest_MYFIORI_TEST` form `MTA_TEST_appRouter` under **Modules** and under **Resources** as well.
+  1. Remove destination from MTA modules and resources. For that open the `mta.yaml` file and remove `dest_MYFIORI_TEST` from `MTA_TEST_appRouter` under **Modules** and under **Resources** as well.
 
       ![app Router config](appRouter1.png)
 
@@ -236,7 +236,7 @@ time: 15
 
   4. Use following URL-Pattern to run the application: `<route-on-cf>/<id>.<version>`
 
-      Id: id used in `webapp/manifest.json`.
+      ID: id used in `webapp/manifest.json`.
 
       Version: `applicationVersion` provided in `webapp/manifest.json`.
 
