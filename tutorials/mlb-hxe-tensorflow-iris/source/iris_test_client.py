@@ -3,7 +3,7 @@ A client that talks to tensorflow_model_server serving the iris model.
 """
 from __future__ import print_function
 
-import sys
+import sys, os
 import threading
 
 # This is a placeholder for a Google-internal import.
@@ -13,7 +13,7 @@ import numpy
 import tensorflow as tf
 
 from tensorflow_serving.apis import predict_pb2
-from tensorflow_serving.apis import prediction_service_pb2
+from tensorflow_serving.apis import prediction_service_pb2_grpc
 
 sys.path.append(os.path.expanduser("~") + '/models/samples/core/get_started')
 import iris_data
@@ -39,7 +39,7 @@ def main(_):
     request.model_spec.name = 'iris'
     request.model_spec.signature_name = 'serving_default'
 
-    stub = prediction_service_pb2.beta_create_PredictionService_stub(channel)
+    stub = prediction_service_pb2_grpc.PredictionServiceStub(channel._channel)
 
     connection = dbapi.connect(address=args.hxehost, port=args.hxeport, user=args.hxeusr, password=args.hxepwd)
     cursor = connection.cursor()

@@ -21,19 +21,35 @@ Therefore, you will use a script that will save the retrained model a the raw im
 
 The retrain will be done using the provided flowers data set but you are free to try out with your own labeled photo library.
 
-[ACCORDION-BEGIN [Step 1: ](Prepare the retraining data)]
+[ACCORDION-BEGIN [Step 1: ](Activate the Python Virtual Environment)]
 
-First, you have to activate the Python Virtual Environment (named `tms`) created previously using the following commands:
+First, switch to the `tmsadm` user if not done yet:
+
+```shell
+sudo su -l tmsadm
+```
+
+Activate the Python Virtual Environment (named `tms`) created previously using the following commands:
 
 ```shell
 source ~/tms/bin/activate
 ```
 
-Then you can create a model export directory and the flowers pictures extract directory:
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Prepare the retraining data)]
+
+First, create a model export directory and the flowers pictures extract directory:
 
 ```shell
 mkdir -p ~/export/flowers
 mkdir -p ~/models/tutorials/image_retraining/data
+mkdir -p ~/models/tutorials/image_retraining/test/flower_photos/daisy
+mkdir -p ~/models/tutorials/image_retraining/test/flower_photos/dandelion
+mkdir -p ~/models/tutorials/image_retraining/test/flower_photos/roses
+mkdir -p ~/models/tutorials/image_retraining/test/flower_photos/sunflowers
+mkdir -p ~/models/tutorials/image_retraining/test/flower_photos/tulips
 ```
 
 Now, you can download the flowers pictures library:
@@ -42,18 +58,13 @@ Now, you can download the flowers pictures library:
 cd ~/models/tutorials/image_retraining/data
 curl -LO http://download.tensorflow.org/example_images/flower_photos.tgz
 tar xzf flower_photos.tgz
+rm flower_photos.tgz
 ```
 
 Before starting the retraining, you need to save some of the input files for testing the model later:
 
 ```shell
 cd ~/models/tutorials/image_retraining
-mkdir -p ./test/flower_photos/daisy
-mkdir -p ./test/flower_photos/dandelion
-mkdir -p ./test/flower_photos/roses
-mkdir -p ./test/flower_photos/sunflowers
-mkdir -p ./test/flower_photos/tulips
-
 find ./data/flower_photos/daisy \
   | tail -n 5 \
   | xargs -I{} mv {} ./test/flower_photos/daisy
@@ -79,14 +90,15 @@ find ./data/flower_photos/tulips \
 The scripts that you will leverage requires the TensorFlow Hub Python package, that you will need to install:
 
 ```shell
-pip install tensorflow_hub
+pip install --user tensorflow_hub
 ```
 
 Next, you can download the retrain script:
 
 ```shell
-cd ~/models/tutorials/image_retraining/
-curl -LO https://github.com/tensorflow/hub/raw/r0.1/examples/image_retraining/retrain.py
+curl \
+	-LO https://raw.githubusercontent.com/tensorflow/hub/master/examples/image_retraining/retrain.py \
+	-o ~/models/tutorials/image_retraining/retrain.py
 ```
 
 And finally, you can start the retrain process:
@@ -119,8 +131,10 @@ INFO:tensorflow:SavedModel written to: ./flowers-tmp/saved_model.pbtxt
 You can check that your model was saved using the following utility:
 
 ```shell
-cd ~/models/tutorials/image_retraining/
-saved_model_cli show --dir ./flowers-tmp --tag_set serve --signature_def serving_default
+saved_model_cli show \
+	--dir ~/models/tutorials/image_retraining/flowers-tmp \
+	--tag_set serve \
+	--signature_def serving_default
 ```
 
 It will display the `SavedModel SignatureDef` needed to configure the SAP HANA EML.
@@ -149,7 +163,7 @@ Therefore in the next step, you replace the input with a simple string containin
 
 [ACCORDION-BEGIN [Step 3: ](Adjust the model signature)]
 
-You can create the following Python script `/home/tmsadm/export/flowers_export_savedmodel.py` using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-image-retraining/source/flowers_export_savedmodel.py):
+You can create the following Python script **`~/export/flowers_export_savedmodel.py`** using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-image-retraining/source/flowers_export_savedmodel.py):
 
 ```python
 from __future__ import absolute_import
@@ -255,15 +269,16 @@ if __name__ == '__main__':
 Once saved, you can run the following commands to save the model with the proper input tensor:
 
 ```shell
-cd ~/export/
-python flowers_export_savedmodel.py
+python ~/export/flowers_export_savedmodel.py
 ```
 
 You can check that your model was properly saved using the following utility:
 
 ```shell
-cd ~/export/flowers
-saved_model_cli show --dir ./* --tag_set serve --signature_def serving_default
+saved_model_cli show \
+	--dir ~/export/flowers/* \
+	--tag_set serve \
+	--signature_def serving_default
 ```
 
 It will display the `SavedModel SignatureDef` needed to configure the SAP HANA EML.
@@ -277,18 +292,15 @@ Provide an answer to the question below then click on **Validate**.
 
 In order to test your model, you will need to import the test data that you saved during the last step (5 images per label).
 
-The use of this script assumes that you have installed the SAP HANA Client and imported the HDBCLI python package into your virtual environment:
+You will need the PIL Python package:
 
 ```bash
-pip install /usr/sap/hdbclient/hdbcli-2.2.36.tar.gz
+pip install --user image
 ```
 
-> **Note:** the `hdbcli` tar file may be with a different version than the one displayed above
-
-Now, you can create the following file `~/export/flowers_import_data.py` using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-image-retraining/source/flowers_import_data.py):
+Now, you can create the following file **`~/export/flowers_import_data.py`** using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-image-retraining/source/flowers_import_data.py):
 
 ```python
-
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -300,14 +312,15 @@ from PIL import Image
 import tensorflow as tf
 from hdbcli import dbapi
 
-tf.app.flags.DEFINE_string ('host', 'localhost' , 'HXE host')
-tf.app.flags.DEFINE_integer('port', 39015       , 'HXE port')
-tf.app.flags.DEFINE_string ('usr' , 'ML_USER'   , 'HXE user name')
-tf.app.flags.DEFINE_string ('pwd' , '<< password >>'  , 'HXE password')
+tf.app.flags.DEFINE_string ('hxehost', 'localhost' , 'HXE host')
+tf.app.flags.DEFINE_integer('hxeport', 39015       , 'HXE port')
+tf.app.flags.DEFINE_string ('hxeusr' , 'ML_USER'   , 'HXE user name')
+tf.app.flags.DEFINE_string ('hxepwd' , '<< password >>'  , 'HXE password')
 
 tf.app.flags.DEFINE_string ('image_dir' , os.path.expanduser("~") + '/models/tutorials/image_retraining/test/flower_photos' , 'image directory')
 
 args = tf.app.flags.FLAGS
+
 
 def create_image_lists(image_dir):
     if not tf.gfile.Exists(image_dir):
@@ -349,7 +362,7 @@ def create_image_lists(image_dir):
     return result
 
 def main(_):
-    connection = dbapi.connect(address=args.host, port=args.port, user=args.usr, password=args.pwd)
+    connection = dbapi.connect(address=args.hxehost, port=args.hxeport, user=args.hxeusr, password=args.hxepwd)
     connection.setautocommit(False)
     cursor = connection.cursor()
 
@@ -394,7 +407,6 @@ def main(_):
 
 if __name__ == '__main__':
     tf.app.run()
-
 ```
 
 > **Note:** Make sure to update the `<< password >>` in the script
@@ -402,46 +414,57 @@ if __name__ == '__main__':
 To upload the data, you can execute the following command:
 
 ```shell
-cd ~/export
-python flowers_import_data.py
+python ~/export/flowers_import_data.py \
+	--hxehost localhost \
+	--hxeport 39015 \
+	--hxeusr ML_USER \
+	--hxepwd Welcome18Welcome18
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Start TensorFlow ModelServer)]
+[ACCORDION-BEGIN [Step 3: ](Configure and Restart TensorFlow Serving)]
 
+Now that our model is built and saved in the right format, you can adjust the TensorFlow Serving configuration and start (or restart) it.
 
-Now that our model is built and saved in the right format, you can adjust the TensorFlow Serving `ModelServer` configuration and start (or restart) it.
-
-Update the model configuration file `~/export/config.cnf` like:
+Update the model configuration file **`~/export/models.config`** like this:
 
 ```js
 model_config_list: {
     config: {
         name: "flowers",
-        base_path: "/home/tmsadm/export/flowers",
+        base_path: "/tf_models/flowers",
         model_platform: "tensorflow"
-    }
+    },
 }
 ```
 
 > **Note 1:** If you already have models defined, make sure to separate each `config` section with a comma.
 
-> **Note 2:** Make sure to update the base path in case you not using the proposed one
+> **Note 2:** The base path value is a *virtual* defined and used when running the Docker container/
 
-You can now start the TensorFlow Serving `ModelServer` using the following command:
-
-> **Note:** As of the publication of this tutorial, there is no ***graceful*** shutdown command for the TensorFlow Serving `ModelServer`. Therefore you will need to kill the process manually.
+First check that there is no running container for TensorFlow Serving using the following command:
 
 ```shell
-tensorflow_model_server --model_config_file=./export/config.cnf
+docker ps -a | grep "tensorflow/serving"
 ```
 
-You can use the following command if you prefer to run it as a background process with all outputs redirected to a log file:
+If there is any entry , you can kill and remove it using the following command:
 
 ```shell
-nohup  tensorflow_model_server --model_config_file=./export/config.cnf > ./tensorflow_model_server.log 2>&1  </dev/null &
+docker ps -a | grep "tensorflow/serving" | grep -v grep | awk '{print $1}' | xargs docker kill
+docker ps -a | grep "tensorflow/serving" | grep -v grep | awk '{print $1}' | xargs docker rm
+```
+
+You can now start the TensorFlow Serving container using the following command:
+
+```shell
+docker run \
+  -p 8500:8500 \
+  --mount type=bind,source=/home/tmsadm/export/models.config,target=/tf_models/config/models.config \
+  --mount type=bind,source=/home/tmsadm/export/flowers,target=/tf_models/flowers \
+  --entrypoint "/bin/sh" tensorflow/serving:1.6.1 -c "tensorflow_model_server --port=8500 --model_config_file=/tf_models/config/models.config" &
 ```
 
 [DONE]
@@ -451,7 +474,7 @@ nohup  tensorflow_model_server --model_config_file=./export/config.cnf > ./tenso
 
 You can now test your model with a local client program.
 
-Create the following file `~/export/flowers_client.py` using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-image-retraining/source/flowers_test_client.py):
+Create the following file **`~/export/flowers_client.py`** using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-image-retraining/source/flowers_test_client.py):
 
 ```python
 """
@@ -469,7 +492,7 @@ import numpy
 import tensorflow as tf
 
 from tensorflow_serving.apis import predict_pb2
-from tensorflow_serving.apis import prediction_service_pb2
+from tensorflow_serving.apis import prediction_service_pb2_grpc
 
 from hdbcli import dbapi
 
@@ -491,7 +514,7 @@ def main(_):
     request.model_spec.name = 'flowers'
     request.model_spec.signature_name = 'serving_default'
 
-    stub = prediction_service_pb2.beta_create_PredictionService_stub(channel)
+    stub = prediction_service_pb2_grpc.PredictionServiceStub(channel._channel)
 
     connection = dbapi.connect(address=args.hxehost, port=args.hxeport, user=args.hxeusr, password=args.hxepwd)
     cursor_flowers = connection.cursor()
@@ -511,7 +534,7 @@ def main(_):
         image_data  = bytes(row['IMAGE_RAW_DATA'])
 
         request.inputs['image_blob'].CopyFrom(tf.contrib.util.make_tensor_proto(image_data, shape=[1]))
-        response = stub.Predict(request, 100)
+        response = stub.Predict(request, 1000)
 
         predicted_class_name        = response.outputs['class'].string_val[0]
         predicted_class_probability = response.outputs['probability'].float_val[0]
@@ -529,8 +552,13 @@ if __name__ == '__main__':
 Then, you can execute the following command:
 
 ```shell
-cd ~/export
-python iris_test_client.py
+python ~/export/flowers_client.py \
+	--tmshost localhost \
+	--tmsport 8500 \
+	--hxehost localhost \
+	--hxeport 39015 \
+	--hxeusr ML_USER \
+	--hxepwd Welcome18Welcome18
 ```
 
 [DONE]
@@ -612,7 +640,7 @@ SET SCHEMA EML_DATA;
 -- DROP TABLE FLOWERS_PROC_PARAM_TABLE;
 -- DROP TABLE FLOWERS_PARAMS;
 -- DROP VIEW FLOWERS_FEATURES;
--- DROP VIEW FLOWERS_FEATURES;  
+-- DROP TABLE FLOWERS_RESULTS; 
 
 -- Define table types for iris
 CREATE TYPE TT_FLOWERS_PARAMS    AS TABLE ("Parameter" VARCHAR(100), "Value" VARCHAR(100));
@@ -668,7 +696,7 @@ SET SCHEMA EML_DATA;
 -- DROP TABLE FLOWERS_PROC_PARAM_TABLE;
 -- DROP TABLE FLOWERS_PARAMS;
 -- DROP VIEW FLOWERS_FEATURES;
--- DROP VIEW FLOWERS_FEATURES;  
+-- DROP TABLE FLOWERS_RESULTS;
 
 -- Define table types for iris
 CREATE TYPE TT_FLOWERS_PARAMS    AS TABLE ("Parameter" VARCHAR(100), "Value" VARCHAR(100));
