@@ -4,7 +4,7 @@ description: Provide details on the installation and configuration of the SAP HA
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
-time: 45
+time: 40
 ---
 
 ## Prerequisites  
