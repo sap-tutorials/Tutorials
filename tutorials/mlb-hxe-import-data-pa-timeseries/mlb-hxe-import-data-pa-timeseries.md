@@ -75,6 +75,23 @@ Each observation is characterized by 2 variables described in the following tabl
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 1: ](Create a dedicated schema)]
+
+It is a good practice to separate data into different schema based on their origin.
+
+In this tutorial, you will be using the **`PA_DATA`** schema to load the SAP Predictive Analytics sample data.
+
+If you have already created the schema, move to the next step.
+
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement:
+
+```SQL
+CREATE SCHEMA PA_DATA;
+```
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 1: ](Create the table structure)]
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement to create the table structure:
