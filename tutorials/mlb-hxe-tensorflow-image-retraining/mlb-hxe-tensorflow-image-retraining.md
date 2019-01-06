@@ -288,7 +288,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Import a Test Dataset in SAP HANA)]
+[ACCORDION-BEGIN [Step 4: ](Import a test dataset in SAP HANA)]
 
 In order to test your model, you will need to import the test data that you saved during the last step (5 images per label).
 
@@ -424,7 +424,7 @@ python ~/export/flowers_import_data.py \
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure and Restart TensorFlow Serving)]
+[ACCORDION-BEGIN [Step 3: ](Configure and restart TensorFlow Serving)]
 
 Now that our model is built and saved in the right format, you can adjust the TensorFlow Serving configuration and start (or restart) it.
 
@@ -564,7 +564,7 @@ python ~/export/flowers_client.py \
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Reload the SAP HANA EML Config)]
+[ACCORDION-BEGIN [Step 7: ](Reload the SAP HANA EML config)]
 
 Now that the model is deployed and the TensorFlow Serving `ModelServer` is up and running, you will need to add the model configuration to your SAP HANA, express edition instance.
 
@@ -622,7 +622,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the Model from SAP HANA SQLScript)]
+[ACCORDION-BEGIN [Step 8: ](Test the model from SAP HANA SQLScript)]
 
 Since SAP HANA, express edition SPS03, when your model allows a single input to be scored at a time, you can still decide to run your score in batch. This is now possible using the **PREDICTM** function instead of **PREDICT**. This also require the input of a row identifier.
 
@@ -640,7 +640,7 @@ SET SCHEMA EML_DATA;
 -- DROP TABLE FLOWERS_PROC_PARAM_TABLE;
 -- DROP TABLE FLOWERS_PARAMS;
 -- DROP VIEW FLOWERS_FEATURES;
--- DROP TABLE FLOWERS_RESULTS; 
+-- DROP TABLE FLOWERS_RESULTS;
 
 -- Define table types for iris
 CREATE TYPE TT_FLOWERS_PARAMS    AS TABLE ("Parameter" VARCHAR(100), "Value" VARCHAR(100));

@@ -1,6 +1,6 @@
 ---
-title: Prepare your SAP HANA, express edition instance for Machine Learning
-description: Check that your instance is properly configured and meets the minimum requirements to execute built-in Machine Learning algorithms .
+title: Prepare Your SAP HANA, express edition Instance for Machine Learning
+description: Check that your instance is properly configured and meets the minimum requirements to execute built-in Machine Learning algorithms.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]

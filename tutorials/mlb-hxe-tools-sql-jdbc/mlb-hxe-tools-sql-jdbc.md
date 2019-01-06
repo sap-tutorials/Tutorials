@@ -1,5 +1,5 @@
 ---
-title: Use a JDBC based querying tool with SAP HANA, express edition
+title: Use JDBC-Based Querying Tool with SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance from almost any JDBC based querying tool.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
@@ -42,7 +42,7 @@ Before you can proceed with the next steps, you will need to complete the **Inst
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Locate the JDBC Driver)]
+[ACCORDION-BEGIN [Step 1: ](Locate the JDBC driver)]
 
 The driver (`ngdbc.jar`), which is installed as part of the SAP HANA client, is located at (unless specified otherwise during the installation):
 
@@ -197,7 +197,7 @@ Now switch to the **SYSTEMDB @ HXE (SYSTEM)** connection and run the same SQL st
 
 [ACCORDION-BEGIN [Step 5: ](Validation)]
 
-Based on the available **JDBC Connection Properties** listed in the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/109397c2206a4ab2a5386d494f4cf75e.html" target="new">online documentation</a>, provide an answer to the question below then click on **Validate**.
+Based on the available **JDBC Connection Properties** listed in the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/109397c2206a4ab2a5386d494f4cf75e.html" target="new">online documentation</a>, provide an answer to the question below then click on **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]

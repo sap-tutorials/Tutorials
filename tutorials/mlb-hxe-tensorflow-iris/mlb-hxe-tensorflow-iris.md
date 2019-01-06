@@ -38,7 +38,7 @@ source ~/tms/bin/activate
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Build and Export a TensorFlow Model)]
+[ACCORDION-BEGIN [Step 1: ](Build and קxport a TensorFlow model)]
 
 First, clone the models repository locally:
 
@@ -206,7 +206,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import a Test Dataset in SAP HANA)]
+[ACCORDION-BEGIN [Step 2: ](Import a test dataset in SAP HANA)]
 
 In order to test your model, you will need to import the test data set made available online.
 
@@ -285,7 +285,7 @@ python ~/export/iris_import_data.py \
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure and Restart TensorFlow Serving)]
+[ACCORDION-BEGIN [Step 3: ](Configure and restart TensorFlow Serving)]
 
 Now that our model is built and saved in the right format, you can adjust the TensorFlow Serving configuration and start (or restart) it.
 
@@ -435,7 +435,7 @@ python ~/export/iris_test_client.py \
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Reload the SAP HANA EML Configuration)]
+[ACCORDION-BEGIN [Step 5: ](Reload the SAP HANA EML configuration)]
 
 Now that the model is deployed and the TensorFlow Serving `ModelServer` is up and running, you will need to add the model configuration to your SAP HANA, express edition instance.
 
@@ -493,7 +493,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test the Model from SAP HANA SQLScript)]
+[ACCORDION-BEGIN [Step 6: ](Test the model from SAP HANA SQLScript)]
 
 The following SQL script will allow you to test the deployed Iris model using the test dataset uploaded before.
 

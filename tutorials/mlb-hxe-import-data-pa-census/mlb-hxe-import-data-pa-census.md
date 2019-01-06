@@ -1,6 +1,6 @@
 ---
 title: Import a Census Sample Dataset
-description: Import SAP Predictive Analytics Census Sample Dataset in your SAP HANA, express edition instance
+description: Import SAP Predictive Analytics Census Sample Dataset in your SAP HANA, express edition instance.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
@@ -95,7 +95,7 @@ CREATE TABLE PA_DATA.CENSUS (
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Download the Sample Data)]
+[ACCORDION-BEGIN [Step 1: ](Download the dample data)]
 
 Open the [SAP Predictive Analytics documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS) page in a browser and click on the **View All** for the **Sample** section.
 
@@ -152,7 +152,7 @@ You can now move to **Step 1: Import Using the IMPORT FROM SQL command**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Import Using the SAP HANA Tools for Eclipse)]
+[ACCORDION-BEGIN [Step 1: ](Import using the SAP HANA Tools for Eclipse)]
 
 You can import the data using the [SAP HANA Tools for Eclipse Import feature](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html) using the following details:
 
@@ -179,7 +179,7 @@ The source files should be mapped with the following target tables:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Import Using the IMPORT FROM SQL command)]
+[ACCORDION-BEGIN [Step 1: ](Import using the IMPORT FROM SQL command)]
 
 The dataset files should be located in: **`/usr/sap/HXE/HDB90/work/sample_census/Census`**
 
@@ -214,8 +214,6 @@ SELECT 'CENSUS' as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.CENSUS;
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Validation)]
-
-Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]

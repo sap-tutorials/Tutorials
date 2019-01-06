@@ -1,5 +1,5 @@
 ---
-title: Configure the TensorFlow integration (SAP HANA EML) with SAP HANA, express edition
+title: Configure the TensorFlow Integration (SAP HANA EML) with SAP HANA, express edition
 description: Provide details on the installation and configuration of the SAP HANA External Machine Learning Library with SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
@@ -65,7 +65,7 @@ A TensorFlow `ModelServer` (TMS) makes TensorFlow exported models accessible for
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Create a Dedicated User)]
+[ACCORDION-BEGIN [Step 1: ](Create a dedicated user)]
 
 As a best practice, it is recommended to create a dedicated user to run your TensorFlow activities.
 
@@ -93,7 +93,7 @@ sudo su -l tmsadm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Download SAP HANA Client)]
+[ACCORDION-BEGIN [Step 1: ](Download SAP HANA client)]
 
 In order to connect to your SAP HANA, express edition instances using Python, you will need to download the SAP HANA Client.
 
@@ -119,7 +119,7 @@ rm ~/clients_linux_x86_64.tgz
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Install SAP HANA HDB Client)]
+[ACCORDION-BEGIN [Step 1: ](Install SAP HANA HDB client)]
 
 The downloaded archive for the SAP HANA Client package contains more than just the SAP HANA HDB Client.
 
@@ -368,7 +368,7 @@ Your terminal prompt should now look like the following:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Install Additional Python Packages)]
+[ACCORDION-BEGIN [Step 1: ](Install additional Python packages)]
 
 In order to complete this tutorial series, you will need to install a set of Python packages.
 
