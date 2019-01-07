@@ -26,7 +26,7 @@ Before you can access data from the Cloud Connector in an application on SAP Clo
 
 1. Go to [Your SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit) | **Cloud Foundry Trial**, and navigate to your subaccount.
 
-1. The card with your subaccount information will show the sub-account name **trial** by default. If the card shows the subdomain instead of your subaccount's ID choose the flip icon:
+1. The card with your subaccount information will show the sub-account name **trial** by default. If the card shows the subdomain instead of your subaccount's ID choose the flip icon: 
 
     ![subaccount ID](step-01-Find-Trial-ID-001.png)
 

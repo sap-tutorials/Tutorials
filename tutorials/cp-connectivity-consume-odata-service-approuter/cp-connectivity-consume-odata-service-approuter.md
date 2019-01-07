@@ -19,7 +19,7 @@ time: 40
   - How to create an application router and what it is used for
   - How to troubleshoot your application router
 
-  For the overall goal to consume an OData service of an ABAP system in an application on SAP Cloud Platform you need to configure components in the ABAP system, on your Cloud Connector, and on SAP Cloud Platform (in this tutorial we cover the configuration in Cloud Foundry). The following table shows what information you need to before you can start with this tutorial:
+  For the overall goal to consume an OData service of an ABAP system in an application on SAP Cloud Platform you need to configure components in the ABAP system, on your Cloud Connector, and on SAP Cloud Platform (in this tutorial we cover the configuration in Cloud Foundry). The following table shows what information you need to before you can start with this tutorial: 
 
 |Component        | Configured Entity (Value)   |  As Shown in Tutorial              |
 |:----------------|:----------------------------|------------------------------------|
