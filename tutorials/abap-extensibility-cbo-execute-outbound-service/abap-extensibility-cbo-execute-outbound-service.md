@@ -1,13 +1,13 @@
 ---
-title: Execute an outbound service out of custom business object logic
+title: Execute an Outbound Service from Custom Business Object Logic
 description: Call an external service of SAP API Business Hub from inside the logic implementation of a custom business object.
 auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>intermediate, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
  - **Authorizations:** Your SAP S/4HANA key user needs a business role with business catalogs `Extensibility` (ID: `SAP_CORE_BC_EXT`) and `Communication Management` (ID: `SAP_CORE_BC_COM`). You need a user on SAP API Business Hub.
  - **Example Objects:** Existence of custom business object `Bonus Entitlement` as described in this [tutorial](https://blogs.sap.com/2017/02/20/part-iv-associated-business-objects-bonus-entitlement-with-plan-sales-order/) (Blog)
  - **Knowledge:** (optional) [Tutorial: Getting started with the SAP API Business Hub](https://developers.sap.com/tutorials/hcp-abh-getting-started.html)
@@ -24,8 +24,6 @@ tags: [  tutorial>intermediate, topic>abap-extensibility, topic>cloud, products>
 The example application of `Bonus Entitlement` will be enhanced by a feedback functionality. The manager's feedback will be translated automatically into English by calling the externally available service **Machine Translation API** of SAP.
 > Be aware that the example is done with SAP API Business Hub Sandbox system only. This shall only give an idea on how it works and cannot be used productively.
 
-### Time to Complete
-**15 Min**
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Excursus: Try out the service in SAP API Business Hub)]

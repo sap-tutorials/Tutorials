@@ -1,23 +1,19 @@
 ---
-title: Create the UI for a custom business object
-description: Create an own application based on a Custom Business Object and a Custom Catalog Extension
+title: Create the UI for a Custom Business Object
+description: Create an own application based on a custom business object and a custom catalog extension.
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 auto_validation: true
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Creating a Custom Business Object ](https://developers.sap.com/tutorials/abap-extensibility-cbo-create.html)
+ - **Tutorials:** [Create a Custom Business Object ](https://developers.sap.com/tutorials/abap-extensibility-cbo-create.html)
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
 
-## Next Steps
-  - [Implementing logic for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-logic.html)
-
 
 ## Details
-
 ### You will learn
 In the preceding tutorial you created a custom business object with a simple data structure and its persistence.
 To be able to work with a business object you need a user interface. In this tutorial you will
@@ -33,8 +29,6 @@ A several tutorials spanning example will show extensibility along custom Bonus 
 
 In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
-### Time to Complete
-**15 Min**
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Start Editing Custom Business Object Bonus Plan)]

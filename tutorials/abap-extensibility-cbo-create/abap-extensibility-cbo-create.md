@@ -1,22 +1,18 @@
 ---
-title: Create a custom business object
+title: Create a Custom Business Object
 description: Define the data structure and create the database persistence of a custom business object.
 auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
+time: 10
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
-
-## Next Steps
- - [Creating a UI for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-generation.html)
 
 ## Details
 ### You will learn  
-
-Create a custom business object that has a simple data structure and publish it.  At the end there will exist a database table for the business object.
+This tutorial shows you how to create a custom business object that has a simple data structure and publish it.  At the end there will exist a database table for the business object.
 
 ### Example
 
@@ -26,8 +22,6 @@ As applications are based on business objects, it all starts with custom busines
 
 In the first parts a manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
-### Time to Complete
-**10 Min**
 
 ---
 
