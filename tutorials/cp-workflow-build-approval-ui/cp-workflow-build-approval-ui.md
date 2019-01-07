@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html).
+- **Tutorials:** You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html).
 
 ## Details
 ### You will learn  
@@ -21,7 +21,7 @@ time: 15
 1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit).
 2. Choose **Neo Trial**.
 3. Select **Services** from the left-hand navigation.
-4. Search for the **Workflow** service. Then select it, and choose **SAP Web IDE for Full-Stack Development**.
+4. Search for the **Workflow** service. Then select it, and choose **SAP Web IDE Full-Stack**.
 
 [DONE]
 [ACCORDION-END]
@@ -30,7 +30,6 @@ time: 15
 
 1. In the SAP Web IDE Full-Stack, open the ``MyFirstWorkflow.workflow`` workflow file and select the **`ApproveBook`** task.
 2. Under **User Task Properties**, select **User Interface**.
-   ![Select User Interface](select-ui.png)
 3. In the **Type** field, choose **Form**.
 4. To create a new form, choose the **Create File** link.  
    ![Create File](create-file-link2.png)
@@ -65,9 +64,10 @@ time: 15
 
       - In column **Label/Title**, enter **`Price`**.
       - In column **Type**, select **Float**.
-      - In column **Context Path**, enter `**${context.price}**`.
+      - In column **Context Path**, enter **`${context.price}`**.
 
    ![Enter Row Data](enter-row-data-fields.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -94,7 +94,7 @@ time: 15
 
    ![Enter Decision Texts](create-decision-texts.png)
 
-   Don't forget to **save** the file.
+   Don't forget to **Save** the file.
 
 [DONE]
 [ACCORDION-END]

@@ -60,7 +60,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
   </li><li>Then select **Services** from the left-hand navigation.
   </li><li>Search for the **Workflow** service. Then select it, and choose **SAP Web IDE Full-Stack**.</li></ol>
 2. In the navigation area of SAP Web IDE, choose **</>** (Development), and navigate to the **Workspace** folder.
-3. Right-click the workflow file, and choose **Open With** | **Workflow Editor**.
+3. Right-click the workflow file, and choose **Workflow Editor**.
 ![Open Workflow File](open-wf-file.png)
 
 [DONE]
