@@ -1,6 +1,7 @@
 ---
-title: Implement logic for custom business object (S4/HANA Cloud, ABAP Extensibility)
+title: Implement logic for a custom business object
 description: Implement custom business object logic to control your application
+auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 ---
@@ -32,45 +33,54 @@ In the first parts a Manager wants to define business objects "Bonus Plan" for e
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Make key field Read-Only)]
-As there was no backend implementation to set the mandatory key field **`ID`** so far, we were forced to set it from the UI to be able to save instances.
-Now, as we will implement the logic to set the ID in backend and nowhere else, we will set that key field to Read-Only for the UI.
+As there was no backend implementation to set the mandatory key field **`ID`** so far, we were forced to set it from the UI to be able to save instances. Now, as we will implement the logic to set the ID in backend and nowhere else, we will set that key field to Read-Only for the UI.
 
 1. Open the business object **Bonus Plan** in Custom Business Objects application
+
 2. Start Edit Mode by executing the **Edit Draft** action.
-3. **Go to Fields and Logic**.
+
+3. Switch to **Fields** section.
+
 4. **Check** the Read-Only box for key field **`ID`**.
-![Check Read-Only box](CBO_checkReadOnly.png)
-5. Go back via the application's **Back** button.
-![Fiori Application's Back Button](AppBackButton.png)
 
+    ![Check Read-Only box](CBO_checkReadOnly.png)
 
+[DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 2: ](Enable logic implementation)]
 
-1. Still editing the custom business object **Bonus Plan**'s definition, **Check** the box for **Determination and Validation**
-![Check Determination and Validation box](CBO_checkDeterminationAndValidation.png)
-2. **Publish** the business object definition.
+1. Switch to **General Information** section.
 
-Now you are enabled to implement **determination logic** which is called **after each modification** to a Bonus Plan instance from the UI, as well as **validation logic** which is called **before each save** of an instance.
+2. **Check** the box for **Determination and Validation**
 
+    ![Check Determination and Validation box](CBO_checkDeterminationAndValidation.png)
 
+3. **Publish** the business object.
+
+Now you are enabled to implement **Determination** logic which is called **after each modification** to a Bonus Plan instance from the UI, as well as **Validation** logic which is called **before each save** of an instance.
+Only in Determination logic you are able to change custom business object data.
+[DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 3: ](Start logic implementation)]
 For **published** Custom Business Objects **without a Draft version** you can implement logic.
+1. Switch to **Logic** section.
 
-1. **Go to Fields and Logic**
-![Go to Fields and Logic](CBO_go2FieldsAndLogic_detail.png)
+![Switch to Logic section](CBO_LogicSection.png)
 2. Enter the After Modification Event Logic which is a Determination Logic.
+
 ![Enter After Modification logic](CBO_go2AfterModify.png)
 3. In the logic view you initially see the not editable empty published version.
 Click the **Create Draft** action.
+
 ![Create Draft of logic implementation](CBO_AfterModifyCreateDraft.png)
 An editable copy of the published version appears left to it. With the **Draft Version** and **Published Version** actions you can decide what coding to see.
+
 ![View Draft and/or Published Version of logic](CBO_AfterModifyDraftOrPublishedVersion.png)
-
-
-
+[DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 4: ](Implement After Modification: fix values)]
 Implement After Modification event with following fix value functionality:
 
@@ -105,7 +115,7 @@ IF bonusplan-employeeid IS NOT INITIAL.
 ENDIF.
 ```
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement After Modification: consistency check)]
@@ -135,14 +145,16 @@ ENDIF.
 * consistency check END
 ```
 
-
+[DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 6: ](Test the logic during development)]
 
 On top of the coding you can maintain runtime data for the current node structure which represents the data before running the test functionality. This data can also be saved as variant for later usages.
 
 1. Click the value help to add test data
-![Add Test Data](CBO_logicDevAddTestData.png)
+
+    ![Add Test Data](CBO_logicDevAddTestData.png)
 
 2. Enter following data
 
@@ -161,18 +173,24 @@ On top of the coding you can maintain runtime data for the current node structur
 `employeeid` `<any>` shall be the one of a sales person that created sales orders with a Net Amount of more than 3000.00 EUR in 2016 and that are completed.
 
 This will look as follows.
+
 ![Maintain Test Data](CBO_logicDevMaintainTestData.png)
 
 3. Execute the **Test** action and you can see the node data after your logic was executed.
 ![Execute Test](CBO_logicTest.png)
 You can see that your logic works as `id`, `*percentage_u` fields and `employename` are filled and `isconsistent` is 'X'.
 
+4. **Publish** the After Modification Logic.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Implement Before Save)]
+1. Being in After Modification logic you can get to Before Save Logic this way:
+- Go Back in application
+- In Tab "Logic", go to section "Determination and Validation"
 
-1. **Implement** Before Save event with following functionality
+2. **Implement** Before Save event with following functionality
 
 - If the bonus plan is consistent, it can be continued to save, if not save shall be rejected. In case of save no further processing is needed and logic can be left.
 >**Hint:** Exporting parameter valid must be set to true for save and to false for save rejection
@@ -246,11 +264,11 @@ ENDIF.
 * consistency error message  END
 ```
 
-`2.` **Publish** the Before Save Logic
+3. **Publish** the Before Save Logic
 
-
-
+[DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 8: ](Test via the UI)]
 Once ensured that both logic implementations were successfully published you can start testing the Application like an end user via the UI.
 
@@ -262,6 +280,11 @@ Once ensured that both logic implementations were successfully published you can
 6. **Enter** value `20` into field **High Bonus Percentage**
 7. **Save** the Bonus Plan. Now it will not be rejected.
 
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+
+[VALIDATE_1]
 [ACCORDION-END]
 ---
