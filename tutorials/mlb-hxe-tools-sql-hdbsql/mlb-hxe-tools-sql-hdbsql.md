@@ -1,5 +1,5 @@
 ---
-title: Use HDBSQL as a SQL query tool with SAP HANA, express edition
+title: Use HDBSQL as SQL Query Tool with SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance using the HDBSQL tool.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
@@ -17,7 +17,7 @@ SAP HANA HDBSQL is a command line tool for executing commands on SAP HANA databa
 For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 
-[ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
+[ACCORDION-BEGIN [Prerequisites: ](Download & install the SAP HANA HDB client)]
 
 Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) group.
 
@@ -108,7 +108,7 @@ DATABASE_NAME,ACTIVE_STATUS,RESTART_MODE
 
 [ACCORDION-BEGIN [Step 3: ](Validation)]
 
-Based on the available HDBSQL options listed in the [SAP HANA HDBSQL Options](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/c24d054bbb571014b253ac5d6943b5bd.html) documentation, provide an answer to the question below then click on **Validate**.
+Based on the available HDBSQL options listed in the [SAP HANA HDBSQL Options](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/c24d054bbb571014b253ac5d6943b5bd.html) documentation, provide an answer to the question below then click on **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]

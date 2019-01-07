@@ -4,12 +4,12 @@ from __future__ import print_function
 
 import sys, os, shutil, time, tempfile, errno
 
-sys.path.append(os.path.expanduser("~") + '/models/samples/core/get_started')
+sys.path.append('/home/tmsadm/models/samples/core/get_started')
 import iris_data
 import tensorflow as tf
 
-tf.app.flags.DEFINE_integer('steps'           , 10000           , 'number of training steps.')
-tf.app.flags.DEFINE_integer('batch_size'      , 100             , 'batch size.')
+tf.app.flags.DEFINE_integer('steps'           , 10000                                    , 'number of training steps.')
+tf.app.flags.DEFINE_integer('batch_size'      , 100                                      , 'batch size.')
 tf.app.flags.DEFINE_string ('export_path'     , os.path.expanduser("~") + '/export/iris' , 'export path')
 args = tf.app.flags.FLAGS
 
@@ -17,7 +17,7 @@ def main(unused_argv):
   tf.logging.set_verbosity(tf.logging.INFO)
 
   ####################################################################
-  # Begining of training section
+  # Beginning of training section
   ####################################################################
   # Get the training data
   (train_x, train_y), (test_x, test_y) = iris_data.load_data()
@@ -42,7 +42,7 @@ def main(unused_argv):
   ####################################################################
 
   ####################################################################
-  # Begining of export section
+  # Beginning of export section
   ####################################################################
   # Define the input receiver spec
   feature_spec = {

@@ -36,7 +36,7 @@ Before you can access data from the Cloud Connector in an application on SAP Clo
 
     ![User ID](step-01-Find-Trial-ID-003.png)
 
-1. Log on to the Cloud Connector administration UI and choose **Connector** | **Define Subaccount** (if you already have defined a subaccount for another purpose, choose **Connector** | **Add Subaccount**). Enter the following information:
+1. Log on to the Cloud Connector administration UI and choose **Connector** | **Define Subaccount** (if you already have defined a subaccount for another purpose, choose **Connector** | **Add Subaccount**). Enter the following information: 
 
     |  Field Name            | Value                                                                   |
     |:-----------------------|:------------------------------------------------------------------------|

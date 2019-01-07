@@ -13,7 +13,7 @@ import numpy
 import tensorflow as tf
 
 from tensorflow_serving.apis import predict_pb2
-from tensorflow_serving.apis import prediction_service_pb2
+from tensorflow_serving.apis import prediction_service_pb2_grpc
 
 from hdbcli import dbapi
 
@@ -35,7 +35,7 @@ def main(_):
     request.model_spec.name = 'flowers'
     request.model_spec.signature_name = 'serving_default'
 
-    stub = prediction_service_pb2.beta_create_PredictionService_stub(channel)
+    stub = prediction_service_pb2_grpc.PredictionServiceStub(channel._channel)
 
     connection = dbapi.connect(address=args.hxehost, port=args.hxeport, user=args.hxeusr, password=args.hxepwd)
     cursor_flowers = connection.cursor()
@@ -55,7 +55,7 @@ def main(_):
         image_data  = bytes(row['IMAGE_RAW_DATA'])
 
         request.inputs['image_blob'].CopyFrom(tf.contrib.util.make_tensor_proto(image_data, shape=[1]))
-        response = stub.Predict(request, 100)
+        response = stub.Predict(request, 1000)
 
         predicted_class_name        = response.outputs['class'].string_val[0]
         predicted_class_probability = response.outputs['probability'].float_val[0]

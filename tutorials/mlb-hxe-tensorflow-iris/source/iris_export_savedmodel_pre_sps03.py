@@ -4,12 +4,12 @@ from __future__ import print_function
 
 import sys, os, shutil, time, tempfile, errno
 
-sys.path.append(os.path.expanduser("~") + '/models/samples/core/get_started')
+sys.path.append('/home/tmsadm/models/samples/core/get_started')
 import iris_data
 import tensorflow as tf
 
-tf.app.flags.DEFINE_integer('steps'           , 10000           , 'number of training steps.')
-tf.app.flags.DEFINE_integer('batch_size'      , 100             , 'batch size.')
+tf.app.flags.DEFINE_integer('steps'           , 10000                                    , 'number of training steps.')
+tf.app.flags.DEFINE_integer('batch_size'      , 100                                      , 'batch size.')
 tf.app.flags.DEFINE_string ('export_path'     , os.path.expanduser("~") + '/export/iris' , 'export path')
 args = tf.app.flags.FLAGS
 
@@ -17,7 +17,7 @@ def main(unused_argv):
   tf.logging.set_verbosity(tf.logging.INFO)
 
   ####################################################################
-  # Begining of training section
+  # Beginning of training section
   ####################################################################
   # Get the training data
   (train_x, train_y), (test_x, test_y) = iris_data.load_data()
@@ -42,7 +42,7 @@ def main(unused_argv):
   ####################################################################
 
   ####################################################################
-  # Begining of export section
+  # Beginning of export section
   ####################################################################
   # Define the input receiver spec
   feature_spec = {
@@ -85,39 +85,39 @@ def main(unused_argv):
                 )
               ),
             'probabilities'      : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('dnn/head/predictions/probabilities:0'))
-          },
-          method_name = tf.saved_model.signature_constants.PREDICT_METHOD_NAME
-        )
-      )
+           },
+           method_name = tf.saved_model.signature_constants.PREDICT_METHOD_NAME
+         )
+       )
 
-      # remove all previous final models
-      try:
-        shutil.rmtree(args.export_path)
-      except OSError as e:
-        if e.errno != errno.EEXIST and e.errno != errno.ENOENT:
-          raise
+       # remove all previous final models
+       try:
+         shutil.rmtree(args.export_path)
+       except OSError as e:
+         if e.errno != errno.EEXIST and e.errno != errno.ENOENT:
+           raise
 
-      # save the model with proper format
-      builder = tf.saved_model.builder.SavedModelBuilder(args.export_path + "/" + str(int(round(time.time()))))
-      builder.add_meta_graph_and_variables (
-        session,
-        [tf.saved_model.tag_constants.SERVING],
-        signature_def_map = {
-            tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY : signature_def
-        },
-      )
-      # save the model with a default signature
-      builder.save(as_text=False)
+       # save the model with proper format
+       builder = tf.saved_model.builder.SavedModelBuilder(args.export_path + "/" + str(int(round(time.time()))))
+       builder.add_meta_graph_and_variables (
+         session,
+         [tf.saved_model.tag_constants.SERVING],
+         signature_def_map = {
+             tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY : signature_def
+         },
+       )
+       # save the model with a default signature
+       builder.save(as_text=False)
 
-  # remove the intermediate saved model
-  try:
-    shutil.rmtree(tmp_model_dir)
-  except OSError as e:
-    if e.errno != errno.EEXIST and e.errno != errno.ENOENT:
-      raise
-  ####################################################################
-  # End of export section
-  ####################################################################
+   # remove the intermediate saved model
+   try:
+     shutil.rmtree(tmp_model_dir)
+   except OSError as e:
+     if e.errno != errno.EEXIST and e.errno != errno.ENOENT:
+       raise
+   ####################################################################
+   # End of export section
+   ####################################################################
 
-if __name__ == '__main__':
-    tf.app.run()
+ if __name__ == '__main__':
+     tf.app.run()
