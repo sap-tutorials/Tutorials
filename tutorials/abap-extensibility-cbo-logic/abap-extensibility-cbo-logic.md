@@ -1,21 +1,17 @@
 ---
-title: Implement logic for a custom business object
-description: Implement custom business object logic to control your application
+title: Implement Logic for a Custom Business Object
+description: Implement custom business object logic to control your application.
 auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Creating a UI for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-generation.html)
+ - **Tutorials:** [Create a UI for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-generation.html)
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
-## Next Steps
-  - [Adapting the UI of a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-adaptation.html)
-
 ## Details
-
 ### You will learn  
 In the preceding tutorial you created a custom business object, its simple data structure, persistence and application UI.
 Data could only be provided by the UI. Now you'll implement logic to set some data from the backend only and to check all data of an instance.
@@ -28,8 +24,6 @@ A several tutorials spanning example will show extensibility along custom Bonus 
 
 In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
-### Time to Complete
-**20 Min**
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Make key field Read-Only)]

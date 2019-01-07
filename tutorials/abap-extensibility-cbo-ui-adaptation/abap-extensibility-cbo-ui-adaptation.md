@@ -1,21 +1,20 @@
 ---
-title: Adapt the UI of a business object
-description: Adapt the UI of a business object inside SAP S/4Hana Cloud, shown at the generated UI of a Custom Business Object
+title: Adapt the UI of a Business Object
+description: Adapt the UI of a business object inside SAP S/4HANA Cloud, shown at the generated UI of a custom business object.
 auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
+time: 10
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Creating a UI for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-generation.html)
+ - **Tutorials:** [Create a UI for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-generation.html)
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
 
 ## Details
 ### You will learn  
-
-In the preceding tutorials you created a custom business object with a simple data structure and its persistence. Afterwards you generated an UI for this business object and exposed it as a Fiori Launchpad application.
+In the preceding tutorials, you created a custom business object with a simple data structure and its persistence. Afterwards you generated an UI for this business object and exposed it as a Fiori Launchpad application.
 
 As the generated User Interfaces only lists all fields of a business object node, adapting the UI might be necessary to improve usability of it.
 
@@ -29,10 +28,8 @@ A several tutorials spanning example will show extensibility along custom Bonus 
 
 In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
-### Time to Complete
-**10 Min**
 
-
+---
 
 [ACCORDION-BEGIN [Step 1: ](Open the UI to be adapted)]
 
