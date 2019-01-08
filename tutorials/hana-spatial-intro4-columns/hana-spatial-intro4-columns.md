@@ -172,8 +172,10 @@ Presented graphically, it looks like the diagram below:
 Also note that spatial predicates were used in the query above to select only geometries of type `LineString` type and only those that are not empty.
 
 **Check your knowledge**
+
 1. Query the union aggregation of polygons only from the table.
 2. Query the union aggregation of boundaries of polygons from the table.
+
 [DONE]
 [ACCORDION-END]
 
