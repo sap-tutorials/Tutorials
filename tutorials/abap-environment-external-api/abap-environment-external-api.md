@@ -20,7 +20,7 @@ author_profile: https://github.com/julieplummer20
 
 ---
 Predefined communication scenarios allow you to, for example, exchange data between a SAP Cloud Platform system and an external system.
- A communication arrangement specifies the metadata for a communication scenario. (For more information, see [Maintain a Communication Arrangement for an Exposed Service](https://developers.sap.com/tutorials/abap-environment-communication-arrangement.html).)
+A communication arrangement specifies the metadata for a communication scenario. (For more information, see [Maintain a Communication Arrangement for an Exposed Service](https://developers.sap.com/tutorials/abap-environment-communication-arrangement.html).)
 
 You will create a new destination for an existing communication arrangement, specifying the URL for an external API, user/password, and authentication.
 You will then create a class that calls the API and displays the output from it in the console.
