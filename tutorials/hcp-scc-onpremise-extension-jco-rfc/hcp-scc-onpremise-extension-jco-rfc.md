@@ -17,7 +17,7 @@ time: 20
 
 The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
 
-It is assumed that you are using the SAP Cloud Appliance Library to get an ABAP test system plus pre-installed Cloud Connector, as described in the tutorial [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html). The overall landscape of this on-premise extension scenario is then looking like in the figure below:
+It is assumed that you are using the SAP Cloud Appliance Library to get an ABAP test system plus pre-installed Cloud Connector, as described in the tutorial [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](hcp-prepare-cal-account). The overall landscape of this on-premise extension scenario is then looking like in the figure below:
 
 ![overall landscape](architecture.png)
 

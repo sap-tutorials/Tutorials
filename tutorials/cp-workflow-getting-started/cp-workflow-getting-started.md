@@ -8,7 +8,7 @@ time: 5
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn  

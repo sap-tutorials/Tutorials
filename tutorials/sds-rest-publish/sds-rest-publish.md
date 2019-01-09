@@ -11,15 +11,11 @@ time: 15
 
 ## Prerequisites
  - **Tutorials:**  One of the following:
- - [Run and Test a streaming project](https://www.sap.com/developer/tutorials/sds-run-test.html)
- - [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
- - [Build custom Flex Operators to analyze event streams](https://www.sap.com/developer/tutorials/sds-custom-flex-operators.html)
- - [Configuring the Web Service Provider (WSP)](https://www.sap.com/developer/tutorials/sds-web-service-provider-configuration.html)
- - [Using the Streaming Web Service](https://www.sap.com/developer/tutorials/sds-streaming-web-service.html)
-
-## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
+ - [Run and Test a streaming project](sds-run-test)
+ - [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](sds-event-stream-alerts)
+ - [Build custom Flex Operators to analyze event streams](sds-custom-flex-operators)
+ - [Configuring the Web Service Provider (WSP)](sds-web-service-provider-configuration)
+ - [Using the Streaming Web Service](sds-streaming-web-service)
 
 ## Details
 ### You will learn  
