@@ -13,16 +13,8 @@
   ],
   "common": [
     {
-      "name": "iOS",
-      "value": "operating-system>ios"
-    },
-    {
-      "name": "Android",
-      "value": "operating-system>android"
-    },
-    {
-      "name": "Project (not Tutorial)",
-      "value": "tutorial:type/project"
+      "name": "ABAP Connectivity",
+      "value": "topic>abap-connectivity"
     },
     {
       "name": "ABAP Development",
@@ -61,6 +53,10 @@
       "value": "topic>mobile"
     },
     {
+      "name": "NodeJS",
+      "value": "topic>node-js"
+    },
+    {
       "name": "OData",
       "value": "topic>odata"
     },
@@ -77,36 +73,60 @@
       "value": "topic>sql"
     },
     {
-      "name": "BUILD",
-      "value": "products>build"
+      "name": "User Interface",
+      "value": "topic>user-interface"
     },
     {
       "name": "SAP API Management",
       "value": "products>sap-api-management"
     },
     {
-      "name": "SAP BusinessObjects Design Studio",
-      "value": "products>sap-businessobjects-design-studio"
+      "name": "SAP Analytics Cloud",
+      "value": "products>sap-analytics-cloud"
     },
     {
-      "name": "SAP BusinessObjects Lumira",
-      "value": "products>sap-businessobjects-lumira"
+      "name": "SAP Build",
+      "value": "products>build"
     },
     {
       "name": "SAP Cloud Platform",
       "value": "products>sap-cloud-platform"
     },
     {
-      "name": "SAP Cloud Platform ABAP Environment",
+      "name": "SAP Cloud Platform Connectivity",
+      "value": "products>sap-cloud-platform-connectivity"
+    },
+    {
+      "name": "SAP Cloud Platform Internet of Things",
+      "value": "products>sap-cloud-platform-internet-of-things"
+    },
+    {
+      "name": "SAP Cloud Platform Portal",
+      "value": "products>sap-cloud-platform-portal"
+    },
+    {
+      "name": "SAP Cloud Platform SDK for Android",
+      "value": "products>sap-cloud-platform-sdk-for-android"
+    },
+    {
+      "name": "SAP Cloud Platform SDK for iOS",
+      "value": "products>sap-cloud-platform-sdk-for-ios"
+    },
+    {
+      "name": "SAP Cloud Platform for the Cloud Foundry environment",
+      "value": "products>sap-cloud-platform-for-the-cloud-foundry-environment"
+    },
+    {
+      "name": "SAP Cloud Platform, ABAP Environment",
       "value": "products>sap-cloud-platform--abap-environment"
     },
     {
-      "name": "SAP Cloud Platform Predictive service",
-      "value": "products>sap-cloud-platform-predictive-service"
+      "name": "SAP Cloud Platform, SAP HANA service",
+      "value": "products>sap-cloud-platform--sap-hana-service"
     },
     {
-      "name": "SAP Cloud Platform Connectivity",
-      "value": "products>sap-cloud-platform-connectivity"
+      "name": "SAP Data Hub",
+      "value": "products>sap-data-hub"
     },
     {
       "name": "SAP Fiori",
@@ -125,6 +145,10 @@
       "value": "products>sap-hana-dynamic-tiering"
     },
     {
+      "name": "SAP HANA, geospatial content",
+      "value": "products>sap-hana-geospatial-content"
+    },
+    {
       "name": "SAP HANA streaming analytics",
       "value": "products>sap-hana-streaming-analytics"
     },
@@ -137,6 +161,14 @@
       "value": "products>sap-hana-studio"
     },
     {
+      "name": "SAP Hybris as a Service on SAP Cloud Platform",
+      "value": "products>sap-hybris-as-a-service-on-sap-cloud-platform"
+    },
+    {
+      "name": "SAP IoT Application Enablement",
+      "value": "products>sap-iot-application-enablement"
+    },
+    {
       "name": "SAP Jam",
       "value": "products>sap-jam"
     },
@@ -145,12 +177,24 @@
       "value": "products>sap-jam-collaboration"
     },
     {
-      "name": "SAP Vora",
-      "value": "products>sap-vora"
+      "name": "SAP Leonardo",
+      "value": "products>sap-leonardo"
     },
     {
-      "name": "SAP Screen Personas",
-      "value": "products>sap-screen-personas>sap-screen-personas"
+      "name": "SAP Leonardo Machine Learning Foundation",
+      "value": "products>sap-leonardo-machine-learning-foundation"
+    },
+    {
+      "name": "SAP Lumira",
+      "value": "products>sap-lumira"
+    },
+    {
+      "name": "SAP Predictive service",
+      "value": "products>sap-predictive-service"
+    },
+    {
+      "name": "SAP RAD by Mendix",
+      "value": "products>sap-rad-by-mendix"
     },
     {
       "name": "SAP S/4HANA",
@@ -161,8 +205,20 @@
       "value": "products>sap-s-4hana-cloud-sdk"
     },
     {
+      "name": "SAP Screen Personas",
+      "value": "products>sap-screen-personas>sap-screen-personas"
+    },
+    {
       "name": "SAP SQL Anywhere",
       "value": "products>data-management>sap-sql-anywhere"
+    },
+    {
+      "name": "SAP Translation Hub",
+      "value": "products>sap-translation-hub>sap-translation-hub"
+    },
+    {
+      "name": "SAP Vora",
+      "value": "products>sap-vora"
     },
     {
       "name": "SAP Web IDE",
@@ -173,16 +229,24 @@
       "value": "products>sap-web-ide-plug-ins"
     },
     {
-      "name": "SAP Translation Hub",
-      "value": "products>sap-translation-hub>sap-translation-hub"
+      "name": "SAP Web IDE, hybrid app toolkit add-on",
+      "value": "products>sap-web-ide-hybrid-app-toolkit-add-on"
     },
     {
-      "name": "Sybase ASE",
-      "value": "products>sybase-adaptive-server-enterprise"
+      "name": "SAPUI5",
+      "value": "products>sapui5"
     },
     {
       "name": "YaaS",
       "value": "products>sap-hybris-as-a-service-on-sap-cloud-platform"
+    },
+    {
+      "name": "iOS",
+      "value": "operating-system>ios"
+    },
+    {
+      "name": "Android",
+      "value": "operating-system>android"
     }
   ]
 }
