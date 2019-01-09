@@ -158,7 +158,7 @@ The rest of the fields in this step are related to places in the actual worklist
 
 What's special about this step in the wizard is that the choices for each of the rest of the fields are determined from the SAP Web IDE's automatic interpretation of the OData metadata document.
 
-First, the choices for the **Object Collection** field are the entity sets defined in the metadata: `Alphabetical_list_of_products`, `Categories`, `Category_Sales_for_1997`, and so on. Choose **`Products`**.  
+First, the choices for the **Object Collection** field are the entity sets defined in the metadata: `Alphabetical_list_of_products`, `Categories`, `Category_Sales_for_1997`, and so on. Choose **`Products`**.
 
 Following this, the value of `ProductID` is automatically inserted into the **Object Collection ID** field. This is because the `Product` entity type, upon which the selected `Products` entity set is based, has `ProductID` specified as the key property.
 
@@ -274,9 +274,9 @@ In this screenshot you can see three:
 
 - a call to retrieve the first 20 entries in the `Products` entity set, via a combination of the system query options `$skip=0` and `$top=20`. You can also see that the `$orderby` system query option is being used; this is caused by the `sorter` specification in the binding of the `Products` entity to the Table control's "items" aggregation.
 
-> If you want to investigate this `sorter` specification in the "items" binding, look in the `Worklist.view.xml` file and search for the `<Table>` XML element.
+> If you want to investigate this `sorter` specification in the "items" binding, look in the `Worklist.view.xml` file (open it using the context menu to select the Code Editor rather than the Layout Editor) and search for the `<Table>` XML element.
 
-Can you guess what will happen if you press the **More** button at the bottom of the products display? 
+Can you guess what will happen if you press the **More** button at the bottom of the products display?
 
 Do it now.
 
