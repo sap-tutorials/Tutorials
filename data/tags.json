@@ -233,14 +233,6 @@
       "value": "products>sap-web-ide-hybrid-app-toolkit-add-on"
     },
     {
-      "name": "SAPUI5",
-      "value": "products>sapui5"
-    },
-    {
-      "name": "YaaS",
-      "value": "products>sap-hybris-as-a-service-on-sap-cloud-platform"
-    },
-    {
       "name": "iOS",
       "value": "operating-system>ios"
     },
