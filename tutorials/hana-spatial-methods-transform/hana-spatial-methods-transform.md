@@ -1,6 +1,8 @@
 ---
 title: Transformation methods
 description: Transformation methods transform a geometry into some other geometry
+auto_validation: true
+time: 15
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
@@ -15,9 +17,6 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ## Details
 ### You will learn  
 You will learn about a number of methods transforming one geometries into another.
-
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -105,6 +104,7 @@ select
  order by 1 asc;
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Envelope)]
@@ -152,6 +152,7 @@ Combine returned SVG outputs into one and modify drawing parameters to display i
 
 ![Boundaries visualizations](trans80.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Convex hull)]
@@ -209,6 +210,7 @@ For polygons:
 
 ![Convex hull for polygons](trans110.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Buffer)]
@@ -254,11 +256,10 @@ select
 
 ![Buffer SVG for different geometry types](trans130.png)
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 ### Optional
 - You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/7a13f280787c10148dc893063dfed1c4.html). Make sure you review documentation for the version of SAP HANA you run.
 
-
 ---
-

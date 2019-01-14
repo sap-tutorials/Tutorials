@@ -1,9 +1,9 @@
 ---
-title: Enable SAP Cloud Platform Mobile Service for Development and Operations
-description: Enable SAP Cloud Platform mobile service for development and operations.
+title: Enable SAP Cloud Platform Mobile Services
+description: Learn how to enable SAP Cloud Platform Mobile Services within a trial SAP Cloud Platform account and how to open the Mobile Services cockpit.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android ]
 time: 5
 ---
 ## Prerequisites  
@@ -11,7 +11,7 @@ time: 5
 
 ## Details
 ### You will learn  
-In this tutorial, you will enable and configure SAP Cloud Platform mobile service for development and operations in your trial account.  Once configured, you can use mobile services to run native iOS apps on SAP Cloud Platform
+In this tutorial, you will enable SAP Cloud Platform Mobile Services in your NEO trial account.  Once it is enabled, you can use the features of Mobile Services in your SAP Cloud Platform SDK for iOS and Android apps.
 
 
 ---
@@ -20,12 +20,18 @@ In this tutorial, you will enable and configure SAP Cloud Platform mobile servic
 
 Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and log on.
 
+Click on Neo Trial.
+
+![Neo Trial](neo-trial.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Navigate to SAP Cloud Platform mobile service for development and operations)]
+[ACCORDION-BEGIN [Step 2: ](Navigate to SAP Cloud Platform Mobile Services)]
 
-From the SAP Cloud Platform Cockpit page, click **Services** in the navigation bar, scroll down until you see the Mobile Services group then click on the **Development & Operations** tile.
+From the SAP Cloud Platform Cockpit page, click **Services** in the navigation bar, scroll down until you see the Mobile group then click on the **Mobile Services** tile.
+
+![Mobile Group](mobile-group.png)
 
 [DONE]
 [ACCORDION-END]
@@ -40,9 +46,13 @@ If **Mobile Services** is not enabled, click the blue **Enable** button and wait
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Finish)]
+[ACCORDION-BEGIN [Step 4: ](Open the Management Cockpit)]
 
-Return to the cockpit by clicking on your User ID "breadcrumb" link near the top left of the browser window.
+Click on **Go to Service** to open the Mobile Services Management Cockpit.
+
+![Go to Service](go-to-service.png)
+
+![Management Cockpit](management-cockpit.png)
 
 [DONE]
 [ACCORDION-END]

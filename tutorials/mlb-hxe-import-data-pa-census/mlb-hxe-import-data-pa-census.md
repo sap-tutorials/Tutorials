@@ -95,7 +95,7 @@ CREATE TABLE PA_DATA.CENSUS (
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Download the dample data)]
+[ACCORDION-BEGIN [Step 1: ](Download the sample data)]
 
 Open the [SAP Predictive Analytics documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS) page in a browser and click on the **View All** for the **Sample** section.
 
