@@ -1,8 +1,8 @@
 ---
 title: Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK
 description: The following steps will explain how to create the very first Hello World example on Cloud Foundry using the SAP S/4HANA Cloud SDK.
-primary_tag: products>sap-s-4hana
-tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>java ]
+primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [ tutorial>intermediate, topic>cloud, topic>java, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
@@ -38,8 +38,7 @@ In order to deploy applications on `SAP Cloud Foundry` you need to provide `cf C
 
   - for EU: `https://api.cf.eu10.hana.ondemand.com`
   - for US EAST: `https://api.cf.us10.hana.ondemand.com`
-  - for US CENTRAL: `https://api.cf.us30.hana.ondemand.com`
-
+  - for US WEST (beta): `https://api.cf.us20.hana.ondemand.com`
 
 Now enter the following commands (in this case for the EU region):
 
