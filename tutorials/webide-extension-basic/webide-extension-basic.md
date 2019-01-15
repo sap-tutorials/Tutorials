@@ -14,10 +14,13 @@ time: 15
 ## Details
 ### You will learn  
   - How to create a basic SAP Web IDE extension project for adding functionality to SAP Web IDE or for use in a tutorial.
+  - How to test the new extension within SAP Web IDE.
 
 You use an extension to bundle and deliver plugins, since one extension may be composed of several plugins in order to provide a certain functionality. An extension to be deployed to SAP Cloud Platform is an application created with a multi-target application (MTA) project.
 
 You'll start by creating an extension project that contains a single plugin. You'll use the **SAP Web IDE Extension (MTA Project)** template, which generates basic extension and plugin structures in your SAP Web IDE Workspace.
+
+> Use Git for version control and environments having multiple developers. For more information, see [Commit your project files to your SAP Cloud Platform Git repository](https://developers.sap.com/tutorials/hcp-webide-commit-git.html).
 
 ---
 
@@ -77,16 +80,16 @@ A new SAP Web IDE extension project folder now appears in your workspace.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test the plugin)]
+[ACCORDION-BEGIN [Step 3: ](Test the extension)]
 In the Workspace, right-click the **`plugin.json`** file and choose **Run > Run As SAP Web IDE Extension**. SAP Web IDE opens in a new browser tab called **Debug Mode**.
 
 ![Run extension](step3-run.png)
 
-In the new browser tab, use the plugin by going to the **Tools** menu and selecting **Sample > Hello World**. A dialog opens with a message.
+In the new browser tab, use the extension by going to the **Tools** menu and selecting **Sample > Hello World**. A dialog opens with a message.
 
 ![Test extension](step3-test.png)
 
-You can now proceed to the tutorial for building and deploying your new SAP Web IDE extension.
+You can now proceed to the tutorial: [Build and Deploy an SAP Web IDE Extension (MTA Project)](https://developers.sap.com/tutorials/webide-extension-build.html).
 
 [DONE]
 [ACCORDION-END]
