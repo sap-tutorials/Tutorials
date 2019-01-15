@@ -1,8 +1,8 @@
 ---
 title: Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK
 description: The following steps will explain how to create the very first Hello World example on Cloud Foundry using the SAP S/4HANA Cloud SDK.
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
-tags: [ tutorial>intermediate, topic>cloud, topic>java, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
