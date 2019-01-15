@@ -32,7 +32,9 @@ The service execution requires the following details provided using the request 
 
 The service will return a JSON response that includes the original input text with the associated translations.
 
-For more details, you can check the [Inference Service for Machine Translation on the SAP API Business Hub](https://api.sap.com/api/translation_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Machine Translation on the SAP API Business Hub](https://api.sap.com/api/translation_api/resource).
 
 [DONE]
 [ACCORDION-END]

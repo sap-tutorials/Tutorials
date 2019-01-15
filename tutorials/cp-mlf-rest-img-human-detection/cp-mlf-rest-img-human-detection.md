@@ -38,10 +38,9 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the bounding boxes coordinates for the identified humans.
 
-For more details, you can check the following links:
+For more details, you can check the following link:
 
  - [Inference Service for Human Detection on the SAP API Business Hub](https://api.sap.com/api/human_detection_api/resource)
- - [Swagger documentation](https://mlftrial-human-detection.cfapps.eu10.hana.ondemand.com)
 
 [DONE]
 [ACCORDION-END]

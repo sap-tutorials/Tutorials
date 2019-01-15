@@ -44,7 +44,9 @@ A series of settings can also be provided as part of the form data (named ***opt
 
 The service will return a JSON response that includes the categories predictions along with a score.
 
-For more details, you can check the [Inference Service for Topic Detection on the SAP API Business Hub](https://api.sap.com/api/topic_detection_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Topic Detection on the SAP API Business Hub](https://api.sap.com/api/topic_detection_api/resource).
 
 [DONE]
 [ACCORDION-END]

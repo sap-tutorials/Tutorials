@@ -38,10 +38,9 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the bounding boxes coordinates for the identified objects.
 
-For more details, you can check the following links:
+For more details, you can check the following link:
 
  - [Inference Service for Object Detection on the SAP API Business Hub](https://api.sap.com/api/object_detection_api/resource)
- - [Swagger documentation](https://mlftrial-retrain-od-inference.cfapps.eu10.hana.ondemand.com)
 
 [DONE]
 [ACCORDION-END]

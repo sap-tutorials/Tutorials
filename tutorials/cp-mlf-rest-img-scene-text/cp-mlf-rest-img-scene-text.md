@@ -44,7 +44,9 @@ The input file is provided using form data (as an element named ***files*** in t
 
 The service will return a JSON response that includes the detected texts within the scene along with the bounding box coordinates.
 
-For more details, you can check the [Inference Service for Scene Text Recognition on the SAP API Business Hub](https://api.sap.com/api/scene_text_recognition_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Scene Text Recognition on the SAP API Business Hub](https://api.sap.com/api/scene_text_recognition_api/resource).
 
 [DONE]
 [ACCORDION-END]

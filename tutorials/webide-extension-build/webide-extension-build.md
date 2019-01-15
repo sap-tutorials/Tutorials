@@ -20,7 +20,7 @@ time: 20
 
 You use an extension to bundle and deliver plugins, since one extension may be composed of several plugins in order to provide a certain functionality. Each extension contains a `package.json` file with all the extension information and included plugins.
 
-You need to deploy your extension to the Cloud Foundry environment on SAP Cloud Platform in order to display it in the list of all the available external extensions. This operation also automatically activates your new extension on SAP Cloud Platform.
+You need to deploy your extension to the Cloud Foundry environment or Neo on SAP Cloud Platform in order to display it in the list of all the available external extensions. This operation also automatically activates your new extension on SAP Cloud Platform.
 
 ---
 
@@ -37,9 +37,8 @@ You need to deploy your extension to the Cloud Foundry environment on SAP Cloud 
 
     ![Cloud Foundry settings](step1-cf-settings.png)
 
-3. Choose **Install Builder** or **Reinstall Builder** if you already have a builder installed. It may take a few minutes for the builder to be installed.
+3. Choose **Install Builder** if you have no builder installed, or if the **Reinstall Builder** button appears, there is no need to install one. It may take a few minutes for the builder to be installed.
 
-    > Perform these steps for each of your spaces. This needs to be done only once for each space.
 
 4. Choose **Save**, right-click your project folder and then choose **Build > Build**.
 
@@ -66,9 +65,9 @@ You need to deploy your extension to the Cloud Foundry environment on SAP Cloud 
 
     For more information, see [Application Router Configuration Syntax](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c103fb414988447ead2023f768096dcc.html).
 
-After a few moments, the `mta_archives` folder is created.
+    After a few moments, the `mta_archives` folder is created.
 
-![MTA archives folder](step1-mta-archives-folder.png)
+    ![MTA archives folder](step1-mta-archives-folder.png)
 
 [DONE]
 [ACCORDION-END]
@@ -165,6 +164,10 @@ In this step, you enable your new extension on the SAP Web IDE **Features (Exten
 3. On the **Features (Extensions)** page, navigate to the `myextension` tile, click the button to enable it, and then choose **Save**.
 
     ![Enable my extension](step4-enable-myextension.png)
+
+You can now see that the new extension functionality is implemented in your SAP Web IDE.
+
+> If you want to remove the new extension functionality, simply use this toggle button to turn it off.
 
 [VALIDATE_4]
 [ACCORDION-END]
