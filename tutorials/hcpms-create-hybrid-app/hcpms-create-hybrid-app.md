@@ -3,25 +3,20 @@ title: Create a hybrid app in SAP Cloud Platform mobile services for development
 description: Learn how to create a hybrid app definition in SAP Cloud Platform mobile services for development and operations
 primary_tag: topic>mobile
 tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate]
+time: 5
 ---
 ## Prerequisites  
-- **Proficiency:** Intermediate
 - **Tutorials:**
-- [Enable SAP Cloud Platform mobile services for development and operations](https://developers.sap.com/tutorials/hcpms-enable-mobile-services.html)
+- [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
 - You must have completed at least the three tutorials below in the Web IDE series:  
 - [Create a Destination on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-destination.html)
 - [Build an app from an SAP Web IDE template](https://developers.sap.com/tutorials/hcp-template-mobile-web-app.html)
 - [Deploy your mobile web app to SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-deploy-mobile-web-app.html)
 
-## Next Steps
-- [Configure an SAP Web IDE project for hybrid builds](https://developers.sap.com/tutorials/hcpms-webide-hybrid-config.html)
-
 ## Details
 ### You will learn  
 In this tutorial, you will learn how to create (or define) an app in SAP Cloud Platform mobile services for development and operations. This process is very similar to to the creation of a Destination in SAP Cloud Platform, and allows your Development & Operations instance know how to handle incoming application requests (registration, authentication and data).
 
-### Time to Complete
-**5 Min**.
 
 ---
 
@@ -111,4 +106,3 @@ You have successfully created the application in Development & Operations. Click
 
 
 [ACCORDION-END]
-

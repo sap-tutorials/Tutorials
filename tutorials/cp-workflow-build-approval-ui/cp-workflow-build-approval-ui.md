@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html).
+- **Tutorials:** You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html).
 
 ## Details
 ### You will learn  

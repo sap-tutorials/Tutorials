@@ -136,7 +136,7 @@ The SAP Jam initial welcome page is displayed.
 To access the developer support communities, where you can post your questions, comments, and solutions for SAP Cloud Platform and SAP Jam integrations and development, click the following links:
 
 - [SAP Cloud Platform Developer Center](https://www.sap.com/community/tag.html?id=01200615320800003694)
-- [SAP Jam Collaboration Developer Community](https://www.sap.com/community/topic/jam-collaboration.html)
+- [SAP Jam Collaboration Developer Community](https://www.sap.com/community/topics/jam-collaboration.html)
 
 
 [ACCORDION-END]

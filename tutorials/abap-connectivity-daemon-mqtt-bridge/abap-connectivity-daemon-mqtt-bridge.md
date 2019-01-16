@@ -69,7 +69,7 @@ Finally, **activate your AMC Application** by pressing **`Ctrl+F3`**.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 3: ](Implement ABAP Daemon events)]
 
->The implementation of the events `ON_ACCEPT`, `ON_START` and `ON_STOP` is based on the tutorial [**Create a Simple ABAP Daemon**](http://www.sap.com?replacelink). If you need further information regarding these events, check out the tutorial or take a look at the [official documentation](https://help.sap.com/viewer/753088fc00704d0a80e7fbd6803c8adb/1709.001/en-US/311af9b769d84fffa7b7384bae27109c.html).
+>The implementation of the events `ON_ACCEPT`, `ON_START` and `ON_STOP` is based on the tutorial [**Create a Simple ABAP Daemon**](abap-connectivity-daemon-simple). If you need further information regarding these events, check out the tutorial or take a look at the [official documentation](https://help.sap.com/viewer/753088fc00704d0a80e7fbd6803c8adb/1709.001/en-US/311af9b769d84fffa7b7384bae27109c.html).
 
 Replace the empty `ON_ACCEPT` method of your daemon class with the following code. This checks the call stack for whether the program is authorized to start the daemon.
 ```ABAP

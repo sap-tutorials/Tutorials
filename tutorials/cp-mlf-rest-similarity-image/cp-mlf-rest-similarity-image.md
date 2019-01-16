@@ -38,7 +38,9 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the vector of features for the associated image.
 
-For more details, you can check the [Inference Service for Image Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/img_feature_extraction_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Image Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/img_feature_extraction_api/resource).
 
 [DONE]
 [ACCORDION-END]

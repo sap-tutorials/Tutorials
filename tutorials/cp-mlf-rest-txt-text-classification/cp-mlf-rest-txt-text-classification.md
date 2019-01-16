@@ -27,7 +27,9 @@ The input text is provided using form data (as an element named ***texts*** in t
 
 The service will return a JSON response that includes the categories predictions along with a score.
 
-For more details, you can check the [Inference Service for Text Classification on the SAP API Business Hub](https://api.sap.com/api/text_classifier_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Text Classification on the SAP API Business Hub](https://api.sap.com/api/text_classifier_api/resource).
 
 [DONE]
 [ACCORDION-END]

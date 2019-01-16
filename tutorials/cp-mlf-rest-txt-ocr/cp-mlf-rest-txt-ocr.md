@@ -56,7 +56,9 @@ A series of settings can also be provided as part of the form data (named ***opt
 
 The service will return a JSON response that includes the detected texts within the file in either text or `hOCR` format.
 
-For more details, you can check the [Inference Service for Optical Character Recognition (OCR) on the SAP API Business Hub](https://api.sap.com/api/ocr_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Optical Character Recognition (OCR) on the SAP API Business Hub](https://api.sap.com/api/ocr_api/resource).
 
 [DONE]
 [ACCORDION-END]
