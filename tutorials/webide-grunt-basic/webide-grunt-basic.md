@@ -36,6 +36,9 @@ For more information, see <https://docs.npmjs.com/files/npmrc>.
 
 
 
+
+
+
 ### Time to Complete
 **10 Min**
 
@@ -54,7 +57,7 @@ In the file enter the following code:
   "description": "Grunt build",
   "private": true,
   "devDependencies": {
-      "@sap/grunt-sapui5-bestpractice-build": "1.3.62"
+      "@sap/grunt-sapui5-bestpractice-build": "1.3.64"
    }
 }
 ```
