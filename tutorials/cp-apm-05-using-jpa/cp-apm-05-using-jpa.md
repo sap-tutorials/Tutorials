@@ -103,7 +103,7 @@ In order to have JPA classes generated automatically for all the entities define
     			<plugin>
     				<groupId>com.sap.cloud.servicesdk.csn2jpa</groupId>
     				<artifactId>csn2jpa-maven-plugin</artifactId>
-    				<version>1.4.0</version>
+    				<version>1.4.1</version>
     				<executions>
     					<execution>
     						<phase>generate-resources</phase>
@@ -125,7 +125,7 @@ In order to have JPA classes generated automatically for all the entities define
     			[...]
     ```
 
-    > The CSN2JPA plugin is required in the build of the application to automatically generate the JPA classes. The latest version of `csn2jpa-maven-plugin` can be found in the [Maven Central Repository](https://search.maven.org).
+    > The CSN2JPA plugin is required in the build of the application to automatically generate the JPA classes. In the code sample, you can see that the version number of `csn2jpa-maven-plugin` is 1.4.1. The latest version of `csn2jpa-maven-plugin` can be found in the [Maven Central Repository](https://search.maven.org). Accordingly, verify and update the version number of `csn2jpa-maven-plugin` in `pom.xml`.
 
 6. In order to actually execute the JPA operations, add EclipseLink to the dependencies section of `pom.xml`.
 
