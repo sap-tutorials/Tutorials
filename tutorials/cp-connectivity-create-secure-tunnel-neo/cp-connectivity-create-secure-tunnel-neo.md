@@ -3,7 +3,7 @@ title: Connect an ABAP System with SAP Cloud Platform Using a Secure Tunnel (Neo
 description: Set up your SAP Cloud Platform account (Neo) and the Cloud Connector to establish a secure tunnel between SAP Cloud Platform and the Appplication Server ABAP in your system landscape.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, topic>abap-connectivity ]
 time: 15
 ---
 
@@ -36,7 +36,7 @@ Before you can access data from the Cloud Connector in an application on SAP Clo
 
     ![User ID](step-01-Find-Trial-ID-003.png)
 
-1. Log on to the Cloud Connector administration UI and choose **Connector** | **Define Subaccount** (if you already have defined a subaccount for another purpose, choose **Connector** | **Add Subaccount**). Enter the following information: 
+1. Log on to the Cloud Connector administration UI and choose **Connector** | **Define Subaccount** (if you already have defined a subaccount for another purpose, choose **Connector** | **Add Subaccount**). Enter the following information:
 
     |  Field Name            | Value                                                                   |
     |:-----------------------|:------------------------------------------------------------------------|

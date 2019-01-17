@@ -1,6 +1,6 @@
 ---
 title: Enable and configure (IoT for Neo)
-description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform
+description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform. Please note that THIS SERVICE HAS BEEN DISCONTINUED in Trial and that this tutorial is applicable only to those who have already activated the service earlier.
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
 
@@ -38,6 +38,10 @@ Go to the [SAP Cloud Platform trial edition](https://account.hanatrial.ondemand.
 [ACCORDION-BEGIN [Step 2: ](Enable IoT service)]
 
 Once you log in, click on **Services** in the left-hand navigation bar, scroll down to find **Internet of Things** tile and click on it.
+
+> Please note that THIS SERVICE HAS BEEN DISCONTINUED, and will be available only to those who have activated it earlier!
+
+> If you are new to IoT with SAP and would like to learn more, please check [IoT Application Enablement](https://developers.sap.com/topics/iot-application-enablement.html) product page and tutorials there.
 
 ![Services](p6-2.png)
 
