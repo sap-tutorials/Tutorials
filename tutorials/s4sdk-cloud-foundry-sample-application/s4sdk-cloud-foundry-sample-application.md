@@ -38,7 +38,8 @@ In order to deploy applications on `SAP Cloud Foundry` you need to provide `cf C
 
   - for EU: `https://api.cf.eu10.hana.ondemand.com`
   - for US EAST: `https://api.cf.us10.hana.ondemand.com`
-  - for US WEST (beta): `https://api.cf.us20.hana.ondemand.com`
+  - for US CENTRAL: `https://api.cf.us30.hana.ondemand.com`
+
 
 Now enter the following commands (in this case for the EU region):
 

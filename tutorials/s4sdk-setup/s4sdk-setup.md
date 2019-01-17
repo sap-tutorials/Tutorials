@@ -9,11 +9,16 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Prerequisites  
  - **Proficiency:** intermediate
 
+## Next Steps
+Choose your next step depending on whether you would like to deploy to Cloud Foundry or Neo:
+  - **Tutorial for Cloud Foundry:** [Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html)
+  - **Tutorial for Neo:** [Create a sample application on SCP Neo using SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html)
+
 ## Details
 For a complete overview visit the [SAP S/4HANA Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
 ### You will learn  
-In this tutorial, you will go through the steps required to install the [SDK](https://www.sap.com/germany/developer/topics/s4hana-cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
+In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/s4hana-cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
 
 
 ### Time to Complete
@@ -109,3 +114,10 @@ To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users
 After finishing these steps, you are ready to start the development of your SAP Cloud Platform applications with SAP S/4HANA Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
 
 [ACCORDION-END]
+
+---
+
+### Additional Information
+Choose your next step depending on whether you would like to deploy to Cloud Foundry or Neo:
+  - **Tutorial for Cloud Foundry:** [Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html)
+  - **Tutorial for Neo:** [Create a sample application on SCP Neo using SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html)
