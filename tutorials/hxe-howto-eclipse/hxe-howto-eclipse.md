@@ -1,6 +1,6 @@
 ---
 title: How to download and install the HANA Eclipse plugin
-description: Provide details on the install the HANA Eclipse Plugin and setup for using Eclipse to connect to HANAExpress.
+description: Provide details on the install the HANA Eclipse Plugin and setup for using Eclipse to connect to SAP HANA, express edition.
 primary_tag: products>sap-hana\, express-edition
 tags: [  tutorial>beginner, products>sap-hana\, express-edition ]
 ---
@@ -8,11 +8,9 @@ tags: [  tutorial>beginner, products>sap-hana\, express-edition ]
 - Proficiency: beginner
 - Setup: Eclipse Mars or Neon version are expected to be installed and running before starting this tutorial to add the HANA Plugin.
 
-## Next Steps
-- [Go to tutorials](http://developers.sap.com/tutorials.html)
-
 ## How-To Details
-Provides instruction on how to install and update the SAP HANA Tools plugin for Eclipse and connect `HANAExpress`.
+Provides instruction on how to install and update the SAP HANA Tools plugin for Eclipse and connect to SAP HANA, express edition
+**Important**: The plugin for Eclipse supports development with XS Classic, which has been [deprecated as of SAP HANA 2.0 SPS02](https://help.sap.com/viewer/42668af650f84f9384a3337bcd373692/2.0.02/en-US/6c63b22412d04b5d9fbe46ab39b7939d.html). The tools have been replaced with web-based tools in XS Advanced.
 
 ### Time to Complete
 **10 Min**.
@@ -20,6 +18,14 @@ Provides instruction on how to install and update the SAP HANA Tools plugin for 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Install development tools)]
+
+> ##Important:
+> The functionality covered by the Eclipse plugin has been replaced with web tools in XS Advanced.
+> Please be aware that the XS Classic has been [**deprecated** as of SAP HANA 2.0 SPS02](https://help.sap.com/viewer/42668af650f84f9384a3337bcd373692/2.0.02/en-US/6c63b22412d04b5d9fbe46ab39b7939d.html).
+>
+> If you are getting started or learning SAP HANA development, you should start [exploring the new tools in XS Advanced](https://developers.sap.com/tutorials/xsa-explore-basics.html).
+>
+> You can also refer to [this video](https://www.youtube.com/watch?v=2_P6jcbFzeo&index=2&list=PLoc6uc3ML1JR38-V46qhmGIKG07nXwO6X) for updated information about tooling.
 
 In Eclipse, choose in the menu bar Help > Install New Software...
 
@@ -131,4 +137,3 @@ Confirm connection as shown below:
 
 
 [ACCORDION-END]
-
