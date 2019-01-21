@@ -3,7 +3,9 @@ sap.ui.define([
 	"sap/ui/Device",
 	"demo/sapui5ml-img-similarityscoring/model/models",
 	/* for the JSZip library    */
-	"demo/sapui5ml-img-similarityscoring/libs/jszip.min"
+	"demo/sapui5ml-img-similarityscoring/libs/jszip.min",
+	/* for the FileSaver library    */
+	"demo/sapui5ml-img-similarityscoring/libs/FileSaver.min"
 ], function (UIComponent, Device, models) {
 	"use strict";
 
