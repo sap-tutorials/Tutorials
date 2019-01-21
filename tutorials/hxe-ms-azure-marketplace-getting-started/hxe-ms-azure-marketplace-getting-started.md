@@ -11,9 +11,10 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
+- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Write your [first application using advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html) or check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
+- **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/canada/tutorials/hxe-cj1-download-sql-client.html). Alternatively, use a plugin for Eclipse to connect to your SAP HANA, express edition [system database instance](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database](https://developers.sap.com/tutorials/hxe-gcp-eclipse-tenant-connect.html)
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
-- **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://developers.sap.com/tutorials/hxe-gcp-eclipse-tenant-connect.html)
-- **Additional languages?**: Build applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
+
 
 ## Details
 ### You will learn  
@@ -164,11 +165,11 @@ Open a **new SSH session** and log in with user `hxeadm`.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7 (Optional): ](Create a development user)]
+[ACCORDION-BEGIN [Step 7 : ](OPTIONAL - Create a development user)]
 
 It is always safe to create a development user and even make a copy of the SYSTEM user to use as an administrator in case you somehow lock yourself out.
 
-In a new SSH console, switch to the user `hxeadm` and connect to the database as follows:
+In a new SSH console, switch to the user `hxeadm` and connect to the SYSTEM database as follows:
 
 ```SSH
 sudo su - hxeadm
@@ -180,13 +181,22 @@ Enter the master password you chose at setup. When the `hdbsql` command prompt i
 
 ```SQL
 CREATE USER WORKSHOP_01 PASSWORD <password> NO FORCE_FIRST_PASSWORD_CHANGE ;
-
-CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::EditorDeveloper','WORKSHOP_01');
-CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper','WORKSHOP_01');
 ```
->Note: You may need to add additional roles or permissions depending on your development needs
+>You may need to add additional roles or permissions depending on your goals
 
-![Launcher](14.png)
+It is recommended that you use the tenant database for development.
+
+> ## Important
+>&nbsp;
+>
+> SAP HANA supports multiple databases, isolated from each other, in the same environment. This concept is known as multi-tenancy. There is one database, the system database, that has limited SQL capabilities and is used to perform administration tasks over the contained databases, called tenants. Tenant databases have all of the SQL capabilities enabled. SAP HANA, express edition, brings one default first tenant called `HXE`.
+
+You can use the following command to connect to the first tenant.
+
+```SSH
+hdbsql -i 90 -d HXE -u SYSTEM
+```
+
 
 [ACCORDION-END]
 
@@ -222,6 +232,8 @@ Add the IP address followed by the name of the host, `hxehost`:
 
 
 [ACCORDION-END]
+
+
 
 ### Additional Information
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
