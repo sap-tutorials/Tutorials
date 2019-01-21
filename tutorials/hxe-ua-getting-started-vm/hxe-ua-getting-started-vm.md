@@ -36,7 +36,7 @@ The IP address of the VM is displayed on the login screen. Make a note of the IP
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ]((Optional). Repair `VMWare` bridge networking)]
+[ACCORDION-BEGIN [Step 2: ]((Optional) Repair bridge networking)]
 
 ![loio3568451438e74dd287e9dc0d9cdfc32e_HiRes](loio3568451438e74dd287e9dc0d9cdfc32e_HiRes.png)
 
@@ -119,7 +119,7 @@ When prompted to *Confirm "HANA database master password"*, enter the strong pas
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Complete the installation.)]
+[ACCORDION-BEGIN [Step 8: ](Complete the installation)]
 
 When prompted to *Proceed with configuration?* enter `Y`.
 
@@ -174,7 +174,7 @@ SAP HANA 2.0, express edition is now running.
 
 **Next steps:**
 
--   **Drivers and connectors for Python, Node.js, .NET, Java and others** – check sample applications using different drivers and languages ([such as Node.js, and Python). See [Create Tiny World App in SAP HANA, express edition](https://developers.sap.com/group.hxe-tiny-world.html).
+-   **Drivers and connectors for Python, Node.js, .NET, Java and others** – check sample applications using different drivers and languages (such as Node.js, and Python). See [Create Tiny World App in SAP HANA, express edition](https://developers.sap.com/group.hxe-tiny-world.html).
 
 -   **Database clients** – Use a SQL client and the JDBC drivers to connect to the database. See [Download a SQL client and connect to your instance (SAP HANA, express edition, server-only)](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html). Alternately, use a plugin for Eclipse to connect to your SAP HANA, express edition system database instance. See [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html).
 
