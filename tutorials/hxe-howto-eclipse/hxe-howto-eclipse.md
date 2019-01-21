@@ -9,7 +9,9 @@ tags: [  tutorial>beginner, products>sap-hana\, express-edition ]
 - Setup: Eclipse Mars or Neon version are expected to be installed and running before starting this tutorial to add the HANA Plugin.
 
 ## How-To Details
-Provides instruction on how to install and update the SAP HANA Tools plugin for Eclipse and connect to SAP HANA, express edition
+Provides instruction on how to install and update the SAP HANA Tools plugin for Eclipse and connect to SAP HANA, express edition.
+
+
 **Important**: The plugin for Eclipse supports development with XS Classic, which has been [deprecated as of SAP HANA 2.0 SPS02](https://help.sap.com/viewer/42668af650f84f9384a3337bcd373692/2.0.02/en-US/6c63b22412d04b5d9fbe46ab39b7939d.html). The tools have been replaced with web-based tools in XS Advanced.
 
 ### Time to Complete
