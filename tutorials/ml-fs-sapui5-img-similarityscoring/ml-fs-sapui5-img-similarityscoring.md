@@ -741,7 +741,7 @@ Click on **Score Similarity** to get the similarity score between the images.
 
 [ACCORDION-BEGIN [Step 1: ](Validation)]
 
-Run the application with the following images:
+Run the application with the following images stored into a Zip archive:
 
 - `Bucephala`: <https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bucephala-albeola-010.jpg/1200px-Bucephala-albeola-010.jpg>
 - `Mallard` : <https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mallard2.jpg/1200px-Mallard2.jpg>
