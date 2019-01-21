@@ -68,7 +68,7 @@ One key field has been added automatically:
 
 `client : abap.clnt;`
 
-This specifies that the table is client-specific. 
+This specifies that the table is client-specific.
 Tables can be cross-client or client-specific. Each client is a self-contained unit within an organization, such as a subsidiary. For client-specific tables, the client is the first key field in the table.
 
 The field is also specified as `not null x`. This means that the field cannot be left blank. In this case, `abap.clnt` is automatically filled with the value of the current client (such as 001).
@@ -290,16 +290,13 @@ define table zjp_account {
 You will now create an input check for the field currency, with the check table `scurx`. Delete the line
  `currency : s_curr` and replace it with the following code:
 
-`  @AbapCatalog.foreignKey.keyType : #NON_KEY`
-
-`   @AbapCatalog.foreignKey.screenCheck : true`
-
-   `currency      : s_curr`
-
-   `with foreign key scurx`
-
-   `where currkey = zjp_account_2.currency;`
-
+```ABAP
+@AbapCatalog.foreignKey.keyType : #NON_KEY
+@AbapCatalog.foreignKey.screenCheck : true
+currency      : s_curr
+with foreign key scurx
+where currkey = zjp_account_2.currency;
+```
 
 And that's it! You have now created a database table, with a new data element, and input checks.
 
