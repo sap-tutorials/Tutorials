@@ -310,6 +310,7 @@ Add a new record with name `REGIONS`, object name `REGIONS` and schema `PLAIN`
 >&nbsp;
 > ![Create synonym](23.png)
 >
+> ...and check `CC_ACCESS` in the drop-down menu for external services.
 >
 > ![Create synonym](24.png)
 
