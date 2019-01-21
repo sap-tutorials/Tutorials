@@ -93,7 +93,7 @@ Switch to your SAP Cloud Platform subaccount. Open trust settings, copy all data
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Create certificate file)]
-1. In the text editor file that you pasted SAP Cloud Platform subaccount's signing certificate into before, add a line with value `"-----BEGIN CERTIFICATE-----"` in front of the signing certificate and a line with value `"-----END CERTIFICATE-----"` after.
+1. In the text editor file that you pasted SAP Cloud Platform subaccount's signing certificate into before, add a line with value `-----BEGIN CERTIFICATE-----` in front of the signing certificate and a line with value `-----END CERTIFICATE-----` after.
 
     ```swift
         -----BEGIN CERTIFICATE-----
