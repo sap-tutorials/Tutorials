@@ -53,7 +53,10 @@ Then click on **Edit Driver Settings**.
 
 ![Edit driver settings](2.png)
 
-> **Default port assignment**: The default port for the system database in all deployments, except for Docker, is 39013. The default port for the first tenant, HXE, is 39015. For Docker containers, the default port the system database is 39017 and for the first tenant is 39041
+> **Default port assignment**: The default port for the system database in all deployments, except for Docker, is 39013. The default port for the first tenant, HXE, is 39015.
+>&nbsp;
+>
+> For Docker containers, the default port the system database is 39017 and for the first tenant is 39041
 
 Click on **Add File** to choose from the clients you downloaded with the HXE Download Manager.
 
