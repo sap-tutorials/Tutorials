@@ -25,20 +25,26 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
 Open Eclipse on your desktop.
+
 ![Open Eclipse](desktop.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create ABAP Cloud project in ADT)]
-Go to ADT and select the menu path File > New > Other, filter and select ABAP Cloud Project from the wizard and then click **Next**.
-![Create an ABAP Cloud project in ADT](eclipse.png)
+1. Go to ADT and select the menu path **File** > **New** > **Other**.
+
+      ![Create an ABAP Cloud project in ADT](eclipse.png)
+
+2. Filter **ABAP Cloud Project** and select it from the wizard. Click **Next**.
+
+      ![Create an ABAP Cloud project in ADT](eclipse2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Select service instance connection)]
-In the next wizard screen, select Service Key and click **Next**.
+In the next wizard screen, select **Service Key** and click **Next**.
 
 ![Select service instance connection](servicekey2.png)
 
@@ -46,13 +52,11 @@ In the next wizard screen, select Service Key and click **Next**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Provide connection settings)]
-  1. Open the service key file `T01.txt` on your desktop. Copy the service key  and insert it to the wizard screen.
-  Click **Next**.
+  1. Open the service key file **`T01.txt`** on your desktop. Copy the service key and insert it to the wizard screen. Click **Next**.
 
       ![Setup connection settings](connect2.png)
 
-  2. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to
-  the system and press Log On. Use following e-mail address `exp013-XXX@teched.cloud.sap` to log in.
+  2. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press **Log On**. Use following e-mail address `exp013-XXX@teched.cloud.sap` to log in.
 
      ![Enter login credentials](login.png)
 
@@ -68,7 +72,7 @@ In the next wizard screen, select Service Key and click **Next**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create ABAP package)]
-  1. Right-click on the `ZLocal` package and select New > ABAP Package from the context menu.
+  1. Right-click on the **`ZLocal`** package and select **New** > **ABAP Package** from the context menu.
 
       ![Add ABAP package](package.png)
 
