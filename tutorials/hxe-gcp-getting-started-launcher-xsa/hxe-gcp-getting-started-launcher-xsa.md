@@ -12,9 +12,8 @@ time: 15
 
 
 ## Next Steps
--  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
+-  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
 - [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
-- Generate test data and check a sample enterprise application [deploying the SAP HANA `INteractive` Education model on XS Advanced](https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html)
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
 - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
@@ -50,11 +49,12 @@ The next page will allow you to modify the default configuration for the Cloud V
 
 Type an identifying name for the instance, then select the desired geographic zone and machine type. Individual zones might have differing computing resources available and specific access restrictions.
 
+> ##Default settings are enough to get started
 >The default settings for RAM, CPU and Storage are appropriate for getting familiar with SAP HANA. The recommended minimum configuration is 24GB of RAM, with at least 4 virtual CPU and 70GB of storage.
-
-By default, the firewall rules are configured specifically for SAP HANA, express edition. As new SAP HANA applications are created, additional ports might have to be opened up. The following ports are required to connect to SAP HANA, express edition: **8090, 4390, 39013, 39015, 59013, 59014**. Some additional ports are needed for the XS Advanced applications.
-
-To connect to the instance from a local SSH client, like PuTTY, port **22** also has to be open.
+>
+> he firewall rules are configured specifically for SAP HANA, express edition. As new SAP HANA applications are created, additional ports might have to be opened up. The following ports are required to connect to SAP HANA, express edition: **8090, 4390, 39013, 39015, 59013, 59014**. Some additional ports are needed for the XS Advanced applications.
+>
+> To connect to the instance from a local SSH client, like PuTTY, port **22** also has to be open.
 
 After reviewing all configuration options, click **Deploy**. This will take a few minutes.
 
@@ -174,7 +174,7 @@ Log in with `XSA_DEV` and the master password.
 
 ![test web ide](12.png)
 
-You can now start to use your SAP HANA, express edition or continue with the optional steps. You can learn how to [connect to the development and administration tools](https://developers.sap.com/tutorials/xsa-explore-basics.html) or you can get started with your [first end-to-end XS Advanced application](https://developers.sap.com/group.hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/sap-hana-express.tutorials.html).
+You can now start to use your SAP HANA, express edition or continue with the optional steps. You can learn how to [connect to the development and administration tools](https://developers.sap.com/tutorials/xsa-explore-basics.html) or you can get started with your [first end-to-end XS Advanced application or calculation views](https://developers.sap.com/mission.xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/sap-hana-express.tutorials.html).
 
 
 [DONE]
@@ -197,8 +197,7 @@ sudo passwd hxeadm
 
 
 ### Additional Information
--  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
+-  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
 - [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
-- Generate test data and check a sample enterprise application [deploying the SAP HANA `INteractive` Education model on XS Advanced](https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html)
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
 - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
