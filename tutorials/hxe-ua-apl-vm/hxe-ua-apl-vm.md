@@ -25,19 +25,19 @@ SAP HANA Automated Predictive Library is a separate download in the Download Man
 
 Run the `hxe_gc` memory management script to free up available VM memory.
 
-1.   In your VM, log in as `hxeadm` and enter:
+1.   In your VM, log in as `hxeadm` and enter: 
 
     ```bash
     cd /usr/sap/HXE/home/bin
     ```
 
-2.   Execute:
+2.   Execute: 
 
     ```bash
     hxe_gc.sh
     ```
 
-3.   When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation
+3.   When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation 
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
@@ -70,7 +70,9 @@ tar -xvzf apl.tgz
 As the `hxeadm` user, run the installation script as root:
 
 ```bash
-<extracted_path>/HANA_EXPRESS_20/sudo ./install_apl.sh
+sudo <extracted_path>/HANA_EXPRESS_20/install_apl.sh
 ```
 
 [ACCORDION-END]
+
+

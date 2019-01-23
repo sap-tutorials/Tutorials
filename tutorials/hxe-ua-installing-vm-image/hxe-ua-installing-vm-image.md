@@ -1,22 +1,21 @@
 ---
 title: Pre-Installation Tasks
 description: The virtual machine (VM) installation method is the simplest SAP HANA 2.0, express edition on-premise installation method for compatible Windows, OS X, and Linux laptops. Perform these pre-installation tasks first, before you register.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 5
 ---
 
 <!-- loio6d73440459d4476c8f21bb852d7f36a4 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:**  Open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://developers.sap.com/group.hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://developers.sap.com/group.hxe-install-vm.html) tutorial group. 
 
 ## Details
 ### You will learn
 You'll decide whether the virtual machine installation method is best for you, you'll learn the hardware and software requirements, and you'll install a hypervisor.
-
-### Time to Complete
-5 min
 
 ---
 
@@ -64,7 +63,7 @@ If you're familiar with the older 1.0 SPS 12 version, note this important change
 -   The instance number has changed from 00 to 90.
 
 
-See the [release notes](https://developers.sap.com/topics/sap-hana-express.release-notes.html) for information on what's new and changed in this release of SAP HANA 2.0, express edition.
+See the [release notes](https://developers.sap.com/topics/sap-hana-express.resources.html#releaseNotes) for information on what's new and changed in this release of SAP HANA 2.0, express edition.
 
 [ACCORDION-END]
 
@@ -108,20 +107,20 @@ Go to [Determine If Your Processor Supports Intel Virtualization Technology](htt
 
 Hypervisors are software products used for creating and running virtual machines. Install a supported hypervisor on your laptop if you don't have one already. SAP HANA 2.0, express edition has been tested on these hypervisors:
 
--   `VMware Workstation Player 12.x, 14.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
+-   `VMware Workstation Player 12.x, 14.x, 15.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
 
--   `VMware Workstation Pro 12.x, 14.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
+-   `VMware Workstation Pro 12.x, 14.x, 15.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
 
--   `VMware Fusion 8.x, 10.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
--   `Oracle VirtualBox 5.2.x` (`https://www.virtualbox.org`)
+-   `VMware Fusion 8.x, 10.x, 11` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
+-   `Oracle VirtualBox 5.2.x, 6.0` (`https://www.virtualbox.org`)
 
 Example installation procedure for `VMware Workstation Player 12.x`:
 
--   Download `VMware Workstation Player`. Ensure you're downloading the correct version for your machine.
+1.  Download `VMware Workstation Player`. Ensure you're downloading the correct version for your machine.
 
--   Run the installer.
+2.  Run the installer.
 
--   Register `VMware Workstation Player` when prompted, and follow the setup instructions.
+3.  Register `VMware Workstation Player` when prompted, and follow the setup instructions.
 
 
 [ACCORDION-END]

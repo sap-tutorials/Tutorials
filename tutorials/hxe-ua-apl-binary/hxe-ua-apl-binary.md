@@ -27,19 +27,26 @@ Use the Download Manager to download SAP HANA Automated Predictive Library packa
 
 > Note:
 > If you're using Download Manager (GUI Mode) make sure you're using the latest version.
->
->
+> 
+> 
 
 Navigate to `/usr/sap/HXE/home/bin`:
 
 ```bash
-/usr/sap/HXE/home/bin
+cd /usr/sap/HXE/home/bin
 ```
 
-Enter the following command:
+If your installation is on `x86_64`, enter the following command:
 
--   `x86_64`: `./HXEDownloadManager_linux.bin linuxx86_64 installer apl.tgz`
--   `PowerPC`: `java -jar HXEDownloadManager.jar linuxppc64le installer apl.tgz`
+```bash
+./HXEDownloadManager_linux.bin linuxx86_64 installer apl.tgz
+```
+
+If your installation is on `PowerPC`, enter the following command:
+
+```bash
+java -jar HXEDownloadManager.jar linuxppc64le installer apl.tgz
+```
 
 [ACCORDION-END]
 
@@ -56,7 +63,9 @@ tar -xvzf apl.tgz
 As the <sid>`adm` user, run:
 
 ```bash
-<extracted_path>/HANA_EXPRESS_20/install_apl.sh
+sudo <extracted_path>/HANA_EXPRESS_20/install_apl.sh
 ```
 
 [ACCORDION-END]
+
+
