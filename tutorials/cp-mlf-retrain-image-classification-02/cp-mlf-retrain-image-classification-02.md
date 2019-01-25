@@ -79,7 +79,11 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step](Download and prepare the training dataset)]
 
-You can now save the below Python script then run it as a Python script.
+Using the below script, you will download and extract the image archive from the following URLs:
+
+ - `http://download.tensorflow.org/example_images/flower_photos.tgz`
+
+Once extracted, the script will split the images across a training, validation and test directory for each category using a 80-10-10% distribution.
 
 Save the below Python script in a file named **`prepare_data.py`**:
 

@@ -8,9 +8,6 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-vora ]
  - **Software required**
    - Personal computer with a compatible hypervisor, like VMware Workstation Player
 
-## Next Steps
- - [Getting started with SAP Vora 1.4 virtual machine](https://developers.sap.com/group.vora-ova-get-started.html)
-
 This How-to details the procedure to download, install and verify SAP Vora version 1.4 developer edition packaged as a virtual machine appliance. SAP Vora, developer edition, is covered by the Developer License Agreement, which you will need to accept in order to be able to get access to it.
 
 >SAP Vora is a software working in the **distributed environment**, i.e. the one that usually consists of at least several computing nodes. But in case of the **developer edition** the SAP Vora software has been modified to allow you to practice with a single node instance.

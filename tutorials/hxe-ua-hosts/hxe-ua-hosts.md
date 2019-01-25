@@ -23,11 +23,11 @@ You'll learn how to configure your host machine to communicate with the server.
 
 If you installed the VM installation package to a Windows machine, follow this step to update the `etc/hosts` file.
 
-1.   On your Windows laptop, navigate to `C:\Windows\System32\drivers\etc`
+1.   On your Windows laptop, navigate to `C:\Windows\System32\drivers\etc` 
 
-2.   In `Administrator` mode, open `hosts` in Notepad. See your operating system Help for information on opening applications in Administrator mode
+2.   In `Administrator` mode, open `hosts` in Notepad. See your operating system Help for information on opening applications in Administrator mode 
 
-3.   In a new uncommented row, add the IP address and `hxehost`. Save your changes
+3.   In a new uncommented row, add the IP address and `hxehost`. Save your changes 
 
     Spacing is important. Make sure your hosts file in Notepad looks like this image.
 
@@ -35,8 +35,8 @@ If you installed the VM installation package to a Windows machine, follow this s
 
     > Note:
     > If the VM is restarted and assigned a new IP, the Hosts file will need to be updated.
-    >
-    >
+    > 
+    > 
 
 [ACCORDION-END]
 
@@ -44,17 +44,19 @@ If you installed the VM installation package to a Windows machine, follow this s
 
 If you installed the VM installation package to a Mac or Linux machine, follow this step to update the `etc/hosts` file.
 
-1.   On your Mac or Linux machine, start the Terminal application
+1.   On your Mac or Linux machine, start the Terminal application 
 
-2.   Enter the following command:
+2.   Enter the following command: 
 
     ```bash
-    sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
+    sudo sh -c 'echo <hxehost IP address> hxehost >> /etc/hosts'
     ```
 
     > Note:
     > If the VM is restarted and assigned a new IP, you will need to update the Hosts file.
-    >
-    >
+    > 
+    > 
 
 [ACCORDION-END]
+
+

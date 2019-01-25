@@ -390,11 +390,19 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 application With JSZip)]
+[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 application With JSZip & FileSaver)]
 
 `JSZip` is a JavaScript library for creating, reading and editing .zip files, with a lovely and simple API.
 
 `JSZip` is dual licensed. You may use it under the MIT license or the `GPLv3` license. Make sure o have a look at the [LICENSE](https://github.com/Stuk/jszip/blob/master/LICENSE.markdown) condition before continuing with the tutorial.
+
+`FileSaver.js` is the solution for saving files on the client-side, and is perfect for web apps that need to generate files, or for saving sensitive information that shouldn't be sent to an external server.
+
+`FileSaver` is licensed under the MIT license.
+
+I highly recommend you to check the LICENSE for more details.
+
+GitHub repository : `https://github.com/eligrey/FileSaver.js`
 
 For detailed instructions about how to configure you SAPUI5 application with `JSZip`, you can refer to the following blog: [Give the power of Zip to you SAPUI5 applications](https://blogs.sap.com/2017/12/15/give-the-power-of-zip-to-your-sapui5-applications/)
 
@@ -405,6 +413,7 @@ For more details `JSZip`, you can refer to : <https://stuk.github.io/jszip/>
 >
 > ```JavaScript
 > /* global JSZip:true */
+> /* global saveAs:true */
 > ```
 
 [DONE]
@@ -423,6 +432,7 @@ Edit the **`demo.controller.js`** file located under **`Workspace`** > **`sapui5
 
 ```JavaScript
 /* global JSZip:true */
+/* global saveAs:true */
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/m/MessageBox"
@@ -741,7 +751,7 @@ Click on **Score Similarity** to get the similarity score between the images.
 
 [ACCORDION-BEGIN [Step 1: ](Validation)]
 
-Run the application with the following images:
+Run the application with the following images stored into a Zip archive:
 
 - `Bucephala`: <https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bucephala-albeola-010.jpg/1200px-Bucephala-albeola-010.jpg>
 - `Mallard` : <https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mallard2.jpg/1200px-Mallard2.jpg>

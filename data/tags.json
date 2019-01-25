@@ -29,6 +29,10 @@
       "value": "topic>big-data"
     },
     {
+      "name": "Blockchain",
+      "value": "topic>blockchain"
+    },
+    {
       "name": "Cloud",
       "value": "topic>cloud"
     },
