@@ -67,7 +67,7 @@ time: 5
 1. Select the workflow file in the workspace.
     >Make sure that you really selected the file and not the project.
 
-2. Open the context menu by right-clicking on the project, and select **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
+2. Open the context menu by right-clicking the workflow file, and select **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
 
     ![Deploy Workflow](deploy-workflow.png)
 
