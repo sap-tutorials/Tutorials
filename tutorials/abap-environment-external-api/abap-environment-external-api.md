@@ -107,14 +107,14 @@ This enables you to run the class in the console.
 
 [ACCORDION-BEGIN [Step 6: ](Implement the method)]
   1. Add the method implementation below and wrap it in an exception.
-  2. Then replace the `xxx` of `i_name` with your group number. Leave the service instance name `ZSAP_COM_0276` as it is.
+  2. Then replace the `xxx` of `i_name` with your group number. Keep the service instance name `OUTBOUNDCOMMUNICATION` .
 
 ```ABAP
 METHOD if_oo_adt_classrun~main.
     TRY.
         DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
           i_name                  = 'Z_CHUCKNORRIS_xxx'
-          i_service_instance_name = 'ZSAP_COM_0276'
+          i_service_instance_name = 'OUTBOUNDCOMMUNICATION'
           i_authn_mode = if_a4c_cp_service=>service_specific ).
 
         DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
@@ -152,7 +152,7 @@ The output should look something like this:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Create the variable `lo_request` using the DATA statement and the `get_http_request` method of the `lo_http_client` object. Enter the correct text below:
+Create the variable `my_request` using the DATA statement and the `get_http_request` method of the `my_http_client` object. Enter the correct text below:
 
 [VALIDATE_1]
 
