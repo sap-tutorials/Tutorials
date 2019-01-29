@@ -1,31 +1,34 @@
 ---
 title: Create a Hyperledger Fabric Development Node
-description: As the second part of our "Hello World" example, you will understand the structure of the Hyperledger Fabric Service and then learn to create a Hyperledger Fabric development node on SAP Cloud Platform.
+description: Learn the structure of the Hyperledger Fabric service and then create a Hyperledger Fabric development node on SAP Cloud Platform.
 time: 15
 auto_validation: true
 tags: [tutorial>beginner, products>sap-cloud-platform, topic>cloud, topic>blockchain]
 primary_tag: topic>Blockchain
 author_name: Brian McKellar
+author_profile: https://github.com/BrianMcKellar
+
 ---
 
 ## Details
 ### You will learn
-  - An overview of available Hyperledger Fabric service plans on SAP Cloud Platform
-  - An understanding of how a Hyperledger Fabric network is structured
+  - About the available Hyperledger Fabric service plans on SAP Cloud Platform
+  - How a Hyperledger Fabric network is structured
   - How to provision a Hyperledger Fabric development node
 
   In this tutorial we will explore the use of Hyperledger Fabric nodes / service instances.
 
-  ![Image depicting Nodes on SAP Cloud Platform](10--NodeOverview.png)
+![Image depicting Nodes on SAP Cloud Platform](10--NodeOverview.png)
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understanding the Hyperledger Fabric Service)]
+[ACCORDION-BEGIN [Step 1: ](Understand the Hyperledger Fabric service)]
 
  The Hyperledger Fabric service is integrated into SAP Cloud Platform via a service broker. The service broker supports several node types as service plans.
 
  **Development Nodes**
 
- The simplest node type is a Developer node. This is effectively a single standalone node that can be used to create channels on, and then to support the development and testing of chaincode. To keep costs to a minimum, developer nodes are hosted in a multi-tenant fashion on nodes operated by SAP.
+ The simplest node type is a development node. This is effectively a single standalone node that can be used to create channels on, and then to support the development and testing of chaincode. To keep costs to a minimum, developer nodes are hosted in a multi-tenant fashion on nodes operated by SAP.
 
 ![Image depicting Development Node on SAP Cloud Platform](06--DevNode.png)
 
@@ -52,9 +55,9 @@ For our `Hello World` example we will be using a Development Node, with the step
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the Hyperledger Fabric Service)]
+[ACCORDION-BEGIN [Step 2: ](Open the Hyperledger Fabric service)]
 
-Once on the SAP Cloud Platform Service Marketplace, locate and open the Hyperledger Fabric service by clicking on the relevant service tile.
+Once on the SAP Cloud Platform Service Marketplace, locate and open the Hyperledger Fabric service by clicking the relevant service tile.
 
 ![Image depicting SAP Cloud Platform marketplace](01--SCP-ServiceMarketplace.png)
 
@@ -65,16 +68,16 @@ Once on the SAP Cloud Platform Service Marketplace, locate and open the Hyperled
 
 Once in the Hyperledger Fabric service, you will see a service description and the available plans.
 
-For the "Hello World" example we will be using the `dev` plan. This is effectively a single standalone service instance (often referred to as a node) that can be used to create channels on, and then to support the development and testing of chaincode. To keep costs to a minimum, developer nodes are hosted in a multi-tenant fashion on nodes operated by SAP.
+For the `Hello World` example, we will be using the `dev` plan. This is effectively a single standalone service instance (often referred to as a node) that can be used to create channels on, and then to support the development and testing of chaincode. To keep costs to a minimum, developer nodes are hosted in a multi-tenant fashion on nodes operated by SAP.
 
-Now click the **Instances** tab on the side menu, opening an overview of available Hyperledger Fabric instances in your subaccount:
+Click the **Instances** tab on the side menu, opening an overview of available Hyperledger Fabric instances in your subaccount:
 
 ![Image depicting Hyperledger Fabric service overview](02--HLF-Service-Overview.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create New Instance)]
+[ACCORDION-BEGIN [Step 4: ](Create new instance)]
 
 Once on your Hyperledger Fabric instances overview, click **New Instance** to open the service instance wizard:
 
@@ -83,25 +86,27 @@ Once on your Hyperledger Fabric instances overview, click **New Instance** to op
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Choose Service Instance Settings)]
+[ACCORDION-BEGIN [Step 5: ](Choose service instance settings)]
 
-Now navigate through the service instance wizard, selecting the following settings:
+Navigate through the service instance wizard, selecting the following settings:
 
-- Plan: Dev
-- Specify Parameters: N/A
-- Assign Application: N/A
-- Name: Hello World Demo Story
+Field | Value
+:------|:--------
+**Plan**  | `Dev`
+Specify Parameters | N/A
+Assign Application | N/A
+**Name** | `Hello World Demo Story`
 
-Next, after selecting the settings, click **Finish**:
+After selecting the settings, click **Finish**.
 
 ![Image depicting Hyperledger Fabric service instance wizard](04--HLF-Create-Instance.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Confirm Creation of Node)]
+[ACCORDION-BEGIN [Step 6: ](Confirm creation of node)]
 
-Your development node will now be provisioned (which may take a few moments) and displayed on the overview of available service instances:
+Your development node will now be provisioned (which may take a few moments) and displayed on the overview of available service instances.
 
 ![Image depicting Hyperledger Fabric node provisioned](05--HLF-Node-Created.png)
 

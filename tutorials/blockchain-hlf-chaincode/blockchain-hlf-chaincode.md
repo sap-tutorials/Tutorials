@@ -1,23 +1,24 @@
 ---
 title: Deploy Hyperledger Fabric Chaincode
-description: As the fourth part of our "Hello World" example, you will understand how chaincode is managed and learn how to deploy and test it on SAP Cloud Platform
+description: Understand how chaincode is managed, then deploy and test it on SAP Cloud Platform.
 time: 10
 auto_validation: true
 tags: [ tutorial>beginner, topic>blockchain, products>sap-cloud-platform, topic>cloud]
 primary_tag: topic>blockchain
 author_name: Brian McKellar
+author_profile: https://github.com/BrianMcKellar
 ---
 
 ## Details
 ### You will learn
-  - An overview of Hyperledger Fabric chaincode, including how it is written and its main functions
+  - About Hyperledger Fabric chaincode, including how it is written and its main functions
   - How to deploy and test Hyperledger Fabric chaincode on SAP Cloud Platform
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understanding Chaincode)]
+[ACCORDION-BEGIN [Step 1: ](Understand chaincode)]
 
-Hyperledger Fabric Chaincode ('smart contracts') control all reading and writing to a Hyperledger Fabric channel and implements all relevant business logic.
+Hyperledger Fabric chaincode (smart contracts) control all reading and writing to a Hyperledger Fabric channel and implements all relevant business logic.
 
 ![Image depicting overview of chaincode on SAP Cloud Platform](01--Chaincode-Overview.png)
 
@@ -27,14 +28,14 @@ To describe the chaincode functions, a YAML file can be added, that uses `Swagge
 
 ![Image depicting overview of chaincode on SAP Cloud Platform](02--Chaincode-Introduction.png)
 
-For this demo, we develop and deploy a simple "Hello World" chaincode that just supports reading and writing text strings to the blockchain against a defined ID
+For this demo, we develop and deploy a simple `Hello World` chaincode that just supports reading and writing text strings to the blockchain against a defined .
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Opening the Channel Node Dashboard)]
+[ACCORDION-BEGIN [Step 2: ](Open the channel node dashboard)]
 
-To deploy and test chaincode, click the **Dashboard** icon to navigate to your channel service instance dashboard:
+To deploy and test chaincode, click the **Dashboard** icon to navigate to your channel service instance dashboard.
 
 ![Image depicting node dashboard on SAP Cloud Platform](03--Node-Dashboard.png)
 
@@ -42,21 +43,21 @@ To deploy and test chaincode, click the **Dashboard** icon to navigate to your c
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Accessing Chaincode Area)]
+[ACCORDION-BEGIN [Step 3: ](Access chaincode area)]
 
-Once on your channel service instance dashboard, click **Chaincode** on the side menu:
+Once on your channel service instance dashboard, click **Chaincode** on the side menu.
 
 ![Image depicting channel service instance dashboard on SAP Cloud Platform](04--Chaincode-Tab.png)
 
-Then, whilst in the chaincode area, click **Example Chaincode** - selecting 'Hello World' when prompted:
+In the chaincode area, click **Example Chaincode** and select `Hello World` when prompted.
 
 ![Image depicting chaincode overview on SAP Cloud Platform](05--Chaincode-Area.png)
 
-This opens the Example Chaincode window, giving you access to the manifest, API, and chaincode:
+This opens the Example Chaincode window, giving you access to the manifest, API, and chaincode.
 
 ![Image depicting example chaincode window on SAP Cloud Platform](06--Chaincode-Deployed.png)
 
-Enter the `id` of the `chaincode.yaml` file here and click **Submit Answer**
+
 
 [VALIDATE_1]
 [ACCORDION-END]
