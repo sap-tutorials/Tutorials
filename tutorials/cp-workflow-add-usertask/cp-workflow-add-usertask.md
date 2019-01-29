@@ -55,7 +55,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
 
     >Because the workflow you modelled contains only a start and an end event, starting an instance is immediately completed and therefore not visible under "Show instances". (You can still retrieve completed instances through the REST API.)
 
-    >Excursion: When you start a workflow, you can provide a JSON structure as input data. These JSON objects get stored within the workflow as context data. You can use them throughout the workflow, for example, in gateways, user tasks, or service tasks. For more information about handling workflow data, see [Manage Workflows Using the Monitor Workflows App] (https://help.sap.com/viewer/aa302ee52d3a4420b6cc3ecaaeee2ee7/Cloud/en-US/e6163e119ba645d0ae6a31022b670381.html).
+    >Excursion: When you start a workflow, you can provide a JSON structure as input data. These JSON objects get stored within the workflow as context data. You can use them throughout the workflow, for example, in gateways, user tasks, or service tasks. For more information about handling workflow data, see [Managing Workflows Using the Monitor Workflows App] (https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/e6163e119ba645d0ae6a31022b670381.html).
 
 [DONE]
 [ACCORDION-END]
@@ -66,7 +66,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
   </li><li>Choose **Neo Trial**.
   </li><li>Then select **Services** from the left-hand navigation.
   </li><li>Search for the **Workflow** service. Then select it, and choose **SAP Web IDE Full-Stack**.</li></ol>
-  
+
 2. In the navigation area of SAP Web IDE, choose **</>** (Development), and navigate to the **Workspace** folder.
 
 3. Right-click the workflow file, and choose **Workflow Editor**.
