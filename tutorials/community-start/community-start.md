@@ -9,7 +9,7 @@ primary_tag: topic>sap-community
 
 ## Prerequisites
  - Go to [SAP Community](https://community.sap.com)
- - If you do not already have an SAP account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=wcms_sapdx_prod_29052019&targetUrl=https%3A%2F%2Fwww.sap.com%2Fbin%2Ffiji%2Fes%2Flogin.sapdx.html&sourceUrl=https%3A%2F%2Fwww.sap.com%2Fcommunity.html).
+ - If you do not already have an SAP user account and profile, [register for an account](https://accounts.sap.com/ui/public/showRegisterForm?spName=wcms_sapdx_prod_29052019&targetUrl=https%3A%2F%2Fwww.sap.com%2Fbin%2Ffiji%2Fes%2Flogin.sapdx.html&sourceUrl=https%3A%2F%2Fwww.sap.com%2Fcommunity.html).
  - Log into the SAP Community before starting the tutorial.
 
 ## Details
@@ -185,7 +185,7 @@ The more you know about writing a blog post in the community, the faster your fi
 
 [ACCORDION-BEGIN [Step 11: ](Check blogging permissions)]
 
-Completing this tutorial will grant you the ability to write blog posts (if you don't already have these permissions in SAP Community). Simply log out and log back into your SAP account to see the changes in your blogging permissions.
+Completing this tutorial will grant you the ability to write blog posts (if you don't already have these permissions in SAP Community). Simply log out and log back into your SAP user account to see the changes in your blogging permissions.
 
 1. Log out.
 
