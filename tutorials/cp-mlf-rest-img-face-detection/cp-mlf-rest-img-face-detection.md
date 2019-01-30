@@ -38,10 +38,9 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the bounding boxes coordinates for the identified faces.
 
-For more details, you can check the following links:
+For more details, you can check the following link:
 
  - [Inference Service for Face Detection on the SAP API Business Hub](https://api.sap.com/api/face_detection_api/resource)
- - [Swagger documentation](https://mlftrial-face-detector.cfapps.eu10.hana.ondemand.com/api/v2alpha1/image/face-detection)
 
 [DONE]
 [ACCORDION-END]
@@ -122,6 +121,7 @@ Each entry in the response represents a box that identify one of the face.
 
 Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image SAP_TechEd_LV2018_10772">Image `SAP_TechEd_LV2018_10772`</a>
 
+<div>
 <img id="SAP_TechEd_LV2018_10772.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134"/>
 <canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/>
 <script>
@@ -219,6 +219,7 @@ window.onload = function() {
 	}
 };
 </script>
+</div>
 
 Here is a simple HTML code you can use to visualize other results:
 

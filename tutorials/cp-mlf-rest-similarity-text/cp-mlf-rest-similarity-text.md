@@ -36,7 +36,9 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the vector of features for the associated text files.
 
-For more details, you can check the [Inference Service for Image Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/document_feature_extraction_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Image Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/document_feature_extraction_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -106,7 +108,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-face-feature-extractor.cfapps.eu10.hana.ondemand.com/api/v2alpha1/image/face-feature-extraction`</nobr>
+<nobr>URL<nobr>          | <nobr>`https://mlftrial--doc-feats.cfapps.eu10.hana.ondemand.com/api/v2alpha1/text/feature-extraction`</nobr>
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 

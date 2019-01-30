@@ -1,9 +1,11 @@
 ---
+author_name: André Pfohlmann
+author_profile: https://github.com/Apfohlmann
 title: Add Custom Logic to Your Service
-description: Add custom handlers for specific situations that are not covered by the generic service provider.
+description: Add custom handlers for specific situations that are not covered by the generic service provider using the SAP Cloud Application Programming Model.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
 time: 10
 ---
 

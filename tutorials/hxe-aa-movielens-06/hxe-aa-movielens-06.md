@@ -10,9 +10,6 @@ time: 30
 ## Prerequisites
  - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
-
 ## Details
 ### You will learn
 - Understand the basics about the SAP HANA Predictive Analytics Library
@@ -268,7 +265,7 @@ Enter **`afllang`** as the folder name, then click on **OK**.
 
 Right click on the **`afllang`** folder and select **New > File**.
 
-Enter **`apriori_afl.hdbafllangprocedure`** as the file name, then click on **OK**.
+Enter **`apriori.hdbafllangprocedure`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 

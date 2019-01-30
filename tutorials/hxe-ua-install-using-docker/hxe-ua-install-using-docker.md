@@ -5,7 +5,7 @@ primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 
@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 - [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Details
-### You will learn  
+### You will learn
 How to install SAP HANA, express edition on your preferred Docker setup.
 
 This tutorial will show you how to install a **server-only** installation of SAP HANA, express edition on your Docker installation. This version of SAP HANA, express edition does not contain XSC.
@@ -148,7 +148,7 @@ To edit the `sysctl.conf` file, use the `vi` command to open the file and press 
 
 [ACCORDION-BEGIN [Step 6: ]((Optional) Create a Directory to Persist SAP HANA, express edition Data Outside of the Container)]
 
-Create a directory for the SAP HANA, express edition container and grant it the proper permissions.  
+Create a directory for the SAP HANA, express edition container and grant it the proper permissions.
 
 ```
 mkdir -p /data/<directory_name>
@@ -169,19 +169,19 @@ Create the `json` file:
 vi <file_name>.json
 ```
 
-Press `i` to start editing and use one of the following formats to create the file:  
+Press `i` to start editing and use one of the following formats to create the file:
 
 ```
 {
 "master_password" : "<password>"
-}  
+}
 ```
 
-or:  
+or:
 
 ```
 {
-"system_user_password" : "<password",
+"system_user_password" : "<password>",
 "default_tenant_system_user_password" : "<second_password>"
 }
 ```
@@ -251,7 +251,7 @@ store/saplabs/hanaexpress:2.00.033.00.20180925.2 \
 --agree-to-sap-license
 ```
 
-This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.  
+This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
 
 > **Note:**
 > If you placed the password file in `/data/<directory_name>/<file_name>.json`, substitute  `file://<path_to_json_file>` with `file:///hana/mounts/<file_name>.json`.
@@ -343,7 +343,7 @@ jdbc:sap://<ip_address>:39041/databaseName=<tenant_name>
 
 [ACCORDION-BEGIN [Step 12: ]((Optional) Create Additional SAP HANA, express edition Containers)]
 
-You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.  
+You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.
 
 ```
 sudo docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 10028-10029:1128-1129 -p 19013-19014:59013-59014 -v /data/<additional_directory_name>:/hana/mounts \
@@ -358,7 +358,7 @@ store/saplabs/hanaexpress:2.00.033.00.20180925.2 \
 --agree-to-sap-license
 ```
 
-This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.  
+This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
 
 [ACCORDION-END]
 

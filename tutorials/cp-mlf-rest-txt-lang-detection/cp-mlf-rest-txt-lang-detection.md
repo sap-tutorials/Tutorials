@@ -33,7 +33,9 @@ Property                  | Description
 <nobr>`langCode`</nobr>	  | The code used by language as ID.
 <nobr>`langStr`</nobr>	  | The English language expansion of the language ID
 
-For more details, you can check the [Inference Service for Language Detection on the SAP API Business Hub](https://api.sap.com/api/language_detection_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Language Detection on the SAP API Business Hub](https://api.sap.com/api/language_detection_api/resource).
 
 [DONE]
 [ACCORDION-END]

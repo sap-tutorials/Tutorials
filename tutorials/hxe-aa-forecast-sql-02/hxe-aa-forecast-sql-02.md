@@ -10,9 +10,6 @@ time: 15
 ## Prerequisites
  - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
-## Next Steps
- - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
-
 ## Details
 ### You will learn
 - How to load your dataset content in your SAP HANA, express edition instance
@@ -178,7 +175,6 @@ As the dataset files get updated periodically, and in order to ensure consistenc
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/CashFlows.csv" target="new">`CashFlows`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/KxDesc_CashFlows.csv" target="new">`KxDesc_CashFlows`</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/Lag1AndCycles.csv" target="new">`Lag1AndCycles`</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/Lag1AndCyclesAndWn.csv" target="new">`Lag1AndCyclesAndWn`</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/R_ozone-la.csv" target="new">`R_ozone-la`</a>

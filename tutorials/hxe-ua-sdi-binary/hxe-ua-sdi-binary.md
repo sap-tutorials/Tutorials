@@ -1,22 +1,21 @@
 ---
-title: Install the Optional SAP HANA Smart Data Integration Package for SAP HANA, express edition
+title: Install the Optional SAP HANA Smart Data Integration Package for SAP HANA, express edition (Native Linux Machine)
 description: Install SAP HANA smart data integration on an SAP HANA, express edition system.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 30
 ---
 
 <!-- loio7621f586085b4a93898290e1571e560a -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:**  You have completed [Test the Installation](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)  
 
 ## Details
 ### You will learn
 How to install and run the optional SAP HANA Smart Data Integration Package for SAP HANA, express edition.
-
-### Time to Complete
-30 min
 
 ---
 
@@ -44,7 +43,7 @@ tar -xvzf sdi.tgz
 
 [ACCORDION-BEGIN [Step 3: ](Run the installation script)]
 
-As the `sid``adm` user, run:
+As the <sid>`adm` user, run:
 
 ```bash
 HANA_EXPRESS_20/install_sdi.sh
@@ -57,5 +56,3 @@ HANA_EXPRESS_20/install_sdi.sh
 To use adapters other than the OData adapter, you will also need to install the Data Provisioning Agent.
 
 [ACCORDION-END]
-
-

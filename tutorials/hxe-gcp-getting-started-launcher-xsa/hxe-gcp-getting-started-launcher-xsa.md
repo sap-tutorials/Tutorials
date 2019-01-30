@@ -3,18 +3,17 @@ title: SAP HANA, express edition, in Google Cloud Platform Launcher (Database + 
 description: This getting started guide will walk you through the basics of launching SAP HANA, express edition including XS Advanced applications on Google Cloud Platform using the Launcher.
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - You have a Google Account and/or have registered for the free trial on `cloud.google.com`
  - You have enough permissions to edit the hosts file in your computer
 
 
 ## Next Steps
--  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
+-  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
 - [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
-- Generate test data and check a sample enterprise application [deploying the SAP HANA `INteractive` Education model on XS Advanced](https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html)
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
 - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
@@ -24,9 +23,6 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 Learn how to launch your own instance of SAP HANA, express edition including the Extended Application Services, advanced model (XS Advanced) on the Compute Engine in the Google Cloud Platform. Configure your instance and your computer to follow tutorials on development with XS Advanced.
 
 If you are looking for the database server and do not need the XS Advanced application development platform, follow [this tutorial ](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html) instead.
-
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -53,11 +49,12 @@ The next page will allow you to modify the default configuration for the Cloud V
 
 Type an identifying name for the instance, then select the desired geographic zone and machine type. Individual zones might have differing computing resources available and specific access restrictions.
 
+> ##Default settings are enough to get started
 >The default settings for RAM, CPU and Storage are appropriate for getting familiar with SAP HANA. The recommended minimum configuration is 24GB of RAM, with at least 4 virtual CPU and 70GB of storage.
-
-By default, the firewall rules are configured specifically for SAP HANA, express edition. As new SAP HANA applications are created, additional ports might have to be opened up. The following ports are required to connect to SAP HANA, express edition: **8090, 4390, 39013, 39015, 59013, 59014**. Some additional ports are needed for the XS Advanced applications.
-
-To connect to the instance from a local SSH client, like PuTTY, port **22** also has to be open.
+>
+> he firewall rules are configured specifically for SAP HANA, express edition. As new SAP HANA applications are created, additional ports might have to be opened up. The following ports are required to connect to SAP HANA, express edition: **8090, 4390, 39013, 39015, 59013, 59014**. Some additional ports are needed for the XS Advanced applications.
+>
+> To connect to the instance from a local SSH client, like PuTTY, port **22** also has to be open.
 
 After reviewing all configuration options, click **Deploy**. This will take a few minutes.
 
@@ -78,7 +75,7 @@ sudo su - hxeadm
 
 Hit **Enter**. Follow the prompts to change password. **IMPORTANT: SAP HANA will not be usable if this step is ignored**.
 
-> ### Please check the password policy to avoid errors**
+> ### Please check the password policy to avoid errors
 >
 > SAP HANA, express edition requires a very strong password that complies with these rules:
 >
@@ -127,6 +124,7 @@ Alternatively, click `Learn more` and follow the steps to create and external IP
 
 ![IP Address](7.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -176,7 +174,9 @@ Log in with `XSA_DEV` and the master password.
 
 ![test web ide](12.png)
 
-You can now start to use your SAP HANA, express edition or continue with the optional steps. You can get started with your [first end-to-end XS Advanced application](https://developers.sap.com/group.hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/sap-hana-express.tutorials.html).
+You can now start to use your SAP HANA, express edition or continue with the optional steps. You can learn how to [connect to the development and administration tools](https://developers.sap.com/tutorials/xsa-explore-basics.html) or you can get started with your [first end-to-end XS Advanced application or calculation views](https://developers.sap.com/mission.xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/sap-hana-express.tutorials.html).
+
+
 [DONE]
 [ACCORDION-END]
 
@@ -195,123 +195,9 @@ sudo passwd hxeadm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6 (Optional): ](Install additional components: EA Designer)]
-
-**This step is optional.**
-
-From the console, go into the `Downloads` folder in your virtual machine and list the contents.
-
-```
-cd /Downloads
-ls
-```
-
-You will find the installation packages for the Enterprise Architecture Designer  (`eadesigner.tgz`). You may also find additional packages you may want to install.
-
-To install any of these packages, decompress it first with the following command:
-
-```
-tar -xvzf <<name of the file>>
-
-```
-
-For example:
-
-![Downloads](downloads2.png)
-
-You can decompress any other installation packages you want. Change the permissions to the extract folder:
-```
-chmod 777 -R ./HANA_EXPRESS_20/
-
-```
-![Change permissions](tar.png)
-
-Switch to user `hxeadm`. Go into the decompressed folder and execute the installation script you want.
-
-```
-sudo su hxeadm
-cd /Downloads/HANA_EXPRESS_20
-```
-
-![switch user](15.png)
-
-Execute `install_eadesigner.sh` if you want to install the Enterprise Architecture Designer:
-
-```
-./install_eadesigner.sh
-```
-Make sure installation is successful when finished.
-
-![deployment successful](success.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7 (Optional): ](Install Smart Data Streaming)]
-
-This step is **optional**.
-
-Open a new SSH console. Find out your internal IP address with the following command:
-
-```
-sudo ifconfig
-```
-
-Once the IP is shown, take note of it:
-
-![IF Config](ifconfig.png)
-
-And map it in the hosts file in your virtual machine:
-
-```
-sudo edit /etc/hosts
-```
-
-A text-editor will open. Use the arrow keys to move to where `127.0.0.1` is. Once there, press letter `i` to enter insert mode. Delete IP `127.0.0.1` and enter your internal IP:
-
-![change hosts name](vi.png)
-
-Once you are finished editing, press `Esc` and write `:wq` to save your changes. If you want to discard your changes, you can use `:!q`
-
-![change hosts name](vi2.png)
-
->If you are not comfortable with this text editor, you can download the file, edit it and upload it again using a root user.
-
-Back in the console prompt, navigate to the Downloads folder, extract the installation files:
-
-```
-cd /Downloads
-tar -xvzf sa.tgz
-```
-
-![untar file](tar_sa.png)
-
-Once finished, execute the installation script. Be sure to enter **`hxehost`** as the name of the host when prompted:
-
-```
-sudo ./HANA_EXPRESS_20/install_sa.sh
-```
-
-As follows:
-
-![execute](sds.png)
-
-Once finished, you can verify it is running with the following command
-```
-ps -ef | grep streaming
-```
-
-![check streaming](sds_ok.png)
-
-You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
-
-![Web IDE](webide_sds.png)
-
-[DONE]
-[ACCORDION-END]
 
 ### Additional Information
- - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
- -  [Get started with XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
- - Generate test data and check a sample enterprise application [deploying the SAP HANA INteractive Education model on XS Advanced](https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html)
- - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
+-  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
+- [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

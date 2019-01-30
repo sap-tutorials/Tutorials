@@ -566,7 +566,9 @@ We create the job for the CI build, which is triggered on each change that is me
     modulePaths=`awk -F: '$1 ~ /path/ { gsub(/\s/,"", $2)
     print $2 }' mta.yaml`
     for path in $modulePaths; do
-      ln -sft $path ../.npmrc
+      if [ -d "$path" ];
+        then ln -sft $path ../.npmrc
+      fi
     done
 
     # extract artifact name

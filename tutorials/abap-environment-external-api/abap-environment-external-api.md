@@ -2,7 +2,7 @@
 title: Call an External API
 description: Point to an external API and display its output in the console.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-abap-environment
+primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
 time: 30
 author_name: Julie Plummer
@@ -20,7 +20,7 @@ author_profile: https://github.com/julieplummer20
 
 ---
 Predefined communication scenarios allow you to, for example, exchange data between a SAP Cloud Platform system and an external system.
-A communication arrangement specifies the metadata for a communication scenario. (For more information, see [Maintain a Communication Arrangement for an Exposed Service](https://developers.sap.com/tutorials/abap-environment-communication-arrangement.html).)
+ A communication arrangement specifies the metadata for a communication scenario. (For more information, see [Maintain a Communication Arrangement for an Exposed Service](https://developers.sap.com/tutorials/abap-environment-communication-arrangement.html).)
 
 You will create a new destination for an existing communication arrangement, specifying the URL for an external API, user/password, and authentication.
 You will then create a class that calls the API and displays the output from it in the console.
@@ -84,7 +84,7 @@ Now, you will create an ABAP class that will call your destination, and which yo
 
 The class is displayed in a new editor:
 
-    ![Image depicting step-4d-class-editor](step-4d-class-editor.png)
+![Image depicting step-4d-class-editor](step-4d-class-editor.png)
 
 [DONE]
 
@@ -107,14 +107,14 @@ This enables you to run the class in the console.
 
 [ACCORDION-BEGIN [Step 6: ](Implement the method)]
   1. Add the method implementation below and wrap it in an exception.
-  2. Then replace the `xxx` of `i_name` with your group number. Leave the service instance name `ZSAP_COM_0276` as it is.
+  2. Then replace the `xxx` of `i_name` with your group number. Keep the service instance name `OUTBOUNDCOMMUNICATION` .
 
 ```ABAP
 METHOD if_oo_adt_classrun~main.
     TRY.
         DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
           i_name                  = 'Z_CHUCKNORRIS_xxx'
-          i_service_instance_name = 'ZSAP_COM_0276'
+          i_service_instance_name = 'OUTBOUNDCOMMUNICATION'
           i_authn_mode = if_a4c_cp_service=>service_specific ).
 
         DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
@@ -152,7 +152,7 @@ The output should look something like this:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Create the variable `lo_request` using the DATA statement and the `get_http_request` method of the `lo_http_client` object. Enter the correct text below:
+Create the variable `my_request` using the DATA statement and the `get_http_request` method of the `my_http_client` object. Enter the correct text below:
 
 [VALIDATE_1]
 

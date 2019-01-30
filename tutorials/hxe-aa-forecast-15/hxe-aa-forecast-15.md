@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 ---
 
 ## Prerequisites
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
+
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Details
@@ -384,6 +387,7 @@ Paste the following content:
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
+
 [DONE]
 [ACCORDION-END]
 

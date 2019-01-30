@@ -1,11 +1,14 @@
 ---
+author_name: André Pfohlmann
+author_profile: https://github.com/Apfohlmann
 title: Create a Business Service with Node.js using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite. Use the SAP Cloud Application Programming Model and develop on your local environment.
 auto_validation: true
-primary_tag: topic>node-js
-tags: [  tutorial>intermediate, topic>node-js  ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>intermediate, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
 time: 30
 ---
+
 
 ## Prerequisites
 - You have installed [Node.js](https://nodejs.org/en/) version 8 or higher.
@@ -17,7 +20,7 @@ time: 30
   - How to do develop a sample business service using the SAP Cloud Application Programming Model and `Node.js`
   - Define a simple data model and a service that exposes the entities you created in your data model
   - Run your service locally
-  - Deploy the data model to a `SQLite` database
+  - Deploy the data model to an `SQLite` database
   - Add custom handlers to serve requests that are not handled automatically
 
 ---
@@ -140,7 +143,7 @@ You will create a simplistic all-in-one service definition.
     cds run
     ```
 
-1. To test your service, go to <http://localhost:4004>
+1. To test your service, go to <http://localhost:4004>.
 
     You won't see data, because you have not added a data model yet. However, click on the available links and confirm the service is running.
 
@@ -240,7 +243,7 @@ To get started quickly, you have already added a simplistic all-in-one service d
     }
     ```
 
-1. Open `cat-service.cds` and replace the code with:
+1. Open **`cat-service.cds`** and replace the code with:
 
     ```CDS
     using my.bookshop as my from '../db/data-model';
@@ -268,7 +271,7 @@ The `cds` runtime includes built-in generic handlers that automatically serve al
     npm i sqlite3 -D
     ```
 
-1. Deploy the data model to a `SQLite` database:
+1. Deploy the data model to an `SQLite` database:
 
     ```bash
     cds deploy --to sqlite:db/my-bookshop.db

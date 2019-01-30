@@ -338,7 +338,6 @@ Using the results provided by the previous SQL statements, provide an answer to 
 [VALIDATE_4]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 8: ](Ratings - Check the movie distribution)]
 
 Now let's determine the rating count distribution per movies using the following SQL:

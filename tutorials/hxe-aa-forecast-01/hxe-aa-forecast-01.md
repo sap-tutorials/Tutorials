@@ -7,9 +7,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 20
 ---
 
-## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
-
 ## Details
 ### You will learn
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series

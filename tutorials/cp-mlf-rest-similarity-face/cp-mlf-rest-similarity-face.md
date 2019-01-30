@@ -42,7 +42,9 @@ The service will return a JSON response that includes:
  - the bounding boxes coordinates for the identified faces
  - the associated vector of features for the detected face
 
-For more details, you can check the [Inference Service for Face Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/face_feature_extraction_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Face Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/face_feature_extraction_api/resource).
 
 [DONE]
 [ACCORDION-END]

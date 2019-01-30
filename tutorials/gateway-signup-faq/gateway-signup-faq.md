@@ -69,7 +69,7 @@ The System is an SAP ECC (Enterprise Core Components) filled with some Demo Data
 
 [ACCORDION-BEGIN [Question 7: ](What if I need help?)]
 
-If you have a question about SAP Gateway, please post a message in the [Gateway Community](https://www.sap.com/community/topic/gateway.html).
+If you have a question about SAP Gateway, please post a message in the [Gateway Community](https://www.sap.com/community/topics/gateway.html).
 
 For problem with registration or system availability only, please email the system support team at <mailto:rac-support@sap.com>.
 
