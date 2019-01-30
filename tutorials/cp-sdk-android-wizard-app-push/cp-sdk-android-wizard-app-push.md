@@ -57,12 +57,12 @@ In SAP Cloud Platform Mobile Services, select the application **`com.sap.wizapp`
 ![Push notification link on home page](push-notification-button.png)
 
 
-This screen requires information from the `Firebase console`.
+This screen requires information from <a target="_blank" href="https://firebase.google.com/">Firebase</a>.
 
 ![Push notification](push-notification-blank.png)
 
 
-In the <a target="_blank" href="https://console.firebase.google.com/">Firebase</a> console, go to the **Project settings**
+In the <a target="_blank" href="https://console.firebase.google.com/">Firebase console</a>, go to the **Project settings**.
 
 ![Project settings](firebase-project-settings-button.png)
 
@@ -88,6 +88,8 @@ Select the User Registrations tab to send the notification to your app.
 ![Send notification](send-notification.png)
 
 >It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, click through a few screens in the application and then press the **GO** button to refresh the display or select all of them and send a greeting to all the registrations.
+
+>If the Send Notifications button does is not showing, try logging out and back in to the management cockpit.
 
 
 Specify the notification text to send to the app.
