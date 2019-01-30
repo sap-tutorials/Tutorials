@@ -2,9 +2,9 @@
 title: Overview of Blockchain APIs on SAP API Hub
 description: Find SCP Blockchain Service APIs on SAP API Hub and browse through the APIs.
 time: 10
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+tags: [tutorial>beginner, topic>cloud, products>sap-cloud-platform, topic>Blockchain ]
 auto_validation: true
-primary_tag: products>sap-cloud-platform
+primary_tag: topic>Blockchain
 author_name: Brian McKellar
 author_profile: https://github.com/BrianMcKellar
 
