@@ -41,7 +41,7 @@ Create a table in your package:
 
 2. Enter the filter text **Table**, choose **Database table**, then choose Next.
 
-3. Enter a name such as `Zxx_ACCOUNT`, and a description, then choose Next:
+3. Enter a name such as `Zxx_ACCOUNT` - always replacing `xx` with your initials - and a description, then choose Next:
 
 4. Accept the proposed transport request and choose Finish.
 
@@ -104,11 +104,11 @@ Add a field based on a built-in data element:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add the field bank, based on a new data element)]
-Add the field **`bank`**, based on a new data element, `Zxx_bank`. You will get an error. Ignore it for now.
+Add the field **`bank`**, based on a new data element, `Zxx_bank`. You will get an error, which you will also fix in this step.
 
 1. Select the new data element and choose **Get Quick Fix (Ctrl+1)**. From the list, choose **Create data element …** :
 
-    ![Image depicting step5-create-bank](step5-create-bank.png)
+    ![Image depicting step5-create-dtel-quick-fix](step5-create-dtel-quick-fix.png)
 
 2. The Create data element wizard appears. Enter a name and description and choose **Next**:
 
@@ -142,12 +142,13 @@ Go back to your table, **`Zxx_ACCOUNT`**. Run a syntax check (**`F2`**). The err
   1. Now add other fields, so your code looks as follows. The field `Balance` will cause an error. Ignore this for now.
 
     ```ABAP
-    define table zjp_account {
+    define table zxx_account {
 
       key clnt    : abap.clnt not null;
       key acc_num  : abap.numc(8) not null;
-      city         : s_city;      // from table GEOCITY
-      bank         : zjp_bank;
+
+      city         : s_city;      
+      bank         : Zxx_bank;
       customer_name : s_custname; // from table SCUSTOM
       balance      : abap.curr(16,2);
       currency     : s_curr;
@@ -223,7 +224,7 @@ Now you will create a check table for the field `clnt`. This checks the value of
   2. Add the foreign key pointing to table `t000`, where your field `clnt = t000.mandt:`
 
     `with foreign key t000
-    where mandt = zjp_account_2.clnt;`
+    where mandt = zxx_account.clnt;`
 
   3. Add the screen check, which checks user input against the values in `t000.mandt`:
   	`@AbapCatalog.foreignKey.keyType : #KEY
@@ -236,69 +237,52 @@ Now you will create a check table for the field `clnt`. This checks the value of
   @AbapCatalog.foreignKey.screenCheck : true
   key clnt      : s_mandt not null
       with foreign key [0..*,1] t000
-        where mandt = zjp_account_2.clnt;
+        where mandt = zxx_account.clnt;
 ```
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Create a check table for the field city)]
-Now do the same with the field `city`, pointing to the table `sgeocity` and the field `city` in that table:
-
-```ABAP
-@AbapCatalog.foreignKey.keyType : #KEY
-@AbapCatalog.foreignKey.screenCheck : true
-city          : s_city
-  with foreign key sgeocity
-    where city = zjp_account_2.city;
-```
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 13: ](Save, activate, and check code)]
+[ACCORDION-BEGIN [Step 12: ](Save, activate, and check code)]
 Now, save (`Ctrl+S`) and activate (`Ctrl+F3`) your table. Your code should look like this:
 
 ```ABAP
-@EndUserText.label : 'Customer Accounts'
+@EndUserText.label : 'Bank Accounts Table'
 @AbapCatalog.enhancementCategory : #EXTENSIBLE_CHARACTER_NUMERIC
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #ALLOWED
 
-define table zjp_account {
+define table zxx_account {
+
   @AbapCatalog.foreignKey.keyType : #KEY
   @AbapCatalog.foreignKey.screenCheck : true
   key clnt      : s_mandt not null
     with foreign key [0..*,1] t000
-      where mandt = zjp_account.clnt;
+      where mandt = zxx_account.clnt;
+
   key acc_num   : abap.numc(8) not null;
 
-  bank          : zjp_bank_2;
+  bank          : zxx_bank;
+  city          : s_city;
   customer_name : s_custname;
 
-  @Semantics.amount.currencyCode : 'zjp_account.currency'
+  @Semantics.amount.currencyCode : 'sflight.currency'
   balance       : abap.curr(16,2);
+
   currency      : s_curr;
   last_entry    : s_bdate;
   category      : abap.numc(2);
 
 }
+
 ```
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
-You will now create an input check for the field currency, with the check table `scurx`. Delete the line
- `currency : s_curr` and replace it with the following code:
-
-```ABAP
-@AbapCatalog.foreignKey.keyType : #NON_KEY
-@AbapCatalog.foreignKey.screenCheck : true
-currency      : s_curr
-with foreign key scurx
-where currkey = zjp_account_2.currency;
-```
-
-And that's it! You have now created a database table, with a new data element, and input checks.
+[ACCORDION-BEGIN [Step 13: ](Test yourself)]
+You will now create an input check for the field `city` of type `s_city` , in the table `zxx_account`.
+Include the two `foreignKey` annotations.
+Use the field `city` in the check table `sgeocity `. Enter your code in the box below and choose **Submit answer** :
 
 [VALIDATE_1]
 [ACCORDION-END]
