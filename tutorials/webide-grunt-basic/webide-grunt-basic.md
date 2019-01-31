@@ -34,6 +34,7 @@ The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm r
 
 For more information, see <https://docs.npmjs.com/files/npmrc>.
 
+> Please note that the Grunt build currently supports the "ES5" edition of the ECMAScript standard. The "ES6" edition is not supported.
 
 
 
