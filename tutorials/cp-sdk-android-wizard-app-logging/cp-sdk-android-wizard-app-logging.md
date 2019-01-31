@@ -23,16 +23,19 @@ On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and enter **
 Note that below method contains two LOGGER statements:
 ```Java
 @Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		LOGGER.debug("onOptionsItemSelected: " + item.getTitle());
-		if (item.getItemId() == SETTINGS_SCREEN_ITEM) {
-			LOGGER.debug("settings screen menu item selected.");
-			Intent intent = new Intent(this, SettingsActivity.class);
-			this.startActivityForResult(intent, SETTINGS_SCREEN_ITEM);
-			return true;
-        }
-		return false;
-	}
+public boolean onOptionsItemSelected(MenuItem item) {
+    LOGGER.debug("onOptionsItemSelected: " + item.getTitle());
+    switch (item.getItemId()) {
+        case SETTINGS_SCREEN_ITEM:
+            LOGGER.debug("settings screen menu item selected.");
+            Intent intent = new Intent(this, SettingsActivity.class);
+            this.startActivityForResult(intent, SETTINGS_SCREEN_ITEM);
+            return true;
+
+				default:
+		        return false;
+    }
+}
 ```
 
 These message will be logged when the app's log level is set to Debug or Path and the app's Settings menu item is clicked.

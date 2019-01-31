@@ -53,7 +53,7 @@ module.exports = {
         if (line.replace(/\n/g, '') === '---') {
           metaBoundaries += 1;
         }
-        if (metaBoundaries > 2) {
+        if (metaBoundaries >= 2) {
           isMeta = false;
         }
 

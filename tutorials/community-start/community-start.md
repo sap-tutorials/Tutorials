@@ -27,6 +27,8 @@ In order to participate fully in the SAP Community, you need to set your account
 
 1. Watch this SAP Community video [Changing Privacy Settings](https://www.youtube.com/watch?v=tfuKtUfPrCc).
 
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/tfuKtUfPrCc" frameborder="0" allowfullscreen></iframe>
+
 2. Go to your SAP.com profile **Dashboard** (accessible by clicking your avatar in the upper right), select **Privacy** (found under **Account & Settings**), and make sure that **I want my profile to be visible to public** is switched to **`Allow`**.
 
 3. Click **View Your Public Profile**.
