@@ -38,7 +38,7 @@ source ~/tms/bin/activate
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Build and קxport a TensorFlow model)]
+[ACCORDION-BEGIN [Step 1: ](Build and Export a TensorFlow model)]
 
 First, clone the models repository locally:
 
