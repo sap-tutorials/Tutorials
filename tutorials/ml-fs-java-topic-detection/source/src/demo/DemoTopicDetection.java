@@ -67,7 +67,7 @@ public class DemoTopicDetection {
       System.out.println(
           "Enter the total number of topic to be detected (default: \"" + numTopicsDefault + "\") : ");
       line = scanner.nextLine();
-      while (!!line.matches("\\d+") && line.length() > 0)
+      while (!line.matches("\\d+") && line.length() > 0)
         line = scanner.nextLine();
       if (line.length() > 0)
         numTopics = Integer.valueOf(line);
@@ -76,7 +76,7 @@ public class DemoTopicDetection {
       int numTopicsPerDoc = numTopicsPerDocDefault;
       System.out.println("Enter the number of most relevant topics to be listed per document (default: \"" + numTopicsPerDocDefault + "\") : ");
       line = scanner.nextLine();
-      while (!!line.matches("\\d+") && line.length() > 0)
+      while (!line.matches("\\d+") && line.length() > 0)
         line = scanner.nextLine();
       if (line.length() > 0)
         numTopicsPerDoc = Integer.valueOf(line);
@@ -85,7 +85,7 @@ public class DemoTopicDetection {
       int numKeywordsPerTopic = numKeywordsPerTopicDefault;
       System.out.println("What is the number of keywords to be listed per topic (default: \"" + numKeywordsPerTopicDefault + "\") : ");
       line = scanner.nextLine();
-      while (!!line.matches("\\d+") && line.length() > 0)
+      while (!line.matches("\\d+") && line.length() > 0)
         line = scanner.nextLine();
       if (line.length() > 0)
         numKeywordsPerTopic = Integer.valueOf(line);
@@ -94,7 +94,7 @@ public class DemoTopicDetection {
       int numFeatures = numFeaturesDefault;
       System.out.println("Enter is the maximum number of keywords to be extracted per documents (default: \"" + numFeaturesDefault + "\") : ");
       line = scanner.nextLine();
-      while (!!line.matches("\\d+") && line.length() > 0)
+      while (!line.matches("\\d+") && line.length() > 0)
         line = scanner.nextLine();
       if (line.length() > 0)
         numFeatures = Integer.valueOf(line);
