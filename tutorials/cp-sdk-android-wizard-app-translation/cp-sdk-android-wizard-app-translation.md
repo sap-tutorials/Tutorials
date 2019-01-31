@@ -114,7 +114,9 @@ In the emulator or device, set the preferred language to be Italian, then run th
 
 >Some of the strings in the app are part of the foundation or Fiori library and their strings are not easily accessible to be localized.  A couple of examples are the basic authentication screen and the passcode screen.
 
-For more information on the translation wizard, see [TODO Add link](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/Usage.html).
+>Further information on this feature can be found at <a target="_blank" href="https://cloudplatform.sap.com/capabilities/product-info.SAP-Translation-Hub.a2901a83-493f-4fc3-b3f2-7eabb42cd480.html">SAP Translation Hub</a>.
+
+Congratulations! You have learned how to use the SAP Translation Hub to quickly add translations to your application!
 
 
 [DONE]

@@ -393,6 +393,10 @@ Run the app again, and re-attempt the synchronize. You don't have to recreate th
 
 You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state.  All entities who didn't produce errors successfully synced.  One way to correct the exception would be to change the quantity from 0 to a valid positive number.  Another would be to delete the `ErrorArchive` entry reverting the entity to its previous state.  For more information on error handling visit [Handling Errors and Conflicts](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html).
 
+>Further information on using the offline feature can be found at <a target="_blank" href="https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-6-offline-odata/">Step by Step with the SAP Cloud Platform SDK for Android — Part 6 — Offline OData</a>.
+
+Congratulations! You have created an offline enabled app using the SAP Cloud Platform SDK for Android and examined how the `ErrorArchive` can be used to examine conflicts!
+
 [DONE]
 [ACCORDION-END]
 
