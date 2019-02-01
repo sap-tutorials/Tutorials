@@ -22,7 +22,7 @@ author_profile: https://github.com/BrianMcKellar
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the Hyperledger Fabric service)]
+[ACCORDION-BEGIN [Step 1: ](Understand the Hyperledger Fabric Service)]
 
  The Hyperledger Fabric service is integrated into SAP Cloud Platform via a service broker. The service broker supports several node types as service plans.
 
@@ -55,7 +55,7 @@ For our `Hello World` example we will be using a Development Node, with the step
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the Hyperledger Fabric service)]
+[ACCORDION-BEGIN [Step 2: ](Open the Hyperledger Fabric Service)]
 
 Once on the SAP Cloud Platform Service Marketplace, locate and open the Hyperledger Fabric service by clicking the relevant service tile.
 
@@ -77,7 +77,7 @@ Click the **Instances** tab on the side menu, opening an overview of available H
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create new instance)]
+[ACCORDION-BEGIN [Step 4: ](Create New Instance)]
 
 Once on your Hyperledger Fabric instances overview, click **New Instance** to open the service instance wizard:
 
@@ -86,7 +86,7 @@ Once on your Hyperledger Fabric instances overview, click **New Instance** to op
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Choose service instance settings)]
+[ACCORDION-BEGIN [Step 5: ](Choose Service Instance Settings)]
 
 Navigate through the service instance wizard, selecting the following settings:
 
@@ -104,7 +104,7 @@ After selecting the settings, click **Finish**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Confirm creation of node)]
+[ACCORDION-BEGIN [Step 6: ](Confirm Creation of Node)]
 
 Your development node will now be provisioned (which may take a few moments) and displayed on the overview of available service instances.
 
