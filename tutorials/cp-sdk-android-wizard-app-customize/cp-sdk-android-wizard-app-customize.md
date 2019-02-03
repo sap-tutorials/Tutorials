@@ -1,6 +1,6 @@
 ---
-title: Customizing the Wizard Generated Application
-description: The following tutorial will demonstrate steps used to customize a wizard generated application as well as how to use the Fiori for Android Object Cells and Fiori Search View.
+title: Customize the Wizard Generated Application
+description: Customize a wizard generated application, then learn how to use the Fiori for Android Object Cells and Fiori Search View.
 primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
 tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
