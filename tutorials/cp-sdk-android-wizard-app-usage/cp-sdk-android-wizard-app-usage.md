@@ -379,7 +379,9 @@ To test this feature multiple times, change the date of the device/emulator in *
 
 ![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
 
-For more information on usage visit [Client Usage](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/Usage.html).
+>Further information on usage can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/Usage.html">Client Usage</a> and <a target="_blank" href="https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-8-usage/">Step by Step with the SAP Cloud Platform SDK for Android — Part 8 — Client Usage</a>
+
+Congratulations! You have learned how the usage feature can provide insights into how a deployed application is being used!
 
 
 [DONE]

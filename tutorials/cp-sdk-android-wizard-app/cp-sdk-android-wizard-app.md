@@ -212,7 +212,7 @@ Tap on a list item to show an editable detail screen.
 
 ![Category detail](product-detail.png)
 
->Further information on the generate application can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/creating_an_app.html">Running the Wizard</a> and the `WizardAppReadme.md` file located in the generated app.
+>Further information on the generate application can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/creating_an_app.html">Running the Wizard</a>.
 
 
 Congratulations!  You have created your first Android app using the SAP Cloud Platform SDK for Android!
