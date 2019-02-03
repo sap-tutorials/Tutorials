@@ -1,5 +1,5 @@
 ---
-title: Using Usage Reporting in Your Android Application
+title: Use Usage Reporting in Your Android Application
 description: See how the Usage Reporting feature can help provide information on how your app is being used.
 primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
@@ -15,15 +15,15 @@ time: 30
 - How to add code to enable auto-upload of usage data based on the client policy
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Exploring the Usage Feature)]
+[ACCORDION-BEGIN [Step 1: ](Explore the usage feature)]
 
-As shown in the tutorial, <a target="_blank" href="https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html">Try Out SAP Cloud Platform SDK for Android Wizard</a>, ensure that **Enable Usage Reporting** is checked when creating the app.
+As shown in the tutorial, [Try Out SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app), ensure that **Enable Usage Reporting** is checked when creating the app.
 
 ![Enable Usage when Creating App](creating_with_usage.png)
 
 The app must first receive permission to collect usage information from the user.
 
-The text displayed to the user can be customized by accessing **`res/values/strings_localized/strings_localized(en).xml`** (or by pressing **Shift Shift** then searching for **`strings_localized.xml`**) and editing the text between the string tags below.  For more details on translation, see <a target="_blank" href="https://developers.sap.com/group.sdk-android.html">Add New Languages to your Android Application</a>.
+The text displayed to the user can be customized by accessing **`res/values/strings_localized/strings_localized(en).xml`** (or by pressing **Shift Shift** then searching for **`strings_localized.xml`**) and editing the text between the string tags below.  For more details on translation, see <a href="https://developers.sap.com/group.sdk-android.html">Add New Languages to your Android Application</a>.
 
 ```xml
 <string name="get_usage_permission_explanation">
@@ -146,7 +146,7 @@ usageUtil.eventBehaviorViewDisplayed(EntitySetListActivity.class.getSimpleName()
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Adding Further Usage Instrumentation)]
+[ACCORDION-BEGIN [Step 2: ](Add further usage instrumentation)]
 
 The Usage feature can be used to instrument an app to track things that might provide an insight into user's behaviors.  
 
@@ -363,7 +363,7 @@ uploadUsage();
 
 In Android Studio, on Windows press **Ctrl+N** or on a Mac press **command+O** and type **`SettingsFragment`** to open `SettingsFragment.java`.
 
-Press **Ctrl+F** to find
+Press **Ctrl+F** to find:
 
 ```Java
 UsageBroker.upload(false, getContext(), new AppUsageUploader.UploadListener() {
@@ -379,9 +379,7 @@ To test this feature multiple times, change the date of the device/emulator in *
 
 ![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
 
->Further information on usage can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/Usage.html">Client Usage</a> and <a target="_blank" href="https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-8-usage/">Step by Step with the SAP Cloud Platform SDK for Android — Part 8 — Client Usage</a>
-
-Congratulations! You have learned how the usage feature can provide insights into how a deployed application is being used!
+For more information on usage visit [Client Usage](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/Usage.html).
 
 
 [DONE]
