@@ -1,6 +1,6 @@
 ---
-title: Customizing the Wizard Generated Application
-description: The following tutorial will demonstrate steps used to customize a wizard generated application as well as how to use the Fiori for Android Object Cells and Fiori Search View.
+title: Customize the Wizard Generated Application
+description: Customize a wizard generated application, then learn how to use the Fiori for Android Object Cells and Fiori Search View.
 primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
 tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
@@ -417,9 +417,9 @@ Now when you run the app again there is a filter search box that changes which p
 
 ![Filter Categories in action 2](filter-in-action.png)
 
->Further information on Fiori for Android can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html">Fiori UI Overview</a>, <a target="_blank" href="https://experience.sap.com/fiori-design-android/object-cell/">Fiori Android Design Guidelines</a> and <a target="_blank" href="https://github.com/SAP/cloud-sdk-android-fiori-ui-components">Fiori UI Demo Application</a>.
+>Further information on Fiori for Android and the generated app can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html">Fiori UI Overview</a>, <a target="_blank" href="https://experience.sap.com/fiori-design-android/object-cell/">Fiori Android Design Guidelines</a> and <a target="_blank" href="https://github.com/SAP/cloud-sdk-android-fiori-ui-components">Fiori UI Demo Application</a> and the `WizardAppReadme.md` file located in the generated app.
 
-You should now have an understanding on some of the ways that the wizard generated application can be customized to show different fields on the list screens, alter control flow, and add or remove menu items.
+Congratulations!  You now have made use of Fiori for Android and have an understanding on some of the ways that the wizard generated application can be customized to show different fields on the list screens, alter control flow and add or remove menu items.
 
 [DONE]
 [ACCORDION-END]

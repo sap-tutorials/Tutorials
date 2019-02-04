@@ -19,6 +19,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 ### Time to Complete
 10 min
 
+## Next Steps
+- **Tutorials:** [Send Data with MQTT](https://developers.sap.com/tutorials/iot-cf-send-data-mqtt.html)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Install OpenSSL)]
