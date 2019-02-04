@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 During this tutorial, you will build get to know how to monitor the execution of tasks.
 
