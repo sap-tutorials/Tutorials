@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 During this tutorial, you will learn how to create a Data Transform. This will enrich the `Devices.csv` file, which you have taken a look at during one of the previous tutorials, with country information.
 
@@ -156,5 +157,3 @@ You see that (in contrast to the `Devices` data set) the `EnrichedDevices` data 
 [VALIDATE_1]
 
 [ACCORDION-END]
-
-
