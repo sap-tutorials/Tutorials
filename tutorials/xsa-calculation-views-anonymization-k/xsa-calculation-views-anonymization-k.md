@@ -15,6 +15,10 @@ time: 20
  - How to create a calculation view
  - Use artifacts to import data from text file
 
+
+***GitHub repository available***
+ This project can be cloned from this repository: [https://github.com/SAP/hana-xsa-calculation-view-anonymity](https://github.com/SAP/hana-xsa-calculation-view-anonymity)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Check pre-requisites)]
@@ -52,7 +56,7 @@ Use command `xs ds` to delete the HDI container and deploy it again once the spa
 
 Right-click **Workspace** and choose **New > Project from template**.
 
-![Create a new project](4.png)
+![Create a new project](40.png)
 
 Click **Next**.
 
