@@ -17,6 +17,7 @@ time: 20
 
 
 ***GitHub repository available***
+ 
  This project can be cloned from this repository: [https://github.com/SAP/hana-xsa-calculation-view-anonymity](https://github.com/SAP/hana-xsa-calculation-view-anonymity)
 
 ---
@@ -88,7 +89,7 @@ Call the module `db` and click **Next**.
 
 Flag **Build module after creation** and click **Finish**.
 
-![New DB module](10.png)
+![New DB module](100.png)
 
 [DONE]
 
@@ -198,7 +199,7 @@ Double-click on the node and add all of the fields to the output. Then click on 
 
 Set `ID` as the sequence column, `2` as the value for `k` and click on `+` to add quasi columns:
 
-![Add all fields to output](11.png)
+![Add all fields to output](10.png)
 
 Choose the Country
 
