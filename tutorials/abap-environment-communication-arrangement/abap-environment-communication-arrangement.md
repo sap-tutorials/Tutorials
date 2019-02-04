@@ -135,7 +135,7 @@ A new communication system will be registered.
 
 
 [ACCORDION-BEGIN [Step 9: ](Select scenario)]
-Select your scenario and click on **Create**.
+Select your communication scenario that you created in the last tutorial, Expose a Standard Core Data Service for ABAP Environment, and click on **Create**.
 
 ![Select Scenario](Picture13.png)
 
