@@ -37,14 +37,17 @@ You need to deploy your extension to the Cloud Foundry environment or Neo on SAP
 
     ![Cloud Foundry settings](step1-cf-settings.png)
 
-3. Choose **Install Builder** if you have no builder installed, or if the **Reinstall Builder** button appears, there is no need to install one. It may take a few minutes for the builder to be installed.
+3. If you have no builder installed, choose **Install Builder**. If the **Reinstall Builder** button appears, there is no need to install a builder.
 
+>It may take a few minutes for the builder to be installed.
 
-4. Choose **Save**, right-click your project folder and then choose **Build > Build**.
+Choose **Save**.
+
+4. Right-click your project folder and then in the context menus, choose **Build > Build**.
 
     ![Build the project](step1-build.png)
 
-    > It is possible to deliver an SAP Web IDE extension that requires no authentication. In the application descriptor file, you can configure the behavior of your extension just like any other application. You open the `xs-app.json` file and set the `authenticationMethod` property to `none` in three locations, as in the following example:
+    > It is possible to deliver an SAP Web IDE extension that requires no authentication. In the application descriptor file, you should configure the behavior of your extension just like any other application. You open the `xs-app.json` file and set the `authenticationMethod` property to `none`. Also, add the `authenticationType` properties and set them to `none` as shown in the following example:
 
     ```
     {
@@ -82,7 +85,7 @@ You need to deploy your extension to the Cloud Foundry environment or Neo on SAP
 
     ![Deploy dialog box](step2-deploy-button.png)
 
-3. In the Tools menu, choose SAP Cloud Platform Cockpit, then go to your space, and in the **Applications** section, you can see that the `myproject` application is started.
+3. In the **Tools** menu, choose **SAP Cloud Platform Cockpit**, then go to your space, and in the **Applications** section, you can see that the `myproject` application is started.
 
     ![Started](step2-started.png)
 
@@ -100,24 +103,20 @@ You have successfully deployed your project to the Cloud Foundry environment on 
 [ACCORDION-BEGIN [Step 3: ](Create a new destination)]
 In order for SAP Web IDE to recognize and consume your new extension, you need to create a new destination in SAP Cloud Platform cockpit. This destination will point to the application URL of your extension application on SAP Cloud Platform.
 
-1. In the SAP Cloud Platform cockpit, choose **Connectivity** > **Destination** > **New Destination**.
+1. In SAP Cloud Platform cockpit, choose **Connectivity** > **Destination** > **New Destination**.
 
-    > You can access the SAP Cloud Platform cockpit from the **Tools** menu in SAP Web IDE.
+    > You can access SAP Cloud Platform cockpit from the **Tools** menu in SAP Web IDE.
 
       ![New destination](step3-NewDestination.png)
 
-2. Go to the SAP Cloud Platform cockpit.
-
-3. Choose **Connectivity > Destinations > New Destination**.
-
-4. Enter the following parameters for your destination.
+2. Enter the following parameters for your destination.
 
     |Parameter          | Value                                     |
     |--------------------|----------------------------------------|
     |`Name`  | `myextension`                              |
     |`Type` | `HTTP`                           |
     |`Description`  | `This is my extension.`                              |
-    |`URL` | The application URL for your extension (which we copied to the clipboard in step 2)                            |
+    |`URL` | The application URL for your extension (which we copied to the clipboard in the previous step)                            |
     |`Proxy Type`  | `Internet`                              |
     |`Authentication` | `NoAuthentication`                           |
 
@@ -125,20 +124,20 @@ In order for SAP Web IDE to recognize and consume your new extension, you need t
 
     ![New destination](step3-DestinationParameters.png)
 
-5. Before you save, add the following two SAP Web IDE properties by choosing **New Property** and entering the values shown below.
+3. Before you save, add the following two SAP Web IDE properties by choosing **New Property** and entering the values shown below.
 
     |Parameter         | Value                               |
     |------------------|-------------------------------------|
     |`WebIDEEnabled`   | `true`                              |
     |`WebIDEUsage`     | `feature`                           |
 
-    > If the **New Property** button is not enabled, choose **Edit** to enable the **New Property** button, in case you may have inadvertently already saved your work.
+    > If the **New Property** button is not enabled, choose **Edit** to enable the **New Property** button, if you inadvertently already saved your work.
 
     The SAP Web IDE properties for the destination look like this:
 
     ![New destination](step3-SAPWebIDEProperties.png)
 
-6. Choose **Save**.
+4. Choose **Save**.
 
     It may take a few minutes for the destination configuration to take effect. Choose **Check Connection** to check if the destination has been finalized.
 
@@ -151,23 +150,23 @@ Extensions and plugins that are not provided by SAP are under the responsibility
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Enable the extension)]
-In this step, you enable your new extension on the SAP Web IDE **Features (Extensions)** page.
+In this step, you enable your new extension on the SAP Web IDE **Extensions** page.
 
 1. In the left sidebar, choose **Preferences**.
 
     ![Choose Preferences](step4-preferences.png)
 
-2. Then, under **Workspace Preferences**, choose **Features**.
+2. Then, under **Workspace Preferences**, choose **Extensions**.
 
-    ![Choose features](step4-choose-features.png)
+    ![Choose extensions](step4-choose-extensions.png)
 
-3. On the **Features (Extensions)** page, navigate to the `myextension` tile, click the button to enable it, and then choose **Save**.
+3. On the **Extensions** page, navigate to the `myextension` tile, click the toggle button to turn it on, and then choose **Save**.
 
     ![Enable my extension](step4-enable-myextension.png)
 
 You can now see that the new extension functionality is implemented in your SAP Web IDE.
 
-> If you want to remove the new extension functionality, simply use this toggle button to turn it off.
+> If at any time you want to remove the new extension functionality, simply use this toggle button to turn it off.
 
 [VALIDATE_4]
 [ACCORDION-END]
