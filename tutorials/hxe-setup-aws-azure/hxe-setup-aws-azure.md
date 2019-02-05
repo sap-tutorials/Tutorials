@@ -122,6 +122,10 @@ And **Connect** again
 
 > You may get a warning because the remote desktop is using a self-signed certificate.  
 
+When prompted, use user `Administrator` and the master password you entered when creating the instance.
+
+![Start RDP](x5.png)
+
 You will see a site with links to SAP Web IDE, the Database Cockpit and the XS Advanced Cockpit.
 
 Start by downloading and installing Google Chrome and making it your default browser:
