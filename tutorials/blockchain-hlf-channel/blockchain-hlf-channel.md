@@ -17,7 +17,7 @@ author_profile: https://github.com/BrianMcKellar
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand Hyperledger Fabric Channels)]
+[ACCORDION-BEGIN [Step 1: ](Understand Hyperledger Fabric channels)]
 
 A Hyperledger Fabric channel is created on any Hyperledger Fabric peer node and then selected peer nodes (based on permission and agreement) can join the channel. This channel is effectively one blockchain and any data written to this channel is only visible on the specific Hyperledger Fabric peer nodes attached to the channel.
 
@@ -45,7 +45,7 @@ For this demo, we will simply create the channel instance within our demo Cloud 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open Node Dashboard)]
+[ACCORDION-BEGIN [Step 2: ](Open node dashboard)]
 
 To create your Hyperledger Fabric channel, click the dashboard icon to navigate to your Hyperledger Fabric node dashboard.
 
@@ -54,7 +54,7 @@ To create your Hyperledger Fabric channel, click the dashboard icon to navigate 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Start Channel Creation)]
+[ACCORDION-BEGIN [Step 3: ](Start channel creation)]
 
 Once on your node dashboard, click **Channels** on the side menu.
 
@@ -67,7 +67,7 @@ Click **Create Channel**, opening the channel creation window.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enter Channel Settings)]
+[ACCORDION-BEGIN [Step 4: ](Enter channel settings)]
 
 With the channel creation window open, enter the channel name `test-channel` and then click **Create**.
 
@@ -78,7 +78,7 @@ The channel is created and you return to the node dashboard.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Provision Channel Service Instance)]
+[ACCORDION-BEGIN [Step 5: ](Provision channel service instance)]
 
 Once returned to the node dashboard, click the **Service Instance** icon to provision a service instance for the channel in the same Cloud Foundry space.
 
