@@ -20,7 +20,7 @@ author_profile: https://github.com/BrianMcKellar
   - How to navigate to SAP Cloud Platform Service Marketplace and locate the Hyperledger Fabric service
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Understand Blockchain Service)]
+[ACCORDION-BEGIN [Step 1: ](Understand Blockchain service)]
 
 On SAP Cloud Platform, different service instances are created to represent (or proxy) the real-world Hyperledger Fabric instances provisioned.
 
@@ -80,7 +80,7 @@ This gives you access to your SAP Cloud Platform cockpit.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Select your Global Account)]
+[ACCORDION-BEGIN [Step 4: ](Select your global account)]
 
 Once in the SAP Cloud Platform cockpit, you can access global accounts. These often represent an entire company and can be viewed as an empty shell used for billing, recording data consumption, and grouping resources together. They can't be used to directly run applications or services, however.
 
@@ -92,7 +92,7 @@ Click the global account name to open its cockpit. In this example, we are using
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Select your Subaccount)]
+[ACCORDION-BEGIN [Step 5: ](Select your sub-account)]
 
 Once in your global account cockpit, you can access sub-accounts.
 
@@ -105,7 +105,7 @@ Click your sub-account name to open its cockpit. In this example, we are using o
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Select your Space)]
+[ACCORDION-BEGIN [Step 6: ](Select your space)]
 
 Once in your sub-account, you can access your relevant space.
 

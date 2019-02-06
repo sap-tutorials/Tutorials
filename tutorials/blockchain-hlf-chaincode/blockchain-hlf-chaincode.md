@@ -16,7 +16,7 @@ author_profile: https://github.com/BrianMcKellar
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand Chaincode)]
+[ACCORDION-BEGIN [Step 1: ](Understand chaincode)]
 
 Hyperledger Fabric chaincode (smart contracts) control all reading and writing to a Hyperledger Fabric channel and implements all relevant business logic.
 
@@ -33,7 +33,7 @@ For this demo, we develop and deploy a simple `Hello World` chaincode that just 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the Channel Node Dashboard)]
+[ACCORDION-BEGIN [Step 2: ](Open the channel node dashboard)]
 
 To deploy and test chaincode, click the **Dashboard** icon to navigate to your channel service instance dashboard.
 
@@ -43,7 +43,7 @@ To deploy and test chaincode, click the **Dashboard** icon to navigate to your c
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access Chaincode Area)]
+[ACCORDION-BEGIN [Step 3: ](Access chaincode area)]
 
 Once on your channel service instance dashboard, click **Chaincode** on the side menu.
 

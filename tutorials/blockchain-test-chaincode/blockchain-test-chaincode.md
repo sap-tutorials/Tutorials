@@ -16,7 +16,7 @@ author_profile: https://github.com/BrianMcKellar
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand how Applications are Bound to Channels)]
+[ACCORDION-BEGIN [Step 1: ](Understand how applications are bound to channels)]
 
 Based on the YAML interface that describes the different chaincode functions, it is possible for the gateway to support a HTTP REST API between the chaincode and the application:
 
@@ -46,7 +46,7 @@ This opens the Swagger UI.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Authorize Access to Chaincode)]
+[ACCORDION-BEGIN [Step 3: ](Authorize access to chaincode)]
 
 With the Swagger UI open, click **Authorize**.
 
@@ -63,7 +63,7 @@ The Swagger UI is now authorized (shown as a closed padlock on the UI), giving y
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Invoke a Transaction on Chaincode)]
+[ACCORDION-BEGIN [Step 4: ](Invoke a transaction on chaincode)]
 
 Once authorized, click and open **POST** and then click **Try It Out**. This allows you to invoke a transaction on your chaincode:
 
@@ -88,7 +88,7 @@ The transaction will now be invoked on the chaincode, with a 200 status code dis
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Call the Chaincode)]
+[ACCORDION-BEGIN [Step 5: ](Call the chaincode)]
 
 You can now call the chaincode using the same ID. Click **GET** and then click **Try It Out**. This allows you to call the chaincode.
 
@@ -103,7 +103,7 @@ The chaincode is now called and returns the response `Hello World!`, an indicati
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Explore the Chaincode)]
+[ACCORDION-BEGIN [Step 6: ](Explore the chaincode)]
 
 After successfully calling your chaincode, you can make use of the **Explore** area provided with your channel service instance.
 
