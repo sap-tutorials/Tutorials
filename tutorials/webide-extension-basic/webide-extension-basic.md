@@ -81,7 +81,7 @@ A new SAP Web IDE extension project folder now appears in your workspace.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Test the extension)]
-In the Workspace, right-click the **`plugin.json`** file and choose **Run > Run As SAP Web IDE Extension**. SAP Web IDE opens in a new browser tab called **Debug Mode**.
+In the Workspace, right-click the **`package.json`** file and choose **Run > Run As SAP Web IDE Extension**. SAP Web IDE opens in a new browser tab called **Debug Mode**.
 
 ![Run extension](step3-run.png)
 

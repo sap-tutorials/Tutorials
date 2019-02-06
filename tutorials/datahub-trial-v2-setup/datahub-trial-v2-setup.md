@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 During this tutorial, you will learn how to create a solution instance of SAP Data Hub, trial edition. SAP Data Hub, trial edition is provisioned via SAP Cloud Appliance Library. It runs in your account on Google Cloud Platform.
 
@@ -63,5 +64,3 @@ In the SAP Data Hub Launchpad, find and open the link **Modeler**. Copy the URL 
 [DONE]
 
 [ACCORDION-END]
-
-
