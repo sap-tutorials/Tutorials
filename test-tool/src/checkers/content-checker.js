@@ -75,7 +75,7 @@ module.exports = {
         }
       }
 
-      if (line.startsWith('```')) {
+      if (line.trim().startsWith('```')) {
         isCodeBlock = !isCodeBlock;
       }
 
