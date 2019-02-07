@@ -7,8 +7,8 @@ tags: [products>sap-web-ide, topic>odata, tutorial>beginner ]
 time: 20
 ---
 
-## Prerequisites  
- - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
+## Prerequisites
+ - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html)
  - Select a Cloud Foundry space. See [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
 
 ## Details
@@ -21,7 +21,7 @@ time: 20
 
 You'll use SAP Web IDE, and a particular feature relating to building business apps with CDS.
 
-The model and service you'll create is deliberately a very simple one, based on a small subset of something you've seen before if you've followed previous OData tutorials (in particular the [Learn about OData Fundamentals](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html) tutorial) - the product information from the Northwind service.
+The model and service you'll create is deliberately a very simple one, based on a small subset of something you've seen before if you've followed previous OData tutorials (in particular the [Learn about OData Fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html) tutorial) - the product information from the Northwind service.
 
 > In this tutorial and others the general name "SAP Web IDE" is used. Specifically, the "Full-Stack" version is implied throughout.
 
@@ -29,7 +29,7 @@ The model and service you'll create is deliberately a very simple one, based on 
 
 [ACCORDION-BEGIN [Step 1: ](Start up the SAP Web IDE)]
 
-Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -70,7 +70,11 @@ This means that the CDS facilities in SAP Web IDE will do the right things at th
 
 [ACCORDION-BEGIN [Step 4: ](Check your CF quota)]
 
-Before proceeding, it's worth checking that you have enough quota available for this tutorial. Go to the Cloud Foundry space for your trial account in your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome) -- follow the Cloud Foundry Trial link, selecting your subaccount to see the spaces within the organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something like this:
+Before proceeding, it's worth checking that you have enough quota available for this tutorial. Go to the Cloud Foundry space for your trial account in your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome) -- follow the Cloud Foundry Trial link, selecting your subaccount where you should then see the subaccount overview, which will look something like this:
+
+![Subaccount overview](subaccount-overview.png)
+
+Select the **Spaces** menu item on the left to see the space(s) within the Cloud Foundry organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something like this:
 
 ![CF space quota details](cf-space-quota-details.png)
 
@@ -83,7 +87,7 @@ In this example, there is 1GB memory free, which is more than enough for the ODa
 
 So you can see what's going on throughout the rest of this tutorial, open the SAP Web IDE console with menu path **View** > **Console**. If there's already content displayed in it, you can clear it with menu path **View** > **Clear Console**.
 
-> You may need to switch back from the Preferences perspective to the Development perspective first. 
+> You may need to switch back from the Preferences perspective to the Development perspective first.
 
 Notice there's also a **Run Console** option too -- you'll be switched to that automatically later in this tutorial when you execute the generated OData service for the first time.
 
@@ -100,7 +104,7 @@ Use the project wizard to start a new project, using menu path **File** > **New*
 
 In the **Basic Information** step, enter **`Products`** for the project name.
 
-In the **Project Details** step, select **`Java`** for the Service, **`my.app`** for the Java Package, and **`SAP HANA Database`** for the Database. 
+In the **Project Details** step, select **`Java`** for the Service, **`my.app`** for the Java Package, and **`SAP HANA Database`** for the Database.
 
 When you finish the template wizard, you should have a project in your workspace that looks something like this:
 
@@ -134,7 +138,7 @@ In the next step you'll create an entity definition that has these three propert
 
 [ACCORDION-BEGIN [Step 8: ](Define the data model)]
 
-It's time to define the data model, declaring an entity with a few properties.
+It's time to define the data model, declaring an entity with a few properties. You'll want to modify the service definition too, so be prepared *not* to save your changes just yet - you'll be saving them together with the service definition changes in the next step.
 
 Open the **`data-model.cds`** file within the `db` folder. It should already contain some sample declarations. Replace the entire contents with the following:
 
@@ -152,17 +156,10 @@ entity Products {
 >&nbsp;
 > ![CDS autocomplete and syntax checking](cds-autocomplete-and-syntax-checking.png)
 
-Once you've added the entity definition, **save** the file.
-
-Because of the **Perform CDS Build upon save** preference you checked earlier, a build of the project is triggered automatically, and you can see the results in the Console. If you look at the details, you'll notice that various artifacts have been created not only in the `db` folder but also in the `srv` folder. The following screenshot depicts what you might see -- the files highlighted have just been generated.
-
-![Generated files](generated-files.png)
-
-Indeed, if you open the `CatalogService.xml` file, you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. The metadata is based on a default service definition; in the next step, you'll modify that definition to use your new Products entity.
+Remember - at this stage you should *not* save the file.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 9: ](Specify the service definition)]
 
@@ -180,19 +177,30 @@ service CatalogService {
 
 The first line creates a reference to the information in the data model you defined earlier, and the service, which will be an OData service called `CatalogService`, has a single entity type `Products` which is based upon the `Products` entity definition in that data model.
 
-**Save** the file.
+At this point you should have two files open, **`data-model.cds`** and **`my-service.cds`**, both with unsaved changes. It's now time to save both of them at the same time - use menu path **File** > **Save All** to do this.
 
-You'll notice another build in the Console; after it finishes, you'll see that the contents of the `CatalogService.xml` file in the `srv/src/resources/edmx/` folder has been updated to reflect your new service definition, and looks like this:
+> Because of the **Perform CDS Build upon save** preference you checked earlier, a build of the project is triggered automatically. And as the changes to both these files reference each other, it makes more sense to save them at the same time - otherwise you'd encounter some build errors due to missing references.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Examine the build results)]
+
+It's worth spending a bit of time looking at the build results in the Console. If you look at the details, you'll notice that various artifacts have been created not only in the `db` folder but also in the `srv` folder. The following screenshot depicts what you might see -- the files highlighted have just been generated.
+
+![Generated files](generated-files.png)
+
+Indeed, if you open the `CatalogService.xml` file (in the `srv/src/resources/edmx/` folder), you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. It reflects your new service definition, and looks like this:
 
 ![CatalogService metadata](catalogservice-metadata.png)
 
 You can clearly see the entity type definition for `Products`, with the three properties you defined in the data model.
 
-[VALIDATE_9]
+[VALIDATE_10]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Create the database)]
+[ACCORDION-BEGIN [Step 11: ](Create the database)]
 
 You're almost there -- you have the data definition and the service definition, there are artifacts generated for the SAP HANA database (as well as the OData metadata and the OData service itself). What's left is to create the database schema by deploying those artifacts.
 
@@ -202,6 +210,19 @@ Do this by using the context menu on the `db` folder and choosing **Build** > **
 
 This will cause all sorts of informational messages to be written to the Console; keep an eye on them to get a feel for what's going on. Towards the end of the messages you'll notice a deployment taking place.
 
+> If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
+
+> 1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
+
+> 1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+![finding the .hdiconfig file](hdiconfig.png)
+
+> 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
+
+> 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
+like
+> 1. **Save** the file, and re-try the build.
+
 You may wish to check the results of this activity in the Cloud Foundry environment from the SAP Cloud Platform cockpit. Navigate there to your space (see earlier in this tutorial) and request a list of the service instances from the menu. You should see your database instance listed, something like this:
 
 ![HANA trial service instance](hanatrial-service-instance.png)
@@ -210,7 +231,7 @@ You may wish to check the results of this activity in the Cloud Foundry environm
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Start the OData service)]
+[ACCORDION-BEGIN [Step 12: ](Start the OData service)]
 
 It's now time to start up the OData service for the first time. There's no data in the database yet, so there are no products to show at this point, but you can at least look at the OData service and metadata documents.
 

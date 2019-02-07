@@ -9,7 +9,7 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
  - Setup: `HANA, express edition` must be running.
 
 ## Next Steps
- - This is a standalone How-To on basic integration of the Django web framework with HANA, express edition. [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
+ - This is a standalone How-To on basic integration of the Django web framework with HANA, express edition. [View similar How-Tos](http://developers.sap.com/tutorials.html) or [View all How-Tos](http://developers.sap.com/tutorials.html)
 
 ## Details
 Most Django based web applications use database back-ends for data persistence. This how-to tutorial will show you how to configure Django and your application to use HANA, express-edition as the backend database. You will learn how to:
@@ -102,6 +102,3 @@ Now that you have verified the installation of Django and verified connectivity 
     >Note: As a result of this change, there will be time zone values shown in the online tutorial that do not show in your results.*
 
 
-## Next Steps
- - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
- - [Complete the Django tutorials](https://docs.djangoproject.com/en/1.10/intro/tutorial01/)

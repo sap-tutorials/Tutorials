@@ -7,7 +7,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Stopping and Restarting the Extended Storage Service](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part3.html)
+ - **Tutorials:** [Stopping and Restarting the Extended Storage Service](https://developers.sap.com/tutorials/dt-monitoring-hana-part3.html)
 
 ## Details
 ### You will learn  

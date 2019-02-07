@@ -8,10 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
@@ -121,7 +118,7 @@ The installation will trigger a restart of your SAP HANA instance, so make sure 
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
-So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-apl-binary.html).
 
 [DONE]
 [ACCORDION-END]
@@ -704,7 +701,7 @@ select * from "aa.movielens.db.hdb.apl::recommendation.indicators";
 When performing some of the APL operation, a result might be returned in the operation result table. In the recommendation scenario, the returned result is the SQL to extract results from the links table.
 
 ```sql
-select * from "aa.movielens.db.hdb.apl::recommendation.reco_sql_code";
+select * from "aa.movielens.db.hdb.apl::recommendation.model_sql_code";
 ```
 
 [DONE]

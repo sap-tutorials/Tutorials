@@ -7,12 +7,12 @@ time: 10
 ---
 ## Prerequisites  
  - **Systems used:** SAP HANA express edition
- - [Adding a Custom Login Screen to your HXE system](http://www.sap.com/developer/tutorials/hxe-custom-login.html)
+ - [Adding a Custom Login Screen to your HXE system](http://developers.sap.com/tutorials/hxe-custom-login.html)
 
 
 ## Details
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 
@@ -62,9 +62,9 @@ The purpose behind this guide is to show you how to add a custom landing page to
 		            <ul class="nav navbar-nav navbar-left">
 		                <li><a href="http://developers.sap.com">Developer Center</a>
 		                </li>
-		                <li><a href="http://www.sap.com/developer/topics/sap-hana-express.html">More about express edition</a>
+		                <li><a href="http://developers.sap.com/topics/sap-hana-express.html">More about express edition</a>
 		                </li>
-		                <li><a href="http://www.sap.com/developer/events.html">SAP CodeJam</a>
+		                <li><a href="https://www.sap.com/community/events.html">SAP CodeJam</a>
 		                </li>
 		                <li><a href="http://sapteched.com">SAP TechEd</a>
 		                </li>
@@ -178,7 +178,7 @@ The purpose behind this guide is to show you how to add a custom landing page to
 		    	</ul>
 
 		    	<ul class="list-group">
-		    	    <li class="list-group-item list-group-item-success"><a href="http://www.sap.com/developer/tutorials.html?" target="_self">Full Tutorial Catalog</a></li>
+		    	    <li class="list-group-item list-group-item-success"><a href="http://developers.sap.com/tutorials.html?" target="_self">Full Tutorial Catalog</a></li>
 		    	</ul>
 
 		    </div>
@@ -275,9 +275,9 @@ The purpose behind this guide is to show you how to add a custom landing page to
 		            <ul class="nav navbar-nav navbar-left">
 		                <li><a href="http://developers.sap.com">Developer Center</a>
 		                </li>
-		                <li><a href="http://www.sap.com/developer/topics/sap-hana-express.html">More about express edition</a>
+		                <li><a href="http://developers.sap.com/topics/sap-hana-express.html">More about express edition</a>
 		                </li>
-		                <li><a href="http://www.sap.com/developer/events.html">SAP CodeJam</a>
+		                <li><a href="https://www.sap.com/community/events.html">SAP CodeJam</a>
 		                </li>
 		                <li><a href="http://sapteched.com">SAP TechEd</a>
 		                </li>

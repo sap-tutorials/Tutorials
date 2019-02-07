@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Get Your Hands on SAP Leonardo IoT Foundation Software and Hardware](https://www.sap.com/developer/tutorials/iot-express-1-buy-sapstore.html)
+- **Tutorials:** [Get Your Hands on SAP Leonardo IoT Foundation Software and Hardware](https://developers.sap.com/tutorials/iot-express-1-buy-sapstore.html)
 - **Configuration:**
 1. You or someone from your team should has followed this guide [Enabling the Internet of Things Service for the Cloud
   Foundry Environment](https://help.sap.com/viewer/c48328a1bee749da9902d52f080dba0d/Cloud/en-US).
@@ -24,7 +24,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 
 
 ## Next Steps
-- **Tutorials:** [Assemble and Configure Device Hardware](https://www.sap.com/developer/tutorials/iot-express-3-configure-device.html), but you can also skip to [Create a Thing Model and Bind Your Device into a Business Context](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html) if you do not have the time or do now want to use real hardware at this point.
+- **Tutorials:** [Assemble and Configure Device Hardware](https://developers.sap.com/tutorials/iot-express-3-configure-device.html), but you can also skip to [Create a Thing Model and Bind Your Device into a Business Context](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html) if you do not have the time or do now want to use real hardware at this point.
 
 ---
 

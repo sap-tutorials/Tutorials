@@ -1,18 +1,16 @@
 ---
-title: Explore data in Google Cloud Storage in SAP Data Hub 2
-description: Explore data in Google Cloud Storage (including profiling) by using SAP Data Hub, trial edition.
+title: Explore data in Google Cloud Storage in SAP Data Hub, trial edition 2.3
+description: Explore data in Google Cloud Storage (including profiling) by using SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Next Steps
  - [Explore data in SAP Vora](https://developers.sap.com/germany/tutorials/datahub-trial-v2-discovery-part02.html)
 
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 During this tutorial, you will learn how to use Sap Data Hub Metadata Explorer. This application allows you to learn more about data residing in external storages, for example, Google Cloud Storage by profiling, previewing and viewing the metadata. You will use data residing in Google Cloud Storage. The Metadata Explorer gathers information about the location, attributes, quality, and sensitivity of data. With this information, you can make informed decisions about which datasets to publish and determine who has access to use or view information about the datasets.
 
@@ -37,10 +35,6 @@ From the quick links, click on **Browse Connections**
 ![picture_03](./datahub-trial-v2-discovery-part01_03.png)
 
 Click the `Google_Cloud_Storage` connection to display the directories / files on Google Cloud Storage. Once the connection opens, click on your bucket from GCS.
-
-- [`Customers.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/datahub-trial-setup/Customers.csv)
-- [`Devices.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/datahub-trial-setup/Devices.csv)
-- [`Events.parquet`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/datahub-trial-setup/Events.parquet)
 
 [DONE]
 
@@ -88,6 +82,3 @@ Next also profile the content of the two other files and afterwards take a look 
 
 [ACCORDION-END]
 ---
-
-## Next Steps
-[Explore data in SAP Vora](https://developers.sap.com/germany/tutorials/datahub-trial-v2-discovery-part02.html)

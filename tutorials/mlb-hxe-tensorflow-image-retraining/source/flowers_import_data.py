@@ -9,10 +9,10 @@ from PIL import Image
 import tensorflow as tf
 from hdbcli import dbapi
 
-tf.app.flags.DEFINE_string ('host', 'localhost' , 'HXE host')
-tf.app.flags.DEFINE_integer('port', 39015       , 'HXE port')
-tf.app.flags.DEFINE_string ('usr' , 'ML_USER'   , 'HXE user name')
-tf.app.flags.DEFINE_string ('pwd' , '<< password >>'  , 'HXE password')
+tf.app.flags.DEFINE_string ('hxehost', 'localhost' , 'HXE host')
+tf.app.flags.DEFINE_integer('hxeport', 39015       , 'HXE port')
+tf.app.flags.DEFINE_string ('hxeusr' , 'ML_USER'   , 'HXE user name')
+tf.app.flags.DEFINE_string ('hxepwd' , '<< password >>'  , 'HXE password')
 
 tf.app.flags.DEFINE_string ('image_dir' , os.path.expanduser("~") + '/models/tutorials/image_retraining/test/flower_photos' , 'image directory')
 
@@ -58,7 +58,7 @@ def create_image_lists(image_dir):
     return result
 
 def main(_):
-    connection = dbapi.connect(address=args.host, port=args.port, user=args.usr, password=args.pwd)
+    connection = dbapi.connect(address=args.hxehost, port=args.hxeport, user=args.hxeusr, password=args.hxepwd)
     connection.setautocommit(False)
     cursor = connection.cursor()
 

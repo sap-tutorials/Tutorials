@@ -7,10 +7,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mo
 
 ## Prerequisites
 - **Proficiency:** Intermediate
-- **Tutorials:** [Calculate and display a new field in an SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)
+- **Tutorials:** [Calculate and display a new field in an SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-calculate-new-field.html)
 
 ## Next Steps
-- [Localizing your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
+- [Localizing your SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-localizing-app.html)
 
 ## Details
 
@@ -23,7 +23,7 @@ There are many reasons why you might want to use a source code management tool. 
 - Capture the state of code for a deployed application
 - Work in a development team and need to merge changes from individual "branches" of the code into the "main line" of the code stream
 
-In this tutorial, you will learn how to commit and "push" your project files to your Git repository. In addition to being a good idea, your project files will need to be in Git for the next tutorial where you will [Localize your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
+In this tutorial, you will learn how to commit and "push" your project files to your Git repository. In addition to being a good idea, your project files will need to be in Git for the next tutorial where you will [Localize your SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-localizing-app.html)
 
 As you work through this tutorial (and afterwards) you will notice some Git "decorations" or icons indicating Git status starting to appear next to your files and folders. There are six different states which are indicated as shown in the table below. Watch for the decorations to change from New file > Modified and Staged > Committed. After a commit, any changes in a file will be indicated with one asterisk (indicating that the file is out of sync with the version in Git).
 
@@ -190,6 +190,3 @@ You will see a confirmation alert appear briefly in the top-right corner of the 
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Localizing your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)

@@ -1,22 +1,21 @@
 ---
-title: Install the Optional SAP HANA Automated Predictive Library Package for SAP HANA, express edition
+title: Install the Optional SAP HANA Automated Predictive Library Package for SAP HANA, express edition (Native Linux Machine)
 description: SAP HANA Automated Predictive Library (APL) is an application function library which exposes the data mining capabilities of the Automated Analytics engine in SAP HANA, express edition through a set of functions.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 3
 ---
 
 <!-- loio31a2f9637e5747298b29c2960d2c286c -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Test the Installation](http://www.sap.com/developer/tutorials/hxe-ua-test-binary.html)  
+ - **Tutorials:**  You have completed [Test the Installation](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)  
 
 ## Details
 ### You will learn
 You will learn how to download and install the `apl.tgz` SAP HANA Automated Predictive Library (APL) package.
-
-### Time to Complete
-3 min
 
 ---
 
@@ -34,13 +33,20 @@ Use the Download Manager to download SAP HANA Automated Predictive Library packa
 Navigate to `/usr/sap/HXE/home/bin`:
 
 ```bash
-/usr/sap/HXE/home/bin
+cd /usr/sap/HXE/home/bin
 ```
 
-Enter the following command:
+If your installation is on `x86_64`, enter the following command:
 
--   `x86_64`: `./HXEDownloadManager_linux.bin linuxx86_64 installer apl.tgz`
--   `PowerPC`: `java -jar HXEDownloadManager.jar linuxppc64le installer apl.tgz`
+```bash
+./HXEDownloadManager_linux.bin linuxx86_64 installer apl.tgz
+```
+
+If your installation is on `PowerPC`, enter the following command:
+
+```bash
+java -jar HXEDownloadManager.jar linuxppc64le installer apl.tgz
+```
 
 [ACCORDION-END]
 
@@ -54,10 +60,10 @@ tar -xvzf apl.tgz
 
 [ACCORDION-BEGIN [Step 3: ](Run the installation script)]
 
-As the `sid``adm` user, run:
+As the <sid>`adm` user, run:
 
 ```bash
-<extracted_path>/HANA_EXPRESS_20/install_apl.sh
+sudo <extracted_path>/HANA_EXPRESS_20/install_apl.sh
 ```
 
 [ACCORDION-END]

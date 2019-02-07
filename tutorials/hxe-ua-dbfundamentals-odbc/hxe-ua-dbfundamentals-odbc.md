@@ -4,25 +4,20 @@ description: Learn how to complete common tasks when setting up a new database. 
 auto_validation: true
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition  ]
+time: 15
 ---
 ## Prerequisites  
- - [Create a Backup](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-backups.html)
+ - [Create a Backup](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-backups.html)
  - A registered version of SUSE. See the [SAP HANA Academy](https://www.youtube.com/watch?v=e6SIsAFVPoY) video for details.
 
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
-
 ## Details
 ### You will learn  
-How to download, install, and configure `unixODBC` to connect from your SAP HANA, express edition host machine to a client machine.
+  - How to download, install, and configure `unixODBC` to connect from your SAP HANA, express edition host machine to a client machine
 
-### Time to Complete
-**15 Min**
 
 In the following How-To, the "host machine" refers to the machine on which you will be installing and configuring unixODBC. The "client machine" refers to the machine (or machines) you will be connecting to using unixODBC.
 
-> **Note:**
 > You will need the IP address of your host and client machine(s). Have that information available while you proceed through this how-to.
 
 ---

@@ -5,11 +5,11 @@ primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana, products>sap-cloud-platform, tutorial>how-to ]
 ---
 ## Prerequisites  
-- **How-To:** [Internet of Things (IoT) Setup up your Environment](http://www.sap.com/developer/tutorials/iot-tessel-setup.html)
+- **How-To:** [Internet of Things (IoT) Setup up your Environment](http://developers.sap.com/tutorials/iot-tessel-setup.html)
 
 ## Next Steps
-- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
-- [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://www.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)
+- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://developers.sap.com/tutorials/iot-part6-hcp-services.html)
+- [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://developers.sap.com/tutorials/iot-part2-hanaxs-setup.html)
 
 
 ## How-To Details
@@ -31,7 +31,7 @@ After this tutorial you can choose either the On-Premise or the Cloud route.
 
 Refer to the Tessel website <https://t1-start.tessel.io/install> for detailed information on getting your Tessel connected for your operating system.
 
->In rare cases of problems with automatic installation of the driver on Windows machines please use [`Zadig` utility](http://zadig.akeo.ie/) to manually install `WinUSB` driver for the Tessel device in Windows OS.
+>In rare cases of problems with automatic installation of the driver on Windows machines please use [`Zadig` utility](http://zadig.akeo.ie) to manually install `WinUSB` driver for the Tessel device in Windows OS.
 >If Tessel is not visible on the list of devices in `Zadig`, then go to **Options** and select **List All Devices**.
 
 
@@ -164,6 +164,6 @@ In particular the Climate sensor you will enhance later in the exercises to prov
 
 
 
-## Next Steps
-- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
-- [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://www.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)
+### Additional Information
+- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://developers.sap.com/tutorials/iot-part6-hcp-services.html)
+- [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://developers.sap.com/tutorials/iot-part2-hanaxs-setup.html)

@@ -1,10 +1,13 @@
 ---
 title: Configure your SAPUI5 HTML Module (Forecast App)
-description: Configure your SAPUI5 application and your connect it to your SAP HANA XS OData service to consume your `Movielens` recommendations
+description: Configure your SAPUI5 application and your connect it to your SAP HANA XS OData service to consume your Forecasting application
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
 ---
+
+## Prerequisites
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
 
 ## Prerequisites
  - **Proficiency:** Beginner

@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ---
 
 ## Prerequisites
- - **Tutorial:** [Creating Custom Adapter Modules](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part2.html)
+ - **Tutorial:** [Creating Custom Adapter Modules](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part2.html)
 
 ## Next Steps
- - [Editing Adapter Configuration Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part4.html)
+ - [Editing Adapter Configuration Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part4.html)
 
 ## Details
 ### You will learn
@@ -519,5 +519,3 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 
 [ACCORDION-END]
 
-## Next Steps
- - [Editing Adapter Configuration Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part4.html)

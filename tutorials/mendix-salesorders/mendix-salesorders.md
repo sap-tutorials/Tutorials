@@ -8,9 +8,9 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platfor
 ## Prerequisites  
  - **Proficiency:** Beginner
  - You are using a Windows desktop (or a Windows VM on a Mac).
- - You have access to an SAP Cloud Platform account. If not, you can open a trial account. See the [tutorial](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
- - You have completed the [Getting started with SAP Cloud Platform Rapid Application Development by Mendix](https://www.sap.com/developer/tutorials/mendix-onboarding.html) tutorial. Name your app **SAP Sales Orders**.
- - You have completed the [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html) tutorial.
+ - You have access to an SAP Cloud Platform account. If not, you can open a trial account. See the [tutorial](https://developers.sap.com/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
+ - You have completed the [Getting started with SAP Cloud Platform Rapid Application Development by Mendix](https://developers.sap.com/tutorials/mendix-onboarding.html) tutorial. Name your app **SAP Sales Orders**.
+ - You have completed the [Create an account on the Gateway Demo system](https://developers.sap.com/tutorials/gateway-demo-signup.html) tutorial.
 
 
 ## Details
@@ -391,5 +391,3 @@ The application will automatically bind to the Connectivity, XSUAA and PostgreSQ
 
 [ACCORDION-END]
 
-## Next Steps
-- Read more about using Mendix at [https://docs.mendix.com/howto/](https://docs.mendix.com/howto/).

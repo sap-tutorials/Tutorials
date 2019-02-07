@@ -1,22 +1,21 @@
 ---
 title: Spatial columns
 description: Using columns to store and process spatial data in tables
+auto_validation: true
+time: 10
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- **Tutorials:** [Polygons](https://developers.sap.com/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Next Steps
-- [Spatial Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+- [Spatial Z and M coordinates](https://developers.sap.com/tutorials/hana-spatial-intro5-z-m-coordinates.html)
 
 ## Details
 ### You will learn  
 In previous tutorials you learned how to create spatial objects and run selected methods to perform some calculations using them. Now it's time to learn how to store, retrieve and process spatial data in SAP HANA tables. In addition, you will learn about the Spatial type hierarchy.
-
-### Time to Complete
-**10 Min**.
 
 ---
 
@@ -42,7 +41,7 @@ Object-oriented properties of spatial data types:
 - A value of a subtype can be automatically converted to any of its supertypes. For example, an `ST_Point` value can be used where an `ST_Geometry` parameter is required.
 - A column or variable of type `ST_Geometry` can store spatial values of any type.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a table and load sample data)]
@@ -98,7 +97,7 @@ FROM "TESTSGEO"."SPATIALSHAPES";
 
 ![Dataset select](spatial0402.jpg)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Geospatial data validation)]
@@ -147,7 +146,7 @@ Remove these test records from the table as they won't be needed in further exer
 ```sql
 DELETE FROM "TESTSGEO"."SPATIALSHAPES" WHERE "SHAPEID" > 15;
 ```
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Aggregate shapes from a spatial column using union)]
@@ -173,9 +172,11 @@ Presented graphically, it looks like the diagram below:
 Also note that spatial predicates were used in the query above to select only geometries of type `LineString` type and only those that are not empty.
 
 **Check your knowledge**
+
 1. Query the union aggregation of polygons only from the table.
 2. Query the union aggregation of boundaries of polygons from the table.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Additional aggregation methods)]
@@ -208,12 +209,9 @@ And the result of `ST_EnvelopeAggr()`:
 
 ![result of ST_EnvelopeAggr()](spatial0407.jpg)
 
-
+[VALIDATE_1]
 [ACCORDION-END]
 
 ### Optional
 - Example: [Calculating number π by throwing darts](https://blogs.sap.com/2016/12/14/calculating-number-%cf%80-by-throwing-darts-digitally-in-sap-hana/)
 - Read [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US)
-
-## Next Steps
-- [Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)

@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-lumira ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Initial data acquisition in SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-initial-data-acquisition.html)
+- **Tutorials:** [Initial data acquisition in SAP BusinessObjects Lumira](https://developers.sap.com/tutorials/lumira-initial-data-acquisition.html)
 
 ## Next Steps
-- [Basics of data visualization](https://www.sap.com/developer/tutorials/lumira-initial-data-visualization.html)
+- [Basics of data visualization](https://developers.sap.com/tutorials/lumira-initial-data-visualization.html)
 
 ## Details
 ### You will learn  
@@ -98,5 +98,3 @@ You should notice that Austria has been added as a filter in **Filters bar**. Re
 ### Optional
 - You can learn more about data exploration from the product's official [user guide](https://help.sap.com/lumira#section2) for SAP BusinessObjects Lumira
 
-## Next Steps
-- [Basics of data visualization](https://www.sap.com/developer/tutorials/lumira-initial-data-visualization.html)

@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import sys, os
 
-sys.path.append(os.path.expanduser("~") + '/models/samples/core/get_started')
+sys.path.append('/home/tmsadm/models/samples/core/get_started')
 import iris_data
 
 import tensorflow as tf

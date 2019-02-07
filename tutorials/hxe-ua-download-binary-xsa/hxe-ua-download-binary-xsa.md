@@ -1,24 +1,22 @@
 ---
 title: Download the Installer Files
 description: Use the Download Manager in console mode to download SAP HANA 2.0, express edition installation packages.
+author_name: Aaron Patkau
+author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 2
 ---
 
 <!-- loio605bef28cbed45a58c53d00c2c1375a1 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:** 
 Close the Download Manager if it is running in GUI mode.
 
 
 ## Details
 ### You will learn
 You will learn how to download the binary image of SAP HANA 2.0, express edition and optional additional components.
-
-### Time to Complete
-2 min
 
 ---
 
@@ -32,7 +30,7 @@ You will learn how to download the binary image of SAP HANA 2.0, express edition
 Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar` or `HXEDownloadManager_linux.bin`
 
 > Note:
-> If you've already installed SAP HANA express edition, you can run the built-in download manager from any directory as the `sid``adm` user.
+> If you've already installed SAP HANA express edition, you can run the built-in download manager from any directory as the <sid>`adm` user.
 > 
 > 
 
@@ -85,8 +83,8 @@ Valid <file> values:
 |Package|Description|
 |-------|-----------|
 | `Getting_Started_Binary_Installer.pdf` |User manual in PDF format: *Getting Started with SAP HANA, express edition (Binary Installer Method).* |
-| `hxe.tgz` |Downloads `hxe.tgz`; the server plus XSC and Application Function Library (AFL).|
-| `hxexsa.tgz` |Downloads `hxexsa.tgz`; the server plus XS Advanced, Web IDE, and SAP HANA Cockpit.|
+| `hxe.tgz` |Downloads `hxe.tgz`, which contains the SAP HANA 2.0, express edition server with Application Function Library. This file is necessary for installing SAP HANA 2.0, express edition.|
+| `hxexsa.tgz` |Downloads `hxexsa.tgz`, which contains XS Advanced, Web IDE, and SAP HANA Cockpit. Valid only when downloaded with `hxe.tgz`.|
 | `additional_lang.tgz` |Downloads `additional_lang.tgz`. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the `hxe.tgz` and `hxexsa.tgz` packages.)|
 | `eadesigner.tgz` |Valid only with `hxexsa.tgz`. SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment.|
 | `hsa.tgz` |Downloads SAP HANA streaming analytics.|

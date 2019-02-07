@@ -8,10 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
 
 ## Details
 ### You will learn
@@ -80,10 +77,7 @@ There are multiple Time Series algorithms that can be used in PAL, but here are 
 
 However, before selecting one, you will need to address the existence of a trend, a seasonal component or white noise which can be achieved using the **Seasonality Test** function.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](SAP HANA PAL xxxXXXxxx function)]
+For more details about the SAP HANA PAL function, please refer to the [online documentation](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/f652a8186a144e929a1ade7a3cb7abe8.html).
 
 [DONE]
 [ACCORDION-END]
@@ -130,7 +124,7 @@ Enter **`commmon.hdbcds`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-movielens/db/src/algorithms/pal/commmon.hdbcds
+forecast/db/src/algorithms/pal/commmon.hdbcds
 ```
 
 Paste the following content:
@@ -165,9 +159,18 @@ context seasonality_test {
 };
 
 context smoothing {
+    table type tt_output_raw {
+        "signal_time"  : Integer;
+        "forecast"     : Double;
+        "lowerlimit_1" : Double;
+        "upperlimit_1" : Double;
+        "lowerlimit_2" : Double;
+        "upperlimit_2" : Double;
+    };
     table type tt_output {
         "signal_time"  : Integer;
-        "value"        : Double;
+        "signal_value" : Double;
+        "forecast"     : Double;
         "lowerlimit_1" : Double;
         "upperlimit_1" : Double;
         "lowerlimit_2" : Double;
@@ -216,7 +219,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Once the CDS artifacts are created for the entities and table types, you can now surface the AFL function using an AFL procedure.
 
-In the left side panel, expand the **`movielens/db/src/hdb/pal`** tree.
+In the left side panel, expand the **`forecast/db/src/hdb/pal`** tree.
 
 ![Web IDE](03-01.png)
 
@@ -233,7 +236,7 @@ Enter **`seasonality_test.hdbafllangprocedure`** as the file name, then click on
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/afllang/seasonality_test.hdbafllangprocedure
+forecast/db/src/hdb/pal/afllang/seasonality_test.hdbafllangprocedure
 ```
 
 Paste the following content:
@@ -262,7 +265,7 @@ Enter **`auto_smoothing.hdbafllangprocedure`** as the file name, then click on *
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/afllang/auto_smoothing.hdbafllangprocedure
+forecast/db/src/hdb/pal/afllang/auto_smoothing.hdbafllangprocedure
 ```
 
 Paste the following content:
@@ -291,7 +294,7 @@ Enter **`auto_arima.hdbafllangprocedure`** as the file name, then click on **OK*
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/afllang/auto_arima.hdbafllangprocedure
+forecast/db/src/hdb/pal/afllang/auto_arima.hdbafllangprocedure
 ```
 
 Paste the following content:
@@ -320,7 +323,7 @@ Enter **`auto_arima_forecast.hdbafllangprocedure`** as the file name, then click
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/afllang/auto_arima_forecast.hdbafllangprocedure
+forecast/db/src/hdb/pal/afllang/auto_arima_forecast.hdbafllangprocedure
 ```
 
 Paste the following content:
@@ -349,7 +352,7 @@ When using PAL function for Time Series, the input dataset must be indexed using
 
 Therefore, to accommodate this, you will need to create a series of SQL views.
 
-In the left side panel, expand the **`movielens/db/src/hdb/pal`** tree.
+In the left side panel, expand the **`forecast/db/src/hdb/pal`** tree.
 
 ![Web IDE](03-01.png)
 
@@ -366,7 +369,7 @@ Enter **`CashFlows.hdbview`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/CashFlows.hdbview
+forecast/db/src/hdb/pal/views/CashFlows.hdbview
 ```
 
 Paste the following content:
@@ -392,7 +395,7 @@ Enter **`CashFlows_extrapredictors.hdbview`** as the file name, then click on **
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/CashFlows_extrapredictors.hdbview
+forecast/db/src/hdb/pal/views/CashFlows_extrapredictors.hdbview
 ```
 
 Paste the following content:
@@ -443,7 +446,7 @@ Enter **`Ozone.hdbview`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/Ozone.hdbview
+forecast/db/src/hdb/pal/views/Ozone.hdbview
 ```
 
 Paste the following content:
@@ -469,7 +472,7 @@ Enter **`Lag1AndCycles.hdbview`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/Lag1AndCycles.hdbview
+forecast/db/src/hdb/pal/views/Lag1AndCycles.hdbview
 ```
 
 Paste the following content:
@@ -495,7 +498,7 @@ Enter **`Lag1AndCyclesAndWn.hdbview`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/Lag1AndCyclesAndWn.hdbview
+forecast/db/src/hdb/pal/views/Lag1AndCyclesAndWn.hdbview
 ```
 
 Paste the following content:
@@ -523,7 +526,7 @@ Enter **`TrendAndCyclic.hdbview`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/TrendAndCyclic.hdbview
+forecast/db/src/hdb/pal/views/TrendAndCyclic.hdbview
 ```
 
 Paste the following content:
@@ -549,7 +552,7 @@ Enter **`TrendAndCyclicAndWn.hdbview`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/TrendAndCyclicAndWn.hdbview
+forecast/db/src/hdb/pal/views/TrendAndCyclicAndWn.hdbview
 ```
 
 Paste the following content:
@@ -575,7 +578,7 @@ Enter **`TrendAndCyclicAnd_4Wn.hdbview`** as the file name, then click on **OK**
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/TrendAndCyclicAnd_4Wn.hdbview
+forecast/db/src/hdb/pal/views/TrendAndCyclicAnd_4Wn.hdbview
 ```
 
 Paste the following content:
@@ -695,7 +698,7 @@ The decomposed signal will provide you value of the seasonal, the trend and the 
 select * from #decomposed_seasonality;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-01.png)
 
@@ -741,7 +744,7 @@ select * from #seasonality_statistics;
 select * from #decomposed_seasonality;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-02.png)
 

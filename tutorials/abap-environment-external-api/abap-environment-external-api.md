@@ -83,7 +83,7 @@ Now, you will create an ABAP class that will call your destination, and which yo
 
 The class is displayed in a new editor:
 
-    ![Image depicting step-4d-class-editor](step-4d-class-editor.png)
+![Image depicting step-4d-class-editor](step-4d-class-editor.png)
 
 [DONE]
 
@@ -106,6 +106,7 @@ This enables you to run the class in the console.
   1. Add the method implementation below for the method `if_oo_adt_classrun~main.` and wrap it in an exception.
 
   2. Keep the `i_service_instance_name OutboundCommunication` and the `i_name Z_CHUCKNORRIS_006` the same.
+
 
 ```ABAP
 

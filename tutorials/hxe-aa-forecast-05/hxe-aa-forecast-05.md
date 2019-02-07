@@ -8,10 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
 
 ## Details
 ### You will learn
@@ -37,7 +34,7 @@ For more details about the SAP HANA APL function, check the online <a href="http
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: (Calling AFL functions from HDI containers)]
+[ACCORDION-BEGIN [Step 1: ](Calling AFL functions from HDI containers)]
 
 In order to use any ***SAP HANA APL*** functions, ultimately an AFL wrapper must be created and then invoked.
 
@@ -79,7 +76,7 @@ The **SAP HANA APL** function that you will be using is:
 
 The ***Forecast*** function provides multiple configuration options like:
 
-Name                          | Description
+Name                         | Description
 -----------------------------|-----------------------------
 **Time Point Column Name**   | Name of the column in the dataset that contains the time points of the time series
 **Horizon**                  | Number of forecast time points
@@ -106,7 +103,7 @@ The installation will trigger a restart of your SAP HANA instance, so make sure 
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
-So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-apl-binary.html).
 
 [DONE]
 [ACCORDION-END]
@@ -401,7 +398,7 @@ insert into #operation_config values ('APL/ApplyExtraMode'        , 'Forecasts a
 insert into #operation_config values ('APL/LastTrainingTimePoint' , '2001-12-28', null);
 insert into #operation_config values ('APL/Horizon'               , '21'        , null);
 
-insert into #variable_descs values (0, 'signal_time'  , 'datetime' , 'continuous', 1, 1, null, null, null, null);
+insert into #variable_descs values (0, 'signal_time'  , 'date'     , 'continuous', 1, 1, null, null, null, null);
 insert into #variable_descs values (1, 'signal_value' , 'number'   , 'continuous', 0, 0, null, null, null, null);
 
 insert into  #variable_roles values ('signal_time'  , 'input' , NULL, NULL, '#1');
@@ -547,7 +544,7 @@ You can notice that:
  However, this is not always the case. A forecast ( **`kts_1`** value) is provided only for data points that are finally used during the training as all input data points are not always used in the final model.
  - The error bar (**`kts_1_lowerlimit_95%`** and **`kts_1_upperlimit_95%`**) are only provided for the actual predictions
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](07-01.png)
 

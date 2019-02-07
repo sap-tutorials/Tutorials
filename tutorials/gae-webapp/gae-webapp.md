@@ -7,11 +7,8 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, product
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Google App Engine Install HDB](https://www.sap.com/developer/tutorials/gae-nodehdb.html)
+ - **Tutorials:** [Google App Engine Install HDB](https://developers.sap.com/tutorials/gae-nodehdb.html)
 
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -130,5 +127,3 @@ Clicking the URL in the right corner will load the app itself.
 [ACCORDION-END]
 
 
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

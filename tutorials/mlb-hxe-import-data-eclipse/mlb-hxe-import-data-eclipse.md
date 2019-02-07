@@ -9,8 +9,8 @@ time: 10
 
 ## Prerequisites  
 - [Eclipse IDE](https://www.eclipse.org/downloads/) installed, running and properly connected to the internet.
-- [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html) installed and connected to your SAP HANA, express edition.
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+- [SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-eclipse.html) installed and connected to your SAP HANA, express edition.
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 
 ## Details
@@ -26,15 +26,15 @@ This requires the data set file to be physically located on your SAP HANA, expre
 
 Using the ***IMPORT FROM*** SQL command is recommended for larger files.
 
-For more information, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
+For more information, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://developers.sap.com/tutorials/mlb-hxe-import-data-sql-import.html)
 
 [ACCORDION-BEGIN [Prerequisite: ](SAP HANA Tools for Eclipse)]
 
 In order to proceed with the next steps, you must have:
 
  - the [Eclipse IDE](https://www.eclipse.org/downloads/) installed, running and properly connected to the internet.
- - [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html) installed and connected to your SAP HANA, express edition.
- - [Prepared your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+ - [SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-eclipse.html) installed and connected to your SAP HANA, express edition.
+ - [Prepared your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 [DONE]
 [ACCORDION-END]

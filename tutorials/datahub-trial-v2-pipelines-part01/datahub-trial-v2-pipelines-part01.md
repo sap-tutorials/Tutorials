@@ -1,21 +1,16 @@
 ---
-title: Generate sensor data in SAP Data Hub 2
-description: Generate sensor data and display it in a terminal by using SAP Data Hub, trial edition.
+title: Generate sensor data in SAP Data Hub, trial edition 2.3
+description: Generate sensor data and display it in a terminal by using SAP Data Hub, trial edition 2.3.
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Next Steps
- - [Use a message broker](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part02.html)
-
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 - How to use a **Data Generator** to generate random sample data
 - How to visualize the generated data via a **Terminal**
-Please note that this tutorial is similar to the `Generate sensor data` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Generate sensor data` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 ### Time to Complete
 **15 Min**
@@ -26,7 +21,7 @@ Please note that this tutorial is similar to the `Generate sensor data` tutorial
 
 Open the modelling environment for building pipelines via SAP Data Hub Modeler (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon.
 
@@ -38,7 +33,6 @@ Click **Save (1)**. Then enter a **Name** `(test.myFirstPipeline)` and **Descrip
 
 ![picture02](datahub-trial-v2-pipelines-part01-2.png)
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -64,7 +58,6 @@ The sample data represents sensors for humidity, temperature etc.
 
 Close the tab for the JavaScript snippet.
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -77,7 +70,6 @@ Add a **Terminal** operator to the pipeline by drag & drop (you find this also i
 
 Afterwards click **Save (1)**.
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -93,11 +85,5 @@ When the **Status (2)** tab indicates that the pipeline is running, use the cont
 
 Stop the pipeline by clicking **Stop** (you find it next to the **Run** button).
 
-[DONE]
 
 [ACCORDION-END]
-
----
-
-## Next Steps
- - [Use a message broker](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part02.html)

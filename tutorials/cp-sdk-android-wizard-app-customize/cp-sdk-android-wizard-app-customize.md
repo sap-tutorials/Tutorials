@@ -1,165 +1,429 @@
 ---
-title: Use Fiori for Android UI Controls to Enhance Your Application
-description: Change the fields displayed in a list screen using a Fiori for Android Object Cell and add a divider to cells in a list.
+title: Customize the Wizard Generated Application
+description: Customize a wizard generated application and learn how to use Fiori for Android Object Cells and a Fiori Search View.
 primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
-tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
-time: 20
+tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
+time: 45
 ---
+
+## Prerequisites  
+- Completed [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html)
+
 
 ## Details
-### You will learn  
-- How to customize the values displayed in a Fiori for Android Object Cell
-
+### You will learn
+- How to customize the values displayed in an Object Cell
+- How to modify the navigation between screens
+- How to change menu options
+- How to add a `FioriSearchView` enabling the filtering of Object Cells on a list screen
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Change master property for customer's screen)]
+[ACCORDION-BEGIN [Step 1: ](Examine the product's list screen)]
+
 Run the previously created project.
 
-Tap on the **Customers** entity.
+Tap on the **Products** entity.
 
-![Entities screen](entities-screen2.png)
+![Entities screen](entities-screen.png)
 
+Notice that it displays the category name rather than the product name.
 
-Notice that it displays the customer's city rather than the customer's name.
+![Original Products Screen](original-products.png)
 
-![Customers Screen](original-customer.png)
+The category name is displayed (rather than the product name) because the app was generated from the OData service's metadata which does not indicate which of the many fields from the product entity to display.  When creating the sample user interface, the SDK wizard uses the first property found as the value to display.  To view the complete metadata document, open the file **`res/raw/com_sap_edm_sampleservice_v2.xml`**.
 
+![Product metadata](product-metadata.png)
 
-This is because the app was generated from the OData service's metadata, which does not indicate which of the many fields from the customer entity to display.  To create a sample user interface the SDK wizard uses the first property found as the value to display.  To view the complete metadata document, open the file `com_sap_edm_sampleservice_v2.xml` in the res > raw folder in the generated project.
-
-![Customer metadata](metadata.png)
-
-
-In Android Studio, on Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and return **`CustomersUiConnector`** to open the `CustomersUiConnector.java` file.
-
-Change the value from **`City`** to **`LastName`** for the variable **`masterPropertyName`**.
-
-![Master Property](master-property.png)
-
-
-Run the app and notice that the Customers screen now displays the customer's last name.
-
-![Customer Last Name](customers-last-name.png)
-
-
-Each customer is displayed in an <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/object_cell.html">Object Cell</a>, which is one of the Fiori UI for Android controls.
+Each product is displayed in an [Object Cell](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/object_cell.html), which is one of the Fiori UI for Android controls.
 
 ![Object Cell](object-cell.png)
 
+As seen above, an Object Cell is used to display information about an entity.
 
-As seen above, an Object Cell can display more than one field.  In the next two sections, the app will be modified to display different content in the Object Cells and a separator decoration will be added between rows.
-
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Display name, address, and image)]
 
-In Android Studio, on Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and return **`ItemListActivity`** to open the `ItemListActivity.java` file.
+[ACCORDION-BEGIN [Step 2: ](Update the product's list screen)]
+In this section, the Object Cell will be configured to show a product's name, category, description and price.  As well, a separator decoration will be added between cells, and the sort order will be modified.
 
-![Find ItemListActivity](find-itemlistactivity.png)
-
-
-On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and return **`onBindViewHolder`** to move to the `onBindViewHolder` method.
-
-![Find onBindViewHolder](find-onBindViewHolder.png)
+In Android Studio, on Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`ProductsListActivity`** to open `ProductsListActivity.java`.
 
 
-**Comment out (select and press `Ctrl / or Command /`)** the following lines of code which set the `ObjectCell's` headline, and detail image.
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`populateObjectCell`** to move to the `populateObjectCell` method.
 
-![ItemListActivity](ItemListActivity.png)
-
-
-Below the commented lines, add the following code.
+ Change the parameter in **`getDataValue`** from **`Product.category`** to **`Product.name`**.  This will cause the product name to be shown as the headline value of the Object Cell.
 
 ```Java
-// This customization is for the customer's screen only
-if (entityValueUiConnector.getConnectedObject() instanceof Customer) {
-    // Set the ObjectCell's Headline with FirstName, LastName
-    String name = entityValueUiConnector.getPropertiesWithValues().get("FirstName") + " " +
-            entityValueUiConnector.getPropertiesWithValues().get("LastName");
-    holder.contentView.setHeadline(name);
+DataValue dataValue = product.getDataValue(Product.name);
+```
 
-    // Set the ObjectCell's SubHeadline with address
-    String country = entityValueUiConnector.getPropertiesWithValues().get("Country");
-    String address = entityValueUiConnector.getPropertiesWithValues().get("HouseNumber");
-    address = address + " " + entityValueUiConnector.getPropertiesWithValues().get("Street");
-    address = address + " " + entityValueUiConnector.getPropertiesWithValues().get("City");
-    holder.contentView.setSubheadline(address);
+In the `populateObjectCell` method, find the below lines that set the `subheadline`, `footnote` and `icon`.
 
-    // Set the Status to be the country code
-    holder.contentView.setStatus(country, 1);
+```Java
+objectCell.setSubheadline("Subheadline goes here");
+objectCell.setFootnote("Fottnote goes here");
 
-    // Use a different image
-    Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_account_circle_black_24dp);
-    holder.contentView.setDetailImage(drawable);
-
-    // Set the ObjectCell to only show 2 lines per row instead of 3
-    holder.contentView.setLines(2);
+if (masterPropertyValue == null || masterPropertyValue.isEmpty()) {
+    objectCell.setIcon("?", 0);
+} else {
+    objectCell.setIcon(masterPropertyValue.substring(0,1), 0);
 }
-else {
-    holder.contentView.setHeadline(masterPropertyValue);
-    holder.contentView.setDetailImage(null);
-    if(0 != masterPropertyValue.length()) {
-        holder.contentView.setDetailImageCharacter(masterPropertyValue.substring(0, 1));
-    } else {
-        holder.contentView.setDetailImageCharacter("?");
-    }
+objectCell.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
+objectCell.setIcon("!", 2);
+```
 
-    holder.contentView.setSubheadline("Subheadline goes here");
-    holder.contentView.setFootnote("Footnote goes here");
-    holder.contentView.setIcon(Integer.toString(position + 1), 0);
-    holder.contentView.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
-    holder.contentView.setIcon("!", 2);
+Replace them with the code below which will display category, description, and price.
+```Java
+dataValue = product.getDataValue(Product.category);
+if (dataValue != null) {
+    objectCell.setSubheadline(dataValue.toString());
+}
+dataValue = product.getDataValue(Product.shortDescription);
+if (dataValue != null) {
+    objectCell.setFootnote(dataValue.toString());
+}
+
+dataValue = product.getDataValue(Product.price);
+if (dataValue != null) {
+    objectCell.setStatusWidth(200);
+    objectCell.setStatus("$ " + dataValue.toString(), 1);
 }
 ```
 
-Below the just pasted code, comment out (select and press Ctrl /) the lines that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`setupRecyclerView`** to move to the `setupRecyclerView` method.
 
-![comment Headline](commentHeadline.png)
+After the `if (recyclerView == null)` line, paste the following code that adds a divider between product items.
 
+```Java
+LinearLayoutManager llm = new LinearLayoutManager(this);
+DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), llm.getOrientation());
+recyclerView.addItemDecoration(dividerItemDecoration);
+recyclerView.setLayoutManager(llm);
+```
 
+If classes `LinearLayoutManager` and `DividerItemDecoration` appear red, this indicates that Android Studio could not locate the classes.  Select each class and on Windows press **`Alt+Enter`** or on a Mac press **`option+return`** to make use of Android Studio quick fix to add the missing imports.  
 
-Notice that two of the classes, `Customer` and `Drawable` cannot be resolved and are shown in red.  
+An alternate option is to enable the below setting.
 
-![Customer Quick Fix](ItemListActivity-quick-fix.png)
+![Add unambiguous imports on the fly](auto-import.png)
 
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`Repository`** to open `Repository.java`.
 
-Select each class and on Windows press **`Alt+Enter`** or on a Mac press **`option+return`** to make use of Android Studio quick fix to add the missing imports.  If prompted with multiple options, select `Import Class`.
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`initialRead`** to move to the `initialRead` method.
 
+Below the line that sets the **`orderBy`** property of **`dataQuery`**, add the following to specify the sort order to be by category and then by name for products.
 
-Run the app and notice the Customer's screen has been improved.
+```Java
+if (entitySet.getEntityType() == ESPMContainerMetadata.EntityTypes.product) {
+    dataQuery.thenBy(Product.name, SortOrder.ASCENDING);
+}
+```
 
-![Customers customized](customers-customized.png)
+Run the app and notice the products screen has been formatted to show the product's name, category, description, price and the entries are now sorted by category and then name.
+
+![Nicely formatted product list](reformatted-product-list.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a divider)]
 
-We can continue to enhance the Customer view by adding a divider between Object Cells in the Recycler View.
+[ACCORDION-BEGIN [Step 3: ](Customize the ProductCategory list screen)]
 
-On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and return **`setupRecyclerView`** to move to the `setupRecyclerView` method.
+Examine the **`ProductCategories`** screen.
 
-Add the below lines:
+![Original ProductCategories Screen](original-product-categories.png)
+
+In this section the screen's title will be updated, the Object Cell will be used to show the category name, main category name, the number of products in a category and a separator decoration will be added between cells.
+
+Press **shift** twice and type **`strings.xml`** to open `res/values/stings.xml`
+
+Add the following entry.
+
+```XML
+<string name="product_categories_title">Product Categories</string>
+```
+
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`ProductCategoriesListActivity`** to open `ProductCategoriesListActivity.java`.
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`onCreate`** to move to the `onCreate` method.
+
+Add the following line after toolbar has been initialized which will set the screen's title.
+
+```Java
+toolbar.setTitle(getResources().getString(R.string.product_categories_title));
+```
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`populateObjectCell`** to move to the `populateObjectCell` method.
+
+
+Find the below lines that set the `subheadline`, `footnote` and `icon`.
+
+```Java
+objectCell.setSubheadline("Subheadline goes here");
+objectCell.setFootnote("Footnote goes here");
+if (masterPropertyValue == null || masterPropertyValue.isEmpty()) {
+    objectCell.setIcon("?", 0);
+} else {
+    objectCell.setIcon(masterPropertyValue.substring(0,1), 0);
+}
+objectCell.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
+objectCell.setIcon("!", 2);
+```
+
+Replace them to instead display main category, hide the footnote and show the number of products per category.
+
+```Java
+dataValue = productCategory.getDataValue(ProductCategory.mainCategoryName);
+if (dataValue != null) {
+    objectCell.setSubheadline(dataValue.toString());
+}
+
+objectCell.setLines(2);  //Not using footnote
+
+dataValue = productCategory.getDataValue(ProductCategory.numberOfProducts);
+if (dataValue != null) {
+    objectCell.setStatusWidth(220);
+    objectCell.setStatus(dataValue.toString() + " Products", 1);
+}
+```
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`setupRecyclerView`** to move to the `setupRecyclerView` method.
+
+After the `if (recyclerView == null)` line, paste the following code that adds a divider between categories.
 
 ```Java
 LinearLayoutManager llm = new LinearLayoutManager(this);
-recyclerView.addItemDecoration(new DividerItemDecoration(context, llm.getOrientation()));
+DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), llm.getOrientation());
+recyclerView.addItemDecoration(dividerItemDecoration);
+recyclerView.setLayoutManager(llm);
 ```
 
-![Divider Code](divider-code.png)
+Run the app again and notice the title, `subheadline`, and `status` are now used and the `icons` and `footnote` are no longer shown.
+
+![Modified ProductCategories Screen](modified-product-categories.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Customize the navigation)]
+
+In this section, the app will be modified to initially show the Product Categories screen when opened.  Selecting a category will navigate to a Products list screen for the selected category.  The floating action button on the Categories screen will be removed.
+
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`LogonActivity`** to open `LogonActivity.java`.
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`startEntitySetListActivity`** to move to the `startEntitySetListActivity` method.
+
+Add the following line below the other Intent declaration.
+
+```Java
+Intent pcIntent = new Intent(LogonActivity.this, ProductCategoriesListActivity.class);
+```
+
+After the call to `startActivityForResult`, add the below line.  This will cause the Product Category screen to be the first screen seen when opening the app but as the Entity List screen is opened first, it can be navigated to by pressing the up or back button.  The `EntityList` screen contains the settings menu so to simply things, this screen is still displayed.
+
+```Java
+startActivity(pcIntent);
+```
 
 
-Notice that two of the classes, `LinearLayoutManager` and `DividerItemDecoration` cannot be resolved.  Select each class and on Windows press **`Alt+Enter`** or on a Mac press **`option+return`** to make use of Android Studio quick fix to add the missing imports.
 
-Run the app and notice that each row in the Recycler View has a divider.
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`ProductCategoriesListActivity`** to open `ProductCategoriesListActivity.java`.
 
-![Customers screen with divider](customer-with-divider.png)
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`onCreate`** to move to the `onCreate` method.
 
-> **Note**: Further information on Fiori for Android can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html">Fiori UI Overview</a>.
+Find the below code.
 
-Congratulations! You have customized the display of a Fiori for Android Object Cell.
+```Java
+if (navigationPropertyName != null && parentEntityData != null) {
+    FloatingActionButton fab = findViewById(R.id.fab);
+    fab.hide();
+} else {
+    createFloatingButton();
+}
+```
+
+Replace it with the following code.
+
+```Java
+FloatingActionButton fab = findViewById(R.id.fab);
+fab.hide();
+```
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`onCreateOptionsMenu`** to move to the `onCreateOptionsMenu` method.
+
+Add the following line below the `inflater.inflate` call which will remove the home menu from the Product Categories screen which is now the home screen of the app.
+
+```Java
+menu.removeItem(R.id.menu_home);
+```
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`showDetailActivity`** to move to the `showDetailActivity` method.
+
+Select the body of the method and comment it out by pressing on Windows **`Ctrl+/`** or on a Mac **`command+/`**.
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`setOnClickListener`** to move to the `setOnClickListener` method.
+
+Replace the code with following which will enable the navigation from the Category list screen to the Product list screen.
+
+```Java
+holder.view.setOnClickListener(view -> {
+    Intent productsIntent = new Intent(ProductCategoriesListActivity.this, ProductsListActivity.class);
+    productsIntent.putExtra("category", productCategory.getCategoryName());
+    view.getContext().startActivity(productsIntent);
+});
+```
+
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`ProductsListActivity`** to open `ProductsListActivity.java`.
+
+On Windows press **`Ctrl+F`** or on a Mac press **`command+F`** and search for `adapter.setItems(products)`.   Replace that line with the following code which will filter the products list to only show products for a selected category.
+
+```Java
+String category = getIntent().getStringExtra("category");
+if (category != null) {
+    List<Product> matchingProducts = new ArrayList<>();
+    for (Product product : products) {
+        if (product.getCategory() != null && product.getCategory().equals(category)) {
+            matchingProducts.add(product);
+        }
+    }
+    adapter.setItems(matchingProducts);
+}
+else {
+    adapter.setItems(products);
+}
+```
+
+Run the app again and notice the Product Categories screen is now the first screen shown, that the home menu is no longer shown, and that selecting a category shows the products list screen which now displays only products for the selected category.
+
+![Product category list screen](reformatted-product-category-list2.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 5: ](Add category filtering with a FioriSearchView)]
+
+In this section a search field will be added to `ProductCategoriesListActivity` enabling a user to filter the results displayed on the product category screen.
+
+First, create a new drawable resource file **`res/drawable/ic_search_icon.xml`** and use the following XML.
+
+```XML
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFF"
+        android:pathData="M15.5,14h-0.79l-0.28,-0.27C15.41,12.59 16,11.11 16,9.5 16,5.91 13.09,3 9.5,3S3,5.91 3,9.5 5.91,16 9.5,16c1.61,0 3.09,-0.59 4.23,-1.57l0.27,0.28v0.79l5,4.99L20.49,19l-4.99,-5zM9.5,14C7.01,14 5,11.99 5,9.5S7.01,5 9.5,5 14,7.01 14,9.5 11.99,14 9.5,14z"/>
+</vector>
+```
+
+The current menu `res/menu/itemlist_menu.xml` is shared among all list screens.  We will now use a new XML file for the Product Categories screen.
+
+Add a new menu resource named **`res/menu/product_categories_menu.xml`** and use the below XML for its contents.
+
+```XML
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_icon"
+        android:title="Search"
+        app:actionViewClass="com.sap.cloud.mobile.fiori.search.FioriSearchView"
+        app:showAsAction="always|collapseActionView"
+        style="@style/FioriSearchView" />
+
+    <item
+        android:id="@+id/menu_refresh"
+        android:icon="@drawable/ic_menu_refresh"
+        app:showAsAction="always"
+        android:title="@string/menu_refresh"/>
+</menu>
+```
+
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`ProductCategoriesListActivity`** to open `ProductCategoriesListActivity.java`.
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`onCreateOptionsMenu`** to move to the `onCreateOptionsMenu` method.
+
+Comment out the code to inflate entity menu and instead use the new `product_categories_menu`.
+
+```Java
+//inflater.inflate(R.menu.itemlist_menu, menu);
+//menu.removeItem(R.id.menu_home);
+inflater.inflate(R.menu.product_categories_menu, menu);
+```
+
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type `ProductCategoryListAdapter` to open the `ProductCategoryListAdapter` class.  
+
+Add the following member.
+```Java
+private List<ProductCategory> allProductCategories;
+```
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`setItems`** to move to the `setItems` method.
+
+Add the following to the top of the function.
+
+```Java
+if (allProductCategories == null) {
+    allProductCategories = new ArrayList<>(currentProductCategories);
+}
+```
+
+On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`onCreateOptionsMenu`** to move to the `onCreateOptionsMenu` method.
+
+Add the following lines right above the return statement which will set a listener that will filter the list of categories in the list when text is entered in the search view.
+
+```Java
+FioriSearchView searchView = (FioriSearchView) menu.findItem(R.id.action_search).getActionView();
+searchView.setBackgroundResource(R.color.transparent);
+// make sure to import android.support.v7.widget.SearchView
+searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+  @Override
+  public boolean onQueryTextSubmit(String s) {
+      return false;
+  }
+
+  @Override
+  public boolean onQueryTextChange(String newText) {
+      if(adapter == null) {
+          return false;
+      }
+
+      List filteredCategoriesList = new ArrayList();
+      if (newText != null && newText.trim().length() > 0) {
+          for (int i = 0; i < adapter.allProductCategories.size(); i++) {
+              ProductCategory pc = adapter.allProductCategories.get(i);
+              if (pc.getCategoryName().toLowerCase().contains(newText.toLowerCase())) {
+                  filteredCategoriesList.add(pc);
+              }
+          }
+      }
+      else {
+          filteredCategoriesList = adapter.allProductCategories;
+      }
+      adapter.productCategories = filteredCategoriesList;
+      recyclerView.setAdapter(adapter);
+      return false;
+  }
+});
+```
+
+Now when you run the app again there is a filter search box that changes which product categories appear in the list.
+
+![Filter Categories in action 1](search-view.png)
+
+![Filter Categories in action 2](filter-in-action.png)
+
+>Further information on Fiori for Android and the generated app can be found at [Fiori UI Overview](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html), [Fiori Android Design Guidelines](https://experience.sap.com/fiori-design-android/object-cell/) and [Fiori UI Demo Application](https://github.com/SAP/cloud-sdk-android-fiori-ui-components) and the `WizardAppReadme.md` file located in the generated app.
+
+Congratulations!  You now have made use of Fiori for Android and have an understanding on some of the ways that the wizard generated application can be customized to show different fields on the list screens, alter control flow and add or remove menu items.
 
 [DONE]
 [ACCORDION-END]

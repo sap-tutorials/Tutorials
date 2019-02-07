@@ -11,12 +11,12 @@ time: 5
 <!-- loiof3365096bb2440fcafdb30e9f51877f1 -->
 
 ## Prerequisites
- - **Tutorials:**  You have completed [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) and [Connect to SAP HANA, express edition using Python](https://www.sap.com/developer/tutorials/hxe-python-connection.html).
+ - **Tutorials:**  You have completed [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) and [Connect to SAP HANA, express edition using Python](https://developers.sap.com/tutorials/hxe-python-connection.html).
 Ensure that you have Python 2.7 or 3.6 installed.
 
-You have downloaded, extracted, and installed one of the SAP HANA HDB clients. See [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html).
+You have downloaded, extracted, and installed one of the SAP HANA HDB clients. See [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html).
 
-You have also installed the Python driver that comes with the clients. See [Connect to SAP HANA, express edition using Python](https://www.sap.com/developer/tutorials/hxe-python-connection.html).
+You have also installed the Python driver that comes with the clients. See [Connect to SAP HANA, express edition using Python](https://developers.sap.com/tutorials/hxe-python-connection.html).
 
 
 ## Details

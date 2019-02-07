@@ -8,7 +8,7 @@ time: 25
 
 ## Prerequisites  
  - [Download Eclipse and SAP HANA Studio plugins](https://tools.hana.ondemand.com/#hanatools)
- - [Create a Repository Workspace](https://www.sap.com/developer/tutorials/studio-new-project.html)
+ - [Create a Repository Workspace](https://developers.sap.com/tutorials/studio-new-project.html)
 
 
 ## Details
@@ -16,7 +16,7 @@ time: 25
 In this tutorial, you will go through all the steps to import data from a MS Excel Spreadsheet, model a simple Calculation view and view the results in a pivot table  using the HANA MDX connector from MS Excel. You will first create the basic setup within an XS Project.
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 

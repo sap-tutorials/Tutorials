@@ -1,5 +1,5 @@
 ---
-title: Edit web content in your Portal freestyle site
+title: Edit Web Content in your Portal Freestyle Site
 description: Edit the web content of your Portal freestyle site in the Web Content Editor tool.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
@@ -23,6 +23,8 @@ Portal freestyle sites consist of web content that is maintained and edited in a
 [ACCORDION-BEGIN [Step 1: ](Access the Web Content Editor tool)]
 In the Supplier Portal site, navigate to **Services and Tools** and select the Web Content Editor tool.
 
+![Open Web Content Editor](0-open-tool.png)
+
 >Note that Administrators can also send you the URL to access the Web Content Editor tool.
 
 [DONE]
@@ -31,28 +33,45 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Edit the web content)]
-  1. In the left panel, under the **Header Footer** page, select the **Video** web content entry.
-  2. Click the pencil icon next to it.
-  ![Edit video](1-Edit-video.png)
-  3. Enter the following video URL: <https://www.youtube.com/watch?v=1nVqIz6WS9s>
-  4. Click **Save**.
-  5. Click the back button.
-  ![Back button](2-Back-button.png)
-  6. Click the pencil icon next to the **Header with Text** web content entry.
-  ![Edit Header with Text](6-Edit-header-with-text.png)
-  7. Enter the following:
+
+1. In the left panel, under the **Header Footer** page, select the **Video** web content entry.
+
+2. Click the pencil icon next to it.
+
+    ![Edit video](1-Edit-video.png)
+
+3. Enter the following video URL: <https://www.youtube.com/watch?v=1nVqIz6WS9s>
+
+4. Click **Save**.
+
+5. Click the back button.
+
+    ![Back button](2-Back-button.png)
+
+6. Click the pencil icon next to the **Header with Text** web content entry.
+
+    ![Edit Header with Text](2a-edit-header-text.png)
+
+7. Enter the following texts in the relevant fields:
 
     | Field | Value |
     |-------|----------|
     | **Title** | Supplier Updates |
     | **Text** | Important update to all suppliers: As of 9.9.17, the  payment policy will be updated. Please read the note below carefully to learn more about the change. <br><br> All payments will be issued electronically, via Automated Clearing House (ACH) CTX format in the United States and the SWIFT Network outside the United States. There is generally one business day from when we issue a payment until it's received in the supplier's bank account. <br><br> The payment will be issued directly to the supplier's bank. Suppliers can request an email remittance from us that includes invoice details and payment information. Additional information, including email remittance and Electronic Payment Enrollment Forms can be accessed through the transaction history item in the updated Supplier Portal. |
-   8. Click **Save**.
-   9. Click the back button again.
-   10. Click the pencil icon next to the **Design List** web content entry.
-   ![Edit Design List](5-Edit-design-list.png)
-   11. Select the first content item and click on the minus icon to delete the first item.
-   ![Remove content item](8-Remove-content-item.png)
-   12. Select the next content item and enter the following for the text:
+
+ 8. Click **Save**.
+
+ 9. Click the back button again.
+
+ 10. Click the pencil icon next to the **Design List** web content entry.
+
+    ![Edit Design List](5-Edit-design-list.png)
+
+ 11. Select the first content item and click on the minus icon to delete the first item.
+
+    ![Remove content item](8-Remove-content-item.png)
+
+ 12. Select the next content item and enter the following text:
 
     | Field | Value |
     | ----- | ----- |
@@ -60,7 +79,8 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
     | **Image** | Click **Replace** to replace the image and select `Testimonial1.jpg` (available in our resources).
 
    13. **Save** your settings.
-   14. In the same way, select the second content Item and enter the following for the text:
+
+   14. In the same way, select the last content item and enter the following text:
 
     | Field | Value |
     | ----- | ----- |
@@ -75,12 +95,18 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Publish the changes to your web content)]
-   1. In the page view of the Web Content Editor, click **Publish** on the right side of the menu bar.
-   ![Publish](3-Publish.png)
-   2. Select the option to **Publish all modified web content in this site** and **Publish**.
-   ![Publish all changes](4-Publish-all-changes.png)
 
->To publish only the content of a specific widget, simply select it and click **Publish**.
+1. In the page view of the Web Content Editor, click **Publish** on the right side of the menu bar.
+
+    ![Publish](3-Publish.png)
+
+2. Select the option to **Publish all modified web content in this site** and **Publish**.
+
+    ![Publish all changes](4-Publish-all-changes.png)
+
+    >To publish only the content of a specific widget, simply select it and click **Publish**.
+
+3. Click **Publish**.
 
 [VALIDATE_1]
 

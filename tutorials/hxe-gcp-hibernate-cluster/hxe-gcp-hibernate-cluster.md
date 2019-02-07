@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Full-text search queries with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-text-search.html)
+- **Tutorials:** [Full-text search queries with Hibernate](https://developers.sap.com/tutorials/hxe-gcp-hibernate-text-search.html)
 
 ## Details
 ### You will learn  

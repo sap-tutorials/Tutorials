@@ -8,10 +8,7 @@ time: 15
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
@@ -115,7 +112,7 @@ The console should output the following:
 > ### **Note:**
 >If you get the following error: ***Could not start the build because no builder is installed in your space***, it probably mean that the builders are not deployed in the ***development*** space.
 >&nbsp;
->You will need to complete the first step (Verify the builders deployment) from the [***Check your environment*** tutorial](https://www.sap.com/developer/tutorials/hxe-aa-movielens-01.html).
+>You will need to complete the first step (Verify the builders deployment) from the [***Check your environment*** tutorial](https://developers.sap.com/tutorials/hxe-aa-movielens-01.html).
 
 [DONE]
 [ACCORDION-END]

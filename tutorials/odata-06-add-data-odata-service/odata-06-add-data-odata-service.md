@@ -12,7 +12,7 @@ time: 10
 - How to enable the Database Explorer
 - How to use some of the basic features of the Database Explorer
 
-This tutorial assumes you've completed the tutorial [Define a Simple Data Model and OData Service with CDS](https://www.sap.com/developer/tutorials/odata-05-data-model-service.html). If you have done, you'll have a brand new OData service of your own to use. However, while that service is backed by a persistence layer (in this case a SAP HANA database), there's no data, so any querying of the data will return no results.
+This tutorial assumes you've completed the tutorial [Define a Simple Data Model and OData Service with CDS](https://developers.sap.com/tutorials/odata-05-data-model-service.html). If you have done, you'll have a brand new OData service of your own to use. However, while that service is backed by a persistence layer (in this case a SAP HANA database), there's no data, so any querying of the data will return no results.
 
 In this tutorial, you'll enable the Database Explorer in SAP Web IDE, and use it to connect to your database and populate the table related to the Products entity type you've defined, so you can start to see results for your queries.
 
@@ -22,7 +22,7 @@ In this tutorial, you'll enable the Database Explorer in SAP Web IDE, and use it
 
 [ACCORDION-BEGIN [Step 1: ](Start up the SAP Web IDE)]
 
-Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -102,7 +102,7 @@ You should be presented with the table's definition, like this:
 
 ![products table definition](products-table-definition.png)
 
-> Observe how the data definition reflects the CDS based definition in the `data-model.cds` file. If you're curious, check in the `MY_APP_PRODUCTS.hdbcds` file, which is the artifact generated when you built the `db` module in the [Define a Simple Data Model and OData Service with CDS](https://www.sap.com/developer/tutorials/odata-05-data-model-service.html) tutorial. You'll see the specific SQL-level table name and field types there.
+> Observe how the data definition reflects the CDS based definition in the `data-model.cds` file. If you're curious, check in the `MY_APP_PRODUCTS.hdbcds` file, which is the artifact generated when you built the `db` module in the [Define a Simple Data Model and OData Service with CDS](https://developers.sap.com/tutorials/odata-05-data-model-service.html) tutorial. You'll see the specific SQL-level table name and field types there.
 
 Use the **Open Data** button on the far right to open up a new tab to show data in the table, in an editor. There's no data right now, so it should look something like this:
 
@@ -120,13 +120,13 @@ In the **Raw Data** tab of the data editor, use the **+** button to add new rows
 
 ![adding rows](adding-rows.png)
 
-Fill in your own values, or use the Northwind `Products` data that you looked at in [Define a Simple Data Model and OData Service with CDS](https://www.sap.com/developer/tutorials/odata-05-data-model-service.html), via this URL:
+Fill in your own values, or use the Northwind `Products` data that you looked at in [Define a Simple Data Model and OData Service with CDS](https://developers.sap.com/tutorials/odata-05-data-model-service.html), via this URL:
 
 <https://services.odata.org/V3/Northwind/Northwind.svc/Products?$format=json&$select=ProductID,ProductName,UnitsInStock>
 
 When you're done, don't forget to use the **Save** button -- a diskette icon, very retro!
 
-At this stage, you have a fully functioning OData service populated with test data. You can check this by following the same link as in the [Define a Simple Data Model and OData Service with CDS](https://www.sap.com/developer/tutorials/odata-05-data-model-service.html) tutorial. If you don't have that on hand, just switch back to the **Development** perspective, and use the context menu on the **`srv`** folder to start the application, with **Run** > **Run as Java Application**. The Run Console will appear with the URL you need.
+At this stage, you have a fully functioning OData service populated with test data. You can check this by following the same link as in the [Define a Simple Data Model and OData Service with CDS](https://developers.sap.com/tutorials/odata-05-data-model-service.html) tutorial. If you don't have that on hand, just switch back to the **Development** perspective, and use the context menu on the **`srv`** folder to start the application, with **Run** > **Run as Java Application**. The Run Console will appear with the URL you need.
 
 ![app URL in the Run Console](app-url-in-run-console.png)
 

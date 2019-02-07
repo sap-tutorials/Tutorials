@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ---
 
 ## Prerequisites
- - **Tutorial:** [Introduction to Writing a Custom Java Toolkit Adapter for SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part1.html)
+ - **Tutorial:** [Introduction to Writing a Custom Java Toolkit Adapter for SAP HANA Streaming Analytics](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part1.html)
 
 ## Next Steps
- - [Creating Custom Adapter Configuration Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part3.html)
+ - [Creating Custom Adapter Configuration Files](https://developers.sap.com/tutorials/hsa-java-toolkit-adapter-part3.html)
 
 ## Details
 ### You will learn
@@ -361,5 +361,3 @@ public class MqttFormatter extends RowFormatter {
 
 [ACCORDION-END]
 
-## Next Steps
- - [Creating Custom Adapter Configuration Files](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part3.html)

@@ -1,8 +1,8 @@
 ---
 title: Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK
 description: The following steps will explain how to create the very first Hello World example on Cloud Foundry using the SAP S/4HANA Cloud SDK.
-primary_tag: products>sap-s-4hana
-tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
+primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites  
@@ -270,8 +270,3 @@ mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-Da
 ```
 
 [ACCORDION-END]
-
----
-
-## Next Steps
- - **Tutorial:** [Connect to OData service on Cloud Foundry using SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-odata-service-cloud-foundry.html)

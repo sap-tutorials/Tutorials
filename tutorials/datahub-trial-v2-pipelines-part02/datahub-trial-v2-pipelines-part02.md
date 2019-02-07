@@ -1,23 +1,17 @@
 ---
-title: Use a message broker in SAP Data Hub 2
-description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, trial edition.
+title: Use a message broker in SAP Data Hub, trial edition 2.3
+description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Generate sensor data](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part01.html)
-
-## Next Steps
-- [Store sensor data in GCS](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part03.html)
-
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
   - How to use a message broker within a pipeline.
 
-Please note that this tutorial is similar to the `Use a message broker` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Use a message broker` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 ### Time to Complete
 **30 Mins**
@@ -69,7 +63,7 @@ From the instance details page, note down the **Primary Internal IP** of this VM
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
 Remove the connection between **Data Generator** operator and the **Terminal** operator.
 
@@ -127,8 +121,3 @@ Copy any row of the terminal output and paste it in the frame below and click on
 Stop the pipeline by clicking **Stop**.
 
 [ACCORDION-END]
-
----
-
-## Next Steps
-- [Store sensor data in GCS](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part03.html)

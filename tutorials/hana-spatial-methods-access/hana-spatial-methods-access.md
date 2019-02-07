@@ -1,25 +1,24 @@
 ---
 title: Access methods
 description: Spatial access methods help you to retrieve properties of geometries
+auto_validation: true
+time: 15
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Introduction to SAP HANA Spatial data types](https://www.sap.com/developer/groups/hana-aa-spatial-get-started.html)
+ - **Tutorials:** [Introduction to SAP HANA Spatial data types](https://developers.sap.com/group.hana-aa-spatial-get-started.html)
 
 ## Next Steps
- - [Computation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-compute.html)
+ - [Computation methods](https://developers.sap.com/tutorials/hana-spatial-methods-compute.html)
 
 ## Details
 ### You will learn  
 You will learn about a number of access methods and how to apply them to different geometries.
 
 >You must have table `"TESTSGEO"."SPATIALSHAPES"` from previous tutorials already created and loaded in your system to be able to run examples from this tutorial.
-
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -28,6 +27,7 @@ If you have done previous tutorials, then you must have seen some of the spatial
 
 E.g. `ST_Dimension()` returned the dimension of a geometry object and could be applied to a geometry of any type - be it a point or a polygon. `ST_X()` returns the X coordinate of an `ST_POINT` and works with points only.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Access methods for all geometries)]
@@ -52,13 +52,15 @@ where "SHAPE".ST_GeometryType()='ST_Point';
 After running the SQL statement above you should notice is that these methods return `null` when applied to an empty geometry.
 
 The other access method you used here was `ST_GeometryType()` to check and filter the type of geometry.
-[ACCORDION-END]
 
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access methods for line strings)]
 You used `ST_GeometryType()` in the previous step as a predicate to select only records for points. Otherwise trying to apply `ST_X()` to a string or polygon would return run-time error from SQL.
 
 There are some access methods that can be used only with line strings. For example:
+
  - `ST_StartPoint()` and `ST_EndPoint()` to retrieve an `ST_Point` value of the starting and the ending points,
  - `ST_NumPoints()` to get the total number of points that can be used then to retrieve Nth point of using `ST_PointN()`. Numbering starts from `1` and `ST_PointN()` returns `null` in Nth point does not exist.
 
@@ -75,6 +77,7 @@ where "SHAPE".ST_GeometryType()='ST_LineString';
 
 ![Line strings](access20.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Access methods for collections)]
@@ -102,13 +105,8 @@ This query now produced 3 different collections. Each of them contains only the 
 
 You will learn more about different kinds of spatial aggregations in a separate tutorial.
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 ### Optional
 - You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/7a13f280787c10148dc893063dfed1c4.html). Make sure you review documentation for the version of SAP HANA you run.
-
-
----
-
-## Next Steps
- - [Computation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-compute.html)

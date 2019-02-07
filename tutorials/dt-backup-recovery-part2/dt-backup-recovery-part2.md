@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials** [Initializing Database Backup and Recovery](https://www.sap.com/developer/tutorials/dt-backup-recovery-part1.html)
+ - **Tutorials** [Initializing Database Backup and Recovery](https://developers.sap.com/tutorials/dt-backup-recovery-part1.html)
 
 
 ## Next Steps
- - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://www.sap.com/developer/tutorials/dt-backup-recovery-part3.html)
+ - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://developers.sap.com/tutorials/dt-backup-recovery-part3.html)
 
 ## Details
 ### You will learn

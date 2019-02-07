@@ -7,10 +7,10 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Create a global ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
+ - [Create a global ABAP Class](https://developers.sap.com/tutorials/abap-dev-create-new-class.html)
 
 ## Next Steps
- - [Display a CDS view using ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
+ - [Display a CDS view using ALV with IDA](https://developers.sap.com/tutorials/abap-dev-adt-use-cds-view.html)
 
 
 ## Details
@@ -22,7 +22,7 @@ You will add the following:
 - CASE statement
 - WHERE clause
 
-You can find more information about CDS in the [ABAP keyword documentation](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/abencds.htm) and the [SAP Community](https://www.sap.com/community/topic/abap.html).
+You can find more information about CDS in the [ABAP keyword documentation](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/abencds.htm) and the [SAP Community](https://www.sap.com/community/topics/abap.html).
 
 ---
 

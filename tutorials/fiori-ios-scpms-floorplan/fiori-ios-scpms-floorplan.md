@@ -9,11 +9,11 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Using the SAP Fiori Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)
+ - **Tutorials:** [Using the SAP Fiori Mentor app](https://developers.sap.com/tutorials/fiori-ios-scpms-mentor.html)
 
 
 ## Next Steps
- - [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+ - [Push Notifications](https://developers.sap.com/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Details
 ### You will learn  
@@ -514,5 +514,3 @@ The list should now be filtered based on the scanned results:
 [VALIDATE_11]
 [ACCORDION-END]
 
-## Next Steps
-- [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)

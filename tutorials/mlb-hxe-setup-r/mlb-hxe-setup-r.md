@@ -4,11 +4,11 @@ description: Provide details on the installation and configuration of the SAP HA
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
-time: 45
+time: 40
 ---
 
 ## Prerequisites  
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 ## Details
 ### You will learn

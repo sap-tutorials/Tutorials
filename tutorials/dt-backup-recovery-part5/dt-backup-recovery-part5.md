@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials** [Reviewing Available Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part4.html)
+ - **Tutorials** [Reviewing Available Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part4.html)
 
 ## Next Steps
- - **Tutorials** [Creating and Recovering Delta Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part6.html)
+ - **Tutorials** [Creating and Recovering Delta Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part6.html)
 
 ## Details
 ### You will learn

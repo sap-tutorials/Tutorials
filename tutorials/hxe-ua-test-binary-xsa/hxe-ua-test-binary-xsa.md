@@ -147,6 +147,6 @@ Follow the Eclipse installer prompts.
 
 Launch when prompted, or go to the Eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the `eclipse` executable file.
 
-Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
+Follow the tutorial [How to download and install the HANA Eclipse plugin](http://developers.sap.com/tutorials/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
 
 [ACCORDION-END]

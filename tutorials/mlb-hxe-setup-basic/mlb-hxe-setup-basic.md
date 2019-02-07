@@ -1,6 +1,6 @@
 ---
-title: Prepare your SAP HANA, express edition instance for Machine Learning
-description: Check that your instance is properly configured and meets the minimum requirements to execute built-in Machine Learning algorithms .
+title: Prepare Your SAP HANA, express edition Instance for Machine Learning
+description: Check that your instance is properly configured and meets the minimum requirements to execute built-in Machine Learning algorithms.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
@@ -8,17 +8,38 @@ time: 10
 ---
 
 ## Prerequisites  
-- [Select and Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+- [Select and Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 ## Details
 ### You will learn
 In this tutorial, you will enable your SAP HANA, express edition instance to use the Machine Learning libraries available and verify that your system meets the minimum requirements.
 
+[ACCORDION-BEGIN [Info: ](Which SAP HANA flavor and version?)]
+
+In order to complete this tutorial series, you need to use as a minimum version:
+
+ - **SAP HANA, express edition 2.0 SPS03**
+
+This version will allow you to complete all the steps described in the series.
+
+As you may already know, SAP HANA, express edition comes in two different flavors.
+
+In this series, you will be leveraging the SAP Web IDE to complete both the execution of SQL and SAP HANA XSA development tasks. Therefore, you will need:
+
+ - **Server only**
+
+If you don't have an instance up and running, be aware that you don't need to complete the installation of all optional packages (this will be described when needed).
+
+You can check the [SAP HANA, express edition installation flowchart](https://developers.sap.com/topics/sap-hana-express.html#flowchart) to find all the installation details.
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Prerequisite: ](Install a SQL query tool)]
 
 In order to interact with your SAP HANA, express edition instance, you will be running a series of SQL statement.
 
-As a number of options are available, you can check the following link: [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+As a number of options are available, you can check the following link: [Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 [DONE]
 [ACCORDION-END]
@@ -51,6 +72,7 @@ If the **HXE** tenant is listed, but with the **`ACTIVE_STATUS`** set to **NO**,
 ```sql
 ALTER SYSTEM START DATABASE HXE;
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -117,7 +139,7 @@ CREATE USER ML_USER PASSWORD Welcome18Welcome18;
 -- Use this if you don't want to be forced to update your password on the first connection.
 -- CREATE USER ML_USER PASSWORD Welcome18Welcome18 NO FORCE_FIRST_PASSWORD_CHANGE;
 -- or
--- ALTER USER ML_USER DISABLE PASSWORD LIFETIME;
+ALTER USER ML_USER DISABLE PASSWORD LIFETIME;
 
 GRANT AFLPM_CREATOR_ERASER_EXECUTE TO ML_USER;
 GRANT AFL__SYS_AFL_AFLPAL_EXECUTE TO ML_USER;

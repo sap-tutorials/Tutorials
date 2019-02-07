@@ -21,9 +21,9 @@ Therefore, you will use a modified version of the script to train then export th
 
 The SAP HANA External Machine Learning integration also requires the of the ***raw*** tensors in the model signature instead of the `tf.train.Example` approach.
 
-[ACCORDION-BEGIN [Step 1: ](Build and Export a TensorFlow Model)]
+[ACCORDION-BEGIN [Step 1: ](Activate the Python Virtual Environment)]
 
-Now, you can switch to the `tmsadm` user if not done yet:
+First, switch to the `tmsadm` user if not done yet:
 
 ```shell
 sudo su -l tmsadm
@@ -35,17 +35,16 @@ Activate the Python Virtual Environment (named `tms`) created previously using t
 source ~/tms/bin/activate
 ```
 
-You can now clone the models repository locally:
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Build and Export a TensorFlow model)]
+
+First, clone the models repository locally:
 
 ```shell
 cd ~
 git clone https://github.com/tensorflow/models
-```
-
-The scripts that you will leverage to consume the Iris data uses Pandas, that you will need to install:
-
-```shell
-pip install pandas
 ```
 
 Then, you can create a model export directory:
@@ -54,7 +53,13 @@ Then, you can create a model export directory:
 mkdir -p ~/export/iris
 ```
 
-Now, you can create the following Python script `~/export/iris_export_savedmodel.py` using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-iris/source/iris_export_savedmodel.py):
+You will need the Pandas Python package:
+
+```bash
+pip install --user pandas
+```
+
+Now, you can create the following Python script **`~/export/iris_export_savedmodel.py`** using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-iris/source/iris_export_savedmodel.py):
 
 > **Note:** The below script will work with SAP HANA 2.0, express edition SPS03. If you are using an earlier version, please use the following [script link](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-iris/source/iris_export_savedmodel_pre_sps03.py)
 
@@ -69,8 +74,8 @@ sys.path.append('/home/tmsadm/models/samples/core/get_started')
 import iris_data
 import tensorflow as tf
 
-tf.app.flags.DEFINE_integer('steps'           , 10000           , 'number of training steps.')
-tf.app.flags.DEFINE_integer('batch_size'      , 100             , 'batch size.')
+tf.app.flags.DEFINE_integer('steps'           , 10000                                    , 'number of training steps.')
+tf.app.flags.DEFINE_integer('batch_size'      , 100                                      , 'batch size.')
 tf.app.flags.DEFINE_string ('export_path'     , os.path.expanduser("~") + '/export/iris' , 'export path')
 args = tf.app.flags.FLAGS
 
@@ -180,8 +185,7 @@ if __name__ == '__main__':
 Once saved, you can run the following commands to build the model:
 
 ```shell
-cd ~/export/
-python iris_export_savedmodel.py
+python ~/export/iris_export_savedmodel.py
 ```
 
 For a more accurate version of the model, you can increase the value of the `training_iteration` switch, but this will also increase the processing time and the resources used.
@@ -189,8 +193,10 @@ For a more accurate version of the model, you can increase the value of the `tra
 You can check that your model was properly saved using the following utility:
 
 ```shell
-cd ~/export/iris
-saved_model_cli show --dir ./* --tag_set serve --signature_def serving_default
+saved_model_cli show \
+	--dir ~/export/iris/* \
+	--tag_set serve \
+	--signature_def serving_default
 ```
 
 It will display the `SavedModel SignatureDef` needed to configure the SAP HANA EML.
@@ -200,19 +206,11 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import a Test Dataset in SAP HANA)]
+[ACCORDION-BEGIN [Step 2: ](Import a test dataset in SAP HANA)]
 
 In order to test your model, you will need to import the test data set made available online.
 
-The use of this script assumes that you have installed the SAP HANA Client and imported the HDBCLI python package into your virtual environment:
-
-```bash
-pip install /usr/sap/hdbclient/hdbcli-2.2.36.tar.gz
-```
-
-> **Note:** the `hdbcli` tar file may be with a different version than the one displayed above
-
-Now, you can create the following file `~/export/iris_import_data.py` using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-iris/source/iris_import_data.py):
+Now, you can create the following file **`~/export/iris_import_data.py`** using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-iris/source/iris_import_data.py):
 
 ```python
 from __future__ import absolute_import
@@ -277,46 +275,57 @@ if __name__ == '__main__':
 To upload the data, you can execute the following command:
 
 ```shell
-cd ~/export
-python iris_import_data.py
+python ~/export/iris_import_data.py \
+	--hxehost localhost \
+	--hxeport 39015 \
+	--hxeusr ML_USER \
+	--hxepwd Welcome18Welcome18
 ```
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Configure and restart TensorFlow Serving)]
 
-[ACCORDION-BEGIN [Step 3: ](Start TensorFlow ModelServer)]
+Now that our model is built and saved in the right format, you can adjust the TensorFlow Serving configuration and start (or restart) it.
 
-Now that our model is built and saved in the right format, you can adjust the TensorFlow Serving `ModelServer` configuration and start (or restart) it.
-
-Update the model configuration file `~/export/config.cnf` like:
+Update the model configuration file **`~/export/models.config`** like this:
 
 ```js
 model_config_list: {
     config: {
         name: "iris",
-        base_path: "/home/tmsadm/export/iris",
+        base_path: "/tf_models/iris",
         model_platform: "tensorflow"
-    }
+    },
 }
 ```
 
 > **Note 1:** If you already have models defined, make sure to separate each `config` section with a comma.
 
-> **Note 2:** Make sure to update the base path in case you not using the proposed one
+> **Note 2:** The base path value is a *virtual* defined and used when running the Docker container/
 
-You can now start the TensorFlow Serving `ModelServer` using the following command:
-
-> **Note:** As of the publication of this tutorial, there is no ***graceful*** shutdown command for the TensorFlow Serving `ModelServer`. Therefore you will need to kill the process manually.
+First check that there is no running container for TensorFlow Serving using the following command:
 
 ```shell
-tensorflow_serving/model_servers/tensorflow_model_server --model_config_file=./export/config.cnf
+docker ps -a | grep "tensorflow/serving"
 ```
 
-You can use the following command if you prefer to run it as a background process with all outputs redirected to a log file:
+If there is any entry , you can kill and remove it using the following command:
 
 ```shell
-nohup  tensorflow_model_server --model_config_file=./export/config.cnf > ./tensorflow_model_server.log 2>&1  </dev/null &
+docker ps -a | grep "tensorflow/serving" | grep -v grep | awk '{print $1}' | xargs docker kill
+docker ps -a | grep "tensorflow/serving" | grep -v grep | awk '{print $1}' | xargs docker rm
+```
+
+You can now start the TensorFlow Serving container using the following command:
+
+```shell
+docker run \
+  -p 8500:8500 \
+  --mount type=bind,source=/home/tmsadm/export/models.config,target=/tf_models/config/models.config \
+  --mount type=bind,source=/home/tmsadm/export/iris,target=/tf_models/iris \
+  --entrypoint "/bin/sh" tensorflow/serving:1.6.1 -c "tensorflow_model_server --port=8500 --model_config_file=/tf_models/config/models.config" &
 ```
 
 [DONE]
@@ -326,7 +335,7 @@ nohup  tensorflow_model_server --model_config_file=./export/config.cnf > ./tenso
 
 You can now test your model with a local client program.
 
-Create the following file `~/export/iris_test_client.py` using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-iris/source/iris_test_client.py):
+Create the following file **`~/export/iris_test_client.py`** using the content of the following [script](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mlb-hxe-tensorflow-iris/source/iris_test_client.py):
 
 ```python
 """
@@ -334,7 +343,7 @@ A client that talks to tensorflow_model_server serving the iris model.
 """
 from __future__ import print_function
 
-import sys
+import sys, os
 import threading
 
 # This is a placeholder for a Google-internal import.
@@ -344,7 +353,7 @@ import numpy
 import tensorflow as tf
 
 from tensorflow_serving.apis import predict_pb2
-from tensorflow_serving.apis import prediction_service_pb2
+from tensorflow_serving.apis import prediction_service_pb2_grpc
 
 sys.path.append(os.path.expanduser("~") + '/models/samples/core/get_started')
 import iris_data
@@ -370,7 +379,7 @@ def main(_):
     request.model_spec.name = 'iris'
     request.model_spec.signature_name = 'serving_default'
 
-    stub = prediction_service_pb2.beta_create_PredictionService_stub(channel)
+    stub = prediction_service_pb2_grpc.PredictionServiceStub(channel._channel)
 
     connection = dbapi.connect(address=args.hxehost, port=args.hxeport, user=args.hxeusr, password=args.hxepwd)
     cursor = connection.cursor()
@@ -407,7 +416,6 @@ def main(_):
 
 if __name__ == '__main__':
     tf.app.run()
-
 ```
 
 > **Note:** Make sure to update the `<< password >>` in the script
@@ -415,14 +423,19 @@ if __name__ == '__main__':
 Then, you can execute the following command:
 
 ```shell
-cd ~/export
-python iris_test_client.py
+python ~/export/iris_test_client.py \
+	--tmshost localhost \
+	--tmsport 8500 \
+	--hxehost localhost \
+	--hxeport 39015 \
+	--hxeusr ML_USER \
+	--hxepwd Welcome18Welcome18
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Reload the SAP HANA EML Configuration)]
+[ACCORDION-BEGIN [Step 5: ](Reload the SAP HANA EML configuration)]
 
 Now that the model is deployed and the TensorFlow Serving `ModelServer` is up and running, you will need to add the model configuration to your SAP HANA, express edition instance.
 
@@ -480,7 +493,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test the Model from SAP HANA SQLScript)]
+[ACCORDION-BEGIN [Step 6: ](Test the model from SAP HANA SQLScript)]
 
 The following SQL script will allow you to test the deployed Iris model using the test dataset uploaded before.
 

@@ -7,10 +7,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Round the currency field using JavaScript](https://www.sap.com/developer/tutorials/hcp-webide-round-currency.html)
+- **Tutorials:** [Round the currency field using JavaScript](https://developers.sap.com/tutorials/hcp-webide-round-currency.html)
 
 ## Next Steps
-- [Implementing labels using the i18n (internationalization) features of SAPUI5](https://www.sap.com/developer/tutorials/hcp-webide-labels-i18n.html)
+- [Implementing labels using the i18n (internationalization) features of SAPUI5](https://developers.sap.com/tutorials/hcp-webide-labels-i18n.html)
 
 ## Details
 
@@ -89,12 +89,8 @@ If your symbol does not show up:
 [ACCORDION-BEGIN [Step 7: ](Clear the cache)]
 
 
-If the currency symbol does not show up, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](https://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
+If the currency symbol does not show up, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](https://developers.sap.com/tutorials/hcp-webide-add-labels-field.html) tutorial.
 
 
 [ACCORDION-END]
 
-
-
-## Next Steps
-- [Implementing labels using the i18n (internationalization) features of SAPUI5](https://www.sap.com/developer/tutorials/hcp-webide-labels-i18n.html)

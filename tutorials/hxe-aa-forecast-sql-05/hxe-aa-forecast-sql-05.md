@@ -8,7 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
+ - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
 ## Details
 ### You will learn
@@ -170,19 +170,6 @@ However, before selecting one, you will need to address the existence of a trend
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this tutorial, you will need to setup a SQL query tool for SAP HANA, express edition.
-
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 2: ](Create configuration table and input data views)]
 
 In order to proceed whit the next steps, you will first need to create a series of tables and views that will be reused over the rest of the tutorial.
@@ -323,7 +310,7 @@ The decomposed signal will provide you value of the seasonal, the trend and the 
 select * from pal_seasonality_statistics_cashflow;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-01.png)
 
@@ -371,7 +358,7 @@ select * from pal_seasonality_statistics_ozone;
 select * from pal_seasonality_decomposed_ozone;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-02.png)
 
@@ -539,7 +526,7 @@ The forecasted value are generated along with a lower & upper limit at 80 and 95
 select * from pal_auto_expsmooth_forecast_cashflow;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](07-01.png)
 
@@ -629,7 +616,7 @@ Compared to the SAP HANA APL Forecast function, the MAPE was 0.182721.
 select * from pal_auto_expsmooth_forecast_ozone;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](07-02.png)
 
@@ -840,7 +827,7 @@ The forecast is provided along with the standard error, the high and low at 80% 
 select * from pal_arima_forecast_cashflow;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](08-01.png)
 
@@ -957,7 +944,7 @@ The forecast is provided along with the standard error, the high and low at 80% 
 select * from pal_arima_forecast_ozone;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](08-01.png)
 

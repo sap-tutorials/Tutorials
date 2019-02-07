@@ -1,22 +1,18 @@
 ---
-title: Image services on the API Business Hub
+title: Image services with the API Business Hub console
 description: Discover how to test SAP Leonardo Machine Learning Foundation service on the SAP API Business Hub
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform]
+time: 10
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - [Sign up for an free trial account on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Sign up for an free trial account on the SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Details
 ### You will learn
-In this tutorial, you will learn where to find and test the **SAP Leonardo Machine Learning Functional Services** published on the SAP API Business Hub that consumes images content.
+  - Where to find and test the **SAP Leonardo Machine Learning Functional Services** published on the SAP API Business Hub that consumes images content
 
 This service allows you to calculates and returns a list of classifications/labels along with their probabilities for a given image.
 
@@ -29,8 +25,6 @@ The **Image Classification** Machine Learning Functional Services will be used a
  - **[Customizable Object Detection](https://api.sap.com/api/object_detection_api/resource)**
  - **[Human Detection](https://api.sap.com/api/human_detection_api/resource)**
 
-### Time to Complete
-**10 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Search the SAP API Business Hub)]
 
@@ -169,7 +163,3 @@ For more information, you can also check the online [SAP Leonardo Machine Learni
 
 [DONE]
 [ACCORDION-END]
-
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

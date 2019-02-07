@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://www.sap.com/developer/groups/ios-sdk-custom.html) group
+- This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://developers.sap.com/group.ios-sdk-custom.html) group
 &nbsp;
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 2.0
@@ -22,8 +22,8 @@ The app will use the Sample ESPM OData service from SAP Cloud Platform mobile se
 
 > Before you start, make sure you:
 
-> - have a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for more information.
-> - enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html) for more information.
+> - have a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for more information.
+> - enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html) for more information.
 
 
 ### You will learn

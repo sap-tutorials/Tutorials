@@ -1,6 +1,6 @@
 ---
 title: Enable and configure (IoT for Neo)
-description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform
+description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform. Please note that THIS SERVICE HAS BEEN DISCONTINUED in Trial and that this tutorial is applicable only to those who have already activated the service earlier.
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
 
@@ -8,11 +8,11 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Setup the Tessel device](https://www.sap.com/developer/tutorials/iot-tessel.html)
+- **Tutorials:** [Setup the Tessel device](https://developers.sap.com/tutorials/iot-tessel.html)
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://developers.sap.com/tutorials/iot-part7-add-device.html)
 
 ## Details
 ### You will learn
@@ -38,6 +38,10 @@ Go to the [SAP Cloud Platform trial edition](https://account.hanatrial.ondemand.
 [ACCORDION-BEGIN [Step 2: ](Enable IoT service)]
 
 Once you log in, click on **Services** in the left-hand navigation bar, scroll down to find **Internet of Things** tile and click on it.
+
+> Please note that THIS SERVICE HAS BEEN DISCONTINUED, and will be available only to those who have activated it earlier!
+
+> If you are new to IoT with SAP and would like to learn more, please check [IoT Application Enablement](https://developers.sap.com/topics/iot-application-enablement.html) product page and tutorials there.
 
 ![Services](p6-2.png)
 
@@ -102,7 +106,3 @@ Once user is assigned to the role, stop and start `iotmms` application.
 ![Start/stop](p6_10.png)
 
 [ACCORDION-END]
-
-
-## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)

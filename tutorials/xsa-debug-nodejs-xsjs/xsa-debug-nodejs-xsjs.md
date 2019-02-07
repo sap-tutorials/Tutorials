@@ -3,22 +3,16 @@ title: SAP HANA XS Advanced, debug XSJS and node.js scripts
 description: This video tutorial will demonstrate how to debug server-side JavaScript
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana ]
+time: 5
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Creating a Node.js Module](https://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
-
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - **Tutorials:** [Creating a Node.js Module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 
 ## Details
 ### You will learn  
 Describe what the user will learn from your tutorial and what the outcome will be.
 
-### Time to Complete
-**5 Min**
 
 ---
 
@@ -31,6 +25,3 @@ The following video demonstrates how to debug XSJS and Node.js in SAP Web IDE fo
 
 [ACCORDION-END]
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

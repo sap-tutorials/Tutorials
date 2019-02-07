@@ -11,18 +11,18 @@ time: 120
 ## Prerequisites
 
   - **Proficiency:** Intermediate
-  - [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
+  - [CI/CD Practices](https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
 ### 1. Introduction
 
 Done correctly, Continuous Integration (CI) can reduce turnaround time and increases quality and transparency - facts that are well-known and commonly advertised by practitioners, and that have been [confirmed in numerous studies](https://arxiv.org/pdf/1703.07019).
-Another benefit in CI is that it can be used as a tool to centralize knowledge about builds and distribution. This is especially useful in technologically heterogeneous ecosystems such as Mobile, where thorough testing even requires dedicated hardware. But before we go deeper: What is CI, anyway? There is an elaborate introduction to the topic of CI and related practices in the [Best Practices guide](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html), but a summary will be given here as well.
+Another benefit in CI is that it can be used as a tool to centralize knowledge about builds and distribution. This is especially useful in technologically heterogeneous ecosystems such as Mobile, where thorough testing even requires dedicated hardware. But before we go deeper: What is CI, anyway? There is an elaborate introduction to the topic of CI and related practices in the [Best Practices guide](https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html), but a summary will be given here as well.
 
 
 ![Figure 1: High-level CI architecture with an additional binary artifact repository for dependency management](ci-overview.png)
@@ -319,7 +319,7 @@ If you are unsure what values to put for user and password, just follow the "Set
 #### 2.3 Workstation Setup
 
 ##### 2.3.1 Cloud Platform SDK for iOS
-The [SAP Cloud Platform SDK for iOS](https://www.sap.com/germany/developer/topics/cloud-platform-sdk-for-ios.html) is our latest SDK for native app development for iOS in Swift. Apart from facilitating the integration of your app with SAP Cloud Platform, it also contains a wide variety of Fiori for iOS controls, which enables you to build iOS native apps that won't look alien to your average SAP user base. In the context of this tutorial, we require it for two reasons: Firstly, it contains the Assistant, which is a great time-safer if you're creating a new app that should integrate with SAP Cloud Platform, and we are going to do exactly that later. Secondly, it has an option to export the bare libraries, which we subsequently are going to turn into pods. In order to download it, go to the [SAP Store](https://store.sap.com), search for "SAP Cloud Platform SDK for iOS" as shown in Figure 17, and request a download. After filling in your personal details, you will receive an email with a download link. Download and open the DMG file to install the SDK.
+The [SAP Cloud Platform SDK for iOS](https://developers.sap.com/topics/cloud-platform-sdk-for-ios.html) is our latest SDK for native app development for iOS in Swift. Apart from facilitating the integration of your app with SAP Cloud Platform, it also contains a wide variety of Fiori for iOS controls, which enables you to build iOS native apps that won't look alien to your average SAP user base. In the context of this tutorial, we require it for two reasons: Firstly, it contains the Assistant, which is a great time-safer if you're creating a new app that should integrate with SAP Cloud Platform, and we are going to do exactly that later. Secondly, it has an option to export the bare libraries, which we subsequently are going to turn into pods. In order to download it, go to the [SAP Store](https://store.sap.com), search for "SAP Cloud Platform SDK for iOS" as shown in Figure 17, and request a download. After filling in your personal details, you will receive an email with a download link. Download and open the DMG file to install the SDK.
 
 ![Figure 17: Upload example in the CocoaPods setup guide](ios-sdk-1-download.png)
 
@@ -377,7 +377,7 @@ Now the iOS SDK is available to CocoaPods clients, and your local tools can find
 The last step is to create a new project in the Cloud Platform SDK for iOS Assistant, and to configure it so that it works nicely with the infrastructure that we just created.
 
 #### 4.1 Creating the iOS Project
-If you are using the Assistant for the very first time, make sure to configure your Cloud Platform login as documented [in this tutorial](https://www.sap.com/germany/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html). Once done, create a new project by adding the "+" button on the initial screen and configure it as follows, as shown in Figure 20 - values not listed in the bullet points are optional or arbitrary:
+If you are using the Assistant for the very first time, make sure to configure your Cloud Platform login as documented [in this tutorial](https://developers.sap.com/tutorials/fiori-ios-hcpms-sdk-assistant.html). Once done, create a new project by adding the "+" button on the initial screen and configure it as follows, as shown in Figure 20 - values not listed in the bullet points are optional or arbitrary:
 
 	- Product Name: The last (n-th) bit of the "App ID" that you registered with Apple, in this case ``CIExample``
 	- Organization Identifier: The remaining n-1 bits of your App ID, in this case ``com.sap.ci.ios``
@@ -625,8 +625,3 @@ In your Jenkins web interface, you should now see a new build pop up under the l
 
 *Figure 36: Log of the successful Jenkins build stage*
 
-## Next Steps
-
-  You can read through the remaining guides in order to proceed with advanced automation topics such as Git-related workflows (e.g. branching strategies and code reviews) and setting up pipelines.
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

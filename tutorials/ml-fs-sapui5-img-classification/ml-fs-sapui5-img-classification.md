@@ -1,30 +1,24 @@
 ---
-title: Image Classification example with SAPUI5
+title: Image Classification with SAPUI5
 description: Discover how to implement SAP Leonardo Machine Learning Foundation service in a SAPUI5 application
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - [Sign up for an free trial account on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Sign up for an free trial account on the SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn how to quickly integrate the **Image Classification** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application.
+  - How to quickly integrate the **Image Classification** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application
 
 The **Image Classification** service allows you to calculates and returns a list of classifications/labels along with their probabilities for a given image.
 
 You will then be able to substitute the **Image Classification** services with any other SAP Leonardo Machine Learning Functional Services that consumes images content.
 
-### Time to Complete
-**20 Min**
-
+---
 
 [ACCORDION-BEGIN [Step 1: ](Get The API Sandbox URL And API Key)]
 
@@ -67,7 +61,7 @@ Then, the following pop-up should appear. Click on the **Copy Key and Close** bu
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Analyze the service)]
+[ACCORDION-BEGIN [Step 1: ](Analyze the service)]
 
 As you can notice the API has only one resource (or service): `/inference_sync`.
 
@@ -90,7 +84,7 @@ The input file, files or archive file will be sent as a `FormData` query paramet
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Access the SAP Cloud Platform Cockpit)]
 
 Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
@@ -107,7 +101,7 @@ You are now in your ***SAP Cloud Platform developer*** account!
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure your destination)]
+[ACCORDION-BEGIN [Step 1: ](Configure your destination)]
 
 You will need to create a destination in your SAP Cloud Platform account that allow will your applications to connect to external APIs such as the SAP API Business Hub.
 
@@ -145,13 +139,13 @@ You should receive a ***connection established*** message with potentially a ***
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Open the Web IDE)]
+[ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 
-On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
+On the left side bar, you can navigate in **Services**, then using the search box enter `SAP Web IDE Full-Stack`.
 
 ![Web IDE](10.png)
 
-Click on the tile, then click on **Go to Service**.
+Click on the **SAP Web IDE Full-Stack** tile, then click on **Go to Service**.
 
 ![Web IDE](11.png)
 
@@ -162,7 +156,7 @@ You will get access to the **SAP Web IDE** main page:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a project using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 1: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section or use the **File** > **New** > **Project from Template**.
 
@@ -193,11 +187,11 @@ View Name            | `demo`
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
+[ACCORDION-BEGIN [Step 1: ](Extend the application resource roots)]
 
 In order to ease the use of the provided code, we will add a new SAPUI5 resource roots. The main reason for this is that the rule used to generate the initial resource root by the project template has change many time over the time.
 
-Edit the `index.html` file located under **`Workspace`** > **`sapui5ml`** > **`webapp`** and add the below element to the existing `data-sap-ui-resourceroots` property around line 15 (don't forget the comma in between the existing element and the new one).
+Edit the **`index.html`** file located under **`Workspace`** > **`sapui5ml`** > **`webapp`** and add the below element to the existing `data-sap-ui-resourceroots` property around line 15 (don't forget the comma in between the existing element and the new one).
 
 ```JavaScript
 "sapui5ml": ""
@@ -206,7 +200,7 @@ Edit the `index.html` file located under **`Workspace`** > **`sapui5ml`** > **`w
 It should eventually look something like this:
 
 ```
-data-sap-ui-resourceroots='{"xxxx": "", "sapui5ml": ""}'
+data-sap-ui-resourceroots='{"demo.sapui5ml-imageclassifier": "./", "sapui5ml": ""}'
 ```
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
@@ -214,11 +208,11 @@ Click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Configure your SAPUI5 application)]
+[ACCORDION-BEGIN [Step 1: ](Configure your SAPUI5 application)]
 
 In order to use the previously configured destination, we need to add its declaration into the `neo-app.json` file along with the header white list configuration that will prevent HTTP header parameters to be filtered out.
 
-Edit the `neo-app.json` file located under **`Workspace`** > **`sapui5ml-imageclassifier`** and replace the current content with the below code.
+Edit the **`neo-app.json`** file located under **`Workspace`** > **`sapui5ml-imageclassifier`** and replace the current content with the below code.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -264,7 +258,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
+[ACCORDION-BEGIN [Step 1: ](Store your API setting in a JSON model)]
 
 There are multiple options to achieve this goal. Here we will use a pre-loaded JSON model configured in the `manifest.json` file.
 
@@ -274,12 +268,16 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url" : "/ml-dest/imageclassification/classification",
+  "url": "/ml-dest/imageclassification/classification",
+  "method": "POST",
+  "accept": "application/json",
+  "fileType": "zip,png,jpeg,jpe,jpg,bmp,tiff,tif",
+  "mimeType": "application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff",
   "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }
 ```
 
-Edit the `manifest.json` file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** and locate the `models` section (around line 55), and update the section like this:
+Edit the **`manifest.json`** file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** and locate the `models` section (around line 55), and update the section like this:
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -288,7 +286,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
   "i18n": {
     "type": "sap.ui.model.resource.ResourceModel",
     "settings": {
-      "bundleName": "demosapui5ml-imageclassifier.i18n.i18n"
+      "bundleName": "demo.sapui5ml-imageclassifier.i18n.i18n"
     }
   },
   "demo": {
@@ -302,290 +300,167 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Extend the main SAPUI5 view)]
+[ACCORDION-BEGIN [Step 1: ](Extend the main SAPUI5 view)]
 
 The view will contain a canvas to display the selected image along with table to display the results.
 
-Edit the `demo.view.xml` file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** > **`view`** and replace the existing code with the below code.
+Edit the **`demo.view.xml`** file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** > **`view`** and replace the existing code with the below code.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```XML
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns="sap.m"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="sapui5ml.controller.demo"
-	displayBlock="true">
-	<App>
-		<pages>
-			<Page title="Image Classification">
-				<content>
-					<Carousel pages="{demo>/result-imageclassifier}" width="100%" visible="{= ${demo>/resultVisible-imageclassifier} === true}">
-						<pages>
-							<VBox width="100%" direction="Column" alignItems="Center">
-								<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
-									<Image tooltip="canvas" class="sapUiLargeMargin" src="{demo>fileURL}"/>
-									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
-									<table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
-										<table:columns>
-											<table:Column sortProperty="label" filterProperty="label">
-												<Label text="Label"/>
-												<table:template>
-													<Link text="{demo>label}" href="https://www.google.com/search?q={demo>label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
-												</table:template>
-											</table:Column>
-											<table:Column sortProperty="score" filterProperty="score">
-												<Label text="Score"/>
-												<table:template>
-													<Text text="{demo>score}"/>
-												</table:template>
-											</table:Column>
-										</table:columns>
-									</table:Table>
-								</ScrollContainer>
-							</VBox>
-						</pages>
-					</Carousel>
-				</content>
-				<footer>
-					<Toolbar width="100%">
-						<content>
-							<unified:FileUploader buttonOnly="true" buttonText="Upload Picture" sameFilenameAllowed="true" multiple="false" fileType="zip,png,jpeg,jpg,bmp,tiff,tif" mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff" typeMissmatch="fileTypeMissmatch" change="fileUploadChange" uploadStart="fileUploadStart" uploadComplete="fileUploadComplete" name="files" uploadUrl="{demo>/url}" useMultipart="true" sendXHR="true" uploadOnChange="true">
-								<unified:headerParameters>
-									<unified:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
-									<unified:FileUploaderParameter name="Accept" value="application/json"/>
-								</unified:headerParameters>
-							</unified:FileUploader>
-							<unified:FileUploader buttonOnly="true" buttonText="Upload Picture with Ajax" sameFilenameAllowed="true" multiple="true" fileType="zip,png,jpeg,jpg,bmp,tiff,tif" mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff" typeMissmatch="fileTypeMissmatch" change="onPressImageClassifier" custom:mode="ajax"></unified:FileUploader>
-							<unified:FileUploader buttonOnly="true" buttonText="Upload Picture with XHR"  sameFilenameAllowed="true" multiple="true" fileType="zip,png,jpeg,jpg,bmp,tiff,tif" mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff" typeMissmatch="fileTypeMissmatch" change="onPressImageClassifier" custom:mode="xhr"></unified:FileUploader>
-						</content>
-					</Toolbar>
-				</footer>
-			</Page>
-		</pages>
-	</App>
+  xmlns:micro="sap.suite.ui.microchart" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+  controllerName="sapui5ml.controller.demo" displayBlock="true">
+  <App>
+    <pages>
+      <Page title="Image Classification">
+        <content>
+          <Carousel pages="{demo>/predictions}" width="100%" visible="{= ${demo>/visible} === true}">
+            <pages>
+              <ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+                <VBox alignContent="Center" alignItems="Center">
+                  <Image tooltip="canvas" class="sapUiLargeMargin" src="{demo>contentUrl}"/>
+                  <Label text="File name: {demo>name}" class="sapUiLargeMargin"/>
+                  <table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
+                    <table:columns>
+                      <table:Column sortProperty="label" filterProperty="label">
+                        <Label text="Label"/>
+                        <table:template>
+                          <Link text="{demo>label}" href="https://www.google.com/search?q={demo>label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
+                        </table:template>
+                      </table:Column>
+                      <table:Column sortProperty="score" filterProperty="score">
+                        <Label text="Score"/>
+                        <table:template>
+                          <micro:RadialMicroChart size="XS" fraction="{demo>score}" total="1" class="sapUiSmallMargin"/>
+                        </table:template>
+                      </table:Column>
+                    </table:columns>
+                  </table:Table>
+                </VBox>
+                <content/>
+              </ScrollContainer>
+            </pages>
+          </Carousel>
+        </content>
+        <footer>
+          <Toolbar width="100%">
+            <content>
+              <unified:FileUploader buttonOnly="true" buttonText="Upload Picture" sameFilenameAllowed="true" multiple="false" fileType="{demo>/fileType}"
+                mimeType="{demo>/mimeType}" typeMissmatch="fileTypeMissmatch" change="fileUploaderChange" uploadComplete="fileUploaderComplete" name="files"
+                uploadUrl="{demo>/url}" useMultipart="true" sendXHR="true" uploadOnChange="true">
+                <unified:headerParameters>
+                  <unified:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
+                  <unified:FileUploaderParameter name="Accept" value="{demo>/accept}"/>
+                </unified:headerParameters>
+              </unified:FileUploader>
+              <unified:FileUploader buttonOnly="true" buttonText="Upload Picture with Ajax" sameFilenameAllowed="true" multiple="false"
+                fileType="{demo>/fileType}" mimeType="{demo>/mimeType}" typeMissmatch="fileTypeMissmatch" change="onPressImageClassifier" custom:mode="ajax"/>
+              <unified:FileUploader buttonOnly="true" buttonText="Upload Picture with XHR " sameFilenameAllowed="true" multiple="false"
+                fileType="{demo>/fileType}" mimeType="{demo>/mimeType}" typeMissmatch="fileTypeMissmatch" change="onPressImageClassifier" custom:mode="xhr"/>
+            </content>
+          </Toolbar>
+        </footer>
+      </Page>
+    </pages>
+  </App>
 </mvc:View>
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Extend the main SAPUI5 controller)]
+[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 application With JSZip)]
 
-Edit the `demo.controller.js` file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** > **`controller`** and replace the existing code with the below code.
+`JSZip` is a JavaScript library for creating, reading and editing .zip files, with a lovely and simple API.
+
+`JSZip` is dual licensed. You may use it under the MIT license or the `GPLv3` license. Make sure o have a look at the [LICENSE](https://github.com/Stuk/jszip/blob/master/LICENSE.markdown) condition before continuing with the tutorial.
+
+For detailed instructions about how to configure you SAPUI5 application with `JSZip`, you can refer to the following blog: [Give the power of Zip to you SAPUI5 applications](https://blogs.sap.com/2017/12/15/give-the-power-of-zip-to-your-sapui5-applications/)
+
+For more details `JSZip`, you can refer to : <https://stuk.github.io/jszip/>
+
+> ### **Note: `JSZip` library**
+> Make sure to include the following piece of code at the very beginning of the controller code, else you will see validation errors in your code:
+>
+> ```JavaScript
+> /* global JSZip:true */
+> ```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Extend the main SAPUI5 controller (1/3))]
+
+In this step, you will add a series of generic helper functions. These functions handle:
+
+ - file type mismatch: when the wrong file type is selected during the upload
+ - clear previous results
+ - add a new result entry
+ - display final message
+ - generate local URL for image files (including images inside ZIP)
+
+Edit the **`demo.controller.js`** file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** > **`controller`** and replace the existing code with the below code.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JavaScript
+/* global JSZip:true */
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/m/MessageBox"
-], function(Controller, MessageBox) {
+], function (Controller, MessageBox) {
   "use strict";
-
-  var defaultFileSrcUrl = "/resources/sap/ui/documentation/sdk/images/logo_ui5.png";
-
   return Controller.extend("sapui5ml.controller.demo", {
-    fileTypeMissmatch: function(oControlEvent) {
+    fileTypeMissmatch: function (oControlEvent) {
       MessageBox.show("Wrong file type!");
     },
-    fileUploadChange: function(oControlEvent) {
-      // start the busy indicator
-      var oBusyIndicator = new sap.m.BusyDialog();
-      oBusyIndicator.open();
-
-      // init the src file, name & url
-      this.srcFileURL = null;
-      this.srcFileName = null;
-      this.srcFile = null;
-
-      // keep a reference of the uploaded file name and create a url out of that when this is an image
-      this.srcFile = oControlEvent.getParameters().files[0];
-      this.srcFileName = this.srcFile.name;
-      if (this.srcFile.type.match("image.*")) {
-        this.srcFileURL = URL.createObjectURL(this.srcFile);
-      }
-      // keep a reference in the view to close it later
-      this.oBusyIndicator = oBusyIndicator;
+    clearPredictions: function () {
+      this.getView().getModel("demo").setProperty("/predictions", null);
+      this.getView().getModel("demo").setProperty("/visible", false);
     },
-    fileUploadComplete: function(oControlEvent) {
-      // get the current view
-      var oView = this.getView();
-
-      var service = "imageclassifier";
-
-      // clear previous results from the model
-      oView.getModel("demo").setProperty("/result-" + service, null);
-      oView.getModel("demo").setProperty("/resultVisible-" + service, false);
-
-      var srcFileIsImage = this.srcFile.type.match('image.*');
-
-      var processResult = function(oController, data, fileName, url) {
-        // set the image urls to default if part of a zip
-        if (!srcFileIsImage) {
-          for (var i = 0; i < data.predictions.length; i++) {
-            data.predictions[i].name = fileName + "  /  " + data.predictions[i].name;
-            data.predictions[i].fileURL = defaultFileSrcUrl;
-          }
-        } else {
-          data.predictions[0].fileURL = URL.createObjectURL(oController.srcFile);
-        }
-
-        // merge with existing results
-        var result = oController.getView().getModel("demo").getProperty("/result-" + service);
-        if (result) {
-          result.push.apply(result, data.predictions);
-        } else {
-          result = data.predictions;
-        }
-        oController.getView().getModel("demo").setProperty("/result-" + service, result);
-
-        // display the result table
-        oController.getView().getModel("demo").setProperty("/resultVisible-" + service, true);
-      };
-
-      if (oControlEvent.getParameters().status === 200) {
-        // get the response as JSON and process the results
-        processResult(this, JSON.parse(oControlEvent.getParameters().responseRaw), this.srcFile.name, this.srcFileURL);
-      } else {
-        oView.getModel("demo").setProperty("/resultVisible", false);
-        MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
+    addPrediction: function (prediction) {
+      var current = this.getView().getModel("demo").getProperty("/predictions");
+      if (!current) {
+        current = [];
       }
-      this.oBusyIndicator.close();
-      MessageBox.show("Process completed!\n Target URL: " + oView.getModel("demo").getProperty("/url"));
+      current.push(prediction);
+      // add the results from the model
+      this.getView().getModel("demo").setProperty("/predictions", current);
+      this.getView().getModel("demo").setProperty("/visible", true);
     },
-
-    onPressImageClassifier: function(oControlEvent) {
-      // get the current controller & view
-      var oView = this.getView();
-
-      // start the busy indicator
-      this.oBusyIndicator = new sap.m.BusyDialog();
-      this.oBusyIndicator.open();
-
-      this.requestCount = 0;
-
-      var service = "imageclassifier";
-      var url = oView.getModel("demo").getProperty("/url");
-      var type = "POST";
-      var apiKey = oView.getModel("demo").getProperty("/APIKey");
-
-      // clear previous results from the model
-      oView.getModel("demo").setProperty("/result-" + service, null);
-      oView.getModel("demo").setProperty("/resultVisible-" + service, false);
-
-      var srcFile = null;
-      var srcFileURL = null;
-      var srcFileIsImage = false;
-
-      var processResult = function(oController, data, fileName) {
-        if (!srcFileIsImage) {
-          for (var i = 0; i < data.predictions.length; i++) {
-            data.predictions[i].name = fileName + "  /  " + data.predictions[i].name;
-            data.predictions[i].fileURL = defaultFileSrcUrl;
-          }
-        } else {
-          data.predictions[0].fileURL = srcFileURL;
-        }
-
-        var result = oController.getView().getModel("demo").getProperty("/result-" + service);
-        if (result) {
-          result.push.apply(result, data.predictions);
-        } else {
-          result = data.predictions;
-        }
-        oController.getView().getModel("demo").setProperty("/result-" + service, result);
-
-        // display the result table
-        oController.getView().getModel("demo").setProperty("/resultVisible-" + service, true);
-      };
-
-      // keep a reference of the uploaded files
-      var mode = oControlEvent.getSource().data("mode");
-      for (var fileIndex = 0; fileIndex < oControlEvent.getParameters().files.length; fileIndex++) {
-        srcFile = oControlEvent.getParameters().files[fileIndex];
-        if (srcFile.type.match("image.*")) {
-          srcFileIsImage = true;
-          srcFileURL = URL.createObjectURL(srcFile);
-        } else {
-          srcFileIsImage = false;
-        }
-        // create the form data to be sent in the request
-        var formData = new window.FormData();
-        formData.append("files", srcFile, srcFile.name);
-
-        // increase request countor to close busy indicator
-        this.requestCount++;
-
-        // call the service
-        this.callService(this, service, url, type, mode, apiKey, formData, processResult);
-      }
-    },
-    callService: function(oController, service, url, type, mode, apiKey, formData, fnPrecessResult) {
-      var ajaxSuccess = function(data, status, jqXHR) {
-        // get the response as JSON and process the results
-        fnPrecessResult(oController, data, formData.values().next().value.name);
-
-        // close the busy indicator if all request have completed
-        oController.requestCount--;
-        if (oController.requestCount === 0) {
-          // close the busy indicator
-          oController.oBusyIndicator.close();
-          MessageBox.show("Process completed!\n Target URL: " + url);
-        }
-      };
-      var ajaxError = function(jqXHR, status, message) {
-        oController.getView().getModel("demo").setProperty("/resultVisible-" + service, null);
-        MessageBox.show("Error for file : " + formData.values().next().value.name + " \n status: " + status + "\n message: " + JSON.parse(jqXHR.responseText).error_description);
+    displayErrorsOrFinish: function (oController) {
+      if (oController.oFilesProcessed === oController.oFiles.length) {
         oController.oBusyIndicator.close();
-      };
-      var xhrReadyStateChange = function() {
-        if (this.readyState === this.DONE) {
-          if (this.status === 200) {
-            // set the response as JSON in the demo model
-            var data = JSON.parse(this.response);
-            var fileName = formData.values().next().value.name;
-            var file = formData.get("files");
-            fnPrecessResult(oController, data, file, fileName);
-            // fnPrecessResult(oController, data, formData.values().next().value.name);
-          } else {
-            oController.getView().getModel("demo").setProperty("/resultVisible-" + service, null);
-            MessageBox.show("Error for file : " + formData.values().next().value.name + " \n status: " + this.status + "\n message: " + JSON.parse(this.responseText).error_description);
-
+        if (oController.oErrors.length === 0) {
+          MessageBox.show("Process completed!\n Target URL: " + oController.getView().getModel("demo").getProperty("/url"));
+        } else {
+          var message = "";
+          for (var i = 0; i < oController.oErrors.length; i++) {
+            message += "\n\t  Error: " + oController.oErrors[i].status + " - " + oController.oErrors[i].message;
           }
-          // close the busy indicator if all request have completed
-          oController.requestCount--;
-          if (oController.requestCount <= 0) {
-            // close the busy indicator
-            oController.oBusyIndicator.close();
-            MessageBox.show("Process completed!\n Target URL: " + url);
-          }
+          MessageBox.show("Errors: \n" + message);
         }
-      };      
-      if (mode === "ajax") {
-        $.ajax({
-          type: type,
-          url: url,
-          headers: {
-            "Accept": "application/json",
-            "APIKey": apiKey
-          },
-          success: ajaxSuccess,
-          error: ajaxError,
-          contentType: false,
-          async: true,
-          data: formData,
-          cache: false,
-          processData: false
-        });
-      } else if (mode === "xhr") {
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = false;
-        xhr.addEventListener("readystatechange", xhrReadyStateChange);
-        xhr.open(type, url, false); // setting request method & API endpoint, the last parameter is to set the calls as synchyronous
-        xhr.setRequestHeader("Accept", "application/json"); // adding request headers
-        xhr.setRequestHeader("APIKey", apiKey); // API Key for API Sandbox
-        xhr.send(formData); // sending request
-      } else {
-        oController.oBusyIndicator.close();
+      }
+    },
+    getFileContentUrl: function (files, prediction, callback) {
+      for (var i = 0; i < files.length; i++) {
+        if (files[i].type.match("image.*")) {
+          if (files[i].name === prediction.name) {
+            callback(prediction, files[i].contentUrl);
+          }
+        } else {
+          JSZip.loadAsync(files[i]).then(function (zip) {
+            Object.keys(zip.files).forEach(function (zipEntry) {
+              if (zipEntry === prediction.name) {
+                zip.files[zipEntry].async("blob").then(function (zipEntryFile) {
+                  callback(prediction, URL.createObjectURL(zipEntryFile));
+                });
+              }
+            });
+          });
+        }
       }
     }
   });
@@ -595,7 +470,166 @@ sap.ui.define([
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test the application)]
+[ACCORDION-BEGIN [Step 1: ](Extend the main SAPUI5 controller (2/3))]
+
+In this step, you will add the File Upload events functions. This code is used with the ***Upload Pictures*** button.
+
+Edit the **`demo.controller.js`** file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** > **`controller`** and append the below code to the existing set of functions.
+
+Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
+
+```JavaScript
+fileUploaderChange: function (oControlEvent) {
+  // start the busy indicator
+  var oBusyIndicator = new sap.m.BusyDialog();
+  oBusyIndicator.open();
+
+  // clear previous results from the model
+  this.clearPredictions();
+
+  // keep a reference of the uploaded file name and create the local url
+  var oFiles = oControlEvent.getParameters().files;
+  for (var i = 0; i < oFiles.length; i++) {
+    oFiles[i].contentUrl = URL.createObjectURL(oFiles[i]);
+  }
+  // keep a reference in the view to close it later
+  this.oBusyIndicator = oBusyIndicator;
+  this.oFiles = Object.assign({}, oFiles);
+  this.oFiles.length = oFiles.length;
+  this.oFilesProcessed = 0;
+  this.oErrors = [];
+},
+fileUploaderComplete: function (oControlEvent) {
+  var response = JSON.parse(oControlEvent.getParameters().responseRaw);
+  this.processResults(this, response);
+},
+processResults: function (oController, response) {
+  oController.oFilesProcessed++;
+  if (response.status === "DONE") {
+    for (var i = 0; i < response.predictions.length; i++) {
+      var callback = function (prediction, contentUrl) {
+        prediction.contentUrl = contentUrl;
+        oController.addPrediction(prediction);
+      };
+      oController.getFileContentUrl(oController.oFiles, response.predictions[i], callback);
+    }
+  } else {
+    oController.oErrors.push({
+      "status": response.error.code,
+      "message": response.error.message
+    });
+  }
+  oController.displayErrorsOrFinish(oController);
+}
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Extend the main SAPUI5 controller (3/3))]
+
+In this step, you will add the generic call service functions. This code is used when using the AJAX or XHR method available.
+
+Edit the **`demo.controller.js`** file located under **`Workspace`** > **`sapui5ml-imageclassifier`** > **`webapp`** > **`controller`** and append the below code to the existing set of functions.
+
+Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
+
+```JavaScript
+/* the following code is used by the Ajax & XHR methods only*/
+onPressImageClassifier: function (oControlEvent) {
+  // start the busy indicator
+  var oBusyIndicator = new sap.m.BusyDialog();
+  oBusyIndicator.open();
+
+  // clear previous results from the model
+  this.clearPredictions();
+
+  // get the call mode ajax or xhr
+  var mode = oControlEvent.getSource().data("mode");
+
+  // keep a reference of the uploaded file
+  var oFiles = oControlEvent.getParameters().files;
+
+  // keep a reference in the view to close it later
+  this.oBusyIndicator = oBusyIndicator;
+  this.oFiles = Object.assign({}, oFiles);
+  this.oFiles.length = oFiles.length;
+  this.oFilesProcessed = 0;
+  this.oErrors = [];
+
+  for (var i = 0; i < oFiles.length; i++) {
+    this.oFiles[i].contentUrl = URL.createObjectURL(this.oFiles[i]);
+    this.callService(this, mode, this.oFiles[i], this.processResults);
+  }
+},
+callService: function (oController, mode, file, callback) {
+  // create the form data to be sent in the request
+  var formData = new window.FormData();
+  formData.append("files", file, file.name);
+  console.log(file.name);
+
+  var url = oController.getView().getModel("demo").getProperty("/url");
+  var type = oController.getView().getModel("demo").getProperty("/method");
+  var apiKey = oController.getView().getModel("demo").getProperty("/APIKey");
+  var accept = oController.getView().getModel("demo").getProperty("/accept");
+
+  var callbackAjaxSuccess = function (data, status, jqXHR) {
+    callback(oController, data);
+  };
+  var callbackAjaxError = function (jqXHR, status, message) {
+    oController.clearPredictions();
+    var error_message = {
+      "error": jqXHR.responseJSON.error
+    };
+    callback(oController, error_message);
+  };
+  var callbackXHRReadyStateChange = function () {
+    if (this.readyState === this.DONE) {
+      if (this.status === 200) {
+        callback(oController, JSON.parse(this.response));
+      } else {
+        oController.clearPredictions();
+        var error_message = {
+          "error": this.responseJSON.error
+        };
+        callback(oController, error_message);
+      }
+    }
+  };
+  if (mode === "ajax") {
+    $.ajax({
+      type: type,
+      url: url,
+      headers: {
+        "Accept": accept,
+        "APIKey": apiKey
+      },
+      success: callbackAjaxSuccess,
+      error: callbackAjaxError,
+      contentType: false,
+      async: true,
+      data: formData,
+      cache: false,
+      processData: false
+    });
+  } else if (mode === "xhr") {
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    xhr.addEventListener("readystatechange", callbackXHRReadyStateChange);
+    xhr.open(type, url, true); // setting request method & API endpoint, the last parameter is to set the calls as asynchyronous
+    xhr.setRequestHeader("Accept", accept); // adding request headers
+    xhr.setRequestHeader("APIKey", apiKey); // API Key for API Sandbox
+    xhr.send(formData); // sending request
+  } else {
+    oController.oBusyIndicator.close();
+  }
+}
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Test the application)]
 
 Click on the **Run** icon ![Run Applications](00-run.png) or press `ALT+F5`.
 
@@ -614,9 +648,9 @@ You can also try with a zip that contains multiple images. This will enable the 
 >
 >Here are a few things you can check:
 >
-> - Make sure the Mock Server is not enable
+> - Make sure the Mock Server is not enabled
 > - Disable the mock data in your run configuration
-> - Make that when running the application, the URL is the ***`index.html`*** and not the ***`extended_runnable_file.html`***. And if not replace ***`extended_runnable_file.html`*** by ***`index.html`***.
+> - Make sure that when running the application, the URL is the ***`index.html`*** and not the ***`extended_runnable_file.html`***. And if not replace ***`extended_runnable_file.html`*** by ***`index.html`***.
 >
 >If none of this solves your problem, you can also debug the `sendFilesWithXHR` function in `sap.ui.unified.FileUploader-dbg.js`.
 >
@@ -633,7 +667,7 @@ These button will trigger multiple synchronous service requests.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Validation)]
+[ACCORDION-BEGIN [Step 1: ](Validation)]
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -642,7 +676,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Solution: ](Project files)]
 
-In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-classification/sapui5ml-imageclassifier).
+In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-classification/source).
 
 However, this is not a repository you can clone and run the code.
 
@@ -652,8 +686,3 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 
 [DONE]
 [ACCORDION-END]
-
-
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

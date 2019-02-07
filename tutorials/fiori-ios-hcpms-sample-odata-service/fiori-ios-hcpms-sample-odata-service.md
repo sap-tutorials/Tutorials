@@ -1,31 +1,26 @@
 ---
-title: Sample OData services
-description: Using the sample OData service included with the SAP Cloud Platform mobile service for development and operations account.
+title: Use the Sample OData Service for Mobile Apps
+description: Use the sample OData service included with the SAP Cloud Platform mobile service for development and operations account.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+time: 10
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
-
-## Next Steps
- - [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
 
 ## Details
 ### You will learn  
-As part of the SAP Cloud Platform mobile service for development and operations, a sample OData service is available to both developers as well as administrators. You will learn how to access this sample OData service, and generate sample data for use in your application.
+  - How to access the sample OData service that comes with the SAP Cloud Platform mobile service for development and operations
+  - How to generate sample data for use in your application
 
-### Time to Complete
-**10 Min**.
 
 ---
 
 A sample OData service is available for developers to use during development and testing. Administrators can configure the sample service via the cockpit. You can view the root service and metadata URLs, and generate sample sales orders and purchase orders for multiple entity sets. You can also view the data for each entity in a separate text file, and reset the sample data.
 
-> NOTE: You can configure **only one** sample OData service per tenant.
+> You can configure **only one** sample OData service per tenant.
 
 The following roles are required to use this service:
 
@@ -134,6 +129,3 @@ For now, this complements this tutorial step. In the following tutorials, you wi
 
 [VALIDATE_9]
 [ACCORDION-END]
-
-## Next Steps
- - [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)

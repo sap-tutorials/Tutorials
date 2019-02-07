@@ -1,0 +1,926 @@
+{
+	"info": {
+		"_postman_id": "44080a1b-6e15-4b15-90fa-c692bf3e1420",
+		"name": "Bookshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "metadata",
+			"item": [
+				{
+					"name": "Service Document",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8ff9bed5-48c3-4096-af36-2d8de13f6970",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "$metadata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/$metadata",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"$metadata"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authors(101)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors(101)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors(101)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books(201)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Books(201)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Books(201)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders without UUID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"book_ID\": 201,\n  \"amount\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders with UUID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ID\": \"c13d3eec-942e-470d-97b3-e03322136636\",\n  \"book_ID\": 201,\n  \"amount\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "additional requests (remove @readonly and @insertonly annotations first)",
+			"item": [
+				{
+					"name": "Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Orders(c13d3eec-942e-470d-97b3-e03322136636)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Orders(c13d3eec-942e-470d-97b3-e03322136636)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ID\": \"c13d3eec-942e-470d-97b3-e03322136636\",\n  \"book_ID\": 201,\n  \"amount\": 10\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Orders(c13d3eec-942e-470d-97b3-e03322136636)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Orders(c13d3eec-942e-470d-97b3-e03322136636)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Orders(c13d3eec-942e-470d-97b3-e03322136636)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Orders(c13d3eec-942e-470d-97b3-e03322136636)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders?$expand=book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Orders?$expand=book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Orders"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "book"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orders?$expand=book($expand=author)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Orders?$expand=book($expand=author)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Orders"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "book($expand=author)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authors(101)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ID\": 101,\n    \"name\": \"Emily Brontë II.\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors(101)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors(101)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authors(101)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors(101)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors(101)"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authors",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ID\": 101,\n    \"name\": \"Emily Brontë\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bf485955-f3e0-43b7-be8c-36dfe53f0a89",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "38c2a07c-9df3-4bfd-8f91-cb8eec9fb3ba",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "paths and navigations",
+			"item": [
+				{
+					"name": "Books/author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors(101)/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors(101)",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authors/name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors(101)/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors(101)",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authors/books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors(101)/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors(101)",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authors/books?$select=title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors(101)/books?$select=title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors(101)",
+								"books"
+							],
+							"query": [
+								{
+									"key": "$select",
+									"value": "title"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "$count",
+			"item": [
+				{
+					"name": "Authors/$count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors/$count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors",
+								"$count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authors?$count=true",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors?$count=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors"
+							],
+							"query": [
+								{
+									"key": "$count",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "$options",
+			"item": [
+				{
+					"name": "Books?$orderby=stock desc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Books?$orderby=stock desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Books"
+							],
+							"query": [
+								{
+									"key": "$orderby",
+									"value": "stock desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books?$select=ID,title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Books?$select=ID,title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Books"
+							],
+							"query": [
+								{
+									"key": "$select",
+									"value": "ID,title"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books?$top=1&$skip=2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Books?$top=1&$skip=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Books"
+							],
+							"query": [
+								{
+									"key": "$top",
+									"value": "1"
+								},
+								{
+									"key": "$skip",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books?$filter=stock ge 300",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Books?$filter=stock ge 300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Books"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "stock ge 300"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books?$count=true&$top=1&$skip=1&$filter=stock ge 100&$orderby=title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Books?$count=true&$top=1&$skip=1&$filter=stock ge 100&$orderby=title",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Books"
+							],
+							"query": [
+								{
+									"key": "$count",
+									"value": "true"
+								},
+								{
+									"key": "$top",
+									"value": "1"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$filter",
+									"value": "stock ge 100"
+								},
+								{
+									"key": "$orderby",
+									"value": "title"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "$expand",
+			"item": [
+				{
+					"name": "Authors?$expand=books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Authors?$expand=books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Authors"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "books"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Books?$expand=author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4004/catalog/Books?$expand=author",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4004",
+							"path": [
+								"catalog",
+								"Books"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "author"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -7,10 +7,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Insert a currency symbol for display](https://www.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
+- **Tutorials:** [Insert a currency symbol for display](https://developers.sap.com/tutorials/hcp-webide-insert-currency-symbol.html)
 
 ## Next Steps
-- [Add A Tab and additional fields in an SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)
+- [Add A Tab and additional fields in an SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-add-tab.html)
 
 ## Details
 
@@ -68,4 +68,4 @@ Save your changes and reload the preview tab or run the app. The app should look
 
 
 ## Next Step:
-- [Add A Tab and additional fields in an SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)
+- [Add A Tab and additional fields in an SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-add-tab.html)

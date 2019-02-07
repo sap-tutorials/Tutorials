@@ -19,8 +19,8 @@ For each data set, you will be provided with the table creation DDL and IMPORT F
 
 The steps detailed in this tutorial and the related links will assume that you have completed the following tutorial:
 
-- [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html)
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+- [Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html)
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 
 [DONE]
 [ACCORDION-END]
@@ -48,15 +48,15 @@ Importing flat data set files like CSV can be achieved in multiple ways.
 
 The following links provide details about the most common methods:
 
- - Using the [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
+ - Using the [SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html)
 
     If you are planning on using the Import feature from the SAP HANA Tools for Eclipse, you will need to download the dataset file on the Eclipse host.
 
- - Using the [IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
+ - Using the [IMPORT FROM SQL command](https://developers.sap.com/tutorials/mlb-hxe-import-data-sql-import.html)
 
     If you are planning on using the IMPORT FROM SQL command, you will either directly download or transfer the dataset file on your SAP HANA, express edition host. The tutorial will demonstrate a direct download using WGET.
 
-    As explained in the [IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html) how to guide, the import is by default only possible from the `/usr/sap/HXE/HDB90` directory.
+    As explained in the [IMPORT FROM SQL command](https://developers.sap.com/tutorials/mlb-hxe-import-data-sql-import.html) how to guide, the import is by default only possible from the `/usr/sap/HXE/HDB90` directory.
 
 [DONE]
 [ACCORDION-END]
@@ -75,7 +75,7 @@ This will display the list of sample dataset available.
 
 [ACCORDION-BEGIN [Import: ](Association Rules Dataset)]
 
-You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Association Rules](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-association.html)
+You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Association Rules](https://developers.sap.com/tutorials/mlb-hxe-import-data-pa-association.html)
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -84,7 +84,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Import: ](Census Dataset)]
 
-You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Census Dataset](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-census.html)
+You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Census Dataset](https://developers.sap.com/tutorials/mlb-hxe-import-data-pa-census.html)
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -92,7 +92,7 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Import: ](Geo localization Dataset)]
 
-You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Geo localization Dataset](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-geolocalization.html)
+You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Geo localization Dataset](https://developers.sap.com/tutorials/mlb-hxe-import-data-pa-geolocalization.html)
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -101,7 +101,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Import: ](Social Dataset)]
 
-You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Social Datasets](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-social.html)
+You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Social Datasets](https://developers.sap.com/tutorials/mlb-hxe-import-data-pa-social.html)
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -109,7 +109,7 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Import: ](Text Coding Dataset)]
 
-You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Text Coding Datasets](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-textcoding.html)
+You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Text Coding Datasets](https://developers.sap.com/tutorials/mlb-hxe-import-data-pa-textcoding.html)
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -117,7 +117,7 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Import: ](Time Series Dataset)]
 
-You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Time Series Datasets](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-timeseries.html)
+You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Time Series Datasets](https://developers.sap.com/tutorials/mlb-hxe-import-data-pa-timeseries.html)
 
 Provide an answer to the question below then click on **Validate**.
 

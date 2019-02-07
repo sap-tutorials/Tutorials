@@ -14,8 +14,8 @@ time: 15
 
 ## Next Steps
 
-  - [Pipeline Suggestions](https://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Pipeline Suggestions](https://developers.sap.com/tutorials/ci-best-practices-pipelines.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -316,7 +316,3 @@ Keep in mind, Continuous Delivery doesn't require every change to be deployed to
 Do deployment as automatic post-build step. Also deploy automatically to production systems, but manually triggered.
 
 
-## Next Steps
-
-  - [Pipeline Suggestions](https://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

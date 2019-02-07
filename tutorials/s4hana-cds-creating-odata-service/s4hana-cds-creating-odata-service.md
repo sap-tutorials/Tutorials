@@ -6,10 +6,7 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 time: 20
 ---
 ## Prerequisites  
- - **Tutorials:** [Core Data Services, creating Associations (Joins)](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Core Data Services, creating Associations (Joins)](https://developers.sap.com/tutorials/s4hana-cds-associations.html)
 
 ## Details
 ### You will learn
@@ -144,5 +141,3 @@ If you replace the URL with `$count`  and click **Enter**, the number of entries
 Although SAP offers trial editions for free you will still have to cover the costs for running these trial editions on AWS.    
 This tutorial is part of the S/4HANA Core Data Services. If you want to learn more about the OData, see the [OData documentation](http://www.odata.org/documentation/).
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

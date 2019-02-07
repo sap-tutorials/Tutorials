@@ -3,15 +3,12 @@ title: Getting started with Cloud Foundry
 description: Get your SAP Cloud account connected to Cloud Foundry, and set up your first container
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Do this tutorial first](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Do this tutorial first](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -19,16 +16,13 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
  - Install the Cloud Foundry Command Line Interface (CLI) tools
  - Configure the CLI to log in to your SAP Cloud account
 
-### Time to Complete
-**15 Min**
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log in to the SAP Cloud Platform)]
 
 Start by [logging in to the SAP Cloud Platform](https://account.hanatrial.ondemand.com/).
 
-> **Note**: If you don't have an account on SAP Cloud Platform yet, go to the [Sign up for a free trial account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
+> **Note**: If you don't have an account on SAP Cloud Platform yet, go to the [Sign up for a free trial account](https://developers.sap.com/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
 
 ![Log on to the SAP Cloud Platform](1b.png)
 
@@ -128,6 +122,3 @@ You are now set up to use the Cloud Foundry systems on SAP Cloud Platform.
 
 For more information on the Command Line Interface (CLI), go to the Cloud Foundry [Getting Started with the CLI](http://docs.cloudfoundry.org/cf-cli/getting-started.html) website.
 
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

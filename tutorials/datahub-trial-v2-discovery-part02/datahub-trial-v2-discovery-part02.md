@@ -1,16 +1,13 @@
 ---
-title: Explore data in SAP Vora in SAP Data Hub 2
-description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition.
+title: Explore data in SAP Vora in SAP Data Hub, trial edition 2.3
+description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Explore data in Google Cloud Storage](https://developers.sap.com/germany/tutorials/datahub-trial-v2-discovery-part01.html)
-
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 During this tutorial, you will learn that Metadata Explorer cannot only be used on files (for example stored in Google Cloud Storage). Metadata Explorer also works on other data stores, in particular SAP Vora.
 

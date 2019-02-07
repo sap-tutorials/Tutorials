@@ -1,21 +1,18 @@
 ---
-title: Navigate around SAP Data Hub, trial edition in SAP Data Hub 2
-description: Find your way around SAP Data Hub, trial edition.
+title: Navigate around SAP Data Hub, trial edition 2.3
+description: Find your way around SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+time: 15
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Set up SAP Data Hub, trial edition](https://developers.sap.com/germany/tutorials/datahub-trial-v2-setup.html).
-
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
-During this tutorial, you will learn how to find your way around SAP Data Hub, trial edition. You will also learn how to troubleshoot problems.
+  - How to find your way around SAP Data Hub, trial edition
+  - How to troubleshoot problems
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -51,9 +48,11 @@ Check the below screenshot and answer the question based on the same :
 
 ![picture_03](./datahub-trial-v2-navigation_03.png)
 
-[VALIDATE_2]
+[VALIDATE_1]
 
->Hint : You can hover over the button icon to know more about it.
+>**Hint:** You can hover over the button icon to know more about it.
+
+
 
 [ACCORDION-END]
 
@@ -62,9 +61,7 @@ The SAP Vora Tools (direct link: `https://sapdatahubtrial/app/vora-tools`) provi
 
 ![picture_04](./datahub-trial-v2-navigation_04.png)  
 
-[VALIDATE_3]
-
->Hint : You can check the welcome page of SAP Vora Tools to find the answer
+[DONE]
 
 [ACCORDION-END]
 
@@ -78,9 +75,9 @@ The SAP Data Hub System Management (direct link: `https://sapdatahubtrial/app/da
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Troubleshoot problems and show logs)]
-To troubleshoot problems you can access the operating system of the virtual machines as well as the Kubernetes cluster underlying your solution instance. You also have access to Grafana and Kibana web users interfaces for monitoring and troubleshooting.
+To troubleshoot problems you can access the operating system of the virtual machines as well as the Kubernetes cluster underlying your solution instance. You also have access to `Grafana` and `Kibana` web users interfaces for monitoring and troubleshooting.
 
-If you need to troubleshoot problems, please refer to the corresponding chapters of the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+If you need to troubleshoot problems, please refer to the corresponding chapters of the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
 [DONE]
 

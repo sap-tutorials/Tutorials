@@ -1,17 +1,17 @@
 ---
-author_name: Cecilia Huergo
-author_profile: https://github.com/Chuergo
+author_name: André Pfohlmann
+author_profile: https://github.com/Apfohlmann
 title: Build a Business App by Reusing a CDS Model
-description: Develop a sample business application by reusing a Core Data and Service (CDS) model and extending an existing service using the application programming model.
+description: Develop a sample business application by reusing a Core Data and Service (CDS) model and extending an existing service using the SAP Cloud Application Programming Model.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform, software-product-function>sap-cloud-application-programming-model ]
 time: 20
 ---
 
 ## Prerequisites  
- [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
- [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
+ [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+ [Enable SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html)
  [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
 
 ## Details
@@ -39,15 +39,15 @@ The **SAP Cloud Platform Business Application** template is your starting point.
 
 1. Open SAP Web IDE and choose **File** | **New** | **Project from Template**.
 
-2. Choose **SAP Cloud Platform Business Application**, and in the **Basic Information** tab, specify **`SampleApp`** as the Project Name.
+1. Choose **SAP Cloud Platform Business Application**, and in the **Basic Information** tab, specify **`SampleApp`** as the Project Name.
 
     ![Select the project template](web-ide-template.png)
 
-3. Complete the **Project Details** tab as shown in the screenshot:
+1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the **Include sample files in project** checkbox is checked.
 
     ![Complete the project details](project-details.png)
 
-5. Choose **Finish**.
+1. Choose **Finish**.
 
 [DONE]
 
@@ -223,6 +223,19 @@ The ultimate goal is to navigate from `Products` to `Reviews`. To do this, you n
 Right-click the **`db`** module and choose **Build**.
 
 ![Build the `db` module](build-db-module.png)
+
+> If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
+
+> 1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
+
+> 1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+![finding the .hdiconfig file](hdiconfig.png)
+
+> 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
+
+> 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
+like
+> 1. **Save** the file, and re-try the build.
 
 [DONE]
 

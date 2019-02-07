@@ -8,17 +8,17 @@ time: 10
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Access your first data in a SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+- **Tutorials:** [Access your first data in a SAP HANA XSC Application](https://developers.sap.com/tutorials/hana-data-access-authorizations.html)
 
 ## Next Steps
-- [Consume XSODATA in your SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-consume-xsodata.html)
+- [Consume XSODATA in your SAP HANA XSC Application](https://developers.sap.com/tutorials/hana-consume-xsodata.html)
 
 ## Details
 ### You will learn  
   - How to create a simple `xsodata` service
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 

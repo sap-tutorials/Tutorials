@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, product
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Google App Engine Setup](https://www.sap.com/developer/tutorials/gae-setup.html)
+ - **Tutorials:** [Google App Engine Setup](https://developers.sap.com/tutorials/gae-setup.html)
 
 
 ## Next Steps
- - [Google App Engine Website](https://www.sap.com/developer/tutorials/gae-webapp.html)
+ - [Google App Engine Website](https://developers.sap.com/tutorials/gae-webapp.html)
 
 ## Details
 ### You will learn  
@@ -204,5 +204,3 @@ Client closed
 
 
 
-## Next Steps
-- [Google App Engine Website](https://www.sap.com/developer/tutorials/gae-webapp.html))

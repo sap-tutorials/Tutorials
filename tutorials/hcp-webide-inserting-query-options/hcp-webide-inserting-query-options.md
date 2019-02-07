@@ -7,10 +7,10 @@ tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>htm
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [An Open Data Protocol (OData) primer for developers](https://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+- **Tutorials:** [An Open Data Protocol (OData) primer for developers](https://developers.sap.com/tutorials/hcp-webide-odata-primer.html)
 
 ## Next Steps
-- [Manually creating a data model to use in SAP Web IDE's Mock Data server](https://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
+- [Manually creating a data model to use in SAP Web IDE's Mock Data server](https://developers.sap.com/tutorials/hcp-webide-create-odata-model.html)
 
 ## Details
 ### You will learn  
@@ -23,7 +23,7 @@ The previous tutorial introduced a number of OData query options that developers
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
 
-Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com) and open SAP Web IDE tab in a Google Chrome browser. Ensure that your latest code has been committed to your git repository. If so, you should have green dots next to the folders and files in your project (as shown below). If not, [commit your files to Git now](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
+Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com) and open SAP Web IDE tab in a Google Chrome browser. Ensure that your latest code has been committed to your git repository. If so, you should have green dots next to the folders and files in your project (as shown below). If not, [commit your files to Git now](https://developers.sap.com/tutorials/hcp-webide-commit-git.html).
 
 ![Project folder](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_1.png)
 
@@ -52,7 +52,7 @@ If you run your app, you will notice that the OData results are returned sorted 
 
 It is easier for a user to find a given product by name if the list is in alphabetical order. To implement this through a query option, you could append the `items` attribute in `Main.view.xml` with `?$orderby=ProductName`.
 
-However, the proper way to make the change is to use the [UI5 Sorter](https://openui5.hana.ondemand.com/docs/api/symbols/sap.ui.model.Sorter.html) for list bindings. In `Master.view.xml`, modify the `items` attribute of the `List` element as shown below.
+However, the proper way to make the change is to use the [UI5 Sorter](https://openui5.hana.ondemand.com/#/api/sap.ui.model.Sorter) for list bindings. In `Master.view.xml`, modify the `items` attribute of the `List` element as shown below.
 
 The items attribute should be:
 
@@ -100,7 +100,7 @@ this._oView = this.getView();
 
 [ACCORDION-BEGIN [Step 6: ](Add the filter)]
 
-At the bottom on the `onInit` function, insert the code snippet below which adds an `attachAfterRendering` function which defines the parameters for the [UI5 Filter](https://openui5.hana.ondemand.com/docs/api/symbols/sap.ui.model.Filter.html), creates a new `Filter` object, gets the list binding and applies the filter:
+At the bottom on the `onInit` function, insert the code snippet below which adds an `attachAfterRendering` function which defines the parameters for the [UI5 Filter](https://openui5.hana.ondemand.com/#/api/sap.ui.model.Filter), creates a new `Filter` object, gets the list binding and applies the filter:
 
 ```javascript
 // inserted function to filter master list
@@ -189,6 +189,3 @@ You can keep these edits if you would like, or to roll back to the previous stat
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Manually creating a data model to use in SAP Web IDE's Mock Data server](https://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)

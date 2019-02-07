@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+- **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9.3 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 2.2
 
@@ -28,9 +28,9 @@ When you are ready, your SAP Fiori for iOS application will resemble the followi
 
 > Before you start, make sure you:
 
-> - have downloaded SAP Cloud Platform SDK for iOS **version 2.2 (2.0 SP02)**. For older versions, please go to [this tutorial](https://www.sap.com/developer/tutorials/fiori-ios-scpms-create-app-wwdc21.html) instead.
-> - have a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for more information.
-> - enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html) for more information.
+> - have downloaded SAP Cloud Platform SDK for iOS **version 2.2 (2.0 SP02)**. For older versions, please go to [this tutorial](https://developers.sap.com/tutorials/fiori-ios-scpms-create-app-wwdc21.html) instead.
+> - have a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for more information.
+> - enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html) for more information.
 
 ### Time to Complete
 **50 Min**

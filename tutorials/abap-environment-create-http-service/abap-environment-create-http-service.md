@@ -1,16 +1,13 @@
 ---
-title: Create an HTTP Service
+title: Create an HTTP Service  
 description: Create an HTTP service in the ABAP environment that can be called from the browser.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-abap-environment
+primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
-
-## Prerequisites  
- -	You have created an ABAP package
 
 ## Details
 ### You will learn  
@@ -19,14 +16,10 @@ author_profile: https://github.com/julieplummer20
 
 You can then access the ABAP system from the browser, for example to fetch a report. In this tutorial, you will simply fetch your user name and the date and time for simplicity.
 
-
-### Time to Complete
-**15 Min**
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create an HTTP service)]
-1. Select your package and choose **New > Other Repository Object** from the context menu:
+1. Select a package and choose **New > Other Repository Object** from the context menu:
 
     ![Image depicting step-1a-new-repo-object](step-1a-new-repo-object.png)
 
@@ -99,11 +92,11 @@ You then cast this date variable to a string variable and output that as before.
 Delete the statement `response->set_text('Hello again!').` and add the following to your code:
 
 ```ABAP
-DATA(lv_date) = CL_ABAP_CONTEXT_INFO=>get_system_date( ).
-DATA: lv_text type string.
+DATA(system_date) = CL_ABAP_CONTEXT_INFO=>get_system_date( ).
+DATA: text type string.
 
-lv_text = lv_date.
-response->set_text( lv_text ).
+text = system_date.
+response->set_text( text ).
 ```
 
 [DONE]
@@ -123,7 +116,7 @@ response->set_text( lv_text ).
 [ACCORDION-BEGIN [Step 7: ](Test yourself)]
 Implement the method `IF_HTTP_SERVICE_EXTENSION~HANDLE_REQUEST` so that it returns the current user name (`UNAME`), not the system date.
 
-Use the variable `user_name` and the method `get_user_formatted_name`.
+Use the variables `user_name` and `text` and the method `get_user_formatted_name`.
 
 [VALIDATE_1]
 
@@ -133,6 +126,7 @@ Use the variable `user_name` and the method `get_user_formatted_name`.
 Your code should look like this:
 
 ```ABAP
+
 class ZCL_JP_TEST_HTTP definition
   public
   create public .
@@ -145,17 +139,16 @@ private section.
 ENDCLASS.
 
 CLASS ZCL_JP_TEST_HTTP IMPLEMENTATION.
+
   method IF_HTTP_SERVICE_EXTENSION~HANDLE_REQUEST.
-     response->set_text('Hello again!').
+      DATA(system_date) = CL_ABAP_CONTEXT_INFO=>get_system_date( ).
+      DATA: text type string.
 
-      DATA(lv_date) = CL_ABAP_CONTEXT_INFO=>get_system_date( ).
-      DATA: lv_text type string.
-
-      lv_text = lv_date.
-      response->set_text( lv_text ).
-
+      text = system_date.
+      response->set_text( text ).
   endmethod.
 ENDCLASS.
+
 ```
 
 [DONE]

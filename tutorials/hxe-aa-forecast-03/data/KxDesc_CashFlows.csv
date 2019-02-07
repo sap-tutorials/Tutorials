@@ -1,5 +1,5 @@
 RANK	NAME	STORAGE	VALUETYPE	KEYLEVEL	ORDERLEVEL	MISSINGSTRING	GROUPNAME	DESCRIPTION
-0	Date	datetime	continuous	1	1			
+0	Date	date	continuous	1	1			
 1	WorkingDaysIndices	number	continuous	0	0			
 2	ReverseWorkingDaysIndices	number	continuous	0	0			
 3	MondayMonthInd	number	ordinal	0	0			

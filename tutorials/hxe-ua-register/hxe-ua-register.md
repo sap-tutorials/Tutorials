@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Pre-installation Tasks](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
+ - **Tutorials:** You have completed [Pre-installation Tasks](http://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html)
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ You will learn how to register for the product, and access the download manager.
 
 [ACCORDION-BEGIN [Step 1: ](Open the registration page)]
 
-Go to the registration page at [http://sap.com/sap-hana-express](http://sap.com/sap-hana-express). (Alternately, you can go to the SAP HANA, express edition launch page at [http://www.sap.com/developer/topics/sap-hana-express.html](http://www.sap.com/developer/topics/sap-hana-express.html) and click the *Free Download* link.)
+Go to the registration page at [http://sap.com/sap-hana-express](http://sap.com/sap-hana-express). (Alternately, you can go to the SAP HANA, express edition launch page at [http://developers.sap.com/topics/sap-hana-express.html](http://developers.sap.com/topics/sap-hana-express.html) and click the *Free Download* link.)
 
 The registration page opens.
 

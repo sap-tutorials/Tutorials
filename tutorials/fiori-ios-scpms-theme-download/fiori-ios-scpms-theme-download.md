@@ -8,17 +8,17 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9.3 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.2
 
 ## Details
 ### You will learn  
-In tutorial [Customize theme and on-boarding of iOS app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-custom-app-theming.html) you created a custom [`NUI`](https://github.com/tombenner/nui) stylesheet which was then included in the app's project. The biggest drawback to this approach is that for every style change, you need to rebuild and deploy your app.
+In tutorial [Customize theme and on-boarding of iOS app](https://developers.sap.com/tutorials/fiori-ios-scpms-custom-app-theming.html) you created a custom [`NUI`](https://github.com/tombenner/nui) stylesheet which was then included in the app's project. The biggest drawback to this approach is that for every style change, you need to rebuild and deploy your app.
 
 Since version 2.2 of the SAP Cloud Platform SDK for iOS, you can now upload stylesheets to SAP Cloud Platform mobile service for development and operations, and during the onboarding flow, your app will then download the latest changes. In this tutorial, you will create a stylesheet and upload it to SAP Cloud Platform mobile service for development and operations. You will then modify the app's onboarding flow so it will download and apply the stylesheet.
 
-For this tutorial, you can use any iOS app you have previously created with the SAP Cloud Platform SDK for iOS Assistant. However, the screenshots and parameters used in this tutorial are taken from the `OfflineDemo` app created in tutorial [Create an iOS App with Offline Capabilities](https://www.sap.com/developer/tutorials/fiori-ios-scpms-offline-odata.html). If you want to follow this tutorial to the letter, make sure you have finished creating the `OfflineDemo` app.
+For this tutorial, you can use any iOS app you have previously created with the SAP Cloud Platform SDK for iOS Assistant. However, the screenshots and parameters used in this tutorial are taken from the `OfflineDemo` app created in tutorial [Create an iOS App with Offline Capabilities](https://developers.sap.com/tutorials/fiori-ios-scpms-offline-odata.html). If you want to follow this tutorial to the letter, make sure you have finished creating the `OfflineDemo` app.
 
 ### Time to Complete
 **15 Min**

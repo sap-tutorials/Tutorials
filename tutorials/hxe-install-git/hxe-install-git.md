@@ -87,7 +87,3 @@ Verify your `git` installation by cloning a git repository to your HANA, express
 
     When the clone completes you will be ready to use git for source code management on your HANA, express edition virtual machine
 
-
-## Next Steps
- - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
- - [Complete the Django tutorials](https://docs.djangoproject.com/en/1.10/intro/tutorial01/)

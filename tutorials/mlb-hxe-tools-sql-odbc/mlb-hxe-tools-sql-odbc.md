@@ -1,5 +1,5 @@
 ---
-title: Use an ODBC based querying tool with SAP HANA, express edition
+title: Use ODBC-Based Querying Tool with SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance from almost any ODBC based querying tool.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
@@ -17,16 +17,16 @@ The Linux `isql` tool is included in the unixODBC package. Please refer to your 
 
 On Windows environments, there is no pre-installed tool available out-of-the-box.
 
-For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
 [ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
 
-Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) group.
+Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) group.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Locate the ODBC Driver)]
+[ACCORDION-BEGIN [Step 1: ](Locate the ODBC driver)]
 
 The driver (`lbodbcHDB.dll/so`), which is installed as part of the SAP HANA client, is located at (unless specified otherwise during the installation):
 
@@ -266,7 +266,7 @@ Make sure you always use a 64 bit version else your DSN won't be listed.
 
 [ACCORDION-BEGIN [Step 5: ](Validation)]
 
-Based on the available **ODBC Connection Properties** listed in the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html" target="new">online documentation</a>, provide an answer to the question below then click on **Validate**.
+Based on the available **ODBC Connection Properties** listed in the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html" target="new">online documentation</a>, provide an answer to the question below then click on **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -1,25 +1,24 @@
 ---
 title: Computation methods
 description: Computation methods help you calculating characteristics of geometries
+auto_validation: true
+time: 15
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial:** [Access methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-access.html)
+ - **Tutorial:** [Access methods](https://developers.sap.com/tutorials/hana-spatial-methods-access.html)
 
 ## Next Steps
- - [Transformation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-transform.html)
+ - [Transformation methods](https://developers.sap.com/tutorials/hana-spatial-methods-transform.html)
 
 ## Details
 ### You will learn  
 You will learn about a number of computation methods and how to apply them to different geometries.
 
 >You must have table `"TESTSGEO"."SPATIALSHAPES"` from previous tutorials already created and loaded in your system to be able to run examples from this tutorial.
-
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -30,6 +29,7 @@ E.g. `ST_Length()` calculated the length of the line string, and `ST_Area()` cal
 
 Some other calculate characteristics of geometries, like `ST_IsRing()` and `ST_IsClosed()` in case of strings.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Area and perimeter of polygons)]
@@ -58,8 +58,8 @@ WHERE "SHAPE".ST_GeometryType() in ('ST_Polygon')
 
 ![Area and perimeter of multi-polygon](comp20.png)
 
+[DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Centroid of polygons)]
 
@@ -86,6 +86,7 @@ WHERE "SHAPE".ST_GeometryType() in ('ST_Polygon')
 
 ![Centroid of multi-polygon](comp40.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Point on a surface)]
@@ -147,6 +148,7 @@ You can see on the visualization that the blue dot is indeed located on the yell
 
 ![Centroid and point-on-surface](comp60.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Distance)]
@@ -168,13 +170,10 @@ order by 3 asc;
 
 ![Distances](comp70.png)
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 ### Optional
 - You can find all available methods in [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/7a13f280787c10148dc893063dfed1c4.html). Make sure you review documentation for the version of SAP HANA you run.
 
-
 ---
-
-## Next Steps
- - [Transformation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-transform.html)

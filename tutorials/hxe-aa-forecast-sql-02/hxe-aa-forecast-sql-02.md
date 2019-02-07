@@ -8,10 +8,7 @@ time: 15
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
+ - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
 ## Details
 ### You will learn
@@ -97,8 +94,8 @@ Both options are valid but for the sake of simplicity only the Eclipse option wi
 
 To learn more about these options, you can refer to:
 
-- [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
-- [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
+- [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html)
+- [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://developers.sap.com/tutorials/mlb-hxe-import-data-sql-import.html)
 
 [DONE]
 [ACCORDION-END]
@@ -178,7 +175,6 @@ As the dataset files get updated periodically, and in order to ensure consistenc
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/CashFlows.csv" target="new">`CashFlows`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/KxDesc_CashFlows.csv" target="new">`KxDesc_CashFlows`</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/Lag1AndCycles.csv" target="new">`Lag1AndCycles`</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/Lag1AndCyclesAndWn.csv" target="new">`Lag1AndCyclesAndWn`</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/R_ozone-la.csv" target="new">`R_ozone-la`</a>

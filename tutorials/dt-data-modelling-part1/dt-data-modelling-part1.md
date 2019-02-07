@@ -7,7 +7,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. If not, refer to the lesson starting from [Creating and Removing Extended Storage](https://www.sap.com/developer/groups/dt-get-started.html) to set up your extended storage.
+ - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. If not, refer to the lesson starting from [Creating and Removing Extended Storage](https://developers.sap.com/group.dt-get-started.html) to set up your extended storage.
 
 ## Details
 ### You will learn

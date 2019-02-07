@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorial**: [Create an empty UI5 Web IDE project](https://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+ - **Tutorial**: [Create an empty UI5 Web IDE project](https://developers.sap.com/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
- - [Add a list to the current view](https://www.sap.com/developer/tutorials/sapui5-webide-add-list.html)
+ - [Add a list to the current view](https://developers.sap.com/tutorials/sapui5-webide-add-list.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ Now that you have set up a Destination in the SAP Cloud Platform (HCP) cockpit, 
 **15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
 
 ---
 There are three steps to connect the OData service to your application.  
@@ -32,7 +32,7 @@ There are three steps to connect the OData service to your application.
 ---
 ### Define the Data source
 
-In a [previous tutorial](https://www.sap.com/developer/tutorials/hcp-create-destination.html) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
+In a [previous tutorial](https://developers.sap.com/tutorials/hcp-create-destination.html) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
 
 
 1.  Open the `webapp/mainfest.json` file, by double clicking on the file.
@@ -77,8 +77,6 @@ In a [previous tutorial](https://www.sap.com/developer/tutorials/hcp-create-dest
 Now that the application has a connection to the "Northwind" destination, the next step is to create a data object (called a "model").  This object acts as the interface between the data coming from the web and the rest of the code in the application.
 
 There are two ways to create a model:  in the JavaScript code, or by using the `mainfest.json` file.  Adding the model to the `manifest.json` file will set one up automatically.  
-
-> **NOTE**  To create the model directly in JavaScript, read [the model help documentation](https://sapui5.netweaver.ondemand.com/docs/guide/5278bfd38f3940b192df0e39f2fb33b3.html).
 
 
 1.  Open the `manifest.json` file, and select the **Models** link at the top of the screen:
@@ -156,7 +154,7 @@ There are two ways to create a model:  in the JavaScript code, or by using the `
 
 
 ## Troubleshooting
- - **Missing a file?**  If the list of files doesn't match the picture, you may have used the wrong template when you created the project.  Delete the project, and start the [Create a new project](https://www.sap.com/developer/tutorials/sapui5-webide-create-project.html) tutorial again.
+ - **Missing a file?**  If the list of files doesn't match the picture, you may have used the wrong template when you created the project.  Delete the project, and start the [Create a new project](https://developers.sap.com/tutorials/sapui5-webide-create-project.html) tutorial again.
 
  - **$metadata file not listed?**  This means one of the files in your project is incorrect.  Check the files, and make sure no red X marks appear in the left hand column.  These indicate a problem with the file syntax.  Check the pictures carefully.
 
@@ -165,6 +163,3 @@ There are two ways to create a model:  in the JavaScript code, or by using the `
  - **Don't forget to save your files!**  If a file name has a * next to it, the file isn't saved.  
 
 
-## Next Steps
-
-- **Tutorial** Part 3: [Add a list to the current view](https://www.sap.com/developer/tutorials/sapui5-webide-add-list.html)

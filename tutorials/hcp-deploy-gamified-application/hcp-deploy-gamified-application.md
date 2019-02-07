@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:**
- - [Create the gamified HelpDesk application](https://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
+ - [Create the gamified HelpDesk application](https://developers.sap.com/tutorials/hcp-gamification-sample-application.html)
  - Configure Eclipse environment for Maven projects (Coming soon)
 
 ## Next Steps
-- [Customize game mechanics of HelpDesk application in SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
+- [Customize game mechanics of HelpDesk application in SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-customize-gamified-application.html)
 
 ## Details
 ### You will learn  
@@ -121,5 +121,3 @@ Select **Overview** from the left-hand navigation and click on the URL provided 
 [ACCORDION-END]
 
 
-## Next Steps
-- [Customize game mechanics of HelpDesk application in SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)

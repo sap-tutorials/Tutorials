@@ -3,25 +3,15 @@ title: Predictive Analytics Using SQL Scripts
 description: This tutorial series will cover two approaches to a sample project utilizing the predictive analytics capabilities of SAP HANA, express edition. This tutorial will show you how to use SQL scripts with the predictive analytics library.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 10
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Getting Started with Predictive Analytics]
-
-
-## Next Steps
- - [Predictive Analytics Using Application Function Modeler]
- - Select a tutorial group from the [Tutorial Navigator] or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-How to use predictive analytics with a pre-written SQL script.
+  - How to use predictive analytics with a pre-written SQL script
 
 This tutorial describes one of many SAP HANA Academy Predictive Analysis Library tutorials. For more tutorials on using Predictive Analysis Library, see the [SAP HANA Academy YouTube Playlist](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g).
 
-### Time to Complete
-**10 Min**
 
 ---
 
@@ -129,7 +119,3 @@ For more information about the scripts, watch the SAP HANA Academy videos [PAL: 
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Predictive Analytics Using Application Function Modeler]
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

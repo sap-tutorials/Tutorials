@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Import the OVA](https://www.sap.com/developer/tutorials/hxe-ua-ova-vm.html)  
+ - **Tutorials:**  You have completed [Import the OVA](https://developers.sap.com/tutorials/hxe-ua-ova-vm.html)  
 
 ## Details
 ### You will learn

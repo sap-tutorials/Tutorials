@@ -18,10 +18,10 @@ const fileError = (reason, fileName, line) => `
       reason: ${reason}
 `;
 
-const linkError = (url, statusCode, line) => `
+const linkError = (url, statusCode, line, reason) => `
         url: ${url}
         line: ${line}
-        code: ${statusCode}
+        code: ${statusCode}${ reason ? '\n        reason: ' + reason : '' }
 `;
 
 const genericReport = (checkType, filesCount, errorsCount, log) => `
@@ -44,35 +44,35 @@ CHECK LINKS ${type}:
 `;
 
 const reportStructure = {
-    meta: {
-        checkedLinksCount: 0,
+  meta: {
+    checkedLinksCount: 0,
+  },
+  props: {
+    fileNames: {
+      type: 'FILENAMES',
+      messages: [],
     },
-    props: {
-        fileNames: {
-            type: 'FILENAMES',
-            messages: [],
-        },
-        spellCheck: {
-            type: 'SPELLING',
-            messages: [],
-        },
-        contentCheck: {
-            type: 'CONTENT',
-            messages: [],
-        },
-        tagCheck: {
-            type: 'TAGS',
-            messages: [],
-        },
-        validationsCheck: {
-            type: 'VALIDATION',
-            messages: [],
-        },
-        linkCheck: {
-            type: 'LINKS',
-            files: []
-        },
+    spellCheck: {
+      type: 'SPELLING',
+      messages: [],
     },
+    contentCheck: {
+      type: 'CONTENT',
+      messages: [],
+    },
+    tagCheck: {
+      type: 'TAGS',
+      messages: [],
+    },
+    validationsCheck: {
+      type: 'VALIDATION',
+      messages: [],
+    },
+    linkCheck: {
+      type: 'LINKS',
+      files: []
+    },
+  },
 };
 
 const optionsHelp = `
@@ -95,15 +95,15 @@ const optionsError = `Error: no available command identified )
 const progressBar = 'Testing: [:bar] :percent | Execution time: :elapseds';
 
 module.exports = {
-    commonError,
-    fileNameError,
-    fileError,
-    linkError,
-    genericReport,
-    linksFileReport,
-    linksGenericReport,
-    reportStructure,
-    optionsHelp,
-    optionsError,
-    progressBar,
+  commonError,
+  fileNameError,
+  fileError,
+  linkError,
+  genericReport,
+  linksFileReport,
+  linksGenericReport,
+  reportStructure,
+  optionsHelp,
+  optionsError,
+  progressBar,
 };

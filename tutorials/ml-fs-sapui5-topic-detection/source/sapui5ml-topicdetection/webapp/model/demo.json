@@ -1,0 +1,14 @@
+{
+	"defaultOptions": {
+		"numTopics": 3,
+		"numTopicsPerDoc": 3,
+		"numKeywordsPerTopic": 15,
+		"numFeatures": 20
+	},
+	"url": "/ml-dest/topicdetection/topic-detection",
+	"method": "POST",
+	"accept": "application/json",
+	"fileType": "zip,tar",
+	"mimeType": "application/x-zip-compressed,application/zip,application/octet-stream",
+	"APIKey": "<<<<< COPY YOUR API KEY >>>>>"
+}

@@ -7,13 +7,13 @@ time: 5
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Create an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - **Tutorials:** [Create an HDI Module](https://developers.sap.com/tutorials/xsa-hdi-module.html)
 
 ## Details
 ### You will learn  
 This tutorial will guide you through the process of downloading sample data and database artifacts and importing it into SAP HANA using SAP Web IDE for SAP HANA.
 
-If you are looking to import the entire SAP HANA `INteractive` Education model for XS Advanced, follow this tutorial instead: [https://www.sap.com/canada/developer/tutorials/xsa-ml-e2e-access-shine.html](https://www.sap.com/canada/developer/tutorials/xsa-ml-e2e-access-shine.html)
+If you are looking to import the entire SAP HANA `INteractive` Education model for XS Advanced, follow this tutorial instead: [https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html](https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html)
 
 ---
 

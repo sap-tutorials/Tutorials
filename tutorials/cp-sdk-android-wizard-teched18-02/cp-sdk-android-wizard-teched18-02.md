@@ -1,5 +1,5 @@
 ---
-title: Use Fiori for Android Controls to Enhance Your Application.
+title: Use Fiori for Android Controls to Enhance Your Application
 description: Enhance your application with the Object Cell and add a divider to cells in a list for customers.
 auto_validation: true
 primary_tag: operating-system>android
@@ -47,7 +47,7 @@ Each customer is displayed in an <a target="_blank" href="https://help.sap.com/d
 
 ![Object Cell](object-cell.png)
 
-As seen above, an Object Cell can display more than one field.  In the next two sections, the app will be modified to display different content in the Object Cells and a separator decoration will be added between rows.
+As seen above, an Object Cell can display more than one field.  In the next two sections, the app will be modified to display different content in the Object Cells and a separator decoration will be added between rows.  Another good source of info on Object Cells and other Fiori for Android controls is <a target="_blank" href="https://experience.sap.com/fiori-design-android/object-cell/">Fiori Android Design Guidelines</a>.
 
 [DONE]
 [ACCORDION-END]

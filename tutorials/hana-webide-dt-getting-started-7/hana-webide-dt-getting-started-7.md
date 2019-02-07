@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-6.html)
+ - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](https://developers.sap.com/tutorials/hana-webide-dt-getting-started-6.html)
 
 ## Details
 ### You will learn  

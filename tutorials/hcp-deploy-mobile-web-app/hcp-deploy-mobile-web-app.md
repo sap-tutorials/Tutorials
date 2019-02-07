@@ -6,10 +6,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mo
 ---
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Build an app from an SAP Web IDE template](https://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+- **Tutorials:** [Build an app from an SAP Web IDE template](https://developers.sap.com/tutorials/hcp-template-mobile-web-app.html)
 
 ## Next Steps
-- [Add labels and a field to your app](https://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
+- [Add labels and a field to your app](https://developers.sap.com/tutorials/hcp-webide-add-labels-field.html)
 
 ## Details
 
@@ -83,5 +83,3 @@ You can now enter the application URL in your mobile device browser to see it ru
 
 
 
-## Next Steps
-- [Add labels and a field to your app](https://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)

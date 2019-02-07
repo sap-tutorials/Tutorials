@@ -17,17 +17,17 @@ As a format and protocol, OData has many features. But there's a further dimensi
 
 The information in OData metadata documents you've seen in previous tutorials describes property names, types, whether they must have a value or not, and so on ... in other words, basic technical aspects. However, that information can be enriched through the addition of annotations, which can be managed in layers.
 
-Annotations allow you to define additional characteristics that have meaning beyond the basic technical aspects in the metadata document.
+Annotations allow you to define additional characteristics that have meaning beyond the basic technical aspects in the metadata document:
 
 - data processing: annotations can describe what operations are allowed
 - display: annotations can enrich the metadata by providing information useful in building a user interface (UI)
 - analytical: annotations can specify aggregation information, such as identifying properties that are dimensions or measures
 
-Metadata annotations can be provided in different ways: directly within the entity type definitions, outside of the entity type definitions but still within a metadata document, or outside of a metadata document entirely. It might help to think of this being similar to how Cascading Style Sheets (CSS) work - style information can be specified in-line with HTML elements directly, or in the head of an HTML document, or in a separate file altogether.
+Metadata annotations can be provided in different ways: directly within the entity type definitions, outside of the entity type definitions but still within a metadata document, or separate to the metadata document entirely. It might help to think of this being similar to how Cascading Style Sheets (CSS) work - style information can be specified in-line with HTML elements directly, or in the head of an HTML document, or in a separate file altogether.
 
 In this tutorial, you'll become acquainted with some basic OData metadata annotations and also with SAP Fiori elements, a series of UI5-based dynamic UI components that are entirely driven by annotations. You'll briefly examine existing annotations in an OData service, create a SAP Fiori elements app based on an Enterprise Procurement Model (EPM) OData service from the Gateway Demo system, and declare some annotations to drive the app's display.
 
-> The steps you'll follow are similar to those in a previous tutorial [Use SAP Web IDE OData features to create a simple app](https://www.sap.com/developer/tutorials/odata-03-webide-odata-features.html), so the detail in the equivalent steps in this tutorial will be kept to a minimum.
+> The steps you'll follow are similar to those in a previous tutorial [Use SAP Web IDE OData features to create a simple app](https://developers.sap.com/tutorials/odata-03-webide-odata-features.html), so the detail in the equivalent steps in this tutorial will be kept to a minimum.
 
 > In this tutorial and others the general name "SAP Web IDE" is used. Specifically, the "Full-Stack" version is implied throughout.
 
@@ -35,7 +35,7 @@ In this tutorial, you'll become acquainted with some basic OData metadata annota
 
 [ACCORDION-BEGIN [Step 1: ](Examine EPM Shop OData service metadata)]
 
-To start off, take a fresh look at the metadata in the OData service that you looked at in the tutorial [Continue your OData exploration with EPM](https://www.sap.com/developer/tutorials/odata-02-exploration-epm.html) - the shop reference app OData service. Open the following URL:
+To start off, take a fresh look at the metadata in the OData service that you looked at in the tutorial [Continue your OData exploration with EPM](https://developers.sap.com/tutorials/odata-02-exploration-epm.html) - the shop reference app OData service. Open the following URL:
 
 `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/$metadata`
 
@@ -59,7 +59,7 @@ Rather than being directly embedded within the entity type definition, these ann
 
 [ACCORDION-BEGIN [Step 2: ](Start up the SAP Web IDE)]
 
-Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -95,7 +95,7 @@ You can leave the values for the other fields empty. Select **Next** to continue
 
 In the next step in the wizard, **Data Connection**, you get to specify an OData service upon which the app is to be based.
 
-Select the **Service Catalog** source, then find and choose the `SAP_Gateway` destination. You will have created this destination in the tutorial [Create a destination for the SAP Gateway Demo system](https://www.sap.com/developer/tutorials/teched-2016-3.html).
+Select the **Service Catalog** source, then find and choose the `SAP_Gateway` destination. You will have created this destination in the tutorial [Create a destination for the SAP Gateway Demo system](https://developers.sap.com/tutorials/teched-2016-3.html).
 
 ![choosing the SAP Gateway Demo system destination](demo-gateway-destination.png)
 
@@ -112,7 +112,7 @@ Find the `EPM_REF_APPS_SHOP_SRV` service by filtering for **shop** like this:
 
 [ACCORDION-BEGIN [Step 6: ](Explore the OData service)]
 
-At this point you can explore the service with the **Show Details** button, in a similar way you might have proceeded in the tutorial [Use SAP Web IDE OData features to create a simple app](https://www.sap.com/developer/tutorials/odata-03-webide-odata-features.html).
+At this point you can explore the service with the **Show Details** button, in a similar way you might have proceeded in the tutorial [Use SAP Web IDE OData features to create a simple app](https://developers.sap.com/tutorials/odata-03-webide-odata-features.html).
 
 This time, select the `Suppliers` entity set, and in the entity set details shown, notice the **Annotations** tab that shows which data processing operations are supported.
 
@@ -165,7 +165,7 @@ Once the app is displayed, selecting the **Go** button reveals empty lines of da
 
 ![empty data](empty-data.png)
 
-Remembering that this is an SAP Fiori elements app (you chose a template from the **Fiori Elements** category in the wizard), consider what this means: in contrast to the app generated by the wizard in the tutorial [Use SAP Web IDE OData features to create a simple app](https://www.sap.com/developer/tutorials/odata-03-webide-odata-features.html), which contains many artifacts including XML views and JavaScript controllers, this app has very few.
+Remembering that this is an SAP Fiori elements app (you chose a template from the **Fiori Elements** category in the wizard), consider what this means: in contrast to the app generated by the wizard in the tutorial [Use SAP Web IDE OData features to create a simple app](https://developers.sap.com/tutorials/odata-03-webide-odata-features.html), which contains many artifacts including XML views and JavaScript controllers, this app has very few.
 
 Have a look for yourself by expanding the folders within the `SupplierData` project in your workspace. The `webapp/` folder contains only a small number of items, with the most important being the `Component.js` and the `manifest.json` files.
 
@@ -278,3 +278,4 @@ This last annotation brings the introductory journey to an end. There's plenty m
 
 [DONE]
 [ACCORDION-END]
+

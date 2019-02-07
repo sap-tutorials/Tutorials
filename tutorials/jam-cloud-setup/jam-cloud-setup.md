@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
  - **Proficiency:** Beginner
 
 ## Next Steps
-- [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
+- [Initial setup of SAP Jam Collaboration Developer Edition](https://developers.sap.com/tutorials/jam-cloud-login-admin-user-setup.html)
 
 ## Details
 ### You will learn  
@@ -136,11 +136,8 @@ The SAP Jam initial welcome page is displayed.
 To access the developer support communities, where you can post your questions, comments, and solutions for SAP Cloud Platform and SAP Jam integrations and development, click the following links:
 
 - [SAP Cloud Platform Developer Center](https://www.sap.com/community/tag.html?id=01200615320800003694)
-- [SAP Jam Collaboration Developer Community](https://www.sap.com/community/topic/jam-collaboration.html)
+- [SAP Jam Collaboration Developer Community](https://www.sap.com/community/topics/jam-collaboration.html)
 
 
 [ACCORDION-END]
 
-
-## Next Steps
-- [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)

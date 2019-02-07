@@ -1,24 +1,23 @@
 ---
-title: Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition
+title: Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition (Preconfigured VM)
 description: If you downloaded the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 <!-- loio8f68fc9f49774010a5d438fea258f61f -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)  
+ - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
 You edited your laptop's hosts file.
 
 
 ## Details
 ### You will learn
 You will learn how to download, install, and configure the `eadesigner.tgz` SAP EA Designer package.
-
-### Time to Complete
-15 min
 
 ---
 
@@ -41,7 +40,7 @@ The `hxe_gc` memory management script frees up available VM memory.
 -   Execute:
 
     ```bash
-    
+
     hxe_gc.sh
     ```
 
@@ -174,5 +173,3 @@ The output will include all the applications of your organization and space. You
 
 
 [ACCORDION-END]
-
-

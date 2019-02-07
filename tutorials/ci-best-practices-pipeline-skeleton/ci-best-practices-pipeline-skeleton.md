@@ -11,15 +11,15 @@ time: 15
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)  
-  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)  
-  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Source Code Versioning System](https://developers.sap.com/tutorials/ci-best-practices-scm.html)  
+  - [Build Scheduler](https://developers.sap.com/tutorials/ci-best-practices-build.html)  
+  - [Artifact Repository](https://developers.sap.com/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html)
 
 
 ## Next Steps
 
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -34,7 +34,7 @@ The full continuous delivery scenario consists of the following steps:
 
 1. The developer makes a change in the source files and pushes it to the central Gerrit instance for review.
 
-2. A reviewer submits the change in Gerrit with the status `merged`. Although, as it was pointed out in the part [Pipeline Suggestions](https://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html), it makes sense to create voter builds, they are not actually a part of a continuous delivery pipeline, since they run as pre-validation processes before the change reaches the master branch. Therefore, voter builds are not described here.
+2. A reviewer submits the change in Gerrit with the status `merged`. Although, as it was pointed out in the part [Pipeline Suggestions](https://developers.sap.com/tutorials/ci-best-practices-pipelines.html), it makes sense to create voter builds, they are not actually a part of a continuous delivery pipeline, since they run as pre-validation processes before the change reaches the master branch. Therefore, voter builds are not described here.
 
 3. A CI build job, named `CI_DummyProject_master_build` for the purpose of this discussion, is triggered automatically as soon as the change is merged into the `master` branch. Typically, the CI build job contains automatic tests, static code checks and so on as required.
 
@@ -218,7 +218,7 @@ The release job must be manually triggered, but is semantically linked to the pr
 
     ```
 
-    According to the example described in [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html) the value of `<your repository Id>` is `nexus1`.
+    According to the example described in [Landscape Configuration](https://developers.sap.com/tutorials/ci-best-practices-landscape.html) the value of `<your repository Id>` is `nexus1`.
 
 
 9. Save.
@@ -294,6 +294,3 @@ In practice, only very few changes are finally released. The journey for most ch
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
 
-## Next Steps
-
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

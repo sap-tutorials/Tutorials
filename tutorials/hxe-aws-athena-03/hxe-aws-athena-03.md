@@ -22,7 +22,9 @@ As an alternate solution, you can also use the ***SAP HANA Tools*** for Eclipse,
 
 However, it allows you to import data directly from your client and not the SAP HANA, express edition host.
 
-For more information, you can check the following tutorial: <a href="https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html" target="&#95;blank">Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse</a>
+For more information, you can check the following tutorial: <a href="https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html" target="&#95;blank">Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse</a>
+
+> ### **Warning:** If you are not planning to complete the all series and in order to avoid being billed for AWS usage, make sure to go thru the [Cleanup before you leave]https://developers.sap.com/tutorials/hxe-aws-athena-07.html) tutorial.
 
 [ACCORDION-BEGIN [Step 1: ](Download the data files)]
 

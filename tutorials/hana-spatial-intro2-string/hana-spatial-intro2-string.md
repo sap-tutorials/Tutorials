@@ -1,22 +1,21 @@
 ---
 title: Strings
 description: A string ('a curve' in more general) is a spatial data type that connects points
+auto_validation: true
+time: 5
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Points](https://www.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
+- **Tutorials:** [Points](https://developers.sap.com/tutorials/hana-spatial-intro1-point.html)
 
 ## Next Steps
-- [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- [Polygons](https://developers.sap.com/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Details
 ### You will learn  
 You will continue learning the basics of spatial processing now with the ___strings___ (also known as ___curves___) data types.
-
-### Time to Complete
-**5 Min**.
 
 ---
 
@@ -35,7 +34,7 @@ Execute the query. The `ST_Dimension()` method will return `1`. In the previous 
 
 ![String Dimension](spatial0201.jpg)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Calculate the length)]
@@ -50,7 +49,7 @@ Obviously accordingly to the Pythagorean Theorem the result will be `5`. This pr
 
 ![3-4-5 Rule](spatial0202.jpg)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add more points)]
@@ -82,7 +81,7 @@ Opening the SVG code above in a web browser allows you to see a drawn spatial ob
 
 ![SVG output](spatial0204.jpg)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a circular string)]
@@ -107,7 +106,7 @@ SELECT NEW ST_CircularString('CircularString (0 0, 3 4, 0 4, -3 4, 0 0)').ST_asS
 
 A string that starts and ends at the same point is **closed**. Above is an example. Strings can also be characterized by whether they are simple or not. A **simple** means a string that does not cross itself. A **ring** is a simple, closed string. The geometry above is a ring, according to this definition in spatial processing.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check string characteristics)]
@@ -138,7 +137,7 @@ SELECT 'isRing' as Feature, NEW ST_LineString('LINESTRING(0 0, 1 1, 0 1, 1 0)').
 
 ![not-Closed not-Simple not-Ring](spatial0209.jpg)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create a circle)]
@@ -161,13 +160,12 @@ SELECT ST_GeomFromText( 'CircularString (0 0, 3 4, 0 0)' ).ST_GeometryType() as 
 
 ![GeometryType](spatial0211.jpg)
 
+What is the result of the last SQL statement?
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 
 
 ### Optional
 - Review [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/)
-
-## Next Steps
-- [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)

@@ -1,13 +1,13 @@
 ---
 title: Publish and Receive MQTT Messages
-description: Publish and Receive MQTT Messages in ABAP using the ABAP MQTT Client.
+description: Publish and receive MQTT messages in ABAP using the ABAP MQTT Client.
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>intermediate, topic>abap-development, topic>internet-of-things ]
 ---
 
 ## Prerequisites
-- [Create an ABAP project in Eclipse](https://www.sap.com/developer/tutorials/abap-create-project.html)
+- [Create an ABAP project in Eclipse](https://developers.sap.com/tutorials/abap-create-project.html)
 - The ABAP MQTT Client is available on **ABAP Platform 1809** and above.
 - You need to use **ABAP Development Tools**.
 
@@ -228,7 +228,7 @@ Paste your ABAP Development Tools Console output below to validate that you comp
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ]([Optional] Unsubscribe and disconnect)]
+[ACCORDION-BEGIN [Step 8: ](Unsubscribe and disconnect (optional))]
 Instead of leaving the connection open, you can also unsubscribe from a topic and terminate your connection to the broker.
 
 Add this method definition to the `PUBLIC SECTION` of your class.

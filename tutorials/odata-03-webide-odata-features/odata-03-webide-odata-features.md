@@ -26,7 +26,7 @@ You'll create a very simple app based on a Northwind OData service, and in doing
 
 [ACCORDION-BEGIN [Step 1: ](Start up the SAP Web IDE)]
 
-Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -89,7 +89,7 @@ In this step's configuration, there are various possibilities for the data sourc
 
 The app to be generated should use a Northwind OData service - in other words, a generic OData service. Any OData service that is to be defined via the **Service URL** or **Service Catalog** sources must be available via a destination definition in the Connectivity service of the SAP Cloud Platform.
 
-In the [Create a destination for the Northwind OData services](https://www.sap.com/developer/tutorials/hcp-create-destination.html) tutorial, you will have done exactly this for the generic Northwind service endpoint. You'll now use this destination, indirectly, in this step of the wizard.
+In the [Create a destination for the Northwind OData services](https://developers.sap.com/tutorials/hcp-create-destination.html) tutorial, you will have done exactly this for the generic Northwind service endpoint. You'll now use this destination, indirectly, in this step of the wizard.
 
 Select the **Service URL** source, then find and choose the Northwind destination.
 
@@ -158,7 +158,7 @@ The rest of the fields in this step are related to places in the actual worklist
 
 What's special about this step in the wizard is that the choices for each of the rest of the fields are determined from the SAP Web IDE's automatic interpretation of the OData metadata document.
 
-First, the choices for the **Object Collection** field are the entity sets defined in the metadata: `Alphabetical_list_of_products`, `Categories`, `Category_Sales_for_1997`, and so on. Choose **`Products`**.  
+First, the choices for the **Object Collection** field are the entity sets defined in the metadata: `Alphabetical_list_of_products`, `Categories`, `Category_Sales_for_1997`, and so on. Choose **`Products`**.
 
 Following this, the value of `ProductID` is automatically inserted into the **Object Collection ID** field. This is because the `Product` entity type, upon which the selected `Products` entity set is based, has `ProductID` specified as the key property.
 
@@ -274,9 +274,9 @@ In this screenshot you can see three:
 
 - a call to retrieve the first 20 entries in the `Products` entity set, via a combination of the system query options `$skip=0` and `$top=20`. You can also see that the `$orderby` system query option is being used; this is caused by the `sorter` specification in the binding of the `Products` entity to the Table control's "items" aggregation.
 
-> If you want to investigate this `sorter` specification in the "items" binding, look in the `Worklist.view.xml` file and search for the `<Table>` XML element.
+> If you want to investigate this `sorter` specification in the "items" binding, look in the `Worklist.view.xml` file (open it using the context menu to select the Code Editor rather than the Layout Editor) and search for the `<Table>` XML element.
 
-Can you guess what will happen if you press the **More** button at the bottom of the products display? 
+Can you guess what will happen if you press the **More** button at the bottom of the products display?
 
 Do it now.
 
