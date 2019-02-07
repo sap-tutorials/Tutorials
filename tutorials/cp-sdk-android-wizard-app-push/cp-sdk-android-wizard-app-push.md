@@ -92,7 +92,7 @@ Select the User Registrations tab to send the notification to your app.
 
 ![Send notification](send-notification.png)
 
->It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, click through a few screens in the application and then press the **GO** button to refresh the display or select all of them and send a greeting to all the registrations.
+>It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, navigate through a few screens in the application and then press the **GO** button to refresh the display or select all of them and send a greeting to all the registrations.
 
 >If the Send Notifications button does is not showing, try logging out and back in to the management cockpit.
 

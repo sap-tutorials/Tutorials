@@ -16,7 +16,7 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](Generate and run an offline app)]
 
-Follow the instructions at [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html) to create a new application using the SAP Cloud Platform SDK for Android wizard and select **Offline** for the OData option.
+Follow the instructions at [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html) to create a new application using the SAP Cloud Platform SDK for Android wizard and select **Offline** for the OData option.  The push feature is not needed for this application.
 
 ![Choose Offline OData](choosing_offline_odata.png)
 
@@ -128,7 +128,7 @@ Attempt a sync, and you'll notice that the sync completes but if you examine the
 
 In this section we will create an Error Information screen that displays the details from the `ErrorArchive`.  
 
-Press **shift** twice and type **`strings.xml`** to open `res\values\strings.xml`.
+Press **Shift** twice and type **`strings.xml`** to open `res\values\strings.xml`.
 
 ```XML
 <string name="error_header">Error Information</string>
@@ -141,7 +141,7 @@ Press **shift** twice and type **`strings.xml`** to open `res\values\strings.xml
 
 Create a new activity in the **`mdui`** folder by right clicking, then selecting **New > Activity > Empty Activity**. Name the new activity **`ErrorActivity`**.
 
-Press **shift** twice and type **`activity_error`** to open `res/layout/activity_error.xml`.  Replace its contents with the following XML.
+Press **Shift** twice and type **`activity_error`** to open `res/layout/activity_error.xml`.  Replace its contents with the following XML.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>

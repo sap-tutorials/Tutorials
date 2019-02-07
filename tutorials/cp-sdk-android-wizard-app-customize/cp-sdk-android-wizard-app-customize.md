@@ -137,7 +137,7 @@ Examine the **`ProductCategories`** screen.
 
 In this section the screen's title will be updated, the Object Cell will be used to show the category name, main category name, the number of products in a category and a separator decoration will be added between cells.
 
-Press **shift** twice and type **`strings.xml`** to open `res/values/stings.xml`
+Press **Shift** twice and type **`strings.xml`** to open `res/values/stings.xml`
 
 Add the following entry.
 
