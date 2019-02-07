@@ -19,6 +19,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 ### Time to Complete
 5 min
 
+## Next Steps
+- **Tutorials:** [Install OpenSSL] (https://developers.sap.com/tutorials/iot-cf-install-openssl.html)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Install the Paho Client on Windows 10)]

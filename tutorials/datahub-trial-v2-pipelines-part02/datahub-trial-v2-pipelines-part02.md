@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
   - How to use a message broker within a pipeline.
 
@@ -120,5 +121,3 @@ Copy any row of the terminal output and paste it in the frame below and click on
 Stop the pipeline by clicking **Stop**.
 
 [ACCORDION-END]
-
-

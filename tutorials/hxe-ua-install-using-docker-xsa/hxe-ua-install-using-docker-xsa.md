@@ -1,6 +1,8 @@
 ---
 title: Installing SAP HANA, express edition Server + Apps, with Docker
 description: How to install SAP HANA, express edition with XSA on your preferred Docker setup.
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
@@ -51,24 +53,21 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 
 Download and install the appropriate Docker Edition for your system. Visit the [Docker Community Edition](https://store.docker.com/search?offering=community&type=edition) or [Docker Enterprise Edition](https://store.docker.com/search?offering=enterprise&type=edition) lists for more information and to download Docker for your machine.
 
-> **Note:**
-> Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
+> **Note:** Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Manage Storage System)]
 
-If your host file system is `xfs`, you can recommend the storage driver through the `devicemapper` in Docker. Add `-s devicemapper` to the `DOCKER_OPTS` property in the `docker` file.
+`overlay2` is recommended as the storage driver, with `ext4` or `xfs` as the backend file system. The minimum volume size of the backend file system mounting is 100G. If your current disk size is less than 100G, please resize it.
 
-The minimum recommended storage size is 50G. For example:
+To use `overlay2`, create or edit the file `/etc/docker/daemon.json` to include the following:
 
 ```
-DOCKER_OPTS="-s devicemapper --storage-opt dm.basesize=50G"
+{
+"storage-driver": "overlay2"
+}
 ```
-
-For `Ubuntu` and `Debian`, the `DOCKER_OPTS` property can be found at `/etc/default/docker`.
-
-For `Fedora`, `SuSE`, and `Centos`, the `DOCKER_OPTS` property can be found at `/etc/sysconfig/docker`.
 
 Restart the Docker service.
 
@@ -77,6 +76,8 @@ For example, on `SuSE`:
 ```
 sudo systemctl restart docker.service
 ```
+
+`devicemapper` is an available alternative storage driver for valid Docker versions. Keep in mind, `devicemapper` is no longer being supported by Docker.
 
 For more information on the storage driver, visit the [Docker storage drivers](https://docs.docker.com/storage/storagedriver/select-storage-driver/) documentation page.
 
@@ -140,7 +141,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2
+sudo docker pull store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -224,7 +225,7 @@ Here is an example:
 
 ```
 {
-  "master_password" : "SAPhxe123"
+"master_password" : "SAPhxe123"
 }
 ```
 
@@ -267,7 +268,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 \
+store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 \
 --agree-to-sap-license \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --proxy-host <proxy_hostname> \
@@ -287,7 +288,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 \
+store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 \
 --agree-to-sap-license \
 --passwords-url file:///hana/password.json \
 --proxy-host <proxy_hostname> \
@@ -422,7 +423,7 @@ If you are prompted to change your password, follow the instructions.
 
 [ACCORDION-BEGIN [Step 14: ]((Optional) Update Your Docker Image)]
 
-To update your Docker image, refer to the [SAP HANA, express edition Getting Started Guide](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION) updating section.
+To update your Docker image, refer to the [SAP HANA, express edition Getting Started Guide](https://help.sap.com/viewer/p/SAP_HANA,_EXPRESS_EDITION) updating section.
 
 [ACCORDION-END]
 
@@ -431,7 +432,7 @@ To update your Docker image, refer to the [SAP HANA, express edition Getting Sta
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpressxsa` command.
 
 ```
-docker run store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 -h
+docker run store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 -h
 usage: [options]
 
 --dont-check-consistency           Skip consistency check between mount points

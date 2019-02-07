@@ -185,7 +185,7 @@ Go back to your report and execute it by choosing **F8**. Your SAP List Viewer s
 
 [ACCORDION-BEGIN [Step 11: ](Test yourself)]
 
-The `field-symbol` `booking` has been defined as follows. Rewrite the `LOOP AT` statement using an inline declaration. Enter your code in the box below and choose **Submit answer**:
+The `field-symbol` `booking` has been defined as follows. Rewrite the `LOOP AT` statement using an inline declaration. Enter your code in the box below and choose **Submit Answer**:
 
 ```ABAP
 

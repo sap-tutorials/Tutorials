@@ -20,19 +20,22 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 ### Time to Complete
 10 min
 
+## Next Steps
+- **Tutorials:** [Install the Paho Client](https://developers.sap.com/tutorials/iot-cf-install-paho-client.html)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a User)]
 
 > Note:
-> You need an instance of the SAP Cloud Platform Internet of Things Service. You need the host name (referred to as `<HOST_NAME>`, which you can use to access the Internet of Things Service Cockpit. In addition, you get the instance owner credentials (`name`, `password`).
+> You need an instance of the SAP Cloud Platform Internet of Things Service. You need the `<HOST_NAME>` and the `<INSTANCE_ID`, which you can use to access the system. In addition, you get the instance owner credentials (`name`, `password`).
 >
 >
 
 1.  Log on to the Internet of Things Service Cockpit with the instance owner credentials.
 
     ```bash
-    https://<HOST_NAME>/iot/cockpit/
+    https://<HOST_NAME>/<INSTANCE_ID>/iot/cockpit/
     ```
 
 2.  Use the main menu to navigate to the *Users* section of the *User Management* category.
@@ -42,11 +45,11 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 4.  In the *General Information* section, enter a *Name* and a *Password* for the user.
 
     > Note:
-    > The user name must start with an alphanumeric character and should not contain more than 40 characters. Allowed characters are lowercase letters, decimal digits, hyphen, period, and underscore.
+    >  The user name must start with an alphanumeric character and should not contain more than 40 characters. Allowed characters are lowercase letters, decimal digits, hyphen, period, and underscore.
     >
     >
     > Note:
-    > The password must contain at least six characters, including numbers, uppercase, and lowercase letters.
+    >  The password must contain at least six characters, including numbers, uppercase, and lowercase letters.
     >
     >
 
@@ -84,19 +87,19 @@ The multi-tenancy feature of the Internet of Things Service allows you to create
 
 2.  Search and select the tenant you want to assign to a user.
 
-3.  In the *Users* section, choose **+** above the table of the user you want to add.
+3.  In the *Members* section, choose **+** above the table of the user you want to add.
 
-4.  In the *Add User* dialog, enter the *User ID* of the user you want to add.
+4.  In the *Add Member* dialog, enter the *Name* of the user you want to add.
 
     > Note:
-    > You can find the *ID* of the user you want to add by navigating to the *Users* section of the *User Management* category.
-    Search and select the user you want to add. The details page displays the *Name* and the *ID* for the user selected. Copy the *ID*.
+    >  You can find the *Name* of the user you want to add by navigating to the *Users* section of the *User Management* category.
+    Search and select the user you want to add. The details page displays the *Name* and the *ID* for the user selected. Copy the *Name*.
     >
     >
 
-5.  Select an appropriate *Role* for the user from the dropdown box.
+5.  Select an appropriate *Role* for the member.
 
-6.  Confirm the dialog by choosing *Add*.
+6.  Confirm by choosing *Add*.
 
 [VALIDATE_2]
 

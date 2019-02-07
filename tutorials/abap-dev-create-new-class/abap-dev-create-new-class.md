@@ -405,8 +405,10 @@ Now run the program. You should get a SAP List Viewer roughly like this:
 
 [ACCORDION-BEGIN [Step 17: ](Test yourself)]
 First, define a table type as a standard table of type `SNWD_BPA WITH DEFAULT KEY`. Then, using the METHODS statement, create the definition of an instance method `get_customers_from_db` that returns a value `result` of type `ty_table_of_customers`.
+
 Do not indent your code.
-Enter your code in the box below and choose **Submit answer**.
+
+Enter your code in the box below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]

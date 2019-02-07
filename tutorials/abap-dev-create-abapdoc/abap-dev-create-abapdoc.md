@@ -172,7 +172,9 @@ ENDCLASS.
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
 
-Create an ABAPDoc comment for the parameter `PLANETYPE`, including the explanatory text "Type of plane" . Enter the comment in the box below and choose "Submit answer".
+Create an ABAPDoc comment for the parameter `PLANETYPE`, including the explanatory text **`Type of plane`**.
+
+Enter the comment in the box below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -115,11 +115,9 @@ Additionally, you can access the logs locally on an emulator. The file system of
 ![View logs in emulator](local_log_location.png)
 
 
->For more details on logging, check out the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/logging.html">Logging</a>.
+>Further information on logging can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/logging.html">Logging</a>.
 
-Congratulations! You have explored how the logging library can be used to debug or support a deployed application.
-
-The blog series <a target="_blank" href="https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-1/">Step by Step with the SAP Cloud Platform SDK for Android</a> may also be of interest.
+Congratulations! You have explored how the logging feature can be used to debug or support a deployed application.
 
 [DONE]
 [ACCORDION-END]
