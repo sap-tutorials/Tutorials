@@ -16,7 +16,7 @@ author_profile: https://github.com/HeyTomBeck
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand API Description File)]
+[ACCORDION-BEGIN [Step 1: ](Understand API description file)]
 
 The `hello_world.yaml` API description file, created in the previous tutorial, is used to describe the exact HTTP interface to the chaincode.
 
@@ -29,7 +29,7 @@ It's important is to understand that this `.yaml` file is then used in two diffe
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand HTTP Verb Mapping to Chaincode Calls)]
+[ACCORDION-BEGIN [Step 2: ](Understand HTTP verb mapping to chaincode calls)]
 
 An HTTP rich set of verbs are used in a specific way for REST calls to mimic the typical database Create, Read, Update, and Delete (CRUD) operations.
 
@@ -53,7 +53,7 @@ In this chaincode example, we will be using **POST** and **GET** calls.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Understand Chaincode Paths)]
+[ACCORDION-BEGIN [Step 3: ](Understand chaincode paths)]
 
 The paths section of chaincode is used to define a rich definition of the REST-based API, and all Swagger features can be used to describe the API. Two special cases apply:
 
@@ -64,7 +64,7 @@ The paths section of chaincode is used to define a rich definition of the REST-b
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Define Chaincode Post Path)]
+[ACCORDION-BEGIN [Step 4: ](Define chaincode post path)]
 
 To define the chaincode post path (used for invoking the chaincode), open your `hello_world.yaml` file with a text editor and copy and paste the following lines into it:
 
@@ -101,7 +101,7 @@ Note that this example also includes the consumes section. This sets the default
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Define Get Path)]
+[ACCORDION-BEGIN [Step 5: ](Define get path)]
 
 To define the chaincode get path (used for querying the chaincode), copy and paste the following lines below the previously copied post path:
 

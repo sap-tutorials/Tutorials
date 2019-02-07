@@ -18,7 +18,7 @@ author_profile: https://github.com/HeyTomBeck
   - How Hyperledger Fabric chaincode is structured
   - How to create the Hyperledger Fabric chaincode manifest file
 
-[ACCORDION-BEGIN [Step 1: ](Understand Hyperledger Fabric Chaincode)]
+[ACCORDION-BEGIN [Step 1: ](Understand Hyperledger Fabric chaincode)]
 
 Hyperledger chaincode consists of small programs (also called smart contracts) that run directly on the Hyperledger nodes. Each chaincode contains specific application logic, which in the minimal case is purely the reading and writing of data. Chaincode has an external API that exposes its business logic and uses internal APIs to interact directly with the Hyperledger node. Chaincode programs are currently programmed in the GO programming language. Further programming languages may be supported in the future.
 
@@ -31,7 +31,7 @@ In the following steps we will create a "Hello World" example, starting with the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Chaincode Directory Structure)]
+[ACCORDION-BEGIN [Step 2: ](Create chaincode directory structure)]
 
 Create a new folder and name this `helloWorld`:
 
@@ -46,7 +46,7 @@ This is the source folder for your chaincode.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Manifest file)]
+[ACCORDION-BEGIN [Step 3: ](Create manifest file)]
 
 Within your `helloWorld` folder, create a new text file and name this `chaincode.yaml`:
 
@@ -79,7 +79,7 @@ This manifest file text includes an SAP disclaimer, which is purely input as a c
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create API Description File)]
+[ACCORDION-BEGIN [Step 4: ](Create API description file)]
 
 SAP Cloud Platform Blockchain Service provides a gateway that exposes all chaincode functions as normal REST APIs. You achieve this by providing an `OpenAPI` description of the REST API that maps onto the chaincode functions. You do this with a YAML document which is written along with the GO language chaincode. The YAML document describes exactly how each function can be accessed via a REST call, which parameters are available, and how the parameters should be passed to the chaincode.
 
@@ -108,7 +108,7 @@ Again, this includes an SAP disclaimer, and this can be substituted for your own
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create Source Code File)]
+[ACCORDION-BEGIN [Step 5: ](Create source code file)]
 
 When developing chaincode, the next step is to write the GO program itself (which is your chaincode). Within the program, there can be any number of functions, each function with any number of 'unnamed' parameters. The caller of any function must know the name of the function and the exact sequence of parameters. In usual Hyperledger Fabric setups, access to chaincode is only via a SDK that requires `HTTPS/gRPC` access to the chaincode.
 
