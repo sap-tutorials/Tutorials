@@ -7,7 +7,7 @@ tags: [products>sap-web-ide, topic>odata, tutorial>beginner ]
 time: 20
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html)
  - Select a Cloud Foundry space. See [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
 
@@ -70,7 +70,11 @@ This means that the CDS facilities in SAP Web IDE will do the right things at th
 
 [ACCORDION-BEGIN [Step 4: ](Check your CF quota)]
 
-Before proceeding, it's worth checking that you have enough quota available for this tutorial. Go to the Cloud Foundry space for your trial account in your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome) -- follow the Cloud Foundry Trial link, selecting your subaccount to see the spaces within the organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something like this:
+Before proceeding, it's worth checking that you have enough quota available for this tutorial. Go to the Cloud Foundry space for your trial account in your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome) -- follow the Cloud Foundry Trial link, selecting your subaccount where you should then see the subaccount overview, which will look something like this:
+
+![Subaccount overview](subaccount-overview.png)
+
+Select the **Spaces** menu item on the left to see the space(s) within the Cloud Foundry organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something like this:
 
 ![CF space quota details](cf-space-quota-details.png)
 
@@ -83,7 +87,7 @@ In this example, there is 1GB memory free, which is more than enough for the ODa
 
 So you can see what's going on throughout the rest of this tutorial, open the SAP Web IDE console with menu path **View** > **Console**. If there's already content displayed in it, you can clear it with menu path **View** > **Clear Console**.
 
-> You may need to switch back from the Preferences perspective to the Development perspective first. 
+> You may need to switch back from the Preferences perspective to the Development perspective first.
 
 Notice there's also a **Run Console** option too -- you'll be switched to that automatically later in this tutorial when you execute the generated OData service for the first time.
 
@@ -100,7 +104,7 @@ Use the project wizard to start a new project, using menu path **File** > **New*
 
 In the **Basic Information** step, enter **`Products`** for the project name.
 
-In the **Project Details** step, select **`Java`** for the Service, **`my.app`** for the Java Package, and **`SAP HANA Database`** for the Database. 
+In the **Project Details** step, select **`Java`** for the Service, **`my.app`** for the Java Package, and **`SAP HANA Database`** for the Database.
 
 When you finish the template wizard, you should have a project in your workspace that looks something like this:
 
