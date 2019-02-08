@@ -63,9 +63,14 @@ If you are missing some inspiration, use the following articles content to creat
 
 Create a zip out of these text files.
 
+> ###**Note for MacOS users:** the built-in ZIP feature for MacOS will create an improper ZIP archive file.
+> You should instead use the following command to create your ZIP archive:
+> ```
+```
+
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
