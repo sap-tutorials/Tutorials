@@ -95,7 +95,7 @@ If you are missing some inspiration, use the following articles content to creat
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
@@ -108,7 +108,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial--doc-feats.cfapps.eu10.hana.ondemand.com/api/v2alpha1/text/feature-extraction`</nobr>
+<nobr>URL<nobr>          | <nobr>`https://mlftrial-doc-feats.cfapps.eu10.hana.ondemand.com/api/v2alpha1/text/feature-extraction`</nobr>
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 
@@ -174,7 +174,7 @@ You should receive a response that includes for each text an entry with the feat
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
