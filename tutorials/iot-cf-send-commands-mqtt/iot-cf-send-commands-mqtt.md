@@ -22,25 +22,35 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ---
 
+You need a tenant and a user with administrator role. For more information, please refer to the tutorial [Create User and Tenant](https://developers.sap.com/tutorials/iot-cf-create-user-tenant.html).
+
+You have to create a device model for the Internet of Things Service using the Device Management API. For more information, please refer to section [Device Model](https://help.sap.com/viewer/2f1daa938df84fd090fa2a4da6e4bc05/Cloud/en-US/41c5d53fee864f2482b965cf4127a730.html) in the *Introduction*.
+
 [ACCORDION-BEGIN [Step 1: ](Create a Capability)]
 
-1.  Open the Internet of Things API Service UI.
+In the following, a capability is created. A capability can be reused since it can be assigned to multiple sensor types. Each capability can have one or many properties.
+
+1.  Open the Device Management API.
 
     ```bash
-    http://<HOST_NAME>/iot/core/api/v1/doc/
+    http://<HOST_NAME>/<INSTANCE_ID>/iot/core/api/v1/doc/
     ```
 
     You will see the main page with the categories overview.
 
 2.  Choose *Authorize*.
 
-3.  Log on with your user credentials.
+3.  Enter your user credentials.
 
-4.  In the *Capabilities* category, choose the `POST /capabilities` request.
+4.  Choose *Authorize*.
 
-5.  Choose *Try it out*.
+5.  In the *Capabilities* category, choose the `POST /tenant/{tenantId}/capabilities` request.
 
-6.  Copy the *JSON string* and replace `{capabilityName}` with your capability name, replace `{propertyName}` with property name, replace `{dataTypeName}` with the data type for the property, and replace `{unitOfMeasureName}` with the unit of the measure.
+6.  Choose *Try it out*.
+
+7.  In the `tenantId field`, enter the ID of your tenant.
+
+8.  Copy the *JSON string* and replace `{capabilityName}` with your capability name, replace `{propertyName}` with property name, replace `{dataTypeName}` with the data type for the property, and replace `{unitOfMeasureName}` with the unit of the measure.
 
     ```bash
     {
@@ -56,11 +66,11 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     ```
 
     > Note:
-    > Supported data types are: integer, long, float, double, boolean, string, binary, and date. For more information, please refer to section [Device Model](https://help.sap.com/viewer/2f1daa938df84fd090fa2a4da6e4bc05/Cloud/en-US/41c5d53fee864f2482b965cf4127a730.html) in the *Introduction*.
+    >  Supported data types are: integer, long, float, double, boolean, string, binary, and date. For more information, please refer to section [Device Model](https://help.sap.com/viewer/2f1daa938df84fd090fa2a4da6e4bc05/Cloud/en-US/41c5d53fee864f2482b965cf4127a730.html) in the *Introduction*.
     >
     >
 
-7.  Paste the modified *JSON string* in the *Example Value* field for the POST request.
+9.  Paste the modified *JSON string* in the *Example Value* field for the POST request.
 
     ```bash
     {
@@ -83,9 +93,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-8.  Choose *Execute*.
+10.  Choose *Execute*.
 
-9.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created capability.
+11.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created capability.
 
     ```bash
     {
@@ -105,17 +115,13 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
           "name": "Speed",
           "dataType": "float",
           "unitOfMeasure": "mph",
-          "formatter": {
-            "scale": 0,
-            "shift": 0,
-            "swap": false
-          }
+         }
         }
       ]
     }
     ```
 
-10.  Note down the `id` of the capability.
+12.  Note down the `id` of the capability.
 
 [DONE]
 
@@ -125,11 +131,13 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 1.  Navigate to the `SensorTypes` category.
 
-2.  In the `SensorTypes` category, choose the `POST /sensorTypes` request.
+2.  In the `SensorTypes` category, choose the `POST /tenant/{tenantId}/sensorTypess` request.
 
 3.  Choose *Try it out*.
 
-4.  Copy the *JSON string* and replace `{sensorTypeName}` with your sensor type name and replace `{capabilityId}` with the `id` of the capability noted down before.
+4.  In the `tenantId field`, enter the ID of your tenant.
+
+5.  Copy the *JSON string* and replace `{sensorTypeName}` with your sensor type name and replace `{capabilityId}` with the `id` of the capability noted down before.
 
     ```bash
     {
@@ -143,7 +151,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-5.  Paste the *JSON string* in the *Example Value* field for POST request.
+6.  Paste the *JSON string* in the *Example Value* field for POST request.
 
     ```bash
     {
@@ -157,9 +165,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-6.  Choose *Execute*.
+7.  Choose *Execute*.
 
-7.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created sensor type
+8.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created sensor type
 
     ```bash
     {
@@ -175,7 +183,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-8.  Note down the `id` of the sensor type.
+9.  Note down the `id` of the sensor type.
 
 [DONE]
 
@@ -183,49 +191,57 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 [ACCORDION-BEGIN [Step 3: ](Create an MQTT Device)]
 
+In the following, a device entity is created. The device entity is assigned to one specific gateway.
+
 1.  Navigate to the *Gateways* category.
 
-2.  In the *Gateways* category, choose the `GET /gateways` request.
+2.  In the *Gateways* category, choose the `GET /tenant/{tenantId}/gateways` request.
 
 3.  Choose *Try it out*.
 
-4.  Choose *Execute*.
+4.  In the `tenantId field`, enter the ID of your tenant.
 
-5.  Scroll to the response body and note down the `id` of the gateway with the name `IoT Gateway MQTT` (for example, `2`).
+5.  Choose *Execute*.
+
+6.  Scroll to the response body and note down the `id` of the gateway with the name `IoT Gateway MQTT` (for example, `2`).
 
     ```bash
     [
-      {
-        "id": "2",
-        "name": "IoT Gateway MQTT",
-        "protocolId": "mqtt",
-        "status": "online",
-        "type": "cloud",
-        "creationTimestamp": 1525261225950
-      },
-      {
-        "id": "3",
-        "name": "IoT Gateway REST",
-        "protocolId": "rest",
-        "status": "online",
-        "type": "cloud",
-        "creationTimestamp": 1525261230192
-      }
-    ]
+  {
+    "id": "2",
+    "name": "MQTT Gateway",
+    "protocolId": "mqtt",
+    "status": "online",
+    "creationTimestamp": 152526122595,
+    "alternateId": "GATEWAY_CLOUD_MQTT",
+    "type": "cloud"
+  },
+  {
+    "id": "3",
+    "name": "REST Gateway",
+    "protocolId": "rest",
+    "status": "online",
+    "creationTimestamp": 1525261230192,
+    "alternateId": "GATEWAY_CLOUD_REST",
+    "type": "cloud"
+  }
+]
     ```
 
     > Note:
-    > The IDs of the gateways are assigned in order of the appearance.
+    >  The IDs of the gateways are assigned in order of the appearance.
     >
     >
 
-6.  Navigate to the *Devices* category.
+7.  Navigate to the *Devices* category.
 
-7.  In the *Devices* category, choose the `POST /devices` request.
+8.  In the *Devices* category, choose the `POST /tenant/{tenantId}/devices` request.
 
-8.  Choose *Try it out*.
+9.  Choose *Try it out*.
 
-9.  Copy the *JSON string* and replace `{gatewayId}` with the `id` you noted down previously and replace `{deviceName}` with your device name.
+10. In the `tenantId field`, enter the ID of your tenant.
+
+11.  Copy the *JSON string* and replace `{gatewayId}` with the `id` you noted down previously and replace `{deviceName}` with your device name.
 
     ```bash
     {
@@ -235,7 +251,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
     ```
 
-10. Paste the *JSON string* in the *Example Value* field for POST request.
+12. Paste the *JSON string* in the *Example Value* field for POST request.
 
     ```bash
     {
@@ -245,9 +261,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
     ```
 
-11. Choose *Execute*.
+13. Choose *Execute*.
 
-12. Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created device.
+14. Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created device.
 
     ```bash
     {
@@ -256,17 +272,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
       "name": "MyDevice",
       "alternateId": "cb1bc8935375529e",
       "creationTimestamp": 1525757977416,
-      "status": "fullyFunctional",
       "online": true,
-      "sensors": [
-        {
-          "id": "10",
-          "deviceId": "5",
-          "sensorTypeId": "0",
-          "name": "Sensor: 0:0:0:0",
-          "alternateId": "0:0:0:0"
-        }
-      ],
       "authentications": [
         {
           "type": "clientCertificate"
@@ -275,7 +281,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-13. Note down the `id` and the `alternateId` of the device.
+15. Note down the `id` and the `alternateId` of the device.
 
 [DONE]
 
@@ -285,11 +291,13 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 1.  Navigate to the *Sensors* category.
 
-2.  In the *Sensors* category, choose the `POST /sensors` request.
+2.  In the *Sensors* category, choose the `POST /tenant/{tenantId}/sensors` request.
 
 3.  Choose *Try it out*.
 
-4.  Copy the *JSON string* and replace `{deviceId}` with the `id` of the device noted down before, replace `{sensorName}` with your sensor name, and replace `{sensorTypeId}` with the `id` of the sensor type noted down before.
+4.  In the `tenantId field`, enter the ID of your tenant.
+
+5.  Copy the *JSON string* and replace `{deviceId}` with the `id` of the device noted down before, replace `{sensorName}` with your sensor name, and replace `{sensorTypeId}` with the `id` of the sensor type noted down before.
 
     ```bash
     {
@@ -299,7 +307,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-5.  Paste the *JSON string* in the *Example Value* field for POST request.
+6.  Paste the *JSON string* in the *Example Value* field for POST request.
 
     ```bash
     {
@@ -309,9 +317,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-6.  Choose *Execute*.
+7.  Choose *Execute*.
 
-7.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created sensor.
+8.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created sensor.
 
     ```bash
     {
@@ -323,7 +331,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-8.  Note down the `id` of the sensor.
+9.  Note down the `id` of the sensor.
 
 [DONE]
 
@@ -331,37 +339,43 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 [ACCORDION-BEGIN [Step 5: ](Generate the Device Certificate)]
 
+**Prerequisites:**
+
+You have installed OpenSSL. A description on how to install OpenSSL can be found in the tutorial [Install OpenSSL](https://developers.sap.com/tutorials/iot-cf-install-openssl.html).
+
 1.  Log on to the Internet of Things Service Cockpit with your user credentials.
 
     ```bash
-    https://<HOST_NAME>/iot/cockpit/
+    https://<HOST_NAME>/<INSTANCE_ID>/iot/cockpit/
     ```
 
-2.  On the home page, select a tenant first and then use the main menu to navigate to the *Devices* section of the *Device Management* category.
+2.  On the *My Tenants* page, select a tenant first and then use the main menu to navigate to the *Devices* section of the *Device Management* category.
 
 3.  Choose the previously created device.
 
 4.  On the device details page, choose the *Certificate* tab.
 
-5.  In the *Generate Certificate* dialog, select the type of certificate you want to generate. For this tutorial please use *PEM* and choose *Generate*.
+5.  In the *Generate Certificate* dialog, select the type of certificate you want to generate. For this tutorial, please use `pem`
 
     > Note:
-    > Supported types are PEM and P12. Based on the certificate type you choose, the system downloads a `*-device_certificate.pem` or `*-device_certificate.p12` and a dialog opens, which shows the *Secret* key.
+    >  Supported types are PEM and P12. Based on the certificate type you choose, the system downloads a `*-device_certificate.pem` or `*-device_certificate.p12` and a dialog opens, which shows the *Secret* key.
     >
     >
 
-6.  Select and copy the displayed *Secret* key before closing the dialog or leaving the page, as it cannot be restored at a later point in time.
+6. Choose *Generate*.
 
-7.  Rename `*-device_certificate.pem` to `certificate.pem`.
+7.  Select and copy the displayed *Secret* key before closing the dialog or leaving the page, as it cannot be restored at a later point in time.
 
-8.  Open the console in the directory where the previously downloaded `*.pem` file is located. Enter the following command in the terminal:
+8.  Rename `*-device_certificate.pem` to `certificate.pem`.
+
+9.  Open the console in the directory where the previously downloaded `*.pem` file is located. Enter the following command in the terminal:
 
     ```bash
     openssl pkcs12 -export -in certificate.pem -inkey certificate.pem -out client.ks
     ```
 
     > Note:
-    > Use the copied *Secret* key from the previous step for all password requests (import pass phrase and Export Password).
+    >  Use the copied *Secret* key from the previous step for all password requests (import pass phrase and Export Password).
     >
     >
 
@@ -375,6 +389,8 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 **Prerequisites:**
 
+-   You have installed the MQTT client (Paho). A description of how to install the Paho client can be found in the tutorial [Install the Paho Client](https://developers.sap.com/tutorials/iot-cf-install-paho-client.html).
+
 -   You have created the device model in step 1-4.
 
 -   You have generated a certificate for your MQTT device and wrote down the secret key.
@@ -385,11 +401,13 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 1.  Open the Paho client.
 
     > Note:
-    > You must be connected to public Internet. Most corporate networks do not work due to port and protocol restrictions.
+    >  You must be connected to public Internet. Most corporate networks do not work due to port and protocol restrictions.
     >
     >
 
 2.  Choose **+** in the *Connections* tab to create a new connection.
+
+    The system opens a new tab with the connection details.
 
 3.  Choose the *Options* tab of the connection.
 
@@ -398,14 +416,14 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 5.  Choose *Browse* for *Key Store Location* and choose the `client.ks` file downloaded for the device.
 
     > Note:
-    > You might need to change the file type to **`*.*`** in the file selection menu.
+    >  You might need to change the file type to **`*.*`** in the file selection menu.
     >
     >
 
-6.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like Verisign.
+6.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority, for example Verisign.
 
     > Note:
-    > You might need to change the file type to **`*.*`** in the file selection menu.
+    >  You might need to change the file type to **`*.*`** in the file selection menu.
     >
     >
 
@@ -427,30 +445,32 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
     Topic: `commands/<DEVICE_ALTERNATE_ID>`
 
-14. Enter the recorded `<DEVICE_ALTERNATE_ID>` as a string: `commands/cb1bc8935375529e`.
+    Enter the recorded `<DEVICE_ALTERNATE_ID>` as a string: `commands/cb1bc8935375529e`.
 
-15. Choose *Subscribe*.
+14. Choose *Subscribe*.
 
     The Paho client is now connected to the device. Incoming commands will appear in the *History* tab.
 
 
 **Sending Commands Using the Internet of Things API Service**
 
-1.  Switch back to the Internet of Things API Service UI.
+1.  Switch back to the Device Management API.
 
     ```bash
-    http://<HOST_NAME>/iot/core/api/v1/doc/
+    http://<HOST_NAME>/<INSTANCE_ID>/iot/core/api/v1/doc/
     ```
 
     You will see the main page with the categories overview.
 
 2.  Navigate to the *Devices* category.
 
-3.  In the *Devices* category, choose the `POST /devices/{deviceId}/commands` request.
+3.  In the *Devices* category, choose the `POST /tenant/{tenantId}/devices/{deviceId}/commands` request.
 
 4.  Choose *Try it out*.
 
-5.  Copy the *JSON string* and replace `{sensorId}` and `{capabilityId}` with the `ids` you noted down previously.
+5.  In the `tenantId field`, enter the ID of your tenant.
+
+6.  Copy the *JSON string* and replace `{sensorId}` and `{capabilityId}` with the `ids` you noted down previously.
 
     ```bash
     {
@@ -464,7 +484,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-6.  Enter the `{deviceId}` you noted down previously as *Unique identifier of a device* and paste the *JSON string* in the *Example Value* field for the POST request.
+7.  Enter the `{deviceId}` you noted down previously as *Unique identifier of a device* and paste the *JSON string* in the *Example Value* field for the POST request.
 
     ```bash
     {
@@ -478,9 +498,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     }
     ```
 
-7.  Choose *Execute*
+8.  Choose *Execute*
 
-8.  Scroll to the *Server response* body and *Code*.
+9.  Scroll to the *Server response* body and *Code*.
 
     In case of success the response code is `200` and the *Response body* contains a success message.
 
@@ -503,6 +523,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     {"sensorAlternateId":"07c0a15c0d0baeb7","capabilityAlternateId":"e6ae441b8820c91f"
     ,"command":{"LED":"true","Buzzer":"true","Speed":50.0}}
     ```
+
 [DONE]
 
 [ACCORDION-END]

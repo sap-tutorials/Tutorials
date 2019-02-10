@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 During this tutorial, you will build on what you have learned during the previous tutorial about Data Transform. You will build a more complicated Data Transform now. This will aggregate the `Events.parquet` file per country. It will store the result of the aggregation in a table in SAP Vora:
 
@@ -209,6 +210,3 @@ You will notice that the table has records per country for events Humidity and T
 [VALIDATE_1]
 
 [ACCORDION-END]
-
-
-

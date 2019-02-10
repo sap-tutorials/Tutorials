@@ -15,6 +15,8 @@ You will learn how to create different analytic models using text analytics base
 ### Time to Complete
 **20 Min**
 
+**Note**: This tutorial is meant to be completed at the stations at SAPPHIRE NOW. Find the full version here: [https://developers.sap.com/tutorials/xsa-calculation-views-anonymization-k.html](https://developers.sap.com/tutorials/xsa-calculation-views-anonymization-k.html)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Contribute to the pool of Big Data)]

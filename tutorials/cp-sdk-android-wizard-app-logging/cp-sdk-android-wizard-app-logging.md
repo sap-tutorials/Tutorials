@@ -7,6 +7,9 @@ tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap
 time: 20
 ---
 
+## Prerequisites  
+- Completed [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html)
+
 ## Details
 ### You will learn  
 - How to use the Logging component to log messages
@@ -23,19 +26,22 @@ On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and enter **
 Note that below method contains two LOGGER statements:
 ```Java
 @Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		LOGGER.debug("onOptionsItemSelected: " + item.getTitle());
-		if (item.getItemId() == SETTINGS_SCREEN_ITEM) {
-			LOGGER.debug("settings screen menu item selected.");
-			Intent intent = new Intent(this, SettingsActivity.class);
-			this.startActivityForResult(intent, SETTINGS_SCREEN_ITEM);
-			return true;
-        }
-		return false;
-	}
+public boolean onOptionsItemSelected(MenuItem item) {
+    LOGGER.debug("onOptionsItemSelected: " + item.getTitle());
+    switch (item.getItemId()) {
+        case SETTINGS_SCREEN_ITEM:
+            LOGGER.debug("settings screen menu item selected.");
+            Intent intent = new Intent(this, SettingsActivity.class);
+            this.startActivityForResult(intent, SETTINGS_SCREEN_ITEM);
+            return true;
+
+				default:
+		        return false;
+    }
+}
 ```
 
-These message will be logged when the app's log level is set to Debug or Path and the app's Settings menu item is clicked.
+These messages will be logged when the app's log level is set to Debug or Path and the app's Settings menu item is opened.
 
 [DONE]
 [ACCORDION-END]
@@ -112,11 +118,9 @@ Additionally, you can access the logs locally on an emulator. The file system of
 ![View logs in emulator](local_log_location.png)
 
 
->For more details on logging, check out the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/logging.html">Logging</a>.
+>Further information on logging can be found at [Logging](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/logging.html).
 
-Congratulations! You have explored how the logging library can be used to debug or support a deployed application.
-
-The blog series <a target="_blank" href="https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-1/">Step by Step with the SAP Cloud Platform SDK for Android</a> may also be of interest.
+Congratulations! You have explored how the logging feature can be used to debug or support a deployed application.
 
 [DONE]
 [ACCORDION-END]

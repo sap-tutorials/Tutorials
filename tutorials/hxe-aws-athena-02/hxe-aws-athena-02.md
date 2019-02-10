@@ -97,7 +97,20 @@ Paste the following SQL statement then click on **Run query**:
 select count(distinct year) from gdelt_athena.events
 ```
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Check the database objects)]
+
+You now check the created table object.
+
+Paste the following SQL statement then click on **Run query**:
+
+```sql
+describe formatted gdelt_athena.events
+```
+
 Provide an answer to the question below then click on **Validate**.
- 
+
 [VALIDATE_1]
 [ACCORDION-END]

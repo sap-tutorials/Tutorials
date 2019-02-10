@@ -6,6 +6,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 - How to use a **Data Generator** to generate random sample data
 - How to visualize the generated data via a **Terminal**
@@ -86,5 +87,3 @@ Stop the pipeline by clicking **Stop** (you find it next to the **Run** button).
 
 
 [ACCORDION-END]
-
-

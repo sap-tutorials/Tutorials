@@ -21,14 +21,15 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things,topic>
 ### Time to Complete
 15 min
 
+## Next Steps
+- **Tutorials:** [Create User and Tenant](https://developers.sap.com/tutorials/iot-cf-create-user-tenant.html)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Service Instance)]
 
 > Note:
-> You have to contact the SAP Sales team to purchase a license for the SAP Cloud Platform Internet of Things Service. You can reach the SAP Sales team at [https://cloudplatform.sap.com](https://cloudplatform.sap.com) → *Contact Us*.
->
->
+>  Contact the SAP Sales team to purchase a license for the SAP Cloud Platform Internet of Things Service. You can reach the SAP Sales team at [https://cloudplatform.sap.com](https://cloudplatform.sap.com) → *Contact Us*.
 
 1.  Log on to the [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com) with your user credentials.
 
@@ -76,27 +77,39 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things,topic>
         }        
     ```
 
+    > Note:
+     Updating parameters for processing services is possible through the Cloud Foundry Command Line Interface (cf CLI). For more information, please refer to section [update-service](https://cli.cloudfoundry.org/en-US/cf/update-service.html) in the Cloud Foundry CLI Reference Guide.
+
     Choose *Next*.
 
     > Note:
-    > An [SAP IoT Application Enablement](https://help.sap.com/viewer/p/SAP_IOT_APPLICATION_SERVICES) integration can be triggered by creating a ticket in the [SAP Support Portal](https://support.sap.com/en/index.html) using the component **BC-NEO-SVC-IOT**.
+     An [SAP IoT Application Enablement](https://help.sap.com/viewer/p/SAP_IOT_APPLICATION_SERVICES) integration can be triggered by creating a ticket in the [SAP Support Portal](https://support.sap.com/en/index.html) using the component **BC-NEO-SVC-IOT**.
+
+    > The integration needs to be triggered before modeling any entities in the Internet of Things Service. Please provide
+
+    > - the *URL* of the targeted Internet of Things Service instance
+    > - the *subaccount ID* of your SAP IoT Application Enablement tenant
+
+    > within your ticket.
     >
-    > The integration needs to be triggered before modeling any entities in the Internet of Things Service.
-    >
-    > Please provide the *URL* of the targeted Internet of Things Service instance and the *subaccount ID* of your SAP IoT Application Enablement tenant within your ticket. For more information, how to find your *subaccount ID*, please refer to section [Navigate to Global Accounts and Subaccounts](https://help.sap.com/viewer/e275296cbb1e4d5886fa38a2a2c78c06/Cloud/en-US/0874895f1f78459f9517da55a11ffebd.html) in the SAP Cloud Platform documentation.
-    >
+    For more information, how to find your *subaccount ID*, please refer to section [Navigate to Global Accounts and Subaccounts](https://help.sap.com/viewer/e275296cbb1e4d5886fa38a2a2c78c06/Cloud/en-US/0874895f1f78459f9517da55a11ffebd.html) in the SAP Cloud Platform documentation.
     >
 
 10. Choose *Next*.
 
-11. Enter an *Instance Name* for your service instance and choose *Finish*.
+11. Enter an *Instance Name* for your service instance.
 
-12. Choose *Open Dashboard* in the *Actions* column to open the Internet of Things Service Cockpit of the service instance you have created.
+12. Choose *Finish*.
+
+    You get a notification that the creation of service instance is in progress.
+
+13. To open the Internet of Things Service Cockpit of the service instance, you have created choose *Open Dashboard* in the *Actions* column.
+
+    To log on to the Internet of Things Service Cockpit, first create a service key in the Internet of Things Service Cockpit. For more information, please refer to section *Create a Service Key* in this tutorial.
 
 
     > Note:
-    > To log on to the Internet of Things Service Cockpit, first create a service key in the Internet of Things Service Cockpit. For more information, please refer to section *Create a Service Key* in this tutorial.It may take some time after the creation process has finished before the Internet of Things Service Cockpit can be reached.
-    >
+     It may take some time after the creation process has finished before the Internet of Things Service Cockpit can be reached.
     >
 
 [VALIDATE_1]
@@ -128,12 +141,15 @@ You have created a service instance as described in the previous step. To log on
     A new service key for your service instance is created. It contains the Internet of Things Service Cockpit `password`, `url`, and `username`.
 
     ```bash
-        {
-        	"password": "r3B3KkyXEmuSyDF",
-        	"url": "https://80e91683-c952-4cef-ae88-37edb89410f7.eu10.cp.iot.sap",
-        	"username": "root"
-        }
+    {
+"password": "r3B3KkyXEmuSyDF",
+"instanceId": "80e91683-c952-4cef-ae88-37edb89410f7",
+"cockpitUrl": "https://80e91683-c952-4cef-ae88-37edb89410f7.eu10.cp.iot.sap/iot/cockpit",
+"username": "root"
+}
+
     ```
+
 [DONE]
 
 [ACCORDION-END]
@@ -145,6 +161,7 @@ You have created a service instance as described in the previous step. To log on
 2.  Choose *Services* > *Service Instances*.
 
 3.  To delete a service instance choose the recycle bin icon in the *Actions* column.
+
 
 [DONE]
 
