@@ -13,10 +13,10 @@ time: 10
 ## Details
 ### You will learn  
   - How to change your settings
-  - How to enable new features
+  - How to enable new extensions
   - How to create a new workspace
 
- In this tutorial, you'll set your theme preferences, connect to your trial Cloud Foundry endpoint on SAP Cloud Platform, and enable some features.
+ In this tutorial, you'll set your theme preferences, connect to your trial Cloud Foundry endpoint on SAP Cloud Platform, and enable some extensions.
 
 ---
 
@@ -74,7 +74,7 @@ Any changes you need to make to the configuration of your SAP Web IDE will be do
 
 ![SAP Web IDE homepage with gear icon highlighted](5.png)
 
-If you want to enable new features or plugins, change themes, or update other settings, the **Preferences** pane will host most of these configuration options.
+If you want to enable new extensions, change themes, or update other settings, the **Preferences** pane will host most of these configuration options.
 
 Let's start on this tab, so click the gear icon to move to your **Preferences** pane.
 
@@ -144,15 +144,11 @@ Enabling new extensions may cause new navigation items to pop up on your SAP Web
 [ACCORDION-BEGIN [Step 9: ](Create a new workspace)]
 If you need to compartmentalize your code and extension set, SAP Web IDE enables you to create new workspaces with different extensions installed. Keep your environments clean and organized!
 
-To create a new workspace, click on your **`Name@Workspace`** in the upper-right corner.
+To create a new workspace, choose **Tools** > **Workspace Manager** or click **`<Name>@Workspace`** in the upper-right corner.
 
 ![workspace pointed out on home page](17.png)
 
-Select **Workspace Manager** from the list that drops down.
-
-![workspace list with manager highlighted](18.png)
-
-In the **Workspace Manager**, you can see a list of all your current workspaces as well as how many projects each has and what features are enabled. You can also delete old workspaces here.
+In the **Workspace Manager**, you can see a list of all your current workspaces as well as how many projects each has and what extensions are enabled. You can also delete old workspaces here.
 
 To create a new workspace, click **Create Workspace**.
 
