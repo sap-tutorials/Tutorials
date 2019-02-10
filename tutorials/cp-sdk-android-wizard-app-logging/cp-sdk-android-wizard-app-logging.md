@@ -7,6 +7,9 @@ tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap
 time: 20
 ---
 
+## Prerequisites  
+- Completed [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html)
+
 ## Details
 ### You will learn  
 - How to use the Logging component to log messages
@@ -38,7 +41,7 @@ public boolean onOptionsItemSelected(MenuItem item) {
 }
 ```
 
-These message will be logged when the app's log level is set to Debug or Path and the app's Settings menu item is clicked.
+These messages will be logged when the app's log level is set to Debug or Path and the app's Settings menu item is opened.
 
 [DONE]
 [ACCORDION-END]
@@ -115,7 +118,7 @@ Additionally, you can access the logs locally on an emulator. The file system of
 ![View logs in emulator](local_log_location.png)
 
 
->Further information on logging can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/logging.html">Logging</a>.
+>Further information on logging can be found at [Logging](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/logging.html).
 
 Congratulations! You have explored how the logging feature can be used to debug or support a deployed application.
 
