@@ -1,6 +1,8 @@
 ---
 title: Explore and Customize Your SAP Web IDE Full-Stack
 description: Get to know your new development environment by setting some of the preferences.
+author_name: Julia Hornik
+author_profile: Julia Hornik
 auto_validation: true
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
