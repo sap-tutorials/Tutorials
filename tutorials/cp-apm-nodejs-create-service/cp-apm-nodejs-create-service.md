@@ -11,7 +11,7 @@ time: 30
 
 
 ## Prerequisites
-- You have installed [Node.js](https://nodejs.org/en/) version 8 or higher.
+- You have installed [Node.js](https://nodejs.org/en/) version 8.9 or higher.
 - You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows users only) You have installed the [`SQLite`](https://sqlite.org/download.html) tools for Windows.
 
