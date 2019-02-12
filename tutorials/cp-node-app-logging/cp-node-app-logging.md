@@ -113,7 +113,7 @@ There you can already see what happened at the deployment process which will be 
 The second option is to stream the logs. Unlike the dumping, streaming of logs can be helpful for special use cases like live-debugging your application. The application writes log messages when it serves web requests. Run the following command to access them 'live':
 
 ```:
-cf logs mayapp | grep -v RTR
+cf logs myapp | grep -v RTR
 ```
 
 Every time someone accesses the application via the according URL your terminal will print an new line. `'grep -v RTR'` excludes specific logs from the so called Router. This could also be omitted and is only for demonstration purposes.

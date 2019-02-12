@@ -54,9 +54,15 @@ It contains flower photos available under the creative-commons license.
 
 [ACCORDION-BEGIN [Step](Download and install Python)]
 
-In order to download and prepare the image dataset, a Python script example will be provided, therefore you will first need to [download and install Python](https://www.python.org/downloads/).
+In order to download and prepare the image dataset, a Python script example will be provided, therefore you will first need to download and install Python.
 
-Once Python is installed, you might need to install the following packages using the following `pip` command:
+When installing Python on Windows, make sure to check/enable the **Add Python to the PATH** which will ease the next steps.
+
+The Python installer can be found here (make sure to pick a **64 bits installer**):
+
+- `https://www.python.org/downloads/`
+
+Once Python is installed, you will need to install the following packages using the following `pip` command:
 
 Open a terminal console.
 
@@ -65,6 +71,10 @@ Execute the following command
 ```shell
 pip install wget numpy
 ```
+
+> ### **Note:** if pip is not installed or if you are having issue running it, you can find details about how to install it here:
+>
+> - `https://packaging.python.org/tutorials/installing-packages/#ensure-you-can-run-pip-from-the-command-line`
 
 Now, execute the following command to validate that Python is properly installed:
 
@@ -83,7 +93,9 @@ Using the below script, you will download and extract the image archive from the
 
  - `http://download.tensorflow.org/example_images/flower_photos.tgz`
 
-Once extracted, the script will split the images across a training, validation and test directory for each category using a 80-10-10% distribution.
+Once extracted, the script will split the images across a training, validation and test directory for each category using a 80-10-10% distribution under the **flowers** directory.
+
+It will also create an additional directory (the ***try*** folder) for you to use later when testing your retrained model.
 
 Save the below Python script in a file named **`prepare_data.py`**:
 
@@ -148,10 +160,6 @@ Then run it as a Python script from your terminal console using the following co
 python prepare_data.py
 ```
 
-It will download the `flower_photos.tgz` file locally, extract its contents then split it into the ***training***, ***validation***, ***test*** sample under the **flowers** directory.
-
-It will also create an addition directory (the ***try*** folder) for you to use later when testing your retrained model.
-
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
@@ -162,15 +170,31 @@ Provide an answer to the question below then click on **Validate**.
 Once configured, you can now transfer the prepared dataset using the following commands:
 
 ```shell
-cd flowers
-cf sapml fs put test flowers/test/
-cf sapml fs put training flowers/training/
-cf sapml fs put validation flowers/validation/
+cf sapml fs put flowers/test/daisy/ flowers/test/daisy/
+cf sapml fs put flowers/test/dandelion/ flowers/test/dandelion/
+cf sapml fs put flowers/test/roses/ flowers/test/roses/
+cf sapml fs put flowers/test/sunflowers/ flowers/test/sunflowers/
+cf sapml fs put flowers/test/tulips/ flowers/test/tulips/
+
+cf sapml fs put flowers/training/daisy/ flowers/training/daisy/
+cf sapml fs put flowers/training/dandelion/ flowers/training/dandelion/
+cf sapml fs put flowers/training/roses/ flowers/training/roses/
+cf sapml fs put flowers/training/sunflowers/ flowers/training/sunflowers/
+cf sapml fs put flowers/training/tulips/ flowers/training/tulips/
+
+cf sapml fs put flowers/validation/daisy/ flowers/validation/daisy/
+cf sapml fs put flowers/validation/dandelion/ flowers/validation/dandelion/
+cf sapml fs put flowers/validation/roses/ flowers/validation/roses/
+cf sapml fs put flowers/validation/sunflowers/ flowers/validation/sunflowers/
+cf sapml fs put flowers/validation/tulips/ flowers/validation/tulips/
 ```
 
-This command will transfer the content of the local test, training and validation folders into the remote storage
+These commands will transfer the content of the local test, training and validation folders into the remote storage.
 
-This set of commands must be executed from the same directory where the Python script was previously
+This set of commands must be executed from the same directory where the Python script was previously executed.
+
+> ### **Warning:** `504 GATEWAY_TIMEOUT`
+> If you encounter a `504 GATEWAY_TIMEOUT` error, then the upload failed and you will need to execute the command again.
 
 For more details about the executed SAP Leonardo Machine Learning foundation plugin CLI command, you can run the following command:
 

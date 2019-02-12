@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Details
-Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
+Please note this tutorial will be removed on 6th February 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 During this tutorial, you will build a task Workflow using the **Pipeline** operator. This Workflow combines both tasks which you created during the previous tutorials into a process which you execute at once.
 
