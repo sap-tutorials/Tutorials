@@ -143,7 +143,7 @@ You will create a simplistic all-in-one service definition.
     cds run
     ```
 
-1. To test your service, go to <http://localhost:4004>.
+1. To test your service, go to `http://localhost:4004`.
 
     You won't see data, because you have not added a data model yet. However, click on the available links and confirm the service is running.
 
@@ -192,9 +192,9 @@ Add service provider logic to return mock data.
 
 5. To test your service, click on these links:
 
-    - <http://localhost:4004/catalog/Books>
+    - `http://localhost:4004/catalog/Books`
 
-    - <http://localhost:4004/catalog/Authors>
+    - `http://localhost:4004/catalog/Authors`
 
     >You should see the mock data you added for the Books and Authors entities.
 
@@ -344,11 +344,12 @@ Your service is now backed by a fully functional database. This means you can re
     ```
 
 1. To test your service, open a web browser and go to:
-    - <http://localhost:4004/catalog/Books>
 
-    - <http://localhost:4004/catalog/Authors>
+    - `http://localhost:4004/catalog/Books`
 
-    - <http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)>
+    - `http://localhost:4004/catalog/Authors`
+
+    - `http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)`
 
     >You should see a book titled Jane Eyre. If this is not the case, make sure you have removed the mock data from `cat-service.js` as indicated above.
 
