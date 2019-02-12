@@ -3,7 +3,7 @@ title: Get a Free Trial Account on SAP Cloud Platform
 description: Sign up for a free trial account on SAP Cloud Platform.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
+tags: [  products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
 time: 5
 ---
 
@@ -69,6 +69,7 @@ After activation, or if you already had an SAP account, go to the <a href="https
 Assuming you don't already have an SAP Cloud Platform trial account, you will see an **Upgrade your account for SAP.com** dialog. If so, fill out all fields and click **Register**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity. There is no cost associated with this registration.
 
 ![upgrade account dialog](sci-03.png)
+
 
 [DONE]
 [ACCORDION-END]
