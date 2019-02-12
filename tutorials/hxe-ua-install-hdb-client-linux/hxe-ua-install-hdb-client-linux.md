@@ -1,7 +1,7 @@
 ---
 title: Installing SAP HANA HDB Client (Linux)
 description: Install the client package if you intend to develop XS applications on a machine that will not have a local SAP HANA 2.0, express edition installation.
-author_name: Adrian Plato
+author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
