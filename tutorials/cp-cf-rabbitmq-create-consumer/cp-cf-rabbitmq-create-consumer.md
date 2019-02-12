@@ -178,7 +178,7 @@ Run `npm start` from the root directory of your project to test your application
 1. The console output should tell that the application started successfully.
 
   ![started app](started-app.png)
-2. Open the web-based UI of the producer app at <http://localhost:3000> and send a message to the local RabbitMQ service.
+2. Open the web-based UI of the producer app at `http://localhost:3000` and send a message to the local RabbitMQ service.
 
   ![producer app](publisher.png)
 3. Verify that the consumer received the sent message.
