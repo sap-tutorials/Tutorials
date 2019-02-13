@@ -28,7 +28,9 @@ Press the **Create Graph (1)** button to create a new pipeline. The pipeline ope
 Press the **Save (1)** button. Then enter a **Name** (`test.myFirstPipeline`) and **Description** (`My first pipeline`) in the **pop-up window (2)**.
 
 ![picture_02](./datahub-pipelines-v2-sensordata_02.png)  
+
 [DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Data Generator)]
@@ -51,7 +53,9 @@ The sample data represents sensors for humidity, temperature etc.
 ![picture_05](./datahub-pipelines-v2-sensordata_05.png)  
 
 Close the tab for the JavaScript snippet.
+
 [DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Terminal)]
@@ -60,7 +64,9 @@ Add a **Terminal** operator to the pipeline by drag & drop (you find this also i
 ![picture_06](./datahub-pipelines-v2-sensordata_06.png)  
 
 Afterwards press the **Save (1)** button.
+
 [DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Execute the data pipeline)]

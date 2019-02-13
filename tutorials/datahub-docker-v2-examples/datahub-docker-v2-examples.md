@@ -27,7 +27,9 @@ The modelling environment consists of four main parts:
  - **Pipeline editor (2)**: You create and edit pipelines here.
  - **Configuration / documentation (3)**: You use this part of the modelling environment to configure pipelines as well as operators inside pipelines and to access the documentation. The two buttons on the right help you to switch between configuration and documentation.
  - **Status messages, logs, traces (4)**: You use this part of the modelling environment to monitor the execution of pipelines.
+
 [DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Execute an example pipeline)]
