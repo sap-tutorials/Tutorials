@@ -1,7 +1,7 @@
 ---
 title: Navigate around SAP Data Hub, developer edition 2.4
 description: Find your way around SAP Data Hub, developer edition 2.4.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
