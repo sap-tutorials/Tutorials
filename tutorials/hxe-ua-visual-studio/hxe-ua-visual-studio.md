@@ -1,6 +1,8 @@
 ---
 title: Set Up the SAP HANA Plugin for Microsoft Visual Studio
 description: This tutorial will describe how to install SAP HANA Studio for use with a Microsoft Visual Studio installation.
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana-studio
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-studio ]
 ---

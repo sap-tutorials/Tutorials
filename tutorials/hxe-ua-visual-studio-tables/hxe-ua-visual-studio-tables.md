@@ -1,11 +1,13 @@
 ---
 title: SAP HANA Plugin for Microsoft Visual Studio - Working with Tables
 description: This tutorial describes how to create and modify tables by using the SAP HANA plugin for Microsoft Visual Studio.
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-studio ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:** [Setup the SAP HANA Plugin for Microsoft Visual Studio](https://developers.sap.com/tutorials/hxe-ua-visual-studio.html)
 
@@ -13,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition, products>sap-ha
  - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
 
 ## Details
-### You will learn  
+### You will learn
 How to create and debug sample tables by using the SAP HANA plugin for Microsoft Visual Studio.
 
 ### Time to Complete
@@ -162,4 +164,3 @@ DECLARE CURSOR C_HISTORY_SCORES FOR SELECT SCORE_HISTORY FROM SYSTEM.DEMO_STUDEN
 When you run the code again, it runs successfully and calculates the average History and Math class scores.
 
 [ACCORDION-END]
-
