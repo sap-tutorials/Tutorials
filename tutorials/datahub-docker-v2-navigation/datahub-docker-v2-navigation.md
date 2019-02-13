@@ -103,8 +103,9 @@ hdfs dfs -rm /tmp/test.txt
 [ACCORDION-BEGIN [Step 5: ](Troubleshoot problems and show logs)]
 To troubleshoot problems, take a look at the logs inside the Docker container. You find the logs related to SAP Data Hub (and SAP Vora) inside the directory `/var/log/vora`.
 
-[DONE]
+
 [VALIDATE_1]
+
 [ACCORDION-END]
 
 ---
