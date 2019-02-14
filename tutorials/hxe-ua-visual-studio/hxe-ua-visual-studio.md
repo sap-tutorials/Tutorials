@@ -5,6 +5,7 @@ author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana-studio
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-studio ]
+time: 5
 ---
 
 ## Prerequisites
@@ -15,14 +16,13 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition, products>sap-ha
 
 ## Details
 ### You will learn
-How to install the SAP HANA plugin on your Microsoft Visual Studio installation. The SAP HANA Plugin for Microsoft Visual Studio allows you to connect to your SAP HANA or SAP HANA, express edition installation through Microsoft Visual Studio. For these tutorials, we use an SAP HANA, express edition installation as an example.
+  - How to install the SAP HANA plugin on your Microsoft Visual Studio installation.
+
+The SAP HANA Plugin for Microsoft Visual Studio allows you to connect to your SAP HANA or SAP HANA, express edition installation through Microsoft Visual Studio. For these tutorials, we use an SAP HANA, express edition installation as an example.
 
 The SAP HANA plugin is compatible with Microsoft Visual Studio Community edition, Platform edition, and Enterprise edition 2017 and later.
 
 You do not have to install the Microsoft Visual Studio plugin on the same machine or VM as your SAP HANA or SAP HANA, express edition installation.
-
-### Time to Complete
-**5 Min**
 
 ---
 

@@ -5,10 +5,10 @@ author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 10
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
 
 ## Next Steps
@@ -17,10 +17,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Details
 ### You will learn
-How to use the SAP HANA plugin for Microsoft Visual Studio to create a Twitter Word Map.
-
-### Time to Complete
-**10 Min**
+  - How to use the SAP HANA plugin for Microsoft Visual Studio to create a Twitter Word Map.
 
 ---
 

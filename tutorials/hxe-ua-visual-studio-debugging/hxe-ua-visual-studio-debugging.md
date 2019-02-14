@@ -5,10 +5,10 @@ author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://developers.sap.com/tutorials/hxe-ua-visual-studio-tables.html)
 
 ## Next Steps
@@ -17,11 +17,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Details
 ### You will learn
-How to open and use the debugging features of the SAP HANA plugin for Microsoft Visual Studio.
-
-### Time to Complete
-**15 Min**
-
+  - How to open and use the debugging features of the SAP HANA plugin for Microsoft Visual Studio
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open a Stored Procedure)]
