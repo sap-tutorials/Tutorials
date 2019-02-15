@@ -15,7 +15,7 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ## Details
 ### You will learn
   - How to create a plain schema, with a table and user to simulate a replicated schema
-  - How to create a user-provided service to access a tenant database in SAP HANA as a Service
+  - How to create a user-provided service to access a database in SAP HANA as a Service
   - How to grant permissions to the technical users in your HDI container to access the database
 
 This tutorial is meant to be an example of cross-container access. Simple data models and loading mechanisms were chosen to simulate a schema replicated using tools such as SAP Landscape Transformation or an ABAP schema.
@@ -28,9 +28,9 @@ If you are looking for the steps for an on-premise SAP HANA instance with XS Adv
 
 [ACCORDION-BEGIN [Step 1: ](Create a plain schema)]
 
-Connect to SAP Web IDE Full Stack and enter the Database Explorer. You will see your tenant database.
+Connect to SAP Web IDE Full Stack and enter the Database Explorer. You will see your instance of the SAP HANA database.
 
-> If you cannot see the tenant database, try entering the database explorer from the Database Cockpit and make sure the setting in `Preferences->Database Explorer` are set to the correct region.
+> If you cannot see the database, try entering the database explorer from the Database Cockpit and make sure the setting in `Preferences->Database Explorer` are set to the correct region.
 
 ![DB Explorer](1.png)
 
@@ -57,14 +57,14 @@ Use the green play button or press **`F8`** to execute the statement.
 
 > ##What is going on?
 >&nbsp;
-> You have created a plain schema in your SAP HANA tenant database. When you [created a database module in SAP Web IDE](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html), an HDI container was automatically generated.
+> You have created a plain schema in your SAP HANA database. When you [created a database module in SAP Web IDE](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html), an HDI container was automatically generated.
 >&nbsp;
 >
 > ![schema](access.png)
 >
 >&nbsp;
 >
-> You can see the SAP HANA service (a database tenant, from which you access to the Database Cockpit) of service type `hana-db` and the HDI container of service type `hana` and plan `hdi-shared` listed in the service marketplace
+> You can see the SAP HANA service (a database instance, from which you access to the Database Cockpit) of service type `hana-db` and the HDI container of service type `hana` and plan `hdi-shared` listed in the service marketplace
 >&nbsp;
 > ![schema](services.png)
 >&nbsp;
@@ -259,7 +259,7 @@ Execute the following SQL command
 
 ```sql
 
-grant create virtual table, drop  on remote source "LocalFile" to PLUSR with grant option;
+grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REMOTE SUBSCRIPTION EXCEPTION"  on remote source "LocalFile" to PLUSR with grant option;
 ```
 
 ![Grant roles](grant2.png)
@@ -275,7 +275,7 @@ Return to create a new file in `db/cfg` called `virtual.hdbgrants`. Paste the fo
         {
           "name" : "LocalFile",
           "type" : "REMOTE SOURCE",
-          "privileges" : [ "CREATE VIRTUAL TABLE", "DROP" ]
+          "privileges" : [ "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REMOTE SUBSCRITPION EXCEPTION" ]
         }
       ]
     }
@@ -355,11 +355,11 @@ Right-click on the view and choose **Open Data**. Paste the generated SQL statem
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Troubleshooting insufficient privilege)]
+[ACCORDION-BEGIN [Step 9: ](Troubleshooting insufficient privileges)]
 
 **Error**: Insufficient privilege: Detailed info for this error can be found with `guid` <GUID>
 
-You can see what is missing by executing the following statement in a SQL console connected to the tenant database
+You can see what is missing by executing the following statement in a SQL console connected to the database
 
 ```sql
  call SYS.GET_INSUFFICIENT_PRIVILEGE_ERROR_DETAILS ('<GUID>', ?)
