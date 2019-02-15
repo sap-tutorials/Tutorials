@@ -77,7 +77,7 @@ Use the green play button or press **`F8`** to execute the statement.
 
 [ACCORDION-BEGIN [Step 2: ](Load data)]
 
-Download this CSV file into your local computer.
+Download [this CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/haas-dm-access-cross-container-schema/plain.csv) into your local computer.
 
 Use the search help to locate schema `PLAIN`.
 
