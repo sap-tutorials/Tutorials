@@ -1,12 +1,14 @@
 ---
 title: SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures
 description: This tutorial describes how to debug stored procedures.
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
+## Prerequisites
  - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://developers.sap.com/tutorials/hxe-ua-visual-studio-tables.html)
 
 ## Next Steps
@@ -14,12 +16,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Details
-### You will learn  
-How to open and use the debugging features of the SAP HANA plugin for Microsoft Visual Studio.
-
-### Time to Complete
-**15 Min**
-
+### You will learn
+  - How to open and use the debugging features of the SAP HANA plugin for Microsoft Visual Studio
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open a Stored Procedure)]
@@ -107,4 +105,3 @@ To exit Debugging Mode, ![Step Over](step_over.png) __Step Over__ the remaining 
 You can also click the ![Stop Debugging](stop_debugging.png) __Stop Debugging__ button.
 
 [ACCORDION-END]
-
