@@ -5,6 +5,8 @@ description: Create a communication user and a communication system for an OData
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
+author_name: Niloofar Naseri
+author_profile: https://github.com/niloofar-naseri
 ---
 
 
@@ -35,16 +37,6 @@ In case you want to expose developed ABAP services for technical communication, 
 
       ![System URL](Picture18.png)
 
-  3. Copy this URL in a browser and change the URL like this:
-
-      Add `-web` after `.abap` and `/ui` at the end of URL.
-      `https://<your-system>.abap-web.eu10.hana.ondemand.com/ui`.
-
-      ![Change URL](Picture20.png)
-
-  7. Login with the user `exp013-0##@teched.cloud.sap` provided on your handout.
-
-      ![Login to SAP Fiori Launchpad](Picture19.png)
 
 [DONE]
 [ACCORDION-END]
@@ -169,7 +161,7 @@ Select your communication scenario that you created in the last tutorial, `Expos
 
   4. Check if you can connect to the service and there is no error.
 
-      ![check Service](Picture15.png)
+      ![check Service](Picture15b.png)
 
       ![check Service](Picture16.png)
 
