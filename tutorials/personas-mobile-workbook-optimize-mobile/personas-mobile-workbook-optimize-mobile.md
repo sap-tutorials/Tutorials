@@ -3,8 +3,8 @@ title: Optimize Your SAP Screen Personas Flavor for Mobile
 description: Create differently sized versions of your SAP Screen Personas flavor for use on tablets and mobile phones.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-screen-personas>sap-screen-personas, topic>mobile, products>sap-fiori]
-primary_tag: products>sap-screen-personas>sap-screen-personas
+tags: [ tutorial>beginner, products>sap-screen-personas, topic>mobile, products>sap-fiori]
+primary_tag: products>sap-screen-personas
 ---
 
 ## Prerequisites

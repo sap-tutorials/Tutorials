@@ -41,7 +41,7 @@ Use your email account to login:
 
 If prompted for authorization, click **Authorize**. Take note of the endpoint
 
-![Access cockpit](8.png)
+![Access cockpit](8x.png)
 
  Click the **SAP HANA Cockpit** icon.
 
@@ -55,7 +55,7 @@ Open the SQL console.
 
 ![Access cockpit](34.png)
 
-The Database Explorer will automatically open a SQL console connected to your tenant database.
+The Database Explorer will automatically open a SQL console connected to your database.
 
 ![Access cockpit](7.png)
 
@@ -140,8 +140,6 @@ cd %DPA_INSTANCE%
 
 Navigate into the **`bin`** directory. Execute the configuration script `agentcli` with parameter `--configAgent`.
 
-> For Windows, the configuration script has extension `.bat` (`agentcli.bat`). For Linux, the extension is `.sh` (`agentcli.sh`)
-
 ```sh
 cd bin
 agentcli --configAgent
@@ -149,11 +147,11 @@ agentcli --configAgent
 
 ![Download SDI](13.png)
 
-Start with option 2 and start the agent with option 1.
+Start with option **2 . Start or Stop Agent** and start the agent with option **1 . Start Agent**.
 
 ![Download SDI](start.png)
 
-Use **`b`** to go back to the main menu. Continue with option 6.
+Use **`b` . Back** to go back to the main menu. Continue with option **6 . SAP HANA Connection**.
 
 ![Download SDI](14.png)
 
@@ -161,17 +159,29 @@ Choose option 3 for **JDBC**.
 
 ![Download SDI](15.png)
 
+Choose **true** for **Use Web Socket to connect**
+
+![Download SDI](ws.png)
+
+> ###Note: This option is available in the Data Provisioning Agent version 2.3.5.2 or higher.
+
+Get the database ID from the SAP HANA Service Dashboard
+
+![Configure SDI](dbid.png)
+
+And concatenate `/service/` and database ID to form the **Web Socket URL**
+
+![Configure SDI](wsid.png)
+
+Get the endpoint for Web Socket also from the SAP HANA Service Dashboard
+
+![Configure SDI](endpoint.png)
+
+And use it to complete the **Host** and **Port**
+
+![Configure SDI](ws2.png)
+
 Choose **true** for `Use encrypted JDBC connection`
-
-![Download SDI](16.png)
-
-You will now be prompted for the endpoint for **Direct SQL Connectivity** shown in the cockpit (noted in step 1).
-
-![Download SDI](17.png)
-
-As separate parameters:
-
-![Download SDI](18.png)
 
 Use `SYSTEM` (or an administration user in a non-trial environment) and its credentials.
 

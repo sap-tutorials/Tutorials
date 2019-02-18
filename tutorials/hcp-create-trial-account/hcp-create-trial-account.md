@@ -70,6 +70,7 @@ Assuming you don't already have an SAP Cloud Platform trial account, you will se
 
 ![upgrade account dialog](sci-03.png)
 
+
 [DONE]
 [ACCORDION-END]
 

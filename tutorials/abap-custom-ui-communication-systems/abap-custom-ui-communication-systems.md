@@ -1,25 +1,23 @@
 ---
 auto_validation: true
-title: Create OAuth communication system and user
+title: Create OAuth Communication System and User
 description: Create a communication system and generate a system user within the communication system.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Set up trust between identity authentication and SAP Cloud Platform subaccount`](https://developers.sap.com/tutorials/abap-custom-ui-trust-settings.html)
+- **Tutorials:** [Set up trust between identity authentication and SAP Cloud Platform subaccount](abap-custom-ui-trust-settings)
 - **Authorizations:** You must assign business catalog **`SAP_CORE_BC_COM`** to your user.
 
 ## Details
 ### You will learn
-- How to create a OAuth communication system and user
-- How to specify the SAP Web IDE link from SAP Cloud Platform
-- How to upload the certificate
+- How to create a communication system and user in S/4HANA Cloud for SAP Web IDE
+- How to enable this communication system for OAuth
 
-This tutorial focuses on creating an OAuth communication systems. To create such an OAuth communication system, you must insert the link address from SAP Cloud Platform, add your host name, edit and upload a certificate so that the S/4HANA system trusts your SAP Cloud Platform subaccount.
+This tutorial focuses on creating an OAuth communication system. To create such an OAuth communication system, you must insert the link address from SAP Cloud Platform, add your host name, edit and upload a certificate so that the S/4HANA system trusts your SAP Cloud Platform subaccount.
 
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -45,14 +43,14 @@ By adding a system ID, system name and clicking **Create**, you are able to regi
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Get SAP Web IDE URL)]
-Switch to your SAP Cloud Platform cockpit, go to **Services** and select **SAP Web IDE**. Copy the link address of **Go to Service** paste it to some text editor and remove `https://` from that SAP Web IDE's URL. This will be needed in the creation process of the communication system.
+Switch to your SAP Cloud Platform cockpit, go to **Services** and select **SAP Web IDE**. Copy the link address of **Go to Service**, paste it to some text editor and remove `https://` from that SAP Web IDE's URL. This will be needed in the creation process of the communication system.
 
 ![Get SAP Web IDE URL](link.png)
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Set SAP Web IDE URL as host name)]
-Switch back to the communication system maintenance in SAP S/4HANA Cloud system. Set SAP Web IDE's URL without `http://` that you got before as Host Name of the communication system.
+Switch back to the communication system maintenance in SAP S/4HANA Cloud system. Set SAP Web IDE's URL without `https://` that you got before as Host Name of the communication system.
 ![Set SAP Web IDE URL as host name](hostname.png)
 [DONE]
 [ACCORDION-END]
@@ -93,7 +91,7 @@ Switch to your SAP Cloud Platform subaccount. Open trust settings, copy all data
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Create certificate file)]
-1. In the text editor file that you pasted SAP Cloud Platform subaccount's signing certificate into before, add a line with value `BEGIN CERTIFICATE` in front of the signing certificate and a line with value `END CERTIFICATE` after.
+1. In the text editor file that you pasted SAP Cloud Platform subaccount's signing certificate into before, add a line with value "`-----BEGIN CERTIFICATE-----`" in front of the `<SIGNING_CERTIFICATE>` and a line with value "`-----END CERTIFICATE-----`" after.
 
     ```swift
         -----BEGIN CERTIFICATE-----
@@ -110,7 +108,8 @@ Go back to your SAP S/4HANA Cloud system and open your created communication sys
 
 ![Upload signing certificate to communication system](certificate.png)
 
-With this step, you've uploaded your certificate to your communication system. Now your S/4HANA system trusts your SAP Cloud Platform subaccount. The picture should also show the execution sequence.
+With this step, you've uploaded your certificate to your communication system. Now your S/4HANA system trusts your SAP Cloud Platform subaccount.
+
 [DONE]
 [ACCORDION-END]
 
