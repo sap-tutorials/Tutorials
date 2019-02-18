@@ -114,7 +114,6 @@ This enables you to run the class in the console.
 
   2. Keep the `i_service_instance_name OutboundCommunication` and the `i_name Z_CHUCKNORRIS_006` the same.
 
-
 ```ABAP
 
     TRY.
