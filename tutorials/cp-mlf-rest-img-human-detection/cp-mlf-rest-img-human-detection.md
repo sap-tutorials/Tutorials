@@ -134,7 +134,7 @@ Here is the results represented on <a href="https://sapteched2018.event-hosting.
 <script>
 var fontSize = 14;
 
-var name = "SAP_TechEd_LV2018_10751.jpg";
+var name = "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132";
 var response = {
 	"detection_boxes": [
 		[
