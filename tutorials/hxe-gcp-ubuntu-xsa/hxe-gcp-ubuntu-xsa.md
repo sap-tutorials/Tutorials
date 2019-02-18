@@ -251,7 +251,11 @@ Go to the `VM Instance` panel in your Google Cloud Platform console and open `vi
 Keep the default command line and click on **Run** in Cloud Shell.
 ![Gcloud OK](2_fin.png)
 
-The following commands enable the necessary traffic into ports that are used by SAP HANA, express edition. Copy and paste them into the `gcloud` command prompt:
+The following commands enable the necessary traffic into ports that are used by SAP HANA, express edition.
+
+**Replace** the `XX` with your instance number (`90` is the default).
+
+Paste them into the `gcloud` command prompt:
 
 ```
 gcloud compute firewall-rules create rule1 --allow tcp:80XX
