@@ -121,9 +121,7 @@ Each entry in the response represents a box that identify one of the face.
 
 Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image SAP_TechEd_LV2018_10772">Image `SAP_TechEd_LV2018_10772`</a>
 
-<div>
-<img id="SAP_TechEd_LV2018_10772.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134"/>
-<canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/>
+<div id="div">
 <script>
 var fontSize = 14;
 
@@ -151,71 +149,73 @@ var response = {
                     "top": 511
                 }
             ],
-            "name": "SAP_TechEd_LV2018_10772.jpg",
+            "name": "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134",
             "numberOfFaces": 3
         }
     ],
     "processedTime": "2018-11-13T18:25:17.413827+00:00",
     "status": "DONE"
 };
-function drawCanvas(imageId) {
-	var oImg    = document.getElementById(imageId);
-    var oCanvas = document.getElementById("canvas_" + imageId);
 
-	oCanvas.width  = oImg.width;
-	oCanvas.height = oImg.height;
+function createCanvas(oImg, items) {
+    var oCanvas = document.createElement("CANVAS");
+    var ctx = oCanvas.getContext("2d");
 
-	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
-
-    ctx.lineWidth="3";
-    ctx.strokeStyle="red";
-	ctx.fillStyle = "white";
-	ctx.font = fontSize + "px Arial";
-
-    oImg.style.display = "none";
-    return ctx;
-}
-function drawBoundingBox(ctx, imageId, item, text) {
-	var oImg    = document.getElementById(imageId);
-    var oCanvas = document.getElementById("canvas_" + imageId);
-
-    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
-    var heightRatio = oCanvas.height / oImg.naturalHeight;
-
-    // get the box attributes
-    var left = item.left * widthRatio;
-    var top  = item.top  * heightRatio;
-    var width  = (item.right  - item.left) * widthRatio;
-    var height = (item.bottom - item.top ) * heightRatio;
-
-    // draw the box
-    ctx.strokeRect(left, top, width, height);
-
-    // write the text with the box angle
-    ctx.save();
-    ctx.fillStyle = 'red';
-    ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
-    // write the text in the box
-    ctx.fillStyle = "white";
-    ctx.fillText(text, left, top + fontSize);
-    ctx.restore();
+    function resizeCanvas() {
+        // set the image width to the window width
+        imgRatioW = oImg.naturalWidth / window.innerWidth;
+        oImg.width  = window.innerWidth;
+        oImg.height = oImg.naturalHeight / imgRatioW ;
+        // adjust the canvas dimension
+        oCanvas.width  = oImg.width;
+        oCanvas.height = oImg.height;
+        // get the width & height for the image / canvas
+        var itemRatioW = oCanvas.width  / oImg.naturalWidth;
+        var itemRatioH = oCanvas.height / oImg.naturalHeight;
+        // draw the canvas
+        ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
+        ctx.lineWidth="3";
+        ctx.strokeStyle="red";
+        ctx.fillStyle = "white";
+        ctx.font = fontSize + "px Arial";
+        // display the items
+        for (var i = 0; i < items.length; i++) {
+            var text = "Face #" + i;
+            // get the box attributes
+            var left = items[i].left * itemRatioW;
+            var top  = items[i].top  * itemRatioH;
+            var width  = (items[i].right  - items[i].left) * itemRatioW;
+            var height = (items[i].bottom - items[i].top ) * itemRatioH;
+            // draw the box
+            ctx.strokeRect(left, top, width, height);
+            // write the text with the box angle
+            ctx.save();
+            ctx.fillStyle = 'red';
+            ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, left, top + fontSize);
+            ctx.restore();
+        }
+    }
+    // call the resize function
+    resizeCanvas();
+    // add the event listener
+    window.addEventListener('resize', resizeCanvas, false);
+    return oCanvas;
 }
 
 window.onload = function() {
 	for (var idx = 0; idx < response.predictions.length; idx++) {
         var items = response.predictions[idx].faces;
         var name = response.predictions[idx].name;
-        var oImg = document.getElementById(name);
-        if(oImg){
-            oImg.onload = function(){
-                var ctx = drawCanvas(name);
-                for (var i = 0; i < items.length; i++) {
-                    drawBoundingBox(ctx, name, items[i], "Face #" + i);
-                }                
-            }
-            oImg.src = oImg.src;
+
+        var oImg = document.createElement("IMG");
+        //document.getElementById("div").appendChild(oImg);
+        oImg.onload = function(){
+            document.getElementById("div").appendChild(createCanvas(this, items));
         }
+        oImg.src = name;
 	}
 };
 </script>
@@ -226,9 +226,7 @@ Here is a simple HTML code you can use to visualize other results:
 ```HTML
 <html>
 <body>
-
-<img id="SAP_TechEd_LV2018_10772.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134"/>
-<canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/>
+<div id="div">
 <script>
 var fontSize = 14;
 
@@ -258,75 +256,80 @@ var response = {
             ],
             "name": "SAP_TechEd_LV2018_10772.jpg",
             "numberOfFaces": 3
-        }
+        }        
     ],
     "processedTime": "2018-11-13T18:25:17.413827+00:00",
     "status": "DONE"
 };
-function drawCanvas(imageId) {
-	var oImg    = document.getElementById(imageId);
-    var oCanvas = document.getElementById("canvas_" + imageId);
 
-	oCanvas.width  = oImg.width;
-	oCanvas.height = oImg.height;
+function createCanvas(oImg, items) {
+    var oCanvas = document.createElement("CANVAS");
+    var ctx = oCanvas.getContext("2d");
 
-	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
-
-    ctx.lineWidth="3";
-    ctx.strokeStyle="red";
-	ctx.fillStyle = "white";
-	ctx.font = fontSize + "px Arial";
-
-    oImg.style.display = "none";
-    return ctx;
-}
-function drawBoundingBox(ctx, imageId, item, text) {
-	var oImg    = document.getElementById(imageId);
-    var oCanvas = document.getElementById("canvas_" + imageId);
-
-    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
-    var heightRatio = oCanvas.height / oImg.naturalHeight;
-
-    // get the box attributes
-    var left = item.left * widthRatio;
-    var top  = item.top  * heightRatio;
-    var width  = (item.right  - item.left) * widthRatio;
-    var height = (item.bottom - item.top ) * heightRatio;
-
-    // draw the box
-    ctx.strokeRect(left, top, width, height);
-
-    // write the text with the box angle
-    ctx.save();
-    ctx.fillStyle = 'red';
-    ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
-    // write the text in the box
-    ctx.fillStyle = "white";
-    ctx.fillText(text, left, top + fontSize);
-    ctx.restore();
+    function resizeCanvas() {
+        // set the image width to the window width
+        imgRatioW = oImg.naturalWidth / window.innerWidth;
+        oImg.width  = window.innerWidth;
+        oImg.height = oImg.naturalHeight / imgRatioW ;
+        // adjust the canvas dimension
+        oCanvas.width  = oImg.width;
+        oCanvas.height = oImg.height;
+        // get the width & height for the image / canvas
+        var itemRatioW = oCanvas.width  / oImg.naturalWidth;
+        var itemRatioH = oCanvas.height / oImg.naturalHeight;
+        // draw the canvas
+        ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
+        ctx.lineWidth="3";
+        ctx.strokeStyle="red";
+        ctx.fillStyle = "white";
+        ctx.font = fontSize + "px Arial";
+        // display the items
+        for (var i = 0; i < items.length; i++) {
+            var text = "Face #" + i;
+            // get the box attributes
+            var left = items[i].left * itemRatioW;
+            var top  = items[i].top  * itemRatioH;
+            var width  = (items[i].right  - items[i].left) * itemRatioW;
+            var height = (items[i].bottom - items[i].top ) * itemRatioH;
+            // draw the box
+            ctx.strokeRect(left, top, width, height);
+            // write the text with the box angle
+            ctx.save();
+            ctx.fillStyle = 'red';
+            ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, left, top + fontSize);
+            ctx.restore();
+        }
+    }
+    // call the resize function
+    resizeCanvas();
+    // add the event listener
+    window.addEventListener('resize', resizeCanvas, false);
+    return oCanvas;
 }
 
 window.onload = function() {
 	for (var idx = 0; idx < response.predictions.length; idx++) {
         var items = response.predictions[idx].faces;
         var name = response.predictions[idx].name;
-        var oImg = document.getElementById(name);
-        if(oImg){
-            oImg.onload = function(){
-                var ctx = drawCanvas(name);
-                for (var i = 0; i < items.length; i++) {
-                    drawBoundingBox(ctx, name, items[i], "Face #" + i);
-                }                
-            }
-            oImg.src = oImg.src;
+
+        var oImg = document.createElement("IMG");
+        oImg.onload = function(){
+            document.getElementById("div").appendChild(createCanvas(this, items));
         }
+        oImg.src = name;
 	}
 };
 </script>
+</div>
 </body>
 </html>
 ```
+
+> ###**Note:**
+> In order to use this sample HTML code, you will need to save the images in the same location as the HTML code using the same name used when submitting the service call (in the current code: `"name": "SAP_TechEd_LV2018_10772.jpg"`).
 
 You will notice that the [`strokeRect` function](https://www.w3schools.com/tags/canvas_strokerect.asp) uses the following format:
 
