@@ -1,12 +1,13 @@
 ---
-title: Make ABAP custom business object service's consumable on SAP Cloud Platform via OAuth
-description: Make an ABAP custom business object's service consumable on SAP Cloud Platform via OAuth. Enhancing the Platform subaccount's destination to the services S/4HANA system.
+title: Make ABAP Custom Business Object Service Consumable via OAuth
+description: Make an ABAP custom business object's service consumable on SAP Cloud Platform via OAuth. Enhancing the platform subaccount's destination to the services S/4HANA system.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Expose custom business object as external web service`](https://developers.sap.com/tutorials/abap-custom-ui-business-object.html)
+- **Tutorials:** [Expose custom business object as external web service](abap-custom-ui-business-object)
 - **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user represents the prerequisites.
 
 
@@ -17,8 +18,6 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 
 This tutorial describes how to make a custom business object's service consumable on SAP Cloud Platform in case of OAuth authentication. This will be done by enhancing the Platform subaccount's destination to the services S/4HANA system. The service will be added to the scope of the destination. At the end you cannot only choose the service in SAP Web IDE, but also retrieve its data.
 
-### Time to Complete
-**15 Min**.
 
 ---
 
