@@ -149,7 +149,7 @@ var response = {
                     "top": 511
                 }
             ],
-            "name": "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134",
+            "name": "https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cp-mlf-rest-img-face-detection/SAP_TechEd_LV2018_10772.jpg",
             "numberOfFaces": 3
         }
     ],
