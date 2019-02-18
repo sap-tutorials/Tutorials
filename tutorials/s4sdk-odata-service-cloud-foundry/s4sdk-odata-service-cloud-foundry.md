@@ -230,7 +230,7 @@ mvn clean install
 mvn tomee:run -pl application
 ```
 
-Visit <http://localhost:8080/businesspartners> to see your new feature in action.
+Visit `http://localhost:8080/businesspartners` to see your new feature in action.
 
 _Note: You can also add more ERP endpoints to this JSON representation, following the same schema. However, please note that `ErpQueryEndpoint` corresponds to the destination used by default by the execute method of the VDM._
 
@@ -326,7 +326,7 @@ cd /path/to/firstapp
 mvn clean install
 cf push
 ```
-Access the new servlet at <https://YOUR-ROUTE/businesspartners>.
+Access the new servlet at `https://YOUR-ROUTE/businesspartners`.
 
 
 If you change the destinations afterwards, you need to at least [restart (or restage)](https://docs.cloudfoundry.org/devguide/deploy-apps/start-restart-restage.html) your application to make sure that the changes become effective due to caching:

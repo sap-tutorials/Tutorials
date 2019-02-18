@@ -226,7 +226,7 @@ Replace `URL` with the URL to your SAP ERP system (host and, if necessary, port)
 
 Maven will then prompt you for your username and password that is going to be used to connect to `SAP S/4HANA`. Alternatively, you can also set these values as command parameters: `-Derp.username=USER -Derp.password=PASSWORD`
 
-If you now deploy the project and visit the page <http://localhost:8080/businesspartners> you should be seeing a list of cost centers that was retrieved from the ERP system. Note: Please login with `test` / `test`).
+If you now deploy the project and visit the page `http://localhost:8080/businesspartners` you should be seeing a list of cost centers that was retrieved from the ERP system. Note: Please login with `test` / `test`).
 
 ![list of cost center from ERP](post-4-costcenters-result.png)
 

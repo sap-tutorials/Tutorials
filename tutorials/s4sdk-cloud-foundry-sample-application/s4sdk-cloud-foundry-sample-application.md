@@ -254,7 +254,7 @@ cd application
 mvn tomee:run
 ```
 
-Visit <http://localhost:8080/hello> on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
+Visit `http://localhost:8080/hello` on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
 
 Now you have a strong basis for developing your own cloud application for `SCP Cloud Foundry` using the `SAP S/4HANA Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP S/4HANA Cloud SDK`.
 
