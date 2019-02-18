@@ -11,7 +11,7 @@ author_profile: https://github.com/BrianMcKellar
 ---
 
 ## Prerequisites  
- - Access to http://api.sap.com
+ - Access to <http://api.sap.com>.
 
 ## Details
 

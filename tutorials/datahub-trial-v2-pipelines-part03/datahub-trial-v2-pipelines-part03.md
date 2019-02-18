@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Details
+Please note this tutorial will be removed on 6th Febuary 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 - How to store sensor data in **Google Cloud Storage**
 - How to use the operators **Write File** and **Read File**
@@ -108,4 +109,3 @@ Open the output **Terminal**. Copy any row from the output and paste it in the f
 Stop the pipeline by clicking **Stop**.
 
 [ACCORDION-END]
-

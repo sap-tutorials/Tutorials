@@ -44,7 +44,8 @@ module.exports = {
         ],
         link: {
             regexp: new RegExp('(?<![`\\(\\[]|(href=")|(link=")|(src="))(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:/~+#-]*[\\w@?^=%&/~+#-])\\/?(?=([^`]*`[^`]*`)*[^`]*$)(?!(([^\\[]*\\])|([^\\<]*\\>)|([^\\(]*\\))))'),
-            message: 'plain text URL'
+            message: 'plain text URL',
+            description: 'wrap URL in <> or format with [Link text](URL)',
         },
         h1: {
             regexp: new RegExp('^(# )\\w+'),

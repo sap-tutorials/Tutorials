@@ -21,8 +21,8 @@ time: 20
 
 > Before you start, make sure you have:
 
-> - Downloaded <a target="_blank" href="https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html">SAP Cloud Platform SDK for Android</a> **version `2.0.x`**.
-> - Followed the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/installing.html">Installing the SAP Cloud Platform SDK for Android</a> instructions.
+> - Downloaded [SAP Cloud Platform SDK for Android](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html) **version `2.0.x`**.
+> - Followed the [Installing the SAP Cloud Platform SDK for Android](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/installing.html) instructions.
 > - Created a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for more information.
 > - Enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html) for more information.
 
@@ -109,19 +109,19 @@ On the Project Features tab, provide the following configuration data.
 
 ![Project features](push-notification-checkbox-enabled.png)
 
-If you would like to add push notification support to your application, proceed to the next section. Otherwise, uncheck Enable Push, click **Finish** and skip the next section, which describes how to acquire a `google-services.json` file needed for push messaging.
+If you would like to add push notification support to your application, proceed to Step 2 which describes how to acquire a `google-services.json` file needed for push messaging.  Otherwise, uncheck Enable Push, click **Finish** and proceed to Step 3.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable push notifications (optional))]
 
-Check the **Enable Push** checkbox to enable push notification support in the app. You will notice that an error message has appeared explaining that you need to specify a `google-services.json` file. We will obtain this file from the <a target="_blank" href="https://firebase.google.com/docs/cloud-messaging/">Cloud Messaging</a> feature in <a target="_blank" href="https://firebase.google.com/">Google Firebase</a>.
+When the **Enable Push** checkbox is checked, an error message is shown explaining that you need to specify a `google-services.json` file. We will obtain this file from the [Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/) feature in [Google Firebase](https://firebase.google.com/).
 
 ![Push Notifications enabled](push-notification-checkbox-enabled.png)
 
 
-Open the <a target="_blank" href="https://console.firebase.google.com/">Firebase</a> console and click on **`Add project`**.
+Open the [Firebase](https://console.firebase.google.com/) console and click on **`Add project`**.
 
 ![Add project in Firebase](firebase-add-project.png)
 
@@ -149,7 +149,7 @@ Now browse for the **`google-services.json`** file in the wizard. This file is p
 
 ![Add google-services.json file to wizard](wizard-google-services-added.png)
 
->The push configuration on the server will be added in the tutorial <a target="_blank" href="https://developers.sap.com/tutorials/cp-sdk-android-wizard-app-push.html">Send notifications to your application</a>.
+>The push configuration on the server will be added in the tutorial [Send notifications to your application](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app-push.html).
 
 
 Click **Finish**.
@@ -168,7 +168,7 @@ Click the **Run** toolbar icon.
 
 
 Choose the emulator to run the app on.  
->For more information on creating Virtual Devices that run in the Android Emulator, see <a href="https://developer.android.com/studio/run/managing-avds">here</a>.
+>For more information on creating Virtual Devices that run in the Android Emulator, see [here](https://developer.android.com/studio/run/managing-avds).
 
 ![Deployment target](choose-emulator.png)
 
@@ -178,7 +178,7 @@ The welcome screen is shown the first time the app is run.
 ![Welcome screen](welcome-screen.png)
 
 
-Sign in with the your credentials.
+Sign in with your credentials.
 
 ![Authentication screen](authentication-screen.png)
 
@@ -212,7 +212,7 @@ Tap on a list item to show an editable detail screen.
 
 ![Category detail](product-detail.png)
 
->Further information on the generate application can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/creating_an_app.html">Running the Wizard</a> and the `WizardAppReadme.md` file located in the generated app.
+>Further information on the generate application can be found at [Running the Wizard](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/creating_an_app.html).
 
 
 Congratulations!  You have created your first Android app using the SAP Cloud Platform SDK for Android!

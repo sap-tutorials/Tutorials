@@ -14,9 +14,9 @@ time: 30
 - How to handle errors that occur while syncing
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Generate and Run an Offline App)]
+[ACCORDION-BEGIN [Step 1: ](Generate and run an offline app)]
 
-Create a new application using the SAP Cloud Platform SDK for Android wizard and select **Offline** for the OData option.
+Follow the instructions at [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html) to create a new application using the SAP Cloud Platform SDK for Android wizard and select **Offline** for the OData option.  The push feature is not needed for this application.
 
 ![Choose Offline OData](choosing_offline_odata.png)
 
@@ -61,22 +61,25 @@ When the sync completes, the change you made will have been applied to the backe
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Examine the Defining Queries)]
+[ACCORDION-BEGIN [Step 2: ](Examine the defining queries)]
 
 The offline store is populated based on objects called `OfflineODataDefiningQuery`. The defining queries are located in `SAPServiceManager.java`, in the `initializeOffline` method.
 
-![Defining Queries](defining_queries.png)
+```Java
+OfflineODataDefiningQuery customersQuery = new OfflineODataDefiningQuery("Customers", "Customers", false);
+OfflineODataDefiningQuery productsQuery = new OfflineODataDefiningQuery("Products", "Products", true);
+```
 
-Defining Queries tell the `OfflineODataProvider` (the class that manages the offline store) which entity sets to store on the device.  In the case of the wizard generated application, there is a Defining Query for each available entity by default, meaning that each entity is stored offline and available if the user doesn't have an internet connection. For more information, see [Defining Queries](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Defining_Application_Configuration_File.html#defining-queries).
+Defining queries tell the `OfflineODataProvider` (the class that manages the offline store) which entity sets to store on the device.  In the case of the wizard generated application, there is a Defining Query for each available entity by default, meaning that each entity is stored offline and available if the user doesn't have an internet connection. For more information, see [Defining Queries](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Defining_Application_Configuration_File.html#defining-queries).
 
 >With an Offline enabled app, requests made against the entity sets that are included in the defining requests will always be fulfilled from the local offline store.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Examine the Offline Service and Service Manager)]
+[ACCORDION-BEGIN [Step 3: ](Examine the offline service and service manager)]
 
- The application allows users to make changes against a local offline store and synchronize manually at any time. The sync operation is performed by a [Foreground Service](https://developer.android.com/guide/components/services#Foreground). In the wizard-generated application, the `OfflineODataSyncService` is the foreground service. There are three operations that must be implemented in order to use the offline store functionality, namely `openStore`, `downloadStore`, `uploadStore`. As their names suggest, the operations open the offline store, download server changes, upload user changes respectively. Go to **`OfflineODataSyncService.java`** and examine the three methods.
+ The application allows users to make changes against a local offline store and synchronize manually at any time. The sync operation is performed by a [Foreground Service](https://developer.android.com/guide/components/services#Foreground). In the wizard-generated application, the `OfflineODataSyncService` is the foreground service. There are three operations that must be implemented in order to use the offline store functionality, namely `openStore`, `downloadStore` and `uploadStore`. As their names suggest, the operations open the offline store, download server changes, upload user changes respectively. In Android Studio, on Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`OfflineODataSyncService`** to open `OfflineODataSyncService.java` and examine the three methods.
 
  ![Offline store methods](three_offline_store_methods.png)
 
@@ -92,16 +95,16 @@ The `uploadStore` and `downloadStore` methods are called by `SAPServiceManager` 
 
 ![SAPServiceManager performs sync](sap_service_manager_performs_sync.png)
 
-For more information about how the offline store works, see the [Offline API](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Introduction.html)
+For more information about how the offline store works, see the [Offline API](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Introduction.html).
 
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Handling Errors)]
+[ACCORDION-BEGIN [Step 4: ](Introduce a synchronization error)]
 
-When syncing changes made while offline, conflicts can occur.  One example might be if two people attempted to update a description field of the same product.  Another might be updating a record that was deleted by another user.  The `ErrorArchive` provides a way to see details of any of conflicts that have occurred.  The following instructions will demonstrate this.
+When syncing changes made while offline, conflicts can occur.  One example might be if two people attempted to update a description field of the same product.  Another might be updating a record that was deleted by another user.  The [`ErrorArchive`](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html#accessing-the-errorarchive) provides a way to see details of any of conflicts that have occurred.  The following instructions will demonstrate this.
 
-Update a **`SalesOrderItem`** and change its quantity to be zero and save it.  Update a second item and change its quantity to a different non zero number and save it.
+Update a **`SalesOrderItem`** and change its quantity to be zero and save it.  Update a second item and change its quantity to a different non-zero number and save it.
 
 ![Create SalesOrderItem Button](create_sales_order_item.png)
 
@@ -118,9 +121,14 @@ Attempt a sync, and you'll notice that the sync completes but if you examine the
 
 ![Sync Error](sync_error.png)
 
+[DONE]
+[ACCORDION-END]
 
-Next, we will create an "Error Information" page that displays the details from the `ErrorArchive`.  
-Add the following strings to `res\values\strings.xml`.
+[ACCORDION-BEGIN [Step 5: ](Display ErrorArchive details)]
+
+In this section we will create an Error Information screen that displays the details from the `ErrorArchive`.  
+
+Press **Shift** twice and type **`strings.xml`** to open `res\values\strings.xml`.
 
 ```XML
 <string name="error_header">Error Information</string>
@@ -131,7 +139,9 @@ Add the following strings to `res\values\strings.xml`.
 <string name="request_url">Request URL</string>
 ```
 
-Create a new activity in the **`mdui`** folder by right clicking, then selecting New > Activity > Empty Activity. Name the new activity `ErrorActivity`. Replace the generated XML layout file `activity_error.xml` with the following XML.
+Create a new activity in the **`mdui`** folder by right clicking, then selecting **New > Activity > Empty Activity**. Name the new activity **`ErrorActivity`**.
+
+Press **Shift** twice and type **`activity_error`** to open `res/layout/activity_error.xml`.  Replace its contents with the following XML.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -287,12 +297,12 @@ Create a new activity in the **`mdui`** folder by right clicking, then selecting
 </LinearLayout>
 ```
 
-And replace the `ErrorActivity.java` generated activity code with the below code.
+Replace the `ErrorActivity.java` generated activity code with the below code.
 
-In the package statement and the import replace `com.sap.wizapp` with the package name of your project.
+In the package statement and the import, if needed, replace `com.sap.wizapp` with the package name of your project.
 
 ```Java
-package com.company.offlinesample.mdui;
+package com.sap.wizapp.mdui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -337,7 +347,9 @@ public class ErrorActivity extends AppCompatActivity {
 }
 ```
 
-Now, in `EntitySetListActivity.java`, in the `synchronize` method, find the line that performs the `sapServiceManager.synchronize` method call.
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
+
+In the `synchronize` method, find the line that performs the `sapServiceManager.synchronize` method call.
 
 ![SapServiceManager synchronize](sapServiceManager_synchronize_call.png)
 
@@ -345,7 +357,7 @@ Between the `progressBar.setVisibility(View.INVISIBLE);` line and the `syncCompl
 
 ```Java
 SAPServiceManager serviceManager = ((SAPWizardApplication)getApplication()).getSAPServiceManager();
-OfflineODataProvider provider = serviceManager.getProvider();
+OfflineODataProvider provider = serviceManager.retrieveProvider();
 try {
     List<OfflineODataErrorArchiveEntity> errorArchive = provider.getErrorArchive();
 
@@ -387,11 +399,15 @@ try {
 }
 ```
 
-Run the app again, and re-attempt the synchronize. You don't have to recreate the `SalesOrderItem` because it was created locally and is still in your offline store. Now, when the sync fails, you should be brought to the following error screen.
+Run the app again, and re-attempt the sync.  When the sync fails, you should be brought to the following error screen.
 
 ![Error screen](error_screen.png)
 
 You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state.  All entities who didn't produce errors successfully synced.  One way to correct the exception would be to change the quantity from 0 to a valid positive number.  Another would be to delete the `ErrorArchive` entry reverting the entity to its previous state.  For more information on error handling visit [Handling Errors and Conflicts](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html).
+
+>Further information on using the offline feature can be found at [Step by Step with the SAP Cloud Platform SDK for Android — Part 6 — Offline OData](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-6-offline-odata/)</a>.
+
+Congratulations! You have created an offline enabled app using the SAP Cloud Platform SDK for Android and examined how the `ErrorArchive` can be used to synchronization errors!
 
 [DONE]
 [ACCORDION-END]

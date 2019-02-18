@@ -34,6 +34,7 @@ The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm r
 
 For more information, see <https://docs.npmjs.com/files/npmrc>.
 
+> Please note that the Grunt build currently supports the "ES5" edition of the ECMAScript standard. The "ES6" edition is not supported.
 
 
 
@@ -90,13 +91,13 @@ module.exports = function(grunt) {
 The code does the following:
 
 - Loads the tasks from the SAPUI5 best practices Grunt plugin.
-- Sets the default task to execute the following tasks defined in the SAPUI plugin:
+- Sets the default task to execute the following tasks defined in the SAPUI5 plugin:
 
 |Task&nbsp;&nbsp;            |Description       |
 |---------------|-------|
 | `lint`        | Validates the project code using ESLint according to the rules defined in the `.eslintrc` configuration file located in the root of your project.      |
 | `clean`       | Cleans the `dist` target folder from the previous build results.      |
-| `build`       | Produces a new build output in the `dist` folder of your project that is ready and optimized for better performance in the productive environment. The following tasks are executed during the build:<ul><li>Minification of `.css` files</li><li>Minification of JavaScript files (minified files)</li><li>Copying of the original files to the dist folder with `-dbg` suffix added for debugging purposes</li><li>Generation of the `Component-preload.js` and `Component-preload-dbg.js` preload files for the debug and minified files</li><li>Minification of the preload file</li><li>Generation of the `CachebusterInfo.json` file</li><li>Generation of the `changes-bundle.json` file. The file contains a collection of all the changes that are made to an SAP Fiori element application and are located in the changes folder.</li></ul> |
+| `build`       | Produces a new build output in the `dist` folder of your project that is ready and optimized for better performance in the productive environment. The following tasks are executed during the build:<ul><li>Minification of `.css` files.</li><li>Minification of JavaScript files (minified files).</li><li>Copying of the original files to the `dist` folder with `-dbg` suffix added for debugging purposes.</li><li>Generation of the `Component-preload.js` and `Component-preload-dbg.js` preload files for the debug and minified files.</li><li>Minification of the preload file.</li><li>Generation of the `CachebusterInfo.json` file.</li><li>Generation of the `changes-bundle.json` file. The file contains a collection of all the changes that are made to an SAP Fiori element application and are located in the `changes` folder.</li><li>Generation of the `manifest-bundle.zip` file, which contains the `manifest.json` and `i18n` files.</li></ul> |
 
 
 

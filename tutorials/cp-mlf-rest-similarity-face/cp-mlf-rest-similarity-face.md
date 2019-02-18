@@ -105,7 +105,7 @@ As you will notice one face is present in all 3 pictures and a second face in on
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
@@ -524,7 +524,7 @@ You will notice that the rectangle uses the following format: (left, top, right 
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 

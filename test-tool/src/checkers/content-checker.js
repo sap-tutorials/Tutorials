@@ -75,7 +75,7 @@ module.exports = {
         }
       }
 
-      if (line.includes('```')) {
+      if (line.trim().startsWith('```')) {
         isCodeBlock = !isCodeBlock;
       }
 
@@ -108,7 +108,7 @@ module.exports = {
           if (match) {
             result.contentCheckResult.push({
               line: index + 1,
-              msg: `${link.message} -> ${match[0]}`,
+              msg: `${link.message} -> ${match[0]} -> ${link.description}`,
             });
           }
         }
