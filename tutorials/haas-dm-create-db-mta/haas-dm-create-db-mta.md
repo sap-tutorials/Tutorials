@@ -28,7 +28,7 @@ Click `File->New` and choose **Project from Template**.
 
 ![New project from template](1.png)
 
-Choose **SAP HANA Multi-Target Application** and click **Next**.
+Choose **SAP HANA Database Application** and click **Next**.
 
 ![New project from template](2.png)
 
@@ -51,7 +51,9 @@ Choose version **2.0 SPS03** and click **Finish**
 
 This project will combine artifacts from an HDI container and a classic, replicated schema.
 
-You will first create a table to hold data from performance evaluations received by employees and the rating they give the company in terms of satisfaction. This is a sample record that will be stored in this table:
+You will first create a table to hold data from performance evaluations received by employees and the rating they give the company in terms of satisfaction.
+
+These are sample records that will be stored in this table:
 
 ![New DB artifact](9.png)
 
@@ -109,9 +111,12 @@ Use the following name
 ```text
 comment_text
 ```
+
+
 And choose `hdbfulltextindex`
 
 ![New DB artifact](11.png)
+
 
 Paste the following code into it:
 
@@ -151,7 +156,13 @@ Right-click on the database module and choose **Build**.
 
 ![Build db](13.png)
 
+> **Getting an error?**
+>
+> If the build throws an error about the builder being outdated, right-click on the project and navigate into the Cloud Foundry menu. Make sure the settings are mapped to an instance of service of type `hana-db` and click **Reinstall Builder**. Once the builder is reinstalled, try the build again.
+
+</br>
 > **What is going on?**
+>
 >&nbsp;
 > The console on the bottom will show the progress. First, an HDI container will be created and bound to the builder. Scroll up the log to see it in your screen:
 >&nbsp;
@@ -167,8 +178,6 @@ Right-click on the database module and choose **Build**.
 > If you list the services using the CLI with command `cf services` or go into the services instances in your space in the SAP Cloud Platform Cockpit, you will see a new service bound to the Web IDE builder.
 >&nbsp;
 >  ![Build db](26.png)
-
-
 
 [DONE]
 [ACCORDION-END]

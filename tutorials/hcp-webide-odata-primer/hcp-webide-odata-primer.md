@@ -34,6 +34,7 @@ There is a wealth of information available at [http://www.odata.org](http://www.
     - `$expand`
 
 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get browser extension)]
@@ -237,7 +238,7 @@ A very useful query option to highlight is the filter expression (`$filter`). A 
 
 A simple example of filtering would be to see which products in the Northwind service are discontinued (the link below will show eight results). The query option string is: `$filter=Discontinued eq true`
 
-- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued\ eq\ true>
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued%20eq%20true>
 
 To exclude those from an app, you would simply change the `eq` (equal) to `ne` (not equal).
 
@@ -250,7 +251,7 @@ To exclude those from an app, you would simply change the `eq` (equal) to `ne` (
 
 To get a list of products with a `UnitPrice` greater than 100 and not discontinued, the query option string would be: `$filter=Discontinued eq false and UnitPrice gt 100`. Here, `gt` stands for "greater than".
 
-- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued\ eq\ false\ and\ UnitPrice\ gt\ 100>
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued%20eq%20false%20and%20UnitPrice%20gt%20100>
 
 ![UnitPrice > 100 and not discontinued](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_20.png)
 
@@ -290,7 +291,7 @@ Building on the last example, in this final query you will combine a few of the 
 - `$expand` – expand the Supplier `NavigationProperty`
 - `$filter` – filter the response based on a field name in the `Supplier` collection where (`CompanyName` starts with `Grand`)
 
--  `<http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier&$filter=startswith(Supplier/CompanyName,\ \'Grand\')>`
+-  <https://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier&$filter=startswith(Supplier/CompanyName,%20%27Grand%27)>
 
 ![Complex query results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_23.png)
 
@@ -338,6 +339,8 @@ Use Collection(XYZ) to return a specific record number |  <http://services.odata
 A combination example with `$format`, `$select`, `$expand` and `$filter` |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier&$filter=startswith(Supplier/CompanyName,%20%27Grand%27)>
 
 
+
+
 ## Optional
 If you would like to build an app similar to what you have done in this tutorial series but with "SAP-like" data, you can register for a free SAP Gateway trial. See the [Create an account on the gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html) tutorial.
 
@@ -352,5 +355,3 @@ To build an app like what you have now, but with data from SAP Gateway you simpl
 - Enter the remaining part of the URL in the Data Connection portion of the Web IDE template customization. For the two URLs above, they would be:
 - `/sap/opu/odata/IWBEP/GWDEMO`
 - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`
-
-

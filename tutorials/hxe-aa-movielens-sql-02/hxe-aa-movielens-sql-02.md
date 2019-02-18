@@ -27,9 +27,16 @@ The data set that you will be using for this series is the ***small*** version o
 
 This dataset, thanks to its size, can quickly be uploaded in your SAP HANA, express edition instance.
 
-If you have additional capacity resources, you can run this tutorial series with the larger datasets, but the validations steps implemented were built based on the ***small dataset***.
-
 Before using these data sets, please review the <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> file for the usage licenses and other details.
+
+> ### **Note:**:
+>
+> As the datasets get updated regularly, you will be provided with a copy of the ***small dataset***. so that the implemented validation will work.
+>
+> However, you are free to use the latest version of the dataset from the `MovieLens` website, but you won't be able to mark you work as completed as the validation will fail.
+>
+> In addition, if you have additional capacity resources, you may want to run this tutorial series with the larger datasets. but again the validations steps were built based on a local copy of the ***small dataset***.
+
 
 [DONE]
 [ACCORDION-END]

@@ -3,8 +3,8 @@ title: Test Your Mobile SAP Screen Personas Flavor
 description: Run your Service Notification app on a mobile device
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-screen-personas>sap-screen-personas, topic>mobile, products>sap-fiori]
-primary_tag: products>sap-screen-personas>sap-screen-personas
+tags: [ tutorial>beginner, products>sap-screen-personas, topic>mobile, products>sap-fiori]
+primary_tag: products>sap-screen-personas
 ---
 
 ## Prerequisites
