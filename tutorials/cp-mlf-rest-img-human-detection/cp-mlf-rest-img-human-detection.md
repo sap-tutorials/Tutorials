@@ -334,6 +334,9 @@ window.onload = function() {
 </html>
 ```
 
+> ###**Note:**
+> In order to use this sample HTML code, you will need to save the images in the same location as the HTML code using the same name used when submitting the service call (in the current code: `"name": "SAP_TechEd_LV2018_10772.jpg"`).
+
 You will notice that the [`strokeRect` function](https://www.w3schools.com/tags/canvas_strokerect.asp) uses the following format:
 
 - x	: The x-coordinate of the upper-left corner of the rectangle
