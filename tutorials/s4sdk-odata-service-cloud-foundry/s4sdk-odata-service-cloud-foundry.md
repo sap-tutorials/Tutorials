@@ -2,7 +2,7 @@
 title: Connect to OData service on Cloud Foundry using SAP S/4HANA Cloud SDK
 description: The following steps will explain how to create a basic Java project to call OData services using the SAP S/4HANA Cloud SDK on Cloud Foundry.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-s-4hana topic>cloud, topic>java, topic>odata ]
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-s-4hana, topic>cloud, topic>java, topic>odata ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
