@@ -195,6 +195,8 @@ Completing this tutorial will grant you the ability to write blog posts (if you 
 
 3. Go to the [Write a Blog Post](https://blogs.sap.com/wp-admin/post-new.php) page to confirm your permissions.
 
+If your blogging permissions haven't changed, please make sure that you completed all of the actions listed in Step 4 above, then complete Step 11 again. If you are still unable to write a blog post (after confirming that you have completed all of the actions in Step 4, then in Step 11), please contact [community@sap.com](community@sap.com).
+
 [DONE]
 [ACCORDION-END]
 
