@@ -32,13 +32,13 @@ After selecting your region, your account will be automatically set up for devel
 
 Now that your account is activated and configured, you will need the `Cloud Foundry` command line interface (`cf CLI`) to deploy and manage your `Cloud Foundry` applications.
 
-To install `cf CLI`, you can either grab the latest release on the official release page or use your favorite package manager.
+To install `cf CLI`, you can either grab the latest release on the [official release page](https://github.com/cloudfoundry/cli/releases) or use your favorite [package manager](https://github.com/cloudfoundry/cli#installing-using-a-package-manager).
 
 In order to deploy applications on `SAP Cloud Foundry` you need to provide `cf CLI` with an API endpoint. The API endpoint depends on the region you chose for your account:
 
   - for EU: `https://api.cf.eu10.hana.ondemand.com`
   - for US EAST: `https://api.cf.us10.hana.ondemand.com`
-  - for US CENTRAL: `https://api.cf.us30.hana.ondemand.com`
+  - for US CENTRAL: `https://api.cf.us20.hana.ondemand.com`
 
 
 Now enter the following commands (in this case for the EU region):
@@ -72,7 +72,7 @@ After providing these values, Maven will generate your project from the archetyp
 
 ![Maven generates project from archetype](maven-generates-project.png)
 
-**Note**: Here you have created an application which is based on the `TomEE` runtime which is `Java EE 6` compliant open source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with `SpringBoot` (`artifactId`: `scp-cf-spring`) or on a pure `Tomcat` container (`artifactId`: `scp-cf-tomcat`). Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP S/4HANA Cloud SDK is compatible with these popular `runtimes` too.
+**Note**: Here you have created an application which is based on the [`TomEE` runtime](http://tomee.apache.org/) which is `Java EE 6` compliant `OpenSource` runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with `SpringBoot` (`artifactId`: `scp-cf-spring`) or on a pure `Tomcat` container (`artifactId`: `scp-cf-tomcat`). Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP S/4HANA Cloud SDK is compatible with these popular `runtimes` too.
 
 [ACCORDION-END]
 
@@ -100,12 +100,12 @@ To get you started, we take a look into the conventional `application` project, 
 
 ![project files in application folder](project-files-application-folder.png)
 
-  - `src/main/java` - Here goes your production code, nothing else. As you can see, there's already the `HelloWorldServlet`, which we will look at in more detail soon.
-  - `src/main/resources` - Anything that you require in your production code but is not compilable code goes here (typically things like API definition files for `RAML` or `OpenAPI`, `Database Migration Files` for `Flyway` or `Liquibase`)
-  - `src/main/webapp` - contains the deployment descriptor for your web application `web.xml`
-  - `src/test/java` - Additional test classes.
-  - `src/test/resources` - Additional resources for attached test modules.
-  - `pom.xml` - This is your project management file for Maven where you can maintain other open source dependencies or use plugins that simplify your build environment.
+  - **`src/main/java`** - Here goes your production code, nothing else. As you can see, there's already the `HelloWorldServlet`, which we will look at in more detail soon.
+  - **`src/main/resources`** - Anything that you require in your production code but is not compilable code goes here (typically things like API definition files for `RAML` or `OpenAPI`, `Database Migration Files` for `Flyway` or `Liquibase`)
+  - **`src/main/webapp`** - contains the deployment descriptor for your web application `web.xml`
+  - **`src/test/java`** - Additional test classes.
+  - **`src/test/resources`** - Additional resources for attached test modules.
+  - **`pom.xml`** - This is your project management file for Maven where you can maintain other open source dependencies or use plugins that simplify your build environment.
 
 **`unit-tests`** contains the unit tests for your application. Its structure is similar to application but it exclusively holds test classes and resources. The purpose of this module is to test and validate single aspects of data flow and computational operations in the application project.
 
@@ -125,14 +125,14 @@ To get you started, we take a look into the conventional `application` project, 
 
 ![project files in cx server folder](project-files-cx-server.png)
 
-  - `cx-server`	- This `Unix` bash script allows you to start and stop the `Jenkins` server on your local machine as part of a `Docker` container.
-  - `server.cfg` - his is the configuration file for the server parameters.
+  - **`cx-server`**	- This `Unix` bash script allows you to start and stop the `Jenkins` server on your local machine as part of a `Docker` container.
+  - **`server.cfg`** - his is the configuration file for the server parameters.
 
 Once a Jenkins server is configured for your personal needs, the files in the project root directory become useful:
 
-**`Jenkinsfile`** - This text file contains the definition of a `Jenkins Pipeline` and stays part of your project source code. It defines what steps are run specifically for your application.
-**`pipeline_config.yml`** - This is the configuration file for your specific application.
-**`manifest.yml`** is the deployment descriptor for `Cloud Foundry`. We will take a closer look at this file once we deploy the application.
+- **`Jenkinsfile`** - This text file contains the definition of a `Jenkins Pipeline` and stays part of your project source code. It defines what steps are run specifically for your application.
+- **`pipeline_config.yml`** - This is the configuration file for your specific application.
+- **`manifest.yml`** is the deployment descriptor for `Cloud Foundry`. We will take a closer look at this file once we deploy the application.
 
 #### Unit tests and integration tests
 
@@ -201,17 +201,16 @@ Now the previously mentioned `manifest.yml` comes into play – it's the deploym
   ---
   applications:
 
-  - name: firstapp
-    memory: 512M
-    host: firstapp-D123456
-    path: application/target/firstapp-application.war
-    buildpack: sap_java_buildpack
-    env:
-      TARGET_RUNTIME: tomee
-      ALLOW_MOCKED_AUTH_HEADER: true
+- name: firstapp
+  memory: 768M
+  host: firstapp-D123456
+  # random-route: true # used instead of "host"
+  path: application/target/firstapp-application.war
+  buildpack: sap_java_buildpack
+  env:
+    TARGET_RUNTIME: tomee
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: "metaspace:96m.."
 ```
-
-Here we can provide additional application specific environment variables. For example, we specify that we want to use a `TomEE` container as our target runtime. Also we set a flag to mock authentication headers, since you have not yet implemented any [security measures](https://blogs.sap.com/2017/07/18/step-7-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-cloudfoundry/).
 
 The manifest contains a list of applications that will be deployed to `Cloud Foundry`. In this example we only have one application, `firstapp`, with the following parameters:
 
@@ -254,6 +253,8 @@ Then, run the following commands to start the local server:
 cd application
 mvn tomee:run
 ```
+
+Visit `http://localhost:8080/hello` on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
 
 Now you have a strong basis for developing your own cloud application for `SCP Cloud Foundry` using the `SAP S/4HANA Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP S/4HANA Cloud SDK`.
 
