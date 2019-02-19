@@ -9,9 +9,13 @@ time: 15
 
 ## Details
 ### You will learn  
+
   - How to build the tasks
   - How to monitor the execution of tasks
-Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+  - Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+  - How to build get to know how to monitor the execution of tasks
+
+
 
 ---
 

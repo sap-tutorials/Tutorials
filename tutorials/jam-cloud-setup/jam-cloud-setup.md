@@ -13,19 +13,15 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to sign-up for a free:
-- SAP Cloud Platform developer account.
-- trial instance of SAP Jam Collaboration.
-
-### Time to Complete
-**15 Min**
+- How to sign up for a free SAP Cloud Platform developer account
+- How to sign up for a free trial instance of SAP Jam Collaboration
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Register)]
 
 Click the link to the SAP Cloud Platform sign up page:
-[https://account.hanatrial.ondemand.com/register](https://account.hanatrial.ondemand.com/register "https://account.hanatrial.ondemand.com/register").
+[https://account.hanatrial.ondemand.com/register](https://account.hanatrial.ondemand.com/register).
 
 If you do not have an account, you are presented with a log-in page from which you can create an account.
 
@@ -136,8 +132,7 @@ The SAP Jam initial welcome page is displayed.
 To access the developer support communities, where you can post your questions, comments, and solutions for SAP Cloud Platform and SAP Jam integrations and development, click the following links:
 
 - [SAP Cloud Platform Developer Center](https://www.sap.com/community/tag.html?id=01200615320800003694)
-- [SAP Jam Collaboration Developer Community](https://www.sap.com/community/topic/jam-collaboration.html)
+- [SAP Jam Collaboration Developer Community](https://www.sap.com/community/topics/jam-collaboration.html)
 
 
 [ACCORDION-END]
-

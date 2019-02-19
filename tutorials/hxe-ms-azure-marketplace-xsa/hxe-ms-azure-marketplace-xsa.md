@@ -11,9 +11,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
+-  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
+- [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](https://developers.sap.com/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
 
 ## Details
 ### You will learn  
@@ -344,7 +344,8 @@ You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
 
 [ACCORDION-END]
 
+
 ### Additional Information
+-  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
+- [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
-- **Intro to XS Advanced HANA Native Development:** [ Get started with XS Advanced development](https://developers.sap.com/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)

@@ -56,7 +56,9 @@ A series of settings can also be provided as part of the form data (named ***opt
 
 The service will return a JSON response that includes the detected texts within the file in either text or `hOCR` format.
 
-For more details, you can check the [Inference Service for Optical Character Recognition (OCR) on the SAP API Business Hub](https://api.sap.com/api/ocr_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Optical Character Recognition (OCR) on the SAP API Business Hub](https://api.sap.com/api/ocr_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -65,7 +67,7 @@ For more details, you can check the [Inference Service for Optical Character Rec
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 

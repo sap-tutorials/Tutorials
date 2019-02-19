@@ -1,12 +1,15 @@
 ---
-title: Capture streaming output in the HANA Database
+title: Capture Streaming Output in the HANA Database
 description: Create a table in the HANA database to receive data from a streaming project.  Then connect an output stream to the HANA table.
+author_name: Aaron Patkau
+author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
+auto_validation: true
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [Create a Streaming project with SAP HANA Streaming Analytics](https://developers.sap.com/tutorials/sds-create-streaming-project.html)
 
 
@@ -15,29 +18,25 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streamin
 
 ## Details
 ### You will learn  
-How to create a table in the HANA database to store events and how to connect an output stream in your project to the database table.
-
-### Time to Complete
-**15 Min**
+How to create a table in the HANA database to store events and how to connect an output stream in your project to the database table
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a HANA Database Schema to hold the tables for our project)]
+[ACCORDION-BEGIN [Step 1: ](Create a HANA Database Schema to hold the tables for your project)]
 
-Here you will execute a SQL statement on HANA to create a database schema where we will store our event data.  While we're at it, we'll go ahead and create some tables in the database that we will use later in this tutorial.
+First, you need to execute a SQL statement on HANA to create a database schema where you will store your event data. In the database schema, you will also create some tables that you will use later in this tutorial.
 
-Go to **SAP HANA Administration Console** perspective, then **Systems** view. Right click on the **tenant database** that you are working with (if you are following the HANA Express tutorial series to this point it will be called **HXE** by default). Caution: don't select the System database.
+Go to the **SAP HANA Administration Console** perspective, then the **Systems** view.
 
-Select **Open SQL Console** menu item to open a console that will automatically connect to your system.
+Right-click on the tenant database that you are working with, and select **Open SQL Console** to open a console that automatically connects to your system.
 
 ![Open a SQL Console for your HANA database](2-open-sql-console.png)
 
-Select the newly created SQL console tab.
+>Note: If you are following the HANA Express tutorial series to this point, the tenant database is called **HXE** by default. Don't select the System database.
 
-Copy the code below and paste it into the SQL console.
+Copy the code below and paste it into the newly created SQL console tab.
 
-```SQL
-
+    ```SQL
     CREATE SCHEMA STREAMING;
 
     CREATE COLUMN TABLE "STREAMING"."DASHBOARD"
@@ -86,13 +85,12 @@ Copy the code below and paste it into the SQL console.
     ( '6F','FREEZE',32,0,'HIN88','F');
     INSERT INTO "STREAMING"."MACHINE_REF"("MACHINEID", "MACHINETYPE", "MAX_TEMP", "MIN_TEMP", "LOCATION", "TEMP_UNIT") VALUES
     ( '7G','VEND',50,35,'ORD311','F');
-```
-
+    ```
 Execute the SQL script by pressing the **Execute** button (in the toolbar of the SQL console).
 
 ![execute SQL](3a-execute-sql.png)
 
-Check the HANA database catalog in the **SAP HANA Administration Console** to confirm that the schema has been created an contains the following tables:
+Check the HANA database catalog in the **SAP HANA Administration Console** to confirm that the schema has been created and contains the following tables:
 
 - `DASHBOARD`
 - `MACHINE_REF`
@@ -101,31 +99,32 @@ Check the HANA database catalog in the **SAP HANA Administration Console** to co
 
 The table **`MACHINE_REF`** should have 7 rows of data.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Connect the output stream to the database table)]
-We want to capture `DOOR_OPEN` and `DOOR_CLOSE` events in the `ACTIVITY_HIST` HANA database table to track the activity for each of our freezer units.  We already have a filter in our project that isolates the door events from all other events.  Now we just need to connect the output stream to the database table.  We'll do this by adding a HANA output adapter to our project.
+Next, you are going to capture `DOOR_OPEN` and `DOOR_CLOSE` events in the `ACTIVITY_HIST` HANA database table to track the activity for each of your freezer units.  You already have a filter in your project that isolates the door events from all other events.  Now you just need to connect the output stream to the database table.  You do this by adding a HANA output adapter to your project.
 
 First, switch to the **SAP HANA Streaming Development** perspective.
 
-Select **HANA Output** from **Output Adapters** drawer in the **Palette** and drag it to the canvas.  Use the small scroll bar at the bottom of the palette drawer if you need to scroll down (see red box in screen shot below).
+Select **HANA Output** from the **Output Adapters** drawer in the **Palette** and drag it onto the canvas.  Use the small scroll bar at the bottom of the **Palette** drawer if you need to scroll down (see screenshot below).
 
 ![add HANA table](1-add-hana-table.png)
 
-Click on the **Edit Properties** tool next to the new `HANA_Output1` shape to edit the Adapter Properties.
+Select the **Edit Properties** option next to the new `HANA_Output1` element to edit the adapter properties.
 
 ![Adapter properties](2-edit-properties.png)
 
-To set the Schema property, select the value field and then click the discovery button:
+To set the schema property, select the value field beside "Target Database Schema Name", then hit the discovery button:
 
 ![discover schema](choose-schema.png)
 
-Set the target schema to STREAMING and click OK
+Set the target schema to STREAMING and select **OK**.
 
 ![discover schema](4a-set-schema.png)
 
-Set the Target Database Table Name to **`ACTIVITY_HIST`**
+Set the Target Database Table Name to **`ACTIVITY_HIST`**.
 
 Now the adapter properties should all be set as follows:
 
@@ -134,22 +133,23 @@ Property                    | Value
 Database Service Name       | `hanadb`
 Target Database Schema Name | `STREAMING`
 Target Database Table Name  | `ACTIVITY_HIST`
+>Note that your database service name is unique to your environment.
 
-
-Now grab the **Connector** tool
+Now select the **Connector** tool, as seen below.
 
 ![get connector tool](6-connector.png)
 
-And connect the adapter to the **`ACTIVITY_HIST`** stream. Click on the **`ACTIIVTY_HIST`** stream, then click on the **`HANA_Output1`** adapter.
+Connect the adapter to the **`ACTIVITY_HIST`** stream by clicking the **`ACTIIVTY_HIST`** stream, then the **`HANA_Output1`** adapter.
 
 ![connect adapter](connect-adapter.png)
 
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Compile and check for errors)]
 
-In the **SAP HANA Streaming Development** perspective, click the Compile Project icon shown below.
+In the **SAP HANA Streaming Development** perspective, click the **Compile Streaming Project (F7)** button shown below.
 
 ![compile](1-compile.png)
 
@@ -157,26 +157,25 @@ Check the **Problems** view to see if the project compiled without errors.
 
 ![check errors](2-check-errors.png)
 
-> If you do have compile errors, if it's easy to spot the error here, go ahead and fix it.  Sometimes it's easier to find and fix an error in the CCL editor.  You can view the underlying CCL for the project by switching to the CCL editor (see the optional step below).  In the CCL editor, compile again and any line with an error will be flagged and you can point your cursor at the error flag to see a description of the error.  See the next step for how to do that.
+If you can spot the compile error in the **Problems** view, go ahead and fix it.  Sometimes it's easier to find and fix an error in the CCL editor.  You can view the underlying CCL for the project by switching to the CCL editor (see the step below for details).
 
+[DONE]
 
 [ACCORDION-END]
 
-## Optional
+[ACCORDION-BEGIN [Step 4: ](Check your project in the CCL editor)]
 
-[ACCORDION-BEGIN [Step 4: ](Check your project in the CCL Editor)]
+All streaming projects are defined in a variation of SQL called **CCL**.  So far you've been working entirely in the visual editor.  However, you can also create, edit, and view projects in the CCL editor.  
 
-All streaming projects are defined in a variation of SQL that we call **CCL**.  So far we've been working entirely in the visual editor.  However, you can also create, edit and view projects in the CCL editor.  
-
-Switch to the CCL editor:  either click on the **Switch to Text** tool in the Eclipse toolbar, or press F6.
+To switch to the CCL editor, either click on the **Switch to Text** button in the Eclipse toolbar, or press **F6**.
 
 ![switch to CCL editor](switch-to-text.png)
 
-Compile your project
+Compile your project.
 
 ![compile](1-compile.png)
 
-If there are errors, point to the error flag (hover) on the line with the error to read the error message (or read it in the Problems view)
+Any line with an error is flagged. If there are errors, then hover over an error flag to read the error message (or read it in the **Problems** view).
 
 ![check error messages](ccl-view.png)
 
@@ -204,5 +203,6 @@ PROPERTIES
 	table = 'ACTIVITY_HIST' ;
 ```
 
+[DONE]
 
 [ACCORDION-END]

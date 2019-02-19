@@ -1,21 +1,26 @@
 ---
-title: Adapt UI of business object (S4/HANA Cloud, ABAP Extensibility)
-description: Adapt the UI of a Business Object, shown at the generated UI of a Custom Business Object
+title: Adapt the UI of a Business Object
+description: Adapt the UI of a business object inside SAP S/4HANA Cloud, shown at the generated UI of a custom business object.
+auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
+time: 10
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Creating a UI for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-generation.html)
+ - **Tutorials:** [Create a UI for a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-generation.html)
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
 
 ## Details
 ### You will learn  
+In the preceding tutorials, you created a custom business object with a simple data structure and its persistence. Afterwards you generated an UI for this business object and exposed it as a Fiori Launchpad application.
 
-In the preceding tutorials you created a custom business object with a simple data structure and its persistence. Afterwards you generated an UI for this business object and exposed it as an Fiori Launchpad application.
-As the generated User Interfaces only list all fields of a business object node, adapting the UI might be necessary to improve usability of it.
+As the generated User Interfaces only lists all fields of a business object node, adapting the UI might be necessary to improve usability of it.
+
+>**UI Adaptation** is a so called **In-App Extensibility** feature done completely inside a S/4HANA system. It is a key user functionality which will have effect on all users in the system.
+>
+>Alternatively the more powerful **Side-By-Side Extensibility** via **SAP Cloud Platform** could be done to create a completely new UI (see tutorial group [Create Custom UI for S/4HANA Cloud](https://developers.sap.com/group.abap-custom-ui-with-webide.html)).
 
 ### Example
 
@@ -23,10 +28,8 @@ A several tutorials spanning example will show extensibility along custom Bonus 
 
 In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
-### Time to Complete
-**10 Min**
 
-
+---
 
 [ACCORDION-BEGIN [Step 1: ](Open the UI to be adapted)]
 
@@ -41,7 +44,7 @@ Press **Go** to get the list of all Bonus Plans. **Open** a bonus plan's detail 
 This is the screen that will be adapted.
 ![Bonus Plan's detail view before adaptation](UI_BoDetailsBeforeAdaptation.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2:](Switch to Adaptation mode)]
@@ -52,7 +55,7 @@ This is the screen that will be adapted.
 Open the adaptation mode via **Adapt UI**.
 ![Go to UI Adaptation mode](UI_go2adaptation.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3:](Create an UI group)]
@@ -67,7 +70,7 @@ By right clicking onto them you get options to adapt the UI. As these options ar
 
 **Create Group** and name it "Bonus Data".
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4:](Move UI elements)]
@@ -89,7 +92,7 @@ Repeat **Drag & Drop** into Bonus Data group for the fields:
 - Employee ID
 - Employee Name
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5:](Apply UI changes)]
@@ -98,9 +101,11 @@ Repeat **Drag & Drop** into Bonus Data group for the fields:
 
 Finally you only need to **Exit** adaptation mode to work with the new layout.
 
-
-
+[DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
+[VALIDATE_1]
+[ACCORDION-END]
 ---

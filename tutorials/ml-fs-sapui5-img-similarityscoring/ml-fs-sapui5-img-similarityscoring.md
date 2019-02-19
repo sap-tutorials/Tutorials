@@ -10,12 +10,9 @@ time: 40
 ## Prerequisites  
  - [Sign up for an free trial account on the SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
-## Next Steps
- - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://developers.sap.com/group.ml-fs-api-hub.html), [Java](https://developers.sap.com/group.ml-fs-java.html) or [SAPUI5](https://developers.sap.com/group.ml-fs-sapui5.html)
-
 ## Details
 ### You will learn  
-In this tutorial, you will learn how to leverage the **Image Feature Extraction** & **Similarity Scoring** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application.
+  - How to quickly integrate the **Image Feature Extraction** & **Similarity Scoring** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application
 
 The **Image Feature Extraction** service allows you to extract a vector of features for any given image which can be used with **Similarity Scoring** service to compare vectors of features and compute a similarity score (cosine distance) ranging from -1 to 1.
 
@@ -74,7 +71,7 @@ Then, the following pop-up should appear. Click on the **Copy Key and Close** bu
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Analyze the services)]
+[ACCORDION-BEGIN [Step 1: ](Analyze the services)]
 
 As you will notice both API have only one resource (or service), `/similarity-scoring` for **Inference Service for Similarity Scoring** and `/feature-extraction` for **Inference Service For Customizable Image Feature Extraction** .
 
@@ -108,7 +105,7 @@ The input file, files or archive file will be sent as a `FormData` query paramet
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Access the SAP Cloud Platform Cockpit)]
 
 Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
@@ -125,7 +122,7 @@ You are now in your ***SAP Cloud Platform developer*** account!
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure your destination)]
+[ACCORDION-BEGIN [Step 1: ](Configure your destination)]
 
 You will need to create a destination in your SAP Cloud Platform account that allow will your applications to connect to external APIs such as the SAP API Business Hub.
 
@@ -163,7 +160,7 @@ You should receive a ***connection established*** message with potentially a ***
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Open the Web IDE)]
+[ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 
 On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
 
@@ -180,7 +177,7 @@ You will get access to the **SAP Web IDE** main page:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a project using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 1: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section or use the **File** > **New** > **Project from Template**.
 
@@ -211,11 +208,11 @@ View Name            | `demo`
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
+[ACCORDION-BEGIN [Step 1: ](Extend the application resource roots)]
 
 In order to ease the use of the provided code, we will add a new SAPUI5 resource roots. The main reason for this is that the rule used to generate the initial resource root by the project template has change many time over the time.
 
-Edit the `index.html` file located under **`Workspace`** > **`sapui5ml`** > **`webapp`** and add the below element to the existing `data-sap-ui-resourceroots` property around line 15 (don't forget the comma in between the existing element and the new one).
+Edit the **`index.html`** file located under **`Workspace`** > **`sapui5ml`** > **`webapp`** and add the below element to the existing `data-sap-ui-resourceroots` property around line 15 (don't forget the comma in between the existing element and the new one).
 
 ```JavaScript
 "sapui5ml": ""
@@ -224,7 +221,7 @@ Edit the `index.html` file located under **`Workspace`** > **`sapui5ml`** > **`w
 It should eventually look something like this:
 
 ```
-data-sap-ui-resourceroots='{"xxxx": "", "sapui5ml": ""}'
+data-sap-ui-resourceroots='{"demo.sapui5ml-img-similarityscoring": "./", "sapui5ml": ""}'
 ```
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
@@ -232,11 +229,11 @@ Click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Configure your SAPUI5 application)]
+[ACCORDION-BEGIN [Step 1: ](Configure your SAPUI5 application)]
 
 In order to use the previously configured destination, we need to add its declaration into the `neo-app.json` file along with the header white list configuration that will prevent HTTP header parameters to be filtered out.
 
-Edit the `neo-app.json` file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** and replace the current content with the below code.
+Edit the **`neo-app.json`** file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** and replace the current content with the below code.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -284,7 +281,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
+[ACCORDION-BEGIN [Step 1: ](Store your API setting in a JSON model)]
 
 There are multiple options to achieve this goal. Here we will use a pre-loaded JSON model configured in the `manifest.json` file.
 
@@ -294,13 +291,17 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url_featureextraction" : "/ml-dest/imagefeatureextraction/feature-extraction",
-  "url_similarityscoring" : "/ml-dest/similarityscoring/similarity-scoring",
+  "url_featureextraction": "/ml-dest/imagefeatureextraction/feature-extraction",
+  "url_similarityscoring": "/ml-dest/similarityscoring/similarity-scoring",
+  "method": "POST",
+  "accept": "application/json",
+  "fileType": "zip,tar",
+  "mimeType": "application/x-zip-compressed,application/zip,application/octet-stream",
   "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }
 ```
 
-Edit the `manifest.json` file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** and locate the `models` section (around line 55), and update the section like this:
+Edit the **`manifest.json`** file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** and locate the `models` section (around line 55), and update the section like this:
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -323,373 +324,423 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Extend your SAPUI5 application With JSZip)]
-
-`JSZip` is a JavaScript library for creating, reading and editing .zip files, with a lovely and simple API.
-
-`JSZip` is dual licensed. You may use it under the MIT license or the `GPLv3` license. Make sure o have a look at the [LICENSE](https://github.com/Stuk/jszip/blob/master/LICENSE.markdown) condition before continuing with the tutorial.
-
-For detailed instructions about how to configure you SAPUI5 application with `JSZip`, you can refer to the following blog: [Give the power of Zip to you SAPUI5 applications](https://blogs.sap.com/2017/12/15/give-the-power-of-zip-to-your-sapui5-applications/)
-
-For more details `JSZip`, you can refer to : <https://stuk.github.io/jszip/>
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 11: ](Extend your SAPUI5 controller (1/4))]
-
-In this step, you will add a generic function to call the API. You can notice that this function allows you to use either Ajax or XHR depending on the mode parameter.
-
-Edit the `demo.controller.js` file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`controller`** and add the following function to the controller.
-
-Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
-
-```JavaScript
-callService: function(oController, service, url, type, mode, apiKey, formData, fnPrecessResult) {
-  var ajaxSuccess = function(data, status, jqXHR) {
-    // set the response as JSON in the demo model
-    var fileName = formData.values().next().value.name;
-    var file = formData.get("files");
-    fnPrecessResult(oController, data, file, fileName);
-
-    // close the busy indicator if all request have completed
-    oController.requestCount--;
-    if (oController.requestCount <= 0) {
-      // close the busy indicator
-      oController.oBusyIndicator.close();
-    }
-  };
-  var ajaxError = function(jqXHR, status, message) {
-    oController.getView().getModel("demo").setProperty("/resultVisible-" + service, null);
-    MessageBox.show("Error for file : " + formData.values().next().value.name + " \n status: " + status + "\n message: " + JSON.parse(jqXHR.responseText).error_description);
-    oController.oBusyIndicator.close();
-  };
-  var xhrReadyStateChange = function() {
-    if (this.readyState === this.DONE) {
-      if (this.status === 200) {
-        // set the response as JSON in the demo model
-        var data = JSON.parse(this.response);
-        var fileName = formData.values().next().value.name;
-        var file = formData.get("files");
-        fnPrecessResult(oController, data, file, fileName);
-        // fnPrecessResult(oController, data, formData.values().next().value.name);
-      } else {
-        oController.getView().getModel("demo").setProperty("/resultVisible-" + service, null);
-        MessageBox.show("Error for file : " + formData.values().next().value.name + " \n status: " + this.status + "\n message: " + JSON.parse(this.responseText).error_description);
-
-      }
-      // close the busy indicator if all request have completed
-      oController.requestCount--;
-      if (oController.requestCount <= 0) {
-        // close the busy indicator
-        oController.oBusyIndicator.close();
-      }
-    }
-  };
-
-  if (mode === "ajax") {
-    $.ajax({
-      type: type,
-      url: url,
-      headers: {
-        'Accept': 'application/json',
-        'APIKey': apiKey
-      },
-      success: ajaxSuccess,
-      error: ajaxError,
-      contentType: false,
-      async: true,
-      data: formData,
-      cache: false,
-      processData: false
-    });
-  } else if (mode === "xhr") {
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-    xhr.addEventListener("readystatechange", xhrReadyStateChange);
-    // setting request method & API endpoint, the last parameter is to set the calls as synchyronous
-    xhr.open(type, url, false);
-    // adding request headers
-    xhr.setRequestHeader("Accept", "application/json");
-    // API Key for API Sandbox
-    xhr.setRequestHeader("APIKey", apiKey);
-    // sending request
-    xhr.send(formData);
-  } else {
-    oController.oBusyIndicator.close();
-  }
-}
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Extend your SAPUI5 controller (2/4))]
-In this step, you will add the code to process the **Image Feature Extraction** API call.
-
-Edit the `demo.controller.js` file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`controller`** and add the following function to the controller.
-
-Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
-
-```JavaScript
-onPressExtractFeatures: function(oControlEvent) {
-  // get the current controller & view
-  var oView = this.getView();
-
-  // start the busy indicator
-  this.oBusyIndicator = new sap.m.BusyDialog();
-  this.oBusyIndicator.open();
-
-  this.requestCount = 0;
-
-  // clear previous results from the model
-  oView.getModel("demo").setProperty("/result-featureextraction", null);
-  oView.getModel("demo").setProperty("/resultVisible-featureextraction", null);
-  oView.getModel("demo").setProperty("/resultVisible-similarityscoring", null);
-
-  var srcFileIsImage = false;
-  var result = oView.getModel("demo").getProperty("/result-featureextraction");
-  if (!result) {
-    result = [];
-  }
-  var processResult = function(oController, data, file, fileName) {
-    if (!srcFileIsImage) {
-      JSZip.loadAsync(file).then(function(zip) {
-        Object.keys(zip.files).forEach(function(zipEntry) {
-          zip.files[zipEntry].async("blob").then(function(zipEntryFile) {
-            for (var i = 0; i < data.predictions.length; i++) {
-              if (zipEntry === data.predictions[i].name) {
-                // Set the URL and file name
-                data.predictions[i].fileURL = URL.createObjectURL(zipEntryFile);
-                data.predictions[i].name = fileName + " --- " + data.predictions[i].name;
-                // push the result
-                result.push(data.predictions[i]);
-                // set the result back
-                oController.getView().getModel("demo").setProperty("/result-featureextraction", result);
-                // display the result table
-                oController.getView().getModel("demo").setProperty("/resultVisible-featureextraction", true);
-              }
-            }
-          });
-        });
-      });
-    } else {
-      // Set the URL
-      data.predictions[0].fileURL = URL.createObjectURL(file);
-      // push the result
-      result.push(data.predictions[0]);
-      // set the result back
-      oController.getView().getModel("demo").setProperty("/result-featureextraction", result);
-      // display the result table
-      oController.getView().getModel("demo").setProperty("/resultVisible-featureextraction", true);
-    }
-  };
-
-  // keep a reference of the uploaded files
-  var mode = oControlEvent.getSource().data("mode");
-  var url = oView.getModel("demo").getProperty("/url_featureextraction");
-  var type = "POST";
-  var apiKey = oView.getModel("demo").getProperty("/APIKey");
-  for (var fileIndex = 0; fileIndex < oControlEvent.getParameters().files.length; fileIndex++) {
-    var srcFile = oControlEvent.getParameters().files[fileIndex];
-    if (srcFile.type.match('image.*')) {
-      srcFileIsImage = true;
-    } else {
-      srcFileIsImage = false;
-    }
-    // create the form data to be sent in the request
-    var formData = new window.FormData();
-    formData.append("files", srcFile, srcFile.name);
-
-    // increase request countor to close busy indicator
-    this.requestCount++;
-
-    // call the service
-    this.callService(this, "featureextraction", url, type, mode, apiKey, formData, processResult);
-  }
-}
-```
-
-> ### **Note: `JSZip` library**
-> Make sure to include the following piece of code at the very beginning of the controller code, else you will see validation errors in your code:
->
-> ```JavaScript
-> /* global JSZip:true */
-> ```
-
-&nbsp;
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 13: ](Extend your SAPUI5 controller (2/4))]
-In this step, you will add the code to process the **Similarity Scoring** API call.
-
-Edit the `demo.controller.js` file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`controller`** and add the following function to the controller.
-
-Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
-
-```JavaScript
-onPressScoreSimilarity: function(oControlEvent) {
-  // get the current view
-  var oView = this.getView();
-  var oThis = this;
-
-  // start the busy indicator
-  this.oBusyIndicator = new sap.m.BusyDialog();
-  this.oBusyIndicator.open();
-
-  // clear previous results from the model
-  oView.getModel("demo").setProperty("/resultVisible-similarityscoring", null);
-
-  var zip = new JSZip();
-  // create the files
-  var result = oView.getModel("demo").getProperty("/result-featureextraction");
-  for (var i = 0; i < result.length; i++) {
-    zip.file(result[i].name + ".json", JSON.stringify(result[i].feature_vector));
-    result[i].result = [];
-  }
-
-  var url = oView.getModel("demo").getProperty("/url_similarityscoring");
-  var type = "POST";
-  var apiKey = oView.getModel("demo").getProperty("/APIKey");
-  var mode = oControlEvent.getSource().data("mode");
-  var options = "{\"numSimilarVectors\" : " + (result.length - 1) + "}";
-  var processResult = function(oController, data, file, fileName) {
-    for (var ii = 0; ii < data.predictions.length; ii++) {
-      for (var jj = 0; jj < result.length; jj++) {
-        if (data.predictions[ii].id === result[jj].name + ".json") {
-          result[jj].result = data.predictions[ii].similarVectors;
-          break;
-        }
-      }
-    }
-    // set the result back
-    oController.getView().getModel("demo").setProperty("/result-featureextraction", result);
-    // display the result table
-    oController.getView().getModel("demo").setProperty("/resultVisible-similarityscoring", true);
-  };
-  var processServiceCall = function(blob) {
-    //saveAs(blob, "score.zip");
-    var formData = new window.FormData();
-    formData.append("files", blob, "score.zip");
-    formData.append("options", options);
-
-    oThis.callService(oThis, "similarityscoring", url, type, mode, apiKey, formData, processResult);
-  };
-  // call processServiceCall with the extracted features
-  zip.generateAsync({
-      type: "blob"
-    })
-    .then(processServiceCall);
-}
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 14: ](Extend your SAPUI5 controller (4/4))]
-In this step, you will add the **Type Mismatch** function that will be used when uploading the wrong type of files.
-
-Edit the `demo.controller.js` file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`controller`** and add the following function to the controller.
-
-```JavaScript
-fileTypeMissmatch: function(oControlEvent) {
-  MessageBox.show("Wrong file type!");
-}
-```
-
-Also make sure your `demo.controller.js` start like this:
-
-```JavaScript
-/* global JSZip:true */
-sap.ui.define([
-  "sap/ui/core/mvc/Controller",
-  "sap/m/MessageBox"
-], function(Controller, MessageBox) {
-  // rest of the code
-})
-```
-
-Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 15: ](Extend your SAPUI5 view)]
+[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 view)]
 
 The view will contain a carousel that will display the uploaded images along with a table to display the results along with a "File Upload" button to handle feature extraction call and a button for the similarity scoring.
 
-Edit the `demo.view.xml` file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`view`** and replace the existing code with the below code.
+Edit the **`demo.view.xml`** file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`view`** and replace the existing code with the below code.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```XML
-<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout" xmlns="sap.m"
-	xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
-	controllerName="sapui5ml.controller.demo" displayBlock="true">
-	<App>
-		<pages>
-			<Page title="Image Similarity Scoring">
-				<content>
-					<Carousel pages="{path:'demo>/result-featureextraction'}" width="100%" visible="{= ${demo>/resultVisible-featureextraction} === true }">
-						<pages>
-							<VBox width="100%" direction="Column" alignItems="Center">
-								<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
-									<Image height="200px" class="sapUiLargeMargin" src="{demo>fileURL}"/>
-									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
-									<table:Table rows="{demo>result}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5" visible="{= ${demo>/resultVisible-similarityscoring} === true}">
-										<table:columns>
-											<table:Column sortProperty="id" filterProperty="label">
-												<Label text="File"/>
-												<table:template>
-													<Text text="{demo>id}"/>
-												</table:template>
-											</table:Column>
-											<table:Column sortProperty="score" filterProperty="score">
-												<Label text="Score"/>
-												<table:template>
-													<Text text="{demo>score}"/>
-												</table:template>
-											</table:Column>
-										</table:columns>
-									</table:Table>
-								</ScrollContainer>
-							</VBox>
-						</pages>
-					</Carousel>
-				</content>
-				<footer>
-					<Toolbar width="100%">
-						<content>
-							<unified:FileUploader buttonOnly="true" sameFilenameAllowed="true" multiple="true" buttonText="Get Image Features"
-								change="onPressExtractFeatures" custom:mode="ajax" fileType="zip,png,jpeg,jpg,bmp,tiff,tif"
-								mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff"
-								typeMissmatch="fileTypeMissmatch"></unified:FileUploader>
-							<Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax" visible="{= ${demo>/resultVisible-featureextraction} === true}"/>
-						</content>
-					</Toolbar>
-				</footer>
-			</Page>
-		</pages>
-	</App>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns="sap.m" xmlns:micro="sap.suite.ui.microchart" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="sapui5ml.controller.demo" displayBlock="true">
+  <App>
+    <pages>
+      <Page title="Image Similarity Scoring">
+        <content>
+          <Carousel pages="{demo>/predictions}" width="100%" visible="{= ${demo>/visible-featureextraction} === true}">
+            <pages>
+              <ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+                <VBox alignContent="Center" alignItems="Center">
+                  <Image tooltip="canvas" class="sapUiLargeMargin" src="{demo>contentUrl}"/>
+                  <Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
+                  <table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5"
+                    visible="{= ${demo>/visible-similarityscoring} === true}">
+                    <table:columns>
+                      <table:Column sortProperty="label" filterProperty="label">
+                        <Label text="Label"/>
+                        <table:template>
+                          <Text text="{demo>id}"/>
+                        </table:template>
+                      </table:Column>
+                      <table:Column sortProperty="score" filterProperty="score">
+                        <Label text="Score"/>
+                        <table:template>
+                          <micro:RadialMicroChart size="XS" fraction="{demo>score}" total="1" class="sapUiSmallMargin"/>
+                        </table:template>
+                      </table:Column>
+                    </table:columns>
+                  </table:Table>
+                  <Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax" visible="{= ${demo>/visible-featureextraction} === true}"/>
+                </VBox>
+                <content/>
+              </ScrollContainer>
+            </pages>
+          </Carousel>
+        </content>
+        <footer>
+          <Toolbar width="100%">
+            <content>
+              <unified:FileUploader buttonOnly="true" buttonText="Upload Picture" sameFilenameAllowed="true" multiple="false" fileType="{demo>/fileType}" mimeType="{demo>/mimeType}" typeMissmatch="fileTypeMissmatch" change="onPressExtractFeatures" custom:mode="ajax">
+                <unified:headerParameters>
+                  <unified:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
+                  <unified:FileUploaderParameter name="Accept" value="{demo>/accept}"/>
+                </unified:headerParameters>
+              </unified:FileUploader>
+              <Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax" visible="{= ${demo>/visible-featureextraction} === true}"/>
+            </content>
+          </Toolbar>
+        </footer>
+      </Page>
+    </pages>
+  </App>
 </mvc:View>
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Test the application)]
+[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 application With JSZip & FileSaver)]
+
+`JSZip` is a JavaScript library for creating, reading and editing .zip files, with a lovely and simple API.
+
+`JSZip` is dual licensed. You may use it under the MIT license or the `GPLv3` license. Make sure o have a look at the [LICENSE](https://github.com/Stuk/jszip/blob/master/LICENSE.markdown) condition before continuing with the tutorial.
+
+`FileSaver.js` is the solution for saving files on the client-side, and is perfect for web apps that need to generate files, or for saving sensitive information that shouldn't be sent to an external server.
+
+`FileSaver` is licensed under the MIT license.
+
+I highly recommend you to check the LICENSE for more details.
+
+GitHub repository : `https://github.com/eligrey/FileSaver.js`
+
+For detailed instructions about how to configure you SAPUI5 application with `JSZip`, you can refer to the following blog: [Give the power of Zip to you SAPUI5 applications](https://blogs.sap.com/2017/12/15/give-the-power-of-zip-to-your-sapui5-applications/)
+
+For more details `JSZip`, you can refer to : <https://stuk.github.io/jszip/>
+
+> ### **Note: `JSZip` library**
+> Make sure to include the following piece of code at the very beginning of the controller code, else you will see validation errors in your code:
+>
+> ```JavaScript
+> /* global JSZip:true */
+> /* global saveAs:true */
+> ```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 controller (1/4))]
+
+In this step, you will add a series of generic helper functions. These functions handle:
+
+ - file type mismatch: when the wrong file type is selected during the upload
+ - clear previous results
+ - display final message
+ - generate local URL for image files (including images inside ZIP)
+
+Edit the **`demo.controller.js`** file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`controller`** and replace the existing code with the below code.
+
+```JavaScript
+/* global JSZip:true */
+/* global saveAs:true */
+sap.ui.define([
+  "sap/ui/core/mvc/Controller",
+  "sap/m/MessageBox"
+], function (Controller, MessageBox) {
+  "use strict";
+
+  return Controller.extend("sapui5ml.controller.demo", {
+    fileTypeMissmatch: function (oControlEvent) {
+      MessageBox.show("Wrong file type!");
+    },
+    clearPredictions: function () {
+      this.getView().getModel("demo").setProperty("/predictions", null);
+      this.getView().getModel("demo").setProperty("/visible-similarityscoring", false);
+      this.getView().getModel("demo").setProperty("/visible-featureextraction", false);
+    },
+    displayErrorsOrFinish: function (oController, service) {
+      if (oController.oFilesProcessed === oController.oFiles.length) {
+        oController.oBusyIndicator.close();
+        if (oController.oErrors.length === 0) {
+          MessageBox.show("Process completed!\n Target URL: " + oController.getView().getModel("demo").getProperty("/url_" + service));
+        } else {
+          var message = "";
+          for (var i = 0; i < oController.oErrors.length; i++) {
+            message += "\n\t  Error: " + oController.oErrors[i].status + " - " + oController.oErrors[i].message;
+          }
+          MessageBox.show("Errors: \n" + message);
+        }
+      }
+    },
+    getFileContentUrl: function (files, prediction, callback) {
+      for (var i = 0; i < files.length; i++) {
+        if (files[i].type.match("image.*")) {
+          if (files[i].name === prediction.name) {
+            callback(prediction, files[i].contentUrl);
+          }
+        } else {
+          JSZip.loadAsync(files[i]).then(function (zip) {
+            Object.keys(zip.files).forEach(function (zipEntry) {
+              if (zipEntry === prediction.name) {
+                zip.files[zipEntry].async("blob").then(function (zipEntryFile) {
+                  callback(prediction, URL.createObjectURL(zipEntryFile));
+                });
+              }
+            });
+          });
+        }
+      }
+    }
+  });
+});
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 controller (2/4))]
+
+In this step, you will add a generic function to call the API. You can notice that this function allows you to use either Ajax or XHR depending on the mode parameter.
+
+Edit the **`demo.controller.js`** file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`controller`** and add the following function to the controller.
+
+Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
+
+```JavaScript
+    callService: function (oController, service, mode, file, callback, options) {
+      // create the form data to be sent in the request
+      var formData = new window.FormData();
+      formData.append("files", file, file.name);
+      if (options) {
+        formData.append("options", JSON.stringify(options));
+      }
+
+      var url = oController.getView().getModel("demo").getProperty("/url_" + service);
+      var type = oController.getView().getModel("demo").getProperty("/method");
+      var apiKey = oController.getView().getModel("demo").getProperty("/APIKey");
+      var accept = oController.getView().getModel("demo").getProperty("/accept");
+
+      var callbackAjaxSuccess = function (data, status, jqXHR) {
+        callback(oController, data);
+      };
+      var callbackAjaxError = function (jqXHR, status, message) {
+        oController.clearPredictions();
+        var error_message = {
+          "error": jqXHR.responseJSON.error
+        };
+        callback(oController, error_message);
+      };
+      var callbackXHRReadyStateChange = function () {
+        if (this.readyState === this.DONE) {
+          if (this.status === 200) {
+            callback(oController, JSON.parse(this.response));
+          } else {
+            oController.clearPredictions();
+            var error_message = {
+              "error": this.responseJSON.error
+            };
+            callback(oController, error_message);
+          }
+        }
+      };
+      if (mode === "ajax") {
+        $.ajax({
+          type: type,
+          url: url,
+          headers: {
+            "Accept": accept,
+            "APIKey": apiKey
+          },
+          success: callbackAjaxSuccess,
+          error: callbackAjaxError,
+          contentType: false,
+          async: true,
+          data: formData,
+          cache: false,
+          processData: false
+        });
+      } else if (mode === "xhr") {
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+        xhr.addEventListener("readystatechange", callbackXHRReadyStateChange);
+        xhr.open(type, url, true); // setting request method & API endpoint, the last parameter is to set the calls as asynchyronous
+        xhr.setRequestHeader("Accept", accept); // adding request headers
+        xhr.setRequestHeader("APIKey", apiKey); // API Key for API Sandbox
+        xhr.send(formData); // sending request
+      } else {
+        oController.oBusyIndicator.close();
+      }
+    }
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 controller (3/4))]
+
+In this step, you will add the code to process the **Image Feature Extraction** API call.
+
+Edit the **`demo.controller.js`** file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`controller`** and add the following function to the controller.
+
+Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
+
+```JavaScript
+
+    addExtractedFeatures: function (predictions) {
+      // service name
+      var service = "featureextraction";
+      var current = this.getView().getModel("demo").getProperty("/predictions");
+      if (!current) {
+        current = [];
+        this.getView().getModel("demo").setProperty("/predictions", current);
+      }
+      current.push(predictions);
+      // set the results visible
+      this.getView().getModel("demo").setProperty("/visible-" + service, true);
+    },
+    processResultsExtractFeatures: function (oController, response) {
+      // service name
+      var service = "featureextraction";
+
+      oController.oFilesProcessed++;
+      if (response.status === "DONE") {
+        for (var i = 0; i < response.predictions.length; i++) {
+          var callback = function (prediction, contentUrl) {
+            prediction.contentUrl = contentUrl;
+            oController.addExtractedFeatures(prediction);
+          };
+          oController.getFileContentUrl(oController.oFiles, response.predictions[i], callback);
+        }
+      } else {
+        oController.oErrors.push({
+          "status": response.error.code,
+          "message": response.error.message
+        });
+      }
+      oController.displayErrorsOrFinish(oController, service);
+    },
+    onPressExtractFeatures: function (oControlEvent) {
+      // service name
+      var service = "featureextraction";
+      // get the call mode : ajax or xhr
+      var mode = oControlEvent.getSource().data("mode");
+
+      // start the busy indicator
+      var oBusyIndicator = new sap.m.BusyDialog();
+      oBusyIndicator.open();
+
+      // clear previous results from the model
+      this.clearPredictions();
+
+      // keep a reference of the uploaded file name and create the local url
+      var oFiles = oControlEvent.getParameters().files;
+      for (var i = 0; i < oFiles.length; i++) {
+        oFiles[i].contentUrl = URL.createObjectURL(oFiles[i]);
+      }
+
+      // keep a reference in the view to close it later
+      this.oBusyIndicator = oBusyIndicator;
+      this.oFiles = Object.assign({}, oFiles);
+      this.oFiles.length = oFiles.length;
+      this.oFilesProcessed = 0;
+      this.oErrors = [];
+
+      for (var j = 0; j < oFiles.length; j++) {
+        this.oFiles[j].contentUrl = URL.createObjectURL(this.oFiles[j]);
+        this.callService(this, service, mode, this.oFiles[j], this.processResultsExtractFeatures);
+      }
+    }
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Extend your SAPUI5 controller (4/4))]
+
+In this step, you will add the code to process the **Similarity Scoring** API call.
+
+Edit the **`demo.controller.js`** file located under **`Workspace`** > **`sapui5ml-img-similarityscoring`** > **`webapp`** > **`controller`** and add the following function to the controller.
+
+Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
+
+```JavaScript
+    addSimilarityScores: function (predictions) {
+      // service name
+      var service = "similarityscoring";
+      var current = this.getView().getModel("demo").getProperty("/predictions");
+      for (var i = 0; i < current.length; i++) {
+        if (predictions.id === current[i].name + ".json") {
+          current[i].results = predictions.similarVectors;
+          break;
+        }
+      }
+      // set the results visible
+      this.getView().getModel("demo").setProperty("/visible-" + service, true);
+    },
+    processResultsSimilarity: function (oController, response) {
+      // service name
+      var service = "similarityscoring";
+
+      oController.oFilesProcessed++;
+      if (response.status === "DONE") {
+        for (var i = 0; i < response.predictions.length; i++) {
+          oController.addSimilarityScores(response.predictions[i]);
+        }
+      } else {
+        oController.oErrors.push({
+          "status": response.error.code,
+          "message": response.error.message
+        });
+      }
+      oController.displayErrorsOrFinish(oController, service);
+    },
+    onPressScoreSimilarity: function (oControlEvent) {
+      // Keep a reference to the controller
+      var oController = this;
+
+      // service name
+      var service = "similarityscoring";
+
+      // get the call mode : ajax or xhr
+      var mode = oControlEvent.getSource().data("mode");
+
+      // start the busy indicator
+      var oBusyIndicator = new sap.m.BusyDialog();
+      oBusyIndicator.open();
+
+      // keep a reference in the view to close it later
+      this.oBusyIndicator = oBusyIndicator;
+      this.oFiles = {
+        "length": 1
+      };
+      this.oFilesProcessed = 0;
+      this.oErrors = [];
+
+      // create the zip file from the array of features vector
+      var zip = new JSZip();
+      var features = this.getView().getModel("demo").getProperty("/predictions");
+      for (var i = 0; i < features.length; i++) {
+        features[i].results = [];
+        zip.file(features[i].name + ".json", JSON.stringify(features[i].featureVectors));
+      }
+
+      // call the service with the generated zip file containing the feature vectors
+      zip.generateAsync({
+          type: "blob"
+        })
+        .then(function (content) {
+          saveAs(content, "input.zip");
+          content.name = "input.zip";
+          var options = {
+            "numSimilarVectors": (features.length - 1)
+          };
+          oController.callService(oController, service, mode, content, oController.processResultsSimilarity, options);
+        });
+    }
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Test the application)]
 
 Click on the **Run** icon ![Run Applications](00-run.png) or press `ALT+F5`.
 
-In the bar at the bottom, click on **Get Image Features** to pick a series of local pictures (at least 2).
+In the bar at the bottom, click on **Upload Pictures** to pick a local ZIP archive with pictures (at least 2).
 
 The service will be called, and the images will be displayed in a carousel.
 
 You can also combine image files with a zip that contains multiple images.
-
-Then the **Score Similarity** will be made visible.
 
 Click on **Score Similarity** to get the similarity score between the images.
 
@@ -698,9 +749,9 @@ Click on **Score Similarity** to get the similarity score between the images.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Validation)]
+[ACCORDION-BEGIN [Step 1: ](Validation)]
 
-Run the application with the following images:
+Run the application with the following images stored into a Zip archive:
 
 - `Bucephala`: <https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bucephala-albeola-010.jpg/1200px-Bucephala-albeola-010.jpg>
 - `Mallard` : <https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Mallard2.jpg/1200px-Mallard2.jpg>
@@ -710,10 +761,9 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Solution: ](Project files)]
 
-In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-similarityscoring/sapui5ml-img-similarityscoring).
+In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-similarityscoring/source).
 
 However, this is not a repository you can clone and run the code.
 

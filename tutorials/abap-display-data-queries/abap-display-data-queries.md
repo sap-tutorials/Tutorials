@@ -1,44 +1,37 @@
 ---
-title: Display database content and run SQL queries
-description: Use Data Preview to display the content of tables and views and SQL Console to perform ad-hoc SQL queries
-tags: [ tutorial>beginner, topic>abap-development ]
+title: Display Database Content and Run SQL Queries
+description: Use Data Preview to display the content of tables and SQL Console to perform ad-hoc SQL queries
+auto_validation: true
 primary_tag: topic>abap-development
+tags: [  tutorial>beginner, topic>abap-development ]
+time: 15
 ---
-
-## Prerequisites  
-[Create and run an ABAP application](https://developers.sap.com/tutorials/abap-create-basic-app.html)
-
-## Next Steps
-[Create a new Data Dictionary structure](https://developers.sap.com/tutorials/abap-dev-adt-create-new-structure.html)
-
-
 ## Details
 ### You will learn  
-In this tutorial you will learn how to use Data Preview to display the content of tables and views and SQL Console to perform ad hoc SQL queries.
+- How to display the content of tables and views using Data Preview
+- How to perform ad hoc SQL queries using SQL Console
 
-The tutorial starts from scratch based on tables of the SAP NetWeaver Demo sample EPM Model (you can find details in the SAP Community [The NetWeaver Enterprise Procurement Model – An Introduction](https://archive.sap.com/documents/docs/DOC-31458) ), so you can repeat the tutorial on any SAP NetWeaver 7.5 system.
-
-### Time to Complete
-**15 Min**.
+The tutorial starts from scratch, based on tables of the SAP NetWeaver Demo sample EPM Model (you can find details in the SAP Community [The NetWeaver Enterprise Procurement Model – An Introduction](https://archive.sap.com/documents/docs/DOC-31458) ), so you can repeat the tutorial on any SAP NetWeaver 7.5 system.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open the Data Preview)]
 
-In Eclipse, click or use the keyboard shortcut `Alt+F8` to execute an ABAP Development Object. You will "execute" the database table `snwd_so_inv_item`. This will open the Data Preview which will allow you to explore the invoice items in the EPM model.
+In ABAP Development Tools (ADT), open the database table `snwd_so_inv_item` by choosing **Execute ABAP Development Object** (or using `Alt+F8`).
+This will open the Data Preview which will allow you to explore the invoice items table.
 
 ![abap development object](abap-02-1.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select a database table)]
 
-Enter `snwd_so_inv_item` in the search field. Once the search has delivered a result or if the table is already in the history list, click on the entry **`SNWD_SO_INV_ITEM`**. Click **OK** to open the Data Preview.
+Enter `snwd_so_inv_item` in the search field. Once the search has delivered a result or if the table is already in the history list, select **`SNWD_SO_INV_ITEM`**  and choose **OK**.
 
 ![run abap development object](abap-02-2.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -48,7 +41,7 @@ In the Data Preview Click **Select Columns** to change which fields are retriev
 
 ![select Columns](abap-02-3.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select columns)]
@@ -61,7 +54,7 @@ The Data Preview is refreshed accordingly.
 
 ![data preview](abap-02-4b.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add a filter)]
@@ -70,7 +63,7 @@ Press **Add Filter** and choose `CURRENCY_CODE`.
 
 ![data filter](abap-02-5.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enter filter criteria)]
@@ -83,7 +76,7 @@ The Data Preview is refreshed accordingly.
 
 ![filtered result](abap-02-6b.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Open the SQL Console)]
@@ -92,8 +85,7 @@ Click the **SQL Console** button to open the SQL Console.
 
 ![open sql console](abap-02-7.png)
 
-
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Initial SQL SELECT statement)]
@@ -102,7 +94,7 @@ The SQL Console shows the `SELECT` statement which was used to retrieve the data
 
 ![initial sql select statement](abap-02-8.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add a JOIN condition)]
@@ -119,7 +111,7 @@ on SNWD_SO_INV_ITEM~parent_key = SNWD_SO_INV_HEAD~node_key
 
 ![join condition](abap-02-9.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Update the WHERE clause)]
@@ -131,7 +123,7 @@ SNWD_SO_INV_ITEM~CURRENCY_CODE = 'USD'
 ```
 ![where clause](abap-02-10.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Add a field to the SELECT list)]
@@ -140,9 +132,8 @@ Add the field `payment_status` from the table `snwd_so_inv_head` to the `SELECT`
 
 ![select list](abap-02-11.png)
 
-
+[DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 12: ](Run the query)]
 
@@ -150,7 +141,7 @@ Click **Run** to execute the current query or press **F8**.
 
 ![run button](abap-02-12.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Check the query results)]
@@ -159,7 +150,7 @@ Check that the output on the right hand side contains the payment status.
 
 ![results](abap-02-13.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Adjust the SELECT statement)]
@@ -173,7 +164,7 @@ on SNWD_SO_INV_HEAD~buyer_guid = SNWD_BPA~node_key
 
 ![updated select](abap-02-14.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Adding the company name field)]
@@ -189,8 +180,7 @@ SNWD_SO_INV_HEAD~PAYMENT_STATUS
 
 ![add company name to select](abap-02-15.png)
 
-
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Add an order by clause)]
@@ -203,7 +193,7 @@ ORDER BY SNWD_BPA~company_name
 
 ![order by](abap-02-16.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Run the modified query)]
@@ -212,7 +202,7 @@ Click **Run** to execute the current query or press `F8`.
 
 ![run button](abap-02-17.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Review updated results)]
@@ -221,6 +211,13 @@ Check that the output on the right hand side contains the company name. You will
 
 ![run button](abap-02-18.png)
 
-
+[DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 19: ](Test yourself)]
+
+
+
+
+[VALIDATE_1]
+[ACCORDION-END]

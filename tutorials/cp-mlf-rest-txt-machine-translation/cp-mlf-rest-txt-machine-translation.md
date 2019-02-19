@@ -32,7 +32,9 @@ The service execution requires the following details provided using the request 
 
 The service will return a JSON response that includes the original input text with the associated translations.
 
-For more details, you can check the [Inference Service for Machine Translation on the SAP API Business Hub](https://api.sap.com/api/translation_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Machine Translation on the SAP API Business Hub](https://api.sap.com/api/translation_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -41,7 +43,7 @@ For more details, you can check the [Inference Service for Machine Translation o
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 

@@ -8,10 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/tutorials.html?/groups/hxe-aa-forecast.html)
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
 
 ## Details
 ### You will learn
@@ -37,7 +34,7 @@ For more details about the SAP HANA APL function, check the online <a href="http
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: (Calling AFL functions from HDI containers)]
+[ACCORDION-BEGIN [Step 1: ](Calling AFL functions from HDI containers)]
 
 In order to use any ***SAP HANA APL*** functions, ultimately an AFL wrapper must be created and then invoked.
 
@@ -79,7 +76,7 @@ The **SAP HANA APL** function that you will be using is:
 
 The ***Forecast*** function provides multiple configuration options like:
 
-Name                          | Description
+Name                         | Description
 -----------------------------|-----------------------------
 **Time Point Column Name**   | Name of the column in the dataset that contains the time points of the time series
 **Horizon**                  | Number of forecast time points
@@ -547,7 +544,7 @@ You can notice that:
  However, this is not always the case. A forecast ( **`kts_1`** value) is provided only for data points that are finally used during the training as all input data points are not always used in the final model.
  - The error bar (**`kts_1_lowerlimit_95%`** and **`kts_1_upperlimit_95%`**) are only provided for the actual predictions
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](07-01.png)
 

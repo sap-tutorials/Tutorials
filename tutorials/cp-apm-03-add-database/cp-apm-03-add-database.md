@@ -1,9 +1,11 @@
 ---
+author_name: André Pfohlmann
+author_profile: https://github.com/Apfohlmann
 title: Add a Database to Your Business Application
-description: Deploy the data model to the SAP HANA database that is associated with your enterprise or trial account.
+description: Deploy the data model to the SAP HANA database that is associated with your enterprise or trial account using the SAP Cloud Application Programming Model.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
 time: 15
 ---
 
@@ -24,21 +26,18 @@ Right-click the **`db`** module and choose **Build**.
 
 Wait for the notification that says the build was successful.
 
-**Especially for Developer Garage attendees at SAP TechEd Bangalore**
+> If the build is unsuccessful, check the console log for errors. Errors similar to this one: `"Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
 
-If the build is unsuccessful, check the console log for errors. Errors like this: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
+> 1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
 
-1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
+> 1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+![finding the .hdiconfig file](hdiconfig.png)
 
-1. Expand the folder `db/src/` to find the file `.hdiconfig`.
+> 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
 
-    ![finding the .hdiconfig file](hdiconfig.png)
-
-1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
-
-1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
-
-1. **Save** the file, and re-try the build.
+> 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
+like
+> 1. **Save** the file, and re-try the build.
 
 [DONE]
 
@@ -48,7 +47,7 @@ If the build is unsuccessful, check the console log for errors. Errors like this
 
 To view the generated deployment artifacts, SAP HANA database explorer must be enabled in SAP Web IDE. If you have already enabled the SAP HANA database explorer, go to step 3.
 
-1. Go to **Tools | Preferences | Features**.
+1. Go to **Tools | Preferences | Extensions**.
 
 1. Search for the database explorer and enable it.
 

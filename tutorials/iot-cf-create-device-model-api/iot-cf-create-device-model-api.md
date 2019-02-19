@@ -1,6 +1,6 @@
 ---
 title: Create a Device Model Using the API
-description: Create a device model for the SAP Cloud Platform Internet of Things Service using the Internet of Things API Service.
+description: Create a device model for the SAP Cloud Platform Internet of Things Service using the Device Management API.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
@@ -13,34 +13,41 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Details
 ### You will learn
-- How to create a device model in the Internet of Things Service using the Internet of Things API Service
+- How to create a device model in the Internet of Things Service using the Device Management API
 
 ### Time to Complete
 20 min
 
 ---
+You need a tenant and a user with administrator role. For more information, please refer to the tutorial [Create User and Tenant](https://developers.sap.com/tutorials/iot-cf-create-user-tenant.html).
 
-[ACCORDION-BEGIN [Step 1: ](Create a Capability Using the API)]
+You have created a device model for the Internet of Things Service using the Device Management API. For more information, please refer to section [Device Model](https://help.sap.com/viewer/2f1daa938df84fd090fa2a4da6e4bc05/Cloud/en-US/41c5d53fee864f2482b965cf4127a730.html) in the *Introduction*.
+
+[ACCORDION-BEGIN [Step 1: ](Create a Capability)]
 
 In the following a capability is created. A capability can be reused since it can be assigned to multiple sensor types. Each capability can have one or many properties.
 
-1.  Open the Internet of Things API Service UI.
+1.  Open the Device Management API.
 
     ```bash
-    https://<HOST_NAME>/iot/core/api/v1/doc/
+    https://<HOST_NAME>/<INSTANCE_ID>/iot/core/api/v1/doc/
     ```
 
     You see the main page with the categories overview.
 
-2.  Choose *Authorize* .
+2.  Choose *Authorize*.
 
-3.  Log on with your user credentials.
+3.  Enter your user credentials.
 
-4.  In the *Capabilities* category, choose the `POST /capabilities` request.
+4.  Choose *Authorize*.
 
-5.  Choose *Try it out*.
+5.  In the *Capabilities* category, choose the `POST /tenant/{tenantId}/capabilities` request.
 
-6.  Copy the *JSON string* and replace `{CapabilityName}` with your capability name, replace `{PropertyName}` with property name, replace `{DataTypeName}` with the data type for the property, and replace `{UnitOfMeasureName}` with the unit of the measure.
+6.  Choose *Try it out*.
+
+7.  In the `tenantId` field, enter the ID of your tenant.
+
+8.  Copy the *JSON string* and replace `{CapabilityName}` with your capability name, replace `{PropertyName}` with property name, replace `{DataTypeName}` with the data type for the property, and replace `{UnitOfMeasureName}` with the unit of the measure.
 
     ```bash
     {
@@ -56,11 +63,11 @@ In the following a capability is created. A capability can be reused since it ca
     ```
 
     > Note:
-    > Supported data types are: integer, long, float, double, boolean, string, binary, and date. For more information, please refer to section [Device Model](https://help.sap.com/viewer/2f1daa938df84fd090fa2a4da6e4bc05/Cloud/en-US/41c5d53fee864f2482b965cf4127a730.html) in the *Introduction*.
+    >  Supported data types are: integer, long, float, double, boolean, string, binary, and date. For more information, please refer to section [Device Model](https://help.sap.com/viewer/2f1daa938df84fd090fa2a4da6e4bc05/Cloud/en-US/41c5d53fee864f2482b965cf4127a730.html) in the *Introduction*.
     >
     >
 
-7.  Paste the modified *JSON string* in the *Example Value* field for the POST request.
+9.  Paste the modified *JSON string* in the *Example Value* field for the POST request.
 
     ```bash
     {
@@ -80,86 +87,79 @@ In the following a capability is created. A capability can be reused since it ca
     }
     ```
 
-8.  Choose *Execute*.
+10.  Choose *Execute*.
 
-9.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created capability.
+11.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created capability.
 
     ```bash
     {
-      "id": "2bc72771-595d-483e-be50-3b0d8e372bf1",
-      "name": "MyData",
-      "alternateId": "ba19f8b6584cf3bd",
-      "properties": [
-        {
-          "name": "temperature",
-          "dataType": "float",
-          "unitOfMeasure": "Celsius",
-          "formatter": {
-            "scale": 0,
-            "shift": 0,
-            "swap": false
-          }
-        },
-        {
-          "name": "humidity",
-          "dataType": "float",
-          "unitOfMeasure": "g/kg",
-          "formatter": {
-            "scale": 0,
-            "shift": 0,
-            "swap": false
-          }
-        }
-      ]
-    }
+    "id": "2bc72771-595d-483e-be50-3b0d8e372bf1",
+    "name": "MyData",
+    "alternateId": "ba19f8b6584cf3bd",
+    "properties": [
+      {
+        "name": "temperature",
+        "dataType": "float",
+        "unitOfMeasure": "Celsius"
+      },
+      {
+        "name": "humidity",
+        "dataType": "float",
+        "unitOfMeasure": "g/kg"
+      }
+    ]
+  }
     ```
 
-10. Note down the `id` of the capability.
+12. Note down the `id` of the capability.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Sensor Type Using the API)]
+[ACCORDION-BEGIN [Step 2: ](Create a Sensor Type)]
 
-In the following a sensor type is created. The previously created capability is assigned to the sensor type.
+In the following, a sensor type is created. The previously created capability is assigned to the sensor type.
 
 1.  Navigate to the `SensorTypes` category.
 
-2.  In the `SensorTypes` category, choose the `POST /sensorTypes` request.
+2.  In the `SensorTypes` category, choose the `POST /tenant/{tenantId}/sensorTypes` request.
 
 3.  Choose *Try it out*.
 
-4.  Copy the *JSON string* and replace `{SensorTypeName}` with your sensor type name and replace `{CapabilityId}` with the `id` of the capability noted down before.
+4.  In the `tenantId` field, enter the ID of your tenant.
+
+5.  Copy the *JSON string* and replace `{SensorTypeName}` with your sensor type name and replace `{CapabilityId}` with the `id` of the capability noted down before.
 
     ```bash
     {
-      "capabilities": [
-        {
-          "id": "{CapabilityId}"
-        }
-      ],
-      "name": "{SensorTypeName}"
+  "capabilities": [
+    {
+      "id": "{CapabilityId}",
+      "type": "{type}"
     }
+  ],
+  "name": "{SensorTypeName}"
+}
     ```
 
-5.  Paste the *JSON string* in the *Example Value* field for POST request.
+6.  Paste the *JSON string* in the *Example Value* field for POST request.
 
     ```bash
     {
       "capabilities": [
         {
           "id": "2bc72771-595d-483e-be50-3b0d8e372bf1",
-          "type": "MEASURE"
+          "type": "measure"
         }
       ],
       "name": "MySensorType"
     }
     ```
 
-6.  Choose *Execute*.
+7.  Choose *Execute*.
 
-7.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created sensor type.
+8.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created sensor type.
 
     ```bash
     {
@@ -175,26 +175,28 @@ In the following a sensor type is created. The previously created capability is 
     }
     ```
 
-8.  Note down the `id` of the sensor type.
+9.  Note down the `id` of the sensor type.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Device Using the API)]
+[ACCORDION-BEGIN [Step 3: ](Create a Device)]
 
-In the following a device entity is created. The device entity does not have any sensors attached, yet. The device entity will be assigned to one specific gateway.
+In the following, a device entity is created. The device entity will be assigned to one specific gateway.
 
 1.  Navigate to the *Gateways* category.
 
-2.  In the *Gateways* category, choose the `GET /gateways` request.
+2.  In the *Gateways* category, choose the `GET /tenant/{tenantId}/gatewayss` request.
 
 3.  Choose *Try it out*.
 
-4.  Scroll to the response body and note down the `id` of the gateway with the name `IoT Gateway REST` (for example, `3`). If you want to create a MQTT device, note down the `id` of the gateway with the name `IoT Gateway MQTT` (for example, `2`).
+4.  In the `tenantId` field, enter the ID of your tenant.
+
+5.  Scroll to the response body and note down the `id` of the gateway with the name `REST Gateway` (for example, `3`). If you want to create a MQTT device, note down the `id` of the gateway with the name `MQTT Gateway` (for example, `2`).
 
     > Note:
-    > The IDs of the gateways are assigned in order of the appearance.
+    >  The IDs of the gateways are assigned in order of the appearance.
     >
     >
 
@@ -202,28 +204,34 @@ In the following a device entity is created. The device entity does not have any
     [
       {
         "id": "2",
-        "name": "IoT Gateway MQTT",
+        "name": "MQTT Gateway",
         "protocolId": "mqtt",
         "status": "online",
-        "creationTimestamp": 1510043734156
+        "creationTimestamp": 1510043734156,
+        "alternateId": "GATEWAY_CLOUD_MQTT",
+        "type": "cloud"
       },
       {
         "id": "3",
-        "name": "IoT Gateway REST",
+        "name": "REST Gateway",
         "protocolId": "rest",
         "status": "online",
-        "creationTimestamp": 1510043734531
+        "creationTimestamp": 1510043734531,
+        "alternateId": "GATEWAY_CLOUD_REST",
+        "type": "cloud"
       }
     ]
     ```
 
-5.  Navigate to the *Devices* category.
+6.  Navigate to the *Devices* category.
 
-6.  In the *Devices* category, choose the `POST /devices` request.
+7.  In the *Devices* category, choose the `POST /tenant/{tenantId}/devices` request.
 
-7.  Choose *Try it out*.
+8.  Choose *Try it out*.
 
-8.  Copy the *JSON string* and replace `{gatewayId}` with the `id` you noted down previously and replace `{deviceName}` with your device name.
+9.  In the `tenantId` field, enter the ID of your tenant.
+
+10.  Copy the *JSON string* and replace `{gatewayId}` with the `id` you noted down previously and replace `{deviceName}` with your device name.
 
     ```bash
     {
@@ -233,7 +241,7 @@ In the following a device entity is created. The device entity does not have any
 
     ```
 
-9.  Paste the *JSON string* in the *Example Value* field for POST request.
+11.  Paste the *JSON string* in the *Example Value* field for POST request.
 
     ```bash
     {
@@ -242,20 +250,20 @@ In the following a device entity is created. The device entity does not have any
     }
     ```
 
-    (Optional) You can set the device to a router device, which is allowed to send data on behalf of another device. Set the parameter as follows:
+    (Optional) You can configure the device as a router device, which is authorized to communicate on behalf of any other device in the same tenant. For more information, please refer to section [Connection as a Router Device](https://help.sap.com/viewer/643f531cbf50462c8cc45139ba2dd051/Cloud/en-US/455bdaaf40e44ff2981e68a5f6bcc6b2.html#loio7e0ec3a75b08481a97cba01b4e577566) in the *Internet of Things Gateway* documentation. Set the parameter as follows:
 
     ```bash
     "authorizations":[{"type":"router"}]
     ```
 
     > Note:
-    > The authorization policy cannot be changed anymore after the device has been created. Update is not supported for this property.
+    >  The authorization policy cannot be changed anymore after the device has been created. Update is not supported for this property.
     >
     >
 
-10. Choose *Execute*.
+12. Choose *Execute*.
 
-11. Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created device.
+13. Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created device.
 
     ```bash
     {
@@ -264,17 +272,7 @@ In the following a device entity is created. The device entity does not have any
       "name": "MyDevice",
       "alternateId": "d6e50978854c0f9b",
       "creationTimestamp": 1510049163054,
-      "status": "fullyFunctional",
-      "online": true,
-      "sensors": [
-        {
-          "id": "105",
-          "deviceId": "5",
-          "sensorTypeId": "0",
-          "name": "Sensor: 00:00:00:00",
-          "alternateId": "00:00:00:00"
-        }
-      ],
+      "online": true,    
       "authentications": [
         {
           "type": "clientCertificate"
@@ -283,23 +281,25 @@ In the following a device entity is created. The device entity does not have any
     }
     ```
 
-12. Note down the `id` of the device.
+14. Note down the `id` of the device.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a Sensor Using the API)]
+[ACCORDION-BEGIN [Step 4: ](Create a Sensor)]
 
-In the following a sensor entity is created. The sensor will be assigned to the previously created device and will be a kind of the previously created sensor type.
+In the following, a sensor entity is created. The sensor will be assigned to the previously created device and is a kind of the previously created sensor type.
 
 1.  Navigate to the *Sensors* category.
 
-2.  In the *Sensors* category, choose the `POST /sensorss` request.
+2.  In the *Sensors* category, choose the `POST /tenant/{tenantId}/sensors` request.
 
 3.  Choose *Try it out*.
 
-4.  Copy the *JSON string* and replace `{DeviceId}` with the `id` of the device noted down before, replace `{SensorName}` with your sensor name, and replace `{SensorTypeId}` with the `id` of the sensor type noted down before.
+4.  In the `tenantId` field, enter the ID of your tenant.
+
+5.  Copy the *JSON string* and replace `{DeviceId}` with the `id` of the device noted down before, replace `{SensorName}` with your sensor name, and replace `{SensorTypeId}` with the `id` of the sensor type noted down before.
 
     ```bash
     {
@@ -309,7 +309,7 @@ In the following a sensor entity is created. The sensor will be assigned to the 
     }
     ```
 
-5.  Paste the *JSON string* in the *Example Value* field for POST request.
+6.  Paste the *JSON string* in the *Example Value* field for POST request.
 
     ```bash
     {
@@ -319,9 +319,9 @@ In the following a sensor entity is created. The sensor will be assigned to the 
     }
     ```
 
-6.  Choose *Execute*.
+7.  Choose *Execute*.
 
-7.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created sensor.
+8.  Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created sensor.
 
     ```bash
     {
@@ -339,11 +339,9 @@ In the following a sensor entity is created. The sensor will be assigned to the 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Send Data)]
+[ACCORDION-BEGIN [Step 5: ](Send Data to a Specific Sensor)]
 
-In the following it is described how the payload looks like for sending data to a device with the created device model.
-
-**Send Data to a Specific Sensor**
+In the following, it is described how the payload looks like for sending data to a device with the created device model.
 
 1.  You can address a sensor within the JSON message.
 
@@ -371,10 +369,13 @@ In the following it is described how the payload looks like for sending data to 
 
     The message is now sent to the previously created sensor. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT](https://developers.sap.com/tutorials/iot-cf-send-data-mqtt.html) and [Send Data with REST](https://developers.sap.com/tutorials/iot-cf-send-data-rest.html).
 
-2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html).
+2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Device Management API. For more information, please refer to the tutorial [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html).
 
+[DONE]
 
-**Send Data to an Automatically Created Sensor**
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Send Data to an Automatically Created Sensor)]
 
 1.  Alternatively, you can send data using the sensor type ID. In this case the system automatically creates a new sensor with the provided sensor type.
 
@@ -406,7 +407,7 @@ In the following it is described how the payload looks like for sending data to 
 
     The message is now sent to a newly created sensor. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT](https://developers.sap.com/tutorials/iot-cf-send-data-mqtt.html) and [Send Data with REST](https://developers.sap.com/tutorials/iot-cf-send-data-rest.html).
 
-2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html).
+2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Device Management API. For more information, please refer to the tutorial [Consume Measures](https://developers.sap.com/tutorials/iot-cf-consume-measures.html).
 
 [VALIDATE_1]
 

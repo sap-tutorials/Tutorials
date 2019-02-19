@@ -1,5 +1,5 @@
 ---
-title: Deploy SAP HANA on Google Cloud
+title: SAPPHIRE - Deploy SAP HANA on Google Cloud
 description: Deploy and configure your SAP HANA, express edition instance on Google Cloud in 10 minutes.
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
@@ -10,8 +10,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 
 ## Details
 ### You will learn  
+**This tutorial can only be completed at SAPPHIRE**
 
-To complete this tutorial, you will be using a Virtual Machine powered by [Google Cloud](https://cloud.google.com/).
+To complete this tutorial, you will be using a Virtual Machine powered and sponsored by [Google Cloud](https://cloud.google.com/).
 
 ![Google Cloud Platform](gcpx2.png)
 
@@ -22,55 +23,62 @@ To complete this tutorial, you will be using a Virtual Machine powered by [Googl
 
 [ACCORDION-BEGIN [Step 1: ](Log in to your test account)]
 
-Open a new window using Google Chrome and navigate to the Google Cloud marketplace: `https://console.cloud.google.com/marketplace`. Click **Try for free**.
+The experts at the Developer Garage at SAPPHIRE NOW will provide you with access details. Open a new **incognito window** using Google Chrome.
 
-![Incognito Chrome](marketplace.png)
+![Incognito Chrome](incognito.png)
 
-Enter your Google email and click **Next**. Follow the steps
+And navigate to the Google Cloud launcher: `https://console.cloud.google.com/launcher`
 
-![Log in to the Google Cloud launcher](gmail.png)
+![Incognito Chrome](incognito2.png)
 
-Enter your password.
+Click **SIGN IN**.
 
-![Log in to the Google Cloud launcher](gmail2.png)
+![Log in to the Google Cloud launcher](signin.png)
 
-You will be presented with the terms for the trial. Read them and accept to continue.
+And use the user name provided to you by the experts ...
 
-![Accept terms](terms.png)
+![Log in to the Google Cloud launcher](1.png)
 
-Fill in the details for your credit card.
+... and the password as provided to you by the experts.
 
-> Why is it asking for your credit card?
-> Check the top right square on the site. It should say there is not auto charge after the trial expires.
+![Log in to the Google Cloud launcher](2.png)
 
-![Accept terms](cc.png)
+You will be presented with the terms and policies applied to the test account.
 
-Once the credit card details are in, click **Start your free trial**.
+![Accept terms](accept.png)
 
-![Accept terms](cc2.png)
+Click **CONSOLE**.
+
+![Click console](console.png)
+
+Agree to the terms applicable to the test account.
+
+![Agree to terms](agree.png)
+
+Click **Select a project**.
+
+![Select project](project.png)
+
+You will find a pre-created project. Select it.
+
+![Select project](project2.png)
 
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Deploy SAP HANA, express on Google Cloud Platform)]
 
-Look for `sap hana` on the Google Cloud Platform using the search bar on the top. Click on the result that includes **server + applications**.
+Look for the full image of SAP HANA, express edition on the Google Cloud Platform using the search bar on the top. Click on the result that includes **server + applications**.
 
-![Look for SAP HANA](xsa.png)
+![Look for SAP HANA](search.png)
 
 Click **LAUNCH ON COMPUTE ENGINE**.
 
 ![Launch on compute engine](launch.png)
 
-> If prompted, follow the steps to **enable billing** on your new project to start your trial.
+Scroll down to accept the terms of service and agree on sharing information (remember, this applies to the test account) and click **Deploy**.
 
-Read and accept the terms and conditions
-
-![Launch on compute engine](setup.png)
-
-Scroll down, choose an option in information sharing, and click **deploy**
-
-![Launch on compute engine](dsetup2.png)
+![Launch on compute engine](deploy.png)
 
 Wait until the instance is deployed and click  **SSH**.
 
@@ -105,31 +113,25 @@ Select and copy (`CTRL+C`) the external IP address.
 
 ![Configure VM](IP.png)
 
-Use your IP address to map it to the hosts file in your computer. You need administration permissions on your computer to do this.
+Click the **Notepad** icon on the task bar and replace any existing IP address with the one you have copied.
 
-- For Windows Computers:
-  If your user is not an administrator but has administrator rights, right-click on Notepad and choose `Run as Administrator`. If you are an administrator user, proceed to the next point.
+![Configure VM](host.png)
 
-    ![run notepad as admin](9.png)
+The IP address should be followed by a space and `hxehost`
 
-    Open the file or navigate with Windows explorer. You need to edit the file called `hosts` in the directory `C:\Windows\System32\drivers\etc`
+Save the file.
 
-    ![Hosts file](8.png)
+Read the following text to question below.
 
+> ### **SAP HANA and tutorials for free**
+> SAP HANA, express edition is a streamlined version of SAP HANA. The license is provided for free, even for productive use, up to 32 GB of RAM.
+>&nbsp;
+>In other words, you could SAP HANA, express edition for advanced analytics, as a development platform to later deploy on SAP Cloud Platform, for training or trying the latest SAP HANA features for free.
+>&nbsp;
+>You can run SAP HANA, express edition on any hardware, like a laptop or on Google Cloud. You may also be eligible for free initial credits that will allow you to use the infrastructure also free of charge.
+>&nbsp;
+>Find out more about how to deploy SAP HANA, express edition and access hundreds of free, step-by-step tutorials for developers at `developers.sap.com`
 
-- For Mac:
-  Open a terminal (`Finder -> Applications -> Terminal`) and type `sudo nano /etc/hosts`
-
-    ![Hosts file](mac.jpg)
-
-
-Add the IP address followed by the name of the host, which will be `hxehost`:
-
-![Hosts file](host.png)
-
-**Save** and close the editor.
-
-> If you do not have permissions to alter the file or you are using a different platform, you can check this [blog post](https://blogs.sap.com/2018/06/20/hana-express-and-xs-advanced-when-you-cannot-modify-the-hosts-file.../) to solve it.
 
 [ACCORDION-END]
 
@@ -150,11 +152,10 @@ https://hxehost:39030
 > ### **Congratulations!**
 >You have successfully deployed and configured an SAP HANA, express edition virtual machine on Google Cloud.
 >&nbsp;
+>Let one of the experts at the booth know, and feel free to ask them any questions.
+
+You can continue with the next tutorial using your newly-created instance.
 
 ![Incognito Chrome](running.png)
-
-> ## Ready to shut down your instance?
-> Use command `HDB stop` as `hxeadm` in an console before turning your instance off.
-> ![HDB stop](hdb_stop.png)
 
 [ACCORDION-END]

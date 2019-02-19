@@ -1,6 +1,6 @@
 ---
 title: Import a Geo localization Sample Dataset
-description: Import SAP Predictive Analytics Geo localization Sample Dataset in your SAP HANA, express edition instance
+description: Import SAP Predictive Analytics Geo localization sample dataset in your SAP HANA, express edition instance.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
@@ -46,6 +46,23 @@ The sample structure for the [**Sample Geo localization**](https://help.sap.com/
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 1: ](Create a dedicated schema)]
+
+It is a good practice to separate data into different schema based on their origin.
+
+In this tutorial, you will be using the **`PA_DATA`** schema to load the SAP Predictive Analytics sample data.
+
+If you have already created the schema, move to the next step.
+
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement:
+
+```SQL
+CREATE SCHEMA PA_DATA;
+```
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 1: ](Create the table structure)]
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement to create the table structure:
@@ -65,7 +82,7 @@ CREATE TABLE PA_DATA.GOWALLA (
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download the Sample Data)]
+[ACCORDION-BEGIN [Step 1: ](Download the sample data)]
 
 Open the [SAP Predictive Analytics documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS) page in a browser and click on the **View All** for the **Sample** section.
 
@@ -84,7 +101,7 @@ Extract the files (located in the `Geolocalization` subdirectory in the embedded
 
 You can extract the sample file anywhere you want on the Eclipse host.
 
-You can now move to **Step 3: Import Using the SAP HANA Tools for Eclipse**.
+You can now move to **Step 1: Import Using the SAP HANA Tools for Eclipse**.
 
 #### **Import Using the IMPORT FROM SQL command**
 
@@ -116,12 +133,12 @@ It requires CURL (or WGET) to be installed.
 
 The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_geolocalization/Geolocalization`**
 
-You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
+You can now move to **Step 1: Import Using the IMPORT FROM SQL command**.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import Using the SAP HANA Tools for Eclipse)]
+[ACCORDION-BEGIN [Step 1: ](Import using the SAP HANA Tools for Eclipse)]
 
 You can import the data using the [SAP HANA Tools for Eclipse Import feature](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html) using the following details:
 
@@ -144,7 +161,7 @@ The source files should be mapped with the following target tables:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
+[ACCORDION-BEGIN [Step 1: ](Import using the IMPORT FROM SQL command)]
 
 The dataset files should be located in: **`/usr/sap/HXE/HDB90/work/sample_geolocalization/Geolocalization`**
 
@@ -168,7 +185,7 @@ WITH
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
+[ACCORDION-BEGIN [Step 1: ](Verify the imported data)]
 
 You can verify that the data was imported properly using the following SQL statement:
 
@@ -179,9 +196,7 @@ SELECT 'GOWALLA'     as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.GOWALLA;
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Validation)]
-
-Provide an answer to the question below then click on **Validate**.
+[ACCORDION-BEGIN [Step 1: ](Validation)]
 
 [VALIDATE_1]
 [ACCORDION-END]

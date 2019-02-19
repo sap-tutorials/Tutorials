@@ -10,9 +10,6 @@ time: 30
 ## Prerequisites
  - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
-
 ## Details
 ### You will learn
 - Understand the basics about the SAP HANA Automated Predictive Library
@@ -704,7 +701,7 @@ select * from "aa.movielens.db.hdb.apl::recommendation.indicators";
 When performing some of the APL operation, a result might be returned in the operation result table. In the recommendation scenario, the returned result is the SQL to extract results from the links table.
 
 ```sql
-select * from "aa.movielens.db.hdb.apl::recommendation.reco_sql_code";
+select * from "aa.movielens.db.hdb.apl::recommendation.model_sql_code";
 ```
 
 [DONE]

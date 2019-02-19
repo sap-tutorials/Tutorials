@@ -33,7 +33,9 @@ Property                  | Description
 <nobr>`langCode`</nobr>	  | The code used by language as ID.
 <nobr>`langStr`</nobr>	  | The English language expansion of the language ID
 
-For more details, you can check the [Inference Service for Language Detection on the SAP API Business Hub](https://api.sap.com/api/language_detection_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Language Detection on the SAP API Business Hub](https://api.sap.com/api/language_detection_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -42,7 +44,7 @@ For more details, you can check the [Inference Service for Language Detection on
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 

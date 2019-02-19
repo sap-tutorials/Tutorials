@@ -17,6 +17,8 @@ time: 10
 - Query the documents using SQL
 
 For more information about accessing a `NoSQL` storage using SQL and other capabilities of the document store, check the [SAP HANA Administration Guide](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.03/en-US/5e783b7f5a9749bcbfffe167524aeccc.html) and the [SAP HANA SQL and System Views reference](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.03/en-US/2282aef7db6846b68f09d72be04cb9c0.html?q=document%20store)
+
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log on to the HXE database)]

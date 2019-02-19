@@ -6,11 +6,11 @@ primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Details
-### You will learn  
+### You will learn
 Use the SAP Web IDE templates wizard to build an SAP Fiori app displaying information from an OData service in less than 10 minutes.
 
 ### Time to Complete
@@ -201,7 +201,47 @@ Save your edits.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Launch your app)]
+[ACCORDION-BEGIN [Step 17: ](Modify the project configuration file)]
+Open the **`neo-app.json`** file. This is the project configuration file and can be found in the project's root folder. It contains various settings, including a list of route mappings in the `routes` section. There's a small modification you need to make before the app will run and successfully connect to the backend OData service.
+
+Find the route definition that looks like this:
+
+```json
+    {
+      "path": "/ES5",
+      "target": {
+        "type": "destination",
+        "name": "ES5"
+      },
+      "description": "SAP Gateway ES5"
+    }
+```
+
+> If you have created your destination for the SAP Gateway Demo system by following the tutorial [Create a Destination for the SAP Gateway Demo System](https://developers.sap.com/tutorials/teched-2016-3.html) then the name may be `SAP_Gateway` instead of `ES5`.
+
+Modify this route definition so it looks like this:
+
+```json
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "ES5",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "SAP Gateway ES5"
+    }
+```
+
+In other words, change the value of the `path` property and add a value for a new property `entryPath` within the `target` section. These changes are required so that the mapping between what's called by the app, from an OData service perspective, and what's defined in the more generic SAP Gateway Demo system destination, is properly aligned.
+
+> When editing this file, make sure you don't introduce syntax errors - SAP Web IDE will highlight any issues as you edit.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 18: ](Launch your app)]
 
 To run your app, select your project folder and click the **Run** button.
 
@@ -218,15 +258,13 @@ Click on one of the Business Partners to see its details on the right.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Confirm your app looks like the example)]
+[ACCORDION-BEGIN [Step 19: ](Confirm your app looks like the example)]
 
 Your app should look like the image below.
 
 You can click on items in the master list and the right-hand (detail) pane will update.
 
 ![app running](te-2016-4-12a.png)
-
-Click on **`AVANTEL`** in the master list, copy the alpha-numeric string below **`Hermosillo`**, paste it into the text field below and click **Validate**.
 
 [VALIDATE_18]
 

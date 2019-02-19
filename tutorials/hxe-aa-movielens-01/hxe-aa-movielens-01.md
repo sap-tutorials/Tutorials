@@ -7,9 +7,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 20
 ---
 
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
-
 ## Details
 ### You will learn
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series
@@ -71,39 +68,6 @@ FAILED: SSL connection error (supposedly untrusted connection, check the certifi
  - `/hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem`
 >
 >Locate the file and use the relevant path.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Stop & Rescale processes)]
-
-If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands to stop certain services, rescale the memory used by some processes and run the memory collector.
-
-#### Stop services:
-
-The following services can be stopped as you won't leverage them in this tutorial series.
-
-```shell
-xs stop sap-portal-static-resources
-xs stop cockpit-telemetry-svc
-```
-
-#### Rescale services:
-
-The following services can be scaled up to ensure a better user experience during this tutorial series.
-
-```shell
-xs scale di-runner -m 512M -f -w
-xs scale di-core -m 512M -f -w
-```
-
-#### Run the memory collector script:
-
-The following script can be executed at any time to collected back unused process memory.
-
-```shell
-/usr/sap/HXE/home/bin/hxe_gc.sh
-```
 
 [DONE]
 [ACCORDION-END]
@@ -372,4 +336,15 @@ The result should return a list of service names, their associated port numbers 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Run the memory collector script)]
+
+If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands at any time to collect back unused process memory.
+
+```shell
+/usr/sap/HXE/home/bin/hxe_gc.sh
+```
+
+[DONE]
 [ACCORDION-END]

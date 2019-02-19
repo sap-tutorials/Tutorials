@@ -2,7 +2,7 @@
 auto_validation: true
 title: Create Business Partner in S/4HANA Cloud using ABAP Environment Data
 description: Create a business partner in an S/4HANA Cloud system based on a business user in SAP Cloud Platform ABAP Environment.
-primary_tag: products>sap-cloud-platform-abap-environment
+primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, topic>abap-extensibility ]
 time: 20
 ---

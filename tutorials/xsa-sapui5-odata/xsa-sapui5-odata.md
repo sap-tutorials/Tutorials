@@ -4,7 +4,7 @@ description: Consume a Basic OData Service within UI5 binding the service to a T
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
-## Prerequisites  
+## Prerequisites
 - **Proficiency:** Intermediate
 - **Tutorials:** [SAPUI5 User Interface](https://developers.sap.com/tutorials/xsa-sapui5.html)
 
@@ -12,7 +12,7 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 - [Use OData Metadata to dynamically create the columns](https://developers.sap.com/tutorials/xsa-sapui5-metadata.html)
 
 ## Details
-### You will learn  
+### You will learn
 SAPUI5 uses data binding to bind two data sources or information sources together to keep them in sync: All changes in one source are also reflected in the other one. In this tutorial, you will consume a Basic OData Service within UI5 binding the service to a table.
 
 
@@ -56,7 +56,7 @@ Add the following code in `index.html`:
 		data-sap-ui-preload="async"
 		data-sap-ui-language="en"
 		data-sap-ui-resourceroots='{
-				"dev.odataBasic": "./" }'		
+				"dev.odataBasic": "./" }'
 		data-sap-ui-libs="sap.m,sap.ui.comp,sap.ui.core,sap.ui.layout">
 	</script>
 
@@ -207,7 +207,7 @@ At the same level as `index.html` create a file called `manifest.json`. Enter th
 					"minVersion": "1.40.0"
 				},
 				"sap.ui.comp": {
-					"minVersion": "1.40.0"					
+					"minVersion": "1.40.0"
 				},
 				"sap.m": {
 					"minVersion": "1.40.0"
@@ -266,7 +266,7 @@ Within the view folder, create a file called `App.view.xml` with the following c
 </core:View>
 ```
 
-Within the `controller` folder, add the following code:
+Within the `controller` folder, create a file called `App.controller.js` and add the following code:
 
 
 ```javascript
@@ -400,7 +400,7 @@ Scroll down until the next `//To-Do` comment and add the following model:
 				"defaultBindingMode": "TwoWay",
 				"defaultUpdateMethod": "PUT"
         	}
-    	},    
+    	},
 
 
 ```
@@ -444,4 +444,5 @@ Which you can solve in the next tutorial. You will then see the model based on t
 
 
 [ACCORDION-END]
+
 

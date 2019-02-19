@@ -36,7 +36,9 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the top classification with the associated scores.
 
-For more details, you can check the [Inference Service for Image Classification on the SAP API Business Hub](https://api.sap.com/api/image_classification_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Image Classification on the SAP API Business Hub](https://api.sap.com/api/image_classification_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -45,7 +47,7 @@ For more details, you can check the [Inference Service for Image Classification 
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 

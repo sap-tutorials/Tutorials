@@ -115,7 +115,7 @@ Click **Finish**.
 
 [ACCORDION-BEGIN [Step 4: ](SPS02 or lower - Create a User-Provided service using the XS CLI)]
 
-Open a command line to execute a command with the XS client. You will now create a user-provided service called `CROSS_SCHEMA_LOCATIONS` to allow other modules to access the new schema.
+Open a command line to execute a command with the XS client. You will now create a user-provided service called `CROSS_SCHEMA_PRODUCTS` to allow other modules to access the new schema.
 
 Replace the hostname, instance number and port (ending in 13 or 15), user and password in the below command:
 
@@ -132,7 +132,7 @@ You will be prompted for each of the values you have listed:
 
 > Note: You can also run the command with its parameters as follows
 > ```
-> xs cups CROSS_SCHEMA_PRODUCTS`-p "{\"host\":\"<hostname>\",\"port\":\"3<Instance Number><15|13>\",\"user\":\"<user>\",\"password\":\"<Password>\",\"driver\":\"com.sap.db.jdbc.Driver\",\"tags\":[\"hana\"] , \"schema\" : \"LOCATION_TEST\" }"
+> xs cups CROSS_SCHEMA_PRODUCTS`-p "{\"host\":\"<hostname>\",\"port\":\"3<Instance Number><15|13>\",\"user\":\"<user>\",\"password\":\"<Password>\",\"driver\":\"com.sap.db.jdbc.Driver\",\"tags\":[\"hana\"] , \"schema\" : \"PLAIN\" }"
 > ```
 
 ![Add external SAP HANA service](cups.png)

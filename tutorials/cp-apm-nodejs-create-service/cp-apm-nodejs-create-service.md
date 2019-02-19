@@ -1,23 +1,26 @@
 ---
+author_name: André Pfohlmann
+author_profile: https://github.com/Apfohlmann
 title: Create a Business Service with Node.js using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite. Use the SAP Cloud Application Programming Model and develop on your local environment.
 auto_validation: true
-primary_tag: topic>node-js
-tags: [  tutorial>intermediate, topic>node-js   ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>intermediate, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
 time: 30
 ---
 
-## Prerequisites  
-- You have installed [Node.js](https://nodejs.org/en/) version 8 or higher.
+
+## Prerequisites
+- You have installed [Node.js](https://nodejs.org/en/) version 8.9 or higher.
 - You have installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows users only) You have installed the [`SQLite`](https://sqlite.org/download.html) tools for Windows.
 
 ## Details
-### You will learn  
+### You will learn
   - How to do develop a sample business service using the SAP Cloud Application Programming Model and `Node.js`
   - Define a simple data model and a service that exposes the entities you created in your data model
   - Run your service locally
-  - Deploy the data model to a `SQLite` database
+  - Deploy the data model to an `SQLite` database
   - Add custom handlers to serve requests that are not handled automatically
 
 ---
@@ -140,7 +143,7 @@ You will create a simplistic all-in-one service definition.
     cds run
     ```
 
-1. To test your service, go to <http://localhost:4004>
+1. To test your service, go to `http://localhost:4004`.
 
     You won't see data, because you have not added a data model yet. However, click on the available links and confirm the service is running.
 
@@ -183,15 +186,15 @@ Add service provider logic to return mock data.
 
 4. Run the `CatalogService` again:
 
-    ```CDS
+    ```bash
     cds run
     ```
 
 5. To test your service, click on these links:
 
-    - <http://localhost:4004/catalog/Books>
+    - `http://localhost:4004/catalog/Books`
 
-    - <http://localhost:4004/catalog/Authors>
+    - `http://localhost:4004/catalog/Authors`
 
     >You should see the mock data you added for the Books and Authors entities.
 
@@ -240,7 +243,7 @@ To get started quickly, you have already added a simplistic all-in-one service d
     }
     ```
 
-1. Open `cat-service.cds` and replace the code with:
+1. Open **`cat-service.cds`** and replace the code with:
 
     ```CDS
     using my.bookshop as my from '../db/data-model';
@@ -264,13 +267,13 @@ The `cds` runtime includes built-in generic handlers that automatically serve al
 
 1. Install `SQLite3` packages
 
-    ```CDS
+    ```bash
     npm i sqlite3 -D
     ```
 
-1. Deploy the data model to a `SQLite` database:
+1. Deploy the data model to an `SQLite` database:
 
-    ```CDS
+    ```bash
     cds deploy --to sqlite:db/my-bookshop.db
     ```
 
@@ -279,7 +282,7 @@ The `cds` runtime includes built-in generic handlers that automatically serve al
 
 2. Open `SQLite` and view the newly created database:
 
-    ```CDS
+    ```bash
     sqlite3 db/my-bookshop.db -cmd .dump
     ```
 
@@ -341,15 +344,19 @@ Your service is now backed by a fully functional database. This means you can re
     ```
 
 1. To test your service, open a web browser and go to:
-    - <http://localhost:4004/catalog/Books>
 
-    - <http://localhost:4004/catalog/Authors>
+    - `http://localhost:4004/catalog/Books`
 
-    - <http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)>
+    - `http://localhost:4004/catalog/Authors`
+
+    - `http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)`
 
     >You should see a book titled Jane Eyre. If this is not the case, make sure you have removed the mock data from `cat-service.js` as indicated above.
 
 1. Download the [Postman application](https://www.getpostman.com/).
+
+    >Note that you can use any other HTTP client than Postman.
+
 
 1. Click on the following link and save the file to a folder of your choice:  [`postman.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
 
@@ -409,13 +416,13 @@ Your service is now backed by a fully functional database. This means you can re
     cds run
     ```
 
-1. In Postman, execute the `GET Books` request.  
+1. In Postman, execute the `GET Books` request.
 
     Take a look at the stock of book `201`.
 
     ![Test the request](postman-get-books.png)
 
-1. Execute one of the `POST Orders` requests.  
+1. Execute one of the `POST Orders` requests.
 
     This will trigger the logic above and reduce the stock.
 

@@ -1,11 +1,13 @@
 ---
 title: Installing SAP HANA, express edition with Docker
 description: Install SAP HANA, express edition with Docker.
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 
@@ -14,7 +16,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 - [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Details
-### You will learn  
+### You will learn
 How to install SAP HANA, express edition on your preferred Docker setup.
 
 This tutorial will show you how to install a **server-only** installation of SAP HANA, express edition on your Docker installation. This version of SAP HANA, express edition does not contain XSC.
@@ -48,8 +50,7 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 
 Download and install the appropriate Docker Edition for your system. Visit the [Docker Community Edition](https://store.docker.com/search?offering=community&type=edition) or [Docker Enterprise Edition](https://store.docker.com/search?offering=enterprise&type=edition) lists for more information and to download Docker for your machine.
 
-> **Note:**
-> Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
+> **Note:** Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
 [ACCORDION-END]
 
@@ -148,7 +149,7 @@ To edit the `sysctl.conf` file, use the `vi` command to open the file and press 
 
 [ACCORDION-BEGIN [Step 6: ]((Optional) Create a Directory to Persist SAP HANA, express edition Data Outside of the Container)]
 
-Create a directory for the SAP HANA, express edition container and grant it the proper permissions.  
+Create a directory for the SAP HANA, express edition container and grant it the proper permissions.
 
 ```
 mkdir -p /data/<directory_name>
@@ -169,19 +170,19 @@ Create the `json` file:
 vi <file_name>.json
 ```
 
-Press `i` to start editing and use one of the following formats to create the file:  
+Press `i` to start editing and use one of the following formats to create the file:
 
 ```
 {
 "master_password" : "<password>"
-}  
+}
 ```
 
-or:  
+or:
 
 ```
 {
-"system_user_password" : "<password",
+"system_user_password" : "<password>",
 "default_tenant_system_user_password" : "<second_password>"
 }
 ```
@@ -190,7 +191,7 @@ Here is an example:
 
 ```
 {
-  "master_password" : "HXEHana1"
+"master_password" : "HXEHana1"
 }
 ```
 
@@ -251,7 +252,7 @@ store/saplabs/hanaexpress:2.00.033.00.20180925.2 \
 --agree-to-sap-license
 ```
 
-This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.  
+This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
 
 > **Note:**
 > If you placed the password file in `/data/<directory_name>/<file_name>.json`, substitute  `file://<path_to_json_file>` with `file:///hana/mounts/<file_name>.json`.
@@ -272,13 +273,13 @@ This example creates the SAP HANA, express edition container with the name `expr
 To start your SAP HANA, express edition container, run the following command:
 
 ```bash
-sudo docker exec -it -u <container_name> bash
+sudo docker exec -it <container_name> bash
 ```
 
 Example:
 
 ```
-sudo docker exec -it -u express_edition bash
+sudo docker exec -it express_edition bash
 ```
 
 
@@ -343,7 +344,7 @@ jdbc:sap://<ip_address>:39041/databaseName=<tenant_name>
 
 [ACCORDION-BEGIN [Step 12: ]((Optional) Create Additional SAP HANA, express edition Containers)]
 
-You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.  
+You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.
 
 ```
 sudo docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 10028-10029:1128-1129 -p 19013-19014:59013-59014 -v /data/<additional_directory_name>:/hana/mounts \
@@ -358,13 +359,36 @@ store/saplabs/hanaexpress:2.00.033.00.20180925.2 \
 --agree-to-sap-license
 ```
 
-This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.  
+This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ]((Optional) Update Your Docker Image)]
 
 Update your SAP HANA, express edition Docker image when new versions are released.
+
+First, take note of your root password.
+
+```
+docker exec -it -u root <container_name> bash
+passwd
+```
+
+You will also need the hostname of the location where you want to upgrade. You can get the hostname two steps:
+
+After the initial container startup, retrieve the `container_id` run:
+
+```
+sudo docker ps -a
+```
+
+Then, take note of the `container_id` and run:
+
+```
+sudo docker inspect <container_id> | grep -w Hostname
+```
+
+Take note of the hostname, you will need it later.
 
 Stop your old SAP HANA, express edition Docker image:
 

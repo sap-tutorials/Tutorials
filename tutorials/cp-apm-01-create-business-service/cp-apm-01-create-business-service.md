@@ -1,14 +1,16 @@
 ---
+author_name: André Pfohlmann
+author_profile: https://github.com/Apfohlmann
 title: Create a Business Service Using CDS
-description: Define a data and service model using SAP Web IDE Full-Stack and the application programming model based on Core Data and Services (CDS).
+description: Define a data and service model using SAP Web IDE Full-Stack and the SAP Cloud Application Programming Model based on Core Data and Services (CDS).
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
 time: 10
 ---
 
 ## Prerequisites  
- - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+ - [Get a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
  - [Set Up Cloud Foundry and SAP Web IDE](https://developers.sap.com/tutorials/teched-cf-prereq1.html)
 
 ## Details
@@ -25,7 +27,7 @@ time: 10
 
     >If you see an error stating that you do not have a builder in your space, make sure you have completed the prerequisite, [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html), and saved your preferences.
 
-    ![Select the project template](web-ide-template.png)
+    ![Select the project template](web-ide.png)   
 
     >If you do not see the template, make sure **All Categories** is selected from the **Category** drop-down menu and try again. If you still do not see the template, make sure the **SAP Cloud Platform Business Application Development Tools** are enabled. See [Developing SAP Cloud Platform Business Applications](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/99936743e1964680a0884479bfa75c8e.html).
 
@@ -35,7 +37,7 @@ time: 10
 
 1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the **Include sample files in project** checkbox is checked.
 
-    ![Complete the project details](project-details.png)
+    ![Complete the project details](project-details-bookshop.png)
 
     >You should update the **Java Package** to match the namespace used in this sample application, which is `my.bookshop`.
 
@@ -111,9 +113,23 @@ time: 10
 
 1. Click on the **`srv`** module and choose **Run** from the global toolbar.
 
+    >This might take a few minutes because a new cloud container has to be initialized and started. Subsequent restarts are much faster, because hot deployment is used.
+
     ![Choose Run](run-java-app.png)
 
-    >This might take a few minutes because a new cloud container has to be initialized and started. Subsequent restarts are much faster, because hot deployment is used.
+    > If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Could not create the 'bookshop-bookshop-hdi-container-D0oRdR+pMxiYd6NYDr' instance of the 'hana' service type for the 'bookshop-hdi-container' resource. No hdi-shared plan available found in this space."` To fix this issue, try the following:
+
+    > 1. Make sure your **HANA** entitlement is assigned.
+
+    > 1. Go to **SAP Cloud Platform Cockpit | Cloud Foundry | Entitlements**.
+
+    > 1. Click on **Edit**.
+    ![Edit entitlements](entitlements-edit.png)
+
+    > 1. Scroll down until you find **HANA** and change the value to `1`.
+    ![Change hdi-shared value](entitlements-hdi-shared.png)
+
+    > 1. **Save** your changes, and re-try to run your service.
 
 1. Go to the **Run Console** and click on the URL.
 

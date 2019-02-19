@@ -7,9 +7,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 15
 ---
 
-## Next Steps
- - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
-
 ## Details
 ### You will learn
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series
@@ -122,7 +119,7 @@ Set your hostname ( ***`hxehost`***), the instance number ( ***90***).
 
 Select **Multiple containers**, then select **Tenant database**, and enter **HXE** in the name field.
 
-![image Step 2](03-1.png)
+![image Step 2](03-4.png)
 
 Click on **Next**.
 
@@ -216,7 +213,7 @@ Set your hostname ( ***`hxehost`***), the instance number ( ***90***).
 
 Select **Multiple containers**, then select **Tenant database**, and enter **HXE** in the name field.
 
-![image Step 2](03-1.png)
+![image Step 2](03-4.png)
 
 Click on **Next**.
 

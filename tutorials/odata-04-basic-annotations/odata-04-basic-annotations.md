@@ -17,13 +17,13 @@ As a format and protocol, OData has many features. But there's a further dimensi
 
 The information in OData metadata documents you've seen in previous tutorials describes property names, types, whether they must have a value or not, and so on ... in other words, basic technical aspects. However, that information can be enriched through the addition of annotations, which can be managed in layers.
 
-Annotations allow you to define additional characteristics that have meaning beyond the basic technical aspects in the metadata document.
+Annotations allow you to define additional characteristics that have meaning beyond the basic technical aspects in the metadata document:
 
 - data processing: annotations can describe what operations are allowed
 - display: annotations can enrich the metadata by providing information useful in building a user interface (UI)
 - analytical: annotations can specify aggregation information, such as identifying properties that are dimensions or measures
 
-Metadata annotations can be provided in different ways: directly within the entity type definitions, outside of the entity type definitions but still within a metadata document, or outside of a metadata document entirely. It might help to think of this being similar to how Cascading Style Sheets (CSS) work - style information can be specified in-line with HTML elements directly, or in the head of an HTML document, or in a separate file altogether.
+Metadata annotations can be provided in different ways: directly within the entity type definitions, outside of the entity type definitions but still within a metadata document, or separate to the metadata document entirely. It might help to think of this being similar to how Cascading Style Sheets (CSS) work - style information can be specified in-line with HTML elements directly, or in the head of an HTML document, or in a separate file altogether.
 
 In this tutorial, you'll become acquainted with some basic OData metadata annotations and also with SAP Fiori elements, a series of UI5-based dynamic UI components that are entirely driven by annotations. You'll briefly examine existing annotations in an OData service, create a SAP Fiori elements app based on an Enterprise Procurement Model (EPM) OData service from the Gateway Demo system, and declare some annotations to drive the app's display.
 
@@ -278,3 +278,4 @@ This last annotation brings the introductory journey to an end. There's plenty m
 
 [DONE]
 [ACCORDION-END]
+

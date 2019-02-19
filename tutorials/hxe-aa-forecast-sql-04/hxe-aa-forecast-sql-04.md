@@ -10,9 +10,6 @@ time: 30
 ## Prerequisites
  - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
 
-## Next Steps
- - [Use Machine Learning to Build a Time Series model using SQL](https://developers.sap.com/group.hxe-aa-forecast-sql.html)
-
 ## Details
 ### You will learn
 - Understand the basics about the SAP HANA Automated Predictive Library
@@ -460,7 +457,7 @@ You can notice that:
  However, this is not always the case. A forecast ( **`kts_1`** value) is provided only for data points that are finally used during the training as all input data points are not always used in the final model.
  - The error bar (**`kts_1_lowerlimit_95%`** and **`kts_1_upperlimit_95%`**) are only provided for the actual predictions
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](07-01.png)
 
@@ -635,7 +632,7 @@ on   c.cashdate = f.cashdate
 order by c.cashdate asc;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](07-02.png)
 
@@ -861,7 +858,7 @@ on   c.time = f.time
 order by f.time asc;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](08-01.png)
 

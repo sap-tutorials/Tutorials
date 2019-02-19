@@ -13,7 +13,6 @@ time: 15
   - How to troubleshoot problems
   - Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access UIs via a web browser)]

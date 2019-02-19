@@ -1,113 +1,83 @@
 ---
-title: Create an ABAP project in Eclipse
-description: Learn how to configure the Eclipse IDE with the ABAP Development Tools for SAP NetWeaver (ADT) and create an ABAP project
+title: Create an ABAP Project in Eclipse
+description: Configure the Eclipse IDE with the ABAP Development Tools for SAP NetWeaver (ADT) and create an ABAP project.
+auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
+time: 15
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
+
 ---
 
 ## Prerequisites  
- - Download and install the latest Eclipse IDE from [Eclipse ](http://www.eclipse.org/) site
+ - You have downloaded and installed the latest Eclipse IDE from [Eclipse IDE for Java Developers ](http://www.eclipse.org/) site, and opened the application.
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to configure your ABAP development environment and create your first ABAP project.
-
-### Time to Complete
-**10 Min**.
+- How to configure your ABAP development environment with ABAP Development Tools (ADT)
+- How to create your first ABAP project
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download, Install and launch the Eclipse IDE)]
-ABAP development is done in the Eclipse IDE with custom ABAP tooling. If you haven't installed Eclipse yet, [download Eclipse IDE for Java Developers](http://www.eclipse.org/), install and launch the application now.
+[ACCORDION-BEGIN [Step 1: ](Install the ABAP Development Tools for SAP NetWeaver (ADT))]
 
+1. In the Eclipse menu bar, select: **Help > Install New Software...**.
+2. In the dialog box add the URL for the latest version, for example [https://tools.hana.ondemand.com/photon/](https://tools.hana.ondemand.com/photon/) for Eclipse Photon (4.8)
+3. Display the available features by choosing **Enter**
+4. Select **ABAP Development Tools for SAP NetWeaver**, then choose **Next**.
+5. On the next wizard page, you get an overview of the features to be installed. Choose **Next**.
+6. Confirm the license agreements and start the installation by choosing **Finish**.
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the ABAP Development Tools for SAP NetWeaver (ADT))]
+[ACCORDION-BEGIN [Step 2: ](Select the ABAP perspective)]
+1. If the Welcome Page appears, close it.
+2. Switch to the ABAP perspective choosing **Open Perspective** from the toolbar or using the menu: **Window > Open Perspective > Other**.
 
- - In the Eclipse menu bar, select: **Help > Install New Software...**
- - In the dialog box add the URL `https://tools.hana.ondemand.com/neon` (e.g. for Eclipse Neon 4.6)
- - Press **Enter** to display the available features
- - Select **ABAP Development Tools for SAP NetWeaver** and click **Next**
- - On the next wizard page, you get an overview of the features to be installed. Click **Next**
- - Confirm the license agreements and click **Finish** to start the installation
+![Image depicting step2-open-perspective](step2-open-perspective.png)
 
+Then switch to the ABAP Perspective by choosing **ABAP** in the list and choosing **OK**.
 
+![Image depicting step2b-abap-perspective](step2b-abap-perspective.png)
+
+[DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 3: ](Switch perspective)]
-
-Switch to the ABAP perspective by clicking the **Open Perspective** button or using the menu: **Window > Open Perspective > Other**.
-
-![open perspective](abap-01-3.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Close the Welcome page)]
-
-The Welcome Page might appear. It gives some general information about Eclipse. Click on the **Workbench** button to leave the Welcome Page.
-
-![workbench button](abap-01-4.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Select the ABAP perspective)]
-
-Click **Open Perspective** button.
-
-![abap perspective](abap-01-5a.png)
-
-Then switch to ABAP Perspective by choosing **ABAP** in the list and clicking the **OK** button.
-
-![abap perspective](abap-01-5b.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Familiarize yourself with the tooling layout)]
+[ACCORDION-BEGIN [Step 3: ](Familiarize yourself with the tooling layout)]
 
 In the ABAP Perspective, the ABAP tools are ideally positioned in the IDE to facilitate your development tasks. Nevertheless you are free to rearrange all views and editors to your personal needs.
 
-![abap perspective](abap-01-6.png)
+![Image depicting step3-tooling-layout](step3-tooling-layout.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](New ABAP Project)]
+[ACCORDION-BEGIN [Step 4: ](Create a new ABAP project)]
 
-Open the **File** menu, select **New** and then click on **ABAP Project**. Choose the ABAP backend system from the list of SAP System connections and press the **Next** button.
+You need to create one ABAP project for each system connection. To do this:
 
-![abap perspective](abap-01-7.png)
+1. In the **File** menu, choose **New > Other ABAP Project**. Choose the ABAP backend system from the list of SAP System connections, then choose **Next**.
 
+    ![Image depicting step4-system-connection](step4-system-connection.png)
 
-[ACCORDION-END]
+2. In Connection Settings, accept the defaults and choose **Next**.
 
-[ACCORDION-BEGIN [Step 8: ](Select Connection Settings)]
+    ![Image depicting step4b-connection-settings](step4b-connection-settings.png)
 
-Click Next on the Connection Settings dialog.
+3. Enter your logon data and choose **Finish**.
 
-![connection settings](abap-01-8.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Enter your log on data)]
-
-On the next screen enter your logon data and click the **Finish** button.
-
-![logon data](abap-01-9.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Project created)]
+    ![Image depicting step4c-logon-data](step4c-logon-data.png)
 
 The ABAP Project has been created. It represents a system connection to your chosen SAP system.
 
-![project created](abap-01-10.png)
+![Image depicting step4d-project-created](step4d-project-created.png)
 
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+
+[VALIDATE_1]
 [ACCORDION-END]

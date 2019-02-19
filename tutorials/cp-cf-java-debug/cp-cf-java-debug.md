@@ -25,7 +25,7 @@ In order to use the built-in debugger, you need to add a breakpoint. For this tu
 
 ![click-line-for-breakpoint](click-line-for-breakpoint.png)
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Setting debugger options)]
@@ -59,8 +59,7 @@ Or another option is to right-click the file name and select **Run > Java Applic
 
 [ACCORDION-BEGIN [Step 3: ](Open debugger)]
 
-In addition to selecting **Run in debug mode**, there are a few quick options to access the debugger window.
-
+In addition to selecting **Run in debug mode**, there are a few quick options to access the debugger window. 
 You can select the **bug** icon to far right bar, or you can select **View > Debugger** from the menu bar.
 
 ![open-debug](open-debug.png)
@@ -83,7 +82,7 @@ Now let's summarize the options described in this step in a single view of the S
 
 ![add-break-point-and-run](add-break-point-and-run.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 

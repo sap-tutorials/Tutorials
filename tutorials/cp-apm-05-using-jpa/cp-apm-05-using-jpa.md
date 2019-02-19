@@ -1,11 +1,15 @@
 ---
+author_name: Jijo Roy Jacob
+author_profile: https://github.com/JijoRoyJacob
 title: Use JPA in Custom Logic
-description: Use Java Persistence API (JPA) in your application to store and retrieve data.
+description: Use Java Persistence API (JPA) in your application, created using the SAP Cloud Application Programming Model, to store and retrieve data.
 auto_validation: true
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
+primary_tag: software-product-function>sap-cloud-application-programming-model
+tags: [  tutorial>intermediate, topic>java, software-product-function>sap-cloud-application-programming-model, products>sap-web-ide ]
 time: 15
 ---
+## Prerequisites  
+ - **Tutorials:** [Add Custom Logic to Your Service](https://developers.sap.com/tutorials/cp-apm-04-custom-logic.html)
 
 ## Details
 ### You will learn  
@@ -15,80 +19,43 @@ The application programming model intrinsically takes care of persisting data to
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add the JPA-based custom handler)]
-1. In the **`srv`** module, go to `src/main/java/my/bookshop` and open the `OrdersService.java` file.
-2. Add the following imports:
+[ACCORDION-BEGIN [Step 1: ](Generate JPA classes)]
+In order to have JPA classes generated automatically for all the entities defined in the data model, let's add the CSN2JPA mapper to the build of the application.
 
-    ```java
-    import java.util.UUID;
-    import java.util.Date;
-    import javax.naming.InitialContext;
-    import javax.naming.NamingException;
-    import javax.persistence.EntityManager;
-    import com.sap.demo.bookshop.jpa.my.bookshop.Books;
-    import com.sap.demo.bookshop.jpa.my.bookshop.Orders;
-    import org.apache.olingo.odata2.api.exception.ODataApplicationException;
-    ```
+1. Open the `package.json` file in the `bookshop` project folder and replace the build script as indicated in the following code:
 
-3. Add the following custom handler that overrides the Create operation of the `Orders` entity:
-
-    ```java
-    @Create(entity = "Orders", serviceName="CatalogService")
-    public CreateResponse createOrder(CreateRequest createRequest, ExtensionHelper extensionHelper) throws NamingException, ODataApplicationException {
-
-      //First, we fetch an EntityManager from JNDI context to perform our JPA operations with.
-      EntityManager em = (EntityManager) (new InitialContext()).lookup("java:comp/env/jpa/default/pc");
-
-      //Next, we create an Orders object from the data sent with the Create request.
-      //We set an ID for the order, its creation time, an order amount of 1000 units,
-      //and set the object reference to the ordered book. All other attributes of the
-      //Orders entity remain unchanged (for example, the buyer).
-      Orders order = createRequest.getData().as(Orders.class);
-      order.setID(UUID.randomUUID().toString());
-      order.setDate(new Date());
-      order.setAmount(1000);
-      order.setBook(em.find(Books.class,createRequest.getData().getElementValue("book_ID")));
-
-      //Using the persist method of the EntityManager we add the newly created
-      //Orders object to the JPA persistency, so that once the current transaction is
-      //committed, this new order is added to the database.
-      em.persist(order);
-
-      //Finally, to return the newly created entity in the response, we create an
-      //EntityData representation of the order.
-      EntityData createdEntity = EntityData.getBuilder(createRequest.getData())
-        .addElement("ID", order.getID())
-        .addElement("book", order.getBook())
-        .addElement("buyer", order.getBuyer())
-        .addElement("date", order.getDate())
-        .addElement("amount", order.getAmount())
-        .buildEntityData("Orders");
-
-      return CreateResponse.setSuccess().setData(createdEntity).response();
-    }
-    ```
-
-    > You can ignore the validation errors for now. Once you generate the JPA classes and add the necessary dependencies in the following steps, these errors will be resolved.
-
-4. Save the file.
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Generate JPA classes)]
-1. Open the `package.json` file and replace the build script with the following code:
-
-    ```json
+    ```JSON
     "scripts": {
-    	"build": "cds build --clean && cds compile db/data-model.cds -o ./"
+    	"build": "cds build --clean && cds compile db/data-model.cds -o ./",
+    	[...]
     }
     ```
 
-2. In the **`srv`** module, open `pom.xml` file that specifies how Maven builds the Java backend.
-3. Add the CSN2JPA plugin:
+2. Save `package.json`.
 
-    ```xml
+3. In the **`srv`** module, open `pom.xml` file that specifies how Maven builds the Java backend.
+
+4. Add the `resources` folder as a source directory.
+
+    ```XML
+    <project ...>
+      [...]
+      <build>
+        [...]
+        <resources>
+          [...]
+          <resource>
+            <directory>src/gen/resources</directory>
+          </resource>
+        </resources>
+        [...]
+    ```
+
+    ![Resources and Plugins](resources-and-plugins.png)
+
+5. Add the CSN2JPA plugin in `pom.xml` as indicated in the following code:
+
+    ```XML
     <project ...>
     	[...]
     	<build>
@@ -136,7 +103,7 @@ The application programming model intrinsically takes care of persisting data to
     			<plugin>
     				<groupId>com.sap.cloud.servicesdk.csn2jpa</groupId>
     				<artifactId>csn2jpa-maven-plugin</artifactId>
-    				<version>1.3.0</version>
+    				<version>1.4.1</version>
     				<executions>
     					<execution>
     						<phase>generate-resources</phase>
@@ -158,11 +125,11 @@ The application programming model intrinsically takes care of persisting data to
     			[...]
     ```
 
-    > The CSN2JPA plugin is required in the build of the application to automatically generate the JPA classes. The latest version of `csn2jpa-maven-plugin` can be found in the [Maven Central Repository](https://search.maven.org).
+    > The CSN2JPA plugin is required in the build of the application to automatically generate the JPA classes. In the code sample, you can see that the version number of `csn2jpa-maven-plugin` is 1.4.1. The latest version of `csn2jpa-maven-plugin` can be found in the [Maven Central Repository](https://search.maven.org). Accordingly, verify and update the version number of `csn2jpa-maven-plugin` in `pom.xml`.
 
-4. In order to actually execute the JPA operations, add EclipseLink to the dependencies section of `pom.xml`:
+6. In order to actually execute the JPA operations, add EclipseLink to the dependencies section of `pom.xml`.
 
-    ```xml
+    ```XML
     <project ...>
     	[...]
     	<dependencies>
@@ -178,9 +145,11 @@ The application programming model intrinsically takes care of persisting data to
     		[...]
     ```
 
-5. Add `cf-xsa-util` to the dependencies section of `pom.xml` to support JTA transactions:
+    ![Dependencies](dependencies.png)
 
-    ```xml
+7. Add `cf-xsa-util` to the dependencies section to support JTA transactions.
+
+    ```XML
     <project ...>
     	[...]
     	<dependencies>
@@ -196,9 +165,9 @@ The application programming model intrinsically takes care of persisting data to
     		[...]
     ```
 
-6. Add the JPA dependency:
+8. Add the JPA dependency.
 
-    ```xml
+    ```XML
     <project ...>
       [...]
       <dependencies>
@@ -212,47 +181,102 @@ The application programming model intrinsically takes care of persisting data to
         [...]
     ```
 
-7. Add the `resources` folder as a source directory:
+9. Save `pom.xml`.
 
-    ```xml
-    <project ...>
-      [...]
-      <build>
-        [...]
-        <resources>
-          <resource>
-            <directory>src/main/resources</directory>
-          </resource>
-          <resource>
-            <directory>${gen.folder}/resources</directory>
-          </resource>
-        </resources>
-        [...]
-    ```
-
-8. Right-click the `srv` module and choose *Build*.
+10. Right-click the `bookshop` project and choose **Build**.
     > The CSN2JPA mapper generates all the JPA classes for the entities defined in the data model.
+
+11. Right-click the `bookshop` project and choose **Refresh Workspace Items**.
 
 [VALIDATE_1]
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Add the JPA-based custom handler)]
+Let's add the following JPA-based handler to the existing [custom logic](https://developers.sap.com/tutorials/cp-apm-04-custom-logic.html).
 
-[ACCORDION-BEGIN [Step 3: ](Include runtime dependencies)]
+1. In the **`srv`** module, go to `src/main/java/my/bookshop` and open the `OrdersService.java` file.
+
+2. Add the following imports:
+
+    ```Java
+    import java.util.UUID;
+    import java.util.Date;
+    import javax.naming.InitialContext;
+    import javax.naming.NamingException;
+    import javax.persistence.EntityManager;
+    import com.sap.demo.bookshop.jpa.my.bookshop.Books;
+    import com.sap.demo.bookshop.jpa.my.bookshop.Orders;
+    import org.apache.olingo.odata2.api.exception.ODataApplicationException;
+    import com.sap.cloud.sdk.service.prov.api.operations.*;
+    ```
+
+3. Add the following custom handler that overrides the Create operation of the `Orders` entity:
+
+    ```Java
+    @Create(entity = "Orders", serviceName="CatalogService")
+    public CreateResponse createOrder(CreateRequest createRequest, ExtensionHelper extensionHelper) throws NamingException, ODataApplicationException {
+
+      //First, we fetch an EntityManager from JNDI context to perform our JPA operations with.
+      EntityManager em = (EntityManager) (new InitialContext()).lookup("java:comp/env/jpa/default/pc");
+
+      //Next, we create an Orders object from the data sent with the Create request.
+      //We set an ID for the order, its creation time, an order amount of 1000 units,
+      //and set the object reference to the ordered book. All other attributes of the
+      //Orders entity remain unchanged (for example, the buyer).
+      Orders order = createRequest.getData().as(Orders.class);
+      order.setID(UUID.randomUUID().toString());
+      order.setDate(new Date());
+      order.setAmount(1000);
+      order.setBook(em.find(Books.class,createRequest.getData().getElementValue("book_ID")));
+
+      //Using the persist method of the EntityManager we add the newly created
+      //Orders object to the JPA persistency, so that once the current transaction is
+      //committed, this new order is added to the database.
+      em.persist(order);
+
+      //Finally, to return the newly created entity in the response, we create an
+      //EntityData representation of the order.
+      EntityData createdEntity = EntityData.getBuilder(createRequest.getData())
+        .addElement("ID", order.getID())
+        .addElement("book", order.getBook())
+        .addElement("buyer", order.getBuyer())
+        .addElement("date", order.getDate())
+        .addElement("amount", order.getAmount())
+        .buildEntityData("Orders");
+
+      return CreateResponse.setSuccess().setData(createdEntity).response();
+    }
+    ```
+
+4. Save the file.
+
+[DONE]
+
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Enable JTA support and container management)]
+In step 1, we saw how to generate the JPA classes. In addition to the JPA classes, a `persistence.xml` file is generated that contains some setup information for JPA. Let's enable JTA support in this file, so that the JPA transactions are in sync.
+
 1. Open the `srv/src/gen/resources/META-INF/persistence.xml` file.
-2. Add the `transaction-type` declaration to the persistence unit defined:
 
-    ```xml
+2. Add the `transaction-type` declaration to the persistence unit defined.
+
+    ```XML
     <persistence ...>
 
     	<persistence-unit name="default" transaction-type="JTA">
     		[...]
     ```
 
-3. Open the `srv/src/main/webapp/WEB-INF/web.xml` file.
-4. Make the following change to ensure that the DataSource, encapsulating the connection to the database, is managed by the container (that is, application server):
+3. Save the file.
 
-    ```xml
+4. Open the `srv/src/main/webapp/WEB-INF/web.xml` file.
+
+5. Add the following reference so that the DataSource, encapsulating the connection to the database, is managed by the container (that is, application server):
+
+    ```XML
     <web-app ...>
 
     	<resource-ref>
@@ -263,9 +287,10 @@ The application programming model intrinsically takes care of persisting data to
 
     	[...]
     ```
-5. Add the following reference to a persistence context so that it is known to the container:
 
-    ```xml
+6. Add the following reference so that the persistence context and persistence unit are known to the container:
+
+    ```XML
     <web-app ...>
       [...]
 
@@ -277,21 +302,26 @@ The application programming model intrinsically takes care of persisting data to
       [...]
     ```
 
-6. Save the file.
+7. Save the file.
+
+8. Right-click the `srv` module and choose **Build**.
 
 [DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Change the runtime from Tomcat to TomEE)]
-1. Open `mta.yaml`.
+We are delegating the management of some resources to the container, like the management of transactions (JTA) and the management of the DataSource (encapsulating the connection to the database). These management features are supported by Java EE containers, like `TomEE`. As the default container of an application created using the application programming model is `Tomcat`, the following steps help you switch it from `Tomcat` to `TomEE`.
+
+1. Open the `mta.yaml` file in the `bookshop` project folder.
+
 2. Add `TARGET_RUNTIME: tomee` to the properties section. Also, update the `JBP_CONFIG_RESOURCE_CONFIGURATION` property, as `TomEE` uses `resources.xml` for this.
 
-    ```yaml
+    ```YAML
     [...]
     modules:
     [...]
-     - name: srv
+     - name: bookshop-srv
        type: java
        path: srv
        [...]
@@ -312,7 +342,7 @@ The application programming model intrinsically takes care of persisting data to
 4. Next, open `srv/src/main/webapp/META-INF/sap_java_buildpack/config/resource_configuration.yml`.
 5. Replace the configuration with the following:
 
-    ```yaml
+    ```YAML
     ---
     tomee/webapps/ROOT/WEB-INF/resources.xml:
       service_name_for_DefaultDB: java-hdi-container
@@ -327,9 +357,13 @@ The application programming model intrinsically takes care of persisting data to
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test the application)]
+Finally, let's run the application to see it all come together.
+
 1. Build the `bookshop` project.
-2. Right-click the `srv` module and choose **Run | Java Application**.
-3. Use the `curl` tool to send the following request that creates an order for a specific book for a specific buyer:
+
+2. Right-click the `srv` module and choose **Run > Java Application**.
+
+3. Use the `curl` tool to send the following request that creates an order for a specific book for a specific buyer.
 
     ```
     curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{ "buyer": "JPA Buyer 1", "book_ID": 310 }' https://<Java-Backend-URL>/odata/v2/CatalogService/Orders
@@ -337,7 +371,7 @@ The application programming model intrinsically takes care of persisting data to
 
     > Here, the URL that the Java backend is listening to is `Java-Backend-URL`, the ID of the ordered book is 310, and the buyer is called JPA Buyer 1.
 
-4. Request all the current orders (which include the newly created order), using the following command:
+4. Request all the current orders (which include the newly created order), using the following command.
 
     ```
     curl -H "Accept: application/json" https://<Java-Backend-URL>/odata/v2/CatalogService/Orders

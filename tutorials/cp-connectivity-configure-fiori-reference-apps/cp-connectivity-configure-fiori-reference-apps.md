@@ -3,7 +3,7 @@ title: Configure your ABAP System to Activate OData Services of Fiori Reference 
 description: This tutorial shows how you configure fiori reference apps in your ABAP system which is the prerequisite to be able to consume their OData services in apps of SAP Cloud Platform.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-gateway, products>sap-fiori ]
+tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-gateway, products>sap-fiori, topic>abap-connectivity ]
 ---
 
 ## Prerequisites  
