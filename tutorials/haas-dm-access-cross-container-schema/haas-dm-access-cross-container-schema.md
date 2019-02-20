@@ -263,9 +263,11 @@ grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REM
 
 ![Grant roles](grant2.png)
 
-Return to create a new file in `db/cfg` called `virtual.hdbgrants`. Paste the following code:
 
-```json
+> Alternatively, you can grant the same permissions to the user in the user-provided service, `PLUSR`, and create a separate grants file with them or a new role.
+> Here is an example for that `.hdbgrants` file
+>
+> ```json
 
 {
   "CC_ACCESS": {
@@ -281,7 +283,7 @@ Return to create a new file in `db/cfg` called `virtual.hdbgrants`. Paste the fo
   }
 }
 
-```
+>```
 
 **Save** the files. **Build** the database module.
 
