@@ -1,16 +1,16 @@
 ---
-title: Generate sensor data in SAP Data Hub, trial edition 2.3
-description: Generate sensor data and display it in a terminal by using SAP Data Hub, trial edition 2.3.
+title: Generate sensor data in SAP Data Hub, trial edition 2.4
+description: Generate sensor data and display it in a terminal by using SAP Data Hub, trial edition 2.4.
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Details
-Please note this tutorial will be removed on 6th February 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
 - How to use a **Data Generator** to generate random sample data
 - How to visualize the generated data via a **Terminal**
 Please note that this tutorial is similar to the `Generate sensor data` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
+Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
 ### Time to Complete
 **15 Min**
@@ -19,9 +19,10 @@ Please note that this tutorial is similar to the `Generate sensor data` tutorial
 
 [ACCORDION-BEGIN [Step 1: ](Create a data pipeline)]
 
-Open the modelling environment for building pipelines via SAP Data Hub Modeler (`https://sapdatahubtrial/app/pipeline-modeler`).
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the Sap Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From Sap Data Hub Launchpad you could access the Sap Data Hub Modeler.
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
+
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon.
 
@@ -33,12 +34,11 @@ Click **Save (1)**. Then enter a **Name** `(test.myFirstPipeline)` and **Descrip
 
 ![picture02](datahub-trial-v2-pipelines-part01-2.png)
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Data Generator)]
 
-Open the **Operators (1)** tab in the Navigation on the left. Then search for **Data Generator (2)**.
+Open the **Operators (1)** tab in the navigation pane on the left. Then search for **Data Generator (2)**.
 
 ![picture03](datahub-trial-v2-pipelines-part01-3.png)
 
@@ -87,3 +87,5 @@ Stop the pipeline by clicking **Stop** (you find it next to the **Run** button).
 
 
 [ACCORDION-END]
+
+---
