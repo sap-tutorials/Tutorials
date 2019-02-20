@@ -268,7 +268,6 @@ grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REM
 > Here is an example for that `.hdbgrants` file
 >
 > ```json
-
 {
   "CC_ACCESS": {
     "object_owner" : {
