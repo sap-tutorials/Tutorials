@@ -261,29 +261,25 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
       ![Create service binding](binding3.png)
 
-  4. Save and activate your service binding.
-
-      ![Create service binding](saveandactivate.png)
-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Publish locally)]
-Click **Publish Locally** to publish your service binding.
+[ACCORDION-BEGIN [Step 10: ](Activate your service binding)]
+Click **Activate** to publish your service binding.
 
-![Publish locally](locally.png)
+![Publish locally](activate.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Check your metadata)]
-  1. Click on the created URL to see your result.
+  1. Click on the Service URL to see your result.
 
-      ![Check your metadata](link.png)
+      ![Check your metadata](serviceurl.png)
 
-  2. Sign in with your communication user and password.
+  2. Sign in with your user and password.
 
-      ![Check your metadata](login.png)
+      ![Check your metadata](system.png)
 
   3. Check your result:
 
@@ -296,7 +292,7 @@ Click **Publish Locally** to publish your service binding.
   1. Go back to your service binding **`Z_I_BOOKING_XXX`**
    Open the preview for SAP Fiori elements app on the right side with double-clicking or right click.
 
-      ![Open SAP Fiori elements view](fiori.png)
+      ![Open SAP Fiori elements view](preview.png)
 
   2. Login with your username and password.
 
@@ -314,7 +310,7 @@ Click **Publish Locally** to publish your service binding.
 
       ![GO button](fiori5.png)
 
-  6. Check your result: 
+  6. Check your result:
 
       ![Open SPA Fiori elements view](fiori6.png)
 
