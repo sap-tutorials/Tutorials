@@ -270,14 +270,14 @@ Click **Activate** to publish your service binding.
 ![Publish locally](activate.png)
 
 [DONE]
-[ACCORDION-END]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 11: ](Check your metadata)]
   1. Click on the Service URL to see your result.
 
       ![Check your metadata](serviceurl.png)
 
-  2. Sign in with your user and password.
+  2. Sign in with your communication user and password.
 
       ![Check your metadata](system.png)
 
