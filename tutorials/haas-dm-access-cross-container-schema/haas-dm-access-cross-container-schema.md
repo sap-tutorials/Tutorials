@@ -34,14 +34,13 @@ Connect to SAP Web IDE Full Stack and enter the Database Explorer. You will see 
 
 ![DB Explorer](1.png)
 
-Use the following code to create a schema and a user with permissions to it. You will also create a simple table to use as an example for cross-container access.
+Use the following code to create a schema and a user. You will also create a simple table to use as an example for cross-container access.
 
-You can optionally use a SQL role as a best practice. You will create a SQL role and assign it to the user `PLUSR` with the permissions granted manually before. This user will be used for the connection between the HDI container and the plain schema, and will grant the role to the HDI container technical user.
+You will create a SQL role and assign it to the user `PLUSR` with the permissions granted manually before. This user will be used for the connection between the HDI container and the plain schema, and will grant the role to the HDI container technical user.
 
 ```sql
 CREATE SCHEMA "PLAIN";
 CREATE USER PLUSR PASSWORD "HanaRocks01" NO FORCE_FIRST_PASSWORD_CHANGE ;
-GRANT SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO "PLUSR" with grant OPTION;
 
 CREATE ROW TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
 
@@ -183,11 +182,11 @@ Click on the **Modules** tab and add `external_access` in the **`Requires`**  se
 
 ![DB Explorer](16.png)
 
- Use `SERVICE_REPLACEMENTS` as the value for **Groups**.
+ Use `SERVICE-REPLACEMENTS` as the value for **Groups**.
 
 | Name | Group |
 |:------|:---------|
-| `external_access` | `SERVICE_REPLACEMENTS` |
+| `external_access` | `SERVICE-REPLACEMENTS` |
 
 Use the following key-value pair as the properties of `external_access`
 
@@ -259,7 +258,7 @@ Execute the following SQL command
 
 ```sql
 
-grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REMOTE SUBSCRIPTION EXCEPTION"  on remote source "LocalFile" to PLUSR with grant option;
+grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REMOTE SUBSCRIPTION EXCEPTION"  on remote source "LocalFile" to CCROLE with grant option;
 ```
 
 ![Grant roles](grant2.png)
