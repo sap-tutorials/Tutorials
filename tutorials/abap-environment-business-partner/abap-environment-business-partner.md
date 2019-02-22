@@ -68,8 +68,8 @@ You can add your package to **Favorite Packages**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add OData client proxy)]
-  1. Mark your package under **ZLOCAL** or in **Favorite Packages** and click on **File** and choose **New** > **Other…** > **OData Client Proxy**.
+[ACCORDION-BEGIN [Step 3: ](Add service consumption model)]
+  1. Mark your package under **ZLOCAL** or in **Favorite Packages** and click on **File** and choose **New** > **Other…** > **Service Consumption Model**.
 
       ![choose OData Proxy](Picture1.png)
 
@@ -81,14 +81,14 @@ You can add your package to **Favorite Packages**.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create OData client proxy)]
-  1. Enter the package name and a name for the service definition that will be generated as part of the client proxy.
+[ACCORDION-BEGIN [Step 4: ](Create service consumption model)]
+  1. Enter a name for your service consumption model, a service definition will be generated as part of the service consumption model with this name.
 
-  2. Upload the `.edmx` file, which you saved before, in the Service Metadata File field.
+  2. Enter a description and upload the `.edmx` file, which you saved before, in the Service Metadata File field.
 
   3. Click **Next**.
 
-      ![Create OData Client Proxy](Picture3.png)
+      ![Create Service Consumption Model](Picture3.png)
 
 [DONE]
 [ACCORDION-END]

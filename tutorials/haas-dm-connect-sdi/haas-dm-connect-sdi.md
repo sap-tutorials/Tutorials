@@ -2,15 +2,16 @@
 title: Configure Smart Data Integration with the SAP HANA Service
 description: Configure the data provisioning agent and create a remote source.
 auto_validation: true
-time: 35
+time: 25
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
 - You have a productive account in SAP Cloud Platform, a subaccount in Cloud Foundry and a space.
-- You have access to the database cockpit for your SAP HANA service database instance.
-- You have enabled Data Provisioning Server in your SAP HANA service.
+- You have [created an instance of the SAP Cloud Platform, SAP HANA Service](https://developers.sap.com/tutorials/haas-dm-deploying-haas.html)
+- You have [access to the database cockpit for your SAP HANA service database instance](https://developers.sap.com/tutorials/haas-dm-connect-hana-cockpit.html).
+- You have enabled Data Provisioning Server in your SAP HANA service during setup or from the cockpit.
 - You have administration rights in your local computer.
 
 

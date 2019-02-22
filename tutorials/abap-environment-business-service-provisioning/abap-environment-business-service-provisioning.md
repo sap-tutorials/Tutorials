@@ -15,7 +15,7 @@ time: 15
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
-Create all business services with ABAP namespace `Z...`. 
+Create all business services with ABAP namespace `Z...`.
 
 ---
 
@@ -125,6 +125,7 @@ We want to create service binding to bind service to a protocol and preview.
   3. Enter data for a new service binding. Use the service definition created in last step.
       - Name: `Z_BIND_XXX`
       - Description: `service binding`
+      - Binding Type: ODATA V2 (UI - User Interface: Consumed in SAPUI5 Apps)
 
   4. Click **Next**.
 
@@ -134,8 +135,8 @@ We want to create service binding to bind service to a protocol and preview.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Publish your service binding)]
-Click **Publish locally**, and then you will see the service name and service URL in the table.
+[ACCORDION-BEGIN [Step 7: ](Activate your service binding)]
+Click **Activate**, and then you will see the service name and service URL in the table.
 
 ![Publish Service Binding](Picture8a.png)
 
