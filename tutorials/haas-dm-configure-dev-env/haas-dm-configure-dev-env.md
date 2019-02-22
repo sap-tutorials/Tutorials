@@ -71,7 +71,7 @@ Login with your username and password.
 
 Choose your **Space** and click on **Install Builder**. Wait until the builder is installed.
 
-![New project from template](10.png)
+![New project from template](10X.png)
 
 Once the builder is installed...
 
@@ -79,7 +79,7 @@ Once the builder is installed...
 
 ... click **Save**.
 
-![New project from template](12.png)
+![New project from template](12X.png)
 
 [DONE]
 [ACCORDION-END]

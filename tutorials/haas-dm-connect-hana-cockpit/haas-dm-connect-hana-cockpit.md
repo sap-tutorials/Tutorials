@@ -25,13 +25,13 @@ The SAP HANA Cockpit is useful because it provides graphical tools to monitor re
 
 Navigate back to the **SAP Cloud Platform Cockpit** to check on the progress status of your instance.
 
-Click on the **trial** subaccount.
+Click on the subaccount.
 
-![New project from template](1.png)
+![New project from template](1X.png)
 
 Click on **Spaces** and click on the **dev** space.
 
-![New project from template](2.png)
+![New project from template](2X.png)
 
 Click on **Service Instances**.
 
