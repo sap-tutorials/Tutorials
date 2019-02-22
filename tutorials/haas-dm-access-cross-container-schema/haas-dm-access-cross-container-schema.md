@@ -2,7 +2,7 @@
 title: SAP HANA Service, access a classic schema from SAP Web IDE Full-stack
 description: Access data in a plain or replicated schema from an HDI Container
 auto_validation: true
-time: 40
+time: 20
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
@@ -54,7 +54,8 @@ Use the green play button or press **`F8`** to execute the statement.
 
 ![DB Explorer](2.png)
 
-> ##What is going on?
+> ## What is going on?
+>
 >&nbsp;
 > You have created a plain schema in your SAP HANA database. When you [created a database module in SAP Web IDE](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html), an HDI container was automatically generated.
 >&nbsp;
