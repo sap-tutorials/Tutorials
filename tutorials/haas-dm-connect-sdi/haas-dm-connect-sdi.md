@@ -21,7 +21,7 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 - How to configure the file adapter to load text files
 - How to create a remote source in SAP HANA using the Database Explorer
 
-This tutorial is based on SAP Cloud Platform, SAP HANA service currently available only in productive accounts.
+>**This tutorial cannot currently be completed with a trial account.**
 
 ---
 

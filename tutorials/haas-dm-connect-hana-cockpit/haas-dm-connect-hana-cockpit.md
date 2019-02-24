@@ -1,6 +1,6 @@
 ---
 title: Connect to the SAP HANA Cockpit
-description: In this tutorial, you will open the application from the dashboard and connect to the SAP HANA Cockpit.
+description: Open your application from the dashboard and connect to the SAP HANA cockpit.
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
@@ -13,11 +13,11 @@ primary_tag: products>sap-hana
 
 ## Details
 ### You will learn
-  - How to connect to the SAP HANA Cockpit which allows you to perform administrative tasks in the physical database
+  - How to connect to the SAP HANA cockpit for performing administrative tasks in the physical database
 
-The SAP HANA Cockpit is useful because it provides graphical tools to monitor resources and the overall heath of your database
+The SAP HANA cockpit is useful because it provides graphical tools to monitor resources and the overall health of your database.
 
-**This tutorial cannot currently be completed with the trial account.**
+>**This tutorial cannot currently be completed with a trial account.**
 
 ---
 
@@ -25,13 +25,13 @@ The SAP HANA Cockpit is useful because it provides graphical tools to monitor re
 
 Navigate back to the **SAP Cloud Platform Cockpit** to check on the progress status of your instance.
 
-Click on the subaccount.
+Click on the **trial** subaccount.
 
-![New project from template](1X.png)
+![New project from template](1.png)
 
 Click on **Spaces** and click on the **dev** space.
 
-![New project from template](2X.png)
+![New project from template](2.png)
 
 Click on **Service Instances**.
 

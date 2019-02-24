@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Service, access a classic schema from SAP Web IDE Full-stack
-description: Access data in a plain or replicated schema from an HDI Container
+title: Access a Classic Schema from SAP Web IDE Full-Stack
+description: Access data in a plain or replicated schema from an HDI container.
 auto_validation: true
 time: 20
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
@@ -8,9 +8,9 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
- - You have access to the database and SAP Cloud Platform Cockpit
- - You have created a Multi-Target Application with a database module [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html)
- - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html)
+ - You have access to the database and SAP Cloud Platform cockpit.
+ - You have created a multi-target application with a database module [as explained in this tutorial](haas-dm-create-db-mta).
+ - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html).
 
 ## Details
 ### You will learn
@@ -20,9 +20,9 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 
 This tutorial is meant to be an example of cross-container access. Simple data models and loading mechanisms were chosen to simulate a schema replicated using tools such as SAP Landscape Transformation or an ABAP schema.
 
-For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/a260b05631a24a759bba932aa6d81b64.html)
+For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/a260b05631a24a759bba932aa6d81b64.html).
 
-If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html)
+If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html).
 
 ---
 
