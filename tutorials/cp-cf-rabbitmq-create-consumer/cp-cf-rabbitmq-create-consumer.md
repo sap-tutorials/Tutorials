@@ -189,6 +189,7 @@ Run `npm start` from the root directory of your project to test your application
 [ACCORDION-END]
 [ACCORDION-BEGIN [step ](Deploy your consumer application to SAP Cloud Platform)]
 Specify the deployment information in a `manifest.yml` file in the root folder:
+
 ```yml
 ---
 applications:
@@ -203,6 +204,7 @@ applications:
  services:
   - pubsub-messagingservice
 ```
+
 >The property `random-route` will generate a route that does not conflict with any other application in the same Cloud Foundry instance.
 
 The command `cf push` reads this file and deploys the application to SAP Cloud Platform. You can find the generated route / URL in the console, once the deployment has finished.
