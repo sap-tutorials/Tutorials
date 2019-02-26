@@ -1,5 +1,5 @@
 ---
-title: Deploying SAP HANA as a Service
+title: Deploy SAP HANA as a Service
 description: Create an instance of the SAP Cloud Platform, SAP HANA Service.
 auto_validation: true
 time: 15
@@ -17,7 +17,8 @@ primary_tag: products>sap-hana
   - How to use the SAP Cloud Platform Cockpit as a graphical tool to provision your instance
   - How to use the Command Line Interface (CLI) for Cloud Foundry to check the creation progress of your instance
 
-**This tutorial cannot currently be completed with the trial account.**
+>**This tutorial cannot currently be completed with a trial account.**
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access the Cloud Foundry trial account)]

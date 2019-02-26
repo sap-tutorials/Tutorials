@@ -28,7 +28,7 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
 
     ![Find tile](0-find-site.png)
 
-3. Right-click the URL and select **Copy link to URL**.
+3. Right-click the URL and select **Copy link address**.
 
     ![Save link](0a-save-link.png)
 

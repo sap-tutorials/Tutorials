@@ -1,13 +1,12 @@
 ---
-title:  Enable SAP Web IDE for S/4HANA System via OAuth
-description:  Enable SAP Cloud Platform development with SAP Web IDE (`SAP_COM_0013`) for an S/4HANA system, using OAuth authentication.
+title:  Enable SAP Web IDE for S/4HANA cloud system via OAuth
+description:  Enable SAP Cloud Platform development with SAP Web IDE (`SAP_COM_0013`) for an S/4HANA cloud system, using OAuth authentication.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
-time: 15
 ---
 
 ## Prerequisites
-- **Tutorials:** [Create OAuth communication system and user](abap-custom-ui-communication-systems)
+- **Tutorials:** [`Create OAuth communication system and user`](https://developers.sap.com/tutorials/abap-custom-ui-communication-systems.html)
 - **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`** represents the prerequisites for the usage of communication arrangement.
 
 
@@ -17,8 +16,10 @@ time: 15
 - How to create a HTTP destination
 - How to create a UI project
 
-You will learn how to enable SAP Cloud Platform development with SAP Web IDE against a specific S/4HANA system via OAuth authentication. You will see that communication arrangement for SAP Web IDE scenario `SAP_COM_0013` in S/4HANA will expose essential services, that SAP Web IDE needs. SAP Cloud Platform subaccount will get a destination which holds data for the connection and OAuth communication with the S/4HANA system. At the end you will see in SAP Web IDE a list of services that you can theoretically build extensions on.
+You will learn how to enable SAP Cloud Platform development with SAP Web IDE against a specific S/4HANA cloud system via OAuth authentication. You will see that communication arrangement for SAP Web IDE scenario `SAP_COM_0013` in S/4HANA cloud will expose essential services, that SAP Web IDE needs. SAP Cloud Platform subaccount will get a destination which holds data for the connection and OAuth communication with the S/4HANA cloud system. At the end you will see in SAP Web IDE a list of services that you can theoretically build extensions on.
 
+### Time to Complete
+**15 Min**.
 
 ---
 
@@ -73,10 +74,10 @@ Enter following **data** to your destination:
 |          **Name**            |            Name of your destination               |
 |          **Type**            |                    `HTTP`                         |
 |      **Description**         |            Description of your destination        |
-|           **URL**            |  URL of your S/4HANA Cloud System (with `-api`)   |
+|           **URL**            |  URL of your S/4HANA cloud System (with `-api`)   |
 |       **Proxy Type**         |                  `Internet`                       |
 |     **Authentication**       |            `OAuth2SAMLBearerAssertion`            |
-|        **Audience**          | URL of your S/4HANA Cloud System (without `-api`) |
+|        **Audience**          | URL of your S/4HANA cloud System (without `-api`) |
 |       **Client Key**         |          Equals your communication user           |
 |    **Token Service User**    |          Equals your communication user           |
 | **Token Service Password**   |        Password of your communication user        |
