@@ -145,7 +145,8 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
   });
 
 
-  const hasInvalidLinks = linksCheckResults.length > 0;
+  const hasInvalidLinks = linksCheckResults
+    .filter(checkResult => !checkResult.isTrusted).length > 0;
 
   checkResult.passed = checkResult.passed ? !hasInvalidLinks : checkResult.passed;
 
