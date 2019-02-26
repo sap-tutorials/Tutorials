@@ -21,7 +21,7 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 - How to configure the file adapter to load text files
 - How to create a remote source in SAP HANA using the Database Explorer
 
-This tutorial is based on SAP Cloud Platform, SAP HANA service currently available only in productive accounts.
+>**This tutorial cannot currently be completed with a trial account.**
 
 ---
 
@@ -68,16 +68,9 @@ The Database Explorer will automatically open a SQL console connected to your da
 
 [ACCORDION-BEGIN [Step 2: ](Download and install the Data Provisioning Agent))]
 
-For development purposes, you can install the data provisioning agent on your local computer. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloudintegration), in the **Cloud Integration** tab. Scroll down to **Data Integration Downloads**.
-
-> It is recommended that you uninstall any previous agent before installing this new version.
-
-Download the **SDI Data Provisioning Agent** for your operating system.
-
-![Download SDI](1.png)
+Download the Data Provisioning Agent from [the SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520DP%2520Agent). Choose `SPS3` Patch 52 or higher.
 
 > For more information about installing the Data Provisioning Agent for productive environments check the [documentation in SAP Help](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.3.3/en-US/6634db61aa43435a977b608878e5313f.html)
-
 
 Choose a directory in your file system and use the following command to extract the file into it.
 
