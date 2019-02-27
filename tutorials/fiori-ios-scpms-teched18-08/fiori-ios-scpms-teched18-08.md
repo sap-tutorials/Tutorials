@@ -1,15 +1,15 @@
 ---
 title: Add Map Support to the App - Part 2
-description: Build MapView extensions of the SAPFiori Framework into your App
+description: Build MapView extensions of the SAPFiori Framework into your app.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios  ]
 time: 20
 ---
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
 ### You will learn
@@ -18,7 +18,7 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a mock location to the TrackingInfoViewController)]
+[ACCORDION-BEGIN [Step 1: ](Add a mock location to the TrackingMapViewController)]
 
 For this exercise, a static (mock) location will be used. As a challenge on your own, once you've got the map displaying the mock location, try implementing it with OData entities, like you did with the the timeline cell in previous tutorials.
 
@@ -153,7 +153,7 @@ private func setupDetailPanel() {
 }
 ```
 
-At the end of the `viewDidAppear()` function, call your new setup function:
+At the end of the `viewDidLoad()` function, call your new setup function:
 
 ```swift
 setupDetailPanel()
@@ -161,7 +161,7 @@ setupDetailPanel()
 
 As the code above specifies, this view controller will supply the data for the detail panel's table view. To do this, you will need to implement the `UITableViewDataSource` and `UITableViewDelegate` protocols. In Swift, protocol implementations are often done as extensions.
 
-Add the following lines of code **after the final closing brace** of the **TrackingMapViewController** class:
+Add the following lines of code **after the final closing brace** of the `TrackingMapViewController` class:
 
 ```swift
 extension TrackingMapViewController: UITableViewDataSource {

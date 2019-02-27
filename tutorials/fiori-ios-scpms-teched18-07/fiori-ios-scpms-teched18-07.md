@@ -1,20 +1,20 @@
 ---
 title: Add Map Support to the App - Part 1
-description: Use the storyboard to build the UI for the Map
+description: Use the storyboard to build the UI for the Map.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios   ]
 time: 20
 ---
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
 ### You will learn  
-  - How to use the storyboard to add a map view to your app.
-  - How to use outlet connections to refer to controls in code.
+  - How to use the storyboard to add a map view to your app
+  - How to use outlet connections to refer to controls in code
 
 [ACCORDION-BEGIN [Step 1: ](Create a new view controller class for the tracking map view)]
 
@@ -36,21 +36,24 @@ Then, change the **Class** to `TrackingMapViewController`.
 
 Click **Next** to continue. Check that the file is saved in the `ViewControllers` group, and click **Create** to create the class. The new file will open now.
 
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 2: ](Add the view controller to the storyboard)]
 
 Select the `PackagesType.storyboard` and add a new **View Controller** from the **Object Library**.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-5.png)
 
-Make sure your new view controller is selected. Go to the Identity Inspector and set the class to **TrackingMapViewController**.
+Make sure your new view controller is selected. Go to the Identity Inspector and set the class to `TrackingMapViewController`.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-6.png)
 
-Go to the Attributes inspector and set the title to **TrackingMapViewController**.
+Go to the Attributes inspector and set the title to `TrackingMapViewController`.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-6-1.png)
 
-The next step is to add a segue from the **Detail Scene** to the **TrackingMapViewController Scene**.
+The next step is to add a segue from the **Detail Scene** to the **`TrackingMapViewController Scene`**.
 
 Select the **Detail Scene** and add a new **Table View Cell** from the **Object Library** to the table view of the **Detail Scene**.
 
@@ -65,11 +68,14 @@ Select the **Detail Scene** and use the **Object Library** to drag a single **Ta
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-8.png)
 
-Hold down the Control key and drag from the just added **Table View Cell** to the **TrackingMapViewController Scene**, creating a connection line between them. From the **Segue** dialog, choose **Show**.
+Hold down the Control key and drag from the just added **Table View Cell** to the **`TrackingMapViewController` Scene**, creating a connection line between them. From the **Segue** dialog, choose **Show**.
 
 With the segue selected, go to the attributes inspector and provide the name `showTrackingMap` as its **Identifier**.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-9.png)
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement the code for the detail table view cell)]
 
@@ -99,10 +105,12 @@ case 6:
     mapNavigationCell.textLabel?.textColor = .preferredFioriColor(forStyle: .primary1)
     return mapNavigationCell
 ```
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add the map view to the new view controller)]
 
-Select the `PackagesType.storyboard` and add a **Map Kit View** from the **Object Library** to the **TrackingMapViewController**.
+Select the `PackagesType.storyboard` and add a **Map Kit View** from the **Object Library** to the `TrackingMapViewController`.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-10.png)
 
@@ -112,9 +120,12 @@ To do this, select the map view and click on the **Add New Constraints** button 
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-11.png)
 
-Enter **0** for each field to add 4 new constraints, and deselect **Constrain to margins** to make the MKMapView the size of the parent `UIViewController`. Then click the **Add Constraints** button.
+Enter **0** for each field to add 4 new constraints, and deselect **Constrain to margins** to make the `MKMapView` the size of the parent `UIViewController`. Then click the **Add Constraints** button.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-12.png)
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add an outlet connection for the map view)]
 
@@ -124,7 +135,7 @@ While viewing the storyboard, click on the **Show the Assistant editor** button 
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-13.png)
 
-Select the map view, hold down the Control key on the keyboard, and drag from the map view to the **TrackingMapViewController** source code, right above the `viewDidLoad()` function. Select **Outlet** from the pop-up, and set the name to `mapView`.
+Select the map view, hold down the Control key on the keyboard, and drag from the map view to the `TrackingMapViewController` source code, right above the `viewDidLoad()` function. Select **Outlet** from the pop-up, and set the name to `mapView`.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-14.png)
 
@@ -141,6 +152,7 @@ If you run the app now you can navigate to your map view and back.
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-15.png)
 
 [VALIDATE_1]
+
 [ACCORDION-END]
 
 ---
