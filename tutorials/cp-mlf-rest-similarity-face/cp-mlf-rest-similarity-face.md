@@ -42,7 +42,9 @@ The service will return a JSON response that includes:
  - the bounding boxes coordinates for the identified faces
  - the associated vector of features for the detected face
 
-For more details, you can check the [Inference Service for Face Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/face_feature_extraction_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Face Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/face_feature_extraction_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -103,7 +105,7 @@ As you will notice one face is present in all 3 pictures and a second face in on
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
@@ -522,7 +524,7 @@ You will notice that the rectangle uses the following format: (left, top, right 
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 

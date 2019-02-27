@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 time: 15
 ---
 ## Prerequisites  
-- **Tutorials:** [Import SHINE tables and data](https://www.sap.com/developer/tutorials/xsa-import-shine-data.html)
+- **Tutorials:** [Import SHINE tables and data](https://developers.sap.com/tutorials/xsa-import-shine-data.html)
 
 ## Details
 ### You will learn  

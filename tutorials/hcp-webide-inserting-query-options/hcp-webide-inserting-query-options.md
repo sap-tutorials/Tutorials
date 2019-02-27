@@ -7,10 +7,10 @@ tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>htm
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [An Open Data Protocol (OData) primer for developers](https://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+- **Tutorials:** [An Open Data Protocol (OData) primer for developers](https://developers.sap.com/tutorials/hcp-webide-odata-primer.html)
 
 ## Next Steps
-- [Manually creating a data model to use in SAP Web IDE's Mock Data server](https://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
+- [Manually creating a data model to use in SAP Web IDE's Mock Data server](https://developers.sap.com/tutorials/hcp-webide-create-odata-model.html)
 
 ## Details
 ### You will learn  
@@ -23,7 +23,7 @@ The previous tutorial introduced a number of OData query options that developers
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
 
-Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com) and open SAP Web IDE tab in a Google Chrome browser. Ensure that your latest code has been committed to your git repository. If so, you should have green dots next to the folders and files in your project (as shown below). If not, [commit your files to Git now](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
+Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com) and open SAP Web IDE tab in a Google Chrome browser. Ensure that your latest code has been committed to your git repository. If so, you should have green dots next to the folders and files in your project (as shown below). If not, [commit your files to Git now](https://developers.sap.com/tutorials/hcp-webide-commit-git.html).
 
 ![Project folder](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_1.png)
 

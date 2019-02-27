@@ -8,8 +8,8 @@ time: 10
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
- - **Tutorials:**  [Install the Cloud Foundry CLI](https://www.sap.com/developer/tutorials/hcp-cf-getting-started.html)
+ - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+ - [Install the Cloud Foundry CLI](https://developers.sap.com/tutorials/hcp-cf-getting-started.html)
 
 ##Details
 ### You will learn  
@@ -21,34 +21,37 @@ time: 10
 
 
 [ACCORDION-BEGIN [Step: ](Create a RabbitMQ service from the command line)]
->You can create the service via the command line or via the SAP Cloud Platform Cockpit. This step describes how to create a service via the CLI. Please make sure that you have installed the [Cloud Foundry CLI](https://www.sap.com/developer/tutorials/hcp-cf-getting-started.html) and that you are connected to the proper org.
+>You can create the service via the command line or via the SAP Cloud Platform Cockpit. This step describes how to create a service via the CLI. Please make sure that you have installed the [Cloud Foundry CLI](https://developers.sap.com/tutorials/hcp-cf-getting-started.html) and that you are connected to the proper org.
 
 1. Run the following command to see all available services and make sure that "RabbitMQ" is available.
-```bash
-cf marketplace
-```
 
-  ![cfm](./rabbit-cf-m.png)
+    ```bash
+    cf marketplace
+    ```
+
+    ![cfm](./rabbit-cf-m.png)
 
 2. Select the plan **`v3.7-dev`** and create the service name **`pubsub-messagingservice`** by running:
-```bash
-cf create-service rabbitmq v3.7-dev pubsub-messagingservice
-```
+
+    ```bash
+    cf create-service rabbitmq v3.7-dev pubsub-messagingservice
+    ```
 
 3. You can verify that this service is ready with:
-```bash
-cf services | grep pubsub-messagingservice
-```
-You should now see your newly created service.
+
+    ```bash
+    cf services | grep pubsub-messagingservice
+    ```
+
+    You should now see your newly created service.
 
 4. You learned how to create the service via the CLI. Now remove the service in order to be able to create if via the SAP Cloud Platform Cockpit.
-```bash
-cf delete-service pubsub-messagingservice
-```
 
-  ![delete service](./delete-cli.png)
+    ```bash
+    cf delete-service pubsub-messagingservice
+    ```
 
-
+    ![delete service](./delete-cli.png)
 
 
 [VALIDATE_1]

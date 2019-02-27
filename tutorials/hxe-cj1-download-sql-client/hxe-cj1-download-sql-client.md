@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-expre
 
 
 ## Next Steps
- - [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)
+ - [Create a Table and Upload data into SAP HANA, express edition ](https://developers.sap.com/tutorials/hxe-cj1-create-table-upload-data.html)
 
 ## Details
 ### You will learn  
@@ -27,8 +27,8 @@ You will learn how to download and configure am open source database client and 
 This tutorial series will use the client `DBeaver`. You can choose to install any other client that allows you to connect to your SAP HANA, express edition, database and enter SQL commands.
 
 > Here are some suggestions for other tools to connect with the SAP HANA, express edition database:
-> - [Install the HANA plugin for Microsoft Visual Studio](https://developers.sap.com/group.hxe-install-hana-plugin-microsoft-visual-studio.html)
-> - [Use plugin for Eclipse](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
+> - [Install the HANA plugin for Microsoft Visual Studio](https://sap.com/developer/groups/hxe-install-hana-plugin-microsoft-visual-studio.html)
+> - [Use plugin for Eclipse](https://sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 [Download `DBeaver`](http://dbeaver.jkiss.org/download/) and follow the instructions to install it.
 
@@ -40,18 +40,23 @@ Look for the SAP HANA connector and click on **Next**
 
 ![Connect to SAP HANA](1.png)
 
-Enter your hostname (for example, `hxehost`) if you have [mapped it in your hosts file](https://sap.com/developer/tutorials/hxe-ua-hosts.html) or external IP address, username (for example, **SYSTEM**, unless you have already set up another administrator user) and the port: 3XX13, where XX is the instance number (default is 90). If you are using the Docker container, the default port for the system database is 39017.
+Enter your hostname (for example, `hxehost`) if you have [mapped it in your hosts file](https://sap.com/developer/tutorials/hxe-ua-hosts.html) or external IP address, username (for example, **SYSTEM**, unless you have already set up another administrator user) and the port: 3XX15, where XX is the instance number (default is 90). If you are using the Docker container, the default port for the first tenant database is 39041.
 
 > **Important note**  
-> SAP HANA, express edition includes a default tenant database called HXE and a system database, called `systemdb`.
-> The system database is where administration tasks are performed. The tenant databases are where the actual SQL and development is performed. In the context of SAP HANA, express edition, most clients will resolve the tenant database through the port 39013 - or 39017 - if the database name is set to `HXE`.
+> SAP HANA, express edition includes a default tenant database called `HXE` and a system database.
+>&nbsp;
+>
+> The system database is where administration tasks are performed. The tenant databases are where the actual SQL and development is performed. It is recommended that all development is done in a tenant.
 
 
 Then click on **Edit Driver Settings**.
 
 ![Edit driver settings](2.png)
 
-> **Default port assignment**: The default port for the system database in all deployments, except for Docker, is 39013. The default port for the first tenant, HXE, is 39015. For Docker containers, the default port the system database is 39017 and for the first tenant is 39041
+> **Default port assignment**: The default port for the system database in all deployments, except for Docker, is 39013. The default port for the first tenant, HXE, is 39015.
+>&nbsp;
+>
+> For Docker containers, the default port the system database is 39017 and for the first tenant is 39041
 
 Click on **Add File** to choose from the clients you downloaded with the HXE Download Manager.
 
@@ -86,12 +91,7 @@ Copy the following code into the console:
 ```
 
 CREATE SCHEMA "CODEJAM";
-CREATE USER CODEJAMMER PASSWORD "HanaRocks2017" NO FORCE_FIRST_PASSWORD_CHANGE ;
-
-CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::EditorDeveloper','CODEJAMMER');
-CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper','CODEJAMMER');
-CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::SecurityAdmin','CODEJAMMER');
-CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::TraceViewer','CODEJAMMER');
+CREATE USER CODEJAMMER PASSWORD "HanaRocks01" NO FORCE_FIRST_PASSWORD_CHANGE ;
 
 GRANT SELECT ON SCHEMA "CODEJAM" TO "CODEJAMMER" WITH GRANT OPTION;
 GRANT UPDATE ON SCHEMA "CODEJAM" TO "CODEJAMMER" WITH GRANT OPTION;
@@ -125,12 +125,10 @@ Replace the login details with those of the new user:
 You are now set to start development. Check the [tutorial section in the Developer Center](https://sap.com/developer/topics/sap-hana.tutorials.html#tutorials).
 
 Here are some suggestions:
-- [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)
+- [Create your first application with advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html)
+- [Create a Table and Upload data into SAP HANA, express edition ](https://developers.sap.com/tutorials/hxe-cj1-create-table-upload-data.html)
+- [Setup your instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 - [Get started with Geospatial](https://sap.com/developer/tutorials/hana-spatial-intro1-point.html)
-
+- [Check sample applications using different drivers and languages such as Node.js, Python](https://developers.sap.com/group.hxe-tiny-world.html)
 
 [ACCORDION-END]
-
-
-## Next Steps
- - [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)

@@ -9,10 +9,10 @@ time: 15
 ## Prerequisites  
  - **Tutorials:** You need a HANA account or server. Pick one of the following:
    - [Get a free account in SAP Cloud Platform](https://account.hanatrial.ondemand.com/register)
-   - [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html)
+   - [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html)
 
 ## Next Steps
-[Access your first Data from a native SAP HANA Application](https://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+[Access your first Data from a native SAP HANA Application](https://developers.sap.com/tutorials/hana-data-access-authorizations.html)
 
 ## Details
 ### You will learn  
@@ -21,7 +21,7 @@ time: 15
 3. How to publish and run an application.
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 

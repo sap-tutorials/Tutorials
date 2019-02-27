@@ -1,13 +1,13 @@
 ---
-title:  Add custom UI application tile to SAP Fiori launchpad
+title:  Add Custom UI Application Tile to SAP Fiori Launchpad
 description:  Extend a business catalog with custom UI application.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Create custom UI for S/4HANA on SAP Cloud Platform`](https://www.sap.com/developer/tutorials/abap-custom-ui-tile.html)
-
+- **Tutorials:** [Create custom UI for S/4HANA on SAP Cloud Platform](abap-custom-ui-tile)
 
 ## Details
 ### You will learn
@@ -15,8 +15,6 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 
 The creation of a new tile will be explained with this tutorial. The adding of business catalogs to the catalog extension will be shown.
 
-### Time to Complete
-**15 Min**.
 
 ---
 

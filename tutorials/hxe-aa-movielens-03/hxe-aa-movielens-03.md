@@ -8,10 +8,7 @@ time: 20
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
@@ -30,9 +27,15 @@ The data set that you will be using for this series is the ***small*** version o
 
 This dataset, thanks to its size, can quickly be uploaded in your SAP HANA, express edition instance.
 
-If you have additional capacity resources, you can run this tutorial series with the larger datasets, but the validations steps implemented were built based on the ***small dataset***.
-
 Before using these data sets, please review the <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> file for the usage licenses and other details.
+
+> ### **Note:**:
+>
+> As the datasets get updated regularly, you will be provided with a copy of the ***small dataset***. so that the implemented validation will work.
+>
+> However, you are free to use the latest version of the dataset from the `MovieLens` website, but you won't be able to mark you work as completed as the validation will fail.
+>
+> In addition, if you have additional capacity resources, you may want to run this tutorial series with the larger datasets. but again the validations steps were built based on a local copy of the ***small dataset***.
 
 [DONE]
 [ACCORDION-END]
@@ -49,7 +52,7 @@ However, this would require the ***Eclipse IDE*** to be locally installed and pr
 
 Then, you would need to know the complete data file format description in order to create the tables with the proper columns structure. And, last but not least, any changes would require to recreate the all structure and reload the data.
 
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
+If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html)
 
 - ***SAP HANA HDB Client***
 
@@ -57,7 +60,7 @@ The **SAP HANA HDB Client** provides an ***IMPORT FROM*** statement allowing you
 
 However, this method requires that the table are created before the execution of the command.
 
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
+If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://developers.sap.com/tutorials/mlb-hxe-import-data-sql-import.html)
 
 - ***SAP HANA Persistence Model***
 

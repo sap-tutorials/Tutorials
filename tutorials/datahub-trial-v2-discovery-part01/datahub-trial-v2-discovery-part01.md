@@ -1,25 +1,27 @@
 ---
-title: Explore data in Google Cloud Storage in SAP Data Hub, trial edition 2.3
-description: Explore data in Google Cloud Storage (including profiling) by using SAP Data Hub, trial edition 2.3.
-auto_validation: false
-primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+title: Explore data in Cloud Storage in SAP Data Hub, trial edition 2.4
+description: Explore data in Cloud Storage (including profiling) by using SAP Data Hub, trial edition 2.4.
+auto_validation: true
+primary_tag: products>SAP-data-hub
+tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
 ---
 
 ## Next Steps
- - [Explore data in SAP Vora](https://developers.sap.com/germany/tutorials/datahub-trial-v2-discovery-part02.html)
+ - [Explore data in SAP Vora](https://developers.SAP.com/tutorials/datahub-trial-v2-discovery-part02.html)
 
 ## Details
 ### You will learn  
-During this tutorial, you will learn how to use Sap Data Hub Metadata Explorer. This application allows you to learn more about data residing in external storages, for example, Google Cloud Storage by profiling, previewing and viewing the metadata. You will use data residing in Google Cloud Storage. The Metadata Explorer gathers information about the location, attributes, quality, and sensitivity of data. With this information, you can make informed decisions about which datasets to publish and determine who has access to use or view information about the datasets.
+During this tutorial, you will learn how to use SAP Data Hub Metadata Explorer. This application allows you to learn more about data residing in external storages, for example, Google Cloud Storage or AWS S3 by profiling, previewing and viewing the metadata. You will use data residing in Cloud Storage. The Metadata Explorer gathers information about the location, attributes, quality, and sensitivity of data. With this information, you can make informed decisions about which datasets to publish and determine who has access to use or view information about the datasets.
+Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+
 
 ### Time to Complete
 **30 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Discover data in Google Cloud Storage)]
-Open the SAP Data Hub App Launchpad (`https://sapdatahubtrial/`) via a web browser.
+[ACCORDION-BEGIN [Step 1: ](Discover data in Cloud Storage)]
+Open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
@@ -33,11 +35,7 @@ From the quick links, click on **Browse Connections**
 
 ![picture_03](./datahub-trial-v2-discovery-part01_03.png)
 
-Click the `Google_Cloud_Storage` connection to display the directories / files on Google Cloud Storage. Once the connection opens, click on your bucket from GCS.
-
-- [`Customers.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/datahub-trial-setup/Customers.csv)
-- [`Devices.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/datahub-trial-setup/Devices.csv)
-- [`Events.parquet`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/datahub-trial-setup/Events.parquet)
+Click the `Cloud_Storage` connection to display the directories / files on Google Cloud Storage or AWS S3. Once the connection opens, click on your bucket from GCS or AWS S3.
 
 [DONE]
 
@@ -85,4 +83,3 @@ Next also profile the content of the two other files and afterwards take a look 
 
 [ACCORDION-END]
 ---
-

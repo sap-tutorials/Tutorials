@@ -1,14 +1,14 @@
 ---
-title: Use the Application Router in Cloud Foundry to Connect to ABAP System through Secure Tunnel
-description: After setting up a secure tunnel between your ABAP system and SAP Cloud Platform with the Cloud Connector, you can access released OData services of you ABAP system on SAP Cloud Platform. We will use the application router to demonstrate what you need to configure before consuming such services in your Cloud Foundry applications.
+title: Use the Application Router in Cloud Foundry to Connect to ABAP System
+description: Use the application router on SAP Cloud Platform to access released OData services of your ABAP system through the Cloud Connector.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, products>sap-cloud-platform,products>sap-cloud-platform-connectivity ]
+tags: [  tutorial>intermediate, products>sap-cloud-platform,products>sap-cloud-platform-connectivity, topic>abap-connectivity ]
 time: 40
 ---
 
 ## Prerequisites  
- - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://www.sap.com/developer/tutorials/cp-connectivity-configure-fiori-reference-apps.html)
+ - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html)
  - [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
  - [Create a Cloud Foundry Account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
  - [Connect your ABAP System with SAP Cloud Platform Using a Secure Tunnel](https://developers.sap.com/tutorials/cp-connectivity-create-secure-tunnel.html)
@@ -23,8 +23,8 @@ time: 40
 
 |Component        | Configured Entity (Value)   |  As Shown in Tutorial              |
 |:----------------|:----------------------------|------------------------------------|
-| ABAP system |Path of OData service (`http://<your server>:<your port>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Products`)     |  [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://www.sap.com/developer/tutorials/cp-connectivity-configure-fiori-reference-apps.html) |
-| ABAP system |User name and password of the technical user that is allowed to access the service (`DEMO`, `<your password>`) | [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://www.sap.com/developer/tutorials/cp-connectivity-configure-fiori-reference-apps.html) |
+| ABAP system |Path of OData service (`http://<your server>:<your port>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Products`)     |  [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html) |
+| ABAP system |User name and password of the technical user that is allowed to access the service (`DEMO`, `<your password>`) | [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html) |
 | Cloud Connector |Virtual host and port of the access control for your ABAP system (`http://abap-as-eu01:443`) | Connect your ABAP System with SAP Cloud Platform using a Secure Tunnel |
 
   To configure the access of the OData service applications require several services on SAP Cloud Platform (see picture below): After a user starts the application (1), the Authorization & Trust Management service (also known as XSUAA service) is used to authenticate the user for the on-premise call (2). The application then requests technical information about the virtual host of the ABAP system that needs to be accessed from the destination service (3), and finally uses the connectivity service to connect to the Cloud Connector through the secure tunnel (4-7).
@@ -156,15 +156,32 @@ The application router will use the XSUAA instance to authenticate the user befo
 
     ![Create XSUAA Instance](03-xsuaa-003.png)
 
-4. Provide the following parameters and choose **`Next`**:
-```xml
-{
-        "xsappname" : "approuter-demo",
-        "tenant-mode": "dedicated"
-}
-```
+4. On the next screen, you specify authorization parameters for your application. Scope `uaa.user` is required for the token exchange between the application (in our case this is the application router) and the instance of the destination service. Provide the following parameters and choose **`Next`**:
+
+    ```json
+    {
+      "xsappname": "approuter-demo",
+      "tenant-mode": "dedicated",
+      "description": "Security profile of called application",
+      "scopes": [
+        {
+          "name": "uaa.user",
+          "description": "UAA"
+        }
+      ],
+      "role-templates": [
+        {
+          "name": "Token_Exchange",
+          "description": "UAA",
+          "scope-references": [
+            "uaa.user"
+          ]
+        }
+      ]
+    }
+    ```
 ![Create XSUAA Instance](03-xsuaa-004.png)
-> More information about parameters for the XSUAA instance can be found in the [official documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html).
+> Every user in the XSUAA has the scope `uaa.user` assigned by default. It basically says that it is a user (and for example, not a client) who owns the token. By using this scope in the role template, the scope will be part of all exchanged tokens by default, even if users do not have the corresponding role assigned explicitly at all. More information about parameters for the XSUAA instance can be found in the [official documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html).
 
 5. On the next screen you can assign this service instance to an application. In this tutorial we will create such bindings by specifying the required services in the manifest the application router, so choose **`Next`**.
 

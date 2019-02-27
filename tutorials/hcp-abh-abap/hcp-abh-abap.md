@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>abap-development  ]
 
 ## Prerequisites  
  - ABAP system should be configured to call http APIs
- - [Testing API Business Hub APIs with Curl](https://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
+ - [Testing API Business Hub APIs with Curl](https://developers.sap.com/tutorials/hcp-abh-test-locally.html)
 
 
 ## Details

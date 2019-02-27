@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Northwind Destination** [Set up the Northwind service destination in the SAP Cloud Platform cockpit](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
-- **Tutorial:** [Convert components from static to dynamic](https://www.sap.com/developer/tutorials/react-dynamic-components.html)
+- **Northwind Destination** [Set up the Northwind service destination in the SAP Cloud Platform cockpit](https://developers.sap.com/tutorials/hcp-create-destination.html)
+- **Tutorial:** [Convert components from static to dynamic](https://developers.sap.com/tutorials/react-dynamic-components.html)
 
 ## Next Steps
-- **Tutorial:** [Add a header and a detail modal dialog](https://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
+- **Tutorial:** [Add a header and a detail modal dialog](https://developers.sap.com/tutorials/react-add-header-detail-dialog.html)
 
 
 ## Details
@@ -45,7 +45,7 @@ The steps for this tutorial are:
 > - In the right hand navigation, select **Connectivity**, then select **Destinations**
 > - Look for the Destination called `Northwind`.
 >
-> If you do not see a Destination called `Northwind`, go to the **[Create a Destination](https://www.sap.com/developer/tutorials/hcp-create-destination.html)** tutorial.  When you are finished, return here.
+> If you do not see a Destination called `Northwind`, go to the **[Create a Destination](https://developers.sap.com/tutorials/hcp-create-destination.html)** tutorial.  When you are finished, return here.
 >
 
 
@@ -276,7 +276,3 @@ document.getElementById('product-list')
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- **Tutorial:** [Add a header and a detail modal dialog](https://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)

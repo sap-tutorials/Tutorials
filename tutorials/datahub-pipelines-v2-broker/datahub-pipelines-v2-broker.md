@@ -1,6 +1,6 @@
 ---
-title:  Use a message broker in SAP Data Hub, developer edition 2.3
-description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, developer edition 2.3.
+title:  Use a message broker in SAP Data Hub, developer edition 2.4
+description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, developer edition 2.4.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -102,9 +102,11 @@ When the **Status** tab indicates that the pipeline is running, use the context 
 
 In contrast to the previous tutorial, this time the generated sensor data is not sent from the **Data Generator** operator to the **Terminal** operator directly, but via Apache Kafka.
 
-Stop the pipeline by pressing the **Stop** button.
+Copy any row of the terminal output and paste it in the frame below and click on **Validate**.
 
-[DONE]
+[VALIDATE_1]
+
+Stop the pipeline by pressing the **Stop** button.
 
 [ACCORDION-END]
 

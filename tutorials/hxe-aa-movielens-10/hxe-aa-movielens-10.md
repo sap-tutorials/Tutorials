@@ -8,10 +8,7 @@ time: 15
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
@@ -597,7 +594,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step 10: ](Test your XSJS service)]
 
-Open your preferred REST client, like **`cURL`**, and if don't have one yet you can [install and use Postman](https://www.sap.com/developer/tutorials/api-tools-postman-install.html).
+Open your preferred REST client, like **`cURL`**, and if don't have one yet you can [install and use Postman](https://developers.sap.com/tutorials/api-tools-postman-install.html).
 
 #### With Postman
 

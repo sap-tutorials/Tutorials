@@ -1,21 +1,19 @@
 ---
-title: Set up trust between identity authentication and SAP Cloud Platform subaccount
+title: Set Up Trust Between Identity Authentication and SAP Cloud Platform
 description: Set up trust between identity authentication and SAP Cloud Platform will be explained by using SAML 2.0 Configuration.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 25
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Maintain platform subaccounts and SAP Web IDE permissions`](https://www.sap.com/developer/tutorials/abap-custom-ui-subaccount-permission.html)
+- **Tutorials:** [Maintain platform subaccounts and SAP Web IDE permissions](abap-custom-ui-subaccount-permission)
 
 ## Details
 ### You will learn
 - How to set up trust between identity authentication and SAP Cloud Platform
 - How to assign members different roles
 - How to upload metadata
-
-### Time to Complete
-**25 Min**.
 
 ---
 

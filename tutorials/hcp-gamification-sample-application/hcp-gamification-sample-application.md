@@ -6,9 +6,9 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Enable and configure the SAP Cloud Platform, gamification service](https://www.sap.com/developer/tutorials/hcp-gamification-service-enable.html)
+- **Tutorials:** [Enable and configure the SAP Cloud Platform, gamification service](https://developers.sap.com/tutorials/hcp-gamification-service-enable.html)
 ## Next Steps
-- [Deploy gamified HelpDesk application to the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
+- [Deploy gamified HelpDesk application to the SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-deploy-gamified-application.html)
 
 ## Details
 ### You will learn  

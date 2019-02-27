@@ -1,12 +1,13 @@
 ---
-title: Maintain platform subaccounts and SAP Web IDE permissions
+title: Maintain Platform Subaccounts and SAP Web IDE Permissions
 description: Add new subaccount to the SAP Cloud Platform global account and give permission to access SAP Web IDE to everyone.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 15
 ---
 
 ## Prerequisites   
-Authorizations: Access to a subaccount on SAP Cloud Platform in Neo Environment is expected.
+  - You need access to a subaccount on SAP Cloud Platform in the Neo environment.
 
 ## Details
 ### You will learn
@@ -15,10 +16,8 @@ Authorizations: Access to a subaccount on SAP Cloud Platform in Neo Environment 
 
 This tutorial describes how to add new subaccounts to SAP Cloud Platform. Furthermore you learn how to give members the permission to enter SAP Web IDE.
 
-### Time to Complete
-**15 Min**.
-
 ---
+
 [ACCORDION-BEGIN [Step 1: ](Enter SAP Cloud Platform global account)]
 Enter SAP Cloud Platform and select your global account.
 

@@ -7,10 +7,10 @@ tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mob
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](https://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
+- **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](https://developers.sap.com/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
 
 ## Next Steps
-- [Build an SAPUI5 app based on your data model and run it with mock data](https://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
+- [Build an SAPUI5 app based on your data model and run it with mock data](https://developers.sap.com/tutorials/hcp-webide-build-app-mock-data.html)
 
 ## Details
 ### You will learn  
@@ -348,7 +348,7 @@ Text to enter:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Add assiciation element)]
+[ACCORDION-BEGIN [Step 12: ](Add association element)]
 
 The next addition is the `Association` element which (as the name implies) represents an association in an entity model. The `Association` element must contain a `Name` and two `End` elements – and can also contain referential constraints. The attributes you will use are explained below.
 

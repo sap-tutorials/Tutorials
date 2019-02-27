@@ -38,7 +38,9 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the vector of features for the associated image.
 
-For more details, you can check the [Inference Service for Image Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/img_feature_extraction_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Image Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/img_feature_extraction_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -100,7 +102,7 @@ To keep it simple, only one class should be detected from each image.
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
@@ -113,7 +115,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-face-feature-extractor.cfapps.eu10.hana.ondemand.com/api/v2alpha1/image/face-feature-extraction`</nobr>
+<nobr>URL<nobr>          | <nobr>`https://mlftrial-image-feature-extractor.cfapps.eu10.hana.ondemand.com/api/v2/image/feature-extraction`</nobr>
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 
@@ -171,7 +173,7 @@ Each entry in the response represents a box that identify one of the face.
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 

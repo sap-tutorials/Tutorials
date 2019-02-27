@@ -7,6 +7,11 @@ tags: [  tutorial>beginner, operating-system>android, topic>mobile, products>sap
 time: 20
 ---
 
+
+## Prerequisites  
+- Completed [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html)
+
+
 ## Details
 ### You will learn
   - How to configure SAP Cloud Platform for push
@@ -18,7 +23,7 @@ time: 20
 
 [ACCORDION-BEGIN [Step 1: ](Configure the SAP Cloud Platform for push notifications)]
 
-Open <a target="_blank" href="https://account.hanatrial.ondemand.com">SAP Cloud Platform Trial</a> and log in to **Neo Trial**.
+Open [https://account.hanatrial.ondemand.com](SAP Cloud Platform Trial) and log in to **Neo Trial**.
 
 ![Neo Trial button](neo-trial-button.png)
 
@@ -57,12 +62,12 @@ In SAP Cloud Platform Mobile Services, select the application **`com.sap.wizapp`
 ![Push notification link on home page](push-notification-button.png)
 
 
-This screen requires information from the `Firebase console`.
+This screen requires information from [Firebase](https://firebase.google.com/).
 
 ![Push notification](push-notification-blank.png)
 
 
-In the <a target="_blank" href="https://console.firebase.google.com/">Firebase</a> console, go to the **Project settings**
+In the [Firebase console](https://console.firebase.google.com/), go to the **Project settings**.
 
 ![Project settings](firebase-project-settings-button.png)
 
@@ -87,7 +92,9 @@ Select the User Registrations tab to send the notification to your app.
 
 ![Send notification](send-notification.png)
 
-> **Note**: It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, click through a few screens in the application and then press the **GO** button to refresh the display or select all of them and send a greeting to all the registrations.
+>It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, navigate through a few screens in the application and then press the **GO** button to refresh the display or select all of them and send a greeting to all the registrations.
+
+>If the Send Notifications button does is not showing, try logging out and back in to the management cockpit.
 
 
 Specify the notification text to send to the app.
@@ -127,7 +134,7 @@ Custom logic could be added to the app to decide on the action to take, such as 
 ![Show Notification Code](show-notification-code.png)
 
 
-> **Note**: Further information on push can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/remotenotification.html">Push Notifications</a>, <a target="_blank" href="https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html">Push API Notification Scenarios</a>, and <a target="_blank" href="https://firebase.google.com/docs/cloud-messaging/concept-options">About FCM Messages</a>.
+>Further information on push can be found at [Push Notifications](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/remotenotification.html), [Push API Notification Scenarios](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html), and [About FCM Messages](https://firebase.google.com/docs/cloud-messaging/concept-options).
 
 
 Congratulations! You have seen how an app can make use of foreground and background notifications.

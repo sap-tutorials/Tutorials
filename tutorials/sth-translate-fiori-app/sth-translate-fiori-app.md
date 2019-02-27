@@ -7,7 +7,7 @@ time: 10
 ---
 
 ## Prerequisites  
-  - [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
+  - [Deploy an SAP Fiori app to SAP Cloud Platform](https://developers.sap.com/tutorials/sth-deploy-fiori-app.html)
 
 
 ## Details
@@ -117,7 +117,7 @@ Enter your Git password and choose **Submit**.
 
 To see the translations in SAP Web IDE, you need to pull the translations from the Git repository.
 
-In SAP Web IDE (see where you left off in [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)), select the root folder (`sample.ApprovePurchaseOrders`) of your project.
+In SAP Web IDE (see where you left off in [Deploy an SAP Fiori app to SAP Cloud Platform](https://developers.sap.com/tutorials/sth-deploy-fiori-app.html)), select the root folder (`sample.ApprovePurchaseOrders`) of your project.
 
 Open the Git pane by choosing the icon under the magnifying glass at the right of the screen. Confirm that `sample.ApprovePurchaseOrders` appears under **Repository** and then choose **Pull**.
 

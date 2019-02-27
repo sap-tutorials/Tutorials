@@ -7,7 +7,7 @@ time: 5
 ---
 
 ## Prerequisites  
-- [Start Using SAP HANA 2.0, express edition](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
+- [Start Using SAP HANA 2.0, express edition](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)
 
 ## Details
 ### You will learn  

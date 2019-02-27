@@ -1,14 +1,14 @@
 ---
-title: Create Workflow (part 1), Enrich data with Data Transform in SAP Data Hub, trial edition 2.3
-description: Build a pipeline to enrich device data with country information by using SAP Data Hub, trial edition 2.3.
-auto_validation: false
+title: Create Workflow (part 1), Enrich data with Data Transform in SAP Data Hub, trial edition 2.4
+description: Build a pipeline to enrich device data with country information by using SAP Data Hub, trial edition 2.4.
+auto_validation: true
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Details
 ### You will learn  
-During this tutorial, you will learn how to create a Data Transform. This will enrich the `Devices.csv` file, which you have taken a look at during one of the previous tutorials, with country information.
+During this tutorial, you will learn how to create a Data Transform. This will enrich the `Devices.csv` file, which you have taken a look at during one of the previous tutorials, with country information. Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
 ### Time to Complete
 **30 Min**
@@ -16,9 +16,9 @@ During this tutorial, you will learn how to create a Data Transform. This will e
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add Data Transform and Trigger)]
-Open the modelling environment for building pipelines via SAP Data Hub Modeler (`https://sapdatahubtrial/app/pipeline-modeler`).
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon.
 
@@ -42,11 +42,11 @@ As this is a **Data Transform** task, only **Nodes** can be added to the task.
 
 ![picture_02](./datahub-trial-v2-workflow-part01_02.png)  
 
-Double click on the **Data Source** and open the **Data Source Editor**. Here we have to configure the details for the particular data source. Using the **Browse** button, select **Google Cloud Storage** connection from the list.
+Double click on the **Data Source** and open the **Data Source Editor**. Here we have to configure the details for the particular data source. Using the **Browse** button, select **`CLOUD_STORAGE`** connection from the list.
 
 >You will see the connection here only, if you have configured the same under **Connection Management**.
 
-As **Source**, browse the Google Cloud Storage and choose `Devices.csv` file. As soon as the file is selected, file configuration parameters will be Auto-proposed.
+As **Source**, browse the AWS S3 or Google Cloud Storage and choose `Devices.csv` file. As soon as the file is selected, file configuration parameters will be Auto-proposed.
 
 ![picture_03](./datahub-trial-v2-workflow-part01_03.png)  
 
@@ -64,7 +64,7 @@ Navigate back to the **Data Transform** editor page.
 
 [ACCORDION-BEGIN [Step 3: ](Join Data Sources)]
 
-In this step we would be joining the two data sources we have created and then configure the join operator. Add **Join** to the task from the **Nodes** tab in the left side menu on the left through drag and drop.
+In this step we are going to join the two data sources we have created and then to configure the join operator. Add **Join** to the task from the **Nodes** tab in the left side menu on the left through drag and drop.
 
 Connect the **`DataSource1_Output1`** output port of the **`DataSource1`** to **`Join1_Input1`** input port of the **`Join1`** operator. Similarly, connect the **`DataSource2_Output1`** output port of the **`DataSource2`** to **`Join1_Input2`** input port of the **`Join1`** operator.
 
@@ -114,7 +114,7 @@ We now have to provide a destination for the results of the **Join** operation. 
 
 ![picture_10](./datahub-trial-v2-workflow-part01_10.png)
 
-Double click on the newly added **Data Target** node and open the configuration page. As we have connected the **Join** and the **Data Target** nodes, Modeler will automatically detect the columns for the **Data Target**. Click on the **Browse** button for connection and select **Google Cloud Storage**. Later maintain the following configuration for the target :
+Double click on the newly added **Data Target** node and open the configuration page. As we have connected the **Join** and the **Data Target** nodes, Modeler will automatically detect the columns for the **Data Target**. Click on the **Browse** button for connection and select **`CLOUD_STORAGE`**. Later maintain the following configuration for the target :
 
 | Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                               |
 | ------------------------------ | ------------------------------------------------------------------- |
@@ -156,6 +156,3 @@ You see that (in contrast to the `Devices` data set) the `EnrichedDevices` data 
 [VALIDATE_1]
 
 [ACCORDION-END]
-
----
-

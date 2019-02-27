@@ -1,7 +1,7 @@
 ---
 title: Learn about OData Fundamentals
 description: Discover OData's origins and learn about the fundamentals of OData by exploring a public OData service.
-auto_validation: true
+auto_validation: false
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, topic>odata, tutorial>beginner ]
 time: 15
@@ -102,7 +102,7 @@ The Atom Publishing Protocol specification also details the concept of a service
     <collection href="http://example.org/blog/pic" >
       <atom:title>Pictures</atom:title>
       <accept>image/png</accept>
-     <accept>image/jpeg</accept>
+      <accept>image/jpeg</accept>
       <accept>image/gif</accept>
     </collection>
   </workspace>
@@ -191,7 +191,7 @@ It's not easy to read like this, but you should be still able to discern, even i
 
 [ACCORDION-BEGIN [Step 6: ](Install a Chrome extension for XML rendering)]
 
-The Chrome browser is recommended here, as it has a good choice of extensions that can make life easier. There are extensions for Chrome to render XML in a more human-friendly way. One of these extensions is [XML Tree](https://chrome.google.com/webstore/detail/xv-%E2%80%94-xml-viewer/eeocglpgjdpaefaedpblffpeebgmgddk?hl=en). There are others, but this one will do. Install this in your Chrome browser by following the instructions on the extension page and then reload the [Products entity set resource](https://services.odata.org/V3/Northwind/Northwind.svc/Products). It should now look something like this:
+The Chrome browser is recommended here, as it has a good choice of extensions that can make life easier. There are extensions for Chrome to render XML in a more human-friendly way. One of these extensions is [XML Tree](https://chrome.google.com/webstore/detail/xml-tree/gbammbheopgpmaagmckhpjbfgdfkpadb?hl=en). There are others, but this one will do. Install this in your Chrome browser by following the instructions on the extension page and then reload the [Products entity set resource](https://services.odata.org/V3/Northwind/Northwind.svc/Products). It should now look something like this:
 
 ![rendered products entity set XML](products-entityset-rendered.png)
 
@@ -218,7 +218,7 @@ The relationship to the `Category` entity type is described with the ID `Northwi
 
 ![products to categories association](products-categories-association.png)
 
-Notice that the value of the `Multiplicity` attribute for the `Categories` role is defined as "0..1". This means that there can be either zero or one category for a product. This is why when we follow the navigation property from a `Product` entity type to a `Category` entity type (see the screenshot at the start of this step) the type of the `link` element is `entry`, not `feed`.
+Notice that the value of the `Multiplicity` attribute for the `Categories` role is defined as "0..1". This means that there can be either zero or one categories for a product. This is why when we follow the navigation property from a `Product` entity type to a `Category` entity type (see the screenshot at the start of this step) the type of the `link` element is `entry`, not `feed`.
 
 Follow the same path for the relationship to the `OrderDetails` navigation property described with the `To_Role` attribute value of `Order_Details`, and you will find, via the relationship `FK_Order_Details_Products`, that the `Association` definition looks like this:
 

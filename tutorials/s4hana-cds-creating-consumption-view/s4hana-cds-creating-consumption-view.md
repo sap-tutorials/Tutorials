@@ -9,7 +9,7 @@ time: 20
   - [Creating basic/interface views in Open Core Data Services ](https://developers.sap.com/tutorials/s4hana-cds-creating-basic-view.html)
 
 ## Next Steps
-[Preparing view association based on consumption view. ](https://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
+[Preparing view association based on consumption view. ](https://developers.sap.com/tutorials/s4hana-cds-preparing-views-associations.html)
 
 
 ## Details

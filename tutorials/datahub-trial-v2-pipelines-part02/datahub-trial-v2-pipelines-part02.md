@@ -1,105 +1,78 @@
 ---
-title: Use a message broker in SAP Data Hub, trial edition 2.3
-description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, trial edition 2.3.
-auto_validation: false
-primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+title: Store sensor data in Cloud Storage in SAP Data Hub, trial edition 2.4
+description: Use Cloud Storage to store sensor data by using SAP Data Hub, trial edition 2.4.
+auto_validation: true
+primary_tag: products>SAP-data-hub
+tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
 ---
 
 ## Details
 ### You will learn  
-  - How to use a message broker within a pipeline.
+- How to store sensor data in **`CLOUD_STORAGE`**
+- How to use the operators **Write File** and **Read File**
 
-Please note that this tutorial is similar to the `Use a message broker` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Store sensor data in HDFS` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.SAP.com/group.datahub-pipelines.html).
+Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
 ### Time to Complete
 **30 Mins**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up Apache Kafka)]
-For this tutorial, we will use **Apache Kafka** as a message broker to produce and consume stream sensor data with the help of **Kafka Producer** and **Kafka Consumer 2** operators.
+[ACCORDION-BEGIN [Step 1: ](Collect GCS or AWS S3 Details)]
+The SAP Data Hub, trial edition is deployed on AWS EKS or Google Cloud Platform. Therefore we will use AWS S3 or Google Cloud Storage for storing sensor data. You can note down the name of the bucket by going to the Connection Management in SAP Data Hub , clicking on **`CLOUD_STORAGE`**, on the "Edit" button under "Action" and looking at the ROOT PATH. Bucket name is required when you use the operators **Write File** and **Read File**.
 
->Apache Kafka is a distributed streaming platform. Simply spoken, it allows you to publish and subscribe to message streams. You can find more information on [https://kafka.apache.org](https://kafka.apache.org).
+[DONE]
 
-As we are using **Google Cloud Platform (GCP)** to host the trial edition, we will deploy Kafka in the same platform as well. To perform the deployment, we are going to leverage the **Click to Deploy** functionality provided by Google Cloud Marketplace.
+[ACCORDION-END]
 
-First, go to your **Instance details** from **SAP Cloud Application Library** and note down the following things – **Region, Zone, Network** for your instance as we are going to need this later in the setup. You can find it here:
+[ACCORDION-BEGIN [Step 2: ](Add and configure Write File Operator)]
+
+Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
+
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+
+ Now drag and drop **Write File** operator to the existing graph, and connect output port of the `Data Generator` to the `inFile` input port of the **Write File**
 
 ![picture1](datahub-trial-v2-pipelines-part02-1.png)
 
-Login to Google Cloud Platform - [http://console.cloud.google.com](http://console.cloud.google.com)
+Configure the **Write File** operator by maintaining the following properties :
+
+|  Field Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     | Value
+|  :------------- | :-------------
+| service  | `GCS or S3`
+| connection | Check the connection specific details after this table
+|  bucket  | Name of the bucket we had earlier noted down
+|  path  | `sensordata/file_<counter>.txt`
+
+To specify connection details you can utilize the connections established in the Configuration Manager .
+
+In case you are willing to re-use the Configuration Manager connections, click on the **Connection** input field and select **Configuration Type** as **Configuration Manager** and select the desired connection from the **Connection ID** dropdown box.
+
+The **Write File** operator will write the received data to files in the `/sensordata` directory in the specified GCS or AWS S3 bucket. The files follow the scheme `file_<counter>.txt` (where counter is an incremental integer).
+
+[DONE]
+
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Add and configure Read File Operator)]
+
+Now drag and drop **Read File** operator to the existing graph `(test.myFirstPipeline)`. Then connect `outFile` output port of the **Read File** operator to the `inMessage` input port of the `ToString Converter`
 
 ![picture2](datahub-trial-v2-pipelines-part02-2.png)
 
-Select your project from the **Top Ribbon (1)**. Then, navigate to the **Cloud Marketplace** using the **GCP Left Menu Button (2)**.
+Configure the **Read File** operator by maintaining the following properties :
 
-In the Cloud Marketplace search box, search for `kafka`. There are multiple providers that have made different Kafka versions available. For the sake of this tutorial we would be selecting the version from Kafka itself, so proceed by selecting the following:
-
-![picture3](datahub-trial-v2-pipelines-part02-3.png)
-
-On the next page, click **Launch on Compute Engine**. Following details should be configured in Kafka properties –
-
-|  Field Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    | Value
+|  Field Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     | Value
 |  :------------- | :-------------
-|  Deployment name | `kafka-1`
-|  Zone           | Combine the region and zone for your instance which we have noted down earlier. `europe-west1-d` in this example
-|  Network name   | From the dropdown box choose the network for your instance which we have noted down earlier
+| service  | `GCS or S3`
+| connection | Use the same method as Read File operator that is described in previous step
+|  bucket  | Name of the bucket we had earlier noted down
+|  path  | `sensordata/`
+|  `only Read On Change`  | true
 
-Rest of the defaults have to be kept as is and then click on **Deploy**. After deployment completes, all the details for the new instance are displayed.
-
-Navigate to **GCP Left menu** > **Compute Engine** > **VM Instances** and filter for `kafka-1-vm` using the search box and open the instance details by clicking on the name of the instance.
-
-From the instance details page, note down the **Primary Internal IP** of this VM instance which would be used later in this tutorial.
-
->Primary Internal IP will be referred to as Internal IP in step 2 and 3 below.
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Add and configure Kafka Producer)]
-
-Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`).
-
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
-
-Remove the connection between **Data Generator** operator and the **Terminal** operator.
-
-From the **Operators** tab in the left menu pane, drag and drop a **Kafka Producer** to the pipeline. Then connect the `output` port of the **Data Generator** to the `message` port of the **Kafka Producer**.
-
-![picture4](datahub-trial-v2-pipelines-part02-4.png)
-
-Configure the **Kafka Producer** operator by maintaining the following properties :
-
-|  Field Name     | Value
-|  :------------- | :-------------
-|  Brokers  | **Internal IP:9092**, Example – 0.0.0.0:9092 (Refer to step 1 for the IP)
-|  Topic  | `sensordata`
-
-[DONE]
-
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Add and configure Kafka Consumer)]
-
-From the **Operators** tab in the left menu pane, add a `Kafka Consumer2` to the pipeline by drag and drop. Similarly also add a `ToString Converter` operator to the pipeline.
-
->For this demonstration, we have used `Kafka Consumer2` as it supports `0.9.x` or newer versions better than the Kafka Consumer operator.
-
-Now connect `message` port of the `Kafka Consumer2` to the `inmessage` port of the `ToString Converter`. Then connect `outstring` port of the `ToString Converter` operator to the `in1` port of the **Terminal operator**.
-
-![picture5](datahub-trial-v2-pipelines-part02-5.png)
-
-Configure the **Kafka Consumer 2** operator by maintaining the following properties :
-
-|  Field Name     | Value
-|  :------------- | :-------------
-|  Brokers  | **Internal IP:9092**, Example – 0.0.0.0:9092 (Refer to step 1 for the IP)
-|  Topic  | `sensordata`
-
-Once done, click **Save**.
+Afterwards click **Save**.
 
 [DONE]
 
@@ -111,9 +84,19 @@ Click **Run** to execute the pipeline
 
 When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data.
 
-![picture6](datahub-trial-v2-pipelines-part02-6.png)
+![picture3](datahub-trial-v2-pipelines-part02-3.png)
 
-Copy any row of the terminal output and paste it in the frame below and click on **Validate**.
+In contrast to the previous tutorial, this time the generated sensor data is not sent from the **Data Generator** operator to the **Terminal** operator directly, but via **GCS or AWS S3**. Hence the **Terminal** also shows you information about the created files.
+
+For GCP open [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to **GCP Left menu** > **Storage** > **Browser** > **Your Bucket name** > `sensordata folder`. The longer the pipeline runs, the more files you will find there.
+
+![picture4](datahub-trial-v2-pipelines-part02-4.png)
+
+For AWS open [https://s3.console.aws.amazon.com](https://s3.console.aws.amazon.com) and navigate to **Search for Buckets** > **Your Bucket name** > `sensordata folder`. The longer the pipeline runs, the more files you will find there.
+
+![picture4](datahub-trial-v2-pipelines-part02-5.png)
+
+Open the output **Terminal**. Copy any row from the output and paste it in the frame below and click on **Submit Answer**.
 
 [VALIDATE_1]
 
@@ -122,4 +105,3 @@ Stop the pipeline by clicking **Stop**.
 [ACCORDION-END]
 
 ---
-

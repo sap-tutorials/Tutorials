@@ -1,30 +1,25 @@
 ---
 title: Installing SAP HANA, express edition Server + Apps, with Docker
 description: How to install SAP HANA, express edition with XSA on your preferred Docker setup.
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 10
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
-
-
 ## Next Steps
-- [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
-- [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+- [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
+- [How to download and install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 ## Details
-### You will learn  
-How to install SAP HANA, express edition on your preferred Docker setup.
+### You will learn
+  - How to install SAP HANA, express edition on your preferred Docker setup
 
 This tutorial will show you how to install an installation of SAP HANA, express edition with XSA on your Docker installation. This version of SAP HANA, express edition does not contain XSC.
 
-If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html) or [Binary Method](https://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html) installation guides.
+If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) or [Binary Method](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html) installation guides.
 
 Before you begin, ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
-
-### Time to Complete
-**10 Min**
 
 ---
 
@@ -51,24 +46,21 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 
 Download and install the appropriate Docker Edition for your system. Visit the [Docker Community Edition](https://store.docker.com/search?offering=community&type=edition) or [Docker Enterprise Edition](https://store.docker.com/search?offering=enterprise&type=edition) lists for more information and to download Docker for your machine.
 
-> **Note:**
-> Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
+> **Note:** Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Manage Storage System)]
 
-If your host file system is `xfs`, you can recommend the storage driver through the `devicemapper` in Docker. Add `-s devicemapper` to the `DOCKER_OPTS` property in the `docker` file.
+`overlay2` is recommended as the storage driver, with `ext4` or `xfs` as the backend file system. The minimum volume size of the backend file system mounting is 100G. If your current disk size is less than 100G, please resize it.
 
-The minimum recommended storage size is 50G. For example:
+To use `overlay2`, create or edit the file `/etc/docker/daemon.json` to include the following:
 
+```bash
+{
+"storage-driver": "overlay2"
+}
 ```
-DOCKER_OPTS="-s devicemapper --storage-opt dm.basesize=50G"
-```
-
-For `Ubuntu` and `Debian`, the `DOCKER_OPTS` property can be found at `/etc/default/docker`.
-
-For `Fedora`, `SuSE`, and `Centos`, the `DOCKER_OPTS` property can be found at `/etc/sysconfig/docker`.
 
 Restart the Docker service.
 
@@ -77,6 +69,8 @@ For example, on `SuSE`:
 ```
 sudo systemctl restart docker.service
 ```
+
+`devicemapper` is an available alternative storage driver for valid Docker versions. Keep in mind, `devicemapper` is no longer being supported by Docker.
 
 For more information on the storage driver, visit the [Docker storage drivers](https://docs.docker.com/storage/storagedriver/select-storage-driver/) documentation page.
 
@@ -98,7 +92,7 @@ Follow the prompts and provide your Docker ID and password.
 
 Test your Docker installation by running the "Hello World" container application. Run the following command from your Docker-enabled command prompt:
 
-```
+```bash
 sudo docker run --name helloWorld alpine echo hello
 ```
 
@@ -140,7 +134,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2
+sudo docker pull store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -163,7 +157,7 @@ The SAP HANA, express edition image will be listed as `hanaexpressxsa`.
 
 Before you can start the container, ensure that the following parameters are set in your host's `/etc/sysctl.conf` file. The host can be a virtual machine, physical machine, or a cloud instance.
 
-```
+```bash
 fs.file-max=20000000
 fs.aio-max-nr=262144
 vm.memory_failure_early_kill=1
@@ -199,23 +193,23 @@ To make your system more secure, you specify your own password before you create
 
 Create the `json` file:
 
-```
+```bash
 vi <file_name>.json
 ```
 
-Press `i` to start editing and use one of the following formats to create the file:  
+Press `i` to start editing and use one of the following formats to create the file:
 
-```
+```bash
 {
 "master_password" : "<password>"
-}  
+}
 ```
 
-or:  
+or:
 
-```
+```bash
 {
-"system_user_password" : "<password",
+"system_user_password" : "<password>",
 "default_tenant_system_user_password" : "<second_password>"
 }
 ```
@@ -224,7 +218,7 @@ Here is an example:
 
 ```
 {
-  "master_password" : "SAPhxe123"
+"master_password" : "SAPhxe123"
 }
 ```
 
@@ -242,7 +236,7 @@ This file serves as the master password for your SAP HANA, express edition users
 
 You must then add permissions for this file to be readable by the `hxeadm` user in the container. Change permissions with:
 
-```
+```bash
 sudo chmod 600 /data/<directory_name>/<file_name>.json
 sudo chown 12000:79 /data/<directory_name>/<file_name>.json
 ```
@@ -267,7 +261,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 \
+store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 \
 --agree-to-sap-license \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --proxy-host <proxy_hostname> \
@@ -287,7 +281,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 \
+store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 \
 --agree-to-sap-license \
 --passwords-url file:///hana/password.json \
 --proxy-host <proxy_hostname> \
@@ -295,7 +289,7 @@ store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 \
 --no-proxy <no_proxy>
 ```
 
-This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.  
+This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.
 
 > **Note:**
 > If you placed the password file in `/data/<directory_name>/<file_name>.json`, substitute  `file://<path_to_json_file>` with `file:///hana/mounts/<file_name>.json`.
@@ -422,7 +416,43 @@ If you are prompted to change your password, follow the instructions.
 
 [ACCORDION-BEGIN [Step 14: ]((Optional) Update Your Docker Image)]
 
-To update your Docker image, refer to the [SAP HANA, express edition Getting Started Guide](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION) updating section.
+Set the root password and login.
+
+```bash
+docker exec -it -u root <container_name> bash
+```
+
+```bash
+passswd
+```
+
+Check the update utility. It can be found in the `<sid>adm/bin` directory. Use `HXECheckUpdate_linux.bin`. Run this to check for, and download, the latest files. Follow the prompts to download the new files. By default, they will be downloaded to `/usr/sap/<sid>/home/Downloads`. The downloaded files will be `hxe.tgz` and `hxexsa.tgz`.
+
+Extract the contents of the packages.
+
+Example:
+
+```bash
+tar -zxf <downloaded_path>/hxe.tgz
+tar -zxf <downloaded_path>/hxexsa.tgz
+```
+
+Navigate to the directory where you extracted the packages:
+
+```bash
+cd <extract_path>/HANA_EXPRESS_20/
+```
+
+> Note:
+> If the update you are applying includes the Applications package, increase your allocated memory by 3GB and run `./hxe_gc.sh`. Follow the prompts and then continue with the procedure.
+
+As the root user, run the upgrade script to update the server:
+
+```bash
+sudo ./hxe_upgrade.sh
+```
+
+Follow the prompts to complete the server update.
 
 [ACCORDION-END]
 
@@ -431,7 +461,7 @@ To update your Docker image, refer to the [SAP HANA, express edition Getting Sta
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpressxsa` command.
 
 ```
-docker run store/saplabs/hanaexpressxsa:2.00.033.00.20180925.2 -h
+docker run store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 -h
 usage: [options]
 
 --dont-check-consistency           Skip consistency check between mount points
@@ -455,6 +485,6 @@ usage: [options]
 
 [ACCORDION-END]
 
-## Next Steps
-- [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
-- [Download and Install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+### Additional Information
+- [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
+- [Download and Install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)

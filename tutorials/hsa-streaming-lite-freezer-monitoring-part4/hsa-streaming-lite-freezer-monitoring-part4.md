@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Build and Deploy Streaming Lite Project](https://www.sap.com/developer/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)
+ - [Build and Deploy Streaming Lite Project](https://developers.sap.com/tutorials/hsa-streaming-lite-freezer-monitoring-part3.html)
 
 ## Details
 ### You will learn  

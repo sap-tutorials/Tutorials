@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials** [AngularJS Getting Started](https://www.sap.com/developer/tutorials/angular-getting-started.html)
+ - **Tutorials** [AngularJS Getting Started](https://developers.sap.com/tutorials/angular-getting-started.html)
 
 ## Next Steps
- - **Tutorials** [Add the AngularJS JavaScript](https://www.sap.com/developer/tutorials/angular-add-javascript.html)
+ - **Tutorials** [Add the AngularJS JavaScript](https://developers.sap.com/tutorials/angular-add-javascript.html)
 
 
 ## Details

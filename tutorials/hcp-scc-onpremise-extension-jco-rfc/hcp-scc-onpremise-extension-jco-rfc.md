@@ -1,5 +1,5 @@
 ---
-title: Deploy an JCo / RFC based on-premise extension using SAP HANA Cloud Connector
+title: Deploy an JCo / RFC based on-premise extension using the Cloud Connector
 description: Deploy an on-premise extension which uses RFC via JCo. The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform-connectivity ]
@@ -7,17 +7,17 @@ time: 20
 ---
 
 ## Prerequisites  
-  - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-  - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
+  - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+  - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://developers.sap.com/tutorials/hcp-prepare-cal-account.html)
 
 
 ## Details
 ### You will learn  
-  - How to deploy an on-premise extension which uses RFC via JCo, which includes the setup of an SAP HANA Cloud Connector instance 
+  - How to deploy an on-premise extension which uses RFC via JCo, which includes the setup of a Cloud Connector instance
 
 The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
 
-It is assumed that you are using the SAP Cloud Appliance Library to get an ABAP test system plus pre-installed SAP HANA Cloud Connector, as described in the tutorial [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html). The overall landscape of this on-premise extension scenario is then looking like in the figure below:
+It is assumed that you are using the SAP Cloud Appliance Library to get an ABAP test system plus pre-installed Cloud Connector, as described in the tutorial [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](hcp-prepare-cal-account). The overall landscape of this on-premise extension scenario is then looking like in the figure below:
 
 ![overall landscape](architecture.png)
 
@@ -27,9 +27,9 @@ The components are explained in greater detail at the end of this tutorial.
 ---
 [ACCORDION-BEGIN [Step 1: ](Log on to the AWS instance)]
 
-On Windows, press the **Windows-Key** and **R**. This should open the **Run**-Dialog. Type in `mstsc.exe` and hit **Enter**. Logon to your AWS instance with user `Administrator` and the master password you have specified when configuring the AWS instance in the SAP Cloud Appliance Library.
+1. On Windows, press the **Windows-Key** and **R**. This should open the **Run**-Dialog. Type in `mstsc.exe` and hit **Enter**. Logon to your AWS instance with user `Administrator` and the master password you have specified when configuring the AWS instance in the SAP Cloud Appliance Library.
 
-You should then have access to the Windows instance related to the AWS instance. On the desktop, you find shortcuts for SAP Development Tools for Eclipse and Mozilla Firefox.
+1. You should then have access to the Windows instance related to the AWS instance. On the desktop, you find shortcuts for SAP Development Tools for Eclipse and Mozilla Firefox.
 
 
 [ACCORDION-END]
@@ -37,17 +37,15 @@ You should then have access to the Windows instance related to the AWS instance.
 
 [ACCORDION-BEGIN [Step 2: ](Deploying and running the sample project)]
 
-Download the [compiled version of the sample project](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/sflight-web.war?raw=true).
-
+1. Download the [compiled version of the sample project](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/sflight-web.war?raw=true).
 > If you want to take a look at the code clone our Git repository or explore it directly online using the GitHub webpage: <https://github.com/SAP/cloud-personslist-scenario/tree/Extensions-005>
 
-Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and logon with your SAP Cloud Platform user.
+1. Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and logon with your SAP Cloud Platform user.
 
-Navigate to **Applications > Java Applications** and select **Deploy Application**. A Dialog will open. Select the `war` file you just downloaded and choose a name for the application. Now click on **Deploy**.
-
+1. Navigate to **Applications > Java Applications** and select **Deploy Application**. A Dialog will open. Select the `war` file you just downloaded and choose a name for the application. Now click on **Deploy**.
 > It is recommended to use `sflight` as application name, but it's up to you.
 
-![Deploy war-file using cloud cockpit](deploy-war.png)
+    ![Deploy war-file using cloud cockpit](deploy-war.png)
 
 The application is now deployed to your SAP Cloud Platform account. This will take some time.
 
@@ -57,54 +55,60 @@ The application is now deployed to your SAP Cloud Platform account. This will ta
 [ACCORDION-BEGIN [Step 3: ](Configuring the connectivity destination in the cloud)]
 Now you need to configure the destination used by the application to access the ABAP system.
 
-Go to **`D:/sap_hcp_scc/`** using the Windows Explorer and rename file `dest_sflight.jcoDestination` to `dest_sflight`.
+1. Go to **`D:/sap_hcp_scc/`** using the Windows Explorer and rename file `dest_sflight.jcoDestination` to `dest_sflight`.
 
-Open the [SAP Cloud Platform cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) in the browser and log on to your SAP Cloud Platform account.
+1. Open the [SAP Cloud Platform cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) in the browser and log on to your SAP Cloud Platform account.
 
-Navigate into **Java Applications** and select the application you just deployed then navigate into **Destinations**.
+1. Navigate into **Java Applications** and select the application you just deployed then navigate into **Destinations**.
 
-Click on the **Import Destination** button and select the file `D:/sap_hcp_scc/dest_sflight`
+1. Click on the **Import Destination** button and select the file `D:/sap_hcp_scc/dest_sflight`
 
-![Import Destination](select-destinations.png)
+    ![Import Destination](select-destinations.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configuring the SAP HANA Cloud connector)]
-Now you will connect the SAP HANA Cloud connector to your free developer account and configure the ABAP system and BAPIs used by the `sflight` application.
+[ACCORDION-BEGIN [Step 4: ](Configuring the Cloud Connector)]
+Now you will connect the Cloud Connector to your free developer account and configure the ABAP system and BAPIs used by the `sflight` application.
 
-Start the cloud connector administration UI using the Firefox browser provided on the desktop of the AWS instance with URL `https://abapci.dummy.nodomain:8443`, and logon with user `Administrator` and password as `manage`. Later it asks you to change the password
+1. Start the Cloud Connector administration UI using the Firefox browser provided on the desktop of the AWS instance with URL `https://abapci.dummy.nodomain:8443`, and logon with user `Administrator` and password as `manage`. Later it asks you to change the password
 
-To connect the cloud connector to your account, follow the steps described in the tutorial [How-to setup the SAP HANA Cloud Connector for secure on-premise connectivity](https://www.sap.com/developer/tutorials/hcp-cloud-connector-setup.html). Shortly summarized, you need to:
+1. To connect the Cloud Connector to your account, follow step one described in the tutorial [Connect an ABAP System with SAP Cloud Platform Using a Secure Tunnel (Neo)](https://developers.sap.com/tutorials/cp-connectivity-create-secure-tunnel-neo.html). Shortly summarized, you need to choose the following parameters:
 
-- choose **`Master (Primary Installation)`**
-- select **`hanatrial.hana.ondemand.com`** as landscape host
-- specify your account name, your SAP Cloud Platform user and password
-- don't specify an HTTPS proxy.
+    |  Field Name            | Value                                                                   |
+    |:-----------------------|:------------------------------------------------------------------------|
+    |  **Region**            | `hanatrial.ondemand.com`                                                |
+    |  **Subaccount**        | The technical subaccount name of your Neo trial account                 |
+    |  **Display Name**      | This will be displayed in the Cloud Connector administration UI         |
+    |  **Subaccount User**   | Your user ID                                                            |
+    |  **Password**          | The Password of your subaccount user                                    |
+    |  **Location ID**       | not required in this tutorial                                           |
 
-Now the Cloud Connector should be connected to your SAP Cloud Platform account and you should see a screen similar to the one in the screenshot below.
+1. Now the Cloud Connector should be connected to your SAP Cloud Platform account and you should see a screen similar to the one in the screenshot below.
+
     ![How the SAP Cloud Connector should look like](how-scc-should-look-like.png)
 
-Navigate to the **Access Control** view of the cloud connector and click the **Import...** button.
+1. Navigate to the **Access Control** view of the Cloud Connector and click the **Import...** button.
 
-![Import Access Control](scc-import-access-control.png)
+    ![Import Access Control](scc-import-access-control.png)
 
+1. In the upcoming window, click the **Browse** button and select the file **`D:/sap_hcp_scc/access_control.zip`** and click **Save**.
 
-In the upcoming window, click the **Browse** button and select the file **`D:/sap_hcp_scc/access_control.zip`** and click **Save**.
+1. Now you have imported the configuration of the ABAP system and the RFC resources needed by the `SFLIGHT` application and your Cloud Connector should look like shown below.
 
-Now you have imported the configuration of the ABAP system and the RFC resources needed by the `SFLIGHT` application and your Cloud Connector should look like shown below.
-
-![How the SAP Cloud Connector should look like after importing `access_control.zip` ](how-scc-should-look-like-after-import.png)
+    ![How the SAP Cloud Connector should look like after importing `access_control.zip` ](how-scc-should-look-like-after-import.png)
 
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Testing the application)]
-Now the SFLIGHT application has been deployed to your SAP Cloud Platform account, the needed destination has been configured, and the cloud connector has been connected and configured as well. The application can now be used. Test it by starting it in the browser:
+Now the SFLIGHT application has been deployed to your SAP Cloud Platform account, the needed destination has been configured, and the Cloud Connector has been connected and configured as well. The application can now be used. Test it by starting it in the browser:
 
-  - Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and log on again with your SAP Cloud Platform user.
-  - Navigate into **Java Applications** and drill into your application.
-  - Start the `SFLIGHT` application by clicking the URL visible under **Application URLs**. This should bring up the application. You can now select a flight departure and arrival airport, e.g. `Frankfurt` and `New York`, then click the **Search** button. This should then list the available flights.
+1. Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and log on again with your SAP Cloud Platform user.
+
+1. Navigate into **Java Applications** and drill into your application.
+
+1. Start the `SFLIGHT` application by clicking the URL visible under **Application URLs**. This should bring up the application. You can now select a flight departure and arrival airport, e.g. `Frankfurt` and `New York`, then click the **Search** button. This should then list the available flights.
 
 
 [ACCORDION-END]
@@ -198,7 +202,7 @@ public class FlightService {
 
 The `FlightService` class delegates all calls to a `FlightProvider` object which then, in turn, does the actual call to the on-premise system. For this, an interface [`com.sap.cloudlabs.connectivity.sflight.FlightProvider`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/FlightProvider.java) is used that defines the Java methods which shall be performed against the on-premise system.
 
-Right now, there is only one implementation of the `FlightProvider` interface: [`com.sap.cloudlabs.connectivity.sflight.jco.JCoFlightProvider`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/jco/JCoFlightProvider.java). The `JCoFlightProvider` class uses the Java Connector (JCo) API to make RFC calls directly against the ABAP system. Of course, all the communication is encrypted and secured via the cloud connector. You can use JCo in exactly the same way as you might know it from SAP NetWeaver Application Server Java. A tutorial how to work with JCo can be found [in the SAP Business Objects Documentation](https://help.sap.com/businessobject/product_guides/hci1/en/SAPJCo_Doku_3.0_EN.pdf). The `JCoFlightProvider` class requires an RFC destination called `dest_sflight`.
+Right now, there is only one implementation of the `FlightProvider` interface: [`com.sap.cloudlabs.connectivity.sflight.jco.JCoFlightProvider`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/jco/JCoFlightProvider.java). The `JCoFlightProvider` class uses the Java Connector (JCo) API to make RFC calls directly against the ABAP system. Of course, all the communication is encrypted and secured via the Cloud Connector. You can use JCo in exactly the same way as you might know it from SAP NetWeaver Application Server Java. A tutorial how to work with JCo can be found [in the SAP Business Objects Documentation](https://help.sap.com/businessobject/product_guides/hci1/en/SAPJCo_Doku_3.0_EN.pdf). The `JCoFlightProvider` class requires an RFC destination called `dest_sflight`.
 
 Note that the `JCoFlightProvider` class not only fetches data from the ABAP system, but also writes back a flight booking transaction to the ABAP system. The BAPIs called by the application on the ABAP system are:
 

@@ -1,6 +1,6 @@
 ---
-title: Run example pipelines in SAP Data Hub, developer edition 2.3
-description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition 2.3.
+title: Run example pipelines in SAP Data Hub, developer edition 2.4
+description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition 2.4.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -35,12 +35,18 @@ The modelling environment consists of four main parts:
 [ACCORDION-BEGIN [Step 2: ](Execute an example pipeline)]
 Click on the **Data Generator** (or any other) example pipeline (inside the **Navigation**). The pipeline opens in the editor.
 
-Open the documentation of the pipeline (use the context menu of the pipeline inside the **Navigation** area). Follow the steps described in the documentation to execute the pipeline.
+Click **Run** to execute the pipeline
 
-Very often the example pipelines run "out of the box". Sometimes you have to configure the examples first (as described in the documentation).
+When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data.
 
-[DONE]
+![picture_02](datahub-docker-v2-examples_02.png)
 
+Copy any row of the terminal output and paste it in the frame below and click on **Validate**.
+
+
+[VALIDATE_1]
+
+Stop the pipeline by clicking **Stop**.
 [ACCORDION-END]
 
 ---

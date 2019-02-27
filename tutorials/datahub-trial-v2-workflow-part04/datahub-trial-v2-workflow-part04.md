@@ -1,16 +1,21 @@
 ---
-title: Create Workflow (part 4), Monitor task and Workflow execution in SAP Data Hub, trial edition 2.3
-description: Monitor task execution using SAP Data Hub, trial edition 2.3.
+title: Create Workflow (part 4), Monitor task and Workflow execution in SAP Data Hub, trial edition 2.4
+description: Monitor task execution using SAP Data Hub, trial edition 2.4.
 primary_tag: products>sap-data-hub
+auto_validation: true
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+time: 15
 ---
 
 ## Details
 ### You will learn  
-During this tutorial, you will build get to know how to monitor the execution of tasks.
 
-### Time to Complete
-**15 Min**
+  - How to build the tasks
+  - How to monitor the execution of tasks
+  - Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+  - How to build get to know how to monitor the execution of tasks
+
+
 
 ---
 
@@ -28,6 +33,8 @@ The **Monitoring Dashboard** is displayed. From here you can see the status of e
 
 ![picture_02](./datahub-trial-v2-workflow-part04_02.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Monitoring instances)]
@@ -41,6 +48,8 @@ Using the highlighted button **(2)**, you can fetch more information regarding a
 ![picture_04](./datahub-trial-v2-workflow-part04_04.png)
 
 You can directly jump to the modeler and open the source graph for this instance. Graphs and processes can also be filtered using date and time range.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 ---

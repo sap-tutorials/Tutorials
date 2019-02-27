@@ -21,7 +21,7 @@ SAP HANA Tools for Eclipse is an Eclipse Add-On that enables any Eclipse install
 
 It embeds the connectivity which means that you don't need to install the SAP HANA client package.
 
-Use the following link for detailed instruction regarding the installation and configuration of the [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html).
+Use the following link for detailed instruction regarding the installation and configuration of the [SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-eclipse.html).
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -36,7 +36,7 @@ Using SAP HANA HDBSQL, you can execute SQL statements and database procedures, a
 
 SAP HANA HDBSQL is installed with the SAP HANA client package software.
 
-Use the following link for detailed instruction regarding the installation and configuration of the [SAP HANA HDBSQL tool](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-hdbsql.html)
+Use the following link for detailed instruction regarding the installation and configuration of the [SAP HANA HDBSQL tool](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-hdbsql.html)
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -49,7 +49,7 @@ The SAP HANA client package provides a driver that enables Java applications to 
 
 JDBC (Java Database Connectivity) is an application programming interface (API) for the Java programming language.
 
-Use the following link for detailed instruction regarding the installation and configuration of [JDBC based querying tools](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-jdbc.html)
+Use the following link for detailed instruction regarding the installation and configuration of [JDBC based querying tools](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-jdbc.html)
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -64,7 +64,7 @@ ODBC (Open Database Connectivity) is a standard application programming interfac
 
 Initially build for Windows platforms, it is also available for Linux environments too.
 
-Use the following link for detailed instruction regarding the installation and configuration of [ODBC based querying tools](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-odbc.html)
+Use the following link for detailed instruction regarding the installation and configuration of [ODBC based querying tools](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-odbc.html)
 
 [VALIDATE_4]
 [ACCORDION-END]

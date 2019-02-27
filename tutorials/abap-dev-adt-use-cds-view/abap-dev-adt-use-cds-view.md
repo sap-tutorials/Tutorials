@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
+ - **Tutorials:** [Create a CDS view](https://developers.sap.com/tutorials/abap-dev-adt-create-cds-view.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,7 @@ Optional: You can also improve the appearance of your SAP List Viewer by adding 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open the ABAP program)]
-Open the ABAP program you created in the previous tutorial, [Create and run an ABAP program](https://www.sap.com/developer/tutorials/abap-create-basic-app.html).
+Open the ABAP program you created in the previous tutorial, [Create and run an ABAP program](https://developers.sap.com/tutorials/abap-create-basic-app.html).
 
  - Either choose **Programs > `Z_INVOICE_ITEMS_EURO`**:
 ![Image depicting step1-open-program](step1-open-program.png)
@@ -50,7 +50,7 @@ You will now replace the implementation of the RUN method with a new implementat
 
 Try to display the tooltip information for the Paid column by positioning the cursor on the column heading.
 Notice that, in our case, the information is either missing or incorrect (depending on your version).
-We will change this information in the CDS view using an annotation. (For more information, see [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html) )
+We will change this information in the CDS view using an annotation. (For more information, see [Create a CDS view](https://developers.sap.com/tutorials/abap-dev-adt-create-cds-view.html) )
 
 **NOTE: Write the annotation before the CASE statement.**
 
@@ -65,7 +65,7 @@ We will change this information in the CDS view using an annotation. (For more i
 
 [ACCORDION-BEGIN [Step 4: ](optional: Create a data element)]
 You have created a tooltip for the column "Paid" but there is no column header for it. You will now resolve this by casting the type of the transformed `payment_status` to a data element - `zso_invoice_payment_status` - by using a CAST statement. (Ignore the warning).
-If you have already created a data element in the tutorial [Create a data element](https://www.sap.com/developer/tutorials/abap-dev-adt-create-data-element.html), then use this and go to step 5. Otherwise proceed as follows:
+If you have already created a data element in the tutorial [Create a data element](https://developers.sap.com/tutorials/abap-dev-adt-create-data-element.html), then use this and go to step 5. Otherwise proceed as follows:
 
   1. Create the data element **`zso_invoice_payment_status`**: Choose **File > New... > Other... > Data... > Dictionary > Data element:** and enter the following:
     - Package, e.g., `Zxx_Tutorial` (where `xx` = your initials)

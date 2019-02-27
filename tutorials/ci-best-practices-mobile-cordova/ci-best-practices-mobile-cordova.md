@@ -11,17 +11,17 @@ time: 120
 ## Prerequisites
 
   - **Proficiency:** Intermediate
-  - [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
+  - [CI/CD Practices](https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
 ### 1. Introduction
 
-This guide contains instructions on how to set up Continuous Integration (CI) for Android and iOS Fiori Hybrid app development on a Mac, which is required for iOS builds. For other development options and an introduction to Hybrid app development, please refer to [this blog](https://blogs.sap.com/2017/06/21/sap-cloud-platform-mobile-services-development-options/). In addition, if you would like a more generic introduction to CI, please take a look at the overview in our [Best Practices guide](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html) and at the introduction to CI in the Mobile app development space in the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html).
+This guide contains instructions on how to set up Continuous Integration (CI) for Android and iOS Fiori Hybrid app development on a Mac, which is required for iOS builds. For other development options and an introduction to Hybrid app development, please refer to [this blog](https://blogs.sap.com/2017/06/21/sap-cloud-platform-mobile-services-development-options/). In addition, if you would like a more generic introduction to CI, please take a look at the overview in our [Best Practices guide](https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html) and at the introduction to CI in the Mobile app development space in the [CI guide for native iOS development](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html).
 
 The goal of this guide is to explain the setup of a CI landscape as shown in Figure 1, where whenever a developer makes a change, the project is built and tested automatically, and where the result is an ``.apk`` (Android) or ``.ipa`` (iOS) file that is suitable for ad-hoc distribution, i.e. an application binary that can be sent to colleagues for reviews. During development and build, libraries should be centrally and automatically made available as well.
 
@@ -67,7 +67,7 @@ Please note that this guide lists specifically the steps required to manually cr
 
 ##### 2.1.1 Homebrew and Git
 
-These setup steps have been described in the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html). Please follow the setup steps given there in order to prepare both the build node and the developer machine.
+These setup steps have been described in the [CI guide for native iOS development](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html). Please follow the setup steps given there in order to prepare both the build node and the developer machine.
 
 ##### 2.1.2 Cordova
 
@@ -107,7 +107,7 @@ $ npm i -g cordova@8.0.0
 
 ##### 2.1.3 iOS Development Tools
 
-Please follow the setup steps described in the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html) in order to install Xcode and required build tools.
+Please follow the setup steps described in the [CI guide for native iOS development](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html) in order to install Xcode and required build tools.
 
 ##### 2.1.4 Android Development Tools
 
@@ -148,11 +148,11 @@ $ brew install gradle
 
 ##### 2.1.5 Certificates
 
-These setup steps have been described in the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html). Please follow the setup steps given there in order to prepare both the build node and the developer machine.
+These setup steps have been described in the [CI guide for native iOS development](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html). Please follow the setup steps given there in order to prepare both the build node and the developer machine.
 
 #### 2.2 Additional Build Node Steps: Jenkins and Artifactory
 
-These setup steps have been described in the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html). Please follow the setup steps given there in order to prepare the build node, while making sure to select the npm repository type during setup. Once done, you will receive additional set-up instructions for both the developer machine and build server in the "Set Me Up" section on the welcome page of Artifactory, as shown in Figure 2.
+These setup steps have been described in the [CI guide for native iOS development](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html). Please follow the setup steps given there in order to prepare the build node, while making sure to select the npm repository type during setup. Once done, you will receive additional set-up instructions for both the developer machine and build server in the "Set Me Up" section on the welcome page of Artifactory, as shown in Figure 2.
 
 ![Figure 2: Set-up instructions for npm in Artifactory](artifactory-1-npm.png)
 
@@ -243,7 +243,7 @@ $ cordova create cordova-fiori-ci com.sap.ci.ios.CIExample
 $ cd cordova-fiori-ci
 ```
 
-Which creates an app named ``cordova-fiori-ci`` with the bundle identifier ``com.sap.ci.ios.CIExample``. Please note that you should use whatever App ID you registered with your Apple Developer program in step 2.4. In this case, we are simply reusing the application identifier we used in the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html).
+Which creates an app named ``cordova-fiori-ci`` with the bundle identifier ``com.sap.ci.ios.CIExample``. Please note that you should use whatever App ID you registered with your Apple Developer program in step 2.4. In this case, we are simply reusing the application identifier we used in the [CI guide for native iOS development](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html).
 
 Now we need to add the platforms that we want to support:
 
@@ -317,7 +317,7 @@ Now rerun the app via ``cordova emulate ios`` to verify the project has been con
 
 #### 4.3 Configuring Mobile Services
 
-Before we proceed with integrating the app with SAP Cloud Platform, please note that if you were following the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html), you can simply reuse the application configuration that was created on Mobile Services via the Cloud Platform SDK for iOS Assistant. Otherwise, please refer to Step 1 of the [Advanced Authentication Mobile Interactive Tutorial](https://www.sap.com/developer/tutorial-navigator/mobile-interactive-tutorials/authentication/html5-ios/advanced.html). It will guide you through the steps required to configure a new application that we can use on Mobile Services. Please make sure that in the Security settings of the app, you select ``Basic`` instead of ``SAML``, as shown in Figure 8.
+Before we proceed with integrating the app with SAP Cloud Platform, please note that if you were following the [CI guide for native iOS development](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html), you can simply reuse the application configuration that was created on Mobile Services via the Cloud Platform SDK for iOS Assistant. Otherwise, please refer to Step 1 of the [Advanced Authentication Mobile Interactive Tutorial](https://developers.sap.com/tutorial-navigator/mobile-interactive-tutorials/authentication/html5-ios/advanced.html). It will guide you through the steps required to configure a new application that we can use on Mobile Services. Please make sure that in the Security settings of the app, you select ``Basic`` instead of ``SAML``, as shown in Figure 8.
 
 ![Figure 8: Security settings on SAP Cloud Platform Mobile Services](mobile-services-1-security.png)
 
@@ -531,7 +531,7 @@ Before we proceed with finalizing the setup, there are two options to discuss wh
 
 #### 4.9 Creating the Jenkins Pipeline
 
-Now we are getting to the final step - configuring our basic build job in Jenkins. In this guide, we are going to create a Pipeline by means of a so-called Jenkinsfile, which we can add to our project just as a regular source code artifact. The advantage is that is externalizing the knowledge and steps required to build a project within the project itself, rather than externally to it in some server configuration. Secondly, we can version such pipelines, which is a great way to evolve build scripts together with the project. First, please follow the instructions in Section 4.5 of the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html) to create a new Pipeline project in your Jenkins instance, but make sure to also add "Clean before checkout" in the "Additional Behaviors" section, as shown in Figure 14. Then create a file called ``Jenkinsfile`` in the project root directory with the following contents:
+Now we are getting to the final step - configuring our basic build job in Jenkins. In this guide, we are going to create a Pipeline by means of a so-called Jenkinsfile, which we can add to our project just as a regular source code artifact. The advantage is that is externalizing the knowledge and steps required to build a project within the project itself, rather than externally to it in some server configuration. Secondly, we can version such pipelines, which is a great way to evolve build scripts together with the project. First, please follow the instructions in Section 4.5 of the [CI guide for native iOS development](https://developers.sap.com/tutorials/ci-best-practices-mobile-ios.html) to create a new Pipeline project in your Jenkins instance, but make sure to also add "Clean before checkout" in the "Additional Behaviors" section, as shown in Figure 14. Then create a file called ``Jenkinsfile`` in the project root directory with the following contents:
 
 ```
 pipeline {

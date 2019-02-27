@@ -8,10 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
-
-## Next Steps
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://www.sap.com/developer/tutorials.html?/groups/hxe-aa-forecast.html)
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
 
 ## Details
 ### You will learn
@@ -80,10 +77,7 @@ There are multiple Time Series algorithms that can be used in PAL, but here are 
 
 However, before selecting one, you will need to address the existence of a trend, a seasonal component or white noise which can be achieved using the **Seasonality Test** function.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](SAP HANA PAL xxxXXXxxx function)]
+For more details about the SAP HANA PAL function, please refer to the [online documentation](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/f652a8186a144e929a1ade7a3cb7abe8.html).
 
 [DONE]
 [ACCORDION-END]
@@ -704,7 +698,7 @@ The decomposed signal will provide you value of the seasonal, the trend and the 
 select * from #decomposed_seasonality;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-01.png)
 
@@ -750,7 +744,7 @@ select * from #seasonality_statistics;
 select * from #decomposed_seasonality;
 ```
 
-Here is a graphical representation of the results:
+And using a generated graph from the Python Math Plot library (`matplotlib`):
 
 ![Jupyter](06-02.png)
 

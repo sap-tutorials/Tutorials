@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Creating Stored Procedures](https://www.sap.com/developer/tutorials/xsa-sqlscript-stored-proc.html)
+- **Tutorials:** [Creating Stored Procedures](https://developers.sap.com/tutorials/xsa-sqlscript-stored-proc.html)
 
 ## Next Steps
-- [Intermediate Table Variables](https://www.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)
+- [Intermediate Table Variables](https://developers.sap.com/tutorials/xsa-sqlscript-table-var.html)
 
 ## Details
 ### You will learn  
@@ -90,7 +90,3 @@ Check the execution time again, you may notice that it is a bit faster this time
 [ACCORDION-END]
 
 
-
-
-## Next Steps
-- [Intermediate Table Variables](https://www.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)

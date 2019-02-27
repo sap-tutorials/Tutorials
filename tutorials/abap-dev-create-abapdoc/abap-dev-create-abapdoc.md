@@ -1,18 +1,16 @@
 ---
-title: Create ABAPDoc comments in your class
-description: Learn how to maintain ABAP Doc documentation for your class
+title: Create ABAPDoc Comments in Your Class
+description: Learn how to maintain ABAPDoc documentation for your class
+auto_validation: true
 primary_tag: topic>abap-development
-tags: [ tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development ]
+time: 5
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Create an ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
-
 
 ## Details
 ### You will learn  
-In the following exercise you will make your program more readable by learning how to maintain ABAP Doc. You will also learn how to synchronize the documentation and to display it, both in the ABAP Development Tools (ADT) and in SAP GUI.
+- How to make your program more readable by learning how to maintain `ABAPDoc` comments.
+- How to synchronize the documentation and to display it, both in the ABAP Development Tools (ADT) and in SAP GUI.
 
 ### Time to Complete
 **5 Min**
@@ -20,91 +18,95 @@ In the following exercise you will make your program more readable by learning h
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open your ABAP class)]
-First, open your ABAP class, which you created in [Create an ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html):
+First, open your ABAP class.
 
 ![Image depicting step-1-open-class](step-1-open-class.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add an ABAP Doc comment)]
-To improve readability, add an ABAP Doc comment to the class immediately before the method definition, for example:
-`**"! Method reads invoice items from database**` :
+[ACCORDION-BEGIN [Step 2: ](Add an ABAPDoc comment)]
+To improve readability, add an ABAPDoc comment to the class immediately before the method definition, for example:
+**`"! Method reads invoice items from database`** .
+
+**NOTE**: You must insert the ABAPDoc comment **immediately** before the declaration; otherwise you will get a warning from ADT.
 
 ![Image depicting step2-add-abap-doc-comment](step2-add-abap-doc-comment.png)
 
-**NOTE**: You must insert the ABAP Doc comment **immediately** before the declaration; otherwise you will get a warning from ADT.
+ABAPDoc comments can be used to document APIs and are displayed in the Element Info. All ABAPDoc comments begin with `"!` .
 
-> ABAP Doc comments can be used to document APIs and are displayed in the Element Info. ABAP Doc comments begin with `"!` .
-
-
+[DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add parameters to ABAP Doc)]
-You can also use ABAP Doc to document method parameters with a Quick Assist. Place the cursor inside of the ABAP Doc comment. Then choose `**Ctrl+1**` to open the Quick Assist menu and double-click on **Add missing parameters to documentation**:
+[ACCORDION-BEGIN [Step 3: ](Add parameters to ABAPDoc)]
+You can also use ABAPDoc to document method parameters with a Quick Assist. Place the cursor inside of the ABAPDoc comment. Then choose `**Ctrl+1**` to open the Quick Assist menu and double-click on **Add missing parameters to documentation**:
 
 ![Image depicting step3-add-parameters](step3-add-parameters.png)
 
-The ABAP Doc comment is extended by a `@parameter ... | `. You can now use this to document the method parameters: To do so, just enter the documentation after the pipe symbol (` | `).
+The ABAPDoc comment is extended by a `@parameter ... | `. You can now use this to document the method parameters: To do so, just enter the documentation after the pipe symbol (` | `).
 
 ![Image depicting step3a-parameters-added](step3a-parameters-added.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Synchronize short texts)]
-We have documented our method using ABAP Doc. However, we also want to see the same short texts in the description fields of the form-based Class Builder in SAP GUI.
-To do this, we need to tag the required text in the ABAP Doc as "synchronized" to ensure that it is synchronized with the Class Builder.
-a.	Mark the short text for your method in ABAP Doc as "synchronized" by surrounding it with the tag **`<p class="shorttext synchronized">...</p>`**.
-b.	Do the same for the short text of your parameter `lt_result`:
+We have documented our method using ABAPDoc. However, we also want to see the same short texts in the description fields of the form-based Class Builder in SAP GUI.
+To do this, we need to tag the required text in the ABAPDoc as "synchronized" to ensure that it is synchronized with the Class Builder.
 
-![Image depicting step4-sync-texts](step4-sync-texts.png)
+1. Mark the short text for your method in ABAPDoc as "synchronized" by surrounding it with the tag **`<p class="shorttext synchronized">...</p>`**.
 
+2. Do the same for the short text of your parameter `lt_result`:
 
+  ![Image depicting step4-sync-texts](step4-sync-texts.png)
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Save and activate)]
 Save ( **Ctrl+S** ) and activate ( **Ctrl+F3** ) the class.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Link with Editor)]
 Finally you will check that the synchronized short texts are also shown in the Class Builder. First we have to open the class in SAP GUI.
-To easily find the class in SAP GUI, first choose Link with Editor:
+To easily find the class in SAP GUI, first choose **Link with Editor**:
 
 ![Image depicting step6-link-w-editor](step6-link-w-editor.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](View the ABAP Doc comments in SAP GUI)]
-a.	In the Project Explorer, select the class **`ZCL_INVOICE_RETRIEVAL`** and choose Open with SAP GUI from the context menu:
+[ACCORDION-BEGIN [Step 7: ](View the ABAPDoc comments in SAP GUI)]
 
-![Image depicting step7a-open-w-sapgui](step7a-open-w-sapgui.png)
+1. In the Project Explorer, select the class **`ZCL_INVOICE_RETRIEVAL`** and choose Open with SAP GUI from the context menu:
 
-b.	The method description shows the text we entered in the ABAP Doc comment in the synchronized tag:
+    ![Image depicting step7a-open-w-sapgui](step7a-open-w-sapgui.png)
 
-![Image depicting step7b-method-text](step7b-method-text.png)
+2. The method description shows the text we entered in the ABAPDoc comment in the synchronized tag:
 
-c. Now choose **Parameters**. You will see that the description of the parameter has also been synchronized:
+    ![Image depicting step7b-method-text](step7b-method-text.png)
 
-![Image depicting step7b-param-text](step7b-param-text.png)
+3. Now choose **Parameters**. You will see that the description of the parameter has also been synchronized:
 
-d. Finally, close the class in SAP GUI and return to your ABAP program by choosing Close:
+    ![Image depicting step7b-param-text](step7b-param-text.png)
 
-![Image depicting step8-close](step8-close.png)
+4. Finally, close the class in SAP GUI and return to your ABAP program by choosing Close:
 
+    ![Image depicting step8-close](step8-close.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Display element info)]
-a. Back in the ABAP Program, position the cursor on the method call `GET_ITEMS_FROM_DB` and display the Element Info of the method by choosing **Element Info (`F2`)**. In addition to the method signature it also shows the ABAP Doc you wrote before:
 
-![Image depicting step8-final-abap-doc](step8-final-abap-doc.png)
+1. Back in the ABAP Program, position the cursor on the method call `GET_ITEMS_FROM_DB` and display the Element Info of the method by choosing **Element Info (`F2`)**. In addition to the method signature it also shows the ABAPDoc you wrote before:
 
-b. Close the Element Info by choosing **ESC**.
+    ![Image depicting step8-final-abap-doc](step8-final-abap-doc.png)
+
+2. Close the Element Info by choosing **ESC**.
 
 The code for your class should now look like this:
 
@@ -165,7 +167,16 @@ ENDCLASS.
 
 ```
 
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+
+Create an ABAPDoc comment for the parameter `PLANETYPE`, including the explanatory text **`Type of plane`**.
+
+Enter the comment in the box below and choose **Submit Answer**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 

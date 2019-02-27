@@ -1,14 +1,14 @@
 ---
-title:  Create custom UI for S/4HANA on SAP Cloud Platform
+title:  Create Custom UI for S/4HANA on SAP Cloud Platform
 description: Create a UI on SAP Cloud Platform and deploy it to the S/4HANA system.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 25
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Make ABAP custom business object service's consumable on SAP Cloud Platform via OAuth`](https://www.sap.com/developer/tutorials/abap-custom-ui-service-consumption.html)
+- **Tutorials:** [Make ABAP custom business object service's consumable on SAP Cloud Platform via OAuth](abap-custom-ui-service-consumption)
 - **Authorizations:** Your user needs a business role with Unrestricted Write Access and business catalog Extensibility - Fiori App Development (ID: `SAP_CORE_BC_EXT_UI`). Access to a SAP Web IDE account is expected as a prerequisite.
-
 
 ## Details
 ### You will learn  
@@ -17,8 +17,6 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 
 This tutorials shows you how to create a new project from template on SAP Web IDE. You learn how to run the list report application and test the UI. You also get to know how to modify an UI and how to deploy it to SAPUI5 ABAP Repository.
 
-### Time to Complete
-**25 Min**.
 
 ---
 

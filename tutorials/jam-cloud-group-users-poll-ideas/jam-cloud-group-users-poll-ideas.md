@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
- - [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
+ - [Initial setup of SAP Jam Collaboration Developer Edition](https://developers.sap.com/tutorials/jam-cloud-login-admin-user-setup.html)
 
 ## Details
 ### You will learn

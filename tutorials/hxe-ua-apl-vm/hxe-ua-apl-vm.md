@@ -1,22 +1,21 @@
 ---
-title: Install the Optional SAP HANA Automated Predictive Library Package for SAP HANA, express edition
+title: Install the Optional SAP HANA Automated Predictive Library Package for SAP HANA, express edition (Preconfigured VM)
 description: SAP HANA Automated Predictive Library (APL) is an application function library which exposes the data mining capabilities of the Automated Analytics engine in SAP HANA, express edition through a set of functions.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 3
 ---
 
 <!-- loio31a2f9637e5747298b29c2960d2c286c -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)  
+ - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
 
 ## Details
 ### You will learn
 You will learn how to download and install the `apl.tgz` SAP HANA Automated Predictive Library (APL) package.
-
-### Time to Complete
-3 min
 
 ---
 
@@ -41,6 +40,8 @@ Run the `hxe_gc` memory management script to free up available VM memory.
 3.   When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation 
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -69,7 +70,7 @@ tar -xvzf apl.tgz
 As the `hxeadm` user, run the installation script as root:
 
 ```bash
-<extracted_path>/HANA_EXPRESS_20/sudo ./install_apl.sh
+sudo <extracted_path>/HANA_EXPRESS_20/install_apl.sh
 ```
 
 [ACCORDION-END]

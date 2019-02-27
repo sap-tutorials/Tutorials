@@ -42,7 +42,7 @@ Now scroll down to find this OData service node:
 
 `EPM_REF_APPS_SHOP_SRV`
 
-This is the OData service you will explore. It is an EPM based service for a reference app called "Shop", which explains most of the node's name. The last part, `SRV`, short for "service", is common for OData services served from ABAP systems. This is similar to the convention you may have noticed with the Northwind service in the tutorial [Learn about OData fundamentals](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html) where the end part of the OData service name was `svc`.
+This is the OData service you will explore. It is an EPM based service for a reference app called "Shop", which explains most of the node's name. The last part, `SRV`, short for "service", is common for OData services served from ABAP systems. This is similar to the convention you may have noticed with the Northwind service in the tutorial [Learn about OData fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html) where the end part of the OData service name was `svc`.
 
 Use the information in the node hierarchy that leads down to the `EPM_REF_APPS_SHOP_SRV` node to form the part of the OData service URL that will be relative to the SAP Gateway demo system base URL:
 
@@ -76,7 +76,11 @@ First, look at all of the products, using this URL for the `Products` entity set
 
 `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Products`
 
-Now, find the product entry with the ID `HT-1001` and the name "Notebook Basic 17". Use the entry's ID to navigate directly to that product, as an entity:
+Now, find the product entry with the ID `HT-1001` and the name "Notebook Basic 17".
+
+> If there isn't a product entry with this specific ID, you can choose another one - the IDs follow a similar pattern.
+
+Use the entry's ID to navigate directly to that product, as an entity:
 
 `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Products('HT-1001')`
 
@@ -172,7 +176,7 @@ The response is returned in JSON, and formatted by the `JSONView` is considerabl
 
 ![categories response in JSON](categories-in-json.png)
 
-> While the entity set and entity responses can be returned in JSON format, the service document and metadata document of an OData service cannot - they only exist in XML format.
+> While the entity set and entity responses can be returned in JSON format, the service document and metadata document of an OData service, at least a V2 OData service, cannot - they only exist in XML format.
 
 [DONE]
 [ACCORDION-END]

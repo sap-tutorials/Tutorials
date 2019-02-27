@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorial:** [Add REST OData retrieval](https://www.sap.com/developer/tutorials/react-add-odata.html)
+- **Tutorial:** [Add REST OData retrieval](https://developers.sap.com/tutorials/react-add-odata.html)
 
 ## Next Steps
-- **Tutorial:** [Create child components](https://www.sap.com/developer/tutorials/react-child-components.html)
+- **Tutorial:** [Create child components](https://developers.sap.com/tutorials/react-child-components.html)
 
 
 ## Details
@@ -486,6 +486,3 @@ JavaScript:
 
 [ACCORDION-END]
 
-
-## Next Steps
-- **Tutorial:** [Create child components](https://www.sap.com/developer/tutorials/react-child-components.html)

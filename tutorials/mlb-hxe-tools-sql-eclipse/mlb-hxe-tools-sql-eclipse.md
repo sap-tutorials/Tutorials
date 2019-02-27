@@ -1,5 +1,5 @@
 ---
-title: Use the SAP HANA Tools for Eclipse as a SQL query tool with SAP HANA, express edition
+title: Use SAP HANA Tools for Eclipse as SQL Query Tool with SAP HANA, express edition
 description: Provide details on the installation and configuration of the SAP HANA Tools for Eclipse and connect to SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
@@ -16,9 +16,9 @@ In this tutorial, you will install and configure the SAP HANA Tools for Eclipse.
 
 Then, you will learn how to connect to the System database and the HXE tenant of your SAP HANA, express edition instance.
 
-For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
+For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
 
-[ACCORDION-BEGIN [Prerequisite: ](Eclipse IDE)]
+[ACCORDION-BEGIN [Prerequisite: ](Install Eclipse IDE)]
 
 In order to proceed with the next steps, you must have the [Eclipse IDE](https://www.eclipse.org/downloads/) installed, running and properly connected to the internet.
 
@@ -89,7 +89,7 @@ Make you have the proper credentials, as after 5 failed login attempts, the user
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](SAP HANA Tools for the Eclipse IDE)]
+[ACCORDION-BEGIN [Info: ](SAP HANA tools for the Eclipse IDE)]
 
 The SAP HANA Tools for the Eclipse IDE is available for the following versions of the Eclipse IDE with their respective software repository:
 
@@ -163,7 +163,7 @@ Select to **SAP HANA Administrative Console** and click **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a connection to the System Database)]
+[ACCORDION-BEGIN [Step 3: ](Add a connection to the System database)]
 
 Click on the **Add System...** ![add system](00-add-system.png) icon.
 
@@ -189,7 +189,7 @@ We encourage you to set a **Description** as it will help identify in a more mea
 
 For example, you can include the host name and the instance number which are not displayed afterward.
 
-Click on **Next**.
+Click **Next**.
 
 Select **Authentication by database user**.
 
@@ -197,7 +197,7 @@ Enter your database credentials, usually with the **SYSTEM** database user crede
 
 Select if you want to **Store user name and password in a secure storage**.
 
-Click on **Finish**
+Click **Finish**
 
 ![image Step 3](03-2.png)
 
@@ -302,8 +302,6 @@ This implies that the tenant database cannot see the system database but the sys
 By default the SAP HANA, express edition instance id is 90, but in fact Eclipse will request the full port number to the server when connection.
 
 Right click on your **HXE @ HXE (SYSTEM)** connection, then select **Properties** (or press ALT+ENTER), then under **Database User Logon**, switch to the **Additional Properties**.
-
-Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]

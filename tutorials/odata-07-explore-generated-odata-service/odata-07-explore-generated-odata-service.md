@@ -13,7 +13,7 @@ time: 10
 - How to import data from a CSV source
 - How your generated OData service supports standard OData query operation parameters
 
-This tutorial assumes you've completed the tutorial [Add Data to your OData Service](https://www.sap.com/developer/tutorials/odata-06-add-data-odata-service.html). At this stage you have your generated OData service and you've populated it with some sample product data, either data of your own, or from the Northwind data set. It's now time to explore your OData service to see that it functions, out of the box, just like any other.
+This tutorial assumes you've completed the tutorial [Add Data to your OData Service](https://developers.sap.com/tutorials/odata-06-add-data-odata-service.html). At this stage you have your generated OData service and you've populated it with some sample product data, either data of your own, or from the Northwind data set. It's now time to explore your OData service to see that it functions, out of the box, just like any other.
 
 > In this tutorial and others the general name "SAP Web IDE" is used. Specifically, the "Full-Stack" version is implied throughout.
 
@@ -21,7 +21,7 @@ This tutorial assumes you've completed the tutorial [Add Data to your OData Serv
 
 [ACCORDION-BEGIN [Step 1: ](Start up the SAP Web IDE)]
 
-Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
+Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -143,7 +143,7 @@ Ask to see the product with the largest amount of units in stock:
 
 `https://3om1s7cblrlhamdk-products-srv.cfapps.eu10.hana.ondemand.com/odata/v2/CatalogService/Products?$orderby=UnitsInStock desc&$top=1`
 
-As you can see, the OData service, for which you haven't had to write a single line of code, is performing as expected. Feel free to explore more standard OData features, perhaps those that you discovered in the [Learn about OData Fundamentals](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html) tutorial. Good luck!
+As you can see, the OData service, for which you haven't had to write a single line of code, is performing as expected. Feel free to explore more standard OData features, perhaps those that you discovered in the [Learn about OData Fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html) tutorial. Good luck!
 
 [VALIDATE_4]
 [ACCORDION-END]

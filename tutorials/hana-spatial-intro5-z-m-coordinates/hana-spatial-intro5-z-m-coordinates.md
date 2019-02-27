@@ -1,24 +1,23 @@
 ---
-title: Intro to SAP HANA Spatial - Z and M coordinates
+title: Z and M coordinates
 description: Geometries can optionally have Z (3rd dimension) and M (measure) values associated with each point in addition to X and Y coordinates
+auto_validation: true
+time: 10
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
 - **Proficiency:** Beginner
- - **Tutorials:** [Intro to SAP HANA Spatial: Spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+ - **Tutorials:** [Intro to SAP HANA Spatial: Spatial columns](https://developers.sap.com/tutorials/hana-spatial-intro4-columns.html)
 
 
 ## Next Steps
- - [Intro to SAP HANA Geospatial: Spatial Reference Systems](https://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)
+ - [Intro to SAP HANA Geospatial: Spatial Reference Systems](https://developers.sap.com/tutorials/hana-spatial-intro6-srs.html)
 
 ## Details
 ### You will learn  
 You will learn the basics of multidimensional coordinate systems that introduce Z (3rd dimension) and M (measure) coordinates to geometries' points.
-
-### Time to Complete
-**10 Min**
 
 ---
 
@@ -28,6 +27,7 @@ All geometries have at least two coordinate dimensions: the X and Y defining 2D 
 Geometries can optionally have Z and / or M values associated with each point in the geometry. The **Z** value introduces the third dimension coordinate. The Z value usually is used to indicate the height, or elevation. The measure value **M** can be used to record additional non-coordinate values at various points within a geometry. The M value is most often used in geometries with the [linear reference system](https://en.wikipedia.org/wiki/Linear_referencing), e.g. where M stores a distance value from a defined starting point.
 
 The following dimension types are supported by SAP HANA:
+
 - 2D dimension (X, Y)
 - 2D dimension with measure (X, Y, M)
 - 3D dimension (X, Y, Z)
@@ -35,7 +35,7 @@ The following dimension types are supported by SAP HANA:
 
 >Important to note that these Z and M coordinate values can be used to store additional information, but are not considered when computing spatial relations or set operations.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Optional coordinates in geometries' constructors)]
@@ -61,7 +61,7 @@ The Z and M values can be used with other geometries too.
 SELECT NEW ST_GeometryCollection('GeometryCollection Z(LineString Z(5 10 20, 10 12 25, 15 10 13), Polygon Z((10 -5 4, 15 5 6, 5 5 7, 10 -5 4)), Point Z(10 15 12))').ST_asWKT() from dummy;
 ```
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -74,9 +74,10 @@ SELECT NEW ST_Point('POINT ZM(0 0 2 0.5)').ST_Dimension() as Dimensions from dum
 ```
 
 To find the number of coordinates stored within each point of a geometry use the `ST_CoordDim` method. The following values may be returned:
-2 - The geometry contains only two coordinates (X and Y)
-3 - The geometry contains one additional coordinate (either Z or M) for each point
-4 - The geometry contains two additional coordinates (both Z and M) for each point
+
+- 2 - The geometry contains only two coordinates (X and Y)
+- 3 - The geometry contains one additional coordinate (either Z or M) for each point
+- 4 - The geometry contains two additional coordinates (both Z and M) for each point
 
 ```sql
 SELECT NEW ST_LineString('LineString ZM(5 10 20 0, 10 12 25 0, 15 10 13 0)').ST_CoordDim() as CoordDims from dummy;
@@ -100,7 +101,7 @@ SELECT NEW ST_Point('Point ZM(5 10 20 0)').ST_M() as M from dummy;
 -- Result is 0
 ```
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Processing spatial data with Z and M)]
@@ -127,10 +128,8 @@ SELECT NEW ST_Point('POINT Z(0 0 0.5)').ST_Buffer(2).ST_CoordDim() from DUMMY;
 -- Result is 2 (coordinates dimensions of an output polygon)
 ```
 
-
+[VALIDATE_1]
 [ACCORDION-END]
 
 ### Optional
 - Check SAP HANA Spatial Reference at <https://help.sap.com/hana_platform>
-
-

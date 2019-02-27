@@ -12,7 +12,7 @@ time: 5
   - How to deploy an app to the SAP Cloud Platform Cloud Foundry environment using the cockpit
   - What is created when an app is deployed
 
-This tutorial assumes you've completed the [Download and Prepare App for Cloud Foundry Deployment](https://www.sap.com/developer/tutorials/cp-cf-dev-01-prepare-app.html) tutorial, where you should have a folder containing a sample Node.js app with a deployment descriptor file. You're going to package the app and deploy it directly from your machine using a feature in the SAP Cloud Platform cockpit itself.
+This tutorial assumes you've completed the [Download and Prepare App for Cloud Foundry Deployment](https://developers.sap.com/tutorials/cp-cf-dev-01-prepare-app.html) tutorial, where you should have a folder containing a sample Node.js app with a deployment descriptor file. You're going to package the app and deploy it directly from your machine using a feature in the SAP Cloud Platform cockpit itself.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Package the app up)]

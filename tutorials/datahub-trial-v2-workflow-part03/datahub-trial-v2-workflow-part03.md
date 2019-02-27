@@ -1,24 +1,26 @@
 ---
-title: Create Workflow (part 3), Build a task Workflow in SAP Data Hub, trial edition 2.3
-description: Build a task Workflow using SAP Data Hub, trial edition 2.3.
+title: Create Workflow (part 3), Build a task Workflow in SAP Data Hub, trial edition 2.4
+description: Build a task Workflow using SAP Data Hub, trial edition 2.4.
+auto_validation: true
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+time: 15
 ---
 
 ## Details
 ### You will learn  
-During this tutorial, you will build a task Workflow using the **Pipeline** operator. This Workflow combines both tasks which you created during the previous tutorials into a process which you execute at once.
+  - How to build a task workflow using the **Pipeline** operator
 
-### Time to Complete
-**15 Min**
+This workflow combines both tasks which you created during the previous tutorials into a process which you execute at once.
+Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create Workflow)]
 
-Open the modelling environment for building pipelines via SAP Data Hub Modeler (`https://sapdatahubtrial/app/pipeline-modeler`).
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon.
 
@@ -32,7 +34,7 @@ Right click on the first **Pipeline** operator and go to **Open Configuration**.
 
 ![picture_03](./datahub-trial-v2-workflow-part03_03.png)
 
-Similarly, for the second **Pipeline** operator, select the graph that we have created in the tutorial **Create Workflow (part 2), Aggregate data with Data Transform** under the parameter **Graph Name**. In our case, we have named it as **Workflow 2**. Also increase the parameter Retry interval from 20 to 200 for this **Pipeline**.
+Similarly, for the second **Pipeline** operator, select the graph that we have created in the tutorial **Create Workflow (part 2), Aggregate data with Data Transform** under the parameter **Graph Name**. In our case, we have named it as **Workflow 2**. Also increase the parameter Retry interval from 20 to 200 for both the **Pipelines**.
 
 [DONE]
 
@@ -48,9 +50,6 @@ We have now executed the **Workflow 3** but you will notice in the above screens
 
 **Remark**: When you look at the `EnrichDevices` or `STATISTICS_DATA` data set, you will not see any changes compared to the previous two tutorials.
 
-[DONE]
+[VALIDATE_1]
 
 [ACCORDION-END]
-
----
-

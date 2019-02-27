@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-api-managemen
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:**  [Create an API Provider System](https://www.sap.com/developer/tutorials/hcp-apim-create-provider.html)
+- **Tutorials:**  [Create an API Provider System](https://developers.sap.com/tutorials/hcp-apim-create-provider.html)
 
 ## Next Steps
-- [Add the API Proxy to a product](https://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
+- [Add the API Proxy to a product](https://developers.sap.com/tutorials/hcp-apim-create-product.html)
 
 
 ## Details
@@ -132,4 +132,33 @@ A new API Proxy has been created
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 10: ](Deploy Created API Proxy)]
 
+Click on action button from right side and select **Deploy**
+
+![Deploy Proxy](12-Deployproxy.png)
+
+API proxy is deployed.
+
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Test your API Proxy)]
+
+To Test your API proxy, navigate to **Test** from navigation bar.
+![Navigate Test](13-Navtest.png)
+
+Select your API and provide the user name and password and click **OK**.
+
+![Test Authentication](14-Testauth.png)
+
+Click on Send.
+
+![Get Request](15-Send.png)
+
+You should get the response.
+
+[DONE]
+
+[ACCORDION-END]

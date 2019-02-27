@@ -14,7 +14,7 @@ The following will document links, tips and tricks and more related to the SAP C
 
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html).
 
 &nbsp;
 
@@ -23,13 +23,13 @@ The following will document links, tips and tricks and more related to the SAP C
 
 [ACCORDION-BEGIN [Step 1: ](First steps after registering to attend the event)]
 
-Now that you have registered for the [SAP CodeJam](https://www.sap.com/developer/events.html) event you will need to follow a few steps here to prepare yourself for the event.
+Now that you have registered for the [SAP CodeJam](https://www.sap.com/community/events.html) event you will need to follow a few steps here to prepare yourself for the event.
 
 The first step is of course to sign up and register for [SAP.com](http://developers.sap.com) this will enable your user and make future steps much easier.
 
 ![Login](1.png)
 
-Now proceed to [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html) product page where you will see the steps listed as well as more information on what exactly SAP HANA, express edition is.
+Now proceed to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html) product page where you will see the steps listed as well as more information on what exactly SAP HANA, express edition is.
 
 ![HXE](2.png)
 
@@ -44,7 +44,7 @@ Depending on your choice and your available resources, you can install SAP HANA,
 **You will move into other tutorials and always back to this one**. It is advisable that you keep this open in one tab.
 
 _Google Cloud Platform Launcher_
-If you are looking for the server-only version and would like to use Google Cloud Platform, there is a `one-click` setup option that is [explained in this guide](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html).
+If you are looking for the server-only version and would like to use Google Cloud Platform, there is a `one-click` setup option that is [explained in this guide](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html).
 
 _Virtual Machine or Binary manual Installation_
 In order to get your copy of the download, either the virtual machine or the binaries to install on your own Linux installation you will need to [register](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html).
@@ -52,8 +52,8 @@ In order to get your copy of the download, either the virtual machine or the bin
 ![Register](3.png)
 
 Once you have registered, proceed to setup you SAP HANA, express edition, using the right tutorial series depending on your choice:
-- Virtual Machine method: <https://www.sap.com/developer/groups/hxe-install-vm.html>
-- Binary Installer method: <https://www.sap.com/developer/groups/hxe-install-binary.html>
+- Virtual Machine method: <https://developers.sap.com/group.hxe-install-vm.html>
+- Binary Installer method: <https://developers.sap.com/group.hxe-install-binary.html>
 
 _Manual binary installations with alternative free operating systems_
 - Only for SPS01 and earlier - Google Cloud platform and Ubuntu: <https://blogs.sap.com/2017/02/07/hana-express-edition-on-google-cloud-platform-and-ubuntu/>
@@ -138,16 +138,16 @@ You will need to download a copy of the Eclipse software which will allow you to
 
 We recommend [Eclipse Neon](http://www.eclipse.org/downloads/packages/), the Java EE version in case you later want to explore the SAP Cloud Platform.
 
-Now that Eclipse has been installed you will need to add the appropriate plugins. The following guide will take your though [those steps](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html).
+Now that Eclipse has been installed you will need to add the appropriate plugins. The following guide will take your though [those steps](https://developers.sap.com/tutorials/hxe-howto-eclipse.html).
 
 Finally you are connected to your SAP HANA, express edition, system.
 
 Now that you are connected and have your new users created it is time to actually do a little coding. The following tutorials will walk you through your first project with the Eclipse software and your HXE server.
 
-- [SAP HANA Studio, Setup a new project](https://www.sap.com/developer/tutorials/studio-new-project.html)
-- [SAP HANA Studio, Deploy Project](https://www.sap.com/developer/tutorials/studio-deploy-project.html)
-- [SAP HANA Studio, Import Data](https://www.sap.com/developer/tutorials/studio-import-data.html)
-- [SAP HANA Studio, Display your Application](https://www.sap.com/developer/tutorials/studio-display-project.html)
+- [SAP HANA Studio, Setup a new project](https://developers.sap.com/tutorials/studio-new-project.html)
+- [SAP HANA Studio, Deploy Project](https://developers.sap.com/tutorials/studio-deploy-project.html)
+- [SAP HANA Studio, Import Data](https://developers.sap.com/tutorials/studio-import-data.html)
+- [SAP HANA Studio, Display your Application](https://developers.sap.com/tutorials/studio-display-project.html)
 
 
 [ACCORDION-END]
@@ -164,10 +164,10 @@ This [blog post](https://blogs.sap.com/2016/10/28/enhancing-hxe-server-image/) w
 
 If you choose to install the browser based tools in Step `A.2` then you can move on to the following tutorials for creating your first project via that environment.
 
-- [Develop your first SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
-- [Access your first data in a SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
-- [Enable XSODATA in your SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-xsodata.html)
-- [Consume XSODATA in your SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-consume-xsodata.html)
+- [Develop your first SAP HANA XSC Application](https://developers.sap.com/tutorials/hana-web-development-workbench.html)
+- [Access your first data in a SAP HANA XSC Application](https://developers.sap.com/tutorials/hana-data-access-authorizations.html)
+- [Enable XSODATA in your SAP HANA XSC Application](https://developers.sap.com/tutorials/hana-xsodata.html)
+- [Consume XSODATA in your SAP HANA XSC Application](https://developers.sap.com/tutorials/hana-consume-xsodata.html)
 
 [ACCORDION-END]
 
@@ -187,8 +187,8 @@ The following items are meant for further exploration of the SAP HANA, express e
 
 - [Raspberry Pi](https://blogs.sap.com/2017/01/26/tbt-sap-hana-and-raspberry-pi/)
 - [Fuzzy Search](https://blogs.sap.com/2016/10/26/hxe-fuzzy-search/)
-- [Creating and accessing a Calculation View from MS Excel using MDX](https://www.sap.com/developer/tutorials/studio-view-data-calculation-mdx.html) or [using anonymous OData services](https://blogs.sap.com/2017/05/02/sap-hana-on-a-whim-a-bing-map-in-my-ms-excel-from-an-anonymous-odata-service/)
-- [Setting up the Google App Engine](https://www.sap.com/developer/tutorials/gae-setup.html) and [Installing `HDB` library for Node.js](https://www.sap.com/developer/tutorials/gae-nodehdb.html)
+- [Creating and accessing a Calculation View from MS Excel using MDX](https://developers.sap.com/tutorials/studio-view-data-calculation-mdx.html) or [using anonymous OData services](https://blogs.sap.com/2017/05/02/sap-hana-on-a-whim-a-bing-map-in-my-ms-excel-from-an-anonymous-odata-service/)
+- [Setting up the Google App Engine](https://developers.sap.com/tutorials/gae-setup.html) and [Installing `HDB` library for Node.js](https://developers.sap.com/tutorials/gae-nodehdb.html)
 - [Fuzzy search on the Google App Engine with `Node.js`](https://blogs.sap.com/2017/03/08/google-app-engine-meets-sap-hana-express-edition/)
 
 [ACCORDION-END]
@@ -198,7 +198,7 @@ The following items are meant for further exploration of the SAP HANA, express e
 
 The following tutorial explains how to install a SQL client, in this case, `DBeaver`, and connect to SAP HANA, express edition, using the JDBC driver.
 
-Access the tutorial to [Install `DBeaver`](https://www.sap.com/developer/tutorials/hxe-cj1-download-sql-client.html)
+Access the tutorial to [Install `DBeaver`](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html)
 
 [ACCORDION-END]
 
@@ -206,7 +206,7 @@ Access the tutorial to [Install `DBeaver`](https://www.sap.com/developer/tutoria
 
 The following tutorial explains how to create a table and insert data manually or using the **Import** SQL command to upload from a CSV file in the database server.
 
-Continue to [Upload and Import](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html) data.
+Continue to [Upload and Import](https://developers.sap.com/tutorials/hxe-cj1-create-table-upload-data.html) data.
 
 [ACCORDION-END]
 
@@ -214,7 +214,7 @@ Continue to [Upload and Import](https://www.sap.com/developer/tutorials/hxe-cj1-
 
 The following tutorial explains how to setup your local environment to use Node.js to connect to HXE.
 
-[Setup Node.js](https://www.sap.com/developer/tutorials/hxe-nodejs-setup.html)
+[Setup Node.js](https://developers.sap.com/tutorials/hxe-nodejs-setup.html)
 
 [ACCORDION-END]
 
@@ -223,7 +223,7 @@ The following tutorial explains how to setup your local environment to use Node.
 
 The following tutorial shows how to use Node.js to get data from HXE.
 
-[Connect using Node.js](https://www.sap.com/developer/tutorials/hxe-nodejs-connect.html)
+[Connect using Node.js](https://developers.sap.com/tutorials/hxe-nodejs-connect.html)
 
 [ACCORDION-END]
 
@@ -235,14 +235,14 @@ The following tutorial shows how to use Node.js to get data from HXE.
 
 You can start exploring the XS Advanced Cockpit here:
 
-<https://www.sap.com/developer/tutorials/xsa-explore-basics.html>
+<https://developers.sap.com/tutorials/xsa-explore-basics.html>
 
 You can get started with XS Advanced development following this tutorial series:
 
-<https://www.sap.com/developer/groups/hana-xsa-get-started.html>
+<https://developers.sap.com/group.hana-xsa-get-started.html>
 
 And here is how to integrate data from a database schema into your application:
 
-<https://www.sap.com/developer/tutorials/xsa-create-user-provided-anonymous-service.html>
+<https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html>
 
 [ACCORDION-END]

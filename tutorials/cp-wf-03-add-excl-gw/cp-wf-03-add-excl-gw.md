@@ -12,7 +12,7 @@ time: 10
 - How workflows can take different paths through their flow via gateways
 - How to specify the conditions that influence an exclusive gateway decision
 
-This tutorial follows on from [Add a user task and generic UI to your workflow definition](https://www.sap.com/developer/tutorials/cp-wf-02-add-user-task.html). As the workflow from this previous tutorial stands, there is a single flow from end to end, which looks like this:
+This tutorial follows on from [Add a user task and generic UI to your workflow definition](https://developers.sap.com/tutorials/cp-wf-02-add-user-task.html). As the workflow from this previous tutorial stands, there is a single flow from end to end, which looks like this:
 
 ![single flow workflow definition](single-flow.png)
 
@@ -66,7 +66,7 @@ In this tutorial, you'll enhance the workflow definition, to make a decision bas
 
 [ACCORDION-BEGIN [Step 1: ](Start up SAP Web IDE and open workflow definition)]
 
-Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL, which will look like this:
+Access SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL, which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
@@ -130,7 +130,7 @@ Use the menu to add a user task, and place it near the existing **Confirm Order*
 
 ![second user task](second-user-task.png)
 
-In a similar way to how you added the first user task in the tutorial [Add a user task & generic UI to your workflow](https://www.sap.com/developer/tutorials/cp-wf-02-add-user-task.html), specify the values for the user task properties as follows.
+In a similar way to how you added the first user task in the tutorial [Add a user task & generic UI to your workflow](https://developers.sap.com/tutorials/cp-wf-02-add-user-task.html), specify the values for the user task properties as follows.
 
 In the **GENERAL** section:
 
@@ -218,7 +218,7 @@ Don't forget to save it!
 
 [ACCORDION-BEGIN [Step 6: ](Test the new flow)]
 
-Deploy the updated workflow definition in the same way as you did in [Add a User Task and Generic UI to Your Workflow](https://www.sap.com/developer/tutorials/cp-wf-02-add-user-task.html) -- in other words by using the context menu on the workflow definition file **`processorder.workflow`** and choosing **Deploy** > **Deploy to SAP Cloud Platform Workflow**.
+Deploy the updated workflow definition in the same way as you did in [Add a User Task and Generic UI to Your Workflow](https://developers.sap.com/tutorials/cp-wf-02-add-user-task.html) -- in other words by using the context menu on the workflow definition file **`processorder.workflow`** and choosing **Deploy** > **Deploy to SAP Cloud Platform Workflow**.
 
 Switch to your launchpad site and start the **Monitor Workflow - Workflow Definitions** app.
 

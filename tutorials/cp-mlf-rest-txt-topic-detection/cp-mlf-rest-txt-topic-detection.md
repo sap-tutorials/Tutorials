@@ -44,7 +44,9 @@ A series of settings can also be provided as part of the form data (named ***opt
 
 The service will return a JSON response that includes the categories predictions along with a score.
 
-For more details, you can check the [Inference Service for Topic Detection on the SAP API Business Hub](https://api.sap.com/api/topic_detection_api/resource).
+For more details, you can check the following link:
+
+ - [Inference Service for Topic Detection on the SAP API Business Hub](https://api.sap.com/api/topic_detection_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -61,9 +63,16 @@ If you are missing some inspiration, use the following articles content to creat
 
 Create a zip out of these text files.
 
+> ### **Note for MacOS users:**
+> The built-in ZIP feature for MacOS will create an improper ZIP archive file.
+> You should instead use the following command to create your ZIP archive:
+> ```
+zip -r -X <your archive>.zip <your folder>
+```
+
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 

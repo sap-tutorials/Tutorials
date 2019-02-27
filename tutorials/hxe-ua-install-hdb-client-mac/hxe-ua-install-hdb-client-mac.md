@@ -11,7 +11,7 @@ time: 10
 <!-- loio06fe72b1ede54bc88321e15c896eade6 -->
 
 ## Prerequisites
- - **Tutorials:** You have completed [Start SAP HANA, express edition Server (VM installations)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html) or [Test the Installation (Native Linux installations)](http://www.sap.com/developer/tutorials/hxe-ua-test-binary.html)
+ - **Tutorials:** You have completed [Start SAP HANA, express edition Server (VM installations)](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html) or [Test the Installation (Native Linux installations)](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)
 
 ## Details
 ### You will learn
@@ -42,7 +42,7 @@ The clients included with the SAP HANA HDB client software package are:
 
 Install the Download Manager to your client machine and download the client package.
 
-1.  Save the Download Manager installation files to your client machine and open it.
+1.  Save the Download Manager installation files to your client machine and open it. For instructions on downloading and running the Download Manager, see either the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](http://developers.sap.com/tutorials/hxe-ua-installing-binary.html) or [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) tutorials, or go straight to the SAP HANA, express edition [registration page](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html).
 
 2.  In Download Manager, in the `Image` menu, select either `Virtual Machine` or `Binary Installer`.
 
@@ -105,9 +105,9 @@ Connect to a SAP HANA 2.0, express edition system using either JDBC or Python.
 
 See these `Tutorials`:
 
--   [Connect to SAP HANA, express edition using JDBC](http://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html)
+-   [Connect to SAP HANA, express edition using JDBC](http://developers.sap.com/tutorials/hxe-connect-hxe-using-jdbc.html)
 
--   [Connect to SAP HANA, express edition using Python](http://www.sap.com/developer/tutorials/hxe-python-connection.html)
+-   [Connect to SAP HANA, express edition using Python](http://developers.sap.com/tutorials/hxe-python-connection.html)
 
 
 [ACCORDION-END]

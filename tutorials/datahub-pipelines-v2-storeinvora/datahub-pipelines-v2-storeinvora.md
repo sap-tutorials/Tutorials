@@ -1,6 +1,6 @@
 ---
-title: Store sensor data in SAP Vora in SAP Data Hub, developer edition 2.3
-description: Use SAP Vora to store sensor data by using SAP Data Hub, developer edition 2.3.
+title: Store sensor data in SAP Vora in SAP Data Hub, developer edition 2.4
+description: Use SAP Vora to store sensor data by using SAP Data Hub, developer edition 2.4.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -35,6 +35,7 @@ Click on the text box for **`Vora Connection`**. Select **Manual** as the **Conf
 
 ![picture_03](./datahub-pipelines-v2-storeinvora_03.png)
 
+Please note you need to use the same password for the **`vora`** user that you provided when you setup your docker container for **`datahub`**.
 Click on **Save**. Scroll down in the configuration list and select **`HDFS`** as **Storage Service (1)**. Then click on the text box for **`HDFS Connection (2)`**. Now maintain the following configuration :
 
 ![picture_04](./datahub-pipelines-v2-storeinvora_04.png)
@@ -57,7 +58,7 @@ Stop the pipeline by pressing the **Stop** button.
 
 **Attention**: If no data is stored in SAP Vora, you can add a **Terminal** operator to the pipeline and connect it with the `result` out port of the **`SAP Vora Loader`** operator. If you see an error message like `could not handle api call, failure reason : execution of scheduler plan failed`, you might have incorrectly connected the **`Kafka Consumer2`** operator and the **`ToString` Converter** operator. Please review the previous tutorial.
 
-[DONE]
+[VALIDATE_1]
 
 [ACCORDION-END]
 

@@ -14,8 +14,8 @@ time: 15
 
 ## Next Steps
 
-  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Artifact Repository](https://developers.sap.com/tutorials/ci-best-practices-artifacts.html)
+  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -53,7 +53,8 @@ Our description is based on Jenkins version 1.647. In the case you use Jenkins 2
 
 This section describes how to set up the Jenkins master.
 
-> [Jenkins, downloads](https://jenkins-ci.org)  
+> [Jenkins, downloads](https://jenkins-ci.org)
+>
 > [Jenkins installation guide](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins)
 
 #### Prerequisites
@@ -171,7 +172,8 @@ If you are planning to run a master-only scenario, you do not need a slave machi
 
 Our examples are restricted to Linux as the operating system for the slaves, as we discuss only build technologies that do not depend on the underlying platform (like Java or Node.js). No explicit Jenkins software installation is required on the slave machines, other than some basic tools that are needed to run a build, like Java, Git and Maven. The Jenkins master connects to the slave using SSH and places the slave jar file on it, which then starts automatically.
 
-> [Jenkins](https://jenkins-ci.org)  
+> [Jenkins](https://jenkins-ci.org)
+> 
 > [Jenkins: Distributed builds](https://wiki.jenkins-ci.org/display/JENKINS/Distributed+builds)
 
 #### Prerequisites
@@ -179,19 +181,24 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 - Install Java JDK 1.7.0 or higher on the slave machine to run the Jenkins slave process. Add the path to the `java` command to the `PATH` environment variable of the machine.
 - (MO) If you plan to compile Java applications (for example running on SAP Cloud Platform) on the slave, also install SAP JVM 7.1.
 
-    > [SAP JVM download](https://tools.hana.ondemand.com/#cloud)  
+    > [SAP JVM download](https://tools.hana.ondemand.com/#cloud)
+    >
     > [SAP JVM installation guide](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76137f42711e1014839a8273b0e91070.html)
 
 - (MO) Git installation.
 
-    > [Git](https://git-scm.com)  
-    > [Git download](https://git-scm.com/downloads)  
+    > [Git](https://git-scm.com)
+    >
+    > [Git download](https://git-scm.com/downloads)
+    >
     > [Git installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
 
 - (MO) Maven installation. The recommended version is Maven 3.0.5. Later versions might lead to build errors due to plugin incompatibilities.
 
-    > [Maven](https://maven.apache.org)  
-    > [Maven download](https://maven.apache.org/download.cgi)  
+    > [Maven](https://maven.apache.org)
+    >
+    > [Maven download](https://maven.apache.org/download.cgi)
+    >
     > [Maven installation guide](https://maven.apache.org/install.html)
 
 #### Procedure

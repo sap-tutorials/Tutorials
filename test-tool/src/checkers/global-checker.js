@@ -75,6 +75,14 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
   const checkResult = {
     passed: true,
   };
+
+  // remove not existing files, case: tool ran on the last commit where some file was renamed / deleted
+  for (let filePath of filePaths) {
+    if (!fs.existsSync(filePath)) {
+      filePaths = filePaths.filter(f => f!== filePath);
+    }
+  }
+
   const results = new Map();
 
   const { files, uniqueLinksToFiles } = await common.parseFiles(filePaths);
@@ -135,6 +143,12 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
       uniqueLinksToFiles,
     });
   });
+
+
+  const hasInvalidLinks = linksCheckResults
+    .filter(checkResult => !checkResult.isTrusted).length > 0;
+
+  checkResult.passed = checkResult.passed ? !hasInvalidLinks : checkResult.passed;
 
   if (!isProduction) {
     await checkTutorialGrouping({

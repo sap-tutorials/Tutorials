@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create a Simple IoT Device Model](https://www.sap.com/developer/tutorials/iot-express-2-create-device-model.html)
+ - **Tutorials:** [Create a Simple IoT Device Model](https://developers.sap.com/tutorials/iot-express-2-create-device-model.html)
  - **Hardware:** Laptop, monitor, HDMI cable, USB mouse and keyboard
 
 
@@ -24,7 +24,7 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 
 
 ## Next Steps
-  - [Create a Thing Model and Bind Your Device into a Business Context](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html)
+  - [Create a Thing Model and Bind Your Device into a Business Context](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html)
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Assemble the hardware)]
@@ -107,7 +107,6 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
         var readout = dht.read();
 
         var sensorData = {
-            "_time": Date.now(),
             "temperature": Math.round(readout.temperature),
             "humidity": Math.round(readout.humidity),
             "light" : 0
@@ -125,6 +124,7 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
             let sensorData = await readSensor();
 
             let payload = {
+                "timestamp": Date.now(),
                 "capabilityAlternateId": settings.capabilityAlternateId,
                 "sensorAlternateId": settings.sensorAlternateId,
                 "measures": [sensorData]

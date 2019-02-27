@@ -8,8 +8,8 @@ time: 15
 
 ## Prerequisites  
 - **Tutorials:**
-- [Build an SAPUI5 app based on your data model and run it with mock data](https://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
-- [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
+- [Build an SAPUI5 app based on your data model and run it with mock data](https://developers.sap.com/tutorials/hcp-webide-build-app-mock-data.html)
+- [Create an account on the Gateway Demo system](https://developers.sap.com/tutorials/gateway-demo-signup.html)
 
 ## Details
 ### You will learn  
@@ -69,8 +69,8 @@ Field Name       | Value
 
 To establish a baseline for the source code you have written so far, you will deploy it to SAP Cloud Platform and commit the project to Git. If you aren't sure how to do this, refer to the two tutorials below:
 
-- [SAP Cloud Platform Deployment tutorial](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
-- Commit the code to Git following the [Git Tutorial](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+- [SAP Cloud Platform Deployment tutorial](https://developers.sap.com/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
+- Commit the code to Git following the [Git Tutorial](https://developers.sap.com/tutorials/hcp-webide-commit-git.html)
 
 
 [ACCORDION-END]

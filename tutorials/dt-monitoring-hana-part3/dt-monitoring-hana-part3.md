@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating and Removing Extended Storage](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part2.html)
+ - **Tutorials:** [Creating and Removing Extended Storage](https://developers.sap.com/tutorials/dt-monitoring-hana-part2.html)
  - **Credentials:** Connection details to initially connect as the "SYSTEM" user and access to "`<SID>adm`" for a SSH session
 
 ## Next Steps
- - **Tutorials:** [Additional checks in SAP HANA Cockpit and SAP HANA Studio](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part4.html)
+ - **Tutorials:** [Additional checks in SAP HANA Cockpit and SAP HANA Studio](https://developers.sap.com/tutorials/dt-monitoring-hana-part4.html)
 
 ## Details
 ### You will learn  

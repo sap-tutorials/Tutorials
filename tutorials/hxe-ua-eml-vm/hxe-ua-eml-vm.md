@@ -1,22 +1,21 @@
 ---
-title: Install the Optional SAP HANA External Machine Learning Library Package for SAP HANA, express edition
+title: Install the Optional SAP HANA External Machine Learning Library Package for SAP HANA, express edition (Preconfigured VM)
 description: The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google TensorFlow, as an external machine learning framework, with SAP HANA, express edition.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 3
 ---
 
 <!-- loioeafe436a2fa34b13908fc0661ff5b8c9 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)  
+ - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
 
 ## Details
 ### You will learn
 You will learn how to download and install the `eml.tgz` SAP HANA External Machine Learning Library package.
-
-### Time to Complete
-3 min
 
 ---
 
@@ -24,19 +23,19 @@ You will learn how to download and install the `eml.tgz` SAP HANA External Machi
 
 Run the `hxe_gc` memory management script to free up available VM memory.
 
-1.   In your VM, log in as `hxeadm` and enter: 
+1.   In your VM, log in as `hxeadm` and enter:
 
     ```bash
     cd /usr/sap/HXE/home/bin
     ```
 
-2.   Execute: 
+2.   Execute:
 
     ```bash
     hxe_gc.sh
     ```
 
-3.   When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation. 
+3.   When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation.
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
@@ -64,12 +63,10 @@ tar -xvzf eml.tgz
 
 [ACCORDION-BEGIN [Step 4: ](Run the installation script.)]
 
-As the `hxeadm` user, run:
+As the <hxeadm> user, run:
 
 ```bash
 <extracted_path>/HANA_EXPRESS_20/install_eml.sh
 ```
 
 [ACCORDION-END]
-
-

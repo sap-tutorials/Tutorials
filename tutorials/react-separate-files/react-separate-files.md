@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorial:** [Create the Bootstrap Template](https://www.sap.com/developer/tutorials/react-add-javascript.html)
+- **Tutorial:** [Create the Bootstrap Template](https://developers.sap.com/tutorials/react-add-javascript.html)
 
 ## Next Steps
-- **Tutorial:** [Convert components from static to dynamic](https://www.sap.com/developer/tutorials/react-dynamic-components.html)
+- **Tutorial:** [Convert components from static to dynamic](https://developers.sap.com/tutorials/react-dynamic-components.html)
 
 
 ## Details
@@ -358,6 +358,3 @@ Your project should now contain three files.  Here is the complete text of each 
 
 [ACCORDION-END]
 
-
-## Next Steps
-- **Tutorial:** [Convert components from static to dynamic](https://www.sap.com/developer/tutorials/react-dynamic-components.html)

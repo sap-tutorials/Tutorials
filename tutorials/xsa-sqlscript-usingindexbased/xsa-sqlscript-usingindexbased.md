@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Using Arrays](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
+- **Tutorials:** [Using Arrays](https://developers.sap.com/tutorials/xsa-sqlscript-usingarrays.html)
 
 ## Next Steps
-- [Using Exception Handling](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
+- [Using Exception Handling](https://developers.sap.com/tutorials/xsa-sqlscript-trans-exception.html)
 
 ## Details
 ### You will learn  

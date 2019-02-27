@@ -7,7 +7,8 @@ tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide
 ---
 
 ## Prerequisites  
-  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://sap.com/developer/topics/sap-hana-express.html#flowchart)
+  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://developers.sap.com/topics/sap-hana-express.html#details)
+  - **Recommended**: It is recommended to map the development space to a tenant database. Follow [these instructions](https://developers.sap.com/tutorials/xsa-tenant-db-space.html) before creating your first database module.
 
 ## Details
 SAP HANA Extended Application Services, advanced model is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures.
@@ -24,7 +25,7 @@ Check [this series of blogs posts](https://blogs.sap.com/2017/09/04/xs-advanced-
 
 [ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE for SAP HANA)]
 
-> These tutorials are based on SAP HANA, express edition. You can get your instance for free following [these instructions](https://sap.com/developer/topics/sap-hana-express.html#flowchart)
+> It is **recommended** that you map the development space to the default tenant in SAP HANA, express edition. Follow [these instructions](https://developers.sap.com/tutorials/xsa-tenant-db-space.html) before getting started..
 
 By default, in SAP HANA, express edition, SAP Web IDE for SAP HANA can be accessed using `https://hxehost:53075/`. If you are using a different system, you can check the URL using command `xs apps | grep webide` in the [XS Command Line Interface](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/addd59069e6f444ca6ccc064d131feec.html).
 
@@ -107,7 +108,7 @@ Select the proper space (for HANA express, `development`) from the list of avail
 
 ![Select development space](6.png)
 
-> If you cannot find an appropriate space, you may either lack the `SpaceDeveloper` role to one or may need to [create one](https://www.sap.com/developer/tutorials/xsa-setup-new-space.html). By default, SAP HANA, express edition brings a development space that is implicitly mapped to the system database. If you are planning on using any of the advanced analytics features (such as Machine Learning), you need to [map the space to a tenant database](https://www.sap.com/canada/developer/tutorials/xsa-tenant-db-space.html), such as the default one, HXE.
+> If you cannot find an appropriate space, you may either lack the `SpaceDeveloper` role to one or may need to [create one](https://developers.sap.com/tutorials/xsa-setup-new-space.html). By default, SAP HANA, express edition brings a development space that is implicitly mapped to the system database. If you are planning on using any of the advanced analytics features (such as Machine Learning), you need to [map the space to a tenant database](https://www.sap.com/canada/developer/tutorials/xsa-tenant-db-space.html), such as the default one, HXE.
 
 Click **Save**.
 

@@ -1,6 +1,6 @@
 ---
-title: Navigate around SAP Data Hub, developer edition 2.3
-description: Find your way around SAP Data Hub, developer edition 2.3.
+title: Navigate around SAP Data Hub, developer edition 2.4
+description: Find your way around SAP Data Hub, developer edition 2.4.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -58,7 +58,6 @@ Now delete `test.txt` from your local computer. Afterwards copy the file from th
 ```sh
 docker cp datahub:/tmp/test.txt test.txt
 ```
-
 [DONE]
 
 [ACCORDION-END]
@@ -104,7 +103,8 @@ hdfs dfs -rm /tmp/test.txt
 [ACCORDION-BEGIN [Step 5: ](Troubleshoot problems and show logs)]
 To troubleshoot problems, take a look at the logs inside the Docker container. You find the logs related to SAP Data Hub (and SAP Vora) inside the directory `/var/log/vora`.
 
-[DONE]
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 

@@ -70,6 +70,16 @@ time: 20
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Test the connected OData service)]
 
+> **Caution**: The most recent version of the Web IDE Full-Stack (181108) contains a minor bug. Please make sure the destination in the `neo-app.json` file looks as follows (adapt the `name` of the `target` if necessary):
+```
+"path": "/sap/opu/odata",
+"target": {
+  "type": "destination",
+  "name": "SAP_Gateway",
+  "entryPath": "/sap/opu/odata"
+},
+```
+
 1. Test the application by clicking on the run button.
 
     ![Select service](./run-button.png)
@@ -80,15 +90,6 @@ time: 20
     ![Select service](./chrome-network.png)
 
 > In case this request fails, there has been a issue while creating the destination in the Neo environment. Please go back to the previous tutorial to make sure the destination is set up correctly
-> Hint: The most recent version of the Web IDE Full-Stack (181108) contains a minor bug. Please make sure the destination in the `neo-app.json` file looks as follows:
-```
-"path": "/sap/opu/odata",
-"target": {
-  "type": "destination",
-  "name": "SAP_Gateway",
-  "entryPath": "/sap/opu/odata"
-},
-```
 
 [DONE]
 [ACCORDION-END]
@@ -216,7 +217,7 @@ This page will display all existing purchase orders in a list.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step ](Add navigation logic)]
-1. Handle the click events, which will be triggered once the user clicks on the list items. Paste the following function to the empty object (second parameter of the `Controller.extend` method) in the `MainView.controller.js` (`webbapp > controller`) file.
+1. Handle the click events, which will be triggered once the user clicks on the list items. Paste the following function to the empty object (second parameter of the `Controller.extend` method) in the `MainView.controller.js` (`webapp > controller`) file.
 ```javascript
 onClickPO: function (oEvent) {
   var oApp = this.getView().getContent()[0];

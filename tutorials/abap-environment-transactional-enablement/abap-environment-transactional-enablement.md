@@ -2,7 +2,7 @@
 auto_validation: true
 title: Add Transactional Behavior to Your Core Data Services
 description: Create a behavior implementation in SAP Cloud Platform ABAP Environment.
-primary_tag: topic>sap-cloud-platform-abap-environment
+primary_tag: products>sap-cloud-platform--abap-environment 
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
 time: 10
 ---
@@ -23,7 +23,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-  1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://www.sap.com/developer/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
+  1. Go to your ABAP package created in [Create and Expose a Core Data Services Based on a Database Table](https://developers.sap.com/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
   `root`
 
       ![Open Eclipse](eclipse.png)

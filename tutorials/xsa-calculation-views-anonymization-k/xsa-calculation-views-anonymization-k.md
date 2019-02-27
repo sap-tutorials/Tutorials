@@ -15,12 +15,17 @@ time: 20
  - How to create a calculation view
  - Use artifacts to import data from text file
 
+
+***GitHub repository available***
+
+ This project can be cloned from this repository: [https://github.com/SAP/hana-xsa-calculation-view-anonymity](https://github.com/SAP/hana-xsa-calculation-view-anonymity)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Check pre-requisites)]
 
 ### Map a space to your tenant
-Make sure your project is using a space that is mapped to a tenant. Here is how to [create a new space,](https://sap.com/developer/tutorials/xsa-setup-new-space.html) only if you do not want to use the default development space and [how to map it to a tenant database](https://sap.com/developer/tutorials/xsa-tenant-db-space.html)
+Make sure your project is using a space that is mapped to a tenant. Here is how to [how to map it to a tenant database](https://sap.com/developer/tutorials/xsa-tenant-db-space.html).
 
 ### Start the script server in your tenant database
 If you have not already, log in to your System database as SYSTEM and execute the following statement. In HANA express, as `hxeadm`
@@ -38,7 +43,7 @@ You can also do this from the Database Explorer tool, as user SYSTEM and logged 
 > Note: This example assumes the tenant database is the default first tenant created in SAP HANA, express edition. Replace `HXE` with eh name of your tenant. You can query available tenants from table `M_DATABASES`
 
 ### Deploy your database module in the space mapped to the tenant
-If you created the database module before mapping the space to the tenant, you will see the HDI container in the space but it will still be connected to the system database. The system database is meant for administration purposes and does not have the necessary engines to execute advanced analytics such as `anonymization`.
+**FOLLOW THESE STEPS ONLY if you created the database module before mapping the space to the tenant**, you will see the HDI container in the space but it will still be connected to the system database. The system database is meant for administration purposes and does not have the necessary engines to execute advanced analytics such as `anonymization`.
 
 Use command `xs ds` to delete the HDI container and deploy it again once the space has been mapped to the tenant database.
 
@@ -52,7 +57,7 @@ Use command `xs ds` to delete the HDI container and deploy it again once the spa
 
 Right-click **Workspace** and choose **New > Project from template**.
 
-![Create a new project](4.png)
+![Create a new project](40.png)
 
 Click **Next**.
 
@@ -84,7 +89,7 @@ Call the module `db` and click **Next**.
 
 Flag **Build module after creation** and click **Finish**.
 
-![New DB module](10.png)
+![New DB module](100.png)
 
 [DONE]
 
@@ -194,7 +199,7 @@ Double-click on the node and add all of the fields to the output. Then click on 
 
 Set `ID` as the sequence column, `2` as the value for `k` and click on `+` to add quasi columns:
 
-![Add all fields to output](11.png)
+![Add all fields to output](10.png)
 
 Choose the Country
 

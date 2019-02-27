@@ -2,7 +2,8 @@
 auto_validation: true
 title: Use abapGit to Transform ABAP Source Code to the Cloud
 description: Transform ABAP source code from on-premise SAP system to a SAP Cloud Platform ABAP Environment instance.
-primary_tag: topic>abap-development
+
+primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner,  topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
@@ -18,7 +19,7 @@ time: 15
 ### You will learn  
   - How to create content in an `on-premise` system and push it to `Git` repository
   - How to import the content from `Git` repository into a SAP Cloud Platform ABAP Environment instance
-
+  Please be aware that `abapGIT`, see `https://docs.abapgit.org` for detailed documentation, is an open source project owned by the community. Therefore, SAP does not provide support for `abapGIT` in general. However, SAP takes care of the GIT integration inside SAP Cloud Platform ABAP Environment.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Git repository)]

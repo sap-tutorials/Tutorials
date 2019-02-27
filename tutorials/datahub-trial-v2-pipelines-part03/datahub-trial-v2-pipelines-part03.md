@@ -1,113 +1,118 @@
 ---
-title: Store sensor data in Google Cloud Storage in SAP Data Hub, trial edition 2.3
-description: Use Google Cloud Storage to store sensor data by using SAP Data Hub, trial edition 2.3.
-auto_validation: false
-primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+title: Bundle data (via JavaScript) in SAP Data Hub, trial edition 2.4
+description: Bundle sensor data before storing it in Cloud Storage by using SAP Data Hub, trial edition 2.4.
+primary_tag: products>SAP-data-hub
+auto_validation: true
+tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
+time: 15
 ---
 
 ## Details
 ### You will learn  
-- How to store sensor data in **Google Cloud Storage**
-- How to use the operators **Write File** and **Read File**
+- How to bundle the sensor data before storing in AWS S3 or Google Cloud Storage
+- How to use a **JS String Operator**
 
-Please note that this tutorial is similar to the `Store sensor data in HDFS` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.sap.com/developer/groups/datahub-pipelines.html).
-
-### Time to Complete
-**30 Mins**
+Please note that this tutorial is similar to the `Bundle data (via JavaScript)` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.SAP.com/developer/groups/datahub-pipelines.html).
+Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Collect GCS Details)]
-The SAP Data Hub, trial edition is deployed on Google Cloud Platform. Therefore we will use Google Cloud Storage for storing sensor data. For this purpose we need the following:
+[ACCORDION-BEGIN [Step 1: ](Add JS String Operator)]
 
-- **GCS Bucket Details**
-- **GCS JSON Key**
+Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
-If you don't already have the JSON Key, refer the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide, which contains step-by-step explanation to download the key and get the bucket details.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
-[DONE]
+Remove the connection between the **Data Generator** operator and the **Write File** operator.
 
-[ACCORDION-END]
+Add a **JS String Operator** to the pipeline by drag & drop.
 
-[ACCORDION-BEGIN [Step 2: ](Add and configure Write File Operator)]
-
-Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://sapdatahubtrial/app/pipeline-modeler`).
-
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
-
-Remove the connection between the **Kafka Consumer 2** operator and the `ToString Converter` operator. Now drag and drop **Write File** operator to the existing graph, and connect `message` output port of the `Kafka Consumer2` to the `inFile` input port of the **Write File**
+Connect the `output` port of the **Data Generator** operator to the `input` port of the **JS String Operator**. Connect the `output` port of the **JS String Operator** to the `inFile` port of the **Write File** operator.
 
 ![picture1](datahub-trial-v2-pipelines-part03-1.png)
 
-Configure the **Write File** operator by maintaining the following properties :
-
-|  Field Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     | Value
-|  :------------- | :-------------
-| service  | `GCS`
-| connection | Check the connection specific details after this table
-|  bucket  | Name of the bucket we had earlier noted down
-|  path  | `sensordata/file_<counter>.txt`
-
-To specify connection details you can either utilize the connections established in the Configuration Manager or provide the details manually.
-
-In case you are willing to re-use the Configuration Manager connections, click on the **Connection** input field and select **Configuration Type** as **Configuration Manager** and select the desired connection from the **Connection ID** dropdown box. In case of Manual connection, select the **Configuration Type** as **Manual** and maintain the following properties:
-
-|  Field Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     | Value
-|  :------------- | :-------------
-| `projectID`  | Value of `project_id` from the `key.json` file without the quotes. Example - `xxx-xx-x-xxxx-xx`. Second attribute in the file
-| `KeyFile` | Using the browse button select the `key.json` file from GCS.
-
-The **Write File** operator will write the received data to files in the `/sensordata` directory in the specified GCS bucket. The files follow the scheme `file_<counter>.txt` (where counter is an incremental integer).
-
 [DONE]
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Create JavaScript extension)]
 
-[ACCORDION-BEGIN [Step 3: ](Add and configure Read File Operator)]
-
-Now drag and drop **Read File** operator to the existing graph `(test.myFirstPipeline)`. Then connect `outFile` output port of the **Read File** operator to the `inMessage` input port of the `ToString Converter`
+Right click the JS String Operator and click on **Open Script** to display the JavaScript snippet which is executed by the **JS String Operator**. The JavaScript snippet opens in a new tab.
 
 ![picture2](datahub-trial-v2-pipelines-part03-2.png)
 
-Configure the **Read File** operator by maintaining the following properties :
+Currently the JavaScript snippet creates an incremental **counter** every time it receives data via the input port and sends the **counter** to the output port.
 
-|  Field Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     | Value
-|  :------------- | :-------------
-| service  | `GCS`
-| connection | Use the same method as Read File operator that is described in previous step
-|  bucket  | Name of the bucket we had earlier noted down
-|  path  | `sensordata/`
-|  `only Read On Change`  | true
+Replace the code with the following snippet to ensure that "bundles" of 30 sensor records are sent to the output port.
 
-Afterwards click **Save**.
+```javascript
+
+var counter = 0;
+var bundle = "";
+
+$.setPortCallback("input",onInput);
+
+function onInput(ctx,s) {
+    counter++;
+    bundle = bundle + s;
+
+    if(counter==30) {
+      $.output(bundle);
+      counter = 0;
+      bundle = "";
+    }
+}
+```
+Click the **Save** button at the top of the page to save the script first. Close the tab for the JavaScript snippet. Afterwards click **Save** and save the pipeline. Make sure that you save both the script and the graph.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Execute the data pipeline)]
 
-Click **Run** to execute the pipeline
+[ACCORDION-BEGIN [Step 3: ](Execute the data pipeline)]
 
-When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data.
+Before you execute the pipeline, delete the contents from the `/sensordata/` folder in the GCS or AWS S3 bucket.
+
+Therefore, login to Google Cloud Platform - [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to **GCP Left menu** > **Storage** > **Browser** > **Your Bucket name** > `sensordata` folder. Please keep this window opened as we would be checking the generated files here again in the following steps.
+
+For AWS open [https://s3.console.aws.amazon.com](https://s3.console.aws.amazon.com) and navigate to **Search for Buckets** > **Your Bucket name** > `sensordata` folder. Please keep this window opened as we will check the generated files here again in the following steps.
+
+
+Here you are able to see all the files that were created in previous executions of the pipeline. Click on the **Select All Checkbox (1)** and then click on  **Delete (2)** for GCS.
 
 ![picture3](datahub-trial-v2-pipelines-part03-3.png)
 
-In contrast to the previous tutorial, this time the generated sensor data is not sent from the **Kafka Consumer 2** operator to the **Terminal** operator directly, but via **GCS**. Hence the **Terminal** also shows you information about the created files.
+ For AWS S3 click on the **Select All Checkbox (1)** , click on **Actions (2)** and then click on  **Delete (3)**. Make sure that all the files in the folder are deleted.
 
-Open [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to **GCP Left menu** > **Storage** > **Browser** > **Your Bucket name** > `sensordata folder`. The longer the pipeline runs, the more files you will find there.
+![picture4](datahub-trial-v2-pipelines-part03-5.png)
+
+
+Click **Run** to execute the pipeline.
+
+When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data. You can notice that this time the output is grouped in a chunk of 30 records.
+
+For GCP open [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to the `/sensordata/` directory and for AWS open [https://s3.console.aws.amazon.com](https://s3.console.aws.amazon.com) and navigate to **Search for Buckets** > **Your Bucket name** > `sensordata` folder. You see that the system does not create a file for each single sensor record, but only for each 30 sensor records.
+
+Stop the pipeline by clicking **Stop**.
+
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Check the created files in GCS or AWS S3)]
+
+Login to Google Cloud Platform - [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to **GCP Left menu** > **Storage** > **Browser** > **Your Bucket name** > `sensordata` folder.
+
+For AWS open [https://s3.console.aws.amazon.com](https://s3.console.aws.amazon.com) and navigate to **Search for Buckets** > **Your Bucket name** > `sensordata` folder.
 
 ![picture4](datahub-trial-v2-pipelines-part03-4.png)
 
-Open the output **Terminal**. Copy any row from the output and paste it in the frame below and click on **Validate**.
+You can open any of the generated file by clicking on the filename which opens in a new tab for GCS. For AWS S3 click on the filename and then click on Open.
+
 
 [VALIDATE_1]
-
-Stop the pipeline by clicking **Stop**.
 
 [ACCORDION-END]
 
 ---
-

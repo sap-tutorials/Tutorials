@@ -172,7 +172,7 @@ gcloud components update
 
 ```
 
-You can find the instructions to connect using `PuTTY` or `WinSCP` <a href="https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html" target="new"> in this tutorial </a>.
+You can find the instructions to connect using `PuTTY` or `WinSCP` <a href="https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html" target="new"> in this tutorial </a>.
 
 [ACCORDION-END]
 
