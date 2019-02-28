@@ -2,15 +2,16 @@
 title: Configure Smart Data Integration with the SAP HANA Service
 description: Configure the data provisioning agent and create a remote source.
 auto_validation: true
-time: 35
+time: 25
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
 - You have a productive account in SAP Cloud Platform, a subaccount in Cloud Foundry and a space.
-- You have access to the database cockpit for your SAP HANA service database instance.
-- You have enabled Data Provisioning Server in your SAP HANA service.
+- You have [created an instance of the SAP Cloud Platform, SAP HANA Service](https://developers.sap.com/tutorials/haas-dm-deploying-haas.html)
+- You have [access to the database cockpit for your SAP HANA service database instance](https://developers.sap.com/tutorials/haas-dm-connect-hana-cockpit.html).
+- You have enabled Data Provisioning Server in your SAP HANA service during setup or from the cockpit.
 - You have administration rights in your local computer.
 
 
@@ -20,7 +21,7 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 - How to configure the file adapter to load text files
 - How to create a remote source in SAP HANA using the Database Explorer
 
-This tutorial is based on SAP Cloud Platform, SAP HANA service currently available only in productive accounts.
+>**This tutorial cannot currently be completed with a trial account.**
 
 ---
 
@@ -67,16 +68,9 @@ The Database Explorer will automatically open a SQL console connected to your da
 
 [ACCORDION-BEGIN [Step 2: ](Download and install the Data Provisioning Agent))]
 
-For development purposes, you can install the data provisioning agent on your local computer. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloudintegration), in the **Cloud Integration** tab. Scroll down to **Data Integration Downloads**.
-
-> It is recommended that you uninstall any previous agent before installing this new version.
-
-Download the **SDI Data Provisioning Agent** for your operating system.
-
-![Download SDI](1.png)
+Download the Data Provisioning Agent from [the SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520DP%2520Agent). Choose `SPS3` Patch 52 or higher.
 
 > For more information about installing the Data Provisioning Agent for productive environments check the [documentation in SAP Help](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.3.3/en-US/6634db61aa43435a977b608878e5313f.html)
-
 
 Choose a directory in your file system and use the following command to extract the file into it.
 

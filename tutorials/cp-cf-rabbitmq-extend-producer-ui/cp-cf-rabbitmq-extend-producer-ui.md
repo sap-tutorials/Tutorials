@@ -65,89 +65,88 @@ Replace then entire content of the second `<script>` tag with the following code
 
 
 ```javascript
-sap.ui.getCore().attachInit(function () {
+sap.ui.getCore().attachInit(function() {
   new sap.m.App({
     pages: new sap.m.Page({
-        title: 'Producer',
-        content: new sap.m.IconTabBar({
-          items: [
-            new sap.m.IconTabFilter({
-              text: "Send Messages",
-              key: "send",
-              content:
-                  new sap.m.VBox({
-                    items: [
-                        new sap.m.Label({
-                            text: 'Queue',
-                            width: '100%',
-                        }),
-                        new sap.m.Select({
-                            width: '100%',
-                            items: [
-                              new sap.ui.core.Item({
-                                key: 'Queue_1',
-                                text: 'Queue_1'
-                              }),
-                              new sap.ui.core.Item({
-                                  key: 'Queue_2',
-                                  text: 'Queue_2'
-                              }),
-                              new sap.ui.core.Item({
-                                  key: 'Queue_3',
-                                  text: 'Queue_3'
-                              })
-                            ]
-                        }),
-                        new sap.m.Label({
-                            text: 'Require response',
-                            width: '100%',
-                        }),
-                        new sap.m.Switch({
-                            width: '100%',
-                        }),
-                        new sap.m.Label({
-                            width: '100%',
-                            text: 'Message'
-                        }),
-                        new sap.m.Button({
-                            width: '100%',
-                            text: 'Send',
-                            type: 'Accept'
-                        })
-                    ]
+      title: 'Producer',
+      content: new sap.m.IconTabBar({
+        items: [
+          new sap.m.IconTabFilter({
+            text: "Send Messages",
+            key: "send",
+            content: new sap.m.VBox({
+              items: [
+                new sap.m.Label({
+                  text: 'Queue',
+                  width: '100%',
+                }),
+                new sap.m.Select({
+                  width: '100%',
+                  items: [
+                    new sap.ui.core.Item({
+                      key: 'Queue_1',
+                      text: 'Queue_1'
+                    }),
+                    new sap.ui.core.Item({
+                      key: 'Queue_2',
+                      text: 'Queue_2'
+                    }),
+                    new sap.ui.core.Item({
+                      key: 'Queue_3',
+                      text: 'Queue_3'
+                    })
+                  ]
+                }),
+                new sap.m.Label({
+                  text: 'Require response',
+                  width: '100%',
+                }),
+                new sap.m.Switch({
+                  width: '100%',
+                }),
+                new sap.m.Label({
+                  width: '100%',
+                  text: 'Message'
+                }),
+                new sap.m.Button({
+                  width: '100%',
+                  text: 'Send',
+                  type: 'Accept'
+                })
+              ]
+            }).addStyleClass('sapUiSmallMargin')
+          }),
+          new sap.m.IconTabFilter({
+            text: "Outbox",
+            key: "outbox",
+            content: new sap.m.Table({
+              columns: [
+                new sap.m.Column({
+                  header: new sap.m.Text({
+                    text: 'Queue'
                   })
-              }).addStyleClass('sapUiSmallMargin')
-            }),
-            new sap.m.IconTabFilter({
-              text: "Outbox",
-                key: "outbox",
-              content: new sap.m.Table({
-                columns: [
-                  new sap.m.Column({
-                    header: new sap.m.Text({
-                      text: 'Queue'
-                    })
-                  }),
-                  new sap.m.Column({
-                    header: new sap.m.Text({
-                      text: 'Message'
-                    })
-                  }),
-                  new sap.m.Column({
-                    header: new sap.m.Text({
-                      text: 'Correlation ID'
-                    })
-                  }),
-                  new sap.m.Column({
-                    header: new sap.m.Text({
-                      text: 'Response'
-                    })
+                }),
+                new sap.m.Column({
+                  header: new sap.m.Text({
+                    text: 'Message'
                   })
-                ],
-              })
+                }),
+                new sap.m.Column({
+                  header: new sap.m.Text({
+                    text: 'Correlation ID'
+                  })
+                }),
+                new sap.m.Column({
+                  header: new sap.m.Text({
+                    text: 'Response'
+                  })
+                })
+              ],
             })
-          ]
-        })
+          })
+        ]
+      })
+    })
   }).placeAt('content');
 });
 ```
