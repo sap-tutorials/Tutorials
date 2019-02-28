@@ -1,6 +1,6 @@
 ---
-title: Run the AMDP Profiler
-description: Run the AMDP profiler and analyze the results.
+title: Analyze AMDP Performance
+description: Analyze the runtime performance of AMDPs and the executed SQL statements using the AMDP Profiler in ABAP Development Tools (ADT).
 auto_validation: true
 time: 45
 tags: [ tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform]
@@ -31,7 +31,7 @@ For more details, see:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Install the Flight Reference Scenario using `abapGit`)]
+[ACCORDION-BEGIN [Step 1: ](Install the Flight Reference Scenario using abapGit)]
 1. Create the package `/DMO/FLIGHT` as a sub-package under the package `/DMO/SAP` (keep the default values). **IMPORTANT:** Make sure that the software component is also `/DMO/SAP`.
 
 2. Open the `abapGit` view by choosing **Window > Show View > Other... >  `abapGit` Repositories**. Make sure you have the correct ABAP Cloud Project marked (See the little headline in the `abapGit` view for the current project.)
@@ -49,7 +49,7 @@ For more details, see:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an ABAP package in `/DMO/SAP`)]
+[ACCORDION-BEGIN [Step 2: ](Create an ABAP package in /DMO/SAP)]
 One of the restrictions of the ABAP Environment on SAP Cloud Platform is that you can only use other objects if they are released objects (whitelisted) or in the same software component.
  Since you will be using objects in the `/DMO/SAP` software component, you need to create your package in `/DMO/SAP`.
 
@@ -83,7 +83,7 @@ One of the restrictions of the ABAP Environment on SAP Cloud Platform is that yo
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add interfaces)]
+[ACCORDION-BEGIN [Step 4: ](Add two interfaces)]
 Add two interfaces by adding this code to the public section.
 
 - **`if_amdp_marker_hdb`** defines the class as an AMDP class, allowing you to implement AMDP methods - that is, ABAP methods that call a SAP HANA database procedure from within a global ABAP class.
@@ -155,7 +155,7 @@ Both of these are AMDP methods.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement `get_flights`)]
+[ACCORDION-BEGIN [Step 7: ](Implement get_flights)]
 1. In the class definition, select any one of the methods and choose **Add 3 unimplemented methods**. All three (empty) implementations will appear in the class implementation.
 
     ![Image depicting step7-implement-3-methods](step7-implement-3-methods.png)
@@ -238,7 +238,7 @@ Both of these are AMDP methods.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Implement the method `convert_currency`)]
+[ACCORDION-BEGIN [Step 8: ](Implement the method convert_currency)]
 Similarly, implement the `convert_currency` method.
 
 ```ABAP
@@ -278,7 +278,7 @@ ENDMETHOD.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Implement the method `main` of the interface `if_oo_adt_classrun`)]
+[ACCORDION-BEGIN [Step 9: ](Implement the method `main` of the interface if_oo_adt_classrun)]
 Finally, implement the `main` method of the interface `if_oo_adt_classrun`. This will allow you to output your results to the ABAP Console.
 
 1. Call the method `get_flights` from the current instance of the class:
@@ -509,7 +509,10 @@ ENDCLASS.
 5. Optional: To navigate to the relevant position within your ABAP source code, double-click the corresponding statement.
 The development object is then opened and the cursor is positioned at the relevant position.
 
-You can now analyze the results of your AMDP profiling. For more details, see [AMDP Profiling](https://help.sap.com/viewer/090a7cb96c1f45428741601c5c520be8/Cloud/en-US/4c247e2ad0624f7a84f361e1324da447.html)
+You can now analyze the results of your AMDP profiling. For more details, see:
+- [AMDP Profiling](https://help.sap.com/viewer/090a7cb96c1f45428741601c5c520be8/Cloud/en-US/4c247e2ad0624f7a84f361e1324da447.html)
+- [Understanding AMDP Profiling Results](https://help.sap.com/viewer/090a7cb96c1f45428741601c5c520be8/Cloud/en-US/c23737f7787044488bcb664e7ac44a54.html)
+
 
 [DONE]
 [ACCORDION-END]
