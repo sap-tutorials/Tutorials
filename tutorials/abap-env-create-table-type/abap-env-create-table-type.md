@@ -1,16 +1,16 @@
 ---
 title: Create an ABAP Table Type
-description: Create a table type and use it to retrieve data from a database table
+description: Create a table type and use it to retrieve data from a database table.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform]
 primary_tag: topic>abap-development
 ---
 ## Prerequisites
-- You have a sub-account with the entitlement SAP Cloud Platform, ABAP environment, release 1902 or higher. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html)
-- You have installed [ABAP Development Tools 3.0](https://tools.hana.ondemand.com/#abap)
-- You have created an ABAP Cloud Project pointing to this ABAP environment. For more details, see  [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
-- **Tutorial**: [Create a Simple Database Table for ABAP Environment](https://developers.sap.com/tutorials/abap-environment-create-table.html)
+- You have a sub-account with the entitlement SAP Cloud Platform, ABAP environment, release 1902 or higher. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html).
+- You have installed [ABAP Development Tools 3.0](https://tools.hana.ondemand.com/#abap).
+- You have created an ABAP Cloud Project pointing to this ABAP environment. For more details, see  [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html).
+- **Tutorial**: [Create a Simple Database Table for ABAP Environment](abap-environment-create-table)
 
 ## Details
 ### You will learn
@@ -101,7 +101,7 @@ The keys are listed on the left:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create an ABAP class)]
-Finally, you will test your table type by using it to
+Finally, you will test your table type by using it to:
 
 - define an internal table
 - get database data into this table
