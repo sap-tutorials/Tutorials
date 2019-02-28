@@ -15,17 +15,13 @@ time: 10
 ### You will learn
   - How to connect the SAP Mobile Cards application to your SAP Cloud Platform Mobile Services
 
-> Before you start, make sure you have:
-
-> - Created a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account) for more information.
-> - Enabled SAP Cloud Platform Mobile Services. See [Enable SAP Cloud Platform mobile Services](fiori-ios-hcpms-setup) for more information.
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Understand the SAP Mobile Cards feature)]
 
-SAP Mobile Cards is a feature within SAP Cloud Platform Mobile Services which provides our customers access to a micro application platform to publish data into a consumer grade wallet or passbook style app. It allows companies to quickly create simple, yet highly valuable quick win apps.
-You can find more details [here](https://developers.sap.com/topics/mobile-cards.html).
+SAP Mobile Cards is a feature within SAP Cloud Platform Mobile Services which provides our customers access to a micro application platform to publish data into a consumer grade wallet or passbook-style app. It allows companies to quickly create simple, yet highly valuable quick-win apps.
+
+You can find more details in the [SAP Mobile Cards developer page](https://developers.sap.com/topics/mobile-cards.html).
 
 ![MobileCards](Markdown_files/MobileCards.png)
 
@@ -34,9 +30,7 @@ You can find more details [here](https://developers.sap.com/topics/mobile-cards.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 2: ](Log into Mobile Services cockpit)]
 
-Make sure that you have completed Prerequisites.
-
-Go to [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html "") and Click **Login**.
+Go to [https://cloudplatform.sap.com/index.html](https://cloudplatform.sap.com/index.html "") and click **Login**.
 
 ![MobileCards](Markdown_files/img_0.png)
 
@@ -44,7 +38,7 @@ Enter your SAP Cloud Platform account credentials and click **Log On**.
 
 ![MobileCards](Markdown_files/img_000.png)
 
-Click **Neo Trial** to navigate into SAP Cloud Platform Cockpit.
+Click **Neo Trial** to navigate into SAP Cloud Platform cockpit.
 
 ![MobileCards](Markdown_files/img_001.png)
 
@@ -64,7 +58,7 @@ Click **Go to Service** to open the SAP Cloud Platform Mobile Services Cockpit.
 
 ![MobileCards](Markdown_files/img_006.png)
 
-Click **Close** option to close this information window.
+Click **Close** to close this information window.
 
 ![MobileCards](Markdown_files/img_007.png)
 
@@ -73,7 +67,7 @@ Click **Close** option to close this information window.
 
 [ACCORDION-BEGIN [Step 3: ](Get familiar with default configuration)]
 
-Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
+Navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
 
 ![MobileCards](Markdown_files/img_009.png)
 
@@ -85,7 +79,7 @@ Click **Connectivity** to look into destination endpoints, where you can create 
 
 ![MobileCards](Markdown_files/img_011.png)
 
-Below is a list of destinations from which the SAP Mobile Cards service can fetch data. For this tutorial, the `SAPCPMobileServices` destination is used. Important is that all destinations are only pointing to the root of the service.
+Below is a list of destinations from which the SAP Mobile Cards service can fetch data. For this tutorial, the `SAPCPMobileServices` destination is used. It's important that all destinations are only pointing to the root of the service.
 
 ![MobileCards](Markdown_files/img_012.png)
 
@@ -96,11 +90,13 @@ Click **SAP Mobile Cards** navigation bar to go back to Mobile Cards admin page.
 
 [ACCORDION-BEGIN [Step 4: ](Configure SAP Mobile Cards client)]
 
-Follow the next steps to trigger the configuration of the SAP Mobile Cards client with this SAP Cloud Platform account. Click **APIs**.
+Follow the next steps to trigger the configuration of the SAP Mobile Cards client with this SAP Cloud Platform account.
+
+Click **APIs**.
 
 ![MobileCards](Markdown_files/img_014.png)
 
-Open your Phone camera app and For this start scanning the QR code as shown below. For Android device, look for a QR code scanning app and scan with the same.
+Open your phone camera app and start scanning the QR code, as shown below. For Android devices, look for a QR code scanning app and scan with the same.
 
 ![MobileCards](Markdown_files/img_015.png)
 
