@@ -231,7 +231,7 @@ Press **Enter** and quit the configuration tool.
 
 [ACCORDION-BEGIN [Step 5: ](Prepare a file for upload)]
 
-Download [this sample file](file.csv) into the default workspace.
+Download [this sample file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-connect-sdi/salarydata.csv) into the default workspace.
 
 The default workspace is located in `<<ROOT DIRECTORY>>\workspace`, for example, `\usr\sap\dpa\workspace` .
 
