@@ -134,7 +134,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1
+sudo docker pull store/saplabs/hanaexpressxsa:2.00.035.00.20190223.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -261,7 +261,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 \
+store/saplabs/hanaexpressxsa:2.00.035.00.20190223.1 \
 --agree-to-sap-license \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --proxy-host <proxy_hostname> \
@@ -281,7 +281,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 \
+store/saplabs/hanaexpressxsa:2.00.035.00.20190223.1 \
 --agree-to-sap-license \
 --passwords-url file:///hana/password.json \
 --proxy-host <proxy_hostname> \
@@ -461,7 +461,7 @@ Follow the prompts to complete the server update.
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpressxsa` command.
 
 ```
-docker run store/saplabs/hanaexpressxsa:2.00.035.00.20190115.1 -h
+docker run store/saplabs/hanaexpressxsa:2.00.035.00.20190223.1 -h
 usage: [options]
 
 --dont-check-consistency           Skip consistency check between mount points
