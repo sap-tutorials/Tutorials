@@ -699,7 +699,7 @@ Enter **`apriori_result_collaborative.hdbprocedure`** as the file name, then cli
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/apl/procedures/apriori_result_collaborative.hdbprocedure
+movielens/db/src/hdb/pal/procedures/apriori_result_collaborative.hdbprocedure
 ```
 
 Paste the following content:
@@ -747,7 +747,7 @@ Enter **`apriori_result_contentbased.hdbprocedure`** as the file name, then clic
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/apl/procedures/apriori_result_contentbased.hdbprocedure
+movielens/db/src/hdb/pal/procedures/apriori_result_contentbased.hdbprocedure
 ```
 
 Paste the following content:
