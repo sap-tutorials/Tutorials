@@ -1,22 +1,21 @@
 ---
 title: Download Using the Download Manager (GUI Mode)
 description: Use the Download Manager (GUI mode) to download a server-only virtual machine package, or a server + applications virtual machine package.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 2
 ---
 
 <!-- loiof14d821d2ac14186bbf202586056e1d2 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Register](http://developers.sap.com/tutorials/hxe-ua-register.html)
+ - **Tutorials:** You have completed [Register](https://developers.sap.com/tutorials/hxe-ua-register.html)
 
 ## Details
 ### You will learn
 You will learn how to download installation packages using the GUI mode Download Manager
-
-### Time to Complete
-2 min
 
 ---
 
