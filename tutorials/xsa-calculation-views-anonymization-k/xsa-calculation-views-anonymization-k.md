@@ -25,7 +25,7 @@ time: 20
 [ACCORDION-BEGIN [Step 1: ](Check pre-requisites)]
 
 ### Map a space to your tenant
-Make sure your project is using a space that is mapped to a tenant. Here is how to [how to map it to a tenant database](https://sap.com/developer/tutorials/xsa-tenant-db-space.html).
+Make sure your project is using a space that is mapped to a tenant. Here is how to [how to map it to a tenant database](https://developers.sap.com/tutorials/xsa-tenant-db-space.html).
 
 ### Start the script server in your tenant database
 If you have not already, log in to your System database as SYSTEM and execute the following statement. In HANA express, as `hxeadm`
