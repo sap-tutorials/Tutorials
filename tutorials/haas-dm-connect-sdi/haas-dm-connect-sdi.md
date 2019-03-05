@@ -68,16 +68,9 @@ The Database Explorer will automatically open a SQL console connected to your da
 
 [ACCORDION-BEGIN [Step 2: ](Download and install the Data Provisioning Agent))]
 
-For development purposes, you can install the data provisioning agent on your local computer. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloudintegration), in the **Cloud Integration** tab. Scroll down to **Data Integration Downloads**.
-
-> It is recommended that you uninstall any previous agent before installing this new version.
-
-Download the **SDI Data Provisioning Agent** for your operating system.
-
-![Download SDI](1.png)
+Download the Data Provisioning Agent from [the SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520DP%2520Agent). Choose `SPS3` Patch 52 or higher.
 
 > For more information about installing the Data Provisioning Agent for productive environments check the [documentation in SAP Help](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.3.3/en-US/6634db61aa43435a977b608878e5313f.html)
-
 
 Choose a directory in your file system and use the following command to extract the file into it.
 
@@ -238,7 +231,7 @@ Press **Enter** and quit the configuration tool.
 
 [ACCORDION-BEGIN [Step 5: ](Prepare a file for upload)]
 
-Download [this sample file](file.csv) into the default workspace.
+Download [this sample file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-connect-sdi/salarydata.csv) into the default workspace.
 
 The default workspace is located in `<<ROOT DIRECTORY>>\workspace`, for example, `\usr\sap\dpa\workspace` .
 

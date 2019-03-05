@@ -94,6 +94,7 @@ Execute the following statement to complete the validation below.
 
 ![HaaS SQL Console](12.png)
 
+
 [VALIDATE_1]
 [ACCORDION-END]
 

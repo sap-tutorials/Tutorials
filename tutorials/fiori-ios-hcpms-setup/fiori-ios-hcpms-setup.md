@@ -3,16 +3,17 @@ title: Enable SAP Cloud Platform Mobile Services
 description: Learn how to enable SAP Cloud Platform Mobile Services within a trial SAP Cloud Platform account and how to open the Mobile Services cockpit.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards ]
 time: 5
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
  - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](hcp-create-trial-account.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will enable SAP Cloud Platform Mobile Services in your NEO trial account.  Once it is enabled, you can use the features of Mobile Services in your SAP Cloud Platform SDK for iOS and Android apps.
-
+In this tutorial, you will enable SAP Cloud Platform Mobile Services in your NEO trial account.  Once it is enabled, you can use the features of Mobile Services in your SAP Cloud Platform SDK for iOS, Android and Mobile Cards apps.
 
 ---
 
@@ -33,26 +34,18 @@ From the SAP Cloud Platform Cockpit page, click **Services** in the navigation b
 
 ![Mobile Group](mobile-group.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Enable Mobile Services)]
-
-If **Mobile Services** is not enabled, click the blue **Enable** button and wait a few seconds until the green **Enabled** badge appears.
-
-![Enable Mobile Services](fiori-ios-hcpms-setup-01.png)
+If **Mobile Services** is not enabled, then enable it.
 
 [VALIDATE_3]
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open the Management Cockpit)]
+[ACCORDION-BEGIN [Step 4: ](Open the Mobile Services Cockpit)]
 
-Click on **Go to Service** to open the Mobile Services Management Cockpit.
+Click on **Go to Service** to open the Mobile Services Cockpit.
 
 ![Go to Service](go-to-service.png)
 
-![Management Cockpit](management-cockpit.png)
+![Mobile Services Cockpit](management-cockpit.png)
 
 [DONE]
 [ACCORDION-END]
