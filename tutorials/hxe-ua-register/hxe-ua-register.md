@@ -1,22 +1,21 @@
 ---
 title: Register
 description: Register your copy of SAP HANA, express edition to access the download manager.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 2
 ---
 
 <!-- loio05993a86616940d5a3eb52589d1aa834 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:** You have completed [Pre-installation Tasks](http://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html)
 
 ## Details
 ### You will learn
 You will learn how to register for the product, and access the download manager.
-
-### Time to Complete
-2 min
 
 ---
 
