@@ -471,7 +471,7 @@ from (
                 , rules.kxnodesecond   as antecedent
                 , rules.kxnodesecond_2 as consequent
                 , rules.weight         as support
-              from "aa.movielens.db.hdb::data.ratings" spacein
+              from "aa.movielens.db.data::ratings" spacein
               left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
               left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond)
               left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond_2  = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid)
@@ -488,7 +488,7 @@ from (
                 , rules.kxnodesecond_2 as antecedent
                 , rules.kxnodesecond   as consequent
                 , rules.weight         as support
-              from "aa.movielens.db.hdb::data.ratings" spacein
+              from "aa.movielens.db.data::ratings" spacein
               left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
               left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond_2)
               left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid)
@@ -500,14 +500,14 @@ from (
       ) t1 group by t1.userid,  t1.consequent
   ) t1
 ) t1
-left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.movieid
-left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.movieid
+left outer join "aa.movielens.db.data::movies" movies on movies.movieid = t1.movieid
+left outer join "aa.movielens.db.data::links"  links  on links.movieid  = t1.movieid
 where rank <= 5;
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
 
-As you can notice, the view use both the model generated links (**`aa.movielens.db.hdb.apl::recommendation.model_links`**) and the initial dataset (**`aa.movielens.db.hdb::data.ratings`**).
+As you can notice, the view use both the model generated links (**`aa.movielens.db.hdb.apl::recommendation.model_links`**) and the initial dataset (**`aa.movielens.db.data::ratings`**).
 
 Off course, this model is for demonstration purpose and very specific to the initial purpose of this tutorial series, which is to give you a quick tour of the algorithm and may not be applicable as-is to other use cases or dataset.
 
@@ -577,8 +577,8 @@ from (
       ) t1 group by t1.movieid, t1.consequent
   ) t1
 ) t1
-left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.similar_movie
-left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.similar_movie
+left outer join "aa.movielens.db.data::movies" movies on movies.movieid = t1.similar_movie
+left outer join "aa.movielens.db.data::links"  links  on links.movieid  = t1.similar_movie
 where rank <= 5;
 ```
 
@@ -646,7 +646,7 @@ call "aa.movielens.db.hdb.apl.afllang::recommendation"(
   "aa.movielens.db.hdb.apl::recommendation.function_header",
   "aa.movielens.db.hdb.apl::recommendation.operation_config",
   "aa.movielens.db.hdb.apl::recommendation.variable_descs",
-  "aa.movielens.db.hdb::data.ratings",
+  "aa.movielens.db.data::ratings",
   "aa.movielens.db.hdb.apl::recommendation.model",
   "aa.movielens.db.hdb.apl::recommendation.model_node_user",
   "aa.movielens.db.hdb.apl::recommendation.model_node_movie",
@@ -725,7 +725,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 select
     count(1) as movie_count
-  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies") as movie_ratio
+  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.data::movies") as movie_ratio
 from (
   select movieid
   from "aa.movielens.db.hdb.apl.views::recommendation_collaborative"
@@ -738,7 +738,7 @@ Let's verify how many distinct movies will potentially get recommended to a user
 ```SQL
 select
     count(1) as movie_count
-  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies") as movie_ratio
+  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.data::movies") as movie_ratio
 from (
     select movieid
     from (
@@ -778,7 +778,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 select
     count(1) as movie_count
-  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.data::movies" ) as movie_ratio
 from (
   select movieid
   from "aa.movielens.db.hdb.apl.views::recommendation_contentbased"
@@ -794,7 +794,7 @@ Let's verify how many rating does the movies with no recommendation have using t
 select rating_count, count(1) as movie_count
 from (
   select ratings.movieid, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings" ratings
+  from "aa.movielens.db.data::ratings" ratings
   left outer join (
     select movieid
     from (
