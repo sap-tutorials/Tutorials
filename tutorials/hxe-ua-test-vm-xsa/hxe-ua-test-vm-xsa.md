@@ -11,11 +11,11 @@ time: 10
 <!-- loio0377017816dc46b09db7b2e13bfabc0a -->
 
 ## Prerequisites
- - **Tutorials:** You have completed [Edit the Hosts File](http://developers.sap.com/tutorials/hxe-ua-hosts.html)
+ - **Tutorials:** You have completed [Edit the Hosts File](https://developers.sap.com/tutorials/hxe-ua-hosts.html)
 
 ## Details
 ### You will learn
-  - How to connect to the server from applications, and check if the applications installed correctly
+You'll learn how to connect to the server from applications, and check if the applications installed correctly.
 
 ---
 
@@ -80,7 +80,7 @@ xs start messaging-service-broker
 
 4.   For *HANA Username*, enter `XSA_DEV`.
 
-    You specified this password when you were prompted for `HANA database master password` in [Start SAP HANA, express edition Server](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm-xsa.html).
+    You specified this password when you were prompted for `HANA database master password` in [Start SAP HANA, express edition Server](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm-xsa.html).
 
     Web IDE displays.![loioc06ad641e44240b99da7bd10cd275377_LowRes](loioc06ad641e44240b99da7bd10cd275377_LowRes.png)
 
