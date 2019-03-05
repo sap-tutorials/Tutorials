@@ -342,20 +342,20 @@ from (
       input_data.userid,
       rules.postrule as consequent,
       max(rules.confidence) as score
-    from "aa.movielens.db.hdb::data.ratings" as input_data
+    from "aa.movielens.db.data::ratings" as input_data
     left outer join "aa.movielens.db.hdb.pal::apriori.rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
     where rules.postrule is not null
     group by input_data.userid, rules.postrule
   ) t1
 ) t1
-left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.movieid
-left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.movieid
+left outer join "aa.movielens.db.data::movies" movies on movies.movieid = t1.movieid
+left outer join "aa.movielens.db.data::links"  links  on links.movieid  = t1.movieid
 where t1.rank <= 5;
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
 
-As you can notice, the view use both the model generated links (`aa.movielens.db.hdb.pal::apriori.result_rules`) and the initial dataset (`aa.movielens.db.hdb::data.ratings`).
+As you can notice, the view use both the model generated links (`aa.movielens.db.hdb.pal::apriori.result_rules`) and the initial dataset (`aa.movielens.db.data::ratings`).
 
 Off course, this model is for demonstration purpose and very specific to the initial purpose of this tutorial series, which is to give you a quick tour of the algorithm and may not be applicable as-is to other use cases or dataset.
 
@@ -391,13 +391,13 @@ from (
     , t1.score
   from (
     select movieid, rules.postrule as consequent, rules.confidence as score
-    from "aa.movielens.db.hdb::data.movies" as input_data
+    from "aa.movielens.db.data::movies" as input_data
     left outer join "aa.movielens.db.hdb.pal::apriori.rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
     where rules.postrule is not null
   ) t1
 ) t1
-left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.similar_movie
-left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.similar_movie
+left outer join "aa.movielens.db.data::movies" movies on movies.movieid = t1.similar_movie
+left outer join "aa.movielens.db.data::links"  links  on links.movieid  = t1.similar_movie
 where t1.rank <= 5;
 ```
 
@@ -484,7 +484,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 select
     count(1) as movie_count
-  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+  , count(1) *100 / (select count(1) as count from "aa.movielens.db.data::movies" ) as movie_ratio
 from (
   select movieid
   from "aa.movielens.db.hdb.pal.views::apriori_collaborative"
@@ -497,7 +497,7 @@ Let's verify how many distinct movies will potentially get recommended to a user
 ```SQL
 select
     count(1) as movie_count
-  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+  , count(1) *100 / (select count(1) as count from "aa.movielens.db.data::movies" ) as movie_ratio
 from (
   select prerule as movieid
   from "aa.movielens.db.hdb.pal::apriori.rules"
@@ -538,7 +538,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 select
     count(1) as movie_count
-  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+  , count(1) *100 / (select count(1) as count from "aa.movielens.db.data::movies" ) as movie_ratio
 from (
   select movieid
   from "aa.movielens.db.hdb.pal.views::apriori_contentbased"
@@ -554,7 +554,7 @@ Let's verify how many rating does the movies with no recommendation have using t
 select rating_count, count(1) as movie_count
 from (
   select ratings.movieid, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings" ratings
+  from "aa.movielens.db.data::ratings" ratings
   left outer join (
     select movieid
     from (
