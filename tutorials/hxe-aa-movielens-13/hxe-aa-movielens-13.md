@@ -147,7 +147,7 @@ Paste the following content:
 
 ```xml
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui">
-  <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" rows="{ path: 'results>/items'}">
+  <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" rows="{ path: 'results>/items'}">
     <ui:columns>
       <ui:table.Column sortProperty="MOVIEID" width="10%">
         <Label text="Movie ID"/>
@@ -201,7 +201,7 @@ Paste the following content:
 
 ```xml
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui">
-  <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" rows="{ path: 'results>/items'}">
+  <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" rows="{ path: 'results>/items'}">
     <ui:columns>
       <ui:table.Column sortProperty="SIMILAR_MOVIE" width="10%">
         <Label text="Similar Movie ID"/>
@@ -294,8 +294,7 @@ Paste the following content:
           </ui:layout.form.FormElement>
           <ui:layout.form.FormElement label="Minimum Support">
             <ui:fields>
-              <Input type="Number" value="{config>/services/apl_recommendation/execute/data/MINIMUMSUPPORT}" placeholder="Enter an id" step="0.01" min="0"
-                max="1" enableTickmarks="true" inputsAsTooltips="true"/>
+              <Input type="Number" value="{config>/services/apl_recommendation/execute/data/MINIMUMSUPPORT}" placeholder="Enter an id"/>
             </ui:fields>
           </ui:layout.form.FormElement>
         </ui:formElements>
@@ -659,7 +658,7 @@ Paste the following content:
 ```xml
 <mvc:View xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:ui="sap.ui"
   controllerName="movielens.html.controller.xsjs.execute">
-  <Page showHeader="false" press="onNavMenuItemPress" icon="sap-icon://menu" id="master">
+  <Page showHeader="false" icon="sap-icon://menu" id="master">
     <content>
       <Bar>
         <contentMiddle>
@@ -698,7 +697,7 @@ Paste the following content:
 ```xml
 <mvc:View xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:ui="sap.ui"
   controllerName="movielens.html.controller.xsjs.execute">
-  <Page showHeader="false" press="onNavMenuItemPress" icon="sap-icon://menu" id="master">
+  <Page showHeader="false" icon="sap-icon://menu" id="master">
     <content>
       <Bar>
         <contentMiddle>
