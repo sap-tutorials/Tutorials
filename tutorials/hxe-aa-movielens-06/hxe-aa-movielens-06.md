@@ -168,7 +168,7 @@ Paste the following content:
 ```JavaScript
 namespace aa.movielens.db.hdb.pal;
 
-using aa.movielens.db.hdb :: data.ratings;
+using "aa.movielens.db.data::ratings" as ratings;
 
 context apriori {
     entity parameter {
