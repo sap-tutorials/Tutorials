@@ -3,7 +3,7 @@ title: Create a New Welcome Card
 description: Create your own Welcome card in the SAP Cloud Platform Mobile Services.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards ]
+tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards  ]
 time: 5
 ---
 ## Prerequisites
