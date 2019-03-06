@@ -1,18 +1,16 @@
 ---
 title: Subscribe to Hyperledger Fabric Chaincode Events
-description: Learn how to subscribe to events that are emitted by Hyperledger Fabric chaincodes.
+description: Emit chaincode events and subscribe to them using a NodeJS application.
 time: 20
 auto_validation: true
 tags: [ tutorial>intermediate, topic>blockchain, products>sap-cloud-platform, topic>cloud]
 primary_tag: topic>blockchain
-author_name: Dennis Kuhnert
-author_profile: https://github.com/kyroy
 ---
 
 ## Details
 ### You will learn
-  - About Hyperledger Fabric chaincode events, including how they can be emitted in your chaincode.
-  - How to subscribe to chaincode events using the SAP API Hub.
+  - About Hyperledger Fabric chaincode events, including how they can be emitted in your chaincode
+  - How to subscribe to chaincode events using the SAP API Hub
 
 ---
 
@@ -34,7 +32,7 @@ if err := stub.SetEvent("event-name", []byte("payload")); err != nil {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Event to the Example Chaincode)]
+[ACCORDION-BEGIN [Step 2: ](Add event to the example chaincode)]
 
   1. In the **Chaincode** area of the channel dashboard, click on **Example Chaincodes** and select **Hello World** when prompted.
 
