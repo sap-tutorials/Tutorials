@@ -1,7 +1,6 @@
 ---
 title: Explore food using Advanced Analytics
 description: Use predictive and advanced analytics to gain insights on commercial food items
-auto_validation: false
 time: 45
 tags: [ tutorial>beginner, products>sap-hana]
 primary_tag: products>sap-hana

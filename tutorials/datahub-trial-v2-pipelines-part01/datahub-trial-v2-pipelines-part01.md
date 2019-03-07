@@ -2,7 +2,6 @@
 title: Generate sensor data in SAP Data Hub, trial edition 2.4
 description: Generate sensor data and display it in a terminal by using SAP Data Hub, trial edition 2.4.
 primary_tag: products>sap-data-hub
-auto_validation: true
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 time: 15
 ---
