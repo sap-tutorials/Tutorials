@@ -1,5 +1,5 @@
 ---
-title: Create a Destination for the Northwind OData Services
+title: Create a Destination for the Northwind OData Services in the Neo Environment
 description: Create a destination within the SAP Cloud Platform Connectivity service to allow access to the Northwind OData services.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
@@ -9,7 +9,7 @@ time: 5
 
 ## Details
 ### You will learn
-- How to configure a basic destination
+- How to configure a basic destination in the Neo environment
 - What some of the Web IDE specific properties are
 - How to specify the Web IDE usage parameter for a generic OData service
 
