@@ -3,8 +3,8 @@ title: Create an ABAP Table Type
 description: Create a table type and use it to retrieve data from a database table.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform]
-primary_tag: topic>abap-development
+primary_tag: products>sap-cloud-platform--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 ---
 ## Prerequisites
 - You have a sub-account with the entitlement SAP Cloud Platform, ABAP environment, release 1902 or higher. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html).
@@ -50,7 +50,7 @@ Choose the category **Dictionary Type** For the type name, choose the database t
 
 ![Image depicting step2-define-type](step2-define-type.png)
 
-> In the ABAP Environment, you can only work with whitelisted objects. The majority of tables you might expect, such as `SFLIGHT` are not whitelisted. For a complete list of whitelisted objects, see the folder **Released Objects**. To sort objects by object type, not package, use a Duplicate Tree:
+Note that, in the ABAP Environment, you can only work with whitelisted objects. The majority of tables you might expect, such as `SFLIGHT` are not whitelisted. For a complete list of whitelisted objects, see the folder **Released Objects**. To sort objects by object type, not package, use a Duplicate Tree:
 
 ![Image depicting step2b-released-objects](step2b-released-objects.png)
 
@@ -75,9 +75,11 @@ Choose the category **Dictionary Type** For the type name, choose the database t
     ![Image depicting step3d-choose-key-comps](step3d-choose-key-comps.png)
 
 
-> This is for test purposes only. The access type you choose in real life affects performance. For more information, see:
-- [ABAP Keyword Documentation: Internal Tables, Selection of Table Category](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abenitab_kind.htm)
-- [ABAP Examples: Internal Tables, Key Accesses](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abenitab_kind.htm)
+This is for test purposes only. The access type you choose in real life affects performance. For more information, see:
+
+  - [ABAP Keyword Documentation: Internal Tables, Selection of Table Category](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abenitab_kind.htm)
+
+  - [ABAP Examples: Internal Tables, Key Accesses](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abenitab_kind.htm)
 
 [DONE]
 [ACCORDION-END]
