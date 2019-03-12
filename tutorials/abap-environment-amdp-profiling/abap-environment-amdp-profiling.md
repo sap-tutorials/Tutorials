@@ -3,8 +3,8 @@ title: Analyze AMDP Performance
 description: Analyze the runtime performance of AMDPs and the executed SQL statements using the AMDP Profiler in ABAP Development Tools (ADT).
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform]
-primary_tag: topic>abap-development
+primary_tag: products>sap-cloud-platform--abap-environment
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -24,8 +24,8 @@ primary_tag: topic>abap-development
 Throughout this tutorial, objects name include the suffix `XXX`. Always replace this with your group number or initials.
 
 You should be familiar with ABAP Managed Database Procedures (AMDP). Briefly, AMDP allows you to optimize your ABAP code (for ABAP on SAP HANA) by calling HANA database procedures from a global ABAP class.
-
 For more details, see:
+
 - [SAP Help Portal: ABAP Managed Database Procedures (AMDP)](https://help.sap.com/viewer/6811c09434084fd1bc4f40e66913ce11/7.52.0/en-US/3e7ce62892d243eca44499d3f5a54bff.html)
 - [ABAP Keyword Documentation: AMDP - ABAP Managed Database Procedures](https://help.sap.com/doc/abapdocu_753_index_htm/7.53/en-US/index.htm?file=abenamdp.htm)
 
@@ -75,8 +75,8 @@ One of the restrictions of the ABAP Environment on SAP Cloud Platform is that yo
 1. Again, from the context menu  of your package, choose **New > ABAP Class**.
 
 2. Enter a name and description, then choose **Next**. Make sure that you prefix the class name with `/DMO/`, for example:
-    - `/DMO/ZCL_AMDP_DEMO_XXX`
-    - AMDP Demo w Flight ref
+    - Name: `/DMO/ZCL_AMDP_DEMO_XXX`
+    - Description: AMDP Demo w Flight ref
 
 3. Assign the transport request and choose **Finish**.
 
@@ -520,10 +520,12 @@ You can now analyze the results of your AMDP profiling. For more details, see:
 [ACCORDION-BEGIN [Step 14: ](Test yourself)]
 Define an AMDP method `get_sales_orders` (based on the AMDP method `get_flights`).
 Specify the options:
+
 - Database = SAP HANA
 - Language = SQLScript
 - Options = read-only
-- Objects used = `snwd_so, snwd_so_i`, and the method `create_sales_order` of the class `zcl_demo`.
+- Objects used = `snwd_so, snwd_so_i`, and the method `read_sales_orders` of the class `zcl_demo`.
+
 Do not indent your code.
 
 Enter your code in the box below and choose **Submit Answer.**
