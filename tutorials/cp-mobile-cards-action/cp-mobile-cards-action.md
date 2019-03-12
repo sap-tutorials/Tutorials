@@ -3,7 +3,7 @@ title: Create Cards with Actions (Like Approve Or Reject)
 description: Implement actions within an SAP Mobile Card, like approve or reject.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards ]
+tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards  ]
 time: 20
 ---
 
