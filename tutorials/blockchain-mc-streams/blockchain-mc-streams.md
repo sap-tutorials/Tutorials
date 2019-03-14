@@ -58,7 +58,7 @@ An overview of available MultiChain streams is displayed. Every MultiChain Node 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Creating and managing MultiChain service keys)]
+[ACCORDION-BEGIN [Step 2: ](Create and manage MultiChain service keys)]
 
 Service keys for your MultiChain node provide you with the information to access the node. These can be created in your instance view in the SAP Cloud Platform Cockpit.
 
@@ -144,7 +144,7 @@ If the call is successful, you get back the MultiChain transaction ID for this a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Monitor MultiChain stream in the dashboard)]
+[ACCORDION-BEGIN [Step 6: ](Monitor MultiChain stream in dashboard)]
 
 The result can also verified on the MultiChain dashboard. Return to your MultiChain dashboard on SAP Cloud Platform and refresh your detail screen for the root stream.
 
@@ -155,7 +155,7 @@ You see `myKey` has an entry with value `Hello World`. The text is embedded in a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Read from a MultiChain Stream)]
+[ACCORDION-BEGIN [Step 10: ](Read from a MultiChain stream)]
 
 In this example we will use the `json-rpc` command `liststreamkeyitems` to read the value for a key. Use the RPC command with the following parameters:
 
