@@ -1,20 +1,18 @@
 ---
-title: Learn about Managed Associations with Core Data Services
-description: Core Data Services (CDS) used in the SAP Cloud Application Programming Model supports managed associations and you get your hands on to explore how it works.
+title: Add Managed Associations with Core Data Services
+description: Add a managed association with Core Data Services (CDS) within the SAP Cloud Application Programming Model.
 primary_tag: topic>java
 tags: [  tutorial>intermediate, topic>cloud, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
 time: 15
 auto_validation: false
 ---
 ## Prerequisites  
-  - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-  - [Enable SAP Web IDE](https://developers.sap.com/tutorials/webide-multi-cloud.html)
+  - [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
+  - [Enable SAP Web IDE](webide-multi-cloud)
   - [Select a Cloud Foundry space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
   - [Enable the SAP Cloud Platform Business Application Development Tools feature](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/90999000744441c6b1fe486d43428b4b.html)
 
 ## Details
-
-
 ### You will learn  
   - How foreign keys are handled in managed associations
   - What the CDS builder generates
@@ -44,11 +42,13 @@ This archive contains the `cloud-samples-catalog` project, except some code, whi
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add the code to your workspace in SAP Web IDE)]
+[ACCORDION-BEGIN [Step 2: ](Add code to SAP Web IDE workspace)]
 Open your SAP Web IDE and import the project to your workspace.
 
-1. Open SAP Web IDE and choose **File** | **Import** | **File or Project**
+1. Open SAP Web IDE and choose **File** | **Import** | **File or Project**.
+
 2. Select the archive you just downloaded.
+
 3. Select **Extract Archive** and confirm.
 
 In case you have problems with this procedure, these links might help (open in a new tab):
@@ -133,7 +133,7 @@ These are all code snippets the CDS builder generates out of your added associat
 [More information about associations in CDS on the SAP Help Portal](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/b3a0321c94194a21a17a991b0f879fbb.html)
 
 Question: Where has the `Association` and `AssociationSet` been added?
->Hint: It's in the **`srv/src/main/resources/edmx/clouds.products.CatalogService.xml`** file. But in which part of the file?
+>**Hint:** It's in the **`srv/src/main/resources/edmx/clouds.products.CatalogService.xml`** file. But in which part of the file?
 
 Add your answer (case-sensitive) in the box below.
 
@@ -141,9 +141,9 @@ Add your answer (case-sensitive) in the box below.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6:](Add a mapping for CATEGORY_ID)]
-- So you can see the effect of your changes in the modeling, we have included some sample data. For the deployment, we have to add this association also to the mapping of the sample data.
+So you can see the effect of your changes in the modeling, we have included some sample data. For the deployment, we have to add this association also to the mapping of the sample data.
 
-- The mapping of the data model and actual data is done in an `.hdbtabledata` file. This is used during the deployment of tables and data to the database.
+The mapping of the data model and actual data is done in an `.hdbtabledata` file. This is used during the deployment of tables and data to the database.
 
 Go to **`db/src/_csv/data.hdbtabledata`** and add this code to line 16:
 
@@ -198,7 +198,7 @@ Go to **`db/src/_csv/data.hdbtabledata`** and add this code to line 16:
 
     This connection in design and deployment is what we added in this tutorial. In the next tutorial you will learn how to use this on the UI.
 
-**One last task for you, in this tutorial:**
+### One last task for you, in this tutorial
 
 1. Go to the data in table **`CLOUDS_PRODUCTS_PRODUCTS`**.
 2. Copy the description for **`ID`** `HT-1007`.
@@ -206,7 +206,8 @@ Go to **`db/src/_csv/data.hdbtabledata`** and add this code to line 16:
 
 [VALIDATE_7]
 [ACCORDION-END]
-Some interesting blog posts:
+
+### Some interesting blog posts
 
   - [Introducing the new Application Programming Model for SAP Cloud Platform](https://blogs.sap.com/2018/06/05/introducing-the-new-application-programming-model-for-sap-cloud-platform/)
   - [Interview with `Rui Nogueira` on the new Application Programming Model for SAP Cloud Platform](https://blogs.sap.com/2018/06/25/interview-with-rui-nogueira-on-the-new-application-programming-model-for-sap-cloud-platform/)

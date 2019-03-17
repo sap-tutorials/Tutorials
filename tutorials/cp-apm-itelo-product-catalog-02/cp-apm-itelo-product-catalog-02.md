@@ -1,15 +1,11 @@
 ---
-title: Add localization to the Managed Association with Core Data Services
-description: Core Data and Services (CDS) used in the SAP Cloud Application Programming Model supports localization. Introduce the concept of localization to your managed association.
+title: Add Localization to a Managed Association with Core Data Services
+description: Core Data and Services (CDS) used in the SAP Cloud Application Programming Model supports localization. Add localization to your managed association.
 auto_validation: true
 primary_tag: topic>java
 tags: [ tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
 time: 15
 ---
-
-## Prerequisites  
-
-
 
 ## Details
 ### You will learn  
@@ -19,7 +15,7 @@ You build this tutorial upon your result from the previous tutorial where you ad
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open your SAP Web IDE Full-Stack)]
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
 Open your SAP Web IDE Full-Stack and the workspace that contains the sources from the previous tutorial.
 
 [Open SAP Web IDE Full-Stack](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html)
