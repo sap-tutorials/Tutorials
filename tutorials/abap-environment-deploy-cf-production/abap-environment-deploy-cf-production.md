@@ -51,7 +51,29 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure project settings and SAP Web IDE Builder)]
+[ACCORDION-BEGIN [Step 2: ](Copy API endpoint)]
+
+  1. Login to your SAP Cloud Platform Cockpit and select your global account.
+
+      ![global](global.png)
+
+  2. Select **Subaccounts**.
+
+      ![subaccount](subaccount.png)
+
+  3. Select your subaccount.
+
+      ![sub2](sub2.png)
+
+  4. Copy your API endpoint for later use.
+
+      ![global](endpoint.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Configure project settings and SAP Web IDE Builder)]
 
   1. Right-click on your project **`MTA_Project_XXX`** select **Project** > **Project Settings**.
 
@@ -69,7 +91,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add ABAP service to multi-target application)]
+[ACCORDION-BEGIN [Step 4: ](Add ABAP service to multi-target application)]
 
   1. Select **File** > **New** > **SAP Cloud Platform Service**.
 
@@ -86,7 +108,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create HTML5 module)]
+[ACCORDION-BEGIN [Step 5: ](Create HTML5 module)]
 
   1. Right-click on your project **`MTA_Project_XXX`** and select **New** > **HTML5 Module**.
 
@@ -129,7 +151,7 @@ time: 15
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Test UI on Cloud Foundry)]
+[ACCORDION-BEGIN [Step 6: ](Test UI on Cloud Foundry)]
 
   1. Right-click on **`MTA_Project_XXX`** and select **Run** > **Run Configurations**.
 
@@ -178,7 +200,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy UI to Cloud Foundry)]
+[ACCORDION-BEGIN [Step 7: ](Deploy UI to Cloud Foundry)]
 
   1. Right-click on your project **`MTA_Project_XXX`** and select **Build** > **Build**.
 
@@ -209,7 +231,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check app existence on Cloud Foundry and run as a business user)]
+[ACCORDION-BEGIN [Step 8: ](Check app existence on Cloud Foundry and run as a business user)]
 
   1. Login to your SAP Cloud Platform Cockpit and select your global account.
 
@@ -245,11 +267,8 @@ time: 15
 
   9. Create your URL by using following:
      `<application_routes>/<id>-<version>/`
-
 ```swift
-Example:
-        <application_routes>/MTA_Project_XXX-1.0.0/
-
+              Example: <application_routes>/MTA_Project_XXX-1.0.0/
 ```
 
   10. Copy your URL into a browser of choice and logon to SAP Cloud Platform ABAP environment.
@@ -267,13 +286,10 @@ Example:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
-
-Login to your SAP Cloud Platform Cockpit and select your global account.
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
-
+[ACCORDION-BEGIN [Step 9: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
+
 
 ---
