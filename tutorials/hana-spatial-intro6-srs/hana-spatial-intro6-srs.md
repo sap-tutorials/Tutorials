@@ -120,7 +120,7 @@ CREATE SPATIAL REFERENCE SYSTEM "WGS 84 / Pseudo-Mercator"
  STORAGE FORMAT 'Internal';
 ```
 
-Confused about the whole cryptic notation in the definition? No need to worry for now. All you need to know is that its definition comes from industry registry [EPSG Geodetic Parameter Registry](http://www.epsg-registry.org/) that you can search and download if needed.
+Confused about the whole cryptic notation in the definition? No need to worry for now. All you need to know is that its definition comes from industry registry [EPSG Geodetic Parameter Registry](http://www.epsg.org) that you can search and download if needed.
 
 And add one more - the one used in the original World Mercator projection.
 
