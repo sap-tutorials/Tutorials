@@ -1,6 +1,6 @@
 ---
 title: Enable Services for Sales Tracker App
-description: Set up required services to build Sales Tracker app to make the purchase process simple and manageable for any consumer anywhere they have access to a mobile device.
+description: Set up required services to build Sales Tracker app to demonstrate SAP API Management and other technologies.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-api-management, products>sap-cloud-platform]
@@ -19,7 +19,7 @@ With this, you have your own instance of SAP API Management and Mobile Services 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Login to SAP Cloud Platform cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Log in to SAP Cloud Platform cockpit)]
 
 Log into SAP Cloud Platform
 
@@ -43,11 +43,11 @@ From the **SAP Cloud Platform cockpit**, select **Services**.
 
 [ACCORDION-BEGIN [Step 3: ](Enable SAP API Management service)]
 
-In the **Integration** section, click **SAP API Management**.
+1. In the **Integration** section, click **SAP API Management**.
 
 ![Select SAP API Management](03-click-apim-service.png)
 
-Click  **Enable**.
+2. Click  **Enable**.
 
 ![Select Enable](03-enableapim-service.png)
 
@@ -55,7 +55,7 @@ Click  **Enable**.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Access the SAP API Management Portals)]
+[ACCORDION-BEGIN [Step 4: ](Access the SAP API Management portals)]
 
 You now have access to the SAP API Management API Portal ...
 
@@ -68,7 +68,7 @@ You now have access to the SAP API Management API Portal ...
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enable Mobile services)]
+[ACCORDION-BEGIN [Step 5: ](Enable Mobile Services)]
 
 In the **Integration** section, click  **Mobile Services**.
 
@@ -82,7 +82,7 @@ Click  **Enable**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Access Mobile service)]
+[ACCORDION-BEGIN [Step 7: ](Access Mobile Service)]
 
 Click **Go to Service**.
 
