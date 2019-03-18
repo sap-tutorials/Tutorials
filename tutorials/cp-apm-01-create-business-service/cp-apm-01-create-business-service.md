@@ -11,7 +11,7 @@ time: 10
 
 ## Prerequisites  
  - [Get a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
- - [Set Up Cloud Foundry and SAP Web IDE](https://developers.sap.com/tutorials/teched-cf-prereq1.html) 
+ - [Set Up Cloud Foundry and SAP Web IDE](https://developers.sap.com/tutorials/teched-cf-prereq1.html)
 
 ## Details
 ### You will learn  
@@ -113,9 +113,23 @@ time: 10
 
 1. Click on the **`srv`** module and choose **Run** from the global toolbar.
 
+    >This might take a few minutes because a new cloud container has to be initialized and started. Subsequent restarts are much faster, because hot deployment is used.
+
     ![Choose Run](run-java-app.png)
 
-    >This might take a few minutes because a new cloud container has to be initialized and started. Subsequent restarts are much faster, because hot deployment is used.
+    > If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Could not create the 'bookshop-bookshop-hdi-container-D0oRdR+pMxiYd6NYDr' instance of the 'hana' service type for the 'bookshop-hdi-container' resource. No hdi-shared plan available found in this space."` To fix this issue, try the following:
+
+    > 1. Make sure your **HANA** entitlement is assigned.
+
+    > 1. Go to **SAP Cloud Platform Cockpit | Cloud Foundry | Entitlements**.
+
+    > 1. Click on **Edit**.
+    ![Edit entitlements](entitlements-edit.png)
+
+    > 1. Scroll down until you find **HANA** and change the value to `1`.
+    ![Change hdi-shared value](entitlements-hdi-shared.png)
+
+    > 1. **Save** your changes, and re-try to run your service.
 
 1. Go to the **Run Console** and click on the URL.
 

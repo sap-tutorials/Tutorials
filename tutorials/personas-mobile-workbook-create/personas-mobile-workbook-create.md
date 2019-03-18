@@ -3,8 +3,8 @@ title: Build a Simple SAP Screen Personas Dashboard
 description: Simplify the initial screen of IW51 to begin creating a Service Notification application for desktop and mobile devices.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, products>sap-screen-personas>sap-screen-personas]
-primary_tag: products>sap-screen-personas>sap-screen-personas
+tags: [tutorial>beginner, products>sap-screen-personas]
+primary_tag: products>sap-screen-personas
 ---
 
 ## Prerequisites

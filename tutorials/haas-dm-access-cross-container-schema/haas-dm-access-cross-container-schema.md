@@ -1,47 +1,46 @@
 ---
-title: SAP HANA Service, access a classic schema from SAP Web IDE Full-stack
-description: Access data in a plain or replicated schema from an HDI Container
+title: Access a Classic Schema from SAP Web IDE Full-Stack
+description: Access data in a plain or replicated schema from an HDI container.
 auto_validation: true
-time: 40
+time: 20
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
- - You have access to the database and SAP Cloud Platform Cockpit
- - You have created a Multi-Target Application with a database module [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html)
- - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html)
+ - You have access to the database and SAP Cloud Platform cockpit.
+ - You have created a multi-target application with a database module [as explained in this tutorial](haas-dm-create-db-mta).
+ - Optionally, you have created a remote source [as explained in this tutorial](https://developers.sap.com/tutorials/haas-dm-connect-sdi.html).
 
 ## Details
 ### You will learn
   - How to create a plain schema, with a table and user to simulate a replicated schema
-  - How to create a user-provided service to access a tenant database in SAP HANA as a Service
+  - How to create a user-provided service to access a database in SAP HANA as a Service
   - How to grant permissions to the technical users in your HDI container to access the database
 
 This tutorial is meant to be an example of cross-container access. Simple data models and loading mechanisms were chosen to simulate a schema replicated using tools such as SAP Landscape Transformation or an ABAP schema.
 
-For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/a260b05631a24a759bba932aa6d81b64.html)
+For more information on this process and additional syntax options, refer to the [official documentation on SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/a260b05631a24a759bba932aa6d81b64.html).
 
-If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html)
+If you are looking for the steps for an on-premise SAP HANA instance with XS Advanced, such as SAP HANA, express edition, [refer to this tutorial](https://developers.sap.com/tutorials/xsa-create-user-provided-anonymous-service.html).
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a plain schema)]
 
-Connect to SAP Web IDE Full Stack and enter the Database Explorer. You will see your tenant database.
+Connect to SAP Web IDE Full Stack and enter the Database Explorer. You will see your instance of the SAP HANA database.
 
-> If you cannot see the tenant database, try entering the database explorer from the Database Cockpit and make sure the setting in `Preferences->Database Explorer` are set to the correct region.
+> If you cannot see the database, try entering the database explorer from the Database Cockpit and make sure the setting in `Preferences->Database Explorer` are set to the correct region.
 
 ![DB Explorer](1.png)
 
-Use the following code to create a schema and a user with permissions to it. You will also create a simple table to use as an example for cross-container access.
+Use the following code to create a schema and a user. You will also create a simple table to use as an example for cross-container access.
 
-You can optionally use a SQL role as a best practice. You will create a SQL role and assign it to the user `PLUSR` with the permissions granted manually before. This user will be used for the connection between the HDI container and the plain schema, and will grant the role to the HDI container technical user.
+You will create a SQL role and assign it to the user `PLUSR` with the permissions granted manually before. This user will be used for the connection between the HDI container and the plain schema, and will grant the role to the HDI container technical user.
 
 ```sql
 CREATE SCHEMA "PLAIN";
 CREATE USER PLUSR PASSWORD "HanaRocks01" NO FORCE_FIRST_PASSWORD_CHANGE ;
-GRANT SELECT, UPDATE, INSERT, DELETE, EXECUTE, SELECT METADATA ON SCHEMA "PLAIN" TO "PLUSR" with grant OPTION;
 
 CREATE ROW TABLE "PLAIN"."REGIONS" (	REGION NVARCHAR(5), 	DESCRIPTION NVARCHAR(100) );
 
@@ -55,16 +54,17 @@ Use the green play button or press **`F8`** to execute the statement.
 
 ![DB Explorer](2.png)
 
-> ##What is going on?
+> ## What is going on?
+>
 >&nbsp;
-> You have created a plain schema in your SAP HANA tenant database. When you [created a database module in SAP Web IDE](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html), an HDI container was automatically generated.
+> You have created a plain schema in your SAP HANA database. When you [created a database module in SAP Web IDE](https://developers.sap.com/tutorials/haas-dm-create-db-mta.html), an HDI container was automatically generated.
 >&nbsp;
 >
 > ![schema](access.png)
 >
 >&nbsp;
 >
-> You can see the SAP HANA service (a database tenant, from which you access to the Database Cockpit) of service type `hana-db` and the HDI container of service type `hana` and plan `hdi-shared` listed in the service marketplace
+> You can see the SAP HANA service (a database instance, from which you access to the Database Cockpit) of service type `hana-db` and the HDI container of service type `hana` and plan `hdi-shared` listed in the service marketplace
 >&nbsp;
 > ![schema](services.png)
 >&nbsp;
@@ -77,7 +77,7 @@ Use the green play button or press **`F8`** to execute the statement.
 
 [ACCORDION-BEGIN [Step 2: ](Load data)]
 
-Download [this CSV file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-access-cross-container-schema/plain.csv) into your local computer.
+Download [this CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/haas-dm-access-cross-container-schema/plain.csv) into your local computer.
 
 Use the search help to locate schema `PLAIN`.
 
@@ -183,11 +183,11 @@ Click on the **Modules** tab and add `external_access` in the **`Requires`**  se
 
 ![DB Explorer](16.png)
 
- Use `SERVICE_REPLACEMENTS` as the value for **Groups**.
+ Use `SERVICE-REPLACEMENTS` as the value for **Groups**.
 
 | Name | Group |
 |:------|:---------|
-| `external_access` | `SERVICE_REPLACEMENTS` |
+| `external_access` | `SERVICE-REPLACEMENTS` |
 
 Use the following key-value pair as the properties of `external_access`
 
@@ -259,15 +259,16 @@ Execute the following SQL command
 
 ```sql
 
-grant create virtual table, drop  on remote source "LocalFile" to PLUSR with grant option;
+grant "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REMOTE SUBSCRIPTION EXCEPTION"  on remote source "LocalFile" to CCROLE with grant option;
 ```
 
 ![Grant roles](grant2.png)
 
-Return to create a new file in `db/cfg` called `virtual.hdbgrants`. Paste the following code:
 
-```json
-
+> Alternatively, you can grant the same permissions to the user in the user-provided service, `PLUSR`, and create a separate grants file with them or a new role.
+> Here is an example for that `.hdbgrants` file
+>
+> ```json
 {
   "CC_ACCESS": {
     "object_owner" : {
@@ -275,14 +276,14 @@ Return to create a new file in `db/cfg` called `virtual.hdbgrants`. Paste the fo
         {
           "name" : "LocalFile",
           "type" : "REMOTE SOURCE",
-          "privileges" : [ "CREATE VIRTUAL TABLE", "DROP" ]
+          "privileges" : [ "CREATE VIRTUAL TABLE", "DROP", "CREATE REMOTE SUBSCRIPTION", "PROCESS REMOTE SUBSCRITPION EXCEPTION" ]
         }
       ]
     }
   }
 }
 
-```
+>```
 
 **Save** the files. **Build** the database module.
 
@@ -355,11 +356,11 @@ Right-click on the view and choose **Open Data**. Paste the generated SQL statem
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Troubleshooting insufficient privilege)]
+[ACCORDION-BEGIN [Step 9: ](Troubleshooting insufficient privileges)]
 
 **Error**: Insufficient privilege: Detailed info for this error can be found with `guid` <GUID>
 
-You can see what is missing by executing the following statement in a SQL console connected to the tenant database
+You can see what is missing by executing the following statement in a SQL console connected to the database
 
 ```sql
  call SYS.GET_INSUFFICIENT_PRIVILEGE_ERROR_DETAILS ('<GUID>', ?)

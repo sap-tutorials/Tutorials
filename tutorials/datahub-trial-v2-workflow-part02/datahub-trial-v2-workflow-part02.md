@@ -1,9 +1,9 @@
 ---
-title: Create Workflow (part 2), Aggregate data with Data Transform in SAP Data Hub, trial edition 2.3
-description: Build a pipeline to aggregate device data using SAP Data Hub, trial edition 2.3.
-auto_validation: false
+title: Create Workflow (part 2), Aggregate data with Data Transform in SAP Data Hub, trial edition 2.4
+description: Build a pipeline to aggregate device data using SAP Data Hub, trial edition 2.4.
+auto_validation: true
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
 ## Details
@@ -15,13 +15,15 @@ During this tutorial, you will build on what you have learned during the previou
 - Minimum temperature per country
 - Maximum temperature per country
 
+Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+
 ### Time to Complete
 **30 Min**
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create table in SAP Vora)]
-To be able to store data in SAP Vora, you first need to create a table. Thereto open the SAP Data Application Launchpad (`https://sapdatahubtrial/`) via a web browser.
+To be able to store data in SAP Vora, you first need to create a table. Thereto open the SAP Data Application Launchpad via a web browser. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
@@ -40,11 +42,11 @@ Enter the following information (and leave the remaining fields blank) to create
 | Field                          | Value                                                         |
 | ------------------------------ | ------------------------------------------------------------- |
 | `Name`                         | `STATISTICS_DATA`                                             |
-| `Schema`                       | `default`                                                        |
-| `Engine`                       | `Relational In-Memory`                                                  |
-| `File Type`                    | `CSV`                                                         |
-| `Delimiter`                    | `;`                                                           |
-| `File System`                  | `GCS`                                                         |
+| `Schema`                       | `default`                                                     |
+| `Engine`                       | `Relational In-Memory`                                        |
+| `File System`                  | `S3 or GCS`                                                   |
+| `Connection Type`              |                                                               |
+| `File Path`                    |                                                               |
 
 
 Create the following columns:
@@ -52,9 +54,9 @@ Create the following columns:
 | Name              | Data Type | Length | Precision | Scale |
 | ----------------- | --------- | ------ | --------- | ----- |
 | `COUNTRY`         | `VARCHAR` | 2      |           |       |
-| `EVENT`    | `VARCHAR` | 15       |         |       |
-| `MIN` | `DECIMAL` |        | 12        | 2     |
-| `MAX` | `DECIMAL` |        | 12        | 2     |
+| `EVENT`           | `VARCHAR` | 15     |           |       |
+| `MIN`             | `DECIMAL` |        | 12        | 2     |
+| `MAX`             | `DECIMAL` |        | 12        | 2     |
 
 ![picture_04](./datahub-trial-v2-workflow-part02-4.png)  
 
@@ -66,9 +68,9 @@ Finally click **Finish** to create the table.
 
 [ACCORDION-BEGIN [Step 2: ](Add Data Transform and Trigger)]
 
-Open the modelling environment for building pipelines via SAP Data Hub Modeler (`https://sapdatahubtrial/app/pipeline-modeler`).
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.3](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter `default` as **Tenant ID**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password**.
 
@@ -76,7 +78,7 @@ Create a new graph and add **`Workflow Trigger`** operator and **Data Transform*
 
 ![picture_05](./datahub-trial-v2-workflow-part02-5.png)
 
-Now connect the `output` port of the **`Workflow Trigger`** to the `input` port of the **Data Transform** operator. Double click on the **Data Transform** operator and it will open the **Editor**. Here we have to model our Workflow task by creating data sources and targets along with transformation operators.
+Now connect the `output` port of the **`Workflow Trigger`** to the `input` port of the **Data Transform** operator. Double click on the **Data Transform** operator and it will open the **Editor**. Here we have to model our workflow task by creating data sources and targets along with transformation operators.
 
 [DONE]
 
@@ -87,15 +89,15 @@ From the **Nodes** menu on the left, drag and drop a **Data Source** to the edit
 
 ![picture_06](./datahub-trial-v2-workflow-part02-6.png)
 
-Double click on the **Data Source** and open the **Data Source Editor**. Here we have to configure the details for the particular data source. Using the **Browse** button, select **Google Cloud Storage** connection from the list.
+Double click on the **Data Source** and open the **Data Source Editor**. Here we have to configure the details for the particular data source. Using the **Browse** button, select **`CLOUD_STORAGE`** connection from the list.
 
 >You will see the connection here only, if you have configured the same under **Connection Management**.
 
-As **Source**, browse the Google Cloud Storage and choose `Events.parquet` file. As soon as the file is selected, file configuration parameters will be Auto-proposed.
+As **Source** choose the `Events.parquet` file. As soon as the file is selected, file configuration parameters will be auto-proposed.
 
 ![picture_07](./datahub-trial-v2-workflow-part02-7.png)
 
-Using the **Back** button at the left top corner, navigate back to the **Data Transform** editor page. Using drag and drop, add another **Data Source** to the task and double click on it to open the **Data Source** editor. Using the **Browse** button, select **Google Cloud Storage** connection from the list. Then using the **Browse** button for **Source**, select the folder **`/CSV/EnrichedDevices`** from your bucket. We have created this in the previous tutorial **Create Workflow (part 1), Enrich data with Data Transform**.
+Using the **Back** button at the left top corner, navigate back to the **Data Transform** editor page. Using drag and drop, add another **Data Source** to the task and double click on it to open the **Data Source** editor. Using the **Browse** button, select **`CLOUD_STORAGE`** connection from the list. Then using the **Browse** button for **Source**, select the folder **`/CSV/EnrichedDevices`** from your bucket. We have created this in the previous tutorial **Create Workflow (part 1), Enrich data with Data Transform**.
 
 ![picture_08](./datahub-trial-v2-workflow-part02-8.png)
 
@@ -109,7 +111,7 @@ Navigate back to the **Data Transform** editor page.
 
 [ACCORDION-BEGIN [Step 4: ](Join and Aggregate Data Sources)]
 
-In this step we would be joining and aggregating the two data sources we have created and then configure the operators. Add **Join** to the task from the **Nodes** tab in the left side menu on the left through drag and drop.
+In this step we are going to join and aggregate the two data sources we have created and then configure the operators. Add **Join** to the task from the **Nodes** tab in the left side menu through drag and drop.
 
 Connect the **`DataSource1_Output1`** out port of the `DataSource1` to **`Join1_Input1`** in port of the **`Join1`** operator. Similarly, connect the **`DataSource2_Output1`** out port of the **`DataSource2`** to **`Join1_Input2`** in port of the **`Join1`** operator.
 
@@ -177,7 +179,7 @@ We now have to provide a destination for the results of the **Aggregation** oper
 
 Double click on the newly added **Data Target** node and open the configuration page. As we have connected the **Join** and the **Data Target** nodes, Modeler will automatically detect the columns for the **Data Target**. Click on the **Browse** button for connection and select **Vora**. Using the **Browse** button for the **Schema**, select the table **`STATISTICS_DATA`** under the **default** schema that we have created in the first step of this tutorial. Press **OK** for the dialog box that warns about removal of existing changes.
 
-We now have to map the Input columns to Vora table columns. Using the dropdown lists under **Mapping Column**, select matching column names.
+We now have to map the input columns to Vora table columns. Using the dropdown lists under **Mapping Column**, select matching column names.
 
 ![picture_19](./datahub-trial-v2-workflow-part02-19.png)
 
@@ -204,11 +206,11 @@ Now check the result of the Data Transform task. Thereto double click the **Data
 
 ![picture_21](./datahub-trial-v2-workflow-part02-21.png)
 
-You will notice that the table has records per country for events Humidity and Temperature with Minimum as well as Maximum values for both the events.
+You will notice that the table has records per country for events humidity and temperature with minimum as well as maximum values for both the events.
 
 [VALIDATE_1]
 
 [ACCORDION-END]
 
 
-
+---

@@ -21,7 +21,7 @@ primary_tag: products>sap-leonardo-machine-learning-foundation
 
 [ACCORDION-BEGIN [Step](The Text Feature Extraction Service)]
 
-Similarly to the Face Feature Extraction or the Image Feature Extraction service, the Text Feature Extraction service extracts a vector of features out of an input text.
+Similarly to the Face Feature Extraction or the Text Feature Extraction service, the Text Feature Extraction service extracts a vector of features out of an input text.
 
 This is the list of accepted file extensions:
 
@@ -38,7 +38,7 @@ The service will return a JSON response that includes the vector of features for
 
 For more details, you can check the following link:
 
- - [Inference Service for Image Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/document_feature_extraction_api/resource).
+ - [Inference Service for Text Feature Extraction on the SAP API Business Hub](https://api.sap.com/api/document_feature_extraction_api/resource).
 
 [DONE]
 [ACCORDION-END]
@@ -83,9 +83,9 @@ For more details, you can check the [Inference Service for Similarity Scoring on
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Call the Image Feature Extraction API)]
+[ACCORDION-BEGIN [Step](Call the Text Feature Extraction API)]
 
-First you will need to select and download a series of pictures to be used with Image Feature Extraction service.
+First you will need to select and download a series of pictures to be used with Text Feature Extraction service.
 
 If you are missing some inspiration, use the following articles content to create your text files:
 
@@ -95,7 +95,7 @@ If you are missing some inspiration, use the following articles content to creat
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
@@ -108,7 +108,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial--doc-feats.cfapps.eu10.hana.ondemand.com/api/v2alpha1/text/feature-extraction`</nobr>
+<nobr>URL<nobr>          | <nobr>`https://mlftrial-doc-feats.cfapps.eu10.hana.ondemand.com/api/v2alpha1/text/feature-extraction`</nobr>
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 
@@ -174,7 +174,7 @@ You should receive a response that includes for each text an entry with the feat
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
@@ -216,7 +216,7 @@ Click on **Send**.
 
 You should receive a response that includes for each input feature vector (in your case 6 in total) the top 3 most similar feature vectors.
 
-For example here, the image identified as **`Machine Learning`** has been matched with **`Deep learning`** with a score of **0.96** and only **0.65** with **`Cheesecake`**:
+For example here, the text identified as **`Machine Learning`** has been matched with **`Deep learning`** with a score of **0.96** and only **0.65** with **`Cheesecake`**:
 
 ```json
 {

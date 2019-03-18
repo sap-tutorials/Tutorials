@@ -1,12 +1,13 @@
 ---
-title: Expose custom business object as external web service
+title: Expose Custom Business Object as External Web Service
 description: Expose a custom business object as web service for integration of your solution with other systems.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [`Enable SAP Web IDE for S/4HANA system via OAuth`](https://developers.sap.com/tutorials/abap-custom-ui-communication-arrangement.html )
+- **Tutorials:** [Enable SAP Web IDE for S/4HANA system via OAuth](abap-custom-ui-communication-arrangement)
 - **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user represents the prerequisites.
 
 
@@ -18,8 +19,6 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 
 This tutorial describes how the service generation can be activated for an existing custom business object. Furthermore the addition of CDS views to custom communication scenario is explained. The creation of communication arrangements for `Bonusplan` scenarios also takes place in this tutorial.
 
-### Time to Complete
-**15 Min**.
 
 ---
 

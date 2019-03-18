@@ -7,6 +7,10 @@ tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>odata,
 time: 30
 ---
 
+## Prerequisites  
+- Completed [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html)
+
+
 ## Details
 ### You will learn
 - How the Usage Reporting feature works, through demonstration
@@ -15,7 +19,7 @@ time: 30
 - How to add code to enable auto-upload of usage data based on the client policy
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Explore the usage feature)]
+[ACCORDION-BEGIN [Step 1: ](Manual upload of usage data)]
 
 As shown in the tutorial, [Try Out SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app), ensure that **Enable Usage Reporting** is checked when creating the app.
 
@@ -23,7 +27,7 @@ As shown in the tutorial, [Try Out SAP Cloud Platform SDK for Android Wizard](cp
 
 The app must first receive permission to collect usage information from the user.
 
-The text displayed to the user can be customized by accessing **`res/values/strings_localized/strings_localized(en).xml`** (or by pressing **Shift Shift** then searching for **`strings_localized.xml`**) and editing the text between the string tags below.  For more details on translation, see <a href="https://developers.sap.com/group.sdk-android.html">Add New Languages to your Android Application</a>.
+The text displayed to the user can be customized by accessing **`res/values/strings_localized/strings_localized(en).xml`** (or by pressing **Shift** twice then searching for **`strings_localized.xml`**) and editing the text between the string tags below.  For more details on translation, see [Add New Languages to your Android Application](https://developers.sap.com/group.sdk-android.html).
 
 ```xml
 <string name="get_usage_permission_explanation">
@@ -31,25 +35,25 @@ The text displayed to the user can be customized by accessing **`res/values/stri
 </string>
 ```
 
-When the app is first installed, the consent screen will automatically be shown to users.
+When the app is first installed, a consent screen will automatically be shown to users.
 
-Click **OK** to allow the app to track usage.
+Tap **OK** to allow the app to track usage.
 
 ![Consent Screen](consent.png)
 
- If Not Now was clicked, the user's choice can later be changed in the app's settings screen.
+ If Not Now was selected, the user's choice can later be changed in the app's settings screen.
 
 ![Usage in Settings](accept_usage_tracking.png)
 
-From the settings menu, click **Upload Usage**.
+From the settings menu, tap **Upload Usage**.
 
 ![Click Upload Usage](upload_usage_button.png)
 
-The upload will fail with a HTTP 403 error if usage was not enabled on Mobile Services.
+The upload will fail with a HTTP 403 error if usage was not enabled in the Mobile Services cockpit.
 
 ![Upload Failed](403error.png)
 
-To review this policy setting, in the Mobile Services Cockpit, access Client Policies through **Mobile Applications > Native/Hybrid > Wiz App > Client Policies**.
+To review this policy setting, in the Mobile Services cockpit, access Client Policies through **Mobile Applications > Native/Hybrid > Wiz App > Client Policies**.
 
 ![Access Client Policies](client_policies.png)
 
@@ -60,21 +64,26 @@ A value of 0 will initially be in the **Upload Report After** which we will use 
 ![Enable Usage in Client Policies](enable_usage.png)
 
 
-If an empty usage report notification is shown when **Upload Usage** is clicked, navigate away from the app by going to your phone's home screen and re-entering the app.  Then try uploading the usage report again.  Placing the app in the background will end the current usage session.
+If an empty usage report notification is shown when **Upload Usage** is selected, navigate away from the app by going to your phone's home screen and re-entering the app.  Then try uploading the usage report again.  Placing the app in the background will complete or end the current usage session.  Partial sessions can not be uploaded.
 
 ![Empty Usage Report Upload Attempt](empty_usage_report.png)
 
-If **Upload Usage** was successful then a Toast message should pop up informing you that the usage information has been uploaded to the server.
+If **Upload Usage** was successful, then a Toast message should pop up informing you that the usage information has been uploaded to the server.
 
 ![Successful Usage Upload](successful_upload.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Examine uploaded usage data)]
+
 To view the application usage report, go to your management cockpit under **Analytics > Client Data Report** and click the download icon.
 
-Search for specific usage data from different applications, devices, operating systems and periods of time by choosing filters from the available dropdowns and clicking **Go**. Then click the download icon to get the filtered data in a `csv` file.
+Various charts are available by changing the drop down that includes User Sessions per Application and Time Period.  The data can be filtered by changing the value of the drop down with Last 7 Days and clicking **Go**. Then click the download icon to get the filtered data in a `csv` file.
 
 ![Download Usage From Management Cockpit](download_usage.png)
 
-Open the downloaded **`client_upload.csv`**. The file contains usage entries from the app that record different actions such as button clicks and timers.
+Open the downloaded **`client_uploads.csv`**. The file contains usage entries from the app that record different actions such as button taps and timers.
 
 | Column  |  **Description**  |
 |---|---|
@@ -104,7 +113,7 @@ In the next example, the timer recorded how long the user kept the application a
 
 A session is typically defined as how long the app has been open for in the foreground, but different records within the application can also be modified to act as sessions.
 
-There can be multiple `USERSESSIONIDs` associated with a single `REGISTRATIONID`. `REGISTRATIONID` is independent of your username and you can see a complete list of all user registrations for the app in the Mobile Cockpit through **Mobile Applications > Native/Hybrid > Wiz App > User Registrations**.
+There can be multiple `USERSESSIONIDs` associated with a single `REGISTRATIONID`. `REGISTRATIONID` is independent of your username and you can see a complete list of all user registrations for the app in the Mobile Services cockpit through **Mobile Applications > Native/Hybrid > Wiz App > User Registrations**.
 
 In the example below the same user registered through 2 different devices and ran 3 user sessions.
 
@@ -146,7 +155,7 @@ usageUtil.eventBehaviorViewDisplayed(EntitySetListActivity.class.getSimpleName()
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add further usage instrumentation)]
+[ACCORDION-BEGIN [Step 3: ](Add further usage instrumentation)]
 
 The Usage feature can be used to instrument an app to track things that might provide an insight into user's behaviors.  
 
@@ -176,7 +185,7 @@ usageUtil.eventBehaviorUserInteraction(ProductsCreateFragment.class.getSimpleNam
   "elementId", "createOrEditProductClicked", "Begin Create or Edit Product");
 ```
 
-This generates a usage event record for when a user clicks the Add or Edit icon within Products.
+This generates a usage event record for when a user taps the Add or Edit icon within Products.
 
 On Windows press **Ctrl+F12** or on a Mac press **command+F12** and type **`onOptionsItemSelected`** to move to the `onOptionsItemSelected` method. Add the following code segment before the **`default:`** case in the same file.
 
@@ -194,43 +203,43 @@ In Android Studio, on Windows press **Ctrl+N** or on a Mac press **command+O** a
 
 On Windows press **Ctrl+F12** or on a Mac press **command+F12** and type **`onOptionsItemSelected`** to move to the `onOptionsItemSelected` method.
 
-Modify the return statements so the case and default case end with
+Modify the return statements so the case and default case end with the below code.
 
 ```Java
 return false;
 ```
 
-By changing the return statements to false, it ensures that the code we added to `ProductsCreateFragment.java` gets executed when we click the navigate back button.
+By changing the return statements to false, it ensures that the code added to `ProductsCreateFragment.java` gets executed when the navigate back button is pressed.
 
-Build and run the app again and generate usage information by accessing Products.
+Build and run the app.  
+
+Generate usage information by accessing Products.
 
 ![Access Products](test_usage1.png)
 
-Then click the floating Add button to create a product.
+Tap the floating Add button to create a product.
 
 ![Create a New Product Item](test_usage2.png)
 
-Finally press the back button to exit the page without saving.
+Press the back button to exit the page without saving.
 
 ![Press Back Button](test_usage3.png)
 
-Repeat those steps 3 times to generate multiple entries for the usage report.
+Repeat those steps 2 more times to generate multiple entries for the usage report.
 
-Then instead of creating a new Product, click an existing Product and click its Edit button.
+Finally, select an existing Product and tap on its Edit button.
 
 ![Edit Product](edit_product.png)
 
-Then immediately click the check mark button to save the information.
+Then immediately tap the check mark button to save the information.
 
 ![Save Product](save_product.png)
 
-Return to your phone's home screen so that there is information stored inside the usage report and navigate back into the app. Otherwise you will receive a Usage Upload failure when trying to upload the report due to an empty usage report like in the image below.
+End the usage session by placing the app in the background.  Navigate back into the app.
 
-![Empty Usage Report Error](empty_usage_report.png)
+Upload the usage by going to **Settings** and tap on **Upload Usage**.
 
-Upload the usage by going to **Settings** and clicking **Upload Usage**.
-
-After downloading the `client_uploads.csv` file from the Mobile Services Cockpit, you should be able to see new entries with `I_VIEW` values of `ProductsCreateFragment` and `I_ACTION` values of `onBackPressed` and `createProductClicked`.
+After downloading the `client_uploads.csv` file from the Mobile Services cockpit, you should be able to see new entries with `I_VIEW` values of `ProductsCreateFragment` and `I_ACTION` values of `onBackPressed` and `createProductClicked`.
 
 ![New Entries in the Client Upload csv](new_client_upload_example.png)
 
@@ -254,7 +263,7 @@ In the example, the user tried to create a Product 4 times, but cancelled 3 time
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Auto Upload of Usage Data)]
+[ACCORDION-BEGIN [Step 4: ](Auto-upload of usage data)]
 
  Mobile Services provides a Usage Report Policy under Client Policies specifying if uploads to Mobile Services are allowed and how often they should occur. The following instructions will demonstrate how to modify the app to read and store the policy and upload the usage data to Mobile Services using the specified interval.  
 
@@ -293,7 +302,7 @@ private static final String SETTINGS_USAGE = "usagePolicy";
 
 On Windows press **Ctrl+F12** or on a Mac press **command+F12** and type **`onSuccess`** to move to the `onSuccess` method.
 
-Place the following code right before the line `downloadLatch.countDown();`;
+Place the following code near the end of the method, before the line `downloadLatch.countDown();`.
 
 ```Java
 JSONObject usagePolicyJson = result.optJSONObject(SETTINGS_USAGE);
@@ -305,7 +314,7 @@ if (usagePolicyJson != null) {
 }
 ```
 
-This code gets the usage policy information from the SAP Cloud and stores it inside a `ClientPolicy` object.
+This code gets the usage policy information from the server client policy and stores it inside a `ClientPolicy` object.
 
 In Android Studio, on Windows press **Ctrl+N** or on a Mac press **command+O** and type **`LogonActivity`** to open `LogonActivity.java`.
 
@@ -351,11 +360,11 @@ private void uploadUsage() {
 }
 ```
 
-This code sets the upload interval for the application's `UsageBroker` object and then requests an upload of usage. If the amount of days between uploading is sufficient it will upload the data and if not it will delay the upload. If the auto upload interval is 0 it will not upload any usage.
+This code sets the upload interval for the application's `UsageBroker` object and then requests an upload of usage. If the amount of days between uploading is sufficient it will upload the data and if not it will delay the upload. If the upload report after interval is 0 it will not upload any usage.
 
 On Windows press **Ctrl+F12** or on a Mac press **command+F12** and type **`finishLogonActivity`** to move to the `finishLogonActivity` method.
 
-In the else block, before the call to `startEntitySetListActivity`, add the below method call.
+In the **else block**, before the call to `startEntitySetListActivity`, add the below method call.
 
 ```Java
 uploadUsage();
@@ -375,11 +384,15 @@ This will allow the user to upload the usage report via the app's settings scree
 
 When the app is run and the number of days in the policy has passed, there should be Toast notification showing that the usage report has been uploaded successfully.
 
-To test this feature multiple times, change the date of the device/emulator in **System > Date & time** and toggle **Automatic date & time** off and change the date to a date in the future and re-run the app. The usage report should be uploaded automatically.
+To test this feature, in **System > Date & time** toggle **Automatic date & time** to **off**.  
+
+Change the date to a day in the future and re-run the app. The usage report should be uploaded automatically.
 
 ![Usage Report Successfully Uploaded Toast Message](usage_report_uploaded_toast_message.png)
 
-For more information on usage visit [Client Usage](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/Usage.html).
+>Further information on usage can be found at [Client Usage](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/Usage.html) and [Step by Step with the SAP Cloud Platform SDK for Android — Part 8 — Client Usage](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-8-usage/)
+
+Congratulations! You have learned how the usage feature can provide insights into how a deployed application is being used!
 
 
 [DONE]

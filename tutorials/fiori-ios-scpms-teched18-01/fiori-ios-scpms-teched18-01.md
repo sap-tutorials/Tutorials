@@ -10,7 +10,7 @@ time: 15
 ## Prerequisites  
 - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
 ### You will learn  
@@ -18,7 +18,7 @@ time: 15
 
 Before you start, make sure you:
 
-  - Have downloaded [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html) **version 3.0**.
+  - Have downloaded [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html) **version 3.0 SP01**.
   - Have a trial account on SAP Cloud Platform. See [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
   - Enabled the SAP Cloud Platform Mobile Services. See [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html).
 
@@ -33,8 +33,6 @@ The SAP Cloud Platform SDK for iOS is designed to work seamlessly with a set of 
 To enable the service, do the tutorial [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html).
 
 >Alternatively, you can go directly to `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
-
-![SCPms landing page](fiori-ios-scpms-create-app-teched18-part1-01.png)
 
 [DONE]
 [ACCORDION-END]

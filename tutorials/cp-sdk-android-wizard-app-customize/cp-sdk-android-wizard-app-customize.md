@@ -1,11 +1,15 @@
 ---
 title: Customize the Wizard Generated Application
-description: Customize a wizard generated application, then learn how to use the Fiori for Android Object Cells and Fiori Search View.
+description: Customize a wizard generated application and learn how to use Fiori for Android Object Cells and a Fiori Search View.
 primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
 tags: [  tutorial>beginner, operating-system>android, topic>mobile, topic>wizard, products>sap-cloud-platform-sdk-for-android, products>sap-cloud-platform ]
 time: 45
 ---
+
+## Prerequisites  
+- Completed [Try Out SAP Cloud Platform SDK for Android Wizard](https://developers.sap.com/tutorials/cp-sdk-android-wizard-app.html)
+
 
 ## Details
 ### You will learn
@@ -15,7 +19,7 @@ time: 45
 - How to add a `FioriSearchView` enabling the filtering of Object Cells on a list screen
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Examine the Product's List Screen)]
+[ACCORDION-BEGIN [Step 1: ](Examine the product's list screen)]
 
 Run the previously created project.
 
@@ -31,7 +35,7 @@ The category name is displayed (rather than the product name) because the app wa
 
 ![Product metadata](product-metadata.png)
 
-Each product is displayed in an <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/object_cell.html">Object Cell</a>, which is one of the Fiori UI for Android controls.
+Each product is displayed in an [Object Cell](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/object_cell.html), which is one of the Fiori UI for Android controls.
 
 ![Object Cell](object-cell.png)
 
@@ -41,8 +45,8 @@ As seen above, an Object Cell is used to display information about an entity.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Update the Product's List Screen)]
-In this section, the Object Cell will be used to show a products name, category, description and price, a separator decoration will be added between cells, and the sort order will be modified.
+[ACCORDION-BEGIN [Step 2: ](Update the product's list screen)]
+In this section, the Object Cell will be configured to show a product's name, category, description and price.  As well, a separator decoration will be added between cells, and the sort order will be modified.
 
 In Android Studio, on Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type **`ProductsListActivity`** to open `ProductsListActivity.java`.
 
@@ -55,7 +59,7 @@ On Windows press **`Ctrl+F12`** or on a Mac press **`command+F12`** and type **`
 DataValue dataValue = product.getDataValue(Product.name);
 ```
 
-Also in the `populateObjectCell` method, find the below lines that set the `subheadline`, `footnote` and `icon`.
+In the `populateObjectCell` method, find the below lines that set the `subheadline`, `footnote` and `icon`.
 
 ```Java
 objectCell.setSubheadline("Subheadline goes here");
@@ -125,7 +129,7 @@ Run the app and notice the products screen has been formatted to show the produc
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Customize the ProductCategory List Screen)]
+[ACCORDION-BEGIN [Step 3: ](Customize the ProductCategory list screen)]
 
 Examine the **`ProductCategories`** screen.
 
@@ -133,7 +137,7 @@ Examine the **`ProductCategories`** screen.
 
 In this section the screen's title will be updated, the Object Cell will be used to show the category name, main category name, the number of products in a category and a separator decoration will be added between cells.
 
-Press shift twice and type **`strings.xml`** to open `res/values/stings.xml`
+Press **Shift** twice and type **`strings.xml`** to open `res/values/stings.xml`
 
 Add the following entry.
 
@@ -203,7 +207,7 @@ Run the app again and notice the title, `subheadline`, and `status` are now used
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Customize the Navigation)]
+[ACCORDION-BEGIN [Step 4: ](Customize the navigation)]
 
 In this section, the app will be modified to initially show the Product Categories screen when opened.  Selecting a category will navigate to a Products list screen for the selected category.  The floating action button on the Categories screen will be removed.
 
@@ -217,7 +221,7 @@ Add the following line below the other Intent declaration.
 Intent pcIntent = new Intent(LogonActivity.this, ProductCategoriesListActivity.class);
 ```
 
-After the call to `startActivityForResult`, add the below line.  This will cause the Product Category screen to be the first screen seen when opening the app but as the Entity List screen is opened first, it can be navigated to by pressing the up or back button.
+After the call to `startActivityForResult`, add the below line.  This will cause the Product Category screen to be the first screen seen when opening the app but as the Entity List screen is opened first, it can be navigated to by pressing the up or back button.  The `EntityList` screen contains the settings menu so to simply things, this screen is still displayed.
 
 ```Java
 startActivity(pcIntent);
@@ -300,7 +304,7 @@ Run the app again and notice the Product Categories screen is now the first scre
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Add Category Filtering with a FioriSearchView)]
+[ACCORDION-BEGIN [Step 5: ](Add category filtering with a FioriSearchView)]
 
 In this section a search field will be added to `ProductCategoriesListActivity` enabling a user to filter the results displayed on the product category screen.
 
@@ -355,7 +359,7 @@ Comment out the code to inflate entity menu and instead use the new `product_cat
 inflater.inflate(R.menu.product_categories_menu, menu);
 ```
 
-On Windows press **`Ctrl+F`** or on a Mac press **`command+F`** and search for `public class ProductCategoryListAdapter`.  
+On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and type `ProductCategoryListAdapter` to open the `ProductCategoryListAdapter` class.  
 
 Add the following member.
 ```Java
@@ -417,7 +421,7 @@ Now when you run the app again there is a filter search box that changes which p
 
 ![Filter Categories in action 2](filter-in-action.png)
 
->Further information on Fiori for Android and the generated app can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html">Fiori UI Overview</a>, <a target="_blank" href="https://experience.sap.com/fiori-design-android/object-cell/">Fiori Android Design Guidelines</a> and <a target="_blank" href="https://github.com/SAP/cloud-sdk-android-fiori-ui-components">Fiori UI Demo Application</a> and the `WizardAppReadme.md` file located in the generated app.
+>Further information on Fiori for Android and the generated app can be found at [Fiori UI Overview](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html), [Fiori Android Design Guidelines](https://experience.sap.com/fiori-design-android/object-cell/) and [Fiori UI Demo Application](https://github.com/SAP/cloud-sdk-android-fiori-ui-components) and the `WizardAppReadme.md` file located in the generated app.
 
 Congratulations!  You now have made use of Fiori for Android and have an understanding on some of the ways that the wizard generated application can be customized to show different fields on the list screens, alter control flow and add or remove menu items.
 

@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>sapui5, products>sap
 - How to configure your project for running a Grunt build
 - How to run a Grunt build
 
-SAP Web IDE Full-stack now comes with the Grunt task runner already part of the IDE, so you can run tasks by:
+SAP Web IDE Full-Stack comes with the Grunt task runner already part of the IDE, so you can run tasks by:
 
 - Specifying dependencies in the `package.json` file.
 - Specifying/defining tasks in the `Gruntfile.js` file.  
@@ -24,7 +24,7 @@ Once you've created these files, you get a new menu option called **Build** to s
 ### Before you begin
 For this tutorial, make sure:
 
-- You are using **SAP Web IDE Full-stack**
+- You are using **SAP Web IDE Full-Stack**
 - You have created an SAPUI5 project. You can simply create a blank or sample project from a template.
 - Your project uses the Basic JavaScript validator. To change it, right-click your project and go to **Project Settings** | **Code Checking** | **JavaScript**, change the validator to **Basic JavaScript**, and click **Save**.
 
@@ -34,10 +34,10 @@ The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm r
 
 For more information, see <https://docs.npmjs.com/files/npmrc>.
 
-> Please note that the Grunt build currently supports the "ES5" edition of the ECMAScript standard. The "ES6" edition is not supported.
-
-
-
+> Please note the following:
+<ul>
+<li>The Grunt build currently supports the ES6 edition of the ECMAScript standard. The ES6 edition is only supported from the 1.3.65 version of the Grunt best-practice build.</li>
+<li>Newer ECMAScript standards, such as ES6, work with SAPUI5 only in browsers with HTML5 capabilities. For more information, see [Browser and Platform Support](https://sapui5.hana.ondemand.com/#/topic/74b59efa0eef48988d3b716bd0ecc933) in the SAPUI5 documentation.</li></ul>
 
 
 ### Time to Complete
@@ -58,7 +58,7 @@ In the file enter the following code:
   "description": "Grunt build",
   "private": true,
   "devDependencies": {
-      "@sap/grunt-sapui5-bestpractice-build": "1.3.64"
+      "@sap/grunt-sapui5-bestpractice-build": "1.3.65"
    }
 }
 ```
@@ -75,17 +75,60 @@ Right-click your project and choose **New** | **File**, enter `Gruntfile.js`.
 
 ![Create Gruntfile.js](grunt-Step2-newfile.png)
 
-In the file enter the following code:
+To include the build tasks listed below, you need add the content below to the  `Gruntfile.js` file, according to the compatible version you want to define.
+
+This first code content defines the `compatVersion` property for a specific SAPUI5 version using the two-digit format: **`"x.xx"`**.
+
 ```
-module.exports = function(grunt) {
-  'use strict';
-  grunt.loadNpmTasks('@sap/grunt-sapui5-bestpractice-build');
-  grunt.registerTask('default', [
-      'lint',
-      'clean',
-      'build'
-  ]);
+module.exports = function (grunt) {
+            "use strict";
+            grunt.loadNpmTasks("@sap/grunt-sapui5-bestpractice-build");
+            grunt.config.merge({ compatVersion: "1.38" });
+            grunt.registerTask("default", [
+                        "clean",
+                        "lint",
+                        "build"
+            ]);
+            grunt.loadNpmTasks("@sap/grunt-sapui5-bestpractice-test");
+            grunt.registerTask("unit_and_integration_tests", ["test"]);
+            grunt.config.merge({
+                        coverage_threshold: {
+                                    statements: 0,
+                                    branches: 100,
+                                    functions: 0,
+                                    lines: 0
+                        }
+            });
 };
+
+```
+
+For modules created using the HTML5 Application Repository service, enter this content below. Here the `compatVersion` property is defined as **`"edge"`**, which is based on the SAP Innovation SAPUI5 version.
+```
+module.exports = function (grunt) {
+                "use strict";
+                grunt.loadNpmTasks("@sap/grunt-sapui5-bestpractice-build");
+                grunt.config.merge({
+                                compatVersion: "edge",
+                                deploy_mode: "html_repo"
+                });
+                grunt.registerTask("default", [
+                                "clean",
+                                "lint",
+                                "build"
+                ]);
+                grunt.loadNpmTasks("@sap/grunt-sapui5-bestpractice-test");
+                grunt.registerTask("unit_and_integration_tests", ["test"]);
+                grunt.config.merge({
+                                coverage_threshold: {
+                                                statements: 0,
+                                                branches: 100,
+                                                functions: 0,
+                                                lines: 0
+                                }
+                });
+};
+
 ```
 
 The code does the following:
@@ -97,7 +140,15 @@ The code does the following:
 |---------------|-------|
 | `lint`        | Validates the project code using ESLint according to the rules defined in the `.eslintrc` configuration file located in the root of your project.      |
 | `clean`       | Cleans the `dist` target folder from the previous build results.      |
-| `build`       | Produces a new build output in the `dist` folder of your project that is ready and optimized for better performance in the productive environment. The following tasks are executed during the build:<ul><li>Minification of `.css` files.</li><li>Minification of JavaScript files (minified files).</li><li>Copying of the original files to the `dist` folder with `-dbg` suffix added for debugging purposes.</li><li>Generation of the `Component-preload.js` and `Component-preload-dbg.js` preload files for the debug and minified files.</li><li>Minification of the preload file.</li><li>Generation of the `CachebusterInfo.json` file.</li><li>Generation of the `changes-bundle.json` file. The file contains a collection of all the changes that are made to an SAP Fiori element application and are located in the `changes` folder.</li><li>Generation of the `manifest-bundle.zip` file, which contains the `manifest.json` and `i18n` files.</li></ul> |
+| `build`       | Produces a new build output in the `dist` folder of your project that is ready and optimized for better performance in the productive environment. The following tasks are executed during the build:<ul>
+<li>Minification of `.css` files.</li>
+<li>Minification of JavaScript files (minified files).</li>
+<li>Copying of the original files to the `dist` folder with `-dbg` suffix added for debugging purposes.</li>
+<li>Generation of the `Component-preload.js` and `Component-preload-dbg.js` preload files for the debug and minified files.</li>
+<li>Minification of the preload file.</li>
+<li>Generation of the `CachebusterInfo.json` file.</li>
+<li>Generation of the `changes-bundle.json` file. The file contains a collection of all the changes that are made to an SAP Fiori element application and are located in the `changes` folder.</li>
+<li>Generation of the `manifest-bundle.zip` file, which contains the `manifest.json` and `i18n` files.</li></ul> |
 
 
 

@@ -2,15 +2,16 @@
 title: Configure Smart Data Integration with the SAP HANA Service
 description: Configure the data provisioning agent and create a remote source.
 auto_validation: true
-time: 35
+time: 25
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 
 ## Prerequisites
 - You have a productive account in SAP Cloud Platform, a subaccount in Cloud Foundry and a space.
-- You have access to the database cockpit for your SAP HANA service database instance.
-- You have enabled Data Provisioning Server in your SAP HANA service.
+- You have [created an instance of the SAP Cloud Platform, SAP HANA Service](https://developers.sap.com/tutorials/haas-dm-deploying-haas.html)
+- You have [access to the database cockpit for your SAP HANA service database instance](https://developers.sap.com/tutorials/haas-dm-connect-hana-cockpit.html).
+- You have enabled Data Provisioning Server in your SAP HANA service during setup or from the cockpit.
 - You have administration rights in your local computer.
 
 
@@ -20,7 +21,7 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 - How to configure the file adapter to load text files
 - How to create a remote source in SAP HANA using the Database Explorer
 
-This tutorial is based on SAP Cloud Platform, SAP HANA service currently available only in productive accounts.
+>**This tutorial cannot currently be completed with a trial account.**
 
 ---
 
@@ -41,7 +42,7 @@ Use your email account to login:
 
 If prompted for authorization, click **Authorize**. Take note of the endpoint
 
-![Access cockpit](8.png)
+![Access cockpit](8x.png)
 
  Click the **SAP HANA Cockpit** icon.
 
@@ -55,7 +56,7 @@ Open the SQL console.
 
 ![Access cockpit](34.png)
 
-The Database Explorer will automatically open a SQL console connected to your tenant database.
+The Database Explorer will automatically open a SQL console connected to your database.
 
 ![Access cockpit](7.png)
 
@@ -67,16 +68,9 @@ The Database Explorer will automatically open a SQL console connected to your te
 
 [ACCORDION-BEGIN [Step 2: ](Download and install the Data Provisioning Agent))]
 
-For development purposes, you can install the data provisioning agent on your local computer. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloudintegration), in the **Cloud Integration** tab. Scroll down to **Data Integration Downloads**.
-
-> It is recommended that you uninstall any previous agent before installing this new version.
-
-Download the **SDI Data Provisioning Agent** for your operating system.
-
-![Download SDI](1.png)
+Download the Data Provisioning Agent from [the SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520DP%2520Agent). Choose `SPS3` Patch 52 or higher.
 
 > For more information about installing the Data Provisioning Agent for productive environments check the [documentation in SAP Help](https://help.sap.com/viewer/7952ef28a6914997abc01745fef1b607/2.3.3/en-US/6634db61aa43435a977b608878e5313f.html)
-
 
 Choose a directory in your file system and use the following command to extract the file into it.
 
@@ -140,8 +134,6 @@ cd %DPA_INSTANCE%
 
 Navigate into the **`bin`** directory. Execute the configuration script `agentcli` with parameter `--configAgent`.
 
-> For Windows, the configuration script has extension `.bat` (`agentcli.bat`). For Linux, the extension is `.sh` (`agentcli.sh`)
-
 ```sh
 cd bin
 agentcli --configAgent
@@ -149,11 +141,11 @@ agentcli --configAgent
 
 ![Download SDI](13.png)
 
-Start with option 2 and start the agent with option 1.
+Start with option **2 . Start or Stop Agent** and start the agent with option **1 . Start Agent**.
 
 ![Download SDI](start.png)
 
-Use **`b`** to go back to the main menu. Continue with option 6.
+Use **`b` . Back** to go back to the main menu. Continue with option **6 . SAP HANA Connection**.
 
 ![Download SDI](14.png)
 
@@ -161,17 +153,29 @@ Choose option 3 for **JDBC**.
 
 ![Download SDI](15.png)
 
+Choose **true** for **Use Web Socket to connect**
+
+![Download SDI](ws.png)
+
+> ###Note: This option is available in the Data Provisioning Agent version 2.3.5.2 or higher.
+
+Get the database ID from the SAP HANA Service Dashboard
+
+![Configure SDI](dbid.png)
+
+And concatenate `/service/` and database ID to form the **Web Socket URL**
+
+![Configure SDI](wsid.png)
+
+Get the endpoint for Web Socket also from the SAP HANA Service Dashboard
+
+![Configure SDI](endpoint.png)
+
+And use it to complete the **Host** and **Port**
+
+![Configure SDI](ws2.png)
+
 Choose **true** for `Use encrypted JDBC connection`
-
-![Download SDI](16.png)
-
-You will now be prompted for the endpoint for **Direct SQL Connectivity** shown in the cockpit (noted in step 1).
-
-![Download SDI](17.png)
-
-As separate parameters:
-
-![Download SDI](18.png)
 
 Use `SYSTEM` (or an administration user in a non-trial environment) and its credentials.
 
@@ -227,7 +231,7 @@ Press **Enter** and quit the configuration tool.
 
 [ACCORDION-BEGIN [Step 5: ](Prepare a file for upload)]
 
-Download [this sample file](file.csv) into the default workspace.
+Download [this sample file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-connect-sdi/salarydata.csv) into the default workspace.
 
 The default workspace is located in `<<ROOT DIRECTORY>>\workspace`, for example, `\usr\sap\dpa\workspace` .
 

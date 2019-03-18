@@ -55,7 +55,7 @@ For more details, you can check the following link:
 
 Open a new tab in ***Postman***.
 
-Make sure that the ***`my-l-foundation`*** environment is selected.
+Make sure that the ***`my-ml-foundation`*** environment is selected.
 
 On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToken}}`** as value.
 
@@ -149,158 +149,22 @@ You should receive a response that includes a series of entries:
 
 Each entry in the response represents a box that identify a bounding box with an associated text.
 
-<table border="0">
-	<tr><td><img id="SAP_TechEd_BCN2018_01020.jpg" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006"/></div></td></tr><tr><td><canvas id="canvas_SAP_TechEd_BCN2018_01020.jpg"/></td></tr>
-</table>
-
-<script>
-var fontSize = 14;
-
-var response = {
-    "id": "37ec14b4-0fd5-45ad-4c36-1c7775a35a1a",
-    "predictions": [
-        {
-            "imageName": "SAP_TechEd_BCN2018_01020.jpg",
-            "results": [
-                {
-                    "bboxAccuracy": 0.9788690209388733,
-                    "boundingBox": {
-                        "x1": 1139,
-                        "x2": 1477,
-                        "x3": 1482,
-                        "x4": 1144,
-                        "y1": 291,
-                        "y2": 276,
-                        "y3": 402,
-                        "y4": 417
-                    },
-                    "text": "Check-ll"
-                },
-                {
-                    "bboxAccuracy": 0.981939971446991,
-                    "boundingBox": {
-                        "x1": 799,
-                        "x2": 1098,
-                        "x3": 1104,
-                        "x4": 804,
-                        "y1": 381,
-                        "y2": 365,
-                        "y3": 477,
-                        "y4": 493
-                    },
-                    "text": "Registration"
-                },
-                {
-                    "bboxAccuracy": 0.977262020111084,
-                    "boundingBox": {
-                        "x1": 530,
-                        "x2": 632,
-                        "x3": 640,
-                        "x4": 538,
-                        "y1": 472,
-                        "y2": 458,
-                        "y3": 516,
-                        "y4": 530
-                    },
-                    "text": "TECHED"
-                }
-            ]
-        }
-    ],
-    "processedTime": "2018-11-14T15:49:03.027874+00:00",
-    "status": "DONE"
-};
-
-function drawCanvas(imageId) {
-	var oImg    = document.getElementById(imageId);
-    var oCanvas = document.getElementById("canvas_" + imageId);
-
-	oCanvas.width  = oImg.width;
-	oCanvas.height = oImg.height;
-
-	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
-
-    ctx.lineWidth="3";
-    ctx.strokeStyle="red";
-	ctx.fillStyle = "white";
-	ctx.font = fontSize + "px Arial";
-
-    oImg.style.display = "none";
-    return ctx;
-}
-function drawBoundingBox(ctx, imageId, item, text) {
-	var oImg    = document.getElementById(imageId);
-    var oCanvas = document.getElementById("canvas_" + imageId);
-
-    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
-    var heightRatio = oCanvas.height / oImg.naturalHeight;
-
-    // draw the box
-    ctx.moveTo(item.x1 * widthRatio, item.y1 * heightRatio);
-    ctx.lineTo(item.x2 * widthRatio, item.y2 * heightRatio);
-    ctx.lineTo(item.x3 * widthRatio, item.y3 * heightRatio);
-    ctx.lineTo(item.x4 * widthRatio, item.y4 * heightRatio);
-    ctx.lineTo(item.x1 * widthRatio, item.y1 * heightRatio);
-    ctx.stroke();
-
-    // write the text with the box angle
-    ctx.save();
-    ctx.translate(item.x1 * widthRatio, item.y1 * heightRatio);
-    // do some trigonometry to calculate the angle in radian
-    var ab = Math.abs(item.x2 - item.x1);
-    var ac = Math.abs(item.y2 - item.y1);
-    var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
-    var clockwise = (item.y2 - item.y1 > 0 ? 1 : -1);
-    var radian = Math.acos(ab / bc);
-    ctx.rotate( clockwise * radian );
-    // draw the background box
-    ctx.fillStyle = 'red';
-    ctx.fillRect(0, 0, ctx.measureText(text).width, parseInt(fontSize*1.5));
-
-    // write the text in the box
-    ctx.fillStyle = "white";
-    ctx.fillText(text, 0, fontSize * heightRatio);
-    ctx.restore();
-}
-
-window.onload = function() {
-	for (var idx = 0; idx < response.predictions.length; idx++) {
-        var items = response.predictions[idx].results;
-        var name = response.predictions[idx].imageName;
-        var oImg = document.getElementById(name);
-        if(oImg){
-            oImg.onload = function(){
-                var ctx = drawCanvas(name);
-                for (var i = 0; i < items.length; i++) {
-                    var item = items[i];
-                    var text = "#" + i  + ": " + item.text + " " + ( item.bboxAccuracy * 100 ).toFixed(2) + "%";
-                    drawBoundingBox(ctx, name, item.boundingBox, text);
-                }                
-            }
-            oImg.src = oImg.src;
-        }
-    }
-};
-</script>
+![example](04.png)
 
 Here is a simple HTML code you can use to visualize other results:
 
 ```HTML
 <html>
 <body>
-<table border="0">
-	<tr><td><img id="SAP_TechEd_BCN2018_01020.jpg" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006"/></div></td></tr><tr><td><canvas id="canvas_SAP_TechEd_BCN2018_01020.jpg"/></td></tr>
-</table>
-
+<div id="div">
 <script>
 var fontSize = 14;
-
+var fontSpacer = parseInt(fontSize*1.2)
 var response = {
     "id": "37ec14b4-0fd5-45ad-4c36-1c7775a35a1a",
     "predictions": [
         {
-            "imageName": "SAP_TechEd_BCN2018_01020.jpg",
+            "imageName": "https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006",
             "results": [
                 {
                     "bboxAccuracy": 0.9788690209388733,
@@ -351,81 +215,86 @@ var response = {
     "status": "DONE"
 };
 
-function drawCanvas(imageId) {
-	var oImg    = document.getElementById(imageId);
-    var oCanvas = document.getElementById("canvas_" + imageId);
+function createCanvas(oImg, items) {
+    var oCanvas = document.createElement("CANVAS");
+    var ctx = oCanvas.getContext("2d");
 
-	oCanvas.width  = oImg.width;
-	oCanvas.height = oImg.height;
+    function resizeCanvas() {
+        // set the image width to the window width
+        imgRatioW = oImg.naturalWidth / window.innerWidth;
+        oImg.width  = window.innerWidth;
+        oImg.height = oImg.naturalHeight / imgRatioW ;
+        // adjust the canvas dimension
+        oCanvas.width  = oImg.width;
+        oCanvas.height = oImg.height;
+        // get the width & height for the image / canvas
+        var itemRatioW = oCanvas.width  / oImg.naturalWidth;
+        var itemRatioH = oCanvas.height / oImg.naturalHeight;
+        // draw the canvas
+        ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
+        ctx.lineWidth="3";
+        ctx.strokeStyle="red";
+        ctx.fillStyle = "white";
+        ctx.font = fontSize + "px Arial";
+        // display the items
+        for (var i = 0; i < items.length; i++) {
+            var text = "#" + i  + ": " + items[i].text + " " + ( items[i].bboxAccuracy * 100 ).toFixed(2) + "%";
+            // draw the box
+            ctx.moveTo(items[i].boundingBox.x1 * itemRatioW, items[i].boundingBox.y1 * itemRatioH);
+            ctx.lineTo(items[i].boundingBox.x2 * itemRatioW, items[i].boundingBox.y2 * itemRatioH);
+            ctx.lineTo(items[i].boundingBox.x3 * itemRatioW, items[i].boundingBox.y3 * itemRatioH);
+            ctx.lineTo(items[i].boundingBox.x4 * itemRatioW, items[i].boundingBox.y4 * itemRatioH);
+            ctx.lineTo(items[i].boundingBox.x1 * itemRatioW, items[i].boundingBox.y1 * itemRatioH);
+            ctx.stroke();
+            ctx.save();
+            // write the text with the box angle
+            ctx.translate(items[i].boundingBox.x4 * itemRatioW , items[i].boundingBox.y4 * itemRatioH);
+            // do some trigonometry to calculate the angle in radian
+            var ab = Math.abs(items[i].boundingBox.x2 - items[i].boundingBox.x1);
+            var ac = Math.abs(items[i].boundingBox.y2 - items[i].boundingBox.y1);
+            var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
+            var clockwise = (items[i].boundingBox.y2 - items[i].boundingBox.y1 > 0 ? 1 : -1);
+            var radian = Math.acos(ab / bc);
+            ctx.rotate( clockwise * radian );
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(-1, -1, ctx.measureText(text).width + 1, fontSpacer + 2);
 
-	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
-
-    ctx.lineWidth="3";
-    ctx.strokeStyle="red";
-	ctx.fillStyle = "white";
-	ctx.font = fontSize + "px Arial";
-
-    oImg.style.display = "none";
-    return ctx;
-}
-function drawBoundingBox(ctx, imageId, item, text) {
-	var oImg    = document.getElementById(imageId);
-    var oCanvas = document.getElementById("canvas_" + imageId);
-
-    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
-    var heightRatio = oCanvas.height / oImg.naturalHeight;
-
-    // draw the box
-    ctx.moveTo(item.x1 * widthRatio, item.y1 * heightRatio);
-    ctx.lineTo(item.x2 * widthRatio, item.y2 * heightRatio);
-    ctx.lineTo(item.x3 * widthRatio, item.y3 * heightRatio);
-    ctx.lineTo(item.x4 * widthRatio, item.y4 * heightRatio);
-    ctx.lineTo(item.x1 * widthRatio, item.y1 * heightRatio);
-    ctx.stroke();
-
-    // write the text with the box angle
-    ctx.save();
-    ctx.translate(item.x1 * widthRatio, item.y1 * heightRatio);
-    // do some trigonometry to calculate the angle in radian
-    var ab = Math.abs(item.x2 - item.x1);
-    var ac = Math.abs(item.y2 - item.y1);
-    var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
-    var clockwise = (item.y2 - item.y1 > 0 ? 1 : -1);
-    var radian = Math.acos(ab / bc);
-    ctx.rotate( clockwise * radian );
-    // draw the background box
-    ctx.fillStyle = 'red';
-    ctx.fillRect(0, 0, ctx.measureText(text).width, parseInt(fontSize*1.5));
-
-    // write the text in the box
-    ctx.fillStyle = "white";
-    ctx.fillText(text, 0, fontSize * heightRatio);
-    ctx.restore();
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, 0, fontSize);
+            ctx.restore();
+        }
+    }
+    // call the resize function
+    resizeCanvas();
+    // add the event listener
+    window.addEventListener('resize', resizeCanvas, false);
+    return oCanvas;
 }
 
 window.onload = function() {
 	for (var idx = 0; idx < response.predictions.length; idx++) {
         var items = response.predictions[idx].results;
         var name = response.predictions[idx].imageName;
-        var oImg = document.getElementById(name);
-        if(oImg){
-            oImg.onload = function(){
-                var ctx = drawCanvas(name);
-                for (var i = 0; i < items.length; i++) {
-                    var item = items[i];
-                    var text = "#" + i  + ": " + item.text + " " + ( item.bboxAccuracy * 100 ).toFixed(2) + "%";
-                    drawBoundingBox(ctx, name, item.boundingBox, text);
-                }                
-            }
-            oImg.src = oImg.src;
+
+        var oImg = document.createElement("IMG");
+        //document.getElementById("div").appendChild(oImg);
+        oImg.onload = function(){
+            document.getElementById("div").appendChild(createCanvas(this, items));
         }
-    }
+        oImg.src = name;
+	}
 };
 </script>
+</div>
 </body>
 </html>
 ```
+
+> ###**Note:**
+> In order to use this sample HTML code, you will need to save the images in the same location as the HTML code using the same name used when submitting the service call (in the current code: `SAP_TechEd_BCN2018_01020.jpg`).
+
 You will notice that the coordinates are not rectangles, but are 4 points x and y.
 
 [DONE]

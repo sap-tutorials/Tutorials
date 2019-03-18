@@ -107,7 +107,6 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
         var readout = dht.read();
 
         var sensorData = {
-            "_time": Date.now(),
             "temperature": Math.round(readout.temperature),
             "humidity": Math.round(readout.humidity),
             "light" : 0
@@ -125,6 +124,7 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
             let sensorData = await readSensor();
 
             let payload = {
+                "timestamp": Date.now(),
                 "capabilityAlternateId": settings.capabilityAlternateId,
                 "sensorAlternateId": settings.sensorAlternateId,
                 "measures": [sensorData]

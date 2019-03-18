@@ -3,24 +3,26 @@ const { URL } = require('url');
 const { regexp } = require('../constants');
 
 const extractLinks = (content) => {
-    const { link: { markdown, pure } } = regexp;
+    const { link: { markdown } } = regexp;
 
-    const links = markdown.map(regex => {
+    const links = markdown.map((regex) => {
         const links = [];
         let match;
-        while(match = regex.exec(content)) {
+        while (match = regex.exec(content)) {
             links.push(match[1]);
         }
         return links;
     })
-    .reduce((prev, curr) => prev.concat(curr), [])
-    .map(mdlink => {
-        const match = mdlink.match(pure);
-        if(match) {
-            return match.shift();
-        }
-    })
-    .filter(link => link);
+      .reduce((prev, curr) => prev.concat(curr), [])
+      .map((mdLink) => {
+          try {
+              const { href } = new URL(mdLink);
+              return href;
+          } catch (e) {
+              return undefined;
+          }
+      })
+      .filter(link => link);
     return [...(new Set(links))];
 };
 

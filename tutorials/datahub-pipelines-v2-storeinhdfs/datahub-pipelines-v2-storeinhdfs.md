@@ -1,6 +1,7 @@
 ---
-title: Store sensor data in HDFS in SAP Data Hub, developer edition 2.3
-description: Use HDFS to store sensor data by using SAP Data Hub, developer edition 2.3.
+title: Store sensor data in HDFS in SAP Data Hub, developer edition 2.4
+description: Use HDFS to store sensor data by using SAP Data Hub, developer edition 2.4.
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -27,14 +28,15 @@ docker run -ti --publish 127.0.0.1:50070:50070 --name hdfs --hostname hdfs --net
 
 After the installations are completed, the container would be started. You would be able to see the following output in the command prompt :
 
-![picture_05](./datahub-pipelines-v2-storeinhdfs_05.png)
+![picture_01](./datahub-pipelines-v2-storeinhdfs_05.png)
 
 Open `http://localhost:50070` and check that HDFS is up and running.
 
-![picture_01](./datahub-pipelines-v2-storeinhdfs_01.png)  
+![picture_02](./datahub-pipelines-v2-storeinhdfs_01.png)  
 
 Navigate to **Utilities** | **Browse the file system (1)** and display the `/tmp/hdfsManager` directory (when you install SAP Data Hub, developer edition initially, this directory is empty).
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -45,7 +47,7 @@ Remove the connection between the **`Kafka Consumer2`** operator and the **`ToSt
 
 Add a **Write File** operator to the pipeline by drag & drop. Then connect the `message` out port of the **`Kafka Consumer2`** operator to the `inFile` port of the **Write File** operator.
 
-![picture_02](./datahub-pipelines-v2-storeinhdfs_02.png)  
+![picture_03](./datahub-pipelines-v2-storeinhdfs_02.png)  
 
 Configure the **Write File** operator. You need to maintain the following properties:
 
@@ -57,17 +59,18 @@ Configure the **Write File** operator. You need to maintain the following proper
 
 Click on the text box for **Connection** value and configure the following properties:
 
-![picture_06](./datahub-pipelines-v2-storeinhdfs_06.png)  
+![picture_04](./datahub-pipelines-v2-storeinhdfs_06.png)  
 
 The **Write File** operator will write the received data to files in the `/tmp/hdfsManager` directory. The files follow the scheme `test_<counter>.txt` (whereas `<counter>` is an incremental integer).
 
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Read File Operator)]
 Add a **Read File** operator to the pipeline by drag & drop. Then connect the `outFile` message port of the **Read File** operator to the `ininterface` port of the **`ToString` Converter** operator.
 
-![picture_03](./datahub-pipelines-v2-storeinhdfs_03.png)  
+![picture_05](./datahub-pipelines-v2-storeinhdfs_03.png)  
 
 Configure the **Read File** operator. You need to maintain the following properties:
 
@@ -79,10 +82,11 @@ Configure the **Read File** operator. You need to maintain the following propert
 
 Click on the text box for **Connection** value and configure the following properties:
 
-![picture_07](./datahub-pipelines-v2-storeinhdfs_06.png)   
+![picture_06](./datahub-pipelines-v2-storeinhdfs_06.png)   
 
 Afterwards press the **Save** button.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -95,10 +99,19 @@ In contrast to the previous tutorial, this time the generated sensor data is not
 
 Open `http://localhost:50070` and display the `/tmp/hdfsManager` directory. The longer the pipeline runs, the more files you will find there.
 
-![picture_04](./datahub-pipelines-v2-storeinhdfs_04.png)  
+![picture_07](./datahub-pipelines-v2-storeinhdfs_04.png)  
+
+When the **Status (2)** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal (3)** operator to see the generated sensor data.
+
+
+Copy any row of the terminal output and paste it in the frame below and click on **Validate**.
+
+![picture_09](./datahub-pipelines-v2-storeinhdfs_07.png)
+
+[VALIDATE_1]
+
 
 Stop the pipeline by pressing the **Stop** button.
-
 
 [ACCORDION-END]
 

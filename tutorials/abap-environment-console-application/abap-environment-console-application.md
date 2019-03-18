@@ -18,14 +18,13 @@ time: 5
   - How to create an ABAP class
   - How to execute the application console
 
-In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
+In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 ---
 
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
 Open Eclipse on your desktop.
-
 ![Open Eclipse](desktop.png)
 
 [DONE]
@@ -34,45 +33,49 @@ Open Eclipse on your desktop.
 [ACCORDION-BEGIN [Step 2: ](Create ABAP Cloud project in ADT)]
 1. Go to ADT and select the menu path **File** > **New** > **Other**.
 
-      ![Create an ABAP Cloud project in ADT](eclipse.png)
+    ![Create an ABAP Cloud project in ADT](other.png)
 
-2. Filter **ABAP Cloud Project** and select it from the wizard. Click **Next**.
+2. Search for ABAP Cloud Project, select it and click **Next**.
 
-      ![Create an ABAP Cloud project in ADT](eclipse2.png)
+    ![Select ABAP Cloud Project](abap.png)
+
+3. In the next wizard screen, select SAP Cloud Platform Cloud Foundry Environment and click **Next**.
+
+    ![Select service instance connection](servicekey.png)
+
+4. Maintain the SAP Cloud Platform Foundry connection information and click **Next**:
+    - Region: **`<your_region>`**
+    - Email: **`<your_email_address>`**
+    - Password: **`<your_password>`**
+
+    ![Setup connection settings](connect.png)
+
+5. Maintain the required Service Instance details by selecting the appropriate values from the drop-down lists and move on with **Next**.
+    - Organization: **`<your_organization>`**
+    - Space: **`<your_space>`**
+    - Service Instance: **`<your_service_instance>`**
+
+    ![Select service instance details](details.png)
+
+6. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press Log On.
+
+    ![Enter login credentials](login.png)
+
+7. Connect to service instance by selecting **Next**.
+
+    ![Connect to Service Instance](instance.png)
+
+8. At this stage you may add your favorite packages and click **Finish** to complete your setup.
+     
+    ![Add favorite packages](project.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Select service instance connection)]
-In the next wizard screen, select **Service Key** and click **Next**.
 
-![Select service instance connection](servicekey2.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Provide connection settings)]
-  1. Open the service key file **`T01.txt`** on your desktop. Copy the service key and insert it to the wizard screen. Click **Next**.
-
-      ![Setup connection settings](connect2.png)
-
-  2. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press **Log On**. Use following e-mail address `exp013-XXX@teched.cloud.sap` to log in.
-
-     ![Enter login credentials](login.png)
-
-  3. Connect to service instance by selecting **Next**.
-
-      ![Connect to Service Instance](instance.png)
-
-  4. At this stage you may add your favorite packages and click **Finish** to complete your setup.
-
-      ![Add favorite packages](project.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Create ABAP package)]
-  1. Right-click on the **`ZLocal`** package and select **New** > **ABAP Package** from the context menu.
+[ACCORDION-BEGIN [Step 3: ](Create ABAP package)]
+  1. Right-click on the `ZLocal` package and select New > ABAP Package from the context menu.
 
       ![Add ABAP package](package.png)
 
@@ -94,7 +97,7 @@ In the next wizard screen, select **Service Key** and click **Next**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create new ABAP class)]
+[ACCORDION-BEGIN [Step 4: ](Create new ABAP class)]
   1. Add a new ABAP class to your package.
 
       ![Add new ABAP class](class.png)
@@ -116,7 +119,7 @@ In the next wizard screen, select **Service Key** and click **Next**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Implement Interface)]
+[ACCORDION-BEGIN [Step 5: ](Implement Interface)]
   1. In the class definition, specify the interface `IF_OO_ADT_CLASSRUN` in the public section as shown on the screenshot. Now go to the class implementation and provide the implementation of the method `IF_OO_ADT_CLASSRUN~MAIN`. As shown on the screenshot, it should output the text Hello World! using the code line below
 `out->write('Hello World!').`
 
@@ -146,7 +149,7 @@ In the next wizard screen, select **Service Key** and click **Next**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Execute ABAP application)]
+[ACCORDION-BEGIN [Step 6: ](Execute ABAP application)]
   1. Right-click your class and select **Run As** > **ABAP Application (Console)** or select your class and press **`F9`**.
 
       ![Execute ABAP application](console.png)
@@ -158,7 +161,7 @@ In the next wizard screen, select **Service Key** and click **Next**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+[ACCORDION-BEGIN [Step 7: ](Test yourself)]
 Write only the write statement with following information: Hello SAP Cloud Platform ABAP Environment!
 
 [VALIDATE_1]

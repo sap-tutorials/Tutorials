@@ -28,7 +28,7 @@ Click `File->New` and choose **Project from Template**.
 
 ![New project from template](1.png)
 
-Choose **SAP HANA Multi-Target Application** and click **Next**.
+Choose **SAP HANA Database Application** and click **Next**.
 
 ![New project from template](2.png)
 
@@ -51,7 +51,9 @@ Choose version **2.0 SPS03** and click **Finish**
 
 This project will combine artifacts from an HDI container and a classic, replicated schema.
 
-You will first create a table to hold data from performance evaluations received by employees and the rating they give the company in terms of satisfaction. This is a sample record that will be stored in this table:
+You will first create a table to hold data from performance evaluations received by employees and the rating they give the company in terms of satisfaction.
+
+These are sample records that will be stored in this table:
 
 ![New DB artifact](9.png)
 
@@ -61,7 +63,7 @@ Right-click on the `src` folder, choose `New -> File`
 
 Use the following name
 
-```text
+```Text
 data/performance.hdbtable
 ```
 
@@ -106,12 +108,15 @@ Create a new database artifact under the data folder
 
 Use the following name
 
-```text
+```Text
 comment_text
 ```
+
+
 And choose `hdbfulltextindex`
 
 ![New DB artifact](11.png)
+
 
 Paste the following code into it:
 
@@ -131,11 +136,11 @@ TEXT ANALYSIS ON
 
 You will be referring to this service later for integrations. For that reason, you will specify a name for the HDI container when it is created by SAP Web IDE.
 
-Open the file `mta.yaml` on the `MTA Editor` tab
+Open the file `mta.yaml` on the `MTA Editor` tab.
 
 ![New DB artifact](14.png)
 
-Open the **Resources** tab. Under **Parameters**, use the **+** sign to create the following key-value pair
+Open the **Resources** tab. Under **Parameters**, use the **+** sign to create the following key-value pair.
 
 | key | Value |
 |:------|:---------|
@@ -143,7 +148,7 @@ Open the **Resources** tab. Under **Parameters**, use the **+** sign to create t
 
 ![New DB artifact](15.png)
 
-**Save** the file
+**Save** the file.
 
 ![New DB artifact](16.png)
 
@@ -151,7 +156,13 @@ Right-click on the database module and choose **Build**.
 
 ![Build db](13.png)
 
+> **Getting an error?**
+>
+> If the build throws an error about the builder being outdated, right-click on the project and navigate into the Cloud Foundry menu. Make sure the settings are mapped to an instance of service of type `hana-db` and click **Reinstall Builder**. Once the builder is reinstalled, try the build again.
+
+</br>
 > **What is going on?**
+>
 >&nbsp;
 > The console on the bottom will show the progress. First, an HDI container will be created and bound to the builder. Scroll up the log to see it in your screen:
 >&nbsp;
@@ -168,8 +179,6 @@ Right-click on the database module and choose **Build**.
 >&nbsp;
 >  ![Build db](26.png)
 
-
-
 [DONE]
 [ACCORDION-END]
 
@@ -179,7 +188,7 @@ For testing and development purposes, you can use a local file to load data into
 
 Create the configuration for the upload first.  In the `data` folder, create a file called:
 
-```TEXT
+```Text
 loads/dataload.hdbtabledata
 ```
 
@@ -205,7 +214,7 @@ Paste the following content into it:
 }		
 ```
 
-Download this `csv` [file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-create-db-mta/performance.csv) into your computer. Upload it into the **loads** folder using the `Import` option
+Download this `csv` file -- `https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-create-db-mta/performance.csv` into your computer. Upload it into the **loads** folder using the `Import` option
 
 ![Data load](20.png)
 

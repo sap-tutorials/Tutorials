@@ -3,8 +3,8 @@ title: Personalize Your SAP Screen Personas Flavor
 description: Simplify the main screen of IW51 and add barcode scanning functionality.
 auto_validation: true
 time: 30
-tags: [tutorial>intermediate, products>sap-screen-personas>sap-screen-personas, topic>mobile, products>sap-fiori]
-primary_tag: products>sap-screen-personas>sap-screen-personas
+tags: [tutorial>intermediate, products>sap-screen-personas, topic>mobile, products>sap-fiori]
+primary_tag: products>sap-screen-personas
 ---
 
 ## Prerequisites

@@ -27,9 +27,15 @@ The data set that you will be using for this series is the ***small*** version o
 
 This dataset, thanks to its size, can quickly be uploaded in your SAP HANA, express edition instance.
 
-If you have additional capacity resources, you can run this tutorial series with the larger datasets, but the validations steps implemented were built based on the ***small dataset***.
-
 Before using these data sets, please review the <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> file for the usage licenses and other details.
+
+> ### **Note:**:
+>
+> As the datasets get updated regularly, you will be provided with a copy of the ***small dataset***. so that the implemented validation will work.
+>
+> However, you are free to use the latest version of the dataset from the `MovieLens` website, but you won't be able to mark you work as completed as the validation will fail.
+>
+> In addition, if you have additional capacity resources, you may want to run this tutorial series with the larger datasets. but again the validations steps were built based on a local copy of the ***small dataset***.
 
 [DONE]
 [ACCORDION-END]
@@ -181,66 +187,112 @@ Your package structure should now look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Create the CDS Entity Artifacts)]
+[ACCORDION-BEGIN [Step 1: ](Create the HDI Table Artifacts)]
 
-> #### **CDS Entities Artifacts**
+> #### **HDI Table Artifacts**
 >
->In the SAP HANA database, a CDS entity is a table with a set of data elements that are organized using columns and rows.
->&nbsp;
->A CDS entity has a specified number of columns, defined at the time of entity creation, but can have any number of rows.
->&nbsp;
->Database entities also typically have meta-data associated with them; the meta-data might include constraints on the entity or on the values within particular columns.
->&nbsp;
->SAP HANA Extended Application Services (SAP HANA XS) enables you to create a database entity as a design-time file. All design-time files, including your CDS entity definition, can be transported to other SAP HANA systems and, when deployed, used to generate the same catalog objects. You can define the entity using CDS compliant DDL.
->&nbsp;
->They are stored in a CDS documents which are design-time source files that contain DDL code according to rules defined in Core Data Services.
->&nbsp;
->The SAP HANA Core Data Services (CDS) plug-in transforms a design-time SAP HANA CDS resource (defined in a `.hdbcds` artifact) into the database objects defined in the CDS document, for example, tables, views, types, etc.
->&nbsp;
->For additional details, check the [CDS Entities in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/df46a790f0694b0d9820487b385d138c.html) documentation.
+>The XS advanced deployment infrastructure supports a wide variety of database artifact types, for example, tables, types, views.
+>
+>For additional details, check the [HDI Table Artifacts](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/453d48e28f6747799546236b4b432e58.html) documentation.
 
-Create a new file named **`data.hdbcds`** in the **`movielens/db/src/hdb`** folder.
+### **Links**
 
-By default the ***Graphical Editor*** will open. Close it, and right click on the **`data.hdbcds`** file, and go to **Open with > Code Editor**.
+Create a new file named **`links.hdbtable`** in the **`movielens/db/src/data`** folder.
 
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/data.hdbcds
+movielens/db/src/data/links.hdbtable
 ```
 
 Paste the following content:
 
-```JavaScript
-namespace aa.movielens.db.hdb;
+```js
+COLUMN TABLE "aa.movielens.db.data::links"(
+    "MOVIEID" INTEGER CS_INT NOT NULL,
+    "IMDBID"  INTEGER CS_INT,
+    "TMDBID"  INTEGER CS_INT,
+    PRIMARY KEY (
+        "MOVIEID"
+    )
+);
+```
 
-context data {
-    entity links {
-        key MOVIEID : Integer;
-            IMDBID  : Integer;
-            TMDBID  : Integer;
-    };
+Save the file using the ![save](00-save.png) icon from the menu.
 
-    entity movies {
-        key MOVIEID : Integer;
-            TITLE   : String(255);
-            GENRES  : String(255);
-    };
+### **Movies**
 
-    entity ratings {
-        key USERID    : Integer;
-        key MOVIEID   : Integer;
-            RATING    : DecimalFloat;
-            TIMESTAMP : Integer;
-    };
+Create a new file named **`movies.hdbtable`** in the **`movielens/db/src/data`** folder.
 
-    entity tags {
-        key USERID    : Integer;
-        key MOVIEID   : Integer;
-        key TAG       : String(255);
-            TIMESTAMP : Integer;
-    };
-};
+This is the full path of the created file:
+
+```
+movielens/db/src/data/movies.hdbtable
+```
+
+Paste the following content:
+
+```js
+COLUMN TABLE "aa.movielens.db.data::movies"(
+    "MOVIEID" INTEGER CS_INT NOT NULL,
+    "TITLE"   VARCHAR(255),
+    "GENRES"  VARCHAR(255),
+    PRIMARY KEY (
+        "MOVIEID"
+    )
+);
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+### **Ratings**
+
+Create a new file named **`ratings.hdbtable`** in the **`movielens/db/src/data`** folder.
+
+This is the full path of the created file:
+
+```
+movielens/db/src/data/ratings.hdbtable
+```
+
+Paste the following content:
+
+```js
+COLUMN TABLE "aa.movielens.db.data::ratings"(
+    "USERID"     INTEGER CS_INT NOT NULL,
+    "MOVIEID"    INTEGER CS_INT NOT NULL,
+    "RATING"     DOUBLE CS_DOUBLE,
+    "TIMESTAMP"  INTEGER,
+    PRIMARY KEY (
+        "USERID", "MOVIEID"
+    )
+);
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+### **Tags**
+
+Create a new file named **`tags.hdbtable`** in the **`movielens/db/src/data`** folder.
+
+This is the full path of the created file:
+
+```
+movielens/db/src/data/tags.hdbtable
+```
+
+Paste the following content:
+
+```js
+COLUMN TABLE "aa.movielens.db.data::tags"(
+    "USERID"     INTEGER CS_INT NOT NULL,
+    "MOVIEID"    INTEGER CS_INT NOT NULL,
+    "TAG"        VARCHAR(255) NOT NULL,
+    "TIMESTAMP"  INTEGER,
+    PRIMARY KEY (
+        "USERID", "MOVIEID", "TAG"
+    )
+);
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
@@ -256,12 +308,12 @@ Save the file using the ![save](00-save.png) icon from the menu.
 >&nbsp;
 >For additional details, check the [Table Data in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/35c4dd829d2046f29fc741505302f74d.html) documentation.
 
-Create a new file named **`data.hdbtabledata`** in the **`movielens/db/src/hdb`** folder.
+Create a new file named **`upload_tabledata.hdbtabledata`** in the **`forecast/db/src/data`** folder.
 
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/data.hdbtabledata
+forecast/db/src/data/upload_tabledata.hdbtabledata
 ```
 
 Paste the following content:
@@ -271,10 +323,7 @@ Paste the following content:
   "format_version": 1,
   "imports": [
     {
-      "column_mappings" : {
-        "MOVIEID" : "movieId",
-        "IMDBID" : "imdbId",
-        "TMDBID" : "tmdbId"
+      "column_mappings" : { "MOVIEID" : "movieId",        "IMDBID" : "imdbId",        "TMDBID" : "tmdbId"
       },
       "import_settings" : {
         "import_columns" : [ "MOVIEID", "IMDBID", "TMDBID"],
@@ -284,14 +333,10 @@ Paste the following content:
         "data_type" : "CSV", "has_header" : true, "dialect"   : "HANA",
         "file_name" : "aa.movielens.db.data::links.csv"
       },
-      "target_table" : "aa.movielens.db.hdb::data.links"  
+      "target_table" : "aa.movielens.db.data::links"  
     },
     {
-      "column_mappings" : {
-        "MOVIEID" : "movieId",
-        "TITLE" : "title",
-        "GENRES" : "genres"
-      },
+      "column_mappings" : { "MOVIEID" : "movieId",        "TITLE" : "title",        "GENRES" : "genres"      },
       "import_settings" : {
         "import_columns" : [ "MOVIEID", "TITLE", "GENRES"],
         "include_filter" : [], "exclude_filter" : []
@@ -300,15 +345,10 @@ Paste the following content:
         "data_type" : "CSV", "has_header" : true, "dialect"   : "HANA",
         "file_name" : "aa.movielens.db.data::movies.csv"
       },
-      "target_table" : "aa.movielens.db.hdb::data.movies"  
+      "target_table" : "aa.movielens.db.data::movies"  
     },
     {
-      "column_mappings" : {
-        "USERID" : "userId",
-        "MOVIEID" : "movieId",
-        "RATING" : "rating",
-        "TIMESTAMP": "timestamp"
-      },
+      "column_mappings" : { "USERID" : "userId",        "MOVIEID" : "movieId",        "RATING" : "rating",        "TIMESTAMP": "timestamp"      },
       "import_settings" : {
         "import_columns" : [ "USERID", "MOVIEID", "RATING", "TIMESTAMP"],
         "include_filter" : [], "exclude_filter" : []
@@ -317,15 +357,10 @@ Paste the following content:
         "data_type" : "CSV", "has_header" : true, "dialect"   : "HANA",
         "file_name" : "aa.movielens.db.data::ratings.csv"
       },
-      "target_table" : "aa.movielens.db.hdb::data.ratings"  
+      "target_table" : "aa.movielens.db.data::ratings"  
     },
     {
-      "column_mappings" : {
-        "USERID" : "userId",
-        "MOVIEID" : "movieId",
-        "TAG" : "tag",
-        "TIMESTAMP": "timestamp"
-      },
+      "column_mappings" : { "USERID" : "userId",        "MOVIEID" : "movieId",        "TAG" : "tag",        "TIMESTAMP": "timestamp"      },
       "import_settings" : {
         "import_columns" : [ "USERID", "MOVIEID", "TAG", "TIMESTAMP"],
         "include_filter" : [], "exclude_filter" : []
@@ -334,7 +369,7 @@ Paste the following content:
         "data_type" : "CSV", "has_header" : true, "dialect"   : "HANA",
         "file_name" : "aa.movielens.db.data::tags.csv"
       },
-      "target_table" : "aa.movielens.db.hdb::data.tags"  
+      "target_table" : "aa.movielens.db.data::tags"  
     }    
   ]
 }
@@ -388,13 +423,13 @@ Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 Paste the following content in the console, and use the execute icon ![run](00-dbexplorer-run.png).
 
 ```SQL
-select 'links'   as "table name", count(1) as "row count" from "aa.movielens.db.hdb::data.links"
+select 'links'   as "table name", count(1) as "row count" from "aa.movielens.db.data::links"
 union all
-select 'movies'  as "table name", count(1) as "row count" from "aa.movielens.db.hdb::data.movies"
+select 'movies'  as "table name", count(1) as "row count" from "aa.movielens.db.data::movies"
 union all
-select 'ratings' as "table name", count(1) as "row count" from "aa.movielens.db.hdb::data.ratings"
+select 'ratings' as "table name", count(1) as "row count" from "aa.movielens.db.data::ratings"
 union all
-select 'tags'    as "table name", count(1) as "row count" from "aa.movielens.db.hdb::data.tags";
+select 'tags'    as "table name", count(1) as "row count" from "aa.movielens.db.data::tags";
 ```
 
 Based on the result returned by the above SQL statement, provide an answer to the question below then click on **Validate**.
