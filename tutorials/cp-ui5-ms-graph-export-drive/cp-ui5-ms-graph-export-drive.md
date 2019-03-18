@@ -196,7 +196,7 @@ onUploadToOneDrive: function () {
   var oSettings = {
     workbook: {
       columns: aCols,
-      hierarchyLevel: 'Level'
+      hierarchyLevel: 'level'
     },
     dataSource: {
       type: "oData",
@@ -340,7 +340,7 @@ sap.ui.define([
 			var oSettings = {
 				workbook: {
 					columns: aCols,
-					hierarchyLevel: 'Level'
+					hierarchyLevel: 'level'
 				},
 				dataSource: {
 					type: "oData",
