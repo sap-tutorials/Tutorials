@@ -209,7 +209,7 @@ onUploadToOneDrive: function () {
   };
 
   new Spreadsheet(oSettings).attachBeforeSave({}, function (oEvent) {
-    oEvent.bPreventDefault = true;
+    oEvent.preventDefault();
     this.putToGraph('/me/drive/root:/UploadedFromWebApp/' + oSmartTable.getEntitySet() + '.xlsx:/content',
       new Blob([oEvent.getParameter('data')], {
         type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
@@ -353,7 +353,7 @@ sap.ui.define([
 			};
 
 			new Spreadsheet(oSettings).attachBeforeSave({}, function (oEvent) {
-				oEvent.bPreventDefault = true;
+				oEvent.preventDefault();
 				this.putToGraph('/me/drive/root:/UploadedFromWebApp/' + oSmartTable.getEntitySet() + '.xlsx:/content',
 					new Blob([oEvent.getParameter('data')], {
 						type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
