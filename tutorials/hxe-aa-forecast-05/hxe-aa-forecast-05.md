@@ -1,9 +1,9 @@
-hxe-aa-forecast-05---
+---
 title: Time Series with SAP HANA APL (Forecast App)
 description: Understand the capabilities and options made available with the SAP HANA Automated Predictive Library (APL), which algorithm can be used to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning  ]
 time: 30
 ---
 

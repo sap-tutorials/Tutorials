@@ -9,7 +9,7 @@ time: 15
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
 ### You will learn  
@@ -24,11 +24,7 @@ Click the **Run** button to build and run the generated application:
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-18.png)
 
-The **Simulator** app now launches. If you have configured the app to allow for push notifications, you will get the following alert:
-
-![Build and run](fiori-ios-scpms-create-app-teched18-part2-19.png)
-
-Press **Allow**. You now see the initial view:
+The **Simulator** app now launches.
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-20.png)
 
@@ -44,25 +40,22 @@ The app now displays the initial **Data Privacy** acknowledgement page. Tap **Al
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-61.png)
 
-The app now proceeds with a 3-step process. First, you will see the **Data Privacy** detail page. Tap **Next** to proceed to the next step.
+Choose a passcode to finish the onboarding process.
 
-![Build and run](fiori-ios-scpms-create-app-teched18-part2-62.png)
+> **Note:** The passcode is optional. If you don't require an app passcode you can later delete the corresponding code in the generated `OnboardingFlowProvider.swift` class. The app passcode forces you to enter the passcode every time you start the app. If this bothers you during your development process you can change your simulator to always verify automatically.
+To do so go to your simulator and in the menu `Hardware` -> `Face ID` and select `Enrolled` and `Matching Face`. The simulator now will simulate a matching face and pass the authentication.
 
-Next you will see the **Security** detail page. Tap **Next** to proceed to the next step.
-
-![Build and run](fiori-ios-scpms-create-app-teched18-part2-63.png)
-
-Lastly you are presented the **Consent** detail page. Tap **Allow** to proceed.
-
-![Build and run](fiori-ios-scpms-create-app-teched18-part2-64.png)
-
-Choose a passcode to finish the onboarding process. Tap **Next** and confirm your passcode.
+Tap **Next** and confirm your passcode.
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-22e.png)
 
-After you confirmed your passcode by tapping the **Done** button, the application starts with an overview of the available **Collections** of the OData service:
+After you confirmed your passcode by tapping the **Done** button, the application will ask you for permission to send notifications. You can tap on allow if you want to play with notifications later on.
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-23.png)
+
+The first view you will see is an overview of the available **Collections** of the OData service:
+
+![Build and run](fiori-ios-scpms-create-app-teched18-part2-23a.png)
 
 [DONE]
 [ACCORDION-END]

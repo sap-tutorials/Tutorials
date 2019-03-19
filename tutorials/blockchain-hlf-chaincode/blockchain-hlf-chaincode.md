@@ -62,7 +62,7 @@ This opens the Example Chaincode window, giving you access to the manifest, API,
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploying Chaincode)]
+[ACCORDION-BEGIN [Step 4: ](Deploy chaincode)]
 
 With the Example Chaincode window open, click **Deploy Chaincode**:
 

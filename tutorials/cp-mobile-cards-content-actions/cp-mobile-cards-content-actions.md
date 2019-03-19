@@ -3,7 +3,7 @@ title: Implement A Card With Content-Based Actions
 description: Create a card with various actions on its content, such as trigger a phone call, send an email, open maps app or launch a website with more details.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards ]
+tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards  ]
 time: 20
 ---
 

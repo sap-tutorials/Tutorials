@@ -15,7 +15,7 @@ time: 15
   - How to connect to the physical tenant database and create a plain schema
   - How to create a Virtual Source to connect to Google BigQuery and import data
 
-**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED WITH A LIVE INSTRUCTOR**  as it is. 
 
 ---
 
@@ -131,6 +131,10 @@ Copy the name of the project ID. Keep this value handy as you will need it later
 Connect to the tenant database again using the **+** sign. Use the user `BQUSR` and `HanaRocks1` as the password.
 
 ![Create MTA](12.png)
+
+Select the new connection and open a new SQL console
+
+![Create MTA](sql.png)
 
 Copy the following SQL statement. Replace `PROJECT_ID` with the ID you copied from step 4.
 

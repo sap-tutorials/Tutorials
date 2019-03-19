@@ -4,6 +4,7 @@ description: Once your prototype is complete, you can import it as a template in
 auto_validation: true
 primary_tag: products>sap-build
 tags: [  tutorial>beginner, topic>sapui5, products>sap-build, products>sap-web-ide, products>sap-web-ide-plug-ins ]
+time: 15
 ---
 
 ## Prerequisites  
@@ -16,8 +17,6 @@ Learn how to import a completed and published prototype from BUILD into SAP Web 
 
 > Please note that an imported BUILD prototype should not be used for a production application. The version of BUILD used in these tutorials is for prototyping and designing purposes only. The code generated is not optimized for performance and security. Stay tuned to BUILD for updates about BUILD Apps, a drag and drop tool to create production ready applications!   
 
-### Time to Complete
-**15 Min**
 
 ---
 

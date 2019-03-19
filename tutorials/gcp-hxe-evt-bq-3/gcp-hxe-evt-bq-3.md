@@ -14,9 +14,9 @@ time: 15
   - How to train and run an ARIMA predictive model in a classic schema
   - How to create a user-provided service to access the plain schema from an HDI container
 
-**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED WITH A LIVE INSTRUCTOR**  as it is.
 
-All of these artifacts can also be created as design-time artifacts to be deployed in the HDI container. This approach will allow you to manually execute the SQL commands and learn how to create the user-provided service.
+All of these artifacts can also be created as design-time artifacts to be deployed in the HDI container. This approach will allow you to manually execute the SQL commands and learn how to create the user-provided service. The recommendation when possible is to create the remote source in the database and replicate it in the HDI container.
 
 ---
 

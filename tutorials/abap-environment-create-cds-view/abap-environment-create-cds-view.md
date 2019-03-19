@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
-description: Build a list report app with the ABAP RESTful programming model for SAP Fiori.
+description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 10
@@ -270,7 +270,7 @@ Click **Activate** to publish your service binding.
 ![Publish locally](activate.png)
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Check your metadata)]
   1. Click on the Service URL to see your result.

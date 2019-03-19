@@ -3,9 +3,10 @@ title: Set Up SAP Mobile Cards
 description: Activate SAP Cloud Platform Mobile Services and connect the SAP Mobile Cards application to your trial account.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards  ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards ]
 time: 10
 ---
+
 ## Prerequisites
 - [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
 - [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)

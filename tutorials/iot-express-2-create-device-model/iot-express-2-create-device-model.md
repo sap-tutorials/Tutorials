@@ -8,8 +8,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 ---
 
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:** [Get Your Hands on SAP Leonardo IoT Foundation Software and Hardware](https://developers.sap.com/tutorials/iot-express-1-buy-sapstore.html)
+- **Tutorials:** [Get Your Hands on SAP Leonardo IoT Foundation Software and Hardware](iot-express-1-buy-sapstore)
 - **Configuration:**
 1. You or someone from your team should has followed this guide [Enabling the Internet of Things Service for the Cloud
   Foundry Environment](https://help.sap.com/viewer/c48328a1bee749da9902d52f080dba0d/Cloud/en-US).
@@ -23,15 +22,20 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 - How to ingest data using SAP Leonardo IoT Foundation Starter Kit
 
 
-## Next Steps
-- **Tutorials:** [Assemble and Configure Device Hardware](https://developers.sap.com/tutorials/iot-express-3-configure-device.html), but you can also skip to [Create a Thing Model and Bind Your Device into a Business Context](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html) if you do not have the time or do now want to use real hardware at this point.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Login to your IoT service instance)]
+[ACCORDION-BEGIN [Step 1: ](Log into your IoT service instance)]
 
   1. Go to `https://<INSTANCE-NAME>.eu10.cp.iot.sap/iot/cockpit/#/welcome` (replace `<INSTANCE-NAME>` with your own, it looks like this for example: `https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/`). Open a browser window and access the IoT Service for Cloud Foundry cockpit from it - the fastest way to get there is to open [http://hana.ondemand.com/](http://hana.ondemand.com/) and then navigate to your cloud foundry sub-account, from there to your space and in there you can find the `dashboard` in the service instances list.
   2. Login with your user name and password (in the cloud cockpit you can find the root user credentials in the cloud foundry space in the service key area of the service instance)
+  3. Once logged on click on your tenant under the My Tenant section on the right.
+
+  ![Create Capability](cap0.png)
+
+  ![Create Capability](cap01.png)
+
+
+
 
 [DONE]
 
@@ -59,9 +63,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 
 ![Create Capability](cap2.png)
 
-![Capability List](cap1.png)
 
-![Create Capability](cap2.png)
 
 [DONE]
 
@@ -78,7 +80,8 @@ You need to define a sensor type to assign sensors on the devices.
   4. For **Name**, enter `envSensorType`.
   5. For **Alternate ID**, enter an integer between 0 and 2147483647.
   6. In the **Capabilities** list, add a row with **Capability** as `envData` and **Type** as `measure`.
-  7. Click **Create** (bottom-right of the page, on the grey stripe).
+  7. Select the **Capability** and the **Type** from the corresponding drop downs.
+  8. Click **Create** (bottom-right of the page, on the grey stripe).
 
 ![Sensor Type List](sensorType1.png)
 
@@ -104,7 +107,7 @@ You will create a new device with a sensor using the already defined sensor type
     | **Gateway** | Select the MQTT gateway |
     | **Alternate ID** |`device1`|
   7. Click **Create** (bottom-right of the page, on the grey stripe).
-  8. After the device is created, add a new sensor with the type `envSensorType`.
+  8. After the device is created, add a new sensor with name **Sensor1** the type `envSensorType`.
 
 ![Device List](device1.png)
 
@@ -112,7 +115,8 @@ You will create a new device with a sensor using the already defined sensor type
 
 ![Sensor List is empty for new device](device3.png)
 
-![Add Sensor for Device](device4.png)
+![Add Sensor for Device](device31.png)
+
 
 Your device has a sensor now. Check the sensor alternate ID that was defined by you (or auto-generated if you did not specify it) in the sensor list.
 
@@ -122,20 +126,24 @@ Your device has a sensor now. Check the sensor alternate ID that was defined by 
 
 [ACCORDION-BEGIN [Step 5: ](Download PEM certificate for device)]
 
-You will download the certificate. Be sure you write down the secret password from the pop-up window.
+You will now download the certificate. Be sure you write down the secret password from the pop-up window.
 
-  1. Navigate to the newly created device using the **Devices** list (see Step 4 if you need more details).
-  2. Click the **Certificate** tab.
-  3. Click **Generate Certificate**.
-  4. Set **Certificate Type** to `pem`.
-  5. Click **Generate** on the pop-up window.
-  6. Copy-paste and persist the secret displayed on screen and the certificate file that was downloaded in the background (check your browser default folder for downloads or your browser downloads section to see the file).
+1. Navigate to the newly created device using the **Devices** list (see Step 4 if you need more details).
+2. Click the **Certificate** tab.
+3. Click **Generate Certificate**.
+4. Set **Certificate Type** to `pem`.
+5. Click **Generate** on the pop-up window.
+6. Copy-paste and persist the secret displayed on screen and the certificate file that was downloaded in the background (check your browser default folder for downloads or your browser downloads section to see the file).
 
-  >Do not forget to backup the certificate and secret password. You can email the certificate and the secret password to yourself in case you'll need it to access the device.
+>Do not forget to backup the certificate and secret password. You can email the certificate and the secret password to yourself in case you'll need it to access the device.
 
-  >You can always generate a new certificate. The old one will remain valid.
+>You can always generate a new certificate. The old one will remain valid.
 
 ![Download Device Certificate](device4.png)
+
+![Download Device Certificate](device5.png)
+
+![Download Device Certificate](device6.png)
 
 [DONE]
 
@@ -149,10 +157,11 @@ You'll need to have installed Node.js on your machine or on the SAP IoT Foundati
 You will learn to Ingest Simulated Data using MQTT using Node.js and the device certificate.
 If you have the hardware kit, than replace lines 195-199 with the actual reading for the values.
 
-  1. Create a folder named `node-mqtt-simulator`.
-  2. In the folder, create a file called `package.json` and copy-paste the following code :
+1. Create a folder named `node-mqtt-simulator`.
 
-    ```javascript
+2. In the folder, create a file called `package.json` and copy-paste the following code :
+
+    ```JavaScript
     {
       "name": "data-ingestion-iot-services",
       "version": "1.0.0",
@@ -171,7 +180,7 @@ If you have the hardware kit, than replace lines 195-199 with the actual reading
     }
     ```
 
-  3. In the folder, a file called `app.js` and copy-paste the following code :
+3. In the folder, a file called `app.js` and copy-paste the following code :
 
     ```javascript
     const mqtt = require('mqtt')
@@ -276,16 +285,24 @@ If you have the hardware kit, than replace lines 195-199 with the actual reading
     setInterval(generateDataAndSendViaMQTT, 1000);
     ```
 
-  3. Change the code in 2 places:
+3. Change the code in 2 places:
+
     - Change `sensorAlternateId` to the one that was generated for you in the device management cockpit.
     - Change the endpoint for MQTT to your endpoint (check the URL of the cockpit which you brought up earlier to create the device model).
-  4. Go to the command line tool on your computer, change into the directory created before and then run `npm install` to install required modules.
-  5. Create a subfolder called `certificates`.
-  6. Download the certificate file and save it in the `certificates` folder with name `device1-device_certificate.pem`.
-  7. Copy the secret and paste it in a new file, in the same folder as the certificate, with name `device1-device_password.txt`. Make sure you only add the password and no newline or return character.
-  8. Download required node libraries using `npm install` from the folder that has the `package.json`in it.
-  9. Run the app with `npm start` or `node app.js`.
-  9. Check the console log for errors and additional information. The console log should look like this:
+
+4. Go to the command line tool on your computer, change into the directory created before and then run `npm install` to install required modules.
+
+5. Create a subfolder called `certificates`.
+
+6. Download the certificate file and save it in the `certificates` folder with name `device1-device_certificate.pem`.
+
+7. Copy the secret and paste it in a new file, in the same folder as the certificate, with name `device1-device_password.txt`. Make sure you only add the password and no newline or return character.
+
+8. Download required node libraries using `npm install` from the folder that has the `package.json`in it.
+
+9. Run the app with `npm start` or `node app.js`.
+
+10. Check the console log for errors and additional information. The console log should look like this:
 
     ![Device Data is generated Ok](dataok.png)
 
