@@ -1,5 +1,5 @@
 ---
-title: Download SAP Mobile Cards to your Device
+title: Download SAP Mobile Cards to Your Device
 description: Download and register to the Mobile Cards service to consume data on an android or iOS device.
 auto_validation: true
 time: 15
@@ -15,8 +15,6 @@ primary_tag: products>sap-api-management
 - How to download SAP mobile card onto your android device
 - How to register to SAP Mobile Cards service
 
-Add additional information: Background information, longer prerequisites
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Install Mobile Cards app)]
@@ -24,7 +22,7 @@ Add additional information: Background information, longer prerequisites
 1. Install Mobile Card app
 
   - [iOS](https://itunes.apple.com)
-  
+
   ![Scan iOS](01-scan-code-IOS.png)
 
   - [Android](https://itunes.apple.com)

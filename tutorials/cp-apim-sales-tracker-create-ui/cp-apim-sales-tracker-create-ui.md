@@ -1,5 +1,5 @@
 ---
-title: Use Mobile Services  to Create UI
+title: Use Mobile Services to Create UI
 description: Create a new mobile card by pointing to the proxy endpoint created in SAP API Management.
 auto_validation: true
 time: 30
@@ -14,8 +14,6 @@ primary_tag: products>sap-api-management
 ### You will learn
   - How to create a new mobile card
   - How to give the query and collection query URL pointing to the proxy endpoint created in SAP API Management
-
-Add additional information: Background information, longer prerequisites
 
 ---
 
