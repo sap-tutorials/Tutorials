@@ -17,7 +17,7 @@ author_profile: https://github.com/joseprados
   - How to access your MultiChain dashboard
 
 ### Prerequisites
-  - The **Node Address** of the Multichain node you would like to connect to join the Multichain network.
+  - The **Node Address** of the Multichain node you would like to connect to join the Multichain network. An SAP controlled node address is provided in this tutorial if needed.
 
 ---
 
@@ -31,7 +31,14 @@ All MultiChain node addresses on SAP Cloud Platform follow the same format:
 ```
 "<chainname>@<ip address of node>:<p2p port>"
 ```
-Once a connection is created, this MultiChain node then grants your node permissions via its node dashboard.
+
+For this tutorial, we use the following node address:
+
+```
+MultiChain_Tutorial@18.196.13.215:7000
+```
+
+Once a connection is created, the MultiChain node administrator can then grant your node permissions via its node dashboard. Whilst this doesn't happen automatically, the process for a second SAP Cloud Platform account to follow is provided in our [Grant Requesting MultiChain Node Permission to join a MultiChain Network](blockchain-mc-node-grant-permissions) tutorial.
 
 [DONE]
 [ACCORDION-END]
