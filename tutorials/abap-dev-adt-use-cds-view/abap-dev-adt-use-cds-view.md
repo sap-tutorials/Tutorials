@@ -55,16 +55,22 @@ You will now replace the implementation of the RUN method with a new implementat
 
     ![Image depicting step2-delete-write](step2-delete-write.png)
 
-  2.  Now create an ALV with IDA for your CDS view `Z_Invoice_Items` and display the ALV in full screen:
-`cl_salv_gui_table_ida=>create_for_cds_view( 'Z_Invoice_Items' )->fullscreen( )->display( ).`
+  2.  Now create an ALV with IDA for your CDS view `Z_Invoice_Items_XXX` and display the ALV in full screen. Don't forget to change `XXX` to your group number or initials:
+`cl_salv_gui_table_ida=>create_for_cds_view( 'Z_Invoice_Items_XXX' )->fullscreen( )->display( ).`
 
     ![Image depicting step2a-add-ida](step2a-add-ida.png)
+
+    The CDS view name is the one defined in the `define view` statement:
+
+    ![Image depicting step3-cds-view](step3-cds-view.png)
 
   3.	Choose **Save (Ctrl+S)**  and **Activate (Ctrl+F3)**.
 
   4.	Execute your program by choosing **Execute (F8)**.
 
-The invoice items are displayed in ALV with IDA.
+The invoice items are displayed in ALV with IDA. (Ignore the Generic Node Key field. You can change the visibility of fields in a SAP List Viewer, but this is beyond the scope of this tutorial):
+
+![Image depicting step3b-alv-ida](step3b-alv-ida.png)
 
 [DONE]
 [ACCORDION-END]
@@ -77,8 +83,10 @@ We will change this information in the CDS view using an annotation. (For more i
 
 **NOTE: Write the annotation before the CASE statement.**
 
-  1. In the CDS view, **`Z_Invoice_Items`** set the tooltip information for the `payment_status` to:
+  1. In the CDS view, **`Z_Invoice_Items_XXX`** set the tooltip information for the `payment_status` to:
     `@EndUserText.quickInfo: 'Paid' `
+
+    ![Image depicting step4-annotation](step4-annotation.png)
 
   2. Choose **Save (Ctrl+S)**  and **Activate (Ctrl+F3)**.
 
@@ -90,9 +98,9 @@ We will change this information in the CDS view using an annotation. (For more i
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Optional: Create a data element)]
-You have created a tooltip for the column "Paid" but there is no column header for it. You will now resolve this by casting the type of the transformed `payment_status` to a data element - `zso_invoice_payment_status` - by using a CAST statement. Ignore the warning.
+You have created a tooltip for the column "Paid" but there is now no column header for it. You will now resolve this by casting the type of the transformed `payment_status` to a data element - `zso_invoice_payment_status` - by using a CAST statement.
 
-If you have already created a data element in the tutorial [Create a data element](abap-dev-adt-create-data-element), then use this and go to step 5. Otherwise proceed as follows:
+If you have already created a data element in the tutorial [Create a data element](abap-dev-adt-create-data-element), then use this and go to step 5. If not, you will receive an error. Proceed as follows:
 
   1. Create the data element **`zso_invoice_payment_status`**: Choose **File > New... > Other... > Data... > Dictionary > Data element:** and enter the following:
     - Package, e.g., `Zxx_Tutorial` (where `xx` = your initials)
@@ -113,7 +121,7 @@ If you have already created a data element in the tutorial [Create a data elemen
 
 [ACCORDION-BEGIN [Step 6: ](Optional: Add a CAST statement)]
 
-  1. Now add the CAST statement. (Ignore the warning):
+  1. Now add the CAST statement. (Ignore the error):
 
     ```ABAP
     cast(
@@ -128,7 +136,7 @@ If you have already created a data element in the tutorial [Create a data elemen
 
   2. Save and activate the CDS view **(Ctrl+S, Ctrl+F3).** If you run the program now, your SAP List Viewer should look like this:
 
-  ![Image depicting step-6-column-header-paid](step-6-column-header-paid.png)
+    ![Image depicting step-6-column-header-paid](step-6-column-header-paid.png)
 
 > Note: You can open the online help for the CAST statement by positioning the cursor on the cast keyword and choosing `F1`
 
@@ -197,12 +205,11 @@ define view Z_Invoice_Items
   sepm_sddl_so_invoice_item.gross_amount,
 
 @EndUserText.quickInfo: 'Paid'  
-cast(
+
     case header.payment_status
         when 'P' then 'X'
         else ' '
     end
-as zso_invoice_payment_status )
 
 as payment_status,
 
@@ -220,6 +227,7 @@ The tooltip information for the Paid column has been changed:
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
 Create an IDA for the CDS view `Z_Customers`.
 Enter your code in the box below and choose **Submit Answer**.
+Since the validation engine is case-sensitive, please enter your code entirely in lowercase.
 
 [VALIDATE_1]
 [ACCORDION-END]
