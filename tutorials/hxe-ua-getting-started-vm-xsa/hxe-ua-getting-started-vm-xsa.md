@@ -36,7 +36,7 @@ The IP address of the VM is displayed on the login screen. Make a note of the IP
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ]((Optional). Repair `VMWare` bridge networking)]
+[ACCORDION-BEGIN [Step 2: ]((Optional) Repair bridge networking)]
 
 ![loio3568451438e74dd287e9dc0d9cdfc32e_HiRes](loio3568451438e74dd287e9dc0d9cdfc32e_HiRes.png)
 
@@ -73,7 +73,10 @@ When prompted for *(current) UNIX password*, enter the temporary password again:
 
 ![loio834fa6b3ab6546f4ac282a73885ccfba_LowRes](loio834fa6b3ab6546f4ac282a73885ccfba_LowRes.png)
 
-**Note**: Is `VMWare` not recognizing your keyboard inputs? Press `CTRL+G` to redirect keyboard and mouse input to your VM.
+> Note:
+> Is `VMWare` not recognizing your keyboard inputs? Press `CTRL+G` to redirect keyboard and mouse input to your VM.
+>
+>
 
 [ACCORDION-END]
 
@@ -107,7 +110,7 @@ When prompted to *Retype new password*, enter your strong password again.
 
 [ACCORDION-BEGIN [Step 6: ](Enter new HANA database master password)]
 
-When prompted for *New HANA database master password*, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 3, or a new password. If you are entering a new password, see the password rules in step 4.
+When prompted for *New HANA database master password*, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 4, or a new password. If you are entering a new password, see the password rules in step 4.
 
 Entering the HANA database master password changes the SYSTEM user password. If you are installing the `server + applications virtual machine`, it also changes the `XSA_ADMIN` and `XSA_DEV` user passwords.
 
@@ -140,7 +143,7 @@ Enter *N* if you want XSA to configure in the background after server configurat
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Complete the installation.)]
+[ACCORDION-BEGIN [Step 10: ](Complete the installation)]
 
 When prompted to *Proceed with configuration?* enter `Y`.
 
