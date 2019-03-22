@@ -2,7 +2,7 @@
 title: Install Postman REST client
 description: Install Postman REST client
 primary_tag: topic>cloud
-tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-management, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment] ]
+tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-management, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 time: 5
 ---
 
