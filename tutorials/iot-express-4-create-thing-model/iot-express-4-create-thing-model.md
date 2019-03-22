@@ -65,11 +65,13 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 
  Now that we have a package we can start putting properties reflecting the measurements but also the master data that we need for out `Things`. Lets assume we are producing these green house and for processing warranty claims we use a serial number to track every individual greenhouse.
 
+ Please make sure you use the thing modeler based on odata. You can check this by checking that you choose the package in the thing modeler at the top with a drop down instead of at the bottom. If the later is the case please check your role collection established when you initially configured the tenant to include `Thing_Engineer_Odata` and not `Thing_Engineer` or `Thing_Engineer_Fiori_Launchpad`.
+
   1. Go to `Thing Properties Catalog` by clicking on the tile with the same name in the Home Page
-  2. Select your `greenhouse` package (using the little package icon at the bottom)
-  3. Select `Default` property set from the left side list.
+  2. Select your `greenhouse` package
+  3. Select `Default` property set from the left side list (or create it for Basic Data Properties if it is not there)
   4. On the right side you'll see the `Properties List`
-  5. Click on the `+` button found just on the right of the `Search` field, on top of the list.
+  5. Click on the `+` button found just on the right of the `Search` field, on top of the list
   6. Type in the new property name as : `serialNumber`
   7. Select its type as : `String`
   8. Adjust the Length fields value (no chars) to : 64
@@ -129,25 +131,34 @@ The last step, to setup our meta-data required to capture things and measurement
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create a new thing of the new thing type)]
+[ACCORDION-BEGIN [Step 6: ](Map thing type to sensor type)]
+
+Now create a new mapping from this thing type to the sensor type you have created earlier using the connectivity tab and the plus sign:
+
+![New Mapping](newmapping.png)
+
+First choose the sensor type from the list in the upper right and then choose the device properties that match the thing properties. In this example the names are the same but they do not have to be the same:
+
+![New Mapping Before Saving](newmappingsave.png)
+
+
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 7: ](Create a new thing of the new thing type)]
 
 Now we are ready to create a new thing and map it to the device you have created earlier.
 
 1. Press `New Thing` from the upper right corner to get started
 2. In the dialog that pops up choose `greenhouse1` as the name (1 indicating that this is your first instance of this type of greenhouse)
 3. Add a description and select the default authorisation group. Note that this authorisation group will be something that later, when you automate onboarding of things and you define differentiated access rights to the time series, will be very specific authorisation groups you have created to make sure the your application users see only the things and time series data for those things, that they should see.
-4. Then choose the device and sensors created in the earlier Tutorials
-
-You now should see the properties from the sensor mapped to the properties of the thing as in the following image. Data types are being converted automatically where required. This initial mapping forwards the values as they are from the device to the thing model.
-
-If you have your device running and connected to the Internet you should now see data popping in for the measurements.
 
 ![New Thing Dialog](newthing.png)
 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Set you thing master data properties and location)]
+[ACCORDION-BEGIN [Step 8: ](Set you thing master data properties and location)]
 
 Lastly we will set the things serial number and the location to make sure we can integrate into business processes and to be able to show it on a map.
 
@@ -155,9 +166,12 @@ Lastly we will set the things serial number and the location to make sure we can
 2. Use [HTML5 geolocation lookup example](https://www.w3schools.com/Html/tryit.asp?filename=tryhtml5_geolocation) to find your current location or choose any other location using another tool (mobile phone, google maps)
 3. Enter the Location in the location fields in the thing modeler (see below image)
 4. Enter a lower and upper threshold for the temperature (under Measured Values)
+4. Then connect the device and sensors created in the earlier Tutorials in the connectivity tab
 4. Save your change
 
 ![Location and Serial Number](masterdata.png)
+
+If you are ingesting data you should see this data showing up in the thing in the thing modeler under `measured values`. If not please check first in iot service and then also in the data ingestion error log app in the fiori launchpad.
 
 You are now ready to build interactive or batch applications on top of your greenhouse things.
 
