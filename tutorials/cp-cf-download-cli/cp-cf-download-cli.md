@@ -1,9 +1,9 @@
 ---
 title: Install the Cloud Foundry Command Line Interface (CLI)
 description: Download and install the CLI, which allows access via the command line.
-primary_tag: products>sap-cloud-platform
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+tags: [tutorial>beginner, topic>cloud,  products>sap-cloud-platform]
+primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 time: 15
 ---
 
