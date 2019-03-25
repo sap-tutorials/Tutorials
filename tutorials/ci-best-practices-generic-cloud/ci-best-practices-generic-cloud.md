@@ -32,9 +32,9 @@ GitHub's public Source Code Management (SCM) service, and Travis CI as the build
 
 GitHub and Travis CI are both also available in enterprise on-premise versions. You can also set up mixed scenario, using one part in the cloud and the other on-premise.
 
-> [GitHub](https://github.com)  
-> [GitHub Enterprise](https://enterprise.github.com/home)  
-> [Travis CI](https://travis-ci.org)
+>- [GitHub](https://github.com)  
+>- [GitHub Enterprise](https://enterprise.github.com/home)  
+>- [Travis CI](https://travis-ci.org)
 
 
 ### Basic setup
