@@ -67,6 +67,11 @@ At the *`hxehost` login* prompt, enter `hxeadm`.
 
 For *Password*, enter the temporary password `HXEHana1`.
 
+> Note:
+> Is `VMWare` not recognizing your keyboard inputs? Press `CTRL+G` to redirect keyboard and mouse input to your VM.
+>
+>
+
 ![loio691e85dbc5514eedb49a0eabab8d5d72_LowRes](loio691e85dbc5514eedb49a0eabab8d5d72_LowRes.png)
 
 When prompted for *(current) UNIX password*, enter the temporary password again: `HXEHana1`
@@ -74,9 +79,7 @@ When prompted for *(current) UNIX password*, enter the temporary password again:
 ![loio834fa6b3ab6546f4ac282a73885ccfba_LowRes](loio834fa6b3ab6546f4ac282a73885ccfba_LowRes.png)
 
 > Note:
-> Is `VMWare` not recognizing your keyboard inputs? Press `CTRL+G` to redirect keyboard and mouse input to your VM.
->
->
+> When entering a password, the cursor doesn't move, and placeholder characters don't show. Don't worry -- your password is being entered even though it may look like nothing is happening.
 
 [ACCORDION-END]
 
