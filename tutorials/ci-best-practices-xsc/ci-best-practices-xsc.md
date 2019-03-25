@@ -26,8 +26,8 @@ time: 15
 
 For SAP HANA Extended Application Services (XS) classic model (XSC) development you can use either the SAP HANA Studio or the SAP HANA Development Workbench. For more details about installing and getting started, please refer to the product documentation.
 
-> [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/viewer/52715f71adba4aaeb480d946c742d1f6/2.0.01/en-US)  
-> [SAP HANA Web-Based Development Workbench](https://help.sap.com/viewer/b3d0daf2a98e49ada00bf31b7ca7a42e/2.0.01/en-US/7f99b0f952d04792912587c99e299ef5.html)
+>- [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/viewer/52715f71adba4aaeb480d946c742d1f6/2.0.01/en-US)  
+>- [SAP HANA Web-Based Development Workbench](https://help.sap.com/viewer/b3d0daf2a98e49ada00bf31b7ca7a42e/2.0.01/en-US/7f99b0f952d04792912587c99e299ef5.html)
 
 A developer working on an SAP HANA XSC application works directly in the SAP HANA repository using the SAP HANA Studio. Design-time objects are modified first as an inactive version in the SAP HANA repository, then activated afterwards. As a best practice, we recommend that developers on large teams use their own SAP HANA systems for development to avoid conflicts with other developers. For a CI-based process, changes in the SAP HANA sources are stored in Git; this is where developers push their changes to.
 
@@ -72,9 +72,9 @@ The scenario discussed throughout this chapter is only an example intended to de
 
 - Install SAP HANA Studio on your local PC
 
-> [SAP HANA Installation and Update Overview](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.00/en-US/8cd2fc57041f437e9dc95f07a5e48e4d.html)  
-> [SAP HANA Server Installation Guide](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.01/en-US)  
-> [SAP HANA Studio Installation Guide](https://help.sap.com/viewer/a2a49126a5c546a9864aae22c05c3d0e/2.0.01/en-US)
+>- [SAP HANA Installation and Update Overview](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.00/en-US/8cd2fc57041f437e9dc95f07a5e48e4d.html)  
+>- [SAP HANA Server Installation Guide](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.01/en-US)  
+>- [SAP HANA Studio Installation Guide](https://help.sap.com/viewer/a2a49126a5c546a9864aae22c05c3d0e/2.0.01/en-US)
 
 
 ### Preparing the SAP HANA systems
@@ -134,9 +134,9 @@ The SAP HANA Client installation contains the following command line tools:
 
 For additional information enter the tool name on the command line followed by the argument `help`.
 
-> [SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/e7e79e15f5284474b965872bf0fa3d63/2.0.01/en-US)  
-> [Using `hdbalm`](https://help.sap.com/viewer/a4d43a319ecf464e9d838454a6bdb9ad/2.0.00/en-US/b92b9bdc457c42ba920e3ed6b09e4463.html)  
-> [Secure User Store (`hdbuserstore`)](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/2.0.00/en-US/dd95ac9dbb571014a7d7f0234d762fdb.html)
+>- [SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/e7e79e15f5284474b965872bf0fa3d63/2.0.01/en-US)  
+>- [Using `hdbalm`](https://help.sap.com/viewer/a4d43a319ecf464e9d838454a6bdb9ad/2.0.00/en-US/b92b9bdc457c42ba920e3ed6b09e4463.html)  
+>- [Secure User Store (`hdbuserstore`)](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/2.0.00/en-US/dd95ac9dbb571014a7d7f0234d762fdb.html)
 
 
 #### Procedure
@@ -183,8 +183,8 @@ For additional information enter the tool name on the command line followed by t
 
 In this guide, we'll use the SAP education application (`SHINE`) to demonstrate how to set up the CI process using "real" code, rather than simply a "Hello World" example. `SHINE` is available as a DU with the name `HCODEMOCONTENT_<SP>.tgz` from GitHub or in the SAP Software Download Center.
 
-> [`SHINE` Reference Application](https://github.com/SAP/hana-shine)   
-> [`SHINE` documentation](https://github.com/SAP/hana-shine/blob/master/README.md)
+>- [`SHINE` Reference Application](https://github.com/SAP/hana-shine)   
+>- [`SHINE` documentation](https://github.com/SAP/hana-shine/blob/master/README.md)
 
 The steps below are preparation steps that bring the `SHINE` sources into a Gerrit project. Given the `SHINE` DU as a tar ball (`.tgz`), you will import the DU to the SAP HANA Development system and set up a local HANA workspace containing the source files of the DU. From there you will push the source files to Gerrit.
 
