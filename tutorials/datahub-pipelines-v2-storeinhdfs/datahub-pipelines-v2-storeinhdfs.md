@@ -68,7 +68,7 @@ The **Write File** operator will write the received data to files in the `/tmp/h
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Read File Operator)]
-Add a **Read File** operator to the pipeline by drag & drop. Then connect the `outFile` message port of the **Read File** operator to the `ininterface` port of the **`ToString` Converter** operator.
+Add a **Read File** operator to the pipeline by drag & drop. Then connect the `outFile` message port of the **Read File** operator to the `inmessage` port of the **`ToString` Converter** operator.
 
 ![picture_05](./datahub-pipelines-v2-storeinhdfs_03.png)  
 
