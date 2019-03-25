@@ -1,6 +1,6 @@
 ---
-title: Add Annotations to a Managed Association with Core Data Services
-description: Core Data and Services (CDS) used in the SAP Cloud Application Programming Model supports annotations from SAP Fiori elements. Add four of them and explore the results.
+title: Add Annotation to a Managed Association with Core Data Services
+description: Core Data and Services (CDS) used in the SAP Cloud Application Programming Model supports annotations from Fiori Elements. Add four of them and explore the results.
 auto_validation: true
 primary_tag: topic>java
 tags: [ tutorial>intermediate, topic>cloud, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
@@ -17,13 +17,13 @@ time: 20
   - How to improve filtering the product catalog
   - How to make a field mandatory
 
-You build this tutorial upon your result from the previous tutorial, where you added a category for the products in the product catalog of the SAP Cloud Platform business application project `ITelO`. Add now SAP Fiori elements annotations to your association, which impact the UI.
+You build this tutorial upon your result from the previous tutorial where you added a category for the products in the product catalog of the SAP Cloud Platform business application project `ITelO`. Add now Fiori Elements annotations to your association, which have impact on the UI.
 
-You add `title`, `ValueList`, `Text`, and `FieldControl` annotations, and you will see the effect on the user interface.
+You add `title`, `ValueList`, and `Text`annotations and you will see the effect on the user interface.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
+[ACCORDION-BEGIN [Step 1: ](Open your SAP Web IDE Full-Stack)]
 
 Open your SAP Web IDE Full-Stack and the workspace that contains the sources from the previous tutorial.
 
@@ -33,7 +33,7 @@ If you are not sure how to do this, have a look at the previous tutorial in Step
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2:](Add category to UI)]
+[ACCORDION-BEGIN [Step 2:](Add the category to the UI)]
 
 Let's make the user interface aware of the association we created, that can be displayed to users.
 
@@ -90,8 +90,10 @@ category: Association to Categories @(
 
  3. Select `Go` and have a look at the `'Cat.'` column that displays the GUID connected to the product.
 
+Validation:
 
 [VALIDATE_4]
+
 [ACCORDION-END]
 
 
@@ -128,12 +130,12 @@ In your `model.cds` file add a `ValueList` annotation to your association in lin
 
  5. Select one or more categories and confirm your selection.
 
- 6. Select `Go`.
+ 6. Select `Go`. 
 
 You see, that the column `'Cat.'` still shows inconvenient GUID. Let's have a closer look at this in the next step.
 
 
-[DONE]
+[VALIDATE_6]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7:](Add a Text annotation)]
@@ -169,3 +171,8 @@ No more GUID, isn't that great!? The casual user will love this.
 
 [VALIDATE_8]
 [ACCORDION-END]
+
+
+
+
+---
