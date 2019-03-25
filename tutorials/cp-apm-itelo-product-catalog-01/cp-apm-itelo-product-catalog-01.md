@@ -19,7 +19,7 @@ time: 20
 
 You build this tutorial upon your result from the previous tutorial where you added a category for the products in the product catalog of the SAP Cloud Platform business application project `ITelO`. Add now Fiori Elements annotations to your association, which have impact on the UI.
 
-You add `title`, `ValueList`, and `Text`annotations and you will see the effect on the user interface.
+You add `title`, `ValueList`, and `Text` annotations and you will see the effect on the user interface.
 
 ---
 
@@ -90,8 +90,6 @@ category: Association to Categories @(
 
  3. Select `Go` and have a look at the `'Cat.'` column that displays the GUID connected to the product.
 
-Validation:
-
 [VALIDATE_4]
 
 [ACCORDION-END]
@@ -130,7 +128,7 @@ In your `model.cds` file add a `ValueList` annotation to your association in lin
 
  5. Select one or more categories and confirm your selection.
 
- 6. Select `Go`. 
+ 6. Select `Go`.
 
 You see, that the column `'Cat.'` still shows inconvenient GUID. Let's have a closer look at this in the next step.
 
