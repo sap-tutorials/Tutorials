@@ -75,8 +75,8 @@ The task runner tool used is Grunt, which is a common open source tool for proce
 
 What we describe here is intended to be used only as an example. You can use a different infrastructure than described here, for example, an SCM tool or CI server other than Git or Jenkins. Also, you can use a build processor other than Grunt; for example, Gulp.
 
-> [Grunt home](http://gruntjs.com)  
-> [Gulp home](http://gulpjs.com)
+>- [Grunt home](http://gruntjs.com)  
+>- [Gulp home](http://gulpjs.com)
 
 
 #### B. Overview: the Delivery Process Using ABAP Life-Cycle Management
@@ -110,9 +110,9 @@ The scenario described here builds on the chapters that describe how to set up a
 
 - SAP Cloud Connector as reverse proxy to pass requests from SAP Web IDE to your corporate Git installation.
 
-> [SAP Cloud Platform Documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a8d6db47b1714a8d87f043a3546962c9.html)  
-> [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com)  
-> [Connecting to your Corporate Git System](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/Cloud/en-US/b8427ec16ae64347b97d2d46fb28f7cd.html)
+>- [SAP Cloud Platform Documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a8d6db47b1714a8d87f043a3546962c9.html)  
+>- [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com)  
+>- [Connecting to your Corporate Git System](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/Cloud/en-US/b8427ec16ae64347b97d2d46fb28f7cd.html)
 
 
 ### 3. Creating Sources for a New Project
@@ -122,8 +122,8 @@ The standard method for creating a new SAPUI5 or Fiori project is to use the wiz
 
 You can either use SAP Web IDE on SAP Cloud Platform, or alternatively, you can use SAP Web IDE Personal Edition, which offers the same features but runs on your local machine.
 
-> [SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/0221845d73ad403ab2852142f3179177.html)  
-> [SAP Web IDE Personal Edition](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/5b8bca3147ee4dfd99be8aaf6bd4f421.html)
+>- [SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/0221845d73ad403ab2852142f3179177.html)  
+>- [SAP Web IDE Personal Edition](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/5b8bca3147ee4dfd99be8aaf6bd4f421.html)
 
 #### Procedure
 
@@ -196,8 +196,8 @@ Grunt requires Node.js and the included package manager npm.
 
 1. Install Node.js on the Jenkins slave machine.
 
-    > [Node.js Home Page](https://Nodejs.org/en/)   
-    > [Node.js Downloads](https://nodejs.org/en/download/)
+    >- [Node.js Home Page](https://Nodejs.org/en/)   
+    >- [Node.js Downloads](https://nodejs.org/en/download/)
 
     You can install the `tar.gz` package on Linux in any directory. We recommend that you define a common installation directory on all your Jenkins slave machines.
 
@@ -529,8 +529,8 @@ The SAPUI5/Fiori application needs to be assigned to an ABAP package.
 
 The RFC features are implemented in a second Grunt file named `Gruntfile_ABAP.js`. The main purpose of this file is to wrap the `node-rfc` library as Grunt tasks. Additional documentation for the `node-rfc` library is available using the following links:
 
-> [Node.js RFC connector Documentation](http://sap.github.io/node-rfc/)  
-> [Node.js RFC connector on GitHub](https://github.com/SAP/node-rfc)
+>- [Node.js RFC connector Documentation](http://sap.github.io/node-rfc/)  
+>- [Node.js RFC connector on GitHub](https://github.com/SAP/node-rfc)
 
 #### Procedure
 
@@ -1097,8 +1097,8 @@ node_modules/grunt-cli/bin/grunt --gruntfile Gruntfile_ABAP.js uploadToABAP:<tra
 
 Implementing the Grunt tasks is straightforward using the `node-rfc` module documentation.
 
-> [Node.js RFC connector Documentation](http://sap.github.io/node-rfc)  
-> [Node.js RFC connector on GitHub](https://github.com/SAP/node-rfc)
+>- [Node.js RFC connector Documentation](http://sap.github.io/node-rfc)  
+>- [Node.js RFC connector on GitHub](https://github.com/SAP/node-rfc)
 
 Important: The RFC call is asynchronous. The Grunt process flow must wait for it to finish, which is why we use promises:
 
