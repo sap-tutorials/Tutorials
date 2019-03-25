@@ -1,0 +1,86 @@
+---
+title: Create a Workflow Project from a Template
+description: Create a new workflow project in SAP Cloud Platform using SAP Web IDE.
+auto_validation: true
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, products>sap-cloud-platform ]
+time: 5
+---
+
+## Details
+### You will learn  
+  - How to create a project for your workflow in the SAP Web IDE Full-Stack.
+  - How to deploy this project to the SAP Cloud Platform.
+
+---
+
+[ACCORDION-BEGIN [Step 1: ](Access the SAP Web IDE Full-Stack)]
+1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit).
+2. Choose **Neo Trial**.
+3. Select **Services** from the left-hand navigation.
+
+4. Search for the **Workflow** service.
+
+    ![Search Workflow](search-workflow.png)
+
+3. On the **Workflow** tile, choose **SAP Web IDE Full-Stack**.
+
+    ![Choose Full-Stack](choose-full-stack.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Create a new project)]
+1. In the navigation area, choose the home icon.
+
+    ![Choose Home](choose-home.png)
+
+2. Choose **New Project from Template**.
+
+    ![Choose New Project](new-project.png)
+
+3. Set the **Environment** to **Neo, ABAP**.
+
+    ![Set Environment](set-environment.png)
+
+4. Change the **Category** to **Business Process Management**, and then select the **Workflow Project** template.
+
+    ![Change Category](select-category.png)
+
+5. Choose **Next**.
+
+6. Enter a name for the new workflow project, for example, `MyWorkflowProject`, and choose **Next**.
+
+    ![Enter Name](enter-name.png)
+
+7. Enter a name for the new workflow, for example, `MyFirstWorkflow` and a description.
+
+    ![Enter Workflow Name](enter-wf-name.png)
+
+8. Choose **Finish**.   
+   You should now see a project with a workflow file in your workspace:
+
+    ![Workflow Project](workflow-project.png)
+
+> If there are layout issues with the editor window (can't see the properties), simply refresh the SAP Web IDE window (F5).
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Deploy your workflow)]
+1. Select the workflow file in the workspace.
+    >Make sure that you really selected the file and not the project.
+
+2. Open the context menu by right-clicking the workflow file, and select **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
+
+    ![Deploy Workflow](deploy-workflow.png)
+
+In the top right corner, you see a success notification.
+
+![Deploy Notification](deploy-notification.png)
+
+
+[VALIDATE_3]
+[ACCORDION-END]
+
+---
