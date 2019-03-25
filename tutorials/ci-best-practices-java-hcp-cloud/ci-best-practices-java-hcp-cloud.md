@@ -20,10 +20,10 @@ time: 15
 
 This chapter is a continuation of the discussion in [Generic Project (Pure Java) Using Cloud Services](https://developers.sap.com/tutorials/ci-best-practices-generic-cloud.html) and explains the CI approach on both Neo and CF environment. We follow the approach of using GitHub and Travis CI as cloud services to process sample code that is delivered as part of the SDK installation for Java Web development. The sample discussed here contains some web applications that are built using Maven and share a common parent `pom.xml` file. Documentation and resources for Java web application development include the following:
 
-> [Java: Getting Started](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e66f3eecbb5710148397a19b46c4979b.html)  
-> [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-java-basic-app.html)  
-> [Installing the SDK](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
-> [SDK Download](https://tools.hana.ondemand.com/#cloud)
+>- [Java: Getting Started](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e66f3eecbb5710148397a19b46c4979b.html)  
+>- [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-java-basic-app.html)  
+>- [Installing the SDK](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html) 
+>- [SDK Download](https://tools.hana.ondemand.com/#cloud)
 
 We go beyond the pure build, and discuss how to add a post-build step to deploy the application to SAP Cloud Platform.
 
@@ -62,8 +62,8 @@ For the Cloud Foundry environment, we use a shell script to apply the blue-green
 
 Basically we'll follow the instructions for creating the GitHub project and a Travis CI build as described in [Generic Project (Pure Java) Using Cloud Services](https://developers.sap.com/tutorials/ci-best-practices-generic-cloud.html). In contrast we'll use a sample project from the `samples` folder of the SAP Cloud Platform SDK installation zip as sources that you can download from the link below. Though the sample is shipped together with the Neo SDK, it can also be used for Cloud Foundry.
 
-> [Installing the SAP Cloud Platform Neo SDK](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
-> [Neo SDK Download](https://tools.hana.ondemand.com/#cloud)
+>- [Installing the SAP Cloud Platform Neo SDK](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
+>- [Neo SDK Download](https://tools.hana.ondemand.com/#cloud)
 
 This example uses the project name `java_sapcp_project`.
 
