@@ -31,10 +31,10 @@ time: 15
 
 The example shown here uses samples that are delivered as part of the SDK installation for Java Web development. These samples contain some web applications that are built using Maven and share a common parent `pom.xml`. Documentation and resources for Java web application development:
 
-> [Java: Getting Started](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e66f3eecbb5710148397a19b46c4979b.html)  
-> [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-java-basic-app.html)  
-> [Install the SDK for Java Development](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
-> [SDK Download](https://tools.hana.ondemand.com/#cloud)  
+>- [Java: Getting Started](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e66f3eecbb5710148397a19b46c4979b.html)  
+>- [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-java-basic-app.html)  
+>- [Install the SDK for Java Development](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
+>- [SDK Download](https://tools.hana.ondemand.com/#cloud)  
 
 The samples can be built without any further prerequisites. The dependencies listed in the `pom.xml` are all available on the Maven central repository. This includes the SAP Java Web SDK itself that does not need to be installed on the build server.
 
@@ -182,8 +182,8 @@ You might have compatibility problems between Selenium and Firefox, it might hap
 
 2. Log in as `root` onto the Jenkins slave and install Firefox, version 42.0.  
 
-    > [Firefox](https://www.mozilla.org/en-US/firefox/)  
-    > [Firefox Downloads](https://www.mozilla.org/en-US/firefox/new/)
+    >- [Firefox](https://www.mozilla.org/en-US/firefox/)  
+    >- [Firefox Downloads](https://www.mozilla.org/en-US/firefox/new/)
 
 3. In the sources of the sample project, open the parent `pom.xml` and verify the Selenium version number:
 
@@ -243,8 +243,8 @@ The deployment to SAP Cloud Platform is performed in the Maven build using the S
 
 - A developer account on the SAP Cloud Platform trial landscape.
 
-> [Getting a Global Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/975c8fc61a384668a82e91c8448deb0b.html)  
-> [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com)
+>- [Getting a Global Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/975c8fc61a384668a82e91c8448deb0b.html)  
+>- [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com)
 
 #### Procedure
 
