@@ -30,8 +30,8 @@ The next section outlines best practices for both CI and CD.
 
 The practices of Continuous Integration are well-known. There are many sources for developers or build operators to get advice including the following:
 
-> [Wikipedia: Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration)   
-> [Martin Fowler: Continuous Integration](http://www.martinfowler.com/articles/continuousIntegration.html)
+>- [Wikipedia: Continuous Integration](https://en.wikipedia.org/wiki/Continuous_integration)   
+>- [Martin Fowler: Continuous Integration](http://www.martinfowler.com/articles/continuousIntegration.html)
 
 Continuous Integration (CI) focuses on the controlled integration of any change that is created in a collaborative software project into a common main line.
 
@@ -52,8 +52,8 @@ The CI practices are:
 Continuous Delivery (CD) adds the following aspect to the Continuous Integration practices:
 Any change passing the tests is immediately ready to be deployed to production, both from a technical and from a quality standpoint.  This means that the most current version of the product is successfully built, tested, and provided in a shippable format. With a press of a button at any time, based on a release decision by the development team or delivery manager, it can be shipped to customers or deployed to production. You can find additional information about CD from the following sources:
 
-> [Wikipedia: Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery)   
-> [Martin Fowler: Continuous Delivery](http://martinfowler.com/bliki/ContinuousDelivery.html)
+>- [Wikipedia: Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery)   
+>- [Martin Fowler: Continuous Delivery](http://martinfowler.com/bliki/ContinuousDelivery.html)
 
 By contrast, Continuous *Deployment*, which is not discussed in this document, means that each change is automatically built, tested, and deployed to production without manual interaction.
 
