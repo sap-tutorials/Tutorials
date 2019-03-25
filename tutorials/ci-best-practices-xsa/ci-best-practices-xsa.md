@@ -30,11 +30,11 @@ time: 15
 
 The SAP HANA Developer Guide for SAP HANA XS Advanced Model is a good starting point for getting familiar with application development for SAP HANA Extended Application Services, advanced model (XS advanced). The `TinyWorld` tutorial is a good introduction to developing your first SAP HANA XS advanced application using different module types. For detailed information about installing an SAP HANA XS Advanced instance, see the official documentation listed below. The example we describe in this chapter is based on SAP HANA XS advanced 2.0 SPS00.
 
-> [SAP HANA Platform](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM)
-> [Download or install SAP HANA, express edition with XS Advanced for free](https://developers.sap.com/topics/sap-hana-express.html)
-> [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US)  
-> [SAP HANA Server Installation and Update Guide](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.01/en-US)  
-> [`TinyWorld` Tutorial](https://blogs.sap.com/2016/03/28/developing-with-xs-advanced-a-tinyworld-tutorial)
+>- [SAP HANA Platform](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM)
+>- [Download or install SAP HANA, express edition with XS Advanced for free](https://developers.sap.com/topics/sap-hana-express.html)
+>- [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US)  
+>- [SAP HANA Server Installation and Update Guide](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.01/en-US)  
+>- [`TinyWorld` Tutorial](https://blogs.sap.com/2016/03/28/developing-with-xs-advanced-a-tinyworld-tutorial)
 
 There are also comprehensive step-by-step tutorials to get started at the SAP Developer Center:
 
@@ -50,8 +50,8 @@ SAP HANA XS advanced applications may consist of multiple modules and be impleme
 
 The CI process discussed in this chapter implements an MTA running on SAP HANA XS advanced. Source changes are pushed by the developer to a central Git repository (either the one that is integrated in SAP HANA or a custom Git repository). Inside the CI build, the MTA archive builder - a command-line tool shipped by SAP - triggers the technology-specific compilers for the dedicated modules contained in the MTA. Then, the MTA archive builder packages the artifacts from each module into one archive file with the extension `.mtar`. To download and learn more about the MTA archive builder refer to the following links:  
 
-> [MTA Archive Builder Download](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100800000903&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MULTITRG%20APP%20ARCHIVE%20BUILDER)  
-> [MTA Archive Builder Documentation](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)
+>- [MTA Archive Builder Download](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100800000903&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MULTITRG%20APP%20ARCHIVE%20BUILDER)  
+>- [MTA Archive Builder Documentation](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)
 
 After the MTA archive builder has run, the build result is automatically deployed into an environment for automatic testing during the CI build. For the deployment, the XS advanced command-line client triggers the XS deploy service. The CI build may contain tests such as static code checks for the JavaScript sources (`ESLint`) or automated tests for the user interface.
 
@@ -120,8 +120,8 @@ Gerrit within SAP HANA XS advanced has the advantage of using the built-in user 
 
 Use the SAP HANA XS Advanced command-line client to connect to the SAP HANA XS advanced system and each space in order to automatically deploy the build result - an MTA archive (`.mtar`). For detailed information, see the following official documentation and SAP note.
 
-> [SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/e7e79e15f5284474b965872bf0fa3d63/2.0.01/en-US/bc5b63411b584e9dbe13037c2322a234.html)  
-> [Note 2242468 - Setting up SAP HANA extended application services, advanced model command-line client from SAP HANA Installation DVD](https://launchpad.support.sap.com/#/notes/0002242468)
+>- [SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/e7e79e15f5284474b965872bf0fa3d63/2.0.01/en-US/bc5b63411b584e9dbe13037c2322a234.html)  
+>- [Note 2242468 - Setting up SAP HANA extended application services, advanced model command-line client from SAP HANA Installation DVD](https://launchpad.support.sap.com/#/notes/0002242468)
 
 #### Procedure
 
@@ -158,8 +158,8 @@ The CI process requires the MTA project sources that are cloned from the Git rep
 
 1. Install Node.js on the Jenkins slave machine.
 
-    > [Node.js Home Page](https://Nodejs.org/en/)   
-    > [Node.js Downloads](https://nodejs.org/en/download/)
+    >- [Node.js Home Page](https://Nodejs.org/en/)   
+    >- [Node.js Downloads](https://nodejs.org/en/download/)
 
     You can install the `tar.gz` package on Linux in any directory. We recommend that you define a common installation directory on all your Jenkins slave machines.
 
@@ -176,8 +176,8 @@ The CI process requires the MTA project sources that are cloned from the Git rep
 
 As Java application, the MTA archive builder, which is available from the SAP ONE Support Launchpad, can be installed directly on the Jenkins slave machine, or it can be stored on a location which is accessible via HTTP, for example Nexus. The latter alternative has the advantage that upgrades are much easier to handle.
 
-> [Multi-target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
-> [SAP ONE Support Launchpad](https://launchpad.support.sap.com/)
+>- [Multi-target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
+>- [SAP ONE Support Launchpad](https://launchpad.support.sap.com/)
 
 #### Procedure
 
@@ -207,8 +207,8 @@ In that case, please see paragraph 8.1 "Setting Up and Preparing the npm Registr
 To develop SAP HANA XS advanced applications a SAP Web IDE for SAP HANA is used and installed.
 For information about installing SAP Web IDE for SAP HANA, see the official documentation.
 
-> [SAP Web IDE for SAP HANA - Installation and Upgrade Guide](https://help.sap.com/viewer/1a8e7ab05a2e4119b02b702f211422f5/2.0.00/en-US/c0563b9c5cbd4a78ab0e58c6bc97bedb.html)   
-> [SAP Web IDE for SAP HANA Reference](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/0a1c5d829a074a8a889acd2ace444042.html)  
+>- [SAP Web IDE for SAP HANA - Installation and Upgrade Guide](https://help.sap.com/viewer/1a8e7ab05a2e4119b02b702f211422f5/2.0.00/en-US/c0563b9c5cbd4a78ab0e58c6bc97bedb.html)   
+>- [SAP Web IDE for SAP HANA Reference](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/0a1c5d829a074a8a889acd2ace444042.html)  
 
 The recommendation is to update your SAP Web IDE for HANA to SAP Web IDE 2 SPS 01 or higher.  As of this release the SAP Web IDE for HANA is backwards compatible and can be used on all previous releases.  
 One step that we highlight here is configuring the npm cache. The MTA extension file for SAP Web IDE must be modified.
@@ -441,8 +441,8 @@ When a developer user wants to build the application which he is currently devel
 
 In our example, we use the Tiny World tutorial to show something a bit more concrete than a simple Hello-World example. For further details, see the SAP HANA XS advanced Developer Guide:
 
-> [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US/1547c14105be409ebfc3a9e9634a7188.html)  
-> [Tiny World Tutorial](https://blogs.sap.com/2016/03/28/developing-with-xs-advanced-a-tinyworld-tutorial)
+>- [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US/1547c14105be409ebfc3a9e9634a7188.html)  
+>- [Tiny World Tutorial](https://blogs.sap.com/2016/03/28/developing-with-xs-advanced-a-tinyworld-tutorial)
 
 
 #### Procedure
