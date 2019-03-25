@@ -37,9 +37,9 @@ Git is a distributed SCM tool that has already a high adoption in the open sourc
 
 Git is part of most Linux distribution and can be seen as a standard tool on a developer's PC. Gerrit is offered as open source tool.
 
-> [Gerrit Download](http://gerrit-releases.storage.googleapis.com/index.html)  
-> [Gerrit Documentation](https://gerrit-review.googlesource.com/Documentation/index.html)  
-> [Gerrit quick get started guide](https://gerrit-review.googlesource.com/Documentation/linux-quickstart.html)
+>- [Gerrit Download](http://gerrit-releases.storage.googleapis.com/index.html)  
+>- [Gerrit Documentation](https://gerrit-review.googlesource.com/Documentation/index.html)  
+>- [Gerrit quick get started guide](https://gerrit-review.googlesource.com/Documentation/linux-quickstart.html)
 
 As part of the CI landscape, identify a Linux machine that will act as the host of the central Gerrit installation.
 
@@ -52,8 +52,8 @@ Our example is based on Gerrit release 2.13.3. In other releases, the front ends
 
 For installation of Git, see
 
-> [Git](https://git-scm.com/)  
-> [Git Download](https://git-scm.com/download/linux)
+>- [Git](https://git-scm.com/)  
+>- [Git Download](https://git-scm.com/download/linux)
 
 
 ### 3. Installation of Gerrit
@@ -128,8 +128,8 @@ It is recommended to use the SSH protocol for working with Gerrit. We describe h
 
 Git is installed on your local computer. If the computer is running on Linux, install Git using the package installer of your distribution and refer to the Git documentation that was mentioned before. If your computer is running on Windows, the Git installation includes `Git Bash`, which shows a Linux-like user experience.
 
-> [Git Download Linux](https://git-scm.com/download/linux)  
-> [Git Download Windows](https://git-scm.com/download/win)
+>- [Git Download Linux](https://git-scm.com/download/linux)  
+>- [Git Download Windows](https://git-scm.com/download/win)
 
 
 #### Procedure
