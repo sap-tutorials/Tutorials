@@ -36,8 +36,8 @@ This chapter's scenario describes a CI process for development of SAP Fiori or S
 
 Immediately after the commit has been merged to the `master` branch, the CI build starts on the new snapshot. The build executes static code analysis, unit tests and automatic runtime tests. For execution of the latter we use in our example a dedicated SAP Cloud Platform account. Application files are minified (white spaces and comments are removed), and a preload file is created. When the deployed application is accessed from SAP Cloud Platform via a browser, the preload file is requested first by default since it contains the content of all the application's JavaScript files. This reduces the number of round trips between the browser and the back end, significantly increasing the performance of the application loading process. Finally, the SAP Fiori/SAPUI5 application files are packaged into an MTA (multi-target application) archive. This is the package format that can be deployed automatically by the SAP Cloud Platform console client from a CI server where the build runs.
 
-> [Multi-Target Applications](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c4f0d850b6ba46089a76d53ab805c9e6.html)  
-> [SAP Cloud Platform Console Client](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76132306711e1014839a8273b0e91070.html)
+>- [Multi-Target Applications](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c4f0d850b6ba46089a76d53ab805c9e6.html)  
+>- [SAP Cloud Platform Console Client](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76132306711e1014839a8273b0e91070.html)
 
 After it has been successfully built and tested, the MTA artifact is archived for further processing. Acceptance tests are performed on a dedicated test system to which a stable version of the MTA file has been deployed. The deployment of the MTA version, which was successfully created during a CI build, can be triggered either manually by a responsible person (like a quality manager) or automatically via a defined schedule (for example, once a day in the morning). Testers can then execute manual acceptance tests.
 
@@ -81,8 +81,8 @@ The standard procedure for creating a new SAPUI5 or Fiori project is to use the 
 
 You can either use SAP Web IDE on SAP Cloud Platform, or SAP Web IDE personal edition, which offers the same features but runs on your local machine.
 
-> [SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/0221845d73ad403ab2852142f3179177.html)  
-> [SAP Web IDE Personal Edition](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/5b8bca3147ee4dfd99be8aaf6bd4f421.html)
+>- [SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/0221845d73ad403ab2852142f3179177.html)  
+>- [SAP Web IDE Personal Edition](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/5b8bca3147ee4dfd99be8aaf6bd4f421.html)
 
 
 #### Procedure
@@ -114,8 +114,8 @@ You can either use SAP Web IDE on SAP Cloud Platform, or SAP Web IDE personal ed
 
 3. Open and log in to the appropriate IDE:
 
-    > [Opening SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html)  
-    > [SAP Web IDE Personal Edition](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/5b8bca3147ee4dfd99be8aaf6bd4f421.html)
+    >- [Opening SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html) 
+    >- [SAP Web IDE Personal Edition](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/5b8bca3147ee4dfd99be8aaf6bd4f421.html)
 
 4. In the IDE, select **Tools > Preferences > Git settings**. Enter your Git user name and email address, and save your settings.
 
@@ -191,8 +191,8 @@ For processing the Fiori project's sources on the build node, Grunt as a task pr
 
 1. Log in as user `jenkins` to the Jenkins slave machine and install Node.js (version 6 or later) to a path of your choice. It must be writeable for user `jenkins`.
 
-    > [Node.js Home Page](https://Nodejs.org/en/)   
-    > [Node.js Downloads](https://nodejs.org/en/download/)
+    >- [Node.js Home Page](https://Nodejs.org/en/)   
+    >- [Node.js Downloads](https://nodejs.org/en/download/)
 
     You can install the `tar.gz` package on Linux in any directory. We recommend that you define and use a common installation directory on all your Jenkins slave machines.
 
@@ -215,8 +215,8 @@ For processing the Fiori project's sources on the build node, Grunt as a task pr
 
 As Java application, the MTA archive builder, which is available from the SAP Development Tools site, can be installed directly on the Jenkins slave machine, or it can be stored on a location which is accessible via HTTP, for example Nexus. The latter alternative has the advantage that upgrades are much easier to handle.
 
-> [Multi-target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
-> [SAP Development Tools](https://tools.hana.ondemand.com/#cloud)
+>- [Multi-target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
+>- [SAP Development Tools](https://tools.hana.ondemand.com/#cloud)
 
 #### Procedure
 
