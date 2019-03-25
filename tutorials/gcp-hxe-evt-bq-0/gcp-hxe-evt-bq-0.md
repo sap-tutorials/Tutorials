@@ -10,7 +10,7 @@ time: 10
 ## Details
 ### You will learn  
 
-**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED WITH A LIVE INSTRUCTOR**  as it is.
 
 To complete this tutorial, you will be using a virtual machine powered and sponsored by [Google Cloud](https://cloud.google.com/).
 
