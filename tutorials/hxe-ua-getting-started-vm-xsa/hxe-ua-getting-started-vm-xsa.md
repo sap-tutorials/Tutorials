@@ -56,7 +56,7 @@ If you are using a `VMWare` product, and if the IP address still doesn't show af
 5.  Click *Apply* and *OK* to save your corrected bridge networking values.
 6.  Exit Virtual Network Editor.
 7.  Exit your virtual machine.
-8.  Restart you host machine.
+8.  Restart your host machine.
 9.  Restart SAP HANA, express edition and go back to step 1.
 
 [ACCORDION-END]
