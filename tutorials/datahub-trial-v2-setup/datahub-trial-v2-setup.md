@@ -1,5 +1,5 @@
 ---
-title: Set up SAP Data Hub, trial edition 2.4
+title: Set Up SAP Data Hub, Trial Edition 2.4
 description: Create a solution instance of SAP Data Hub, trial edition 2.4.
 auto_validation: true
 primary_tag: products>sap-data-hub
@@ -11,12 +11,12 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 During this tutorial, you will learn how to create a solution instance of SAP Data Hub, trial edition. SAP Data Hub, trial edition is provisioned via SAP Cloud Appliance Library. It runs in your account on Cloud Providers that you choose from GCP or AWS. Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
 ### Time to Complete
-**30 Min**
+**70 Min**
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create Cloud Account or Project)]
-Running SAP Data Hub, trial edition requires you to have access to a project and for AWS you need to have access to AWS account with a certain ID.
+Running SAP Data Hub, trial edition requires you to have access to an Amazon Web Services account or a Google Cloud Platform project.
 
 If you do not yet have an account on Google Cloud Platform or Amazon Web Services , then create one.
 
@@ -40,6 +40,10 @@ For Google Cloud Platform, you need to enable certain APIs which are also descri
 
 [ACCORDION-BEGIN [Step 2: ](Link project to SAP Cloud Appliance Library)]
 Link your Google Cloud Platform project or AWS account to SAP Cloud Appliance Library. This step is described in the SAP Cloud Appliance Library [documentation](https://calstatic.hana.ondemand.com/res/docEN/042bb15ad2324c3c9b7974dbde389640.html).
+
+Open the SAP Cloud Appliance Library in your web browser using the following link: <https://cal.sap.com>.
+
+If you are a first-time user of SAP Cloud Appliance Library, familiarize yourself with its basic concepts and how to work with the user interface by reading the [documentation](https://lkgstatic.hana.ondemand.com/res/~1522937040047~/docEN/6381cffb595143db8d4d7314afa0ae65.html).
 
 [DONE]
 
