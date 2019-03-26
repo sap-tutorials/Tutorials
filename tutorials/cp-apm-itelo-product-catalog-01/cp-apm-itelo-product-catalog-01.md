@@ -1,5 +1,5 @@
 ---
-title: Add Annotation to a Managed Association with Core Data Services
+title: Add Annotations to a Managed Association with Core Data Services
 description: Core Data and Services (CDS) used in the SAP Cloud Application Programming Model supports annotations from Fiori Elements. Add four of them and explore the results.
 auto_validation: true
 primary_tag: topic>java
@@ -17,13 +17,13 @@ time: 20
   - How to improve filtering the product catalog
   - How to make a field mandatory
 
-You build this tutorial upon your result from the previous tutorial where you added a category for the products in the product catalog of the SAP Cloud Platform business application project `ITelO`. Add now Fiori Elements annotations to your association, which have impact on the UI.
+You build this tutorial upon your result from the previous tutorial where you added a category for the products in the product catalog of the SAP Cloud Platform business application project `ITelO`. Add now SAP Fiori elements annotations to your association, which have impact on the UI.
 
-You add `title`, `ValueList`, and `Text` annotations and you will see the effect on the user interface.
+You add `title`, `ValueList`, and `Text` annotations, and you will see the effect on the user interface.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open your SAP Web IDE Full-Stack)]
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
 
 Open your SAP Web IDE Full-Stack and the workspace that contains the sources from the previous tutorial.
 
@@ -33,7 +33,7 @@ If you are not sure how to do this, have a look at the previous tutorial in Step
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2:](Add the category to the UI)]
+[ACCORDION-BEGIN [Step 2:](Add category to UI)]
 
 Let's make the user interface aware of the association we created, that can be displayed to users.
 

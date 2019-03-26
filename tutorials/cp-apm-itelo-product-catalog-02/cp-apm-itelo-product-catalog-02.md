@@ -135,7 +135,7 @@ In our example, we provide a german and an english version for the strings. Keep
 
 To see your changes on the user interface, do the following:
 
- 1. Restart your `srv` module in the `Run Console` of SAP Web IDE Full-Stack. 
+ 1. Restart your `srv` module in the `Run Console` of SAP Web IDE Full-Stack.
 
  2. On your **`app`** folder go to **`Run> Run Configurations`**.
 
