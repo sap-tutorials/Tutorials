@@ -1,12 +1,14 @@
 ---
-title: Display a CDS view using ALV with IDA
-description: Display a CDS view in the SAP List Viewer with Integrated Data Access (IDA)
+title: Display a CDS View Using ALV with IDA
+description: Display a CDS view in the SAP List Viewer with Integrated Data Access (IDA).
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
 time: 15
 
 ---
+## Prerequisites
+- **Tutorial**: [Create and Run an ABAP Program](abap-create-basic-app)
 
 ## Details
 ### You will learn  
@@ -18,7 +20,7 @@ ALV with IDA lets you display views and tables that contain very large quantitie
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open the ABAP program)]
-Open the ABAP program you created in the previous tutorial, [Create and run an ABAP program](abap-create-basic-app).
+Open the ABAP program you created in the previous tutorial, [Create and Run an ABAP Program](abap-create-basic-app).
 
  - Either choose **Programs > `Z_INVOICE_ITEMS_EURO`**:
 
@@ -226,8 +228,9 @@ The tooltip information for the Paid column has been changed:
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
 Create an IDA for the CDS view `Z_Customers`.
-Enter your code in the box below and choose **Submit Answer**.
+The code should be one line only and should take the form <class>...<method>...[arguments] , similar to the statement in the sample code.
 Since the validation engine is case-sensitive, please enter your code entirely in lowercase.
+Enter your code in the box below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]
