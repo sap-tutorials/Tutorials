@@ -79,7 +79,7 @@ npm install @sap/cloud-sdk-vdm-business-partner-service
 Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner-route.ts`.
 
 ```JavaScript / TypeScript
-import { BusinessPartner } from '@sap/s4sdk-vdm-business-partner-service';
+import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 ```
 
 Now the `BusinessPartner` entity is available for you to be used.
