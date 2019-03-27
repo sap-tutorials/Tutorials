@@ -4,21 +4,13 @@ description: Use the Thing Modeler to create the master data and the measurement
 primary_tag: topic>internet-of-things
 auto_validation: true
 tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Assemble and Configure Device Hardware](https://developers.sap.com/tutorials/iot-express-3-configure-device.html) or at least [Create a Simple IoT Device Model](https://developers.sap.com/tutorials/iot-express-2-create-device-model.html)
+ - **Tutorials:** [Assemble and Configure Device Hardware](iot-express-3-configure-device) or at least [Create a Simple IoT Device Model](iot-express-2-create-device-model)
  - **Configuration** You or someone else that is an administrator in your global account has walked through the following end-to-end configuration and onboarding guide: [SAP IoT Application Enablement: Onboarding - Setting up Your Account](https://help.sap.com/viewer/9dfedbe95cbe4a9f9a5ceddbef7f88e5/latest/en-US/c5b72d23880240dcb4b0d7b9523b065a.html).
 
-### Time to Complete
-**20 Min**
-
-
-
-
-## Next Steps
-- **Tutorials:** [Build an IoT Condition Monitoring App](https://developers.sap.com/tutorials/iot-express-5-use-webide-template.html)
 
 ## Details
 ### You will learn
@@ -73,7 +65,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 
  Now that we have a package, we can start putting properties reflecting the measurements but also the master data that we need for out things. Let's assume we are producing this greenhouse for processing warranty claims, we use a serial number to track every individual greenhouse.
 
-  Please make sure you use the thing modeler based on odata. You can check this by checking that you choose the package in the thing modeler at the top with a drop down instead of at the bottom. If the later is the case please check your role collection established when you initially configured the tenant to include `Thing_Engineer_Odata` and not `Thing_Engineer` or `Thing_Engineer_Fiori_Launchpad`.
+  Please make sure you use the thing modeler based on OData. You can check this by checking that you choose the package in the thing modeler at the top with a drop down instead of at the bottom. If the later is the case please check your role collection established when you initially configured the tenant to include `Thing_Engineer_Odata` and not `Thing_Engineer` or `Thing_Engineer_Fiori_Launchpad`.
 
   1. Go to the **Thing Properties Catalog** by clicking on the tile with the same name in the home page.
   2. Select your `greenhouse` package.
@@ -188,7 +180,7 @@ Lastly we will set the things serial number and the location to make sure we can
 
 ![Location and Serial Number](masterdata.png)
 
-If you are ingesting data you should see this data showing up in the thing in the thing modeler under `measured values`. If not please check first in iot service and then also in the data ingestion error log app in the fiori launchpad.
+If you are ingesting data you should see this data showing up in the thing in the thing modeler under `measured values`. If not please check first in IoT service and then also in the data ingestion error log app in the SAP Fiori launchpad.
 
 You are now ready to build interactive or batch applications on top of your greenhouse things.
 
