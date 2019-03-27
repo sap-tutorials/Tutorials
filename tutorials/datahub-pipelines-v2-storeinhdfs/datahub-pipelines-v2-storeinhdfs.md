@@ -57,7 +57,7 @@ Configure the **Write File** operator. You need to maintain the following proper
 | `Mode`                       | `overwrite`                               |
 | `path`                         | `/tmp/hdfsManager/test_<counter>.txt` |
 
-Click on the **Open editor (1)** next to **Connection** property and configure the following properties:
+Click on the **Open editor** next to **Connection** property and configure the following properties:
 
 ![picture_04](./datahub-pipelines-v2-storeinhdfs_08.png)  
 
@@ -82,7 +82,7 @@ Configure the **Read File** operator. You need to maintain the following propert
 | `path`                         | `/tmp/hdfsManager/`                 |
 | `onlyReadOnChange`             | `true`                              |
 
-Click on the **Open editor (1)** next to **Connection** property and configure the following properties:
+Click on the **Open editor** next to **Connection** property and configure the following properties:
 
 ![picture_07](./datahub-pipelines-v2-storeinhdfs_06.png)   
 
