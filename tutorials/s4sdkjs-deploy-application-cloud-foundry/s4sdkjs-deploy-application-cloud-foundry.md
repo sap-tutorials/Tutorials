@@ -1,23 +1,21 @@
 ---
-title: Deploy your application to Cloud Foundry with the SAP S/4HANA Cloud SDK for JavaScript
-description: In this tutorial, we will take the existing application from the previous tutorials and deploy it to Cloud Foundry in SAP Cloud Platform.
+title: Deploy Application to Cloud Foundry with SAP S/4HANA Cloud SDK for JavaScript
+description: Deploy an existing application and deploy it to Cloud Foundry in SAP Cloud Platform.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk]
+tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Details
-### After completing this tutorial, you will have:
- - Deployed your application to `Cloud Foundry` in `SAP Cloud Platform`
- - Configured a destination in the `SAP Cloud Platform Cockpit`
- - Consumed this destination in your application
-
- We strongly recommend going through the previous tutorials of this mission before tackling this tutorial.
+### You will learn
+ - How to deploy your application to Cloud Foundry in SAP Cloud Platform
+ - How to configure a destination in the SAP Cloud Platform cockpit
+ - How to consume the destination in your application
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Deploying the Application to Cloud Foundry in SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 1: ](Deploy application to Cloud Foundry)]
 
 Before we can deploy our application, we first need to transpile our TypeScript to JavaScript and assemble our artifact for deployment. The `package.json` already defines two scripts for this purpose: `ci-build` and `ci-package`. `ci-build` takes care of compilation and `ci-package` takes care of assembly.
 
@@ -56,7 +54,7 @@ applications:
     command: cd cloud-sdk-starter-app/dist/ && node index.js
 ```
 
-**Note:** If the value for name is `cloud-sdk-starter-app`, you probably forgot to call `npm run init -- <YOUR-APPLICATION-NAME>`. This might cause your deployment to fail.
+>**Note:** If the value for name is `cloud-sdk-starter-app`, you probably forgot to call `npm run init -- <YOUR-APPLICATION-NAME>`. This might cause your deployment to fail.
 
 Take a look at the `path` and the `command` attributes. The specified path instructs **`cf` CLI** to upload all the files from the `deployment/` folder. The command specified under the `command` attribute tells the `buildpack` what command to issue to start the application.
 
@@ -89,9 +87,9 @@ cf logs <YOUR-APPLICATION-NAME> --recent
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Optional: Deploy the Business Partner Mock Server)]
+[ACCORDION-BEGIN [Step 2: ](Deploy the Business Partner mock server (optional))]
 
-**Note:** If you have access to an SAP S/4HANA Cloud system, you can skip this step.
+>**Note:** If you have access to an SAP S/4HANA Cloud system, you can skip this step.
 
 If you have used the [`OData` Mock Service for the Business Partner `API`](https://github.com/SAP/cloud-s4-sdk-book/tree/mock-server) in the previous tutorial, you will now also have to deploy it to `Cloud Foundry in SAP Cloud Platform`. Navigate to the mock server's root folder, that already contains a `manifest.yml` and run `cf push`.
 
@@ -102,18 +100,24 @@ Copy this route, as we will need it in the next step.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure your Destination in the Cloud Platform Cockpit)]
+[ACCORDION-BEGIN [Step 3: ](Configure destination)]
 
-Now that we have deployed our application, we need to configure a destination in the Cloud Cockpit so that it can be used by our application. Start by opening the [Cloud Cockpit](https://account.hana.ondemand.com) in your browser and logging in. Next, navigate to your respective subaccount (in case of a trial account it should be called "trial"). In the menu bar on the left, there should be a section "Connectivity" with an entry called "Destinations". Click on "Destinations". On the page that has opened, click on "New Destination" and fill in the details below.
+Now that we have deployed our application, we need to configure a destination in the Cloud Cockpit so that it can be used by our application.
+
+Start by opening the [Cloud Cockpit](https://account.hana.ondemand.com) in your browser and logging in.
+
+Next, navigate to your respective subaccount (in case of a trial account it should be called **trial**). In the menu bar on the left, there should be a section **Connectivity** with an entry called **Destinations**. Click **Destinations**. On the page that opens, click **New Destination** and fill in the details below.
 
 ![SAP_Cloud_Platform_Cockpit](sap_cloud_platform_cockpit.png)
 
-For "Name", choose a name that describes your system. For the tutorial, we will go with `BusinessPartnerService`. If you use the Business Partner mock server, enter for "URL" the URL that you have saved from the previous step and use `NoAuthentication` for "Authentication". If you use an SAP S/4HANA Cloud system, enter the systems URL in the "URL" field and choose `BasicAuthentication` as authentication type. This will make the fields "User" and "Password" appear. Enter here the credentials of a technical user for your SAP S/4HANA Cloud system.
+For **Name**, choose a name that describes your system. For the tutorial, we will go with **`BusinessPartnerService`**.
+
+If you use the Business Partner mock server, enter for **URL** the URL that you have saved from the previous step and use **`NoAuthentication`** for **Authentication**. If you use an SAP S/4HANA Cloud system, enter the systems URL in the **URL** field and choose **`BasicAuthentication`** as authentication type. This will make the fields **User** and **Password** appear. Enter here the credentials of a technical user for your SAP S/4HANA Cloud system.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Bind the Destination Service)]
+[ACCORDION-BEGIN [Step 4: ](Bind destination service)]
 
 In order to allow the application to use the destination you have just configured, you will need to bind an instance of the destination service and an instance of the `XSUAA service` to your application.
 
@@ -123,7 +127,7 @@ To create an instance of the destination service, execute the following command 
 cf create-service destination lite my-destination
 ```
 
-This tells `Cloud Foundry in SAP Cloud Platform` to create an instance of the destination service with service plan "lite" and make it accessible under the name "my-destination". We can now use the name to bind this service to our application. To do this, open your `manifest.yml` and add a section called "services", under which you can then add the name of the just created service.
+This tells `Cloud Foundry in SAP Cloud Platform` to create an instance of the destination service with service plan **lite** and make it accessible under the name **my-destination**. We can now use the name to bind this service to our application. To do this, open your `manifest.yml` and add a section called `services`, under which you can then add the name of the just created service.
 
 The resulting `manifest.yml` should look like this:
 
