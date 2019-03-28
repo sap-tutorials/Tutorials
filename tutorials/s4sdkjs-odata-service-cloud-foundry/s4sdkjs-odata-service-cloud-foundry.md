@@ -1,24 +1,22 @@
 ---
-title: Create your first application using the SAP S/4HANA Cloud SDK for JavaScript
-description: In this tutorial, we will introduce the fundamentals of the SAP S/4HANA Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
+title: Create Your First Application with SAP S/4HANA Cloud SDK for JavaScript
+description: Learn the fundamentals of the SAP S/4HANA Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk]
+tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Details
-### After completing this tutorial, you will have:
- - Extended the scaffolding application by another route
- - Called the Business Partner Service of `SAP S/4HANA Cloud` using the `SAP S/4HANA Cloud SDK for JavaScript`
-
-We strongly recommend going through the previous tutorials of this mission before tackling this tutorial.
+### You will learn
+ - How to extend a scaffolded application by another route
+ - How to call the Business Partner Service of SAP S/4HANA Cloud using SAP S/4HANA Cloud SDK for JavaScript
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Optional: Setup a Local Mock Server)]
+[ACCORDION-BEGIN [Step 1: ](Set up a local mock server (optional))]
 
-**Note:** If you have access to an `SAP S/4HANA Cloud` system with a technical user, you can skip this part.
+>**Note:** If you have access to an `SAP S/4HANA Cloud` system with a technical user, you can skip this part.
 
 In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
 
@@ -27,7 +25,7 @@ Once it is up and running you should see the list of services at http://localhos
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Adding a custom route)]
+[ACCORDION-BEGIN [Step 2: ](Add a custom route)]
 
 Initially, the app only contains the `index` and `hello-world` routes. We will add another route for `business-parters` that will simply list all available business partners.
 
@@ -68,7 +66,7 @@ You can start your application by running `npm run start:local`. Now, calling `h
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Importing Service Entities)]
+[ACCORDION-BEGIN [Step 3: ](Import service entities)]
 
 In order to use the `SAP S/4HANA Cloud SDK for JavaScript` to make a call to an `OData` service add the `virtual data model` (`VDM`) for this service to your dependencies. For this tutorial we are using the `VDM` for the business partner service. Install it with the following:
 
@@ -79,17 +77,17 @@ npm install @sap/cloud-sdk-vdm-business-partner-service
 Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner-route.ts`.
 
 ```JavaScript / TypeScript
-import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
+import { BusinessPartner } from '@sap/s4sdk-vdm-business-partner-service';
 ```
 
 Now the `BusinessPartner` entity is available for you to be used.
 
-**Side-note:** The `SAP S/4HANA Cloud SDK for JavaScript` offers packages for each `OData` service exposed by `SAP S/4HANA Cloud`. You can find a list of these services in the [`SAP API Business Hub`](https://api.sap.com/package/SAPS4HANACloud?section=Artifacts) and a list of the corresponding packages in our [documentation](https://help.sap.com/doc/9dbcab0600b346c2b359a8c8978a45ba/1.0/en-US/index.html).
+>**Side-note:** The `SAP S/4HANA Cloud SDK for JavaScript` offers packages for each `OData` service exposed by `SAP S/4HANA Cloud`. You can find a list of these services in the [`SAP API Business Hub`](https://api.sap.com/package/SAPS4HANACloud?section=Artifacts) and a list of the corresponding packages in our [documentation](https://help.sap.com/doc/9dbcab0600b346c2b359a8c8978a45ba/1.0/en-US/index.html).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Executing an OData request)]
+[ACCORDION-BEGIN [Step 4: ](Execute an OData request)]
 
 In the `business-partner-route` create a function `getAllBusinessPartners` and implement it as follows:
 
@@ -152,7 +150,7 @@ Congratulations, you just made your first call with the SAP S/4HANA Cloud SDK!
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Optional: Manage Destinations Centrally)]
+[ACCORDION-BEGIN [Step 5: ](Manage destinations centrally (optional))]
 
 In order to not repeat your destination configuration for every request execution, you can set a `destinations` environment variable to manage your destinations. If you prefer, you can set system wide environment variables. However, we will show you how to set them non-invasively for one project only.
 
