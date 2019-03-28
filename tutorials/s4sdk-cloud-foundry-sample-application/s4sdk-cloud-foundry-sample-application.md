@@ -1,6 +1,7 @@
 ---
 title: Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK
 description: The following steps will explain how to create the very first Hello World example on Cloud Foundry using the SAP S/4HANA Cloud SDK.
+auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
@@ -50,6 +51,7 @@ cf login
 
 The `cf CLI` will ask you for your mail and your password. After entering these, you should be successfully logged in.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Generate project from archetype)]
@@ -74,6 +76,7 @@ After providing these values, Maven will generate your project from the archetyp
 
 **Note**: Here you have created an application which is based on the [`TomEE` runtime](http://tomee.apache.org/) which is `Java EE 6` compliant `OpenSource` runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with `SpringBoot` (`artifactId`: `scp-cf-spring`) or on a pure `Tomcat` container (`artifactId`: `scp-cf-tomcat`). Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP S/4HANA Cloud SDK is compatible with these popular `runtimes` too.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Understand the project structure and its artifacts)]
@@ -126,7 +129,7 @@ To get you started, we take a look into the conventional `application` project, 
 ![project files in cx server folder](project-files-cx-server.png)
 
   - **`cx-server`**	- This `Unix` bash script allows you to start and stop the `Jenkins` server on your local machine as part of a `Docker` container.
-  - **`server.cfg`** - his is the configuration file for the server parameters.
+  - **`server.cfg`** - This is the configuration file for the server parameters.
 
 Once a Jenkins server is configured for your personal needs, the files in the project root directory become useful:
 
@@ -140,6 +143,7 @@ This separation of test modules makes it possible to just run unit tests and int
 
 During development it becomes important to test the code newly implemented to external services, i.e. logic running in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain their operation inside a dedicated Maven `submodule`. That way the runnable application itself can be later shipped without tests and their dependency.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](HelloWorldServlet)]
@@ -179,6 +183,7 @@ The `HelloWorldServlet` extends `HttpServlet`, so this will be a HTTP endpoint t
 
 **Note**: The application code runs seamlessly in `SAP Cloud Platform`, `Neo` as well as `SAP Cloud Platform`, `Cloud Foundry`. The `SAP S/4HANA Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Deployment)]
@@ -258,6 +263,7 @@ Visit `http://localhost:8080/hello` on your local machine to view the response o
 
 Now you have a strong basis for developing your own cloud application for `SCP Cloud Foundry` using the `SAP S/4HANA Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP S/4HANA Cloud SDK`.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix: ](Troubleshooting)]
@@ -269,5 +275,18 @@ If you are using `PowerShell` on `Windows`, always put Maven arguments (supplied
 ```
 mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=LATEST"
 ```
+
+[DONE]
+[ACCORDION-END]
+
+ACCORDION-BEGIN [Appendix: ](Test yourself)]
+
+[VALIDATE_1]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+
+[VALIDATE_2]
 
 [ACCORDION-END]
