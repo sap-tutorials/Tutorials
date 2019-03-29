@@ -1,6 +1,6 @@
 ---
-title: Create the UI for a Custom Business Object
-description: Create an own application based on a custom business object and a custom catalog extension.
+title: Create the UI for a custom business object
+description: Create an own application based on a Custom Business Object and a Custom Catalog Extension
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 auto_validation: true
@@ -8,12 +8,10 @@ time: 15
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Create a Custom Business Object ](https://developers.sap.com/tutorials/abap-extensibility-cbo-create.html)
- - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
-
-
+- **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
 
 ## Details
+
 ### You will learn
 In the preceding tutorial you created a custom business object with a simple data structure and its persistence.
 To be able to work with a business object you need a user interface. In this tutorial you will
@@ -23,12 +21,18 @@ To be able to work with a business object you need a user interface. In this tut
 </ul>
 At the end you will have a running application that you can create, update and delete custom business object entities with.
 
+>**UI Generation** and later done **UI Adaptation** are so called **In-App Extensibility** features done completely inside a S/4HANA system. They are key user functionality with limited possibilities.
+>
+>Alternatively the more powerful **Side-By-Side Extensibility** via **SAP Cloud Platform** could be done to develop an UI with all SAPUI5 options (see tutorial group [Create Custom UI for S/4HANA Cloud](https://developers.sap.com/group.abap-custom-ui-with-webide.html)).
+
 ### Example
 
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
 
 In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
+### Additional Information
+- **SAP S/4HANA Cloud Release** (tutorial's last update): 1808
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Start Editing Custom Business Object Bonus Plan)]
