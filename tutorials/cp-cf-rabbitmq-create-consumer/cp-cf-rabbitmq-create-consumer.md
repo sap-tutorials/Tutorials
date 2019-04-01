@@ -190,8 +190,7 @@ Run `npm start` from the root directory of your project to test your application
 [ACCORDION-BEGIN [step ](Deploy your consumer application to SAP Cloud Platform)]
 Specify the deployment information in a `manifest.yml` file in the root folder:
 
-```yml
----
+```yaml
 applications:
  - name: consumer
    random-route: true
