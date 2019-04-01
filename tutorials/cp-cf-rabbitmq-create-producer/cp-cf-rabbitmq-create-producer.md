@@ -20,7 +20,7 @@ time: 20
 [ACCORDION-BEGIN [Step 1: ](Define and install the dependencies)]
 
 Before you can start the actual development of the application, you need to define some dependencies and the metadata of the project. To do this, create a new `package.json` file:
-```json
+```JSON
 {
     "name": "producer",
     "scripts": {
@@ -53,7 +53,7 @@ Now that you defined all modules, you can install them with `npm install`.
 [ACCORDION-BEGIN [Step: ](Create a simple web server)]
 First, you need the specify the core file of your application, the `app.js` file. It is the central entry point of your application (as defined in the `package.json` file).
 
-```javascript
+```JavaScript
 const path = require('path'),
     express = require('express'),
     cfenv = require('cfenv'),
@@ -78,7 +78,7 @@ This code snippet will create a new web server that listens on the port 3000, if
 This step adds a new endpoint to the web server, which will be used to receive and parse data from the web application.
 
 1. Specify a new module, which helps us to parse the payload of incoming request. You also need to connect this module with the express framework to trigger the parsing of all incoming requests.
-```javascript
+```JavaScript
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
   extended: false
@@ -86,7 +86,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 ```
 2. Create a new endpoint named **`/send`** and assign a callback function, which is invoked whenever a request is sent to this endpoint. This function parses the `msg` from the incoming request, stores the massage in an array, and writes it to the application log.
-```javascript
+```JavaScript
 const aHistory = [];
 const sDefaultMessage = 'Hello Cloud Platform';
 app.post('/send', function (oReq, oRes) {
@@ -104,7 +104,7 @@ app.post('/send', function (oReq, oRes) {
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 4: ](Add a new endpoint to retrieve the sent message)]
 Create a new endpoint named **`/outbox`** and assign a callback function, which returns the array of stored messages of the previous step.
-```javascript
+```JavaScript
 app.get('/outbox', function(oReq, oRes) {
     oRes.send(aHistory);
 });
@@ -135,7 +135,7 @@ The response of this message should be a status 201 message.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 6: ](Deploy your producer application to SAP Cloud Platform)]
 In order to push the application to Cloud Foundry, you need to specify the deployment information in a `manifest.yml` file in the root folder.
-```yml
+```YAML
 ---
 applications:
 - name: producer
