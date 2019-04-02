@@ -4,6 +4,8 @@ description: Take an iOS app generated with the SDK Assistant and make it multil
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 ---
 
 ## Prerequisites  
