@@ -2,7 +2,7 @@
 title: Maintain Platform Subaccounts and SAP Web IDE Permissions
 description: Add new subaccount to the SAP Cloud Platform global account and give permission to access SAP Web IDE to everyone.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 time: 15
 ---
 
