@@ -3,7 +3,7 @@ title: Debug Your Java App
 description: Learn the fundamentals of debugging a Java app from the comfort of the SAP Web IDE.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide  ]
 time: 15
 ---
 

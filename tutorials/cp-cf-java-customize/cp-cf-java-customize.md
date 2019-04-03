@@ -3,7 +3,7 @@ title: Add a simple Java app to a Multi-Target Application
 description: Start to get a feel for modifying an existing codebase using SAP Web IDE by adding a Java module to a Multi-Target Application (MTA).
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [   tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 time: 10
 ---
 
