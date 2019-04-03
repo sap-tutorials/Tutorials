@@ -1,10 +1,11 @@
 ---
-title: Getting started with SAP Cloud Platform Rapid Application Development by Mendix
+title: Get Started with SAP Cloud Platform Rapid Application Development by Mendix
 description: Set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development by Mendix to build applications to be deployed on SAP Cloud Platform.
 primary_tag: products>sap-rad-by-mendix
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-rad-by-mendix  ]
 time: 10
 ---
+
 ## Prerequisites  
   - You have access to an SAP Cloud Platform account. If you don't have an account, you can open a trial one. See the [tutorial](https://developers.sap.com/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
   - You are using a Windows desktop.
