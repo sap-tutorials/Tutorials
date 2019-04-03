@@ -3,7 +3,7 @@ title: Create an ABAP Package
 description: Create an ABAP package, which will enable you to structure your development objects.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 10
 ---
 

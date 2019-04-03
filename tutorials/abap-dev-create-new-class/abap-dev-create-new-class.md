@@ -3,7 +3,7 @@ title: Create a Global ABAP Class
 description: You will learn how to create a global ABAP class, in which you  will retrieve data from a database.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 45
 
 ---
@@ -99,7 +99,7 @@ In the class `ZCL_INVOICE_RETRIEVAL`, the Quick Assist creates:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add the method implementation)]
-In a previous tutorial ([Display database content and run SQL queries](https://developers.sap.com/tutorials/abap-display-data-queries.html)), you generated a `SELECT` statement using the SQL console. The advantage of using the SQL console is that you can reduce errors by defining clauses - like `JOIN, WHERE, or ORDER BY` - simply by using the Data Preview. The SQL Console automatically generates the correct SELECT statement for you.
+In a previous tutorial ([Display database content and run SQL queries](abap-display-data-queries)), you generated a `SELECT` statement using the SQL console. The advantage of using the SQL console is that you can reduce errors by defining clauses - like `JOIN, WHERE, or ORDER BY` - simply by using the Data Preview. The SQL Console automatically generates the correct SELECT statement for you.
 
 You will now use this generated `SELECT` statement in your class to retrieve the data from the database.
 
@@ -156,7 +156,7 @@ Now you can format (that is, "pretty-print") the source code.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Declare the local variable explicitly)]
-In a previous tutorial ([Create a structure](https://developers.sap.com/tutorials/abap-dev-adt-create-new-structure.html)), you created an ABAP Data Dictionary structure. Now, you will use this structure.
+In a previous tutorial ([Create a structure](abap-dev-adt-create-new-structure)), you created an ABAP Data Dictionary structure. Now, you will use this structure.
 
 First, we will declare an internal table, `lt_result` explicitly. Then we will define the type of the returning parameter for your method `get_items_from_db`.
 
@@ -189,8 +189,8 @@ The `@` character is simply an escape character to comply with the new Open SQL 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Replace helper_type with Dictionary structure)]
-In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial [Create an ABAP Data Dictionary structure](https://developers.sap.com/tutorials/abap-dev-adt-create-new-structure.html)).
+[ACCORDION-BEGIN [Step 8: ](Replace `helper_type` with a Dictionary structure)]
+In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial [Create an ABAP Data Dictionary structure](abap-dev-adt-create-new-structure)).
 
 Still in the editor of your invoice retrieval class `ZCL_INVOICE_RETRIEVAL`:
 
@@ -233,7 +233,7 @@ Save ( **Ctrl+S** ) and Activate ( **Ctrl+F3** ) your class.
 [ACCORDION-BEGIN [Step 11: ](Use the returning parameter in the program)]
 Now, in your program, declare an inline declared variable, `data(invoice_items)`, to receive the result of the returning parameter `invoices->get_items_from_db( )` as follows:
 
-![Image depicting step12-declare-inline-variable](step12-declare-inline-variable.png)
+![Image depicting step11a-add-instance-method](step11a-add-instance-method.png)
 
 [DONE]
 [ACCORDION-END]
@@ -390,7 +390,7 @@ Now run the program. You should get a SAP List Viewer roughly like this:
 
 
 [ACCORDION-BEGIN [Step 17: ](Test yourself)]
-Using the METHODS statement, create the definition of an instance method `get_customers_from_db` that returns a value `result` of type `ty_table_of_customers` (similar to lines 358-360 of the code above.)
+Using the METHODS statement, create the definition of an instance method `get_customers_from_db` that returns a value `result` of type `ty_table_of_customers` (similar to `get_items_from_db` above. Do not define any new types).
 
 Do not indent your code.
 

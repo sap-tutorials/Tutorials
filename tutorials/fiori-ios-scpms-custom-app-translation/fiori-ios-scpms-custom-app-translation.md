@@ -4,25 +4,25 @@ description: Take an iOS app generated with the SDK Assistant and make it multil
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 ---
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://developers.sap.com/group.ios-sdk-custom.html) group
  &nbsp;
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP Cloud Platform SDK for iOS:** Version 2.0
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
-In this tutorial, you will use the SAP Cloud Platform's integration with SAP Translation Hub to add multilingual features to your iOS app generated with the SDK Assistant. This way, you can run your app in many languages, depending on your device's preferred language.
-
->To view the entire series of tutorials, see the [Customize UI's, themes and onboarding for iOS apps](https://developers.sap.com/group.ios-sdk-custom.html) tutorial group.
+In this tutorial, you will use the SAP Cloud Platform's integration with SAP Translation Hub to add multilingual features to your iOS app generated with the SDK for iOS Assistant. This way, you can run your app in many languages, depending on your device's preferred language.
 
 ### You will learn  
 
  - How to enable SAP Translation Hub in your SAP Cloud Platform trial account
- - How to add your SAP Translation Hub account into the SDK Assistant
- - How to create multilingual capabilities to your Xcode project using the SDK Assistant
+ - How to add your SAP Translation Hub account into the SDK for iOS Assistant
+ - How to create multilingual capabilities to your Xcode project using the SDK for iOS Assistant
  - How to modify and correct the generated translations
 
 ### Time to Complete
@@ -32,7 +32,9 @@ In this tutorial, you will use the SAP Cloud Platform's integration with SAP Tra
 
 [ACCORDION-BEGIN [Step 1: ](Enable SAP Translation Hub)]
 
-Log on to your SAP Cloud Platform cockpit at [https://account.hanatrial.ondemand.com/cockpit/](https://account.hanatrial.ondemand.com/cockpit/) and navigate to **Services**.
+Log on to your SAP Cloud Platform account at [https://account.hanatrial.ondemand.com/cockpit/](https://account.hanatrial.ondemand.com/), log in and choose Neo Trial as landscape.
+
+In the navigation on the left select **Services**.
 
 Locate the **SAP Translation Hub** tile (search for `translation`):
 
@@ -44,27 +46,34 @@ In the next page, click the **Enable** button:
 
 ![Enable SAP Translation Hub](fiori-ios-scpms-custom-app-translation-02.png)
 
-Once the **SAP Translation Hub** service is enabled, click the **Go to UI for Translation Workflow** link at the bottom. The **SAP Translation Hub** web interface will open in a new tab:
+Once the **SAP Translation Hub** service is enabled, click the **Go to UI for Translation Workflow** link at the bottom.
+
+![Enable SAP Translation Hub](fiori-ios-scpms-custom-app-translation-02a.png)
+
+The **SAP Translation Hub** web interface will open in a new tab:
 
 ![Enable SAP Translation Hub](fiori-ios-scpms-custom-app-translation-03.png)
 
+Leave the SAP Translation Hub web interface open for now, as we will need it later.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable SAP Translation Hub in the SDK Assistant)]
 
-Open the **SDK Assistant**. Click the **Settings** icon in the top-left, and open the **Accounts** page:
+Open the **SDK for iOS Assistant**. Click the **Manage Accounts** option in the lower-left corner:
 
 ![Enable SAP Translation Hub](fiori-ios-scpms-custom-app-translation-04.png)
 
-Click the **Plus** button to add a new account. From the list, select **Translation Hub**:
+Click the **Add new...** button to add a new account.
+
+![Enable SAP Translation Hub](fiori-ios-scpms-custom-app-translation-04a.png)
+
+From the **Type** dropdown list, select **SAP Cloud Platform Translation Hub**:
 
 ![Enable SAP Translation Hub](fiori-ios-scpms-custom-app-translation-05.png)
 
-Click **Continue**.
-
-In the next screen, add the following details:
+Enter the following values to your new account configuration:
 
 | Field | Value |
 |----|----|
@@ -75,11 +84,11 @@ In the next screen, add the following details:
 
 ![Enable SAP Translation Hub](fiori-ios-scpms-custom-app-translation-06.png)
 
-Click **Add** when done. The account is now added to the SDK Assistant:
+Click **Save** when done. The account is now added to the SDK for iOS Assistant:
 
 ![Enable SAP Translation Hub](fiori-ios-scpms-custom-app-translation-07.png)
 
-Close the **Accounts** dialog.
+Go back to the main screen by clicking **Back**.
 
 [DONE]
 [ACCORDION-END]
@@ -87,25 +96,58 @@ Close the **Accounts** dialog.
 
 [ACCORDION-BEGIN [Step 3: ](Add translations)]
 
-In the **SDK Assistant**, right-click the `ESPMReminders` app and from the context menu, select **Add translation...**
+If you don't have an application for the translation you can simple create one by adding a sample app in the **SDK for iOS Assistant**.
+
+For that simply click on the **Create new** button on the initial screen.
+
+![Add Sample App](fiori-ios-scpms-custom-app-translation-create-app-1.png)
+
+Next select the **Sample App** tile to go to the creation process.
+
+![Add Sample App](fiori-ios-scpms-custom-app-translation-create-app-2.png)
+
+Make sure your Mobile Services account is selected and click on **Next**.
+
+![Add Sample App](fiori-ios-scpms-custom-app-translation-create-app-3.png)
+
+Now the assistant will ask you to add an SAP Cloud Platform Mobile Services application. You can fill out the fields as you wish.
+
+![Add Sample App](fiori-ios-scpms-custom-app-translation-create-app-4.png)
+
+The last step is to create the Xcode project. Fill out the fields as you wish.
+
+![Add Sample App](fiori-ios-scpms-custom-app-translation-create-app-5.png)
+
+The project you just created is a fully functional iOS app connected against one of our sample services. After the creation you will see the project in the **Recent Projects** list on the initial screen. If you click on **All Projects** you will get an overview of all your projects.
+
+![Add Sample App](fiori-ios-scpms-custom-app-translation-create-app-6.png)
+
+On the **Manage Screen** click on **Translate** under the **Add Translation** part on the right side.
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-08.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Choose one or more languages)]
+[ACCORDION-BEGIN [Step 4: ](Add translation to your project)]
 
-In the next page, leave the pre-populated values as they are.
+Now we will go through the translation flow to add localization to our app.
 
-Select one or more languages from the list for which you want to translate your app:
+First select the previously added **Translation Hub account** and click on **Next**.
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-09.png)
 
-Click the **Add** button. The project will now be translated in the chosen languages:
+The Translation Hub doesn't have a project yet so click on **Add new** to create one.
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-10.png)
 
+For the **Translation Hub Project Details** enter a **Project Name** and select the languages you want to translate to. Click on **Save**.
+
+![Add translations](fiori-ios-scpms-custom-app-translation-10a.png)
+
+You will see now the created Translation Hub project. Select it and click on **Finish**.
+
+![Add translations](fiori-ios-scpms-custom-app-translation-10b.png)
 
 [DONE]
 [ACCORDION-END]
@@ -116,20 +158,22 @@ Open the Xcode project for your app. Notice the added `InfoPlist.strings` and `L
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-11.png)
 
-While most translations seem right, some may not be translated correctly.
+If you run the app now, and change the simulators language to one of the languages you translated to, you will see the strings have changed. It can happen that some of the translations are not 100% correct. You can fix that relatively easy by changing the values in the `Localizable.strings` file or you can do it in the **SAP Translation Hub**.
 
-Although you can fix this from within the file itself, it may be more convenient to change it in the **SAP Translation Hub** web app.
+![Add translations](fiori-ios-scpms-custom-app-translation-11a.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Modify the generated translations)]
 
-Navigate to **Services > SAP Translation Hub** in your SAP Cloud Platform trial account and click the **Go to UI for Translation Workflow** link at the bottom. The **SAP Translation Hub** web interface will open in a new tab. you will now see the just added `espmreminders` project:
+Go back to your cloud account and make sure you're on the Neo landscape.
+
+Navigate to **Services > SAP Translation Hub** in your SAP Cloud Platform trial account and click the **Go to UI for Translation Workflow** link. The **SAP Translation Hub** web interface will open in a new tab. you will now see the just added `MySampleApp` project:
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-12.png)
 
-Click the **Translations** tab. In this page, an overview of the original texts and the translated texts for the selected languages are shown:
+Click on the **Translations** tab. On this page, an overview of the original texts and the translated texts for the selected languages are shown:
 
 ![Add translations](fiori-ios-scpms-custom-app-translation-13.png)
 
@@ -138,63 +182,34 @@ Here you can correct any translations that may be incorrect, and click the **Sav
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Localize the application name)]
+[ACCORDION-BEGIN [Step 7: ](Re-import the modified translations)]
 
-You may have noticed the texts containing `$(PRODUCT_NAME)` are changed to `(PRODUCT_NAME) $`. You may change it back, but you could also provide a proper, translated name for your app.
+If you changed some of the translations in the **SAP Translation Hub** you have to run the translation out of the **SDK for iOS Assistant** again.
+To do so go back to the **All Projects**, select the project for localization and click on **Translate**.
 
-Check the **Source Texts** which lists `$(PRODUCT_NAME)`, and provide a translated app name instead. Click the **Save Project** button when done.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Re-import the modified translations)]
-
-Open the **SDK Assistant**, right-click the `ESPMReminders` app and from the context menu, select **Add translation...**. Select the same languages from the list you have chosen in **Step 4**, and click the **Add** button.
-
-Once finished, open your Xcode project and notice the modified translations:
-
-![Add translations](fiori-ios-scpms-custom-app-translation-14.png)
+After finishing up the process the service should have updated the localized Strings in your Xcode project.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Enable your app for localized app name)]
+[ACCORDION-BEGIN [Step 8: ](Localize the app name)]
 
-Open the file `Info.plist` and add the following entry:
+If you go back to Xcode you will see `"CFBundleName" = "$(PRODUCT_NAME)";` in the `InfoPlist.strings` file. This will help choose the correct translation of your app's name. It is necessary to translate the app's name manually, so we need to add translations for that.
 
-| Field | Value |
-|----|----|
-| Key | `Application has localized display name` |
-| Value | `YES` |
+Each of the `InfoPlist.strings` files represent one of the languages. Go in each of them and change the `"$(PRODUCT_NAME)"` to a proper bundle name also add the following line of code right below it:
 
-![Add translations](fiori-ios-scpms-custom-app-translation-15.png)
+```swift
 
-[DONE]
+"CFBundleDisplayName" = "Your translated application name";
+```
+
+![Add translations](fiori-ios-scpms-custom-app-translation-13a.png)
+
+If you run the app now you should see the value you entered:
+
+![Add translations](fiori-ios-scpms-custom-app-translation-13b.png)
+
+[VALIDATE_8]
 [ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Change the device language)]
-
-On your device, open the **Settings** app and navigate to **General > Language & Region** and click **iPhone Language**.
-
-From the list, select one of the languages you have created a translation for, and confirm the language change for your device:
-
-![Add translations](fiori-ios-scpms-custom-app-translation-16.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 11: ](Run the translated app)]
-
-When the device has started up in the new language, remove the old application from the device.
-
-Build and run the application. You will now see the (partial) translation of the onboarding flow, as well as the translation of your custom UI:
-
-![Add translations](fiori-ios-scpms-custom-app-translation-17.png)
-
-
-[VALIDATE_11]
-[ACCORDION-END]
-
 
 ---

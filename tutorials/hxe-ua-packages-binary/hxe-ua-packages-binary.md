@@ -1,22 +1,21 @@
 ---
 title: Install Optional Packages
 description: Once SAP HANA, express edition is installed and running, use the server's built-in command line Download Manager to download optional installation packages directly to your system.
+author_name: Aaron Patkau
+author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 20
 ---
 
 <!-- loio6bb4c7e861654519bb922e7e80a77a0b -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Test the Installation](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)  
+ - **Tutorials:**  
 
 ## Details
 ### You will learn
 You will learn how to use the built-in command line Download Manager to install optional installation packages.
-
-### Time to Complete
-20 min
 
 ---
 

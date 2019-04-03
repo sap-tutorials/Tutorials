@@ -3,7 +3,7 @@ title: Time Series with SAP HANA APL (Forecast App)
 description: Understand the capabilities and options made available with the SAP HANA Automated Predictive Library (APL), which algorithm can be used to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning  ]
 time: 30
 ---
 
@@ -141,22 +141,24 @@ In the left side panel, expand the **`forecast/db/src`** tree node.
 
 Right click on the **`src`** folder and select **New > Folder**.
 
-Enter **`algorithms`** as the folder name, then click on **OK**.
+Enter **`hdb`** as the folder name, then click on **OK**.
 
-Right click on the **`apl`** folder node from the tree, and select **New > File**.
+Right click on the **`hdb`** folder node from the tree, and select **New > File**.
+
+Enter **`apl`** as the folder name, then click on **OK**.
 
 Enter **`common.hdbcds`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-forecast/db/src/algorithms/apl/common.hdbcds
+forecast/db/src/hdb/apl/common.hdbcds
 ```
 
 Paste the following content:
 
 ```JavaScript
-namespace aa.forecast.db.algorithms.apl;
+namespace aa.forecast.db.hdb.apl;
 
 context forecast {
     table type tt_function_header {
@@ -259,7 +261,7 @@ Once the CDS artifacts are created for the entities and table types, you can now
 
 However, as the Cash Flow dataset includes a series of extra predictors attributes, you will an additional AFLLANG procedure using the a different table type for the input dataset.
 
-In the left side panel, expand the **`forecast/db/src/algorithms/apl`** tree node.
+In the left side panel, expand the **`forecast/db/src/hdb/apl`** tree node.
 
 Right click on the **`apl`** folder and select **New > Folder**.
 
@@ -272,7 +274,7 @@ Enter **`forecast.hdbafllangprocedure`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-forecast/db/src/algorithms/apl/afllang/forecast.hdbafllangprocedure
+forecast/db/src/hdb/apl/afllang/forecast.hdbafllangprocedure
 ```
 
 Paste the following content:
@@ -282,15 +284,15 @@ Paste the following content:
     "area" : "APL_AREA",
     "function" : "FORECAST",
     "parameters" : [
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_function_header"},
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_operation_config"},
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_variable_descs"},
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_variable_roles"},
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_dataset"},
-        { "direction" : "OUT", "type" : "aa.forecast.db.algorithms.apl::forecast.tt_results"},
-        { "direction" : "OUT", "type" : "aa.forecast.db.algorithms.apl::forecast.tt_operation_log"},
-        { "direction" : "OUT", "type" : "aa.forecast.db.algorithms.apl::forecast.tt_summary"},
-        { "direction" : "OUT", "type" : "aa.forecast.db.algorithms.apl::forecast.tt_indicators"}
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_function_header"},
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_operation_config"},
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_variable_descs"},
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_variable_roles"},
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_dataset"},
+        { "direction" : "OUT", "type" : "aa.forecast.db.hdb.apl::forecast.tt_results"},
+        { "direction" : "OUT", "type" : "aa.forecast.db.hdb.apl::forecast.tt_operation_log"},
+        { "direction" : "OUT", "type" : "aa.forecast.db.hdb.apl::forecast.tt_summary"},
+        { "direction" : "OUT", "type" : "aa.forecast.db.hdb.apl::forecast.tt_indicators"}
     ]
 }
 ```
@@ -312,15 +314,15 @@ Paste the following content:
     "area" : "APL_AREA",
     "function" : "FORECAST",
     "parameters" : [
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_function_header"},
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_operation_config"},
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_variable_descs"},
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_variable_roles"},
-        { "direction" : "IN",  "type" : "aa.forecast.db.algorithms.apl::forecast.tt_dataset_cashflows_extrapredictors"},
-        { "direction" : "OUT", "type" : "aa.forecast.db.algorithms.apl::forecast.tt_results"},
-        { "direction" : "OUT", "type" : "aa.forecast.db.algorithms.apl::forecast.tt_operation_log"},
-        { "direction" : "OUT", "type" : "aa.forecast.db.algorithms.apl::forecast.tt_summary"},
-        { "direction" : "OUT", "type" : "aa.forecast.db.algorithms.apl::forecast.tt_indicators"}
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_function_header"},
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_operation_config"},
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_variable_descs"},
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_variable_roles"},
+        { "direction" : "IN",  "type" : "aa.forecast.db.hdb.apl::forecast.tt_dataset_cashflows_extrapredictors"},
+        { "direction" : "OUT", "type" : "aa.forecast.db.hdb.apl::forecast.tt_results"},
+        { "direction" : "OUT", "type" : "aa.forecast.db.hdb.apl::forecast.tt_operation_log"},
+        { "direction" : "OUT", "type" : "aa.forecast.db.hdb.apl::forecast.tt_summary"},
+        { "direction" : "OUT", "type" : "aa.forecast.db.hdb.apl::forecast.tt_indicators"}
     ]
 }
 ```
@@ -376,15 +378,15 @@ drop table #results;
 ### **Create temporary tables**
 
 ```SQL
-create local temporary table #function_header  like "aa.forecast.db.algorithms.apl::forecast.tt_function_header";
-create local temporary table #operation_config like "aa.forecast.db.algorithms.apl::forecast.tt_operation_config";
-create local temporary table #variable_descs   like "aa.forecast.db.algorithms.apl::forecast.tt_variable_descs";
-create local temporary table #variable_roles   like "aa.forecast.db.algorithms.apl::forecast.tt_variable_roles";
+create local temporary table #function_header  like "aa.forecast.db.hdb.apl::forecast.tt_function_header";
+create local temporary table #operation_config like "aa.forecast.db.hdb.apl::forecast.tt_operation_config";
+create local temporary table #variable_descs   like "aa.forecast.db.hdb.apl::forecast.tt_variable_descs";
+create local temporary table #variable_roles   like "aa.forecast.db.hdb.apl::forecast.tt_variable_roles";
 
-create local temporary table #operation_log    like "aa.forecast.db.algorithms.apl::forecast.tt_operation_log";
-create local temporary table #summary          like "aa.forecast.db.algorithms.apl::forecast.tt_summary";
-create local temporary table #indicators       like "aa.forecast.db.algorithms.apl::forecast.tt_indicators";
-create local temporary table #results          like "aa.forecast.db.algorithms.apl::forecast.tt_results";
+create local temporary table #operation_log    like "aa.forecast.db.hdb.apl::forecast.tt_operation_log";
+create local temporary table #summary          like "aa.forecast.db.hdb.apl::forecast.tt_summary";
+create local temporary table #indicators       like "aa.forecast.db.hdb.apl::forecast.tt_indicators";
+create local temporary table #results          like "aa.forecast.db.hdb.apl::forecast.tt_results";
 ```
 
 ### **Set the algorithm parameters**
@@ -408,7 +410,7 @@ insert into  #variable_roles values ('signal_value' , 'target', NULL, NULL, '#1'
 ### **Run the algorithm with**
 
 ```SQL
-call "aa.forecast.db.algorithms.apl.afllang::forecast" (
+call "aa.forecast.db.hdb.apl.afllang::forecast" (
   #function_header,
   #operation_config,
   #variable_descs,

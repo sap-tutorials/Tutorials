@@ -6,7 +6,10 @@ const { consoleReporter } = require('./reporters');
 const { globalChecker } = require('./checkers');
 const { logTemplates } = require('./constants');
 
+const redefine = require('./redefine');
+
 globalChecker.initialise();
+redefine();
 
 const run = async (projectPath, isProdRunMode) => {
   const interceptors = {

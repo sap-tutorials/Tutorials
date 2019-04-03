@@ -57,7 +57,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-language-detection.cfapps.eu10.hana.ondemand.com/api/v2alpha1/text/lang-detect`</nobr>
+<nobr>URL<nobr>          | the value for **`LANG_DETECTION_API_URL`** in your service key
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 

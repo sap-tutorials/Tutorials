@@ -71,7 +71,7 @@ select distinct
   , nth_value(timestamp,1) over( partition by userid order by timestamp desc, movieid)   as last_rating_date
   , nth_value(rating  ,1)  over( partition by userid order by timestamp desc, movieid)   as last_rating
   , nth_value(movieid  ,1) over( partition by userid order by timestamp desc, movieid)   as last_movieid
-from "aa.movielens.db.hdb::data.ratings";
+from "aa.movielens.db.data::ratings";
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
@@ -132,9 +132,9 @@ select distinct
     , nth_value(timestamp, 1) over( partition by t1.movieid order by t1.timestamp desc, t1.movieid) as last_rating_date
     , nth_value(rating   , 1) over( partition by t1.movieid order by t1.timestamp desc, t1.movieid) as last_rating
     , nth_value(userid   , 1) over( partition by t1.movieid order by t1.timestamp desc, t1.movieid) as last_userid
-from "aa.movielens.db.hdb::data.ratings" t1
-left outer join "aa.movielens.db.hdb::data.movies" t2 on (t1.movieid = t2.movieid)
-left outer join "aa.movielens.db.hdb::data.links"  t3 on (t1.movieid = t3.movieid);
+from "aa.movielens.db.data::ratings" t1
+left outer join "aa.movielens.db.data::movies" t2 on (t1.movieid = t2.movieid)
+left outer join "aa.movielens.db.data::links"  t3 on (t1.movieid = t3.movieid);
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
@@ -197,9 +197,9 @@ select
     , t3.tmdbid
     , t1.rating
     , t1.timestamp
-from "aa.movielens.db.hdb::data.ratings" t1
-left outer join "aa.movielens.db.hdb::data.movies" t2 on (t1.movieid = t2.movieid)
-left outer join "aa.movielens.db.hdb::data.links"  t3 on (t1.movieid = t3.movieid);
+from "aa.movielens.db.data::ratings" t1
+left outer join "aa.movielens.db.data::movies" t2 on (t1.movieid = t2.movieid)
+left outer join "aa.movielens.db.data::links"  t3 on (t1.movieid = t3.movieid);
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
@@ -301,7 +301,7 @@ BEGIN
     truncate table "aa.movielens.db.hdb.apl::recommendation.variable_descs";
     variable_descs = select * from "aa.movielens.db.hdb.apl::recommendation.variable_descs";                                   
 
-    movielens_dataset = select * from "aa.movielens.db.hdb::data.ratings";           
+    movielens_dataset = select * from "aa.movielens.db.data::ratings";           
     call "aa.movielens.db.hdb.apl.afllang::recommendation"(
         :function_header,
         :operation_config,
@@ -388,7 +388,7 @@ BEGIN
                   , rules.kxnodesecond   as antecedent
                   , rules.kxnodesecond_2 as consequent
                   , rules.weight         as support
-                from "aa.movielens.db.hdb::data.ratings" spacein
+                from "aa.movielens.db.data::ratings" spacein
                 left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
                 left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond)
                 left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond_2  = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and (:SkipAlreadyOwned = 1)
@@ -407,7 +407,7 @@ BEGIN
                   , rules.kxnodesecond_2 as antecedent
                   , rules.kxnodesecond   as consequent
                   , rules.weight         as support
-                from "aa.movielens.db.hdb::data.ratings" spacein
+                from "aa.movielens.db.data::ratings" spacein
                 left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
                 left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond_2)
                 left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and (:SkipAlreadyOwned = 1)
@@ -419,14 +419,14 @@ BEGIN
           left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
           left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
           union all
-          select :UserId as userid, movieid, count(1) from "aa.movielens.db.hdb::data.ratings" spacein
+          select :UserId as userid, movieid, count(1) from "aa.movielens.db.data::ratings" spacein
           left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (spacein.movieid    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and :SkipAlreadyOwned = 1
           where :IncludeBestSeller = 1 group by movieid having count(1) > BestSellerThreshold
         ) t1 group by t1.userid,  t1.consequent
     ) t1
   ) t1
-  left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.movieid
-  left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.movieid
+  left outer join "aa.movielens.db.data::movies" movies on movies.movieid = t1.movieid
+  left outer join "aa.movielens.db.data::links"  links  on links.movieid  = t1.movieid
   where rank <= :KeepTopN;
 END;
 ```
@@ -498,13 +498,13 @@ BEGIN
           left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
           left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
           union all
-          select :MovieId as movieid, movieid as consequent, count(1) from "aa.movielens.db.hdb::data.ratings" nodes
+          select :MovieId as movieid, movieid as consequent, count(1) from "aa.movielens.db.data::ratings" nodes
           where :IncludeBestSeller = 1 and movieid != :MovieId group by movieid having count(1) > BestSellerThreshold
         ) t1 group by t1.movieid, t1.consequent
     ) t1
   ) t1
-  left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.similar_movie
-  left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.similar_movie
+  left outer join "aa.movielens.db.data::movies" movies on movies.movieid = t1.similar_movie
+  left outer join "aa.movielens.db.data::links"  links  on links.movieid  = t1.similar_movie
   where rank <= :KeepTopN;
 END;
 ```
@@ -672,7 +672,7 @@ BEGIN
     insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_ITEM_LENGTH' , 1   , null  , null);
     parameter = select * from "aa.movielens.db.hdb.pal::apriori.parameter";                                 
 
-    movielens_dataset = select USERID, MOVIEID from "aa.movielens.db.hdb::data.ratings";
+    movielens_dataset = select USERID, MOVIEID from "aa.movielens.db.data::ratings";
     call "aa.movielens.db.hdb.pal.afllang::apriori"(
         :movielens_dataset,
         :parameter,
@@ -699,7 +699,7 @@ Enter **`apriori_result_collaborative.hdbprocedure`** as the file name, then cli
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/apl/procedures/apriori_result_collaborative.hdbprocedure
+movielens/db/src/hdb/pal/procedures/apriori_result_collaborative.hdbprocedure
 ```
 
 Paste the following content:
@@ -723,15 +723,15 @@ BEGIN
         input_data.userid,
         rules.postrule as consequent,
         max(rules.confidence) as score
-      from "aa.movielens.db.hdb::data.ratings" as input_data
+      from "aa.movielens.db.data::ratings" as input_data
       left outer join "aa.movielens.db.hdb.pal::apriori.rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
       where rules.postrule is not null
       and   input_data.userid = :UserId
       group by input_data.userid, rules.postrule
     ) t1
   ) t1
-  left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.movieid
-  left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.movieid
+  left outer join "aa.movielens.db.data::movies" movies on movies.movieid = t1.movieid
+  left outer join "aa.movielens.db.data::links"  links  on links.movieid  = t1.movieid
   where t1.rank <= :KeepTopN;
 END;
 ```
@@ -747,7 +747,7 @@ Enter **`apriori_result_contentbased.hdbprocedure`** as the file name, then clic
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/apl/procedures/apriori_result_contentbased.hdbprocedure
+movielens/db/src/hdb/pal/procedures/apriori_result_contentbased.hdbprocedure
 ```
 
 Paste the following content:
@@ -770,14 +770,14 @@ BEGIN
       , t1.score
     from (
       select movieid, rules.postrule as consequent, rules.confidence as score
-      from "aa.movielens.db.hdb::data.movies" as input_data
+      from "aa.movielens.db.data::movies" as input_data
       left outer join "aa.movielens.db.hdb.pal::apriori.rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
       where rules.postrule is not null
       and   input_data.movieid = :MovieId
     ) t1
   ) t1
-  left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.similar_movie
-  left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.similar_movie
+  left outer join "aa.movielens.db.data::movies" movies on movies.movieid = t1.similar_movie
+  left outer join "aa.movielens.db.data::links"  links  on links.movieid  = t1.similar_movie
   where t1.rank <= :KeepTopN;
 END;
 ```

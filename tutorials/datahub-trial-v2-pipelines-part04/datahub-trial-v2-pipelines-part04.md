@@ -12,9 +12,10 @@ time: 45
 - How to store the data in SAP VORA from Google Cloud Storage or AWS S3
 - How to use a **SAP Vora Loader Operator**
 
-Please note that this tutorial is similar to the `Store sensor data in SAP Vora` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.SAP.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Store sensor data in SAP Vora` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 
 Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+
 ---
 
 

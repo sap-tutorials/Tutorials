@@ -9,6 +9,9 @@ const isProduction = NODE_ENV === 'production';
 const options = {
   repo: __dirname,
   number: 1,
+  execOptions: {
+    maxBuffer: 1024 * 1024,
+  },
 };
 
 gitLog(options, function (error, commits) {

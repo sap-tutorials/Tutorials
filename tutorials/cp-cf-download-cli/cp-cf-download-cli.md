@@ -1,9 +1,9 @@
 ---
 title: Install the Cloud Foundry Command Line Interface (CLI)
 description: Download and install the CLI, which allows access via the command line.
-primary_tag: products>sap-cloud-platform
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+tags: [tutorial>beginner, topic>cloud,  products>sap-cloud-platform]
+primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 time: 15
 ---
 
@@ -59,10 +59,24 @@ First, find the correct API URL for your region.  Select the correct region from
 | ----------------------------------------------- | ---------------------------------------     |
 | US East (VA) running on Amazon AWS              | `https://api.cf.us10.hana.ondemand.com`     |
 | US West (CA) running on Microsoft Azure         | `https://api.cf.us20.hana.ondemand.com`     |
-| **Europe (Frankfurt) running on Amazon AWS**    | **`https://api.cf.eu10.hana.ondemand.com`** |
+| Europe (Frankfurt) running on Amazon AWS        | `https://api.cf.eu10.hana.ondemand.com`     |
 | Europe (Netherlands) running on Microsoft Azure | `https://api.cf.eu20.hana.ondemand.com`     |
 
 > If your region is not in this list, check the [Regions and API endpoints list](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html#loiof344a57233d34199b2123b9620d0bb41) for the most up to date list.
+
+You can also identify your API Endpoint using your Cloud Foundry account:
+
+First, navigate to the [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com/#/home/welcome) and click **Log On**.
+
+![New project from template](1 - api endpoint.png)
+
+Next, click on the subaccount.
+
+![New project from template](2 - api endpoint.png)
+
+The **API Endpoint** is displayed on the right-hand side of the **Overview** page.
+
+![New project from template](3 - api endpoint.png)
 
 [DONE]
 [ACCORDION-END]

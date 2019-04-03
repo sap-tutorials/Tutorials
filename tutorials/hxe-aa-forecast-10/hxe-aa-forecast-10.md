@@ -122,13 +122,13 @@ service {
   "aa.forecast.db.data::TrendAndCyclicAnd_4Wn"     as "apl_TrendAndCyclicAnd_4Wn";
   "aa.forecast.db.data::TrendAndCyclicAndWn"       as "apl_TrendAndCyclicAndWn";  
 
-  "aa.forecast.db.algorithms.pal.views::CashFlows"              as "pal_CashFlows"              key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::Ozone"                  as "pal_Ozone"                  key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::Lag1AndCycles"          as "pal_Lag1AndCycles"          key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::Lag1AndCyclesAndWn"     as "pal_Lag1AndCyclesAndWn"     key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::TrendAndCyclic"         as "pal_TrendAndCyclic"         key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::TrendAndCyclicAnd_4Wn"  as "pal_TrendAndCyclicAnd_4Wn"  key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::TrendAndCyclicAndWn"    as "pal_TrendAndCyclicAndWn"    key ("signal_time");  
+  "aa.forecast.db.hdb.pal.views::CashFlows"              as "pal_CashFlows"              key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::Ozone"                  as "pal_Ozone"                  key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::Lag1AndCycles"          as "pal_Lag1AndCycles"          key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::Lag1AndCyclesAndWn"     as "pal_Lag1AndCyclesAndWn"     key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::TrendAndCyclic"         as "pal_TrendAndCyclic"         key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::TrendAndCyclicAnd_4Wn"  as "pal_TrendAndCyclicAnd_4Wn"  key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::TrendAndCyclicAndWn"    as "pal_TrendAndCyclicAndWn"    key ("signal_time");  
 }
 settings {
   support null;
@@ -225,7 +225,7 @@ function doPost() {
 
         var start = Date.now();
         connection = $.hdb.getConnection();
-        var algorithm = connection.loadProcedure(null, "aa.forecast.db.algorithms.apl.procedures::forecast");
+        var algorithm = connection.loadProcedure(null, "aa.forecast.db.hdb.apl.procedures::forecast");
         var results = algorithm(params);
         $.response.status = $.net.http.OK;
         $.response.setBody(JSON.stringify({
@@ -321,7 +321,7 @@ function doPost() {
 
 		var start = Date.now();
 		connection = $.hdb.getConnection();
-		var algorithm = connection.loadProcedure(null, "aa.forecast.db.algorithms.pal.procedures::auto_arima");
+		var algorithm = connection.loadProcedure(null, "aa.forecast.db.hdb.pal.procedures::auto_arima");
 		var results = algorithm(params);
 		$.response.status = $.net.http.OK;
 		$.response.setBody(JSON.stringify({
@@ -411,7 +411,7 @@ function doPost() {
 
 		var start = Date.now();
 		connection = $.hdb.getConnection();
-		var algorithm = connection.loadProcedure(null, "aa.forecast.db.algorithms.pal.procedures::auto_smoothing");
+		var algorithm = connection.loadProcedure(null, "aa.forecast.db.hdb.pal.procedures::auto_smoothing");
 		var results = algorithm(params);
 		$.response.status = $.net.http.OK;
 		$.response.setBody(JSON.stringify({
@@ -492,7 +492,7 @@ function doPost() {
 
 		var start = Date.now();
 		connection = $.hdb.getConnection();
-		var algorithm = connection.loadProcedure(null, "aa.forecast.db.algorithms.pal.procedures::seasonality_test");
+		var algorithm = connection.loadProcedure(null, "aa.forecast.db.hdb.pal.procedures::seasonality_test");
 		var results = algorithm(params);
 		$.response.status = $.net.http.OK;
 		$.response.setBody(JSON.stringify({

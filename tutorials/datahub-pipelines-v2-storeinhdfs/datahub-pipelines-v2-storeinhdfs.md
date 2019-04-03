@@ -1,5 +1,5 @@
 ---
-title: Store sensor data in HDFS in SAP Data Hub, developer edition 2.4
+title: Store Sensor Data in HDFS in SAP Data Hub, Developer Edition 2.4
 description: Use HDFS to store sensor data by using SAP Data Hub, developer edition 2.4.
 auto_validation: true
 primary_tag: products>sap-data-hub
@@ -57,9 +57,11 @@ Configure the **Write File** operator. You need to maintain the following proper
 | `Mode`                       | `overwrite`                               |
 | `path`                         | `/tmp/hdfsManager/test_<counter>.txt` |
 
-Click on the text box for **Connection** value and configure the following properties:
+Click on the **Open editor** next to **Connection** property and configure the following properties:
 
-![picture_04](./datahub-pipelines-v2-storeinhdfs_06.png)  
+![picture_04](./datahub-pipelines-v2-storeinhdfs_08.png)  
+
+![picture_05](./datahub-pipelines-v2-storeinhdfs_06.png)  
 
 The **Write File** operator will write the received data to files in the `/tmp/hdfsManager` directory. The files follow the scheme `test_<counter>.txt` (whereas `<counter>` is an incremental integer).
 
@@ -68,9 +70,9 @@ The **Write File** operator will write the received data to files in the `/tmp/h
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Read File Operator)]
-Add a **Read File** operator to the pipeline by drag & drop. Then connect the `outFile` message port of the **Read File** operator to the `ininterface` port of the **`ToString` Converter** operator.
+Add a **Read File** operator to the pipeline by drag & drop. Then connect the `outFile` message port of the **Read File** operator to the `inmessage` port of the **`ToString` Converter** operator.
 
-![picture_05](./datahub-pipelines-v2-storeinhdfs_03.png)  
+![picture_06](./datahub-pipelines-v2-storeinhdfs_03.png)  
 
 Configure the **Read File** operator. You need to maintain the following properties:
 
@@ -80,9 +82,9 @@ Configure the **Read File** operator. You need to maintain the following propert
 | `path`                         | `/tmp/hdfsManager/`                 |
 | `onlyReadOnChange`             | `true`                              |
 
-Click on the text box for **Connection** value and configure the following properties:
+Click on the **Open editor** next to **Connection** property and configure the following properties:
 
-![picture_06](./datahub-pipelines-v2-storeinhdfs_06.png)   
+![picture_07](./datahub-pipelines-v2-storeinhdfs_06.png)   
 
 Afterwards press the **Save** button.
 
@@ -99,7 +101,7 @@ In contrast to the previous tutorial, this time the generated sensor data is not
 
 Open `http://localhost:50070` and display the `/tmp/hdfsManager` directory. The longer the pipeline runs, the more files you will find there.
 
-![picture_07](./datahub-pipelines-v2-storeinhdfs_04.png)  
+![picture_08](./datahub-pipelines-v2-storeinhdfs_04.png)  
 
 When the **Status (2)** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal (3)** operator to see the generated sensor data.
 

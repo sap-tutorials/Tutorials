@@ -3,7 +3,7 @@ title: Create a Theme for Your Portal Freestyle Site
 description: Create and customize a theme and then import it into your Portal freestyle site.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal ]
 time: 15
 ---
 
@@ -28,7 +28,7 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
 
     ![Find tile](0-find-site.png)
 
-3. Right-click the URL and select **Copy link to URL**.
+3. Right-click the URL and select **Copy link address**.
 
     ![Save link](0a-save-link.png)
 

@@ -1,21 +1,18 @@
 ---
 title: SAP HANA, XS Advanced - Access an external HTTP service
-description: Create an XSJS service with outbound HTTP connectivity
+description: Create an XSJS service with outbound HTTP connectivity.
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
+time: 15
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
-How to create a user-provided service to perform and outbound HTTP request to an external system in an XSJS service. This tutorial assumes you have completed the [basic end-to-end group](https://developers.sap.com/group.hana-xsa-get-started.html), as it requires an [existing database module](https://sap.com/developer/tutorials/xsa-hdi-module.html) and [Node.js module](https://sap.com/developer/tutorials/xsa-xsjs-xsodata.html) with XSJS support.
+  - How to create a user-provided service to perform and outbound HTTP request to an external system in an XSJS service
 
+This tutorial assumes you have completed the [basic end-to-end group](https://developers.sap.com/group.hana-xsa-get-started.html), as it requires an [existing database module](https://developers.sap.com/tutorials/xsa-hdi-module.html) and [Node.js module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html) with XSJS support.
 
-### Time to Complete
-**15 Min**
 
 ---
 

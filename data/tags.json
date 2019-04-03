@@ -49,6 +49,10 @@
       "value": "topic>java"
     },
     {
+      "name": "JavaScript",
+      "value": "topic>javascript"
+    },
+    {
       "name": "Machine Learning",
       "value": "topic>machine-learning"
     },
@@ -99,6 +103,10 @@
     {
       "name": "SAP Cloud Platform Connectivity",
       "value": "products>sap-cloud-platform-connectivity"
+    },
+    {
+      "name": "SAP Cloud Platform Integration for process services",
+      "value": "products>sap-cloud-platform-integration-for-process-services"
     },
     {
       "name": "SAP Cloud Platform Internet of Things",
@@ -243,6 +251,10 @@
     {
       "name": "Android",
       "value": "operating-system>android"
+    },
+        {
+      "name": "License Required",
+      "value": "tutorial>license"
     }
   ]
 }

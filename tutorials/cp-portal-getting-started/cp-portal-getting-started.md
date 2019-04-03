@@ -3,7 +3,7 @@ title: Prepare Portal Environment for Creating Sites
 description: Prepare your environment so you can create Portal freestyle sites.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
-tags: [tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
+tags: [ tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
 ---
 
 ## Prerequisites  

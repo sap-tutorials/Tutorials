@@ -1,6 +1,6 @@
 ---
 title: Configure the Development Environment
-description: You will be using SAP Web IDE for Full Stack to create a Multi Target Application based on the Cloud Application programming model.
+description: Configure SAP Web IDE for Full Stack, which you will use to create a multi-target application based on the SAP Cloud Application Programming Model.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
@@ -19,7 +19,7 @@ primary_tag: products>sap-hana
 
 SAP Web IDE for Full Stack is currently available in Neo. You will be entering the service from the Neo subaccount, creating a project and configuring credentials to perform a deployment in the Cloud Foundry environment.
 
-**This tutorial cannot currently be completed with the trial account.**
+>**This tutorial cannot currently be completed with a trial account.**
 
 ---
 

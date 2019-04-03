@@ -17,7 +17,7 @@ time: 10
 
 This tutorial will show you how to install a **server-only** installation of SAP HANA, express edition on your Docker installation. This version of SAP HANA, express edition does not contain XSC.
 
-If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) or [Binary Method](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html) installation guides.
+If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](hxe-ua-installing-vm-image) or [Binary Method](hxe-ua-installing-binary) installation guides.
 
 Before you begin, ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
@@ -51,7 +51,7 @@ Download and install the appropriate Docker Edition for your system. Visit the [
 
 To log into your Docker account, run:
 
-```
+```bash
 sudo docker login
 ```
 
@@ -63,7 +63,7 @@ Follow the prompts and provide your Docker ID and password.
 
 Test your Docker installation by running the "Hello World" container application. Run the following command from your Docker-enabled command prompt:
 
-```
+```bash
 sudo docker run --name helloWorld alpine echo hello
 ```
 
@@ -84,7 +84,7 @@ If you **did not** get this output, the Docker installation has not been complet
 
 Remove the alpine image with the following command:
 
-```
+```bash
 sudo docker image rm alpine -f
 ```
 
@@ -104,8 +104,8 @@ Click on the **Setup Instructions** button.
 
 Copy the Docker pull address. Here is an example:
 
-```
-sudo docker pull store/saplabs/hanaexpress:2.00.033.00.20190115.1
+```bash
+sudo docker pull store/saplabs/hanaexpress:2.00.036.00.20190223.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -128,7 +128,7 @@ The SAP HANA, express edition image will be listed as `hanaexpress`.
 
 Before you can start the container, ensure that the following parameters are set in your host's `/etc/sysctl.conf` file. The host can be a virtual machine, physical machine, or a cloud instance.
 
-```
+```bash
 fs.file-max=20000000
 fs.aio-max-nr=262144
 vm.memory_failure_early_kill=1
@@ -144,7 +144,7 @@ To edit the `sysctl.conf` file, use the `vi` command to open the file and press 
 
 Create a directory for the SAP HANA, express edition container and grant it the proper permissions.
 
-```
+```bash
 mkdir -p /data/<directory_name>
 chown 12000:79 /data/<directory_name>
 ```
@@ -159,13 +159,13 @@ To make your system more secure, you specify your own password before you create
 
 Create the `json` file:
 
-```
+```bash
 vi <file_name>.json
 ```
 
 Press `i` to start editing and use one of the following formats to create the file:
 
-```
+```bash
 {
 "master_password" : "<password>"
 }
@@ -173,7 +173,7 @@ Press `i` to start editing and use one of the following formats to create the fi
 
 or:
 
-```
+```bash
 {
 "system_user_password" : "<password>",
 "default_tenant_system_user_password" : "<second_password>"
@@ -202,7 +202,7 @@ This file serves as the master password for your SAP HANA, express edition users
 
 You must then add permissions for this file to be readable by the `hxeadm` user in the container. Change permissions with:
 
-```
+```bash
 sudo chmod 600 /data/<directory_name>/<file_name>.json
 sudo chown 12000:79 /data/<directory_name>/<file_name>.json
 ```
@@ -217,7 +217,7 @@ Make a note of the path to the `json` file. You will need this to load the SAP H
 
 Use the SAP HANA, express edition image to create a container.
 
-```
+```bash
 sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<directory_name>:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
@@ -225,7 +225,7 @@ sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpress:2.00.033.00.20190115.1 \
+store/saplabs/hanaexpress:2.00.036.00.20190223.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --agree-to-sap-license
 ```
@@ -240,7 +240,7 @@ sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpress:2.00.033.00.20190115.1 \
+store/saplabs/hanaexpress:2.00.036.00.20190223.1 \
 --passwords-url file:///hana/password.json \
 --agree-to-sap-license
 ```
@@ -282,7 +282,7 @@ sudo docker exec -it express_edition bash
 
 When you are logged into the SAP HANA, express edition container, you can test your installation by entering the following:
 
-```
+```bash
 whoami
 ```
 
@@ -290,7 +290,7 @@ You should be logged in as `hxeadm`, the default SAP HANA, express edition user.
 
 You can also enter the following:
 
-```
+```bash
 HDB info
 ```
 
@@ -307,13 +307,13 @@ And you should see the following services running:
 
 You can log into the system database with the following command:
 
-```
+```bash
 hdbsql -i 90 -d <system_database> -u SYSTEM -p <password>
 ```
 
 You can log into your tenant database with the following command:
 
-```
+```bash
 hdbsql -i 90 -d <tenant_database> -u SYSTEM -p <password>
 ```
 
@@ -323,15 +323,17 @@ __JDBC__
 
 To log into your system database via JDBC, use the following command:
 
-```
-jdbc:sap://<ip_address>:39017/databaseName=<database_name>
+```bash
+jdbc:sap://<ip_address>:39017/?databaseName=<database_name>
 ```
 
 To log into your tenant database via JDBC, use the following command:
 
+```bash
+jdbc:sap://<ip_address>:39041/?databaseName=<tenant_name>
 ```
-jdbc:sap://<ip_address>:39041/databaseName=<tenant_name>
-```
+
+For detailed information on the connection properties you can specify when connecting using JDBC, see [JDBC Connection Properties](https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/latest/en-US/109397c2206a4ab2a5386d494f4cf75e.html) in the *SAP HANA Client Interface Programming Reference*.
 
 [ACCORDION-END]
 
@@ -339,7 +341,7 @@ jdbc:sap://<ip_address>:39041/databaseName=<tenant_name>
 
 You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.
 
-```
+```bash
 sudo docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 10028-10029:1128-1129 -p 19013-19014:59013-59014 -v /data/<additional_directory_name>:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
@@ -347,7 +349,7 @@ sudo docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 1002
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <additional_container_name> \
-store/saplabs/hanaexpress:2.00.033.00.20190115.1 \
+store/saplabs/hanaexpress:2.00.036.00.20190223.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>>
 --agree-to-sap-license
 ```
@@ -360,11 +362,11 @@ This process will take several minutes. The prompt will read `Startup finished` 
 
 Set the root password and login.
 
-```
+```bash
 docker exec -it -u root <container_name> bash
 ```
 
-```
+```bash
 passswd
 ```
 
@@ -374,14 +376,14 @@ Extract the contents of the packages.
 
 Example:
 
-```
+```bash
 tar -zxf <downloaded_path>/hxe.tgz
 tar -zxf <downloaded_path>/hxexsa.tgz
 ```
 
 Navigate to the directory where you extracted the packages:
 
-```
+```bash
 cd <extract_path>/HANA_EXPRESS_20/
 ```
 
@@ -390,7 +392,7 @@ cd <extract_path>/HANA_EXPRESS_20/
 
 As the root user, run the upgrade script to update the server:
 
-```
+```bash
 sudo ./hxe_upgrade.sh
 ```
 
@@ -403,7 +405,7 @@ Follow the prompts to complete the server update.
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpress` command.
 
 ```
-sudo docker run store/saplabs/hanaexpress:2.00.033.00.20190115.1 -h
+sudo docker run store/saplabs/hanaexpress:2.00.036.00.20190223.1 -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points

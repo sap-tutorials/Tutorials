@@ -207,12 +207,12 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Expand the **`forecast/html/resources/webapp/fragment/algorithms/pal`** folder.
 
-Create a new file **`auto_arima_parameters.fragment.xml`**.
+Create a new file **`auto_smooting_parameters.fragment.xml`**.
 
 This is the full path of the created file:
 
 ```
-forecast/html/resources/webapp/fragment/algorithms/pal/auto_arima_parameters.fragment.xml
+forecast/html/resources/webapp/fragment/algorithms/pal/auto_smooting_parameters.fragment.xml
 ```
 
 Paste the following content:
@@ -267,12 +267,12 @@ Paste the following content:
 
 Save the file using the ![save](00-save.png) icon from the menu.
 
-Create a new file **`auto_arima_results.fragment.xml`**.
+Create a new file **`auto_smooting_results.fragment.xml`**.
 
 This is the full path of the created file:
 
 ```
-forecast/html/resources/webapp/fragment/algorithms/pal/auto_arima_results.fragment.xml
+forecast/html/resources/webapp/fragment/algorithms/pal/auto_smooting_results.fragment.xml
 ```
 
 Paste the following content:
@@ -364,7 +364,7 @@ Paste the following content:
 				</ui:table.Table>
 			</IconTabFilter>
 			<IconTabFilter text="Statistics">
-				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" height="100%" rows="{path : 'results>/tables/STATISTIC'}">
+				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" rows="{path : 'results>/tables/STATISTIC'}">
 					<ui:columns>
 						<ui:table.Column sortProperty="stat_name" filterProperty="stat_name">
 							<Label text="Statistics name"/>
@@ -400,7 +400,7 @@ Create a new file **`auto_smooting.view.xml`**.
 This is the full path of the created file:
 
 ```
-forecast/html/resources/webapp/view/algorithms/pal/auto_arima_results.view.xml
+forecast/html/resources/webapp/view/algorithms/pal/auto_smooting.view.xml
 ```
 
 Paste the following content:

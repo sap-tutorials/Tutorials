@@ -154,16 +154,17 @@ Create the following directory structure:
 
 ```
 |-- forecast/db/src
-    |-- algorithms
-		|-- apl
-	        |-- afllang
-	        |-- procedures
-	        |-- views
-	    |-- pal
-	        |-- afllang
-	        |-- procedures
-	        |-- views
     |-- data
+    |-- hdb
+        |-- apl
+            |-- afllang
+            |-- procedures
+            |-- views
+        |-- pal
+            |-- afllang
+            |-- procedures
+            |-- views        
+        |-- summary
 ```
 
 You can use the right click on the target folder and select **New > Folder**.

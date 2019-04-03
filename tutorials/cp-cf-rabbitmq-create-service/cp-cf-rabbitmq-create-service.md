@@ -25,21 +25,21 @@ time: 10
 
 1. Run the following command to see all available services and make sure that "RabbitMQ" is available.
 
-    ```bash
+    ```Bash
     cf marketplace
     ```
 
-    ![cfm](./rabbit-cf-m.png)
+      ![cfm](./rabbit-cf-m.png)
 
 2. Select the plan **`v3.7-dev`** and create the service name **`pubsub-messagingservice`** by running:
 
-    ```bash
+    ```Bash
     cf create-service rabbitmq v3.7-dev pubsub-messagingservice
     ```
 
 3. You can verify that this service is ready with:
 
-    ```bash
+    ```Bash
     cf services | grep pubsub-messagingservice
     ```
 
@@ -47,11 +47,11 @@ time: 10
 
 4. You learned how to create the service via the CLI. Now remove the service in order to be able to create if via the SAP Cloud Platform Cockpit.
 
-    ```bash
+    ```Bash
     cf delete-service pubsub-messagingservice
     ```
 
-    ![delete service](./delete-cli.png)
+      ![delete service](./delete-cli.png)
 
 
 [VALIDATE_1]
@@ -95,7 +95,7 @@ Select this service by clicking the associated tile to see an overview of this s
    3. Enter the desired name of the service **`pubsub-messagingservice`** on the last screen on the dialog.
    4. Click **Finish** to create the RabbitMQ service.
 
-![rabbitfinish](./finish-create-rabbitmq.png)
+    ![rabbitfinish](./finish-create-rabbitmq.png)
 
 You should now be able to see the newly created service in the list of existing services.
 
