@@ -1,5 +1,5 @@
 ---
-title: Set up SAP Data Hub, developer edition 2.4
+title: Set Up SAP Data Hub, Developer Edition 2.4
 description: Download and install SAP Data Hub, developer edition 2.4.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -147,6 +147,7 @@ If you like to see what is going on (after you have issued a `start` command) yo
 ```sh
 docker logs datahub
 ```
+[DONE]
 
 [ACCORDION-END]
 

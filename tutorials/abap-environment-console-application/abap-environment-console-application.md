@@ -25,6 +25,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
 Open Eclipse on your desktop.
+
 ![Open Eclipse](desktop.png)
 
 [DONE]
@@ -66,7 +67,7 @@ Open Eclipse on your desktop.
     ![Connect to Service Instance](instance.png)
 
 8. At this stage you may add your favorite packages and click **Finish** to complete your setup.
-     
+
     ![Add favorite packages](project.png)
 
 [DONE]

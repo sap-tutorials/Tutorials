@@ -21,7 +21,7 @@ The app will display a select control to offer supported queues and a list which
 Create a new file named `index.html` in the `webapp` folder of your project and insert the following content.
 This snippet bootstraps the SAPUI5 SDK in the first `<script>` tag. The second `<script>` tag renders a simple text control on the page once the bootstrapping has finished.
 
-```html
+```HTML
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -60,7 +60,7 @@ Run `npm start` from the project root folder and access `http://localhost:3001` 
 
 Replace then entire content of the second `<script>` tag with the following code. This code aggregates several SAPUI5 controls like pages, labels, inputs, vertical boxes, and a list to a simple form.
 
-```javascript
+```JavaScript
 sap.ui.getCore().attachInit(function () {
   //INSERT CODE IN STEP 3.1
   new sap.m.App({ //REPLACE THS OBJECT IN STEP 3.2
@@ -112,7 +112,7 @@ sap.ui.getCore().attachInit(function () {
 [ACCORDION-BEGIN [Step 3: ](Add a model to the consumer web-based user interface)]
 
 1. Initialize a new model in the callback function of the `attachInit` hook.
-```javascript
+```JavaScript
 var oModel = new sap.ui.model.json.JSONModel({
   queue: 'Queue_1',
   queues: [{
@@ -125,7 +125,7 @@ var oModel = new sap.ui.model.json.JSONModel({
 });
 ```
 2. Update the controls by adding the model bindings.
-```javascript
+```JavaScript
 //INSERT CODE IN STEP 4.1
 //INSERT CODE IN STEP 5.1
 new sap.m.App({
@@ -216,7 +216,7 @@ new sap.m.App({
 >The method `setProperty(path, data)` can be used to overwrite the data located at any `path` of the `JSONModel`.
 
 1. Declare the function `updateHistory` which reads the currently selected queue from the model and sends the corresponding request to the defined endpoint. Also invoke this function immediately, so that the model can update.
-```javascript
+```JavaScript
 function updateInbox() {
   var sQueue = oModel.getProperty('/queue');
   $.get('/inbox?queue=' + sQueue, function (data) {
@@ -228,14 +228,14 @@ updateInbox();
 ```
 2. Use this function `updateHistory` as a callback whenever the refresh button
 is pressed.
-```javascript
+```JavaScript
 new sap.m.Button({
   icon: 'sap-icon://refresh',
   press: updateInbox
 })
 ```
 3. Invoke `updateHistory`, when selected option of the select control changes.
-```javascript
+```JavaScript
 new sap.m.Select({
   selectedKey: '{/queue}',
   items: ...,
@@ -248,7 +248,7 @@ new sap.m.Select({
 [ACCORDION-BEGIN [Step  ](Return responses to the sender)]
 
 1. Declare the function `respondToMessage` which is triggered when either one of the reply buttons is pressed. The callback function will identify the label of the pressed button and read the correlation id of the original message. Use both information to send the response back to the sender.
-```javascript
+```JavaScript
 function respondToMessage(oEvent){
   const oButton = oEvent.getSource()
   const oMessage = oButton.getBindingContext().getObject();
@@ -266,7 +266,7 @@ function respondToMessage(oEvent){
 }
 ```
 2. Attach the callback `respondToMessage` to both buttons.
-```javascript
+```JavaScript
 new sap.m.Button({
   text: "Accept",
   press: respondToMessage,
@@ -283,7 +283,7 @@ new sap.m.Button({
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step  ](Test the consumer UI locally)]
 >Now you should be able to test the application on your local machine fully. First, make sure you are running the producer app (to produce some messages) and the local RabbitMQ service:
-```bash
+```Bash
 docker run -it --rm -p 5672:5672 -p 15672:15672 rabbitmq
 ```
 
@@ -296,12 +296,12 @@ Run `npm start` and go to `http://localhost:3001/` to open the web-based user in
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step  ](Re-deploy the updated application to SAP Cloud Platform)]
 1. Use the producer application to send new messages to the message broker service
-![scp pub](scp-pub.png)
+    ![scp pub](scp-pub.png)
 
 2. Update the application with `cf push` (from the root folder of the project) to deploy the updated version to SAP Cloud Platform Cloud Foundry.
 
 3. Now, use your browser to check whether the deployment was successful. Access the web-based user interface and read the messages you have added to the message queue before.
-![scp sub](scp-sub.png)
+    ![scp sub](scp-sub.png)
 
 [DONE]
 [ACCORDION-END]

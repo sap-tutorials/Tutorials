@@ -2,7 +2,7 @@
 title: Custom Analytical Queries
 description: Setup Custom Analytical Queries for use.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 time: 15
 ---
 

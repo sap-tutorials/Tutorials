@@ -17,7 +17,7 @@ time: 10
 
 This tutorial will show you how to install a **server-only** installation of SAP HANA, express edition on your Docker installation. This version of SAP HANA, express edition does not contain XSC.
 
-If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) or [Binary Method](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html) installation guides.
+If you wish to install SAP HANA, express edition on a different virtual machine, or you want a custom setup on your Linux machine, see the [Virtual Machine](hxe-ua-installing-vm-image) or [Binary Method](hxe-ua-installing-binary) installation guides.
 
 Before you begin, ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
@@ -324,14 +324,16 @@ __JDBC__
 To log into your system database via JDBC, use the following command:
 
 ```bash
-jdbc:sap://<ip_address>:39017/databaseName=<database_name>
+jdbc:sap://<ip_address>:39017/?databaseName=<database_name>
 ```
 
 To log into your tenant database via JDBC, use the following command:
 
 ```bash
-jdbc:sap://<ip_address>:39041/databaseName=<tenant_name>
+jdbc:sap://<ip_address>:39041/?databaseName=<tenant_name>
 ```
+
+For detailed information on the connection properties you can specify when connecting using JDBC, see [JDBC Connection Properties](https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/latest/en-US/109397c2206a4ab2a5386d494f4cf75e.html) in the *SAP HANA Client Interface Programming Reference*.
 
 [ACCORDION-END]
 

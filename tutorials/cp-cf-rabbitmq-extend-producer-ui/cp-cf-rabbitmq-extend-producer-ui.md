@@ -25,7 +25,7 @@ This snippet bootstraps the SAPUI5 SDK in the first `<script>` tag. The second `
 
 >The [`attachInit()`](https://sapui5.hana.ondemand.com/#/api/sap.ui.core.Core/methods/attachInit) method of `sap.ui.core.Core` can be used to register a callback function that is executed after the SAPUI5 framework has been initialized
 
-```html
+```HTML
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -64,7 +64,7 @@ Run `npm start` from the project root folder and access `http://localhost:3000` 
 Replace then entire content of the second `<script>` tag with the following code. This code aggregates several SAPUI5 controls like pages, labels, inputs and two tabs in a tab bar to the user interface.
 
 
-```javascript
+```JavaScript
 sap.ui.getCore().attachInit(function() {
   new sap.m.App({
     pages: new sap.m.Page({
@@ -159,7 +159,7 @@ sap.ui.getCore().attachInit(function() {
 
 To use this implementation of the MVC pattern in your application, you have to add a new `Model` object to your `sap.m.App` control.
 
-```javascript
+```JavaScript
 new sap.m.App({
   ...
 }).setModel(new sap.ui.model.json.JSONModel({
@@ -187,7 +187,7 @@ Each option should be created from a template `sap.ui.core.Item` control and has
 
 The selected key should be saved to the property **`/queue`** in the model (again, the '/' refers to the root of the model). This property will be updated whenever the user changes the selection of the control.
 
-```javascript
+```JavaScript
 new sap.m.Select({
     items: {
         path: '/queues',
@@ -204,7 +204,7 @@ new sap.m.Select({
 
 Next, you do the same to the `sap.m.TextArea` control, which renders as input field. This input is the message the users wants to push to the message service. It will be stored on the path `{/message}` in the model, which represents the property `message` on the root level of the model object.
 
-```javascript
+```JavaScript
 new sap.m.TextArea({
     width: '100%',
     height: '250px',
@@ -213,7 +213,7 @@ new sap.m.TextArea({
 ```
 
 The state property of the `sap.m.Switch` control also needs to be bound.
-```javascript
+```JavaScript
 new sap.m.Switch({
     state: '{/reqResponse}',
     width: '100%',
@@ -228,7 +228,7 @@ new sap.m.Switch({
 
 Add a new callback function to the button control, which is triggered when the user clicks the button. This callback accesses the current model and retrieves the information of interest from it. Furthermore, the callback function also triggers an HTTP post request, which sends the payload to the endpoint of the server you have implemented previously.
 
-```javascript
+```JavaScript
 new sap.m.Button({
     width: '100%',
     text: 'Send',
@@ -240,7 +240,6 @@ new sap.m.Button({
               queue: oModel.getProperty('/queue'),
               reqResponse: oModel.getProperty('/reqResponse')
           };
-
           $.post('/send', oPayload, function() {
             oModel.setProperty('/message', '');
             sap.m.MessageToast.show('Delivered!')
@@ -256,7 +255,7 @@ new sap.m.Button({
 
 Update the content model of the outbox whenever the user clicks on the corresponding icon in the tab bar. Update the declaration of the `sap.m.IconTabBar` to add this functionality.
 
-```javascript
+```JavaScript
 new sap.m.IconTabBar({
   select: function(oEvent){
     if(oEvent.getParameter('selectedKey') === 'outbox'){
@@ -266,7 +265,7 @@ new sap.m.IconTabBar({
 ```
 
 Now, bind the items of the `sap.m.Table` to this new model.
-```javascript
+```JavaScript
 new sap.m.Table({
   columns: ...
   items: {
@@ -288,7 +287,7 @@ new sap.m.Table({
 [ACCORDION-BEGIN  [Step : ](Test the application locally)]
 
 Now you should be able to test the application on your local machine fully. First, make sure you are running a local RabbitMQ service:
-```bash
+```Bash
 docker run -it --rm -p 5672:5672 -p 15672:15672 rabbitmq
 ```
 Now you should be able to use the web-based form to write messages to RabbitMQ and see them in your application log:

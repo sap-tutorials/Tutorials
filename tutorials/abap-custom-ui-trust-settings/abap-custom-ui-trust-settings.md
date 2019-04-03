@@ -2,7 +2,7 @@
 title: Set Up Trust Between Identity Authentication and SAP Cloud Platform
 description: Set up trust between identity authentication and SAP Cloud Platform will be explained by using SAML 2.0 Configuration.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 time: 25
 ---
 

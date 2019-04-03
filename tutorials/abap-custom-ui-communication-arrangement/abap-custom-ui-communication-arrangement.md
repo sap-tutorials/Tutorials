@@ -2,7 +2,7 @@
 title:  Enable SAP Web IDE for S/4HANA cloud system via OAuth
 description:  Enable SAP Cloud Platform development with SAP Web IDE (`SAP_COM_0013`) for an S/4HANA cloud system, using OAuth authentication.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 ---
 
 ## Prerequisites

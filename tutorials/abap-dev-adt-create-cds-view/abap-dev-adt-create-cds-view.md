@@ -1,17 +1,19 @@
 ---
-title: Create a CDS view (ABAP)
-description: You will learn how to use the Core Data Services (CDS) tools in ABAP in Eclipse.
+title: Create a Simple ABAP CDS View in ADT
+description: You will learn how to create a CDS (Core Data Services) view using ABAP Development Tools (ADT).
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 20
 
 ---
+## Prerequisites
+-	**Tutorial**: [Create an ABAP Package](abap-dev-create-package)
 
 ## Details
 ### You will learn  
 - How to use the new Core Data Services (CDS) tools in ABAP in Eclipse.
-- How to use the following SQL elements in a CDS view:
+- How to use the following ABAP and SQL elements in a CDS view:
     - SELECT statement
     - CASE statement
     - WHERE clause
@@ -183,8 +185,9 @@ Open the CDS View in the Data Preview by choosing **F8**. Your CDS View should l
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Add a new field to your CDS view for the **product name**. Find the correct association and field name. Use the definition of `sepm_sddl_so_invoice_item` (**`F3`**).
-Enter your code in the box below and choose **Submit Answer.**
+Add a new field to your CDS view for the **product name**. Find the correct association and field name by using the definition of `sepm_sddl_so_invoice_item` (**`F3`**).
+Your answer should be one line of code only, and take the form `<association(s)>.fieldname` .
+Enter your line of code in the box below and choose **Submit Answer.**
 
 [VALIDATE_1]
 [ACCORDION-END]

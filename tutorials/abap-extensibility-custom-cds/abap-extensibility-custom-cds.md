@@ -1,6 +1,6 @@
 ---
 title: Create and expose a custom CDS view  
-description: Create a custom CDS view from an existing data source and expose it as a Web service.
+description: Create a custom CDS view from an existing data source and expose it as a Web Service.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
@@ -100,6 +100,7 @@ In **Custom Communication Scenario** add a new Scenario by clicking on **new** b
 
 [ACCORDION-BEGIN [Step 8: ](Add name and description)]
 A new window will open where you can define the **Name of the New Scenario** and its **Description**.
+
 ![Select Data Source](newname.png)
 
 
@@ -107,6 +108,7 @@ A new window will open where you can define the **Name of the New Scenario** and
 
 [ACCORDION-BEGIN [Step 9: ](Add services)]
 First you have to click the **add** button. Afterwards search for New Customer and add `YY_NEW_CUSTOMER_CDS` as a service.
+
 ![Select Data Source](service.png)
 
 
@@ -114,7 +116,9 @@ First you have to click the **add** button. Afterwards search for New Customer a
 
 [ACCORDION-BEGIN [Step 10: ](Publish communication scenario)]
 After adding the service `YY_NEW_CUSTOMER_CDS`, the result will be shown in the following way:
+
 ![Select Data Source](service2.png)
+
 Now you can **publish** your Communication Scenario.
 
 
@@ -123,8 +127,7 @@ Now you can **publish** your Communication Scenario.
 [ACCORDION-BEGIN [Step 11: ](Use communication system and user)]
 If you already have a communication system and user then use them in the following steps.
 Otherwise you can create a new communication system and user by making use of the following example.
-Therefore go to Step 2: Creating a Communication System and User.
-<https://blogs.sap.com/2017/05/17/part-viii-custom-business-object-exposure-as-external-web-service-bonus-plan/>
+Therefore go to Step 2: Creating a Communication System and User in the [this blog](https://blogs.sap.com/2017/05/17/part-viii-custom-business-object-exposure-as-external-web-service-bonus-plan/).
 
 
 [ACCORDION-END]

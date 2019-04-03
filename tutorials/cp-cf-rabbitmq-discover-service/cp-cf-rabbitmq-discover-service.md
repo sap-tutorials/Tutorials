@@ -18,24 +18,24 @@ time: 15
 > You can use the commands introduced in this section to get familiar with the CLI. However, you are not required to run those commands in order to complete this tutorial.
 
 You can print all your services with the command:
-```bash
+```Bash
 cf services
 ```
 This command will print a table which displays the name, plan and the last operation of this all services. Additionally, you can see all apps which are bound to the respective service. You should be able to see the service, **`pubsub-messagingservice`**, which you created in the previous tutorial.
 
 You can use the following command to see more information about a specific service:
-```bash
+```Bash
 cf service pubsub-messagingservice
 ```
 The output contains several information, such as the current status of the service, a list of the operations which ran last and a link to the service dashboard (see Step 3 for more information).
 
 In order to establish a communication between apps and services is necessary to connect them via (a restart of the app will be necessary):
-```bash
+```Bash
 cf bind-service <app-name> <service-name>
 ```
 
 It is also possible to generate service keys. Service keys can be seen as 'credentials' to configure consumers of marketplace services manually. This is especially interesting during the development phase when the applications are tested locally.
-```bash
+```Bash
 cf create-service-key <service-name> <key-name>
 ```
 

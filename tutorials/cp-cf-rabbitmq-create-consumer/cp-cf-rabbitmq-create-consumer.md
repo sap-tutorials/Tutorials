@@ -18,7 +18,7 @@ time: 30
 [ACCORDION-BEGIN [step ](Define and install the dependencies)]
 
 Before you can start the actual development of the application, you need to define the dependencies and  metadata of the consumer app. To do this, create a new `package.json` file in the root folder of your project:
-```json
+```JSON
 {
   "name": "consumer",
   "scripts": {
@@ -55,7 +55,7 @@ Now that you defined all dependencies, you can install them with `npm install`.
 [ACCORDION-BEGIN [step ](Create a simple web server)]
 First, you need the specify the core file of your application, the `app.js` file. This code snippet will create a new web server, similar to the **Create a Producer App** tutorial.
 
-```javascript
+```JavaScript
 const path = require('path'),
     express = require('express'),
     bodyParser = require('body-parser'),
@@ -85,7 +85,7 @@ app.listen(iPort, function () {
 > Replace the placeholder `INSERT CODE IN STEP 3` with both listed snippets
 
 1. Use an object to map the queue names to an array of messages, which will be used to cache all received messages.
-```javascript
+```JavaScript
 var oQueueCaches = {
   'Queue_1': [],
   'Queue_2': [],
@@ -105,7 +105,7 @@ app.get('/inbox', function (oReq, oRes) {
 [ACCORDION-END]
 [ACCORDION-BEGIN [step ](Consume a queue of the message broker service instance)]
 1. Establish a connection to the RabbitMQ service instance and create a channel to consume messages. Use the `callback_api` sub-module to use the callback API. This API won't use promises (as the producer app does), but make use of callback function which may contain an error object.
-```javascript
+```JavaScript
 const amqp = require('amqplib/callback_api');
 const sMessagingserviceUri = appEnv.isLocal ?
   'amqp://guest:guest@localhost:5672' :
@@ -123,7 +123,7 @@ const sMessagingserviceUri = appEnv.isLocal ?
 })();
 ```
 2. Replace placeholder `STEP 4.2` in the code above with the following snippet to assert that the required RabbitMQ queues exists. Use the channel to consume, acknowledge and store all messages, which are transferred to those queue.
-```javascript
+```JavaScript
 Object.keys(oQueueCaches).forEach(function(sQueueName) {
   oChannel = ch;
   oChannel.assertQueue(sQueueName, {
@@ -147,7 +147,7 @@ Object.keys(oQueueCaches).forEach(function(sQueueName) {
 [ACCORDION-BEGIN [step ](Reply to received messages)]
 Create a second endpoint to accept responses and return them (via the `replyTo` queue) back to the sender of the original message. Use the correlation id to identify this original sender. Also, store the response in the cached message. Use placeholder `STEP 5` to paste the following snippet.
 
-```javascript
+```JavaScript
 app.post('/respond', function(oReq, oRes) {
   const oMessage = oReq.body;
   oChannel.sendToQueue(oMessage.replyTo, Buffer.from(oMessage.response), {
@@ -169,7 +169,7 @@ app.post('/respond', function(oReq, oRes) {
 [ACCORDION-END]
 [ACCORDION-BEGIN [step ](Test your consumer application locally)]
 >Make sure to run the producer application (on port 3000) as well as a local RabbitMQ instance before you start the app locally.
-```
+```Bash
 docker run -it --rm -p 5672:5672 -p 15672:15672 rabbitmq
 ```
 
@@ -177,21 +177,20 @@ Run `npm start` from the root directory of your project to test your application
 
 1. The console output should tell that the application started successfully.
 
-  ![started app](started-app.png)
+    ![started app](started-app.png)
 2. Open the web-based UI of the producer app at `http://localhost:3000` and send a message to the local RabbitMQ service.
 
-  ![producer app](publisher.png)
+    ![producer app](publisher.png)
 3. Verify that the consumer received the sent message.
 
-  ![received app](received-app.png)
+    ![received app](received-app.png)
 
 [VALIDATE_6]
 [ACCORDION-END]
 [ACCORDION-BEGIN [step ](Deploy your consumer application to SAP Cloud Platform)]
 Specify the deployment information in a `manifest.yml` file in the root folder:
 
-```yml
----
+```YAML
 applications:
  - name: consumer
    random-route: true

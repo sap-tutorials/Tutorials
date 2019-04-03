@@ -1,5 +1,5 @@
 ---
-title: Grunt Build in SAP Web IDE
+title: Grunt Build in SAP Web IDE Full-Stack
 description: This tutorial shows you how to run a Grunt build within SAP Web IDE.
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
@@ -19,7 +19,7 @@ SAP Web IDE Full-Stack comes with the Grunt task runner already part of the IDE,
 - Specifying dependencies in the `package.json` file.
 - Specifying/defining tasks in the `Gruntfile.js` file.  
 
-Once you've created these files, you get a new menu option called **Build** to start the grunt tasks. You don't specify a task; SAP Web IDE always runs the `default` task that you have defined in the `Gruntfile.js`.
+Once you've created these files, you get a new menu option called **Build** to start the grunt tasks. You don't specify a task; SAP Web IDE Full-Stack always runs the `default` task that you have defined in the `Gruntfile.js`.
 
 ### Before you begin
 For this tutorial, make sure:
@@ -28,7 +28,7 @@ For this tutorial, make sure:
 - You have created an SAPUI5 project. You can simply create a blank or sample project from a template.
 - Your project uses the Basic JavaScript validator. To change it, right-click your project and go to **Project Settings** | **Code Checking** | **JavaScript**, change the validator to **Basic JavaScript**, and click **Save**.
 
-The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm registry. To run the Grunt build using this plugin outside of SAP Web IDE for Full-Stack Development, such as from a CLI as part of the CI process, use npm version 5.7.1 or later and add the following configuration option to the npm configuration file:
+The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm registry. To run the Grunt build using this plugin outside of SAP Web IDE for Full-Stack development, such as from a CLI as part of the CI process, use npm version 5.7.1 or later and add the following configuration option to the npm configuration file:
 
 `@sap:registry=https://npm.sap.com/`
 
@@ -180,7 +180,7 @@ You can see any build errors in the console, which you can display by going to *
 >
 >  - **ERROR**: `Unable to locate local Grunt`
 >Right-click the project folder in the workspace, select **Clean npm Folder**, and build again.
-This option removes the node-modules folder that is automatically created by npm. For more information, see <https://docs.npmjs.com/files/folders>. After the build finishes, this folder is not displayed in your project, but is stored by the SAP Web IDE build infrastructure.
+This option removes the node-modules folder that is automatically created by npm. For more information, see <https://docs.npmjs.com/files/folders>. After the build finishes, this folder is not displayed in your project, but is stored by the SAP Web IDE Full-Stack build infrastructure.
   - **ERROR**: `npm ERR! code EINTEGRITY`
   Delete your `package-lock.json` file from the project and run the build again.
 

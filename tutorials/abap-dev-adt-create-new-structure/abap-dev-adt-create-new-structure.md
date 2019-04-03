@@ -3,7 +3,7 @@ title: Create a New ABAP Dictionary Structure
 description: Create an ABAP Dictionary structure for retrieving data from a database
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 15
 ---
 

@@ -3,7 +3,7 @@ auto_validation: true
 title: Create OAuth Communication System and User
 description: Create a communication system and generate a system user within the communication system.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 time: 15
 ---
 
