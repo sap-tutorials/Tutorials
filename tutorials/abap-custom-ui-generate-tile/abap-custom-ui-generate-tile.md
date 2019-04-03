@@ -2,7 +2,7 @@
 title:  Add Custom UI Application Tile to SAP Fiori Launchpad
 description:  Extend a business catalog with custom UI application.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 time: 15
 ---
 

@@ -2,7 +2,7 @@
 title: Expose Custom Business Object as External Web Service
 description: Expose a custom business object as web service for integration of your solution with other systems.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 time: 15
 ---
 

@@ -3,7 +3,7 @@ title: Create a Data Element
 description: You will learn how to create a data element, which you will use in a later tutorial.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 5
 ---
 
