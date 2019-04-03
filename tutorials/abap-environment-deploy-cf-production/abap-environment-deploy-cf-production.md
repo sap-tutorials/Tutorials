@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Create and Expose Core Data Services Based on a Database Table for productive usage
-description: Create UI in Neo and deploy it to Cloud Foundry via multi-target application.
+title: Create and Expose Core Data Services Based on a Database Table (productive use)
+description: Create a UI in Neo and deploy it to Cloud Foundry via a multi-target application.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
