@@ -567,7 +567,7 @@ You should now get the list of XS OData services available.
 Replace ***`xsodata/data.xsodata?$format=json`***  from the URL by:
 
 ```url
-apl_CashFlows_extrapredictors?$inlinecount=allpages&$filter=ReverseWorkingDaysIndices eq 21&$format=json
+xsodata/data.xsodata/apl_CashFlows_extrapredictors?$inlinecount=allpages&$filter=ReverseWorkingDaysIndices eq 21&$format=json
 ```
 
 You should get the rows where the ***`ReverseWorkingDaysIndices`*** is equal to 21 including the row count.
