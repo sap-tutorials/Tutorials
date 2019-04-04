@@ -594,7 +594,7 @@ Select the **Body** tab, enable the **raw** mode, select **`JSON (application/js
 
 ```JSON
 {
-  "DATASET" : "CashFlows",
+  "DATASETNAME" : "CashFlows",
   "HORIZON" : "21",
   "LASTTRAININGTIMEPOINT" : "2001-12-28"
 }
@@ -613,7 +613,7 @@ curl --request POST \
   --url https://hxehost:51047/xsjs/apl/forecast.xsjs \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
-  --data '{DATASETNAME" : "CashFlows", "HORIZON" : "21", "LASTTRAININGTIMEPOINT" : "2001-12-28"}'
+  --data '{"DATASETNAME" : "CashFlows", "HORIZON" : "21", "LASTTRAININGTIMEPOINT" : "2001-12-28"}'
 ```
 
 > ### **Note:** Make sure to adjust the host and port number used in the URL to your local environment.
