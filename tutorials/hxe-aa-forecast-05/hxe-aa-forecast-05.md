@@ -210,18 +210,18 @@ context forecast {
         "DETAIL"   : LargeString;
     };
     table type tt_results {
-        "signal_time"          : UTCDateTime;
+        "signal_time"          : LocalDate;
         "signal_value"         : Double;
         "kts_1"                : Double;
         "kts_1_lowerlimit_95%" : Double;
         "kts_1_upperlimit_95%" : Double;
     };
     table type tt_dataset {
-        "signal_time"  : UTCDateTime;
+        "signal_time"  : LocalDate;
         "signal_value" : Double;
     };
     table type tt_dataset_cashflows_extrapredictors {
-        "signal_time"               : UTCDateTime;
+        "signal_time"               : LocalDate;
         "WorkingDaysIndices"        : Integer;
         "ReverseWorkingDaysIndices" : Integer;
         "MondayMonthInd"            : Integer;
