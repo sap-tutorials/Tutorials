@@ -121,12 +121,12 @@ Right click on the **`hdb`** folder node from the tree, and select **New > File*
 
 Enter **`pal`** as the folder name, then click on **OK**.
 
-Enter **`commmon.hdbcds`** as the file name, then click on **OK**.
+Enter **`common.hdbcds`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-forecast/db/src/hdb/pal/commmon.hdbcds
+forecast/db/src/hdb/pal/common.hdbcds
 ```
 
 Paste the following content:
