@@ -61,7 +61,6 @@ Therefore, you won't need to create table types or signature table using SQL, bu
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 1: ](Time Series with SAP HANA PAL)]
 
 As stated above, the ***SAP HANA Predictive Analytics Library*** (PAL) delivers over a hundred of ***best in class industry standard*** algorithms.
