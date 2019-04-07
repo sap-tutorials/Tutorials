@@ -1,6 +1,7 @@
 ---
 title: Create Sales Order App with SAP Cloud Platform Rapid Application Development by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
 time: 20
@@ -44,6 +45,7 @@ For more information, see [How to Use App Store Content in the Modeler](https://
 
 ![Mendix App Store](mendix-salesorders1.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create GWSAMPLE_BASIC service module)]
@@ -85,6 +87,7 @@ To generate the service module, follow these steps:
 
     ![Domain Model Creator](mendix-salesorders3.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -110,6 +113,7 @@ Now you have a Mendix module ready to be imported into your project.
 
     ![Generated Domain Model](mendix-salesorders33.png)
 
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create constants for ES5 credentials)]
@@ -134,6 +138,7 @@ Our tutorial uses basic authentication to connect to the ES5 system, so let's st
 
     ![Add Constant](mendix-salesorders9.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add logic to get sales orders – authentication)]
@@ -168,6 +173,7 @@ Follow these steps to create the logic to get the sales orders.
 
 ![Add Basic Authentication](mendix-salesorders13.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add logic to get sales orders – request)]
@@ -199,6 +205,7 @@ The **Get List** action retrieves a list of entities described in the domain mod
 
 4. Click **OK** to close the dialog.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add logic to get sales orders – return value)]
@@ -224,6 +231,7 @@ In the microflow, make the return value of the microflow a **`List`** of **`Sale
 Your microflow should look like the following:
     ![Microflow](mendix-salesorders17.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a new master detail page)]
@@ -244,6 +252,7 @@ Your microflow should look like the following:
 
     ![Add New Page](mendix-salesorders17d.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Show sales orders in page – master)]
@@ -278,6 +287,7 @@ Now we will bind the Master section to the Sales Orders.
 
     ![List View Content Final](mendix-salesorders20.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Show sales orders in page – details)]
@@ -328,6 +338,7 @@ Now let's bind the Detail section and present some more Sales Order properties:
 
 14. Scroll up in the page, double-click the **Page Title** text and change it to **Sales Orders Application**.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Configure Home Page)]
@@ -344,6 +355,7 @@ Mendix apps work by showing pages to the user. You can define which page should 
 
 4. Click **Select**.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run app)]
@@ -369,6 +381,7 @@ You will now see your Sales Orders Application in the browser, with live data co
 
   ![View App](mendix-salesorders30.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Run app in SAP Cloud Platform)]
@@ -386,6 +399,7 @@ The application will automatically bind to the Connectivity, XSUAA and PostgreSQ
 
 2. Once the application is deployed successfully, click on **View** to run it from SAP Cloud Platform.
 
+[DONE]
 [ACCORDION-END]
 
 ### Additional Information
