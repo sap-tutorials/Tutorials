@@ -2,7 +2,7 @@
 title: Custom Analytical Queries Calculated Measures
 description: Create a Custom Analytical Queries with Calculated Measures.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 time: 15
 ---
 

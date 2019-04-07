@@ -1,138 +1,186 @@
 ---
 title: Set Up Trust Between Identity Authentication and SAP Cloud Platform
-description: Set up trust between identity authentication and SAP Cloud Platform will be explained by using SAML 2.0 Configuration.
+description: Set up trust between SAP Cloud Platform Identity Authentication Service and SAP Cloud Platform for secure communication via SAML 2.0.
+auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 time: 25
+author_name: Ulrike Liebherr
+author_profile: https://github.com/Liebherr
 ---
 
-## Prerequisites  
-- **Tutorials:** [Maintain platform subaccounts and SAP Web IDE permissions](abap-custom-ui-subaccount-permission)
+## Prerequisites
+Authorizations: Your user needs
+  - (a) business role(s) with Unrestricted Write Access for business catalog **Extensibility - Fiori App Development** (ID: `SAP_CORE_BC_EXT_UI`) and **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
+  - access to **SAP Web IDE**
 
 ## Details
-### You will learn
-- How to set up trust between identity authentication and SAP Cloud Platform
-- How to assign members different roles
-- How to upload metadata
+### Glossary
 
+- **Identity**: individual people, but also computers, services, computational entities like processes and threads, or any group of such things
+
+- **Identity Provider**: system entity that creates, maintains, and manages identity information for identities
+
+- **Identity Authentication**: process of authenticating an identity
+
+- **SAP Cloud Platform Identity Authentication Service**: SAP's solution to enable identity authentication, abbreviated as **IAS**
+
+- **SAP Cloud Platform Identity Authentication tenant**: a customer's instance of the service
+
+- **SAP Cloud Platform Identity Authentication console**: Web application to configure your tenant
+
+
+### You will learn
+- How to set up SAP Cloud Platform Subaccount for secure (Security Assertion Markup Language = SAML 2.0) communication
+- How to set up SAP Cloud Platform Subaccount on SAP Cloud Platform Identity Authentication Service for secure communication
+- How to get necessary information from your SAP Cloud Platform Subaccount and your SAP Cloud Platform Identity Authentication tenant to set up the mutual trust between them
+
+>Be aware that in case of an integration with S/4HANA Cloud the used Identity Authentication for the Subaccount should be the very same as the one used for the S/4HANA Cloud system.
+Your S/4HANA Cloud system you got already delivered by SAP with a configured trust between it and your SAP Cloud Platform Identity Authentication tenant. Now you will configure the trust between that and your SAP Cloud Platform subaccount on your own.
+![S/4HANA Cloud and SAP Cloud Platform Subaccount share same Identity Provider](trust_IAS_SCP.png)
+
+### Additional Information
+- **Documentation:** [SAP Cloud Platform Identity Authentication Service](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/d17a116432d24470930ebea41977a888.html)
+- **SAP S/4HANA Cloud Release** (tutorial's last update): 1902
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter SAP Cloud Platform subaccount)]
-Enter the SAP Cloud Platform subaccount as an administrator and expand the **Security** section.
+[ACCORDION-BEGIN [Step 1: ](Enter trust management of subaccount)]
+Enter the SAP Cloud Platform subaccount as an administrator and expand the **Security** area to open Trust Management by clicking the **Trust** section.
 
-![Enter SAP Cloud Platform Subaccount](sapcp.png)
+![Enter SAP Cloud Platform Subaccount](sapcp_trust_mgmt.png)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Edit local service provider)]
-Switch to your trust settings and create your local service provider by editing the not yet existing one.
+[ACCORDION-BEGIN [Step 2: ](Set subaccount as service provider)]
+To enable secure (Security Assertion Markup Language = SAML 2.0) communication the SAP Cloud Platform Subaccount has to be set up as Service Provider.
 
-![Edit local service provider](edit.png)
+Being in the trust management, click **Edit** to change the default Local Service Provider.
 
-[ACCORDION-END]
+![Edit local service provider](sapcp_LclSP_edit_default.png)
 
-[ACCORDION-BEGIN [Step 3: ](Add provider data)]
-Click **Generate Key Pair** and add following information to your local provider:
+Change and add following information to your local provider:
 
 | ------------------------------------------- | ------------------------------------------- |
-|           **Configuration Type**            |                    Custom                   |
-|           **Local Provider Name**           | `<platform region s URL>/<subaccount name>` |
-|          **Principal Propagation**          |                 `Bonusplan`                 |
-|          **Force Authentication**           |               `Bonusplan (info)`            |
+|           **Configuration Type**            |                    `Custom`                   |
+|           **Local Provider Name**           | `<platform region s URL>/<subaccount name>` (set automatically) |
+|          **Principal Propagation**          |                 `Enabled`                 |
+|          **Force Authentication**           |               `Disabled`            |
 
-![Add provider data](add.png)
+Click **Generate Key Pair**
 
-Save your changes.
+![Generate Key Pair for and save Local Service Provider](sapcp_LclSP_genKeyPair_save.png)
 
+**Save** your changes.
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open identity authentication console)]
-Open the SAP Cloud Platform Identity Authentication Administration Console with:
-`https://<tenant ID>.subaccounts.ondemand.com/admin`
-You can also get the URL from your identity authentication tenant registration e-mail.
+[ACCORDION-BEGIN [Step 3: ](Get metadata of subaccount)]
+To set up the trust from Identity Authentication to the Subaccount soon you need the subaccount's metadata.
+Download the metadata by clicking **Get Metadata**.
 
-![Enter SAP Cloud Platform identity authentication administration console](identity.png)
+![Get metadata of subaccount](sapcp_getSubaccountMetadata.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Enter Identity Authentication Administration Console)]
+Open the SAP Cloud Platform Identity Authentication Administration Console with its URL which follows the pattern:
+
+`https://<YOUR_TENANTS_ID>.accounts.ondemand.com/admin`
+
+Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID.
+
+SAP Cloud Platform Identity Authentication Administration Console entry screen looks (depending on authorizations) like that
+![Enter SAP Cloud Platform identity authentication administration console](IAS_entryScreen.png)
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add subaccount as application)]
+The subaccount is represented in SAP Identity Authentication Service as Application.
 Choose **Applications & Resources** and go to **Applications**. Click **+ Add** on the left hand panel to enter the name of your SAP Cloud Platform subaccount. Save your changes.
 
-![Add subaccount as application](addapplication.png)
+![Add subaccount as application](IAS_addApplication.png)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Configure application's SAML 2.0 trust with subaccount)]
-Click on the newly created application on the left side and then on **Trust**. Configure the **`SAML 2.0`** trust with SAP Cloud Platform subaccount as a service provider.
+[ACCORDION-BEGIN [Step 6: ](Configure application's trust with subaccount)]
+Click on the newly created application on the left side and then on **Trust**. Choose **SAML 2.0 Configuration**.
 
-![Configure application' s SAML 2.0 trust with subaccount](saml.png)
+![Configure application' s SAML 2.0 trust with subaccount](IAS_openSamlConfig.png)
 
+Upload the metadata XML file of your SAP Cloud Platform subaccount. By this service provider metadata upload, the needed properties are gotten from the XML file. Save the configuration settings.
+
+![Upload subaccount' s metadata](IAS_uploadSubaccountMetadata.png)
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Get metadata of subaccount)]
-Switch again to your SAP Cloud Platform subaccount and open trust settings to download the metadata by clicking **Get Metadata**. The local provider name will be important in further steps.
+[ACCORDION-BEGIN [Step 7: ](Set Name ID attribute)]
 
-![Get metadata of subaccount](trust.png)
+Now you have to configure which attribute is used to identify users during `SAML2.0` secure communication. By default this is **`User ID`**, but as S/4HANA Cloud by default works with **`Login Name`** it shall be switched to that.
 
-[ACCORDION-END]
+**Procedure**
 
+Still being in your application's Trust settings, select **Name ID Attribute**.
 
-[ACCORDION-BEGIN [Step 8: ](Upload subaccount's metadata as SAML 2.0 trust)]
-Go back to your SAP Cloud Platform Identity Authentication Administration Console and choose **SAML 2.0 Configuration**. Upload the metadata XML file of your SAP Cloud Platform subaccount. On service provider metadata upload, the fields are populated with the parsed data from the XML file. Save the configuration settings.
+![Open name ID attribute configuration](IAS_openNameID_attributeConfig.png)
 
-![Upload subaccount' s metadata as SAML 2.0 trust](upload.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Select name ID attribute)]
-Select **Name ID Attribute**.
-
-![Select name ID attribute](saml2.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Set application' s name ID attribute)]
 Choose **Login Name** and save your changes.
 
-![Set application' s name ID attribute](login.png)
+![Set Login Name as application' s name ID attribute](IAS_nameID_attribute_setLoginName.png)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Set application' s identity provider)]
-Switch to **Identity Provider** and select it.
+[ACCORDION-BEGIN [Step 8: ](Configure application' s Default Identity Provider)]
+As in most common use case the SAP Cloud Platform Identity Authentication Service does not act as Identity Provider itself but as proxy for a probably already existing corporate identity provider this has to be set now.
 
-![Set application' s identity provider](provider.png)
+In your application's Trust settings switch to **Conditional Authentication** and select it.
 
+![Open application' s identity provider configuration](IAS_openIdP_config.png)
+
+Select your corporate Identity Provider as **Default Identity Provider** and click **Save**.
+
+![Set identity provider](IAS_setCorporateIdP_asIdP.png)
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Set identity provider)]
-Select **`sapdev`** as identity provider and click **Save**.
+[ACCORDION-BEGIN [Step 9: ](Get metadata of Identity Authentication tenant)]
+To set the Identity Authentication tenant as trusted identity provider in the SAP Cloud Platform subaccount next, you need to get its metadata first.
 
-![Set identity provider](sapdev.png)
+Open the metadata XML by entering your tenant's web address for it which follows this pattern:
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 13: ](Save metadata of identity authentication tenant)]
-Save metadata of your identity authentication tenant on your local file system as an XML file. You can find the tenant at:
+``` URI
+https://<YOUR_TENANTS_ID>.accounts.ondemand.com/saml2/metadata
 ```
-https://<tenant ID>.subaccounts.ondemand.com/saml2/metadata
-```
 
-![Save metadata of identity authentication Tenant](metadata.png)
+![Save metadata of identity authentication Tenant](IAS_getMetadata.png)
 
+Save that XML to a file.
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Add subaccount's trusted identity provider)]
+[ACCORDION-BEGIN [Step 10: ](Add IAS as subaccount's trusted identity provider)]
 Switch back to your SAP Cloud Platform cockpit and go to your trust settings.
 
 Choose **Application Identity Provider** to add a trusted identity provider.
 
-![Add subaccount' s trusted identity provider](trusted.png)
+![Add subaccount' s trusted identity provider](sapcp_addTrustedIdP.png)
 
+Upload metadata XML file of your identity authentication tenant in the **Metadata File** field. **Save** your changes.
+
+![Upload identity tenant' s metadata as trusted identity provider](sapcp_addTrustedIdP_metadataUpload_save.png)
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Upload identity tenant's metadata)]
-Upload identity authentication metadata XML file of your identity authentication tenant (Step 13) in the metadata file field. Save your changes.
+[ACCORDION-BEGIN [Step 11: ](Test yourself)]
 
-![Upload identity tenant' s metadata as trusted identity provider](attribute.png)
+[VALIDATE_1]
 [ACCORDION-END]

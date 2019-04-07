@@ -615,9 +615,7 @@ from     data
 group by tile
 ```
 
-Provide an answer to the question below then click on **Validate**.
-
-[VALIDATE_3]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Trend and Cyclic)]
@@ -783,8 +781,6 @@ select tile
 from     data
 group by tile
 ```
-
-Provide an answer to the question below then click on **Validate**.
 
 [DONE]
 [ACCORDION-END]

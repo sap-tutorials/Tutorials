@@ -3,7 +3,7 @@ title: Create ABAPDoc Comments in Your Class
 description: Learn how to maintain ABAPDoc documentation for your class
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 5
 ---
 

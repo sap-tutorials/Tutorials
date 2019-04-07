@@ -1,12 +1,12 @@
 ---
-title: Create sales order app with SAP Cloud Platform Rapid Application Development by Mendix
+title: Create Sales Order App with SAP Cloud Platform Rapid Application Development by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - You are using a Windows desktop (or a Windows VM on a Mac).
  - You have access to an SAP Cloud Platform account. If not, you can open a trial account. See the [tutorial](https://developers.sap.com/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
  - You have completed the [Getting started with SAP Cloud Platform Rapid Application Development by Mendix](https://developers.sap.com/tutorials/mendix-onboarding.html) tutorial. Name your app **SAP Sales Orders**.
@@ -33,9 +33,6 @@ This tutorial also showcases the [SAP OData Model Creator](https://appstore.home
 - How to deploy the application to SAP Cloud Platform.
 
 
-### Time to Complete
-**20 Min**
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get SAP OData Connector)]
@@ -57,7 +54,7 @@ You can generate this domain model by providing your service metadata as a file,
 
 ![OData Model Creator](mendix-salesorders1a.png)
 
-We will do it by providing a file. 
+We will do it by providing a file.
 This file can be downloaded from the OData service URL directly using the `$metadata` suffix or retrieved from SAP Gateway. Since we're using the SAP Demo Gateway System (ES5) for this tutorial, the metadata file can be found at:
 
 ```
@@ -98,7 +95,7 @@ Now you have a Mendix module ready to be imported into your project.
 1. Open the project that you created, right-click the project root folder, select **Import module package…** and select the `.mpk` file.
 
     ![Import module package](mendix-salesorders4.png) <br>
-    
+
     You now have your `GWSAMPLE_BASIC` module available in your project ready to use in combination with the SAP OData Connector.
 
     ![Import module package](mendix-salesorders5.png)
@@ -309,7 +306,7 @@ Now let's bind the Detail section and present some more Sales Order properties:
 
     ![3 Containers](mendix-salesorders22b.png)
 
-7. Select the first container and delete both `Category` and `Value` texts. 
+7. Select the first container and delete both `Category` and `Value` texts.
 
 8. Double-click the **`SalesOrderID`** property from the Connector tab.
 
@@ -391,3 +388,5 @@ The application will automatically bind to the Connectivity, XSUAA and PostgreSQ
 
 [ACCORDION-END]
 
+### Additional Information
+- Read more about using Mendix at [https://docs.mendix.com/howto/](https://docs.mendix.com/howto/).
