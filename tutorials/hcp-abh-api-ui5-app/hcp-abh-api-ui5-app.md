@@ -96,7 +96,9 @@ Back in your Web IDE, in the controller file, **add the copied code from the API
 
 ![updated controller with pre-generated API call code](14.png)
 
-> Make sure to update the `<API_KEY>` to your Application Key from the API Business Hub. It is found at the top of the API Documentation page by clicking the Key icon.
+Make sure to update the `<API_KEY>` to your Application Key from the API Business Hub. It is found at the top of the API Documentation page by clicking the Key icon.
+
+> Please keep in my that API Keys should never be exposed like this in productive applications.
 
 **Comment out the `xhr.withCredentials` line**. You can a single line comment by adding a double slash `//` to the beginning of a line. To add a comment block (multiple lines), use `/*  */` around the code to remove.
 
@@ -250,5 +252,3 @@ self.getView().getModel("results").setProperty("/data", jsonResults);
 
 [VALIDATE_8]
 [ACCORDION-END]
-
-
