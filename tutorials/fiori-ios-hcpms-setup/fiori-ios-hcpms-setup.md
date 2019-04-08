@@ -9,7 +9,7 @@ author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
- - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn  
