@@ -283,7 +283,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 		"numKeywordsPerTopic": 15,
 		"numFeatures": 20
 	},
-	"url": "/ml-dest/topicdetection/topic-detection",
+	"url": "/ml-dest/text/topic-detection",
 	"method": "POST",
 	"accept": "application/json",
 	"fileType": "zip,tar",
