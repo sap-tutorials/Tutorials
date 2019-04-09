@@ -43,7 +43,8 @@ module.exports = {
       stepSpellCheckResult: [],
     };
     const dir = path.dirname(filePath);
-    const { content: { common, link, h1, mdnImg } } = regexp;
+    const { content: { common, link, h1, mdnImg, localFileLink }, validation: { accordions } } = regexp;
+
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
@@ -89,16 +90,26 @@ module.exports = {
         }
       });
 
-      const match = line.match(mdnImg.regexp);
+      const imageMatch = line.match(mdnImg.regexp);
 
-      if (match) {
-        const [, imgName] = match;
+      if (imageMatch) {
+        const [, imgName] = imageMatch;
         const filePath = path.join(dir, imgName);
         const errors = checkLocalImage(filePath, imgName);
         result.contentCheckResult.push(...errors.map(err => ({
           line: index + 1,
           msg: err,
         })));
+      }
+
+      const localFileMatch = line.match(localFileLink.regexp);
+      const accordionMatch = line.match(accordions);
+
+      if (localFileMatch && !imageMatch && !accordionMatch) {
+        result.contentCheckResult.push({
+          line: index + 1,
+          msg: localFileLink.message,
+        });
       }
 
       if (!isCodeBlock) {
