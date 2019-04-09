@@ -2,7 +2,7 @@
 title: Install the MultiApps Cloud Foundry CLI Plugin
 description: Download and install the Command Line Interface (CLI) plugin. This plugin allows you to deploy MTA achives from the command line.
 auto_validation: true
-time: 10
+time: 5
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 ---
@@ -33,12 +33,7 @@ Now you should see the version of the CLI you are using.
 
 [ACCORDION-BEGIN [Step 2: ](Download the MultiApps plugin)]
 
-[Download the plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin) from the GitHub repo and save it in a folder of your choice.
-Make sure to remember the path of the downloaded file as we need it in the next step.
-
-Mac OS X 64 bit | Windows 64 bit | Linux 64 bit
---- | --- | ---
-[mta-plugin-darwin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/download/v2.0.13/mta_plugin_darwin_amd64) | [mta-plugin-windows](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/download/v2.0.13/mta_plugin_windows_amd64.exe) | [mta-plugin-linux](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/download/v2.0.13/mta_plugin_linux_amd64) |
+[Download the plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin) from the GitHub repo and save it in a folder of your choice. Make sure to remember the path of the downloaded file as we need it in the next step.
 
 > You need to make the plugin executable before installing it, if you are running on an Unix-based system. You can achieve this by executing the following command `chmod +x <path-to-the-plugin>`
 
