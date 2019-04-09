@@ -565,8 +565,8 @@ onPressImageClassifier: function (oControlEvent) {
 callService: function (oController, mode, file, callback) {
   // create the form data to be sent in the request
   var formData = new window.FormData();
+  // eslint-disable-next-line sap-no-dom-insertion
   formData.append("files", file, file.name);
-  console.log(file.name);
 
   var url = oController.getView().getModel("demo").getProperty("/url");
   var type = oController.getView().getModel("demo").getProperty("/method");
