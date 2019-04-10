@@ -161,7 +161,7 @@ time: 15
 
   3. Add the `csrfProtection` property to the route in order to disable `csrf` token protection in the UI. Create your run configuration. Therefore replace your coding with following in your `xs-app.json` file:
 
-    ```swift
+    ```JSON
         {
           "welcomeFile": "/test/flpSandbox.html",
           "authenticationMethod": "route",
@@ -197,7 +197,7 @@ time: 15
 
   5. Open your `webapp/manifest.json` file to add the annotations. Replace your code with following:
 
-    ```swift
+    ```JSON
       {
     	"_version": "1.8.0",
     	"sap.app": {
@@ -452,7 +452,7 @@ time: 15
 
   9. Create your URL by using following:
      `<application_routes>/<id>-<version>/`
-```swift
+```Example
               Example: <application_routes>/MTA_Project_XXX-1.0.0/
 ```
 
