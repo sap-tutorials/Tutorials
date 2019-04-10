@@ -59,7 +59,7 @@ module.exports = {
             }
         },
         localFileLink: {
-            regexp: /\[[^\]]+\]\((?!http)([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/,
+            regexp: /\[[^\]]+\]\((?!http)([a-z\-_A-Z0-9/\\]+?)\.[a-z]{2,10}\)/,
             message: 'Incorrect link to local file, use full link to file on GitHub (starting with https://)',
         },
         internalLink: {
