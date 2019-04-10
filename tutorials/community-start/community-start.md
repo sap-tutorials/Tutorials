@@ -3,7 +3,7 @@ title: Tour the SAP Community
 description: Explore the various features of SAP Community, familiarize yourself with community guidelines, discover how to get the most out of your membership, and earn the Tour the Community badge.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sap-community ]
+tags: [  tutorial>beginner, topic>sap-community  ]
 primary_tag: topic>sap-community
 ---
 
