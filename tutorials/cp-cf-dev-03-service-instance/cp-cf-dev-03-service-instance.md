@@ -3,7 +3,7 @@ title: Create a Service Instance and Bind It to Your App
 description: Create an instance of the PostgreSQL service and bind it to your app, as a way to explore how SAP Cloud Platform Cloud Foundry services and apps are connected.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-cloud-platform  ]
 time: 10
 ---
 

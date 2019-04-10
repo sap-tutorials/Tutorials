@@ -61,7 +61,6 @@ Therefore, you won't need to create table types or signature table using SQL, bu
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 1: ](Time Series with SAP HANA PAL)]
 
 As stated above, the ***SAP HANA Predictive Analytics Library*** (PAL) delivers over a hundred of ***best in class industry standard*** algorithms.
@@ -121,12 +120,12 @@ Right click on the **`hdb`** folder node from the tree, and select **New > File*
 
 Enter **`pal`** as the folder name, then click on **OK**.
 
-Enter **`commmon.hdbcds`** as the file name, then click on **OK**.
+Enter **`common.hdbcds`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-forecast/db/src/hdb/pal/commmon.hdbcds
+forecast/db/src/hdb/pal/common.hdbcds
 ```
 
 Paste the following content:

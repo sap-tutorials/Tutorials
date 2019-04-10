@@ -4,7 +4,7 @@ description: Analyze the runtime performance of AMDPs and the executed SQL state
 auto_validation: true
 time: 45
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites

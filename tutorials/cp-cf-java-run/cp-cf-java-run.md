@@ -3,7 +3,7 @@ title: Run, Test and Deploy Your Java App
 description: Run, test and deploy your Java app to SAP Cloud Platform using SAP Web IDE.
 auto_validation: true
 primary_tag: products>sap-web-ide
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide   ]
 time: 10
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Create a SAPUI5 App for Cloud Foundry
+title: Create an SAPUI5 App for Cloud Foundry
 description: Create, build and deploy a MTA project with an integrated SAPUI5 module
 auto_validation: true
 time: 25
@@ -93,7 +93,7 @@ Build (aka package) the project to a `mtar` archive to be able to deploy it to C
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Deploy the mtar to Cloud Foundry)]
+[ACCORDION-BEGIN [Step : ](Deploy the archive to Cloud Foundry)]
 
 Now that you created a `mtar` archive, you are all set to deploy the application.
 
