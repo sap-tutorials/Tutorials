@@ -11,7 +11,7 @@ time: 1
 <!-- loiofd337714a73f45cea49e20d6594d1109 -->
 
 ## Prerequisites
- - **Tutorials:** You have completed [Download Using the Download Manager (GUI Mode)](https://developers.sap.com/tutorials/hxe-ua-download-vm.html) 
+ - **Tutorials:** You have completed [Download Using the Download Manager (GUI Mode)](https://developers.sap.com/tutorials/hxe-ua-download-vm.html)
 
 ## Details
 ### You will learn
@@ -25,13 +25,13 @@ This example uses `VMware Player` as the hypervisor. You can use any supported h
 
 Start `VMware Player` and select *Open a Virtual Machine*.
 
-![HXE_vmware_import_3](HXE_vmware_import_3.png)
+![VMWare_Player_Main_Screen_3](VMWare_Player_Main_Screen_3.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the OVA file)]
 
-The OVA file name is either `hxexsa.ova` or `hxe.ova` depending on which VM image you downloaded.
+The OVA file name is either `hxexsa.ova` or `hxe.ova` depending on which VM image you downloaded in the previous tutorial.
 
 ![Import_the_OVA_1](Import_the_OVA_1.png)
 
@@ -60,5 +60,3 @@ Click *Play Virtual Machine*.
 ![Play_VM_0](Play_VM_0.png)
 
 [ACCORDION-END]
-
-
