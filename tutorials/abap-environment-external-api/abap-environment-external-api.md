@@ -10,9 +10,6 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
-- You have connected to an ABAP system and created an ABAP Cloud Project, as described in [Connect to the ABAP System
-](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
--  Optional: You have opened the SAP Cloud Platform cockpit and navigated to the correct space. See [SAP Help Portal: SAP Cloud Platform Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e47748b5bb571014afedc70595804f3e.html)
 - **Tutorial**: [Create your First ABAP Console Application](abap-environment-console-application), steps 1-3
 - **Tutorial**: [Create a Communication Arrangement for an External API](abap-env-create-comm-arrangement-api)
 
@@ -21,16 +18,6 @@ author_profile: https://github.com/julieplummer20
   - How to call an external API in an ABAP Class, using a specific destination for a communication arrangement
 
 ---
-
-Predefined communication scenarios allow you to, for example, exchange data between an ABAP Environment instance and an external system.
-A communication arrangement specifies the metadata for a communication scenario.
-For more information, see:
-
-- [SAP Help Portal: Communication Management](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/2e84a10c430645a88bdbfaaa23ac9ff7.html))
-
-- [SAP Help Portal: Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html)
-
-- [Cloud Foundry: Managing Service Keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html)
 
 You will create a new destination for an existing communication arrangement, specifying the URL for an external API, user, password, and authentication.
 You will then create a class that calls the API and displays the output from it in the console.
@@ -92,7 +79,7 @@ Now, you will create an ABAP class that will call your destination, and which yo
 
 The class is displayed in a new editor:
 
-    ![Image depicting step-4d-class-editor](step-4d-class-editor.png)
+![Image depicting step-4d-class-editor](step-4d-class-editor.png)
 
 [DONE]
 
@@ -117,26 +104,25 @@ This enables you to run the class in the console.
     - `i_name` = the specific destination defined in the destination service instance (in the SAP Cloud Cockpit) `EXTERNAL_API_XXX`
     - `i_service_instance_name` = your communication arrangement (in the dashboard):
 
-    ![Image depicting step6a-service-instance-name-in-Comm-Arr](step6a-service-instance-name-in-Comm-Arr.png)
+      ![Image depicting step6a-service-instance-name-in-Comm-Arr](step6a-service-instance-name-in-Comm-Arr.png)
 
-```ABAP
+    ```ABAP
+        TRY.
+            DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
+              i_name                  = 'Z_CHUCKNORRIS_XXX'
+              i_service_instance_name = 'EXTERNAL_API_XXX'
+              i_authn_mode = if_a4c_cp_service=>service_specific ).
 
-    TRY.
-        DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
-          i_name                  = 'Z_CHUCKNORRIS_XXX'
-          i_service_instance_name = 'EXTERNAL_API_XXX'
-          i_authn_mode = if_a4c_cp_service=>service_specific ).
+            DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
+            DATA(lo_request) = lo_http_client->get_http_request( ).
+            DATA(lo_response) = lo_http_client->execute( i_method = if_web_http_client=>get ).
+              out->write( lo_response->get_text( ) ).
 
-        DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
-        DATA(lo_request) = lo_http_client->get_http_request( ).
-        DATA(lo_response) = lo_http_client->execute( i_method = if_web_http_client=>get ).
-          out->write( lo_response->get_text( ) ).
+          CATCH cx_root INTO DATA(lx_exception).
+            out->write( lx_exception->get_text( ) ).
+        ENDTRY.
 
-      CATCH cx_root INTO DATA(lx_exception).
-        out->write( lx_exception->get_text( ) ).
-    ENDTRY.
-
-```
+    ```
 
 [DONE]
 
