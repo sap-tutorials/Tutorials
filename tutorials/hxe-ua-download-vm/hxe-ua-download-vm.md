@@ -25,19 +25,23 @@ You can also download **optional** installation packages (like the SAP Enterpris
 
 In Download Manager, from the *Platform* pull-down, select SAP HANA, express edition on `Linux/x86-64`. (Virtual machine method installation is not available for *Linux/Power (little endian)*.)
 
+![DM_platform_1](DM_platform_1.png)
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select the VM image)]
 
 From the *Image* pull-down, select *Virtual Machine*.
 
-![Download_Manager_Rev036_0](Download_Manager_Rev036_0.png)
+![DM_image_4](DM_image_4.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Specify a save directory)]
 
 Click *Browse* and select a directory where your downloads will be saved.
+
+![DM_SaveDir_2](DM_SaveDir_2.png)
 
 [ACCORDION-END]
 
@@ -50,6 +54,8 @@ Select one or more of the following packages:
 |Getting Started with SAP HANA, express edition (Virtual Machine Method)|Selected by default.|
 |Server + applications virtual machine|Downloads `hxexsa.ova`; the server plus XS Advanced, Web IDE, and SAP HANA Cockpit.|
 |Server only virtual machine|Downloads `hxe.ova`; the server without any applications.|
+
+![DM_packages_0](DM_packages_0.png)
 
 > Note:
 > SAP plans to remove SAP HANA extended application services, classic model (XSC) and the corresponding SAP HANA Repository with the next major product version of SAP HANA.
@@ -138,7 +144,7 @@ Click the *Download* button.
 
 Your download is complete when a pop-up message appears confirming successful download. Make sure you wait for this message before accessing the downloaded files.
 
-![hxe_downloadmanager_2_2_1](hxe_downloadmanager_2_2_1.png)
+![hxe_downloadmanager_2_2_3](hxe_downloadmanager_2_2_3.png)
 
 [ACCORDION-END]
 
