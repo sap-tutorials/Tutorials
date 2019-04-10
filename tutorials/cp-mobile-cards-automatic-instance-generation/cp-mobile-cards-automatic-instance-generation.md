@@ -3,7 +3,7 @@ title: Create Cards Automatically with the Automatic Instance Generation Templat
 description: Create more advanced cards and send them to your SAP Mobile Cards application.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards ]
+tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 20
 ---
 
