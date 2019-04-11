@@ -27,7 +27,7 @@ You will learn how to download the binary image of SAP HANA 2.0, express edition
 
 [ACCORDION-BEGIN [Step 1: ](Open a command prompt)]
 
-Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar` or `HXEDownloadManager_linux.bin`
+Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar` or `HXEDownloadManager_linux.bin`).
 
 > Note:
 > If you've already installed SAP HANA express edition, you can run the built-in download manager from any directory as the <sid>`adm` user.
@@ -102,6 +102,8 @@ Valid <file> values:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Download one or more files)]
+
+If you want applications like XS Advanced, Web IDE, and SAP HANA Cockpit, download both`hxe.tgz` and `hxexsa.tgz`. If you want optional packages like SAP HANA streaming analytics (`hsa.tgz`), download them now as well.
 
 This example uses the Linux Download Manager `HXEDownloadManager_linux.bin`. It specifies a proxy host, proxy port, and downloads *Getting Started with SAP HANA, express edition (Binary Installer Method)* and the SHINE package (`shine.tgz`).
 
