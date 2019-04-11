@@ -37,28 +37,31 @@ You can either use a package manager (recommended) on your OS or use an installe
 
 **Install Chocolatey (Windows package manager), if not yet installed**
 
-```:
+```bash:
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
 
 **Install Node.js**
 
-```:
-choco install nodejs
+```bash:
+user@host:~
+=> choco install nodejs
 ```
 
 ### Installation on Mac
 
 **Install Homebrew (Mac package manager), if not yet installed**
 
-```:
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```bash:
+user@host:~
+=> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 **Install Node.js**
 
-```:
-brew install node
+```bash:
+user@host:~
+=> brew install node
 ```
 
 [VALIDATE_1]
@@ -68,9 +71,10 @@ brew install node
 [ACCORDION-BEGIN [Step 2: ](Verify your installation)]
 
 To verify if the installation was successful, check the `npm` and `node.js` version. Open the command line tool and ask for the version.
-```:
-node -v
-npm -v
+```bash:
+user@host:~
+=> node -v
+=> npm -v
 ```
 
 [DONE]
@@ -82,8 +86,9 @@ npm -v
 1. Create a new dedicated directory for your Node.js application called `nodetutorial` and another directory inside it called `myapp`.  
 2. To start the application setup, change to the `myapp` directory and execute `npm init` in the command line. This will walk you through creating a `package.json` file.
 
-    ```:
-    npm init
+    ```bash:
+    user@host:~/nodetutorial/myapp
+    => npm init
     ```
 
     Use the values from the table below. If no specific value for a property  is needed at this point (# at the value table below) so just hit enter.
@@ -109,7 +114,7 @@ npm -v
     > The `package.json` file is located at the root directory of a Node.js project.
 
 
-3. Create a file called `server.js` in the application folder (which will act as your web server) and copy the following code to this file and save it:
+3. Create a file called `server.js` (which will act as your web server) in the `myapp` folder and copy the following code to this file and save it:
 
     ```javascript:
     const express = require('express');
@@ -121,9 +126,11 @@ npm -v
 
     const port = process.env.PORT || 3000;;
     app.listen(port, function () {
-      console.log(`myapp listening on port ${port}`);
+      console.log(`myapp listening on port ${port});
     });
     ```
+
+
 
 [VALIDATE_2]
 
@@ -133,11 +140,23 @@ npm -v
 
 Your application is almost ready. Before you actually can access the web server, there's the need to download the required modules. If you have a look at the `server.js` file you created in the previous step, the `express-module` is used there but not yet available on your machine. Therefore, run the following command to let npm take care of the dependencies:
 
-```:
-npm install express
+```bash:
+user@host:~/nodetutorial/myapp
+=> npm install express
 ```
 
 You should now have a newly (automatically) created directory `node_modules` in the `myapp` directory, where all the dependency modules are located. The `package.json` will be updated with the installed module(s).
+
+You should now have the following directory structure:
+
+```bash:
+nodetutorial
+└── myapp
+    ├── node_modules
+    ├── package-lock.json
+    ├── package.json
+    └── server.js
+```
 
 [DONE]
 
@@ -147,8 +166,9 @@ You should now have a newly (automatically) created directory `node_modules` in 
 
 Now the application and can be started locally. Simply start it with the following command:
 
-```:
-node server.js
+```bash:
+user@host:~/nodetutorial/myapp
+=> node server.js
 ```
 
 You should see `myapp listening on port 3000` on your command line if everything went well. You should also get a `Hello World` response when accessing your web server at `http://localhost:3000`.
