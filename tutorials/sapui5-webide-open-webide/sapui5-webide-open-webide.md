@@ -1,7 +1,7 @@
 ---
-title: Open SAP Web IDE Full-Stack in SAP Cloud Platform
-description: Enable and open SAP Web IDE Full-Stack in SAP Cloud Platform.
-primary_tag: topic>sapui5
+title: Open SAP Web IDE Full-Stack and make it ready for Cloud Foundry Development
+description: Enable and open SAP Web IDE Full-Stack in SAP Cloud Platform. Configure the CF API endpoint to deploy
+primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 time: 5
 ---
@@ -69,6 +69,36 @@ A new tab opens, and SAP Web IDE Full-Stack loads.
 >**Bookmark this page!**  If you create a bookmark to this page, it is easy to get back to SAP Web IDE Full-Stack later.
 
 ![SAP Cloud Platform Console - services button](web_ide_start_screen.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step : ](Go to the Cloud Foundry settings)]
+
+Click on the **gears icon** in the bar on the left-hand side to open the settings menu. Then, choose the **Cloud Foundry** settings.
+
+![webidesettings](cfconfig.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step : ](Enter the Cloud Foundry endoint you want to use)]
+
+1. Select the API endpoint according to the data center in which your subaccount lives. Click on the dropdown control and the most common endpoints will be suggested to you. You can see find [a list](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html?platform=hootsuite) of all endpoints in the help portal.
+
+    ![cfendpoints](cfendpoints.png)
+
+2. You might be prompted for your Cloud Foundry credentials. Enter the credentials you used for the SAP Cloud Cockpit.
+
+    ![cfcred](cfcred.png)
+
+3. If there is a subaccount in the selected data center, the *Organization* and *Space* field will be populated by default. You can change these values via the dropdown control. Don't forget to **Save** this configuration.
+
+    > If the fields are not being populated, you probably selected an incorrect endpoint or the entered credentials were invalid.
+
+    ![cfsave](cfsave.png)
+
+> You can also choose specific API endpoints per project in the project settings.
 
 [DONE]
 [ACCORDION-END]
