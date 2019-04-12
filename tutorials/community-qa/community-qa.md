@@ -1,6 +1,6 @@
 ---
 title: Ask and Answer Questions on SAP Community
-description: Get to know the Questions and Answers section, processes, and guidelines better, so you can more easily gain – and share – knowledge in SAP Community. You can also earn the Q&A Savvy badge.
+description: Get to know the Questions and Answers section, processes, and guidelines better, so you can more easily gain – and share – knowledge in SAP Community. You can also earn the Q&A Savvy badge. Awarded on a weekly basis, Q&A Savvy may not appear immediately in the Reputation section of your profile, so please expect a slight delay before you see the badge.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>sap-community  ]
