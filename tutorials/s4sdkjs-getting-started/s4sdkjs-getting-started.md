@@ -9,7 +9,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ## Details
 ### You will learn
- - How to scaffold your application
+ - How to scaffolded your application
  - About the project's structure
  - How to run the application locally
 
@@ -122,3 +122,5 @@ That's it! You should now have a running application that is ready to be integra
 [ACCORDION-END]
 
 ---
+
+

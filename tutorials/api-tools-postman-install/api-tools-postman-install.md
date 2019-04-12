@@ -6,6 +6,7 @@ tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-manag
 time: 5
 ---
 
+
 ## How-To Details
 In this ***how-to*** guide, you learn how to install and configure the [Postman](https://www.getpostman.com/).
 
