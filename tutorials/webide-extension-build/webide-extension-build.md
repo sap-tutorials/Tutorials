@@ -37,9 +37,6 @@ You need to deploy your extension to the Cloud Foundry environment or Neo on SAP
 
     ![Cloud Foundry settings](step1-cf-settings.png)
 
-3. If you have no builder installed, choose **Install Builder**. If the **Reinstall Builder** button appears, there is no need to install a builder.
-
->It may take a few minutes for the builder to be installed.
 
 Choose **Save**.
 
