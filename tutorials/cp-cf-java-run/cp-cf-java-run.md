@@ -44,13 +44,14 @@ If you get the error, do the following:
 
     ![project-settings-section](project-settings-section.png)
 
-  2. Select the **API Endpoint** that matched your **SAP Cloud Platform** region (**US** or **EU**).
+  2. Select the **API Endpoint** that matched your **SAP Cloud Platform** region ( **US** or **EU** ).
+
+    ![cloud-foundry-build](cloud-foundry-build.png)
 
   3. Enter your **User E-mail** and **password** to authenticate.  
 
-  4. After authenticating, click **Install Builder**.
 
-    ![cloud-foundry-build](cloud-foundry-build.png)
+
 
 Now that this is complete, go back and run your Java app again.
 

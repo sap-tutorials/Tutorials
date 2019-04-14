@@ -114,7 +114,6 @@ Once you successfully log in, if you have a space configured, it will automatica
 
 Make sure to save to keep your Cloud Foundry space preferences.
 
->When working on applications, you may get an error about not having a builder for the space. If you need to install a builder, click **Install Builder** on this page and then **Save**.
 
 [DONE]
 [ACCORDION-END]
