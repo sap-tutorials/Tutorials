@@ -3,7 +3,7 @@ title: Display a CDS View Using ALV with IDA
 description: Display a CDS view in the SAP List Viewer with Integrated Data Access (IDA).
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
+tags: [  tutorial>beginner, topic>abap-development ]
 time: 15
 
 ---
@@ -227,10 +227,6 @@ The tooltip information for the Paid column has been changed:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Create an IDA for the CDS view `Z_Customers`.
-The code should be one line only and should take the form <class>...<method>...[arguments] , similar to the statement in the sample code.
-Since the validation engine is case-sensitive, please enter your code entirely in lowercase.
-Enter your code in the box below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]

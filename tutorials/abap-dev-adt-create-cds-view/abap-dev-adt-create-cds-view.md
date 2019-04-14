@@ -3,11 +3,12 @@ title: Create a Simple ABAP CDS View in ADT
 description: You will learn how to create a CDS (Core Data Services) view using ABAP Development Tools (ADT).
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
+tags: [  tutorial>beginner, topic>abap-development ]
 time: 20
 
 ---
 ## Prerequisites
+- Run the transaction `SEPM_DG_OIA_NEW` or transaction `STC01 -> tasklist SAP_BASIS_EPM_OIA_CONFIG`. (If you do not, your CDS view will display empty.)
 -	**Tutorial**: [Create an ABAP Package](abap-dev-create-package)
 
 ## Details
@@ -185,9 +186,6 @@ Open the CDS View in the Data Preview by choosing **F8**. Your CDS View should l
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Add a new field to your CDS view for the **product name**. Find the correct association and field name by using the definition of `sepm_sddl_so_invoice_item` (**`F3`**).
-Your answer should be one line of code only, and take the form `<association(s)>.fieldname` .
-Enter your line of code in the box below and choose **Submit Answer.**
 
 [VALIDATE_1]
 [ACCORDION-END]
