@@ -697,7 +697,7 @@ Congratulations on helping Thomas find and collaborate with other developers!
 Here's how you can get started with any developer-focused topic in SAP HANA and more:
 
 -   **SAP Developer Center**: You'll find plenty of free downloads and missions to help you with different topics on developers.sap.com. You can learn new topics like [machine learning](https://developers.sap.com/group.hxe-aa-movielens-sql.html), dive into [geospatial](https://developers.sap.com/group.hana-aa-spatial-get-started.html) or switch to a full SAP HANA, express edition image with XS Advanced, to [create cloud native applications with micro-services](https://developers.sap.com/mission.xsa-get-started.html)
--   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](blogs.sap.com), and many are willing to answer your questions [in the Q&A](https://answers.sap.com/index.html)
+-   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](https://blogs.sap.com), and many are willing to answer your questions [in the Q&A](https://answers.sap.com/index.html)
 -   **Community events**: You can also check out [events](https://www.sap.com/community/events.html) closest to you in order to meet other developers.
 
 
