@@ -116,6 +116,7 @@ When you're done, finish by saving the destination with **`Save`**.
 [ACCORDION-BEGIN [Step : ](Check the connection)]
 
 Click on the `Check Connection` icon on the newly created Destination to see if everything works.
+
 ![check](./checkdest.png)
 
 [VALIDATE_1]

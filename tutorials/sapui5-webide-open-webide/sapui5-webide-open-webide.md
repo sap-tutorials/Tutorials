@@ -1,6 +1,8 @@
 ---
 title: Open SAP Web IDE Full-Stack and make it ready for Cloud Foundry Development
-description: Enable and open SAP Web IDE Full-Stack in SAP Cloud Platform. Configure the CF API endpoint to deploy
+description: Enable and open SAP Web IDE Full-Stack in SAP Cloud Platform. Configure the CF API endpoint to deploy.
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 time: 5
