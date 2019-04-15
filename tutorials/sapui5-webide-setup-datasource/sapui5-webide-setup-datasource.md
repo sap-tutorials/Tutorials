@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 
 ## Details
 ### You will learn  
-Now that you have set up a destination in the SAP Cloud Platform cockpit, you will connect that destination to your local application.  
+Now that you have set up a destination in the SAP Cloud Platform cockpit, you will connect that destination to your application.  
 
 
 There are three steps to connect the OData service to your application.  
@@ -125,7 +125,7 @@ In a [previous tutorial](https://developers.sap.com/tutorials/hcp-create-destina
 
     ![preview of the data coming from the server](test-6.png)
 
-Expand the nodes **`<edmx:Edmc>`**, **`<edmx: DataServices>`** and the **`first <Schema> node`** in the Chrome Network trace. 
+Expand the nodes **`<edmx:Edmc>`**, **`<edmx: DataServices>`** and the **`first <Schema> node`** in the Chrome Network trace.
 
 [VALIDATE_1]
 [ACCORDION-END]
