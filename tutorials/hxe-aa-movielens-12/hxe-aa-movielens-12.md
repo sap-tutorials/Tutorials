@@ -158,7 +158,7 @@ Paste the following content:
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui"
   xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
   <Panel expandable="false" headerText="Results for the APL Recommendation Algorithm">
-    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="user_results_apl"
+    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" id="user_results_apl"
       rows="{ path: 'odata>/apl_recommendation_collaborative', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
       <ui:columns>
         <ui:table.Column sortProperty="MOVIEID" width="10%">
@@ -198,7 +198,7 @@ Paste the following content:
     </ui:table.Table>
   </Panel>
   <Panel expandable="false" headerText="Results for the PAL APRIORI Algorithm">
-    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="user_results_pal"
+    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" id="user_results_pal"
       rows="{ path: 'odata>/pal_apriori_collaborative', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
       <ui:columns>
         <ui:table.Column sortProperty="MOVIEID" width="10%">
@@ -256,7 +256,7 @@ Paste the following content:
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui"
   xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
   <Panel expandable="false" headerText="Results for the APL Recommendation Algorithm">
-    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="movie_results_apl"
+    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" id="movie_results_apl"
       rows="{ path: 'odata>/apl_recommendation_contentbased'}">
       <ui:columns>
         <ui:table.Column sortProperty="SIMILAR_MOVIE" width="10%">
@@ -296,7 +296,7 @@ Paste the following content:
     </ui:table.Table>
   </Panel>
   <Panel expandable="false" headerText="Results for the PAL APRIORI Algorithm">
-    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="movie_results_pal"
+    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" id="movie_results_pal"
       rows="{ path: 'odata>/pal_apriori_contentbased'}">
       <ui:columns>
         <ui:table.Column sortProperty="SIMILAR_MOVIE" width="10%">
@@ -353,7 +353,7 @@ Paste the following content:
 ```xml
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui"
   xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-  <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="history"
+  <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" id="history"
     rows="{ path: 'odata>/ratings_detailed', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
     <ui:columns>
       <ui:table.Column sortProperty="USERID" width="10%">
@@ -541,7 +541,7 @@ Paste the following content:
 <mvc:View xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:ui="sap.ui"
   xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:core="sap.ui.core"
   xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="movielens.html.controller.xsodata.results">
-  <Page showHeader="false" press="onNavMenuItemPress" icon="sap-icon://menu" id="master">
+  <Page showHeader="false" icon="sap-icon://menu" id="master">
     <content>
       <Bar>
         <contentMiddle>

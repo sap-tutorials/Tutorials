@@ -9,7 +9,7 @@ time: 15
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
 ### You will learn  
@@ -51,7 +51,7 @@ Enter the following details:
 | Field | Value |
 |----|----|
 | Application Name | `MyDeliveries` |
-| Application Identifier | `com.sap.tutorials.demoapp.MyDeliveries` |
+| Identifier | `com.sap.tutorials.demoapp.MyDeliveries` |
 | Authentication | `OAuth2` |
 
 ![Project Properties](fiori-ios-scpms-create-app-teched18-part1-09.png)
@@ -115,7 +115,7 @@ Enter the following details:
 |----|----|
 | Product Name | `MyDeliveries` |
 | Organization Name | `<your company name>` |
-| Organization Identifier | `com.sap.tutorials.demoapp` |
+| Organization Identifier | `com.tutorials.demoapp` |
 | Path | `<choose a local destination>` |
 
 ![Project Properties](fiori-ios-scpms-create-app-teched18-part1-15.png)
@@ -138,9 +138,7 @@ Based on this metadata, the OData proxy classes will be generated for the Xcode 
 
 In addition, the configuration settings you have provided in the SDK Assistant are now being sent to SAP Cloud Platform Mobile Services.
 
-> **Note:** If you have already 5 native applications defined in SAP Cloud Platform Mobile Services, the SDK Assistant will give the following error:
-
-> ![Optional Features](fiori-ios-scpms-create-app-teched18-part1-16.png)
+> **Note:** If you have already 5 native applications defined in SAP Cloud Platform Mobile Services, the SDK Assistant will give you an error.
 
 > In that case, log on to your **SAP Cloud Platform mobile Services** account at `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete it in order for the SDK Assistant to add the new application configuration.
 
@@ -149,9 +147,7 @@ In addition, the configuration settings you have provided in the SDK Assistant a
 
 [ACCORDION-BEGIN [Step 7: ](Examine the generated Xcode project)]
 
-You can now select the `MyDeliveries` application project under **Recent Projects** in the SDK Assistant.
-
-![Xcode project overview](fiori-ios-scpms-create-app-teched18-part1-17.png)
+You can now select the `MyDeliveries` application project under **Recent Projects** in the SDK Assistant's starting screen.
 
 > If Xcode does not open automatically to show your project, click on the project name in the SDK Assistant and click **Open**.
 

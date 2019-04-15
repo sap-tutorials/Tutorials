@@ -392,7 +392,7 @@ Paste the following content:
 				</ui:table.Table>
 			</IconTabFilter>
 			<IconTabFilter text="Model">
-				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" height="100%" rows="{path : 'results>/tables/MODEL'}">
+				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" rows="{path : 'results>/tables/MODEL'}">
 					<ui:columns>
 						<ui:table.Column sortProperty="key" filterProperty="key">
 							<Label text="Key"/>
@@ -428,7 +428,7 @@ Create a new file **`auto_arima.view.xml`**.
 This is the full path of the created file:
 
 ```
-forecast/html/resources/webapp/view/algorithms/pal/auto_arima_results.view.xml
+forecast/html/resources/webapp/view/algorithms/pal/auto_arima.view.xml
 ```
 
 Paste the following content:

@@ -4,16 +4,15 @@ description: A successful application has to target a global audience, and softw
 auto_validation: true
 primary_tag: operating-system>ios
 tags: [  tutorial>how-to, tutorial>intermediate, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
----
-## Prerequisites  
-- [Introduction to iOS development resources and Xcode](https://developers.sap.com/tutorials/xcode-introduction.html)
+time: 20
 
+---
 
 ## How-To Details
-In this tutorial you will learn how to separate your code from your texts, collect these text in string files and have them machine translated using the SAP Translation Hub
+  - How to separate your code from your texts
+  - How to collect texts in string files
+  - How to machine translate texts using SAP Translation Hub
 
-### Time to Complete
-**20 Min**.
 
 ---
 

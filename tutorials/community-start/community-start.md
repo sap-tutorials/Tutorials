@@ -3,7 +3,7 @@ title: Tour the SAP Community
 description: Explore the various features of SAP Community, familiarize yourself with community guidelines, discover how to get the most out of your membership, and earn the Tour the Community badge.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sap-community ]
+tags: [  tutorial>beginner, topic>sap-community  ]
 primary_tag: topic>sap-community
 ---
 
@@ -194,6 +194,8 @@ Completing this tutorial will grant you the ability to write blog posts (if you 
 2. Log in.
 
 3. Go to the [Write a Blog Post](https://blogs.sap.com/wp-admin/post-new.php) page to confirm your permissions.
+
+If your blogging permissions haven't changed, please make sure that you completed all of the actions listed in Step 4 above, then complete Step 11 again. If you are still unable to write a blog post (after confirming that you have completed all of the actions in Step 4, then in Step 11), please contact <a href="mailto:community@sap.com">community@sap.com</a>.
 
 [DONE]
 [ACCORDION-END]

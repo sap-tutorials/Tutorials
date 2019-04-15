@@ -3,7 +3,7 @@ title: Edit Web Content in your Portal Freestyle Site
 description: Edit the web content of your Portal freestyle site in the Web Content Editor tool.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
-tags: [tutorial>beginner,  topic>cloud, products>sap-cloud-platform-portal ]
+tags: [ tutorial>beginner,  topic>cloud, products>sap-cloud-platform-portal ]
 ---
 
 ## Prerequisites  

@@ -9,7 +9,7 @@ time: 25
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
 ### You will learn  
@@ -25,8 +25,6 @@ By default, if the user taps on the **`DeliveryStatus`** row in the detail page 
 In Xcode, open `PackagesTypeDetailViewController.swift` and locate the function `tableView(_:didSelectRowAt:)`.
 
 > **Hint:** You can use the `Open Quickly` feature of Xcode to search for the `PackagesTypeDetailViewController` class with `Command + Shift + O`. Once you've opened the file, you can quickly jump to the `tableView(_:didSelectRowAt:)` function by using the **jump bar** at the top of the editor area pane.
-
-**FIXME: INSERT JUMP BAR SCREENSHOT HERE**
 
 ![Jump bar](fiori-ios-scpms-create-app-teched18-part4-0.png)
 

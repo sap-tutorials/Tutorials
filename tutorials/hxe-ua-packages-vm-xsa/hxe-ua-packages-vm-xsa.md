@@ -1,22 +1,21 @@
 ---
 title: Install Optional Packages
 description: Once SAP HANA, express edition is installed and running, use the server's built-in command line Download Manager to download optional installation packages directly to your VM.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 20
 ---
 
 <!-- loio6bb4c7e861654519bb922e7e80a77a0b -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
+ - **Tutorials:**  
 
 ## Details
 ### You will learn
 You will learn how to use the built-in command line Download Manager to install optional installation packages.
-
-### Time to Complete
-20 min
 
 ---
 
@@ -26,7 +25,7 @@ It is possible to download optional installation packages during the server inst
 
 Using the server's built-in command line Download Manager to download optional installation packages directly to your VM is the fastest and easiest way to install optional packages, as it saves you from having to transfer files from your client machine to the VM.
 
-[ACCORDION-BEGIN [Step 1: ](Choose optional installation packages)]
+[ACCORDION-BEGIN [Step 1: ](Choose optional installation packages.)]
 
 Decide what optional installation packages you want to install.
 
@@ -43,7 +42,7 @@ Decide what optional installation packages you want to install.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Locate the package-specific installation tutorials)]
+[ACCORDION-BEGIN [Step 2: ](Locate the package-specific installation tutorials.)]
 
 Optional installation packages have their own tutorials. Use this table to find the installation tutorial you're looking for:
 

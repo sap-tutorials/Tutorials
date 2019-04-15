@@ -47,7 +47,7 @@ To get to your API Sandbox URL, click on the **Details** tab.
 The API Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/topicdetection
+https://sandbox.api.sap.com/mlfs/api/v2/text
 ```
 
 To get to your API key, click on the **Show API Key** button.
@@ -283,7 +283,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 		"numKeywordsPerTopic": 15,
 		"numFeatures": 20
 	},
-	"url": "/ml-dest/topicdetection/topic-detection",
+	"url": "/ml-dest/text/topic-detection",
 	"method": "POST",
 	"accept": "application/json",
 	"fileType": "zip,tar",

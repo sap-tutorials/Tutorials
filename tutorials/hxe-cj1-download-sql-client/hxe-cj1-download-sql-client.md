@@ -27,8 +27,8 @@ You will learn how to download and configure am open source database client and 
 This tutorial series will use the client `DBeaver`. You can choose to install any other client that allows you to connect to your SAP HANA, express edition, database and enter SQL commands.
 
 > Here are some suggestions for other tools to connect with the SAP HANA, express edition database:
-> - [Install the HANA plugin for Microsoft Visual Studio](https://sap.com/developer/groups/hxe-install-hana-plugin-microsoft-visual-studio.html)
-> - [Use plugin for Eclipse](https://sap.com/developer/tutorials/hxe-howto-eclipse.html)
+> - [Install the HANA plugin for Microsoft Visual Studio](https://developers.sap.com/group.hxe-install-hana-plugin-microsoft-visual-studio.html)
+> - [Use plugin for Eclipse](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
 
 [Download `DBeaver`](http://dbeaver.jkiss.org/download/) and follow the instructions to install it.
 
@@ -40,7 +40,7 @@ Look for the SAP HANA connector and click on **Next**
 
 ![Connect to SAP HANA](1.png)
 
-Enter your hostname (for example, `hxehost`) if you have [mapped it in your hosts file](https://sap.com/developer/tutorials/hxe-ua-hosts.html) or external IP address, username (for example, **SYSTEM**, unless you have already set up another administrator user) and the port: 3XX15, where XX is the instance number (default is 90). If you are using the Docker container, the default port for the first tenant database is 39041.
+Enter your hostname (for example, `hxehost`) if you have [mapped it in your hosts file](https://developers.sap.com/tutorials/hxe-ua-hosts.html) or external IP address, username (for example, **SYSTEM**, unless you have already set up another administrator user) and the port: 3XX15, where XX is the instance number (default is 90). If you are using the Docker container, the default port for the first tenant database is 39041.
 
 > **Important note**  
 > SAP HANA, express edition includes a default tenant database called `HXE` and a system database.
@@ -122,13 +122,13 @@ Replace the login details with those of the new user:
 
 ![CODEJAMMER](8.png)
 
-You are now set to start development. Check the [tutorial section in the Developer Center](https://sap.com/developer/topics/sap-hana.tutorials.html#tutorials).
+You are now set to start development. Check the [tutorial section in the Developer Center](https://developers.sap.com/topics/sap-hana.tutorials.html#tutorials).
 
 Here are some suggestions:
 - [Create your first application with advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html)
 - [Create a Table and Upload data into SAP HANA, express edition ](https://developers.sap.com/tutorials/hxe-cj1-create-table-upload-data.html)
 - [Setup your instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
-- [Get started with Geospatial](https://sap.com/developer/tutorials/hana-spatial-intro1-point.html)
+- [Get started with Geospatial](https://developers.sap.com/tutorials/hana-spatial-intro1-point.html)
 - [Check sample applications using different drivers and languages such as Node.js, Python](https://developers.sap.com/group.hxe-tiny-world.html)
 
 [ACCORDION-END]

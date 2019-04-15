@@ -1,6 +1,7 @@
 ---
 title: Create a sample application on SCP Neo using SAP S/4HANA Cloud SDK
 description: The following steps will explain how to create your very first Hello World sample application on SCP Neo using the SAP S/4HANA Cloud SDK. If you want to follow this tutorial, it is highly recommended checking out the first tutorial in the series. You will not need any additional software as the server will run on your local machine.
+auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
@@ -13,8 +14,15 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 - **Tutorial:** [Connect to OData service on Neo using SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html)
 
 ### You will learn  
-The tutorial will show you the first steps when developing applications for the SCP Neo using the SAP S/4HANA Cloud SDK. You will generate a project stub using a `Maven Archetype` and afterwards spend some time understanding the project structure and its artifacts. Then you will implement and understand the Hello World Servlet and an integration test. At the end, you will deploy your application on Neo.
+The tutorial will show you the first steps when developing applications for the SCP Neo using the SAP S/4HANA Cloud SDK. To be precise, we will cover the following steps:
 
+ 1. Generate a project stub using a Maven Archetype
+ 2. Understand the project structure and its artifacts
+ 3. Implement and understand the Hello World Servlet
+ 4. Implement and understand the integration test
+ 5. Deployment
+
+![deployed application result](deployed_application_result.png)
 
 ### Time to Complete
 **20 Min**
@@ -48,17 +56,21 @@ cd /path/to/firstapp
 mvn clean install
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Understand the project structure and its artifacts)]
 Once the Maven project is generated, you can open your favorite IDE and load the project as `Maven Project`. After importing the project into your IDE, the overall structure will look like this:
+
 ![project folders](project_folders.png)
+
 The first thing you will notice, are the different directories:
 
-  - application
+  - `application`
   - `cx-server`
-  - integration-tests
-  - unit-tests
+  - `integration-tests`
+  - `unit-tests`
 
 These are Maven `submodules`, and they serve different aspects of your code application, test and deployment environment. The following separation of modules makes it possible to run dedicated unit tests and integration tests without deploying the application.
 
@@ -113,6 +125,8 @@ This separation of test modules makes it possible to just run unit tests and int
 
 During development it becomes important to test newly implemented code on the external services, i.e. logic running in a distributed environment. This is where an integration test is an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain its operation inside a dedicated Maven `submodule`. That way the runnable application itself can be later shipped without tests and their dependency.
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -121,8 +135,9 @@ During development it becomes important to test newly implemented code on the ex
 Now that you understand the project structure, take a closer look at the `HelloWorldServlet.java`
 
 ```java
+package com.sap.cloud.sdk.tutorial;
+
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -131,11 +146,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
+
 @WebServlet("/hello")
 public class HelloWorldServlet extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(HelloWorldServlet.class);
+    private static final Logger logger = CloudLoggerFactory.getLogger(HelloWorldServlet.class);
 
     @Override
     protected void doGet( final HttpServletRequest request, final HttpServletResponse response )
@@ -151,12 +168,16 @@ The `HelloWorldServlet` extends `HttpServlet`, so this will be an `HTTP` endpoin
 
 By overriding the function `doGet`, you define what happens when a client performs an `HTTP GET` request on the `/hello` route. In this case it simply writes a response containing **`Hello World!`**
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Integration test)]
 Let's take a look into the integration test project. It already contains a test for our simple `HelloWorldServlet`:
 
 ```java
+package com.sap.cloud.sdk.tutorial;
+
 import com.jayway.restassured.RestAssured;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
@@ -210,10 +231,12 @@ public class HelloWorldServiceTest
 
 As you can see, `HelloWorldServiceTest` uses `JUnit` to define the test.
 
-It declares `BeforeClass` and `Deployment` for the general test setup.
-The `MockUtil` provides easy access to mocked backend systems, e.g. preconfigured ERP connections for the test cases.
-A `WebArchive` is deployed as a test run setup, including predefined additional classes, here `HelloWorldServlet.class` .
-The integration test features `RestAssured` to easily run `WebService` calls over `HTTP`. Later you will see the advantages of having this library on hand when dealing with more sophisticated examples. Here it runs an assertion test on the result of a `GET` request to the local `/hello` route.
+- It declares `BeforeClass` and `Deployment` for the general test setup.
+- The `MockUtil` provides easy access to mocked backend systems, e.g. preconfigured ERP connections for the test cases.
+- A `WebArchive` is deployed as a test run setup, including predefined additional classes, here `HelloWorldServlet.class` .
+- The integration test features `RestAssured` to easily run `WebService` calls over `HTTP`. Later you will see the advantages of having this library on hand when dealing with more sophisticated examples. Here it runs an assertion test on the result of a `GET` request to the local `/hello` route.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -226,13 +249,13 @@ mvn clean install
 mvn scp:clean scp:push -pl application
 ```
 
-The first command will cascade the goal execution of clean and install to both Maven `submodules`. It will break in case of any compilation errors or test failures.
+The first command will cascade the goal execution of `clean` and `install` to both Maven `submodules`. It will break in case of any compilation errors or test failures.
 
 The second command will run a cleanup and startup for the `SCP Neo` application. The `-pl` argument defines the project location in which the Maven goals are being executed. If there is already a previously started instance of the application running, the goal `scp:clean` will try to stop it on `localhost:8080` and will remove the cached server files of the application. `scp:push` will start the application on `localhost:8080`. The web server is started as background process and will take additional seconds to initialize. When the second command asks for a `username` for the  `destination ErpQueryEndpoint`, enter any dummy username, for example, `DUMMY`, followed by any value for the password. You can enter arbitrary values for now, because the destination is not used at this point of the tutorial.
 
 ![deployment](deployment.png)
 
-Once a **couple of seconds** have passed, you can open a browser and go to `http://localhost:8080/hello`
+Once a **couple of seconds** have passed, you can open a browser and go to `http://localhost:8080/firstapp-application/`
 
   - You will be greeted with a login screen.
   - Enter _test_ / _test_
@@ -244,28 +267,31 @@ Once a **couple of seconds** have passed, you can open a browser and go to `http
 _Hello World!_
 
 That's it.
+
 When you are done and want to close the local `SCP` deployment, please use the `scp:clean` command for the application project. It will close any connection and stop the server.
 
 ```
 mvn scp:clean -pl application
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Remote deployment)]
 
-As a requirement make sure to have the `Neo CLI` for the `Java EE 6 Web Profile` available.
+As a requirement make sure to have the [`Neo CLI`](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76132306711e1014839a8273b0e91070.html) for the `Java EE 6 Web Profile` available.
 
 In case you are missing this tool, feel free to download it. A traditional installation is not required:
 
 
 **Note:** The `Neo CLI` comes packaged with the `SAP Cloud Platform Neo Environment SDK`.
 
-  - Go to `https://tools.hana.ondemand.com/#cloud`
-  - Download and unzip the latest `neo-javaee6-wp-sdk-######.zip` alias `Java EE 6 Web Profile`
+  - Go to <https://tools.hana.ondemand.com/#cloud>
+  - Download and unzip the latest `neo-javaee7-wp-sdk-######.zip` alias `Java EE 7 Web Profile`
   - Go into the directory `tools` and find the `neo.bat` (Windows) or `neo.sh` (`Mac/Linux`)
 
-Please consider reading the `readme.txt` file in case you use a proxy server for connecting to the host. Also it is recommended adding the `tools` directory to your `PATH` variable in order to run its executables from any location.
+Please consider the [`documentation`](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613dee4711e1014839a8273b0e91070.html) or `readme.txt` file in case you use a proxy server for connecting to the host. Also it is recommended adding the `tools` directory to your `PATH` variable in order to run its executables from any location.
 
 
 Once you open your Neo platform website, you will see your <span style="color:purple">`account name`</span> as well as the <span style="color:green">`hostname`</span> of the service.
@@ -311,14 +337,17 @@ If you want to list all running applications use the `list-applications` command
 
 ![Neo deployment list of applications](neo-cli-03-list-applications.png)
 
-On the `Neo` website you will find the corresponding URL where your application is reachable.
+On the `Neo` website you will find the corresponding URL where your application is reachable. It will be listed in the application's details page and might follow the following pattern: `<https://[application][subaccount].[host]/[application]-application/>` from the values above.
 
 ![Neo deployment result](neo-cli-result.png)
 
 _Hello World!_
 
 That's it.
+
 To find additional Neo commands, e.g. for stopping and `undeploying` applications, please take a look into the official lists of `Neo` [Console Client Commands](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/56e309f496cc446ba441d862db94cb18.html).
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -349,5 +378,19 @@ If you are using `PowerShell` on Windows, always put Maven arguments (supplied w
 ```
 mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-DarchetypeArtifactId=scp-neo-javaee6" "-DarchetypeVersion=LATEST"
 ```
+
+[DONE]
+
+[ACCORDION-END]
+
+ACCORDION-BEGIN [Appendix: ](Test yourself)]
+
+[VALIDATE_1]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+
+[VALIDATE_2]
 
 [ACCORDION-END]

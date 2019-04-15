@@ -156,15 +156,32 @@ The application router will use the XSUAA instance to authenticate the user befo
 
     ![Create XSUAA Instance](03-xsuaa-003.png)
 
-4. Provide the following parameters and choose **`Next`**:
-```xml
-{
-        "xsappname" : "approuter-demo",
-        "tenant-mode": "dedicated"
-}
-```
+4. On the next screen, you specify authorization parameters for your application. Scope `uaa.user` is required for the token exchange between the application (in our case this is the application router) and the instance of the destination service. Provide the following parameters and choose **`Next`**:
+
+    ```json
+    {
+      "xsappname": "approuter-demo",
+      "tenant-mode": "dedicated",
+      "description": "Security profile of called application",
+      "scopes": [
+        {
+          "name": "uaa.user",
+          "description": "UAA"
+        }
+      ],
+      "role-templates": [
+        {
+          "name": "Token_Exchange",
+          "description": "UAA",
+          "scope-references": [
+            "uaa.user"
+          ]
+        }
+      ]
+    }
+    ```
 ![Create XSUAA Instance](03-xsuaa-004.png)
-> More information about parameters for the XSUAA instance can be found in the [official documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html).
+> Every user in the XSUAA has the scope `uaa.user` assigned by default. It basically says that it is a user (and for example, not a client) who owns the token. By using this scope in the role template, the scope will be part of all exchanged tokens by default, even if users do not have the corresponding role assigned explicitly at all. More information about parameters for the XSUAA instance can be found in the [official documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/517895a9612241259d6941dbf9ad81cb.html).
 
 5. On the next screen you can assign this service instance to an application. In this tutorial we will create such bindings by specifying the required services in the manifest the application router, so choose **`Next`**.
 

@@ -1,15 +1,15 @@
 ---
-title: Explore data in SAP Vora in SAP Data Hub, trial edition 2.3
-description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition 2.3.
-auto_validation: false
-primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
+title: Explore data in SAP Vora in SAP Data Hub, trial edition 2.4
+description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition 2.4.
+auto_validation: true
+primary_tag: products>SAP-data-hub
+tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-VORA ]
 ---
 
 ## Details
-Please note this tutorial will be removed on 6th February 2019. SAP Data Hub 2.4 tutorials will be released instead.
 ### You will learn  
-During this tutorial, you will learn that Metadata Explorer cannot only be used on files (for example stored in Google Cloud Storage). Metadata Explorer also works on other data stores, in particular SAP Vora.
+During this tutorial, you will learn that Metadata Explorer cannot only be used on files (for example stored in AWS S3 or Google Cloud Storage). Metadata Explorer also works on other data stores, in particular SAP Vora.
+Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
 ### Time to Complete
 **30 Min**
@@ -17,7 +17,7 @@ During this tutorial, you will learn that Metadata Explorer cannot only be used 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Load data into SAP Vora)]
-To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub App Launchpad (`https://sapdatahubtrial/`) via a web browser.
+To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. Once you have opened the Launchpad click on the **Vora Tools**
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
@@ -31,37 +31,53 @@ Create a new On Disk Relational Table by clicking **Create New** button. If you 
 
 ![picture_03](./datahub-trial-v2-discovery-part02_03.png)  
 
-Enter the following information to create the relational table and then click **Next** :
+Enter the following information to create the relational table if you are using AWS S3 and then click **Next** :
 
 | Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                                                       |
 | :------------------------------ | :------------------------------------------------------------------------------------------- |
-| `Name`                         | `CUSTOMERS`                                                                                 |
-| `Schema`                       | `default`                                                                                      |
-| `Engine`                       | `Relational Disk`                                                                                |
-| `File Type`                    | `CSV`                                                                                       |
-| `Delimiter`                    | `;`                                                                                         |
-| `CSV Skip Value`               | `1`                                                                                         |
-| `File System`                  | `GCS`                                                                                       |
-| `GCS Client Email`             | from your Google Cloud Platform service account (attribute `client_email` from .json file)  |
-| `GCS Private Key`              | from your Google Cloud Platform service account (attribute `private_key` from .json file **without** `\n` at the start and end of the attribute ) |
-| `GCS Project ID`               | from your Google Cloud Platform service account (attribute `project_id` from .json file)    |
-| `GCS Path`                     | your GCS bucket                      |
-| `GCS File Path`                | file path via **Browse** button, in our case `/Customers.csv`                               |
+| `Name`                         | `CUSTOMERS`                                                                                       |
+| `Schema`                       | `default`                                                                                         |
+| `Engine`                       | `Relational Disk`                                                                                 |
+| `Table Type`                   | `Data Source`                                                                                     |
+| `File System`                  | `S3 or GCS`                                                                                       |
+| `Connection Type`              | `Manual`                                                                                          |
+| `S3 Host`                      | `Should be empty`                                                                                 |
+| `S3 Access Key Id`             | `from your AWS management console go to My security credentials and copy it from there`           |
+| `S3 Secret Access Key`         | `from your AWS management console go to My security credentials and copy it from there`           |
+| `S3 Region`                    | `Open the Connection Management. Click on the "Action" button of the Connection Id CLOUD_STORAGE and the on "Edit". Copy the value of "Region".`          |
+| `S3 Bucket`                    | `Open the Connection Management. Click on the "Action" button of the Connection Id CLOUD_STORAGE and the on "Edit". Copy the value of "ROOT PATH".`               |
+| `File Path`                    | `file path via **Browse** button, in our case /Customers.csv`                                     |
 
-![picture_04](./datahub-trial-v2-discovery-part02_04.png)  
+
+
+Enter the following information to create the relational table if you are using GCS and then click **Next** :
+
+| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                                                       |
+| :------------------------------ | :------------------------------------------------------------------------------------------- |
+| `Name`                         | `CUSTOMERS`                                                                                       |
+| `Schema`                       | `default`                                                                                         |
+| `Engine`                       | `Relational Disk`                                                                                 |
+| `Table Type`                   | `Data Source`                                                                                     |
+| `File System`                  | `GCS`                                                                                             |
+| `Connection Type`              | `Connection Manager`                                                                              |
+| `Connection ID`                | `CLOUD_STORAGE`                                                                                   |
+| `File Path`                    | `file path via **Browse** button, in our case /Customers.csv`                                     |
 
 Finally click **Finish (2)** to create the table.
 
-![picture_05](./datahub-trial-v2-discovery-part02_05.png)
+![picture_04](./datahub-trial-v2-discovery-part02_04.png)
+
 
 After the table is created, click on the **Data Preview** button to display the preview of the loaded table data.
+
+![picture_05](./datahub-trial-v2-discovery-part02_05.png)
 
 [DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Profile table)]
-Go back to the SAP Data Hub Application Launchpad and Navigate to **Metadata Explorer**.
+Go back to the SAP Data Hub Application Launchpad and navigate to **Metadata Explorer**.
 
 ![picture_06](./datahub-trial-v2-discovery-part02_06.png)
 

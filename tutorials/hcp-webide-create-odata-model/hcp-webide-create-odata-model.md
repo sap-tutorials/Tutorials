@@ -348,7 +348,7 @@ Text to enter:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Add assiciation element)]
+[ACCORDION-BEGIN [Step 12: ](Add association element)]
 
 The next addition is the `Association` element which (as the name implies) represents an association in an entity model. The `Association` element must contain a `Name` and two `End` elements – and can also contain referential constraints. The attributes you will use are explained below.
 

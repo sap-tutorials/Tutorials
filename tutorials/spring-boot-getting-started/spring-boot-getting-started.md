@@ -1,11 +1,11 @@
 ---
-title: Getting started with Spring Boot
-description: Learn how-to develop a simple Spring Boot sample application that can be deployed to SAP Cloud Platform
+title: Get Started with Spring Boot
+description: Develop a simple Spring Boot sample application that can be deployed to SAP Cloud Platform.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform, tutorial>how-to ]
+time: 10
 ---
 ## Prerequisites  
-  - **Proficiency:** Beginner
   - **Software Requirements:** Java, Maven
   - **Tutorials:** [Getting Started with the SAP Cloud Platform Tools for Java](https://hcp.sap.com/developers/TutorialCatalog/jav100_01_java_setup_eclipse.html)
 
@@ -16,8 +16,6 @@ tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform
 ## How-To Details
 This document will teach you how-to develop a simple web application using [Spring Boot](http://projects.spring.io/spring-boot/). Given Spring Boot's approach of embedding a servlet container (such as Tomcat, Jetty or Undertow) directly into an executable `JAR` instead of creating a `WAR` file that needs to be explicitly deployed to a runtime environment, this aspect will be the main focus of this how-to exercise. For the sake of simplicity, we keep the rest of the coding fairly basic in order to not distract you from the important stuff.
 
-### Time to Complete
-**10 Min**.
 
 ---
 

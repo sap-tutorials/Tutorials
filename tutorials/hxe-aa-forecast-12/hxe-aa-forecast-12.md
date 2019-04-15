@@ -488,7 +488,7 @@ In the **`"models"`** section, add next to the **`"i18n"`** element the **`"odat
 		"type": "sap.ui.model.json.JSONModel",
 		"preload": true,
 		"uri": "model/default.json"
-	},
+	}
 },
 ```
 
@@ -593,8 +593,7 @@ Paste the following content:
 ```xml
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:ui="sap.ui" xmlns:viz="sap.viz"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<ui:table.Table id="table" visibleRowCount="5" selectionMode="Single" enableBusyIndicator="true" refresh="true"
-		rowSelectionChange="onTableSelectionChange" cellClick="onTableSelectionChange">
+	<ui:table.Table id="table" visibleRowCount="5" selectionMode="Single" enableBusyIndicator="true" rowSelectionChange="onTableSelectionChange" cellClick="onTableSelectionChange">
 		<ui:columns>
 			<ui:table.Column sortProperty="signal_time" filterProperty="signal_time" width="30%">
 				<Label text="Date"/>
@@ -611,7 +610,7 @@ Paste the following content:
 			<ui:table.Column width="10%" visible="{= !!${default>/selected/dataset/hasExtraPredictors} }">
 				<Label text="Extra Predictors"/>
 				<ui:template>
-					<Button icon="sap-icon://search" press="onPressPopover" custom:id="{odata>signal_time}" height="300px" />
+					<Button icon="sap-icon://search" press="onPressPopover" custom:id="{odata>signal_time}"/>
 				</ui:template>
 			</ui:table.Column>
 		</ui:columns>

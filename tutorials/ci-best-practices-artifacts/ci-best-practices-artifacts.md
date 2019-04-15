@@ -37,8 +37,10 @@ There are a lot of artifact repositories on the market that would fit our purpos
 Nexus is a repository manager, this means it is able to host many repositories. These may play different roles in the software development and release process (like snapshot and release repositories). Furthermore, it's possible to have repositories supporting different technical formats.
 This document refers to a Nexus 2 release.
 
-> [Nexus](http://www.sonatype.org/nexus)  
-> [Nexus Downloads](http://www.sonatype.org/nexus/go)  
+> [Nexus](http://www.sonatype.org/nexus)
+>
+> [Nexus Downloads](http://www.sonatype.org/nexus/go)
+>
 > [Nexus Installation Guide](https://books.sonatype.com/nexus-book/reference/installing.html)
 
 #### Prerequisites

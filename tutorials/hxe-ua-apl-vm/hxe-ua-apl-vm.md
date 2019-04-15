@@ -15,11 +15,11 @@ time: 3
 
 ## Details
 ### You will learn
-You will learn how to download and install the `apl.tgz` SAP HANA Automated Predictive Library (APL) package.
+You will learn how to download, extract, and install the `apl.tgz` SAP HANA Automated Predictive Library (APL) package.
 
 ---
 
-SAP HANA Automated Predictive Library is a separate download in the Download Manager. Use the Download Manager to download the SAP HANA Automated Predictive Library package, `apl.tgz`.
+SAP HANA Automated Predictive Library is a separate download. Use the commands in this procedure to download the SAP HANA Automated Predictive Library package `apl.tgz` using the built-in Download Manager (console mode).
 
 [ACCORDION-BEGIN [Step 1: ](Run the memory management script)]
 
@@ -40,8 +40,6 @@ Run the `hxe_gc` memory management script to free up available VM memory.
 3.   When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation 
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
-
-[DONE]
 
 [ACCORDION-END]
 

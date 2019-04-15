@@ -19,7 +19,6 @@ const extractLinks = (content) => {
               const { href } = new URL(mdLink);
               return href;
           } catch (e) {
-              console.warn('Not a valid url', mdLink);
               return undefined;
           }
       })

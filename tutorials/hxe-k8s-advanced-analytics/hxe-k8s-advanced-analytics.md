@@ -11,9 +11,14 @@ primary_tag: products>sap-hana
  - You have registered for [an account in Google Cloud Platform](https://cloud.google.com/free/) (either using the free credits or any type of account).
  - You have registered for [Docker](https://store.docker.com/signup)
 
+## Intro
+SAP HANA is a complete database and application development platform. It lets you use advanced data processing capabilities —text, spatial, predictive, and more— to pull insights from all types of data.
+SAP HANA, express edition is a streamlined version of SAP HANA that can run on laptops and other resource-constrained hosts. The express edition is free to use for in-memory databases up to 32GB of RAM. Memory capacity increases beyond 32GB are available for purchase in the SAP Store.
+
+
 ## Details
 
-Let us help our fellow developer Thomas to learn SAP HANA. On his journey he will find other developers of the community with similar interests, explore who is learning from whom and who are close by. To make it fun and useful we do this all with SAP HANA express edition.
+Ready to explore SAP HANA, express edition? As a fun exercise, you can first help our fictional developer, Thomas, work with other developers in the community to deploy SAP HANA, express edition and use Kubernetes, text analytics, graph and geospatial capabilities.
 
 ![How do we help Thomas](thomas.png)
 
@@ -21,31 +26,31 @@ Let us help our fellow developer Thomas to learn SAP HANA. On his journey he wil
   - How to easily deploy SAP HANA, express edition and SQLPAD from Docker into Google Kubernetes Cluster
   - How to configure persistency and services in Kubernetes for the two containers in the same pod
   - How to access the database from SQLPAD
-  - Explore advanced analytics features in SAP HANA, including the document store, geospatial, graph and linguistic text search functions
+  - How to use advanced analytics features in SAP HANA, including the document store, geospatial, graph and linguistic text search functions
 
 This tutorial will use Google Kubernetes Engine to deploy SAP HANA, express edition and an SQL client. If you do not want to use this method, you can check other [available options to download or install SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html).
 
 ## How do we help Thomas?
-Like most developers, Thomas wants to stay on top of the latest technologies. The first step is to get started with tutorials, like this one. The second step he wants to take is connect with other developers and experts in the SAP Community to share experiences and learn together.
+Like most developers, Thomas wants to stay on top of the latest technologies. His first step is to get started with free tutorials, like this one. The second step is to connect with other developers and experts in the SAP Community to share knowledge and learn together.
 
-Fellow developers from all around the world connect daily to exchange information. We will find out if they share our interest for SAP HANA and related topics by using text analytics on their opinions in the community.
+Fellow developers from all around the world connect daily to exchange information. And we're going to find out if they share Thomas' interest for SAP HANA and related topics by using text analytics on their opinions in the community.
 
-Thanks to the multiple engines in SAP HANA, we will combine text analytics with graph analytics to find out how community members are connected.
+Thanks to the multiple engines in SAP HANA, we'll also combine text analytics with graph analytics to find out how community members are connected.
 
-Finally, we will use the geospatial capabilities in SAP HANA to find out developers closer to Thomas' location in Munich.
+Finally, we'll use the geospatial capabilities in SAP HANA to find out developers closer to Thomas' location in Munich.
 
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log in to the community)]
 
-This tutorial has validations to keep track of completion and make sure you are on track after important steps.
+This tutorial uses validations to track completion and make sure you are all set after finishing important steps.
 
-**Sign in or register** by clicking on the person icon in the top right corner. If you are registering for the first time, all you need is an email address or social media account.
+**Sign in or register** by clicking on the `person` icon in the top right corner. If you're registering for the first time, all you need is an email address or social media account.
 
 ![Log in to Community](zoomlogin.gif)
 
-Use your email address or social media.
+Use your email address or social media account.
 
 ![Log in to Community](community.png)
 
@@ -56,17 +61,17 @@ Use your email address or social media.
 
 This tutorial works either with the free trial [account in Google Cloud Platform](https://cloud.google.com/free/) or with the paid tier.
 
-> Additional options to download or install SAP HANA, express edition for free are [listed at `developers.sap.com`](https://developers.sap.com/topics/sap-hana-express.html). The options for `Database Server Only` and an SQL client like [`DBeaver`](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html), [Visual Studio](https://developers.sap.com/tutorials/hxe-ua-visual-studio.html).
+> Additional options to download or install SAP HANA, express edition for free are [available in the SAP Developer Center](https://developers.sap.com/topics/sap-hana-express.html). There are options for `Database Server Only` and an SQL client like [`DBeaver`](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html), [Visual Studio](https://developers.sap.com/tutorials/hxe-ua-visual-studio.html).
 >
 >&nbsp;
 >
 > **If you decide to use your own instance, mark the first 9 steps as done, and [continue to step 10](https://developers.sap.com/tutorials/hxe-k8s-advanced-analytics.html#9cf5e22c-2112-4084-aad4-9efc68f76078).**
 
-If you have not already, follow the steps to [sign in](https://accounts.google.com/signin) to Google Cloud Platform. Even if you are eligible for the free trial, you will be required to enter credit card details for validation.
+If you haven't done this already, follow the steps to [sign in](https://accounts.google.com/signin) to Google Cloud Platform. Even if you are eligible for the free trial, you'll be required to enter your credit card details for validation.
 
 ![Accept terms](cc2.png)
 
-> Here is more information on [how the free trial works](https://cloud.google.com/free/docs/gcp-free-tier) and [how to disable billing](https://cloud.google.com/billing/docs/how-to/manage-billing-account ).
+> Check out more information on [how the free Google Cloud trial works](https://cloud.google.com/free/docs/gcp-free-tier) and [how to disable billing](https://cloud.google.com/billing/docs/how-to/manage-billing-account ).
 
 [DONE]
 [ACCORDION-END]
@@ -99,14 +104,14 @@ Change the image type to **Ubuntu** and the book disk type to **SSD persistent d
 
 Click **Save**.
 
-**Review** the options. Then Click **create**.
+**Review** the options. Then click **create**.
 
 ![Create a cluster](6.png)
 
 
 > **What is going on?**
 
-> You are creating a Kubernetes cluster with computing capacity for SAP HANA, express edition and a web SQL client, SQLPAD, in a single node. The images for these containers will be pulled from the public `Docker` repository and store. The containers will be connected to each other and have some ports exposed to the internet.
+> You're creating a Kubernetes cluster with the computing capacity for SAP HANA, express edition and a web SQL client, SQLPAD, in a single node. The images for these containers will be pulled from the public `Docker` repository and store. The containers will be connected to each other and have some ports exposed to the Internet.
 
 
 
@@ -122,7 +127,7 @@ Once the cluster has been created successfully, click **Connect**.
 
 ![Create a cluster](8.png)
 
-Click **Run in cloud shell**.
+Click **Run in Cloud Shell**.
 
 ![Create a cluster](9.png)
 
@@ -310,7 +315,7 @@ The file will be automatically saved.
 
 [ACCORDION-BEGIN [Step 6: ](Create a Docker secret)]
 
-You will create a secret with your credentials to log in to Docker and pull the images. If you do not yet have an account, create one by [signing up with Docker](https://store.docker.com/signup).
+You'll create a secret with your credentials to log in to Docker and pull the images. If you don't yet have an account, create one by [signing up with Docker](https://store.docker.com/signup).
 
 ![Saved file](docker.png)
 
@@ -350,7 +355,7 @@ kubectl describe pods
 
 ![Saved file](14.png)
 
-Give it a couple of minutes for the database to start. Here is some reading you can do in the meantime:
+Give it a couple of minutes for the database to start. Check out this explanation in the meantime:
 
 > **What is going on?**
 
@@ -386,9 +391,9 @@ For example:
 
 [ACCORDION-BEGIN [Step 8: ](Log in and configure the database)]
 
-You will now perform some configurations on your database for the advanced analytic features to work.
+You'll now configure your database for the advanced analytic features to work.
 
-First import the file with data for the document store using the following command:
+First, import the file with data for the document store using the following command:
 
 ```ssh
  wget -O ./work/json.csv https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/gcp-hxe-evt-gke-2/json.csv
@@ -531,9 +536,9 @@ Use the following statement to complete the validation below:
 
 [ACCORDION-BEGIN [Step 11: ]( SQL time! Select people in the community with at least one year of experience)]
 
-Free resources, like this tutorial, are a great way to get started. People in the community with more experience and willing to help are a great complement to a learning journey.
+Free resources, like this tutorial, are a great way to get started. People in the community with more experience are often willing to help you on your learning journey. For our developer Thomas, choosing people with more experience means that he can get up to speed quickly.
 
-You will select the people whose experience is 2 years or more. You will also move those records into a columnar table so you can perform advanced analytics only available in the columnar store.
+You will select people whose experience is 2 years or more. You'll also need to move those records into a columnar table so that you can perform advanced analytics that are only available in the columnar store.
 
 Create the columnar table first:
 
@@ -549,7 +554,7 @@ create column table "DEVS"
 ```
 > Note the columnar table has a text index on the field `HINT_TEXT`.
 
-Insert the data from the documents store into the columnar table, filtering out people with tenure lower than 1 year:
+Insert the data from the documents store into the columnar table, filtering out community members with tenure below 1 year:
 
 ```sql
 insert into "DEVS"
@@ -570,9 +575,9 @@ Insert the result of the previous SQL command in the box below to complete the f
 
 [ACCORDION-BEGIN [Step 12: ](Use linguistic text search to find developers who can help)]
 
-There are plenty of different ways of working with SAP HANA: some are interested in the analytics, some keep it running smoothly through system and database administration, and others use it to create data-driven applications. You are looking for those people who like to develop applications.
+There are plenty of different ways to work with SAP HANA. Some developers are interested in its analytics, some keep it running smoothly through system and database administration, and others use it to create data-driven applications. In order to help Thomas, you'll need to look for people who like to develop applications.
 
-You will use a linguistic text search to find out who has said anything related developing applications.
+You'll use a linguistic text search to find out who has said anything related developing applications.
 
 ```SQL
 select "DEVNAME", TO_NVARCHAR("HINT_TEXT"), "LEARNS_FROM"
@@ -585,7 +590,7 @@ Notice how the linguistic search brings all records containing the verb `develop
 
 > Other functions such as fuzzy search, text mining and sentiment analysis can be applied using the text engine in SAP HANA. To learn more about linguistic and other types of search, visit [the official documentation](https://help.sap.com/viewer/691cb949c1034198800afde3e5be6570/2.0.00/en-US/83dc5e659691429f85e8eb02b50a9260.html)
 
-You will use these results to create a table to show who learns from who. This table will be used to create a graph workspace. Create it using the following SQL statement:
+You'll use these results to create a table to show who learns from whom. This table will be used to create a graph workspace. Create it using the following SQL statement:
 
 ```sql
 create column table learning_relation (
@@ -607,9 +612,9 @@ How many records were inserted into the new table?
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Use Graph to find out who learns from who)]
+[ACCORDION-BEGIN [Step 13: ](Use Graph to find out who learns from whom)]
 
-Now that you have a table with learning relations and developers in the community, you can find out how these people are related to each other. One of the ways to represent a network of people is by using a graph database.
+Now that you have a table populated with learning relationships and expert developers in the community, you can find out how these people are related to each other. One of the ways to represent a network of people is by using a graph database.
 
 In SAP HANA, graphs are represented by vertices (in this example, developers) and edges (the connections between them, taken from the field `learns_from`).
 
@@ -632,9 +637,9 @@ CREATE GRAPH WORKSPACE "HANA_GRAPH"
 
 There are some known algorithms to apply on a graph. One of them is the `strongly connected components`. As this is a directed graph (the `learns_from` establishes has a direction from one node to the other), you can establish an index with the most strongly connected members.
 
-In this example, you will find out who are the developers more people are connected to by learning from them either directly or indirectly.
+In this example, you'll find those developers to whom most other developers in the community are connected. In turn, others can learn from them directly or indirectly.
 
-One of the methods to execute calculations on graph workspaces is through a calculation node. These can be created both graphically in SAP Web IDE for SAP HANA and using SQL and an XML definition.
+One of the methods to execute calculations on graph workspaces is through a calculation node. You can create these graphically in SAP Web IDE for SAP HANA, as well as by using SQL and an XML definition.
 
 ```sql
 CREATE CALCULATION SCENARIO "HANA_GRAPH_CS" USING '
@@ -667,7 +672,7 @@ SELECT * FROM "HANA_GRAPH_CS" ORDER BY "COMPONENT" DESC;
 
 [ACCORDION-BEGIN [Step 14: ](Find the closest geographical location)]
 
-So far, you have found the developers with enough years of experience, interest in developing applications and strongly connected. Find out who is closer to Thomas so they can meet at the next community event.
+So far, you've found the most connected developers with two or more years of experience, plus an interest in developing applications. Now find out who is closest to Thomas, so that they can meet him at the next community event.
 
 Thomas is located in Munich, Germany. The geolocation is longitude:  11.569299 latitude: 48.145130
 
@@ -685,13 +690,15 @@ select devname, st_geomFromText( 'Point( 11.569299 48.145130 )', 4326).st_distan
 [VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Who helps me get started?)]
+[ACCORDION-BEGIN [Step 15: ](Who can help me get started?)]
 
-**Congratulations!** Here is how you can get started with any topic in SAP HANA and more:
+Congratulations on helping Thomas find and collaborate with other developers!
 
--   **`developers.sap.com`**: Just like this tutorial, there are plenty of free downloads and missions to help you with different topics. You can learn new topics like [machine learning](https://developers.sap.com/group.hxe-aa-movielens-sql.html),  more about [geospatial](https://developers.sap.com/group.hana-aa-spatial-get-started.html) or switch to a full SAP HANA, express edition image with XS Advanced, to [create cloud native applications with micro-services](https://developers.sap.com/mission.xsa-get-started.html)
--   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](blogs.sap.com) and many are willing to help and answer questions [in the Q&A](answers.sap.com)
--   **Community events**: You can also check the closest events to meet other developers in the [events section in the community](https://www.sap.com/community/events.html).
+Here's how you can get started with any developer-focused topic in SAP HANA and more:
+
+-   **SAP Developer Center**: You'll find plenty of free downloads and missions to help you with different topics on developers.sap.com. You can learn new topics like [machine learning](https://developers.sap.com/group.hxe-aa-movielens-sql.html), dive into [geospatial](https://developers.sap.com/group.hana-aa-spatial-get-started.html) or switch to a full SAP HANA, express edition image with XS Advanced, to [create cloud native applications with micro-services](https://developers.sap.com/mission.xsa-get-started.html)
+-   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](blogs.sap.com), and many are willing to answer your questions [in the Q&A](https://answers.sap.com/index.html)
+-   **Community events**: You can also check out [events](https://www.sap.com/community/events.html) closest to you in order to meet other developers.
 
 
 [DONE]

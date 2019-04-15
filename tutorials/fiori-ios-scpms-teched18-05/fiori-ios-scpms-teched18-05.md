@@ -9,7 +9,7 @@ time: 20
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
 ### You will learn  

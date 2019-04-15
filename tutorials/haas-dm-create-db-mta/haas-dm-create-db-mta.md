@@ -63,7 +63,7 @@ Right-click on the `src` folder, choose `New -> File`
 
 Use the following name
 
-```text
+```Text
 data/performance.hdbtable
 ```
 
@@ -108,7 +108,7 @@ Create a new database artifact under the data folder
 
 Use the following name
 
-```text
+```Text
 comment_text
 ```
 
@@ -136,11 +136,11 @@ TEXT ANALYSIS ON
 
 You will be referring to this service later for integrations. For that reason, you will specify a name for the HDI container when it is created by SAP Web IDE.
 
-Open the file `mta.yaml` on the `MTA Editor` tab
+Open the file `mta.yaml` on the `MTA Editor` tab.
 
 ![New DB artifact](14.png)
 
-Open the **Resources** tab. Under **Parameters**, use the **+** sign to create the following key-value pair
+Open the **Resources** tab. Under **Parameters**, use the **+** sign to create the following key-value pair.
 
 | key | Value |
 |:------|:---------|
@@ -148,7 +148,7 @@ Open the **Resources** tab. Under **Parameters**, use the **+** sign to create t
 
 ![New DB artifact](15.png)
 
-**Save** the file
+**Save** the file.
 
 ![New DB artifact](16.png)
 
@@ -188,7 +188,7 @@ For testing and development purposes, you can use a local file to load data into
 
 Create the configuration for the upload first.  In the `data` folder, create a file called:
 
-```TEXT
+```Text
 loads/dataload.hdbtabledata
 ```
 
@@ -214,7 +214,7 @@ Paste the following content into it:
 }		
 ```
 
-Download this `csv` [file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-create-db-mta/performance.csv) into your computer. Upload it into the **loads** folder using the `Import` option
+Download this `csv` file -- `https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/haas-dm-create-db-mta/performance.csv` into your computer. Upload it into the **loads** folder using the `Import` option
 
 ![Data load](20.png)
 

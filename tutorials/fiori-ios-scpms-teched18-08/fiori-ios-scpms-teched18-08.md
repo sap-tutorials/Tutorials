@@ -9,7 +9,7 @@ time: 20
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 
 ## Details
 ### You will learn
@@ -110,7 +110,7 @@ Run the application and you should see the Fiori marker on the map view.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a FUIMapDetailPanel to show more details about the tracked package)]
+[ACCORDION-BEGIN [Step 4: ](Add a FUIMapDetailPanel to show more details about the tracked package)]
 
 When the marker is tapped, additional detail should appear about the annotation. The `FUIMapDetailPanel` class can be used to provide this.
 
@@ -150,6 +150,7 @@ private func setupDetailPanel() {
     detailPanel.content.tableView.dataSource = self
     detailPanel.content.tableView.delegate = self
     detailPanel.content.headlineText = "Tracking #: 12345678976543213"
+    detailPanel.isSearchEnabled = false
 }
 ```
 
@@ -195,7 +196,7 @@ extension TrackingMapViewController: UITableViewDelegate {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Display or hide the detail panel when the annotation is tapped)]
+[ACCORDION-BEGIN [Step 5: ](Display or hide the detail panel when the annotation is tapped)]
 
 Whenever the user taps on the annotation on the map, the detail panel should show or hide accordingly. Add the following lines of code **after the final closing brace** of the previous extensions:
 
