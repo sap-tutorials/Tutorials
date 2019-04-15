@@ -1,54 +1,69 @@
 ---
-title: SAP UI5 - Create an empty UI5 Web IDE project
+title: Create an empty UI5 Web IDE project
 description: Start working with the Web IDE editor, and create a new empty UI5 Web IDE project
+auto_validation: true
 primary_tag: topic>sapui5
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
+author_name: Marius Obert
+author_profile: https://github.com/iobert
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-web-ide ]
 time: 5
 ---
 ## Prerequisites  
-- **Tutorials:**  [Open the SAP Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:**  [Configure the Northwind Destination](https://developers.sap.com/tutorials/hcp-create-destination.html)
-
-## Next Steps
-- This tutorial is part of a series.  The next tutorial is part 2: [Set Up the DataSource in the local application](https://developers.sap.com/tutorials/sapui5-webide-setup-datasource.html)
+- **Tutorials:**  [Open the SAP Web IDE](sapui5-webide-open-webide.html)
 
 ## Details
 ### You will learn  
-  - How to create a new, empty, SAP Web IDE project  
+  - How to create a new, empty, SAPUI5 Web IDE project  
 
 ---
-> **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
+[ACCORDION-BEGIN [Step : ](Open the project wizard)]
+Select **File** --> **New** --> **Project From Template**
 
-1.  Go to your SAP Web IDE.  
+![Activating the SAP Web IDE search pane](create-project-from-template.png)
 
-    If you don't have the Web IDE open (or bookmarked), go to the [Enable and open the Web IDE instructions](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html) and then come back after it is open.
+[DONE]
+[ACCORDION-END]
 
-2.  Select **File** --> **New** --> **Project From Template...**
+[ACCORDION-BEGIN [Step : ](Select a Cloud Foundry SAPUI5 project)]
+Filter the tiles **`sapui5`** and make sure the environment is set to **Cloud Foundry**. Select the tile called **SAPUI5 Application**, then click **Next**.
 
-    ![Activating the SAP Web IDE search pane](create-project-from-template.png)
+Leave the **SAPUI5 Versions** select box on *SAPUI5 Innovation*.
 
-3.  Select the box called **SAPUI5 Application**, then click **Next**.
+![Activating the SAP Web IDE search pane](select-sapui5-application.png)
 
-    (Leave the **Available Versions** box on *SAPUI5 Innovation*).
+[DONE]
+[ACCORDION-END]
 
-    ![Activating the SAP Web IDE search pane](select-sapui5-application.png)
+[ACCORDION-BEGIN [Step : ](Configure the UI module )]
 
-4.  Fill in the form as follows:
+Fill in the form as follows:
 
-    |                                           |                           |
-    | -----------------------------------------:| ------------------------- |
-    | Project Name                              | `HelloWorld`              |
-    | Name Space                                | (leave this field blank)  |
-    | Enable native mobile device functionality | (unselected)              |
+| -----------------------------------------:| ------------------------- |
+| **Module Name**                           | **`app`**              |
+| **Name Space**                            | **`sapcp.cf.tutorial`**   |
 
-    ![Activating the SAP Web IDE search pane](fill-in-form.png)
+![Activating the SAP Web IDE search pane](fill-in-form.png)
 
-5.  Click **Finish**
 
-Your project should now look like this.  (Click a folder icon to expand the contents.)
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Create the project)]
+
+Keep the default values and click **Finish**.
+
+![Activating the SAP Web IDE search pane](finish-form.png)
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Download the MultiApps plugin)]
+
+Your project should now look like this.  Click a folder icon to expand the contents.
 
 ![Activating the SAP Web IDE search pane](new-helloworld-application.png)
 
-## Notes
-[Here is some information on the UI5 folder structure.](https://sapui5.hana.ondemand.com/#docs/guide/003f755d46d34dd1bbce9ffe08c8d46a.html)
+> [Here is some information on the UI5 folder structure.](https://sapui5.hana.ondemand.com/#docs/guide/003f755d46d34dd1bbce9ffe08c8d46a.html)
 
+[VALIDATE_1]
+[ACCORDION-END]
+
+---
