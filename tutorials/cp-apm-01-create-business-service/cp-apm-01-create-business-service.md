@@ -10,9 +10,9 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Get a free trial account on SAP Cloud Platform](hcp-create-trial-account.html)
- - [Create a Cloud Foundry Account](cp-cf-create-account.html)
- - [Set Up the SAP Web IDE](sapui5-webide-open-webide.html)
+ - [Get a free trial account on SAP Cloud Platform](hcp-create-trial-account)
+ - [Create a Cloud Foundry Account](cp-cf-create-account)
+ - [Set Up the SAP Web IDE](sapui5-webide-open-webide)
 
 ## Details
 ### You will learn  
