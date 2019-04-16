@@ -3,8 +3,10 @@ auto_validation: true
 title: Expose a Standard Core Data Service for ABAP Environment
 description: Create a service definition, service binding and communication scenario to expose a Core Data Services (CDS) view in SAP Cloud Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
+author_name: Niloofar Naseri
+author_profile: https://github.com/niloofar-naseri
 ---
 
 ## Details
@@ -102,7 +104,7 @@ The Service definition is now created.
 Exposition of the CDS view `I_Currency` and provide Currency as alias.
 Do not forget to save and activate!
 
-```swift
+```ABAP
 @EndUserText.label: 'Demo service Definition'
 define service Z_DEF_XXX {
   expose I_Currency as Currency;
