@@ -3,7 +3,7 @@ title: Grant Requesting MultiChain Node Permission to join a MultiChain Network
 description: Use a MultiChain dashboard to review and accept join requests for a MultiChain network.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>blockchain, products>sap-cloud-platform, topic>cloud]
+tags: [tutorial>beginner, topic>blockchain, products>sap-cloud-platform, topic>cloud ] 
 primary_tag: topic>blockchain
 author_name: José Prados
 author_profile: https://github.com/joseprados
@@ -15,7 +15,7 @@ author_profile: https://github.com/joseprados
   - How to access your node dashboard
   - How to grant a MultiChain node permissions from the dashboard
 
-  To complete this tutorial you need access to a second trial account on SAP Cloud Platform. This enables you to control both the join request to the MultiChain network, as completed in [Join a MultiChain Network](blockchain-mc-joins-network.html) and then the subsequent granting of permissions featured in this tutorial.
+  To complete this tutorial you need access to a second trial account on SAP Cloud Platform. This enables you to control both the join request to the MultiChain network, as completed in [Join a MultiChain Network](blockchain-mc-joins-network) and then the subsequent granting of permissions featured in this tutorial.
 
 ### Prerequisites
   - The **Handshake Address** of the MultiChain node requesting access to join the MultiChain network.
