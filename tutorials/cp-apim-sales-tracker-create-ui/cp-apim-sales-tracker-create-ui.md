@@ -1,5 +1,5 @@
 ---
-title: Use Mobile Services  to Create UI
+title: Use Mobile Services to Create UI
 description: Create a new mobile card by pointing to the proxy endpoint created in SAP API Management.
 auto_validation: true
 time: 30
@@ -14,8 +14,6 @@ primary_tag: products>sap-api-management
 ### You will learn
   - How to create a new mobile card
   - How to give the query and collection query URL pointing to the proxy endpoint created in SAP API Management
-
-Add additional information: Background information, longer prerequisites
 
 ---
 
@@ -48,18 +46,25 @@ Add additional information: Background information, longer prerequisites
     Template Source |`Template Manager`
     HTML Template |`User defined template`
     Card Template |`Automatic Instance Generation`
-    Query |`/<yourP#>trial/s4hanacloud/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder?$expand=to_Item`
-    Collection Handling |`Use Collection`
-    Query URL Collection Root |`$.d.results`
-    Query Entity Key Paths |`$.d.__metadata.uri`
 
     ![Create Template](05-template-details.png)
 
-5. Click **Save** and click the **Sample Data** tab.
+5. Navigate to **URLs** tab and give the following values:
+
+    **Field** | **Value**
+    ---- | ----
+    Query |`/<yourP#>trial/s4hanacloud/sap/opu/odata/sap/API_SALES_ORDER_SRV/A_SalesOrder?$expand=to_Item`
+    Collection Handling |`Generic REST API`
+    Query URL Collection Root |`$.d.results`
+    Query Entity Key Paths |`$.d.__metadata.uri`
+
+    ![Define Query](05_a_Define_querry.png)
+
+6. Click **Save** and click the **Sample Data** tab.
 
     ![Save Template](06-save-card.png)
 
-6. Copy the below code and save it in text file in your local system with `APIHub_SalesOrder_Response_Item.json`.
+7. Copy the below code and save it in text file in your local system with `APIHub_SalesOrder_Response_Item.json`.
 
     ```  
 
@@ -195,15 +200,15 @@ Add additional information: Background information, longer prerequisites
 
     ```
 
-7. Click  **Browse** button next to JSON file.
+8. Click  **Browse** button next to JSON file.
 
-8. Select the file **`APIHub_SalesOrder_Response_Item.json`** from your local system.
+9. Select the file **`APIHub_SalesOrder_Response_Item.json`** from your local system.
 
     ![Browse File](07-browsejson.png)
 
-9. Click the **Editor** tab.
+10. Click the **Editor** tab.
 
-10.	Copy the below code and paste it into the Source Code box.
+11.	Copy the below code and paste it into the Source Code box.
 
         ```
         <div id="mySimpleTemplate" class="myTemplate" data-type="text/x-handlebars-template">
@@ -273,9 +278,9 @@ Add additional information: Background information, longer prerequisites
         ```
         ![UI Front](08-code-ui-front.png)
 
-        11. Click **Flip to Back**
+12. Click **Flip to Back**
 
-        12.	Copy the below code and paste it into the Source Code box.
+13.	Copy the below code and paste it into the Source Code box.
 
         ```
         <div id="mySimpleTemplate" class="myTemplate" data-type="text/x-handlebars-template">
@@ -308,13 +313,13 @@ Add additional information: Background information, longer prerequisites
 
     ```
 
-13. Click the Editor tab but then select **Data Mapping** tab
+14. Click the Editor tab but then select **Data Mapping** tab
 
      ![Data Mapping](10-data-mapping.png)
 
     >Here we will link the actual backend data to the fields defined in the UI Editor code.
 
-14. Give the following values:
+15. Give the following values:
 
     **Field** | **Value**
     ---- | ----
@@ -327,7 +332,7 @@ Add additional information: Background information, longer prerequisites
     `NetAmount`  |`NetAmount`
     `CurrencyCode` |`TransactionCurrency`   
 
-15. Click **Flip to Back** and link backend data for additional fields.
+16. Click **Flip to Back** and link backend data for additional fields.
 
     **Field** | **Value**
     ---- | ----
@@ -335,7 +340,7 @@ Add additional information: Background information, longer prerequisites
     `SalesOrderDate` |`<select format>`
     `CreatedByUser` |`PurchaseOrderByCustomer`
 
-16. Click **Save**.
+17. Click **Save**.
 
 [VALIDATE_1]
 
