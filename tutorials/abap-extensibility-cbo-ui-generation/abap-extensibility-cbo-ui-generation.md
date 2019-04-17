@@ -1,5 +1,5 @@
 ---
-title: Create the UI for a custom business object
+title: Create the UI for a Custom Business Object
 description: Create an own application based on a Custom Business Object and a Custom Catalog Extension
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -25,7 +25,7 @@ At the end you will have a running application that you can create, update and d
 >
 >Alternatively the more powerful **Side-By-Side Extensibility** via **SAP Cloud Platform** could be done to develop an UI with all SAPUI5 options (see tutorial group [Create Custom UI for S/4HANA Cloud](https://developers.sap.com/group.abap-custom-ui-with-webide.html)).
 
-### Example
+**Our Example**
 
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
 

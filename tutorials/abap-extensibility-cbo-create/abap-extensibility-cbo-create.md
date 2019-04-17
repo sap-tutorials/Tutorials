@@ -1,5 +1,5 @@
 ---
-title: Create a custom business object
+title: Create a Custom Business Object
 description: Define the data structure and create the database persistence of a custom business object.
 auto_validation: true
 primary_tag: topic>abap-extensibility
@@ -11,11 +11,12 @@ time: 10
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
 
 ## Details
-### You will learn  
+### You will learn
 
-Create a custom business object that has a simple data structure and publish it.  At the end there will exist a database table for the business object.
+- Define a custom business object and its a simple data structure
+- Create the database table for the custom business object
 
-### Example
+**Our Example**
 
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
 

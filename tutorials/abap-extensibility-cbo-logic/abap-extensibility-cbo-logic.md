@@ -1,6 +1,6 @@
 ---
-title: Implement logic for a custom business object
-description: Implement custom business object logic to control your application
+title: Implement Logic for a Custom Business Object
+description: Control your custom business object application with ABAP logic
 auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -10,22 +10,24 @@ time: 20
 ## Prerequisites  
 - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
 
-## Next Steps
-  - [Adapting the UI of a Custom Business Object](https://developers.sap.com/tutorials/abap-extensibility-cbo-ui-adaptation.html)
-
 ## Details
 
 ### You will learn  
-In the preceding tutorial you created a custom business object, its simple data structure, persistence and application UI.
-Data could only be provided by the UI. Now you'll implement logic to set some data from the backend only and to check all data of an instance.
-You will also learn how to ease development and test already while doing it.
+
+- How to enable logic implementation for a custom business object
+- How to implement changing custom business object database
+- How to implement checking a custom business object before save
+- How to implement saving or reject saving of a custom business object
+- How to implement informing the end user about save
+- How to ease development and test already while doing it
 
 At the end your application will set some data automatically and reject a save with an error message for the causing inconsistencies.
 
-**Example**
+**Our Example**
+
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
 
-In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
+In the first parts a Manager wants to define business objects **Bonus Plan** for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
 ### Additional Information
 - **SAP S/4HANA Cloud Release** (tutorial's last update): 1808
@@ -59,6 +61,7 @@ As there was no backend implementation to set the mandatory key field **`ID`** s
 
 Now you are enabled to implement **Determination** logic which is called **after each modification** to a Bonus Plan instance from the UI, as well as **Validation** logic which is called **before each save** of an instance.
 Only in Determination logic you are able to change custom business object data.
+Validation logic is intended to check the business object, decide whether a save can be performed and provide the end user a message with helpful information like successful save or the reason for which a save had to be rejected.  
 
 [DONE]
 [ACCORDION-END]
@@ -85,38 +88,41 @@ An editable copy of the published version appears left to it. With the **Draft V
 Implement After Modification event with following fix value functionality:
 
 - Set the key field `ID` if still initial.
->**Hint:** Changing Parameter `bonusplan` enables you to read current node data and change it.
->
-**Hint:** You can read existing Bonus Plan data via the CDS View that is named as the Business Object's Identifier (here: `YY1_BONUSPLAN`).
->
-**Hint:** With the key combination **CTRL + Space** you can access the very helpful code completion.
+
+    >**Hint:** Changing Parameter `bonusplan` enables you to read current node data and change it.
+    >
+    **Hint:** You can read existing Bonus Plan data via the CDS View that is named as the Business Object's Identifier (here: `YY1_BONUSPLAN`).
+    >
+    **Hint:** With the key combination **CTRL + Space** you can access the very helpful code completion.
 
     ![Code Completion](CBO_logicCodeCompletion.png)
 
+    <br><br>
 
-    ```abap
+    ```ABAP
     * set ID
     IF bonusplan-id IS INITIAL.
        SELECT MAX( id ) FROM yy1_bonusplan INTO @DATA(current_max_id).
        bonusplan-id = current_max_id + 1.
     ENDIF.
     ```
+
 - Set the Unit of Measure for the Bonus Percentages to `P1` which is the code for % (percent)
 
-    ```abap
+    ```ABAP
     * set percentage unit
     bonusplan-lowbonuspercentage_u = bonusplan-highbonuspercentage_u = 'P1'.
     ```
 
 - Determine and set the Employee Name from the Employee ID
->**Hint:** Extensibility offers Helper class `CL_ABAP_CONTEXT_INFO` with method `GET_USER_FORMATTED_NAME` that needs a user ID to return its formatted name
+    >**Hint:** Extensibility offers Helper class `CL_ABAP_CONTEXT_INFO` with method `GET_USER_FORMATTED_NAME` that needs a user ID to return its formatted name
 
-    ```abap
+    ```ABAP
     * set Employee Name
-IF bonusplan-employeeid IS NOT INITIAL.
-   bonusplan-employeename = cl_abap_context_info=>get_user_formatted_name( bonusplan-employeeid ).
-ENDIF.
-```
+    IF bonusplan-employeeid IS NOT INITIAL.
+       bonusplan-employeename = cl_abap_context_info=>get_user_formatted_name( bonusplan-employeeid ).
+    ENDIF.
+    ```
 
 [DONE]
 [ACCORDION-END]
@@ -162,16 +168,16 @@ On top of the coding you can maintain runtime data for the current node structur
 2. Enter following data
 
     | Field	Name | Field Value |
-|------------|-------------|
-| `validitystartdate` | `2017-01-01` |
-| `validityenddate` | `2017-12-31` |
-| `targetamount_v` | `1000` |
-| `targetamount_c` | `EUR` |
-| `lowbonusassignmentfactor` | `1` |
-| `highbonusassignmentfactor` | `3` |
-| `lowbonuspercentage_v` | `10` |
-| `highbonuspercentage_v` | `20` |
-| `employeeid` | `<any>` |
+    |------------|-------------|
+    | `validitystartdate` | `2017-01-01` |
+    | `validityenddate` | `2017-12-31` |
+    | `targetamount_v` | `1000` |
+    | `targetamount_c` | `EUR` |
+    | `lowbonusassignmentfactor` | `1` |
+    | `highbonusassignmentfactor` | `3` |
+    | `lowbonuspercentage_v` | `10` |
+    | `highbonuspercentage_v` | `20` |
+    | `employeeid` | `<any>` |
 
     `employeeid` `<any>` shall be the one of a sales person that created sales orders with a Net Amount of more than 3000.00 EUR in 2016 and that are completed.
 
@@ -192,23 +198,24 @@ On top of the coding you can maintain runtime data for the current node structur
 
 [ACCORDION-BEGIN [Step 7: ](Implement Before Save)]
 1. Being in After Modification logic you can get to Before Save Logic this way:
+
     - Go Back in application
     - In Tab "Logic", go to section "Determination and Validation"
 
 2. **Implement** Before Save event with following functionality
 
     - If the bonus plan is consistent, it can be continued to save, if not save shall be rejected. In case of save no further processing is needed and logic can be left.
->**Hint:** Exporting parameter valid must be set to true for save and to false for save rejection
+        >**Hint:** Exporting parameter valid must be set to true for save and to false for save rejection
 
-    ```abap
-    * decide about save rejection
-    IF bonusplan-isconsistent EQ abap_true.
-        valid = abap_true.
-        RETURN.
-    ELSE.
-        valid = abap_false.
-    ENDIF.
-    ```
+        ```ABAP
+        * decide about save rejection
+        IF bonusplan-isconsistent EQ abap_true.
+            valid = abap_true.
+            RETURN.
+        ELSE.
+            valid = abap_false.
+        ENDIF.
+        ```
 
     - If the bonus plan is not consistent, write the first found error into the message and end the logic processing.
     These are the possible errors in detail:
@@ -219,57 +226,57 @@ On top of the coding you can maintain runtime data for the current node structur
         - LowBonusAssignmentFactor must be < HighBonusAssignmentFactor
         - Employee ID must be set
 
-```abap
-* consistency error message START
-IF bonusplan-validitystartdate IS INITIAL OR bonusplan-validityenddate IS INITIAL.
-    message = 'Validity Period must not be empty.'.
-    RETURN.
-ELSEIF bonusplan-validitystartdate GE bonusplan-validityenddate.
-    CONCATENATE 'Validity End Date' bonusplan-validityenddate 'must be later than Validity Start Date' bonusplan-validitystartdate '!' INTO message SEPARATED BY space.
-    RETURN.
-ENDIF.
+        ```ABAP
+        * consistency error message START
+        IF bonusplan-validitystartdate IS INITIAL OR bonusplan-validityenddate IS INITIAL.
+            message = 'Validity Period must not be empty.'.
+            RETURN.
+        ELSEIF bonusplan-validitystartdate GE bonusplan-validityenddate.
+            CONCATENATE 'Validity End Date' bonusplan-validityenddate 'must be later than Validity Start Date' bonusplan-validitystartdate '!' INTO message SEPARATED BY space.
+            RETURN.
+        ENDIF.
 
-IF bonusplan-targetamount_v IS INITIAL.
-    message = 'Target Amount must be over 0!'.
-    RETURN.
-ENDIF.
+        IF bonusplan-targetamount_v IS INITIAL.
+            message = 'Target Amount must be over 0!'.
+            RETURN.
+        ENDIF.
 
-IF bonusplan-targetamount_c IS INITIAL.
-    message = 'Target Amount Currency must be set!'.
-    RETURN.
-ENDIF.
+        IF bonusplan-targetamount_c IS INITIAL.
+            message = 'Target Amount Currency must be set!'.
+            RETURN.
+        ENDIF.
 
-IF bonusplan-lowbonusassignmentfactor IS INITIAL
- OR bonusplan-highbonusassignmentfactor IS INITIAL.
-    message = 'Assignment Factors must be over 0!'.
-    RETURN.
-ENDIF.
+        IF bonusplan-lowbonusassignmentfactor IS INITIAL
+         OR bonusplan-highbonusassignmentfactor IS INITIAL.
+            message = 'Assignment Factors must be over 0!'.
+            RETURN.
+        ENDIF.
 
-IF bonusplan-lowbonuspercentage_v IS INITIAL
- OR bonusplan-highbonuspercentage_v IS INITIAL.
-    message = 'Percentages must be over 0!'.
-    RETURN.
-ENDIF.
+        IF bonusplan-lowbonuspercentage_v IS INITIAL
+         OR bonusplan-highbonuspercentage_v IS INITIAL.
+            message = 'Percentages must be over 0!'.
+            RETURN.
+        ENDIF.
 
-IF bonusplan-lowbonuspercentage_v GE 100
- OR bonusplan-highbonuspercentage_v GE 100.
-    message = 'Percentage must be below 100!'.
-    RETURN.
-ENDIF.
+        IF bonusplan-lowbonuspercentage_v GE 100
+         OR bonusplan-highbonuspercentage_v GE 100.
+            message = 'Percentage must be below 100!'.
+            RETURN.
+        ENDIF.
 
-IF bonusplan-lowbonusassignmentfactor GE bonusplan-highbonusassignmentfactor.
-    message = 'Low Bonus Factor must be smaller than High Bonus Factor!'.
-    RETURN.
-ENDIF.
+        IF bonusplan-lowbonusassignmentfactor GE bonusplan-highbonusassignmentfactor.
+            message = 'Low Bonus Factor must be smaller than High Bonus Factor!'.
+            RETURN.
+        ENDIF.
 
-IF bonusplan-employeeid IS INITIAL.
-    message = 'Employee ID must be set!'.
-    RETURN.
-ENDIF.
-* consistency error message  END
-```
+        IF bonusplan-employeeid IS INITIAL.
+            message = 'Employee ID must be set!'.
+            RETURN.
+        ENDIF.
+        * consistency error message  END
+        ```
 
-`3.` **Publish** the Before Save Logic
+3. **Publish** the Before Save Logic
 
 [DONE]
 [ACCORDION-END]
