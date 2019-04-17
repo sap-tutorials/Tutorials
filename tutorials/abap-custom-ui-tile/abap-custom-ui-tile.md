@@ -3,7 +3,7 @@ title:  Create Custom UI for S/4HANA on SAP Cloud Platform
 description: Create a UI on SAP Cloud Platform and deploy it to the S/4HANA system.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
 time: 25
 ---
 

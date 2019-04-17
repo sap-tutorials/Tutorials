@@ -41,9 +41,11 @@ Open the **Bonus Plans** application in Fiori Launchpad group **Extensibility**.
 
 
 Press **Go** to get the list of all Bonus Plans. **Open** a bonus plan's detail view.
+
 ![Open Bonus Plan's detail view](UI_openBoDetails.png)
 
 This is the screen that will be adapted.
+
 ![Bonus Plan's detail view before adaptation](UI_BoDetailsBeforeAdaptation.png)
 
 [DONE]
@@ -52,9 +54,11 @@ This is the screen that will be adapted.
 [ACCORDION-BEGIN [Step 2:](Switch to Adaptation mode)]
 
 **Open User Settings** via the corresponding application's menu action
+
 ![Open User Settings](UI_userSettings.png)
 
 Open the adaptation mode via **Adapt UI**.
+
 ![Go to UI Adaptation mode](UI_go2adaptation.png)
 
 [DONE]
@@ -63,11 +67,13 @@ Open the adaptation mode via **Adapt UI**.
 [ACCORDION-BEGIN [Step 3:](Create an UI group)]
 
 Editable UI elements can be recognized by getting a dashed border and the movement cursor when hovering over them.
+
 ![Editable UI element](UI_editableElement.png)
 
 By right clicking onto them you get options to adapt the UI. As these options are partly type dependent you might need to find the right element first to get the option you need.
 
 **Hover** over the **General Information** area until it gets the dashed border and open the context menu via **Right Click**.
+
 ![Create UI Group](UI_createGroup.png)
 
 **Create Group** and name it "Bonus Data".
@@ -78,9 +84,11 @@ By right clicking onto them you get options to adapt the UI. As these options ar
 [ACCORDION-BEGIN [Step 4:](Move UI elements)]
 
 Editable fields can simply be dragged and dropped as well. **Drag** the Validity Start Date field.
+
 ![Movable UI Element](UI_movableElement.png)
 
 **Drop** it to the Bonus Data group.
+
 ![Drop dragged UI Element](UI_dropElement.png)
 
 Repeat **Drag & Drop** into Bonus Data group for the fields:
@@ -110,4 +118,3 @@ Finally you only need to **Exit** adaptation mode to work with the new layout.
 
 [VALIDATE_1]
 [ACCORDION-END]
----

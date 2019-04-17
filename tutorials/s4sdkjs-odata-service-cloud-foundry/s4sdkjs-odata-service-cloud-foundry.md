@@ -20,7 +20,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
 
-Once it is up and running you should see the list of services at http://localhost:3000/.
+Once it is up and running you should see the list of services at `http://localhost:3000/`.
 
 [DONE]
 [ACCORDION-END]
@@ -77,7 +77,7 @@ npm install @sap/cloud-sdk-vdm-business-partner-service
 Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner-route.ts`.
 
 ```JavaScript / TypeScript
-import { BusinessPartner } from '@sap/s4sdk-vdm-business-partner-service';
+import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 ```
 
 Now the `BusinessPartner` entity is available for you to be used.

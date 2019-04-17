@@ -31,39 +31,17 @@ Sign in or create an account on [Amazon Web Services Portal](https://portal.aws.
 >During this process, some AWS services, like the AWS Marketplace, will not be available.
 >Therefore, you will need to wait for the completion of the validation process before being able to proceed with the SAP HANA, express edition creation.
 
-Access the [Amazon Web Services Marketplace](https://aws.amazon.com/marketplace/).
+Access the [Amazon Web Services Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ba115d7b-68d6-4d81-ba4c-fa035c62bebf).
 
-![Amazon Web Services Marketplace](_01.png)
+Select the free option of **SAP HANA, express edition (32GB)** option.
 
-Using the search bar at the top, enter **SAP HANA, express edition** and press **Enter** or click on the search icon.
-
-After you perform the search, you will be presented with two options. The right one will depend on what you are looking to do.
-
-**This tutorial covers the database + XS Advanced application option**.
-
-  -  **SAP HANA, express edition:**
-
-      The core database server includes the in-memory database, to which you can connect using different drivers and connectors for different languages (`JDBC`, `ODBC`, `ADO.NET`, driver for `Python`, `Node.js` modules, etc.).
-
-      You can use the database services and the advanced analytics processing engines (e.g., geospatial, text analytics, Extended Machine Library or Predictive Analytics Library, etc.).
-
-      For details about this option, go to the following tutorial: <https://developers.sap.com/tutorials/hxe-aws-setup.html>
-
-  -  **SAP HANA, express edition (server + applications):**
-
-      The database server plus the XS Advanced platform includes the database server and the micro-services oriented, polyglot development platform.
-
-      It includes the SAP Web IDE for SAP HANA, the administration cockpit among other applications like SHINE, Enterprise Architecture Designer and Smart Data Streaming. OData V2 and V4 support, Node.js and Java runtime environments are also included.
-
-      This option requires more resources.
-
-Select the **SAP HANA, express edition (server +  applications)** option.
+![Amazon Web Services Marketplace](1.png)
 
 Scroll down and review the **Pricing** and additional information.
 
 Click on **Continue to Subscribe**
 
-![Amazon Web Services Marketplace](_02.png)
+![Amazon Web Services Marketplace](2.png)
 
 Review and accept the software **Terms and Conditions**.
 

@@ -3,7 +3,7 @@ title: Create a Destination within the Cloud Foundry Environment
 description: Create a destination within the SAP Cloud Platform Cloud Foundry Environment to allow access to the Northwind OData services.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
-tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
+tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner  ]
 time: 5
 ---
 
@@ -116,6 +116,7 @@ When you're done, finish by saving the destination with **`Save`**.
 [ACCORDION-BEGIN [Step : ](Check the connection)]
 
 Click on the `Check Connection` icon on the newly created Destination to see if everything works.
+
 ![check](./checkdest.png)
 
 [VALIDATE_1]

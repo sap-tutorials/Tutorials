@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have a running ABAP application server (AS ABAP). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://developers.sap.com/trials-downloads.html).
+ - You have a running ABAP application server (AS ABAP). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://www.sap.com/developer/trials-downloads.html).
  - **Tutorial**: [Create an ABAP project](https://developers.sap.com/tutorials/abap-create-project.html)
 
 ## Details
@@ -30,20 +30,21 @@ For more information, see [Data Types](https://help.sap.com/doc/abapdocu_750_ind
 
 Before you start exploring the Dictionary objects, you will add the relevant package to your favorites for convenience:
 
-  1. In ABAP Development Tools, expand the project that you created, by choosing the arrow on the left:
+1. In ABAP Development Tools, expand the project that you created, by choosing the arrow on the left:
+
     ![Image depicting step1-expand-project](step1-expand-project.png)
 
-  2. Select Favorite Packages, then choose Add Package… from the context menu:
+2. Select Favorite Packages, then choose Add Package… from the context menu:
 
     ![Image depicting step1b-add-package](step1b-add-package.png)
 
-  3. Enter **`SAPBC`** in the search field, then choose the package **`SAPBC_DATAMODEL`** from the matching items box:
+3. Enter **`SAPBC`** in the search field, then choose the package **`SAPBC_DATAMODEL`** from the matching items box:
 
     ![Image depicting step1c-choose-package](step1c-choose-package.png)
 
-  The package is added to your favorites:
+The package is added to your favorites:
 
-  ![Image depicting step1d-fave-package-added](step1d-fave-package-added.png)
+    ![Image depicting step1d-fave-package-added](step1d-fave-package-added.png)
 
 [DONE]
 
@@ -146,7 +147,8 @@ For more information on how to do this, see the [SAP Help Portal](https://help.s
 You should now understand six important ABAP Dictionary objects and the relationship between them.
 Now, You can either:
 
-  - [Learn about the ABAP Repository for development objects](coming soon) or
+  - [Learn about the ABAP Repository for development objects](https://developers.sap.com/tutorials/abap-dev-learn-repo.html) or
+  - [Go back to ABAP for Newbies](https://developers.sap.com/topics/abap-platform/abap-for-newbies.html)
 
 [VALIDATE_1]
 

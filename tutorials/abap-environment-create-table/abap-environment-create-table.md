@@ -23,7 +23,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 Open Eclipse, and select **New** > **ABAP Package**.
 
 ![Open Eclipse](package.png)
-
+ 
 [DONE]
 [ACCORDION-END]
 
@@ -79,7 +79,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-BEGIN [Step 5: ](Define database table)]
   1. Define the table columns (client, booking, `customername`, `numberofpassengers`, …). Specify client and booking as key fields, and the field `currencycode` as currency key for cost as displayed below. The table annotations (beginning with @) remain unchanged. For that, you can copy the database table definition provided below.
 
-    ```swift
+    ```ABAP
 
     @EndUserText.label : 'Demo: Booking Data'
     @AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
@@ -132,7 +132,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-BEGIN [Step 7: ](Replace source code)]
   1. Replace the source code of your class with the one provided below:
 
-    ```swift
+    ```ABAP
 
     CLASS zcl_generate_bookings_xxx DEFINITION
       PUBLIC

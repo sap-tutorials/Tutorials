@@ -89,7 +89,7 @@ author_profile: https://github.com/niloofar-naseri
 
   2. Edit `index.html` file. Replace `Fiori_App` with your HTML5 module name.
 
-```swift
+```HTML
   <!DOCTYPE html>​
 <html>​
 <head>​

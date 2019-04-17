@@ -3,7 +3,7 @@ title: Fundamentals of the Cloud Foundry Environment
 description: Discover how the Cloud Foundry environment fits into SAP Cloud Platform, so you're ready to deploy and run applications with confidence.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform  ]
 time: 15
 ---
 
