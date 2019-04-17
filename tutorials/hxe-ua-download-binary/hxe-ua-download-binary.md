@@ -22,17 +22,17 @@ You will learn how to download the binary image of SAP HANA 2.0, express edition
 
 > Note:
 > The Download Manager for Windows (`HXEDownloadManager_win.exe`) runs in asynchronous mode, and console mode is not available. If you are a Windows user, download the platform-independent Download Manager (`HXEDownloadManager.jar`) to use console mode.
-> 
-> 
+>
+>
 
 [ACCORDION-BEGIN [Step 1: ](Open a command prompt)]
 
-Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar` or `HXEDownloadManager_linux.bin`
+Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar` or `HXEDownloadManager_linux.bin`).
 
 > Note:
 > If you've already installed SAP HANA express edition, you can run the built-in download manager from any directory as the <sid>`adm` user.
-> 
-> 
+>
+>
 
 [ACCORDION-END]
 
@@ -52,8 +52,8 @@ java -jar HXEDownloadManager.jar -h
 
 > Note:
 > You must include an argument with each command. If you call the Download Manager without an argument, it opens in GUI mode.
-> 
-> 
+>
+>
 
 [ACCORDION-END]
 
@@ -103,6 +103,8 @@ Valid <file> values:
 
 [ACCORDION-BEGIN [Step 4: ](Download one or more files)]
 
+At minimum, download `hxe.tgz`.
+
 This example uses the Linux Download Manager `HXEDownloadManager_linux.bin`. It specifies a proxy host, proxy port, and downloads *Getting Started with SAP HANA, express edition (Binary Installer Method)* and the SHINE package (`shine.tgz`).
 
 ```bash
@@ -111,12 +113,10 @@ HXEDownloadManager_linux.bin --ph proxy.yourcompany.corp --pp 8080 linuxx86_64 i
 
 This example uses the platform-independent Download Manager `HXEDownloadManager.jar`.
 
-It downloads *Getting Started with SAP HANA, express edition (Binary Installer Method)* and `hxexsa.tgz`.
+It downloads *Getting Started with SAP HANA, express edition (Binary Installer Method)* and `hxe.tgz`.
 
 ```bash
-java -jar HXEDownloadManager.jar linuxx86_64 installer Getting_Started_Binary_Installer.pdf hxexsa.tgz
+java -jar HXEDownloadManager.jar linuxx86_64 installer Getting_Started_Binary_Installer.pdf hxe.tgz
 ```
 
 [ACCORDION-END]
-
-

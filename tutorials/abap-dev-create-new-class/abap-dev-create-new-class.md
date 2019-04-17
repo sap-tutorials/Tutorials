@@ -3,7 +3,7 @@ title: Create a Global ABAP Class
 description: You will learn how to create a global ABAP class, in which you  will retrieve data from a database.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 45
 
 ---

@@ -5,6 +5,8 @@ description: Create and import a new software component into an SAP Cloud Platfo
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
+author_name: Niloofar Naseri
+author_profile: https://github.com/niloofar-naseri
 ---
 
 ## Prerequisites  
@@ -51,33 +53,58 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add ABAP sources and export component)]
+[ACCORDION-BEGIN [Step 2: ](Create ABAP package)]
   1. Open Eclipse and connect with your developer user to your first ABAP system and add your imported software component to your **Favorite Packages**.
 
       ![add to favorites](eclipse1.png)
 
-  2. Create ABAP objects in your software component (e.g. ABAP class). You can create a new transport task if asked, otherwise add your object to an existing one.
+  2. Right-click on `ZLOCAL` and select **New** > **ABAP Package**.
+
+      ![create package](package.png)
+
+  3. Create an ABAP package in `ZLOCAL`.
+      - Name: **`Z_Package_XXX`**
+      - Description: **`My Package XXX`**
+
+      Click **Next**.    
+
+      ![create package](package2.png)
+
+  4. Click **Next**.
+
+      ![create package](package3.png)     
+
+  5. Click **Finish**.
+
+      ![create package](package4.png)  
+
+[DONE]
+[ACCORDION-END]
+
+  [ACCORDION-BEGIN [Step 3: ](Add ABAP sources and export component)]
+
+  1. Create ABAP objects in your software component (e.g. ABAP class). You can create a new transport task if asked, otherwise add your object to an existing one.
 
       ![create class](eclipse2.png)
 
       ![create transport request](eclipse3.png)
 
-  3. Release your transport request and its subtasks. Therefore, open view **Transport Organizer**.
+  2. Release your transport request and its subtasks. Therefore, open view **Transport Organizer**.
 
       ![release](release1.png)
 
-  4. Release all your subtasks by right click on it and select **Release**.
+  3. Release all your subtasks by right click on it and select **Release**.
 
       ![release tasks](release2.png)
 
-  5. Afterwards release your transport request by right click on it and also select **Release**.
+  4. Afterwards release your transport request by right click on it and also select **Release**.
 
       ![release tasks](release3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Update or import software component again)]
+[ACCORDION-BEGIN [Step 4: ](Update or import software component again)]
   1. Open **Manage Software Components** app on your second instance's Fiori launchpad.
 
       ![manage SC](SC1.png)
@@ -93,7 +120,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check the imported software component)]
+[ACCORDION-BEGIN [Step 5: ](Check the imported software component)]
   1. Open Eclipse and connect with your developer user to your second ABAP system and add your imported software component to your **Favorite Packages**. Check if all objects are imported.
 
       ![add to favorites](eclipse4.png)
@@ -101,7 +128,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

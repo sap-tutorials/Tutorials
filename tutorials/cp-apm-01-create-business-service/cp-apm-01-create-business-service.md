@@ -5,13 +5,14 @@ title: Create a Business Service Using CDS
 description: Define a data and service model using SAP Web IDE Full-Stack and the SAP Cloud Application Programming Model based on Core Data and Services (CDS).
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
+tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model  ]
 time: 10
 ---
 
 ## Prerequisites  
- - [Get a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
- - [Set Up Cloud Foundry and SAP Web IDE](https://developers.sap.com/tutorials/teched-cf-prereq1.html)
+ - [Get a free trial account on SAP Cloud Platform](hcp-create-trial-account)
+ - [Create a Cloud Foundry Account](cp-cf-create-account)
+ - [Set Up the SAP Web IDE](sapui5-webide-open-webide)
 
 ## Details
 ### You will learn  

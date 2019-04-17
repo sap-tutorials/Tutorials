@@ -35,11 +35,10 @@ All MultiChain node addresses on SAP Cloud Platform follow the same format:
 For this tutorial, we use the following node address:
 
 ```
-mc-5321111056484000093@35.158.253.73:7000
+MultiChain_Tutorial@18.196.13.215:7000
 ```
-This is a node operated by SAP, however this can be substituted for your own node address if available. 
 
-Once a connection is created, this MultiChain node then grants your node permissions via its node dashboard.
+Once a connection is created, the MultiChain node administrator can then grant your node permissions via its node dashboard. Whilst this doesn't happen automatically, the process for a second SAP Cloud Platform account to follow is provided in our [Grant Requesting MultiChain Node Permission to join a MultiChain Network](blockchain-mc-node-grant-permissions) tutorial.
 
 [DONE]
 [ACCORDION-END]

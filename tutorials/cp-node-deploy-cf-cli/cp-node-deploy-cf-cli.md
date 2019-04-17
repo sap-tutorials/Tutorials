@@ -37,6 +37,18 @@ applications:
 
 >The property `random-route` will generate a route, which does not conflict with any other application in the same Cloud Foundry instance.
 
+You should now have the following directory structure:
+
+```bash:
+nodetutorial
+├── manifest.yaml
+└── myapp
+    ├── node_modules
+    ├── package-lock.json
+    ├── package.json
+    └── server.js
+```
+
 
 Explanation for the manifest properties:
 
@@ -57,10 +69,14 @@ Refer to the [official documentation](https://docs.cloudfoundry.org/devguide/dep
 
 Make sure you are logged in to your SAP Cloud Platform Cloud Foundry endpoint `cf login` and navigate to your space via `cf space <SPACE>`). Execute the following command inside the `nodetutorial` directory:
 
-```:
-cf push
-```
 
+```bash:
+user@host:~/nodetutorial
+=> cf push
+```
+>**Note:**
+
+>Make sure you are logged in via **`cf login`** before, otherwise the push command will fail.
 The Cloud Foundry command line interface implicitly uses the `manifest.yaml` file to deploy the application. After the deployment process the status of the application should be displayed in the command line:
 
 ![command line output app status ](appstatus.png)
@@ -77,8 +93,9 @@ To open the application in a browser, there are two ways to figure out the accor
 
 Or you could generally access the application overview. It shows among other information the URL. Accessing the application overview is done via:
 
-```:
-cf apps
+```bash:
+user@host:~/nodetutorial
+=> cf apps
 ```
 
 ![application URL in application overview](cf_apps.png)

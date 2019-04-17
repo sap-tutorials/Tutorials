@@ -75,9 +75,6 @@ Change the size of the disk and **Save**:
 
 ![Disk](14.png)
 
-Follow the steps as described by this [step-by-step blog](https://blogs.msdn.microsoft.com/cloud_solution_architect/2016/05/24/step-by-step-how-to-resize-a-linux-vm-os-disk-in-azure-arm/) from Microsoft. After you have completed the restart, use commands `resize2fs /dev/sda1` and `df -h` to confirm the operating system sees the expanded partition size:
-
-![Confirm size](20.png)
 
 >Note: You may want to reduce the size or delete the `/dev/sdb1` partition to reduce costs.
 
@@ -131,5 +128,3 @@ In the example below, instance number `00` has been chosen:
 
 
 [ACCORDION-END]
-
-

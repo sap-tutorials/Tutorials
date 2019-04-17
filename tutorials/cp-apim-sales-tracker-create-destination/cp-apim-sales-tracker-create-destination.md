@@ -14,15 +14,13 @@ primary_tag: products>sap-api-management
   - How to create destination on trial account
   - How to connect API Management and Mobile services
 
-Add additional information: Background information, longer prerequisites
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log in to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
 
-1. Login to [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com ).
+Login to [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com ).
 
-    ![Open Trial](15-CP-cockpit.png)
+![Open Trial](15-CP-cockpit.png)
 
 [DONE]
 [ACCORDION-END]

@@ -95,7 +95,7 @@ When you have made all the changes you wish, don't forget to click **Save** to s
 [VALIDATE_6]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Enable a Cloud Foundry workspace)]
+[ACCORDION-BEGIN [Step 7: ](Link your Cloud Foundry space)]
 To utilize the full-stack part of SAP Web IDE Full-Stack, you need to configure a Cloud Foundry space to run your projects. This can also be configured in the **Preferences** pane.
 
 Click on the **Cloud Foundry** option under **Workspace Preferences**.
@@ -114,7 +114,6 @@ Once you successfully log in, if you have a space configured, it will automatica
 
 Make sure to save to keep your Cloud Foundry space preferences.
 
->When working on applications, you may get an error about not having a builder for the space. If you need to install a builder, click **Install Builder** on this page and then **Save**.
 
 [DONE]
 [ACCORDION-END]

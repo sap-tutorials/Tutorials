@@ -3,7 +3,7 @@ title: Prepare to create a Java app with an MTA template
 description: Use a Multi-Target Application (MTA) template to prepare for building a simple Java app.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, topic>java]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, topic>java ]
 time: 10
 ---
 

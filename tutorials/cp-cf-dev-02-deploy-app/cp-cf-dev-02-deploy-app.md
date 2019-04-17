@@ -3,7 +3,7 @@ title: Deploy an App to SAP Cloud Platform Cloud Foundry Environment
 description: Use SAP Cloud Platform cockpit to deploy an app to the Cloud Foundry environment, then explore what was deployed and created.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-cloud-platform  ]
 time: 5
 ---
 

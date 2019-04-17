@@ -1,5 +1,5 @@
 ---
-title: Explore food using Advanced Analytics
+title: Explore food using Advanced Analytics in SAP HANA
 description: Use predictive and advanced analytics to gain insights on commercial food items
 time: 45
 tags: [ tutorial>beginner, products>sap-hana]
@@ -12,9 +12,11 @@ primary_tag: products>sap-hana
 
 ## Details
 ### You will learn
+  - How to apply basic fuzzy search on unstructured data
   - How to train and run a predictive algorithm
-  - How to execute a `MapReduce` operations
-  - How to apply basic text mining to unstructured data
+  - How to execute a `MapReduce` operation
+  - How to use create a graph workspace
+
 
 **This tutorial can only be completed with a live instructor.**
 
@@ -28,58 +30,64 @@ This tutorial uses two databases obtained from two open sources:
 
 > This tutorial can only be completed with a live instructor.
 
-You will be provided with connection details. Use them to open a browser and log in to SAP Web IDE for SAP HANA.
-
-Navigate to the database explorer
-
-![Database explorer](1.png)
-
-You should see a connection:
+You will be provided with connection details. You should see a connection:
 
 ![Database explorer](4.png)
 
 You are currently connected with the user **FOODIE**.
 
+For a better experience, make sure you close all of the tabs if there are any open:
+
+![Database explorer](0x.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Explore the existing data)]
 
-Open the schema **FOOD**
+Find an entry for the food you like. To understand what data looks like, open the schema **FOOD**.
 
-Click on tables. Right-click on **`COMM_FOODS`** and choose **Open Data**.
+Click on tables. Right-click on **`COMM_FOODS`** and choose **Generate SELECT statement**.
 
-![Database explorer](5.png)
+![Database explorer](select.png)
 
-You will see a table with data from packaged foods. Click on the **Analysis** tab.
+You will see a SQL console and a `SELECT` statement. Press **Run** ![Run](f8.png) to see the results.
 
-![Database explorer](6.png)
+![Database explorer](x1.png)
 
-Drag and drop **`NUTRITION_GRADE_FR`** into the **Label Axis**. Drag and drop **CODE** into the **Value Axis** and change the aggregation into **Count**.
+**Think of a food you like**.
 
-![Database explorer](7.png)
+Replace the word in the like clause to get a commercial food to analyze.  
 
-You can see about 20% of the foods have been assigned a nutrition grade based on their ingredients. The rest of the dataset does not have a value assigned for the nutrition grade. The nutrition grade has been assigned based on the nutrients and their proportion.
+This example will use `Bourbon biscuits`.
 
-Return to the **Raw data** tab and use the filter to get foods whose nutrition grade equals `a`.
+```SQL
 
-![Database explorer](8.png)
+SELECT TOP 100 *
+FROM "FOOD"."COMM_FOODS" where NUTRITION_GRADE_FR IS NULL
+AND ENERGY_100G > 0
+AND contains(product_name, 'bourbon biscuits', fuzzy(0.8,'textsearch=compare'));
+```
 
-You will see examples of fruits and vegetables. If you scroll left, you will see each record contains different columns with nutrients.
+**Leave the SQL tab open** to keep your result handy.
 
-![Database explorer](nutrients.png)
+![Database explorer](2x.png)
 
+> ##  What is going on?
+> You are using a fuzzy search on text. The results cover anything with a similarity score of `0.8` to `bourbon biscuits` in this example.
+> Results could also contain typos, differences between upper and lower case and even similar words.
 
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Create a view)]
 
-You will predict and assign a nutrition grade to the foods that do not have one. You will use the foods with a value to train a model.
+The nutrition grade is an indicator of how much energy for growth is provided by food. You have selected a food that does not have a nutrition grade assigned.  
+
+You will train a model using the records in the database that have a nutrition grade.
 
 The algorithm you will use is called [Multi-Class Logistic Regression](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/2.0.03/en-US/bc5fe09f584a4cd1a6b6b2176719a07f.html). You will take the normalized values of nutrients as explanatory attributes to model the relation with the nutrition grade (dependent variable).
 
-Open a **SQL** console
+Open a new **SQL** console
 
 ![Open SQL](9.png)
 
@@ -88,7 +96,7 @@ Use the following code to create a view for foods that need a nutrition grade as
 ```sql
 set schema foodie;
 
---DROP view "PAL_FOOD_DATA_SCORE_VIEW";
+DROP view "PAL_FOOD_DATA_SCORE_VIEW";
 
 CREATE VIEW "PAL_FOOD_DATA_SCORE_VIEW" AS
 	SELECT
@@ -138,7 +146,7 @@ Use the following code to create a view with the foods that will be used for tra
 
 SET schema foodie;
 
---DROP VIEW PAL_FOOD_DATA_TRAIN_VIEW;
+DROP VIEW PAL_FOOD_DATA_TRAIN_VIEW;
 
 CREATE VIEW PAL_FOOD_DATA_TRAIN_VIEW AS
 SELECT
@@ -204,19 +212,19 @@ CREATE LOCAL TEMPORARY COLUMN TABLE #PAL_PARAMETER_TBL (
     "STRING_VALUE" NVARCHAR (1000)
 );
 
---DROP TABLE PAL_FOOD_PMML_TBL;
+DROP TABLE PAL_FOOD_PMML_TBL;
 CREATE COLUMN TABLE PAL_FOOD_PMML_TBL (
     "ROW_INDEX" INT,
     "MODEL_CONTENT" NVARCHAR(5000)
 );
 
---DROP TABLE PAL_FOOD_STATISTICS_TBL;
+DROP TABLE PAL_FOOD_STATISTICS_TBL;
 CREATE COLUMN TABLE PAL_FOOD_STATISTICS_TBL (
     "STAT_NAME" NVARCHAR(256),
     "STAT_VALUE" NVARCHAR(1000)
 );
 
---DROP TABLE PAL_FOOD_OPTIMAL_PARAM_TBL;
+DROP TABLE PAL_FOOD_OPTIMAL_PARAM_TBL;
 CREATE COLUMN TABLE PAL_FOOD_OPTIMAL_PARAM_TBL (
     "PARAM_VALUE" NVARCHAR(256),
     "INT_VALUE" INT,
@@ -224,7 +232,7 @@ CREATE COLUMN TABLE PAL_FOOD_OPTIMAL_PARAM_TBL (
     "STRING_VALUE" NVARCHAR(1000)
 );
 
---DROP TABLE PAL_FOOD_MODEL_TBL;
+DROP TABLE PAL_FOOD_MODEL_TBL;
 CREATE COLUMN TABLE PAL_FOOD_MODEL_TBL (
     "VARIABLE_NAME" NVARCHAR(1000),
     "CLASS" NVARCHAR(100),
@@ -233,14 +241,14 @@ CREATE COLUMN TABLE PAL_FOOD_MODEL_TBL (
     "P_VALUE" DOUBLE
 );
 
---DROP TABLE PAL_FOOD_RESULT_SCORE_TBL;
+DROP TABLE PAL_FOOD_RESULT_SCORE_TBL;
 CREATE COLUMN TABLE PAL_FOOD_RESULT_SCORE_TBL (
     "CODE" INT,
     "CLASS" NVARCHAR(100),
     "PROBABILITY" DOUBLE
 );
 
---DROP TABLE PAL_FOOD_PLACEHOLDER_TBL;
+DROP TABLE PAL_FOOD_PLACEHOLDER_TBL;
 CREATE COLUMN TABLE PAL_FOOD_PLACEHOLDER_TBL (
     "PARAM_VALUE" NVARCHAR(256),
     "INT_VALUE" INT,
@@ -257,7 +265,9 @@ INSERT INTO #PAL_PARAMETER_TBL VALUES ('STANDARDIZE',1,NULL,NULL);
 INSERT INTO #PAL_PARAMETER_TBL VALUES ('STAT_INF',0,NULL,NULL);
 ```
 
+This may take some seconds. Here is some information about the platform you are using - SAP HANA, express edition- to pass the time:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HWP839IWaNU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 [ACCORDION-END]
 
@@ -279,8 +289,7 @@ SELECT * FROM PAL_FOOD_MODEL_TBL;
 SELECT * FROM PAL_FOOD_STATISTICS_TBL;
 ```
 
-You can see statistics about the accuracy of the model.
-
+You can see statistics about the accuracy of the model in the results.
 
 
 [ACCORDION-END]
@@ -308,7 +317,23 @@ SELECT * FROM PAL_FOOD_RESULT_SCORE_TBL order by 3 desc;
 
 ```
 
+The previous call populated the table `PAL_FOOD_RESULT_SCORE_TBL` with nutrition scores based on the results of the predictive algorithm. Get the ID of your selected food...
 
+![Get ID](3x.png)
+
+...and use it in the where clause to replace the sample one:
+
+```sql
+SELECT top 1 *
+FROM PAL_FOOD_RESULT_SCORE_TBL
+where CODE = 186710
+order by probability desc;
+```
+For example:
+
+![Get ID](4x.png)
+
+You now know the most probable nutrition grade for the food you have chosen.
 
 [ACCORDION-END]
 
@@ -323,7 +348,7 @@ You will use the map reduce capabilities to split the ingredients into a separat
 Paste and execute the following code in a new SQL console. This will take some moments to execute but you can continue to read an explanation of the code in the meantime.
 
 ```sql
---drop function "mapper";
+drop function "mapper";
 create function "mapper" ( in iv_id int, in iv_text nvarchar(5000) )
 				returns table (id int, val nvarchar(5000), freq int)
 	language sqlscript
@@ -339,7 +364,7 @@ create function "mapper" ( in iv_id int, in iv_text nvarchar(5000) )
 
 	end;
 
---drop function "reducer";
+drop function "reducer";
 create function "reducer"( in iv_val nvarchar(5000),
 						   in it_valtab table ( id int, freq int  ) )
 				returns table (
@@ -363,14 +388,38 @@ create function "reducer"( in iv_val nvarchar(5000),
 
   declare lt_input table(id int, ingredients_text nvarchar(5000));
   declare lt_result table(val nvarchar(5000), ingdt_freq int, total_freq int );
+  declare lv_id int;
+  declare lv_code_name nvarchar(100);
+  declare lv_new_friend nvarchar(100) = '0';
+  declare lv_main_ingredient nvarchar(100);
+  declare lt_here table(code_name nvarchar(100));
+  declare lv_count int = 0;
 
-  lt_input = select id, to_nvarchar(INGREDIENTS_TEXT) as ingredients_text from "FOOD"."COMM_FOODS" where NUTRITION_GRADE_FR = 'e' and id < 10000;
+----!!!!SET THE ID FOR YOUR FOOD AND YOUR CODE NAME HERE!!!!------
+
+lv_id = <<Use the ID of the food you selected>>;
+lv_code_name = '<<Use your First name, your day of birth and the first letter of the color of your socks>>';
+-------------------------------
+
+  lt_input = select id, to_nvarchar(INGREDIENTS_TEXT) as ingredients_text from "FOOD"."COMM_FOODS" where id = lv_id;
 
   lt_result = map_reduce( :lt_input,
   						"mapper"(:lt_input.id, :lt_input.ingredients_text) group by val as map_result,
   						"reducer"(map_result.val, map_result));
-  select * from :lt_result order by total_freq desc;						
+  select * from :lt_result order by total_freq desc;
 
+  select count(code_name) into lv_count from "FOOD"."I_WAS_HERE" where ingredient in (select val from :lt_result);
+  if lv_count > 0 then
+	select top 1 code_name into lv_new_friend from "FOOD"."I_WAS_HERE" where ingredient in (select val from :lt_result) group by code_name;
+  end if;
+
+  if lv_new_friend = '0' then
+		lv_new_friend = lv_code_name;
+	end if;
+
+  insert into "FOOD"."I_WAS_HERE" (code_name, fav_food, ingredient ) select :lv_code_name,  :lv_id, val from :lt_result ;
+
+   insert into "FOOD"."FRIENDS" (code_name, friends_with) values (lv_code_name, lv_new_friend);
 
   end;
 
@@ -391,60 +440,31 @@ create function "reducer"( in iv_val nvarchar(5000),
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Perform a fuzzy search)]
+[ACCORDION-BEGIN [Step 8: ](Find who you are connected to through the same food)]
 
-You can see `ascorbic acid` amongst the list of popular ingredients in foods with low nutritional score, together with other components that are probably found in other foods such as water, sugar and salt.
+The previous function associated participants through food and their ingredients. You can now represent that relationship in a graph
 
-![Text search](13.png)
-
-You will first look for all compounds related to ascorbic acid. Use the following SQL command which employs a fuzzy search with some tolerance to typos and variations given by the `SCORE()` function
 
 ```SQL
+set schema foodie;
 
-select "id", "orig_compound_name", "health_effect_id", "orig_health_effect_name" from "FOOD"."HEALTH_EFFECTS_COMPOUNDS" where contains("orig_compound_name", 'ascorbic', fuzzy(0.65))
-```
+create view code_names as select distinct code_name from "FOOD"."I_WAS_HERE";
 
-You will get plenty of results for health effects of ascorbic acid.
-
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Explore the text index)]
-
-When the datasets were uploaded into SAP HANA, the text field for the field `DESCRIPTION` in the table `HEALTH_EFFECTS` were created with type `TEXT` and text analysis enabled. This created implicit text indices which you can find in the schema `FOOD`.
-
-![Text search](15.png)
-
-You can also see the table with the text analysis:
-
-![Text search](16.png)
-
-You will now use the names of health effects linked to `ascorbic acid` to get the most repeated words in the text analysis table form the description in the `HEALTH_EFFECTS` table.
-
-```sql
-SELECT
-	idx.TA_STEM,
-	count(1) as occ
-FROM "FOOD"."$TA__SYS_FULLTEXT_162771_#0_#description" as idx
-join "FOOD"."HEALTH_EFFECTS_COMPOUNDS" as comp
-on comp."health_effect_id" = idx."id"
-where idx.ta_type in ('adjective', 'noun', 'verb')
-and idx.ta_stem is not null
-and contains(comp."orig_compound_name", 'ascorbic', fuzzy(0.65))
-group by idx.TA_STEM
-order by occ desc;
+create graph workspace friendships
+	edge table "FOOD"."FRIENDS"
+		source column code_name
+		target column friends_with
+		key column id
+	vertex table "FOODIE"."CODE_NAMES"
+		KEY COLUMN CODE_NAME;
 
 ```
 
+Navigate to the **Graph Workspaces** in the **FOODIE** schema. Right-click on the graph workspace and choose **View Graph**.
 
-Note that you are using the stems of the words. A slight modification of the previous SQL statement to include the original texts, but remove the aggregation, would show this.
+![View graph](graph.png)
 
-![Text search](19.png)
-
-Based on the sentiment in the words produced by the last SQL statement, you can say ascorbic acid, one of the most frequent ingredients in foods with low nutritional score, is a good compound.
-
-After all, ascorbic acid is a nutrient found in vitamin C.
+**Congratulations!** You are now part of the foodie network and earned a prize. Show your node on the graph to the instructor.
 
 
 [ACCORDION-END]

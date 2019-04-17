@@ -25,6 +25,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
 Open Eclipse on your desktop.
+
 ![Open Eclipse](desktop.png)
 
 [DONE]
@@ -66,7 +67,7 @@ Open Eclipse on your desktop.
     ![Connect to Service Instance](instance.png)
 
 8. At this stage you may add your favorite packages and click **Finish** to complete your setup.
-     
+
     ![Add favorite packages](project.png)
 
 [DONE]
@@ -123,7 +124,7 @@ Open Eclipse on your desktop.
   1. In the class definition, specify the interface `IF_OO_ADT_CLASSRUN` in the public section as shown on the screenshot. Now go to the class implementation and provide the implementation of the method `IF_OO_ADT_CLASSRUN~MAIN`. As shown on the screenshot, it should output the text Hello World! using the code line below
 `out->write('Hello World!').`
 
-    ```swift
+    ```ABAP
       class Z_CLASS_XXX definition
       public
       final

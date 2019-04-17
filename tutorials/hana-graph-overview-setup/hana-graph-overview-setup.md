@@ -33,7 +33,7 @@ For more please refer to [online documentation for SAP HANA 2.0 SPS 3](https://h
 
 [ACCORDION-BEGIN [Step 2: ](Exercise data)]
 
-You will have a model and data representing a part of the real life ski resort [`Pinzolo/Madonna di Campiglio`](https://www.skiresort.info/ski-resort/madonna-di-campigliopinzolofolgaridamarilleva) in Italy. The full-size picture of the map is available in [the file](map_large.png) and small-scale version is displayed below.
+You will have a model and data representing a part of the real life ski resort [`Pinzolo/Madonna di Campiglio`](https://www.skiresort.info/ski-resort/madonna-di-campigliopinzolofolgaridamarilleva) in Italy. The full-size picture of the map is available in [the file](map_large.jpg) and small-scale version is displayed below.
 
 ![map](map.png)
 
