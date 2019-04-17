@@ -1,23 +1,21 @@
 ---
 title: Maintain Platform Subaccounts and SAP Web IDE Permissions
-description: Add new subaccount to the SAP Cloud Platform global account and give permission to access SAP Web IDE to everyone.
+description: Create a subaccount in a SAP Cloud Platform global account and give permission to access SAP Web IDE to dedicated users.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 time: 15
 author_name: Ulrike Liebherr
 author_profile: https://github.com/Liebherr
 ---
- 
+
 ## Prerequisites   
-  - **Authorization:** Your user needs access to your SAP Cloud Platform subaccount in the Neo environment.
+  - **Authorization:** Your user needs access to your **SAP Cloud Platform global account** in the Neo environment.
 
 ## Details
 ### You will learn
 - How to create a subaccount
 - How to give users the permission to enter SAP Web IDE
-
-This tutorial describes how to add new subaccounts to SAP Cloud Platform. Furthermore you learn how to give members the permission to enter SAP Web IDE.
 
 ### Additional Information
 - **SAP S/4HANA Cloud Release** (tutorial's last update): 1902
@@ -30,9 +28,9 @@ Enter SAP Cloud Platform and select your global account.
 ![Enter SAP Cloud Platform global account](sapcp2globalAccount.png)
 
 Choose one of the two options to navigate from global account's overview to its subaccounts.
+One option is the **Subaccounts** point in the left hand side menu the other option is the link below the count of subaccounts within the Info part of the global account's overview area.
 
 ![Enter SAP Cloud Platform global account's subaccounts](sapcp_globalAccountOverview2subaccounts.png)
-
 
 
 [DONE]
@@ -49,11 +47,11 @@ Enter following data.
 
 | Field label | Field value |
 |:------------|:------------|
-| **Display Name** | `<YOUR_SUBACCOUNTS_NAME>`|
+| **Display Name** | `<YOUR_NEW_SUBACCOUNTS_NAME>`|
 | **Description**| (optional) |
 | **Environment**| `Neo` |
 | **Provider** | `SAP` |
-| **Region** | `<YOUR_REGION>` |
+| **Region** | `<YOUR_NEW_SUBACOUNTS_REGION>` |
 
  Click **Create**.
 

@@ -10,24 +10,18 @@ author_profile: https://github.com/Liebherr
 ---
 
 ## Prerequisites
-Authorizations: Your user needs
-  - (a) business role(s) with Unrestricted Write Access for business catalog **Extensibility - Fiori App Development** (ID: `SAP_CORE_BC_EXT_UI`) and **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
-  - access to **SAP Web IDE**
+**Authorizations**: Your user needs
+- Administrator access to your **SAP Cloud Platform** subaccount
+- Administrator access to your **SAP Cloud Platform Identity Authentication tenant**
 
 ## Details
 ### Glossary
-
-- **Identity**: individual people, but also computers, services, computational entities like processes and threads, or any group of such things
-
-- **Identity Provider**: system entity that creates, maintains, and manages identity information for identities
-
-- **Identity Authentication**: process of authenticating an identity
-
-- **SAP Cloud Platform Identity Authentication Service**: SAP's solution to enable identity authentication, abbreviated as **IAS**
-
-- **SAP Cloud Platform Identity Authentication tenant**: a customer's instance of the service
-
-- **SAP Cloud Platform Identity Authentication console**: Web application to configure your tenant
+**Identity**: individual people, but also computers, services, computational entities like processes and threads, or any group of such things
+**Identity Provider**: system entity that creates, maintains, and manages identity information for identities
+**Identity Authentication**: process of authenticating an identity
+**SAP Cloud Platform Identity Authentication Service**: SAP's solution to enable identity authentication, abbreviated as **IAS**
+**SAP Cloud Platform Identity Authentication tenant**: a customer's instance of the service
+**SAP Cloud Platform Identity Authentication console**: Web application to configure your tenant
 
 
 ### You will learn
