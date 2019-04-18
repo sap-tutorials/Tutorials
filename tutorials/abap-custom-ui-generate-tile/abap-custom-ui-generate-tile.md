@@ -45,7 +45,7 @@ Press **Add** to start extending the business catalog that the new app shall be 
 
 ![add a catalog to become extended](s4_customCatalogExtension_add.png)
 
-A pop up opens for catalog selection. Be aware, that users that shall be able to use the app must have a role with the same catalog assigned. As for this tutorial catalog `SAP_CORE_BC_EXT` is the essential prerequisite, we simply select that ad press **OK**
+A pop up opens for catalog selection. Be aware, that users that shall be able to use the app must have a role with the same catalog assigned. As for this tutorial catalog `SAP_CORE_BC_EXT` is the essential prerequisite, we simply select that and press **OK**
 
 ![Find and select catalog ](s4_customCatalogExtension_chooseCatalog.png)
 
