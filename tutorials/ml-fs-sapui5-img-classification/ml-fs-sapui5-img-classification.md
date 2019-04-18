@@ -18,8 +18,6 @@ The **Image Classification** service allows you to calculates and returns a list
 
 You will then be able to substitute the **Image Classification** services with any other SAP Leonardo Machine Learning Functional Services that consumes images content.
 
----
-
 [ACCORDION-BEGIN [Step 1: ](Get The API Sandbox URL And API Key)]
 
 In order to consume the **Image Classifier Service** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI and your API key, request and response parameters.
