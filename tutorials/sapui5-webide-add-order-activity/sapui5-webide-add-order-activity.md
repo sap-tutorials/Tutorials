@@ -17,7 +17,7 @@ In that bar, you will add a Button control to the right side of the footer bar i
 ---
 
 
-[ACCORDION-BEGIN [Step : ](Test the search)]
+[ACCORDION-BEGIN [Step : ](Add strings for the new footer)]
 Open the `webapp/i18n/i18n.properties` file, and add the following four lines to the bottom:
 
 ```I18N
@@ -31,7 +31,7 @@ OrderDialogSuccessMsg=The product has been ordered
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Test the search)]
+[ACCORDION-BEGIN [Step : ](Add a footer bar to the detail page)]
 2.  Open the `webapp/view/Detail.view.xml` file, and add a footer to the detail page by adding the following code under `<ObjectHeader>`:
 
 	```XML
@@ -48,7 +48,7 @@ OrderDialogSuccessMsg=The product has been ordered
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Test the search)]
+[ACCORDION-BEGIN [Step : ](Implement the event handler)]
 1.  Finally, open the `webapp/controller/Detail.controller.js` file.  Register two new classes in the `define` area:
 
     ```JavaScript
@@ -94,7 +94,7 @@ OrderDialogSuccessMsg=The product has been ordered
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Test the search)]
+[ACCORDION-BEGIN [Step : ](Test the new order button)]
 
 You are all set!  Run the application.  Choose an item from the list, and you will see an **Order** button in the detail screen.  
 
