@@ -154,16 +154,17 @@ Create the following directory structure:
 
 ```
 |-- forecast/db/src
-    |-- algorithms
-		|-- apl
-	        |-- afllang
-	        |-- procedures
-	        |-- views
-	    |-- pal
-	        |-- afllang
-	        |-- procedures
-	        |-- views
     |-- data
+    |-- hdb
+        |-- apl
+            |-- afllang
+            |-- procedures
+            |-- views
+        |-- pal
+            |-- afllang
+            |-- procedures
+            |-- views        
+        |-- summary
 ```
 
 You can use the right click on the target folder and select **New > Folder**.
@@ -190,7 +191,7 @@ Download the following files locally (right click on the link, then use the ***S
 
 > ### **Note**: If you want to import your own data files, make sure it uses the  **`csv`** file extension.
 
-In the left side panel, expand the **`forecast/db/src/hdb/data`** tree node.
+In the left side panel, expand the **`forecast/db/src/data`** tree node.
 
 Right click on the **`data`** folder, and use the **Import** > **File or Project** menu item.
 

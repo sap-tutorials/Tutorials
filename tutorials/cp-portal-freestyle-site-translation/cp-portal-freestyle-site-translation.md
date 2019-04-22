@@ -3,7 +3,7 @@ title: Translate Your SAP Cloud Platform Portal Freestyle Site
 description: Translate the content of your Portal Freestyle site into any of the supported languages.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
+tags: [   tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
 time: 15
 ---
 

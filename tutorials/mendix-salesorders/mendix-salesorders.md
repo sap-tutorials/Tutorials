@@ -1,12 +1,13 @@
 ---
-title: Create sales order app with SAP Cloud Platform Rapid Application Development by Mendix
+title: Create Sales Order App with SAP Cloud Platform Rapid Application Development by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - You are using a Windows desktop (or a Windows VM on a Mac).
  - You have access to an SAP Cloud Platform account. If not, you can open a trial account. See the [tutorial](https://developers.sap.com/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
  - You have completed the [Getting started with SAP Cloud Platform Rapid Application Development by Mendix](https://developers.sap.com/tutorials/mendix-onboarding.html) tutorial. Name your app **SAP Sales Orders**.
@@ -33,9 +34,6 @@ This tutorial also showcases the [SAP OData Model Creator](https://appstore.home
 - How to deploy the application to SAP Cloud Platform.
 
 
-### Time to Complete
-**20 Min**
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get SAP OData Connector)]
@@ -47,6 +45,7 @@ For more information, see [How to Use App Store Content in the Modeler](https://
 
 ![Mendix App Store](mendix-salesorders1.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create GWSAMPLE_BASIC service module)]
@@ -57,7 +56,7 @@ You can generate this domain model by providing your service metadata as a file,
 
 ![OData Model Creator](mendix-salesorders1a.png)
 
-We will do it by providing a file. 
+We will do it by providing a file.
 This file can be downloaded from the OData service URL directly using the `$metadata` suffix or retrieved from SAP Gateway. Since we're using the SAP Demo Gateway System (ES5) for this tutorial, the metadata file can be found at:
 
 ```
@@ -88,6 +87,7 @@ To generate the service module, follow these steps:
 
     ![Domain Model Creator](mendix-salesorders3.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -98,7 +98,7 @@ Now you have a Mendix module ready to be imported into your project.
 1. Open the project that you created, right-click the project root folder, select **Import module package…** and select the `.mpk` file.
 
     ![Import module package](mendix-salesorders4.png) <br>
-    
+
     You now have your `GWSAMPLE_BASIC` module available in your project ready to use in combination with the SAP OData Connector.
 
     ![Import module package](mendix-salesorders5.png)
@@ -113,6 +113,7 @@ Now you have a Mendix module ready to be imported into your project.
 
     ![Generated Domain Model](mendix-salesorders33.png)
 
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create constants for ES5 credentials)]
@@ -137,6 +138,7 @@ Our tutorial uses basic authentication to connect to the ES5 system, so let's st
 
     ![Add Constant](mendix-salesorders9.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add logic to get sales orders – authentication)]
@@ -171,6 +173,7 @@ Follow these steps to create the logic to get the sales orders.
 
 ![Add Basic Authentication](mendix-salesorders13.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add logic to get sales orders – request)]
@@ -202,6 +205,7 @@ The **Get List** action retrieves a list of entities described in the domain mod
 
 4. Click **OK** to close the dialog.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add logic to get sales orders – return value)]
@@ -227,6 +231,7 @@ In the microflow, make the return value of the microflow a **`List`** of **`Sale
 Your microflow should look like the following:
     ![Microflow](mendix-salesorders17.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a new master detail page)]
@@ -247,6 +252,7 @@ Your microflow should look like the following:
 
     ![Add New Page](mendix-salesorders17d.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Show sales orders in page – master)]
@@ -281,6 +287,7 @@ Now we will bind the Master section to the Sales Orders.
 
     ![List View Content Final](mendix-salesorders20.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Show sales orders in page – details)]
@@ -309,7 +316,7 @@ Now let's bind the Detail section and present some more Sales Order properties:
 
     ![3 Containers](mendix-salesorders22b.png)
 
-7. Select the first container and delete both `Category` and `Value` texts. 
+7. Select the first container and delete both `Category` and `Value` texts.
 
 8. Double-click the **`SalesOrderID`** property from the Connector tab.
 
@@ -331,6 +338,7 @@ Now let's bind the Detail section and present some more Sales Order properties:
 
 14. Scroll up in the page, double-click the **Page Title** text and change it to **Sales Orders Application**.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Configure Home Page)]
@@ -347,6 +355,7 @@ Mendix apps work by showing pages to the user. You can define which page should 
 
 4. Click **Select**.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run app)]
@@ -372,6 +381,7 @@ You will now see your Sales Orders Application in the browser, with live data co
 
   ![View App](mendix-salesorders30.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Run app in SAP Cloud Platform)]
@@ -389,5 +399,8 @@ The application will automatically bind to the Connectivity, XSUAA and PostgreSQ
 
 2. Once the application is deployed successfully, click on **View** to run it from SAP Cloud Platform.
 
+[DONE]
 [ACCORDION-END]
 
+### Additional Information
+- Read more about using Mendix at [https://docs.mendix.com/howto/](https://docs.mendix.com/howto/).

@@ -12,7 +12,7 @@ time: 15
 - How to bundle the sensor data before storing in AWS S3 or Google Cloud Storage
 - How to use a **JS String Operator**
 
-Please note that this tutorial is similar to the `Bundle data (via JavaScript)` tutorial from [SAP Data Hub, developer edition tutorial group](https://www.SAP.com/developer/groups/datahub-pipelines.html).
+Please note that this tutorial is similar to the `Bundle data (via JavaScript)` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-2-pipelines.html).
 Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
 ---

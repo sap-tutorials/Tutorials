@@ -122,13 +122,13 @@ service {
   "aa.forecast.db.data::TrendAndCyclicAnd_4Wn"     as "apl_TrendAndCyclicAnd_4Wn";
   "aa.forecast.db.data::TrendAndCyclicAndWn"       as "apl_TrendAndCyclicAndWn";  
 
-  "aa.forecast.db.algorithms.pal.views::CashFlows"              as "pal_CashFlows"              key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::Ozone"                  as "pal_Ozone"                  key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::Lag1AndCycles"          as "pal_Lag1AndCycles"          key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::Lag1AndCyclesAndWn"     as "pal_Lag1AndCyclesAndWn"     key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::TrendAndCyclic"         as "pal_TrendAndCyclic"         key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::TrendAndCyclicAnd_4Wn"  as "pal_TrendAndCyclicAnd_4Wn"  key ("signal_time");
-  "aa.forecast.db.algorithms.pal.views::TrendAndCyclicAndWn"    as "pal_TrendAndCyclicAndWn"    key ("signal_time");  
+  "aa.forecast.db.hdb.pal.views::CashFlows"              as "pal_CashFlows"              key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::Ozone"                  as "pal_Ozone"                  key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::Lag1AndCycles"          as "pal_Lag1AndCycles"          key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::Lag1AndCyclesAndWn"     as "pal_Lag1AndCyclesAndWn"     key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::TrendAndCyclic"         as "pal_TrendAndCyclic"         key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::TrendAndCyclicAnd_4Wn"  as "pal_TrendAndCyclicAnd_4Wn"  key ("signal_time");
+  "aa.forecast.db.hdb.pal.views::TrendAndCyclicAndWn"    as "pal_TrendAndCyclicAndWn"    key ("signal_time");  
 }
 settings {
   support null;
@@ -225,7 +225,7 @@ function doPost() {
 
         var start = Date.now();
         connection = $.hdb.getConnection();
-        var algorithm = connection.loadProcedure(null, "aa.forecast.db.algorithms.apl.procedures::forecast");
+        var algorithm = connection.loadProcedure(null, "aa.forecast.db.hdb.apl.procedures::forecast");
         var results = algorithm(params);
         $.response.status = $.net.http.OK;
         $.response.setBody(JSON.stringify({
@@ -321,7 +321,7 @@ function doPost() {
 
 		var start = Date.now();
 		connection = $.hdb.getConnection();
-		var algorithm = connection.loadProcedure(null, "aa.forecast.db.algorithms.pal.procedures::auto_arima");
+		var algorithm = connection.loadProcedure(null, "aa.forecast.db.hdb.pal.procedures::auto_arima");
 		var results = algorithm(params);
 		$.response.status = $.net.http.OK;
 		$.response.setBody(JSON.stringify({
@@ -411,7 +411,7 @@ function doPost() {
 
 		var start = Date.now();
 		connection = $.hdb.getConnection();
-		var algorithm = connection.loadProcedure(null, "aa.forecast.db.algorithms.pal.procedures::auto_smoothing");
+		var algorithm = connection.loadProcedure(null, "aa.forecast.db.hdb.pal.procedures::auto_smoothing");
 		var results = algorithm(params);
 		$.response.status = $.net.http.OK;
 		$.response.setBody(JSON.stringify({
@@ -492,7 +492,7 @@ function doPost() {
 
 		var start = Date.now();
 		connection = $.hdb.getConnection();
-		var algorithm = connection.loadProcedure(null, "aa.forecast.db.algorithms.pal.procedures::seasonality_test");
+		var algorithm = connection.loadProcedure(null, "aa.forecast.db.hdb.pal.procedures::seasonality_test");
 		var results = algorithm(params);
 		$.response.status = $.net.http.OK;
 		$.response.setBody(JSON.stringify({
@@ -567,7 +567,7 @@ You should now get the list of XS OData services available.
 Replace ***`xsodata/data.xsodata?$format=json`***  from the URL by:
 
 ```url
-apl_CashFlows_extrapredictors?$inlinecount=allpages&$filter=ReverseWorkingDaysIndices eq 21&$format=json
+xsodata/data.xsodata/apl_CashFlows_extrapredictors?$inlinecount=allpages&$filter=ReverseWorkingDaysIndices eq 21&$format=json
 ```
 
 You should get the rows where the ***`ReverseWorkingDaysIndices`*** is equal to 21 including the row count.
@@ -594,7 +594,7 @@ Select the **Body** tab, enable the **raw** mode, select **`JSON (application/js
 
 ```JSON
 {
-  "DATASET" : "CashFlows",
+  "DATASETNAME" : "CashFlows",
   "HORIZON" : "21",
   "LASTTRAININGTIMEPOINT" : "2001-12-28"
 }
@@ -613,7 +613,7 @@ curl --request POST \
   --url https://hxehost:51047/xsjs/apl/forecast.xsjs \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
-  --data '{DATASETNAME" : "CashFlows", "HORIZON" : "21", "LASTTRAININGTIMEPOINT" : "2001-12-28"}'
+  --data '{"DATASETNAME" : "CashFlows", "HORIZON" : "21", "LASTTRAININGTIMEPOINT" : "2001-12-28"}'
 ```
 
 > ### **Note:** Make sure to adjust the host and port number used in the URL to your local environment.

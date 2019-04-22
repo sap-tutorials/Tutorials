@@ -61,7 +61,6 @@ Therefore, you won't need to create table types or signature table using SQL, bu
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 1: ](Time Series with SAP HANA PAL)]
 
 As stated above, the ***SAP HANA Predictive Analytics Library*** (PAL) delivers over a hundred of ***best in class industry standard*** algorithms.
@@ -115,22 +114,24 @@ In the left side panel, expand the **`forecast/db/src`** tree node.
 
 Right click on the **`src`** folder and select **New > Folder**.
 
-Enter **`algorithms`** as the folder name, then click on **OK**.
+Enter **`hdb`** as the folder name, then click on **OK**.
 
-Right click on the **`pal`** folder node from the tree, and select **New > File**.
+Right click on the **`hdb`** folder node from the tree, and select **New > File**.
 
-Enter **`commmon.hdbcds`** as the file name, then click on **OK**.
+Enter **`pal`** as the folder name, then click on **OK**.
+
+Enter **`common.hdbcds`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-forecast/db/src/algorithms/pal/commmon.hdbcds
+forecast/db/src/hdb/pal/common.hdbcds
 ```
 
 Paste the following content:
 
 ```JavaScript
-namespace aa.forecast.db.algorithms.pal;
+namespace aa.forecast.db.hdb.pal;
 
 context common {
     table type tt_parameter {
@@ -246,10 +247,10 @@ Paste the following content:
     "area" : "AFLPAL",
     "function" : "SEASONALITYTEST_ANY",
     "parameters" : [
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::common.tt_dataset"},
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::common.tt_parameter"},
-        {  "direction" : "OUT", "type" : "aa.forecast.db.algorithms.pal::common.tt_statistics"},
-        {  "direction" : "OUT", "type" : "aa.forecast.db.algorithms.pal::seasonality_test.tt_output"}
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::common.tt_dataset"},
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::common.tt_parameter"},
+        {  "direction" : "OUT", "type" : "aa.forecast.db.hdb.pal::common.tt_statistics"},
+        {  "direction" : "OUT", "type" : "aa.forecast.db.hdb.pal::seasonality_test.tt_output"}
     ]
 }
 ```
@@ -275,10 +276,10 @@ Paste the following content:
     "area" : "AFLPAL",
     "function" : "FORECASTSMOOTHING_ANY",
     "parameters" : [
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::common.tt_dataset"},
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::common.tt_parameter"},
-        {  "direction" : "OUT", "type" : "aa.forecast.db.algorithms.pal::smoothing.tt_output_raw"},
-        {  "direction" : "OUT", "type" : "aa.forecast.db.algorithms.pal::common.tt_statistics"}
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::common.tt_dataset"},
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::common.tt_parameter"},
+        {  "direction" : "OUT", "type" : "aa.forecast.db.hdb.pal::smoothing.tt_output_raw"},
+        {  "direction" : "OUT", "type" : "aa.forecast.db.hdb.pal::common.tt_statistics"}
     ]
 }
 ```
@@ -304,10 +305,10 @@ Paste the following content:
     "area" : "AFLPAL",
     "function" : "AUTOARIMA_ANY",
     "parameters" : [
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::common.tt_dataset"},
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::common.tt_parameter"},
-        {  "direction" : "OUT", "type" : "aa.forecast.db.algorithms.pal::arima.tt_model"},
-        {  "direction" : "OUT", "type" : "aa.forecast.db.algorithms.pal::arima.tt_fit"}
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::common.tt_dataset"},
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::common.tt_parameter"},
+        {  "direction" : "OUT", "type" : "aa.forecast.db.hdb.pal::arima.tt_model"},
+        {  "direction" : "OUT", "type" : "aa.forecast.db.hdb.pal::arima.tt_fit"}
     ]
 }
 ```
@@ -333,10 +334,10 @@ Paste the following content:
     "area" : "AFLPAL",
     "function" : "ARIMAFORECAST_ANY",
     "parameters" : [
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::common.tt_dataset"},
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::arima.tt_model"},
-        {  "direction" : "IN",  "type" : "aa.forecast.db.algorithms.pal::common.tt_parameter"},
-        {  "direction" : "OUT", "type" : "aa.forecast.db.algorithms.pal::arima.tt_output_raw"}
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::common.tt_dataset"},
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::arima.tt_model"},
+        {  "direction" : "IN",  "type" : "aa.forecast.db.hdb.pal::common.tt_parameter"},
+        {  "direction" : "OUT", "type" : "aa.forecast.db.hdb.pal::arima.tt_output_raw"}
     ]
 }
 ```
@@ -375,7 +376,7 @@ forecast/db/src/hdb/pal/views/CashFlows.hdbview
 Paste the following content:
 
 ```JSON
-VIEW "aa.forecast.db.algorithms.pal.views::CashFlows" as
+VIEW "aa.forecast.db.hdb.pal.views::CashFlows" as
     select
         to_int(rank() over (order by "signal_time" asc)) as "signal_time",
         "signal_value"
@@ -401,7 +402,7 @@ forecast/db/src/hdb/pal/views/CashFlows_extrapredictors.hdbview
 Paste the following content:
 
 ```JSON
-VIEW "aa.forecast.db.algorithms.pal.views::CashFlows_extrapredictors" as
+VIEW "aa.forecast.db.hdb.pal.views::CashFlows_extrapredictors" as
     select
         to_int(rank() over (order by "signal_time" asc)) as "signal_time",
         "signal_value",
@@ -452,7 +453,7 @@ forecast/db/src/hdb/pal/views/Ozone.hdbview
 Paste the following content:
 
 ```JSON
-VIEW "aa.forecast.db.algorithms.pal.views::Ozone" as
+VIEW "aa.forecast.db.hdb.pal.views::Ozone" as
     select
         to_int(rank() over (order by "signal_time" asc)) as "signal_time",
         "signal_value"
@@ -478,7 +479,7 @@ forecast/db/src/hdb/pal/views/Lag1AndCycles.hdbview
 Paste the following content:
 
 ```JSON
-VIEW "aa.forecast.db.algorithms.pal.views::Lag1AndCycles" as
+VIEW "aa.forecast.db.hdb.pal.views::Lag1AndCycles" as
     select
         to_int(rank() over (order by "signal_time" asc)) as "signal_time",
         "signal_value"
@@ -504,7 +505,7 @@ forecast/db/src/hdb/pal/views/Lag1AndCyclesAndWn.hdbview
 Paste the following content:
 
 ```JSON
-VIEW "aa.forecast.db.algorithms.pal.views::Lag1AndCyclesAndWn" as
+VIEW "aa.forecast.db.hdb.pal.views::Lag1AndCyclesAndWn" as
     select
         to_int(rank() over (order by "signal_time" asc)) as "signal_time",
         "signal_value"
@@ -532,7 +533,7 @@ forecast/db/src/hdb/pal/views/TrendAndCyclic.hdbview
 Paste the following content:
 
 ```JSON
-VIEW "aa.forecast.db.algorithms.pal.views::TrendAndCyclic" as
+VIEW "aa.forecast.db.hdb.pal.views::TrendAndCyclic" as
     select
         to_int(rank() over (order by "signal_time" asc)) as "signal_time",
         "signal_value"
@@ -558,7 +559,7 @@ forecast/db/src/hdb/pal/views/TrendAndCyclicAndWn.hdbview
 Paste the following content:
 
 ```JSON
-VIEW "aa.forecast.db.algorithms.pal.views::TrendAndCyclicAndWn" as
+VIEW "aa.forecast.db.hdb.pal.views::TrendAndCyclicAndWn" as
     select
         to_int(rank() over (order by "signal_time" asc)) as "signal_time",
         "signal_value"
@@ -584,7 +585,7 @@ forecast/db/src/hdb/pal/views/TrendAndCyclicAnd_4Wn.hdbview
 Paste the following content:
 
 ```JSON
-VIEW "aa.forecast.db.algorithms.pal.views::TrendAndCyclicAnd_4Wn" as
+VIEW "aa.forecast.db.hdb.pal.views::TrendAndCyclicAnd_4Wn" as
     select
         to_int(rank() over (order by "signal_time" asc)) as "signal_time",
         "signal_value"
@@ -640,9 +641,9 @@ drop table #decomposed_seasonality;
 ### **Create temporary tables**
 
 ```SQL
-create local temporary table #function_parameter      like "aa.forecast.db.algorithms.pal::common.tt_parameter";
-create local temporary table #seasonality_statistics  like "aa.forecast.db.algorithms.pal::common.tt_statistics";
-create local temporary table #decomposed_seasonality  like "aa.forecast.db.algorithms.pal::seasonality_test.tt_output";
+create local temporary table #function_parameter      like "aa.forecast.db.hdb.pal::common.tt_parameter";
+create local temporary table #seasonality_statistics  like "aa.forecast.db.hdb.pal::common.tt_statistics";
+create local temporary table #decomposed_seasonality  like "aa.forecast.db.hdb.pal::seasonality_test.tt_output";
 ```
 
 ### **Set the algorithm parameters**
@@ -656,8 +657,8 @@ insert into #function_parameter values ('ALPHA' , null , 0.2, null);
 You can now test the Cash Flow with the seasonality test function using the following SQL:
 
 ```sql
-call "aa.forecast.db.algorithms.pal.afllang::seasonality_test" (
-  "aa.forecast.db.algorithms.pal.views::CashFlows",
+call "aa.forecast.db.hdb.pal.afllang::seasonality_test" (
+  "aa.forecast.db.hdb.pal.views::CashFlows",
   #function_parameter,
   #seasonality_statistics,
   #decomposed_seasonality
@@ -722,8 +723,8 @@ In some situation, you might be tempted to separately model the decomposed trend
 ### **Seasonality Test on Ozone**
 
 ```sql
-call "aa.forecast.db.algorithms.pal.afllang::seasonality_test" (
-  "aa.forecast.db.algorithms.pal.views::Ozone",
+call "aa.forecast.db.hdb.pal.afllang::seasonality_test" (
+  "aa.forecast.db.hdb.pal.views::Ozone",
   #function_parameter,
   #seasonality_statistics,
   #decomposed_seasonality

@@ -60,7 +60,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-image-classifier.cfapps.eu10.hana.ondemand.com/api/v2/image/classification`</nobr>
+<nobr>URL<nobr>          | the value for **`IMAGE_CLASSIFICATION_URL`** in your service key
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 

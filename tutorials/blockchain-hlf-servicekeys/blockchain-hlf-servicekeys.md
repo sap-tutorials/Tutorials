@@ -3,7 +3,7 @@ title: Create Hyperledger Fabric Service Keys
 description: Learn how to create Hyperledger Fabric service keys on SAP Cloud Platform
 auto_validation: true
 time: 5
-tags: [tutorial>intermediate, products>sap-cloud-platform, topic>cloud, topic>blockchain]
+tags: [tutorial>intermediate, products>sap-cloud-platform, topic>cloud, topic>blockchain ]
 primary_tag: topic>blockchain
 author_name: Tom Beck
 author_profile: https://github.com/HeyTomBeck

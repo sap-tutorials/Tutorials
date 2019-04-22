@@ -1,7 +1,7 @@
 ---
 auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
-description: Build a list report app with the ABAP RESTful programming model for SAP Fiori.
+description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 10
@@ -60,7 +60,7 @@ Select to your ABAP package created in tutorial **Create Simple Database Table f
 
   3. Specify your data definition as shown below. The keyword key is used to specific a key element and the keyword as is used to define alias names. The two associations `I_Country` and `I_Currency` are defined and exposed in the projection. The element `CurrencyCode` is specified as currency key for the element Cost which is an amount field. The view entity is specified as searchable using the view annotation `@Search.searchable: true` and the element `CustomerName` is specified as default search element using the element annotation `@Search.defaultSearchElement: true`.
 
-    ```swift
+    ```ABAP
     @AbapCatalog.sqlViewName: 'ZV_BOOKING_XXX'
     @AbapCatalog.compiler.compareFilter : true
     @AbapCatalog.preserveKey: true
@@ -103,7 +103,7 @@ Select to your ABAP package created in tutorial **Create Simple Database Table f
 
       ![Add UI annotation](ui.png)
 
-    ```swift
+    ```ABAP
         @UI: {
       headerInfo: {
       typeName: 'Booking',
@@ -115,7 +115,7 @@ Select to your ABAP package created in tutorial **Create Simple Database Table f
 
   2. Replace your code with following:
 
-    ```swift
+    ```ABAP
     define view ZI_Booking_XXX
       as select from ztbooking_xxx as Booking
       association [0..1] to I_Country  as _Country  on $projection.country = _Country.Country
@@ -224,7 +224,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-BEGIN [Step 7: ](Expose entities)]
   1. Expose the **`ZI_Booking_XXX`** and the **`I_Country`** view entities.
 
-    ```swift
+    ```ABAP
       @EndUserText.label: 'Service Definition for Booking'
 
       define service Z_I_Booking_XXX {
@@ -270,7 +270,7 @@ Click **Activate** to publish your service binding.
 ![Publish locally](activate.png)
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Check your metadata)]
   1. Click on the Service URL to see your result.

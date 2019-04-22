@@ -8,13 +8,15 @@ time: 10
 ---
 
 ## Prerequisites  
- - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
+ - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
 
 ## Details
-### You will learn  
-This tutorial shows you how to create a custom business object that has a simple data structure and publish it.  At the end there will exist a database table for the business object.
+### You will learn
 
-### Example
+- Define a custom business object and its a simple data structure
+- Create the database table for the custom business object
+
+**Our Example**
 
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
 
@@ -22,6 +24,8 @@ As applications are based on business objects, it all starts with custom busines
 
 In the first parts a manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
+### Additional Information
+- **SAP S/4HANA Cloud Release** (tutorial's last update): 1808
 
 ---
 
@@ -76,9 +80,9 @@ In the first parts a manager wants to define business objects "Bonus Plan" for e
 | **`Employee ID`** | **`EmployeeID`** | **`Text`** | | Length: **`12`** |
 | **`Employee Name`** | **`EmployeeName`** | **`Text`** | | Length **`40`**, Read Only: **`X`** |
 
-The UI for maintaining fields looks as follows.
+    The UI for maintaining fields looks as follows.
 
-![Custom Business Object's Field List View](CBO_Fieldlist_partly.png)
+    ![Custom Business Object's Field List View](CBO_Fieldlist_partly.png)
 
 [DONE]
 [ACCORDION-END]

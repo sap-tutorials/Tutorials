@@ -3,6 +3,7 @@ title: Generate sensor data in SAP Data Hub, trial edition 2.4
 description: Generate sensor data and display it in a terminal by using SAP Data Hub, trial edition 2.4.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+time: 15
 ---
 
 ## Details
@@ -12,8 +13,6 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 Please note that this tutorial is similar to the `Generate sensor data` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
 Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -34,6 +33,7 @@ Click **Save (1)**. Then enter a **Name** `(test.myFirstPipeline)` and **Descrip
 
 ![picture02](datahub-trial-v2-pipelines-part01-2.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Data Generator)]
@@ -58,6 +58,7 @@ The sample data represents sensors for humidity, temperature etc.
 
 Close the tab for the JavaScript snippet.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -70,6 +71,7 @@ Add a **Terminal** operator to the pipeline by drag & drop (you find this also i
 
 Afterwards click **Save (1)**.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -85,6 +87,7 @@ When the **Status (2)** tab indicates that the pipeline is running, use the cont
 
 Stop the pipeline by clicking **Stop** (you find it next to the **Run** button).
 
+[DONE]
 
 [ACCORDION-END]
 

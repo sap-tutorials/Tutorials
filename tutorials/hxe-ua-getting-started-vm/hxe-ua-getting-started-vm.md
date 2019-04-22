@@ -56,7 +56,7 @@ If you are using a `VMWare` product, and if the IP address still doesn't show af
 5.  Click *Apply* and *OK* to save your corrected bridge networking values.
 6.  Exit Virtual Network Editor.
 7.  Exit your virtual machine.
-8.  Restart you host machine.
+8.  Restart your host machine.
 9.  Restart SAP HANA, express edition and go back to step 1.
 
 [ACCORDION-END]
@@ -67,11 +67,19 @@ At the *`hxehost` login* prompt, enter `hxeadm`.
 
 For *Password*, enter the temporary password `HXEHana1`.
 
+> Note:
+> Is `VMWare` not recognizing your keyboard inputs? Press `CTRL+G` to redirect keyboard and mouse input to your VM.
+>
+>
+
 ![loio691e85dbc5514eedb49a0eabab8d5d72_LowRes](loio691e85dbc5514eedb49a0eabab8d5d72_LowRes.png)
 
 When prompted for *(current) UNIX password*, enter the temporary password again: `HXEHana1`
 
 ![loio834fa6b3ab6546f4ac282a73885ccfba_LowRes](loio834fa6b3ab6546f4ac282a73885ccfba_LowRes.png)
+
+> Note:
+> When entering a password, the cursor doesn't move, and placeholder characters don't show. Don't worry -- your password is being entered even though it may look like nothing is happening.
 
 [ACCORDION-END]
 
@@ -105,9 +113,10 @@ When prompted to *Retype new password*, enter your strong password again.
 
 [ACCORDION-BEGIN [Step 6: ](Enter new HANA database master password)]
 
-When prompted for *New HANA database master password*, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 3, or a new password. If you are entering a new password, see the password rules in step 3.
+When prompted for *New HANA database master password*, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 4, or a new password. If you are entering a new password, see the password rules in step 4.
 
 Entering the HANA database master password changes the SYSTEM user password. If you are installing the `server + applications virtual machine`, it also changes the `XSA_ADMIN` and `XSA_DEV` user passwords.
+
 
 [ACCORDION-END]
 

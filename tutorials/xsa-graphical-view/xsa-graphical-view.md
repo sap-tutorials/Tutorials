@@ -2,6 +2,8 @@
 title: Create a Dimension Graphical Calculation View (XS Advanced)
 description: Create a graphical calculation view with a dimension data type.
 primary_tag: products>sap-hana
+author_name: Lucia Subatin
+author_profile: https://github.com/lsubatin
 auto_validation: true
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15

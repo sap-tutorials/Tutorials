@@ -39,13 +39,13 @@ Then execute one of the following command depending on your operating system:
 - Linux / Mac OS:
 
 ```shell
-cf install-plugin -f sapmlcli
+cf install-plugin -f <extract directory>/sapmlcli
 ```
 
 - Windows:
 
 ```shell
-cf install-plugin -f sapmlcli.exe
+cf install-plugin -f <extract directory>/sapmlcli.exe
 ```
 
 The terminal should display the following output:

@@ -27,6 +27,7 @@
     "color-log": "^0.0.2",
     "command-line-args": "^4.0.7",
     "cp-file": "^5.0.0",
+    "extend": "^3.0.2",
     "fs-extra": "^6.0.0",
     "gitlog": "^3.1.2",
     "html-entities": "^1.2.1",

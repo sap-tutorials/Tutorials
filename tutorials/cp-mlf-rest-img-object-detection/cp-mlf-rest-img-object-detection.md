@@ -62,7 +62,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-retrain-od-inference.cfapps.eu10.hana.ondemand.com/api/v2alpha1/image/object-detection/`</nobr>
+<nobr>URL<nobr>          | the value for **`OBJECT_DETECTION_API_URL`** in your service key
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 

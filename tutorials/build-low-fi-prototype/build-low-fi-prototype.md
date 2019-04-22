@@ -1,7 +1,7 @@
 ---
-title: Create a low-fidelity SAP Build prototype
+title: Create a Low-Fidelity Prototype
 description: Use SAP Build to turn your app idea sketches into a low-fidelity prototype.
-auto_validation: true
+auto_validation: false
 primary_tag: products>sap-build
 tags: [  tutorial>beginner, products>sap-build ]
 time: 15
@@ -16,13 +16,13 @@ SAP Build enables you to take your sketches from a piece of paper to a functioni
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a project)]
-Log in to [SAP Build](https://standard.build.me/projects/).
+Log in to [BUILD](https://standard.build.me/projects/).
 
 Under Projects, click the **New Project** button to start creating a new project.
 
-![New project in SAP Build](1.png)
+![new project in build](1.png)
 
-You can start projects from different templates or samples in SAP Build, but for this tutorial, you will want to choose **Start from Scratch**. Select **Create New Project** button.
+You can start projects from different templates or samples in BUILD, but for this tutorial, you will want to choose **Start from Scratch**. Select **Create New Project** button.
 
 ![create new project button](2.png)
 
@@ -37,7 +37,7 @@ Click **Create Project** when all the fields have been filled out.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download or Create the files)]
+[ACCORDION-BEGIN [Step 2: ](Download or create the files)]
 **Sketch up your application.** Use pen and paper or a computer tool. You want to create 3 screens.
 1. Product List
 2. Product Details
@@ -61,7 +61,7 @@ Don't have time to make your own sketches? You can use the above samples. **Righ
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Upload the files to SAP Build)]
+[ACCORDION-BEGIN [Step 3: ](Upload the files to BUILD)]
 In your BUID project, select the **Upload Files** tile under the What do you want to do section.
 
 ![upload files button](8.png)

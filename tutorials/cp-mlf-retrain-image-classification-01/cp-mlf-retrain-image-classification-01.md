@@ -68,6 +68,9 @@ cf sapml config set ml_foundation_service_name  ml-foundation-trial-beta
 cf sapml fs init
 ```
 
+> ### **Note:**
+When using a productive account the ***`ml_foundation_service_name`*** might be different than the one using in trial. Make sure to adjust the value accordingly.
+
 The output should look like this:
 
 ```

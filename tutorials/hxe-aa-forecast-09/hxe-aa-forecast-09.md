@@ -55,7 +55,7 @@ The complete description of these parameters is available in the [`FORECAST` fun
 
 Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
 
-Right click on the **`apl`** folder (from **`forecast/db/src/algorithms`** ) and select **New > Folder**.
+Right click on the **`apl`** folder (from **`forecast/db/src/hdb`** ) and select **New > Folder**.
 
 Enter **`procedures`** as the folder name, then click on **OK**.
 
@@ -68,13 +68,13 @@ Enter **`forecast.hdbprocedure`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-forecast/db/src/algorithms/apl/procedures/forecast.hdbprocedure
+forecast/db/src/hdb/apl/procedures/forecast.hdbprocedure
 ```
 
 Paste the following content:
 
 ```SQL
-PROCEDURE "aa.forecast.db.algorithms.apl.procedures::forecast" (
+PROCEDURE "aa.forecast.db.hdb.apl.procedures::forecast" (
     in DatasetName            varchar(100),
     in Horizon                integer default 1,
     in LastTrainingTimePoint  date,
@@ -85,26 +85,26 @@ PROCEDURE "aa.forecast.db.algorithms.apl.procedures::forecast" (
     in ForcePositiveForecast  varchar(100) default 'false',
     in ForecastMaxCyclics     integer      default 450,
     in ForecastMaxLags        integer      default NULL,
-    out operation_config     "aa.forecast.db.algorithms.apl::forecast.tt_operation_config",
-    out results              "aa.forecast.db.algorithms.apl::forecast.tt_results",
-    out operation_log        "aa.forecast.db.algorithms.apl::forecast.tt_operation_log",
-    out summary              "aa.forecast.db.algorithms.apl::forecast.tt_summary",
-    out indicators           "aa.forecast.db.algorithms.apl::forecast.tt_indicators"
+    out operation_config     "aa.forecast.db.hdb.apl::forecast.tt_operation_config",
+    out results              "aa.forecast.db.hdb.apl::forecast.tt_results",
+    out operation_log        "aa.forecast.db.hdb.apl::forecast.tt_operation_log",
+    out summary              "aa.forecast.db.hdb.apl::forecast.tt_summary",
+    out indicators           "aa.forecast.db.hdb.apl::forecast.tt_indicators"
 )
 LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
     declare FunctionName varchar(255) := 'forecast';
     --declare cursor coldesc for select position, column_name from sys.table_columns where table_name = 'CashFlows_extrapredictors';
 
-    create local temporary table #forecast_function_header  like "aa.forecast.db.algorithms.apl::forecast.tt_function_header";
-    create local temporary table #forecast_operation_config like "aa.forecast.db.algorithms.apl::forecast.tt_operation_config";
-    create local temporary table #forecast_variable_descs   like "aa.forecast.db.algorithms.apl::forecast.tt_variable_descs";
-    create local temporary table #forecast_variable_roles   like "aa.forecast.db.algorithms.apl::forecast.tt_variable_roles";
+    create local temporary table #forecast_function_header  like "aa.forecast.db.hdb.apl::forecast.tt_function_header";
+    create local temporary table #forecast_operation_config like "aa.forecast.db.hdb.apl::forecast.tt_operation_config";
+    create local temporary table #forecast_variable_descs   like "aa.forecast.db.hdb.apl::forecast.tt_variable_descs";
+    create local temporary table #forecast_variable_roles   like "aa.forecast.db.hdb.apl::forecast.tt_variable_roles";
 
-    create local temporary table #forecast_operation_log    like "aa.forecast.db.algorithms.apl::forecast.tt_operation_log";
-    create local temporary table #forecast_summary          like "aa.forecast.db.algorithms.apl::forecast.tt_summary";
-    create local temporary table #forecast_indicators       like "aa.forecast.db.algorithms.apl::forecast.tt_indicators";
-    create local temporary table #forecast_results          like "aa.forecast.db.algorithms.apl::forecast.tt_results";
+    create local temporary table #forecast_operation_log    like "aa.forecast.db.hdb.apl::forecast.tt_operation_log";
+    create local temporary table #forecast_summary          like "aa.forecast.db.hdb.apl::forecast.tt_summary";
+    create local temporary table #forecast_indicators       like "aa.forecast.db.hdb.apl::forecast.tt_indicators";
+    create local temporary table #forecast_results          like "aa.forecast.db.hdb.apl::forecast.tt_results";
 
     -- Insert operation parameters
     insert into #forecast_function_header values ('Oid', '#42');
@@ -134,7 +134,7 @@ BEGIN
     insert into  #forecast_variable_roles values ('signal_time'  , 'input' , NULL, NULL, '#1');
     insert into  #forecast_variable_roles values ('signal_value' , 'target', NULL, NULL, '#1');
 
-    exec 'call "aa.forecast.db.algorithms.apl.afllang::' || FunctionName || '" '
+    exec 'call "aa.forecast.db.hdb.apl.afllang::' || FunctionName || '" '
         || '('
         || '    #forecast_function_header,'
         || '    #forecast_operation_config,'
@@ -191,7 +191,7 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 
 ```SQL
 DO BEGIN
-    CALL "aa.forecast.db.algorithms.apl.procedures::forecast"(
+    CALL "aa.forecast.db.hdb.apl.procedures::forecast"(
         DATASETNAME             => 'CashFlows',
         HORIZON                 => 21,
         LASTTRAININGTIMEPOINT   => '2001-12-28',
@@ -227,7 +227,7 @@ In order to expose in your application the ability to execute the PAL algorithms
 
 Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
 
-Right click on the **`pal`** folder (from **`forecast/db/src/algorithms`** ) and select **New > Folder**.
+Right click on the **`pal`** folder (from **`forecast/db/src/hdb`** ) and select **New > Folder**.
 
 Enter **`procedures`** as the folder name, then click on **OK**.
 
@@ -246,30 +246,30 @@ Enter **`seasonality_test.hdbprocedure`** as the file name, then click on **OK**
 This is the full path of the created file:
 
 ```
-forecast/db/src/algorithms/pal/procedures/seasonality_test.hdbprocedure
+forecast/db/src/hdb/pal/procedures/seasonality_test.hdbprocedure
 ```
 
 Paste the following content:
 
 ```SQL
-PROCEDURE "aa.forecast.db.algorithms.pal.procedures::seasonality_test" (
+PROCEDURE "aa.forecast.db.hdb.pal.procedures::seasonality_test" (
     in DatasetName           varchar(100),
     in Alpha                 double default 0.2,
-    out operation_config     "aa.forecast.db.algorithms.pal::common.tt_parameter",
-    out statistic            "aa.forecast.db.algorithms.pal::common.tt_statistics",
-    out output               "aa.forecast.db.algorithms.pal::seasonality_test.tt_output"
+    out operation_config     "aa.forecast.db.hdb.pal::common.tt_parameter",
+    out statistic            "aa.forecast.db.hdb.pal::common.tt_statistics",
+    out output               "aa.forecast.db.hdb.pal::seasonality_test.tt_output"
 )
 LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
-    create local temporary table #seasonality_test_operation_config like "aa.forecast.db.algorithms.pal::common.tt_parameter";
-    create local temporary table #seasonality_test_statistic        like "aa.forecast.db.algorithms.pal::common.tt_statistics";
-    create local temporary table #seasonality_test_output           like "aa.forecast.db.algorithms.pal::seasonality_test.tt_output";
+    create local temporary table #seasonality_test_operation_config like "aa.forecast.db.hdb.pal::common.tt_parameter";
+    create local temporary table #seasonality_test_statistic        like "aa.forecast.db.hdb.pal::common.tt_statistics";
+    create local temporary table #seasonality_test_output           like "aa.forecast.db.hdb.pal::seasonality_test.tt_output";
 
     if :Alpha is not null then insert into #seasonality_test_operation_config values ('ALPHA', null, :Alpha, null); end if;
 
-    exec 'call "aa.forecast.db.algorithms.pal.afllang::seasonality_test" '
+    exec 'call "aa.forecast.db.hdb.pal.afllang::seasonality_test" '
         || '('
-        || '    "aa.forecast.db.algorithms.pal.views::' || DatasetName || '",'
+        || '    "aa.forecast.db.hdb.pal.views::' || DatasetName || '",'
         || '    #seasonality_test_operation_config,'
         || '    #seasonality_test_statistic,'
         || '    #seasonality_test_output'
@@ -304,39 +304,39 @@ Enter **`auto_arima.hdbprocedure`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-forecast/db/src/algorithms/pal/procedures/auto_arima.hdbprocedure
+forecast/db/src/hdb/pal/procedures/auto_arima.hdbprocedure
 ```
 
 Paste the following content:
 
 ```SQL
-PROCEDURE "aa.forecast.db.algorithms.pal.procedures::auto_arima" (
+PROCEDURE "aa.forecast.db.hdb.pal.procedures::auto_arima" (
     in DatasetName      varchar(100),
     in SearchStrategy   integer default 1,
     in SeasonalPeriod   integer default -1,
     in ForecastLength   integer default 1,
-    out operation_config          "aa.forecast.db.algorithms.pal::common.tt_parameter",
-    out operation_config_forecast "aa.forecast.db.algorithms.pal::common.tt_parameter",
-    out fit                       "aa.forecast.db.algorithms.pal::arima.tt_fit",
-    out model                     "aa.forecast.db.algorithms.pal::arima.tt_model",
-    out output                    "aa.forecast.db.algorithms.pal::arima.tt_output"
+    out operation_config          "aa.forecast.db.hdb.pal::common.tt_parameter",
+    out operation_config_forecast "aa.forecast.db.hdb.pal::common.tt_parameter",
+    out fit                       "aa.forecast.db.hdb.pal::arima.tt_fit",
+    out model                     "aa.forecast.db.hdb.pal::arima.tt_model",
+    out output                    "aa.forecast.db.hdb.pal::arima.tt_output"
 )
 LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
-    create local temporary table #auto_arima_dataset_empty             like "aa.forecast.db.algorithms.pal::common.tt_dataset";
-    create local temporary table #auto_arima_operation_config          like "aa.forecast.db.algorithms.pal::common.tt_parameter";
-    create local temporary table #auto_arima_operation_config_forecast like "aa.forecast.db.algorithms.pal::common.tt_parameter";
-    create local temporary table #auto_arima_fit                       like "aa.forecast.db.algorithms.pal::arima.tt_fit";
-    create local temporary table #auto_arima_model                     like "aa.forecast.db.algorithms.pal::arima.tt_model";
-    create local temporary table #auto_arima_output_raw                like "aa.forecast.db.algorithms.pal::arima.tt_output_raw";
-    create local temporary table #auto_arima_output                    like "aa.forecast.db.algorithms.pal::arima.tt_output";
+    create local temporary table #auto_arima_dataset_empty             like "aa.forecast.db.hdb.pal::common.tt_dataset";
+    create local temporary table #auto_arima_operation_config          like "aa.forecast.db.hdb.pal::common.tt_parameter";
+    create local temporary table #auto_arima_operation_config_forecast like "aa.forecast.db.hdb.pal::common.tt_parameter";
+    create local temporary table #auto_arima_fit                       like "aa.forecast.db.hdb.pal::arima.tt_fit";
+    create local temporary table #auto_arima_model                     like "aa.forecast.db.hdb.pal::arima.tt_model";
+    create local temporary table #auto_arima_output_raw                like "aa.forecast.db.hdb.pal::arima.tt_output_raw";
+    create local temporary table #auto_arima_output                    like "aa.forecast.db.hdb.pal::arima.tt_output";
 
     if :SearchStrategy    is not null then insert into #auto_arima_operation_config values ('SEARCH_STRATEGY'    , :SearchStrategy    , null    , null); end if;
     if :SeasonalPeriod    is not null then insert into #auto_arima_operation_config values ('SEASONAL_PERIOD'    , :SeasonalPeriod    , null    , null); end if;
 
-    exec 'call "aa.forecast.db.algorithms.pal.afllang::auto_arima" '
+    exec 'call "aa.forecast.db.hdb.pal.afllang::auto_arima" '
         || '('
-        || '    "aa.forecast.db.algorithms.pal.views::' || DatasetName || '",'
+        || '    "aa.forecast.db.hdb.pal.views::' || DatasetName || '",'
         || '    #auto_arima_operation_config,'
         || '    #auto_arima_model,'
         || '    #auto_arima_fit'
@@ -344,7 +344,7 @@ BEGIN
 
     if :ForecastLength    is not null then insert into #auto_arima_operation_config_forecast values ('FORECAST_LENGTH' , :ForecastLength    , null    , null); end if;
 
-    exec 'call "aa.forecast.db.algorithms.pal.afllang::auto_arima_forecast" '
+    exec 'call "aa.forecast.db.hdb.pal.afllang::auto_arima_forecast" '
         || '('
         || '    #auto_arima_dataset_empty,'
         || '    #auto_arima_model,'
@@ -356,7 +356,7 @@ BEGIN
     || '    select '
     || '        to_int(rank() over (order by "idx" asc, "signal_time" asc)) as "signal_time", "signal_value", "forecast", "standard_error", "lowerlimit_80", "upperlimit_80",  "lowerlimit_95",  "upperlimit_95"'
     || '    from ('
-    || '        select 1 as "idx", "signal_time", "signal_value" , null as "forecast", null as "standard_error", null as "lowerlimit_80", null as "upperlimit_80", null as "lowerlimit_95", null as "upperlimit_95" from "aa.forecast.db.algorithms.pal.views::' || DatasetName || '"'
+    || '        select 1 as "idx", "signal_time", "signal_value" , null as "forecast", null as "standard_error", null as "lowerlimit_80", null as "upperlimit_80", null as "lowerlimit_95", null as "upperlimit_95" from "aa.forecast.db.hdb.pal.views::' || DatasetName || '"'
     || '        union all'
     || '        select 2 as "idx", "signal_time", null, "forecast", "standard_error", "lowerlimit_80", "upperlimit_80",  "lowerlimit_95",  "upperlimit_95" from #auto_arima_output_raw'
     || '    )'
@@ -399,28 +399,28 @@ Enter **`auto_smoothing.hdbprocedure`** as the file name, then click on **OK**.
 This is the full path of the created file:
 
 ```
-forecast/db/src/algorithms/pal/procedures/auto_smoothing.hdbprocedure
+forecast/db/src/hdb/pal/procedures/auto_smoothing.hdbprocedure
 ```
 
 Paste the following content:
 
 ```SQL
-PROCEDURE "aa.forecast.db.algorithms.pal.procedures::auto_smoothing" (
+PROCEDURE "aa.forecast.db.hdb.pal.procedures::auto_smoothing" (
     in DatasetName          varchar(100),
     in ForecastNum          integer default 1,
     in AccuracyMeasure      varchar(4) default 'MAPE',
     in TrainingRatio        double default 1.0,
     in SeasonalityCriterion double default 0.0000001,
-    out operation_config    "aa.forecast.db.algorithms.pal::common.tt_parameter",
-    out statistic           "aa.forecast.db.algorithms.pal::common.tt_statistics",
-    out output              "aa.forecast.db.algorithms.pal::smoothing.tt_output"
+    out operation_config    "aa.forecast.db.hdb.pal::common.tt_parameter",
+    out statistic           "aa.forecast.db.hdb.pal::common.tt_statistics",
+    out output              "aa.forecast.db.hdb.pal::smoothing.tt_output"
 )
 LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
-    create local temporary table #auto_smoothing_operation_config  like "aa.forecast.db.algorithms.pal::common.tt_parameter";
-    create local temporary table #auto_smoothing_statistic         like "aa.forecast.db.algorithms.pal::common.tt_statistics";
-    create local temporary table #auto_smoothing_output_raw        like "aa.forecast.db.algorithms.pal::smoothing.tt_output_raw";
-    create local temporary table #auto_smoothing_output            like "aa.forecast.db.algorithms.pal::smoothing.tt_output";
+    create local temporary table #auto_smoothing_operation_config  like "aa.forecast.db.hdb.pal::common.tt_parameter";
+    create local temporary table #auto_smoothing_statistic         like "aa.forecast.db.hdb.pal::common.tt_statistics";
+    create local temporary table #auto_smoothing_output_raw        like "aa.forecast.db.hdb.pal::smoothing.tt_output_raw";
+    create local temporary table #auto_smoothing_output            like "aa.forecast.db.hdb.pal::smoothing.tt_output";
 
     insert into #auto_smoothing_operation_config values ('MODELSELECTION', 1 , null, null);
     if :ForecastNum             is not null then insert into #auto_smoothing_operation_config values ('FORECAST_NUM'          , :ForecastNum    , null                  , null); end if;
@@ -428,9 +428,9 @@ BEGIN
     if :TrainingRatio           is not null then insert into #auto_smoothing_operation_config values ('TRAINING_RATIO'        , null            , :TrainingRatio        , null); end if;
     if :SeasonalityCriterion    is not null then insert into #auto_smoothing_operation_config values ('SEASONALITY_CRITERION' , null            , :SeasonalityCriterion , null); end if;
 
-    exec 'call "aa.forecast.db.algorithms.pal.afllang::auto_smoothing" '
+    exec 'call "aa.forecast.db.hdb.pal.afllang::auto_smoothing" '
         || '('
-        || '    "aa.forecast.db.algorithms.pal.views::' || DatasetName || '",'
+        || '    "aa.forecast.db.hdb.pal.views::' || DatasetName || '",'
         || '    #auto_smoothing_operation_config,'
         || '    #auto_smoothing_output_raw,'
         || '    #auto_smoothing_statistic'
@@ -439,7 +439,7 @@ BEGIN
     exec 'insert into #auto_smoothing_output ('
     || '    select '
     || '        ifnull(d."signal_time", f."signal_time") , d."signal_value", "forecast", "lowerlimit_1", "upperlimit_1",  "lowerlimit_2", "upperlimit_2"'
-    || '    from "aa.forecast.db.algorithms.pal.views::' || DatasetName || '" d'
+    || '    from "aa.forecast.db.hdb.pal.views::' || DatasetName || '" d'
     || '    full outer join #auto_smoothing_output_raw f on d."signal_time" = f."signal_time"'
     || ');';
 
@@ -486,7 +486,7 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 
 ```SQL
 do begin
-    call "aa.forecast.db.algorithms.pal.procedures::seasonality_test"(
+    call "aa.forecast.db.hdb.pal.procedures::seasonality_test"(
         datasetname      => 'Ozone',
         operation_config => :operation_config,
         statistic        => :statistic,
@@ -511,7 +511,7 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 
 ```SQL
 do begin
-    call "aa.forecast.db.algorithms.pal.procedures::auto_arima"(
+    call "aa.forecast.db.hdb.pal.procedures::auto_arima"(
         datasetname               => 'Ozone',
         forecastlength            => 60,
         operation_config          => :operation_config,
@@ -539,7 +539,7 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 
 ```SQL
 do begin
-	call "aa.forecast.db.algorithms.pal.procedures::auto_smoothing"(
+	call "aa.forecast.db.hdb.pal.procedures::auto_smoothing"(
 		datasetname      => 'CashFlows',
         forecastnum      => 21,
         accuracymeasure  => 'mape',

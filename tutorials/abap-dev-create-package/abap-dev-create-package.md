@@ -6,14 +6,14 @@ primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
 time: 10
 ---
+##Prerequisites
+- Either: **Tutorial**: [Create an ABAP project](abap-dev-create-package)
 
 ## Details
 ### You will learn  
-- How to create **ABAP packages**
-- How to create **transport requests**
+- How to create an ABAP package, used to group all the subsequent development objects you create in this group of tutorials
+- How to create a transport request
 - How to add an ABAP package to your *Favorite packages* list in ABAP Development Tools (ADT)
-
-You will create a package in the ABAP Development Tools. Later, you will use this package to group all the subsequent development objects you create in this group of tutorials.
 
 Generally you create one project for each backend connection, and then, inside that project, one package for each self-contained development unit – containing all the relevant development objects. A set of packages delivered together form a software component.
 

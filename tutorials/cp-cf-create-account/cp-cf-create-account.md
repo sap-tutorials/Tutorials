@@ -3,7 +3,7 @@ title: Create a Cloud Foundry Account
 description: Set up a trial account for Cloud Foundry on SAP Cloud Platform.
 primary_tag: products>sap-cloud-platform
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform  ]
 time: 10
 ---
 

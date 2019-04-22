@@ -307,7 +307,7 @@ The result should be:
 The decomposed signal will provide you value of the seasonal, the trend and the random component.
 
 ```sql
-select * from pal_seasonality_statistics_cashflow;
+select * from pal_seasonality_decomposed_cashflow;
 ```
 
 And using a generated graph from the Python Math Plot library (`matplotlib`):

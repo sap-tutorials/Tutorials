@@ -5,6 +5,8 @@ description: Create a business partner in an S/4HANA Cloud system based on a bus
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, topic>abap-extensibility ]
 time: 20
+author_name: Niloofar Naseri
+author_profile: https://github.com/niloofar-naseri
 ---
 
 ### Prerequisites  
@@ -175,7 +177,7 @@ Open service definitions in your package and make sure if your new service defin
 |  `iv_service_definition_name`     |               Data definition created as part of client proxy                     |
 Retrieve Name of `ZA_BusinessPartner_XXX` Data Definition.
 
-```swift
+```ABAP
 CLASS zcl_s4_bupa_xxx DEFINITION PUBLIC CREATE PUBLIC .
   PUBLIC SECTION.
     INTERFACES if_http_service_extension .

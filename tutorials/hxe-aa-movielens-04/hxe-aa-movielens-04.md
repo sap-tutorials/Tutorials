@@ -104,13 +104,13 @@ Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 Paste the following content in the console, and use the execute icon ![run](00-dbexplorer-run.png) from the menu.
 
 ```SQL
-select 'links'   as "table name", count(1) as "row count" from "aa.movielens.db.hdb::data.links"
+select 'links'   as "table name", count(1) as "row count" from "aa.movielens.db.data::links"
 union all
-select 'movies'  as "table name", count(1) as "row count" from "aa.movielens.db.hdb::data.movies"
+select 'movies'  as "table name", count(1) as "row count" from "aa.movielens.db.data::movies"
 union all
-select 'ratings' as "table name", count(1) as "row count" from "aa.movielens.db.hdb::data.ratings"
+select 'ratings' as "table name", count(1) as "row count" from "aa.movielens.db.data::ratings"
 union all
-select 'tags'    as "table name", count(1) as "row count" from "aa.movielens.db.hdb::data.tags";
+select 'tags'    as "table name", count(1) as "row count" from "aa.movielens.db.data::tags";
 ```
 
 The result should be:
@@ -133,12 +133,12 @@ Let's verify that every movie has a corresponding link and vice-versa using the 
 
 ```SQL
 select count(1)
-from "aa.movielens.db.hdb::data.links" l
-where not exists (select 1 from "aa.movielens.db.hdb::data.movies" m where l.movieid = m.movieid)
+from "aa.movielens.db.data::links" l
+where not exists (select 1 from "aa.movielens.db.data::movies" m where l.movieid = m.movieid)
 union all
 select count(1)
-from "aa.movielens.db.hdb::data.movies" m
-where not exists (select 1 from "aa.movielens.db.hdb::data.links" l where l.movieid = m.movieid);
+from "aa.movielens.db.data::movies" m
+where not exists (select 1 from "aa.movielens.db.data::links" l where l.movieid = m.movieid);
 ```
 
 Based on the result, it seems that there isn't any movies with no links and vice-versa.
@@ -158,7 +158,7 @@ Anyway, let's check if all movies have genres with the following SQL:
 
 ```SQL
 select count(1)
-from "aa.movielens.db.hdb::data.movies"
+from "aa.movielens.db.data::movies"
 where genres is null or length(genres)=0;
 ```
 
@@ -172,7 +172,7 @@ do begin
   declare tmp nvarchar(255);
   declare idx integer;
   declare sep nvarchar(1) := '|';
-  declare cursor cur for select distinct genres from "aa.movielens.db.hdb::data.movies";
+  declare cursor cur for select distinct genres from "aa.movielens.db.data::movies";
   declare genres nvarchar (255) := '';
   idx := 1;
   for cur_row as cur() do
@@ -206,7 +206,7 @@ do begin
   declare tmp nvarchar(255);
   declare idx integer;
   declare sep nvarchar(1) := '|';
-  declare cursor cur for select distinct genres from "aa.movielens.db.hdb::data.movies";
+  declare cursor cur for select distinct genres from "aa.movielens.db.data::movies";
   declare genres nvarchar (255) := '';
   idx := 1;
   for cur_row as cur() do
@@ -241,7 +241,7 @@ select
   , title
   , occurrences_regexpr('[|]' in genres) + 1 as genre_count
   , genres
-from "aa.movielens.db.hdb::data.movies"
+from "aa.movielens.db.data::movies"
 order by genre_count asc;
 ```
 
@@ -263,7 +263,7 @@ select
   genre_count, count(1)
 from (
   select occurrences_regexpr('[|]' in genres) + 1 genre_count
-  from "aa.movielens.db.hdb::data.movies"
+  from "aa.movielens.db.data::movies"
 ) group by genre_count order by genre_count;
 ```
 
@@ -288,7 +288,7 @@ Now let's have a look at the tags distribution using the following SQL:
 select count(1)
 from (
   select movieid, count(1) as tag_count
-  from "aa.movielens.db.hdb::data.tags"
+  from "aa.movielens.db.data::tags"
   group by movieid
 );
 ```
@@ -301,7 +301,7 @@ Now let's determine the tag count distribution per movies using the following SQ
 select tag_count, count(1)
 from (
   select movieid, count(1) as tag_count
-  from "aa.movielens.db.hdb::data.tags"
+  from "aa.movielens.db.data::tags"
   group by movieid
 )
 group by tag_count order by tag_count;
@@ -329,7 +329,7 @@ Now let's determine the rating count distribution per movies using the following
 select rating_count, count(1) as movie_count
 from (
   select movieid, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings"
+  from "aa.movielens.db.data::ratings"
   group by movieid
 )
 group by rating_count order by rating_count asc;
@@ -352,7 +352,7 @@ select distinct
   count(*) over( ) as category_count
 from (
   select movieid, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings"
+  from "aa.movielens.db.data::ratings"
   group by movieid
 )
 group by rating_count;
@@ -383,7 +383,7 @@ Now let's determine the rating count distribution per user using the following S
 select rating_count, count(1) as user_count
 from (
   select userid, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings"
+  from "aa.movielens.db.data::ratings"
   group by userid
 )
 group by rating_count order by 1 desc;
@@ -404,7 +404,7 @@ select distinct
   count(*) over( ) as category_count
 from (
   select userid, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings"
+  from "aa.movielens.db.data::ratings"
   group by userid
 )
 group by rating_count order by 1 desc;
@@ -433,7 +433,7 @@ Now let's determine the rating notation distribution using the following SQL:
 
 ```SQL
 select rating, count(1) as rating_count
-from "aa.movielens.db.hdb::data.ratings"
+from "aa.movielens.db.data::ratings"
 group by rating order by 1 desc;
 ```
 
@@ -457,7 +457,7 @@ Now let's determine the users distribution per rating notation using the followi
 ```SQL
 select rating,  count(1) as users_count from (
   select userid, rating, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings"
+  from "aa.movielens.db.data::ratings"
   group by userid, rating
 )
 group by rating order by 1 desc;
@@ -483,7 +483,7 @@ Now let's determine the movies distribution per rating notation using the follow
 ```SQL
 select rating,  count(1) as movie_count from (
   select movieid, rating, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings"
+  from "aa.movielens.db.data::ratings"
   group by movieid, rating
 )
 group by rating order by 1 desc;

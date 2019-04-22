@@ -31,7 +31,7 @@ time: 15
 The SAP HANA Developer Guide for SAP HANA XS Advanced Model is a good starting point for getting familiar with application development for SAP HANA Extended Application Services, advanced model (XS advanced). The `TinyWorld` tutorial is a good introduction to developing your first SAP HANA XS advanced application using different module types. For detailed information about installing an SAP HANA XS Advanced instance, see the official documentation listed below. The example we describe in this chapter is based on SAP HANA XS advanced 2.0 SPS00.
 
 > [SAP HANA Platform](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM)
-> [Download or install SAP HANA, express edition with XS Advanced for free](https://sap.com/developer/topics/sap-hana-express.html#flowchart)
+> [Download or install SAP HANA, express edition with XS Advanced for free](https://developers.sap.com/topics/sap-hana-express.html)
 > [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US)  
 > [SAP HANA Server Installation and Update Guide](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.01/en-US)  
 > [`TinyWorld` Tutorial](https://blogs.sap.com/2016/03/28/developing-with-xs-advanced-a-tinyworld-tutorial)
@@ -1244,4 +1244,3 @@ module.exports = function (grunt) {
 
 
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
-
