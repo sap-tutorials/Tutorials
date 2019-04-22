@@ -2,6 +2,8 @@
 title: SAP HANA XS Advanced, Connecting to SAP Web IDE and cloning a Git Repository to begin development
 description: Connect to Web IDE and Clone a Git Repository to create a Multi-Target Application
 auto_validation: true
+author_name: Lucia Subatin
+author_profile: https://github.com/lsubatin
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide ]
 ---
@@ -108,7 +110,7 @@ Select the proper space (for HANA express, `development`) from the list of avail
 
 ![Select development space](6.png)
 
-> If you cannot find an appropriate space, you may either lack the `SpaceDeveloper` role to one or may need to [create one](https://developers.sap.com/tutorials/xsa-setup-new-space.html). By default, SAP HANA, express edition brings a development space that is implicitly mapped to the system database. If you are planning on using any of the advanced analytics features (such as Machine Learning), you need to [map the space to a tenant database](https://developers.sap.com/tutorials/xsa-tenant-db-space.html), such as the default one, HXE.
+> If you cannot find an appropriate space, you may either lack the `SpaceDeveloper` role to one or may need to [create one](xsa-setup-new-space). By default, SAP HANA, express edition brings a development space that is implicitly mapped to the system database. If you are planning on using any of the advanced analytics features (such as Machine Learning), you need to [map the space to a tenant database](xsa-tenant-db-space), such as the default one, HXE.
 
 Click **Save**.
 
