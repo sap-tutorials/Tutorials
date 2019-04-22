@@ -1,6 +1,6 @@
 ---
-title: Configuring Eclipse with SAPUI5.
-description: A step-by-step procedure to install the Eclipse IDE and SAPUI5 Library.
+title: Configure Eclipse with SAPUI5
+description: Install the Eclipse IDE and SAPUI5 library.
 primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5 ]
 time: 10
@@ -8,10 +8,12 @@ time: 10
 
 ## Details
 ### You will learn
-In this tutorial you'll learn everything you need to know to setup your local development environment based on Eclipse. The main steps are:
+- How to set up your local development environment based on Eclipse
 
-- Downloading Eclipse
-- Installing SAPUI5 Library.
+The main steps are:
+
+  - Downloading Eclipse
+  - Installing SAPUI5 Library.
 
 ---
 
@@ -71,11 +73,11 @@ Close the Eclipse **Welcome Page**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Install the SAPUI5 Library)]
+[ACCORDION-BEGIN [Step 7: ](Install the SAPUI5 library)]
 
 Now that you have installed Eclipse, you need to install the SAPUI5 Library. This is done following the standard approach of Eclipse to install plugins.
 
-From the Eclipse menu, choose **Help > Install New Software...**
+From the Eclipse menu, choose **Help > Install New Software...**.
 
 ![Start software install](install_new.png)
 
