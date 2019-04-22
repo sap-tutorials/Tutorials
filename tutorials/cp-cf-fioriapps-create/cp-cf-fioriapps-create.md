@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
 title: Develop SAP Fiori Applications for SAP Cloud Platform on Cloud Foundry
-=======
-title: Developing SAP Fiori Applications for SAP Cloud Platform on Cloud Foundry
->>>>>>> 4df959e8276b826b16f41aa3cef08ff63a41a26f
 description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP Cloud Platform Cloud Foundry environment.
 auto_validation: true
 time: 25
@@ -17,7 +13,6 @@ primary_tag: products>sap-fiori
 
 ## Details
 ### You will learn
-<<<<<<< HEAD
   - How to create a new SAPUI5 application for SAP Cloud Platform Cloud Foundry
   - How to configure your Cloud Foundry settings in SAP Web IDE
   - How to build and deploy your application to Cloud Foundry
@@ -29,7 +24,6 @@ Create, configure, build, and deploy a simple application on Cloud Foundry in SA
   - How to build and deploy your application to Cloud Foundry.
 
   Create, configure, build, and deploy a simple application on Cloud Foundry in SAP Web IDE Full-Stack.
->>>>>>> 4df959e8276b826b16f41aa3cef08ff63a41a26f
 
 > The steps below assume that you are using the trial version of SAP Web IDE Full-Stack. The steps will be slightly different for productive accounts.
 
