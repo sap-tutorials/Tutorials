@@ -2,6 +2,8 @@
 title: SAP HANA XS Advanced, Creating a Node.js Module
 description: Creating a Node.js Module and implementing XSJS and XSODATA
 auto_validation: true
+author_name: Lucia Subatin
+author_profile: https://github.com/lsubatin
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
