@@ -11,7 +11,7 @@ time: 2
 <!-- loio3040d723d58b48f1a97077c001fe4c7f -->
 
 ## Prerequisites
- - **Tutorials:** You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html) 
+ - **Tutorials:** You have completed [Start SAP HANA, express edition Server](hxe-ua-getting-started-vm)
 
 ## Details
 ### You will learn
@@ -31,12 +31,14 @@ If you installed the VM installation package to a Windows machine, follow this s
 
     Spacing is important. Make sure your hosts file in Notepad looks like this image.
 
-    ![loio7c25cdb7a8214429b5f12edb3418f527_HiRes](loio7c25cdb7a8214429b5f12edb3418f527_HiRes.png)
+    ![HXE_Hosts_Windows_0](HXE_Hosts_Windows_0.png)
 
     > Note:
-    > If the VM is restarted and assigned a new IP, the Hosts file will need to be updated.
+    > If the VM is restarted and assigned a new IP, you'll need to update the Hosts file.
     > 
     > 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -56,6 +58,8 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
     > If the VM is restarted and assigned a new IP, you will need to update the Hosts file.
     > 
     > 
+
+[DONE]
 
 [ACCORDION-END]
 
