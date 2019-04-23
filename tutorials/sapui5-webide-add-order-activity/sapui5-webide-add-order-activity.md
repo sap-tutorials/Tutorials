@@ -105,7 +105,7 @@ Click on the **Order** button and the following dialog box comes up:
 
 After you click the **OK** button, you should see this message appear.
 
->You can now deploy your application to a production environment. If you want to do so, have a look at [this tutorial](cp-ui5-webide-new-app.html) here (Skip the steps until you build the application).
+>You can now deploy your application to a production environment. If you want to do so, have a look at [this tutorial](cp-ui5-webide-new-app) here (Skip the steps until you build the application).
 
 [VALIDATE_1]
 [ACCORDION-END]

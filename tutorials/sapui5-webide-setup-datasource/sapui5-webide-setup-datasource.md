@@ -26,7 +26,7 @@ There are three steps to connect the OData service to your application.
 
 [ACCORDION-BEGIN [Step : ](Open the descriptor editor)]
 
-In a [previous tutorial](https://developers.sap.com/tutorials/hcp-create-destination.html) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
+In a [previous tutorial](hcp-create-destination) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
 
 
 1.  Open the `mta_app/app/webapp/mainfest.json` file with the **Descriptor Editor**, by double clicking on the file.
