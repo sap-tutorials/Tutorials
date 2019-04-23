@@ -1,5 +1,5 @@
 ---
-title: Create a Sample App
+title: Create a Sample iOS App
 description: Create and examine your first Fiori for iOS app using the SAP Cloud Platform SDK for iOS Assistant connecting against a sample service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
