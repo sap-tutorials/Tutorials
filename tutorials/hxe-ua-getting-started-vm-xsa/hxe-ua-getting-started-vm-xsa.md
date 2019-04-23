@@ -1,6 +1,6 @@
 ---
 title: Start SAP HANA, express edition Server
-description: Once you've downloaded the SAP HANA 2.0, express edition Virtual Machine package and set the keyboard and time zone, log in and change the default passwords to secure your system.
+description: Once you've downloaded the server + applications SAP HANA 2.0, express edition Virtual Machine package and set the keyboard and time zone, log in and change the default passwords to secure your system.
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
@@ -15,7 +15,7 @@ time: 15
 
 ## Details
 ### You will learn
-You'll learn how to start the server. At the end of this tutorial you'll have a running and configured SYSTEMDB database, and a running and configured tenant database. You'll be ready to test your installation, and install optional components.
+You'll learn how to start the server. At the end of this tutorial you'll have a running and configured SYSTEMDB database, and a running and configured tenant database. You'll be ready to test your installation, test XSA, and install optional components.
 
 ---
 
