@@ -89,30 +89,6 @@ When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK trust
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Add properties and save)]
-
-
-Add three **Additional Properties** by clicking on the **New Property** button once for each property.
-
-Field Name       | Value
-:--------------- | :-------------
-`WebIDEEnabled`  | `true`
-`WebIDESystem`   | `Northwind_Data`
-`WebIDEUsage`    | `odata_gen`
-
-![Completed SAP Cloud Platform destination](northwind-destination-details.png)
-
-> Values for the `WebIDEUsage` property determine how the SAP Web IDE interprets the destination definition & presents it to you for connection and consumption. The value `odata_gen` signifies that the destination represents generic OData services (as opposed to OData services that are hosted on an SAP Gateway system, for example) and that the full, specific OData service URL specification is to be provided in the SAP Web IDE **New Project** wizard, specifically via the **Service URL** data connection source, as shown in this example scenario:
-
-> ![Selection of the Northwind destination via the "Service URL" option](selection-via-service-url.png)
-
-> Find out more about the possible values for the `WebIDEUsage` property in the SAP Help Portal, in the [Connect to ABAP Systems](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/Cloud/en-US/5c3debce758a470e8342161457fd6f70.html) section.
-
-When you're done, finish by saving the destination with **`Save`**.
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step : ](Check the connection)]
 
 Click on the `Check Connection` icon on the newly created Destination to see if everything works.
