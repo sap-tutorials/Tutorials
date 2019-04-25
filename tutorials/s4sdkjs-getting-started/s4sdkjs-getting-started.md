@@ -105,7 +105,7 @@ If you already have an existing project, you will need to specify the registry f
 Now you can install the necessary libraries, first of all the `@sap/s4sdk-core`, the heart of the `SAP S/4HANA Cloud SDK for JavaScript` and basis for the service libraries you might want to use.
 
 ```Shell
-npm install @sap/s4sdk-core
+npm install @sap/cloud-sdk-core
 ```
 
 We recommend to also take a look at the continuous delivery artifacts in the scaffold application and adopt those along with the respective **`npm`** scripts.
