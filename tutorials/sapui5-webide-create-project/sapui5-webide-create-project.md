@@ -11,7 +11,7 @@ time: 5
 ---
 
 ## Prerequisites  
-- **Tutorials:**  [Open the SAP Web IDE](sapui5-webide-open-webide.html)
+- **Tutorials:**  [Open the SAP Web IDE](sapui5-webide-open-webide)
 
 ## Details
 ### You will learn  
@@ -19,6 +19,9 @@ time: 5
 
 ---
 [ACCORDION-BEGIN [Step : ](Open the project wizard)]
+
+> Please double check that your subaccount lives in the eu10 region. If not, please follow [this tutorial](cp-ui5-webide-new-app) to create the project instead. Don't forget the use the module name and name space mentioned here.
+
 Select **File** --> **New** --> **Project From Template**
 
 ![Activating the SAP Web IDE search pane](create-project-from-template.png)

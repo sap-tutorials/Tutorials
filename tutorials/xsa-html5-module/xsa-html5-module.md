@@ -2,6 +2,8 @@
 title: SAP HANA XS Advanced, Creating an HTML5 Module
 description:  Create your first HTML5 module for HTML5 content within your XSA application
 auto_validation: true
+author_name: Lucia Subatin
+author_profile: https://github.com/lsubatin
 primary_tag: products>sap-hana
 tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data, tutorial>beginner ]
 
@@ -24,7 +26,7 @@ You will learn how to create an HTML5 endpoint with authentication using the Use
 
 [ACCORDION-BEGIN [Step 1: ](Add the HTML5 Module in your existing MTA project)]
 
-> ***What is a Multi-Target Application?***: The XS Advanced application platform is based on Cloud Foundry, an open-source platform that provides a layer of abstraction between your application and the underlying infrastructure. This is useful because it allows you to deploy the same application in different cloud providers. Cloud Foundry allows for a micro-service approach. A Multi-Target Application allows you to bundle all the different micro-services conforming `your business application into the same lifecycle`.
+> ***What is a Multi-Target Application?***: The XS Advanced application platform is based on Cloud Foundry, an open-source platform that provides a layer of abstraction between your application and the underlying infrastructure. This is useful because it allows you to deploy the same application in different cloud providers. Cloud Foundry allows for a micro-service approach. A Multi-Target Application allows you to bundle all the different micro-services conforming `your business application into the same lifecycle`. For more information about multi-target applications (MTA), refer to [this blog post](https://blogs.sap.com/2017/09/05/xs-advanced-for-not-so-dummies-pt-2-multi-target-applications/).
 
  Begin by right-clicking on your project and then choosing `New -> HTML5 Module`
 
@@ -92,7 +94,7 @@ The space has to match the space that was setup in the Project Settings. You can
 To create the UAA service issue the following command:
 
 ```
-xs create-service xsuaa space APP_UAA
+xs create-service xsuaa space UAA-service
 ```
 
 ![Command line UAA](6.png)
@@ -184,4 +186,3 @@ A new tab will open and you will see the default **Hello World** button has been
 [VALIDATE_2]
 
 [ACCORDION-END]
-

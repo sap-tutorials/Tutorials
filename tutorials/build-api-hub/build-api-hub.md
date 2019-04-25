@@ -1,20 +1,17 @@
 ---
-title: Using the API Hub in SAP Build
+title: Use SAP API Business Hub in SAP Build
 description: Learn how to use the SAP API Business Hub integration in SAP Build.
 auto_validation: true
 primary_tag: products>sap-build
 tags: [  tutorial>intermediate, products>sap-build, products>sap-api-management ]
+time: 20
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
 The SAP API Business Hub integration in SAP Build enables you to prototype your applications using real world data structures. Limit the amount of re-design and re-work by using the right data structure from the start.
 
-### Time to Complete
-**20 Min**
 
 ---
 

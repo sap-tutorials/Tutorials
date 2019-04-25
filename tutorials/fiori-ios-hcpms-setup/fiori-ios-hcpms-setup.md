@@ -3,7 +3,7 @@ title: Enable SAP Cloud Platform Mobile Services
 description: Learn how to enable SAP Cloud Platform Mobile Services within a trial SAP Cloud Platform account and how to open the Mobile Services cockpit.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services]
 time: 5
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
