@@ -1,5 +1,5 @@
 ---
-title: Deploy Application to Cloud Foundry with SAP S/4HANA Cloud SDK for JavaScript
+title: Deploy Application to Cloud Foundry with SAP Cloud SDK for JavaScript
 description: Deploy an existing application and deploy it to Cloud Foundry in SAP Cloud Platform.
 auto_validation: true
 time: 20
