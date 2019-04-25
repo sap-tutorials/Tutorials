@@ -5,7 +5,7 @@ title: Create a Business Service Using CDS
 description: Define a data and service model using SAP Web IDE Full-Stack and the SAP Cloud Application Programming Model based on Core Data and Services (CDS).
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
-tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model  ]
+tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide, software-product-function>sap-cloud-application-programming-model ]
 time: 10
 ---
 
@@ -13,6 +13,7 @@ time: 10
  - [Get a free trial account on SAP Cloud Platform](hcp-create-trial-account)
  - [Create a Cloud Foundry Account](cp-cf-create-account)
  - [Set Up the SAP Web IDE](sapui5-webide-open-webide)
+ - [Create an SAP HANA Service Instance](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html) (If no SAP HANA Service Instance is available, change your region)
 
 ## Details
 ### You will learn  
