@@ -1,6 +1,6 @@
 ---
-author_name: André Pfohlmann
-author_profile: https://github.com/Apfohlmann
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Add a Database to Your Business Application
 description: Deploy the data model to the SAP HANA database that is associated with your enterprise or trial account using the SAP Cloud Application Programming Model.
 auto_validation: true
