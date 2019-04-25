@@ -1,6 +1,6 @@
 ---
-author_name: André Pfohlmann
-author_profile: https://github.com/Apfohlmann
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Create a Business Service Using CDS
 description: Define a data and service model using SAP Web IDE Full-Stack and the SAP Cloud Application Programming Model based on Core Data and Services (CDS).
 auto_validation: true
