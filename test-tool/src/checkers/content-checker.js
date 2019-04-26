@@ -12,6 +12,8 @@ const fileExistsSyncCS = (filePath) => {
   return fileNames.includes(path.basename(filePath));
 };
 
+const checkLocalTutorial = (name, allTutorials) => allTutorials.includes(name);
+
 const checkLocalImage = (absImgPath, imgName) => {
   const result = [];
   const { content: { mdnImg } } = regexp;
@@ -35,7 +37,7 @@ const checkLocalImage = (absImgPath, imgName) => {
 };
 
 module.exports = {
-  check: (filePath, lines) => {
+  check: async (filePath, lines, allTutorials) => {
     let isCodeBlock = false;
     const result = {
       contentCheckResult: [],
@@ -43,8 +45,18 @@ module.exports = {
       stepSpellCheckResult: [],
     };
     const dir = path.dirname(filePath);
-    const { content: { common, link, h1, mdnImg, localFileLink }, validation: { accordions } } = regexp;
-
+    const {
+      content: {
+        common,
+        link,
+        h1,
+        mdnImg,
+        localFileLink,
+        tutorialLink,
+        tutorialLinkInvalid,
+      },
+      validation: { accordions },
+    } = regexp;
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
@@ -76,7 +88,8 @@ module.exports = {
         }
       }
 
-      if (line.trim().startsWith('```')) {
+      if (line.trim()
+          .startsWith('```')) {
         isCodeBlock = !isCodeBlock;
       }
 
@@ -103,9 +116,11 @@ module.exports = {
       }
 
       const localFileMatch = line.match(localFileLink.regexp);
+      const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
+      const tutorialLinkMatch = line.match(tutorialLink.regexp);
       const accordionMatch = line.match(accordions);
 
-      if (localFileMatch && !imageMatch && !accordionMatch) {
+      if (localFileMatch && !imageMatch && !accordionMatch && !tutorialLinkInvalidMatch) {
         result.contentCheckResult.push({
           line: index + 1,
           msg: localFileLink.message,
@@ -130,6 +145,29 @@ module.exports = {
             msg: `${h1.message} -> ${h1Match[0]}`,
           });
         }
+      }
+
+      const stepName = line.startsWith('[ACCORDION');
+
+      if (tutorialLinkMatch && !stepName) {
+        const [, tutorialName] = tutorialLinkMatch[0]
+            .replace(')', '')
+            .split('](');
+        const exists = checkLocalTutorial(tutorialName, allTutorials);
+
+        if (!exists) {
+          result.contentCheckResult.push({
+            line: index + 1,
+            msg: tutorialLink.message,
+          });
+        }
+      }
+
+      if (tutorialLinkInvalidMatch) {
+        result.contentCheckResult.push({
+          line: index + 1,
+          msg: tutorialLinkInvalid.message,
+        });
       }
     });
 

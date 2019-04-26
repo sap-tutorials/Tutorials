@@ -5,14 +5,11 @@ module.exports =  {
     const { tags: { primary_tag: primaryTag } } = regexp;
     const match = line.match(primaryTag.regexp);
     if (match) {
-      const [keyWithTags, tagsString] = match;
-      // TODO: uncomment after electron v3 release, DEVMS-1029
-      // const tags = tagsString.split(/(?<!\\),/).map(tag => tag.trim());
-      const tags = tagsString.split(',')
-        .map(tag => tag.trim());
+      const [tagsString] = match;
+      const tags = tagsString.split(/(?<!\\),/).map(tag => tag.trim());
 
       if (tags.length > 1) {
-        return `${primaryTag.message} -> ${keyWithTags}`;
+        return `${primaryTag.message} -> ${tags.join(', ')}`;
       }
     }
   },

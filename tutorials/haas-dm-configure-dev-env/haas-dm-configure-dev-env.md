@@ -69,15 +69,7 @@ Login with your username and password.
 
 ![New project from template](9.png)
 
-Choose your **Space** and click on **Install Builder**. Wait until the builder is installed.
-
-![New project from template](10.png)
-
-Once the builder is installed...
-
-![New project from template](11.png)
-
-... click **Save**.
+Choose your **Space** and click **Save**.
 
 ![New project from template](12.png)
 

@@ -3,7 +3,7 @@ title: Set Up SAP Mobile Cards
 description: Activate SAP Cloud Platform Mobile Services and connect the SAP Mobile Cards application to your trial account.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 10
 ---
 
@@ -97,7 +97,9 @@ Click **APIs**.
 
 ![MobileCards](Markdown_files/img_014.png)
 
-Open your phone camera app and start scanning the QR code, as shown below. For Android devices, look for a QR code scanning app and scan with the same.
+Open your phone camera app and start scanning the QR code, as shown below.
+
+>For Android device, you can install _Lightning QR_ app on your device. Open this app and scan the QR code (make sure you scan the QR code displaying for Android device), once scan is done, click on _open link_ option showing up on the screen, it will launch SAP Mobile Cards app installed on the device.
 
 ![MobileCards](Markdown_files/img_015.png)
 

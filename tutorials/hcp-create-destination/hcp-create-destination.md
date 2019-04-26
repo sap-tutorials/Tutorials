@@ -24,7 +24,7 @@ The Northwind OData services comes in several versions.  The tutorials currently
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step : ](Log into SAP Cloud Platform)]
 
 Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
@@ -33,7 +33,16 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Plat
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create new destination)]
+[ACCORDION-BEGIN [Step : ](Enter the Neo Environment)]
+
+Click on **Neo Trial** to enter the Neo environment.
+
+![neopage](scp-neo-logon.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step : ](Create new destination)]
 
 Select the **Destinations** tab on the left side, and then click **New Destination** to open a new destination configuration form.
 
@@ -42,7 +51,7 @@ Select the **Destinations** tab on the left side, and then click **New Destinati
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Confirm data)]
+[ACCORDION-BEGIN [Step : ](Confirm data)]
 
 Enter/confirm all fields in the destination configuration section with the information below.
 
@@ -62,7 +71,7 @@ When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK trust
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add properties and save)]
+[ACCORDION-BEGIN [Step : ](Add properties and save)]
 
 
 Add three **Additional Properties** by clicking on the **New Property** button once for each property.
@@ -84,4 +93,13 @@ Field Name       | Value
 When you're done, finish by saving the destination with **`Save`**.
 
 [VALIDATE_4]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step : ](Check the connection)]
+
+Click on the `Check Connection` icon on the newly created Destination to see if everything works.
+
+![check](./checkdest.png)
+
+[VALIDATE_1]
 [ACCORDION-END]

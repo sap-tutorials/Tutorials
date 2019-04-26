@@ -2,8 +2,10 @@
 title: SAP HANA XS Advanced, Creating an HDI Module
 description: Create your first HDI module for database content within your XSA application
 auto_validation: true
+author_name: Lucia Subatin
+author_profile: https://github.com/lsubatin
 primary_tag: products>sap-hana
-tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data, tutorial>beginner  ]
+tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data, tutorial>beginner ]
 
 ---
 
@@ -450,5 +452,3 @@ What was the total gross amount?
 
 [VALIDATE_2]
 [ACCORDION-END]
-
-

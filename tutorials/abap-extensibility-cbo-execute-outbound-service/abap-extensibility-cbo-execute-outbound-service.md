@@ -8,23 +8,23 @@ time: 15
 ---
 
 ## Prerequisites  
- - **Authorizations:** Your SAP S/4HANA key user needs a business role with business catalogs `Extensibility` (ID: `SAP_CORE_BC_EXT`) and `Communication Management` (ID: `SAP_CORE_BC_COM`). You need a user on SAP API Business Hub.
- - **Example Objects:** Existence of custom business object `Bonus Entitlement` as described in this [tutorial](https://blogs.sap.com/2017/02/20/part-iv-associated-business-objects-bonus-entitlement-with-plan-sales-order/) (Blog)
- - **Knowledge:** (optional) [Tutorial: Getting started with the SAP API Business Hub](https://developers.sap.com/tutorials/hcp-abh-getting-started.html)
- - **SAP S/4HANA Release:** 1805 (tutorial's last update)
+**Authorizations:** Your user needs
+- (a) business role(s) with business catalogs **Extensibility** (ID: `SAP_CORE_BC_EXT`) and **Communication Management** (ID: `SAP_CORE_BC_COM`) in your **S/4HANA Cloud** system
+- access to **[SAP API Business Hub](https://api.sap.com)**.
+**Example Objects:** Existence of custom business object `Bonus Entitlement` as described in this [tutorial](https://blogs.sap.com/2017/02/20/part-iv-associated-business-objects-bonus-entitlement-with-plan-sales-order/) (Blog)
+**Knowledge:** (optional) [Tutorial: Getting started with the SAP API Business Hub](https://developers.sap.com/tutorials/hcp-abh-getting-started.html)
 
 ## Details
 ### You will learn
-<ul>
-  <li>How to get needed service data from SAP API Business Hub Sandbox
-  <li>How to configure outbound service connection in SAP S/4HANA Cloud system
-  <li>How to call and process an outbound service in custom business object logic
-</ul>
+- How to get needed service data from SAP API Business Hub Sandbox
+- How to configure outbound service connection in SAP S/4HANA Cloud system
+- How to call and process an outbound service in custom business object logic
 
 The example application of `Bonus Entitlement` will be enhanced by a feedback functionality. The manager's feedback will be translated automatically into English by calling the externally available service **Machine Translation API** of SAP.
 > Be aware that the example is done with SAP API Business Hub Sandbox system only. This shall only give an idea on how it works and cannot be used productively.
 
-
+### Additional Information
+- **SAP S/4HANA Cloud Release** (tutorial's last update): 1805
 ---
 [ACCORDION-BEGIN [Step 1: ](Excursus: Try out the service in SAP API Business Hub)]
 To get to know the Machine Translation API service first, you can try it out in SAP API Business Hub.

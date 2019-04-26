@@ -32,7 +32,7 @@ The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm r
 
 `@sap:registry=https://npm.sap.com/`
 
-For more information, see <https://docs.npmjs.com/files/npmrc>.
+For more information, see [`npmrc`: The npm `config` files](https://docs.npmjs.com/files/npmrc).
 
 > Please note the following:
 <ul>
@@ -62,6 +62,7 @@ In the file enter the following code:
    }
 }
 ```
+
 ![Create package.json](grunt-Step1-newfile2.png)
 
 
@@ -103,7 +104,7 @@ module.exports = function (grunt) {
 
 ```
 
-For modules created using the HTML5 Application Repository service, enter this content below. Here the `compatVersion` property is defined as **`"edge"`**, which is based on the SAP Innovation SAPUI5 version.
+For modules created using the HTML5 Application Repository service, enter the content below. Here the `compatVersion` property is defined as **`"edge"`**, which is based on the SAP Innovation SAPUI5 version.
 ```
 module.exports = function (grunt) {
                 "use strict";
@@ -131,7 +132,9 @@ module.exports = function (grunt) {
 
 ```
 
-The code does the following:
+> The test task for the SAP Web IDE best practice build can only be triggered from the CLI. Triggering the test task for the build from SAP Web IDE will cause the build to fail. For instructions for running automated testing from the CLI, see [Grunt Build Troubleshooting](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/9202f1fc0adb40b68adaa8ba31053724.html).
+
+The code above does the following:
 
 - Loads the tasks from the SAPUI5 best practices Grunt plugin.
 - Sets the default task to execute the following tasks defined in the SAPUI5 plugin:
@@ -140,18 +143,23 @@ The code does the following:
 |---------------|-------|
 | `lint`        | Validates the project code using ESLint according to the rules defined in the `.eslintrc` configuration file located in the root of your project.      |
 | `clean`       | Cleans the `dist` target folder from the previous build results.      |
-| `build`       | Produces a new build output in the `dist` folder of your project that is ready and optimized for better performance in the productive environment. The following tasks are executed during the build:<ul>
+| `build`       | Produces a new build output in the `dist` folder of your project that is ready and optimized for better performance in the productive environment.
+
+The following tasks are executed during the build:
+
+<ul>
 <li>Minification of `.css` files.</li>
 <li>Minification of JavaScript files (minified files).</li>
 <li>Copying of the original files to the `dist` folder with `-dbg` suffix added for debugging purposes.</li>
 <li>Generation of the `Component-preload.js` and `Component-preload-dbg.js` preload files for the debug and minified files.</li>
 <li>Minification of the preload file.</li>
 <li>Generation of the `CachebusterInfo.json` file.</li>
-<li>Generation of the `changes-bundle.json` file. The file contains a collection of all the changes that are made to an SAP Fiori element application and are located in the `changes` folder.</li>
+<li>Generation of the `changes-bundle.json` file. The file contains a collection of all the changes that are made to an SAP Fiori element application and are located in the `changes` folder.
+
+> The changes will only be displayed if you are using SAPUI5 version 1.52 and higher. If you are using an older SAPUI5 version, do not bundle the changes. For a list of tasks to execute when creating a build with an older SAPUI5 version, see [Grunt Build Troubleshooting](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/9202f1fc0adb40b68adaa8ba31053724.html).
+
+</li>
 <li>Generation of the `manifest-bundle.zip` file, which contains the `manifest.json` and `i18n` files.</li></ul> |
-
-
-
 
 
 
@@ -159,13 +167,17 @@ The code does the following:
 
 
 [ACCORDION-BEGIN [Step 3: ](Build your project)]
+
 Right-click your project and choose **Build**.
+
 ![Create package.json](grunt-Step3-build.png)
 
 When the build finishes, a new `dist` folder is created in your project and is automatically added to `.gitignore`, ensuring that the folder is not checked into the project's Git repository.
+
 ![Create package.json](grunt-Step3-dist.png)
 
 You can see any build errors in the console, which you can display by going to **View** | **Console**.
+
 ![Create package.json](grunt-Step3-console.png)
 
 >A new `package-lock.json` file is added to your project (unless it already existed). It is a special file that `npm` uses for locking the version of each package in the dependency tree, including the final resolved versions of ranges such as ~1.7.0 or ^1.0.9. If your project is connected to Git, commit and push the file to your Git repository.
@@ -175,14 +187,17 @@ You can see any build errors in the console, which you can display by going to *
 
 <br>
 
->**Tip**
->If the build fails, do one of the following according to the failure reported in the console:
->
+> **Tip**
+ If the build fails, do one of the following according to the failure reported in the console:
+
 >  - **ERROR**: `Unable to locate local Grunt`
->Right-click the project folder in the workspace, select **Clean npm Folder**, and build again.
+>
+> Right-click the project folder in the workspace, select **Clean npm Folder**, and build again.
 This option removes the node-modules folder that is automatically created by npm. For more information, see <https://docs.npmjs.com/files/folders>. After the build finishes, this folder is not displayed in your project, but is stored by the SAP Web IDE Full-Stack build infrastructure.
+>
   - **ERROR**: `npm ERR! code EINTEGRITY`
-  Delete your `package-lock.json` file from the project and run the build again.
+>
+>Delete your `package-lock.json` file from the project and run the build again.
 
 
 [ACCORDION-END]
