@@ -23,7 +23,7 @@ time: 20
 
 [ACCORDION-BEGIN [Step 1: ](Configure the SAP Cloud Platform for push notifications)]
 
-Open [https://account.hanatrial.ondemand.com](SAP Cloud Platform Trial) and log in to **Neo Trial**.
+Open [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com) and log in to **Neo Trial**.
 
 ![Neo Trial button](neo-trial-button.png)
 
@@ -121,11 +121,11 @@ If you now send another notification you notice that since the app is in the bac
 
 ![Receive Notification Background](receive-notification-background.png)
 
-
 Tapping on the notification will bring the app to the foreground or open the app.
 
 ![Receive Notification from Background](receive-notification.png)
 
+>If the app was not running when the notification was tapped on, due to a change made in the previous tutorial, it can be viewed by pressing the back button and navigating from the categories screen to the entity list screen.
 
 Currently, the message is displayed in an `AlertDialog`.  
 

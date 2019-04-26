@@ -108,7 +108,6 @@ In the Mobile Services cockpit, navigate to Analytics > Logs > Technical Logs.
 
 ![Analytics > Logs > Technical Logs](select_and_download_log.png)
 
-
 You should be able to see the log you just uploaded in the list of technical logs. You can inspect the log in browser by clicking on its table entry, or you can download the text version by selecting it and clicking the download button.  If the log doesn't appear immediately, wait for a few moments then click "Go" to refresh the view.
 
 ![View log](view_log.png)
@@ -117,6 +116,15 @@ Additionally, you can access the logs locally on an emulator. The file system of
 
 ![View logs in emulator](local_log_location.png)
 
+The initial log level of the application and the ability for Mobile Services to accept logs can be managed in the Client Policies feature as shown below.
+
+![Log Policy](client_policies.png)
+
+The log level of a an individual registration can also be set in the Management Cockpit as shown below.
+
+![User Registrations](log_settings.png)
+
+![User Registration Log Settings](user_reg_log_setting.png)
 
 >Further information on logging can be found at [Logging](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/logging.html).
 
