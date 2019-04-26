@@ -1,6 +1,8 @@
 ---
 title: Test SAP HANA, express edition
-description: Test your XSC, XSA, SAP Web IDE, and Cockpit installations.
+description: Test your SAP HANA, express edition installation. Test your XSC, XSA, SAP Web IDE, and Cockpit installations.
+author_name: Aaron Patkau
+author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 10
@@ -9,12 +11,6 @@ time: 10
 <!-- loioa00667372f1a44228ae039268e927ba6 -->
 
 ## Prerequisites
-
-## Details
-### You will learn
-You'll learn how to confirm that your SAP HANA, express edition installation is running.
-
----
 
 [ACCORDION-BEGIN [Step 1: ](Test your server installation)]
 
@@ -37,7 +33,9 @@ http://<hostname>:80<instance-number>
 
 A success page displays:
 
-![loiofdcde7cfd9bc4a2d990f26340cf6387b_LowRes](loiofdcde7cfd9bc4a2d990f26340cf6387b_LowRes.png)
+![XSEngine_Success_1](XSEngine_Success_1.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -59,19 +57,19 @@ xs apps
 
 > Note:
 > When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
->
->
+> 
+> 
 
 Check that the application `cockpit-admin-web-app` shows `STARTED` with 1/1 instances in the list of XSA applications.
 
 > Note:
 > Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show `STARTED` and doesn't show `1/1` instances, keep waiting until the service is enabled.
->
->
+> 
+> 
 
 Make a note of the URL for `cockpit-admin-web-app`.
 
-![loio1636a2c7a819400aabfa34b34235abef_LowRes](loio1636a2c7a819400aabfa34b34235abef_LowRes.png)
+![XSA_apps_cockpit-admin-web-app_entry_0](XSA_apps_cockpit-admin-web-app_entry_0.png)
 
 Enter the URL for `cockpit-admin-web-app` in a browser. The address is the one that displays in your `xs apps` command output.
 
@@ -83,13 +81,15 @@ If your site uses a proxy for connecting to HTTP and HTTPS servers, select *Cock
 
 > Note:
 > To find your proxy server information, in a terminal, enter `env | grep PROXY`.
->
->
+> 
+> 
 
 > Note:
 > If you are using HANA Cockpit to register a resource, both HANA Cockpit and the SAP HANA, express edition server must be from the same release. SAP does not recommend using a newer HANA Cockpit to register an older version of SAP HANA, express edition.
->
->
+> 
+> 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -103,6 +103,8 @@ xs start messaging-service-node
 xs start messaging-service-broker
 
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -126,8 +128,8 @@ Check that the application `webide` shows `STARTED` with 1/1 instances in the li
 
 > Note:
 > Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show `STARTED` and doesn't show `1/1` instances, keep waiting until the service is enabled.
->
->
+> 
+> 
 
 Make a note of the URL for `webide`.
 
@@ -136,6 +138,8 @@ Test your Web IDE connection. Enter the URL for `webide` in a browser. The addre
 Example: `https://my.hostname:53075`
 
 Log on to Web IDE using the `XSA_DEV` user.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -147,6 +151,10 @@ Follow the Eclipse installer prompts.
 
 Launch when prompted, or go to the Eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the `eclipse` executable file.
 
-Follow the tutorial [How to download and install the HANA Eclipse plugin](http://developers.sap.com/tutorials/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
+Follow the tutorial [How to download and install the HANA Eclipse plugin](hxe-howto-eclipse) to connect to your SAP HANA, express edition client machine.
+
+[DONE]
 
 [ACCORDION-END]
+
+
