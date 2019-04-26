@@ -5,7 +5,7 @@
   "main": "README.MD",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "node test.js -t",
+    "test": "node %NODE_DEBUG_OPTION% test.js -t",
     "test-prod": "cross-env NODE_ENV=production node test.js -t",
     "test-last-commit": "node test-last-commit"
   },

@@ -52,15 +52,27 @@ module.exports = {
             message: 'no H1 (single #) allowed',
         },
         mdnImg: {
-            regexp: new RegExp('\\!\\[[^\\]]+\\]\\((?!http)(.+?)\\)'),
+            regexp: /\!?\[[^\]]+\]\((?![ <]*http)(.+\.(jpg|jpeg|png|gif|svg|ico))\)/i,
             messages: {
                 size: 'file size is more than 1 MB',
-                existence: 'missed local image',
+                existence: 'missing image',
             }
+        },
+        tutorialLinkInvalid: {
+            regexp: /\[[^\]]+\]\((?![ ]*http)([\w\d\-]+\.html)\)/i,
+            message: 'Incorrect link: If you want link to tutorial, use tutorial name without ".html". If you want external link, use full URL with "http/https"',
+        },
+        tutorialLink: {
+            regexp: /\[[^\]]+\]\((?![ <]*http)[\w\d\-]+\)/,
+            message: 'Tutorial with this name doesn\'t exist',
+        },
+        localFileLink: {
+            regexp: /\[[^\]]+\]\((?![ <]*http)([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/,
+            message: 'Incorrect link to local file, use full link to file on GitHub (starting https://raw.githubusercontent.com)',
         },
         internalLink: {
             regexp: new RegExp('(sap\.corp)'),
-            message: 'internal link'
+            message: 'Internal link'
         },
     },
     validation: {
@@ -74,7 +86,6 @@ module.exports = {
         messages: {
             production: {
                 rules_vr: 'VALIDATION: rules.vr file must not be presented in the production',
-                auto_validation: `VALIDATION: Value of auto_validation property must be set to 'true' in the production`,
             },
             validate_restrictions: {
                 at_least_one: 'VALIDATION: Tutorial must have at least one validate element',
@@ -87,15 +98,30 @@ module.exports = {
             validate_wo_property: 'VALIDATION: Tutorial has validation but no auto_validation property',
         }
     },
+    options: {
+        regexps: {
+            full: /(?:(\[OPTION BEGIN \[.+\]\]))[\0-\uFFFF]*?(?=(\[OPTION END\]))/g,
+            start:/(?:(\[OPTION BEGIN \[.+\]\]))[\0-\uFFFF]*?/g,
+            end: /[\0-\uFFFF]*?(?=\[OPTION END\])/g,
+            title: /(?:(\[OPTION BEGIN \[)).+(?=(\]\]))/g,
+            contentBetween: /(?:(\[OPTION END\]))[\w\d\s]+(?=(\[OPTION BEGIN \[.+\]\]))/g,
+        },
+        messages: {
+            oneOption: 'If you use conditional tab, you must have at least 2 options',
+            duplicate: '2 or more options with the same name',
+            mess: 'You must have BEGIN and END tags for option tabs (syntax error) ',
+            contentBetween: 'No content between options allowed',
+        },
+    },
     tags: {
         primary_tag: {
-            regexp: /primary_tag:\s?\[?(.*?)\]?\r?\n/i,
+            regexp:  /(?<=primary_tag:)\s?\[?[\w\s>,\-]*\]?\r?\n?/i,
             message: 'More than one primary tag specified',
         },
-      experienceTag: {
-        regexp: /tutorial>(beginner)|(intermediate)|(advanced)/g,
-        message: 'experience tag is required',
-      },
+        experienceTag: {
+            regexp: /tutorial>(beginner)|(intermediate)|(advanced)/g,
+            message: 'experience tag is required',
+        },
     },
     link: {
         absoluteURL: new RegExp('^[a-z][a-z0-9+.-]*:'),
