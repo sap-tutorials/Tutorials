@@ -3,8 +3,10 @@ title: Create Cards with Actions (Like Approve Or Reject)
 description: Implement actions within an SAP Mobile Card, like approve or reject.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
-tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services  ]
+tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 20
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 
 ## Details
@@ -51,13 +53,19 @@ Provide the required information as per below.
 
 > **Destination** defines the root for the queries that are going to be used for this card.
 
-Navigate to the **Sample Data** tab to view the sample JSON response. Copy the `SalesOrderId` parameter.
+Navigate to the **URLs** tab to view data endpoint definitions.
+
+Click **Get Data** to retrieve sample JSON response based on a defined URL.
+
+![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_009.1.png)
+
+Click URL 0 to view the sample JSON response.
+
+>You can format JSON data by clicking on icon as per below screenshot.
+
+Copy the `SalesOrderId` parameter.
 
 ![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_010.png)
-
-Click the **Info** tab.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_011.png)
 
 Click on the **+** icon to add a parameter to the card. This parameter will be used later to build the correct URL so that the action modifies the current `SalesOrder` status.
 
@@ -68,9 +76,6 @@ Provide the required information as per below.
 | **Field** | **Value** |
 |----|----|
 | **`sID`** | `$.d.SalesOrderId` |
-
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_013.png)
 
 [DONE]
 [ACCORDION-END]
@@ -92,8 +97,6 @@ Replace `SalesOrder` text with **Action Card** to rename the title of card. This
 
 Navigate to the **Actions** tab to start adding actions to the card.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_016.png)
-
 Enter the following value for **XCSRF Token URL**:
 
 ```URL
@@ -105,11 +108,7 @@ This way the client will know where to get the token from for the actions.
 
 >The default value for behavior for an action is **INACTIVE**. An inactive action does not allow any new actions after a successful call.
 
-Click the **+** icon to add an action.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_019.png)
-
-Provide the required information:
+Click the **+** icon to add an action and provide the required information:
 
 | Field | Value |
 |----|----|
@@ -119,17 +118,13 @@ Provide the required information:
 | **HTTP Method** | `PATCH` |
 | **Action Body** | `{"LifeCycleStatusName": "Accepted", "LifeCycleStatus": "A"}` |
 
+![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_020.png)
+
 >Here `URL` will call the current `SalesOrder` which the card represents. `${sID}` defines the placeholder where the current `SalesOrderID` will be put in from the OData JSON response.
 
 >**Action Body** will patch the `SalesOrder` status from `New` to `Accepted` if the action is triggered.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_020.png)
-
-Now, create a **Request Header** for the `Accept` action. CLick the **+** icon.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_021.png)
-
-Provide the required information:
+Now, create a **Request Header** for the `Accept` action. Click the **+** icon and provide the required information:
 
 | **Field** | **Value** |
 |----|----|
@@ -137,28 +132,20 @@ Provide the required information:
 
 ![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_022.png)
 
-Click the **+** icon to create another action.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_023.png)
-
-Provide the required information:
+Click the **+** icon to create another action and provide the required information:
 
 | Field | Value |
 |----|----|
 | **Name** | `Reject` |
 | **Label** | `reject` |
-| **URL** | `/SampleServices/ESPM.svc/UpdateSalesOrderStatus?id='${ID1}'&newStatus='R'`|
+| **URL** | `/SampleServices/ESPM.svc/UpdateSalesOrderStatus?id='${sID}'&newStatus='R'`|
 | **HTTP Method** | `POST` |
-
->This `URL` will call the OData function `UpdateSalesOrderStatus`, which is implemented on the sample service and passes the current  `SalesOrderID` as well as the new status. This is the second option to change a `SalesOrder` status.
 
 ![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_024.png)
 
-Now, create a **Request Header** for the `Reject` action. Click the **+** icon.
+>This `URL` will call the OData function `UpdateSalesOrderStatus`, which is implemented on the sample service and passes the current  `SalesOrderID` as well as the new status. This is the second option to change a `SalesOrder` status.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_027.png)
-
-Provide the required information:
+Now, create a **Request Header** for the `Reject` action. Click the **+** icon and provide the required information:
 
 | Field | Value |
 |----|----|
@@ -167,13 +154,6 @@ Provide the required information:
 ![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_028.png)
 
 Click **Save**.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_029.png)
-
-Click **No** to allow editing of the card again.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_026.png)
-
 
 [VALIDATE_1]
 [ACCORDION-END]

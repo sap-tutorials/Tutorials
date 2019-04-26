@@ -5,6 +5,8 @@ auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 20
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 
 ## Details
@@ -84,7 +86,7 @@ Add the closing `<div>` tag right before the closing `<span>` tag:
 
 >By adding the `c2g_email` tag to the email, SAP Mobile Cards client can now parse the email correctly and offer the user to start writing an email directly to the contact email address of the card.
 
-Next, copy and paste the following `<div>` tag before the address `<class>` tag to add a phone number to the card:
+Next, copy and paste the following `<div>` tag after the address `<class>` tag to add a phone number and website address to the card:
 
 ```HTML
 <div class="listitem" style="padding-top: 28px;">
@@ -111,10 +113,6 @@ Supplier Phone
 Click **Save**.
 
 ![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_015.png)
-
-Click **No** to allow editing of the card again.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_016.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
