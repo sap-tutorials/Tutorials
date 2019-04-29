@@ -39,7 +39,7 @@ time: 5
 
     ![Choose New Project](new-project.png)
 
-3. Set the **Environment** to **Neo, ABAP**.
+3. Set the **Environment** to **Neo**.
 
     ![Set Environment](set-environment.png)
 
