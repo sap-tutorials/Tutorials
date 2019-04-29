@@ -9,11 +9,13 @@ author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
- - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](hcp-create-trial-account)
+ - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn  
-In this tutorial, you will enable SAP Cloud Platform Mobile Services in your NEO trial account.  Once it is enabled, you can use the features of Mobile Services in your SAP Cloud Platform SDK for iOS, Android and Mobile Cards apps.
+- How to enable SAP Cloud Platform Mobile Services in your Neo trial account
+
+Once SAP Cloud Platform Mobile Services is enabled, you can use its features in your SAP Cloud Platform SDK for iOS, Android and Mobile Cards apps.
 
 ---
 
@@ -39,9 +41,9 @@ If **Mobile Services** is not enabled, then enable it.
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open the Mobile Services Cockpit)]
+[ACCORDION-BEGIN [Step 3: ](Open the Mobile Services cockpit)]
 
-Click on **Go to Service** to open the Mobile Services Cockpit.
+Click on **Go to Service** to open the Mobile Services cockpit.
 
 ![Go to Service](go-to-service.png)
 
