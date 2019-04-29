@@ -1,5 +1,5 @@
 ---
-title: Navigate around SAP Data Hub, trial edition 2.4
+title: Navigate around SAP Data Hub, Trial Edition 2.4
 description: Find your way around SAP Data Hub, trial edition 2.4.
 auto_validation: true
 primary_tag: products>sap-data-hub
@@ -12,6 +12,7 @@ time: 15
   - How to find your way around SAP Data Hub, trial edition
   - How to troubleshoot problems
   - Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+
 
 ---
 
