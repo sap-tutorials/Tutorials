@@ -1,6 +1,6 @@
 ---
 title: Download the Installer Files
-description: Use the Download Manager in console mode to download SAP HANA 2.0, express edition installation packages.
+description: Use the Download Manager in console mode to download the SAP HANA 2.0, express edition server only installer and additional installation packages.
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
@@ -22,8 +22,8 @@ You will learn how to download the binary image of SAP HANA 2.0, express edition
 
 > Note:
 > The Download Manager for Windows (`HXEDownloadManager_win.exe`) runs in asynchronous mode, and console mode is not available. If you are a Windows user, download the platform-independent Download Manager (`HXEDownloadManager.jar`) to use console mode.
->
->
+> 
+> 
 
 [ACCORDION-BEGIN [Step 1: ](Open a command prompt)]
 
@@ -31,8 +31,10 @@ Open a command prompt at the location where you saved the Download Manager file 
 
 > Note:
 > If you've already installed SAP HANA express edition, you can run the built-in download manager from any directory as the <sid>`adm` user.
->
->
+> 
+> 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -52,8 +54,10 @@ java -jar HXEDownloadManager.jar -h
 
 > Note:
 > You must include an argument with each command. If you call the Download Manager without an argument, it opens in GUI mode.
->
->
+> 
+> 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -99,6 +103,8 @@ Valid <file> values:
 | `sdi.tgz` |SAP HANA smart data integration download package. SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.|
 | `dpagent_linux_x86_64.tgz` |SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.|
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Download one or more files)]
@@ -119,4 +125,8 @@ It downloads *Getting Started with SAP HANA, express edition (Binary Installer M
 java -jar HXEDownloadManager.jar linuxx86_64 installer Getting_Started_Binary_Installer.pdf hxe.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
+
+

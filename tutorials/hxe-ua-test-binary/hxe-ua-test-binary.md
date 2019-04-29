@@ -1,6 +1,8 @@
 ---
 title: Test SAP HANA, express edition
 description: Test your SAP HANA, express edition installation.
+author_name: Aaron Patkau
+author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 time: 10
@@ -36,7 +38,9 @@ http://<hostname>:80<instance-number>
 
 A success page displays:
 
-![loiofdcde7cfd9bc4a2d990f26340cf6387b_LowRes](loiofdcde7cfd9bc4a2d990f26340cf6387b_LowRes.png)
+![XSEngine_Success_0](XSEngine_Success_0.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -48,6 +52,10 @@ Follow the Eclipse installer prompts.
 
 Launch when prompted, or go to the Eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the `eclipse` executable file.
 
-Follow the tutorial [How to download and install the HANA Eclipse plugin](http://developers.sap.com/tutorials/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
+Follow the tutorial [How to download and install the HANA Eclipse plugin](hxe-howto-eclipse) to connect to your SAP HANA, express edition client machine.
+
+[DONE]
 
 [ACCORDION-END]
+
+

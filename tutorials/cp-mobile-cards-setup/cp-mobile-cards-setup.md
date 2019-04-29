@@ -5,10 +5,12 @@ auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 10
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
+- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 - [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
 - **Install SAP Mobile Cards Application:** Download and install on your [iPhone](https://itunes.apple.com/us/app/sap-content-to-go/id1168110623?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go)
 
@@ -43,15 +45,7 @@ Click **Neo Trial** to navigate into SAP Cloud Platform cockpit.
 
 ![MobileCards](Markdown_files/img_001.png)
 
-Click **Services** to look for Mobile Services.
-
-![MobileCards](Markdown_files/img_002.png)
-
-Click **Mobile** from the list of available categories.
-
-![MobileCards](Markdown_files/img_004.png)
-
-Click **Mobile Services, users**.  
+Choose **Services**, look for the **Mobile** category, and click **Mobile Services, users**.  
 
 ![MobileCards](Markdown_files/img_005.png)
 

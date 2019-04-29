@@ -1,22 +1,20 @@
 ---
 title: Machine Requirements
 description: Check if your machine has the recommended software and hardware to successfully install and run SAP HANA 2.0, express edition.
+author_name: Aaron Patkau
+author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 5
 ---
 
 <!-- loioc3807913b0a340a99822bf0d97a01da6 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:** 
 
 ## Details
 ### You will learn
 Check if your machine has the recommended software and hardware to successfully install and run SAP HANA 2.0, express edition.
-
-### Time to Complete
-5 min
 
 ---
 
@@ -34,6 +32,8 @@ Check if your system has the required hardware to successfully install and run S
 |RAM|Server: 16 GB minimum (24 GB recommended) **Note:** If you are installing on a system with 16 GB of RAM, increase the amount of swap space to at least 32 GB.|
 |HDD|120 GB HDD recommended|
 |Cores|2 cores (4 recommended)|
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -68,6 +68,8 @@ Check if your system has the required software to successfully install and run S
     > -   SAP HANA External Machine Learning AFL
     > 
 
+
+[DONE]
 
 [ACCORDION-END]
 

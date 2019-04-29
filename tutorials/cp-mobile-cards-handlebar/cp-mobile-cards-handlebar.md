@@ -55,13 +55,13 @@ Provide the required information:
 
 Click **Editor** to view the **HTML** which builds this card and to add handlebars classes.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_009.png)
-
 Check **Define source without mapping** to define the actual mapping of the data directly in the editor.
+
+![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_010.png)
 
 >In this template, you need to add a **d.** in front of all [Handlebars](https://handlebarsjs.com) expression.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_010.png)
+
 
 Replace `{{SalesOrderId}}` with `{{d.SalesOrderId}}`. By doing so, handlebars expression points to the correct JSON path.
 
@@ -83,12 +83,15 @@ Repeat the same for below handlebars:
 
 Replace `{{#each Items}}` with `{{#each d.Items.results}}`  
 
->[Handlebars block helper](https://handlebarsjs.com/block_helpers.html) function **each** points to the correct JSON path of the items result set.
+![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_015.png)
 
 ```JSON
 {{#each d.Items.results}}
 ```
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_015.png)
+
+![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_015.1.png)
+
+>[Handlebars block helper](https://handlebarsjs.com/block_helpers.html) function **each** points to the correct JSON path of the items result set.
 
 Add below Handlebars helper function in front of `{{d.LifeCycleStatusName}}` class.
 
@@ -157,11 +160,7 @@ Make sure you have all three images uploaded.
 
 [ACCORDION-BEGIN [Step 5: ](Implement logic for gross amount)]
 
-Click the **Editor** tab.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_025.png)
-
-Click **Handle...**.
+Navigate to **Editor** tab and click **Handle...**.
 
 ![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_026.png)
 
@@ -176,9 +175,9 @@ return new Handlebars.SafeString( grossAmount);
 });
 ```
 
->This handlebars helper function will evaluate the  `grossAmount` which is the `grossAmount` JSON value. If the value is above 1000 it will Color it green.
-
 ![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_027.png)
+
+>This handlebars helper function will evaluate the  `grossAmount` which is the `grossAmount` JSON value. If the value is above 1000 it will Color it green.
 
 Switch to **HTML** editor.
 

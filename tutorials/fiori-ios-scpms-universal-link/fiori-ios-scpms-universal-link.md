@@ -10,7 +10,12 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, products>sap
 
 ## Prerequisites  
  - **Proficiency:** intermediate
- - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+ - **Tutorials:**
+ - [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+ - [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+ - [Install the SAP Cloud Platform SDK for iOS](https://developers.sap.com/tutorials/fiori-ios-hcpms-install-sdk.html)
+ - [Configure Mobile Services in the iOS Assistant](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+ - [Create a Sample iOS App](fiori-ios-scpms-create-sample-app)
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 

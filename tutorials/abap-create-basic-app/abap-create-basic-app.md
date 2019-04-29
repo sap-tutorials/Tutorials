@@ -172,7 +172,6 @@ START-OF-SELECTION.
 
 [ACCORDION-BEGIN [Step 11: ](Test yourself)]
 
-Add the event keyword that turns a report into an executable program, then directly call the class method `Main` of the class `Demo`. (Don't indent your lines of code; pay attention to space characters.) Enter the code in the box below and choose **Validate**:
 
 [VALIDATE_1]
 [ACCORDION-END]

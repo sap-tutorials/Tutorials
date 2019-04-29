@@ -5,6 +5,8 @@ auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 5
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites
 
@@ -31,17 +33,11 @@ Provide the required information as per below.
 | **Template Source** | `Template Manager` |
 | **HTML Template** | `Sample Template Welcome Card` |
 
-> If you see a pop-up, click **OK** for the confirmation.
+>If you see a pop-up, click **OK** for the confirmation.
 
 Click **Save**.
 
 ![MobileCards](Markdown_files/img_009.png)
-
-You will see a pop-up asking whether you want to lock this mobile card or not.
-
-**Yes** means that when you do any modifications to this card, you need to unlock it first. For this tutorial, click on **No**.
-
-![MobileCards](Markdown_files/img_010.png)
 
 You will then see a list of existing mobile cards created in your account.
 
