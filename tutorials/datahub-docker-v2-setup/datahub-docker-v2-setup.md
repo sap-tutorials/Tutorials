@@ -112,7 +112,7 @@ Now that we have our `datahub` container up and running, we would start a separa
 Open a new command prompt and run the following command :
 
 ```sh
-docker run -ti --publish 127.0.0.1:9870:50070 --name hdfs --hostname hdfs --net dev-net datahub run-hdfs
+docker run -ti --publish 127.0.0.1:50070:50070 --name hdfs --hostname hdfs --net dev-net datahub run-hdfs
 ```
 
 After the installations are completed, the container would be started. You would be able to see the following output in the command prompt :
