@@ -440,12 +440,15 @@ In this section a top products section will be added to the product categories l
 First we'll generate additional sales data in the sample OData service.
 
 Navigate to **Native/Hybrid** > **Wiz App** and add an Assigned Feature.
+
 ![Adding Feature to Wiz App on Mobile Services](add-feature.png)
 
 Choose the **Sample Back End** and click OK.
+
 ![Adding Sample Back End on Mobile Services](sample-back-end.png)
 
 Change the Entity Sets dropdown to **`SalesOrderItems`** and then click the generate sample sales orders icon 5 times. This will create more sales order items that we can use to base our top products on, based on the quantity sold.
+
 ![Generating Sample Sales Orders on Mobile Services](generate-sample-sales.png)
 
 In Android Studio, on Windows press **`Ctrl+Shift+N`** or on a Mac press **`command+Shift+O`** and type **`activity_item_list`** to open `activity_item_list.xml` from the res/layout folder.
