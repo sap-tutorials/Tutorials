@@ -151,14 +151,14 @@ module.exports = {
 
       if (tutorialLinkMatch && !stepName) {
         const [, tutorialName] = tutorialLinkMatch[0]
-            .replace(')', '')
+            .replace(/\)/g, '')
             .split('](');
         const exists = checkLocalTutorial(tutorialName, allTutorials);
 
         if (!exists) {
           result.contentCheckResult.push({
             line: index + 1,
-            msg: tutorialLink.message,
+            msg: `${tutorialLink.message} (${tutorialName})`,
           });
         }
       }
