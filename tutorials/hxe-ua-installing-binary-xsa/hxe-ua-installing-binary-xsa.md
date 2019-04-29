@@ -1,6 +1,6 @@
 ---
 title: Install SAP HANA 2.0, express edition
-description: Extract server and applications installation files and set up your SAP HANA 2.0, express edition installation with XS Advanced, Web IDE, and SAP HANA Cockpit.
+description: Extract the installation files and set up your SAP HANA 2.0, express edition installation with XS Advanced, Web IDE, and SAP HANA Cockpit.
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
@@ -14,7 +14,7 @@ time: 60
 
 ## Details
 ### You will learn
-You will learn how to extract and configure the binary image of SAP HANA 2.0, express edition on your Linux server. You downloaded the installer files in the previous tutorial.
+You will learn how to extract and configure the binary image of SAP HANA 2.0, express edition on your Linux server. You downloaded the Server-only installer file and Applications file in the previous tutorial.
 
 ---
 
@@ -81,6 +81,8 @@ tar -xvzf <download_path>/shine.tgz
 >
 >
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Start the installation.)]
@@ -111,5 +113,7 @@ Follow the prompts to configure your installation.
 > -   Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
 >
 >
+
+[DONE]
 
 [ACCORDION-END]
