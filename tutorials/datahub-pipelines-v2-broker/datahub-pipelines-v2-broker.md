@@ -1,5 +1,5 @@
 ---
-title:  Use a message broker in SAP Data Hub, developer edition 2.4
+title:  Use a Message Broker in SAP Data Hub, Developer Edition 2.4
 description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, developer edition 2.4.
 auto_validation: true
 primary_tag: products>sap-data-hub
