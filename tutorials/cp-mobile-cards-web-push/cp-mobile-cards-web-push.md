@@ -88,7 +88,7 @@ It will show **No Card available** as there is no card yet pushed from the web a
 
 Open SAP Web IDE Full-Stack.
 
-> If SAP Web IDE Full-Stack service is not enabled, enable it first. Follow [this](sapui5-webide-open-webide) tutorial for more details.
+> If SAP Web IDE Full-Stack service is not enabled, enable it first. Follow [this](webide-multi-cloud) tutorial for more details.
 
 Right click on **Workspace** and select **New** > **Folder**.
 
