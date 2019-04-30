@@ -7,9 +7,6 @@ tags: [ tutorial>intermediate, topic>cloud, topic>java, products>sap-cloud-platf
 time: 20
 ---
 
-## Prerequisites  
- - You have the builders installed in your space.
-
 
 ## Details
 ### You will learn  
