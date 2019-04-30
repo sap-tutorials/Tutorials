@@ -3,7 +3,7 @@ title: Create a Database Table
 description: Create a database table from scratch using the ABAP Development Tools (ADT)
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 60
 ---
 
