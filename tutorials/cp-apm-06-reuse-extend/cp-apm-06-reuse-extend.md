@@ -1,6 +1,6 @@
 ---
-author_name: André Pfohlmann
-author_profile: https://github.com/Apfohlmann
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Build a Business App by Reusing a CDS Model
 description: Develop a sample business application by reusing a Core Data and Service (CDS) model and extending an existing service using the SAP Cloud Application Programming Model.
 auto_validation: true

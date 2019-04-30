@@ -1,6 +1,6 @@
 ---
-author_name: André Pfohlmann
-author_profile: https://github.com/Apfohlmann
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Create a Business Service with Node.js using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite. Use the SAP Cloud Application Programming Model and develop on your local environment.
 auto_validation: true
