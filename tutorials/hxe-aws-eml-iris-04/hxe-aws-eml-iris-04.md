@@ -287,3 +287,23 @@ Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_3]
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Stop the Iris Container)]
+
+Before moving to the next tutorial, you can stop the current container instance to release the resources locally.
+
+In the next cell, paste the following code then press **SHIFT** + **ENTER** to execute the code:
+
+```Python
+%%sh
+
+# check if there is already a serving_base container running
+[ -z "$(docker ps | grep 'tensorflow/serving/iris:1.0.0' | cut -f 1 | cut -d ' ' -f 1)" ] || {
+    container_id=$(docker ps | grep 'tensorflow/serving/iris:1.0.0' | cut -f 1 | cut -d ' ' -f 1)
+    echo "killing tensorflow/serving/iris:1.0.0 container id $container_id"
+    docker kill $container_id > /dev/null
+}
+```
+
+[DONE]
+[ACCORDION-END]
