@@ -1,5 +1,5 @@
 ---
-title: Store sensor data in Cloud Storage in SAP Data Hub, trial edition 2.4
+title: Store Sensor Data in Cloud Storage in SAP Data Hub, Trial Edition 2.4
 description: Use Cloud Storage to store sensor data by using SAP Data Hub, trial edition 2.4.
 auto_validation: true
 primary_tag: products>SAP-data-hub
@@ -58,7 +58,7 @@ The **Write File** operator will write the received data to files in the `/senso
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Read File Operator)]
 
-Now drag and drop **Read File** operator to the existing graph `(test.myFirstPipeline)`. Then connect `outFile` output port of the **Read File** operator to the `inMessage` input port of the `ToString Converter`
+Now drag and drop **Read File** operator to the existing graph `(test.myFirstPipeline)`. Then connect `outFile` output port of the **Read File** operator to the `inMessage` input port of the `ToString Converter`, and connect output port of the `ToString Converter` to **Terminal**.
 
 ![picture2](datahub-trial-v2-pipelines-part02-2.png)
 
