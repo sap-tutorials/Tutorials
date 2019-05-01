@@ -1,5 +1,5 @@
 ---
-title: Deploy your first SAPUI5 App to Cloud Foundry
+title: Deploy Your First SAPUI5 App to Cloud Foundry
 description: Create, build and deploy a MTA project with an integrated SAPUI5 module
 auto_validation: true
 time: 25
@@ -132,13 +132,3 @@ Enter the URL of your running application:
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-<!-- [ACCORDION-BEGIN [Step : ](XXXXX)]
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](XXXXX)]
-[DONE]
-[ACCORDION-END] -->
-
-
----
