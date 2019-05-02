@@ -1,0 +1,125 @@
+---
+title: Create an SAPUI5 App from the Command Line
+description: Create and test a newly created SAPUI5 app on you local machine with the editor of your choice.
+auto_validation: true
+time: 20
+tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+primary_tag: topic>sapui5
+---
+
+## Details
+### You will learn
+  - How to scaffold an SAPUI5 project
+  - How to leverage the ui5-tooling to test the app locally
+  - How to build a multi-target application archive archive
+  - How to deploy a SAPUI5 web-app to Cloud Foundry
+
+---
+
+[ACCORDION-BEGIN [Step 1: ](Scaffold a SAPUI5 project)]
+
+Run `yo easy-ui5` to trigger the creation of a new project. You will be prompted for a couple of parameters, accept all the default values here.
+
+![yeomangen](./yo.png)
+
+The following installation of the project's dependencies might take a while.
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Inspect the generated code)]
+
+
+Let's have a look at the generated code. Go to the newly created directory and open the code with your favorite editor (here atom).
+
+```Bash
+cd com.myorg.myUI5App/
+atom .
+```
+
+You can see that the wizard created a bunch of folders and files.
+
+![atom](./atom.png)
+
+The main code for the SAPUI5 app can be found in the directory `webapp`. You might miss the folders `dist` and `mta_archieves` as they will be created later during the build step.
+
+
+The `package.json` file contains many useful information about the project. The `npm scripts` are especially interesting, since they wrap the command we'll use later.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Test the web-app locally)]
+
+This project leverages the UI5 tooling framework for development. Among other tasks, this tool belt can help you to start a local web server when you run
+
+```Bash
+npm start
+```
+
+![local](./local.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Package the MTA archive)]
+
+It makes sense to minify the JavaScript code before you deploy it to the cloud. This minification step can be combined with the creation of the MTA archive by
+
+```Bash
+npm run package-cf
+```
+
+
+[VALIDATE_1]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Deploy the MTA archive)]
+
+Next, we deploy the generated archive and track the deployment progress in the terminal with the following command.
+
+```Bash
+cf mta_archives/myUI5App_0.0.1.mtar
+```
+
+
+> The command `npm run deploy-cf` will do both, generate and deploy the application to Cloud Foundry.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Check the status of your app)]
+
+You can check the status of all running apps in Cloud Foundry with
+```Bash
+cf apps
+```
+
+The `requested state` of your application should read `started`.
+
+![cfapps](./cfapps.png)
+
+> You can also check out the logs of your app via `cf logs <app name>` or via `npm run cf-log`
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](See the app running in the cloud)]
+
+You can see the URL of your application in the output of the previously executed `cf apps` command.
+
+Open the URL in the browser to see your app in action:
+![inaction](./cloud.png)
+
+Congrats, you just deployed your first SAPUI5 app from the command line!
+
+
+[DONE]
+[ACCORDION-END]
+
+
+
+---
