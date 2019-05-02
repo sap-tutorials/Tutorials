@@ -133,11 +133,11 @@ return new Handlebars.SafeString( "<img src='Traffic-light-3.png' style=' width:
 
 Open below links and save images on local machine. These images will be used as assets for this tutorial.
 
-[Orange Traffic light](https://openclipart.org/image/300px/svg_to_png/195672/Traffic-light-3.png)
+[Yellow Traffic light](http://res.publicdomainfiles.com/pdf_view/65/13548535818149.png)
 
-[Red  Traffic light](https://openclipart.org/image/300px/svg_to_png/195670/Traffic-light-1.png)
+[Green  Traffic light](http://res.publicdomainfiles.com/pdf_view/65/13548534013334.png)
 
-[Green Traffic light](https://openclipart.org/image/300px/svg_to_png/195669/Traffic-light.png)
+[Red Traffic light](http://res.publicdomainfiles.com/pdf_view/65/13548529215849.png)
 
 Once done, click **Assets** to upload asset files.
 
