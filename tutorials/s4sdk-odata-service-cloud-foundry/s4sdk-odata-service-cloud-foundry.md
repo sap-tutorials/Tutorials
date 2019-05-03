@@ -1,6 +1,6 @@
 ---
-title: Connect to OData service on Cloud Foundry using SAP S/4HANA Cloud SDK
-description: The following steps will explain how to create a basic Java project to call OData services using the SAP S/4HANA Cloud SDK on Cloud Foundry.
+title: Connect to OData service on Cloud Foundry using SAP Cloud SDK
+description: The following steps will explain how to create a basic Java project to call OData services using the SAP Cloud SDK on Cloud Foundry.
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-s-4hana, topic>cloud, topic>java, topic>odata ]
 primary_tag: products>sap-s-4hana-cloud-sdk
@@ -18,7 +18,7 @@ Please note that depending on the platform you are using (`Neo` or `Cloud Foundr
 S/4HANA on-premise |	Information will be provided in the [extended tutorial series](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/)
 S/4HANA Cloud | Direct Connection with `BASIC Auth` (Technical User, see below)
 
-Note that your application code is not dependent on the platform you are using. Using the `S/4HANA Cloud SDK`, you can write your code once, and it will be capable of dealing with all different authentication and connectivity options.
+Note that your application code is not dependent on the platform you are using. Using the `SAP Cloud SDK`, you can write your code once, and it will be capable of dealing with all different authentication and connectivity options.
 
 ### You will learn
 In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on `SAP Cloud Platform` based on `Cloud Foundry`, and write an integration test.
@@ -36,7 +36,7 @@ This section explains the concepts of the S/4HANA Virtual Data Model. If you wou
 
 The data stored in an S/4HANA system is inherently complexly structured and therefore difficult to query manually. Therefore, HANA introduced a Virtual Data Model (VDM) that aims to abstract from this complexity and provide data in a semantically meaningful and easy to consume way. The preferred way to consume data from an S/4HANA system is via the OData protocol. While BAPIs are also supported for compatibility reasons, OData should always be your first choice. You can find a list of all the available OData endpoints for S/4HANA Cloud systems in [SAP's API Business Hub](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud?section=ARTIFACTS).
 
-The S/4HANA Cloud SDK now brings the VDM for OData to the Java world to make the type-safe consumption of OData endpoints even more simple! The VDM is generated using the information from SAP's [API Business Hub](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud?section=ARTIFACTS). This means that its compatible with every API offered in the API Business Hub and therefore also compatible with every S/4HANA Cloud system.
+The SAP Cloud SDK now brings the VDM for OData to the Java world to make the type-safe consumption of OData endpoints even more simple! The VDM is generated using the information from SAP's [API Business Hub](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud?section=ARTIFACTS). This means that its compatible with every API offered in the API Business Hub and therefore also compatible with every S/4HANA Cloud system.
 
 
 [DONE]
@@ -63,7 +63,7 @@ final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
         .asList(MyBusinessPartnerType.class);
 ```
 
-The `ODataQueryBuilder` represents a simple and generic approach to consuming OData services in your application and is well suited to support arbitrary services. It is a big step forward from manually building up an HTTP request to an OData service and processing the results in your code, and is used internally by the S/4HANA Cloud SDK. In turn, the `ODataQueryBuilder` also uses concepts of the SAP S/4HANA Cloud SDK to simplify communication with systems, which are referenced by an `ErpConfigContext`.
+The `ODataQueryBuilder` represents a simple and generic approach to consuming OData services in your application and is well suited to support arbitrary services. It is a big step forward from manually building up an HTTP request to an OData service and processing the results in your code, and is used internally by the SAP Cloud SDK. In turn, the `ODataQueryBuilder` also uses concepts of the SAP Cloud SDK to simplify communication with systems, which are referenced by an `ErpConfigContext`.
 
 Nevertheless, there are quite a few pitfalls you can fall into when using the plain `ODataQueryBuilder` approach to call OData services:
 
@@ -77,7 +77,7 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 [ACCORDION-BEGIN [Step 3: ](Virtual Data Model: The new way to OData)]
 
-Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the S/4HANA Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
+Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
 ```Java
 final List<BusinessPartner> businessPartners =
@@ -119,7 +119,7 @@ For any OData service not part of SAP's API Business Hub, the `ODataQueryBuilder
 
 [ACCORDION-BEGIN [Step 4: ](Write the BusinessPartnerServlet)]
 
-The `SAP S/4HANA Cloud SDK` provides simple and convenient ways to access your ERP systems out of the box. In this example you will implement an endpoint that performs an `OData` query to `SAP S/4HANA` in order to retrieve a list of **business partners** from your ERP system. More specifically, we want to retrieve all persons (a specific kind of business partner) with their name and a few additional properties.
+The `SAP Cloud SDK` provides simple and convenient ways to access your ERP systems out of the box. In this example you will implement an endpoint that performs an `OData` query to `SAP S/4HANA` in order to retrieve a list of **business partners** from your ERP system. More specifically, we want to retrieve all persons (a specific kind of business partner) with their name and a few additional properties.
 
 To get started, open your previously created `Hello World` project (in our case, it is called **`firstapp`**) and **`create a new file`** called `BusinessPartnerServlet.java` in the following location:
 
@@ -195,7 +195,7 @@ Finally, having prepared the query, we call the `execute` method. This method do
 - the connectivity to this system, which may reside on-premise behind a corporate firewall, – by means of the connectivity service and the optional Cloud Connector, and
 - the authentication to this system using potentially vastly different authentication flows (basic authentication, principal propagation, OAuth2).
 
-The SAP S/4HANA Cloud SDK provides all of these capabilities with a simple interface and allows customers (tenants) of your application to configure the connection to their system. We will discuss the configuration below when deploying the project.
+The SAP Cloud SDK provides all of these capabilities with a simple interface and allows customers (tenants) of your application to configure the connection to their system. We will discuss the configuration below when deploying the project.
 
 The `execute` method of the VDM returns the query result as a `navigatable` list of type `BusinessPartner`, which represents the entity type of the response in a type-safe manner. We declare the servlet's response as JSON content and transform the result into a JSON response.
 
@@ -214,7 +214,7 @@ Depending on your chosen archetype and SAP Cloud Platform setup you can deploy t
 You need to supply the destination of your SAP S/4HANA system before you deploy the new version to Cloud Foundry or run the application on the local server.
 
 **Run on a Local Server**
-As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine (replace `set` with the corresponding commands to define environment variables on your command shell).
+As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine (replace `set` with the corresponding commands to define environment variables on your command shell).
 
 ```bash
 set destinations=[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD"}]
@@ -238,7 +238,7 @@ _Note: You can also add more ERP endpoints to this JSON representation, followin
 
 In order to perform queries against your ERP system when the application is deployed on Cloud Foundry, you have to inform Cloud Foundry about the location of your ERP endpoint.
 
-To do this, you can either supply the same environment variable `destinations` that we used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of SAP Cloud Platform Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP S/4HANA Cloud SDK. Therefore, we explain how to use the destination service in detail below.
+To do this, you can either supply the same environment variable `destinations` that we used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of SAP Cloud Platform Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, we explain how to use the destination service in detail below.
 
 Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
 
@@ -251,11 +251,11 @@ Again, supply the correct values for your S/4HANA system. Afterwards, rebuild an
 ```
 cf set-env firstapp destinations "[{name: \"ErpQueryEndpoint\", url: \"https://URL\", username: \"USER\", password: \"PASSWORD\"}]"
 ```
-Whenever this environment variable is set, the SAP S/4HANA Cloud SDK will use it to determine destinations. Make sure to delete it with `cf unset-env firstapp destinations` as soon as you are done with the initial testing and when you want to use the real destination service.
+Whenever this environment variable is set, the SAP Cloud SDK will use it to determine destinations. Make sure to delete it with `cf unset-env firstapp destinations` as soon as you are done with the initial testing and when you want to use the real destination service.
 
 **Using the Destination Service on SAP Cloud Platform Cloud Foundry**
 
-For the recommended approach of using the destination service to configure the connection to your SAP S/4HANA system, proceed as follows. Note that this requires version 1.6.0 or higher of the SAP S/4HANA Cloud SDK.
+For the recommended approach of using the destination service to configure the connection to your SAP S/4HANA system, proceed as follows. Note that this requires version 1.6.0 or higher of the SAP Cloud SDK.
 
 **Subscribe to Services**
 The destination handling is available as a service on Cloud Foundry. You need to create an instance of that service and bind it to your application in order to use the destination service. Additionally, you need an instance of the [Authorization and Trust Management](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/6373bb7a96114d619bfdfdc6f505d1b9.html) (`xsuaa`) service.
@@ -304,7 +304,7 @@ Customers of our application can use the Cloud Platform cockpit to configure des
 1. Navigate to the Cloud Foundry subaccount within your global account that you have used before to deploy the application (see Step 3). In case of a trial account, the subaccount will be called trial by default.
 2. In the menu on the left, expand Connectivity and select Destinations.
 3. Click on New Destination and enter the following values into the input fields:
-  - Name: `ErpQueryEndpoint` (this is the destination accessed by default by the SAP S/4HANA Cloud SDK)
+  - Name: `ErpQueryEndpoint` (this is the destination accessed by default by the SAP Cloud SDK)
   - URL: https://URL (URL to your SAP S/4HANA system)
   - Authentication: choose `BasicAuthentication`
   - Provide credentials of your technical user in the User and Password fields.

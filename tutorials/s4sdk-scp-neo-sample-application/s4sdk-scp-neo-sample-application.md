@@ -1,6 +1,6 @@
 ---
-title: Create a sample application on SCP Neo using SAP S/4HANA Cloud SDK
-description: The following steps will explain how to create your very first Hello World sample application on SCP Neo using the SAP S/4HANA Cloud SDK. If you want to follow this tutorial, it is highly recommended checking out the first tutorial in the series. You will not need any additional software as the server will run on your local machine.
+title: Create a sample application on SCP Neo using SAP Cloud SDK
+description: The following steps will explain how to create your very first Hello World sample application on SCP Neo using the SAP Cloud SDK. If you want to follow this tutorial, it is highly recommended checking out the first tutorial in the series. You will not need any additional software as the server will run on your local machine.
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
@@ -8,13 +8,13 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ## Prerequisites  
  - **Proficiency:** intermediate
- - **Tutorials:** [Set up your local infrastructure to develop with SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-setup.html)
+ - **Tutorials:** [Set up your local infrastructure to develop with SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-setup.html)
 
 ## Next Steps
-- **Tutorial:** [Connect to OData service on Neo using SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html)
+- **Tutorial:** [Connect to OData service on Neo using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html)
 
 ### You will learn  
-The tutorial will show you the first steps when developing applications for the SCP Neo using the SAP S/4HANA Cloud SDK. To be precise, we will cover the following steps:
+The tutorial will show you the first steps when developing applications for the SCP Neo using the SAP Cloud SDK. To be precise, we will cover the following steps:
 
  1. Generate a project stub using a Maven Archetype
  2. Understand the project structure and its artifacts
@@ -31,7 +31,7 @@ The tutorial will show you the first steps when developing applications for the 
 
 [ACCORDION-BEGIN [Step 1: ](Generate project from archetype)]
 
-Since you have already installed Maven, you can use it to generate a project stub from the `SAP S/4HANA Cloud SDK`  Maven archetype. Just use your console (IDE or OS), navigate to the parent directory for your project and run the following command.
+Since you have already installed Maven, you can use it to generate a project stub from the `SAP Cloud SDK`  Maven archetype. Just use your console (IDE or OS), navigate to the parent directory for your project and run the following command.
 
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.s4hana.archetypes -DarchetypeArtifactId=scp-neo-javaee6 -DarchetypeVersion=LATEST
