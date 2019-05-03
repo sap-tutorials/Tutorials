@@ -11,7 +11,7 @@ time: 15
 <!-- loio8f68fc9f49774010a5d438fea258f61f -->
 
 ## Prerequisites
- - **Tutorials:**  You have completed [Test the Installation](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)  
+ - **Tutorials:**  You have completed [Test the Installation](hxe-ua-test-binary). 
 
 ## Details
 ### You will learn
@@ -38,7 +38,9 @@ Enter the following command:
 -   `x86_64`: `./HXEDownloadManager_linux.bin linuxx86_64 installer eadesigner.tgz`
 -   `PowerPC`: `java -jar HXEDownloadManager.jar linuxppc64le installer eadesigner.tgz`
 
-![loiof8015cbabcd944589df9eb1975488fa6_LowRes](loiof8015cbabcd944589df9eb1975488fa6_LowRes.png)
+![eadesigner_tgz_Download_3](eadesigner_tgz_Download_3.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -50,6 +52,8 @@ Enter:
 cd /usr/sap/HXE/home/Downloads
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](View the contents of the `Downloads` directory to confirm `eadesigner.tgz` exists.)]
@@ -59,6 +63,8 @@ Enter:
 ```bash
 ls
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -70,7 +76,9 @@ Enter:
 tar -xvzf eadesigner.tgz
 ```
 
-![loio4182366cf2a946ee9a3fad660b6817d8_LowRes](loio4182366cf2a946ee9a3fad660b6817d8_LowRes.png)
+![easdesigner_tgz_Command_Example_4](easdesigner_tgz_Command_Example_4.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -81,6 +89,8 @@ Enter:
 ```bash
 cd HANA_EXPRESS_20
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -94,11 +104,15 @@ sh ./install_eadesigner.sh
 
 Installation begins.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Follow the installation prompts)]
 
 When prompted for passwords, enter the master password you specified when you installed SAP HANA 2.0, express edition.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -108,7 +122,9 @@ When prompted to `Proceed with installation`, enter `Y`. Wait for installation t
 
 A success message displays when installation completes.
 
-![loioa44e0fb6cf3241dfb958221c1fcb9b6d_LowRes](loioa44e0fb6cf3241dfb958221c1fcb9b6d_LowRes.png)
+![eadesigner_Successful_Deployment_2](eadesigner_Successful_Deployment_2.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -118,13 +134,17 @@ A success message displays when installation completes.
 
 -   Launch a web browser on your laptop and enter the URL in your web browser address bar. The SAP EA Designer login page displays.
 
-    ![loio5990aaf782d84aa6ae3c02a272a6d18e_LowRes](loio5990aaf782d84aa6ae3c02a272a6d18e_LowRes.png)
+    ![SAP_EA_Designer_Login_Page_1](SAP_EA_Designer_Login_Page_1.png)
 
 -   Click *Login with your XSA User* on this logon page.
 
 -   Enter `XSA_ADMIN` user and password. You are logged in as administrator of SAP EA Designer.
 
-    ![loio5830ffe295824ce6946a374c98ec011e_LowRes](loio5830ffe295824ce6946a374c98ec011e_LowRes.png)
+    ![SAP_EA_Designer_welcome_page_0](SAP_EA_Designer_welcome_page_0.png)
 
+
+[DONE]
 
 [ACCORDION-END]
+
+
