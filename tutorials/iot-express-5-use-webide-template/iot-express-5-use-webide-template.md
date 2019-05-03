@@ -8,12 +8,12 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>sapui5, products>sap-we
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [SAP IoT Application Enablement: Onboarding - Setting up Your Account](https://help.sap.com/viewer/9dfedbe95cbe4a9f9a5ceddbef7f88e5/latest/en-US/c5b72d23880240dcb4b0d7b9523b065a.html).
+ - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [Getting Started with SAP Leonardo IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest).
  - **Tutorials:** [Create Thing Model](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html)
 
 ## Details
 ### You will learn
-- How to use SAP Web IDE to build an application that leverages UI controls and data from IoT Application Enablement
+- How to use SAP Web IDE to build an application that leverages UI controls and data from SAP Leonardo IoT
 - How to use templates to speed up developing prototypes for certain use cases.
 - How to use the sensor chart UI control to discover patterns in your initial sensor data.
 
@@ -39,12 +39,12 @@ To log in, use the same email address and password you are using  within the thi
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Enable the IoT Application Enablement feature)]
+[ACCORDION-BEGIN [Step 2: ](Enable the Leonardo IoT feature)]
 In SAP Web IDE go to **Preferences** > **Features**.
 
 Turn on the following features:
 
-  - **IoT Application Enablement**
+  - **Leonardo IoT**
   - **Layout Editor**
   - **Storyboard**.
 
@@ -110,7 +110,7 @@ The example below shows 2 patterns -- the light sensor in this case seems to jum
 
 You will discover that if you collect sensor data from the real world, there will always be surprises, both in that you cannot see what you thought you would find in the data, and also that you see patterns in the data that you did not expect to see.
 
-For more support on in-depth topics on building an IoT Application, refer to [http://developers.sap.com/](http://developers.sap.com/) under **IoT**.
+For more support on in-depth topics on building an IoT Application, refer to [http://developers.sap.com/](http://developers.sap.com/) and look for the Leonardo IoT product.
 
 [VALIDATE_1]
 
