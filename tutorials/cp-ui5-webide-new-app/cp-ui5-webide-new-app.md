@@ -1,6 +1,6 @@
 ---
 title: Deploy Your First SAPUI5 App to Cloud Foundry
-description: Create, build and deploy a MTA project with an integrated SAPUI5 module
+description: Create, build and deploy a MTA project with an integrated SAPUI5 module.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>javascript, topic>sapui5, topic>html5, products>sap-cloud-platform, products>sap-web-ide]
@@ -17,8 +17,8 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Create a new Multi-Target Application)]
-A MTA project is a wrapper for all modules (microservices) which are part of a Cloud Foundry application.
+[ACCORDION-BEGIN [Step : ](Create a new multi-target application)]
+An MTA project is a wrapper for all modules (microservices) which are part of a Cloud Foundry application.
 
 1. Click on the tile **New Project From Template** to open the wizard.
 
@@ -40,7 +40,7 @@ A MTA project is a wrapper for all modules (microservices) which are part of a C
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Add a HTML5 module)]
+[ACCORDION-BEGIN [Step : ](Add an HTML5 module)]
 1. Right-click on the newly created project and select and select **New** -> **HTLM5 Module** to create a new module.
 
     ![UImodule](./modulenew.png)

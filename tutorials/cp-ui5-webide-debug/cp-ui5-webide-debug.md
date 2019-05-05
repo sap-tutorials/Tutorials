@@ -1,6 +1,6 @@
 ---
-title: Debug Your SAPUI5 App with the Web IDE
-description: Debugging and logging are the nut and bolts to inspect your application. Learn how to debug and test your web apps with the Google Chrome Dev Tools.
+title: Debug Your SAPUI5 App with SAP Web IDE
+description: Learn how to debug and test your web apps with the Google Chrome DevTools.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, topic>html5, topic>cloud, topic>javascript, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-web-ide]
@@ -11,7 +11,7 @@ primary_tag: topic>sapui5
 ### You will learn
   - How to do add breakpoints to your JavaScript code
   - How to log data to the console
-  - How to use the Google Chrome Dev Tools.
+  - How to use the Google Chrome DevTools
 
 ---
 
@@ -93,8 +93,8 @@ onAfterRendering: function() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: ](The the error log message)]
-Open the Chrome Dev Tools (or the [dev tools of your favorite browser](https://www.lifewire.com/web-browser-developer-tools-3988965)) by **clicking F12**. **Refresh the page** to run the script one more time.
+[ACCORDION-BEGIN [Step: ](The error log message)]
+Open the Chrome DevTools (or the [dev tools of your favorite browser](https://www.lifewire.com/web-browser-developer-tools-3988965)) by clicking **F12**. **Refresh the page** to run the script one more time.
 
 You should now see that the app reached the breakpoint (the dev tools automatically switched to the `Sources` tab).
 
@@ -103,9 +103,9 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](The the error log message)]
+[ACCORDION-BEGIN [Step : ](The error log message)]
 
-Click **F8** to jump over the breakpoint and **switch** to the `Console` tab.
+Click **F8** to jump over the breakpoint and switch to the `Console` tab.
 Now you should see your error message printed in red. Click on the small triangle on the left side to expand the error message.
 
 Can you spot the line in which you invoked the error message?
