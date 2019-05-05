@@ -92,7 +92,7 @@ Field Name       | Value
 
 When you're done, finish by saving the destination with **`Save`**.
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step : ](Check the connection)]
