@@ -72,7 +72,7 @@ onAfterRendering: function() {
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Test it the breakpoint)]
+[ACCORDION-BEGIN [Step: ](Stop at the breakpoint)]
 
 Test the changes  on your local machine.
 ```
@@ -87,7 +87,7 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](The the error log message)]
+[ACCORDION-BEGIN [Step : ](See the error log message)]
 
 Click **F8** to jump over the breakpoint and **switch** to the `Console` tab.
 Now you should see your error message printed in red. Click on the small triangle on the left side to expand the error message.
