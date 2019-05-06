@@ -93,7 +93,7 @@ onAfterRendering: function() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: ](The error log message)]
+[ACCORDION-BEGIN [Step: ](Stop at the breakpoint)]
 Open the Chrome DevTools (or the [dev tools of your favorite browser](https://www.lifewire.com/web-browser-developer-tools-3988965)) by clicking **F12**. **Refresh the page** to run the script one more time.
 
 You should now see that the app reached the breakpoint (the dev tools automatically switched to the `Sources` tab).
@@ -103,7 +103,7 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](The error log message)]
+[ACCORDION-BEGIN [Step : ](See the error log message)]
 
 Click **F8** to jump over the breakpoint and switch to the `Console` tab.
 Now you should see your error message printed in red. Click on the small triangle on the left side to expand the error message.
