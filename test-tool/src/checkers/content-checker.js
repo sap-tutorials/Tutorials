@@ -147,7 +147,7 @@ module.exports = {
         }
       }
 
-      const stepName = line.startsWith('[ACCORDION');
+      const stepName = line.includes('[ACCORDION');
 
       if (tutorialLinkMatch && !stepName) {
         const [, tutorialName] = tutorialLinkMatch[0]
