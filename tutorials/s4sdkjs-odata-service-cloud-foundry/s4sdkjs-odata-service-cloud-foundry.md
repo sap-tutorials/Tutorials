@@ -1,6 +1,6 @@
 ---
-title: Create Your First Application with SAP S/4HANA Cloud SDK for JavaScript
-description: Learn the fundamentals of the SAP S/4HANA Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
+title: Create Your First Application with SAP Cloud SDK for JavaScript
+description: Learn the fundamentals of the SAP Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript]
@@ -10,7 +10,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Details
 ### You will learn
  - How to extend a scaffolded application by another route
- - How to call the Business Partner Service of SAP S/4HANA Cloud using SAP S/4HANA Cloud SDK for JavaScript
+ - How to call the Business Partner Service of SAP S/4HANA Cloud using SAP Cloud SDK for JavaScript
 
 ---
 
@@ -68,7 +68,7 @@ You can start your application by running `npm run start:local`. Now, calling `h
 
 [ACCORDION-BEGIN [Step 3: ](Import service entities)]
 
-In order to use the `SAP S/4HANA Cloud SDK for JavaScript` to make a call to an `OData` service add the `virtual data model` (`VDM`) for this service to your dependencies. For this tutorial we are using the `VDM` for the business partner service. Install it with the following:
+In order to use the `SAP Cloud SDK for JavaScript` to make a call to an `OData` service add the `virtual data model` (`VDM`) for this service to your dependencies. For this tutorial we are using the `VDM` for the business partner service. Install it with the following:
 
 ```Shell
 npm install @sap/cloud-sdk-vdm-business-partner-service
@@ -82,7 +82,7 @@ import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 
 Now the `BusinessPartner` entity is available for you to be used.
 
->**Side-note:** The `SAP S/4HANA Cloud SDK for JavaScript` offers packages for each `OData` service exposed by `SAP S/4HANA Cloud`. You can find a list of these services in the [`SAP API Business Hub`](https://api.sap.com/package/SAPS4HANACloud?section=Artifacts) and a list of the corresponding packages in our [documentation](https://help.sap.com/doc/9dbcab0600b346c2b359a8c8978a45ba/1.0/en-US/index.html).
+>**Side-note:** The `SAP Cloud SDK for JavaScript` offers packages for each `OData` service exposed by `SAP S/4HANA Cloud`. You can find a list of these services in the [`SAP API Business Hub`](https://api.sap.com/package/SAPS4HANACloud?section=Artifacts) and a list of the corresponding packages in our [documentation](https://help.sap.com/doc/9dbcab0600b346c2b359a8c8978a45ba/1.0/en-US/index.html).
 
 [DONE]
 [ACCORDION-END]
@@ -145,7 +145,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 
 Now restart your server and reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
 
-Congratulations, you just made your first call with the SAP S/4HANA Cloud SDK!
+Congratulations, you just made your first call with the SAP Cloud SDK!
 
 [DONE]
 [ACCORDION-END]
