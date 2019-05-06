@@ -101,5 +101,5 @@ Click on the `Check Connection` icon on the newly created Destination to see if 
 
 ![check](./checkdest.png)
 
-[VALIDATE_1]
+[VALIDATE_4]
 [ACCORDION-END]
