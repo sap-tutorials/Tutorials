@@ -19,17 +19,9 @@ You will learn how to register for the product, and access the download manager.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open the registration page)]
+[ACCORDION-BEGIN [Step 1: ](Complete the registration form)]
 
-Go to the registration page at [http://sap.com/sap-hana-express](http://sap.com/sap-hana-express). (Alternately, you can go to the SAP HANA, express edition launch page at [https://developers.sap.com/topics/sap-hana-express.html](http://www.sap.com/developer/topics/sap-hana-express.html) and click the *Free Download* link.)
-
-The registration page opens.
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Complete the registration form)]
+Go to the SAP HANA, express edition registration page at [http://sap.com/sap-hana-express](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html).
 
 Enter all required information and click the *Register* button.
 
@@ -46,7 +38,7 @@ The *Registration Success* page displays. (You will also receive an email indica
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Choose a download manager)]
+[ACCORDION-BEGIN [Step 2: ](Choose a download manager)]
 
 Click the download manager that matches your system: *Linux DM* or *Windows DM*.
 
@@ -63,7 +55,7 @@ If you have a Mac, or another type of machine, click *Platform-independent DM* f
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Save the download manager file)]
+[ACCORDION-BEGIN [Step 3: ](Save the download manager file)]
 
 Save the download manager file to your laptop and open it. If your system displays a security warning when you open the file, ignore the warning.
 

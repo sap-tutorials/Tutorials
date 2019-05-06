@@ -60,7 +60,29 @@ Keep the default values and click **Finish**.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Download the MultiApps plugin)]
+[ACCORDION-BEGIN [Step : ](Check the service bindings)]
+<!--  remove this step once the wizard is fixed -->
+In a later tutorial, we want to make use of the destination service. Open the `mta_app/mta.yaml` file to see if the destination service is bound to the app router.
+
+![CheckServices](checkservices.png)
+
+```
+- name: dest_mta_app
+
+...
+
+- name: dest_mta_app
+  parameters:
+    service-plan: lite
+    service: destination
+  type: org.cloudfoundry.managed-service
+```
+
+
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Check your project file)]
 
 Your project should now look like this.  Click a folder icon to expand the contents.
 
