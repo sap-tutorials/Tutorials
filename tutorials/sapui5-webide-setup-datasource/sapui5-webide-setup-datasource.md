@@ -69,9 +69,11 @@ In a [previous tutorial](hcp-create-destination) the OData test service called "
 1. Keep the default value **Use default model** to use this data source with the default model.
 
     ![Finish creating the OData service](3.png)
+
 2. On the confirmation screen, click **Finish**.
 
     ![Finish creating the OData service](4.png)
+
 
 [DONE]
 [ACCORDION-END]

@@ -8,7 +8,8 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 time: 5
 ---
 ## Prerequisites  
-- **Tutorials:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](hcp-create-trial-account).
+- **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](hcp-create-trial-account).
+- **Tutorial:** [Create a Cloud Foundry Sub-account](cp-cf-create-account), if you haven't done so before.
 
 ## Details
 ### You will learn  
