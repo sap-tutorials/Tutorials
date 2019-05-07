@@ -85,5 +85,5 @@ Copy any row of the terminal output and paste it in the frame below and click on
 Stop the pipeline by pressing the **Stop** button (you find it next to the **Run** button).
 
 [ACCORDION-END]
-
+  
 ---
