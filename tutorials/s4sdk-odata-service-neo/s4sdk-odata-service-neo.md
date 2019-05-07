@@ -441,9 +441,12 @@ In case you are trying to connect to an OData service endpoint on a server witho
 
 - To manually override the chain of trust, you can set a special flag on the destination configuration. To avoid any further issues with untrusted certificates in your local Neo deployment environment, please change the TrustAll flag in your destinations configuration file
 `./config_master/service.destinations/destinations/ErpQueryEndpoint`
-`...
+`
+```
+...
 TrustAll=TRUE
-...​`
+...​
+```
 
 
 **Connecting to the `OData` service**
@@ -453,7 +456,6 @@ If you are still facing problems when connecting to the OData service, try the f
 
 
 ```
-
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
@@ -464,7 +466,7 @@ If you are still facing problems when connecting to the OData service, try the f
 ```
 
 If you are behind a proxy and want to connect your app running locally with the Cloud Foundry archetype to an SAP S/4HANA system in your network, you can supply your proxy information as part of the destinations environment variable (see [Javadoc](https://help.sap.com/http.svc/rc/fe7d14ff3c3043aca2920cb72d725492/1.0/en-US/index.html?com/sap/cloud/sdk/cloudplatform/connectivity/AbstractDestinationFacade.html)):
-`[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD", properties: [{key: "TrustAll", value: "true"},{key: "proxyHost", value: "my-proxy.com"},{key: "proxyPort", value: "8080"}]}]`
+`[{name: "`ErpQueryEndpoint`", `url`: "https://URL", username: "USER", password: "PASSWORD", properties: [{key: "TrustAll", value: "true"},{key: "`proxyHost`", value: "my-proxy.com"},{key: "`proxyPort`", value: "8080"}]}]`
 
 [DONE]
 
