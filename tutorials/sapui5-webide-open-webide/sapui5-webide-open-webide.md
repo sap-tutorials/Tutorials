@@ -85,7 +85,7 @@ Click on the **gears icon** in the bar on the left-hand side to open the setting
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Enter the Cloud Foundry endoint you want to use)]
+[ACCORDION-BEGIN [Step : ](Enter the Cloud Foundry endpoint you want to use)]
 
 1. Select the API endpoint according to the data center in which your subaccount lives. Click on the dropdown control and the most common endpoints will be suggested to you. You can see find [a list](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html?platform=hootsuite) of all endpoints in the help portal.
 
