@@ -135,7 +135,7 @@ Expand the nodes **`<edmx:Edmc>`**, **`<edmx: DataServices>`** and the **`first 
 
 ## Troubleshooting
 
- - **Missing a file?**  If the list of files doesn't match the picture, you may have used the wrong template when you created the project.  Delete the project, and start the [Create a new project](sapui5-webide-create-project.html) tutorial again.
+ - **Missing a file?**  If the list of files doesn't match the picture, you may have used the wrong template when you created the project.  Delete the project, and start the [Create a new project](sapui5-webide-create-project) tutorial again.
 
  - **$metadata file not listed?**  This means one of the files in your project is incorrect.  Check the files, and make sure no red X marks appear in the left hand column.  These indicate a problem with the file syntax.  Check the pictures carefully.
 

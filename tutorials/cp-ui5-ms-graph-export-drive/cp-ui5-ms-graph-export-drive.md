@@ -461,11 +461,3 @@ Make sure to unlock the file before exporting it again.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-
-<!-- [ACCORDION-BEGIN [Step : ](XXXXX)]
-[DONE]
-[ACCORDION-END] -->
-
-
----

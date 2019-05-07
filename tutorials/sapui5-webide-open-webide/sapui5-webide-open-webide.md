@@ -1,6 +1,6 @@
 ---
-title: Open SAP Web IDE Full-Stack and make it ready for Cloud Foundry Development
-description: Enable and open SAP Web IDE Full-Stack in SAP Cloud Platform. Configure the CF API endpoint to deploy.
+title: Prepare SAP Web IDE for Cloud Foundry Development
+description: Enable and open SAP Web IDE Full-Stack in SAP Cloud Platform, and configure the CF API endpoint to deploy.
 author_name: Marius Obert
 author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
@@ -12,14 +12,14 @@ time: 5
 
 ## Details
 ### You will learn  
-  - How to enable and then navigate to the SAP Web IDE Full-Stack inside of SAP Cloud Platform.
-
+  - How to enable SAP Web IDE Full-Stack inside of SAP Cloud Platform
+  - How to open SAP Web IDE Full-Stack
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open your SAP Cloud Platform account)]
 
-Open your SAP Cloud Platform account (if you have a free developer account, click [HERE](https://account.hanatrial.ondemand.com/) to open the console).
+Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://account.hanatrial.ondemand.com/) to open the console).
 
 Choose **Neo Trial**.
 

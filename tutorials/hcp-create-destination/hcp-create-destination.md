@@ -92,7 +92,7 @@ Field Name       | Value
 
 When you're done, finish by saving the destination with **`Save`**.
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step : ](Check the connection)]
@@ -101,5 +101,5 @@ Click on the `Check Connection` icon on the newly created Destination to see if 
 
 ![check](./checkdest.png)
 
-[VALIDATE_1]
+[VALIDATE_4]
 [ACCORDION-END]
