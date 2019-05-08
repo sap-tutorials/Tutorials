@@ -70,16 +70,6 @@ time: 20
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Test the connected OData service)]
 
-> **Caution**: The most recent version of the Web IDE Full-Stack (181108) contains a minor bug. Please make sure the destination in the `neo-app.json` file looks as follows (adapt the `name` of the `target` if necessary):
-```
-"path": "/sap/opu/odata",
-"target": {
-  "type": "destination",
-  "name": "SAP_Gateway",
-  "entryPath": "/sap/opu/odata"
-},
-```
-
 1. Test the application by clicking on the run button.
 
     ![Select service](./run-button.png)
