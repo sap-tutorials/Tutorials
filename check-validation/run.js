@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = ({ pathToQA, checkFolder }) => {
+module.exports = (pathToQA) => {
 
 };

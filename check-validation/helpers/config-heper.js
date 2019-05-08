@@ -30,7 +30,7 @@ module.exports = {
     let result = {};
 
     try {
-      result = commandArgs(constants.configOptions, { argv: contents.split(' ') });
+      result = commandArgs(constants.commandLineOptions, { argv: contents.split(' ') });
     } catch (e) {
       console.debug('Couldn\'t read local config. Trying to find QA repository in parent directory...');
     }
