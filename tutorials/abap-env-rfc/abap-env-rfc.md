@@ -351,7 +351,7 @@ ENDCLASS.
 [ACCORDION-BEGIN [Step 17: ](Test the class)]
 1. Save and activate the class (**`Ctrl+S, Ctrl+F3`**).
 
-2. Run the class in the console by choosing **`F9`**.
+2. Run the class by choosing **`F9`**. Some system information, such as the hostname, the System ID ( `<SID>` ), and the IP address should be displayed.
 
 [DONE]
 [ACCORDION-END]
@@ -404,32 +404,34 @@ ENDCLASS.
 
 [ACCORDION-BEGIN [Step 20: ](Add error handling to the class for the RFC connection )]
 1. Go back to your RFC class. Remove the period (.) after the IMPORTING parameter and add the following exception parameters to the function call `RFC_SYSTEM_INFO`:
-```ABAP
 
-EXCEPTIONS
-  system_failure        = 1 MESSAGE msg
-  communication_failure = 2 MESSAGE msg
-  OTHERS                = 3.
+    ```ABAP
 
-```
+    EXCEPTIONS
+      system_failure        = 1 MESSAGE msg
+      communication_failure = 2 MESSAGE msg
+      OTHERS                = 3.
+
+    ```
+
 2. Now evaluate `sy-subrc` by adding the following CASE...ENDCASE statement:
 
-```ABAP
+    ```ABAP
 
-CASE sy-subrc.
-   WHEN 0.
-     out->write( lv_result ).
-   WHEN 1.
-     out->write( |EXCEPTION SYSTEM_FAILURE | && msg ).
-   WHEN 2.
-     out->write( |EXCEPTION COMMUNICATION_FAILURE | && msg ).
-   WHEN 3.
-     out->write( |EXCEPTION OTHERS| ).
- ENDCASE.
+    CASE sy-subrc.
+       WHEN 0.
+         out->write( lv_result ).
+       WHEN 1.
+         out->write( |EXCEPTION SYSTEM_FAILURE | && msg ).
+       WHEN 2.
+         out->write( |EXCEPTION COMMUNICATION_FAILURE | && msg ).
+       WHEN 3.
+         out->write( |EXCEPTION OTHERS| ).
+     ENDCASE.
 
-```
+    ```
 
-![Image depicting step20-error-handling](step20-error-handling.png)
+    ![Image depicting step20-error-handling](step20-error-handling.png)
 
 [DONE]
 [ACCORDION-END]
