@@ -1,6 +1,6 @@
 ---
-title: Set up your local infrastructure to develop with SAP S/4HANA Cloud SDK
-description: Set up your system to create an SAP Cloud Platform application with the S/4HANA Cloud SDK.
+title: Set up your local infrastructure to develop with SAP Cloud SDK
+description: Set up your system to create an SAP Cloud Platform application with the SAP Cloud SDK.
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
@@ -12,11 +12,11 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ## Next Steps
 Choose your next step depending on whether you would like to deploy to Cloud Foundry or Neo:
-  - **Tutorial for Cloud Foundry:** [Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html)
-  - **Tutorial for Neo:** [Create a sample application on SCP Neo using SAP S/4HANA Cloud SDK](https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html)
+  - **Tutorial for Cloud Foundry:** [Create a sample application on Cloud Foundry using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html)
+  - **Tutorial for Neo:** [Create a sample application on SCP Neo using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html)
 
 ## Details
-For a complete overview visit the [SAP S/4HANA Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
+For a complete overview visit the [SAP Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
 ### You will learn  
 In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/s4hana-cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
@@ -95,7 +95,7 @@ Check that the environment variable `JAVA_HOME` points to the path of your JDK i
 
 [ACCORDION-BEGIN [Step 2: ](Install IDE)]
 
-To develop your first 'Hello World' application with SAP S/4HANA Cloud SDK, you can just use your command line and a simple text editor. However, for larger development projects you can work with the IDE of your choice.
+To develop your first 'Hello World' application with SAP Cloud SDK, you can just use your command line and a simple text editor. However, for larger development projects you can work with the IDE of your choice.
 
 We recommend using [`Intellij IDEA`](https://www.jetbrains.com/idea/#chooseYourEdition) or [`Eclipse`](https://www.eclipse.org/users/). Follow the installation instructions of corresponding tools to prepare your IDE. In case you use Eclipse, make sure to install the [`Maven plugin for Eclipse`](http://www.eclipse.org/m2e/).
 
@@ -128,7 +128,7 @@ To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users
 </settings>
 ```
 
-After finishing these steps, you are ready to start the development of your SAP Cloud Platform applications with SAP S/4HANA Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
+After finishing these steps, you are ready to start the development of your SAP Cloud Platform applications with SAP Cloud SDK. If you are interested to learn more, stay tuned for the upcoming development topics that we will cover in the following tutorials: available project templates in the SDK, setting up the communication with SAP S/4HANA, deployment on Cloud Foundry, etc.
 
 [DONE]
 

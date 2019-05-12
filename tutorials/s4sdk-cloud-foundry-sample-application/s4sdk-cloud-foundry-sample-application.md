@@ -1,6 +1,6 @@
 ---
-title: Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK
-description: The following steps will explain how to create the very first Hello World example on Cloud Foundry using the SAP S/4HANA Cloud SDK.
+title: Create a sample application on Cloud Foundry using SAP Cloud SDK
+description: The following steps will explain how to create the very first Hello World example on Cloud Foundry using the SAP Cloud SDK.
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
@@ -10,7 +10,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
  - **Proficiency:** intermediate
 
 ### You will learn  
-This tutorial will cover your first steps when developing applications for SCP Cloud Foundry using SAP S/4HANA Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP S/4HANA Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
+This tutorial will cover your first steps when developing applications for SCP Cloud Foundry using SAP Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
 
 ### Time to Complete
 **20 Min**
@@ -74,7 +74,7 @@ After providing these values, Maven will generate your project from the archetyp
 
 ![Maven generates project from archetype](maven-generates-project.png)
 
-**Note**: Here you have created an application which is based on the [`TomEE` runtime](http://tomee.apache.org/) which is `Java EE 6` compliant `OpenSource` runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with `SpringBoot` (`artifactId`: `scp-cf-spring`) or on a pure `Tomcat` container (`artifactId`: `scp-cf-tomcat`). Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP S/4HANA Cloud SDK is compatible with these popular `runtimes` too.
+**Note**: Here you have created an application which is based on the [`TomEE` runtime](http://tomee.apache.org/) which is `Java EE 6` compliant `OpenSource` runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with `SpringBoot` (`artifactId`: `scp-cf-spring`) or on a pure `Tomcat` container (`artifactId`: `scp-cf-tomcat`). Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP Cloud SDK is compatible with these popular `runtimes` too.
 
 [DONE]
 [ACCORDION-END]
@@ -181,7 +181,7 @@ public class HelloWorldServlet extends HttpServlet
 
 The `HelloWorldServlet` extends `HttpServlet`, so this will be a HTTP endpoint that we can visit. We map this endpoint to the `/hello` route using `@WebServlet("/hello")`. By overriding the function `doGet`, we define what happens when a client performs an HTTP GET request on the `/hello` route. In this case we simply write a response containing **`Hello World!`**
 
-**Note**: The application code runs seamlessly in `SAP Cloud Platform`, `Neo` as well as `SAP Cloud Platform`, `Cloud Foundry`. The `SAP S/4HANA Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
+**Note**: The application code runs seamlessly in `SAP Cloud Platform`, `Neo` as well as `SAP Cloud Platform`, `Cloud Foundry`. The `SAP Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
 
 [DONE]
 [ACCORDION-END]
@@ -261,7 +261,7 @@ mvn tomee:run
 
 Visit `http://localhost:8080/hello` on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
 
-Now you have a strong basis for developing your own cloud application for `SCP Cloud Foundry` using the `SAP S/4HANA Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP S/4HANA Cloud SDK`.
+Now you have a strong basis for developing your own cloud application for `SCP Cloud Foundry` using the `SAP Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP Cloud SDK`.
 
 [DONE]
 [ACCORDION-END]
