@@ -183,7 +183,7 @@ In order to have JPA classes generated automatically for all the entities define
 
 9. Save `pom.xml`.
 
-10. Right-click the `bookshop` project and choose **Build**.
+10. Right-click the `srv` module and choose **Build**.
     > The CSN2JPA mapper generates all the JPA classes for the entities defined in the data model.
 
 11. Right-click the `bookshop` project and choose **Refresh Workspace Items**.
@@ -274,7 +274,7 @@ In step 1, we saw how to generate the JPA classes. In addition to the JPA classe
 
 4. Open the `srv/src/main/webapp/WEB-INF/web.xml` file.
 
-5. Add the following reference so that the DataSource, encapsulating the connection to the database, is managed by the container (that is, application server):
+5. Remove the existing `resource-ref` for `jdbc/java-hdi-container` and add the following reference so that the DataSource, encapsulating the connection to the database, is managed by the container (that is, application server):
 
     ```XML
     <web-app ...>
@@ -287,6 +287,8 @@ In step 1, we saw how to generate the JPA classes. In addition to the JPA classe
 
     	[...]
     ```
+
+    > The `resource-ref` for CDS API consumption in TomEE is commented out in `web.xml`. You can simply uncomment and use the same, but remember to remove the existing `resource-ref` block.
 
 6. Add the following reference so that the persistence context and persistence unit are known to the container:
 
@@ -367,6 +369,12 @@ Finally, let's run the application to see it all come together.
 
     ```
     curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{ "buyer": "JPA Buyer 1", "book_ID": 310 }' https://<Java-Backend-URL>/odata/v2/CatalogService/Orders
+    ```
+
+    If your system is running Windows, try the following command instead:
+
+    ```
+    curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d "{ \"buyer\" : \"JPA Buyer 1\", \"book_ID\" : 310 }" https://<Java-Backend-URL>/odata/v2/CatalogService/Orders
     ```
 
     > Here, the URL that the Java backend is listening to is `Java-Backend-URL`, the ID of the ordered book is 310, and the buyer is called JPA Buyer 1.
