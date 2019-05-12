@@ -101,6 +101,8 @@ author_profile: https://github.com/niloofar-naseri
 
       ![release tasks](release3.png)
 
+      Hint: Your software component root package is a structure package, hence it's not allowed to create objects directly in this package. You need to add an additional development package and then you're able to add your objects.
+
 [DONE]
 [ACCORDION-END]
 
