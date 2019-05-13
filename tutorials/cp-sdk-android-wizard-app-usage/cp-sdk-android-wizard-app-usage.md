@@ -37,7 +37,7 @@ The text displayed to the user can be customized by accessing **`res/values/stri
 
 When the app is first installed, a consent screen will automatically be shown to users.
 
-Tap **OK** to allow the app to track usage.
+Tap **OK** to allow the app to record how the app is being used.
 
 ![Consent Screen](consent.png)
 
@@ -49,7 +49,7 @@ From the settings menu, tap **Upload Usage**.
 
 ![Click Upload Usage](upload_usage_button.png)
 
-The upload will fail with a HTTP 403 error if usage was not enabled in the Mobile Services cockpit.
+The upload will fail with a HTTP 403 error if usage was not enabled in the Mobile Services cockpit.  
 
 ![Upload Failed](403error.png)
 
