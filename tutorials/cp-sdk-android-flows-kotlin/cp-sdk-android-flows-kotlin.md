@@ -7,12 +7,15 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
+## Prerequisites
+ - Completed the previous tutorial in this mission
+
 ## Details
 ### You will learn
   - How to convert an Android Studio project from Java to `Kotlin`
 
 
-`Kotlin` is a new language that supports Android development.  It is more concise and has state of the art language features while being interoperable with Java.
+[`Kotlin`](https://developer.android.com/kotlin) is a new language that supports Android development.  It is more concise and has state of the art language features while being interoperable with Java.
 
 ---
 
@@ -28,9 +31,7 @@ Select the latest available `Kotlin` compiler and runtime version.
 
 ![Kotlin version](configure-kotlin-popup.png)
 
-Right-click **`src/main/java`** and choose **`Convert Java File to Kotlin File`**.
-
->Note, the conversion process does not convert commented code.
+Right-click on the java folder and choose **`Convert Java File to Kotlin File`**.
 
 ![Convert Java to Kotlin menu](convert-kotlin.png)
 
@@ -40,6 +41,7 @@ Click OK to the popup that asks if you will correct the project.
 
 ![Correct code popup](correct-code-popup.png)
 
+>Note, the conversion process does not convert commented code.
 
 [DONE]
 [ACCORDION-END]
@@ -78,7 +80,7 @@ Run the app.
 
 Try out the various features of the app.
 
-Congratulations!  You know should have a better understanding of how the SAP Flows framework simplifies the code needed to onboard a user to the SAP Cloud Platform Mobile Services and interact with client policies.
+Congratulations!  You have now converted a Java app to `Kotlin`.  By finishing the tutorials in this mission you should have a better understanding of how the SAP Flows framework simplifies the code needed to onboard a user to the SAP Cloud Platform Mobile Services and interact with client policies.
 
 [VALIDATE_1]
 [ACCORDION-END]

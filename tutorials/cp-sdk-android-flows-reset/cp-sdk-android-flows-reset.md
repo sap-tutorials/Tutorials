@@ -8,12 +8,12 @@ primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites
- - Completed the previous tutorial in this group which added the restore flow
- - The effect of the reset flow on the secure stores
+ - Completed the previous tutorial in this mission which added the restore flow
 
 ## Details
 ### You will learn
   - How to add a reset flow to an app
+  - The effect of the reset flow on the secure stores
 
 
 The result of the reset flow will be that the data in the stores will be cleared and the onboarding flow will be called.
@@ -72,7 +72,9 @@ The added method calls the `StoreHelper's` reset method which clears data in the
 
 Add the following line to the **`onReset`** method.
 
-`startResetFlow();`
+```Java
+startResetFlow();
+```
 
 Within the **`showAlertDialog`** method, uncomment the following code.
 
@@ -96,9 +98,11 @@ The Welcome screen should appear.
 
 ![Welcome screen](reset-onboarding.png)
 
-As well, the stores will have their values cleared. If there are additional stores to be reset, such as an offline store, code could be added in added in the `StoreHelper's resetData` method to handle this.
+As well, the stores will have their values cleared.
 
 ![ADB log](result-of-reset.png)
+
+If there are additional stores to be reset, such as an offline store, code could be added in added in the `StoreHelper's resetData` method to handle this.
 
 Congratulations! The code to perform a reset flow has been added.
 

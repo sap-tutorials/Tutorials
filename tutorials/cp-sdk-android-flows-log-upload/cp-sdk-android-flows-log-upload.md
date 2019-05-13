@@ -68,13 +68,15 @@ uploadLog();
 
 [ACCORDION-BEGIN [Step 2: ](Try it out)]
 
-Tap Upload Log and you should see the following Toast message.
+Tap Upload Log and a toast message will appear shortly after.
 
 ![Upload log button](upload-log-button.png)
 
+As well, the `Logcat` will contain details of the log upload.
+
 ![ADB log showing log upload](log-upload.png)
 
-If you receive the error below, ensure Client Log Upload is checked under Client Policies on the Mobile Services Cockpit.
+>If you receive the error below, ensure Client Log Upload is checked under Client Policies on the Mobile Services Cockpit.
 
 ![Failed log upload message](failed-upload.png)
 

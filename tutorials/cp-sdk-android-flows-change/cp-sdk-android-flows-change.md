@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
+## Prerequisites
+ - Completed the previous tutorial in this mission which added the reset flow
+
 ## Details
 ### You will learn
   - How to add a change flow to an app

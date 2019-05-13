@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
+## Prerequisites
+ - Completed the previous tutorial in this mission which created the initial project and imported the flows libraries
+
 ## Details
 ### You will learn
   - How to add onboarding flow code to an app
