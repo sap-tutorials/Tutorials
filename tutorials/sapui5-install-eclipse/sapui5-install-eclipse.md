@@ -45,6 +45,7 @@ Click on the **eclipse** executable file to start the Eclipse IDE.
 ![Start Eclipse](start_eclipse.png)
 
 Or on Mac:
+
 ![Start Eclipse](start_eclipse_mac.png)
 
 [DONE]
@@ -53,7 +54,7 @@ Or on Mac:
 
 Eclipse will first show you a **Workspace Launcher** dialog to choose your workspace.Confirm with **OK**.
 
- >You can replace the suggested workspace path with a path of your choice, e.g. `c:\dev\eclipse_workspace` for Windows.
+>You can replace the suggested workspace path with a path of your choice, e.g. `c:\dev\eclipse_workspace` for Windows.
 
 ![Create Eclipse workspace](create_workspace.png)
 
