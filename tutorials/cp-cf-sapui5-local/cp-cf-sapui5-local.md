@@ -82,7 +82,7 @@ npm run package-cf
 Next, we deploy the generated archive and track the deployment progress in the terminal with the following command.
 
 ```Bash
-cf mta_archives/myUI5App_0.0.1.mtar
+cf deploy mta_archives/myUI5App_0.0.1.mtar
 ```
 
 
