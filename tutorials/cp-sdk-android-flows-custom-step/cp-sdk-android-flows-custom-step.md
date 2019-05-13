@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
+## Prerequisites
+ - Completed the previous tutorial in this mission
+
 ## Details
 ### You will learn
   - How to create a custom flow step
@@ -326,7 +329,7 @@ When the app starts again, the restore flow is taken and it detects that the EUL
 Note it may take a few minutes before the new JSON setting comes into effect.
 Typically, a EULA will evolve over time, developing stricter regulations as policies change, which makes updating EULAs with ease and getting user permissions essential for applications.
 
-Congratulations!  The code to create a custom step was added.
+Congratulations!  You have added a custom flow step to the app.
 
 [DONE]
 [ACCORDION-END]
