@@ -35,10 +35,6 @@ module.exports = {
       console.debug('Couldn\'t read local config. Trying to find QA repository in parent directory...');
     }
 
-    if (!result.qaPath) {
-      result.qaPath = await this.getQaPath();
-    }
-
     return result;
   },
 

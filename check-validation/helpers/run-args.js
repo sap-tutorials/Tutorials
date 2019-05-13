@@ -12,6 +12,11 @@ module.exports = {
     const configOptions = await configHelper.read();
 
     if (!options.qaPath) {
+      if (!configOptions.qaPath) {
+        configOptions.qaPath = await configHelper.getQaPath();
+        await configHelper.write(`--qaPath ${configOptions.qaPath}`);
+      }
+
       Object.assign(options, configOptions);
     } else {
       await this.validate(options);

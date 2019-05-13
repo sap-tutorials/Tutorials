@@ -31,6 +31,7 @@ module.exports = {
         id: index + 1,
       })).filter(({ step }) => !step.match(validate) && !step.match(done));
     }
+
     if (autoValidationMatch) {
       const [, value] = autoValidationMatch;
       const dirPath = path.dirname(filePath);

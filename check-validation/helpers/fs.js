@@ -3,12 +3,9 @@
 const fs = require('fs');
 const util = require('util');
 
-const accessAsync = util.promisify(fs.access.bind(fs));
-const readFileAsync = util.promisify(fs.readFile.bind(fs));
-const writeFileAsync = util.promisify(fs.writeFile.bind(fs));
-
 module.exports = {
-  access: accessAsync,
-  writeFile: writeFileAsync,
-  readFile: readFileAsync,
+  access: util.promisify(fs.access.bind(fs)),
+  writeFile: util.promisify(fs.writeFile.bind(fs)),
+  readFile: util.promisify(fs.readFile.bind(fs)),
+  readDir: util.promisify(fs.readdir.bind(fs)),
 };
