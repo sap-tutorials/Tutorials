@@ -97,7 +97,10 @@ async function run(pathToQA) {
 
       return output(stats, csvHelper.fileName);
     })
-    .catch((error) => colorLog.error(error) && process.exit(1));
+    .catch((error) => {
+      colorLog.error(error);
+      process.exit(1);
+    });
 }
 
 module.exports = run;
