@@ -3,7 +3,7 @@
 const commandArgs = require('command-line-args');
 
 const constants = require('../constants');
-const configHelper = require('../helpers/config-heper');
+const configHelper = require('./config-helper');
 const fs = require('../helpers/fs');
 
 module.exports = {
