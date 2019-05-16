@@ -28,7 +28,7 @@ module.exports = {
     [validationKeysMap.onlyDone]: 'ONLY DONE',
     [validationKeysMap.noRulesFile]: 'NO RULES.VR',
     [validationKeysMap.notDefinedValidate]: 'NOT DEFINED VALIDATE',
-    [validationKeysMap.stepWithNoDoneValidate]: 'STEP WITH NO DONE AND VALIDATE',
+    [validationKeysMap.stepWithNoDoneValidate]: 'STEP WITH NO DONE OR VALIDATE',
     [validationKeysMap.duplicateRuleDefinition]: 'DUPLICATE RULES',
     [validationKeysMap.failedToProcess]: 'FAILED TO PROCESS',
     [validationKeysMap.noSteps]: 'NO STEPS',
