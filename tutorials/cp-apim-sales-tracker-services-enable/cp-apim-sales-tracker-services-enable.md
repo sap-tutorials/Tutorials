@@ -1,7 +1,7 @@
 ---
 title: Enable Services for Sales Tracker App
 description: Set up required services to build Sales Tracker app to demonstrate SAP API Management and other technologies.
-auto_validation: true
+auto_validation: true 
 time: 15
 tags: [ tutorial>beginner, products>sap-api-management, products>sap-cloud-platform]
 primary_tag: products>sap-api-management
