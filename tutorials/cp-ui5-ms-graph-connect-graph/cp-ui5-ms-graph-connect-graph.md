@@ -4,7 +4,7 @@ description: Connect your application to the Microsoft Graph via the Microsoft A
 auto_validation: true
 primary_tag: topic>javascript
 tags: [  tutorial>intermediate, topic>cloud, topic>sapui5 ]
-time: 35
+time: 30
 ---
 
 
@@ -16,80 +16,17 @@ time: 35
 
 ---
 
-[ACCORDION-BEGIN [Step ](Register app in Microsoft Application Registration Portal)]
-
-Go to <https://apps.dev.microsoft.com/#/appList> and click on **Add an app** on the upper right corner.
-
-![portal apps overview](./ms-portal-apps.png)
-
-You should now give your application a certain name. This name will not appear anyway and has no technical implication.
-
-Replace `Your App name goes here` with an application name of your choice and proceed with **Create**.
-
-![portal app name](./ms-portal-app-name.png)
-
- Navigate to the **Platforms** sections and click on **Add Platform**.
-
-![portal-app-platform-details](./ms_portal_add_platform.png)
-
-Select **Web** in order to configure a new application.
-
-![portal-web-platform-details](./ms_portal_web_platform.png)
-
-You are now forwarded to the configuration of your application. Add the URL of your SAPUI5 application you have deployed in the previous tutorial.
-
-![portal-app-platform-details](./ms-portal-callbacks.png)
-
-> You can also add `http://localhost:8000` as an additional Redirect URL in case you wish to test the application locally as well.
-
-
-To enable your application to search for emails navigate to `Microsoft Graph Permissions`, click on **Add** and select the **`Mail.read`** permission.
-
-![portal app name](./ms-portal-add-permission.png)
-
-Save the changes and scroll to the top to save app id in your clipboard or a new file, you will need it in the next step.
-
-![appid](./appid.png)
-
-> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com> [for Microsoft Office 365 users] or <https://account.live.com/consent/Manage> [for `outlook.com` users]
-
-[VALIDATE_1]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step](Create Microsoft Graph config file)]
-
-Navigate to back to your SAP Web IDE and create a new folder named **`msal`** in the `webapp` folder and add a file named **`msalconfig.js`** with the following content to this folder:
-
-```javascript
-/* eslint-disable sap-no-global-define */
-/* eslint-disable sap-no-hardcoded-url */
-
-window.msalconfig = {
-    clientID: "<YOUR APP ID>",
-    redirectUri: location.origin,
-    graphBaseEndpoint: "https://graph.microsoft.com/v1.0/",
-    userInfoSuffix: "me/",
-    queryMessagesSuffix: "me/messages?$search=\"$1\"&$top=150",
-    graphAPIScopes: ['User.Read', 'Mail.Read']
-};
-```
-
-Replace the placeholder (`<YOUR APP ID>`) with the id you saved in the previous step.
-
-This file contains constants you need later in this tutorial.
-
-> The optional `eslint` comments in the first two lines prevent SAP Web IDE from showing ignorable warnings.
-
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step](Load Microsoft Authentication Library)]
 
-Copy the following two lines of code right below the first `script-tag` in the `index.html` file.
+Copy the following line right below the first `script-tag` in the `index.html` file.
 
 ```html
-<script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.2.3/js/msal.min.js"></script>
-<script src="msal/msalconfig.js" type="text/javascript"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.min.js"></script>
 ```
+
+
+![bootstrap](./bootstrap.png)
 
 > You can find the most [recent version](https://www.npmjs.com/package/msal)  of this library at npm and fetch it from this source.
 
@@ -99,58 +36,64 @@ Copy the following two lines of code right below the first `script-tag` in the `
 
 1. Replace the `sap.ui.define` function header (usually the first three lines above the `"use strict"` [directive](https://www.w3schools.com/js/js_strict.asp)) of the `MainView.controller.js` with this code to suppress warning in the SAP Web IDE and to inject more SAPUI5 controls via dependency injection.
 
-    ```javascript
-    /* global msalconfig, Msal */
+    ```JavaScript
+    /* global Msal */
     sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast", "sap/ui/model/json/JSONModel"],
-      function (Controller, MessageToast, JSONModel){
+    	function (Controller, MessageToast, JSONModel) {
     ```
 
-2. The `onInit` hook initializes the connection to the Microsoft Graph API once the controller is initialized. Add this hook right before the `onClickPO` function in the controller:
+2. Replace the placeholder /YOUR APP ID/ with the client id you saved in the previous tutorial.
+This object contains constants you'll need later. Add this hook right before the `onClickPO` function in the controller:
 
-    ```javascript
-    onInit: function () {
-      this.oUserAgentApplication = new Msal.UserAgentApplication(msalconfig.clientID, null,
-        function (errorDesc, token, error, tokenType) {
-          if (errorDesc) {
-            var formattedError = JSON.stringify(error, null, 4);
-            if (formattedError.length < 3) {
-              formattedError = error;
-            }
-            MessageToast.show("Error, please check the $.sap.log for details");
-            $.sap.log.error(error);
-            $.sap.log.error(errorDesc);
-          } else {
-            this.fetchUserInfo();
-          }
-        }.bind(this), {
-          redirectUri: msalconfig.redirectUri
-        });
-      //Previous version of msal uses redirect url via a property
-      if (this.oUserAgentApplication.redirectUri) {
-        this.oUserAgentApplication.redirectUri = msalconfig.redirectUri;
-      }
-      // If page is refreshed, continue to display user info
-      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window) {
-        var user = this.oUserAgentApplication.getUser();
-        if (user) {
-          this.fetchUserInfo();
-        }
-      }
+    ```JavaScript
+    config: {
+    	msalConfig: {
+    		auth: {
+    			clientId: "/YOUR APP ID/"
+    		},
+    		cache: {
+    			cacheLocation: 'localStorage',
+    			storeAuthStateInCookie: true
+    		}
+    	},
+    	graphBaseEndpoint: "https://graph.microsoft.com/v1.0/",
+    	userInfoSuffix: "me/",
+    	queryMessagesSuffix: "me/messages?$search=\"$1\"&$top=150",
+    	scopeConfig: {
+    		scopes: ['User.Read', 'Mail.Read']
+    	}
     },
+
+    // INSERT CODE IN SUB-STEP 3 HERE
     ```
+
+3. The `onInit` hook initializes the connection to the Microsoft Graph API once the controller is initialized.
+
+    ```JavaScript
+		onInit: function () {
+			this.oMsalClient = new Msal.UserAgentApplication(this.config.msalConfig);
+			//check if the user is already signed in
+			if (!this.oMsalClient.getAccount()) {
+				this.oMsalClient.loginPopup(this.config.scopeConfig).then(this.fetchUserInfo.bind(this));
+			} else {
+				this.fetchUserInfo();
+			}
+		},
+    ```
+
+![initclient](./initclient.png)
 
 [VALIDATE_4]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Add a login button)]
 Add a new button to the header of the first page in the `MainView.view.xml` file.
-```xml
+```XML
 <headerContent>
-  <Button
-    icon="sap-icon://person-placeholder"
-    text="{= ${session>/givenName} === undefined ? 'Login' : 'Logout ' + ${session>/givenName} }"
-    press="onSwitchSession"/>
+  <Button icon="sap-icon://person-placeholder" text="{= 'Logout ' + ${session>/givenName} }"
+    press="onLogout"/>
 </headerContent>
 ```
+![loginbtn](./loginbtn.png)
 
 [DONE]
 [ACCORDION-END]
@@ -174,66 +117,62 @@ Add a new button to the header of the first page in the `MainView.view.xml` file
 Add the following functions to the `MainView.controller.js` to make use of the imported MSAL library.
 
 1. Add the function to authorize the web app when user clicks the login/logout button.
-```javascript
-//************* MSAL functions *****************//
-onSwitchSession: function (oEvent) {
-	var oSessionModel = oEvent.getSource().getModel('session');
-	var bIsLoggedIn = oSessionModel.getProperty('/displayName');
-	if (bIsLoggedIn) {
-		this.oUserAgentApplication.logout();
-		return;
-	}
-	this.fetchUserInfo();
-},
-// INSERT CODE IN SUB-STEP 2 HERE
-```
+
+    ```JavaScript
+    //************* MSAL functions *****************//
+    onLogout: function (oEvent) {
+      var oSessionModel = oEvent.getSource().getModel('session');
+      var bIsLoggedIn = oSessionModel.getProperty('/displayName');
+      if (bIsLoggedIn) {
+        this.oMsalClient.logout();
+        return;
+      }
+      this.fetchUserInfo();
+    },
+    // INSERT CODE IN SUB-STEP 2 HERE
+    ```
+
 2. Copy the following to the controller to read the user information and save them to the session model.
-```javascript
-fetchUserInfo: function () {
-	this.callGraphApi(msalconfig.graphBaseEndpoint + msalconfig.userInfoSuffix, function (response) {
-		$.sap.log.info("Logged in successfully!", response);
-		this.getView().getModel('session').setData(response);
-	}.bind(this));
-},
-// INSERT CODE IN SUB-STEP 3 HERE
-```
+
+    ```JavaScript
+    fetchUserInfo: function () {
+      this.callGraphApi(this.config.graphBaseEndpoint + this.config.userInfoSuffix, function (response) {
+        this.getView().getModel('session').setData(response);
+      }.bind(this));
+    },
+    // INSERT CODE IN SUB-STEP 3 HERE
+    ```
+
 3. This helper function checks whether the user is authorized and redirects him to the Microsoft authorization website if necessary. It also adds the required authorized token to all requests.
-```javascript
-callGraphApi: function (sEndpoint, fnCb) {
-	var user = this.oUserAgentApplication.getUser();
-	if (!user) {
-		this.oUserAgentApplication.loginRedirect(msalconfig.graphAPIScopes);
-	} else {
-		this.oUserAgentApplication.acquireTokenSilent(msalconfig.graphAPIScopes)
-			.then(function (token) {
-					$.ajax({
-							url: sEndpoint,
-							type: "GET",
-							beforeSend: function (xhr) {
-								xhr.setRequestHeader("Authorization", "Bearer " + token);
-							}
-						})
-						.then(fnCb)
-						.fail(function (error) {
-							MessageToast.show("Error, please check the log for details");
-							$.sap.log.error(JSON.stringify(error.responseJSON.error));
-						});
-				}.bind(this),
-				function (error) {
-					if (error) {
-						this.oUserAgentApplication.acquireTokenRedirect(msalconfig.graphAPIScopes);
-					}
-				}.bind(this));
-	}
-},
-// INSERT CODE IN STEP 9 HERE
-```
+
+    ```JavaScript
+    callGraphApi: function (sEndpoint, fnCb) {
+      this.oMsalClient.acquireTokenSilent(this.config.scopeConfig)
+        .then(function (token) {
+          $.ajax({
+              url: sEndpoint,
+              type: "GET",
+              beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + token.accessToken);
+              }
+            })
+            .then(fnCb)
+            .fail(function (error) {
+              MessageToast.show("Error, please check the log for details");
+              $.sap.log.error(JSON.stringify(error.responseJSON.error));
+            });
+        }.bind(this));
+    },
+    // INSERT CODE IN STEP 9 HERE
+    ```
+
+![auth](./auth.png)
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Make details searchable)]
 Replace the content of the form (of the second page) with the following SAPUI5 controls. This snippet defines links instead of simple text view, which are only enabled if the user has been authorized by the MSAL lib.
-```xml
+```XML
 <Label text="Purchase Order ID" width="100%">
   <layoutData>
     <layout:GridData span="L4 M4"/>
@@ -288,39 +227,43 @@ Replace the content of the form (of the second page) with the following SAPUI5 c
   </layoutData>
 </Label>
 <Text text="{DeliveryDateEarliest}"/>
-<Label text="LaterDelivDateExist">
+<Label text="LaterDeliveryDateExist">
   <layoutData>
     <layout:GridData span="L4 M4"/>
   </layoutData>
 </Label>
-<Text text="{LaterDelivDateExist}"/>
+<Text text="{LaterDeliveryDateExist}"/>
 ```
+
+![form](./form.png)
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Search emails via the MSAL lib)]
 Implement the event handler of the details page, in the `MainView.controller.js` file, which will trigger a search via the MSAL lib. This function will also format the search results and save them in a new model named **`msData`**.
-```javascript
+```JavaScript
 onPressLink: function (oEvent) {
-  var sLinkText = oEvent.getSource().getText();
-  var oApp = this.getView().getContent()[0];
-  this.callGraphApi(msalconfig.graphBaseEndpoint + msalconfig.queryMessagesSuffix.replace("$1", sLinkText), function(results) {
-            results.value = results.value.map(function(o) {
-                o.bodyPreview = o.bodyPreview.replace(sLinkText, '<strong>'+sLinkText+'</strong>');
-                return o;
-            });
-            var oResultsPage = oApp.getPages()[2].setModel(new JSONModel(results), 'msData');
-            oApp.to(oResultsPage.getId());
-        });
+	var sLinkText = oEvent.getSource().getText();
+	var oApp = this.getView().getContent()[0].getApp();
+	this.callGraphApi(this.config.graphBaseEndpoint + this.config.queryMessagesSuffix.replace("$1", sLinkText), function (results) {
+		results.value = results.value.map(function (o) {
+			o.bodyPreview = o.bodyPreview.replace(sLinkText, '<strong>' + sLinkText + '</strong>');
+			return o;
+		});
+		var oResultsPage = oApp.getPages()[2].setModel(new JSONModel(results), 'msData');
+		oApp.to(oResultsPage.getId());
+	});
 },
 // INSERT CODE IN STEP 11 HERE
 ```
+
+![presslink](./presslink.png)
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Add a new page to the existing application)]
 Add a third page in the `MainView.view.xml` file to display the search results returned by the Microsoft Graph.
-```xml
+```XML
 <Page
 	id="results"
 	title="Results"
@@ -353,16 +296,21 @@ Add a third page in the `MainView.view.xml` file to display the search results r
 </Page>
 ```
 
+![lastpage](./lastpage.png)
+
 [VALIDATE_10]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Open found emails in a new tab)]
 Implement a callback function in the `MainView.controller.js` file to handle a click on the title of a search result, which will open the corresponding email in `Outlook.com`.
-```javascript
+
+```JavaScript
 onOpenEmail: function (oEvent) {
   var sEmail = oEvent.getSource().getBindingContext('msData').getProperty('webLink');
   window.open(sEmail, '_blank');
 },
 ```
+
+![openmail](./openmail.png)
 
 [DONE]
 [ACCORDION-END]
@@ -374,7 +322,6 @@ Now you are able to click on a property on the details page to search for this t
 ![redeployed application](./redeploy.png)
 
 > **IMPORTANT:** Please make sure that there are mails in your outlook account (any folder is fine) which match the keywords you might search for. Otherwise your search request will return an empty result set.
-
 
 [VALIDATE_12]
 [ACCORDION-END]
