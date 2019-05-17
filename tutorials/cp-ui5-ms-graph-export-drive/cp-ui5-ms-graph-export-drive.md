@@ -19,11 +19,11 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 [ACCORDION-BEGIN [Step : ](Load Microsoft Authentication Library (MSAL))]
 Copy the following line below the first `script-tag` in the `index.html` file.
 
-```html
-<script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.2.3/js/msal.min.js"></script>
+```HTML
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.min.js"></script>
 ```
 ![Index.html](./index.png)
-This `<script>` tag will load version 0.2.3 of the MSAL library.
+This `<script>` tag will load version 1.0.0 of the MSAL library.
 > You can find the most [recent version](https://www.npmjs.com/package/msal)  of this library at npm and fetch it from this source.
 
 
@@ -33,9 +33,9 @@ This `<script>` tag will load version 0.2.3 of the MSAL library.
 
 [ACCORDION-BEGIN [Step : ](Implement the view)]
 
-The following snippet of the view defines a page which includes a smart table control with a custom toolbar. Use this code to replace the content of the `View1.view.xml`:
+The following snippet of the view defines a page which includes a smart table control with a custom toolbar. Use this code to replace the content of the `<pages>` tag in the `View1.view.xml` file:
 
-```xml
+```XML
 <mvc:View controllerName="sapcp.tutorial.cf.ui.controller.View1" xmlns="sap.m" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
 	xmlns:smartTable="sap.ui.comp.smarttable" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.f.semantic">
 	<Shell id="shell">
@@ -59,6 +59,7 @@ The following snippet of the view defines a page which includes a smart table co
 		</App>
 	</Shell>
 </mvc:View>
+
 ```
 ![view](./view.png)
 
@@ -118,50 +119,43 @@ sap.ui.define([
 
 [DONE]
 [ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Initialize the MSAL client)]
-Replace the placeholder comment of the previous snippet in the `View1.controller.js` file with the following code.
+[ACCORDION-BEGIN [Step : ](Add the MSAL client config)]
+Add the configuration of the Microsoft Graph API to the `View1.controller.js` file. Don't forget to insert your application id from the previous tutorial in the `/YOUR SECRET APP ID/` placeholder!
 
 ```JavaScript
-msalconfig: {
-	clientID: "/YOUR SECRET APP ID/",
-	redirectUri: location.href,
-	graphBaseEndpoint: "https://graph.microsoft.com/v1.0/",
-	graphAPIScopes: ['Files.Read.All', 'Files.ReadWrite', 'Files.ReadWrite.All']
-},
-
-onInit: function () {
-	this.oUserAgentApplication = new Msal.UserAgentApplication(this.msalconfig.clientID, null,
-		function (errorDesc, token, error, tokenType) {
-			if (errorDesc) {
-				var formattedError = JSON.stringify(error, null, 4);
-				if (formattedError.length < 3) {
-					formattedError = error;
-				}
-				MessageToast.show("Error, please check the $.sap.log for details");
-				$.sap.log.error(error);
-				$.sap.log.error(errorDesc);
-			}
-		}.bind(this), {
-			redirectUri: this.msalconfig.redirectUri
-		});
-	//Previous version of msal uses redirect url via a property
-	if (this.oUserAgentApplication.redirectUri) {
-		this.oUserAgentApplication.redirectUri = this.msalconfig.redirectUri;
-	}
-	// If page is refreshed, continue to display user info
-	if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window) {
-		var user = this.oUserAgentApplication.getUser();
-		var bLoggedIn = Boolean(user);
-		if (bLoggedIn) {
-			this.oUserAgentApplication.acquireTokenPopup(this.msalconfig.graphAPIScopes);
-		} else {
-			this.oUserAgentApplication.loginRedirect(this.msalconfig.graphAPIScopes);
-		}
-	}
+config: {
+  msalConfig: {
+    auth: {
+      clientId: "/YOUR SECRET APP ID/"
+    },
+    cache: {
+      cacheLocation: 'localStorage',
+      storeAuthStateInCookie: true
+    }
+  },
+  graphBaseEndpoint: "https://graph.microsoft.com/v1.0/",
+  scopeConfig: {
+    scopes: [ 'Files.ReadWrite.All']
+  }
 },
 ```
-The `msalconfig` object already suggests that it contains the configuration parameter for the Microsoft library. Don't forget to insert your application id from the previous tutorial in the `/YOUR SECRET APP ID/` placeholder!
+![config](./config.png)
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Initialize the MSAL client)]
+Add the following `onInit` hook to the controller.
+
+```JavaScript
+onInit: function () {
+  this.oMsalClient = new Msal.UserAgentApplication(this.config.msalConfig);
+  //check if the user is already signed in
+  if (!this.oMsalClient.getAccount()) {
+    this.oMsalClient.loginPopup(this.config.scopeConfig);
+  }
+},
+```
+![oninit](./oninit.png)
 
 The `onInit` hook redirects the user to the Microsoft authentication page if the (Microsoft) users is not logged in.
 
@@ -175,51 +169,50 @@ The `onUploadToOneDrive` function will be invoked by the export event of the vie
 Insert this function after the `onInit` function of the previous step.
 ```JavaScript
 onUploadToOneDrive: function () {
-  var oSmartTable = this.getView().findAggregatedObjects(true, function (oAggregate) {
-    return oAggregate instanceof sap.ui.comp.smarttable.SmartTable;
-  })[0];
-
-  var oTable = oSmartTable.getTable();
-  var oRowBinding = oTable.getBinding("items");
-
-  var aCols = oSmartTable.getInitiallyVisibleFields().split(',').map(function (sKey) {
-    return {
-      label: sKey,
-      property: sKey,
-      type: 'string'
-    };
-  });
-
-  var oModel = oRowBinding.getModel();
-  var oModelInterface = oModel.getInterface();
-
-  var oSettings = {
-    workbook: {
-      columns: aCols,
-      hierarchyLevel: 'level'
-    },
-    dataSource: {
-      type: "oData",
-      dataUrl: oRowBinding.getDownloadUrl ? oRowBinding.getDownloadUrl() : null,
-      serviceUrl: oModelInterface.sServiceUrl,
-      headers: oModelInterface.getHeaders ? oModelInterface.getHeaders() : null,
-      count: oRowBinding.getLength ? oRowBinding.getLength() : null,
-      sizeLimit: oModelInterface.iSizeLimit
-    }
-  };
-
-  new Spreadsheet(oSettings).attachBeforeSave({}, function (oEvent) {
-    oEvent.preventDefault();
-    this.putToGraph('/me/drive/root:/UploadedFromWebApp/' + oSmartTable.getEntitySet() + '.xlsx:/content',
-      new Blob([oEvent.getParameter('data')], {
-        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-      }),
-      function (data) {
-        window.open(data.webUrl, '_blank');
-      });
-  }.bind(this), {}).build();
+		var oSmartTable = this.getView().findAggregatedObjects(true, function (oAggregate) {
+			return oAggregate instanceof sap.ui.comp.smarttable.SmartTable;
+		})[0];
+		var oTable = oSmartTable.getTable();
+		var oRowBinding = oTable.getBinding("items");
+		var aCols = oSmartTable.getInitiallyVisibleFields().split(',').map(function (sKey) {
+			return {
+				label: sKey,
+				property: sKey,
+				type: 'string'
+			};
+		});
+		var oModel = oRowBinding.getModel();
+		var oModelInterface = oModel.getInterface();
+		var oSettings = {
+			workbook: {
+				columns: aCols,
+				hierarchyLevel: 'level'
+			},
+			dataSource: {
+				type: "oData",
+				dataUrl: oRowBinding.getDownloadUrl ? oRowBinding.getDownloadUrl() : null,
+				serviceUrl: oModelInterface.sServiceUrl,
+				headers: oModelInterface.getHeaders ? oModelInterface.getHeaders() : null,
+				count: oRowBinding.getLength ? oRowBinding.getLength() : null,
+				sizeLimit: oModelInterface.iSizeLimit
+			}
+		};
+		new Spreadsheet(oSettings).attachBeforeSave({}, function (oEvent) {
+			oEvent.preventDefault();
+			this.putToGraph('me/drive/root:/UploadedFromWebApp/' + oSmartTable.getEntitySet() + '.xlsx:/content',
+				new Blob([oEvent.getParameter('data')], {
+					type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+				}),
+				function (data) {
+					window.open(data.webUrl, '_blank');
+				});
+		}.bind(this), {}).build();
 },
 ```
+
+![uploadcode](./uploadcode.png)
+
+
 [DONE]
 [ACCORDION-END]
 
@@ -229,38 +222,32 @@ This `putToGraph` function takes the bytecode of the export worker and sends it 
 Insert this function after the `onUploadToOneDrive` function of the previous step.
 ```JavaScript
 putToGraph: function (sEndpoint, payload, fnCb) {
-	if (!this.oUserAgentApplication.getUser()) {
-		this.oUserAgentApplication.loginRedirect(this.msalconfig.graphAPIScopes);
-	} else {
-		this.oUserAgentApplication.acquireTokenSilent(this.msalconfig.graphAPIScopes)
-			.then(function (token) {
-					$.ajax({
-							headers: {
-								"Authorization": "Bearer " + token
-							},
-							data: payload,
-							processData: false,
-							url: this.msalconfig.graphBaseEndpoint + sEndpoint,
-							type: "PUT"
-						})
-						.then(fnCb)
-						.fail(function (error) {
-							MessageToast.show("Error, please check the log for details");
-							$.sap.log.error(JSON.stringify(error.responseJSON.error));
-						});
-				}.bind(this),
-				function (error) {
-					if (error) {
-						this.oUserAgentApplication.acquireTokenPopup(this.msalconfig.graphAPIScopes);
-					}
-				}.bind(this));
-	}
-},
+	this.oMsalClient.acquireTokenSilent(this.config.scopeConfig)
+		.then(function (oTokenInfo) {
+			$.ajax({
+					headers: {
+						"Authorization": "Bearer " + oTokenInfo.accessToken
+					},
+					data: payload,
+					processData: false,
+					url: this.config.graphBaseEndpoint + sEndpoint,
+					type: "PUT"
+				})
+				.then(fnCb)
+				.fail(function (error) {
+					MessageToast.show("Error, please check the log for details");
+					$.sap.log.error(JSON.stringify(error.responseJSON.error));
+				});
+		}.bind(this))
+		.catch($.sap.log.error);
+}
 ```
+
+![puttograph](./puttograph.png)
+
 
 [DONE]
 [ACCORDION-END]
-
 [ACCORDION-BEGIN [Step : ](Finalize the controller)]
 
 Make sure you entire `MainController.js` file has all required methods and looks like this display. You can use the snippet below the screenshot to replace the entire file if needed.
@@ -280,41 +267,27 @@ sap.ui.define([
 
 	return Controller.extend("com.plain.controller.View1", {
 
-		msalconfig: {
-			clientID: "/YOUR SECRET APP ID/",
-			redirectUri: location.href,
+		config: {
+			msalConfig: {
+				auth: {
+					clientId: "/YOUR SECRET APP ID/"
+				},
+				cache: {
+					cacheLocation: 'localStorage',
+					storeAuthStateInCookie: true
+				}
+			},
 			graphBaseEndpoint: "https://graph.microsoft.com/v1.0/",
-			graphAPIScopes: ['Files.Read.All', 'Files.ReadWrite', 'Files.ReadWrite.All']
+			scopeConfig: {
+				scopes: ['Files.ReadWrite.All']
+			}
 		},
 
 		onInit: function () {
-			this.oUserAgentApplication = new Msal.UserAgentApplication(this.msalconfig.clientID, null,
-				function (errorDesc, token, error, tokenType) {
-					if (errorDesc) {
-						var formattedError = JSON.stringify(error, null, 4);
-						if (formattedError.length < 3) {
-							formattedError = error;
-						}
-						MessageToast.show("Error, please check the $.sap.log for details");
-						$.sap.log.error(error);
-						$.sap.log.error(errorDesc);
-					}
-				}.bind(this), {
-					redirectUri: this.msalconfig.redirectUri
-				});
-			//Previous version of msal uses redirect url via a property
-			if (this.oUserAgentApplication.redirectUri) {
-				this.oUserAgentApplication.redirectUri = this.msalconfig.redirectUri;
-			}
-			// If page is refreshed, continue to display user info
-			if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window) {
-				var user = this.oUserAgentApplication.getUser();
-				var bLoggedIn = Boolean(user);
-				if (bLoggedIn) {
-					this.oUserAgentApplication.acquireTokenPopup(this.msalconfig.graphAPIScopes);
-				} else {
-					this.oUserAgentApplication.loginRedirect(this.msalconfig.graphAPIScopes);
-				}
+			this.oMsalClient = new Msal.UserAgentApplication(this.config.msalConfig);
+			//check if the user is already signed in
+			if (!this.oMsalClient.getAccount()) {
+				this.oMsalClient.loginPopup(this.config.scopeConfig);
 			}
 		},
 
@@ -322,10 +295,8 @@ sap.ui.define([
 			var oSmartTable = this.getView().findAggregatedObjects(true, function (oAggregate) {
 				return oAggregate instanceof sap.ui.comp.smarttable.SmartTable;
 			})[0];
-
 			var oTable = oSmartTable.getTable();
 			var oRowBinding = oTable.getBinding("items");
-
 			var aCols = oSmartTable.getInitiallyVisibleFields().split(',').map(function (sKey) {
 				return {
 					label: sKey,
@@ -333,10 +304,8 @@ sap.ui.define([
 					type: 'string'
 				};
 			});
-
 			var oModel = oRowBinding.getModel();
 			var oModelInterface = oModel.getInterface();
-
 			var oSettings = {
 				workbook: {
 					columns: aCols,
@@ -351,10 +320,9 @@ sap.ui.define([
 					sizeLimit: oModelInterface.iSizeLimit
 				}
 			};
-
 			new Spreadsheet(oSettings).attachBeforeSave({}, function (oEvent) {
 				oEvent.preventDefault();
-				this.putToGraph('/me/drive/root:/UploadedFromWebApp/' + oSmartTable.getEntitySet() + '.xlsx:/content',
+				this.putToGraph('me/drive/root:/UploadedFromWebApp/' + oSmartTable.getEntitySet() + '.xlsx:/content',
 					new Blob([oEvent.getParameter('data')], {
 						type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
 					}),
@@ -365,32 +333,24 @@ sap.ui.define([
 		},
 
 		putToGraph: function (sEndpoint, payload, fnCb) {
-			if (!this.oUserAgentApplication.getUser()) {
-				this.oUserAgentApplication.loginRedirect(this.msalconfig.graphAPIScopes);
-			} else {
-				this.oUserAgentApplication.acquireTokenSilent(this.msalconfig.graphAPIScopes)
-					.then(function (token) {
-							$.ajax({
-									headers: {
-										"Authorization": "Bearer " + token
-									},
-									data: payload,
-									processData: false,
-									url: this.msalconfig.graphBaseEndpoint + sEndpoint,
-									type: "PUT"
-								})
-								.then(fnCb)
-								.fail(function (error) {
-									MessageToast.show("Error, please check the log for details");
-									$.sap.log.error(JSON.stringify(error.responseJSON.error));
-								});
-						}.bind(this),
-						function (error) {
-							if (error) {
-								this.oUserAgentApplication.acquireTokenPopup(this.msalconfig.graphAPIScopes);
-							}
-						}.bind(this));
-			}
+			this.oMsalClient.acquireTokenSilent(this.config.scopeConfig)
+				.then(function (oTokenInfo) {
+					$.ajax({
+							headers: {
+								"Authorization": "Bearer " + oTokenInfo.accessToken
+							},
+							data: payload,
+							processData: false,
+							url: this.config.graphBaseEndpoint + sEndpoint,
+							type: "PUT"
+						})
+						.then(fnCb)
+						.fail(function (error) {
+							MessageToast.show("Error, please check the log for details");
+							$.sap.log.error(JSON.stringify(error.responseJSON.error));
+						});
+				}.bind(this))
+				.catch($.sap.log.error);
 		}
 	});
 });
