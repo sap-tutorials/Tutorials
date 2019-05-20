@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Maintain restrictions in SAP Cloud Platform ABAP environment
-description: Create business roles and maintain restrictions in the SAP Cloud Platform ABAP environment.
+title: Maintain instance-based authorization checks with business roles, restriction types and fields
+description: Create business roles and maintain access management in the SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
 time: 5
@@ -16,7 +16,7 @@ time: 5
   - How to create business roles
   - How to add business catalogs
   - How to add business users
-  - How to maintain restrictions
+  - How to maintain access management
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
@@ -47,7 +47,6 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 2: ](Add business catalog)]
 1. Click **General Role Details** and **Edit**.
 
@@ -76,7 +75,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Maintain restrictions)]
+[ACCORDION-BEGIN [Step 4: ](Maintain access management)]
   1. Select your user and click **Maintain Restrictions**.
       ![Edit authorization default values](restrictions.png)
 
