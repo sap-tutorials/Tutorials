@@ -134,10 +134,10 @@ Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute 
 -- Uncomment this if you want to start from scratch
 -- DROP USER ML_USER CASCADE;
 
-CREATE USER ML_USER PASSWORD Welcome18Welcome18;
+CREATE USER ML_USER PASSWORD Welcome19Welcome19;
 
 -- Use this if you don't want to be forced to update your password on the first connection.
--- CREATE USER ML_USER PASSWORD Welcome18Welcome18 NO FORCE_FIRST_PASSWORD_CHANGE;
+-- CREATE USER ML_USER PASSWORD Welcome19Welcome19 NO FORCE_FIRST_PASSWORD_CHANGE;
 -- or
 ALTER USER ML_USER DISABLE PASSWORD LIFETIME;
 
@@ -149,7 +149,7 @@ GRANT IMPORT TO ML_USER;
 GRANT EXECUTE on _SYS_REPO.GRANT_ACTIVATED_ROLE TO ML_USER;
 ```
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials (default password is ***`Welcome18Welcome18`*** )
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials (default password is ***`Welcome19Welcome19`*** )
 
 > You should be prompted to update you password on the first connection.
 &nbsp;

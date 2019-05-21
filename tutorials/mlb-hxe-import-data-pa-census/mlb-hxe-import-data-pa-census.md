@@ -215,5 +215,7 @@ SELECT 'CENSUS' as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.CENSUS;
 
 [ACCORDION-BEGIN [Step 1: ](Validation)]
 
+Provide an answer to the question below then click on **Validate**.
+
 [VALIDATE_1]
 [ACCORDION-END]
