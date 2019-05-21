@@ -9,9 +9,9 @@ time: 20
 
 ## Prerequisites  
 - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-- [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+- [Enable SAP Cloud Platform mobile services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
 - **Development environment:** Android Studio
-- **SAP Cloud Platform SDK for Android:** Version `2.1.0`
+- **SAP Cloud Platform SDK for Android:** Version `2.1.1`
 
 ## Details
 ### You will learn  
@@ -21,10 +21,10 @@ time: 20
 
 > Before you start, make sure you have:
 
-> - Downloaded [SAP Cloud Platform SDK for Android](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html) **version `2.1.0`**.
+> - Downloaded [SAP Cloud Platform SDK for Android](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html) **version `2.1.1`**.
 > - Followed the [Installing the SAP Cloud Platform SDK for Android](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/installing.html) instructions.
 > - Created a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for more information.
-> - Enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html) for more information.
+> - Enabled SAP Cloud Platform mobile services. See [Enable SAP Cloud Platform mobile services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html) for more information.
 
 ---
 
