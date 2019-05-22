@@ -418,7 +418,7 @@ python ~/export/flowers_import_data.py \
 	--hxehost localhost \
 	--hxeport 39015 \
 	--hxeusr ML_USER \
-	--hxepwd Welcome18Welcome18
+	--hxepwd Welcome19Welcome19
 ```
 
 [DONE]
@@ -558,7 +558,7 @@ python ~/export/flowers_client.py \
 	--hxehost localhost \
 	--hxeport 39015 \
 	--hxeusr ML_USER \
-	--hxepwd Welcome18Welcome18
+	--hxepwd Welcome19Welcome19
 ```
 
 [DONE]
