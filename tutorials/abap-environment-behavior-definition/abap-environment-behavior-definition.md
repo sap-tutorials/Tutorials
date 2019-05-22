@@ -205,6 +205,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
           ENDMETHOD.
 
           METHOD validate.
+             "Add method from Tutorial: Create authorization in SAP Cloud Platform ABAP environment (Step 4)
           ENDMETHOD.
 
         ENDCLASS.
