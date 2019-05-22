@@ -5,6 +5,8 @@ auto_validation: true
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>sql, products>sap-hana\,-express-edition ]
 time: 20
+author_name: Robin van het Hof
+author_profile: https://github.com/qualiture
 ---
 
 ## Prerequisites  
@@ -562,11 +564,11 @@ Now, create a Graph workspace:
 ```sql
   CREATE GRAPH WORKSPACE  "EXAMPLE_WORKSPACE"
   EDGE TABLE  "EDGES_DATA"
-  SOURCE COLUMN "src_id"
-  TARGET COLUMN "dest_id"
-  KEY COLUMN "NAME"
+  SOURCE COLUMN "SRC_ID"
+  TARGET COLUMN "DEST_ID"
+  KEY COLUMN "ID"
   VERTEX TABLE  "NODES_DATA"
-  KEY COLUMN "NAME";
+  KEY COLUMN "ID";
 ```
 
 [DONE]
