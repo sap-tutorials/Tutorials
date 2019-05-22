@@ -3,7 +3,7 @@ title: Import the Iris dataset into SAP HANA, express edition
 description: Download and import the Iris dataset into SAP HANA, express edition
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, topic>machine-learning ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
 time: 15
 ---
 

@@ -3,7 +3,7 @@ title: Consume your Iris Model from SAP HANA, express edition
 description: Provide details on the consumption from SAP HANA, express edition of the model trained using Amazon SageMaker, then deployed in Amazon ECS with the TensorFlow Serving Docker image.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\, express-edition, products>sap-hana ]
 time: 15
 ---
 

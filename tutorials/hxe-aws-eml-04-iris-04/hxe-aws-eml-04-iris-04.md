@@ -3,7 +3,7 @@ title: Build a TensorFlow Serving Docker image to host the Iris model
 description: Leverage the pre-built TensorFlow Serving Docker image to build a new image that will serve the Iris Model, then deploy and test it locally
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, topic>machine-learning ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
 time: 30
 ---
 

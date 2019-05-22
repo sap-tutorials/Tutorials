@@ -3,7 +3,7 @@ title: Configure the TensorFlow Integration (SAP HANA EML) with SAP HANA, expres
 description: Provide details on the installation and configuration of the SAP HANA External Machine Learning Library with SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\, express-edition, products>sap-hana ]
 time: 15
 ---
 
@@ -198,7 +198,7 @@ Now, you can check the registered models:
 CREATE TABLE CHECK_PARAMS ("Parameter" VARCHAR(100), "Value" VARCHAR(100));
 TRUNCATE TABLE CHECK_PARAMS;
 INSERT INTO CHECK_PARAMS VALUES ('Model', '*');
-CALL _SYS_AFL.EML_CHECKDESTINATION_PROC(CHECK_PARAMS, ?); 
+CALL _SYS_AFL.EML_CHECKDESTINATION_PROC(CHECK_PARAMS, ?);
 ```
 
 Provide an answer to the question below then click on **Validate**.

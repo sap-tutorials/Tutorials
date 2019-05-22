@@ -3,7 +3,7 @@ title: Deploy and Run the Iris Docker image in Amazon Fargate
 description: After deploying the Iris container to Amazon Elastic Registry (ECR), you will create a Fargate cluster and service in Amazon Elastic Container Service (ECS) to test your model
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, topic>machine-learning ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
 time: 30
 ---
 

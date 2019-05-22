@@ -3,7 +3,7 @@ title: Upload the Iris dataset in Amazon S3
 description: Tryout different methods to upload your dataset to an Amazon S3 bucket
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, topic>machine-learning ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
 time: 15
 ---
 

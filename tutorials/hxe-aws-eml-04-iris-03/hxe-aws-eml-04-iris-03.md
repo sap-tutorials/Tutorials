@@ -3,7 +3,7 @@ title: Train your Iris Model using Amazon SageMaker
 description: Leverage the TensorFlow Python SDK for SageMaker to build your classification model
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud, topic>machine-learning ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
 time: 30
 ---
 

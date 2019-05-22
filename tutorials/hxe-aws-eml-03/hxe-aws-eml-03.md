@@ -3,7 +3,7 @@ title: Set up your AWS environment - Install the SAP HANA Client and Python libr
 description: In your SageMaker Notebook instance, download and install the SAP HANA client and the Python driver to connect to your SAP HANA, express edition instance.
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
 time: 20
 ---
 
@@ -118,7 +118,7 @@ You can now run the following commands to install the HDBCLI Python library:
 ```shell
 source activate tensorflow_p36
 pip install /home/ec2-user/SageMaker/sap/hdbclient/hana_ml-*.tar.gz
-``` 
+```
 
 As reminder, the installed package will be removed if the SageMaker Notebook instance is restarted.
 
