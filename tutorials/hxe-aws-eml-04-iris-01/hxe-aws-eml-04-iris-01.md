@@ -96,7 +96,7 @@ from matplotlib import pyplot as plt
 %matplotlib inline
 ```
 
-Using the ***`hana_ml`*** package assumes that you have completed the [Install the SAP HANA Python library in SageMaker Notebook](hxe-aws-eml-04).
+Using the ***`hana_ml`*** package assumes that you have completed the [Install the SAP HANA Python library in SageMaker Notebook](hxe-aws-eml-03).
 
 [DONE]
 [ACCORDION-END]
