@@ -140,7 +140,7 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](See the error log message)]
+[ACCORDION-BEGIN [Step : ](Check the log message)]
 
 Click **F8** to jump over the breakpoint and switch to the `Console` tab.
 Now you should see your error message printed in red. Click on the small triangle on the left side to expand the error message.
