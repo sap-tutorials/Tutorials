@@ -75,21 +75,21 @@ time: 20
     ![Select service](./run-button.png)
 
 2. Click F12 open the development tools of your browser on Windows or `cmd + alt + i` on Mac.
-3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 (OK) or 304 (Not Modified).
+3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 (OK).
 
     ![Select service](./chrome-network.png)
 
-> In case this request fails, there has been a issue while creating the destination in the Neo environment. Please go back to the previous tutorial to make sure the destination is set up correctly
+> In case this request fails, there has been a issue while creating the destination in the Neo environment. Please make go back to the previous tutorial to make sure the destination is set up correctly
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Add a list to the view)]
 Replace the existing `<Page>` element with the following snippet to add an instance of `sap.m.List` to the `MainView.view.xml` file. You can find the file in the `webapp > view` folder within your HTML5 project.
 
-```xml
+```XML
 <Page
   title="Purchase Orders">
-  <!-- INSERT IN STEP 5 OF THE NEXT TUTORIAL -->
+  <!-- INSERT IN STEP 3 OF THE NEXT TUTORIAL -->
   <content>
     <List
     noDataText="No purchase orders found"
@@ -106,8 +106,6 @@ Replace the existing `<Page>` element with the following snippet to add an insta
 ```
 This page will display all existing purchase orders in a list.
 
-> Hint: Pretty print the pasted code with: Command + Alt + B (Mac) or Control + Alt + B (Windows)
-
 [DONE]
 [ACCORDION-END]
 
@@ -117,12 +115,11 @@ This page will display all existing purchase orders in a list.
 > Caution: The property `controllerName` (here `com.sapteched18.msgraph.PurchaseOrderApp.controller.MainView`) corresponds to your namespace and project name you have defined in the wizard in Step 1.6. So make sure they fit together. If you have chosen a different namespace and project as shown in the screenshot, please adjust your code accordingly.
 
 1. Replace the XML Declaration in the `MainView.view.xml` file with the following snippet to make use of more SAPUI5 libraries.
-```xml
+```XML
 <mvc:View controllerName="com.sap.teched18.msgraph.PurchaseOrderApp.controller.MainView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
-  <App id="idAppControl">
 ```
 2. Add a new page which will be used to show the details of a single purchase order.
-```xml
+```XML
 <Page
   id="details"
   title="Details"
@@ -140,7 +137,7 @@ This page will display all existing purchase orders in a list.
 </Page>
 ```
 3. Add the form controls with the associated layout information.
-```xml
+```XML
 <Label text="Purchase Order ID" width="100%">
   <layoutData>
     <layout:GridData span="L4 M4" />
@@ -207,8 +204,9 @@ This page will display all existing purchase orders in a list.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step ](Add navigation logic)]
-1. Handle the click events, which will be triggered once the user clicks on the list items. Paste the following function to the empty object (second parameter of the `Controller.extend` method) in the `MainView.controller.js` (`webapp > controller`) file.
-```javascript
+1. Handle the click events, which will be triggered once the user clicks on the list items. Paste the following function to the empty object (second parameter of the `Controller.extend` method) in the `MainView.controller.js` (`webbapp > controller`) file.
+```JavaScript
+// INSERT IN STEP 2 OF THE NEXT TUTORIAL
 onClickPO: function (oEvent) {
   var oApp = this.getView().getContent()[0];
   var sBindingPath = oEvent.getSource().getBindingContext().getPath();
@@ -218,13 +216,13 @@ onClickPO: function (oEvent) {
 // INSERT CODE IN SUB-STEP 6.2 HERE
 ```
 2.  Also add an event handler to navigate back to the first page
-```javascript
+```JavaScript
 onNavButtonPress: function (oEvent) {
   var oApp = this.getView().getContent()[0];
   var oStartPage = oApp.getPages()[0];
   oApp.back(oStartPage.getId());
 },
-// INSERT IN STEP 7 OF THE NEXT TUTORIAL
+// INSERT IN STEP 5 OF THE NEXT TUTORIAL
 ```
 
 [DONE]
@@ -248,7 +246,6 @@ onNavButtonPress: function (oEvent) {
     ![running](./running.png)
 
 Insert the URL of your running web application below:
-
 
 [VALIDATE_7]
 [ACCORDION-END]
