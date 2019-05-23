@@ -74,7 +74,7 @@ Therefore, you will create the following tables:
 
 It is assumed that you have completed the [Prepare Your SAP HANA, express edition Instance for Machine Learning](mlb-hxe-setup-basic) tutorial as you will be reusing the created **`ML_USER`**.
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement:
+Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
 ```SQL
 CREATE SCHEMA IRIS;
@@ -87,7 +87,7 @@ CREATE TABLE IRIS_TRAINING (SEPALLENGTH FLOAT, SEPALWIDTH FLOAT, PETALLENGTH FLO
 CREATE TABLE IRIS_TEST     (SEPALLENGTH FLOAT, SEPALWIDTH FLOAT, PETALLENGTH FLOAT, PETALWIDTH FLOAT, SPECIES INT);
 ```
 
-As a reminder, you can connect using HDBSQL to your HXE instance with the following command (assuming you didn't change the `ML_USER` password):
+As a reminder, you can connect using the SAP Web IDE or using HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
 
 ```shell
 hdbsql -n localhost:39015 -u ML_USER -p Welcome19Welcome19
@@ -102,7 +102,7 @@ In order to import the Iris dataset files, you will be using ***IMPORT FROM SQL 
 
 For more details, you can check the [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](mlb-hxe-import-data-sql-import) tutorial.
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement:
+Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
 Before running the following command, if you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
 
@@ -142,7 +142,7 @@ WITH
 
 You can now validate that you have properly imported the data.
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement:
+Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
 ```sql
 SELECT * FROM

@@ -25,7 +25,7 @@ If you have a ***root*** access to your AWS account, it is still a good practice
 
 **Please be aware that completing this tutorial track will incur a charge estimated between 10 and 20 USD on your AWS account.**
 
-**Make sure to complete the [Cleanup before you leave](hxe-aws-eml-02) tutorial if you are not planning to complete the track.**
+**Make sure to complete the [Cleanup before you leave](hxe-aws-eml-08) tutorial if you are not planning to complete the track.**
 
 [ACCORDION-BEGIN [Step 1: ](Sign in or Create an Account on AWS)]
 
