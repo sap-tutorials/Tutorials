@@ -3,7 +3,7 @@ title: Deploy SAP HANA as a Service
 description: Create an instance of the SAP Cloud Platform, SAP HANA Service.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
+tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
