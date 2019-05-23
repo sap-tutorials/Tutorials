@@ -7,7 +7,7 @@ time: 15
 ---
 
 ## Prerequisites  
-You have access to an SAP Cloud Platform account, and set up a sub-account. If you don't have an account, see the  [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/dba4ae7ef36c4a93a6615c5f24ae9903.html) on how to obtain one. For information on setting up your SAP Cloud Platform, including subaccounts, see [Getting Started](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/144e1733d0d64d58a7176e817fa6aeb3.html).
+You have access to an SAP Cloud Platform account, and set up a sub-account. If you don't have an account, see the  [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/82f9ff522f754e26ae89e0cd7ec7aa11.html) on how to obtain one. For information on setting up your SAP Cloud Platform, including subaccounts, see [Getting Started](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/144e1733d0d64d58a7176e817fa6aeb3.html).
 
 ## Details
 ### You will learn  
@@ -103,10 +103,10 @@ Do the following:
 
 
 
-* [Create Cloud Foundry subaccounts, organizations, and spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html).
+* [Create Cloud Foundry subaccounts, organizations, and spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/b00342ee083d475bb5b38600641e3f04.html).
 We recommend you create separate subaccounts for development, staging/test and production purposes. We also recommend at least one space per development team per project (in the development and staging subaccounts).
-* [Register your developers](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5a91cf502b5146958977a5fb906df93a.html)
-* [Assign developers to organizations and spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/bbaef4ec39af493192a7a518b94e071b.html).
+* [Register your developers](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a4eeaf179ee646b99558f27c0bae7b3e.html)
+* [Assign developers to organizations and spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/81d0b4dcfbc84016b6b3c1465d4272f4.html).
 
 
 
@@ -114,4 +114,3 @@ We recommend you create separate subaccounts for development, staging/test and p
 [ACCORDION-END]
 
 ---
-

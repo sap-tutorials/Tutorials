@@ -42,27 +42,24 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Create behavior definition](behavior3.png)
 
-4. Create your data table with following coding:
+4. Create your behavior definition with following coding:
 
     ```ABAP
-      @EndUserText.label : 'Room XXX'
-      @AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
-      @AbapCatalog.tableCategory : #TRANSPARENT
-      @AbapCatalog.deliveryClass : #A
-      @AbapCatalog.dataMaintenance : #LIMITED
-      define table zroom_xxx {
-      key client          : abap.clnt not null;
-      key id              : abap.char(20) not null;
-      @EndUserText.label : 'Seats'
-      seats               : abap.dec(3,0);
-      location            : /dmo/loca_dtel;
-      hasbeamer           : abap_boolean;
-      hasvideo            : abap_boolean;
-      userrating          : abap.char(2);
-      lastchangeddatetime : tzntstmpl;
-      lastchangedbyuser   : syuname;
-      }
+      implementation unmanaged;
+      define behavior for Z_I_ROOM_XXX
+        alias room
+        lock master
+        etag lastchangeddatetime
+        {
+         create;
+          update;
+          delete;
+
+          field (mandatory) id;
+          field (read only) lastchangedbyuser, lastchangeddatetime;
+        }
     ```
+   Save and activate.
 
 [DONE]
 [ACCORDION-END]
@@ -208,6 +205,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
           ENDMETHOD.
 
           METHOD validate.
+             "Add method from Tutorial: Create authorization in SAP Cloud Platform ABAP environment (Step 4)
           ENDMETHOD.
 
         ENDCLASS.
@@ -268,6 +266,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
           expose Z_I_ROOM_XXX as Room;
         }
     ```
+
     Save and activate.
 
 [DONE]
@@ -315,7 +314,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Open Preview for Fiori Elements App)]
+[ACCORDION-BEGIN [Step 6: ](Open preview for Fiori Elements App)]
   1. Right-click on **`Room`** (Entity Set and Association) and select **Open Fiori Elements App Preview**.
 
       ![Open Preview for Fiori Elements App](fiori.png)
