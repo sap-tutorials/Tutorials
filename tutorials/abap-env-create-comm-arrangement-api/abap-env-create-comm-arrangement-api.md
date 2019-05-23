@@ -17,10 +17,10 @@ author_profile: https://github.com/julieplummer20
 
 ## Details
 ### You will learn
-  - How to create a communication arrangement for SAP CP Cloud Foundry Service Integration. You can then use this communication arrangement, for example to connect your ABAP Environment instance to an external API
+  - How to create a Communication Arrangement (see below) for SAP CP Cloud Foundry Service Integration. You can then use this communication arrangement, for example to connect your ABAP Environment instance to an external API
   - How to test this arrangement by creating a specific destination pointing to an external API
 
-  Predefined communication scenarios allow you to, for example, exchange data between an ABAP Environment instance and an external system.
+  The communication scenario `SAP_COM_0276` is predefined by SAP. It allow you to, for example, exchange data between an ABAP Environment instance and an on-premise S/4HANA System, or a third-party API.
   A communication arrangement specifies the metadata for a specific communication scenario, such as your host system and the authentication method. This metadata is contained in a service key.  You can then define one or more specific destinations for this arrangement.
 
   For more information, see:
@@ -115,7 +115,7 @@ The dashboard opens.
     .
     ![Image depicting step4a-comm-scenarios-list](step4a-comm-scenarios-list.png)
 
-3. Enter a name, generally the name you chose for your destination service instance, that is **`EXTERNAL_API_XXX`**.
+3. Enter the name you chose for your destination service instance in SAP Cloud Cockpit, that is **`EXTERNAL_API_XXX`**.
 
 4. Paste in the service key and choose **Create**.
 
@@ -130,7 +130,15 @@ A communication arrangement is created, along with an identically-named communic
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+[ACCORDION-BEGIN [Step 6: ](Add the service instance name)]
+Still in the Communication Arrangement, in the **Additional Properties** panel, enter a **Service Instance Name**, such as **`OutboundCommArrangement_xxx`**.
+
+![Image depicting step6-service-instance-name](step6-service-instance-name.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
 
 [VALIDATE_1]

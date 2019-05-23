@@ -3,7 +3,7 @@ title: Access a Classic Schema from SAP Web IDE Full-Stack
 description: Access data in a plain or replicated schema from an HDI container.
 auto_validation: true
 time: 20
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
+tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 

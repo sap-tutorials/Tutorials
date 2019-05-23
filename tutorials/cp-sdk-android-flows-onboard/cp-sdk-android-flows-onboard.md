@@ -357,8 +357,6 @@ Right-click on the **raw** folder, choose **New > File** and name it **`configur
 
 Copy the below contents into the file.  
 
-Update the host value to match your Mobile Services host.
-
 ```Java
 {
     "auth":[{"type":"basic.default","config":{},"requireOtp":false}],
@@ -372,6 +370,11 @@ Update the host value to match your Mobile Services host.
 ![configurationprovider JSON file](configurationprovider.png)
 
 >Note that if this file is not provided, an onboarding screen asking the user to scan a QR code containing the onboarding details or to enter their email address (to get configuration data from the discovery service) will appear.
+
+Update the host value to match your Mobile Services host.  This value can be seen in the management cockpit under API's as shown below.
+
+![Server APIs](server-api.png)
+
 
 [DONE]
 [ACCORDION-END]
