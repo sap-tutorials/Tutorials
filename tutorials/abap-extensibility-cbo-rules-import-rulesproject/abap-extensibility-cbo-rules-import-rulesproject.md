@@ -4,7 +4,7 @@ description: Use Business Rules Import option to import template rules project t
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-s-4hana]
-primary_tag: topic>abap-connectivity
+primary_tag: topic>abap-extensibility
 ---
 
 ## Details

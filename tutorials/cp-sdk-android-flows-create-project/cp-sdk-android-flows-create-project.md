@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites
- - **SAP Cloud Platform SDK for Android:** Version `2.1.0`
+ - **SAP Cloud Platform SDK for Android:** Version `2.1.1`
  - Complete step 1 of [Try Out SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app)
 
 
@@ -69,7 +69,7 @@ This tutorial assumes that **Basic** is selected as the apps **Security Configur
 
 Open the project's **`gradle.properties`** file.  
 
-Add a new `gradle` setting **`sdkVersion=2.1.0`** to specify the version of the SAP Cloud Platform SDK for Android being used as shown below.
+Add a new `gradle` setting **`sdkVersion=2.1.1`** to specify the version of the SAP Cloud Platform SDK for Android being used as shown below.
 
 ![SDK version variable](sdk-version-variable.png)
 
