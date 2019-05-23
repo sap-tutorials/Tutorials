@@ -4,7 +4,7 @@ description: Build a HR Employee Dashboard in SAP Analytics Cloud using live dat
 auto_validation: true
 author_name: Priyanka Brodie
 author_profile: https://github.com/pbrodie
-time: 60
+time: 30
 tags: [ tutorial>beginner, products>sap-cloud-platform,  tutorial>license]
 primary_tag: products>sap-analytics-cloud
 ---
