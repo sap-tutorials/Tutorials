@@ -74,7 +74,7 @@ Once you have set your profile to public, you can follow a person or a tag, as w
 
 Take these steps to follow tags, content, and people.
 
-NOTE: In order for your blogging permissions to change from **Subscriber** to **Contributor**, you MUST perform all of the activities in this step before you click **Done**. Activities taken previously, or just clicking **Done** without doing the activities, will not enable the permission change. (If you wish to undo the activities afterwards, for example unfollow a piece of content you followed for this step, you may do so.)
+In order for your blogging permissions to change from **Subscriber** to **Contributor**, you MUST perform all of the activities in this step before you click **Done**. Activities taken previously, or just clicking **Done** without doing the activities, will not enable the permission change. (If you wish to undo the activities afterwards, for example unfollow a piece of content you followed for this step, you may do so.)
 
 ### Follow a tag
 
@@ -82,7 +82,7 @@ NOTE: In order for your blogging permissions to change from **Subscriber** to **
 
 2. Find **Popular Tags** on the right-hand side (expanding the list if necessary) and click **View All**.
 
-![How to Follow Tags in Questions](Follow-tags.png)
+    ![How to Follow Tags in Questions](Follow-tags.png)
 
 3. Click a tag that interests you on the **All Tags** page to go to that tag's page.
 
