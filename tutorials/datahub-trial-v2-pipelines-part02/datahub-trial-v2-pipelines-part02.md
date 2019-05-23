@@ -28,7 +28,7 @@ The SAP Data Hub, trial edition is deployed on AWS EKS or Google Cloud Platform.
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Write File Operator)]
 
-Open the pipeline which you have created in the previous tutorial [**Generate sensor data in SAP Data Hub, trial edition 2.4**](https://developers.sap.com/tutorials/datahub-trial-v2-pipelines-part01.html) `(test.myFirstPipeline)`, in the modelling environment. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
+Open the pipeline which you have created in the previous tutorial [**datahub-trial-v2-pipelines-part01**] (https://developers.sap.com/tutorials/datahub-trial-v2-pipelines-part01.html) `(test.myFirstPipeline)`, in the modelling environment. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
