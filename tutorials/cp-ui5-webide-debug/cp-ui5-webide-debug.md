@@ -19,7 +19,7 @@ primary_tag: topic>sapui5
 
 Add a simple message page to let the users know you are still working on this app.
 
-Replace the existing page in the file `tutorial/ui/webapp/view/MainView.view.xml` with
+Replace the existing page in the file `tutorial/ui/webapp/view/View1.view.xml` with
 ```JavaScript
 <MessagePage showHeader="false"
   description="More content to come"
@@ -51,7 +51,7 @@ data-sap-ui-logLevel="debug"
 
 [ACCORDION-BEGIN [Step : ](Write a log message to the console)]
 
-Import the logger to the file `tutorial/ui/webapp/controller/MainView.controller.xml` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
+Import the logger to the file `tutorial/ui/webapp/controller/View1.controller.xml` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
 ```JavaScript
 ,
 	"sap/base/Log"
