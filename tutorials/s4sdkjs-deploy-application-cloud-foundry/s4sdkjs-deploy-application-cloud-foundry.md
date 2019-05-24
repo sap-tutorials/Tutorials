@@ -1,6 +1,6 @@
 ---
 title: Deploy Application to Cloud Foundry with SAP Cloud SDK for JavaScript
-description: Deploy an existing application and deploy it to Cloud Foundry in SAP Cloud Platform.
+description: Deploy an existing application to Cloud Foundry in SAP Cloud Platform.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript]
@@ -29,7 +29,6 @@ In order to deploy our application, we first need to login to `Cloud Foundry` in
 
  - EU: [https://api.cf.eu10.hana.ondemand.com] (https://api.cf.eu10.hana.ondemand.com)
  - US EAST: [https://api.cf.us10.hana.ondemand.com] (https://api.cf.us10.hana.ondemand.com)
- - US WEST (beta): [https://api.cf.us20.hana.ondemand.com] (https://api.cf.us20.hana.ondemand.com)
 
 For the rest of this tutorial, we will assume the region to be EU. Enter the following commands in your command line:
 
@@ -218,4 +217,9 @@ When you now call the `/business-partners` route of your app, the Business Partn
 
 [ACCORDION-END]
 
+
+
 ---
+
+This tutorial is part of a larger series.
+For questions, you can reach out to us on [`StackOverflow`](https://stackoverflow.com/) using the tag [sap-cloud-sdk](https://stackoverflow.com/questions/tagged/sap-cloud-sdk) and on [answers.sap.com](https://answers.sap.com) using the tag [SAP S/4HANA Cloud SDK](https://answers.sap.com/tags/73555000100800000895).
