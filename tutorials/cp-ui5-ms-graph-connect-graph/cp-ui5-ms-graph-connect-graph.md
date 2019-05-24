@@ -89,7 +89,7 @@ This object contains constants you'll need later. Add this hook right before the
 Add a new button to the header of the first page in the `MainView.view.xml` file.
 ```XML
 <headerContent>
-  <Button icon="sap-icon://person-placeholder" text="{= 'Logout ' + ${session>/givenName} }"
+  <Button icon="sap-icon://person-placeholder" text="Logout" visible="{= !!${session>/userPrincipalName} }"
     press="onLogout"/>
 </headerContent>
 ```
@@ -122,7 +122,7 @@ Add the following functions to the `MainView.controller.js` to make use of the i
     //************* MSAL functions *****************//
     onLogout: function (oEvent) {
       var oSessionModel = oEvent.getSource().getModel('session');
-      var bIsLoggedIn = oSessionModel.getProperty('/displayName');
+      var bIsLoggedIn = oSessionModel.getProperty('/userPrincipalName');
       if (bIsLoggedIn) {
         this.oMsalClient.logout();
         return;
@@ -178,25 +178,25 @@ Replace the content of the form (of the second page) with the following SAPUI5 c
     <layout:GridData span="L4 M4"/>
   </layoutData>
 </Label>
-<Link press="onPressLink" enabled="{= !!${session>/givenName} }" text="{POId}"/>
+<Link press="onPressLink" enabled="{= !!${session>/userPrincipalName} }" text="{POId}"/>
 <Label text="Supplier Name">
   <layoutData>
     <layout:GridData span="L4 M4"/>
   </layoutData>
 </Label>
-<Link  press="onPressLink" enabled="{= !!${session>/givenName} }" text="{SupplierName}"/>
+<Link  press="onPressLink" enabled="{= !!${session>/userPrincipalName} }" text="{SupplierName}"/>
 <Label text="OrderedByName">
   <layoutData>
     <layout:GridData span="L4 M4"/>
   </layoutData>
 </Label>
-<Link press="onPressLink" enabled="{= !!${session>/givenName} }" text="{OrderedByName}"/>
+<Link press="onPressLink" enabled="{= !!${session>/userPrincipalName} }" text="{OrderedByName}"/>
 <Label text="DeliveryAddress">
   <layoutData>
     <layout:GridData span="L4 M4"/>
   </layoutData>
 </Label>
-<Link press="onPressLink" enabled="{= !!${session>/givenName} }" text="{DeliveryAddress}"/>
+<Link press="onPressLink" enabled="{= !!${session>/userPrincipalName} }" text="{DeliveryAddress}"/>
 <Label text="GrossAmount">
   <layoutData>
     <layout:GridData span="L4 M4"/>
