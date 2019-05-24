@@ -39,7 +39,7 @@ sudo su - hxeadm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Install SAP HANA External Machine Learning AFL)]
+[ACCORDION-BEGIN [Step 1: ](SAP HANA External Machine Learning AFL)]
 
 The integration of TensorFlow with SAP HANA is based on the SAP HANA Application Function Library (AFL).
 
@@ -62,58 +62,31 @@ The figure above shows the main components of the integrated solution:
 - ***Model Persistence***:
     The exported models persisted in a format in a given TensorFlow Serving `ModelServer`
 
-Before you can proceed with the next steps, you will need to complete the following tutorial:
-
-- [Install the SAP HANA External Machine Learning Library Package for SAP HANA, express edition](hxe-ua-eml-vm).
-
 To confirm that the SAP HANA EML functions were installed successfully, you can check the following public views:
 
 - `sys.afl_areas`
 - `sys.afl_packages`
 - `sys.afl_functions`
 
-Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
-
-```shell
-cd ~
-echo $'SELECT * FROM "SYS"."AFL_AREAS" WHERE AREA_NAME = \'EML\';' > eml.sql
-echo $'SELECT * FROM "SYS"."AFL_PACKAGES" WHERE AREA_NAME = \'EML\';' >> eml.sql
-echo $'SELECT * FROM "SYS"."AFL_FUNCTIONS" WHERE AREA_NAME = \'EML\';' >> eml.sql
-
-hdbsql -n localhost:39015 -d HXE -u system -f -m
-```
-
-You will be prompted to provide the password for the SYSTEM database user (the master password).
-
-Once logged in, you run the following commands (the prompt should be `hdbsql HXE=>`):
+Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
 ```SQL
-\o eml-result.txt
-\i eml.sql
-\q
+SELECT * FROM "SYS"."AFL_AREAS" WHERE AREA_NAME = 'EML';
+SELECT * FROM "SYS"."AFL_PACKAGES" WHERE AREA_NAME = 'EML';
+SELECT * FROM "SYS"."AFL_FUNCTIONS" WHERE AREA_NAME = 'EML';
 ```
 
-You can now validate the queries output using the following commands:
+As a reminder, you can connect using the SAP Web IDE or using HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
 
 ```shell
-more eml-result.txt
-rm eml-result.txt
+hdbsql -n localhost:39015 -u ML_USER -p Welcome19Welcome19
 ```
+
+If there result is empty, it probably mean that you need to complete the following tutorial:
+
+- [Install the SAP HANA External Machine Learning Library Package for SAP HANA, express edition](hxe-ua-eml-binary).
 
 The `AFL_AREAS` & `AFL_PACKAGES` should return 1 row each, and the `AFL_FUNCTIONS` should return 10 rows.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Run the Memory Management Script)]
-
-After the installation is completed, it is recommended to run the ***Memory Management Script*** as described in the ***Best Practice*** to release all unused resources and free up some memory.
-
-```bash
-hxe_gc.sh
-```
-
-Provide the ***System database user (SYSTEM)***.
 
 [DONE]
 [ACCORDION-END]
@@ -133,7 +106,7 @@ In your case, you will be reusing the `ML_USER` created during the [Prepare your
 
 Make also sure that the Script Server has been enabled for your instance.
 
-Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
+Using the **HXE** connection with the **SYSTEM** user credentials, execute the following SQL statement:
 
 ```SQL
 GRANT AFL__SYS_AFL_EML_EXECUTE TO ML_USER;
@@ -142,7 +115,7 @@ GRANT SELECT, UPDATE, DELETE, INSERT ON  _SYS_AFL.EML_MODEL_CONFIGURATION TO ML_
 
 You can now proceed with the rest of the configuration as `ML_USER`.
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement after adjusting the **ECS Container IP address**:
+Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement after adjusting the **ECS Container IP address**:
 
 ```SQL
 CREATE REMOTE SOURCE "TensorFlow" ADAPTER "grpc" CONFIGURATION 'server=<ECS Container IP address>;port=8500';
@@ -152,15 +125,7 @@ To get the **ECS Container IP address**, you can check the Amazon ECS tasks: <ht
 
 Now that the remote source was added, you will need to reload the EML configuration as this one is loaded once at the SAP HANA, express edition startup time.
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement:
-
-Before running the following command, if you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
-
-```sql
-\mu
-```
-
-Then you can run the following command:
+Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
 ```SQL
 -- Uncomment the following lines if you want to re-run the script
@@ -190,6 +155,13 @@ It should return the following result:
 |--------|-------|-------|
 | Status |     0 |    OK |
 
+
+> ### **Note:**: If you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
+>
+```sql
+\mu
+```
+
 Now, you can check the registered models:
 
 ```SQL
@@ -203,5 +175,5 @@ CALL _SYS_AFL.EML_CHECKDESTINATION_PROC(CHECK_PARAMS, ?);
 
 Provide an answer to the question below then click on **Validate**.
 
-[VALIDATE_1]
+[VALIDATE_1] 
 [ACCORDION-END]

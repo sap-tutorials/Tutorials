@@ -16,13 +16,13 @@ time: 15
 
 Now that the model is deployed and the TensorFlow Serving `ModelServer` is up and running, you will need to add the model configuration to your SAP HANA, express edition instance.
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement to register the Iris deployed models with the following SQL statements:
+Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement to register the Iris deployed models with the following SQL statements:
 
 ```SQL
 INSERT INTO _SYS_AFL.EML_MODEL_CONFIGURATION VALUES('iris' , 'RemoteSource', 'TensorFlow');
 ```
 
-As a reminder, you can connect using HDBSQL to your HXE instance with the following command (assuming you didn't change the `ML_USER` password):
+As a reminder, you can connect using the SAP Web IDE or using HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
 
 ```shell
 hdbsql -n localhost:39015 -u ML_USER -p Welcome19Welcome19
@@ -78,15 +78,7 @@ Provide an answer to the question below then click on **Validate**.
 
 The following SQL script will call the deployed Iris model using the test dataset uploaded before.
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL script:
-
-Before running the following command, if you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
-
-```sql
-\mu
-```
-
-Then you can run the following command:
+Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
 ```SQL
 -- Uncomment the following lines if you want to re-run the script
@@ -148,6 +140,12 @@ INSERT INTO IRIS_PARAMS   VALUES ('Deadline', '10000');
 CALL MY_IRIS (IRIS_PARAMS, IRIS.IRIS_TEST, IRIS_RESULTS) WITH OVERVIEW;
 ```
 
+> ### **Note:**: If you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
+>
+```sql
+\mu
+```
+
 You can note the following:
 
 - The column names for the `TT_IRIS_PARAMS` table type are case sensitive
@@ -171,5 +169,5 @@ JOIN
   (SELECT *, ROW_NUMBER() OVER() AS RN FROM IRIS.IRIS_TEST) D ON R.RN = D.RN;
 ```  
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
