@@ -39,7 +39,7 @@ Replace the existing page in the file `tutorial/ui/webapp/view/MainView.view.xml
 
 Add the following line to the `index.html` file to change to log level.
 ```HTML
-data-sap-ui-async="true"
+data-sap-ui-logLevel="debug"
 ```
 ![loglevel](./loglevel.png)
 
@@ -54,7 +54,8 @@ data-sap-ui-async="true"
 Import the logger to the file `tutorial/ui/webapp/controller/MainView.controller.xml` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
 ```JavaScript
 ,
-"sap/base/Log"
+	"sap/base/Log"
+], function (Controller, Log) {
 ```
 
 
