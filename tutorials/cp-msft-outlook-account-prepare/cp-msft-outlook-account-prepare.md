@@ -4,7 +4,7 @@ description: Configure your Microsoft account and create an outlook.com user.
 auto_validation: true
 primary_tag: topic>cloud
 tags: [  tutorial>beginner, topic>cloud ]
-time: 10
+time: 5
 ---
 
 ## Prerequisites  
