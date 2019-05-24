@@ -1,5 +1,5 @@
 ---
-title: Configure the TensorFlow Integration (SAP HANA EML) with SAP HANA, express edition
+title: Configure the SAP HANA TensorFlow Integration (SAP HANA EML)
 description: Provide details on the installation and configuration of the SAP HANA External Machine Learning Library with SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
@@ -175,5 +175,5 @@ CALL _SYS_AFL.EML_CHECKDESTINATION_PROC(CHECK_PARAMS, ?);
 
 Provide an answer to the question below then click on **Validate**.
 
-[VALIDATE_1] 
+[VALIDATE_1]
 [ACCORDION-END]
