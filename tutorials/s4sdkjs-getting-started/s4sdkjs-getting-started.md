@@ -40,7 +40,8 @@ If you cannot or do not want to use `TypeScript`, you can also checkout the `Jav
 git clone --single-branch --branch scaffolding-js --origin scaffold https://github.com/SAP/cloud-s4-sdk-examples.git <path/to/your/project>
 ```
 
-[DONE][accordion-end]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get familiar with the project)]
 
@@ -71,7 +72,8 @@ The project contains the following files and folders, among others, to get you s
 
 * **`src/`**: Source code for an initial hello world express application.
 
-[DONE][accordion-end]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run the application)]
 
@@ -92,7 +94,8 @@ To stop the server again, press `ctrl + c` in your command line.
 Alternatively, you also use `watch:local` instead of `run:local`.
 This will run the server and will automatically restart and update it whenever you change some of the source files.
 
-[DONE][accordion-end]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Use the SDK in existing project (optional))]
 
@@ -111,7 +114,8 @@ npm install @sap/cloud-sdk-core
 
 We recommend to also take a look at the continuous delivery artifacts in the scaffold application and adopt those along with the respective **`npm`** scripts.
 
-[DONE][accordion-end]
+[DONE]
+[ACCORDION-END]
 
 That's it! You should now have a running application that is ready to be integrated with `SAP S/4HANA Cloud`.
 
