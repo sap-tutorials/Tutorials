@@ -40,14 +40,16 @@ You are free to use an [`installer`](https://nodejs.org/en/download), though.
 
 <!-- TODO: Maybe mention here that for Windows the installer is the easiest way to setup Node. -->
 
-[DONE][accordion-end]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](SAP Cloud Platform account)]
 
 For deploying your application to `Cloud Foundry in SAP Cloud Platform`, you will need an account.
 You can get a trial account [here](https://cloudplatform.sap.com/index.html) by clicking on "Start your free trial" or use an existing account, if you already have one.
 
-[DONE][accordion-end]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Cloud Foundry command line interface)]
 
@@ -55,13 +57,15 @@ You will need the `Cloud Foundry` command line interface (`cf` CLI) to later dep
 
 You can find installation instructions for all common platforms in the [`Cloud Foundry documentation`](https://docs.cloudfoundry.org/cf-cli/install-go-cli.html). Again, we recommend to use a `package manager` for that. If you are using `chocolatey` on Windows, please find the instructions [here](https://chocolatey.org/packages/cloudfoundry-cli).
 
-[DONE][accordion-end]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Editor / IDE)]
 
 Feel free to choose your favorite `IDE`. We recommend using [`Visual Studio Code`](https://code.visualstudio.com) for its excellent JavaScript and TypeScript support. However, this tutorial does not rely on any specific editor.
 
-[DONE][accordion-end]
+[DONE]
+[ACCORDION-END]
 
 That's it, you are now ready to start developing your own application with the `SAP S/4HANA Cloud SDK for JavaScript`!
 
