@@ -30,7 +30,7 @@ time: 20
 
     ![Create new project from Template](./webidecreateproject.png)
 
-5. Select **SAPUI5 Application** and choose the latest SAPUI5 version **SAP Innovation** and confirm with **Next**.
+5. Select **Neo** for the environment and click on the  **SAPUI5 Application** tile. Confirm the latest SAPUI5 version **SAP Innovation** and proceed with **Next**.
 
     ![select ui5](./web-ui5.png)
 
@@ -75,7 +75,8 @@ time: 20
     ![Select service](./run-button.png)
 
 2. Click F12 open the development tools of your browser on Windows or `cmd + alt + i` on Mac.
-3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 (OK).
+3. Refresh the webpage to make sure requests are captured in the network log.
+4. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 (OK).
 
     ![Select service](./chrome-network.png)
 
@@ -208,7 +209,7 @@ This page will display all existing purchase orders in a list.
 ```JavaScript
 // INSERT IN STEP 2 OF THE NEXT TUTORIAL
 onClickPO: function (oEvent) {
-  var oApp = this.getView().getContent()[0];
+  var oApp = this.getView().getContent()[0].getApp();
   var sBindingPath = oEvent.getSource().getBindingContext().getPath();
   var oDetailsPage = oApp.getPages()[1].bindElement(sBindingPath);
   oApp.to(oDetailsPage.getId());
@@ -218,7 +219,7 @@ onClickPO: function (oEvent) {
 2.  Also add an event handler to navigate back to the first page
 ```JavaScript
 onNavButtonPress: function (oEvent) {
-  var oApp = this.getView().getContent()[0];
+  var oApp = this.getView().getContent()[0].getApp();
   var oStartPage = oApp.getPages()[0];
   oApp.back(oStartPage.getId());
 },

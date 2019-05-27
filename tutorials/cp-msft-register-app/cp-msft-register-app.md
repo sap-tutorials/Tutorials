@@ -40,9 +40,8 @@ Click on **New Registration** on the upper left corner.
 
 
 1. You should now give your application a certain name. This name will be visible when the user logs into your app for the very first time.
-2. Make sure the **Supported account types** are set to **
-Accounts in any organizational directory and personal Microsoft accounts** to allow the usage of personal accounts.
-3. Add the URL of your SAPUI5 application you have deployed in the previous tutorial.
+2. Make sure the **Supported account types** are set to **Accounts in any organizational directory and personal Microsoft accounts** to allow the usage of personal accounts.
+3. Add the URL of your SAPUI5 application you have deployed in the previous tutorial. Make sure to copy the entire URL including the `/index.html` suffix.
 4. Proceed with **Register**.
 
 ![portal app name](./ms-portal-app-name.png)
