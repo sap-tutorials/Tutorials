@@ -11,21 +11,21 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ### You will learn
 
- - How to scaffold your application
- - About the project's structure
- - How to run the application locally
+- How to scaffold (create from a template) your application
+- About the project's structure
+- How to run the application locally
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Scaffold an application)]
 
-To create an `express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our TypeScript scaffolding application as follows.
+To create an `express.js` ([a minimal Node.js web application framework](https://expressjs.com/)) application that already contains all the files and configuration you need to use the SAP S/4HANA Cloud SDK for JavaScript, simply clone our TypeScript scaffolding application as follows:
 
 ```Shell
 git clone --single-branch --branch scaffolding-ts --origin scaffolding https://github.com/SAP/cloud-s4-sdk-examples.git <path/to/your/project>
 ```
 
-and enter the freshly cloned project:
+Then enter the freshly cloned project:
 
 ```Shell
 cd <path/to/your/project>
@@ -49,8 +49,8 @@ The project contains the following files and folders, among others, to get you s
 
 ### NPM / Project
 
-- **`package.json`**: Specifies dependencies, metadata and user-defined scripts. The provided scaffolding comes with some predefined scripts and dependencies, that will be explained in detail in the course of this group of tutorials.
-- **`.npmrc`**: The **`npm`** configuration file. In the scaffolding we specify the registry for the `@sap` scope, where the `SAP Cloud SDK` libraries are published.
+- **`package.json`**: Specifies dependencies, metadata and user-defined scripts. The provided scaffolding comes with some predefined scripts and dependencies, that will be explained in detail in the course of this group of tutorials. The scripts starting with `ci-` are used by the Continuous Delivery pipeline. We recommend not changing them for
+- **`.npmrc`**: The **`npm`** configuration file. In the scaffolding we specify the registry for the `@sap` scope, where the `SAP S/4HANA Cloud SDK` libraries are published. The registry for the SAP Cloud SDK for JavaScript is `https://npm.sap.com`. Please always double-check the registries specified in `.npmrc` file that you have not created yourself!
 
 ### TypeScript
 
@@ -90,6 +90,9 @@ npm run start:local
 ```
 
 Go to `http://localhost:8080/hello` and you should get a 'Hello, World!' in response.
+To stop the server again, press `ctrl + c` in your command line.
+Alternatively, you also use `watch:local` instead of `run:local`.
+This will run the server and will automatically restart and update it whenever you change some of the source files.
 
 [DONE]
 [ACCORDION-END]
@@ -102,6 +105,7 @@ If you already have an existing project, you will need to specify the registry f
 @sap:registry=https://npm.sap.com
 ```
 
+**Note:** Please be cautious when adding registries to your `npm` configuration and make sure that you trust the registry!
 Now you can install the necessary libraries, first of all the `@sap/cloud-sdk-core`, the heart of the `SAP Cloud SDK for JavaScript` and basis for the service libraries you might want to use.
 
 ```Shell
@@ -122,3 +126,7 @@ That's it! You should now have a running application that is ready to be integra
 [ACCORDION-END]
 
 ---
+
+This tutorial is part of a larger series.
+You can find the next entry [here](Create Your First Application with SAP Cloud SDK for JavaScript).
+For questions, you can reach out to us on [`StackOverflow`](https://stackoverflow.com/) using the tag [sap-cloud-sdk](https://stackoverflow.com/questions/tagged/sap-cloud-sdk) and on [answers.sap.com](https://answers.sap.com) using the tag [SAP S/4HANA Cloud SDK](https://answers.sap.com/tags/73555000100800000895).
