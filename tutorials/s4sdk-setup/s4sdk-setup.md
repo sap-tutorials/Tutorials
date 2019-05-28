@@ -1,29 +1,18 @@
 ---
-title: Set up your local infrastructure to develop with SAP Cloud SDK
+title: Set Up Your Local Infrastructure to Develop with SAP Cloud SDK
 description: Set up your system to create an SAP Cloud Platform application with the SAP Cloud SDK.
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
+time: 10
 ---
 
-
-## Prerequisites  
- - **Proficiency:** intermediate
-
-## Next Steps
-Choose your next step depending on whether you would like to deploy to Cloud Foundry or Neo:
-  - **Tutorial for Cloud Foundry:** [Create a sample application on Cloud Foundry using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html)
-  - **Tutorial for Neo:** [Create a sample application on SCP Neo using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html)
-
 ## Details
-For a complete overview visit the [SAP Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
-
 ### You will learn  
 In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/s4hana-cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
 
+For a complete overview visit the [SAP Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
-### Time to Complete
-**10 Min**
 
 ---
 

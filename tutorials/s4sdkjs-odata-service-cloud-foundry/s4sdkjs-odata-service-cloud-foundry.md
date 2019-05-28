@@ -3,7 +3,7 @@ title: Create Your First Application with SAP Cloud SDK for JavaScript
 description: Learn the fundamentals of the SAP Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript]
+tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 

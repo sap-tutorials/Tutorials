@@ -3,7 +3,7 @@ title: Get Set to Use SAP Cloud SDK for JavaScript
 description: Set up your environment to use SAP Cloud SDK for JavaScript.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript]
+tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
@@ -80,3 +80,4 @@ That's it, you are now ready to start developing your own application with the `
 This tutorial is part of a larger series.
 You can find the next entry [here](Get Started with SAP Cloud SDK for JavaScript).
 For questions, you can reach out to us on [`StackOverflow`](https://stackoverflow.com/) using the tag [sap-cloud-sdk](https://stackoverflow.com/questions/tagged/sap-cloud-sdk) and on [answers.sap.com](https://answers.sap.com) using the tag [SAP S/4HANA Cloud SDK](https://answers.sap.com/tags/73555000100800000895).
+
