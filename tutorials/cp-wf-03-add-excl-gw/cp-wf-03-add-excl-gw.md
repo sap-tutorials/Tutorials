@@ -234,3 +234,15 @@ With that, you're pretty much done. You may wish to experiment further with the 
 
 [DONE]
 [ACCORDION-END]
+
+### Pre-TechEd Contest
+
+Thank you for completing this mission, which gives you  the option of entering a drawing for a chance to win a free SAP TechEd pass (includes show floor and lectures access only) to the location of your choice.
+
+You can register for the drawing for **_either_** Las Vegas, Barcelona, or Bangalore -- **but not for more than 1 site**.
+
+Choose one of the following:
+
+-  [Registration form for Las Vegas](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttelas/index.html)
+-  [Registration form for Barcelona](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttebgl/index.html)
+-  [Registration form for Bangalore](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttebcn/index.html)
