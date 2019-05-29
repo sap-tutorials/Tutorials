@@ -246,3 +246,5 @@ Choose one of the following:
 -  [Registration form for Las Vegas](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttelas/index.html)
 -  [Registration form for Barcelona](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttebgl/index.html)
 -  [Registration form for Bangalore](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttebcn/index.html)
+
+### &nbsp;
