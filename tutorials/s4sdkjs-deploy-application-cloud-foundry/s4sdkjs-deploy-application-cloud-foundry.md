@@ -1,6 +1,6 @@
 ---
 title: Deploy Application to Cloud Foundry with SAP Cloud SDK for JavaScript
-description: Deploy an existing application to Cloud Foundry in SAP Cloud Platform.
+description: Deploy an existing application and deploy it to Cloud Foundry in SAP Cloud Platform.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript ]
@@ -24,6 +24,8 @@ In your command line, run:
 ```Shell
 npm run ci-build && npm run ci-package
 ```
+
+>**Note:** We are aware, that the `ci-package` script currently does not work when executed in Windows' CMD. Currently, the easiest workaround is to install a `bash` on your system (by default, `git` for Windows comes with [Git Bash](https://gitforwindows.org/)) and configure npm to execute scripts in that bash. This can be done by executing `npm config script-shell <P:\ath\to\your\bash.exe>`.
 
 In order to deploy our application, we first need to login to `Cloud Foundry` in `SAP Cloud Platform` using the **`cf` CLI**. First we need to set an `API` endpoint. Depending on the region in which you have created your account, choose one of the following `API` endpoints:
 
@@ -217,9 +219,4 @@ When you now call the `/business-partners` route of your app, the Business Partn
 
 [ACCORDION-END]
 
-
-
 ---
-
-This tutorial is part of a larger series.
-For questions, you can reach out to us on [`StackOverflow`](https://stackoverflow.com/) using the tag [sap-cloud-sdk](https://stackoverflow.com/questions/tagged/sap-cloud-sdk) and on [answers.sap.com](https://answers.sap.com) using the tag [SAP S/4HANA Cloud SDK](https://answers.sap.com/tags/73555000100800000895).
