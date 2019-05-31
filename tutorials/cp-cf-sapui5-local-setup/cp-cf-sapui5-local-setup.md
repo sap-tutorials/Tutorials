@@ -9,7 +9,7 @@ primary_tag: topic>sapui5
 
 ## Prerequisites
  - [Install Node.js](https://nodejs.org/en/download/)
- - [[Only for Windows users]Install Chocolaty](https://chocolatey.org/)
+ - [[Only for Windows users] Install Chocolatey](https://chocolatey.org/)
 
 ## Details
 ### You will learn
