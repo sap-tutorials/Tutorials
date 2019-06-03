@@ -21,7 +21,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add an API Endpoint)]
+[ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
 Create a file called `create-business-partner-address-route.ts` in the `src` folder of your application. Then, copy the following code into it:
 
@@ -65,7 +65,7 @@ Restart your server and send a `POST` request to `http://localhost:8080/business
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Business Partner Address)]
+[ACCORDION-BEGIN [Step 2: ](Create a business partner address)]
 
 Next, we use the VDM to create a new business partner address. Open `create-business-partner-address-route.ts` and add the following function:
 
@@ -84,7 +84,7 @@ The `create` function takes as parameter the entity that should be created. When
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Build a Business Partner Address from the Request)]
+[ACCORDION-BEGIN [Step 3: ](Build a business partner address from the request)]
 
 So far, there's an API endpoint and a function that takes an address and creates it in SAP S/4HANA Cloud. To connect the two, we need a function that constructs a `BusinessPartnerAddress` object. Add the following function to your code:
 
@@ -101,7 +101,7 @@ This function takes some form of body and a business partner ID. First, using th
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Wire Everything Up)]
+[ACCORDION-BEGIN [Step 4: ](Wire everything up)]
 
 With all the building blocks in place, you can connect everything in the `createBusinessPartnerAddressRoute` function. Your final code should look like this:
 
@@ -153,7 +153,7 @@ If there is a business partner with ID "1" in your destination system, this will
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Optional: Deep Create)]
+[ACCORDION-BEGIN [Step 5: ](Optional: Deep create)]
 
 The VDM also supports creating an entity together with related entities in a single request. In OData lingo, this is called "deep create". Consider the following example, where a business partner is created together with one related address:
 
