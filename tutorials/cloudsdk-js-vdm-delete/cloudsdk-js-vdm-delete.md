@@ -21,7 +21,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add an API Endpoint)]
+[ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
 Start by creating a new file called `delete-business-partner-address-route.ts` and copy the following code into it:
 
@@ -75,7 +75,7 @@ Note, that we used `router.delete` for this route, so we need to send a `DELETE`
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Delete a Business Partner Address)]
+[ACCORDION-BEGIN [Step 2: ](Delete a business partner address)]
 
 Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.ts` and overwrite `delete-business-partner-address` as shown below:
 
