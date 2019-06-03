@@ -22,7 +22,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add an API Endpoint)]
+[ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
 Start by creating a new file called `single-business-partner-route.ts` in the `src` folder of your project. Then, copy the following code into it:
 
@@ -60,7 +60,7 @@ Now you can start your app again with `npm run start:local` and open `http://loc
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get a Single Business Partner)]
+[ACCORDION-BEGIN [Step 2: ](Get a single business partner)]
 
 Next, you will implement a function to get a single business partner by its ID. Open `single-business-partner-route.ts` and add the following function to your code:
 
@@ -79,7 +79,7 @@ As before, we call `BusinessPartner.requestBuilder()` to select the type of requ
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Select to the Request)]
+[ACCORDION-BEGIN [Step 3: ](Add select to the request)]
 
 As in the `getAll` case, we can again select the specific properties of the entity that we're interested in. Add a select statement to your code as shown below:
 
@@ -106,7 +106,7 @@ function getBusinessPartner(businessPartnerId: string): Promise<BusinessPartner>
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Expand to the Business Partner Address)]
+[ACCORDION-BEGIN [Step 4: ](Expand to the business partner address)]
 
 So far, we have only retrieved business partners. Since the application should be an address manager, we also need to get the addresses of a business partners. In the metadata, the `BusinessPartnerAddress` entity is modelled as a so-called "navigation property" of `BusinessPartner`. This means that there is a relation between a business partner and their addresses. In this case, one business partner can have multiple addresses.
 
@@ -169,7 +169,7 @@ Note, that the properties of the business partner address entity are offered by 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Wire Everything Up)]
+[ACCORDION-BEGIN [Step 5: ](Wire everything up)]
 
 Now that you've finished implementing the function, you only need to call it in `singleBusinessPartnerRoute`. Your final code should look like this:
 
