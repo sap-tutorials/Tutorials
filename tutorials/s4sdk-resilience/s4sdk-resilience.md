@@ -2,7 +2,7 @@
 title: Create Tests for Hystrix-based Command
 description: Introduce resilience to your application using the SAP Cloud SDK.
 auto_validation: true
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java  ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 time: 15
 ---
