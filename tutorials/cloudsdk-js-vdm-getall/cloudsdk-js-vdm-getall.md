@@ -22,7 +22,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is the OData Virtual Data Model?)]
+[ACCORDION-BEGIN [Step 1: ](What is the OData virtual data model?)]
 
 Most of the services exposed by SAP S/4HANA Cloud and On-Premise are OData services. OData is a [RESTful API protocol](https://www.odata.org/) that has two key features: First, each services is described by a metadata document that lists all entities, their properties and relations, and which operations can be executed on them. Second, OData defines a set of SQL-like operators that allow constructing powerful queries.
 
@@ -33,7 +33,7 @@ The Virtual Data Model is a set of API clients that are generated from a service
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set Up your Application)]
+[ACCORDION-BEGIN [Step 2: ](Set up your application)]
 
 This tutorial and the following ones in this group are based on the SAP Cloud SDK's [TypeScript project scaffolding](https://github.com/SAP/cloud-s4-sdk-examples/tree/scaffolding-ts). We have described how to set it up in a [previous tutorial](s4sdkjs-getting-started). Go ahead and download the project scaffolding as starting point for these tutorials.
 
@@ -48,7 +48,7 @@ Starting with version `1.4.0` of the SAP Cloud SDK for JavaScript, you can also 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add an API Endpoint)]
+[ACCORDION-BEGIN [Step 3: ](Add an API endpoint)]
 
 Start by creating a file called `business-partners-route.ts` in the `src` folder of the project. Copy the following code into the file:
 
@@ -85,7 +85,7 @@ Now you can start your app using `npm run start:local` or `npm run serve-debug`.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Query the Business Partner Service)]
+[ACCORDION-BEGIN [Step 4: ](Query the business partner service)]
 
 Every request you can do with the VDM follows a common pattern. You start with the entity that you want to perform a request on, in this case `BusinessPartner`. To build a request, call the `requestBuilder` function. Next, you can select which request to build. OData, as RESTful API protocol, follows the CRUD model: Create, Read, Update, Delete. For reading, we differentiate between querying the service, where you get all available entities if you don't specifically restrict the result set, and retrieving a specific entity by its key. The respective functions are called `getAll` and `getByKey`. For the remaining requests, the functions are simply called `create`, `update` and `delete`. When you type `BusinessPartner.requestBuilder().`, your IDE should show which operations are available on the respective entity. For example, it is not possible to delete a business partner via the business partner service. Therefore, the VDM will not offer a `delete` function.
 
@@ -122,7 +122,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add Authentication to the Request)]
+[ACCORDION-BEGIN [Step 5: ](Add authentication to the request)]
 
 Typically, you will need to authenticate yourself against a system in order to successfully execute a request. If you have a technical user for your system, you can pass the credentials like this:
 
@@ -160,7 +160,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add Select to the Request)]
+[ACCORDION-BEGIN [Step 6: ](Add select to the request)]
 
 Like SQL, OData allows to only select specific properties of an entity. For our address manager, we only want to know the ID, the first name and the last name of a business partner. Add a select statement to your request like this:
 
@@ -186,7 +186,7 @@ As you can see, each property we select is represented by an object on the `Busi
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a Filter to the Request)]
+[ACCORDION-BEGIN [Step 7: ](Add a filter to the request)]
 
 Business partners can either be natural persons or legal persons (e.g. organizations or companies). For the address manager, we only want the addresses of natural persons. Therefore, we need to a filter to our request. Modify your code like this:
 
@@ -215,7 +215,7 @@ As for `select`, you can use the properties of the `BusinessPartner` entity dire
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Optional: Complex Filters)]
+[ACCORDION-BEGIN [Step 8: ](Optional: Complex filters)]
 
 While this not required for the address manager, it's a good time to introduce complex filters. By default, multiple filter statements passed to the `filter` function will be combined with a logical `AND`. For example, the following code will only retrieve business partners that are natural persons and whose first name is not "John":
 
@@ -273,7 +273,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Optional: Custom Fields)]
+[ACCORDION-BEGIN [Step 9: ](Optional: Custom fields)]
 
 The OData services in SAP S/4HANA Cloud can be extended by so-called custom fields. A custom field is any property that is not present in the default metadata of a service. Therefore, custom fields are of not "known" to the VDM. However, we still offer the same level of convenience for `select` and `filter`.
 
@@ -323,7 +323,7 @@ Note, that you cannot use a field name that already exists. For example, if you 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Wire Everything Up)]
+[ACCORDION-BEGIN [Step 10: ](Wire everything up)]
 
 You've finished the implementation of `getAllBusinessPartners`! To make the result available to clients, you need to call the function in `businessPartnersRoute` and send the result to clients. Update `business-partners-route.ts` so that it looks like this:
 
