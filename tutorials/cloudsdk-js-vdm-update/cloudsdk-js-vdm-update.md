@@ -21,7 +21,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add an API Endpoint)]
+[ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
 Create a file called `update-business-partner-address-route.ts` in the `src` folder of your application. Then, copy the following code into it:
 
@@ -80,7 +80,7 @@ Note, that we used `router.put` for this route, so we need to send a `PUT` reque
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Update a Business Partner Address)]
+[ACCORDION-BEGIN [Step 2: ](Update a business partner address)]
 
 Next, we use the VDM to update an existing business partner address. Open `update-business-partner-address-route.ts` and overwrite the `updateBusinessPartnerAddress` function as shown below:
 
@@ -109,7 +109,7 @@ This will update the business partner address and set its `CityName` to `"Berlin
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Optional: Concurrency and Version Identifiers)]
+[ACCORDION-BEGIN [Step 3: ](Optional: Concurrency and version identifiers)]
 
 In the example presented here, we don't do anything with the `BusinessPartnerAddress` returned by the update request. In a real-world application, it is recommend to store the entity somewhere. Whenever an entity is received from a service, the VDM will keep track of this state (we call it remote state). If you change the entity locally and then send an update request, the VDM will only send the difference between the current local state and the last known remote state.
 
