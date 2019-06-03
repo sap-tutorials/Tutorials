@@ -119,7 +119,7 @@ tensorflow/serving/iris    1.0.0  xxxxxxxxxxxx        8 minutes ago       230MB
 ```
 
 > ### **Waring:**
-> If there is no ***`tensorflow/serving/iris`*** image listed in the output, then you will need to complete [Build a TensorFlow Serving Docker Image to host the Iris model](hxe-aws-eml-04-iris-04) again.
+> If there is no ***`tensorflow/serving/iris`*** image listed in the output, then you will need to complete [Build a TensorFlow Serving Docker Image to host the Iris model](hxe-aws-eml-05-iris-04) again.
 
 Now, let's tag the image with the repository ID.
 
