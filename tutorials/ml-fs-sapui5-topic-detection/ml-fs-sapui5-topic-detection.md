@@ -47,7 +47,7 @@ To get to your API Sandbox URL, click on the **Details** tab.
 The API Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/mlfs/api/v2/text
+https://sandbox.api.sap.com/mlfs/api/v2/text/topic-detection
 ```
 
 To get to your API key, click on the **Show API Key** button.
@@ -125,7 +125,7 @@ Field Name           | Value
 Name                 | `sapui5ml-api`
 Type                 | `HTTP`
 Description          | `SAP Leonardo Machine Learning APIs`
-URL                  | `https://sandbox.api.sap.com/ml`
+URL                  | `https://sandbox.api.sap.com/mlfs/api/v2`
 Proxy Type           | `Internet`
 Authentication       | `NoAuthentication`
 
@@ -141,7 +141,7 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
-You should receive a ***connection established*** message with potentially a ***404: Not Found*** response which is normal.
+You should receive a ***connection established*** message with potentially a ***401: Unauthorized*** response which is normal.
 
 [DONE]
 [ACCORDION-END]
