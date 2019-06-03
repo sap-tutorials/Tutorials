@@ -329,7 +329,7 @@ We are delegating the management of some resources to the container, like the ma
        path: srv
        [...]
        requires:
-        - name: bookshop-hdi-container
+        - name: bookshop-db-hdi-container
           properties:
              JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomee/webapps/ROOT/WEB-INF/resources.xml:
                 {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
@@ -340,6 +340,8 @@ We are delegating the management of some resources to the container, like the ma
     ```
 
     > The deployment of the whole application as an MTA is defined in the `mta.yaml` file. So we define `TomEE` as the runtime for the Java backend in this file.
+
+    > **Note:** The hdi-container and srv module names used in this sample are for representational purposes. Please ensure that the names used in your `mta.yaml` match.
 
 3. Save the file.
 4. Next, open `srv/src/main/webapp/META-INF/sap_java_buildpack/config/resource_configuration.yml`.

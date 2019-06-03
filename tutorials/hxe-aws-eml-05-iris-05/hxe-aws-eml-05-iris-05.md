@@ -26,7 +26,7 @@ For more details on Amazon Elastic Container Service (ECS), please check the fol
 
 > ### **Warning:**
 As SageMaker Notebook instance storage is ephemeral, anytime you restart it, you will loose all local files (except the ones in the SageMaker directory).
->Therefore, your local Iris container created during [Build a TensorFlow Serving Docker Image to host the Iris model](hxe-aws-eml-04-iris-04) was dropped and you will need to complete the tutorial again.
+>Therefore, your local Iris container created during [Build a TensorFlow Serving Docker Image to host the Iris model](hxe-aws-eml-05-iris-04) was dropped and you will need to complete the tutorial again.
 
 [ACCORDION-BEGIN [Step 1: ](Access the SageMaker Notebook instance)]
 
@@ -119,7 +119,7 @@ tensorflow/serving/iris    1.0.0  xxxxxxxxxxxx        8 minutes ago       230MB
 ```
 
 > ### **Waring:**
-> If there is no ***`tensorflow/serving/iris`*** image listed in the output, then you will need to complete [Build a TensorFlow Serving Docker Image to host the Iris model](hxe-aws-eml-04-iris-04) again.
+> If there is no ***`tensorflow/serving/iris`*** image listed in the output, then you will need to complete [Build a TensorFlow Serving Docker Image to host the Iris model](hxe-aws-eml-05-iris-04) again.
 
 Now, let's tag the image with the repository ID.
 

@@ -19,11 +19,7 @@ time: 15
 4. Search for the **Workflow** service. Then select it, and choose **Fiori Launchpad (Default Site)**.
     > For a global account, you can configure a user's access rights to the SAP Fiori launchpad using the Portal service.
 
-5. In the SAP Fiori launchpad, open your user menu (person icon).
-
-    ![Open User Menu](open-user-menu.png)
-
-6. Choose **App Finder**.
+5. In the SAP Fiori launchpad, open your user menu (person icon) and choose **App Finder**.
 
     ![Choose App Finder](choose-app-finder.png)
 
@@ -55,7 +51,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
 
     >Because the workflow you modelled contains only a start and an end event, starting an instance is immediately completed and therefore not visible under "Show instances". (You can still retrieve completed instances through the REST API.)
 
-    >Excursion: When you start a workflow, you can provide a JSON structure as input data. These JSON objects get stored within the workflow as context data. You can use them throughout the workflow, for example, in gateways, user tasks, or service tasks. For more information about handling workflow data, see [Managing Workflows Using the Monitor Workflows App] (https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/e6163e119ba645d0ae6a31022b670381.html).
+    >Additional Information: When you start a workflow, you can provide a JSON structure as input data. These JSON objects get stored within the workflow as context data. You can use them throughout the workflow, for example, in gateways, user tasks, or service tasks. For more information about handling workflow data, see [Managing Workflows Using the Monitor Workflows App] (https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/e6163e119ba645d0ae6a31022b670381.html).
 
 [DONE]
 [ACCORDION-END]
@@ -97,10 +93,10 @@ You now see the apps on your SAP Fiori launchpad homepage.
 
     ![Add Subject](add-subject.png)
 
-6. Under **Recipients**, define who will receive the task. Enter your user ID exactly as displayed in the user info.
+6. Under **Recipients**, define who will receive the task. Enter your user ID exactly as displayed in the **User Information** popup of your subaccount in the SAP Cloud Platform cockpit.
     > The field is case sensitive.
 
-7. Under **User Interface**, enter dummy entries (**`test`**) for the application and component names of the SAPUI component, which displays the task in the inbox.
+7. Under **User Interface**, enter dummy entries ( **`test`** ) for the application and component names of the SAPUI component, which displays the task in the inbox.
 
     ![Add User Interface](add-user-interface.png)
 

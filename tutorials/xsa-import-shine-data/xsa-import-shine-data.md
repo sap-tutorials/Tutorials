@@ -72,7 +72,7 @@ Right-click on the database module and choose **Open HDI Container**
 
 You can now navigate the tables and check their content. Click on **Open Data** for table `TCURC`
 
-![HRTT](10.png)
+![HRTT](12.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
