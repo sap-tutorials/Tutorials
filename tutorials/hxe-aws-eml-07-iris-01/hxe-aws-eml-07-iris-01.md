@@ -1,9 +1,9 @@
 ---
 title: Consume your Iris TensorFlow Model from SAP HANA, express edition
 description: Provide details on the consumption from SAP HANA, express edition of the model trained using Amazon SageMaker, then deployed in Amazon ECS with the TensorFlow Serving Docker image.
+primary_tag: topic>machine-learning
 auto_validation: true
-primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\, express-edition, products>sap-hana ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
 time: 15
 ---
 
@@ -22,10 +22,22 @@ Using the **HXE** connection with the **`ML_USER`** user credentials, execute th
 INSERT INTO _SYS_AFL.EML_MODEL_CONFIGURATION VALUES('iris' , 'RemoteSource', 'TensorFlow');
 ```
 
-As a reminder, you can connect using the SAP Web IDE or using HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
-
-```shell
+> ### **Note:**
+>
+As a reminder, you can execute your SQL statements using the SAP Web IDE (as described in [Prepare for Machine Learning](hxe-aws-eml-04)) :
+>
+ - `https://hxehost:53075`
+>
+Or use HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
+>
+```
 hdbsql -n localhost:39015 -u ML_USER -p Welcome19Welcome19
+```
+>
+When using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
+>
+```
+\mu
 ```
 
 Now that a new model configuration was added, you will need to reload the EML configuration as this one is only loaded at the SAP HANA, express edition startup time.
@@ -138,12 +150,6 @@ INSERT INTO IRIS_PARAMS   VALUES ('Deadline', '10000');
 
 -- Call the TensorFlow model
 CALL MY_IRIS (IRIS_PARAMS, IRIS.IRIS_TEST, IRIS_RESULTS) WITH OVERVIEW;
-```
-
-> ### **Note:**: If you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
->
-```sql
-\mu
 ```
 
 You can note the following:
