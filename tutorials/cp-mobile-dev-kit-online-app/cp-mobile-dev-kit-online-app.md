@@ -10,7 +10,7 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- [Setup initial configuration for an MDK App in SAP Cloud Platform Mobile Services](cp-mobile-dev-kit-ms-setup)
+- [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
 - [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
 - [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
 - Download and install **SAP Mobile Services Client** on your [iPhone](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8)
@@ -35,11 +35,11 @@ This includes creating the Mobile Development Kit project in the Editor.
 
 Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-Right click on Workspace folder and select **New** | **MDK Base Project**.
+Right-click on `Workspace` folder and select **New** | **MDK Base Project**.
 
 ![MDK](img_001.png)
 
-Enter the Project Name as `MDKOnlineApp` and click **Next**.
+Enter the **Project Name** as `MDKOnlineApp` and click **Next**.
 
 ![MDK](img_002.png)
 
@@ -92,19 +92,19 @@ This is how the project structure looks like within the workspace.
 
 ![MDK](img_007.png)
 
-These are the metadata definitions available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these -
+These are the metadata definitions available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
 
-**`CreateService.action`**: This action binds the OData service to your application.
+  - **`CreateService.action`**: This action binds the OData service to your application.
 
-**`OpenService.action`**: This action allows your application to see the data within the OData service.
+  - **`OpenService.action`**: This action allows your application to see the data within the OData service.
 
-**`CreateOpenService Success & Failure Message action`**: Here are some messages showing up in the app on a successful or failure of application data service initialization.
+  - **`CreateOpenService Success & Failure Message action`**: Here are some messages showing up in the app on a successful or failure of application data service initialization.
 
-**`Main.page`**: This is the first page of your Mobile Development Kit application that is shown. For this application we will use this as a launching page to get to application functionality. We will add the logout action to this page.
+  - **`Main.page`**: This is the first page of your Mobile Development Kit application that is shown. For this application we will use this as a launching page to get to application functionality. We will add the logout action to this page.
 
-**`OnWillUpdate.js`**: MDK applications automatically download updates and apply them to the client without the end-user needing to take any action. The `OnWillUpdate` rule empowers the user to run business logic before the new definitions are applied. This allows the application designer to include logic to prompt the user to accept or defer applying the new definitions based on their current activity. For example, if the end-user is currently adding new customer details or in the middle of a transaction, they will be able to defer the update. The application will prompt again the next time it checks for updates.
+  - **`OnWillUpdate.js`**: MDK applications automatically download updates and apply them to the client without the end-user needing to take any action. The `OnWillUpdate` rule empowers the user to run business logic before the new definitions are applied. This allows the application designer to include logic to prompt the user to accept or defer applying the new definitions based on their current activity. For example, if the end-user is currently adding new customer details or in the middle of a transaction, they will be able to defer the update. The application will prompt again the next time it checks for updates.
 
-**`Application.app`**: this is the main configuration file for your application from within SAP Web IDE. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
+  - **`Application.app`**: this is the main configuration file for your application from within SAP Web IDE. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
 >You can find more details about [metadata definitions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/78e21fae61044df8ae8a78a43157fe8f.html).
 
@@ -126,7 +126,7 @@ Open the application settings in the application editor by double clicking on th
 
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right-click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
 ![MDK](img_009.png)
 

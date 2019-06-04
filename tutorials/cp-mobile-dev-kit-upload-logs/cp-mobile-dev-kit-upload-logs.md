@@ -1,6 +1,6 @@
 ---
 title: Upload Logs from an MDK App
-description: Allow uploading logs from an MDK app.
+description: Allow users to upload logs from an MDK app to SAP Cloud Platform Mobile Services.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -8,9 +8,6 @@ time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
-
-## Prerequisites
-- [Define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation)
 
 ## Details
 ### You will learn
@@ -20,7 +17,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Define Client Log Policy in Mobile Services Cockpit )]
+[ACCORDION-BEGIN [Step 1: ](Define client log policy in Mobile Services cockpit )]
 
 SAP Cloud Platform Mobile Services provides administrators, developers and support staff with extensive logs and traces functionality to troubleshoot application issues. You can control the amount of information that is captured by setting the log level for individual logging components.
 
@@ -41,7 +38,7 @@ Login to [Mobile Services Cockpit](fiori-ios-hcpms-setup), click `com.sap.mdk.de
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Log Actions)]
+[ACCORDION-BEGIN [Step 2: ](Create log actions)]
 
 Logs help you trace events that occur while your application is running. You can create logging actions, set their priority levels and upload stored log entries.
 
@@ -59,7 +56,7 @@ You will create 3 actions:
 
 First, create a log action of type `SetState`:
 
-Right click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
 
 ![MDK](img_004.png)
 
@@ -77,7 +74,7 @@ Click **Next** and then **Finish** on the confirmation step.
 
 Next, create a log action of type `SetLevel`:
 
-Right click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
 
 Provide the below information:
 
@@ -93,7 +90,7 @@ Click **Next** and then **Finish** on the confirmation step.
 
 Next, create a log action of type `Upload`:
 
-Right click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
 
 Provide the below information:
 
@@ -109,7 +106,7 @@ Click **Next** and then **Finish** on the confirmation step.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Bind Set Level Log action to the success of Set State action)]
+[ACCORDION-BEGIN [Step 3: ](Bind Set Level log action to the success of Set State action)]
 
 Double click on the `LogSetState.action` file | expand **Common Action Properties** and select `LogSetLevel.action` for **Success Action**.
 
@@ -120,7 +117,7 @@ Click **Save**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Set State Log action at App OnLaunch)]
+[ACCORDION-BEGIN [Step 4: ](Add Set State log action at app OnLaunch)]
 
 You will add `LogSetState.action` at application on launch event so that when your app can start gathering logs on launch.
 
@@ -141,13 +138,13 @@ Click **Save**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Define success and failure messages for Log Upload action)]
+[ACCORDION-BEGIN [Step 5: ](Define success/failure messages for Log Upload action)]
 
 You will define two message actions for displaying success or failure when _Log upload action_ is triggered. Later, you will bind these actions in **Common Action Properties** of `LogUpload.action`.
 
 First, you will create a success message action.
 
-Right click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
 
 Provide the below information:
 
@@ -167,7 +164,7 @@ Click **Next** and then **Finish** on the confirmation step.
 
 Next, create a failure message action.
 
-Right click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
 
 Provide the below information:
 
@@ -226,7 +223,7 @@ Save the changes to the `Main` page.
 
 Deploy the updated application to your MDK client.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
+Right-click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
 
 >Make sure to select same App ID as you chose in previous tutorial.
 
@@ -245,7 +242,7 @@ Click **Upload Logs** to upload client logs from app to SAP Cloud Platform Mobil
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Examine the uploaded logs in Mobile Services Cockpit)]
+[ACCORDION-BEGIN [Step 8: ](Examine uploaded logs in Mobile Services cockpit)]
 
 Open SAP Cloud Platform Mobile Services Cockpit, click **Analytics** | **Logs**.
 

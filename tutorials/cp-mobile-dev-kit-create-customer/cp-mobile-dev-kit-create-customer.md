@@ -1,6 +1,6 @@
 ---
-title: Create a customer record in an MDK App
-description: Allow creating of customer record in an MDK app.
+title: Create a Customer Record in an MDK App
+description: Allow the user to create a customer record in an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -10,7 +10,7 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- [Define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation)
+- You have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
 
 ## Details
 ### You will learn
@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new page for adding a new customer record)]
+[ACCORDION-BEGIN [Step 1: ](Create new page for new customer record)]
 
 In this step, you will create the _Create Customer_ page as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
 
@@ -108,7 +108,7 @@ Provide the below information:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add cancel button on the Create Customer page)]
+[ACCORDION-BEGIN [Step 2: ](Add cancel button on create customer page)]
 
 Now, you will add a button on the Create Customer page and set it's `onPress` to **Close Page-Cancel action**.
 

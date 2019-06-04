@@ -1,6 +1,6 @@
 ---
-title: Delete a customer record in an MDK App
-description: Allow deleting of a customer record in an MDK app.
+title: Delete a Customer Record in an MDK App
+description: Allow the user to delete a customer record in an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -8,9 +8,6 @@ time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
-
-## Prerequisites
-- [Define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation)
 
 ## Details
 ### You will learn
@@ -142,7 +139,7 @@ In `CustomerDetail` page, drag and drop an **Action Bar Item** to the upper righ
 
 >**Action Bar Item** is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (normally at the top of the page).
 
-Next, In the Properties pane, click the **link icon** to open the object browser for the **System Item** property.
+Next, in the Properties pane, click the **link icon** to open the object browser for the **System Item** property.
 
 Double click on the **Trash** type and click **OK**.
 
