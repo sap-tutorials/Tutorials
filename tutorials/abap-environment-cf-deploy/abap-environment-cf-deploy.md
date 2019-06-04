@@ -16,7 +16,7 @@ author_profile: https://github.com/niloofar-naseri
 ## Details
 ### You will learn  
   - How to create UI on Neo
-  - How to deploy the UI form Neo to the Cloud Foundry
+  - How to deploy the UI from Neo to the Cloud Foundry
 
 ---
 
@@ -137,11 +137,11 @@ author_profile: https://github.com/niloofar-naseri
 
 [ACCORDION-BEGIN [Step 4: ](Adapt neo-app.json and xs-app.json)]
 
-  1. Open `neo-app.json` file and change the `welcmeFile` form `/webapp/test/flpSandbox.html` to `/webapp/index.html`.
+  1. Open `neo-app.json` file and change the `welcmeFile` from `/webapp/test/flpSandbox.html` to `/webapp/index.html`.
 
       ![neo-app](neo-app.png)
 
-  2. Open `xs-app.json` file and change the `welcmeFile` form `/test/flpSandbox.html` to `index.html`. In routes change `authenticationType` to  `xsuaa` and `service` to `abapcp` and remove `destination`. If there is no `service`, you can add it yourself.
+  2. Open `xs-app.json` file and change the `welcmeFile` from `/test/flpSandbox.html` to `index.html`. In routes change `authenticationType` to  `xsuaa` and `service` to `abapcp` and remove `destination`. If there is no `service`, you can add it yourself.
 
       ![xs-app](xs-app.png)
 
