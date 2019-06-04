@@ -1,5 +1,5 @@
 ---
-title: Set up your SAP HANA, express edition environment - Prepare to use Machine Learning
+title: Setup SAP HANA, express edition - Prepare for Machine Learning (AWS / EML)
 description: In your SageMaker Notebook instance, download and install the SAP HANA client and the Python driver to connect to your SAP HANA, express edition instance.
 primary_tag: topic>machine-learning
 auto_validation: true

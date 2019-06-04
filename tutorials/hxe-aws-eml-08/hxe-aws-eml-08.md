@@ -1,9 +1,9 @@
 ---
-title: Cleanup before you leave
+title: Cleanup before you leave (AWS / EML)
 description: Understand the element to cleanup or stop before you leave or pause
-primary_tag: products>sap-hana\,-express-edition
+primary_tag: topic>machine-learning
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
 time: 10
 ---
 

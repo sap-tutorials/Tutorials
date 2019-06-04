@@ -1,9 +1,9 @@
 ---
-title: Configure the TensorFlow Integration (SAP HANA EML) with SAP HANA, express edition
+title: Configure the SAP HANA TensorFlow Integration (SAP HANA EML)
 description: Provide details on the installation and configuration of the SAP HANA External Machine Learning Library with SAP HANA, express edition.
+primary_tag: topic>machine-learning
 auto_validation: true
-primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\, express-edition, products>sap-hana ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
 time: 15
 ---
 
@@ -76,17 +76,31 @@ SELECT * FROM "SYS"."AFL_PACKAGES" WHERE AREA_NAME = 'EML';
 SELECT * FROM "SYS"."AFL_FUNCTIONS" WHERE AREA_NAME = 'EML';
 ```
 
-As a reminder, you can connect using the SAP Web IDE or using HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
-
-```shell
+> ### **Note:**
+>
+As a reminder, you can execute your SQL statements using the SAP Web IDE (as described in [Prepare for Machine Learning](hxe-aws-eml-04)) :
+>
+ - `https://hxehost:53075`
+>
+Or use HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
+>
+```
 hdbsql -n localhost:39015 -u ML_USER -p Welcome19Welcome19
 ```
+>
+When using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
+>
+```
+\mu
+```
 
-If there result is empty, it probably mean that you need to complete the following tutorial:
+The **`AFL_AREAS`** & **`AFL_PACKAGES`** should return 1 row each, and the **`AFL_FUNCTIONS`** should return 10 rows.
 
+> ### **Note:**
+>If there result is empty, it probably mean that you need to complete the following tutorial:
+>
 - [Install the SAP HANA External Machine Learning Library Package for SAP HANA, express edition](hxe-ua-eml-binary).
 
-The `AFL_AREAS` & `AFL_PACKAGES` should return 1 row each, and the `AFL_FUNCTIONS` should return 10 rows.
 
 [DONE]
 [ACCORDION-END]
@@ -155,13 +169,6 @@ It should return the following result:
 |--------|-------|-------|
 | Status |     0 |    OK |
 
-
-> ### **Note:**: If you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
->
-```sql
-\mu
-```
-
 Now, you can check the registered models:
 
 ```SQL
@@ -175,5 +182,5 @@ CALL _SYS_AFL.EML_CHECKDESTINATION_PROC(CHECK_PARAMS, ?);
 
 Provide an answer to the question below then click on **Validate**.
 
-[VALIDATE_1] 
+[VALIDATE_1]
 [ACCORDION-END]

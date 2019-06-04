@@ -45,7 +45,7 @@ To get to your API Sandbox URL, click on the **Details** tab.
 The **Inference Service For Customizable Image Feature Extraction** Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/imagefeatureextraction
+https://sandbox.api.sap.com/mlfs/api/v2/image/feature-extraction
 ```
 
 Do the same for the **Inference Service for Similarity Scoring**.
@@ -57,7 +57,7 @@ You can also access the page directly from the following address:
 The **Inference Service for Similarity Scoring** Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/similarityscoring
+https://sandbox.api.sap.com/mlfs/api/v2/similarity-scoring
 ```
 
 To get to your API key, click on the **Show API Key** button.
@@ -139,7 +139,7 @@ Field Name           | Value
 Name                 | `sapui5ml-api`
 Type                 | `HTTP`
 Description          | `SAP Leonardo Machine Learning APIs`
-URL                  | `https://sandbox.api.sap.com/ml`
+URL                  | `https://sandbox.api.sap.com/mlfs/api/v2`
 Proxy Type           | `Internet`
 Authentication       | `NoAuthentication`
 
@@ -155,7 +155,7 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
-You should receive a ***connection established*** message with potentially a ***404: Not Found*** response which is normal.
+You should receive a ***connection established*** message with potentially a ***401: Unauthorized*** response which is normal.
 
 [DONE]
 [ACCORDION-END]
@@ -291,8 +291,8 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url_featureextraction": "/ml-dest/imagefeatureextraction/feature-extraction",
-  "url_similarityscoring": "/ml-dest/similarityscoring/similarity-scoring",
+  "url_featureextraction": "/ml-dest/feature-extraction",
+  "url_similarityscoring": "/ml-dest/similarity-scoring",
   "method": "POST",
   "accept": "application/json",
   "fileType": "zip,tar",

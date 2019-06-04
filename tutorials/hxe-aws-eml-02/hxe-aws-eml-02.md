@@ -1,5 +1,5 @@
 ---
-title: Set up your AWS environment - SageMaker Notebook
+title: Setup AWS - Create a SageMaker Notebook
 description: Create a SageMaker Notebook instance that will be used to complete this tutorial series.
 primary_tag: topic>machine-learning
 auto_validation: true

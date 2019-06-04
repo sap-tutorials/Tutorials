@@ -9,6 +9,7 @@ primary_tag: topic>sapui5
 
 ## Prerequisites
  - [Install Node.js](https://nodejs.org/en/download/)
+ - [[Only for Windows users]Install Chocolaty](https://chocolatey.org/)
 
 ## Details
 ### You will learn
@@ -63,8 +64,6 @@ This plugin has also been published on [GitHub](https://github.com/SAP/generator
 
 [DONE]
 [ACCORDION-END]
-
-
 [ACCORDION-BEGIN [Step : ](Install the MTA build tool)]
 
 Cloud-native applications are being ship as so called `mta` archives. The [Multi-target Application Archive Builder](https://github.com/SAP/cloud-mta-build-tool) is a standalone command-line tool that builds a deployment-ready multi-target application archive `.mtar` file. You can leverage `npm` to install this tool as well:
@@ -77,6 +76,23 @@ Run `mbt --help` to see all available commands.
 
 
 [VALIDATE_1]
+[ACCORDION-END]
+
+
+
+[ACCORDION-BEGIN [Step : ](Install Make)]
+
+You might be able to skip this step. Usually, users of unix-based OS already have `make` preinstalled. Verify that `make` is installed with.
+```
+make -v
+```
+
+If you are using Windows and need to install `make` by following [these instructions](https://chocolatey.org/packages/make):
+```
+choco install make
+```
+
+[DONE]
 [ACCORDION-END]
 
 ---

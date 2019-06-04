@@ -1,5 +1,5 @@
 ---
-title: Set up your AWS environment - IAM
+title: Setup AWS - Create your IAM policy, role and user
 description: Create a Policy, a Role and a User in AWS Identity and Access Management (IAM)
 primary_tag: topic>machine-learning
 auto_validation: true

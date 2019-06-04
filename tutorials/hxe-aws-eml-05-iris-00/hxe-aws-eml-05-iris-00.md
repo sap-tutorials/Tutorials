@@ -3,7 +3,7 @@ title: Import the Iris dataset into SAP HANA, express edition
 description: Download and import the Iris dataset into SAP HANA, express edition
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
 time: 15
 ---
 
@@ -72,7 +72,7 @@ Therefore, you will create the following tables:
  - `IRIS_TRAINING`: the full training dataset as downloaded locally
  - `IRIS_TEST`: the full test dataset as downloaded locally
 
-It is assumed that you have completed the [Prepare Your SAP HANA, express edition Instance for Machine Learning](mlb-hxe-setup-basic) tutorial as you will be reusing the created **`ML_USER`**.
+It is assumed that you have completed the [Prepare for Machine Learning](hxe-aws-eml-04) tutorial as you will be reusing the created **`ML_USER`**.
 
 Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
@@ -87,10 +87,22 @@ CREATE TABLE IRIS_TRAINING (SEPALLENGTH FLOAT, SEPALWIDTH FLOAT, PETALLENGTH FLO
 CREATE TABLE IRIS_TEST     (SEPALLENGTH FLOAT, SEPALWIDTH FLOAT, PETALLENGTH FLOAT, PETALWIDTH FLOAT, SPECIES INT);
 ```
 
-As a reminder, you can connect using the SAP Web IDE or using HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
-
-```shell
+> ### **Note:**
+>
+As a reminder, you can execute your SQL statements using the SAP Web IDE (as described in [Prepare for Machine Learning](hxe-aws-eml-04)) :
+>
+ - `https://hxehost:53075`
+>
+Or use HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
+>
+```
 hdbsql -n localhost:39015 -u ML_USER -p Welcome19Welcome19
+```
+>
+When using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
+>
+```
+\mu
 ```
 
 [DONE]
@@ -104,13 +116,6 @@ For more details, you can check the [Import CSV into SAP HANA, express edition u
 
 Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
-Before running the following command, if you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
-
-```sql
-\mu
-```
-
-Then you can run the following command:
 
 ```sql
 IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/iris/iris_training.csv' INTO IRIS.IRIS_TRAINING
@@ -132,8 +137,6 @@ WITH
    ERROR LOG '/usr/sap/HXE/HDB90/work/iris/iris_test.csv.err'
 ;
 ```
-
-
 
 [DONE]
 [ACCORDION-END]

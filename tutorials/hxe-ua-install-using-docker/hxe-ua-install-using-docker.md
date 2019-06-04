@@ -94,7 +94,7 @@ sudo docker image rm alpine -f
 
 Go to the [Docker Store](https://store.docker.com/).
 
-Click on the search bar and search for "SAP HANA, express edition".
+Click on the search bar and search for "SAP HANA".
 
 Choose **SAP HANA, express edition (database services)**.
 

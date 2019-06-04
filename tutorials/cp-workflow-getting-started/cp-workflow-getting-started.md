@@ -46,7 +46,7 @@ Search for the **Portal** service. Then select it, and choose **Enable**.
 
 1. Go back to the services overview by choosing the **Back** button.
 2. Search for **SAP Web IDE Full-Stack**. Then select it, and choose **Enable**.
-> Note: The workflow features are only available with SAP Web IDE Full-Stack.
+> The workflow features are only available with SAP Web IDE Full-Stack.
 
     ![Enable SAP Web IDE](webide-enabled.png)
 

@@ -1,9 +1,9 @@
 ---
-title: Analyze the Iris Dataset Using Pandas using the SAP HANA Data Frame for Python
+title: Analyze the Iris Dataset with Pandas using the SAP HANA Python Data Frame
 description: Download and Analyze the Iris dataset using your SageMaker Notebook and Pandas
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
 time: 45
 ---
 
