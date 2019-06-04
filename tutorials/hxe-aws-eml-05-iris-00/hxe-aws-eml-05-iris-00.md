@@ -65,12 +65,14 @@ This will create a new directory where the Iris training and test dataset will b
 
 As you may have noticed, the Iris dataset provides a ***training*** and a ***test*** dataset.
 
-In the next tutorial, you will use the ***training*** dataset to run some data analysis and the ***test*** dataset will be used to tryout the model later on using SAP HANA SQL scripts..
+At the end of the tutorial series, you will be testing the model from SAP HANA, which implies that the ***test*** dataset must available in a table. Technically speaking, you don't need the ***training*** dataset available in a SAP HANA table as, by default, Amazon SageMaker requires the ***training*** dataset to be available in a Amazon S3 bucket.
 
 Therefore, you will create the following tables:
 
  - `IRIS_TRAINING`: the full training dataset as downloaded locally
  - `IRIS_TEST`: the full test dataset as downloaded locally
+
+In the next tutorial, you will use the ***training*** dataset to run some data analysis.
 
 It is assumed that you have completed the [Prepare for Machine Learning](hxe-aws-eml-04) tutorial as you will be reusing the created **`ML_USER`**.
 
