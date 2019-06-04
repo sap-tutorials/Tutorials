@@ -32,8 +32,11 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 
 Sign in or create an account on [Amazon Web Services Portal](https://portal.aws.amazon.com/billing/signup#/start)
 
-> ### **Note:** When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.
+> ### **Information:**
+>**When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.**
+
 >During this process, some AWS services, like the AWS Marketplace, will not be available.
+
 >Therefore, you will need to wait for the completion of the validation process before being able to proceed with the SAP HANA, express edition creation.
 
 Access the [Amazon Web Services Marketplace](https://aws.amazon.com/marketplace/).
