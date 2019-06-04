@@ -1,6 +1,6 @@
 ---
 title: Update OData Entities with the SAP Cloud SDK's Virtual Data Model
-description: Update OData Entities with the SAP Cloud SDK's Virtual Data Model to Build an Address Manager Application
+description: Update OData dntities with the SAP Cloud SDK's virtual data model to build an address manager application.
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>javascript, topic>odata]
