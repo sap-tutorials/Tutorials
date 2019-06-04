@@ -118,7 +118,7 @@ pswd = "Welcome19Welcome19"
 conn = dataframe.ConnectionContext(host, port, user, pswd)
 
 # Create the HANA Dataframe (df_train) and point to the training table.
-training_data = conn.table("IRIS_TRAINING", schema="IRIS").collect()
+training_data = conn.table("IRIS_TRAINING").collect()
 training_data.head(5)
 
 training_data.SPECIES.replace(sorted(training_data.SPECIES.unique()), col_label_class, inplace=True)

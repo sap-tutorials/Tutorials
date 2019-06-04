@@ -214,7 +214,7 @@ pswd = "Welcome19Welcome19"
 conn = dataframe.ConnectionContext(host, port, user, pswd)
 
 # Create the HANA Dataframe (df_train) and point to the training table.
-training_data = conn.table("IRIS_TRAINING", schema="IRIS").collect()
+training_data = conn.table("IRIS_TRAINING").collect()
 
 estimation = training_data.sample(frac = 0.8, replace=False)
 estimation.to_csv(
