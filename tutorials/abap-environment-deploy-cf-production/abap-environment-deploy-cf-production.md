@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Create an HTML5 Module and deploy your UI to Cloud Foundry  
+title: Create an HTML5 Module and Deploy UI to Cloud Foundry  
 description: Create a UI in Neo and deploy it to Cloud Foundry via a multi-target application.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
