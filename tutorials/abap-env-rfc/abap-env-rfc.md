@@ -9,8 +9,8 @@ primary_tag: products>sap-cloud-platform--abap-environment
 
 ## Prerequisites
 -	A SAP CP Neo subaccount
-- A SAP CP Cloud Foundry subaccount with the ABAP Environment entitlement
-- A user in this ABAP Environment, with a sub-account numbered `Tnn`, open in SAP Cloud Cockpit
+- A SAP CP Cloud Foundry subaccount with the ABAP Environment entitlement, version 1905 or later
+- A user in this ABAP Environment, with a service instance named `Tnn`, open in SAP Cloud Cockpit
 -	An ABAP on-premise system, such as  [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/)
 -	In this on-premise system, a SAP Cloud Connector, configured with your Neo sub-account
 
@@ -25,13 +25,15 @@ primary_tag: products>sap-cloud-platform--abap-environment
 
 For more information on setup, see:
 
-- [SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
+[SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html) - basic concepts
 
-- [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
+- [SAP Help Portal: Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
 
 - [SAP Help Portal: SAP Cloud Connector](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/642e87f1492146998a8eb0779cd07289.html)
 
-To see this tutorial as a blog by Andre Fischer, including some troubleshooting tips, see:
+- [SAP Help Portal: Integrating On-premise Systems](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c95327fbed6c4efeb1855f12f826301d.html)
+
+To see this tutorial group as a blog series by Andre Fischer, see:
 
 - [How to call a remote function module in your on-premise SAP system from SAP Cloud Platform – ABAP Environment](https://blogs.sap.com/2019/02/28/how-to-call-a-remote-function-module-in-your-on-premise-sap-system-from-sap-cloud-platform-abap-environment/)
 
@@ -53,8 +55,14 @@ Specifically:
 2. Send request to open a tunnel, from Cloud Foundry (i.e. ABAP) to Neo
 3. Send request to open a tunnel, from Neo to the on-premise system
 4. Open a secure tunnel for HTTP and RFC
+5. Communicate through the tunnel via HTTP or RFC
 
 ![Image depicting overview](overview.png)
+
+This tutorial is part of a group of three:
+1. This tutorial: Create the connection
+2. Test the connection by calling a BAPI
+3. Display the BAPI output to a Fiori Elements Preview
 
 ---
 
@@ -107,9 +115,6 @@ You will now create two destinations in the ABAP Environment. These must be crea
 3. Create a new destination for the destination service instance
 
     ![Image depicting step3a-new-destination](step3a-new-destination.png)
-
-[DONE]
-[ACCORDION-END]
 
 [DONE]
 [ACCORDION-END]
@@ -174,18 +179,34 @@ The destination appears in the list.
 
     ![Image depicting step6-open-dashboard](step6-open-dashboard.png)
 
-3. Choose **Communication Arrangements**.
+3. Choose **Communication Arrangements > New**.
 
     ![Image depicting step6b-comm-arrangement](step6b-comm-arrangement.png)
 
-4. Choose **New**.
+4. Enter the following:
+    - Scenario = **`SAP_COM_0276`**
+    - Name = **`EXTERNAL_API_2`**
+    - Service Key = *paste in the service key you copied* .
+
+      ![Image depicting step7-paste-service-key](step7-paste-service-key.png)
 
 The identically-named Communication System is created automatically.
+
+![Image depicting step7c-comm-arr-created](step7c-comm-arr-created.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create a Communication System for SAP Cloud Connector)]
+[ACCORDION-BEGIN [Step 8: ](Enter the service instance name)]
+In **Additional Properties**, enter a service instance name, such as **`OutboundComm_for_RFCDemo_XXX`**.
+For clarity, give it a different name from the Communication Arrangement name, since you will be using this service instance name property in later ABAP developments.
+
+![Image depicting step8-add-service-instance-name](step8-add-service-instance-name.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Create a Communication System for SAP Cloud Connector)]
 1. Again, in the Dashboard, choose **Communication Systems > New**.
 
 2. Enter the credentials for an administration user for your SAP CP Neo account:
@@ -225,6 +246,7 @@ The identically-named Communication System is created automatically.
 2. Enter a name and description. The name should be in the form `Z_...RFC_XXX`. Replace `XXX` with your group number or initials.
 
 3. Create or assign a transport request.
+
 [DONE]
 [ACCORDION-END]
 
@@ -248,7 +270,7 @@ The identically-named Communication System is created automatically.
 
     ```ABAP
     DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
-                             I_SERVICE_INSTANCE_NAME = 'EXTERNAL_API_XXX'
+                             I_SERVICE_INSTANCE_NAME = 'OutboundComm_for_RFCDemo_XXX'
                              I_NAME                  = 'S4TEST_RFC_XXX'
                            ).
 
@@ -257,9 +279,7 @@ The identically-named Communication System is created automatically.
     DATA lv_result type c length 200.
     ```
 
-2. Replace the `i_service_instance_name` with your service instance name, specified in the Communication  Arrangement:
-
-    ![Image depicting step10-service-instance-name](step10-service-instance-name.png)
+2. Replace the `i_service_instance_name` with your service instance name, specified in the Communication  Arrangement. (To avoid confusion, give the Communication Arrangement and the service instance different names):
 
 3. Replace the `i_name` with your the name of the specific **RFC** destination:
 
@@ -324,7 +344,7 @@ CLASS Z_A4C_RFC_XXX IMPLEMENTATION.
   METHOD IF_OO_ADT_CLASSRUN~MAIN.
     TRY.
       DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
-                               I_SERVICE_INSTANCE_NAME = 'EXTERNAL_API_XXX'
+                               I_SERVICE_INSTANCE_NAME = 'OutboundCommArrangement_XXX'
                                I_NAME                  = 'S4TEST_RFC_XXX'
                              ).
 
@@ -381,7 +401,7 @@ CLASS Z_A4C_HTTP_TEST_XXX IMPLEMENTATION.
     TRY.
         DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
           i_name                  = 'S4HTEST_HTTP_XXX'
-          i_service_instance_name = 'EXTERNAL_API_2'
+          i_service_instance_name = 'OutboundCommArrangement_XXX'
           i_authn_mode = if_a4c_cp_service=>service_specific ).
 
         DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
