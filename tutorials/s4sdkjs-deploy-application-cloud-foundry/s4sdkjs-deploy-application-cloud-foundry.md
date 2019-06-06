@@ -25,6 +25,8 @@ In your command line, run:
 npm run ci-build && npm run ci-package
 ```
 
+>**Note:** We are aware, that the `ci-package` script currently does not work when executed in Windows' CMD. Currently, the easiest workaround is to install a `bash` on your system (by default, `git` for Windows comes with [Git Bash](https://gitforwindows.org/)) and configure npm to execute scripts in that bash. This can be done by executing `npm config script-shell <P:\ath\to\your\bash.exe>`.
+
 In order to deploy our application, we first need to login to `Cloud Foundry` in `SAP Cloud Platform` using the **`cf` CLI**. First we need to set an `API` endpoint. Depending on the region in which you have created your account, choose one of the following `API` endpoints:
 
  - EU: [https://api.cf.eu10.hana.ondemand.com] (https://api.cf.eu10.hana.ondemand.com)
@@ -216,8 +218,6 @@ When you now call the `/business-partners` route of your app, the Business Partn
 [VALIDATE_3]
 
 [ACCORDION-END]
-
-
 
 ---
 

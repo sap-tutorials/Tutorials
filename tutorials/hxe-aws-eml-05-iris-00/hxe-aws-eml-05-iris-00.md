@@ -3,7 +3,7 @@ title: Import the Iris dataset into SAP HANA, express edition
 description: Download and import the Iris dataset into SAP HANA, express edition
 primary_tag: topic>machine-learning
 auto_validation: true
-tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
+tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
 time: 15
 ---
 
@@ -65,32 +65,47 @@ This will create a new directory where the Iris training and test dataset will b
 
 As you may have noticed, the Iris dataset provides a ***training*** and a ***test*** dataset.
 
-In the next tutorial, you will use the ***training*** dataset to run some data analysis and the ***test*** dataset will be used to tryout the model later on using SAP HANA SQL scripts..
+At the end of the tutorial series, you will be testing the model from SAP HANA, which implies that the ***test*** dataset must available in a table. Technically speaking, you don't need the ***training*** dataset available in a SAP HANA table as, by default, Amazon SageMaker requires the ***training*** dataset to be available in a Amazon S3 bucket.
+
+However, you could also customize up your own TensorFlow Docker image to be used by SageMaker while executing the model training. In this Docker image, you would connect to your SAP HANA instance to retrieve the training  dataset from the table instead of retrieve it from an Amazon S3 bucket. This would indeed allow you not to replicate your SAP HANA data.
+
+But let's keep it simple for now.
 
 Therefore, you will create the following tables:
 
  - `IRIS_TRAINING`: the full training dataset as downloaded locally
  - `IRIS_TEST`: the full test dataset as downloaded locally
 
-It is assumed that you have completed the [Prepare Your SAP HANA, express edition Instance for Machine Learning](mlb-hxe-setup-basic) tutorial as you will be reusing the created **`ML_USER`**.
+In the next tutorial, you will use the ***training*** dataset to run some data analysis.
+
+It is assumed that you have completed the [Prepare for Machine Learning](hxe-aws-eml-04) tutorial as you will be reusing the created **`ML_USER`**.
 
 Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
 ```SQL
-CREATE SCHEMA IRIS;
-SET SCHEMA IRIS;
-
-DROP TABLE IRIS_TRAINING;
-DROP TABLE IRIS_TEST;
+--DROP TABLE IRIS_TRAINING;
+--DROP TABLE IRIS_TEST;
 
 CREATE TABLE IRIS_TRAINING (SEPALLENGTH FLOAT, SEPALWIDTH FLOAT, PETALLENGTH FLOAT, PETALWIDTH FLOAT, SPECIES INT);
 CREATE TABLE IRIS_TEST     (SEPALLENGTH FLOAT, SEPALWIDTH FLOAT, PETALLENGTH FLOAT, PETALWIDTH FLOAT, SPECIES INT);
 ```
 
-As a reminder, you can connect using the SAP Web IDE or using HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
-
-```shell
+> ### **Note:**
+>
+As a reminder, you can execute your SQL statements using the SAP Web IDE (as described in [Prepare for Machine Learning](hxe-aws-eml-04)) :
+>
+ - `https://hxehost:53075`
+>
+Or use HDBSQL with the following command (assuming you didn't change the `ML_USER` password):
+>
+```
 hdbsql -n localhost:39015 -u ML_USER -p Welcome19Welcome19
+```
+>
+When using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
+>
+```
+\mu
 ```
 
 [DONE]
@@ -104,16 +119,9 @@ For more details, you can check the [Import CSV into SAP HANA, express edition u
 
 Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
-Before running the following command, if you are using HDBSQL, you need to enable the multi-line mode using the following command in order to successfully run the above commands:
 
 ```sql
-\mu
-```
-
-Then you can run the following command:
-
-```sql
-IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/iris/iris_training.csv' INTO IRIS.IRIS_TRAINING
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/iris/iris_training.csv' INTO IRIS_TRAINING
 WITH
    RECORD DELIMITED BY '\n'
    FIELD DELIMITED BY ','
@@ -122,7 +130,7 @@ WITH
    FAIL ON INVALID DATA
    ERROR LOG '/usr/sap/HXE/HDB90/work/iris/iris_training.csv.err'
 ;
-IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/iris/iris_test.csv' INTO IRIS.IRIS_TEST
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/iris/iris_test.csv' INTO IRIS_TEST
 WITH
    RECORD DELIMITED BY '\n'
    FIELD DELIMITED BY ','
@@ -132,8 +140,6 @@ WITH
    ERROR LOG '/usr/sap/HXE/HDB90/work/iris/iris_test.csv.err'
 ;
 ```
-
-
 
 [DONE]
 [ACCORDION-END]
@@ -148,11 +154,11 @@ Using the **HXE** connection with the **`ML_USER`** user credentials, execute th
 SELECT * FROM
 (
 	SELECT 'TRAINING' as DATASET, SPECIES, COUNT(1) as count
-	FROM IRIS.IRIS_TRAINING
+	FROM IRIS_TRAINING
 	GROUP BY SPECIES
 	UNION ALL
 	SELECT 'TEST' as DATASET, SPECIES, COUNT(1) as count
-	FROM IRIS.IRIS_TEST
+	FROM IRIS_TEST
 	GROUP BY SPECIES
 )
 ORDER BY 1, 3
