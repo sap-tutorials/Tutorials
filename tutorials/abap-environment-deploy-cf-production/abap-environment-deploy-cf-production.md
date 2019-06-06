@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Create and Expose Core Data Services Based on a Database Table (productive use)
+title: Create an HTML5 Module and Deploy UI to Cloud Foundry  
 description: Create a UI in Neo and deploy it to Cloud Foundry via a multi-target application.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
@@ -194,6 +194,7 @@ time: 15
           ]
         }
     ```
+    Save your file.
 
   5. Open your `webapp/manifest.json` file to add the annotations. Replace your code with following:
 
@@ -332,6 +333,7 @@ time: 15
     	}
     }
     ```  
+    Save your file.
 
 [DONE]
 [ACCORDION-END]
