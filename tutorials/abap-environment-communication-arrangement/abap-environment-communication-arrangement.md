@@ -1,9 +1,9 @@
 ---
 auto_validation: true
-title: Maintain a Communication Arrangement for an Exposed Service
+title: Maintain a Communication Arrangement for Inbound Communication
 description: Create a communication user and a communication system for an OData service in SAP Cloud Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 author_name: Niloofar Naseri
 author_profile: https://github.com/niloofar-naseri
