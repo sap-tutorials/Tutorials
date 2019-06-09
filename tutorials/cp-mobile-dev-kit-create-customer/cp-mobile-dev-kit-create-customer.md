@@ -105,6 +105,8 @@ Provide the below information:
 | `Name`| `FCCreateDOB` |
 | `Caption` | `DOB` |
 
+Save the changes to the `CreateCustomer` page.
+
 [DONE]
 [ACCORDION-END]
 
@@ -169,7 +171,11 @@ In `CustomerList` page, drag and drop an **Action Bar Item** to the upper right 
 
 ![MDK](img_016_1.gif)
 
-In the Properties pane, click the **link icon** to open the object browser for the System Item property.
+In the Properties pane, set **Position** to **Right**.
+
+![MDK](img_016_2.png)
+
+Click the **link icon** to open the object browser for the System Item property.
 
 Double click on the **Add** type and click **OK**.
 
@@ -204,7 +210,10 @@ Provide the below information:
 | `Type` | select `Message` |
 | `Message` | `Failed to Create Customer record` |
 | `Title` | `Create Customer` |
-| `OK Caption` | `OK` |
+| `OKCaption` | `OK` |
+| `OnOK` | `--None--` |
+| `CancelCaption` | leave it blank |
+| `OnCancel` | `--None-- |
 
 ![MDK](img_021.png)
 
@@ -231,7 +240,7 @@ Provide the below information:
 
 Click **Next**.
 
-In **Property and Update Links** step, uncheck **City**.
+In **Property and Create Links** step, uncheck **City**.
 
 Since in _Create Customer page_, we defined five properties (First Name, Last Name, Phone, Email & date of birth) to be added, now in this step, we will bind them to respective UI Controls.
 
@@ -269,7 +278,11 @@ In `CreateCustomer.page`, **drag and drop** an **Action Bar Item** to the upper 
 
 ![MDK](img_029.png)
 
-In the Properties pane, **click** the **link** icon to open the object browser for the **System Item** property.
+In the Properties pane, set **Position** to **Right**.
+
+![MDK](img_016_2.png)
+
+Click the **link** icon to open the object browser for the **System Item** property.
 
 Double click on the **Save** type and click **OK**.
 
@@ -292,9 +305,7 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 
 >Make sure to select same App ID as you chose in previous tutorial.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
-
->By default, there is a standard 25-35 minutes time duration for App update. In case, you don't see _Confirmation_ pop-up, kill the MDK client app from the background and open it again.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
 
 Click Customer List, click **+** icon to create a new record.
 

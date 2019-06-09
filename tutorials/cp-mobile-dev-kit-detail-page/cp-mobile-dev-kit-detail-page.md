@@ -191,11 +191,9 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 
 >Make sure to select same App ID as you chose in previous tutorial.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
 
 ![MDK](img_027.png)
-
->By default, there is a standard 25-35 minutes time duration for App update. In case, you don't see _Confirmation_ pop-up, kill the MDK client app from the background and open it again.
 
 Click Customer List, you will navigate to Customer List page.
 
@@ -204,6 +202,10 @@ Click Customer List, you will navigate to Customer List page.
 Click any record from the list, you will navigate to it's detail page.
 
 ![MDK](img_029.png)
+
+>_Are you wondering how exactly MDK knew that clicking on a record in  list page would display respective record in detail page?_
+
+>The MDK sets the current object to the selected record when running the on press action on the list.  The detail page then just needs to reference the correct properties assuming they are part of the object from the list page.
 
 [DONE]
 [ACCORDION-END]

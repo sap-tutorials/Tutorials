@@ -13,7 +13,8 @@ author_profile: https://github.com/jitendrakansal
 - [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
 - [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
 - [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
-- Download and install **SAP Mobile Services Client** on your [iPhone](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8)
+- Download and install **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- Download and install [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) (required only for Android device)
 
 ## Details
 ### You will learn
@@ -148,13 +149,21 @@ Click on QR code icon to populate QR code for app on-boarding.
 
 ![MDK](img_012.png)
 
-Open your phone camera app and start scanning the QR code, as shown below.
+On iPhone, open your camera app and start scanning the QR code, as shown below.
 
 ![MDK](img_013.png)
 
 Click the toast message to launch **SAP Mobile Services Client**.
 
->At this moment, **SAP Mobile Services Client** is available only for iOS device.
+>On Android, camera app does not support scanning the QR code. You can use [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) app to scan it.
+
+>![MDK](img_013.1.png)
+
+>Click **Open link**
+
+>![MDK](img_013.2.png)
+
+>It will open SAP Mobile Services Client app.
 
 Before you click on **Start** in client app, first finish the deployment from SAP Web IDE. Click **Next**.
 
@@ -168,6 +177,8 @@ You should see **Application deployed successfully** message in console log.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the app in MDK client)]
+
+>Below steps & screenshots were captured with iOS device. You will have similar on-boarding experience with Android as well.
 
 The MDK client receives deployed metadata definitions as a bundle.
 
