@@ -46,7 +46,7 @@ In the Properties pane, select the previously added service from the **Service**
 
 ![MDK](img_005.gif)
 
-In the Properties pane, click the **link icon** to open the Object Browser for the **Headline** property.
+In the **Properties** pane, click the **link icon** to open the Object Browser for the **Headline** property.
 
 Double click on the `LastName` property of the Customer entity to set it as the binding expression and click **OK**.
 
@@ -107,7 +107,7 @@ Provide the below information:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add button to view customer list)]
+[ACCORDION-BEGIN [Step 3: ](Add a button to view customer list)]
 
 Now that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Section Button Table** control.
 
@@ -152,11 +152,9 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 
 >Make sure to select same App ID as you chose in previous tutorial.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
 
 ![MDK](img_027.png)
-
->By default, there is a standard 25-35 minutes time duration for App update. In case, you don't see _Confirmation_ pop-up, kill the MDK client app from the background and open it again.
 
 You will notice, newly added button on the main page. Click **Customer List**.
 
