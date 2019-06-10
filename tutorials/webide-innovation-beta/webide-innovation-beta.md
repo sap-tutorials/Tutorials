@@ -23,7 +23,7 @@ Log onto your SAP Cloud Platform account.
 
 ![Open cockpit](OpenCockpit.png)
 
-Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**. 
+Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**.
 
 
 
@@ -62,11 +62,9 @@ In the **SAP Web IDE Full-Stack Version** service screen, click the **Go to Serv
 [ACCORDION-BEGIN [Step 4: ](Set up Cloud Foundry environment - OPTIONAL)]
 If your scenario includes deploying apps to the Cloud Foundry environment, then you need to also set up this environment. These will generally be for full-stack applications that include database and Java modules.
 
-Create a Cloud Foundry subaccount, organization, and space. See [Try It Out: 3 Easy Steps to Get You Started With the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e3d82674bd68448eb85198619aa99b6d.html?q=Get%20a%20Trial%20Space%20on%20the%20Cloud%20Foundry%20Instance).
-
+Create a Cloud Foundry subaccount, organization, and space. See [Getting Started with a Trial Account: Workflow](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/b00342ee083d475bb5b38600641e3f04.html).
 
 
 [ACCORDION-END]
 
 ---
-
