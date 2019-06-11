@@ -128,7 +128,7 @@ Then set the file with the downloaded images in the following order:
  - <a href="https://farm4.static.flickr.com/3049/2864856895_63aba50a68.jpg" target="blank" download="Apple 1.jpg">Apple 1</a>
  - <a href="https://farm3.static.flickr.com/2068/2127339915_f9ae445652.jpg" target="blank" download="Apple 2.jpg">Apple 2</a>
  - <a href="https://farm2.static.flickr.com/1138/1274351453_870429bb8e.jpg" target="blank" download="Banana 1.jpg">Banana 1</a>
- - <a href="https://farm1.static.flickr.com/142/367481160_a0d6cdf933.jpg"   target="blank" download="Banana 2.jpg">Banana 2</a>
+ - <a href="https://farm3.static.flickr.com/2105/2193164715_20e3637685.jpg" target="blank" download="Banana 2.jpg">Banana 2</a>
  - <a href="https://farm4.static.flickr.com/3592/3614068732_545a4fc3a1.jpg" target="blank" download="Cherry 1.jpg">Cherry 1</a>
  - <a href="https://farm3.static.flickr.com/2443/3704400156_5f2dc5fb07.jpg" target="blank" download="Cherry 2.jpg">Cherry 2</a>
 
