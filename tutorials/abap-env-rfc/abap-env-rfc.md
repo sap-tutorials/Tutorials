@@ -255,7 +255,7 @@ For clarity, give it a different name from the Communication Arrangement name, s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Define a method)]
+[ACCORDION-BEGIN [Step 12: ](Add the interfaces statement; implement the main method)]
 1. Implement the interface by adding this statement to the public section:
 
     `interfaces if_oo_adt_classrun.`
