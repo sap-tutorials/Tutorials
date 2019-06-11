@@ -26,10 +26,6 @@ module.exports = {
                 message: 'empty URL field'
             },
             {
-                regexp: /href=["']["']/,
-                message: 'empty URL field'
-            },
-            {
                 regexp: new RegExp('\u201C'),
                 message: 'curly quotes found. change to straight using quotes key'
             },
@@ -133,8 +129,7 @@ module.exports = {
         markdown: [
             /\[[^\]]*\]\((http[s]?:\/\/.+?)\)/g,
             /\[[^\]]*\]\s*?:\s*?<(http[s]?:\/\/.+?)>/g,
-            /<(http[s]?:\/\/.*?)>/g,
-            /href=["'](http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*))["']/g,
+            /<(http[s]?:\/\/.*?)>/g
         ],
         pure: /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi
     },
