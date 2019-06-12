@@ -3,15 +3,13 @@ title: Create a Communication Arrangement for Outbound Communication
 description: Create a communication arrangement to connect your ABAP Environment to an external system - either SAP or third-party.
 auto_validation: true
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 30
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20  
 ---
 
 ## Prerequisites
-- You have a SAP CP Cloud Foundry subaccount with the ABAP Environment entitlement
-- You have a user in this ABAP Environment
 - You have opened an ABAP service instance named `Tnn`, open in SAP Cloud Cockpit
 [Connect to the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
 - A business role has been created containing the business catalog `SAP_CORE_BC_COM`, and is assigned to your user [How to Create a Business Role from Scratch](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f65e51a7203443efb58fe535c3d13e5f.html)
@@ -134,7 +132,7 @@ A communication arrangement is created, along with an identically-named communic
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add the service instance name)]
-Still in the Communication Arrangement, in the **Additional Properties** panel, enter a **Service Instance Name**, such as **`OutboundComm_for_RFCDemo_XXX`**.
+Still in the Communication Arrangement, in the **Additional Properties** panel, enter a **Service Instance Name**, such as **`OutboundComm_for_RFCDemo_XXX`**. (To avoid confusion, make the Communication Arrangement name and the service instance name different).
 
 ![Image depicting step6-service-instance-name](step6-service-instance-name.png)
 
