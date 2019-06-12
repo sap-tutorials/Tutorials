@@ -22,6 +22,7 @@ author_profile: https://github.com/jitendrakansal
 Regardless of whether your application is online or offline, you can allow users to modify data in the application.
 
 For online applications, the changes are saved to the backend immediately.
+
 For offline applications, the changes are stored locally until they are synced using an Upload action.
 
 First you will create a **Close Page-Cancel action** that closes the current page and cancels or interrupts any execution in process. This will be used with the cancel button on the **Edit Customer page**.
@@ -92,6 +93,9 @@ Select the first **Simple Property control** and provide the below information:
 
 ![MDK](img_006.gif)
 
+>Make sure, Format should be set as _Binding_.
+![MDK](img_006.1.png)
+
 Select the second Simple Property control and provide the below information:
 
 | Property | Value |
@@ -154,6 +158,8 @@ Double click on the `ClosePageCancel` action and click **OK** to set it as the `
 
 ![MDK](img_015.gif)
 
+Save the changes to the `EditCustomerDetails` page.
+
 [DONE]
 [ACCORDION-END]
 
@@ -187,7 +193,11 @@ In `CustomerDetail` page, drag and drop an **Action Bar Item** to the upper righ
 
 ![MDK](img_016_1.gif)
 
-In the Properties pane, click the **link icon** to open the object browser for the System Item property.
+In the Properties pane, set **Position** to **Right**.
+
+![MDK](img_016_2.png)
+
+Click the **link icon** to open the object browser for the **System Item** property.
 
 Double click on the **Edit** type and click **OK**.
 
@@ -222,7 +232,10 @@ Provide the below information:
 | `Type` | select `Message` |
 | `Message` | `Failed to Save Customer Updates` |
 | `Title` | `Update Customer` |
-| `OK Caption` | `OK` |
+| `OKCaption` | `OK` |
+| `OnOK` | `--None--` |
+| `CancelCaption` | leave it blank |
+| `OnCancel` | `--None--` |
 
 ![MDK](img_021.png)
 
@@ -240,9 +253,9 @@ Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name`| `ClosePageComplete` |
+| `Action Name` | `ClosePageComplete` |
 | `DismissModal` | `Completed` |
-| `CancelPendingActions`| `false` |
+| `CancelPendingActions` | `false` |
 
 ![MDK](img_022.png)
 
@@ -263,12 +276,12 @@ Provide the below information:
 | `Action Name`| `UpdateCustomer` |
 | `Type` | `UpdateEntity` |
 | `Service`| `SampleServiceV2` |
-| `EntitySet` | `Customers` |
-| `Read Link` | `{@odata.readLink}` |
+| `EntitySet`| `Customers` |
+| `ReadLink`| `{@odata.readLink}` |
 
 ![MDK](img_024.png)
 
->The `readlink` is a direct reference to an individual entity set entry.
+>The `readLink` is a direct reference to an individual entity set entry.
 
 Click **Next**.
 
@@ -300,7 +313,7 @@ In the action editor for the new action, expand the **Common Action Properties**
 
 Save the changes to the `UpdateCustomer` action.
 
-Next, you will set the `OnPress` of the _Edit_ button.
+Next, you will set the `OnPress` of the _Save_ button.
 
 Now that the Update action is created, you will need to call the Update action when the end-user presses the **Save** button. You will add a **Save** button on the `EditCustomerDetails.page` and link it to the `UpdateCustomer` action.
 
@@ -308,7 +321,12 @@ In `EditCustomerDetails.page`, **drag and drop** an **Action Bar Item** to the u
 
 ![MDK](img_029.png)
 
-In the Properties pane, **click** the **link** icon to open the object browser for the **System Item** property.
+
+In the Properties pane, set **Position** to **Right**.
+
+![MDK](img_016_2.png)
+
+Click the **link** icon to open the object browser for the **System Item** property.
 
 Double click on the **Save** type and click **OK**.
 
@@ -318,7 +336,7 @@ In the Properties pane | **Events** tab, click the **link** icon for the `OnPres
 
 ![MDK](img_031.png)
 
-Save the changes to the `CustomerList` page.
+Save the changes to the `EditCustomerDetails` page.
 
 [DONE]
 [ACCORDION-END]
@@ -331,9 +349,7 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 
 >Make sure to select same App ID as you chose in previous tutorial.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
-
->By default, there is a standard 25-35 minutes time duration for App update. In case, you don't see _Confirmation_ pop-up, kill the MDK client app from the background and open it again.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
 
 Click Customer List, you will navigate to Customer detail page. Click **Edit**.
 

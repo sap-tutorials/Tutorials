@@ -16,6 +16,17 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+To enhance your MDK app with customer list information, you need to carry out the following tasks:
+
+*  Create a new customer list page
+*  Add Contact Cell Table control to the page
+*  Create a new navigation action to the customer list page
+*  Add a new button on main page and navigate to customer list page when user clicks it
+*  Deploy app metadata to SAP Cloud Platform Mobile Services
+*  Update the app with new changes
+
+![MDK](img_1.gif)
+
 [ACCORDION-BEGIN [Step 1: ](Create a new page for displaying customer list)]
 
 This page is a searchable list that displays all customers.

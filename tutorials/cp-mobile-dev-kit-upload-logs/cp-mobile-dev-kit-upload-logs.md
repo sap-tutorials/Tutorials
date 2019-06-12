@@ -82,7 +82,9 @@ Provide the below information:
 |----|----|
 | `Action Name`| `LogSetLevel` |
 | `Type` | `SetLevel` |
-| `Log Level`| Error |
+| `Log Level`| Debug |
+
+>Setting log level to debug is not recommended for productive environment.
 
 ![MDK](img_006.png)
 
@@ -174,7 +176,10 @@ Provide the below information:
 | `Type` | `Message` |
 | `Message`| `Uploading log file failed` |
 | `Title`| `Log Upload Failed` |
-| `OK Caption` | `OK` |
+| `OKCaption` | `OK` |
+| `OnOK` | `--None--` |
+| `CancelCaption` | leave it blank |
+| `OnCancel` | `--None--` |
 
 ![MDK](img_012.png)
 
@@ -200,7 +205,7 @@ Double click on the `LogUpload.action` and provide the below information:
 
 You will add a toolbar item to the _main page_ called **Upload Logs**. You will link toolbar item to `LogUpload.action` you just created in step 2.
 
-In `Main` page, drag and drop an **Action Bar Item** to the bottom right of the page.
+In `Main` page, drag and drop an **Toolbar Item** to the bottom right of the page.
 
 ![MDK](img_014.gif)
 
@@ -227,9 +232,7 @@ Right-click on the MDK Application in the project explorer pane and select **MDK
 
 >Make sure to select same App ID as you chose in previous tutorial.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
-
->By default, there is a standard 25-35 minutes time duration for App update. In case, you don't see _Confirmation_ pop-up, kill the MDK client app from the background and open it again.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
 
 At `OnLaunch` event, app starts gathering logs.
 
@@ -250,7 +253,7 @@ Open SAP Cloud Platform Mobile Services Cockpit, click **Analytics** | **Logs**.
 
 Navigate to **Technical Logs** tab. You may set criteria to filter some specific log entries.
 For example, choose **Application ID** as `com.sap.mdk.demo`
-and **Type** as `Client Log`
+and **Type** as `Client Log`.
 
 ![MDK](img_020.png)
 

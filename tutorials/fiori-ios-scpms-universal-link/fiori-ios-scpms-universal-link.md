@@ -6,10 +6,10 @@ author_profile: https://github.com/KevinMuessig
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** intermediate
  - **Tutorials:**
  - [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
  - [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
@@ -25,10 +25,8 @@ In this tutorial, you will learn how to create universal links for use in an iOS
 
 To prepare your app to support universal links, you will create a new (or modify an existing) app ID on [Apple Developer Portal](https://developer.apple.com/), modify the application definition on SAP Cloud Platform mobile service for development and operations, and modify the app's entitlements in Xcode.
 
-For this tutorial, you can use any iOS app you have previously created with the SAP Cloud Platform SDK for iOS Assistant. However, the screenshots and parameters used in this tutorial are taken from the `MyProductApp` app created in tutorial **Create a Sample App - (https://developers.sap.com/tutorials/fiori-ios-scpms-create-sample-app.html)**. If you want to follow this tutorial to the letter, make sure you have finished creating the `MyProductApp` app.
+For this tutorial, you can use any iOS app you have previously created with the SAP Cloud Platform SDK for iOS Assistant. However, the screenshots and parameters used in this tutorial are taken from the `MyProductApp` app created in tutorial [Create a Sample App](https://developers.sap.com/tutorials/fiori-ios-scpms-create-sample-app.html). If you want to follow this tutorial to the letter, make sure you have finished creating the `MyProductApp` app.
 
-### Time to Complete
-**15 Min**
 
 ---
 
