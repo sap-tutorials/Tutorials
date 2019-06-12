@@ -267,13 +267,13 @@ ENDIF.
 
 2. Again, wrap the `BAPI` call in a TRY...CATCH block:
 
-```ABAP
+    ```ABAP
 
-CATCH cx_a4c_rap_query_provider INTO DATA(lx_exc).
+    CATCH cx_a4c_rap_query_provider INTO DATA(lx_exc).
 
-```
+    ```
 
-![Image depicting step9-try-catch](step9-try-catch.png)
+    ![Image depicting step9-try-catch](step9-try-catch.png)
 
 [DONE]
 [ACCORDION-END]
@@ -395,7 +395,7 @@ define service ZSD_A4C_RFC_XXX {
     - Binding Type = ODATA V2 (UI...)
     - Service Definition = `ZSD_A4C_RFC_XXX`
 
-    ![Image depicting step12-choose-binding-type](step12-choose-binding-type.png)
+      ![Image depicting step12-choose-binding-type](step12-choose-binding-type.png)
 
 3. Choose the transport request; choose **Next**.
 
