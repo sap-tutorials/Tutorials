@@ -1,16 +1,16 @@
 ---
-title: Call an External API (Self-Learning)
+title: Call an External API
 description: Point to an external API and display its output in the console.
 auto_validation: true
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
+tags: [  tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license ]
 time: 30
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
-- **Tutorial**: [Create an ABAP Package](abap-dev-create-package)
+- **Tutorial**: [Create a Console Application](abap-environment-console-application)
 - **Tutorial**: [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api)
 
 ## Details
@@ -48,26 +48,17 @@ Throughout this tutorial, objects name include the suffix `XXX`. Always replace 
 
 2. Then enter the following (replacing **`xxx`** with your group number). Then choose **Save**:
     - Name  = `Z_STREETMAP_XXX`
-    - URL = `https://www.openstreetmap.org/#map=6/51.330/10.`
+    - URL = `https://nominatim.openstreetmap.org/`
     - Proxy type = Internet
     - Authentication = `NoAuthentication`
 
-    ![Image depicting step2b-destination-streetmap](step2b-destination-streetmap.png)
+    ![Image depicting step2c-destination-streetmap-nominatim](step2c-destination-streetmap-nominatim.png)
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Check the connection)]
-Check the connection:
-
-![Image depicting step-3-test-connection](step-3-test-connection.png)  
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Create an ABAP class)]
+[ACCORDION-BEGIN [Step 3: ](Create an ABAP class)]
 Now, you will create an ABAP class that will call your destination, and which you can run in the console.
 
 1. In the ABAP Development Tools `(ADT)`, in the Package Explorer, select your package and choose **New > ABAP Class** from the context menu.
@@ -90,7 +81,7 @@ The class is displayed in a new editor.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add an INTERFACES statement)]
+[ACCORDION-BEGIN [Step 4: ](Add an INTERFACES statement)]
 Add the following `interfaces` statement to the public section:
 
 ```ABAP
@@ -104,7 +95,7 @@ This enables you to run the class in the console.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Implement the method)]
+[ACCORDION-BEGIN [Step 5: ](Implement the method)]
   1. Add the method implementation below and wrap it in an exception.
   2. Then replace the `xxx` of `i_name` and `i_service_instance_name` with your group number.
 
@@ -118,6 +109,9 @@ METHOD if_oo_adt_classrun~main.
 
         DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
         DATA(lo_request) = lo_http_client->get_http_request( ).
+
+
+
         DATA(lo_response) = lo_http_client->execute( i_method = if_web_http_client=>get ).
           out->write( lo_response->get_text( ) ).
 
@@ -132,7 +126,7 @@ METHOD if_oo_adt_classrun~main.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check, save, and activate)]
+[ACCORDION-BEGIN [Step 6: ](Check, save, and activate)]
 1. Check your syntax (`Ctrl+F2`).
 2. Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
 
@@ -140,17 +134,55 @@ METHOD if_oo_adt_classrun~main.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run the class in the console)]
+[ACCORDION-BEGIN [Step 7: ](Run the class in the console)]
 Run your class in the console (`F9`).
 
 The output should look something like this:
 ![Image depicting step-9-console](step-9-console.png)
 
 [DONE]
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+[ACCORDION-BEGIN [Step 8: ](Add formatting)]
+The output is currently just an HTML dump. You will now format the output as JSON.
+
+1. Immediately after the `DATA(lo_request) = lo_http_client->get_http_request( ).` statement, add the following code:
+
+```ABAP
+
+lo_request->set_form_field(
+    i_name  = 'format'
+    i_value = 'json' ).
+lo_request->set_form_field(
+    i_name  = 'q'
+    i_value = 'SAP SE' ).
+lo_request->set_form_field(
+    i_name  = 'country'
+    i_value = 'Germany' ).
+lo_request->set_form_field(
+    i_name  = 'city'
+    i_value = 'Walldorf' ).
+lo_request->set_form_field(
+    i_name  = 'addressdetails'
+    i_value = '1' ).
+
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Check, save, activate, and test)]
+1. Check your syntax (`Ctrl+F2`).
+2. Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
+3. Run your class in the console (`F9`).
+
+The output should now look something like this:
+![Image depicting step10-output-2](step10-output-2.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Test yourself)]
 
 [VALIDATE_1]
 
