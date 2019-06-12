@@ -80,16 +80,16 @@ Provide the below information:
 | `Footnote` | Leave it blank |
 | `PreserveIconStackSpacing`| `false` |
 | `ProgressIndicator` | Leave it blank |
-| `Status`| `$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true}` |
+| `Status`| `$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` |
 | `Subhead` | `{CustomerId}` |
 | `Substatus`| `{LifeCycleStatusName}` |
 | `Title`| `{SalesOrderId}` |
 
 ![MDK](img_006.png)
 
->`$(D,{CreatedAt})` is an expression of how to format a date, end result would be like 8. Jun 2018.
+>`$(D,{CreatedAt})` is an expression of how to format a date, end result would be like 8. Jun 2018. By default it will be formatted to the device's locale setting.
 
->`$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true}` is an expression of how to format currency value, end result would be like 200.44 €.
+>`$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` is an expression of how to format currency value, end result would be like 200.44 €. By default it'll be formatted to the device's locale setting.
 
 In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to true.
 
@@ -110,7 +110,7 @@ Save your changes to the Customer Orders page.
 
 [ACCORDION-BEGIN [Step 2: ](Create a new order details page)]
 
-This page will show related details for a order. In this page, you will add an **Object Header** control that is used to display information (like first name, last name, date of birth, email address & phone number) about the header of an object and **Static Key Value** control to display key value pair items like address, city, postal code & country.
+This page will show related details for an order. In this page, you will add an **Object Header** control that is used to display information (like first name, last name, date of birth, email address & phone number) about the header of an object and **Static Key Value** control to display key value pair items like address, city, postal code & country.
 
 In SAP Web IDE project, Right click on the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
 
@@ -300,16 +300,16 @@ In the **Appearance** section of the Properties pane, provide the below informat
 | `Footnote` | Leave it blank |
 | `PreserveIconStackSpacing`| `false` |
 | `ProgressIndicator` | Leave it blank |
-| `Status`| `$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true}` |
+| `Status`| `$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` |
 | `Subhead` | `$(D,{CreatedAt})` |
 | `Substatus`| `{CurrencyCode}` |
 | `Title`| `{SalesOrderId}` |
 
 ![MDK](img_023.png)
 
->`$(D,{CreatedAt})` is an expression of how to format a date, end result would be like Apr 4, 2018.
+>`$(D,{CreatedAt})` is an expression of how to format a date, end result would be like 8. Jun 2018. By default it will be formatted to the device's locale setting.
 
->`$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true}` is an expression of how to format currency value, end result would be like €200.44.
+>`$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` is an expression of how to format currency value, end result would be like 200.44 €. By default it'll be formatted to the device's locale setting.
 
 In the **Behavior** section of the Properties pane, select `DisclosureIndicator` to `AccessoryType` property.
 
@@ -350,7 +350,7 @@ Provide the below information:
 
 Save the changes to the `CustomerDetail` page.
 
->You can find more details about [Header] control(https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/c71b8b1f71294fcbb199613439c51222.html).
+>You can find more details about [Header control](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/c71b8b1f71294fcbb199613439c51222.html).
 
 [DONE]
 [ACCORDION-END]
@@ -374,7 +374,7 @@ Provide the below information:
 
 ![MDK](img_029.png)
 
->You can find more details about [Footer] control(https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/df3e0a2efa2948d2b66e8f5071f5b48e.html).
+>You can find more details about [Footer control](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/df3e0a2efa2948d2b66e8f5071f5b48e.html).
 
 You may also want to open **Customer Orders** page when clicking on **See All**. For this, you will set `OnPress` event of the **Footer** control and link it to `ShowAllOrders.action` so that when an end-user clicks on **See All**, the Customer Orders page will open.
 
