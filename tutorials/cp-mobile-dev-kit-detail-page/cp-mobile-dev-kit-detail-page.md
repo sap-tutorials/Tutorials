@@ -16,6 +16,17 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+To enhance your MDK app with customer details information, you need to carry out the following tasks:
+
+*  Create a new customer details page
+*  Add some controls to the page to display information like id, name, email, phone, address
+*  Create a new navigation action to the customer details page
+*  Navigate from customer list page to details page
+*  Deploy app metadata to SAP Cloud Platform Mobile Services
+*  Update the app with new changes
+
+![MDK](img_1.gif)
+
 [ACCORDION-BEGIN [Step 1: ](Create the customer detail page)]
 
 This page will show related details for a customer. In this page, you will add an **Object Header** control that is used to display information (like first name, last name, date of birth, email address & phone number) about the header of an object and **Static Key Value** control to display key value pair items like address, city, postal code & country.

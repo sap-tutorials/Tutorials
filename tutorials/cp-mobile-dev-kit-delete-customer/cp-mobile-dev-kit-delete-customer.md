@@ -35,7 +35,10 @@ Provide the below information:
 | `Type` | select `Message` |
 | `Message` | `Delete entity failure - {{#ActionResults:delete/#Property:error}}` |
 | `Title` | `Delete Customer` |
-| `OK Caption` | `OK` |
+| `OKCaption` | `OK` |
+| `OnOK` | `--None--` |
+| `CancelCaption` | leave it blank |
+| `OnCancel` | `--None--` |
 
 >In this expression `{{#ActionResults:delete/#Property:error}}`, _delete_ is a reference to the **Action Result** name in the _Delete Entity action_ (you will create this action in following step). This reference is used to pass the results to subsequent actions in the chain. These actions can reference the action result as needed. In this case if there is a failure, you access the error property of the action result to display the OData failure message.
 
@@ -131,7 +134,7 @@ export default function DeleteConfirmation(clientAPI) {
 
 [ACCORDION-BEGIN [Step 3: ](Add a trash button to customer details page)]
 
-You will add a button to the _Customer Details page_ called **Trash**. You will link this button to the `Customers_DeleteConfirmation.js` rule you just created. This event will display a dialog when the **Trash** button is pressed by the end-user.
+You will add a button to the _Customer Detail page_ called **Trash**. You will link this button to the `Customers_DeleteConfirmation.js` rule you just created. This event will display a dialog when the **Trash** button is pressed by the end-user.
 
 In `CustomerDetail` page, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
@@ -139,7 +142,11 @@ In `CustomerDetail` page, drag and drop an **Action Bar Item** to the upper righ
 
 >**Action Bar Item** is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (normally at the top of the page).
 
-Next, in the Properties pane, click the **link icon** to open the object browser for the **System Item** property.
+In the Properties pane, set **Position** to **Right**.
+
+![MDK](img_016_2.png)
+
+Click the **link icon** to open the object browser for the **System Item** property.
 
 Double click on the **Trash** type and click **OK**.
 
@@ -166,9 +173,7 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 
 >Make sure to select same App ID as you chose in previous tutorial.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
-
->By default, there is a standard 25-35 minutes time duration for App update. In case, you don't see _Confirmation_ pop-up, kill the MDK client app from the background and open it again.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
 
 Click Customer List | click any record | click trash icon.
 
