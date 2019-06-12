@@ -3,7 +3,7 @@ title: Call a Remote Function Module From ABAP Envionment
 description: Call a remote function module located in an on-Premise system, such as an S/4HANA System, from the ABAP Environment
 auto_validation: true
 time: 60
-tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform]
+tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
@@ -23,8 +23,6 @@ primary_tag: products>sap-cloud-platform--abap-environment
   - How to test the connection using an ABAP handler class
 
 For more information on setup, see:
-
-- **Tutorial**: [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api)
 
 - [SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html) - basic concepts
 
@@ -61,13 +59,6 @@ There are two problems when setting up connectivity between the Cloud Platform A
 5. Communicate through the tunnel via HTTP or RFC
 
 ![Image depicting overview](overview.png)
-
-.
-This tutorial is part of a group of three:
-
-1. This tutorial: Create the connection
-2. Test the connection by calling a BAPI
-3. Display the BAPI output to a Fiori Elements Preview
 
 ---
 
@@ -161,57 +152,9 @@ The destination appears in the list.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Copy the Service Key for the destination service instance)]
-1. Go back to your space, e.g. `Dev`, and choose your destination service instance, e.g. **Service Instances > `EXTERNAL_API_XXX`**
 
-    ![Image depicting step6a-choose-destination](step6a-choose-destination.png)
 
-2. Choose **Service Keys**.
-
-3. Copy the Service Key into a text editor. You will need it later for the Communication Arrangement.
-
-    ![Image depicting step6b-copy-service-key](step6b-copy-service-key.png)
-
-4. If there is no existing service key, create one: Enter a name; leave the rest blank; choose **Save**.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Create a Communication Arrangement for a Cloud Foundry Destination)]
-1. Again, go back to `Dev` and choose your ABAP service instance `Tnn`.
-
-2. Open the dashboard.
-
-    ![Image depicting step6-open-dashboard](step6-open-dashboard.png)
-
-3. Choose **Communication Arrangements > New**.
-
-    ![Image depicting step6b-comm-arrangement](step6b-comm-arrangement.png)
-
-4. Enter the following:
-    - Scenario = **`SAP_COM_0276`**
-    - Name = **`EXTERNAL_API_2`**
-    - Service Key = *paste in the service key you copied* .
-
-      ![Image depicting step7-paste-service-key](step7-paste-service-key.png)
-
-The identically-named Communication System is created automatically.
-
-![Image depicting step7c-comm-arr-created](step7c-comm-arr-created.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Enter the service instance name)]
-In **Additional Properties**, enter a service instance name, such as **`OutboundComm_for_RFCDemo_XXX`**.
-For clarity, give it a different name from the Communication Arrangement name, since you will be using this service instance name property in later ABAP developments.
-
-![Image depicting step8-add-service-instance-name](step8-add-service-instance-name.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Create a Communication System for SAP Cloud Connector)]
+[ACCORDION-BEGIN [Step 6: ](Create a Communication System for SAP Cloud Connector)]
 1. Again, in the Dashboard, choose **Communication Systems > New**.
 
 2. Enter the credentials for an administration user for your SAP CP Neo account:
@@ -227,7 +170,7 @@ For clarity, give it a different name from the Communication Arrangement name, s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create a Communication Arrangement for SAP Cloud Connector)]
+[ACCORDION-BEGIN [Step 7: ](Create a Communication Arrangement for SAP Cloud Connector)]
 1. Go back to the Dashboard Home, choose **Communication Arrangements** again, then choose **New**.
 
       ![Image depicting step6b-comm-arrangement](step6b-comm-arrangement.png)
@@ -245,7 +188,7 @@ For clarity, give it a different name from the Communication Arrangement name, s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Create an ABAP class for the RFC connection)]
+[ACCORDION-BEGIN [Step 8: ](Create an ABAP class for the RFC connection)]
 1. Create a new ABAP class: Choose **File > New > Other... > ABAP Class**.
 
 2. Enter a name and description. The name should be in the form `Z_...RFC_XXX`. Replace `XXX` with your group number or initials.
@@ -255,7 +198,7 @@ For clarity, give it a different name from the Communication Arrangement name, s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Add the interfaces statement; implement the main method)]
+[ACCORDION-BEGIN [Step 9: ](Add the interfaces statement; implement the main method)]
 1. Implement the interface by adding this statement to the public section:
 
     `interfaces if_oo_adt_classrun.`
@@ -270,8 +213,8 @@ For clarity, give it a different name from the Communication Arrangement name, s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Create variables)]
-1. Create the data types:
+[ACCORDION-BEGIN [Step 10: ](Create variables)]
+1. Create the data types that specify your remote connection information:
 
     ```ABAP
     DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
@@ -284,8 +227,7 @@ For clarity, give it a different name from the Communication Arrangement name, s
     DATA lv_result type c length 200.
     ```
 
-2. Replace the `i_service_instance_name` with your service instance name, specified in the Communication  Arrangement. (To avoid confusion, give the Communication Arrangement and the service instance different names).
-
+2. Replace the `i_service_instance_name` with your service instance name, specified in the Communication  Arrangement (which you created in [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api)).
 
 
 3. Replace the `i_name` with your the name of the specific **RFC** destination (which you created in SAP Cloud Cockpit in the tutorial [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api)).
@@ -295,7 +237,7 @@ For clarity, give it a different name from the Communication Arrangement name, s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Call the remote function from the on-premise system)]
+[ACCORDION-BEGIN [Step 11: ](Call the remote function from the on-premise system)]
 ```ABAP
 CALL function 'RFC_SYSTEM_INFO'
 destination lv_destination
@@ -307,7 +249,7 @@ destination lv_destination
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Output the result)]
+[ACCORDION-BEGIN [Step 12: ](Output the result)]
 Output the result of the RFC to the ABAP Console
 
 ```ABAP
@@ -317,7 +259,7 @@ out->write( lv_result ).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Wrap the method in an exception)]
+[ACCORDION-BEGIN [Step 13: ](Wrap the method in an exception)]
 Wrap the whole method in an exception using TRY...CATCH.
 
 ```ABAP
@@ -330,7 +272,7 @@ endtry.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Check your code)]
+[ACCORDION-BEGIN [Step 14: ](Check your code)]
 You code should look roughly like this:
 
 ```ABAP
@@ -375,7 +317,7 @@ ENDCLASS.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Test the class)]
+[ACCORDION-BEGIN [Step 15: ](Test the class)]
 1. Save and activate the class (**`Ctrl+S, Ctrl+F3`**).
 
 2. Run the class by choosing **`F9`**. Some system information, such as the hostname, the System ID ( `<SID>` ), and the IP address should be displayed.
@@ -383,12 +325,12 @@ ENDCLASS.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](Test yourself)]
+[ACCORDION-BEGIN [Step 16: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 20: ](Optional: Create an ABAP class for the HTTP connection)]
+[ACCORDION-BEGIN [Step 17: ](Optional: Create an ABAP class for the HTTP connection)]
 This class allows you to troubleshoot the RFC connection by checking that the HTTP connection works.
 
 ```ABAP
@@ -429,7 +371,7 @@ ENDCLASS.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 21: ](Add error handling to the class for the RFC connection )]
+[ACCORDION-BEGIN [Step 18: ](Add error handling to the class for the RFC connection )]
 1. Go back to your RFC class. Remove the period (.) after the IMPORTING parameter and add the following exception parameters to the function call `RFC_SYSTEM_INFO`:
 
     ```ABAP
