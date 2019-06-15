@@ -19,7 +19,7 @@ Handlebars helper help developer to use JavaScript logic in rendering of the car
 
 [ACCORDION-BEGIN [Step 1: ](Get familiar with real world use case)]
 
-A Company wants managers to have a set of `KPIs` available on a mobile device. In order to simplify the card, a sum of sales orders is represented in certain Colors. For example, if the sum is larger than 500 Euros then the sales order's status is visualized and highlighted with traffic light symbols.
+A Company wants managers to have a set of `KPIs` available on a mobile device. In order to simplify the card, sales order status is visualized with the traffic lights ( **Accepted** | Green, **Rejected** | Red and **New** | Yellow) and also if the gross amount is larger than 500 Euros then it is highlighted with Green yellow color.
 
 ![SAP Cloud Platform Mobile Services - Opera](img_0.1.gif)
 
