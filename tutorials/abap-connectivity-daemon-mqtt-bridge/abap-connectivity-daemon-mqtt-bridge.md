@@ -90,7 +90,7 @@ METHOD if_abap_daemon_extension~on_accept.
 ENDMETHOD.
 ```
 
-Now, implement the `ON_START` method. It receives two startup parameters containing the names of the MQTT topics for subscription and publication, and stores them in the member variables created in step 1.
+Now, implement the `ON_START` method. It receives two startup parameters containing the names of the MQTT topics for subscription and publication and stores them in the member variables created in step 1.
 
 ```ABAP
 METHOD if_abap_daemon_extension~on_start.
@@ -328,7 +328,7 @@ For the reverse direction, you will need a class that simply waits for any incom
 CLASS zcl_tutorial_mqtt_daemon_recv DEFINITION
   PUBLIC
   FINAL
-  CREATE PUBLIC .
+  CREATE PUBLIC.
 
   PUBLIC SECTION.
     INTERFACES: if_oo_adt_classrun, if_amc_message_receiver_pcp.
@@ -403,7 +403,7 @@ You should see the text you just published on your ABAP Messaging Channel appear
 
 For testing the other forwarding direction, **activate the class** `ZCL_TUTORIAL_MQTT_DAEMON_RECV`  **by pressing `Ctrl+F3`**. Now **run it as ABAP Application (Console) by pressing `F9`**.
 
-> The class will now be able to receive AMC messages for 60 seconds. You can extend this time range by modifying the `WAIT ... UP TO 60 SECONDS` statement in the source code, or you simply execute your class again.
+> The class will now be able to receive AMC messages for 60 seconds. You can extend this time range by modifying the `WAIT ... UP TO 60 SECONDS` statement in the source code or you simply execute your class again.
 
 While the class is running, you can publish MQTT messages under the topic `abaptopic/tutorial/subscribe` by using the [HiveMQ Websocket Client](http://www.hivemq.com/demos/websocket-client/):
 
