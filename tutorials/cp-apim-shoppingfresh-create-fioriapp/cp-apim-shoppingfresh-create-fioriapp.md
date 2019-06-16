@@ -90,7 +90,7 @@ primary_tag: products>sap-api-management
 
     ![Additional Properties](04-addtional-properties2.png)
 
-    [VALIDATE_1]      
+[VALIDATE_1]      
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable SAP Web IDE)]
@@ -266,8 +266,8 @@ primary_tag: products>sap-api-management
     ```
     ![Render Map](20-RenderMap.png)
 
-    [DONE]
-    [ACCORDION-END]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy app)]
 
