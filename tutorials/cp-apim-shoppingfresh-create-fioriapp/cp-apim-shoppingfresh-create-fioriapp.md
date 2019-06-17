@@ -34,7 +34,7 @@ primary_tag: products>sap-api-management
     WebIDEUsage=api_mgmt_proxy
     Name=apimgmt_proxy
     WebIDEEnabled=true
-    URL=https\://yourtrialuserpath.apim1.hanatrial.ondemand.com\:443
+    URL=https://yourtrialuserpath.apim1.hanatrial.ondemand.com\:443<yourtrialuser>trial\
     ProxyType=Internet
 
     ```
@@ -48,7 +48,7 @@ primary_tag: products>sap-api-management
     >We have used this URL in the above sections. Note that there are Additional Properties that we have also set.
 
 5. Add the additional properties as below:
-
+    >ignore if it is already added
 
     **Field** | **Value**
     ---- | ----
@@ -70,7 +70,7 @@ primary_tag: products>sap-api-management
     WebIDEUsage=api_mgmt_catalog
     Name=apimgmtdevportal
     WebIDEEnabled=true
-    URL=https\://devportalu34f5b50f-yourtrialusernametrial.hanatrial.ondemand.com
+    URL=https://devportalu34f5b50f-yourtrialusernametrial.hanatrial.ondemand.com/
     ProxyType=Internet
 
     ```
