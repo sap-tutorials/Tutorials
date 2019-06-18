@@ -3,26 +3,14 @@ title: Create a New Project or Component Wizard for SAP Web IDE
 description: Create a new wizard template for creating projects or components for SAP Web IDE.
 primary_tag: products>sap-web-ide-plug-ins
 tags: [  tutorial>beginner, products>sap-web-ide, products>sap-web-ide-plug-ins ]
+time: 15
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn
-- How to create your own reusable wizard template from scratch.
+- How to create your own reusable wizard template from scratch
 
-##Next Steps
-- [Build and Deploy the Feature to Cloud Foundry](https://sdk-sapwebide.dispatcher.hana.ondemand.com/index.html#/topic/54b865d25425437a8215d903f3a434be)
-- [Create a Destination for the Feature](https://sdk-sapwebide.dispatcher.hana.ondemand.com/index.html#/topic/b309319775964d47a35c8c151401b21d)
-- [Activate the New Feature in SAP Web IDE](https://sdk-sapwebide.dispatcher.hana.ondemand.com/index.html#/topic/1023cff60c0e4831b5bff7b4a5f45b92)
-
-### Time to Complete
-**15 Min**
-
-### Before you begin
 For this tutorial, you must have a feature project in your workspace. If you do not have one, create one as described in [Creating Our First Feature \(MTA\)] (https://sdk-sapwebide.dispatcher.hana.ondemand.com/index.html#/topic/1cba01c3a1c4412bbe48593562726a09).
-
 
 ---
 
