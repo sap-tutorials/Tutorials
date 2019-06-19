@@ -1,6 +1,6 @@
 ---
-title: Explore data in Cloud Storage in SAP Data Hub, trial edition 2.4
-description: Explore data in Cloud Storage (including profiling) by using SAP Data Hub, trial edition 2.4.
+title: Explore Data in Cloud Storage in SAP Data Hub, Trial Edition 2.5
+description: Explore data in Cloud Storage (including profiling) by using SAP Data Hub, trial edition 2.5.
 auto_validation: true
 primary_tag: products>SAP-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
@@ -11,8 +11,8 @@ tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-
 
 ## Details
 ### You will learn  
-During this tutorial, you will learn how to use SAP Data Hub Metadata Explorer. This application allows you to learn more about data residing in external storages, for example, Google Cloud Storage or AWS S3 by profiling, previewing and viewing the metadata. You will use data residing in Cloud Storage. The Metadata Explorer gathers information about the location, attributes, quality, and sensitivity of data. With this information, you can make informed decisions about which datasets to publish and determine who has access to use or view information about the datasets.
-Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+During this tutorial, you will learn how to use SAP Data Hub Metadata Explorer. This application allows you to learn more about data residing in external storages, for example, Google Cloud Storage, AWS S3 or Windows Azure Storage Blob by profiling, previewing and viewing the metadata. You will use data residing in Cloud Storage. The Metadata Explorer gathers information about the location, attributes, quality, and sensitivity of data. With this information, you can make informed decisions about which datasets to publish and determine who has access to use or view information about the datasets.
+Please note here in this tutorial GCP refers to Google Cloud platform, AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 
 ### Time to Complete
@@ -21,7 +21,7 @@ Please note here in this tutorial GCP refers to Google Cloud platform and AWS re
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Discover data in Cloud Storage)]
-Open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+Open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
@@ -35,7 +35,7 @@ From the quick links, click on **Browse Connections**
 
 ![picture_03](./datahub-trial-v2-discovery-part01_03.png)
 
-Click the `Cloud_Storage` connection to display the directories / files on Google Cloud Storage or AWS S3. Once the connection opens, click on your bucket from GCS or AWS S3.
+Click the `Cloud_Storage` connection to display the directories / files on Google Cloud Storage or AWS S3 or Azure. Once the connection opens, click on your bucket from GCS or AWS S3 or Azure.
 
 [DONE]
 

@@ -1,6 +1,6 @@
 ---
-title: Explore data in SAP Vora in SAP Data Hub, trial edition 2.4
-description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition 2.4.
+title: Explore Data in SAP Vora in SAP Data Hub, Trial Edition 2.5
+description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition 2.5.
 auto_validation: true
 primary_tag: products>SAP-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-VORA ]
@@ -8,8 +8,8 @@ tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-
 
 ## Details
 ### You will learn  
-During this tutorial, you will learn that Metadata Explorer cannot only be used on files (for example stored in AWS S3 or Google Cloud Storage). Metadata Explorer also works on other data stores, in particular SAP Vora.
-Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+During this tutorial, you will learn that Metadata Explorer cannot only be used on files (for example stored in AWS S3, Google Cloud Storage or Azure Storage Blob). Metadata Explorer also works on other data stores, in particular SAP Vora.
+Please note here in this tutorial GCP refers to Google Cloud platform, AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 ### Time to Complete
 **30 Min**
@@ -17,7 +17,7 @@ Please note here in this tutorial GCP refers to Google Cloud platform and AWS re
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Load data into SAP Vora)]
-To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. Once you have opened the Launchpad click on the **Vora Tools**
+To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP  or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
@@ -39,7 +39,7 @@ Enter the following information to create the relational table if you are using 
 | `Schema`                       | `default`                                                                                         |
 | `Engine`                       | `Relational Disk`                                                                                 |
 | `Table Type`                   | `Data Source`                                                                                     |
-| `File System`                  | `S3 or GCS`                                                                                       |
+| `File System`                  | `S3 `                                                                                       |
 | `Connection Type`              | `Manual`                                                                                          |
 | `S3 Host`                      | `Should be empty`                                                                                 |
 | `S3 Access Key Id`             | `from your AWS management console go to My security credentials and copy it from there`           |
@@ -62,6 +62,22 @@ Enter the following information to create the relational table if you are using 
 | `Connection Type`              | `Connection Manager`                                                                              |
 | `Connection ID`                | `CLOUD_STORAGE`                                                                                   |
 | `File Path`                    | `file path via **Browse** button, in our case /Customers.csv`                                     |
+
+
+
+Enter the following information to create the relational table if you are using Azure and then click **Next** :
+
+| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                                                       |
+| :------------------------------ | :------------------------------------------------------------------------------------------- |
+| `Name`                         | `CUSTOMERS`                                                                                       |
+| `Schema`                       | `default`                                                                                         |
+| `Engine`                       | `Relational Disk`                                                                                 |
+| `Table Type`                   | `Data Source`                                                                                     |
+| `File System`                  | `WASB`                                                                                             |
+| `Connection Type`              | `Connection Manager`                                                                              |
+| `Connection ID`                | `CLOUD_STORAGE`                                                                                   |
+| `File Path`                    | `file path via **Browse** button, in our case /Customers.csv`                                     |
+
 
 Finally click **Finish (2)** to create the table.
 

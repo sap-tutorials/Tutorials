@@ -1,6 +1,6 @@
 ---
-title: Create Workflow (part 1), Enrich data with Data Transform in SAP Data Hub, trial edition 2.4
-description: Build a pipeline to enrich device data with country information by using SAP Data Hub, trial edition 2.4.
+title: Create Workflow (part 1), Enrich Data With Data Transform in SAP Data Hub, Trial Edition 2.5
+description: Build a pipeline to enrich device data with country information by using SAP Data Hub, trial edition 2.5.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Details
 ### You will learn  
-During this tutorial, you will learn how to create a Data Transform. This will enrich the `Devices.csv` file, which you have taken a look at during one of the previous tutorials, with country information. Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+During this tutorial, you will learn how to create a Data Transform. This will enrich the `Devices.csv` file, which you have taken a look at during one of the previous tutorials, with country information. Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services, Azure refers to Microsoft Azure.
 
 ### Time to Complete
 **30 Min**
@@ -16,7 +16,7 @@ During this tutorial, you will learn how to create a Data Transform. This will e
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add Data Transform and Trigger)]
-Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
@@ -46,7 +46,7 @@ Double click on the **Data Source** and open the **Data Source Editor**. Here we
 
 >You will see the connection here only, if you have configured the same under **Connection Management**.
 
-As **Source**, browse the AWS S3 or Google Cloud Storage and choose `Devices.csv` file. As soon as the file is selected, file configuration parameters will be Auto-proposed.
+As **Source**, browse the AWS S3 or Google Cloud Storage or Windows Azure Storage Blob and choose `Devices.csv` file. As soon as the file is selected, file configuration parameters will be Auto-proposed.
 
 ![picture_03](./datahub-trial-v2-workflow-part01_03.png)  
 

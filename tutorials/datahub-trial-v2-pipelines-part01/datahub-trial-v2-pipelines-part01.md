@@ -1,6 +1,6 @@
 ---
-title: Generate sensor data in SAP Data Hub, trial edition 2.4
-description: Generate sensor data and display it in a terminal by using SAP Data Hub, trial edition 2.4.
+title: Generate Sensor Data in SAP Data Hub, Trial Edition 2.5
+description: Generate sensor data and display it in a terminal by using SAP Data Hub, trial edition 2.5.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 time: 15
@@ -11,14 +11,14 @@ time: 15
 - How to use a **Data Generator** to generate random sample data
 - How to visualize the generated data via a **Terminal**
 Please note that this tutorial is similar to the `Generate sensor data` tutorial from [SAP Data Hub, developer edition tutorial group](https://developers.sap.com/group.datahub-pipelines.html).
-Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+Also note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a data pipeline)]
 
-Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the Sap Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From Sap Data Hub Launchpad you could access the Sap Data Hub Modeler.
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the Sap Data Hub Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From Sap Data Hub Launchpad you could access the Sap Data Hub Modeler.
 
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.

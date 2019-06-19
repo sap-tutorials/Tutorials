@@ -1,6 +1,6 @@
 ---
-title: Create Workflow (part 3), Build a task Workflow in SAP Data Hub, trial edition 2.4
-description: Build a task Workflow using SAP Data Hub, trial edition 2.4.
+title: Create Workflow (part 3), Build a Task Workflow in SAP Data Hub, Trial Edition 2.5
+description: Build a task Workflow using SAP Data Hub, trial edition 2.5.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -12,13 +12,13 @@ time: 15
   - How to build a task workflow using the **Pipeline** operator
 
 This workflow combines both tasks which you created during the previous tutorials into a process which you execute at once.
-Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create Workflow)]
 
-Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 

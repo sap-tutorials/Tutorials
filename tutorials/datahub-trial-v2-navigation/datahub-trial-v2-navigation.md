@@ -1,6 +1,6 @@
 ---
-title: Navigate around SAP Data Hub, Trial Edition 2.4
-description: Find your way around SAP Data Hub, trial edition 2.4.
+title: Navigate around SAP Data Hub, Trial Edition 2.5
+description: Find your way around SAP Data Hub, trial edition 2.5.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
@@ -11,13 +11,13 @@ time: 15
 ### You will learn  
   - How to find your way around SAP Data Hub, trial edition
   - How to troubleshoot problems
-  - Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+  - Please note here in this tutorial GCP refers to Google Cloud platform, AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access UIs via a web browser)]
-The SAP Data Hub App Launchpad serves as central entry point to all user interfaces of SAP Data Hub. To access the SAP Data Hub App Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+The SAP Data Hub App Launchpad serves as central entry point to all user interfaces of SAP Data Hub. To access the SAP Data Hub App Launchpad in AWS,  GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
