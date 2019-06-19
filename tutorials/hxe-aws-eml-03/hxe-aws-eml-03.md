@@ -1,5 +1,5 @@
 ---
-title: Set up your AWS environment - Install the SAP HANA Client and Python libraries in SageMaker Notebook
+title: Setup AWS - Customize your SageMaker Notebook for SAP HANA
 description: In your SageMaker Notebook instance, download and install the SAP HANA client and the Python driver to connect to your SAP HANA, express edition instance.
 primary_tag: topic>machine-learning
 auto_validation: true
@@ -16,9 +16,12 @@ Once downloaded and installed, you will be able to connect to your SAP HANA, exp
 
 Additionally, you could also leverage your SAP HANA instance when running SageMaker training jobs, but this would require to build and deploy a new container image for SageMaker. Therefore, this tutorial won't address this scenario.
 
+> ### **Note:**
+>
 Be aware that SageMaker Notebooks are ephemeral, therefore any package installed will be lost after the notebook instance is restarted.
+>
 To avoid that you can create a lifecycle configuration that runs each time you start your notebook instance.
-But in this series, you simply install the Python packages whenever needed in your notebooks.
+But in this series, you simply install the Python packages whenever needed in your notebooks and assume you will run the series without restarting the SageMaker Notebook instance.
 
 [ACCORDION-BEGIN [Step 1: ](Access the SageMaker Notebook instance)]
 

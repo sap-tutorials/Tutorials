@@ -63,13 +63,11 @@ This will bring up the create wizard for an API Provider.
 
 [ACCORDION-BEGIN [Step 4: ](View and create API Providers)]
 
-To navigate to the API Developer area, select the **Hamburger Menu** in the upper left corner and click on **Develop**.
+To navigate to the API Developer area, select the **Hamburger Menu** in the upper left corner and click on **Configure**.
 
-![Click on Developer](03-hamburger.png)
+![Click on Configure](03-hamburger.png)
 
-Here you will see 5 tabs where APIs is preselected. Select **API Providers** from the tab menu to see the previously created providers and to create a new one.
-
-![Click on API Providers](03a-provider.png)
+  **API Providers** will be selected by default from the tab menu to see the previously created providers and to create a new one.
 
 To create a new provider from this page, click on **Create**
 
@@ -174,4 +172,3 @@ Now you can see one API Provider in the list of available API Providers.
 [DONE]
 
 [ACCORDION-END]
-

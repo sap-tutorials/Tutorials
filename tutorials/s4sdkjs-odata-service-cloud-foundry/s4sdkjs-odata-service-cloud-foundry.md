@@ -3,7 +3,7 @@ title: Create Your First Application with SAP Cloud SDK for JavaScript
 description: Learn the fundamentals of the SAP Cloud SDK for JavaScript and integrate with an SAP S/4HANA Cloud system.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript]
+tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
@@ -27,9 +27,12 @@ Once it is up and running you should see the list of services at `http://localho
 
 [ACCORDION-BEGIN [Step 2: ](Add a custom route)]
 
-Initially, the app only contains the `index` and `hello-world` routes. We will add another route for `business-parters` that will simply list all available business partners.
+Initially, the app only contains the `index` and `hello-world` routes.
+In `Express.js`, routes are functions that handle HTTP requests for a given verb and a given path.
+You can also think of routes as API endpoints.
 
-First, create a new file `business-partner-route` in the `src/` directory and add an implementation for this route, like so:
+We will add another route for `business-parters` that will retrieve a list of business partners from the SAP S/4HANA system.
+First, create a new file `business-partner-route.ts` in the `src/` directory and add an implementation for this route, like so:
 
 ```JavaScript / TypeScript
 import { Request, Response } from 'express';
@@ -47,11 +50,11 @@ Then, add this route to the routes of your application in `application.ts`:
 private routes(): void {
   const router = express.Router();
 
-  router.get('/', indexRoute);
-  router.get('/hello', helloWorld);
+  router.get("/", indexRoute);
+  router.get("/hello", helloWorld);
   // add this line
-  router.get('/business-partners', businessPartners);
-  this.app.use('/', router);
+  router.get("/business-partners", businessPartners);
+  this.app.use("/", router);
 }
 ```
 
@@ -68,13 +71,15 @@ You can start your application by running `npm run start:local`. Now, calling `h
 
 [ACCORDION-BEGIN [Step 3: ](Import service entities)]
 
-In order to use the `SAP Cloud SDK for JavaScript` to make a call to an `OData` service add the `virtual data model` (`VDM`) for this service to your dependencies. For this tutorial we are using the `VDM` for the business partner service. Install it with the following:
+In order to use the `SAP Cloud SDK for JavaScript` to make a call to an `OData` service, add the "virtual data model" (VDM) for this service to your dependencies.
+For this tutorial we are using the OData VDM for the business partner service. Install it with the following:
 
 ```Shell
 npm install @sap/cloud-sdk-vdm-business-partner-service
 ```
 
-Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner-route.ts`.
+Import the entity you want to retrieve in your application.
+In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner-route.ts`.
 
 ```JavaScript / TypeScript
 import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
@@ -82,7 +87,8 @@ import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 
 Now the `BusinessPartner` entity is available for you to be used.
 
->**Side-note:** The `SAP Cloud SDK for JavaScript` offers packages for each `OData` service exposed by `SAP S/4HANA Cloud`. You can find a list of these services in the [`SAP API Business Hub`](https://api.sap.com/package/SAPS4HANACloud?section=Artifacts) and a list of the corresponding packages in our [documentation](https://help.sap.com/doc/9dbcab0600b346c2b359a8c8978a45ba/1.0/en-US/index.html).
+>**Side-note:** The `SAP Cloud SDK for JavaScript` offers packages for each `OData` service exposed by `SAP S/4HANA Cloud`.
+You can find a list of these services in the [`SAP API Business Hub`](https://api.sap.com/package/SAPS4HANACloud?section=Artifacts) and a list of the corresponding packages in our [documentation](https://help.sap.com/doc/9dbcab0600b346c2b359a8c8978a45ba/1.0/en-US/globals.html).
 
 [DONE]
 [ACCORDION-END]
@@ -105,7 +111,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 - Line 2 indicates, that we want to create a request to get all the business partners.
 - Line 3 ff. takes care of the execution and sends a request to a `url` based on the given destination `url`.
 
-In the code snippet above we assume that you have a mock server running locally. If you are using an actual `SAP S/4HANA Cloud` system, you can replace the third line with an different destination configuration:
+In the code snippet above we assume that you have a mock server running locally. If you are using an actual `SAP S/4HANA Cloud` system, you can replace the third line with a different destination configuration:
 
 ```JavaScript / TypeScript
 .execute({
@@ -131,7 +137,13 @@ import { BusinessPartner } from "@sap/cloud-sdk-vdm-business-partner-service";
 import { Request, Response } from "express";
 
 export async function businessPartners(req: Request, res: Response) {
-  res.status(200).send(await getAllBusinessPartners());
+  getAllBusinessPartners()
+    .then(businessPartners => {
+      res.status(200).send(businessPartners);
+    })
+    .catch(error => {
+      res.status(500).send(error.message);
+    })
 }
 
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
@@ -143,7 +155,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 }
 ```
 
-Now restart your server and reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
+Now restart your server and reload the `http://localhost:8080/business-partners` page to retrieve a list of business partners.
 
 Congratulations, you just made your first call with the SAP Cloud SDK!
 
@@ -161,13 +173,13 @@ npm install --save-dev dotenv
 ```
 Then create a `.env` file in the root directory of your project and define your a `destinations` environment variable as follows:
 
-```
+``` .env
 destinations=[{"name": "<DESTINATIONNAME>", "url": "<URL to your system>", "username": "<USERNAME>", "password": "<PASSWORD>"}]
 ```
 
 This is what it would look like for the mock server:
 
-```
+``` .env
 destinations=[{"name": "MockServer", "url": "http://localhost:3000"}]
 ```
 
@@ -201,3 +213,7 @@ Now, when you execute `npm run start:local` and call `localhost:8080/business-pa
 [ACCORDION-END]
 
 ---
+
+This tutorial is part of a larger series.
+You can find the next entry [here](Deploy Application to Cloud Foundry with SAP Cloud SDK for JavaScript).
+For questions, you can reach out to us on [`StackOverflow`](https://stackoverflow.com/) using the tag [sap-cloud-sdk](https://stackoverflow.com/questions/tagged/sap-cloud-sdk) and on [answers.sap.com](https://answers.sap.com) using the tag [SAP S/4HANA Cloud SDK](https://answers.sap.com/tags/73555000100800000895).

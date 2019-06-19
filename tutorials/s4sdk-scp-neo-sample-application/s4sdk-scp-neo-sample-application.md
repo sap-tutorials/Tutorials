@@ -1,31 +1,29 @@
 ---
-title: Create a sample application on SCP Neo using SAP Cloud SDK
-description: The following steps will explain how to create your very first Hello World sample application on SCP Neo using the SAP Cloud SDK. If you want to follow this tutorial, it is highly recommended checking out the first tutorial in the series. You will not need any additional software as the server will run on your local machine.
+title: Create a Sample Application on SCP Neo Using SAP Cloud SDK
+description: Create your very first Hello World sample application on SAP Cloud Platform Neo using the SAP Cloud SDK.
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** intermediate
  - **Tutorials:** [Set up your local infrastructure to develop with SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-setup.html)
 
 ## Next Steps
 - **Tutorial:** [Connect to OData service on Neo using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html)
 
-### You will learn  
+### Details  
 The tutorial will show you the first steps when developing applications for the SCP Neo using the SAP Cloud SDK. To be precise, we will cover the following steps:
-
- 1. Generate a project stub using a Maven Archetype
- 2. Understand the project structure and its artifacts
- 3. Implement and understand the Hello World Servlet
- 4. Implement and understand the integration test
- 5. Deployment
+  1. Generate a project stub using a Maven Archetype
+  2. Understand the project structure and its artifacts
+  3. Implement and understand the Hello World Servlet
+  4. Implement and understand the integration test
+  5. Deployment
 
 ![deployed application result](deployed_application_result.png)
 
-### Time to Complete
-**20 Min**
+>If you want to follow this tutorial, it is highly recommended checking out the first tutorial in the series. You will not need any additional software as the server will run on your local machine.
 
 ---
 

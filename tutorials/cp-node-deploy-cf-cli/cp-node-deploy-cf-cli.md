@@ -26,7 +26,7 @@ Create a `manifest.yaml` file in the `nodetutorial` directory. This file is the 
 
 Copy the following content to the recently created file:
 
-```:
+```yaml
 ---
 applications:
 - name: myapp
@@ -39,7 +39,7 @@ applications:
 
 You should now have the following directory structure:
 
-```bash:
+```bash
 nodetutorial
 ├── manifest.yaml
 └── myapp
@@ -70,7 +70,7 @@ Refer to the [official documentation](https://docs.cloudfoundry.org/devguide/dep
 Make sure you are logged in to your SAP Cloud Platform Cloud Foundry endpoint `cf login` and navigate to your space via `cf space <SPACE>`). Execute the following command inside the `nodetutorial` directory:
 
 
-```bash:
+```bash
 user@host:~/nodetutorial
 => cf push
 ```
@@ -93,7 +93,7 @@ To open the application in a browser, there are two ways to figure out the accor
 
 Or you could generally access the application overview. It shows among other information the URL. Accessing the application overview is done via:
 
-```bash:
+```bash
 user@host:~/nodetutorial
 => cf apps
 ```

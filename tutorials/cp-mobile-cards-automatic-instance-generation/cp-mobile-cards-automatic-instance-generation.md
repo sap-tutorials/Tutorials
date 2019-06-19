@@ -23,6 +23,8 @@ A company wants to show the last three pay slips to your employee on a mobile de
 
 The Automatic Instance card will show three cards with pay slip information. Each card would be one of the last three months (April, May, June). As soon as the result set changes (when a new pay slip is available), the cards will be updated. The new month plus the last two months would show (May, June, July).
 
+>For this tutorial, you will use Mobile Services sample backend to retrieve top 3 sales orders.
+
 [DONE]
 [ACCORDION-END]
 
@@ -41,7 +43,7 @@ Provide the required information:
 | Field | Value |
 |----|----|
 | **Name** | `AutomaticInstanceCard` |
-| **Destination** | `SAPCPMobileServices` |
+| **Destination** | `com.sap.edm.sampleservice.v2` |
 | **Template Source** | `Template Manager` |
 | **HTML Template** | `Sample Sales Orders Template` |
 
@@ -61,10 +63,6 @@ Click **Editor** to view the HTML that builds this card. The HTML describes the 
 
 ![SAP Cloud Platform Mobile Services - Opera](img_014.png)
 
-Click **Data Mapping** to view the Mapping between the HTML that contains handlebars and the actual JSON data. The data mapper does the mapping of the Handlebars placeholders to the actual JSON entities. The actual result shows in the card to the right.
-
-![SAP Cloud Platform Mobile Services - Opera](img_016.png)
-
 Click **Save** to save the card and make it available for the SAP Mobile Cards application.
 
 [VALIDATE_1]
@@ -72,9 +70,9 @@ Click **Save** to save the card and make it available for the SAP Mobile Cards a
 
 [ACCORDION-BEGIN [Step 3: ](Subscribe to the card in SAP Mobile Cards)]
 
-To ensure that the client refreshes, pull down the Welcome card to trigger a manual refresh and then click the **+** icon to subscribe a new card.
+Click **More** in the client app | **Subscriptions**.
 
-![Chrome Remote Desktop](img_020.png)
+![Chrome Remote Desktop](img_020.gif)
 
 Click `AutomaticInstanceCard` under the **All** tab.
 
@@ -84,6 +82,10 @@ Click **Subscribe** to trigger the download of the Automatic Instance cards in y
 
 ![ Chrome Remote Desktop](img_023.png)
 
+Click **New Cards** to to see latest cards download on the device.
+
+![ Chrome Remote Desktop](img_023.1.png)
+
 Click a card to open it.
 
 ![ Chrome Remote Desktop](img_024.png)
@@ -92,7 +94,7 @@ Congratulations, you have built a query-based card that creates an instance of a
 
 ![ Chrome Remote Desktop](img_025.png)
 
-Here you can view respective sales order items details by clicking on the three dots at the bottom-right.
+Here you can view respective sales order items details by clicking on the flip-back icon at the bottom-right.
 
 ![Chrome Remote Desktop](img_026.png)
 

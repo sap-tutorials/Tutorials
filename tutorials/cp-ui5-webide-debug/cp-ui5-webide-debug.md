@@ -19,7 +19,7 @@ primary_tag: topic>sapui5
 
 Add a simple message page to let the users know you are still working on this app.
 
-Replace the existing page in the file `tutorial/ui/webapp/view/MainView.view.xml` with
+Replace the existing page in the file `tutorial/ui/webapp/view/View1.view.xml` with
 ```JavaScript
 <MessagePage showHeader="false"
   description="More content to come"
@@ -31,18 +31,40 @@ Replace the existing page in the file `tutorial/ui/webapp/view/MainView.view.xml
 ![message](./messagepage.png)
 
 
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step : ](Change the log level)]
+
+Add the following line to the `index.html` file to change to log level.
+```HTML
+data-sap-ui-logLevel="debug"
+```
+![loglevel](./loglevel.png)
+
+> The log level acts like a filter and hides all log messages below the defined severity.
+
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step : ](Write a log message to the console)]
 
-Add this `onBeforeRendering` hook to the file `tutorial/ui/webapp/controller/MainView.controller.xml`. This error function allows you to write error messages to the console. Error messages also write the stack trace to the console, which can be used to trace the message back to the line of invocation.
+Import the logger to the file `tutorial/ui/webapp/controller/View1.controller.xml` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
+```JavaScript
+,
+	"sap/base/Log"
+], function (Controller, Log) {
+```
+
+
 ```JavaScript
 ,
 
 onBeforeRendering: function() {
-  jQuery.sap.log.error("A problem occured!");
-}
+  Log.info("A random log message");
+},
 ```
 
 ![logger](./logger.png)
@@ -58,8 +80,6 @@ onBeforeRendering: function() {
 
 Add this `onAfterRendering` hook to the same file to place a breakpoint in your code. A breakpoint will cause your app to stop when the execution thread reaches it. This gives you the chance to inspect the state of you app.
 ```JavaScript
-,
-
 onAfterRendering: function() {
 	debugger
 }
@@ -121,7 +141,7 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](See the error log message)]
+[ACCORDION-BEGIN [Step : ](Check the log message)]
 
 Click **F8** to jump over the breakpoint and switch to the `Console` tab.
 Now you should see your error message printed in red. Click on the small triangle on the left side to expand the error message.

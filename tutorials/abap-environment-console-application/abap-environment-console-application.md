@@ -3,13 +3,15 @@ auto_validation: true
 title: Create Your First ABAP Console Application
 description: Create an ABAP package and an ABAP class in the SAP Cloud Platform ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 5
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform ABAP Environment user
-  - ADT version 2.96 or higher
+-	You have purchased an entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
+-	You have set up your ABAP environment as described in [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html)
+- You have a user in the ABAP Environment [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
+- You have downloaded the ABAP Development Tools (ADT), version 2.96 or later. See [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
 
 ## Details
 ### You will learn
@@ -18,21 +20,29 @@ time: 5
   - How to create an ABAP class
   - How to execute the application console
 
-In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
+In this tutorial, wherever `XXX` appears, use a number (e.g. `000`) or your initials.
+
+For more information, see:
+- [SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
 
 ---
 
+[ACCORDION-BEGIN [Step 1: ](Open the ABAP Development Tools (ADT) )]
+Open the ADT and change to the ABAP perspective, using the menu:
 
-[ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-Open Eclipse on your desktop.
+![adt-abap-menu](adt-abap-menu.png)
+.
+![perspective](perspective.png)
 
-![Open Eclipse](desktop.png)
+or the icon:
+
+![adt-abap-icon](adt-abap-icon.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create ABAP Cloud project in ADT)]
-1. Go to ADT and select the menu path **File** > **New** > **Other**.
+[ACCORDION-BEGIN [Step 2: ](Create an ABAP Cloud project)]
+1. In the ADT, select the menu path **File** > **New** > **Other**.
 
     ![Create an ABAP Cloud project in ADT](other.png)
 
@@ -49,7 +59,7 @@ Open Eclipse on your desktop.
     - Email: **`<your_email_address>`**
     - Password: **`<your_password>`**
 
-    ![Setup connection settings](connect.png)
+     ![Setup connection settings](connect.png)
 
 5. Maintain the required Service Instance details by selecting the appropriate values from the drop-down lists and move on with **Next**.
     - Organization: **`<your_organization>`**

@@ -21,9 +21,9 @@ Once SAP Cloud Platform Mobile Services is enabled, you can use its features in 
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform cockpit)]
 
-Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and log on.
+Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and click **Log On**.
 
-Click on Neo Trial.
+Click **Neo Trial**.
 
 ![Neo Trial](neo-trial.png)
 

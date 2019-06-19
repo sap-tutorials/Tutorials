@@ -19,11 +19,11 @@ author_profile: https://github.com/jitendrakansal
 [ACCORDION-BEGIN [Step 1: ](Create a Welcome card)]
 Make sure you have logged into SAP Cloud Platform Mobile Services cockpit. In the cockpit, navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
 
-![MobileCards](Markdown_files/img_000.png)
+![MobileCards](img_000.png)
 
 Click on the **Create a New Card** icon to create a new card.
 
-![MobileCards](Markdown_files/img_001.png)
+![MobileCards](img_001.png)
 
 Provide the required information as per below.
 
@@ -37,11 +37,11 @@ Provide the required information as per below.
 
 Click **Save**.
 
-![MobileCards](Markdown_files/img_009.png)
+![MobileCards](img_009.png)
 
 You will then see a list of existing mobile cards created in your account.
 
-![MobileCards](Markdown_files/img_011.png)
+![MobileCards](img_011.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -52,7 +52,7 @@ Congratulations, you have your first SAP Mobile card on the device.
 
 > Welcome cards are auto subscribed by default and downloaded automatically after registration.
 
-![MobileCards](Markdown_files/img_012.png)
+![MobileCards](img_012.png)
 
 [DONE]
 [ACCORDION-END]
