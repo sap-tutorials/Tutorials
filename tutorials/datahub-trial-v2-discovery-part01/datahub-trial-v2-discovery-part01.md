@@ -21,7 +21,7 @@ Please note here in this tutorial GCP refers to Google Cloud platform, AWS refer
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Discover data in Cloud Storage)]
-Open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+Open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 

@@ -19,7 +19,7 @@ Also note here in this tutorial GCP refers to Google Cloud platform and AWS refe
 
 [ACCORDION-BEGIN [Step 1: ](Add JS String Operator)]
 
-Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment. To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
+Open the pipeline which you have created in the [previous tutorial](datahub-trial-v2-pipelines-part01) `(test.myFirstPipeline)`, in the modelling environment. To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub23.pdf) guide.
 
@@ -43,7 +43,7 @@ Right click the JS String Operator and click on **Open Script** to display the J
 
 Currently the JavaScript snippet creates an incremental **counter** every time it receives data via the input port and sends the **counter** to the output port.
 
-Replace the code with the following snippet to ensure that "bundles" of 30 sensor records are sent to the output port.
+Replace the code with the following snippet to ensure that `bundles` of 30 sensor records are sent to the output port.
 
 ```javascript
 

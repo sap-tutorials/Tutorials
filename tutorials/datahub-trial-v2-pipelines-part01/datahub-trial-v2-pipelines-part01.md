@@ -18,10 +18,10 @@ Also note here in this tutorial GCP refers to Google Cloud platform and AWS refe
 
 [ACCORDION-BEGIN [Step 1: ](Create a data pipeline)]
 
-Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the Sap Data Hub Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From Sap Data Hub Launchpad you could access the Sap Data Hub Modeler.
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the Sap Data Hub Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide. From Sap Data Hub Launchpad you could access the Sap Data Hub Modeler.
 
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon.
 
@@ -65,7 +65,7 @@ Close the tab for the JavaScript snippet.
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Terminal)]
 
-Add a **Terminal** operator to the pipeline by drag & drop (you find this also in the **Operators** tab). Then connect the `output` port of the **Data Generator** operator to the `in1` port of the **Terminal** operator. **You need to place the connection exactly on the "green circle"**.
+Add a **Terminal** operator to the pipeline by drag & drop (you find this also in the **Operators** tab). Then connect the `output` port of the **Data Generator** operator to the `in1` port of the **Terminal** operator. **You need to place the connection exactly on the `green circle`**.
 
 ![picture06](datahub-trial-v2-pipelines-part01-6.png)
 

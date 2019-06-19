@@ -17,7 +17,7 @@ time: 15
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access UIs via a web browser)]
-The SAP Data Hub App Launchpad serves as central entry point to all user interfaces of SAP Data Hub. To access the SAP Data Hub App Launchpad in AWS,  GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+The SAP Data Hub App Launchpad serves as central entry point to all user interfaces of SAP Data Hub. To access the SAP Data Hub App Launchpad in AWS,  GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
@@ -40,7 +40,7 @@ Subsequently we will describe each of the user interfaces briefly.
 [ACCORDION-BEGIN [Step 2: ](SAP Data Hub Pipeline Modeler)]
 The SAP Data Hub Modeler  allows you to create data-driven applications, so-called data pipelines as well as data Workflows.
 
->Use "default" as the tenant while logging in to Data Hub Pipeline Modeler
+>Use `default` as the tenant while logging in to Data Hub Pipeline Modeler
 
 ![picture_02](./datahub-trial-v2-navigation_02.png)  
 
@@ -77,7 +77,7 @@ The SAP Data Hub System Management allows you to manage SAP Data Hub, including 
 [ACCORDION-BEGIN [Step 5: ](Troubleshoot problems and show logs)]
 To troubleshoot problems you can access the operating system of the virtual machines as well as the Kubernetes cluster underlying your solution instance. You also have access to `Grafana` and `Kibana` web users interfaces for monitoring and troubleshooting.
 
-If you need to troubleshoot problems, please refer to the corresponding chapters of the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+If you need to troubleshoot problems, please refer to the corresponding chapters of the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
 [DONE]
 

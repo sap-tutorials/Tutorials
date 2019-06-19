@@ -17,7 +17,7 @@ Please note here in this tutorial GCP refers to Google Cloud platform, AWS refer
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Load data into SAP Vora)]
-To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP  or Azure you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP  or Azure you need go to the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
@@ -41,12 +41,12 @@ Enter the following information to create the relational table if you are using 
 | `Table Type`                   | `Data Source`                                                                                     |
 | `File System`                  | `S3 `                                                                                       |
 | `Connection Type`              | `Manual`                                                                                          |
-| `S3 Host`                      | `Should be empty`                                                                                 |
-| `S3 Access Key Id`             | `from your AWS management console go to My security credentials and copy it from there`           |
-| `S3 Secret Access Key`         | `from your AWS management console go to My security credentials and copy it from there`           |
-| `S3 Region`                    | `Open the Connection Management. Click on the "Action" button of the Connection Id CLOUD_STORAGE and the on "Edit". Copy the value of "Region".`          |
-| `S3 Bucket`                    | `Open the Connection Management. Click on the "Action" button of the Connection Id CLOUD_STORAGE and the on "Edit". Copy the value of "ROOT PATH".`               |
-| `File Path`                    | `file path via **Browse** button, in our case /Customers.csv`                                     |
+| `S3 Host`                      | Should be empty                                                                                 |
+| `S3 Access Key Id`             | from your AWS management console go to My security credentials and copy it from there          |
+| `S3 Secret Access Key`         | from your AWS management console go to My security credentials and copy it from there           |
+| `S3 Region`                    | Open the Connection Management. Click on the `Action` button of the Connection Id `CLOUD_STORAGE` and the on `Edit`. Copy the value of `Region`.          |
+| `S3 Bucket`                    | Open the Connection Management. Click on the `Action` button of the Connection Id `CLOUD_STORAGE` and the on `Edit`. Copy the value of `ROOT PATH`.               |
+| `File Path`                    | file path via **Browse** button, in our case /Customers.csv                                     |
 
 
 
@@ -61,7 +61,7 @@ Enter the following information to create the relational table if you are using 
 | `File System`                  | `GCS`                                                                                             |
 | `Connection Type`              | `Connection Manager`                                                                              |
 | `Connection ID`                | `CLOUD_STORAGE`                                                                                   |
-| `File Path`                    | `file path via **Browse** button, in our case /Customers.csv`                                     |
+| `File Path`                    | file path via **Browse** button, in our case /Customers.csv                                     |
 
 
 
@@ -76,7 +76,7 @@ Enter the following information to create the relational table if you are using 
 | `File System`                  | `WASB`                                                                                             |
 | `Connection Type`              | `Connection Manager`                                                                              |
 | `Connection ID`                | `CLOUD_STORAGE`                                                                                   |
-| `File Path`                    | `file path via **Browse** button, in our case /Customers.csv`                                     |
+| `File Path`                    | file path via **Browse** button, in our case /Customers.csv                                     |
 
 
 Finally click **Finish (2)** to create the table.
