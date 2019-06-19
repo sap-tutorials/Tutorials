@@ -63,7 +63,7 @@ function onInput(ctx,s) {
     }
 }
 ```
-Click the **Save** button at the top of the page to save the script first. Close the tab for the JavaScript snippet. Afterwards click **Save** and save the pipeline. Make sure that you save both the script and the graph.
+Navigate back to the pipeline tab and click **Save** to save the pipeline including the modified script.
 
 [DONE]
 

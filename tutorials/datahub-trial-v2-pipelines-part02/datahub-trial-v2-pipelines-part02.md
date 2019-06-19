@@ -42,7 +42,6 @@ Configure the **Write File** operator by maintaining the following properties :
 |  :------------- | :-------------
 | service  | `GCS or S3 or WASB`
 | connection | Check the connection specific details after this table
-|  bucket  | Name of the bucket we had earlier noted down
 |  path  | `sensordata/file_<counter>.txt`
 
 To specify connection details you can utilize the connections established in the Configuration Manager .
@@ -68,7 +67,6 @@ Configure the **Read File** operator by maintaining the following properties :
 |  :------------- | :-------------
 | service  | `GCS or S3 or WASB`
 | connection | Use the same method as Read File operator that is described in previous step
-|  bucket  | Name of the bucket we had earlier noted down
 |  path  | `sensordata/`
 |  `only Read On Change`  | True
 |  `Terminate on Error`  | True (set this to False if you are using WASB connection)

@@ -53,7 +53,7 @@ Provide the configuration Parameter values as follows:-
 | `Storage service`              | `GCS or S3 or WASB`                                                                             |
 | `Connection Type`              | `Configuration Manager`                                                                 |
 | `Connection ID`                | `CLOUD_STORAGE`                                                                         |
-| `Bucket name`                  | `COPY the ROOT PATH from the CLOUD_STORAGE connection ID in the Connection Management of SAP Data Hub`     |
+
 
 >Please note  schema name and table name should be provide within the double quotes and dot in between. The Init statement provided should include a semicolon at the end.
 
