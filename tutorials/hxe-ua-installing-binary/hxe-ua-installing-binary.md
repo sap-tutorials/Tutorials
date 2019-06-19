@@ -61,7 +61,7 @@ tar -xvzf <download_path>/apl.tgz
 > You may have to give these files run permissions. Example:
 > 
 > ```bash
-> chmod -R 777 <download_path>/hxe.tgz
+> chmod 444 <download_path>/hxe.tgz
 > ```
 > 
 > 
