@@ -2,6 +2,8 @@
 title: Create a Destination for the Northwind OData Services in the Neo Environment
 description: Create a destination within the SAP Cloud Platform Connectivity service to allow access to the Northwind OData services.
 auto_validation: true
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
 time: 5
@@ -19,7 +21,7 @@ A destination has a name, a URL, authentication details, and some other configur
 
 The destination you will define here is for the set of [OData](http://www.odata.org) services known as the "Northwind" services, which are publicly available and hosted by OASIS at <https://services.odata.org>.
 
-The Northwind OData services comes in several versions.  The tutorials currently use either V2 (<https://services.odata.org/V2/Northwind/Northwind.svc/>) or V3 (<https://services.odata.org/V3/Northwind/Northwind.svc/>).  To support both versions, and other versions that may be added later, you will create a generic connection to the Northwind service.  The exact path - and exact version - will be configured in later tutorials.
+The Northwind OData services comes in several versions.  The tutorials currently use either V2 (<https://services.odata.org/V2/Northwind/Northwind.svc/>) or V4 (<https://services.odata.org/V4/Northwind/Northwind.svc/>).  To support both versions, and other versions that may be added later, you will create a generic connection to the Northwind service.  The exact path - and exact version - will be configured in later tutorials.
 
 ---
 

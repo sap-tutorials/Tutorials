@@ -2,6 +2,8 @@
 title: View the SAP Cloud Platform from 10,000 Meters
 description: Explore SAP Cloud Platform from a developer's perspective, and understand the concepts of accounts, environments and more.
 auto_validation: true
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 15
@@ -76,8 +78,6 @@ We have a lot of SaaS solutions available in the SAP Cloud.  They include our co
 >
 > SAP Cloud Platform also offers services, called "Platform Services", which provide additional functionality to custom code. These "Platform Services" do not run independently.  SAP refers to these as **Services**, especially in Cloud Foundry.  So when you see the name "Service" in later tutorials, this usually means "Platform Services".
 
-![Cloud Platform SaaS listing](3.png)
-
 SAP also offers Platform as a Service (PaaS).  Developers can write code in almost any language, and run that software in the same cloud with our services.  Organizations can use this to run independent software, or to customize the SAP services to meet specific needs.
 
 ---
@@ -93,24 +93,26 @@ The SAP Cloud Platform is available in two different types of data centers.  Fir
 
 ![Data center locations and types](4.png)
 
-This is a graphical representation of all the SAP data centers worldwide.  [This page also contains a complete list of the types of centers, and the services provided at each data center.](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html?3b642f68227b4b1398d2ce1a5351389a.html).
+This is a graphical representation of all the SAP data centers worldwide.  [This page also contains a complete list of the types of centers, and the services provided at each data center](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html).
 
 The list of services and data centers is constantly updated, so please use the link to find the latest information.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Neo, Cloud Foundry, Kubernetes, and ABAP)]
+[ACCORDION-BEGIN [Step](Neo, Cloud Foundry, and ABAP)]
 
-There are two different PaaS environments in the SAP cloud.
+There are three different PaaS environments in the SAP cloud.
 
 The first environment is called "Neo".  It's is the original SAP runtime environment.  The Neo environment lets you develop HTML5, Java, and SAP HANA extended application services (SAP HANA XS) applications. You can also use the UI Development Toolkit for HTML5 (SAPUI5) to develop rich user interfaces for modern web-based business applications.  Neo is run in the SAP Cloud Platform on servers that SAP maintains and supports.
 
-The second environment is Cloud Foundry.  This environment was added in 2017.  [Cloud Foundry is an open source project and standard](https://www.cloudfoundry.org/), run by the Cloud Foundry Foundation (and before that, the Linux Foundation).  SAP has implemented the Cloud Foundry on the SAP Cloud Platform, using servers in our expanding network of third party data centers (like AWS, Azure, and Google Cloud).
+The second environment is Cloud Foundry.  This environment was added in 2017.  [Cloud Foundry is an open source project and standard](https://www.cloudfoundry.org/), run by the Cloud Foundry Foundation (and before that, the Linux Foundation).  SAP has implemented Cloud Foundry on the SAP Cloud Platform, using servers in our expanding network of third party data centers (like AWS, Azure, and Google Cloud).
 
-Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at both before making a decision, and use our [online map to guide you](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html?3b642f68227b4b1398d2ce1a5351389a.html).
+The latest environment is the [ABAP environment](https://cloudplatform.sap.com/enterprise-paas/abap.html) allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
 
->  We will also be adding two new PaaS environments in the near future:  [Kubernetes](https://cloudplatform.sap.com/enterprise-paas/kubernetes.html), and [ABAP](https://cloudplatform.sap.com/enterprise-paas/abap.html).  Look for more details on those links, and expect more announcements soon.
+
+Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at both before making a decision, and use our [online map to guide you](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ab512c3fbda248ab82c1c545bde19c78.html#loio7bac3308ad4d4dfd9361b44c193dc0bb).
+
 
 [DONE]
 [ACCORDION-END]
