@@ -42,7 +42,7 @@ primary_tag: products>sap-api-management
     **Field** | **Value**
     ---- | ----
     Name |`SalesOrderCard`
-    Destination |`com.sap.mobile.platform.cards`
+    Destination |`<your destination>`
     Template Source |`Template Manager`
     HTML Template |`User defined template`
     Card Template |`Automatic Instance Generation`
