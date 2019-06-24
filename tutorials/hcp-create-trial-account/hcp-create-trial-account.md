@@ -2,6 +2,8 @@
 title: Get a Free Trial Account on SAP Cloud Platform
 description: Sign up for a free trial account on SAP Cloud Platform.
 auto_validation: true
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
 time: 5

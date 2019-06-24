@@ -238,7 +238,7 @@ You must then add permissions for this file to be readable by the `hxeadm` user 
 
 ```bash
 sudo chmod 600 /data/<directory_name>/<file_name>.json
-sudo chown 12000:79 /data/<directory_name>/<file_name>.json
+sudo chown <hxeadm userID or name>:<sapsys groupID or name>/<file_name>.json
 ```
 
 Be sure to do this with each `json` file you use for your Docker containers.
@@ -378,6 +378,22 @@ jdbc:sap://<ip_address>:39015/?databaseName=<tenant_name>
 ```
 
 For detailed information on the connection properties you can specify when connecting using JDBC, see [JDBC Connection Properties](https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/latest/en-US/109397c2206a4ab2a5386d494f4cf75e.html) in the *SAP HANA Client Interface Programming Reference*.
+
+>**Note**: Are you trying to connect to SAP HANA, express edition on Docker from an application or command line on the host OS? You will need to make the IP of the container on the internal container network visible to the host.
+>
+>**Example: Docker Machine on Windows** - In this example, 192.168.99.100 is the external `docker-machine` `vm` and `hxehost` is the container host name:
+>
+>```bash
+>ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'use_default_route') = 'name' WITH RECONFIGURE;
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'map_hxehost') = '192.168.99.100' WITH RECONFIGURE;
+>```
+>**Example: Docker Machine on Mac** - In this example, `localhost` is the Docker daemon running on the Mac, and `hxehost` is the container host name:
+>
+>```bash
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'use_default_route') = 'name' WITH RECONFIGURE;
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'map_hxehost') = 'localhost' WITH RECONFIGURE;
+>```
+
 
 [ACCORDION-END]
 
