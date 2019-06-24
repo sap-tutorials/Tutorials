@@ -2,8 +2,10 @@
 title: Fundamentals of the Cloud Foundry Environment
 description: Discover how the Cloud Foundry environment fits into SAP Cloud Platform, so you're ready to deploy and run applications with confidence.
 auto_validation: true
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform  ]
+tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 15
 ---
 
@@ -58,7 +60,7 @@ Platform as a Service PaaS moves control of the runtime - the application server
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step](Fixing a PaaS problem - build packs and services)]
+[ACCORDION-BEGIN [Step](Fixing a PaaS problem - buildpacks and services)]
 
 PaaS systems suffer from one problem, however.  Moving the runtime layer to the cloud means the organization loses control of the runtime layer.  If the organization wants to make changes, they need to work with the cloud provider.  
 
@@ -68,9 +70,9 @@ Cloud Foundry solves that problem by offering runtime control to both the cloud 
 
 In Cloud Foundry, the *admin controlled* section above is accessible to both the cloud provider and the organization.  
 
-This is done using two concepts: build packs, and services.  
+This is done using two concepts: buildpacks, and services.  
 
-A build pack defines a container for running an application.  For example, one build pack might run a Java web application, another runs a Node.js application.  [Cloud Foundry offers a number of standard build packs](https://docs.cloudfoundry.org/buildpacks/), and then there is a [GitHub repository with many others](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created) contributed as Open Source projects.  Organizations can also create their own build packs, to add new languages, upgrade to the latest versions, or to create a set of standard authorized runtime containers vetted by IT.
+A buildpack defines a container for running an application.  For example, one buildpack might run a Java web application, another runs a Node.js application.  [Cloud Foundry offers a number of standard buildpacks](https://docs.cloudfoundry.org/buildpacks/), and then there is a [GitHub repository with many others](https://github.com/cloudfoundry-community/cf-docs-contrib/wiki/Buildpacks#community-created) contributed as Open Source projects.  Organizations can also create their own buildpacks, to add new languages, upgrade to the latest versions, or to create a set of standard authorized runtime containers vetted by IT.
 
 A [Cloud Foundry service](https://docs.cloudfoundry.org/devguide/services/) is a software program, or set of programs, that are offered to all the different runtime environments.  The most common service is a database (or some other persistent storage) which provides a common data storage location.  Other services might include logging, messaging, or other tools common to multiple applications.
 
@@ -101,11 +103,11 @@ Running the WAR file in the cloud is simple.  Just run the command `cf push WAR-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](SAP Marketplace - services we provide)]
+[ACCORDION-BEGIN [Step](SAP Marketplace - Services we provide)]
 
 SAP has provided a number of services for Cloud Foundry developers.  
 
-Our services include SAP software (for example, [SAP HANA](https://help.sap.com/viewer/product/HANA_SERVICE/Cloud/en-US)), and also a number of Open Source products (for example, [PostgreSQL](https://cloudplatform.sap.com/capabilities/product-info.PostgreSQL-on-SAP-Cloud-Platform.d03d9706-13e7-4c0f-b9ca-53b5abe88afc.html)).
+Our services include SAP software (for example [SAP HANA](https://help.sap.com/viewer/product/HANA_SERVICE/Cloud/en-US)), and also a number of software components to connect to 3rd party platforms (for example [Open Connectors](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-Open-Connectors.85f78328-c4e3-448d-aaf2-92c06e71f05a.html)).
 
 ![Partial list of Cloud Foundry services from SAP](sap-cf-service-list.png)
 
