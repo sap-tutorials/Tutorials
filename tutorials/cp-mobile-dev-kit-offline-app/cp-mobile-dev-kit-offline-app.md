@@ -69,7 +69,7 @@ Click **Check Service** to validate the service properties. If all the details a
 
 >With help of `mobileservices` destination, SAP Web IDE fetches and populates all the MDK apps (of configuration template type as Mobile Development Kit) and their respective destinations.
 
->You can look in Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Connectivity** feature.
+>You can look in SAP Cloud Platform Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Connectivity** feature.
 ![MDK](img_0032.png)
 
 >More details on _Sample Back End_ is available in

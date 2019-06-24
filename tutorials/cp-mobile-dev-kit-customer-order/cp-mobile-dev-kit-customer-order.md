@@ -292,7 +292,7 @@ Provide below Properties:
 
 Now start binding Object Table properties with `SalesOrderHeaders` entity set properties.
 
-In the **Appearance** section of the Properties pane, provide the below information:
+In the **Appearance** section of the **Properties** pane, provide the below information:
 
 | Property | Value |
 |----|----|
