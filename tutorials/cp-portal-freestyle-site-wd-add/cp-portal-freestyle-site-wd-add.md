@@ -15,7 +15,7 @@ time: 10
 
 
 SAP customers who run classic SAP UI applications on their data center backend can transition to the SAP Cloud Platform and continue using these applications.
-
+ 
 
 ---
 
@@ -41,7 +41,7 @@ SAP customers who run classic SAP UI applications on their data center backend c
 5. Under Intent Navigation, enter the following values:
 
     * **Semantic Object** = `S_EPM_FPM_PO`
-    * **Object** = Display
+    * **Object** = `Display`
 
 6. Under **App Resources Details** enter the following values:
 
