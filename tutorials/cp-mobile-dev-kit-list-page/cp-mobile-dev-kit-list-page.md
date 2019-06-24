@@ -43,7 +43,7 @@ Enter the **Page Name** `CustomerList` and click **Next** and the **Finish** on 
 
 ![MDK](img_002.png)
 
-In the Properties pane, set the **Caption** to **Customers**.
+In the **Properties** pane, set the **Caption** to **Customers**.
 
 ![MDK](img_003.gif)
 

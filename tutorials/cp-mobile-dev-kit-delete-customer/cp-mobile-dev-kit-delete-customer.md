@@ -142,7 +142,7 @@ In `CustomerDetail` page, drag and drop an **Action Bar Item** to the upper righ
 
 >**Action Bar Item** is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (normally at the top of the page).
 
-In the Properties pane, set **Position** to **Right**.
+In the **Properties** pane, set **Position** to **Right**.
 
 ![MDK](img_016_2.png)
 

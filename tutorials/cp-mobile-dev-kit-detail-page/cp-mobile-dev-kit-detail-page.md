@@ -43,7 +43,7 @@ Enter the Page Name `CustomerDetail` and click **Next** and the **Finish** on th
 
 ![MDK](img_002.png)
 
-In the Properties pane set the Caption to **Customer Detail**.
+In the **Properties** pane set the Caption to **Customer Detail**.
 
 ![MDK](img_003.gif)
 

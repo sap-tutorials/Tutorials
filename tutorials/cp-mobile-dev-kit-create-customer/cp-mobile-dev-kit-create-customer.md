@@ -120,7 +120,7 @@ Drag and drop an **Action Bar Item** to the upper left corner of the action bar.
 
 ![MDK](img_011.gif)
 
-In the Properties pane, click the **link icon** to open the object browser for the **System Item** property.
+In the **Properties** pane, click the **link icon** to open the object browser for the **System Item** property.
 
 Double click on the **Cancel** type and click **OK**.
 

@@ -64,7 +64,7 @@ Enter the Page Name `EditCustomerDetails` and click **Next** and the **Finish** 
 
 ![MDK](img_002.png)
 
-In the Properties pane, set the Caption to **Edit Customer**.
+In the **Properties** pane, set the Caption to **Edit Customer**.
 
 ![MDK](img_003.png)
 
