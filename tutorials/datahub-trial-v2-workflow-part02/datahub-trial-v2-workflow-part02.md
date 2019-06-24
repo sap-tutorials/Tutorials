@@ -1,6 +1,6 @@
 ---
-title: Create Workflow (part 2), Aggregate data with Data Transform in SAP Data Hub, trial edition 2.4
-description: Build a pipeline to aggregate device data using SAP Data Hub, trial edition 2.4.
+title: Create Workflow (part 2), Aggregate Data With Data Transform in SAP Data Hub, Trial Edition 2.5
+description: Build a pipeline to aggregate device data using SAP Data Hub, trial edition 2.5.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -15,7 +15,7 @@ During this tutorial, you will build on what you have learned during the previou
 - Minimum temperature per country
 - Maximum temperature per country
 
-Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services.
+Please note here in this tutorial GCP refers to Google Cloud platform and AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 ### Time to Complete
 **30 Min**
@@ -23,7 +23,7 @@ Please note here in this tutorial GCP refers to Google Cloud platform and AWS re
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create table in SAP Vora)]
-To be able to store data in SAP Vora, you first need to create a table. Thereto open the SAP Data Application Launchpad via a web browser. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+To be able to store data in SAP Vora, you first need to create a table. Thereto open the SAP Data Application Launchpad via a web browser. To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need go to the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
@@ -44,7 +44,7 @@ Enter the following information (and leave the remaining fields blank) to create
 | `Name`                         | `STATISTICS_DATA`                                             |
 | `Schema`                       | `default`                                                     |
 | `Engine`                       | `Relational In-Memory`                                        |
-| `File System`                  | `S3 or GCS`                                                   |
+| `File System`                  | `S3 or GCS or WASB`                                                   |
 | `Connection Type`              |                                                               |
 | `File Path`                    |                                                               |
 
@@ -68,9 +68,9 @@ Finally click **Finish** to create the table.
 
 [ACCORDION-BEGIN [Step 2: ](Add Data Transform and Trigger)]
 
-Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP you need go to the chapters 3.3 and 3.4 as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
+Open the modelling environment for building pipelines via SAP Data Hub Modeler. To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need to go to the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide. From SAP Data Hub Launchpad you could access the SAP Data Hub Modeler.
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub24.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.4](https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
 Enter `default` as **Tenant ID**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password**.
 
