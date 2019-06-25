@@ -86,7 +86,7 @@ time: 10
 
 [ACCORDION-BEGIN [Step 3: ](Define a service)]
 
-1. Go to `srv/cat-service.cds` and open the context menu.
+1. Open the file `srv/cat-service.cds`.
 
 2. Replace the template with the following CDS definitions:
 
