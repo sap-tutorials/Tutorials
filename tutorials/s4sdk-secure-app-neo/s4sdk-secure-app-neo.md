@@ -138,7 +138,7 @@ After that, redeploy the application using
 ```
 mvn scp:clean scp:push -pl application/
 ```
-If you then go to http://localhost:8080/hello you should see the application in action behind a protected resource.
+If you then go to `http://localhost:8080/hello` you should see the application in action behind a protected resource.
 
 [DONE]
 [ACCORDION-END]

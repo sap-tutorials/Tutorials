@@ -29,7 +29,7 @@ Figure 1 presents the final setup. First, we still have our existing "Hello Worl
 
 On the one hand, the App Router is a general entry point into the world of microservices. The main idea is that you can split an application into multiple microservices with independent deployability, polyglot `runtimes` & persistence and independent teams. Therefore, a central entry component is required that hides the complexity of the microservice landscape from the end customer.
 
-On the other hand, the App Router is mainly responsible for managing authentication flows. The App Router takes incoming, unauthenticated requests from users and initiates an OAuth2 flow with the [Extended Services for User Account and Authentication (XSUAA)](`https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/51ec15a8979e497fbcaadf80da9b63ba.html`). The XSUAA service is an SAP-specific extension of [`CloudFoundry's` UAA](`https://docs.cloudfoundry.org/concepts/architecture/uaa.html`) service to deal with authentication and authorization (it may again delegate this aspect to other providers such as external Identity Providers, see later in this tutorial). If the user authenticates at the XSUAA, it will respond with a [JSON Web Token (JWT)](https://de.wikipedia.org/wiki/JSON_Web_Token) containing the authenticated users as well as all scopes that he or she has been granted.
+On the other hand, the App Router is mainly responsible for managing authentication flows. The App Router takes incoming, unauthenticated requests from users and initiates an OAuth2 flow with the [Extended Services for User Account and Authentication (XSUAA)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/51ec15a8979e497fbcaadf80da9b63ba.html). The XSUAA service is an SAP-specific extension of [`CloudFoundry's` UAA](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) service to deal with authentication and authorization (it may again delegate this aspect to other providers such as external Identity Providers, see later in this tutorial). If the user authenticates at the XSUAA, it will respond with a [JSON Web Token (JWT)](https://de.wikipedia.org/wiki/JSON_Web_Token) containing the authenticated users as well as all scopes that he or she has been granted.
 
 ![Authentication Flow during Runtime](Figure1-2.png)
 **Figure 1: Authentication Flow during Runtime**
@@ -286,7 +286,7 @@ In the **`<dependencies>`** section of the **application/`pom.xml`**, we enhance
 ```
 This dependency section contains three main parts of dependencies:
 
-1. The **`org.springframework.security`** packages add certain aspects of the [Spring security](`https://docs.spring.io/spring-security/site/docs/current/reference/html/index.html`) framework to our application, in particular the [OAuth framework](`http://projects.spring.io/spring-security-oauth/docs/Home.html`) of Spring security.
+1. The **`org.springframework.security`** packages add certain aspects of the [Spring security](https://docs.spring.io/spring-security/site/docs/current/reference/html/index.html) framework to our application, in particular the [OAuth framework](http://projects.spring.io/spring-security-oauth/docs/Home.html) of Spring security.
 2. The **`com.sap.xs2.security`** packages contain specific security adaptations for the `CloudFoundry`/XSA environment.
 3. The **`com.sap.security.nw.sso.linuxx86_64.opt`** packages contain platform-specific native implementations for the JWT validation.
 
