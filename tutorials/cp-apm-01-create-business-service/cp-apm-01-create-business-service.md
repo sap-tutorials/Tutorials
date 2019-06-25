@@ -86,11 +86,9 @@ time: 10
 
 [ACCORDION-BEGIN [Step 3: ](Define a service)]
 
-1. Go to `srv/my-service.cds` and open the context menu.
+1. Go to `srv/cat-service.cds` and open the context menu.
 
-2. Choose **Rename** and change the file name to **`cat-service.cds`**.
-
-3. Open `cat-service.cds` and replace the template with the following CDS definitions:
+2. Replace the template with the following CDS definitions:
 
     ```CDS
     using my.bookshop from '../db/data-model';
@@ -103,7 +101,7 @@ time: 10
 
     ![Define the service model](define-service-model.png)
 
-4. Save the file.
+3. Save the file.
 
 [VALIDATE_2]
 
