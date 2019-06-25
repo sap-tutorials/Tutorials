@@ -7,7 +7,7 @@ tags: [ topic>workflow, topic>sap-web-ide, tutorial>intermediate ]
 time: 20
 ---
 
-## Prerequisites  
+## Prerequisites
 - **Tutorials:** [Create a Destination for the Northwind OData Services](https://developers.sap.com/tutorials/hcp-create-destination.html)
 
 ## Details
@@ -189,6 +189,8 @@ This will return data that looks like this:
     Discontinued: false,
 }
 ```
+
+> If you haven't already, you may wish to use an extension in your browser to display JSON in a nicely formatted way, like this. For example, if you're using Chrome, the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa) is an example of such an extension.
 
 You'll need JSON, rather than XML, as the context storage is JavaScript based.
 
