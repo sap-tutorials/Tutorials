@@ -82,7 +82,7 @@ Inside the `neo-app.json` file, add the following and save the file:
         "name": "bpmworkflowruntime",
         "entryPath": "/workflow-service"
       },
-      "description": "Workflow Runtime REST API"    
+      "description": "Workflow Runtime REST API"
     }
   ]
 }
@@ -451,7 +451,7 @@ In the **USER INTERFACE** section:
 | Field            | Value
 |:--------------   | :-------------
 | HTML5 App Name   | **`genericusertask`**
-| Component Name   | **`webapp`**
+| Component URL    | **`webapp`**
 | SAPUI5 Component | **`tutorial.genericusertask`**
 
 Now save the workflow definition.
