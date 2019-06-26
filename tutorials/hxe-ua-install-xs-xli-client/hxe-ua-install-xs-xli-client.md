@@ -117,7 +117,7 @@ xs.onpremise.runtime.client_<version>
 
     -   Add `<extracted_filepath>\bin`
 
-    -   Restart your client machine for your new environment variable settings to take effect.
+    -   Restart the command line application for your new environment variable settings to take effect.
 -   (Mac) Run `export PATH=$PATH:/<extracted_filepath>/bin`
 
 -   (Linux) Run `export PATH=$PATH:/<extracted_filepath>/bin`
