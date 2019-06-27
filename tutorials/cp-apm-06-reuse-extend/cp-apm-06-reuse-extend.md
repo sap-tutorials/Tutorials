@@ -45,7 +45,7 @@ The **SAP Cloud Platform Business Application** template is your starting point.
 
 1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the **Include sample files in project** checkbox is checked.
 
-    ![Complete the project details](project-details.png)
+    ![Complete the project details](project-details2.png)
 
 1. Choose **Finish**.
 
