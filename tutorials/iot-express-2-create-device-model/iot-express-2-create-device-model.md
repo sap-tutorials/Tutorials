@@ -31,8 +31,8 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
      2. Click on the `Subaccounts` menu and select your *Cloud Foundry* `Subaccount`
      3. Click on the `Spaces` menu and select to your `Space`
      4. Open the `Service Instances` list and click on the `Open Dashboard` icon in the *Actions* column
-  2. Login using the service credentials  
-   (found in [`Cloud Platform Cockpit`](http://hana.ondemand.com/) -> `Global Account` -> `Cloud Foundry Subaccount` -> `Space` -> `IoT Service Instance` -> `Service Keys`)
+  2. If you have not done so then create a user in your tenant by logging using the service credentials  
+   (found in [`Cloud Platform Cockpit`](http://hana.ondemand.com/) -> `Global Account` -> `Cloud Foundry Subaccount` -> `Space` -> `IoT Service Instance` -> `Service Keys`) and then login with that user.
   3. Click on your `tenant`.
 
   ![Create Capability](cap0.png)
