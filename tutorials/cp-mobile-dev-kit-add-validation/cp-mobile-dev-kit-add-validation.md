@@ -31,7 +31,10 @@ Provide the below information:
 | `Type` | `Message` |
 | `Message`| `Email address is not in the correct format recipient @ domain . domaintype` |
 | `Title` |  `Validate Email` |
-| `OK Caption`| `OK` |
+| `OKCaption`| `OK` |
+| `OnOK` | `--None--` |
+| `CancelCaption` | leave it blank |
+| `OnCancel` | `--None-- |
 
 ![MDK](img_011.png)
 
@@ -82,7 +85,7 @@ Now that you have created the validation rule and the validation failure message
 
 Open `UpdateCustomer.action` by double clicking on the action in the project explorer pane.
 
-Expand the **Common Action Properties** and select `EmailValidation.js` rule for **Validation Rule** and `ValidationFailure` action for **Validation Failure Action** fields.
+Expand the **Common Action Properties** and select `EmailValidation.js` rule for **Validation Rule** field.
 
 ![MDK](img_012.1.png)
 
@@ -97,9 +100,7 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 
 >Make sure to select same App ID as you chose in previous tutorial.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
-
->By default, there is a standard 25-35 minutes time duration for App update. In case, you don't see _Confirmation_ pop-up, kill the MDK client app from the background and open it again.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
 
 Update a record with no contain of **@** in Email property throws a validation failure message.
 

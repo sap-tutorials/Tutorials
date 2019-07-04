@@ -70,7 +70,7 @@ npm start
 It makes sense to minify the JavaScript code before you deploy it to the cloud. This minification step can be combined with the creation of the MTA archive by
 
 ```Bash
-npm run package-cf
+npm run build:cf
 ```
 
 
@@ -86,7 +86,7 @@ cf deploy mta_archives/myUI5App_0.0.1.mtar
 ```
 
 
-> The command `npm run deploy-cf` will do both, generate and deploy the application to Cloud Foundry.
+> The command `npm run deploy:cf` will do both, generate and deploy the application to Cloud Foundry.
 
 [DONE]
 [ACCORDION-END]
@@ -102,7 +102,7 @@ The `requested state` of your application should read `started`.
 
 ![cfapps](./cfapps.png)
 
-> You can also check out the logs of your app via `cf logs <app name>` or via `npm run cf-log`
+> You can also check out the logs of your app via `cf logs <app name>`
 
 [DONE]
 [ACCORDION-END]

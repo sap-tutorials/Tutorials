@@ -12,7 +12,10 @@ author_profile: https://github.com/jitendrakansal
 ## Prerequisites
 - [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
 - [Setup initial configuration for an MDK App in SAP Cloud Platform Mobile Services](cp-mobile-dev-kit-ms-setup)
-- Download and install **SAP Mobile Services Client** on your [iPhone](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8)
+- Download and install **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- Download and install [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) (required only for Android device)
+
+
 
 ## Details
 ### You will learn
@@ -66,7 +69,7 @@ Click **Check Service** to validate the service properties. If all the details a
 
 >With help of `mobileservices` destination, SAP Web IDE fetches and populates all the MDK apps (of configuration template type as Mobile Development Kit) and their respective destinations.
 
->You can look in Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Connectivity** feature.
+>You can look in SAP Cloud Platform Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Connectivity** feature.
 ![MDK](img_0032.png)
 
 >More details on _Sample Back End_ is available in
@@ -134,13 +137,21 @@ Click on QR code icon to populate QR code for app on-boarding.
 
 ![MDK](img_012.png)
 
-Open your phone camera app and start scanning the QR code, as shown below.
+On iPhone, open your camera app and start scanning the QR code, as shown below.
 
 ![MDK](img_013.png)
 
 Click the toast message to launch **SAP Mobile Services Client**.
 
->At this moment, **SAP Mobile Services Client** is available only for iOS device.
+>On Android, camera app does not support scanning the QR code. You can use [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) app to scan it.
+
+>![MDK](img_013.1.png)
+
+>Click **Open link**
+
+>![MDK](img_013.2.png)
+
+>It will open SAP Mobile Services Client app.
 
 Before you click on **Start** in client app, first finish the deployment from SAP Web IDE. Click **Next**.
 
@@ -154,6 +165,8 @@ You should see **Application deployed successfully** message in console log.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run the app in MDK client)]
+
+>Below steps & screenshots were captured with iOS device. You will have similar on-boarding experience with Android as well.
 
 The MDK client receives deployed metadata definitions as a bundle.
 
@@ -185,9 +198,9 @@ Click **OK**.
 
 ![MDK](img_022.png)
 
-Now, you will see Main page being displayed and Offline store is being initialized.
+Now, you will see **Main** page being displayed and Offline store is being initialized.
 
-![MDK](img_023.png)
+![MDK](img_023.gif)
 
 [VALIDATE_1]
 [ACCORDION-END]

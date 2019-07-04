@@ -3,7 +3,7 @@ title: Deploy SAP HANA as a Service
 description: Create an instance of the SAP Cloud Platform, SAP HANA Service.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
+tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
@@ -21,11 +21,11 @@ primary_tag: products>sap-hana
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access the Cloud Foundry trial account)]
+[ACCORDION-BEGIN [Step 1: ](Access the Cloud Foundry account)]
 
-Open Google Chrome and navigate to the [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/). Click **Log On**.
+Open Google Chrome and navigate to the [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com/). Click **Log On**.
 
-![New project from template](1.png)
+![New project from template](1X.png)
 
 Log in with your username and password.
 
@@ -33,13 +33,13 @@ Log in with your username and password.
 
 Close the *News and announcements* popup if it appears.
 
-Click on the **Cloud Foundry Trial**.
+Click on **Cloud Foundry**.
 
-![New project from template](3.png)
+![New project from template](3X.png)
 
-Click on the **trial** subaccount.
+Click on the subaccount.
 
-![New project from template](4.png)
+![New project from template](4X.png)
 
 [DONE]
 [ACCORDION-END]
@@ -48,11 +48,11 @@ Click on the **trial** subaccount.
 
 Click on **Spaces**.
 
-![New project from template](5.png)
+![New project from template](5X.png)
 
 Click on the **dev** space.
 
-![New project from template](6.png)
+![New project from template](6X.png)
 
 Navigate to **Services** -> **Service Marketplace**. Click on **SAP HANA Service**.
 
@@ -79,6 +79,8 @@ When prompted to bind an application, leave **(None)** and click **Next**.
 ![New project from template](11.png)
 
 Use `HDB` for the **Instance Name**. Click **Finish**.
+
+>**Note**: This is just a sample name for the database.
 
 ![New project from template](12.png)
 

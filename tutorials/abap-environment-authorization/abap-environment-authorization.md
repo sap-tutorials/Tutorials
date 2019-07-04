@@ -1,12 +1,12 @@
 ---
 auto_validation: true
-title: Create authorization in SAP Cloud Platform ABAP environment
+title: Create Authorization in SAP Cloud Platform ABAP environment
 description: Create IAM Apps, services and catalogs for authorization in the SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
 time: 20
 ---
- 
+
 ## Prerequisites  
   - SAP Cloud Platform ABAP Environment user
   - ADT version 2.96 or higher
@@ -84,7 +84,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Access Control)]
+[ACCORDION-BEGIN [Step 3: ](Create access control)]
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create Access Control](access.png)
@@ -157,7 +157,7 @@ Save and activate.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create IAM App & Add Service)]
+[ACCORDION-BEGIN [Step 6: ](Create IAM app & add service)]
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create Access Control](app.png)
@@ -227,7 +227,7 @@ Save and activate.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create Business Catalog & Add IAM App)]
+[ACCORDION-BEGIN [Step 7: ](Create business catalog & add IAM app)]
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create Access Control](catalog.png)

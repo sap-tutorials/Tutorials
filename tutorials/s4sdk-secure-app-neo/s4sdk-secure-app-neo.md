@@ -3,7 +3,7 @@ title: Secure App on SAP Cloud Platform Neo
 description: Secure applications in SAP Cloud Platform Neo that are built based on the SAP Cloud SDK.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, products>sap-hana]
+tags: [ tutorial>intermediate, products>sap-hana ]
 primary_tag: products>sap-s-4hana
 ---
 
@@ -138,7 +138,7 @@ After that, redeploy the application using
 ```
 mvn scp:clean scp:push -pl application/
 ```
-If you then go to http://localhost:8080/hello you should see the application in action behind a protected resource.
+If you then go to `http://localhost:8080/hello` you should see the application in action behind a protected resource.
 
 [DONE]
 [ACCORDION-END]

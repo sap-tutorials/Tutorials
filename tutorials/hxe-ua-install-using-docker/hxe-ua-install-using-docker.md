@@ -94,7 +94,7 @@ sudo docker image rm alpine -f
 
 Go to the [Docker Store](https://store.docker.com/).
 
-Click on the search bar and search for "SAP HANA, express edition".
+Click on the search bar and search for "SAP HANA".
 
 Choose **SAP HANA, express edition (database services)**.
 
@@ -146,7 +146,14 @@ Create a directory for the SAP HANA, express edition container and grant it the 
 
 ```bash
 mkdir -p /data/<directory_name>
-chown 12000:79 /data/<directory_name>
+chown <hxeadm userID or name>:<sapsys groupID or name> /data/<directory_name>
+```
+
+For example:
+
+```bash
+mkdir -p /data/mydirectory
+chown 12000:79 /data/mydirectory
 ```
 
 The name of this directory does not need to match the name you give to your SAP HANA, express edition container.
@@ -334,6 +341,21 @@ jdbc:sap://<ip_address>:39041/?databaseName=<tenant_name>
 ```
 
 For detailed information on the connection properties you can specify when connecting using JDBC, see [JDBC Connection Properties](https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/latest/en-US/109397c2206a4ab2a5386d494f4cf75e.html) in the *SAP HANA Client Interface Programming Reference*.
+
+>**Note**: Are you trying to connect to SAP HANA, express edition on Docker from an application or command line on the host OS? You will need to make the IP of the container on the internal container network visible to the host.
+>
+>**Example: Docker Machine on Windows** - In this example, 192.168.99.100 is the external `docker-machine` `vm` and `hxehost` is the container host name:
+>
+>```bash
+>ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'use_default_route') = 'name' WITH RECONFIGURE;
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'map_hxehost') = '192.168.99.100' WITH RECONFIGURE;
+>```
+>**Example: Docker Machine on Mac** - In this example, `localhost` is the Docker daemon running on the Mac, and `hxehost` is the container host name:
+>
+>```bash
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'use_default_route') = 'name' WITH RECONFIGURE;
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'map_hxehost') = 'localhost' WITH RECONFIGURE;
+>```
 
 [ACCORDION-END]
 

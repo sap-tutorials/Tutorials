@@ -12,7 +12,7 @@ time: 10
 - How workflows can take different paths through their flow via gateways
 - How to specify the conditions that influence an exclusive gateway decision
 
-This tutorial follows on from [Add a user task and generic UI to your workflow definition](https://developers.sap.com/tutorials/cp-wf-02-add-user-task.html). As the workflow from this previous tutorial stands, there is a single flow from end to end, which looks like this:
+This tutorial follows on from [Add a User Task and Generic UI to Your Workflow definition](cp-wf-02-add-user-task). As the workflow from this previous tutorial stands, there is a single flow from end to end, which looks like this:
 
 ![single flow workflow definition](single-flow.png)
 
@@ -86,7 +86,7 @@ It's good practice to encapsulate decision logic into a script task, especially 
 
 Open the JavaScript file associated with the Configure Context script task. This is **`configurecontext.js`**. Add the following line to it and save the file.
 
-```javascript
+```JavaScript
 $.context.reorder = $.context.stockinfo.UnitsOnOrder > 0;
 ```
 
@@ -130,7 +130,7 @@ Use the menu to add a user task, and place it near the existing **Confirm Order*
 
 ![second user task](second-user-task.png)
 
-In a similar way to how you added the first user task in the tutorial [Add a user task & generic UI to your workflow](https://developers.sap.com/tutorials/cp-wf-02-add-user-task.html), specify the values for the user task properties as follows.
+In a similar way to how you added the first user task in the tutorial [Add a User Task and Generic UI to Your Workflow](cp-wf-02-add-user-task), specify the values for the user task properties as follows.
 
 In the **GENERAL** section:
 
@@ -188,7 +188,7 @@ Now address the **`SequenceFlow6`** flow:
 
 Select the line marked **`SequenceFlow6`**. This is the flow that represents the circumstance where the product in question has units on reorder. It leads to the **Release Reorder** user task. Change the **Name** property of this sequence flow from `SequenceFlow6` to **`Reorder Needed`** and in the **Condition** field, add this condition:
 
-```javascript
+```JavaScript
 ${context.reorder == true}
 ```
 
@@ -218,7 +218,7 @@ Don't forget to save it!
 
 [ACCORDION-BEGIN [Step 6: ](Test the new flow)]
 
-Deploy the updated workflow definition in the same way as you did in [Add a User Task and Generic UI to Your Workflow](https://developers.sap.com/tutorials/cp-wf-02-add-user-task.html) -- in other words by using the context menu on the workflow definition file **`processorder.workflow`** and choosing **Deploy** > **Deploy to SAP Cloud Platform Workflow**.
+Deploy the updated workflow definition in the same way as you did in [Add a User Task and Generic UI to Your Workflow](cp-wf-02-add-user-task) -- in other words by using the context menu on the workflow definition file **`processorder.workflow`** and choosing **Deploy** > **Deploy to SAP Cloud Platform Workflow**.
 
 Switch to your launchpad site and start the **Monitor Workflow - Workflow Definitions** app.
 
@@ -234,3 +234,20 @@ With that, you're pretty much done. You may wish to experiment further with the 
 
 [DONE]
 [ACCORDION-END]
+
+### Completed Mission? Register to win free SAP TechEd ticket!
+
+Congratulations for completing this mission! Now you can enter a drawing for a chance to win a free SAP TechEd pass (includes show floor and lectures access only) to the location of your choice.
+
+>You must have first completed the entire mission [Level Up with SAP Cloud Platform Workflows
+](https://developers.sap.com/mission.scp-7-workflows.html).
+
+You can register for the drawing for **_either_** Las Vegas, Barcelona, or Bangalore -- **but not for more than one site**.
+
+Choose one of the following:
+
+-  [Registration form for Las Vegas](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttelas/index.html)
+-  [Registration form for Barcelona](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttebcn/index.html)
+-  [Registration form for Bangalore](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttebgl/index.html)
+
+### &nbsp;

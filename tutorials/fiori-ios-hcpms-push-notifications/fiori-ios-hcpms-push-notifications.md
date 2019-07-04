@@ -12,7 +12,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
  - **Apple ID:** A paid Apple developer account is required
- - **Completed** fiori-ios-scpms-create-sample-app
+ - **Completed** [Set Up the SAP Cloud Platform SDK for iOS](http://developers.sap.com/group.ios-sdk-setup.html)
 
 ## Details
 ### You will learn  
@@ -86,7 +86,7 @@ The certificate is now saved to you hard drive and added to your Keychain as wel
 
 [ACCORDION-BEGIN [Step 3: ](Create .CER file in your Apple Developer Account)]
 
-Go to your [Apple Developer Account](developer.apple.com) and click on **App IDs**. Your app should appear here because we made sure Xcode will take care of adding an App ID to your profile.
+Go to your [Apple Developer Account](https://developer.apple.com) and click on **App IDs**. Your app should appear here because we made sure Xcode will take care of adding an App ID to your profile.
 
 > If in any case you can't see your app listed here please go ahead and follow the creation process of an App ID with the **Plus** icon. Make sure the app name and identifier are the same as your Xcode project.
 

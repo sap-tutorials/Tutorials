@@ -9,6 +9,7 @@ primary_tag: topic>sapui5
 
 ## Prerequisites
  - [Install Node.js](https://nodejs.org/en/download/)
+ - [[Only for Windows users] Install Chocolatey](https://chocolatey.org/)
 
 ## Details
 ### You will learn
@@ -30,7 +31,6 @@ npm install -g yo
 
 [DONE]
 [ACCORDION-END]
-
 [ACCORDION-BEGIN [Step : ](Install the easy-ui5 generator)]
 
 In order to use Yeoman to create SAPUI5 projects, we need to install a plugin (another `npm` module). Yeoman recognizes all plugins automatically on the basis of the `generator-` prefix of the module.
@@ -44,7 +44,6 @@ This plugin has also been published on [GitHub](https://github.com/SAP/generator
 
 [DONE]
 [ACCORDION-END]
-
 [ACCORDION-BEGIN [Step : ](Verify the installations)]
 
 Use the following command to test whether the installation has been successful.
@@ -63,8 +62,6 @@ This plugin has also been published on [GitHub](https://github.com/SAP/generator
 
 [DONE]
 [ACCORDION-END]
-
-
 [ACCORDION-BEGIN [Step : ](Install the MTA build tool)]
 
 Cloud-native applications are being ship as so called `mta` archives. The [Multi-target Application Archive Builder](https://github.com/SAP/cloud-mta-build-tool) is a standalone command-line tool that builds a deployment-ready multi-target application archive `.mtar` file. You can leverage `npm` to install this tool as well:
@@ -77,6 +74,20 @@ Run `mbt --help` to see all available commands.
 
 
 [VALIDATE_1]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Install Make)]
+
+You might be able to skip this step. Usually, users of unix-based OS already have `make` preinstalled. Verify that `make` is installed with.
+```
+make -v
+```
+
+If you are using Windows and need to install `make` by following [these instructions](https://chocolatey.org/packages/make):
+```
+choco install make
+```
+
+[DONE]
 [ACCORDION-END]
 
 ---

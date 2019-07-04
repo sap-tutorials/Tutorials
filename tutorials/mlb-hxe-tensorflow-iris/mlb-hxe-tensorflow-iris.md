@@ -279,7 +279,7 @@ python ~/export/iris_import_data.py \
 	--hxehost localhost \
 	--hxeport 39015 \
 	--hxeusr ML_USER \
-	--hxepwd Welcome18Welcome18
+	--hxepwd Welcome19Welcome19
 ```
 
 [DONE]
@@ -429,7 +429,7 @@ python ~/export/iris_test_client.py \
 	--hxehost localhost \
 	--hxeport 39015 \
 	--hxeusr ML_USER \
-	--hxepwd Welcome18Welcome18
+	--hxepwd Welcome19Welcome19
 ```
 
 [DONE]
@@ -573,8 +573,6 @@ The output result includes both the from the test set and the result. You can co
 
 > ### **Note:** You may have noticed that the parameter table for the input data follows exactly the `SavedModel SignatureDef` despite the fact that the initial data file used for training used a different order.
 > This is because the TensorFlow Serving `ModelServer` build the signature using the alphabetical order from the tensor names.
-
-Provide an answer to the question below then click on **Validate**.
 
 [DONE]
 [ACCORDION-END]

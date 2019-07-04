@@ -45,7 +45,7 @@ The **SAP Cloud Platform Business Application** template is your starting point.
 
 1. Complete the **Project Details** tab as shown in the screenshot, ensuring that the **Include sample files in project** checkbox is checked.
 
-    ![Complete the project details](project-details.png)
+    ![Complete the project details](project-details2.png)
 
 1. Choose **Finish**.
 
@@ -77,21 +77,14 @@ To reuse the product catalog model, you need to declare a dependency in the `pac
         "description": "Reference application built according to the CAP model",
         "version": "1.0.0",
         "dependencies": {
-            "@sap/cds": "2.x",
+            "@sap/cds": "^3",
             "@sap/cloud-samples-catalog": "https://github.com/SAP/cloud-samples-catalog.git#rel-1.0"
         },
         "scripts": {
             "build": "cds build --clean",
             "watch": "nodemon -w . -i node_modules/**,.git/** -e cds -x npm run build"
         },
-        "cds": {
-            "data": {
-                "model": "db/"
-            },
-            "service": {
-                "model": "srv/"
-            }
-        },
+
         "private": true
     }
     ```

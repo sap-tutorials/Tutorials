@@ -24,7 +24,7 @@ Your app right produces output in two different ways. On the one hand, it logs w
 
 Add two more pieces of logging information. Change the `server.js` file accordingly:
 
-```javascript:
+```JavaScript
 const express = require('express');
 const app = express();
 
@@ -54,7 +54,7 @@ It's not necessary to delete a application before you re-deploy it to SAP Cloud 
 
 To delete the app, execute the following command:
 
-```:
+```bash
 cf delete myapp
 ```
 
@@ -62,7 +62,7 @@ cf delete myapp
 
 Verify if your application has successfully been removed by checking your application overview:
 
-```:
+```bash
 cf apps
 ```
 
@@ -75,13 +75,13 @@ cf apps
 
 To push the updated `Node.js` application, execute the following command in the `nodetutorial` directory.
 
-```:
+```bash
 cf push
 ```
 
 Verify if the application has successfully been started by checking your application overview:
 
-```:
+```bash
 cf apps
 ```
 
@@ -95,7 +95,7 @@ There are mainly two different ways how logs can be shown.
 
 The first option is to dump recent log messages of an application to the terminal by:
 
-```:
+```bash
 cf logs myapp --recent
 ```  
 
@@ -112,11 +112,19 @@ There you can already see what happened at the deployment process which will be 
 [ACCORDION-BEGIN [Step 5: ](Stream application logs)]
 The second option is to stream the logs. Unlike the dumping, streaming of logs can be helpful for special use cases like live-debugging your application. The application writes log messages when it serves web requests. Run the following command to access them 'live':
 
-```:
+**On macOS / Linux:**
+
+```bash
 cf logs myapp | grep -v RTR
 ```
 
-Every time someone accesses the application via the according URL your terminal will print an new line. `'grep -v RTR'` excludes specific logs from the so called Router. This could also be omitted and is only for demonstration purposes.
+**On Windows:**
+```Command Line
+cf logs myapp | findstr /V RTR
+```
+
+
+Every time someone accesses the application via the according URL your terminal will print an new line. `'grep -v RTR'` (on macOS/Linux) or `'findstr /V RTR'` (on Windows) excludes specific logs from the so called Router. This could also be omitted and is only for demonstration purposes.
 
 ![log stream output](logstream.png)
 

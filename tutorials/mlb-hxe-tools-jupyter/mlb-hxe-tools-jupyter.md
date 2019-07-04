@@ -413,7 +413,7 @@ import sqlalchemy
 
 %config SqlMagic.displaylimit = 5
 
-hxe_connection = 'hana://ML_USER:Welcome18Welcome18@localhost:39015';
+hxe_connection = 'hana://ML_USER:Welcome19Welcome19@localhost:39015';
 
 %sql $hxe_connection
 ```
@@ -455,7 +455,7 @@ conn = dbapi.connect(
     address="localhost",
     port=39015,
     user="ML_USER",
-    password="Welcome18Welcome18"
+    password="Welcome19Welcome19"
 )
 with conn.cursor() as cursor:
     cursor.execute("SELECT CURRENT_USER FROM DUMMY")
@@ -471,7 +471,7 @@ Here is an code sample you can use to instantiate a `SQLAlchemy` engine:
 
 ```python
 from sqlalchemy import create_engine
-engine = create_engine('hana://ML_USER:Welcome18Welcome18@localhost:39015')
+engine = create_engine('hana://ML_USER:Welcome19Welcome19@localhost:39015')
 
 print(type(engine))
 ```
@@ -517,7 +517,7 @@ jdbcConnection <- dbConnect(
     jdbcDriver,
     "jdbc:sap://localhost:39015/?autocommit=false",
     "ML_USER",
-    "Welcome18Welcome18"
+    "Welcome19Welcome19"
 )
 result <- dbGetQuery(jdbcConnection, "select CURRENT_USER from DUMMY")
 print(result)
@@ -541,7 +541,7 @@ library("RODBC")
 odbcConnection <- odbcConnect(
     "DSN_HXE",
     uid="ML_USER",
-    pwd="Welcome18Welcome18"
+    pwd="Welcome19Welcome19"
 )
 result <- sqlQuery(odbcConnection,"select CURRENT_USER from DUMMY")
 print(result)
