@@ -41,7 +41,7 @@ export function businessPartners(req: Request, res: Response) {
 
 The `businessPartners` function is a callback function that we will register for a specific route. It writes the status `200` and a placeholder message to the response.
 
-Then, add this route to the routes of your application in `application.ts`:
+Then, add this route to the routes of your application in `application.ts` (see `// add the following line to your code`):
 
 ```JavaScript / TypeScript
 private routes(): void {
@@ -49,7 +49,7 @@ private routes(): void {
 
   router.get('/', indexRoute);
   router.get('/hello', helloWorld);
-  // add this line
+  // add the following line to your code
   router.get('/business-partners', businessPartners);
   this.app.use('/', router);
 }
