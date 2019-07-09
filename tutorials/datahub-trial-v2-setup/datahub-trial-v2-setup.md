@@ -25,7 +25,7 @@ For Google Cloud Platform create a corresponding Google Cloud Platform project. 
 * Google Cloud Platform Projects: <https://cloud.google.com/storage/docs/projects>
 * Google Cloud Platform Service Accounts: <https://cloud.google.com/iam/docs/service-accounts>
 
-For  Amazon Web Services you need to get access to AWS Management Console for the Amazon Web Services account under certain ID. After getting access you need to also have Access Key and Secret Key as a basis to connect from CAL to AWS backend and spin up the SAP Data Hub 2.4 instance
+For  Amazon Web Services you need to get access to AWS Management Console for the Amazon Web Services account under certain ID. After getting access you need to also have Access Key and Secret Key as a basis to connect from CAL to AWS backend and spin up the SAP Data Hub 2.5 instance
 
 * Amazon Web Services Account : <https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/>
 * Amazon Web Services Understanding and Getting Your Security Credentials : <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
@@ -70,7 +70,7 @@ Therefore you first maintain your local host file as described in the [Getting S
 
 To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need go through the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
-Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page. If you see an error message that the web browser is not able to verify the security certificate of https://sapdatahubtrial, you need to confirm this error message (reason: the appliance uses self-signed certificates).
+Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page. If you see an error message that the web browser is not able to verify the security certificate, you need to confirm this error message (reason: the appliance uses self-signed certificates).
 
 ![picture_01](./datahub-trial-v2-setup_01.png)
 
