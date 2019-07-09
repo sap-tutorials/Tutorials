@@ -70,7 +70,7 @@ Therefore you first maintain your local host file as described in the [Getting S
 
 To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need go through the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
-Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page. If you see an error message that the web browser is not able to verify the security certificate, you need to confirm this error message (reason: the appliance uses self-signed certificates).
+Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page. If you see an error message that the web browser is not able to verify the security certificate, you need to confirm this error message (because the appliance uses self-signed certificates).
 
 ![picture_01](./datahub-trial-v2-setup_01.png)
 
