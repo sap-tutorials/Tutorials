@@ -1,6 +1,6 @@
 ---
-author_name: Jijo Roy Jacob
-author_profile: https://github.com/JijoRoyJacob
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Use JPA in Custom Logic
 description: Use Java Persistence API (JPA) in your application, created using the SAP Cloud Application Programming Model, to store and retrieve data.
 auto_validation: true

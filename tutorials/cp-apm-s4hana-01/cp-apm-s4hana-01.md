@@ -1,4 +1,6 @@
 ---
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Extend a Business App to Consume an S/4HANA Service
 description: Develop a business application that consumes an S/4HANA service from SAP API Business Hub using the SAP Cloud Application Programming Model.
 auto_validation: true
