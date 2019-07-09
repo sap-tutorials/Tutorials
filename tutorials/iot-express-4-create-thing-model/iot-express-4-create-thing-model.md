@@ -175,8 +175,8 @@ Lastly we will set the things serial number and the location to make sure we can
 2. Use [HTML5 geolocation lookup example](https://www.w3schools.com/Html/tryit.asp?filename=tryhtml5_geolocation) to find your current location or choose any other location using another tool (mobile phone, Google maps).
 3. Enter the location in the location fields in the Thing Modeler (see image below).
 4. Enter a lower and upper threshold for the temperature (under **Measured Values**).
-4. Then connect the device and sensors created in the earlier Tutorials in the connectivity tab.
-4. Save your change.
+5. Then connect the device and sensors created in the earlier Tutorials in the connectivity tab.
+6. Save your change.
 
 ![Location and Serial Number](masterdata.png)
 

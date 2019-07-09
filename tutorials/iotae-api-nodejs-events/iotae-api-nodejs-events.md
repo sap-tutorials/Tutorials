@@ -1,6 +1,6 @@
----
+Leonardo IoT---
 title: Monitor Temperature Data by Calling APIs via Node.js
-description: Use Node.js to analyze temperature data in IoT Application Enablement and raise an event.
+description: Use Node.js to analyze temperature data in Leonardo IoT and raise an event.
 auto_validation: true
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner ]
@@ -13,7 +13,7 @@ time: 15
 
 ## Details
 ### You will learn
-  - How to use Node.js script to read the measured values from SAP IoT Application Enablement
+  - How to use Node.js script to read the measured values from SAP Leonardo IoT
   - How to create a standard event if the measured values are beyond the defined threshold value
 
 ---
@@ -35,7 +35,7 @@ After you install `Node.js`, perform the following steps:
       }
     ```
 
-    > The SDK for SAP IoT Application Enablement `iot-application-services-sdk-nodejs` is available open source. The SDK provides a `NodeJS` package that acts as thin wrapper over the API of SAP IoT Application Enablement. In addition, you must include this as one of the dependencies in your `package.json` file.
+    > The SDK for SAP Leonardo IoT `iot-application-services-sdk-nodejs` is available open source. The SDK provides a `NodeJS` package that acts as thin wrapper over the API of SAP Leonardo IoT. In addition, you must include this as one of the dependencies in your `package.json` file.
 
  6. Run the command `npm install`. This creates the `package-lock.json` file and all other dependencies in the `node_modules` folder within the folder `greenhouse_project`.
 
