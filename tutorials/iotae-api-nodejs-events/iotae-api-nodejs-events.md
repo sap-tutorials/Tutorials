@@ -2,8 +2,8 @@
 title: Monitor Temperature Data by Calling APIs via Node.js
 description: Use Node.js to analyze temperature data in Leonardo IoT and raise an event.
 auto_validation: true
-primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner ]
+tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
+primary_tag: products>sap-leonardo-iot
 time: 15
 ---
 

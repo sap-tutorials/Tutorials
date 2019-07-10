@@ -1,9 +1,9 @@
 ---
 title: Assemble and Configure Device Hardware
 description: Assemble device hardware, configure device firmware and deploy it in the field.
-primary_tag: topic>internet-of-things
+primary_tag: products>sap-cloud-platform-internet-of-things
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot]
+tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform]
 ---
 
 ## Prerequisites  

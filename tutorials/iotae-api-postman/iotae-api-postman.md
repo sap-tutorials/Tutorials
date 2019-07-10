@@ -1,8 +1,8 @@
 ---
 title: Call IoT Application Enablement service APIs with Postman
 description: Use a REST client (Postman) to call SAP IoT Application Enablement service APIs.
-primary_tag: products>sap-iot-application-enablement
-tags: [  tutorial>beginner, products>sap-api-management, topic>internet-of-things, products>sap-iot-application-enablement ]
+tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
+primary_tag: products>sap-leonardo-iot
 ---
 
 ## Prerequisites  
