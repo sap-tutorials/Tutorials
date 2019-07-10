@@ -29,7 +29,7 @@ Open SAP Web IDE and from the home page click **New Project from Template**.
 
 Next, click the template **Select Multi-Target Application**.
 
-![select-multi-target-template](select-multi-target-template.png)
+![select-multi-target-template](select-multi-target-template.jpg)
 
 Now name your project **`java_web_ide`**.
 
