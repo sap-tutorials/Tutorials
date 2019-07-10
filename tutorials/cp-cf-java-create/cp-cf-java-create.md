@@ -3,7 +3,7 @@ title: Prepare to create a Java app with an MTA template
 description: Use a Multi-Target Application (MTA) template to prepare for building a simple Java app.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, topic>java ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, topic>java]
 time: 10
 ---
 
@@ -29,7 +29,7 @@ Open SAP Web IDE and from the home page click **New Project from Template**.
 
 Next, click the template **Select Multi-Target Application**.
 
-![select-multi-target-template](select-multi-target-template.png)
+![select-multi-target-template](select-multi-target-template.jpg)
 
 Now name your project **`java_web_ide`**.
 
@@ -56,8 +56,6 @@ Congratulations, you are finished creating a simple Java application that you ca
 [ACCORDION-BEGIN [Step 3: ](Validate the base type of your project)]
 
 In order to create your project, you had to fill in a few mandatory fields in the **Multi-Target Application** template wizard.  
-
-![save-template](save-template.png)
 
 [VALIDATE_3]
 [ACCORDION-END]
