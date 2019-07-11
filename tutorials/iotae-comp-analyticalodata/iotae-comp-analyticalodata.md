@@ -2,8 +2,8 @@
 title: Using Analytical OData in Leonardo IoT
 description: Explore the Analytical OData services in SAP Leonardo IoT (AE) to get time series and aggregates on data
 auto_validation: false
-primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-api-management ]
+tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-api-management ]
+primary_tag: products>sap-leonardo-iot
 ---
 
 ## Prerequisites  
