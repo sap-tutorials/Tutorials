@@ -1,9 +1,9 @@
 ---
 title: Create a Thing Model and Bind to Device
 description: Use the Thing Modeler to create the master data and the measurement properties, then map your thing to devices and sensors, and to your business process.
-primary_tag: topic>internet-of-things
+primary_tag: products>sap-leonardo-iot
 auto_validation: true
-tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
+tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-internet-of-things ]
 time: 20
 ---
 
@@ -175,8 +175,8 @@ Lastly we will set the things serial number and the location to make sure we can
 2. Use [HTML5 geolocation lookup example](https://www.w3schools.com/Html/tryit.asp?filename=tryhtml5_geolocation) to find your current location or choose any other location using another tool (mobile phone, Google maps).
 3. Enter the location in the location fields in the Thing Modeler (see image below).
 4. Enter a lower and upper threshold for the temperature (under **Measured Values**).
-4. Then connect the device and sensors created in the earlier Tutorials in the connectivity tab.
-4. Save your change.
+5. Then connect the device and sensors created in the earlier Tutorials in the connectivity tab.
+6. Save your change.
 
 ![Location and Serial Number](masterdata.png)
 
