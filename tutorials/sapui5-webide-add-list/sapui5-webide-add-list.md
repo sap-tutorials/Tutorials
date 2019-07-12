@@ -76,7 +76,7 @@ Now **Run** your application again.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Re-run your app)]
+[ACCORDION-BEGIN [Step : ](Trigger a list item action)]
 Click on an item in your application, and a pop-up will appear.  
 
 Notice that the pop-up displays the number of the item pressed, in parenthesis (in the image below: `Products(7)`).
