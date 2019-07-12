@@ -2,6 +2,7 @@
 title: Enable Routing
 description: Enable routing to embed one view into another
 time: 5
+auto_validation: false
 primary_tag: topic>sapui5
 author_name: Marius Obert
 author_profile: https://github.com/iobert
@@ -77,7 +78,7 @@ Embed one view into another one with routing to prepare for later tutorials. Edi
 > After this tutorial, you should be able to run your application again, but you will not see any changes.  All of the routing work occurs "behind the scenes" and is not visible to the user.   
 
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 ----
