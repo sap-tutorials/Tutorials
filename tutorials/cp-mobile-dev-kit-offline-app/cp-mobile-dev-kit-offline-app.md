@@ -26,8 +26,6 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
 
-[OPTION BEGIN [Neo]]
-
 This includes creating the Mobile Development Kit project in the Editor.
 
 Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
@@ -41,6 +39,8 @@ Enter the Project Name as `DemoSampleApp` and click **Next**.
 ![MDK](img_002.png)
 
 Leave the default values in _Application Creation_ step as it is, click **Next**.
+
+[OPTION BEGIN [Neo]]
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -77,27 +77,9 @@ Click **Check Service** to validate the service properties. If all the details a
 >More details on _Sample Back End_ is available in
 [help documentation](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
 
-Select `Customers`, `products`, `SalesOrderHeaders` and  `SalesOrderItems` queries from the dropdown and click **Finish**.
-
-![MDK](img_006.png)
-
 [OPTION END]
 
 [OPTION BEGIN [Cloud Foundry]]
-
-This includes creating the Mobile Development Kit project in the Editor.
-
-Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
-
-Right click on Workspace folder and select **New** | **MDK Base Project**.
-
-![MDK](img_001.png)
-
-Enter the Project Name as `DemoSampleApp` and click **Next**.
-
-![MDK](img_002.png)
-
-Leave the default values in _Application Creation_ step as it is, click **Next**.
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -129,14 +111,13 @@ Click **Check Service** to validate the service properties. If all the details a
 >You can look in SAP Cloud Platform Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Connectivity** feature.
 ![MDK](img_0032.png)
 
->More details on _Sample Back End_ is available in
-[help documentation](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+>More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+
+[OPTION END]
 
 Select `Customers`, `products`, `SalesOrderHeaders` and  `SalesOrderItems` queries from the dropdown and click **Finish**.
 
 ![MDK](img_006.png)
-
-[OPTION END]
 
 [DONE]
 [ACCORDION-END]
@@ -172,8 +153,6 @@ Open the application settings in the application editor by double clicking on th
 
 [ACCORDION-BEGIN [Step 3: ](Deploy and activate the application)]
 
-[OPTION BEGIN [Neo]]
-
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
 Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
@@ -187,6 +166,8 @@ Let the default configuration as it is and click **Next**.
 >_Filter Files_ will be filtered and ignored in web packing process.
 
 >_Externals_ is a list of NPM modules to be excluded from the bundle.
+
+[OPTION BEGIN [Neo]]
 
 Based on the `mobileservices` destination, you will find list of existing MDK application IDs , select the one you have chosen while creating the project in step 1
 
@@ -194,29 +175,9 @@ Based on the `mobileservices` destination, you will find list of existing MDK ap
 
 >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-Click **Next** to finish the deployment from SAP Web IDE.
-
-You should see **Application deployed successfully** message in console log.
-
-![MDK](img_015.png)
-
 [OPTION END]
 
 [OPTION BEGIN [Cloud Foundry]]
-
-So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
-
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
-
-![MDK](img_009.png)
-
-Let the default configuration as it is and click **Next**.
-
-![MDK](img_010.png)
-
->_Filter Files_ will be filtered and ignored in web packing process.
-
->_Externals_ is a list of NPM modules to be excluded from the bundle.
 
 Based on the `mobileservices_cf` destination, you will find list of existing application IDs , select the one you have chosen while creating the project in step 1
 
@@ -224,20 +185,18 @@ Based on the `mobileservices_cf` destination, you will find list of existing app
 
 >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
+[OPTION END]
+
 Click **Next** to finish the deployment from SAP Web IDE.
 
 You should see **Application deployed successfully** message in console log.
 
 ![MDK](img_015.png)
 
-[OPTION END]
-
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Populate the QR code for app on-boarding)]
-
-[OPTION BEGIN [Neo]]
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
@@ -248,6 +207,8 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 Let the default configuration as it is and click **Next**.
 
 ![MDK](img_010.png)
+
+[OPTION BEGIN [Neo]]
 
 Click on QR code icon to populate QR code for app on-boarding.
 
@@ -256,16 +217,6 @@ Click on QR code icon to populate QR code for app on-boarding.
 [OPTION END]
 
 [OPTION BEGIN [Cloud Foundry]]
-
-SAP Web IDE has a feature to generate QR code for app on-boarding.
-
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
-
-![MDK](img_009.png)
-
-Let the default configuration as it is and click **Next**.
-
-![MDK](img_010.png)
 
 Click on QR code icon to populate QR code for app on-boarding.
 

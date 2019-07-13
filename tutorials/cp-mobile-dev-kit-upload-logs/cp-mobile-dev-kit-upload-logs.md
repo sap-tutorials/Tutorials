@@ -17,11 +17,15 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+>**This tutorial has been executed with Mobile Services in SAP Cloud Platform Neo and Cloud Foundry environment, please switch to either tab according to your environment.**
+
 [ACCORDION-BEGIN [Step 1: ](Define client log policy in Mobile Services cockpit )]
 
 SAP Cloud Platform Mobile Services provides administrators, developers and support staff with extensive logs and traces functionality to troubleshoot application issues. You can control the amount of information that is captured by setting the log level for individual logging components.
 
 In this step, you will enable client log upload policy in **SAP Cloud Platform Mobile Services Cockpit** for a given MDK app.
+
+[OPTION BEGIN [Neo]]
 
 Login to [Mobile Services Cockpit](fiori-ios-hcpms-setup), click `com.sap.mdk.demo` | **Client Policies**.
 
@@ -31,9 +35,31 @@ Login to [Mobile Services Cockpit](fiori-ios-hcpms-setup), click `com.sap.mdk.de
 
 ![MDK](img_002.png)
 
->Other policy parameters like Log Level, Delete Uploaded Log After,  Maximum Number of Logs and Maximum Log Size currently have no effect.
+>Other policy parameters like Log Level, Delete Uploaded Log After, Maximum Number of Logs and Maximum Log Size currently have no effect.
 
 >You can find more details about [Client Log Upload feature](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/36178b64b6bd4c9392cd421f6aa9ef12.html).
+
+[OPTION END]
+
+[OPTION BEGIN [Cloud Foundry]]
+
+Login to [Mobile Services Cockpit](fiori-ios-hcpms-setup), click `com.sap.mdk.demo` | click **+** icon to add client log upload feature to the app.
+
+![MDK](img_001.1.png)
+
+Select **Mobile Client Log Upload** option and click **OK**.
+
+![MDK](img_002.2.png)
+
+Check **Log Upload** option and click **Save**.
+
+![MDK](CF-logpolicy.png)
+
+>Other policy parameters like Log Level, Delete Uploaded Log After, Maximum Number of Logs and Maximum Log Size currently have no effect.
+
+>You can find more details about [Client Log Upload feature](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/662c8a51d3df48bb99baea65855f3441.html).
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
@@ -230,9 +256,11 @@ Deploy the updated application to your MDK client.
 
 Right-click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
 
->Make sure to select same App ID as you chose in previous tutorial.
+>Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
 
 At `OnLaunch` event, app starts gathering logs.
 
@@ -242,10 +270,28 @@ Click **Upload Logs** to upload client logs from app to SAP Cloud Platform Mobil
 
 ![MDK](img_018.png)
 
+[OPTION END]
+
+[OPTION BEGIN [Android]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+
+At `OnLaunch` event, app starts gathering logs.
+
+Click **UPLOAD LOGS** to upload client logs from app to SAP Cloud Platform Mobile Services.
+
+![MDK](img_017.1.jpg)
+
+![MDK](img_018.1.jpg)
+
+[OPTION END]
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Examine uploaded logs in Mobile Services cockpit)]
+
+[OPTION BEGIN [Neo]]
 
 Open SAP Cloud Platform Mobile Services Cockpit, click **Analytics** | **Logs**.
 
@@ -262,6 +308,20 @@ You may select required log entries and then either view them directly in Mobile
 ![MDK](img_021.png)
 
 >You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/viewer/DRAFT/7f3bded2efb9424eb0affaee75bd58ce/1.1/en-US/7dfa70b6be6f4d5ebb6845e7f1e4ae82.html).
+
+[OPTION END]
+
+[OPTION BEGIN [Cloud Foundry]]
+
+Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click on MDK app | **Mobile Client Log Upload | **Logs**.
+
+![MDK](img_019.1.png)
+
+You may view log entries directly in Mobile Services Cockpit or download them locally.
+
+>You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/viewer/DRAFT/7f3bded2efb9424eb0affaee75bd58ce/1.1/en-US/7dfa70b6be6f4d5ebb6845e7f1e4ae82.html).
+
+[OPTION END]
 
 [VALIDATE_1]
 [ACCORDION-END]

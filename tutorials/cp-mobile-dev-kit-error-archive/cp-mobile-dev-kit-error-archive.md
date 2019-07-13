@@ -41,6 +41,8 @@ You have built an MDK app with offline functionality. In offline store, you make
 
 ![MDK](img_1.gif)
 
+>**This tutorial has been executed with Mobile Services in SAP Cloud Platform Neo and Cloud Foundry environment, please switch to either tab according to your environment.**
+
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Web IDE)]
 
 This includes creating the Mobile Development Kit project in the Editor.
@@ -56,6 +58,8 @@ Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
 ![MDK](img_002.png)
 
 Leave the default values in _Application Creation_ step as it is, click **Next**.
+
+[OPTION BEGIN [Neo]]
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -79,7 +83,35 @@ Click **Check Service** to validate the service properties. If all the details a
 
 ![MDK](img_005.png)
 
->More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+[OPTION END]
+
+[OPTION BEGIN [Cloud Foundry]]
+
+In _Service Creation_ step, provide and select the below information:
+
+| Field | Value |
+|----|----|
+| `Name`| `SampleServiceV2` |
+| `Service URL` | `/destinations/mobileservices_cf` |
+| `Application ID` | `com.sap.mdk.demo` |
+| `Service URL` | `com.sap.edm.sampleservice.v2` |
+| `Enable Offline Store` | `Should be checked` |
+
+>For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
+
+![MDK](img_004.1.png)
+
+Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
+
+Since you will create an offline based app, hence _Enable Offline Store_ option is selected.
+
+Click **Check Service** to validate the service properties. If all the details are fine, you will see a success message. Click **Next**.
+
+![MDK](img_005.png)
+
+[OPTION END]
+
+>More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
 
 In following steps, click **Next** with default selections and **Finish** the project creation.
 
@@ -213,10 +245,9 @@ export default function GetAffectedEntityHeaderCaption(context) {
 }
 ```
 
->`@odata.type`: a URI that identifies the type of the property or object
+>`@odata.type`: a URI that identifies the type of the property or object.
 
->`@odata.id`: an annotation that contains the entity-id
-More details can be found [here](http://docs.oasis-open.org/odata/odata-json-format/v4.0/cs01/odata-json-format-v4.0-cs01.html#_Toc36546468).
+>`@odata.id`: an annotation that contains the entity-id. More details can be found [here](http://docs.oasis-open.org/odata/odata-json-format/v4.0/cs01/odata-json-format-v4.0-cs01.html#_Toc36546468).
 
 >`AffectedEntity`: A navigation property that allows applications to navigate from an `ErrorArchive` entity to an entity in the offline store that is affected by the error.
 
@@ -249,8 +280,7 @@ In **Appearance** section, provide below properties:
 
 ![MDK](img_007.14.png)
 
->`@odata.id`: an annotation that contains the entity-id
-More details can be found [here](http://docs.oasis-open.org/odata/odata-json-format/v4.0/cs01/odata-json-format-v4.0-cs01.html#_Toc36546468).
+>`@odata.id`: an annotation that contains the entity-id. More details can be found [here](http://docs.oasis-open.org/odata/odata-json-format/v4.0/cs01/odata-json-format-v4.0-cs01.html#_Toc36546468).
 
 In **Behavior** section, update below properties:
 
@@ -507,29 +537,21 @@ Let the default configuration as it is and click **Next**.
 
 >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-Click on QR code icon to populate QR code for app on-boarding.
-
-![MDK](img_012.png)
-
-On iPhone, open your camera app and start scanning the QR code, as shown below.
-
-![MDK](img_013.png)
-
-Click the toast message to launch **SAP Mobile Services Client**.
-
->On Android, camera app does not support scanning the QR code. You can use [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) app to scan it.
-
->![MDK](img_013.1.png)
-
->Click **Open link**.
-
->![MDK](img_013.2.png)
-
->It will open SAP Mobile Services Client app.
-
-Before you click on **Start** in client app, first finish the deployment from SAP Web IDE. Click **Next**.
+[OPTION BEGIN [Neo]]
 
 ![MDK](img_014.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Cloud Foundry]]
+
+Based on the `mobileservices_cf` destination, you will find list of existing application IDs , select the one you have chosen while creating the project in step 1
+
+![MDK](img_014.1.png)
+
+[OPTION END]
+
+Click **Next** to finish the deployment from SAP Web IDE.
 
 You should see **Application deployed successfully** message in console log.
 
@@ -538,7 +560,38 @@ You should see **Application deployed successfully** message in console log.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run the app in MDK client)]
+[ACCORDION-BEGIN [Step 8: ](Populate the QR code for app on-boarding)]
+
+SAP Web IDE has a feature to generate QR code for app on-boarding.
+
+Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+
+![MDK](img_009.png)
+
+Let the default configuration as it is and click **Next**.
+
+![MDK](img_010.png)
+
+[OPTION BEGIN [Neo]]
+
+Click on QR code icon to populate QR code for app on-boarding.
+
+![MDK](img_012.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Cloud Foundry]]
+
+Click on QR code icon to populate QR code for app on-boarding.
+
+![MDK](img_012.1.png)
+
+[OPTION END]
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Run the app in MDK client)]
 
 >Below steps & screenshots were captured with iOS device. You will have similar on-boarding experience with Android as well.
 
