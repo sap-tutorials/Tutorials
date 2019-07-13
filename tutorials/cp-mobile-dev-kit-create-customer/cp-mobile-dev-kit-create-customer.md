@@ -357,11 +357,11 @@ On Main page, click **SYNC**, a successful message will be shown.
 
 [OPTION END]
 
-You can cross verify if a record has been created in the backend. For trial account,
+You can cross verify if a record has been updated in the backend.
 
-`https://hcpms-YOURIDtrial.hanatrial.ondemand.com/mobileservices/origin/hcpms/ESPM.svc/v2/Customers`
+>Backend URL can be found in Mobile Services Cockpit.
 
->This URL can be found in Mobile Services Cockpit. Mobile Applications | Native/Hybrid | Click on the MDK App | Connectivity
+>Mobile Applications | Native/Hybrid | Click on the MDK App | Sample Back End | click Root URL `v2` | append `/Customers`
 
 ![MDK](img_037.png)
 

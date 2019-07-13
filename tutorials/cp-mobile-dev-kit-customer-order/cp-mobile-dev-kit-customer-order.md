@@ -397,9 +397,11 @@ Right-click the MDK application in the project explorer pane and select **MDK De
 
 ![MDK](img_031.png)
 
->Make sure to select same App ID as you chose in the previous tutorial.
+>Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or fingerprint. When you see a confirmation pop-up, click **OK**.
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. When you see a confirmation pop-up, click **OK**.
 
 ![MDK](img_032.png)
 
@@ -411,9 +413,35 @@ Clicking on any order navigates to its details page.
 
 ![MDK](img_034.png)
 
-Click **See All**, which navigates to the **Customer Orders** page.  
+Navigate back to **Customer Detail** page, click **See All**, which navigates to the **Customer Orders** page.  
 
 ![MDK](img_035.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Android]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or fingerprint. When you see a confirmation pop-up, click **OK**. Click **CUSTOMER LIST**.
+
+![MDK](img_032.1.jpg)
+
+You will see the **Customer Orders** area in customer detail page and also total count of orders.
+
+![MDK](img_033.1.jpg)
+
+Clicking on any order navigates to its details page.
+
+![MDK](img_034.1.jpg)
+
+Navigate back to **Customer Detail** page, click **See All**, which navigates to the **Customer Orders** page.  
+
+![MDK](img_035.1.jpg)
+
+![MDK](img_036.1.jpg)
+
+[OPTION END]
+
+
 
 >_Are you wondering how exactly MDK knew that clicking on a record in  list page would display respective record in detail page?_
 

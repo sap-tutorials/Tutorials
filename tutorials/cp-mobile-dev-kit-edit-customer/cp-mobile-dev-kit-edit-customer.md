@@ -365,11 +365,11 @@ Local record gets updated accordingly.
 
 ![MDK](img_034.png)
 
-You can cross verify if a record has been updated in the backend. For trial account,
+You can cross verify if a record has been updated in the backend.
 
-`https://hcpms-YOURIDtrial.hanatrial.ondemand.com/mobileservices/origin/hcpms/ESPM.svc/v2/Customers`
+>Backend URL can be found in Mobile Services Cockpit.
 
->This URL can be found in Mobile Services Cockpit. Mobile Applications | Native/Hybrid | Click on the MDK App | Connectivity
+>Mobile Applications | Native/Hybrid | Click on the MDK App | Sample Back End | click Root URL `v2`
 
 But here result is pointing to old First Name (`Sebastien`).
 
@@ -401,11 +401,11 @@ Local record gets updated accordingly.
 
 ![MDK](img_034.1.jpg)
 
-You can cross verify if a record has been updated in the backend. For trial account,
+You can cross verify if a record has been updated in the backend.
 
-`https://hcpms-YOURIDtrial.hanatrial.ondemand.com/mobileservices/origin/hcpms/ESPM.svc/v2/Customers`
+>Backend URL can be found in Mobile Services Cockpit.
 
->This URL can be found in Mobile Services Cockpit. Mobile Applications | Native/Hybrid | Click on the MDK App | Connectivity
+>Mobile Applications | Native/Hybrid | Click on the MDK App | Sample Back End | click Root URL `v2` | append `/Customers`
 
 But here result is pointing to old First Name (`Sebastien`).
 
