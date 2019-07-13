@@ -161,9 +161,11 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 
 ![MDK](img_026.png)
 
->Make sure to select same App ID as you chose in previous tutorial.
+>Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
 
 ![MDK](img_027.png)
 
@@ -176,8 +178,28 @@ Here, you will see list of all the Customers. You can search a record by by Firs
 ![MDK](img_029.png)
 
 >Here, you may notice that **City** is not showing up on screen, this is by design. Since in portrait mode, the device width is considered _compact_ , if you change device orientation to landscape mode, you will see **City**.
-![MDK](img_030.png)
+
+>![MDK](img_030.png)
+
 >If it was an iPad (where both portrait and landscape are considered _regular_ instead of _compact_) you would see **City** on either orientation.
+
+[OPTION END]
+
+[OPTION BEGIN [Android]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+
+![MDK](img_027.1.jpg)
+
+You will notice, newly added button on the main page. Click **CUSTOMER LIST**.
+
+![MDK](img_028.1.jpg)
+
+Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
+
+![MDK](img_029.1.jpg)
+
+[OPTION END]
 
 [VALIDATE_1]
 [ACCORDION-END]

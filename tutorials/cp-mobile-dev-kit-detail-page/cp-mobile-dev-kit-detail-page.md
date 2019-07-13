@@ -200,19 +200,39 @@ Right click on the MDK Application in the project explorer pane and select **MDK
 
 ![MDK](img_026.png)
 
->Make sure to select same App ID as you chose in previous tutorial.
+>Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
 
 ![MDK](img_027.png)
 
-Click Customer List, you will navigate to Customer List page.
+Click **Customer List**, you will navigate to Customer List page.
 
 ![MDK](img_028.png)
 
 Click any record from the list, you will navigate to it's detail page.
 
 ![MDK](img_029.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Android]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+
+![MDK](img_027.1.jpg)
+
+Click **CUSTOMER LIST**, you will navigate to Customer List page.
+
+![MDK](img_028.1.jpg)
+
+Click any record from the list, you will navigate to it's detail page.
+
+![MDK](img_029.1.jpg)
+
+[OPTION END]
 
 >_Are you wondering how exactly MDK knew that clicking on a record in  list page would display respective record in detail page?_
 

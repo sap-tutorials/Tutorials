@@ -10,12 +10,10 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
-- [Setup initial configuration for an MDK App in SAP Cloud Platform Mobile Services](cp-mobile-dev-kit-ms-setup)
-- Download and install **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
-- Download and install [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) (required only for Android device)
-
-
+- **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
+- **Tutorial:** [Setup initial configuration for an MDK App in SAP Cloud Platform Mobile Services](cp-mobile-dev-kit-ms-setup)
+- **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install** [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) (required only for Android device)
 
 ## Details
 ### You will learn
@@ -24,7 +22,11 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+>**This tutorial has been executed with Mobile Services in SAP Cloud Platform Neo and Cloud Foundry environment, please switch to either tab according to your environment.**
+
 [ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
+
+[OPTION BEGIN [Neo]]
 
 This includes creating the Mobile Development Kit project in the Editor.
 
@@ -79,6 +81,63 @@ Select `Customers`, `products`, `SalesOrderHeaders` and  `SalesOrderItems` queri
 
 ![MDK](img_006.png)
 
+[OPTION END]
+
+[OPTION BEGIN [Cloud Foundry]]
+
+This includes creating the Mobile Development Kit project in the Editor.
+
+Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
+
+Right click on Workspace folder and select **New** | **MDK Base Project**.
+
+![MDK](img_001.png)
+
+Enter the Project Name as `DemoSampleApp` and click **Next**.
+
+![MDK](img_002.png)
+
+Leave the default values in _Application Creation_ step as it is, click **Next**.
+
+In _Service Creation_ step, provide and select the below information:
+
+| Field | Value |
+|----|----|
+| `Name`| `SampleServiceV2` |
+| `Service URL` | `/destinations/mobileservices_cf` |
+| `Application ID` | `com.sap.mdk.demo` |
+| `Service URL` | `com.sap.edm.sampleservice.v2` |
+| `Enable Offline Store` | `Should be checked` |
+
+>For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
+
+![MDK](img_004.1.png)
+
+>In [previous tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
+
+Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
+
+Since you will create an offline based app, hence _Enable Offline Store_ option is selected.
+
+Click **Check Service** to validate the service properties. If all the details are fine, you will see a success message. Click **Next**.
+
+![MDK](img_005.png)
+
+>Wondering how _Service URL_, _Application ID_ & _Destination Name_ were populated? As part of [enabled Mobile Services](fiori-ios-hcpms-setup) tutorial, you created a destination `mobileservices_cf` in Cloud Platform Cockpit, SAP Web IDE fetches all these details based on this destination.
+![MDK](img_0031.1.png)
+
+>You can look in SAP Cloud Platform Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Connectivity** feature.
+![MDK](img_0032.png)
+
+>More details on _Sample Back End_ is available in
+[help documentation](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+
+Select `Customers`, `products`, `SalesOrderHeaders` and  `SalesOrderItems` queries from the dropdown and click **Finish**.
+
+![MDK](img_006.png)
+
+[OPTION END]
+
 [DONE]
 [ACCORDION-END]
 
@@ -113,6 +172,8 @@ Open the application settings in the application editor by double clicking on th
 
 [ACCORDION-BEGIN [Step 3: ](Deploy and activate the application)]
 
+[OPTION BEGIN [Neo]]
+
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
 Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
@@ -129,46 +190,101 @@ Let the default configuration as it is and click **Next**.
 
 Based on the `mobileservices` destination, you will find list of existing MDK application IDs , select the one you have chosen while creating the project in step 1
 
-![MDK](img_011.png)
+![MDK](img_014.png)
 
 >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-Click on QR code icon to populate QR code for app on-boarding.
-
-![MDK](img_012.png)
-
-On iPhone, open your camera app and start scanning the QR code, as shown below.
-
-![MDK](img_013.png)
-
-Click the toast message to launch **SAP Mobile Services Client**.
-
->On Android, camera app does not support scanning the QR code. You can use [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) app to scan it.
-
->![MDK](img_013.1.png)
-
->Click **Open link**
-
->![MDK](img_013.2.png)
-
->It will open SAP Mobile Services Client app.
-
-Before you click on **Start** in client app, first finish the deployment from SAP Web IDE. Click **Next**.
-
-![MDK](img_014.png)
+Click **Next** to finish the deployment from SAP Web IDE.
 
 You should see **Application deployed successfully** message in console log.
 
 ![MDK](img_015.png)
 
+[OPTION END]
+
+[OPTION BEGIN [Cloud Foundry]]
+
+So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
+
+Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+
+![MDK](img_009.png)
+
+Let the default configuration as it is and click **Next**.
+
+![MDK](img_010.png)
+
+>_Filter Files_ will be filtered and ignored in web packing process.
+
+>_Externals_ is a list of NPM modules to be excluded from the bundle.
+
+Based on the `mobileservices_cf` destination, you will find list of existing application IDs , select the one you have chosen while creating the project in step 1
+
+![MDK](img_014.1.png)
+
+>By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
+
+Click **Next** to finish the deployment from SAP Web IDE.
+
+You should see **Application deployed successfully** message in console log.
+
+![MDK](img_015.png)
+
+[OPTION END]
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run the app in MDK client)]
+[ACCORDION-BEGIN [Step 4: ](Populate the QR code for app on-boarding)]
 
->Below steps & screenshots were captured with iOS device. You will have similar on-boarding experience with Android as well.
+[OPTION BEGIN [Neo]]
 
-The MDK client receives deployed metadata definitions as a bundle.
+SAP Web IDE has a feature to generate QR code for app on-boarding.
+
+Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+
+![MDK](img_009.png)
+
+Let the default configuration as it is and click **Next**.
+
+![MDK](img_010.png)
+
+Click on QR code icon to populate QR code for app on-boarding.
+
+![MDK](img_012.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Cloud Foundry]]
+
+SAP Web IDE has a feature to generate QR code for app on-boarding.
+
+Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+
+![MDK](img_009.png)
+
+Let the default configuration as it is and click **Next**.
+
+![MDK](img_010.png)
+
+Click on QR code icon to populate QR code for app on-boarding.
+
+![MDK](img_012.1.png)
+
+[OPTION END]
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Run the app in MDK client)]
+
+[OPTION BEGIN [iOS]]
+
+On iPhone, open your camera app and start scanning the QR code, as shown below.
+
+![MDK](img_013.png)
+
+Click the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
 
 Click **Start** to connect MDK client to SAP Cloud Platform.
 
@@ -177,6 +293,10 @@ Click **Start** to connect MDK client to SAP Cloud Platform.
 Enter your SAP Cloud Platform credentials and click **Log On** to authenticate.
 
 ![MDK](img_017.png)
+
+>If your target environment is **Cloud Foundry** then enter email address and password to authenticate.
+
+>![MDK](img_017.1.1.png)
 
 **Agree** on `End User License Agreement`.
 
@@ -201,6 +321,60 @@ Click **OK**.
 Now, you will see **Main** page being displayed and Offline store is being initialized.
 
 ![MDK](img_023.gif)
+
+[OPTION END]
+
+[OPTION BEGIN [Android]]
+
+On Android, camera app does not support scanning the QR code. You can use [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) app to scan it.
+
+![MDK](img_013.1.png)
+
+Click **Open link**.
+
+![MDK](img_013.2.png)
+
+Click the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
+
+Click **GET STARTED** to connect MDK client to SAP Cloud Platform.
+
+![MDK](img_016.1.jpg)
+
+Enter your SAP Cloud Platform credentials and click **Log On** to authenticate.
+
+![MDK](img_017.1.png)
+
+>If your target environment is **Cloud Foundry** then enter email address and password to authenticate.
+
+>![MDK](img_017.1.1.png)
+
+**AGREE** on `End User License Agreement`.
+
+![MDK](img_018.1.jpg)
+
+Choose a passcode with at least 8 characters for unlocking the app and click **NEXT**.
+
+![MDK](img_019.1.jpg)
+
+Confirm the passcode and click **DONE**.
+
+![MDK](img_020.1.jpg)
+
+Optionally, you can enable fingerprint to get faster access to the app data, click **USE PASSCODE**.
+
+![MDK](img_021.1.jpg)
+
+Click **OK**.
+
+![MDK](img_022.1.jpg)
+
+Now, you will see **Main** page being displayed and Offline store is being initialized.
+
+![MDK](img_023.1.jpg)
+
+[OPTION END]
+
+The MDK client receives deployed metadata definitions as a bundle.
 
 [VALIDATE_1]
 [ACCORDION-END]
