@@ -82,11 +82,11 @@ primary_tag: products>sap-api-management
     ```Destination
 
     {
-      "path": "/<replace_by_account_id>trial/HubSpotCRM/accounts",
+      "path": "/<replace_by_account_id>trial/HubSpotCRM/Basic_Companies",
       "target": {
         "type": "destination",
         "name": "API_Portal",
-        "entryPath": "/<replace_by_account_id>trial/HubSpotCRM/accounts"
+        "entryPath": "/<replace_by_account_id>trial/HubSpotCRM/Basic_Companies"
       },
       "description": "API_Portal OpenConnectors"
     },
@@ -111,11 +111,15 @@ primary_tag: products>sap-api-management
     createDataModel: function () {
     var oModel = new JSONModel();
     var sHeaders = {};
-    oModel.loadData("/<you_number>trial/HubSpotCRM/accounts", null, true, "GET", null, false, sHeaders);
+    oModel.loadData("/<you_number>trial/HubSpotCRM/<your common Resource template name>", null, true, "GET", null, false, sHeaders);
     return oModel;
     }
 
     ```
+    >UI binding has been done based on the response from the basic-companies common resource templates
+    and therefore the same binding can be re-used irrespective of the actual non-SAP CRM
+    application that you would be connecting to.
+    
     ![Model File1](11-model.png)
 
 9. In the `Component.js` file, paste the following code:
@@ -128,40 +132,40 @@ primary_tag: products>sap-api-management
 10. Paste the following table control XML in to `View1.view.xml`:
 
     ```XML
-    <Table items="{data>/}">
-    <columns>
-    <Column>
-    <Text text="Name"/>
-    </Column>
-    <Column minScreenWidth="Tablet" demandPopin="true">
-    <Text text="Description"/>
-    </Column>
-    <Column>
-    <Text text="Number of Employee"/>
-    </Column>
-    <Column>
-    <Text text="Annual Revenue"/>
-    </Column>
-    <Column>
-    <Text text="Founded Year"/>
-    </Column>
-    <Column>
-    <Text text="Country"/>
-    </Column>
-    </columns>
-    <items>
-    <ColumnListItem>
-    <cells>
-    <ObjectIdentifier title="{data>properties/name}"/>
-    <Text text="{data>properties/description}"/>
-    <Text text="{data>properties/numberofemployees}"/>
-    <Text text="{data>properties/annualrevenue}"/>
-    <Text text="{data>properties/founded_year}"/>
-    <Text text="{data>properties/country}"/>
-    </cells>
-    </ColumnListItem>
-    </items>
-    </Table>
+    <<Table items="{data>/}">
+							<columns>
+								<Column>
+									<Text text="Name"/>
+								</Column>
+								<Column>
+									<Text text="Phone"/>
+								</Column>
+								<Column>
+									<Text text="Website"/>
+								</Column>
+								<Column>
+									<Text text="Industry"/>
+								</Column>
+								<Column>
+									<Text text="Shipping Address"/>
+								</Column>
+								<Column>
+									<Text text="Billing Address"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<ObjectIdentifier title="{data>name}"/>
+										<Text text="{data>phone}"/>
+										<Text text="{data>website}"/>
+										<Text text="{data>industry}"/>
+										<Text text="{data>shippingAddress/composite}"/>
+										<Text text="{data>billingAddress/composite}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
     ```
     ![View File](12-view.png)
 
