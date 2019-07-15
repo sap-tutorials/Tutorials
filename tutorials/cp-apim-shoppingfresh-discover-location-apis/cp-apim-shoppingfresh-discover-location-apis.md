@@ -52,8 +52,7 @@ primary_tag: products>sap-api-management
     >As you expand the resource, you will notice that in order to test the API, one needs a real `app_id` and `app_code` parameter. You can register with HERE.com and request your own `app_id` and `app_code`.
     It is suggested you write down your `app_id` / `app_code` to a notepad or other easily accessible location for future use.
 
-    [VALIDATE_1]
-
+[VALIDATE_1]
 [ACCORDION-END]
 
 ---
