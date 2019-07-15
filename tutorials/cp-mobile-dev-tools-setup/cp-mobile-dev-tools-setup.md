@@ -10,7 +10,7 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
+- **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
 
 ## Details
 ### You will learn

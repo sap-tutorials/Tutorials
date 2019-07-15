@@ -98,15 +98,31 @@ Deploy the updated application to your MDK client.
 
 Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
 
->Make sure to select same App ID as you chose in previous tutorial.
+>Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
 
 Update a record with no contain of **@** in Email property throws a validation failure message.
 
 ![MDK](img_013.png)
 
 ![MDK](img_012.png)
+
+[OPTION END]
+
+[OPTION BEGIN [Android]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+
+Update a record with no contain of **@** in Email property throws a validation failure message.
+
+![MDK](img_013.1.jpg)
+
+![MDK](img_012.1.jpg)
+
+[OPTION END]
 
 [VALIDATE_1]
 [ACCORDION-END]

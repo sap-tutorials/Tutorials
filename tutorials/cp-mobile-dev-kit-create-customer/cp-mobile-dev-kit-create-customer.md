@@ -303,11 +303,13 @@ Deploy the updated application to your MDK client.
 
 Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
 
->Make sure to select same App ID as you chose in previous tutorial.
+>Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+[OPTION BEGIN [iOS]]
 
-Click Customer List, click **+** icon to create a new record.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+
+Click **Customer List**, click **+** icon to create a new record.
 
 ![MDK](img_032.png)
 
@@ -327,11 +329,39 @@ On Main page, click **Sync**, a successful message will be shown.
 
 ![MDK](img_036.png)
 
-You can cross verify if a record has been created in the backend. For trial account,
+[OPTION END]
 
-`https://hcpms-YOURIDtrial.hanatrial.ondemand.com/mobileservices/origin/hcpms/ESPM.svc/v2/Customers`
+[OPTION BEGIN [Android]]
 
->This URL can be found in Mobile Services Cockpit. Mobile Applications | Native/Hybrid | Click on the MDK App | Connectivity
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+
+Click **Customer List**, click **+** icon to create a new record.
+
+![MDK](img_032.1.jpg)
+
+Enter the values, and click save icon.
+
+![MDK](img_033.1.jpg)
+
+Local record gets created accordingly.
+
+![MDK](img_034.1.jpg)
+
+Since this is an Offline application, new entry is added to the request queue of the local store which needs to be sent or uploaded to the backend explicitly.  
+
+>MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
+
+On Main page, click **SYNC**, a successful message will be shown.
+
+![MDK](img_035.1.jpg)
+
+[OPTION END]
+
+You can cross verify if a record has been updated in the backend.
+
+>Backend URL can be found in Mobile Services Cockpit.
+
+>Mobile Applications | Native/Hybrid | Click on the MDK App | Sample Back End | click Root URL `v2` | append `/Customers`
 
 ![MDK](img_037.png)
 
