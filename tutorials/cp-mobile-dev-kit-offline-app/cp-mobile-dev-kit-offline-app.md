@@ -269,6 +269,8 @@ Click **OK**.
 
 ![MDK](img_022.png)
 
+The MDK client receives deployed metadata definitions as a bundle.
+
 Now, you will see **Main** page being displayed and Offline store is being initialized.
 
 ![MDK](img_023.gif)
@@ -319,13 +321,13 @@ Click **OK**.
 
 ![MDK](img_022.1.jpg)
 
+The MDK client receives deployed metadata definitions as a bundle.
+
 Now, you will see **Main** page being displayed and Offline store is being initialized.
 
 ![MDK](img_023.1.jpg)
 
 [OPTION END]
-
-The MDK client receives deployed metadata definitions as a bundle.
 
 [VALIDATE_1]
 [ACCORDION-END]
