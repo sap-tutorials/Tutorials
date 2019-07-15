@@ -1,6 +1,6 @@
 ---
 title: Get Started with SAP Web IDE for Full-Stack Development (Production)
-description: Set up your SAP Cloud Platform account so developers in your organization can start developing applications with SAP Web IDE for Full-Stack Development.
+description: Set up your SAP Cloud Platform account so developers in your organization can start developing applications with SAP Web IDE for Full-Stack.
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>internet-of-things, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 time: 15
@@ -27,7 +27,7 @@ Log onto your SAP Cloud Platform account.
 
 Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**.
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -40,7 +40,7 @@ Choose **Edit**.
 
 Change the **Principal Propagation** field to **Enabled**, and choose **Save**.
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -61,7 +61,7 @@ Wait for the status to change to the green, **Enabled** status.
 
 ![full-stack version enabled](Enabled.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -81,7 +81,7 @@ In the **Individual Users** or **Groups** area underneath, choose **Assign**, th
 
 ![Configure service](Configure3.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -92,7 +92,7 @@ In the breadcrumb at the top, choose **SAP Web IDE for Full-Stack Development**.
 
 Provide this URL to your developers so they can start working with SAP Web IDE for Full-Stack Development.
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -110,7 +110,7 @@ We recommend you create separate subaccounts for development, staging/test and p
 
 
 
-
+[DONE]
 [ACCORDION-END]
 
 ---

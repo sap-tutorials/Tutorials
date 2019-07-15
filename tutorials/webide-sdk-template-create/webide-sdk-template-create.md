@@ -1,6 +1,7 @@
 ---
 title: Create a New Project or Component Wizard for SAP Web IDE
 description: Create a new wizard template for creating projects or components for SAP Web IDE.
+auto_validation: true
 primary_tag: products>sap-web-ide-plug-ins
 tags: [  tutorial>beginner, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 time: 15
@@ -22,6 +23,7 @@ In the development perspective of SAP Web IDE, on the **Files** tab, in the work
 ![Directory path](new-create-template.png)
 
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -39,6 +41,7 @@ In the wizard, in the **Template Information** screen, enter the following:
 
 Choose **Next**.
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -65,6 +68,7 @@ Step Type Technical Name | Step Description
 
 Choose **Next**.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Confirm template)]
@@ -82,6 +86,7 @@ For more information, see [Template Configuration](https://sdk-sapwebide.dispatc
 
 > To build, deploy, and activate your new wizard template, you can follow the instructions in the links above under **Next Steps**.
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 
