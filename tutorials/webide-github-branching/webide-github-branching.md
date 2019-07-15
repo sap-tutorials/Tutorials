@@ -1,81 +1,115 @@
 ---
-title: Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE
-description: Collaborative Development Using GitHub and SAP Web IDE
+title: Work with Branches in GitHub and SAP Web IDE
+description: Create branches in GitHub, switch branches and update application in a different branch in SAP Web IDE.
 primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+time: 15
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:**
-    - [Creating issues, setting milestones and assigning issues to collaborators](https://developers.sap.com/tutorials/webide-github-issues-milestones.html)
-
-## Next Steps
-- [Merging branches back into master branch in GitHub using Pull Requests](https://developers.sap.com/tutorials/webide-github-merge-pull-request.html)
+- **Tutorials:** [Create Issues and Assign to Collaborators](webide-github-issues-milestones)
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how your collaborators can create branches in GitHub, switch to the other branch in SAP Web IDE and perform changes and commit the changes to the other branch.
+  - How your collaborators can create branches in GitHub
+  - How to switch to the other branch in SAP Web IDE
+  - How to make changes and commit the changes to the other branch
 
-> This tutorial is written from a **collaborator's** point of view.
+>This tutorial is written from a **collaborator's** point of view.
 
-
-### Time to Complete
-**15 Min**.
 
 ---
 
-1. Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log in to your SAP Cloud Platform cockpit.
+[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform cockpit)]
 
-2. To open SAP Web IDE, click on the **Services** tab in the navigation bar, scroll down and then click the **SAP Web IDE** tile to open the SAP Web IDE service page.
+Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log in to your SAP Cloud Platform cockpit.
 
-    ![Find SAP Web IDE](p5_2.png)
+[DONE]
+[ACCORDION-END]
 
-3. You'll have to clone the GitHub organization repository in SAP Web IDE. To do this
+[ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
 
-    a. From the File menu in SAP Web IDE, click on **Git** &rarr; **Clone repository**.
+To open SAP Web IDE, click the **Services** tab in the navigation bar, scroll down and click the **SAP Web IDE** tile to open the SAP Web IDE service page.
 
-    ![Clone repository](p5_3a.png)
-
-    b. Enter your GitHub account credentials and post the repository URL.
-
-    ![Repository details](p5_3b.png)
-
-    c. The repository is now cloned.
-
-4. Create a branch to which you will make the changes. To do this
-
-    a. Click on Git pane on the right hand side and then click on the **+** icon next to the branch label to create a branch.
-
-    ![Create a branch](p5_4a.png)
-
-    b. Give a suitable name for the branch and then click on **OK** button to create the branch.
-
-    ![Branch details](p5_4b.png)
-
-    c. The branch will be created and the branch against the Git pane will show what branch you will be working against.
-
-    ![Branch created](p5_4c.png)
-
-5. Since this branch is dedicated to milestone `m1` changes which have 2 issues to be targeted, you will implement the changes for each of these in separate commits.
-
-    a. For `issue#1` you will do changes in `S3_PurchaseOrderDetails.view.xml` to remove the `OrderedByName` entry.
-
-    b. Notice that when you save the changes, the Git pane on the right hand side shows the file that was changed. To commit the changes to the repository, click on the **Stage** checkbox, enter a change description and then click on commit.
-
-    > GitHub will automatically close an issue if your commit message includes [certain keywords](https://help.github.com/articles/closing-issues-via-commit-messages/) once this change is merged into the master branch. You will see this in the next tutorial.
+![Find SAP Web IDE](p5_2.png)
 
 
-    ![Add change description](p5_5b.png)
+[DONE]
+[ACCORDION-END]
 
-    c. Click on the **Commit** button to commit changes to the repository and then **Push** and select **Remote branch** to push the changes to GitHub.
+[ACCORDION-BEGIN [Step 3: ](Clone Git repository)]
+
+You'll have to clone the GitHub organization repository in SAP Web IDE. To do this
+
+From the File menu in SAP Web IDE, click on **Git > Clone repository**.
+
+![Clone repository](p5_3a.png)
+
+Enter your GitHub account credentials and post the repository URL.
+
+![Repository details](p5_3b.png)
+
+The repository is now cloned.
 
 
-    ![Push to GitHub remote branch](p5_5c.png)
+[DONE]
+[ACCORDION-END]
 
-6. Now if you check the `m1` branch on GitHub organization repository, you will see that the push has been completed and the changes are seen on GitHub.
+[ACCORDION-BEGIN [Step 4: ](Create a branch)]
 
-    ![Push to GitHub remote branch is successful](p5_6.png)
+Create a branch to which you will make the changes.
 
-7. Similarly you can address other remaining issues targeted for `m1` milestone and commit and push the changes.
+Click the Git pane on the right-hand side and then click the **+** icon next to the branch label to create a branch.
+
+![Create a branch](p5_4a.png)
+
+Give a suitable name for the branch and then click **OK**.
+
+![Branch details](p5_4b.png)
+
+The branch is created and the branch that you are working with is displayed in the Git pane.
+
+![Branch created](p5_4c.png)
 
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Commit and push changes)]
+
+Since this branch is dedicated to milestone `m1` milestone changes which has 2 issues to be targeted, you will implement the changes for each of these in separate commits.
+
+For `issue#1` you will do changes in `S3_PurchaseOrderDetails.view.xml` to remove the `OrderedByName` entry.
+
+Notice that when you save the changes, the Git pane shows the file that was changed. To commit the changes to the repository, click the **Stage** checkbox, enter a change description, and then click **Commit**.
+
+> GitHub will automatically close an issue if your commit message includes [certain keywords](https://help.github.com/articles/closing-issues-via-commit-messages/) once this change is merged into the master branch. You will see this in the next tutorial.
+
+
+![Add change description](p5_5b.png)
+
+Click **Commit**  to commit changes to the repository and then **Push** and select **Remote branch** to push the changes to GitHub.
+
+
+![Push to GitHub remote branch](p5_5c.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Check branch on GitHub)]
+
+Now if you check the `m1` branch on the GitHub organization repository, you will see that the push has been completed and the changes are seen on GitHub.
+
+![Push to GitHub remote branch is successful](p5_6.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Commit and push additional changes)]
+
+Similarly you can address other remaining issues targeted for `m1` milestone and commit and push the changes.
+
+
+[DONE]
+[ACCORDION-END]
