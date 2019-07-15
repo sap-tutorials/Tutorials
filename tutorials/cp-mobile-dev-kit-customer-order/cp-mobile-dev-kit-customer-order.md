@@ -63,12 +63,18 @@ Provide below Properties:
 | Property | Value |
 |----|----|
 | `Service`| `SampleServiceV2.service` |
-| `Entity` | `SalesOrderHeaders` |
-| `Query`| `$filter=CustomerId eq '{{#Property:CustomerId}}'&$orderby=CreatedAt desc` |
+| `Entity` | `{{#Property:@odata.readLink}}/SalesOrders` |
+| `Query`| `$top=5&$orderby=CreatedAt desc` |
 
 ![MDK](img_005.png)
 
->For a given customer ID, the query expression will filter order entries returned in descending when sorted by the order creation date property.
+>The **`odata.readLink`** annotation contains the read URL of the entity or collection.
+
+> **`SalesOrders`** is a navigation property in Customer entity to `SalesOrderHeader` entity. You can find this information in OData service metadata document.
+
+>![MDK](img_005.1.png)
+
+>**Query** expression will filter order entries returned in descending when sorted by the order creation date property.
 
 Now start binding Object Table properties with `SalesOrderHeaders` entity set properties.
 
