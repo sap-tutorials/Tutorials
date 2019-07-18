@@ -26,6 +26,8 @@ Once SAP Cloud Platform Mobile Services is enabled, you can use its features in 
 
 [OPTION BEGIN [Neo]]
 
+Make sure that you have activated the [trial account](hcp-create-trial-account).
+
 Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and click **Log On**.
 
 Click **Neo Trial**.
@@ -35,6 +37,8 @@ Click **Neo Trial**.
 [OPTION END]
 
 [OPTION BEGIN [Cloud Foundry]]
+
+Make sure that you have activated the [trial account](cp-cf-create-account).
 
 Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and click **Log On**.
 
@@ -90,6 +94,8 @@ Click on **Go to Service** to open the Mobile Services cockpit.
 
 ![Mobile Services Cockpit](management-cockpit.png)
 
+Bookmark the **Mobile Services cockpit URL** for quick access.
+
 [OPTION END]
 
 [OPTION BEGIN [Cloud Foundry]]
@@ -135,6 +141,8 @@ Make sure to select related **Organization** and **Space** information and then 
 ![cf Trial](img_8.png)
 
 ![cf Trial](img_9.png)
+
+Bookmark the **Mobile Services cockpit URL** for quick access.
 
 **Optional**: If you want to use **SAP Web IDE Full-Stack** service to build Mobile Cards or Mobile development kit based applications connecting to Mobile Services running in Cloud Foundry environment, then you need to follow below step.
 
