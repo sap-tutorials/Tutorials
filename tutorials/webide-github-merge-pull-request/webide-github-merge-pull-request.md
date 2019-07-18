@@ -5,8 +5,6 @@ primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 time: 10
 ---
-## Prerequisites  
-  - [Work with Branches in GitHub and SAP Web IDE](webide-github-branching)
 
 ## Details
 ### You will learn  
@@ -16,7 +14,7 @@ time: 10
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open branch on GitHub)]
-Open the Organization repository on GitHub and switch to the branch which you want to merge into master.
+Open the Organization repository on GitHub and switch to the branch that you want to merge into master.
 
 [DONE]
 [ACCORDION-END]

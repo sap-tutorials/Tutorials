@@ -5,8 +5,6 @@ primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 time: 10
 ---
-## Prerequisites  
-- **Tutorials:** [Create a Project in SAP Web IDE and Import into GitHub](webide-github-import-project)
 
 ## Details
 ### You will learn  
@@ -63,7 +61,7 @@ Once the issue is created, you can add comments, discuss it, and even add an emo
 
 You can assign deadlines for milestones.
 
-To do this, click the **Issues** tab of your GitHub organization repository. Then, click the **Milestones** tab.
+To do this, click the **Issues** tab of your GitHub organization repository, then click the **Milestones** tab.
 
 ![Milestone tab](p4_5a.png)
 
