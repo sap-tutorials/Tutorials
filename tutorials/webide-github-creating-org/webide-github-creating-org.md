@@ -22,16 +22,9 @@ Click **Sign In**, enter your account credentials, and click **Sign in**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Choose new repository)]
+[ACCORDION-BEGIN [Step 2: ](Create organization)]
 
-Click the **+** icon on the top-right corner and click **New Repository**.
-
-![Create New Repository](p1_3.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Create organization)]
+Click the **+** icon on the top-right corner and click **New organization**.
 
 Enter the organization name, billing email, and click  **Create an Organization**.
 

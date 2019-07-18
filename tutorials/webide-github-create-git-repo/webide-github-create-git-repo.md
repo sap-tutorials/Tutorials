@@ -6,9 +6,6 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-hana, products>sap-web-ide,
 time: 5
 ---
 
-## Prerequisites  
-- **Tutorials:** [Create a GitHub Organization and Add Collaborators](webide-github-creating-org)
-
 ## Details
 ### You will learn  
   - How to create a Git repository within a GitHub organization
@@ -33,9 +30,9 @@ Switch to the organization context by clicking on the **Switch dashboard context
 
 [ACCORDION-BEGIN [Step 3: ](Create new repository)]
 
-Click **New repository**.
+Click **New** next to **Repositories**.
 
->Alternatively, click the **+** icon on the top-right corner and click on **New Repository**.
+>Alternatively, click the **+** icon on the top-right corner and click on **New Repository**. Remember to change the owner to your organization.
 
 ![Create new repository under an organization](p2_3.png)
 
@@ -44,29 +41,23 @@ Click **New repository**.
 
 [ACCORDION-BEGIN [Step 4: ](Name the repository)]
 
-Enter the repository name and description, and click **Initialize this repository with a README**. You can add a `.gitignore` and license later on.
+Enter the repository name and description, and click the **Initialize this repository with a README** checkbox.
+
+You can add a `.gitignore` and license later on.
 
 ![Repository details](p2_4.png)
 
-[DONE]
-[ACCORDION-END]
+>If you did not select the option to **Initialize this repository with a README**, create an initial commit by adding a README file. You can keep this README file simple for now and add in details later.
 
-[ACCORDION-BEGIN [Step 5: ](Create a README file)]
+>![Adding readme file](p2_5.png)
 
-If you did not select the option to **Initialize this repository with a README**, create an initial commit by adding a README file. You can keep this README file simple for now and add in details later.
+>At the commit screen, enter a commit message and click **Commit new file**.
 
-![Adding readme file](p2_5.png)
+>![Committing readme file](p2_6.png)
 
-[DONE]
-[ACCORDION-END]
+> &nbsp;
 
-[ACCORDION-BEGIN [Step 6: ](Commit the file)]
-
-At the commit screen, enter a commit message and click **Commit new file**.
-
-![Committing readme file](p2_6.png)
-
-Your Git repository is ready!
+Your GitHub repository is ready!
 
 [DONE]
 [ACCORDION-END]
