@@ -1,14 +1,16 @@
 ---
 title: Get Your Hands on SAP Leonardo IoT Foundation Software and Hardware
+author_name: Marcus Behrens
+author_profile: https://github.com/marcuscbehrens
 description: Purchase SAP Leonardo IoT Foundation and acquire the hardware necessary to follow subsequent tutorials.
 auto_validation: true
 primary_tag: products>sap-leonardo-iot
-tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-internet-of-things ]
+tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-internet-of-things, tutorial>license]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You will need a credit card and email account.
+ - You will need a credit card and an email account.
 
 ## Next Steps
  - [Create Device Model](https://developers.sap.com/tutorials/iot-express-2-create-device-model.html)
