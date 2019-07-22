@@ -1,7 +1,5 @@
 ---
-author_name: Marika Marszalkowski
-author_profile: https://github.com/marikaner
-title: Generate a custom OData client library with the SAP Cloud SDK's generator
+title: Generate Custom OData Client Library with SAP Cloud SDK's Generator
 description: Generate a custom OData client library for the SAP SuccessFactors Candidate service of the Recruiting module.
 auto_validation: true
 time: 15
@@ -24,14 +22,16 @@ The goal of this tutorial is to generate your own client code of the same struct
 [ACCORDION-BEGIN [Step 1: ](Install the generator)]
 
 If you are familiar with `npm` and have a suitable development setup, you should remember to add the SAP registry to your project because we will install the generator from this registry. Add the following line in your `.npmrc`:
-```
+
+```NPM
 @sap:registry=https://npm.sap.com
 ```
 
 If you are less experienced, we recommend taking a look at this tutorial group on [how to create an application using SAP Cloud SDK](https://developers.sap.com/group.s4sdk-js-cloud-foundry.html) up to the point where you scaffold an application. This will get you going with a basic setup.
 
 Now you can just install our generator with the following command:
-```sh
+
+```Shell
 npm install --save-dev @sap/cloud-sdk-generator
 ```
 
@@ -40,7 +40,7 @@ This will add the `@sap/cloud-sdk-generator` package to your `node_modules` and 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get familiar with a non-S/4HANA OData service)]
+[ACCORDION-BEGIN [Step 2: ](Get familiar with non-S/4HANA OData service)]
 
 Take a look at the [SuccessFactors recruiting service for candidates](https://api.sap.com/api/RCMCandidate/resource) on the `SAP API Business Hub` and get familiar with the entities and possible request structures. In the course of this tutorial we will generate an OData client library for this service and use it to build a query to retrieve data for the `Candidate` entity. Take a look at the capabilities around this entity and the service in general, so that you can compare your generated code later on.
 
@@ -64,7 +64,7 @@ Create a directory `service-specifications` in your project and move the previou
 
 The `@sap/cloud-sdk-generator` comes with a command line interface for generating an OData client library. To run the generation, execute the `generate-odata-client` command. Provide the previously created directory containing the specification files as input directory and specify a directory to output the client to:
 
-```sh
+```Shell
 npx generate-odata-client --inputDir service-specifications --outputDir odata-client
 ```
 
@@ -75,7 +75,7 @@ Some service specifications do not specify a service path. The service path is t
 
 Replace the value for `servicePath` with the one for your service. The SAP SuccessFactors services that are available on the SAP API Business Hub have the service path `'/odata/v2'`.
 
-```json
+```JSON
 {
   "RCMCandidate": {
     "directoryName": "sfo-data-service",
@@ -87,9 +87,10 @@ Replace the value for `servicePath` with the one for your service. The SAP Succe
 
  Now rerun the generation, but make sure to add the `--forceOverwrite` flag to overwrite the previously generated client.
 
-```sh
+```Shell
 npx generate-odata-client --inputDir service-specifications --outputDir odata-client --forceOverwrite
 ```
+
 Now, there should be no warning.
 
 Congratulations, you have generated the `sfo-data-service` module in your output directory! By default, the generated module contains the following sources:
@@ -103,21 +104,27 @@ Congratulations, you have generated the `sfo-data-service` module in your output
   * `typedoc.json`
   * `tsconfig.json`
 
-
 Depending on which of those files you need, you can skip the generation of most of those. To find out how and for further options, checkout `npx generate-odata-client --help`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Use your OData client library to build a request)]
+[ACCORDION-BEGIN [Step 5: ](Use OData client library to build request)]
 
-Time to test our custom OData client library. Let's build a request to retrieve first names and last names of all candidates that have applied to a position. The following example will be written in TypeScript, but as usual, just omit the types, if you prefer to work with JavaScript. Create a source file `get-candidates.ts` in the `src` directory and import the `Candidate` entity from the `sfo-data-service` module.
+Time to test our custom OData client library.
+
+Let's build a request to retrieve first names and last names of all candidates that have applied to a position. The following example will be written in TypeScript, but as usual, just omit the types, if you prefer to work with JavaScript.
+
+Create a source file `get-candidates.ts` in the `src` directory and import the `Candidate` entity from the `sfo-data-service` module.
 
 ```JavaScript / TypeScript
 import { Candidate } from './odata-client/sfo-data-service';
 ```
 
-Now use this entity to create a `getAll` request while selecting the properties `FIRST_NAME` and `LAST_NAME` and execute it against a destination. You can connect to the SAP API Business Hub SuccessFactors services by using the URL `https://sandbox.api.sap.com/successfactors`. You will also need to provide your API Key. You can find it on the top of the SAP API Business Hub page. Simply click on `Show API Key` and then `Copy Key and Close`. Add the key as a custom header, using the `withCustomHeaders` function.
+Now use this entity to create a `getAll` request while selecting the properties `FIRST_NAME` and `LAST_NAME` and execute it against a destination. You can connect to the SAP API Business Hub SuccessFactors services by using the URL `https://sandbox.api.sap.com/successfactors`.
+
+You will also need to provide your API Key. You can find it on the top of the SAP API Business Hub page. Simply click on `Show API Key` and then `Copy Key and Close`. Add the key as a custom header, using the `withCustomHeaders` function.
+
 For further information on how to configure a destination check our previous tutorials on how to [create an app using SAP Cloud SDK for JavaScript](https://developers.sap.com/group.s4sdk-js-cloud-foundry.html) and on how to [build an application with the Virtual Data Model](https://developers.sap.com/group.cloudsdk-js-vdm.html).
 
 This is what your file should look like:
@@ -146,7 +153,7 @@ Congratulations! You created an OData client library based on your own service s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Optional: Integrate with Express.js application)]
+[ACCORDION-BEGIN [Step 6: ](Integrate with Express.js application (optional))]
 
 Now to see this in action, if you are using the SAP Cloud SDK's scaffolding add a route callback to your `get-candidates.ts`:
 
@@ -164,6 +171,7 @@ export function candidatesRoute(req: Request, res: Response) {
 ```
 
 Add a `/candidates` route to your application:
+
 ```JavaScript / TypeScript
 // application.ts
   private routes(): void {
@@ -183,11 +191,22 @@ Run `npm run start:local` and go to `http://localhost:8080/candidates` in your b
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Test yourself)]
+[ACCORDION-BEGIN [Appendix: ](Test yourself (1))]
 
 [VALIDATE_1]
-[VALIDATE_2]
-[VALIDATE_3]
-
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Appendix: ](Test yourself (2))]
+
+[VALIDATE_2]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Appendix: ](Test yourself (3))]
+
+[VALIDATE_3]
+[ACCORDION-END]
+
+
+
+
 ---
