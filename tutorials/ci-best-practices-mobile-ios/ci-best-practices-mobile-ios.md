@@ -1,21 +1,13 @@
 ---
-
 title: Continuous Integration (CI) Best Practices with SAP - SAP Cloud Platform SDK for iOS
 description: Part 4.7 - Basic CI setup with the SAP Cloud Platform SDK for iOS
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 time: 120
-
 ---
 
 ## Prerequisites
-
-  - **Proficiency:** Intermediate
   - [CI/CD Practices](https://developers.sap.com/tutorials/ci-best-practices-ci-cd.html)
-
-## Next Steps
-
-  - [Back to the Navigator](https://developers.sap.com/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -377,7 +369,7 @@ Now the iOS SDK is available to CocoaPods clients, and your local tools can find
 The last step is to create a new project in the Cloud Platform SDK for iOS Assistant, and to configure it so that it works nicely with the infrastructure that we just created.
 
 #### 4.1 Creating the iOS Project
-If you are using the Assistant for the very first time, make sure to configure your Cloud Platform login as documented [in this tutorial](https://developers.sap.com/tutorials/fiori-ios-hcpms-sdk-assistant.html). Once done, create a new project by adding the "+" button on the initial screen and configure it as follows, as shown in Figure 20 - values not listed in the bullet points are optional or arbitrary:
+If you are using the Assistant for the very first time, make sure to configure your Cloud Platform login. Once done, create a new project by adding the "+" button on the initial screen and configure it as follows, as shown in Figure 20 - values not listed in the bullet points are optional or arbitrary:
 
 	- Product Name: The last (n-th) bit of the "App ID" that you registered with Apple, in this case ``CIExample``
 	- Organization Identifier: The remaining n-1 bits of your App ID, in this case ``com.sap.ci.ios``
@@ -624,4 +616,3 @@ In your Jenkins web interface, you should now see a new build pop up under the l
 ![Figure 36: Log of the successful Jenkins build stage](jenkins-9-success.png)
 
 *Figure 36: Log of the successful Jenkins build stage*
-
