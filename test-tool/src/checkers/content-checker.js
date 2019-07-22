@@ -49,19 +49,22 @@ module.exports = {
       content: {
         common,
         link,
+        emptyLink,
         h1,
         mdnImg,
         localFileLink,
         tutorialLink,
         tutorialLinkInvalid,
       },
-      validation: { accordions },
+      validation: { accordions, codeLine },
     } = regexp;
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
 
     lines.forEach((line, index) => {
+      const isCodeLine = (line.match(codeLine) || []).length > 0;
+
       if (isMeta) {
         if (line.replace(/\n/g, '') === '---') {
           metaBoundaries += 1;
@@ -89,7 +92,7 @@ module.exports = {
       }
 
       if (line.trim()
-          .startsWith('```')) {
+        .startsWith('```')) {
         isCodeBlock = !isCodeBlock;
       }
 
@@ -103,31 +106,12 @@ module.exports = {
         }
       });
 
-      const imageMatch = line.match(mdnImg.regexp);
-
-      if (imageMatch) {
-        const [, imgName] = imageMatch;
-        const filePath = path.join(dir, imgName);
-        const errors = checkLocalImage(filePath, imgName);
-        result.contentCheckResult.push(...errors.map(err => ({
-          line: index + 1,
-          msg: err,
-        })));
-      }
-
-      const localFileMatch = line.match(localFileLink.regexp);
-      const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
-      const tutorialLinkMatch = line.match(tutorialLink.regexp);
-      const accordionMatch = line.match(accordions);
-
-      if (localFileMatch && !imageMatch && !accordionMatch && !tutorialLinkInvalidMatch) {
-        result.contentCheckResult.push({
-          line: index + 1,
-          msg: localFileLink.message,
-        });
-      }
-
       if (!isCodeBlock) {
+        const imageMatch = line.match(mdnImg.regexp);
+        const localFileMatch = line.match(localFileLink.regexp);
+        const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
+        const tutorialLinkMatch = line.match(tutorialLink.regexp);
+        const accordionMatch = line.match(accordions);
         if (!isMeta) {
           // plain text URLs are allowed in meta
           const match = line.match(link.regexp);
@@ -145,33 +129,61 @@ module.exports = {
             msg: `${h1.message} -> ${h1Match[0]}`,
           });
         }
-      }
 
-      const stepName = line.includes('[ACCORDION');
-
-      if (tutorialLinkMatch && !stepName) {
-        const [, tutorialName] = tutorialLinkMatch[0]
-            .replace(/\)/g, '')
-            .split('](');
-        const exists = checkLocalTutorial(tutorialName, allTutorials);
-
-        if (!exists) {
-          result.contentCheckResult.push({
-            line: index + 1,
-            msg: `${tutorialLink.message} (${tutorialName})`,
+        if (!isCodeLine) {
+          emptyLink.forEach((i) => {
+            const match = line.match(i.regexp);
+            if (match) {
+              result.contentCheckResult.push({
+                line: index + 1,
+                msg: `${i.message} -> ${match[0]} -> ${i.description}`,
+              });
+            }
           });
-        }
-      }
 
-      if (tutorialLinkInvalidMatch) {
-        result.contentCheckResult.push({
-          line: index + 1,
-          msg: tutorialLinkInvalid.message,
-        });
+          const stepName = line.includes('[ACCORDION');
+
+          if (tutorialLinkMatch && !stepName) {
+            const [, tutorialName] = tutorialLinkMatch[0]
+              .replace(/\)/g, '')
+              .split('](');
+            const exists = checkLocalTutorial(tutorialName, allTutorials);
+
+            if (!exists) {
+              result.contentCheckResult.push({
+                line: index + 1,
+                msg: `${tutorialLink.message} (${tutorialName})`,
+              });
+            }
+          }
+
+          if (tutorialLinkInvalidMatch) {
+            result.contentCheckResult.push({
+              line: index + 1,
+              msg: tutorialLinkInvalid.message,
+            });
+          }
+
+          if (imageMatch) {
+            const [, imgName] = imageMatch;
+            const filePath = path.join(dir, imgName);
+            const errors = checkLocalImage(filePath, imgName);
+            result.contentCheckResult.push(...errors.map(err => ({
+              line: index + 1,
+              msg: err,
+            })));
+          }
+
+          if (localFileMatch && !imageMatch && !accordionMatch && !tutorialLinkInvalidMatch) {
+            result.contentCheckResult.push({
+              line: index + 1,
+              msg: localFileLink.message,
+            });
+          }
+        }
       }
     });
 
     return result;
   },
-
 };
