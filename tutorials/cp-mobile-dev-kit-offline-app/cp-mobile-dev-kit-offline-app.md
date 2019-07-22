@@ -10,8 +10,9 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
-- **Tutorial:** [Setup initial configuration for an MDK App in SAP Cloud Platform Mobile Services](cp-mobile-dev-kit-ms-setup)
+- - **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
+- - **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
+- - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
 - **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) (required only for Android device)
 
