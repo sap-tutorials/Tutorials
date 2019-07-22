@@ -22,14 +22,6 @@ module.exports = {
                 message: 'no suspicious file types in links'
             },
             {
-                regexp: new RegExp('\\[.*\\]\\(\\)'),
-                message: 'empty URL field'
-            },
-            {
-                regexp: /href=["']["']/,
-                message: 'empty URL field'
-            },
-            {
                 regexp: new RegExp('\u201C'),
                 message: 'curly quotes found. change to straight using quotes key'
             },
@@ -51,6 +43,16 @@ module.exports = {
             message: 'plain text URL',
             description: 'wrap URL in <> or format with [Link text](URL)',
         },
+        emptyLink: [
+            {
+                regexp: /\[.*\]\(\)/,
+                message: 'empty URL field'
+            },
+            {
+                regexp: /href=["']["']/,
+                message: 'empty URL field'
+            },
+        ],
         h1: {
             regexp: new RegExp('^(# )\\w+'),
             message: 'no H1 (single #) allowed',
@@ -67,11 +69,11 @@ module.exports = {
             message: 'Incorrect link: If you want link to tutorial, use tutorial name without ".html". If you want external link, use full URL with "http/https"',
         },
         tutorialLink: {
-            regexp: /\[[^\]]+\]\((?![ <]*http)[\w\d\-]+\)/,
+            regexp: /\[[^\]]+\]\((?![ <]*http)[\w\d\-]+\)/i,
             message: 'Tutorial with this name doesn\'t exist',
         },
         localFileLink: {
-            regexp: /\[[^\]]+\]\((?![ <]*http)([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/,
+            regexp: /\[[^\]]+\]\((?![ <]*http)([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/i,
             message: 'Incorrect link to local file, use full link to file on GitHub (starting https://raw.githubusercontent.com)',
         },
         internalLink: {

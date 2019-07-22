@@ -1,13 +1,13 @@
 ---
-title: Translate a Java app
+title: Translate a Java App
 description: Use SAP Translation Hub to translate the UI texts for a Java app that you develop in Eclipse.
+auto_validation: true
 primary_tag: products>sap-translation-hub
 tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>java ]
 time: 15
 ---
 
 ## Prerequisites  
-  - [Enable the SAP Translation Hub service](https://developers.sap.com/tutorials/sth-enable.html)
   - [Install and configure Eclipse environment](https://github.com/SAP/cloud-espm-v2#1-quick-start-guide) Complete the **1. Quick start guide** section.
 
 ## Details
@@ -22,6 +22,7 @@ In your Eclipse window, locate the `i18n.properties` file that contains your app
 
 ![Locate i18n.properties file](sth-locate-i18n-prop-file.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -31,15 +32,17 @@ Before you get started with the translation process, open the `i18n.properties` 
 
 ![Open i18n.properties file](sth-view-texts-i18n-prop-file.png)
 
+[DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Choose tile for trial account in Neo environment)]
+[ACCORDION-BEGIN [Step 3: ](Choose tile for trial account in Neo)]
 
 In the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com), choose the tile for a trial account in the Neo environment.
 
 ![access menu to open service catalog](sth-choose-Neo.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -49,6 +52,7 @@ Choose **Services** in the navigation area on the left.
 
 ![open service catalog](sth-open-services.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -58,6 +62,7 @@ Search for the SAP Translation Hub service by entering **transl** and then choos
 
 ![Find Translation Hub service](sth-search-tran.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -67,6 +72,7 @@ To access the SAP Translation Hub, UI, choose **Go to UI for Translation Workflo
 
 ![Go to SAP Translation Hub service](sth-tile-go-to-service.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -76,6 +82,7 @@ Create a translation project for the .properties file that you're going to uploa
 
 ![Create translation project](sth-create-file-proj.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -85,13 +92,17 @@ Enter the following details about your translation project:
 
 Field Name | Value
 :-------------  | :-------------
-Application Name | `espmcloud`
+Project Name | `espmcloud`
 File Type | **Java Properties File**
 Domain | **Sales**
-Target Languages   | Enter the languages of your choice, such as **French** and **Italian**
+Source Language | **English**
+Target Languages | Enter the languages of your choice, such as **French** and **Italian**
 
 Choose **Save**.
 
+![Create project](sth-create-file-proj-details.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -115,6 +126,8 @@ Regardless of the option you choose, when SAP Translation Hub has translated the
 
 ![Success status](sth-translate-fiori-app-success-status.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Review translations)]
@@ -127,6 +140,7 @@ On this screen, you can switch between target languages and view information abo
 
 ![Review translations, translation provider, and quality index](sth-review-translations.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -149,6 +163,7 @@ The following success message confirms your filter setting:
 
 ![Confirm quality index filter](sth-filter-confirm.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -158,6 +173,7 @@ If you want to update any translations, make the changes in the **Translated Tex
 
 ![Save translation project](sth-save-trans-proj.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -171,6 +187,7 @@ SAP Translation Hub prepares a `zip` file that contains properties files for eac
 
 ![Confirm zip download](sth-zip-downloaded.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -199,6 +216,7 @@ The properties files per target language appear in the `i18n` folder:
 
 ![Show target language properties files](sth-target-prop-files-imported.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -224,6 +242,7 @@ Depending on system performance, it can take several minutes for the Java server
 
 ![Server started](sth-eclipse-server-started-synchro.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -237,6 +256,6 @@ The French version of the app appears:
 
 ![Display French version of app](sth-espm-app-browser-fr-version.png)
 
+[VALIDATE_2]
 
 [ACCORDION-END]
-

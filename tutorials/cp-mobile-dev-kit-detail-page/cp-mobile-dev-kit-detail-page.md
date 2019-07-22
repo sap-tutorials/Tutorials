@@ -108,7 +108,7 @@ For this tutorial, you will set the value as a combined binding of house number 
 
 >You can find more details about [Target Path](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a96fd2938ed24e558c8ad0c659debbba.html).
 
-Start with first part of the binding.
+Start with first part of the binding for **Address** property.
 
 Click the **link icon** next to the **Value** field to display the Object Browser and change the Format to **Binding Target Path**.
 
