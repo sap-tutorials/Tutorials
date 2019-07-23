@@ -147,7 +147,7 @@ Click **Save**.
 
 [ACCORDION-BEGIN [Step 4: ](Add Set State log action at app OnLaunch)]
 
-You will add `LogSetState.action` at application on launch event so that when your app can start gathering logs on launch.
+You will add `LogSetState.action` at application `onLaunch` event so that app can start gathering logs on launch.
 
 Double click on the `Application.app` file | click on **+** icon to add required action.
 
