@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Create communication system to connect to SAP Cloud Platform ABAP environment.
-description: Create a communication system on S/4HANA Cloud to connect to SAP Cloud Platform ABAP environment.
+title: Create Service Binding for Bonus Plan Scenario with SAP Cloud Platform ABAP environment
+description: Create service binding for bonus plan scenario with SAP Cloud Platform ABAP environment based on SAP S/4HANA Cloud data.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 45
