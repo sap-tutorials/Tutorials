@@ -6,10 +6,6 @@ module.exports = {
                 message: 'empty alt-text tag for link/image',
             },
             {
-                regexp: new RegExp('\\!\\[(.*\\.png.*)\\]\\(.*\\)'),
-                message: 'no filenames in alt-text for images allowed',
-            },
-            {
                 regexp: new RegExp('\\[(.{1,2}|\\s{1,})\\]\\(.*\\)'),
                 message: 'conventions of alt-text for link/image are not observed (at least 3 characters, not only spaces)',
             },
@@ -58,10 +54,11 @@ module.exports = {
             message: 'no H1 (single #) allowed',
         },
         mdnImg: {
-            regexp: /\!?\[[^\]]+\]\((?![ <]*http)(.+\.(jpg|jpeg|png|gif|svg|ico))\)/i,
+            regexp: /\!?\[[^\]]+\]\((?![ <]*http)([\d\w_\-\.\/]+\.(jpg|jpeg|png|gif|svg|ico))\)/gi,
             messages: {
                 size: 'file size is more than 1 MB',
                 existence: 'missing image',
+                wrongAlt: 'no filenames in alt-text for images allowed'
             }
         },
         tutorialLinkInvalid: {
@@ -73,7 +70,7 @@ module.exports = {
             message: 'Tutorial with this name doesn\'t exist',
         },
         localFileLink: {
-            regexp: /\[[^\]]+\]\((?![ <]*http)([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/i,
+            regexp: /\[[^\]]+\]\((?![ <]*http)([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/,
             message: 'Incorrect link to local file, use full link to file on GitHub (starting https://raw.githubusercontent.com)',
         },
         internalLink: {
@@ -92,7 +89,6 @@ module.exports = {
         messages: {
             production: {
                 rules_vr: 'VALIDATION: rules.vr file must not be presented in the production',
-                auto_validation: `VALIDATION: Value of auto_validation property must be set to 'true' in the production`,
             },
             validate_restrictions: {
                 at_least_one: 'VALIDATION: Tutorial must have at least one validate element',

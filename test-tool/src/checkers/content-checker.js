@@ -14,9 +14,11 @@ const fileExistsSyncCS = (filePath) => {
 
 const checkLocalTutorial = (name, allTutorials) => allTutorials.includes(name);
 
-const checkLocalImage = (absImgPath, imgName) => {
+const checkLocalImage = (absImgPath, altText) => {
   const result = [];
   const { content: { mdnImg } } = regexp;
+
+  const imgName = path.basename(absImgPath);
 
   try {
     const exists = fileExistsSyncCS(absImgPath);
@@ -28,6 +30,12 @@ const checkLocalImage = (absImgPath, imgName) => {
       }
     } else {
       result.push(`${mdnImg.messages.existence} -> ${imgName}`);
+    }
+
+    const hasWrongName = altText === imgName;
+
+    if (hasWrongName) {
+      result.push(`${mdnImg.messages.wrongAlt} -> ${imgName}`);
     }
   } catch (e) {
     result.push(e.message);
@@ -107,7 +115,7 @@ module.exports = {
       });
 
       if (!isCodeBlock) {
-        const imageMatch = line.match(mdnImg.regexp);
+        const imageMatches = line.match(mdnImg.regexp);
         const localFileMatch = line.match(localFileLink.regexp);
         const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
         const tutorialLinkMatch = line.match(tutorialLink.regexp);
@@ -164,17 +172,25 @@ module.exports = {
             });
           }
 
-          if (imageMatch) {
-            const [, imgName] = imageMatch;
-            const filePath = path.join(dir, imgName);
-            const errors = checkLocalImage(filePath, imgName);
-            result.contentCheckResult.push(...errors.map(err => ({
-              line: index + 1,
-              msg: err,
-            })));
+          if (imageMatches) {
+            imageMatches.forEach((item) => {
+              // using new RegExp to reset g flag
+              const [, imgName] = item.match(new RegExp(mdnImg.regexp, 'i'));
+
+              const altText = item
+                .replace(/!?[\[\]]/g, '')
+                .trim()
+                .replace(`(${imgName})`, '');
+              const filePath = path.join(dir, imgName);
+              const errors = checkLocalImage(filePath, altText);
+              result.contentCheckResult.push(...errors.map(err => ({
+                line: index + 1,
+                msg: err,
+              })));
+            });
           }
 
-          if (localFileMatch && !imageMatch && !accordionMatch && !tutorialLinkInvalidMatch) {
+          if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
             result.contentCheckResult.push({
               line: index + 1,
               msg: localFileLink.message,
