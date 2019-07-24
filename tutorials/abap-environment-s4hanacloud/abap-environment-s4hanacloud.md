@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Create communication system to connect to SAP Cloud Platform ABAP environment.
+title: Create Communication System to Connect to SAP Cloud Platform ABAP environment.
 description: Create a communication system on S/4HANA Cloud to connect to SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform ]
@@ -8,7 +8,7 @@ time: 45
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
- 
+
 ## Prerequisites  
  - Create a developer user in a SAP Cloud Platform ABAP Environment system.
  - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
