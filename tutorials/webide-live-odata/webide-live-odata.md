@@ -9,7 +9,6 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>
 ## Prerequisites  
  - **Proficiency:** Beginner
 
-
 ## Details
 ### You will learn  
 Change your data source from a mock server created by BUILD to a live OData service. It is important to know how to configure the connection to the backend of an application, which you will learn here.

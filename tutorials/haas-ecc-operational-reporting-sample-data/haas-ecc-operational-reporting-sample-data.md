@@ -132,8 +132,7 @@ Navigate into **Browse -> Files**. The `Public` folder will contain the imported
 
 Click on any report to log in through the SAP HANA Analytics Adapter and fetch the test data from SAP HANA
 
-![Import into SAC](report.png)
-
+![Import into SAC](report1.png)
 
 [DONE]
 [ACCORDION-END]

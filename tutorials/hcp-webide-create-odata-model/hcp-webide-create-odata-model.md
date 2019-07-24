@@ -2,6 +2,9 @@
 title: Manually Create a Data Model for SAP Web IDE's Mock Data Server
 description: Create a data model in Common Schema Definition Language (CSDL) using SAP Web IDE.
 primary_tag: products>sap-cloud-platform
+auto_validation: true
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
 time: 20
 ---
@@ -425,7 +428,7 @@ Your model is now complete. When working on your own OData model, you can take a
 ![Enable OData modeler](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_8.png)
 
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 
