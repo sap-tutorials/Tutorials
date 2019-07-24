@@ -2,7 +2,7 @@ version: 2
 jobs:
   build-last-commit:
     docker:
-      - image: circleci/node:9.6.1
+      - image: circleci/node:10.16.0
     steps:
       - checkout
       - restore_cache:
