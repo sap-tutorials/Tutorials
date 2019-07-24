@@ -411,7 +411,6 @@ Provide the below information:
 | `Action Name`| `UnknownAffectedEntityMessage` |
 | `Type` | select `ToastMessage` |
 | `Message` | `Affected Entity {{#Property:AffectedEntity/#Property:@odata.type}} doesn't have handler yet.` |
-| `Title` | `Create Customer` |
 | `Duration` | 4 |
 | `Animated` | `true` |
 
