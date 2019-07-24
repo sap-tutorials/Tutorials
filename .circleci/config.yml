@@ -20,7 +20,7 @@ jobs:
           no_output_timeout: '15m'
   build-all:
     docker:
-      - image: circleci/node:9.6.1
+      - image: circleci/node:10.16.0
     steps:
       - checkout
       - restore_cache:
@@ -38,7 +38,7 @@ jobs:
           no_output_timeout: '15m'
   build:
     docker:
-      - image: circleci/node:9.6.1
+      - image: circleci/node:10.16.0
     steps:
       - run: echo "RUN_BUILD is ${RUN_BUILD}"
       - checkout
