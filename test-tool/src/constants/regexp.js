@@ -6,10 +6,6 @@ module.exports = {
                 message: 'empty alt-text tag for link/image',
             },
             {
-                regexp: new RegExp('\\!\\[(.*\\.png.*)\\]\\(.*\\)'),
-                message: 'no filenames in alt-text for images allowed',
-            },
-            {
                 regexp: new RegExp('\\[(.{1,2}|\\s{1,})\\]\\(.*\\)'),
                 message: 'conventions of alt-text for link/image are not observed (at least 3 characters, not only spaces)',
             },
@@ -58,10 +54,11 @@ module.exports = {
             message: 'no H1 (single #) allowed',
         },
         mdnImg: {
-            regexp: /\!?\[[^\]]+\]\((?![ <]*http)(.+\.(jpg|jpeg|png|gif|svg|ico))\)/i,
+            regexp: /\!?\[[^\]]+\]\((?![ <]*http)([\d\w_\-\.\/]+\.(jpg|jpeg|png|gif|svg|ico))\)/gi,
             messages: {
                 size: 'file size is more than 1 MB',
                 existence: 'missing image',
+                wrongAlt: 'no filenames in alt-text for images allowed'
             }
         },
         tutorialLinkInvalid: {
