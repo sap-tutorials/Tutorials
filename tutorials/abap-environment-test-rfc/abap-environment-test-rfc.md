@@ -210,7 +210,7 @@ CLASS zjp_out_test IMPLEMENTATION.
 
     " ABAP source code for type definition for BAPI_EPM_PRODUCT_HEADER
     " generated on: ...
-    
+
     TYPES : BEGIN OF ty_bapi_epm_product_header,
               productid     TYPE c LENGTH 10,
               typecode      TYPE c LENGTH 2,
@@ -300,7 +300,7 @@ Your output should look like this:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Troubleshooting the SAP Cloud Connector)]
-Note: your on-premise system is down, or you have made an error configuring the connectivity, you will get a misleading message
+Note: If your on-premise system is down, or you have made an error configuring the connectivity, you will get a misleading message
 
 ```
 EXCEPTION COMMUNICATION_FAILURE
@@ -311,13 +311,13 @@ Error when opening an RFC connection
 
 Check the following :
 
-- Audits in the Cloud Connector (after a simulated RFC call): empty
-- Trace in the Cloud Connector (after a simulated RFC call): empty
+- Audits in the Cloud Connector (after a simulated RFC call): Should be empty
+- Trace in the Cloud Connector (after a simulated RFC call): Should be empty
 - Function Module is listed as an accessible resource in Cloud Connector
 - Internal Host is reachable in Cloud Connector
 - Correct NEO Subaccount is configured in Cloud Connector
 - Destination Service Communication Arrangement `SAP_COM_0276` is configured
-- `SAP_COM_0200` is configured
+- Communication Arrangement `SAP_COM_0200` is configured
 
 [DONE]
 [ACCORDION-END]
