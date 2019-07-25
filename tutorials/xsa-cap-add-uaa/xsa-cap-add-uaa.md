@@ -110,7 +110,7 @@ Log in as `XSA_DEV`.
 
 Navigate into the organization and the **development** space. Click on **`Service -> Service marketplace`** and then click **Authorization and Trust Management**
 
-![Navigate into development space](navigate.mp4)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sXO6dZsME_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Click **New Instance**
 

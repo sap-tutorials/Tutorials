@@ -191,7 +191,7 @@ Note the name of the table matches the generated `hdbcds` artifacts. You will al
 
 [ACCORDION-BEGIN [Step 5: ](Load data into your tables)]
 
-Download the header file and the items file into your local file system.
+Download the [header file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/xsa-cap-create-database-cds/Header.xlsx) and the [items file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/xsa-cap-create-database-cds/Items.xlsx) into your local file system.
 
 Right-click again on the header table and choose `Import data`
 
