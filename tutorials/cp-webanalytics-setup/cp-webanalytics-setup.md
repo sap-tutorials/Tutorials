@@ -79,7 +79,7 @@ Skip this step if you already have a subaccount.
 
     |  Field Name               | Value
     |  :-------------           | :-------------
-    |  Application Identifier   | **`SAP-Web-Analytics-QA!t197`**
+    |  Application Identifier   | **`SAP-Web-Analytics-ProdTrial!t7479`**
     |  Description              | **`_WebAnalyticsAdmin`**
     |  Description              | **`_WebAnalyticsAdmin`**
 
