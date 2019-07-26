@@ -105,7 +105,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 - Line 2 indicates, that we want to create a request to get all the business partners.
 - Line 3 ff. takes care of the execution and sends a request to a `url` based on the given destination `url`.
 
-In the code snippet above we assume that you have a mock server running locally. If you are using an actual `SAP S/4HANA Cloud` system, you can replace the third line with an different destination configuration:
+In the code snippet above we assume that you have a mock server running locally. If you are using an actual `SAP S/4HANA Cloud` system, you can replace the third line with a different destination configuration:
 
 ```JavaScript / TypeScript
 .execute({
