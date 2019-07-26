@@ -22,20 +22,6 @@ In order to make a call to an `OData` service, there needs to be a service to ca
 
 Once it is up and running you should see the list of services at `http://localhost:3000/`.
 
-Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click on "Show API Key".
-
-To use the sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
-
-```JavaScript / TypeScript
-return BusinessPartner.requestBuilder()
-  .getAll()
-  .withCustomHeaders({ APIKey: '<YOUR-API-KEY>'})
-  .execute({
-    url: 'https://sandbox.api.sap.com/s4hanacloud'
-  });
-}
-```
-
 [DONE]
 [ACCORDION-END]
 
@@ -127,6 +113,20 @@ In the code snippet above we assume that you have a mock server running locally.
   username: '<USERNAME>',
   password: '<PASSWORD>'
 })
+```
+
+Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click on "Show API Key".
+
+To use the sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
+
+```JavaScript / TypeScript
+return BusinessPartner.requestBuilder()
+  .getAll()
+  .withCustomHeaders({ APIKey: '<YOUR-API-KEY>'})
+  .execute({
+    url: 'https://sandbox.api.sap.com/s4hanacloud'
+  });
+}
 ```
 
 As network requests are asynchronous by nature, the return value of this function is a Promise to a list of Business Partners (`Promise<BusinessPartner[]>`).
