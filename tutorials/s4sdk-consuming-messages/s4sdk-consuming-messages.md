@@ -3,7 +3,7 @@ title: Consume Messages for Business Events from SAP S/4HANA Cloud
 description: This deep dive focuses on how the SAP Cloud SDK simplifies the consumption of business events from SAP S/4HANA. It presents a sample application to demonstrate receiving and processing of business events using the Message VDM.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk ]
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
