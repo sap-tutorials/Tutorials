@@ -3,7 +3,7 @@ title: Secure Your Application on SAP Cloud Platform Cloud Foundry
 description: This tutorial will cover how to protect your Java-based Hello World microservice with authenticated and authorized users.
 auto_validation: true
 time: 50
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
