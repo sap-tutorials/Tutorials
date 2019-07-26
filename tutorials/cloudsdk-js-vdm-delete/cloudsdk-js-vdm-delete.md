@@ -23,6 +23,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 [ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
+[OPTION BEGIN [TypeScript]]
 Start by creating a new file called `delete-business-partner-address-route.ts` and copy the following code into it:
 
 ```JavaScript / TypeScript
@@ -69,6 +70,57 @@ private routes(): void {
   this.app.use("/", router);
 }
 ```
+[OPTION END]
+
+[OPTION BEGIN [JavaScript]]
+Start by creating a new file called `delete-business-partner-address-route.js` and copy the following code into it:
+
+```JavaScript
+const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-service');
+
+function deleteBusinessPartnerAddressRoute(req, res) {
+  deleteBusinessPartnerAddress(req.params.id, req.params.addressId)
+    .then(() => {
+      res.status(200).send('Entity successfully deleted!');
+    })
+    .catch(error => {
+      res.status(500).send(error.message);
+    })
+}
+
+module.exports.deleteBusinessPartnerAddressRoute = deleteBusinessPartnerAddressRoute;
+
+function deleteBusinessPartnerAddress(businessPartnerId, addressId) {
+  return Promise.resolve();
+}
+```
+
+This follows the implementation in the previous tutorials. `deleteBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next step. Now open `application.js`, import the function and add the following route definition:
+
+```JavaScript
+const { businessPartnerRoute } = require('./business-partner-route');
+const { singleBusinessPartnerRoute } = require('./single-business-partner-route');
+const { createBusinessPartnerAddressRoute } = require('./create-business-partner-address-route');
+const { updateBusinessPartnerAddressRoute } = require('./update-business-partner-address-route');
+const { deleteBusinessPartnerAddressRoute } = require('./delete-business-partner-address-route');
+
+// ...
+
+private routes() {
+  const router = express.Router();
+
+  router.get("/", indexRoute);
+  router.get("/hello", helloWorld);
+  router.get("/business-partners", businessPartnerRoute);
+  router.get("/business-partners/:id", singleBusinessPartnerRoute);
+  router.post("/business-partners/:id/address", createBusinessPartnerAddressRoute);
+  router.put("/business-partners/:id/address/:addressId", updateBusinessPartnerAddressRoute)
+  // add the following line
+  router.delete("/business-partners/:id/address/:addressId", deleteBusinessPartnerAddressRoute)
+  this.app.use("/", router);
+}
+```
+[OPTION END]
 
 Note, that we used `router.delete` for this route, so we need to send a `DELETE` request. Restart your server and send a `DELETE` request to `http://localhost:8080/business-partners/1/address/2`. The server should respond with `"Entity successfully deleted!"`, since `deleteBusinessPartnerAddress` returns `Promise.resolve()` and will therefore never fail.
 
@@ -77,6 +129,7 @@ Note, that we used `router.delete` for this route, so we need to send a `DELETE`
 
 [ACCORDION-BEGIN [Step 2: ](Delete a business partner address)]
 
+[OPTION BEGIN [TypeScript]]
 Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.ts` and overwrite `delete-business-partner-address` as shown below:
 
 ```JavaScript / TypeScript
@@ -88,6 +141,21 @@ function deleteBusinessPartnerAddress(businessPartnerId: string, addressId: stri
     });
 }
 ```
+[OPTION END]
+
+[OPTION BEGIN [JavaScript]]
+Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.js` and overwrite `delete-business-partner-address` as shown below:
+
+```JavaScript
+function deleteBusinessPartnerAddress(businessPartnerId, addressId) {
+  return BusinessPartnerAddress.requestBuilder()
+    .delete(businessPartnerId, addressId)
+    .execute({
+      url: 'https://my.s4hana.ondemand.com/'
+    });
+}
+```
+[OPTION END]
 
 Compared to the other requests, there are some differences. First, the `delete` function does not take an instance of the entity, but directly expects the entity's key fields as parameters. Secondly, the `delete` function is the only one that does not return a promise of the respective entity, but instead a `Promise<void>`. Be aware that should the service require a version identifier for the delete request, you will have to explicitly set it using the `setVersionIdentifier` function.
 
