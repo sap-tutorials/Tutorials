@@ -111,9 +111,9 @@ Depending on which of those files you need, you can skip the generation of most 
 
 [ACCORDION-BEGIN [Step 5: ](Use OData client library to build request)]
 
-Time to test our custom OData client library.
+[OPTION BEGIN [TypeScript]]
 
-Let's build a request to retrieve first names and last names of all candidates that have applied to a position. The following example will be written in TypeScript, but as usual, just omit the types, if you prefer to work with JavaScript.
+Time to test our custom OData client library. Let's build a request to retrieve first names and last names of all candidates that have applied to a position.
 
 Create a source file `get-candidates.ts` in the `src` directory and import the `Candidate` entity from the `sfo-data-service` module.
 
@@ -132,7 +132,7 @@ This is what your file should look like:
 ```JavaScript / TypeScript
 // get-candidates.ts
 
-import { Candidate } from '../odata-client/sfo-data-service';
+import { Candidate } from './odata-client/sfo-data-service';
 
 export function getCandidates(): Promise<Candidate[]> {
   return Candidate.requestBuilder()
@@ -150,10 +150,57 @@ export function getCandidates(): Promise<Candidate[]> {
 
 Congratulations! You created an OData client library based on your own service specification and used it to create a `getAll` request!
 
+[OPTION END]
+
+[OPTION BEGIN [JavaScript]]
+
+Time to test our custom OData client library. Let's build a request to retrieve first names and last names of all candidates that have applied to a position.
+
+Create a source file `get-candidates.js` in the `src` directory and import the `Candidate` entity from the `sfo-data-service` module.
+
+```JavaScript
+const { Candidate } = require('./odata-client/sfo-data-service');
+```
+
+Now use this entity to create a `getAll` request while selecting the properties `FIRST_NAME` and `LAST_NAME` and execute it against a destination. You can connect to the SAP API Business Hub SuccessFactors services by using the URL `https://sandbox.api.sap.com/successfactors`.
+
+You will also need to provide your API Key. You can find it on the top of the SAP API Business Hub page. Simply click on `Show API Key` and then `Copy Key and Close`. Add the key as a custom header, using the `withCustomHeaders` function.
+
+For further information on how to configure a destination check our previous tutorials on how to [create an app using SAP Cloud SDK for JavaScript](https://developers.sap.com/group.s4sdk-js-cloud-foundry.html) and on how to [build an application with the Virtual Data Model](https://developers.sap.com/group.cloudsdk-js-vdm.html).
+
+This is what your file should look like:
+
+```JavaScript
+// get-candidates.js
+
+const { Candidate } = require('./odata-client/sfo-data-service');
+
+function getCandidates() {
+  return Candidate.requestBuilder()
+    .getAll()
+    .top(20) // look at the top 20 candidates only
+    .select(Candidate.FIRST_NAME, Candidate.LAST_NAME)
+    .withCustomHeaders({
+      apikey: '<YOUR-API-KEY>'
+    })
+    .execute({
+      url: 'https://sandbox.api.sap.com'
+    });
+}
+
+module.exports.getCandidates = getCandidates;
+```
+
+Congratulations! You created an OData client library based on your own service specification and used it to create a `getAll` request!
+
+[OPTION END]
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Integrate with Express.js application (optional))]
+
+[OPTION BEGIN [TypeScript]]
 
 Now to see this in action, if you are using the SAP Cloud SDK's scaffolding add a route callback to your `get-candidates.ts`:
 
@@ -187,6 +234,44 @@ Add a `/candidates` route to your application:
 
 Run `npm run start:local` and go to `http://localhost:8080/candidates` in your browser. You should see a list of your candidates' first and last names.
 
+[OPTION END]
+
+[OPTION BEGIN [JavaScript]]
+
+Now to see this in action, if you are using the SAP Cloud SDK's scaffolding add a route callback to your `get-candidates.js`:
+
+```JavaScript
+// get-candidates.js
+const { Candidate } = require('./odata-client/sfo-data-service');
+
+// call getCandidates() for the candidates route
+function candidatesRoute(req, res) {
+  getCandidates().then(candidates => {
+    res.status(200).send(candidates);
+  });
+}
+
+module.exports.getCandidates = getCandidates;
+```
+
+Add a `/candidates` route to your application:
+
+```JavaScript
+// application.js
+  private routes() {
+    const router = express.Router();
+
+    ...
+    // add this route
+    router.get("/candidates", candidatesRoute);
+
+    this.app.use("/", router);
+  }
+```
+
+Run `npm run start:local` and go to `http://localhost:8080/candidates` in your browser. You should see a list of your candidates' first and last names.
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
