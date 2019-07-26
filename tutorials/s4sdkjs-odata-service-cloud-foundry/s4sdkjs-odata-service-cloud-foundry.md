@@ -14,13 +14,27 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up a local mock server (optional))]
+[ACCORDION-BEGIN [Step 1: ](Set up a local mock server or get access to the API Business Hub sandbox (optional))]
 
 >**Note:** If you have access to an `SAP S/4HANA Cloud` system with a technical user, you can skip this part.
 
 In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
 
 Once it is up and running you should see the list of services at `http://localhost:3000/`.
+
+Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click on "Show API Key".
+
+To use the sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
+
+```JavaScript / TypeScript
+return BusinessPartner.requestBuilder()
+  .getAll()
+  .withCustomHeaders({ APIKey: '<YOUR-API-KEY>'})
+  .execute({
+    url: 'https://sandbox.api.sap.com/s4hanacloud'
+  });
+}
+```
 
 [DONE]
 [ACCORDION-END]
