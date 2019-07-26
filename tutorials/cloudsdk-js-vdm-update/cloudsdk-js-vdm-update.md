@@ -1,6 +1,6 @@
 ---
 title: Update OData Entities with the SAP Cloud SDK's Virtual Data Model
-description: Update OData entities with the SAP Cloud SDK's virtual data model to build an address manager application.
+description: Update OData dntities with the SAP Cloud SDK's virtual data model to build an address manager application.
 auto_validation: true
 time: 15
 tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>javascript, topic>odata]
@@ -23,6 +23,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 [ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
+[OPTION BEGIN [TypeScript]]
 Create a file called `update-business-partner-address-route.ts` in the `src` folder of your application. Then, copy the following code into it:
 
 ```JavaScript / TypeScript
@@ -74,6 +75,62 @@ private routes(): void {
   this.app.use("/", router);
 }
 ```
+[OPTION END]
+
+[OPTION BEGIN [JavaScript]]
+Create a file called `update-business-partner-address-route.js` in the `src` folder of your application. Then, copy the following code into it:
+
+```JavaScript
+const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-service');
+
+function updateBusinessPartnerAddressRoute(req, res) {
+  updateBusinessPartnerAddress(buildAddress(req.body, req.params.id, req.params.addressId))
+    .then(businessPartner => {
+      res.status(200).send(businessPartner);
+    })
+    .catch(error => {
+      res.status(500).send(error.message);
+    });
+}
+
+module.exports.updateBusinessPartnerAddressRoute = updateBusinessPartnerAddressRoute;
+
+function updateBusinessPartnerAddress(address) {
+  return Promise.resolve(BusinessPartnerAddress.builder().build());
+}
+
+function buildAddress(body, businessPartnerId, addressId) {
+  const address = BusinessPartnerAddress.builder().fromJson(body);
+  address.businessPartner = businessPartnerId;
+  address.addressId = addressId;
+  return address;
+}
+```
+
+This follows the implementation in the previous tutorials. `updateBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next step. Now open `application.js`, import the function and add the following route definition:
+
+```JavaScript
+const { businessPartnerRoute } = require('./business-partner-route');
+const { singleBusinessPartnerRoute } = require('./single-business-partner-route');
+const { createBusinessPartnerAddressRoute } = require('./create-business-partner-address-route');
+const { updateBusinessPartnerAddressRoute } = require('./update-business-partner-address-route');
+
+// ...
+
+private routes() {
+  const router = express.Router();
+
+  router.get("/", indexRoute);
+  router.get("/hello", helloWorld);
+  router.get("/business-partners", businessPartnerRoute);
+  router.get("/business-partners/:id", singleBusinessPartnerRoute);
+  router.post("/business-partners/:id/address", createBusinessPartnerAddressRoute);
+  // add the following line
+  router.put("/business-partners/:id/address/:addressId", updateBusinessPartnerAddressRoute)
+  this.app.use("/", router);
+}
+```
+[OPTION END]
 
 Note, that we used `router.put` for this route, so we need to send a `PUT` request. Restart your server and send a `PUT` request to `http://localhost:8080/business-partners/1/address/2`. Since the update request isn't implemented yet, the server responds with an empty address.
 
@@ -82,6 +139,7 @@ Note, that we used `router.put` for this route, so we need to send a `PUT` reque
 
 [ACCORDION-BEGIN [Step 2: ](Update a business partner address)]
 
+[OPTION BEGIN [TypeScript]]
 Next, we use the VDM to update an existing business partner address. Open `update-business-partner-address-route.ts` and overwrite the `updateBusinessPartnerAddress` function as shown below:
 
 ```JavaScript / TypeScript
@@ -93,6 +151,21 @@ function updateBusinessPartnerAddress(address: BusinessPartnerAddress): Promise<
     });
 }
 ```
+[OPTION END]
+
+[OPTION BEGIN [JavaScript]]
+Next, we use the VDM to update an existing business partner address. Open `update-business-partner-address-route.js` and overwrite the `updateBusinessPartnerAddress` function as shown below:
+
+```JavaScript
+function updateBusinessPartnerAddress(address) {
+  return BusinessPartnerAddress.requestBuilder()
+    .update(address)
+    .execute({
+      url: 'https://my.s4hana.ondemand.com/'
+    });
+}
+```
+[OPTION END]
 
 The `update` function takes as parameter the entity that should be updated. When creating a new entity, the service will automatically generate things like key fields, the creation date, etc. and return it. The VDM makes this available to you by returning a `Promise<BusinessPartnerAddress>`.
 
@@ -119,6 +192,7 @@ The version identifier of an entity is sent via the [`If-Match` HTTP header](htt
 
 For update requests, the VDM will handle version identifiers for you. Whenever an entity is received from a service, the VDM will store the version identifier and automatically send it on subsequent requests. Should you need to force a request to be handled, you can ignore the version identifier like this:
 
+[OPTION BEGIN [TypeScript]]
 ```JavaScript / TypeScript
 import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 
@@ -131,6 +205,22 @@ BusinessPartner.requestBuilder()
     url: 'https://my.s4hana.ondemand.com/'
   });
 ```
+[OPTION END]
+
+[OPTION BEGIN [JavaScript]]
+```JavaScript
+const { BusinessPartner } = require('@sap/cloud-sdk-vdm-business-partner-service');
+
+// pre-existing businessPartner
+
+BusinessPartner.requestBuilder()
+  .update(businessPartner)
+  .ignoreVersionIdentifier()
+  .execute({
+    url: 'https://my.s4hana.ondemand.com/'
+  });
+```
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
