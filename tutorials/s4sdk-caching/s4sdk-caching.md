@@ -3,7 +3,7 @@ title: Introduce caching to your application
 description: Introduce caching to your application using the SAP Cloud SDK.
 auto_validation: true
 primary_tag: products>sap-s-4hana-cloud-sdk
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk ]
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, topic>java ]
 time: 15
 ---
 
