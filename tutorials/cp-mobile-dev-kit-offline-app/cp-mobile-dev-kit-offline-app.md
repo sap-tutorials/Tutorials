@@ -27,7 +27,9 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
 
-This includes creating the Mobile Development Kit project in the Editor.
+[OPTION BEGIN [Neo]]
+
+This step includes creating the Mobile Development Kit project in the Editor.
 
 Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
@@ -35,13 +37,16 @@ Right click on Workspace folder and select **New** | **MDK Base Project**.
 
 ![MDK](img_001.png)
 
+>The MDK Base Template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using the Base Template, you can focus on creating your pages, other actions, and rules needed for your application.
+
+>More details on _MDK template_ is available in
+[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+
 Enter the Project Name as `DemoSampleApp` and click **Next**.
 
 ![MDK](img_002.png)
 
 Leave the default values in _Application Creation_ step as it is, click **Next**.
-
-[OPTION BEGIN [Neo]]
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -81,6 +86,22 @@ Click **Check Service** to validate the service properties. If all the details a
 [OPTION END]
 
 [OPTION BEGIN [Cloud Foundry]]
+
+Make sure that you have already created a new destination `mobileservices_cf` as per [previous tutorial](fiori-ios-hcpms-setup). This is required to connect SAP Web IDE to Mobile Services running in Cloud Foundry environment.
+
+This step includes creating the Mobile Development Kit project in the Editor.
+
+Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
+
+Right click on Workspace folder and select **New** | **MDK Base Project**.
+
+![MDK](img_001.png)
+
+Enter the Project Name as `DemoSampleApp` and click **Next**.
+
+![MDK](img_002.png)
+
+Leave the default values in _Application Creation_ step as it is, click **Next**.
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -272,7 +293,7 @@ Click **OK**.
 
 The MDK client receives deployed metadata definitions as a bundle.
 
-Now, you will see **Main** page being displayed and Offline store is being initialized.
+Now, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) being displayed and Offline store is being initialized.
 
 ![MDK](img_023.gif)
 
@@ -324,7 +345,7 @@ Click **OK**.
 
 The MDK client receives deployed metadata definitions as a bundle.
 
-Now, you will see **Main** page being displayed and Offline store is being initialized.
+Now, you will see the **Main** page (with **Logout** and **Sync** options at bottom of the page) being displayed and Offline store is being initialized.
 
 ![MDK](img_023.1.jpg)
 

@@ -45,7 +45,9 @@ You have built an MDK app with offline functionality. In offline store, you make
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Web IDE)]
 
-This includes creating the Mobile Development Kit project in the Editor.
+[OPTION BEGIN [Neo]]
+
+This step includes creating the Mobile Development Kit project in the Editor.
 
 Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
@@ -58,8 +60,6 @@ Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
 ![MDK](img_002.png)
 
 Leave the default values in _Application Creation_ step as it is, click **Next**.
-
-[OPTION BEGIN [Neo]]
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -86,6 +86,22 @@ Click **Check Service** to validate the service properties. If all the details a
 [OPTION END]
 
 [OPTION BEGIN [Cloud Foundry]]
+
+Make sure that you have already created a new destination `mobileservices_cf` as per [previous tutorial](fiori-ios-hcpms-setup). This is required to connect SAP Web IDE to Mobile Services running in Cloud Foundry environment.
+
+This step includes creating the Mobile Development Kit project in the Editor.
+
+Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
+
+Right click on Workspace folder and select **New** | **MDK CRUD Project**.
+
+![MDK](img_001.1.png)
+
+Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
+
+![MDK](img_002.png)
+
+Leave the default values in _Application Creation_ step as it is, click **Next**.
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -243,6 +259,7 @@ export default function GetAffectedEntityHeaderCaption(context) {
 
   return "Affected Entity: " + affectedEntity["@odata.type"];
 }
+
 ```
 
 >`@odata.type`: a URI that identifies the type of the property or object.
@@ -253,9 +270,9 @@ export default function GetAffectedEntityHeaderCaption(context) {
 
 Save your changes to the `GetAffectedEntityHeaderCaption.js` file.
 
-Next, add an **Object Table** control to display some information like affected entity and id for affected record.
+Next, add an **Object Table** control in `ErrorDetails.page` to display some information like affected entity and id for affected record.
 
-In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
 
 ![MDK](img_007.12.png)
 
