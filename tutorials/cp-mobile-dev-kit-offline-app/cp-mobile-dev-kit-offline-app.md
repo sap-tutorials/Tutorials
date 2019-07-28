@@ -37,7 +37,7 @@ Right click on Workspace folder and select **New** | **MDK Base Project**.
 
 ![MDK](img_001.png)
 
->The MDK Base Template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using the Base Template, you can focus on creating your pages, other actions, and rules needed for your application.
+>The _MDK Base Project_ template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
 >More details on _MDK template_ is available in
 [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
@@ -96,6 +96,11 @@ Launch the SAP Web IDE and select the **MDK perspective** by clicking on the ico
 Right click on Workspace folder and select **New** | **MDK Base Project**.
 
 ![MDK](img_001.png)
+
+>The _MDK Base Project_ template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
+
+>More details on _MDK template_ is available in
+[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
 
 Enter the Project Name as `DemoSampleApp` and click **Next**.
 

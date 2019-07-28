@@ -55,6 +55,11 @@ Right click on Workspace folder and select **New** | **MDK CRUD Project**.
 
 ![MDK](img_001.1.png)
 
+>_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
+
+>More details on _MDK template_ is available in
+[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+
 Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
 
 ![MDK](img_002.png)
@@ -96,6 +101,11 @@ Launch the SAP Web IDE and select the **MDK perspective** by clicking on the ico
 Right click on Workspace folder and select **New** | **MDK CRUD Project**.
 
 ![MDK](img_001.1.png)
+
+>_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
+
+>More details on _MDK template_ is available in
+[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
 
 Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
 
@@ -251,18 +261,18 @@ Copy and paste the following code.
 
 ```JavaScript
 export default function GetAffectedEntityHeaderCaption(context) {
-  //Current binding's root is the errorArchiveEntity:
-  //Get the affectedEntity object out of it
-  let affectedEntity = context.getPageProxy().binding.AffectedEntity;
-  console.log("affectedEntity: ");
-  console.log(affectedEntity);
-
-  return "Affected Entity: " + affectedEntity["@odata.type"];
+ //Current binding's root is the errorArchiveEntity:
+ //Get the affectedEntity object out of it
+ let affectedEntityType = "Unknown EntitySet";
+ let affectedEntity = context.getPageProxy().binding.AffectedEntity;
+ let id = affectedEntity["@odata.id"];
+ if (id.indexOf("(") > 0) {
+   affectedEntityType = id.substring(0, id.indexOf("("));
+ }
+ return "Affected Entity: " + affectedEntityType;
 }
 
 ```
-
->`@odata.type`: a URI that identifies the type of the property or object.
 
 >`@odata.id`: an annotation that contains the entity-id. More details can be found [here](http://docs.oasis-open.org/odata/odata-json-format/v4.0/cs01/odata-json-format-v4.0-cs01.html#_Toc36546468).
 
@@ -413,7 +423,7 @@ Save your changes to the `ErrorList.page` file.
 
 When you clicks on an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
 
-You can write a logic in JavaScript to handle the `affectedEntity` and then decide which action to call depends on which `@odata.type` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message.
+You can write a logic in JavaScript to handle the `affectedEntity` and then decide which action to call depends on which `@odata.id` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message.
 
 First, create a **Message Action** to display this toast message.
 
@@ -427,7 +437,7 @@ Provide the below information:
 |----|----|
 | `Action Name`| `UnknownAffectedEntityMessage` |
 | `Type` | select `ToastMessage` |
-| `Message` | `Affected Entity {{#Property:AffectedEntity/#Property:@odata.type}} doesn't have handler yet.` |
+| `Message` | `Affected Entity {{#Property:AffectedEntity/#Property:@odata.id}} doesn't have handler yet.` |
 | `Duration` | 4 |
 | `Animated` | `true` |
 
@@ -455,16 +465,24 @@ export default function DecideWhichEditPage(context) {
   console.log(affectedEntity);
 
   let targetAction = null;
-  //Here we decide which action to call depends on which @odata.type is the affectedEntity
+  let id = affectedEntity["@odata.id"]; //e.g. PurchaseOrderHeaders(12345)
+  let affectedEntityType = "Unknown Entity Set"; //By default it's unknown type
+  if (id.indexOf("(") > 0) {
+    //Extracting the entity set type from @odata.id e.g. PurchaseOrderHeaders
+    affectedEntityType = id.substring(0, id.indexOf("("));
+  }
+  console.log("Affected Entity Type Is:");
+  console.log(affectedEntityType);
+  //Here we decide which action to call depends on which affectedEntityType is the affectedEntity
   // You can add more complex decision logic if needed
-  switch (affectedEntity["@odata.type"]) {
-  //PurchaseOrderHeader is one of entity in sample backend service, this value can be found in service metadata document URL.
-    case "#ESPM.PurchaseOrderHeader":
-  //Since in beginning, we decided to handle any business logic failure for PurchaseOrderHeader operations.
+  switch (affectedEntityType) {
+    case "PurchaseOrderHeaders":
         targetAction = "/MDK_ErrorArchive/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_Edit.action";
       break;
     default:
-        // Show a toast for @odata.type that we do not handle yet
+        //Save the affected Entity's type in client data so that it can be displayed by the toast
+        context.getPageProxy().getClientData().AffectedEntityType = affectedEntityType;
+        // Show a toast for affectedEntityType that we do not handle yet
         return context.executeAction("/MDK_ErrorArchive/Actions/UnknownAffectedEntityMessage.action");
   }
 
