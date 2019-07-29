@@ -19,6 +19,8 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 [ACCORDION-BEGIN [Step 1: ](Scaffold an application)]
 
+[OPTION BEGIN [TypeScript]]
+
 To create an `express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our TypeScript scaffolding application as follows.
 
 ```Shell
@@ -31,14 +33,20 @@ and enter the freshly cloned project:
 cd <path/to/your/project>
 ```
 
-### Alternative
+[OPTION END]
 
-If you cannot or do not want to use `TypeScript`, you can also checkout the `JavaScript` version. The tutorial will be based on `TypeScript`, but is easily applicable to `JavaScript`. The main differences you will notice are the type annotations and module definitions - ES6 modules in the `TypeScript` version vs. `commonJS` modules in the `JavaScript` version.
+[OPTION BEGIN [JavaScript]]
+
+If you cannot or do not want to use `TypeScript`, you can also checkout the `JavaScript` version. Personally, we recommend using `TypeScript` for most use cases and write our code with this in mind, but all tutorials can be done in plain `JavaScript` as well. The main differences you will notice are the type annotations and module definitions - ES6 modules in the `TypeScript` version vs. `commonJS` modules in the `JavaScript` version. To migrate a `TypeScript` file to `JavaScript`, you only need to change the file extension from `.ts` to `.js`, remove all type annotations and change the `import`s and `export`s.
+
+To create an `express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our JavaScript scaffolding application as follows.
 
 ```Shell
 # clone the JavaScript version of the scaffolding above
 git clone --single-branch --branch scaffolding-js --origin scaffold https://github.com/SAP/cloud-s4-sdk-examples.git <path/to/your/project>
 ```
+
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
@@ -94,7 +102,7 @@ Go to `http://localhost:8080/hello` and you should get a 'Hello, World!' in resp
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use the SDK in existing project (optional))]
+[ACCORDION-BEGIN [Step 4: ](Use the SDK in an existing project (optional))]
 
 If you already have an existing project, you will need to specify the registry for the `@sap` scope, in order to make the `SAP Cloud SDK for JavaScript` libraries available. If it does not yet exist create a `.npmrc` file in the root folder of your project. Paste the following line into it:
 
