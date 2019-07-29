@@ -1,9 +1,9 @@
 ---
-title: Create an SAPUI5 Application for SAP Product Configuration
-description: Build a basic UI5 application that loads a configuration and changes the value of one characteristic using the SAP Product Configuration APIs from SAP API Business Hub.
+title: Create an SAPUI5 Application for SAP Variant Configuration and Pricing
+description: Build a basic UI5 application that loads a configuration and changes the value of one characteristic using the SAP Variant Configuration and Pricing APIs from SAP API Business Hub.
 auto_validation: true
 time: 45
-tags: [tutorial>beginner, topic>sapui5, products>sap-web-ide ]
+tags: [tutorial>beginner, topic>sapui5, products>sap-web-ide, sap-variant-configuration-and-pricing, product>sap-product-configuration]
 primary_tag: products>sap-product-configuration   
 ---
 
@@ -12,7 +12,7 @@ primary_tag: products>sap-product-configuration
 ### You will learn
   - How to use SAP API Business Hub's productivity tools for developers (like sandbox environment and code snippet generator) to easily test cloud services
   - How to use SAP Cloud Platform's trial environment and SAP Web IDE to build a small SAPUI5 application
-  - How to orchestrate and use the different APIs of the configuration and pricing services
+  - How to orchestrate and use the different APIs of the Variant Configuration and Pricing services
 
 
 
@@ -72,11 +72,11 @@ You will call the following cloud service APIs:
 
 [ACCORDION-BEGIN [Step 3: ](Get pre-generated code)]
 
-In the [API Business Hub] (https://api.sap.com/) search for SAP Product Configuration, find the **SAP Product Configuration** API Package and select it.
+In the [API Business Hub] (https://api.sap.com/) search for SAP Variant Configuration, find the **SAP Variant Configuration and Pricing** API Package and select it.
 
 ![step-3-API](step-3-API.png)
 
-Once on the API package page, choose **Product Configuration service**.
+Once on the API package page, choose **Variant Configuration service**.
 
 ![step-3-API-product-configuration](step-3-API-product-configuration.png)
 
@@ -236,7 +236,7 @@ xhr.open("PATCH",
 );
 ```
 
-Almost done! The product configuration API uses HTTP header fields `etag` and `If-Match` as an optimistic lock. You need to capture the `etag` header in the model from the HTTP response when loading the configuration and send back that value in the `If-Match HTTP` header when updating the configuration. In the **`xhr.addEventListener`** call of the `onInit` function, set the `etag` property of the model with the `etag` value of the response header.
+Almost done! The variant configuration API uses HTTP header fields `etag` and `If-Match` as an optimistic lock. You need to capture the `etag` header in the model from the HTTP response when loading the configuration and send back that value in the `If-Match HTTP` header when updating the configuration. In the **`xhr.addEventListener`** call of the `onInit` function, set the `etag` property of the model with the `etag` value of the response header.
 
 ```Java
 self.getView().getModel().setProperty("/etag", this.getResponseHeader("etag"));
@@ -325,7 +325,7 @@ Run your application. The value descriptions are provided by the `ComboBox`, and
 
 
 [ACCORDION-BEGIN [Step 9: ](Calculate pricing)]
-In addition to the configuration, SAP Product Configuration also provides a way to calculate the pricing.
+In addition to the configuration, SAP Variant Configuration and Pricing also provides a way to calculate the pricing.
 
 In the Burger model, the price is influenced by the menu option. By changing the menu option values, we should see a difference in the calculated price.
 
