@@ -45,7 +45,9 @@ You have built an MDK app with offline functionality. In offline store, you make
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Web IDE)]
 
-This includes creating the Mobile Development Kit project in the Editor.
+[OPTION BEGIN [Neo]]
+
+This step includes creating the Mobile Development Kit project in the Editor.
 
 Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
@@ -53,13 +55,16 @@ Right click on Workspace folder and select **New** | **MDK CRUD Project**.
 
 ![MDK](img_001.1.png)
 
+>_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
+
+>More details on _MDK template_ is available in
+[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+
 Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
 
 ![MDK](img_002.png)
 
 Leave the default values in _Application Creation_ step as it is, click **Next**.
-
-[OPTION BEGIN [Neo]]
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -86,6 +91,27 @@ Click **Check Service** to validate the service properties. If all the details a
 [OPTION END]
 
 [OPTION BEGIN [Cloud Foundry]]
+
+Make sure that you have already created a new destination `mobileservices_cf` as per [previous tutorial](fiori-ios-hcpms-setup). This is required to connect SAP Web IDE to Mobile Services running in Cloud Foundry environment.
+
+This step includes creating the Mobile Development Kit project in the Editor.
+
+Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
+
+Right click on Workspace folder and select **New** | **MDK CRUD Project**.
+
+![MDK](img_001.1.png)
+
+>_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
+
+>More details on _MDK template_ is available in
+[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+
+Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
+
+![MDK](img_002.png)
+
+Leave the default values in _Application Creation_ step as it is, click **Next**.
 
 In _Service Creation_ step, provide and select the below information:
 
@@ -235,17 +261,18 @@ Copy and paste the following code.
 
 ```JavaScript
 export default function GetAffectedEntityHeaderCaption(context) {
-  //Current binding's root is the errorArchiveEntity:
-  //Get the affectedEntity object out of it
-  let affectedEntity = context.getPageProxy().binding.AffectedEntity;
-  console.log("affectedEntity: ");
-  console.log(affectedEntity);
-
-  return "Affected Entity: " + affectedEntity["@odata.type"];
+ //Current binding's root is the errorArchiveEntity:
+ //Get the affectedEntity object out of it
+ let affectedEntityType = "Unknown EntitySet";
+ let affectedEntity = context.getPageProxy().binding.AffectedEntity;
+ let id = affectedEntity["@odata.id"];
+ if (id.indexOf("(") > 0) {
+   affectedEntityType = id.substring(0, id.indexOf("("));
+ }
+ return "Affected Entity: " + affectedEntityType;
 }
-```
 
->`@odata.type`: a URI that identifies the type of the property or object.
+```
 
 >`@odata.id`: an annotation that contains the entity-id. More details can be found [here](http://docs.oasis-open.org/odata/odata-json-format/v4.0/cs01/odata-json-format-v4.0-cs01.html#_Toc36546468).
 
@@ -253,9 +280,9 @@ export default function GetAffectedEntityHeaderCaption(context) {
 
 Save your changes to the `GetAffectedEntityHeaderCaption.js` file.
 
-Next, add an **Object Table** control to display some information like affected entity and id for affected record.
+Next, add an **Object Table** control in `ErrorDetails.page` to display some information like affected entity and id for affected record.
 
-In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
 
 ![MDK](img_007.12.png)
 
@@ -396,7 +423,7 @@ Save your changes to the `ErrorList.page` file.
 
 When you clicks on an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
 
-You can write a logic in JavaScript to handle the `affectedEntity` and then decide which action to call depends on which `@odata.type` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message.
+You can write a logic in JavaScript to handle the `affectedEntity` and then decide which action to call depends on which `@odata.id` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message.
 
 First, create a **Message Action** to display this toast message.
 
@@ -410,7 +437,7 @@ Provide the below information:
 |----|----|
 | `Action Name`| `UnknownAffectedEntityMessage` |
 | `Type` | select `ToastMessage` |
-| `Message` | `Affected Entity {{#Property:AffectedEntity/#Property:@odata.type}} doesn't have handler yet.` |
+| `Message` | `Affected Entity {{#Property:AffectedEntity/#Property:@odata.id}} doesn't have handler yet.` |
 | `Duration` | 4 |
 | `Animated` | `true` |
 
@@ -438,16 +465,24 @@ export default function DecideWhichEditPage(context) {
   console.log(affectedEntity);
 
   let targetAction = null;
-  //Here we decide which action to call depends on which @odata.type is the affectedEntity
+  let id = affectedEntity["@odata.id"]; //e.g. PurchaseOrderHeaders(12345)
+  let affectedEntityType = "Unknown Entity Set"; //By default it's unknown type
+  if (id.indexOf("(") > 0) {
+    //Extracting the entity set type from @odata.id e.g. PurchaseOrderHeaders
+    affectedEntityType = id.substring(0, id.indexOf("("));
+  }
+  console.log("Affected Entity Type Is:");
+  console.log(affectedEntityType);
+  //Here we decide which action to call depends on which affectedEntityType is the affectedEntity
   // You can add more complex decision logic if needed
-  switch (affectedEntity["@odata.type"]) {
-  //PurchaseOrderHeader is one of entity in sample backend service, this value can be found in service metadata document URL.
-    case "#ESPM.PurchaseOrderHeader":
-  //Since in beginning, we decided to handle any business logic failure for PurchaseOrderHeader operations.
+  switch (affectedEntityType) {
+    case "PurchaseOrderHeaders":
         targetAction = "/MDK_ErrorArchive/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_Edit.action";
       break;
     default:
-        // Show a toast for @odata.type that we do not handle yet
+        //Save the affected Entity's type in client data so that it can be displayed by the toast
+        context.getPageProxy().getClientData().AffectedEntityType = affectedEntityType;
+        // Show a toast for affectedEntityType that we do not handle yet
         return context.executeAction("/MDK_ErrorArchive/Actions/UnknownAffectedEntityMessage.action");
   }
 

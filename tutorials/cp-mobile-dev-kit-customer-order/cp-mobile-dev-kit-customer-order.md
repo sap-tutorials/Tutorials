@@ -124,7 +124,7 @@ In the **Properties** pane set the Caption to **Order Details**.
 
 ![MDK](img_011.png)
 
-Next, you will add an **Static Key Value** container and its container item **Key Value Item** to display information like sales order id, life cycle status & date of order creation name.
+Next, you will add a **Static Key Value** container and its container item **Key Value Item** to display information like sales order id, life cycle status & date of order creation name.
 
 >**Static Key Value** is a container that can display one or more key value pair items on a section page. In this container, you can include a Key Value Item, a simple key value cell that displays a label and a text pair. You can find more details [here](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/33d37d7e3e1b4d0ca7e11f0930282cf8.html) about this container.
 
@@ -388,7 +388,7 @@ In `CustomerDetail` page, select the Footer control, **click** the link icon und
 
 Double-click the `ShowAllOrders.action` and click **OK** to set it as the `OnPress` Action.
 
-![MDK](img_028.gif)
+![MDK](img_028.png)
 
 Save the changes to the `CustomerDetail` page.
 
@@ -435,6 +435,8 @@ You will see the **Customer Orders** area in customer detail page and also total
 
 ![MDK](img_033.1.jpg)
 
+>There are many customer records in the sample backend which do not have any order. If you see count 0 then look for another customer record. 
+
 Clicking on any order navigates to its details page.
 
 ![MDK](img_034.1.jpg)
@@ -446,8 +448,6 @@ Navigate back to **Customer Detail** page, click **See All**, which navigates to
 ![MDK](img_036.1.jpg)
 
 [OPTION END]
-
-
 
 >_Are you wondering how exactly MDK knew that clicking on a record in  list page would display respective record in detail page?_
 

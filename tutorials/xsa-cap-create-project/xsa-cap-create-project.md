@@ -1,6 +1,6 @@
 ---
 title: XS Advanced, Create a CAP model project
-description: Use the wizard for the Cloud Application Programming model to create a project in SAP HANA, express edition
+description: Use the wizard for the Cloud Application Programming model to create a project in SAP HANA, express edition.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, products>sap-hana]
@@ -9,22 +9,22 @@ primary_tag: products>sap-cloud-platform
 
 ## Prerequisites
  - **This tutorial works in SAP HANA, express edition**.
- - You have logged in to SAP Web IDE for SAP HANA. To find out more about SAP Web IDE and other tools in you SAP HANA, express edition instance, [refer to this tutorial](https://developers.sap.com/tutorials/xsa-explore-basics.html)
- - If you are planning on continuing the series in XS Advanced, it is recommended to [map the development space to the tenant database](https://developers.sap.com/tutorials/xsa-tenant-db-space.html) **before starting development**.
+ - You have logged into SAP Web IDE for SAP HANA. To find out more about SAP Web IDE and other tools in you SAP HANA, express edition instance, [refer to this tutorial](xsa-explore-basics)
+ - If you are planning on continuing the series in XS Advanced, it is recommended to [map the development space to the tenant database](xsa-tenant-db-space) **before starting development**.
 
 
 ## Details
 ### You will learn
   - How to create an application with the wizard for the Cloud Application Programming model
-  - How to use the local Git repository for development/testing purposes.
+  - How to use the local Git repository for development/testing purposes
 
-The images in this tutorial are based on SAP HANA, express edition SPS04. SAP Web IDE Full Stack may have some minor differences.
+The images in this tutorial are based on SAP HANA, express edition SPS04. SAP Web IDE Full-Stack may have some minor differences.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new Project)]
+[ACCORDION-BEGIN [Step 1: ](Create a new project)]
 
-Log in to SAP Web IDE.
+Log into SAP Web IDE.
 
 > The default URL for SAP Web IDE in SAP HANA, express edition is `https://hxehost:53075`. The default user is `XSA_DEV`
 
@@ -32,13 +32,13 @@ Log in to SAP Web IDE.
 
 ![New CAP model project](1.png)
 
-Choose the `SAP Cloud Platform Business Application` and click **Next**.
+Choose **SAP Cloud Platform Business Application** and click **Next**.
 
 ![New CAP model project](2.png)
 
 Use the following name for your project and click **Next**
 
-```text
+```Name
 MyHANAApp
 ```
 > **This name will be used in different steps**. It is recommended that you do not change it unless you remember to replace it in future tasks.
@@ -58,7 +58,7 @@ The wizard has generated a Multi-target Application with two modules: a database
 
 ![New CAP model project](5.png)
 
-The wizard has also populated the `mta.yaml` configuration file with the necessary dependencies and parameters for each module. Open it in `Code Mode` to explore it.
+The wizard has also populated the `mta.yaml` configuration file with the necessary dependencies and parameters for each module. Open it in the code editor to explore it.
 
 ![New CAP model project](6.png)
 
@@ -75,7 +75,7 @@ This file is the deployment descriptor and it is the glue that keeps all the mic
 
 You will use the local Git repository for basic version management.
 
-**Right-click** on the project and choose `Git -> Initialize Local Repository`.
+**Right-click** on the project and choose **Git -> Initialize Local Repository**.
 
 ![Initialize Git](7.png)
 
@@ -83,7 +83,7 @@ You will be asked for an email address and user ID for a remote GitHub server. Y
 
 ![Initialize Git](8_x.png)
 
-After a few seconds, you will see a success message in the top right corner. Use the Git icon next to it to open the Git pane.
+After a few seconds, you will see a success message in the top-right corner. Use the Git icon next to it to open the Git pane.
 
 ![Initialize Git](8.png)
 
@@ -96,13 +96,13 @@ Each time you commit to the local or remote repository, you create a version. Th
 **It is recommended that you perform commits at the end of each tutorial.**
 
 
-Add a commit message and **click Commit**:
+Add a commit message and click **Commit**:
 
 ![Initialize Git](9.png)
 
 > It is recommended to set a remote repository in, for example, GitHub. This will allow you to have a copy of your code outside your SAP HANA instance.
 
-Click the `console` icon and look at the messages to complete the validation below:
+Click the console icon and look at the messages to complete the validation below.
 
 [VALIDATE_1]
 [ACCORDION-END]

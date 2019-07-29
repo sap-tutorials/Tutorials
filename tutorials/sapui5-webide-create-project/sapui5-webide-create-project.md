@@ -62,7 +62,7 @@ Keep the default values and click **Finish**.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Check the service bindings)]
 <!--  remove this step once the wizard is fixed -->
-In a later tutorial, we want to make use of the destination service. Open the `mta_app/mta.yaml` file to see if the destination service is bound to the app router.
+In a later tutorial, we want to make use of the destination service. Open the `mta_app/mta.yaml` file to see if the destination service is bound to the app router. If you don't see the highlighted lines, please add them manually.
 
 ![CheckServices](checkservices.png)
 
@@ -82,7 +82,7 @@ In a later tutorial, we want to make use of the destination service. Open the `m
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Check your project file)]
+[ACCORDION-BEGIN [Step : ](Check the project file structure)]
 
 Your project should now look like this.  Click a folder icon to expand the contents.
 
