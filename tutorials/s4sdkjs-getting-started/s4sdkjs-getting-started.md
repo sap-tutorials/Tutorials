@@ -19,34 +19,35 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 [ACCORDION-BEGIN [Step 1: ](Scaffold an application)]
 
+Personally, we are fans of `TypeScript` and recommend using it for most applications. However, we also offer a version of our application scaffolding for plain `JavaScript`. If a step in a tutorial contains instructions or code that is specific to `TypeScript` or `JavaScript`, you can toggle between whatever you prefer at the top of each step.
+
+The main differences you will notice between `TypeScript` and `JavaScript` are the type annotations and module definitions - ES6 modules in `TypeScript` vs. `commonJS` modules in `JavaScript`. To migrate a `TypeScript` file to `JavaScript`, you only need to change the file extension from `.ts` to `.js`, remove all type annotations and change the `import`s and `export`s.
+
 [OPTION BEGIN [TypeScript]]
 
-To create an `express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our TypeScript scaffolding application as follows.
+To create an `Express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our TypeScript scaffolding application as follows.
 
 ```Shell
 git clone --single-branch --branch scaffolding-ts --origin scaffolding https://github.com/SAP/cloud-s4-sdk-examples.git <path/to/your/project>
-```
-
-and enter the freshly cloned project:
-
-```Shell
-cd <path/to/your/project>
 ```
 
 [OPTION END]
 
 [OPTION BEGIN [JavaScript]]
 
-If you cannot or do not want to use `TypeScript`, you can also checkout the `JavaScript` version. Personally, we recommend using `TypeScript` for most use cases and write our code with this in mind, but all tutorials can be done in plain `JavaScript` as well. The main differences you will notice are the type annotations and module definitions - ES6 modules in the `TypeScript` version vs. `commonJS` modules in the `JavaScript` version. To migrate a `TypeScript` file to `JavaScript`, you only need to change the file extension from `.ts` to `.js`, remove all type annotations and change the `import`s and `export`s.
-
-To create an `express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our JavaScript scaffolding application as follows.
+To create an `Express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our JavaScript scaffolding application as follows.
 
 ```Shell
-# clone the JavaScript version of the scaffolding above
-git clone --single-branch --branch scaffolding-js --origin scaffold https://github.com/SAP/cloud-s4-sdk-examples.git <path/to/your/project>
+git clone --single-branch --branch scaffolding-js --origin scaffolding https://github.com/SAP/cloud-s4-sdk-examples.git <path/to/your/project>
 ```
 
 [OPTION END]
+
+and enter the freshly cloned project:
+
+```Shell
+cd <path/to/your/project>
+```
 
 [DONE]
 [ACCORDION-END]
