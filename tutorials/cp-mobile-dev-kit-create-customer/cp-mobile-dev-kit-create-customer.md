@@ -22,6 +22,8 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Create new page for new customer record)]
 
+Make sure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
+
 In this step, you will create the _Create Customer_ page as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
 
 Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
@@ -213,7 +215,7 @@ Provide the below information:
 | `OKCaption` | `OK` |
 | `OnOK` | `--None--` |
 | `CancelCaption` | leave it blank |
-| `OnCancel` | `--None-- |
+| `OnCancel` | `--None--`|
 
 ![MDK](img_021.png)
 
@@ -270,7 +272,7 @@ In the action editor for the new action, expand the **Common Action Properties**
 
 Save the changes to the `CreateCustomer` action.
 
-Next, you will set the `OnPress` of the _Add_ button.
+Next, you will set the `OnPress` of the _Create_ button.
 
 Now that the Create action is created, you will need to call the Create action when the end-user presses the **Save** button. You will add a **Save** button on the `CreateCustomer.page` and link it to the `CreateCustomer` action.
 

@@ -34,7 +34,7 @@ Provide the below information:
 | `OKCaption`| `OK` |
 | `OnOK` | `--None--` |
 | `CancelCaption` | leave it blank |
-| `OnCancel` | `--None-- |
+| `OnCancel` | `--None--` |
 
 ![MDK](img_011.png)
 

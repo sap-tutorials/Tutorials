@@ -126,7 +126,7 @@ export default function DeleteConfirmation(clientAPI) {
 }
 ```
 
->You can navigate from a JavaScript file to the MDK file by right clicking on it.
+>In above code there is a reference to `DeleteCustomer` action, you can navigate directly from here to the MDK file by right clicking on it.
 ![MDK](img_001.1.png)
 
 [DONE]
