@@ -9,7 +9,7 @@ time: 20
 
 
 ### You will learn  
-This tutorial will cover your first steps when developing applications for SCP Cloud Foundry using SAP Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
+This tutorial will cover your first steps when developing applications for SAP Cloud Platfrom (SCP) Cloud Foundry using SAP Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
 
 ---
 
@@ -27,11 +27,11 @@ Now click the `Home` button in the upper navigation bar and then click `Start Cl
 
 After selecting your region, your account will be automatically set up for development with `Cloud Foundry`.
 
-Now that your account is activated and configured, you will need the `Cloud Foundry` command line interface (`cf CLI`) to deploy and manage your `Cloud Foundry` applications.
+Now that your account is activated and configured, you will need the `Cloud Foundry` command line interface (CF CLI) to deploy and manage your `Cloud Foundry` applications.
 
-To install `cf CLI`, you can either grab the latest release on the [official release page](https://github.com/cloudfoundry/cli/releases) or use your favorite [package manager](https://github.com/cloudfoundry/cli#installing-using-a-package-manager).
+To install the CLI, you can either grab the latest release on the [official release page](https://github.com/cloudfoundry/cli/releases) or use your favorite [package manager](https://github.com/cloudfoundry/cli#installing-using-a-package-manager).
 
-In order to deploy applications on `SAP Cloud Foundry` you need to provide `cf CLI` with an API endpoint. The API endpoint depends on the region you chose for your account:
+In order to deploy applications on `SAP Cloud Foundry` you need to provide the CF CLI with an API endpoint. The API endpoint depends on the region you chose for your account:
 
   - for EU: `https://api.cf.eu10.hana.ondemand.com`
   - for US EAST: `https://api.cf.us10.hana.ondemand.com`
@@ -45,32 +45,34 @@ cf api https://api.cf.eu10.hana.ondemand.com
 cf login
 ```
 
-The `cf CLI` will ask you for your mail and your password. After entering these, you should be successfully logged in.
+The CLI will ask you for your mail and your password. After entering these, you should be successfully logged in.
+
+**_TODO_** Good to know info
+**Note**: The CF stores your credentials securely in `???`. You stay logged in until `???`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Generate project from archetype)]
 
-To generate your first project from the Maven archetype, run the following command:
+To generate your first project from the Maven archetype, run the following command: (for Windows PowerShell see [Appendix](Troubleshooting))
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.s4hana.archetypes -DarchetypeArtifactId=scp-cf-tomee -DarchetypeVersion=LATEST
+mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.s4hana.archetypes -DarchetypeArtifactId=scp-cf-tomee -DarchetypeVersion=RELEASE
 ```
 During the generation process, Maven will require additional parameters to form your project:
 
-**`groupId`** - An identifier representing your group, company or organization (e.g. `com.sap.cloud.sdk.tutorial`)
-**`artifactId`** - An identifier for your application (e.g. `firstapp`)
-**`version`** - The version of your application (e.g. `1.0-SNAPSHOT`)
-The version of your application (e.g. `1.0-SNAPSHOT`)
-**`package`** - The name of the top-level package your source code will reside in (typically equal to your **`groupId`**, e.g. `com.sap.cloud.sdk.tutorial`). Please pay attention to package and directory names in any upcoming source code when using a different package name than suggested here.
-**`uniqueHostname`** - A unique identifier to determine your initial project URL on `Cloud Foundry`. This value must be unique across your `Cloud Foundry` region, but it can easily be changed later on. We recommend _Application Name + some random number_, e.g. `firstapp-D123456` (please, use a different number than D123456 - this is likely already taken by another developer trying out their sample application).
+  -  **`groupId`** - An identifier representing your group, company or organization (e.g. `com.sap.cloud.sdk.tutorial`)
+  -  **`artifactId`** - An identifier for your application (e.g. `firstapp`)
+  -  **`version`** - The version of your application (e.g. `1.0-SNAPSHOT`)
+  -  **`package`** - The name of the top-level package your source code will reside in (typically equal to your **`groupId`**, e.g. `com.sap.cloud.sdk.tutorial`). Please pay attention to package and directory names in any upcoming source code when using a different package name than suggested here.
+  -  **`uniqueHostname`** - A unique identifier to determine your initial project URL on `Cloud Foundry`. This value must be unique across your `Cloud Foundry` region, but it can easily be changed later on. We recommend _Application Name + some random number_, e.g. `firstapp-D123456` (please, use a different number than D123456 - this is likely already taken by another developer trying out their sample application).
 
 After providing these values, Maven will generate your project from the archetype.
 
 ![Maven generates project from archetype](maven-generates-project.png)
 
-**Note**: Here you have created an application which is based on the [`TomEE` runtime](http://tomee.apache.org/) which is `Java EE 6` compliant `OpenSource` runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with `SpringBoot` (`artifactId`: `scp-cf-spring`) or on a pure `Tomcat` container (`artifactId`: `scp-cf-tomcat`). Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP Cloud SDK is compatible with these popular `runtimes` too.
+**Note**: Here you have created an application which is based on the [TomEE runtime](http://tomee.apache.org/) which is a `Java EE 6` compliant open-source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with [SpringBoot](https://spring.io/projects/spring-boot). To adapt the archetype simply change the `artifactId` to `scp-cf-spring`. Our tutorial series will be primarily based on the TomEE runtime. Nonetheless, the SAP Cloud SDK is compatible with these popular runtimes too.
 
 [DONE]
 [ACCORDION-END]
@@ -147,18 +149,6 @@ During development it becomes important to test the code newly implemented to ex
 Now that you understand the structure of the project, let's take a closer look at the `HelloWorldServlet`.
 
 ```java
-package com.sap.cloud.sdk.tutorial;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
 @WebServlet("/hello")
 public class HelloWorldServlet extends HttpServlet
 {
@@ -177,7 +167,7 @@ public class HelloWorldServlet extends HttpServlet
 
 The `HelloWorldServlet` extends `HttpServlet`, so this will be a HTTP endpoint that we can visit. We map this endpoint to the `/hello` route using `@WebServlet("/hello")`. By overriding the function `doGet`, we define what happens when a client performs an HTTP GET request on the `/hello` route. In this case we simply write a response containing **`Hello World!`**
 
-**Note**: The application code runs seamlessly in `SAP Cloud Platform`, `Neo` as well as `SAP Cloud Platform`, `Cloud Foundry`. The `SAP Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
+**Note**: The application code runs seamlessly in `SCP Neo` as well as `SCP Cloud Foundry`. The `SAP Cloud SDK` is compatible with both versions and provides mechanisms to seamlessly transfer code between both environments.
 
 [DONE]
 [ACCORDION-END]
@@ -203,7 +193,7 @@ Now the previously mentioned `manifest.yml` comes into play – it's the deploym
   applications:
 
 - name: firstapp
-  memory: 768M
+  memory: 1024M
   host: firstapp-D123456
   # random-route: true # used instead of "host"
   path: application/target/firstapp-application.war
@@ -228,15 +218,15 @@ Now you can deploy the application by entering the following command:
 cf push
 ```
 
-`cf push` is the command used to deploy applications. The `-f` flag provides `cf CLI` with the deployment descriptor.
+`cf push` is the command used to deploy applications. The `-f` flag provides the CLI with the deployment descriptor.
 
-  _Hint: If you omit the `-f` flag,  `cf CLI` will check whether there is a file named `manifest.yml` in the current directory. If so, `cf CLI` will use this file as deployment descriptor. Else, it will fail._
+  _Hint: If you omit the `-f` flag,  the CLI will check whether there is a file named `manifest.yml` in the current directory. If so, it will use this file as deployment descriptor. Else, it will fail._
 
-After the deployment is finished, `cf CLI`'s output should look like this:
+After the deployment is finished, the output should look like this:
 
 ![cd push output](cf-push.png)
 
-Now we can visit the application under its corresponding URL. Take the value from `cf CLI`'s `urls: ...` and append the `hello` path:
+Now we can visit the application under its corresponding URL. Take the value from the CLI's `urls: ...` and append the `hello` path:
 
 ![deployed application look](deployed-application.png)
 
@@ -269,7 +259,7 @@ Now you have a strong basis for developing your own cloud application for `SCP C
 If you are using `PowerShell` on `Windows`, always put Maven arguments (supplied with `-D`) in quotes, for example:
 
 ```
-mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=LATEST"
+mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=RELEASE"
 ```
 
 [DONE]
