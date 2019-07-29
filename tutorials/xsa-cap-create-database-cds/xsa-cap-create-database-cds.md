@@ -1,6 +1,6 @@
 ---
-title: XS Advanced, Create Database artifacts using Core Data and Services
-description: Use Core Data and Services to generate HANA basic database artifacts
+title: XS Advanced, Create Database Artifacts Using Core Data and Services
+description: Use core data services to generate SAP HANA basic database artifacts.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, products>sap-hana]
@@ -8,26 +8,26 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have created an application using the [Business Application wizard](xsa-cap-create-project)
+ - You have created an application using the [Business Application wizard](xsa-cap-create-project).
 
 ## Details
 ### You will learn
-  - How to use Core Data and Services to create simple database entities
+  - How to use core data services to create simple database entities
   - How to define database-agnostic artifacts in the persistence module
 
-The Cloud Application Programming model utilizes Core Data and Services to define artifacts in the database module. Because this model is meant to be database-agnostic, i.e., work with any database, it does not allow you to leverage features that are only specific to SAP HANA. For this reason, you will create two tables that do not require any advanced data types
+The Cloud Application Programming model utilizes core data services to define artifacts in the database module. Because this model is meant to be database-agnostic -- i.e., work with any database -- it does not allow you to leverage features that are specific to SAP HANA. For this reason, you will create two tables that do not require any advanced data types.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create database entities)]
 
-In the `db` module, you will find a file called `data-model.cds`. Right-click on it and choose **Rename**
+In the `db` module, you will find a file called `data-model.cds`. Right-click on it and choose **Rename**.
 
 ![Create Database entities ](0.png)
 
 Use the following name:
 
-```text
+```Name
 interactions.cds
 ```
 
@@ -35,9 +35,9 @@ interactions.cds
 
 ![Create Database entities ](1.png)
 
-Replace the default contents with the following
+Replace the default contents with the following:
 
-```text
+```CDS
 namespace app.interactions;
 
 using { Country } from '@sap/cds/common';
@@ -65,7 +65,7 @@ entity Interactions_Items {
 ```
 
 
->  ##What is going on?
+> ### What is going on?
 >
 > You are declaring two entities with an association to each other. The design-time artifacts declared in this file will be converted to run-time, physical artifacts in the database. In this example, the entities will become tables.
 
@@ -78,19 +78,19 @@ entity Interactions_Items {
 
 [ACCORDION-BEGIN [Step 2: ](Adapt service call)]
 
-Locate the other `cds` file (this file may be called `cat-service.cds` or `my-service.cds`, depending on the IDE) in the `srv` folder and rename it
+Locate the other `cds` file (this file may be called `cat-service.cds` or `my-service.cds`, depending on the IDE) in the `srv` folder and rename it.
 
 ![Rename service](ren_srv.png)
 
 Use the following name:
 
-```text
+```Name
 interaction_srv.cds
 ```
 
 Double-click to open it and replace the existing content with the following:
 
-```text
+```CDS
 
 using app.interactions from '../db/interactions';
 service CatalogService {
@@ -105,18 +105,17 @@ service CatalogService {
 
 }
 
-
 ```
 
 Click **Save all**.
 
 ![Build database module](2.png)
 
->   ##What is going on?
+> ### What is going on?
 >
 > You are declaring services to expose the database entities you declared in the previous step.
 
-Right-click on the CDS declaration of the services and choose **Build -> Build CDS**
+Right-click on the CDS declaration of the services and choose **Build > Build CDS**.
 
 ![Build database module](cds.png)
 
@@ -140,32 +139,32 @@ You will now convert those CDS files specific to SAP HANA into runtime objects (
 
 Scroll up to in the console to see what the build process has done.
 
-> ##What is going on?
+> ### What is going on?
 >
+> CDS stands for Core Data Services. This is an infrastructure that allows you to create persistency and services using a declarative language. Notice how you are using the same syntax to define both the persistency and the services.
 >&nbsp;
-> CDS stands for Core Data and Services. This is an infrastructure that allows you to create persistency and services using a declarative language. Notice how you are using the same syntax to define both the persistency and the services.
->&nbsp;
-> You can find more information on CD&S [in the help](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/855e00bd559742a3b8276fbed4af1008.html)
+> You can find more information on CDS [in the help](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/855e00bd559742a3b8276fbed4af1008.html)
 >
 >You defined a CDS artifact, this is an abstraction, a design-time declaration of the entities to be represented in a database and the services to expose them.
 >&nbsp;
 > ![Build database module](cds1.png)
->&nbsp;
->The original `.cds` file was translated into `hdbcds`, which is the Core Data & Services syntax specific to SAP HANA when you saved all of the files.
+>
+>The original `.cds` file was translated into `hdbcds`, which is the Core Data and Services syntax specific to SAP HANA when you saved all of the files.
 >&nbsp;
 > ![Build database module](cds2.png)
-> These `hdbcds` files were then translated into runtime objects such as tables in the HANA database.
+>
+>These `hdbcds` files were then translated into runtime objects such as tables in the HANA database.
 >
 > ![Build database module](cds3.png)
 >
 > If you checked the services in your space, you would see the service for your [HDI container](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/e28abca91a004683845805efc2bf967c.html).
 >
->&nbsp;
 > ![Build database module](console.png)
->&nbsp;
 >
 > You can also check the resources in your space using the resource manager in SAP Web IDE:
+>
 > ![Build database module](resource.png)
+>
 > You can find a similar example and further context on Core Data and Services in [this explanatory video](https://www.youtube.com/watch?v=O0qSsbnx3u8&list=PLoc6uc3ML1JR38-V46qhmGIKG07nXwO6X&index=6)
 
 [DONE]
@@ -173,11 +172,11 @@ Scroll up to in the console to see what the build process has done.
 
 [ACCORDION-BEGIN [Step 4: ](Check the Database Explorer)]
 
-You can now check the generated tables and views in the database explorer. Right-click on the database module and select **Open HDI Container**
+You can now check the generated tables and views in the database explorer. Right-click on the database module and select **Open HDI Container**.
 
 ![Build database module](6.png)
 
-Once open, navigate to the `Tables` section and double click on the Header table.
+Once open, navigate to the `Tables` section and double-click on the `Header` table.
 
 ![Build database module](9.png)
 
@@ -193,31 +192,31 @@ Note the name of the table matches the generated `hdbcds` artifacts. You will al
 
 Download the [header file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/xsa-cap-create-database-cds/Header.xlsx) and the [items file](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/xsa-cap-create-database-cds/Items.xlsx) into your local file system.
 
-Right-click again on the header table and choose `Import data`
+Right-click again on the header table and choose **Import Data**.
 
 ![Import data](10.png)
 
-Browse for the `Header` file, select **Sheet 1** and click **Step 2**
+Browse for the `Header` file, select **Sheet 1** and click **Step 2**.
 
 ![Import data](11.png)
 
-Keep the default table mapping and click **Step 3**
+Keep the default table mapping and click **Step 3**.
 
 ![Import data](12.png)
 
-Click **Show Import summary**
+Click **Show Import Summary**.
 
 ![Import data](import.png)
 
-And then **Import into Database**
+And then **Import into Database**.
 
 ![Import data](15.png)
 
-You will see confirmation that 3 records have imported successfully
+You will see confirmation that 3 records have imported successfully.
 
 ![Import data](16.png)
 
-Repeat the process with the **`Items.xlsx`** file into the Items table
+Repeat the process with the `Items.xlsx` file into the `Items` table.
 
 ![Import data](17.png)
 
@@ -226,11 +225,11 @@ Repeat the process with the **`Items.xlsx`** file into the Items table
 
 [ACCORDION-BEGIN [Step 6: ](Check data loaded into the tables)]
 
-You can now check the data loaded into the tables. Right-click on the items table and click **Generate Select Statement**.
+You can now check the data loaded into the tables. Right-click on the `Items` table and click **Generate Select Statement**.
 
 ![Generate select statement](18.png)
 
-Add the following where clause to the SELECT statement and execute it to complete the validation below
+Add the following WHERE clause to the SELECT statement and execute it to complete the validation below.
 
 ```SQL
 where "LOGTEXT"  like '%happy%';
