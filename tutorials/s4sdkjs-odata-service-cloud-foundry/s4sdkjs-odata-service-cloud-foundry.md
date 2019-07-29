@@ -33,7 +33,7 @@ Alternatively, many APIs can also be tested using the sandbox of the SAP API Bus
 
 Initially, the app only contains the `index` and `hello-world` routes. We will add another route for `business-parters` that will simply list all available business partners.
 
-First, create a new file `business-partner-route` in the `src/` directory and add an implementation for this route, like so:
+First, create a new file `business-partner-route.ts` in the `src/` directory and add an implementation for this route, like so:
 
 ```JavaScript / TypeScript
 import { Request, Response } from 'express';
@@ -73,7 +73,7 @@ You can start your application by running `npm run start:local`. Now, calling `h
 
 Initially, the app only contains the `index` and `hello-world` routes. We will add another route for `business-parters` that will simply list all available business partners.
 
-First, create a new file `business-partner-route` in the `src/` directory and add an implementation for this route, like so:
+First, create a new file `business-partner-route.js` in the `src/` directory and add an implementation for this route, like so:
 
 ```JavaScript
 function businessPartners(req, res) {
@@ -254,8 +254,6 @@ In the code snippet above we assume that you have a mock server running locally.
   password: '<PASSWORD>'
 })
 ```
-
-Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click on "Show API Key".
 
 To use the sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
 
