@@ -1,5 +1,5 @@
 ---
-title: Call a Remote Function Module From ABAP Envionment
+title: Call a Remote Function Module From ABAP Environment
 description: Call a remote function module located in an on-Premise system, such as an S/4HANA System, from the ABAP Environment
 auto_validation: true
 time: 60
