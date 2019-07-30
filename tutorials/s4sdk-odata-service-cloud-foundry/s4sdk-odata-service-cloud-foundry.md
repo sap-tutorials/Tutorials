@@ -77,6 +77,8 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
+**_TODO_** Adapt the code for version 3
+
 ```Java
 final List<BusinessPartner> businessPartners =
         new DefaultBusinessPartnerService()
@@ -393,6 +395,9 @@ Navigate to the integration-tests project and create a new class:
 
 `./integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`
 
+**_TODO_** Adapt the code for version 3
+
+
 ```java
 package com.sap.cloud.sdk.tutorial;
 
@@ -570,7 +575,7 @@ On Windows you can set an environment variable via:
 set destinations=[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD"}]
 ```
 
-Be aware to escape special characters, if necessary. Details can be found in the official [documentation](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/set_1)
+Be aware to escape special characters, if necessary. Details can be found in the official [documentation](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/set_1).
 
 ----
 **Connecting to the `OData` service**

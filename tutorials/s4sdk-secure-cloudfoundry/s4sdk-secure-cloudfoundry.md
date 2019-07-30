@@ -9,15 +9,12 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ## Prerequisites
  - You did at least all steps until [Step 3 with SAP Cloud SDK: `HelloWorld` on SCP `CloudFoundry`](https://blogs.sap.com/2017/05/19/step-3-with-sap-s4hana-cloud-sdk-helloworld-on-scp-cloudfoundry/).
- - To make the examples a bit more plastic, I created a completely new trial using a P-User with a throw-away e-mail address.
 
 ## Details
 ### You will learn
-  - How to set up and `configurate` the App Router component as a central entry point to your microservice landscape to handle authentication and authorization
+  - How to set up and `configure` the App Router component as a central entry point to your microservice landscape to handle authentication and authorization
   - How to protect your Java microservice so that it only accepts requests based on a valid JSON Web Token (JWT) that is received from the App Router
   - Assign roles and scopes to your application users and let your backend deal with authorization information
-
-Note: This post is part of a series. For a complete overview visit the [SAP S/4HANA Cloud SDK Overview] (https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
 ---
 
@@ -101,7 +98,7 @@ This alternative approach requires that you have npm installed on your machine.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Proceed with the App Router Setup independent of your download preferences)]
-1. Within **<destLocation>/approuter** create a new file called **`xs-app`.json** with the following content:
+1. Within **\<destLocation\>/approuter** create a new file called **`xs-app`.json** with the following content:
 ```
 {
   "welcomeFile": "index.html",
@@ -113,29 +110,31 @@ This alternative approach requires that you have npm installed on your machine.
 }
 ```
 
-2. Within <destLocation> create a new **`manifest.yml`** file for the AppRouter microservice with the following content.
+2. Within \<destLocation\> create a new **`manifest.yml`** file for the AppRouter microservice with the following content.
 
 ```
 ---
 applications:
 - name: approuter
-  host: approuter-p1942765239trial
+  host: approuter-<SUBACCOUNT>
   path: approuter
   memory: 128M
   buildpack: nodejs_buildpack
   env:
     TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.eu10.hana.ondemand.com'
-    destinations: '[{"name":"app-destination", "url" :"https://firstapp-p1942765239trial.cfapps.eu10.hana.ondemand.com", "forwardAuthToken": true}]'
+    destinations: '[{"name":"app-destination", "url" :<APPLICATION_URL>, "forwardAuthToken": true}]'
   services:
     - my-xsuaa
 ```
-Adapt the **TENANT`_HOST_PATTERN`** in the **`manifest.yml`** file to the host of the Cloud Foundry region you are running on; the above assumes EU (`eu10`).
+Adapt the file as follows: In the **`host`** replace \<SUBACCOUNT\> with your actual account. In `destinations` replace \<APPLICATION_URL> with the actual URL of your previously deployed app. Also, depending on your region, you will have to adapt the `eu10` in the `TENANT_HOST_PATTERN` to your region.
 
-Understanding the AppRouter's **`manifest.yml`** and **`xs-app.json`**:
+**Note**: It is mandatory that your app URL conforms the format `<APP_NAME>-<SUBACCOUNT>.cfapps.<REGION_IDENTIFIER>.hana.ondemand.com`. The authentication mechanism will identify you by pulling the user-id (`SUBACCOUNT`) out of the subdomain.
 
-The **TENANT`_HOST_PATTERN`** is a variable that declares the pattern how multiple tenants in the URL are identified and handled. During runtime, the App Router will match the incoming host against the pattern and tries to extract the regular expression from the pattern. It will use the matched string to delegate authentication to the respective XSUAA tenant (in SAP Cloud Platform the tenant ID corresponds to the subaccount ID. If you desire different URL patterns, you need to change this pattern accordingly.
+**Understanding the AppRouter's `manifest.yml` and `xs-app.json`**:
 
-Note that the **TENANT`_HOST_PATTERN`** variable is only required in real multi-tenant application, i.e, applications where a physical deployment serves multiple clients from the same deployment. We assume in this blog series that we want to build multi-tenant applications, as we aim towards cloud-native development. However, this variable is not necessary if you have a single-tenant application. To realize this, the **`xs-security`.json** security descriptor may declare tenant-mode: dedicated (see step 5 below).
+The `TENANT_HOST_PATTERN` is a variable that declares the pattern how multiple tenants in the URL are identified and handled. During runtime, the App Router will match the incoming host against the pattern and tries to extract the regular expression from the pattern. It will use the matched string to delegate authentication to the respective XSUAA tenant (in SAP Cloud Platform the tenant ID corresponds to the subaccount ID. If you desire different URL patterns, you need to change this pattern accordingly.
+
+Note that the `TENANT_HOST_PATTERN` variable is only required in real multi-tenant application, i.e, applications where a physical deployment serves multiple clients from the same deployment. We assume in this blog series that we want to build multi-tenant applications, as we aim towards cloud-native development. However, this variable is not necessary if you have a single-tenant application. To realize this, the `xs-security.json` security descriptor may declare tenant-mode: dedicated (see step 5 below).
 
 **Destinations** is a variable that declares the internal routes from the App Router to the underlying backend microservices. As we only have one hello world microservice yet, we define only one destination called app-destination here. This app-destination is referenced by the previously created `xs-app`.json file.
 
@@ -144,23 +143,11 @@ The **services section** declares to bind our own XSUAA service instance to the 
 ![XSUAA service](Figure3-1-1.png)
 
 
-
-3. Within the **`manifest.yml`** replace the **destinations** variable with the specific URL to your Java backend service used in the previous tutorials. In my case, the URL is
-
-```
-https://firstapp-p1942765239trial.cfapps.eu10.hana.ondemand.com
-```
-
-4. Within the **`manifest.yml`** replace the host name to your unique host identifier by using approuter-<tenantID>. In my case the host name is
-```
-approuter-p1942765239trial
-```
-
-5. Now we need to create a service binding to the XSUAA service. As a prerequisite we require an `xs-security.json` (security descriptor) file that contains a declaration about authorization scopes we intend to use in our application. In our case, we simply declare a `DISPLAY` scope that we will use later on to authorize our users. In addition, we declare a so-called role template called Viewer that references our `DISPLAY` scope.
+3. Now we need to create a service binding to the XSUAA service. As a prerequisite we require an `xs-security.json` (security descriptor) file that contains a declaration about authorization scopes we intend to use in our application. In our case, we simply declare a `DISPLAY` scope that we will use later on to authorize our users. In addition, we declare a so-called role template called Viewer that references our `DISPLAY` scope.
 
     We put this file to `<destLocation>/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
 
-    >Note that the **`xsappname`** has to be unique within the entire XSUAA instance. We follow here the same pattern using our **<appID>-<tenantID>**. In my case this is **`firstapp-p1942765239trial`**.
+    >Note that the **`xsappname`** has to be unique within the entire XSUAA instance. We follow here the same pattern using our **\<appID\>-\<tenantID\>**. In my case this is **`firstapp-p1942765239trial`**.
 
     >Note that as explained above, tenant-mode: shared assumes a multi-tenant application and will require the TENANT`_HOST_PATTERN` variable to be declared. You may also use "tenant-mode": "dedicated" if you develop a single-tenant application.
 
@@ -186,7 +173,7 @@ approuter-p1942765239trial
     }
     ```
 
-`6.` We then create a service instance called **`my-xsuaa`** of the XSUAA service by issuing the following command and using the **`xs-security`.json** file:  
+`4.` We then create a service instance called **`my-xsuaa`** of the XSUAA service by issuing the following command and using the **`xs-security`.json** file:  
 ```
 cf create-service xsuaa application my-xsuaa -c xs-security.json
 ```
@@ -196,24 +183,24 @@ cf unbind-service firstapp my-xsuaa
 cf delete-service my-xsuaa​
 ```
 
-`7.` Before we deploy your folder structure should look similar to this:
+`5.` Before we deploy your folder structure should look similar to this:
 
 ![folder](Figure4-1.png)
 
 You may have different content in the **approuter** folder depending on the download alternative you have chosen. Ensure that **`xs-app`.json** and **`package`.json** and the **node`_modules`** directory with content are present.
 
-`8.` Then deploy the AppRouter using the following (with the appropriate API endpoint of your Cloud Foundry region):
+`6.` Then deploy the AppRouter using the following (with the appropriate API endpoint of your Cloud Foundry region):
 ```
 cd <destLocation>
 cf api https://api.cf.eu10.hana.ondemand.com
 cf login
 cf push
 ```
-`9.` Afterwards you should be able to locate the App Router from within your browser using the host name of your deployment. In my case this is `https://approuter-p1942765239trial.cfapps.eu10.hana.ondemand.com/hello` which should face you with the following login page where you can use your user e-mail and password:
+`7.` Afterwards you should be able to locate the App Router from within your browser using the host name of your deployment. In my case this is `https://approuter-p1942765239trial.cfapps.eu10.hana.ondemand.com/hello` which should face you with the following login page where you can use your user e-mail and password:
 
 ![login](Figure5-1.png)
 
-`10.` After logging in you should see the `HelloWorld` servlet which is now served by the App Router as a proxy to your Java application:
+`8.` After logging in you should see the `HelloWorld` servlet which is now served by the App Router as a proxy to your Java application:
 
 ![helloworld](Figure6-1.png)
 
@@ -420,12 +407,12 @@ services:
 - my-xsuaa
 ```
 In my example case, the final `manifest.yml` may look like this (depending on your progress with other steps of the tutorial):
-```
+```markdown
 ---
 applications:
 - name: firstapp
-  memory: 768M
-  host: firstapp-p1942765239trial
+  memory: 1024M
+  host: firstapp-p123456trial
   path: application/target/firstapp-application.war
   buildpack: sap_java_buildpack
   env:
@@ -435,6 +422,8 @@ applications:
   services:
   - my-destination
   - my-xsuaa
+#  - my-application-logs
+#  - my-connectivity
 ```
 
 [DONE]
@@ -458,10 +447,15 @@ However, you should be still able to access your application using the App Route
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Recommended Changes with Usage of AppRouter Removed Mocked Auth User)]
-If you have previously enabled the mocking of tenant and user information via the environment variable `ALLOW_MOCKED_AUTH_HEADER` as mentioned in [Step 5](https://blogs.sap.com/2017/06/23/step-5-resilience-with-hystrix/) of this tutorial series, you should now remove this setting. Execute the following command:
-```
-cf unset-env firstapp ALLOW_MOCKED_AUTH_HEADER
-```
+
+**_TODO_** `ALLOW_MOCKED_AUTH_HEADER` removed
+
+remove this part??
+
+> If you have previously enabled the mocking of tenant and user > information via the environment variable > `ALLOW_MOCKED_AUTH_HEADER` as mentioned in [Step 5](https://> blogs.sap.com/2017/06/23/step-5-resilience-with-hystrix/) of > this tutorial series, you should now remove this setting. > Execute the following command:
+> ```
+> cf unset-env firstapp ALLOW_MOCKED_AUTH_HEADER
+> ```
 
 [DONE]
 [ACCORDION-END]

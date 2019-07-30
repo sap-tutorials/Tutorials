@@ -66,7 +66,7 @@ During the generation process, Maven will require additional parameters to form 
   -  **`artifactId`** - An identifier for your application (e.g. `firstapp`)
   -  **`version`** - The version of your application (e.g. `1.0-SNAPSHOT`)
   -  **`package`** - The name of the top-level package your source code will reside in (typically equal to your **`groupId`**, e.g. `com.sap.cloud.sdk.tutorial`). Please pay attention to package and directory names in any upcoming source code when using a different package name than suggested here.
-  -  **`uniqueHostname`** - A unique identifier to determine your initial project URL on `Cloud Foundry`. This value must be unique across your `Cloud Foundry` region, but it can easily be changed later on. We recommend _Application Name + some random number_, e.g. `firstapp-D123456` (please, use a different number than D123456 - this is likely already taken by another developer trying out their sample application).
+  -  **`uniqueHostname`** - A unique identifier to determine your initial project URL on `Cloud Foundry`. Use \<appname>-\<SUBACCOUNT> here, e.g. `firstapp-p123456trial`. This format is important for authentication in later steps of this tutorial and at the same time assures, that the path is unique across your `Cloud Foundry` region. It can easily be changed later on if you want.
 
 After providing these values, Maven will generate your project from the archetype.
 
@@ -194,7 +194,7 @@ Now the previously mentioned `manifest.yml` comes into play – it's the deploym
 
 - name: firstapp
   memory: 1024M
-  host: firstapp-D123456
+  host: firstapp-<SUBACCOUNT>
   # random-route: true # used instead of "host"
   path: application/target/firstapp-application.war
   buildpack: sap_java_buildpack
