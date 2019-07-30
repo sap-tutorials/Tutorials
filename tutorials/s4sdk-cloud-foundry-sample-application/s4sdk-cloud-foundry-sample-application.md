@@ -58,7 +58,7 @@ The CLI will ask you for your mail and your password. After entering these, you 
 To generate your first project from the Maven archetype, run the following command: (for Windows PowerShell see [Appendix](Troubleshooting))
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.s4hana.archetypes -DarchetypeArtifactId=scp-cf-tomee -DarchetypeVersion=RELEASE
+mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.sdk.archetypes -DarchetypeArtifactId=scp-cf-tomee -DarchetypeVersion=RELEASE
 ```
 During the generation process, Maven will require additional parameters to form your project:
 
@@ -259,7 +259,7 @@ Now you have a strong basis for developing your own cloud application for `SCP C
 If you are using `PowerShell` on `Windows`, always put Maven arguments (supplied with `-D`) in quotes, for example:
 
 ```
-mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=RELEASE"
+mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.sdk.archetypes" "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=RELEASE"
 ```
 
 [DONE]
