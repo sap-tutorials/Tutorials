@@ -125,7 +125,7 @@ To get started, open your previously created `Hello World` project (in our case,
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServlet.java`
 
-**_TODO_** Adapt the code for version 3
+**_TODO_** Validate. Logger is deprecated. Replace it?
 
 ```java
 package com.sap.cloud.sdk.tutorial;
@@ -385,8 +385,7 @@ Navigate to the integration-tests project and create a new class:
 
 `./integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`
 
-**_TODO_** Adapt the code for version 3
-
+**_TODO_** Validate. mockErpDestination okay?
 
 ```java
 package com.sap.cloud.sdk.tutorial;
@@ -507,9 +506,9 @@ systems:
     # proxy: "http://my-proxy:8080"
 
 erp:
-  default: "`ErpQueryEndpoint`"
+  default: "ErpQueryEndpoint"
   systems:
-    - alias: "`ErpQueryEndpoint`"
+    - alias: "ErpQueryEndpoint"
       uri: "https://my300470.s4hana.ondemand.com"
       systemId: "`ErpQueryEndpoint`"                  # optional, defaults to ""
       sapClient: "001"                 # optional, defaults to default SAP client
