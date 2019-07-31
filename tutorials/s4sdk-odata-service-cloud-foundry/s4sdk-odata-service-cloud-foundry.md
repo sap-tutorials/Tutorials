@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Prerequisites  
- - In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the cost center service introduced here with any other API published on the SAP API `BusinessHub`. If you do not have an `S/4HANA` system available, you may use a public service such as the [Northwind OData Service](http://services.odata.org/V2/Northwind/Northwind.svc) as a fallback solution.
+ - In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the business partner service introduced here with any other API published on the SAP API `BusinessHub`. If you do not have an `S/4HANA` system available, you may use a public service such as the [Northwind OData Service](http://services.odata.org/V2/Northwind/Northwind.svc) as a fallback solution.
 
 ## Details
 Please note that depending on the platform you are using (`Neo` or `Cloud Foundry`), the configuration to the respective `S/4HANA` system might be different. In this tutorial, you will find the methods using which you can access your system on `Cloud Foundry`. For `SAP Cloud Platform Cloud Foundry`, the following `S/4HANA` connection capabilities exist.
@@ -77,9 +77,9 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
-**_TODO_** Adapt the code for version 3
-
 ```Java
+final HttpDestination destination = DestinationAccessor.getDestination("ErpQueryEndpoint").asHttp();
+
 final List<BusinessPartner> businessPartners =
         new DefaultBusinessPartnerService()
                 .getAllBusinessPartner()
@@ -89,10 +89,10 @@ final List<BusinessPartner> businessPartners =
                         BusinessPartner.IS_MALE,
                         BusinessPartner.IS_FEMALE,
                         BusinessPartner.CREATION_DATE)
-                .execute();
+                .execute(destination);
 ```
 
-Using the OData VDM we now have access to an object representation of a specific OData service, in this case the `DefaultBusinessPartnerService` (default implementation of the interface `BusinessPartnerService`). So now there's no more need to know the endpoint's service path, service name or entity collection name. We can call this service's `getAllBusinessPartner()` function to retrieve a list of all the business partners from the system.
+Using the OData VDM we now have access to an object representation of a specific OData service, in this case the `DefaultBusinessPartnerService` (default implementation of the interface `BusinessPartnerService`). So now there's no more need to know the endpoint's service path, service name or entity collection name. We can call this service's `getAllBusinessPartner()` function to retrieve a list of all the business partners from the system. The system the service will use is passed as a destination in the `execute()` call. In this tutorial our destination is called `ErpQueryEndpoint` and you will learn a little later where it is set up.
 
 Now take a look at the `select()` function. Instead of passing strings that represent the field of the entity, we can simply use the static fields provided by the `BusinessPartner` class. So not only have we eliminated the risk of spelling errors, we also made it type-safe! Again, the same applies for `filter()` and `orderBy()`. For example, filtering to male business partners becomes as easy as `.filter(BusinessPartner.IS_MALE.eq(true))`– note the type-safe comparison.
 
@@ -155,6 +155,7 @@ public class BusinessPartnerServlet extends HttpServlet {
     private static final Logger logger = CloudLoggerFactory.getLogger(BusinessPartnerServlet.class);
 
     private static final String CATEGORY_PERSON = "1";
+    private final HttpDestination destination = DestinationAccessor.getDestination("ErpQueryEndpoint").asHttp();
 
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
@@ -172,11 +173,10 @@ public class BusinessPartnerServlet extends HttpServlet {
                             .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
                             .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
                             .top(200)
-                            .execute();
+                            .execute(destination);
 
             response.setContentType("application/json");
             response.getWriter().write(new Gson().toJson(businessPartners));
-
         } catch (final ODataException e) {
             logger.error(e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
@@ -185,10 +185,6 @@ public class BusinessPartnerServlet extends HttpServlet {
     }
 }
 ```
-
-**_TODO_** Explain Destination stuff here
-
-Let's pick the code apart: ....
 
 In the servlet GET method, we initialize an instance of the `BusinessPartnerService` to prepare the query to S/4HANA with the help of the SDK's Virtual Data Model. We call the method `getAllBusinessPartners`, which represents the operation of the OData service that we want to call. WIth the fluent query helper returned by this method, we can gradually build up the query:
 
@@ -199,7 +195,8 @@ In the servlet GET method, we initialize an instance of the `BusinessPartnerServ
 
 Finally, having prepared the query, we call the `execute` method. This method does a lot of the heavy lifting necessary to connect to an S/4HANA system and relieves us as developers from dealing with complex aspects such as:
 
-- the configuration which system to connect to (in a multi-tenant environment) – by transparently accessing the destination service of SAP Cloud Platform,
+**_TODO_** Update this?
+> - the configuration which system to connect to (in a multi-tenant environment) – by transparently accessing the destination service of SAP Cloud Platform,
 - the connectivity to this system, which may reside on-premise behind a corporate firewall, – by means of the connectivity service and the optional Cloud Connector, and
 - the authentication to this system using potentially vastly different authentication flows (basic authentication, principal propagation, OAuth2).
 
@@ -217,25 +214,25 @@ Any `ODataException` thrown by the OData call is caught and logged, before retur
 
 Depending on your chosen archetype and SAP Cloud Platform setup you can deploy the project on either *SAP Cloud Platform Neo* or *SAP Cloud Platform CloudFoundry*.
 
-![list of businesspartners from ERP](post-4-businesspartners-result.png)
+**Provide Destinations for your Application**
 
-You need to supply the destination of your SAP S/4HANA system before you deploy the new version to Cloud Foundry or run the application on the local server.
+In order for your application to run you need to provide it with information about your S/4HANA system. Your BusinessPartnerService needs an URL and a means of authentication in order to reach the system. This information is provided in the form of a destination that we retrieve in our servlet via a name, in our case `ErpQueryEndpoint`. There are mutliple ways to create such a destination. For now we will provide it to our application by creating an environment variable that holds the information. We will create such a variable now both for a local deployment and a deployment on SCP Cloud Foundry.
 
 **Run on a Local Server**
 
 As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. For Mac the command looks like this:
 
-**_TODO_** `ErpQueryEndpoint` removed
-
 ```bash
 export destinations='[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD"}]'
 ```
 
-Please change the values URL, USER and PASSWORD accordingly. Make sure the variable has been properly set:
+Please change the values URL, USER and PASSWORD accordingly. You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
 ```bash
 echo $destinations
 ```
+
+_Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
 
 Be aware that the variable is only available in your current terminal session. If you are having trouble settings the variable, take a look at the [troubleshooting section](Troubleshooting). Once the variable has been set, re-build and start the server as follows:
 
@@ -245,21 +242,15 @@ mvn clean install
 mvn tomee:run -pl application
 ```
 
-Visit `http://localhost:8080/businesspartners` to see your new feature in action.
+Visit `http://localhost:8080/businesspartners` to see your new feature in action. It should look similar to this web page:
 
-**_TODO_** `ErpQueryEndpoint` removed
-
-_Note: You can also add more ERP endpoints to this JSON representation, following the same schema. However, please note that `ErpQueryEndpoint` corresponds to the destination used by default by the execute method of the VDM._
+![list of businesspartners from ERP](post-4-businesspartners-result.png)
 
 **Connecting to SAP S/4HANA from SAP Cloud Platform Cloud Foundry**
 
-In order to perform queries against your ERP system when the application is deployed on Cloud Foundry, you have to inform Cloud Foundry about the location of your ERP endpoint.
-
-To do this, you can either supply the same environment variable `destinations` that we used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of SAP Cloud Platform Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, we explain how to use the destination service in detail below.
+On SCP Cloud Foundry, you can either supply the same environment variable `destinations` that we used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of SAP Cloud Platform Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, we explain how to use the destination service in detail below.
 
 Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
-
-**_TODO_** `ErpQueryEndpoint` removed
 
  ```
  cf set-env firstapp destinations '[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD"}]'
@@ -270,7 +261,7 @@ Again, supply the correct values for your S/4HANA system. Afterwards, rebuild an
 ```
 cf set-env firstapp destinations "[{name: \"ErpQueryEndpoint\", url: \"https://URL\", username: \"USER\", password: \"PASSWORD\"}]"
 ```
-Whenever this environment variable is set, the SAP Cloud SDK will use it to determine destinations. Make sure to delete it with `cf unset-env firstapp destinations` as soon as you are done with the initial testing and when you want to use the real destination service.
+Whenever this environment variable is set, the SAP Cloud SDK will use it to determine destinations. Make sure to delete it with `cf unset-env firstapp destinations` as soon as you are done with the initial testing and when you want to use the real destination service. You can now push the application to CF and test it if you like.
 
 **Using the Destination Service on SAP Cloud Platform Cloud Foundry**
 
@@ -296,7 +287,7 @@ applications:
 
 - name: firstapp
   memory: 1024M
-  host: firstapp-D123456
+  host: firstapp-<SUBACCOUNT>
   path: application/target/firstapp-application.war
   buildpack: sap_java_buildpack
   env:
@@ -310,25 +301,24 @@ applications:
 #  - my-connectivity
 ```
 
-Please make sure to have the `host` property declared with a unique name of your choice. The recommended way is to include the username as suffix. The hostname will later be used as subdomain of a publicly reachable route. Since this is a setup with multiple, dedicated instances, a `random-route` should be omitted.
+**_TODO_** `ALLOW_MOCKED_AUTH_HEADER` removed, validate
 
-**_TODO_** `ALLOW_MOCKED_AUTH_HEADER` removed
+> As of version 3.0.0 of the Cloud SDK you are not required to explicitly enable unauthorized access to your web service anymore. 
 
-You are required to explicitly enable unauthorized access to your web service. As of version 3.0.0 of the Cloud SDK you achieve this by .........
+**_TODO_** No tenant and user are now allowed
 
-The SDK will fall back to providing mock tenant and user information when no actual tenant information is available. This setting must never be enabled in productive environments. It is only meant to make testing easier if you do not yet implement the authentication mechanisms of Cloud Foundry. If you want to learn more about authorizing user access in a productive environment, please find `Step 7: Securing Your Application`.
+> The SDK will fall back to providing mock tenant and user information when no actual tenant information is available. This setting must never be enabled in productive environments. It is only meant to make testing easier if you do not yet implement the authentication mechanisms of Cloud Foundry. If you want to learn more about authorizing user access in a productive environment, please find `Step 7: Securing Your Application`.
 
 With this, the setup is complete and we can re-deploy the application. However, we still need to configure the destination to our SAP S/4HANA system. We will do this in the next section and then deploy the application to Cloud Foundry.
 
 **Configure Destinations**
-Customers of our application can use the Cloud Platform cockpit to configure destinations. We will use the cockpit to define our destination as well.
 
-**_TODO_** `ErpQueryEndpoint` removed
+Customers of our application can use the Cloud Platform cockpit to configure destinations. We will use the cockpit to define our destination as well.
 
 1. Navigate to the Cloud Foundry subaccount within your global account that you have used before to deploy the application (see Step 3). In case of a trial account, the subaccount will be called trial by default.
 2. In the menu on the left, expand Connectivity and select Destinations.
 3. Click on New Destination and enter the following values into the input fields:
-  - Name: `ErpQueryEndpoint` (this is the destination accessed by default by the SAP Cloud SDK)
+  - Name: `ErpQueryEndpoint`
   - URL: https://URL (URL to your SAP S/4HANA system)
   - Authentication: choose `BasicAuthentication`
   - Provide credentials of your technical user in the User and Password fields.
@@ -437,7 +427,7 @@ public class BusinessPartnerServletTest {
     @BeforeClass
     public static void beforeClass() {
         mockUtil.mockDefaults();
-        mockUtil.mockErpDestination();
+        mockUtil.mockErpDestination("ErpQueryEndpoint", "ErpQueryEndpoint");
     }
 
     @Before
@@ -462,13 +452,11 @@ public class BusinessPartnerServletTest {
 }
 ```
 
-Please change the value `URL` accordingly.
-
-What you see here, is the usage of `RestAssured` on a JSON service backend. The HTTP GET request is run on the local route `/costcenters`, the result is validated with multiple assertions:
+What you see here in the actual `testService` method, is the usage of `RestAssured` on a JSON service backend. The HTTP GET request is run on the local route `/businesspartners`, the result is validated with multiple assertions:
 
   - HTTP response status code: 200 (OK)
-  - HTTP `ContentType`: `application/json`
-  - HTTP body is valid JSON code, checked with `costcenters-schema.json` definition
+  - HTTP `ContentType` is `application/json`
+  - HTTP body is valid JSON code, checked with `businesspartners-schema.json` definition
 
 [DONE]
 
@@ -507,20 +495,29 @@ If you run your application on SAP Cloud Platform, the SDK can simply read the E
 
 Luckily, the SDK provides a utility class for such purposes – `MockUtil`. This class allows us to mock the ERP destinations we'd typically find on `CloudFoundry`. To provide `MockUtil` with the necessary information, you'll need to add a `systems.json` or `systems.yml` file to your test resources directory. `MockUtil` will read these files and provide your tests with the ERP destinations accordingly. Adapt the URL as before.
 
-`./integration-tests/src/test/resources/systems.json`
+`./integration-tests/src/test/resources/systems.yml`
 
-```json-schema
-{
-  "erp": {
-    "default": "ERP_TEST_SYSTEM",
-    "systems": [
-      {
-        "alias": "ERP_TEST_SYSTEM",
-        "uri": "https://URL"
-      }
-    ]
-  }
-}
+**_TODO_** Adapt outdated defaults (if any?), maybe remove unnecessary items. systems: nececssary? default erp system still valid?
+
+```yaml
+---
+systems:
+  - alias: "ANY_SYSTEM"
+    uri: "https://my300470.s4hana.ondemand.com"
+    # proxy: "http://my-proxy:8080"
+
+erp:
+  default: "`ErpQueryEndpoint`"
+  systems:
+    - alias: "`ErpQueryEndpoint`"
+      uri: "https://my300470.s4hana.ondemand.com"
+      systemId: "`ErpQueryEndpoint`"                  # optional, defaults to ""
+      sapClient: "001"                 # optional, defaults to default SAP client
+      locale: "en"                     # optional, defaults to English (US)
+      erpEdition: "cloud"              # optional, defaults to "cloud"
+     # proxy: "http://my-proxy:8080"    # optional
+     # applicationServer: "my-erp.com"  # optional, defaults to URI host
+     # instanceNumber: "00"             # optional, defaults to "00"
 ```
 
 That's it! You can now start all tests with the default Maven command:
@@ -551,7 +548,7 @@ To do this, create the following `credentials.yml` file in a save location (e.g.
 
 ---
 credentials:
-- alias: "ERP_TEST_SYSTEM"
+- alias: "ErpQueryEndpoint"
   username: "user"
   password: "pass"
 
@@ -586,7 +583,7 @@ In case you are trying to connect to an OData service endpoint on a server witho
 
 - If you are are using the environment variable approach, please adapt the destinations environment variable to additionally include the properties map:
 
-`[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD", properties: [{key: "TrustAll", value: "true"}]}]`
+`[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD", trustAll: "true"}]`
 
 - If you are using the destination service on Cloud Foundry, add a new additional property to your destination in the Cloud Platform cockpit. Enter TrustAll into the first input (dropdown) field and TRUE into the second field.
 

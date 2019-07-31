@@ -207,7 +207,7 @@ The manifest contains a list of applications that will be deployed to `Cloud Fou
 
   - **`name`**	- This is the identifier of your application within your organization and your space in `SCP Cloud Foundry`.
   - **`memory`** -	The amount of memory allocated for your application.
-  - **`host`** -	Determines the URL of your application after deploying it (this is where the `uniqueHostname` from the generation process is being used).
+  - **`host`** -	Determines the URL of your application after deploying it (this is where the `uniqueHostname` from the generation process is being used). The hostname will later be used as subdomain of a publicly reachable route. Since this is a setup with multiple, dedicated instances, a `random-route` should be omitted.
   - **`path`** -	The relative path to the artifact to be deployed.
   - **`buildpack`** -	A `buildpack` is what `Cloud Foundry` uses to build and deploy your application. Since this is a Java application, we use `sap_java_buildpack`.
   - **`env`**	- Here we can provide additional application specific environment variables. For example we specify that we want to use a `TomEE` container as our target runtime.
