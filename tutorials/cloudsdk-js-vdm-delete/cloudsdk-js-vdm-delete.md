@@ -142,35 +142,6 @@ function deleteBusinessPartnerAddress(businessPartnerId: string, addressId: stri
 }
 ```
 
-As of version `1.7.0` of the SAP Cloud SDK, you can alternatively pass an entity to the `delete` method instead of the entity's key fields, like this:
-
-```JavaScript / TypeScript
-function deleteBusinessPartnerAddress(address: BusinessPartnerAddress): Promise<void> {
-  return BusinessPartnerAddress.requestBuilder()
-    .delete(address)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
-}
-```
-
-This has the advantage that the version identifier of the entity is set automatically. When going with the first approach, you would have to manually supply the version identifier like this (notice the changed signature of `deleteBusinessPartnerAddress`):
-
-```JavaScript / TypeScript
-function deleteBusinessPartnerAddress(
-  businessPartnerId: string,
-  addressId: string,
-  versionIdentifier: string
-): Promise<void> {
-  return BusinessPartnerAddress.requestBuilder()
-    .delete(businessPartnerId, addressId)
-    .setVersionIdentifier(versionIdentifier)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
-}
-```
-
 [OPTION END]
 
 [OPTION BEGIN [JavaScript]]
@@ -185,31 +156,10 @@ function deleteBusinessPartnerAddress(businessPartnerId, addressId) {
     });
 }
 ```
-As of version `1.7.0` of the SAP Cloud SDK, you can alternatively pass an entity to the `delete` method instead of the entity's key fields, like this:
 
-```JavaScript
-function deleteBusinessPartnerAddress(address) {
-  return BusinessPartnerAddress.requestBuilder()
-    .delete(address)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
-}
-```
-
-This has the advantage that the version identifier of the entity is set automatically. When going with the first approach, you would have to manually supply the version identifier like this (notice the changed signature of `deleteBusinessPartnerAddress`):
-
-```JavaScript
-function deleteBusinessPartnerAddress(businessPartnerId, addressId, versionIdentifier) {
-  return BusinessPartnerAddress.requestBuilder()
-    .delete(businessPartnerId, addressId)
-    .setVersionIdentifier(versionIdentifier)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
-}
-```
 [OPTION END]
+
+As of version `1.7.0` of the SAP Cloud SDK, you can alternatively pass an entity to the `delete` method instead of the entity's key fields. This has the advantage that the version identifier of the entity is set automatically. When going with the first approach, you would have to manually supply the version identifier using the `setVersionIdentifier` method. Therefore, if you already have an instance of the entity you want to delete, passing it directly is the easier approach.
 
 Finally, be aware that executing a delete request will return a `Promise<void>`.
 
