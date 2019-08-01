@@ -65,7 +65,7 @@ The App Router can be installed in two different ways: (1) Download from Service
 [ACCORDION-BEGIN [Step 3: ](Get App Router via SAP NPM Registry)]
 This alternative approach requires that you have npm installed on your machine.
 
-1. Go to your favourite <destLocation> and create the approuter directory
+1. Go to your favourite `<destLocation>` and create the approuter directory
 
     ```
     cd <destLocation>
@@ -98,7 +98,7 @@ This alternative approach requires that you have npm installed on your machine.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Proceed with the App Router Setup independent of your download preferences)]
-1. Within **\<destLocation\>/approuter** create a new file called **`xs-app`.json** with the following content:
+1. Within **`<destLocation>/approuter`** create a new file called **`xs-app.json`** with the following content:
 ```
 {
   "welcomeFile": "index.html",
@@ -110,7 +110,7 @@ This alternative approach requires that you have npm installed on your machine.
 }
 ```
 
-2. Within \<destLocation\> create a new **`manifest.yml`** file for the AppRouter microservice with the following content.
+2. Within `<destLocation>` create a new **`manifest.yml`** file for the AppRouter microservice with the following content.
 
 ```
 ---
@@ -126,7 +126,7 @@ applications:
   services:
     - my-xsuaa
 ```
-Adapt the file as follows: In the **`host`** replace \<SUBACCOUNT\> with your actual account. In `destinations` replace \<APPLICATION_URL> with the actual URL of your previously deployed app. Also, depending on your region, you will have to adapt the `eu10` in the `TENANT_HOST_PATTERN` to your region.
+Adapt the file as follows: In the **`host`** replace `<SUBACCOUNT>` with your actual account. In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Also, depending on your region, you will have to adapt the `eu10` in the `TENANT_HOST_PATTERN` to your region.
 
 **Note**: It is mandatory that your app URL conforms the format `<APP_NAME>-<SUBACCOUNT>.cfapps.<REGION_IDENTIFIER>.hana.ondemand.com`. The authentication mechanism will identify you by pulling the user-id (`SUBACCOUNT`) out of the subdomain.
 
@@ -138,7 +138,7 @@ Note that the `TENANT_HOST_PATTERN` variable is only required in real multi-tena
 
 **Destinations** is a variable that declares the internal routes from the App Router to the underlying backend microservices. As we only have one hello world microservice yet, we define only one destination called app-destination here. This app-destination is referenced by the previously created `xs-app`.json file.
 
-The **services section** declares to bind our own XSUAA service instance to the App Router. This binding will ensure a corresponding VCAP`_SERVICE` entry that holds the client ID, client secret and public key that is required to validate any incoming OAuth token/JWT from the XSUAA service:
+The **services section** declares to bind our own XSUAA service instance to the App Router. This binding will ensure a corresponding `VCAP_SERVICE` entry that holds the client ID, client secret and public key that is required to validate any incoming OAuth token/JWT from the XSUAA service:
 
 ![XSUAA service](Figure3-1-1.png)
 
@@ -147,7 +147,7 @@ The **services section** declares to bind our own XSUAA service instance to the 
 
     We put this file to `<destLocation>/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
 
-    >Note that the **`xsappname`** has to be unique within the entire XSUAA instance. We follow here the same pattern using our **\<appID\>-\<tenantID\>**. In my case this is **`firstapp-p1942765239trial`**.
+    >Note that the **`xsappname`** has to be unique within the entire XSUAA instance. We follow here the same pattern using our **`<appID>-<tenantID>`**. In my case this is **`firstapp-p1942765239trial`**.
 
     >Note that as explained above, tenant-mode: shared assumes a multi-tenant application and will require the TENANT`_HOST_PATTERN` variable to be declared. You may also use "tenant-mode": "dedicated" if you develop a single-tenant application.
 
@@ -220,7 +220,7 @@ The first step is to get some additional Java libs from Service Marketplace. To 
 
 1. Download additional XS security libs from service marketplace: <https://launchpad.support.sap.com/#/softwarecenter/search/XS_JAVA>
 2. At the time of writing the latest package is **XS`_JAVA_1-70001362.ZIP`** (19.03.2018).
-3. **Unzip <destLocation>**
+3. **Unzip `<destLocation>`**
 4. Install XS Security Libs to your local maven repo using:
 
 ```
@@ -236,7 +236,7 @@ In the second step, we go back to our `HelloWorld` or Business Partner applicati
 
 ![application pom](Figure7-1.png)
 
-In the **`<dependencies>`** section of the **application/`pom.xml`**, we enhance the following additional dependencies to our project:
+In the **`<dependencies>`** section of the **`application/pom.xml`**, we enhance the following additional dependencies to our project:
 
 ```
 <!-- Authentication and Authorization imports with Spring Security -->
@@ -482,7 +482,7 @@ Now that we saved the backend microservice from unauthenticated users, we also w
 
 **Enhance spring-security.`xml` to protect routes with OAuth scopes**
 
-The backend itself can be easily adapted based on the **spring-security.`xml`**. In this case, we protect the **/hello** route with our **Display** OAuth Scope. Introduce (or uncomment) the following line within the **<sec:http>** element:
+The backend itself can be easily adapted based on the **spring-security.`xml`**. In this case, we protect the **/hello** route with our **Display** OAuth Scope. Introduce (or uncomment) the following line within the **`<sec:http>`** element:
 ```
 <sec:intercept-url pattern="/hello" access="#oauth2.hasScope('${xs.appname}.Display')" method="GET" />
 ```
@@ -575,7 +575,7 @@ So far, we have used the XSUAA service itself as the user provider. However, in 
 
 To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.
 
-You can retrieve the metadata from your XSUAA tenant by following the pattern **https://<tenantID>.`authentication.eu10.hana.ondemand.com`/`saml`/metadata**. In my case, that would be `https://p1942765239trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the `metatdata` to your local computer.
+You can retrieve the metadata from your XSUAA tenant by following the pattern **`https://<tenantID>.authentication.eu10.hana.ondemand.com/saml/metadata`**. In my case, that would be `https://p1942765239trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the `metatdata` to your local computer.
 
 Second, you need to import the metadata into your IdP. In the following, we use an own SAP Cloud Identity tenant to do this.
 
