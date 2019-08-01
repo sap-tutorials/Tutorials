@@ -144,7 +144,7 @@ import java.util.List;
 import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
 
-import com.sap.cloud.sdk.s4hana.datamodel.odata.helper.Order;
+import com.sap.cloud.sdk.datamodel.odata.helper.Order;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
 
