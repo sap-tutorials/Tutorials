@@ -1,16 +1,16 @@
 ---
-title: Call a Remote Function Module From ABAP Envionment
+title: Call a Remote Function Module From ABAP Environment
 description: Call a remote function module located in an on-Premise system, such as an S/4HANA System, from the ABAP Environment
 auto_validation: true
 time: 60
-tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ## Prerequisites
 -	A SAP CP Neo subaccount
 -	An ABAP on-premise system, such as [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/)
--	In this on-premise system, a SAP Cloud Connector, configured with your Neo sub-account. See: [SAP Help Portal: SAP Cloud Connector](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/642e87f1492146998a8eb0779cd07289.html)
+-	In this on-premise system, a SAP Cloud Connector, configured with your Neo sub-account. See: [SAP Help Portal: SAP Cloud Connector: Installation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html)
 
 
 
@@ -62,15 +62,29 @@ There are two problems when setting up connectivity between the Cloud Platform A
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check your SAP Cloud Connector configuration)]
-First, in SAP Cloud Connector Overview, check your configuration:
+[ACCORDION-BEGIN [Step 1: ](Configure SAP Cloud Connector)]
+First, you need to connect your ABAP on-premise system to a Neo subaccount by means of SAP Cloud Connector.
+
+1. Log on to SAP Cloud Connector:
+    - Address = `https://localhost:<port>` (Default = 8443)
+    - User = Administrator
+    - Initial password = Manage (You will change this when you first log in)
+
+2. Choose **Add Subaccount**:
+  - **Region** = e.g. Europe (Rot). You can find this in SAP Cloud Cockpit (see screenshot below)
+  - **Subaccount** = "Neo Technical Name". You can find this by choosing your SAP Cloud Platform, NEO, subaccount in SAP Cloud Cockpit and choosing the **information (i)** icon. (see screenshot below)
+  - **Display Name** = (Neo Subaccount) Display Name. You can find this in by choosing your SAP Cloud Platform, NEO, subaccount in SAP Cloud Cockpit (see screenshot below)
+  - **Subaccount User** = for the Neo Subaccount
+  - **Password**
+  - **Location ID** = Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. your initials, or your location
+
+  ![Image depicting step1g-create-subacc](step1g-create-subacc.png)
+  ![Image depicting step1f-choose-subacc](step1f-choose-subacc.png)
+  ![Image depicting step1b-neo-tech-name ](step1b-neo-tech-name.png)
+
+3. Your configuration should now look like this:
 
   ![Image depicting step1-check-scc](step1-check-scc.png)
-
-  -	Leave the Location ID empty.
-  -	Note the technical name of the subaccount. You can find this by choosing your SAP Cloud Platform, NEO, subaccount in SAP Cloud Cockpit and choosing the **information (i)** icon.
-
-  ![Image depicting step1b-neo-tech-name ](step1b-neo-tech-name.png)
 
 [DONE]
 [ACCORDION-END]
@@ -80,7 +94,7 @@ Now, still in the Cloud Connector, enter the resource you need, `RFC_SYSTEM_INFO
 
 1. In your subaccount, choose **Cloud to On-Premise > Access Control**.
 
-2. Check the **Mapping Virtual to Internal System**. You will need the `SID` and port later.
+2. Check the **Mapping Virtual to Internal System**. Here, `myHost` represents an external hostname, so that you can hide the internal hostname from the outside world. You will need this external hostname and port later. Check that the status = `Reachable`. If not, check that you chose the correct port, or whether an internal firewall is preventing communication.
 
     ![Image depicting step1a-scc-resources-sid](step1a-scc-resources-sid.png)  
 
@@ -120,7 +134,7 @@ You will now create two destinations in the ABAP Environment. These must be crea
     - Name, e.g. : `S4HTEST_HTTP_XXX` (You should include the suffix `HTTP` and replace `XXX` with your initials or group number.)
     - Type: `HTTP`
     - Description, e.g. Test S4H HTTP connection
-    - URL: `http://<SID>:51080/sap/bc/ping` - where `SID` = the System ID of your on-premise ABAP System
+    - URL: `http://<myHost>:51080/sap/bc/ping` - where `myHost` = the external hostname of your on-premise ABAP System
     - `OnPremise`
     - `BasicAuthentication`
     - User: Your user for the on-premise ABAP system
@@ -140,12 +154,12 @@ The destination appears in the list.
     - Name, e.g. : `S4HTEST_RFC_XXX` (You should include the suffix `RFC` and use the same prefix as for your HTTP connection)
     - Type: `RFC`
     - Description, e.g. Test S4H RFC connection
-    - Location ID: *blank*
+    - Location ID: same as in step 1, e.g. your initials
     - User: Your user
     - Password: Your password
 
 2. Add the following additional properties and values, by choosing **New Property**:
-    - `jco.client.ashost` = `<Your SID>` - again, the System ID of your on-premise ABAP System in lower-case
+    - `jco.client.ashost` = `<myHost>` - again, the external hostname of your on-premise ABAP System in lower-case
     - `jco.client.client` = `<Your ABAP System client`, e.g. 100
     - `jco.client.sysnr` = `<Your ABAP System number>`, e.g. 10
 
@@ -157,12 +171,12 @@ The destination appears in the list.
 [ACCORDION-BEGIN [Step 6: ](Create a Communication System for SAP Cloud Connector)]
 1. Again, in the Dashboard, choose **Communication Systems > New**.
 
-2. Enter the credentials for an administration user for your SAP CP Neo account:
-      - Host name
+2. Enter the credentials for the SAP Cloud Connector administration user for your SAP CP Neo account (i.e. the same user as in step 1 above):
+      - Hostname
 
         ![Image depicting step8b-comm-system-1](step8b-comm-system-1.png)
 
-      - Administration user and password
+      - User and Password
 
         ![Image depicting step8c-comm-system-2](step8c-comm-system-2.png)
 
