@@ -50,7 +50,7 @@ The App Router can be installed in two different ways: (1) Download from Service
 
 ### Alternative 1: Get the App Router via Service Marketplace
 
-1. Before you can start the setup and configuration of the App Router component you need to download the XSA `Javascript` package from Service Marketplace: <https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100200003885&V=MAINT&TA=ACTUAL&PAGE=SEARCH/XS%20JAVASCRIPT%201>. At the time of writing the package **`XS_JSCRIPT14_3-70001363.ZIP`** is the most recent one.
+1. Before you can start the setup and configuration of the App Router component you need to download the XSA `Javascript` package from Service Marketplace: <https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100200003885&V=MAINT&TA=ACTUAL&PAGE=SEARCH/XS%20JAVASCRIPT%201>. At the time of writing the package **`XS_JSCRIPT14_10-70001363.ZIP`** is the most recent one.
 
 2. After downloading the package extract it to your favorite **`<location>`**
 
@@ -136,7 +136,7 @@ The `TENANT_HOST_PATTERN` is a variable that declares the pattern how multiple t
 
 Note that the `TENANT_HOST_PATTERN` variable is only required in real multi-tenant application, i.e, applications where a physical deployment serves multiple clients from the same deployment. We assume in this blog series that we want to build multi-tenant applications, as we aim towards cloud-native development. However, this variable is not necessary if you have a single-tenant application. To realize this, the `xs-security.json` security descriptor may declare tenant-mode: dedicated (see step 5 below).
 
-**Destinations** is a variable that declares the internal routes from the App Router to the underlying backend microservices. As we only have one hello world microservice yet, we define only one destination called app-destination here. This app-destination is referenced by the previously created `xs-app`.json file.
+**Destinations** is a variable that declares the internal routes from the App Router to the underlying backend microservices. As we only have one hello world microservice yet, we define only one destination called app-destination here. This app-destination is referenced by the previously created `xs-app.json` file.
 
 The **services section** declares to bind our own XSUAA service instance to the App Router. This binding will ensure a corresponding `VCAP_SERVICE` entry that holds the client ID, client secret and public key that is required to validate any incoming OAuth token/JWT from the XSUAA service:
 
@@ -147,9 +147,9 @@ The **services section** declares to bind our own XSUAA service instance to the 
 
     We put this file to `<destLocation>/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
 
-    >Note that the **`xsappname`** has to be unique within the entire XSUAA instance. We follow here the same pattern using our **`<appID>-<tenantID>`**. In my case this is **`firstapp-p1942765239trial`**.
+    **_Note_**: The **`xsappname`** has to be unique within the entire XSUAA instance. We follow here the same pattern using our **`<appID>-<tenantID>`**.
 
-    >Note that as explained above, tenant-mode: shared assumes a multi-tenant application and will require the TENANT`_HOST_PATTERN` variable to be declared. You may also use "tenant-mode": "dedicated" if you develop a single-tenant application.
+    **_Note_**: As explained above, the `tenant-mode: shared` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use "tenant-mode": "dedicated" if you develop a single-tenant application.
 
     ```
     {
@@ -173,11 +173,11 @@ The **services section** declares to bind our own XSUAA service instance to the 
     }
     ```
 
-`4.` We then create a service instance called **`my-xsuaa`** of the XSUAA service by issuing the following command and using the **`xs-security`.json** file:  
+`4.` We then create a service instance called **`my-xsuaa`** of the XSUAA service by issuing the following command and using the **`xs-security.json`** file:  
 ```
 cf create-service xsuaa application my-xsuaa -c xs-security.json
 ```
-- If you have created this instance of the XSUAA service before without the `xs-security`.json parameter, you can unbind and delete the existing instance with these commands before creating it with the above command:
+- If you have created this instance of the XSUAA service before without the `xs-security.json` parameter, you can unbind and delete the existing instance with these commands before creating it with the above command:
 ```
 cf unbind-service firstapp my-xsuaa
 cf delete-service my-xsuaa​
@@ -187,7 +187,7 @@ cf delete-service my-xsuaa​
 
 ![folder](Figure4-1.png)
 
-You may have different content in the **approuter** folder depending on the download alternative you have chosen. Ensure that **`xs-app`.json** and **`package`.json** and the **node`_modules`** directory with content are present.
+You may have different content in the **approuter** folder depending on the download alternative you have chosen. Ensure that **`xs-app.json`** and **`package.json`** and the **node`_modules`** directory with content are present.
 
 `6.` Then deploy the AppRouter using the following (with the appropriate API endpoint of your Cloud Foundry region):
 ```
@@ -208,7 +208,7 @@ cf push
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Protect your backend microservice)]
-After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. We, therefore, need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the **`xs-security`.json** file.
+After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. We, therefore, need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the **`xs-security.json`** file.
 
 In the following, we will use the [Spring Security framework](https://spring.io/projects/spring-security) to protect the microservices. You can also use standard mechanisms of the SAP Java `buildpack` to achieve the same. If you do not want to use Spring Security please follow the steps [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ead7ee64f96f4c42bacbf0ae23d4135b.html), nonetheless, the concepts described hereinafter apply for both methods.
 
@@ -219,7 +219,7 @@ In the following, we will use the [Spring Security framework](https://spring.io/
 The first step is to get some additional Java libs from Service Marketplace. To get them, do the following steps:
 
 1. Download additional XS security libs from service marketplace: <https://launchpad.support.sap.com/#/softwarecenter/search/XS_JAVA>
-2. At the time of writing the latest package is **XS`_JAVA_1-70001362.ZIP`** (19.03.2018).
+2. At the time of writing the latest package is **XS`_JAVA_1-70001362.ZIP`** (01.08.2019).
 3. **Unzip `<destLocation>`**
 4. Install XS Security Libs to your local maven repo using:
 
@@ -237,6 +237,8 @@ In the second step, we go back to our `HelloWorld` or Business Partner applicati
 ![application pom](Figure7-1.png)
 
 In the **`<dependencies>`** section of the **`application/pom.xml`**, we enhance the following additional dependencies to our project:
+
+**_TODO_** Update necessary?
 
 ```
 <!-- Authentication and Authorization imports with Spring Security -->
@@ -523,7 +525,7 @@ That's it for today. Now you have learned the basics to protect your application
 ### Understanding Roles, Role Collections and Scopes
 The following picture explains how the various concepts are related to each other.
 
-Gray Box: As a SCP developer (e.g., SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security`.json as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
+Gray Box: As a SCP developer (e.g., SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security.json` as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
 
 Orange Box: As an SCP tenant administrator of the business application (customer) can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the Business Partner Manager role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
 
