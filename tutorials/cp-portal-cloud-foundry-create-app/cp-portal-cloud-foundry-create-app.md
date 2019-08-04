@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-portal
 ---
 
 ## Prerequisites
- - You have a development Space set up in the Cloud Foundry environment so that you can make use of the services you need to develop your app module.
+ - You have a development space set up in the Cloud Foundry environment so that you can make use of the services you need to develop your app module.
 
 
 ## Details
@@ -18,8 +18,13 @@ primary_tag: products>sap-cloud-platform-portal
 
 When developing apps in the Cloud Foundry environment, you create a Multi-Target Application (MTA) file in SAP Web IDE. Each SAP Fiori app is developed as an SAP HTML5 module of the MTA.
 
-In this tutorial, you will create an `MTA` with one SAP HTML5 module as well as a launchpad module.
+In this tutorial, you will create an MTA with one HTML5 module as well as a launchpad module.
 
+>**IMPORTANT:**  You must have a development space set up in the Cloud Foundry environment so that you can make use of the services you need to develop your app module.
+
+>  - If you are working with a trial account and have not set up a Cloud Foundry environment, follow the tutorial [Get Started with the SAP Web IDE Full-Stack Version (Trial)](webide-innovation-beta).
+
+>   - If you are working on a non-trial account, and have not set up a Cloud Foundry environmentת follow the instructions in the tutorial [Prepare the SAP Cloud Platform Cloud Foundry Environment for Development (non-trial account)](cp-portal-cloud-foundry-prepare-dev).
 
 [ACCORDION-BEGIN [Step 1: ](Create an MTA project with an SAP HTML5 module)]
 
