@@ -139,7 +139,9 @@ Click **Check Service** to validate the service properties. If all the details a
 
 >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
 
-In following steps, click **Next** with default selections and **Finish** the project creation.
+In **Metadata Source** step, select `PurchaseOrderHeaders` and `PurchaseOrderItems`‚ and click **Next**.
+
+In following steps go with default selections and **Finish** the project creation.
 
 ![MDK](img_006.gif)
 
