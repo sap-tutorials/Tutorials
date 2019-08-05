@@ -45,6 +45,8 @@ Your subaccount should have the following entitlements:
 
 -	Portal
 
+- HTML5 Applications
+
 ![View quotas and apps](0009_view_quotas.png)
 
 [VALIDATE_7]

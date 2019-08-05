@@ -20,11 +20,13 @@ When developing apps in the Cloud Foundry environment, you create a Multi-Target
 
 In this tutorial, you will create an MTA with one HTML5 module as well as a launchpad module.
 
->**IMPORTANT:**  You must have a development space set up in the Cloud Foundry environment so that you can make use of the services you need to develop your app module.
+>**IMPORTANT:**  To develop your own assets on SAP Cloud Platform on the Cloud Foundry environment, you must first configure it.
 
->  - If you are working with a trial account and have not set up a Cloud Foundry environment, follow the tutorial [Get Started with the SAP Web IDE Full-Stack Version (Trial)](webide-innovation-beta).
+>   - A trial account is configured by default for development.
 
->   - If you are working on a non-trial account, and have not set up a Cloud Foundry environmentת follow the instructions in the tutorial [Prepare the SAP Cloud Platform Cloud Foundry Environment for Development (non-trial account)](cp-portal-cloud-foundry-prepare-dev).
+>   - If you are working on a non-trial account, and have not set up your Cloud Foundry environment for development, follow the instructions in the tutorial [Prepare the SAP Cloud Platform Cloud Foundry Environment for Development (non-trial account)](cp-portal-cloud-foundry-prepare-dev).
+
+> In addition, we will be using SAP Web IDE for development. As the SAP Web IDE service is available on SAP Cloud Platform on the Neo environment, you should have an SAP Cloud Platform Neo subaccount with the SAP Web IDE service enabled. If you do not have such an environment, follow the tutorial [Get Started with the SAP Web IDE Full-Stack Version (Trial)](webide-innovation-beta).
 
 [ACCORDION-BEGIN [Step 1: ](Create an MTA project with an SAP HTML5 module)]
 
