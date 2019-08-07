@@ -191,7 +191,7 @@ In the servlet GET method, we initialize an instance of the `BusinessPartnerServ
 - we select the fields of the `BusinessPartner` that we want to retrieve (if we leave out this part, all fields will be returned),
 - filter for business partners of category Person (code `"1"`), and
 - order by the last name of the business partner.
-- limit the amunt of results to a maximum of 200
+- limit the amount of results to a maximum of 200
 
 Finally, having prepared the query, we call the `execute` method. This method does a lot of the heavy lifting necessary to connect to an S/4HANA system and relieves us as developers from dealing with complex aspects such as:
 
@@ -212,11 +212,11 @@ Any `ODataException` thrown by the OData call is caught and logged, before retur
 
 [ACCORDION-BEGIN [Step 5: ](Deploying the Project)]
 
-Depending on your chosen archetype and SAP Cloud Platform setup you can deploy the project on either *SAP Cloud Platform Neo* or *SAP Cloud Platform CloudFoundry*.
+Depending on your chosen archetype and SAP Cloud Platform setup you can deploy the project on either *SAP Cloud Platform Neo* or *SAP Cloud Platform Cloud Foundry*.
 
 **Provide Destinations for your Application**
 
-In order for your application to run you need to provide it with information about your S/4HANA system. Your BusinessPartnerService needs an URL and a means of authentication in order to reach the system. This information is provided in the form of a destination that we retrieve in our servlet via a name, in our case `ErpQueryEndpoint`. There are mutliple ways to create such a destination. For now we will provide it to our application by creating an environment variable that holds the information. We will create such a variable now both for a local deployment and a deployment on SCP Cloud Foundry.
+In order for your application to run you need to provide it with information about your S/4HANA system. Your `BusinessPartnerService` needs an URL and a means of authentication in order to reach the system. This information is provided in the form of a destination that we retrieve in our servlet via a name, in our case `ErpQueryEndpoint`. There are multiple ways to create such a destination. For now we will provide it to our application by creating an environment variable that holds the information. We will create such a variable now both for a local deployment and a deployment on SCP Cloud Foundry.
 
 **Run on a Local Server**
 
@@ -234,7 +234,7 @@ echo $destinations
 
 _Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
 
-Be aware that the variable is only available in your current terminal session. If you are having trouble settings the variable, take a look at the [troubleshooting section](Troubleshooting). Once the variable has been set, re-build and start the server as follows:
+Be aware that the variable is only available in your current terminal session. If you are having trouble settings the variable, take a look at the troubleshooting section. Once the variable has been set, re-build and start the server as follows:
 
 ```bash
 cd /path/to/firstapp
@@ -303,7 +303,7 @@ applications:
 
 **_TODO_** `ALLOW_MOCKED_AUTH_HEADER` removed, validate
 
-> As of version 3.0.0 of the Cloud SDK you are not required to explicitly enable unauthorized access to your web service anymore. 
+> As of version 3.0.0 of the Cloud SDK you are not required to explicitly enable unauthorized access to your web service anymore.
 
 **_TODO_** No tenant and user are now allowed
 
@@ -385,7 +385,7 @@ Navigate to the integration-tests project and create a new class:
 
 `./integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`
 
-**_TODO_** Validate. mockErpDestination okay?
+**_TODO_** Validate. `mockErpDestination` okay?
 
 ```java
 package com.sap.cloud.sdk.tutorial;
@@ -496,7 +496,7 @@ Luckily, the SDK provides a utility class for such purposes – `MockUtil`. This
 
 `./integration-tests/src/test/resources/systems.yml`
 
-**_TODO_** Adapt outdated defaults (if any?), maybe remove unnecessary items. systems: nececssary? default erp system still valid?
+**_TODO_** Adapt outdated defaults (if any?), maybe remove unnecessary items. systems: necessary? default ERP system still valid?
 
 ```yaml
 ---

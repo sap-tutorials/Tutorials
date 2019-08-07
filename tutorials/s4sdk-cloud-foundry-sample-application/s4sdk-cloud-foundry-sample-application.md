@@ -9,7 +9,7 @@ time: 20
 
 
 ### You will learn  
-This tutorial will cover your first steps when developing applications for SAP Cloud Platfrom (SCP) Cloud Foundry using SAP Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
+This tutorial will cover your first steps when developing applications for SAP Cloud Platform (SCP) Cloud Foundry using SAP Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
 
 ---
 
@@ -47,7 +47,8 @@ cf login
 
 The CLI will ask you for your mail and your password. After entering these, you should be successfully logged in.
 
-**_TODO_** Good to know info
+**_TODO_** Good to know info  
+
 **Note**: The CF stores your credentials securely in `???`. You stay logged in until `???`.
 
 [DONE]
@@ -55,7 +56,7 @@ The CLI will ask you for your mail and your password. After entering these, you 
 
 [ACCORDION-BEGIN [Step 2: ](Generate project from archetype)]
 
-To generate your first project from the Maven archetype, run the following command: (for Windows PowerShell see [Appendix](Troubleshooting))
+To generate your first project from the Maven archetype, run the following command: (for Windows `PowerShell` see [Appendix](Troubleshooting))
 
 ```
 mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.sdk.archetypes -DarchetypeArtifactId=scp-cf-tomee -DarchetypeVersion=RELEASE
@@ -66,13 +67,12 @@ During the generation process, Maven will require additional parameters to form 
   -  **`artifactId`** - An identifier for your application (e.g. `firstapp`)
   -  **`version`** - The version of your application (e.g. `1.0-SNAPSHOT`)
   -  **`package`** - The name of the top-level package your source code will reside in (typically equal to your **`groupId`**, e.g. `com.sap.cloud.sdk.tutorial`). Please pay attention to package and directory names in any upcoming source code when using a different package name than suggested here.
-  -  **`uniqueHostname`** - A unique identifier to determine your initial project URL on `Cloud Foundry`. Use \<appname>-\<SUBACCOUNT> here, e.g. `firstapp-p123456trial`. This format is important for authentication in later steps of this tutorial and at the same time assures, that the path is unique across your `Cloud Foundry` region. It can easily be changed later on if you want.
 
 After providing these values, Maven will generate your project from the archetype.
 
 ![Maven generates project from archetype](maven-generates-project.png)
 
-**Note**: Here you have created an application which is based on the [TomEE runtime](http://tomee.apache.org/) which is a `Java EE 6` compliant open-source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with [SpringBoot](https://spring.io/projects/spring-boot). To adapt the archetype simply change the `artifactId` to `scp-cf-spring`. Our tutorial series will be primarily based on the TomEE runtime. Nonetheless, the SAP Cloud SDK is compatible with these popular runtimes too.
+**Note**: Here you have created an application which is based on the [`TomEE` runtime](http://tomee.apache.org/) which is a `Java EE 6` compliant open-source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with [`SpringBoot`](https://spring.io/projects/spring-boot). To adapt the archetype simply change the `artifactId` to `scp-cf-spring`. Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP Cloud SDK is compatible with these popular `runtimes` too.
 
 [DONE]
 [ACCORDION-END]
@@ -207,10 +207,12 @@ The manifest contains a list of applications that will be deployed to `Cloud Fou
 
   - **`name`**	- This is the identifier of your application within your organization and your space in `SCP Cloud Foundry`.
   - **`memory`** -	The amount of memory allocated for your application.
-  - **`host`** -	Determines the URL of your application after deploying it (this is where the `uniqueHostname` from the generation process is being used). The hostname will later be used as subdomain of a publicly reachable route. Since this is a setup with multiple, dedicated instances, a `random-route` should be omitted.
+  - **`host`** -	Determines the URL of your application after deploying it. The hostname will later be used as subdomain of a publicly reachable route. Thus it needs to be unique across your `Cloud Foundry` region. The format `<appname>-<SUBACCOUNT>` is important for authentication in later steps of this tutorial and at the same time assures, that the path is unique across your region. It can easily be changed later on if you want. Since this is a setup with multiple, dedicated instances, a `random-route` should be omitted.
   - **`path`** -	The relative path to the artifact to be deployed.
   - **`buildpack`** -	A `buildpack` is what `Cloud Foundry` uses to build and deploy your application. Since this is a Java application, we use `sap_java_buildpack`.
   - **`env`**	- Here we can provide additional application specific environment variables. For example we specify that we want to use a `TomEE` container as our target runtime.
+
+Change `<SUBACCOUNT>` to match your user account, e.g. `p123456trial`.
 
 Now you can deploy the application by entering the following command:
 

@@ -8,7 +8,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites
- - You did at least all steps until [Step 3 with SAP Cloud SDK: `HelloWorld` on SCP `CloudFoundry`](https://blogs.sap.com/2017/05/19/step-3-with-sap-s4hana-cloud-sdk-helloworld-on-scp-cloudfoundry/).
+ - You completed all steps until [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html).
 
 ## Details
 ### You will learn
