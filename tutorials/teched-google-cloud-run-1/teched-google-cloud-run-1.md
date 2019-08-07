@@ -18,6 +18,8 @@ primary_tag: products>sap-hana\,-express-edition
 
 These tutorials are meant to be completed at the Developer Garage at SAP TechEd. The experts at the Google Cloud booth will provide you with an access to an account.
 
+![Powered by Google Cloud](cloud_logo.png)
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log in to the SAP Community)]
@@ -105,7 +107,7 @@ Once finished, click on the name of the virtual machine.
 
 ![Configure project](11.png)
 
-Click o the **SSH** button to open a web console.
+Click on the **SSH** button to open a web console.
 
 ![Configure project](12.png)
 
