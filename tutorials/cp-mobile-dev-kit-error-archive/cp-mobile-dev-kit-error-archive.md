@@ -471,7 +471,9 @@ export default function DecideWhichEditPage(context) {
   let affectedEntityType = "Unknown Entity Set"; //By default it's unknown type
   if (id.indexOf("(") > 0) {
     //Extracting the entity set type from @odata.id e.g. PurchaseOrderHeaders
-    affectedEntityType = id.substring(0, id.indexOf("("));
+    var patt = /\/?(.+)\(/i;
+   var result = id.match(patt);
+   affectedEntityType = result[1];
   }
   console.log("Affected Entity Type Is:");
   console.log(affectedEntityType);
