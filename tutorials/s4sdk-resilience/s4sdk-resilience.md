@@ -210,14 +210,10 @@ Thanks to our new `GetBusinessPartnersCommand`, we can now simply create a new c
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Write tests for the Hystrix command)]
-There are two things we need to address in order to properly test our code: we need to provide our tests with an ERP endpoint and a `Hystrix` request context.
+[ACCORDION-BEGIN [Step 4: ](Write tests for the resilient command)]
 
+There is one thing we need to address in order to properly test our code: we need to provide our tests with an ERP endpoint.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Credentials for SAP S/4HANA system)]
 We provide the ERP destination as explained in the [previous blog post] (https://blogs.sap.com/2017/05/21/step-4-with-sap-s4hana-cloud-sdk-calling-an-odata-service/) as a `systems.json` or `systems.yml` file. In addition, you may provide a `credentials.yml` file to reuse your SAP S/4HANA login configuration as described in the Appendix of the previous tutorial step.
 
 To provide credentials in this manner, create the following `credentials.yml` file in a safe location (e.g., like storing your ssh keys in ~/.ssh), i.e., not in the source code repository.
@@ -239,12 +235,6 @@ Afterwards you can pass the `credentials.yml` when running tests. Make sure to p
 mvn test -Dtest.credentials=/secure/local/path/credentials.yml
 ```
 
-### `Hystrix` request context
-
-Since `Hystrix` commands run in non-container-managed threads, they cannot use `ThreadLocal` to access request specific information. Therefore `Hystrix` provides a solution in the form of request contexts. Usually these are created by a servlet filter whenever a request is being made. Since there are no requests in our tests, we need a different way to provide a `Hystrix` request context.
-
-The `MockUtil` class of the SAP Cloud SDK, introduced in the previous blog post, is our friend once again. Using the `requestContextExecutor()` method we can wrap the execution of the `GetBusinessPartnersCommand` in a request context.
-
 Now let's have a look at the code, to be placed in a file at `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommandTest.java`:
 
 ```
@@ -254,10 +244,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.net.URI;
-import java.util.Collections;
-import java.util.List;
+import java.net.URISyntaxException;
 
-import com.sap.cloud.sdk.cloudplatform.servlet.Executable;
 import com.sap.cloud.sdk.testutil.MockUtil;
 
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
@@ -274,38 +262,32 @@ public class GetBusinessPartnersCommandTest {
         mockUtil.mockDefaults();
     }
 
-    private List<BusinessPartner> getBusinessPartners() {
-        return new GetBusinessPartnersCommand().execute();
+    @Test
+    public void testWithSuccess() {
+
+        mockUtil.mockErpDestination("ERP_001", "ERP_001");
+
+        final GetBusinessPartnersCommand businessPartnersCommand = new GetBusinessPartnersCommand("ERP_001");
+
+        assertThat(businessPartnersCommand.execute()).isNotEmpty();
+        assertThat(businessPartnersCommand.execute()).hasOnlyElementsOfType(BusinessPartner.class);
     }
 
     @Test
-    public void testWithSuccess() throws Exception {
-        mockUtil.mockErpDestination();
-        new RequestContextExecutor().execute(new Executable() {
-            @Override
-            public void execute() throws Exception {
-                assertThat(getBusinessPartners()).isNotEmpty();
-            }
-        });
-    }
+    public void testWithFallback() throws URISyntaxException {
 
-    @Test
-    public void testWithFallback() throws Exception {
-        mockUtil.mockDestination("ErpQueryEndpoint", new URI("http://localhost"));
-        new RequestContextExecutor().execute(new Executable() {
-            @Override
-            public void execute() throws Exception {
-                assertThat(getBusinessPartners()).isEqualTo(Collections.emptyList());
-            }
-        });
-    }
+        // Simulate a failed VDM call with non-existent destination
+        mockUtil.mockDestination("ERP_001", new URI("http://localhost"));
 
+        final GetBusinessPartnersCommand businessPartnersCommand = new GetBusinessPartnersCommand("ERP_001");
+        assertThat(businessPartnersCommand.execute()).isEmpty();
+    }
 }
 ```
 
-We use JUnit's @Before annotation to setup a fresh `MockUtil` for each test. Then in the tests (@Test) we do the following: first we create a new request context using `mockUtil.requestContextExecutor` and provide it with a new Executable. Then we override the Executable's execute() method, where we finally put the code that we actually want to test together with the corresponding assertions.
+We use JUnit's @Before annotation to setup a fresh `MockUtil` for each test.
 
-For `testWithSuccess`(), we use the default ERP destination information using `mockUtil.mockErpDestination` so that the endpoint points to the SAP S/4HANA system configured in your `systems.json` file. For the sake of simplicity we simply assert that the response is not empty.
+For `testWithSuccess`(), we use the ERP destination information using `mockUtil.mockErpDestination` so that the endpoint points to the SAP S/4HANA system configured in your `systems.json` file. For the sake of simplicity we simply assert that the response is not empty and has elements of type `BusinessPartner`.
 
 For `testWithFallback`(), we intentionally provide a destination (localhost) that does not provide the called OData service in order to make the command fail. Since we implemented a fallback for our command that returns an empty list, we assert that we actually receive an empty list as response.
 
@@ -314,7 +296,7 @@ Simply run  `mvn clean install` as in the previous tutorials to test and build y
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy application to Cloud Foundry)]
+[ACCORDION-BEGIN [Step 5: ](Deploy application to Cloud Foundry)]
 The SDK integrates the circuit breakers and other resilience features of `Hystrix` with the SAP Cloud Platform, specifically with the tenant and user information. For example, circuit breakers are maintained per tenant to ensure that they are properly isolated. As of now, our application is not multitenant as far as user authentication is concerned – we will come to this in the next steps of the tutorial series (see [Step 7 for Cloud Foundry](https://blogs.sap.com/2017/07/18/step-7-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-cloudfoundry/) and [Step 8 on Neo](https://blogs.sap.com/2017/07/18/step-8-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-neo/)).
 
 When running such a non-multitenant application with caching, the required tenant and user information needs to be supplied separately, or be mocked. The (local) Neo environment  handles this out-of-the-box and you do not need to do anything when developing on Neo. On Cloud Foundry, the SDK provides a workaround for testing purposes, but you need to enable this workaround explicitly for security considerations. To do so, follow the step outlined in the following, but be aware of the security implications explained below.
