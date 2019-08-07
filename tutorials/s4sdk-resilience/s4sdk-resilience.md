@@ -10,8 +10,8 @@ time: 15
 ## Details
 ### You will learn
   - Why you should care about resilience
-  - How to make the call to the OData service resilient by using Resilience4j-based decorators
-  - How to write Tests for code decorated with the new Resilience4j-based decorators
+  - How to make the call to the OData service resilient by using resilience decorators
+  - How to write Tests for code decorated with the new resilience decorators
   - To deploy the application on SAP Cloud Platform Cloud Foundry
 
 
@@ -297,25 +297,10 @@ Simply run  `mvn clean install` as in the previous tutorials to test and build y
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Deploy application to Cloud Foundry)]
-The SDK integrates the circuit breakers and other resilience features of `Hystrix` with the SAP Cloud Platform, specifically with the tenant and user information. For example, circuit breakers are maintained per tenant to ensure that they are properly isolated. As of now, our application is not multitenant as far as user authentication is concerned – we will come to this in the next steps of the tutorial series (see [Step 7 for Cloud Foundry](https://blogs.sap.com/2017/07/18/step-7-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-cloudfoundry/) and [Step 8 on Neo](https://blogs.sap.com/2017/07/18/step-8-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-neo/)).
 
-When running such a non-multitenant application with caching, the required tenant and user information needs to be supplied separately, or be mocked. The (local) Neo environment  handles this out-of-the-box and you do not need to do anything when developing on Neo. On Cloud Foundry, the SDK provides a workaround for testing purposes, but you need to enable this workaround explicitly for security considerations. To do so, follow the step outlined in the following, but be aware of the security implications explained below.
+Simply run ```mvn clean install``` as in the previous tutorials to test and build your application and then run ```cf push``` to deploy your updated application to CloudFoundry!
 
-Supply your Cloud Foundry application with an additional environment variable as follows:
-
-```
-cf set-env firstapp ALLOW_MOCKED_AUTH_HEADER true
-```
-
-When the variable ```ALLOW_MOCKED_AUTH_HEADER``` is explicitly set to true, the SDK will fall back to providing mock tenant and user information when no actual tenant information is available. This setting must never be enabled in productive environments. It is only meant to make testing easier if you do not yet implement the authentication mechanisms of Cloud Foundry. Delete the environment variable as soon as it is no longer required, for example, because you implemented Step 7 of this tutorial series (```cf unset-env firstapp ALLOW_MOCKED_AUTH_HEADER```).
-
-Afterwards, simply run ```mvn clean install``` as in the previous tutorials to test and build your application and then run ```cf push``` to deploy your updated application to `CloudFoundry`!
-
-If you want to run your application locally with `mvn` `tomee`: run (in folder application/), you need to similarly set the environment variable ```ALLOW_MOCKED_AUTH_HEADER=true``` on your local machine before starting the local server, in addition to supplying the destinations (as described in [Step 4](https://blogs.sap.com/2017/05/21/step-4-with-sap-s4hana-cloud-sdk-calling-an-odata-service/)).
-
-
-
-This wraps up the tutorial on making our sample application resilient using `Hystrix` and the SAP Cloud SDK. Continue with the next tutorial [Step 6: Caching](https://blogs.sap.com/2017/07/12/step-6-with-sap-s4hana-cloud-sdk-caching/) and also explore other tutorial posts on topics like [security](https://blogs.sap.com/2017/07/18/step-7-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-cloudfoundry/)!
+This wraps up the tutorial on making our sample application resilient using `Resilience4j` and the SAP Cloud SDK. Continue with the next tutorial [Step 6: Caching](https://blogs.sap.com/2017/07/12/step-6-with-sap-s4hana-cloud-sdk-caching/) and also explore other tutorial posts on topics like [security](https://blogs.sap.com/2017/07/18/step-7-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-cloudfoundry/)!
 
 [DONE]
 
