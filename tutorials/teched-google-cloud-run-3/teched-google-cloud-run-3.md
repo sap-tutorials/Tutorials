@@ -157,15 +157,25 @@ Use this value to replace `hxehost` in the `credentials.json` file
 
 You will now export the environment variable `VCAP_SERVICES` into your Cloud Shell environment so you can locally execute the `cds` module for testing.
 
-The following command will parse the `credentials.json` file into a string you can use. Paste it into the Google Cloud Shell.
+The following commands will parse the `credentials.json` file into a string you can use. Paste it into the Google Cloud Shell.
 
 ```ssh
+cd ~/teched/db
 sed 's/"/\\"/g' <(jq -r "to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]" ~/teched/credentials.json)
 ```
 
 Use the output of the previous command and paste it into the console as if it were a command. This will assign the value of `VCAP_SERVICES` for this session.
-
 ![HANA ssh](14.png)
+
+Type the word **export** and paste the value again after it. Press **Enter**.
+
+```ssh
+cd ~/teched/
+export <PASTE VCAP_SERVICES=... HERE>
+```
+
+![HANA ssh](export.jpg)
+
 
 [VALIDATE_1]
 [ACCORDION-END]

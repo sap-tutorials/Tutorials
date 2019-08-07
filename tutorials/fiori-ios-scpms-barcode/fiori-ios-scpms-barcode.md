@@ -1,10 +1,9 @@
 ---
-title: Use the FUISearchBar & FUIBarcodeScanner
-description: Implement the FUISearchBar and FUIBarcodeScanner to your app and search for items in an UITableViewController.
+title: Use the `FUISearchBar` & `FUIBarcodeScanner`
+description: Implement the `FUISearchBar` and `FUIBarcodeScanner` to your app and search for items in an `UITableViewController`.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
-primary_tag: products>sap-cloud-platform-sdk-for-ios
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 25
