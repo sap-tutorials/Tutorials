@@ -3,7 +3,7 @@ title: Introduce caching to your application
 description: Introduce caching to your application using the SAP Cloud SDK.
 auto_validation: true
 primary_tag: products>sap-s-4hana-cloud-sdk
-tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, topic>java ]
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-cloud-sdk, products>sap-cloud-platform, topic>cloud, topic>java ]
 time: 15
 ---
 
@@ -14,7 +14,7 @@ time: 15
   - How a cache works
   - Uses of a caching command
   - How to cache your OData Call
-  - How to do the configuration and `parameterized` calls
+  - How to do the configuration and make `parameterized` calls
 
 
 ---
@@ -53,12 +53,7 @@ If each of these options apply to your use case, then we highly recommend the ca
 
 The command cache allows parallel execution and asynchronous computation for efficient programming practices. Stored information is organized as a local key-value store. For each unique key the same response is expected in case of a "cache hit". Otherwise the cache response will be computed.
 
-As underlying technology [Guava](https://github.com/google/guava) is being used, which gives you options to customize the cache configuration.
-
-- Cache size - Number of items being stored by the cache. If the number of items exceeds this limit, the most outdated value will be removed from the cache
-- Item expiration time - Items are checked for their age. When the individual expiration time is exceeded, the value will be removed from the cache
-- Concurrency level - Expected number of threads in the application able to change the cache concurrently
-- Eviction - Size based and timed eviction (default), reference-based (weak keys, weak values, soft values)
+As underlying technology `JCache` (`JSR 107`) is being used. In this tutorial we will use a `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine), which lets us specify the cache duration. 
 
 [DONE]
 [ACCORDION-END]
@@ -68,58 +63,98 @@ As underlying technology [Guava](https://github.com/google/guava) is being used,
 Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into our application. In the last tutorial we created a simple `ErpCommand` that uses the SDK's OData abstractions to retrieve business partners from an ERP system while guaranteeing resilience provided by `Hystrix`. In order to make this call cacheable, we have to start with a new type extending `CachingErpCommand`. So first we will create the following class:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/GetCachedBusinessPartnersCommand.java`
+
 ```
 package com.sap.cloud.sdk.tutorial;
 
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
 import org.slf4j.Logger;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
-import com.sap.cloud.sdk.cloudplatform.cache.CacheKey;
 import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 
-import com.sap.cloud.sdk.s4hana.connectivity.CachingErpCommand;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.helper.Order;
+import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
+import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
+import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
+import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceIsolationMode;
+import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
+
+import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
+
+import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
+import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
+
+import com.sap.cloud.sdk.datamodel.odata.helper.Order;
+
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
+import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
 
-public class GetCachedBusinessPartnersCommand extends CachingErpCommand<List<BusinessPartner>> {
-    private static final Logger logger = CloudLoggerFactory.getLogger(GetCachedBusinessPartnersCommand.class);
-
-    private static final String CATEGORY_PERSON = "1";
-
-    private static final Cache<CacheKey, List<BusinessPartner>> cache =
-            CacheBuilder.newBuilder().build();
-
-    public GetCachedBusinessPartnersCommand() {
-        super(GetCachedBusinessPartnersCommand.class);
+public class GetCachedBusinessPartnersCommand {
+    private static final Logger logger = CloudLoggerFactory.getLogger(GetCachedBusinessPartnersByCategoryCommand.class);
+    
+    private final ErpHttpDestination destination;
+    
+    private final BusinessPartnerService businessPartnerService = new DefaultBusinessPartnerService();
+    private final ResilienceConfiguration resilienceConfiguration;
+    
+    public GetCachedBusinessPartnersCommand(final String erpHttpDestination, BusinessPartnerService service) {
+    
+        private static final String CATEGORY_PERSON = "1";
+        
+        destination = DestinationAccessor
+                          .getDestination(erpHttpDestination)
+                          .asHttp()
+                          .decorate(DefaultErpHttpDestination::new);
+        
+        businessPartnerService = service;
+                          
+        final ResilienceConfiguration.CacheConfiguration cacheConfig = 
+                ResilienceConfiguration.CacheConfiguration
+                        .of(Duration.ofSeconds(10))
+                        .withoutParameters();
+                        
+        resilienceConfiguration = ResilienceConfiguration
+                .of(BusinessPartnerService.class)
+                .isolationMode(ResilienceIsolationMode.TENANT_AND_USER_REQUIRED)
+                .timeLimiterConfiguration(ResilienceConfiguration.TimeLimiterConfiguration
+                        .of().timeoutDuration(Duration.ofMillies(1000)))
+                .bulkHeadConfiguration(ResilienceConfiguration.BulkheadConfiguration
+                        .of().maxConcurrentCalls(20))
+                .cacheConfiguration(cacheConfig);                         
     }
 
-    @Override
-    protected Cache<CacheKey, List<BusinessPartner>> getCache() {
-        return cache;
-    }
-
-    @Override
-    protected List<BusinessPartner> runCacheable()
-            throws Exception {
-        final List<BusinessPartner> businessPartners =
-                new DefaultBusinessPartnerService()
-                        .getAllBusinessPartner()
-                        .select(BusinessPartner.BUSINESS_PARTNER,
-                                BusinessPartner.LAST_NAME,
-                                BusinessPartner.FIRST_NAME,
-                                BusinessPartner.IS_MALE,
-                                BusinessPartner.IS_FEMALE,
-                                BusinessPartner.CREATION_DATE)
-                        .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
-                        .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
-                        .execute();
-
-        return businessPartners;
+    public List<BusinessPartner> execute() {
+            return ResilienceDecorator.executeSupplier(this::run, myResilienceConfig, e -> Collections.emptyList());
+        }
+    
+    private List<BusinessPartner> run() {
+        try {
+            return businessPartnerService
+                    .getAllBusinessPartner()
+                    .select(BusinessPartner.BUSINESS_PARTNER,
+                            BusinessPartner.LAST_NAME,
+                            BusinessPartner.FIRST_NAME,
+                            BusinessPartner.IS_MALE,
+                            BusinessPartner.IS_FEMALE,
+                            BusinessPartner.CREATION_DATE,
+                            BusinessPartner.TO_BUSINESS_PARTNER_ADDRESS
+                                    .select(
+                                            BusinessPartnerAddress.CITY_NAME,
+                                            BusinessPartnerAddress.COUNTRY,
+                                            BusinessPartnerAddress.TO_EMAIL_ADDRESS
+                                                    .select(AddressEmailAddress.EMAIL_ADDRESS)
+                                    )
+                    )
+                    .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(category))
+                    .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
+                    .top(200)
+                    .execute(destination);
+        } catch (ODataException e) {
+            throw new ResilienceRuntimeException(e);
+        }
     }
 
     @Override
@@ -128,24 +163,20 @@ public class GetCachedBusinessPartnersCommand extends CachingErpCommand<List<Bus
         return Collections.emptyList();
     }
 }
-```
-The `GetCachedBusinessPartnersCommand` class inherits from `CachingErpCommand`, which is the SDK's abstraction to provide easy to use cacheable `Hystrix` commands. To implement a valid `CachingErpCommand` we need to do the three things:
 
-1. Provide a constructor. Here we simply add the default constructor.
-2. Override the `runCacheable`() method. As you might have noticed already, we can simply take the code we used to call our OData service via the Virtual Data Model from the previous blog posts, and put it into the method. You can even specify Java exceptions. So no changes needed!
-3. Override the `getCache`() method. Since it might be possible for you to use any cache utility, you need to instantiate the Cache object yourself and provide a method for the internal usage.
+```
+
+The `GetCachedBusinessPartnersCommand` class uses the `ResilienceConfiguration` class for caching. The cache is configured by providing an instance of Class `CacheConfiguration` is provided to method `cacheConfiguration`. 
 
 Now that we have a working command with enabled cache features, we can adapt our `BusinessPartnerServlet`.
-
-**Note:** With regard to the `Hystrix` example of the previous blog post, the only change will be a different class name of the command.
 
 ```
 package com.sap.cloud.sdk.tutorial;
 
 import com.google.gson.Gson;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -154,7 +185,6 @@ import java.io.IOException;
 import java.util.List;
 
 import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
-
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 
 @WebServlet("/businesspartners")
@@ -162,13 +192,15 @@ public class BusinessPartnerServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private static final Logger logger = CloudLoggerFactory.getLogger(BusinessPartnerServlet.class);
+    
+    private static final String DESTINATION_NAME = "MyErpSystem";
 
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
         try {
             final List<BusinessPartner> businessPartners =
-                    new GetCachedBusinessPartnersCommand().execute();
+                    new GetCachedBusinessPartnersCommand(DESTINATION_NAME, new DefaultBusinessPartnerService ).execute();
 
             response.setContentType("application/json");
             response.getWriter().write(new Gson().toJson(businessPartners));
@@ -181,117 +213,18 @@ public class BusinessPartnerServlet extends HttpServlet {
     }
 }
 ```
-Just like in the last blog post, we simply create a new command and execute it. As before, we get a list of business partners as result. The application will not go down if the OData service is temporarily unavailable. And now we can have multiple successive calls, but still only request the first one and have the cache to read for the following.
+Here, we simply create a new command and execute it. As before, we get a list of business partners as result. The application will not go down if the OData service is temporarily unavailable. 
+
+With caching in place, when we make multiple calls in succession, it is only the first time that the actual request is made. For the subsequent ones, the cache is used, improving the response times.
 
 **Note**: Instead of "execute()" you are now also able to run `queue()` and `observe()` for asynchronous evaluation.
-
-When deploying on Cloud Foundry, make sure to follow the corresponding instructions from [Step 5 of this tutorial series] (https://blogs.sap.com/2017/06/23/step-5-resilience-with-hystrix/).
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Cache Configuration and Parameterized Calls)]
-
-Now let's take a look into the important features of the cache, the `parameterized` cache calls.
-
-You might be working with queries using result changing parameters, like filters for OData requests. A new class declaration for every possible command variant will be impossible. That's why we encourage developers to pay respect to the cache keys. The cache will dynamically adapt the provided key to your parameter delivery.
-
-For example, given the stated `BusinessPartner` command, it may be useful to have an option to filter `BusinessPartner` items by different categories, especially when having an option to choose from on a website. Applying a cache will subsequently lessen computation costs. Please find the following class:
-`./application/src/main/java/com/sap/cloud/sdk/tutorial/GetCachedBusinessPartnersByCategoryCommand.java`
-
-```
-package com.sap.cloud.sdk.tutorial;
-
-import com.google.common.cache.Cache;
-import com.google.common.cache.CacheBuilder;
-import org.slf4j.Logger;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
-
-import com.sap.cloud.sdk.cloudplatform.cache.CacheKey;
-import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
-
-import com.sap.cloud.sdk.s4hana.connectivity.CachingErpCommand;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.helper.Order;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
-
-public class GetCachedBusinessPartnersByCategoryCommand extends CachingErpCommand<List<BusinessPartner>> {
-    private static final Logger logger = CloudLoggerFactory.getLogger(GetCachedBusinessPartnersByCategoryCommand.class);
-
-    private static final Cache<CacheKey, List<BusinessPartner>> cache =
-            CacheBuilder.newBuilder()
-                    .maximumSize(100)
-                    .expireAfterAccess(5, TimeUnit.MINUTES)
-                    .concurrencyLevel(10)
-                    .build();
-
-    private final String category;
-
-    public GetCachedBusinessPartnersByCategoryCommand(final String category) {
-        super(GetCachedBusinessPartnersByCategoryCommand.class);
-        this.category = category;
-    }
-
-    @Override
-    protected Cache<CacheKey, List<BusinessPartner>> getCache() {
-        return cache;
-    }
-
-    @Override
-    protected CacheKey getCommandCacheKey() {
-        return super.getCommandCacheKey().append(category);
-    }
-
-    @Override
-    protected List<BusinessPartner> runCacheable()
-            throws Exception {
-        final List<BusinessPartner> businessPartners =
-                new DefaultBusinessPartnerService()
-                        .getAllBusinessPartner()
-                        .select(BusinessPartner.BUSINESS_PARTNER,
-                                BusinessPartner.LAST_NAME,
-                                BusinessPartner.FIRST_NAME,
-                                BusinessPartner.IS_MALE,
-                                BusinessPartner.IS_FEMALE,
-                                BusinessPartner.CREATION_DATE)
-                        .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(category))
-                        .orderBy(BusinessPartner.LAST_NAME, Order.ASC)
-                        .execute();
-
-        return businessPartners;
-    }
-
-    @Override
-    protected List<BusinessPartner> getFallback() {
-        logger.warn("Fallback called because of exception:", getExecutionException());
-        return Collections.emptyList();
-    }
-}
-
-```
-You see the following changes, compared to the simple cached-command example:
-
-- `The constructor features a parameter, a `String` representation of a category parameter. This parameter is used in the OData query.`
-- The cache instance now defines:
-- `maximum item size of 100`
-- Up to a hundred business partner queries and their responses will be cached
-- `expiration after `5 minutes`
-- The item associated to any key which is older than five minutes will be re-requested by the command`
-- `concurrency level of `10`
-- This value provides a hint for the underlying caching API to estimate the number of threads trying to write into the cache at the same time. Concurrent reading access will be unaffected from this setting`
-
 
 
 - `These methods have been overridden:`
 - `getCommandCacheKey()`
 - It does append the provided category to the `cacheKey`, thus making it distinguishable from the same service calls but with different category parameter
 - `getFallback()`
-- As before, in case the `runCachable` procedure fails in any way, we provide a fallback solution. In this example we return an empty list object
-
-To use the new class in the servlet, just read a parameter from the "`request`" input variable and use it for instantiating this `parameterized` command class. Or you could create different servlet endpoints for persons (category "1"), organizations (2) and groups (3), which supply the corresponding category to the newly created `parameterized` command. Feel free to try it out!
+- As usual, we have also provided `getFallback()` method. It the procedure fails in any way, an empty list object is returned. 
 
 This wraps up the tutorial. Stay tuned for more tutorials on the SAP Cloud SDK on topics like UI5 and security!
 
