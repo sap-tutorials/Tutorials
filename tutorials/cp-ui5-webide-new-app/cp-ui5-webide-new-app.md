@@ -94,7 +94,7 @@ Now that you created a `mtar` archive, you are all set to deploy the application
 
     ![deployto](./deployto.png)
 
-3. You will see a success message in the log once the deployment finished. Click **Open** in the popup (top-right corner) to start your application.
+3. You will see a success message and the URL of the app in the log once the deployment finished. Open this URL in your browser to start the application.
 
     ![success](./deploysuccess.png)
 
