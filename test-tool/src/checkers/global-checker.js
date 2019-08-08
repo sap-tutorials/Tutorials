@@ -60,22 +60,26 @@ const checkTutorialGrouping = async ({ projectPath, interceptors, checkResult, r
 const setLinkCheckResult = ({ linkCheckResult, checkResult, uniqueLinksToFiles, files, results }) => {
   const filesPaths = uniqueLinksToFiles.get(linkCheckResult.link);
   if (filesPaths) {
-    filesPaths.forEach(filePath => {
+    filesPaths.forEach((filePath) => {
       const { contentLines } = files.get(filePath);
       const isTutorialDoc = common.isTutorialDoc(filePath);
       const isTrusted = isTutorialDoc || linkCheckResult.isTrusted;
-      const fileLinkResult = { ...linkCheckResult, isTrusted };
+      const fileLinkResult = {
+        ...linkCheckResult,
+        isTrusted
+      };
       if (checkResult.passed && !isTrusted) {
         checkResult.passed = isTrusted;
       }
-      contentLines.some((line, ind) => {
+      const foundLines = contentLines.reduce((result, line, ind) => {
         if (line.includes(linkCheckResult.link)) {
-          fileLinkResult.line = ind + 1;
-          return true;
+          result.push({ ...fileLinkResult, line: ind + 1 });
         }
-      });
+
+        return result;
+      }, []);
       const fileResult = results.get(filePath);
-      fileResult.linkCheckResult.push(fileLinkResult);
+      fileResult.linkCheckResult.push(...foundLines);
     });
   }
 };
