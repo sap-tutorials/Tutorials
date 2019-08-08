@@ -1,6 +1,6 @@
 ---
-title: Use the `FUISearchBar` & `FUIBarcodeScanner`
-description: Implement the `FUISearchBar` and `FUIBarcodeScanner` to your app and search for items in an `UITableViewController`.
+title: Use the Barcode Scanner API
+description: Implement a small search logic which will look for the correct products depending on the barcode the app scans.
 auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
