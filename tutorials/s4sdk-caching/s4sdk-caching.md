@@ -31,10 +31,14 @@ Caches are very important in a wide variety of use cases. It is one of the reaso
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](How does it work?)]
-A cache generally works by the action of requesting information to a given subject, called a key. If an information to a given key was previously requested, since stored and now available to read, a so called "cache hit" occurs: the data can be found and will be loaded. A "cache miss" occurs when it cannot.
+A cache generally works by the action of requesting information to a given subject, called a key. If an information to a given key was previously requested, was stored at the time of request, and is now available to read, a so called "cache hit" occurs: the data can be found and will be loaded. A "cache miss" occurs when it cannot.
 
-The most important aspects of caches are their size and their item life time. Both should be limited with regards to the use case, to avoid an outdated state or disproportionate memory consumption in the application. The biggest effect of using a cache can be perceived, when the application is repetitively reading larger chunks of data from external sources. Then the fraction of bandwidth required for transmitting information will be reduced effectively.
-
+The most important aspects of a cache is its size and the life time of its items. Both should be limited with regards
+ to the use case, to avoid an outdated state or disproportionate memory consumption in the application. The biggest 
+ effect of using a cache can be witnessed, when the application is repetitively reading larger chunks of data from 
+ external sources. In such cases, using caches significantly reduce the bandwidth required for transmitting 
+ information. 
+ 
 Caching is applicable whenever:
 
 - You are willing to spend some memory to improve speed.
@@ -42,7 +46,8 @@ Caching is applicable whenever:
 - Your cache will not need to store more data than what would fit in RAM. (By default, the cache is local to a single run of your application. It does not store data in files, or on outside servers.)
 
 
-If each of these options apply to your use case, then we highly recommend the caching features provided by SAP Cloud SDK.
+If each of these options apply to your use case, then we highly recommend that you use the caching features provided by 
+SAP Cloud SDK in your application.
 
 
 [DONE]
@@ -51,9 +56,12 @@ If each of these options apply to your use case, then we highly recommend the ca
 
 [ACCORDION-BEGIN [Step 3: ](Caching Command with SAP Cloud SDK)]
 
-The command cache allows parallel execution and asynchronous computation for efficient programming practices. Stored information is organized as a local key-value store. For each unique key the same response is expected in case of a "cache hit". Otherwise the cache response will be computed.
+The caching command allows parallel execution and asynchronous computation for efficient programming practices. 
+Stored information is organized as a local key-value store. For each unique key the same response is expected in case
+ of a "cache hit". Otherwise the cache response is computed.
 
-As underlying technology `JCache` (`JSR 107`) is being used. In this tutorial we will use a `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine), which lets us specify the cache duration. 
+In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial we will 
+use a `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for our purpose.
 
 [DONE]
 [ACCORDION-END]
@@ -61,14 +69,13 @@ As underlying technology `JCache` (`JSR 107`) is being used. In this tutorial we
 [ACCORDION-BEGIN [Step 4: ](Cache your OData Call)]
 
 Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into our application. 
-In [this tutorial] (https://developers.sap.com/tutorials/s4sdk-resilience.html), we introduced resilience into our 
-application, using `Resilience4j` library. 
 
-In order to make our OData calls cacheable, we will extend the use of `ResilienceConfiguration` class to configure 
-caching.
+In [the resilience tutorial] (https://developers.sap.com/tutorials/s4sdk-resilience.html), we introduced resilience 
+into our application, using `Resilience4j` library. Now, in order to make our OData calls cacheable, we will extend 
+the use of `ResilienceConfiguration` class used there and configure caching as well.
  
 We begin with defining class `GetCachedBusinessPartnersCommand`, in which we will extend the call to 
-`ResilienceConfiguration` with specifying `cacheConfiguration` as well.
+`ResilienceConfiguration` by adding `cacheConfiguration` to it.
 
 The class now looks as follows:
 
@@ -176,7 +183,7 @@ public class GetCachedBusinessPartnersCommand {
 
 ```
 
-The `GetCachedBusinessPartnersCommand` class uses the `ResilienceConfiguration` class for caching. The cache is configured by providing an instance of Class `CacheConfiguration` to method `cacheConfiguration`. 
+As mentioned above, the `GetCachedBusinessPartnersCommand` class uses the `ResilienceConfiguration` class for caching. The cache is configured by providing an instance of Class `CacheConfiguration` to method `cacheConfiguration`.
 
 Now that we have a working command with enabled cache features, we can adapt our `BusinessPartnerServlet`.
 
@@ -223,39 +230,36 @@ public class BusinessPartnerServlet extends HttpServlet {
     }
 }
 ```
-Here, we simply create a new command and execute it. As before, we get a list of business partners as result. The application will not go down if the OData service is temporarily unavailable. 
+Here, we simply create a new command and execute it. As before, we get a list of business partners as result. Due to 
+resilience call, the application will not go down if the OData service is temporarily unavailable. 
 
-With caching in place, when we make multiple calls in succession, it is only the first time that the actual request is made. For the subsequent ones, the cache is used, improving the response times.
+Furthermore, with caching in place, when we make multiple calls in succession, it is only the first time that the 
+actual request is made. For the subsequent calls, the cache is used instead, thus improving the response times.
 
 **Note**: Instead of "execute()" you are now also able to run `queue()` and `observe()` for asynchronous evaluation.
 
-
-- `These methods have been overridden:`
-- `getCommandCacheKey()`
-- It does append the provided category to the `cacheKey`, thus making it distinguishable from the same service calls but with different category parameter
-- `getFallback()`
-- As usual, we have also provided `getFallback()` method. It the procedure fails in any way, an empty list object is returned. 
+As usual, we have also provided `getFallback()` method. It the procedure fails in any way, an empty list object is returned. 
 
 This wraps up the tutorial. Stay tuned for more tutorials on the SAP Cloud SDK on topics like UI5 and security!
 
-See the next tutorial in the series here: [Step 7 with SAP Cloud SDK: Secure your Application on SAP Cloud Platform, `CloudFoundry`] (https://blogs.sap.com/2017/07/18/step-7-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-cloudfoundry/).
+See the next tutorial in the series here: [Step 7 with SAP Cloud SDK: Secure your Application on SAP Cloud Platform, `CloudFoundry`] (https://developers.sap.com/tutorials/s4sdk-secure-cloudfoundry.html).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 [VALIDATE_1]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 [VALIDATE_2]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+[ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
 [VALIDATE_3]
 
