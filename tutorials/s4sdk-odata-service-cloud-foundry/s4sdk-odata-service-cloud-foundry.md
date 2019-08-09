@@ -75,7 +75,7 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 [ACCORDION-BEGIN [Step 3: ](Virtual Data Model: The new way to OData)]
 
-Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
+Now that we have explained the possible pitfalls of the current approach, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
 ```Java
 final ErpHttpDestination destination = DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
@@ -355,7 +355,7 @@ To construct an extensible integration test for the newly created `BusinessPartn
   - New: JSON Schema for servlet response validation
   - New: `systems.yml` and credentials
 
-First, let's adjust the Maven pom file of the `integrations-tests` `submodule` by adding a dependency for JSON schema validation:
+First, let's adjust the Maven pom file of the `integrations-tests` sub-module by adding a dependency for JSON schema validation:
 
 `./integration-tests/pom.xml`
 
@@ -494,6 +494,7 @@ Luckily, the SDK provides a utility class for such purposes – `MockUtil`. This
 `./integration-tests/src/test/resources/systems.yml`
 
 ```yaml
+
 ---
 erp:
   default: "ERP_001"
