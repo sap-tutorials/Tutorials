@@ -74,7 +74,7 @@ if((atSign.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@')) === -1){
 }
 ```
 
->The `indexOf()` method returns the index within the calling String object of the first occurrence of the specified value and -1, if no occurrence is found.
+>The [`indexOf()` method](https://www.w3schools.com/jsref/jsref_indexof.asp) returns the index within the calling String object of the first occurrence of the specified value and -1, if no occurrence is found.
 
 [DONE]
 [ACCORDION-END]
