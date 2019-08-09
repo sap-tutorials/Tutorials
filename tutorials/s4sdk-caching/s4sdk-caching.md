@@ -87,7 +87,7 @@ final ResilienceConfiguration.CacheConfiguration cacheConfig =
 myResilienceConfig.cacheConfiguration(cacheConfig);                         
 ```
 
-As mentioned above, we  `ResilienceConfiguration` class for caching. The cache is configured by providing an instance of Class `CacheConfiguration` to method `cacheConfiguration`.
+As mentioned above, we use `ResilienceConfiguration` class for caching. The cache is configured by providing an instance of Class `CacheConfiguration` to method `cacheConfiguration`.
 
 Now that we have a working command with enabled cache features, we can adapt our `BusinessPartnerServlet`.
 
