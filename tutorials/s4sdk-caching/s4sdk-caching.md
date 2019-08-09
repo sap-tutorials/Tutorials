@@ -60,7 +60,17 @@ As underlying technology `JCache` (`JSR 107`) is being used. In this tutorial we
 
 [ACCORDION-BEGIN [Step 4: ](Cache your OData Call)]
 
-Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into our application. In the last tutorial we created a simple `ErpCommand` that uses the SDK's OData abstractions to retrieve business partners from an ERP system while guaranteeing resilience provided by `Hystrix`. In order to make this call cacheable, we have to start with a new type extending `CachingErpCommand`. So first we will create the following class:
+Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into our application. 
+In [this tutorial] (https://developers.sap.com/tutorials/s4sdk-resilience.html), we introduced resilience into our 
+application, using `Resilience4j` library. 
+
+In order to make our OData calls cacheable, we will extend the use of `ResilienceConfiguration` class to configure 
+caching.
+ 
+We begin with defining class `GetCachedBusinessPartnersCommand`, in which we will extend the call to 
+`ResilienceConfiguration` with specifying `cacheConfiguration` as well.
+
+The class now looks as follows:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/GetCachedBusinessPartnersCommand.java`
 
@@ -166,7 +176,7 @@ public class GetCachedBusinessPartnersCommand {
 
 ```
 
-The `GetCachedBusinessPartnersCommand` class uses the `ResilienceConfiguration` class for caching. The cache is configured by providing an instance of Class `CacheConfiguration` is provided to method `cacheConfiguration`. 
+The `GetCachedBusinessPartnersCommand` class uses the `ResilienceConfiguration` class for caching. The cache is configured by providing an instance of Class `CacheConfiguration` to method `cacheConfiguration`. 
 
 Now that we have a working command with enabled cache features, we can adapt our `BusinessPartnerServlet`.
 
