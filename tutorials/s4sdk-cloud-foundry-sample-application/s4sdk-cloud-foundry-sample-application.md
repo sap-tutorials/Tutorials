@@ -40,16 +40,14 @@ In order to deploy applications on `SAP Cloud Foundry` you need to provide the C
 
 Now enter the following commands (in this case for the EU region):
 
-```
+```bash
 cf api https://api.cf.eu10.hana.ondemand.com
 cf login
 ```
 
 The CLI will ask you for your mail and your password. After entering these, you should be successfully logged in.
 
-**_TODO_** Good to know info  
-
-**Note**: The CF stores your credentials securely in `???`. You stay logged in until `???`.
+**Note**: The CF CLI stores the information locally in a `~/.cf/config.json` file. Further authentication relies on a JWT that expires after some time, so you don't have to login every time you want to push your app to the cloud.
 
 [DONE]
 [ACCORDION-END]
@@ -58,7 +56,7 @@ The CLI will ask you for your mail and your password. After entering these, you 
 
 To generate your first project from the Maven archetype, run the following command: (for Windows `PowerShell` see [Appendix](Troubleshooting))
 
-```
+```bash
 mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.sdk.archetypes -DarchetypeArtifactId=scp-cf-tomee -DarchetypeVersion=RELEASE
 ```
 During the generation process, Maven will require additional parameters to form your project:
@@ -176,7 +174,7 @@ The `HelloWorldServlet` extends `HttpServlet`, so this will be a HTTP endpoint t
 
 In order to deploy the application, we first need to assemble our project into a deployable artifact – a `.war` file. Open your command line and change into the `firstapp` directory, the root directory of your project and run the following command:
 
-```
+```bash
 cd /path/to/firstapp
 mvn clean package
 ```
@@ -188,26 +186,29 @@ This tells Maven to remove any files from previous assemblies (clean) and to ass
 Now the previously mentioned `manifest.yml` comes into play – it's the deployment descriptor used by `Cloud Foundry`.
 
 
-```
-  ---
-  applications:
+```yaml
+---
+applications:
 
 - name: firstapp
   memory: 1024M
-  host: firstapp-<SUBACCOUNT>
-  # random-route: true # used instead of "host"
+  timeout: 300
+  routes:
+    - route: firstapp-<SUBACCOUNT>.cfapps.sap.hana.ondemand.com
   path: application/target/firstapp-application.war
-  buildpack: sap_java_buildpack
+  buildpacks:
+    - sap_java_buildpack
   env:
-    TARGET_RUNTIME: tomee
-    JBP_CONFIG_SAPJVM_MEMORY_SIZES: "metaspace:96m.."
+    TARGET_RUNTIME: tomee7
+    SET_LOGGING_LEVEL: '{ROOT: INFO, com.sap.cloud.sdk: INFO}'
+    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:128m..'
 ```
 
 The manifest contains a list of applications that will be deployed to `Cloud Foundry`. In this example we only have one application, `firstapp`, with the following parameters:
 
   - **`name`**	- This is the identifier of your application within your organization and your space in `SCP Cloud Foundry`.
   - **`memory`** -	The amount of memory allocated for your application.
-  - **`host`** -	Determines the URL of your application after deploying it. The hostname will later be used as subdomain of a publicly reachable route. Thus it needs to be unique across your `Cloud Foundry` region. The format `<appname>-<SUBACCOUNT>` is important for authentication in later steps of this tutorial and at the same time assures, that the path is unique across your region. It can easily be changed later on if you want. Since this is a setup with multiple, dedicated instances, a `random-route` should be omitted.
+  - **`routes`** -	Determines the URLs of your application after deploying it, where it will be publicly reachable. Thus it needs to be unique across your `Cloud Foundry` region. The format `<appname>-<SUBACCOUNT>` is important for authentication in later steps of this tutorial and at the same time assures, that the path is unique across your region. It can easily be changed later on if you want.
   - **`path`** -	The relative path to the artifact to be deployed.
   - **`buildpack`** -	A `buildpack` is what `Cloud Foundry` uses to build and deploy your application. Since this is a Java application, we use `sap_java_buildpack`.
   - **`env`**	- Here we can provide additional application specific environment variables. For example we specify that we want to use a `TomEE` container as our target runtime.
@@ -216,7 +217,7 @@ Change `<SUBACCOUNT>` to match your user account, e.g. `p123456trial`.
 
 Now you can deploy the application by entering the following command:
 
-```
+```bash
 cf push
 ```
 
@@ -242,12 +243,12 @@ That's it.
 
 Then, run the following commands to start the local server:
 
-```
+```bash
 cd application
 mvn tomee:run
 ```
 
-Visit `http://localhost:8080/hello` on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
+Visit <http://localhost:8080/hello> on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
 
 Now you have a strong basis for developing your own cloud application for `SCP Cloud Foundry` using the `SAP Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP Cloud SDK`.
 
@@ -260,7 +261,7 @@ Now you have a strong basis for developing your own cloud application for `SCP C
 
 If you are using `PowerShell` on `Windows`, always put Maven arguments (supplied with `-D`) in quotes, for example:
 
-```
+```bash
 mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.sdk.archetypes" "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=RELEASE"
 ```
 

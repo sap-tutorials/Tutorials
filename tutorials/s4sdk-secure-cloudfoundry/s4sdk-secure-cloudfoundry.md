@@ -238,8 +238,6 @@ In the second step, we go back to our `HelloWorld` or Business Partner applicati
 
 In the **`<dependencies>`** section of the **`application/pom.xml`**, we enhance the following additional dependencies to our project:
 
-**_TODO_** Update necessary?
-
 ```
 <!-- Authentication and Authorization imports with Spring Security -->
 <dependency>
@@ -448,21 +446,7 @@ However, you should be still able to access your application using the App Route
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Recommended Changes with Usage of AppRouter Removed Mocked Auth User)]
-
-**_TODO_** `ALLOW_MOCKED_AUTH_HEADER` removed
-
-remove this part??
-
-> If you have previously enabled the mocking of tenant and user > information via the environment variable > `ALLOW_MOCKED_AUTH_HEADER` as mentioned in [Step 5](https://> blogs.sap.com/2017/06/23/step-5-resilience-with-hystrix/) of > this tutorial series, you should now remove this setting. > Execute the following command:
-> ```
-> cf unset-env firstapp ALLOW_MOCKED_AUTH_HEADER
-> ```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 13: ](Removed CSRF Token protection from backing service)]
+[ACCORDION-BEGIN [Step 12: ](Removed CSRF Token protection from backing service)]
 If you have previously exposed the backing service directly to the end user, you have used the `RestCsrfPreventionFilter` on the backend to protect against [Cross-Site-Request-Forgery]. As this is now in the responsibility of the App Router, we should remove it. For this remove the following lines from your **`web.xml`**:
 ```
 <filter>
@@ -479,7 +463,7 @@ If you have previously exposed the backing service directly to the end user, you
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Use OAuth scope to authorize users)]
+[ACCORDION-BEGIN [Step 13: ](Use OAuth scope to authorize users)]
 Now that we saved the backend microservice from unauthenticated users, we also want to make sure that certain endpoints can be called only when users have specific authorizations. In the following example, we want to use our **Display** OAuth scope.
 
 **Enhance spring-security.`xml` to protect routes with OAuth scopes**

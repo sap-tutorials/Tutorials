@@ -58,7 +58,7 @@ If you want to gain a deeper understanding of the inner workings, checkout the [
 
 [ACCORDION-BEGIN [Step 3: ](Make your OData call resilient)]
 
-Now that we have covered why resilience is important, it's finally time to introduce it into our application. In the last tutorial we created a simple servlet that uses the SDK's Virtual Data Model (VDM) and other helpful abstractions to retrieve business partners from an ERP system. In order to make this VDM call resilient, we have to wrap the code using the `ResilienceDecorator` class provided by the SAP Cloud SDK. 
+Now that we have covered why resilience is important, it's finally time to introduce it into our application. In the last tutorial we created a simple servlet that uses the SDK's Virtual Data Model (VDM) and other helpful abstractions to retrieve business partners from an ERP system. In order to make this VDM call resilient, we have to wrap the code using the `ResilienceDecorator` class provided by the SAP Cloud SDK.
 
 At the same time we will also separate the VDM call itself into another class for better readability and easier maintenance in future tutorials. Note that starting with version 3 of the SAP Cloud SDK, a separate class is no longer required to implement resilience. We could have also added resilience directly to the existing `BusinessPartnerServlet` class.
 
@@ -66,20 +66,23 @@ So first we will create the following class:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
 
-```
+```java
 package com.sap.cloud.sdk.tutorial;
 
+import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
 import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
+import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceIsolationMode;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
 import com.sap.cloud.sdk.datamodel.odata.helper.Order;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
 
+import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
+import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.AddressEmailAddress;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartnerAddress;
@@ -89,7 +92,7 @@ import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerS
 public class GetBusinessPartnersCommand {
 
     private static final String CATEGORY_PERSON = "1";
-    private final HttpDestination destination;
+    private final ErpHttpDestination destination;
 
     private final BusinessPartnerService businessPartnerService;
     private final ResilienceConfiguration myResilienceConfig;
@@ -99,7 +102,7 @@ public class GetBusinessPartnersCommand {
     }
 
     public GetBusinessPartnersCommand(String destinationName, BusinessPartnerService service) {
-        destination = DestinationAccessor.getDestination(destinationName).asHttp();
+        destination = DestinationAccessor.getDestination(destinationName).asHttp().decorate(DefaultErpHttpDestination::new);
         businessPartnerService = service;
 
         myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class);
@@ -145,7 +148,7 @@ To use the `ResilienceDecorator` we need at least two things:
 
 Here is an example of a custom resilience configuration. Here we set the isolation mode to mandatory tenant + user, the bulkhead maximum concurrent calls to 20, and the execution timeout to 10000 milliseconds.
 
-```
+```java
 myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
         .isolationMode(ResilienceIsolationMode.TENANT_AND_USER_REQUIRED)
         .timeLimiterConfiguration(
@@ -156,20 +159,21 @@ myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
                         .maxConcurrentCalls(20));
 ```
 
-Additionally, the `decorate...` and `execute...` methods of `ResilienceDecorator` support an optional third parameter for a fallback function, in case the remote service call should fail. In this case we have a lambda function that returns an empty list. We could also serve static data or check whether we have already cached a response to this call. 
+Additionally, the `decorate...` and `execute...` methods of `ResilienceDecorator` support an optional third parameter for a fallback function, in case the remote service call should fail. In this case we have a lambda function that returns an empty list. We could also serve static data or check whether we have already cached a response to this call.
 
 
-Now that we have a working command, we need to adapt our `BusinessPartnerServlet`:
+Update your resilience configuration to match the above configuration. Now that we have a working command, we need to adapt our `BusinessPartnerServlet` to use our newly created command:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServlet.java`
 
-```
+```java
 package com.sap.cloud.sdk.tutorial;
 
 import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -184,16 +188,17 @@ public class BusinessPartnerServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private static final Logger logger = LoggerFactory.getLogger(BusinessPartnerServlet.class);
-    private static final String DESTINATION_NAME = "ERP_001";
+
+    private static final String DESTINATION_NAME = "MyErpSystem";
 
     @Override
-    protected void doGet(final HttpServletRequest request, final HttpServletResponse response) throws IOException {
+    protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
+            throws ServletException, IOException {
         try {
-            final List<BusinessPartner> businessPartners = new GetBusinessPartnersCommand(DESTINATION_NAME).execute();
-
+            final List<BusinessPartner> businessPartners =
+                    new GetBusinessPartnersCommand(DESTINATION_NAME).execute();
             response.setContentType("application/json");
             response.getWriter().write(new Gson().toJson(businessPartners));
-
         } catch (final Exception e) {
             logger.error(e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
@@ -201,6 +206,7 @@ public class BusinessPartnerServlet extends HttpServlet {
         }
     }
 }
+
 ```
 
 Thanks to our new `GetBusinessPartnersCommand`, we can now simply create a new command and execute it. As before, we get a list of business partners as result. But now we can be sure that our application will not stop working all-together if the OData service is temporarily unavailable for any tenant.
@@ -216,12 +222,12 @@ There is one thing we need to address in order to properly test our code: we nee
 
 We provide the ERP destination as explained in the [previous blog post] (https://blogs.sap.com/2017/05/21/step-4-with-sap-s4hana-cloud-sdk-calling-an-odata-service/) as a `systems.json` or `systems.yml` file. In addition, you may provide a `credentials.yml` file to reuse your SAP S/4HANA login configuration as described in the Appendix of the previous tutorial step.
 
-To provide credentials in this manner, create the following `credentials.yml` file in a safe location (e.g., like storing your ssh keys in ~/.ssh), i.e., not in the source code repository.
+To provide credentials in this manner, create the following `credentials.yml` file (if you have not already) in a safe location (e.g., like storing your ssh keys in ~/.ssh), i.e., not in the source code repository.
 
 `/secure/local/path/credentials.yml`
 
-```
- 
+```yaml
+
 ---
 credentials:
 - alias: "ERP_TEST_SYSTEM"
@@ -231,65 +237,89 @@ credentials:
 
 Afterwards you can pass the `credentials.yml` when running tests. Make sure to pass the absolute path to the file:
 
-```
+```bash
 mvn test -Dtest.credentials=/secure/local/path/credentials.yml
 ```
 
-Now let's have a look at the code, to be placed in a file at `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommandTest.java`:
+Now let's adapt the code inn our integration test to check, if our fallback is working correctly:
 
-```
+ `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
+
+```java
 package com.sap.cloud.sdk.tutorial;
 
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
+import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
+import org.jboss.arquillian.test.api.ArquillianResource;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 
 import com.sap.cloud.sdk.testutil.MockUtil;
 
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-
+import static io.restassured.RestAssured.when;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class GetBusinessPartnersCommandTest {
+@RunWith(Arquillian.class)
+public class BusinessPartnerServletTest {
+    private static final MockUtil mockUtil = new MockUtil();
 
-    private MockUtil mockUtil;
+    @ArquillianResource
+    private URL baseUrl;
 
-    @Before
-    public void beforeClass() {
-        mockUtil = new MockUtil();
+    @Deployment
+    public static WebArchive createDeployment() {
+        return TestUtil.createDeployment(BusinessPartnerServlet.class);
+    }
+
+    @BeforeClass
+    public static void beforeClass() {
         mockUtil.mockDefaults();
     }
 
+    @Before
+    public void before() {
+        RestAssured.baseURI = baseUrl.toExternalForm();
+        mockUtil.mockErpDestination("MyErpSystem", "ERP_001");
+    }
+
     @Test
-    public void testWithSuccess() {
+    public void testService() {
+        // JSON schema validation from resource definition
+        final JsonSchemaValidator jsonValidator = JsonSchemaValidator
+                .matchesJsonSchemaInClasspath("businesspartners-schema.json");
 
-        mockUtil.mockErpDestination("ERP_001", "ERP_001");
-
-        final GetBusinessPartnersCommand businessPartnersCommand = new GetBusinessPartnersCommand("ERP_001");
-
-        assertThat(businessPartnersCommand.execute()).isNotEmpty();
-        assertThat(businessPartnersCommand.execute()).hasOnlyElementsOfType(BusinessPartner.class);
+        // HTTP GET response OK, JSON header and valid schema
+        when()
+                .get("/businesspartners")
+        .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body(jsonValidator);
     }
 
     @Test
     public void testWithFallback() throws URISyntaxException {
-
         // Simulate a failed VDM call with non-existent destination
-        mockUtil.mockDestination("ERP_001", new URI("http://localhost"));
+        mockUtil.mockDestination("MyErpDestination", new URI("http://localhost"));
 
-        final GetBusinessPartnersCommand businessPartnersCommand = new GetBusinessPartnersCommand("ERP_001");
+        final GetBusinessPartnersCommand businessPartnersCommand = new GetBusinessPartnersCommand("MyErpDestination");
         assertThat(businessPartnersCommand.execute()).isEmpty();
     }
 }
+
 ```
 
-We use JUnit's @Before annotation to setup a fresh `MockUtil` for each test.
-
-For `testWithSuccess`(), we use the ERP destination information using `mockUtil.mockErpDestination` so that the endpoint points to the SAP S/4HANA system configured in your `systems.json` file. For the sake of simplicity we simply assert that the response is not empty and has elements of type `BusinessPartner`.
-
-For `testWithFallback`(), we intentionally provide a destination (localhost) that does not provide the called OData service in order to make the command fail. Since we implemented a fallback for our command that returns an empty list, we assert that we actually receive an empty list as response.
+With `testWithFallback()` we added a test to test our resilience. We intentionally provide a destination (localhost) that does not provide the called OData service in order to make the command fail. Since we implemented a fallback for our command that returns an empty list, we assert that we actually receive an empty list as response.
 
 Simply run  `mvn clean install` as in the previous tutorials to test and build your application. Consider the following before deploying to Cloud Foundry.
 
@@ -298,7 +328,7 @@ Simply run  `mvn clean install` as in the previous tutorials to test and build y
 
 [ACCORDION-BEGIN [Step 5: ](Deploy application to Cloud Foundry)]
 
-Simply run ```mvn clean install``` as in the previous tutorials to test and build your application and then run ```cf push``` to deploy your updated application to CloudFoundry!
+Simply run `mvn clean install` as in the previous tutorials to test and build your application and then run `cf push` to deploy your updated application to Cloud Foundry!
 
 This wraps up the tutorial on making our sample application resilient using `Resilience4j` and the SAP Cloud SDK. Continue with the next tutorial [Step 6: Caching](https://blogs.sap.com/2017/07/12/step-6-with-sap-s4hana-cloud-sdk-caching/) and also explore other tutorial posts on topics like [security](https://blogs.sap.com/2017/07/18/step-7-with-sap-s4hana-cloud-sdk-secure-your-application-on-sap-cloud-platform-cloudfoundry/)!
 
