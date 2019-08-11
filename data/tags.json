@@ -105,6 +105,10 @@
       "value": "products>sap-cloud-platform-connectivity"
     },
     {
+      "name": "SAP Cloud Platform Enterprise Messaging",
+      "value": "products>sap-cloud-platform-enterprise-messaging"
+    },
+    {
       "name": "SAP Cloud Platform Integration for process services",
       "value": "products>sap-cloud-platform-integration-for-process-services"
     },
