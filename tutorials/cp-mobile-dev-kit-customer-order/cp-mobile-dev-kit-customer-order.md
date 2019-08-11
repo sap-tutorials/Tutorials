@@ -270,13 +270,13 @@ Save the changes to the `CustomerOrderCount.js` file.
 
 [ACCORDION-BEGIN [Step 6: ](Display top 5 orders in customer detail page)]
 
-Next, you will add an **Object Table** compound to display top 5 orders information in the **Customer Detail** page.
+Next, you will add an **Object Collection** compound to display top 5 orders information in the **Customer Detail** page.
 
-In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Collection** control onto the page area.
 
 ![MDK](img_022.gif)
 
-In the **Properties** pane, select the previously added service from the **Service** drop down and then select `SalesOrderHeaders` entity set from the dropdown. This way, the Object Table has been bound to `SalesOrderHeaders` entity.
+In the **Properties** pane, select the previously added service from the **Service** drop down.
 
 Provide below Properties:
 
@@ -435,7 +435,7 @@ You will see the **Customer Orders** area in customer detail page and also total
 
 ![MDK](img_033.1.jpg)
 
->There are many customer records in the sample backend which do not have any order. If you see count 0 then look for another customer record. 
+>There are many customer records in the sample backend which do not have any order. If you see count 0 then look for another customer record.
 
 Clicking on any order navigates to its details page.
 

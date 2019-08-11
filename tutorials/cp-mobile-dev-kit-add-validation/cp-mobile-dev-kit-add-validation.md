@@ -62,7 +62,7 @@ Copy and paste the following code.
 export default function EmailValidation(atSign) {
 
 //The following evaluateTargetPath will retrieve the current value of the email control
-if((atSign.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@') + 1) == 0) {
+if((atSign.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@')) === -1){
 
 //If email value does not contain @ display a validation failure message to the end-user
   atSign.executeAction('/DemoSampleApp/Actions/ValidationFailure.action');
@@ -74,14 +74,14 @@ if((atSign.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@') + 1) == 0)
 }
 ```
 
->The `indexOf()` method returns the index within the calling String object of the first occurrence of the specified value.
+>The [`indexOf()` method](https://www.w3schools.com/jsref/jsref_indexof.asp) returns the index within the calling String object of the first occurrence of the specified value and -1, if no occurrence is found.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add the validtion rule to the Update entity)]
 
-Now that you have created the validation rule and the validation failure message, you will add both to the Update action. This will tell the Update action to run the validation rule before saving any data. If the validation rule is successful, the Update action will save the changes as expected. If the validation rule fails, the end-user receives the validation failure message telling them useful information so they can fix the problem before continuing.
+Now that you have created the validation rule, you will add it to the Update action. This will tell the Update action to run the validation rule before saving any data. If the validation rule is successful, the Update action will save the changes as expected. If the validation rule fails, the end-user receives the validation failure message telling them useful information so they can fix the problem before continuing.
 
 Open `UpdateCustomer.action` by double clicking on the action in the project explorer pane.
 

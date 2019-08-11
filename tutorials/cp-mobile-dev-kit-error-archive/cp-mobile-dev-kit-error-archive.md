@@ -139,7 +139,9 @@ Click **Check Service** to validate the service properties. If all the details a
 
 >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
 
-In following steps, click **Next** with default selections and **Finish** the project creation.
+In **Metadata Source** step, select `PurchaseOrderHeaders` and `PurchaseOrderItems`‚ and click **Next**.
+
+In following steps go with default selections and **Finish** the project creation.
 
 ![MDK](img_006.gif)
 
@@ -469,7 +471,9 @@ export default function DecideWhichEditPage(context) {
   let affectedEntityType = "Unknown Entity Set"; //By default it's unknown type
   if (id.indexOf("(") > 0) {
     //Extracting the entity set type from @odata.id e.g. PurchaseOrderHeaders
-    affectedEntityType = id.substring(0, id.indexOf("("));
+    var patt = /\/?(.+)\(/i;
+   var result = id.match(patt);
+   affectedEntityType = result[1];
   }
   console.log("Affected Entity Type Is:");
   console.log(affectedEntityType);
