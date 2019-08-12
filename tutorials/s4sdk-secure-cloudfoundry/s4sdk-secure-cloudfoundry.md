@@ -353,6 +353,17 @@ cf push
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Assign users to scopes)]
+
+TODO this is outdated. OAuth2 not working, error:
+```xml
+<oauth>
+<error_description>
+An Authentication object was not found in the SecurityContext
+</error_description>
+<error>unauthorized</error>
+</oauth>
+```
+
 Furthermore, the user accessing the application, needs to be assigned the `Display` OAuth scope. This is done using the SCP cockpit.
 
 First, go to your trial account on Cloud Foundry and find the **Role Collections** menu under the **Security** module:
