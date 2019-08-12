@@ -24,7 +24,7 @@ Before we dive deeper into the real setup of the architecture, let's quickly rev
 
 Figure 1 presents the final setup. First, we still have our existing "Hello World" or "Business Partner" Java-based microservice that we have created in the previous tutorials. However, instead of letting the customer access this application directly, we will use the so-called Application Router (App Router) that serves two purposes.
 
-On the one hand, the App Router is a general entry point into the world of microservices. The main idea is that you can split an application into multiple microservices with independent deployability, polyglot runtimes & persistence and independent teams. Therefore, a central entry component is required that hides the complexity of the microservice landscape from the end customer.
+On the one hand, the App Router is a general entry point into the world of microservices. The main idea is that you can split an application into multiple microservices with independent deployability, polyglot `runtimes` & persistence and independent teams. Therefore, a central entry component is required that hides the complexity of the microservice landscape from the end customer.
 
 On the other hand, the App Router is mainly responsible for managing authentication flows. The App Router takes incoming, unauthenticated requests from users and initiates an OAuth2 flow with the [Extended Services for User Account and Authentication (XSUAA)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/51ec15a8979e497fbcaadf80da9b63ba.html). The XSUAA service is an SAP-specific extension of [`CloudFoundry's` UAA](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) service to deal with authentication and authorization (it may again delegate this aspect to other providers such as external Identity Providers, see later in this tutorial). If the user authenticates at the XSUAA, it will respond with a [JSON Web Token (JWT)](https://de.wikipedia.org/wiki/JSON_Web_Token) containing the authenticated users as well as all scopes that he or she has been granted.
 
@@ -33,7 +33,7 @@ On the other hand, the App Router is mainly responsible for managing authenticat
 
 The JWT s passed by the App Router to the underlying microservices so that they are freed up from this task. At the same time, these microservices can only be accessed with a valid JWT, hence, are protected from unauthenticated traffic.
 
-The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service require a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid JWTs. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
+The JWT contains a signature that needs to be verifiable by every microservice to establish trust. Hence, every service require a key (client-secrets or public keys) to verify this signature and reject any requests with non-valid `JWTs`. Therefore, every service has to maintain a service binding to the XSUAA that provides this information for runtime verification (Figure 2). To enable this, every microservice binds to a dedicated XSUAA instance which writes this information into the `VCAP_SERVICES` environment variable which the microservices can use to verify any token's validity.
 
 ![Provisioning view with XSUAA binding](Figure2-1.png)
 
@@ -46,11 +46,16 @@ With these basics in mind, let's create the picture of Figure 1 and Figure 2 by 
 
 [ACCORDION-BEGIN [Step 2: ](Set up App Router to authenticate users)]
 
-The App Router can be installed in two different ways: (1) Download from Service Marketplace and (2) Download from the SAP NPM Registry. These steps are explained below:
+The App Router can be installed in two different ways:
+
+1. Download from Service Marketplace and
+2. Download from the SAP NPM Registry.
+
+These steps are explained below.
 
 ### Alternative 1: Get the App Router via Service Marketplace
 
-1. Before you can start the setup and configuration of the App Router component you need to download the XSA Javascript package from Service Marketplace: <https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100200003885&V=MAINT&TA=ACTUAL&PAGE=SEARCH/XS%20JAVASCRIPT%201>. At the time of writing the package `XS_JSCRIPT14_10-70001363.ZIP` is the most recent one.
+1. Before you can start the setup and configuration of the App Router component you need to download the XSA JavaScript package from Service Marketplace: <https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100200003885&V=MAINT&TA=ACTUAL&PAGE=SEARCH/XS%20JAVASCRIPT%201>. At the time of writing the package `XS_JSCRIPT14_10-70001363.ZIP` is the most recent one.
 
 2. After downloading the package extract it to your favorite `<location>`
 
@@ -58,16 +63,13 @@ The App Router can be installed in two different ways: (1) Download from Service
 
 4. Copy the approuter directory to some newly created directory that we call `<destLocation>`
 
-[DONE]
-[ACCORDION-END]
+### Alternative 2: Get the App Router via NPM
 
-
-[ACCORDION-BEGIN [Step 3: ](Get App Router via SAP NPM Registry)]
 This alternative approach requires that you have npm installed on your machine.
 
 1. Go to your favourite `<destLocation>` and create the `approuter` directory
 
-    ```
+    ```bash
     cd <destLocation>
     mkdir approuter
     cd approuter
@@ -75,7 +77,7 @@ This alternative approach requires that you have npm installed on your machine.
 
 2. Place the following `package.json` in your `approuter` directory
 
-    ```
+    ```json
     {
       "name": "approuter",
       "dependencies": {
@@ -89,46 +91,51 @@ This alternative approach requires that you have npm installed on your machine.
 
 3. Install AppRouter dependencies using the following commands
 
-    ```
+    ```bash
     npm config set @sap:registry https://npm.sap.com
     npm install
     ```
 
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Proceed with the App Router Setup independent of your download preferences)]
-1. Within `<destLocation>/approuter` create a new file called `xs-app.json` with the following content:
-    ```
-    {
-      "welcomeFile": "index.html",
-      "routes": [{
-        "source": "/",
-        "target": "/",
-        "destination": "app-destination"
-      }]
-    }
-    ```
+[ACCORDION-BEGIN [Step 3: ](Proceed with the App Router Setup independent of your download preferences)]
+Within `<destLocation>/approuter` create a new file called `xs-app.json` with the following content:
 
-2. Within `<destLocation>` create a new `manifest.yml` file for the approuter microservice with the following content.
-    ```
-    
-    ---
-    applications:
-    - name: approuter
-      host: approuter-<SUBACCOUNT>
-      path: approuter
-      memory: 128M
-      buildpack: nodejs_buildpack
-      env:
-        TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.eu10.hana.ondemand.com'
-        destinations: '[{"name":"app-destination", "url" :<APPLICATION_URL>, "forwardAuthToken": true}]'
-      services:
-        - my-xsuaa
-    ```
-    Adapt the file as follows: In the `host` replace `<SUBACCOUNT>` with your actual account. In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Also, depending on your region, you will have to adapt the `eu10` in the `TENANT_HOST_PATTERN` to your region.
+```json
+{
+  "welcomeFile": "index.html",
+  "routes": [{
+    "source": "/",
+    "target": "/",
+    "destination": "app-destination"
+  }]
+}
+```
 
-    **Note**: It is mandatory that your app URL conforms the format `<APP_NAME>-<SUBACCOUNT>.cfapps.<REGION_IDENTIFIER>.hana.ondemand.com`. The authentication mechanism will identify you by pulling the user-id (`SUBACCOUNT`) out of the subdomain.
+Within `<destLocation>` create a new `manifest.yml` file for the approuter microservice with the following content:
+
+```yaml
+
+---
+applications:
+- name: approuter
+routes:
+    - route: approuter-<SUBACCOUNT>.cfapps.sap.hana.ondemand.com
+  path: approuter
+  memory: 128M
+  buildpack: nodejs_buildpack
+  env:
+    TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.eu10.hana.ondemand.com'
+    destinations: '[{"name":"app-destination", "url" :<APPLICATION_URL>, "forwardAuthToken": true}]'
+  services:
+    - my-xsuaa
+```
+
+Adapt the file as follows: In the `route` replace `<SUBACCOUNT>` with your actual account. In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Also, depending on your region, you will have to adapt the `eu10` in the `TENANT_HOST_PATTERN` to your region.
+
+**Note**: It is mandatory that your app URL conforms the format `<APP_NAME>-<SUBACCOUNT>.cfapps.<REGION_IDENTIFIER>.hana.ondemand.com`. The authentication mechanism will identify you by pulling the user-id (`SUBACCOUNT`) out of the subdomain.
 
 **Understanding the AppRouter's `manifest.yml` and `xs-app.json`:**
 
@@ -151,7 +158,7 @@ The `services` section declares to bind our own XSUAA service instance to the Ap
 
     **_Note_**: As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
 
-    ```
+    ```json
     {
       "xsappname": "firstapp-p1942765239trial",
       "tenant-mode": "shared",
@@ -172,16 +179,16 @@ The `services` section declares to bind our own XSUAA service instance to the Ap
       ]
     }
     ```
-    
+
 4. We then create a service instance called `my-xsuaa` of the XSUAA service by issuing the following command and using the `xs-security.json` file:  
 
-    ```
+    ```bash
     cf create-service xsuaa application my-xsuaa -c xs-security.json
     ```
 
     If you have created this instance of the XSUAA service before without the `xs-security.json` parameter, you can unbind and delete the existing instance with these commands before creating it with the above command:
 
-    ```
+    ```bash
     cf unbind-service firstapp my-xsuaa
     cf delete-service my-xsuaa​
     ```
@@ -193,7 +200,7 @@ The `services` section declares to bind our own XSUAA service instance to the Ap
     You may have different content in the `approuter` folder depending on the download alternative you have chosen. Ensure that `xs-app.json` and `package.json` files and the `node_modules` directory with content are present.
 
 6. Then deploy the app router using the following (with the appropriate API endpoint of your Cloud Foundry region):
-    ```
+    ```bash
     cd <destLocation>
     cf api https://api.cf.eu10.hana.ondemand.com
     cf login
@@ -212,7 +219,7 @@ The `services` section declares to bind our own XSUAA service instance to the Ap
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Protect your backend microservice)]
-After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. We, therefore, need to protect our java microservices as well so that they accept requests with valid JWTs for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
+After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. We, therefore, need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
 
 In the following, we will use the [Spring Security framework](https://spring.io/projects/spring-security) to protect the microservices. You can also use standard mechanisms of the SAP Java Build Pack to achieve the same. If you do not want to use Spring Security please follow the steps [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ead7ee64f96f4c42bacbf0ae23d4135b.html), nonetheless, the concepts described hereinafter apply for both methods.
 
@@ -227,7 +234,7 @@ The first step is to get some additional Java libs from Service Marketplace. To 
 3. Unzip the file to `<destLocation>`
 4. Install XS Security Libs to your local maven repo using:
 
-    ```
+    ```bash
     cd <destLocation>
     mvn clean install
     ```
@@ -242,7 +249,7 @@ In the second step, we go back to our `HelloWorld` or Business Partner applicati
 
 In the `<dependencies>` section of the `application/pom.xml`, we enhance the following additional dependencies to our project:
 
-```
+```xml
 <!-- Authentication and Authorization imports with Spring Security -->
 <dependency>
   <groupId>com.sap.xs2.security</groupId>
@@ -287,7 +294,7 @@ This dependency section contains three main parts of dependencies:
 [ACCORDION-BEGIN [Step 8: ](Add Spring as Servlet Listener to your web.xml)]
 Afterwards you need to go to your `web.xml` in `src/main/webapp/WEB-INF` and add the following lines. If you have used the Archetype in [Step 3 of the Tutorial](https://blogs.sap.com/2017/05/19/step-3-with-sap-s4hana-cloud-sdk-helloworld-on-scp-cloudfoundry/) these lines should be already there and you can simply uncomment them.
 
-```
+```xml
 <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 </listener>
@@ -318,10 +325,10 @@ To protect all your routes so that users have to be at least authenticated your 
 <sec:intercept-url pattern="/**" access="isAuthenticated()" method="GET" />
 ```
 
-This code says that all users which access all URLs under `/` with the `GET` method have to be at least authenticated. You can find the full reference for access management here: [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/current/reference/html/el-access.html)
+This code says that all users which access all URLs under `/` with the `GET` method have to be at least authenticated. You can find the full reference for access management here: [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/current/reference/html5/)
 
 The full `spring-security.xml` should look like this:
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -407,12 +414,12 @@ Now we need to modify the `manifest.yml` a bit to interpret the JWT sufficiently
 SAP_JWT_TRUST_ACL: '[{"clientid" : "*", "identityzone" : "*"}]'
 ```
 In addition, we need to bind our `my-xsuaa` instance to our java backend service as well so that we have the OAuth secret to validate the JWT's signature
-```
+```yml
 services:
 - my-xsuaa
 ```
 In my example case, the final `manifest.yml` may look like this (depending on your progress with other steps of the tutorial):
-```
+```yml
 
 ---
 applications:
@@ -454,7 +461,7 @@ However, you should be still able to access your application using the App Route
 
 [ACCORDION-BEGIN [Step 12: ](Removed CSRF Token protection from backing service)]
 If you have previously exposed the backing service directly to the end user, you have used the `RestCsrfPreventionFilter` on the backend to protect against cross-site request forgery. As this is now in the responsibility of the App Router, we should remove it. For this remove the following lines from your `web.xml`:
-```
+```xml
 <filter>
   <filter-name>RestCsrfPreventionFilter</filter-name>
   <filter-class>org.apache.catalina.filters.RestCsrfPreventionFilter</filter-class>
@@ -475,11 +482,11 @@ Now that we saved the backend microservice from unauthenticated users, we also w
 Enhance `spring-security.xml` to protect routes with OAuth scopes
 
 The backend itself can be easily adapted based on the `spring-security.xml`. In this case, we protect the `/hello` route with our `Display` OAuth Scope. Introduce (or uncomment) the following line within the `<sec:http>` element:
-```
+```xml
 <sec:intercept-url pattern="/hello" access="#oauth2.hasScope('${xs.appname}.Display')" method="GET" />
 ```
 Afterwards you need to redeploy the application with
-```
+```bash
 mvn clean install
 cf push
 ```
@@ -566,7 +573,7 @@ So far, we have used the XSUAA service itself as the user provider. However, in 
 
 To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.
 
-You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<tenantID>.authentication.eu10.hana.ondemand.com/saml/metadata`. In my case, that would be `https://p1942765239trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metatdata to your local computer.
+You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<tenantID>.authentication.eu10.hana.ondemand.com/saml/metadata`. In my case, that would be `https://p1942765239trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metadata to your local computer.
 
 Second, you need to import the metadata into your IdP. In the following, we use an own SAP Cloud Identity tenant to do this.
 

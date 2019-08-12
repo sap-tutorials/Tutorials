@@ -242,7 +242,7 @@ mvn clean install
 mvn tomee:run -pl application
 ```
 
-Visit <http://localhost:8080/businesspartners> to see your new feature in action. It should look similar to this web page:
+Visit `http://localhost:8080/businesspartners` to see your new feature in action. It should look similar to this web page:
 
 ![list of businesspartners from ERP](post-4-businesspartners-result.png)
 

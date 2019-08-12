@@ -13,7 +13,7 @@ time: 15
   - What caching is and why you should care about it
   - How a cache works
   - Uses of a caching command
-  - How to cache your OData Call
+  - How to cache your OData Call 
   - How to do the configuration and make `parameterized` calls
 
 
@@ -61,7 +61,15 @@ Stored information is organized as a local key-value store. For each unique key 
  of a "cache hit". Otherwise the cache response is computed.
 
 In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial we will
-use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for our purpose.
+use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for our purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>com.github.ben-manes.caffeine</groupId>
+    <artifactId>jcache</artifactId>
+    <version>2.7.0</version>
+</dependency>
+```
 
 [DONE]
 [ACCORDION-END]
@@ -74,7 +82,7 @@ In [the resilience tutorial] (https://developers.sap.com/tutorials/s4sdk-resilie
 into our application, using `Resilience4j` library. Now, in order to make our OData calls cacheable, we will extend
 the use of `ResilienceConfiguration` class used there and configure caching as well.
 
-Add the following lines at the end of the constructor of the GetBusinessPartnerCommand:
+Add the following lines at the end of the constructor of the `GetBusinessPartnerCommand`:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
 
@@ -87,65 +95,78 @@ final ResilienceConfiguration.CacheConfiguration cacheConfig =
 myResilienceConfig.cacheConfiguration(cacheConfig);                         
 ```
 
-As mentioned above, we use `ResilienceConfiguration` class for caching. The cache is configured by providing an instance of Class `CacheConfiguration` to method `cacheConfiguration`.
+As mentioned above, we use our `ResilienceConfiguration` to integrate the caching functionality, which is described in a `CacheConfiguration`. There are two steps to our configuration:
 
-Now that we have a working command with enabled cache features, we can adapt our `BusinessPartnerServlet`.
+1. Determine how long objects are to be cached
+2. Declare the parameters that need to be stored together with the cached data
+
+The first step is obviously necessary, since we want to set up a cache that is meant to store data only a short amount of time to optimize execution time. How long you want to keep data cached depends on the data that you receive. How fast do you expect the information to be outdated? How frequently will the data be accessed?
+
+Secondly, we specify the parameters that are to be cached with the data. For our request to retrieve a list of business partners no parameters are necessary, so we build our cache `wihtoutParameters`. But imagine you want to fetch information about a specific business partner by passing an ID to the system. In order to cache such a request the cache needs to not only remember the result received, but also the ID that was associated with it. In such a case one can simply pass such parameters by using `.withParameters(param1, param2, ..)`.
+
+Feel free to test that subsequent requests respond faster compared to the first request issued. Deploy your application locally or in the cloud and access the list of business partners a couple of times.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test the Cache)]
 
+Now that we have a working command with caching functionality we also have to adapt our test. Recall the test we prepared to check our resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
+
+If our servlet got the desired result cached from a previous call, and the ERP system is temporarily not available, our cache will still return the data. But the test expects the result to be empty in that case. In order to account for this behavior and to see if our cache is working as expected let's adapt the test to account for caching. Replace the `testWithFallback` test with the following code:
+
+`integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
+
 ```java
-package com.sap.cloud.sdk.tutorial;
+@Test
+public void testCache() {
+    mockUtil.mockErpDestination("MyErpSystem", "ERP_001");
+    when()
+            .get("/businesspartners")
+            .then()
+            .statusCode(200)
+            .contentType(ContentType.JSON)
+            .body(jsonValidator_List);
 
-import com.google.gson.Gson;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
-
-import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-
-@WebServlet("/businesspartners")
-public class BusinessPartnerServlet extends HttpServlet {
-
-    private static final long serialVersionUID = 1L;
-    private static final Logger logger = CloudLoggerFactory.getLogger(BusinessPartnerServlet.class);
-
-    private static final String DESTINATION_NAME = "MyErpSystem";
-
-    @Override
-    protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
-            throws ServletException, IOException {
-        try {
-            final List<BusinessPartner> businessPartners =
-                    new GetCachedBusinessPartnersCommand(DESTINATION_NAME, new DefaultBusinessPartnerService ).execute();
-
-            response.setContentType("application/json");
-            response.getWriter().write(new Gson().toJson(businessPartners));
-
-        } catch (final Exception e) {
-            logger.error(e.getMessage(), e);
-            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            response.getWriter().write(e.getMessage());
-        }
-    }
+    // Simulate a failed VDM call with non-existent destination
+    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+    when()
+            .get("/businesspartners")
+            .then()
+            .statusCode(200)
+            .contentType(ContentType.JSON)
+            .body(jsonValidator_List);
 }
 ```
-Here, we simply create a new command and execute it. As before, we get a list of business partners as result. Due to
-resilience call, the application will not go down if the OData service is temporarily unavailable.
 
-Furthermore, with caching in place, when we make multiple calls in succession, it is only the first time that the
-actual request is made. For the subsequent calls, the cache is used instead, thus improving the response times.
+Here, we expect the request still to be successful, even after swapping out the destination for a dummy one.
 
-**Note**: Instead of "execute()" you are now also able to run `queue()` and `observe()` for asynchronous evaluation.
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](More on Testing)]
+
+The introduction of caching has some implications for how we test our application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. So far, this was the case for our integration tests. But now the added cache holds a state that is shared between the tests in our test class, which has to be accounted for.
+
+Take a look back at the test we just replaced:
+
+```java
+@Test
+public void testWithFallback() {
+    // Simulate a failed VDM call with non-existent destination
+    DestinationAccessor.setLoader((n, o) -> Try.success(dummyDestination));
+
+    // Assure an empty list is returned as fallback
+    when()
+            .get("/businesspartners")
+            .then()
+            .statusCode(200)
+            .contentType(ContentType.JSON)
+            .body("", Matchers.hasSize(0));
+}
+```
+
+Executed on it's own, this test will still pass as it did before. However, if `testService` is run prior to this test the result will be cached and `testWithFallback` will fail since the cached data is returned instead of falling back to an empty list. By changing the test we avoided such issues since our new test does not interfere with other tests. While being sufficient for this tutorial, in a productive setting one should implement a more sophisticated and robust test setup, where caches are invalidated between tests.
 
 This wraps up the tutorial. Stay tuned for more tutorials on the SAP Cloud SDK on topics like UI5 and security!
 
@@ -154,19 +175,19 @@ See the next tutorial in the series here: [Step 7 with SAP Cloud SDK: Secure you
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test yourself)]
+[ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
 [VALIDATE_1]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test yourself)]
+[ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
 [VALIDATE_2]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+[ACCORDION-BEGIN [Step 9: ](Test yourself)]
 
 [VALIDATE_3]
 
