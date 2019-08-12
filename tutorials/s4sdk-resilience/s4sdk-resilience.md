@@ -146,11 +146,11 @@ To use the `ResilienceDecorator` we need at least two things:
 
 2. An instance of `ResilienceConfiguration` with identifier parameter set. Here we use the class reference, but a string identifier can also be used. Besides the mandatory identifier parameter, the SAP Cloud SDK comes with a default resilience configuration, so you don't need to perform any other configuration on your own. In most cases the default configuration will suffice. However, if you need to change the resilience configuration, you can find more information on this topic in [SAP Cloud SDK Javadoc](https://help.sap.com/doc/ae45330c443b42c5a54bde85dd70aec9/1.0/en-US/com/sap/cloud/sdk/cloudplatform/resilience/ResilienceConfiguration.html)
 
-Here is an example of a custom resilience configuration. Here we set the isolation mode to mandatory tenant + user, the bulkhead maximum concurrent calls to 20, and the execution timeout to 10000 milliseconds.
+Here is an example of a custom resilience configuration. Here we set the isolation mode to optional tenant + user, the bulkhead maximum concurrent calls to 20, and the execution timeout to 10000 milliseconds.
 
 ```java
 myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
-        .isolationMode(ResilienceIsolationMode.TENANT_AND_USER_REQUIRED)
+        .isolationMode(ResilienceIsolationMode.TENANT_AND_USER_OPTIONAL)
         .timeLimiterConfiguration(
                 ResilienceConfiguration.TimeLimiterConfiguration.of()
                         .timeoutDuration(Duration.ofMillis(10000)))
