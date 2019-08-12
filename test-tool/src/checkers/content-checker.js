@@ -64,7 +64,7 @@ module.exports = {
         tutorialLink,
         tutorialLinkInvalid,
       },
-      validation: { accordions, codeLine },
+      validation: { accordions, codeLine, done },
     } = regexp;
     // true because meta is in the very beginning
     let isMeta = true;
@@ -130,6 +130,16 @@ module.exports = {
             });
           }
         }
+
+        const doneMatch = line.match(done);
+
+        if (doneMatch && line.startsWith(' ')) {
+          result.contentCheckResult.push({
+            line: index + 1,
+            msg: 'Do not indent [DONE] button',
+          });
+        }
+
         const h1Match = line.match(h1.regexp);
         if (h1Match) {
           result.contentCheckResult.push({
