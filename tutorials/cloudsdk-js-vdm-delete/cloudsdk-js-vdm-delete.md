@@ -130,7 +130,7 @@ Note, that we used `router.delete` for this route, so we need to send a `DELETE`
 [ACCORDION-BEGIN [Step 2: ](Delete a business partner address)]
 
 [OPTION BEGIN [TypeScript]]
-Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.ts` and overwrite `delete-business-partner-address` as shown below:
+Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.ts` and overwrite `deleteBusinessPartnerAddress` as shown below:
 
 ```JavaScript / TypeScript
 function deleteBusinessPartnerAddress(businessPartnerId: string, addressId: string): Promise<void> {
@@ -141,10 +141,11 @@ function deleteBusinessPartnerAddress(businessPartnerId: string, addressId: stri
     });
 }
 ```
+
 [OPTION END]
 
 [OPTION BEGIN [JavaScript]]
-Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.js` and overwrite `delete-business-partner-address` as shown below:
+Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.js` and overwrite `deleteBusinessPartnerAddress` as shown below:
 
 ```JavaScript
 function deleteBusinessPartnerAddress(businessPartnerId, addressId) {
@@ -155,11 +156,14 @@ function deleteBusinessPartnerAddress(businessPartnerId, addressId) {
     });
 }
 ```
+
 [OPTION END]
 
-Compared to the other requests, there are some differences. First, the `delete` function does not take an instance of the entity, but directly expects the entity's key fields as parameters. Secondly, the `delete` function is the only one that does not return a promise of the respective entity, but instead a `Promise<void>`. Be aware that should the service require a version identifier for the delete request, you will have to explicitly set it using the `setVersionIdentifier` function.
+As of version `1.7.0` of the SAP Cloud SDK, you can alternatively pass an entity to the `delete` method instead of the entity's key fields. This has the advantage that the version identifier of the entity is set automatically. When going with the first approach, you would have to manually supply the version identifier using the `setVersionIdentifier` method. Therefore, if you already have an instance of the entity you want to delete, passing it directly is the easier approach.
 
-Restart your server and send a delete request to `http://localhost:8080/business-partners/1/address/1` (or the respective IDs you used in the previous tutorials). If everything works, you should see "Entity successfully deleted!" in the response body!
+Finally, be aware that executing a delete request will return a `Promise<void>`.
+
+Restart your server and send a delete request to `http://localhost:8080/business-partners/1/address/1` (or the respective IDs you used in the previous tutorials). If everything works, you should see `"Entity successfully deleted!"` in the response body!
 
 [DONE]
 [ACCORDION-END]
