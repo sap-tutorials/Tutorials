@@ -46,26 +46,7 @@ With these basics in mind, let's create the picture of Figure 1 and Figure 2 by 
 
 [ACCORDION-BEGIN [Step 2: ](Set up App Router to authenticate users)]
 
-The App Router can be installed in two different ways:
-
-1. Download from Service Marketplace and
-2. Download from the SAP NPM Registry.
-
-These steps are explained below.
-
-### Alternative 1: Get the App Router via Service Marketplace
-
-1. Before you can start the setup and configuration of the App Router component you need to download the XSA JavaScript package from Service Marketplace: <https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100200003885&V=MAINT&TA=ACTUAL&PAGE=SEARCH/XS%20JAVASCRIPT%201>. At the time of writing the package `XS_JSCRIPT14_10-70001363.ZIP` is the most recent one.
-
-2. After downloading the package extract it to your favorite `<location>`
-
-3. `cd <location>/@sap`
-
-4. Copy the approuter directory to some newly created directory that we call `<destLocation>`
-
-### Alternative 2: Get the App Router via NPM
-
-This alternative approach requires that you have npm installed on your machine.
+The App Router can be installed via the node package manager. This requires that you have npm installed on your machine.
 
 1. Go to your favourite `<destLocation>` and create the `approuter` directory
 
@@ -218,7 +199,7 @@ The `services` section declares to bind our own XSUAA service instance to the Ap
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Protect your backend microservice)]
+[ACCORDION-BEGIN [Step 4: ](Protect your backend microservice)]
 After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. We, therefore, need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
 
 In the following, we will use the [Spring Security framework](https://spring.io/projects/spring-security) to protect the microservices. You can also use standard mechanisms of the SAP Java Build Pack to achieve the same. If you do not want to use Spring Security please follow the steps [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ead7ee64f96f4c42bacbf0ae23d4135b.html), nonetheless, the concepts described hereinafter apply for both methods.
@@ -226,26 +207,7 @@ In the following, we will use the [Spring Security framework](https://spring.io/
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Install XS Security libs to your local Maven repository:)]
-The first step is to get some additional Java libs from Service Marketplace. To get them, do the following steps:
-
-1. Download additional XS security libs from service marketplace: <https://launchpad.support.sap.com/#/softwarecenter/search/XS_JAVA>
-2. At the time of writing the latest package is `XS_JAVA_1-70001362.ZIP` (01.08.2019).
-3. Unzip the file to `<destLocation>`
-4. Install XS Security Libs to your local maven repo using:
-
-    ```bash
-    cd <destLocation>
-    mvn clean install
-    ```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Enhance your project's pom.xml)]
-In the second step, we go back to our `HelloWorld` or Business Partner application and open the main `application/pom.xml` which looks similar to this structure:
-
-![application pom](Figure7-1.png)
+[ACCORDION-BEGIN [Step 5: ](Configure your App for secure Access)]
 
 In the `<dependencies>` section of the `application/pom.xml`, we enhance the following additional dependencies to our project:
 
@@ -276,6 +238,12 @@ In the `<dependencies>` section of the `application/pom.xml`, we enhance the fol
   <artifactId>spring-security-oauth2</artifactId>
   <version>2.3.3.RELEASE</version>
 </dependency>
+<!-- Authentication and Authorization imports with Spring Security -->
+<dependency>
+  <groupId>com.sap.cloud.security.xsuaa</groupId>
+  <artifactId>api</artifactId>
+  <version>1.6.0</version>
+</dependency>
 <dependency>
   <groupId>com.sap.security.nw.sso.linuxx86_64.opt</groupId>
   <artifactId>sapjwt.linuxx86_64</artifactId>
@@ -286,13 +254,10 @@ This dependency section contains three main parts of dependencies:
 
 1. The `org.springframework.security` packages add certain aspects of the [Spring security](https://docs.spring.io/spring-security/site/docs/current/reference/html/index.html) framework to our application, in particular the [OAuth framework](http://projects.spring.io/spring-security-oauth/docs/Home.html) of Spring security.
 2. The `com.sap.xs2.security` packages contain specific security adaptations for the Cloud Foundry environment.
-3. The `com.sap.security.nw.sso.linuxx86_64.opt` packages contain platform-specific native implementations for the JWT validation.
+3. The `com.sap.security` packages contain platform-specific native implementations for the JWT validation and support OAuth2 authentication.
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add Spring as Servlet Listener to your web.xml)]
-Afterwards you need to go to your `web.xml` in `src/main/webapp/WEB-INF` and add the following lines. If you have used the Archetype in [Step 3 of the Tutorial](https://blogs.sap.com/2017/05/19/step-3-with-sap-s4hana-cloud-sdk-helloworld-on-scp-cloudfoundry/) these lines should be already there and you can simply uncomment them.
+Afterwards you need to go to your `web.xml` in `src/main/webapp/WEB-INF` and uncomment the following lines:
 
 ```xml
 <listener>
@@ -311,144 +276,36 @@ Afterwards you need to go to your `web.xml` in `src/main/webapp/WEB-INF` and add
     <url-pattern>/*</url-pattern>
 </filter-mapping>
 ```
+
 This configuration introduces the Spring Security Filter Chain on all incoming routes of your Java microservice and declares that the entire security configuration can be found in a file called `spring-security.xml`.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Introduction to spring-security.xml)]
-In the next step we need to protect our routes on a more fine-grained basis by introducing the file `spring-security.xml` to our `/src/main/webapp/WEB-INF` directory. If you have used the Archetype in [Step 3 of the Tutorial](https://blogs.sap.com/2017/05/19/step-3-with-sap-s4hana-cloud-sdk-helloworld-on-scp-cloudfoundry) this file should be already there.
-
-To protect all your routes so that users have to be at least authenticated your `spring-security.xml` should contain at least the following line:
+We now want to protect all our routes so that users have to be at least authenticated. Take a look into `spring-security.xml`, which contains the following line:
 
 ```
 <sec:intercept-url pattern="/**" access="isAuthenticated()" method="GET" />
 ```
 
-This code says that all users which access all URLs under `/` with the `GET` method have to be at least authenticated. You can find the full reference for access management here: [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/current/reference/html5/)
+This code ensures that all users which access all URLs under `/` with the `GET` method have to be at least authenticated. Since we just added the security filters spring will now start applying this rule for our servlet. You can find the full reference for access management here: [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/current/reference/html5/)
 
-The full `spring-security.xml` should look like this:
-```xml
-<?xml version="1.0" encoding="UTF-8" ?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xmlns:oauth="http://www.springframework.org/schema/security/oauth2"
-   xmlns:sec="http://www.springframework.org/schema/security"
+Now we need to modify the `manifest.yml` of our application a bit to interpret the JWT sufficiently. To do this add the following environment variable in the `env` section of your file:
 
-   xsi:schemaLocation="http://www.springframework.org/schema/security/oauth2
-       http://www.springframework.org/schema/security/spring-security-oauth2-1.0.xsd
-        http://www.springframework.org/schema/security
-        http://www.springframework.org/schema/security/spring-security-3.2.xsd
-        http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
-
-   <!-- protect secure resource endpoints ================================================ -->
-
-   <sec:http pattern="/**" create-session="never"
-      entry-point-ref="oauthAuthenticationEntryPoint"
-      access-decision-manager-ref="accessDecisionManager"
-      authentication-manager-ref="authenticationManager"
-      use-expressions="true">
-      <sec:anonymous enabled="false" />
-
-      <!-- section to protect your endpoints -->
-
-      <!-- Example: Check a specific OAuth Scope (i.e., authorization) on a resource -->
-      <!--<sec:intercept-url pattern="/hello" access="#oauth2.hasScope('${xs.appname}.Display')" method="GET" />-->
-
-      <!-- Example: Check only authentication on a resource -->
-      <sec:intercept-url pattern="/**" access="isAuthenticated()" method="GET" />
-
-      <sec:custom-filter ref="resourceServerFilter" before="PRE_AUTH_FILTER" />
-      <sec:access-denied-handler ref="oauthAccessDeniedHandler" />
-   </sec:http>
-
-   <bean id="oauthAuthenticationEntryPoint"
-      class="org.springframework.security.oauth2.provider.error.OAuth2AuthenticationEntryPoint">
-   </bean>
-
-   <bean id="oauthWebExpressionHandler"
-      class="org.springframework.security.oauth2.provider.expression.OAuth2WebSecurityExpressionHandler">
-   </bean>
-
-   <bean id="accessDecisionManager"
-      class="org.springframework.security.access.vote.UnanimousBased">
-      <constructor-arg>
-         <list>
-            <bean class="org.springframework.security.web.access.expression.WebExpressionVoter">
-               <property name="expressionHandler" ref="oauthWebExpressionHandler" />
-            </bean>
-            <bean class="org.springframework.security.access.vote.AuthenticatedVoter"  />
-         </list>
-      </constructor-arg>
-   </bean>
-
-    <sec:authentication-manager alias="authenticationManager"/>
-
-   <oauth:resource-server id="resourceServerFilter"
-      resource-id="springsec" token-services-ref="offlineTokenServices" />
-
-   <bean id="offlineTokenServices"
-         class="com.sap.xs2.security.commons.SAPOfflineTokenServices">
-         <property name="verificationKey" value="${xs.uaa.verificationkey}" />
-         <property name="trustedClientId" value="${xs.uaa.clientid}" />
-         <property name="trustedIdentityZone" value="${xs.uaa.identityzone}" />
-    </bean>
-
-   <bean id="oauthAccessDeniedHandler"
-      class="org.springframework.security.oauth2.provider.error.OAuth2AccessDeniedHandler" />
-
-   <!-- define properties file =========================================================== -->
-   <bean class="com.sap.xs2.security.commons.SAPPropertyPlaceholderConfigurer">
-      <property name="location"  value="classpath:/application.properties" />
-   </bean>
-</beans>
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Modify your backend manifest.yml to bind XSUAA and trust for all identity zones)]
-Now we need to modify the `manifest.yml` a bit to interpret the JWT sufficiently. To do this add the following lines to your backend microservice's `manifest.yml` file:
 ```
 SAP_JWT_TRUST_ACL: '[{"clientid" : "*", "identityzone" : "*"}]'
 ```
-In addition, we need to bind our `my-xsuaa` instance to our java backend service as well so that we have the OAuth secret to validate the JWT's signature
-```yml
-services:
-- my-xsuaa
-```
-In my example case, the final `manifest.yml` may look like this (depending on your progress with other steps of the tutorial):
-```yml
 
----
-applications:
-- name: firstapp
-  memory: 1024M
-  host: firstapp-p123456trial
-  path: application/target/firstapp-application.war
-  buildpack: sap_java_buildpack
-  env:
-    TARGET_RUNTIME: tomee
-    JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:96m..'
-    SAP_JWT_TRUST_ACL: '[{"clientid" : "*", "identityzone" : "*"}]'
-  services:
-  - my-destination
-  - my-xsuaa
-#  - my-application-logs
-#  - my-connectivity
-```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Deploy and test the application)]
-Now we are ready to build and deploy the application to try all our changes with
-```
+[ACCORDION-BEGIN [Step 5: ](Deploy and test the application)]
+Now we are ready to build and deploy the application to try all our changes with:
+
+```bash
 mvn clean install
 cf push
 ```
-After deployment, accessing your backend service should not be possible anymore and will quit with the following message:
+
+After deployment, accessing your backend service directly should not be possible anymore and will quit with the following message:
 
 ![XML file](Figure8-1.png)
 
@@ -459,7 +316,7 @@ However, you should be still able to access your application using the App Route
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Removed CSRF Token protection from backing service)]
+[ACCORDION-BEGIN [Step 6: ](Removed CSRF Token protection from backing service)]
 If you have previously exposed the backing service directly to the end user, you have used the `RestCsrfPreventionFilter` on the backend to protect against cross-site request forgery. As this is now in the responsibility of the App Router, we should remove it. For this remove the following lines from your `web.xml`:
 ```xml
 <filter>
@@ -476,7 +333,7 @@ If you have previously exposed the backing service directly to the end user, you
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Use OAuth scope to authorize users)]
+[ACCORDION-BEGIN [Step 7: ](Use OAuth scope to authorize users)]
 Now that we saved the backend microservice from unauthenticated users, we also want to make sure that certain endpoints can be called only when users have specific authorizations. In the following example, we want to use our `Display` OAuth scope.
 
 Enhance `spring-security.xml` to protect routes with OAuth scopes
@@ -495,7 +352,7 @@ cf push
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Assign users to scopes)]
+[ACCORDION-BEGIN [Step 8: ](Assign users to scopes)]
 Furthermore, the user accessing the application, needs to be assigned the `Display` OAuth scope. This is done using the SCP cockpit.
 
 First, go to your trial account on Cloud Foundry and find the **Role Collections** menu under the **Security** module:
@@ -519,7 +376,7 @@ That's it for today. Now you have learned the basics to protect your application
 
 
 
-[ACCORDION-BEGIN [Step 16: ](Appendix)]
+[ACCORDION-BEGIN [Step 9: ](Appendix)]
 ### Understanding Roles, Role Collections and Scopes
 The following picture explains how the various concepts are related to each other.
 
@@ -531,10 +388,10 @@ Green Box: As an administrator of the users (customer), the role collection can 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Troubleshooting Json Web Tokens)]
+[ACCORDION-BEGIN [Step 9: ](Troubleshooting Json Web Tokens)]
 Sometimes it might be necessary to investigate the JWT on the backend microservice during development to check for potential errors. Here is an example servlet that prints the token out.
 
-```
+```java
 @WebServlet("/debug")
 public class JwtDebugServlet extends HttpServlet {
 
@@ -559,7 +416,7 @@ Afterwards you may use `https://jwt.io/` to decode the token. **Note:** You shou
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Troubleshooting OAuth Scopes from XSUAA)]
+[ACCORDION-BEGIN [Step 10: ](Troubleshooting OAuth Scopes from XSUAA)]
 In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL:
 
 `https://<tenantId>.authentication.eu10.hana.ondemand.com/config?action=who`
@@ -568,7 +425,7 @@ In addition, you may use the XSUAA to see which current scopes and roles a parti
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](Set up your own Identity Provider)]
+[ACCORDION-BEGIN [Step 11: ](Set up your own Identity Provider)]
 So far, we have used the XSUAA service itself as the user provider. However, in production scenarios customer's may want to use their own Identity Provider (IdP) as a user provider or delegate into on-premise user stores such as LDAP or Active Directory. In the following, we quickly show how the XSUAA service can delegate requests to such an external IdPs.
 
 To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.
