@@ -241,7 +241,7 @@ Afterwards you can pass the `credentials.yml` when running tests. Make sure to p
 mvn test -Dtest.credentials=/secure/local/path/credentials.yml
 ```
 
-Now let's adapt the code inn our integration test to check, if our fallback is working correctly:
+Now let's adapt the code in our integration test to check if our fallback is working correctly:
 
  `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
