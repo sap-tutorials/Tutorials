@@ -1,7 +1,7 @@
 ---
 auto_validation: true
-title: Create Tile and Fiori Launchpad Site
-description: Create Tile and Fiori Launchpad Site with SAP Cloud Platform ABAP environment.
+title: Create Tile and SAP Fiori Launchpad Site
+description: Create tile and SAP Fiori launchpad site with SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform ]
 time: 45
@@ -16,7 +16,7 @@ author_profile: https://github.com/mervey45
 ## Details
 ### You will learn  
   - How to create tiles
-  - How to create Fiori Launchpad sites
+  - How to create SAP Fiori launchpad sites
   - How to add scopes for filtering apps
   - How to create roles and role collections
   - How to create role collection mappings
@@ -98,8 +98,8 @@ Define inbound tile in `webapp/manifest.json`.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Fiori launchpad site)]
-  1. Open SAP Web IDE, select the tool symbol, select **Extensions**, search for **portal** and enable SAP Fiori Launchpad Site Feature in Web IDE.
+[ACCORDION-BEGIN [Step 4: ](Create SAP Fiori launchpad site)]
+  1. Open SAP Web IDE, select the tool symbol, select **Extensions**, search for **portal** and enable SAP Fiori launchpad site feature in SAP Web IDE.
 
       ![Select instance URL](flp.png)
 
@@ -296,11 +296,11 @@ Define inbound tile in `webapp/manifest.json`.
 
       ![Provision user](user6.png)
 
-  7. Verify logon to Fiori Launchpad with your business user.
+  7. Verify logon to SAP Fiori launchpad with your business user.
 
       ![Provision user](user7.png)
 
-      Hint: Logon to the deployed example app Fiori Launchpad with the business user: The tile for the deployed rooms app should be visible and the app should be usable.
+      Hint: Logon to the deployed example app SAP Fiori launchpad with the business user: The tile for the deployed rooms app should be visible and the app should be usable.
 
 [DONE]
 [ACCORDION-END]
