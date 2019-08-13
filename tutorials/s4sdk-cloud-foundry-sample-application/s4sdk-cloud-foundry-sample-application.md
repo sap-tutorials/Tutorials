@@ -194,8 +194,7 @@ applications:
 - name: firstapp
   memory: 1024M
   timeout: 300
-  routes:
-    - route: firstapp-<SUBACCOUNT>.cfapps.sap.hana.ondemand.com
+  random-route: true
   path: application/target/firstapp-application.war
   buildpacks:
     - sap_java_buildpack
@@ -209,7 +208,7 @@ The manifest contains a list of applications that will be deployed to `Cloud Fou
 
   - **`name`**	- This is the identifier of your application within your organization and your space in `SCP Cloud Foundry`.
   - **`memory`** -	The amount of memory allocated for your application.
-  - **`routes`** -	Determines the URLs of your application after deploying it, where it will be publicly reachable. Thus it needs to be unique across your `Cloud Foundry` region. The format `<appname>-<SUBACCOUNT>` is important for authentication in later steps of this tutorial and at the same time assures, that the path is unique across your region. It can easily be changed later on if you want.
+  - **`random-route`** -	Determines the URLs of your application after deploying it, where it will be publicly reachable. Thus it needs to be unique across your `Cloud Foundry` region. For now, we'll let the Cloud Platform generate a random route for us.
   - **`path`** -	The relative path to the artifact to be deployed.
   - **`buildpack`** -	A `buildpack` is what `Cloud Foundry` uses to build and deploy your application. Since this is a Java application, we use `sap_java_buildpack`.
   - **`env`**	- Here we can provide additional application specific environment variables. For example we specify that we want to use a `TomEE` container as our target runtime.
@@ -269,7 +268,7 @@ mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.sdk.archetypes" "-Darch
 [DONE]
 [ACCORDION-END]
 
-ACCORDION-BEGIN [Appendix: ](Test yourself)]
+[ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
 [VALIDATE_1]
 
