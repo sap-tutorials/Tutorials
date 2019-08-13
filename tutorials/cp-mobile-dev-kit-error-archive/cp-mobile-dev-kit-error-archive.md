@@ -73,7 +73,7 @@ In _Service Creation_ step, provide and select the below information:
 | `Name`| `SampleServiceV2` |
 | `Service URL` | `/destinations/mobileservices` |
 | `Application ID` | `com.sap.mdk.demo` |
-| `Service URL` | `com.sap.edm.sampleservice.v2` |
+| `Destination Name` | `com.sap.edm.sampleservice.v2` |
 | `Enable Offline Store` | `Should be checked` |
 
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
