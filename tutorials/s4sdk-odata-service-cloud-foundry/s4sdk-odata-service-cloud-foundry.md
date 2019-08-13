@@ -226,11 +226,19 @@ As mentioned in the Tutorial `Create a sample application on Cloud Foundry using
 export destinations='[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]'
 ```
 
+On Windows use `set`:
+
+```cmd
+set destinations=[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]
+```
+
 Please change the values URL, USER and PASSWORD accordingly. You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
 ```bash
 echo $destinations
 ```
+
+On Windows use `set destinations` in the command line to check if it was set.
 
 _Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
 
@@ -287,9 +295,10 @@ applications:
 
 - name: firstapp
   memory: 1024M
-  host: firstapp-<SUBACCOUNT>
+  random-route: true
   path: application/target/firstapp-application.war
-  buildpack: sap_java_buildpack
+  buildpacks:
+    - sap_java_buildpack
   env:
     TARGET_RUNTIME: tomee
     JBP_CONFIG_SAPJVM_MEMORY_SIZES: 'metaspace:96m..'
