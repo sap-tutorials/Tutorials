@@ -69,11 +69,13 @@ So first we will create the following class:
 ```java
 package com.sap.cloud.sdk.tutorial;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.time.Duration;
 import java.util.Collections;
 import java.util.List;
 
-import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceConfiguration;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceDecorator;
 import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceIsolationMode;
@@ -81,7 +83,6 @@ import com.sap.cloud.sdk.cloudplatform.resilience.ResilienceRuntimeException;
 import com.sap.cloud.sdk.datamodel.odata.helper.Order;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
 
-import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
 import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.AddressEmailAddress;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
@@ -90,26 +91,36 @@ import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
 
 public class GetBusinessPartnersCommand {
-
+    private static final Logger logger = LoggerFactory.getLogger(GetBusinessPartnersCommand.class);
     private static final String CATEGORY_PERSON = "1";
     private final ErpHttpDestination destination;
 
     private final BusinessPartnerService businessPartnerService;
     private final ResilienceConfiguration myResilienceConfig;
 
-    public GetBusinessPartnersCommand(String destinationName) {
-        this(destinationName, new DefaultBusinessPartnerService());
+    public GetBusinessPartnersCommand(ErpHttpDestination destination) {
+        this(destination, new DefaultBusinessPartnerService());
     }
 
-    public GetBusinessPartnersCommand(String destinationName, BusinessPartnerService service) {
-        destination = DestinationAccessor.getDestination(destinationName).asHttp().decorate(DefaultErpHttpDestination::new);
+    public GetBusinessPartnersCommand(ErpHttpDestination destination, BusinessPartnerService service) {
+        this.destination = destination;
         businessPartnerService = service;
 
-        myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class);
+        myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
+                .isolationMode(ResilienceIsolationMode.TENANT_AND_USER_OPTIONAL)
+                .timeLimiterConfiguration(
+                        ResilienceConfiguration.TimeLimiterConfiguration.of()
+                                .timeoutDuration(Duration.ofMillis(10000)))
+                .bulkheadConfiguration(
+                        ResilienceConfiguration.BulkheadConfiguration.of()
+                                .maxConcurrentCalls(20));        
     }
 
     public List<BusinessPartner> execute() {
-        return ResilienceDecorator.executeSupplier(this::run, myResilienceConfig, e -> Collections.emptyList());
+        return ResilienceDecorator.executeSupplier(this::run, myResilienceConfig, e -> {
+            logger.warn(e.getMessage());
+            return Collections.emptyList();
+        });
     }
 
     private List<BusinessPartner> run() {
@@ -159,7 +170,7 @@ myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
                         .maxConcurrentCalls(20));
 ```
 
-Additionally, the `decorate...` and `execute...` methods of `ResilienceDecorator` support an optional third parameter for a fallback function, in case the remote service call should fail. In this case we have a lambda function that returns an empty list. We could also serve static data or check whether we have already cached a response to this call.
+Additionally, the `decorate...` and `execute...` methods of `ResilienceDecorator` support an optional third parameter for a fallback function, in case the remote service call should fail. In this case we have a lambda function that returns an empty list. We could also serve static data or check whether we have already cached a response to this call. Best practice is to at least log the provided `Throwable`.
 
 
 Update your resilience configuration to match the above configuration. Now that we have a working command, we need to adapt our `BusinessPartnerServlet` to use our newly created command:
@@ -181,6 +192,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
+
+import com.sap.cloud.sdk.s4hana.connectivity.ErpHttpDestination;
+import com.sap.cloud.sdk.s4hana.connectivity.DefaultErpHttpDestination;
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
 
 @WebServlet("/businesspartners")
@@ -195,18 +210,20 @@ public class BusinessPartnerServlet extends HttpServlet {
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException {
         try {
+            final ErpHttpDestination destination = DestinationAccessor.getDestination(DESTINATION_NAME)
+                    .asHttp().decorate(DefaultErpHttpDestination::new);
             final List<BusinessPartner> businessPartners =
-                    new GetBusinessPartnersCommand(DESTINATION_NAME).execute();
+                    new GetBusinessPartnersCommand(destination).execute();
             response.setContentType("application/json");
             response.getWriter().write(new Gson().toJson(businessPartners));
         } catch (final Exception e) {
             logger.error(e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write(e.getMessage());
+            e.printStackTrace(response.getWriter());
         }
     }
 }
-
 ```
 
 Thanks to our new `GetBusinessPartnersCommand`, we can now simply create a new command and execute it. As before, we get a list of business partners as result. But now we can be sure that our application will not stop working all-together if the OData service is temporarily unavailable for any tenant.
@@ -220,28 +237,9 @@ Thanks to our new `GetBusinessPartnersCommand`, we can now simply create a new c
 
 There is one thing we need to address in order to properly test our code: we need to provide our tests with an ERP endpoint.
 
-We provide the ERP destination as explained in the [previous blog post] (https://blogs.sap.com/2017/05/21/step-4-with-sap-s4hana-cloud-sdk-calling-an-odata-service/) as a `systems.json` or `systems.yml` file. In addition, you may provide a `credentials.yml` file to reuse your SAP S/4HANA login configuration as described in the Appendix of the previous tutorial step.
+The following steps assume that you stored your system information and credentials in `systems.yml`and `credentials.yml` file. Revisit steps 9 and 10 of the [previous tutorial] (https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html) if you have not set them up just yet.
 
-To provide credentials in this manner, create the following `credentials.yml` file (if you have not already) in a safe location (e.g., like storing your ssh keys in ~/.ssh), i.e., not in the source code repository.
-
-`/secure/local/path/credentials.yml`
-
-```yaml
-
----
-credentials:
-- alias: "ERP_TEST_SYSTEM"
-  username: "user"
-  password: "pass"
-```
-
-Afterwards you can pass the `credentials.yml` when running tests. Make sure to pass the absolute path to the file:
-
-```bash
-mvn test -Dtest.credentials=/secure/local/path/credentials.yml
-```
-
-Now let's adapt the code in our integration test to check if our fallback is working correctly:
+Now let's adapt the code inn our integration test to check, if our fallback is working correctly:
 
  `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
