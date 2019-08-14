@@ -118,7 +118,7 @@ public class GetBusinessPartnersCommand {
 
     public List<BusinessPartner> execute() {
         return ResilienceDecorator.executeSupplier(this::run, myResilienceConfig, e -> {
-            logger.warn(e.getMessage());
+            logger.warn("Fallback called because of exception.", e);
             return Collections.emptyList();
         });
     }

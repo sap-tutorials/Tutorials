@@ -220,13 +220,9 @@ In order for your application to run you need to provide it with information abo
 
 **Run on a Local Server**
 
-As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. For Mac the command looks like this:
+[OPTION BEGIN [Windows]]
 
-```bash
-export destinations='[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]'
-```
-
-On Windows use `set`:
+As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. The following instructions target Windows. If you are using a Mac please select Mac OS at the switch above.
 
 ```cmd
 set destinations=[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]
@@ -234,11 +230,56 @@ set destinations=[{name: "MyErpSystem", url: "https://URL", username: "USER", pa
 
 Please change the values URL, USER and PASSWORD accordingly. You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
+
+
+```cmd
+set destinations
+```
+
+_Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
+
+Be aware that the variable is only available in your current terminal session. If you are having trouble settings the variable, take a look at the troubleshooting section. Once the variable has been set, re-build and start the server as follows:
+
+```bash
+cd /path/to/firstapp
+mvn clean install
+mvn tomee:run -pl application
+```
+
+Visit `http://localhost:8080/businesspartners` to see your new feature in action. It should look similar to this web page:
+
+![list of businesspartners from ERP](post-4-businesspartners-result.png)
+
+**Connecting to SAP S/4HANA from SAP Cloud Platform Cloud Foundry**
+
+On SCP Cloud Foundry, you can either supply the same environment variable `destinations` that we used for the local deployment above to the Cloud Foundry application, or use the [destination service](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/7e306250e08340f89d6c103e28840f30.html) of SAP Cloud Platform Cloud Foundry. Using the destination service is the recommended approach, because it already handles important aspects related to multi-tenancy, connectivity and security and is transparently integrated into the SAP Cloud SDK. Therefore, we explain how to use the destination service in detail below.
+
+Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
+
+
+```cmd
+cf set-env firstapp destinations "[{name: \"MyErpSystem\", url: \"https://URL\", username: \"USER\", password: \"PASSWORD\"}]"
+```
+
+Again, supply the correct values for your S/4HANA system. Afterwards, rebuild and deploy the application to Cloud Foundry (see below). Be aware that depending on your command line interface (for example, on Windows command prompt), you may need to use double quotes instead of single quotes and escape the double quotes.
+
+Whenever this environment variable is set, the SAP Cloud SDK will use it to determine destinations. Make sure to delete it with `cf unset-env firstapp destinations` as soon as you are done with the initial testing and when you want to use the real destination service. You can now push the application to CF and test it if you like.
+
+[OPTION END]
+
+[OPTION BEGIN [Mac OS]]
+
+As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine.
+
+```bash
+export destinations='[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]'
+```
+
+Please change the values URL, USER and PASSWORD accordingly. You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
+
 ```bash
 echo $destinations
 ```
-
-On Windows use `set destinations` in the command line to check if it was set.
 
 _Note: You can also add more ERP endpoints to this JSON representation, following the same schema._
 
@@ -264,12 +305,11 @@ Nevertheless, there may be circumstances that make the approach via the environm
 cf set-env firstapp destinations '[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]'
 ```
 
-Again, supply the correct values for your S/4HANA system. Afterwards, rebuild and deploy the application to Cloud Foundry (see below). Depending on your command line interface (for example, on Windows), you may need to use double quotes instead of single quotes and escape the double quotes:
+Again, supply the correct values for your S/4HANA system. Afterwards, rebuild and deploy the application to Cloud Foundry (see below).
 
-```bash
-cf set-env firstapp destinations "[{name: \"MyErpSystem\", url: \"https://URL\", username: \"USER\", password: \"PASSWORD\"}]"
-```
 Whenever this environment variable is set, the SAP Cloud SDK will use it to determine destinations. Make sure to delete it with `cf unset-env firstapp destinations` as soon as you are done with the initial testing and when you want to use the real destination service. You can now push the application to CF and test it if you like.
+
+[OPTION END]
 
 **Using the Destination Service on SAP Cloud Platform Cloud Foundry**
 
