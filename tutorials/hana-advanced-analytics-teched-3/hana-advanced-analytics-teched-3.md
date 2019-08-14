@@ -1,5 +1,5 @@
 ---
-title: SAP Teched, use MapReduce to split
+title: SAP Teched, use Map Reduce to split
 description: sdasd
 auto_validation: true
 time: 10
@@ -13,7 +13,7 @@ primary_tag: products>sap-hana
 ## Details
 ### You will learn
   - How to create functions
-  - How to use `MapReduce` to process large amounts of data in parallel
+  - How to use Map Reduce to process large amounts of data in parallel
 
 
   **This mission can only be completed at SAP TechEd.**
@@ -24,11 +24,11 @@ primary_tag: products>sap-hana
 
 You can now return to the code and close open tabs.
 
-![Create mapreduce](1.png)
+![Create Map Reduce](1.png)
 
 Under `src`, create a new function by right-clicking on `src` and choosing **New -> Function**
 
-![Create mapreduce](4.png)
+![Create Map Reduce](4.png)
 
 Use the following name:
 
@@ -38,7 +38,7 @@ functions/mapper
 
 For example:
 
-![Create mapreduce](3.png)
+![Create Map Reduce](3.png)
 
 Replace the code with the following:
 
@@ -69,7 +69,7 @@ END;
 
 In the new folder, `functions`, create a new function with the name `reducer`
 
-![Create mapreduce](2.png)
+![Create Map Reduce](2.png)
 
 Replace the contents with the following:
 
@@ -91,7 +91,7 @@ END;
 ```
 **Save** all files
 
-![Create mapreduce](5.png)
+![Create Map Reduce](5.png)
 
 [DONE]
 [ACCORDION-END]
@@ -103,13 +103,13 @@ END;
 
 Right-click on the `functions` folder and choose  **Build Selected Files**
 
-![Create mapreduce](6.png)
+![Create Map Reduce](6.png)
 
 Wait until the build has been successful
 
 > ## What is going on?
 >
-> `MapReduce` is a programming model to split large dataset into parts and process them in parallel, generally in different nodes in a cluster. The parts in the dataset are then reunited into a consistent output.
+> Map Reduce is a programming model to split large dataset into parts and process them in parallel, generally in different nodes in a cluster. The parts in the dataset are then reunited into a consistent output.
 > You have created two functions. The first one, mapper, takes each list of ingredients from each record, and splits the ingredients into separate records in a table. You are using a reusable library to split text into a table. The function also counts the occurrences of an ingredient within a list. The `MAP_MERGE` operator then merges the results into a single table with the individual ingredient and its original ID.
 > The second function, the reducer, will use each group of ingredient tables for each ID, process all groups and return the total count for those ingredients.
 
@@ -120,7 +120,7 @@ Wait until the build has been successful
 
 Go back into the database explorer and open a new **SQL** console
 
-![Create mapreduce](7.png)
+![Create Map Reduce](7.png)
 
 Use the following code to call both functions, using the view you created previously as input
 
