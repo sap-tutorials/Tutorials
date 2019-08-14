@@ -61,7 +61,7 @@ const setLinkCheckResult = ({ linkCheckResult, checkResult, uniqueLinksToFiles, 
   const filesPaths = uniqueLinksToFiles.get(linkCheckResult.link);
   if (filesPaths) {
     filesPaths.forEach((filePath) => {
-      const { contentLines } = files.get(filePath);
+      const { noCodeContentLines: contentLines } = files.get(filePath);
       const isTutorialDoc = common.isTutorialDoc(filePath);
       const isTrusted = isTutorialDoc || linkCheckResult.isTrusted;
       const fileLinkResult = {

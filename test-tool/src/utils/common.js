@@ -2,16 +2,41 @@ const fs = require('fs-extra');
 const path = require('path');
 
 const linkUtils = require('./link');
+const { regexp: { validation: { codeBlock, codeLine } } } = require('../constants');
 
 const isTutorialDoc = filePath => filePath.includes('docs-tutorial') || filePath.includes('contributing.md');
+
+const getContentLines = content => content.split(/\r?\n/);
+
+/**
+ * @description Replaces code lines with empty strings
+ * code blocks with empty lines according to code block size
+ * */
+const getNoCodeContentLines = (content) => {
+    let clearContent = content;
+    let result;
+
+    while ((result = codeBlock.exec(content)) !== null) {
+        const newLines = result[0]
+          .split('\n')
+          .slice(1)
+          .fill('\n', 0)
+          .join('');
+        clearContent = clearContent.replace(result[0], newLines);
+    }
+
+    clearContent = clearContent.replace(codeLine, '');
+    return getContentLines(clearContent);
+};
 
 const parseFiles = async (filePaths) => {
     const files = new Map();
     const uniqueLinksToFiles = new Map();
-    for(filePath of filePaths) {
+    for(let filePath of filePaths) {
         const fileName = path.basename(filePath);
         const content = await fs.readFile(filePath, 'utf8');
-        const contentLines = content.split(/\r?\n/);
+        const contentLines = getContentLines(content);
+        const noCodeContentLines = getNoCodeContentLines(content);
 
         const links = linkUtils.extractLinks(content);
         links.forEach(link => {
@@ -26,6 +51,7 @@ const parseFiles = async (filePaths) => {
         files.set(filePath, {
             content,
             contentLines,
+            noCodeContentLines,
             linksCount: links.length,
         });
     }
