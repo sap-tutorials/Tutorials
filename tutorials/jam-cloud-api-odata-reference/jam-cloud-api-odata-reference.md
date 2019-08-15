@@ -91,7 +91,7 @@ Probably the greatest feature of our [SAP Jam Collaboration OData API Reference]
 
 4. Click **Try**. The API call will run immediately, and a pop-up window will display the response.
 
-[VALIDATE_1]
+[DONE]
 
 [ACCORDION-END]
 

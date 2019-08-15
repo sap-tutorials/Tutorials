@@ -43,7 +43,7 @@ You will find a number assigned to your terminal at the App Space
 Use the following email. **Replace the XXX placeholder with the number assigned to your terminal**.
 
 ```text
-appspace-XXX@teched.cloud.sap
+dat365-XXX@teched.cloud.sap
 ```
 
 
@@ -73,7 +73,14 @@ Click **Go to Service**
 
 ![Log in to SCP](7.png)
 
-SAP Web IDE Full-Stack will open in a new window
+SAP Web IDE Full-Stack will open in a new window. Log in with the same credentials if prompted:
+
+User:
+```text
+dat365-XXX@teched.cloud.sap
+```
+
+Password: Welcome19
 
 [DONE]
 [ACCORDION-END]
