@@ -12,9 +12,8 @@ time: 15
 ### You will learn
   - What caching is and why you should care about it
   - How a cache works
-  - Uses of a caching command
   - How to cache your OData Call
-  - How to do the configuration and make `parameterized` calls
+  - How to configure the cache
 
 
 ---
@@ -33,11 +32,7 @@ Caches are very important in a wide variety of use cases. It is one of the reaso
 [ACCORDION-BEGIN [Step 2: ](How does it work?)]
 A cache generally works by the action of requesting information to a given subject, called a key. If an information to a given key was previously requested, was stored at the time of request, and is now available to read, a so called "cache hit" occurs: the data can be found and will be loaded. A "cache miss" occurs when it cannot.
 
-The most important aspects of a cache is its size and the life time of its items. Both should be limited with regards
- to the use case, to avoid an outdated state or disproportionate memory consumption in the application. The biggest
- effect of using a cache can be witnessed, when the application is repetitively reading larger chunks of data from
- external sources. In such cases, using caches significantly reduce the bandwidth required for transmitting
- information.
+The most important aspects of a cache is its size and the life time of its items. Both should be limited with regards to the use case, to avoid an outdated state or disproportionate memory consumption in the application. The biggest effect of using a cache can be witnessed, when the application is repetitively reading larger chunks of data from external sources. In such cases, using caches significantly reduce the bandwidth required for transmitting information.
 
 Caching is applicable whenever:
 
@@ -46,22 +41,16 @@ Caching is applicable whenever:
 - Your cache will not need to store more data than what would fit in RAM. (By default, the cache is local to a single run of your application. It does not store data in files, or on outside servers.)
 
 
-If each of these options apply to your use case, then we highly recommend that you use the caching features provided by
-SAP Cloud SDK in your application.
-
+If these requirements apply to your use case, then we highly recommend that you use the caching features provided by the SAP Cloud SDK in your application. Now that we have seen why caching is useful, we'll tend to what the Cloud SDK provides to an application in that regard.
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Caching with SAP Cloud SDK)]
 
-[ACCORDION-BEGIN [Step 3: ](Caching Command with SAP Cloud SDK)]
+The Cloud SDK makes it easy to cache your requests since it handles most of the complexity under the hood. This includes handling of tenant-aware requests, which is essential in a multi-tenant application. The SDK will isolate the cache on a tenant or principal level automatically, if your request requires it.
 
-The caching command allows parallel execution and asynchronous computation for efficient programming practices.
-Stored information is organized as a local key-value store. For each unique key the same response is expected in case
- of a "cache hit". Otherwise the cache response is computed.
-
-In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial we will
-use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for our purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
+In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial we will use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for our purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
 
 ```xml
 <dependency>
@@ -78,9 +67,7 @@ use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for 
 
 Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into our application.
 
-In [the resilience tutorial] (https://developers.sap.com/tutorials/s4sdk-resilience.html), we introduced resilience
-into our application, using `Resilience4j` library. Now, in order to make our OData calls cacheable, we will extend
-the use of `ResilienceConfiguration` class used there and configure caching as well.
+In [the resilience tutorial] (https://developers.sap.com/tutorials/s4sdk-resilience.html), we introduced resilience into our application using `resilience4j`. Now, in order to make our OData calls cacheable, we will enhance the `ResilienceConfiguration` and add a `CacheConfiguration` to it.
 
 Add the following lines at the end of the constructor of the `GetBusinessPartnerCommand`:
 
@@ -100,7 +87,7 @@ As mentioned above, we use our `ResilienceConfiguration` to integrate the cachin
 1. Determine how long objects are to be cached
 2. Declare the parameters that need to be stored together with the cached data
 
-The first step is obviously necessary, since we want to set up a cache that is meant to store data only a short amount of time to optimize execution time. How long you want to keep data cached depends on the data that you receive. How fast do you expect the information to be outdated? How frequently will the data be accessed?
+The first step is obviously necessary, since we want to store the data for a limited amount of time. The longer we keep the cached information, the more outdated it will become. How long you want to keep data cached depends on your specific use case. How fast do you expect the information to be outdated? How frequently will the data be accessed? The timeout sets a trade-off between the data being up to date and the application being responsive.
 
 Secondly, we specify the parameters that are to be cached with the data. For our request to retrieve a list of business partners no parameters are necessary, so we build our cache `wihtoutParameters`. But imagine you want to fetch information about a specific business partner by passing an ID to the system. In order to cache such a request the cache needs to not only remember the result received, but also the ID that was associated with it. In such a case one can simply pass such parameters by using `.withParameters(param1, param2, ..)`.
 
