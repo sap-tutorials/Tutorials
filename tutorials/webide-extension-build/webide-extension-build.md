@@ -7,9 +7,6 @@ tags: [  tutorial>intermediate, products>sap-web-ide, products>sap-web-ide-plug-
 time: 20
 ---
 
-## Prerequisites  
- - You have created an SAP Web IDE extension (MTA project) as described in [Create a Basic SAP Web IDE Extension (MTA Project)](webide-extension-basic).
-
 
 ## Details
 ### You will learn
@@ -27,24 +24,7 @@ You need to deploy your extension to the Cloud Foundry environment or Neo on SAP
 [ACCORDION-BEGIN [Step 1: ](Build your extension)]
 > This step shows you how to deploy your extension to Cloud Foundry. If you want to deploy your extension to Neo, go to [How to Build and Deploy an MTA Extension to Neo](https://sdk-sapwebide.dispatcher.hana.ondemand.com/index.html#/topic/f3dba320a676410a91eec673531bde2c) in the SAP Web IDE SDK.
 
-1. In the Workspace, right-click your project folder and choose **Project > Project Settings**.
-
-    ![Project settings](step1-project-settings.png)
-
-    > If prompted, log in to your account.
-
-2. Click **Cloud Foundry** and select your defined Cloud Foundry configuration or create one with a Cloud Foundry API endpoint, organization, and space in the provided dropdown lists. You need to provide your Cloud Foundry credentials.
-
-    ![Cloud Foundry settings](step1-cf-settings.png)
-
-
-Choose **Save**.
-
-4. Right-click your project folder and then in the context menus, choose **Build > Build**.
-
-    ![Build the project](step1-build.png)
-
-    > It is possible to deliver an SAP Web IDE extension that requires no authentication. In the application descriptor file, you should configure the behavior of your extension just like any other application. You open the `xs-app.json` file and set the `authenticationMethod` property to `none`. Also, add the `authenticationType` properties and set them to `none` as shown in the following example:
+1. It is possible to deliver an SAP Web IDE extension that requires no authentication. In the application descriptor file, you should configure the behavior of your extension just like any other application. You open the `xs-app.json` file and set the `authenticationMethod` property to `none`. Also, add the `authenticationType` properties and set them to `none` as shown in the following example:
 
     ```
     {
@@ -64,6 +44,14 @@ Choose **Save**.
     ```
 
     For more information, see [Application Router Configuration Syntax](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c103fb414988447ead2023f768096dcc.html).
+
+    >It may take a few minutes for the builder to be installed.
+
+    Choose **Save**.
+
+2. Right-click your project folder and then in the context menus, choose **Build > Build**.
+
+    ![Build the project](step1-build.png)
 
     After a few moments, the `mta_archives` folder is created.
 
@@ -97,12 +85,12 @@ You have successfully deployed your project to the Cloud Foundry environment on 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a new destination)]
-In order for SAP Web IDE to recognize and consume your new extension, you need to create a new destination in SAP Cloud Platform cockpit. This destination will point to the application URL of your extension application on SAP Cloud Platform.
+[ACCORDION-BEGIN [Step 3: ](Create a new destination in the Neo environment)]
+In order for SAP Web IDE to recognize and consume your new extension, you need to create a new destination in SAP Cloud Platform Neo environment via the cockpit. This destination will point to the application URL of your extension application on SAP Cloud Platform.
 
 1. In SAP Cloud Platform cockpit, choose **Connectivity** > **Destination** > **New Destination**.
 
-    > You can access SAP Cloud Platform cockpit from the **Tools** menu in SAP Web IDE.
+    > You can access SAP Cloud Platform cockpit from the **Tools** menu in SAP Web IDE. You can find more detailed instruction [here](https://developers.sap.com/tutorials/hcp-create-destination.html)
 
       ![New destination](step3-NewDestination.png)
 
