@@ -1,5 +1,5 @@
 ---
-title: An Open Data Protocol (OData) primer for developers
+title: An Open Data Protocol (OData) Primer for developers
 description: Learn how to explore the data in an OData service, and the functionality included in the service.
 primary_tag: topic>odata
 auto_validation: true
@@ -12,11 +12,7 @@ time: 15
 ## Prerequisites
 - **Tutorials:** [Localizing your SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-localizing-app.html)
 
-## Next Steps
-- [Inserting OData query options into your SAPUI5 app](https://developers.sap.com/tutorials/hcp-webide-inserting-query-options.html)
-
 ## Details
-
 ### You will learn
 Throughout this tutorial series you've been working on an app that consumes an OData service. Since you are now familiar with using the content, its time to learn a bit more about what the OData protocol can do for a developer. In the next tutorial, you will learn how to apply these capabilities to your SAPUI5 app.
 
@@ -98,6 +94,7 @@ To view the entity sets, open the link above in a new browser tab.
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 3: ](Review collections)]
 
 As you scroll through the page, you will see all of the entity sets (or collections) listed. You have been using the `Products` and `Suppliers` collections.
@@ -123,7 +120,7 @@ With the metadata displayed, scroll down to `<EntityType Name="Product">` which 
 
 In your app, you have used the fields displayed including the `NavigationProperty` entry that points to `Suppliers`.
 
-In "OData parlance", a `NavigationProperty` is a link from an Entry to one or more related Entries. In your app, Web IDE used the link from `Products` to `Suppliers` to display some supplier information in the information tab. Specifically, the Supplier `CompanyName`, `Phone` and `Address` fields.
+In OData parlance, a `NavigationProperty` is a link from an Entry to one or more related Entries. In your app, Web IDE used the link from `Products` to `Suppliers` to display some supplier information in the information tab. Specifically, the Supplier `CompanyName`, `Phone` and `Address` fields.
 
 If you want to add other supplier fields to the Supplier tab – you would just need to enter the appropriate `Label` and `Text` elements to the `DetailInfoForm.fragment.xml` file.
 
@@ -132,6 +129,7 @@ If you want to add other supplier fields to the Supplier tab – you would just 
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 6: ](Review data)]
 
 Viewing the metadata is a quick way to see what data is available, but it is also useful to view the data itself. To see a set of data from a collection, simply enter the URL to the service document followed by the collection of interest. For the `Products` collection, it is:
@@ -146,6 +144,7 @@ By adding `Products` to the URL here, you are specifying the `ResourcePath` port
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 7: ](Run app to see paging)]
 
 Scroll to the bottom of the page and look for the `<link rel="next"` entry. The Northwind service enforces server-side paging and will only pass 20 records at a time. The paging size (20) can be seen in the `$skiptoken=20` query option at the end of the "next" URL. A Web IDE generated app will automatically issue the "next" URL when you scroll to the bottom of the master list in your app. You can run your app and try this now. Look for the spinning "busy" UI element to appear briefly as the new request is sent and set loaded in.
@@ -155,6 +154,7 @@ Scroll to the bottom of the page and look for the `<link rel="next"` entry. The 
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 8: ](Enhance format for readability)]
 
 The XML format of the OData response includes a lot of extra characters that makes the output difficult to read. You can add a query option to the URL to change the format to JSON, and with JSONView installed, some formatting and color-coding makes it more "human-readable".
@@ -170,6 +170,7 @@ You can see how there is less text shown, along with the color-coding and format
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 9: ](Set number of records to return)]
 
 Some OData services do not enforce server-side paging, and will send a large amount of data for each request. To limit the set of data sent, include the `$top=x` query option, where x is any integer. `$top=1` will request only the first record, `$top=5` requests the first five.
@@ -183,6 +184,7 @@ Enter `$top=1` to view the first record only (be sure to pre-pend it with a `&` 
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 10: ](Skipping over records)]
 
 To see the 6th and 7th records, add the `$skiptoken=5` query option and change `$top` to 2. The `$skiptoken` will make the service skip over the `skiptoken` many records before it sends data. Changing `$top` to `2` will return two records, rather than just one.
@@ -195,6 +197,7 @@ To see the 6th and 7th records, add the `$skiptoken=5` query option and change `
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 11: ](Create URL for individual records)]
 
 A shorthand way of referring to individual records is to put the record number in parenthesis after the Collection name. To view the 22nd record in `Products`, use the URL below:
@@ -206,6 +209,7 @@ A shorthand way of referring to individual records is to put the record number i
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 12: ](Set sort-by field)]
 
 In the metadata, the `ProductID` is set as the key for the collection. This means that any data returned will be sorted by `ProductID`, as evidenced in the screenshots above (`ProductID` of 1, 6, 7, 22 etc.).
@@ -224,6 +228,7 @@ You can see that the records are returned in alphanumerical order (`ProductID`s 
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 13: ](Set sort order)]
 
 By default, the `$orderby` option sorts in ascending order. To sort by descending order, append "` desc`" (with the space) after the `orderby` field. The browser will encode the space as `%20` and the results are returned in descending alphanumerical order.
@@ -235,6 +240,7 @@ By default, the `$orderby` option sorts in ascending order. To sort by descendin
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 14: ](Add filters)]
 
 A very useful query option to highlight is the filter expression (`$filter`). A `filter` expression can be simple logical operators (`equal`, `greater than`, `less than`, etc.) include basic math (`add`, `subtract`, `multiply` and `delete`) and functions (`string`, `data`, `math` and `type` functions), and combinations of all.
@@ -250,6 +256,7 @@ To exclude those from an app, you would simply change the `eq` (equal) to `ne` (
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 15: ](Add other query parameters)]
 
 To get a list of products with a `UnitPrice` greater than 100 and not discontinued, the query option string would be: `$filter=Discontinued eq false and UnitPrice gt 100`. Here, `gt` stands for "greater than".
@@ -263,6 +270,7 @@ To get a list of products with a `UnitPrice` greater than 100 and not discontinu
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 16: ](Get subset of collection)]
 
 The `$select` query option specifies a subset of the full collection properties to return which is useful is you want to minimize the amount of data sent or received to the app. For example, to return only the `ProductNam`, `UnitPrice` and `Supplier` use this URL:
@@ -274,6 +282,7 @@ The `$select` query option specifies a subset of the full collection properties 
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 17: ](Expand the query)]
 
 Since `Supplier` is a `NavigationProperty`, it is returned as a URI. You can use the `$expand` query option to have the server include those properties in the response (as opposed to just the URI):
@@ -285,6 +294,7 @@ Since `Supplier` is a `NavigationProperty`, it is returned as a URI. You can use
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 18: ](Combine query options)]
 
 Building on the last example, in this final query you will combine a few of the query options together:
@@ -301,6 +311,7 @@ Building on the last example, in this final query you will combine a few of the 
 
 [VALIDATE_1]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 19: ](Wrap-up)]
 
 As you have seen, there is quite a bit of capability exposed in an OData service. The advantage to the developer is the application logic that you would otherwise have to create and maintain in code can be delivered by the OData service. You will learn how to do this in the next tutorial.
