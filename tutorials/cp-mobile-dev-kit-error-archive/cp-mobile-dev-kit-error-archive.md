@@ -423,7 +423,7 @@ Save your changes to the `ErrorList.page` file.
 
 [ACCORDION-BEGIN [Step 5: ](Navigate from Error details page to affected record)]
 
-When you clicks on an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
+When you click on an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
 
 You can write a logic in JavaScript to handle the `affectedEntity` and then decide which action to call depends on which `@odata.id` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message.
 
