@@ -442,7 +442,7 @@ So far, we have used the XSUAA service itself as the user provider. However, in 
 
 To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.
 
-You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<tenantID>.authentication.eu10.hana.ondemand.com/saml/metadata`. In my case, that would be `https://p1942765239trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metadata to your local computer.
+You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<SUBACCOUNT>.authentication.<REGION_IDENTIFIER>.hana.ondemand.com/saml/metadata`, e.g. `https://p123456trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metadata as an XML file.
 
 Second, you need to import the metadata into your IdP. In the following, we use an own SAP Cloud Identity tenant to do this.
 
