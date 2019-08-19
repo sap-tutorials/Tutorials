@@ -8,8 +8,8 @@ primary_tag: products>sap-web-ide
 ---
 
 ## Prerequisites
- - Make sure you have access to the trial version of SAP Web IDE Full-Stack. For more information, see [Getting Started with SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-innovation-beta.html).
- - Set up a trial Cloud Foundry account. [Create a Cloud Foundry Account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
+ - Make sure you have access to the trial version of SAP Web IDE Full-Stack. For more information, see [Getting Started with SAP Web IDE Full-Stack](webide-innovation-beta).
+ - Set up a trial Cloud Foundry account. [Create a Cloud Foundry Account](cp-cf-create-account)
 
 ## Details
 ### You will learn
