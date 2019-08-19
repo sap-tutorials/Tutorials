@@ -1,6 +1,6 @@
 ---
 title: Create Multi-Cloud Application Consuming Object Store Service
-description: Create a Java application that can work with different Object Stores like AWS S3, GCS and deploy the application on SAP Cloud Platform.
+description: Create a Java application that can work with different Object Stores like Swift, AWS S3, GCS and deploy the application on SAP Cloud Platform.
 auto_validation: true
 time: 60
 tags: [ tutorial>intermediate, topic>java, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -11,7 +11,7 @@ primary_tag: topic>java
  - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
  - [Maven 3.3+](https://maven.apache.org/download.cgi)
  - [Eclipse](https://www.eclipse.org/downloads/)
- - [Cloud Foundry CLI](hcp-cf-getting-started)
+ - [Cloud Foundry CLI](cp-cf-create-account)
  - [SAP Cloud Platform Global account](https://help.sap.com/viewer/e275296cbb1e4d5886fa38a2a2c78c06/Cloud/en-US/667f34ba9222450491c2b848cd17e189.html)
  - [Provision Object Store Service](https://cloudplatform.sap.com/capabilities/product-info.Object-Store-on-SAP-Cloud-Platform.55e3958b-e872-49e3-8d2c-8634d200c36a.html)
  - Basic knowledge of spring
@@ -23,7 +23,7 @@ primary_tag: topic>java
   - How to perform CRUD operations on Object Store
   - How to deploy and test the application on Cloud Foundry
 
-This tutorial shows how to create a single code line multi-cloud Java application using spring framework to perform operations like upload, download, delete and list  files in Object Stores. The created application can run on Cloud Foundry consuming the `objectstore` service provided by the platform. The application is referred to as a multi-cloud application because a single code line works with different cloud providers like `Amazon Web Services(AWS)`and `Google Cloud Platform(GCP)`.
+This tutorial shows how to create a single code line multi-cloud Java application using spring framework to perform operations like upload, download, delete and list  files in Object Stores. The created application can run on Cloud Foundry consuming the `objectstore` service provided by the platform. The application is referred to as a multi-cloud application because a single code line works with different cloud providers like `Amazon Web Services(AWS)`, `OpenStack` and `Google Cloud Platform(GCP)`.
 
 The application uses the [`Apache jclouds`](https://jclouds.apache.org/) library, which provides a multi-cloud toolkit that gives you the freedom to create applications that are portable across clouds.
 
@@ -904,6 +904,7 @@ public class ObjectStoreRepository {
 					.userMetadata(userMetadata).build();
 
 			// Multipart upload is currently not supported since it has an issue
+			// with OpenStack Swift.
 			// multipart issue:
 			// (https://issues.apache.org/jira/browse/JCLOUDS-1064).
 			blobStore.putBlob(bucketName, blob);
@@ -1201,7 +1202,7 @@ Follow the steps below to extend the application to work with other cloud provid
 
 4.	Add the conditional statements in `ObjectStoreContextInitializer` class to set the active profile based on service plan.
 
-Source code of the application that works on `AWS` and `GCP` is published in [git repository](https://github.com/SAP/cloud-objectstore-java-sample).
+Source code of the application that works on `AWS`, `GCP` and `OpenStack` is published in [git repository](https://github.com/SAP/cloud-objectstore-java-sample).
 
 
 [DONE]
