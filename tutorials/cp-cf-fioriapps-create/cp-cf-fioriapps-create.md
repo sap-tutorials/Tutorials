@@ -9,7 +9,7 @@ primary_tag: products>sap-web-ide
 
 ## Prerequisites
  - Make sure you have access to the trial version of SAP Web IDE Full-Stack. For more information, see [Getting Started with SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-innovation-beta.html).
- - Set up a trial Cloud Foundry account. Follow **steps 1-3** in this tutorial: [Getting started with Cloud Foundry](https://developers.sap.com/tutorials/hcp-cf-getting-started.html)
+ - Set up a trial Cloud Foundry account. [Create a Cloud Foundry Account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
 
 ## Details
 ### You will learn
@@ -36,7 +36,10 @@ On the **Template Customization** screen, accept the default values shown below 
 
 ![Finish](step1-finish.png)
 
-The new project now appears in your SAP Web IDE workspace.
+A new MTA project called `mta_FioriDemo` containing the `FioriDemo` HTML5 module now appears in your SAP Web IDE workspace.
+
+> You can alternatively choose the Multi-Target Application template which will create an MTA project structure and then add new modules to the project.
+
 
 ![Workspace](step1-workspace.png)
 
