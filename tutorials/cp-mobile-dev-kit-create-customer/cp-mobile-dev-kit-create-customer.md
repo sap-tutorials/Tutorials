@@ -272,7 +272,7 @@ In the action editor for the new action, expand the **Common Action Properties**
 
 Save the changes to the `CreateCustomer` action.
 
-Next, you will set the `OnPress` of the _Create_ button.
+Next, you will set the `OnPress` of the _Save_ button.
 
 Now that the Create action is created, you will need to call the Create action when the end-user presses the **Save** button. You will add a **Save** button on the `CreateCustomer.page` and link it to the `CreateCustomer` action.
 
