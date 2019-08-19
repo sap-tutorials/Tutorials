@@ -180,7 +180,7 @@ cf unbind-service firstapp my-xsuaa
 cf delete-service my-xsuaa​
 ```
 
-Then deploy the app router using the following (with the appropriate API endpoint of your Cloud Foundry region):
+After you have created the XSUAA service instance, deploy the app router using the following (with the appropriate API endpoint of your Cloud Foundry region):
 
 ```bash
 cd <destLocation>
@@ -202,6 +202,17 @@ After logging in you should see the `HelloWorld` servlet which is now served by 
 After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. We, therefore, need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
 
 In the following, we will use the [Spring Security framework](https://spring.io/projects/spring-security) to protect the microservices. You can also use standard mechanisms of the SAP Java Build Pack to achieve the same. If you do not want to use Spring Security please follow the steps [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ead7ee64f96f4c42bacbf0ae23d4135b.html), nonetheless, the concepts described hereinafter apply for both methods.
+
+The first step is to get some additional Java libs from Service Marketplace. To get them, perform the following steps:
+
+1. Download additional XS security libs from service marketplace: <https://launchpad.support.sap.com/#/softwarecenter/search/XS_JAVA>
+2. At the time of writing the latest package is **`XS_JAVA_1-70001362.ZIP`**
+3. **Unzip `<destLocation>`**
+4. Install XS Security Libs to your local maven repo using:
+    ```bash
+    cd <destLocation>
+    mvn clean install
+    ```
 
 [DONE]
 [ACCORDION-END]
@@ -379,6 +390,8 @@ That's it for today. Now you have learned the basics to protect your application
 ### Understanding Roles, Role Collections and Scopes
 The following picture explains how the various concepts are related to each other.
 
+![Roles, Scopes and Users](Figure9-3.png)
+
 Gray Box: As a SCP developer (e.g., SAP, partner, customer) of the business application (gray box), you define role templates which may contain multiple OAuth scopes. The developer here define the scope, role templates and additional attributes within the `xs-security.json` as explained in this tutorial which is used when creating the service instantiation to the XSUAA.
 
 Orange Box: As an SCP tenant administrator of the business application (customer) can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the **Business Partner Manager** role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
@@ -418,7 +431,7 @@ Afterwards you may use `https://jwt.io/` to decode the token. **Note:** You shou
 [ACCORDION-BEGIN [Step 11: ](Troubleshooting OAuth Scopes from XSUAA)]
 In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL:
 
-`https://<tenantId>.authentication.eu10.hana.ondemand.com/config?action=who`
+`https://<SUBACCOUNT>.authentication.eu10.hana.ondemand.com/config?action=who`
 
 
 [DONE]
