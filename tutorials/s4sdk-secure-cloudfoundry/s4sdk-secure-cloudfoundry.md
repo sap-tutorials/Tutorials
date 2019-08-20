@@ -81,18 +81,7 @@ We will let Cloud Foundry retrieve the App Router automatically on deployment. T
     }
     ```
 
-4. Now head to `<destLocation>/firstapp` and replace the `random-route: true` in `manifest.yml` with the following content:
-
-    ```yaml
-    routes:
-      - route: firstapp-<SUBACCOUNT>.cfapps.<REGION_IDENTIFIER>.hana.ondemand.com
-    ```
-
-    Replace `<SUBACCOUNT>` with your actual account, which is the one you use in the CF CLI to login to Cloud Foundry. With this step we determine a route instead of generating a random route. This is important since we will configure the app router for exactly this destination. Further change the `<REGION_IDENTIFIER>` to match your region (e.g. `eu10`). If you are unsure about your region, head to your Cloud Foundry Cockpit Home Screen. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
-
-5. Redeploy your application to Cloud Foundry by pushing with `cf push`. Make sure the route was registered successfully by accessing your application via the browser. If applicable remove old routes in the Cloud Foundry Cockpit.
-
-6. With a proper URL set in place we can now create a new `manifest.yml` file within `<destLocation>` for the app router microservice with the following content:
+4. Last but not least create a new `manifest.yml` file within `<destLocation>` for the app router microservice with the following content:
 
     ```yaml
 
@@ -100,13 +89,13 @@ We will let Cloud Foundry retrieve the App Router automatically on deployment. T
     applications:
     - name: approuter
       routes:
-        - route: approuter-<SUBACCOUNT>.cfapps.<REGION_IDENTIFIER>.hana.ondemand.com
+        - route: approuter-<subdomain>.cfapps.<region_id>.hana.ondemand.com
       path: approuter
       memory: 128M
       buildpacks:
         - nodejs_buildpack
       env:
-        TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.<REGION_IDENTIFIER>.hana.ondemand.com'
+        TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.<region_id>.hana.ondemand.com'
         destinations: '[{"name":"app-destination", "url" :<APPLICATION_URL>, "forwardAuthToken": true}]'
       services:
         - my-xsuaa
@@ -114,20 +103,22 @@ We will let Cloud Foundry retrieve the App Router automatically on deployment. T
 
     Adapt the file as follows:
 
-      - Just like before provide the values for your account and region
-      - In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app.
+      1. Replace `<subdomain>` with your subdomain. You will find your subdomain in the CF cockpit by heading to the overview page of your sub-account:
 
-**Note**: It is mandatory that your app URL conforms the format `<APP_NAME>-<SUBACCOUNT>.cfapps.<REGION_IDENTIFIER>.hana.ondemand.com`. The authentication mechanism will identify you by pulling the user-id (`SUBACCOUNT`) out of the subdomain.
+          ![Subomain and Tenant ID in the CF Cockpit](Figure-3-1.png)
 
-### Understanding the AppRouter's `manifest.yml` and `xs-app.json`
+      2. Swap out both instances of `<region_id>` with your specific region (e.g. `eu10`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
+      3. In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`.
 
-The `TENANT_HOST_PATTERN` is a variable that declares the pattern how multiple tenants in the URL are identified and handled. During runtime, the App Router will match the incoming host against the pattern and tries to extract the regular expression from the pattern. It will use the matched string to delegate authentication to the respective XSUAA tenant (in SAP Cloud Platform the tenant ID corresponds to the subaccount ID. If you desire different URL patterns, you need to change this pattern accordingly.
+### Understanding the AppRouter's `manifest.yml`
 
-Note that the `TENANT_HOST_PATTERN` variable is only required in real multi-tenant application, i.e, applications where a physical deployment serves multiple clients from the same deployment. We assume in this blog series that we want to build multi-tenant applications, as we aim towards cloud-native development. However, this variable is not necessary if you have a single-tenant application. To realize this, the `xs-security.json` security descriptor may declare `"tenant-mode": "dedicated"`  (see step 5 below).
+On Cloud Foundry every sub-account is assigned exactly one subdomain which is associated to exactly one tenant. In a multi-tenant scenario the app router needs to know which tenant to forward to the XSUAA service. This is achieved by including the subdomain in the host, from which the app router will extract it. That is where the `TENANT_HOST_PATTERN` comes into play. It is a variable that declares the pattern how tenants in the URL are identified and handled. For this tutorial we expect the host to conform to `approuter-<subdomain>`. If you desire different URL patterns, you need to change the `route` and `TENANT_HOST_PATTERN` accordingly.
 
-`destinations` is a variable that declares the internal routes from the App Router to the underlying backend microservices. As we only have one hello world microservice yet, we define only one destination called `app-destination` here. This `app-destination` is referenced by the previously created `xs-app.json` file.
+Note that the `TENANT_HOST_PATTERN` variable is only required in real multi-tenant application, i.e, applications where a physical deployment serves multiple clients from the same deployment. We assume in this tutorial series that we want to build multi-tenant applications, as we aim towards cloud-native development. However, this variable is not necessary if you have a single-tenant application. To realize this, the `xs-security.json` security descriptor may declare `"tenant-mode": "dedicated"`  (see step 5 below).
 
-The `services` section declares to bind our own XSUAA service instance to the App Router. This binding will ensure a corresponding `VCAP_SERVICES` entry that holds the client ID, client secret and public key that is required to validate any incoming OAuth token/JWT from the XSUAA service:
+Moving on to the `destinations` entry. It is a variable that declares the internal routes from the App Router to the underlying backend microservices. As we only have one microservice yet, we define only one destination called `app-destination` here. This `app-destination` is referenced by the previously created `xs-app.json` file.
+
+Last but not least the `services` section declares to bind our own XSUAA service instance to the App Router. This binding will ensure a corresponding `VCAP_SERVICES` entry that holds the client ID, client secret and public key that is required to validate any incoming OAuth token/JWT from the XSUAA service:
 
 ![XSUAA service](Figure3-1-1.png)
 
@@ -137,7 +128,7 @@ Now we need to create a service binding to the XSUAA service. As a prerequisite 
 
 We put this file to `<destLocation>/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
 
-**_Note_**: The `xsappname` has to be unique within the entire XSUAA instance. We follow here the same pattern using our `<appID>-<tenantID>`.
+**_Note_**: The `xsappname` has to be unique within the entire XSUAA instance. We follow here the same pattern of `<app-name>-<subdomain>`.
 
 **_Note_**: As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
 
@@ -145,7 +136,7 @@ We put this file to `<destLocation>/xs-security.json`. For a more detailed expla
 
 ```json
 {
-  "xsappname": "firstapp-<SUBACCOUNT>",
+  "xsappname": "firstapp-<subdomain>",
   "tenant-mode": "shared",
   "scopes": [
     {
@@ -431,7 +422,7 @@ Afterwards you may use `https://jwt.io/` to decode the token. **Note:** You shou
 [ACCORDION-BEGIN [Step 11: ](Troubleshooting OAuth Scopes from XSUAA)]
 In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL:
 
-`https://<SUBACCOUNT>.authentication.eu10.hana.ondemand.com/config?action=who`
+`https://<subdomain>.authentication.<region_id>.hana.ondemand.com/config?action=who`
 
 
 [DONE]
@@ -442,7 +433,7 @@ So far, we have used the XSUAA service itself as the user provider. However, in 
 
 To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.
 
-You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<SUBACCOUNT>.authentication.<REGION_IDENTIFIER>.hana.ondemand.com/saml/metadata`, e.g. `https://p123456trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metadata as an XML file.
+You can retrieve the metadata from your XSUAA tenant by following the pattern `https://<subdomain>.authentication.<region_id>.hana.ondemand.com/saml/metadata`, e.g. `https://p123456trial.authentication.eu10.hana.ondemand.com/saml/metadata`. This downloads the metadata as an XML file.
 
 Second, you need to import the metadata into your IdP. In the following, we use an own SAP Cloud Identity tenant to do this.
 
