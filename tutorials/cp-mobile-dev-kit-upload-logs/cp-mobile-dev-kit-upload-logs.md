@@ -313,7 +313,7 @@ You may select required log entries and then either view them directly in Mobile
 
 [OPTION BEGIN [Cloud Foundry]]
 
-Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click on MDK app | **Mobile Client Log Upload | **Logs**.
+Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click on MDK app | **Mobile Client Log Upload** | **Logs**.
 
 ![MDK](img_019.1.png)
 

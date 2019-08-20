@@ -8,8 +8,9 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
- - [Install the Cloud Foundry CLI](https://developers.sap.com/tutorials/hcp-cf-getting-started.html)
+ - [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
+ - [Create a Cloud Foundry Account](cp-cf-create-account)
+ - [Install the Cloud Foundry Command Line Interface](cp-cf-download-cli)
 
 ##Details
 ### You will learn  
@@ -21,7 +22,7 @@ time: 10
 
 
 [ACCORDION-BEGIN [Step: ](Create a RabbitMQ service from the command line)]
->You can create the service via the command line or via the SAP Cloud Platform Cockpit. This step describes how to create a service via the CLI. Please make sure that you have installed the [Cloud Foundry CLI](https://developers.sap.com/tutorials/hcp-cf-getting-started.html) and that you are connected to the proper org.
+>You can create the service via the command line or via the SAP Cloud Platform Cockpit. This step describes how to create a service via the CLI. Please make sure that you have installed the [Cloud Foundry CLI](https://developers.sap.com/tutorials/cp-cf-download-cli.html) and that you are connected to the proper org.
 
 1. Run the following command to see all available services and make sure that "RabbitMQ" is available.
 

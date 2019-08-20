@@ -10,15 +10,17 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](https://developers.sap.com/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
+- **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) Primer for Developers](https://developers.sap.com/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
 
 ## Details
 ### You will learn  
-In most cases, a live OData service will be available when building an application. For times when a service is not available, it is still possible to build apps with SAP Web IDE with a file-based data model and then run on simulated data (referred to as "mock data" in SAP Web IDE). Once the data service is available, the app can then be configured to run against the service rather than the mock data with no other changes. The mock data approach is also useful if you want to prototype an app and have realistic data appear in the UI.
+In most cases, a live OData service will be available when building an application. For times when a service is not available, it is still possible to build apps with SAP Web IDE with a file-based data model and then run on simulated data (referred to as "mock data" in SAP Web IDE).
 
-In this tutorial, you will create an OData model with a Sales Order related data fields in two parts:
+Once the data service is available, the app can then be configured to run against the service rather than the mock data with no other changes. The mock data approach is also useful if you want to prototype an app and have realistic data appear in the UI.
 
-  - **Part 1:** Create the minimum data model needed to build a basic app based on one OData collection
+In this tutorial, you will create an OData model with Sales Order-related data fields in two parts:
+
+  - **Part 1:** Create the minimum data model needed to build a basic app based on one OData collectionץ
 
   - **Part 2:** The second part adds an additional collection as a `NavigationProperty` to your primary collection similar to what you used in the earlier Mobile Guides.
 
@@ -423,7 +425,7 @@ Copy and paste the following text after the `SalesOrders` `<EntitySet>` element 
 
 [ACCORDION-BEGIN [Step 14: ](Model is complete)]
 
-Your model is now complete. When working on your own OData model, you can take advantage of the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm?e5c9289506a7493189948b55c69097db.html) (which is a plug-in to SAP Web IDE). To enable it, select **Tools > Preferences** in SAP Web IDE, click **Plugins**, locate the **OData Model Editor** plugin, click the slider to "on", then **Save** and SAP Web IDE will reload.
+Your model is now complete. When working on your own OData model, you can take advantage of the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm?e5c9289506a7493189948b55c69097db.html) (which is a plug-in to SAP Web IDE). To enable it, select **Tools > Preferences** in SAP Web IDE, click **Plugins**, locate the **OData Model Editor** plugin, click the slider to **On**, then **Save** and SAP Web IDE will reload.
 
 ![Enable OData modeler](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_8.png)
 
@@ -576,6 +578,5 @@ xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="
 [DONE]
 [ACCORDION-END]
 
-
-### Optional
+### OData Model Editor
 - Read up on the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm)
