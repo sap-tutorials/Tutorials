@@ -36,6 +36,19 @@ The opening screen will appear.  Choose **Cloud Foundry Trial** as the type of a
 
 [DONE]
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step ](Verify your account)]
+
+You will see a message that you need to verify your account with a phone number. Click **Verify your phone number** to trigger that flow.
+
+![verification popover](verification.png)
+
+Enter your phone number and click **New Code** to retrieve a code. Please enter this code as well and click **Continue** to verify your account.
+
+![number popover](number.png)
+
+[DONE]
+[ACCORDION-END]
 [ACCORDION-BEGIN [Step](Select region for trial account)]
 
 Clicking on the Cloud Foundry trial link will bring up the **Start Cloud Foundry Trial** dialog box.  Choose one of regions from this list.    
