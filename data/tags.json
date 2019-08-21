@@ -141,6 +141,10 @@
       "value": "products>sap-cloud-platform--sap-hana-service"
     },
     {
+      "name": "SAP Cloud SDK",
+      "value": "products>sap-s-4hana-cloud-sdk"
+    },
+    {
       "name": "SAP Data Hub",
       "value": "products>sap-data-hub"
     },
