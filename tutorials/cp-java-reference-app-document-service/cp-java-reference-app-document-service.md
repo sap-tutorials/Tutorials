@@ -166,6 +166,7 @@ This file will read properties from `config.properties` for the document service
       Package: `com.sap.espm.model.util`
 
       Use [the following code](https://github.com/SAP/cloud-espm-v2/blob/master/espm-cloud-web/src/main/java/com/sap/espm/model/util/ReadProperties.java) to implement the class.
+
 [DONE]
 [ACCORDION-END]
 
