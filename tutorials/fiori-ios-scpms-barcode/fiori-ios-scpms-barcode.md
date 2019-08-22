@@ -205,7 +205,15 @@ If you run the app now you should see a loading indicator showing up and as soon
 
 Having a list of items is great but wouldn't it be even better if we could search for certain items in the list? To achieve that we're going to implement the `FUISearchBar` including the `FUIBarcodeScanner` feature to the table view.
 
-The first thing we need is a setup method for all the search bar setup. Please add the following line of code to the `viewDidLoad(:)` method:
+The first thing we need is a `FUISearchController` property which is optional. Please add the following line of code right below the products property above the `viewDidLoad(:)`.
+
+```swift
+
+private var searchController: FUISearchController?
+
+```
+
+Next implement a setup method for all the search bar setup. Please add the following line of code to the `viewDidLoad(:)` method:
 
 ```swift
   setupSearchBar()
@@ -313,9 +321,11 @@ To actually display the searched for items, it is necessary to change the table 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier, for: indexPath) as! FUIObjectTableViewCell
 
+    let product = isSearching() ? searchedProducts[indexPath.row] : products[indexPath.row]
+
     // set the cell properties according to the searched for terms or otherwise just all products
-    cell.headlineText = isSearching() ? searchedProducts[indexPath.row].name : products[indexPath.row].name
-    cell.substatusText = isSearching() ? searchedProducts[indexPath.row].categoryName : products[indexPath.row].categoryName
+    cell.headlineText = product.name
+    cell.substatusText = isSearching() ? product.categoryName
 
     return cell
   }
