@@ -71,8 +71,8 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
     |  Property     | Value
     |  :------------- | :-------------
     |  Application Identifier           | **`portal-cf-service!<id>`**
-    |  Role Template           | **Super_Admin**
-    |  Role    | **Super_Admin**
+    |  Role Template           | **`Super_Admin`**
+    |  Role    | **`Super_Admin`**
 
     >Note that the **Application Identifier** has an id at the end.  This id may be different on your system - just make sure that you choose the value with this format: **portal-cf-service!`<id>`**.
 
