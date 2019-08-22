@@ -459,8 +459,6 @@ sslCryptoProvider='commoncrypto',
 sslKeyStore='<Path to keystore>'
 ```
 
-For more information about the Common Crypto Library, check out this [blog](https://blogs.sap.com/2019/01/24/sap-SAP HANA-service-secure-client-connections-with-sap-commoncryptolib-by-the-sap-SAP HANA-academy/).
-
 [DONE]
 
 [ACCORDION-END]
