@@ -1,5 +1,5 @@
 ---
-title: Connecting to SAP HANA Using Python
+title: Connect to SAP HANA Using Python
 description: Install SAP HANA client drivers on Python and connect to an SAP HANA instance.
 auto_validation: true
 time: 15
@@ -8,17 +8,17 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
-- A running HANA database instance and credentials of a database user
-- Familiarity with Python
+- A running SAP HANA database instance and credentials of a database user.
+- Familiarity with Python.
 
 ## Details
 ### You will learn
-  - Install the HANA client driver for Python
-  - (Optional) Install the client driver using a virtual environment
-  - Connect to an instance of SAP HANA
-  - Using environment variables to provide connection parameters
+  - How to install the SAP HANA client driver for Python
+  - How to install the client driver using a virtual environment (optional)
+  - How to connect to an instance of SAP HANA
+  - How to use environment variables to provide connection parameters
 
-We recommend using [virtual environments](https://docs.python.org/3/library/venv.html) to localize your Python run-time environment. If you choose to use virtual environments, you can find a guide on using virtual environments [here](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments).
+We recommend using [virtual environments](https://docs.python.org/3/library/venv.html) to localize your Python runtime environment. If you choose to use virtual environments, you can find a guide on using virtual environments [here](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments).
 
 ---
 
@@ -26,54 +26,66 @@ We recommend using [virtual environments](https://docs.python.org/3/library/venv
 [OPTION BEGIN [Virtual Environment]]
 
 Create a virtual environment to localize dependencies:
-```shell
+
+```Shell
 python -m venv venv
 ```
+
 Activate the virtual environment:
-```shell
+
+```Shell
 source ./venv/bin/activate
 ```
-After activating the virtual environment, you should see `(venv)` in front of your Linux user in your bash shell. For Example:
+
+After activating the virtual environment, you should see `(venv)` in front of your Linux user in your bash shell. For example:
 
 ![source_venv](source_venv.png)
 
-If you're on windows:
+If you're on Windows:
+
 ```cmd
 .\venv\Scripts\activate
 ```
+
 ![source_venv_windows](source_venv_windows.png)
 
 Create a dependency file and name it `requirements.txt`:
+
 ```requirements.txt
 hdbcli
 ### add other dependencies below ###
 ```
 
 Install the dependencies:
-```shell
+
+```Shell
 pip install -r requirements.txt
 ```
+
 ![install_from_requirements](install_from_requirements.png)
 
 The dependencies will be saved in your `venv` directory.
 [OPTION END]
 
-[OPTION BEGIN [Unix Environment]]
+[OPTION BEGIN [Unix]]
 Install the `hdbcli` package:
-```shell
+
+```Shell
 pip install hdbcli
 ```
 [OPTION END]
 
-[OPTION BEGIN [Windows Environment]]
+[OPTION BEGIN [Windows]]
 Install the `hdbcli` package:
+
 ```cmd
 pip install hdbcli
 ```
 [OPTION END]
 
-You should see the following after installing the client
-```shell
+You should see the following after installing the client:
+
+```Shell
 Installing collected packages: hdbcli
 Successfully installed hdbcli-2.x.xxx
 ```
@@ -82,15 +94,15 @@ Successfully installed hdbcli-2.x.xxx
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Establish a test connection)]
-To establish a simple connection to HANA, you need the following information:
+To establish a simple connection to SAP HANA, you need the following information:
 
-- Database Host
-- Database Port
-- Database User
+- Database host
+- Database port
+- Database user
 - Password
 
 
-```python
+```Python
 #connect.py
 
 #Import your dependencies
@@ -109,37 +121,40 @@ print('connected')
 
 ```
 
->Note: You should never have database information directly in your code, you are only doing this for a connection test.
+>You should never have database information directly in your code; you are only doing this for a connection test.
 
 Run the file with:
-```shell
+
+```Shell
 python3 connect.py
 ```
 
 If the connection information used is correct, you should see the following printed in your shell:
-```shell
+
+```Shell
 connected
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Hiding sensitive connection parameters)]
-[OPTION BEGIN [Unix Environment]]  
+[ACCORDION-BEGIN [Step 3: ](Hide sensitive connection parameters)]
+[OPTION BEGIN [Unix]]  
 
-Now that you've successfully connected to the database, we need to take out connection parameters and credentials out of the source code. Having connection parameters directly in your source code is insecure, one option is to provide these parameters at run time as environment variables instead.
+Now that you've successfully connected to the database, we need to take out connection parameters and credentials out of the source code. Having connection parameters directly in your source code is insecure, one option is to provide these parameters at runtime as environment variables instead.
 
 Export your environment variables to your bash profile through your preferred method.
-```bash
+
+```Bash
 export HOST="<Database Host>"
 export PORT="<Database Port>"
 export DB_USER="<Database User>"
 export DB_PW="<Password>"
 ```
 
-We'll use the os package in python to access these environment variables to connect.
+We'll use the `os` package in Python to access these environment variables to connect.
 
-```python
+```Python
 from hdbcli import dbapi
 import os
 
@@ -160,21 +175,22 @@ for result in cursor:
 
 ```
 [OPTION END]
-[OPTION BEGIN [Windows Environment]]
->Note: It isn't recommended to deploy a production application of this type on Windows
+
+[OPTION BEGIN [Windows]]
+>It isn't recommended to deploy a production application of this type on Windows.
 
 Export your environment variables
 
-- Database Host
-- Database Port
-- Database User
+- Database host
+- Database port
+- Database user
 - Password
 
 ![Windows Environment Variables](system_var_win.png)
 
-We'll use the os package from python to access these user environment variables
+We'll use the `os` package from Python to access these user environment variables.
 
-```python
+```Python
 from hdbcli import dbapi
 import os
 
@@ -195,8 +211,9 @@ for result in cursor:
 ```
 [OPTION END]
 
-Test run the python file again with:
-```shell
+Test run the Python file again with:
+
+```Shell
 python connect.py
 ```
 
