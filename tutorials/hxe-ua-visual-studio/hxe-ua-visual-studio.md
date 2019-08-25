@@ -12,7 +12,7 @@ time: 5
  - **Proficiency:** Beginner
 
 ## Next Steps
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://developers.sap.com/tutorials/hxe-ua-visual-studio-tables.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](hxe-ua-visual-studio-tables)
 
 ## Details
 ### You will learn
@@ -36,7 +36,7 @@ For more information, visit the [Microsoft Visual Studio](https://www.visualstud
 
 [ACCORDION-BEGIN [Step 2: ](Download the SAP HANA, express edition Download Manager )]
 
-You can download the SAP HANA plugin for Microsoft Visual Studio by downloading the SAP HANA, express edition download manager. Go to the [SAP HANA, express edition](https://www.sap.com/sap-hana-express) homepage and click **Install SAP HANA, express edition**.
+You can download the SAP HANA plugin for Microsoft Visual Studio by downloading the SAP HANA, express edition download manager. Go to the [SAP HANA](https://developers.sap.com/topics/sap-hana.html) homepage and click **Install SAP HANA, express edition**.
 
 Enter your information and click **Register**.
 
