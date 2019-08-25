@@ -536,7 +536,7 @@ Provide the below information:
 
 ![MDK](img_007.26.png)
 
-Next, on **Main page**, drag and drop the **Section Button** container onto the Page.
+Next, on **Main page**, drag and drop the **Section Button** Container Item control onto the Page.
 
 ![MDK](img_007.27.gif)
 
