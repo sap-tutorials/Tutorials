@@ -1,6 +1,6 @@
 ---
-title: SAP TechEd, Choose your favorite food and create view
-description: Choose your favorite foods in the database and create a database view
+title: Choose Your Favorite Food and Create View (SAP TechEd)
+description: Choose your favorite foods in the database and create a database view.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform--sap-hana-service, products>sap-web-ide]
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You have [cloned a project into SAP Web IDE for Full Stack](hana-advanced-analytics-teched-1)
+ - You have [cloned a project into SAP Web IDE for Full-Stack](hana-advanced-analytics-teched-1).
 
 
 ## Details
@@ -22,17 +22,17 @@ primary_tag: products>sap-hana
 
 [ACCORDION-BEGIN [Step 1: ](Explore the data)]
 
-The project you have just cloned is using tables in a shared HDI container, which you can access through synonyms
+The project you have just cloned is using tables in a shared HDI container, which you can access through synonyms.
 
-Right-click on the `db` folder and choose **Open HDI container**
+Right-click on the `db` folder and choose **Open HDI Container**.
 
 ![Explore data](1.png)
 
-You should see your own HDI container. Click on **Synonyms**. Choose the table `COMM_FOODS` and then click **Generate SELECT statement**
+You should see your own HDI container. Click **Synonyms**. Choose the table `COMM_FOODS` and then click **Generate SELECT Statement**.
 
 ![Explore data](2.png)
 
-Scroll all the way down to the `FROM` statement to answer the validation below
+Scroll all the way down to the `FROM` statement to answer the validation below.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -41,15 +41,15 @@ Scroll all the way down to the `FROM` statement to answer the validation below
 
 Press `F8` or click ![run](run.png) to execute the statement. You will see some of the foods included in the table.
 
-Think of your favorite food, replace the placeholder below and introduce the following into fuzzy search as a where clause to look for it
+Think of your favorite food, replace the placeholder below and introduce the following into fuzzy search as a where clause to look for it.
 
-```sql
+```SQL
 where contains(product_name, '<<YOUR FAVORITE FOOD HERE>>', fuzzy(0.8,'textsearch=compare'))
 AND to_nvarchar("PURCHASE_PLACES") <> 'NULL';
 
 ```
 
-**Run** ![run](run.png) the statement and make sure you get results.
+Run ![run](run.png) the statement and make sure you get results.
 
 ![Explore data](3.png)
 
@@ -59,8 +59,7 @@ Note how the ingredients are a long text separated by commas.
 
 ![Explore data](11.png)
 
-
-> ## What is going on?
+> ### What is going on?
 > You can see the fuzzy search in action. This is part of the definition of the table you are querying:
 >
 >  ![table definition](def.png)
@@ -73,17 +72,17 @@ Note how the ingredients are a long text separated by commas.
 
 [ACCORDION-BEGIN [Step 3: ](Create a view)]
 
-Go back into the development view. Right-click on `db/src` and choose **New -> File**.
+Go back into the development view. Right-click `db/src` and choose **New > File**.
 
 ![Explore data](4.png)
 
 Input the following name to create the design-time artifact for a view using SQL DDL:
 
-```text
+```Text
 data/myFood.hdbview
 ```
 
-Click **OK** to create both a folder and a file to define your view:
+Click **OK** to create both a folder and a file to define your view.
 
 ![Explore data](5.png)
 
@@ -117,7 +116,7 @@ view "myFood" as
   WHERE ...
 ```
 
-Complete the `where` clause with the SQL statement you executed in the previous step
+Complete the `where` clause with the SQL statement you executed in the previous step.
 
 ![Explore data](6.png)
 
@@ -128,7 +127,7 @@ Complete the `where` clause with the SQL statement you executed in the previous 
 
 [ACCORDION-BEGIN [Step 4: ](Build the view)]
 
-It is now time to physically create the view in the database. Right-click on the definition of the view and choose **Build**
+It is now time to physically create the view in the database. Right-click on the definition of the view and choose **Build**.
 
 ![Explore data](8.png)
 
@@ -139,11 +138,11 @@ Make sure the build has been successful
 
 [ACCORDION-BEGIN [Step 5: ](Check the view)]
 
-Go back into the **Database Explorer**. Right-click on your view and choose **Open Data**
+Go back into the **Database Explorer**. Right-click your view and choose **Open Data**.
 
 ![Explore data](9.png)
 
-Click on **SQL** and copy the SELECT statement into the validation box below
+Click **SQL** and copy the SELECT statement into the validation box below.
 
 ![Explore data](10.png)
 

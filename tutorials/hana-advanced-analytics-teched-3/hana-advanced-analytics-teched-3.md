@@ -1,5 +1,5 @@
 ---
-title: SAP Teched, use Map Reduce to split
+title: Use Map Reduce to Split (SAP TechEd)
 description: sdasd
 auto_validation: true
 time: 10
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You [have created a view to search for your favorite food items](hana-advanced-analytics-teched-2)
+ - You [have created a view to search for your favorite food items](hana-advanced-analytics-teched-2).
 
 ## Details
 ### You will learn
@@ -26,13 +26,13 @@ You can now return to the code and close open tabs.
 
 ![Create Map Reduce](1.png)
 
-Under `src`, create a new function by right-clicking on `src` and choosing **New -> Function**
+Under `src`, create a new function by right-clicking  `src` and choosing **New > Function**.
 
 ![Create Map Reduce](4.png)
 
 Use the following name:
 
-```text
+```Text
 functions/mapper
 ```
 
@@ -42,7 +42,7 @@ For example:
 
 Replace the code with the following:
 
-```sql
+```SQL
 FUNCTION "mapper"( in iv_id int, in iv_text nvarchar(5000) )
        RETURNS table (id int, val nvarchar(5000), freq int)
        LANGUAGE SQLSCRIPT
@@ -67,13 +67,13 @@ END;
 
 [ACCORDION-BEGIN [Step 2: ](Create a reduce function)]
 
-In the new folder, `functions`, create a new function with the name `reducer`
+In the new folder, `functions`, create a new function with the name `reducer`.
 
 ![Create Map Reduce](2.png)
 
 Replace the contents with the following:
 
-```sql
+```SQL
 FUNCTION "reducer"( in iv_val nvarchar(5000),
 						   in it_valtab table ( id int, freq int  ))
        RETURNS table (	val nvarchar(5000),
@@ -89,7 +89,8 @@ BEGIN
 END;
 
 ```
-**Save** all files
+
+**Save** all files.
 
 ![Create Map Reduce](5.png)
 
@@ -99,32 +100,32 @@ END;
 
 [ACCORDION-BEGIN [Step 3: ](Build the functions)]
 
-
-
-Right-click on the `functions` folder and choose  **Build Selected Files**
+Right-click the `functions` folder and choose  **Build Selected Files**.
 
 ![Create Map Reduce](6.png)
 
 Wait until the build has been successful
 
-> ## What is going on?
+> ### What is going on?
 >
 > Map Reduce is a programming model to split large dataset into parts and process them in parallel, generally in different nodes in a cluster. The parts in the dataset are then reunited into a consistent output.
-> You have created two functions. The first one, mapper, takes each list of ingredients from each record, and splits the ingredients into separate records in a table. You are using a reusable library to split text into a table. The function also counts the occurrences of an ingredient within a list. The `MAP_MERGE` operator then merges the results into a single table with the individual ingredient and its original ID.
-> The second function, the reducer, will use each group of ingredient tables for each ID, process all groups and return the total count for those ingredients.
+
+> You have created two functions. The first one, `mapper`, takes each list of ingredients from each record, and splits the ingredients into separate records in a table. You are using a reusable library to split text into a table. The function also counts the occurrences of an ingredient within a list. The `MAP_MERGE` operator then merges the results into a single table with the individual ingredient and its original ID.
+
+> The second function, `reducer`, will use each group of ingredient tables for each ID, process all groups and return the total count for those ingredients.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test the functions)]
 
-Go back into the database explorer and open a new **SQL** console
+Go back into the database explorer and open a new **SQL** console.
 
 ![Create Map Reduce](7.png)
 
-Use the following code to call both functions, using the view you created previously as input
+Use the following code to call both functions, using the view you created previously as input.
 
-```sql
+```SQL
 
 do begin
 
@@ -142,7 +143,7 @@ do begin
  end;
 ```
 
-**Execute** ![run](run.png) the code to complete the validation below.
+Execute ![run](run.png) the code to complete the validation below.
 
 [VALIDATE_1]
 [ACCORDION-END]

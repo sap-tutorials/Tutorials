@@ -1,6 +1,6 @@
 ---
-title: SAP TechEd, explore JSON document store
-description: Create a JSON collection and SQL to insert and read documents
+title: Explore JSON Document Store (SAP TechEd)
+description: Create a JSON collection and SQL to insert and read documents.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform--sap-hana-service, products>sap-web-ide]
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You [have created `MapReduce` functions](hana-advanced-analytics-teched-3)
+ - You [have created `MapReduce` functions](hana-advanced-analytics-teched-3).
 
 ## Details
 ### You will learn
@@ -16,7 +16,7 @@ primary_tag: products>sap-hana
   - How to use SQL to select and insert documents in the collection
   - How to combine the document store with a relational table in SAP HANA
 
-  **This mission can only be completed at SAP TechEd.**
+**This mission can only be completed at SAP TechEd.**
 
 ---
 
@@ -24,7 +24,7 @@ primary_tag: products>sap-hana
 
 Go back into the development perspective. Under `src`, create a new **File** with the following name:
 
-```text
+```Text
 collections/DOCSTORE.hdbcollection
 ```
 Enter the following text into it:
@@ -32,7 +32,8 @@ Enter the following text into it:
 ```SQL
 collection table "DOCSTORE";
 ```
-**Save** and **Build**
+
+**Save** and **Build**.
 
 ![Docstore](1.png)
 
@@ -54,7 +55,8 @@ INSERT INTO DOCSTORE VALUES({
   }
 });
 ```
-Execute the statement to insert the values
+
+Execute the statement to insert the values.
 
 ![Docstore](2.png)
 
@@ -66,11 +68,11 @@ Execute the statement to insert the values
 
 You will insert another document into your JSON collection. You will include geographical coordinates for the value in the field `PURCHASE_PLACES`.
 
-Open the data preview for the `myFood` view and choose one of the cities or places in the records
+Open the data preview for the `myFood` view and choose one of the cities or places in the records.
 
 ![Docstore](3.png)
 
-Open a new tab with [Google maps](https://www.google.com/maps) and look for the city of the record you chose. Pick a point in the map and **keep these results open** so you can use the coordinates in the next step
+Open a new tab with [Google maps](https://www.google.com/maps) and look for the city of the record you chose. Pick a point in the map and **keep these results open** so you can use the coordinates in the next step.
 
 ![Docstore](4.png)
 
@@ -79,7 +81,7 @@ Open a new tab with [Google maps](https://www.google.com/maps) and look for the 
 
 [ACCORDION-BEGIN [Step 4: ](Create a new record)]
 
-Copy the following statement into the SQL console
+Copy the following statement into the SQL console:
 
 ```SQL
 INSERT INTO DOCSTORE VALUES({
@@ -91,11 +93,14 @@ INSERT INTO DOCSTORE VALUES({
 
 });
 ```
-Use the latitude and longitude from Google maps to replace the sample latitude and longitude
+
+Use the latitude and longitude from Google maps to replace the sample latitude and longitude.
 
 ![Docstore](5.png)
 
-Fill in your first name, your favorite color and the day of your birthday. These values will be used to create your code name and transferred to the shared database. For example:
+Fill in your first name, your favorite color and the day of your birthday. These values will be used to create your code name and transferred to the shared database.
+
+For example:
 
 ![Docstore](6.png)
 
@@ -108,17 +113,19 @@ Execute the statement to insert the values. Note how you are inserting a complet
 
 One of the features of the JSON document store in SAP HANA is that the documents can be queried using SQL and can also be combined with relational tables.
 
-Use the  value of `FIRST_NAME` you used to insert a document in the previous step in the where clause to try this out
+Use the  value of `FIRST_NAME` you used to insert a document in the previous step in the where clause to try this out.
 
-```sql
+```SQL
 select latitude, longitude, "favorite_color" from DOCSTORE where first_name = '<<ENTER YOUR FIRST_NAME HERE>>'
 ```
+
 For example:
+
 ![Docstore](7.png)
 
 You can now use the following SQL statement to calculate distance to your current location. The point is currently set to the SAP TechEd venue in Las Vegas.
 
-```sql
+```SQL
 with doc_view as (select latitude, longitude, "favorite_color" from DOCSTORE where first_name = '<<ENTER YOUR FIRST_NAME HERE>>')
 select	st_geomFromText('Point( -115.166586 36.121879 )', 4326)
         .st_distance(st_geomFromtext('Point( '|| longitude || ' ' || latitude || ' )', 4326), 'meter') / 1000 as DISTANCE_KM

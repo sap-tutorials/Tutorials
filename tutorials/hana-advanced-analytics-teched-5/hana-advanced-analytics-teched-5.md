@@ -1,6 +1,6 @@
 ---
-title: SAP TechEd, connect to fellow foodies through a graph
-description: Create a uni-directional connection to a fellow attendee at SAP TechEd based on ingredients of your favorite food
+title: Connect to Fellow Foodies through a Graph (SAP TechEd)
+description: Create a unidirectional connection to a fellow attendee at SAP TechEd based on ingredients of your favorite food.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform--sap-hana-service, products>sap-web-ide]
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - You [have created a document store](hana-advanced-analytics-teched-4)
+ - You [have created a document store](hana-advanced-analytics-teched-4).
 
 ## Details
 ### You will learn
@@ -19,19 +19,19 @@ primary_tag: products>sap-hana
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Graph)]
+[ACCORDION-BEGIN [Step 1: ](Create a graph)]
 
 You can now create a graph that queries the tables you have as synonyms from the shared HDI container.
 
 Go back to the development perspective. Under `src\data` create a new file called:
 
-```text
+```Text
 friendships.hdbgraphworkspace
 ```
 
-Paste the following content into the file
+Paste the following content into the file:
 
-```sql
+```SQL
 graph workspace friendships
 	edge table "FRIENDS"
 		source column code_name
@@ -41,7 +41,7 @@ graph workspace friendships
 		KEY COLUMN CODE_NAME;
 ```
 
-**Save** and **Build**
+**Save** and **Build**.
 
 ![Create Graph](1.png)
 
@@ -52,7 +52,7 @@ graph workspace friendships
 
 You have built a graph using tables and views from a shared HDI container. Other participants who have already completed this mission have added themselves to these tables and are now connected in the graph.
 
-Go into the database explorer. Locate the graph and preview it
+Go into the database explorer. Locate the graph and preview it.
 
 ![View Graph](2.png)
 
@@ -65,9 +65,10 @@ Go into the database explorer. Locate the graph and preview it
 If you look at the definition of the graph, the code names are connected through a `friends with` relationship.
 
 This relationship was established based on the most frequent ingredients of the food items chosen by each of the participants.
+
 Use the following SQL statement to get the most frequent ingredients in your view using the `MapReduce` functions and creating your code name from the data in the document store.
 
-```sql
+```SQL
 
 do begin
 
@@ -116,7 +117,7 @@ do begin
 
 [ACCORDION-BEGIN [Step 4: ](Find yourself in the graph)]
 
-Refresh the preview of the graph and you should see your code name there and who it is connected to
+Refresh the preview of the graph and you should see your code name there and who it is connected to.
 
 ![View Graph](3.png)
 
