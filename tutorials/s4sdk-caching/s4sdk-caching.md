@@ -22,14 +22,14 @@ time: 15
 
 Sometimes service calls from your application to external servers turn out to be quite expensive in terms of performance and latency. Further evaluation of the queried data can make things even worse once critical response times are reached for the clients and customers.
 
-To improve responsiveness to the users, the data requested internally by your application can often be stored for subsequent calls. This can be achieved in such a way, that for every request the information previously stored by the application can be re-used. This general behavior is called a cache. A cache stores copies of information passing through it. Besides serving improved responsiveness, the technical goal is to reduce the overall required bandwidth and processing requirements, thus eventually lessening the server load and perceived lag. This way the amount of information, that needs to be transmitted across networks, can be reduced.
+To improve responsiveness to the users, the data requested internally by your application can often be stored for subsequent calls. This can be achieved in such a way, that for every request the information previously stored by the application can be reused. This general behavior is called a cache. A cache stores copies of information passing through it. Besides serving improved responsiveness, the technical goal is to reduce the overall required bandwidth and processing requirements, thus eventually lessening the server load and perceived lag. This way the amount of information, that needs to be transmitted across networks, can be reduced.
 
 Caches are very important in a wide variety of use cases. It is one of the reasons for the advancements of our modern internet experience, like on-demand multimedia streaming and persistent cloud storage. Unlike web caches, which save whole request and response documents, an internal application cache serves the purpose of persisting interim data for multiple intended uses. Whenever information is expensive to compute or retrieve, and its value on a certain input is needed more than once, a cache should be considered.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](How does it work?)]
+[ACCORDION-BEGIN [Step 2: ](How does they work?)]
 A cache generally works by the action of requesting information to a given subject, called a key. If an information to a given key was previously requested, was stored at the time of request, and is now available to read, a so called "cache hit" occurs: the data can be found and will be loaded. A "cache miss" occurs when it cannot.
 
 The most important aspects of a cache is its size and the life time of its items. Both should be limited with regards to the use case, to avoid an outdated state or disproportionate memory consumption in the application. The biggest effect of using a cache can be witnessed, when the application is repetitively reading larger chunks of data from external sources. In such cases, using caches significantly reduce the bandwidth required for transmitting information.
@@ -52,7 +52,7 @@ The Cloud SDK makes it easy to cache your requests since it handles most of the 
 
 In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology. In this tutorial we will use the `JCache` adapter [Caffeine] (https://github.com/ben-manes/caffeine) for our purpose, but you can use any implementation you like. For Caffeine, add the following dependency to your application `pom.xml`:
 
-```xml
+```XML
 <dependency>
     <groupId>com.github.ben-manes.caffeine</groupId>
     <artifactId>jcache</artifactId>
@@ -63,7 +63,7 @@ In SAP Cloud SDK, `JCache` (`JSR 107`) is used as underlying caching technology.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Cache your OData Call)]
+[ACCORDION-BEGIN [Step 4: ](Cache your OData call)]
 
 Now that we have covered why caching is important and how it can help us improve performance and responsiveness, it's finally time to introduce it into our application.
 
@@ -73,7 +73,7 @@ Add the following lines at the end of the constructor of the `GetBusinessPartner
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
 
-```java
+```Java
 final ResilienceConfiguration.CacheConfiguration cacheConfig =
         ResilienceConfiguration.CacheConfiguration
                 .of(Duration.ofSeconds(10))
@@ -96,7 +96,7 @@ Feel free to test that subsequent requests respond faster compared to the first 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test the Cache)]
+[ACCORDION-BEGIN [Step 5: ](Test the cache)]
 
 Now that we have a working command with caching functionality we also have to adapt our test. Recall the test we prepared to check our resilient command falls back to an empty list in case of failure. Note that this behavior has now changed slightly.
 
@@ -104,7 +104,7 @@ If our servlet got the desired result cached from a previous call, and the ERP s
 
 `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
-```java
+```Java
 @Test
 public void testCache() {
     mockUtil.mockErpDestination("MyErpSystem", "ERP_001");
@@ -131,13 +131,13 @@ Here, we expect the request still to be successful, even after swapping out the 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](More on Testing)]
+[ACCORDION-BEGIN [Step 6: ](More on testing)]
 
 The introduction of caching has some implications for how we test our application. In order for tests to validate a single piece of functionality and for them to be reliable they must be independent of each other. The order of execution should not matter and one test may not depend on the successful execution of other tests. So far, this was the case for our integration tests. But now the added cache holds a state that is shared between the tests in our test class, which has to be accounted for.
 
 Take a look back at the test we just replaced:
 
-```java
+```Java
 @Test
 public void testWithFallback() {
     // Simulate a failed VDM call with non-existent destination

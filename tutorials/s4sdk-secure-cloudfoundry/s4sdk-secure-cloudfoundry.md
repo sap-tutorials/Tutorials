@@ -1,6 +1,6 @@
 ---
 title: Secure Your Application on SAP Cloud Platform Cloud Foundry
-description: This tutorial will cover how to protect your Java-based Hello World microservice with authenticated and authorized users.
+description: Protect your Java-based Hello World microservice with authenticated and authorized users.
 auto_validation: true
 time: 50
 tags: [ tutorial>intermediate, products>sap-hana, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>java ]
@@ -44,20 +44,21 @@ With these basics in mind, let's create the picture of Figure 1 and Figure 2 by 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Setup the App Router)]
+[ACCORDION-BEGIN [Step 2: ](Set up the App Router)]
 
-We will let Cloud Foundry retrieve the App Router automatically on deployment. To achieve this, we will first setup the necessary structure.
+We will let Cloud Foundry retrieve the App Router automatically on deployment. To achieve this, we will first set up the necessary structure.
 
 1. Go to your favourite `<destLocation>` and create the `approuter` directory:
 
-    ```bash
+    ```Bash
     cd <destLocation>
     mkdir approuter
     cd approuter
     ```
 
 2. Place the following `package.json` in your `approuter` directory:
-    ```json
+
+    ```JSON
     {
       "name": "approuter",
       "dependencies": {
@@ -70,7 +71,8 @@ We will let Cloud Foundry retrieve the App Router automatically on deployment. T
     ```
 
 3. Within `<destLocation>/approuter` create a new file called `xs-app.json` with the following content:
-    ```json
+
+    ```JSON
     {
       "welcomeFile": "index.html",
       "routes": [{
@@ -83,7 +85,7 @@ We will let Cloud Foundry retrieve the App Router automatically on deployment. T
 
 4. Last but not least create a new `manifest.yml` file within `<destLocation>` for the app router microservice with the following content:
 
-    ```yaml
+    ```YAML
 
     ---
     applications:
@@ -103,12 +105,12 @@ We will let Cloud Foundry retrieve the App Router automatically on deployment. T
 
     Adapt the file as follows:
 
-      1. Replace `<subdomain>` with your subdomain. You will find your subdomain in the CF cockpit by heading to the overview page of your sub-account:
+      - Replace `<subdomain>` with your subdomain. You will find your subdomain in the CF cockpit by heading to the overview page of your sub-account:
 
           ![Subomain and Tenant ID in the CF Cockpit](Figure-3-1.png)
 
-      2. Swap out both instances of `<region_id>` with your specific region (e.g. `eu10`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
-      3. In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`.
+      - Swap out both instances of `<region_id>` with your specific region (e.g. `eu10`). You can find it for instance included in the API endpoint (also listed in the image above) just before `hana.ondemand.com`. More details on the region specific URLs can be found [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
+      - In `destinations` replace `<APPLICATION_URL>` with the actual URL of your previously deployed app. Again you can find it in the CF cockpit or by listing all existing routes via `cf routes`.
 
 ### Understanding the AppRouter's `manifest.yml`
 
@@ -128,13 +130,13 @@ Now we need to create a service binding to the XSUAA service. As a prerequisite 
 
 We put this file to `<destLocation>/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
 
-**_Note_**: The `xsappname` has to be unique within the entire XSUAA instance. We follow here the same pattern of `<app-name>-<subdomain>`.
+>**Note**: The `xsappname` has to be unique within the entire XSUAA instance. We follow here the same pattern of `<app-name>-<subdomain>`.
 
-**_Note_**: As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
+>**Note**: As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
 
 `<destLocation>/xs-security.json`:
 
-```json
+```JSON
 {
   "xsappname": "firstapp-<subdomain>",
   "tenant-mode": "shared",
@@ -160,20 +162,20 @@ Create the file and change the app name just like before.
 
 We then create a service instance called `my-xsuaa` of the XSUAA service by issuing the following command and using the `xs-security.json` file:  
 
-```bash
+```Bash
 cf create-service xsuaa application my-xsuaa -c xs-security.json
 ```
 
 If you have created this instance of the XSUAA service before without the `xs-security.json` parameter, you can unbind and delete the existing instance with these commands before creating it with the above command:
 
-```bash
+```Bash
 cf unbind-service firstapp my-xsuaa
 cf delete-service my-xsuaa​
 ```
 
 After you have created the XSUAA service instance, deploy the app router using the following (with the appropriate API endpoint of your Cloud Foundry region):
 
-```bash
+```Bash
 cd <destLocation>
 cf push
 ```
@@ -200,7 +202,7 @@ The first step is to get some additional Java libs from Service Marketplace. To 
 2. At the time of writing the latest package is **`XS_JAVA_1-70001362.ZIP`**
 3. **Unzip `<destLocation>`**
 4. Install XS Security Libs to your local maven repo using:
-    ```bash
+    ```Bash
     cd <destLocation>
     mvn clean install
     ```
@@ -208,7 +210,7 @@ The first step is to get some additional Java libs from Service Marketplace. To 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure your App for secure Access)]
+[ACCORDION-BEGIN [Step 4: ](Configure your app for secure access)]
 
 In the `<dependencies>` section of the `application/pom.xml`, we enhance the following additional dependencies to our project:
 
@@ -253,14 +255,16 @@ In the `<dependencies>` section of the `application/pom.xml`, we enhance the fol
 ```
 This dependency section contains three main parts of dependencies:
 
-1. The `org.springframework.security` packages add certain aspects of the [Spring security](https://docs.spring.io/spring-security/site/docs/current/reference/html/index.html) framework to our application, in particular the [OAuth framework](http://projects.spring.io/spring-security-oauth/docs/Home.html) of Spring security.
-2. The `com.sap.xs2.security` packages contain specific security adaptations for the Cloud Foundry environment.
-3. The `com.sap.security` packages contain platform-specific native implementations for the JWT validation and support OAuth2 authentication.
+- The `org.springframework.security` packages add certain aspects of the [Spring security](https://docs.spring.io/spring-security/site/docs/current/reference/html/index.html) framework to our application, in particular the [OAuth framework](http://projects.spring.io/spring-security-oauth/docs/Home.html) of Spring security.
+
+- The `com.sap.xs2.security` packages contain specific security adaptations for the Cloud Foundry environment.
+
+- The `com.sap.security` packages contain platform-specific native implementations for the JWT validation and support OAuth2 authentication.
 
 
 Afterwards you need to go to your `web.xml` in `src/main/webapp/WEB-INF` and uncomment the following lines:
 
-```xml
+```XML
 <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 </listener>
@@ -301,7 +305,7 @@ SAP_JWT_TRUST_ACL: '[{"clientid" : "*", "identityzone" : "*"}]'
 [ACCORDION-BEGIN [Step 5: ](Deploy and test the application)]
 Now we are ready to build and deploy the application to try all our changes with:
 
-```bash
+```Bash
 mvn clean install
 cf push
 ```
@@ -317,7 +321,7 @@ However, you should be still able to access your application using the App Route
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Removed CSRF Token protection from backing service)]
+[ACCORDION-BEGIN [Step 6: ](Remove CSRF token protection from backing service)]
 If you have previously exposed the backing service directly to the end user, you have used the `RestCsrfPreventionFilter` on the backend to protect against cross-site request forgery. As this is now in the responsibility of the App Router, we should remove it. For this remove the following lines from your `web.xml`:
 ```xml
 <filter>
@@ -344,7 +348,7 @@ The backend itself can be easily adapted based on the `spring-security.xml`. In 
 ```
 Afterwards you need to redeploy the application with:
 
-```bash
+```Bash
 mvn clean install
 cf push
 ```
@@ -377,8 +381,7 @@ That's it for today. Now you have learned the basics to protect your application
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Appendix)]
-### Understanding Roles, Role Collections and Scopes
+[ACCORDION-BEGIN [Step 9: ](Understanding Roles, Role Collections and Scopes)]
 The following picture explains how the various concepts are related to each other.
 
 ![Roles, Scopes and Users](Figure9-3.png)
@@ -391,10 +394,10 @@ Green Box: As an administrator of the users (customer), the role collection can 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Troubleshooting Json Web Tokens)]
+[ACCORDION-BEGIN [Step 10: ](Troubleshooting JSON Web Tokens)]
 Sometimes it might be necessary to investigate the JWT on the backend microservice during development to check for potential errors. Here is an example servlet that prints the token out.
 
-```java
+```Java
 @WebServlet("/debug")
 public class JwtDebugServlet extends HttpServlet {
 
@@ -419,7 +422,7 @@ Afterwards you may use `https://jwt.io/` to decode the token. **Note:** You shou
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Troubleshooting OAuth Scopes from XSUAA)]
+[ACCORDION-BEGIN [Step 11: ](Troubleshoot OAuth scopes from XSUAA)]
 In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL:
 
 `https://<subdomain>.authentication.<region_id>.hana.ondemand.com/config?action=who`
@@ -428,7 +431,7 @@ In addition, you may use the XSUAA to see which current scopes and roles a parti
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Set up your own Identity Provider)]
+[ACCORDION-BEGIN [Step 12: ](Set up your own identity provider)]
 So far, we have used the XSUAA service itself as the user provider. However, in production scenarios customer's may want to use their own Identity Provider (IdP) as a user provider or delegate into on-premise user stores such as LDAP or Active Directory. In the following, we quickly show how the XSUAA service can delegate requests to such an external IdPs.
 
 To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.

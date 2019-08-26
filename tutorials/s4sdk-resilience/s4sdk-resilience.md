@@ -66,7 +66,7 @@ So first we will create the following class:
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/GetBusinessPartnersCommand.java`
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import org.slf4j.Logger;
@@ -159,7 +159,7 @@ To use the `ResilienceDecorator` we need at least two things:
 
 Here is an example of a custom resilience configuration. Here we set the isolation mode to optional tenant + user, the bulkhead maximum concurrent calls to 20, and the execution timeout to 10000 milliseconds.
 
-```java
+```Java
 myResilienceConfig = ResilienceConfiguration.of(BusinessPartnerService.class)
         .isolationMode(ResilienceIsolationMode.TENANT_AND_USER_OPTIONAL)
         .timeLimiterConfiguration(
@@ -177,7 +177,7 @@ Update your resilience configuration to match the above configuration. Now that 
 
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServlet.java`
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import com.google.gson.Gson;
@@ -243,7 +243,7 @@ Now let's adapt the code inn our integration test to check, if our fallback is w
 
  `integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`:
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import io.restassured.RestAssured;
