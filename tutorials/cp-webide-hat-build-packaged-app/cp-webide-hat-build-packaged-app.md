@@ -51,9 +51,9 @@ Refresh Web IDE to ensure that the plugin's functionality for creating hybrid mo
 
 [ACCORDION-BEGIN [Step 3: ](Verify the cloud build service)]
 
-By default, the cloud build service that is based on the mobile service for development and operations is used.
+By default, the cloud build service that is based on Mobile Services is used.
 
-(Production landscapes only) If **Mobile Service for SAP Fiori** is enabled for your account, go to **Tools** > **Preferences**. In the left pane, select **Hybrid Application Toolkit** and ensure that the cloud build service is enabled for the mobile service for development and operations.
+(Production landscapes only) If **Mobile Service for SAP Fiori** is enabled for your account, go to **Tools** > **Preferences**. In the left pane, select **Hybrid Application Toolkit** and ensure that the cloud build service is enabled for Mobile Services.
 
 [DONE]
 [ACCORDION-END]
@@ -124,6 +124,8 @@ This helps you to build applications for the specified operating system versions
     The Privacy Screen feature hides app content in the app switcher. Choosing the **`Disable Privacy Screen`** option prevents you from hiding the app content in the app switcher due to which sensitive information can be easily seen.
 
     - The **`Save Xcode and Android Studio projects`** option saves the project, if you want to download it for troubleshooting purposes. When the cloud build completes, click the link that appears to download the project as a zip file. Open it using `XCode` or Android Studio.
+
+    - The **`Manually update configuration files`** is only required when you are making use of Mobile Services on Cloud Foundry. When this option is selected, you are required to update configuration files manually. This avoids configuration files being automatically updated for the Neo environment.
 
 2. Choose an SAPUI5 version from the **`Packaged SAPUI5 Version`** dropdown list.
 
