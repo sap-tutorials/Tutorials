@@ -69,6 +69,10 @@
       "value": "topic>odata"
     },
     {
+      "name": "SAP Community",
+      "value": "topic>sap-community"
+    },
+    {
       "name": "SAPUI5",
       "value": "topic>sapui5"
     },
