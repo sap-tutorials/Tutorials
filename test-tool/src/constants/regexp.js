@@ -79,7 +79,7 @@ module.exports = {
         },
         remoteImage: {
             regexp: /!\[[^\]]+\]\(http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)\)/gi,
-            message: 'This link doesn\'t lead to an image.',
+            message: 'Bad image - image URL does not return image file',
         },
     },
     validation: {
