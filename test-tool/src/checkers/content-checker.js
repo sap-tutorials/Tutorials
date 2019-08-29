@@ -2,13 +2,10 @@
 
 const path = require('path');
 const fs = require('fs');
-const util = require('util');
 
 const tagChecker = require('./tags-checker');
 const linkChecker = require('./link-checker');
 const { regexp, constraints } = require('../constants');
-
-const readDirAsync = util.promisify(fs.readdir.bind(fs));
 
 const fileExistsSyncCS = (filePath) => {
   const dir = path.dirname(filePath);
