@@ -77,6 +77,10 @@ module.exports = {
             regexp: new RegExp('(sap\.corp)'),
             message: 'Internal link'
         },
+        remoteImage: {
+            regexp: /!\[[^\]]+\]\(http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)\)/gi,
+            message: 'This link doesn\'t lead to an image.',
+        },
     },
     validation: {
         auto_validation: /auto_validation:\s(.*)\r?\n/i,

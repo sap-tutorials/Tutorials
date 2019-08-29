@@ -2,9 +2,13 @@
 
 const path = require('path');
 const fs = require('fs');
+const util = require('util');
 
 const tagChecker = require('./tags-checker');
+const linkChecker = require('./link-checker');
 const { regexp, constraints } = require('../constants');
+
+const readDirAsync = util.promisify(fs.readdir.bind(fs));
 
 const fileExistsSyncCS = (filePath) => {
   const dir = path.dirname(filePath);
@@ -63,14 +67,18 @@ module.exports = {
         localFileLink,
         tutorialLink,
         tutorialLinkInvalid,
+        remoteImage,
       },
       validation: { accordions, codeLine, done },
+      link: {
+        pure: pureLink,
+      },
     } = regexp;
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
 
-    lines.forEach((line, index) => {
+    await Promise.all(lines.map(async (line, index) => {
       const isCodeLine = (line.match(codeLine) || []).length > 0;
 
       if (isMeta) {
@@ -115,6 +123,7 @@ module.exports = {
       });
 
       if (!isCodeBlock) {
+        const remoteImageMatches = line.match(remoteImage.regexp);
         const imageMatches = line.match(mdnImg.regexp);
         const localFileMatch = line.match(localFileLink.regexp);
         const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
@@ -200,6 +209,22 @@ module.exports = {
             });
           }
 
+          if (remoteImageMatches) {
+
+            await Promise.all(remoteImageMatches.map(async (item) => {
+              // using new RegExp to reset g flag
+              const [imageUrl] = item.match(new RegExp(pureLink, 'i'));
+              const checkResult = await linkChecker.checkImageLink(imageUrl);
+
+              if (checkResult.error) {
+                result.contentCheckResult.push({
+                  line: index + 1,
+                  msg: checkResult.error,
+                });
+              }
+            }));
+          }
+
           if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
             result.contentCheckResult.push({
               line: index + 1,
@@ -208,7 +233,7 @@ module.exports = {
           }
         }
       }
-    });
+    }));
 
     return result;
   },
