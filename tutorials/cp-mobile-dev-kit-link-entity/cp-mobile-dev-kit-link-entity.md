@@ -18,7 +18,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-For this tutorial, you will use [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#1b6c94ec-ec39-4b11-97c1-c0e028564cf4) which has parent-child relationship setup among entities. For example, A customer can has `n` (>=0) number of sales orders.
+For this tutorial, you will use [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#1b6c94ec-ec39-4b11-97c1-c0e028564cf4) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
 To implement deep insert between parent and child OData entities, you need to carry out the following tasks:
 
@@ -51,7 +51,7 @@ In the Properties pane, set the **Caption** to **Create Order**.
 
 ![MDK](img_003.png)
 
-Now, you will add the fields (like Currency Code, Net Amount, Tax Amount, Gross Amount, `LifeCycleStatus`, `LifeCycleStatusName` and order creation date) for creating a new sales order record by the end-user.
+Now, you will add the fields (like Currency Code, Net Amount, Tax Amount, Gross Amount, Life cycle status, Life cycle status name and order creation date) for creating a new sales order record by the end-user.
 
 In the Layout Editor, expand the **Control** | **Container Item** section.
 
@@ -61,7 +61,7 @@ Drag and drop a **Simple Property** onto the Page area.
 
 ![MDK](img_004.gif)
 
-Drag and drop five additional Simple Property controls and one Date Picker control onto the page so you have seven total controls.
+Drag and drop six additional Simple Property controls and one Date Picker control onto the page so you have seven total controls.
 
 ![MDK](img_005.png)
 
@@ -156,7 +156,7 @@ Save the changes to the `CreateOrder` page.
 
 [ACCORDION-BEGIN [Step 2: ](Add cancel button on create customer page)]
 
-Now, you will add a button on the Create Order page and set it's `onPress` to **Close Page-Cancel action**.
+Now, you will add a button on the Create Order page and set its `onPress` to **Close Page-Cancel action**.
 
 Drag and drop an **Action Bar Item** to the upper left corner of the action bar.
 
@@ -190,6 +190,8 @@ Save the changes to the `CreateOrder` page.
 Now, create a navigation action that will open the _Create Order page_ when executed.
 
 Right click on the **Actions** folder | **New MDK Action** | **Navigation Action** | **Next**.
+
+![MDK](img_016.1.png)
 
 Provide the below information:
 
@@ -343,7 +345,7 @@ Save the changes to the `CreateOrder` page.
 
 [ACCORDION-BEGIN [Step 6: ](Add data subscription to Customer detail page)]
 
-In `CustomerDetail.page` you added total number of order counts for a given customer. When a new `SalesOrder` is created, this count doesn't get updated automatically unless you back and forth to this page.
+In `CustomerDetail.page` you added total number of order counts for a given customer. When a new `SalesOrder` is created, this count doesn't get updated automatically unless you navigate back and forth to this page.
 
 > `DataSubscriptions` : it is a way to listen to data changes that when triggered should cause a UI element to redraw. If your control or section has a target, that target is automatically subscribed for data change events. Otherwise you can also explicitly subscribe to `DataSubscriptions` by specifying an entity set name or `readLink` in an array. You can find more details [here](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/6e173df205af4d0eb5c0592e94fc5cdb.html).
 
