@@ -45,6 +45,8 @@ You have built an MDK app with offline functionality. In offline store, you make
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Web IDE)]
 
+Make sure that you have completed required pre-Prerequisites mentioned in this tutorial.
+
 [OPTION BEGIN [Neo]]
 
 This step includes creating the Mobile Development Kit project in the Editor.

@@ -4,7 +4,7 @@ description: Open a web page or navigate to an installed app from an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
-time: 20
+time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
@@ -36,6 +36,8 @@ If an app is already installed, you can specify a custom URL scheme (iOS Univers
 If you are building a custom version of Mobile development kit client, there you can implement deep links by specifying related custom URL scheme.**
 
 [ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
+
+Make sure that you have completed required pre-Prerequisites mentioned in this tutorial.
 
 This step includes creating the Mobile Development Kit project in the Editor.
 
