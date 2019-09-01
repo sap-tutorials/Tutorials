@@ -184,7 +184,7 @@ Click **Save** and then click **Check Connection** on the newly created Destinat
 
 ![Neo Trial](check_ms-cf-dest.png)
 
->For URL field, copy the Mobile Services cockpit URL till space name. e.g. <https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/cockpit/v1/org/P123456789trial_trial/space/dev/>
+>For URL field, In Mobile Services Cockpit, click **Important links** on bottom-left side and copy from the section of SAP Cloud Platform SDK Tools the link of Copy `AdminAPI` to your destination.
 
 [OPTION END]
 

@@ -13,7 +13,7 @@ author_profile: https://github.com/jitendrakansal
 - **Tutorial:** [Setup initial configuration for an MDK App in SAP Cloud Platform Mobile Services](cp-mobile-dev-kit-ms-setup)
 - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
 - **Download and install:** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
-- **Download and install:** [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) (required only for Android device)
+- **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
 ### You will learn
@@ -44,6 +44,8 @@ You have built an MDK app with offline functionality. In offline store, you make
 >**This tutorial has been executed with Mobile Services in SAP Cloud Platform Neo and Cloud Foundry environment, please switch to either tab according to your environment.**
 
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Web IDE)]
+
+Make sure that you have completed required pre-Prerequisites mentioned in this tutorial.
 
 [OPTION BEGIN [Neo]]
 

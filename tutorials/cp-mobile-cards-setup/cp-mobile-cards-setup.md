@@ -13,7 +13,7 @@ author_profile: https://github.com/jitendrakansal
 - [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 - [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
 - **Install SAP Mobile Cards Application:** Download and install on your [iPhone](https://itunes.apple.com/us/app/sap-content-to-go/id1168110623?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go)
-- Download and install [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) (required only for Android device)
+- **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
 ### You will learn

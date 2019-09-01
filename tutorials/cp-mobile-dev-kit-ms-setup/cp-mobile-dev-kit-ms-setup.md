@@ -37,6 +37,8 @@ You can find more details in the [Mobile Development Kit developer page](https:/
 
 [ACCORDION-BEGIN [Step 2: ](Configure a new MDK app in Mobile Services Cockpit)]
 
+Make sure that you have completed required pre-Prerequisites mentioned in this tutorial.
+
 [OPTION BEGIN [Neo]]
 
 Login to [SAP Cloud Platform Mobile Services Cockpit](fiori-ios-hcpms-setup) with user id and password.
