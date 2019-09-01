@@ -4,14 +4,17 @@ description: Analyze the runtime performance of AMDPs and the executed SQL state
 auto_validation: true
 time: 45
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+author_name: Julie Plummer 
+author_profile: https://github.com/julieplummer20
+
 ---
 
 ## Prerequisites
 - You have a sub-account with the entitlement SAP Cloud Platform, ABAP environment, release 1902 or higher. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html).
 - You have installed [ABAP Development Tools 3.0](https://tools.hana.ondemand.com/#abap).
 - You have created an ABAP Cloud Project pointing to this ABAP environment. For more details, see  [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html).
-- You have installed the `abapGit` plug-in for Eclipse from [`abapGit`](http://eclipse.abapgit.org/updatesite/).
+- You have installed the `abapGit` plug-in for Eclipse from [`abapGit`](https://eclipse.abapgit.org).
 - You have fulfilled the prerequisites for ABAP Database Managed Procedures (AMDP). For more details, see [SAP Note 1899222](https://launchpad.support.sap.com/#/notes/1899222).
 
 
@@ -457,7 +460,7 @@ ENDCLASS.
 [ACCORDION-BEGIN [Step 11: ](Save, activate, and test your code)]
 1. Save and activate your code by choosing **`Ctrl+S, Ctrl+3`**.
 
-2. Optional: Test your class by running it the ABAP Console (**`F9`**).
+2. Optional: Test your class by running it the ABAP Console ( **`F9`** ).
 
   Your output should look like this:
 

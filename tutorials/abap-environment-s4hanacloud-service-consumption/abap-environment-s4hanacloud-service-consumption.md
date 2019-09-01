@@ -214,6 +214,8 @@ author_profile: https://github.com/mervey45
        https://{host}:{port}/sap/opu/odata/sap/API_BUSINESS_PARTNER/$metadata
      ```
 
+     Login with you communication user and password to see your metadata.
+
       ![Download metadata for business partner](logon.png)
 
   3. You can see the metadata. Save your metadata as an `edmx` file.
