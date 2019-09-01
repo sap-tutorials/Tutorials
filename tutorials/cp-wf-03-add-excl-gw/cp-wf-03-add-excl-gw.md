@@ -234,20 +234,3 @@ With that, you're pretty much done. You may wish to experiment further with the 
 
 [DONE]
 [ACCORDION-END]
-
-### Completed Mission? Register to win free SAP TechEd ticket!
-
-Congratulations for completing this mission! Now you can enter a drawing for a chance to win a free SAP TechEd pass (includes show floor and lectures access only) to the location of your choice.
-
->You must have first completed the entire mission [Level Up with SAP Cloud Platform Workflows
-](https://developers.sap.com/mission.scp-7-workflows.html).
-
-You can register for the drawing for **_either_** Las Vegas, Barcelona, or Bangalore -- **but not for more than one site**.
-
-Choose one of the following:
-
--  [Registration form for Las Vegas](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttelas/index.html)
--  [Registration form for Barcelona](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttebcn/index.html)
--  [Registration form for Bangalore](https://www.sap.com/cmp/oth/crm-xb19-mkt-evttebgl/index.html)
-
-### &nbsp;
