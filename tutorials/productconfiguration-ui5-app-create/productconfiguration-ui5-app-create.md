@@ -4,7 +4,7 @@ description: Build a basic UI5 application that loads a configuration and change
 auto_validation: true
 time: 45
 tags: [tutorial>beginner, topic>sapui5, products>sap-web-ide, product>sap-product-configuration]
-primary_tag: products>sap-product-configuration   
+primary_tag: SAP_VARIANT_CONFIGURATION_AND_PRICING   
 ---
 
 
@@ -65,7 +65,6 @@ You will call the following cloud service APIs:
 - `POST /api/v1/statelesspricing` to get the price based on the chosen characteristic value.
 
 
-
 [DONE]
 [ACCORDION-END]
 
@@ -78,7 +77,7 @@ In the [API Business Hub] (https://api.sap.com/) search for SAP Variant Configur
 
 Once on the API package page, choose **Variant Configuration service**.
 
-![step-3-API-product-configuration](step-3-API-product-configuration.png)
+![step-3-API-variant-configuration](step-3-API-variant-configuration.png)
 
 On the API reference, find the `POST /api/v2/configurations` method and click on the **Code Snippet** link.
 
@@ -141,16 +140,18 @@ The result from the API consists of the configuration, characteristics, and char
 
 Back in the controller file, you will need to define the model used in the view. You need to add the `JSONModel` library to your controller. In the `define` at the top of the controller, add the `JSONModel` library by adding **`sap/ui/model/json/JSONModel`** and defining the `JSONModel` in the controller function.
 
-```Java
+```JavaScript
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel"
 ], function (Controller, JSONModel) {
 ```
 
-In the `onInit` function, you need to save the current version so that you can access the view associated with the controller in the API call response. Create a new variable called **self** and set it to `Javascript
+In the `onInit` function, you need to save the current version so that you can access the view associated with the controller in the API call response. Create a new variable called **self** and set it to **this**.
+
+```Javascript
 var self = this;
-`
+```
 
 Additionally, you need to create a new `JSONModel` to house the results of the API call. Bind a new empty `JSONModel` to the view.
 
@@ -158,8 +159,11 @@ Additionally, you need to create a new `JSONModel` to house the results of the A
 this.getView().setModel(new JSONModel({}));
 ```
 
-To actually bind the result to the model, you need to parse the API response in the `xhr.addEventListener` function. The result from the API comes back as text, so you need to parse it to JSON. `Javascript
-var jsonResults = JSON.parse(this.responseText);`
+To actually bind the result to the model, you need to parse the API response in the `xhr.addEventListener` function. The result from the API comes back as text, so you need to parse it to JSON.
+
+```Javascript
+var jsonResults = JSON.parse(this.responseText);
+```
 
 Then, you can set the relevant properties into the model. The `ComboBox` needs `CPS_OPTION_M` possible values and its initial value.
 
@@ -256,7 +260,7 @@ xhr.setRequestHeader("If-Match", this.getView().getModel().getProperty("/etag"))
 
 >Do not forget variable `self` in this and the coming new functions.
 
-You should see a `ComboBox` filled with the possible values of characteristic `CPS_OPTION_M`, having the selected value be the default value for this characteristic. If you change the value of the `ComboBox`, the call is made to the API to change the value, and you can see the response code in the JavaScript console, which should be 200.
+Run your application. You should see a `ComboBox` filled with the possible values of characteristic `CPS_OPTION_M`, having the selected value be the default value for this characteristic. If you change the value of the `ComboBox`, the call is made to the API to change the value, and you can see the response code in the JavaScript console, which should be 200.
 
 ![step-8-sample-UI5](step-8-sample-UI5.png)
 
@@ -306,7 +310,7 @@ Finally, adjust the `ComboBox` control in the view so that elements `id` and `na
 
 ![step-9-mvc-view](step-9-mvc-view.png)
 
-```Java
+```xml
 <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" editable="true" layout="ResponsiveGridLayout" id="form0">
 <sap.ui.layout.form:content>
 <Label text="{/name}" id="label"/>
@@ -412,7 +416,7 @@ self.getView().getModel().setProperty("/cookie", this.getResponseHeader("set-coo
 xhr.setRequestHeader("Cookie", this.getView().getModel().getProperty("/cookie"));
 ```
 
-Please read the development guide (https://help.sap.com/viewer/p/SAP_PRODUCT_CONFIGURATION) for more information about how to use the services.
+Please read the development guide (https://help.sap.com/viewer/p/SAP_VARIANT_CONFIGURATION_AND_PRICING) for more information about how to use the services.
 
 
 [DONE]
