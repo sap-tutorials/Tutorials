@@ -17,13 +17,13 @@ const checkLinks = async (links, onCheck) => {
     }));
   }
   const processedResults = await Promise.all(processingLinks);
-  const results = processedResults.filter(({ err, code }) => err || !linkUtils.is2xx(code)).map(({ link, code, err}) => {
+  const results = processedResults.filter(({ err, code }) => err || !linkUtils.is2xx(code)).map(({ link, code, err }) => {
     const isTrusted = !!domains.find(domain => link.includes(domain));
     return {
       link,
       code,
       isTrusted,
-      reason: (err && (err.message || err )),
+      reason: (err && (err.message || err)),
     };
   });
   return results;
@@ -104,16 +104,16 @@ const checkImageLink = async (link) => {
     return result;
   }
 
-  if (result.response) {
+  if (result.response && linkUtils.is2xx(result.response.status)) {
     const { response } = result;
-    if (response.headers.get('Content-Type')
-      .includes('image/')) {
+    const contentType = (response.headers.get('Content-Type') || '');
+
+    if (contentType.includes('image/')) {
       return result;
     } else {
       result.error = remoteImage.message;
     }
   }
-
 
   return result;
 };
