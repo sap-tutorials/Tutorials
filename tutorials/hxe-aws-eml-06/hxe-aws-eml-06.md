@@ -1,6 +1,8 @@
 ---
 title: Configure the SAP HANA TensorFlow Integration (SAP HANA EML)
 description: Provide details on the installation and configuration of the SAP HANA External Machine Learning Library with SAP HANA, express edition.
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: topic>machine-learning
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]

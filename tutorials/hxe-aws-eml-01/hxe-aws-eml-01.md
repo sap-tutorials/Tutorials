@@ -1,4 +1,6 @@
 ---
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 title: Setup AWS - Create your IAM policy, role and user
 description: Create a Policy, a Role and a User in AWS Identity and Access Management (IAM)
 primary_tag: topic>machine-learning
@@ -9,7 +11,7 @@ time: 20
 
 ## Details
 ### You will learn  
-  - Create a Policy, a Role and a User in AWS Identity and Access Management (IAM)
+  - Create a Policy, a Role and a User in AWS Identity and Access Management (IAM) 
 
 Before getting started, you will setup a user with the proper policies to be used for the rest of the tutorial series.
 

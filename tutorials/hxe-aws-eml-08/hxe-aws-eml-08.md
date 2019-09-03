@@ -2,6 +2,8 @@
 title: Cleanup before you leave (AWS / EML)
 description: Understand the element to cleanup or stop before you leave or pause
 primary_tag: topic>machine-learning
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
 time: 10

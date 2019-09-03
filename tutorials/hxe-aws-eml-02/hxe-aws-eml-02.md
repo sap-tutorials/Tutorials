@@ -1,4 +1,6 @@
 ---
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 title: Setup AWS - Create a SageMaker Notebook
 description: Create a SageMaker Notebook instance that will be used to complete this tutorial series.
 primary_tag: topic>machine-learning

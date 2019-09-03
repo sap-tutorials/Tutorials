@@ -1,6 +1,8 @@
 ---
 title: Upload the Iris dataset in Amazon S3
 description: Tryout different methods to upload your dataset to an Amazon S3 bucket
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: topic>machine-learning
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
