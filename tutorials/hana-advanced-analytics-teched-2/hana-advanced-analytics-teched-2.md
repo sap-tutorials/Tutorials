@@ -53,7 +53,7 @@ Run ![run](run.png) the statement and make sure you get results.
 
 ![Explore data](3.png)
 
-If you do not get any results, try a different food item or use the same example. Leave this SQL tab and results open.
+If you do not get any results, try a different food item or use the same example. **Leave this SQL tab and results open.**
 
 Note how the ingredients are a long text separated by commas.
 
@@ -72,19 +72,21 @@ Note how the ingredients are a long text separated by commas.
 
 [ACCORDION-BEGIN [Step 3: ](Create a view)]
 
-Go back into the development view. Right-click `db/src` and choose **New > File**.
+Go back into the development view. Right-click `db/src` and choose **New > Database Artifact**.
 
 ![Explore data](4.png)
 
-Input the following name to create the design-time artifact for a view using SQL DDL:
+Copy and paste the following name to create the design-time artifact for a view using SQL DDL:
 
 ```Text
-data/myFood.hdbview
+data/myFood
 ```
 
-Click **OK** to create both a folder and a file to define your view.
+Choose `hdbview`.
 
-![Explore data](5.png)
+Click **Create** to create both a folder and a file to define your view.
+
+![Explore data](4x.png)
 
 The goal of this view is to get a limited list of foods containing your search term or a similar word.
 

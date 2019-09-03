@@ -44,6 +44,8 @@ collection table "DOCSTORE";
 
 You now have a document-oriented collection. Unlike a relational database, the _records_ (documents) inserted in this kind of storage are not structured.
 
+Go back to the database explorer and open a new **SQL** console.
+
 Insert your first document:
 
 ```SQL
@@ -58,7 +60,7 @@ INSERT INTO DOCSTORE VALUES({
 
 Execute the statement to insert the values.
 
-![Docstore](2.png)
+![Docstore](9.png)
 
 [DONE]
 [ACCORDION-END]

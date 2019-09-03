@@ -1,6 +1,6 @@
 ---
-title: Use Map Reduce to Split (SAP TechEd)
-description: sdasd
+title: Use Map Reduce to Split Ingredients (SAP TechEd)
+description: Create two functions to split ingredients separated by commas in parallel
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform--sap-hana-service, products>sap-web-ide]
@@ -104,7 +104,7 @@ Right-click the `functions` folder and choose  **Build Selected Files**.
 
 ![Create Map Reduce](6.png)
 
-Wait until the build has been successful
+Wait until the build has been successful.
 
 > ### What is going on?
 >
@@ -143,7 +143,9 @@ do begin
  end;
 ```
 
-Execute ![run](run.png) the code to complete the validation below.
+**Run** the code to complete the validation below.
+
+![Create Map Reduce](8.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
