@@ -207,7 +207,6 @@ module.exports = {
           }
 
           if (remoteImageMatches) {
-
             await Promise.all(remoteImageMatches.map(async (item) => {
               // using new RegExp to reset g flag
               const [imageUrl] = item.match(new RegExp(pureLink, 'i'));
