@@ -1,0 +1,2370 @@
+{
+  "definitions": {
+    "API_BUSINESS_PARTNER.A_AddressEmailAddressType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "AddressID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Person": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "OrdinalNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "IsDefaultEmailAddress": {
+          "type": "cds.Boolean"
+        },
+        "EmailAddress": {
+          "type": "cds.String",
+          "length": 241
+        },
+        "SearchEmailAddress": {
+          "type": "cds.String",
+          "length": 20
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_AddressFaxNumberType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "AddressID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Person": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "OrdinalNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "IsDefaultFaxNumber": {
+          "type": "cds.Boolean"
+        },
+        "FaxCountry": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "FaxNumber": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "FaxNumberExtension": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "InternationalFaxNumber": {
+          "type": "cds.String",
+          "length": 30
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_AddressHomePageURLType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "AddressID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Person": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "OrdinalNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "ValidityStartDate": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "IsDefaultURLAddress": {
+          "key": true,
+          "type": "cds.Boolean"
+        },
+        "SearchURLAddress": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "URLFieldLength": {
+          "type": "cds.Integer"
+        },
+        "WebsiteURL": {
+          "type": "cds.String",
+          "length": 2048
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_AddressPhoneNumberType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "AddressID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Person": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "OrdinalNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "DestinationLocationCountry": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "IsDefaultPhoneNumber": {
+          "type": "cds.Boolean"
+        },
+        "PhoneNumber": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "PhoneNumberExtension": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "InternationalPhoneNumber": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "PhoneNumberType": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BPContactToAddressType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "RelationshipNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 12
+        },
+        "BusinessPartnerCompany": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "BusinessPartnerPerson": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValidityEndDate": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "AddressID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AddressNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AdditionalStreetPrefixName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "AdditionalStreetSuffixName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "AddressTimeZone": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "CareOfName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CityCode": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "CityName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CompanyPostalCode": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Country": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "County": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "DeliveryServiceNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryServiceTypeCode": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "District": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FormOfAddress": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "FullName": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "HomeCityName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "HouseNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "HouseNumberSupplementText": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Language": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "POBox": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "POBoxDeviatingCityName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "POBoxDeviatingCountry": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "POBoxDeviatingRegion": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "POBoxIsWithoutNumber": {
+          "type": "cds.Boolean"
+        },
+        "POBoxLobbyName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "POBoxPostalCode": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Person": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PostalCode": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PrfrdCommMediumType": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "StreetName": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "StreetPrefixName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "StreetSuffixName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "TaxJurisdiction": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "TransportZone": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "to_EmailAddress": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressEmailAddressType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_FaxNumber": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressFaxNumberType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_MobilePhoneNumber": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressPhoneNumberType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_PhoneNumber": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressPhoneNumberType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_URLAddress": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressHomePageURLType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BPContactToFuncAndDeptType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "RelationshipNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 12
+        },
+        "BusinessPartnerCompany": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "BusinessPartnerPerson": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValidityEndDate": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "ContactPersonFunction": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ContactPersonDepartment": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PhoneNumber": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "PhoneNumberExtension": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "FaxNumber": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "FaxNumberExtension": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "EmailAddress": {
+          "type": "cds.String",
+          "length": 241
+        },
+        "RelationshipCategory": {
+          "type": "cds.String",
+          "length": 6
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BuPaAddressUsageType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "BusinessPartner": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValidityEndDate": {
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "AddressUsage": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AddressID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValidityStartDate": {
+          "type": "cds.Timestamp"
+        },
+        "StandardUsage": {
+          "type": "cds.Boolean"
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BuPaIdentificationType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "BusinessPartner": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "BPIdentificationType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "BPIdentificationNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 60
+        },
+        "BPIdnNmbrIssuingInstitute": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "BPIdentificationEntryDate": {
+          "type": "cds.Date"
+        },
+        "Country": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "ValidityEndDate": {
+          "type": "cds.Date"
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BusinessPartnerType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "BusinessPartner": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "Customer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Supplier": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AcademicTitle": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusinessPartnerCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "BusinessPartnerFullName": {
+          "type": "cds.String",
+          "length": 81
+        },
+        "BusinessPartnerGrouping": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusinessPartnerName": {
+          "type": "cds.String",
+          "length": 81
+        },
+        "BusinessPartnerUUID": {
+          "type": "cds.UUID"
+        },
+        "CorrespondenceLanguage": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "type": "cds.Date"
+        },
+        "CreationTime": {
+          "type": "cds.Time"
+        },
+        "FirstName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FormOfAddress": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Industry": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "InternationalLocationNumber1": {
+          "type": "cds.String",
+          "length": 7
+        },
+        "InternationalLocationNumber2": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "IsFemale": {
+          "type": "cds.Boolean"
+        },
+        "IsMale": {
+          "type": "cds.Boolean"
+        },
+        "IsNaturalPerson": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsSexUnknown": {
+          "type": "cds.Boolean"
+        },
+        "Language": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "LastChangeDate": {
+          "type": "cds.Date"
+        },
+        "LastChangeTime": {
+          "type": "cds.Time"
+        },
+        "LastChangedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "LastName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "LegalForm": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "OrganizationBPName1": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "OrganizationBPName2": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "OrganizationBPName3": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "OrganizationBPName4": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "OrganizationFoundationDate": {
+          "type": "cds.Date"
+        },
+        "OrganizationLiquidationDate": {
+          "type": "cds.Date"
+        },
+        "SearchTerm1": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "AdditionalLastName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "BirthDate": {
+          "type": "cds.Date"
+        },
+        "BusinessPartnerIsBlocked": {
+          "type": "cds.Boolean"
+        },
+        "BusinessPartnerType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ETag": {
+          "type": "cds.String",
+          "length": 26
+        },
+        "GroupBusinessPartnerName1": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "GroupBusinessPartnerName2": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "IndependentAddressID": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "InternationalLocationNumber3": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "MiddleName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "NameCountry": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "NameFormat": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PersonFullName": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "PersonNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "IsMarkedForArchiving": {
+          "type": "cds.Boolean"
+        },
+        "BusinessPartnerIDByExtSystem": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "to_BuPaIdentification": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BuPaIdentificationType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_BusinessPartnerAddress": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BusinessPartnerAddressType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_BusinessPartnerBank": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BusinessPartnerBankType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_BusinessPartnerContact": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BusinessPartnerContactType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_BusinessPartnerRole": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BusinessPartnerRoleType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_BusinessPartnerTax": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BusinessPartnerTaxNumberType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_Customer": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_CustomerType"
+        },
+        "to_Supplier": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_SupplierType"
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BusinessPartnerAddressType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "BusinessPartner": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AddressID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValidityStartDate": {
+          "type": "cds.Timestamp"
+        },
+        "ValidityEndDate": {
+          "type": "cds.Timestamp"
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "AddressUUID": {
+          "type": "cds.UUID"
+        },
+        "AdditionalStreetPrefixName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "AdditionalStreetSuffixName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "AddressTimeZone": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "CareOfName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CityCode": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "CityName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CompanyPostalCode": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Country": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "County": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "DeliveryServiceNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeliveryServiceTypeCode": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "District": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FormOfAddress": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "FullName": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "HomeCityName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "HouseNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "HouseNumberSupplementText": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Language": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "POBox": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "POBoxDeviatingCityName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "POBoxDeviatingCountry": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "POBoxDeviatingRegion": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "POBoxIsWithoutNumber": {
+          "type": "cds.Boolean"
+        },
+        "POBoxLobbyName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "POBoxPostalCode": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Person": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PostalCode": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PrfrdCommMediumType": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Region": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "StreetName": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "StreetPrefixName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "StreetSuffixName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "TaxJurisdiction": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "TransportZone": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AddressIDByExternalSystem": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "to_AddressUsage": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BuPaAddressUsageType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_EmailAddress": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressEmailAddressType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_FaxNumber": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressFaxNumberType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_MobilePhoneNumber": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressPhoneNumberType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_PhoneNumber": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressPhoneNumberType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_URLAddress": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_AddressHomePageURLType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BusinessPartnerBankType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "BusinessPartner": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "BankIdentification": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "BankCountryKey": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "BankName": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "BankNumber": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "SWIFTCode": {
+          "type": "cds.String",
+          "length": 11
+        },
+        "BankControlKey": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "BankAccountHolderName": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "BankAccountName": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ValidityStartDate": {
+          "type": "cds.Timestamp"
+        },
+        "ValidityEndDate": {
+          "type": "cds.Timestamp"
+        },
+        "IBAN": {
+          "type": "cds.String",
+          "length": 34
+        },
+        "IBANValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "BankAccount": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "BankAccountReferenceText": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "CollectionAuthInd": {
+          "type": "cds.Boolean"
+        },
+        "CityName": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BusinessPartnerContactType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "RelationshipNumber": {
+          "key": true,
+          "type": "cds.String",
+          "length": 12
+        },
+        "BusinessPartnerCompany": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "BusinessPartnerPerson": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "ValidityEndDate": {
+          "key": true,
+          "type": "cds.Date"
+        },
+        "ValidityStartDate": {
+          "type": "cds.Date"
+        },
+        "IsStandardRelationship": {
+          "type": "cds.Boolean"
+        },
+        "RelationshipCategory": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "to_ContactAddress": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BPContactToAddressType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_ContactRelationship": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_BPContactToFuncAndDeptType"
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BusinessPartnerRoleType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "BusinessPartner": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "BusinessPartnerRole": {
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "ValidFrom": {
+          "type": "cds.Timestamp"
+        },
+        "ValidTo": {
+          "type": "cds.Timestamp"
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_BusinessPartnerTaxNumberType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "BusinessPartner": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "BPTaxType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "BPTaxNumber": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_CustomerType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Customer": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BillingIsBlockedForCustomer": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "type": "cds.Date"
+        },
+        "CustomerAccountGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CustomerClassification": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CustomerFullName": {
+          "type": "cds.String",
+          "length": 220
+        },
+        "CustomerName": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "DeliveryIsBlocked": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "NFPartnerIsNaturalPerson": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "OrderIsBlockedForCustomer": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PostingIsBlocked": {
+          "type": "cds.Boolean"
+        },
+        "Supplier": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerCorporateGroup": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "FiscalAddress": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Industry": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "IndustryCode1": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "IndustryCode2": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "IndustryCode3": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "IndustryCode4": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "IndustryCode5": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "InternationalLocationNumber1": {
+          "type": "cds.String",
+          "length": 7
+        },
+        "NielsenRegion": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ResponsibleType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "TaxNumber1": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "TaxNumber2": {
+          "type": "cds.String",
+          "length": 11
+        },
+        "TaxNumber3": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "TaxNumber4": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "TaxNumber5": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "TaxNumberType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "VATRegistration": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "DeletionIndicator": {
+          "type": "cds.Boolean"
+        },
+        "to_CustomerCompany": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_CustomerCompanyType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_CustomerSalesArea": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_CustomerSalesAreaType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_CustomerCompanyType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Customer": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CompanyCode": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "APARToleranceGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "AccountByCustomer": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "AccountingClerk": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "AccountingClerkFaxNumber": {
+          "type": "cds.String",
+          "length": 31
+        },
+        "AccountingClerkInternetAddress": {
+          "type": "cds.String",
+          "length": 130
+        },
+        "AccountingClerkPhoneNumber": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "AlternativePayerAccount": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CollectiveInvoiceVariant": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CustomerAccountNote": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "CustomerHeadOffice": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerSupplierClearingIsUsed": {
+          "type": "cds.Boolean"
+        },
+        "HouseBank": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "InterestCalculationCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "InterestCalculationDate": {
+          "type": "cds.Date"
+        },
+        "IntrstCalcFrequencyInMonths": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "IsToBeLocallyProcessed": {
+          "type": "cds.Boolean"
+        },
+        "ItemIsToBePaidSeparately": {
+          "type": "cds.Boolean"
+        },
+        "LayoutSortingRule": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "PaymentBlockingReason": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PaymentMethodsList": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PaymentTerms": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PaytAdviceIsSentbyEDI": {
+          "type": "cds.Boolean"
+        },
+        "PhysicalInventoryBlockInd": {
+          "type": "cds.Boolean"
+        },
+        "ReconciliationAccount": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "RecordPaymentHistoryIndicator": {
+          "type": "cds.Boolean"
+        },
+        "UserAtCustomer": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "DeletionIndicator": {
+          "type": "cds.Boolean"
+        },
+        "CustomerAccountGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "to_CustomerDunning": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_CustomerDunningType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_WithHoldingTax": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_CustomerWithHoldingTaxType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_CustomerDunningType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Customer": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CompanyCode": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "DunningArea": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "DunningBlock": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DunningLevel": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DunningProcedure": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "DunningRecipient": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "LastDunnedOn": {
+          "type": "cds.Date"
+        },
+        "LegDunningProcedureOn": {
+          "type": "cds.Date"
+        },
+        "DunningClerk": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CustomerAccountGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_CustomerSalesAreaType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Customer": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesOrganization": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "DistributionChannel": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Division": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "AccountByCustomer": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BillingIsBlockedForCustomer": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CompleteDeliveryIsDefined": {
+          "type": "cds.Boolean"
+        },
+        "Currency": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "CustomerABCClassification": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CustomerAccountAssignmentGroup": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CustomerGroup": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CustomerPaymentTerms": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CustomerPriceGroup": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CustomerPricingProcedure": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryIsBlockedForCustomer": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeliveryPriority": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "IncotermsClassification": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "IncotermsLocation2": {
+          "type": "cds.String",
+          "length": 70
+        },
+        "IncotermsVersion": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "IncotermsLocation1": {
+          "type": "cds.String",
+          "length": 70
+        },
+        "DeletionIndicator": {
+          "type": "cds.Boolean"
+        },
+        "IncotermsTransferLocation": {
+          "type": "cds.String",
+          "length": 28
+        },
+        "InvoiceDate": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "ItemOrderProbabilityInPercent": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "OrderCombinationIsAllowed": {
+          "type": "cds.Boolean"
+        },
+        "OrderIsBlockedForCustomer": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartialDeliveryIsAllowed": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PriceListType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "SalesGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "SalesOffice": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ShippingCondition": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "SupplyingPlant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesDistrict": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "CustomerAccountGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "to_PartnerFunction": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_CustSalesPartnerFuncType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_SalesAreaTax": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_CustomerSalesAreaTaxType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_CustomerSalesAreaTaxType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Customer": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesOrganization": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "DistributionChannel": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Division": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "DepartureCountry": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "CustomerTaxCategory": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "CustomerTaxClassification": {
+          "type": "cds.String",
+          "length": 1
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_CustomerWithHoldingTaxType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Customer": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CompanyCode": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "WithholdingTaxType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "WithholdingTaxCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "WithholdingTaxAgent": {
+          "type": "cds.Boolean"
+        },
+        "ObligationDateBegin": {
+          "type": "cds.Date"
+        },
+        "ObligationDateEnd": {
+          "type": "cds.Date"
+        },
+        "WithholdingTaxNumber": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "WithholdingTaxCertificate": {
+          "type": "cds.String",
+          "length": 25
+        },
+        "WithholdingTaxExmptPercent": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "ExemptionDateBegin": {
+          "type": "cds.Date"
+        },
+        "ExemptionDateEnd": {
+          "type": "cds.Date"
+        },
+        "ExemptionReason": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_CustSalesPartnerFuncType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Customer": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "SalesOrganization": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "DistributionChannel": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "Division": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartnerCounter": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "PartnerFunction": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "BPCustomerNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CustomerPartnerDescription": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "DefaultPartner": {
+          "type": "cds.Boolean"
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_SupplierType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Supplier": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "AlternativePayeeAccountNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "CreationDate": {
+          "type": "cds.Date"
+        },
+        "Customer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PaymentIsBlockedForSupplier": {
+          "type": "cds.Boolean"
+        },
+        "PostingIsBlocked": {
+          "type": "cds.Boolean"
+        },
+        "PurchasingIsBlocked": {
+          "type": "cds.Boolean"
+        },
+        "SupplierAccountGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SupplierFullName": {
+          "type": "cds.String",
+          "length": 220
+        },
+        "SupplierName": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "VATRegistration": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "BirthDate": {
+          "type": "cds.Date"
+        },
+        "ConcatenatedInternationalLocNo": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "DeletionIndicator": {
+          "type": "cds.Boolean"
+        },
+        "FiscalAddress": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Industry": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "InternationalLocationNumber1": {
+          "type": "cds.String",
+          "length": 7
+        },
+        "InternationalLocationNumber2": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "InternationalLocationNumber3": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "IsNaturalPerson": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "ResponsibleType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "SuplrQltyInProcmtCertfnValidTo": {
+          "type": "cds.Date"
+        },
+        "SuplrQualityManagementSystem": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SupplierCorporateGroup": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SupplierProcurementBlock": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "TaxNumber1": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "TaxNumber2": {
+          "type": "cds.String",
+          "length": 11
+        },
+        "TaxNumber3": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "TaxNumber4": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "TaxNumber5": {
+          "type": "cds.String",
+          "length": 60
+        },
+        "TaxNumberResponsible": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "TaxNumberType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "to_SupplierCompany": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_SupplierCompanyType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_SupplierPurchasingOrg": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_SupplierPurchasingOrgType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_SupplierCompanyType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Supplier": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CompanyCode": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CompanyCodeName": {
+          "type": "cds.String",
+          "length": 25
+        },
+        "PaymentBlockingReason": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SupplierIsBlockedForPosting": {
+          "type": "cds.Boolean"
+        },
+        "AccountingClerk": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "AccountingClerkFaxNumber": {
+          "type": "cds.String",
+          "length": 31
+        },
+        "AccountingClerkPhoneNumber": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "SupplierClerk": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "SupplierClerkURL": {
+          "type": "cds.String",
+          "length": 130
+        },
+        "PaymentMethodsList": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PaymentTerms": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ClearCustomerSupplier": {
+          "type": "cds.Boolean"
+        },
+        "IsToBeLocallyProcessed": {
+          "type": "cds.Boolean"
+        },
+        "ItemIsToBePaidSeparately": {
+          "type": "cds.Boolean"
+        },
+        "PaymentIsToBeSentByEDI": {
+          "type": "cds.Boolean"
+        },
+        "HouseBank": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "CheckPaidDurationInDays": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "BillOfExchLmtAmtInCoCodeCrcy": {
+          "type": "cds.Decimal",
+          "precision": 14,
+          "scale": 3
+        },
+        "SupplierClerkIDBySupplier": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "ReconciliationAccount": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "InterestCalculationCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "InterestCalculationDate": {
+          "type": "cds.Date"
+        },
+        "IntrstCalcFrequencyInMonths": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "SupplierHeadOffice": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AlternativePayee": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "LayoutSortingRule": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "APARToleranceGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SupplierCertificationDate": {
+          "type": "cds.Date"
+        },
+        "SupplierAccountNote": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "WithholdingTaxCountry": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "DeletionIndicator": {
+          "type": "cds.Boolean"
+        },
+        "CashPlanningGroup": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "IsToBeCheckedForDuplicates": {
+          "type": "cds.Boolean"
+        },
+        "SupplierAccountGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "to_SupplierDunning": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_SupplierDunningType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        },
+        "to_SupplierWithHoldingTax": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_SupplierWithHoldingTaxType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_SupplierDunningType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Supplier": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CompanyCode": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "DunningArea": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "DunningBlock": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DunningLevel": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DunningProcedure": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "DunningRecipient": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "LastDunnedOn": {
+          "type": "cds.Date"
+        },
+        "LegDunningProcedureOn": {
+          "type": "cds.Date"
+        },
+        "DunningClerk": {
+          "type": "cds.String",
+          "length": 2
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_SupplierPartnerFuncType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Supplier": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchasingOrganization": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "SupplierSubrange": {
+          "key": true,
+          "type": "cds.String",
+          "length": 6
+        },
+        "Plant": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "PartnerFunction": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartnerCounter": {
+          "key": true,
+          "type": "cds.String",
+          "length": 3
+        },
+        "DefaultPartner": {
+          "type": "cds.Boolean"
+        },
+        "CreationDate": {
+          "type": "cds.Date"
+        },
+        "CreatedByUser": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "ReferenceSupplier": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_SupplierPurchasingOrgType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Supplier": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "PurchasingOrganization": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "CalculationSchemaGroupCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DeletionIndicator": {
+          "type": "cds.Boolean"
+        },
+        "IncotermsClassification": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "IncotermsTransferLocation": {
+          "type": "cds.String",
+          "length": 28
+        },
+        "IncotermsVersion": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "IncotermsLocation1": {
+          "type": "cds.String",
+          "length": 70
+        },
+        "IncotermsLocation2": {
+          "type": "cds.String",
+          "length": 70
+        },
+        "InvoiceIsGoodsReceiptBased": {
+          "type": "cds.Boolean"
+        },
+        "MaterialPlannedDeliveryDurn": {
+          "type": "cds.Decimal",
+          "precision": 3,
+          "scale": 0
+        },
+        "MinimumOrderAmount": {
+          "type": "cds.Decimal",
+          "precision": 14,
+          "scale": 3
+        },
+        "PaymentTerms": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PricingDateControl": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PurOrdAutoGenerationIsAllowed": {
+          "type": "cds.Boolean"
+        },
+        "PurchaseOrderCurrency": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "PurchasingGroup": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "PurchasingIsBlockedForSupplier": {
+          "type": "cds.Boolean"
+        },
+        "ShippingCondition": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "SupplierABCClassificationCode": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SupplierPhoneNumber": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "SupplierRespSalesPersonName": {
+          "type": "cds.String",
+          "length": 30
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SupplierAccountGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "to_PartnerFunction": {
+          "type": "cds.Association",
+          "target": "API_BUSINESS_PARTNER.A_SupplierPartnerFuncType",
+          "cardinality": {
+            "targetMax": "*"
+          }
+        }
+      }
+    },
+    "API_BUSINESS_PARTNER.A_SupplierWithHoldingTaxType": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Supplier": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "CompanyCode": {
+          "key": true,
+          "type": "cds.String",
+          "length": 4
+        },
+        "WithholdingTaxType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 2
+        },
+        "ExemptionDateBegin": {
+          "type": "cds.Date"
+        },
+        "ExemptionDateEnd": {
+          "type": "cds.Date"
+        },
+        "ExemptionReason": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "IsWithholdingTaxSubject": {
+          "type": "cds.Boolean"
+        },
+        "RecipientType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "WithholdingTaxCertificate": {
+          "type": "cds.String",
+          "length": 25
+        },
+        "WithholdingTaxCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "WithholdingTaxExmptPercent": {
+          "type": "cds.Decimal",
+          "precision": 5,
+          "scale": 2
+        },
+        "WithholdingTaxNumber": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "AuthorizationGroup": {
+          "type": "cds.String",
+          "length": 4
+        }
+      }
+    }
+  }
+}
