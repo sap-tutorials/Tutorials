@@ -75,17 +75,24 @@ Click **Go to Service**.
 SAP Web IDE Full-Stack opens in a new window. Log in with the same credentials if prompted:
 
 
-|  Field     | Value
-|  :------------- | :-------------
-|  User           | **`dat365-XXX@teched.cloud.sap`**
-|  Password       | **`Welcome19`**
+**User**:
+```text
+dat365-XXX@teched.cloud.sap
+```
+
+**Password**: Welcome19
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Clone a project)]
 
-If you see any open tabs, close them.
+Make sure you are in the development perspective.
+
+![Log in to SCP](dev.png)
+
+If you see any open tabs, **close them**.
 
 ![Log in to SCP](8.png)
 
@@ -127,6 +134,9 @@ Click **Replace All**.
 
 ![Edit yaml](14.png)
 
+Save the `mta.yaml` file.
+
+![Edit yaml](19.png)
 
 [DONE]
 [ACCORDION-END]

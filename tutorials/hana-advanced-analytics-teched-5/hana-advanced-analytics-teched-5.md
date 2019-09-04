@@ -90,7 +90,7 @@ do begin
   select * from :lt_result order by total_freq desc;
 --Get codename from document store
 
- select top 1 ("FIRST_NAME" || "DayOfBirth" || "favorite_color") into lv_code_name from DOCSTORE where first_name = '<<ENTER YOUR FIRST_NAME HERE>>';
+ select top 1 ("FIRST_NAME" || "DayOfBirth" || "favorite_color") into lv_code_name from DOCSTORE where first_name = '<<ENTER YOUR FIRST_NAME HERE>>' "DayOfBirth" = '<<ENTER DAY OF BIRTH HERE>>';
 
 ---Match existing friends with same ingredients
   select count(code_name) into lv_count from "ME_AT_TECHED" where ingredient in (select val from :lt_result);

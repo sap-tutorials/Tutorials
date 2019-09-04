@@ -111,7 +111,7 @@ The second environment is Cloud Foundry.  This environment was added in 2017.  [
 The latest environment is the [ABAP environment](https://cloudplatform.sap.com/enterprise-paas/abap.html) allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
 
 
-Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at both before making a decision, and use our [online map to guide you](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ab512c3fbda248ab82c1c545bde19c78.html#loio7bac3308ad4d4dfd9361b44c193dc0bb).
+Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at all of them before making a decision, and use our [online map to guide you](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html).
 
 
 [DONE]
