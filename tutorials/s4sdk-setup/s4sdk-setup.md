@@ -18,65 +18,72 @@ For a complete overview visit the [SAP Cloud SDK Overview](https://blogs.sap.com
 
 [ACCORDION-BEGIN [Step 1: ](Prepare the Infrastructure)]
 
-### On Windows (Windows 7+ / Windows Server 2003+)
+To develop with the SAP Cloud SDK for Java you will need to have two things installed:
 
-**Install Chocolatey (a package manager for Windows)**
+- Java 8
+- Maven 3
 
-```
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-```
+The SDK requires Java 8, later versions are currently not supported. If you have the required software installed already you can skip this step. You can check your the versions of your installations via the commands listed at the end of this step.
 
-**Install Java Development Kit; if not yet available, install a specific JDK (e.g. JDK 8)**
+[OPTION BEGIN [On Windows]]
 
-```
-choco install jdk8
-```
+For Windows 7+ or Windows Server 2003+ adhere to the following steps:
 
-**Install Maven**
+1. Install `Chocolatey`. `Chocolatey` is a package manager for Windows which will be useful for installing necessary components. Install it by opening a console and issuing the following command:
 
-```
-choco install maven
-```
+    ```shell
+    @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+    ```
 
-### On Mac
+2. Install Java Development Kit 8:
 
-**Install `Homebrew` (Mac package manager to help with the remaining installation)**
+    ```shell
+    choco install adoptopenjdk8
+    ```
 
-```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+3. Install Maven:
 
-**2. Install Java Development Kit, if it is not yet available**
+    ```shell
+    choco install maven
+    ```
 
-```
-brew update
-brew tap AdoptOpenJDK/openjdk
-brew cask install java
-```
+[OPTION END]
 
-_Tip: Install a specific JDK if you like (e.g. JDK 8)_
 
-```
-brew cask install caskroom/versions/java8
-```
+[OPTION BEGIN [On Mac]]
 
-**Install Maven**
+For Mac OS adhere to the following steps:
 
-```
-brew update
-brew install maven
-```
-To validate that everything is installed correctly, you can use command `javac -version` and `mvn -version`, the output should look similar to the following (you may have the newer version of the software, thought):
+1. Install `Homebrew`. `Homebrew` is a package manager for Mac which will be useful for installing necessary components. Install it by opening a terminal and issuing the following command:
+
+    ```bash
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ```
+
+2. Install Java Development Kit 8:
+
+    ```bash
+    brew update
+    brew tap AdoptOpenJDK/openjdk
+    brew cask install adoptopenjdk8
+    ```
+
+3. Install Maven:
+
+    ```bash
+    brew update
+    brew install maven
+    ```
+
+[OPTION END]
+
+
+To validate that everything is installed correctly you can use the following commands:
 
 ```bash
 javac -version
-```
-
-```bash
 mvn -version
 ```
-
-Check that the environment variable `JAVA_HOME` points to the path of your JDK installation, e.g. `C:\Program Files\path\to\java\jdk1.8.0_72`.
 
 [DONE]
 
