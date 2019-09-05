@@ -1,5 +1,5 @@
 ---
-title: Develop a SAP Fiori App for Portal Site on Cloud Foundry
+title: Develop a SAP Fiori App for Portal Site, Cloud Foundry Environment
 description: Create an app module in SAP Web IDE and set up its navigation so that it can be used in a Portal site.
 auto_validation: true
 time: 45

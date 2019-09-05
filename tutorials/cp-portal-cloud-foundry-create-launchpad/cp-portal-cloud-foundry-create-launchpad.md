@@ -1,5 +1,5 @@
 ---
-title: Expose Your App to the Portal Service on Cloud Foundry
+title: Expose Your App to the Portal Service, Cloud Foundry Environment
 description: Create a launchpad module in SAP Web IDE to make your SAP Fiori app available for use in the Portal.
 auto_validation: true
 time: 20
@@ -80,6 +80,8 @@ In this step you are going to do just that.
 
     ![Add app](14_add_app.png)
 
+5. Click **File** -> **Save**.
+
     This is what you'll see in the **Launchpad Editor**:
 
     ![View launchpad editor](15_view_launchpad_editor.png)
@@ -108,14 +110,11 @@ Build and deploy the `MTA` project with these modules thus exposing your app to 
 
   3. The values for the **Endpoint**, **Organization**, and **Space** are automatically populated.  Click **Deploy**.
 
-      ![View deploy details](18_deploy_details.png)
-
-
   4. Once you get a confirmation message that your project has been deployed, copy the App Router URL from the console.  
 
       It looks like this:
-      `https://portal-dev-companyportal-jobcore-portal-space-mta-fiori<id>.cfapps.sap.hana.ondemand.com`
-      Where `<id>` is your ID number.
+      `<id>trial-trial-dev-mta-fioridemo-approuter.cfapps.eu10.hana.ondemand.com`
+      where <id> is your ID number.
 
 [DONE]
 [ACCORDION-END]
@@ -130,7 +129,7 @@ Enter the URL that you copied from the console and add  `/cp.portal/` as a suffi
 
 Like this:
 
-`https://portal-dev-companyportal-jobcore-portal-space-mta-fiori<id>.cfapps.sap.hana.ondemand.com/cp.portal`
+`https://<id>trial-trial-dev-mta-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/cp.portal`
 
 Where `<id>` is your ID number.
 
@@ -138,7 +137,7 @@ Your launchpad module displays the `Candidates` app that you created in the `Peo
 
   ![Launchpad Module](20_deployed_module.png)
 
-Congratulations! Now you are ready to add your app to the **Launchpad** page in your Portal site.
+Now you are ready to add your app to the **Launchpad** page in your Portal site.
 
 [DONE]
 [ACCORDION-END]
