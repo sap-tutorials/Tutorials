@@ -198,7 +198,7 @@ In this step you're going to create a new group and you'll assign the `Candidate
 
 [ACCORDION-BEGIN [Step 7: ](Review your site)]
 
-At the top right of the screen click the **Go to site** icon.
+At the top right of the screen, click the **Go to site** icon.
 
   ![Go to site](34_go_to_site.png)
 
