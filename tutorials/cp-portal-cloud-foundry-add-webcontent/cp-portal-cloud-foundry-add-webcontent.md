@@ -3,7 +3,7 @@ title: Add Web Content to Your Portal Site and Design its Layout on SAP Cloud Pl
 description: Design your Portal site by adding widgets with meaningful content.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform-portal
 ---
 
@@ -13,7 +13,7 @@ The `JobCore` Portal site is open in the Pages editor displaying the `JobCore` a
 ## Details
 ### You will learn
   - How to add web content to a page in your Portal site
-  - How to design the layout of your page
+  - How to design the layout of your page and its content
 
 By now, you should have created the `JobCore Portal` site with a `Home` page and a `Launchpad` page that are both part of the site menu.
 

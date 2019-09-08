@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-portal
 ---
 
 ## Prerequisites
- You have created a SAP HTML5 module in SAP Web IDE and deployed it to your SAP Cloud Platform subaccount.
+ You've created a SAP HTML5 module in SAP Web IDE and deployed it to your SAP Cloud Platform subaccount.
  For more information about how to create the app, see the tutorial: [Develop Your First SAP Fiori App for Use in a Portal Site on SAP Cloud Platform on Cloud Foundry](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-create-app.html).
 
 
@@ -21,7 +21,7 @@ The `Launchpad` page in your `JobCore Portal` site already contains a URL app. I
 
 To consume apps that you created in the Portal, you first need to configure a destination to your developed content.
 
-The entry point for your developed content is the App Router URL of the MTA file that you developed. So let's first find the URL of the App Router of our deployed MTA file and then we'll add a destination to this App Router.
+The entry point for your developed content is the App Router URL of the MTA file that you developed. So let's first find the URL of the App Router of your deployed MTA file and then you'll add a destination to this App Router.
 
 
 [ACCORDION-BEGIN [Step 1: ](Find App Router URL of deployed MTA file)]
@@ -50,7 +50,7 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
 [ACCORDION-BEGIN [Step 2: ](Create destination to SAPUI5 app)]
 
-1. Open your trial account or subaccount and in the side navigation panel, click **Connectivity > Destinations**. Then click **New Destination**.
+1. Open your trial account or another subaccount and in the side navigation panel, click **Connectivity > Destinations**. Then click **New Destination**.
 
     ![New destination](19_new_destination.png)
 
@@ -151,7 +151,7 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 You can now integrate this app with your Portal site and add it to the `Launchpad` page or to a page that you've designed yourself. We will add the `Candidates` app to the `Launchpad` page in our site.
 
 To make the app visible in the `Launchpad` page, you need to assign it to a group. You also need to assign the app to a role.
-This is exactly what we are going to do in the next two steps.
+This is exactly what you're going to do in the next two steps.
 
 [DONE]
 [ACCORDION-END]
@@ -202,7 +202,7 @@ At the top right of the screen click the **Go to site** icon.
 
   ![Go to site](34_go_to_site.png)
 
-You will see that both groups appear in the runtime site – the `SAP` group with the URL app and the `Work in Progress` group with the SAP HTML5 app.
+You'll see that both groups appear in the runtime site – the `SAP` group with the URL app and the `Work in Progress` group with the SAP HTML5 app.
 
   ![View runtime site](35_view_runtime_groups.png)
 
