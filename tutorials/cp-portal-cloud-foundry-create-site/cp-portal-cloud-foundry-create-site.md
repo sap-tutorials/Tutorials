@@ -1,5 +1,5 @@
 ---
-title: Create a Portal Site on SAP Cloud Platform on Cloud Foundry
+title: Create a Portal Site on SAP Cloud Platform, Cloud Foundry Environment
 description: Create a Portal site with a launchpad and other pages that will contain apps and web content.
 auto_validation: true
 time: 10
@@ -16,7 +16,7 @@ You have subscribed to the Portal service.
   - How to add a page to your site and make it the home page
   - How to create a site menu
 
-In this group of tutorials our goal is to create an attractive Portal site for a recruiting company we'll call `JobCore Recruiting`. The site will include apps and web content as well as two pages: a launchpad page and another page. Both pages will be displayed in the site menu.
+In this group of tutorials our goal is to create an attractive Portal site for a recruiting company called `JobCore Recruiting`. The site will include apps and web content as well as two pages: a launchpad page and another page. Both pages will be displayed in the site menu.
 
 Let's get started!
 
@@ -31,13 +31,19 @@ When you access the Portal service, the Site Directory is in focus. From here yo
 
 2. Enter `JobCore Portal` as the site name and click **Create**.
 
-    The Site Editor opens in a new tab.
+    ![Name site](6_name_site.png)
 
-    >When you create a new site, by default, there is already a **Launchpad** page available for you. You can see the default **Launchpad** page in focus.
+    The Site Editor opens with the **Site Settings** screen in focus.
 
-    ![View Site Manager](7_view_site_manager.png)
+3. Click the **Pages** tab.
 
-Once you've created your site, you can go back to the Site Directory to see that your new site is now represented by a tile. In future, each time you want to edit your site, you can click the pencil icon from this tile. You can also delete the site from here and you can also preview it to see how it looks at runtime.
+    ![Open Pages](7a_open_pages_tab.png)
+
+In your new site, you will already see the default **Launchpad** page in the **Pages** panel on the left with a preview of it on the right. In the next step, you'll add another page.
+
+  ![View Site Manager](7_view_launchpad_page.png)
+
+>Once you've created your site, you can go back to the Site Directory to see that your new site is now represented by a tile. In future, each time you want to edit your site, you can click the pencil icon from this tile. You can also delete the site from here or preview it to see how your site users will see your site at runtime.
 
 ![View Site Tile](8_view_site_tile.png)
 
@@ -62,7 +68,7 @@ Once you've created your site, you can go back to the Site Directory to see that
 
     ![Create a page](9_create_freestyle_page.png)
 
-Now we have a page called `JobCore` and we have the default `Launchpad` page. Let's add them both to the site menu.   
+Now we have a page called `JobCore` and we have the default `Launchpad` page that you can see in the **Pages** panel. Let's add them both to the site menu.   
 
 [DONE]
 
@@ -72,11 +78,11 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page. Le
 [ACCORDION-BEGIN [Step 3: ](Design the site menu)]
 
 
-1. Click the **Menu** icon in the side panel.
+1. Click the **Menu** tab to open the **Site Menu** editor.
 
     ![Open site menu](10_open_site_menu.png)
 
-2. The **Menu Editor** opens. Click  **Click here to add an item** to open the **Add Menu Item** screen.
+2. Click  **Click here to add an item** to open the **Add Menu Item** screen.
 
     ![Add a menu item](11_add_menu_item.png)
 
@@ -89,23 +95,19 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page. Le
     |  **Item Type**           | **`Page`**
     |  **Select Page**    | **`JobCore`**
 
-4. Click **Add**.  This takes you back to the **Menu Editor**. You will see that the page you called `Home` has been added to the site's menu.
+4. Click **Add**.  This takes you back to the **Menu Editor**. You will see that the page you called `Home` has been added to the site's menu structure.
 
     ![Menu item details](11a_edit_menu.png)
 
-5. Click **Save**.
-
-    ![Save menu](12_save_menu.png)
-
-6. Now add the `Launchpad` page to the site menu. Hover over the `Home` menu item.
+5. Now add the `Launchpad` page to the site menu. Hover over the `Home` menu item and click the + icon on the right.
 
     ![Hover over menu item](13_hover.png)
 
-7. Click the + icon on the right and then click **Add Item** to open the **Add Menu Item** screen.
+6. Click **Add Item** to open the **Add Menu Item** screen.
 
     ![Add new item](13a_add_new_item.png)
 
-8. Enter the following values:
+7. Enter the following values:
 
     |  Field Name     | Value
     |  :------------- | :-------------
@@ -113,15 +115,15 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page. Le
     |  **Item Type**           | **`Page`**
     |  **Select Page**    | **`Launchpad`**
 
-9. Click **Add**.
+8. Click **Add**.
 
     ![Add launchpad to menu](14_add_launchpad_tomenu.png)
 
-8. Click **Save** in the editor.
+9. Click **Save** in the editor.
 
     ![Save menu settings](15_save_menu_launchpad.png)
 
->Note that both the `Launchpad` and `Home` pages appear in the site menu.
+>Note that both the `Launchpad` and `Home` pages appear in the site menu structure.
 
 [VALIDATE_7]
 
@@ -131,7 +133,7 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page. Le
 [ACCORDION-BEGIN [Step 4: ](Set the site's home page)]
 
 
-1. Click the **Pages** icon to go back to the **Pages** panel.
+1. Click the **Pages** tab to go back to the page editor.
 
     ![Open Pages panel](17_pages_panel.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Integrate a URL App to Your Portal Site on SAP Cloud Platform on Cloud Foundry
+title: Integrate a URL App to Your Portal Site on SAP Cloud Platform, Cloud Foundry Environment
 description: Create a URL app and add it to the launchpad page on your Portal site on Cloud Foundry.
 auto_validation: true
 time: 5
@@ -9,92 +9,90 @@ primary_tag: products>sap-cloud-platform-portal
 
 ## Prerequisites
  - Locate the URL of the app you want to add to the site.
- - The `JobCore` Portal site is open.
+
 
 ## Details
 ### You will learn
   - How to create a URL app and add it to your site
 
+You create business content such as apps, groups, catalogs, and roles, in the Content Manager, which you access from the Site Manager of your trial account or subaccount. The content you create can then be used in any site created in this trial account or subaccount.
 
-[ACCORDION-BEGIN [Step 1: ](Go to Content Manager)]
+[ACCORDION-BEGIN [Step 1: ](Go to the Content Manager)]
 
-In this tutorial you are going to add a URL app to the `Launchpad` page.
+To go to the **Content Manager**, do the following:
 
-When you open the `JobCore Portal` site, you see that the **Pages** editor is in focus.
+1. Use the back arrow to get to the Site Manager.
 
-Click the **Content** icon in the left panel.
+    ![Go back to Site Manager](0_open_site_manager.png)
 
-![Content manager icon](1-content-manager-icon.png)
+2. Click the **Content Manager** icon in the left panel.
+
+    ![Content manager icon](1-content-manager-icon.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new app)]
-By default, the content item of a site only contains the **Everyone** role.
+
+>Note that by default, the `Everyone` role is provided and is visible in the Content manager.
 
 Click **New** and select **App** from the list:
 
 ![Content manager empty new app](2-content-manager-empty-new-app.png)
 
+The App editor opens and now you can configure the URL app that you want to add to the launchpad page.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Specify app general properties)]
+[ACCORDION-BEGIN [Step 3: ](Configure the URL app)]
+
 The App editor opens on the **PROPERTIES** tab.
 
-Enter the following values:
+1. Enter the following values:
 
-* **Title**: `Careers at SAP`
+    * **Title**: `Careers at SAP`
 
-* **Open App**: In a new tab
+    * **Open App**: In a new tab
 
-* **URL**:  `https://www.sap.com/about/careers.html`
+    * **URL**:  `https://www.sap.com/about/careers.html`
 
-![App editor properties tab](3-app-editor-properties.png)
+    ![App editor properties tab](3-app-editor-properties.png)
 
-[DONE]
-[ACCORDION-END]
+2. Click the **NAVIGATION** tab.
 
-[ACCORDION-BEGIN [Step 4: ](Specify app navigation properties)]
+    Here you need to specify the intent of your app, which includes a semantic object and the action you want to perform on this object.  
 
-Click the **NAVIGATION** tab.
+3. Enter the following values:
 
-Here you need to specify the intent of your app, which includes a semantic object and the action you want to perform on this object.
+    * **Semantic Object**: `Careers`
 
-Enter the following values:
+    * **Action**:  `Display`
 
-* **Semantic Object**: `Careers`
+    ![App editor navigation tab](4-app-editor-navigation.png)
 
-* **Action**:  `Display`
+4. Click the **VISUALIZATION** tab.
 
-![App editor navigation tab](4-app-editor-navigation.png)
+    In this tab, you specify how the app will be displayed in the launchpad.
 
-[DONE]
-[ACCORDION-END]
+5.  Enter the following values:
 
-[ACCORDION-BEGIN [Step 5: ](Specify app visualization properties)]
+    * **Subtitle**: `Open Positions`
 
-Click the **VISUALIZATION** tab.
+    * **Information**:  `Search for a job`
 
-In this tab, you specify how the app will be displayed in the launchpad.
+    * **Icon**: Click the browse icon, type `Search` and click **OK**.
 
-Enter the following values:
+      You see a preview of the tile with all the properties you entered.
 
-* **Subtitle**: `Open Positions`
+6. Click **Save**.
 
-* **Information**:  `Search for a job`
+      ![App editor visualization tab](5-app-editor-visualization.png)
 
-* **Icon**: Click the browse icon, type `Search` and click **OK**.
+You can then use the back arrow to get back to the Content Manager to see your app in the list of content items.
 
-You see a preview of the tile with all the properties you entered.
 
-The result should look like this:
-
-![App editor visualization tab](5-app-editor-visualization.png)
-
-Click **Save**.
 
 [DONE]
 [ACCORDION-END]
@@ -129,11 +127,13 @@ This is described in the following steps.
 
 In this step, you will create a group and assign it to your app.
 
->A group is a set of one or more apps displayed together in the launchpad.
+>You are assigning your app to a group so that your site user can see it in the `Launchpad` page. A group is a set of one or more apps displayed together in the launchpad.
 
 1. In the Content Manager, click **+ New** and select **Group** to open the Group editor.
 
-2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type `Ca` to search for your app. You should see **Careers**.
+    ![Add a new group](7-add-group.png)
+
+2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type `Ca` to search for your app. You should see **Careers at SAP**.
 
 3. In the **Results** list, click + to assign this group to your app.
 
@@ -152,6 +152,8 @@ In this step you'll assign the **Everyone** role to your app.
 
 1. In the Content Manager, click the **Everyone** role.
 
+    ![Click Everyone role](8-everyone-role.png)
+
 2. Click **Edit**.
 
 3. In the Role editor, in the **Assignments** panel, type `Ca` to search for your app.
@@ -167,17 +169,21 @@ In this step you'll assign the **Everyone** role to your app.
 
 [ACCORDION-BEGIN [Step 9: ](Review the site)]
 
-At the top right of your screen, click the **Go to site** icon:
+1. Click the Site Directory icon in the left panel.
 
-![9a Go to site](9-go-to-site-icon.png)
+    ![Open the Site Directory](8a-open-site-directory.png)
 
-The **Home** page opens. Navigate to the **Launchpad** page by clicking `My Apps`. This is what you'll see: 
+2. On the `JobCore Portal` tile in the Site Directory, click the  **Go to site** icon:
+
+    ![9a Go to site](9-go-to-site-icon.png)
+
+The **Home** page opens. Navigate to the **Launchpad** page by clicking `My Apps`. This is what you'll see:
 
 ![9b Site with one group and one app](9-site-with-1group-1app.png)
 
 You can now launch your application by clicking the **Careers at SAP** tile.
 
-Congratulations! You've created and added your first app to the `Launchpad` page in your Portal site!
+You've created and added your first app to the `Launchpad` page in your Portal site!
 
 [VALIDATE_7]
 [ACCORDION-END]
