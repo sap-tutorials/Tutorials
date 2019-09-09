@@ -7,9 +7,6 @@ tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
 primary_tag: products>sap-cloud-platform-portal
 ---
 
-## Prerequisites
- - Locate the URL of the app you want to add to the site.
-
 
 ## Details
 ### You will learn
