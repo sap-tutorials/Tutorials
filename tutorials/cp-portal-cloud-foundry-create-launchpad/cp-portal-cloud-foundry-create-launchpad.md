@@ -1,5 +1,5 @@
 ---
-title: Expose Your App to the Portal Service, Cloud Foundry Environment
+title: Expose Your App to the Portal Service (Cloud Foundry)
 description: Create a launchpad module in SAP Web IDE to make your SAP Fiori app available for use in the Portal.
 auto_validation: true
 time: 20
@@ -36,7 +36,7 @@ In this tutorial, you're going to configure a launchpad module and add it to you
 
 [ACCORDION-BEGIN [Step 2: ](Add the launchpad module to your multi-target application project)]
 
-1. Navigate to the **Development** area in SAP Web IDE and right click your `mta_FioriDemo` project to add a new **SAP Fiori Launchpad Site Module**.
+1. Navigate to the **Development** area in SAP Web IDE and right-click your `mta_FioriDemo` project to add a new **SAP Fiori Launchpad Site Module**.
 
     > Note that you can only add this launchpad module to `MTA` projects.
 
@@ -80,7 +80,7 @@ In this step you are going to do just that.
 
     ![Add app](14_add_app.png)
 
-5. Click **File** -> **Save**.
+5. Click **File > Save**.
 
     This is what you'll see in the **Launchpad Editor**:
 
@@ -114,7 +114,7 @@ Build and deploy the `MTA` project with these modules thus exposing your app to 
 
       It looks like this:
       `<id>trial-trial-dev-mta-fioridemo-approuter.cfapps.eu10.hana.ondemand.com`
-      where <id> is your ID number.
+      where `<id>` is your ID number.
 
 [DONE]
 [ACCORDION-END]
@@ -131,11 +131,11 @@ Like this:
 
 `https://<id>trial-trial-dev-mta-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/cp.portal`
 
-Where `<id>` is your ID number.
+>`<id>` is your ID number.
 
 Your launchpad module displays the `Candidates` app that you created in the `People` group.
 
-  ![Launchpad Module](20_deployed_module.png)
+![Launchpad Module](20_deployed_module.png)
 
 Now you are ready to add your app to the **Launchpad** page in your Portal site.
 

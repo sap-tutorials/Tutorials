@@ -1,5 +1,5 @@
 ---
-title: Integrate SAP Fiori App into Your Portal Site, Cloud Foundry Environment
+title: Integrate an SAP Fiori App into Your Portal Site (Cloud Foundry)
 description: Add the app that you created in SAP Web IDE to your Portal site on Cloud Foundry.
 auto_validation: true
 time: 10
@@ -98,7 +98,7 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
 [ACCORDION-BEGIN [Step 4: ](Add your app to the site)]
 
-1. In the Content Manager, click **+ New** -> **App**.
+1. In the Content Manager, click **+ New** > **App**.
 
     ![Add app](23_add_app.png)
 
@@ -108,7 +108,7 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
     |  :------------- | :-------------
     |  Title           | `Candidates`
     |  System           | `JobCoreApps` (this is the name of the system that your app is running on - same name as the destination name).   Note that it may take several minutes until the destination that you created in step 2 appears in the **System** list.
-    |  App UI Technology    | `SAPUI5` - this is the type of app that you are adding.
+    |  App UI Technology    | `SAPUI5` (this is the type of app that you are adding).
     |  SAPUI5 Component Name          | `mynamespace.FioriDemo`  - this is the registered name of the SAPUI5 component. To get this name,  ask your developer to open the `component.js` file in SAP Web IDE - it is defined in the `component.js` file without the `.component` suffix as shown here: ![Find component name](24a_find_component_name.png)
 
     Your screen will look like this:
