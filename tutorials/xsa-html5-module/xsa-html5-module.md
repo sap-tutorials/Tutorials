@@ -2,8 +2,6 @@
 title: SAP HANA XS Advanced, Creating an HTML5 Module
 description:  Create your first HTML5 module for HTML5 content within your XSA application
 auto_validation: true
-author_name: Lucia Subatin
-author_profile: https://github.com/lsubatin
 primary_tag: products>sap-hana
 tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data, tutorial>beginner ]
 
@@ -84,6 +82,19 @@ This can be downloaded from the SAP HANA Developer Edition directly, using the D
 ```
 xs login -a http://<hostname>:3XX30 -o HANAExpress -s development -u XSA_ADMIN
 ```
+
+> ### Note
+>
+> For SAP HANA, express edition with default values, the command would be:
+> ```ssh
+> xs login -a https://hxehost:39030 -o HANAExpress -s development -u XSA_ADMIN --skip-ssl-validat
+> ```
+>
+>If you are using the CLI from the operating system of the virtual machine, you can also use the following shortcut:
+> ```ssh
+> xs-admin-login
+> ```
+
 
 If you are not using HANA Express, change the organization (`HANAExpress`), space (`development`) and user (`XSA_DEV`) accordingly. The API endpoint may also be different.
 
