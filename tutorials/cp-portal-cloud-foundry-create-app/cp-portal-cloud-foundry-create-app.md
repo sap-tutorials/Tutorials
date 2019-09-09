@@ -52,7 +52,7 @@ Configure the navigation settings as follows:
 
     -	**Semantic Object**: data
 
-    -	**Object**: display
+    -	**Action**: display
 
       ![Define an intent](3_define_intent_navigation.png)
 
