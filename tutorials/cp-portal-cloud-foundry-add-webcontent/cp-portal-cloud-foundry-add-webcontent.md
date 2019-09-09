@@ -207,7 +207,7 @@ You have a page full of widgets that still have their default content. So now le
 
       ![Add content item](25_add_content_item.png)
 
-12. Click **Save**. You'll see that you now have 3 content items.
+      You'll see that you now have 3 content items.
 
     ![View extra content item](26_view_another_contentitem.png)
 
