@@ -126,7 +126,7 @@ module.exports = {
         const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
         const tutorialLinkMatch = line.match(tutorialLink.regexp);
         const accordionMatch = line.match(accordions);
-        if (!isMeta) {
+        if (!isMeta && !isCodeLine) {
           // plain text URLs are allowed in meta
           const match = line.match(link.regexp);
           if (match) {
