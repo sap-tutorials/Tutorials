@@ -1,9 +1,9 @@
 ---
-title: Create a Portal Site on SAP Cloud Platform, Cloud Foundry Environment
+title: Create a Portal Site (Cloud Foundry)
 description: Create a Portal site with a launchpad and other pages that will contain apps and web content.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform-portal, topic>cloud, products>sap-fiori]
+tags: [ tutorial>beginner, products>sap-cloud-platform-portal, topic>cloud, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform
 ---
 
@@ -43,7 +43,7 @@ In your new site, you will already see the default **Launchpad** page in the **P
 
   ![View Site Manager](7_view_launchpad_page.png)
 
->Once you've created your site, you can go back to the Site Directory to see that your new site is now represented by a tile. In future, each time you want to edit your site, you can click the pencil icon from this tile. You can also delete the site from here or preview it to see how your site users will see your site at runtime.
+>Once you've created your site, you can go back to the Site Directory to see that your new site is now represented by a tile. In the future, each time you want to edit your site, you can click the pencil icon from this tile. You can also delete the site from here or preview it to see how your site users will see your site at runtime.
 
 ![View Site Tile](8_view_site_tile.png)
 
@@ -95,11 +95,15 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
     |  **Item Type**           | **`Page`**
     |  **Select Page**    | **`JobCore`**
 
-4. Click **Add**.  This takes you back to the **Menu Editor**. You will see that the page you called `Home` has been added to the site's menu structure.
+    Click **Add**.  
+
+    This takes you back to the **Menu Editor**. You will see that the page you called `Home` has been added to the site's menu structure.
 
     ![Menu item details](11a_edit_menu.png)
 
-5. Now add the `Launchpad` page to the site menu. Hover over the `Home` menu item and click the + icon on the right.
+5. Now add the `Launchpad` page to the site menu.
+
+    Hover over the `Home` menu item and click the + icon on the right.
 
     ![Hover over menu item](13_hover.png)
 
@@ -115,7 +119,7 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
     |  **Item Type**           | **`Page`**
     |  **Select Page**    | **`Launchpad`**
 
-8. Click **Add**.
+    Click **Add**.
 
     ![Add launchpad to menu](14_add_launchpad_tomenu.png)
 
@@ -141,9 +145,9 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
     ![Set as home page](18_set_home_page.png)
 
-    Now you have a Portal site called the `JobCore Portal` with 2 pages. Both pages are part of the site menu and the `JobCore` page (your `Home` page) is set as the first page that opens when a user logs on to your site.
+Now you have a Portal site called the `JobCore Portal` with 2 pages. Both pages are part of the site menu and the `JobCore` page (your `Home` page) is set as the first page that opens when a user logs on to your site.
 
-    In the next tutorial you're going to add web content to the `Home` page.
+In the next tutorial you're going to add web content to the `Home` page.
 
 [DONE]
 [ACCORDION-END]

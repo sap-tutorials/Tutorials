@@ -1,9 +1,9 @@
 ---
-title: Integrate a URL App to Your Portal Site on SAP Cloud Platform, Cloud Foundry Environment
+title: Integrate a URL App into Your Portal Site (Cloud Foundry)
 description: Create a URL app and add it to the launchpad page on your Portal site on Cloud Foundry.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, products>sap-cloud-platform-portal ]
+tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
 primary_tag: products>sap-cloud-platform-portal
 ---
 
@@ -36,7 +36,7 @@ To go to the **Content Manager**, do the following:
 
 >Note that by default, the `Everyone` role is provided and is visible in the Content manager.
 
-Click **New** and select **App** from the list:
+Click **New** and select **App** from the list.
 
 ![Content manager empty new app](2-content-manager-empty-new-app.png)
 
@@ -97,7 +97,7 @@ You can then use the back arrow to get back to the Content Manager to see your a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Go back to Content Manager)]
+[ACCORDION-BEGIN [Step 4: ](Go back to Content Manager)]
 Click the arrow in the top left corner of the app editor to go back to the Content Manager.
 
 ![Go to content manager icon](6-go-to-content-manager-icon.png)
@@ -106,24 +106,24 @@ In the Content Manager, you see your app in the list:
 
 ![Content manager with app](6-content-manager-with-app.png)
 
-> If you want to open your app for editing, simply click it and click **Edit** in the App editor:
+> If you want to open your app for editing, simply click it and click **Edit** in the App editor.
 
-![App editor Edit](6-app-editor-edit.png)
+>![App editor Edit](6-app-editor-edit.png)
 
 You have now created a URL app for your site.
 
-Before you can see the app in the launchpad you need to:
+Before you can see the app in the launchpad, you need to:
 
-* Add a group and assign your app to it
+  - Add a group and assign your app to it
 
-* Assign a role to the app that is assigned to you. We will use the **Everyone** role.
+  - Assign a role to the app that is assigned to you. We will use the **Everyone** role.
 
 This is described in the following steps.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Assign group to app)]
+[ACCORDION-BEGIN [Step 5: ](Assign group to app)]
 
 In this step, you will create a group and assign it to your app.
 

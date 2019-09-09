@@ -1,5 +1,5 @@
 ---
-title: Prepare Portal Environment for Creating Sites on SAP Cloud Platform, Cloud Foundry Environment
+title: Prepare the Portal Environment for Creating Sites (Cloud Foundry)
 description: To get started with building a Portal site, administrators must perform the required onboarding steps.
 auto_validation: true
 time: 5
@@ -74,7 +74,7 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
     ![Add role properties](07_add_role_properties.png)
 
-    >Note: In the screen capture, the **Application Identifier** has an id at the end.  This id may be different on your system - just make sure that you choose the value with this format: **portal-cf-service!`<id>`**.
+    >In the screen capture, the **Application Identifier** has an ID at the end.  This ID may be different on your system -- just make sure that you choose the value with this format: **portal-cf-service!`<id>`**.
 
 6. Go back to your subaccount (you can use the breadcrumbs at the top of your screen).
 
