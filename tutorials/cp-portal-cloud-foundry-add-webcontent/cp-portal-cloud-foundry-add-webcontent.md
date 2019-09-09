@@ -1,9 +1,9 @@
 ---
-title: Add Web Content to Your Portal Site and Design its Layout on SAP Cloud Platform, Cloud Foundry Environment
+title: Add Web Content to Your Portal Site and Set the Layout (Cloud Foundry)
 description: Design your Portal site by adding widgets with meaningful content.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform-portal
 ---
 
@@ -13,11 +13,11 @@ The `JobCore` Portal site is open in the Pages editor displaying the `JobCore` a
 ## Details
 ### You will learn
   - How to add web content to a page in your Portal site
-  - How to design the layout of your page
+  - How to design the layout of your page and its content
 
 By now, you should have created the `JobCore Portal` site with a `Home` page and a `Launchpad` page that are both part of the site menu.
 
-In this tutorial we will add web content to a Portal page and design its layout and appearance according to a predefined, appealing design.  We are building a Portal site for a recruiting company, so our content will be applicable to this scenario.
+In this tutorial, we will add web content to a Portal page and design its layout and appearance according to a predefined, appealing design.  We are building a Portal site for a recruiting company, so our content will be applicable to this scenario.
 
 Let's add meaningful content to your `Home` page.
 
@@ -52,7 +52,9 @@ Before you start, first download the following images that you will add to your 
 
 1. Click the `JobCore` page from the **Pages** panel in the Pages editor.
 
-2. Click the **Header** section of the page - this is the section with `Menu Item 1, 2, 3`. As you click in the page section, editing icons become visible. Since the page template that you selected to create this page, contains a menu widget that you don't need for this specific site design, you are going to delete it by simply clicking the **Delete** icon.
+2. Click the **Header** section of the page -- this is the section with `Menu Item 1, 2, 3`.
+
+    As you click in the page section, editing icons become visible. Since the page template that you selected to create this page contains a menu widget that you don't need for this specific site design, you are going to delete it by simply clicking the **Delete** icon.
 
     ![Delete menu](18a_delete_existing_menu.png)
 
@@ -68,7 +70,9 @@ Before you start, first download the following images that you will add to your 
 
     ![Click Section 1](20a_select_section1.png)
 
-6. Add the following widgets. Don't worry about the content yet. You'll edit this later. Just keep clicking the **+** icon to add the widgets. You can also use the **Search** feature to find the widgets that you want.
+6. Add the following widgets.
+
+    >Don't worry about the content yet. You'll edit this later. Just keep clicking the **+** icon to add the widgets. You can also use the **Search** feature to find the widgets that you want.
 
     -	**Header with Titles** from the **Web Content Widgets: Basic** category.
 
@@ -280,9 +284,11 @@ You have a page full of widgets that still have their default content. So now le
     |  Link 2: Display&nbsp;Text           | Terms and Conditions
     |  Link 3: Display&nbsp;Text    | Notifications
 
-16. Click **Save**. **Section 3** should look like this:
+16. Click **Save**.
 
-      ![View Section 3](24c_view_section3.png)
+    **Section 3** should look like this:
+
+    ![View Section 3](24c_view_section3.png)
 
 You've replaced all the default content in the widgets with your own. Let's arrange the widgets on the page.
 
@@ -371,7 +377,7 @@ You've now designed your Portal page by arranging the widgets in their page sect
 
 In this step, you are going to change the widget settings of the following widgets:
 
->Note that you can also change how you want your widget displayed - as a card, list, grid, or carousel.
+>Note that you can also change how you want your widget displayed -- as a card, list, grid, or carousel.
 
  1. Click the **Aligned Story Card** widget in **Section 1**.
 
