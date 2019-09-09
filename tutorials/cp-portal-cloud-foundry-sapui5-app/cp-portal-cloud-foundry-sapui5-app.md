@@ -30,7 +30,7 @@ The entry point for your developed content is the App Router URL of the MTA file
 
     ![Open subaccount](36_open_subaccount.png)
 
-2. Click the `JobCore Portal Space`.
+2. Click the `dev` space.
 
     ![Open space](37_open_space.png)
 
