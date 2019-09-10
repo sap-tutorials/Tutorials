@@ -60,6 +60,8 @@ wget -P /usr/sap/HXE/HDB90/work/iris "http://download.tensorflow.org/data/iris_t
 ```
 This will create a new directory where the Iris training and test dataset will be downloaded.
 
+**Please ensure ports 80 & 443 are opened for outbound communication.**
+
 [DONE]
 [ACCORDION-END]
 

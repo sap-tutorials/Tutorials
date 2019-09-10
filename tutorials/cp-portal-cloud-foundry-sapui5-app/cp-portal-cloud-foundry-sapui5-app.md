@@ -1,5 +1,5 @@
 ---
-title: Integrate SAP Fiori App into Your Portal Site on Cloud Foundry
+title: Integrate an SAP Fiori App into Your Portal Site (Cloud Foundry)
 description: Add the app that you created in SAP Web IDE to your Portal site on Cloud Foundry.
 auto_validation: true
 time: 10
@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-portal
 ---
 
 ## Prerequisites
- You have created a SAP HTML5 module in SAP Web IDE and deployed it to your SAP Cloud Platform subaccount.
+ You've created a SAP HTML5 module in SAP Web IDE and deployed it to your SAP Cloud Platform subaccount.
  For more information about how to create the app, see the tutorial: [Develop Your First SAP Fiori App for Use in a Portal Site on SAP Cloud Platform on Cloud Foundry](https://developers.sap.com/tutorials/cp-portal-cloud-foundry-create-app.html).
 
 
@@ -21,7 +21,7 @@ The `Launchpad` page in your `JobCore Portal` site already contains a URL app. I
 
 To consume apps that you created in the Portal, you first need to configure a destination to your developed content.
 
-The entry point for your developed content is the App Router URL of the MTA file that you developed. So let's first find the URL of the App Router of our deployed MTA file and then we'll add a destination to this App Router.
+The entry point for your developed content is the App Router URL of the MTA file that you developed. So let's first find the URL of the App Router of your deployed MTA file and then you'll add a destination to this App Router.
 
 
 [ACCORDION-BEGIN [Step 1: ](Find App Router URL of deployed MTA file)]
@@ -30,7 +30,7 @@ The entry point for your developed content is the App Router URL of the MTA file
 
     ![Open subaccount](36_open_subaccount.png)
 
-2. Click the `JobCore Portal Space`.
+2. Click the `dev` space.
 
     ![Open space](37_open_space.png)
 
@@ -50,7 +50,7 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
 [ACCORDION-BEGIN [Step 2: ](Create destination to SAPUI5 app)]
 
-1. Open your subaccount and in the side navigation panel, click **Connectivity > Destinations**. Then click **New Destination**.
+1. Open your trial account or another subaccount and in the side navigation panel, click **Connectivity > Destinations**. Then click **New Destination**.
 
     ![New destination](19_new_destination.png)
 
@@ -60,7 +60,7 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
     |  :------------- | :-------------
     |  Name           | **`JobCoreApps`**
     |  Type           | **`HTTP`**
-    |  URL          | **`https://portal-dev-companyportal-jobcore-portal-space-mta-<id>.cfapps.sap.hana.ondemand.com`** where <id> is your ID number
+    |  URL          | **`https://<id>trial-trial-dev-mta-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/`** where `<id>` is your ID number
     |  Proxy Type   | **`Internet`**
     |  Authentication | **`NoAuthentication`**
 
@@ -74,41 +74,44 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
     ![Add destination properties](20_destination_properties.png)
 
+5. Click **Save**.
+
+
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open your Portal site)]
+[ACCORDION-BEGIN [Step 3: ](Open the Content Manager of your Portal site)]
 
-1. In the side navigation panel of your subaccount, click **Subscriptions**.  Click the **Portal** tile and then click **Go to Application**.
+1. In the side navigation panel of your trial account or subaccount, click **Subscriptions**.  Click the **Portal** tile and then click **Go to Application**. The Site Manager opens with the Site Directory in focus.
 
     ![Open Portal site](21_open_portal.png)
 
-2. In the Site Directory, look for your `JobCore Portal` site and click **Edit** (the pencil icon), to open it for editing.
+2. Click the icon in the side panel of the Site Manager to open the **Content Manager**.
 
-    ![Edit Portal](22_edit_portal.png)
+    ![Edit Portal](22_open_content_manager.png)
 
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add your app to your site)]
+[ACCORDION-BEGIN [Step 4: ](Add your app to the site)]
 
-1. Click the **Content** icon in the side panel of the Site Manager to open the Content Manager. Click **+ New** -> **App**.
+1. In the Content Manager, click **+ New** > **App**.
 
     ![Add app](23_add_app.png)
 
-2. In the **Properties** tab enter the following values:
-
+2. In the **PROPERTIES** tab enter the following values:
 
     |  Field Name     | Value
     |  :------------- | :-------------
     |  Title           | `Candidates`
-    |  System           | `JobCoreApps` (this is the name of the system that your app is running on - same name as the destination name)
-    |  App UI Technology    | `SAPUI5` - this is the type of app that you are adding.
+    |  System           | `JobCoreApps` (this is the name of the system that your app is running on - same name as the destination name).   Note that it may take several minutes until the destination that you created in step 2 appears in the **System** list.
+    |  App UI Technology    | `SAPUI5` (this is the type of app that you are adding).
     |  SAPUI5 Component Name          | `mynamespace.FioriDemo`  - this is the registered name of the SAPUI5 component. To get this name,  ask your developer to open the `component.js` file in SAP Web IDE - it is defined in the `component.js` file without the `.component` suffix as shown here: ![Find component name](24a_find_component_name.png)
 
-    When you're done click **Save** and your screen will look like this:
+    Your screen will look like this:
 
     ![Add app properties](24_app_properties.png)
 
@@ -131,11 +134,11 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
     -	Information: `Current recruits`
 
-    -	Icon: `idea-wall`
-
-6. Click **Save** and your screen will look like this:
+    -	Icon: `idea-wall` (paste this icon code into the **Select Icon** screen )
 
       ![Save visualization settings](27_save_visualization.png)
+
+6. Click **Save** in the top right hand corner of the screen.
 
 7. Click the back arrow to go back to the Content Manager.
 
@@ -147,8 +150,8 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
 You can now integrate this app with your Portal site and add it to the `Launchpad` page or to a page that you've designed yourself. We will add the `Candidates` app to the `Launchpad` page in our site.
 
-To make the app visible in the `Launchpad` page, you need to add it to a group. You also need to add the app to a role.
-This is exactly what we are going to do in the next two steps.
+To make the app visible in the `Launchpad` page, you need to assign it to a group. You also need to assign the app to a role.
+This is exactly what you're going to do in the next two steps.
 
 [DONE]
 [ACCORDION-END]
@@ -163,7 +166,7 @@ In this step you're going to create a new group and you'll assign the `Candidate
 
 2. Enter `Work in Progress` as the **Title**.
 
-3. In the **Assignments** panel, type `ca` to search for your `Candidates` app and the click the **+** to assign your app to this group.
+3. In the **Assignments** panel on the right, type `ca` to search for your `Candidates` app and the click the **+** to assign your app to this group.
 
     ![Assign group](31_assign_group.png)
 
@@ -175,7 +178,7 @@ In this step you're going to create a new group and you'll assign the `Candidate
 
 [ACCORDION-BEGIN [Step 6: ](Assign your app to the Everyone role)]
 
- In this step, you'll assign  `Candidates` app to the `Everyone` role. This is a default role and content assigned to the `Everyone` role is visible to all users.
+ In this step, you'll assign the `Candidates` app to the `Everyone` role. This is a default role - content assigned to the `Everyone` role is visible to all users.
 
 1. Click the back arrow to go back to the Content Manager.
 
@@ -195,11 +198,11 @@ In this step you're going to create a new group and you'll assign the `Candidate
 
 [ACCORDION-BEGIN [Step 7: ](Review your site)]
 
-At the top right of the screen click the **Go to site** icon.
+At the top right of the screen, click the **Go to site** icon.
 
   ![Go to site](34_go_to_site.png)
 
-You will see that both groups appear in the runtime site – the `SAP` group with the URL app and the `Work in Progress` group with the SAP HTML5 app.
+You'll see that both groups appear in the runtime site – the `SAP` group with the URL app and the `Work in Progress` group with the SAP HTML5 app.
 
   ![View runtime site](35_view_runtime_groups.png)
 

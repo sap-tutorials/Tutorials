@@ -1,5 +1,5 @@
 ---
-title: Develop a SAP Fiori App for Portal Site on Cloud Foundry
+title: Develop an SAP Fiori App for a Portal Site (Cloud Foundry)
 description: Create an app module in SAP Web IDE and set up its navigation so that it can be used in a Portal site.
 auto_validation: true
 time: 45
@@ -52,7 +52,7 @@ Configure the navigation settings as follows:
 
     -	**Semantic Object**: data
 
-    -	**Object**: display
+    -	**Action**: display
 
       ![Define an intent](3_define_intent_navigation.png)
 
@@ -62,11 +62,11 @@ Configure the navigation settings as follows:
 
     -	**Subtitle**: Engineering
 
-    -	**Icon**: sap-icon://activities
+    -	**Icon**: `sap-icon://activities`
 
       ![Define tile properties](4_tile_properties.png)
 
-5. Click **File** -> **Save**.
+5. Click **File > Save**.
 
     ![Save your settings](5_save_settings.png)
 

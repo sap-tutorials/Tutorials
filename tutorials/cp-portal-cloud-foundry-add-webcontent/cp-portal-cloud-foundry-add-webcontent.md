@@ -1,23 +1,23 @@
 ---
-title: Add Web Content to Your Portal Site and Design its Layout on SAP Cloud Platform on Cloud Foundry
+title: Add Web Content to Your Portal Site and Set the Layout (Cloud Foundry)
 description: Design your Portal site by adding widgets with meaningful content.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform-portal
 ---
 
 ## Prerequisites
-
+The `JobCore` Portal site is open in the Pages editor displaying the `JobCore` and `Launchpad` pages.
 
 ## Details
 ### You will learn
   - How to add web content to a page in your Portal site
-  - How to design the layout of your page
+  - How to design the layout of your page and its content
 
 By now, you should have created the `JobCore Portal` site with a `Home` page and a `Launchpad` page that are both part of the site menu.
 
-In this tutorial we will add web content to a Portal page and design its layout and appearance according to a predefined, appealing design.  We are building a Portal site for a recruiting company, so our content will be applicable to this scenario.
+In this tutorial, we will add web content to a Portal page and design its layout and appearance according to a predefined, appealing design.  We are building a Portal site for a recruiting company, so our content will be applicable to this scenario.
 
 Let's add meaningful content to your `Home` page.
 
@@ -50,27 +50,29 @@ Before you start, first download the following images that you will add to your 
 
 [ACCORDION-BEGIN [Step 2: ](Add widgets to the page)]
 
-1. Open the `JobCore Portal` site.
+1. Click the `JobCore` page from the **Pages** panel in the Pages editor.
 
-2. Select the `JobCore` page from the **Pages** panel in the Site Manager.
+2. Click the **Header** section of the page -- this is the section with `Menu Item 1, 2, 3`.
 
-3. Click the **Header** section of the page - this is the section with `Menu Item 1, 2, 3`. As you click in the page section editing icons become visible. The page template that you selected to create this page contains a menu widget that you don't need for this specific site design. Simply click the **Delete** icon and confirm the deletion.
+    As you click in the page section, editing icons become visible. Since the page template that you selected to create this page contains a menu widget that you don't need for this specific site design, you are going to delete it by simply clicking the **Delete** icon.
 
     ![Delete menu](18a_delete_existing_menu.png)
 
-4. Click the **Header** section again and then click the **+** icon on the right to open the widget gallery.
+3. Click the **Header** section again and then click the **+** icon on the right to open the widget gallery.
 
     ![Edit header section](19_edit_header_section.png)
 
-5. Click the **Headline Carousel** widget from the **Web Content Widgets: Carousel** category.
+4. Click the **Headline Carousel** widget from the **Web Content Widgets: Carousel** category.
 
     ![Add new header](20_add_header_widget.png)
 
-6. Now click in **Section 1** of the page.
+5. Now click in **Section 1** of the page.
 
     ![Click Section 1](20a_select_section1.png)
 
-7. Add the following widgets. Don't worry about the content yet. You'll edit this later. Just keep clicking the **+** icon to add the widgets. You can also use the **Search** feature to find the widgets that you want.
+6. Add the following widgets.
+
+    >Don't worry about the content yet. You'll edit this later. Just keep clicking the **+** icon to add the widgets. You can also use the **Search** feature to find the widgets that you want.
 
     -	**Header with Titles** from the **Web Content Widgets: Basic** category.
 
@@ -128,8 +130,10 @@ You have a page full of widgets that still have their default content. So now le
 
     ![Delete content item](22a_delete_content_item.png)
 
+6. Click **Save**.
+
     Let's look at our edited widget.
-    This is the first slide of the carousel widget
+    This is the first slide of the carousel widget:
 
     ![View first widget](23_view_first_widget.png)
 
@@ -139,11 +143,10 @@ You have a page full of widgets that still have their default content. So now le
 
     You're now going to edit the content in the next section of the page.
 
-    Click **Save** to save your changes.
 
-6. In **Section 1** click in the **Header with Titles** widget to expose the editing icons.
+7. In **Section 1** click in the **Header with Titles** widget to expose the editing icons.
 
-7. Click **Edit content** (pencil icon) and edit the widget as follows:
+8. Click **Edit content** (pencil icon) and edit the widget as follows:
 
     |  Field     | Value
     |  :------------- | :-------------
@@ -152,7 +155,7 @@ You have a page full of widgets that still have their default content. So now le
 
     Click **Save**.
 
-8. Still in **Section 1**,  click the **Aligned Story Card** widget and edit as follows:
+9. Still in **Section 1**,  click the **Aligned Story Card** widget and edit as follows:
 
     **Content Item 1**
 
@@ -181,20 +184,20 @@ You have a page full of widgets that still have their default content. So now le
     |  Image    | `We're innovative.png`
     |  Display&nbsp;Text          | Read More
 
-9. Click **Save**.  
+10. Click **Save**.  
 
     **Section 1** should look like this:
 
     ![View second section](24a_view_section1.png)
 
-10. Click in **Section 2** and edit the widgets as follows:
+11. Click in **Section 2** and edit the widgets as follows:
 
     **Header with Titles**:
 
     |  Field      | Value
     |  :------------- | :-------------
     | Title           | How can we help you?
-    |  Subtitle        |   Remove the default content
+    |  Subtitle        |   Leave this blank. Remove the default content.
 
     Click **Save**.
 
@@ -204,11 +207,11 @@ You have a page full of widgets that still have their default content. So now le
 
       ![Add content item](25_add_content_item.png)
 
-    Click **Save**. You'll see that you now have 3 content items.
+12. Click **Save**. You'll see that you now have 3 content items.
 
     ![View extra content item](26_view_another_contentitem.png)
 
-    Edit each content item as follows:
+13. Edit each content item as follows:
 
     **Content Item 1**
 
@@ -237,11 +240,11 @@ You have a page full of widgets that still have their default content. So now le
     |  Image    | Staying Connected.jpg
     |  Link: Display&nbsp;Text          | Contact Us
 
-11. Click **Save**. Section 2 should look like this:
+14. Click **Save**. Section 2 should look like this:
 
-    ![View section 2](24b_view_section 2.png)
+    ![View section 2](24b_view_section2.png)
 
-12. Click in **Section 3** and edit the widgets as follows:
+15. Click in **Section 3** and edit the widgets as follows:
 
     **Image** widget: Replace the image with the logo: `JobCoreLogo.png` and click **Save**.
 
@@ -281,9 +284,11 @@ You have a page full of widgets that still have their default content. So now le
     |  Link 2: Display&nbsp;Text           | Terms and Conditions
     |  Link 3: Display&nbsp;Text    | Notifications
 
-11. Click **Save**. **Section 3** should look like this:
+16. Click **Save**.
 
-      ![View Section 3](24c_view_section3.png)
+    **Section 3** should look like this:
+
+    ![View Section 3](24c_view_section3.png)
 
 You've replaced all the default content in the widgets with your own. Let's arrange the widgets on the page.
 
@@ -320,9 +325,10 @@ In this step, you'll arrange the widgets in the different sections of the page a
         |  Content Width           | Full
         |  Minimum Height    | Default
 
+        Click **Save**.
+
         ![Set dimensions](30_set_dimensions.png)
 
-        Click **Save**.
 
 4. Click in page **Section 2** to highlight the **Edit sections** icon on the right and edit the settings as follows:
 
@@ -369,11 +375,9 @@ You've now designed your Portal page by arranging the widgets in their page sect
 
 [ACCORDION-BEGIN [Step 5: ](Configure the layout of the widgets)]
 
-In this step, you are going to change the widget settings.
+In this step, you are going to change the widget settings of the following widgets:
 
->Note that you can also change how you want your widget displayed - as a card, list, grid, or carousel.
-
-Change the dimensions of the following widgets:
+>Note that you can also change how you want your widget displayed -- as a card, list, grid, or carousel.
 
  1. Click the **Aligned Story Card** widget in **Section 1**.
 
@@ -381,7 +385,7 @@ Change the dimensions of the following widgets:
 
     ![Define widget settings](31_widget_settings.png)
 
-3. Change the dimensions of the **Aligned Story Card** widget as follows and then click **Save**.
+3. Change the dimensions as follows and then click **Save**.
 
     |  Dimension     | Value
     |  :------------- | :-------------
@@ -393,7 +397,7 @@ Change the dimensions of the following widgets:
 
     ![Enter setting values](32_enter_settings.png)
 
-4. Click the **Centered Story Card** widget in **Section 2** and then click **Settings** (cog icon). Change the dimensions of the widget as follows and then click **Save**.
+4. Click the **Centered Story Card** widget in **Section 2** and then click **Settings** (cog icon). Change the dimensions as follows and then click **Save**.
 
 
     |  Field Name     | Value
