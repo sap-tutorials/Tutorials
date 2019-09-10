@@ -81,6 +81,7 @@ module.exports = {
             regexp: /!\[[^\]]+\]\(http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)\)/gi,
             message: 'Bad image - image URL does not return image file',
         },
+        codeBlockInNote: /^>\s*```/,
     },
     validation: {
         auto_validation: /auto_validation:\s(.*)\r?\n/i,
