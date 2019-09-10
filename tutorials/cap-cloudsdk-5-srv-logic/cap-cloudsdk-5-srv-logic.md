@@ -129,7 +129,7 @@ What this function produces is a `FilterList` object, which, when expanded, cons
 
 #### Function: `SELECT`
 
-Now define another helper function `SELECT`ת which looks like this:
+Now define another helper function `SELECT` which looks like this:
 
 ```JavaScript
 function SELECT (columns) {
