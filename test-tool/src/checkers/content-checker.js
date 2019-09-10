@@ -65,6 +65,7 @@ module.exports = {
         tutorialLink,
         tutorialLinkInvalid,
         remoteImage,
+        codeBlockInNote,
       },
       validation: { accordions, codeLine, done },
       link: {
@@ -104,8 +105,8 @@ module.exports = {
         }
       }
 
-      if (line.trim()
-        .startsWith('```')) {
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith('```') || trimmedLine.match(codeBlockInNote)) {
         isCodeBlock = !isCodeBlock;
       }
 
