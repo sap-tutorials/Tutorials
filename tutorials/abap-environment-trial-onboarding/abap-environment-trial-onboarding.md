@@ -15,12 +15,12 @@ author_profile: https://github.com/mervey45
 
 ## Details
 ### You will learn  
-  - How to create an trial user
+  - How to create a trial user
   - How to create an ABAP Cloud project
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Select ABAP Trial)]
-  1. Open SAP Cloud Platform Trial Cockpit to logon to your existing Cloud Foundry trial account.
+  1. Open SAP Cloud Platform Trial Cockpit to log onto your existing Cloud Foundry trial account.
      (https://account.hanatrial.ondemand.com/#/home/welcome)
 
      ![Select ABAP Trial](account.png)
@@ -36,7 +36,7 @@ author_profile: https://github.com/mervey45
   4. Click **Service Marketplace**.
 
       ![Select ABAP Trial](account4.png)
- 
+
   5. Search for **ABAP Trial** and select it.
 
       ![Select ABAP Trial](account5.png)
@@ -132,11 +132,11 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](project3.png)
 
-  4. Logon to your ABAP trial account with your e-mail address and password.
+  4. Log onto your ABAP trial account with your e-mail address and password.
 
       ![Create ABAP cloud project](project4.png)
 
-  5. Click Finish.
+  5. Click **Finish**.
 
       ![Create ABAP cloud project](project5.png)
 
