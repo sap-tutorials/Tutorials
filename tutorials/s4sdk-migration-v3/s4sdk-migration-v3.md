@@ -1,6 +1,6 @@
 ---
-title: Migrate an existing Application to Version 3.0 of the Cloud SDK
-description: This tutorial takes you through the process of migrating an existing project to version 3 of the SAP Cloud SDK.
+title: Migrate an Existing Application to Version 3.0 of the Cloud SDK
+description: Migrate an existing project to version 3.0 of the SAP Cloud SDK.
 auto_validation: true
 time: 40
 tags: [ tutorial>intermediate, products>sap-s-4hana]
@@ -8,8 +8,8 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites
- - You already have a basic understanding of how applications with the Cloud SDK are developed.
- - You have the necessary development tools (JDK, maven, git, etc.) already installed.
+ - You already have a basic understanding of how applications with the Cloud SDK are developed. If you are new to the Cloud SDK take a look at [how to create a sample application](https://developers.sap.com/group.s4sdk-cloud-foundry.html).
+ - You have the necessary development tools (JDK, maven and git) already installed. Take a look at [how to set up your machine](https://developers.sap.com/tutorials/s4sdk-setup.html) for details on how to install them.
 
 ## Details
 ### You will learn
@@ -17,15 +17,17 @@ primary_tag: products>sap-s-4hana-cloud-sdk
   - How to migrate `ErpCommand`s
   - How to adapt tests
 
-This tutorial will be based on a sample application to guide you through the fundamental steps of upgrading to version 3. You will get a feeling for the nature of the changes and be able to perform them for your specific application. Feel free to apply these steps to your application, but be aware that this tutorial does not cover everything in itself. For a comprehensive guide on migrating an app also consult the [migration guide](https://blogs.sap.com/2019/08/01/migrate-to-version-3.0.0-of-the-sap-cloud-sdk-for-java/).
+This tutorial will be based on a sample application to guide you through the fundamental steps of upgrading to version 3. You will get a feeling for the nature of the changes and be able to perform them for your specific application.
+
+Feel free to apply these steps to your application, but be aware that this tutorial does not cover everything in itself. For a comprehensive guide on migrating an app also consult the [migration guide](https://blogs.sap.com/2019/08/01/migrate-to-version-3.0.0-of-the-sap-cloud-sdk-for-java/).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get the V2 Application)]
+[ACCORDION-BEGIN [Step 1: ](Get the V2 application)]
 
 First step is to get an application that uses the SAP Cloud SDK in version 2. For this tutorial we will use the `BookAdressManager`. You can download it from [GitHub](https://github.com/SAP/cloud-s4-sdk-book) or clone the repository with:
 
-```bash
+```Bash
 git clone https://github.com/SAP/cloud-s4-sdk-book
 ```
 
@@ -36,11 +38,12 @@ If you want to test the application on your local system follow the instructions
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Update Dependencies)]
+[ACCORDION-BEGIN [Step 2: ](Update dependencies)]
 
 We'll start by adapting the dependencies of our project. First step is to change the SDK version which is defined in the parent `pom.xml` in your project root. Open it and look for the list of dependencies, where you will find a reference to the `sdk-bom` in version `2.19.0`.
 
 1. Change the `groupId` from `com.sap.cloud.s4hana` to `com.sap.cloud.sdk`.
+
 2. Change the `version` from `2.19.0` to the latest release of the Cloud SDK.
 
 At the time of writing, the latest version of the SDK is `3.2.0`. You can find the current version at [maven central](https://search.maven.org/search?q=g:com.sap.cloud.sdk). Note that we not only increased the version but also changed the group id. With the move to 3.0 some modules have been renamed to better reflect their purpose. To account for this we will now adapt the group ids in our dependencies.
@@ -61,7 +64,7 @@ In case of the maven plugin you will also have to increase the version number by
 
 Once you are done, check that all dependencies are resolved correctly by running:
 
-```bash
+```Bash
 mvn clean validate
 ```
 
@@ -71,13 +74,13 @@ Now that we have updated our dependencies it is time to adapt the actual java co
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Migrate a simple OData request)]
+[ACCORDION-BEGIN [Step 3: ](Migrate simple OData request)]
 
 With the new version of the Cloud SDK it's usage became a lot simpler and more streamlined. This means that our application will become simpler and have less boilerplate code -- we will mostly delete stuff in the following steps. But first we'll have to add a piece.
 
 Start by heading to the `CreateAddressCommand`. It is responsible for executing an OData request that creates a `BusinessPartnerAddress`. Your IDE should inform you about various missing classes. Don't worry about it for now and add the following field to the class:
 
-```java
+```Java
 private final ErpHttpDestination destination = ErpHttpDestinationUtils.getErpHttpDestination("ERP_SYSTEM");
 ```
 
@@ -87,13 +90,13 @@ This retrieves the destination by the name `ERP_SYSTEM`. Previously, the destina
 
 With our destination in place we can now modify our very first OData call for 3.0. Dive into the `run()` method of `CreateAddressCommand` and find the statement that creates a new address. Currently, it looks like this:
 
-```java
+```Java
 final BusinessPartnerAddress addressCreated = service.createBusinessPartnerAddress(address).execute();
 ```
 
 The statement uses the provided `service` to create a new address. Now change the statement slightly to match the following:
 
-```java
+```Java
 final BusinessPartnerAddress addressCreated = service.createBusinessPartnerAddress(address)
                     .execute(destination);
 ```
@@ -105,17 +108,19 @@ This wraps up the first step in migration which is all you need if you want to a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Migrate a resilient OData request)]
+[ACCORDION-BEGIN [Step 4: ](Migrate resilient OData request)]
 
 If you look closely at the `CreateAddressCommand`s constructor you will find the following statement buried in there:
-```java
+
+```Java
 withExecutionTimeoutInMilliseconds(10000)
 ```
 
- It sets a timeout for our request of 10 seconds and is one part in an attempt to make the request resilient against failures. With 3.0 this is no longer done by extending `ErpCommand` or `CachingErpCommand` but by wrapping a request with a `ResilienceConfiguration`.
+It sets a timeout for our request of 10 seconds and is one part in an attempt to make the request resilient against failures. With 3.0 this is no longer done by extending `ErpCommand` or `CachingErpCommand` but by wrapping a request with a `ResilienceConfiguration`.
 
 Consider the following code:
-```java
+
+```Java
 private final TimeLimiterConfiguration timeLimit = TimeLimiterConfiguration.of()
             .timeoutDuration(Duration.ofSeconds(10));
 
@@ -124,7 +129,9 @@ private final ResilienceConfiguration resilienceConfiguration =
             .timeLimiterConfiguration(timeLimit);
 ```
 
-It sets up a `ResilienceConfiguration` which holds all the parameters and configuration necessary to run resilient requests. One of them is the timeout which is defined in a `TimeLimiterConfiguration` which then is added to the `ResilienceConfiguration`. Here we again set the timeout to 10 seconds. Of course the configuration allows for more parameters to be tweaked. Here we go with the default values (except for the timeout) but feel free to take a look at what is provided over at the full [migration guide](https://blogs.sap.com/2019/08/01/migrate-to-version-3.0.0-of-the-sap-cloud-sdk-for-java/). Last but not least take note of the `of(AddressServlet.class)` part that creates the resilience configuration. The class name is simply used as an identifier here. You may provide your own string identifier if you like.
+It sets up a `ResilienceConfiguration` which holds all the parameters and configuration necessary to run resilient requests. One of them is the timeout which is defined in a `TimeLimiterConfiguration` which then is added to the `ResilienceConfiguration`.
+
+Here we again set the timeout to 10 seconds. Of course the configuration allows for more parameters to be tweaked. Here we go with the default values (except for the timeout) but feel free to take a look at what is provided over at the full [migration guide](https://blogs.sap.com/2019/08/01/migrate-to-version-3.0.0-of-the-sap-cloud-sdk-for-java/). Last but not least take note of the `of(AddressServlet.class)` part that creates the resilience configuration. The class name is simply used as an identifier here. You may provide your own string identifier if you like.
 
 Such a configuration may be attached to any request that is to be executed in a resilient manner. Not only allows this for a clear assembly of the desired properties, but it also makes the configuration reusable. One configuration may be used by different requests.
 
@@ -132,7 +139,7 @@ Thus, add the code above to the `AddressServlet` just beneath where the service 
 
 Let's see how we now can use the configuration in our requests. Again, let's first understand the code:
 
-```java
+```Java
 final BusinessPartnerAddress addressCreated = ResilienceDecorator.executeCallable(
                     () -> service.createBusinessPartnerAddress(address).execute(destination),
                     resilienceConfiguration);
@@ -143,11 +150,11 @@ As you can see, instead of calling the service directly, we now wrap the call by
 So let's put together the individual pieces and adapt the complete request.
 
 1. Move the `ErpHttpDestination` we introduced in step 2 from `CreateAddressCommand` over to the `AddressServlet`:
-    ```java
+    ```Java
     private final ErpHttpDestination destination = ErpHttpDestinationUtils.getErpHttpDestination("ERP_SYSTEM");
     ```
 2. In `AddressServlet` navigate to the `CreateAddressCommand(service, address).execute()` call inside `doPost()` and replace it to now use the resilience configuration:
-    ```java
+    ```Java
     final BusinessPartnerAddress addressCreated = ResilienceDecorator.executeCallable(
                     () -> service.createBusinessPartnerAddress(address).execute(destination),
                     resilienceConfiguration);
@@ -160,7 +167,7 @@ With that we successfully migrated our resilient request to to version 3.0. You 
 
 At the end of this step, the `AddressServlet` should look similar to this (code shortened for better visibility of what changed):
 
-```java
+```Java
 package com.sap.cloud.s4hana.examples.addressmgr;
 
 import com.google.common.base.Charsets;
@@ -270,13 +277,13 @@ public class AddressServlet extends HttpServlet {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Migrate a cached OData request)]
+[ACCORDION-BEGIN [Step 5: ](Migrate cached OData request)]
 
 Now we'll move away from the `AddressServlet` and tend to our business partner commands. For the purposes of this tutorial we'll keep the classes instead of removing them. When to have a dedicated class for a command or group of commands now is up to you. For more complex requests it might be convenient to have a dedicated class to keep the code clean and organized.
 
 Tend to the `GetSingleBusinessPartnerByIdCommand` and compare it to the following updated version:
 
-```java
+```Java
 package com.sap.cloud.s4hana.examples.addressmgr.commands;
 
 import org.slf4j.Logger;
@@ -363,7 +370,7 @@ Let's go through the changes step by step:
 
 Let's take a closer look at what is new. Starting with the last point: the `ResilienceDecorator` allows us to specify a fallback behavior to act out in case of a failure. Previously this was achieved by overriding the `getFallback()` method of `ErpCommand`. Now the fallback functionality is added fairly easily by providing a fallback function to the `ResilienceDecorator`. Here we just provide a lambda that constructs a new business partner based on the id we passed:
 
-```java
+```Java
 return ResilienceDecorator.executeCallable(
         this::run,
         resilienceConfiguration,
@@ -373,7 +380,7 @@ return ResilienceDecorator.executeCallable(
 
 The bigger change here is the implementation of our cache, which is now provided by the aforementioned `CacheConfiguration`:
 
-```java
+```Java
 cacheConfiguration = ResilienceConfiguration.CacheConfiguration
         .of(Duration.ofMinutes(5))
         .withParameters(partnerId);
@@ -394,7 +401,7 @@ Also go ahead and apply the same approach to the `GetAllBusinessPartnersCommand`
 
 One more thing on caching: With 3.0 the underlying framework was changed. Now the SDK relies on `JCache` [JSR 107](https://github.com/jsr107/jsr107spec). It defines a caching API but is not an implementation in itself. The SDK also does not export an implementation for it but instead gives the user the freedom to use any implementation they like. But this also means that we have to provide an implementation for our application. For this tutorial we will use [`Caffine`](https://github.com/ben-manes/caffeine). The required dependency can be quickly added to the application `pom.xml`:
 
-```xml
+```XML
 <dependency>
     <groupId>com.github.ben-manes.caffeine</groupId>
     <artifactId>jcache</artifactId>
@@ -413,7 +420,7 @@ Now that the main code is changed let's go ahead to adapting our tests.
 
 First we are going to make changes to the unit tests. Therefore, head towards the `GetAllBusinessPartnersCommandTest` under `unit-tests/` and find the `before()` method. Here you will find stuff that is set up before each test is run. Take note of the invalidation of caches that is performed. Due to the change of the underlying caching framework we'll need to adapt this statement. Replace it with the following code:
 
-```java
+```Java
 Caching.getCachingProvider().getCacheManager().destroyCache(GetAllBusinessPartnersCommand.class.getName());
 ```
 
@@ -421,7 +428,7 @@ It does the exact same thing as before: Getting the specific cache of our comman
 
 Next move on the `mockService()` block. Here we need to account for the changed execute method that now expects a destination. To account for the change modify the code to allow for any destination in the request:
 
-```java
+```Java
 return when(service
                 .getAllBusinessPartner()
                 .select(any(BusinessPartnerSelectable.class))
@@ -434,7 +441,7 @@ The `any()` expression inside `execute` allows any destination to be passed but 
 
 And that's all that is to it. Go ahead and run the test to see that it is working as expected by issuing:
 
-```bash
+```Bash
 mvn clean test -pl unit-tests -am
 ```
 
@@ -449,7 +456,7 @@ We'll now proceed with changing the integration tests and go trough the necessar
 
 1. Add a dependency for `Hamcrest` by adding the following to your `integration-tests/pom.xml`:
 
-    ```xml
+    ```XML
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-core</artifactId>
@@ -462,7 +469,7 @@ We'll now proceed with changing the integration tests and go trough the necessar
 
 2. Head to the `Testutil` class and find the `createDeployment` method. Replace it's content with the following code:
 
-    ```java
+    ```Java
     return ShrinkWrap
             .create(WebArchive.class)
             .addClasses(classesUnderTest)
@@ -475,7 +482,7 @@ We'll now proceed with changing the integration tests and go trough the necessar
 
 3. Dive into the actual `AddressServletTest` and replace the `getAddress(..)` method as follows:
 
-    ```java
+    ```Java
     private BusinessPartnerAddress getAddress(final String bupaId, final String addressId) {
         final BusinessPartnerService service = new DefaultBusinessPartnerService();
         final ErpHttpDestination destination = ErpHttpDestinationUtils.getErpHttpDestination("ERP_SYSTEM");
@@ -500,11 +507,11 @@ We'll now proceed with changing the integration tests and go trough the necessar
 
 With that the integration tests are now set up an ready to run with version 3.0. Assure that everything is running smoothly by issuing:
 
-```bash
+```Bash
 mvn clean test-compile -pl integration-tests -am
 ```
 
-**Note:** In order for the integration tests to run an instance of a S/4HANA system populated with some test data is required. Specifically an existing business partner is needed. Find any business partner in your S/4 system and use their id under `BusinessPartnerServletTest.BUPA_ID` for the tests. Then run the tests with `mvn clean test`.
+>In order for the integration tests to run an instance of a S/4HANA system populated with some test data is required. Specifically an existing business partner is needed. Find any business partner in your S/4 system and use their id under `BusinessPartnerServletTest.BUPA_ID` for the tests. Then run the tests with `mvn clean test`.
 
 [DONE]
 [ACCORDION-END]
@@ -528,7 +535,7 @@ Find out more about what's new and how to migrate your application by taking a l
 
 `GetAllBusinessPartnersCommand`:
 
-```java
+```Java
 package com.sap.cloud.s4hana.examples.addressmgr.commands;
 
 import org.slf4j.Logger;
