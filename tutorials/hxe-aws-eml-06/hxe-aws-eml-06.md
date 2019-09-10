@@ -22,7 +22,7 @@ If you want to use your Jupyter Notebook instance, open a new Terminal using the
 
 Then run the following command which assumes that you have uploaded your private key file (PEM file) in the SageMaker NoteBook:
 
-```shell
+```Shell
 ssh -i <path to pem file>/<pem file name> ec2-user@<instance public IP address>
 ```
 
@@ -34,7 +34,7 @@ ec2-user@hxehost:~>
 
 Switch now to user **`hxeadm`** to start configuring your instance:
 
-```ssh
+```SSH
 sudo su - hxeadm
 ```
 
@@ -78,7 +78,7 @@ SELECT * FROM "SYS"."AFL_PACKAGES" WHERE AREA_NAME = 'EML';
 SELECT * FROM "SYS"."AFL_FUNCTIONS" WHERE AREA_NAME = 'EML';
 ```
 
-> ### **Note:**
+> ### **Note**
 >
 As a reminder, you can execute your SQL statements using the SAP Web IDE (as described in [Prepare for Machine Learning](hxe-aws-eml-04)) :
 >
@@ -98,7 +98,7 @@ When using HDBSQL, you need to enable the multi-line mode using the following co
 
 The **`AFL_AREAS`** & **`AFL_PACKAGES`** should return 1 row each, and the **`AFL_FUNCTIONS`** should return 10 rows.
 
-> ### **Note:**
+> ### **Note**
 >If there result is empty, it probably mean that you need to complete the following tutorial:
 >
 - [Install the SAP HANA External Machine Learning Library Package for SAP HANA, express edition](hxe-ua-eml-binary).
@@ -138,6 +138,11 @@ CREATE REMOTE SOURCE "TensorFlow" ADAPTER "grpc" CONFIGURATION 'server=<ECS Cont
 ```
 
 To get the **ECS Container IP address**, you can check the Amazon ECS tasks: <https://console.aws.amazon.com/ecs/home?#/clusters/hxe-eml-cluster/tasks>
+
+> ### **Note**
+>The ECS Container IP Address is not the same as the EC2 IP address'
+>
+
 
 Now that the remote source was added, you will need to reload the EML configuration as this one is loaded once at the SAP HANA, express edition startup time.
 
