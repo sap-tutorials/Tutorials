@@ -143,8 +143,8 @@ You need to add the Retailer role in the cockpit in order to be able to access t
 
     You can also access the application through the following links
 
-- for the `eCommerce` site: `https://espm\.hanatrial.ondemand.com/espm-cloud-web/webshop`
-- for the Retailer UI: `https://espm\.hanatrial.ondemand.com/espm-cloud-web/retailer`
+- for the `eCommerce` site: `https://espm<YourAccountName>.hanatrial.ondemand.com/espm-cloud-web/webshop`
+- for the Retailer UI: `https://espm<YourAccountName>.hanatrial.ondemand.com/espm-cloud-web/retailer`
 
 Note: If you did not name the application `ESPM` during the deployment, you have to change the name part in the URL respectively.
 
