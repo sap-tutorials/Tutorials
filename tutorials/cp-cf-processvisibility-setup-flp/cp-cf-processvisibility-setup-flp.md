@@ -9,11 +9,11 @@ primary_tag: topic>cloud
 
 ## Prerequisites
 ### Details
-The UIs of Process Visibility must be configured on SAP Web IDE Full-Stack. After configuring and deploying the UIs, the three default tiles of Process Visibility will be available on SAP Fiori launchpad. For more information, see [Consuming UI Applications on SAP Fiori Launchpad](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/27850a2be7834ccfa209a2a3aabd216e.html)
 ### You will learn
 - How to configure your multi-target application to view Process Visibility tiles in SAP Fiori launchpad
 
 ### Prerequisites
+The UIs of Process Visibility must be configured on SAP Web IDE Full-Stack. After configuring and deploying the UIs, the three default tiles of Process Visibility will be available on SAP Fiori launchpad. For more information, see [Consuming UI Applications on SAP Fiori Launchpad](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/27850a2be7834ccfa209a2a3aabd216e.html)
 
   - You must have SAP Web IDE Full-Stack enabled on your Neo account. This is needed for building and deploying FLP modules for accessing the Process Visibility applications on SAP Fiori launchpad.
 
