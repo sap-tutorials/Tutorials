@@ -15,4 +15,5 @@ module.exports = {
         },
     },
     UV_THREADPOOL_SIZE: 64,
+    EXCLUDED_HOSTS: ['localhost', '127.0.0.1'],
 };

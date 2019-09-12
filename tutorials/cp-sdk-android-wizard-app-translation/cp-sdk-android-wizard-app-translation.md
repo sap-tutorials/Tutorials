@@ -68,8 +68,6 @@ See also the following links.
 
 [ACCORDION-BEGIN [Step 2: ](Sign Up for the SAP Translation Hub)]
 
->Note that the SAP Translation Hub wizard in the SAP Cloud Platform SDK for Android is currently not compatible with the SAP Translation Hub in the SAP Cloud Platform Trial.
-
 The [SAP Translation Hub](https://cloudplatform.sap.com/capabilities/devops/translation-hub.html) enables translation of resources to specified languages.  
 
 In the SAP Cloud Platform management cockpit, enable **SAP Translation Hub**.
@@ -83,6 +81,10 @@ Click on the tile and then choose **Go to UI for Translation Workflow**.
 Notice below that there are no existing translation projects.  In the next section, a wizard integrated into Android Studio will create a translation project and request new language files for Italian which is not one of the languages the generated app already contains.
 
 ![Translation Hub UI](translation-hub-ui.png)
+
+>Note that the SAP Translation Hub wizard in the SAP Cloud Platform SDK for Android is currently not compatible with the SAP Translation Hub in the SAP Cloud Platform Trial.  It is possible to press the + icon in the above UI to create a new translation project, upload  strings_localized.xml and request a translation.  One of the benefits of this is that feedback is provided on the expected quality of the translation as shown below.
+
+![File upload translation](manual-translation.png)
 
 [DONE]
 [ACCORDION-END]

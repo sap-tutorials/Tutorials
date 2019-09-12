@@ -1,47 +1,63 @@
 ---
-title: Creating a Git repository within a GitHub organization
-description: PCollaborative Development Using GitHub and SAP Web IDE
+title: Create a Git Repository in a GitHub Organization
+description: Create a repository in a GitHub organization to support collaborative development using GitHub and SAP Web IDE.
 primary_tag: products>sap-web-ide
 tags: [ tutorial>beginner, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+time: 5
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:**
-  - [Creating a GitHub organization and adding collaborators](https://developers.sap.com/tutorials/webide-github-creating-org.html)
-
-## Next Steps
- - [Creating project in SAP Web IDE and importing it into GitHub](https://developers.sap.com/tutorials/webide-github-import-project.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how to create a Git repository within a GitHub organization.
-
-### Time to Complete
-**5 Min**.
+  - How to create a Git repository within a GitHub organization
 
 ---
 
-1. Go to [GitHub](https://github.com) and login with your account credentials.
+[ACCORDION-BEGIN [Step 1: ](Log into GitHub)]
 
-2. Switch to the Organization context by clicking on the **Switch dashboard context** drop-down and click on the Organization.
+Go to [GitHub](https://github.com) and login with your account credentials.
 
-    ![Switch dashboard context](p2_2.png)
+[DONE]
+[ACCORDION-END]
 
-3. Click on **New repository**. Alternatively, click on the **+** icon on the top-right corner and click on **New Repository**.
+[ACCORDION-BEGIN [Step 2: ](Switch dashboard context)]
 
-    ![Create new repository under an organization](p2_3.png)
+Switch to the organization context by clicking on the **Switch dashboard context** drop-down, and click the organization.
 
-4. Enter the repository name, description and click on **Initialize this repository with a README**. You can add in a `.gitignore` and license later on.
+![Switch dashboard context](p2_2.png)
 
-    ![Repository details](p2_4.png)
+[DONE]
+[ACCORDION-END]
 
-5. If you did not select the option to **Initialize this repository with a README**, create an initial commit by adding a Readme file. You can keep this readme file simple for now and add in details later
+[ACCORDION-BEGIN [Step 3: ](Create new repository)]
 
-    ![Adding readme file](p2_5.png)
+Click **New** next to **Repositories**.
 
-6. At the commit screen, enter a short description for commit reason and then click on the **Commit new file** button.
+>Alternatively, click the **+** icon on the top-right corner and click on **New Repository**. Remember to change the owner to your organization.
 
-    ![Committing readme file](p2_6.png)
+![Create new repository under an organization](p2_3.png)
 
-6. Your Git repository is ready!
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 4: ](Name the repository)]
+
+Enter the repository name and description, and click the **Initialize this repository with a README** checkbox.
+
+You can add a `.gitignore` and license later on.
+
+![Repository details](p2_4.png)
+
+>If you did not select the option to **Initialize this repository with a README**, create an initial commit by adding a README file. You can keep this README file simple for now and add in details later.
+
+>![Adding readme file](p2_5.png)
+
+>At the commit screen, enter a commit message and click **Commit new file**.
+
+>![Committing readme file](p2_6.png)
+
+> &nbsp;
+
+Your GitHub repository is ready!
+
+[DONE]
+[ACCORDION-END]

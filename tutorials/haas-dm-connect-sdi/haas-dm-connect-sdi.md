@@ -3,7 +3,7 @@ title: Configure Smart Data Integration with the SAP HANA Service
 description: Configure the data provisioning agent and create a remote source.
 auto_validation: true
 time: 25
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
+tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-cloud-platform\,-sap-hana-service
 ---
 

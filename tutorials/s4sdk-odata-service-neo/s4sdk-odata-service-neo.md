@@ -1,13 +1,13 @@
 ---
-title: Connect to OData service on Neo using SAP S/4HANA Cloud SDK
-description: The following steps will explain how to create a basic Java project to call OData services using the SAP S/4HANA Cloud SDK on Neo.
+title: Connect to OData service on Neo using SAP Cloud SDK
+description: Create a basic Java project to call OData services using the SAP Cloud SDK on Neo.
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, topic>cloud, topic>java, topic>odata ]
 primary_tag: products>sap-s-4hana-cloud-sdk
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** intermediate
  - In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the cost center service introduced here with any other API published on the SAP API `BusinessHub`. If you do not have an `S/4HANA` system available, you may use a public service such as the [Northwind OData Service](http://services.odata.org/V2/Northwind/Northwind.svc) as a fallback solution.
 
 ## Details
@@ -18,15 +18,13 @@ Please note that depending on the platform you are using (`Neo` or `Cloud Foundr
 S/4HANA on-premise |	[SAP Cloud Connector required with HTTP Destination](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html)
 S/4HANA Cloud | [Direct Connection with BASIC Auth (technical user)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e5c9867dbb571014957ef9d7a8846b1c.html); [Direct Connection with `SAMLOAuthBearer` (`PrincipalPropagation` with `BusinessUser`)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e5c9867dbb571014957ef9d7a8846b1c.html)
 
-Note that your application code is not dependent on the platform you are using. Using the `S/4HANA Cloud SDK`, you can write your code once, and it will be capable of dealing with all different authentication and connectivity options.
+Note that your application code is not dependent on the platform you are using. Using the `SAP Cloud SDK`, you can write your code once, and it will be capable of dealing with all different authentication and connectivity options.
 
 ### You will learn
 In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on `SAP Cloud Platform` based on `Neo`, and write an integration test.
 If you want to follow this tutorial, it is highly recommended to check out the previous tutorials in the series. You will not need any additional software besides the setup explained in the first part of the series as the server will run on your local machine.
 **Note**: This tutorial requires access to an `SAP ERP` system or, as a fallback, any other `OData V2` service.
 
-### Time to Complete
-**20 Min**
 
 ---
 
@@ -37,7 +35,7 @@ This section explains the concepts of the S/4HANA Virtual Data Model. If you wou
 The data stored in an S/4HANA system is inherently complexly structured and therefore difficult to query manually. Therefore, HANA introduced a Virtual Data Model (VDM) that aims to abstract from this complexity and provide data in a semantically meaningful and easy to consume way. The preferred way to consume data from an S/4HANA system is via the OData protocol. While BAPIs are also supported for compatibility reasons, OData should always be your first choice. You can find a list of all the available OData endpoints for S/4HANA Cloud systems in [SAP's API Business Hub](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud?section=ARTIFACTS).
 
 
-The S/4HANA Cloud SDK now brings the VDM for OData to the Java world to make the type-safe consumption of OData endpoints even more simple! The VDM is generated using the information from SAP's [API Business Hub](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud?section=ARTIFACTS). This means that it's compatible with every API offered in the API Business Hub and therefore also compatible with every S/4HANA Cloud system.
+The SAP Cloud SDK now brings the VDM for OData to the Java world to make the type-safe consumption of OData endpoints even more simple! The VDM is generated using the information from SAP's [API Business Hub](https://api.sap.com/shell/discover/contentpackage/SAPS4HANACloud?section=ARTIFACTS). This means that it's compatible with every API offered in the API Business Hub and therefore also compatible with every S/4HANA Cloud system.
 
 
 [DONE]
@@ -65,7 +63,7 @@ final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
         .asList(MyBusinessPartnerType.class);
 ```
 
-The `ODataQueryBuilder` represents a simple and generic approach to consuming OData services in your application and is well suited to support arbitrary services. It is a big step forward from manually building up an HTTP request to an OData service and processing the results in your code, and is used internally by the S/4HANA Cloud SDK. In turn, the `ODataQueryBuilder` also uses concepts of the SAP S/4HANA Cloud SDK to simplify communication with systems, which are referenced by an `ErpConfigContext`.
+The `ODataQueryBuilder` represents a simple and generic approach to consuming OData services in your application and is well suited to support arbitrary services. It is a big step forward from manually building up an HTTP request to an OData service and processing the results in your code, and is used internally by the SAP Cloud SDK. In turn, the `ODataQueryBuilder` also uses concepts of the SAP Cloud SDK to simplify communication with systems, which are referenced by an `ErpConfigContext`.
 
 Nevertheless, there are quite a few pitfalls you can fall into when using the plain `ODataQueryBuilder` approach to call OData services:
 
@@ -79,7 +77,7 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 [ACCORDION-BEGIN [Step 3: ](Virtual Data Model: The new way to OData)]
 
-Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the S/4HANA Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
+Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
 ```Java
 final List<BusinessPartner> businessPartners =
@@ -121,7 +119,7 @@ For any OData service not part of SAP's API Business Hub, the `ODataQueryBuilder
 
 [ACCORDION-BEGIN [Step 4: ](Write the BusinessPartnerServlet)]
 
-The `SAP S/4HANA Cloud SDK` provides simple and convenient ways to access your ERP systems out of the box. In this example you will implement an endpoint that performs an `OData` query to `SAP S/4HANA` in order to retrieve a list of **business partners** from your ERP system. More specifically, we want to retrieve all persons (a specific kind of business partner) with their name and a few additional properties.
+The `SAP Cloud SDK` provides simple and convenient ways to access your ERP systems out of the box. In this example you will implement an endpoint that performs an `OData` query to `SAP S/4HANA` in order to retrieve a list of **business partners** from your ERP system. More specifically, we want to retrieve all persons (a specific kind of business partner) with their name and a few additional properties.
 
 To get started, open your previously created `Hello World` project (in our case, it is called **`firstapp`**) and **`create a new file`** called `BusinessPartnerServlet.java` in the following location:
 
@@ -197,7 +195,7 @@ Finally, having prepared the query, we call the `execute` method. This method do
 - the connectivity to this system, which may reside on-premise behind a corporate firewall, – by means of the connectivity service and the optional Cloud Connector, and
 - the authentication to this system using potentially vastly different authentication flows (basic authentication, principal propagation, OAuth2).
 
-The SAP S/4HANA Cloud SDK provides all of these capabilities with a simple interface and allows customers (tenants) of your application to configure the connection to their system. We will discuss the configuration below when deploying the project.
+The SAP Cloud SDK provides all of these capabilities with a simple interface and allows customers (tenants) of your application to configure the connection to their system. We will discuss the configuration below when deploying the project.
 
 The `execute` method of the VDM returns the query result as a `navigatable` list of type `BusinessPartner`, which represents the entity type of the response in a type-safe manner. We declare the servlet's response as JSON content and transform the result into a JSON response.
 
@@ -441,9 +439,12 @@ In case you are trying to connect to an OData service endpoint on a server witho
 
 - To manually override the chain of trust, you can set a special flag on the destination configuration. To avoid any further issues with untrusted certificates in your local Neo deployment environment, please change the TrustAll flag in your destinations configuration file
 `./config_master/service.destinations/destinations/ErpQueryEndpoint`
-`...
+`
+```
+...
 TrustAll=TRUE
-...​`
+...​
+```
 
 
 **Connecting to the `OData` service**
@@ -453,7 +454,6 @@ If you are still facing problems when connecting to the OData service, try the f
 
 
 ```
-
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
@@ -464,7 +464,7 @@ If you are still facing problems when connecting to the OData service, try the f
 ```
 
 If you are behind a proxy and want to connect your app running locally with the Cloud Foundry archetype to an SAP S/4HANA system in your network, you can supply your proxy information as part of the destinations environment variable (see [Javadoc](https://help.sap.com/http.svc/rc/fe7d14ff3c3043aca2920cb72d725492/1.0/en-US/index.html?com/sap/cloud/sdk/cloudplatform/connectivity/AbstractDestinationFacade.html)):
-`[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD", properties: [{key: "TrustAll", value: "true"},{key: "proxyHost", value: "my-proxy.com"},{key: "proxyPort", value: "8080"}]}]`
+`[{name: "`ErpQueryEndpoint`", `url`: "https://URL", username: "USER", password: "PASSWORD", properties: [{key: "TrustAll", value: "true"},{key: "`proxyHost`", value: "my-proxy.com"},{key: "`proxyPort`", value: "8080"}]}]`
 
 [DONE]
 

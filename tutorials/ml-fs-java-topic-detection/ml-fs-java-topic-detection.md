@@ -26,9 +26,6 @@ You can of course substitute the Eclipse IDE &trade; with alternate tools and ad
 
 In this tutorial, you will learn the basics of making API calls against the Machine Learning Functional Services published in SAP API Business Hub.
 
-
----
-
 [ACCORDION-BEGIN [Step 1: ](Get The Code Snippet And the API key)]
 
 In order to consume the **Topic Detection API** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI, request and response parameters.
@@ -249,7 +246,7 @@ by
   System.out.println(
       "Enter the total number of topic to be detected (default: \"" + numTopicsDefault + "\") : ");
   line = scanner.nextLine();
-  while (!!line.matches("\\d+") && line.length() > 0)
+  while (!line.matches("\\d+") && line.length() > 0)
     line = scanner.nextLine();
   if (line.length() > 0)
     numTopics = Integer.valueOf(line);
@@ -258,7 +255,7 @@ by
   int numTopicsPerDoc = numTopicsPerDocDefault;
   System.out.println("Enter the number of most relevant topics to be listed per document (default: \"" + numTopicsPerDocDefault + "\") : ");
   line = scanner.nextLine();
-  while (!!line.matches("\\d+") && line.length() > 0)
+  while (!line.matches("\\d+") && line.length() > 0)
     line = scanner.nextLine();
   if (line.length() > 0)
     numTopicsPerDoc = Integer.valueOf(line);
@@ -267,7 +264,7 @@ by
   int numKeywordsPerTopic = numKeywordsPerTopicDefault;
   System.out.println("What is the number of keywords to be listed per topic (default: \"" + numKeywordsPerTopicDefault + "\") : ");
   line = scanner.nextLine();
-  while (!!line.matches("\\d+") && line.length() > 0)
+  while (!line.matches("\\d+") && line.length() > 0)
     line = scanner.nextLine();
   if (line.length() > 0)
     numKeywordsPerTopic = Integer.valueOf(line);
@@ -276,7 +273,7 @@ by
   int numFeatures = numFeaturesDefault;
   System.out.println("Enter is the maximum number of keywords to be extracted per documents (default: \"" + numFeaturesDefault + "\") : ");
   line = scanner.nextLine();
-  while (!!line.matches("\\d+") && line.length() > 0)
+  while (!line.matches("\\d+") && line.length() > 0)
     line = scanner.nextLine();
   if (line.length() > 0)
     numFeatures = Integer.valueOf(line);
@@ -448,7 +445,7 @@ public class DemoTopicDetection {
       System.out.println(
           "Enter the total number of topic to be detected (default: \"" + numTopicsDefault + "\") : ");
       line = scanner.nextLine();
-      while (!!line.matches("\\d+") && line.length() > 0)
+      while (!line.matches("\\d+") && line.length() > 0)
         line = scanner.nextLine();
       if (line.length() > 0)
         numTopics = Integer.valueOf(line);
@@ -457,7 +454,7 @@ public class DemoTopicDetection {
       int numTopicsPerDoc = numTopicsPerDocDefault;
       System.out.println("Enter the number of most relevant topics to be listed per document (default: \"" + numTopicsPerDocDefault + "\") : ");
       line = scanner.nextLine();
-      while (!!line.matches("\\d+") && line.length() > 0)
+      while (!line.matches("\\d+") && line.length() > 0)
         line = scanner.nextLine();
       if (line.length() > 0)
         numTopicsPerDoc = Integer.valueOf(line);
@@ -466,7 +463,7 @@ public class DemoTopicDetection {
       int numKeywordsPerTopic = numKeywordsPerTopicDefault;
       System.out.println("What is the number of keywords to be listed per topic (default: \"" + numKeywordsPerTopicDefault + "\") : ");
       line = scanner.nextLine();
-      while (!!line.matches("\\d+") && line.length() > 0)
+      while (!line.matches("\\d+") && line.length() > 0)
         line = scanner.nextLine();
       if (line.length() > 0)
         numKeywordsPerTopic = Integer.valueOf(line);
@@ -475,7 +472,7 @@ public class DemoTopicDetection {
       int numFeatures = numFeaturesDefault;
       System.out.println("Enter is the maximum number of keywords to be extracted per documents (default: \"" + numFeaturesDefault + "\") : ");
       line = scanner.nextLine();
-      while (!!line.matches("\\d+") && line.length() > 0)
+      while (!line.matches("\\d+") && line.length() > 0)
         line = scanner.nextLine();
       if (line.length() > 0)
         numFeatures = Integer.valueOf(line);

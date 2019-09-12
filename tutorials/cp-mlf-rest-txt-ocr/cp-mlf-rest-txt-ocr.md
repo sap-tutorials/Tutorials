@@ -106,7 +106,7 @@ You should receive a response that includes the text found:
 ]
 ```
 
-You can also try with the following PDF file [link](ocr-test.pdf).
+You can also try with the following PDF file [link](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-mlf-rest-txt-ocr/ocr-test.pdf).
 
 [DONE]
 [ACCORDION-END]

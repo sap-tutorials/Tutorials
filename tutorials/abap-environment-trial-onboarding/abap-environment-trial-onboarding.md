@@ -10,12 +10,13 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
- - You have created a trial account on SAP Cloud Platform <https://developers.sap.com/tutorials/hcp-create-trial-account.html>.
- - You have created a cloud foundry trial account <https://developers.sap.com/tutorials/cp-cf-create-account.html>.
+ - You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform
+](hcp-create-trial-account)
+ - You have created a cloud foundry trial account: [Create a Cloud Foundry Account](cp-cf-create-account)
 
 ## Details
 ### You will learn  
-  - How to create an trial user
+  - How to create a trial user
   - How to create an ABAP Cloud project
 
 ---
@@ -139,11 +140,11 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](project3.png)
 
-  4. Logon to your ABAP trial account with your e-mail address and password.
+  4. Log onto your ABAP trial account with your e-mail address and password.
 
       ![Create ABAP cloud project](project4.png)
 
-  5. Click Finish.
+  5. Click **Finish**.
 
       ![Create ABAP cloud project](project5.png)
 

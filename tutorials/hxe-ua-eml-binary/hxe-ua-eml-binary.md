@@ -11,7 +11,7 @@ time: 3
 <!-- loioeafe436a2fa34b13908fc0661ff5b8c9 -->
 
 ## Prerequisites
- - **Tutorials:**  You have completed [Test the Installation](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)  
+ - **Tutorials:**  You have completed [Test the Installation](hxe-ua-test-binary). 
 
 ## Details
 ### You will learn
@@ -25,8 +25,8 @@ Use the Download Manager to download HANA External Machine Learning AFL, `eml.tg
 
 > Note:
 > If you're using Download Manager (GUI Mode) make sure you're using the latest version.
->
->
+> 
+> 
 
 Navigate to `/usr/sap/HXE/home/bin`:
 
@@ -40,6 +40,8 @@ Enter the following command:
 ./HXEDownloadManager_linux.bin linuxx86_64 installer eml.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extract `eml.tgz`)]
@@ -49,6 +51,8 @@ Extract `eml.tgz`:
 ```bash
 tar -xvzf eml.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -62,4 +66,8 @@ As the <sid>`adm` user, run:
 
 For more information on the SAP HANA External Machine Learning Library, see the [SAP HANA documentation collection](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM).
 
+[DONE]
+
 [ACCORDION-END]
+
+

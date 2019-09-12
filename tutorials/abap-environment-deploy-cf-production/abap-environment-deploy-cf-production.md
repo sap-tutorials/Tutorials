@@ -83,7 +83,7 @@ time: 15
      - Organization: **`<your_organization>`**
      - Space: **`<your_space>`**
 
-     Click **Install Builder** and **Save**.
+     Click **Save**.
 
       ![open web ide](builder.png)
 

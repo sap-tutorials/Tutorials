@@ -3,7 +3,7 @@ title: Create and Run an ABAP Application
 description: Create and run an ABAP application based on tables from the sample EPM data model.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development  ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -172,7 +172,6 @@ START-OF-SELECTION.
 
 [ACCORDION-BEGIN [Step 11: ](Test yourself)]
 
-Add the event keyword that turns a report into an executable program, then directly call the class method `Main` of the class `Demo`. (Don't indent your lines of code; pay attention to space characters.) Enter the code in the box below and choose **Validate**:
 
 [VALIDATE_1]
 [ACCORDION-END]

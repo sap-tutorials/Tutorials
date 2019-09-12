@@ -3,7 +3,7 @@ title: Configure the Development Environment
 description: Configure SAP Web IDE for Full Stack, which you will use to create a multi-target application based on the SAP Cloud Application Programming Model.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
+tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
@@ -71,7 +71,7 @@ Login with your username and password.
 
 Choose your **Space** and click on **Install Builder**. Wait until the builder is installed.
 
-![New project from template](10.png)
+![New project from template](10X.png)
 
 Once the builder is installed...
 
@@ -79,7 +79,7 @@ Once the builder is installed...
 
 ... click **Save**.
 
-![New project from template](12.png)
+![New project from template](12X.png)
 
 [DONE]
 [ACCORDION-END]

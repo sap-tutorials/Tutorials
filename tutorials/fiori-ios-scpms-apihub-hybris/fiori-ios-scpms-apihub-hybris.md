@@ -2,437 +2,292 @@
 title: Build a Hybris Cloud app with SAP API Business Hub and SAP Cloud Platform SDK for iOS
 description: Use the SAP API Business Hub integration in SAP Cloud Platform SDK for iOS to create an app extending SAP Hybris Cloud
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-hybris-as-a-service-on-sap-cloud-platform, products>sap-api-management ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+time: 25
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 2.0
-- **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
+- [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+- [Set Up the SAP Cloud Platform SDK for iOS](https://developers.sap.com/group.ios-sdk-setup.html)
 
-## How-To Details
+## Details
+
 The **SAP API Business Hub** contains a catalog of API's and Business Services for SAP S/4HANA Cloud, SAP Leonardo, SuccessFactors, Hybris, Concur, and many more.
 
-For developers, this is a tremendous help when developing applications which need to interact with one or more of these products, because behind all of these API's, a sandbox environment is available, all populated with data. During development, you don't need to interact with a live system, you just connect to the sandbox API endpoint. And once you go live, all you need to do is change the sandbox API endpoint to the productive API endpoint, and off you go.
+For developers, this is a tremendous help when developing applications which need to interact with one or more of these products. Behind all of these API's, is a sandbox environment available, all populated with data. During development, you don't need to interact with a live system, you just connect to the sandbox API endpoint. Once you go live, all you need to do is change the sandbox API endpoint to the productive API endpoint, and off you go.
 
-The **SDK Assistant** tool of the **SAP Cloud Platform SDK for iOS** is an indispensable tool when creating an application based on an SAP API Business Hub API. With it's wizard-style approach to creating the scaffolding application, it helps you select the correct API endpoint, abstracts the authentication to the API Hub and generates the Xcode project containing all the proxy classes to interact with the selected API Hub OData service.
+The **iOS Assistant** of the **SAP Cloud Platform SDK for iOS** is a great tool when creating an application based on an API out of the SAP API Business Hub. With it's step-by-step creation approach, it helps you select the correct API endpoint, abstracts the authentication to the API Hub and generates the Xcode project containing all the proxy classes to interact with the selected API Hub OData service.
 
-In this tutorial, you will create an application using an **SAP Hybris Marketing Cloud** API endpoint. When you have finished the tutorial, you have learnt how quickly you can create an application using the SAP Cloud Platform SDK for iOS and the SAP API Business Hub, and how little code is necessary to actually create a nice-looking, interactive working application.
+In this tutorial, you will create an application using an **SAP Hybris Marketing Cloud** API endpoint, you will expose the **Corporate Accounts** in SAP Hybris Marketing Cloud, and display them with an SAP Fiori control which allows you to call, message or email these contacts.
 
-For this tutorial, you will expose the **Corporate Accounts** in SAP Hybris Marketing Cloud, and display them with an SAP Fiori control which allows you to call, message or email these contacts.
+### You will learn
 
-![Splash](fiori-ios-scpms-apihub-hybris-31.png)
-
-### Time to Complete
-**20 Min**.
+- How to create an app with the SAP Cloud Platform SDK for iOS and the SAP API Business Hub.
+- How you can leverage the SAP Cloud Platform SDK for iOS Assistant to connect to an SAP API Business Hub API
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure SAP Cloud Platform SDK for iOS Assistant)]
+[ACCORDION-BEGIN [Step 1: ](Examine the SAP Hybris Marketing Cloud API)]
 
-> **Note**: If you have already configured the SAP Cloud Platform SDK for iOS Assistant, you can **skip this step** and proceed with "Step 2 - Run the SAP Cloud Platform SDK for iOS Assistant".
+In order to get an understanding of the API we're going to use the SAP API Business webpage. Please go to [SAP API Business Hub](https://api.sap.com) and use the search field to search for **SAP Hybris Marketing Cloud**. Please make sure **API** is selected in the **Refined by** section.
 
-.
+![api_hub-1](fiori-ios-scpms-apihub-hybris-1.png)
 
-This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform mobile service for development and operations cockpit.
+Go ahead and select the **Marketing - Contact** API collection to navigate to the details.
 
-Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in, navigate to **Services**. Scroll down to **Mobile Services** and click on the **Development & Operations** tile. In the **Development & Operations - Overview** page, click the **Go to Service** link to open a new window to **SAP Cloud Platform mobile service for development and operations**.
+![api_hub-1](fiori-ios-scpms-apihub-hybris-2.png)
 
-> Alternatively, you can go directly to `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`.
+By default the first API is selected, the Contacts API is the one we need. Please select **Contacts** on the left-hand side.
 
-.
+![api_hub-1](fiori-ios-scpms-apihub-hybris-3.png)
 
-Once you're logged in to **SAP Cloud Platform mobile service for development and operations**, click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
+You will see the overview of all possible calls for the Contacts API. Please click on **Try out** link for the `/Contacts`. The webpage will ask you to login to your SAP Cloud Platform account. If you don't have one please register for an account, you can use your trial account.
 
-![Important Links](fiori-ios-scpms-apihub-hybris-01.png)
+![api_hub-1](fiori-ios-scpms-apihub-hybris-4.png)
 
-Locate the tile **SAP Cloud Platform SDK for iOS Assistant** and click the **Importing URLs directly into Assistant** link. You should now see the following pop-up:
+After you successfully logged into the SAP API Business Hub you can try out the API by filling out the different parameters.
 
-![Import URLs](fiori-ios-scpms-apihub-hybris-02.png)
+![api_hub-1](fiori-ios-scpms-apihub-hybris-5.png)
 
-Click the **Open SAP Cloud Platform SDK for iOS Assistant** button. The SAP Cloud Platform SDK for iOS Assistant application will start. The **New Account** settings dialog will open, and both **Admin API URL** and **Admin UI URL** parameters are pre-populated automatically:
+For now to see the standard response, please scroll down.
 
-![Import URLs](fiori-ios-scpms-apihub-hybris-03.png)
+![api_hub-1](fiori-ios-scpms-apihub-hybris-5.png)
 
-Provide the following additional details:
+Here you can see how a **200** response could look like. With that you can go ahead and explore the API as you wish.
 
-| Field | Value |
-|----|----|
-| Name | A descriptive name for the configuration, for instance `SAP Cloud Platform Mobile Services` |
-| Authentication Type | `Basic Authentication` |
-| User | Your trial account user |
-| Password | Password for your trial account user |
-
-![Import URLs](fiori-ios-scpms-apihub-hybris-04.png)
-
-Click **Add** when finished. The account is now added to the SDK Assistant:
-
-![Import URLs](fiori-ios-scpms-apihub-hybris-05.png)
-
-Close the **Accounts** dialog.
+![api_hub-1](fiori-ios-scpms-apihub-hybris-6.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an Xcode Project)]
+[ACCORDION-BEGIN [Step 2: ](Generate an iOS app connecting to SAP Hybris Marketing Cloud)]
 
-Click the **Plus** button on the top-right of the SDK Assistant. The first page of the Xcode Project generation wizard lets you define the Project Properties.
+Now we'll use the SAP Cloud Platform SDK for iOS Assistant to connect to the SAP Hybris Marketing Cloud over SAP API Business Hub and generate an app.
+Please open up your iOS Assistant and click on **Create new**.
 
-Enter the following details:
+![assistant](fiori-ios-scpms-apihub-hybris-7.png)
 
-| Field | Value |
-|----|----|
-| Product Name | `MyHybris` |
-| Author | `<your name>` |
-| Organization Name | `<your company name>` |
-| Organization Identifier | `com.sap.tutorials.demoapp` |
-| Destination | `<choose a local destination>` |
+Now we want to create a complete new application so click on **Create New Application**.
 
-![Project Properties](fiori-ios-scpms-apihub-hybris-06.png)
+![assistant](fiori-ios-scpms-apihub-hybris-8.png)
 
-Click **Next** to advance to the **SAP Cloud Platform mobile service for development and operations Configuration** step.
+Next we want to define the Mobile Services Cloud Application. Please enter the following values:
 
-[DONE]
-[ACCORDION-END]
+Property             |  Value
+:-------------------------:|:-------------------------:
+Name  | `MyHybrisContactsApp`
+Identifier | `com.example.hybris`
+Authentication | `OAuth2`
 
+Click on **Next**.
 
-[ACCORDION-BEGIN [Step 3: ](SAP Cloud Platform mobile service for development and operations Configuration details)]
+![assistant](fiori-ios-scpms-apihub-hybris-9.png)
 
-In the **SAP Cloud Platform mobile service for development and operations Configuration** page, select the **Create** tab button.
+Now we want to utilize the SAP API Business Hub, for that please click on **Add new from API Management** to go to the catalog.
 
-Enter the following details:
+![assistant](fiori-ios-scpms-apihub-hybris-10.png)
 
-| Field | Value |
-|----|----|
-| Application Name | `MyHybris` |
-| Application Identifier | `com.sap.tutorials.demoapp.MyHybris` |
-| Authentication Type | `SAML Authentication` |
+Click on **Next**.
 
-![Use Existing](fiori-ios-scpms-apihub-hybris-07.png)
+![assistant](fiori-ios-scpms-apihub-hybris-11.png)
 
-Click **Next** to advance to the **OData Services** step.
+Now we have a big list with all the available **API Products**. Look for the **SAP Marketing Cloud**, select it and click on **Next**.
 
-[DONE]
-[ACCORDION-END]
+![assistant](fiori-ios-scpms-apihub-hybris-12.png)
 
-[ACCORDION-BEGIN [Step 4: ](OData Services)]
+This screen shows a list with all the available APIs in the **SAP Marketing Cloud**. Please look for the **Marketing - Contact** API, select it and click on **Next**.
 
-In the **OData Services** page, you can define the back end connection. Here you will add the OData endpoint for the **Hybris Marketing Cloud** OData service.
+![assistant](fiori-ios-scpms-apihub-hybris-13.png)
 
-Click the **Plus** button, and from the context menu, select **New Destination to a Service from the API Business Hub...**.
+Now we could choose different details to the API configuration. You could switch between **Sandbox and **Production** here as well. We will let everything as is and click on **Next**.
 
-![OData Services](fiori-ios-scpms-apihub-hybris-08.png)
+![assistant](fiori-ios-scpms-apihub-hybris-14.png)
 
-A dialog opens. In the left pane, scroll down a bit to **SAP Hybris Marketing Cloud**. In the right pane, locate the **Marketing - Corporate Accounts** entry and click the **Consume** button:
+We chose the correct API and selected our API details, now define the destination details so the iOS Assistant can create all the necessary configurations on the Mobile Services.
 
-![OData Services](fiori-ios-scpms-apihub-hybris-09.png)
+Please provide the following values:
 
-In the next page, leave the settings as-is:
+Property             |  Value
+:-------------------------:|:-------------------------:
+Name  | `MarketingContactHybris`
 
-![OData Services](fiori-ios-scpms-apihub-hybris-10.png)
+Click on **Next**.
 
-Click **Next** to proceed. The **Create New Destination** dialog now pops up. In the general tab, review the configured **Destination name** and **Back-end URL**:
+![assistant](fiori-ios-scpms-apihub-hybris-15.png)
 
-![OData Services](fiori-ios-scpms-apihub-hybris-11.png)
+The destination is now created. This will be used to route the app's requests to the correct backend. Make sure the destination is selected and click on **Next**.
 
-In the **Authentication** tab, note the **Authentication Type** is set to **No Authentication**:
+![assistant](fiori-ios-scpms-apihub-hybris-16.png)
 
-![OData Services](fiori-ios-scpms-apihub-hybris-12.png)
+> In case you see an error message like the one below , this probably means you've reached your application limit of 5 on SAP Cloud Platform Mobile Services. Please login to your account and delete an application.
 
-This is because SAP Cloud Platform mobile service for development and operations will add the API Business Hub `APIkey` request header to the requests, so you as a developer don't need to worry about the authentication to SAP API Business Hub.
+![assistant](fiori-ios-scpms-apihub-hybris-17.png)
 
-Click **OK** to dismiss the dialog. The OData destination is now added:
+Now click through the rest of the steps to generate the app. You can leave everything as is. Xcode should start up with the generated app, please build and run the app in simulator. After the Onboarding process you should see the first screen of the generated app.
 
-![OData Services](fiori-ios-scpms-apihub-hybris-13.png)
+![assistant](fiori-ios-scpms-apihub-hybris-18.png)
 
-Click **Next** to advance to the **Optional Features** step.
+If you now tap on **Contacts** you should see all available contacts.
+
+![assistant](fiori-ios-scpms-apihub-hybris-19.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Optional Features)]
+[ACCORDION-BEGIN [Step 3: ](Implement the contact data in a FUIContactCell)]
 
-In the **Optional Features** page, you have the option to generate a **Master-Detail Application**, enable **logging** and **log uploads**, and enable **remote notifications**.
+The list of the contacts is using an `FUIObjectTableViewCell` right now, we want to change that to a `FUIContactCell`. To get the correct code for that you can use the SAP Fiori Mentor iPad App to browse for the `FUIContactCell`. Also you can share the sample code to your machine and use the code in Xcode.
 
-![Optional Features](fiori-ios-scpms-apihub-hybris-14.png)
+> No worries, if you don't have an iPad I will have the code snippets in this tutorial as well.
 
-Make sure the checkboxes **Generate Master-Detail Application**, **Enable Logging** and **Enable Log Upload** are selected and click **Finish** to complete the wizard.
+Open up the SAP Fiori Mentor app on your iPad and tap on **UI Controls**.
 
-> Most likely the checkbox for **Remote Notifications** is disabled. This happens because no APNS endpoint is configured for the application definition in SAP Cloud Platform mobile service for development and operations. Once configured with a valid certificate, this option becomes available.
+![assistant](fiori-ios-scpms-apihub-hybris-20.png)
 
+Now use the search field to search for **Contact**. Select the **Contact Cell**.
 
-[DONE]
-[ACCORDION-END]
+![assistant](fiori-ios-scpms-apihub-hybris-21.png)
 
-[ACCORDION-BEGIN [Step 6: ](Generating the Xcode project)]
+Now you could configure the contact cell as you wish but we will use the standard implementation. Tap on **Export** in the top right corner.
 
-After you have clicked **Finish** in the previous step, the SDK Assistant now loads the OData service's metadata. Based on this metadata, the OData proxy classes will be generated for the Xcode project.
+![assistant](fiori-ios-scpms-apihub-hybris-22.png)
 
-In addition, the configuration settings you have provided in the SDK Assistant are now being sent to SAP Cloud Platform mobile service for development and operations.
+Now you can see the exact code to build the cell you saw in the preview. Tap on the Share button in the top right corner.
 
-> **NB:** If you have already 3 native applications defined in SAP Cloud Platform mobile service for development and operations, the SDK Assistant will give the following error:
+Select AirDrop or any other variable display to share the code to your machine. You can also use universal keyboard if your MacBook and iPad is setup with the same iCloud account.
 
-> ![Optional Features](fiori-ios-scpms-apihub-hybris-14a.png)
+![assistant](fiori-ios-scpms-apihub-hybris-23.png)
 
-> In that case, log on to your **SAP Cloud Platform mobile service for development and operations** account at `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete in order for the SDK Assistant to add the new application configuration.
+After you shared the code to your machine we can go into Xcode and implement the cell. Please open the `ContactMasterViewController`.
 
-[DONE]
-[ACCORDION-END]
+> **Hint:** You can use the `Open Quickly` feature of Xcode to search for the `ContactMasterViewController` class with `Command + Shift + O`.
 
-[ACCORDION-BEGIN [Step 7: ](Examine the generated Xcode Project)]
+![assistant](fiori-ios-scpms-apihub-hybris-24.png)
 
-After the SDK Assistant has finished, **Xcode** will launch and open the just generated `MyHybris` project.
-
-![Xcode project overview](fiori-ios-scpms-apihub-hybris-15.png)
-
-The `Main.storyboard` shows split-view setup for the generated Master-Detail views.
-
-Folder `MyHybris/Onboarding` contains logic for the user on-boarding, authentication and handling of pass-codes and Touch ID.
-
-Folder `Proxy Classes` contains the OData proxy classes generated from the OData service. File `APIMKTCORPORATEACCOUNTSRVEntities.swift` acts as a data service provider to gain access to the OData entities. The files `AccountTeamMember.swift`, `AdditionalID.swift`, `CorporateAccountOriginData.swift`, `CorporateAccount.swift` and `MarketingAttribute.swift` are proxy classes which give access to the various properties of the respective OData entities.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Build and run the generated application)]
-
-Click the **Run** button to build and run the generated `MyHybris` application:
-
-![Build and run](fiori-ios-scpms-apihub-hybris-24.png)
-
-The **Simulator** app now launches. If you have configured the app to allow for push notifications, you will get the following pop-up:
-
-![Build and run](fiori-ios-scpms-apihub-hybris-16.png)
-
-Press **Allow** and click the blue **Start** button.
-
-![Build and run](fiori-ios-scpms-apihub-hybris-17.png)
-
-The **SAML** login screen of **SAP Cloud Platform mobile service for development and operations** is shown. Enter your login credentials for the SAP Cloud Platform and press the **Log On** button:
-
-![Build and run](fiori-ios-scpms-apihub-hybris-18.png)
-
-The app now gives you the option to enable Touch ID for quick access to your app. Since you are running from the simulator, you can click **Not Now**
-
-![Build and run](fiori-ios-scpms-apihub-hybris-19.png)
-
-Now, you should provide a passcode with a minimum of 8 characters. Enter a numeric passcode:
-
-![Build and run](fiori-ios-scpms-apihub-hybris-20.png)
-
-Click **Next**, confirm the passcode, and click **Done**.
-
-The app starts with an overview of the available **Collections** of the OData service:
-
-![Build and run](fiori-ios-scpms-apihub-hybris-21.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Examine the generated application)]
-
-If you click on the `CorporateAccounts` collection, you navigate to a **Master** list with all available `CorporateAccount` entities:
-
-![Build and run](fiori-ios-scpms-apihub-hybris-22.png)
-
-As you see, the list looks pretty awful with meaningless ID's. This will be corrected in the next steps.
-
-If you click on one of the `CorporateAccount` entities, you navigate to a **Detail** page which lists all the properties for the selected entity:
-
-![Build and run](fiori-ios-scpms-apihub-hybris-23.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Open the SAP Fiori for iOS Mentor app)]
-
-Open the SAP Fiori for iOS Mentor app on your iPad. Upon opening, the app shows an overview page:
-
-![Mentor app](fiori-ios-scpms-apihub-hybris-25.png)
-
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 11: ](Locate the Contact Cell)]
-
-Click on the **See All** link next to the **UI Components** section, and scroll down until you see the **Contact Cell** tile:
-
-![Mentor app](fiori-ios-scpms-apihub-hybris-26.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Examine the Contact Cell control)]
-
-Click the **Contact Cell** tile. You now see a page wit a representation of the SAP Fiori Contact cell, and a couple of preset styles to change the look and feel for the control.
-
-![Mentor app](fiori-ios-scpms-apihub-hybris-27.png)
-
-> You can also customize the look and feel on a more granular level. Click the **button with three dots** in the lower right corner. This will bring a pop up where you can specify different settings for the control. The control's look and feel is instantly updated, giving you an idea of the final result.
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 13: ](Display the generated code)]
-
-When you're happy with the final result, click the **Code button** (the one labeled `</>`). This will bring a pop up with a sample `UITableViewController` class, and all the properties you have set or enabled in the **Control Settings** pop-up are reflected in the generated code:
-
-![Mentor app](fiori-ios-scpms-apihub-hybris-28.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 14: ](Export the generated code)]
-
-To use the generated code in Xcode, click the **Share** button in the top-right, and use **AirDrop** to transfer to your Mac:
-
-![Mentor app](fiori-ios-scpms-apihub-hybris-29.png)
-
-Open the downloaded text file:
-
-![Mentor app](fiori-ios-scpms-apihub-hybris-30.png)
-
-The generated code can now be implemented into the appropriate places in the `CorporateAccountsMasterViewController.swift` file.
-
->   **NOTE** Since it may take a bit too long to go through the steps of copying and pasting the code, adding the control binding to the Proxy Classes' properties and format the data properly, you don't need to do this yourself. The code to implement will be provided in the next steps.
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 15: ](Define Contact Cell Activities)]
-
-Open file `CorporateAccountsMasterViewController.swift` in folder `MyHybris > ViewControllers > CorporateAccounts`.
-
-First, you define the activities for the Contact Cell. The exported code in the previous step contains 5 activities, but we'll need just **Phone**, **SMS** and **Email**.
-
-Add the following private field to class `CorporateAccountsMasterViewController`:
+Now add the following lines of code below the rest of the properties in your class:
 
 ```swift
-private var activities = [FUIActivityItem.phone, FUIActivityItem.message, FUIActivityItem.email]
+let activities = [FUIActivityItem.message, FUIActivityItem.phone,
+                      FUIActivityItem.email
+    ]
+
 ```
 
-[DONE]
-[ACCORDION-END]
+This code will make sure we have the Message, Phone and Email contact possibilities available in the `FUIContactCell`.
 
-[ACCORDION-BEGIN [Step 16: ](Modify viewDidLoad method)]
-
-Locate the `viewDidLoad()` method.
-
-Add the following line:
+Now register the `FUIContactCell` at the Table View. Please add the following line of code to the `viewDidLoad(:)` method:
 
 ```swift
-self.tableView.register(FUIContactCell.self, forCellReuseIdentifier: FUIContactCell.reuseIdentifier)
+    tableView.register(FUIContactCell.self, forCellReuseIdentifier: FUIContactCell.reuseIdentifier)
+
 ```
 
-In addition, change the line:
+Locate the `override func tableView(_ : UITableView, indexPath: IndexPath) -> UITableViewCell` method and replace the existing code inside of the method with the following:
 
 ```swift
-self.tableView.estimatedRowHeight = 98
-```
+let contactCell = tableView.dequeueReusableCell(withIdentifier: FUIContactCell.reuseIdentifier, for: indexPath)
+                  as! FUIContactCell
 
-to
-
-```swift
-self.tableView.estimatedRowHeight = 50
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 17: ](Render Contact Cell)]
-
-Locate method `tableView(_:cellForRowAt:)`.
-
-Replace the entire method with the following:
-
-```swift
-override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let corporateaccount = self.entities[indexPath.row]
-
-    let contactCell = tableView.dequeueReusableCell(withIdentifier: FUIContactCell.reuseIdentifier, for: indexPath) as! FUIContactCell
-
-    // get URL from OData service, if available
-    if let ciURLString = corporateaccount.interactionContactImageURL, !(corporateaccount.interactionContactImageURL?.isEmpty)! {
-        let ciURL = URL(string: ciURLString)
-        let data = try? Data(contentsOf: ciURL!)
-
-        if let imageData = data {
-            contactCell.detailImage = UIImage(data: imageData)
-        }
-    } else {
-        contactCell.detailImage = UIImage() // TODO: Add your own default image
-    }
-
-    // Added data binding
-    contactCell.headlineText = corporateaccount.fullName
-    contactCell.subheadlineText = corporateaccount.regionName
-    contactCell.descriptionText = "\(String(describing: corporateaccount.streetName)) \(String(describing: corporateaccount.addressHouseNumber))\n \(String(describing: corporateaccount.cityName))\n \(String(describing: corporateaccount.phoneNumber))"
-    contactCell.splitPercent = CGFloat(0.3) // Default is 30%
-
-    // Add activities from Step 15
-    contactCell.activityControl.addActivities(activities)
-    contactCell.activityControl.maxVisibleItems = 3
-
-    // Perform activity
-    contactCell.onActivitySelectedHandler = { activityItem in
-        switch activityItem {
-        case FUIActivityItem.phone:
-            guard let number = URL(string: "tel://" + corporateaccount.phoneNumber!) else { return }
-            if UIApplication.shared.canOpenURL(number) {
-                UIApplication.shared.open(number)
-            }
-        case FUIActivityItem.message:
-            guard let sms = URL(string: "sms:" + corporateaccount.phoneNumber!) else { return }
-            if UIApplication.shared.canOpenURL(sms) {
-                UIApplication.shared.open(sms)
-            }
-        case FUIActivityItem.email:
-            guard let email = URL(string: "mailto:" + corporateaccount.emailAddress!) else { return }
-            if UIApplication.shared.canOpenURL(email) {
-                UIApplication.shared.open(email)
-            }
-        default: break
-        }
-    }
-
-    return contactCell
+contactCell.detailImage = UIImage() // TODO: Replace with your Image
+contactCell.headlineText = "Michael Krenkler"
+contactCell.subheadlineText = "Team Lead"
+contactCell.descriptionText = "Tiffany Road\nAntioch, Illinois, 60002\n+1 224 9211250"
+contactCell.splitPercent = CGFloat(0.3)
+contactCell.activityControl.addActivities(activities)
+contactCell.activityControl.maxVisibleItems = 3
+contactCell.onActivitySelectedHandler = { activityItem in
+    #warning("Proccess selected activity")
 }
+
+return contactCell
+
 ```
 
-First, you get a reference to the current data via variable `corporateaccount`.
+The code will make sure the correct cell gets dequeued, also it get's filled with sample data.
 
-Then, a `FUIContactCell` is registered to the table.
+Please run the app now and navigate to the **Contacts**. You should see the `FUIContactCell` instead of the `FUIObjectTableViewCell`.
 
-Using the `corporateaccount` reference, you check whether an image is available for the current account. If it is available, it is then rendered to the `FUIContactCell`.
-
-Then, some extra fields are bound to the control.
-
-And finally, the activities defined in step 15 are added to the cell, and a handler is implemented for the activities.
+![assistant](fiori-ios-scpms-apihub-hybris-25.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Build and run the application)]
+[ACCORDION-BEGIN [Step 4: ](Populate the FUIContactCells with data)]
 
-Build and run the application. Navigate to the `CorporateAccounts` master page. It is now rendered using the `FUIContactCell` control:
+We're lucky, the generated app already has everything ready for us to access the contact entity data.
+The following code loads the data from the backend:
 
-![Timeline](fiori-ios-scpms-apihub-hybris-31.png)
+```swift
+private func loadData(completionHandler: @escaping () -> Void) {
+        self.requestEntities { error in
+            defer {
+                completionHandler()
+            }
+            if let error = error {
+                AlertHelper.displayAlert(with: NSLocalizedString("keyErrorLoadingData", value: "Loading data failed!", comment: "XTIT: Title of loading data error pop up."), error: error, viewController: self)
+                self.logger.error("Could not update table. Error: \(error)", error: error)
+                return
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.logger.info("Table updated successfully!")
+            }
+        }
+    }
 
-If you click on the activity buttons, the respective app should open.
+```
 
-> If you're running in the simulator, **Mail** and **Phone** apps are not available so nothing will happen. **Messages** app is available, but since it lacks a **New Message** button, it won't open a new message with the number pre-filled.
+The code uses the generated data service to make a connection to the backend. The method displays an alert in case there was an error while fetching the entities. In case of a successful fetch the method will call it's completion handler and the data gets set in a property through the call of `requestEntities(completionHandler: @escaping (Error?) -> Void)`.
 
-> If you're running on a physical device, everything should work as expected.
+The last step is to change the `override func tableView(_ : UITableView, indexPath: IndexPath) -> UITableViewCell` to populate the cell with real data. Please locate the method and replace the code with the following:
 
-[VALIDATE_18]
+```swift
+let contactCell = tableView.dequeueReusableCell(withIdentifier: FUIContactCell.reuseIdentifier, for: indexPath)
+            as! FUIContactCell
+
+        let entity = entities[indexPath.row]
+
+        contactCell.headlineText = entity.fullName ?? ""
+        contactCell.subheadlineText = entity.contactFunctionName ?? ""
+        contactCell.descriptionText = entity.cityName ?? ""
+        contactCell.splitPercent = CGFloat(0.3)
+        contactCell.activityControl.addActivities(activities)
+        contactCell.activityControl.maxVisibleItems = 3
+        contactCell.onActivitySelectedHandler = { activityItem in
+            switch activityItem {
+            case FUIActivityItem.message:
+                AlertHelper.displayAlert(with: "Message tapped", error: nil, viewController: self)
+                break
+            case FUIActivityItem.email:
+                AlertHelper.displayAlert(with: "Email tapped", error: nil, viewController: self)
+                break
+            case FUIActivityItem.phone:
+                AlertHelper.displayAlert(with: "Phone tapped", error: nil, viewController: self)
+                break
+            default:
+                self.logger.info("In Default")
+            }
+        }
+
+        return contactCell
+
+```
+Now you will see real data from the backend and every time you tap on one of the icons a alert will show up telling you which activity you've tapped.
+
+![assistant](fiori-ios-scpms-apihub-hybris-26.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Summary)]
+
+You can see that the connection to an OData specification conform API out of the SAP API Business Hub is simple with the help of the iOS Assistant. In case you want to make a connection without to the iOS Assistant you can easily write the connection code yourself using the SDK. The website of the SAP API Business Hub also makes it understandable on how to use all the different APIs.
+
+[VALIDATE_5]
 [ACCORDION-END]
 
 ---

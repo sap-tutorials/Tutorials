@@ -1,27 +1,20 @@
 ---
-title: SAPUI5 - Setup the DataSource in the local application
-description: Once the datasource has been defined, configure the local application to use the data.
+title: Add a Model and Test the SAPUI5 App
+description: Define a new data source which references the created OData service and use it for the default model.
+auto_validation: true
+time: 15
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 primary_tag: topic>sapui5
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-web-ide ]
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial**: [Create an empty UI5 Web IDE project](https://developers.sap.com/tutorials/sapui5-webide-create-project.html)
 
-## Next Steps
- - [Add a list to the current view](https://developers.sap.com/tutorials/sapui5-webide-add-list.html)
 
 ## Details
 ### You will learn  
-Now that you have set up a Destination in the SAP Cloud Platform (HCP) cockpit, you will connect that destination to your local application.  
+Now that you have set up a destination in the SAP Cloud Platform cockpit, you will connect that destination to your application.  
 
-### Time to Complete
-**15 Minutes**.
 
----
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
-
----
 There are three steps to connect the OData service to your application.  
 
 1.  Define the Data Source in your `mainfest.json` file.  
@@ -30,106 +23,88 @@ There are three steps to connect the OData service to your application.
 
 
 ---
-### Define the Data source
 
-In a [previous tutorial](https://developers.sap.com/tutorials/hcp-create-destination.html) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
+[ACCORDION-BEGIN [Step : ](Open the descriptor editor)]
+
+In a [previous tutorial](hcp-create-destination) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
 
 
-1.  Open the `webapp/mainfest.json` file, by double clicking on the file.
-
-    > To open a folder in the Web IDE, just click on the folder icon.  It will expand to show the contents.
-
-    .
+1.  Open the `mta_app/app/webapp/mainfest.json` file with the **Descriptor Editor**, by double clicking on the file.
 
     > If you open the file, and you get a code editor (and not the form editor shown below), click the **Descriptor Editor** link at the bottom of the page.  This will change to the Code Editor.
 
-    ![Open the `mainfest.json` file](1.png)
 
 2.  Click the **Data Sources** tab at the top of the screen.
 
-    ![Click the Data Sources tab](2.png)
-
 3.  Click the **+** icon next to the *Define OData services for the application and...* box.
 
-    ![Create a new OData service](3.png)
+    ![Open the `mainfest.json` file](1.png)
 
-4.  From the **Sources** list, choose **Service URL**.  Then choose the following:
+[DONE]
+[ACCORDION-END]
 
-    |               |                                    |
+[ACCORDION-BEGIN [Step : ](Define the Data source)]
+
+1.  From the **Sources** list, choose **Service URL**.  
+
+2.  Then choose the following:
+
     | -------------:| ---------------------------------- |
-    | Drop-down Box | `Northwind ODATA Service`          |
-    | URI           | `/V2/Northwind/Northwind.svc`      |
+    | Drop-down Box | **`Northwind Sample OData`**          |
+    | URI           | **`/V2/Northwind/Northwind.svc`**      |
 
-    ![Select the Service URL](4.png)
+3.  Click the **Test** button to test the service.  If the data is correct, you should see the service entities appear.  
 
-5.  Click the **Test** button to test the service.  If the data is correct, you should see this screen appear.  Click **Next** to continue.
+4.   Click **Next** to continue.
 
-    ![Test the new OData service](4b.png)
-
-6.  On the Confirmation Screen, do not select Overwrite.  Click on **Finish**.
-
-    ![Finish creating the OData service](4c.png)
+    ![Test the new OData service](2.png)
 
 
----
-### Create the model
 
-Now that the application has a connection to the "Northwind" destination, the next step is to create a data object (called a "model").  This object acts as the interface between the data coming from the web and the rest of the code in the application.
+[DONE]
+[ACCORDION-END]
 
-There are two ways to create a model:  in the JavaScript code, or by using the `mainfest.json` file.  Adding the model to the `manifest.json` file will set one up automatically.  
+[ACCORDION-BEGIN [Step : ](Use the data source as default model)]
 
+1. Keep the default value **Use default model** to use this data source with the default model.
 
-1.  Open the `manifest.json` file, and select the **Models** link at the top of the screen:
+    ![Finish creating the OData service](3.png)
 
-    ![Select the models tab](5.png)
+2. On the confirmation screen, click **Finish**.
 
-2.  Click the **+** button to create a new model.
-
-    ![Create a new model](6.png)
-
-3. In the *New Model* dialog box, select the following:
+    ![Finish creating the OData service](4.png)
 
 
-    |    |    |
-    |---:|--- |
-    | Model Name                                | *(leave blank)*       |
-    | Model Source                              | Select Data Source    |
-    | `Dropdown`                                | `Northwind.svc`       |
-    | Set as default model for the application  | *checked*             |
+[DONE]
+[ACCORDION-END]
 
-    Then click the **OK** button to accept.
+[ACCORDION-BEGIN [Step : ](Test the application in the Cloud Foundry environment)]
 
-    ![Define the default model](7.png)
+1.  To test your application, click on `webapp` in the project tree, followed by a click on **Run** ![Run Icon](run-icon.png)
 
-4.  In the next screen, modify the `Binding Mode` property (on the lower right hand side).  Click the arrow, and select `Default` as the binding mode.
+2.  Choose the `index.html` file to run and confirm with **OK**.
 
-    ![Change the binding mode](7b.png)
+    ![Run](5.png)
 
-5. The finished model screen will look like this.  Click **Save** to save this file.
+3.  In the console, you should be able to see that the test deployment started.
 
-    ![Save icon](save-icon.png)
+    ![Deploymentprocess](6.png)
 
-    > If your file name has a * next to it, the file has not been saved.  This can cause problems when you run your application.  Make sure all your files are saved before you run!
+> This initial deployment might take a couple of minutes. But don't worry, the next deployment will be super fast :)!
 
-    ![Finished model screen](8.png)
 
-----
-## Test the application
+[DONE]
+[ACCORDION-END]
 
-1.  Test your application by clicking on **RUN**     ![Run Icon](run-icon.png)
+[ACCORDION-BEGIN [Step : ](Inspect the application network trace)]
 
-    A new browser window will open.  The screen should look like this:
+1. You might see this logon screen. If so, please log on with your SAP Cloud Cockpit credentials.
 
-    ![SAPUI5 screen with title only](test-1.png)
+    ![logon](7.png)
 
-2.  Next, check to make sure the browser is receiving the data.  The web page will receive the data, but nothing will appear on the screen.  (We will set up the screen display in the next few tutorials).  
+2. Now you should see your (blank) SAPUI application. Right click on the web page, and choose **Inspect**
 
-	To check the data, use the browser tools and view the data coming from the server.
-	> *Why are we using Google Chrome?*  Google chrome has built in development tools that make it easy to debug and work with web pages.  If you are not using Google Chrome, [download it now](https://www.google.com/chrome/browser/desktop/).
-
-	Right click on the web page, and choose **Inspect**
-
-    ![Google Chrome inspector tool](test-2.png)
+    ![Google Chrome inspector tool](8.png)
 
 3.  The inspector will appear.  Click on the **Network** tab to view the network traffic for the application.
 
@@ -148,13 +123,21 @@ There are two ways to create a model:  in the JavaScript code, or by using the `
 
 6.  Click on *$metadata*, then click the **Preview** tab.
 
-    This will show you the data coming from the server to the browser.  If you see this, the data is working.  You are ready to move on to the next step of the tutorial.
+    This will show you the data coming from the server to the browser.  If you see this, the OData request is working.  You are ready to move on to the next step of the tutorial.
 
     ![preview of the data coming from the server](test-6.png)
 
+Expand the nodes **`<edmx:Edmc>`**, **`<edmx: DataServices>`** and the **`first <Schema> node`** in the Chrome Network trace.
+
+[VALIDATE_1]
+[ACCORDION-END]
+
+
+----
 
 ## Troubleshooting
- - **Missing a file?**  If the list of files doesn't match the picture, you may have used the wrong template when you created the project.  Delete the project, and start the [Create a new project](https://developers.sap.com/tutorials/sapui5-webide-create-project.html) tutorial again.
+
+ - **Missing a file?**  If the list of files doesn't match the picture, you may have used the wrong template when you created the project.  Delete the project, and start the [Create a new project](sapui5-webide-create-project) tutorial again.
 
  - **$metadata file not listed?**  This means one of the files in your project is incorrect.  Check the files, and make sure no red X marks appear in the left hand column.  These indicate a problem with the file syntax.  Check the pictures carefully.
 
@@ -162,4 +145,4 @@ There are two ways to create a model:  in the JavaScript code, or by using the `
 
  - **Don't forget to save your files!**  If a file name has a * next to it, the file isn't saved.  
 
-
+ ---

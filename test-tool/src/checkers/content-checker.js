@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const tagChecker = require('./tags-checker');
+const linkChecker = require('./link-checker');
 const { regexp, constraints } = require('../constants');
 
 const fileExistsSyncCS = (filePath) => {
@@ -12,9 +13,13 @@ const fileExistsSyncCS = (filePath) => {
   return fileNames.includes(path.basename(filePath));
 };
 
-const checkLocalImage = (absImgPath, imgName) => {
+const checkLocalTutorial = (name, allTutorials) => allTutorials.includes(name);
+
+const checkLocalImage = (absImgPath, altText) => {
   const result = [];
   const { content: { mdnImg } } = regexp;
+
+  const imgName = path.basename(absImgPath);
 
   try {
     const exists = fileExistsSyncCS(absImgPath);
@@ -27,6 +32,12 @@ const checkLocalImage = (absImgPath, imgName) => {
     } else {
       result.push(`${mdnImg.messages.existence} -> ${imgName}`);
     }
+
+    const hasWrongName = altText === imgName;
+
+    if (hasWrongName) {
+      result.push(`${mdnImg.messages.wrongAlt} -> ${imgName}`);
+    }
   } catch (e) {
     result.push(e.message);
   }
@@ -35,7 +46,7 @@ const checkLocalImage = (absImgPath, imgName) => {
 };
 
 module.exports = {
-  check: (filePath, lines) => {
+  check: async (filePath, lines, allTutorials) => {
     let isCodeBlock = false;
     const result = {
       contentCheckResult: [],
@@ -43,12 +54,31 @@ module.exports = {
       stepSpellCheckResult: [],
     };
     const dir = path.dirname(filePath);
-    const { content: { common, link, h1, mdnImg } } = regexp;
+    const {
+      content: {
+        common,
+        link,
+        emptyLink,
+        h1,
+        mdnImg,
+        localFileLink,
+        tutorialLink,
+        tutorialLinkInvalid,
+        remoteImage,
+        codeBlockInNote,
+      },
+      validation: { accordions, codeLine, done },
+      link: {
+        pure: pureLink,
+      },
+    } = regexp;
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
 
-    lines.forEach((line, index) => {
+    await Promise.all(lines.map(async (line, index) => {
+      const isCodeLine = (line.match(codeLine) || []).length > 0;
+
       if (isMeta) {
         if (line.replace(/\n/g, '') === '---') {
           metaBoundaries += 1;
@@ -75,7 +105,8 @@ module.exports = {
         }
       }
 
-      if (line.trim().startsWith('```')) {
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith('```') || trimmedLine.match(codeBlockInNote)) {
         isCodeBlock = !isCodeBlock;
       }
 
@@ -89,20 +120,14 @@ module.exports = {
         }
       });
 
-      const match = line.match(mdnImg.regexp);
-
-      if (match) {
-        const [, imgName] = match;
-        const filePath = path.join(dir, imgName);
-        const errors = checkLocalImage(filePath, imgName);
-        result.contentCheckResult.push(...errors.map(err => ({
-          line: index + 1,
-          msg: err,
-        })));
-      }
-
       if (!isCodeBlock) {
-        if (!isMeta) {
+        const remoteImageMatches = line.match(remoteImage.regexp);
+        const imageMatches = line.match(mdnImg.regexp);
+        const localFileMatch = line.match(localFileLink.regexp);
+        const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
+        const tutorialLinkMatch = line.match(tutorialLink.regexp);
+        const accordionMatch = line.match(accordions);
+        if (!isMeta && !isCodeLine) {
           // plain text URLs are allowed in meta
           const match = line.match(link.regexp);
           if (match) {
@@ -112,6 +137,16 @@ module.exports = {
             });
           }
         }
+
+        const doneMatch = line.match(done);
+
+        if (doneMatch && line.startsWith(' ')) {
+          result.contentCheckResult.push({
+            line: index + 1,
+            msg: 'Do not indent [DONE] button',
+          });
+        }
+
         const h1Match = line.match(h1.regexp);
         if (h1Match) {
           result.contentCheckResult.push({
@@ -119,10 +154,84 @@ module.exports = {
             msg: `${h1.message} -> ${h1Match[0]}`,
           });
         }
+
+        if (!isCodeLine) {
+          emptyLink.forEach((i) => {
+            const match = line.match(i.regexp);
+            if (match) {
+              result.contentCheckResult.push({
+                line: index + 1,
+                msg: `${i.message} -> ${match[0]} -> ${i.description}`,
+              });
+            }
+          });
+
+          const stepName = line.includes('[ACCORDION');
+
+          if (tutorialLinkMatch && !stepName) {
+            const [, tutorialName] = tutorialLinkMatch[0]
+              .replace(/\)/g, '')
+              .split('](');
+            const exists = checkLocalTutorial(tutorialName, allTutorials);
+
+            if (!exists) {
+              result.contentCheckResult.push({
+                line: index + 1,
+                msg: `${tutorialLink.message} (${tutorialName})`,
+              });
+            }
+          }
+
+          if (tutorialLinkInvalidMatch) {
+            result.contentCheckResult.push({
+              line: index + 1,
+              msg: tutorialLinkInvalid.message,
+            });
+          }
+
+          if (imageMatches) {
+            imageMatches.forEach((item) => {
+              // using new RegExp to reset g flag
+              const [, imgName] = item.match(new RegExp(mdnImg.regexp, 'i'));
+
+              const altText = item
+                .replace(/!?[\[\]]/g, '')
+                .trim()
+                .replace(`(${imgName})`, '');
+              const filePath = path.join(dir, imgName);
+              const errors = checkLocalImage(filePath, altText);
+              result.contentCheckResult.push(...errors.map(err => ({
+                line: index + 1,
+                msg: err,
+              })));
+            });
+          }
+
+          if (remoteImageMatches) {
+            await Promise.all(remoteImageMatches.map(async (item) => {
+              // using new RegExp to reset g flag
+              const [imageUrl] = item.match(new RegExp(pureLink, 'i'));
+              const checkResult = await linkChecker.checkImageLink(imageUrl);
+
+              if (checkResult.error) {
+                result.contentCheckResult.push({
+                  line: index + 1,
+                  msg: checkResult.error,
+                });
+              }
+            }));
+          }
+
+          if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
+            result.contentCheckResult.push({
+              line: index + 1,
+              msg: localFileLink.message,
+            });
+          }
+        }
       }
-    });
+    }));
 
     return result;
   },
-
 };

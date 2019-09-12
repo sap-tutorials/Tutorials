@@ -3,7 +3,7 @@ title: Create a New ABAP Dictionary Structure
 description: Create an ABAP Dictionary structure for retrieving data from a database
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
+tags: [  tutorial>beginner, topic>abap-development ]
 time: 15
 ---
 
@@ -55,12 +55,13 @@ Remove the generated example component `component_to_be_changed` from the struct
 
 [ACCORDION-BEGIN [Step 5: ](Define fields for the structure)]
 
-In the item structure, define the fields `company_name`, `amount`, `currency_code`, and `payment_status` as follows:
+In the item structure, define the fields `company_name`, `amount`, `currency_code`, and `payment_status`, and assign them to the relevant data elements as follows:
 ```ABAP
   company_name   : snwd_company_name;
   amount         : snwd_ttl_gross_amount;
   currency_code  : snwd_curr_code;
   payment_status : snwd_soi_payment_status_code;
+
 ```
 
 ![Image depicting step5-define-fields](step5-define-fields.png)
@@ -117,12 +118,7 @@ define type zso_invoice_item {
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Test yourself)]
-Create a similar field for the `netAmount`. Copy the following code:
-
-```ABAP
-@Semantics.amount.currencyCode : 'zso_invoice_item.currency_code'
-netAmount         : snwd_ttl_net_amount;
-```
+Define a field `netAmount`. The data element you need is `snwd_ttl_net_amount`. Use the same semantic annotation for the currency code. Enter your code in the box below and choose **Submit answer**:
 
 [VALIDATE_1]
 [ACCORDION-END]

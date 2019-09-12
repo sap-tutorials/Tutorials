@@ -1,85 +1,149 @@
 ---
-title: Creating a project in SAP Web IDE and importing it into GitHub
-description: Collaborative Development Using GitHub and SAP Web IDE
+title: Create a Project in SAP Web IDE and Push into GitHub
+description: Create a project in SAP Web IDE and push it into GitHub to support collaborative development using GitHub and SAP Web IDE.
 primary_tag: products>sap-web-ide
 tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+time: 15
 ---
-## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:**
-  - [Create a repo within the Organization](https://developers.sap.com/tutorials/webide-github-create-git-repo.html)
-  - [Build an app from an SAP Web IDE template](https://developers.sap.com/tutorials/hcp-template-mobile-web-app.html)
-
-## Next Steps
- - [Using issues, setting milestones and assigning issues to collaborators](https://developers.sap.com/tutorials/webide-github-issues-milestones.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how to import an existing SAP Web IDE project into your previously created GitHub repository.
-
-### Time to Complete
-**15 Min**.
+  - How to import an existing SAP Web IDE project into your previously created GitHub repository
 
 ---
 
-1. Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log in to your SAP Cloud Platform cockpit.
 
-2. To open SAP Web IDE, click on the **Services** tab in the navigation bar, scroll down and then click the **SAP Web IDE** tile to open the SAP Web IDE service page.
+[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform cockpit)]
+
+Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log into your SAP Cloud Platform cockpit.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
+
+1. Click **Neo Trial**, and then open the **Services** tab.
+
+2. Scroll down and click the **SAP Web IDE** tile to open the SAP Web IDE service page.
 
     ![Find SAP Web IDE](p3_2.png)
 
-3. Click on **Open SAP Web IDE** to launch SAP Web IDE.
+3. Click **Go to Service** to launch SAP Web IDE.
 
     ![Open SAP Web IDE](p3_3.png)
 
-4. Open your existing project in SAP Web IDE by clicking on **File** &rarr; **Import**.
+[DONE]
+[ACCORDION-END]
 
-5. Once your project is open, right-click on your Project folder and click on **Git** &rarr; **Initialize Local Repository**.
+[ACCORDION-BEGIN [Step 3: ](Open your project)]
 
-    ![Create local Git repository](p3_5.png)
+Open a project in SAP Web IDE. Either:
 
-6. In the **Configure Git Repository** dialog box, enter your GitHub Organization repository's URL
+  - Use an existing project.
+  - Import an existing project (`.zip` file).
+  - Create a new one by going to **File > New > Project from Template**, and then use, for example, the **SAPUI Application** template.
 
-    a. Fetch the Remote repository URL by heading over to the GitHub Organization URL. Click on the **Clone or Download** button and then select the icon to copy URL to clipboard selecting the Repository.
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Initialize local repository)]
+
+Right-click on your project folder and click **Git > Initialize Local Repository**.
+
+![Create local Git repository](p3_5.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Set the remote repository)]
+
+You need to connect the local Git repository in SAP Web IDE with your repository on GitHub.
+
+1. Right-click on your project folder and click **Git > Set Remote**.
+
+2. In the **Configure Git Repository** dialog box, enter your GitHub organization repository's URL.
+
+    Get the remote repository URL by heading over to GitHub organization, and open your repository. Click the **Clone or Download** button and then select the icon to copy the URL to the clipboard.
 
     ![Select remote repository URL](p3_6a.png)
 
-    b. Paste this URL into the remote repository textbox.
+    Paste this URL into the remote repository textbox.
 
     ![Paste remote repository URL](p3_6b.png)
 
-7. Your project is now initialized with a Git repository and linked to the GitHub platform. You can open the Git pane on the right sidebar to verify this.
+3. Click **OK**.
 
-    ![Git repository initialized](p3_7.png)
+This automatically executes a fetch from the remote repository, and you can view the branches/commits that will be fetched. Click **OK**.
 
-8. Next, commit the project files to the local Git repository by clicking on **Stage all** checkbox, enter a commit description and then click on the **Commit** button.
+![Set remote](setRemoteFetch.png)
 
-    ![Git changes committed](p3_8.png)
+[DONE]
+[ACCORDION-END]
 
-9. Next to synchronize GitHub repository and local repository changes, click on the **Pull** button. Enter your GitHub credentials.
+[ACCORDION-BEGIN [Step 6: ](Verify Git repository)]
 
-    ![Pull GitHub changes](p3_9.png)
+Your project is now initialized with a Git repository and linked to the GitHub platform. You can open the Git pane on the right sidebar to verify this.
 
-10. Once the pull is complete you'll notice the README file created on GitHub is now available in Web IDE project workspace.
+![Git repository initialized](p3_7.png)
 
-    ![Pull complete](p3_10.png)
+[DONE]
+[ACCORDION-END]
 
-11. To push your local changes to GitHub.
+[ACCORDION-BEGIN [Step 7: ](Stage and commit files)]
 
-    a. Click on the **Push** button and select **Remote Branch**
+Commit the project files to the local Git repository by doing the following:
 
-    ![Push to GitHub](p3_11a.png)
+1. Make sure the files are staged (the **Stage** checkbox is checked).
 
-    b. Select **origin/master** as the remote branch and click on **OK**.
+2. Enter a commit message.
 
-    ![Select GitHub remote](p3_11b.png)
+3. Click **Commit**.
 
-    c. Enter your GitHub credentials and click on **OK**.
+![Git changes committed](p3_8.png)
 
-    d. Once push is completed you will see a notification message on the top right corner.
+[DONE]
+[ACCORDION-END]
 
-    ![Push completed](p3_11d.png)
+[ACCORDION-BEGIN [Step 9: ](Pull from GitHub)]
 
-12. Go to the Organization GitHub URL and you will notice that the changes are now published.
+To synchronize the GitHub repository and local repository changes, click **Pull**. Enter your GitHub credentials.
 
+![Pull GitHub changes](p3_9.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](View downloaded README)]
+
+Once the pull is complete, you'll notice the `README.md` file that was created on GitHub is now available in the SAP Web IDE project workspace.
+
+![Pull complete](p3_10.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Push your local changes to GitHub)]
+
+Click **Push** and select **Remote Branch**
+
+![Push to GitHub](p3_11a.png)
+
+Select **origin/master** as the remote branch and click **OK**.
+
+![Select GitHub remote](p3_11b.png)
+
+Enter your GitHub credentials and click **OK**.
+
+Once the push is complete, you will see a notification message on the top-right corner.
+
+![Push completed](p3_11d.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 12: ](Check published changes)]
+
+Go to your organization on GitHub and you will notice that the changes are now published.
+
+[DONE]
+[ACCORDION-END]

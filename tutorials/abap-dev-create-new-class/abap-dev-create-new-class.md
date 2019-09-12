@@ -3,10 +3,13 @@ title: Create a Global ABAP Class
 description: You will learn how to create a global ABAP class, in which you  will retrieve data from a database.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
-time: 45
+tags: [  tutorial>beginner, topic>abap-development ]
+time: 45  
 
 ---
+## Prerequisites
+- You have generated the data for the relevant database table by running the transaction `SEPM_DG_OIA_NEW` (or program  `RS_EPM_DGC_HANA_NEW` ).
+
 ## Details
 ### You will learn  
 - How to create a global class that retrieves data from the back end
@@ -398,3 +401,4 @@ Enter your code in the box below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]
+u

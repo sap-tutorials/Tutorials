@@ -13,7 +13,7 @@ time: 15
 - How a simple UI5 app can provide a basic UI for user tasks
 - What script tasks are and how to reference the workflow context within them
 
-In the beginner tutorial group [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html) you added a basic user task to a simple workflow definition, and initially, in the user interface details, you specified dummy entries (`test`) which caused a default task display mechanism to be used in the `MyInbox` app. Later on you used the [Workflow Forms](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/bc57d645aee44e11afc8992fd27e544c.html) feature to build an approval UI. The Workflow Forms feature is great for building UIs without any coding, but if you want to take the first steps towards building your own custom UIs, this tutorial will show you what's involved. 
+In the beginner tutorial group [Get Started with SAP Cloud Platform Workflows](https://developers.sap.com/group.cp-workflow-service.html) you added a basic user task to a simple workflow definition, and initially, in the user interface details, you specified dummy entries (`test`) which caused a default task display mechanism to be used in the `MyInbox` app. Later on you used the [Workflow Forms](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/bc57d645aee44e11afc8992fd27e544c.html) feature to build an approval UI. The Workflow Forms feature is great for building UIs without any coding, but if you want to take the first steps towards building your own custom UIs, this tutorial will show you what's involved.
 
 In this tutorial, you'll create and deploy a simple UI5 app that can be used for user tasks. The app has just enough functionality for you to display information from within the contexts of your running workflow instances, and to allow decisions by marking the tasks as **Complete** (which would move the instances on from the user task into the status **Completed**, in the case of this workflow definition).
 
@@ -31,13 +31,13 @@ This is what you're aiming for, that is, what a user task will look like in `MyI
 
 [ACCORDION-BEGIN [Step 1: ](Start up SAP Web IDE)]
 
-Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](https://developers.sap.com/tutorials/webide-multi-cloud.html) to find out how to access it, or simply invoke it using a URL, which will look like this:
+Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the details in the tutorial [Enable the SAP Web IDE Full Stack](webide-multi-cloud) to find out how to access it, or simply invoke it using a URL, which will look like this:
 
 `https://webidecp-XYZ.dispatcher.hanatrial.ondemand.com/`
 
 Here, `XYZ` represents your trial subaccount name, such as `p999999trial`.
 
-You can find out more about accessing the SAP Web IDE in the Help Portal, specifically in the "[Open SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html)" section.
+You can find out more about accessing the SAP Web IDE in the Help Portal, specifically in the [Open SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html) section.
 
 Once you're in SAP Web IDE, ensure you're in the workspace containing your `NorthwindOrderProcess` project that you started working on in the previous tutorial [Create a workflow definition using an external service].
 
@@ -54,7 +54,7 @@ In this step you'll create the folder for the simple UI5 app that is to be used 
 
 Inside the `neo-app.json` file, add the following and save the file:
 
-```javascript
+```JavaScript
 {
   "routes": [
     {
@@ -82,7 +82,7 @@ Inside the `neo-app.json` file, add the following and save the file:
         "name": "bpmworkflowruntime",
         "entryPath": "/workflow-service"
       },
-      "description": "Workflow Runtime REST API"    
+      "description": "Workflow Runtime REST API"
     }
   ]
 }
@@ -93,7 +93,7 @@ This file is known as the [Application Descriptor File](https://help.sap.com/vie
 - Requests to URLs starting `/resources` (for UI5 runtime artefacts) or `/test-resources` (for UI5 support artefacts) are routed to the appropriate entry paths within the `sapui5` service
 - Requests to URLs starting `/bpmworkflowruntime` are routed to the root of the [Workflow API](https://api.sap.com/api/SAP_CP_Workflow/overview) via the `bpmworkflowruntime` destination
 
-The `bpmworkflowruntime` destination will have been set up automatically for you in the Connectivity service within your trial account when you enabled the Workflow service in [Prepare to create workflows in SAP Cloud Platform](https://developers.sap.com/tutorials/cp-workflow-getting-started.html). If you want to check, it should look something like this:
+The `bpmworkflowruntime` destination will have been set up automatically for you in the Connectivity service within your trial account when you enabled the Workflow service in [Prepare to Create Workflows in SAP Cloud Platform](cp-workflow-getting-started). If you want to check, it should look something like this:
 
 ![bpmworkflowruntime destination](bpmworkflowruntime-destination.png)
 
@@ -115,7 +115,7 @@ Within the **`genericusertask`** project folder, use the context menu to create 
 
 Copy the following code into the new `Component.js` file and save it:
 
-```javascript
+```JavaScript
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
@@ -257,7 +257,7 @@ Create a new file **`Main.view.xml`** in the **`webapp`** folder.
 
 Into this file, copy the following, and then save the file:
 
-```xml
+```XML
 <mvc:View
 	displayBlock="true"
 	xmlns:mvc="sap.ui.core.mvc"
@@ -295,7 +295,7 @@ The app's `manifest.json` file is the third and final artefact that's needed. It
 
 Create a file **`manifest.json`** within the **`webapp`** folder, copy the following into it, and save it:
 
-```javascript
+```JSON
 {
 	"_version": "1.8.0",
 	"sap.app": {
@@ -444,19 +444,19 @@ In the **DETAILS** section:
 | Description  | **`Please confirm the order for '${context.stockinfo.ProductName}'.`**
 | Users        | (Your trial user name, e.g. P999999 - use upper case for the initial letter)
 
-> You will have encountered expressions like those in this section in the previous tutorial [Create a Workflow Definition Using an External Service](https://developers.sap.com/tutorials/cp-wf-01-create-definition.html). Find out more about these expressions in the SAP Help Portal, under the [Configure Service Tasks](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/a8a6267f537841fbb22c159ba2af8835.html) topic.
+> You will have encountered expressions like those in this section in the previous tutorial [Create a Workflow Definition Using an External Service](cp-wf-01-create-definition). Find out more about these expressions in the SAP Help Portal, under the [Configure Service Tasks](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/a8a6267f537841fbb22c159ba2af8835.html) topic.
 
 In the **USER INTERFACE** section:
 
 | Field            | Value
 |:--------------   | :-------------
 | HTML5 App Name   | **`genericusertask`**
-| Component Name   | **`webapp`**
+| Component URL    | **`webapp`**
 | SAPUI5 Component | **`tutorial.genericusertask`**
 
 Now save the workflow definition.
 
-The values you've specify here relate directly to the app you've just deployed:
+The values you've specified here relate directly to the app you've just deployed:
 
 - The `genericusertask` name is the name of the app itself, now available in SAP Cloud Platform
 - `webapp` is where (i.e. in which folder) the app's component is to be found
@@ -476,7 +476,7 @@ However, there would be no detail displayed. It would look like this:
 
 That's because the mechanism in the `init` function inside the app's `Component.js` file is looking to be guided by some simple configuration in the workflow instance's context, specifically in the function attached to the `RequestCompleted` event here:
 
-```javascript
+```JavaScript
 var contextModel = new JSONModel("/bpmworkflowruntime/rest/v1/task-instances/" + taskId + "/context")
     .attachRequestCompleted(function(oEvent) {
         // Create an array of property/value pairs for generic display in the UI
@@ -497,7 +497,7 @@ var contextModel = new JSONModel("/bpmworkflowruntime/rest/v1/task-instances/" +
 
 So in this step you'll create a script task and insert it to execute *before* the user task.
 
-While editing the **`processorder.workflow`** definition, use the menu in the workflow editor to **add a script task**, inserting it before the "Confirm Order" user task, like this:
+While editing the **`processorder.workflow`** definition, use the menu in the workflow editor to **add a script task**, inserting it before the **Confirm Order** user task, like this:
 
 ![script task inserted](inserted-script-task.png)
 
@@ -509,7 +509,7 @@ Don't forget to go back and **save** the workflow definition.
 
 The `configurecontext.js` file should have been created within the project's folder structure, as shown below. Remove any sample code and comments that have been automatically placed in there, replacing everything with the following content, and then save the file:
 
-```javascript
+```JavaScript
 $.context.genericusertask = {
 	control: {
 		source: "/stockinfo",

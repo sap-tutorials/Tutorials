@@ -123,7 +123,7 @@ sudo docker image rm alpine -f
 
 Go to the [Docker Store](https://store.docker.com/).
 
-Click on the search bar and search for "SAP HANA, express edition".
+Click on the search bar and search for "SAP HANA".
 
 Choose **SAP HANA, express edition (database and application services)**.
 
@@ -134,7 +134,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpressxsa:2.00.036.00.20190223.1
+sudo docker pull store/saplabs/hanaexpressxsa:2.00.040.00.20190729.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -238,7 +238,7 @@ You must then add permissions for this file to be readable by the `hxeadm` user 
 
 ```bash
 sudo chmod 600 /data/<directory_name>/<file_name>.json
-sudo chown 12000:79 /data/<directory_name>/<file_name>.json
+sudo chown <hxeadm userID or name>:<sapsys groupID or name>/<file_name>.json
 ```
 
 Be sure to do this with each `json` file you use for your Docker containers.
@@ -261,7 +261,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpressxsa:2.00.036.00.20190223.1 \
+store/saplabs/hanaexpressxsa:2.00.040.00.20190729.1 \
 --agree-to-sap-license \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --proxy-host <proxy_hostname> \
@@ -281,7 +281,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpressxsa:2.00.036.00.20190223.1 \
+store/saplabs/hanaexpressxsa:2.00.040.00.20190729.1 \
 --agree-to-sap-license \
 --passwords-url file:///hana/password.json \
 --proxy-host <proxy_hostname> \
@@ -379,6 +379,22 @@ jdbc:sap://<ip_address>:39015/?databaseName=<tenant_name>
 
 For detailed information on the connection properties you can specify when connecting using JDBC, see [JDBC Connection Properties](https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/latest/en-US/109397c2206a4ab2a5386d494f4cf75e.html) in the *SAP HANA Client Interface Programming Reference*.
 
+>**Note**: Are you trying to connect to SAP HANA, express edition on Docker from an application or command line on the host OS? You will need to make the IP of the container on the internal container network visible to the host.
+>
+>**Example: Docker Machine on Windows** - In this example, 192.168.99.100 is the external `docker-machine` `vm` and `hxehost` is the container host name:
+>
+>```bash
+>ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'use_default_route') = 'name' WITH RECONFIGURE;
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'map_hxehost') = '192.168.99.100' WITH RECONFIGURE;
+>```
+>**Example: Docker Machine on Mac** - In this example, `localhost` is the Docker daemon running on the Mac, and `hxehost` is the container host name:
+>
+>```bash
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'use_default_route') = 'name' WITH RECONFIGURE;
+ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_resolution', 'map_hxehost') = 'localhost' WITH RECONFIGURE;
+>```
+
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ]((Optional) Test SAP Web IDE)]
@@ -463,7 +479,7 @@ Follow the prompts to complete the server update.
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpressxsa` command.
 
 ```
-docker run store/saplabs/hanaexpressxsa:2.00.036.00.20190223.1 -h
+docker run store/saplabs/hanaexpressxsa:2.00.040.00.20190729.1 -h
 usage: [options]
 
 --dont-check-consistency           Skip consistency check between mount points

@@ -1,5 +1,5 @@
 ---
-title: Adapt the UI of a business object
+title: Adapt the UI of a Business Object
 description: Adapt the UI of a business object inside SAP S/4Hana Cloud, shown at the generated UI of a Custom Business Object
 auto_validation: true
 primary_tag: topic>abap-extensibility
@@ -22,7 +22,7 @@ As the generated User Interfaces only lists all fields of a business object node
 >
 >Alternatively to UI Generation and Adaptation the more powerful **Side-By-Side Extensibility** via **SAP Cloud Platform** could be done to develop an UI with all SAPUI5 options (see tutorial group [Create Custom UI for S/4HANA Cloud](https://developers.sap.com/group.abap-custom-ui-with-webide.html)).
 
-### Example
+**Our Example**
 
 A several tutorials spanning example will show extensibility along custom Bonus Management applications.
 

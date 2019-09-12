@@ -24,7 +24,7 @@ You will learn how to create an HTML5 endpoint with authentication using the Use
 
 [ACCORDION-BEGIN [Step 1: ](Add the HTML5 Module in your existing MTA project)]
 
-> ***What is a Multi-Target Application?***: The XS Advanced application platform is based on Cloud Foundry, an open-source platform that provides a layer of abstraction between your application and the underlying infrastructure. This is useful because it allows you to deploy the same application in different cloud providers. Cloud Foundry allows for a micro-service approach. A Multi-Target Application allows you to bundle all the different micro-services conforming `your business application into the same lifecycle`.
+> ***What is a Multi-Target Application?***: The XS Advanced application platform is based on Cloud Foundry, an open-source platform that provides a layer of abstraction between your application and the underlying infrastructure. This is useful because it allows you to deploy the same application in different cloud providers. Cloud Foundry allows for a micro-service approach. A Multi-Target Application allows you to bundle all the different micro-services conforming `your business application into the same lifecycle`. For more information about multi-target applications (MTA), refer to [this blog post](https://blogs.sap.com/2017/09/05/xs-advanced-for-not-so-dummies-pt-2-multi-target-applications/).
 
  Begin by right-clicking on your project and then choosing `New -> HTML5 Module`
 
@@ -83,6 +83,19 @@ This can be downloaded from the SAP HANA Developer Edition directly, using the D
 xs login -a http://<hostname>:3XX30 -o HANAExpress -s development -u XSA_ADMIN
 ```
 
+> ### Note
+>
+> For SAP HANA, express edition with default values, the command would be:
+> ```ssh
+> xs login -a https://hxehost:39030 -o HANAExpress -s development -u XSA_ADMIN --skip-ssl-validat
+> ```
+>
+>If you are using the CLI from the operating system of the virtual machine, you can also use the following shortcut:
+> ```ssh
+> xs-admin-login
+> ```
+
+
 If you are not using HANA Express, change the organization (`HANAExpress`), space (`development`) and user (`XSA_DEV`) accordingly. The API endpoint may also be different.
 
 The space has to match the space that was setup in the Project Settings. You can check it by right-clicking on the repository folder and opening "Project Settings"
@@ -92,7 +105,7 @@ The space has to match the space that was setup in the Project Settings. You can
 To create the UAA service issue the following command:
 
 ```
-xs create-service xsuaa space APP_UAA
+xs create-service xsuaa space UAA-service
 ```
 
 ![Command line UAA](6.png)
@@ -184,4 +197,3 @@ A new tab will open and you will see the default **Hello World** button has been
 [VALIDATE_2]
 
 [ACCORDION-END]
-

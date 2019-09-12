@@ -10,6 +10,7 @@ time: 25
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
+- **Hardware Optional:** Apple iPad
 
 ## Details
 ### You will learn  
@@ -70,25 +71,35 @@ Open the SAP Fiori Mentor app on your iPad. Upon opening, the app shows an overv
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part4-1.png)
 
-Tap on **See All** next to the **UI Components** section, and scroll down until you see the **Timeline Cell** tile:
+Tap on **UI Components** to see all available UI components the SDK has to offer.
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part4-2.png)
 
-Tap the **Timeline Cell** tile. You now see a page with a representation of the SAP Fiori Timeline cell, and a couple of preset styles to change the look and feel for the control.
+In the search bar type in `FUITimelineCell` to display the cell.
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part4-3.png)
 
-You can also customize the look and feel on a more granular level. Tap the **button with three dots** in the lower right corner. This will bring a pop up where you can specify different settings for the control. The control's look and feel is instantly updated, giving you an idea of the final result:
+You see the `FUITimelineCell` in compact mode and below you have the option to customize the cell as you wish.
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part4-4.png)
 
-When you're happy with the final result, tap the **Code button** (the one labeled `</>`). This will bring a pop up with a sample `UITableViewController` class, and all the properties you have set or enabled in the **Control Settings** pop-up are reflected in the generated code:
+If you tap on **Info** in the top corner of the screen, you will get the API documentation.
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part4-5.png)
 
-If you are using your own Mac and iPad that are both logged into the same iCloud account, you can tap the **Share** button in the top-right, and tap **Copy** to copy the code to the Universal Clipboard. You can then paste it directly into Xcode on your Mac.
+Now tap on **Examples** to see how the `FUITimelineCell` could look like in an app.
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part4-6.png)
+
+To get a code sample tap on **Export**. This will show a sample implementation of the `FUITimelineCell`.
+
+![Mentor app](fiori-ios-scpms-create-app-teched18-part4-6-1.png)
+
+You can also make this code available for you in Xcode over the share icon. Tap the share icon and choose one of the options.
+
+Another option is using the universal keyboard feature and copy/paste the code directly on your development machine.
+
+![Mentor app](fiori-ios-scpms-create-app-teched18-part4-6-2.png)
 
 > **Note:** For this exercise, you don't need to do this yourself. The code to implement will be provided in the next step.
 

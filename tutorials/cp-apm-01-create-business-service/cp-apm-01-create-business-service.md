@@ -1,6 +1,6 @@
 ---
-author_name: André Pfohlmann
-author_profile: https://github.com/Apfohlmann
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Create a Business Service Using CDS
 description: Define a data and service model using SAP Web IDE Full-Stack and the SAP Cloud Application Programming Model based on Core Data and Services (CDS).
 auto_validation: true
@@ -10,8 +10,10 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Get a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
- - [Set Up Cloud Foundry and SAP Web IDE](https://developers.sap.com/tutorials/teched-cf-prereq1.html)
+ - [Get a free trial account on SAP Cloud Platform](hcp-create-trial-account)
+ - [Create a Cloud Foundry Account](cp-cf-create-account)
+ - [Set Up the SAP Web IDE](sapui5-webide-open-webide)
+ - [Create an SAP HANA Service Instance](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html) (If no SAP HANA Service Instance is available, change your region)
 
 ## Details
 ### You will learn  
@@ -24,8 +26,6 @@ time: 10
 1. In SAP Web IDE choose **File** | **New** | **Project from Template**.
 
 1. Search for **SAP Cloud Platform Business Application**.
-
-    >If you see an error stating that you do not have a builder in your space, make sure you have completed the prerequisite, [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html), and saved your preferences.
 
     ![Select the project template](web-ide.png)   
 
@@ -86,11 +86,9 @@ time: 10
 
 [ACCORDION-BEGIN [Step 3: ](Define a service)]
 
-1. Go to `srv/my-service.cds` and open the context menu.
+1. Open the file `srv/cat-service.cds`.
 
-2. Choose **Rename** and change the file name to **`cat-service.cds`**.
-
-3. Open `cat-service.cds` and replace the template with the following CDS definitions:
+2. Replace the template with the following CDS definitions:
 
     ```CDS
     using my.bookshop from '../db/data-model';
@@ -103,7 +101,7 @@ time: 10
 
     ![Define the service model](define-service-model.png)
 
-4. Save the file.
+3. Save the file.
 
 [VALIDATE_2]
 

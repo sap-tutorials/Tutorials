@@ -1,6 +1,7 @@
 ---
 title: Set Up SAP Data Hub, Developer Edition 2.4
 description: Download and install SAP Data Hub, developer edition 2.4.
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -40,6 +41,7 @@ docker run hello-world
 You see an output similar to the following:
 
 ![picture_01](./datahub-docker-v2-setup_01.png)
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -51,6 +53,8 @@ https://www.sap.com/developer/trials-downloads/additional-downloads/sap-data-hub
 ```
 
 Carefully read the `README.html` as well as the license agreement prior to continuing with the tutorial.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -70,7 +74,7 @@ Open a terminal window and navigate to the directory where you have unpacked the
 docker build --tag datahub .
 ```
 
-After 30-60 minutes (depending on the speed of your internet connection) the build completes. Verify that your local Docker registry now includes a new image (called `datahub`) for SAP Data Hub, developer edition by entering the following.
+After some time (depending on the speed of your internet connection) the build completes. Verify that your local Docker registry now includes a new image (called `datahub`) for SAP Data Hub, developer edition by entering the following.
 
 ```sh
 docker images
@@ -78,6 +82,8 @@ docker images
 You see an output similar to the following:
 
 ![picture_02](./datahub-docker-v2-setup_02.png)  
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -92,7 +98,7 @@ Run a Docker container based on image `datahub`. By publishing the ports `8090`,
 
 
 ```sh
-docker run -ti --env VORA_USERNAME=vora --env VORA_PASSWORD=SomeNicePassword19920706 --publish 127.0.0.1:8090:8090 --publish 127.0.0.1:9225:9225 --publish 30115:30115 --name datahub --hostname datahub --network dev-net datahub run --agree-to-sap-license
+docker run -ti --env VORA_USERNAME=vora --env VORA_PASSWORD=SomeNicePassword19920706 --publish 8090:8090 --publish 9225:9225 --publish 30115:30115 --name datahub --hostname datahub --network dev-net datahub run --agree-to-sap-license
 ```
 
 After a few minutes (during which you can follow what happens inside the container), you see an output ("status loop") similar to the following. The output refreshes every minute and indicates that all services related to SAP Data Hub, developer edition are running.
@@ -106,23 +112,29 @@ Now that we have our `datahub` container up and running, we would start a separa
 Open a new command prompt and run the following command :
 
 ```sh
-docker run -ti --publish 127.0.0.1:50070:50070 --name hdfs --hostname hdfs --net dev-net datahub run-hdfs
+docker run -ti --publish 50070:50070 --name hdfs --hostname hdfs --net dev-net datahub run-hdfs
 ```
 
 After the installations are completed, the container would be started. You would be able to see the following output in the command prompt :
 
 ![picture_04](./datahub-docker-v2-setup_04.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Perform a smoke test)]
-Open a web browser and test the following URLs (where necessary enter **Username** and **Password** which you have set while building the Docker image):
+Open a web browser and test the following URLs (replace `localhost` with the IP address returned by `docker-machine ip` command, if running in Docker Toolbox).
 
 * `http://localhost:8090` (SAP Data Hub Modeler)
 * `http://localhost:9225` (SAP Vora Tools)
 * `http://localhost:50070` (Apache Hadoop User Interface)
 
+ Where necessary enter **Username** and **Password** which you have set while building the Docker image.
+
 If all URLs are working, you can assume that you have successfully set up SAP Data Hub, developer edition on your local computer.
+
+[DONE]
 
 [ACCORDION-END]
 

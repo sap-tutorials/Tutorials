@@ -1,33 +1,26 @@
 ---
-title: SAPUI5 - Enable Routing
-description: Enable routing to move from one view to another
+title: Enable Routing
+description: Enable routing to embed one view into another
+time: 5
+auto_validation: false
 primary_tag: topic>sapui5
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
----
-## Prerequisites  
-- **Proficiency:** Beginner
-- **How-To** [Start this tutorial series](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 4: [Add a list to the view](https://developers.sap.com/tutorials/sapui5-webide-add-list.html)
+author_name: Marius Obert
+author_profile: https://github.com/iobert
+tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-web-ide ]
 
-## Next Steps
- - The next tutorial in this series is Part 6: [Display List Details](https://developers.sap.com/tutorials/sapui5-webide-display-list-details.html)
+---
 
 ## Details
 ### You will learn  
-In order to enable navigating from one view to another, our app needs to be enabled for routing. With the newest version of SAPUI5, routing configurations are stored within the app descriptor called `manifest.json`.
-
-### Time to Complete
-**15 Minutes**.
+Embed one view into another one with routing to prepare for later tutorials. Edit the routing configuration, which is stored within the app descriptor `manifest.json`.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
 
 
-You have to add a routing configuration to the descriptor file and initialize the router instance within the component definition (`webapp/Component.js`).
-
+[ACCORDION-BEGIN [Step : ](Create a new SAPUI5 View)]
 1.  Create a new SAPUI5 View called `App`.  
 
-    To create a new SAPUI5 View, right click in the **`webapp`** folder, and then choose **New > SAPUI5 View**.  Enter the file name `App.view.xml`.
+    To create a new SAPUI5 View, right click in the **`webapp`** folder, and then choose **New > SAPUI5 View**.
 
     > **IMPORTANT!** Be sure to right click in the **`webapp`** folder.  If you choose the wrong folder, the files will be created in the wrong place.  If this happens, delete the folders and start over.
 
@@ -39,105 +32,53 @@ You have to add a routing configuration to the descriptor file and initialize th
 
     ![enter file name](1b.png)
 
-3.  Open the `App.view.xml` file, and replace the `<App>` tag with the following code:
+3.  Open the `mta_app/app/webapp/view/App.view.xml` file, and replace the `<App>` tag with the following code:
 
-    > Don't forget to save your files!
-
-    ```xml
+    ```XML
 	   <App id="app"/>
     ```
 
     ![Add code to App.view.xml](2.png)
 
+[DONE]
+[ACCORDION-END]
 
-4.  Open the `Mainfest.json` file again.  Click on the **Routing** tab at the top of the screen.
-
-    Next, under *Default Configuration*, click the **Show More Properties...** link.
-
-    ![Start working on the routing configuration](4.png)
-
-5.  Enter the following information in to the *Default Configuration* area:
-
-    |       |       |
-    |------:|------ |
-    |View Path  |`HelloWorld.view`  |
-    |View Type  |XML                |
-    |Control ID |app                |
-    |View Level |0                  |
-    |Control Aggregation    |pages  |
-    |Transition |slide              |
+[ACCORDION-BEGIN [Step : ](Rename the new route)]
+1.  Open the `Mainfest.json` file again.  Click on the **Routing** tab at the top of the screen.
 
 
-    ![Change the Default Configuration](5.png)
 
-6.  Scroll down to the *Manage Targets* area.  Click on the **+** icon to create a new target.
+    ![routing](3.png)
 
-    ![Add a new target](6a.png)
+2.  Scroll down and re-name the existing route to **`home`** and clear the **Pattern** field. Also change the **View Level** of the **TargetView1** to **`1`**.
 
-7.  Enter the target name `home`.  Click on **OK**.
+    ![Add a new target](4.png)
 
-    ![Enter the target name](7a.png)
+3.  **Save** the file.
 
-8.  Now, add the following properties to the new `home` target:
 
-    |           |       |
-    |----------:|------ |
-    |View Name  |`View1`|
-    |View Level |1      |
+[DONE]
+[ACCORDION-END]
 
-    ![Add properties to the target](8.png)
+[ACCORDION-BEGIN [Step : ](Change the root view)]
+1. In the same `manifest.json` file, we will switch to the **Code Editor** tab, which is on the bottom of the screen.
 
-9.  Go up to the *Routes* section, and click on the **+** icon to create a new route.
+2. Scroll to the `rootView` section, and *Change* the following lines:
 
-    ![Create a new route](9.png)
-
-10. Select the name `home` from the *Name* drop down box.  Then click the **+** icon in the *Targets* column.
-
-    ![Set route name, and add target](10.png)
-
-11. Select the target **home**, and then click **OK**.
-
-    ![Select the home target](11.png)
-
-12. In the same `manifest.json` file, we will switch to the **Code Editor** tab, which is on the bottom of the screen.
-
-    ![Swtich to the code editor](12.png)
-
-13. Scroll to the `rootView` section, and *Change* the following line:
-
-    ```javascript
-    "viewName": "HelloWorld.view.App",
+    ```JavaScript
+    "viewName": "sapcp.cf.tutorial.app.view.App",
     ```
 
-    ![Update manifest.json to use new view](13.png)
+    ```JavaScript
+    "id": "App"
+    ```
+
+    ![Update manifest.json to use new view](5.png)
+
+> After this tutorial, you should be able to run your application again, but you will not see any changes.  All of the routing work occurs "behind the scenes" and is not visible to the user.   
 
 
-14. Open the `webapp/Component.js` file, and add the following to the `init:` section:
+[VALIDATE_1]
+[ACCORDION-END]
 
-    ```javascript
-    // create the views based on the url/hash
-	this.getRouter().initialize();
-	```
-
-    ![Initialize routing](14.png)
-
-15. Open the `webapp/css/style.css` file, and change the *entire* file to the following:
-
-    ```css
-    .spacerTop {
-	 	margin-top: 2rem;
-	 }
-	 .sap-tablet .sapMDialog,
-	 .sap-desktop .sapMDialog {
-		min-width: 18rem;
-	 }
-	 .sapMMessageDialog {
-		width: 18rem;
-	 }
-	```
-
-    ![overwrite css file with new information](15.png)
-
-16. After this tutorial, you should be able to run your application again, but you will not see any changes.  All of the routing work occurs "behind the scenes" and is not visible to the user.   
-
-
+----

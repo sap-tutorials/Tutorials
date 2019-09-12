@@ -14,7 +14,7 @@ author_profile: https://github.com/niloofar-naseri
   - How to create a destination
   - How to create a UI with SAP Web IDE Full-Stack
 
-  Disclaimer: For productive development, please follow following tutorial: (https://developers.sap.com/tutorials/abap-environment-deploy-cf-production.html).
+**Disclaimer:** For productive development, please follow following tutorial: [Create an HTML5 Module and Deploy UI to Cloud Foundry](abap-environment-deploy-cf-production).
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 

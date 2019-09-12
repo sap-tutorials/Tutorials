@@ -11,11 +11,11 @@ time: 3
 <!-- loioeafe436a2fa34b13908fc0661ff5b8c9 -->
 
 ## Prerequisites
- - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
+ - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](hxe-ua-getting-started-vm). 
 
 ## Details
 ### You will learn
-You will learn how to download and install the `eml.tgz` SAP HANA External Machine Learning Library package.
+You will learn how to download and install the `eml.tgz` SAP HANA External Machine Learning Library package in your preconfigured VM.
 
 ---
 
@@ -23,21 +23,23 @@ You will learn how to download and install the `eml.tgz` SAP HANA External Machi
 
 Run the `hxe_gc` memory management script to free up available VM memory.
 
-1.   In your VM, log in as `hxeadm` and enter:
+1.   In your VM, log in as `hxeadm` and enter: 
 
     ```bash
     cd /usr/sap/HXE/home/bin
     ```
 
-2.   Execute:
+2.   Execute: 
 
     ```bash
     hxe_gc.sh
     ```
 
-3.   When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation.
+3.   When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation. 
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -49,6 +51,8 @@ In your VM, download `eml.tgz` using the built-in Download Manager. From the sam
 HXEDownloadManager_linux.bin linuxx86_64 vm eml.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Extract `eml.tgz`)]
@@ -58,6 +62,8 @@ In your VM, extract `eml.tgz`.
 ```bash
 tar -xvzf eml.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -69,4 +75,8 @@ As the <hxeadm> user, run:
 <extracted_path>/HANA_EXPRESS_20/install_eml.sh
 ```
 
+[DONE]
+
 [ACCORDION-END]
+
+

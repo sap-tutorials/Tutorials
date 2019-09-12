@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites
- - Completed the previous tutorial in this group which added code to onboard
+ - Completed the previous tutorial in this mission which added code to onboard
 
 ## Details
 ### You will learn

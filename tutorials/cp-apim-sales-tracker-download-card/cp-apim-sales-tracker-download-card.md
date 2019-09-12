@@ -77,9 +77,9 @@ primary_tag: products>sap-api-management
 
     **Field** | **Value**
     ---- | ----
-    Type |`API_Portal_Trial`
-    Platform Destination Name |`HTTP`
-    Destination Name |`API Portal on Trial`
+    Type |`Cloud Platform Destination`
+    Platform Destination Name |`API_Portal_Trial`
+    Destination Name |`API_Portal_Trial`
 
 5.  Click **Next** till you get **Finish**.
 

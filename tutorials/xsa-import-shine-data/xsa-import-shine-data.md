@@ -2,6 +2,7 @@
 title: Import Tables and Large Datasets (XS Advanced)
 description: Import SHINE sample tables and data using SAP Web IDE for SAP HANA.
 primary_tag: products>sap-hana
+auto_validation: true
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]
 time: 5
 ---
@@ -13,7 +14,7 @@ time: 5
 ### You will learn  
 This tutorial will guide you through the process of downloading sample data and database artifacts and importing it into SAP HANA using SAP Web IDE for SAP HANA.
 
-If you are looking to import the entire SAP HANA `INteractive` Education model for XS Advanced, follow this tutorial instead: [https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html](https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html)
+If you are looking to import the entire SAP HANA `INteractive` Education model for XS Advanced, follow this tutorial instead: [https://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html](xsa-ml-e2e-access-shine)
 
 ---
 
@@ -21,7 +22,7 @@ If you are looking to import the entire SAP HANA `INteractive` Education model f
 
 Download the file `data.zip` from our public [GitHub repository](https://github.com/SAP/com.sap.openSAP.hana5.templates/raw/hana2_sps01/ex2/core-db/data.zip).
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Import Archive)]
@@ -38,6 +39,7 @@ Import the archive into the data folder. This will probably be `src\data`. Right
 
 ![Confirm](3.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -51,29 +53,28 @@ Delete the files `FLIGHT.hdbcds`, `header.csv`,  `item.csv` and `load.hdbtableda
 
 ![Build](5.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check the imported entities in the Database Explorer)]
 
-Formerly known as HANA Runtime Tools or `HRTT` in previous versions, the Database Explorer allows you to see the database artifacts you create in the different HDI containers. Use the middle icon on the left sidebar or from the menu, `Tools->Database Explorer`:
+The Database Explorer allows you to see the database artifacts you create in the different HDI containers.
 
-![HRTT](6.png)
+Right-click on the database module and choose **Open HDI Container**
 
->In SPS12, the HANA Runtime Tool was accessed from `https://<hostname>:51006` or, for `SAP HANA, express edition`. from `http://<hostname>:51018`
+![Check tables](10.png)
 
-Use the `+` icon to add a database container into the Explorer.
+> Note: If you do not find this option, use the middle icon on the left sidebar or from the menu, `Tools-Database Explorer`:
+> Use the `+` icon to add a database container into the Explorer.
+> ![HRTT](7.png)
+> Locate your HDI container and add it. You will find it as a concatenation of your user ID and the name of your project.
+> ![HRTT](8.png)
 
-![HRTT](7.png)
+You can now navigate the tables and check their content. Click on **Open Data** for table `TCURC`
 
-Locate your HDI container and add it. You will find it as a concatenation of your user ID and the name of your project.
+![HRTT](12.png)
 
-![HRTT](8.png)
-
-Once added you can see the tables and their content.
-
-![HRTT](9.png)
-
+[VALIDATE_1]
 [ACCORDION-END]
 
 

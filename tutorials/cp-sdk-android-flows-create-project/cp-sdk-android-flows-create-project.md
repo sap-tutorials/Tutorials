@@ -8,16 +8,16 @@ primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites
- - **SAP Cloud Platform SDK for Android:** Version `2.0.1`
+ - **SAP Cloud Platform SDK for Android:** Version `2.1.1`
  - Complete step 1 of [Try Out SAP Cloud Platform SDK for Android Wizard](cp-sdk-android-wizard-app)
 
 
 ## Details
 ### You will learn
-  - How to create a project in Android Studio
+  - How to create a project in Android Studio without using SAP Cloud Platform SDK for Android wizard
   - How to import SAP libraries such as foundation, flows, onboarding, and SAP Fiori into the project
 
-The [Flows](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/flows/Overview.html) library is a new feature of the SAP Cloud Platform SDK for Android 2.0.  It can reduce and simplify the code in an application related to onboarding and exchanging client policy data with Mobile Services.
+The [Flows](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/flows/Overview.html) library is a new feature of the SAP Cloud Platform SDK for Android 2.0.  It can reduce and simplify the code in an application related to onboarding and exchanging client policy data with Mobile Services.  A great overview is provided by `Britt Womelsdorf` at [A Closer Look at Android Flows](https://blogs.sap.com/2019/03/25/a-closer-look-at-android-flows/).
 
 ---
 
@@ -69,7 +69,7 @@ This tutorial assumes that **Basic** is selected as the apps **Security Configur
 
 Open the project's **`gradle.properties`** file.  
 
-Add a new `gradle` setting **`sdkVersion=2.0.1`** to specify the version of the SAP Cloud Platform SDK for Android being used as shown below.
+Add a new `gradle` setting **`sdkVersion=2.1.1`** to specify the version of the SAP Cloud Platform SDK for Android being used as shown below.
 
 ![SDK version variable](sdk-version-variable.png)
 
@@ -99,7 +99,7 @@ implementation group: 'com.sap.cloud.android', name: 'onboardingflows-basicauth'
 implementation group: 'com.sap.cloud.android', name: 'onboardingflows-storemanager', version :sdkVersion
 implementation group: 'com.sap.cloud.android', name: 'onboardingflows-welcomescreen', version :sdkVersion
 implementation group: 'com.sap.cloud.android', name: 'onboardingflows-eulascreen', version :sdkVersion
-implementation group: 'com.sap.cloud.android', name: 'onboardingflows-logging', version :sdkVersion // Supported in version 2.0.1 and higher
+implementation group: 'com.sap.cloud.android', name: 'onboardingflows-logging', version :sdkVersion // Supported in version 2.1.0 and higher
 implementation group: 'com.sap.cloud.android', name: 'qrcodereader', version :sdkVersion
 ```
 

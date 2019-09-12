@@ -3,7 +3,7 @@ title: Connect to the SAP HANA Cockpit
 description: Open your application from the dashboard and connect to the SAP HANA cockpit.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
+tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-hana
 ---
 
@@ -25,13 +25,13 @@ The SAP HANA cockpit is useful because it provides graphical tools to monitor re
 
 Navigate back to the **SAP Cloud Platform Cockpit** to check on the progress status of your instance.
 
-Click on the **trial** subaccount.
+Click on the subaccount.
 
-![New project from template](1.png)
+![New project from template](1X.png)
 
 Click on **Spaces** and click on the **dev** space.
 
-![New project from template](2.png)
+![New project from template](2X.png)
 
 Click on **Service Instances**.
 
@@ -93,7 +93,6 @@ Open the **SQL Console**.
 Execute the following statement to complete the validation below.
 
 ![HaaS SQL Console](12.png)
-
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -280,9 +280,6 @@ define table zxx_account {
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Test yourself)]
-You will now create an input check for the field `city` of type `s_city` , in the table `zxx_account`.
-Include the two `foreignKey` annotations.
-Use the field `city` in the check table `sgeocity `. Enter your code in the box below and choose **Submit answer** :
 
 [VALIDATE_1]
 [ACCORDION-END]

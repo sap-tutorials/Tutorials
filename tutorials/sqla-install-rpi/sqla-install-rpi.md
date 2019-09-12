@@ -38,7 +38,7 @@ It can take even up to one hour to finish the previous command depending on the 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Register for SAP SQL Anywhere Developer Edition)]
-Register for the SAP SQL Anywhere Developer Edition: <https://www.sap.com/cmp/syb/crm-xu15-int-sqldevft/index.html>
+Register for the SAP SQL Anywhere Developer Edition.
 
 Once you have received confirmation e-mail, check its content for links to download software packages for different versions, links to documentation and a link to user forums.
 

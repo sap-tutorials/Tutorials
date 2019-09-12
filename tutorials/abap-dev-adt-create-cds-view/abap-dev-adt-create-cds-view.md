@@ -1,13 +1,14 @@
 ---
-title: Create a Simple ABAP CDS View in ADT
+title: Create a Simple ABAP CDS View in ADT 
 description: You will learn how to create a CDS (Core Data Services) view using ABAP Development Tools (ADT).
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
+tags: [  tutorial>beginner, topic>abap-development ]
 time: 20
 
 ---
 ## Prerequisites
+- Run the transaction `SEPM_DG_OIA_NEW` or transaction `STC01 -> tasklist SAP_BASIS_EPM_OIA_CONFIG`. (If you do not, your CDS view will display empty.)
 -	**Tutorial**: [Create an ABAP Package](abap-dev-create-package)
 
 ## Details
@@ -107,7 +108,7 @@ You will now add fields of related data sources to the SELECT list of `Z_Invoice
 
 4.	Add the `payment_status` from the invoice header to the SELECT list using the association **header**
 
-    ![Image depicting step9-AddFields](step9-AddRelatedFields.png)
+    ![Image depicting step9-AddRelatedFields](step9-AddRelatedFields.png)
 
 [DONE]
 [ACCORDION-END]
@@ -148,9 +149,10 @@ You will now filter the results so that only invoice items with `currency_code =
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Check your code and view your changes)]
-Your CDS view code should look like this:
+Your CDS view code should look something like this:
 
 ```ABAP
+
 @AbapCatalog.sqlViewName: 'ZITEMS_XXX'
 @AbapCatalog.compiler.compareFilter: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
@@ -176,6 +178,7 @@ define view Z_Invoice_Items_2
 }
 
 where currency_code = 'USD'
+
 ```
 Open the CDS View in the Data Preview by choosing **F8**. Your CDS View should look like this:
 
@@ -185,9 +188,6 @@ Open the CDS View in the Data Preview by choosing **F8**. Your CDS View should l
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Add a new field to your CDS view for the **product name**. Find the correct association and field name by using the definition of `sepm_sddl_so_invoice_item` (**`F3`**).
-Your answer should be one line of code only, and take the form `<association(s)>.fieldname` .
-Enter your line of code in the box below and choose **Submit Answer.**
 
 [VALIDATE_1]
 [ACCORDION-END]

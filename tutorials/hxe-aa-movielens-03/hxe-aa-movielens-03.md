@@ -308,12 +308,12 @@ Save the file using the ![save](00-save.png) icon from the menu.
 >&nbsp;
 >For additional details, check the [Table Data in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/35c4dd829d2046f29fc741505302f74d.html) documentation.
 
-Create a new file named **`upload_tabledata.hdbtabledata`** in the **`forecast/db/src/data`** folder.
+Create a new file named **`upload_tabledata.hdbtabledata`** in the **`movielens/db/src/data`** folder.
 
 This is the full path of the created file:
 
 ```
-forecast/db/src/data/upload_tabledata.hdbtabledata
+movielens/db/src/data/upload_tabledata.hdbtabledata
 ```
 
 Paste the following content:

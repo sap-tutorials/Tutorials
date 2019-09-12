@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
 ## Prerequisites
- - Completed the previous tutorial in this group which added code to access the secure stores
+ - Completed the previous tutorial in this mission which added code to access the secure stores
 
 ## Details
 ### You will learn
@@ -133,7 +133,7 @@ To change the Passcode Policy, navigate to the Mobile Services Cockpit and under
 
 ![Passcode policy](passcode-policy.png)
 
-Ensure that the below line in **`MainActivity`**, in the **`onCreate`** method is commented out.
+Ensure that the below line in **`MainActivity`**, in the **`onCreate`** method, is commented out.
 
 `settingsDownloadStep.passcodePolicy = null;`
 

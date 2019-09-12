@@ -11,15 +11,15 @@ time: 3
 <!-- loio31a2f9637e5747298b29c2960d2c286c -->
 
 ## Prerequisites
- - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
+ - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](hxe-ua-getting-started-vm). 
 
 ## Details
 ### You will learn
-You will learn how to download and install the `apl.tgz` SAP HANA Automated Predictive Library (APL) package.
+You will learn how to download, extract, and install the `apl.tgz` SAP HANA Automated Predictive Library (APL) package in your preconfigured VM.
 
 ---
 
-SAP HANA Automated Predictive Library is a separate download in the Download Manager. Use the Download Manager to download the SAP HANA Automated Predictive Library package, `apl.tgz`.
+SAP HANA Automated Predictive Library is a separate download. Use the commands in this procedure to download the SAP HANA Automated Predictive Library package `apl.tgz` using the built-in Download Manager (console mode).
 
 [ACCORDION-BEGIN [Step 1: ](Run the memory management script)]
 
@@ -53,6 +53,8 @@ In your VM, download `apl.tgz` using the built-in Download Manager. From the sam
 HXEDownloadManager_linux.bin linuxx86_64 vm apl.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Extract apl.tgz)]
@@ -63,6 +65,8 @@ In your VM, extract `apl.tgz`.
 tar -xvzf apl.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run the installation script)]
@@ -72,6 +76,8 @@ As the `hxeadm` user, run the installation script as root:
 ```bash
 sudo <extracted_path>/HANA_EXPRESS_20/install_apl.sh
 ```
+
+[DONE]
 
 [ACCORDION-END]
 

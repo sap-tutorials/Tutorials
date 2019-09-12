@@ -30,17 +30,19 @@ When you get to the app's home page, turn on **airplane mode** on your device, o
 
 ![Turn on Airplane mode](turn_on_airplane_mode.png)
 
-Tap the **Products** list item and see that the products load without a working internet connection. They load because they were downloaded to the offline store while the store was being set up.
+The entity list screen is populated based on the metadata.xml file retrieved when the application was created.  Tap the **Products** list item.
 
-![Products loaded without internet](products_loaded_offline.png)
+![Entity list screen](entities_screen.png)
+
+ The products screen makes a data request to show the available products.  Notice that it succeeds without a working network connection.  The data request is fulfilled from the offline store that was previously created and populated on the device.
 
 ![Select the second product](select_second_product.png)
 
+On the detail page, tap the edit toolbar icon.  
+
 ![Select product edit button](select_product_edit_button.png)
 
-Change, for example, the currency code.
-
-Save your changes.
+Make a change to the currency code and tap the save toolbar icon.
 
 ![Change currency code](change_currency_code.png)
 
@@ -65,7 +67,7 @@ When the sync completes, the change you made will have been applied to the backe
 
 The offline store is populated based on objects called `OfflineODataDefiningQuery`. The defining queries are located in `SAPServiceManager.java`, in the `initializeOffline` method.
 
-```Java
+```
 OfflineODataDefiningQuery customersQuery = new OfflineODataDefiningQuery("Customers", "Customers", false);
 OfflineODataDefiningQuery productsQuery = new OfflineODataDefiningQuery("Products", "Products", true);
 ```
@@ -403,7 +405,7 @@ Run the app again, and re-attempt the sync.  When the sync fails, you should be 
 
 ![Error screen](error_screen.png)
 
-You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state.  All entities who didn't produce errors successfully synced.  One way to correct the exception would be to change the quantity from 0 to a valid positive number.  Another would be to delete the `ErrorArchive` entry reverting the entity to its previous state.  For more information on error handling visit [Handling Errors and Conflicts](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html).
+You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state.  All entities which did not produce errors, successfully synced.  One way to correct the exception would be to change the quantity from 0 to a valid positive number.  Another would be to delete the `ErrorArchive` entry reverting the entity to its previous state.  For more information on error handling visit [Handling Errors and Conflicts](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html).
 
 >Further information on using the offline feature can be found at [Step by Step with the SAP Cloud Platform SDK for Android — Part 6 — Offline OData](https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-6-offline-odata/)</a>.
 

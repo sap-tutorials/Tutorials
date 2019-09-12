@@ -1,15 +1,18 @@
 ---
 title:  Create Custom UI for S/4HANA on SAP Cloud Platform
-description: Create a UI on SAP Cloud Platform and deploy it to the S/4HANA system.
+description: Create a UI in a SAP Cloud Platform Subaccount's Web IDE and deploy it to the S/4HANA system.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility  ]
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 time: 25
+author_name: Ulrike Liebherr
+author_profile: https://github.com/Liebherr
 ---
 
-## Prerequisites  
-- **Authorizations:** Your user needs a business role with Unrestricted Write Access and business catalog Extensibility - Fiori App Development (ID: `SAP_CORE_BC_EXT_UI`). Access to a SAP Web IDE account is expected as a prerequisite.
-- **SAP S/4HANA Release:** 1902 (tutorial's last update)
+## Prerequisites
+**Authorizations**: Your user needs
+- (a) business role(s) with Unrestricted Write Access for business catalog **Extensibility - Fiori App Development** (ID: `SAP_CORE_BC_EXT_UI`) and **Extensibility** (ID: `SAP_CORE_BC_EXT`) in your **S/4HANA Cloud** system
+- access to **SAP Web IDE**
 
 ## Details
 ### You will learn
@@ -19,6 +22,9 @@ time: 25
 - How to deploy that UI as application to the S/4HANA Cloud system's SAPUI5 ABAP Repository
 
 As building UIs in SAP Cloud Platform (Side-by-Side Extensibility) offers more possibilities than UI Adaptation within S/4HANA Cloud (In-App-Extensibility), this tutorial shows you roughly how to build an UI based on a S/4HANA Cloud Custom Business Object's OData service in Web IDE and how to get it to the S/4HANA Cloud system.
+
+### Additional Information
+- **SAP S/4HANA Cloud Release** (tutorial's last update): 1902
 
 ---
 
@@ -50,10 +56,12 @@ Enter basic information for the project, like **`Bonusplan`** as name and title.
 
 Click **Next**.
 
-To add a data connection click **Service Catalog** and set the destination **`SAP_DEV_SYSTEM`** which you have previously created on your SAP Cloud Platform. Choose **`YY1_BONUSPLAN_CDS`** as service and click **Next**.
+To add a data connection click **Service Catalog** and set the destination **`SAP_DEV_SYSTEM`** which you have previously created on your SAP Cloud Platform.
+<!-- End of equal part with abap-custom-ui-communication-arrangement-->
+Choose **`YY1_BONUSPLAN_CDS`** as service and click **Next**.
 
 ![Choose data connection for list report application](webIDE_newLR_chooseDataConnection.png)
-<!-- End of equal part with abap-custom-ui-communication-arrangement-->
+
 
 Choose all annotations in this view and move on with **Next**.
 
@@ -68,26 +76,25 @@ Customize the template by selecting **`YY1_BONUSPLAN`** as OData collection and 
 
 [ACCORDION-BEGIN [Step 3: ](Configure S/4HANA Cloud application tile)]
 To configure the tile that will appear in your S/4HANA Cloud Fiori Launchpad later, do the following:
-Open the `webapp` folder and `manifest.json` file, and make sure to be in descriptor mode of the editor.
+Open the `webapp` folder and `manifest.json` file, and make sure to be in **Descriptor Editor** for the file.
 
-Then go to **navigation**
-
-![Configure application tile data](webIDE_LR_configureTileInManifest.png)
+Then go to **Navigation**
 
 Add the following information:
 
 | Inbound ||
 | :------------------ | :-------------------- |
 | **Semantic Object** | `Bonusplan`           |
-| **Action**          | `mantain`             |
+| **Action**          | `maintain`             |
 
 | Inbound Tile ||
 | :------------------ | :----------------------- |
 | **Title**           | `Bonusplan`              |
 | **Icon**            | `sap-icon://money-bills` |
 
+![Configure application tile data](webIDE_LR_configureTileInManifest.png)
 
-Click **Save**.
+**Save** the file.
 
 [DONE]
 [ACCORDION-END]
@@ -115,7 +122,7 @@ Save your changes with CTRL+S.
 [ACCORDION-BEGIN [Step 5: ](Test UI)]
 Although the Preview in SAPUI5 Editor already gives you an idea on how the UI will look and behave like a test in an own browser window is started this way.
 
-Having just chosen a file of your project in the navigation tree or editor, click the play button to run your application in the test environment of SAP Web IDE. 
+Having just chosen a file of your project in the navigation tree or editor, click the play button to run your application in the test environment of SAP Web IDE.
 
 ![Run application](webIDE_runApplicationButton.png)
 

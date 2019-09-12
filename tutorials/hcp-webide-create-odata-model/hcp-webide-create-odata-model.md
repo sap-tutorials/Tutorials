@@ -1,30 +1,34 @@
 ---
-title: Manually creating a data model to use in SAP Web IDE's Mock Data server
-description: Learn how to create a data model in the Common Schema Definition Language (CSDL) using SAP Web IDE
+title: Manually Create a Data Model for SAP Web IDE's Mock Data Server
+description: Create a data model in Common Schema Definition Language (CSDL) using SAP Web IDE.
 primary_tag: products>sap-cloud-platform
+auto_validation: true
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
+time: 20
 ---
 
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](https://developers.sap.com/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
-
-## Next Steps
-- [Build an SAPUI5 app based on your data model and run it with mock data](https://developers.sap.com/tutorials/hcp-webide-build-app-mock-data.html)
+- **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) Primer for Developers](https://developers.sap.com/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
 
 ## Details
 ### You will learn  
-In most cases, a live OData service will be available when building an application. For times when a service is not available, it is still possible to build apps with SAP Web IDE with a file-based data model and then run on simulated data (referred to as "mock data" in SAP Web IDE). Once the data service is available, the app can then be configured to run against the service rather than the mock data with no other changes. The mock data approach is also useful if you want to prototype an app and have realistic data appear in the UI.
+In most cases, a live OData service will be available when building an application. For times when a service is not available, it is still possible to build apps with SAP Web IDE with a file-based data model and then run on simulated data (referred to as "mock data" in SAP Web IDE).
 
-In this tutorial, you will create an OData model with a Sales Order related data fields in two parts:
-- **Part 1:** Create the minimum data model needed to build a basic app based on one OData collection
-- **Part 2:** The second part adds an additional collection as a `NavigationProperty` to your primary collection similar to what you used in the earlier Mobile Guides.
+Once the data service is available, the app can then be configured to run against the service rather than the mock data with no other changes. The mock data approach is also useful if you want to prototype an app and have realistic data appear in the UI.
 
-Both versions of the metadata document will allow you to use the Web IDE template wizard to create an app in the next tutorial (and then switch it to a live service).
+In this tutorial, you will create an OData model with Sales Order-related data fields in two parts:
+
+  - **Part 1:** Create the minimum data model needed to build a basic app based on one OData collectionץ
+
+  - **Part 2:** The second part adds an additional collection as a `NavigationProperty` to your primary collection similar to what you used in the earlier Mobile Guides.
+
+Both versions of the metadata document will allow you to use the SAP Web IDE template wizard to create an app in the next tutorial (and then switch it to a live service).
 
 Additionally, the full data model is provided at the bottom of this document if you want to refer to it later for use in your projects.
 
-**Background:**
+### Background
 
 A metadata document is defined in the Common Schema Definition Language (CSDL). There is an exhaustive description of [CSDL](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part3-csdl.html) here, but this tutorial will focus on a subset of the full language to build the metadata needed for this tutorial.  
 
@@ -40,21 +44,20 @@ XML declaration   | Not necessary for `.edmx` files, but useful to include if yo
 
 ![Part 1 OData Model Structure](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_intro.png)
 
-Part two of this tutorial adds in a second `EntityType` and the required elements to set up the `NavigationProperty`. In the Web IDE template you have been using the data from the `NavigationProperty` (Suppliers) has been displayed in the Info or Suppliers tab.
+Part two of this tutorial adds in a second `EntityType` and the required elements to set up the `NavigationProperty`. In the SAP Web IDE template you have been using the data from the `NavigationProperty` (Suppliers) has been displayed in the Info or Suppliers tab.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Open Web IDE and create new folder)]
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE and create new folder)]
 
-Open Web IDE, select the Local folder and create a new folder called `Metadata`.
+Open SAP Web IDE, select the Local folder and create a new folder called `Metadata`.
 
-Right-click on the `Metadata` folder, and create a new file named `m104metadata_no_nav.edmx`.
+Right-click the `Metadata` folder, and create a new file named `m104metadata_no_nav.edmx`.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create entity model wrapper)]
@@ -68,7 +71,7 @@ Item          | Description
 
 Text to enter:
 
-```xml
+```XML
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
 <edmx:DataServices m:DataServiceVersion="2.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
@@ -80,7 +83,9 @@ Text to enter:
 ![wrapper](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_3.png)
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 3: ](Add Schema element)]
 
@@ -93,7 +98,7 @@ Item          | Description
 
 Text to enter:
 
-```xml
+```XML
 <Schema Namespace="SalesModel" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
 
 </Schema>
@@ -102,6 +107,7 @@ Text to enter:
 ![schema](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_4.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Review exposed data items)]
@@ -155,7 +161,9 @@ There are sixteen different primitive data types supported in OData ([more infor
 - `DateTime`
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 5: ](Add entity type)]
 
@@ -163,7 +171,7 @@ The next step is to add the `EntityType` element into your document which define
 
 Copy and paste the text below within the `Schema` element in your document.
 
-```xml
+```XML
 <EntityType Name="SalesOrder">
 
 
@@ -173,6 +181,7 @@ Copy and paste the text below within the `Schema` element in your document.
 ![Entity Type](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_7.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Populate entity type element)]
@@ -186,9 +195,9 @@ The `Key` is used as the default sorting key the service will use when returning
 
 Copy and paste the following within the `SalesOrder` `EntityType` elements.
 
-```xml
+```XML
 <Key>
-<PropertyRef Name="SalesOrderKey"/>
+	<PropertyRef Name="SalesOrderKey"/>
 </Key>
 <Property Name="SalesOrderID" Type="Edm.String" MaxLength="10" />
 <Property Name="CreatedByEmployeeLastName" Type="Edm.String" MaxLength="40" />
@@ -222,15 +231,17 @@ Copy and paste the following within the `SalesOrder` `EntityType` elements.
 ![Entity Type Content](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_8.png)
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 7: ](Finally, add entity container)]
 
 The last element to add is the `EntityContainer` which will expose the `SalesOrder` model as the `SalesOrders` collection. Copy and paste the following between the `</EntityType>` tag and the `</Schema>` tag.
 
-```xml
+```XML
 <EntityContainer Name="SalesEntities" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-<EntitySet EntityType="SalesModel.SalesOrder" Name="SalesOrders"/>
+	<EntitySet EntityType="SalesModel.SalesOrder" Name="SalesOrders"/>
 </EntityContainer>
 ```
 
@@ -240,7 +251,9 @@ The last element to add is the `EntityContainer` which will expose the `SalesOrd
 Your basic OData model is now complete and you could use it to build a basic app with the SAP Web IDE template wizard. If you would like to do this before continuing, you can jump to the next tutorial now.
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 8: ](Review requirements for linking second collection)]
 
@@ -257,18 +270,22 @@ XML declaration, `Edmx` and `DataServices` elements | Same as part 1
 ![Part 2 OData Model Structure](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_intro.png)
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 9: ](Copy existing file)]
 
-To begin, right-click on the `m104metadata_no_nav.edmx` file and select **Copy**.
+To begin, right-click the `m104metadata_no_nav.edmx` file and select **Copy**.
 
-Right-click on the `Metadata` folder and select **Paste** (to duplicate the file). You will see a naming conflict dialog box open – name the new file `m104metadata_nav.edmx` and click **OK**.
+Right-click the `Metadata` folder and select **Paste** (to duplicate the file). You will see a naming conflict dialog box open – name the new file `m104metadata_nav.edmx` and click **OK**.
 
 ![Rename file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_2.png)
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 10: ](Add navigation property element)]
 
@@ -283,7 +300,7 @@ Attribute                  | Purpose
 
 Text to enter:
 
-```xml
+```XML
 <NavigationProperty FromRole="SalesOrder" Name="BusinessPartner" Relationship="SalesModel.FK_SalesOrder_BusinessPartner"
 ToRole="BusinessPartner"/>
 ```
@@ -291,7 +308,9 @@ ToRole="BusinessPartner"/>
 ![NavigationProperty](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_3.png)
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 11: ](Add entity type)]
 
@@ -320,33 +339,34 @@ To add the `EntityType` for `BusinessPartner`, copy and paste the following text
 
 Text to enter:
 
-```xml
+```XML
 <EntityType Name="BusinessPartner">
-<Key>
-<PropertyRef Name="BusinessPartnerKey"/>
-</Key>
-<Property Name="Address" Nullable="false" Type="Edm.String"/>
-<Property MaxLength="10" Name="BusinessPartnerID" Type="Edm.String"/>
-<Property MaxLength="80" Name="Company" Type="Edm.String"/>
-<Property MaxLength="60" Name="BusinessPartnerRoleText" Type="Edm.String"/>
-<Property MaxLength="32" Name="BusinessPartnerKey" Nullable="false" Type="Edm.String"/>
-<Property MaxLength="60" Name="CurrencyText" Type="Edm.String"/>
-<Property MaxLength="60" Name="WebAddress" Type="Edm.String"/>
-<Property MaxLength="3" Name="BusinessPartnerRoleCode" Type="Edm.String"/>
-<Property MaxLength="30" Name="FaxNumber" Type="Edm.String"/>
-<Property MaxLength="10" Name="LegalForm" Type="Edm.String"/>
-<Property MaxLength="255" Name="EmailAddress" Type="Edm.String"/>
-<Property MaxLength="30" Name="TelephoneNumber" Type="Edm.String"/>
-<Property MaxLength="5" Name="CurrencyCode" Type="Edm.String"/>
-<Property MaxLength="3" Name="CountryCode" Type="Edm.String"/>
-<Property MaxLength="1" Name="GenderCode" Type="Edm.String"/>
+	<Key>
+		<PropertyRef Name="BusinessPartnerKey"/>
+	</Key>
+	<Property Name="Address" Nullable="false" Type="Edm.String"/>
+	<Property MaxLength="10" Name="BusinessPartnerID" Type="Edm.String"/>
+	<Property MaxLength="80" Name="Company" Type="Edm.String"/>
+	<Property MaxLength="60" Name="BusinessPartnerRoleText" Type="Edm.String"/>
+	<Property MaxLength="32" Name="BusinessPartnerKey" Nullable="false" Type="Edm.String"/>
+	<Property MaxLength="60" Name="CurrencyText" Type="Edm.String"/>
+	<Property MaxLength="60" Name="WebAddress" Type="Edm.String"/>
+	<Property MaxLength="3" Name="BusinessPartnerRoleCode" Type="Edm.String"/>
+	<Property MaxLength="30" Name="FaxNumber" Type="Edm.String"/>
+	<Property MaxLength="10" Name="LegalForm" Type="Edm.String"/>
+	<Property MaxLength="255" Name="EmailAddress" Type="Edm.String"/>
+	<Property MaxLength="30" Name="TelephoneNumber" Type="Edm.String"/>
+	<Property MaxLength="5" Name="CurrencyCode" Type="Edm.String"/>
+	<Property MaxLength="3" Name="CountryCode" Type="Edm.String"/>
+	<Property MaxLength="1" Name="GenderCode" Type="Edm.String"/>
 </EntityType>
 ```
 
 ![BusinessPartner EntityType](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_5.png)
 
-
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 12: ](Add association element)]
 
@@ -361,24 +381,26 @@ Attribute                  | Purpose
 
 Copy and paste the following text immediately after the `BusinessPartner` `</EntityType>` closing tag.
 
-```xml
+```XML
 <Association Name="FK_SalesOrder_BusinessPartner">
-<End Multiplicity="0..1" Role="BusinessPartner" Type="SalesModel.BusinessPartner"/>
-<End Multiplicity="*" Role="SalesOrder" Type="SalesModel.SalesOrder"/>
-<ReferentialConstraint>
-<Principal Role="BusinessPartner">
-<PropertyRef Name="BusinessPartnerKey"/>
-</Principal>
-<Dependent Role="SalesOrder">
-<PropertyRef Name="SalesOrderID"/>
-</Dependent>
-</ReferentialConstraint>
+	<End Multiplicity="0..1" Role="BusinessPartner" Type="SalesModel.BusinessPartner"/>
+	<End Multiplicity="*" Role="SalesOrder" Type="SalesModel.SalesOrder"/>
+	<ReferentialConstraint>
+		<Principal Role="BusinessPartner">
+			<PropertyRef Name="BusinessPartnerKey"/>
+		</Principal>
+		<Dependent Role="SalesOrder">
+			<PropertyRef Name="SalesOrderID"/>
+		</Dependent>
+	</ReferentialConstraint>
 </Association>
 ```
 
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 13: ](Modify entity container element)]
 
@@ -386,31 +408,35 @@ The last step is to modify the `EntityContainer` element to add the `BusinessPar
 
 Copy and paste the following text after the `SalesOrders` `<EntitySet>` element within the `EntityContainer` element.
 
-```xml
+```XML
 <EntitySet EntityType="SalesModel.BusinessPartner" Name="BusinessPartners"/>
 <AssociationSet Association="SalesModel.FK_SalesOrder_BusinessPartner" Name="SO_TO_BP_AssocSet">
-<End EntitySet="BusinessPartners" Role="BusinessPartner"/>
-<End EntitySet="SalesOrders" Role="SalesOrder"/>
+	<End EntitySet="BusinessPartners" Role="BusinessPartner"/>
+	<End EntitySet="SalesOrders" Role="SalesOrder"/>
 </AssociationSet>
 ```
 
 ![EntitySet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_7.png)
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 14: ](Model is complete)]
 
-Your model is now complete. When working on your own OData model, you can take advantage of the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm?e5c9289506a7493189948b55c69097db.html) (which is a plug-in to SAP Web IDE). To enable it, select **Tools > Preferences** in Web IDE, click on **Plugins**, locate the **OData Model Editor** plugin, click the slider to "on", then **Save** and Web IDE will reload.
+Your model is now complete. When working on your own OData model, you can take advantage of the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm?e5c9289506a7493189948b55c69097db.html) (which is a plug-in to SAP Web IDE). To enable it, select **Tools > Preferences** in SAP Web IDE, click **Plugins**, locate the **OData Model Editor** plugin, click the slider to **On**, then **Save** and SAP Web IDE will reload.
 
 ![Enable OData modeler](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_8.png)
 
 
+[VALIDATE_1]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 15: ](Load graphical view)]
 
-With the `m104metadata_nav.edmx` file open, you will see the **Source** and **Design** tabs at the bottom of your editor pane. These show up when you are working on an `.edmx` file. Click on the **Design** tab to switch to the graphical view.
+With the `m104metadata_nav.edmx` file open, you will see the **Source** and **Design** tabs at the bottom of your editor pane. These show up when you are working on an `.edmx` file. Click the **Design** tab to switch to the graphical view.
 
 ![Design tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_9.png)
 
@@ -421,25 +447,30 @@ The graphical view will open. If the model appears very small (as shown below), 
 ![Fit to screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_10.png)
 
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](View the full entity model)]
+
+[ACCORDION-BEGIN [Step 16: ](View full entity model)]
 
 In this view you can see the full entity model, associations, multiplicity and clicking on one of the members of the model will show the attributes for that member.
 
 ![View member attributes](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_11.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](View the console)]
 
-Click on the **Source** tab, and then select **View > Console** (if the console is not currently displayed). SAP Web IDE also has a CSDL validator that is activated when you edit an `.edmx` file. Since your model is complete – it will show **this is a valid OData model file**.
+[ACCORDION-BEGIN [Step 17: ](View console)]
+
+Click the **Source** tab, and then select **View > Console** (if the console is not currently displayed). SAP Web IDE also has a CSDL validator that is activated when you edit an `.edmx` file. Since your model is complete – it will show **this is a valid OData model file**.
 
 ![Valid model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_12.png)
 
 
+[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 18: ](View changes in real time)]
 
@@ -452,101 +483,100 @@ Remove the extra character to remove the error.
 ![fixed typo](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_14.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Future modifications)]
 
-If you want to modify the entity model used in this tutorial for your own projects, the full entity model text is provided below. Just copy and paste it into an `.edmx` file in Web IDE and modify the Name, Type fields and others as needed.
+If you want to modify the entity model used in this tutorial for your own projects, the full entity model text is provided below. Just copy and paste it into an `.edmx` file in SAP Web IDE and modify the Name, Type fields and others as needed.
 
-```xml
+```XML
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
-<edmx:DataServices m:DataServiceVersion="2.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
-<Schema Namespace="SalesModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+	<edmx:DataServices m:DataServiceVersion="2.0" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+		<Schema Namespace="SalesModel" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
 xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-<EntityType Name="SalesOrder">
-<Key>
-<PropertyRef Name="SalesOrderKey"/>
-</Key>
-<Property MaxLength="10" Name="SalesOrderID" Type="Edm.String"/>
-<Property MaxLength="40" Name="CreatedByEmployeeLastName" Type="Edm.String"/>
-<Property MaxLength="1" Name="Status" Type="Edm.String"/>
-<Property MaxLength="40" Name="ChangedByEmployeeLastName" Type="Edm.String"/>
-<Property MaxLength="12" Name="ChangedByEmployeeUserID" Type="Edm.String"/>
-<Property Name="NetSum" Precision="15" Scale="2" Type="Edm.Decimal"/>
-<Property MaxLength="32" Name="CustomerKey" Type="Edm.String"/>
-<Property MaxLength="12" Name="CreatedByEmployeeUserID" Type="Edm.String"/>
-<Property MaxLength="1" Name="DeliveryStatus" Type="Edm.String"/>
-<Property MaxLength="255" Name="CurrencyCodeDescription" Type="Edm.String"/>
-<Property MaxLength="60" Name="StatusDescription" Type="Edm.String"/>
-<Property MaxLength="80" Name="ChangedByCustomerName" Type="Edm.String"/>
-<Property MaxLength="40" Name="CreatedByEmployeeFirstName" Type="Edm.String"/>
-<Property MaxLength="60" Name="DeliveryStatusDescription" Type="Edm.String"/>
-<Property MaxLength="255" Name="Note" Type="Edm.String"/>
-<Property Name="CreatedAt" Precision="7" Type="Edm.DateTime"/>
-<Property Name="Tax" Precision="15" Scale="2" Type="Edm.Decimal"/>
-<Property Name="TotalSum" Precision="15" Scale="2" Type="Edm.Decimal"/>
-<Property MaxLength="80" Name="CreatedByCustomerName" Type="Edm.String"/>
-<Property MaxLength="40" Name="ChangedByEmployeeFirstName" Type="Edm.String"/>
-<Property Name="ChangedAt" Precision="7" Type="Edm.DateTime"/>
-<Property MaxLength="10" Name="CustomerID" Type="Edm.String"/>
-<Property MaxLength="80" Name="CustomerName" Type="Edm.String"/>
-<Property MaxLength="32" Name="SalesOrderKey" Nullable="false" Type="Edm.String"/>
-<Property MaxLength="1" Name="BillingStatus" Type="Edm.String"/>
-<Property MaxLength="60" Name="BillingStatusDescription" Type="Edm.String"/>
-<Property MaxLength="5" Name="Currency" Type="Edm.String"/>
-<NavigationProperty FromRole="SalesOrder" Name="BusinessPartner" Relationship="SalesModel.FK_SalesOrder_BusinessPartner"
-ToRole="BusinessPartner"/>
-</EntityType>
-<EntityType Name="BusinessPartner">
-<Key>
-<PropertyRef Name="BusinessPartnerKey"/>
-</Key>
-<Property Name="Address" Nullable="false" Type="Edm.String"/>
-<Property MaxLength="10" Name="BusinessPartnerID" Type="Edm.String"/>
-<Property MaxLength="80" Name="Company" Type="Edm.String"/>
-<Property MaxLength="60" Name="BusinessPartnerRoleText" Type="Edm.String"/>
-<Property MaxLength="32" Name="BusinessPartnerKey" Nullable="false" Type="Edm.String"/>
-<Property MaxLength="60" Name="CurrencyText" Type="Edm.String"/>
-<Property MaxLength="60" Name="WebAddress" Type="Edm.String"/>
-<Property MaxLength="3" Name="BusinessPartnerRoleCode" Type="Edm.String"/>
-<Property MaxLength="30" Name="FaxNumber" Type="Edm.String"/>
-<Property MaxLength="10" Name="LegalForm" Type="Edm.String"/>
-<Property MaxLength="255" Name="EmailAddress" Type="Edm.String"/>
-<Property MaxLength="30" Name="TelephoneNumber" Type="Edm.String"/>
-<Property MaxLength="5" Name="CurrencyCode" Type="Edm.String"/>
-<Property MaxLength="3" Name="CountryCode" Type="Edm.String"/>
-<Property MaxLength="1" Name="GenderCode" Type="Edm.String"/>
-</EntityType>
-<Association Name="FK_SalesOrder_BusinessPartner">
-<End Multiplicity="0..1" Role="BusinessPartner" Type="SalesModel.BusinessPartner"/>
-<End Multiplicity="*" Role="SalesOrder" Type="SalesModel.SalesOrder"/>
-<ReferentialConstraint>
-<Principal Role="BusinessPartner">
-<PropertyRef Name="BusinessPartnerKey"/>
-</Principal>
-<Dependent Role="SalesOrder">
-<PropertyRef Name="SalesOrderID"/>
-</Dependent>
-</ReferentialConstraint>
-</Association>
-<EntityContainer Name="SalesEntities" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-<EntitySet EntityType="SalesModel.SalesOrder" Name="SalesOrders"/>
-<EntitySet EntityType="SalesModel.BusinessPartner" Name="BusinessPartners"/>
-<AssociationSet Association="SalesModel.FK_SalesOrder_BusinessPartner" Name="SO_TO_BP_AssocSet">
-<End EntitySet="BusinessPartners" Role="BusinessPartner"/>
-<End EntitySet="SalesOrders" Role="SalesOrder"/>
-</AssociationSet>
-</EntityContainer>
-</Schema>
-</edmx:DataServices>
+			<EntityType Name="SalesOrder">
+				<Key>
+					<PropertyRef Name="SalesOrderKey"/>
+				</Key>
+				<Property MaxLength="10" Name="SalesOrderID" Type="Edm.String"/>
+				<Property MaxLength="40" Name="CreatedByEmployeeLastName" Type="Edm.String"/>
+				<Property MaxLength="1" Name="Status" Type="Edm.String"/>
+				<Property MaxLength="40" Name="ChangedByEmployeeLastName" Type="Edm.String"/>
+				<Property MaxLength="12" Name="ChangedByEmployeeUserID" Type="Edm.String"/>
+				<Property Name="NetSum" Precision="15" Scale="2" Type="Edm.Decimal"/>
+				<Property MaxLength="32" Name="CustomerKey" Type="Edm.String"/>
+				<Property MaxLength="12" Name="CreatedByEmployeeUserID" Type="Edm.String"/>
+				<Property MaxLength="1" Name="DeliveryStatus" Type="Edm.String"/>
+				<Property MaxLength="255" Name="CurrencyCodeDescription" Type="Edm.String"/>
+				<Property MaxLength="60" Name="StatusDescription" Type="Edm.String"/>
+				<Property MaxLength="80" Name="ChangedByCustomerName" Type="Edm.String"/>
+				<Property MaxLength="40" Name="CreatedByEmployeeFirstName" Type="Edm.String"/>
+				<Property MaxLength="60" Name="DeliveryStatusDescription" Type="Edm.String"/>
+				<Property MaxLength="255" Name="Note" Type="Edm.String"/>
+				<Property Name="CreatedAt" Precision="7" Type="Edm.DateTime"/>
+				<Property Name="Tax" Precision="15" Scale="2" Type="Edm.Decimal"/>
+				<Property Name="TotalSum" Precision="15" Scale="2" Type="Edm.Decimal"/>
+				<Property MaxLength="80" Name="CreatedByCustomerName" Type="Edm.String"/>
+				<Property MaxLength="40" Name="ChangedByEmployeeFirstName" Type="Edm.String"/>
+				<Property Name="ChangedAt" Precision="7" Type="Edm.DateTime"/>
+				<Property MaxLength="10" Name="CustomerID" Type="Edm.String"/>
+				<Property MaxLength="80" Name="CustomerName" Type="Edm.String"/>
+				<Property MaxLength="32" Name="SalesOrderKey" Nullable="false" Type="Edm.String"/>
+				<Property MaxLength="1" Name="BillingStatus" Type="Edm.String"/>
+				<Property MaxLength="60" Name="BillingStatusDescription" Type="Edm.String"/>
+				<Property MaxLength="5" Name="Currency" Type="Edm.String"/>
+				<NavigationProperty FromRole="SalesOrder" Name="BusinessPartner" Relationship="SalesModel.FK_SalesOrder_BusinessPartner" ToRole="BusinessPartner"/>
+			</EntityType>
+			<EntityType Name="BusinessPartner">
+				<Key>
+					<PropertyRef Name="BusinessPartnerKey"/>
+				</Key>
+				<Property Name="Address" Nullable="false" Type="Edm.String"/>
+				<Property MaxLength="10" Name="BusinessPartnerID" Type="Edm.String"/>
+				<Property MaxLength="80" Name="Company" Type="Edm.String"/>
+				<Property MaxLength="60" Name="BusinessPartnerRoleText" Type="Edm.String"/>
+				<Property MaxLength="32" Name="BusinessPartnerKey" Nullable="false" Type="Edm.String"/>
+				<Property MaxLength="60" Name="CurrencyText" Type="Edm.String"/>
+				<Property MaxLength="60" Name="WebAddress" Type="Edm.String"/>
+				<Property MaxLength="3" Name="BusinessPartnerRoleCode" Type="Edm.String"/>
+				<Property MaxLength="30" Name="FaxNumber" Type="Edm.String"/>
+				<Property MaxLength="10" Name="LegalForm" Type="Edm.String"/>
+				<Property MaxLength="255" Name="EmailAddress" Type="Edm.String"/>
+				<Property MaxLength="30" Name="TelephoneNumber" Type="Edm.String"/>
+				<Property MaxLength="5" Name="CurrencyCode" Type="Edm.String"/>
+				<Property MaxLength="3" Name="CountryCode" Type="Edm.String"/>
+				<Property MaxLength="1" Name="GenderCode" Type="Edm.String"/>
+			</EntityType>
+			<Association Name="FK_SalesOrder_BusinessPartner">
+				<End Multiplicity="0..1" Role="BusinessPartner" Type="SalesModel.BusinessPartner"/>
+				<End Multiplicity="*" Role="SalesOrder" Type="SalesModel.SalesOrder"/>
+				<ReferentialConstraint>
+					<Principal Role="BusinessPartner">
+						<PropertyRef Name="BusinessPartnerKey"/>
+					</Principal>
+					<Dependent Role="SalesOrder">
+						<PropertyRef Name="SalesOrderID"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="SalesEntities" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+				<EntitySet EntityType="SalesModel.SalesOrder" Name="SalesOrders"/>
+				<EntitySet EntityType="SalesModel.BusinessPartner" Name="BusinessPartners"/>
+				<AssociationSet Association="SalesModel.FK_SalesOrder_BusinessPartner" Name="SO_TO_BP_AssocSet">
+					<End EntitySet="BusinessPartners" Role="BusinessPartner"/>
+					<End EntitySet="SalesOrders" Role="SalesOrder"/>
+				</AssociationSet>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
 </edmx:Edmx>
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
-
-### Optional
+### OData Model Editor
 - Read up on the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm)
-
