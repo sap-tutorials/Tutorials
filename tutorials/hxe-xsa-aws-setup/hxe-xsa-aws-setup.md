@@ -123,7 +123,16 @@ Set a name and click **Create**
 > ### Note:  **You will need the generated file to access your instance**
 >
 > This file is your key to access the server. If you lose your `.pem` file you will not be able to access the instance later.
+
 >
+
+**If you get an error where `my-key-pair.pem` is not accessible the solution is to type one of these two commands:**
+
+1:  `chmod 777 my-key-pair.pem`
+
+2:  `chmod 400 my-key-pair.pem`
+
+
 
 Go back to the instance creation page, and click the ***refresh*** buttons.
 
@@ -151,6 +160,20 @@ From the **EC2 Console**, you will be able to monitor the instance initializatio
 You may need to refresh the page to get the **Status Checks** updated.
 
 Once the instance is ready, you can connect to it using an SSH client.
+
+To ensure you can connect to your instance you need some required ports open.  To do this add 3 ranges (highlighted to the security group) to be able to access the XSA services (like SAP Web IDE):
+
+Open security group my-security-group and go to Inbound and click on Edit to Add Rule and add the following ports:
+
+51000-51500
+
+39030-39033
+
+53075
+![Amazon Security Group Ports](_32.png)
+
+After that your security group settings should like below:
+![Amazon Ports](_33.png)
 
 [DONE]
 [ACCORDION-END]

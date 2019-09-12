@@ -357,14 +357,14 @@ With this, the setup is complete and we can re-deploy the application. However, 
 Customers of our application can use the Cloud Platform cockpit to configure destinations. We will use the cockpit to define our destination as well.
 
 1. Navigate to the Cloud Foundry subaccount within your global account that you have used before to deploy the application (see Step 3). In case of a trial account, the subaccount will be called trial by default.
-2. In the menu on the left, expand Connectivity and select Destinations.
-3. Click on New Destination and enter the following values into the input fields:
-  - Name: `MyErpSystem`
-  - URL: https://URL (URL to your SAP S/4HANA system)
-  - Authentication: choose `BasicAuthentication`
-  - Provide credentials of your technical user in the User and Password fields.
-  - Leave the other fields unchanged.
-4. Click on Save.
+2. In the menu on the left, expand Connectivity and select **Destinations**.
+3. Click **New Destination** and enter the following values into the input fields:
+    - **Name:** `MyErpSystem`
+    - **URL:** URL to your SAP S/4HANA system
+    - **Authentication:** choose `BasicAuthentication`
+    - Provide credentials of your technical user in the **User** and **Password** fields.
+    - Leave the other fields unchanged.
+4. Click **Save**.
 
 Afterwards, the destination should look as follows.
 

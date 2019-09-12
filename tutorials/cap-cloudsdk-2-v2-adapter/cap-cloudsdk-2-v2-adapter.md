@@ -184,7 +184,7 @@ In the top right menu area of the existing integrated terminal, use the plus but
 
 In the new, second integrated terminal, start a Node.js REPL ([Read-Evaluate-Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can write JavaScript directly and have it executed immediately and interactively. You won't see much initially -- just a simple **`>`** prompt. At this prompt, enter the following, to load the specific Business Partner Address part of the SAP Cloud SDK virtual data model you installed earlier in this tutorial.
 
-> Here, the command prompt and the Node.js REPL's prompt is shown for context, as well as the response (_undefined_) - you only have to type the part starting `const` ...
+> Here, the command prompt and the Node.js REPL's prompt is shown for context, as well as the response (undefined) - you only have to type the part starting `const` ...
 
 
 ```

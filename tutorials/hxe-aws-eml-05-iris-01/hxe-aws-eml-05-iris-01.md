@@ -66,8 +66,8 @@ Rename your notebook document **`hxe-aws-eml-iris-01.ipynb`** using the menu bar
 In the first cell, paste the following code then press **SHIFT** + **ENTER** to execute the code:
 
 ```Python
-!pip install /home/ec2-user/sap/hdbclient/hdbcli-*.tar.gz
-!pip install /home/ec2-user/sap/hdbclient/hana_ml-*.tar.gz
+!pip install -q /home/ec2-user/SageMaker/sap/hdbclient/hdbcli-*.tar.gz
+!pip install -q /home/ec2-user/SageMaker/sap/hdbclient/hana_ml-*.tar.gz
 ```
 
 [DONE]

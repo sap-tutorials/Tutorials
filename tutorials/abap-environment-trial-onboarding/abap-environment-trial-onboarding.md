@@ -10,18 +10,19 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
- - You have created a trial account on SAP Cloud Platform (https://developers.sap.com/tutorials/hcp-create-trial-account.html).
- - You have created a cloud foundry trial account (https://developers.sap.com/tutorials/cp-cf-create-account.html).
+ - You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform
+](hcp-create-trial-account)
+ - You have created a cloud foundry trial account: [Create a Cloud Foundry Account](cp-cf-create-account)
 
 ## Details
 ### You will learn  
-  - How to create an trial user
+  - How to create a trial user
   - How to create an ABAP Cloud project
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Select ABAP Trial)]
-  1. Open SAP Cloud Platform Trial Cockpit to logon to your existing Cloud Foundry trial account.
-     (https://account.hanatrial.ondemand.com/#/home/welcome)
+  1. Open SAP Cloud Platform Trial Cockpit to logon to your existing Cloud Foundry trial account
+     <https://account.hanatrial.ondemand.com>.
 
      ![Select ABAP Trial](account.png)
 
@@ -36,10 +37,10 @@ author_profile: https://github.com/mervey45
   4. Click **Service Marketplace**.
 
       ![Select ABAP Trial](account4.png)
- 
+
   5. Search for **ABAP Trial** and select it.
 
-      ![Select ABAP Trial](account5.png)
+      ![Select ABAP Trial](trial.png)
 
 [DONE]
 [ACCORDION-END]
@@ -57,7 +58,14 @@ author_profile: https://github.com/mervey45
 
       ![Create instance](instance3.png)
 
-  4. Add your e-mail address and click **Next**.
+  4. Add your e-mail address:
+    ```
+    {
+       "email": "example@email.com"
+    }
+    ```
+
+      Click **Next**.
 
       ![Create instance](instance4.png)
 
@@ -113,7 +121,7 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
 
 For other users:
 
-Open your local ABAP Development Tools (ADT). You can download the latest version from (https://tools.hana.ondemand.com/#abap).
+Open your local ABAP Development Tools (ADT). You can download the latest version from <https://tools.hana.ondemand.com/#abap>.
 
 [DONE]
 [ACCORDION-END]
@@ -132,11 +140,11 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](project3.png)
 
-  4. Logon to your ABAP trial account with your e-mail address and password.
+  4. Log onto your ABAP trial account with your e-mail address and password.
 
       ![Create ABAP cloud project](project4.png)
 
-  5. Click Finish.
+  5. Click **Finish**.
 
       ![Create ABAP cloud project](project5.png)
 

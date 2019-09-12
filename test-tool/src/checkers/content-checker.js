@@ -65,6 +65,7 @@ module.exports = {
         tutorialLink,
         tutorialLinkInvalid,
         remoteImage,
+        codeBlockInNote,
       },
       validation: { accordions, codeLine, done },
       link: {
@@ -104,8 +105,8 @@ module.exports = {
         }
       }
 
-      if (line.trim()
-        .startsWith('```')) {
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith('```') || trimmedLine.match(codeBlockInNote)) {
         isCodeBlock = !isCodeBlock;
       }
 
@@ -126,7 +127,7 @@ module.exports = {
         const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
         const tutorialLinkMatch = line.match(tutorialLink.regexp);
         const accordionMatch = line.match(accordions);
-        if (!isMeta) {
+        if (!isMeta && !isCodeLine) {
           // plain text URLs are allowed in meta
           const match = line.match(link.regexp);
           if (match) {

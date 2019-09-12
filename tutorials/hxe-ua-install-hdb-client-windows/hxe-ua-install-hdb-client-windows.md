@@ -136,11 +136,9 @@ See these `Tutorials`:
 Each installation has its own uninstallation tool. Use the `hdbuninst` command to uninstall the client software from your command prompt.
 
 ```bash
-sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
+<unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 ```
 
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
 [ACCORDION-END]
-
-
