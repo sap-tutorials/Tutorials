@@ -16,7 +16,6 @@ primary_tag: products>sap-cloud-platform
   - How to assign role collections to your users
 
 Add roles to one or more role collections and then assign these role collections to your users to use various applications of SAP Cloud Platform Process Visibility.
----
 
 [ACCORDION-BEGIN [Step 1: ](Create a role collection)]
 
@@ -52,13 +51,13 @@ Add roles to one or more role collections and then assign these role collections
 
 In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`PVDeveloper`**, **`PVEventSender`** by following the steps from **Step 6**. For more information about these roles, refer to [Process Visibility Roles](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/e395bfade9c64d89922c561c4b92979f.html).
 
-    ![Admin Role](PV-Admin-08.png)
+![Admin Role](PV-Admin-08.png)
 
-    ![Operator Role](PVOperator-09.png)
+![Operator Role](PVOperator-09.png)
 
-    ![Developer Role](Developer-10.png)
+![Developer Role](Developer-10.png)
 
-    ![Event Sender Role](Event-Sender-11.png)
+![Event Sender Role](Event-Sender-11.png)
 
 [DONE]
 [ACCORDION-END]
