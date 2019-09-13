@@ -239,7 +239,7 @@ self.present(alertController, animated: true)
 All the needed code is now implemented for the user to choose a picture from the Photo Library or if running on an actual device take a picture with the device's camera.
 
 [DONE]
-[ACOORDION-END]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add permissions to the Info.plist file)]
 
@@ -256,7 +256,7 @@ Because iOS is a privacy focused operation system, you have to ask the user for 
 That's it, the first time your app will try to access the Camera or Photo Library, the user will get asked for permission for the app to perform this action.
 
 [DONE]
-[ACOORDION-END]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add a back navigation from the Product Classification Table View Controller to the Overview View Controller)]
 
@@ -279,7 +279,7 @@ self.dismiss(animated: true)
 ```
 
 [DONE]
-[ACOORDION-END]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run the app and see the result of your work)]
 

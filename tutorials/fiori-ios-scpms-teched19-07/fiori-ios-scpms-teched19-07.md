@@ -25,7 +25,7 @@ For this tutorial you will import the `TechEd2019.mlmodel` Core ML model into yo
 
 
 [DONE]
-[ACOORDION-END]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Import the Core ML model to your Xcode app project)]
 
@@ -36,7 +36,7 @@ In order to use the `TechEd2019.mlmodel` Core ML model you have to add it to you
 The model will now be referenced in your Xcode app project and can be initialized within the app code.
 
 [DONE]
-[ACOORDION-END]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Setup the Product Classification Table View Controller for data loading)]
 
@@ -101,9 +101,9 @@ self.dataService = dataService
 This code should already look familiar to you.
 
 [DONE]
-[ACOORDION-END]
+[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Classify the input image)]
+[ACCORDION-BEGIN [Step 4: ](Classify the input image)]
 
 To classify the image the user chose, you can use the **Vision** framework to prepare the image for classification.
 
@@ -310,9 +310,9 @@ override func viewDidLoad() {
 That's all you need to do to classify an image with Vision and a pre-trained Core ML model. Please continue with the tutorial to implement the displaying of products in the Table View.
 
 [DONE]
-[ACOORDION-END]
+[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement the Table Views Data Source methods)]
+[ACCORDION-BEGIN [Step 5: ](Implement the Table Views Data Source methods)]
 
 To display the products you have just fetched in the Table View, you will implement the Data Source methods directly in the class like you have done before. Please add the `numberOfSections(in:)` and the `tableView(_:numberOfRowsInSection)` methods right below the `doneButtoneTapped(_:)` method:
 
@@ -424,9 +424,9 @@ private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ im
 ```
 
 [DONE]
-[ACOORDION-END]
+[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the app and classify some products)]
+[ACCORDION-BEGIN [Step 6: ](Run the app and classify some products)]
 
 Let's classify some images! Please run your app on simulator, because the simulator doesn't have a camera you have to import the product images to classify into the simulator's Photo Library. The images you will classify are on **Desktop** on the TechEd machine inside the **Tutorial Content** folder.
 
@@ -472,5 +472,5 @@ The Product Classification Table View Controller will show all available Chairs 
 
 ![Create Swift Class](fiori-ios-scpms-teched19-13.png)
 
-[VALIDATE_5]
+[VALIDATE_6]
 [ACCORDION-END]
