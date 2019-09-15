@@ -1,5 +1,5 @@
 ---
-title: Change the generated UI to make the app your own
+title: Change the Generated UI to Make the App Your Own
 description: Use Xcode to change the generated UI and add your own views to the app.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
@@ -17,7 +17,7 @@ time: 25
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Replace the generated UI with your own)]
+[ACCORDION-BEGIN [Step 1: ](Replace generated UI with your own)]
 
 The SAP Cloud Platform SDK for iOS Assistant does a great job generating you an initial UI which is awesome for trying out the data service entities, impress your boss or customer on how fast you are. When it really comes to building your own app you have to understand how to incorporate your own UI into the generated app.
 
@@ -46,7 +46,7 @@ Last step here is setting the Navigation Controller as initial View Controller. 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Swift class backing up the storyboard View Controller)]
+[ACCORDION-BEGIN [Step 2: ](Create Swift class backing up the storyboard View Controller)]
 
 The setup in storyboard is almost done now. Every added View Controller or Table View Controller in storyboard needs to be backed up by a Swift class. Please select the **Sales Assistant** folder on the left side and **right click** to create a **New File...**.
 
@@ -75,7 +75,7 @@ The newly added class should automatically open up. Before we go into coding, pl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Change code in the Application UI Manager class)]
+[ACCORDION-BEGIN [Step 3: ](Change code in application UI manager class)]
 
 The way the assistant generates the app requires us to change the initial View Controller code in the `ApplicationUIManager` class. Please open the `ApplicationUIManager` located in the **Onboarding** group on the left-hand side.
 
@@ -89,7 +89,7 @@ The Xcode editor should then jump to the selected method.
 
 In here please replace the following code in the else block:
 
-```swift
+```Swift
 
 let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
 let splitViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainSplitViewController") as! UISplitViewController
@@ -102,7 +102,7 @@ appViewController = splitViewController
 
 with
 
-```swift
+```Swift
 
 let mainNavigationController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
 appViewController = mainNavigationController
@@ -125,7 +125,7 @@ Because you have run through the on-boarding flow already and enrolled in `FaceI
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add a Table View to the View Controller)]
+[ACCORDION-BEGIN [Step 5: ](Add Table View to View Controller)]
 
 The Overview View Controller is going to be used in this tutorial series to display a list of customers and products. To achieve that please add a Table View to the Overview View Controller using the **Object Library**. Open the **Object Library** and search for Table View, drag and drop a Table View into the View Controller.
 
@@ -142,7 +142,7 @@ This will add auto layout constraints to the Table View. You might ask yourself 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create an outlet from storyboard to class)]
+[ACCORDION-BEGIN [Step 6: ](Create outlet from storyboard to class)]
 
 Going on we want access to the Table View inside of the `OverviewViewController`. To achieve that we can utilize so called `IBOutlets` which are a code connection to the visual Table View in storyboard.
 
@@ -163,7 +163,7 @@ Before you go to the next step, please click on the **Standard Editor** to close
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Make the Overview View Controller delegate and datasource for the Table View)]
+[ACCORDION-BEGIN [Step 7: ](Make Overview View Controller delegate and datasource for Table View)]
 
 Using a `UIViewController` requires you as a developer to manually set the `OverviewViewController` as `UITableViewDelegate` and `UITableViewDataSource`.
 
@@ -182,9 +182,9 @@ A connection is now made and the Table View knows that the `OverviewViewControll
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run the app to see the result of your work)]
+[ACCORDION-BEGIN [Step 8: ](Run app to see result of your work)]
 
-Seeing the result of your work is the most satisfying part, that's why you should run your app on simulator to see if everything works properly and have some satisfaction :grin: .
+Seeing the result of your work is the most satisfying part, that's why you should run your app on simulator to see if everything works properly and have some satisfaction.
 
 Your UI should look like this now:
 

@@ -1,10 +1,10 @@
 ---
-title: Get an understanding of CoreML
-description: Understand what CoreML is and how it works
+title: Get an Understanding of CoreML
+description: Understand what CoreML is and how it works.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
-time: 10
+time: 5
 ---
 
 ## Prerequisites  
@@ -18,7 +18,7 @@ time: 10
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to Machine Learning)]
+[ACCORDION-BEGIN [Step 1: ](Introduction to machine learning)]
 
 Machine Learning got more and more popularity over the last view years and it's great. With help of Machine Learning Software Developers can achieve great things in all sorts of industries. You can use it for predictions, combined with Internet of Things you can use it in Manufacturing and other industrial areas, research groups use it in the medical field or it's used by the Game Industry to make AI better. Whatever the use case might be, the question you might have is "How can I use it in a mobile context?". This tutorial will go a little bit into the details of how you can use Machine Learning on an iOS device.
 

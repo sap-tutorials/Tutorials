@@ -209,6 +209,8 @@ Specify this URL, to request the first product, along with the name of its suppl
 
 `https://sapes5.sapdevcenter.com/sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/Products?$top=1&$format=json&$expand=Supplier,Reviews&$select=AverageRating,Name,StockQuantity,Supplier/Name,Supplier/FormattedAddress,Reviews/UserDisplayName`
 
+> Depending on how the data has been modified in this demo system, you may find that the first product sometimes has no reviews. In that case, search for one using combinations of the `$top` and `$skip` that you learned about in a previous step.
+
 The query string portion of this URL is quite long and getting difficult to read. Broken down into its parts, we have the following:
 
  - Get the first entity:
