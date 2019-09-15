@@ -233,7 +233,7 @@ In the popup, provide the URL to your remote repository **`https://github.com/<y
 
 When asked for your GitHub credentials, provide them in the popup:
 
-![SAP Web IDE](ci-aws-2-cloudsdk-app-08 .png)
+![SAP Web IDE](ci-aws-2-cloudsdk-app-08.png)
 
 After successful cloning, SAP Web IDE asks to un-track certain system files. Since that is generally a good idea, click the **Commit and Push** button.
 
