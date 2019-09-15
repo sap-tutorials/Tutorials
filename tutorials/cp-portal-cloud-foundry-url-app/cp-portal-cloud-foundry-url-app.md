@@ -12,7 +12,8 @@ primary_tag: products>sap-cloud-platform-portal
 ### You will learn
   - How to create a URL app and add it to your site
 
-You create business content such as apps, groups, catalogs, and roles, in the Content Manager, which you access from the Site Manager of your trial account or subaccount. The content you create can then be used in any site created in this trial account or subaccount.
+You create business content such as apps, groups, catalogs, and roles, using the Portal service Site Manager on the subaccount level (and not for a specific site). Apps are consumed from specific sites according to their role assignment.
+
 
 [ACCORDION-BEGIN [Step 1: ](Go to the Content Manager)]
 
@@ -37,7 +38,7 @@ Click **New** and select **App** from the list.
 
 ![Content manager empty new app](2-content-manager-empty-new-app.png)
 
-The App editor opens and now you can configure the URL app that you want to add to the launchpad page.
+The App editor opens and now you can configure your new app.
 
 [DONE]
 [ACCORDION-END]
@@ -57,9 +58,7 @@ The App editor opens on the **PROPERTIES** tab.
 
     ![App editor properties tab](3-app-editor-properties.png)
 
-2. Click the **NAVIGATION** tab.
-
-    Here you need to specify the intent of your app, which includes a semantic object and the action you want to perform on this object.  
+2. Click the **NAVIGATION** tab to specify the intent of your app.
 
 3. Enter the following values:
 
@@ -107,13 +106,9 @@ In the Content Manager, you see your app in the list:
 
 >![App editor Edit](6-app-editor-edit.png)
 
-You have now created a URL app for your site.
+You have now created a URL app.
 
-Before you can see the app in the launchpad, you need to:
-
-  - Add a group and assign your app to it
-
-  - Assign a role to the app that is assigned to you. We will use the **Everyone** role.
+For end users to view the app in runtime, you must assign a role to the app. Any end user who needs to view this app, should be a member of the role that you have assigned to the app. In this tutorial, we use the `Everyone` role.
 
 This is described in the following steps.
 
