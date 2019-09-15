@@ -1,6 +1,6 @@
 ---
-title: Implement the Image classification using a trained Core ML model and the Vision framework.
-description: You will learn how to import a trained Core ML model and use the Vision framework to prepare a certain image for the classification. You will then use the classification result to fetch products of a certain product category from the sample data service.
+title: Implement Image classification Using a Trained Core ML Model and Vision Framework.
+description: Import a trained Core ML model and use the Vision framework to prepare a certain image for the classification; you will then use the classification result to fetch products of a certain product category from the sample data service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -27,7 +27,7 @@ For this tutorial you will import the `TechEd2019.mlmodel` Core ML model into yo
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Import the Core ML model to your Xcode app project)]
+[ACCORDION-BEGIN [Step 2: ](Import Core ML model)]
 
 In order to use the `TechEd2019.mlmodel` Core ML model you have to add it to your Xcode project. The model is located on the desktop of the `TechEd` machine in the **Tutorial Content** folder. Please go into that folder and **drag + drop** that model into the **Project Navigator** of Xcode. Xcode will bring up a dialogue where you please make sure **Copy Items if needed** and **Create folder references** is selected and click on **Finish**.
 
@@ -38,11 +38,11 @@ The model will now be referenced in your Xcode app project and can be initialize
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Setup the Product Classification Table View Controller for data loading)]
+[ACCORDION-BEGIN [Step 3: ](Set up Product Classification Table View Controller for data loading)]
 
 Because you want to fetch all products of the classified product category, you have to setup the Table View Controller class like the View Controllers before. Please add the following properties right above the `viewDidLoad(_:)` method:
 
-```swift
+```Swift
 
 private var dataService: ESPMContainer<OnlineODataProvider>?
 private let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -55,7 +55,7 @@ private var products = [Product]()
 
 Next add the needed import statements below the `import UIKit` statement above the class declaration:
 
-```swift
+```Swift
 
 import SAPFiori
 import SAPOData
@@ -65,7 +65,7 @@ import SAPCommon
 
 Because the classification as well as the data loading will be performed on background threads you should display a loading indicator to let the user know that your app is currently processing. Please let the `ProductClassificationTableViewController` conform to the `SAPFioriLoadingIndicator` protocol:
 
-```swift
+```Swift
 
 class ProductClassificationTableViewController: UITableViewController, SAPFioriLoadingIndicator
 
@@ -73,7 +73,7 @@ class ProductClassificationTableViewController: UITableViewController, SAPFioriL
 
 The protocol wants you to add the `FUILoadingIndicatorView` as a property to your class. Please add the following line of code right above the `dataService` property:
 
-```swift
+```Swift
 
 var loadingIndicator: FUILoadingIndicatorView?
 
@@ -81,7 +81,7 @@ var loadingIndicator: FUILoadingIndicatorView?
 
 You will use an `FUIObjectTableViewCell` to display the products in the Table View, also you will need a data service instance. Please add the following lines of code to the `viewDidLoad(_:)` method:
 
-```swift
+```Swift
 
 tableView.estimatedRowHeight = 80
 tableView.rowHeight = UITableView.automaticDimension
@@ -109,7 +109,7 @@ To classify the image the user chose, you can use the **Vision** framework to pr
 
 Please import the Vision framework by adding the import statement right below the `UIKit` import above the class declaration:
 
-```swift
+```Swift
 
 import Vision
 
@@ -117,7 +117,7 @@ import Vision
 
 You will use a so called `VNCoreMLRequest` which will contain an instance of the Core ML model for image classification. Please implement the following code, read the inline comments carefully:
 
-```swift
+```Swift
 
 lazy var classificationRequest: VNCoreMLRequest = {
     do {
@@ -141,7 +141,7 @@ lazy var classificationRequest: VNCoreMLRequest = {
 
 Next you want to implement a method performing the requests. Please implement a method called `updateClassifications(for:)`:
 
-```swift
+```Swift
 
 /// - Tag: PerformRequests
 func updateClassifications(for image: UIImage) {
@@ -181,7 +181,7 @@ Right now the code above will throw compile time errors because you need an exte
 
 In that extension class please implement the following code:
 
-```swift
+```Swift
 
 import UIKit
 import ImageIO
@@ -205,7 +205,7 @@ extension CGImagePropertyOrientation {
 
 Please go back to the `ProductClassificationTableViewController` swift class and implement a method processing the image classification. This method will also fetch the products according to the classification result. Please implement the following method directly below `updateClassifications(for:)` and read the inline comments carefully:
 
-```swift
+```Swift
 
 /// - Tag: ProcessClassifications
 func processClassifications(for request: VNRequest, error: Error?) {
@@ -268,7 +268,7 @@ func processClassifications(for request: VNRequest, error: Error?) {
 
 Please also add the `productImageURLs` property right below the product array property above in the class:
 
-```swift
+```Swift
 
 private var productImageURLs = [String]()
 
@@ -276,7 +276,7 @@ private var productImageURLs = [String]()
 
 The last step would be to call the `updateClassifications(for:)` method inside the `viewDidLoad(_:)` method as the last line of code:
 
-```swift
+```Swift
 
 updateClassifications(for: image)
 
@@ -284,7 +284,7 @@ updateClassifications(for: image)
 
 Your `viewDidLoad(_:)` should now look like this:
 
-```swift
+```Swift
 
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -316,7 +316,7 @@ That's all you need to do to classify an image with Vision and a pre-trained Cor
 
 To display the products you have just fetched in the Table View, you will implement the Data Source methods directly in the class like you have done before. Please add the `numberOfSections(in:)` and the `tableView(_:numberOfRowsInSection)` methods right below the `doneButtoneTapped(_:)` method:
 
-```swift
+```Swift
 
 // Return one section.
 override func numberOfSections(in tableView: UITableView) -> Int {
@@ -332,7 +332,7 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 Next implement the `tableView(_:cellForRowAt:)` method and read the inline comments carefully:
 
-```swift
+```Swift
 
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
@@ -389,7 +389,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 Before you will implement the `loadProductImageFrom(_:)` method, you have to define the image cache. As a cache you will simply use a dictionary. Please add the following property definition to below the `private var productImageURLs = [String]()` property:
 
-```swift
+```Swift
 
 private var imageCache = [String:UIImage]()
 
@@ -397,7 +397,7 @@ private var imageCache = [String:UIImage]()
 
 Next you will implement the `loadProductImageFrom(_:)` method to actually fetch the product images. Please implement the method right below the `viewDidLoad(_:)` method and read the inline comments carefully:
 
-```swift
+```Swift
 
 private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
 
@@ -426,7 +426,7 @@ private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ im
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run the app and classify some products)]
+[ACCORDION-BEGIN [Step 6: ](Run app and classify some products)]
 
 Let's classify some images! Please run your app on simulator, because the simulator doesn't have a camera you have to import the product images to classify into the simulator's Photo Library. The images you will classify are on **Desktop** on the TechEd machine inside the **Tutorial Content** folder.
 
