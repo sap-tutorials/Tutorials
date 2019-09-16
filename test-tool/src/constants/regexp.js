@@ -54,7 +54,7 @@ module.exports = {
             message: 'no H1 (single #) allowed',
         },
         mdnImg: {
-            regexp: /\!?\[[^\]]+\]\((?![ <]*http)([\d\w_\-\.\/]+\.(jpg|jpeg|png|gif|svg|ico))\)/gi,
+            regexp: /\!?\[[^\]]+\]\s*?\((?![ <]*http)([\d\w\s_\-\.\/]+\.(jpg|jpeg|png|gif|svg|ico))\)/gi,
             messages: {
                 size: 'file size is more than 1 MB',
                 existence: 'missing image',
