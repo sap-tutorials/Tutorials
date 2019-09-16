@@ -108,7 +108,7 @@ In the Content Manager, you see your app in the list:
 
 You have now created a URL app.
 
-For end users to view the app in runtime, you must assign a role to the app. Any end user who needs to view this app, should be a member of the role that you have assigned to the app. In this tutorial, we use the `Everyone` role.
+For end users to view the app in runtime, you must assign a role to the app. Any end user who needs to view this app, should be a member of the role that you have assigned to the app. In this tutorial, we use the `Everyone` role.  You also need to assign the app to a group so that it's visible in the Launchpad page.
 
 This is described in the following steps.
 

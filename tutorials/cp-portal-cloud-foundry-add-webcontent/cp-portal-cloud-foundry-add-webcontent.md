@@ -21,6 +21,8 @@ In this tutorial, we will add web content to a Portal page and design its layout
 
 Let's add meaningful content to your `Home` page.
 
+>Note for those doing the TechEd Mission.  Due to time limitations, you can skip designing **Section 3** of the page.
+
 [ACCORDION-BEGIN [Step 1: ](Download resources)]
 
 Before you start, first download the following images that you will add to your page. To download them, right-click the links and choose **Save link as** and save them on your computer.
@@ -103,7 +105,7 @@ You have a page full of widgets that still have their default content. So now le
 
 1. Click the `Headline Carousel` widget from the **Header** section to expose the widget and section editing icons.
 
-    >Note: A section can contain multiple widgets. When you click on a widget, the widget editing icons appear of the top left of the widget, and the section editing icons appear on the top right of the section.
+    >Note: A section can contain multiple widgets. When you click on a widget, the widget editing icons appear at the top left of the widget, and the section editing icons appear at the top right of the section.
 
 2.	Click **Edit content** (the pencil icon in the top left) to edit the content of this widget.
 
@@ -428,7 +430,7 @@ And this is what you'll see:
 
 ![View site](35_view_site.png)
 
-Congratulations!  You've created a very attractive `Home` page. In our next tutorials, we're going to add a URL app to our `Launchpad` page.   
+Congratulations!  You've created a very attractive `Home` page. In our next tutorial, we're going to add a URL app to our `Launchpad` page.   
 
 [VALIDATE_7]
 [ACCORDION-END]
