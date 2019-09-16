@@ -50,11 +50,11 @@ The App editor opens on the **PROPERTIES** tab.
 
 1. Enter the following values:
 
-    * **Title**: `Careers at SAP`
+    * **Title**: `Innovation at SAP`
 
-    * **Open App**: In a new tab
+    * **Open App**: In place
 
-    * **URL**:  `https://www.sap.com/about/careers.html`
+    * **URL**:  `https://sap.io`
 
     ![App editor properties tab](3-app-editor-properties.png)
 
@@ -62,7 +62,7 @@ The App editor opens on the **PROPERTIES** tab.
 
 3. Enter the following values:
 
-    * **Semantic Object**: `Careers`
+    * **Semantic Object**: `Innovation`
 
     * **Action**:  `Display`
 
@@ -74,17 +74,17 @@ The App editor opens on the **PROPERTIES** tab.
 
 5.  Enter the following values:
 
-    * **Subtitle**: `Open Positions`
+    * **Subtitle**: `SAP.iO program `
 
-    * **Information**:  `Search for a job`
+    * **Information**:  `Learn about SAP.iO`
 
     * **Icon**: Click the browse icon, type `Search` and click **OK**.
 
       You see a preview of the tile with all the properties you entered.
 
-6. Click **Save**.
-
       ![App editor visualization tab](5-app-editor-visualization.png)
+
+6.  Click **Save**.
 
 You can then use the back arrow to get back to the Content Manager to see your app in the list of content items.
 
@@ -125,7 +125,7 @@ In this step, you will create a group and assign it to your app.
 
     ![Add a new group](7-add-group.png)
 
-2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type `Ca` to search for your app. You should see **Careers at SAP**.
+2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type `In` to search for your app. You should see **Innovation at SAP**.
 
 3. In the **Results** list, click + to assign this group to your app.
 
@@ -136,7 +136,7 @@ In this step, you will create a group and assign it to your app.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Assign the Everyone role)]
+[ACCORDION-BEGIN [Step 6: ](Assign the Everyone role)]
 
 In this step you'll assign the **Everyone** role to your app.
 
@@ -148,7 +148,7 @@ In this step you'll assign the **Everyone** role to your app.
 
 2. Click **Edit**.
 
-3. In the Role editor, in the **Assignments** panel, type `Ca` to search for your app.
+3. In the Role editor, in the **Assignments** panel, type `In` to search for your app.
 
 4. In the **Results** list, click + to assign this role to your app:
 
@@ -159,7 +159,7 @@ In this step you'll assign the **Everyone** role to your app.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Review the site)]
+[ACCORDION-BEGIN [Step 7: ](Review the site)]
 
 1. Click the Site Directory icon in the left panel.
 
@@ -173,7 +173,7 @@ The **Home** page opens. Navigate to the **Launchpad** page by clicking `My Apps
 
 ![9b Site with one group and one app](9-site-with-1group-1app.png)
 
-You can now launch your application by clicking the **Careers at SAP** tile.
+You can now launch your application by clicking the **Innovation at SAP** tile.
 
 You've created and added your first app to the `Launchpad` page in your Portal site!
 

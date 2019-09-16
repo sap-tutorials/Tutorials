@@ -140,16 +140,6 @@ You have a page full of widgets that still have their default content. So now le
 
 7. Click **Save**.
 
-    Let's look at our edited widget.
-    This is the first slide of the carousel widget:
-
-    ![View first widget](23_view_first_widget.png)
-
-    This is the second slide in the carousel widget:
-
-    ![View second widget](24_view_first_widget2.png)
-
-
 8. You're now going to edit the content in the next section of the page. In **Section 1** click in the **Header with Titles** widget to expose the editing icons.
 
 9. Click **Edit content** (pencil icon) and edit the widget as follows:
