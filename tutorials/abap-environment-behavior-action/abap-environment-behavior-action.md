@@ -8,7 +8,7 @@ time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
-
+ 
 ## Prerequisites  
 - You have created an SAP Cloud Platform ABAP environment trial user or
 - You have created a developer user in an SAP Cloud Platform ABAP Environment system.

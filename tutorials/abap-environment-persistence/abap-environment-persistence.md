@@ -19,7 +19,7 @@ author_profile: https://github.com/mervey45
   - How to create an ABAP package
   - How to create a database table
   - How to create an ABAP class to generate data
-
+ 
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---

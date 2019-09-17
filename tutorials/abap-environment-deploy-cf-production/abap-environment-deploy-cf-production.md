@@ -31,11 +31,11 @@ time: 15
 
       ![go to service](gotoservice.png)
 
-  4. Login to your SAP Web IDE account and choose **Project from Template**.
+  4. Login to your SAP Web IDE account and select **File** > **New** > **Project from Template**.
 
       ![template](fromTemplate.png)
 
-  5. Search for MTA, select **Cloud Foundry** as environment and click **Multi-Target Application** and **Next**.
+  5. Search for multi-target, select **Multi-Target Application** and click **Next**.
 
       ![multi target](MultiTarget.png)
 
@@ -71,8 +71,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 3: ](Configure project settings and SAP Web IDE Builder)]
+[ACCORDION-BEGIN [Step 3: ](Configure project settings)]
 
   1. Right-click on your project **`MTA_Project_XXX`** select **Project** > **Project Settings**.
 
@@ -92,7 +91,7 @@ time: 15
 
 [ACCORDION-BEGIN [Step 4: ](Add ABAP service to multi-target application)]
 
-  1. Select **File** > **New** > **SAP Cloud Platform Service**.
+  1. Select your project **`MTA_Project_XXX`** > **New** > **SAP Cloud Platform Service**.
 
       ![open web ide](new.png)
 
@@ -100,7 +99,7 @@ time: 15
 
       ![open web ide](abap.png)
 
-  3. Select **Use an existing instance**, your instance, provide a resource name and click **Finish**.
+  3. Select **Reuse instance**, your instance, provide a resource name and click **Finish**.
 
       ![open web ide](instance.png)
 
@@ -125,220 +124,163 @@ time: 15
 
       ![Module](module2.png)
 
-  4. Select **SAP Cloud Platform Service**, then click on your service instance.
+  4. Select **SAP Cloud Platform Service**, then click on your resource **`Z_I_BOOKING_XXX`**.
 
       ![Choose service catalog](ServiceCatalog.png)
-
+ 
   5. Logon to SAP Cloud Platform ABAP environment and switch back to SAP Web IDE.
 
       ![Environment](environment.png)
 
-  6. Select **SAP Cloud Platform Service** and your service instance **`Z_I_BOOKING_XXX`** and click **Next**.
+  6. Select your resource **`Z_I_BOOKING_XXX`** and click **Next**.
 
       ![Service](service2.png)
 
-  7. Select **Selected Service Metadata** and click **Next**.
+  7. Check **Selected Service Metadata** and **`Z_I_BOOKING_XXX_VAN`**. Click **Next**.
 
       ![Service](service3.png)
 
-  8. Select **Booking** as OData collection and click **Finish**.
+  8. Select **Booking** as OData collection, **`to_Country`** as OData navigation and click **Finish**.
 
       ![Service](service4.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Remove destination service resource)]
+
+  1. Open your **`mta.yaml`** file, click on **MTA Editor** and **Resources**.
+
+      ![HTML5 Module](destination.png)
+
+  2. Select your destination resource **`dest_MTA_Project_XXX`** and delete it.
+
+      ![Module](destination2.png)
+
+  3. Save your **`mta.yaml`** file.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Disable csrfProtection)]
+[ACCORDION-BEGIN [Step 7: ](Create index.html file)]
 
-  1. 	In the HTML5 module open the file `xs-app.json`.
+  1. Open your HTML5 module **`MTA_Project_XXX`**, right-click on your **`webapp`** folder and select **New** > **File**.
 
-      ![run](xs.png)
+      ![HTML5 Module](index.png)
 
-  2.  Find the route to the service `Z_I_BOOKING_XXX`.
+  2. Write **`index.html`** and click **OK**.
 
-      ![add](routes.png)
+      ![Module](index2.png)
 
-  3. Add the `csrfProtection` property to the route in order to disable `csrf` token protection in the UI. Create your run configuration. Therefore replace your coding with following in your `xs-app.json` file:
+  3. Copy this code, paste it in your **`index.html`** file and replace **`MTA_Project_XXX`** with your HTML5 module name.
 
-    ```JSON
-        {
-          "welcomeFile": "/test/flpSandbox.html",
-          "authenticationMethod": "route",
-          "logout": {
-            "logoutEndpoint": "/do/logout"
-          },
-          "routes": [
-            {
-              "source": "^/sap/opu/odata/ Z_I_BOOKING_XXX/(.*)$",
-              "target": "/sap/opu/odata/ Z_I_BOOKING_XXX/$1",
-              "authenticationType": "xsuaa",
-              "service": "com.sap.cloud.abap",
-              "endpoint": "abap",
-              "csrfProtection": false
-           },
-            {
-              "source": "^/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/(.*)$",
-              "target": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/$1",
-              "authenticationType": "xsuaa",
-              "service": "com.sap.cloud.abap",
-              "endpoint": "abap",
-              "csrfProtection": false
-            },
-            {
-              "source": "^(.*)$",
-              "target": "$1",
-              "service": "html5-apps-repo-rt",
-              "authenticationType": "xsuaa"
-            }
-          ]
-        }
+    ```HTML
+    <!DOCTYPE html>
+    <html>
+     <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Booking</title>
+
+        <!-- Bootstrapping UI5 -->
+        <script id="sap-ui-bootstrap"
+                src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+                data-sap-ui-libs="sap.m"
+                data-sap-ui-theme="sap_belize"
+                data-sap-ui-compatVersion="edge"
+                data-sap-ui-preload="async"
+                data-sap-ui-resourceroots='{"MTA_Project_XXX": "."}'
+                data-sap-ui-frameOptions="trusted">
+        </script>
+
+        <script>
+            sap.ui.getCore().attachInit(function () {
+                sap.ui.require([
+                    "sap/m/Shell",
+                    "sap/ui/core/ComponentContainer"
+                ], function (Shell, ComponentContainer) {
+                    // initialize the UI component
+                    new Shell({
+                        app: new ComponentContainer({
+                            height : "100%",
+                            name : "MTA_Project_XXX"
+                        }),
+                        appWidthLimited : false
+                    }).placeAt("content");
+                });
+            });
+        </script>
+
+     </head>
+
+      <!-- UI Content -->
+      <body class="sapUiBody" id="content">
+      </body>
+    </html>
+
     ```
-    Save your file.
 
-  5. Open your `webapp/manifest.json` file to add the annotations. Replace your code with following:
-
-    ```JSON
-      {
-    	"_version": "1.8.0",
-    	"sap.app": {
-    		"id": "MTA_Project_XXX",
-    		"type": "application",
-    		"i18n": "i18n/i18n.properties",
-    		"applicationVersion": {
-    			"version": "1.0.0"
-    		},
-    		"title": "{{appTitle}}",
-    		"description": "{{appDescription}}",
-    		"tags": {
-    			"keywords": []
-    		},
-    		"dataSources": {
-    			"mainService": {
-    				"uri": "/sap/opu/odata/sap/Z_I_BOOKING_XXX/",
-    				"type": "OData",
-    				"settings": {
-    					"localUri": "localService/metadata.xml",
-    					   "annotations": ["Z_I_BOOKING_XXX_VAN"]
-    				}
-    			},
-    			    "Z_I_BOOKING_XXX_VAN": {
-                     "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName=' Z_I_BOOKING_XXX_VAN',Version='0001')/$value/",
-                     "type": "ODataAnnotation"
-                      }
-    		},
-    		"offline": false,
-    		"sourceTemplate": {
-    			"id": "html5moduletemplates.smartTemplateModule",
-    			"version": "1.40.12"
-    		}
-    	},
-    	"sap.ui": {
-    		"technology": "UI5",
-    		"icons": {
-    			"icon": "",
-    			"favIcon": "",
-    			"phone": "",
-    			"phone@2": "",
-    			"tablet": "",
-    			"tablet@2": ""
-    		},
-    		"deviceTypes": {
-    			"desktop": true,
-    			"tablet": true,
-    			"phone": true
-    		},
-    		"supportedThemes": [
-    			"sap_hcb",
-    			"sap_belize"
-    		]
-    	},
-    	"sap.ui5": {
-    		"resources": {
-    			"js": [],
-    			"css": []
-    		},
-    		"dependencies": {
-    			"minUI5Version": "1.38.34",
-    			"libs": {},
-    			"components": {}
-    		},
-    		"models": {
-    			"i18n": {
-    				"type": "sap.ui.model.resource.ResourceModel",
-    				"uri": "i18n/i18n.properties"
-    			},
-    			"@i18n": {
-    				"type": "sap.ui.model.resource.ResourceModel",
-    				"uri": "i18n/i18n.properties"
-    			},
-    			"i18n|sap.suite.ui.generic.template.ListReport|Booking": {
-    				"type": "sap.ui.model.resource.ResourceModel",
-    				"uri": "i18n/ListReport/Booking/i18n.properties"
-    			},
-    			"i18n|sap.suite.ui.generic.template.ObjectPage|Booking": {
-    				"type": "sap.ui.model.resource.ResourceModel",
-    				"uri": "i18n/ObjectPage/Booking/i18n.properties"
-    			},
-    			"": {
-    				"dataSource": "mainService",
-    				"preload": true,
-    				"settings": {
-    					"metadataUrlParams": {
-    						"saml2": "disabled"
-    					},
-    					"serviceUrlParams": {
-    						"saml2": "disabled"
-    					},
-    					"defaultBindingMode": "TwoWay",
-    					"defaultCountMode": "Inline",
-    					"refreshAfterChange": false
-    				}
-    			}
-    		},
-    		"extends": {
-    			"extensions": {}
-    		},
-    		"contentDensities": {
-    			"compact": true,
-    			"cozy": true
-    		}
-    	},
-    	"sap.ui.generic.app": {
-    		"_version": "1.3.0",
-    		"settings": {},
-    		"pages": {
-    			"ListReport|Booking": {
-    				"entitySet": "Booking",
-    				"component": {
-    					"name": "sap.suite.ui.generic.template.ListReport",
-    					"list": true,
-    					"settings": {
-    						"smartVariantManagement": true
-    					}
-    				},
-    				"pages": {
-    					"ObjectPage|Booking": {
-    						"entitySet": "Booking",
-    						"component": {
-    							"name": "sap.suite.ui.generic.template.ObjectPage"
-    						}
-    					}
-    				}
-    			}
-    		}
-    	},
-    	"sap.platform.hcp": {
-    		"uri": ""
-    	}
-    }
-    ```  
-    Save your file.
+  4. Save your code.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test UI on Cloud Foundry)]
+[ACCORDION-BEGIN [Step 8: ](Disable csrfProtection)]
+
+  1. 	In the HTML5 module open the file **`xs-app.json`**.
+
+      ![run](disable.png)
+
+  2.  Set **`/index.html`** as welcome file.
+
+      ![add](disable2.png)
+
+  3. Add the **`csrfProtection`** property to the route in order to disable `csrf` token protection in the UI. Create your run configuration. Therefore add the `csrfProtection` property in your **`xs-app.json`** file.
+
+      ![add](disable3.png)
+
+  4. Your code should like following:
+
+    ```JSON
+     {
+      "welcomeFile": "/index.html",
+      "authenticationMethod": "route",
+      "logout": {
+        "logoutEndpoint": "/do/logout"
+      },
+      "routes": [
+        {
+          "source": "^/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(.*)$",
+          "target": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations$1",
+          "authenticationType": "xsuaa",
+          "service": "com.sap.cloud.abap",
+          "endpoint": "abap"
+        },
+        {
+          "source": "^/sap/opu/odata/sap/Z_I_BOOKING_XXX/(.*)$",
+          "target": "/sap/opu/odata/sap/Z_I_BOOKING_XXX/$1",
+          "authenticationType": "xsuaa",
+          "service": "com.sap.cloud.abap",
+          "endpoint": "abap",
+          "csrfProtection": false
+        },
+        {
+          "source": "^(.*)$",
+          "target": "$1",
+          "service": "html5-apps-repo-rt",
+          "authenticationType": "xsuaa"
+        }
+      ]
+    }
+    ```
+
+  5. Save your file.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Test UI on Cloud Foundry)]
 
   1. Right-click on **`MTA_Project_XXX`** and select **Run** > **Run Configurations**.
 
@@ -387,7 +329,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Deploy UI to Cloud Foundry)]
+[ACCORDION-BEGIN [Step 10: ](Deploy UI to Cloud Foundry)]
 
   1. Right-click on your project **`MTA_Project_XXX`** and select **Build** > **Build**.
 
@@ -418,7 +360,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Check app existence on Cloud Foundry and run as a business user)]
+[ACCORDION-BEGIN [Step 11: ](Check app existence on Cloud Foundry and run as a business user)]
 
   1. Login to your SAP Cloud Platform Cockpit and select your global account.
 
@@ -454,9 +396,10 @@ time: 15
 
   9. Create your URL by using following:
      `<application_routes>/<id>-<version>/`
-```Example
+
+      ```Example
               Example: <application_routes>/MTA_Project_XXX-1.0.0/
-```
+      ```
 
   10. Copy your URL into a browser of choice and logon to SAP Cloud Platform ABAP environment.
 
@@ -473,7 +416,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+[ACCORDION-BEGIN [Step 12: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

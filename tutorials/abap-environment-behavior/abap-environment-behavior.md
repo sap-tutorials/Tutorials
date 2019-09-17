@@ -13,7 +13,7 @@ author_profile: https://github.com/mervey45
 - You have created an SAP Cloud Platform ABAP environment trial user or
 - You have created a developer user in an SAP Cloud Platform ABAP Environment system.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
-
+ 
 ## Details
 ### You will learn  
   - How to create behavior definition
