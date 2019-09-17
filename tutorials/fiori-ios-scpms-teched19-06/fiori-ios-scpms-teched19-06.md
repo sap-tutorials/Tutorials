@@ -1,6 +1,6 @@
 ---
-title: Implement the Action Sheet and Image Picker for the Core ML Image Classification
-description: Implement an Action Sheet and Popover (for regular size class on iPad) to pick a Image from Photo Library or Camera. This Image will then be later fed to the Core ML Image Classification Model
+title: Implement Action Sheet and Image Picker
+description: Implement an Action Sheet and Popover (for regular size class on iPad) to pick an image from Photo Library or Camera; the Image will later be fed to the Core ML Image Classification Model.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -13,24 +13,26 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to implement and Action Sheet and make sure it will automatically be replaced with a Popover when running on regular size class on iPad.
+  - How to implement and Action Sheet and make sure it will automatically be replaced with a Popover when running on regular size class on iPad
   - How to implement an Image Picker using Camera or Photo Library
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add a Bar Button Item to the Overview View Controller)]
+[ACCORDION-BEGIN [Step 1: ](Add a Bar Button Item to Overview View Controller)]
 
-In order for the user to later pick an image for the classification you will implement a Bar Button Item bringing up an Action Sheet or a Popover when running on Regular mode on iPad.
+In order for the user to pick an image for the classification you will implement a Bar Button Item bringing up an Action Sheet or a Popover when running on Regular mode on iPad.
 
-To do so please open the `Main.storyboard` and locate the Overview View Controller. There please use the **Object Library** to drag a **Bar Button Item** onto the Navigation Item of the Overview View Controller.
+To do so open the `Main.storyboard` and locate the Overview View Controller. Use the **Object Library** to drag a **Bar Button Item** onto the Navigation Item of the Overview View Controller.
 
 ![Bar Button Item](fiori-ios-scpms-teched19-01.png)
 
-Please open the **Assistant Editor** in Xcode and create an `IBOutlet` for the Bar Button Item in the `OverviewViewController` class by **control + drag** into the View Controller class, name it `actionListButton` and place it directly below the `tableView` outlet.
+Open the **Assistant Editor** in Xcode and create an `IBOutlet` for the Bar Button Item in the `OverviewViewController.swift` class by **control + drag** into the View Controller class, name it `actionListButton` and place it directly below the `tableView` outlet.
 
 ![Bar Button Item](fiori-ios-scpms-teched19-02.png)
 
-Next you will need an `IBAction` to react to the user's interaction with that button. Please create an `IBAction` in the `OverviewViewController` class by **control + drag** into the View Controller class, choose **Action** this time instead of **Outlet**, name the action `didPressActionListButton`.
+Next you will need an `IBAction` for handling user's interaction with that button.
+
+Create an `IBAction` in the `OverviewViewController.swift` class by **control + drag** into the View Controller class, choose **Action** this time instead of **Outlet**, name the action `didPressActionListButton`.
 
 ![Bar Button Item](fiori-ios-scpms-teched19-03.png)
 
@@ -39,9 +41,11 @@ Next you will need an `IBAction` to react to the user's interaction with that bu
 
 [ACCORDION-BEGIN [Step 2: ](Implement a UIImagePickerController)]
 
-Please close the **Assistant Editor** if not done already and open the class `OverviewViewController`. In there please add two properties for holding the `UIImagePickerController` and the picked image. Add the following lines of code below the segue properties:
+Close the **Assistant Editor** if not done already and open the class `OverviewViewController.swift`. Add two properties for holding the `UIImagePickerController` and the picked image.
 
-```swift
+Add the following lines of code below the segue properties:
+
+```Swift
 
 private let pickerController = UIImagePickerController()
 private var pickedImage: UIImage!
@@ -50,7 +54,7 @@ private var pickedImage: UIImage!
 
 Next implement a method with the name `setupImagePicker` below the just added `IBAction`:
 
-```swift
+```Swift
 
 private func setupImagePicker() {
     pickerController.delegate = self
@@ -64,15 +68,17 @@ private func setupImagePicker() {
 
 Next call that just added method in the `viewDidLoad(:)` right below the `loadInitialData()` method call:
 
-```swift
+```Swift
 
 setupImagePicker()
 
 ```
 
-The compiler will currently complain because the `OverviewViewController` is not conforming to the `UIImagePickerControllerDelegate` or the `UINavigationControllerDelegate`. Please add an extension below the Table View extension `extension OverviewViewController: UITableViewDelegate, UITableViewDataSource`, please read the inline comments for more information:
+The compiler will currently complain because the `OverviewViewController.swift` is not conforming to the `UIImagePickerControllerDelegate` or the `UINavigationControllerDelegate`.
 
-```swift
+Add an extension below the Table View extension `extension OverviewViewController: UITableViewDelegate, UITableViewDataSource`, read the inline comments for more information:
+
+```Swift
 
 extension OverviewViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -100,14 +106,14 @@ extension OverviewViewController: UIImagePickerControllerDelegate, UINavigationC
 
 ```
 
-Please continue to the next step to implement a segue to the `ProductClassificationTableViewController` you will implement. The compile errors will then go away.
+Continue to the next step to implement a segue to a new Table View Controller. The compile errors will then go away.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a segue and create the Product Classification Table View Controller)]
+[ACCORDION-BEGIN [Step 3: ](Create segue and Product Classification Table View Controller)]
 
-Please select the `SalesAssistant` group in the **Project Navigator** and create a new `UITableViewController` with the name `ProductClassificationTableViewController`.
+Select the `SalesAssistant` group in the **Project Navigator** and create a new `UITableViewController` with the name `ProductClassificationTableViewController`.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-05.png)
 
@@ -115,29 +121,37 @@ Next open the `Main.storyboard` and use the **Object Library** to create a **Tab
 
 ![Product Classification VC](fiori-ios-scpms-teched19-04.png)
 
-Please select the newly added Table View Controller and set it's custom class to `ProductClassificationTableViewController` by clicking the **Identity Inspector**.
+Select the newly added Table View Controller and set it's custom class to `ProductClassificationTableViewController` in the **Identity Inspector**.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-06.png)
 
-Next we want the Table View Controller to have a Navigation Bar so let's embed that one in a **Navigation Controller** by selecting the `ProductClassificationTableViewController` and then click on `Editor -> Embed In -> Navigation Controller`.
+The Table View Controller has to have a Navigation Bar so let's embed the `ProductClassificationTableViewController` in a **Navigation Controller** by selecting the `ProductClassificationTableViewController` and then click on `Editor -> Embed In -> Navigation Controller`.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-07.png)
 
-Last step would be to create the segue from the Bar Button Item inside the Overview View Controller to the Product Classification Table View Controller. Please select the added Bar Button Item and **control + drag** to the Product Classification Table View Controller, as action please choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
+Last step is to create the segue from the Bar Button Item inside the Overview View Controller to the Product Classification Table View Controller.
+
+Select the added Bar Button Item and **control + drag** to the Product Classification Table View Controller, as action choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-08.png)
 
-Now select the created segue and set the identifier to `showProductClassification` in the **Attributes Inspector**. The final step would be to create a constant in the `OverviewViewController` class holding that identifier. Please close the `Main.storyboard` and open the `OverviewViewController` class, add the following line of code directly below the `private let showCustomerDetailSegue = "showCustomerDetails"` line:
+Now select the created segue and set the identifier to `showProductClassification` in the **Attributes Inspector**.
 
-```swift
+The final step is to create a constant in the `OverviewViewController.swift` class holding that identifier.
+
+Close the `Main.storyboard` and open the `OverviewViewController.swift` class, add the following line of code directly below the `private let showCustomerDetailSegue = "showCustomerDetails"` line:
+
+```Swift
 
 private let showProductClassificationSegue = "showProductClassification"
 
 ```
 
-You have to make sure that the selected image later on get's passed on to the `ProductClassificationTableViewController` for the classification. For that reason please locate the `prepare(for:sender:)` method and add a new Switch case to it:
+You have to make sure that the selected image later on get's passed on to the `ProductClassificationTableViewController` for the classification process.
 
-```swift
+Locate the `prepare(for:sender:)` method and add a new switch case to it:
+
+```Swift
 
 case showProductClassificationSegue:
     let navController = segue.destination as! UINavigationController
@@ -149,7 +163,7 @@ case showProductClassificationSegue:
 Your `prepare(for:sender:)` should look like this now:
 
 
-```swift
+```Swift
 
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     switch segue.identifier {
@@ -179,9 +193,11 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 ```
 
-Remember that we want to pass on the selected image to the `ProductClassificationTableViewController`? You have to implement that property to the `ProductClassificationTableViewController` class first to make the compiler happy. Please open the `ProductClassificationTableViewController` class and add the following line of code right above the `viewDidLoad(_:)` method:
+Remember that we want to pass on the selected image to the `ProductClassificationTableViewController`. You have to implement that property to the `ProductClassificationTableViewController` class first to make the compiler happy.
 
-```swift
+Open the `ProductClassificationTableViewController` class and add the following line of code right above the `viewDidLoad(_:)` method:
+
+```Swift
 
 var image: UIImage!
 
@@ -190,21 +206,23 @@ var image: UIImage!
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement the action for the Bar Button Item)]
+[ACCORDION-BEGIN [Step 4: ](Implement action for Bar Button Item)]
 
-When the user taps on the Bar Button Item it should show an Action Sheet or a Popover when running on Regular mode on the iPad. For that you will implement that code in the `didPressActionListButton(_:)` method. Before doing that you will add one more line of code to the `viewDidLoad(_:)` to make sure the Bar Button Item shows an Icon instead of just the word **Item**. Please add the following line of code to the `viewDidLoad(_:)`:
+When the user taps on the Bar Button Item it should show an Action Sheet or a Popover when running on Regular mode on the iPad. For that you will implement that code in the `didPressActionListButton(_:)` method. Before doing that you will add one more line of code to the `viewDidLoad(_:)` to make sure the Bar Button Item shows an Icon instead of just the word **Item**.
+
+Add the following line of code to the `viewDidLoad(_:)`:
 
 
-```swift
+```Swift
 
 // Using the FUI Icon Library
 actionListButton.image = FUIIconLibrary.system.more
 
 ```
 
-Now add the following lines of code to the `didPressActionListButton(_:)` method, please read the inline comments carefully:
+Now add the following lines of code to the `didPressActionListButton(_:)` method, read the inline comments carefully:
 
-```swift
+```Swift
 
 // You will use an Action Sheet and Pop-Over on regular mode on iPad
 // Create an UIAlertController with the preferred style actionSheet
@@ -241,9 +259,11 @@ All the needed code is now implemented for the user to choose a picture from the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add permissions to the Info.plist file)]
+[ACCORDION-BEGIN [Step 5: ](Add permissions to Info.plist file)]
 
-Because iOS is a privacy focused operation system, you have to ask the user for permission to access both camera and photo library within your app. Those permissions are maintained in the Info.plist file. Please open the Info.plist and add the following two information Properties to it by clicking on the small **+** icon.
+Because iOS is a privacy focused operation system, you have to ask the user for permission to access both camera and photo library within your app. Those permissions are maintained in the Info.plist file.
+
+Open the Info.plist and add the following two information properties to it by clicking on the small **+** icon.
 
 
 | Property | Value |
@@ -253,26 +273,28 @@ Because iOS is a privacy focused operation system, you have to ask the user for 
 
 ![Product Classification VC](fiori-ios-scpms-teched19-09.png)
 
-That's it, the first time your app will try to access the Camera or Photo Library, the user will get asked for permission for the app to perform this action.
+That's it, the first time your app will try to access the Camera or Photo Library, the user will get asked for permission to perform this action.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add a back navigation from the Product Classification Table View Controller to the Overview View Controller)]
+[ACCORDION-BEGIN [Step 6: ](Add back navigation)]
 
-Right now the user has no possibility to navigate back from the Product Classification Table View Controller. For that please open the `Main.storyboard` and add a Bar Button Item to the left side of the Navigation Item of the Product Classification Table View Controller.
+Right now the user has no possibility to navigate back from the Product Classification Table View Controller.
+
+Open the `Main.storyboard` and add a Bar Button Item to the left-side of the Navigation Item of the `ProductClassificationTableViewController`.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-10.png)
 
-Now in the **Attributes Inspector** for the Bar Button Item, select the **System Item** to be **Done**.
+In the **Attributes Inspector** for the Bar Button Item, select the **System Item** to be **Done**.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-11.png)
 
-Again you will need an `IBAction` for that Bar Button Item, please open the **Assistant Editor** and **control + drag** from the Bar Button Item to the Table View Controller class, select **Action** as type and `doneButtonTapped` as **Name** and click **Create**.
+Again you will need an `IBAction` for that Bar Button Item, open the **Assistant Editor** and **control + drag** from the Bar Button Item to the Table View Controller class, select **Action** as type and `doneButtonTapped` as **Name** and click **Create**.
 
-Close the **Assistant Editor** and open the `ProductClassificationTableViewController` class. Locate the `doneButtonTapped(_:)` method and add the following line of code, responsible for dismissing this modally presented Table View Controller:
+Close the **Assistant Editor** and open the `ProductClassificationTableViewController.swift` class. Locate the `doneButtonTapped(_:)` method and add the following line of code, responsible for dismissing this modally presented Table View Controller:
 
-```swift
+```Swift
 
 self.dismiss(animated: true)
 
@@ -281,9 +303,11 @@ self.dismiss(animated: true)
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run the app and see the result of your work)]
+[ACCORDION-BEGIN [Step 7: ](Run app to see results of your work)]
 
-You have implemented all necessary steps to choose or take a picture using an Action Sheet or Popover, make the needed navigations and passing on the selected image. Now it is time to test if all that works. Please run the app and click on the Bar Button Item in the Overview View Controller.
+You have implemented all necessary steps to choose or take a picture using an Action Sheet or Popover, make the needed navigations and passing on the selected image. Now it is time to test if your code works.
+
+Run the app and click on the Bar Button Item in the Overview View Controller.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-12.png)
 
