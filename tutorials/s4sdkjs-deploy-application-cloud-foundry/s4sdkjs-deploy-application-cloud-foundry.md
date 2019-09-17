@@ -1,9 +1,9 @@
 ---
-title: Deploy Application to Cloud Foundry with SAP S/4HANA Cloud SDK for JavaScript
+title: Deploy Application to Cloud Foundry with SAP Cloud SDK for JavaScript
 description: Deploy an existing application and deploy it to Cloud Foundry in SAP Cloud Platform.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript]
+tags: [ tutorial>beginner, products>sap-s-4hana-cloud-sdk, topic>javascript ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
@@ -25,11 +25,12 @@ In your command line, run:
 npm run ci-build && npm run ci-package
 ```
 
+>**Note:** We are aware, that the `ci-package` script currently does not work when executed in Windows' CMD. Currently, the easiest workaround is to install a `bash` on your system (by default, `git` for Windows comes with [Git Bash](https://gitforwindows.org/)) and configure npm to execute scripts in that bash. This can be done by executing `npm config set script-shell <P:\ath\to\your\bash.exe>`.
+
 In order to deploy our application, we first need to login to `Cloud Foundry` in `SAP Cloud Platform` using the **`cf` CLI**. First we need to set an `API` endpoint. Depending on the region in which you have created your account, choose one of the following `API` endpoints:
 
  - EU: [https://api.cf.eu10.hana.ondemand.com] (https://api.cf.eu10.hana.ondemand.com)
  - US EAST: [https://api.cf.us10.hana.ondemand.com] (https://api.cf.us10.hana.ondemand.com)
- - US WEST (beta): [https://api.cf.us20.hana.ondemand.com] (https://api.cf.us20.hana.ondemand.com)
 
 For the rest of this tutorial, we will assume the region to be EU. Enter the following commands in your command line:
 
@@ -52,6 +53,7 @@ applications:
       - nodejs_buildpack
     memory: 256M
     command: cd cloud-sdk-starter-app/dist/ && node index.js
+    random-route: true
 ```
 
 >**Note:** If the value for name is `cloud-sdk-starter-app`, you probably forgot to call `npm run init -- <YOUR-APPLICATION-NAME>`. This might cause your deployment to fail.
@@ -134,11 +136,12 @@ The resulting `manifest.yml` should look like this:
 ```YAML
 applications:
   - name: <YOUR-APPLICATION-NAME>
-    path: dist/
+    path: deployment/
     buildpacks:
       - nodejs_buildpack
     memory: 256M
     command: node index.js
+    random-route: true
     services:
       - my-destination
 ```
@@ -167,11 +170,12 @@ The final `manifest.yml` should look like this:
 ```YAML
 applications:
   - name: <YOUR-APPLICATION-NAME>
-    path: dist/
+    path: deployment/
     buildpacks:
       - nodejs_buildpack
     memory: 256M
     command: node index.js
+    random-route: true
     services:
       - my-destination
       - my-xsuaa

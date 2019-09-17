@@ -3,7 +3,7 @@ title: Create an HTTP Service
 description: Create an HTTP service in the ABAP environment that can be called from the browser.
 auto_validation: true
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform  ]
+tags: [  tutorial>beginner, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -114,9 +114,6 @@ response->set_text( text ).
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Test yourself)]
-Implement the method `IF_HTTP_SERVICE_EXTENSION~HANDLE_REQUEST` so that it returns the current user name (`UNAME`), not the system date.
-
-Use the variables `user_name` and `text` and the method `get_user_formatted_name`.
 
 [VALIDATE_1]
 

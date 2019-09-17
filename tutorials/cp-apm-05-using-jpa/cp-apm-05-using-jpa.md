@@ -1,6 +1,6 @@
 ---
-author_name: Jijo Roy Jacob
-author_profile: https://github.com/JijoRoyJacob
+author_name: René Jeglinsky
+author_profile: https://github.com/renejeglinsky
 title: Use JPA in Custom Logic
 description: Use Java Persistence API (JPA) in your application, created using the SAP Cloud Application Programming Model, to store and retrieve data.
 auto_validation: true
@@ -53,7 +53,7 @@ In order to have JPA classes generated automatically for all the entities define
 
     ![Resources and Plugins](resources-and-plugins.png)
 
-5. Add the CSN2JPA plugin in `pom.xml` as indicated in the following code:
+5. Add `build-helper-maven-plugin`, `maven-clean-plugin`, and `csn2jpa-maven-plugin` in `pom.xml` as indicated in the following code:
 
     ```XML
     <project ...>
@@ -127,7 +127,8 @@ In order to have JPA classes generated automatically for all the entities define
 
     > The CSN2JPA plugin is required in the build of the application to automatically generate the JPA classes. In the code sample, you can see that the version number of `csn2jpa-maven-plugin` is 1.4.1. The latest version of `csn2jpa-maven-plugin` can be found in the [Maven Central Repository](https://search.maven.org). Accordingly, verify and update the version number of `csn2jpa-maven-plugin` in `pom.xml`.
 
-6. In order to actually execute the JPA operations, add EclipseLink to the dependencies section of `pom.xml`.
+6. In order to actually execute the JPA operations, add EclipseLink to the `dependencies` section of `pom.xml`.
+    > **Note:** Do not add the dependencies to the `dependencies` section under the `only-eclipse` profile. Instead, if it does not already exist, create a separate `dependencies` section under `project` as indicated in the following sample.
 
     ```XML
     <project ...>
@@ -183,7 +184,7 @@ In order to have JPA classes generated automatically for all the entities define
 
 9. Save `pom.xml`.
 
-10. Right-click the `bookshop` project and choose **Build**.
+10. Right-click the `srv` module and choose **Build**.
     > The CSN2JPA mapper generates all the JPA classes for the entities defined in the data model.
 
 11. Right-click the `bookshop` project and choose **Refresh Workspace Items**.
@@ -274,7 +275,7 @@ In step 1, we saw how to generate the JPA classes. In addition to the JPA classe
 
 4. Open the `srv/src/main/webapp/WEB-INF/web.xml` file.
 
-5. Add the following reference so that the DataSource, encapsulating the connection to the database, is managed by the container (that is, application server):
+5. Remove the existing `resource-ref` for `jdbc/java-hdi-container` and add the following reference so that the DataSource, encapsulating the connection to the database, is managed by the container (that is, application server):
 
     ```XML
     <web-app ...>
@@ -287,6 +288,8 @@ In step 1, we saw how to generate the JPA classes. In addition to the JPA classe
 
     	[...]
     ```
+
+    > The `resource-ref` for CDS API consumption in TomEE is commented out in `web.xml`. You can simply uncomment and use the same, but remember to remove the existing `resource-ref` block.
 
 6. Add the following reference so that the persistence context and persistence unit are known to the container:
 
@@ -326,7 +329,7 @@ We are delegating the management of some resources to the container, like the ma
        path: srv
        [...]
        requires:
-        - name: bookshop-hdi-container
+        - name: bookshop-db-hdi-container
           properties:
              JBP_CONFIG_RESOURCE_CONFIGURATION: '[tomee/webapps/ROOT/WEB-INF/resources.xml:
                 {"service_name_for_DefaultDB" : "~{hdi-container-name}"}]'
@@ -337,6 +340,8 @@ We are delegating the management of some resources to the container, like the ma
     ```
 
     > The deployment of the whole application as an MTA is defined in the `mta.yaml` file. So we define `TomEE` as the runtime for the Java backend in this file.
+
+    > **Note:** The hdi-container and srv module names used in this sample are for representational purposes. Please ensure that the names used in your `mta.yaml` match.
 
 3. Save the file.
 4. Next, open `srv/src/main/webapp/META-INF/sap_java_buildpack/config/resource_configuration.yml`.
@@ -367,6 +372,12 @@ Finally, let's run the application to see it all come together.
 
     ```
     curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{ "buyer": "JPA Buyer 1", "book_ID": 310 }' https://<Java-Backend-URL>/odata/v2/CatalogService/Orders
+    ```
+
+    If your system is running Windows, try the following command instead:
+
+    ```
+    curl -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d "{ \"buyer\" : \"JPA Buyer 1\", \"book_ID\" : 310 }" https://<Java-Backend-URL>/odata/v2/CatalogService/Orders
     ```
 
     > Here, the URL that the Java backend is listening to is `Java-Backend-URL`, the ID of the ordered book is 310, and the buyer is called JPA Buyer 1.

@@ -3,7 +3,7 @@ title: Create a Database Multi-Target Application with the SAP HANA Service
 description: Create an application with a database module.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service]
+tags: [tutorial>beginner, products>sap-hana, products>sap-cloud-platform\,-sap-hana-service, tutorial>license]
 primary_tag: products>sap-hana
 ---
 

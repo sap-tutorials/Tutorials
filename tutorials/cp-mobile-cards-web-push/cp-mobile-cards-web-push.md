@@ -60,12 +60,6 @@ Provide the required information:
 
 Click **Save**.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_010.png)
-
-**Yes** means that when you do any modifications to this card, you need to unlock it first. For this tutorial, click **No**.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_011.png)
-
 [DONE]
 [ACCORDION-END]
 
@@ -94,7 +88,7 @@ It will show **No Card available** as there is no card yet pushed from the web a
 
 Open SAP Web IDE Full-Stack.
 
-> If SAP Web IDE Full-Stack service is not enabled, enable it first. Follow [this](sapui5-webide-open-webide) tutorial for more details.
+> If SAP Web IDE Full-Stack service is not enabled, enable it first. Follow [this](webide-multi-cloud) tutorial for more details.
 
 Right click on **Workspace** and select **New** > **Folder**.
 

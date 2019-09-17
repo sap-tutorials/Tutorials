@@ -11,7 +11,7 @@ time: 2
 <!-- loiof14d821d2ac14186bbf202586056e1d2 -->
 
 ## Prerequisites
- - **Tutorials:** You have completed [Register](https://developers.sap.com/tutorials/hxe-ua-register.html) 
+ - **Tutorials:** You have completed [Register](hxe-ua-register)
 
 ## Details
 ### You will learn
@@ -27,6 +27,8 @@ In Download Manager, from the *Platform* pull-down, select SAP HANA, express edi
 
 ![DM_platform_1](DM_platform_1.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select the VM image)]
@@ -35,6 +37,8 @@ From the *Image* pull-down, select *Virtual Machine*.
 
 ![DM_image_4](DM_image_4.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Specify a save directory)]
@@ -42,6 +46,8 @@ From the *Image* pull-down, select *Virtual Machine*.
 Click *Browse* and select a directory where your downloads will be saved.
 
 ![DM_SaveDir_2](DM_SaveDir_2.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -75,6 +81,8 @@ Select one or more of the following packages:
 > 
 > 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ]((Optional) Download optional installation packages)]
@@ -82,7 +90,7 @@ Select one or more of the following packages:
 Skip to the next step unless you are an advanced user.
 
 > Note:
-> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](https://developers.sap.com/tutorials/hxe-ua-packages-vm-xsa.html) tutorial later in the installation workflow, once your server is installed and running. 
+> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](hxe-ua-packages-vm-xsa) tutorial later in the installation workflow, once your server is installed and running. 
 > 
 > 
 
@@ -136,6 +144,8 @@ If downloading optional installation packages now, select one or more of the fol
 -   *SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)* - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Download your selections)]
@@ -145,6 +155,8 @@ Click the *Download* button.
 Your download is complete when a pop-up message appears confirming successful download. Make sure you wait for this message before accessing the downloaded files.
 
 ![hxe_downloadmanager_2_2_3](hxe_downloadmanager_2_2_3.png)
+
+[DONE]
 
 [ACCORDION-END]
 

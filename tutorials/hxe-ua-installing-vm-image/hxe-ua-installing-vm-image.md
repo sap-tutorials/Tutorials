@@ -20,8 +20,6 @@ You'll decide whether the virtual machine installation method is best for you, y
 ---
 
 > Note:
-> These installation tutorials are also available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
-> 
 > Additional documentation, including downloadable PDF manuals, is available on the [SAP Help Portal](https://help.sap.com/viewer/p/SAP_HANA,_EXPRESS_EDITION).
 > 
 > 
@@ -137,7 +135,7 @@ Example installation procedure for `VMware Workstation Player 12.x`:
 
 [ACCORDION-BEGIN [Step 6: ](Go to the next tutorial)]
 
-1.   If you don't have the parent tutorial group open already, open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://developers.sap.com/group.hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://developers.sap.com/group.hxe-install-vm.html) tutorial group. 
+1.   If you don't have the parent tutorial group open already, click the *Install SAP HANA 2.0, express edition on a preconfigured virtual machine* tile or the *Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)* tile at the bottom of this tutorial. 
 
 2.   Click the next tutorial in the sequence 
 

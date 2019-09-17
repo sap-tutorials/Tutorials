@@ -87,11 +87,10 @@ To enable build upon save go to **Tools** | **Preferences** | **Core Data Servic
 
 Save your `.cds` file to start the builder.
 
-- This starts a build of all `.cds` file in this project. To check which files are created go to **View** | **Console** in the SAP Web IDE.
+This starts a build of all `.cds` file in this project. To check which files are created go to **View** | **Console** in the SAP Web IDE.
 
     >If you wonder about the filenames you see in the console, they are derived from the namespace of the `.cds` file, the service (`srv`), and entities (`srv/db`) they are modelled in. This is the pattern: `NAMESPACE_SERVICE_ENTITY`
 
-- If you run into an error here, you might have missed the prerequisite [Select a Cloud Foundry space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html), or the builder in your space is outdated. To select a space or update the builder go to **Tools** | **Preferences** | **Cloud Foundry**. 
 
 [DONE]
 [ACCORDION-END]

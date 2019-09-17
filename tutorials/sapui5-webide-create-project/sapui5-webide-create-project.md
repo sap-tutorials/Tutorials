@@ -11,7 +11,7 @@ time: 5
 ---
 
 ## Prerequisites  
-- **Tutorials:**  [Open the SAP Web IDE](sapui5-webide-open-webide.html)
+- **Tutorials:**  [Open the SAP Web IDE](sapui5-webide-open-webide)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,7 @@ time: 5
 ---
 [ACCORDION-BEGIN [Step : ](Open the project wizard)]
 
-> Please double check that your subaccount lives in the eu10 region. If not, please follow [this tutorial](cp-ui5-webide-new-app.html) to create the project instead. Don't forget the use the module name and name space mentioned here.
+> Please double check that your subaccount lives in the eu10 region. If not, please follow [this tutorial](cp-ui5-webide-new-app) to create the project instead. Don't forget the use the module name and name space mentioned here.
 
 Select **File** --> **New** --> **Project From Template**
 
@@ -60,7 +60,29 @@ Keep the default values and click **Finish**.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Download the MultiApps plugin)]
+[ACCORDION-BEGIN [Step : ](Check the service bindings)]
+<!--  remove this step once the wizard is fixed -->
+In a later tutorial, we want to make use of the destination service. Open the `mta_app/mta.yaml` file to see if the destination service is bound to the app router. If you don't see the highlighted lines, please add them manually.
+
+![CheckServices](checkservices.png)
+
+```
+- name: dest_mta_app
+
+...
+
+- name: dest_mta_app
+  parameters:
+    service-plan: lite
+    service: destination
+  type: org.cloudfoundry.managed-service
+```
+
+
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Check the project file structure)]
 
 Your project should now look like this.  Click a folder icon to expand the contents.
 

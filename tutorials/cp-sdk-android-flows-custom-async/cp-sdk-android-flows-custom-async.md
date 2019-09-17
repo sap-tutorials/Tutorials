@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, operating-system>android
 primary_tag: products>sap-cloud-platform-sdk-for-android
 ---
 
+## Prerequisites
+ - Completed the previous tutorial in this mission
+
 ## Details
 ### You will learn
   - How to show a screen in a custom step

@@ -11,7 +11,7 @@ time: 15
 <!-- loio8f68fc9f49774010a5d438fea258f61f -->
 
 ## Prerequisites
- - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
+ - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](hxe-ua-getting-started-vm). 
 You edited your laptop's hosts file.
 
 
@@ -40,7 +40,7 @@ The `hxe_gc` memory management script frees up available VM memory.
 -   Execute:
 
     ```bash
-
+    
     hxe_gc.sh
     ```
 
@@ -48,6 +48,8 @@ The `hxe_gc` memory management script frees up available VM memory.
 
 
 The cleanup process runs. The command prompt returns when the cleanup process is finished.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -59,7 +61,9 @@ In your VM, from the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/b
 HXEDownloadManager_linux.bin linuxx86_64 vm eadesigner.tgz
 ```
 
-![loiof8015cbabcd944589df9eb1975488fa6_LowRes](loiof8015cbabcd944589df9eb1975488fa6_LowRes.png)
+![eadesigner_tgz_Download_3](eadesigner_tgz_Download_3.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -71,6 +75,8 @@ In your VM, enter:
 cd /usr/sap/HXE/home/Downloads
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](View the contents of the `Downloads` directory to confirm `eadesigner.tgz` exists.)]
@@ -80,6 +86,8 @@ In your VM, enter:
 ```bash
 ls
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -91,7 +99,9 @@ In your VM, enter:
 tar -xvzf eadesigner.tgz
 ```
 
-![loio4182366cf2a946ee9a3fad660b6817d8_LowRes](loio4182366cf2a946ee9a3fad660b6817d8_LowRes.png)
+![easdesigner_tgz_Command_Example_5](easdesigner_tgz_Command_Example_5.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -102,6 +112,8 @@ In your VM, enter:
 ```bash
 cd HANA_EXPRESS_20
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -115,6 +127,8 @@ sh ./install_eadesigner.sh
 
 Installation begins.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Follow the installation prompts)]
@@ -126,6 +140,8 @@ Installation begins.
 -   When prompted for `XSA administrator (XSA_ADMIN) password`, enter the `HANA database master password` you specified when you installed SAP HANA 2.0, express edition.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Complete the installation)]
@@ -134,7 +150,9 @@ When prompted to `Proceed with installation`, enter `Y`. Wait for installation t
 
 A success message displays when installation completes.
 
-![loioa44e0fb6cf3241dfb958221c1fcb9b6d_LowRes](loioa44e0fb6cf3241dfb958221c1fcb9b6d_LowRes.png)
+![eadesigner_Successful_Deployment_2](eadesigner_Successful_Deployment_2.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -153,7 +171,9 @@ The output will include all the applications of your organization and space. You
 -   `eadesigner-backend` - The SAP EA Designer Java application
 -   `eadesigner-db` - The SAP EA Designer database creation application. This application will have a state of `STOPPED` when the installation is complete.
 
-![loioba69e154425448508bd7e37ab6757819_LowRes](loioba69e154425448508bd7e37ab6757819_LowRes.png)
+![eadesigner_xsapps_4](eadesigner_xsapps_4.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -163,13 +183,17 @@ The output will include all the applications of your organization and space. You
 
 -   Launch a web browser on your laptop and enter the URL in your web browser address bar. The SAP EA Designer login page displays.
 
-    ![loio5990aaf782d84aa6ae3c02a272a6d18e_LowRes](loio5990aaf782d84aa6ae3c02a272a6d18e_LowRes.png)
+    ![SAP_EA_Designer_Login_Page_1](SAP_EA_Designer_Login_Page_1.png)
 
 -   Click *Login with your XSA User* on this logon page.
 
 -   Enter `XSA_ADMIN` user and password. You are logged in as administrator of SAP EA Designer.
 
-    ![loio5830ffe295824ce6946a374c98ec011e_LowRes](loio5830ffe295824ce6946a374c98ec011e_LowRes.png)
+    ![SAP_EA_Designer_welcome_page_0](SAP_EA_Designer_welcome_page_0.png)
 
+
+[DONE]
 
 [ACCORDION-END]
+
+

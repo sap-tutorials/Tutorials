@@ -69,6 +69,10 @@
       "value": "topic>odata"
     },
     {
+      "name": "SAP Community",
+      "value": "topic>sap-community"
+    },
+    {
       "name": "SAPUI5",
       "value": "topic>sapui5"
     },
@@ -105,6 +109,10 @@
       "value": "products>sap-cloud-platform-connectivity"
     },
     {
+      "name": "SAP Cloud Platform Enterprise Messaging",
+      "value": "products>sap-cloud-platform-enterprise-messaging"
+    },
+    {
       "name": "SAP Cloud Platform Integration for process services",
       "value": "products>sap-cloud-platform-integration-for-process-services"
     },
@@ -135,6 +143,10 @@
     {
       "name": "SAP Cloud Platform, SAP HANA service",
       "value": "products>sap-cloud-platform--sap-hana-service"
+    },
+    {
+      "name": "SAP Cloud SDK",
+      "value": "products>sap-s-4hana-cloud-sdk"
     },
     {
       "name": "SAP Data Hub",

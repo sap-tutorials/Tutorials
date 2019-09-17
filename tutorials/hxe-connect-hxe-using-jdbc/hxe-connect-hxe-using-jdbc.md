@@ -18,9 +18,16 @@ In this how-to, you will learn how to connect to HANA Express Edition using JDBC
 
 [ACCORDION-BEGIN [Step 1: ](Install the SAP HANA client)]
 
-You can download the **SAP HANA Client Software Packages** from the [SAP Store](https://store.sap.com/sap/cpa/ui/resources/store/html/SolutionDetails.html?pid=0000012950).
+You can download the **SAP HANA Client Software Packages** in two ways:
 
-Once downloaded, you can follow the instructions from the [SAP HANA Client Installation and Update Guide](https://help.sap.com/hana/SAP_HANA_Client_Installation_Update_Guide_en.pdf).
+- Download the SAP HANA Tools from the [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools) site.
+
+- Use the SAP HANA, express edition [Download Manager](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) to download the clients. Download the Download Manager first, and then use Download Manager to download the client package. For details, see [Install the SAP HANA, express edition Clients](https://developers.sap.com/group.hxe-install-clients.html).
+
+Once downloaded, follow the instructions in [Installing SAP HANA HDB Client (Linux)](hxe-ua-install-hdb-client-linux).
+
+> Note:
+> For a compatibility matrix showing which driver to use for a particular SAP HANA version, see SAP Note [1906576](https://launchpad.support.sap.com/#/notes/1906576).
 
 [ACCORDION-END]
 

@@ -11,7 +11,7 @@ time: 1
 <!-- loiofd337714a73f45cea49e20d6594d1109 -->
 
 ## Prerequisites
- - **Tutorials:** You have completed [Download Using the Download Manager (GUI Mode)](https://developers.sap.com/tutorials/hxe-ua-download-vm.html)
+ - **Tutorials:** You have completed [Download Using the Download Manager (GUI Mode)](hxe-ua-download-vm)
 
 ## Details
 ### You will learn
@@ -27,6 +27,8 @@ Start `VMware Player` and select *Open a Virtual Machine*.
 
 ![VMWare_Player_Main_Screen_3](VMWare_Player_Main_Screen_3.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the OVA file)]
@@ -38,6 +40,8 @@ The OVA file name is either `hxexsa.ova` or `hxe.ova` depending on which VM imag
 Browse to the OVA file you downloaded and click *Open*.
 
 The Import Virtual Machine dialog box displays.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -51,6 +55,8 @@ The import process takes approximately 5 minutes for `hxe.ova`.
 
 The import process takes approximately 5-10 minutes for `hxexsa.ova`.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Power on your VM)]
@@ -59,4 +65,8 @@ Click *Play Virtual Machine*.
 
 ![Play_VM_0](Play_VM_0.png)
 
+[DONE]
+
 [ACCORDION-END]
+
+

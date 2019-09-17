@@ -3,7 +3,7 @@ title: Use the Similarity Scoring with the Text Feature Extraction API from a RE
 description: Discover how to call the Similarity Scoring with the Document Feature Extraction API from a REST Client like Postman
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment ]
 primary_tag: products>sap-leonardo-machine-learning-foundation
 ---
 

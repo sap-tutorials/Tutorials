@@ -26,7 +26,7 @@ There are three steps to connect the OData service to your application.
 
 [ACCORDION-BEGIN [Step : ](Open the descriptor editor)]
 
-In a [previous tutorial](https://developers.sap.com/tutorials/hcp-create-destination.html) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
+In a [previous tutorial](hcp-create-destination) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
 
 
 1.  Open the `mta_app/app/webapp/mainfest.json` file with the **Descriptor Editor**, by double clicking on the file.
@@ -69,9 +69,11 @@ In a [previous tutorial](https://developers.sap.com/tutorials/hcp-create-destina
 1. Keep the default value **Use default model** to use this data source with the default model.
 
     ![Finish creating the OData service](3.png)
+
 2. On the confirmation screen, click **Finish**.
 
     ![Finish creating the OData service](4.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -135,7 +137,7 @@ Expand the nodes **`<edmx:Edmc>`**, **`<edmx: DataServices>`** and the **`first 
 
 ## Troubleshooting
 
- - **Missing a file?**  If the list of files doesn't match the picture, you may have used the wrong template when you created the project.  Delete the project, and start the [Create a new project](sapui5-webide-create-project.html) tutorial again.
+ - **Missing a file?**  If the list of files doesn't match the picture, you may have used the wrong template when you created the project.  Delete the project, and start the [Create a new project](sapui5-webide-create-project) tutorial again.
 
  - **$metadata file not listed?**  This means one of the files in your project is incorrect.  Check the files, and make sure no red X marks appear in the left hand column.  These indicate a problem with the file syntax.  Check the pictures carefully.
 

@@ -1,6 +1,6 @@
 ---
 title: Install SAP HANA 2.0, express edition
-description: Extract server and applications installation files and set up your SAP HANA 2.0, express edition installation with XS Advanced, Web IDE, and SAP HANA Cockpit.
+description: Extract the installation files and set up your SAP HANA 2.0, express edition installation– with XS Advanced, Web IDE, and SAP HANA Cockpit.
 author_name: Aaron Patkau
 author_profile: https://github.com/aptk001
 primary_tag: products>sap-hana\,-express-edition
@@ -14,7 +14,7 @@ time: 60
 
 ## Details
 ### You will learn
-You will learn how to extract and configure the binary image of SAP HANA 2.0, express edition on your Linux server. You downloaded the installer files in the previous tutorial.
+You will learn how to extract and configure the binary image of SAP HANA 2.0, express edition on your Linux server. You downloaded the Server-only installer file and Applications file in the previous tutorial.
 
 ---
 
@@ -69,17 +69,19 @@ tar -xvzf <download_path>/shine.tgz
 
 > Note:
 > Run the `tar` command from the command shell as shown, rather than using a GUI-based extraction tool.
->
->
+> 
+> 
 
 > Note:
 > You may have to give these files run permissions. Example:
->
+> 
 > ```bash
-> chmod -R 777 <download_path>/hxe.tgz
+> chmod 444 <download_path>/hxe.tgz
 > ```
->
->
+> 
+> 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -96,20 +98,24 @@ Follow the prompts to configure your installation.
 
 > Note:
 > The master password you specify during installation is used for the <sid>`adm` and `sapadm` OS users, the telemetry technical user, and the SYSTEM user. The password is also used for the following users in additional components:
->
+> 
 > -   `XSA_ADMIN` and `XSA_DEV` (Applications package)
 > -   `XSA_SHINE` (SHINE)
 > -   `SYS_STREAMING` and `SYS_STREAMING_ADMIN` (streaming analytics)
->
+> 
 > SAP HANA, express edition requires a `very strong password` that complies with these rules:
->
+> 
 > -   At least 8 characters
 > -   At least 1 uppercase letter
 > -   At least 1 lowercase letter
 > -   At least 1 number
 > -   Can contain special characters, but not ``` ` ``` (backtick), `$` (dollar sign), `\` (backslash), `'` (single quote), or `"` (double quotes)
 > -   Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
->
->
+> 
+> 
+
+[DONE]
 
 [ACCORDION-END]
+
+

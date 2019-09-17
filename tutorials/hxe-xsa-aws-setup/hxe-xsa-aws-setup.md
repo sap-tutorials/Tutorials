@@ -1,6 +1,8 @@
 ---
 title: Set up SAP HANA, express edition on Amazon Web Services (XS Advanced)
 description: Set up your SAP HANA, express edition with XS Advanced on Amazon Web Services.
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
@@ -14,12 +16,20 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 ---
 
 <div align="center">
-<b><span style="color:red;align:middle">Warning: Please read carefully before starting!</span></b>
+<b><span style="color:red;align:middle">WARNING: Please read carefully before starting!</span></b>
 </div>
+&nbsp;
 
-**Before, you get started, please be aware that using SAP HANA, express AMI on AWS is not covered by the AWS Free tier, and therefore charges for both the EC2 instance and the provisioned EBS volumes used by this instance will incur.**
+<div align="left">
+<b><span style="color:black;align:middle">Before you get started, please be aware that using SAP HANA, express AMI on AWS is <b><span style="color:red;align:middle">not covered by the AWS Free tier, <b><span style="color:black;align:middle">and therefore charges for both the EC2 instance AND the provisioned EBS volumes used by this instance will incur.  </span></b>
+</div>
+&nbsp;
 
-**Also, with the EBS volumes types in use, even if your EC2 instance running your SAP HANA, express edition is _stopped_, charges will be incurred for the provisioned EBS volumes. Only detaching and deleting the EBS volumes will prevent charges. However, this will make your  SAP HANA, express edition no longer usable.**
+<b><span style="color:black;align:middle">With the EBS volumes types in use, <b><span style="color:red;align:middle">even if your EC2 instance running your SAP HANA, express edition is _stopped_, charges will be incurred <b><span style="color:black;align:middle">for the provisioned EBS volumes.
+
+<b><span style="color:red;align:middle">Only detaching and deleting the EBS volumes will prevent charges.
+
+<b><span style="color:black;align:middle">However, this will make your SAP HANA express edition no longer usable.  <b><span style="color:red;align:middle"> Therefore it is highly recommended that you allocate enough time to complete the tutorial in one sitting to avoid losing work and incurring extra charges.
 
 ---
 
@@ -27,8 +37,11 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 
 Sign in or create an account on [Amazon Web Services Portal](https://portal.aws.amazon.com/billing/signup#/start)
 
-> ### **Note:** When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.
+> ### **Information:**
+>**When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.**
+
 >During this process, some AWS services, like the AWS Marketplace, will not be available.
+
 >Therefore, you will need to wait for the completion of the validation process before being able to proceed with the SAP HANA, express edition creation.
 
 Access the [Amazon Web Services Marketplace](https://aws.amazon.com/marketplace/seller-profile?id=ba115d7b-68d6-4d81-ba4c-fa035c62bebf).
@@ -110,7 +123,16 @@ Set a name and click **Create**
 > ### Note:  **You will need the generated file to access your instance**
 >
 > This file is your key to access the server. If you lose your `.pem` file you will not be able to access the instance later.
+
 >
+
+**If you get an error where `my-key-pair.pem` is not accessible the solution is to type one of these two commands:**
+
+1:  `chmod 777 my-key-pair.pem`
+
+2:  `chmod 400 my-key-pair.pem`
+
+
 
 Go back to the instance creation page, and click the ***refresh*** buttons.
 
@@ -138,6 +160,20 @@ From the **EC2 Console**, you will be able to monitor the instance initializatio
 You may need to refresh the page to get the **Status Checks** updated.
 
 Once the instance is ready, you can connect to it using an SSH client.
+
+To ensure you can connect to your instance you need some required ports open.  To do this add 3 ranges (highlighted to the security group) to be able to access the XSA services (like SAP Web IDE):
+
+Open security group my-security-group and go to Inbound and click on Edit to Add Rule and add the following ports:
+
+51000-51500
+
+39030-39033
+
+53075
+![Amazon Security Group Ports](_32.png)
+
+After that your security group settings should like below:
+![Amazon Ports](_33.png)
 
 [DONE]
 [ACCORDION-END]
@@ -336,9 +372,11 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step 8: ](Map the host)]
 
-Use the external IP address collected from the Amazon Web Services EC2 console to map it in your computer hosts file.
+Use the external IP address collected from the Amazon Web Services EC2 console to map it in your computer hosts file.  In addition you will also need to give your IP access for ports 51000 - 51500.
+
 
 ![Amazon Web Services Marketplace](_17.png)
+
 
 > ### **Warning:** **You will need administration permissions on your computer to do this.**
 
@@ -372,6 +410,10 @@ xxx.xxx.xxx.xxx hxehost
 ```
 
 **Save** and close the text editor.
+
+You will also need to add 3 ranges (highlighted to the security group) to be able to be able to access the XSA services (like SAP Web IDE).  Open your AWS console and add the highlighted ports to the roles created earlier:
+
+![Port file](_32.png)
 
 > Note: If Notepad asks you to create a new file, it means that you do not have enough permissions to save the file and that you didn't start your program as ***Administrator***.
 >Creating a new file will not alter the configuration as intended.

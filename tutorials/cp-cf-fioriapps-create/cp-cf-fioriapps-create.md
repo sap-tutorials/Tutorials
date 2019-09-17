@@ -3,13 +3,13 @@ title: Develop SAP Fiori Applications for SAP Cloud Platform on Cloud Foundry
 description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP Cloud Platform Cloud Foundry environment.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-cloud-platform]
-primary_tag: products>sap-fiori
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-fiori ]
+primary_tag: products>sap-web-ide
 ---
 
 ## Prerequisites
- - Make sure you have access to the trial version of SAP Web IDE Full-Stack. For more information, see [Getting Started with SAP Web IDE Full-Stack](https://developers.sap.com/tutorials/webide-innovation-beta.html).
- - Set up a trial Cloud Foundry account. Follow **steps 1-3** in this tutorial: [Getting started with Cloud Foundry](https://developers.sap.com/tutorials/hcp-cf-getting-started.html)
+ - Make sure you have access to the trial version of SAP Web IDE Full-Stack. For more information, see [Getting Started with SAP Web IDE Full-Stack](webide-innovation-beta).
+ - Set up a trial Cloud Foundry account. [Create a Cloud Foundry Account](cp-cf-create-account)
 
 ## Details
 ### You will learn
@@ -17,15 +17,7 @@ primary_tag: products>sap-fiori
   - How to configure your Cloud Foundry settings in SAP Web IDE
   - How to build and deploy your application to Cloud Foundry
 
-Create, configure, build, and deploy a simple application on Cloud Foundry in SAP Web IDE Full-Stack.
-=======
-  - How to create a new SAPUI5 application for SAP Cloud Platform Cloud Foundry.
-  - How to configure your Cloud Foundry settings in SAP Web IDE.
-  - How to build and deploy your application to Cloud Foundry.
-
   Create, configure, build, and deploy a simple application on Cloud Foundry in SAP Web IDE Full-Stack.
-
-> The steps below assume that you are using the trial version of SAP Web IDE Full-Stack. The steps will be slightly different for productive accounts.
 
 ---
 
@@ -44,9 +36,13 @@ On the **Template Customization** screen, accept the default values shown below 
 
 ![Finish](step1-finish.png)
 
-The new project now appears in your SAP Web IDE workspace.
+A new MTA project called `mta_FioriDemo` containing the `FioriDemo` HTML5 module now appears in your SAP Web IDE workspace.
+
+> You can alternatively choose the Multi-Target Application template which will create an MTA project structure and then add new modules to the project.
+
 
 ![Workspace](step1-workspace.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -116,10 +112,6 @@ But first, check the project settings to make sure that Cloud Foundry is enabled
 
 > By default, the target environment in your run configuration is set to Cloud Foundry.
 
-In the workspace, right-click the `FioriDemo` folder, then select **Project > Project Settings**. Select **Cloud Foundry** and make sure that in the pane on the right that the API endpoint, organization, and space are the same as what you had configured in the **Preferences** perspective in the previous step.
-
-Now, you need to check the run configurations for your project.
-
 1. In the workspace, right-click the `FioriDemo` folder, then choose **Run > Run Configurations**.
 
     ![Run configuration](step5-run-config.png)
@@ -128,12 +120,11 @@ Now, you need to check the run configurations for your project.
 
     ![Cloud Foundry](step5-check-run-config.png)
 
-3. Choose **Save and Run**. A new tab opens in your browser and displays a preview of your application:
+3. Choose **Cancel**.
 
-    ![Run result](step5-result.png)
+In the workspace, right-click the `FioriDemo` folder, then select **Project > Project Settings**. Select **Cloud Foundry** and make sure that in the pane on the right that the API endpoint, organization, and space are the same as what you had configured in the **Preferences** perspective in the previous step.
 
-
-Here's another way to run the application if you are sure that Cloud Foundry has already been configured:
+To run the application:
 
 1. Go back to the **Development** perspective, then in the workspace, select the `FioriDemo` folder.
 

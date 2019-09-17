@@ -1,9 +1,9 @@
 ---
 title: Assemble and Configure Device Hardware
 description: Assemble device hardware, configure device firmware and deploy it in the field.
-primary_tag: topic>internet-of-things
+primary_tag: products>sap-cloud-platform-internet-of-things
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot]
+tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform]
 ---
 
 ## Prerequisites  
@@ -224,7 +224,7 @@ cd Downloads
 sudo node app.js
 ```
 
-This will now continuously read sensor values, print them and send the data to IoT Service for Cloud Foundry. The data is not beeing picked up by anyone. It is forwarded to IoT Application Enablement but while there is no thing mapped the data is not persisted.
+This will now continuously read sensor values, print them and send the data to IoT Service for Cloud Foundry. The data is not beeing picked up by anyone. It is forwarded to Leonardo IoT but while there is no thing mapped the data is not persisted.
 
 ![Output on the PI](sensoroutput.png)
 

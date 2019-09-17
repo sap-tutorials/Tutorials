@@ -1,6 +1,6 @@
 ---
 title: Register App in Microsoft Application Registration Portal
-description: Register your cloud application in the Microsoft portal so that it can be issues access tokens
+description: Register a application in the Azure portal so that it can be issues access tokens
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -9,79 +9,93 @@ primary_tag: topic>cloud
 
 ## Details
 ### You will learn
-  - How to register app in the Microsoft Application Registration Portal
+  - How to register app in the Microsoft Azure Portal
   - Why access tokens are needs to access Microsoft Graph
 
 ---
 
-[ACCORDION-BEGIN [Step ](Open the fork to register a new app )]
+[ACCORDION-BEGIN [Step ](Go to the App Registration page in the Azure Portal)]
 
-Go to <https://apps.dev.microsoft.com/#/appList> and click on **Add an app** on the upper right corner.
+Go to <https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade>
 
-![portal apps overview](./ms-portal-apps.png)
+Alternatively, you can also search for **`App reg`** in the search bar to get to the same page.
 
-You should now give your application a certain name. This name will not appear anyway and has no technical implication.
+![portal apps overview](./ms-portal-search.png)
+
 
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Register a new app)]
 
-[ACCORDION-BEGIN [Step : ](Name the app)]
+Click on **New Registration** on the upper left corner.
 
-Replace `Your App name goes here` with an application name of your choice and proceed with **Create**.
+
+![portal apps overview](./ms-portal-app-new.png)
+
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Configure the new registration)]
+
+
+1. You should now give your application a certain name. This name will be visible when the user logs into your app for the very first time.
+2. Make sure the **Supported account types** are set to **Accounts in any organizational directory and personal Microsoft accounts** to allow the usage of personal accounts.
+3. Add the URL of your SAPUI5 application you have deployed in the previous tutorial. Make sure to copy the entire URL including the `/index.html` suffix.
+4. Proceed with **Register**.
 
 ![portal app name](./ms-portal-app-name.png)
 
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Define the permissions)]
 
-[ACCORDION-BEGIN [Step : ](Specify the platform)]
+1. To enable your application to access data from the Microsoft Graph like emails and documents, navigate to `API Permissions`, click on **Add a permission**.
 
- Navigate to the **Platforms** sections and click on **Add Platform**.
+    ![portal app name](./ms-portal-goto-permission.png)
 
-![portal-app-platform-details](./ms_portal_add_platform.png)
+2. Choose the **Microsoft Graph** tile as we want to access those APIs.
 
-Select **Web** in order to configure a new application.
+    ![portal app name](./ms-portal-msgraph-permission.png)
 
-![portal-web-platform-details](./ms_portal_web_platform.png)
+3. When asked for the type of permissions, select **Delegated Permission** as the user will delegate the app to access the Microsoft Graph API.
 
+     ![portal app name](./ms-portal-delegated-permission.png)
 
-[DONE]
-[ACCORDION-END]
+4. Use the search bar to filter the required permissions. Select the **`Mail.Read`**, **`Files.ReadWrite.All`** and  **`Files.Read`** permissions and confirm with **Add Permission**.
 
-[ACCORDION-BEGIN [Step : ](Define the redirect URL)]
+    > These listed permissions are a superset of the permissions your app actually needs. Your application specifies at runtime which permissions it actually wants to request.
 
-Add the URL of your SAPUI5 application you have deployed in the previous tutorial.
+     ![portal app name](./ms-portal-select-permission.png)
 
-![portal-app-platform-details](./ms-portal-callbacks.png)
+5. Check that all permission have been added to your app registration.
 
-> You can also add `http://localhost:8000` as an additional Redirect URL in case you wish to test the application locally as well.
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Define the accessible permissions)]
-
-To enable your application to search for emails navigate to `Microsoft Graph Permissions`, click on **Add** and select the **`Mail.Read`**, **`Files.Read.All`**, **`Files.Read.Selected`**, **`Files.ReadWrite`**, **`Files.ReadWrite.All`**, and **`User.Read`** permissions.
-
-![portal app name](./ms-portal-add-permission.png)
-> These listed permissions are a superset of the permissions your app actually needs. Your application decides at runtime which permissions it actually wants to request.
+      ![portal app name](./ms-portal-check-permission.png)
 
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Enable the OAuth2 Implicit Flow)]
 
+1. Navigate to the **Manifest** section in the side panel.
+2. Change the fields **oauth2AllowIdTokenImplicitFlow** and **oauth2AllowImplicitFlow** to **`true`** to enable the implicit flow.
+3. Confirm with **Save**.
+
+![portal app name](./ms-portal-enable-oauth2.png)
+
+
+[DONE]
+[ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Get the application Id)]
 
-Save the changes and scroll to the top to **save** app id in your clipboard or a new file, you will need it in the next tutorial.
+Navigate to the **Overview** section in the side panel and look for the field  **Application (client) ID**. Save this id as you will need it in the next tutorial. You can use the button next to the id to copy it to your clipboard.
 
 ![appid](./appid.png)
 
 > You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com> [for Microsoft Office 365 users] or <https://account.live.com/consent/Manage> [for `outlook.com` users].
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 ---

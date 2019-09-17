@@ -7,7 +7,7 @@ tags: [ topic>workflow, topic>sap-web-ide, tutorial>intermediate ]
 time: 20
 ---
 
-## Prerequisites  
+## Prerequisites
 - **Tutorials:** [Create a Destination for the Northwind OData Services](https://developers.sap.com/tutorials/hcp-create-destination.html)
 
 ## Details
@@ -16,7 +16,7 @@ time: 20
 - How service tasks and destinations are connected
 - How to access properties in a workflow's context
 
-This tutorial assumes you've already completed the tutorials in the group [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html). This means you're familiar with general Workflow service concepts, the workflow definition tooling in SAP Web IDE, and you have the `MyInbox` and `Workflow Monitor` apps set up on an SAP Fiori launchpad site on the Portal service.
+This tutorial assumes you've already completed the tutorials in the group [Get Started with SAP Cloud Platform Workflows](https://developers.sap.com/group.cp-workflow-service.html). This means you're familiar with general Workflow service concepts, the workflow definition tooling in SAP Web IDE, and you have the `MyInbox` and `Workflow Monitor` apps set up on an SAP Fiori launchpad site on the Portal service.
 
 It also assumes you have set up a Connectivity service destination for Northwind OData services, as described in [Create a Destination for the Northwind OData Services](https://developers.sap.com/tutorials/hcp-create-destination.html).
 
@@ -34,7 +34,7 @@ Access the SAP Web IDE from your trial SAP Cloud Platform cockpit. Use the detai
 
 Here, `XYZ` represents your trial subaccount name, such as `p999999trial`.
 
-You can find out more about accessing the SAP Web IDE in the Help Portal, specifically in the "[Open SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html)" section.
+You can find out more about accessing the SAP Web IDE in the Help Portal, specifically in the [Open SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html) section.
 
 [DONE]
 [ACCORDION-END]
@@ -123,9 +123,9 @@ A message will appear noting that deployment was successful. If it was not succe
 
 [ACCORDION-BEGIN [Step 6: ](Initiate a workflow instance)]
 
-It's now time to test out the simple definition by creating an instance of it. The `Monitor Workflows` app in your Fiori launchpad that you set up in the tutorial [Add a user task to your workflow](https://developers.sap.com/tutorials/cp-workflow-add-usertask.html) is what you'll need.
+It's now time to test out the simple definition by creating an instance of it. The `Monitor Workflows` app in your SAP Fiori launchpad that you set up in the tutorial [Add a user task to your workflow](https://developers.sap.com/tutorials/cp-workflow-add-usertask.html) is what you'll need.
 
-Use the instructions in the first step of this tutorial to get to your default Fiori launchpad site. Alternatively, if the launchpad site was your first site with the Portal service and you chose default settings, your site URL will look like this, and you can go straight to it in the browser:
+Use the instructions in the first step of this tutorial to get to your default SAP Fiori launchpad site. Alternatively, if the launchpad site was your first site with the Portal service and you chose default settings, your site URL will look like this, and you can go straight to it in the browser:
 
 `https://flpportal-XYZ.dispatcher.hanatrial.ondemand.com/sites`
 
@@ -143,7 +143,7 @@ Select the **Start New Instance** button and note that in the dialog box that's 
 
 ![Start New Instance dialog](start-new-instance-dialog.png)
 
-Choose **Start New Instance** and then select the **Show Instances** button. By default, the list of instances excludes those in "Completed" status, so you may start out with an empty list. Select the filter icon at the bottom of the list and then select the **Status** entry to be able to include **Completed**. Select **OK** when you've done that to dismiss the dialog box.
+Choose **Start New Instance** and then select the **Show Instances** button. By default, the list of instances excludes those in `Completed` status, so you may start out with an empty list. Select the filter icon at the bottom of the list and then select the **Status** entry to be able to include **Completed**. Select **OK** when you've done that to dismiss the dialog box.
 
 ![using the status filter](using-status-filter.png)
 
@@ -189,6 +189,8 @@ This will return data that looks like this:
     Discontinued: false,
 }
 ```
+
+> If you haven't already, you may wish to use an extension in your browser to display JSON in a nicely formatted way, like this. For example, if you're using Chrome, the [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa) is one such extension.
 
 You'll need JSON, rather than XML, as the context storage is JavaScript based.
 

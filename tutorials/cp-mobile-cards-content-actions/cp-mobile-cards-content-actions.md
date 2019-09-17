@@ -5,6 +5,8 @@ auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 20
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 
 ## Details
@@ -13,6 +15,8 @@ time: 20
   - How to enable cards to trigger content-based actions, including native mobile device capabilities
 
  Content-based actions allow users to trigger a phone call, send an email, open maps app, or launch a website with more details from a card.
+
+![SAP Cloud Platform Mobile Services - Opera](img_0.gif)
 
 ---
 
@@ -25,26 +29,26 @@ A company wants to mobilize a paper-based customer ticketing service process whe
 
 [ACCORDION-BEGIN [Step 2: ](Create a new action card)]
 
-Make sure you have logged into the SAP Cloud Platform Mobile Services cockpit. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
+Make sure you have logged into the **SAP Cloud Platform Mobile Services cockpit**. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_000.png)
+![SAP Cloud Platform Mobile Services - Opera](img_000.png)
 
 Click the **Create a New Card** icon.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_001.png)
+![SAP Cloud Platform Mobile Services - Opera](img_001.png)
 
 Provide the required information:
 
 | Field | Value |
 |----|----|
 | **Name** | `ContentActionCard` |
-| **Destination** | `SAPCPMobileServices` |
+| **Destination** | `com.sap.edm.sampleservice.v2` |
 | **Template Source** | `Template Manager` |
 | **HTML Template** | `Sample Product Template` |
 
 > If you see a pop-up, click **OK** for the confirmation.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_009.png)
+![SAP Cloud Platform Mobile Services - Opera](img_009.png)
 
 [DONE]
 [ACCORDION-END]
@@ -53,7 +57,7 @@ Provide the required information:
 
 Navigate to the **Editor** tab, and click **Flip to Back** to implement actions on the content.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_010.png)
+![SAP Cloud Platform Mobile Services - Opera](img_010.png)
 
 Copy and paste the following `<div>` tag before `{{street}}` into the **address** `<span>` to declare the address:
 
@@ -66,7 +70,7 @@ Add the closing `<div>` tag before the closing `<span>` tag:
 </div>
 ```
 
- ![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_011.png)
+ ![SAP Cloud Platform Mobile Services - Opera](img_011.png)
 
 >By adding the `c2g_address` tag to the address, SAP Mobile Cards client can now parse the address and offer the user to show it on a map.
 
@@ -80,11 +84,11 @@ Add the closing `<div>` tag right before the closing `<span>` tag:
 ```HTML
 </div>
 ```
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_013.png)
+![SAP Cloud Platform Mobile Services - Opera](img_013.png)
 
 >By adding the `c2g_email` tag to the email, SAP Mobile Cards client can now parse the email correctly and offer the user to start writing an email directly to the contact email address of the card.
 
-Next, copy and paste the following `<div>` tag before the address `<class>` tag to add a phone number to the card:
+Next, copy and paste the following `<div>` tag after the address `<class>` tag to add a phone number and website address to the card:
 
 ```HTML
 <div class="listitem" style="padding-top: 28px;">
@@ -102,7 +106,7 @@ Supplier Phone
 </div>
 ```
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_014.png)
+![SAP Cloud Platform Mobile Services - Opera](img_014.png)
 
 >By adding the `c2g_phoneNumber` tag to the phone number, SAP Mobile Cards client can now parse the phone number correctly and offer the user to start a call or send an SMS directly to the contact number of the card.
 
@@ -110,43 +114,40 @@ Supplier Phone
 
 Click **Save**.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_015.png)
-
-Click **No** to allow editing of the card again.
-
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_016.png)
+![SAP Cloud Platform Mobile Services - Opera](img_015.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Subscribe to the card in SAP Mobile Cards)]
 
-In the SAP Mobile Cards application, click the **+** icon to open the subscriptions.
+In the SAP Mobile Cards application, click **More** | **Subscriptions**.
 
-![Chrome Remote Desktop](Markdown_files/img_017.png)
+![Card](img_031.png)
 
 Click `ContentActionCard` under the **All** tab.
 
-![Chrome Remote Desktop](Markdown_files/img_019.png)
+![Chrome Remote Desktop](img_019.png)
 
 Click **Subscribe** to activate the `ContentActionCard` subscription.
 
-![Chrome Remote Desktop](Markdown_files/img_020.png)
+![Chrome Remote Desktop](img_020.png)
 
-Click the card to open it.
+Click **All Cards** or **New Cards** to view this card.
 
-![Chrome Remote Desktop](Markdown_files/img_021.png)
-
-Here, you can see a preview of cards. Click  **Done**.
-
-![Chrome Remote Desktop](Markdown_files/img_022.png)
+![Chrome Remote Desktop](img_022.png)
 
 Click the action icon at the bottom-left to open the available actions on the card.
 
-![Chrome Remote Desktop](Markdown_files/img_023.png)
+![Chrome Remote Desktop](img_023.png)
 
 Congratulations, you added content based actions to your card.
 
-![Chrome Remote Desktop](Markdown_files/img_024.png)
+![Chrome Remote Desktop](img_024.png)
+
+>In case of any failure, you can navigate to **Activity Logs** by clicking on **More** | **Logs** and then look in **Pending Actions**.
+
+>![SAP Cloud Platform Mobile Services - Opera](img_00.gif)
+
 [DONE]
 [ACCORDION-END]

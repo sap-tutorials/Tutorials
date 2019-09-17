@@ -1,6 +1,7 @@
 ---
-title: Open SAP Web IDE Full-Stack and make it ready for Cloud Foundry Development
-description: Enable and open SAP Web IDE Full-Stack in SAP Cloud Platform. Configure the CF API endpoint to deploy.
+title: Prepare SAP Web IDE for Cloud Foundry Development
+description: Enable and open SAP Web IDE Full-Stack in SAP Cloud Platform, and configure the CF API endpoint to deploy.
+auto_validation: false
 author_name: Marius Obert
 author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
@@ -8,18 +9,19 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 time: 5
 ---
 ## Prerequisites  
-- **Tutorials:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
+- **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](hcp-create-trial-account).
+- **Tutorial:** [Create a Cloud Foundry Sub-account](cp-cf-create-account), if you haven't done so before.
 
 ## Details
 ### You will learn  
-  - How to enable and then navigate to the SAP Web IDE Full-Stack inside of SAP Cloud Platform.
-
+  - How to enable SAP Web IDE Full-Stack inside of SAP Cloud Platform
+  - How to open SAP Web IDE Full-Stack
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open your SAP Cloud Platform account)]
 
-Open your SAP Cloud Platform account (if you have a free developer account, click [HERE](https://account.hanatrial.ondemand.com/) to open the console).
+Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://account.hanatrial.ondemand.com/) to open the console).
 
 Choose **Neo Trial**.
 
@@ -84,7 +86,7 @@ Click on the **gears icon** in the bar on the left-hand side to open the setting
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Enter the Cloud Foundry endoint you want to use)]
+[ACCORDION-BEGIN [Step : ](Enter the Cloud Foundry endpoint you want to use)]
 
 1. Select the API endpoint according to the data center in which your subaccount lives. Click on the dropdown control and the most common endpoints will be suggested to you. You can see find [a list](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html?platform=hootsuite) of all endpoints in the help portal.
 
@@ -102,5 +104,5 @@ Click on the **gears icon** in the bar on the left-hand side to open the setting
 
 > You can also choose specific API endpoints per project in the project settings.
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]

@@ -11,7 +11,7 @@ time: 3
 <!-- loio31a2f9637e5747298b29c2960d2c286c -->
 
 ## Prerequisites
- - **Tutorials:**  You have completed [Test the Installation](http://developers.sap.com/tutorials/hxe-ua-test-binary.html)  
+ - **Tutorials:**  You have completed [Test the Installation](hxe-ua-test-binary). 
 
 ## Details
 ### You will learn
@@ -23,7 +23,7 @@ SAP HANA Automated Predictive Library is a separate download. Use the commands i
 
 [ACCORDION-BEGIN [Step 1: ](Download apl.tgz)]
 
-Use the built-in Download Manager (console mode) to download SAP HANA Automated Predictive Library package, `apl.tgz`.
+Use the built-in Download Manager (console mode) to download the SAP HANA Automated Predictive Library package, `apl.tgz`.
 
 Navigate to `/usr/sap/HXE/home/bin`:
 
@@ -43,6 +43,8 @@ If your installation is on `PowerPC`, enter the following command:
 java -jar HXEDownloadManager.jar linuxppc64le installer apl.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Navigate to the download directory)]
@@ -51,6 +53,8 @@ java -jar HXEDownloadManager.jar linuxppc64le installer apl.tgz
 cd ~/Downloads
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Extract apl.tgz)]
@@ -58,6 +62,8 @@ cd ~/Downloads
 ```bash
 tar -xvzf apl.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -69,4 +75,8 @@ As the `<sid>adm` user, run:
 sudo <extracted_path>/HANA_EXPRESS_20/install_apl.sh
 ```
 
+[DONE]
+
 [ACCORDION-END]
+
+

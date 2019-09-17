@@ -309,7 +309,7 @@ Click **Activate** to publish your service binding.
   5. Click on **GO**.
 
       ![GO button](fiori5.png)
-
+ 
   6. Check your result:
 
       ![Open SPA Fiori elements view](fiori6.png)

@@ -1,18 +1,18 @@
 ---
 title: Call IoT Application Enablement service APIs with Postman
 description: Use a REST client (Postman) to call SAP IoT Application Enablement service APIs.
-primary_tag: products>sap-iot-application-enablement
-tags: [  tutorial>beginner, products>sap-api-management, topic>internet-of-things, products>sap-iot-application-enablement ]
+tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
+primary_tag: products>sap-leonardo-iot
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Install Postman Rest Client](https://developers.sap.com/tutorials/api-tools-postman-install.html)
+ - **Tutorials:** [Install Postman Rest Client](api-tools-postman-install)
  - Access to a tenant specific to SAP IoT Application Enablement. In this tutorial, tenant `sap-iotaehandson2` is used.
 
 ## Details
 ### You will learn  
-In [previous tutorials](https://developers.sap.com/group.iotae-computer-as-thing.html), you learned about using Thing Modeler to onboard a computer as the IoT thing, send data to the thing, and retrieve data from the thing. Now, you'll learn to use Postman to access SAP IoT Application Enablement service APIs.
+  - How to use Postman to access SAP IoT Application Enablement service APIs
 
 ### Application Router
 Access to SAP IoT Application Enablement is usually routed through an application router as the single entry point for consumers. The application router handles the user authentication against **SAP User Account and Authentication Service (UAA)**. In addition, the service retains the generated JWT token for the duration of the client logon session. You can define multiple application routers per tenant and you can use one of the router to access IoT Application Enablement services.
@@ -32,8 +32,6 @@ The following illustrates the different parts of tenant-specific application rou
 
 For more information about the authorization concept of the SAP IoT Application Enablement platform, see <https://help.sap.com/viewer/p/SAP_IOT_APPLICATION_SERVICES> | **SAP IoT Application Enablement Services** | **Authorization**.
 
-### Time to Complete
-**15 Min**
 
 ---
 
