@@ -78,7 +78,7 @@ The App editor opens on the **PROPERTIES** tab.
 
     * **Information**:  `Learn about SAP.iO`
 
-    * **Icon**: Click the browse icon, type `Search` and click **OK**.
+    * **Icon**: Click the browse icon, type `Visits` and click **OK**.
 
       You see a preview of the tile with all the properties you entered.
 

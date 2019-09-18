@@ -38,7 +38,7 @@ Before you can access the Portal service, you need to first subscribe to it.
 
     The Portal service is unsubscribed by default.
 
-3. Click the **Portal** service tile.
+3. Enter `Portal` in the search box and click the **Portal** service tile.
 
     ![Click Portal tile](02_unsubscribed_portal.png)
 
@@ -54,7 +54,7 @@ Before you can access the Portal service, you need to first subscribe to it.
 
 To be able to do administrative tasks in the Portal you must be assigned to the `Super_Admin` role. In this step, you will first create a role collection and then you'll assign yourself to the `Super_Admin` role.
 
-1. Click on your subaccount again.
+1. Click on your subaccount again using the breadcrumbs at the top.
 
 2. Click **Security > Role Collections** from the side menu.
 

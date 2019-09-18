@@ -50,11 +50,11 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
 [ACCORDION-BEGIN [Step 2: ](Create destination to SAPUI5 app)]
 
-1. Open your trial account or another subaccount and in the side navigation panel, click **Connectivity > Destinations**. Then click **New Destination**.
+1. Open your trial or other subaccount, and in the side navigation panel, click **Connectivity > Destinations**. Then click **New Destination**.
 
     ![New destination](19_new_destination.png)
 
-2. Enter the following properties and then click **Save**.
+2. Enter the following properties:
 
     |  Property     | Value
     |  :------------- | :-------------
@@ -83,7 +83,7 @@ Now you are ready to create a destination to your SAP HTML5 app in SAP Cloud Pla
 
 [ACCORDION-BEGIN [Step 3: ](Open the Content Manager of your Portal site)]
 
-1. In the side navigation panel of your trial account or subaccount, click **Subscriptions**.  Click the **Portal** tile and then click **Go to Application**. The Site Manager opens with the Site Directory in focus.
+1. In the side navigation panel of your trial account or subaccount, click **Subscriptions** and enter `Portal` in the search bar. Then click the **Portal** tile and **Go to Application**. The Site Manager opens with the Site Directory in focus.
 
     ![Open Portal site](21_open_portal.png)
 
@@ -198,9 +198,13 @@ In this step you're going to create a new group and you'll assign the `Candidate
 
 [ACCORDION-BEGIN [Step 7: ](Review your site)]
 
-At the top right of the screen, click the **Go to site** icon.
+1. Click the **Sites** icon.
 
-  ![Go to site](34_go_to_site.png)
+    ![Go to site](34_go_to_site.png)
+
+2. Click **Go to site** on the site tile.
+
+    ![Open site](34a_open_site.png)
 
 You'll see that both groups appear in the runtime site – the `SAP` group with the URL app and the `Work in Progress` group with the SAP HTML5 app.
 

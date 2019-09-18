@@ -19,21 +19,6 @@ In this tutorial, you're going to configure a launchpad module and add it to you
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Enable SAP Fiori launchpad SAP Web IDE extension)]
-
-1. In SAP Web IDE Full-Stack, click **Preferences** in the side panel.
-
-    ![Select Preferences](6_select_preferences.png)
-
-2. Select **Extensions** in the side panel, enter `portal` as a search term, and locate the **SAP Fiori Launchpad Site** feature.  Turn it **ON** and **Save** your changes.
-
-    ![Define extensions](7_extensions.png)
-
-3. Refresh SAP Web IDE in the confirmation message.
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 2: ](Add the launchpad module to your multi-target application project)]
 
 1. Navigate to the **Development** area in SAP Web IDE and right-click your `mta_FioriDemo` project to add a new **SAP Fiori Launchpad Site Module**.
@@ -125,13 +110,7 @@ Build and deploy the `MTA` project with these modules thus exposing your app to 
 
 Now let's see how the app is displayed in the runtime launchpad module.
 
-Enter the URL that you copied from the console and add  `/cp.portal/` as a suffix to it.
-
-Like this:
-
-`https://<id>trial-trial-dev-mta-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/cp.portal`
-
->`<id>` is your ID number.
+Enter the URL that you copied from the console to a new browser tab.
 
 Your launchpad module displays the `Candidates` app that you created in the `People` group.
 
