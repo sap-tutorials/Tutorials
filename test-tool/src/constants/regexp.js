@@ -54,7 +54,7 @@ module.exports = {
             message: 'no H1 (single #) allowed',
         },
         mdnImg: {
-            regexp: /\!?\[[^\]]+\]\((?![ <]*http)([\d\w_\-\.\/]+\.(jpg|jpeg|png|gif|svg|ico))\)/gi,
+            regexp: /\!?\[\s*[^\]]+\s*\]\s*?\(\s*(?![ <]*http)([\d\w\s_\-\.\/]+\.(jpg|jpeg|png|gif|svg|ico))\s*\)/gi,
             messages: {
                 size: 'file size is more than 1 MB',
                 existence: 'missing image',
@@ -82,6 +82,24 @@ module.exports = {
             message: 'Bad image - image URL does not return image file',
         },
         codeBlockInNote: /^>\s*```/,
+        metadata: {
+          title: {
+            regexp: /^\s*title:\s*.+$/,
+            message: 'title is required',
+          },
+          description: {
+            regexp: /^\s*description:\s*.+$/,
+            message: 'description is required',
+          },
+          tags: {
+            regexp: /^\s*tags:\s*\[(.+)>(.+),?\s*\]\s*$/,
+            message: 'tags are required',
+          },
+          primaryTag: {
+            regexp: /^\s*primary_tag:\s*(.+)>(.+)\s*$/,
+            message: 'primary tag is required',
+          },
+      },
     },
     validation: {
         auto_validation: /auto_validation:\s(.*)\r?\n/i,
