@@ -8,9 +8,8 @@ primary_tag: products>sap-cloud-platform-portal
 ---
 
 ## Prerequisites
-  - You've created a SAP Cloud Platform trial account in the Cloud Foundry environment on an AWS Data Center.
+  - You've created a SAP Cloud Platform trial account in the Cloud Foundry environment on an AWS Data Center. You can create a trial account using this link: [Create a trial account](https://cockpit.hanatrial.ondemand.com)
   - You can also use a subaccount in your SAP Cloud Platform global account. If you don't have a subaccount in the Cloud Foundry environment, refer to this topic: [Onboarding](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
-
 
 
 ## Details
@@ -21,6 +20,7 @@ primary_tag: products>sap-cloud-platform-portal
 
 In this group of tutorials our goal is to create an attractive Portal site using the SAP Cloud Platform Portal service. But before we can do this, there are some preparation steps that you need to do.
 
+>Important: Before you start, please make sure that you created your trial account with an AWS Data Center.
 
 [ACCORDION-BEGIN [Step 1: ](Subscribe to the Portal service)]
 
