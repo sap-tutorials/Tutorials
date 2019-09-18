@@ -1,6 +1,6 @@
 ---
-title: Implement Overview View Controller to Display Data
-description: Use the Swift programming language and the SAP Cloud Platform SDK for iOS to implement data loading and displaying of data in a Table View.
+title: Customize the Overview View Controller to Display Customers and Products
+description: You'll use the Swift programming language and the SAP Cloud Platform SDK for iOS to implement data loading from the sample Data service and display the results in a Table View in your app. In addition, you'll add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -13,7 +13,7 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to implement a Object Table View Cell
+  - How to implement a Fiori Object Table View Cell
   - How to implement Table View Section Headers and Footers
   - How to use the generated data service to load data from the OData service
 
@@ -23,10 +23,11 @@ You will add Table View Section Headers and Footers to give the data more struct
 
 [ACCORDION-BEGIN [Step 1: ](Implement loading of customer and product data)]
 
+In the previous tutorials you've built the foundation for implementing the logic behind the Overview View Controller. Before we can implement the data source and delegate logic for loading the Table View, we'll need to retrieve some data.
 
-In the previous tutorials you've built the foundation for implementing the actual logic behind the Overview View Controller. Before actually going into implementing the logic, data source and delegate for the Table View, we want to load the data first. This is fairly simple thanks to the SAP Cloud Platform SDK for iOS and the generated model layer, including the convenience data service.
+This is fairly simple thanks to the SAP CP SDK for iOS and the generated model layer and convenience data service.
 
-Open up the `OverviewViewController` class and right below the `import UIKit` add the following import statements:
+Open up the `OverviewViewController.swift` class and right below the `import UIKit` add the following import statements:
 
 ```Swift
 
@@ -38,9 +39,9 @@ import SAPCommon
 
 Those import statements will import SAP's UI framework, the OData framework, as well as the Common framework containing the Logging API.
 
-Next, implement a couple of properties needed for storing a data service instance, App Delegate instance, a Logger instance and two arrays that are going to be used to store the customer and product data.
+Next we'll add a couple of properties required for storing a data service instance, the App Delegate instance, a Logger instance, and two arrays used to store the customer and product data.
 
-Please add the following lines of code inside the class brackets and right below the class definition:
+Add the following lines of code inside the class brackets and right below the class definition:
 
 ```Swift
 
@@ -60,7 +61,7 @@ private var products = [Product]()
 
 To give the user feedback of the loading process, you're going to use a `FUILoadingIndicatorView`. The assistant generates a helper protocol providing you with convenient way to display a loading indicator.
 
-Please add the `SAPFioriLoadingIndicator` class protocol to your class definition:
+Add the `SAPFioriLoadingIndicator` class protocol to your class definition:
 
 ```Swift
 
@@ -68,7 +69,9 @@ class OverviewViewController: UIViewController, SAPFioriLoadingIndicator
 
 ```
 
-The protocol requires you to add a `FUILoadingIndicatorView` instance. Please add the following line of code right below the products array:
+The protocol requires you to add a reference to a `FUILoadingIndicatorView` instance.
+
+Add the following line of code right below the products array:
 
 ```Swift
 
@@ -76,7 +79,9 @@ var loadingIndicator: FUILoadingIndicatorView?
 
 ```
 
-In the `viewDidLoad(:)` method you will implement code that is responsible for retrieving and storing a data service instance:
+Next you will implement code which is responsible for retrieving and storing a data service instance.
+
+Add the following lines of code after the delegate and data source allocation in the `viewDidLoad(:)` method of the `OverviewViewController.swift` class:
 
 ```Swift
 
@@ -89,7 +94,9 @@ self.dataService = dataService
 
 ```
 
-Next, please implement the following method for loading the initial data used to populate the Table View. Please create the following method right below the `viewDidLoad(:)` method:
+Next you'll implement the a method for loading the initial data used to populate the Table View.
+
+Add the following method right below the `viewDidLoad(:)` method:
 
 ```Swift
 
@@ -114,7 +121,9 @@ private func loadInitialData() {
 
 ```
 
-The above implemented method will currently have compile time errors because the `fetchCustomers(_:)` and `fetchProducts(_:)` methods are not implemented yet. Let's get started with the `fetchCustomers(_:)`, implement the following lines of code:
+Adding the method above will result in compile time errors because the `fetchCustomers(_:)` and `fetchProducts(_:)` methods are not implemented yet.
+
+Add the following lines of code below the `loadInitialData()` method to implement the query for customers:
 
 ```Swift
 
@@ -144,7 +153,7 @@ private func fetchCustomers(_ group: DispatchGroup) {
 
 ```
 
-Now implement the `fetchProducts(_:)` method, which is similar to the `fetchCustomers(_:)`:
+Next, add the following lines of code below the `fetchCustomers(_:)` method to implement the query for products:
 
 ```Swift
 
@@ -169,7 +178,9 @@ private func fetchProducts(_ group: DispatchGroup) {
 
 ```
 
-The last step is to call the `loadInitialData()` method in the `viewDidLoad(:)` method:
+The last step is to call the `loadInitialData()` method when the `OverviewViewController` class is loaded.
+
+Add the following line of code as the last line in the `viewDidLoad(:)`:
 
 ```Swift
 
@@ -177,14 +188,16 @@ loadInitialData()
 
 ```
 
-Now every time this View Controller gets loaded, it will load the needed data from the OData Service.
+Now every time our Overview View Controller gets loaded it will load the needed data from the OData Service.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Set up Table View and register needed cells)]
 
-Now that the `OverviewViewController` is loading data, it's time to implement the population of Table View Cells. The first step is to register the wanted cells at the Table View. Please locate the `viewDidLoad(:)` method and implement the following lines of code:
+Now that the `OverviewViewController` is loading data, it's time to implement the population of Table View Cells. The first step is to register the desired types of cells for the Table View.
+
+Add the following lines of code to `viewDidLoad(:)` method, just below the call to its superclass:
 
 ```Swift
 
@@ -202,35 +215,11 @@ tableView.register(FUITableViewHeaderFooterView.self, forHeaderFooterViewReuseId
 
 ```
 
-Let's use the extension pattern to implement the Table View's Data Source and Delegate needed to populate the Table View and react on user interaction.
+To distinct the customers from the products in the Table View you can use Table View Headers to display section headers. To make the UI more appealing Table View Footers are a great way to create separators.
 
-Please scroll all the way down to the closing bracket of the View Controller class, there outside the closing bracket add the following lines of code:
+You will implement the following methods to display a footer, a header and define how many sections to display.
 
-```Swift
-
-extension OverviewViewController: UITableViewDelegate, UITableViewDataSource {
-
-}
-
-```
-
-The compiler will display errors now because it wants you to implement the protocol defined methods. Please add the following methods to make your code compile again:
-
-```Swift
-
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  return 0
-}
-
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-  return UITableViewCell()
-}
-
-```
-
-The `tableView(_:numberOfRowsInSection:)` method is responsible for telling the Table View how many rows should be displayed in a section. Right now, please return **0** to stop the compiler from complaining. For the `tableView(_:cellForRowAt:)` please return a new Table View Cell -- this cell is not going to be the cell we're going to use but we want to stop the compile time errors for now.
-
-Both of these methods are required by the `UITableViewDataSource`, but to make the Overview UI complete you have to implement additional methods. You will implement the following methods to display a footer, a header and define how many sections we want to display. Please add the following methods to the extension, place them right above the `tableView(_:numberOfRowsInSection:)` method:
+Add the following methods to the extension, place them right above the `tableView(_:numberOfRowsInSection:)` method:
 
 ```Swift
 
@@ -248,7 +237,9 @@ func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) ->
 
 ```
 
-We also need a delegate method to make it possible for us to react to user interactions. Please add the following method as last method to the extension:
+To actually react to user interaction on the Table View Cells, the Table View's delegate protocol provides a method to react to Table View Row selection.
+
+ Add the following method as last method to the extension:
 
 ```Swift
 
@@ -265,7 +256,9 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 In the previous step you registered the needed cells, set up the Table View and implemented the method stubs for the data source and delegate. Now you will implement those methods step-by-step to do something meaningful.
 
-The Table View is supposed to have two sections, one for the customers and one for the products. Please return **2** in the `numberOfSections(in:)`:
+The Table View is supposed to have two sections, one for the customers and one for the products.
+
+Return **2** in the `numberOfSections(in:)`:
 
 ```Swift
 
@@ -275,7 +268,9 @@ func numberOfSections(in tableView: UITableView) -> Int {
 
 ```
 
-Now every section should be distinctive, for that you can tell the Table View what Table View Headers it should display. Please implement the `tableView(_:viewForHeaderInSection:)` like the following:
+Every section should be distinctive, for that you can tell the Table View what Table View Headers it should display.
+
+Implement the `tableView(_:viewForHeaderInSection:)` like the following:
 
 ```Swift
 
@@ -305,7 +300,9 @@ func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) ->
 
 ```
 
-The Footer of the sections will be used as dividers. Those dividers don't have a functional meaning but make the UI a bit cleaner. Please implement the `tableView(_:viewForFooterInSection:)` as the following:
+The Footer of the sections will be used as dividers. Those dividers don't have a functional meaning but make the UI cleaner.
+
+Implement the `tableView(_:viewForFooterInSection:)` as the following:
 
 ```Swift
 
@@ -340,7 +337,9 @@ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> 
 
 ```
 
-Coming to the exciting part, implementing the `tableView(_:cellForRowAt:)` method. This method is going to be called by the Table View every time it wants to dequeue a cell. Please read the inline comments to understand the following code:
+Coming to the exciting part, implementing the `tableView(_:cellForRowAt:)` method. This method is going to be called by the Table View every time it wants to dequeue a cell.
+
+Implement the following code and read the inline comments carefully:
 
 ```Swift
 
@@ -393,15 +392,20 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
 The Overview View Controller is almost implemented. The last thing that is missing is the navigation to the Customer Detail View Controller.
 
-In theory you might want the user to see a list of all customers and products, but for this tutorial series we won't implement that. This series is more focusing on the machine learning part so that's why you only will implement the Customer Detail Screen for now. For that, you will implement the defined delegate method in this step.
+In theory you might want the user to see a list of all customers and products, but for this tutorial series we won't implement that. This series is focusing on the machine learning capabilities, so that's why you only will implement the Customer Detail Screen. For that, you will implement the defined delegate method in this step.
 
-In the iOS world, there are so-called **segues**, which can be used to perform navigation from one View Controller to another. Segues also allow us to access the so-called destination View Controller, which allows us to hand over data and do other setups on that View Controller. Let's define the segues to give you a better understanding.
+In the iOS world, there are so-called **segues**, which can be used to perform navigation from one View Controller to another. Segues also allows you to access the so-called destination View Controller, this allows you to hand over data and do other setups for that View Controller. Let's define the segues to give you a better understanding.
+You will create a segue that goes from the Table View Cell that contains the customer data to the actual Customer Detail View Controller.
 
-Please open the `Main.storyboard` and locate your `OverviewViewController`. You will create a segue that goes from the Table View Cell that contains the customer data to the actual Customer Detail View Controller. In the `Main.storyboard`, please add another Table View Controller from the **Object Library**.
+Open the `Main.storyboard` and locate your `OverviewViewController`.
+
+In the `Main.storyboard`, add another Table View Controller from the **Object Library**.
 
 ![Create Navigation](fiori-ios-scpms-teched19-01.png)
 
-Again, the just-created Table View Controller needs a Swift class. Please right-click the `SalesAssistant` group and create a new **Cocoa Touch Class**. Make sure it is sub-classed from `UITableViewController` and name it `CustomerDetailTableViewController`.
+Again, the just-created Table View Controller needs a Swift class for custom implementation.
+
+Right-click the `SalesAssistant` group in the Project Navigator and create a new **Cocoa Touch Class**. Make sure it is sub-classed from `UITableViewController` and name it `CustomerDetailTableViewController`.
 
 ![Create Navigation](fiori-ios-scpms-teched19-02.png)
 
@@ -409,11 +413,15 @@ Go back to the `Main.storyboard`, select the newly created Table View Controller
 
 ![Create Navigation](fiori-ios-scpms-teched19-03.png)
 
-Please select the Table View inside the `OverviewViewController` and click the **Attributes Inspector**. In the **Table View** section, please add 2 **Prototype Cells**. Select one of the prototype cells in the Table View and create a segue to the `CustomerDetailTableViewController`.
+Select the Table View inside the `OverviewViewController` and click the **Attributes Inspector**.
+
+In the **Table View** section, add 2 **Prototype Cells**. Select one of the prototype cells in the Table View and create a segue to the `CustomerDetailTableViewController`.
 
 ![Create Navigation](fiori-ios-scpms-teched19-04.png)
 
-Last step is to give that segue an identifier. Please select the segue and in the **Attributes Inspector** set the identifier to `showCustomerDetail`.
+Last step is to give that segue an identifier.
+
+Select the segue and in the **Attributes Inspector** set the identifier to `showCustomerDetail`.
 
 ![Create Navigation](fiori-ios-scpms-teched19-05.png)
 
@@ -426,9 +434,9 @@ Great! All the segues are created in storyboard and have identifiers. In the nex
 
 The segue already works, so if you would run the app now you can navigate back and forth from the Overview View Controller to the destination View Controller you've created. For this app, it is necessary to provide the Customer ID to the destination View Controller and set the title in the Navigation Item for the Customer Detail View Controller.
 
-iOS provides us with a simple API to do that.
+iOS provides a simple API to do that.
 
-You can utilize the `prepare(for:sender:)` method to do all of that, so please open the `OverviewViewController` and implement the following code:
+You can utilize the `prepare(for:sender:)` method to do all of that, open the `OverviewViewController` and implement the following code:
 
 ```Swift
 
@@ -464,9 +472,11 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 ```
 
-Right now that code won't compile because you're currently missing the constant that holds the segue identifier as well as the customer ID property on the `CustomerDetailTableViewController`.
+Right now that code won't compile because you're currently missing the constants that hold the segue identifier as well as the customer ID property on the `CustomerDetailTableViewController`.
 
-Let's fix the identifier problem first. Please go all the way up to the properties in the `OverviewViewController` and the following line of code directly above the `viewDidLoad(:)` method:
+Let's fix the identifier problem first.
+
+Go all the way up to the properties in the `OverviewViewController` and the following line of code directly above the `viewDidLoad(:)` method:
 
 ```Swift
 
@@ -491,14 +501,16 @@ var customerId: String {
 
 ```
 
-All the code should compile now. Please continue to the next step to implement the perform segue call in the delegate method.
+All the code should compile now.
+
+Continue to the next step to implement the perform segue call in the delegate method.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Call the perform segue method)]
 
-To perform the navigation, please locate the delegate method `tableView(_:didSelectRowAt:)` and implement the following line of code in there:
+To perform the navigation, locate the delegate method `tableView(_:didSelectRowAt:)` and implement the following line of code in there:
 
 ```Swift
 
@@ -506,7 +518,7 @@ if indexPath.section == 0 { performSegue(withIdentifier: showCustomerDetailSegue
 
 ```
 
-The setup code for the destination View Controller is going to be performed each time you call the `performSegue(withIdentifier:sender:)` method.
+The setup code for the destination View Controller is going to be performed each time the you call the `performSegue(withIdentifier:sender:)` method.
 
 [DONE]
 [ACCORDION-END]

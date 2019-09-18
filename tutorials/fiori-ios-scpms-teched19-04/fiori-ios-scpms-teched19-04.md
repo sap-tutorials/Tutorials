@@ -22,7 +22,7 @@ time: 15
 
 In the last tutorial, you implemented the Overview View Controller and the segue to the Customer Detail View Controller. In this tutorial, you will utilize the SAP Cloud Platform SDK for iOS to implement a `FUIProfileHeader` and the different Chart Cells.
 
-Please open the `CustomerDetailViewController` and add the following import statements right below the `UIKit` import:
+Open the `CustomerDetailViewController.swift` class and add the following import statements right below the `UIKit` import:
 
 ```Swift
 
@@ -58,7 +58,9 @@ self.dataService = dataService
 
 ```
 
-All that code is pretty much the same as in the Overview View Controller. Fetching the Customer for the set Customer ID will be something new. Please add the following lines of code right below the `viewDidLoad(:)` method and read the inline comments for more details about the implemented code:
+All that code is pretty much the same as in the Overview View Controller. Instead of fetching all customers we want only the data of the customer matching the provided ID.
+
+Add the following lines of code right below the `viewDidLoad(:)` method and read the inline comments for more details about the implemented code:
 
 
 ```Swift
@@ -113,8 +115,9 @@ private func loadData(completionHandler: @escaping () -> Void) {
 
 ```
 
-Don't worry, you will fix the compile time errors in a second. First call the `updateTable()` in the `viewDidLoad(:)` method:
+Don't worry, you will fix the compile time errors in a second.
 
+First call the `updateTable()` in the `viewDidLoad(:)` method:
 
 ```Swift
 
@@ -143,9 +146,9 @@ override func viewDidLoad() {
 
 To fix the rest of the compile-time errors, you have to implement the additional properties for storing the fetched customer, the flag `isDataLoaded`, as well as a computed property for the Sales Order Headers.
 
-As we want to display the total net amount of the Customers Sales Orders, you will implement that as a computed property to make the needed calculations. Please read the inline comments for more explanation.
+As we want to display the total net amount of the Customers Sales Orders, you will implement that as a computed property to make the needed calculations.
 
-Add the following lines of code right below the `var customerId: String` property:
+Add the following lines of code right below the `var customerId: String` property, read the inline comments for more explanation:
 
 ```Swift
 
@@ -169,7 +172,9 @@ private var isDataLoaded = false
 
 ```
 
-The `salesOrderHeaders` property will have a compile error for now because it tries to set the calculated values to the `seriesData` property which doesn't exist yet. To fix that please implement the following properties right below the `isDataLoaded` property:
+The `salesOrderHeaders` property will have a compile-time error for now because it tries to set the calculated values to the `seriesData` property which doesn't exist yet.
+
+To fix that implement the following properties right below the `isDataLoaded` property:
 
 ```Swift
 
@@ -189,7 +194,9 @@ You're done for now, we will go into detail about how the Chart data is structur
 
 [ACCORDION-BEGIN [Step 2: ](Set up Table View and register needed cells)]
 
-In order to display the Charts, you're going to use the `FUIChartTitleTableViewCell`, `FUIChartPlotTableViewCell` and the `FUIChartLegendTableViewCell` from the SAP CP SDK for iOS. Please add the following lines of code to the `viewDidLoad(:)`:
+In order to display the Charts, you're going to use the `FUIChartTitleTableViewCell`, `FUIChartPlotTableViewCell` and the `FUIChartLegendTableViewCell` from the SAP CP SDK for iOS.
+
+Add the following lines of code to the `viewDidLoad(:)`:
 
 ```Swift
 
@@ -207,7 +214,9 @@ tableView.register(FUIChartLegendTableViewCell.self, forCellReuseIdentifier: FUI
 
 ```
 
-Also you need to set up the Table View in order for the cells to be displayed correctly. Please add the following lines of code right above the cell registration code:
+Also you need to set up the Table View in order for the cells to be displayed correctly.
+
+Add the following lines of code right above the cell registration code:
 
 ```Swift
 
@@ -222,9 +231,11 @@ tableView.separatorStyle = .none
 
 [ACCORDION-BEGIN [Step 3: ](Implement Table View's data source)]
 
-If you remember from the previous tutorial, you have to implement a data source to populate the registered Table View Cells. This time you won't need an extension because the `CustomerDetailTableViewController` is a `UITableViewController`. Those View Controllers are especially provided for Table Views and provide all needed APIs and links without additional work. A `UITableViewController` also knows it's own Table View, which makes it obsolete for you to create an Outlet from the Table View in Storyboard to the Swift class itself.
+If you remember from the previous tutorial, you have to implement a data source to populate the registered Table View Cells. This time you won't need an extension because the `CustomerDetailTableViewController` is a `UITableViewController`.
 
-Please add the following lines of code directly below the `loadData(completionHandler:)` method and read the inline comments carefully:
+Those View Controllers are especially provided for Table Views and provide all needed APIs and links without additional work. A `UITableViewController` also knows it's own Table View, which makes it obsolete for you to create an Outlet from the Table View in Storyboard to the Swift class itself.
+
+Add the following lines of code directly below the `loadData(completionHandler:)` method and read the inline comments carefully:
 
 ```Swift
 
@@ -302,9 +313,9 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 [ACCORDION-BEGIN [Step 4: ](Implement the FUIChartViewDataSource and Delegate)]
 
-In the last step, you implemented the Table View's Data Source. The `FUIChartPlotTableViewCell` also has a Data Source and a Delegate to populate the chart with data. For that, you have to implement its Data Source and Delegate, and you will use the extension pattern of Swift to do so.
+In the last step, you've implemented the Table View's Data Source. The `FUIChartPlotTableViewCell` also has a Data Source and a Delegate to populate the chart with data. For that, you have to implement its data source and delegate, and you will use the extension pattern of Swift to do so.
 
-Please create an extension all the way down in this file, outside of the closing bracket of the class:
+Create an extension all the way down in this file, outside of the closing bracket of the class:
 
 ```Swift
 
@@ -316,7 +327,7 @@ extension CustomerDetailTableViewController: FUIChartViewDataSource {
 
 ```
 
-Inside this extension, please implement the following code and read the inline comments carefully:
+Inside this extension, implement the following code and read the inline comments carefully:
 
 ```Swift
 
@@ -347,9 +358,9 @@ func chartView(_ chartView: FUIChartView, formattedStringForValue value: Double,
 
 ```
 
-You're not going to do anything with the user selection of a value in this tutorial but please still implement the delegate to print out a log to the console when the user taps on a value inside the chart.
+You're not going to do anything with the user selection of a value in this tutorial but still implement the delegate to print out a log to the console when the user taps on a value inside the chart.
 
-Please add the following lines of code right below the Data Source extension as an additional extension to the class:
+Add the following lines of code right below the Data Source extension as an additional extension to the class:
 
 ```Swift
 
@@ -368,11 +379,13 @@ extension CustomerDetailTableViewController: FUIChartViewDelegate {
 
 [ACCORDION-BEGIN [Step 5: ](Implement a Profile Header)]
 
-The customer has certain information you're user might want to know, like his contact information, birthday and address. The SDK provides you with a great UI control for displaying such information:  `FUIProfileHeader`.
+The customer has certain information your user might want to know, like the contact information, birthday and address. The SDK provides you with a great UI control for displaying such information: `FUIProfileHeader`.
 
 The `FUIProfileHeader` will be attached as a Table View Header to the Table View itself. It is not a section header like the one you've implemented for the Overview View Controller; it is a Header attached to the top of the Table View.
 
-Remember in the `updateTable()` method where the `setupProfileHeader()` method gets called?  You will implement that method now. Please add the following lines of code right below the `tableView(_:cellForRowAt:)` method and read the inline comments carefully:
+Remember in the `updateTable()` method where the `setupProfileHeader()` method gets called? - You will implement that method now.
+
+Add the following lines of code right below the `tableView(_:cellForRowAt:)` method and read the inline comments carefully:
 
 ```Swift
 
@@ -411,7 +424,9 @@ private func setupProfileHeader() {
 
 ```
 
-Now that you've set the View Controller as Delegate to the Activity Control, please implement another extension to conform to the protocol. Add the following lines of code directly below the `FUIChartViewDelegate` extension:
+Now that you've set the View Controller as delegate to the Activity Control, please implement another extension to conform to the protocol.
+
+Add the following lines of code directly below the `FUIChartViewDelegate` extension:
 
 ```Swift
 
@@ -446,15 +461,17 @@ extension CustomerDetailTableViewController: FUIActivityControlDelegate {
 
 [ACCORDION-BEGIN [Step 6: ](Run app on simulator)]
 
-You've done all the implementation needed for the Charts and Profile Header. Please run the app on your simulator to see the result of your work.
+You've done all the implementation needed for the Charts and Profile Header.
+
+Run the app on your iOS Simulator to see the result of your work.
 
 ![Customer Detail](fiori-ios-scpms-teched19-01.png)
 
-Please wait before you continue!
+Stop right here!
 
-Do you see the fine 1-point thick hairline between the Profile Header and the Navigation Bar? You have to remove that first before continuing. Fortunately the code is right here to do so.
+Do you see the fine 1-point thick hairline between the Profile Header and the Navigation Bar? To make the UI more clean, it would be great to remove that hairline first.
 
-Please add the following lines of code right below the `setupProfileHeader()` method:
+Add the following lines of code right below the `setupProfileHeader()` method:
 
 ```Swift
 
@@ -467,7 +484,7 @@ private func removeHairline() {
 
 ```
 
-Please call that method in the `viewDidLoad(:)` method and rerun the app on the simulator.
+Call that method in the `viewDidLoad(:)` method and rerun the app on the simulator.
 
 ![Customer Detail](fiori-ios-scpms-teched19-02.png)
 
