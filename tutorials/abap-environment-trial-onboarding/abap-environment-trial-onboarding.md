@@ -13,13 +13,13 @@ author_profile: https://github.com/mervey45
  - You have created a trial account on SAP Cloud Platform:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
  - You have created a cloud foundry trial account: [Create a Cloud Foundry Account](cp-cf-create-account).
 
-## Details 
+## Details
 ### You will learn  
   - How to create an trial user
   - How to create an ABAP Cloud project
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Configure SAP Cloud Platform Entitlements)]
+[ACCORDION-BEGIN [Step 1: ](Select ABAP Trial)]
   1. Open SAP Cloud Platform Trial Cockpit to logon to your existing Cloud Foundry trial account
      <https://cockpit.hanatrial.ondemand.com/>.
 
@@ -30,7 +30,7 @@ author_profile: https://github.com/mervey45
       ![Select ABAP Trial](entitlement.png)
 
 
-  3. Set **Europe (Frankfurt)** as your region and click **OK**, if you haven't done yet. Otherwise move on with step **1.6**.
+  3. If you see this pop-up window, then set **Europe (Frankfurt)** as your region and click **OK**. Otherwise navigate to your dev space in your trial subaccount and move on with step **1.5**.
 
       ![Select ABAP Trial](entitlement2.png)
 
@@ -41,52 +41,49 @@ author_profile: https://github.com/mervey45
   5. Result: You can see your dev space.
 
       ![Select ABAP Trial](entitlement4.png)
+ 
+  6. Click **Services**.
 
-  6. Switch to your global account and select **Entitlements**.
+      ![Select ABAP Trial](account3.png)
 
-      ![Select ABAP Trial](entitlement5.png)
+  7. Click **Service Marketplace**.
 
-  7. Select **Subaccount Assignments**.
+      ![Select ABAP Trial](account4.png)
 
-      ![Select ABAP Trial](entitlement6.png)
+  8. **If you see the ABAP Trial tile, then select it move on with step 3.1 to create your instance**.
 
-  8. Select **trial** as subaccount and click **Go**.
+     **If you don't see the ABAP Trial tile, then move on with step 2.1 to configure your SAP Cloud Platform Entitlements. Come back to Service Marketplace and select ABAP Trial**.
 
-      ![Select ABAP Trial](entitlement7.png)
-
-  9. If you see all trial services, move on with step **2.1**.
-     If you don't see any trial services, then click **Configure Entitlements**.
-
-      ![Select ABAP Trial](entitlement9.png)
-
-     Click **Add Service Plans**.
-
-      ![Select ABAP Trial](entitlement10.png)
-
-     Select **ABAP Trial**, check **shared** and click **Add 1 Service Plan**.
-
-      ![Select ABAP Trial](entitlement11.png)
+      ![Select ABAP Trial](trial.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Select ABAP Trial)]
+[ACCORDION-BEGIN [Step 2: ](Configure SAP Cloud Platform Entitlements)]
 
-  1. Go to your space **dev**.
+1. Switch to your global account and select **Entitlements**.
 
-      ![Select ABAP Trial](account2.png)
+    ![Select ABAP Trial](entitlement5.png)
 
-  2. Click **Services**.
+2. Select **Subaccount Assignments**.
 
-      ![Select ABAP Trial](account3.png)
+    ![Select ABAP Trial](entitlement6.png)
 
-  3. Click **Service Marketplace**.
+3. Select **trial** as subaccounts and click **Go**.
 
-      ![Select ABAP Trial](account4.png)
+    ![Select ABAP Trial](entitlement7.png)
 
-  4. Search for **ABAP Trial** and select it.
+4. Click **Configure Entitlements**.
 
-      ![Select ABAP Trial](trial.png)
+    ![Select ABAP Trial](entitlement9.png)
+
+5.  Click **Add Service Plans**.
+
+    ![Select ABAP Trial](entitlement10.png)
+
+6.  Select **ABAP Trial**, check **shared** and click **Add 1 Service Plan**.
+
+    ![Select ABAP Trial](entitlement11.png)
 
 [DONE]
 [ACCORDION-END]
@@ -104,7 +101,7 @@ author_profile: https://github.com/mervey45
 
       ![Create instance](instance3.png)
 
-  4. Add your e-mail address:
+  4. Add your e-mail address. Your e-mail address must be your Cloud Foundry Trial e-mail address.
 
       - "email": "example@email.com"
 
