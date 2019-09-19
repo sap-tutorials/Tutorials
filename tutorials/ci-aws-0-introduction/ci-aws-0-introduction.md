@@ -12,6 +12,8 @@ primary_tag: topic>cloud
 - An account on SAP Cloud Platform for Cloud Foundry
 - Cloud Foundry CLI installed
 - An account on GitHub
+- Apache Maven installed
+- Windows users: Git Bash installed
 
 ## Details
 ### You will learn
