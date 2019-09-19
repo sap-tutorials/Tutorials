@@ -10,13 +10,15 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
- - You have created a trial account on SAP Cloud Platform:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
- - You have created a cloud foundry trial account: [Create a Cloud Foundry Account](cp-cf-create-account).
+ - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
+ - You have created a **cloud foundry trial account with Europe (Frankfurt) as region**: [Create a Cloud Foundry Account](cp-cf-create-account).
 
 ## Details
 ### You will learn  
   - How to create an trial user
   - How to create an ABAP Cloud project
+
+**Currently, only Europe (Frankfurt) is available as a region in the Cloud Foundry Trial.**
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Select ABAP Trial)]
@@ -29,28 +31,25 @@ author_profile: https://github.com/mervey45
 
       ![Select ABAP Trial](entitlement.png)
 
+  3. If you see this pop-up window, then your Cloud Foundry Trial is ready to use. Click **Go to Space**.
 
-  3. If you see this pop-up window, then set **Europe (Frankfurt)** as your region and click **OK**. Otherwise navigate to your dev space in your trial subaccount and move on with step **1.5**.
-
-      ![Select ABAP Trial](entitlement2.png)
-
-  4. Now your Cloud Foundry Trial is ready to use. Click **Go to Space**.
+     Otherwise, you already started your Cloud Foundry trial account. Therefore navigate to your dev space in your trial subaccount and move on with step **1.4**.
 
       ![Select ABAP Trial](entitlement3.png)
 
-  5. Result: You can see your dev space.
+  4. Result: You can see your dev space.
 
       ![Select ABAP Trial](entitlement4.png)
- 
-  6. Click **Services**.
+
+  5. Click **Services**.
 
       ![Select ABAP Trial](account3.png)
 
-  7. Click **Service Marketplace**.
+  6. Click **Service Marketplace**.
 
       ![Select ABAP Trial](account4.png)
 
-  8. **If you see the ABAP Trial tile, then select it move on with step 3.1 to create your instance**.
+  7. **If you see the ABAP Trial tile, then select it move on with step 3.1 to create your instance**.
 
      **If you don't see the ABAP Trial tile, then move on with step 2.1 to configure your SAP Cloud Platform Entitlements. Come back to Service Marketplace and select ABAP Trial**.
 
