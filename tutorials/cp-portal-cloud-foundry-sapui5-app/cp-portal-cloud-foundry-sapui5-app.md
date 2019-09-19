@@ -21,7 +21,7 @@ The `Launchpad` page in your `JobCore Portal` site already contains a URL app. I
 
 To consume apps that you created in the Portal, you first need to configure a destination to your developed content.
 
-The entry point for your developed content is the App Router URL of the MTA file that you developed. So let's first find the URL of the App Router of your deployed MTA file and then you'll add a destination to this App Router.
+The entry point for your developed content is the App Router URL of the MTA file that you developed. So first you'll find the URL of the App Router of your deployed MTA file and then you'll add a destination to this App Router.
 
 
 [ACCORDION-BEGIN [Step 1: ](Find App Router URL of deployed MTA file)]
