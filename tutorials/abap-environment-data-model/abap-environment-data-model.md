@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Define CDS-Based Travel Data Model
+title: Define and Expose a CDS-Based Travel Data Model
 description: Define CDS-based data model and create projection view.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
@@ -22,8 +22,8 @@ author_profile: https://github.com/mervey45
   - How to create service binding
 
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
-
---- 
+ 
+---
 
 [ACCORDION-BEGIN [Step 1: ](Define CDS-based travel data model)]
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.
