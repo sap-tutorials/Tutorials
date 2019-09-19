@@ -3,7 +3,7 @@ title: Monitor and Manage Events using the Event Acquisition Application
 description: Monitor, import, debug, and delete the events acquired from workflow using the Event Acquisition application.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>cloud, tutorial>license]
+tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-cloud-platform
 ---
 

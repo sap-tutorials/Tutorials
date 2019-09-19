@@ -3,7 +3,7 @@ title: Create Instances to Gain Visibility on a Workflow
 description: Create workflow instances to see how events from different type of workflow activities combine together to provide an overview to analyze the progress and identify inefficiencies in the workflow.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, tutorial>license]
+tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-cloud-platform
 ---
 
