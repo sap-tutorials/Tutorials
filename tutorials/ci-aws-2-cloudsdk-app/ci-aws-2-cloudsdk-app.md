@@ -12,6 +12,8 @@ primary_tag: products>sap-s-4hana-cloud-sdk
  - SAP Web IDE Full-Stack enabled
  - Cloud Foundry CLI installed
  - An account on GitHub
+ - Apache Maven installed
+ - Windows users: Git Bash installed
 
 ## Details
 ### You will learn
