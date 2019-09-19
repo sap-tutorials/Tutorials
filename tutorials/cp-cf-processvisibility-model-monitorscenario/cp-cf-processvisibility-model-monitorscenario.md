@@ -3,7 +3,7 @@ title: Monitor your Business Scenarios using Monitor Scenarios Application
 description: Monitor the business scenario, process data, and schedule event processing job using the Monitor Scenarios application.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, tutorial>license]
+tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-cloud-platform
 ---
 
@@ -24,7 +24,7 @@ You can manage the activated business scenarios using the **Monitor Scenarios** 
 
 2. Click on the **Monitor Scenarios** tile to open the Monitor Scenarios application.
 
-![Monitor Scenarios tile](Monitor-Scenarios-Tile-01.png)
+    ![Monitor Scenarios tile](Monitor-Scenarios-Tile-01.png)
 
 [DONE]
 [ACCORDION-END]
@@ -41,11 +41,11 @@ You can manage the activated business scenarios using the **Monitor Scenarios** 
 
     ![Scenario details](Details-03.png)
 
-3. If you want to see the processing information immediately, click on **Process Data** to process the events manually.
+2. If you want to see the processing information immediately, click on **Process Data** to process the events manually.
 
     ![Processing Data](Process-Data-04.png)
 
-4. On successful processing of data, you can see the processing information listed out under Processing Information.
+3. On successful processing of data, you can see the processing information listed out under Processing Information.
 
     ![Processing Information](Processing-Information-05.png)
 

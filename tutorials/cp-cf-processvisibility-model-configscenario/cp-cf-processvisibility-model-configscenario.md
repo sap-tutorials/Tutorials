@@ -3,7 +3,7 @@ title: Create Your Business Scenario for a Deployed Workflow
 description: Create a business scenario based on a workflow using the Business Scenario Configuration application.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: topic>cloud
 ---
 

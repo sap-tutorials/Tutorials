@@ -44,20 +44,27 @@ By default, a set of performance indicators are generated when you add an SAP Cl
 
 [ACCORDION-BEGIN [Step 2: ](Configure the target)]
 1. Navigate to the **Status** tab.
-![Status](Config-Step3-status.png)
+
+    ![Status](Config-Step3-status.png)
+
 2. Under the **Target** section, provide the following details and save the changes:
-![Configure Target](Config-Step3-target.png)
+
+    ![Configure Target](Config-Step3-target.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add attributes for your business scenario)]
 1. Choose the **Attributes** tab, where you can view a set of default attributes.
-![Attribute](Config-Step3-attributes.png)
+
+    ![Attribute](Config-Step3-attributes.png)
+
 2. If you want to configure a calculated attribute, then choose the **+** icon.
-![Plus attribute](Config-Step3-addattributes.png)
+
+    ![Plus attribute](Config-Step3-addattributes.png)
 
     Add the following properties in the **Add Calculated Attribute** dialog.
+
     ![Add attribute](Config-Step3-attributes2.png)
 
 3. Save the changes.
