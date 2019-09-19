@@ -23,7 +23,7 @@ author_profile: https://github.com/mervey45
 
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
----
+--- 
 
 [ACCORDION-BEGIN [Step 1: ](Define CDS-based travel data model)]
   1. Right-click on your package `ZTRAVEL_APP_XXX`, select **New** > **Other ABAP Repository Object**.

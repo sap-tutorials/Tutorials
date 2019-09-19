@@ -18,7 +18,7 @@ author_profile: https://github.com/mervey45
   - How the development flow is organized
 
 
-In the course of the following tutorials you will be able to build a travel booking example with the help of the ABAP RESTful Programming Model.
+In the course of the following tutorials you will be able to build a travel booking example with the help of the ABAP RESTful Programming Model. 
 
 Start to have a closer look to the ABAP RESTful Programming Model and the relationships.
 
