@@ -3,7 +3,7 @@ title: Assign Process Visibility Roles to Users
 description: Assign required roles of Process Visibility to the users.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>cloud, tutorial>license]
+tags: [ tutorial>beginner, topic>cloud ]
 primary_tag: products>sap-cloud-platform
 ---
 
