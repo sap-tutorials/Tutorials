@@ -17,7 +17,7 @@ The Manage Rules Project application is web-based tool which is used to create p
 
 [ACCORDION-BEGIN [Step 1: ](Download multi-target application file)]
 
-1. Use the following link to access the MTA file from [GitHub](https://).
+1. Use the following link to access the MTA file from [GitHub](https://github.com/SAP/cloud-businessrules-samples/blob/master/cf-apps/cf-businessruleseditor.zip).
 
 2. Choose **`cf-businessruleseditor.zip`**.
 
