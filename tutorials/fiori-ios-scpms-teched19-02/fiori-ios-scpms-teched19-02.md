@@ -1,5 +1,5 @@
 ---
-title: Change the generated UI to make the app your own
+title: Change the Generated UI to Make the App Your Own
 description: Use Xcode to change the generated UI and add your own views to the app.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
@@ -13,50 +13,60 @@ time: 25
 
 ## Details
 ### You will learn  
-  - How to change the assistant generated UI with your own using Xcode and Storyboard
+  - How to change the Assistant generated UI with your own using Xcode and storyboards
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Replace the generated UI with your own)]
+[ACCORDION-BEGIN [Step 1: ](Replace generated UI with your own)]
 
-The SAP Cloud Platform SDK for iOS Assistant does a great job generating you an initial UI which is awesome for trying out the data service entities, impress your boss or customer on how fast you are. When it really comes to building your own app you have to understand how to incorporate your own UI into the generated app.
+The SAP Cloud Platform SDK for iOS Assistant does a great job generating the initial UI for a given data service. While this feature is awesome for reviewing data service entities and impressing your boss or customer with just how fast you can get something built, when it really comes to delivering an app with your unique business functionality, you need to understand how to incorporate your own UI.
 
-Let's start by opening up Xcode and click on the `Main.storyboard`. Theoretically you could build all your UI in code but storyboards provide you an easy way to lay out your app's UI flow, general UI and auto layout-ing the views to support all needed size classes.
+Let's start by opening up the generated project in Xcode and clicking on the file name `Main.storyboard` in the project navigator. Theoretically you could build all your UI in Swift but storyboards provides you an easy way to visually create each view, define the UI flow, and configure the views to support all size classes.
 
 ![Replace UI](fiori-ios-scpms-teched19-01.png)
 
-Please mark all View Controllers in the storyboard. You can do this by clicking in the storyboard and then **Command + a**.
+Select all the View Controllers in the Main.storyboard file by clicking inside the file content then typing **Command + a**.
 
 ![Replace UI](fiori-ios-scpms-teched19-02.png)
 
 Now delete them by hitting the **delete** key on your keyboard.
 
-On the upper-right, please click on the **Object Library** and in the upcoming pop-up search for `UIViewController`. Drag and drop a **View Controller** onto the storyboard.
+Click on the **Object Library** button in the upper-right of the Xcode toolbar to present a list of objects you can place in your storyboard.
+
+Filter the list by typing `UIViewController`, then drag and drop the View Controller object onto your storyboard.
 
 ![Replace UI](fiori-ios-scpms-teched19-03.png)
 
-We will add additional views in later steps, for that reason embedding the added View Controller in a Navigation Controller will make it easier for you as a developer to handle the navigation stack. The Navigation Controller will handle most of that for us. Please select the View Controller and click on `Editor -> Embedd In -> Navigation Controller`.
+We will add additional view controllers in later steps so we'll embed the added View Controller in a Navigation Controller to allow it to handle the the navigation between them.
+
+Select the View Controller then select **Embed In** > **Navigation Controller** from the **Editor** menu.
 
 ![Replace UI](fiori-ios-scpms-teched19-04.png)
 
-Last step here is setting the Navigation Controller as initial View Controller. Please select the Navigation Controller and on the left-hand side click on the **Attributes Inspector**. Please check the checkbox **Is Initial View Controller** in the **View Controller** section. An arrow should appear left to the Navigation Controller pointing on it.
+The last step here is to set the newly created Navigation Controller as the view controller that should be loaded when this storyboard is initialized.
+
+Select the Navigation Controller and in the Attributes Inspector on the right, check the box next to **Is Initial View Controller**.
+
+An arrow should appear left to the Navigation Controller indicating it is defined to be loaded first.
 
 ![Replace UI](fiori-ios-scpms-teched19-05.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Swift class backing up the storyboard View Controller)]
+[ACCORDION-BEGIN [Step 2: ](Create Swift class backing up the storyboard View Controller)]
 
-The setup in storyboard is almost done now. Every added View Controller or Table View Controller in storyboard needs to be backed up by a Swift class. Please select the **Sales Assistant** folder on the left side and **right click** to create a **New File...**.
+Your storyboard configuration is almost done now. Any View Controller or Table View Controller added to a storyboard that you'd like to contain custom behavior needs to be backed by a Swift class in which you'll implement your customizations.
+
+To create a Swift class for your custom View Controller, select the `SalesAssistant` folder in Xcode's project navigator on the left side and right-click or hold the control key and click the folder to present the context menu, then select **New File...**.
 
 ![Create Class](fiori-ios-scpms-teched19-06.png)
 
-In the upcoming dialogue please select **Cocoa Touch Class** and click **Next**.
+When the file template chooser dialog is presented, select **Cocoa Touch Class** and click **Next**.
 
 ![Create Class](fiori-ios-scpms-teched19-07.png)
 
-Please provide the following information:
+In the file options dialog, enter these values for the following fields:
 
 | Field | Value |
 |----|----|
@@ -64,22 +74,34 @@ Please provide the following information:
 | Subclass of | `UIViewController` |
 | Language | Swift |
 
-Click on **Next** and then **Create**.
+Click **Next**.
+
+Accept the defaults in the next dialog and click **Create**.
 
 ![Create Class](fiori-ios-scpms-teched19-08.png)
 
-The newly added class should automatically open up. Before we go into coding, please go back to the `Main.storyboard` and select the View Controller. On the left-hand side please select the **Identity Inspector** and set the **Custom Class** to the `OverviewViewController` and hit **return**. Now this View Controller is backed up by a Swift class sub classing of `UIViewController`.
+Your newly created Swift class will be added to the project and should automatically be displayed.
+
+However, before we get into coding, you'll want to link this new Swift class to your view controller in the storyboard file named `Main.storyboard`.
+
+Select `Main.storyboard` in the project navigator and select the View Controller you created earlier.
+
+Select the **Identity Inspector** in the the panel on the right-hand side and enter `OverviewViewController` as the value for the **class** field under **Custom Class** and hit return.
+
+Now this View Controller in the storyboard file is backed by your custom Swift class.
 
 ![Create Class](fiori-ios-scpms-teched19-09.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Change code in the Application UI Manager class)]
+[ACCORDION-BEGIN [Step 3: ](Change code in application UI manager class)]
 
-The way the assistant generates the app requires us to change the initial View Controller code in the `ApplicationUIManager` class. Please open the `ApplicationUIManager` located in the **Onboarding** group on the left-hand side.
+When the Assistant generated our app, it configured the `ApplicationUIManager` class to present the Master / Detail view controller. Since we now want the Navigation View Controller that manages our new `OverviewViewController` to be the initial view controller, we'll need to make some changes to the `ApplicationUIManager` Swift class.
 
-Please locate the `showApplicationScreen(completionHandler:)` method, that method contains the code initializing the initial View Controller. In order to quickly find that method you can use the quick selection feature.
+Open the Onboarding folder in the project navigator on the left-hand side and select the file titled `ApplicationUIManager.swift`.
+
+Locate the `showApplicationScreen(completionHandler:)` method, which method contains the code initializing the initial View Controller. In order to quickly find that method you can select the `showApplicationScreen` using the quick navigation feature in the bread-crumb path at the top of the file editor.
 
 ![Change Code](fiori-ios-scpms-teched19-10.png)
 
@@ -87,9 +109,9 @@ The Xcode editor should then jump to the selected method.
 
 ![Change Code](fiori-ios-scpms-teched19-11.png)
 
-In here please replace the following code in the else block:
+In the `showApplicationScreen` method, replace the following code in the else block:
 
-```swift
+```Swift
 
 let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
 let splitViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainSplitViewController") as! UISplitViewController
@@ -102,7 +124,7 @@ appViewController = splitViewController
 
 with
 
-```swift
+```Swift
 
 let mainNavigationController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
 appViewController = mainNavigationController
@@ -116,7 +138,9 @@ This code will load the `Main.storyboard` and initializes the initial View Contr
 
 [ACCORDION-BEGIN [Step 4: ](Run your app in simulator)]
 
-You have done all needed steps to replace the generated UI with your own. Let's see how the app looks like now by running the app on simulator. Please click on the run button to deploy the app.
+Now that have done all that's needed to replace the Assistant generated UI with your own, let's see how the app looks by running it in the iOS Simulator.
+
+Click on the run button in Xcode to compile and run your app.
 
 Because you have run through the on-boarding flow already and enrolled in `FaceID` or `TouchID` the new View Controller should show up.
 
@@ -125,13 +149,24 @@ Because you have run through the on-boarding flow already and enrolled in `FaceI
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add a Table View to the View Controller)]
+[ACCORDION-BEGIN [Step 5: ](Add Table View to View Controller)]
 
-The Overview View Controller is going to be used in this tutorial series to display a list of customers and products. To achieve that please add a Table View to the Overview View Controller using the **Object Library**. Open the **Object Library** and search for Table View, drag and drop a Table View into the View Controller.
+The Overview View Controller is going to be used in this tutorial series to display a list of customers and products in a Table View.
+
+Select the file `Main.storyboard` in the project navigator on the left.
+
+Click on the Object Library button and filter the list by typing **Table View** then select,
+drag, and drop the Table View into the center of your `OverviewViewController`.
 
 ![Add Table View](fiori-ios-scpms-teched19-13.png)
 
-Important is to set layout constraints to the Table View because the app should display itself properly on the different available devices. Please select the Table View and click on the **Add New Constraints** icon on the lower-left. In there please change the top value to **25** and the rest to **0**. Make sure the checkbox **Constrain to margins** is unchecked and click on **Add 4 Constraints**.
+Next, we need to set layout constraints on the Table View in order to ensure that it will layout properly when presented at any size.
+
+Select the Table View and click the **Add New Constraints** icon on the lower-right.
+
+In the fields for **Spacing to nearest neighbor**, change the top value to **25** and set the rest to **0**.
+
+Uncheck the **Constrain to margins** checkbox and click **Add 4 Constraints**.
 
 ![Add Table View](fiori-ios-scpms-teched19-14.png)
 
@@ -142,15 +177,21 @@ This will add auto layout constraints to the Table View. You might ask yourself 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create an outlet from storyboard to class)]
+[ACCORDION-BEGIN [Step 6: ](Create outlet from storyboard to class)]
 
-Going on we want access to the Table View inside of the `OverviewViewController`. To achieve that we can utilize so called `IBOutlets` which are a code connection to the visual Table View in storyboard.
+We'll want to programmatically access this Table View in subsequent steps of this tutorial. To access the Table View from our Swift class, we'll use an `IBOutlet` to create a connection between our code connection and the visual Table View in the storyboard.
 
-In the `Main.storyboard` select the `OverviewViewController` and in the top-left click on the **Assistant editor** to open up a side-by-side view of the Swift class and the storyboard.
+Select the Overview View Controller in the `Main.storyboard` file.
+
+Click the Assistant editor button in top-right of the Xcode toolbar to open the `OverviewViewController.swift` file alongside the storyboard.
 
 ![Add Table View](fiori-ios-scpms-teched19-16.png)
 
-To create the outlet select the Table View in the View Hierarchy or directly on the storyboard and **control + drag** from the Table View below the class definition in code. Give it the **Name** `tableView`, make sure **Connection** is set to **Outlet** and click **Connect**.
+Click on the Table View in the View Hierarchy or directly in the storyboard and **Control + Drag** from the Table View to just below the class definition in code window.
+
+Make sure the **Connection** option is set to **Outlet** at the top of the dialog.
+
+Enter `tableView` as the value for the outlet **Name** and click **Connect**.
 
 ![Add Table View](fiori-ios-scpms-teched19-17.png)
 
@@ -158,33 +199,65 @@ The result is a code connection from the Table View to your Swift class.
 
 ![Add Table View](fiori-ios-scpms-teched19-18.png)
 
-Before you go to the next step, please click on the **Standard Editor** to close the side-by-side view.
+Before going to the next step, close the `OverviewViewController.swift` code view by clicking on the **X** in the upper-right of the code view on the right.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Make the Overview View Controller delegate and datasource for the Table View)]
+[ACCORDION-BEGIN [Step 7: ](Make Overview View Controller delegate and data source for Table View)]
 
-Using a `UIViewController` requires you as a developer to manually set the `OverviewViewController` as `UITableViewDelegate` and `UITableViewDataSource`.
+Since our `OverviewViewController` class is a subclass of a `UIViewController`, we'll need to manually set our class as the value for `UITableViewDelegate` and `UITableViewDataSource`.
 
-> Using a `UITableViewController` this is done automatically. We are using a `UIViewController` here to have a bit more flexibility on how the Table View is laid out.
+To conform to those two protocols you can use Swift extensions to extend your Swift class and implement the needed override methods in the class extension. In that case the extension will be used to make your code more readable.
 
-In the `Main.storyboard` please select the Table View and open the **Connections Inspector**. In there you can see two properties in the **Outlets** section: `dataSource` , `delegate`.
+Open up the `OverviewViewController.swift` class and add the following lines of code outside the closing bracket of the class:
 
-You can see those small circles next to them, please **Click + drag** from each circle to the Table View to create a connection.
+```Swift
 
-![Add Table View](fiori-ios-scpms-teched19-20.png)
+extension OverviewViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 0
+  }
 
-A connection is now made and the Table View knows that the `OverviewViewController` is responsible for it's Data Source and Delegate.
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    return UITableViewCell()
+  }
+}
 
-![Add Table View](fiori-ios-scpms-teched19-21.png)
+```
+
+The `tableView(_:numberOfRowsInSection:)` method is responsible for telling the Table View how many rows should be displayed in a section. Right now, return **0** to stop the compiler from complaining. For the `tableView(_:cellForRowAt:)` return a new Table View Cell -- this cell is not going to be the cell we're going to use but we want to stop the compile time errors for now.
+
+Both of these methods are required by the `UITableViewDataSource`.
+
+You have to set the data source and delegate of the table view. Add the following lines of code to the `viewDidLoad(:)` method of the `OverviewViewController.swift` class:
+
+```Swift
+
+tableView.delegate = self
+tableView.dataSource = self
+
+```
+
+The `viewDidLoad(:)` method should look like this:
+
+```Swift
+
+override func viewDidLoad() {
+  super.viewDidLoad()
+
+  tableView.delegate = self
+  tableView.dataSource = self
+}
+
+```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Run the app to see the result of your work)]
+[ACCORDION-BEGIN [Step 8: ](Run app to see result of your work)]
 
-Seeing the result of your work is the most satisfying part, that's why you should run your app on simulator to see if everything works properly and have some satisfaction :grin: .
+Seeing the results of your work is the most satisfying part, so you should run your app in the iOS Simulator to ensure that everything is configured properly and have some satisfaction.
 
 Your UI should look like this now:
 

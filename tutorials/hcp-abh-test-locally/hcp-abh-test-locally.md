@@ -117,11 +117,9 @@ If you just add in the above line and try to run the code, you will find it does
 
 ![text editor with multiple parameters in the URL](13.png)
 
-**Copy and run the updated code.** If you updated you code successfully, you should see only 5 results with only 3 fields shown for each result.
+**Copy and run the updated code.** If you updated your code successfully, you should see only 5 results with only 3 fields shown for each result.
 
 ![results for top 5 results with 3 selected fields](14.png)
 
 [VALIDATE_5]
 [ACCORDION-END]
-
-

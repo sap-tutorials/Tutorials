@@ -27,22 +27,22 @@ You will then create a class that calls the API and displays the output from it 
 
 Throughout this tutorial, objects name include the suffix `XXX`. Always replace this with your group number or initials.
 
-[ACCORDION-BEGIN [Step 1: ](Create a new destination service instance)]
+[ACCORDION-BEGIN [Step 1: ](Open the instance of the destination service)]
 
 1. In your space in the **SAP Cloud Platform Cockpit** (e.g. **`Dev`**), open **Service Marketplace** and choose **Destination**.                          
 
     ![Image depicting step-1a-destination](step-1a-destination.png)
 
-2.  Choose **Instances > New Instance**.
+2.  Choose **Instances**, then choose your instance, **`EXTERNAL_API_XXX`**.
 
-    ![Image depicting step1b-new-instance](step1b-new-instance.png)
+    ![Image depicting step-1b-external-2](step-1b-external-2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new destination)]
 
-1. Choose **New Destination**:
+1. From the left pane, choose **Destinations**, then choose **New Destination**:
 
     ![Image depicting step-2a-new-destination](step-2a-new-destination.png)
 
@@ -98,6 +98,7 @@ This enables you to run the class in the console.
 [ACCORDION-BEGIN [Step 5: ](Implement the method)]
   1. Add the method implementation below and wrap it in an exception.
   2. Then replace the `xxx` of `i_name` and `i_service_instance_name` with your group number.
+  (To get the `i_service_instance_name`, see the tutorial [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api), step 7).
 
 ```ABAP
 METHOD if_oo_adt_classrun~main.

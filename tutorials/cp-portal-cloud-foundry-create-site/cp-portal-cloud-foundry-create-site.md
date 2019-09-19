@@ -16,7 +16,7 @@ You have subscribed to the Portal service.
   - How to add a page to your site and make it the home page
   - How to create a site menu
 
-In this group of tutorials our goal is to create an attractive Portal site for a recruiting company called `JobCore Recruiting`. The site will include apps and web content as well as two pages: a launchpad page and another page. Both pages will be displayed in the site menu.
+In this group of tutorials our goal is to create an attractive Portal site for a recruiting company called `JobCore Recruiting`. The site will include apps and web content. The site will contain two pages: a launchpad page and another page. Both pages will be displayed in the site menu.
 
 Let's get started!
 
@@ -39,7 +39,7 @@ When you access the Portal service, the Site Directory is in focus. From here yo
 
     ![Open Pages](7a_open_pages_tab.png)
 
-In your new site, you will already see the default **Launchpad** page in the **Pages** panel on the left with a preview of it on the right. In the next step, you'll add another page.
+In your new site, you will already see the default **Launchpad** page in the **Pages** panel on the left. Note that the page is marked with an eye icon with a cross. This icon indicates that the page is not part of the site menu and is not yet visible in your site. In the next step, you'll add another page.
 
   ![View Site Manager](7_view_launchpad_page.png)
 
@@ -86,7 +86,7 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
     ![Add a menu item](11_add_menu_item.png)
 
-3. Set the following values:
+3. Enter the following values:
 
 
     |  Field Name     | Value
@@ -97,7 +97,7 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
     Click **Add**.  
 
-    This takes you back to the **Menu Editor**. You will see that the page you called `Home` has been added to the site's menu structure.
+    This takes you back to the **Menu Editor**. You'll see that the page you called `Home` has been added to the site's menu structure.
 
     ![Menu item details](11a_edit_menu.png)
 
