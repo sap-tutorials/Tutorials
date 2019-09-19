@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites  
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
- - **SAP Cloud Platform SDK for iOS:** [Download](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html) version 3.0 SP01 PL02
+ - **SAP Cloud Platform SDK for iOS:** [Download](https://developers.sap.com/trials-downloads.html) version 3.0 SP01 PL02
 
 ## Next Steps
  - [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
