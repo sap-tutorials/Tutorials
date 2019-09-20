@@ -425,7 +425,7 @@ Select the segue and in the **Attributes Inspector** set the identifier to `show
 
 ![Create Navigation](fiori-ios-scpms-teched19-05.png)
 
-Great! All the segues are created in storyboard and have identifiers. In the next step, you will add code to provide information to the destination View Controllers for each segue.
+Great! The segue is created in storyboard and have an identifier. In the next step, you will add code to provide information to the destination View Controller for the segue.
 
 [DONE]
 [ACCORDION-END]
@@ -488,16 +488,7 @@ Next open up the `CustomerDetailTableViewController` and add the following lines
 
 ```Swift
 
-private var _customerId: String?
-
-var customerId: String {
-    get {
-        return _customerId!
-    }
-    set {
-        _customerId = newValue
-    }
-}
+var customerId: String!
 
 ```
 

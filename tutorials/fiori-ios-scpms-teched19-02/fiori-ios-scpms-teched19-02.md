@@ -164,13 +164,13 @@ Next, we need to set layout constraints on the Table View in order to ensure tha
 
 Select the Table View and click the **Add New Constraints** icon on the lower-right.
 
-In the fields for **Spacing to nearest neighbor**, change the top value to **25** and set the rest to **0**.
+In the fields for **Spacing to nearest neighbor**, set the values to **0**.
 
 Uncheck the **Constrain to margins** checkbox and click **Add 4 Constraints**.
 
 ![Add Table View](fiori-ios-scpms-teched19-14.png)
 
-This will add auto layout constraints to the Table View. You might ask yourself why you have to set the top constraint to 25; the reason is that we want a 25 points wide divider between the Navigation Bar and the Table View.
+This will add auto layout constraints to the Table View.
 
 ![Add Table View](fiori-ios-scpms-teched19-15.png)
 
