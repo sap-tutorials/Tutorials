@@ -107,7 +107,7 @@ Right-click on the workspace and choose **Git > Clone Repository**.
 Clone the following repository:
 
 ```Repository
-TBC - pending approval
+https://github.com/SAP-samples/teched2019-appspace-hana-cloud
 ```
 
 [DONE]

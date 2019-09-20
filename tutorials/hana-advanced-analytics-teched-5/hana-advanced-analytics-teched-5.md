@@ -66,7 +66,7 @@ If you look at the definition of the graph, the code names are connected through
 
 This relationship was established based on the most frequent ingredients of the food items chosen by each of the participants.
 
-Use the following SQL statement to get the most frequent ingredients in your view using the `MapReduce` functions and creating your code name from the data in the document store.
+Use the following SQL statement to get the most frequent ingredients in your view using the Map Reduce functions and creating your code name from the data in the document store.
 
 ```SQL
 
@@ -74,35 +74,45 @@ do begin
 
   declare lt_input table(id int, ingredients_text nvarchar(5000));
   declare lt_result table(val nvarchar(5000), ingdt_freq int, total_freq int );
+  declare lt_res_docs table(first_name nvarchar(50), day_of_birth nvarchar(2), favorite_color nvarchar(10));
   declare lv_id int;
+  declare lv_color nvarchar(100);
   declare lv_code_name nvarchar(100);
   declare lv_new_friend nvarchar(100) = '0';
   declare lv_main_ingredient nvarchar(100);
   declare lt_here table(code_name nvarchar(100));
   declare lv_count int = 0;
+
+
 --Get foods from the view
   lt_input = select id, to_nvarchar(INGREDIENTS_TEXT) as ingredients_text from "myFood";
+
+  select top 1 id into lv_id from :lt_input;
 
 --Split ingredients in the food items in the view using map reduce functions
   lt_result = map_reduce( :lt_input,
   						"mapper"(:lt_input.id, :lt_input.ingredients_text) group by val as map_result,
   						"reducer"(map_result.val, map_result));
   select * from :lt_result order by total_freq desc;
---Get codename from document store
+--Get codename and favorite color from document store
 
- select top 1 ("FIRST_NAME" || "DayOfBirth" || "favorite_color") into lv_code_name from DOCSTORE where first_name = '<<ENTER YOUR FIRST_NAME HERE>>' "DayOfBirth" = '<<ENTER DAY OF BIRTH HERE>>';
+ lt_res_docs = select "FIRST_NAME", "DayOfBirth" as day_of_birth,  "favorite_color" as favorite_color from DOCSTORE where first_name = '<<ENTER YOUR FIRST NAME HERE>>' and "DayOfBirth" = '<<ENTER YOUR DAY OF BIRTH HERE>>' limit 1;
 
----Match existing friends with same ingredients
+ select ( first_name || day_of_birth ||  favorite_color ) into lv_code_name from :lt_res_docs limit 1;
+
+ select  favorite_color  into lv_color from :lt_res_docs limit 1;
+
+ ---Match existing friends with same ingredients
   select count(code_name) into lv_count from "ME_AT_TECHED" where ingredient in (select val from :lt_result);
   if lv_count > 0 then
 	   select top 1 code_name into lv_new_friend from "ME_AT_TECHED" where ingredient in (select val from :lt_result) group by code_name;
   end if;
 
-   if lv_new_friend = '0' then
+	if lv_new_friend = '0' then
 		lv_new_friend = lv_code_name;
 	end if;
 
-   insert into "ME_AT_TECHED" (code_name, fav_food, ingredient ) select :lv_code_name,  :lv_id, val from :lt_result ;
+   insert into "ME_AT_TECHED" (code_name, fav_food, ingredient, fav_color ) select :lv_code_name,  :lv_id, val, :lv_color from :lt_result ;
 
    insert into "FRIENDS" (code_name, friends_with) values (lv_code_name, lv_new_friend);
 
