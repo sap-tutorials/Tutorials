@@ -137,6 +137,8 @@ Select the added Bar Button Item and **control + drag** to the Product Classific
 
 Now select the created segue and set the identifier to `showProductClassification` in the **Attributes Inspector**.
 
+![Product Classification VC](fiori-ios-scpms-teched19-09.png)
+
 The final step is to create a constant in the `OverviewViewController.swift` class holding that identifier.
 
 Close the `Main.storyboard` and open the `OverviewViewController.swift` class, add the following line of code directly below the `private let showCustomerDetailSegue = "showCustomerDetails"` line:
@@ -149,14 +151,15 @@ private let showProductClassificationSegue = "showProductClassification"
 
 You have to make sure that the selected image later on get's passed on to the `ProductClassificationTableViewController` for the classification process.
 
-Locate the `prepare(for:sender:)` method and add a new switch case to it:
+Locate the `prepare(for:sender:)` method and add a new if statement to it:
 
 ```Swift
 
-case showProductClassificationSegue:
+if segue.identifier == showProductClassificationSegue {
     let navController = segue.destination as! UINavigationController
     let productPredictionVC = navController.children.first! as! ProductClassificationTableViewController
     productPredictionVC.image = pickedImage
+}
 
 ```
 
@@ -166,29 +169,39 @@ Your `prepare(for:sender:)` should look like this now:
 ```Swift
 
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segue.identifier {
-    case showCustomerDetailSegue:
-        // Show the selected Customer on the Detail view
-        guard let indexPath = self.tableView.indexPathForSelectedRow else {
-            return
-        }
+  // Implement a switch over the segue identifiers to distinct which segue get's called.
+     if segue.identifier == showCustomerDetailSegue {
 
-        let selectedEntity = self.customers[indexPath.row]
-        let detailViewController = segue.destination as! CustomerDetailTableViewController
-        guard let customerID = selectedEntity.customerID else {
-            AlertHelper.displayAlert(with: "We're having issues displaying the details for the customer with name \(selectedEntity.lastName ?? "")", error: nil, viewController: self)
-            self.logger.error("Unexpectly customerID is nil! Can't pass customerID into CustomerDetailViewController.")
-            return
-        }
-        detailViewController.customerId = customerID
-        detailViewController.navigationItem.title = "\(self.customers[indexPath.row].firstName ?? ""), \(self.customers[indexPath.row].lastName ?? "")"
-    case showProductClassificationSegue:
-        let navController = segue.destination as! UINavigationController
-        let productPredictionVC = navController.children.first! as! ProductClassificationTableViewController
-        productPredictionVC.image = pickedImage
-    default:
-        return
-    }
+         // Show the selected Customer on the Detail view
+         guard let indexPath = self.tableView.indexPathForSelectedRow else {
+             return
+         }
+
+         // Retrieve the selected customer
+         let selectedEntity = self.customers[indexPath.row]
+
+         // Get an instance of the CustomerDetailTableViewController with asking the segue for it's destination.
+         let detailViewController = segue.destination as! CustomerDetailTableViewController
+
+         // Check if the customer ID is set, if not handle the errors and notify the user.
+         guard let customerID = selectedEntity.customerID else {
+             AlertHelper.displayAlert(with: "We're having issues displaying the details for the customer with name \(selectedEntity.lastName ?? "")", error: nil, viewController: self)
+             self.logger.error("Unexpectedly customerID is nil! Can't pass customerID into CustomerDetailViewController.")
+             return
+         }
+
+         // Set the customer ID at the CustomerDetailTableViewController.
+         detailViewController.customerId = customerID
+
+         // Set the title of the navigation item on the CustomerDetailTableViewController
+         detailViewController.navigationItem.title = "\(self.customers[indexPath.row].firstName ?? ""), \(self.customers[indexPath.row].lastName ?? "")"
+     }
+
+     if segue.identifier == showProductClassificationSegue {
+         let navController = segue.destination as! UINavigationController
+         let productPredictionVC = navController.children.first! as! ProductClassificationTableViewController
+         productPredictionVC.image = pickedImage
+     }
 }
 
 ```
@@ -238,6 +251,7 @@ let imageSources = [
 for (sourceName, sourceType) in imageSources where UIImagePickerController.isSourceTypeAvailable(sourceType) {
     alertController.addAction(UIAlertAction(title: "Find Product \(sourceName)", style: .default) { _ in
         self.pickerController.sourceType = sourceType
+        self.present(self.pickerController, animated: true)
     })
 }
 
@@ -270,8 +284,6 @@ Open the Info.plist and add the following two information properties to it by cl
 |----|----|
 | Privacy - Photo Library Usage Description | Please permit using Photo Library |
 | Privacy - Camera Usage Description | Please permit using Camera |
-
-![Product Classification VC](fiori-ios-scpms-teched19-09.png)
 
 That's it, the first time your app will try to access the Camera or Photo Library, the user will get asked for permission to perform this action.
 

@@ -32,7 +32,7 @@ import SAPCommon
 
 ```
 
-Next, add the following properties right above the `private var _customerId: String?` line of code:
+Next, add the following properties right above the `var customerId: String!` line of code:
 
 ```Swift
 
@@ -41,11 +41,23 @@ private let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 private let logger = Logger.shared(named: "CustomerDetailTableViewController")
 
-private var loadingIndicator: FUILoadingIndicatorView?
+var loadingIndicator: FUILoadingIndicatorView?
+
+private let profileHeader = FUIProfileHeader()
 
 ```
 
-The above code should look familiar to you from the Overview View Controller. Please implement the data service code to the `viewDidLoad(:)` method:
+The above code should look familiar to you from the Overview View Controller.
+
+Next make the `OverviewViewController.swift` class implement the SAPFioriLoadingIndicator protocol.
+
+```Swift
+
+class CustomerDetailTableViewController: UITableViewController, SAPFioriLoadingIndicator { ... }
+
+```
+
+Implement the data service code to the `viewDidLoad(:)` method:
 
 ```Swift
 
@@ -196,7 +208,7 @@ You're done for now, we will go into detail about how the Chart data is structur
 
 In order to display the Charts, you're going to use the `FUIChartTitleTableViewCell`, `FUIChartPlotTableViewCell` and the `FUIChartLegendTableViewCell` from the SAP CP SDK for iOS.
 
-Add the following lines of code to the `viewDidLoad(:)`:
+Add the following lines of code to the `viewDidLoad(:)` right above the `updateTable()` method call:
 
 ```Swift
 
@@ -235,7 +247,7 @@ If you remember from the previous tutorial, you have to implement a data source 
 
 Those View Controllers are especially provided for Table Views and provide all needed APIs and links without additional work. A `UITableViewController` also knows it's own Table View, which makes it obsolete for you to create an Outlet from the Table View in Storyboard to the Swift class itself.
 
-Add the following lines of code directly below the `loadData(completionHandler:)` method and read the inline comments carefully:
+Add the following lines of code directly below the `loadData(completionHandler:)` method, delete the existing `numberOfSections(in:)` and `tableView(_:numberOfRowsInSection:)` method first. Read the inline comments carefully:
 
 ```Swift
 

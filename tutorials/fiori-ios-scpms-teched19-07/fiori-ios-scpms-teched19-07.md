@@ -43,6 +43,16 @@ The model will now be referenced in your Xcode app project and can be initialize
 
 The Product Classification Table View Controller is supposed to display products of the classified product category. You have implemented similar code before so this should look familiar to you.
 
+Add the needed import statements below the `import UIKit` statement above the class declaration:
+
+```Swift
+
+import SAPFiori
+import SAPOData
+import SAPCommon
+
+```
+
 Add the following properties right above the `viewDidLoad(_:)` method:
 
 ```Swift
@@ -53,16 +63,6 @@ private let appDelegate = UIApplication.shared.delegate as! AppDelegate
 private let logger = Logger.shared(named: "ProductClassificationTableViewController")
 
 private var products = [Product]()
-
-```
-
-Next add the needed import statements below the `import UIKit` statement above the class declaration:
-
-```Swift
-
-import SAPFiori
-import SAPOData
-import SAPCommon
 
 ```
 
@@ -194,7 +194,7 @@ Create a new Swift class with the name `CGImagePropertyOrientation+UIImageOrient
 
 ![Create Swift Class](fiori-ios-scpms-teched19-03.png)
 
-In that extension class, implement the following lines of code:
+In that extension class, replace the code with the following lines:
 
 ```Swift
 
@@ -335,7 +335,7 @@ Continue with the tutorial to implement the displaying of products in the Table 
 
 To display the products, you will implement the data source methods directly in the class like you have done before.
 
-Add the `numberOfSections(in:)` and the `tableView(_:numberOfRowsInSection)` methods right below the `doneButtoneTapped(_:)` method:
+Replace the existing `numberOfSections(in:)` and the `tableView(_:numberOfRowsInSection)` methods with the following code:
 
 ```Swift
 
@@ -447,6 +447,12 @@ private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ im
 }
 
 ```
+
+You might have recognized that the initialization of the Core ML model requires iOS version 12 to compile.
+
+Open up the `SalesAssistant.pbxproj` file and change the **Deployment Target** in the **Deployment Info** section to iOS 12.
+
+![Change Target Version](fiori-ios-scpms-teched19-14.png)
 
 [DONE]
 [ACCORDION-END]
