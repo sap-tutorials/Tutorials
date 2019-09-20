@@ -3,7 +3,7 @@ title: Migrate an Existing Application to Version 3.0 of the Cloud SDK
 description: Migrate an existing project to version 3.0 of the SAP Cloud SDK.
 auto_validation: true
 time: 40
-tags: [ tutorial>intermediate, products>sap-s-4hana]
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-cloud-platform, topic>cloud, topic>java ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
@@ -14,7 +14,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Details
 ### You will learn
   - How to adapt dependencies
-  - How to migrate `ErpCommand`s
+  - How to migrate `ErpCommands`
   - How to adapt tests
 
 This tutorial will be based on a sample application to guide you through the fundamental steps of upgrading to version 3. You will get a feeling for the nature of the changes and be able to perform them for your specific application.
@@ -46,7 +46,7 @@ We'll start by adapting the dependencies of our project. First step is to change
 
 2. Change the `version` from `2.19.0` to the latest release of the Cloud SDK.
 
-At the time of writing, the latest version of the SDK is `3.2.0`. You can find the current version at [maven central](https://search.maven.org/search?q=g:com.sap.cloud.sdk). Note that we not only increased the version but also changed the group id. With the move to 3.0 some modules have been renamed to better reflect their purpose. To account for this we will now adapt the group ids in our dependencies.
+At the time of writing, the latest version of the SDK is `3.3.1`. You can find the current version at [maven central](https://search.maven.org/search?q=g:com.sap.cloud.sdk). Note that we not only increased the version but also changed the group id. With the move to 3.0 some modules have been renamed to better reflect their purpose. To account for this we will now adapt the group ids in our dependencies.
 
 Head to your `application/pom.xml`, `integration-tests/pom.xml` and `unit-tests/pom.xml`. Look for the following dependencies and replace the group and artifact id accordingly:
 
@@ -61,6 +61,23 @@ Head to your `application/pom.xml`, `integration-tests/pom.xml` and `unit-tests/
 | `com.sap.cloud.s4hana.plugins`  | `s4sdk-maven-plugin` | `com.sap.cloud.sdk.plugins`  | `usage-analytics-maven-plugin` |
 
 In case of the maven plugin you will also have to increase the version number by hand. Be sure not to specify explicit versions for these dependencies since they are already defined via the `sdk-bom` that we just visited. A full table of changed group IDs is included in the [release notes](https://help.sap.com/doc/6c02295dfa8f47cf9c08a19f2e172901/1.0/en-US/index.html#version-3.0.0-naming). Don't worry if your IDE lights up red in the process, maven might take some time to update. It might be a good idea to restart your IDE.
+
+Also there were small changes as to which transitive dependencies the SDK requires. One library the SDK previously depended upon is `rest-assured`. Now this is no longer the case and projects that use it must reference it explicitly. For this sample app this is necessary, so change the dependency accordingly in `integration-tests/pom.xml`:
+
+```XML
+<dependency>
+   <groupId>io.rest-assured</groupId>
+   <artifactId>rest-assured</artifactId>
+   <version>3.2.0</version>
+   <scope>test</scope>
+   <exclusions>
+       <exclusion>
+           <groupId>commons-logging</groupId>
+           <artifactId>commons-logging</artifactId>
+       </exclusion>
+   </exclusions>
+</dependency>
+```
 
 Once you are done, check that all dependencies are resolved correctly by running:
 
@@ -454,20 +471,7 @@ Then proceed with tackling the integration tests.
 
 We'll now proceed with changing the integration tests and go trough the necessary changes one by one.
 
-1. Add a dependency for `Hamcrest` by adding the following to your `integration-tests/pom.xml`:
-
-    ```XML
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>hamcrest-core</artifactId>
-      <version>2.1</version>
-      <scope>test</scope>
-    </dependency>
-    ```
-
-    This is necessary since we use it in our tests and the SDK does not export it anymore.
-
-2. Head to the `Testutil` class and find the `createDeployment` method. Replace it's content with the following code:
+1. Head to the `Testutil` class and find the `createDeployment` method. Replace it's content with the following code:
 
     ```Java
     return ShrinkWrap
@@ -480,7 +484,7 @@ We'll now proceed with changing the integration tests and go trough the necessar
 
       This replaces the different context listeners with the `RequestThreadContextListener` that is used instead as of 3.0. To read more about this change consult the more extensive [migration guide](https://blogs.sap.com/2019/08/01/migrate-to-version-3.0.0-of-the-sap-cloud-sdk-for-java/).
 
-3. Dive into the actual `AddressServletTest` and replace the `getAddress(..)` method as follows:
+2. Dive into the actual `AddressServletTest` and replace the `getAddress(..)` method as follows:
 
     ```Java
     private BusinessPartnerAddress getAddress(final String bupaId, final String addressId) {
@@ -496,7 +500,7 @@ We'll now proceed with changing the integration tests and go trough the necessar
 
     Previously it used a `GetAddressCommand` to retrieve addresses directly from the test S/4 system to compare them to the expected outcome of tests. The new code simply migrates this command in the same way we migrated the other commands in step 4. Therefore the now obsolete `GetAddressCommand` can be removed.
 
-4. Last but not least find the `mockErpDestination()` in the `before()` block of `AddressServletTest`. In 3.0 it now requires two arguments:
+3. Last but not least find the `mockErpDestination()` in the `before()` block of `AddressServletTest`. In 3.0 it now requires two arguments:
 
     - A destination name
     - An alias
