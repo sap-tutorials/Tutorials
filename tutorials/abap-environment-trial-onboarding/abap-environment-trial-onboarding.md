@@ -60,7 +60,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 2: ](Configure SAP Cloud Platform Entitlements)]
 
-1. Switch to your global account and select **Entitlements**.
+1. Configure your entitlements to make your ABAP Trial tile visible. Switch to your global account and select **Entitlements**.
 
     ![Select ABAP Trial](entitlement5.png)
 
