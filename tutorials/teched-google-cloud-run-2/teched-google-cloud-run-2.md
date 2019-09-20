@@ -22,7 +22,11 @@ These tutorials are meant to be completed at the Developer Garage at SAP TechEd.
 
 [ACCORDION-BEGIN [Step 1: ](Open the code editor)]
 
-Go back to the Google Cloud console and click on the cloud shell icon ![cloud shell icon](icon.png).
+Go back to the Google Cloud console. Close the Learn panel if open:
+
+![Code Editor](close.png)
+
+Click on the cloud shell icon ![cloud shell icon](icon.png).
 
 ![Code Editor](1.png)
 
@@ -43,7 +47,7 @@ You will create a project using the SAP Core Data and Services Node.js module fr
 
 ```text
 npm config set @sap:registry https://npm.sap.com
-npm install --global @sap/cds
+npm install --global @sap/cds@3.13.0
 ```
 For example:
 

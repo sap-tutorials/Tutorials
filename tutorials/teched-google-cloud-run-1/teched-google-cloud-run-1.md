@@ -16,7 +16,7 @@ primary_tag: products>sap-hana\,-express-edition
   - How to create your own instance of SAP HANA, express edition
   - How to configure your instance of SAP HANA, express edition with XS Advanced
 
-These tutorials are meant to be completed at the Developer Garage at SAP TechEd. The experts at the Google Cloud booth will provide you with an access to an account.
+These tutorials are meant to be completed at the Developer Garage at SAP TechEd. The experts at the Google Cloud booth will provide you with access to an account.
 
 ![Powered by Google Cloud](cloud_logo.png)
 
@@ -42,7 +42,7 @@ Enter the provided username
 
 ![Enter devstar](1.png)
 
-Click **Next**. Enter the password in the log in slip
+Click **Next**. Enter the password printed on the log in slip
 
 ![Enter devstar](2.png)
 
@@ -93,7 +93,7 @@ Scroll down, without changing any of the defaults. Accept the **Terms of service
 
 ![Configure project](10.png)
 
-> ##What is going on?
+> ##  What is going on?
 > You are creating your own instance of SAP HANA, express edition. The platform is now provisioning a virtual machine, providing an external IP address and applying the default firewall rules.
 
 [DONE]
@@ -103,7 +103,7 @@ Scroll down, without changing any of the defaults. Accept the **Terms of service
 
 Wait until the provisioning has finished. It may take a minute or two.
 
-Once finished, click on the name of the virtual machine.
+Once finished, click on the name of the virtual machine to open the VM instance details.
 
 ![Configure project](11.png)
 
