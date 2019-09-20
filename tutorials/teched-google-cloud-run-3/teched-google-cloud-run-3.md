@@ -33,6 +33,12 @@ Maximize the console for a better experience:
 
 > Note: If you have closed this window, you can go back into the `Google Compute Engine` and click on the `SSH` button right next to the virtual machine.
 >  ![HANA ssh](ssh.png)
+>
+> After reopening the window you'll need to execute the following command again:
+> ```xli
+> sudo su - hxeadm
+> ```
+> Remember to maximize the window.
 
 Paste the following command to log in to the XS Advanced command line interface:
 
@@ -43,7 +49,7 @@ Use `HanaRocks1` as the password.
 
 ![HANA ssh](2.png)
 
-Use the following command to switch to the development space and create an HDI container.
+Execute the following two commands to switch to the development space and create an HDI container.
 
 ```text
 xs target -s development
@@ -86,11 +92,14 @@ Enter the following select statement
 ```sql
 select * from dummy;
 ```
-Use the username and password from the key when prompted (you can use `CTRL+C` and `CTRL+V`)
+Use the **username** and **password** from the key when prompted (you can use `CTRL+C` and `CTRL+V`)
 
 ![HANA ssh](5.png)
 
 > Note: The password field will not show any contents after you paste it.
+>  This step will fail if:
+> - You use the fields `hdi_password` and `hdi_user`
+> - The password spans two lines.  If the authentication fails, copy and paste the two lines of the password separately before hitting `enter`.
 
 Press **`q`** to exit the results
 
@@ -152,7 +161,7 @@ Go back to the [list of instances](https://console.cloud.google.com/compute/inst
 
 ![HANA ssh](12.png)
 
-Use this value to replace `hxehost` in the `default-env.json` file
+Use this value to replace both instances of `hxehost` in the `default-env.json` file
 
 ![HANA ssh](13.png)
 
