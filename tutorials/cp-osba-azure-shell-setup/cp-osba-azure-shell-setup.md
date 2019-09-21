@@ -9,15 +9,15 @@ primary_tag: products>sap-cloud-platform
 
 ## Prerequisites
  - If you are not attending any SAP TechEd event on site, make sure you have a Microsoft Azure subscription. [$200 Credits](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) will be provided if you enter your credit card details at the initial registration.
-  - Register for an [SAP Cloud Platform account](hcp-create-trial-account)
-  - Enable the [SAP Cloud Platform Cloud Foundry account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
+  - Register for an [SAP Cloud Platform Trial account](hcp-create-trial-account)
+  - Enable the [SAP Cloud Platform Cloud Foundry account](https://developers.sap.com/tutorials/cp-cf-create-account.html) - **Region Frankfurt (EU10) needed!**
 
 ## Details
 ### You will learn
   - How to set up your Azure account to use the Azure Cloud Shell
   - Why using the Azure Cloud Shell is often useful
 
-In this tutorial, you will prepare your Azure Cloud Shell, which you will use later to deploy an application to the SAP Cloud Platform Cloud Foundry environment.
+In this tutorial, you will prepare your Azure Cloud Shell, which you will use later to deploy an application to the SAP Cloud Platform Cloud Foundry environment. 
 
 In addition to SAP Cloud Platform services, this application will also use Azure services. The [Open Service Broker API] (https://www.openservicebrokerapi.org/) is used to provision these Azure services and bind them to the application (and possibly delete them later). There are similar use cases for Open Service Broker usage for other Cloud Service Provider, not only for Azure services. The responsible component, running on SAP Cloud Platform Cloud Foundry leveraging the Open Service Broker API, is called the service broker.
 
@@ -35,7 +35,7 @@ These tutorials are primarily meant to be completed at the Developer Garage at S
 
 Azure subscriptions are available for SAP TechEd participants to complete these tutorials. Experts at the Microsoft booth in the Developer Garage will provide you the credentials.
 
-If you don't have an Azure subscription yet, no problem. You can easily [register](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) and as soon as you provide your credit card information, you will be granted 200 US dollars in credits that you can use for this tutorial and beyond. Only when you have exhausted this amount do you have to pay. 
+If you don't have an Azure subscription yet, no problem. You can easily [register](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) and as soon as you provide your credit card information, you will be granted 200 US dollars in credits that you can use for this tutorial and beyond. Only when you have exhausted this amount do you have to pay.
 
 ---
 
@@ -120,6 +120,10 @@ Your Azure Cloud Shell is now ready to go.
 ![Log ouput Azure Cloud Shell](welcome-azure-cloud-shell.png)
 
 [OPTION END]
+
+Please make sure you only use the option **`Bash`** and not PowerShell. Some commands in the following tutorials will only work with bash.
+
+![only use bash instead of PowerShell](use-bash-hint.png)
 
 [DONE]
 [ACCORDION-END]

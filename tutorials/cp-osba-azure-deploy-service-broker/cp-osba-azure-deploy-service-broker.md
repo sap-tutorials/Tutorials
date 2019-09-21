@@ -20,7 +20,7 @@ In the following steps, you will deploy the Azure service broker application to 
 
 [ACCORDION-BEGIN [Step 1: ](Set the right API endpoint)]
 
-To log onto the right SAP Cloud Platform Cloud Foundry endpoint, the right API endpoint URL is needed. Therefore, log into the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/).
+To log onto the right SAP Cloud Platform Cloud Foundry endpoint, the right API endpoint URL is needed. Therefore, log into the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/). 
 
 Click on the Cloud Foundry tile.
 
@@ -42,7 +42,7 @@ Go back to your Azure Cloud Shell and execute the following command.
  cf api <api-endpoint-url>
 ```
 
-![CF CLI endpoint](cf-api-command.png)
+![CF CLI endpoint](cf-api-endpoint.png)
 
 [DONE]
 [ACCORDION-END]
