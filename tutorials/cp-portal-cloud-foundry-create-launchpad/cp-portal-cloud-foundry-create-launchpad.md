@@ -19,7 +19,7 @@ In this tutorial, you're going to configure a launchpad module and add it to you
 ---
 
 
-[ACCORDION-BEGIN [Step 2: ](Add the launchpad module to your multi-target application project)]
+[ACCORDION-BEGIN [Step 1: ](Add the launchpad module to your multi-target application project)]
 
 1. Navigate to the **Development** area in SAP Web IDE and right-click your `mta_FioriDemo` project to add a new **SAP Fiori Launchpad Site Module**.
 
@@ -39,7 +39,7 @@ You can see that the `Launchpad` module is now part of your `MTA` project:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Configure the launchpad content)]
+[ACCORDION-BEGIN [Step 2: ](Configure the launchpad content)]
 
 Any app that you want to expose to the Portal service, should be added to the launchpad module. To add apps to the launchpad module, you should edit its `CommonDataModel.json` file.
 
@@ -76,7 +76,7 @@ In this step you are going to do just that.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Build and deploy your project)]
+[ACCORDION-BEGIN [Step 3: ](Build and deploy your project)]
 
 Build and deploy the `MTA` project with these modules thus exposing your app to the Portal service.
 
@@ -106,15 +106,19 @@ Build and deploy the `MTA` project with these modules thus exposing your app to 
 
 
 
-[ACCORDION-BEGIN [Step 5: ](Access the runtime launchpad module)]
+[ACCORDION-BEGIN [Step 4: ](Access the runtime launchpad module)]
 
 Now let's see how the app is displayed in the runtime launchpad module.
 
-Enter the URL that you copied from the console to a new browser tab.
+1.  Enter the URL that you copied from the console to a new browser tab.
 
-Your launchpad module displays the `Candidates` app that you created in the `People` group.
+    Your launchpad module displays the `Candidates` app that you created in the `People` group.
 
-![Launchpad Module](20_deployed_module.png)
+    ![Launchpad Module](20_deployed_module.png)
+
+2.  Click the `Candidates` app to launch it.
+
+    ![Launch app](21_click_app.png)
 
 Now you are ready to add your app to the **Launchpad** page in your Portal site.
 
