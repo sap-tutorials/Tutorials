@@ -49,7 +49,7 @@ private let profileHeader = FUIProfileHeader()
 
 The above code should look familiar to you from the Overview View Controller.
 
-Next make the `OverviewViewController.swift` class implement the SAPFioriLoadingIndicator protocol.
+Next make the `OverviewViewController.swift` class implement the `SAPFioriLoadingIndicator` protocol.
 
 ```Swift
 
