@@ -60,29 +60,31 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 2: ](Configure SAP Cloud Platform Entitlements)]
 
-1. Switch to your global account and select **Entitlements**.
+  1. **Skip step 2**, if you could enter **ABAP Trial**.
 
-    ![Select ABAP Trial](entitlement5.png)
+     Otherwise configure your entitlements to make your ABAP Trial tile visible. Switch to your global account and select **Entitlements**.
 
-2. Select **Subaccount Assignments**.
+      ![Select ABAP Trial](entitlement5.png)
 
-    ![Select ABAP Trial](entitlement6.png)
+  2. Select **Subaccount Assignments**.
 
-3. Select **trial** as subaccounts and click **Go**.
+      ![Select ABAP Trial](entitlement6.png)
 
-    ![Select ABAP Trial](entitlement7.png)
+  3. Select **trial** as subaccounts and click **Go**.
 
-4. Click **Configure Entitlements**.
+      ![Select ABAP Trial](entitlement7.png)
 
-    ![Select ABAP Trial](entitlement9.png)
+  4. Click **Configure Entitlements**.
 
-5.  Click **Add Service Plans**.
+      ![Select ABAP Trial](entitlement9.png)
 
-    ![Select ABAP Trial](entitlement10.png)
+  5.  Click **Add Service Plans**.
 
-6.  Select **ABAP Trial**, check **shared** and click **Add 1 Service Plan**.
+      ![Select ABAP Trial](entitlement10.png)
 
-    ![Select ABAP Trial](entitlement11.png)
+  6.  Select **ABAP Trial**, check **shared** and click **Add 1 Service Plan**.
+
+      ![Select ABAP Trial](entitlement11.png)
 
 [DONE]
 [ACCORDION-END]

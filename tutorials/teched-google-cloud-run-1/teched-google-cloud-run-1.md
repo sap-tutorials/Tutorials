@@ -16,7 +16,7 @@ primary_tag: products>sap-hana\,-express-edition
   - How to create your own instance of SAP HANA, express edition
   - How to configure your instance of SAP HANA, express edition with XS Advanced
 
-These tutorials are meant to be completed at the Developer Garage at SAP TechEd. The experts at the Google Cloud booth will provide you with access to an account.
+**These tutorials are meant to be completed at the Developer Garage at SAP TechEd.** The experts at the Google Cloud booth will provide you with access to an account.
 
 ![Powered by Google Cloud](cloud_logo.png)
 

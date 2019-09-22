@@ -17,7 +17,7 @@ primary_tag: products>sap-hana\,-express-edition
   - How to query data in your instance of SAP HANA, express edition
   - How to execute your OData services in the local Cloud Shell environment for testing purposes
 
-These tutorials are meant to be completed at the Developer Garage at SAP TechEd. The experts at the Google Cloud booth will provide you with an access to an account.
+**These tutorials are meant to be completed at the Developer Garage at SAP TechEd.** The experts at the Google Cloud booth will provide you with access to an account.
 
 ---
 
