@@ -1,6 +1,6 @@
 ---
 title: Create SAP SuccessFactors Timesheet and To Dos Card
-description: Create a Timesheet and a To Do card displaying data from SAP SuccessFactors.
+description: Create a timesheet and a To Do card displaying data from SAP SuccessFactors.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
@@ -13,21 +13,21 @@ author_profile: https://github.com/jitendrakansal
 **Install SAP Mobile Cards Application:** Download and install on your [iPhone](https://itunes.apple.com/us/app/sap-content-to-go/id1168110623?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go)
 
 ## Details
-Continuing from the destination we created in previous tutorial, we will now create two cards: A Time-sheet card and a To-do card.
-
-`Timesheet card` - A card that shows a user's Time Sheet log for a given date.  
-
-`To Do card` - A collection of cards that captures tasks in a To-do list. Each task has a card of its own.
-
 ### You will learn
   - How to create a SAP mobile card in the Mobile Services cockpit
   - How to subscribe to cards on your mobile device
 
+Continuing from the destination you created in the previous tutorial, you will create two cards:
+
+  - `**Timesheet card:**` A card that shows a user's Time Sheet log for a given date
+
+  - `**To Do card:**` A collection of cards that captures tasks in a To-do list -- each task has a card of its own
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Timesheet card)]
+[ACCORDION-BEGIN [Step 1: ](Create Timesheet card)]
 
-Enter Name as `TimeSheetCard` and click **Save**.
+Enter **Name** as `TimeSheetCard` and click **Save**.
 
 ![MobileCards](img_1.png)
 
@@ -58,40 +58,40 @@ Choose **Save**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Set Card status to Productive)]
+[ACCORDION-BEGIN [Step 3: ](Set card status to productive)]
 
->By default, status of newly created cards is **Development**. Cards can be subscribed to only when they are in a **Productive** state.
+By default, status of newly created cards is **Development**. Cards can be subscribed to only when they are in a **Productive** state.
 
-To change the card status, click on `TimeSheetCard`.
+1. To change the card status, click on `TimeSheetCard`.
 
-![MobileCards](img_5.1.png)
+    ![MobileCards](img_5.1.png)
 
-Under **Actions**, click on highlighted icon to change the state to **Productive**.
+2. Under **Actions**, click on highlighted icon to change the state to **Productive**.
 
-![MobileCards](img_5.2.png)
+    ![MobileCards](img_5.2.png)
 
-Choose **Yes** to confirm.
+3. Choose **Yes** to confirm.
 
-![MobileCards](img_5.3.png)
+    ![MobileCards](img_5.3.png)
 
-You will notice that the **State** has been changed to **Productive**.
+    You will notice that the **State** has been changed to **Productive**.
 
-![MobileCards](img_5.4.png)
+    ![MobileCards](img_5.4.png)
 
-Repeat the above step for the `ToDosCard`. Status of both the cards should be **Productive**.
+4. Repeat the above step for the `ToDosCard`. Status of both the cards should be **Productive**.
 
-![MobileCards](img_5.5.png)
+    ![MobileCards](img_5.5.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure SAP Mobile Cards client)]
 
->Ensure that you are choosing the right device platform **above**.
+>Make sure you are choosing the right device platform tab **above**.
 
 >Make sure you have installed the SAP Mobile Cards app on your phone.
 
-You can now start on-boarding your SAP Mobile Cards client onto SAP Cloud Platform.
+You can now start onboarding your SAP Mobile Cards client onto SAP Cloud Platform.
 
 Choose the **APIs** tab to view the registration QR code. Scan the QR code applicable to your device type (Android or iOS).
 
@@ -175,7 +175,7 @@ Optionally, you can enable Touch ID to access the app data more quickly.
 
 ![MobileCards](IMG_1.4.PNG)
 
-Tap **More...**.
+Tap **More**.
 
 ![MobileCards](IMG_1.5.PNG)
 

@@ -10,17 +10,18 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Details
-We will create a destination to connect to the SAP SuccessFactors API data source from SAP Cloud Platform Mobile Services.
-
 ### You will learn
   - How to access the SAP Cloud Platform Mobile Services cockpit
   - How to establish connectivity to a SAP SuccessFactors API
 
+In this tutorial, you will create a destination to connect to the SAP SuccessFactors API data source from SAP Cloud Platform Mobile Services.
+
+
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand the feature - SAP Mobile Cards)]
+[ACCORDION-BEGIN [Step 1: ](Understand SAP Mobile Cards)]
 
-SAP Mobile Cards is a feature within SAP Cloud Platform Mobile Services which provides our customers access to a micro application platform to publish data into a consumer grade wallet or passbook-style app. It allows companies to quickly create simple, yet highly valuable quick-win apps.
+SAP Mobile Cards is a feature within SAP Cloud Platform Mobile Services which provides our customers access to a micro-application platform to publish data into a consumer-grade wallet or passbook-style app. It allows companies to quickly create simple, yet highly valuable quick-win apps.
 
 You can find more details on the [SAP Mobile Cards developer page](https://developers.sap.com/topics/mobile-cards.html).
 
@@ -28,43 +29,44 @@ You can find more details on the [SAP Mobile Cards developer page](https://devel
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 2: ](Navigate to the SAP Mobile Services cockpit)]
 
-On the SAP Cloud Platform Trial landing page, choose **Enter your Trial Account**.
+[ACCORDION-BEGIN [Step 2: ](Go to SAP Mobile Services cockpit)]
 
-![MobileCards](img_0.png)
+1. On the SAP Cloud Platform Trial landing page, choose **Enter your Trial Account**.
 
->The trial account should contain one `subaccount` and `space`.
+    ![MobileCards](img_0.png)
 
-Choose **trial**.
+      >The trial account should contain one `subaccount` and `space`.
 
-![cf Trial](img_2.png)
+2. Choose **trial**.
 
-Under **Spaces**, choose the available space as highlighted below.
+    ![cf Trial](img_2.png)
 
-![cf Trial](img_4.png)
+3. Under **Spaces**, choose the available space as highlighted below.
 
-In the left pane, choose **Services** > **Service Marketplace**.
+    ![cf Trial](img_4.png)
 
->The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create, and produce applications quickly and easily. Once a service has been created, it is known as a `service instance`.
+4. In the left pane, choose **Services** > **Service Marketplace**.
 
-![cf Trial](img_5.png)
+    >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create, and produce applications quickly and easily. Once a service has been created, it is known as a `service instance`.
 
-Scroll down and then choose **Mobile Card Kit**.
+    ![cf Trial](img_5.png)
 
-![cf Trial](img_6.png)
+5. Scroll down and then choose **Mobile Card Kit**.
 
-Choose **Support** to open **SAP Cloud Platform Mobile Services Cockpit**.
+    ![cf Trial](img_6.png)
 
-![cf Trial](img_7.png)
+6. Choose **Support** to open **SAP Cloud Platform Mobile Services Cockpit**.
 
->`Organization`: Organizations in CF enable collaboration among users and enable grouping of resources.
+    ![cf Trial](img_7.png)
 
->`Space`: Cloud Foundry has a standard working environment for individual applications: it is called a space. Spaces are individual working areas, which normally contain a single application.
+    >**Organization:** Organizations in CF enable collaboration among users and enable grouping of resources.
 
-Choose the relevant **Organization** and **Space** from the dropdown list, and then select **Open**.
+    >**Space:** Cloud Foundry has a standard working environment for individual applications: it is called a space. Spaces are individual working areas, which normally contain a single application.
 
-![cf Trial](img_8.png)
+7. Choose the relevant **Organization** and **Space** from the dropdown list, and then select **Open**.
+
+    ![cf Trial](img_8.png)
 
 You have now logged in to the SAP Mobile Services cockpit.
 
@@ -75,62 +77,58 @@ Bookmark the **Mobile Services cockpit URL** for quick access.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a destination to connect to SAP SuccessFactors sandbox system)]
+[ACCORDION-BEGIN [Step 3: ](Create destination for SAP SuccessFactors sandbox)]
 
-In this step, we will create a destination connecting to SuccessFactors sandbox system.
+In this step, you will create a destination connecting to SuccessFactors sandbox system.
 
-In the left pane, choose **Mobile Applications** | **SAP Mobile Cards** to view the Mobile Cards configuration.
+1. In the left pane, choose **Mobile Applications** | **SAP Mobile Cards** to view the Mobile Cards configuration.
 
-![MobileCards](img_10.png)
+    ![MobileCards](img_10.png)
 
->If the SAP Mobile Cards Advisory screen pops up, choose **Close** to close it.
+    >If the SAP Mobile Cards Advisory screen pops up, choose **Close** to close it.
 
-Click **Initialize**. This will create a new service instance for Mobile Cards.
+2. Click **Initialize**. This will create a new service instance for Mobile Cards.
 
-![MobileCards](img_101.png)
+    ![MobileCards](img_101.png)
 
-Choose **Template Manager**.
+3. Choose **Template Manager**.
 
-![MobileCards](img_11.png)
+    ![MobileCards](img_11.png)
 
-Choose **SuccessFactors** from the **Select Category** drop-down list.
+4. Choose **SuccessFactors** from the **Select Category** drop-down list.
 
-![MobileCards](img_12.png)
+    ![MobileCards](img_12.png)
 
-Scroll down and choose `SuccessFactors My TimeSheet` and select the  **Create Card Template** icon.
+5. Scroll down and choose `SuccessFactors My TimeSheet` and select the  **Create Card Template** icon.
 
-![MobileCards](img_13.png)
+    ![MobileCards](img_13.png)
 
-Click [here](https://api.sap.com/preferences) to get the `API Key`.  
+6. Click [here](https://api.sap.com/preferences) to get the `API Key`.  
 
-![MobileCards](img_14.png)
+    ![MobileCards](img_14.png)
 
->For new users or first-time user of API Business Hub, generation of API Key may take a while.
+    >For new users or first-time user of API Business Hub, generation of API Key may take a while.
 
-Choose **Show API Key**.
+7. Choose **Show API Key**.
 
-![MobileCards](img_15.png)
+    ![MobileCards](img_15.png)
 
-Choose **Copy Key and Close**.
+8. Choose **Copy Key and Close**.
 
-![MobileCards](img_16.png)
+    ![MobileCards](img_16.png)
 
-Switch back to **Mobile Services cockpit**, paste the copied API key in the open pop-up, and then choose **OK**.
+9. Switch back to **Mobile Services cockpit**, paste the copied API key in the open pop-up, and then choose **OK**.
 
-![MobileCards](img_17.png)
+    ![MobileCards](img_17.png)
 
- On successful creation, a **Destination Created** message is displayed.
+    On successful creation, a **Destination Created** message is displayed.
 
-![MobileCards](img_18.png)
+    ![MobileCards](img_18.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-In this tutorial, we have successfully created a destination connecting to a SAP SuccessFactors sandbox system. In the next tutorial, we will use this destination to create two cards displaying `TimeSheet` and `ToDos` data.
-
-[DONE]
-[ACCORDION-END]
-
+In this tutorial, you have successfully created a destination connecting to a SAP SuccessFactors sandbox system. In the next tutorial, you will use this destination to create two cards displaying `TimeSheet` and `ToDos` data.
 
 
 ---
