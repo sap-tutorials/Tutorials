@@ -1,6 +1,6 @@
 ---
-title: Monitor and Manage Events using the Event Acquisition Application
-description: Monitor, import, debug, and delete the events acquired from workflow using the Event Acquisition application.
+title: Monitor Events Acquired using the Event Acquisition Application
+description: Monitor the events acquired using the Event Acquisition application.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
@@ -9,15 +9,13 @@ primary_tag: products>sap-cloud-platform
 
 ## Prerequisites
  - You have the **Event Acquisition** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad] (cp-cf-processvisibility-setup-flp).
-- You have the **`PVTenantOperator`** role assigned to your user
+- You have the **`PVTenantOperator`** role assigned to your user.
 
 ## Details
 ### You will learn
   - How to view the events that have been acquired by process visibility
-  - How to monitor the errors that have occurred while consuming the events that have been pushed to the process visibility service
-  - How to import events into the process visibility service
 
-Using the **Event Acquisition** application, you can view the events that have been acquired by process visibility and monitor errors while consuming the events pushed to the service.
+Using the **Event Acquisition** application, you can view the events that have been acquired by process visibility.
 
 [ACCORDION-BEGIN [Step 1: ](Access the Events Acquisition application)]
 
@@ -50,29 +48,7 @@ Using the **Event Acquisition** application, you can view the events that have b
 
     ![Events Listed](Events-Listed-05.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Import the events acquired by Process Visibility)]
-
-Click the import icon, browse for the required JSON file containing an array of events, and select **Import**.
-
-![Import](Import-07.png)
-
-![Import JSON](Import-json-08.png)
-
-You will be able to import events into the process visibility service.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Monitor the errors while consuming the events)]
-
-Click the **Errors** tab to view errors that have occurred while consuming the events pushed to the process visibility service.
-
-![Errors](Errors-06.png)
-
-You can see error messages specific to each event and the time when a specific error has occurred.
+For more information on this application, refer to [Event Acquisition application](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/72a054799c6f41e08b5445b950ac512d.html).
 
 [VALIDATE_1]
 [ACCORDION-END]

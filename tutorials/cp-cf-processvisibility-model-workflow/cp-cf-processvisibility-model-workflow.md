@@ -1,5 +1,5 @@
 ---
-title: Create Instances to Gain Visibility on a Workflow
+title: Create Workflow Instances
 description: Create workflow instances to see how events from different type of workflow activities combine together to provide an overview to analyze the progress and identify inefficiencies in the workflow.
 auto_validation: true
 time: 10
@@ -10,8 +10,8 @@ primary_tag: products>sap-cloud-platform
 ## Prerequisites
  - You have your workflow modelled, built and deployed on Cloud Foundry environment using SAP Cloud Platform Workflow. If you do not have workflows configured, then refer to the following [blog](https://blogs.sap.com/2019/05/20/sap-cloud-platform-workflow-sample-application-in-cloud-foundry/).
  - You have created a portal site to create Monitor Workflow and My Inbox tiles. To learn on how to create a **Monitor workflows** and **My Inbox** tiles, refer to [Help Portal](https://help.sap.com/viewer/e157c391253b4ecd93647bf232d18a83/Cloud/en-US/97c079f9317c42bba31cc9ca9d4cc7c3.html).
- - You have **`WorkflowParticipant`**, **`WorkflowAdmin`** and **`WorkflowInitiator`** roles assigned to your user
- - You have setup the SAP Cloud Platform Process Visibility in your Cloud Foundry tenant
+ - You have **`WorkflowParticipant`**, **`WorkflowAdmin`** and **`WorkflowInitiator`** roles assigned to your user.
+ - You have setup the SAP Cloud Platform Process Visibility in your Cloud Foundry tenant.
  - You have **`PVAdmin`**, **`PVDeveloper`** and **`PVOperator`** roles of SAP Cloud Platform Process Visibility assigned to your user. For more information on how to assign these roles, refer to [Assign the Process Visibility Roles to Users] (cp-cf-processvisibility-setup-assignroles).
 
 ## Details
@@ -65,7 +65,7 @@ Once you have modelled and activated the business scenario, go to your Monitor W
 
     ![New task](Task-09.png)
 
-    Before you Confirm the task, access the Event Acquisition Application to familiarize yourself with the acquired events. For more information on Event Acquisition application, refer to [Monitor and Manage Events using the Event Acquisition Application] (cp-cf-processvisibility-model-manageevents).
+    Before you Confirm the task, access the Event Acquisition application to familiarize yourself with the acquired events. For more information on Event Acquisition application, refer to [Monitor Events Acquired using the Event Acquisition Application] (cp-cf-processvisibility-model-manageevents).
 
     You can move forward in the workflow by Confirming the task.
 

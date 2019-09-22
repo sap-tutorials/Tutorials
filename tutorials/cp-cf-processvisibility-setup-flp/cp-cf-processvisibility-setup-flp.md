@@ -13,7 +13,7 @@ primary_tag: topic>cloud
 - How to configure your multi-target application to view Process Visibility tiles in SAP Fiori launchpad
 
 ### Prerequisites
-The UIs of Process Visibility must be configured on SAP Web IDE Full-Stack. After configuring and deploying the UIs, the three default tiles of Process Visibility will be available on SAP Fiori launchpad. For more information, see [Consuming UI Applications on SAP Fiori Launchpad](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/27850a2be7834ccfa209a2a3aabd216e.html).
+The UIs of Process Visibility must be configured on SAP Web IDE Full-Stack. After the configuration, the default tiles of Process Visibility will be available on SAP Fiori launchpad. For more information, see [Consuming UI Applications on SAP Fiori Launchpad](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/27850a2be7834ccfa209a2a3aabd216e.html).
 
   - You must have a trial account on SAP Cloud Platform.
   - You have created a service instance of Process Visibility and have noted the Process Visibility service instance name. For more information, see [Create a Service Instance of SAP Cloud Platform Process Visibility](cp-cf-processvisibility-setup-serviceinstance).

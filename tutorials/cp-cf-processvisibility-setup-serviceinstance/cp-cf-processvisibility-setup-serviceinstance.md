@@ -56,9 +56,9 @@ You must create a service instance to enable SAP Cloud Platform Process Visibili
 
     ![New instance](New-Instance-18.png)
 
-2. Choose the service plan **standard** and click **Next**.
+2. Choose the service plan **lite** and click **Next**.
 
-    ![Standard plan](Standard-Plan-19.png)
+    ![lite plan](lite-Plan-19.png)
 
 3. No parameters are needed as shown in the following image, so choose **Next**.
 
@@ -72,9 +72,9 @@ You must create a service instance to enable SAP Cloud Platform Process Visibili
 
     >**IMPORTANT:** Note the instance name, as it is required to bind the UIs. The new instance is displayed in the list and the status present under the **Last Operation** changes to **Created**.
 
-    ![Instance name](Service-Instance-Name-22.png)
+    ![Instance name](PVservice-Instance-Name-22.png)
 
-    ![Created instance](Created-23.png)
+    ![Created instance](Instance-Created-23.png)
 
 [DONE]
 [ACCORDION-END]
