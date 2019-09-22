@@ -9,10 +9,11 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ## Prerequisites
  - An account on Amazon AWS
- - Installed Jenkins in a Docker container on AWS EC2 instance
- - Created an SAP Cloud SDK app
  - An account on SAP Cloud Platform for Cloud Foundry
  - Cloud Foundry CLI installed
+ - An account on GitHub
+ - Installed Jenkins in a Docker container on AWS EC2 instance
+ - Created an SAP Cloud SDK app
 
 ## Details
 ### You will learn
