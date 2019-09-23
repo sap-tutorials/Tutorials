@@ -1,6 +1,6 @@
 ---
-title: Set Up SAP Data Hub, Trial Edition 2.5
-description: Create a solution instance of SAP Data Hub, trial edition 2.5.
+title: Set Up SAP Data Hub, Trial Edition
+description: Create a solution instance of SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 During this tutorial, you will learn how to create a solution instance of SAP Data Hub, trial edition. SAP Data Hub, trial edition is provisioned via SAP Cloud Appliance Library. It runs in your account on Cloud Providers that you choose from GCP, AWS or Azure. Please note here in this tutorial GCP refers to Google Cloud platform, AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
 
 ### Time to Complete
-**100 Min**
+**150 Min**
 
 ---
 
@@ -57,7 +57,7 @@ If you are a first-time user of SAP Cloud Appliance Library, familiarize yoursel
 [ACCORDION-BEGIN [Step 3: ](Create solution instance)]
 Next, you can create a solution instance of SAP Data Hub, trial edition via SAP Cloud Appliance Library. The necessary steps to do so are described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide (chapter 2.3).
 
-The creation of the solution instance takes around 60~90 minutes according to different cloud provider.
+The creation of the solution instance takes around 90-150 minutes (the startup time strongly depends on cloud provider and region).
 
 [DONE]
 

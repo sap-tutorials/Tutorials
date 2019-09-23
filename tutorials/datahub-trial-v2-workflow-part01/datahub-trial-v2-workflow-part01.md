@@ -1,6 +1,6 @@
 ---
-title: Create Workflow (part 1), Enrich Data With Data Transform in SAP Data Hub, Trial Edition 2.5
-description: Build a pipeline to enrich device data with country information by using SAP Data Hub, trial edition 2.5.
+title: Create Workflow (part 1), Enrich Data With Data Transform in SAP Data Hub, Trial Edition
+description: Build a pipeline to enrich device data with country information by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]

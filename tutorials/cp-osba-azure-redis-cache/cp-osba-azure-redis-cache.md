@@ -20,7 +20,7 @@ primary_tag: products>sap-cloud-platform
 
 The service broker uses Redis as a backing service, so you'll have to set up Redis Cache. The easiest way to do this is using the Azure Cloud Shell you have initially configured.
 
-Verify if there is already a so-called resource provider `Microsoft.Cache` by issuing the following command:
+Verify if there is already a so-called resource provider `Microsoft.Cache` by issuing the following command: 
 
 ```Bash
 az provider show -n Microsoft.Cache -o table
@@ -112,7 +112,7 @@ az ad sp create-for-rbac
 
 >**IMPORTANT:** Take a screenshot of the output in the Azure Cloud Shell or copy the information to a text document as you will need the attribute values in the next tutorial.
 
->**TROUBLESHOOTING:** If your user doesn't have sufficient privileges to execute this command, please contact your administrator. 
+>**TROUBLESHOOTING:** If your user doesn't have sufficient privileges to execute this command, please contact your administrator.
 
 [OPTION END]
 
