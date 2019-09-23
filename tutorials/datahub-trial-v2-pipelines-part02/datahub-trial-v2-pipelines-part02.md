@@ -1,6 +1,6 @@
 ---
-title: Store Sensor Data in Cloud Storage in SAP Data Hub, Trial Edition 2.5
-description: Use Cloud Storage to store sensor data by using SAP Data Hub, trial edition 2.5.
+title: Store Sensor Data in Cloud Storage in SAP Data Hub, Trial Edition
+description: Use Cloud Storage to store sensor data by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>SAP-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]

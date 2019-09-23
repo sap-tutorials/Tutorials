@@ -1,6 +1,6 @@
 ---
-title: Bundle Data (via JavaScript) in SAP Data Hub, Trial Edition 2.5
-description: Bundle sensor data before storing it in Cloud Storage by using SAP Data Hub, trial edition 2.5.
+title: Bundle Data (via JavaScript) in SAP Data Hub, Trial Edition
+description: Bundle sensor data before storing it in Cloud Storage by using SAP Data Hub, trial edition.
 primary_tag: products>SAP-data-hub
 auto_validation: true
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]

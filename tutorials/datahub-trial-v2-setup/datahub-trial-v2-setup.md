@@ -1,6 +1,6 @@
 ---
-title: Set Up SAP Data Hub, Trial Edition 2.5
-description: Create a solution instance of SAP Data Hub, trial edition 2.5.
+title: Set Up SAP Data Hub, Trial Edition
+description: Create a solution instance of SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]

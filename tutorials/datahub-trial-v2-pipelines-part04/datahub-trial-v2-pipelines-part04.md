@@ -1,6 +1,6 @@
 ---
-title: Store Sensor Data in SAP Vora in SAP Data Hub, Trial Edition 2.5
-description: Use SAP Vora to store sensor data by using SAP Data Hub, trial edition 2.5.
+title: Store Sensor Data in SAP Vora in SAP Data Hub, Trial Edition
+description: Use SAP Vora to store sensor data by using SAP Data Hub, trial edition.
 primary_tag: products>SAP-data-hub
 auto_validation: true
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
