@@ -32,11 +32,11 @@ You can find more details on the [SAP Mobile Cards developer page](https://devel
 
 [ACCORDION-BEGIN [Step 2: ](Go to SAP Mobile Services cockpit)]
 
-1. On the SAP Cloud Platform Trial landing page, choose **Enter your Trial Account**.
+1. On the [SAP Cloud Platform Trial landing page](https://cockpit.hanatrial.ondemand.com), choose **Enter your Trial Account**.
 
     ![MobileCards](img_0.png)
 
-      >The trial account should contain one `subaccount` and `space`.
+>The trial account should contain one `subaccount` and `space`.
 
 2. Choose **trial**.
 
