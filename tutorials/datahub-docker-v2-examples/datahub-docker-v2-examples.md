@@ -1,6 +1,6 @@
 ---
-title: Run example pipelines in SAP Data Hub, developer edition 2.4
-description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition 2.4.
+title: Run example pipelines in SAP Data Hub, developer edition
+description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -51,4 +51,3 @@ Stop the pipeline by clicking **Stop**.
 [ACCORDION-END]
 
 ---
-  
