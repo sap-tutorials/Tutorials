@@ -31,7 +31,7 @@ Navigate to **Metadata Explorer** by clicking on the icon from the launchpad.
 
 ![picture_02](./datahub-trial-v2-discovery-part01_02.png)
 
-From the quick links, click on **Browse Connections**
+Click on **Browse Connections**.
 
 ![picture_03](./datahub-trial-v2-discovery-part01_03.png)
 
