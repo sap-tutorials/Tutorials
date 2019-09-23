@@ -1,6 +1,6 @@
 ---
-title: Bundle Data (via JavaScript) in SAP Data Hub, Trial Edition 2.5
-description: Bundle sensor data before storing it in Cloud Storage by using SAP Data Hub, trial edition 2.5.
+title: Bundle Data (via JavaScript) in SAP Data Hub, Trial Edition
+description: Bundle sensor data before storing it in Cloud Storage by using SAP Data Hub, trial edition.
 primary_tag: products>SAP-data-hub
 auto_validation: true
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
@@ -37,7 +37,7 @@ Right click **Write File** operator, open the configuration panel and change the
 |  :------------- | :-------------
 | path  | `sensordata/JS_file_<counter>.txt`
 
-The **Write File** operator will write the received data to files in the `/sensordata` directory in the specified GCS or AWS S3 bucket or Azure container. The files follow the scheme `JS_file_<counter>.txt` (where counter is an incremental integer).
+The **Write File** operator will write the received data to files in the `sensordata` directory in the specified GCS or AWS S3 bucket or Azure container. The files follow the scheme `JS_file_<counter>.txt` (where counter is an incremental integer).
 
 [DONE]
 
@@ -84,7 +84,7 @@ Click **Run** to execute the pipeline.
 
 When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data. You can notice that this time the output is grouped in a chunk of 30 records.
 
-For GCP open [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to the `/sensordata/` directory and for AWS open [https://s3.console.aws.amazon.com](https://s3.console.aws.amazon.com) and navigate to **Search for Buckets** > **Your Bucket name** > `sensordata` folder. For Azure open [https://portal.azure.com/](https://portal.azure.com/) and navigate to **Storage accounts** > **filter your Storage account** > **Blob service** > **click Blob** > **Your Container name** > `sensordata folder`. You see that the system does not create a file for each single sensor record, but only for each 30 sensor records.
+For GCP open [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to the `sensordata` directory and for AWS open [https://s3.console.aws.amazon.com](https://s3.console.aws.amazon.com) and navigate to **Search for Buckets** > **Your Bucket name** > `sensordata` folder. For Azure open [https://portal.azure.com/](https://portal.azure.com/) and navigate to **Storage accounts** > **filter your Storage account** > **Blob service** > **click Blob** > **Your Container name** > `sensordata folder`. You see that the system does not create a file for each single sensor record, but only for each 30 sensor records.
 
 Stop the pipeline by clicking **Stop**.
 
