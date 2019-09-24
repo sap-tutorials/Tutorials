@@ -29,7 +29,7 @@ Caches are very important in a wide variety of use cases. It is one of the reaso
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](How does they work?)]
+[ACCORDION-BEGIN [Step 2: ](How do they work?)]
 A cache generally works by the action of requesting information to a given subject, called a key. If an information to a given key was previously requested, was stored at the time of request, and is now available to read, a so called "cache hit" occurs: the data can be found and will be loaded. A "cache miss" occurs when it cannot.
 
 The most important aspects of a cache is its size and the life time of its items. Both should be limited with regards to the use case, to avoid an outdated state or disproportionate memory consumption in the application. The biggest effect of using a cache can be witnessed, when the application is repetitively reading larger chunks of data from external sources. In such cases, using caches significantly reduce the bandwidth required for transmitting information.
