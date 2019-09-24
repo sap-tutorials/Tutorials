@@ -5,13 +5,13 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-business-rules
-
-
+author_name: Vandana Vasudevan
+author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Details
 ### You will learn
-  - How to enable Business Rule service
+  - How to enable Business Rules service
   - How to create a service instance of Business Rules
 
 You can create a service instance of business rules to get started with SAP Cloud Platform Business Rules. Also, you can create the service key of the business rules service instance, which lets you consume the business rules API from SAP API Business Hub or any REST clients. You will need the service instance and service keys in the tutorials that follow.
