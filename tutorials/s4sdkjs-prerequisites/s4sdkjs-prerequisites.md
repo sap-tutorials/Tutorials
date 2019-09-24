@@ -26,17 +26,11 @@ node -v
 npm -v
 ```
 
-If one of those commands fails because the command was not found you will have to install **`Node.js`**.
-We recommend using at least **`Node.js`** version `11.0.0` and **`npm`** version `6.0.0`.
-The latest LTS version (10.15.3 as of today), will also work.
-If you have **`Node.js`** and **`npm`** installed at a current version, skip ahead and mark this step as done.
+If one of those commands fails because the command was not found you will have to install **`Node.js`**. We recommend using at least **`Node.js`** version `11.0.0` and **`npm`** version `6.0.0`. The latest LTS version (10.15.3 as of today), will also work. If you have **`Node.js`** and **`npm`** installed at a current version, skip ahead and mark this step as done.
 
 ### Install Node.js and npm
 
-We recommend to install **`Node.js`** using a [`package manager`](https://nodejs.org/en/download/package-manager) or a node version manager suitable for your platform.
-You are free to use an [`installer`](https://nodejs.org/en/download), though.
-**`npm`** will automatically be installed together with **`Node.js`**.
-**`npm`** can be updated by running `npm install -g npm` from your command line.
+We recommend to install **`Node.js`** using a [`package manager`](https://nodejs.org/en/download/package-manager) or a node version manager suitable for your platform. You are free to use an [`installer`](https://nodejs.org/en/download), though. **`npm`** will automatically be installed together with **`Node.js`**. **`npm`** can be updated by running `npm install -g npm` from your command line.
 
 <!-- TODO: Maybe mention here that for Windows the installer is the easiest way to setup Node. -->
 
@@ -45,8 +39,7 @@ You are free to use an [`installer`](https://nodejs.org/en/download), though.
 
 [ACCORDION-BEGIN [Step 2: ](SAP Cloud Platform account)]
 
-For deploying your application to `Cloud Foundry in SAP Cloud Platform`, you will need an account.
-You can get a trial account [here](https://cloudplatform.sap.com/index.html) by clicking on "Start your free trial" or use an existing account, if you already have one.
+For deploying your application to `Cloud Foundry in SAP Cloud Platform`, you will need an account. You can get a trial account [here](https://cloudplatform.sap.com/index.html) by clicking on "Start your free trial" or use an existing account, if you already have one.
 
 [DONE]
 [ACCORDION-END]
@@ -67,7 +60,7 @@ Feel free to choose your favorite `IDE`. We recommend using [`Visual Studio Code
 [DONE]
 [ACCORDION-END]
 
-That's it, you are now ready to start developing your own application with the `SAP S/4HANA Cloud SDK for JavaScript`!
+That's it, you are now ready to start developing your own application with the `SAP Cloud SDK for JavaScript`!
 
 [ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
@@ -77,7 +70,4 @@ That's it, you are now ready to start developing your own application with the `
 
 ---
 
-This tutorial is part of a larger series.
-You can find the next entry [here](Get Started with SAP Cloud SDK for JavaScript).
-For questions, you can reach out to us on [`StackOverflow`](https://stackoverflow.com/) using the tag [sap-cloud-sdk](https://stackoverflow.com/questions/tagged/sap-cloud-sdk) and on [answers.sap.com](https://answers.sap.com) using the tag [SAP S/4HANA Cloud SDK](https://answers.sap.com/tags/73555000100800000895).
-
+For questions, you can reach out to us on [`StackOverflow`](https://stackoverflow.com/) using the tag [sap-cloud-sdk](https://stackoverflow.com/questions/tagged/sap-cloud-sdk) and on [answers.sap.com](https://answers.sap.com) using the tag [SAP Cloud SDK](https://answers.sap.com/tags/73555000100800000895).
