@@ -17,7 +17,7 @@ primary_tag: products>sap-cloud-platform
   - How to set up your Azure account to use the Azure Cloud Shell
   - Why using the Azure Cloud Shell is often useful
 
-In this tutorial, you will prepare your Azure Cloud Shell, which you will use later to deploy an application to the SAP Cloud Platform Cloud Foundry environment. 
+In this tutorial, you will prepare your Azure Cloud Shell, which you will use later to deploy an application to the SAP Cloud Platform Cloud Foundry environment.
 
 In addition to SAP Cloud Platform services, this application will also use Azure services. The [Open Service Broker API] (https://www.openservicebrokerapi.org/) is used to provision these Azure services and bind them to the application (and possibly delete them later). There are similar use cases for Open Service Broker usage for other Cloud Service Provider, not only for Azure services. The responsible component, running on SAP Cloud Platform Cloud Foundry leveraging the Open Service Broker API, is called the service broker.
 
@@ -81,7 +81,9 @@ Launch the Azure Cloud Shell by clicking on the highlighted control below:
 
 [OPTION BEGIN [SAP TechEd Account]]
 
-The SAP experts have already set up the Azure Cloud Shell.
+The SAP experts have already set up the Azure Cloud Shell. Select the `Microsoft` directory as follows:
+
+> ![choose microsoft directory](choose-directory.png)
 
 >If you are interested in the necessary steps to set up the Azure Cloud Shell, click on the **Own Account** tab.
 
