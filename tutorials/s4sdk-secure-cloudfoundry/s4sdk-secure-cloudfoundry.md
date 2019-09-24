@@ -320,6 +320,7 @@ Gray Box: As a SCP developer (e.g., SAP, partner, customer) of the business appl
 Orange Box: As an SCP tenant administrator of the business application (customer) can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the **Business Partner Manager** role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
 
 Green Box: As an administrator of the users (customer), the role collection can then be assigned to the final user using the SAML attribute `Groups`.
+
 [DONE]
 [ACCORDION-END]
 
