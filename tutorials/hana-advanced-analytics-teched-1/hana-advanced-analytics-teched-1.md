@@ -110,6 +110,8 @@ Clone the following repository:
 https://github.com/SAP-samples/teched2019-appspace-hana-cloud
 ```
 
+When prompted, choose **Do it later**.
+
 [DONE]
 [ACCORDION-END]
 
