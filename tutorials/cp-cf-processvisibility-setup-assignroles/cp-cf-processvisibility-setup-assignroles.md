@@ -11,7 +11,7 @@ author_profile: https://github.com/Kavya-Gowda
 ---
 
 ## Prerequisites
- - You are assigned to the **User & Role Administrator** role in the **Security** section of your subaccount.
+ - You are assigned to the **User & Role Administrator** role in the **Security** section of your subaccount. For more information on how to assign these roles, refer to [Assign the Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles).
 
 ## Details
 ### You will learn
