@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: topic>cloud
+author_name: Deeksha R
+author_profile: https://github.com/Deeksha-R
 ---
 
 ### Prerequisites
