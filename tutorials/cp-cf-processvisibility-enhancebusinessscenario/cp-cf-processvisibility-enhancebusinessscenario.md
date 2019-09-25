@@ -1,6 +1,6 @@
 ---
 title: Enhance Your Business Scenario for a Deployed Workflow
-description: Enhance your business scenario by adding status, phases, performance indicators, and attributes from workflow to track and analyze business process.
+description: Enhance your business scenario by adding status, phases, performance indicators, and attributes for the workflow to track and analyze business process.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud]
@@ -54,7 +54,7 @@ By default, a set of performance indicators are generated when you add an SAP Cl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add attributes for your business scenario)]
+[ACCORDION-BEGIN [Step 3: ](Add business scenario attributes)]
 1. Choose the **Attributes** tab, where you can view a set of default attributes.
 
     ![Attribute](Config-Step3-attributes.png)
@@ -72,7 +72,7 @@ By default, a set of performance indicators are generated when you add an SAP Cl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure performance indicators for your business scenario)]
+[ACCORDION-BEGIN [Step 4: ](Configure performance indicators)]
 1. Navigate to the **Performance Indicators** tab and choose the **+** icon.
 
     ![Performance indicators](config-Step4-addPF.png)
@@ -98,7 +98,7 @@ By default, a set of performance indicators are generated when you add an SAP Cl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Activate the business scenario)]
+[ACCORDION-BEGIN [Step 5: ](Activate business scenario)]
 1. Save the business scenario and then choose **Activate**.
 
     ![Activate](config-Step5-activate.png)

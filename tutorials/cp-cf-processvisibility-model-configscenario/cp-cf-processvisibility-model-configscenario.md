@@ -1,5 +1,5 @@
 ---
-title: Create Your Business Scenario for a Deployed Workflow
+title: Create a Business Scenario for a Deployed Workflow
 description: Create a business scenario based on a workflow using the Business Scenario Configuration application.
 auto_validation: true
 time: 10
@@ -8,14 +8,18 @@ primary_tag: topic>cloud
 ---
 
 ## Prerequisites
- - • Ensure that you have the access to the Configure Business Scenarios application. For more information, see [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad] (cp-cf-processvisibility-setup-flp).
- - • You have a deployed workflow from SAP Cloud Platform Workflow on Cloud Foundry. If you do not have a workflow deployed, then refer to the following [blog](https://blogs.sap.com/2019/05/20/sap-cloud-platform-workflow-sample-application-in-cloud-foundry/).
+ - Ensure that you have access to the Configure Business Scenarios application. For more information, see [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
+ - You have a deployed workflow from SAP Cloud Platform Workflow on Cloud Foundry. If you do not have a workflow deployed, then refer to the following [blog](https://blogs.sap.com/2019/05/20/sap-cloud-platform-workflow-sample-application-in-cloud-foundry/).
 
 ## Details
 ### You will learn
-  - How to build a business scenario and add workflows in the Configure Business Scenarios application.
+  - How to use the Configure Business Scenarios application
+  - How to build a business scenario
+  - How to add workflows to business scenarios  
 
 Business scenarios allows you to track the performance of end-to-end processes. In this tutorial, you can add workflows from SAP Cloud Platform Workflow to your business scenario to gain visibility on workflows. For more information, see [Creating a Business Scenario](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+
+---
 
 [ACCORDION-BEGIN [Step 1:](Create a business scenario)]
 1. Log on to the **Configure Business Scenarios** application in SAP Fiori Launchpad.
@@ -42,7 +46,7 @@ Business scenarios allows you to track the performance of end-to-end processes. 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Workflows)]
+[ACCORDION-BEGIN [Step 2: ](Add workflows)]
 
 1. Choose the **+** icon and then choose **Add SAP Cloud Platform Workflow** to add a workflow to the business scenario.
 

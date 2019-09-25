@@ -1,5 +1,5 @@
 ---
-title: Monitor your Business Scenarios using Monitor Scenarios Application
+title: Monitor Your Business Scenarios
 description: Monitor the business scenario and process data using the Monitor Scenarios application.
 auto_validation: true
 time: 10
@@ -17,6 +17,8 @@ primary_tag: products>sap-cloud-platform
 
 You can monitor the activated business scenarios using the **Monitor Scenarios** application.
 
+---
+
 [ACCORDION-BEGIN [Step 1: ](Access the Monitor Scenarios application)]
 
 1. Log in to SAP Fiori launchpad.
@@ -28,7 +30,7 @@ You can monitor the activated business scenarios using the **Monitor Scenarios**
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](View the details of a scenario definition)]
+[ACCORDION-BEGIN [Step 2: ](View details of scenario definition)]
 
 1. Type and search for the keyword **Employee Onboarding Scenario**, which is the scenario definition name used in this tutorial.
 

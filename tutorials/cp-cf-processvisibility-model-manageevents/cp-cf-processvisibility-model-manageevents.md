@@ -1,5 +1,5 @@
 ---
-title: Monitor Events Acquired using the Event Acquisition Application
+title: Monitor Events Acquired Using the Event Acquisition Application
 description: Monitor the events acquired using the Event Acquisition application.
 auto_validation: true
 time: 5
@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform
 ---
 
 ## Prerequisites
- - You have the **Event Acquisition** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad] (cp-cf-processvisibility-setup-flp).
+ - You have the **Event Acquisition** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
 - You have the **`PVTenantOperator`** role assigned to your user.
 
 ## Details
@@ -16,6 +16,8 @@ primary_tag: products>sap-cloud-platform
   - How to view the events that have been acquired by process visibility
 
 Using the **Event Acquisition** application, you can view the events that have been acquired by process visibility.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Access the Events Acquisition application)]
 
