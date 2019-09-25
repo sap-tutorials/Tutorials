@@ -1,6 +1,6 @@
 ---
 title: Create a Service Instance of SAP Cloud Platform Process Visibility
-description: Create a service instance using SAP Cloud Platform Cockpit to enable the Process Visibility service.
+description: Create a service instance using SAP Cloud Platform cockpit to enable the Process Visibility service.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud ]
@@ -8,7 +8,7 @@ primary_tag: products>sap-cloud-platform
 ---
 
 ## Prerequisites
- - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
+ - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn

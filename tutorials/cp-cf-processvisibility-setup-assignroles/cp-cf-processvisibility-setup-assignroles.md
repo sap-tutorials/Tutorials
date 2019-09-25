@@ -1,6 +1,6 @@
 ---
 title: Assign Process Visibility Roles to Users
-description: Assign required roles of Process Visibility to the users.
+description: Assign required roles for the SAP Cloud Platform Process Visibility service for administrators, developers and business users of the service.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud ]
@@ -62,7 +62,7 @@ In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign role collections to users)]
+[ACCORDION-BEGIN [Step 2: ](Assign the role collection to users)]
 
 1. Navigate to your subaccount in the SAP Cloud Platform cockpit.
 
