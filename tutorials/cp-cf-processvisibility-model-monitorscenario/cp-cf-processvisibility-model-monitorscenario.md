@@ -10,7 +10,7 @@ author_profile: https://github.com/Kavya-Gowda
 ---
 
 ## Prerequisites
- - You have the **Monitor Scenarios** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad] (cp-cf-processvisibility-setup-flp).
+ - You have the **Monitor Scenarios** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
  - You have the **`PVAdmin`** role assigned to your user.
 
 ## Details
