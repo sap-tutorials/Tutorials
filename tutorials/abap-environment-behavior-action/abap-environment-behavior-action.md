@@ -8,7 +8,7 @@ time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
- 
+
 ## Prerequisites  
 - You have created an SAP Cloud Platform ABAP environment trial user or
 - You have created a developer user in an SAP Cloud Platform ABAP Environment system.
@@ -41,7 +41,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
-
+ 
     define behavior for ZI_Travel_M_XXX alias Travel
     persistent table ztravel_xxx
     etag last_changed_at
@@ -72,6 +72,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   3. Save and activate.
+
+      ![save and activate](activate.png)
 
 [DONE]
 [ACCORDION-END]
@@ -273,6 +275,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   3. Save and activate.
 
+      ![save and activate](activate.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -303,6 +307,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   3. Save and activate.
+
+      ![save and activate](activate.png)
 
      The **validation** allows you to check the data consistency of your travel booking application.
 

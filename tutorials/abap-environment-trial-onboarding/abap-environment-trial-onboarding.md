@@ -51,7 +51,7 @@ author_profile: https://github.com/mervey45
 
   7. **If you see the ABAP Trial tile, then select it move on with step 3.1 to create your instance**.
 
-     **If you don't see the ABAP Trial tile, then move on with step 2.1 to configure your SAP Cloud Platform Entitlements. Come back to Service Marketplace and select ABAP Trial**.
+     **If you don't see the ABAP Trial tile, then move on with step 2.1 to configure your SAP Cloud Platform Entitlements.**.
 
       ![Select ABAP Trial](trial.png)
 
@@ -85,6 +85,18 @@ author_profile: https://github.com/mervey45
   6.  Select **ABAP Trial**, check **shared** and click **Add 1 Service Plan**.
 
       ![Select ABAP Trial](entitlement11.png)
+
+  7.  Click **Save**.
+
+      ![Select ABAP Trial](entitlement13.png)
+
+  8.  Check your result
+
+      ![Select ABAP Trial](entitlement14.png)
+
+  9.  Go back to your space dev, select **Service Marketplace** and **ABAP Trial**.
+
+      ![Select ABAP Trial](abaptrial.png)
 
 [DONE]
 [ACCORDION-END]
@@ -151,8 +163,7 @@ author_profile: https://github.com/mervey45
       ![Create service key](key3.png)
 
   4. Now your service key appears. Copy your service key for later use.
-
-      ![Create service key](key4.png)
+     The service key enables the connection to the SAP Cloud Platform ABAP environment system in ADT.
 
 [DONE]
 [ACCORDION-END]
