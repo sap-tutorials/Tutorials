@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-cloud-platform
+author_name: Kavya Gowda
+author_profile: https://github.com/Kavya-Gowda
 ---
 
 ## Prerequisites
