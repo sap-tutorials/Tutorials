@@ -25,13 +25,13 @@ For online applications, the changes are saved to the backend immediately.
 
 For offline applications, the changes are stored locally until they are synced using an Upload action.
 
-First you will create a **Close Page-Cancel action** that closes the current page and cancels or interrupts any execution in process. This will be used with the cancel button on the **Edit Customer page**.
+First you will create a `CloseModalPage_Cancel.action` that closes the current page and cancels or interrupts any execution in process. This will be used with the cancel button on the **Edit Customer page**.
 
 >You can close pages with the option to terminate ongoing events or wait until they are complete.
 
 >You can find more details about [Close Page Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/2cd05c81255f49e3ae9258f9a5222a6c.html).
 
-Right click on the **Actions** | **New MDK Action** | **Close Page Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Close Page Action** | **Next**.
 
 ![MDK](img_000.gif)
 
@@ -39,11 +39,13 @@ Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name`| `ClosePageCancel` |
+| `Action Name`| `CloseModalPage_Cancel` |
 | `DismissModal` | `Canceled` |
 | `CancelPendingActions`| `true` |
 
-Click **Next** and then **Finish** on the Confirmation step.
+![MDK](img_000.1.png)
+
+Click **Next** and then **Finish** on the confirmation step.
 
 [DONE]
 [ACCORDION-END]
@@ -52,7 +54,7 @@ Click **Next** and then **Finish** on the Confirmation step.
 
 In this step, you will create the _Edit Customer Detail_ page as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
 
-Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
+Right-click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
 
 ![MDK](img_001.gif)
 
@@ -60,11 +62,15 @@ Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **
 
 >You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
-Enter the Page Name `EditCustomerDetails` and click **Next** and the **Finish** on the Confirmation step.
+In `Customers_Edit.page` , select the page header area and then click arrow sign to select **Page**.
+
+![MDK](img_002.1.png)
+
+Enter the Page Name `Customers_Edit` and click **Next** and the **Finish** on the Confirmation step.
 
 ![MDK](img_002.png)
 
-In the **Properties** pane, set the Caption to **Edit Customer**.
+In the **Properties** pane set the Caption to **Update Customer**.
 
 ![MDK](img_003.png)
 
@@ -129,18 +135,20 @@ Select the last Simple Property control and provide the below information:
 
 ![MDK](img_010.png)
 
+Save the changes to the `Customers_Edit.page`.
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add cancel button on the Edit Customer page)]
 
-Now, you will add a button on the Edit Customer page and set it's `onPress` to **Close Page-Cancel action** created in step 1.
+Now, you will add a button on the Edit Customer page and set it's `onPress` to `CloseModalPage_Cancel.action` created in step 1.
 
 Drag and drop an **Action Bar Item** to the upper left corner of the action bar.
 
->Action Bar Item is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (normally at the top of the page).
+>Action Bar Item is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
 
-![MDK](img_011.gif)
+![MDK](img_011.1.gif)
 
 In the Properties pane, click the **link icon** to open the object browser for the **System Item** property.
 
@@ -150,33 +158,34 @@ Double click on the **Cancel** type and click **OK**.
 
 >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
 
-Now, you will set `onPress` to **Close Page-Cancel action**.
+Now, you will set `onPress` to `CloseModalPage_Cancel.action`.
 
 In **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-Double click on the `ClosePageCancel` action and click **OK** to set it as the `OnPress` Action.
+Double click on the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
 
 ![MDK](img_015.gif)
 
-Save the changes to the `EditCustomerDetails` page.
+Save the changes to the `Customers_Edit.page`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create navigation action)]
 
-Now, create a navigation action that will open the _Edit Customer Detail page_ when executed.
+Now, create a navigation action that will open the `Customers_Edit.page` when executed.
 
-Right click on the **Actions** folder | **New MDK Action** | **Navigation Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
+
+![MDK](img_017.1.gif)
 
 Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name`| `ShowEditCustomerDetails` |
-| `Page To Open` | select `EditCustomerDetails.page` |
+| `Action Name`| `NavToCustomers_Edit` |
+| `Page To Open` | select `Customers_Edit.page` |
 | `ModalPage`| check this option |
-| `ModalPage Fullscreen`| check this option |
 
 ![MDK](img_016.png)
 
@@ -187,9 +196,9 @@ Click **Next** and then **Finish** on the confirmation step.
 
 [ACCORDION-BEGIN [Step 5: ](Add edit button to customer details page)]
 
-You will add a button to the _Customer Details page_ called **Edit**. You will link this button to the navigation action you just created. This event will open the _Edit Customer Details page_ when the Edit button is pressed by the end-user.
+You will add a button to the `Customers_Detail.page` called **Edit**. You will link this button to the navigation action you just created. This event will open the `Customers_Edit.page` when the Edit button is pressed by the end-user.
 
-In `CustomerDetail` page, drag and drop an **Action Bar Item** to the upper right of the action bar.
+In `Customers_Detail.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
 ![MDK](img_016_1.gif)
 
@@ -205,22 +214,22 @@ Double click on the **Edit** type and click **OK**.
 
 In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-Double Click on the `ShowEditCustomerDetails` action and click **OK** to set it as the `OnPress` Action.
+Double Click on the `NavToCustomers_Edit.action` and click **OK** to set it as the `OnPress` Action.
 
 ![MDK](img_019.gif)
 
-Save the changes to the `CustomerDetail` page.
+Save the changes to the `Customers_Detail.page`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Store the updated data locally)]
 
-The next step is to take the updates received and store them locally for an offline application or send the updates directly back to the backed for online applications. You will now create an update action to map the changes received from the Edit Customer Detail page to the corresponding field in the OData service. You will also show a failure message if the update action fails to save the changes.
+The next step is to store newly created record locally for an offline application or send the new record directly back to the backed for online applications. You will now create an action to map the changes received from the Edit Customer Detail page to the corresponding field in the OData service. You will also show a failure message if the update action fails to save the changes.
 
 First, define a failure message.
 
-Right click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
 ![MDK](img_020.png)
 
@@ -228,7 +237,7 @@ Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name`| `UpdateCustomerFailure` |
+| `Action Name`| `UpdateCustomerEntityFailureMessage` |
 | `Type` | select `Message` |
 | `Message` | `Failed to Save Customer Updates` |
 | `Title` | `Update Customer` |
@@ -239,7 +248,7 @@ Provide the below information:
 
 ![MDK](img_021.png)
 
-Click **Next** and then **Finish** on the Confirmation step.
+Click **Next** and then **Finish** on the confirmation step.
 
 Next, you will define **Close Page-Complete Action** which allows the end-user to close the page and allow any execution to continue. .
 
@@ -247,13 +256,15 @@ Next, you will define **Close Page-Complete Action** which allows the end-user t
 
 Create a **Close Page–Complete action**.
 
-Right click on the **Actions** folder | **New MDK Action** | **Close Page Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Close Page Action** | **Next**.
+
+![MDK](img_000.gif)
 
 Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name` | `ClosePageComplete` |
+| `Action Name` | `CloseModalPage_Complete` |
 | `DismissModal` | `Completed` |
 | `CancelPendingActions` | `false` |
 
@@ -265,7 +276,7 @@ Next, you will create the **OData Update action** to update entity action that w
 
 >You can find more details about [Update Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/20da3bdc0ced44858952f06fe63033d8.html).
 
-Right click on the **Actions** folder | **New MDK Action** | **OData Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
 ![MDK](img_023.png)
 
@@ -273,13 +284,13 @@ Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name`| `UpdateCustomer` |
+| `Action Name`| `Customers_UpdateEntity` |
 | `Type` | `UpdateEntity` |
 | `Service`| `SampleServiceV2` |
 | `EntitySet`| `Customers` |
-| `ReadLink`| `{@odata.readLink}` |
+| `ReadLink`| click on link icon and double click on `readLink` |
 
-![MDK](img_024.png)
+![MDK](img_024.gif)
 
 >The `readLink` is a direct reference to an individual entity set entry.
 
@@ -287,7 +298,7 @@ Click **Next**.
 
 In **Property and Update Links** step, uncheck **City**.
 
-Since in _Edit Customer Details page_, we defined four properties (First Name, Last Name, Phone & Email) to be edited, now in this step, we will bind them to respective UI Controls.
+Since in `Customers_Detail.page`, we defined four properties (First Name, Last Name, Phone & Email) to be edited, now in this step, we will bind them to respective UI Controls.
 
 Check the `EmailAddress` property and click the **link icon** to open the object browser.
 
@@ -301,26 +312,25 @@ Repeat the above step for remaining properties: `FirstName`, `LastName` and `Pho
 
 ![MDK](img_027.png)
 
-Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `UpdateCustomer` action loaded.
+Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `Customers_UpdateEntity.action` loaded.
 
-Next, define _Success_ and _Failure_ actions for `UpdateCustomer` action.
+Next, define _Success_ and _Failure_ actions for `Customers_UpdateEntity.action`.
 
-In the action editor for the new action, expand the **Common Action Properties** and select `ClosePageComplete` action for **Success Action** and `UpdateCustomerFailure` action for **Failure Action**.
+In the action editor for the new action, expand the **Common Action Properties** and select `CloseModalPage_Complete.action` for **Success Action** and `UpdateCustomerEntityFailureMessage.action` for **Failure Action**.
 
->When `UpdateCustomer` action gets executed successfully then `ClosePageComplete` action will be triggered or if `UpdateCustomer` action fails then `UpdateCustomerFailure` action will be triggered.
+>When `Customers_UpdateEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_UpdateEntity.action` fails then `UpdateCustomerEntityFailureMessage.action` will be triggered.
 
 ![MDK](img_028.png)
 
-Save the changes to the `UpdateCustomer` action.
+Save the changes to the `Customers_UpdateEntity.action`.
 
 Next, you will set the `OnPress` of the _Save_ button.
 
-Now that the Update action is created, you will need to call the Update action when the end-user presses the **Save** button. You will add a **Save** button on the `EditCustomerDetails.page` and link it to the `UpdateCustomer` action.
+Now that the Update action is created, you will need to call the Update action when the end-user presses the **Save** button. You will add a **Save** button on the `Customers_Edit.page` and link it to the `Customers_UpdateEntity.action`.
 
-In `EditCustomerDetails.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
+In `Customers_Edit.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
 ![MDK](img_029.png)
-
 
 In the Properties pane, set **Position** to **Right**.
 
@@ -332,68 +342,43 @@ Double click on the **Save** type and click **OK**.
 
 ![MDK](img_030.png)
 
-In the Properties pane | **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `UpdateCustomer` action.
+In the Properties pane | **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `Customers_UpdateEntity.action`.
 
 ![MDK](img_031.png)
 
-Save the changes to the `EditCustomerDetails` page.
+Save the changes to the `Customers_Edit.page`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy, activate and test the application)]
+[ACCORDION-BEGIN [Step 7: ](Deploy, activate the application)]
 
 Deploy the updated application to your MDK client.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
+Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
->Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
+![MDK](img_026.1.png)
 
-[OPTION BEGIN [iOS]]
+Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+![MDK](img_014.1.png)
 
-Click **Customer List**, you will navigate to Customer detail page. Click **Edit**.
+[DONE]
+[ACCORDION-END]
 
-![MDK](img_032.png)
+[ACCORDION-BEGIN [Step 8: ](Test the application)]
 
-For example, updating First Name from `Sebastien` to `Rob`. Click **Save**.
-
-![MDK](img_033.png)
-
-Local record gets updated accordingly.
-
-![MDK](img_034.png)
-
-You can cross verify if a record has been updated in the backend.
-
->Backend URL can be found in Mobile Services Cockpit.
-
->Mobile Applications | Native/Hybrid | Click on the MDK App | Sample Back End | click Root URL `v2`
-
-But here result is pointing to old First Name (`Sebastien`).
-
-![MDK](img_035.png)
-
-Since this is an Offline application, new entry is added to the request queue of the local store which needs to be sent or uploaded to the backend explicitly.  
-
->MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
-
-On Main page, click **Sync**, a successful message will be shown.
-
-![MDK](img_036.png)
-
-[OPTION END]
+>Make sure you are choosing the right device platform tab above.
 
 [OPTION BEGIN [Android]]
 
 Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
 
-Click **CUSTOMER LIST**, you will navigate to Customer detail page. Click edit icon.
+Tap **CUSTOMER LIST**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap edit icon.
 
 ![MDK](img_032.1.jpg)
 
-For example, updating First Name from `Sebastien` to `Rob`. Click save icon.
+For example, updating First Name from `Sebastien` to `Rob`. Tap save icon.
 
 ![MDK](img_033.1.jpg)
 
@@ -405,7 +390,7 @@ You can cross verify if a record has been updated in the backend.
 
 >Backend URL can be found in Mobile Services Cockpit.
 
->Mobile Applications | Native/Hybrid | Click on the MDK App | Sample Back End | click Root URL `v2` | append `/Customers`
+>Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 
 But here result is pointing to old First Name (`Sebastien`).
 
@@ -415,9 +400,45 @@ Since this is an Offline application, new entry is added to the request queue of
 
 >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-On Main page, click **SYNC**, a successful message will be shown.
+On Main page, tap **SYNC**, a successful message will be shown.
 
 ![MDK](img_036.1.jpg)
+
+[OPTION END]
+
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+
+Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap **Edit**..
+
+![MDK](img_032.png)
+
+For example, updating First Name from `Sebastien` to `Rob`. Tap **Save**.
+
+![MDK](img_033.png)
+
+Local record gets updated accordingly.
+
+![MDK](img_034.png)
+
+You can cross verify if a record has been updated in the backend.
+
+>Backend URL can be found in Mobile Services Cockpit.
+
+>Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
+
+But here result is pointing to old First Name (`Sebastien`).
+
+![MDK](img_035.png)
+
+Since this is an Offline application, new entry is added to the request queue of the local store which needs to be sent or uploaded to the backend explicitly.  
+
+>MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
+
+On Main page, tap **Sync**, a successful message will be shown.
+
+![MDK](img_036.png)
 
 [OPTION END]
 
