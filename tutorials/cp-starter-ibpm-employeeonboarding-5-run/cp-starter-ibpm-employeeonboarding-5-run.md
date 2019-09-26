@@ -2,7 +2,7 @@
 title: Run the Employee Onboarding Sample Scenario
 description: Now that all the components of your workflow are set up and the business rules are integrated, run your workflow.
 auto_validation: true
-time: 15
+time: 20
 tags: [ tutorial>beginner, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform
 ---

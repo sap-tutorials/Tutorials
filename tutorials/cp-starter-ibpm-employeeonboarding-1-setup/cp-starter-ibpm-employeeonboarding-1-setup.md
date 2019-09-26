@@ -2,7 +2,7 @@
 title: Set Up Business Process Management Services in Cloud Cockpit
 description: Set up workflow, business rules and process visibility services in cloud cockpit.
 auto_validation: true
-time: 15
+time: 20
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
 ---

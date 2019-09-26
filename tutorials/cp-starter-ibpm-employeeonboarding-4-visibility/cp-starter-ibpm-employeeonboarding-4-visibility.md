@@ -2,7 +2,7 @@
 title: Set Up Process Visibility to Track Employee Onboarding Workflow
 description: Create and configure a business scenario to get end-to-end operational visibility into employee onboarding process by tracking the workflow in real time, filtering instances, analyzing performance indicators, and viewing detailed information about ongoing onboardings.
 auto_validation: true
-time: 10
+time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
 ---
