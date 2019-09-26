@@ -1,5 +1,5 @@
 ---
-title: Prepare the Portal Environment for Creating Sites (Cloud Foundry)
+title: Prepare the Portal Environment for Creating Sites
 description: To get started with building a Portal site, administrators must perform the required onboarding steps.
 auto_validation: true
 time: 5
