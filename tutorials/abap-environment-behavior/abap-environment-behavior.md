@@ -13,7 +13,7 @@ author_profile: https://github.com/mervey45
 - You have created an SAP Cloud Platform ABAP environment trial user or
 - You have created a developer user in an SAP Cloud Platform ABAP Environment system.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
- 
+
 ## Details
 ### You will learn  
   - How to create behavior definition
@@ -67,9 +67,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   5. Save and activate.
 
+      ![save and activate](activate.png)
+
     Now the **behavior definition** is created and determines the create, update and delete functionality for travel booking.
 
-
+  
 [DONE]
 [ACCORDION-END]
 
@@ -131,6 +133,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   6. Save and activate.
 
+      ![save and activate](activate.png)
+
      The **behavior** implementation is created for travel booking. By using the managed approach, the implementation of create, update and delete is done automatically.
 
 [DONE]
@@ -170,6 +174,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   5. Save and activate.
+
+      ![save and activate](activate.png)
 
   6. Now switch to your service binding and double click on `TravelProcessor`.
 
