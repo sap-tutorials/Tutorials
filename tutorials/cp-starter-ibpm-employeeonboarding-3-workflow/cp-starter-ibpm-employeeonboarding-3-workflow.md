@@ -73,7 +73,7 @@ An MTA model is a platform-independent description of the different modules, the
 
 [ACCORDION-BEGIN [Step 3: ](Integrate business rules)]
 
-Now, you will see how easy it is to integrate the business rules with your sample workflow. These business rules will give the list of equipment needed for the new hire. You have already imported and deployed these rules in previous chapter.
+Now, you will see how easy it is to integrate the business rules with your sample workflow. These business rules you have already imported and deployed in previous chapter. It will give the list of equipment needed for the new hire.
 
 1. In `onboard` workflow, select the `Determine Equipment` task and in the **Script Task Properties** change the name to `Prepare Rules Input`.
 
@@ -82,6 +82,8 @@ Now, you will see how easy it is to integrate the business rules with your sampl
     ![Integrate Rule](integrateRule_1.png)
 
 3. Replace the code with the following one, then **Save** the file:
+
+    > This script is preparing the input payload to call the business rules invocation API. If you want to know more about different SAP Cloud Platform Business Rules APIs, visit [here](https://api.sap.com/package/SAPCPBusinessRulesAPIs?section=Artifacts).
 
     ```JavaScript
       var empJob = $.context.empData.d.results[0].empInfo.jobInfoNav.results[0];
@@ -120,7 +122,7 @@ Now, you will see how easy it is to integrate the business rules with your sampl
 
     ![Integrate Rule](integrateRule_2.png)
 
-5. On the **General** tab of the **Service Task Properties**, enter `**Determine Equipment**` in the **Name** field.
+5. On the **General** tab of the **Service Task Properties**, enter `Determine Equipment` in the **Name** field.
 
 6. On the **Details** tab of the **Service Task Properties**, enter the following data, then **Save** your changes:
 

@@ -20,6 +20,8 @@ In this sample content, you will learn how to author and manage rules to identif
 
 [ACCORDION-BEGIN [Step 2: ](Configure a system)]
 
+To import the business rules project from API Business Hub, you need to configure a system which points API Hub destination and then use this system to import the project.
+
 1. In your web browser, open the business rules editor.
 
     >You should have gotten the business rules editor link in the last step of the setup tutorial. The link should be like this:
@@ -49,7 +51,7 @@ In this sample content, you will learn how to author and manage rules to identif
 
 [ACCORDION-BEGIN [Step 3: ](Import business rules)]
 
-1. Click **Import Project from API Business API Hub**.
+1. Click on **Design** icon and select **Import Project from API Business API Hub**.
 
     ![Import Business Rules](ImportAPIHub.png)
 
@@ -86,6 +88,8 @@ In this sample content, you will learn how to author and manage rules to identif
     ![Deploy Business Rules](deploy-ruleservice_3.png)
 
 5. Wait for the deployment to complete. You will get a popup message once the deployment is successful.
+
+> Only deployed business rules can be consumed via APIs published in API Business Hub.
 
 [VALIDATE_6]
 [ACCORDION-END]
