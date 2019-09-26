@@ -93,7 +93,7 @@ Expand the **Common Action Properties** and select `EmailValidation.js` rule for
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy, activate the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 

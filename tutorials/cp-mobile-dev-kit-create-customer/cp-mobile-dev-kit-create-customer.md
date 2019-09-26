@@ -22,9 +22,9 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Create new page for new customer record)]
 
-Make sure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
+Ensure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
 
-In this step, you will create the _Create Customer_ page as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
+In this step, you will create the `Customers_Create.page` as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
 
 Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
 
@@ -34,11 +34,15 @@ Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **
 
 >You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
-Enter the Page Name `CreateCustomer` and click **Next** and the **Finish** on the Confirmation step.
+Enter the Page Name `Customers_Create` and click **Next** and the **Finish** on the Confirmation step.
 
 ![MDK](img_002.png)
 
-In the Properties pane, set the **Caption** to **Create Customer**.
+In `Customers_Create.page` , select the page header area and then click **Page**.
+
+![MDK](img_002.1.png)
+
+In the **Properties** pane, set the **Caption** to **Create Customer**.
 
 ![MDK](img_003.png)
 
@@ -63,8 +67,9 @@ Select the first **Simple Property control** and provide the below information:
 | `Name`| `FCCreateFirstName` |
 | `Caption` | `First Name` |
 | `isEditable`| `true` |
+| `PlaceHolder`| `Enter Value` |
 
-![MDK](img_006.gif)
+![MDK](img_006.1.png)
 
 Select the second **Simple Property control** and provide the below information:
 
@@ -73,6 +78,7 @@ Select the second **Simple Property control** and provide the below information:
 | `Name`| `FCCreateLastName` |
 | `Caption` | `Last Name` |
 | `isEditable`| `true` |
+| `PlaceHolder`| `Enter Value` |
 
 ![MDK](img_008.png)
 
@@ -83,6 +89,7 @@ Select the third **Simple Property control** and provide the below information:
 | `Name`| `FCCreatePhone` |
 | `Caption` | `Phone` |
 | `isEditable`| `true` |
+| `PlaceHolder`| `Enter Value` |
 
 ![MDK](img_009.png)
 
@@ -93,6 +100,7 @@ Select the last **Simple Property control** and provide the below information:
 | `Name`| `FCCreateEmail` |
 | `Caption` | `Email` |
 | `isEditable`| `true` |
+| `PlaceHolder`| `Enter Value` |
 
 ![MDK](img_010.png)
 
@@ -107,18 +115,18 @@ Provide the below information:
 | `Name`| `FCCreateDOB` |
 | `Caption` | `DOB` |
 
-Save the changes to the `CreateCustomer` page.
+Save the changes to the `Customers_Create.page`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add cancel button on create customer page)]
 
-Now, you will add a button on the Create Customer page and set it's `onPress` to **Close Page-Cancel action**.
+Now, you will add a button on the Create Customer page and set it's `onPress` to `CloseModalPage_Cancel.action`.
 
 Drag and drop an **Action Bar Item** to the upper left corner of the action bar.
 
->Action Bar Item is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (normally at the top of the page).
+>Action Bar Item is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
 
 ![MDK](img_011.gif)
 
@@ -126,37 +134,36 @@ In the **Properties** pane, click the **link icon** to open the object browser f
 
 Double click on the **Cancel** type and click **OK**.
 
-![MDK](img_013.gif)
+![MDK](img_013.1.png)
 
 >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
 
-Now, you will set `onPress` to **Close Page-Cancel action**.
+Now, you will set `onPress` to `CloseModalPage_Cancel.action`.
 
 In **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-Double click on the `ClosePageCancel` action and click **OK** to set it as the `OnPress` Action.
+Double click on the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
 
 ![MDK](img_015.gif)
 
-Save the changes to the `CreateCustomer` page.
+Save the changes to the `Customers_Create.page`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create navigation action)]
 
-Now, create a navigation action that will open the _Create Customer page_ when executed.
+Now, create a navigation action that will open the `Customers_Create.page` when executed.
 
-Right click on the **Actions** folder | **New MDK Action** | **Navigation Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
 Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name`| `ShowCreateCustomer` |
-| `Page To Open` | select `CreateCustomer.page` |
+| `Action Name`| `NavToCustomers_Create` |
+| `Page To Open` | select `Customers_Create.page` |
 | `ModalPage`| check this option |
-| `ModalPage Fullscreen`| check this option |
 
 ![MDK](img_016.png)
 
@@ -167,9 +174,9 @@ Click **Next** and then **Finish** on the confirmation step.
 
 [ACCORDION-BEGIN [Step 4: ](Add create button to customer list page)]
 
-You will add a button to the _Customer list page_ called **Add**. You will link this button to the navigation action you just created. This event will open the _Create Customer page_ when the Add button is pressed by the end-user.
+You will add a button to the `Customers_List.page` called **Add**. You will link this button to the navigation action you just created. This event will open the `NavToCustomers_Create.action` when the Add button is pressed by the end-user.
 
-In `CustomerList` page, drag and drop an **Action Bar Item** to the upper right of the action bar.
+In `Customers_List.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
 ![MDK](img_016_1.gif)
 
@@ -177,7 +184,7 @@ In the Properties pane, set **Position** to **Right**.
 
 ![MDK](img_016_2.png)
 
-Click the **link icon** to open the object browser for the System Item property.
+Click the **link icon** to open the object browser for the `SystemItem` property.
 
 Double click on the **Add** type and click **OK**.
 
@@ -185,22 +192,22 @@ Double click on the **Add** type and click **OK**.
 
 In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-Double Click on the `ShowCreateCustomer` action and click **OK** to set it as the `OnPress` Action.
+Double Click on the `NavToCustomers_Create.action` action and click **OK** to set it as the `OnPress` Action.
 
 ![MDK](img_019.gif)
 
-Save the changes to the `CustomerList` page.
+Save the changes to the `Customers_List.page`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Store the created data locally)]
 
-The next step is to store newly created record locally for an offline application or send the new record directly back to the backed for online applications. You will now create an action to map the changes received from the Create Customer page to the corresponding field in the OData service. You will also show a failure message if the create action fails to save the changes.
+The next step is to store newly created record locally for an offline application or send the new record directly back to the backed for online applications. You will now create an action to map the changes received from the `Customers_Create.page` to the corresponding field in the OData service. You will also show a failure message if the create action fails to save the changes.
 
 First, define a failure message.
 
-Right click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
 ![MDK](img_020.png)
 
@@ -208,7 +215,7 @@ Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name`| `CreateCustomerFailure` |
+| `Action Name`| `CreateCustomerEntityFailureMessage` |
 | `Type` | select `Message` |
 | `Message` | `Failed to Create Customer record` |
 | `Title` | `Create Customer` |
@@ -225,7 +232,7 @@ Next, you will create the **OData Create action** to update entity action that w
 
 >You can find more details about [Create Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/9cafb37ca8ad49e6930dba857352a3e6.html).
 
-Right click on the **Actions** folder | **New MDK Action** | **OData Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
 ![MDK](img_023.png)
 
@@ -233,7 +240,7 @@ Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Action Name`| `CreateCustomer` |
+| `Action Name`| `Customers_CreateEntity` |
 | `Type` | `CreateEntity` |
 | `Service`| `SampleServiceV2` |
 | `EntitySet` | `Customers` |
@@ -244,7 +251,7 @@ Click **Next**.
 
 In **Property and Create Links** step, uncheck **City**.
 
-Since in _Create Customer page_, we defined five properties (First Name, Last Name, Phone, Email & date of birth) to be added, now in this step, we will bind them to respective UI Controls.
+Since in `Customer_Create.page`, we defined five properties (First Name, Last Name, Phone, Email & date of birth) to be added, now in this step, we will bind them to respective UI Controls.
 
 Check the `DateOfBirth` property and click the **link icon** to open the object browser.
 
@@ -260,23 +267,28 @@ Repeat the above step for remaining properties: `EmailAddress`, `FirstName`, `La
 
 ![MDK](img_027.1.png)
 
-Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `CreateCustomer` action loaded.
+Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `Customers_CreateEntity.action` loaded.
 
-Next, define _Success_ and _Failure_ actions for `CreateCustomer` action.
+Next, define _Success_ and _Failure_ actions for `Customers_CreateEntity.action`.
 
-In the action editor for the new action, expand the **Common Action Properties** and select `ClosePageComplete` action for **Success Action** and `CreateCustomerFailure` action for **Failure Action**.
+In the action editor for the new action, expand the **Common Action Properties** and provide the below information:
 
->When `CreateCustomer` action gets executed successfully then `ClosePageComplete` action will be triggered or if `CreateCustomer` action fails then `CreateCustomerFailure` action will be triggered.
+| Property | Value |
+|----|----|
+| `Success Action` | `CloseModalPage_Complete.action` |
+| `Failure Action` | `CreateCustomerEntityFailureMessage.action` |
+
+>When `Customers_CreateEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_CreateEntity.action` fails then `CreateCustomerEntityFailureMessage.action` will be triggered.
 
 ![MDK](img_028.png)
 
-Save the changes to the `CreateCustomer` action.
+Save the changes to the `Customers_CreateEntity.action`.
 
 Next, you will set the `OnPress` of the _Save_ button.
 
-Now that the Create action is created, you will need to call the Create action when the end-user presses the **Save** button. You will add a **Save** button on the `CreateCustomer.page` and link it to the `CreateCustomer` action.
+Now that the Create action is created, you will need to call the Create action when the end-user presses the **Save** button. You will add a **Save** button on the `Customers_Create.page` and link it to the `Customers_CreateEntity.action`.
 
-In `CreateCustomer.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
+In `Customers_Create.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
 ![MDK](img_029.png)
 
@@ -290,58 +302,43 @@ Double click on the **Save** type and click **OK**.
 
 ![MDK](img_030.png)
 
-In the Properties pane | **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `CreateCustomer` action.
+In the Properties pane | **Events** tab, click the **link** icon for the `OnPress` property to open the object browser, bind it to `Customers_CreateEntity.action`.
 
 ![MDK](img_031.png)
 
-Save the changes to the `CreateCustomer` page.
+Save the changes to the `Customers_Create.page`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deploy, activate and test the application)]
+[ACCORDION-BEGIN [Step 6: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
+Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
->Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
+![MDK](img_026.1.png)
 
-[OPTION BEGIN [iOS]]
+Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+![MDK](img_014.1.png)
 
-Click **Customer List**, click **+** icon to create a new record.
+[DONE]
+[ACCORDION-END]
 
-![MDK](img_032.png)
+[ACCORDION-BEGIN [Step 7: ](Test the application)]
 
-Enter the values, and click **Save**.
-
-![MDK](img_033.png)
-
-Local record gets created accordingly.
-
-![MDK](img_034.png)
-
-Since this is an Offline application, new entry is added to the request queue of the local store which needs to be sent or uploaded to the backend explicitly.  
-
->MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
-
-On Main page, click **Sync**, a successful message will be shown.
-
-![MDK](img_036.png)
-
-[OPTION END]
+>Make sure you are choosing the right device platform tab above.
 
 [OPTION BEGIN [Android]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
 
-Click **Customer List**, click **+** icon to create a new record.
+Tap **CUSTOMER LIST**, click **+** icon to create a new record.
 
 ![MDK](img_032.1.jpg)
 
-Enter the values, and click save icon.
+Enter the values, and tap save icon.
 
 ![MDK](img_033.1.jpg)
 
@@ -353,9 +350,35 @@ Since this is an Offline application, new entry is added to the request queue of
 
 >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-On Main page, click **SYNC**, a successful message will be shown.
+On Main page, tap **SYNC**, a successful message will be shown.
 
 ![MDK](img_035.1.jpg)
+
+[OPTION END]
+
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+
+Tap **Customer List**, click **+** icon to create a new record.
+
+![MDK](img_032.png)
+
+Enter the values, and tap **Save**.
+
+![MDK](img_033.png)
+
+Local record gets created accordingly.
+
+![MDK](img_034.png)
+
+Since this is an Offline application, new entry is added to the request queue of the local store which needs to be sent or uploaded to the backend explicitly.  
+
+>MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
+
+On Main page, tap **Sync**, a successful message will be shown.
+
+![MDK](img_036.png)
 
 [OPTION END]
 
@@ -363,7 +386,7 @@ You can cross verify if a record has been updated in the backend.
 
 >Backend URL can be found in Mobile Services Cockpit.
 
->Mobile Applications | Native/Hybrid | Click on the MDK App | Sample Back End | click Root URL `v2` | append `/Customers`
+>Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 
 ![MDK](img_037.png)
 

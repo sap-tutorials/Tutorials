@@ -25,7 +25,7 @@ For online applications, the changes are saved to the backend immediately.
 
 For offline applications, the changes are stored locally until they are synced using an Upload action.
 
-First you will create a `CloseModalPage_Cancel.action` that closes the current page and cancels or interrupts any execution in process. This will be used with the cancel button on the **Edit Customer page**.
+First, you will create a `CloseModalPage_Cancel.action` that closes the current page and cancels or interrupts any execution in process. This will be used with the cancel button on the **Edit Customer page**.
 
 >You can close pages with the option to terminate ongoing events or wait until they are complete.
 
@@ -62,13 +62,13 @@ Right-click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **
 
 >You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
-In `Customers_Edit.page` , select the page header area and then click arrow sign to select **Page**.
-
-![MDK](img_002.1.png)
-
 Enter the Page Name `Customers_Edit` and click **Next** and the **Finish** on the Confirmation step.
 
 ![MDK](img_002.png)
+
+In `Customers_Edit.page` , select the page header area and then click **Page**.
+
+![MDK](img_002.1.png)
 
 In the **Properties** pane set the Caption to **Update Customer**.
 
@@ -225,7 +225,7 @@ Save the changes to the `Customers_Detail.page`.
 
 [ACCORDION-BEGIN [Step 6: ](Store the updated data locally)]
 
-The next step is to store newly created record locally for an offline application or send the new record directly back to the backed for online applications. You will now create an action to map the changes received from the Edit Customer Detail page to the corresponding field in the OData service. You will also show a failure message if the update action fails to save the changes.
+The next step is to store newly updated record locally for an offline application or send the updated record directly back to the backed for online applications. You will now create an action to map the changes received from the `Customers_Edit.page` to the corresponding field in the OData service. You will also show a failure message if the update action fails to save the changes.
 
 First, define a failure message.
 
@@ -250,7 +250,7 @@ Provide the below information:
 
 Click **Next** and then **Finish** on the confirmation step.
 
-Next, you will define **Close Page-Complete Action** which allows the end-user to close the page and allow any execution to continue. .
+Next, you will define **Close Page-Complete Action** which allows the end-user to close the page and allow any execution to continue.
 
 >You can close pages with the option to terminate ongoing events or wait until they are complete.
 
@@ -316,7 +316,12 @@ Click **Next** and **Finish** on the confirmation screen. The action editor will
 
 Next, define _Success_ and _Failure_ actions for `Customers_UpdateEntity.action`.
 
-In the action editor for the new action, expand the **Common Action Properties** and select `CloseModalPage_Complete.action` for **Success Action** and `UpdateCustomerEntityFailureMessage.action` for **Failure Action**.
+In the action editor for the new action, expand the **Common Action Properties** and provide the below information:
+
+| Property | Value |
+|----|----|
+| `Success Action` | `CloseModalPage_Complete.action` |
+| `Failure Action` | `UpdateCustomerEntityFailureMessage.action` |
 
 >When `Customers_UpdateEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_UpdateEntity.action` fails then `UpdateCustomerEntityFailureMessage.action` will be triggered.
 
@@ -351,7 +356,7 @@ Save the changes to the `Customers_Edit.page`.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy, activate the application)]
+[ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 
@@ -372,7 +377,7 @@ Since we have deployed already both the destination and app id should be pre-sel
 
 [OPTION BEGIN [Android]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
 
 Tap **CUSTOMER LIST**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap edit icon.
 
@@ -408,7 +413,7 @@ On Main page, tap **SYNC**, a successful message will be shown.
 
 [OPTION BEGIN [iOS]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
 
 Tap **Customer List**, tap one of the available customer record,  you will then navigate to Customer detail page. Tap **Edit**..
 

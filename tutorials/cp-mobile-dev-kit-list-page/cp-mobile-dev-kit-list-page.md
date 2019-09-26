@@ -44,7 +44,7 @@ Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** o
 
 ![MDK](img_002.png)
 
-In `Customers_List` page, select the page header area and then click arrow sign to select **Page**.
+In `Customers_List` page, select the page header area and then click **Page**.
 
 ![MDK](img_002.1.png)
 
@@ -160,7 +160,7 @@ Save the changes to the `Main_page`.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy, activate the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 
