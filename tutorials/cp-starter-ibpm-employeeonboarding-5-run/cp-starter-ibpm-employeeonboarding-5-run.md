@@ -20,7 +20,9 @@ primary_tag: products>sap-cloud-platform
 
 2. In the SAP Fiori launchpad, open the **Event Acquisition** application.
 
-    >You would have got the launchpad link in Step 9 of the setup tutorial. The link would be like:  `https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
+    >You would have gotten the launchpad link in the last step of the setup tutorial. The link would be like:  
+
+    > `https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
 
     ![Import Events](eventaquisition_1.png)
 
