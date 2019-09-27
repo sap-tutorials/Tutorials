@@ -10,7 +10,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 ## Prerequisites
  - [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
  - You have logged in to your SAP Cloud Platform trial account.
- - You have created a subaccount and an associated space.
+ - You have created a subaccount and an associated space. Please note that if you create a trial account for the first time, a subaccount, organization and space will be created by default.
 
 ## Details
 ### You will learn
@@ -98,7 +98,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
     ![Access tenant URL](5.4.access-tenant-url.png)
 
-    >**IMPORTANT:** Please wait for the provisioning process to complete before you proceed to the next step. The service instance and key creation will only work after your tenant has been provisioned. 
+    >**IMPORTANT:** Please wait for the provisioning process to complete before you proceed to the next step. The service instance and key creation will only work after your tenant has been provisioned.
 
     Click on the URL to launch the SAP Cloud Platform Integration application. You can now create integration packages and integration flows.
 
@@ -109,7 +109,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create service instance and key)]
-1. Access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
+1. Navigate back to your SAP Cloud Platform's subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
 
     ![Access space](4.1.access-space.png)
 
@@ -117,7 +117,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
     ![Access PI Runtime](4.2.access-process-integration-runtime.png)
 
-    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan and choose **Add 1 Service Plan**.
+    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
 
 3. Select **Instances** > **New Instance**.
 
