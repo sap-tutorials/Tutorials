@@ -98,6 +98,8 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
     ![Access tenant URL](5.4.access-tenant-url.png)
 
+    >**IMPORTANT:** Please wait for the provisioning process to complete before you proceed to the next step. The service instance and key creation will only work after your tenant has been provisioned. 
+
     Click on the URL to launch the SAP Cloud Platform Integration application. You can now create integration packages and integration flows.
 
     Please bookmark or save this URL. This will be the URL for your SAP Cloud Platform Integration application.
