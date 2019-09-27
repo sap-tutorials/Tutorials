@@ -175,7 +175,15 @@ You will use this endpoint in the Postman client to test your integration flow.
 
     ![Provide Authorization details](8.2.provide-auth-details.png)
 
-3. Select the **Body** tab and choose **raw** radio button. In the form below, enter **`{"productIdentifier": "HT-2000"}`** and choose **Send**. This is the ID of the product that you are requesting from the web shop.
+3. Select the **Body** tab and choose **raw** radio button. In the form below, enter
+
+    ```JSON
+    {
+      "productIdentifier": "HT-2000"
+    }
+    ```
+
+    Choose **Send**. This is the ID of the product that you are requesting from the web shop.
 
     >**TIP:** If you would like to query a different product, access <https://espmrefapps.hana.ondemand.com/espm-cloud-web/webshop/> and select a product of your choice. Copy its **Product ID** and use that ID in the Postman request.
 
