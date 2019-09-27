@@ -45,7 +45,7 @@ time: 5
 
 4. Change the **Category** to **Business Process Management**, and then select the **Workflow Project** template.
 
-    ![Change Category](select-category.png)
+    ![Change Category](select-category1.png)
 
 5. Choose **Next**.
 

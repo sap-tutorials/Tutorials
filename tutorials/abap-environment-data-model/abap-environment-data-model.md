@@ -107,7 +107,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      Your CDS view for travel booking is defined now. You can use and manipulate data that is persisted in your database.
 
-[DONE] 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create projection view for travel)]
@@ -301,7 +301,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. Double-click on `TravelProcessor` to see the application on the UI.
 
       ![Create service binding](binding5.png)
-
+ 
   6. Logon to your ABAP system.
 
       ![Create service binding](binding6.png)
