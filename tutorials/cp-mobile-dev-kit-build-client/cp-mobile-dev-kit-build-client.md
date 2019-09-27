@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Download the latest version of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://www.sap.com/developer/trials-downloads/additional-downloads/mobile-development-kit-client-14516.html) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
+- **Download the latest version of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
 
 ## Details
 ### You will learn
@@ -22,6 +22,8 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Run MDK Dependencies Installer)]
+
+>Make sure you are choosing the right development platform tab above.
 
 Make sure that you have download latest version of MDK SDK as described in Prerequisites.
 
@@ -82,6 +84,8 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [ACCORDION-BEGIN [Step 2: ](Installing the SDK dependencies)]
 
+>Make sure you are choosing the right development platform tab above.
+
 [OPTION BEGIN [Mac]]
 
 To use the SDK to generate a mobile development kit client, the first step is to install some dependencies. Unzip `MDKClient_SDK.zip` if it is not already extracted.
@@ -122,6 +126,8 @@ Once this completes, close the window. Notice that the `create-client.cmd` file 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create your .mdkproject folder)]
+
+>Make sure you are choosing the right development platform tab above.
 
 [OPTION BEGIN [Mac]]
 
@@ -171,15 +177,19 @@ Now open the `BrandedSettings.json` file and update it with information from you
 
 ![MDK](img_012.png)
 
-To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#00512449-638b-4de6-aa68-87609545f186) and find your MDK application that you want to link to this client.  Click on **Security** from the MDK app main page, then click on the OAuth client link.
+To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#08a4320f-424c-4f94-8de0-d9a7be8378d5) and find your MDK application that you want to link to this client.
+
+Click on `com.sap.mdk.demo` > **Security** tab.
+
+Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
 ![MDK](img_013.png)
 
-`AppId`: App ID from App info page.
+`AppId`: App ID from `Info` tab.
 
 ![MDK](img_014.png)
 
-`SapCloudPlatformEndpoint`: Server URL from App API page.
+`SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
 
 ![MDK](img_015.png)
 
@@ -210,6 +220,8 @@ In the last section of `BrandedSettings.json` file, make these changes:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the MDK Client)]
+
+>Make sure you are choosing the right development platform tab above.
 
 [OPTION BEGIN [Mac]]
 
@@ -262,59 +274,7 @@ Once the `create-client.cmd` script executed successfully, you will see **Applic
 
 [ACCORDION-BEGIN [Step 5: ](Run the MDK Client)]
 
-[OPTION BEGIN [iOS]]
-
-In this step, you will run the app on an iOS device. Attach the device to your Mac and run `tns device ios` command to print a list of attached devices.
-
-![MDK](img_020.1.png)
-
-Copy the **Device Identifier** value for your device.
-
-In terminal window, navigate to the app name folder **Demo Sample App** (in `MDClient_SDK` path) and use `tns run ios --device <device identifier>` command to run the MDK client on iOS device.
-
-![MDK](img_020.2.png)
-
-You can also run the app in Xcode. Open the project in Xcode with the command `open platforms/ios/<app name>.xcworkspace`, or open the workspace using the `File -> Open...` dialog in Xcode. Configure the application's code signing settings, then run the application for the target device.
-
->To run the MDK client on iOS simulator, use `tns run ios --emulator` command.
-
-Once, above command gets successfully executed, you will see new MDK client up and running in your device.
-
-![MDK](img_022.png)
-
-Here, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
-
-Click **Start** to connect MDK client to SAP Cloud Platform.
-
-Enter your SAP Cloud Platform credentials and click **Log On** to authenticate.
-
-![MDK](img_023.png)
-
-**Agree** on `End User License Agreement`.
-
-![MDK](img_024.png)
-
-Choose a passcode with at least 8 characters for unlocking the app and click **Next**.
-
-![MDK](img_025.png)
-
-Confirm the passcode and click **Done**.
-
-![MDK](img_026.png)
-
-Optionally, you can enable Touch ID to get faster access to the app data, click **Enable**.
-
-![MDK](img_026.1.png)
-
-Since there is no app metadata deployed yet to Mobile Services, hence you will see an empty screen.
-
-![MDK](img_027.png)
-
->You can always interrupt running process in terminal window by pressing `control + C`.
-
->To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
-
-[OPTION END]
+>Make sure you are choosing the right device platform tab above.
 
 [OPTION BEGIN [Android]]
 
@@ -338,21 +298,21 @@ Once, above command gets successfully executed, you will see new MDK client up a
 
 Here, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
 
-Click **START** to connect MDK client to SAP Cloud Platform.
+Tap **START** to connect MDK client to SAP Cloud Platform.
 
-Enter your SAP Cloud Platform credentials and click **Log On** to authenticate.
+Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-![MDK](img_030.jpg)
+![MDK](img_030.1.1.png)
 
-**AGREE** on `End User License Agreement`.
+Tap **AGREE** on `End User License Agreement`.
 
 ![MDK](img_031.jpg)
 
-Choose a passcode with at least 8 characters for unlocking the app and click **NEXT**.
+Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
 ![MDK](img_032.jpg)
 
-Confirm the passcode and click **DONE**.
+Confirm the passcode and tap **DONE**.
 
 ![MDK](img_033.jpg)
 
@@ -367,6 +327,60 @@ Since there is no app metadata deployed yet to Mobile Services, hence you will s
 >You can always interrupt running process in terminal window by pressing `control + C`.
 
 >To build an **`APK` for an Android device**, use `tns build android --release`. More information about archiving can be found in `NativeScript` documentation [here](https://docs.nativescript.org/tooling/docs-cli/project/testing/build-android).
+
+[OPTION END]
+
+[OPTION BEGIN [iOS]]
+
+In this step, you will run the app on an iOS device. Attach the device to your Mac and run `tns device ios` command to print a list of attached devices.
+
+![MDK](img_020.1.png)
+
+Copy the **Device Identifier** value for your device.
+
+In terminal window, navigate to the app name folder **Demo Sample App** (in `MDClient_SDK` path) and use `tns run ios --device <device identifier>` command to run the MDK client on iOS device.
+
+![MDK](img_020.2.png)
+
+You can also run the app in Xcode. Open the project in Xcode with the command `open platforms/ios/<app name>.xcworkspace`, or open the workspace using the `File -> Open...` dialog in Xcode. Configure the application's code signing settings, then run the application for the target device.
+
+>To run the MDK client on iOS simulator, use `tns run ios --emulator` command.
+
+Once, above command gets successfully executed, you will see new MDK client up and running in your device.
+
+![MDK](img_022.png)
+
+Here, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
+
+Tap **Start** to connect MDK client to SAP Cloud Platform.
+
+Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+
+![MDK](img_023.1.1.png)
+
+Tap **Agree** on `End User License Agreement`.
+
+![MDK](img_024.png)
+
+Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+
+![MDK](img_025.png)
+
+Confirm the passcode and tap **Done**.
+
+![MDK](img_026.png)
+
+Optionally, you can enable Touch ID to get faster access to the app data, tap **Enable**.
+
+![MDK](img_026.1.png)
+
+Since there is no app metadata deployed yet to Mobile Services, hence you will see an empty screen.
+
+![MDK](img_027.png)
+
+>You can always interrupt running process in terminal window by pressing `control + C`.
+
+>To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
 
 [OPTION END]
 
