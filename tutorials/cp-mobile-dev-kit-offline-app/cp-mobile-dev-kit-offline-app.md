@@ -184,11 +184,11 @@ Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
 ![MDK](img_016.1.jpg)
 
-Enter your SAP Cloud Platform credentials and tap **Log On** to authenticate.
+Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
 ![MDK](img_017.1.png)
 
-**AGREE** on `End User License Agreement`.
+Tap **AGREE** on `End User License Agreement`.
 
 ![MDK](img_018.1.jpg)
 
@@ -232,7 +232,7 @@ Enter Email address and password to login to SAP Cloud Platform and tap **Log On
 
 ![MDK](img_029.png)
 
-**Agree** on `End User License Agreement`.
+Tap **Agree** on `End User License Agreement`.
 
 ![MDK](img_018.png)
 
