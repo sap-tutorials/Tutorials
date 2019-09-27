@@ -182,7 +182,7 @@ You will use this endpoint in the Postman client to test your integration flow.
       "productIdentifier": "HT-2000"
     }
     ```
-
+    
     Choose **Send**. This is the ID of the product that you are requesting from the web shop.
 
     >**TIP:** If you would like to query a different product, access <https://espmrefapps.hana.ondemand.com/espm-cloud-web/webshop/> and select a product of your choice. Copy its **Product ID** and use that ID in the Postman request.
