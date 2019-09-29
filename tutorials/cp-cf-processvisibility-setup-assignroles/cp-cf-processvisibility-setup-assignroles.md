@@ -93,7 +93,6 @@ In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`
 
     ![Assign Role Collection](Assign-Role-Collection-18.png)
 
-Keep editing the role assignments according to your requirements.
 
 [VALIDATE_1]
 [ACCORDION-END]
