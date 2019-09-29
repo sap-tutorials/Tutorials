@@ -290,7 +290,7 @@ In terminal or command line window, navigate to the app name folder **Demo Sampl
 
 ![MDK](img_020.4.png)
 
->To run the MDK client on iOS simulator, use `tns run android --emulator` command. Make sure that you have created a virtual device in Android Studio prior to running this command.
+>To run the MDK client on Android simulator, use `tns run android --emulator` command. Make sure that you have created a virtual device in Android Studio prior to running this command.
 
 Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
