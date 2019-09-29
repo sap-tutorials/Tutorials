@@ -33,7 +33,7 @@ Extract the downloaded zip file on your Mac OS.
 
 ![MDK](img_001.png)
 
->You will find also other files in the extracted folder. `README` file contains information about version requirements, dependencies matrix and some help guide.
+>You will also find other files in the extracted folder. The README file contains information about the version requirements, dependencies and some getting started links.
 
 MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click `MDK Dependencies Installer.app` file, click **Open**.
 
@@ -57,7 +57,7 @@ Extract the downloaded zip file on your Windows OS.
 
 ![MDK](img_001.1.PNG)
 
->You will find also other files in the extracted folder. `README` file contains information about version requirements, dependencies matrix and some help guide.
+>You will also find other files in the extracted folder. The README file contains information about the version requirements, dependencies and some getting started links.
 
 Extract `MDKDependenciesInstallerWindows.zip` file.
 
@@ -88,7 +88,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION BEGIN [Mac]]
 
-To use the SDK to generate a mobile development kit client, the first step is to install some dependencies. Unzip `MDKClient_SDK.zip` if it is not already extracted.
+To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
 
 ![MDK](img_005.png)
 
@@ -104,7 +104,7 @@ Once this completes, close the window. Notice that the `create-client.command` f
 
 [OPTION BEGIN [Windows]]
 
-To use the SDK to generate a mobile development kit client, the first step is to install some dependencies. Unzip `MDKClient_SDK.zip` if it is not already extracted.
+To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
 
 ![MDK](img_004.PNG)
 
@@ -131,11 +131,11 @@ Once this completes, close the window. Notice that the `create-client.cmd` file 
 
 [OPTION BEGIN [Mac]]
 
-In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and rename it what ever you want.
+In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and you can rename template to whatever you want but the directory name needs to end in `.mdkproject`.
 
 ![MDK](img_007.1.png)
 
-Idea of retaining `.mdkproject` folder is have a backup in case `create-client` script fails.
+The idea of retaining the `.mdkproject` folder is so you can use it again in the future to build additional MDK clients using the same settings using a different version of the MDK SDK.
 
 >For this tutorial, I have named my `.mdkproject` folder `demosampleapp.mdkproject` and put it outside of the MDK Client folder structure. I will refer this name for the rest of this tutorial.
 ![MDK](img_009.png)
@@ -148,11 +148,11 @@ Next, you will need to update the `BrandedSettings.json` and `MDKProject.json` f
 
 [OPTION BEGIN [Windows]]
 
-In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and rename it what ever you want.
+In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and you can rename template to whatever you want but the directory name needs to end in `.mdkproject`.
 
 ![MDK](img_007.1.1.PNG)
 
-Idea of retaining `.mdkproject` folder is have a backup in case `create-client` script fails.
+The idea of retaining the `.mdkproject` folder is so you can use it again in the future to build additional MDK clients using the same settings using a different version of the MDK SDK.
 
 >For this tutorial, I have named my `.mdkproject` folder `demosampleapp.mdkproject` and put it outside of the MDK Client folder structure. I will refer this name for the rest of this tutorial.
 
@@ -168,8 +168,11 @@ Open the `MDKProject.json` file and update it as needed. This file has some buil
 
 ![MDK](img_011.png)
 
+>Provide a unique `AppName`, for example: "Demo Sample App". This is the name of the application on the home screen of the device.
+
 >For iOS `MDKProject.json's BundleID` should be the same **Identifier** `(AppID)` that is registered in Apple Developer account.
-Without matching them, trying to run the custom client in iOS device will result in failure.
+
+>Without matching them, trying to run the custom client in iOS device will result in failure.
 
 >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 
@@ -198,7 +201,7 @@ Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to
 Regarding other properties:
 **Debug settings**: The settings in the `DebugSettings` property are for development use and should not be enabled in a production setting.
 
-**Log Settings**: Use the property if you would like the logger to be started as soon as the client is launched.
+**Log Settings**: Set this to the log level to be used when the client is launched.
 
 **Demo**: If you want to access the app in the demo mode, you can configure required settings.
 
@@ -291,6 +294,8 @@ In terminal or command line window, navigate to the app name folder **Demo Sampl
 ![MDK](img_020.4.png)
 
 >To run the MDK client on Android simulator, use `tns run android --emulator` command. Make sure that you have created a virtual device in Android Studio prior to running this command.
+
+>Note: Before trying to launch the client on Android emulator, make sure that you have already configured a virtual device (Android Studio>AVD Manager). Otherwise, you may get error like No emulator image available for device identifier.
 
 Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
