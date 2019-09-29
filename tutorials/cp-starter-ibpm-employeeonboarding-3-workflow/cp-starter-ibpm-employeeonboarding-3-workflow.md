@@ -68,6 +68,24 @@ An MTA model is a platform-independent description of the different modules, the
 
     ![Update json File](update-json.png)
 
+
+3. Modify the workflow definition.
+
+    If you do not have `SuccessFactors` system and have not configured `SuccessFactors` destination in the setup tutorial, then you will have to update the workflow definition otherwise skip this step.
+
+    - Open `onboard` workflow.
+    - Click on `Get Employee Details from SuccessFactors` service task and select **Delete** option.
+
+    ![Delete taks](deletetask_1.png)
+
+    - Similarly, delete `Get Buddy List from SFSF` service task.
+
+    ![Delete taks](deletetask_2.png)
+
+    - Your workflow will look like this.
+
+    ![Updated workflow](workflow_afterdelete.png)
+
 [DONE]
 [ACCORDION-END]
 

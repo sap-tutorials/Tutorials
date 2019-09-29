@@ -91,11 +91,95 @@ primary_tag: products>sap-cloud-platform
 
 2. Select the `onboard` workflow, and choose **Start New Instance**.
 
-3. The JSON context is already filled. Choose **Start New Instance**.
+3. The start context is already filled. Choose **Start New Instance**.
 
-    > JSON context is filled as you have defined the same in workflow properties while enhancing sample workflow application.
+    > Start context will be filled as you have defined the same in workflow properties while enhancing sample workflow application from `Web IDE`. This start context is valid only if you have configured `SuccessFactors` system.
 
-    >Make sure you enter a valid SuccessFactors user ID. For testing use your SAP Cloud Platform trial user email ID as `buddyId` and `managerId`.
+    >If you have not configured `SuccessFactors` destination in setup tutorial, then replace the default context with the following code. This is the sample employee information as fetched from `SuccessFactors`. Make sure you enter your SAP Cloud Platform trial user email ID as `buddyId` and `managerId` in the end. 
+
+    ``` JavaScript  
+      {
+      "empData": {
+        "d": {
+          "results": [
+            {
+              "zipCode": "94404",
+              "lastName": "Grant",
+              "country": "United States",
+              "hireDate": "/Date(978307200000)/",
+              "reloLocation": null,
+              "city": "San Mateo",
+              "jobTitle": "General Manager, Industries",
+              "jobCode": "Vice President, Sales (VP-SALES)",
+              "title": "VP, Sales",
+              "userId": "cgrant1",
+              "division": "Industries (IND)",
+              "defaultFullName": "Carla Grant",
+              "firstName": "Carla",
+              "empInfo": {
+                "__metadata": {
+                  "type": "SFOData.EmpEmployment"
+                },
+                "jobInfoNav": {
+                  "results": [
+                    {
+                      "isFulltimeEmployee": true,
+                      "businessUnit": "ACE_IND",
+                      "costCenter": "30001",
+                      "jobTitle": "VP, Sales",
+                      "countryOfCompany": "USA",
+                      "jobCode": "VP-SALES",
+                      "managerId": "athompson1",
+                      "division": "IND",
+                      "company": "ACE_USA",
+                      "position": "VP_SALES",
+                      "department": "SALES",
+                      "startDate": "/Date(1343606400000)/"
+                    }
+                  ]
+                }
+              },
+              "reloWilling": null,
+              "addressLine1": "1500 Fashion Island Blvd",
+              "location": "San Mateo (US_SFO)",
+              "department": "Sales (SALES)",
+              "keyPosition": false
+            }
+          ]
+        },
+        "team": {
+          "d": {
+            "directReports": {
+              "results": [
+                {
+                  "__metadata": {
+                    "type": "SFOData.User"
+                  },
+                  "userId": "dsharp1"
+                },
+                {
+                  "__metadata": {
+                    "type": "SFOData.User"
+                  },
+                  "userId": "cgrant1"
+                },
+                {
+                  "__metadata": {
+                    "type": "SFOData.User"
+                  },
+                  "userId": "sthomas1"
+                }
+              ]
+            }
+          }
+        },
+        "buddies": "dsharp1,cgrant1,sthomas1"
+      },
+      "managerId": "your trial email id",
+      "buddyId": "your trial email id",
+      "userId": "cgrant1"
+    }
+    ```
 
     ![Start New Instance](start-new-instance-json.png)
 

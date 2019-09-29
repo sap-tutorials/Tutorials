@@ -148,14 +148,14 @@ When you build and deploy this application, there will be new service instances 
 
     |  Application Identifier     | Role Template and Role
     |  :------------------------- | :------------------------
-    |  `bpmrulebroker`        | `RuleRepositorySuperUser`
+    |  `bpmrulebroker`            | `RuleRepositorySuperUser`
     |                             | `RuleRuntimeSuperUser`
-    |  `pvreuserservice`      | `PVDeveloper`
+    |  `pvreuserservice`          | `PVDeveloper`
     |                             | `PVAdmin`
     |                             | `PVEventSender`
     |                             | `PVOperator`
     |                             | `PVTenantOperator`
-    | `workflow`               | `WorkflowAdmin`
+    | `workflow`                  | `WorkflowAdmin`
     |                             | `WorkflowContextViewer`
     |                             | `WorkflowDeveloper`
     |                             | `WorkflowInitiator`
@@ -169,7 +169,7 @@ When you build and deploy this application, there will be new service instances 
 
 7. In the **Role Collection Assignment** page, enter your trial user email and click **Show Assignments**.
 
->If you are doing this for first time, you will get a popup to select **Add User**.
+    >If you are doing this for first time, you will get a popup to select **Add User**.
 
 8. Click **Assign Role Collection** and select `BPMServices` role collection.
 
@@ -207,11 +207,13 @@ The sample business rules used in this scenario is published in API Business Hub
 
 [ACCORDION-BEGIN [Step 8: ](Create destination for SuccessFactors APIs)]
 
-The sample workflow calls SuccessFactors to get the user details of the new hire and the team members. A destination (SFSF) is used in the Workflow model to call these APIs.
+The sample workflow calls `SuccessFactors` to get the user details of the new hire and the team members. This destination will be used in the workflow to call these APIs.
 
-> If you already have a SuccessFactors system, then you can use username, password and company ID of that system. You can get API URLs for different data centres from the [note](https://apps.support.sap.com/sap/support/knowledge/public/en/2215682).
+> If you already have a SuccessFactors system, then you can use the username, password and company ID of that system. You can also get API URLs for the respective data centre from the [note](https://apps.support.sap.com/sap/support/knowledge/public/en/2215682).
 
-> With your S-user account, you can also request for a new SuccessFactors test tenant at: [Partner Demo Request Tool](https://hcmcloudops.successfactors.com/DemoInstance/PartnerDemo).
+> If you do not have a SuccessFactors system, then with your S-user account, you can  request for a new SuccessFactors test tenant at: [Partner Demo Request Tool](https://hcmcloudops.successfactors.com/DemoInstance/PartnerDemo).
+
+> If you still do not have SuccessFactors system, then skip this step.
 
 Choose **New Destination**, and enter the following data:
 
@@ -242,7 +244,11 @@ Choose **New Destination**, and enter the following data:
 |  Authentication    | `OAuth2ClientCredentials`
 |  Client ID         | `<use your client ID from the Business Rules service instance>`
 |  Client Secret     | `<use your secret from the Business Rules service instance>`
-|  Token Service URL | `https://<userid>.authentication.eu10.hana.ondemand.com/oauth/token` or `https://<userid>.authentication.us10.hana.ondemand.com/oauth/token` where `userid` is your trial account user id
+|  Token Service URL | `https://<userid>.authentication.eu10.hana.ondemand.com/oauth/token` where `userid` is your trial account user id
+
+>Replace `eu10` with `us10` in the URLs if your trial account is in US region. For example, the URL in above destination will become:
+
+> `https://bpmruleruntime.cfapps.us10.hana.ondemand.com/rules-service`
 
 ![Configure Destination](createdestination-rules.png)
 

@@ -10,7 +10,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 ## Prerequisites
  - [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
  - You have logged in to your SAP Cloud Platform trial account.
- - You have created a subaccount and an associated space.
+ - You have created a subaccount and an associated space. Please note that if you create a trial account for the first time, a subaccount, organization and space will be created by default.
 
 ## Details
 ### You will learn
@@ -81,8 +81,35 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create service instance and key)]
-1. Access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
+[ACCORDION-BEGIN [Step 4: ](Provision SAP Cloud Platform Integration tenant)]
+1. Launch SAP Cloud Platform Integration provisioning application by choosing **<subaccount-name>** > **Subscriptions** > **Go to Application** in the **Process Integration** tile.
+
+    ![Access cloud integration provisioning application](5.1.access-prov-app.png)
+
+2. Login to the provisioning application by providing the same email ID and password that you used for creating the trial account. Choose **Log On**.
+
+    ![Login to provisioning application](5.2.login-prov-app.png)
+
+3. Choose **Provision** to provision a SAP Cloud Platform Integration tenant.
+
+    ![Provision SAP Cloud Platform Integration tenant](5.3.provision-cpi.png)
+
+4. You see a tenant URL after the provisioning is complete. This is the URL for your SAP Cloud Platform Integration tenant.
+
+    ![Access tenant URL](5.4.access-tenant-url.png)
+
+    >**IMPORTANT:** Please wait for the provisioning process to complete before you proceed to the next step. The service instance and key creation will only work after your tenant has been provisioned.
+
+    Click on the URL to launch the SAP Cloud Platform Integration application. You can now create integration packages and integration flows.
+
+    Please bookmark or save this URL. This will be the URL for your SAP Cloud Platform Integration application.
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Create service instance and key)]
+1. Navigate back to your SAP Cloud Platform's subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
 
     ![Access space](4.1.access-space.png)
 
@@ -90,7 +117,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
     ![Access PI Runtime](4.2.access-process-integration-runtime.png)
 
-    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan and choose **Add 1 Service Plan**.
+    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
 
 3. Select **Instances** > **New Instance**.
 
@@ -138,29 +165,6 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Provision SAP Cloud Platform Integration tenant)]
-1. Launch SAP Cloud Platform Integration provisioning application by choosing **<subaccount-name>** > **Subscriptions** > **Go to Application** in the **Process Integration** tile.
 
-    ![Access cloud integration provisioning application](5.1.access-prov-app.png)
-
-2. Login to the provisioning application by providing the same email ID and password that you used for creating the trial account. Choose **Log On**.
-
-    ![Login to provisioning application](5.2.login-prov-app.png)
-
-3. Choose **Provision** to provision a SAP Cloud Platform Integration tenant.
-
-    ![Provision SAP Cloud Platform Integration tenant](5.3.provision-cpi.png)
-
-4. You see a tenant URL after the provisioning is complete. This is the URL for your SAP Cloud Platform Integration tenant.
-
-    ![Access tenant URL](5.4.access-tenant-url.png)
-
-    Click on the URL to launch the SAP Cloud Platform Integration application. You can now create integration packages and integration flows.
-
-    Please bookmark or save this URL. This will be the URL for your SAP Cloud Platform Integration application.
-
-
-[DONE]
-[ACCORDION-END]
 
 --
