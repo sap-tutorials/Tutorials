@@ -86,7 +86,7 @@ Build (aka package) the project to a `mtar` archive to be able to deploy it to C
 
 Now that you created a `mtar` archive, you are all set to deploy the application.
 
-1. Right-click on the project and select **Deploy** and **Deploy to SAP Cloud Platform**.
+1. Right-click on the  `mtar` file  and select **Deploy** and **Deploy to SAP Cloud Platform**.
 
     ![deploy](./deploy.png)
 
