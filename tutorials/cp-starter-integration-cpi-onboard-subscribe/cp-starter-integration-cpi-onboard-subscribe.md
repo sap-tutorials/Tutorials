@@ -7,11 +7,6 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platf
 primary_tag: products>sap-cloud-platform-integration-for-process-services
 ---
 
-## Prerequisites
- - [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
- - You have logged in to your SAP Cloud Platform trial account.
- - You have created a subaccount and an associated space. Please note that if you create a trial account for the first time, a subaccount, organization and space will be created by default.
-
 ## Details
 ### You will learn
   - How to subscribe to the Process Integration service and set-up your own SAP Cloud Platform Integration tenant
@@ -21,11 +16,19 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Subscribe to Process Integration service)]
-1. In your subaccount, select **Subscriptions** > **Process Integration**.
+1. Login to the SAP Cloud Platform Cockpit and choose **Enter your Trial Account**. If this is your first time accessing the trial account, the cockpit will create a new trial account for you. Please wait for the process to complete and then click on **Enter your Trial Account** again.
+
+    ![Access trial account](1.0.0.create-cp-subaccount.png)
+
+    You see a subaccount with name **trial** already created. Select this subaccount.
+
+    ![Access subaccount](1.0.1.access-subaccount.png)
+
+2. In your subaccount, select **Subscriptions** > **Process Integration**.
 
     ![Select process integration service](1.1.select-process-integration.png)
 
-2. Select the **Subscribe** button.
+3. Select the **Subscribe** button.
 
     ![Select subscribe button](1.2.select-subscribe.png)
 
