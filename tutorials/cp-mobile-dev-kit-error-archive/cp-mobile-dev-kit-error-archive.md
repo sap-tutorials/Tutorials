@@ -510,7 +510,7 @@ Save the changes to the `Main` page.
 
 [ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
 
-So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
 Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
