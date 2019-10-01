@@ -1,6 +1,6 @@
 ---
-title: Create your First Integration Package and Integration Flow
-description: Learn how to create an integration package and integration flow.
+title: Create and Deploy your First Integration Flow
+description: Build an integration flow to enable you to query product details from webshop using an HTTP call.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -8,11 +8,13 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 ---
 
 ## Prerequisites
-- You have provisioned and logged into your SAP Cloud Platform Integration tenant. For more information see [Set Up Your SAP Cloud Platform Integration Tenant](cp-starter-integration-cpi-onboard-subscribe)
+ - [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+ - You have provisioned and logged into your SAP Cloud Platform Integration tenant.
 
 ## Details
 ### You will learn
   - How to create an integration package and integration flow
+  - How you can design your integration flow to fetch details from an online OData service
 
 ---
 

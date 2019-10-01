@@ -9,30 +9,19 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 ## Prerequisites
  - You have provisioned your SAP Cloud Platform Integration tenant. For more information, see [Set Up Your SAP Cloud Platform Integration Tenant](cp-starter-integration-cpi-onboard-subscribe)
- - You have created an integration package and an integration flow. For more information, see [Create your First Integration Package and Integration Flow](cp-starter-integration-cpi-create-iflow)
+ - You have created an integration package and an integration flow.
  - You have [downloaded](https://www.getpostman.com/downloads/) and installed the Postman client.
 
 ## Details
 ### You will learn
   - How to design and deploy an integration flow using the web-based integration flow designer
-  - How to design an integration flow to query data from an online web shop that is available as an OData service
 
 
 
 [ACCORDION-BEGIN [Step 1: ](Edit integration flow)]
-1. Access your integration package by choosing **Design** > **(Integration package name)**.
+Start editing the integration flow by choosing **Edit**.
 
-    ![Access integration package](1.1.access-integration-package.png)
-
-    If you have not created an integration package and integration flow, complete the tutorial [Create your First Integration Package and Integration Flow](cp-starter-integration-cpi-create-iflow) first before proceeding.
-
-2. Access your integration flow by choosing **Artifacts** > **(Integration flow name)**.
-
-    ![Access integration flow](1.2.access-integration-flow.png)
-
-3. Start editing the integration flow by choosing **Edit**.
-
-    ![Start editing the integration flow](1.3.edit-iflow.png)
+![Start editing the integration flow](1.1.edit-iflow.png)
 
 
 [DONE]
@@ -193,7 +182,7 @@ You will use this endpoint in the Postman client to test your integration flow.
       "productIdentifier": "HT-2000"
     }
     ```
-
+    
     Choose **Send**. This is the ID of the product that you are requesting from the web shop.
 
     >**TIP:** If you would like to query a different product, access <https://espmrefapps.hana.ondemand.com/espm-cloud-web/webshop/> and select a product of your choice. Copy its **Product ID** and use that ID in the Postman request.
