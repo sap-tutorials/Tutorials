@@ -17,7 +17,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Subscribe to Process Integration service)]
-1. Login to the SAP Cloud Platform Cockpit and choose **Enter your Trial Account**. If this is your first time accessing the trial account, the cockpit will create a new trial account for you. Please wait for the process to complete and then click on **Enter your Trial Account** again.
+1. Login to the [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trialhome) and choose **Enter your Trial Account**. If this is your first time accessing the trial account, the cockpit will create a new trial account for you. Please wait for the process to complete and then click on **Enter your Trial Account** again.
 
     ![Access trial account](1.0.0.create-cp-subaccount.png)
 
@@ -92,7 +92,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Provision SAP Cloud Platform Integration tenant)]
-1. Launch SAP Cloud Platform Integration provisioning application by choosing **<subaccount-name>** > **Subscriptions** > **Go to Application** in the **Process Integration** tile.
+1. Launch SAP Cloud Platform Integration provisioning application by choosing **`<subaccount-name>`** > **Subscriptions** > **Go to Application** in the **Process Integration** tile.
 
     ![Access cloud integration provisioning application](5.1.access-prov-app.png)
 
