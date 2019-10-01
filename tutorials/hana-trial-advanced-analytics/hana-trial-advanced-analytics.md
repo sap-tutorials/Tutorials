@@ -385,9 +385,10 @@ select devname, st_geomFromText( 'Point( 11.569299 48.145130 )', 4326).st_distan
 
 Congratulations on helping Thomas find and collaborate with other developers!
 
-If you are ready to explore more features without limitations, you can download SAP HANA, express edition. SAP HANA, express editions is **free** up to 32 GB of RAM,. even for productive use. You can either:
-  - [Register for a free download](https://www.sap.com/cmp/td/sap-hana-express-edition.html)
-  - [Or deploy an instance in the cloud](https://developers.sap.com/tutorials/hxe-database-xs-advanced.html)
+If you are ready to explore more features without limitations, you can download SAP HANA, express edition. SAP HANA, express editions is **free** up to 32 GB of RAM, **even for productive use**. You can either:
+
+  -  [Register for a free download](https://www.sap.com/cmp/td/sap-hana-express-edition.html)
+  -  [Or deploy an instance in the cloud](https://developers.sap.com/tutorials/hxe-database-xs-advanced.html)
 
 Here's how you can get started with any developer-focused topic in SAP HANA and more:
 
