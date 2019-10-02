@@ -10,14 +10,14 @@ author_profile: https://github.com/Kavya-Gowda
 ---
 
 ## Prerequisites
- - You have the **Event Acquisition** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
+ - You have the Event Acquisition application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
 - You have the **`PVTenantOperator`** role assigned to your user.
 
 ## Details
 ### You will learn
   - How to view the events that have been acquired by process visibility
 
-Using the **Event Acquisition** application, you can view the events that have been acquired by process visibility.
+Using the Event Acquisition application, you can view the events that have been acquired by process visibility.
 
 ---
 
@@ -29,7 +29,7 @@ Using the **Event Acquisition** application, you can view the events that have b
 
     ![Event Acquisition Tile](Event-Acquisition-Tile-01.png)
 
-    You will be able to see the UI of **Event Acquisition** application. By default, no events are shown unless a filter is applied.
+    You will be able to see the UI of the Event Acquisition application. By default, no events are shown unless a filter is applied.
 
 [DONE]
 [ACCORDION-END]
@@ -42,7 +42,7 @@ Using the **Event Acquisition** application, you can view the events that have b
 
     You can filter the events based on Process Definition ID, Process Instance ID, Event Type, and Timestamp.
 
-2. Click on the required filter and provide the value you used in your business scenario. In this tutorial, we apply the filter based on Process Definition ID and we use the value **onboard**.
+2. Click on the required filter and provide the value you used in your business scenario. In this tutorial, we apply the filter based on **Process Definition ID** and we use the value **onboard**.
 
     ![Filter values](Filter-Values-03.png)
 
