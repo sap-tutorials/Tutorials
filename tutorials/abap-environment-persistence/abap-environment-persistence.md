@@ -113,10 +113,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   6. Save and activate.
 
-      ![save and activate](activate2.png)
+      ![save and activate](activate.png)
 
      Now the dictionary tables are defined. The dictionary tables are the basis of our travel booking data model.
-
+  
 [DONE]
 [ACCORDION-END]
 
