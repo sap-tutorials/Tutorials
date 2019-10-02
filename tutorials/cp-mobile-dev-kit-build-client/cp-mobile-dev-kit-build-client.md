@@ -138,7 +138,7 @@ In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. I
 The idea of retaining the `.mdkproject` folder is so you can use it again in the future to build additional MDK clients using the same settings using a different version of the MDK SDK.
 
 >For this tutorial, I have named my `.mdkproject` folder `demosampleapp.mdkproject` and put it outside of the MDK Client folder structure. I will refer this name for the rest of this tutorial.
-![MDK](img_009.png)
+>![MDK](img_009.png)
 
 Next, you will need to update the `BrandedSettings.json` and `MDKProject.json` files as needed for your client. Go into the `demosampleapp.mdkproject` folder.
 
