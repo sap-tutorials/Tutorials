@@ -18,54 +18,26 @@ time: 5
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open your SAP Cloud Platform account)]
 
-Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://account.hanatrial.ondemand.com/) to open the console).
+[ACCORDION-BEGIN [Step : ](Open SAP Web IDE Full-Stack)]
 
-Choose **Neo Trial**.
 
->**Trouble logging in?** If you have trouble logging in to your SAP Cloud Platform Cockpit, and you are using a company account (one provided by your employer), it is possible that the Cloud access has been locked.  Create a new FREE trial account by clicking the link above, and use your personal email address to set up the new account.
 
-![SAP Cloud Platform Developer Account Login Screen](login_screen.png)
+Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://account.hanatrial.ondemand.com/) to open the home page).
 
-[DONE]
+ Click on **Launch SAP Web IDE** to see navigate further.
 
-[ACCORDION-END]
+![open webide](open-webide.png)
 
-[ACCORDION-BEGIN [Step 2: ](Go to Services)]
+You might be asked to accept a disclaimer if you come here for the first time. **Check** the box and click **accept** to do so.
 
-You should now be in the SAP Cloud Platform cockpit, as shown below.  Click the **Services** menu item on the left.
+![disclaimer](disclaimer.png)
 
-Next, click the **SAP Web IDE Full-Stack** box.  
-
->You may need to scroll down to find this box.
-
-![SAP Cloud Platform Console - Services](service_web_ide.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Enable SAP Web IDE Full-Stack)]
-
-
-
->**Enabled**: If the box does **NOT** say **Enabled**, click the **Not Enabled** button to enable this service.  In the screen that appears, click the **Enable** button at the top of the page to confirm this feature is set up.
-
-![Go to service](enable-service.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Open SAP Web IDE Full-Stack)]
-
-In the SAP Web IDE Full-Stack screen, at the bottom, click **Go to Service**.  
-
-![SAP Cloud Platform Console - services link](services_link.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Bookmark the page)]
+[ACCORDION-BEGIN [Step : ](Bookmark the page)]
 
 A new tab opens, and SAP Web IDE Full-Stack loads.
 
