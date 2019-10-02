@@ -29,7 +29,6 @@ Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.o
 
 [OPTION BEGIN [Cloud Foundry]]
 
-Make sure that you have registered for a SAP Cloud Platform [trial account](cp-cf-create-account).
 
 Click **Cloud Foundry Trial**.
 

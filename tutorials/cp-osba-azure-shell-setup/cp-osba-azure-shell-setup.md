@@ -10,7 +10,6 @@ primary_tag: products>sap-cloud-platform
 ## Prerequisites
  - If you are not attending any SAP TechEd event on site, make sure you have a Microsoft Azure subscription. [$200 Credits](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) will be provided if you enter your credit card details at the initial registration.
   - Register for an [SAP Cloud Platform Trial account](hcp-create-trial-account)
-  - Enable the [SAP Cloud Platform Cloud Foundry account](https://developers.sap.com/tutorials/cp-cf-create-account.html) - **Region Frankfurt (EU10) needed!**
 
 ## Details
 ### You will learn
