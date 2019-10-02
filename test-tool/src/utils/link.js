@@ -49,11 +49,11 @@ const extractLinks = (content) => {
   return [...(new Set(links))];
 };
 
-const is2xx = statusCode => /^2/.test(`${statusCode}`);
+const isErrorStatusCode = statusCode => /^(4|5)/.test(`${statusCode}`);
 const isHttps = url => new URL(url).protocol.startsWith('https');
 
 module.exports = {
   extractLinks,
-  is2xx,
   isHttps,
+  isErrorStatusCode,
 };
