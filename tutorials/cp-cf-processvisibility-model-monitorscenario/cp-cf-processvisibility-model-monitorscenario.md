@@ -10,14 +10,14 @@ author_profile: https://github.com/Kavya-Gowda
 ---
 
 ## Prerequisites
- - You have the **Monitor Scenarios** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
+ - You have the Monitor Scenarios application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
  - You have the **`PVAdmin`** role assigned to your user.
 
 ## Details
 ### You will learn
   - How to view the details about the ongoing or completed  processing runs of a business scenario
 
-You can monitor the activated business scenarios using the **Monitor Scenarios** application.
+You can monitor the activated business scenarios using the Monitor Scenarios application.
 
 ---
 
@@ -42,7 +42,7 @@ You can monitor the activated business scenarios using the **Monitor Scenarios**
 
     ![Processing Data](Process-Data-04.png)
 
-3. On successful processing of data, you can see the processing information listed out under Processing Information.
+3. On successful processing of data, you can see the processing information listed out under **Processing Information**.
 
     ![Processing Information](Processing-Information-05.png)
 
