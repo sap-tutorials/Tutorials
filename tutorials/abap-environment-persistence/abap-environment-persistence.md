@@ -110,7 +110,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       last_changed_at : timestampl;
     }   
     ```
- 
+
   6. Save and activate.
 
       ![save and activate](activate2.png)
@@ -188,7 +188,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   5. Save, activate and click `F9` to run your ABAP class.
 
-      ![save and activate](activate2<.png)
+      ![save and activate](activate2.png)
 
   6. Switch to your database table and press `F8` to see your data.
 
