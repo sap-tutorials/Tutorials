@@ -9,7 +9,6 @@ time: 10
 
 ## Prerequisites  
  - [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
- - [Create a Cloud Foundry Account](cp-cf-create-account)
  - [Install the Cloud Foundry Command Line Interface](cp-cf-download-cli)
 
 ##Details

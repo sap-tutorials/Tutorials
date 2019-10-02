@@ -11,7 +11,6 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
  - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
- - You have created a **cloud foundry trial account with Europe (Frankfurt) as region**: [Create a Cloud Foundry Account](cp-cf-create-account).
 
 ## Details
 ### You will learn  
@@ -211,7 +210,7 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
 [DONE]
 [ACCORDION-END]
- 
+
 
 [ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
