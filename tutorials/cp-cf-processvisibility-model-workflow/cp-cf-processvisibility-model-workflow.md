@@ -42,8 +42,6 @@ Once you have modelled and activated the business scenario, go to your Monitor W
 
 1. Search and select the workflow definition **onboard** for which you want to create an instance and click on **Start New Instance**.
 
-    ![Onboard](Onboard-02.png)
-
     ![New instance creation](Start-New-Instance-03.png)
 
 2. Provide the starting payload and click **Start New Instance**.
@@ -58,15 +56,15 @@ Once you have modelled and activated the business scenario, go to your Monitor W
 
     ![Show instance details](Show-instances-06.png)
 
-4. Click on **Home** and navigate to the SAP Cloud Platform Workflow Fiori launchpad.
+4. Click on **Home** and navigate to SAP Cloud Platform Workflow Fiori launchpad.
 
     ![Home screen](Home-07.png)
 
-5. You should be able to see the increased count of tasks in the **My Inbox tile**.
+5. You should be able to see the increased count of tasks in the **My Inbox** tile.
 
     ![My Inbox tile](MyInbox-08.png)
 
-6. Click **My Inbox** tile to open the application. You can see a new task in the list.
+6. Click **My Inbox** tile to open the application. You can see the new task in the list.
 
     ![New task](Task-09.png)
 
