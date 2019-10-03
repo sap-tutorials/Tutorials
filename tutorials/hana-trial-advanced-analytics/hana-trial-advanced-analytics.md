@@ -69,7 +69,7 @@ If you haven't already, you will be prompted to validate your account using a ph
 
 ![Validation](1.png)
 
-After completing the validation, click the **Log On** again and choose **US East (VA)**.
+After completing the validation, click **Log On** again and choose **US East (VA)** and **Create Account**.
 
 ![Validation](2.png)
 
@@ -156,9 +156,9 @@ Expand the cloned folder and right-click on the `db` folder. Choose **Build**.
 > ### What is going on?
 > The design-time definitions will be deployed by a service layer in SAP HANA called HANA Deployment Infrastructure.
 >
-> The physical artifacts will be created and managed by technical users in a container and you would normally only deploy database artifacts into these containers through design-time definitions.
+> The physical artifacts will be created and managed by technical users in a container and you would normally only deploy database artifacts into these containers through design-time definitions, as the physical creation of database artifacts is the purpose of HDI.
 >
-> In this exercise, you will interact with the database directly for introductory purposes.
+> In this exercise, you will interact with the database directly for introductory purposes but the recommendation is to define design-time artifacts.
 
 You will see the build log in the console. Wait until the build has finished successfully.
 
