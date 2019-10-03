@@ -3,7 +3,7 @@ title: Make Available the Process Visibility Applications Using SAP Fiori Launch
 description: Create tiles on SAP Fiori launchpad for  the applications of Process Visibility for building scenarios, tracking business processes, and monitoring events and scenarios.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-cloud-platform]
+tags: [tutorial>beginner, products>sap-cloud-platform]
 primary_tag: topic>cloud
 author_name: Deeksha R
 author_profile: https://github.com/Deeksha-R
