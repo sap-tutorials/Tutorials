@@ -3,7 +3,7 @@ title: Bundle Data (via JavaScript) SAP Data Hub, Developer Edition
 description: Bundle sensor data before storing it in HDFS by using SAP Data Hub, developer edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
 ## Prerequisites
