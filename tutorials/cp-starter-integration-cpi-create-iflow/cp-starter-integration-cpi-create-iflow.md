@@ -1,5 +1,5 @@
 ---
-title: Create your First Integration Package and Integration Flow
+title: Create Your First Integration Package and Integration Flow
 description: Learn how to create an integration package and integration flow.
 auto_validation: true
 time: 10
