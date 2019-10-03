@@ -8,7 +8,7 @@ primary_tag: products>sap-web-ide
 ---
 
 ## Prerequisites
- - Make sure you have access to the trial version of SAP Web IDE Full-Stack. For more information, see [Getting Started with SAP Web IDE Full-Stack](webide-innovation-beta).
+ - Make sure you have access to the trial version of SAP Web IDE Full-Stack.
 
 ## Details
 ### You will learn
