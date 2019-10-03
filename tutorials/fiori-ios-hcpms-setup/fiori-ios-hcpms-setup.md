@@ -1,6 +1,6 @@
 ---
-title: Access SAP Cloud Platform Mobile Services
-description: Learn how to access SAP Cloud Platform Mobile Services within a trial SAP Cloud Platform account and how to open the Mobile Services cockpit.
+title: Enable SAP Cloud Platform Mobile Services
+description: Learn how to enable SAP Cloud Platform Mobile Services within a trial SAP Cloud Platform account and how to open the Mobile Services cockpit.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-platform-mobile-services
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, software-product-function>sap-cloud-platform-mobile-services, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards, products>mobile-development-kit-client]
@@ -13,7 +13,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn  
-- How to access SAP Cloud Platform Mobile Services in your Cloud Foundry or Neo trial account
+- How to enable SAP Cloud Platform Mobile Services in your Cloud Foundry or Neo trial account
 
 ---
 
@@ -25,45 +25,19 @@ Once SAP Cloud Platform Mobile Services is available, you can use its features i
 
 >Make sure you are choosing the right environment platform tab above.
 
-Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com) and enter required credentials.
-
 [OPTION BEGIN [Cloud Foundry]]
 
+Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com). Click on the **Enter Your Trial Account** to see your global account.
 
-Click **Cloud Foundry Trial**.
+![enter trial account](enter-trial.png)
 
-![cf Trial](cf-trial.png)
+The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-[OPTION END]
+![enter subaccount](global-account.png)
 
-[OPTION BEGIN [Neo]]
+To get to the space, in which your applications and services live, click on the **dev** space.
 
-Click **Neo Trial**.
-
-![Neo Trial](neo-trial.png)
-
-[OPTION END]
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Open the Mobile Services cockpit)]
-
->Make sure you are choosing the right environment platform tab above.
-
-[OPTION BEGIN [Cloud Foundry]]
-
-The trial account should contain one `subaccount` and `space`.
-
-Choose **trial**.
-
-![cf Trial](img_2.png)
-
-Under **Spaces**, choose the available space as highlighted below.
-
-![cf Trial](img_4.png)
-
->You may see different name for the space.
+![enter space](sub-account.png)
 
 In the left pane, choose **Services** > **Service Marketplace**.
 
@@ -97,7 +71,11 @@ Bookmark the **Mobile Services cockpit URL** for quick access.
 
 [OPTION BEGIN [Neo]]
 
-From the SAP Cloud Platform Cockpit page, click **Services** in the navigation bar, scroll down until you see the Mobile group then click on the **Mobile Services** tile.
+Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com). Scroll down and click **Access Neo Trial**.
+
+![Neo Trial](neo-trial.png)
+
+Click **Services** in the navigation bar, scroll down until you see the Mobile group then click on the **Mobile Services** tile.
 
 ![Mobile Group](mobile-group.png)
 
@@ -116,7 +94,7 @@ Bookmark the **Mobile Services cockpit URL** for quick access.
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Optional: Setup a Connectivity between SAP Web IDE and Mobile Services)]
+[ACCORDION-BEGIN [Step 2: ](Optional: Setup a Connectivity between SAP Web IDE and Mobile Services)]
 
 >Make sure you are choosing the right environment platform tab above.
 
@@ -126,7 +104,7 @@ If you want to use **SAP Web IDE Full-Stack** service to build **Mobile Cards** 
 
 >Since SAP Web IDE Full-Stack is currently available only in SAP Cloud Platform Neo environment, in order to connect to SAP Cloud Platform Mobile Services on Cloud Foundry environment, you need to create a new destination.
 
-Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com) | click **Neo Trial**.
+On [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com) scroll down and click **Access Neo Trial**.
 
 ![CF Trial](neo-trial.png)
 
