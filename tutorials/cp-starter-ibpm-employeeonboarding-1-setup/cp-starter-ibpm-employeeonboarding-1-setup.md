@@ -20,6 +20,9 @@ To create service instances for business process management services, you need t
 1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
 2. Navigate into the trial subaccount
+
+      ![Open Trial Account](opentrialaccount.png)
+
     >The trial account should contain one `subaccount` and `space`
 
 3. Open **Entitlements** from left panel. You should have the following entitlements in your account.
@@ -49,7 +52,9 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 
 1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
-2. Choose **Launch Web IDE**.
+2. Choose **Launch SAP Web IDE**.
+
+    ![Launch Web IDE](launchwebide.png)
 
 3. In the navigation area of **SAP Web IDE**, choose the **Preferences** icon.
 

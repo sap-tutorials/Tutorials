@@ -20,7 +20,7 @@ primary_tag: products>sap-cloud-platform
 
 2. Choose **Launch SAP Web IDE**.
 
-    ![Open Web IDE](openwebide.png)
+    ![Launch Web IDE](launchwebide.png)
 
 1. In the navigation area of the **SAP Web IDE**, choose the **Development** icon.
 
