@@ -11,7 +11,7 @@ author_profile: https://github.com/Kavya-Gowda
 
 ## Prerequisites
  - You have the Event Acquisition application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
-- You have the **`PVTenantOperator`** role assigned to your user.
+- You have the **`PVTenantOperator`** role assigned to your user. For more information on how to assign these roles, refer to [Assign the Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles).
 
 ## Details
 ### You will learn
@@ -23,7 +23,7 @@ Using the Event Acquisition application, you can view the events that have been 
 
 [ACCORDION-BEGIN [Step 1: ](Access the Events Acquisition application)]
 
-1. Log into SAP Fiori Launchpad.
+1. Log in to SAP Fiori Launchpad.
 
 2. Click on the **Event Acquisition** tile to open the Events Acquisition application.
 
