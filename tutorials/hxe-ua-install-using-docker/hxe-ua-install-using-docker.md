@@ -237,6 +237,8 @@ store/saplabs/hanaexpress:2.00.040.00.20190729.1 \
 --agree-to-sap-license
 ```
 
+For information on the TCP/IP port ranges, see [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports).
+
 Example:
 
 ```
@@ -453,3 +455,4 @@ hdb_version
 ### Additional Information
 - [Install the SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html)
 - [Download and Install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
+-  [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports)
