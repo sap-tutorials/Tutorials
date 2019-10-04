@@ -26,7 +26,7 @@ In this tutorial, you will create an MTA with one HTML5 module as well as a laun
 
 >   - If you are working on a non-trial account, and have not set up your Cloud Foundry environment for development, follow the instructions in the tutorial [Prepare the SAP Cloud Platform Cloud Foundry Environment for Development (non-trial account)](cp-portal-cloud-foundry-prepare-dev).
 
-> In addition, we will be using SAP Web IDE for development. As the SAP Web IDE service is available on SAP Cloud Platform on the Neo environment, you should have an SAP Cloud Platform Neo subaccount with the SAP Web IDE service enabled. If you do not have such an environment, follow the tutorial [Get Started with the SAP Web IDE Full-Stack Version (Trial)](webide-innovation-beta).
+> In addition, we will be using SAP Web IDE for development. As the SAP Web IDE service is available on SAP Cloud Platform on the Neo environment, you should have an SAP Cloud Platform Neo subaccount.
 
 [ACCORDION-BEGIN [Step 1: ](Create an MTA project with an SAP HTML5 module)]
 

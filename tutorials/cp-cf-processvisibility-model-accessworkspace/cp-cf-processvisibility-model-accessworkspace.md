@@ -11,7 +11,7 @@ author_profile: https://github.com/Kavya-Gowda
 
 ## Prerequisites
  - You have the **Process Workspace** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
- - You are assigned to the **`PVOperator`** role.
+ - You are assigned to the **`PVOperator`** role. For more information on how to assign these roles, refer to [Assign the Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles).
 
 ## Details
 ### You will learn
@@ -25,7 +25,7 @@ SAP Cloud Platform Process Visibility provides the Process Workspace application
 
 [ACCORDION-BEGIN [Step 1: ](Access the Process Workspace)]
 
-1.	Log onto SAP Fiori launchpad.
+1.	Log in to SAP Fiori launchpad.
 
 2.	Click on the **Process Workspace** tile.
 
@@ -53,11 +53,15 @@ SAP Cloud Platform Process Visibility provides the Process Workspace application
     ![Scenario Ontrack page](overview-Ontrack.png)
 
 
-    ![Instances view](instance-details-view.png)
-
-3. Choose an instance from the table to navigate to the details view of the scenario instance. The scenario instance details view provides detailed information about the selected instance.
-
     ![Performance indicator view](PPI.png)
+
+3. Choose an instance from the table to navigate to the details view of the scenario instance.
+
+    ![Performance indicator view](PPI - 01.png)
+
+    The scenario instance details view provides detailed information about the selected instance.
+
+    ![Instances view](instance-details-view.png)
 
     In the scenario instance details view, you can view the following:
 

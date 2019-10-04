@@ -56,7 +56,7 @@ Use your email address or social media account.
 
 Navigate to the trial landscape for [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trialhome).
 
-Follow steps to log in or register for an account.
+Follow steps to log in or register for an account. If you need detailed steps, you can [follow this tutorial](hcp-create-trial-account).
 
 ![Log in to Community](log.png)
 
@@ -65,20 +65,18 @@ Follow steps to log in or register for an account.
 
 [ACCORDION-BEGIN [Step 3: ](Configure your trial account)]
 
-Once you have logged in to SAP Cloud Platform, click on the **Cloud Foundry Trial** tile.
-
 If you haven't already, you will be prompted to validate your account using a phone number. Complete the validation.
 
 ![Validation](1.png)
 
-After completing the validation, click the **Cloud Foundry Trial** tile again and choose **US East (VA)**.
+After completing the validation, click **Log On** again and choose **US East (VA)** and **Create Account**.
 
 ![Validation](2.png)
 
 > ### Already have an account in another data center?
 > To transfer your trial entitlements to the new subaccount in `US East (VA)`, refer to the [instructions in this blog post](https://blogs.sap.com/2019/04/16/how-to-change-the-region-in-your-cloud-foundry-trial/) .
 
-Once the provisioning is finished, click outside the box to close it.
+Once the provisioning is finished, click **Continue**:
 
 ![Cloud trial](3.png)
 
@@ -144,10 +142,6 @@ https://github.com/SAP-samples/hana-cf-get-started-trial/
 
 When prompted about ignoring system files, choose **Do it later**.
 
-Finally, right-click on the cloned project and choose **Project > Project Settings**.
-
-![SAP Web IDE](16.png)
-
 [DONE]
 [ACCORDION-END]
 
@@ -162,9 +156,9 @@ Expand the cloned folder and right-click on the `db` folder. Choose **Build**.
 > ### What is going on?
 > The design-time definitions will be deployed by a service layer in SAP HANA called HANA Deployment Infrastructure.
 >
-> The physical artifacts will be created and managed by technical users in a container and you would normally only deploy database artifacts into these containers through design-time definitions.
+> The physical artifacts will be created and managed by technical users in a container and you would normally only deploy database artifacts into these containers through design-time definitions, as the physical creation of database artifacts is the purpose of HDI.
 >
-> In this exercise, you will interact with the database directly for introductory purposes.
+> In this exercise, you will interact with the database directly for introductory purposes but the recommendation is to define design-time artifacts.
 
 You will see the build log in the console. Wait until the build has finished successfully.
 
@@ -190,6 +184,8 @@ Open a SQL console.
 ![SAP Web IDE](20.png)
 
 Paste the following statements to insert new documents into your collection and run ![run](run.png) the statements.
+
+> ### Note: The statements may be marked with errors by the editor. You can ignore the errors.
 
 ```SQL
 insert into COMMUNITY VALUES({ "name" : 'Sol' ,   "hint" :'I love using SAP HANA to develop applications',  "learns_from" :'Sam',  "office" :'Toronto',  "tenure" :17,  "geolocation" :  'Point(    -79.380186  43.647944 )' });
@@ -231,6 +227,8 @@ Use the following statement to complete the validation below:
 ```sql
  select TO_NVARCHAR("hint"), TO_NVARCHAR("office") from COMMUNITY where "name"  = 'Maria';
 ```
+
+>   ### Note: You can clear the statements before entering new ones (recommended) or select the statements you want to execute.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -354,7 +352,7 @@ Click **Algorithm**, choose **Strongly connected** and click **Apply**.
 
 ![Graph](24.png)
 
-The names with the highest count are marked in the same color:
+The names connected in both directions in the directed graph are marked in the same color:
 
 ![Graph](26.png)
 
@@ -372,7 +370,7 @@ Thomas is located in Munich, Germany. The geolocation is longitude:  11.569299 l
 Use the following query to calculate distance to Thomas' location:
 
 ```sql
-select devname, st_geomFromText( 'Point( 11.569299 48.145130 )', 4326).st_distance(st_geomFromtext( devs.lon_lat, 4326), 'meter') / 1000 as DISTANCE_KM
+select devname, st_geomFromText( 'Point( 11.569299 48.145130 )', 4326).st_distance(st_geomFromtext( devs.lon_lat, 4326), 'kilometer')  as DISTANCE_KM
   from "DEVS"
   where contains(hint_text, 'develop', linguistic)
     order by distance_km asc

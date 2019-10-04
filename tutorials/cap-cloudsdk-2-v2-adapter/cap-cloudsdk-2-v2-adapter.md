@@ -28,6 +28,8 @@ In this tutorial, you will install and configure the OData V2 Adapter so that yo
 
 The OData V2 adapter is available in the form of a Node.js package, which can be installed into the project.
 
+> You're about to enter a command in the integrated terminal. If your service is still running (which it should be) from the previous tutorial in this mission, you can terminate it with `Ctrl-C` in order to get back to the prompt.
+
 At the command prompt in the integrated terminal in VS Code, install this package into the project with:
 
 ```Bash
