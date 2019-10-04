@@ -237,7 +237,7 @@ store/saplabs/hanaexpress:2.00.040.00.20190729.1 \
 --agree-to-sap-license
 ```
 
-For information on the TCP/IP port ranges, see [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports).
+For information on the TCP/IP port ranges, see [TCP/IP Ports of All SAP Products](https://help.sap.com/viewer/ports). Filter the list by "SAP Cloud Platform".
 
 Example:
 
