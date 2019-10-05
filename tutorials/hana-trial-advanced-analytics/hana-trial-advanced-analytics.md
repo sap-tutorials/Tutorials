@@ -1,6 +1,6 @@
 ---
 title: Help Thomas Get Started with SAP HANA
-description: Use SAP HANA to help Thomas get started with help from other developers in the community using Kubernetes, text analytics, graph and geospatial.
+description: Use SAP HANA to help Thomas get started with help from other developers in the community using text analytics, graph and geospatial.
 auto_validation: true
 time: 45
 tags: [tutorial>beginner, products>sap-hana]
