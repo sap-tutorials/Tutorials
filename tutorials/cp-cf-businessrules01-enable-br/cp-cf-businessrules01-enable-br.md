@@ -9,6 +9,9 @@ author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
 
+## Prerequisites
+ - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+
 ## Details
 ### You will learn
   - How to enable Business Rules service
@@ -16,28 +19,28 @@ author_profile: https://github.com/VandanaVasudevan
 
 You can create a service instance of business rules to get started with SAP Cloud Platform Business Rules. Also, you can create the service key of the business rules service instance, which lets you consume the business rules API from SAP API Business Hub or any REST clients. You will need the service instance and service keys in the tutorials that follow.
 
-[ACCORDION-BEGIN [Step 1: ](Create SAP Cloud Platform trial account)]
+[ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform cockpit)]
 
-Open [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com) and then create a trial account in the Cloud Foundry environment. For more information, see [Get a Trial Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/42e7e54590424e65969fced1acd47694.html?q=create%20a%20trial).
+1. In your Web browser, open the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
 
-If you have already created a trial account in the Cloud Foundry environment, perform the following steps:
+2. Choose **Enter Your Trial Account**.
 
-1. Choose your trial account.
-
-    ![Trial account](enablebr-1.PNG)
-
-2. In the navigation area, choose **Spaces** and then choose your space.
-
-    ![choose spaces](enablebr-2.PNG)   
-
+    ![Cockpit landing page](landing_page.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create service instance of Business Rules)]
+[ACCORDION-BEGIN [Step 2: ](Open Business Rules tile)]
 
+1. Choose your subaccount.
 
-1. In the navigation area, choose **Service Marketplace** and then choose **Business Rules** tile.
+    ![Trial account](enablebr-1.PNG)
+
+2. Navigate to **Spaces** and then choose your space.
+
+    ![choose spaces](enablebr-2.PNG)   
+
+3. In the navigation area, choose **Service** > **Service Marketplace** and then choose **Business Rules** tile.
 
     ![enable business rules](enablebr-3.PNG)
 
@@ -45,11 +48,16 @@ If you have already created a trial account in the Cloud Foundry environment, pe
 
     ![Service overview](enablebr-4.PNG)
 
-2. In the navigation area, choose **Instances** and then choose **New Instance**.
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Create service instance of Business Rules)]
+
+1. In the navigation area, choose **Instances** and then choose **New Instance**.
 
     ![New Instance](enablebr-5.PNG)
 
-3. Keep the default options as is, provide an **Instance Name** of your choice, then choose **Finish**.
+2. Keep the default options as is, provide an **Instance Name** of your choice, then choose **Finish**.
 
     ![Instance name](enablebr-6.PNG)
 
