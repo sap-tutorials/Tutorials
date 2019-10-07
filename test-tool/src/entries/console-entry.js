@@ -11,21 +11,20 @@ const readMethodFactory = (projectPath, relativePath, exclusions) => () => recur
 
 const findByInput = (filePaths, input) => {
   const searchCriteria = input.replace('*', '');
-  const comparator = input.startsWith('*') 
+  const comparator = input.startsWith('*')
       ? filePath => path.basename(filePath).endsWith(searchCriteria)
       : filePath => path.basename(filePath).startsWith(searchCriteria);
+
   return filePaths.filter(comparator);
 };
 
 const handleRunWOOptions = async () => {
     const answer = await inquirer.prompt(options.inquirer.folderChoice);
     switch(answer.scopetutorial) {
-      case options.inquirer.foldersOptions.all: 
+      case options.inquirer.foldersOptions.all:
         return handleAllChoice();
       case options.inquirer.foldersOptions.tutorials:
         return readMethods.readTutorialsPaths();
-      case options.inquirer.foldersOptions.wip: 
-        return readMethods.readWIPTutorialsPaths();
       case options.inquirer.foldersOptions.specific:
         return handleSpecificChoice();
       case options.inquirer.foldersOptions.input:
@@ -36,35 +35,22 @@ const handleRunWOOptions = async () => {
 };
 
 const handleInput = async () => {
-  const folderAnswer = await inquirer.prompt(options.inquirer.tutorialsFolderChoice);
-  let filesPaths = [];
-
-  switch(folderAnswer.scopetutorial) {
-    case options.inquirer.tutorialsFoldersOptions.wip: 
-      filesPaths = await readMethods.readWIPTutorialsPaths(); break;
-    case options.inquirer.tutorialsFoldersOptions.tutorials:
-      filesPaths = await readMethods.readTutorialsPaths(); break;
-    default:
-      filesPaths = [];
-  }
-
+  let filesPaths =  await readMethods.readTutorialsPaths();
   let inputAnswer = await inquirer.prompt(options.inquirer.tutorialsChoiceByName);
+
   while(!inputAnswer.inputselection || !inputAnswer.inputselection.endsWith("*")) {
     inputAnswer = await inquirer.prompt(options.inquirer.tutorialsChoiceByNameHandleError);
   }
+
   return findByInput(filesPaths, inputAnswer.inputselection);
-}
+};
 
 const handleSpecificChoice = async () => {
     const folderAnswer = await inquirer.prompt(options.inquirer.tutorialsFolderChoice);
     let questionConfig = [];
     let filesPaths = [];
-    
+
     switch(folderAnswer.scopetutorial) {
-      case options.inquirer.tutorialsFoldersOptions.wip: 
-        filesPaths = await readMethods.readWIPTutorialsPaths();
-        questionConfig =  options.inquirer.wipTutorialChoiceFromList;
-        break;
       case options.inquirer.tutorialsFoldersOptions.tutorials:
         filesPaths = await readMethods.readTutorialsPaths();
         questionConfig = options.inquirer.tutorialChoiceFromList;
@@ -79,13 +65,8 @@ const handleSpecificChoice = async () => {
 
 const handleInputChoice = async (inputOptions) => {
     let filePaths = [];
-    if ((inputOptions.tutorials && inputOptions.wip) || (!inputOptions.tutorials && !inputOptions.wip)) {
-      const tutorialsPaths = await readMethods.readTutorialsPaths();
-      const wipTutorialsPaths = await readMethods.readWIPTutorialsPaths();
-      filePaths = [ ...tutorialsPaths, ...wipTutorialsPaths ];
-    } else if (inputOptions.wip) {
-      filePaths = await readMethods.readWIPTutorialsPaths();
-    } else if (inputOptions.tutorials) {
+
+    if (inputOptions.tutorials) {
       filePaths = await readMethods.readTutorialsPaths();
     }
     return findByInput(filePaths, inputOptions.input);
@@ -93,18 +74,15 @@ const handleInputChoice = async (inputOptions) => {
 
 const handleAllChoice = async () => {
     const tutorialsPaths = await readMethods.readTutorialsPaths();
-    const wipTutorialsPaths = await readMethods.readWIPTutorialsPaths();
     const restFilesPaths = await readMethods.readRestFilesPaths();
-    return [ 
+    return [
       ...tutorialsPaths,
-      ...wipTutorialsPaths,
       ...restFilesPaths,
     ];
 };
 
 const interact = async (projectPath) => {
     readMethods.readTutorialsPaths = readMethodFactory(projectPath, './tutorials', ['!*.md']);
-    readMethods.readWIPTutorialsPaths = readMethodFactory(projectPath, './work-in-progress', ['!*.md', 'stopwords.md', 'readme.md']);
     readMethods.readRestFilesPaths = readMethodFactory(projectPath, './', ['!*.md', 'tutorials\*', 'node_modules\*', 'templates\*', 'work-in-progress\*', ""]);
 
     const inputOptions = commandLineArgs(options.consoleInputOptionsDefinitions);
@@ -116,27 +94,18 @@ const interact = async (projectPath) => {
     } else if(inputOptions.guides && inputOptions.tutorials) {
         const tutorialsPaths = await readMethods.readTutorialsPaths();
         const restFilesPaths = await readMethods.readRestFilesPaths();
-        filePaths = [ 
+        filePaths = [
           ...tutorialsPaths,
           ...restFilesPaths,
         ];
-    } else if(inputOptions.tutorials && inputOptions.wip && !inputOptions.input) {
-        const tutorialsPaths = await readMethods.readTutorialsPaths();
-        const wipTutorialsPaths = await readMethods.readWIPTutorialsPaths();
-        filePaths = [ 
-          ...tutorialsPaths,
-          ...wipTutorialsPaths,
-        ];
-    } else if(inputOptions.tutorials && !inputOptions.wip && !inputOptions.input) {
+    } else if(inputOptions.tutorials && !inputOptions.input) {
         filePaths = await readMethods.readTutorialsPaths();
-    } else if(inputOptions.wip && !inputOptions.tutorials && !inputOptions.input) {
-        filePaths = await readMethods.readWIPTutorialsPaths();
     } else if(inputOptions.specific) {
         filePaths = await handleSpecificChoice();
     } else if(inputOptions.input) {
         filePaths = await handleInputChoice(inputOptions);
     } else {
-      if (!inputOptions.tutorials && !inputOptions.wip && !inputOptions.all && !inputOptions.help && !inputOptions.specific && !inputOptions.input) {
+      if (!inputOptions.tutorials && !inputOptions.all && !inputOptions.help && !inputOptions.specific && !inputOptions.input) {
         filePaths = await handleRunWOOptions();
       }
       else {
