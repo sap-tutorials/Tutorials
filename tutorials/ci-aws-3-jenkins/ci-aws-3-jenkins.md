@@ -200,7 +200,7 @@ You should now see the new disk size:
 
 ![Start cx-server](ci-aws-3-jenkins-14.png)
 
-To start with a fresh environment, execute the following two commands in the folder, where it was installed (by default in `~`):
+To start with a fresh environment, execute the following two commands in the folder, where cx-server was installed (by default in `~/cx-server/`):
 
 ```sh
 sudo ./cx-server remove
