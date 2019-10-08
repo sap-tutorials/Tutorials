@@ -8,8 +8,8 @@ time: 25
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP02
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn  
@@ -447,12 +447,6 @@ private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ im
 }
 
 ```
-
-You might have recognized that the initialization of the Core ML model requires iOS version 12 to compile.
-
-Open up the `SalesAssistant.pbxproj` file and change the **Deployment Target** in the **Deployment Info** section to iOS 12.
-
-![Change Target Version](fiori-ios-scpms-teched19-14.png)
 
 [DONE]
 [ACCORDION-END]
