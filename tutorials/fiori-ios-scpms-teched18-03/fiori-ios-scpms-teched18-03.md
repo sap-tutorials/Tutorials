@@ -8,8 +8,8 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn  
@@ -38,7 +38,7 @@ The **OAuth** login screen of **SAP Cloud Platform Mobile Services** is shown. E
 
 The app now displays the initial **Data Privacy** acknowledgement page. Tap **Allow** to proceed.
 
-![Build and run](fiori-ios-scpms-create-app-teched18-part2-61.png)
+![Build and run](fiori-ios-scpms-create-app-teched18-part2-22a.png)
 
 Choose a passcode to finish the onboarding process.
 

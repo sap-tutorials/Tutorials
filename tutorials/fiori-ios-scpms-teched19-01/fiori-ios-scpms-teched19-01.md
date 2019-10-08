@@ -8,9 +8,9 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP02
+- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Enable SAP Cloud Platform Mobile Services](fiori-ios-scpms-enable-ms-neo)
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn  
@@ -77,7 +77,7 @@ Click **Back** to return to the main screen for the SAP Cloud Platform SDK for i
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create iOS app using iOS Assistant)]
- 
+
 With your account created, you can now use the Assistant to create cloud application configurations on the Mobile Services back end, create destinations pointing to data service endpoints, and generate Xcode projects with a built-in data service layer to access the backend via Swift.
 
 For the remainder of this tutorial, you will use the Assistant to generate an Xcode project that accesses a sample backend hosted on the SAP Cloud Platform, then replace the generated user interface with your own, and finally add the code necessary to integrate a Core ML machine learning model to classify product images.
