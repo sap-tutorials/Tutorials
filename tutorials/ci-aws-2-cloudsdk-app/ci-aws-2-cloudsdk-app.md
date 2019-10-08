@@ -284,6 +284,32 @@ At this stage, you may choose to create a new build package of your app using Ma
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 7: ](Update Jenkinsfile)]
+
+Open the `Jenkinsfile` and locate the line:
+
+```
+String pipelineVersion = "master"
+```
+
+> As stated in the comment above this line, it is not recommended to pull the pipeline directly from its master branch. The recommended approach is to set it to a fixed version. For this tutorial, you will use version 25 of the pipeline.
+
+Change the version `master` to the specific version `v25`. The line should now read:
+
+```
+String pipelineVersion = "v25"
+```
+
+Save the updated Jenkinsfile.
+
+Next, open the Git pane from the right menu. Tick the checkbox next to the modified `Jenkinsfile` to stage it for commit, and provide a meaningful commit message, for instance `Set pipeline version to v25`.
+
+Click **Commit and Push** button and commit to the remote branch.
+
+[DONE]
+[ACCORDION-END]
+
+
 <!--
 [ACCORDION-BEGIN [Step 7: ](Build the project)]
 
