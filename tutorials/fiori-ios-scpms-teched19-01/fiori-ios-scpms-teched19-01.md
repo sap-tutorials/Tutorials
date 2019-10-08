@@ -21,7 +21,7 @@ Before you start, make sure you:
 
   - Have downloaded [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html) **version 3.0 SP02**.
   - Have a trial account on SAP Cloud Platform. See [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
-  - Enabled the SAP Cloud Platform Mobile Services. See [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup).
+  - Enabled the SAP Cloud Platform Mobile Services. See [Enable SAP Cloud Platform Mobile Services](fiori-ios-scpms-enable-ms-neo).
 
 ---
 
@@ -29,54 +29,14 @@ Before you start, make sure you:
 
 The SAP Cloud Platform SDK for iOS is designed to work seamlessly with a set of services provided by the SAP Cloud Platform that are optimized for communication with mobile devices, known collectively as Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
 
-To enable the service, do the tutorial [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html).
+To enable the service, do the tutorial [Enable SAP Cloud Platform Mobile Services](fiori-ios-scpms-enable-ms-neo).
 
 >Alternatively, you can go directly to: `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up Mobile Services account in iOS Assistant)]
-
-The SAP Cloud Platform SDK for iOS includes an Assistant app for generating and managing iOS apps that use the Mobile Services. To get started with the Assistant, you'll need to configure it for your account. Part of this configuration can be imported automatically.
-
-Once you're logged into **SAP Cloud Platform Mobile Services**, click the **Important Links** tab in the lower-left corner. The **Important Links** section opens.
-
-> When you open up Mobile Services for the first time, you will see a popup appear which contains a couple of QR codes. Please go ahead and close that.
-
-Locate the tile **SAP Cloud Platform SDK Tools** and click the **Importing URLs directly** link.
-
-![Setup Assistant](fiori-ios-scpms-teched19-00.png)
-
-You should now see the following pop-up:
-
-![Setup Assistant](fiori-ios-scpms-teched19-00a.png)
-
-Click **Allow**. The SAP Cloud Platform SDK for iOS Assistant application will open. The **Add Account** settings dialog will open, and both **API URL** and **UI URL** parameters are pre-populated automatically:
-
-![ Setup Assistant](fiori-ios-scpms-teched19-01.png)
-
-Provide the following additional details:
-
-| Field | Value |
-|----|----|
-| **Name** | A descriptive name for the configuration, for instance `SAP Cloud Platform Mobile Services` |
-| **Authentication** | `SAML Authentication` |
-| **User** | Your trial account user |
-| **Password** | Password for your trial account user |
-
-![Setup Assistant](fiori-ios-scpms-teched19-02.png)
-
-Click **Save** when finished. The account is now added to the SDK Assistant:
-
-![Setup Assistant](fiori-ios-scpms-teched19-03.png)
-
-Click **Back** to return to the main screen for the SAP Cloud Platform SDK for iOS Assistant.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Create iOS app using iOS Assistant)]
+[ACCORDION-BEGIN [Step 2: ](Create iOS app using iOS Assistant)]
 
 With your account created, you can now use the Assistant to create cloud application configurations on the Mobile Services back end, create destinations pointing to data service endpoints, and generate Xcode projects with a built-in data service layer to access the backend via Swift.
 
@@ -159,7 +119,7 @@ The SAP Cloud Platform SDK for iOS Assistant will now create the cloud applicati
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run iOS app on simulator)]
+[ACCORDION-BEGIN [Step 3: ](Run iOS app on simulator)]
 
 After clicking **Finish**, the Assistant will generate an Xcode project, save it to disk, and open the project in Xcode.
 
@@ -218,5 +178,5 @@ Click on an entity to see its records.
 
 ![App Onboarding](fiori-ios-scpms-teched19-20.png)
 
-[VALIDATE_4]
+[VALIDATE_3]
 [ACCORDION-END]
