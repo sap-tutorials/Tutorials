@@ -59,6 +59,8 @@ Open up the new project directory in VS Code. You can do this by either:
 
 	- Opening VS Code via your operating system menu and then using VS Code menu path **File | Open ...** to search for and select the new `teched2019-mission-mock-service-bupa` directory.
 
+> VS Code may open up with a file `cli.js` already open in the editor. You can safely close this file.
+
 Now open the the `package.json` file to have a look inside. It should look similar to this:
 
 ![looking at the package.json file in VS Code](vscode-open.png)
