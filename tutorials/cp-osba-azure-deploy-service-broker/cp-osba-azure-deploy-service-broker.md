@@ -22,17 +22,17 @@ In the following steps, you will deploy the Azure service broker application to 
 
 To log onto the right SAP Cloud Platform Cloud Foundry endpoint, the right API endpoint URL is needed. Therefore, log into the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/) with your SAP Cloud Platform user.
 
-Click on the Cloud Foundry tile.
+Click on **Enter Your Trial Account**.
 
-![Cloud Foundry tile](cloud-foundry-trial.png)
+![choose enter your trial account](trial-access.png)
 
 Navigate to the subaccount by clicking on the according tile.
 
-![Cloud Foundry subaccount](cloud-foundry-subaccount.png)
+![Cloud Foundry subaccount](select-subaccount.png)
 
 Copy the URL of the API endpoint to your clipboard.
 
-![Cloud Foundry enpoint](cloud-foundry-endpoint.png)
+![Cloud Foundry enpoint](api-endpoint.png)
 
 Go back to your Azure Cloud Shell and execute the following command.
 
