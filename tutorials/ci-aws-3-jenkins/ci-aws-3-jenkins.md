@@ -26,6 +26,33 @@ As mentioned in the introduction tutorial of this series, the **`Cx Server`** is
 
 [ACCORDION-BEGIN [Step 1: ](Copy cx-server folder from app to AWS)]
 
+[OPTION BEGIN [Windows]]
+
+Open a new **Git Bash** terminal and navigate to the root of your SAP Cloud SDK app.
+
+You now copy the `cx-server` folder and its content to the home directory of the `ec2-user` on your AWS EC2 instance with the following command:
+
+```sh
+scp -i /path/my-key-pair.pem -r ./cx-server ec2-user@<public hostname>:~
+```
+
+For instance:
+
+```sh
+scp -i ~/.ssh/AWS_CI_CF.pem -r ./cx-server ec2-user@ec2-3-123-30-162.eu-central-1.compute.amazonaws.com:~
+```
+
+![Copy cx-server directory](ci-aws-3-jenkins-01-win.png)
+
+> In **Git Bash**, you use Unix commands in a Windows environment. In the example above, the private key file is stored in location **`~/.ssh/AWS_CI_CF.pem`**. In Unix environments, directory **`~`** is used for the user's home directory. On Windows, the example location for the private key file would then be **`C:\Users\<your username>\.ssh\AWS_CI_CF.pem`**.
+
+> Similarly, drive letters are not used in Unix environments. To reference a path in drive **`C:\`**, you would use **`/C/`** instead. For example, if you have stored the private key file in a location other than your user directory, for instance **`C:\Temp\AWS_CI_CF.pem`**, you will reference it as **`/C/Temp/AWS_CI_CF.pem`**.
+
+[OPTION END]
+
+
+[OPTION BEGIN [Linux and macOS]]
+
 Open a new terminal and navigate to the root of your SAP Cloud SDK app.
 
 You now copy the `cx-server` folder and its content to the home directory of the `ec2-user` on your AWS EC2 instance with the following command:
@@ -36,12 +63,13 @@ scp -i /path/my-key-pair.pem -r ./cx-server ec2-user@<public hostname>:~
 
 For instance:
 
-```
+```sh
 scp -i ~/.ssh/AWS_CI_CF.pem -r ./cx-server ec2-user@ec2-3-123-30-162.eu-central-1.compute.amazonaws.com:~
 ```
 
 ![Copy cx-server directory](ci-aws-3-jenkins-01.png)
 
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
@@ -58,7 +86,7 @@ ssh -i /path/my-key-pair.pem ec2-user@<public hostname>
 
 For example:
 
-```
+```sh
 ssh -i ~/.ssh/AWS_CI_CF.pem ec2-user@ec2-1-123-35-162.eu-central-1.compute.amazonaws.com
 ```
 
@@ -150,7 +178,7 @@ To start with a fresh environment, execute the following two commands:
 
 ```sh
 sudo ./cx-server remove
-sudo ./cx-server starts
+sudo ./cx-server start
 ```
 
 The `cx-server` now runs without the Nexus cache.
