@@ -30,7 +30,7 @@ Open a new terminal and navigate to the root of your SAP Cloud SDK app.
 
 You now copy the `cx-server` folder and its content to the home directory of the `ec2-user` on your AWS EC2 instance with the following command:
 
-```
+```sh
 scp -i /path/my-key-pair.pem -r ./cx-server ec2-user@<public hostname>:~
 ```
 
@@ -52,7 +52,7 @@ After you have copied the `cx-server` directory to AWS, you need to make the con
 
 Log in to your AWS EC2 instance with the command:
 
-```
+```sh
 ssh -i /path/my-key-pair.pem ec2-user@<public hostname>
 ```
 
@@ -64,7 +64,7 @@ ssh -i ~/.ssh/AWS_CI_CF.pem ec2-user@ec2-1-123-35-162.eu-central-1.compute.amazo
 
 Change directory to `cx-server`:
 
-```
+```sh
 cd cx-server
 ```
 
@@ -72,7 +72,7 @@ If you now list the contents of that directory, you'll notice the containing `cx
 
 You can fix that with the following command:
 
-```
+```sh
 chmod +x cx-server
 ```
 
@@ -90,7 +90,7 @@ If you now list the directory contents, you see the script is now executable:
 
 You can now start the SAP Cloud SDK CI/CD server. While in the `cx-server` directory on your AWS EC2 instance, run the following command:
 
-```
+```sh
 sudo ./cx-server start
 ```
 
@@ -124,7 +124,7 @@ To disable the Nexus server, you must set the corresponding flag in the `server.
 
 In your terminal, execute the following command:
 
-```
+```sh
 nano ~/cx-server/server.cfg
 ```
 
@@ -148,7 +148,7 @@ To save the changes, type **Ctrl-X**, then **Y** to confirm, and then **Enter**.
 
 To start with a fresh environment, execute the following two commands:
 
-```
+```sh
 sudo ./cx-server remove
 sudo ./cx-server starts
 ```
@@ -172,13 +172,13 @@ Click the **Modify** button, then click **Yes** to accept your changes and click
 
 Next, open a terminal to your EC2 instance, and type the following command:
 
-```
+```sh
 lsblk
 ```
 
 The output shows the root volume is now indeed 20 GB, but the partition is still 8 GB. To extend the partition, type the following command:
 
-```
+```sh
 sudo growpart /dev/xvda 1
 ```
 
@@ -186,13 +186,13 @@ This will extend partition `1` of disk `/dev/xvda`.
 
 Lastly, you will need to extend the filesystem as well. Execute the following command:
 
-```
+```sh
 sudo resize2fs /dev/xvda1
 ```
 
 To check the new disk size, type the following command:
 
-```
+```sh
 df -h
 ```
 
@@ -200,11 +200,11 @@ You should now see the new disk size:
 
 ![Start cx-server](ci-aws-3-jenkins-14.png)
 
-To start with a fresh environment, execute the following two commands:
+To start with a fresh environment, execute the following two commands in the folder, where cx-server was installed (by default in `~/cx-server/`):
 
-```
+```sh
 sudo ./cx-server remove
-sudo ./cx-server starts
+sudo ./cx-server start
 ```
 
 > If the Nexus server still fails to start, you may need to remove it as well. Execute the following command:
