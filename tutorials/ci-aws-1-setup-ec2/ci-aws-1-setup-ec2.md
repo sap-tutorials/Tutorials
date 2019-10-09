@@ -109,7 +109,7 @@ Click the **Download Key Pair** button.
 
 > **Important**: This is the only chance for you to save the private key file. You'll need to provide the name of your key pair when you launch an instance and the corresponding private key each time you connect to the instance.
 
-Store the downloaded `AWS_CI_CF.pem` private key file to a safe location. It is generally a good idea to store it in a subfolder of your user folder.
+Store the downloaded `AWS_CI_CF.pem` private key file to a safe location. It is generally a good idea to store it in a subfolder named **`.ssh`** of your user folder. On Windows, the user folder is located in **`C:\Users\<your username>`**. On Linux, the user folder is located in **`~`** (tilde).
 
 > **If you use a Mac or Linux computer**: You have to set permissions to the downloaded private key file so that only you can read it.
 
