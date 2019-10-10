@@ -131,7 +131,7 @@ The Table View Controller has to have a Navigation Bar so let's embed the `Produ
 
 Last step is to create the segue from the Bar Button Item inside the Overview View Controller to the Product Classification Table View Controller.
 
-Select the added Bar Button Item and **control + drag** to the Product Classification Table View Controller, as action choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
+Select the `OverviewViewController` and **control + drag** to the Product Classification Table View Controller, choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-08.png)
 
