@@ -18,9 +18,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to change background color of a page
   - How to change color of action bar and tool bar
-  - How to change font color of SDK control properties in a section page
+  - How to change font color and background color of SDK control properties in a section page
 
 ---
 
