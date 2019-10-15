@@ -90,7 +90,7 @@ dat365-XXX@teched.cloud.sap
 
 Make sure you are in the development perspective.
 
-![Log in to SCP](dev.png)
+![Log in to SCP](dev_perspective.png)
 
 If you see any open tabs, **close them**.
 
@@ -109,6 +109,8 @@ Clone the following repository:
 ```Repository
 https://github.com/SAP-samples/teched2019-appspace-hana-cloud
 ```
+
+When prompted, choose **Do it later**.
 
 [DONE]
 [ACCORDION-END]

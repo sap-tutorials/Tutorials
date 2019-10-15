@@ -9,8 +9,8 @@ time: 15
 
 ## Prerequisites  
  - You have a running ABAP application server (AS). This tutorial was created in the AS ABAP developer edition, 752, download version. For more information, see [SAP Developer Community: Trials and Downloads](https://www.sap.com/developer/trials-downloads.html)
- - **Tutorial**: [Create an ABAP project](https://developers.sap.com/tutorials/abap-create-project.html)
- - **Tutorial (Recommended)**: [Exploring the ABAP Dictionary](https://developers.sap.com/tutorials/abap-dev-learn-ddic.html)
+ - **Tutorial**: [Create an ABAP project](abap-create-project)
+ - **Tutorial (Recommended)**: [Exploring the ABAP Dictionary](abap-dev-learn-ddic)
 
 
 ## Details
@@ -68,8 +68,10 @@ Expand the **Programs** folder, scroll down and choose (double-click) the progra
 
 Alternatively, choose **Open development object (`Alt+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
 
+.
 ![Image depicting step3b-open-dev-object](step3b-open-dev-object.png)
 
+.
 ![Image depicting step3c-open-dev-object2](step3c-open-dev-object2.png)
 
 The program opens in a text-based editor:
@@ -88,8 +90,8 @@ In the Outline, you can see that the program contains a local class, **Demo**, w
 
 ![Image depicting step3g-start-of-selection](step3g-start-of-selection.png)
 
-Without a processing block such as this, the program would not do anything. Also note, if you are completely new to ABAP, but experienced in other languages, that every ABAP statement ends with a period (!).
-For more information, see [ABAP Keyword Documentation: START-OF-SELECTION](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/index.htm?file=abapstart-of-selection.htm).
+Without a processing block such as this, the program would not do anything. Also note, if you are completely new to ABAP, but experienced in other languages, that every ABAP statement ends with a period (.).
+For more information, see [ABAP Keyword Documentation: START-OF-SELECTION](https://help.sap.com/doc/abapdocu_750_index_htm/7.50/en-US/abapstart-of-selection.htm).
 
 [DONE]
 
@@ -153,7 +155,7 @@ Function modules are managed in function groups and provide two main benefits:
     - [Useful function modules](https://wiki.scn.sap.com/wiki/display/ABAP/Useful+ABAP+Function+Modules)
     - [Commonly-used function modules](https://wiki.scn.sap.com/wiki/display/ABAP/List+of+Commonly+Used+Function+Modules)
 
->Function modules are now obsolete for new development. You should now use ABAP Objects for modularization. However, you should be familiar with them, since you may need to maintain them or use an existing function module. For more information on obsolete ABAP language elements, see the [ABAP Keyword Documentation](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abenabap_pgl.htm://).
+>Function modules are now obsolete for new development. You should now use ABAP Objects for modularization. However, you should be familiar with them, since you may need to maintain them or use an existing function module. For more information on obsolete ABAP language elements, see the [ABAP Keyword Documentation: Function Modules](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abapfunction.htm).
 
 Now you will inspect a function module:
 
@@ -165,45 +167,25 @@ Now you will inspect a function module:
 
     ![Image depicting step7b-fm-in-editor](step7b-fm-in-editor.png)
 
-[DONE]
+3. Now run your function module by choosing **Run (`F8`)** from the toolbar (ignore the other options for now).
 
-[ACCORDION-END]
+4. The initial screen should look like this. Choose **Run (`F8`)** again.
 
-[ACCORDION-BEGIN [Step 8: ](Open the where-used list)]
+    ![Image depicting step7-test-fm-1](step7-test-fm-1.png)
 
-1. In the **Outline** view, select (right-click on) the function module **`READ_SPFLI_FROM_TABLE`**, then choose **Get where-used list…**:
+5. Double-click on the text **4 entries**.
 
-    ![Image depicting step8-get-where-used](step8-get-where-used.png)
+The output should look roughly like this.
 
-2. From the hit list, choose the program **`DEMO_CALL_FUNCTION`**:
+![Image depicting step7c-test-fm-output](step7c-test-fm-output.png)
 
-    ![Image depicting step8b-choose-program](step8b-choose-program.png)
-
-The program opens in a new editor.
 
 [DONE]
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test the function module)]
-You can test the function module:
-
-1. Choose **Execute program (`F8`)**.
-
-2. In the Input dialog that appears, choose an airline code ("carrier"), such as **LH** or **AA**, then choose **Enter**.
-
-The system displays all the flights for that airline:
-
-![Image depicting step9-display-flights](step9-display-flights.png)
-
-Enter the code you need to turn your ABAP code into an ABAP executable program. In the text area below, enter the following text exactly, then click **Validate**:
-
-``START-OF-SELECTION.``
-``demo=>main( ).``
-
+[ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
 [VALIDATE_1]
-
 [ACCORDION-END]
 
 And that's it. You should now be familiar with the most important ABAP Repository objects and the relationship between them.

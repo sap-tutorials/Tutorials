@@ -185,7 +185,7 @@ The output should now look something like this:
 
 [ACCORDION-BEGIN [Step 10: ](Test yourself)]
 
+
 [VALIDATE_1]
 
 [ACCORDION-END]
----

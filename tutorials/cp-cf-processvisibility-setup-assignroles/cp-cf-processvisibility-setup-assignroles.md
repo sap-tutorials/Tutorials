@@ -1,14 +1,17 @@
 ---
 title: Assign Process Visibility Roles to Users
-description: Assign required roles of Process Visibility to the users.
+description: Assign required roles for the SAP Cloud Platform Process Visibility service for administrators, developers and business users of the service.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud ]
 primary_tag: products>sap-cloud-platform
+author_name: Kavya Gowda
+author_profile: https://github.com/Kavya-Gowda
+
 ---
 
 ## Prerequisites
- - You are assigned to the **User & Role Administrator** role in the **Security** section of your subaccount.
+ - You are assigned to the **User & Role Administrator** role in the **Security** section of your subaccount. For more information on how to assign these roles, refer to [Assign the Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles).
 
 ## Details
 ### You will learn
@@ -19,35 +22,39 @@ Add roles to one or more role collections and then assign these role collections
 
 [ACCORDION-BEGIN [Step 1: ](Create a role collection)]
 
-1. Log into the SAP Cloud Platform cockpit.
+1. In your Web browser, open the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
 
-2. Navigate to your subaccount.
+2. You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 
-    ![Subaccount](Sub-Account-01.png)
+    ![Cloud Foundry](enter-trial.png)
 
-3. From the navigation pane, choose the **Security** tab, then choose **Role Collections**.
+3. Navigate to your subaccount.
+
+    ![Cloud Foundry Subaccount](Trial-Subaccount.png)
+
+4. From the navigation pane, choose the **Security** tab, then choose **Role Collections**.
 
     ![Role Collection](Role-Collections-02.png)
 
-4. Click **New Role Collection** to create a role collection for your service.
+5. Click **New Role Collection** to create a role collection for your service.
 
     ![New Role Collection](New-Role-Collection-03.png)
 
-5. Provide a name and optionally a description to your role collection, then click **Save**.
+6. Provide a name and optionally a description to your role collection, then click **Save**.
 
     ![Role Collection Name](Role-Collection-Name-04.png)
 
-6. Choose the role collection created from the list and click **Add Role**.
+7. Choose the role collection created from the list and click **Add Role**.
 
     ![Add Role](Add-Role-05.png)
 
     ![Add Role](Add-Role-06.png)
 
-7. Choose the entry that begins with **`pvreuseservice`** to access the APIs as an application identifier.
+8. Choose the entry that begins with **`pvreuseservice`** to access the APIs as an application identifier.
 
     ![Application Identifier](Application-Identifier-07.png)
 
-8. Choose the role template and the corresponding role to be assigned to the users from the dropdown menu, and then click **Save**.
+9. Choose the role template and the corresponding role to be assigned to the users from the dropdown menu, and then click **Save**.
 
 In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`PVDeveloper`**, **`PVEventSender`** by following the steps from **Step 6**. For more information about these roles, refer to [Process Visibility Roles](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/e395bfade9c64d89922c561c4b92979f.html).
 
@@ -62,11 +69,11 @@ In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign role collections to users)]
+[ACCORDION-BEGIN [Step 2: ](Assign the role collection to users)]
 
 1. Navigate to your subaccount in the SAP Cloud Platform cockpit.
 
-    ![Subaccount](Sub-Account-01.png)
+    ![Cloud Foundry Subaccount](Trial-Subaccount.png)
 
 2. In the navigation pane, under **Security**, choose **Trust Configuration**.
 
@@ -90,7 +97,6 @@ In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`
 
     ![Assign Role Collection](Assign-Role-Collection-18.png)
 
-Keep editing the role assignments according to your requirements.
 
 [VALIDATE_1]
 [ACCORDION-END]

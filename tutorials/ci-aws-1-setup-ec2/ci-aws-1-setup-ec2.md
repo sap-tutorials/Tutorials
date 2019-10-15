@@ -109,7 +109,7 @@ Click the **Download Key Pair** button.
 
 > **Important**: This is the only chance for you to save the private key file. You'll need to provide the name of your key pair when you launch an instance and the corresponding private key each time you connect to the instance.
 
-Store the downloaded `AWS_CI_CF.pem` private key file to a safe location. It is generally a good idea to store it in a subfolder of your user folder.
+Store the downloaded `AWS_CI_CF.pem` private key file to a safe location. It is generally a good idea to store it in a subfolder named **`.ssh`** of your user folder. On Windows, the user folder is located in **`C:\Users\<your username>`**. On Linux, the user folder is located in **`~`** (tilde).
 
 > **If you use a Mac or Linux computer**: You have to set permissions to the downloaded private key file so that only you can read it.
 
@@ -161,7 +161,7 @@ Now the EC2 instance has fully launched, it is time to connect to it via SSH.
 
 Open **Git Bash** from the Start Menu and run the following command:
 
-```
+```bash
 ssh -i /path/my-key-pair.pem ec2-user@<public hostname>
 ```
 
@@ -171,7 +171,7 @@ The `ec2-user` is the default user for an Amazon Linux AMI.
 
 For example:
 
-```
+```bash
 ssh -i ~/ssh/AWS_CI_CF.pem ec2-user@ec2-1-123-35-162.eu-central-1.compute.amazonaws.com
 ```
 
@@ -204,7 +204,7 @@ Type in **`yes`** and press **Enter** to continue. If everything went successful
 
 Open a terminal and run the following command:
 
-```
+```bash
 ssh -i /path/my-key-pair.pem ec2-user@<public hostname>
 ```
 
@@ -214,7 +214,7 @@ The `ec2-user` is the default user for an Amazon Linux AMI.
 
 For example:
 
-```
+```bash
 ssh -i ~/.ssh/AWS_CI_CF.pem ec2-user@ec2-1-123-35-162.eu-central-1.compute.amazonaws.com
 ```
 
@@ -241,7 +241,7 @@ As you may have noticed when logging in to your EC2 instance, it was mentioned s
 
 Run the following command to update the YUM packages on your EC2 instance:
 
-```
+```bash
 sudo yum update -y
 ```
 
@@ -257,7 +257,7 @@ While the EC2 instance comes with the Docker kernel installed, the Docker CLI is
 
 To install the Docker CLI, run the following command:
 
-```
+```bash
 sudo yum -y install docker
 ```
 
@@ -265,7 +265,7 @@ After a couple of seconds, the Docker CLI is installed.
 
 You can now start Docker with the following command:
 
-```
+```bash
 sudo service docker start
 ```
 

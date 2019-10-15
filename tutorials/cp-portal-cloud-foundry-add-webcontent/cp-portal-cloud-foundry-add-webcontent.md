@@ -1,5 +1,5 @@
 ---
-title: Add Web Content to Your Portal Site and Set the Layout (Cloud Foundry)
+title: Add Web Content to Your Portal Site and Set the Layout
 description: Design your Portal site by adding widgets with meaningful content.
 auto_validation: true
 time: 25

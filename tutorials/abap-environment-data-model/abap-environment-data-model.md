@@ -22,7 +22,7 @@ author_profile: https://github.com/mervey45
   - How to create service binding
 
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
- 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Define CDS-based travel data model)]
@@ -102,6 +102,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   7. Save and activate.
+
+      ![save and activate](activate.png)
 
      Your CDS view for travel booking is defined now. You can use and manipulate data that is persisted in your database.
 
@@ -219,6 +221,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   7. Save and activate.
 
+      ![save and activate](activate.png)
+
      The **projection** is created and includes UI annotations. The projection is the subset of the fields of the travel data model, which are relevant for the travel booking application.
 
 
@@ -260,6 +264,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   5. Save and activate.
 
+      ![save and activate](activate.png)
+
      With the **service definition** you are able to define which data is exposed as a business service in your travel booking application.
 
 [DONE]
@@ -295,7 +301,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. Double-click on `TravelProcessor` to see the application on the UI.
 
       ![Create service binding](binding5.png)
-
+ 
   6. Logon to your ABAP system.
 
       ![Create service binding](binding6.png)

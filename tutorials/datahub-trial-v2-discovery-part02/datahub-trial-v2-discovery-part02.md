@@ -1,6 +1,6 @@
 ---
-title: Explore Data in SAP Vora in SAP Data Hub, Trial Edition 2.5
-description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition 2.5.
+title: Explore Data in SAP Vora in SAP Data Hub, Trial Edition
+description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>SAP-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-VORA ]
@@ -31,58 +31,22 @@ Create a new On Disk Relational Table by clicking **Create New** button. If you 
 
 ![picture_03](./datahub-trial-v2-discovery-part02_03.png)  
 
-Enter the following information to create the relational table if you are using AWS S3 and then click **Next** :
+Enter the following information to create the relational table and then click **Next** :
 
-| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                                                       |
-| :------------------------------ | :------------------------------------------------------------------------------------------- |
-| `Name`                         | `CUSTOMERS`                                                                                       |
-| `Schema`                       | `default`                                                                                         |
-| `Engine`                       | `Relational Disk`                                                                                 |
-| `Table Type`                   | `Data Source`                                                                                     |
-| `File System`                  | `S3 `                                                                                       |
-| `Connection Type`              | `Manual`                                                                                          |
-| `S3 Host`                      | Should be empty                                                                                 |
-| `S3 Access Key Id`             | from your AWS management console go to My security credentials and copy it from there          |
-| `S3 Secret Access Key`         | from your AWS management console go to My security credentials and copy it from there           |
-| `S3 Region`                    | Open the Connection Management. Click on the `Action` button of the Connection Id `CLOUD_STORAGE` and the on `Edit`. Copy the value of `Region`.          |
-| `S3 Bucket`                    | Open the Connection Management. Click on the `Action` button of the Connection Id `CLOUD_STORAGE` and the on `Edit`. Copy the value of `ROOT PATH`.               |
-| `File Path`                    | file path via **Browse** button, in our case /Customers.csv                                     |
+| Field                          | Value                                                                                        |
+| :----------------------------- | :------------------------------------------------------------------------------------------- |
+| `Name`                         | `CUSTOMERS`                                                                                  |
+| `Schema`                       | `default`                                                                                    |
+| `Engine`                       | `Relational Disk`                                                                            |
+| `Table Type`                   | `Data Source`                                                                                |
+| `File System`                  | `GCS` (when using Google Cloud Platform) or `S3` (when using Amazon Web Services) or `WASB` (when using Microsoft Azure) |
+| `Connection Type`              | `Connection Manager`                                                                         |
+| `Connection ID`                | `CLOUD_STORAGE`                                                                              |
+| `File Path`                    | file path via **Browse** button, in our case /Customers.csv                                  |
 
-
-
-Enter the following information to create the relational table if you are using GCS and then click **Next** :
-
-| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                                                       |
-| :------------------------------ | :------------------------------------------------------------------------------------------- |
-| `Name`                         | `CUSTOMERS`                                                                                       |
-| `Schema`                       | `default`                                                                                         |
-| `Engine`                       | `Relational Disk`                                                                                 |
-| `Table Type`                   | `Data Source`                                                                                     |
-| `File System`                  | `GCS`                                                                                             |
-| `Connection Type`              | `Connection Manager`                                                                              |
-| `Connection ID`                | `CLOUD_STORAGE`                                                                                   |
-| `File Path`                    | file path via **Browse** button, in our case /Customers.csv                                     |
-
-
-
-Enter the following information to create the relational table if you are using Azure and then click **Next** :
-
-| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                                                       |
-| :------------------------------ | :------------------------------------------------------------------------------------------- |
-| `Name`                         | `CUSTOMERS`                                                                                       |
-| `Schema`                       | `default`                                                                                         |
-| `Engine`                       | `Relational Disk`                                                                                 |
-| `Table Type`                   | `Data Source`                                                                                     |
-| `File System`                  | `WASB`                                                                                             |
-| `Connection Type`              | `Connection Manager`                                                                              |
-| `Connection ID`                | `CLOUD_STORAGE`                                                                                   |
-| `File Path`                    | file path via **Browse** button, in our case /Customers.csv                                     |
-
-
-Finally click **Finish (2)** to create the table.
+Finally click **Finish** to create the table.
 
 ![picture_04](./datahub-trial-v2-discovery-part02_04.png)
-
 
 After the table is created, click on the **Data Preview** button to display the preview of the loaded table data.
 

@@ -1,14 +1,16 @@
 ---
 title: Create a Service Instance of SAP Cloud Platform Process Visibility
-description: Create a service instance using SAP Cloud Platform Cockpit to enable the Process Visibility service.
+description: Create a service instance using SAP Cloud Platform cockpit to enable the Process Visibility service.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud ]
 primary_tag: products>sap-cloud-platform
+author_name: Kavya Gowda
+author_profile: https://github.com/Kavya-Gowda
 ---
 
 ## Prerequisites
- - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
+ - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -22,14 +24,14 @@ You must create a service instance to enable SAP Cloud Platform Process Visibili
 
 1. In your Web browser, open the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
 
-2. Choose **Cloud Foundry Trial**.
+2. You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 
-    ![Cloud Foundry](CF-Trial.png)
+    ![Cloud Foundry](enter-trial.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable the Process Visibility service for your account)]
+[ACCORDION-BEGIN [Step 2: ](Open Process Visibility tile)]
 
 1. Navigate to your subaccount.
 
@@ -68,11 +70,11 @@ You must create a service instance to enable SAP Cloud Platform Process Visibili
 
     ![Application](Application-21.png)
 
-5. In the **Instance Name** field, provide **`pvservice`** as the instance name. You can provide a unique instance name of your wish.
-
-    >**IMPORTANT:** Note the instance name, as it is required to bind the UIs. The new instance is displayed in the list and the status present under the **Last Operation** changes to **Created**.
+5. In the **Instance Name** field, provide **`pvservice`** as the instance name and choose **Finish**. You can provide a unique instance name of your wish.
 
     ![Instance name](PVservice-Instance-Name-22.png)
+
+    >**IMPORTANT:** Note the instance name, as it is required to bind the UIs. The new instance is displayed in the list and the status present under the **Last Operation** changes to **Created**.
 
     ![Created instance](Instance-Created-23.png)
 
@@ -81,7 +83,7 @@ You must create a service instance to enable SAP Cloud Platform Process Visibili
 
 [ACCORDION-BEGIN [Step 4: ](Create service key for service instance)]
 
-1. In the navigation area, choose **Instances**, then choose the **`pvservice`** instance from the list for which you are creating a service key.
+1. Choose the **`pvservice`** instance from the list for which you are creating a service key.
 
     ![Instances](Instances-24.png)
 
@@ -89,7 +91,7 @@ You must create a service instance to enable SAP Cloud Platform Process Visibili
 
     ![Service key](Service-Key-25.png)
 
-3. In the **Name** field, provide **`pvservicekey`** as the service key name and click **Save**.
+3. In the **Name** field, provide **`pvservice_key`** as the service key name and click **Save**.
 
     ![Service key name](Service-Key-Name-26.png)
 

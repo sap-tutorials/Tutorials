@@ -59,6 +59,8 @@ Open up the new project directory in VS Code. You can do this by either:
 
 	- Opening VS Code via your operating system menu and then using VS Code menu path **File | Open ...** to search for and select the new `teched2019-mission-mock-service-bupa` directory.
 
+> VS Code may open up with a file `cli.js` already open in the editor. You can safely close this file.
+
 Now open the the `package.json` file to have a look inside. It should look similar to this:
 
 ![looking at the package.json file in VS Code](vscode-open.png)
@@ -136,7 +138,7 @@ First, create the directory structure `external/csn/` within the `srv/` director
 
 Download the [`API_BUSINESS_PARTNER`.json](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/cap-cloudsdk-1-mock-service/API_BUSINESS_PARTNER.json) file and save it in this new `srv/external/csn/` directory.
 
-> Be sure to use the **Raw** link to get to the raw file contents before downloading, and keep the `.json` extension.
+> Be sure to use the **Raw** link to get to the raw file contents before downloading, and keep the `.json` extension. If you opt for copy/pasting the content into a new file, make sure you only copy the JSON content, and not any comments that might otherwise be rendered by a Chrome extension.
 
 [DONE]
 [ACCORDION-END]
@@ -184,7 +186,7 @@ server listening on http://localhost:3000
 Adding sample data...
 ```
 
-Your mock service is now running. If you try to access the base URL, <http://localhost:3000>, you will see that nothing is served at that location (that is, the `/` root path): the message **Cannot GET /** appears as a response in your browser. Note that this is different to the browser showing you an HTTP 404 NOT FOUND error.
+Your mock service is now running. If you try to access the base URL, <http://localhost:3000>, you will see that nothing is served at that location (that is, the `/` root path): the message "Cannot GET /" appears as a response in your browser. Note that this is different to the browser showing you an HTTP 404 NOT FOUND error.
 
 Remember the path defined in the `srv/cat-service.cds` file? It's at this location that the mock service is served.
 
@@ -198,7 +200,9 @@ You should see an OData V4 entity set returned, containing 4 entities (these are
 
 At this stage you now have a running mock SAP S/4 service -- specifically relating to the address data in the [Business Partner API](https://api.sap.com/api/API_BUSINESS_PARTNER/overview).
 
-Congratulations.
+Congratulations!
 
 [DONE]
 [ACCORDION-END]
+
+

@@ -11,7 +11,6 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
  - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
- - You have created a **cloud foundry trial account with Europe (Frankfurt) as region**: [Create a Cloud Foundry Account](cp-cf-create-account).
 
 ## Details
 ### You will learn  
@@ -22,24 +21,23 @@ author_profile: https://github.com/mervey45
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Select ABAP Trial)]
-  1. Open SAP Cloud Platform Trial Cockpit to logon to your existing Cloud Foundry trial account
-     <https://cockpit.hanatrial.ondemand.com/>.
+  1. Logon to your SAP Cloud Platform Trial Cockpit <https://cockpit.hanatrial.ondemand.com/> and select **Enter Your Trial Account**.
 
-      ![Select ABAP Trial](logon.png)
+      ![Select ABAP Trial](welcome.png)
 
-  2. Select **Cloud Foundry Trial**.
+  2. **You can see your trial subaccount with Europe (Rot) as region**.
 
-      ![Select ABAP Trial](entitlement.png)
+      Click **trial**.
 
-  3. If you see this pop-up window, then your Cloud Foundry Trial is ready to use. Click **Go to Space**.
+      ![Select ABAP Trial](welcometrial.png)
 
-     Otherwise, you already started your Cloud Foundry trial account. Therefore navigate to your dev space in your trial subaccount and move on with step **1.4**.
+  3. Select **Spaces**.
 
-      ![Select ABAP Trial](entitlement3.png)
+      ![Select ABAP Trial](space.png)
 
-  4. Result: You can see your dev space.
+  4. Click **dev** to navigate to your dev space.
 
-      ![Select ABAP Trial](entitlement4.png)
+      ![Select ABAP Trial](dev.png)
 
   5. Click **Services**.
 
@@ -51,7 +49,7 @@ author_profile: https://github.com/mervey45
 
   7. **If you see the ABAP Trial tile, then select it move on with step 3.1 to create your instance**.
 
-     **If you don't see the ABAP Trial tile, then move on with step 2.1 to configure your SAP Cloud Platform Entitlements. Come back to Service Marketplace and select ABAP Trial**.
+     **If you don't see the ABAP Trial tile, then move on with step 2.1 to configure your SAP Cloud Platform Entitlements.**.
 
       ![Select ABAP Trial](trial.png)
 
@@ -85,6 +83,18 @@ author_profile: https://github.com/mervey45
   6.  Select **ABAP Trial**, check **shared** and click **Add 1 Service Plan**.
 
       ![Select ABAP Trial](entitlement11.png)
+
+  7.  Click **Save**.
+
+      ![Select ABAP Trial](entitlement13.png)
+
+  8.  Check your result
+
+      ![Select ABAP Trial](entitlement14.png)
+
+  9.  Go back to your space dev, select **Service Marketplace** and **ABAP Trial**.
+
+      ![Select ABAP Trial](abaptrial.png)
 
 [DONE]
 [ACCORDION-END]
@@ -151,8 +161,9 @@ author_profile: https://github.com/mervey45
       ![Create service key](key3.png)
 
   4. Now your service key appears. Copy your service key for later use.
+     The service key enables the connection to the SAP Cloud Platform ABAP environment system in ADT.
 
-      ![Create service key](key4.png)
+     ![Create service key](key4.png)
 
 [DONE]
 [ACCORDION-END]

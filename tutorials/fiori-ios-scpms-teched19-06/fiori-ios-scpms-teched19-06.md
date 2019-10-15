@@ -8,8 +8,8 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP02
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn  
@@ -43,7 +43,7 @@ Create an `IBAction` in the `OverviewViewController.swift` class by **control + 
 
 Close the **Assistant Editor** if not done already and open the class `OverviewViewController.swift`. Add two properties for holding the `UIImagePickerController` and the picked image.
 
-Add the following lines of code below the segue properties:
+Add the following lines of code below the segue property:
 
 ```Swift
 
@@ -66,7 +66,7 @@ private func setupImagePicker() {
 
 ```
 
-Next call that just added method in the `viewDidLoad(:)` right below the `loadInitialData()` method call:
+Next call that just added method in the `viewDidLoad(:)` right above the `loadInitialData()` method call:
 
 ```Swift
 
@@ -131,7 +131,7 @@ The Table View Controller has to have a Navigation Bar so let's embed the `Produ
 
 Last step is to create the segue from the Bar Button Item inside the Overview View Controller to the Product Classification Table View Controller.
 
-Select the added Bar Button Item and **control + drag** to the Product Classification Table View Controller, as action choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
+Select the `OverviewViewController` and **control + drag** to the Product Classification Table View Controller, choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-08.png)
 
@@ -223,7 +223,7 @@ var image: UIImage!
 
 When the user taps on the Bar Button Item it should show an Action Sheet or a Popover when running on Regular mode on the iPad. For that you will implement that code in the `didPressActionListButton(_:)` method. Before doing that you will add one more line of code to the `viewDidLoad(_:)` to make sure the Bar Button Item shows an Icon instead of just the word **Item**.
 
-Add the following line of code to the `viewDidLoad(_:)`:
+Open the `OverviewViewController.swift` class and add the following line of code to the `viewDidLoad(_:)`:
 
 
 ```Swift

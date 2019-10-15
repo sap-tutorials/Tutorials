@@ -1,21 +1,25 @@
 ---
-title: Monitor your Business Scenarios using Monitor Scenarios Application
+title: Monitor Your Business Scenarios
 description: Monitor the business scenario and process data using the Monitor Scenarios application.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-cloud-platform
+author_name: Kavya Gowda
+author_profile: https://github.com/Kavya-Gowda
 ---
 
 ## Prerequisites
- - You have the **Monitor Scenarios** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad] (cp-cf-processvisibility-setup-flp).
- - You have the **`PVAdmin`** role assigned to your user.
+ - You have the Monitor Scenarios application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
+ - You have the **`PVAdmin`** role assigned to your user. For more information on how to assign these roles, refer to [Assign the Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles).
 
 ## Details
 ### You will learn
   - How to view the details about the ongoing or completed  processing runs of a business scenario
 
-You can monitor the activated business scenarios using the **Monitor Scenarios** application.
+You can monitor the activated business scenarios using the Monitor Scenarios application.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Access the Monitor Scenarios application)]
 
@@ -28,7 +32,7 @@ You can monitor the activated business scenarios using the **Monitor Scenarios**
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](View the details of a scenario definition)]
+[ACCORDION-BEGIN [Step 2: ](View details of scenario definition)]
 
 1. Type and search for the keyword **Employee Onboarding Scenario**, which is the scenario definition name used in this tutorial.
 
@@ -38,7 +42,7 @@ You can monitor the activated business scenarios using the **Monitor Scenarios**
 
     ![Processing Data](Process-Data-04.png)
 
-3. On successful processing of data, you can see the processing information listed out under Processing Information.
+3. On successful processing of data, you can see the processing information listed out under **Processing Information**.
 
     ![Processing Information](Processing-Information-05.png)
 

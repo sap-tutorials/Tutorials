@@ -68,6 +68,8 @@ This relationship was established based on the most frequent ingredients of the 
 
 Use the following SQL statement to get the most frequent ingredients in your view using the Map Reduce functions and creating your code name from the data in the document store.
 
+Replace the placeholders with your first name and day of birth. For example: 'LUCIA' and '19'.
+
 ```SQL
 
 do begin

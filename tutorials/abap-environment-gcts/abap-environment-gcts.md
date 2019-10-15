@@ -3,7 +3,7 @@ auto_validation: true
 title: Transport a Software Component Between Two ABAP Instances
 description: Create and import a new software component into an SAP Cloud Platform ABAP Environment instance, add ABAP sources and export it to a new SAP Cloud Platform ABAP Environment instance.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
 author_name: Niloofar Naseri
 author_profile: https://github.com/niloofar-naseri

@@ -10,7 +10,6 @@ time: 15
 ## Prerequisites  
   - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html)
   - [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
-  - [Create a Cloud Foundry Account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
 
 ## Details
 ### You will learn  

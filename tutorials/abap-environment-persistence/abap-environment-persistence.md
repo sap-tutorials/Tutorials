@@ -19,7 +19,7 @@ author_profile: https://github.com/mervey45
   - How to create an ABAP package
   - How to create a database table
   - How to create an ABAP class to generate data
- 
+
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 ---
@@ -113,8 +113,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   6. Save and activate.
 
-     Now the dictionary tables are defined. The dictionary tables are the basis of our travel booking data model.
+      ![save and activate](activate.png)
 
+     Now the dictionary tables are defined. The dictionary tables are the basis of our travel booking data model.
+  
 [DONE]
 [ACCORDION-END]
 
@@ -185,6 +187,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   5. Save, activate and click `F9` to run your ABAP class.
+
+      ![save and activate](activate2.png)
 
   6. Switch to your database table and press `F8` to see your data.
 

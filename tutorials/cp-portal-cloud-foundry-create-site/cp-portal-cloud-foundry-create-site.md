@@ -1,5 +1,5 @@
 ---
-title: Create a Portal Site (Cloud Foundry)
+title: Create a Portal Site
 description: Create a Portal site with a launchpad and other pages that will contain apps and web content.
 auto_validation: true
 time: 10

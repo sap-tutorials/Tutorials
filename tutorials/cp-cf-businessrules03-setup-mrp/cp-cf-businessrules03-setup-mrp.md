@@ -30,31 +30,29 @@ The **`cf-businessruleseditor.zip`** is downloaded to your file system.
 
 [ACCORDION-BEGIN [Step 2: ](Import MTA to SAP Web IDE)]
 
-1. Log onto [SAP Cloud Platform Cockpit](http://cockpit.hanatrial.ondemand.com).
-
-2. Scroll down and choose **Launch SAP Web IDE**.
+1. Log on to [SAP Cloud Platform Cockpit](http://cockpit.hanatrial.ondemand.com) and choose **Launch SAP Web IDE**.
 
     ![Lauch Web IDE](MTA_1.png)
 
-3. In SAP Web IDE Full-Stack, open the **Development** perspective.
+2. In SAP Web IDE Full-Stack, open the **Development** perspective.
 
     ![Development Perspective](MTA_2.png)
 
-4. Right-click the **Workspace** root folder, then choose **Import > File or Project**.
+3. Right-click the **Workspace** root folder, then choose **Import > File or Project**.
 
     ![Import file or project](MTA_3.png)
 
-5. In the **Import** dialog, browse for the **`businessruleseditor.zip`** file that you downloaded in your local system.
+4. In the **Import** dialog, browse for the **`businessruleseditor.zip`** file that you downloaded in your local system.
 
     ![Import dialog](MTA_4.png)
 
     Upon browsing the file, the other fields automatically get updated.
 
-6. Choose **OK**.
+5. Choose **OK**.
 
     ![Click OK](MTA_5.png)
 
-7. The MTA file is imported under the **Workspace** folder and the file structure is shown below. Ensure that have chosen **Show Hidden Files** to be able to view the file structure as shown.
+6. The MTA file is imported under the **Workspace** folder and the file structure is shown below. Ensure that have chosen **Show Hidden Files** to be able to view the file structure as shown.
 
     ![MTA folder structure](MTA_6.png)
 

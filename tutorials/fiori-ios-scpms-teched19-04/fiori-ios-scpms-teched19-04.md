@@ -8,8 +8,8 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP02
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn  
@@ -422,9 +422,9 @@ private func setupProfileHeader() {
     // The Activity Control is a great UI control for making direct calls, text messages or emails to the Customer.
     let activityControl = FUIActivityControl()
     activityControl.addActivities([.phone, .message, .email])
-    activityControl.activityItems[.phone]?.setTintColor(UIColor.preferredFioriColor(forStyle: .primary6), for: .normal)
-    activityControl.activityItems[.message]?.setTintColor(UIColor.preferredFioriColor(forStyle: .primary6), for: .normal)
-    activityControl.activityItems[.email]?.setTintColor(UIColor.preferredFioriColor(forStyle: .primary6), for: .normal)
+    activityControl.activityItems[.phone]?.setTitleColor(.preferredFioriColor(forStyle: .tintColorDark), for: .normal)
+    activityControl.activityItems[.message]?.setTitleColor(.preferredFioriColor(forStyle: .tintColorDark), for: .normal)
+    activityControl.activityItems[.email]?.setTitleColor(.preferredFioriColor(forStyle: .tintColorDark), for: .normal)
 
     // Set this View Controller as Delegate for the Activity Control
     activityControl.delegate = self
@@ -478,27 +478,6 @@ You've done all the implementation needed for the Charts and Profile Header.
 Run the app on your iOS Simulator to see the result of your work.
 
 ![Customer Detail](fiori-ios-scpms-teched19-01.png)
-
-Stop right here!
-
-Do you see the fine 1-point thick hairline between the Profile Header and the Navigation Bar? To make the UI more clean, it would be great to remove that hairline first.
-
-Add the following lines of code right below the `setupProfileHeader()` method:
-
-```Swift
-
-private func removeHairline() {
-    // remove hairline
-    let navigationBar = self.navigationController?.navigationBar
-    navigationBar?.setBackgroundImage(UIImage(), for: .any  , barMetrics: .default)
-    navigationBar?.shadowImage = UIImage()
-}
-
-```
-
-Call that method in the `viewDidLoad(:)` method and rerun the app on the simulator.
-
-![Customer Detail](fiori-ios-scpms-teched19-02.png)
 
 [VALIDATE_6]
 [ACCORDION-END]

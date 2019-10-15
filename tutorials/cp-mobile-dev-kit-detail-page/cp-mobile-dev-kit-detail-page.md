@@ -33,19 +33,23 @@ This page will show related details for a customer. In this page, you will add a
 
 >You can find more details about [available controls in section page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
-In SAP Web IDE project, Right click on the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
+In SAP Web IDE project, Right-click on the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
 
 ![MDK](img_001.gif)
 
 >You can find more details about [section page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
-Enter the Page Name `CustomerDetail` and click **Next** and the **Finish** on the Confirmation step.
+Enter the Page Name `Customers_Detail` and click **Next** and the **Finish** on the Confirmation step.
 
 ![MDK](img_002.png)
 
+In `Customers_Detail` page, select the page header area and then click **Page**.
+
+![MDK](img_002.1.png)
+
 In the **Properties** pane set the Caption to **Customer Detail**.
 
-![MDK](img_003.gif)
+![MDK](img_003.1.png)
 
 Next, you will add an **Object Header** container to display information like first name, last name, date of birth, email address & phone number.
 
@@ -150,87 +154,96 @@ Repeat the process and set the **lower right** Key Value Item Key Name to **Coun
 
 ![MDK](img_019.png)
 
-Save your changes to the Customer Detail page.
+Save your changes to the `Customers_Detail.page`.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a navigation action)]
 
-Now, you will create a **Navigation action** that opens the **Customer Detail** page when called.
+Now, you will create a Navigation action that opens the `Customers_Detail.page` when called.
 
-Right click on the **Actions** folder | **New MDK Action** | **Navigation Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
-![MDK](img_021.gif)
+![MDK](img_017.1.gif)
 
 Provide the below information:
 
 | Field | Value |
 |----|----|
-| `Action Name`| `ShowCustomerDetail` |
-| `Page to Open` | `CustomerDetail.page` |
+| `Action Name`| `NavToCustomers_Detail` |
+| `Page to Open` | select `Customers_Detail.page` |
 
 ![MDK](img_022.png)
 
-Click **Next** and then **Finish** on the Confirmation step.
+Click **Next** and then **Finish** on the confirmation step.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Set the OnPress of the customer list)]
 
-Go back to the **Customer List page** and set the `OnPress` event of the Contact Cell table. You will link the Contact Cell table to the `ShowCustomerDetail` action so that when an end-user selects a customer, the Customer Detail page will open. MDK automatically passes the selected customer to the detail page.
+Go back to the `Customers_List page` and set the `OnPress` event of the Contact Cell table. You will link the Contact Cell table to the `NavToCustomers_Detail.action` so that when an end-user selects a customer, the Customer Detail page will open. MDK automatically passes the selected customer to the detail page.
 
-In `CustomerList` page, select the Contact Cell Table, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
+In `Customers_List page`, select the **Contact Cell Table** control, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
-Double Click on the `ShowCustomerDetail` action and click **OK** to set it as the `OnPress` Action.
+Double Click on the `NavToCustomers_Detail.action` and click **OK** to set it as the `OnPress` Action.
 
 ![MDK](img_025.gif)
 
-Save the changes to the `CustomerList` page.
+Save the changes to the `Customers_List page`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy, activate and test the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
+Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
 ![MDK](img_026.png)
 
->Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
+Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
 
-[OPTION BEGIN [iOS]]
+![MDK](img_014.1.png)
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+[DONE]
+[ACCORDION-END]
 
-![MDK](img_027.png)
+[ACCORDION-BEGIN [Step 5: ](Test the application)]
 
-Click **Customer List**, you will navigate to Customer List page.
-
-![MDK](img_028.png)
-
-Click any record from the list, you will navigate to it's detail page.
-
-![MDK](img_029.png)
-
-[OPTION END]
+>Make sure you are choosing the right device platform tab above.
 
 [OPTION BEGIN [Android]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
 
 ![MDK](img_027.1.jpg)
 
-Click **CUSTOMER LIST**, you will navigate to Customer List page.
+Tap **CUSTOMER LIST**, you will navigate to Customer List page.
 
 ![MDK](img_028.1.jpg)
 
-Click any record from the list, you will navigate to it's detail page.
+Tap any record from the list, you will navigate to it's detail page.
 
 ![MDK](img_029.1.jpg)
+
+[OPTION END]
+
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+
+![MDK](img_027.png)
+
+Tap **Customer List**, you will navigate to Customer List page.
+
+![MDK](img_028.png)
+
+Tap any record from the list, you will navigate to it's detail page.
+
+![MDK](img_029.png)
 
 [OPTION END]
 

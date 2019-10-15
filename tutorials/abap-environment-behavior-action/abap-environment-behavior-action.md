@@ -3,12 +3,12 @@ auto_validation: true
 title: Enhance Behavior With Action and Validation
 description: Enhance behavior definition and implementation with action and validation.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
- 
+
 ## Prerequisites  
 - You have created an SAP Cloud Platform ABAP environment trial user or
 - You have created a developer user in an SAP Cloud Platform ABAP Environment system.
@@ -72,6 +72,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   3. Save and activate.
+
+      ![save and activate](activate.png)
 
 [DONE]
 [ACCORDION-END]
@@ -273,6 +275,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   3. Save and activate.
 
+      ![save and activate](activate.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -303,6 +307,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   3. Save and activate.
+
+      ![save and activate](activate.png)
 
      The **validation** allows you to check the data consistency of your travel booking application.
 

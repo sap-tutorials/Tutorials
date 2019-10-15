@@ -42,7 +42,7 @@ Now you can run the following command to install `@sap/cds` globally, knowing th
 npm install -g @sap/cds
 ```
 
-To satisfy yourself that the install proceeded successfully, invoke the `cds` executable with the `v` option and check that you get sensible output. Here's an example of what that might look like:
+To satisfy yourself that the install proceeded successfully, invoke the `cds` executable with the `-v` option and check that you get sensible output. Here's an example of what that might look like (versions may be different):
 
 ```Bash
 $ cds -v
@@ -121,7 +121,6 @@ Now edit the `srv/cat-service.cds` file to have each of these three entities exp
 ```CDS
 using my.bookshop as my from '../db/data-model';
 
-
 service CatalogService {
     entity Books as projection on my.Books;
     entity Authors as projection on my.Authors;
@@ -183,7 +182,7 @@ ID,BOOK_ID,QUANTITY
 To effect the loading of this seed data, run the following command in an integrated terminal within your project in VS Code (ensure you're in the project directory before you do):
 
 ```Bash
-cds deploy
+cds deploy --to sqlite
 ```
 
 You should see output similar to this:

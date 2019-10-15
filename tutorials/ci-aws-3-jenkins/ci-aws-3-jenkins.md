@@ -26,22 +26,50 @@ As mentioned in the introduction tutorial of this series, the **`Cx Server`** is
 
 [ACCORDION-BEGIN [Step 1: ](Copy cx-server folder from app to AWS)]
 
-Open a new terminal and navigate to the root of your SAP Cloud SDK app.
+[OPTION BEGIN [Windows]]
+
+Open a new **Git Bash** terminal and navigate to the root of your SAP Cloud SDK app.
 
 You now copy the `cx-server` folder and its content to the home directory of the `ec2-user` on your AWS EC2 instance with the following command:
 
-```
+```sh
 scp -i /path/my-key-pair.pem -r ./cx-server ec2-user@<public hostname>:~
 ```
 
 For instance:
 
+```sh
+scp -i ~/.ssh/AWS_CI_CF.pem -r ./cx-server ec2-user@ec2-3-123-30-162.eu-central-1.compute.amazonaws.com:~
 ```
+
+![Copy cx-server directory](ci-aws-3-jenkins-01-win.png)
+
+> In **Git Bash**, you use Unix commands in a Windows environment. In the example above, the private key file is stored in location **`~/.ssh/AWS_CI_CF.pem`**. In Unix environments, directory **`~`** is used for the user's home directory. On Windows, the example location for the private key file would then be **`C:\Users\<your username>\.ssh\AWS_CI_CF.pem`**.
+
+> Similarly, drive letters are not used in Unix environments. To reference a path in drive **`C:\`**, you would use **`/C/`** instead. For example, if you have stored the private key file in a location other than your user directory, for instance **`C:\Temp\AWS_CI_CF.pem`**, you will reference it as **`/C/Temp/AWS_CI_CF.pem`**.
+
+[OPTION END]
+
+
+[OPTION BEGIN [Linux and macOS]]
+
+Open a new terminal and navigate to the root of your SAP Cloud SDK app.
+
+You now copy the `cx-server` folder and its content to the home directory of the `ec2-user` on your AWS EC2 instance with the following command:
+
+```sh
+scp -i /path/my-key-pair.pem -r ./cx-server ec2-user@<public hostname>:~
+```
+
+For instance:
+
+```sh
 scp -i ~/.ssh/AWS_CI_CF.pem -r ./cx-server ec2-user@ec2-3-123-30-162.eu-central-1.compute.amazonaws.com:~
 ```
 
 ![Copy cx-server directory](ci-aws-3-jenkins-01.png)
 
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
@@ -52,19 +80,19 @@ After you have copied the `cx-server` directory to AWS, you need to make the con
 
 Log in to your AWS EC2 instance with the command:
 
-```
+```sh
 ssh -i /path/my-key-pair.pem ec2-user@<public hostname>
 ```
 
 For example:
 
-```
+```sh
 ssh -i ~/.ssh/AWS_CI_CF.pem ec2-user@ec2-1-123-35-162.eu-central-1.compute.amazonaws.com
 ```
 
 Change directory to `cx-server`:
 
-```
+```sh
 cd cx-server
 ```
 
@@ -72,7 +100,7 @@ If you now list the contents of that directory, you'll notice the containing `cx
 
 You can fix that with the following command:
 
-```
+```sh
 chmod +x cx-server
 ```
 
@@ -90,7 +118,7 @@ If you now list the directory contents, you see the script is now executable:
 
 You can now start the SAP Cloud SDK CI/CD server. While in the `cx-server` directory on your AWS EC2 instance, run the following command:
 
-```
+```sh
 sudo ./cx-server start
 ```
 
@@ -124,7 +152,7 @@ To disable the Nexus server, you must set the corresponding flag in the `server.
 
 In your terminal, execute the following command:
 
-```
+```sh
 nano ~/cx-server/server.cfg
 ```
 
@@ -148,9 +176,9 @@ To save the changes, type **Ctrl-X**, then **Y** to confirm, and then **Enter**.
 
 To start with a fresh environment, execute the following two commands:
 
-```
+```sh
 sudo ./cx-server remove
-sudo ./cx-server starts
+sudo ./cx-server start
 ```
 
 The `cx-server` now runs without the Nexus cache.
@@ -172,13 +200,13 @@ Click the **Modify** button, then click **Yes** to accept your changes and click
 
 Next, open a terminal to your EC2 instance, and type the following command:
 
-```
+```sh
 lsblk
 ```
 
 The output shows the root volume is now indeed 20 GB, but the partition is still 8 GB. To extend the partition, type the following command:
 
-```
+```sh
 sudo growpart /dev/xvda 1
 ```
 
@@ -186,13 +214,13 @@ This will extend partition `1` of disk `/dev/xvda`.
 
 Lastly, you will need to extend the filesystem as well. Execute the following command:
 
-```
+```sh
 sudo resize2fs /dev/xvda1
 ```
 
 To check the new disk size, type the following command:
 
-```
+```sh
 df -h
 ```
 
@@ -200,11 +228,11 @@ You should now see the new disk size:
 
 ![Start cx-server](ci-aws-3-jenkins-14.png)
 
-To start with a fresh environment, execute the following two commands:
+To start with a fresh environment, execute the following two commands in the folder, where cx-server was installed (by default in `~/cx-server/`):
 
-```
+```sh
 sudo ./cx-server remove
-sudo ./cx-server starts
+sudo ./cx-server start
 ```
 
 > If the Nexus server still fails to start, you may need to remove it as well. Execute the following command:

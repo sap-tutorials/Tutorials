@@ -8,8 +8,8 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ time: 20
 
 For this exercise, a static (mock) location will be used. As a challenge on your own, once you've got the map displaying the mock location, try implementing it with OData entities, like you did with the the timeline cell in previous tutorials.
 
-Map coordinates on iOS are represented using `CLLocationCoordinate2D` instances. Add the following lines of code directly under the outlet at the top of the class:
+Map coordinates on iOS are represented using `CLLocationCoordinate2D` instances. Add the following lines of code directly under the outlet at the top of the `TrackingMapViewController.swift` class:
 
 ```swift
 let location = CLLocationCoordinate2D(latitude: 49.293843, longitude: 8.641369)

@@ -28,6 +28,8 @@ In this tutorial, you will install and configure the OData V2 Adapter so that yo
 
 The OData V2 adapter is available in the form of a Node.js package, which can be installed into the project.
 
+> You're about to enter a command in the integrated terminal. If your service is still running (which it should be) from the previous tutorial in this mission, you can terminate it with `Ctrl-C` in order to get back to the prompt.
+
 At the command prompt in the integrated terminal in VS Code, install this package into the project with:
 
 ```Bash
@@ -182,19 +184,20 @@ In the top right menu area of the existing integrated terminal, use the plus but
 
 > You can switch between your terminals with the menu that is seen in the screenshot as showing "2: bash".
 
-In the new, second integrated terminal, start a Node.js REPL ([Read-Evaluate-Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can write JavaScript directly and have it executed immediately and interactively. You won't see much initially -- just a simple **`>`** prompt. At this prompt, enter the following, to load the specific Business Partner Address part of the SAP Cloud SDK virtual data model you installed earlier in this tutorial.
+In the new, second integrated terminal, start a Node.js REPL ([Read-Evaluate-Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can write JavaScript directly and have it executed immediately and interactively.
 
-> Here, the command prompt and the Node.js REPL's prompt is shown for context, as well as the response (undefined) - you only have to type the part starting `const` ...
-
-
-```
-14:48 $ node
-> const BusinessPartnerAddress = require('@sap/cloud-sdk-vdm-business-partner-service').BusinessPartnerAddress
-undefined
->
+```Bash
+node
 ```
 
-At this point you have an object bristling with potential (if you're interested, just enter `BusinessPartnerAddress.`, including the period at the end, and then hit **Tab** to see the possibilities). Now you can use this object, and invoke the request builder to make a call to the service that you have running in the other integrated terminal.
+You won't see much initially -- just a simple **`>`** prompt. At this prompt, enter the following, to load the specific Business Partner Address part of the SAP Cloud SDK virtual data model you installed earlier in this tutorial.
+
+
+```JavaScript
+const BusinessPartnerAddress = require('@sap/cloud-sdk-vdm-business-partner-service').BusinessPartnerAddress
+```
+
+What this returns is not particularly spectacular (`undefined`) ... but don't be fooled - at this point you now have an object bristling with potential. If you're interested in seeing this potential, just enter `BusinessPartnerAddress.`, including the period at the end, and then hit **Tab** to see the possibilities). Now you can use this object, and invoke the request builder to make a call to the service that you have running in the other integrated terminal.
 
 Switch to editor mode in the Node.js REPL with the command `.editor` (note the period at the start -- see [Commands and Special Keys](https://nodejs.org/api/repl.html#repl_commands_and_special_keys)) so you can paste in the following all at once:
 

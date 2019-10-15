@@ -33,7 +33,7 @@ Here you have to provide a **Payload URL**. In this case, the payload URL is the
 
 The Jenkins payload URL consists of the Jenkins base URL, suffixed with `/github-webhook/`, for instance:
 
-```
+```url
 http://ec2-18-185-111-89.eu-central-1.compute.amazonaws.com/github-webhook/
 ```
 
