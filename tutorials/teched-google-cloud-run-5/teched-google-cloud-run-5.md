@@ -96,16 +96,23 @@ CMD [ "npm", "start" ]
 
 [ACCORDION-BEGIN [Step 3: ](Upload the image)]
 
+Enable the Cloud Build API by visiting the following URL in a new tab:
+
+```web
+https://console.cloud.google.com/apis/api/cloudbuild.googleapis.com/overview
+```
+
+![NPM config](api.png)
+
+Wait until the API has been enabled. You can close this tab and go back to the Cloud Shell once it has.
+
 Use the following command to create and upload a container image. Answer **y** if prompted to activate Cloud Run for your account.
 
 ```ssh
 cd ~/teched
 gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/teched
 ```
-
-For example:
-
-![NPM config](5.png)
+This will take about a minute.
 
 Make sure you see a **SUCCESS** message once the process is finished.
 
@@ -117,14 +124,15 @@ Make sure you see a **SUCCESS** message once the process is finished.
 
 [ACCORDION-BEGIN [Step 4: ](Retrieve the environment variable)]
 
-Use the following command to get the `VCAP_SERVICES` environment variable.
+Use the following command to get the `VCAP_SERVICES` file as a string.
 
 ```ssh
-echo $VCAP_SERVICES
+jq -r "to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]" ~/teched/default-env.json
 ```
+
  **Leave this open**. You will need this result later.
 
- ![NPM config](7.png)
+ ![NPM config](7x.png)
 
 [DONE]
 [ACCORDION-END]
@@ -132,6 +140,10 @@ echo $VCAP_SERVICES
 [ACCORDION-BEGIN [Step 4: ](Create a Cloud Run deployment)]
 
 Open a new tab and enter [https://console.cloud.google.com/run](https://console.cloud.google.com/run).
+
+Click **Start using Cloud Run**.
+
+![Create Cloud Run](x8.png)
 
 Click **Create Service**.
 
@@ -145,13 +157,15 @@ Expand the list and click on the latest registry image.
 
 ![Create Cloud Run](11.png)
 
-Flag **Allow unauthenticated invocations** and click **Show optimal settings**.
+Flag **Allow unauthenticated invocations** and click **Show Optional Revision Settings**.
 
 ![Create Cloud Run](12.png)
 
-In the environment variable, add a variable called `VCAP_SERVICES` and use the content of the result from `echo $VCAP_SERVICES` in the cloud shell:
+In the environment variable, add a variable called `VCAP_SERVICES` and use the content of the file `default-env.json` as a string from the previous step.
 
-![Create Cloud Run](13.png)
+Do not copy the `VCAP_SERVICES=` assignment. You only need the content of the variable after it.
+
+![Create Cloud Run](13x.png)
 
 Scroll down and click **Create**
 

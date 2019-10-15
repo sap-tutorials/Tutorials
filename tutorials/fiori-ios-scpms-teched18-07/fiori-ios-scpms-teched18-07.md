@@ -8,8 +8,8 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn  
@@ -131,7 +131,7 @@ Enter **0** for each field to add 4 new constraints, and deselect **Constrain to
 
 In order to access the map view from Swift code, an **outlet connection** needs to be added to the code that, at runtime, will refer to the map view in the storyboard.
 
-While viewing the storyboard, click on the **Show the Assistant editor** button in the toolbar (which looks like a Venn diagram) to display the code associated with the storyboard, side-by-side.
+While viewing the storyboard, click on the **Adjust Editor Options** button in the top-right corner and select **Assistant** to display the code associated with the storyboard, side-by-side.
 
 ![Map View](fiori-ios-scpms-create-app-teched18-part7-13.png)
 

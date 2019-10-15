@@ -18,10 +18,11 @@ author_profile: https://github.com/jitendrakansal
 [ACCORDION-BEGIN [Step 1: ](Create a validation message)]
 
 When allowing end-users to make updates to data, it is important to add validation rules to verify that they are entering valid information.
-
 If the Update action fails due to the validation rule, the application will display a validation failure message to the end-user. You can customize this message by creating a Message action and adding the action to the validation Failure Message field in the Update action.
 
-Right click on the **Actions** | **New MDK Action** | **Message Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+
+![MDK](img_020.png)
 
 Provide the below information:
 
@@ -83,22 +84,44 @@ if((atSign.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@')) === -1){
 
 Now that you have created the validation rule, you will add it to the Update action. This will tell the Update action to run the validation rule before saving any data. If the validation rule is successful, the Update action will save the changes as expected. If the validation rule fails, the end-user receives the validation failure message telling them useful information so they can fix the problem before continuing.
 
-Open `UpdateCustomer.action` by double clicking on the action in the project explorer pane.
+Open `Customers_UpdateEntity.action` by double clicking on the action in the project explorer pane.
 
 Expand the **Common Action Properties** and select `EmailValidation.js` rule for **Validation Rule** field.
 
-![MDK](img_012.1.png)
+![MDK](img_012.2.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy, activate and test the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
+Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
->Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
+![MDK](img_026.1.png)
+
+Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+
+![MDK](img_014.1.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Test the application)]
+
+>Make sure you are choosing the right device platform tab above.
+
+[OPTION BEGIN [Android]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+
+Update a record with no contain of **@** in Email property throws a validation failure message.
+
+![MDK](img_013.1.png)
+![MDK](img_012.1.png)
+
+[OPTION END]
 
 [OPTION BEGIN [iOS]]
 
@@ -107,20 +130,7 @@ Re-launch the app on your device, you may asked to authenticate with passcode or
 Update a record with no contain of **@** in Email property throws a validation failure message.
 
 ![MDK](img_013.png)
-
 ![MDK](img_012.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Android]]
-
-Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
-
-Update a record with no contain of **@** in Email property throws a validation failure message.
-
-![MDK](img_013.1.jpg)
-
-![MDK](img_012.1.jpg)
 
 [OPTION END]
 

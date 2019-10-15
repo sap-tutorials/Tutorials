@@ -2,6 +2,8 @@
 title: Create a CRUD Master-Detail App
 description: Create a CRUD Master-Detail app using the template provided by SAP Web IDE, and get it ready to be built as a hybrid app.
 auto_validation: true
+author_name: Ludo Noens
+author_profile: https://github.com/lnoenssap
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>mobile, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 time: 15
@@ -20,11 +22,11 @@ time: 15
 
 [ACCORDION-BEGIN [Step 1: ](Log in to SAP Cloud Platform)]
 
-Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
+Go to <https://cockpit.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit and select **Enter Your Trial Account**.
 
 ![Some alternative text](step1.png)
 
-SAP now offers SAP Cloud Platform Trial on both Cloud Foundry as well as Neo. For this tutorial and the subsequent mobile tutorial please select Neo Trial.
+SAP offers SAP Cloud Platform Trial on both Cloud Foundry as well as Neo. For this tutorial and the subsequent mobile tutorial please select the Neo Trial environment. On the cockpit page, scroll down to the Environments section and select **Access Neo Trial**.
 
 ![Some alternative text](step1-part2.png)
 
@@ -34,7 +36,7 @@ SAP now offers SAP Cloud Platform Trial on both Cloud Foundry as well as Neo. Fo
 
 [ACCORDION-BEGIN [Step 2: ](Enable Mobile Services)]
 
-Choose **Services** on the left pane, scroll down and then choose **Mobile Services, users**.
+Choose **Services** on the left pane, scroll down and then choose **Mobile Services, users**. You can also search for **mobile**.
 
 ![Some alternative text](step2.png)
 

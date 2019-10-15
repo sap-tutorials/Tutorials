@@ -11,7 +11,7 @@ time: 20
 
 ## Details
 ### You will learn  
-  - Create a Policy, a Role and a User in AWS Identity and Access Management (IAM) 
+  - Create a Policy, a Role and a User in AWS Identity and Access Management (IAM)
 
 Before getting started, you will setup a user with the proper policies to be used for the rest of the tutorial series.
 
@@ -182,6 +182,45 @@ Use the filter field to enter the Policy name : **`sap-hxe-eml-policy`**
 Select the item.
 
 Click on **Attach Policy**.
+
+**Now we need to create an additional role apart from the SageMaker role**
+
+The role name is: `ecsTaskExecutionRole`
+
+And we will be attaching Policies:
+
+ `AmazonECS_FullAccess` | `AmazonEC2ContainerRegistryPowerUser`
+
+![AWS New Role 1](_newrole1.png)
+![AWS New Role 2](_newrole2.png)
+
+Edit Trust Relationship to add: ec2.amazonaws.com |  ecs-tasks.amazonaws.com
+
+![AWS New Role 3](_newrole3.png)
+
+Here is the new policy document:
+```JSON
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": [
+          "ec2.amazonaws.com",
+          "ecs-tasks.amazonaws.com"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+
+```
+
+
+
+>
 
 Provide an answer to the question below then click on **Validate**.
 

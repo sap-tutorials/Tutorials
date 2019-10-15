@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const tagChecker = require('./tags-checker');
 const linkChecker = require('./link-checker');
+const metadataChecker = require('./metadata-checker');
 const { regexp, constraints } = require('../constants');
 
 const fileExistsSyncCS = (filePath) => {
@@ -65,6 +66,7 @@ module.exports = {
         tutorialLink,
         tutorialLinkInvalid,
         remoteImage,
+        codeBlockInNote,
       },
       validation: { accordions, codeLine, done },
       link: {
@@ -74,16 +76,20 @@ module.exports = {
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
+    const metaLines = [];
 
     await Promise.all(lines.map(async (line, index) => {
       const isCodeLine = (line.match(codeLine) || []).length > 0;
 
       if (isMeta) {
+        metaLines.push(line);
         if (line.replace(/\n/g, '') === '---') {
           metaBoundaries += 1;
         }
         if (metaBoundaries >= 2) {
           isMeta = false;
+          const metaValidationResult = metadataChecker.check(metaLines);
+          result.contentCheckResult.push(...metaValidationResult);
         }
 
         const primaryTagError = tagChecker.checkPrimaryTag(line, index);
@@ -104,8 +110,8 @@ module.exports = {
         }
       }
 
-      if (line.trim()
-        .startsWith('```')) {
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith('```') || trimmedLine.match(codeBlockInNote)) {
         isCodeBlock = !isCodeBlock;
       }
 
@@ -126,7 +132,7 @@ module.exports = {
         const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
         const tutorialLinkMatch = line.match(tutorialLink.regexp);
         const accordionMatch = line.match(accordions);
-        if (!isMeta) {
+        if (!isMeta && !isCodeLine) {
           // plain text URLs are allowed in meta
           const match = line.match(link.regexp);
           if (match) {

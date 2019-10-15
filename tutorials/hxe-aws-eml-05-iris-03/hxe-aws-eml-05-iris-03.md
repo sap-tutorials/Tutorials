@@ -279,9 +279,6 @@ tar xf ./model/model.tar.gz
 # display all model signatures
 saved_model_cli show --all --dir ./export/Servo/*
 
-# cleanup
-rm -Rf ./export
-rm -Rf ./model
 ```
 
 Provide an answer to the question below then click on **Validate**.

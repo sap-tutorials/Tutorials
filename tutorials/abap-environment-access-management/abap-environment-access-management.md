@@ -3,7 +3,7 @@ auto_validation: true
 title: Maintain Business Roles and Access Restrictions in SAP Cloud Platform ABAP environment
 description: Create business roles and maintain access management in the SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 5
 ---
 

@@ -130,9 +130,9 @@ Now we need to create a service binding to the XSUAA service. As a prerequisite 
 
 We put this file to `<destLocation>/xs-security.json`. For a more detailed explanation on scopes and role templates, see the appendix of this tutorial. More details on the syntax of the `xs-security.json` can be found [here](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US/df31a08a2c164520bb7e558103dd5adf.html).
 
->**Note**: The `xsappname` has to be unique within the entire XSUAA instance. We follow here the same pattern of `<app-name>-<subdomain>`.
+>**_Note_**: The `xsappname` has to be unique within the entire XSUAA instance. We follow here the same pattern of `<app-name>-<subdomain>`.
 
->**Note**: As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
+>**_Note_**: As explained above, the `"tenant-mode": "shared"` assumes a multi-tenant application and will require the `TENANT_HOST_PATTERN` variable to be declared. You may also use `"tenant-mode": "dedicated"` if you develop a single-tenant application.
 
 `<destLocation>/xs-security.json`:
 
@@ -192,112 +192,85 @@ After logging in you should see the `HelloWorld` servlet which is now served by 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Protect your backend microservice)]
-After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. We, therefore, need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
+After authentication works with the App Router, your java backend service is still fully visible in the web and not protected. Therefore, we need to protect our java microservices as well so that they accept requests with valid `JWTs` for the current user only. In addition, we will setup the microservice in a way that it deals with authorization, i.e., understands the OAuth scopes from the JWT that we have configured previously using the `xs-security.json` file.
 
-In the following, we will use the [Spring Security framework](https://spring.io/projects/spring-security) to protect the microservices. You can also use standard mechanisms of the SAP Java Build Pack to achieve the same. If you do not want to use Spring Security please follow the steps [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/ead7ee64f96f4c42bacbf0ae23d4135b.html), nonetheless, the concepts described hereinafter apply for both methods.
+In the following, we will use the security capabilities of the [SAP Java Buildpack](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/samples/sap-java-buildpack-api-usage) to protect the microservices.
 
-The first step is to get some additional Java libs from Service Marketplace. To get them, perform the following steps:
+In your `application/src/main/webapp/WEB-INF/web.xml` file, add the following login configuration:
 
-1. Download additional XS security libs from service marketplace: <https://launchpad.support.sap.com/#/softwarecenter/search/XS_JAVA>
-2. At the time of writing the latest package is **`XS_JAVA_1-70001362.ZIP`**
-3. **Unzip `<destLocation>`**
-4. Install XS Security Libs to your local maven repo using:
-    ```Bash
-    cd <destLocation>
-    mvn clean install
-    ```
+```XML
+<login-config>
+    <auth-method>XSUAA</auth-method>
+</login-config>
+```
+
+This enables authentication of requests using incoming OAuth authentication tokens.
+
+Additionally make sure to that the following `security-constraint` block is contained in your `web.xml` file:
+
+```XML
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Baseline Security</web-resource-name>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-role>
+        <role-name>Display</role-name>
+    </security-role>
+    <!--
+    <security-role>
+        <role-name>Further Role Name</role-name>
+    </security-role>
+    -->
+```
+
+That way all endpoints of your application can be accessed by users with any of the role names specified in the `security-role` tags.
+
+To specifically secure your endpoints by requiring a specific role you now only need to add an annotation to your endpoint. For our `BusinessPartnerServlet` this looks like this:
+
+```Java
+@ServletSecurity(@HttpConstraint(rolesAllowed = { "Display" }))
+public class BusinessPartnerServlet extends HttpServlet {
+  // ...
+}
+```
+
+This will allow only users with the provided role to have access to the annotated endpoint. Compare for this the `xs-security.json` you created earlier to create the XSUAA service.
+
+At this point you should now rebuild your application and push it to Cloud Foundry.
+
+```Bash
+mvn clean install
+cf push
+```
+
+If you now call the `/businesspartners` endpoint of your application you will see a [`401` Unauthorized](https://httpstatuses.com/401) status code, as you were not authorized by the App Router. Calling the `/businesspartners` endpoint via your App Router on the other hand will give you a [`403` Forbidden](https://httpstatuses.com/403) status code meaning that you do not have the necessary authorization to see this page. This is to be expected, as you secured the endpoint with the annotation above without assigning the requested role `Display` to your user. We will fix this in the next step.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure your app for secure access)]
+[ACCORDION-BEGIN [Step 4: ](Assign users to scopes)]
 
-In the `<dependencies>` section of the `application/pom.xml`, we enhance the following additional dependencies to our project:
+To regain access to your secured endpoint, you need to get the `Display` OAuth scope assigned. This is done using the SCP cockpit.
 
-```xml
-<!-- Authentication and Authorization imports with Spring Security -->
-<dependency>
-  <groupId>com.sap.xs2.security</groupId>
-  <artifactId>security-commons</artifactId>
-  <version>0.28.6</version>
-</dependency>
-<dependency>
-  <groupId>com.sap.xs2.security</groupId>
-  <artifactId>java-container-security</artifactId>
-  <version>0.28.6</version>
-</dependency>
-<dependency>
-  <groupId>com.sap.xs2.security</groupId>
-  <artifactId>java-container-security-api</artifactId>
-  <version>0.28.6</version>
-</dependency>
-<dependency>
-  <groupId>org.springframework.security</groupId>
-  <artifactId>spring-security-jwt</artifactId>
-  <version>1.0.9.RELEASE</version>
-</dependency>
-<dependency>
-  <groupId>org.springframework.security.oauth</groupId>
-  <artifactId>spring-security-oauth2</artifactId>
-  <version>2.3.3.RELEASE</version>
-</dependency>
-<!-- Authentication and Authorization imports with Spring Security -->
-<dependency>
-  <groupId>com.sap.cloud.security.xsuaa</groupId>
-  <artifactId>api</artifactId>
-  <version>1.6.0</version>
-</dependency>
-<dependency>
-  <groupId>com.sap.security.nw.sso.linuxx86_64.opt</groupId>
-  <artifactId>sapjwt.linuxx86_64</artifactId>
-  <version>1.1.19</version>
-</dependency>
-```
-This dependency section contains three main parts of dependencies:
+1. First, go to your account on Cloud Foundry and find the **Role Collections** menu under the **Security** module.
 
-- The `org.springframework.security` packages add certain aspects of the [Spring security](https://docs.spring.io/spring-security/site/docs/current/reference/html/index.html) framework to our application, in particular the [OAuth framework](http://projects.spring.io/spring-security-oauth/docs/Home.html) of Spring security.
+2. Second, create a new role collection which you can give an arbitrary name. In our case, we call the role collection **Business Partner Manager**. ![Creating a Role Collection](Figure8-2.png)
 
-- The `com.sap.xs2.security` packages contain specific security adaptations for the Cloud Foundry environment.
+3. Afterwards, select the role collection **Business Partner Manager** and select **Add Role**. From the menu, select your application and the corresponding role template and role. ![Creating a Role](Figure8-3.png)
 
-- The `com.sap.security` packages contain platform-specific native implementations for the JWT validation and support OAuth2 authentication.
+4. Afterwards, the user has to be assigned to the newly created **Business Partner Manager** in order to receive the **Display** scope. In order to do this, select the trust configuration from the security menu and select the **SAP ID Service** from the list.
 
+5. In the opening dialog, enter your user ID as e-mail into the user field and click **Show Assignments** followed by **Add Assignments**.
 
-Afterwards you need to go to your `web.xml` in `src/main/webapp/WEB-INF` and uncomment the following lines:
+6. Select the **Business Partner Manager** role collection from the menu to assign it to your user. ![Add User Assignment](Figure8-4.png)
 
-```XML
-<listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-</listener>
-<context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/spring-security.xml</param-value>
-</context-param>
-<filter>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-</filter>
-<filter-mapping>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <url-pattern>/*</url-pattern>
-</filter-mapping>
-```
-
-This configuration introduces the Spring Security Filter Chain on all incoming routes of your Java microservice and declares that the entire security configuration can be found in a file called `spring-security.xml`.
-
-We now want to protect all our routes so that users have to be at least authenticated. Take a look into `spring-security.xml`, which contains the following line:
-
-```
-<sec:intercept-url pattern="/**" access="isAuthenticated()" method="GET" />
-```
-
-This code ensures that all users which access all URLs under `/` with the `GET` method have to be at least authenticated. Since we just added the security filters spring will now start applying this rule for our servlet. You can find the full reference for access management here: [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/current/reference/html5/)
-
-Now we need to modify the `manifest.yml` of our application a bit to interpret the JWT sufficiently. To do this add the following environment variable in the `env` section of your file:
-
-```
-SAP_JWT_TRUST_ACL: '[{"clientid" : "*", "identityzone" : "*"}]'
-```
-
+Afterwards you have the `Display` OAuth scope assigned to your user, which allows you to access the secured endpoints again.
 
 [DONE]
 [ACCORDION-END]
@@ -310,20 +283,20 @@ mvn clean install
 cf push
 ```
 
-After deployment, accessing your backend service directly should not be possible anymore and will quit with the following message:
+After deployment, accessing your backend service directly should not be possible anymore and result in the following message:
 
 ![XML file](Figure8-1.png)
 
-However, you should be still able to access your application using the App Router as the entry point:
+However, you should still be able to access your application using the App Router as entry point:
 
-![HelloWorld](Figure9-1.png)
+![Hello World Endpoint](Figure9-1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Remove CSRF token protection from backing service)]
+[ACCORDION-BEGIN [Step 5: ](Remove CSRF token protection from backing service)]
 If you have previously exposed the backing service directly to the end user, you have used the `RestCsrfPreventionFilter` on the backend to protect against cross-site request forgery. As this is now in the responsibility of the App Router, we should remove it. For this remove the following lines from your `web.xml`:
-```xml
+```XML
 <filter>
   <filter-name>RestCsrfPreventionFilter</filter-name>
   <filter-class>org.apache.catalina.filters.RestCsrfPreventionFilter</filter-class>
@@ -337,51 +310,7 @@ If you have previously exposed the backing service directly to the end user, you
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Use OAuth scope to authorize users)]
-Now that we saved the backend microservice from unauthenticated users, we also want to make sure that certain endpoints can be called only when users have specific authorizations. In the following example, we want to use our `Display` OAuth scope.
-
-Enhance `spring-security.xml` to protect routes with OAuth scopes
-
-The backend itself can be easily adapted based on the `spring-security.xml`. In this case, we protect the `/hello` route with our `Display` OAuth Scope. Introduce (or uncomment) the following line within the `<sec:http>` element:
-```xml
-<sec:intercept-url pattern="/hello" access="#oauth2.hasScope('${xs.appname}.Display')" method="GET" />
-```
-Afterwards you need to redeploy the application with:
-
-```Bash
-mvn clean install
-cf push
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Assign users to scopes)]
-
-Furthermore, the user accessing the application, needs to be assigned the `Display` OAuth scope. This is done using the SCP cockpit.
-
-1. First, go to your account on Cloud Foundry and find the **Role Collections** menu under the **Security** module.
-
-2. Second, create a new role collection which you can give an arbitrary name. In our case, we call the role collection **Business Partner Manager**. ![Creating a Role Collection](Figure8-2.png)
-
-3. Afterwards, select the role collection **Business Partner Manager** and select **Add Role**. From the menu, select your application and the corresponding role template and role. ![Creating a Role](Figure8-3.png)
-
-4. Afterwards, the user has to be assigned to the newly created **Business Partner Manager** in order to receive the **Display** scope. In order to do this, select the trust configuration from the security menu and select the **SAP ID Service** from the list
-
-5. In the opening dialog, enter your user ID as e-mail into the user field and click **Show Assignments** followed by **Add Assignments**
-
-6. Select the **Business Partner Manager** role collection from the menu to assign it to your user
-
-![Add User Assignment](Figure8-4.png)
-
-Afterwards you have a route that is protected by the `Display` OAuth scope which you can still access because the user has now the corresponding role.
-
-That's it for today. Now you have learned the basics to protect your application on SCP Cloud Foundry using the SAP Cloud SDK.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Understanding Roles, Role Collections and Scopes)]
+[ACCORDION-BEGIN [Step 6: ](Understanding Roles, Role Collections and Scopes)]
 The following picture explains how the various concepts are related to each other.
 
 ![Roles, Scopes and Users](Figure9-3.png)
@@ -391,10 +320,11 @@ Gray Box: As a SCP developer (e.g., SAP, partner, customer) of the business appl
 Orange Box: As an SCP tenant administrator of the business application (customer) can create a role collection which is spanning multiple roles reflecting the role templates. This way you can achieve, on the one hand, a fine-granular authorization control for the microservices and, on the other hand, compose them very flexibly in coarse-grained role collections. The idea behind this is, that, for example, the **Business Partner Manager** role collection may span multiple applications and microservices all having individual scopes. The role collections resolves the roles and scopes and returns a union of all scopes which are composed by the role collection.
 
 Green Box: As an administrator of the users (customer), the role collection can then be assigned to the final user using the SAML attribute `Groups`.
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Troubleshooting JSON Web Tokens)]
+[ACCORDION-BEGIN [Step 7: ](Troubleshoot JSON Web Tokens)]
 Sometimes it might be necessary to investigate the JWT on the backend microservice during development to check for potential errors. Here is an example servlet that prints the token out.
 
 ```Java
@@ -422,7 +352,7 @@ Afterwards you may use `https://jwt.io/` to decode the token. **Note:** You shou
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Troubleshoot OAuth scopes from XSUAA)]
+[ACCORDION-BEGIN [Step 8: ](Troubleshoot OAuth scopes from XSUAA)]
 In addition, you may use the XSUAA to see which current scopes and roles a particular users has. You could do this with your XSUAA tenant-specific URL:
 
 `https://<subdomain>.authentication.<region_id>.hana.ondemand.com/config?action=who`
@@ -431,7 +361,7 @@ In addition, you may use the XSUAA to see which current scopes and roles a parti
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Set up your own identity provider)]
+[ACCORDION-BEGIN [Step 9: ](Set up your own identity provider)]
 So far, we have used the XSUAA service itself as the user provider. However, in production scenarios customer's may want to use their own Identity Provider (IdP) as a user provider or delegate into on-premise user stores such as LDAP or Active Directory. In the following, we quickly show how the XSUAA service can delegate requests to such an external IdPs.
 
 To make this happen, the IdP and the service provider (SP) have to exchange security metadata, i.e., the IdP has to import the metadata of the SP and vice versa.

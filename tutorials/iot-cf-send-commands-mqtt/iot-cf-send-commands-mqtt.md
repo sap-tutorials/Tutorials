@@ -458,7 +458,7 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
         "command": {
             "LED": "true",
             "Buzzer": "true",
-            "Speed": "50.0"
+            "Speed": 50.0
         }
     }
     ```
@@ -472,7 +472,7 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
         "command": {
             "LED": "true",
             "Buzzer": "true",
-            "Speed": "50.0"
+            "Speed": 50.0
         }
     }
     ```

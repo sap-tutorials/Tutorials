@@ -1,5 +1,5 @@
 ---
-author_name: Josh Bentley 
+author_name: Josh Bentley
 author_profile: https://github.com/jarjarbentley
 title: Setup AWS - Customize your SageMaker Notebook for SAP HANA
 description: In your SageMaker Notebook instance, download and install the SAP HANA client and the Python driver to connect to your SAP HANA, express edition instance.
@@ -65,7 +65,7 @@ cd ~/SageMaker/downloads
 
 wget --no-cookies \
   --header "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt" \
-  "https://tools.hana.ondemand.com/additional/hanaclient-2.4.144-linux-x64.tar.gz" \
+  "https://tools.hana.ondemand.com/additional/hanaclient-2.4.151-linux-x64.tar.gz" \
   -P ~/SageMaker/downloads
 
 tar -xvf ~/SageMaker/downloads/hanaclient-*-linux-x64.tar.gz

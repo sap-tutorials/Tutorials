@@ -1,5 +1,5 @@
 ---
-title: Develop a SAP Fiori App for Portal Site on Cloud Foundry
+title: Develop an SAP Fiori App for a Portal Site (Cloud Foundry)
 description: Create an app module in SAP Web IDE and set up its navigation so that it can be used in a Portal site.
 auto_validation: true
 time: 45
@@ -26,7 +26,7 @@ In this tutorial, you will create an MTA with one HTML5 module as well as a laun
 
 >   - If you are working on a non-trial account, and have not set up your Cloud Foundry environment for development, follow the instructions in the tutorial [Prepare the SAP Cloud Platform Cloud Foundry Environment for Development (non-trial account)](cp-portal-cloud-foundry-prepare-dev).
 
-> In addition, we will be using SAP Web IDE for development. As the SAP Web IDE service is available on SAP Cloud Platform on the Neo environment, you should have an SAP Cloud Platform Neo subaccount with the SAP Web IDE service enabled. If you do not have such an environment, follow the tutorial [Get Started with the SAP Web IDE Full-Stack Version (Trial)](webide-innovation-beta).
+> In addition, we will be using SAP Web IDE for development. As the SAP Web IDE service is available on SAP Cloud Platform on the Neo environment, you should have an SAP Cloud Platform Neo subaccount.
 
 [ACCORDION-BEGIN [Step 1: ](Create an MTA project with an SAP HTML5 module)]
 
@@ -52,7 +52,7 @@ Configure the navigation settings as follows:
 
     -	**Semantic Object**: data
 
-    -	**Object**: display
+    -	**Action**: display
 
       ![Define an intent](3_define_intent_navigation.png)
 
@@ -62,11 +62,11 @@ Configure the navigation settings as follows:
 
     -	**Subtitle**: Engineering
 
-    -	**Icon**: sap-icon://activities
+    -	**Icon**: `sap-icon://activities`
 
       ![Define tile properties](4_tile_properties.png)
 
-5. Click **File** -> **Save**.
+5. Click **File > Save**.
 
     ![Save your settings](5_save_settings.png)
 

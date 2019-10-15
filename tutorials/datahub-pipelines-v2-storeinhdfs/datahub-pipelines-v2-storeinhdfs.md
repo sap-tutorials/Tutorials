@@ -1,6 +1,6 @@
 ---
-title: Store Sensor Data in HDFS in SAP Data Hub, Developer Edition 2.4
-description: Use HDFS to store sensor data by using SAP Data Hub, developer edition 2.4.
+title: Store Sensor Data in HDFS in SAP Data Hub, Developer Edition
+description: Use HDFS to store sensor data by using SAP Data Hub, developer edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]

@@ -2,7 +2,6 @@ const path= require('path');
 
 const foldersOptions = {
     all: 'all',
-    wip: 'wip',
     tutorials: 'tutorials',
     specific: 'specific',
     input: 'input',
@@ -10,7 +9,6 @@ const foldersOptions = {
 
 
 const tutorialsFoldersOptions = {
-    wip: 'from wip',
     tutorials: 'from tutorials',
 };
 
@@ -27,7 +25,6 @@ module.exports = {
         { name: 'help',        alias: 'h', type: Boolean },
         { name: 'all',         alias: 'a', type: Boolean },
         { name: 'tutorials',   alias: 't', type: Boolean },
-        { name: 'wip',         alias: 'w', type: Boolean },
         { name: 'specific',    alias: 's', type: Boolean },
         { name: 'input',       alias: 'i', type: String  },
         { name: 'file',        alias: 'f', type: Boolean },
@@ -43,14 +40,6 @@ module.exports = {
                 name: "scopetutorial",
                 message: "Which folder or specific file would you like to test?",
                 choices: [ ...Object.values(foldersOptions) ],
-            },
-        ],
-        tutorialsFolderChoice: [
-            {
-                type: "list",
-                name: "scopetutorial",
-                message: "Which specific tutorials would you like to test?",
-                choices: [ ...Object.values(tutorialsFoldersOptions) ],
             },
         ],
         tutorialsChoiceByName: [
@@ -75,13 +64,5 @@ module.exports = {
                 choices: [],
             },
         ],
-        wipTutorialChoiceFromList: [
-            {
-                type: "checkbox",
-                message: "Choose specific tutorials from wip",
-                name: "specifictutorials",
-                choices: [],
-            }
-        ]
     },
 };

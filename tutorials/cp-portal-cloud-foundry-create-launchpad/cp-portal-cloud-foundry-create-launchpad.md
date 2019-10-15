@@ -1,5 +1,5 @@
 ---
-title: Expose Your App to the Portal Service on Cloud Foundry
+title: Expose Your App to the Portal Service (Cloud Foundry)
 description: Create a launchpad module in SAP Web IDE to make your SAP Fiori app available for use in the Portal.
 auto_validation: true
 time: 20
@@ -19,24 +19,9 @@ In this tutorial, you're going to configure a launchpad module and add it to you
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Enable SAP Fiori launchpad SAP Web IDE extension)]
+[ACCORDION-BEGIN [Step 1: ](Add the launchpad module to your multi-target application project)]
 
-1. In SAP Web IDE Full-Stack, click **Preferences** in the side panel.
-
-    ![Select Preferences](6_select_preferences.png)
-
-2. Select **Extensions** in the side panel, enter `portal` as a search term, and locate the **SAP Fiori Launchpad Site** feature.  Turn it **ON** and **Save** your changes.
-
-    ![Define extensions](7_extensions.png)
-
-3. Refresh SAP Web IDE in the confirmation message.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Add the launchpad module to your multi-target application project)]
-
-1. Navigate to the **Development** area in SAP Web IDE and right click your `mta_FioriDemo` project to add a new **SAP Fiori Launchpad Site Module**.
+1. Navigate to the **Development** area in SAP Web IDE and right-click your `mta_FioriDemo` project to add a new **SAP Fiori Launchpad Site Module**.
 
     > Note that you can only add this launchpad module to `MTA` projects.
 
@@ -54,7 +39,7 @@ You can see that the `Launchpad` module is now part of your `MTA` project:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Configure the launchpad content)]
+[ACCORDION-BEGIN [Step 2: ](Configure the launchpad content)]
 
 Any app that you want to expose to the Portal service, should be added to the launchpad module. To add apps to the launchpad module, you should edit its `CommonDataModel.json` file.
 
@@ -80,6 +65,8 @@ In this step you are going to do just that.
 
     ![Add app](14_add_app.png)
 
+5. Click **File > Save**.
+
     This is what you'll see in the **Launchpad Editor**:
 
     ![View launchpad editor](15_view_launchpad_editor.png)
@@ -89,7 +76,7 @@ In this step you are going to do just that.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Build and deploy your project)]
+[ACCORDION-BEGIN [Step 3: ](Build and deploy your project)]
 
 Build and deploy the `MTA` project with these modules thus exposing your app to the Portal service.
 
@@ -108,37 +95,32 @@ Build and deploy the `MTA` project with these modules thus exposing your app to 
 
   3. The values for the **Endpoint**, **Organization**, and **Space** are automatically populated.  Click **Deploy**.
 
-      ![View deploy details](18_deploy_details.png)
-
-
   4. Once you get a confirmation message that your project has been deployed, copy the App Router URL from the console.  
 
       It looks like this:
-      `https://portal-dev-companyportal-jobcore-portal-space-mta-fiori<id>.cfapps.sap.hana.ondemand.com`
-      Where `<id>` is your ID number.
+      `<id>trial-trial-dev-mta-fioridemo-approuter.cfapps.eu10.hana.ondemand.com`
+      where `<id>` is your ID number.
 
 [DONE]
 [ACCORDION-END]
 
 
 
-[ACCORDION-BEGIN [Step 5: ](Access the runtime launchpad module)]
+[ACCORDION-BEGIN [Step 4: ](Access the runtime launchpad module)]
 
 Now let's see how the app is displayed in the runtime launchpad module.
 
-Enter the URL that you copied from the console and add  `/cp.portal/` as a suffix to it.
+1.  Enter the URL that you copied from the console to a new browser tab.
 
-Like this:
+    Your launchpad module displays the `Candidates` app that you created in the `People` group.
 
-`https://portal-dev-companyportal-jobcore-portal-space-mta-fiori<id>.cfapps.sap.hana.ondemand.com/cp.portal`
+    ![Launchpad Module](20_deployed_module.png)
 
-Where `<id>` is your ID number.
+2.  Click the `Candidates` app to launch it.
 
-Your launchpad module displays the `Candidates` app that you created in the `People` group.
+    ![Launch app](21_click_app.png)
 
-  ![Launchpad Module](20_deployed_module.png)
-
-Congratulations! Now you are ready to add your app to the **Launchpad** page in your Portal site.
+Now you are ready to add your app to the **Launchpad** page in your Portal site.
 
 [DONE]
 [ACCORDION-END]
