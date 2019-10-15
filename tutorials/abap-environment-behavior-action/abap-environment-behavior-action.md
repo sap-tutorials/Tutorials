@@ -3,7 +3,7 @@ auto_validation: true
 title: Enhance Behavior With Action and Validation
 description: Enhance behavior definition and implementation with action and validation.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -41,7 +41,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
- 
+
     define behavior for ZI_Travel_M_XXX alias Travel
     persistent table ztravel_xxx
     etag last_changed_at

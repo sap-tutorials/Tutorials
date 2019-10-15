@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Behavior Definition for Managed Scenario
 description: Create behavior definition and implementation for managed scenario.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -71,7 +71,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     Now the **behavior definition** is created and determines the create, update and delete functionality for travel booking.
 
-  
+
 [DONE]
 [ACCORDION-END]
 
