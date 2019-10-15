@@ -4,7 +4,7 @@ description: Build a basic UI5 application that loads a configuration and change
 auto_validation: true
 time: 45
 tags: [tutorial>beginner, topic>sapui5, products>sap-web-ide, product>sap-product-configuration]
-primary_tag: SAP_VARIANT_CONFIGURATION_AND_PRICING   
+primary_tag: product>SAP_VARIANT_CONFIGURATION_AND_PRICING
 ---
 
 
