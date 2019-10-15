@@ -123,7 +123,7 @@ Then click **Next** and wait for the setup to complete.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Prepare the data)]
-Download the [CSV version](https://data.sfgov.org/api/views/tmnf-yvry/rows.csv?accessType=DOWNLOAD) of the [San Francisco Police Department Incidents data set](https://data.sfgov.org/api/views/tmnf-yvry/) and the [CSV version](https://data.sfgov.org/api/views/sr5d-tnui/rows.csv?accessType=DOWNLOAD) of the [San Francisco Addresses data set](https://data.sfgov.org/Geographic-Locations-and-Boundaries/Addresses-Enterprise-Addressing-System/sr5d-tnui) and place them into the `src/main/resources/csv` directory as `incidents.csv` and `addresses.csv`, respectively.
+Download the [CSV version](https://data.sfgov.org/api/views/tmnf-yvry/rows.csv?accessType=DOWNLOAD) of the [San Francisco Police Department Incidents data set](https://data.sfgov.org/api/views/tmnf-yvry/) and the [CSV version](https://data.sfgov.org/api/views/3mea-di5p/rows.csv?accessType=DOWNLOAD) of the [San Francisco Addresses data set](https://data.sfgov.org/Geographic-Locations-and-Boundaries/Addresses-Enterprise-Addressing-System/3mea-di5p) and place them into the `src/main/resources/csv` directory as `incidents.csv` and `addresses.csv`, respectively.
 
 Create two ZIP archives named `incidents.zip` and `addresses.zip`, respectively, each containing the corresponding CSV file and make sure to have the zip tool split the archives into parts no larger than 30 megabytes. Otherwise the resulting files can't be uploaded to the Google App Engine.
 
