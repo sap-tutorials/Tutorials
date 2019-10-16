@@ -1,5 +1,5 @@
 ---
-title: Implement Deep Link in an MDK App
+title: Implement Deep Linking to Another App from an MDK App
 description: Open a web page or navigate to an installed app from an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
