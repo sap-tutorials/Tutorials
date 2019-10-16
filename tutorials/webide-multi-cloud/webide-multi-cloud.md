@@ -13,7 +13,7 @@ time: 5
 ### You will learn  
   - How to open SAP Web IDE Full-Stack
 
-You can use many different tools to build and deploy apps on the SAP Cloud Platform, but we recommend SAP Web IDE, a service of SAP Cloud Platform. In this tutorial, you'll locate it, enable it, and access it, all from your browser, without needing to install anything.
+You can use many different tools to build and deploy apps on the SAP Cloud Platform, but we recommend SAP Web IDE, a service of SAP Cloud Platform. In this tutorial, you'll locate it and access it, all from your browser, without needing to install anything.
 
 ---
 
