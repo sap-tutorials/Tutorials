@@ -17,14 +17,14 @@ primary_tag: products>sap-api-management
 
 [ACCORDION-BEGIN [Step 1: ](Get integration key to access HubSpot)]
 
-1. Log on to your `HubSpot` tenant.
+1. Log on to your `HubSpot` [tenant](https://www.hubspot.com/) by providing your login credentials.
     - Click **Setting** and then click **Integrations**.
 
     ![Navigate Settings](01-settings.png)
 
-2. Click the **Your integrations** tab.
+2. Expand the **Integrations** from menu item.
 
-3. Select **API key** and then click **Show Key**.
+3. Select **API key** menu item and then click **Show**.
 
     >You will get the API Key that can be used to connect securely from SAP Cloud Platform Open Connectors.
 
@@ -41,9 +41,9 @@ primary_tag: products>sap-api-management
 
 1. Log on to your [SAP Cloud Platform trial](https://account.hanatrial.ondemand.com/).
 
-    - Navigate to the **Neo** environment.
+    - Navigate to the **Cloud Foundry** environment by clicking on **Enter Your Trial Account** and click on **trial**.
 
-    ![Logon CP Trial](04-SAP-CP-trial.png)
+    ![Logon CP Trial](00-Login-trial-account.png)
 
 2. From the **Services** tab, search and select **Open Connectors** tile.
 
