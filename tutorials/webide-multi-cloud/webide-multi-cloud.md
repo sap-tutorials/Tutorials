@@ -26,11 +26,11 @@ Open your SAP Cloud Platform account (if you have a free developer account, clic
 
  Click on **Launch SAP Web IDE** to see navigate further.
 
-![open webide](../sapui5-webide-open-webide/open-webide.png)
+![open webide](./open-webide.png)
 
 You might be asked to accept a disclaimer if you come here for the first time. **Check** the box and click **accept** to do so.
 
-![disclaimer](../sapui5-webide-open-webide/disclaimer.png)
+![disclaimer](./disclaimer.png)
 
 
 [DONE]
@@ -42,7 +42,7 @@ A new tab opens, and SAP Web IDE Full-Stack loads.
 
 >**Bookmark this page!**  If you create a bookmark to this page, it is easy to get back to SAP Web IDE Full-Stack later.
 
-![SAP Cloud Platform Console - services button](../sapui5-webide-open-webide/web_ide_start_screen.png)
+![SAP Cloud Platform Console - services button](./web_ide_start_screen.png)
 
 
 Copy and paste the URL from your SAP Web IDE Full-Stack window into the text box below.
