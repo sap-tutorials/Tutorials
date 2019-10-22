@@ -24,7 +24,7 @@ Log into SAP Cloud Platform
 
 ![Log into cockpit](00-Login-trial-account.png)
 
-Scroll down and click **Access Cloud Foundry Trial** to open the cockpit for the Cloud Foundry environment.
+Click **Enter Your Trial Account** to open the cockpit for the Cloud Foundry environment.
 
 ![Access Cloud Foundry](01-CF-trial-account.png)
 
