@@ -3,7 +3,7 @@ auto_validation: true
 title: Enhance Behavior With Action and Validation
 description: Enhance behavior definition and implementation with action and validation.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
