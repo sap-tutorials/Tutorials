@@ -36,7 +36,7 @@ Create a new destination for the ES5 System if you don't have one.
 
 1. Download <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-ui5-ms-graph-create-destination/ES5_Destination.txt" download>this descriptor file</a> (alternatively you can create the destination manually by clicking **New Destination**).
 
-2. Open your SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/cockpit), **scroll down** to the bottom of the page and click on **`Access Neo Trial`** in the SAP Cloud Platform cockpit.
+2. Open your SAP Cloud Platform Cockpit (<https://account.hanatrial.ondemand.com/cockpit>), **scroll down** to the bottom of the page and click on **`Access Neo Trial`** in the SAP Cloud Platform cockpit.
 
     ![go to neo trial](./neo_cockpit.jpg)
 
