@@ -1,5 +1,5 @@
 ---
-title: Leverage OData Annotations to build an MDK app with CRUD functionality
+title: Use OData Annotations to Add CRUD Functionality to an MDK App
 description: Create a fully functional CRUD native mobile application for iOS and Android.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
