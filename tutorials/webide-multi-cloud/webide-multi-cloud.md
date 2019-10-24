@@ -45,7 +45,7 @@ A new tab opens, and SAP Web IDE Full-Stack loads.
 ![SAP Cloud Platform Console - services button](./web_ide_start_screen.png)
 
 
-Copy and paste the URL from your SAP Web IDE Full-Stack window into the text box below.
+Copy and paste the URL from your SAP Web IDE Full-Stack into the text box below.
 
 [VALIDATE_4]
 [ACCORDION-END]
