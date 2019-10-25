@@ -25,8 +25,6 @@ time: 15
 
 **Welcome to the SAP Cloud Platform**
 
-![Welcome to the cloud](1.jpg)
-
 SAP Cloud Platform is an open set of Software, Platform, and Infrastructure as a Service systems that delivers in-memory capabilities, core platform services, and unique micro-services for building and extending intelligent, mobile and browser enabled applications.  SAP Cloud Platform is multi-lingual, with support for most major languages ([now including ABAP](https://blogs.sap.com/2018/09/04/sap-cloud-platform-abap-environment/)) and support for development, testing, and production systems both inside an organization and to the larger public.  
 
 SAP Cloud Platform provides a large number of SAP software packages, or services, that deliver all the functionality of on-premise SAP applications, but in a cloud focused way.  It also provides a way for developers to customize those services, or build entirely new applications, to deliver custom applications personalized to your organization.
@@ -50,11 +48,8 @@ There are multiple ways that an organization can purchase and use cloud resource
 - Platform as a Service (PaaS)
 - Software as a Service (SaaS)
 
-The easiest way to describe them all is to compare them to Pizza.  This diagram describes the difference between all four:
 
-![Comparing services on the cloud - the pizza analogy](pizza-as-a-service.png)
-
-In other words, the three different service levels are:
+The three different service levels are:
 
 | Acronym |  Name | Description |
 | ------- | ------------ | ----------- |
