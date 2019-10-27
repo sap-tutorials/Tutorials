@@ -11,25 +11,23 @@ time: 20
 
 ## Details
 ### You will learn  
-This tutorial will walk you through the setup process of SAP HANA, express edition, and the XS Advanced applications platforms from an Amazon Marketplace Image in Amazon Web Services
+This tutorial will walk you through the setup process of SAP HANA, express edition, and the XS Advanced applications platforms from an Amazon Marketplace Image in Amazon Web Services.
 
 ---
-
+<b>
 <div align="center">
-<b><span style="color:red;align:middle">WARNING: Please read carefully before starting!</span></b>
+<span style="color:red;align:middle">WARNING: Please read carefully before starting!</span>
 </div>
-&nbsp;
-
+<div>&nbsp;</div>
 <div align="left">
-<b><span style="color:black;align:middle">Before you get started, please be aware that using SAP HANA, express AMI on AWS is <b><span style="color:red;align:middle">not covered by the AWS Free tier, <b><span style="color:black;align:middle">and therefore charges for both the EC2 instance AND the provisioned EBS volumes used by this instance will incur.  </span></b>
+<span style="color:black;align:middle">Before you get started, please be aware that using SAP HANA, express AMI on AWS is <span style="color:red;align:middle">not covered by the AWS Free tier, </span>and therefore charges for both the EC2 instance AND the provisioned EBS volumes used by this instance will incur.  </span>
 </div>
-&nbsp;
-
-<b><span style="color:black;align:middle">With the EBS volumes types in use, <b><span style="color:red;align:middle">even if your EC2 instance running your SAP HANA, express edition is _stopped_, charges will be incurred <b><span style="color:black;align:middle">for the provisioned EBS volumes.
-
-<b><span style="color:red;align:middle">Only detaching and deleting the EBS volumes will prevent charges.
-
-<b><span style="color:black;align:middle">However, this will make your SAP HANA express edition no longer usable.  <b><span style="color:red;align:middle"> Therefore it is highly recommended that you allocate enough time to complete the tutorial in one sitting to avoid losing work and incurring extra charges.
+<div>&nbsp;</div>
+<div align="left"><span style="color:black;align:middle">With the EBS volumes types in use, <span style="color:red;align:middle">even if your EC2 instance running your SAP HANA, express edition is _stopped_, charges will be incurred </span>for the provisioned EBS volumes.</span></div>
+<div>&nbsp;</div>
+<span style="color:red;align:middle">Only detaching and deleting the EBS volumes will prevent charges.</span>
+<div>&nbsp;</div>
+<span style="color:black;align:middle">However, this will make your SAP HANA express edition no longer usable. <span style="color:red;align:middle"> Therefore it is highly recommended that you allocate enough time to complete the tutorial in one sitting to avoid losing work and incurring extra charges.</span></span></b>
 
 ---
 
@@ -37,8 +35,7 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 
 Sign in or create an account on [Amazon Web Services Portal](https://portal.aws.amazon.com/billing/signup#/start)
 
-> ### **Information:**
->**When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.**
+> When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.**
 
 >During this process, some AWS services, like the AWS Marketplace, will not be available.
 
