@@ -25,7 +25,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enhance behavior definition)]
-  1. Switch to your behavior definition `ZI_TRAVEL_M_XXX` and add following action and validation to your coding.
+  1. Switch to your behavior definition `ZI_TRAVEL_M_XXX` and add following action and validation to your coding:
 
     ```ABAP
     // instance action and dynamic action control
@@ -37,7 +37,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     validation validateStatus   on save { field overall_status; }
     ```
 
-  2. Your code should look like following:
+  2. You result should look like this. Replace your code with following:
 
     ```ABAP
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
@@ -83,7 +83,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Enhance behavior implementation](implementation.png)
 
-  2. In your local types replace your code with following:
+  2. In your **local types** replace your code with following:
 
     ```ABAP
     *"* use this source file for the definition and implementation of
@@ -287,7 +287,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     use action acceptTravel;
     ```
 
-  2. Your code should look like following:
+  2. You result should look like this. Replace your code with following:
 
     ```ABAP
     projection;
@@ -321,7 +321,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. Check your result.
 
 
-     The accept travel button appears. Create a new travel booking with the booking status O.
+     The accept travel button appears, but this can take a few minutes.
+     Create a new travel booking with the booking status O.
      O stands for open. Save your travel booking and you are able to accept your created travel booking.
 
       ![Enhance behavior definition for projection view](projection2.png)
