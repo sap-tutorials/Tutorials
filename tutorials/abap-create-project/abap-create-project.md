@@ -22,12 +22,7 @@ author_profile: https://github.com/julieplummer20
 
 [ACCORDION-BEGIN [Step 1: ](Install the ABAP Development Tools for SAP NetWeaver (ADT))]
 
-1. In the Eclipse menu bar, select: **Help > Install New Software...**.
-2. In the dialog box add the URL for the latest version, for example [https://tools.hana.ondemand.com/photon/](https://tools.hana.ondemand.com/photon/) for Eclipse Photon (4.8)
-3. Display the available features by choosing **Enter**
-4. Select **ABAP Development Tools for SAP NetWeaver**, then choose **Next**.
-5. On the next wizard page, you get an overview of the features to be installed. Choose **Next**.
-6. Confirm the license agreements and start the installation by choosing **Finish**.
+Follow the instructions on the [ABAP Development Tools](https://tools.hana.ondemand.com/#abap) site.
 
 [DONE]
 [ACCORDION-END]

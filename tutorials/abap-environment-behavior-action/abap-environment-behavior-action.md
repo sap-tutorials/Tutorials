@@ -41,7 +41,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
- 
+
     define behavior for ZI_Travel_M_XXX alias Travel
     persistent table ztravel_xxx
     etag last_changed_at

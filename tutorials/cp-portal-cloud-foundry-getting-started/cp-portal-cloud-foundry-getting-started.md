@@ -24,7 +24,7 @@ In this group of tutorials our goal is to create an attractive Portal site using
 
 Before you can access the Portal service, you need to first subscribe to it.
 
-1. Log on to SAP Cloud Platform and click **Enter Your Trial Account**.
+1. [Log onto SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com) and click **Enter Your Trial Account**.
 
     ![Enter trial account](00_enter_trial_account.png)
 

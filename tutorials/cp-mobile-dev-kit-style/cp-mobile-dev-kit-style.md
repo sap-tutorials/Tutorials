@@ -18,9 +18,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to change background color of a page
   - How to change color of action bar and tool bar
-  - How to change font color of SDK control properties in a section page
+  - How to change font color and background color of SDK control properties in a section page
 
 ---
 
@@ -91,7 +90,7 @@ After clicking Finish, the wizard will generate your MDK Application based on yo
 [ACCORDION-BEGIN [Step 2: ](Add style metadata in LESS file)]
 
 The `LESS` stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.
-                           
+
 >You can find more details about [styling in MDK](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/fb52430105254f9b8869cad9039c1529.html).
 
 In the SAP Web IDE project, expand the **Styles** folder and open the `Styles.less` file.
@@ -104,10 +103,6 @@ Copy and paste the following code.
 
 @mdkYellow1: #ffbb33;
 @mdkRed1: #ff0000;
-
-//// By-Type style: All Pages in the application will now have a yellow background
-Page
-{background-color: @mdkYellow1;	}
 
 //// This style applies to all the ActionBars in the application
 ActionBar {
@@ -134,7 +129,7 @@ ToolBar {
 //// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function
 //// below snippet is to style SalesOrder button on Main.page
 .MySalesOrderButton {
-  color: @mdkRed1;
+  font-color: @mdkRed1;
   background-color: black;
 }
 
@@ -244,7 +239,7 @@ Click on QR code icon to populate QR code for app on-boarding.
 
 [OPTION BEGIN [Android]]
 
-On Android, camera app does not support scanning the QR code. You can use [Barcode Scanner](hhttps://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) app to scan it.
+On Android, camera app does not support scanning the QR code. You can use [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) app to scan it.
 
 Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
 

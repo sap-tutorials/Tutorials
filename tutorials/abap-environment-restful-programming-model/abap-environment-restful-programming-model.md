@@ -3,14 +3,11 @@ auto_validation: true
 title: Get to Know the ABAP RESTful Programming Model
 description: Learn how the ABAP RESTful Programming Model and the development flow are structured.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
 time: 5
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
-
-## Prerequisites  
- - no prerequisites needed
 
 ## Details
 ### You will learn  

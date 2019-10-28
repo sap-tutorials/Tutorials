@@ -71,7 +71,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     Now the **behavior definition** is created and determines the create, update and delete functionality for travel booking.
 
-  
+
 [DONE]
 [ACCORDION-END]
 
