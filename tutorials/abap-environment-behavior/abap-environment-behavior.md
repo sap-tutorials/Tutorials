@@ -29,13 +29,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior definition](definition.png)
 
-  2. Check your behavior definition. Your implementation type is managed.
+  2. Check your behavior definition. Your **implementation type** is **managed**.
 
      Click **Next >**.
 
       ![Create behavior definition](definition2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create behavior definition](definition3.png)
 
@@ -88,11 +88,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior implementation](implementation2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create behavior implementation](implementation3.png)
 
-  4. In your global class replace your code with following:
+  4. In your **global class** replace your code with following:
 
     ```ABAP
     CLASS zcl_bp_i_travel_m_xxx DEFINITION
@@ -107,7 +107,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ENDCLASS.
     ```
 
-  5. In your local types replace your code with following:
+  5. In your **local types** replace your code with following:
 
     ```ABAP
     *"* use this source file for the definition and implementation of
@@ -151,7 +151,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior definition for projection view](projection2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create behavior definition for projection view](projection3.png)
 

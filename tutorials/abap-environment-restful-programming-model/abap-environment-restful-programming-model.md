@@ -19,6 +19,8 @@ In the course of the following tutorials you will be able to build a travel book
 
 Start to have a closer look to the ABAP RESTful Programming Model and the relationships.
 
+After this tutorial, you'll understand the theory behind the ABAP RESTful Programming Model and apply it to the flight model example in the upcoming tutorials.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get to know the ABAP RESTful Programming Model overview)]
