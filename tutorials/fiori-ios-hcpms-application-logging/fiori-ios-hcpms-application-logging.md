@@ -1,6 +1,7 @@
 ---
 title: Application logging and tracing
 description: Logging and tracing using the SAP Cloud Platform SDK for iOS.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -49,6 +50,7 @@ class MyViewController: UIViewController {
 }
 ```
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -83,6 +85,7 @@ self.someOperation {
 }
 ```
 
+[VALIDATE_2]
 
 [ACCORDION-END]
 
@@ -98,6 +101,7 @@ let settings = SAPcpmsSettings(sapURLSession: urlSession, settingsParameters: se
 settings.load(for: .application)
 ```
 
+[DONE]
 
 [ACCORDION-END]
 
