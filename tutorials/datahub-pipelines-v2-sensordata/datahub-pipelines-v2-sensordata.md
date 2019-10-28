@@ -1,6 +1,6 @@
 ---
-title: Generate sensor data in SAP Data Hub, developer edition 2.4
-description: Generate sensor data and display it in a terminal by using SAP Data Hub, developer edition 2.4.
+title: Generate sensor data in SAP Data Hub, developer edition
+description: Generate sensor data and display it in a terminal by using SAP Data Hub, developer edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -85,5 +85,5 @@ Copy any row of the terminal output and paste it in the frame below and click on
 Stop the pipeline by pressing the **Stop** button (you find it next to the **Run** button).
 
 [ACCORDION-END]
-  
+
 ---

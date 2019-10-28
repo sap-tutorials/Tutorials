@@ -45,7 +45,7 @@ As the classification categories are derived automatically from the training dat
         +-- <category name N>/<image files>  
 ```
 
-You could potentially prepare your own set of labelled images, but to keep it simple, you will reuse the images used in the [How to Retrain an Image Classifier for New Categories](https://www.tensorflow.org/tutorials/image_retraining) tutorial from the TensorFlow website.
+You could potentially prepare your own set of labelled images, but to keep it simple, you will reuse the images used in the [How to Retrain an Image Classifier for New Categories](https://www.tensorflow.org/hub/tutorials/image_retraining) tutorial from the TensorFlow website.
 
 It contains flower photos available under the creative-commons license.
 

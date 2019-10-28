@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const tagChecker = require('./tags-checker');
 const linkChecker = require('./link-checker');
+const metadataChecker = require('./metadata-checker');
 const { regexp, constraints } = require('../constants');
 
 const fileExistsSyncCS = (filePath) => {
@@ -75,16 +76,20 @@ module.exports = {
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
+    const metaLines = [];
 
     await Promise.all(lines.map(async (line, index) => {
       const isCodeLine = (line.match(codeLine) || []).length > 0;
 
       if (isMeta) {
+        metaLines.push(line);
         if (line.replace(/\n/g, '') === '---') {
           metaBoundaries += 1;
         }
         if (metaBoundaries >= 2) {
           isMeta = false;
+          const metaValidationResult = metadataChecker.check(metaLines);
+          result.contentCheckResult.push(...metaValidationResult);
         }
 
         const primaryTagError = tagChecker.checkPrimaryTag(line, index);

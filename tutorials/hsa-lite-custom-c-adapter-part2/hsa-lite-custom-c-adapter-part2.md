@@ -1,5 +1,6 @@
 ---
 title: Code Custom C/C++ Adapter for Freezer Monitoring Lite
+description:  
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
@@ -743,4 +744,3 @@ int main() {
 
 [ACCORDION-END]
 ---
-

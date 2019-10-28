@@ -8,7 +8,6 @@ primary_tag: products>sap-leonardo-machine-learning-foundation
 ---
 
 ## Prerequisites
- - [Create a Cloud Foundry Account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
  - [Install the Cloud Foundry Command Line Interface (CLI)](https://developers.sap.com/tutorials/cp-cf-download-cli.html)
 
 ## Details

@@ -31,7 +31,7 @@ primary_tag: products>sap-cloud-platform
 
 **TROUBLESHOOTING:** If one of the applications starting with `city-` is not in state **started**, have a look at the logs. **city-app-db** should be in status **stopped** since it's a Cloud Foundry task and supposed to be stopped after its initial run.
 
-You can access the logs by executing the following command in the Azure Cloud Shell:
+You can access the logs by executing the following command in the Azure Cloud Shell: 
 
 ```Bash
 cf logs <appname> --recent

@@ -32,7 +32,7 @@ Based on this tutorial's prerequisites within the context of the mission, your c
 cds run
 ```
 
-At the [root URL](http://localhost:4004) you should see something similar to this:
+At the root URL <http://localhost:4004> you should see something similar to this:
 
 ![the root page listing the various OData resource endpoints](welcome-page.png)
 
@@ -53,12 +53,17 @@ Alongside the `cat-service.cds` and `cat-service.js` files you already have in t
 
 > All of the annotations that you're about to add are UI-related and are documented in the [OData 4.0 Vocabularies - SAP UI](https://wiki.scn.sap.com/wiki/display/EmTech/OData+4.0+Vocabularies+-+SAP+UI) Wiki page.
 
-The first annotation you should add is one that will remove the five empty selection fields, to neaten things up a little and make things simpler.
+The first annotation you should add is one that will reduce the five selection fields down to one (for the address ID), to neaten things up a little and make things simpler.
 
-Add the following to the `annotations.cds` file, first as a single line, like this:
+Add the following to the `annotations.cds` file; it's an annotation that gives a title for the `addressID` property, and then a single line describing the selection fields, like this:
 
 ```CDS
-annotate CatalogService.Orders with @UI.SelectionFields: [];
+annotate CatalogService.Orders with {
+	addressID @title:'Address ID'
+}
+
+annotate CatalogService.Orders with @UI.SelectionFields: [ addressID ];
+
 ```
 
 Now restart the service by issuing this command in the integrated terminal (you may have to cancel the existing execution with **Ctrl-C**):
@@ -67,9 +72,9 @@ Now restart the service by issuing this command in the integrated terminal (you 
 cds run
 ```
 
-After restarting the service, refresh the SAP Fiori preview page for the `Orders` entity (this page: <http://localhost:4004/$fiori-preview?service=CatalogService&entity=Orders>). You should see that the selection fields are no longer there at the top -- just the search field, so that it looks similar to this:
+After restarting the service, refresh the SAP Fiori preview page for the `Orders` entity (this page: <http://localhost:4004/$fiori-preview?service=CatalogService&entity=Orders>). You should see that there is now only a single selection field plus the search field, so that it looks similar to this:
 
-![preview without any selection fields](no-selection-fields.png)
+![preview with a single selection field](single-selection-field.png)
 
 [DONE]
 [ACCORDION-END]
@@ -78,13 +83,13 @@ After restarting the service, refresh the SAP Fiori preview page for the `Orders
 
 Let's use our newly discovered annotation power to good effect and enhance the display of the preview by specifying properties that should appear on each line (which are still currently empty).
 
-Right now you have a single annotation line in the `srv/annotations.cds` file, so you _could_ add another `annotate CatalogService.Orders` statement below it. Instead, embrace the syntactical flexibility and modify the single initial line that's in there so it looks like this:
+Right now there is a single annotation line in the `srv/annotations.cds` file that describes the selection fields required, so you _could_ add another `annotate CatalogService.Orders` statement below it. Instead, embrace the syntactical flexibility and modify that last single line so it looks like this:
 
 ```CDS
 annotate CatalogService.Orders with @(
 
 	UI: {
-		SelectionFields: [],
+		SelectionFields: [ addressID ],
 	}
 
 );
@@ -97,13 +102,13 @@ Syntactically this is just the same as what you had before, except that it's a b
 
 [ACCORDION-BEGIN [Step 4: ](Add line item annotations)]
 
-Now that you have reworked the annotations, it's easier to add further elements. In this step, add a `UI.LineItem` annotation by modifying what you have in `srv/annotations.cds` so it looks like this (that is,  add the `LineItem` section directly below the `SelectionFields` annotation):
+Now that you have reworked the annotations, it's easier to add further elements. In this step, add a `UI.LineItem` annotation by modifying what you have in the latter half of `srv/annotations.cds` so it looks like this (that is,  add the `LineItem` section directly below the `SelectionFields` annotation):
 
 ```CDS
 annotate CatalogService.Orders with @(
 
 	UI: {
-		SelectionFields: [],
+		SelectionFields: [ addressID ],
 		LineItem: [
 			{ Value: quantity, Label: 'Order Quantity' },
 			{ Value: book.title, Label: 'Book Title' },

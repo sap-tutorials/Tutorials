@@ -1,6 +1,6 @@
 ---
-title: Store Sensor Data in SAP Vora in SAP Data Hub, Trial Edition 2.5
-description: Use SAP Vora to store sensor data by using SAP Data Hub, trial edition 2.5.
+title: Store Sensor Data in SAP Vora in SAP Data Hub, Trial Edition
+description: Use SAP Vora to store sensor data by using SAP Data Hub, trial edition.
 primary_tag: products>SAP-data-hub
 auto_validation: true
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
@@ -37,7 +37,7 @@ Right click **Write File** operator, open the configuration panel and change the
 |  :------------- | :-------------
 | path  | `sensordata/VORA_file_<counter>.txt`
 
-The **Write File** operator will write the received data to files in the `/sensordata` directory in the specified GCS or AWS S3 bucket or Azure container. The files follow the scheme `VORA_file_<counter>.txt` (where counter is an incremental integer).
+The **Write File** operator will write the received data to files in the `sensordata` directory in the specified GCS or AWS S3 bucket or Azure container. The files follow the scheme `VORA_file_<counter>.txt` (where counter is an incremental integer).
 
 [DONE]
 
@@ -78,13 +78,15 @@ Go to the SAP Data Hub Modeler and click **Run** to execute the pipeline. When t
 
 The longer the pipeline runs, the more files are generated. Therefore, after a while stop the pipeline execution.
 
+>**Attention**: If you run the data pipeline multiple times, please delete the content of the `sensordata` directory between the runs. Otherwise you might see error messages telling you that you need to run a `RELOAD ALL` statement. This behavior is expected, since the data pipeline always overwrites already existing files (which makes SAP Vora consider them as modified).
+
 [DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check the output in GCS or AWS S3 or Microsoft WASB and VORA)]
 
-For GCS open [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to the `/sensordata/` directory.
+For GCS open [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to the `sensordata` directory.
 
 For AWS open [https://s3.console.aws.amazon.com](https://s3.console.aws.amazon.com) and navigate to **Search for Buckets** > **Your Bucket name** > `sensordata` folder.
 

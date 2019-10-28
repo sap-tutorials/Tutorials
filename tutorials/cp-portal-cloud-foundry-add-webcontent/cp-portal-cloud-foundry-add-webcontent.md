@@ -1,5 +1,5 @@
 ---
-title: Add Web Content to Your Portal Site and Set the Layout (Cloud Foundry)
+title: Add Web Content to Your Portal Site and Set the Layout
 description: Design your Portal site by adding widgets with meaningful content.
 auto_validation: true
 time: 25
@@ -20,6 +20,8 @@ By now, you should have created the `JobCore Portal` site with a `Home` page and
 In this tutorial, we will add web content to a Portal page and design its layout and appearance according to a predefined, appealing design.  We are building a Portal site for a recruiting company, so our content will be applicable to this scenario.
 
 Let's add meaningful content to your `Home` page.
+
+>Note for those doing the TechEd Mission.  Due to time limitations, you can skip designing **Section 3** of the page.
 
 [ACCORDION-BEGIN [Step 1: ](Download resources)]
 
@@ -58,17 +60,21 @@ Before you start, first download the following images that you will add to your 
 
     ![Delete menu](18a_delete_existing_menu.png)
 
+3. Click **Delete** on the confirmation dialog.
+
 3. Click the **Header** section again and then click the **+** icon on the right to open the widget gallery.
 
     ![Edit header section](19_edit_header_section.png)
 
 4. Click the **Headline Carousel** widget from the **Web Content Widgets: Carousel** category.
 
-    ![Add new header](20_add_header_widget.png)
+    >You can also locate this widget in the **Add Widgets** dialog box, by typing the name of the widget (in this case `Headline Carousel`), in the search box and clicking the search icon.
 
-5. Now click in **Section 1** of the page.
+      ![Add new header](20_add_header_widget.png)
 
-    ![Click Section 1](20a_select_section1.png)
+5. **Section 1** is the second section in this page that has no widgets in it. Click in this section as seen in the image.
+
+     ![Click Section 1](20a_select_section1.png)
 
 6. Add the following widgets.
 
@@ -97,15 +103,19 @@ You have a page full of widgets that still have their default content. So now le
 
 [ACCORDION-BEGIN [Step 3: ](Add your own content to the site)]
 
-1. Click the **Header** section on your `JobCore` page to expose the editing icons.
+1. Click the `Headline Carousel` widget from the **Header** section to expose the widget and section editing icons.
 
-2.	Click **Edit content** (the pencil icon in the top row).
+    >Note: A section can contain multiple widgets. When you click on a widget, the widget editing icons appear at the top left of the widget, and the section editing icons appear at the top right of the section.
+
+2.	Click **Edit content** (the pencil icon in the top left) to edit the content of this widget.
 
     ![Edit header section](21_edit_header_widget.png)
 
 3. In the left panel, you can see that this widget includes 3 content items (each of which you can edit). Since this is a carousel widget, each content item is a slide in the carousel and each slide includes an image, a title, and a subtitle as content.
 
-    Click the first content item and edit it as follows:
+    >Note: we will click **Save** at the end of the editing.
+
+4. Click the first content item and edit it as follows:
 
 
     |  Field     | Value
@@ -116,7 +126,7 @@ You have a page full of widgets that still have their default content. So now le
 
     ![Change content](22_change_content.png)
 
-4. Click the second content item and edit as follows:
+5. Click the second content item and edit as follows:
 
 
     |  Field      | Value
@@ -126,27 +136,15 @@ You have a page full of widgets that still have their default content. So now le
     |  Content    | We are focused on helping you find the right candidates faster. We guarantee higher response rates with long term employer-employee relationships. Let us help you find your next successful employee.
 
 
-5. The carousel that we want for our site only has 2 slides, so you can delete the third content item. Click the third content item and then click the minus sign at the bottom of the screen to delete it.
+6. The carousel that we want for our site only has 2 slides, so you can delete the third content item. Click the third content item and then click the minus sign at the bottom of the screen to delete it.
 
     ![Delete content item](22a_delete_content_item.png)
 
-6. Click **Save**.
+7. Click **Save**.
 
-    Let's look at our edited widget.
-    This is the first slide of the carousel widget:
+8. You're now going to edit the content in the next section of the page. In **Section 1** click in the **Header with Titles** widget to expose the editing icons.
 
-    ![View first widget](23_view_first_widget.png)
-
-    This is the second slide in the carousel widget:
-
-    ![View second widget](24_view_first_widget2.png)
-
-    You're now going to edit the content in the next section of the page.
-
-
-7. In **Section 1** click in the **Header with Titles** widget to expose the editing icons.
-
-8. Click **Edit content** (pencil icon) and edit the widget as follows:
+9. Click **Edit content** (pencil icon) and edit the widget as follows:
 
     |  Field     | Value
     |  :------------- | :-------------
@@ -155,7 +153,7 @@ You have a page full of widgets that still have their default content. So now le
 
     Click **Save**.
 
-9. Still in **Section 1**,  click the **Aligned Story Card** widget and edit as follows:
+10. Still in **Section 1**,  click the **Aligned Story Card** widget and edit as follows:
 
     **Content Item 1**
 
@@ -184,13 +182,13 @@ You have a page full of widgets that still have their default content. So now le
     |  Image    | `We're innovative.png`
     |  Display&nbsp;Text          | Read More
 
-10. Click **Save**.  
+11. Click **Save**.  
 
     **Section 1** should look like this:
 
     ![View second section](24a_view_section1.png)
 
-11. Click in **Section 2** and edit the widgets as follows:
+12. Click in **Section 2** and edit the widgets as follows:
 
     **Header with Titles**:
 
@@ -207,7 +205,7 @@ You have a page full of widgets that still have their default content. So now le
 
       ![Add content item](25_add_content_item.png)
 
-12. Click **Save**. You'll see that you now have 3 content items.
+      You'll see that you now have 3 content items.
 
     ![View extra content item](26_view_another_contentitem.png)
 
@@ -301,7 +299,7 @@ You've replaced all the default content in the widgets with your own. Let's arra
 In this step, you'll arrange the widgets in the different sections of the page and configure the visual settings of the sections (like minimum height).
 
 
-1. Click in page **Section 1** to show the editing icons.
+1. Click in page **Section 1** or on any widget in this section, to expose the editing icons for this section.
 
 2. Click the **Edit section settings** icon on the right.
 
@@ -432,7 +430,7 @@ And this is what you'll see:
 
 ![View site](35_view_site.png)
 
-Congratulations!  You've created a very attractive `Home` page. In our next tutorials, we're going to add a URL app to our `Launchpad` page.   
+Congratulations!  You've created a very attractive `Home` page. In our next tutorial, we're going to add a URL app to our `Launchpad` page.   
 
 [VALIDATE_7]
 [ACCORDION-END]

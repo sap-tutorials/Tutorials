@@ -28,15 +28,17 @@ In order to consume a remote service, and refer to that service's components wit
 
 > All the edits you do in this tutorial will be to the consumer app you created in the previous tutorial in this mission.
 
+> You've already performed a similar step (importing a service definition file) in a previous tutorial in this mission - note that you are going to do it again here in this tutorial, this time in your `consumer-app` project, because this consuming app that you're building needs it too. For a slightly different reason of course - the consuming app needs to know about what it's consuming, and the mock service app needed to know what to mock.
+
 First, create a new directory `external/` within the `srv/` directory of the consumer app project, and then within that new `external` directory create a further new directory `csn/`. The names are not fixed but are recommended as the convention for external service definition files in CSN.
 
-Into this new `srv/external/csn/` directory, import the [`API_BUSINESS_PARTNER.json`](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/cap-cloudsdk-4-enhance-consume/API_BUSINESS_PARTNER.json) file, ensuring that the JSON structure is preserved -- when looking at the file, use the **Raw** link to download it, in a similar way to how you did it in the first tutorial in this mission.
+Into this new `srv/external/csn/` directory, import the [`API_BUSINESS_PARTNER.json`](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/cap-cloudsdk-4-enhance-consume/API_BUSINESS_PARTNER.json) file, ensuring that the JSON structure is preserved -- when looking at the file, use the **Raw** link to download it, in a similar way to how you did it in the first tutorial in this mission. Again, if you copy/paste, make sure you only select the JSON and not anything else (such as comments) rendered by any Chrome extension that is being used to display the JSON in a more readable form.
 
 If you open the file it in VS Code, you'll see something similar to this (you may also wish to refer to the Explorer view on the left-hand side of the screenshot to check you got the directory hierarchy correct):
 
 ![the CSN file](csn-file.png)
 
-Take a few minutes to browse through this file, which contains definitions of entities in canonical CSN format (represented in JSON here). Find and examine the definition of the `API_BUSINESS_PARTNER.A_BusinessPartnerAddressType` entity.
+Have a brief browse through this file, which contains definitions of entities in canonical CSN format (represented in JSON here). Find and examine the definition of the `API_BUSINESS_PARTNER.A_BusinessPartnerAddressType` entity.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -218,7 +220,7 @@ Finally, add the `Orders` entity back in, but this time, instead of it being a s
   }
 ```
 
-Take a few moments to stare at that definition, which combines the local properties of the `Orders` entity with a managed to-one association to an entity in the remote service.
+Spend a bit of time staring at that definition, which combines the local properties of the `Orders` entity with a managed to-one association to an entity in the remote service.
 
 [DONE]
 [ACCORDION-END]

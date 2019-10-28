@@ -1,6 +1,6 @@
 ---
-title: Create Workflow (part 3), Build a Task Workflow in SAP Data Hub, Trial Edition 2.5
-description: Build a task Workflow using SAP Data Hub, trial edition 2.5.
+title: Create Workflow (part 3), Build a Task Workflow in SAP Data Hub, Trial Edition
+description: Build a task Workflow using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]

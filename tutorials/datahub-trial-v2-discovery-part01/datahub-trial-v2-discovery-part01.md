@@ -1,6 +1,6 @@
 ---
-title: Explore Data in Cloud Storage in SAP Data Hub, Trial Edition 2.5
-description: Explore data in Cloud Storage (including profiling) by using SAP Data Hub, trial edition 2.5.
+title: Explore Data in Cloud Storage in SAP Data Hub, Trial Edition
+description: Explore data in Cloud Storage (including profiling) by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>SAP-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
@@ -31,7 +31,7 @@ Navigate to **Metadata Explorer** by clicking on the icon from the launchpad.
 
 ![picture_02](./datahub-trial-v2-discovery-part01_02.png)
 
-From the quick links, click on **Browse Connections**
+Click on **Browse Connections**.
 
 ![picture_03](./datahub-trial-v2-discovery-part01_03.png)
 

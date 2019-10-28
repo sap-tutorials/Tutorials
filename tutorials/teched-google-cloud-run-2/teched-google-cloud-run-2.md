@@ -16,13 +16,17 @@ primary_tag: products>sap-hana\,-express-edition
   - How to start a project in Google Cloud Shell
   - How to initialize a project using the Cloud Application Programming model
 
-These tutorials are meant to be completed at the Developer Garage at SAP TechEd. The experts at the Google Cloud booth will provide you with an access to an account.
+**These tutorials are meant to be completed at the Developer Garage at SAP TechEd.** The experts at the Google Cloud booth will provide you with access to an account.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open the code editor)]
 
-Go back to the Google Cloud console and click on the cloud shell icon ![cloud shell icon](icon.png).
+Go back to the Google Cloud console. Close the Learn panel if open:
+
+![Code Editor](close.png)
+
+Click on the cloud shell icon ![cloud shell icon](icon.png) toward the right side of the blue title bar.
 
 ![Code Editor](1.png)
 
@@ -30,26 +34,28 @@ Click **Start Cloud Shell**
 
 ![Code Editor](3.png)
 
-The cloud console will open up. Click on the icon to **Launch the code editor**
+The cloud shell panel will open up at the bottom of the window.  **Launch the code editor**:
 
 ![Code Editor](2.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure `npm`)]
+[ACCORDION-BEGIN [Step 2: ](Configure `npm` Package Manager)]
 
-You will create a project using the SAP Core Data and Services Node.js module from SAP `npm` repository. Paste the following commands into the editor and press **Enter**
+You will create a project using the SAP Core Data and Services Node.js module from the SAP `npm` repository.
+
+Paste the following commands into the Cloud shell panel and press **Enter**
 
 ```text
 npm config set @sap:registry https://npm.sap.com
-npm install --global @sap/cds
+npm install --global @sap/cds@3.13.0
 ```
 For example:
 
 ![Code Editor](4.png)
 
-> Note: You can use the copy and paste commands in this console too.
+> Note: You can use the copy and paste commands in Cloud shell
 
 [DONE]
 [ACCORDION-END]
@@ -59,7 +65,7 @@ For example:
 
 You will initialize your application using the Cloud Application Programming model. You application will contain two modules: one for database artifacts and one for services. The services module will be written in Node.js (alternatively, you could use Java). For simplicity in this application and since it will not be for productive use, you will skip authentication and authorizations.
 
-Execute the following command:
+Execute the following command to set up a Core Data and Services project:
 
 ```text  
 cds init --modules db,srv --insecure --db-technology hana --verbose teched
@@ -181,7 +187,7 @@ touch ingredients.csv recipes.csv
 edit ingredients.csv
 ```
 
-This will create two files and open the `ingredients` file in the editor.
+This will create two files and open the `ingredients.csv` file in the editor.
 
 Paste the following content into the **ingredients** file:
 

@@ -11,7 +11,7 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
  - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
- - You have a **subaccount and dev space with Europe (Frankfurt) as region**
+ - You have a **subaccount and dev space with Europe (Frankfurt) as region**.
 
 ## Details
 ### You will learn  

@@ -1,21 +1,19 @@
 ---
-title: Integrate a URL App into Your Portal Site (Cloud Foundry)
+title: Integrate a URL App into Your Portal Site
 description: Create a URL app and add it to the launchpad page on your Portal site on Cloud Foundry.
 auto_validation: true
-time: 5
+time: 15
 tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
 primary_tag: products>sap-cloud-platform-portal
 ---
-
-## Prerequisites
- - Locate the URL of the app you want to add to the site.
 
 
 ## Details
 ### You will learn
   - How to create a URL app and add it to your site
 
-You create business content such as apps, groups, catalogs, and roles, in the Content Manager, which you access from the Site Manager of your trial account or subaccount. The content you create can then be used in any site created in this trial account or subaccount.
+You create business content such as apps, groups, catalogs, and roles, using the Portal service Site Manager on the subaccount level (and not for a specific site). Apps are consumed from specific sites according to their role assignment.
+
 
 [ACCORDION-BEGIN [Step 1: ](Go to the Content Manager)]
 
@@ -40,7 +38,7 @@ Click **New** and select **App** from the list.
 
 ![Content manager empty new app](2-content-manager-empty-new-app.png)
 
-The App editor opens and now you can configure the URL app that you want to add to the launchpad page.
+The App editor opens and now you can configure your new app.
 
 [DONE]
 [ACCORDION-END]
@@ -52,21 +50,19 @@ The App editor opens on the **PROPERTIES** tab.
 
 1. Enter the following values:
 
-    * **Title**: `Careers at SAP`
+    * **Title**: `Innovation at SAP`
 
-    * **Open App**: In a new tab
+    * **Open App**: In place
 
-    * **URL**:  `https://www.sap.com/about/careers.html`
+    * **URL**:  `https://sap.io`
 
     ![App editor properties tab](3-app-editor-properties.png)
 
-2. Click the **NAVIGATION** tab.
-
-    Here you need to specify the intent of your app, which includes a semantic object and the action you want to perform on this object.  
+2. Click the **NAVIGATION** tab to specify the intent of your app.
 
 3. Enter the following values:
 
-    * **Semantic Object**: `Careers`
+    * **Semantic Object**: `Innovation`
 
     * **Action**:  `Display`
 
@@ -78,17 +74,17 @@ The App editor opens on the **PROPERTIES** tab.
 
 5.  Enter the following values:
 
-    * **Subtitle**: `Open Positions`
+    * **Subtitle**: `SAP.iO program `
 
-    * **Information**:  `Search for a job`
+    * **Information**:  `Learn about SAP.iO`
 
-    * **Icon**: Click the browse icon, type `Search` and click **OK**.
+    * **Icon**: Click the browse icon, type `Visits` and click **OK**.
 
       You see a preview of the tile with all the properties you entered.
 
-6. Click **Save**.
-
       ![App editor visualization tab](5-app-editor-visualization.png)
+
+6.  Click **Save**.
 
 You can then use the back arrow to get back to the Content Manager to see your app in the list of content items.
 
@@ -110,13 +106,9 @@ In the Content Manager, you see your app in the list:
 
 >![App editor Edit](6-app-editor-edit.png)
 
-You have now created a URL app for your site.
+You have now created a URL app.
 
-Before you can see the app in the launchpad, you need to:
-
-  - Add a group and assign your app to it
-
-  - Assign a role to the app that is assigned to you. We will use the **Everyone** role.
+For end users to view the app in runtime, you must assign a role to the app. Any end user who needs to view this app, should be a member of the role that you have assigned to the app. In this tutorial, we use the `Everyone` role.  You also need to assign the app to a group so that it's visible in the Launchpad page.
 
 This is described in the following steps.
 
@@ -133,7 +125,7 @@ In this step, you will create a group and assign it to your app.
 
     ![Add a new group](7-add-group.png)
 
-2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type `Ca` to search for your app. You should see **Careers at SAP**.
+2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type `In` to search for your app. You should see **Innovation at SAP**.
 
 3. In the **Results** list, click + to assign this group to your app.
 
@@ -144,7 +136,7 @@ In this step, you will create a group and assign it to your app.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Assign the Everyone role)]
+[ACCORDION-BEGIN [Step 6: ](Assign the Everyone role)]
 
 In this step you'll assign the **Everyone** role to your app.
 
@@ -156,7 +148,7 @@ In this step you'll assign the **Everyone** role to your app.
 
 2. Click **Edit**.
 
-3. In the Role editor, in the **Assignments** panel, type `Ca` to search for your app.
+3. In the Role editor, in the **Assignments** panel, type `In` to search for your app.
 
 4. In the **Results** list, click + to assign this role to your app:
 
@@ -167,7 +159,7 @@ In this step you'll assign the **Everyone** role to your app.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Review the site)]
+[ACCORDION-BEGIN [Step 7: ](Review the site)]
 
 1. Click the Site Directory icon in the left panel.
 
@@ -181,7 +173,7 @@ The **Home** page opens. Navigate to the **Launchpad** page by clicking `My Apps
 
 ![9b Site with one group and one app](9-site-with-1group-1app.png)
 
-You can now launch your application by clicking the **Careers at SAP** tile.
+You can now launch your application by clicking the **Innovation at SAP** tile.
 
 You've created and added your first app to the `Launchpad` page in your Portal site!
 

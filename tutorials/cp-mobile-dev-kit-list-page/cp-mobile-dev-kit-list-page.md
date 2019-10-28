@@ -33,19 +33,24 @@ This page is a searchable list that displays all customers.
 
 To create the Customer List page, you will create a **Section page** and drag the Customer **Contact Cell Table** control onto the page. In the property palette, you will link the control to the Customer Collection and then map data and actions to different areas of the cell object in the property palette. One nice feature about the **Contact Cell Table** control is that it has icons that can activate device functionality such as phone, email, video and more.
 
-In SAP Web IDE project, right click on the **Pages** | **New MDK Page** | **Section Page** | **Next**.
+
+In SAP Web IDE project, right-click on the **Pages** | **New MDK Page** | **Section Page** | **Next**.
 
 ![MDK](img_001.gif)
 
 >You can find more details about [section page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
-Enter the **Page Name** `CustomerList` and click **Next** and the **Finish** on the confirmation step.
+Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** on the confirmation step.
 
 ![MDK](img_002.png)
 
+In `Customers_List` page, select the page header area and then click **Page**.
+
+![MDK](img_002.1.png)
+
 In the **Properties** pane, set the **Caption** to **Customers**.
 
-![MDK](img_003.gif)
+![MDK](img_3.png)
 
 In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Contact Cell Table** control onto the Page area.
 
@@ -73,6 +78,10 @@ You should have final results as below.
 
 >![MDK](img_009.1.gif)
 
+In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to **true**.
+
+![MDK](img_014.png)
+
 In the **Activity Items** section of the Properties pane, change `VideoCall` on the first activity to **Phone**.
 
 ![MDK](img_010.gif)
@@ -89,20 +98,16 @@ Click the **trash** can icon for the Detail activity to remove it from the Activ
 
 ![MDK](img_013.png)
 
-In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to true.
-
-![MDK](img_014.png)
-
-Save your changes to the Customer List page.
+Save your changes to the `Customers_List.page`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create navigation action)]
 
-Now, you will create a Navigation action that opens the Customer List page when called.
+Now, you will create a Navigation action that opens the `Customers_List.page` when called.
 
-Right click on the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
 ![MDK](img_017.gif)
 
@@ -110,10 +115,12 @@ Provide the below information:
 
 | Field | Value |
 |----|----|
-| `Action Name`| `ShowCustomerList` |
-| `Page to Open` | `select CustomerList.page` |
+| `Action Name`| `NavToCustomers_List` |
+| `Page to Open` | select `Customers_List.page` |
 
 ![MDK](img_018.png)
+
+Click **Next** and then **Finish** on the confirmation step.
 
 [DONE]
 [ACCORDION-END]
@@ -122,7 +129,7 @@ Provide the below information:
 
 Now that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Section Button Table** control.
 
-In **Main page**, drag and drop the **Section Button Table** container onto the Page.
+In `Main_page`, drag and drop the **Section Button Table** container control onto the Page.
 
 ![MDK](img_019.1.gif)
 
@@ -144,32 +151,57 @@ In the Properties pane, set the **Title** of the button to **Customer List**.
 
 Under **Events** tab, click the **link icon** for the `OnPress` Handler property to open the Object Browser.
 
-Double Click on the `ShowCustomerList` action and click **OK** to set it as the `OnPress` Handler Action.
+Double Click on the `NavToCustomers_List` action and click **OK** to set it as the `OnPress` Handler Action.
 
 ![MDK](img_025.gif)
 
-Save the changes to the Main page.
+Save the changes to the `Main_page`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy, activate and test the application)]
+[ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
+Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
 ![MDK](img_026.png)
 
->Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
+Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+
+![MDK](img_014.1.png)
+
+[VALIDATE_1]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Test the application)]
+
+>Make sure you are choosing the right device platform tab above.
+
+[OPTION BEGIN [Android]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+
+![MDK](img_027.1.jpg)
+
+You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
+
+![MDK](img_028.1.jpg)
+
+Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
+
+![MDK](img_029.1.jpg)
+
+[OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
 
 ![MDK](img_027.png)
 
-You will notice, newly added button on the main page. Click **Customer List**.
+You will notice, newly added button on the main page. Tap **Customer List**.
 
 ![MDK](img_028.png)
 
@@ -185,23 +217,7 @@ Here, you will see list of all the Customers. You can search a record by by Firs
 
 [OPTION END]
 
-[OPTION BEGIN [Android]]
-
-Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
-
-![MDK](img_027.1.jpg)
-
-You will notice, newly added button on the main page. Click **CUSTOMER LIST**.
-
-![MDK](img_028.1.jpg)
-
-Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
-
-![MDK](img_029.1.jpg)
-
-[OPTION END]
-
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 ---

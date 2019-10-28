@@ -11,7 +11,6 @@ time: 10
 
 ## Prerequisites  
  - [Get a free trial account on SAP Cloud Platform](hcp-create-trial-account)
- - [Create a Cloud Foundry Account](cp-cf-create-account)
  - [Set Up the SAP Web IDE](sapui5-webide-open-webide)
  - [Create an SAP HANA Service Instance](https://help.sap.com/viewer/cc53ad464a57404b8d453bbadbc81ceb/Cloud/en-US/21418824b23a401aa116d9ad42dd5ba6.html) (If no SAP HANA Service Instance is available, change your region)
 

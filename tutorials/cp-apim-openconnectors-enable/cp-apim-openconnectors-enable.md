@@ -22,20 +22,30 @@ By enabling the service, you get your own instance of Open Connectors, which all
 
 Log into SAP Cloud Platform
 
-Click **Neo Trial** to open the cockpit for the Neo environment.
+![Log into cockpit](00-Login-trial-account.png)
 
-![Log into cockpit](01-Login-trial-account.png)
+Click **Enter Your Trial Account** to open the cockpit for the Cloud Foundry environment.
+
+![Access Cloud Foundry](01-CF-trial-account.png)
+
+Click on **trial** tile to open the cockpit for the Cloud Foundry trial environment.
+
+![Access Cloud Foundry](01_2_click-trial-tile.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable Open Connectors service)]
 
-In the **Integration** section, click  **Open Connectors**.
+Navigate to **Subscriptions**.
 
-![Select Open Connectors](06-enable-openconnectors.png)
+In the **SaaS Applications** section, click  **Open Connectors**.
 
-Click  **Enable** if it is not already enabled.
+![Select Open Connectors](06-open-openconnectors.png)
+
+Click  **Subscribe** if you are not already subscribed to it.
+
+![Subscribe Open Connectors](061-subscribe-openconnectors.png)
 
 [VALIDATE_5]
 
@@ -43,7 +53,7 @@ Click  **Enable** if it is not already enabled.
 
 [ACCORDION-BEGIN [Step 6: ](Access Open Connectors home page)]
 
-Click **Go to Service**.
+Click **Go to Application**.
 
 ![Go Open Connectors](08-go-to-open-connectors.png)
 
