@@ -60,7 +60,7 @@ author_profile: https://github.com/mervey45
 
 [DONE]
 [ACCORDION-END]
-
+ 
 [ACCORDION-BEGIN [Step 2: ](Configure SAP Cloud Platform Entitlements)]
 
   1. **Skip step 2 - Configure SAP Cloud Platform Entitlements**, if you could enter **ABAP Trial**.
