@@ -7,14 +7,14 @@ author_profile: https://github.com/mhassett92
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Next Steps
  - [Testing API Business Hub APIs with Curl](https://developers.sap.com/tutorials/hcp-abh-test-locally.html)
 
 ## Details
-### You will learn  
+### You will learn
 Want to learn more about the new SAP API Business Hub? Not sure where to get started? Find more about how to find and enable the SAP API Business Hub in your SAP Cloud Platform instance. Once you are in the SAP API Business Hub, start learning about and testing one of the many available APIs.
 
 ### Time to Complete
@@ -23,7 +23,7 @@ Want to learn more about the new SAP API Business Hub? Not sure where to get sta
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform Services)]
-Open your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit). If you do not have an account yet, sign up for a free trial account first.
+Open your [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit). If you do not have an account yet, sign up for a free trial account first.
 
 In your SAP Cloud Platform account, select **Services** from the side menu.
 

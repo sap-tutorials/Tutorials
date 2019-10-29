@@ -70,7 +70,7 @@ This means that the CDS facilities in SAP Web IDE will do the right things at th
 
 [ACCORDION-BEGIN [Step 4: ](Check your CF quota)]
 
-Before proceeding, it's worth checking that you have enough quota available for this tutorial. Go to the Cloud Foundry space for your trial account in your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome) -- follow the Cloud Foundry Trial link, selecting your subaccount where you should then see the subaccount overview, which will look something like this:
+Before proceeding, it's worth checking that you have enough quota available for this tutorial. Go to the Cloud Foundry space for your trial account in your [SAP Cloud Platform cockpit](https://cockpit.hanatrial.ondemand.com/cockpit) -- follow the Cloud Foundry Trial link, selecting your subaccount where you should then see the subaccount overview, which will look something like this:
 
 ![Subaccount overview](subaccount-overview.png)
 

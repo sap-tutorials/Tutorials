@@ -8,11 +8,11 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 time: 5
 ---
-## Prerequisites  
+## Prerequisites
 - **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](hcp-create-trial-account).
 
 ## Details
-### You will learn  
+### You will learn
   - How to enable SAP Web IDE Full-Stack inside of SAP Cloud Platform
   - How to open SAP Web IDE Full-Stack
 
@@ -23,7 +23,7 @@ time: 5
 
 
 
-Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://account.hanatrial.ondemand.com/) to open the home page).
+Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://cockpit.hanatrial.ondemand.com/) to open the home page).
 
  Click on **Launch SAP Web IDE** to see navigate further.
 

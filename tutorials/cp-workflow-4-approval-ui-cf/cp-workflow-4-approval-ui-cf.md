@@ -7,21 +7,21 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 15
 ---
 
-## Prerequisites  
+## Prerequisites
 - **Tutorials:** You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html).
 
 ## Details
-### You will learn  
+### You will learn
   - How to start an instance of the workflow definition that you have defined using a start form
 
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
 
-   ![Launch SAP Web IDE](launchsapwebide.png)  
+   ![Launch SAP Web IDE](launchsapwebide.png)
 
 [DONE]
 [ACCORDION-END]
@@ -70,7 +70,7 @@ time: 15
 2. Enter `Request Book` in the **Start Action Text** field, then choose **Select** next to **Workflow File Name**.
     The available workflow files are displayed.
 
-    ![Add Start Action and File](action-tab.png)  
+    ![Add Start Action and File](action-tab.png)
 
 4. Choose **/workflows/ApprovalWorkflow.workflow**, and choose **OK**.
 

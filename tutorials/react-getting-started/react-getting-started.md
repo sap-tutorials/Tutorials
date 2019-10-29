@@ -4,7 +4,7 @@ description: Start to build a React JavaScript project using SAP Web IDE on SAP 
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-web-ide ]
 ---
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
  - **Trial Account** You will need a SAP Cloud Platform trial account for this tutorial series.  [Create an SAP Cloud Platform Trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 - **Tutorial** [Create the Bootstrap Template](https://developers.sap.com/tutorials/react-bootstrap-template.html)
 
 ## Details
-### You will learn  
+### You will learn
 In this tutorial series, we will explore another technology for Single Page Application (SPA) development - REACT.  REACT is another popular web framework, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an OData back end service.
 
 ### Time to Complete
@@ -34,7 +34,7 @@ This first tutorial will start by opening the IDE and getting the basic parts of
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform console)]
 
-Open the [SAP Cloud Platform console](https://account.hanatrial.ondemand.com/)
+Open the [SAP Cloud Platform console](https://cockpit.hanatrial.ondemand.com/)
 
 > **Can not create a developer account?**
 >
@@ -48,7 +48,7 @@ Open the [SAP Cloud Platform console](https://account.hanatrial.ondemand.com/)
 
 [ACCORDION-BEGIN [Step 2: ](Enable SAP Web IDE)]
 
-You should now be in the SAP Cloud Platform Cockpit, as shown below.  Click on the **Services** menu item on the left.  
+You should now be in the SAP Cloud Platform Cockpit, as shown below.  Click on the **Services** menu item on the left.
 
 Next, click on the **SAP Web IDE** box.  You may need to scroll down to find this box.
 

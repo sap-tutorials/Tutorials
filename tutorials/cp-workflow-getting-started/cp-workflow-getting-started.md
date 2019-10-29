@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 5
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
-### You will learn  
+### You will learn
   - How to enable the workflow service in your SAP Cloud Platform account
   - How to assign the roles you need to develop and use workflow applications
 
@@ -19,7 +19,7 @@ time: 5
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP Cloud Platform cockpit)]
 
-1. In your Web browser, open the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
+1. In your Web browser, open the [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
 
 2. Choose **Neo Trial**.
 

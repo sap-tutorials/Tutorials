@@ -9,11 +9,11 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 15
 ---
 
-## Prerequisites  
+## Prerequisites
  - There are none. If you want to start learning about SAP Cloud Platform, this is the very beginning.
 
 ## Details
-### You will learn  
+### You will learn
   - What is SAP Cloud Platform?
   - What do SaaS, PaaS, and IaaS mean and how do they work?
   - What are services, and where can I find out about them?
@@ -25,7 +25,7 @@ time: 15
 
 **Welcome to the SAP Cloud Platform**
 
-SAP Cloud Platform is an open set of Software, Platform, and Infrastructure as a Service systems that delivers in-memory capabilities, core platform services, and unique micro-services for building and extending intelligent, mobile and browser enabled applications.  SAP Cloud Platform is multi-lingual, with support for most major languages ([now including ABAP](https://blogs.sap.com/2018/09/04/sap-cloud-platform-abap-environment/)) and support for development, testing, and production systems both inside an organization and to the larger public.  
+SAP Cloud Platform is an open set of Software, Platform, and Infrastructure as a Service systems that delivers in-memory capabilities, core platform services, and unique micro-services for building and extending intelligent, mobile and browser enabled applications.  SAP Cloud Platform is multi-lingual, with support for most major languages ([now including ABAP](https://blogs.sap.com/2018/09/04/sap-cloud-platform-abap-environment/)) and support for development, testing, and production systems both inside an organization and to the larger public.
 
 SAP Cloud Platform provides a large number of SAP software packages, or services, that deliver all the functionality of on-premise SAP applications, but in a cloud focused way.  It also provides a way for developers to customize those services, or build entirely new applications, to deliver custom applications personalized to your organization.
 
@@ -63,13 +63,13 @@ The three different service levels are:
 
 [ACCORDION-BEGIN [Step](SAP Cloud Platform service types)]
 
-SAP Cloud Platform provides both Platform as a Service (PaaS) and Software as a Service (SaaS).  
+SAP Cloud Platform provides both Platform as a Service (PaaS) and Software as a Service (SaaS).
 
-Why does SAP provide both?  The combination of both PaaS and SaaS provide all the tools we have traditionally sold, new tools that are specific to the cloud, and also the ability to customize all of our products to fit each individual organization.  
+Why does SAP provide both?  The combination of both PaaS and SaaS provide all the tools we have traditionally sold, new tools that are specific to the cloud, and also the ability to customize all of our products to fit each individual organization.
 
 We have a lot of SaaS solutions available in the SAP Cloud.  They include our core package, S/4HANA, as well as Workflow, Human Resources, and new products like Internet of Things.  There are many more in the list, so [take a look at a more complete list for details](https://cloudplatform.sap.com/support/service-description.html).
 
-> **Note**:  There are two different types of Services being described here.  The software listed above are stand-alone software packages, which can be used without customization.  These are all Software as a Service, but we refer to those applications as **Solutions**.  
+> **Note**:  There are two different types of Services being described here.  The software listed above are stand-alone software packages, which can be used without customization.  These are all Software as a Service, but we refer to those applications as **Solutions**.
 >
 > SAP Cloud Platform also offers services, called "Platform Services", which provide additional functionality to custom code. These "Platform Services" do not run independently.  SAP refers to these as **Services**, especially in Cloud Foundry.  So when you see the name "Service" in later tutorials, this usually means "Platform Services".
 
@@ -114,11 +114,11 @@ Which environment is right for you?  That's a good question.  Each environment h
 
 [ACCORDION-BEGIN [Step](SAP Cloud Foundry cockpit)]
 
-Accessing SAP Cloud Foundry starts with the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/register) .
+Accessing SAP Cloud Foundry starts with the [SAP Cloud Platform cockpit](https://cockpit.hanatrial.ondemand.com/cockpit) .
 
 ![Image of the cockpit landing page](cockpit-main.png)
 
-Developers can access the SAP Cloud Platform cockpits to log in and access both PaaS and SaaS systems in the cloud.  
+Developers can access the SAP Cloud Platform cockpits to log in and access both PaaS and SaaS systems in the cloud.
 
 > Bookmark the link for fast and quick access to the cockpit.  
 >&nbsp;
@@ -131,9 +131,9 @@ Developers can access the SAP Cloud Platform cockpits to log in and access both 
 
 [ACCORDION-BEGIN [Step](Trial accounts on SAP Cloud Platform)]
 
-SAP offers a [free trial of SAP Cloud Platform](https://account.hanatrial.ondemand.com/register).  Both the Neo and Cloud Foundry environments are available for trial.  
+SAP offers a [free trial of SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit).  Both the Neo and Cloud Foundry environments are available for trial.
 
-The Neo environment is a lifetime free trial, and never expires.  
+The Neo environment is a lifetime free trial, and never expires.
 
 ![Neo environment starting page](neo-environment.png)
 
@@ -148,7 +148,7 @@ Later tutorials will describe how to create accounts for both Neo and Cloud Foun
 
 [ACCORDION-BEGIN [Step](Accounts and Sub-Accounts)]
 
-SAP Cloud Platform uses two levels of accounts:  Global Accounts, and Sub-Accounts.  
+SAP Cloud Platform uses two levels of accounts:  Global Accounts, and Sub-Accounts.
 
 A Global Account is the primary account for your organization or team.  It is the central pool of all the resources.  The Global Account isn't accessed directly, it just acts as an "umbrella" or container for all of the Sub-Accounts.
 

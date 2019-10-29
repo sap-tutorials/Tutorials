@@ -7,12 +7,12 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, topic>cloud , topic>java
 time: 10
 ---
 
-## Prerequisites  
+## Prerequisites
  - [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
  - [Install the Cloud Foundry Command Line Interface](cp-cf-download-cli)
 
 ##Details
-### You will learn  
+### You will learn
   - How to find a service in the SAP Cloud Platform Cloud Service marketplace
   - How to use the SAP Cloud Platform cockpit
   - How to use the Cloud Foundry CLI
@@ -60,7 +60,7 @@ time: 10
 
 [ACCORDION-BEGIN [Step: ](Navigate to the service marketplace)]
 
-Log onto the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/) and enter the Cloud Foundry (Trial) environment.
+Log onto the [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/) and enter the Cloud Foundry (Trial) environment.
 
 ![start](./trial-start.png)
 

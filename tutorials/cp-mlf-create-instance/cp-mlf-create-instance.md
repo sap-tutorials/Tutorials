@@ -21,7 +21,7 @@ primary_tag: products>sap-leonardo-machine-learning-foundation
 
 Access the SAP Cloud Platform Cockpit and login if necessary:
 
- - <https://account.hanatrial.ondemand.com/cockpit#/home/trialhome>
+ - <https://cockpit.hanatrial.ondemand.com/cockpit>
 
 Select the **Cloud Foundry Trial**.
 

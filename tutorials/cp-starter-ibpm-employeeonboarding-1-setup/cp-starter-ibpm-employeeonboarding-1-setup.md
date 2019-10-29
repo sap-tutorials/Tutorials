@@ -17,7 +17,7 @@ primary_tag: products>sap-cloud-platform
 
 To create service instances for business process management services, you need to ensure that you have the right set of entitlements in your trial account.
 
-1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Navigate into the trial subaccount
 
@@ -50,7 +50,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 
 [ACCORDION-BEGIN [Step 3: ](Access SAP Web IDE)]
 
-1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
 
@@ -74,7 +74,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
     |  :------------- | :-------------
     |  **API End Point**  | `https://api.cf.eu10.hana.ondemand.com` or `https://api.cf.us10.hana.ondemand.com` depending upon the region of your trial account
     |  **Organization**   | Your trial organization
-    |  **Space**          | Your trial space  
+    |  **Space**          | Your trial space
 
     > In the credentials popup, enter your trial user email and password. If you normally login via single-sign on, login with your domain password.
 
@@ -131,7 +131,7 @@ When you build and deploy this application, there will be new service instances 
 
 [ACCORDION-BEGIN [Step 6: ](Assign roles)]
 
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Click **Enter Your Trial Account**
 

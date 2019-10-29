@@ -8,7 +8,7 @@ time: 20
 ---
 
 ## Details
-### You will learn  
+### You will learn
   - How to use the SAP Cloud Platform Web IDE to create an application in the Neo environment
   - How to consume a SAP Cloud Platform Connectivity destination
 
@@ -16,7 +16,7 @@ time: 20
 
 [ACCORDION-BEGIN [Step ](Create a HTML5 project)]
 
-1. Open your SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/cockpit) and open the **SAP Web IDE**.
+1. Open your SAP Cloud Platform Cockpit (https://cockpit.hanatrial.ondemand.com/cockpit) and open the **SAP Web IDE**.
 
     ![Launch SAP Web IDE](./launch_webide.png)
 

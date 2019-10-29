@@ -6,16 +6,16 @@ tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner]
 time: 15
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Tutorials:** You need a HANA account or server. Pick one of the following:
-   - [Get a free account in SAP Cloud Platform](https://account.hanatrial.ondemand.com/register)
+   - [Get a free account in SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit)
    - [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html)
 
 ## Next Steps
 [Access your first Data from a native SAP HANA Application](https://developers.sap.com/tutorials/hana-data-access-authorizations.html)
 
 ## Details
-### You will learn  
+### You will learn
 1. How to use the SAP HANA Web-based Development Workbench.
 2. How to develop a simple server-side application.
 3. How to publish and run an application.
@@ -33,7 +33,7 @@ time: 15
 
 Each Trial HANA MDC instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
 
-Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
+Login to the [HANA Cloud Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit) with your free developer edition account.
 Choose Persistence in the left column menu and then Database & Schemas. You will need to create your new instance. To do this simply give it a name, enable web access and of course give a password. This password you will need to remember as it is the password for your SYSTEM user and how you will be able to access the server.
 
 ![New Database and Schema](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/1.png)

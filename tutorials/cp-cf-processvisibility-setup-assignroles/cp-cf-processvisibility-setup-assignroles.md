@@ -22,7 +22,7 @@ Add roles to one or more role collections and then assign these role collections
 
 [ACCORDION-BEGIN [Step 1: ](Create a role collection)]
 
-1. In your Web browser, open the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
+1. In your Web browser, open the [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
 
 2. You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 

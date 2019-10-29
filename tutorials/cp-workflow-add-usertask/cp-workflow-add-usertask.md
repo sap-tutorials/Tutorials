@@ -8,12 +8,12 @@ time: 15
 ---
 
 ## Details
-### You will learn  
+### You will learn
   - How to start an instance of the workflow definition that you have defined
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Add the workflow apps to your homepage)]
-1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit).
+1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit).
 2. Choose **Neo Trial**.
 3. Select **Services** from the left-hand navigation.
 4. Search for the **Workflow** service. Then select it, and choose **Fiori Launchpad (Default Site)**.
@@ -58,7 +58,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
 
 [ACCORDION-BEGIN [Step 3: ](Access the workflow editor)]
 1. Open SAP Web IDE Full-Stack:
-  <ol type="a"><li>In your Web browser, open the cockpit of [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit).
+  <ol type="a"><li>In your Web browser, open the cockpit of [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit).
   </li><li>Choose **Neo Trial**.
   </li><li>Then select **Services** from the left-hand navigation.
   </li><li>Search for the **Workflow** service. Then select it, and choose **SAP Web IDE Full-Stack**.</li></ol>

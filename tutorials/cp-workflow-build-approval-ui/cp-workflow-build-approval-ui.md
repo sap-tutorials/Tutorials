@@ -7,18 +7,18 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 15
 ---
 
-## Prerequisites  
+## Prerequisites
 - **Tutorials:** You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-service.html).
 
 ## Details
-### You will learn  
+### You will learn
   - How to define a basic form-based user task UI without having to cope with SAPUI5 coding
   - How to use it in a user task of a workflow
 
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
-1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit).
+1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit).
 2. Choose **Neo Trial**.
 3. Select **Services** from the left-hand navigation.
 4. Search for the **Workflow** service. Then select it, and choose **SAP Web IDE Full-Stack**.
@@ -68,7 +68,7 @@ time: 15
 
       - In column **Label/Title**, enter **`Title`**.
       - In column **Type**, select **String**.
-      - In column **Context Path**, enter **`${context.product}`**.      
+      - In column **Context Path**, enter **`${context.product}`**.
 
     &nbsp;
     Second row:

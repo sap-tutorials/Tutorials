@@ -7,12 +7,12 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-plat
 time: 15
 ---
 
-## Prerequisites  
+## Prerequisites
   - [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
   - [Get a Free Trial Account on SAP Cloud Platform (Neo)](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Details
-### You will learn  
+### You will learn
 - How to connect the Cloud Connector to your trial Neo account on SAP Cloud Platform
 - How to connect the Cloud Connector to your ABAP system
 
@@ -22,7 +22,7 @@ time: 15
 
 Before you can access data from the Cloud Connector in an application on SAP Cloud Platform (Neo), you must establish a trust between your SAP Cloud Platform subaccount and the Cloud Connector that is installed in your system landscape.
 
-1. Go to [Your SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit) | **Neo Trial**, and navigate to your subaccount.
+1. Go to [Your SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit) | **Neo Trial**, and navigate to your subaccount.
 
 1. Copy your technical subaccount name from the title to a local text editor:
 
@@ -133,7 +133,7 @@ Before applications on SAP Cloud Platform can access any services of the ABAP sy
 
     ![Access-Control-OP](step-03-Configure-OP-Connection-012.png)
 
-As a result, you now have configured a secure tunnel between your ABAP system and your Neo subaccount on SAP Cloud Platform.  
+As a result, you now have configured a secure tunnel between your ABAP system and your Neo subaccount on SAP Cloud Platform.
 
 [VALIDATE_3]
 

@@ -28,7 +28,7 @@ Create a free trial account on the SAP Cloud Platform to be able to use the Web 
 Fill the registration form by providing you name, email and a password. Once your account is created, log in and launch SAP Web IDE.
 
 ![step-1-sap-web-IDE](step-1-sap-web-IDE.png)
-Direct link: (https://account.hanatrial.ondemand.com/cockpit)
+Direct link: (https://cockpit.hanatrial.ondemand.com/cockpit)
 
 [DONE]
 [ACCORDION-END]

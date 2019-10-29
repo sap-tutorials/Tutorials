@@ -8,14 +8,14 @@ time: 5
 ---
 
 ## Details
-### You will learn  
+### You will learn
   - How to create a project for your workflow in the SAP Web IDE Full-Stack.
   - How to deploy this project to the SAP Cloud Platform.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access the SAP Web IDE Full-Stack)]
-1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit).
+1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit).
 2. Choose **Neo Trial**.
 3. Select **Services** from the left-hand navigation.
 
@@ -57,7 +57,7 @@ time: 5
 
     ![Enter Workflow Name](enter-wf-name.png)
 
-8. Choose **Finish**.   
+8. Choose **Finish**.  
    You should now see a project with a workflow file in your workspace:
 
     ![Workflow Project](workflow-project.png)

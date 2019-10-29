@@ -7,12 +7,12 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-plat
 time: 15
 ---
 
-## Prerequisites  
+## Prerequisites
   - [Configure your ABAP System to Activate OData Services of Fiori Reference Apps](https://developers.sap.com/tutorials/cp-connectivity-configure-fiori-reference-apps.html)
   - [Install the Cloud Connector in your System Landscape](https://developers.sap.com/tutorials/cp-connectivity-install-cloud-connector.html)
 
 ## Details
-### You will learn  
+### You will learn
   - How to connect the Cloud Connector to your trial cloud foundry account on SAP Cloud Platform
   - How to connect the Cloud Connector to your ABAP system
 
@@ -23,7 +23,7 @@ time: 15
 
 Before you can access data from the Cloud Connector in an application on SAP Cloud Platform, you must establish a trust between your SAP Cloud Platform subaccount and the Cloud Connector that is installed in your system landscape. To do so, you need your subaccount ID.
 
-1. Go to [Your SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit) | **Cloud Foundry Trial**, and navigate to your subaccount.
+1. Go to [Your SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit) | **Cloud Foundry Trial**, and navigate to your subaccount.
 
 1. The card with your subaccount information will show the sub-account name **trial** by default. If the card shows the subdomain instead of your subaccount's ID choose the flip icon:
 
@@ -133,7 +133,7 @@ Before applications on SAP Cloud Platform can access any services of the ABAP sy
 
     ![Access-Control-OP](step-03-Configure-OP-Connection-012.png)
 
-As a result, you now have configured a secure tunnel between your ABAP system and your subaccount on SAP Cloud Platform.  
+As a result, you now have configured a secure tunnel between your ABAP system and your subaccount on SAP Cloud Platform.
 
 [VALIDATE_3]
 

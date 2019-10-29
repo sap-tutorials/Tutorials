@@ -6,12 +6,12 @@ primary_tag: products>sap-cloud-platform-portal
 tags: [ tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
  - You have created a SAP Cloud Platform trial account. See [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
 
 ## Details
-### You will learn  
+### You will learn
   - How to open SAP Cloud Platform cockpit
   - How to open your trial subaccount
   - How to enable the SAP Cloud Platform Portal service
@@ -21,7 +21,7 @@ tags: [ tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform cockpit)]
 
-1. Go to [SAP Cloud Platform](https://account.hanatrial.ondemand.com/).
+1. Go to [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/).
 
     ![Log on screen](1-log-on-HCP.png)
 

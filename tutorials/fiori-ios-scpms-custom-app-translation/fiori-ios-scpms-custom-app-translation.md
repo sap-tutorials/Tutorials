@@ -8,7 +8,7 @@ author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Intermediate
  - This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://developers.sap.com/group.ios-sdk-custom.html) group
  &nbsp;
@@ -18,7 +18,7 @@ author_profile: https://github.com/KevinMuessig
 ## Details
 In this tutorial, you will use the SAP Cloud Platform's integration with SAP Translation Hub to add multilingual features to your iOS app generated with the SDK for iOS Assistant. This way, you can run your app in many languages, depending on your device's preferred language.
 
-### You will learn  
+### You will learn
 
  - How to enable SAP Translation Hub in your SAP Cloud Platform trial account
  - How to add your SAP Translation Hub account into the SDK for iOS Assistant
@@ -32,7 +32,7 @@ In this tutorial, you will use the SAP Cloud Platform's integration with SAP Tra
 
 [ACCORDION-BEGIN [Step 1: ](Enable SAP Translation Hub)]
 
-Log on to your SAP Cloud Platform account at [https://account.hanatrial.ondemand.com/cockpit/](https://account.hanatrial.ondemand.com/), log in and choose Neo Trial as landscape.
+Log on to your SAP Cloud Platform account at [https://cockpit.hanatrial.ondemand.com/cockpit/](https://cockpit.hanatrial.ondemand.com/), log in and choose Neo Trial as landscape.
 
 In the navigation on the left select **Services**.
 

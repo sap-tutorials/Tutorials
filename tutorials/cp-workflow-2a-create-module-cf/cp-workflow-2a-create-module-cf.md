@@ -8,13 +8,13 @@ time: 5
 ---
 
 ## Details
-### You will learn  
+### You will learn
   - How to create ``multitarget`` application projects for your workflow in the SAP Web IDE.
   - How to deploy these projects to the SAP Cloud Platform.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Create a workflow project)]
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
 
@@ -34,7 +34,7 @@ time: 5
 
     ![Enter Name](enter-name.png)
 
-7. Do **not** select **Use HTML5 Application Repository**, and choose **Finish**.  
+7. Do **not** select **Use HTML5 Application Repository**, and choose **Finish**.
 
     ![Enter Workflow Name](enter-wf-name.png)
 

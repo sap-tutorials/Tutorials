@@ -21,7 +21,7 @@ You can create a service instance of business rules to get started with SAP Clou
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform cockpit)]
 
-1. In your Web browser, open the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
+1. In your Web browser, open the [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
 
 2. Choose **Enter Your Trial Account**.
 
@@ -38,7 +38,7 @@ You can create a service instance of business rules to get started with SAP Clou
 
 2. Navigate to **Spaces** and then choose your space.
 
-    ![choose spaces](enablebr-2.PNG)   
+    ![choose spaces](enablebr-2.PNG)
 
 3. In the navigation area, choose **Service** > **Service Marketplace** and then choose **Business Rules** tile.
 

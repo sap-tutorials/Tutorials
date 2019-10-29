@@ -8,16 +8,16 @@ time: 15
 ---
 
 ## Details
-### You will learn  
+### You will learn
   - How to start an instance of the workflow definition that you have defined using a start form
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
 
-   ![Launch SAP Web IDE](launchsapwebide.png)  
+   ![Launch SAP Web IDE](launchsapwebide.png)
 
 [DONE]
 [ACCORDION-END]
@@ -47,7 +47,7 @@ time: 15
     | Field                  | Value                  |
     | :--------------------- | :--------------------- |
     | **Name**               | **`ApprovalForm`**     |
-    | **Revision**           | **`1.0`**              |      
+    | **Revision**           | **`1.0`**              |
 
     ![Create Approval Form](create-approval-form.png)
 
@@ -63,10 +63,10 @@ A message confirms that the form has been created.
 
 2. To add two new fields, click **Add Field** twice, and enter the following data to define the fields:
 
-    | Label/Title      | Type          | Context Path                
+    | Label/Title      | Type          | Context Path
     | :--------------- | :------------ | :--------------------------
-    | **Title**        | **String**    | **`${context.product}`**    
-    | **Price**        | **Float**     | **`${context.price}`**      
+    | **Title**        | **String**    | **`${context.product}`**
+    | **Price**        | **Float**     | **`${context.price}`**
 
     ![Add Fields](add-fields.png)
 

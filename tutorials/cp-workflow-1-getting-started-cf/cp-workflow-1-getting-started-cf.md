@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 5
 ---
 
-## Prerequisites  
+## Prerequisites
  - [Get a Trial Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/42e7e54590424e65969fced1acd47694.html)
 
 ## Details
-### You will learn  
+### You will learn
   - How to enable the workflow service and create an instance in your SAP Cloud Platform account
   - How to assign the roles you need to develop and use workflow applications
 
@@ -110,7 +110,7 @@ time: 5
 
 [ACCORDION-BEGIN [Step 5: ](Enable the workflow extension and Cloud Foundry)]
 
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
 

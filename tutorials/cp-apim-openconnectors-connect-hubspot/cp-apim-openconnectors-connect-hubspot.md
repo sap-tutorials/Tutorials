@@ -39,7 +39,7 @@ primary_tag: products>sap-api-management
 
 [ACCORDION-BEGIN [Step 2: ](Connect to third-party application)]
 
-1. Log on to your [SAP Cloud Platform trial](https://account.hanatrial.ondemand.com/).
+1. Log on to your [SAP Cloud Platform trial](https://cockpit.hanatrial.ondemand.com/).
 
     - Navigate to the **Cloud Foundry** environment by clicking on **Enter Your Trial Account** and click on **trial**.
 

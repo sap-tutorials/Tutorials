@@ -6,11 +6,11 @@ primary_tag: products>sap-api-management
 tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, products>sap-api-management ]
 time: 20
 ---
-## Prerequisites  
+## Prerequisites
 - **Tutorials:** [Protect your API Proxy by adding an Application Key Verification](https://developers.sap.com/tutorials/hcp-apim-verify-api.html)
 
 ## Details
-### You will learn  
+### You will learn
 Since SAP Cloud Platform, API Management is one of many services on the SAP Cloud Platform it also offers a deep integration in SAP Web IDE. With this integration you can easily browse and consume services from SAP Cloud Platform, API Management and directly create SAP Fiori like SAPUI5 applications leveraging one of the templates offered in SAP Web IDE.
 
 ---
@@ -38,7 +38,7 @@ You will see how a special security token known as the "API Key" or "Application
 
 [ACCORDION-BEGIN [Step 4: ](Log onto the SAP Cloud Platform Cockpit)]
 
-Log onto your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit).
+Log onto your [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 ![Log on to CP Cockpit](01-hcp.png)
 
@@ -297,7 +297,7 @@ In order to get the API Key you need to open the **API Developer Portal** in a n
 
 [ACCORDION-BEGIN [Step 20: ](Click Consume)]
 
-Click on the **Hamburger menu** and click on **Consume**   
+Click on the **Hamburger menu** and click on **Consume**
 
 ![Click on Consume](28-ClickOnConsume.png)
 

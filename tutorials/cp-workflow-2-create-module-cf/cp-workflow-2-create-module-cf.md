@@ -8,14 +8,14 @@ time: 15
 ---
 
 ## Details
-### You will learn  
+### You will learn
   - How to create ``multitarget`` application projects for your workflow in the SAP Web IDE.
   - How to deploy these projects to the SAP Cloud Platform.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create an SAP Fiori launchpad project)]
-1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
 
@@ -80,13 +80,13 @@ time: 15
 
 
 [ACCORDION-BEGIN [Step 3: ](Configure the User Account and Authentication module to access SAP Fiori launchpad)]
-1. Right-click your `MyFLPProject` project, and choose **New** | **Folder**.  
+1. Right-click your `MyFLPProject` project, and choose **New** | **Folder**.
 
     ![Create New Folder](create-new-folder.png)
 
 2. Enter the folder name `MyFLPProject_UAA`, and choose **OK**.
 
-3. Right-click your `MyFLPProject_UAA` folder, and choose **New** | **File**.  
+3. Right-click your `MyFLPProject_UAA` folder, and choose **New** | **File**.
 
     ![Create New File](create-new-file.png)
 

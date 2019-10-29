@@ -18,7 +18,7 @@ time: 5
 
 [ACCORDION-BEGIN [Step 1: ](Navigate to the services section)]
 
-In the Neo environment, you enable services in the SAP Cloud Platform cockpit.  From the [SAP Cloud Platform Trial welcome page](https://account.hanatrial.ondemand.com/#/home/welcome) homepage select the Neo tile.
+In the Neo environment, you enable services in the SAP Cloud Platform cockpit.  From the [SAP Cloud Platform Trial welcome page](https://cockpit.hanatrial.ondemand.com) homepage scroll down and select the Neo environment.
 
 ![Neo Access](neo-access.png)
 

@@ -10,7 +10,7 @@ time: 15
 ---
 
 ## Details
-### You will learn  
+### You will learn
   - How to register on the SAP website
   - How to start your SAP Cloud Platform trial
   - Learn how to 90 days trial works
@@ -61,7 +61,7 @@ After activating your account, you will see the following screen.
 
 [ACCORDION-BEGIN [Step : ](Log on to SAP Cloud Platform)]
 
-After activation, or if you already had an SAP account, go to the <a href="https://account.hanatrial.ondemand.com/" target="new"><b>SAP Cloud Platform Trial</b></a>  page and click **Log On**.
+After activation, or if you already had an SAP account, go to the <a href="https://cockpit.hanatrial.ondemand.com/" target="new"><b>SAP Cloud Platform Trial</b></a>  page and click **Log On**.
 
 You will see an dialog to confirm the terms and condition for the SAP Cloud Platform Developer Edition. Check the check boxes and click **Accept**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity. There is no cost associated with this upgrade.
 
@@ -91,7 +91,7 @@ Click on **Log on** to log on to your verified account.
 
  ![Log on again](logon-again.png)
 
-Here, you can now create a subaccount which lives in a geographic region. Choose one of regions from this list.    
+Here, you can now create a subaccount which lives in a geographic region. Choose one of regions from this list.
 
 > We suggest the *Europe (Frankfurt)* region because it has the largest list of services.  If you want to use a region closer to you, [check to be certain it has the services you want before selecting it](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html?3b642f68227b4b1398d2ce1a5351389a.html).
 
@@ -127,7 +127,7 @@ To get to the space, in which your applications and services live, click on the 
 
 A Cloud Foundry space is the logical container of your runtime artefacts such as **Applications**, and **Service Instances**.
 
-The **Applications** tab is where all of your applications will be listed, and new applications can be added in to your Cloud Foundry runtime environment.  
+The **Applications** tab is where all of your applications will be listed, and new applications can be added in to your Cloud Foundry runtime environment.
 
 ![The Applications Tab](space-apps.png)
 

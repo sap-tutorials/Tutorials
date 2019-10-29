@@ -16,7 +16,7 @@ primary_tag: products>sap-cloud-platform
 
 [ACCORDION-BEGIN [Step 1: ](Import Employee Onboarding sample application)]
 
-1. In your web browser, open [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open [SAP Cloud Platform Trial cockpit](https://cockpit.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
 

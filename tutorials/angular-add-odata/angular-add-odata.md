@@ -4,7 +4,7 @@ description: OData is our backend data source.  Connect to the public Northwind 
 primary_tag: topic>html5
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials** [Separate the JavaScript and CSS Files](https://developers.sap.com/tutorials/angular-separate-files.html)
 
@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
  - **Tutorials** [Add a Header and Detail Modal Dialog](https://developers.sap.com/tutorials/angular-add-header-detail-dialog.html)
 
 ## Details
-### You will learn  
+### You will learn
 In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an OData back end service.
 
 ### Time to Complete
@@ -24,7 +24,7 @@ Start to work with the `$http` service.  This service provides a way to asynchro
 
 We need to do two things to make this work:
 
-1. Set up a destination to the [Northwind OData reference service](http://www.odata.org/odata-services/).  
+1. Set up a destination to the [Northwind OData reference service](http://www.odata.org/odata-services/).
 2. Remove our static data, and connect to this destination.
 
 ---
@@ -35,7 +35,7 @@ We need to do two things to make this work:
 >
 > If you have not configured the Northwind destination in SAP Cloud Platform, you must do that first.  To verify that you have configured SAP Cloud Platform correctly, do the following:
 >
-> - Open a new browser page to the **[SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit)**
+> - Open a new browser page to the **[SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit)**
 > - In the right hand navigation, select *Connectivity*, then select *Destinations*
 > - Look for the Destination called `Northwind`.
 >
@@ -84,7 +84,7 @@ We need to do two things to make this work:
 
     >Don't forget to save your file.
 
-    ![delete the test data](1-1.png)   
+    ![delete the test data](1-1.png)
 
 2.  Change the line that defines the `productList` to start with an empty array.
 
@@ -94,9 +94,9 @@ We need to do two things to make this work:
     $scope.productList = [];
     ```
 
-    ![Reset the product list to an empty array](1-2.png)   
+    ![Reset the product list to an empty array](1-2.png)
 
-3.  Now we want to add in the HTML call to get the OData information.  To do that, we will use the `$http` service to get the data.  
+3.  Now we want to add in the HTML call to get the OData information.  To do that, we will use the `$http` service to get the data.
 
     Change the `helloController` function to get the `$http` service from Angular
 
@@ -104,9 +104,9 @@ We need to do two things to make this work:
     function helloController($scope, $http) {
     ```
 
-    ![Get the $http controller from Angular](1-3.png)   
+    ![Get the $http controller from Angular](1-3.png)
 
-4.  Now, add in the `$get` method.  
+4.  Now, add in the `$get` method.
 
     Update your `helloController` function and add this code at the bottom:
 
@@ -123,11 +123,11 @@ We need to do two things to make this work:
     );
     ```
 
-    ![Make an OData request](1-4b.png)   
+    ![Make an OData request](1-4b.png)
 
 5.  Run your application.  The data on the screen should now contain 20 rows, and look like this:
 
-    ![Display the live OData on the screen](1-5.png)   
+    ![Display the live OData on the screen](1-5.png)
 
 
 ## Additional Information
@@ -143,13 +143,13 @@ We need to do two things to make this work:
 
 #### Using SAP Cloud Platform Destinations
 
-The sample application uses the [SAP Cloud Platform (HCP) destinations](https://help.hana.ondemand.com/help/frameset.htm?e4f1d97cbb571014a247d10f9f9a685d.html) to access the sample data.  
+The sample application uses the [SAP Cloud Platform (HCP) destinations](https://help.hana.ondemand.com/help/frameset.htm?e4f1d97cbb571014a247d10f9f9a685d.html) to access the sample data.
 
 We do this using the `neo-app.json` file.  This is the [Application Descriptor File](https://help.hana.ondemand.com/help/frameset.htm?aed1ffa3f3e741b3a4573c9e475aa2a4.html), and can be used to configure your application running inside HCP.
 
 **Why doesn't the sample application just connect directly to the OData test service?**
 
-Normally, you can do this.  In fact, it's the recommended method.  But we are working around a bug.  
+Normally, you can do this.  In fact, it's the recommended method.  But we are working around a bug.
 
 There are two things happening here.  First, all the major web browsers prevent you from loading insecure data in to a secure page.  That is called [Mixed Content](https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content).  If the original web page is secure, the browser will demand all data is secure as well.  So, the browser automatically uses HTTPS connections for all data.
 

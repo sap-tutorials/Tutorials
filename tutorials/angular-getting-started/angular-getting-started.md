@@ -4,7 +4,7 @@ description: Get started writing a simple AngularJS application.
 primary_tag: topic>html5
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:** You will need a SAP Cloud Platform (HCP) trial account for this tutorial series.  [Create an SAP Cloud Platform trial Account](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
  - **Tutorials:** [Create the Bootstrap Template](https://developers.sap.com/tutorials/angular-bootstrap-template.html)
 
 ## Details
-### You will learn  
+### You will learn
 In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an OData back end service.
 
 ### Time to Complete
@@ -27,13 +27,13 @@ Connect to the SAP Web IDE (free for development use), and then get a simple pro
 
 ### Connect to SAP Web IDE
 
-1.  Open your SAP Cloud Platform account (if you have a free developer account, click [HERE](https://account.hanatrial.ondemand.com/) to open the console.)
+1.  Open your SAP Cloud Platform account (if you have a free developer account, click [HERE](https://cockpit.hanatrial.ondemand.com/) to open the console.)
 
     >**Trouble logging in?** If you have trouble logging in to your SAP Cloud Platform Cockpit, and you are using a company account (one provided by your employer), it is possible that the Cloud access has been locked.  Create a new FREE trial account by clicking the link above, and use your personal email address to set up the new account.
 
     ![SAP Cloud Platform Developer Account Login Screen](1-1.png)
 
-2.  You should now be in the SAP Cloud Platform Cockpit, as shown below.  Click on the **Services** menu item on the left.  
+2.  You should now be in the SAP Cloud Platform Cockpit, as shown below.  Click on the **Services** menu item on the left.
 
     Next, click on the **SAP Web IDE** box.  You may need to scroll down to find this box.
 

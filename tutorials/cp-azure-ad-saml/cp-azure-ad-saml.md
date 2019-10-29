@@ -24,7 +24,7 @@ You will enable trust between SAP Cloud Platform Cloud Foundry subaccount and yo
 >Note:
 > Your Azure Portal might look different according to your configured colour scheme. You can change your colour scheme whenever you want in the portal settings section.
 
-Navigate to your SAP Cloud Platform Cloud Foundry subaccount in the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit/#/home/trialhome) in order to have your `tenant` and `region` values for the next step handy.
+Navigate to your SAP Cloud Platform Cloud Foundry subaccount in the [SAP Cloud Platform cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/) in order to have your `tenant` and `region` values for the next step handy.
 
 ![tenant and region replacement](tenant-region-replacement.png)
 

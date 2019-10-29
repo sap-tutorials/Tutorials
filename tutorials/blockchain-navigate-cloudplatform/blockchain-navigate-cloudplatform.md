@@ -39,7 +39,7 @@ SAP's blockchain services are available in SAP Cloud Platform's Cloud Foundry en
 
 For further details about trial accounts, read the SAP Cloud Platform [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/8ed4a705efa0431b910056c0acdbf377.html#046f127f2a614438b616ccfc575fdb16.html)
 
-To register for a trial account, navigate to SAP Cloud Platform [trial page](https://account.hanatrial.ondemand.com/#/home/welcome) and click **Register**.
+To register for a trial account, navigate to SAP Cloud Platform [trial page](https://cockpit.hanatrial.ondemand.com/) and click **Register**.
 
 ![Image depicting SAP cloud platform trial page](01--TrialPage.png)
 
