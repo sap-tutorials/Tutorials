@@ -12,6 +12,12 @@ time: 15
 ### You will learn  
   - How to set up your Eclipse to build Java apps
 
+> ### DEPRECATED
+>This tutorial deals with writing Java in the Neo environment of SAP Cloud Platform. The Neo environment is deprecated.
+
+> - If you are interested in building Java applications using the SAP Cloud Platform's Cloud Foundry Environment, please see [Create, Debug and Deploy Your First Java App](group.scp-4-java).
+
+
 In this tutorial, you'll learn everything you need to know to set up your local development environment based on Eclipse. The main steps are:
 
   - Download Eclipse
@@ -32,7 +38,7 @@ To make use of the SAP Cloud Platform Tools for Java you first need to have a su
 
 ![Eclipse download page](jav100-1-eclipse_neon_installation.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Choose operating system)]
@@ -41,21 +47,21 @@ Choose the operating system that you will use to run Eclipse and choose the down
 
 ![Eclipse download page](jav100-1-choose_os.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Choose download site)]
 
 Choose the preferred download site and start the download.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extract the archive)]
 
 Once the download has finished extract the archive to a local folder of your choice (e.g. `c:\dev\eclipse`).
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Start the Eclipse IDE)]
@@ -65,7 +71,7 @@ Click on the **eclipse** executable file to start the Eclipse IDE.
 ![Start Eclipse](jav100-1-start_eclipse.png)
 
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Choose your workspace)]
@@ -75,7 +81,7 @@ Eclipse will first show you a **Workspace Launcher** dialog to choose your works
 ![Create Eclipse workspace](jav100-1-create_workspace.png)
 
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Close the Eclipse Welcome Page)]
@@ -84,7 +90,7 @@ Close the Eclipse **Welcome Page**.
 
 ![Close welcome page](jav100-1-close_welcome.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Install the SAP Cloud Platform tools for Java)]
@@ -95,7 +101,7 @@ From the Eclipse menu, choose **Help > Install New Software...**
 
 ![Start software install](jav100-1-start_install.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add URL)]
@@ -104,7 +110,7 @@ Copy the URL `https://tools.hana.ondemand.com/neon` and paste it in the **Work w
 
 ![Add update site](jav100-1-add_update_site.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Select SAP Cloud Platform Tools)]
@@ -115,7 +121,7 @@ Select **SAP Cloud Platform Tools** and click **Next**.
 
 ![Choose SAP Cloud PlatformTools](jav100-1-choose_sap_hana_cloud_platform_tools.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Accept the license agreement)]
@@ -128,7 +134,7 @@ Read and accept the license agreement and choose **Finish**. The installation wi
 
 ![Install details](jav100-1-accept_license.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Restart Eclipse)]
@@ -137,14 +143,14 @@ At the end of the installation, you will be asked to restart Eclipse. Confirm th
 
 ![Restart Eclipse](jav100-1-restart_eclipse.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](SAP Cloud Platform Tools for Java is installed)]
 
 After Eclipse restarts, close the Eclipse **Welcome Page**. You now have the SAP Cloud Platform Tools for Java installed in Eclipse.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Download and install the SAP Cloud Platform SDK)]
@@ -164,7 +170,7 @@ Open <https://tools.hana.ondemand.com#cloud>. Make sure you are on the Cloud tab
 
 ![Cloud tools page](jav100-1-open_tools_page.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Choose download version)]
@@ -175,7 +181,7 @@ Choose the `Java Web (neo-java-web-sdk.X.X.X)` (use the latest version) for down
 
 ![Choose SDK](jav100-1-choose-sdk-197.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Agree to the SAP Developer License agreement)]
@@ -184,7 +190,7 @@ Before you are allowed to download the SDK you have to read and agree to the SAP
 
 ![Accept SDK License](jav100-1-accept_license_2.png)  
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Extract the archive)]
@@ -193,7 +199,7 @@ Once the download has finished extract the archive to a local folder of your cho
 
 > Note: To familiarize yourself further with the content of the SDK, especially note the location of the [console client](https://help.hana.ondemand.com/help/frameset.htm?76132306711e1014839a8273b0e91070.html) within the tools directory and the provided samples in a respective samples directory. Also, you might be interested to learn about the [supported APIs](https://help.hana.ondemand.com/help/frameset.htm?e836a95cbb571014b3c4c422837fcde4.html).
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Configure the SAP Cloud Platform Tools for Java)]
@@ -211,7 +217,7 @@ Select **SAP > Java Web** as the Server Runtime Environment and click **Next**.
 
 ![Choose runtime](jav100-1-choose_server_runtime.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Choose folder and finish)]
@@ -220,7 +226,7 @@ Provide the folder to which you have extracted the SDK by clicking the **Browse.
 
 ![Provide SDK](jav100-1-provide_sdk.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 20: ](New Java Web runtime is available)]
@@ -231,7 +237,7 @@ With this a new Java Web runtime is now available that will be used for your SAP
 
 Congratulations: You have now installed the SAP Cloud Platform Tools for Java and are ready to start with your Java project on SAP Cloud Platform.
 
-
+[DONE]
 [ACCORDION-END]
 
 ### Related Information
