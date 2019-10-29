@@ -1,0 +1,14 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+Which versions of the `@sap/cloud-sdk-core` support the OData Batch request?
+
+###Match
+[ ] 1.9.1
+[ ] 1.10.1
+[x] 1.11.2
+[x] 1.12.2
+
+[VALIDATE_1]
