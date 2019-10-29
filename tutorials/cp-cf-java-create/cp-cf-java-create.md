@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - [Getting Started with SAP Web IDE](https://developers.sap.com/tutorials/webide-onboarding-mc.html)
+ - [Prepare SAP Web IDE for Cloud Foundry Development](sapui5-webide-open-webide)
 
 ## Details
 ### You will learn  
