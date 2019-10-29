@@ -1,6 +1,6 @@
 ---
 title: Build, Deploy and Test Notification and Decision Support Application
-description: Build and deploy a Multi-Target application (MTA) project in SAP Web IDE. Generate a test notification in SAP Leonardo IoT and launch the Decision Support application.
+description: Build and deploy a multi-target application (MTA) project in SAP Web IDE, generate a test notification in SAP Leonardo IoT, and launch the Decision Support application.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-cloud-platform-portal, products>sap-leonardo-iot, products>sap-web-ide]
@@ -8,7 +8,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 ---
 
 ## Prerequisites
- - Completed tutorial [Setting up the Fiori Launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp)
 
 ## Details
 ### You will learn
@@ -16,7 +15,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
   - How to test Leonardo IoT Notification
   - How to test Decision Support application
 
-If you make any changes to a MTA project, you'll need to build and deploy the project for the changes to take effect.
+If you make any changes to an MTA project, you'll need to build and deploy the project for the changes to take effect.
 
 ---
 
@@ -24,13 +23,13 @@ If you make any changes to a MTA project, you'll need to build and deploy the pr
 
   1. In Web IDE, right click on the iot-ds project and click **Build** to start the build of the project.
 
-    ![WebIDE Build](/images/webide_build_0_1.png)
+    ![WebIDE Build](/images/shared/webide_build_0_1.png)
 
   2. When the build is completed, a notification will be displayed at the top right corner of the Web IDE.  
 
   3. You can also check the status of the build by viewing the logs in the Web IDE console.
 
-    ![WebIDE Build](/images/webide_build_1.png)  
+    ![WebIDE Build](/images/shared/webide_build_1.png)  
 
 [DONE]
 [ACCORDION-END]
@@ -48,109 +47,109 @@ If you make any changes to a MTA project, you'll need to build and deploy the pr
 
   2. To start a deployment, expand the `mta_archives` folder in your project, right click on the `mtar` file inside the folder and click **Deploy**.
 
-    ![WebIDE Build](/images/webide_build_3.png)
+    ![WebIDE Build](/images/shared/webide_build_3.png)
 
   3. Select the appropriate **Cloud Foundry API Endpoint**, **Organization** and **Space** for your deployment.  If you cannot find your selections, please check your Cloud Foundry settings in Web IDE preference.  For more information, please see Step 6 and Step 7 of [Prepare SAP Web IDE for Cloud Foundry Development](sapui5-webide-open-webide).
 
   4. Click **Deploy**.
 
-    ![WebIDE Build](/images/webide_build_4.png)
+    ![WebIDE Build](/images/shared/webide_build_4.png)
 
   5. When the deployment is completed, a notification will be displayed at the top right corner of the Web IDE.
 
   6. You can also check the status of the deployment by viewing the logs in the Web IDE console.
 
-    ![WebIDE Build](/images/webide_build_5.png)  
+    ![WebIDE Build](/images/shared/webide_build_5.png)  
 
 [VALIDATE_1]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Retrieve Thing Id)]
+[ACCORDION-BEGIN [Step 3: ](Retrieve thing ID)]
 
   We will need to retrieve the Thing Id for the next Step. If you already have the Thing Id, please proceed to the next step.
 
   1. From Leonardo IoT Launchpad, select the Thing Modeler tile.
 
-    ![Thing Modeler Tile 1](/images/thing_modeler_tile.png)  
+    ![Thing Modeler Tile 1](/images/shared/thing_modeler_tile.png)  
 
   2. Select the `greenhouse` package and select **Things** on the left panel.
 
   3. Click on the **Connectivity Information** icon on the top right corner.
 
-    ![Thing Modeler 1](/images/thing_modeler_1.png)  
+    ![Thing Modeler 1](/images/shared/thing_modeler_1.png)  
 
   4. Copy the Thing Id.  We'll use it in the next step.
 
-    ![Thing Id](/images/thing_id.png)
+    ![Thing Id](/images/shared/thing_id.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Generate Test Notification)]
+[ACCORDION-BEGIN [Step 4: ](Generate test notification)]
 
   1. From Leonardo IoT Launchpad, select the **Actions** tile.
 
-    ![Actions Tile](/images/launchpad_tile_actions.png)
+    ![Actions Tile](/images/shared/launchpad_tile_actions.png)
 
   2. Select **Greenhouse Action**.
 
-    ![Actions Tile](/images/test_portal_1_1.png)
+    ![Actions Tile](/images/shared/test_portal_1_1.png)
 
   3. Click **Test** button.
 
-    ![Actions Tile](/images/test_portal_2.png)
+    ![Actions Tile](/images/shared/test_portal_2.png)
 
   4. Enter the **Thing Id** in the Test Action dialog. Click **Test**.
 
-    ![Actions Tile](/images/test_portal_3.png)
+    ![Actions Tile](/images/shared/test_portal_3.png)
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Notification in Fiori Portal Site)]
+[ACCORDION-BEGIN [Step 5: ](Check notification in Fiori Launchpad site)]
 
-  1. To find the URL of the Fiori Portal Site, go to the SAP Cloud Platform Cockpit, navigate to the space of the sub-account where the MTA project is deployed.
+  1. To find the URL of the Fiori Launchpad Site, go to the SAP Cloud Platform Cockpit, navigate to the space of the sub-account where the MTA project is deployed.
 
   2. Navigate to the **Applications** screen.
 
   3. Click on `iot-ds_appRouter`.
 
-    ![Find Portal Url 1](/images/find_portal_url_1.png)
+    ![Find Portal Url 1](/images/shared/find_portal_url_1.png)
 
   4. You should see the route displayed under **Application Routes**.
 
-    ![Find Portal Url 1](/images/find_portal_url_2.png)
+    ![Find Portal Url 1](/images/shared/find_portal_url_2.png)
 
-  5. Append `/cp.portal/site` at the end of the Application Route to create the URL of the Fiori Portal Site.
+  5. Append `/cp.portal/site` at the end of the Application Route to create the URL of the Fiori Launchpad Site.
 
     For example:
 
       Application Route:
       mytenant-space1-approuter1.cfapps.eu10.hana.ondemand.com
 
-      The Fiori Portal Site URL will be
+      The Fiori Launchpad Site URL will be
       `https://mytenant-space1-approuter1.cfapps.eu10.hana.ondemand.com/cp.portal/site`
 
-  6. Launch Fiori Portal Site in a browser.  You should see a Fiori notification alert.
+  6. Launch Fiori Launchpad Site in a browser.  You should see a Fiori notification alert.
 
-    ![Find Portal Url 1](/images/test_notif_1.png)
+    ![Find Portal Url 1](/images/shared/test_notif_1.png)
 
   7. Click on the alert icon and the Fiori Notification Panel will be opened.
 
-    ![Find Portal Url 2](/images/test_notif_2.png)
+    ![Find Portal Url 2](/images/shared/test_notif_2.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Launch Decision Support application from Fiori Notification)]
+[ACCORDION-BEGIN [Step 6: ](Launch application from Fiori notification)]
 
 Please complete the tutorial [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui) before continuing with this step.
 
   * In Fiori Notification Panel, click on the `High Greenhouse Temperature Alert` notification.  If you do not see any notification in Panel, please follow in instructions in step 3 to generate a new notification.
 
-    ![Find Portal Url 2](/images/test_notif_2.png)
+    ![Find Portal Url 2](/images/shared/test_notif_2.png)
 
   * The Decision Support application will be launched.  
 
@@ -166,7 +165,7 @@ Please complete the tutorial [Building the Decision Support UI in the Web IDE](i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Initiate Quick Create Option)]
+[ACCORDION-BEGIN [Step 7: ](Initiate Quick Create option)]
 
   1. Click the option ``Service Ticket Quick Create``.
 
@@ -189,7 +188,7 @@ Please complete the tutorial [Building the Decision Support UI in the Web IDE](i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Initiate Fiori Navigation Option)]
+[ACCORDION-BEGIN [Step 8: ](Initiate Fiori navigation option)]
 
   1. Click the option `Fiori Navigation`
 
@@ -197,7 +196,7 @@ Please complete the tutorial [Building the Decision Support UI in the Web IDE](i
 
     ![Nav Start 1](/images/nav_start_2.png)
 
-  3. A new browser tab is opened to the Home page of the Fiori Portal Site.
+  3. A new browser tab is opened to the Home page of the Fiori Launchpad Site.
 
   4. Open the previous browser tab, a new action history is saved in Execution Result.
 
@@ -206,7 +205,7 @@ Please complete the tutorial [Building the Decision Support UI in the Web IDE](i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test with Device Simulator)]
+[ACCORDION-BEGIN [Step 9: ](Test with device simulator)]
 
   1. Start the Node.js simulator for greenhouse. This Node.js simulator was created in Step 6 of the tutorial [Create a Simple IoT Device Model](iot-express-2-create-device-model) .
 
@@ -230,9 +229,9 @@ Please complete the tutorial [Building the Decision Support UI in the Web IDE](i
 
       ![Test Sim 4](/images/check_device_data-3.png)
 
-  4. Launch Fiori Portal Site.
+  4. Launch Fiori Launchpad Site.
 
-  5. When a generated temperature satisfies our Rule, you should see a new notification alert in Portal Site. Select the notification and launch the Decision Support application.
+  5. When a generated temperature satisfies our Rule, you should see a new notification alert in Launchpad Site. Select the notification and launch the Decision Support application.
 
 
 [DONE]

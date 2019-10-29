@@ -8,11 +8,6 @@ tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things ]
 primary_tag: products>sap-cloud-platform-internet-of-things
 ---
 
-## Prerequisites
- - Complete Step 1 of [Get Your Hands on SAP Leonardo IoT Foundation Software and Hardware](iot-express-1-buy-sapstore).
- - Complete [Create a Simple IoT Device](iot-express-2-create-device-model).
- - Complete [Create a Thing Model and Bind to Device](iot-express-4-create-thing-model).
-
 ## Details
 ### You will learn
   - How to create a new Rule Context
@@ -292,7 +287,7 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Define an action service option (Optional))]
+[ACCORDION-BEGIN [Step 8: ](Define an action service option (optional))]
 In addition to defining Quick Create and Fiori Navigation options, you can also define an Action Service option.  We will not define an Action Service option in this tutorial but you can define one if you have an Action Service that you'd like to use as an additional option.
 
 ![DS ActionService_Def](/images/ds_action_service_def.png)

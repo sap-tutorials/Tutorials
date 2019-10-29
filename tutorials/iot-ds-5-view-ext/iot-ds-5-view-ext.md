@@ -18,7 +18,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure Externalized Data in Decision Support Definition)]
+[ACCORDION-BEGIN [Step 1: ](Configure externalized data in Decision Support definition)]
 
   In order to display device event payload data to a custom UI5 View, the person configuring the Decision Support Action must explicitly expose the data by defining Externalized Data configuration in Decision Support definition.
 
@@ -56,7 +56,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add View Extension to Application Descriptor)]
+[ACCORDION-BEGIN [Step 2: ](Add view extension to application descriptor)]
 
   1. Open the project with Decision Support application in Web IDE.
 
@@ -96,7 +96,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Files for Custom View)]
+[ACCORDION-BEGIN [Step 3: ](Add files for custom view)]
 
   1. Under the `webapp` folder add an `ext` folder.
 
@@ -114,7 +114,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
   4. Copy the following content into the file:
 
-    ```Javascript
+    ```JavaScript
     (function () {
     	"use strict";
     	/*global sap, jQuery */
@@ -182,7 +182,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add Translation Texts for View Labels)]
+[ACCORDION-BEGIN [Step 4: ](Add translation texts)]
 
   1. Add the following content in the `i18n.properties` file in the `webapp/i18n` folder:
 
@@ -219,15 +219,15 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Testing the Custom UI5 View )]
+[ACCORDION-BEGIN [Step 5: ](Test custom UI5 view)]
 
 Please follow in instructions in [Build, Deploy and test Notification and Decision Support application](iot-ds-4-build-test).
 
-**Note: A new Notification has to be generated in order for the new Externalized Data definition to take effect.**  If you open a notification that was generated before the Externalized Data definition was defined, the fields in the custom view will not display any values.
+>**A new Notification has to be generated in order for the new Externalized Data definition to take effect.**  If you open a notification that was generated before the Externalized Data definition was defined, the fields in the custom view will not display any values.
 
 Decision Support application with a custom UI5 view displaying data from the device event payload.
 
-  ![View Ext 5](/images/ds_view_ext_10.png)  
+![View Ext 5](/images/ds_view_ext_10.png)  
 
 
 [VALIDATE_1]
@@ -235,7 +235,7 @@ Decision Support application with a custom UI5 view displaying data from the dev
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Add Custom Image to Page Header )]
+[ACCORDION-BEGIN [Step 6: ](Add custom image to page header)]
 
   1. Import an image to `webapp/asset` folder of the Decision Support application in Web IDE.
 
@@ -265,7 +265,7 @@ Decision Support application with a custom UI5 view displaying data from the dev
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add navigation to action history details (Optional))]
+[ACCORDION-BEGIN [Step 7: ](Add navigation to action history details (optional))]
 
 You can provide a link as part of the action history entry that allows a user to navigate to a page which has additional information about the result of the executed option. To enter a link for action history:
 
