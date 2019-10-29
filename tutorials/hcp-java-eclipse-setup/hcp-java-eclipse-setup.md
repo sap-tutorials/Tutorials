@@ -13,7 +13,7 @@ time: 15
   - How to set up your Eclipse to build Java apps
 
 > ### DEPRECATED
->This tutorial deals with writing Java in the Neo environment of SAP Cloud Platform. The Neo environment is deprecated.
+>This tutorial, which deals with writing Java in the Neo environment of SAP Cloud Platform, is deprecated.
 
 > - If you are interested in building Java applications using the SAP Cloud Platform's Cloud Foundry Environment, please see [Create, Debug and Deploy Your First Java App](group.scp-4-java).
 
