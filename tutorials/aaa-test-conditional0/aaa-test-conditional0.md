@@ -4,7 +4,7 @@ description: The `hxehost` IP address is private to the VM. In order for applica
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 time: 2
 ---
 
@@ -15,13 +15,22 @@ time: 2
 ### You will learn
 You'll learn how to configure your host machine to communicate with the server. OK.
 
-!![Image](http://res.publicdomainfiles.com/pdf_view/65/13548534013334.png)
+
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Update etc/hosts)]
 
+[SAP](mission.cp-starter-ibpm-employeeonboarding)
+
+!![test](Noborder.png)
+
+!![Link in other folder](..\abap-connectivity-daemon-mqtt-bridge\add-authorized-programs.png)
+
+AAAAAAAAAAAAAAAAA
+
 <rac-support@sap.com>
+
 ![Link text e.g., Destination screen](HXE_Hosts_Windows_0.png)
 
 ![Link text e.g., Destination screen](https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)
