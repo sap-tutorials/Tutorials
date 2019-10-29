@@ -1,28 +1,29 @@
 ---
-title: Configuring Eclipse with SAP Cloud Platform Tools for Java
-description: A step-by-step procedure to configure the Eclipse IDE with for Java development on SAP Cloud Platform
+title: Configure Eclipse with SAP Cloud Platform Tools for Java
+description: Configure the Eclipse IDE for Java development on SAP Cloud Platform.
 primary_tag: topic>java
 tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-
-## Next Steps
-- [Developing and Deploying a basic Java application on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-java-basic-app.html)
+- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 
 ## Details
 ### You will learn  
-In this tutorial you'll learn everything you need to know to setup your local development environment based on Eclipse. The main steps are:
+  - How to set up your Eclipse to build Java apps
 
-- Downloading Eclipse
-- Installing SAP Cloud Platform Tools for Java in your Eclipse IDE
-- Installing the SAP Cloud Platform Software Development Kit
+In this tutorial, you'll learn everything you need to know to set up your local development environment based on Eclipse. The main steps are:
 
-### Time to Complete
-**15 Min**.
+  - Download Eclipse
+
+  - Install SAP Cloud Platform Tools for Java in your Eclipse IDE
+
+  - Install the SAP Cloud Platform Software Development Kit
+
+When you are done, you can do [Develop a Basic Java App on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-java-basic-app.html) tutorial.
 
 ---
+
 [ACCORDION-BEGIN [Step 1: ](Download Eclipse)]
 
 To make use of the SAP Cloud Platform Tools for Java you first need to have a supported version of Eclipse installed on your computer. The Eclipse Neon version is recommended.
@@ -240,4 +241,3 @@ Congratulations: You have now installed the SAP Cloud Platform Tools for Java an
 - (Online documentation) [Installing the SDK](https://help.hana.ondemand.com/help/frameset.htm?7613843c711e1014839a8273b0e91070.html)
 - (Online documentation) [Installing SAP Development Tools for Eclipse](https://help.hana.ondemand.com/help/frameset.htm?76137a37711e1014839a8273b0e91070.html)
 - (Online documentation) [Setting Up the Runtime Environment](https://help.hana.ondemand.com/help/frameset.htm?7613f000711e1014839a8273b0e91070.html)
-

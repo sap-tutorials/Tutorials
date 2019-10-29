@@ -29,7 +29,7 @@ In this tutorial, you will build a basic UI5 application that uses data from the
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a basic UI5 application)]
+[ACCORDION-BEGIN [Step 1: ](Create a basic SAPUI5 application)]
 In your Web IDE, create a new application from template by selecting **File** > **New** > **Project from Template**.
 
 ![file path to create a new application from template](4.png)
@@ -72,19 +72,21 @@ onInit: function() {
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get JavaScript pre-generated code)]
-In the [API Business Hub](https://api.sap.com), click **APIs** and on the Discover page, go to **All**. Search for the **Success Factors** from the Discover APIs page. Find the **SAP Success Factors Foundation** API package and select it.
+In the [API Business Hub](https://api.sap.com), search for the **Success Factors** from the Discover APIs page. Find the **SAP Success Factors Foundation** API package and select it.
 
 ![location of API packages in API Business Hub](10.png)
 
-Once on the API package documentation, select **Artifacts** to see all the APIs available. Find the **User Management** API in the listing. Select the API to open the documentation.
+![location of API packages in API Business Hub](10b.png)
+
+Once on the API package documentation, find the **User Management** API in the listing. Select the API to open the documentation.
 
 ![Location of User Information API](11.png)
 
-On the documentation, select **Resource** to find the methods. Find the `GET /User` method and click the **Generate Code** link.
+On the documentation, find the `GET /User` method and click the **Code Snippet** link.
 
 ![how to find the API methods and get the pre-generated code](12.png)
 
-Pick the **JavaScript** tab and then click the **Copy to Clipboard** button.
+Pick the **JavaScript** tab and then click the **Copy and Close** button.
 
 ![JavaScript pre-generated code for API call](13.png)
 
@@ -96,9 +98,7 @@ Back in your Web IDE, in the controller file, **add the copied code from the API
 
 ![updated controller with pre-generated API call code](14.png)
 
-Make sure to update the `<API_KEY>` to your Application Key from the API Business Hub. It is found at the top of the API Documentation page by clicking the Key icon.
-
-> Please keep in my that API Keys should never be exposed like this in productive applications.
+> Make sure to update the `<API_KEY>` to your Application Key from the API Business Hub. It is found at the top of the API Documentation page by clicking the Key icon.
 
 **Comment out the `xhr.withCredentials` line**. You can a single line comment by adding a double slash `//` to the beginning of a line. To add a comment block (multiple lines), use `/*  */` around the code to remove.
 

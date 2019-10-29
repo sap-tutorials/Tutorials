@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Authorization in SAP Cloud Platform ABAP environment
 description: Create IAM Apps, services and catalogs for authorization in the SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 20
 ---
 

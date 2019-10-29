@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Tile and SAP Fiori Launchpad Site
 description: Create tile and SAP Fiori launchpad site with SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 45
 author_name: Merve Temel
 author_profile: https://github.com/mervey45

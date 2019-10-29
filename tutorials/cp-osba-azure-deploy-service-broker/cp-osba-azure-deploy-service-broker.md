@@ -111,7 +111,7 @@ code open-service-broker-azure/contrib/cf/manifest.yml
 As you can see, there are a couple of placeholders. Replace the `<YOUR SUBSCRIPTION ID>` with your actual subscription ID. You can retrieve it via the following command in your **Azure Cloud Shell**:
 
 ```Bash
-az account show --query id
+az account show --query id --output tsv
 ```
 ![insert azure subscription ID](azure-subscription-id.png)
 

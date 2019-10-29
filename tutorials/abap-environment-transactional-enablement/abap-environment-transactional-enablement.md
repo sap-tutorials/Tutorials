@@ -60,7 +60,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ```ABAP
     unmanaged implementation in class z_i_booking_xxx unique;
-
+ 
     define behavior for ZI_Booking_xxx alias booking
     lock master
     etag LastChangedAt
@@ -90,7 +90,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
   3. Provide a transport request if required and click **Finish**.
 
       ![Create behavior implementation](transport.png)
- 
+
 [DONE]
 [ACCORDION-END]
 
@@ -271,13 +271,6 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test yourself)]
-Define an unmanaged implementation of a behavior definition for following in the right order (without the lock master statement and `ETag` handling):
-
- - `ZI_TEST` alias `test`
- - Methods:
-  - create
-  - update
-  - delete
 
 [VALIDATE_1]
 [ACCORDION-END]

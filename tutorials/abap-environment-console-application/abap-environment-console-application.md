@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Your First ABAP Console Application
 description: Create an ABAP package and an ABAP class in the SAP Cloud Platform ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 5
 ---
 
@@ -11,7 +11,7 @@ time: 5
 -	You have purchased an entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
 -	You have set up your ABAP environment as described in [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html)
 - You have a user in the ABAP Environment [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
-- You have downloaded the ABAP Development Tools (ADT), version 2.96 or later. See [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
+- You have downloaded the ABAP Development Tools (ADT). SAP recommends the latest version of ADT, available from [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
 
 ## Details
 ### You will learn
