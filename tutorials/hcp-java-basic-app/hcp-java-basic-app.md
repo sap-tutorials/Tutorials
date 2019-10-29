@@ -14,8 +14,12 @@ time: 15
   - How to run the project in your local development environment
   - How to deploy the project to SAP Cloud Platform
 
----
+> ### DEPRECATED
+>This tutorial, which deals with writing Java in the Neo environment of SAP Cloud Platform, is deprecated.
 
+> - If you are interested in building Java applications using the SAP Cloud Platform's Cloud Foundry Environment, please see [Create, Debug and Deploy Your First Java App](group.scp-4-java).
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Open your Eclipse IDE)]
 
@@ -120,7 +124,7 @@ The Java Editor will open the corresponding `HelloWorldServlet` class in the edi
 Next, you will edit the Servlet to output the classical "Hello World". For this you will modify the `doGet()` method and add the following code and save your changes.
 
 
-```java
+```Java
 /**
  * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
  */
