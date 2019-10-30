@@ -185,6 +185,10 @@ author_profile: https://github.com/niloofar-naseri
 
       ![finish](clone4.png)
 
+  6. Open the **`abapGit` repositories tab**, right-click on your package and click **pull**.
+
+      ![finish](pull.png)
+
   5. Your imported sources are now available under your package.
 
       ![end](clone5.png)
