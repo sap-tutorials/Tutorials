@@ -8,6 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
+- You need the appropriate SAP Cloud Platform ABAP Environment licenses to complete this tutorial.
 - OData Service in ABAP System created 
 - you are a Space Developer in the Space your ABAP Instance is running in
 
