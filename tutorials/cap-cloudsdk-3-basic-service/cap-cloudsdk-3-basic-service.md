@@ -191,7 +191,7 @@ You should see output similar to this:
  > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
  > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
  > filling my.bookshop.Orders from db/csv/my.bookshop-Orders.csv
-/> successfully deployed database to ./consumer-app.db
+/> successfully deployed database to ./sqlite.db
 ```
 
 Now you can start the service up ...
