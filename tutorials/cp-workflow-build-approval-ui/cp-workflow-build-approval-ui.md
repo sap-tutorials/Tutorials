@@ -1,5 +1,5 @@
 ---
-title: Build a Simple Approval UI for Your Workflow with Workflow Forms
+title: Build a Simple Approval UI for Your Workflow with Workflow Forms (Neo)
 description: Use the forms editor to create a basic user interface for your user task workflow.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
