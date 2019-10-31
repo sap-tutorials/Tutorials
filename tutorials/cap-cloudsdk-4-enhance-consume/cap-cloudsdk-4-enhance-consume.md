@@ -255,7 +255,7 @@ If you try to access the `Addresses` entity set directly (<http://localhost:4004
 ```XML
 <error xmlns="http://docs.oasis-open.org/odata/ns/metadata">
 <code>500</code>
-<message>Internal Server Error</message>
+<message>SQLITE_ERROR: no such table: CatalogService_Addresses</message>
 </error>
 ```
 
