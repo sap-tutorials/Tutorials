@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Create communication system to connect to SAP Cloud Platform ABAP environment.
+title: Create Communication System to Connect to SAP Cloud Platform ABAP Environment.
 description: Create a communication system on S/4HANA Cloud to connect to SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
