@@ -17,11 +17,10 @@ time: 15
 ### You will learn  
   - How to find development objects in the ABAP Repository
 
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add a package to Favorites)]
-You will start by looking at an **ABAP program** (or **report**):
+You will start by opening a package with various ABAP Repository object types.
 
 1. In ABAP Development Tools, expand the project that you created, by choosing the arrow on the left:
 
@@ -48,7 +47,7 @@ Expand the package SABAPDEMOS again by choosing the arrow, then expanding the So
 
 ![Image depicting step2-expand-package](step2-expand-package.png)
 
-You will see a list of folders of ABAP Repository objects in alphabetical order. For the moment you will focus on just 3:
+You will see a list of folders of objects in alphabetical order. For the moment you will focus on just 3:
 
 - Executable **programs** also known as **reports**
 - **Classes** (part of the object-oriented ABAP Objects)
@@ -62,29 +61,33 @@ You will now explore how these concepts fit together.
 
 
 [ACCORDION-BEGIN [Step 3: ](Expand the programs folder)]
-Expand the **Programs** folder, scroll down and choose (double-click) the program **`DEMO_CREATE_STRUCTURED_DATA`**:
+1. Expand the **Programs** folder, scroll down and choose (double-click) the program **`DEMO_CREATE_STRUCTURED_DATA`**:
 
-![Image depicting step3-expand-programs](step3-expand-programs.png)
+    ![Image depicting step3-expand-programs](step3-expand-programs.png)
 
-Alternatively, choose **Open development object (`Alt+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
+2. Alternatively, choose **Open development object (`Alt+Shift+A`)** from the toolbar and choose the program **`DEMO_CREATE_STRUCTURED_DATA`**:
 
-.
-![Image depicting step3b-open-dev-object](step3b-open-dev-object.png)
+    ![Image depicting step3b-open-dev-object](step3b-open-dev-object.png)
+    .
+    ![Image depicting step3c-open-dev-object2](step3c-open-dev-object2.png)
 
-.
-![Image depicting step3c-open-dev-object2](step3c-open-dev-object2.png)
+3. The program opens in a text-based editor:
 
-The program opens in a text-based editor:
+    ![Image depicting step3d-program-text-ed](step3d-program-text-ed.png)
 
-![Image depicting step3d-program-text-ed](step3d-program-text-ed.png)
+4. Click on the editor and choose **Link to Editor** from the Project Explorer toolbar.
 
-The outline also appears:
+    ![step5c-link-with-editor](step5c-link-with-editor.png)
 
-![Image depicting step3e-program-outline](step3e-program-outline.png)
+    The relevant folders and packages will now open, showing the program in its package in the Project Explorer. This works for any Repository object.
 
-Also, if you choose the Properties tab, you can see the package and application component:
+5. The outline also appears:
 
-![Image depicting step3f-program-properties](step3f-program-properties.png)
+    ![Image depicting step3e-program-outline](step3e-program-outline.png)
+
+6. Also, if you choose the Properties tab, you can see the package and application component:
+
+    ![Image depicting step3f-program-properties](step3f-program-properties.png)
 
 In the Outline, you can see that the program contains a local class, **Demo**, with a method, **Main**, and, crucially, an event keyword **`START-OF-SELECTION`**. If you look in the main editor, you will see that when the associated event is triggered by the ABAP runtime environment, the program calls the method `Main` of the class `Demo`:
 
@@ -119,7 +122,7 @@ Close the console.
 [ACCORDION-BEGIN [Step 5: ](Open a global class)]
 You will now explore ABAP global classes:
 
-1. Back in the main text editor for the program, scroll down till you find the class **`CL_DEMO_INPUT`**:
+1. Back in the main text editor for the program, scroll down till you find the class **`CL_DEMO_INPUT`**.
 
     ![Image depicting step5-choose-class](step5-choose-class.png)
 
@@ -189,7 +192,7 @@ The output should look roughly like this.
 [ACCORDION-END]
 
 And that's it. You should now be familiar with the most important ABAP Repository objects and the relationship between them.
-You can now work through the tutorial group [Get Started with ABAP Development](https://developers.sap.com/group.abap-basic-app.html), where you will learn how to create:
+You can now work through the tutorial mission [Get Started with ABAP Development](https://developers.sap.com/group.abap-basic-app.html), where you will learn how to create:
 
   1. ABAP package
   2. ABAP application
