@@ -55,9 +55,13 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
 4. Choose **Add Role**. In the **Role Template** dropdown list, select **`AuthGroup_Administrator`** and click on **Save**.
 
+    >IMPORTANT: If you have multiple application identifiers, choose the application identifier that starts with 'it'.
+
     ![Add required roles](2.4.add-role.png)
 
 5. Using the same procedure from the previous step, add **`AuthGroup_BusinessExpert`** and **`AuthGroup_IntegrationDeveloper`** role templates to the role collection.
+
+    >IMPORTANT: If you have multiple application identifiers, choose the application identifier that starts with 'it'.
 
     ![Add additional roles](2.5.add-additional-roles.png)
 
