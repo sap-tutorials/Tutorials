@@ -1,5 +1,5 @@
 ---
-title: Create Your Workflow Project and its Module
+title: Create Your Workflow Project and Its Module
 description: Create a workflow project as well as a module using SAP Web IDE.
 auto_validation: true
 primary_tag: products>sap-cloud-platform

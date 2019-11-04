@@ -1,5 +1,5 @@
 ---
-title: Prepare to Create Workflows in SAP Cloud Platform
+title: Prepare to Create Workflows in SAP Cloud Platform (Neo)
 description: Enable and configure services and assign the user roles you'll need for creating workflows.
 auto_validation: true
 primary_tag: products>sap-cloud-platform

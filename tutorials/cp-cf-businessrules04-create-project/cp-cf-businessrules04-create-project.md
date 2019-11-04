@@ -5,20 +5,23 @@ auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-business-rules
+author_name: Vandana Vasudevan
+author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Details
 ### You will learn
   - How to create a project to author rules
 
-A project is used to configure and manage the entities of business rules. It contains data objects, rules, rule sets, and rule services.
+A project is used to configure and manage the entities of business rules. It contains data objects, rules, rule sets, and rule services. You can create projects in the **Manage Rules Project** application.
 
 [ACCORDION-BEGIN [Step 1: ](Open Manage Rules Project application)]
+
+Use application URL that you configured using the previous tutorial to open the **Manage Rules Project** application.
 
 In the Manage Rules Project screen, choose +.
 
 ![Manage Rule Project Application](create_project0.png)
-
 
 [DONE]
 [ACCORDION-END]

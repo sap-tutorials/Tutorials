@@ -25,7 +25,7 @@ author_profile: https://github.com/Liebherr
 
 
 ### You will learn
-- How to set up SAP Cloud Platform Subaccount for secure (Security Assertion Markup Language = SAML 2.0) communication
+- How to set up SAP Cloud Platform Subaccount for secure communication (with Security Assertion Markup Language = SAML 2.0)
 - How to set up SAP Cloud Platform Subaccount on SAP Cloud Platform Identity Authentication Service for secure communication
 - How to get necessary information from your SAP Cloud Platform Subaccount and your SAP Cloud Platform Identity Authentication tenant to set up the mutual trust between them
 
@@ -35,7 +35,7 @@ Your S/4HANA Cloud system you got already delivered by SAP with a configured tru
 
 ### Additional Information
 - **Documentation:** [SAP Cloud Platform Identity Authentication Service](https://help.sap.com/viewer/6d6d63354d1242d185ab4830fc04feb1/Cloud/en-US/d17a116432d24470930ebea41977a888.html)
-- **SAP S/4HANA Cloud Release** (tutorial's last update): 1902
+- **SAP S/4HANA Cloud Release** (tutorial's last update): 1911
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter trust management of subaccount)]
@@ -113,19 +113,19 @@ Upload the metadata XML file of your SAP Cloud Platform subaccount. By this serv
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Set Name ID attribute)]
+[ACCORDION-BEGIN [Step 7: ](Set Subject Name Identifier)]
 
 Now you have to configure which attribute is used to identify users during `SAML2.0` secure communication. By default this is **`User ID`**, but as S/4HANA Cloud by default works with **`Login Name`** it shall be switched to that.
 
 **Procedure**
 
-Still being in your application's Trust settings, select **Name ID Attribute**.
+Still being in your application's Trust settings, select **Subject Name Identifier**.
 
-![Open name ID attribute configuration](IAS_openNameID_attributeConfig.png)
+![Open Subject Name Identifier configuration](IAS_openSubjectNameID_attributeConfig.png)
 
-Choose **Login Name** and save your changes.
+Under Basic Configuration choose **Login Name** from the dropdown list for the attribute and save your changes.
 
-![Set Login Name as application' s name ID attribute](IAS_nameID_attribute_setLoginName.png)
+![Set Login Name as application' s Subject Name Identifier](IAS_subjectNameID_attribute_setLoginName.png)
 
 [DONE]
 [ACCORDION-END]

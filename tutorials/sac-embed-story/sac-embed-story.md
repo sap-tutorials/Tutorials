@@ -117,25 +117,25 @@ After performing the preparatory steps, you can now create the app.
     -	Now install the Node.js modules necessary for the application into the root folder of the project. Again, open the CLI and execute the following commands from the root folder of your project.
 
         ```Shell
-        npm install express --save
+        npm install express@4.17.1 --save
         ```
 
         This installs Express, which is a Node.js web application framework.
 
         ```Shell
-        npm install express-session --save
+        npm install express-session@1.16.2 --save
         ```
 
         This installs the session middleware of the express framework.
 
         ```Shell
-        npm install connect-timeout --save
+        npm install connect-timeout@1.9.0 --save
         ```
 
         The app uses this module to time out requests.
 
         ```Shell
-        npm install simple-oauth2 --save
+        npm install simple-oauth2@2.2.1 --save
         ```
 
         This installs the Node.js client library for OAuth2.

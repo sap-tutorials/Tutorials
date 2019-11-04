@@ -114,7 +114,7 @@ This should result in familiar output:
  > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
  > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
  > filling my.bookshop.Orders from db/csv/my.bookshop-Orders.csv
-/> successfully deployed database to ./consumer-app.db
+/> successfully deployed database to ./sqlite.db
 ```
 
 Now restart the service, like so:
@@ -126,7 +126,7 @@ cds run
 Notice that neither the `db/extended.cds` file nor the `srv/external/csn/API_BUSINESS_PARTNER.json` file are included:
 
 ```
-[cds] - connect to datasource - sqlite:consumer-app.db
+[cds] - connect to datasource - sqlite:sqlite.db
 [cds] - serving CatalogService at /catalog
 [cds] - service definitions loaded from:
 
@@ -158,7 +158,7 @@ using my.bookshop as my from '../db/extended';
 Now restart the service (re-invoke `cds run` in the integrated terminal). You should see that the `db/extended.cds` source file is now included in the artifacts that are loaded:
 
 ```
-[cds] - connect to datasource - sqlite:consumer-app.db
+[cds] - connect to datasource - sqlite:sqlite.db
 [cds] - serving CatalogService at /catalog
 [cds] - service definitions loaded from:
 
@@ -255,7 +255,7 @@ If you try to access the `Addresses` entity set directly (<http://localhost:4004
 ```XML
 <error xmlns="http://docs.oasis-open.org/odata/ns/metadata">
 <code>500</code>
-<message>Internal Server Error</message>
+<message>SQLITE_ERROR: no such table: CatalogService_Addresses</message>
 </error>
 ```
 

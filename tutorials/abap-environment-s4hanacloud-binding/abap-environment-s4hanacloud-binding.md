@@ -90,6 +90,7 @@ author_profile: https://github.com/mervey45
 
       }
     ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -494,7 +495,6 @@ author_profile: https://github.com/mervey45
 
       ![Create lock object for bonus calculation](lock4.png)
 
-
 [DONE]
 [ACCORDION-END]
 
@@ -728,7 +728,6 @@ author_profile: https://github.com/mervey45
         ENDMETHOD.
       ENDCLASS.
     ```
-
 
 [DONE]
 [ACCORDION-END]

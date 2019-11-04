@@ -26,18 +26,20 @@ tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, 
 
 [ACCORDION-BEGIN [Step 1: ](Log into your IoT service instance)]
 
-  1. Open the IoT Service Cockpit
-     1. Open the [Cloud Platform Cockpit](http://hana.ondemand.com/) and select your `Global Account`
-     2. Click on the `Subaccounts` menu and select your *Cloud Foundry* `Subaccount`
-     3. Click on the `Spaces` menu and select to your `Space`
-     4. Open the `Service Instances` list and click on the `Open Dashboard` icon in the *Actions* column
-  2. If you have not done so then create a user in your tenant by logging using the service credentials  
+1. Open the IoT Service Cockpit
+    - Open the [Cloud Platform Cockpit](http://hana.ondemand.com/) and select your `Global Account`
+    - Click on the `Subaccounts` menu and select your *Cloud Foundry* `Subaccount`
+    - Click on the `Spaces` menu and select to your `Space`
+    - Open the `Service Instances` list and click on the `Open Dashboard` icon in the *Actions* column
+
+2. If you have not done so then create a user in your tenant by logging using the service credentials  
    (found in [`Cloud Platform Cockpit`](http://hana.ondemand.com/) -> `Global Account` -> `Cloud Foundry Subaccount` -> `Space` -> `IoT Service Instance` -> `Service Keys`) and then login with that user.
-  3. Click on your `tenant`.
 
-  ![Create Capability](cap0.png)
+3. Click on your `tenant`.
 
-  ![Create Capability](cap01.png)
+!![Create Capability](cap0.png)
+
+!![Create Capability](cap01.png)
 
 
 
@@ -49,24 +51,27 @@ tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, 
 
 [ACCORDION-BEGIN [Step 2: ](Create a new capability)]
 
-  1. On the left-side menu, expand `Device Management` and click on `Capabilities`
-  2. Create a new capability by clicking the `+` at the top right.
-  3. Set **`Name`** and **`AlternateID`** to `envData`.
-  4. Set **`AlternateID`** to `envData`.
-  5. Add the following properties to the list by clicking on the **`+`**  
+1. On the left-side menu, expand `Device Management` and click on `Capabilities`.
 
-        | Name | Type | Unit of Measure |
-        |------|------|-----------------|
-        |`temperature`|`integer`|`°C`|
-        |`humidity`|`integer`|`%`|
-        |`light`|`integer`|`lux`|
+2. Create a new capability by clicking the `+` at the top right.
 
-  6.  Click **Create**
+3. Set **`Name`** and **`AlternateID`** to `envData`.
 
-![Capability List](cap1.png)
+4. Set **`AlternateID`** to `envData`.
 
-![Create Capability](cap2.png)
+5. Add the following properties to the list by clicking on the **`+`**.
 
+    | Name | Type | Unit of Measure |
+    |------|------|-----------------|
+    |`temperature`|`integer`|`°C`|
+    |`humidity`|`integer`|`%`|
+    |`light`|`integer`|`lux`|
+
+6.  Click **Create**.
+
+!![Capability List](cap1.png)
+
+!![Create Capability](cap2.png)
 
 
 [DONE]
@@ -78,10 +83,10 @@ tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, 
 
 You need to define a sensor type to assign sensors to the devices.
 
-  1. On the left-side menu, expand **Device Management**, navigate to **Sensor Types** and click on `+` to create a new sensor type
-  2. Set **Name** to `envSensorType` and **Alternate ID** to an integer between 0 and 2147483647
-  3. In the **Capabilities** table below, add a row and set **Capability** to `envData` *(the capability we created in Step 2)* and **Type** to `measure`
-  4. Click **Create**
+1. On the left-side menu, expand **Device Management**, navigate to **Sensor Types** and click on `+` to create a new sensor type
+2. Set **Name** to `envSensorType` and **Alternate ID** to an integer between 0 and 2147483647
+3. In the **Capabilities** table below, add a row and set **Capability** to `envData` *(the capability we created in Step 2)* and **Type** to `measure`
+4. Click **Create**
 
 ![Sensor Type List](sensorType1.png)
 
@@ -96,27 +101,31 @@ You need to define a sensor type to assign sensors to the devices.
 
 You will create a new device with a sensor using the already defined sensor type and capability described in previous steps.
 
-  1. On the left-side menu, expand **Device Management**.
-  2. Click **Devices**.
-  3. With the `+` on top right of **Devices** list, create a new device and set the following fields
+1. On the left-side menu, expand **Device Management**.
 
-        | Name | Value |
-        |------|------|
-        | **Name** |`device1`|
-        | **Gateway** | Select the MQTT gateway |
-        | **Alternate ID** |`device1`|
-  4. Click **Create**
-  5. After the device is created, add a new sensor. You can do this by selecting the `Sensors` tab and clicking on the `+`.  
-     Set its name to `sensor1`, its type to `envSensorType` and its alternate ID to `sensor1`. Finally, click on **Create**.
+2. Click **Devices**.
 
-![Device List](device1.png)
+3. With the `+` on top right of **Devices** list, create a new device and set the following fields
 
-![Create Device](device2.png)
+    | Name | Value |
+    |------|------|
+    | **Name** |`device1`|
+    | **Gateway** | Select the MQTT gateway |
+    | **Alternate ID** |`device1`|
 
-![Sensor List is empty for new device](device3.png)
+4. Click **Create**.
 
-![Add Sensor for Device](device31.png)
+5. After the device is created, add a new sensor. You can do this by selecting the `Sensors` tab and clicking on the `+`.  
 
+    Set its name to `sensor1`, its type to `envSensorType` and its alternate ID to `sensor1`. Finally, click on **Create**.
+
+!![Device List](device1.png)
+
+!![Create Device](device2.png)
+
+!![Sensor List is empty for new device](device3.png)
+
+!![Add Sensor for Device](device31.png)
 
 [DONE]
 
@@ -127,10 +136,15 @@ You will create a new device with a sensor using the already defined sensor type
 Before you can start sending data from your device, it needs to be authenticated.
 
 1. Navigate to the newly created device using the **Devices** list _(see Step 4 if you need more details)_.
-2. Click the **Certificate** tab
-3. Click on **Generate Certificate**
-4. Set **Certificate Type** to `pem`
+
+2. Click the **Certificate** tab.
+
+3. Click on **Generate Certificate**.
+
+4. Set **Certificate Type** to `pem`.
+
 5. Click **Generate**. This will download the certificate.
+
 6. Copy-paste and persist the secret displayed - it can't be viewed after the dialog is closed
 
 >You can always generate a new certificate. The old one will remain valid.
@@ -173,7 +187,7 @@ If you have the hardware kit, then modify the function `generateData()` to actua
 
 3. In the folder, create a file called `app.js` and copy-paste the following code :
 
-    ```javascript
+    ```JavaScript
     const mqtt = require('mqtt')
     const fs = require("fs");
 
@@ -257,12 +271,18 @@ If you have the hardware kit, then modify the function `generateData()` to actua
     }
     ```
 
-4. Change the endpoint for MQTT to your endpoint on line 4 _(check the URL of the cockpit which you brought up earlier to create the device model)_.
+4. Change the endpoint for MQTT to your endpoint on line 4 (check the URL of the cockpit which you brought up earlier to create the device model).
+
 5. Through the command line tool on your computer, change into the directory created before and then run `npm install` to install required modules.
+
 6. Create a subfolder called `certificates`.
+
 7. Copy the certificate you downloaded in step 5 into the `certificates` directory. Rename it to `device1_certificate.pem`.
+
 8. Create a new file with the name `device1_passphrase.txt` in the `certificates` directory. Paste the secret from step 5 into it.
-9.  Run `node app.js` to start the app
+
+9.  Run `node app.js` to start the app.
+
 10. Check the console log for errors and additional information. The console log should look like this:
 
     ![Device Data is generated Ok](dataok.png)
@@ -273,14 +293,16 @@ If you have the hardware kit, then modify the function `generateData()` to actua
 
 [ACCORDION-BEGIN [Step 7: ](Check device ingested data)]
 
-1. Navigate to your device
-   (`Device Management` -> `Devices` -> `device1`)
-2. Click on the `Data Visualization` tab
-3. Select your sensor, `sensor1`
+1. Navigate to your device:
+   **Device Management > Devices > `device1`**)
+
+2. Click on the `Data Visualization` tab.
+
+3. Select your sensor, `sensor1`.
 
 You should see data flowing in the system.
 
-![Device Chart](devicedata.png)
+!![Device Chart](devicedata.png)
 
 [VALIDATE_1]
 
