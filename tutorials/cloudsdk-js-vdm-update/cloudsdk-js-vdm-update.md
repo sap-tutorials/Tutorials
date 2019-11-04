@@ -173,7 +173,7 @@ Restart your server and send a `PUT` request to `http://localhost:8080/business-
 
 ```JSON
 {
-	"CityName": "Berlin"
+	"cityName": "Berlin"
 }
 ```
 
