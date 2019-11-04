@@ -240,11 +240,11 @@ Restart your server and send a `POST` request to `http://localhost:8080/business
 
 ```JSON
 {
-	"Country": "DE",
-	"PostalCode": "14469",
-	"CityName": "Potsdam",
-	"StreetName": "Konrad-Zuse-Ring",
-	"HouseNumber": "10"
+	"country": "DE",
+	"postalCode": "14469",
+	"cityName": "Potsdam",
+	"streetName": "Konrad-Zuse-Ring",
+	"houseNumber": "10"
 }
 ```
 
