@@ -1,7 +1,6 @@
 ---
 title: Model the Needed Decision Support Based on IoT Data
-description: Create actions, rules and configurations using SAP Leonardo IoT
-
+description: Create actions, rules and configurations using SAP Leonardo IoT.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things ]
@@ -17,7 +16,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
   - How to create a Decision Support Configuration
 
 ---
-In this tutorial, we'll create a streaming rule for high greenhouse temperature which triggers an action of type Decision Support.  This action will in turn trigger another action of type In-App Notification which creates Fiori Notifications for a set of recipients.  We'll also define a Decision Support configuration with two options.  One is a Quick Create application and the other one is a Fiori Navigation.
+In this tutorial, you'll create a streaming rule for high greenhouse temperature which triggers an action of type Decision Support.  This action will in turn trigger another action of type In-App Notification which creates SAP Fiori Notifications for a set of recipients.  You'll also define a Decision Support configuration with two options.  One is a Quick Create application and the other one is a SAP Fiori Navigation.
 
 [ACCORDION-BEGIN [Step 1: ](Create rule context)]
   Please complete the prerequisites before starting this step.
@@ -34,11 +33,11 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 
   4. Enter `Greenhouse Rule Context` in the field **Short Text** and **Description**.
 
-    ![New Rule Context 4](/images/rulectxt_new_4_1.png)
+    !![New Rule Context 4](/images/rulectxt_new_4_1.png)
 
   5. Add a new **Property Set**.
 
-    ![New Rule Context 5](/images/rulectxt_new_5.png)
+    !![New Rule Context 5](/images/rulectxt_new_5.png)
 
   6. In the dialog, select `greenhouse` for **Package** and `greenhouseType` for **Thing Type**.  The entry `envData` should be displayed automatically in the **Property Sets** section.  Select `envData` and click **OK**.
 
@@ -46,7 +45,7 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 
   7. The new property set `envData` has been added.
 
-    ![New Rule Context 3](/images/rulectxt_new_3_1.png)
+    !![New Rule Context 3](/images/rulectxt_new_3_1.png)
 
   8. Click **Save** to save the changes.
 
@@ -54,47 +53,47 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create streaming rule)]
-  This tutorial is based on the greenhouse device used in the Leonardo IoT Foundation tutorials.  You can find these tutorials under Prerequisites.  Please complete them before continuing with this tutorial.
+This tutorial is based on the greenhouse device used in the Leonardo IoT Foundation tutorials.  You can find these tutorials under Prerequisites.  Please complete them before continuing with this tutorial.
 
-  1. From Leonardo IoT Launchpad, select the **Rules** tile.
+1. From Leonardo IoT Launchpad, select the **Rules** tile.
 
     ![New Rule 0](/images/launchpad_tile_rules.png)
 
-  2. Create a new **Streaming Cloud** rule.
+2. Create a new **Streaming Cloud** rule.
 
-    ![New Rule 1](/images/rule_new_1_1.png)
+    !![New Rule 1](/images/rule_new_1_1.png)
 
-  3. In General Information, enter `High Greenhouse Temperature` in the **Name** field.
+3. In General Information, enter `High Greenhouse Temperature` in the **Name** field.
 
-  4. In the field **Description**, enter `Temperature in Greenhouse is above 25 degrees`.
+4. In the field **Description**, enter `Temperature in Greenhouse is above 25 degrees`.
 
-    ![New Rule 2](/images/rule_new_2.png)
+    !![New Rule 2](/images/rule_new_2.png)
 
-  5. In Definition, click on the field **Rule Context**.
+5. In Definition, click on the field **Rule Context**.
 
-    ![New Rule 3](/images/rule_new_3_1.png)
+    !![New Rule 3](/images/rule_new_3_1.png)
 
-  6. Select the Rule Context for your Greenhouse. The name of your rule context might be different.
+6. Select the Rule Context for your Greenhouse. The name of your rule context might be different.
 
     ![New Rule 4](/images/rule_new_4.png)
 
-  7. In the next dialog, select `envData`.
+7. In the next dialog, select `envData`.
 
     ![New Rule 8](/images/rule_new_8.png)
 
-  8. Confirm the selection.
+8. Confirm the selection.
 
     ![New Rule 5](/images/rule_new_5_1.png)
 
-  9. Enter the following rule in the **If** field of Ruled Editor.
+9. Enter the following rule in the **If** field of Ruled Editor:
 
     `temperature of envData is greater than 25`
 
-    ![New Rule 6](/images/rule_new_6.png)
+    !![New Rule 6](/images/rule_new_6.png)
 
-    ![New Rule 7](/images/rule_new_7_1.png)
+    !![New Rule 7](/images/rule_new_7_1.png)
 
-  10. **Activate** the Rule.
+10. **Activate** the rule.
 
 [DONE]
 [ACCORDION-END]
@@ -125,9 +124,9 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 
     For example:
 
-    ![Actions paylod thing data](/images/actions_payload_thing_data.png)
+    !![Actions paylod thing data](/images/actions_payload_thing_data.png)
 
-    For our scenario, we'll enter a sample JSON payload with a set of static values in the **Payload** text area.
+    For this scenario, you'll enter a sample JSON payload with a set of static values in the **Payload** text area.
 
     ```JSON
     "properties": {
@@ -145,7 +144,7 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 
   9. Click **Save** to save your change.
 
-    ![Actions Create](/images/actions_new_ds_details_1.png)
+    !![Actions Create](/images/actions_new_ds_details_1.png)
 
 
 [DONE]
@@ -173,7 +172,7 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 
   9. Click **New** in the section **Target Parameters**.
 
-    ![Actions InApp Target](/images/actions_new_inappnotif_details_1.png)
+    !![Actions InApp Target](/images/actions_new_inappnotif_details_1.png)
 
   10. Enter `Guid` for **Key** field.  
 
@@ -185,7 +184,7 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 
   13. Click **Save** to save your changes.  
 
-    ![Actions Details](/images/actions_new_inappnotif_details.png)
+    !![Actions Details](/images/actions_new_inappnotif_details.png)
 
 [VALIDATE_1]
 
@@ -223,7 +222,7 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 
   2. In the Details page, click the **Create** button under the section "Possible Actions".
 
-    ![DS Create Action_Button](/images/ds_create_action_button.png)
+    !![DS Create Action_Button](/images/ds_create_action_button.png)
 
   3. In the **Alias** field, enter `Greenhouse_quickcreate`.
 
@@ -260,15 +259,15 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Define a fiori navigation option)]
+[ACCORDION-BEGIN [Step 7: ](Define a SAP Fiori navigation option)]
 
   1. In the Details page, click the **Create** button under the section "Possible Actions".
 
-    ![DS Create Action_Button](/images/ds_create_action_button.png)
+    !![DS Create Action_Button](/images/ds_create_action_button.png)
 
   2. In the **Alias** field, enter `Greenhouse_fiori_nav`.
 
-  3. In the **Title** field, enter `Fiori Navigation`.
+  3. In the **Title** field, enter `SAP Fiori Navigation`.
 
   4. In the **Descriptive Text** field, enter `Navigate to Home screen`.
 
@@ -282,13 +281,13 @@ In this tutorial, we'll create a streaming rule for high greenhouse temperature 
 
   9. Click **Save** to save the changes.
 
-    ![DS FioriNav_Def](/images/ds_fiori_nav_def_1.png)
+    ![DS FioriNav_Def](/images/ds_fiori_nav_def_2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Define an action service option (optional))]
-In addition to defining Quick Create and Fiori Navigation options, you can also define an Action Service option.  We will not define an Action Service option in this tutorial but you can define one if you have an Action Service that you'd like to use as an additional option.
+In addition to defining Quick Create and SAP Fiori Navigation options, you can also define an Action Service option.  You will not define an Action Service option in this tutorial but you can define one if you have an Action Service that you'd like to use as an additional option.
 
 ![DS ActionService_Def](/images/ds_action_service_def.png)
 

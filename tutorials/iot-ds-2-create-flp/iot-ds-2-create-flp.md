@@ -1,7 +1,6 @@
 ---
-title: Set Up Fiori Launchpad in Cloud Foundry to Receive Notifications
-description: Create and configure an SAP Fiori Launchpad Site to receive notifications from Leonardo IoT using SAP Web IDE.
-
+title: Set Up SAP Fiori launchpad in Cloud Foundry to Get Notifications
+description: Create and configure an SAP Fiori launchpad site to receive notifications from Leonardo IoT using SAP Web IDE.
 auto_validation: true
 time: 40
 tags: [ tutorial>beginner, products>sap-leonardo-iot, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform-portal, products>sap-web-ide, products>sap-web-ide-plug-ins]
@@ -11,10 +10,11 @@ primary_tag: topic>internet-of-things
 ## Details
 ### You will learn
   - How to create a new MTA project
-  - How to add a Fiori Launchpad Site to a MTA project
----
+  - How to add a SAP Fiori launchpad site to a MTA project
 
-Fiori Launchpad Site provides a user with access to their notifications and applications deployed on the cloud.
+An SAP Fiori launchpad site provides a user with access to their notifications and applications deployed on the cloud.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Create MTA project)]
 
@@ -99,9 +99,9 @@ Fiori Launchpad Site provides a user with access to their notifications and appl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Fiori Launchpad site)]
+[ACCORDION-BEGIN [Step 2: ](Create SAP Fiori launchpad site)]
 
-  1. Enable SAP Fiori Launchpad Site Web IDE feature.  Go to Web IDE **`Preference`**, search for `portal` in **`Extensions`**. Turn On this feature.  Click **Save** to save the change.
+  1. Enable SAP Fiori launchpad site Web IDE feature.  Go to Web IDE **`Preference`**, search for `portal` in **`Extensions`**. Turn On this feature.  Click **Save** to save the change.
 
     ![Web IDE Portal Feature](/images/create_portal_2.png)
 
@@ -115,14 +115,14 @@ Fiori Launchpad Site provides a user with access to their notifications and appl
 
     ![Web IDE Portal Feature](/images/create_portal_4.png)
 
-  5. Fiori Launchpad Site has been added to the MTA project.
+  5. SAP Fiori launchpad site has been added to the MTA project.
 
     ![Web IDE Portal Feature](/images/create_portal_5_a.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure Leonardo IoT Notification Service)]
+[ACCORDION-BEGIN [Step 3: ](Configure Leonardo IoT Notification service)]
 
   1. Open `CommonDataModel.json` in **Code Editor**..
 
@@ -190,7 +190,7 @@ Fiori Launchpad Site provides a user with access to their notifications and appl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add IoT Service resource)]
+[ACCORDION-BEGIN [Step 4: ](Add IoT service resource)]
 
   1. Right click on the `iot-ds` project and add new SAP Cloud Platform Service.
 
@@ -234,7 +234,7 @@ Fiori Launchpad Site provides a user with access to their notifications and appl
 
   2. Add the following UAA resource under **`resources`**. Please use the *Copy* button to copy the formatted configuration and paste it in the specified location in the `yaml` file.
 
-    ```yaml
+    ```YAML
       - name: uaa_iot-ds
         parameters:
           path: ./xs-security.json
@@ -296,35 +296,35 @@ Fiori Launchpad Site provides a user with access to their notifications and appl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test notification in Fiori Launchpad site)]
+[ACCORDION-BEGIN [Step 7: ](Test notification in launchpad site)]
 
-If you want to test notifications in Fiori Launchpad Site at this point, you'll need to comment out the references to `UI Deployer` in `mta.yaml`. The `UI Deployer` is used for deploying UI components but we have not added any UI components to our project yet and it will cause the deployment to fail. We'll add UI components to our project in the next tutorial [Build a Decision Support UI in the Web IDE](iot-ds-3-create-ui) and we will be able to test notifications without having to make these changes.
+If you want to test notifications in SAP Fiori launchpad site at this point, you'll need to comment out the references to `UI Deployer` in `mta.yaml`. The `UI Deployer` is used for deploying UI components but we have not added any UI components to our project yet and it will cause the deployment to fail. We'll add UI components to our project in the next tutorial [Build a Decision Support UI in the Web IDE](iot-ds-3-create-ui) and we will be able to test notifications without having to make these changes.
 
 > Testing notification is optional at this point. To continue, please following the instructions below and complete Steps 8 to 12.
 Otherwise, you can continue with the next tutorial [Build a Decision Support UI in SAP Web IDE](iot-ds-3-create-ui).
 
 To comment out the references to `UI Deployer`:
 
-  * open `mta.yaml` in Code Editor.
+1. Open `mta.yaml` in the Code Editor.
 
-  * Type a `#` character in front of the lines shown below.
+2. Type a `#` character in front of the lines shown below.
 
     ![Disable UI Deployer](/images/disable_uideployer.png)
 
-  * **Save** the file.
+3. **Save** the file.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Build MTA project)]
 
-  1. In Web IDE, right click on the iot-ds project and click **Build** to start the build of the project.
+  1. In SAP Web IDE, right-click on the `iot-ds` project and click **Build** to start the build of the project.
 
     ![WebIDE Build](/images/shared/webide_build_0_1.png)
 
-  2. When the build is completed, a notification will be displayed at the top right corner of the Web IDE.  
+  2. When the build is completed, a notification will be displayed at the top right corner of the SAP Web IDE.  
 
-  3. You can also check the status of the build by viewing the logs in the Web IDE console.
+  3. You can also check the status of the build by viewing the logs in the SAP Web IDE console.
 
     ![WebIDE Build](/images/shared/webide_build_1.png)  
 
@@ -344,7 +344,7 @@ To comment out the references to `UI Deployer`:
 
   2. To start a deployment, expand the `mta_archives` folder in your project, right click on the `mtar` file inside the folder and click **Deploy**.
 
-    ![WebIDE Build](/images/shared/webide_build_3.png)
+    ![SAP Web IDE Build](/images/shared/webide_build_3.png)
 
   3. Select the appropriate **Cloud Foundry API Endpoint**, **Organization** and **Space** for your deployment.  If you cannot find your selections, please check your Cloud Foundry settings in Web IDE preference.  For more information, please see Step 6 and Step 7 of [Prepare SAP Web IDE for Cloud Foundry Development](sapui5-webide-open-webide).
 
@@ -356,7 +356,7 @@ To comment out the references to `UI Deployer`:
 
   6. You can also check the status of the deployment by viewing the logs in the Web IDE console.
 
-    ![WebIDE Build](/images/shared/webide_build_5.png)  
+    ![SAP Web IDE Build](/images/shared/webide_build_5.png)  
 
 [DONE]
 [ACCORDION-END]
@@ -373,7 +373,7 @@ To comment out the references to `UI Deployer`:
 
   3. Click on the **Connectivity Information** icon on the top right corner.
 
-    ![Thing Modeler 1](/images/shared/thing_modeler_1.png)  
+    !![Thing Modeler 1](/images/shared/thing_modeler_1.png)  
 
   4. Copy the Thing Id.  We'll use it in the next step.
 
@@ -390,11 +390,11 @@ To comment out the references to `UI Deployer`:
 
   2. Select **Greenhouse Action**.
 
-    ![Actions Tile](/images/shared/test_portal_1_1.png)
+    !![Actions Tile](/images/shared/test_portal_1_1.png)
 
   3. Click **Test** button.
 
-    ![Actions Tile](/images/shared/test_portal_2.png)
+    !![Actions Tile](/images/shared/test_portal_2.png)
 
   4. Enter the **Thing Id** in the Test Action dialog. Click **Test**.
 
@@ -404,9 +404,9 @@ To comment out the references to `UI Deployer`:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Check notification in Fiori Portal site)]
+[ACCORDION-BEGIN [Step 12: ](Check notification in Portal site)]
 
-  1. To find the URL of the Fiori Launchpad Site, go to the SAP Cloud Platform Cockpit, navigate to the space of the sub-account where the MTA project is deployed.
+  1. To find the URL of the SAP Fiori launchpad site, go to the SAP Cloud Platform Cockpit, navigate to the space of the sub-account where the MTA project is deployed.
 
   2. Navigate to the **Applications** screen.
 
@@ -418,21 +418,21 @@ To comment out the references to `UI Deployer`:
 
     ![Find Portal Url 1](/images/shared/find_portal_url_2.png)
 
-  5. Append `/cp.portal/site` at the end of the Application Route to create the URL of the Fiori Launchpad Site.
+  5. Append `/cp.portal/site` at the end of the application route to create the URL of the SAP Fiori launchpad site.
 
     For example:
 
-      Application Route:
+      Application route:
       mytenant-space1-approuter1.cfapps.eu10.hana.ondemand.com
 
-      The Fiori Launchpad Site URL will be
+      The SAP Fiori launchpad site URL will be
       `https://mytenant-space1-approuter1.cfapps.eu10.hana.ondemand.com/cp.portal/site`
 
-  6. Launch Fiori Launchpad Site in a browser.  You should see a Fiori notification alert.
+  6. Launch SAP Fiori launchpad site in a browser.  You should see a SAP Fiori notification alert.
 
     ![Find Portal Url 1](/images/shared/test_notif_1.png)
 
-  7. Click on the alert icon and the Fiori Notification Panel will be opened.
+  7. Click on the alert icon and the SAP Fiori Notification Panel will be opened.
 
     ![Find Portal Url 2](/images/shared/test_notif_2.png)
 

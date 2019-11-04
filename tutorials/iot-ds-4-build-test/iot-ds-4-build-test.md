@@ -7,8 +7,6 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-portal, products>sap-leon
 primary_tag: products>sap-cloud-platform-internet-of-things
 ---
 
-## Prerequisites
-
 ## Details
 ### You will learn
   - How to build and deploy an MTA project
@@ -77,7 +75,7 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
 
   3. Click on the **Connectivity Information** icon on the top right corner.
 
-    ![Thing Modeler 1](/images/shared/thing_modeler_1.png)  
+    !![Thing Modeler 1](/images/shared/thing_modeler_1.png)  
 
   4. Copy the Thing Id.  We'll use it in the next step.
 
@@ -94,11 +92,11 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
 
   2. Select **Greenhouse Action**.
 
-    ![Actions Tile](/images/shared/test_portal_1_1.png)
+    !![Actions Tile](/images/shared/test_portal_1_1.png)
 
   3. Click **Test** button.
 
-    ![Actions Tile](/images/shared/test_portal_2.png)
+    !![Actions Tile](/images/shared/test_portal_2.png)
 
   4. Enter the **Thing Id** in the Test Action dialog. Click **Test**.
 
@@ -108,9 +106,9 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check notification in Fiori Launchpad site)]
+[ACCORDION-BEGIN [Step 5: ](Check notification in launchpad site)]
 
-  1. To find the URL of the Fiori Launchpad Site, go to the SAP Cloud Platform Cockpit, navigate to the space of the sub-account where the MTA project is deployed.
+  1. To find the URL of the SAP Fiori launchpad site, go to the SAP Cloud Platform Cockpit, navigate to the space of the sub-account where the MTA project is deployed.
 
   2. Navigate to the **Applications** screen.
 
@@ -122,45 +120,47 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
 
     ![Find Portal Url 1](/images/shared/find_portal_url_2.png)
 
-  5. Append `/cp.portal/site` at the end of the Application Route to create the URL of the Fiori Launchpad Site.
+  5. Append `/cp.portal/site` at the end of the application route to create the URL of the SAP Fiori launchpad site.
 
-    For example:
+    >For example, if:
+    >The application route is:
+    >
+    >**`mytenant-space1-approuter1.cfapps.eu10.hana.ondemand.com`**
+    >
+    > then the SAP Fiori launchpad site URL would be:
+    >
+    >**`https://mytenant-space1-approuter1.cfapps.eu10.hana.ondemand.com/cp.portal/site`**
 
-      Application Route:
-      mytenant-space1-approuter1.cfapps.eu10.hana.ondemand.com
-
-      The Fiori Launchpad Site URL will be
-      `https://mytenant-space1-approuter1.cfapps.eu10.hana.ondemand.com/cp.portal/site`
-
-  6. Launch Fiori Launchpad Site in a browser.  You should see a Fiori notification alert.
+  6. Launch the SAP Fiori launchpad site in a browser.  You should see a SAP Fiori notification alert.
 
     ![Find Portal Url 1](/images/shared/test_notif_1.png)
 
-  7. Click on the alert icon and the Fiori Notification Panel will be opened.
+  7. Click on the alert icon and the SAP Fiori notification panel will be opened.
 
     ![Find Portal Url 2](/images/shared/test_notif_2.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Launch application from Fiori notification)]
+[ACCORDION-BEGIN [Step 6: ](Launch application from SAP Fiori notification)]
 
-Please complete the tutorial [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui) before continuing with this step.
+>Please complete the tutorial [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui) before continuing with this step.
 
-  * In Fiori Notification Panel, click on the `High Greenhouse Temperature Alert` notification.  If you do not see any notification in Panel, please follow in instructions in step 3 to generate a new notification.
+In SAP Fiori notification panel, click the `High Greenhouse Temperature Alert` notification.  If you do not see any notification in Panel, please follow in instructions in step 3 to generate a new notification.
 
-    ![Find Portal Url 2](/images/shared/test_notif_2.png)
+![Find Portal Url 2](/images/shared/test_notif_2.png)
 
-  * The Decision Support application will be launched.  
+The Decision Support application will be launched.  
 
-  * Summary of screen elements:
-    * The application title ``Greenhouse Alert`` is configured in Step 1 of [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui).
+Here's a summary of screen elements:
 
-    * The header title ``Greenhouse High Temperature Alert`` is configured in Step 4 of [Model the needed Decision Support based on IoT data](iot-ds-1-define-actions).
+  - The application title ``Greenhouse Alert`` is configured in Step 1 of [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui).
 
-    * The Action Options ``Service Ticket Quick Create`` and ``Fiori Navigation`` are configured in Step 5 and Step 6 of [Model the needed Decision Support based on IoT data](iot-ds-1-define-actions).
+  - The header title ``Greenhouse High Temperature Alert`` is configured in Step 4 of [Model the needed Decision Support based on IoT data](iot-ds-1-define-actions).
 
-        ![DS Runtime 1](/images/ds_runtime_1.png)
+  - The Action Options ``Service Ticket Quick Create`` and ``Fiori Navigation`` are configured in Step 5 and Step 6 of [Model the needed Decision Support based on IoT data](iot-ds-1-define-actions).
+
+![DS Runtime 1](/images/ds_runtime_2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -179,7 +179,7 @@ Please complete the tutorial [Building the Decision Support UI in the Web IDE](i
 
   4. The Quick Create action is executed and the action history is saved in Execution Result.
 
-    ![QC Start 3](/images/qc_start_3_1.png)
+    ![QC Start 3](/images/qc_start_3_2.png)
 
   5. Click **Details** to see additional information about the executed action.
 
@@ -188,19 +188,19 @@ Please complete the tutorial [Building the Decision Support UI in the Web IDE](i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Initiate Fiori navigation option)]
+[ACCORDION-BEGIN [Step 8: ](Initiate SAP Fiori navigation option)]
 
-  1. Click the option `Fiori Navigation`
+  1. Click the option `SAP Fiori Navigation`
 
   2. Click `Initiate Action`.
 
-    ![Nav Start 1](/images/nav_start_2.png)
+    ![Nav Start 1](/images/nav_start_2_1.png)
 
-  3. A new browser tab is opened to the Home page of the Fiori Launchpad Site.
+  3. A new browser tab is opened to the Home page of the SAP Fiori launchpad site.
 
   4. Open the previous browser tab, a new action history is saved in Execution Result.
 
-    ![Nav Start 2](/images/nav_start_1_1.png)
+    ![Nav Start 2](/images/nav_start_1_2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -229,9 +229,9 @@ Please complete the tutorial [Building the Decision Support UI in the Web IDE](i
 
       ![Test Sim 4](/images/check_device_data-3.png)
 
-  4. Launch Fiori Launchpad Site.
+  4. Launch the SAP Fiori launchpad site.
 
-  5. When a generated temperature satisfies our Rule, you should see a new notification alert in Launchpad Site. Select the notification and launch the Decision Support application.
+  5. When a generated temperature satisfies our Rule, you should see a new notification alert in the launchpad site. Select the notification and launch the Decision Support application.
 
 
 [DONE]
