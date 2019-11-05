@@ -1,5 +1,5 @@
 ---
-title: Create a SAP Web Analytics Space
+title: Create an SAP Web Analytics Space
 description: Create a space to register your website with SAP Web Analytics.
 auto_validation: true
 time: 10
