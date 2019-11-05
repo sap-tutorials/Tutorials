@@ -103,12 +103,9 @@ Skip this step if you already have a subaccount with Amazon Web Services (AWS) i
 
     ![Add Role](Step 4.2.png)
 
-<<<<<<< HEAD
+
 7. Select **Save**.
 
-
-=======
->>>>>>> 26abffd719c00ccda58c948fe215965f01135705
 [DONE]
 [ACCORDION-END]
 
