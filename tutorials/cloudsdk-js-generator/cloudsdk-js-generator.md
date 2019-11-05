@@ -143,7 +143,7 @@ export function getCandidates(): Promise<Candidate[]> {
       apikey: '<YOUR-API-KEY>'
     })
     .execute({
-      url: 'https://sandbox.api.sap.com'
+      url: 'https://sandbox.api.sap.com/successfactors'
     });
 }
 ```
