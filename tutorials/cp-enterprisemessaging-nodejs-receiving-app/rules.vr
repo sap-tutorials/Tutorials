@@ -1,0 +1,12 @@
+[VALIDATE_6]
+###Rule
+multiple-choice
+
+###Question
+How can you test that your Consumer application works?
+
+###Match
+[x] Send messages using Postman to the REST Gateway of enterprise messaging and see whether these are written to the CF logs
+[x] Use the producer application to send messages and see whether these appear in the CF logs
+[ ] Perform API calls to SAP Cloud Platform
+[VALIDATE_6]

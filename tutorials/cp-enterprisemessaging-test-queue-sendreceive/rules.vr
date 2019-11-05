@@ -1,0 +1,12 @@
+[VALIDATE_2]
+###Rule
+multiple-choice
+
+###Question
+Which options are true while using postman
+###Match
+[x] You can execute both send and receive for a queue
+[x] The instance should support REST protocol
+[] You can execute both send and receive for a Topic
+[] Need to use POST to send message and GET to receive message
+[VALIDATE_2]
