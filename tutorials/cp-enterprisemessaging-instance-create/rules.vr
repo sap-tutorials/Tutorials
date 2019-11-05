@@ -1,0 +1,13 @@
+[VALIDATE_1]
+###Rule
+single-choice
+
+###Question
+The rules of an SAP Cloud Platform Messaging queue are defined while ...
+
+###Match
+[ ] ... creating a queue.
+[x] ... creating an instance.
+[ ] ... creating a queue subscription.
+
+[VALIDATE_1]

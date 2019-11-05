@@ -1,0 +1,25 @@
+[VALIDATE_2]
+###Rule
+single-choice
+
+###Question
+What is true when deleting a queue?
+###Match
+[] A queue once created cannot be deleted.
+[] If a queue has associated queue subscriptions, it cannot be deleted.
+[] The queue subscriptions are not impacted.
+[x] Associated queue subscriptions are also deleted.
+[VALIDATE_2]
+
+[VALIDATE_3]
+###Rule
+multiple-choice
+
+###Question
+Which of the following options are correct?
+###Match
+[] You can read message from a topic directly.
+[x] It is possible to subscribe a queue to multiple topics and multiple queues can be subscribed to a single topic.
+[] The subscribed queue is not impacted.
+[x] The subscribed queue is deleted. 
+[VALIDATE_3]

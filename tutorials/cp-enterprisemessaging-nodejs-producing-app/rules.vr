@@ -1,0 +1,13 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+Which three files do you have to create for your Producer application?
+
+###Match
+[x] manifest.yml
+[ ] test data file
+[x] package.json
+[x] application file
+[VALIDATE_1]

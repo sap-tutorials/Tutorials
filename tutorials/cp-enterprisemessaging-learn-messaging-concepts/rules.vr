@@ -1,0 +1,55 @@
+[VALIDATE_1]
+###Rule
+multiple-choice
+
+###Question
+What communication options does enterprise messaging offer to connect applications, services and systems?
+
+###Match
+[x] Messages
+[ ] RFC Calls
+[x] Events
+[ ] API Calls
+[VALIDATE_1]
+
+[VALIDATE_2]
+###Rule
+multiple-choice
+
+###Question
+Mark advantages enterprise messaging offers
+
+###Match
+[x] Decouples Communication
+[x] Handles Peak Loads
+[ ] Facilitates synchronous communication
+[x] Provides reliable data transmission
+[VALIDATE_2]
+
+[VALIDATE_3]
+###Rule
+multiple-choice
+
+###Question
+What protocols does Enterprise Messaging support
+
+###Match
+[x] AMQP
+[x] MQTT
+[x] REST
+[ ] FTP
+[VALIDATE_3]
+
+[VALIDATE_4]
+###Rule
+multiple-choice
+
+###Question
+Which statements hold true
+
+###Match
+[x] Enterprise Messaging supports queue subscriptions.
+[x] A queue subscription ensures that a message is kept in the queue until consumed.
+[x] Events from an S/4 system can only be sent to a topic.
+[x] Queue subscription means that a message to a topic is directly send to a queue that is bound to the topic.
+[VALIDATE_4]
