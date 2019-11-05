@@ -21,6 +21,8 @@ SAP Web Analytics is a software as a service (SaaS) offering on the SAP Cloud Pl
 
 The service lets you collect, report, and analyze the usage data of your website that helps you to identify meaningful patterns from various digital channels. These insights may lead you to implement improvements that can help you optimize the overall user experience of your websites.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bXMtor_AmPE" frameborder="0" allowfullscreen></iframe>
+
 A **customer admin** in SAP Web Analytics is an administrator for that particular subscription. For example, the IT department of an organization that subscribes to the service.
 
 As a customer admin for Web Analytics service, within your subscription, you create unique workspaces. In SAP Web Analytics, these workspaces are called **Spaces**.
