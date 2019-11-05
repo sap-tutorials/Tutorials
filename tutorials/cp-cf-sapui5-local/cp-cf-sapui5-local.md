@@ -49,8 +49,6 @@ The `package.json` file contains many useful information about the project. The 
 
 [DONE]
 [ACCORDION-END]
-
-
 [ACCORDION-BEGIN [Step 3: ](Test the web-app locally)]
 
 This project leverages the UI5 tooling framework for development. Among other tasks, this tool belt can help you to start a local web server when you run
