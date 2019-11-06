@@ -272,7 +272,7 @@ To get started quickly, you have already added a simplistic all-in-one service d
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a Database)]
+[ACCORDION-BEGIN [Step 7: ](Add a Database)] - HAVE TO CHECK IF IT CAN BE REMOVED
 
 The `cds` runtime includes built-in generic handlers that automatically serve all CRUD requests. After installing `SQLite3` packages, you can deploy your data model.
 
@@ -342,18 +342,6 @@ Your service is now backed by a fully functional database. This means you can re
 
 1. **Remove the code with mock data in `cat-service.js`**, because we want to see the actual data coming from the database.
 
-1. Deploy the data model again to add your initial data:
-
-    ```bash
-    cds deploy
-    ```
-
-1. Run the service again:
-
-    ```bash
-    cds run
-    ```
-
 1. To test your service, open a web browser and go to:
 
     - `http://localhost:4004/catalog/Books`
@@ -421,11 +409,6 @@ Your service is now backed by a fully functional database. This means you can re
 
     Whenever orders are created, this code is triggered.  It updates the book stock by the given amount, unless there are not enough books left.
 
-1. Run your service:
-
-    ```bash
-    cds run
-    ```
 
 1. In Postman, execute the `GET Books` request.
 
