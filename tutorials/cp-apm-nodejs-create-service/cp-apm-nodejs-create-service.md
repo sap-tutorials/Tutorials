@@ -152,17 +152,20 @@ You will create a simplistic all-in-one service definition.
 
 1. Save your file.
 
-1. Run your service locally.  In the `my-bookshop` folder, execute:
-
+    As soon as you have saved your file, the running cds watch will react immediatelly with an output as shown below:
     ```bash
-    cds run
+    [cds] - connect to datasource - sqlite::memory:
+    /> successfully deployed to sqlite in-memory db
+    [cds] - serving CatalogService at /catalog
+    [cds] - launched in: 977.671ms
+    [cds] - server listening on http://localhost:4004 ...
     ```
+
 
 1. To test your service, go to `http://localhost:4004`.
 
     You won't see data, because you have not added a data model yet. However, click on the available links and confirm the service is running.
 
-6. To stop the service and go back to your project directory, press `CTRL+C`.
 
 [DONE]
 
@@ -174,7 +177,7 @@ Add service provider logic to return mock data.
 
 1. In the **`srv`** folder, create a new file called **`cat-service.js`**.
 
-2. Add the following code:
+1. Add the following code:
 
     ```javascript
     module.exports = (srv) => {
@@ -197,23 +200,16 @@ Add service provider logic to return mock data.
     }
     ```
 
-3. Save the file.
+1. Save the file.
 
-4. Run the `CatalogService` again:
-
-    ```bash
-    cds run
-    ```
-
-5. To test your service, click on these links:
+1. To test your service, click on these links:
 
     - `http://localhost:4004/catalog/Books`
 
     - `http://localhost:4004/catalog/Authors`
 
-    >You should see the mock data you added for the Books and Authors entities.
+    You should see the mock data you added for the Books and Authors entities.
 
-6. To stop the service and go back to your project directory, press `CTRL+C`.
 
 [DONE]
 
