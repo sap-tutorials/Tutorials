@@ -38,7 +38,7 @@ time: 30
 2. Install the CDS command-line tools by executing the following command:
 
     ```bash
-    npm i -g @sap/cds
+    npm i -g @sap/cds-dk
     ```
 
     This installs the `cds` command, which we will use in the next steps.
@@ -49,7 +49,8 @@ time: 30
     cds
     ```
 
-    ![cds commands](cds-commands.png)
+    ![cds commands](cds-commands.png) 
+    -->EDIT OR REMOVE THE PICTURE
 
     This lists the available `cds` commands.  For example, use `cds version` to check the version you have installed.
 
@@ -90,6 +91,20 @@ time: 30
 1. Open VS Code, go to **File | Open Folder** and choose the **`my-bookshop`** folder.
 
     ![Open project](open-project.png)
+
+1. Go to **Terminal | New Terminal** to open a command line window within VS Code and run the following command :
+    ```bash
+    cds init my-bookshop
+    ```
+    This command tries to start a cds server process. As there is no content in the project so far, it just keeps waiting for content with a message as shown below :
+    ```bash
+    [cds] - running nodemon...
+    --exec cds run --with-mocks --in-memory?
+    --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
+
+    No models found at ./db ./srv ./schema.cds ./services.cds.
+    Waiting for some to arrive...
+    ```
 
 [DONE]
 
