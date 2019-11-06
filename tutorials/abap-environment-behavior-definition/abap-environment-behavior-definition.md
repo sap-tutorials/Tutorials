@@ -49,7 +49,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
       define behavior for Z_I_ROOM_XXX
         alias room
         lock master
-        etag lastchangeddatetime
+        etag master lastchangeddatetime
         {
          create;
           update;

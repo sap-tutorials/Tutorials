@@ -139,6 +139,7 @@ METHOD if_oo_adt_classrun~main.
 Run your class in the console (`F9`).
 
 The output should look something like this:
+.
 ![Image depicting step-9-console](step-9-console.png)
 
 [DONE]

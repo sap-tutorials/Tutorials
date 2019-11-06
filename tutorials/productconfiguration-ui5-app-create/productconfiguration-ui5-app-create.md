@@ -3,8 +3,8 @@ title: Create an SAPUI5 Application for SAP Variant Configuration and Pricing
 description: Build a basic UI5 application that loads a configuration and changes the value of one characteristic using the SAP Variant Configuration and Pricing APIs from SAP API Business Hub.
 auto_validation: true
 time: 45
-tags: [tutorial>beginner, topic>sapui5, products>sap-web-ide, product>sap-product-configuration]
-primary_tag: product>SAP_VARIANT_CONFIGURATION_AND_PRICING
+tags: [tutorial>beginner, topic>sapui5, products>sap-web-ide]
+primary_tag: products>sap-variant-configuration-and-pricing
 ---
 
 

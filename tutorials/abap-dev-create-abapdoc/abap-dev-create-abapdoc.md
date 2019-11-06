@@ -3,7 +3,7 @@ title: Create ABAPDoc Comments in Your Class
 description: Learn how to maintain ABAPDoc documentation for your class
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
+tags: [  tutorial>beginner, topic>abap-development ]
 time: 5
 ---
 
@@ -172,7 +172,7 @@ ENDCLASS.
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
 
-Create an ABAPDoc comment for the parameter `PLANETYPE`, including the explanatory text **`Type of plane`**.
+Create an ABAPDoc comment for the parameter `PLANETYPE`. The explanatory text should read **`Type of plane`**.
 
 Enter the comment in the box below and choose **Submit Answer**.
 
