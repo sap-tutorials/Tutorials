@@ -46,7 +46,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     define behavior for ZI_Travel_M_XXX alias Travel
     persistent table ztravel_xxx
-    etag last_changed_at
+    etag master last_changed_at
     lock master
     {
     // administrative fields (read only)
