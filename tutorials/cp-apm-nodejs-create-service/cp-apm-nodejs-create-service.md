@@ -50,7 +50,7 @@ time: 30
     ```
 
     ![cds commands](cds-commands.png) 
-    -->EDIT OR REMOVE THE PICTURE
+    DOUBT-->EDIT OR REMOVE THE PICTURE
 
     This lists the available `cds` commands.  For example, use `cds version` to check the version you have installed.
 
@@ -272,7 +272,8 @@ To get started quickly, you have already added a simplistic all-in-one service d
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a Database)] - HAVE TO CHECK IF IT CAN BE REMOVED
+[ACCORDION-BEGIN [Step 7: ](Add a Database)] 
+DOUBT --> HAVE TO CHECK IF IT CAN BE REMOVED
 
 The `cds` runtime includes built-in generic handlers that automatically serve all CRUD requests. After installing `SQLite3` packages, you can deploy your data model.
 
