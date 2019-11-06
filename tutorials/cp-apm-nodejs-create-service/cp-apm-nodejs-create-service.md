@@ -94,7 +94,7 @@ time: 30
 
 1. Go to **Terminal | New Terminal** to open a command line window within VS Code and run the following command :
     ```bash
-    cds init my-bookshop
+    cds watch
     ```
     This command tries to start a cds server process. As there is no content in the project so far, it just keeps waiting for content with a message as shown below :
     ```bash
