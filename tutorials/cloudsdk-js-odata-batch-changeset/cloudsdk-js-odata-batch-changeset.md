@@ -1,6 +1,6 @@
 ---
-title: Build OData Batch Requests for Writing Data with the SAP Cloud SDK's Virtual Data Model
-description: Build OData Batch Requests for writing data with the SAP Cloud SDK's Virtual Data Model in your Address Manager application.
+title: Build OData Batch Requests for Writing Data with SAP Cloud SDK's Virtual Data Model
+description: Build OData batch requests for writing data with the SAP Cloud SDK's Virtual Data Model in your Address Manager application.
 auto_validation: true
 time: 20
 tags: [ tutorial>advanced, topic>javascript, products>sap-cloud-platform, topic>odata]
@@ -10,7 +10,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Prerequisites
  - Have `Node.js` and `npm` [installed on your machine](s4sdkjs-prerequisites).
  - Have access to an SAP S/4HANA Cloud system or the [SAP API Business Hub Sandbox](https://api.sap.com/getting-started), or use the [Business Partner Mock Service](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
- - Read the [tutorials](https://developers.sap.com/group.cloudsdk-js-vdm.html) of building basic OData queries with the SAP Cloud SDK's Virtual Data Model.
+ - Read the [tutorials](group.cloudsdk-js-vdm) of building basic OData queries with the SAP Cloud SDK's Virtual Data Model.
  - Basic knowledge of OData is recommended, but not required.
 
 ## Details
@@ -18,7 +18,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
   - How to use the Virtual Data Model to create multiple entities in one request
   - How to trigger a batch request consisting of multiple change sets from an API endpoint exposed by your application
 
-The goal of this tutorial group is to continue implementing the TypeScript/JavaScript web application you built from [previous tutorials](https://developers.sap.com/group.cloudsdk-js-vdm.html) with the OData Batch request feature of the SAP Cloud SDK.
+The goal of this tutorial group is to continue implementing the TypeScript/JavaScript web application you built in the [Build an Address Manager with the SAP Cloud SDK's OData Virtual Data Model](group.cloudsdk-js-vdm) tutorials by using the OData Batch request feature of the SAP Cloud SDK.
 
 In this tutorial, you use the `batch changeset` for creating multiple business partner addresses via an API endpoint.
 
@@ -42,7 +42,7 @@ Changeset consists of a collection of write operations (`create`, `update` or `d
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Prepare your application.)]
+[ACCORDION-BEGIN [Step 2: ](Prepare your application)]
 As one of the prerequisites, you should have read the [tutorials](https://developers.sap.com/group.cloudsdk-js-vdm.html) and you should have a running application with a connection to an SAP S/4HANA Cloud system by using the SAP Cloud SDK's Virtual Data Model.
 
 Now open the `package.json` and update the dependency versions like below, since the `OData batch request` feature is released in the version `1.11.2`.
@@ -55,7 +55,7 @@ Now open the `package.json` and update the dependency versions like below, since
 }
 ```
 
-Then run `npm install` in your root folder to install/update the dependencies.
+Run `npm install` in your root folder to install/update the dependencies.
 
 [DONE]
 [ACCORDION-END]
@@ -65,6 +65,7 @@ Then run `npm install` in your root folder to install/update the dependencies.
 [OPTION BEGIN [TypeScript]]
 
 Create a file with the name `batch-changeset-route.ts` in the root folder and then copy the code below to the file:
+
 ```JavaScript
 import { Request, Response } from 'express';
 import {
@@ -99,7 +100,7 @@ export function batchChangesetRoute(req: Request, res: Response) {
 ```
 Replace the `url` with your system info.
 
-Then open the `application.ts`, add the router definition and the missing import.
+Open the `application.ts`, add the router definition and the missing import.
 
 ```JavaScript
 ...
@@ -119,6 +120,7 @@ private routes(): void {
 [OPTION BEGIN [JavaScript]]
 
 Create a file with the name `batch-changeset-route.js` in the root folder and then copy the code below to the file:
+
 ```JavaScript
 const { batch, BusinessPartnerAddress, changeset } = require('@sap/cloud-sdk-vdm-business-partner-service');
 
@@ -145,7 +147,7 @@ export function batchChangesetRoute(req, res) {
 ```
 Replace the `url` with your system info.
 
-Then open the `application.js`, add the router definition and the missing import.
+Open the `application.js`, add the router definition and the missing import.
 
 ```JavaScript
 ...
@@ -167,7 +169,7 @@ Please note, `post` is used as the method of the `batch-changeset` endpoint, ali
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test: create business partner addresses in a batch request)]
+[ACCORDION-BEGIN [Step 4: ](Test by creating addresses in batch request)]
 After starting your application you can make a request with `post` as the `method`, `localhost:8080/batch-changeset` as the `url` and the json `body`:
 ```JSON
 {
@@ -281,7 +283,7 @@ You create 2 business partner addresses as shown in the response example:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Wrap up)]
-In this tutorial, learned how to make a OData Batch request with the SAP Cloud SDK's Virtual Data Model for writing data to your cloud system and you built your own application that can send multiple changesets in one batch request.
+In this tutorial, you learned how to make an OData batch request with the SAP Cloud SDK's Virtual Data Model for writing data to your cloud system, and you built your own application that can send multiple changesets in one batch request.
 
 [DONE]
 [ACCORDION-END]
