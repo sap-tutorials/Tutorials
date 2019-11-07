@@ -9,6 +9,7 @@ primary_tag: products>sap-cloud-platform-portal
 
 ## Prerequisites
  - You have a development space set up in the Cloud Foundry environment so that you can make use of the services you need to develop your app module.
+ - You have launched SAP Web IDE from your trial subaccount, (or from your own subaccount that you want to use)
 
 
 ## Details
