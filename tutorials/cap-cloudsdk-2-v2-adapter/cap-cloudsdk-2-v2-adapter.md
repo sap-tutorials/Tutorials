@@ -235,6 +235,8 @@ Promise {
 > [ 'Walldorf', 'Palo Alto', 'Hallbergmoos', 'Potsdam' ]
 ```
 
+> You may or may not see the detail of the Promise in your output (as it's shown here), depending on circumstances ... but you should at least see the data returned.
+
 The call returns a Promise from which, once resolved, we can extract data. As you can see, we've managed to retrieve the city names from the data served by this mock service (you can check the names against the initial data that is loaded in `server.js`).
 
 Feel free at this stage to experiment further with the SDK's fluent API, before switching back over to the first integrated terminal, where you'll see some logging output that will look similar to this:
