@@ -25,7 +25,7 @@ primary_tag: products>sap-hana\,-express-edition
 
 In the Google Cloud Shell, use the following two commands to deploy the database artifacts into SAP HANA, using the connection information you created.
 
-```ssh
+```shell
 cd ~/teched/db
 npm start
 ```
@@ -46,7 +46,7 @@ The `.hdbcds` files have now been translated into tables in the HDI container yo
 
 Go into the root directory and start the services using the following two commands:
 
-```ssh
+```shell
 cd ..
 npm start
 ```
@@ -83,6 +83,7 @@ Go back into the **console for you HANA express virtual machine**.
 ![HANA ssh](10.png)
 
 > Note: If you closed the console, click on SSH button next to your [virtual machine](https://console.cloud.google.com/compute/instances) and run `sudo su - hxeadm`.
+>
 > Command `xs service-key my-hdi my-key` will provide the credential information in the same machine.
 
 You will now query the SAP HANA database and see how the sample files have been loaded into the tables.
@@ -90,7 +91,7 @@ You will now query the SAP HANA database and see how the sample files have been 
 Use the following command to check the data inserted by the CDS module in the database:
 
 ```sql
-select * from "FOOD"."TECHED_RECIPES_FOODS"
+select * from "FOOD"."TECHED_RECIPES_FOODS" order by "ID" asc
 ```
 
 ![deploy to db](7.png)
