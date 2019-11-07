@@ -21,7 +21,11 @@ In this tutorial, we will add web content to a Portal page and design its layout
 
 Let's add meaningful content to your `Home` page.
 
->Note for those doing the TechEd Mission.  Due to time limitations, you can skip designing **Section 3** of the page.
+>**Note for those doing this tutorial at SAP TechEd:** Due to time limitations, you can do only Steps 2 and 6. The other steps show you additional capabilities but take longer.
+
+>However, to get credit for completing the mission and to get a prize, you still must click the **DONE** buttons in the steps you skipped.
+
+---
 
 [ACCORDION-BEGIN [Step 1: ](Download resources)]
 

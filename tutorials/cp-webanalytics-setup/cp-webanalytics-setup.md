@@ -1,6 +1,6 @@
 ---
 title: Set Up SAP Web Analytics
-description: Seamlessly set up SAP Web Analytics using this step by step instructions.
+description: Subscribe to the trial version of SAP Web Analytics on the SAP Cloud Platform cockpit.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-web-analytics, products>sap-cloud-platform]
@@ -8,38 +8,57 @@ primary_tag: products>sap-web-analytics
 ---
 
 ## Prerequisites  
- - You have a SAP Cloud Platform enterprise account.
+[Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn
-  - How to onboard to SAP Web Analytics
+  - How to subscribe to SAP Web Analytics
+  - Who are customer admin and space admin
   - Create a customer admin who can set up SAP Web Analytics
 
----
 
-[ACCORDION-BEGIN [Step 1: ](Choose Cloud Foundry)]
+SAP Web Analytics is a software as a service (SaaS) offering on the SAP Cloud Platform.
 
-In the home page of SAP Cloud Platform cockpit, select **Cloud Foundry**.
+The service lets you collect, report, and analyze the usage data of your website that helps you to identify meaningful patterns from various digital channels. These insights may lead you to implement improvements that can help you optimize the overall user experience of your websites.
 
-![Cloud Foundry](Step 1.png)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bXMtor_AmPE" frameborder="0" allowfullscreen></iframe>
+
+A **customer admin** in SAP Web Analytics is an administrator for that particular subscription. For example, the IT department of an organization that subscribes to the service.
+
+As a customer admin for Web Analytics service, within your subscription, you create unique workspaces. In SAP Web Analytics, these workspaces are called **Spaces**.
+
+You can create a space for different departments in your organization. Each space is managed by one or more **space admins**. The space admins can register multiple websites in a space. A customer admin can be a space admin too.
+
+For example, create a space named "E-commerce" to which you register your shopping website for usage tracking.
+
+
+[ACCORDION-BEGIN [Step 1: ](Open the SAP Cloud Platform Cockpit)]
+
+In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP Cloud Platform cockpit trial, select **Enter Your Trial Account**.
+
+![Cloud Foundry](Step 1_New.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a subaccount)]
 
-Skip this step if you already have a subaccount.
+Skip this step if you already have a subaccount with Amazon Web Services (AWS) in Europe (Frankfurt).
 
 1. Select **New Subaccount**.
+
 2. Add the following details and select **Create**. If you want to get a flavor of the beta features, enable the checkbox.
 
-|  Field Name       | Value
-|  :-------------   | :-------------
-|  **Display Name**     | **`Subaccount for SAP Web Analytics`**
-|  **Subdomain**        | **`web-analytics`** (provide a generic value for your organization; this value will be prefixed to the URL that SAP Web Analytics provides for the application)
+    |  Field Name       | Value
+    |  :-------------   | :-------------
+    |  **Display Name**     | **`Display name of your choice`**
+    |  **Environment**      | **`Cloud Foundry`**
+    |  **Provider**         | **`Amazon Web Services (AWS)`**
+    |  **Region**           | **`Europe (Frankfurt)`**
+    |  **Subdomain**        | **`web-analytics`** (provide a generic value for your organization; this value will be prefixed to the URL that SAP Web Analytics provides for the application)
 
+    ![Subaccount](Step 2.png)
 
-![Subaccount](Step 2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -48,10 +67,11 @@ Skip this step if you already have a subaccount.
 
 1. Open your subaccount.
 2. In the left pane, select **Subscriptions**.
-3. Look out for **SAP Web Analytics** in the list of services. Select the service to open it.
+3. Look out for **Web Analytics** in the list of services. Select the service to open it.
 4. Select **Subscribe**. You'll see that you are now subscribed.
 
 ![Subscribe](Step 3.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -85,6 +105,9 @@ Skip this step if you already have a subaccount.
 
     ![Add Role](Step 4.2.png)
 
+
+7. Select **Save**.
+
 [DONE]
 [ACCORDION-END]
 
@@ -93,47 +116,20 @@ Skip this step if you already have a subaccount.
 1. Select your subaccount to navigate back to subaccount overview page.
 2. In the left pane, select **Security** and then **Trust Configuration**.
 3. Select **SAP ID Service**. If you've configured your own ID service with SAP Cloud Platform, select your custom ID service.
-4. Enter the e-mail address of the user (or the attribute that you've configured in the ID service) you want to onboard as the customer admin and select **Show Assignments**.
+4. Enter the e-mail address of the user (or the attribute that you've configured in the custom ID service) you want to onboard as the customer admin and select **Show Assignments**.
 5. If the user is not part of the ID service, add the user.
 6. Select **Assign Role Collection**.
 7. In the **Role Collection** dropdown, select the new role that you created for SAP Web Analytics and select **Assign Role Collection**.
 
 ![Create Trust Configuration](Step 5.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Open SAP Web Analytics)]
-
-1. Select your subaccount to navigate back to subaccount overview page.
-2. In the left pane, select **Subscriptions**.
-3. On the **SAP Web Analytics** tile, select **Go to Application**.
-4. Log on with the credentials that you provided in the ID Service. You'll see that there are no spaces available.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Create a space in SAP Web Analytics)]
-
-Spaces are unique work spaces that you can create for different departments and LOBs. Within each space, you can add one or more websites that belong to the department. For example, create a space named `E-commerce` to which you can register your shopping website for tracking.
-
-1. Select **Add Space**.
-2. Enter a name and optional description for the space.
-3. Enter the e-mail address and name of the first user who you want to assign to the space.
->This user becomes the space admin who can register websites for tracking, manage the space and users. Customer admin and space admin can further add multiple admins for the space.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Inform your space admin)]
 
-Provide the application URL to the space admin. While opening SAP Web Analytics for the first time, the space admin will see that there are no sites available for tracking.
 
-The first action for the space admin is to register a website for tracking.
 
-For more information, see [SAP Web Analytics on SAP Help Portal](https://help.sap.com/viewer/e342b49c78c74d4e8ebc00700a791aee/Cloud/en-US/9b283b52788247a0b613b478b0842dca.html).
 
-[DONE]
-[ACCORDION-END]
 
 ---
