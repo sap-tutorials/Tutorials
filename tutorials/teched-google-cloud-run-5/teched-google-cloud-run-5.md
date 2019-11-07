@@ -24,7 +24,7 @@ These tutorials are meant to be completed at the Developer Garage at SAP TechEd.
 
 Use the following two commands to create a file called `.npmrc` in the `srv` directory. This file is used by `NPM` for configuration.
 
-```ssh
+```shell
 touch ~/teched/srv/.npmrc
 edit ~/teched/srv/.npmrc
 ```
@@ -41,7 +41,7 @@ Paste the following line into the file:
 
 Copy the `.npmrc` file to the root folder too with the following command:
 
-```ssh
+```shell
 cp ./srv/.npmrc ~/teched
 ```
 
@@ -55,14 +55,14 @@ You will create a Docker image from a Node.js image using the application you cr
 
 Create a Docker file using the following command:
 
-```ssh
+```shell
 touch ~/teched/Dockerfile
 edit ~/teched/Dockerfile
 ```
 
 Insert the following contents into the `Dockerfile`
 
-```text
+```Dockerfile
 # Use the official Node.js 8 image.
 # https://hub.docker.com/_/node
 FROM node:8
@@ -85,7 +85,6 @@ COPY . .
 
 # Run the web service on container startup.
 CMD [ "npm", "start" ]
-
 ```
 
 ![NPM config](3.png)
@@ -96,11 +95,13 @@ CMD [ "npm", "start" ]
 
 [ACCORDION-BEGIN [Step 3: ](Upload the image)]
 
-Enable the Cloud Build API by visiting the following URL in a new tab:
+Open the following URL in a new tab...
 
-```web
+```url
 https://console.cloud.google.com/apis/api/cloudbuild.googleapis.com/overview
 ```
+
+...and **Enable** the Cloud Build API.
 
 ![NPM config](api.png)
 
@@ -108,10 +109,11 @@ Wait until the API has been enabled. You can close this tab and go back to the C
 
 Use the following command to create and upload a container image. Answer **y** if prompted to activate Cloud Run for your account.
 
-```ssh
+```shell
 cd ~/teched
 gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/teched
 ```
+
 This will take about a minute.
 
 Make sure you see a **SUCCESS** message once the process is finished.
@@ -126,7 +128,7 @@ Make sure you see a **SUCCESS** message once the process is finished.
 
 Use the following command to get the `VCAP_SERVICES` file as a string.
 
-```ssh
+```shell
 jq -r "to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]" ~/teched/default-env.json
 ```
 
