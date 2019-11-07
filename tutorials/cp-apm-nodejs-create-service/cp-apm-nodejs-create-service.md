@@ -49,8 +49,7 @@ time: 30
     cds
     ```
 
-    ![cds commands](cds-commands.png) 
-    TO DO-->EDIT OR REMOVE THE PICTURE
+    ![cds commands](new-cds-commands.PNG) 
 
     This lists the available `cds` commands.  For example, use `cds version` to check the version you have installed.
 
