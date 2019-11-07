@@ -301,6 +301,7 @@ Create a file **`manifest.json`** within the **`webapp`** folder, copy the follo
 	"sap.app": {
 		"id": "tutorial.genericusertask",
 		"type": "application",
+		"_version": "1.3.0",
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
@@ -313,6 +314,7 @@ Create a file **`manifest.json`** within the **`webapp`** folder, copy the follo
 	},
 	"sap.ui": {
 		"technology": "UI5",
+		"_version": "1.3.0",
 		"icons": {
 			"icon": "",
 			"favIcon": "",
@@ -332,6 +334,7 @@ Create a file **`manifest.json`** within the **`webapp`** folder, copy the follo
 		]
 	},
 	"sap.ui5": {
+		"_version": "1.2.0",
 		"rootView": {
 			"viewName": "tutorial.genericusertask.Main",
 			"type": "XML"
@@ -378,7 +381,7 @@ Create a file **`manifest.json`** within the **`webapp`** folder, copy the follo
 	},
 	"sap.platform.hcp": {
 		"uri": "webapp",
-		"_version": "1.1.0"
+		"_version": "1.2.0"
 	}
 }
 ```
