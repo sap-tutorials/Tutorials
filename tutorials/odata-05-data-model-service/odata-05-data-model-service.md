@@ -57,14 +57,6 @@ While still in the **Preferences** perspective, select the **Cloud Foundry** set
 
 ![CF preferences](cf-preferences.png)
 
-> You need a builder to facilitate the build and deploy activities that are triggered from the CDS features in SAP Web IDE; the builder is installed in your Cloud Foundry environment.
-
-Still in the **Preferences** perspective, select the **Core Data Services** settings at the **Global Preferences** level and make sure that the **Perform CDS Build upon save** option is checked:
-
-![CDS Build preference](cds-build-preference.png)
-
-This means that the CDS facilities in SAP Web IDE will do the right things at the right time for you automatically.
-
 [DONE]
 [ACCORDION-END]
 
