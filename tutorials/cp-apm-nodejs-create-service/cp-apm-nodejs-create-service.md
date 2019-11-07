@@ -353,9 +353,14 @@ To stop `SQLite` and go back to the your project directory, press `CTRL+C`.
 1. Run your service:
 
     ```bash
-    cds run
+    cds watch
     ```
-
+    ```bash
+    [cds] - connect to datasource - sqlite:db/my-bookshop.db
+    [cds] - serving CatalogService at /catalog - with impl: srv\cat-service.js
+    [cds] - launched in: 4356.854ms
+    [cds] - server listening on http://localhost:4004 ...
+    ```
 [DONE]
 
 [ACCORDION-END]
