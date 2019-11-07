@@ -383,6 +383,8 @@ Create a file **`manifest.json`** within the **`webapp`** folder, copy the follo
 }
 ```
 
+> For the purposes of this tutorial, you can ignore any warnings or errors relating to missing or invalid version numbers in this file.
+
 Your app folder structure should now look like this:
 
 ![complete app folder structure](app-folder-structure.png)

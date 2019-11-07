@@ -217,8 +217,7 @@ annotate CatalogService.Orders with @(
 		HeaderInfo: {
 			TypeName: 'Order',
 			TypeNamePlural: 'Orders',
-			Title: { Value: book.title },
-			Description: { Value: book.author.name }
+			Description: { Value: book.title }
 		}
 	}
 
@@ -233,7 +232,7 @@ It will also cause the display of any selected item from the list, to look like 
 
 ![display of selected item](selected-item-display.png)
 
-Note that the value for the description follows multiple navigation paths, from the order through the book navigation property, and from there, through the author navigation property, to the name property (`book.author.name`). Lovely!
+Lovely!
 
 [DONE]
 [ACCORDION-END]

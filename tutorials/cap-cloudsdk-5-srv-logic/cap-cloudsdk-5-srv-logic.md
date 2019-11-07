@@ -280,8 +280,8 @@ cds run
 This time you should notice that the startup messages also mention the fact that the main service (`CatalogService`) has an implementation in `cat-service.js`, which (by implication) has also been successfully loaded:
 
 ```
-[cds] - connect to datasource - sqlite:consumer-app.db
-[cds] - serving CatalogService at /catalog - impl: cat-service.js     <---------
+[cds] - connect to datasource - sqlite:sqlite.db
+[cds] - serving CatalogService at /catalog - with impl: srv/cat-service.js
 [cds] - service definitions loaded from:
 
   srv/cat-service.cds
@@ -290,8 +290,9 @@ This time you should notice that the startup messages also mention the fact that
   db/data-model.cds
   node_modules/@sap/cds/common.cds
 
-[cds] - server listens at http://localhost:4004 ... (terminate with ^C)
-[cds] - launched in: 1250.645ms
+[cds] - launched in: 1963.309ms
+[cds] - server listening on http://localhost:4004 ...
+[ terminate with ^C ]
 ```
 
 > Regarding each of the definition files listed in this output, take a moment to make sure you understand why each of them has been loaded.

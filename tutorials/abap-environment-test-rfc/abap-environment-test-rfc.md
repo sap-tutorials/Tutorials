@@ -256,8 +256,8 @@ CLASS zjp_out_test IMPLEMENTATION.
         "Exception handling is mandatory to avoid dumps
         CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
           DESTINATION lv_rfc_dest_name
-*          EXPORTING
-*             max_rows              = 5
+          EXPORTING
+             max_rows              = 10
           TABLES
             headerdata            = lt_product
           EXCEPTIONS

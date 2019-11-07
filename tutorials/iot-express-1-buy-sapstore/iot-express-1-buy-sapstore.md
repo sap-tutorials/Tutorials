@@ -6,21 +6,18 @@ description: Purchase SAP Leonardo IoT Foundation and acquire the hardware neces
 auto_validation: true
 primary_tag: products>sap-leonardo-iot
 tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-internet-of-things, tutorial>license]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - You will need a credit card and an email account.
-
-## Next Steps
- - [Create Device Model](https://developers.sap.com/tutorials/iot-express-2-create-device-model.html)
 
 ## Details
 ### You will learn  
-You will learn which services from SAP Cloud Platform are required for building and deploying applications. You will see how to acquire them. You will also get guidance on a simple hardware kit to get you started with sensors.
+  - Which services from SAP Cloud Platform are required for building and deploying applications
+  - How to acquire these Services
+  - How to get started with sensors using a simple hardware kit
 
-### Time to Complete
-**15 Min**
 
 
 ---
@@ -29,7 +26,7 @@ You will learn which services from SAP Cloud Platform are required for building 
 
 The simplest way to get the set of required accounts is to register at [http://www.sapstore.com/](https://www.sapstore.com/solutions/40108/SAP-Leonardo-IoT-Foundation%2C-express-edition) and purchase the SAP Leonardo IoT Foundation Express Edition package. This way all of the communication relative to the setup will reach you directly based on your email address.
 
-![Checkout](shopcheckout.png)
+!![Checkout](shopcheckout.png)
 
 You will receive a so-called s-user (user id is starting with s) and a global account via email. At this point it's critical that you or someone you onboard to the global account as an administrator walk through the following end-to-end configuration and onboarding guide at [Getting Started with SAP Leonardo IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest). Do go through all of the steps in full to make sure everything is set up correctly and you can really get started building IoT applications.
 

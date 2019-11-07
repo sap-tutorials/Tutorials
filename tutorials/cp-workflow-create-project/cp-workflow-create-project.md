@@ -1,5 +1,5 @@
 ---
-title: Create a Workflow Project from a Template
+title: Create a Workflow Project from a Template (Neo)
 description: Create a new workflow project in SAP Cloud Platform using SAP Web IDE.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
