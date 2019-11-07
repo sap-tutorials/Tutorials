@@ -272,41 +272,8 @@ To get started quickly, you have already added a simplistic all-in-one service d
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a Database)] 
-TO DO --> HAVE TO CHECK IF IT CAN BE REMOVED
 
-The `cds` runtime includes built-in generic handlers that automatically serve all CRUD requests. After installing `SQLite3` packages, you can deploy your data model.
-
-1. Install `SQLite3` packages
-
-    ```bash
-    npm i sqlite3 -D
-    ```
-
-1. Deploy the data model to an `SQLite` database:
-
-    ```bash
-    cds deploy --to sqlite:db/my-bookshop.db
-    ```
-
-    You have now created an `SQLite` database file under `db/my-bookshop.db`.
-    This configuration is saved in your `package.json` as your default data source. For subsequent deployments using the default configuration, you just need to run `cds deploy`.
-
-2. Open `SQLite` and view the newly created database:
-
-    ```bash
-    sqlite3 db/my-bookshop.db -cmd .dump
-    ```
-
-    >If this does not work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db\my-bookshop.db -cmd .dump`.
-
-1. To stop `SQLite` and go back to the your project directory, press `CTRL+C`.
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Add initial data)]
+[ACCORDION-BEGIN [Step 7: ](Add initial data)]
 
 Add plain CSV files under **`db/csv`** to fill your database tables with initial data.
 
@@ -333,15 +300,9 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
 
     >Make sure you now have a folder hierarchy `db/csv/...`. And remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
-[DONE]
+As we now have a fully capable SQL database connected filled with some initial data, we can send complex OData queries, served by the built-in generic providers
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Test generic handlers with Postman)]
-
-Your service is now backed by a fully functional database. This means you can remove the mock data handlers from `cat-service.js` and see the generic handlers shipped with the SAP Cloud Application Programming Model in action.
-
-1. **Remove the code with mock data in `cat-service.js`**, because we want to see the actual data coming from the database.
+1. **Remove the code with mock data in `cat-service.js`**, because we want to see the data loaded from the csv.
 
 1. To test your service, open a web browser and go to:
 
@@ -351,7 +312,59 @@ Your service is now backed by a fully functional database. This means you can re
 
     - `http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)`
 
-    >You should see a book titled Jane Eyre. If this is not the case, make sure you have removed the mock data from `cat-service.js` as indicated above.
+    >You should see a book titled Jane Eyre. If this is not the case, make sure you have removed the mock data from `cat-service.js`.
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Add a Persistent Database)] 
+
+Instead of using in-memory, we can also use persistent databases
+
+> If `cds watch` is running, press `CTRL+C` to stop the service
+
+1. Install `SQLite3` packages
+
+    ```bash
+    npm add sqlite3 -D
+    ```
+
+1. Deploy the data model to an `SQLite` database:
+
+    ```bash
+    cds deploy --to sqlite:db/my-bookshop.db
+    ```
+
+    You have now created an `SQLite` database file under `db/my-bookshop.db`.
+    This configuration is saved in your `package.json` as your default data source. For subsequent deployments using the default configuration, you just need to run `cds deploy`.
+    
+    The differrence to the automatically provided in-memory db is that we now get a persistent database stored in the local file.
+
+1. Open `SQLite` and view the newly created database:
+
+    ```bash
+    sqlite3 db/my-bookshop.db -cmd .dump
+    ```
+
+    >If this does not work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db\my-bookshop.db -cmd .dump`.
+
+To stop `SQLite` and go back to the your project directory, press `CTRL+C`.
+
+1. Run your service:
+
+    ```bash
+    cds run
+    ```
+
+[DONE]
+
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 9: ](Test generic handlers with Postman)]
+
+We can now see the generic handlers shipped with the SAP Cloud Application Programming Model in action.
+
 
 1. Download the [Postman application](https://www.getpostman.com/).
 
