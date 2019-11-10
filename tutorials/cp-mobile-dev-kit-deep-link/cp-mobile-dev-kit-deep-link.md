@@ -32,7 +32,7 @@ If an app is already installed, you can specify a custom URL scheme (iOS Univers
 
 ![MDK](img_1.gif)
 
->**This tutorial has been executed using public store MDK client which has out of the box functionality to open SAP standard apps like SAP Mobile Cards and SAP Fiori Client.
+>**This tutorial has been executed using public store MDK client which has out of the box functionality to open the SAP standard apps like SAP Mobile Cards and SAP Fiori Client.
 If you are building a custom version of Mobile development kit client, there you can implement deep links by specifying related custom URL scheme.**
 
 [ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
@@ -49,8 +49,7 @@ Right click on Workspace folder and select **New** | **MDK Empty Project**.
 
 >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
->More details on _MDK template_ is available in
-[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+>More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
 
 Enter the Project Name as `MDKDeepLink` and click **Next**.
 
