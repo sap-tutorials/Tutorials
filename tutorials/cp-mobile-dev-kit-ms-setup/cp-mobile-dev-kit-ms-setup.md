@@ -65,7 +65,11 @@ Click on **Mobile Settings Exchange** and select **Biometric Authentication Allo
 
 ![MDK](img_0010.1.1.png)
 
-Save the changes.
+**Save** the changes.
+
+Click `com.sap.mdk.demo` to navigate back to the app configuration page.
+
+![MDK](img_0010.2.png)
 
 Now, we will assign few more features like App Update, Offline in the app configuration. First, start with **Mobile App Update**. Click **+** icon to add this feature.
 
@@ -105,8 +109,6 @@ Select OData Version `V2` and click **Save**.
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
 Click `com.sap.mdk.demo` to navigate back to app configuration page.
-
-![MDK](img_0012.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

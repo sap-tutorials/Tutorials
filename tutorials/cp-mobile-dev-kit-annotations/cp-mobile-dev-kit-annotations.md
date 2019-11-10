@@ -85,11 +85,7 @@ In **Metadata Source** step, select **Customers** Entity Type and click **Next**
 
 ![MDK](img_3.png)
 
-In **Customization** step, select **Customer** Entity Type.
-
-Click **Next** and let's stick to the defaults.
-
-![MDK](img_22.png)
+In **Customization** step, click **Next** and let's stick to the defaults.
 
 In **Features** step, click **Finish**.
 
@@ -343,7 +339,7 @@ Click **Finish** to create list detail from OData Annotation.
 
 ![MDK](img_34.png)
 
-In MDK project, you will see new pages for Product.
+In MDK project, you will see new pages for **Product**.
 
 ![MDK](img_35.png)
 
