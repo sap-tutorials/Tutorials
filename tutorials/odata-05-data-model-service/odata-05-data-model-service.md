@@ -66,13 +66,13 @@ Before proceeding, it's worth checking that you have enough quota available for 
 
 ![Subaccount overview](subaccount-overview.png)
 
-Select the **Spaces** menu item on the left to see the space(s) within the Cloud Foundry organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something like this:
+Select the **Spaces** menu item on the left to see the space(s) within the Cloud Foundry organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something similar to this:
 
 ![CF space quota details](cf-space-quota-details.png)
 
 In this example, there is 1GB memory free, which is more than enough for the OData service app that will be generated and deployed.
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the SAP Web IDE console)]
