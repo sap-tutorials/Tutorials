@@ -1,9 +1,9 @@
 ---
-title: Create a Sample Application on Cloud Foundry Using the Blockchain Features of the SAP Cloud SDK
-description: Learn how to create the first sample application on Cloud Foundry using the blockchain features of the SAP Cloud SDK
+title: Create Cloud Foundry App with Blockchain Features of SAP Cloud SDK
+description: Learn how to create your first sample application on Cloud Foundry using the blockchain features of the SAP Cloud SDK.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, topic>java, topic>SAP Cloud SDK, topic>SAP S/4HANA]
+tags: [ tutorial>intermediate, topic>java, products>sap-cloud-sdk, products>sap-s-4hana]
 primary_tag: topic>blockchain
 author_name: Andreas Krompholz
 author_profile: https://github.com/akrompholz
@@ -20,12 +20,11 @@ author_profile: https://github.com/akrompholz
   - How to read data from the S/4HANA system using a blockchain network
   - How to create a Java application for SAP Cloud Platform
 
-
-  This tutorial will guide you how to create a Java application for SAP Cloud Platform (SCP) Cloud Foundry using SAP Cloud SDK. You will use the SAP Cloud Platform Blockchain service for MultiChain and generate a project using the SAP Cloud SDK Maven archetype, implement blockchain features to store data retrieving from a S/4HANA OData service. You will deploy the application to SAP Cloud Foundry and monitor it with the SAP Cloud Platform Blockchain Dashboard for Multichain.
+This tutorial will guide you how to create a Java application for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud SDK. You will use the SAP Cloud Platform Blockchain service for MultiChain and generate a project using the SAP Cloud SDK Maven archetype, implement blockchain features to store data retrieving from a S/4HANA OData service. You will deploy the application to SAP Cloud Foundry and monitor it with the SAP Cloud Platform Blockchain Dashboard for Multichain.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Generate spring-boot project from archetype)]
+[ACCORDION-BEGIN [Step 1: ](Generate Spring Boot project)]
 
 In this step we create a skeleton for our Java application using the SAP Cloud SDK Maven archetype for Spring-Boot.
 
@@ -60,19 +59,19 @@ You may use your Development IDE of choice and import the Maven project into its
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get familiar with the BankDetail OData Service in S/4HANA)]
+[ACCORDION-BEGIN [Step 2: ](Explore BankDetail OData service)]
 
 In the use case of our tutorial we want to read bank data form a S/4HANA system and store and validate it on the blockchain. In this step you will get familiar with the required OData service of S/4HANA.
 
 For this, open a browser and open the [SAP API Business Hub](https://api.sap.com). Click on the tile for SAP S/4HANA Cloud and enter bank data in the filter text. Since we want to get the bank data out of the S/4HANA and replicate it to the blockchain we choose the *Bank – Read ODATA service*.
 
-![IMAGE](image1.png)
+![Screenshot from SAP API hub showing location of odata service](image1.png)
 
 Choose the READ ODATA service and you will see two services for the entity set `A_BankDetail`. In order to test the services, you have to logon. Click on Try out for the first service and then click on Execute. In the response part you will see the data retrieved from S/4HANA.
 
 For testing we use the sandbox system as we have not configured any other system in Configure Environments. When we will call this sandbox system from our application, we must provide a user-specific API Key. You get this API Key from the button Show API Key on the top of the page.
 
-![IMAGE](image2.png)
+![Screenshot from SAP API hub showing the location of show api key button](image2.png)
 
 Note down the API key because we need it in the step 3. You may play around with the OData service and get familiar with the S/4HANA model for bank data. If you want to understand more on ODATA service and SAP Cloud SDK follow the tutorial [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry).
 
@@ -81,7 +80,7 @@ Note down the API key because we need it in the step 3. You may play around with
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Implement OData service BankDetail)]
+[ACCORDION-BEGIN [Step 3: ](Implement BankDetail OData service)]
 
 Go back to your Java project. Import the existing maven project into your IDE of choice or use a text editor.
 
@@ -156,15 +155,15 @@ If you are not yet familiar with the deployment to SAP Cloud Foundry, please fol
 
 Once the application is successfully pushed to Cloud Foundry, open the account cockpit for your SAP Cloud Cockpit. Under application you will see your deployed application:
 
-![IMAGE](image3.png)
+![Deployed application screenshot](image3.png)
 
 Click on your application. You will get an overview of your application.
 
-![IMAGE](image4.png)
+![Overview of deployed application on SAP Cloud Platform](image4.png)
 
 Do you remember the API Key from Step 1? Under User-Provided Variables on the left you can now enter this API key as a environment variable:
 
-![IMAGE](image5.png)
+![Access API key from deployed application](image5.png)
 
 Save the environment variable. To make the environment variable effective, restart your application.
 
@@ -172,18 +171,18 @@ Go back to your application overview and click the Application Route.
 
 The browser will open the standard page of the Spring-Boot Archetype of SAP Cloud SDK.
 
-![IMAGE](image6.png)
+![SAP Cloud SDK launch page in browser](image6.png)
 
 You may click on the link for the `HelloWorldController` that is delivered by default. Since we have created our own controller `BankDataController` with its request mapping replicate, enter the application route with /replicate:
 
-![IMAGE](image7.png)
+![Screenshot of helloworldcontroller](image7.png)
 
 In our example, we get 111 banks from S/4HANA. This will be read from the S/4HANA sandbox system we worked in in step 2. Feel free to play around with the sandbox data and change the BANKCOUNTRY parameter in your code if you like.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create SAP Cloud Platform Blockchain service for MultiChain)]
+[ACCORDION-BEGIN [Step 4: ](Create blockchain service for MultiChain)]
 
 To integrate our solution with blockchain, we first need to get a blockchain node. In this tutorial we use the blockchain technology Multichain that is integrated with some SAP applications already. To get a MultiChain node you can use the SAP Cloud Platform Blockchain service that is also available on the trial landscape.
 
@@ -191,22 +190,22 @@ Check the tutorial [Create a MultiChain Trial Node](blockchain-mc-create-node) a
 
 As a result you have your own MultiChain node in your SAP Cloud Platform account.
 
-![IMAGE](image8.png)
+![IScreenshot from SAP Cloud Platform showing multichain service instance](image8.png)
 
 To link this node to your application you must bind the node to the application. Click on your service when it is created.
 
-![IMAGE](image9.png)
+![screenshot from SAP Cloud Platform showing MultiChain service instance](image9.png)
 
 Click on Bind Instance and choose your application. You don't need to specify any parameters. After saving the binding you will get information on the environment services:
 
-![IMAGE](image10.png)
+![Screenshot from SAP Cloud Platform showing a created service key for MultiChain service instance](image10.png)
 
 Your node is now bound to your application. The API key is used to identify the node, the URL is a landscape specific and node specific URL to access the node.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add blockchain maven dependency and instantiate MultiChain service)]
+[ACCORDION-BEGIN [Step 5: ](Add blockchain maven dependency)]
 
 Let's now extend our Java application to communicate with this MultiChain node. The SAP Cloud SDK comes with all what you need to easily integrate with the node from your Java application.
 
@@ -317,20 +316,20 @@ After the application is deployed restart your application. Make sure you have /
 
 You will get a similar message:
 
-![IMAGE](image11.png)
+![Confirmation message from Bankdata](image11.png)
 
 If you re-execute the URL it should be stated that all entries already existed on the blockchain.
 
 You can validate the results in the dashboard of your MultiChain service instance in the cloud account cockpit. In the stream section you will see similar entries:
 
-![IMAGE](image13.png)
+![Screenshot from SAP Cloud Platform showing MultiChain streams](image13.png)
 
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Query BankDetails from Blockchain)]
+[ACCORDION-BEGIN [Step 7: ](Query BankDetails)]
 
 In this last step let us provide a new functionality to read a specific bank data from the blockchain using Java code.  As selection criteria we will read the key which contains the internal ERP bank number.
 
@@ -384,7 +383,7 @@ In this class we not only read the business data but also the blockchain data su
 
 Once you have saved the method, build the project and push the package to the cloud as you know from the previous steps. Run the application and use the suffix `read?id=<one valid bank internal ID>` to call our new service for a given bank internal ID. A valid bank internal ID can be retrieved from your S/4HANA Cloud sandbox system using the API Hub from step 2.
 
-![IMAGE](image12.png)
+![Screenshot from bankdata confirmation page](image12.png)
 
 From the S/4HANA we got an internal bank ID that is now used to read its `bankdata` providing the ID as get parameter for our new service.
 
