@@ -1,18 +1,19 @@
 ---
-title: Track and Analyze the Workflow using the Process Workspace Application
+title: Track the Workflow Using the Process Workspace Application
 description: Track the workflow in real time and analyze performance indicators to gain insights on the needed improvements.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-cloud-platform
+author_name: Kavya Gowda
+author_profile: https://github.com/Kavya-Gowda
 ---
 
 ## Prerequisites
- - You have the **Process Workspace** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad] (cp-cf-processvisibility-setup-flp).
- - You are assigned to the **`PVOperator`** role
+ - You have the **Process Workspace** application configured on SAP Fiori launchpad. For more information, refer to [Consume the Process Visibility UI Applications Using SAP Fiori Launchpad](cp-cf-processvisibility-setup-flp).
+ - You are assigned to the **`PVOperator`** role. For more information on how to assign these roles, refer to [Assign the Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles).
 
 ## Details
-
 ### You will learn
   - How to gain visibility on end-to-end processes
 
@@ -20,9 +21,11 @@ You can track the workflow in real time and analyze performance indicators to ga
 
 SAP Cloud Platform Process Visibility provides the Process Workspace application to gain visibility on end-to-end processes for line-of-business users. It enables you to track processes in real-time, search and filter instances, analyze performance indicators, and view detailed information about an instance.
 
+---
+
 [ACCORDION-BEGIN [Step 1: ](Access the Process Workspace)]
 
-1.	Log onto SAP Fiori launchpad.
+1.	Log in to SAP Fiori launchpad.
 
 2.	Click on the **Process Workspace** tile.
 
@@ -31,7 +34,7 @@ SAP Cloud Platform Process Visibility provides the Process Workspace application
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Analyze performance indicators to gain visibility on a scenario instance)]
+[ACCORDION-BEGIN [Step 2: ](Analyze performance indicators for a scenario instance)]
 
 1.	In the **Scenarios** table, choose **Employee Onboarding Process**.
 
@@ -49,12 +52,16 @@ SAP Cloud Platform Process Visibility provides the Process Workspace application
 
     ![Scenario Ontrack page](overview-Ontrack.png)
 
-    
-    ![Instances view](instance-details-view.png)
-
-3. Choose an instance from the table to navigate to the details view of the scenario instance. The scenario instance details view provides detailed information about the selected instance.
 
     ![Performance indicator view](PPI.png)
+
+3. Choose an instance from the table to navigate to the details view of the scenario instance.
+
+    ![Performance indicator view](PPI - 01.png)
+
+    The scenario instance details view provides detailed information about the selected instance.
+
+    ![Instances view](instance-details-view.png)
 
     In the scenario instance details view, you can view the following:
 

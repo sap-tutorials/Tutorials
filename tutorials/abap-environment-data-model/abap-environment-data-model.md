@@ -22,7 +22,7 @@ author_profile: https://github.com/mervey45
   - How to create service binding
 
 In this tutorial, wherever XXX appears, use a number (e.g. 000).
- 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Define CDS-based travel data model)]
@@ -43,7 +43,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Define CDS based travel data model](model3.png)
 
-  4. Click **Finish**.
+  4. Click **Finish** to use your transport request.
 
       ![Define CDS based travel data model](model4.png)
 
@@ -53,7 +53,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define root view ZI_TRAVEL_M_XXX as select from ztravel_xxx            
     ```
 
-  6. Replace your code with following:
+  6. You result should look like this. Replace your code with following:
 
     ```ABAP
     @AbapCatalog.sqlViewName: 'ZVI_TRAVEL_M_XXX'
@@ -103,6 +103,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   7. Save and activate.
 
+      ![save and activate](activate.png)
+
      Your CDS view for travel booking is defined now. You can use and manipulate data that is persisted in your database.
 
 [DONE]
@@ -126,7 +128,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create projection view for travel](projection3.png)
 
-  4. Click **Finish**.
+  4. Click **Finish** to use your transport request.
 
       ![Create projection view for travel](projection4.png)
 
@@ -136,7 +138,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define root view entity ZC_TRAVEL_M_XXX as projection on ZI_Travel_M_XXX        
     ```
 
-  6. Replace your code with following:
+  6. You result should look like this. Replace your code with following:
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
@@ -219,6 +221,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   7. Save and activate.
 
+      ![save and activate](activate.png)
+
      The **projection** is created and includes UI annotations. The projection is the subset of the fields of the travel data model, which are relevant for the travel booking application.
 
 
@@ -239,7 +243,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create service definition](definition2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create service definition](definition3.png)
 
@@ -259,6 +263,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   5. Save and activate.
+
+      ![save and activate](activate.png)
 
      With the **service definition** you are able to define which data is exposed as a business service in your travel booking application.
 
@@ -280,7 +286,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create service binding](binding2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create service binding](binding3.png)
 

@@ -110,8 +110,12 @@ Define the connection, replacing `XXX` in both `i_name` and `i_service_instance_
 ```ABAP
 
 DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
-                       i_name = |S4TEST_RFC_XXX|
-                       i_service_instance_name = |OutboundCommArrangement_XXX| ).
+                    i_name = |ES5_RFC_XXX|
+                    "
+                    i_service_instance_name = |OutboundComm_for_RFCDemo_XXX|
+
+
+                       ).
 
 DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
 
@@ -235,9 +239,11 @@ CLASS zjp_out_test IMPLEMENTATION.
     TRY.
 
         DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
-                              i_name = |S4TEST_RFC_XXX|
+          i_name = |ES5_RFC_XXX|
+          "
+          i_service_instance_name = |OutboundComm_for_RFCDemo_XXX|
 
-                              i_service_instance_name = |OutboundCommArrangement_xxx| ).
+                              ).
         DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
 
 
@@ -250,8 +256,8 @@ CLASS zjp_out_test IMPLEMENTATION.
         "Exception handling is mandatory to avoid dumps
         CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
           DESTINATION lv_rfc_dest_name
-*          EXPORTING
-*             max_rows              = 5
+          EXPORTING
+             max_rows              = 10
           TABLES
             headerdata            = lt_product
           EXCEPTIONS

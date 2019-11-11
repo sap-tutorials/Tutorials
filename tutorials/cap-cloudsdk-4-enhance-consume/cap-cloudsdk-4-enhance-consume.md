@@ -18,6 +18,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - How to define consumption of a remote service
 - What constraints look like on a navigation property definition
 
+**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+
 It's time to extend the basic CAP-based service you created in the previous tutorial in this mission. You will add to the `Orders` entity a couple more fields that will be used in a relationship constraint definition, and then extend the service as a whole to describe the consumption of business partner address data that will be provided by the remote mock S/4HANA service.
 
 ---
@@ -28,15 +30,17 @@ In order to consume a remote service, and refer to that service's components wit
 
 > All the edits you do in this tutorial will be to the consumer app you created in the previous tutorial in this mission.
 
+> You've already performed a similar step (importing a service definition file) in a previous tutorial in this mission - note that you are going to do it again here in this tutorial, this time in your `consumer-app` project, because this consuming app that you're building needs it too. For a slightly different reason of course - the consuming app needs to know about what it's consuming, and the mock service app needed to know what to mock.
+
 First, create a new directory `external/` within the `srv/` directory of the consumer app project, and then within that new `external` directory create a further new directory `csn/`. The names are not fixed but are recommended as the convention for external service definition files in CSN.
 
-Into this new `srv/external/csn/` directory, import the [`API_BUSINESS_PARTNER.json`](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/cap-cloudsdk-4-enhance-consume/API_BUSINESS_PARTNER.json) file, ensuring that the JSON structure is preserved -- when looking at the file, use the **Raw** link to download it, in a similar way to how you did it in the first tutorial in this mission.
+Into this new `srv/external/csn/` directory, import the [`API_BUSINESS_PARTNER.json`](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/cap-cloudsdk-4-enhance-consume/API_BUSINESS_PARTNER.json) file, ensuring that the JSON structure is preserved -- when looking at the file, use the **Raw** link to download it, in a similar way to how you did it in the first tutorial in this mission. Again, if you copy/paste, make sure you only select the JSON and not anything else (such as comments) rendered by any Chrome extension that is being used to display the JSON in a more readable form.
 
 If you open the file it in VS Code, you'll see something similar to this (you may also wish to refer to the Explorer view on the left-hand side of the screenshot to check you got the directory hierarchy correct):
 
 ![the CSN file](csn-file.png)
 
-Take a few minutes to browse through this file, which contains definitions of entities in canonical CSN format (represented in JSON here). Find and examine the definition of the `API_BUSINESS_PARTNER.A_BusinessPartnerAddressType` entity.
+Have a brief browse through this file, which contains definitions of entities in canonical CSN format (represented in JSON here). Find and examine the definition of the `API_BUSINESS_PARTNER.A_BusinessPartnerAddressType` entity.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -112,7 +116,7 @@ This should result in familiar output:
  > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
  > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
  > filling my.bookshop.Orders from db/csv/my.bookshop-Orders.csv
-/> successfully deployed database to ./consumer-app.db
+/> successfully deployed database to ./sqlite.db
 ```
 
 Now restart the service, like so:
@@ -124,7 +128,7 @@ cds run
 Notice that neither the `db/extended.cds` file nor the `srv/external/csn/API_BUSINESS_PARTNER.json` file are included:
 
 ```
-[cds] - connect to datasource - sqlite:consumer-app.db
+[cds] - connect to datasource - sqlite:sqlite.db
 [cds] - serving CatalogService at /catalog
 [cds] - service definitions loaded from:
 
@@ -156,7 +160,7 @@ using my.bookshop as my from '../db/extended';
 Now restart the service (re-invoke `cds run` in the integrated terminal). You should see that the `db/extended.cds` source file is now included in the artifacts that are loaded:
 
 ```
-[cds] - connect to datasource - sqlite:consumer-app.db
+[cds] - connect to datasource - sqlite:sqlite.db
 [cds] - serving CatalogService at /catalog
 [cds] - service definitions loaded from:
 
@@ -218,7 +222,7 @@ Finally, add the `Orders` entity back in, but this time, instead of it being a s
   }
 ```
 
-Take a few moments to stare at that definition, which combines the local properties of the `Orders` entity with a managed to-one association to an entity in the remote service.
+Spend a bit of time staring at that definition, which combines the local properties of the `Orders` entity with a managed to-one association to an entity in the remote service.
 
 [DONE]
 [ACCORDION-END]
@@ -253,7 +257,7 @@ If you try to access the `Addresses` entity set directly (<http://localhost:4004
 ```XML
 <error xmlns="http://docs.oasis-open.org/odata/ns/metadata">
 <code>500</code>
-<message>Internal Server Error</message>
+<message>SQLITE_ERROR: no such table: CatalogService_Addresses</message>
 </error>
 ```
 

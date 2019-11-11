@@ -16,13 +16,17 @@ primary_tag: products>sap-hana\,-express-edition
   - How to start a project in Google Cloud Shell
   - How to initialize a project using the Cloud Application Programming model
 
-These tutorials are meant to be completed at the Developer Garage at SAP TechEd. The experts at the Google Cloud booth will provide you with an access to an account.
+**These tutorials are meant to be completed at the Developer Garage at SAP TechEd.** The experts at the Google Cloud booth will provide you with access to an account.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open the code editor)]
 
-Go back to the Google Cloud console and click on the cloud shell icon ![cloud shell icon](icon.png).
+Go back to the Google Cloud console. Close the Learn panel if open:
+
+![Code Editor](close.png)
+
+Click on the cloud shell icon ![cloud shell icon](icon.png) toward the right side of the blue title bar.
 
 ![Code Editor](1.png)
 
@@ -30,26 +34,29 @@ Click **Start Cloud Shell**
 
 ![Code Editor](3.png)
 
-The cloud console will open up. Click on the icon to **Launch the code editor**
+The cloud shell panel will open up at the bottom of the window.  **Launch the code editor**:
 
 ![Code Editor](2.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure `npm`)]
+[ACCORDION-BEGIN [Step 2: ](Configure `npm` Package Manager)]
 
-You will create a project using the SAP Core Data and Services Node.js module from SAP `npm` repository. Paste the following commands into the editor and press **Enter**
+You will create a project using the SAP Core Data and Services Node.js module from the SAP `npm` repository.
 
-```text
+Paste the following commands into the Cloud shell panel and press **Enter**
+
+```shell
 npm config set @sap:registry https://npm.sap.com
-npm install --global @sap/cds
+npm install --global @sap/cds@3.13.0
 ```
+
 For example:
 
 ![Code Editor](4.png)
 
-> Note: You can use the copy and paste commands in this console too.
+> Note: You can use the copy and paste commands in Cloud shell
 
 [DONE]
 [ACCORDION-END]
@@ -59,11 +66,12 @@ For example:
 
 You will initialize your application using the Cloud Application Programming model. You application will contain two modules: one for database artifacts and one for services. The services module will be written in Node.js (alternatively, you could use Java). For simplicity in this application and since it will not be for productive use, you will skip authentication and authorizations.
 
-Execute the following command:
+Execute the following command to set up a Core Data and Services project:
 
-```text  
+```shell
 cds init --modules db,srv --insecure --db-technology hana --verbose teched
 ```
+
 You will see a new folder has been created. Expand it to see the two new modules:
 
 ![Code Editor](5.png)
@@ -76,7 +84,7 @@ You will now create the design-time artifacts for your database. You will define
 
 In the `db` folder, open the sample file **`data-model.cds`** and replace the content with the following:
 
-```text
+```cds
 namespace teched.recipes;
 
 entity Foods {
@@ -92,7 +100,6 @@ entity Ingredients {
     quantity : Decimal(13, 3);
     unit :  String(3);
 }
-
 ```
 
 For example:
@@ -117,13 +124,13 @@ Under `db/src`, create a folder called `loads`
 
 In the `loads` folder, create a new file with the following name:
 
-```text
+```file
 data_load.hdbtabledata
 ```
 
 Add the following content into it:
 
-```text
+```json
 {
 	"format_version": 1,
 	"imports": [{
@@ -175,17 +182,17 @@ If you look at the file you created in the previous step, you will see it refere
 
 In the command line, navigate into the `loads` directory and enter the following command
 
-```text
+```shell
 cd ./teched/db/src/loads
 touch ingredients.csv recipes.csv
 edit ingredients.csv
 ```
 
-This will create two files and open the `ingredients` file in the editor.
+This will create two files and open the `ingredients.csv` file in the editor.
 
 Paste the following content into the **ingredients** file:
 
-```text
+```c
 INGREDIENT,NAME,QUANTITY,UNIT,FOODID_ID
 1,MILK,1,L,1
 1,MILK,1,L,4
@@ -221,7 +228,7 @@ Open the file **`recipes.csv`** file
 
 Paste the following content into `recipes.csv`
 
-```text
+```c
 ID,DESCRIPTION
 1,Rabid Nutella Chocolate Cake
 2,Unicorn fishies
@@ -232,7 +239,7 @@ ID,DESCRIPTION
 
 Use the results of the following command to complete the validation below.
 
-```text
+```shell
 cat ~/teched/db/src/loads/ingredients.csv | grep KIT
 ```
 
@@ -243,7 +250,7 @@ cat ~/teched/db/src/loads/ingredients.csv | grep KIT
 
 Open the file `srv/cat-service.cds` and paste the following content into it
 
-```text
+```cds
 using teched.recipes as recipes from '../db/data-model';
 
 
@@ -263,7 +270,7 @@ For example:
 [ACCORDION-BEGIN [Step 8: ](Use CDS to generate the artifacts for SAP HANA)]
 You will be connecting to the SAP HANA, express edition instance you created in the previous tutorial. Use the following two commands to create the `hdbcds` files.
 
-```text
+```shell
 cd ~/teched/db/
 npm install
 ```

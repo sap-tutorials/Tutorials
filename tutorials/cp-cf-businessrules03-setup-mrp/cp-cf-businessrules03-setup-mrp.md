@@ -3,21 +3,23 @@ title: Set Up the Manage Rules Project Application
 description: Access the Manage Rules Project application to author rules by deploying a multi-target application using SAP Web IDE Full-Stack.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-business-rules
+author_name: Vandana Vasudevan
+author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Details
 ### You will learn
   -  How to configure a multi-target application to access Manage Rules Project application
 
-The Manage Rules Project application is web-based tool which is used to create projects where you can author and execute business rules. In this tutorial, you will learn how to access Manage Rules Project application by deploying a multi-target application in SAP Web-IDE Full Stack.
+The **Manage Rules Project** application is a web-based tool which is used to create projects where you can author and execute business rules. In this tutorial, you will learn how to access **Manage Rules Project** application by deploying a multi-target application in SAP Web-IDE Full Stack.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Download multi-target application file)]
 
-1. Use the following link to access the MTA file from [GitHub](https://).
+1. Use the following link to access the MTA file from [GitHub](https://github.com/SAP/cloud-businessrules-samples/blob/master/cf-apps/cf-businessruleseditor.zip).
 
 2. Choose **`cf-businessruleseditor.zip`**.
 
@@ -30,31 +32,29 @@ The **`cf-businessruleseditor.zip`** is downloaded to your file system.
 
 [ACCORDION-BEGIN [Step 2: ](Import MTA to SAP Web IDE)]
 
-1. Log onto [SAP Cloud Platform Cockpit](http://cockpit.hanatrial.ondemand.com).
-
-2. Scroll down and choose **Launch SAP Web IDE**.
+1. Log on to [SAP Cloud Platform Cockpit](http://cockpit.hanatrial.ondemand.com) and choose **Launch SAP Web IDE**.
 
     ![Lauch Web IDE](MTA_1.png)
 
-3. In SAP Web IDE Full-Stack, open the **Development** perspective.
+2. In SAP Web IDE Full-Stack, open the **Development** perspective.
 
     ![Development Perspective](MTA_2.png)
 
-4. Right-click the **Workspace** root folder, then choose **Import > File or Project**.
+3. Right-click the **Workspace** root folder, then choose **Import > File or Project**.
 
     ![Import file or project](MTA_3.png)
 
-5. In the **Import** dialog, browse for the **`businessruleseditor.zip`** file that you downloaded in your local system.
+4. In the **Import** dialog, browse for the **`businessruleseditor.zip`** file that you downloaded in your local system.
 
     ![Import dialog](MTA_4.png)
 
     Upon browsing the file, the other fields automatically get updated.
 
-6. Choose **OK**.
+5. Choose **OK**.
 
     ![Click OK](MTA_5.png)
 
-7. The MTA file is imported under the **Workspace** folder and the file structure is shown below. Ensure that have chosen **Show Hidden Files** to be able to view the file structure as shown.
+6. The MTA file is imported under the **Workspace** folder and the file structure is shown below. Ensure that have chosen **Show Hidden Files** to be able to view the file structure as shown.
 
     ![MTA folder structure](MTA_6.png)
 
@@ -62,7 +62,7 @@ The **`cf-businessruleseditor.zip`** is downloaded to your file system.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Modify mta.yaml file)]
+[ACCORDION-BEGIN [Step 3: ](Modify mta.yaml file (optional))]
 
 If you have created a service instance with the name other than **`businessrules`**, you need to perform the following procedure.
 
@@ -109,7 +109,9 @@ Application "`<app name>_appRouter`" started and available at "`<application URL
 
 ![MRP link](MTA_13.png)
 
-> You can bookmark this link for later use.
+Use this URL to access the **Manage Rules Project** application. The next set of tutorials guide you on using this application to author and execute business rules.
+
+>You can bookmark this link for later use.
 
 [VALIDATE_1]
 [ACCORDION-END]

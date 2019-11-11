@@ -1,8 +1,8 @@
 ---
-title: Integrate a URL App into Your Portal Site (Cloud Foundry)
+title: Integrate a URL App into Your Portal Site
 description: Create a URL app and add it to the launchpad page on your Portal site on Cloud Foundry.
 auto_validation: true
-time: 5
+time: 15
 tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
 primary_tag: products>sap-cloud-platform-portal
 ---

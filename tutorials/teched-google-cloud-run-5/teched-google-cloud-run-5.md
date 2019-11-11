@@ -24,7 +24,7 @@ These tutorials are meant to be completed at the Developer Garage at SAP TechEd.
 
 Use the following two commands to create a file called `.npmrc` in the `srv` directory. This file is used by `NPM` for configuration.
 
-```ssh
+```shell
 touch ~/teched/srv/.npmrc
 edit ~/teched/srv/.npmrc
 ```
@@ -41,7 +41,7 @@ Paste the following line into the file:
 
 Copy the `.npmrc` file to the root folder too with the following command:
 
-```ssh
+```shell
 cp ./srv/.npmrc ~/teched
 ```
 
@@ -55,14 +55,14 @@ You will create a Docker image from a Node.js image using the application you cr
 
 Create a Docker file using the following command:
 
-```ssh
+```shell
 touch ~/teched/Dockerfile
 edit ~/teched/Dockerfile
 ```
 
 Insert the following contents into the `Dockerfile`
 
-```text
+```Dockerfile
 # Use the official Node.js 8 image.
 # https://hub.docker.com/_/node
 FROM node:8
@@ -85,7 +85,6 @@ COPY . .
 
 # Run the web service on container startup.
 CMD [ "npm", "start" ]
-
 ```
 
 ![NPM config](3.png)
@@ -96,16 +95,26 @@ CMD [ "npm", "start" ]
 
 [ACCORDION-BEGIN [Step 3: ](Upload the image)]
 
+Open the following URL in a new tab...
+
+```url
+https://console.cloud.google.com/apis/api/cloudbuild.googleapis.com/overview
+```
+
+...and **Enable** the Cloud Build API.
+
+![NPM config](api.png)
+
+Wait until the API has been enabled. You can close this tab and go back to the Cloud Shell once it has.
+
 Use the following command to create and upload a container image. Answer **y** if prompted to activate Cloud Run for your account.
 
-```ssh
+```shell
 cd ~/teched
 gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/teched
 ```
 
-For example:
-
-![NPM config](5.png)
+This will take about a minute.
 
 Make sure you see a **SUCCESS** message once the process is finished.
 
@@ -117,14 +126,15 @@ Make sure you see a **SUCCESS** message once the process is finished.
 
 [ACCORDION-BEGIN [Step 4: ](Retrieve the environment variable)]
 
-Use the following command to get the `VCAP_SERVICES` environment variable.
+Use the following command to get the `VCAP_SERVICES` file as a string.
 
-```ssh
-echo $VCAP_SERVICES
+```shell
+jq -r "to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]" ~/teched/default-env.json
 ```
+
  **Leave this open**. You will need this result later.
 
- ![NPM config](7.png)
+ ![NPM config](7x.png)
 
 [DONE]
 [ACCORDION-END]
@@ -132,6 +142,10 @@ echo $VCAP_SERVICES
 [ACCORDION-BEGIN [Step 4: ](Create a Cloud Run deployment)]
 
 Open a new tab and enter [https://console.cloud.google.com/run](https://console.cloud.google.com/run).
+
+Click **Start using Cloud Run**.
+
+![Create Cloud Run](x8.png)
 
 Click **Create Service**.
 
@@ -145,13 +159,15 @@ Expand the list and click on the latest registry image.
 
 ![Create Cloud Run](11.png)
 
-Flag **Allow unauthenticated invocations** and click **Show optimal settings**.
+Flag **Allow unauthenticated invocations** and click **Show Optional Revision Settings**.
 
 ![Create Cloud Run](12.png)
 
-In the environment variable, add a variable called `VCAP_SERVICES` and use the content of the result from `echo $VCAP_SERVICES` in the cloud shell:
+In the environment variable, add a variable called `VCAP_SERVICES` and use the content of the file `default-env.json` as a string from the previous step.
 
-![Create Cloud Run](13.png)
+Do not copy the `VCAP_SERVICES=` assignment. You only need the content of the variable after it.
+
+![Create Cloud Run](13x.png)
 
 Scroll down and click **Create**
 

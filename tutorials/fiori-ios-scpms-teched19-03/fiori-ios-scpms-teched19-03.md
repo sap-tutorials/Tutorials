@@ -8,8 +8,8 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP02
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn  
@@ -425,14 +425,14 @@ Select the segue and in the **Attributes Inspector** set the identifier to `show
 
 ![Create Navigation](fiori-ios-scpms-teched19-05.png)
 
-Great! All the segues are created in storyboard and have identifiers. In the next step, you will add code to provide information to the destination View Controllers for each segue.
+Great! The segue is created in storyboard and have an identifier. In the next step, you will add code to provide information to the destination View Controller for the segue.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement the prepare for segue method)]
 
-The segue already works, so if you would run the app now you can navigate back and forth from the Overview View Controller to the destination View Controller you've created. For this app, it is necessary to provide the Customer ID to the destination View Controller and set the title in the Navigation Item for the Customer Detail View Controller.
+For this app, it is necessary to provide the Customer ID to the destination View Controller and set the title in the Navigation Item for the Customer Detail View Controller.
 
 iOS provides a simple API to do that.
 
@@ -488,16 +488,7 @@ Next open up the `CustomerDetailTableViewController` and add the following lines
 
 ```Swift
 
-private var _customerId: String?
-
-var customerId: String {
-    get {
-        return _customerId!
-    }
-    set {
-        _customerId = newValue
-    }
-}
+var customerId: String!
 
 ```
 

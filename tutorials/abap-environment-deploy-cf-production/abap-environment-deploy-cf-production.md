@@ -3,11 +3,12 @@ auto_validation: true
 title: Create an HTML5 Module and Deploy UI to Cloud Foundry  
 description: Create a UI in Neo and deploy it to Cloud Foundry via a multi-target application.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
 ---
 
 ## Prerequisites  
+- You need the appropriate SAP Cloud Platform ABAP Environment licenses to complete this tutorial.
 - OData Service in ABAP System created 
 - you are a Space Developer in the Space your ABAP Instance is running in
 
@@ -127,7 +128,7 @@ time: 15
   4. Select **SAP Cloud Platform Service**, then click on your resource **`Z_I_BOOKING_XXX`**.
 
       ![Choose service catalog](ServiceCatalog.png)
- 
+
   5. Logon to SAP Cloud Platform ABAP environment and switch back to SAP Web IDE.
 
       ![Environment](environment.png)

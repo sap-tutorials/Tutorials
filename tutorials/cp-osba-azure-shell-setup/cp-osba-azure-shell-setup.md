@@ -9,8 +9,7 @@ primary_tag: products>sap-cloud-platform
 
 ## Prerequisites
  - If you are not attending any SAP TechEd event on site, make sure you have a Microsoft Azure subscription. [$200 Credits](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) will be provided if you enter your credit card details at the initial registration.
-  - Register for an [SAP Cloud Platform account](hcp-create-trial-account)
-  - Enable the [SAP Cloud Platform Cloud Foundry account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
+  - Register for an [SAP Cloud Platform Trial account](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -35,7 +34,7 @@ These tutorials are primarily meant to be completed at the Developer Garage at S
 
 Azure subscriptions are available for SAP TechEd participants to complete these tutorials. Experts at the Microsoft booth in the Developer Garage will provide you the credentials.
 
-If you don't have an Azure subscription yet, no problem. You can easily [register](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) and as soon as you provide your credit card information, you will be granted 200 US dollars in credits that you can use for this tutorial and beyond. Only when you have exhausted this amount do you have to pay. 
+If you don't have an Azure subscription yet, no problem. You can easily [register](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) and as soon as you provide your credit card information, you will be granted 200 US dollars in credits that you can use for this tutorial and beyond. Only when you have exhausted this amount do you have to pay.
 
 ---
 
@@ -81,7 +80,9 @@ Launch the Azure Cloud Shell by clicking on the highlighted control below:
 
 [OPTION BEGIN [SAP TechEd Account]]
 
-The SAP experts have already set up the Azure Cloud Shell.
+The SAP experts have already set up the Azure Cloud Shell. Select the `Microsoft` directory as follows:
+
+> ![choose microsoft directory](choose-directory.png)
 
 >If you are interested in the necessary steps to set up the Azure Cloud Shell, click on the **Own Account** tab.
 
@@ -120,6 +121,10 @@ Your Azure Cloud Shell is now ready to go.
 ![Log ouput Azure Cloud Shell](welcome-azure-cloud-shell.png)
 
 [OPTION END]
+
+Please make sure you only use the option **`Bash`** and not PowerShell. Some commands in the following tutorials will only work with bash.
+
+![only use bash instead of PowerShell](use-bash-hint.png)
 
 [DONE]
 [ACCORDION-END]

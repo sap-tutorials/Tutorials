@@ -3,7 +3,7 @@ auto_validation: true
 title: Maintain a Communication Arrangement for Inbound Communication
 description: Create a communication user and a communication system for an OData service in SAP Cloud Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
 author_name: Niloofar Naseri
 author_profile: https://github.com/niloofar-naseri
@@ -144,7 +144,7 @@ Select your communication scenario that you created in the last tutorial, `Expos
 
       The URL from the communication arrangement should look as followed:
 
-      `https://<your-system>-api.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/Z_BIND_XXX` (where XXX is your group number)
+      `https://<your-system>.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/Z_BIND_XXX` (where XXX is your group number)
 
       ![Enter Data](Picture14.png)
 
@@ -155,11 +155,9 @@ Select your communication scenario that you created in the last tutorial, `Expos
 [ACCORDION-BEGIN [Step 11: ](Check the service URL)]
   1. Paste your service URL in a browser or in Postman.
 
-  2. Remove `-api` from the link.
+  2. Use the communication user and password.
 
-  3. Use the communication user and password.
-
-  4. Check if you can connect to the service and there is no error.
+  3. Check if you can connect to the service and there is no error.
 
       ![check Service](Picture15b.png)
 

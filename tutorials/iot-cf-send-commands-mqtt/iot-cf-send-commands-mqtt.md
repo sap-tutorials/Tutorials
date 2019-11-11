@@ -456,9 +456,9 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
         "sensorId": "{sensorId}",
         "capabilityId": "{capabilityId}",
         "command": {
-            "LED": "true",
-            "Buzzer": "true",
-            "Speed": "50.0"
+            "LED": true,
+            "Buzzer": true,
+            "Speed": 50.0
         }
     }
     ```
@@ -470,9 +470,9 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
         "sensorId": "11",
         "capabilityId": "3772113f-d8bf-4dc5-9968-847845b8e8ee",
         "command": {
-            "LED": "true",
-            "Buzzer": "true",
-            "Speed": "50.0"
+            "LED": true,
+            "Buzzer": true,
+            "Speed": 50.0
         }
     }
     ```
@@ -481,7 +481,7 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
 
 9.  Scroll to the **Server response** body and **Code**.
 
-    In case of success the response code is `200` and the **Response body** contains a success message.
+    In case of success the response code is `202` and the **Response body** contains a success message.
 
     ```JSON
     {
@@ -500,7 +500,7 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
 
     ```JSON
     {"sensorAlternateId":"07c0a15c0d0baeb7","capabilityAlternateId":"e6ae441b8820c91f"
-    ,"command":{"LED":"true","Buzzer":"true","Speed":50.0}}
+    ,"command":{"LED":true,"Buzzer":true,"Speed":50.0}}
     ```
 
 [DONE]

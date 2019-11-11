@@ -12,6 +12,8 @@ primary_tag: products>sap-s-4hana-cloud-sdk
  - SAP Web IDE Full-Stack enabled
  - Cloud Foundry CLI installed
  - An account on GitHub
+ - Apache Maven installed
+ - Windows users: Git Bash installed
 
 ## Details
 ### You will learn
@@ -56,7 +58,7 @@ On your computer, open a new **Command Prompt** from the **Start** menu and navi
 
 Execute the following command:
 
-```
+```sh
 git clone https://github.com/<your GitHub account>/cloudsdk-cf-aws.git
 ```
 
@@ -80,7 +82,7 @@ On your computer, open a terminal window and navigate to the folder you want to 
 
 Execute the following command:
 
-```
+```sh
 git clone https://github.com/<your GitHub account>/cloudsdk-cf-aws.git
 ```
 
@@ -102,7 +104,7 @@ In this step, you will generate an SAP Cloud SDK app project from a Maven archet
 
 Execute the following Maven command:
 
-```
+```sh
 mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.s4hana.archetypes -DarchetypeArtifactId=scp-cf-tomee -DarchetypeVersion=RELEASE
 ```
 
@@ -141,13 +143,13 @@ The project is now successfully created:
 
 Change directory to the root of your project with the following command:
 
-```
+```sh
 cd cloudsdk-cf-aws
 ```
 
 First, add all new files to the local repository's staging area with the following command (make sure to include the 'dot' at the end, indicating the current directory):
 
-```
+```sh
 git add .
 ```
 
@@ -167,13 +169,13 @@ git add .
 
 Then, commit the new files with the following command:
 
-```
+```sh
 git commit -am "Initial version"
 ```
 
 And finally, push all the committed files to the remote repository with the following command:
 
-```
+```sh
 git push origin master
 ```
 
@@ -186,13 +188,13 @@ git push origin master
 
 Then, commit the new files with the following command:
 
-```
+```sh
 git commit -am "Initial version"
 ```
 
 And finally, push all the committed files to the remote repository with the following command:
 
-```
+```sh
 git push origin master
 ```
 
@@ -215,7 +217,7 @@ In this step, you will import the SAP Cloud SDK project into SAP Web IDE Full-St
 
 Open a browser and open SAP Web IDE Full-Stack with the following URL:
 
-```
+```url
 https://webidecp-<your cloud platform ID>trial.dispatcher.hanatrial.ondemand.com/
 ```
 
@@ -281,6 +283,32 @@ At this stage, you may choose to create a new build package of your app using Ma
 
 [DONE]
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Update Jenkinsfile)]
+
+Open the `Jenkinsfile` and locate the line:
+
+```groovy
+String pipelineVersion = "master"
+```
+
+> As stated in the comment above this line, it is not recommended to pull the pipeline directly from its master branch. The recommended approach is to set it to a fixed version. For this tutorial, you will use version 25 of the pipeline.
+
+Change the version `master` to the specific version `v25`. The line should now read:
+
+```groovy
+String pipelineVersion = "v25"
+```
+
+Save the updated Jenkinsfile.
+
+Next, open the Git pane from the right menu. Tick the checkbox next to the modified `Jenkinsfile` to stage it for commit, and provide a meaningful commit message, for instance `Set pipeline version to v25`.
+
+Click **Commit and Push** button and commit to the remote branch.
+
+[DONE]
+[ACCORDION-END]
+
 
 <!--
 [ACCORDION-BEGIN [Step 7: ](Build the project)]

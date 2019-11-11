@@ -26,7 +26,7 @@ The EPM and the related OData services are available in the SAP Gateway demo sys
 
 In this step you'll find the EPM OData service by looking for it via the maintenance transaction for the Internet Communication Framework (ICF), to understand how web-based resources in general and OData services in particular are managed within an ABAP system.
 
-Log on to the SAP Gateway Demo system via the [Web GUI](https://sapes5.sapdevcenter.com/). Use the menu path `Gui Actions and Settings -> Show OK Code Field` to make the OK Code field appear, so you can enter transaction codes.
+Log on to the SAP Gateway Demo system via the [Web GUI](https://sapes5.sapdevcenter.com/). If necessary, use the menu path `Gui Actions and Settings -> Show OK Code Field` to make the OK Code field appear, so you can enter transaction codes.
 
 ![menu option to show the OK Code field](show-okcode-field.png)
 
@@ -269,7 +269,7 @@ Operators can be combined. Try this, by finding out whether there are any produc
 Again, to break this down, we have the following (before the special characters are URL encoded):
 
  - Restrict entries to those where the `MainCategoryId` value is "Software" and where the `StockQuantity` value is less than or equal to 10:
-`$filter=MainCategory eq 'Software' and StockQuantity le 10`
+`$filter=MainCategoryId eq 'Software' and StockQuantity le 10`
 
  - Return only the values for the `StockQuantity` and `Name` properties:
 `$select=StockQuantity,Name`

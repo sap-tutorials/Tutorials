@@ -132,7 +132,7 @@ Add the field **`bank`**, based on a new data element, `Zxx_bank`. You will get 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Remove error by performing syntax check)]
-Go back to your table, **`Zxx_ACCOUNT`**. Run a syntax check (**`F2`**). The error should disappear.
+Go back to your table, **`Zxx_ACCOUNT`**. Run a syntax check  with **`F2`**. The error should disappear.
 
 [DONE]
 [ACCORDION-END]

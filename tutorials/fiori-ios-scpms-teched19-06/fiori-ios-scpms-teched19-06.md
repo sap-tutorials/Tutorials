@@ -8,8 +8,8 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP02
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 
 ## Details
 ### You will learn  
@@ -43,7 +43,7 @@ Create an `IBAction` in the `OverviewViewController.swift` class by **control + 
 
 Close the **Assistant Editor** if not done already and open the class `OverviewViewController.swift`. Add two properties for holding the `UIImagePickerController` and the picked image.
 
-Add the following lines of code below the segue properties:
+Add the following lines of code below the segue property:
 
 ```Swift
 
@@ -66,7 +66,7 @@ private func setupImagePicker() {
 
 ```
 
-Next call that just added method in the `viewDidLoad(:)` right below the `loadInitialData()` method call:
+Next call that just added method in the `viewDidLoad(:)` right above the `loadInitialData()` method call:
 
 ```Swift
 
@@ -131,11 +131,13 @@ The Table View Controller has to have a Navigation Bar so let's embed the `Produ
 
 Last step is to create the segue from the Bar Button Item inside the Overview View Controller to the Product Classification Table View Controller.
 
-Select the added Bar Button Item and **control + drag** to the Product Classification Table View Controller, as action choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
+Select the `OverviewViewController` and **control + drag** to the Product Classification Table View Controller, choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-08.png)
 
 Now select the created segue and set the identifier to `showProductClassification` in the **Attributes Inspector**.
+
+![Product Classification VC](fiori-ios-scpms-teched19-09.png)
 
 The final step is to create a constant in the `OverviewViewController.swift` class holding that identifier.
 
@@ -149,14 +151,15 @@ private let showProductClassificationSegue = "showProductClassification"
 
 You have to make sure that the selected image later on get's passed on to the `ProductClassificationTableViewController` for the classification process.
 
-Locate the `prepare(for:sender:)` method and add a new switch case to it:
+Locate the `prepare(for:sender:)` method and add a new if statement to it:
 
 ```Swift
 
-case showProductClassificationSegue:
+if segue.identifier == showProductClassificationSegue {
     let navController = segue.destination as! UINavigationController
     let productPredictionVC = navController.children.first! as! ProductClassificationTableViewController
     productPredictionVC.image = pickedImage
+}
 
 ```
 
@@ -166,29 +169,39 @@ Your `prepare(for:sender:)` should look like this now:
 ```Swift
 
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segue.identifier {
-    case showCustomerDetailSegue:
-        // Show the selected Customer on the Detail view
-        guard let indexPath = self.tableView.indexPathForSelectedRow else {
-            return
-        }
+  // Implement a switch over the segue identifiers to distinct which segue get's called.
+     if segue.identifier == showCustomerDetailSegue {
 
-        let selectedEntity = self.customers[indexPath.row]
-        let detailViewController = segue.destination as! CustomerDetailTableViewController
-        guard let customerID = selectedEntity.customerID else {
-            AlertHelper.displayAlert(with: "We're having issues displaying the details for the customer with name \(selectedEntity.lastName ?? "")", error: nil, viewController: self)
-            self.logger.error("Unexpectly customerID is nil! Can't pass customerID into CustomerDetailViewController.")
-            return
-        }
-        detailViewController.customerId = customerID
-        detailViewController.navigationItem.title = "\(self.customers[indexPath.row].firstName ?? ""), \(self.customers[indexPath.row].lastName ?? "")"
-    case showProductClassificationSegue:
-        let navController = segue.destination as! UINavigationController
-        let productPredictionVC = navController.children.first! as! ProductClassificationTableViewController
-        productPredictionVC.image = pickedImage
-    default:
-        return
-    }
+         // Show the selected Customer on the Detail view
+         guard let indexPath = self.tableView.indexPathForSelectedRow else {
+             return
+         }
+
+         // Retrieve the selected customer
+         let selectedEntity = self.customers[indexPath.row]
+
+         // Get an instance of the CustomerDetailTableViewController with asking the segue for it's destination.
+         let detailViewController = segue.destination as! CustomerDetailTableViewController
+
+         // Check if the customer ID is set, if not handle the errors and notify the user.
+         guard let customerID = selectedEntity.customerID else {
+             AlertHelper.displayAlert(with: "We're having issues displaying the details for the customer with name \(selectedEntity.lastName ?? "")", error: nil, viewController: self)
+             self.logger.error("Unexpectedly customerID is nil! Can't pass customerID into CustomerDetailViewController.")
+             return
+         }
+
+         // Set the customer ID at the CustomerDetailTableViewController.
+         detailViewController.customerId = customerID
+
+         // Set the title of the navigation item on the CustomerDetailTableViewController
+         detailViewController.navigationItem.title = "\(self.customers[indexPath.row].firstName ?? ""), \(self.customers[indexPath.row].lastName ?? "")"
+     }
+
+     if segue.identifier == showProductClassificationSegue {
+         let navController = segue.destination as! UINavigationController
+         let productPredictionVC = navController.children.first! as! ProductClassificationTableViewController
+         productPredictionVC.image = pickedImage
+     }
 }
 
 ```
@@ -210,7 +223,7 @@ var image: UIImage!
 
 When the user taps on the Bar Button Item it should show an Action Sheet or a Popover when running on Regular mode on the iPad. For that you will implement that code in the `didPressActionListButton(_:)` method. Before doing that you will add one more line of code to the `viewDidLoad(_:)` to make sure the Bar Button Item shows an Icon instead of just the word **Item**.
 
-Add the following line of code to the `viewDidLoad(_:)`:
+Open the `OverviewViewController.swift` class and add the following line of code to the `viewDidLoad(_:)`:
 
 
 ```Swift
@@ -238,6 +251,7 @@ let imageSources = [
 for (sourceName, sourceType) in imageSources where UIImagePickerController.isSourceTypeAvailable(sourceType) {
     alertController.addAction(UIAlertAction(title: "Find Product \(sourceName)", style: .default) { _ in
         self.pickerController.sourceType = sourceType
+        self.present(self.pickerController, animated: true)
     })
 }
 
@@ -270,8 +284,6 @@ Open the Info.plist and add the following two information properties to it by cl
 |----|----|
 | Privacy - Photo Library Usage Description | Please permit using Photo Library |
 | Privacy - Camera Usage Description | Please permit using Camera |
-
-![Product Classification VC](fiori-ios-scpms-teched19-09.png)
 
 That's it, the first time your app will try to access the Camera or Photo Library, the user will get asked for permission to perform this action.
 

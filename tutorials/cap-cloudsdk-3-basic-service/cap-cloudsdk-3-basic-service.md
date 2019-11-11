@@ -18,6 +18,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - How to supply seed data in CSV form
 - How to start up a CAP service locally
 
+**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+
 So you have a mock service running, and supporting V2 as well as V4 flavored responses to OData operation requests. Now it's time to put together a second service that will eventually consume data from (make requests to) this mock service. We'll use the SAP Cloud Application Programming Model for this second consumer service so we can take advantage of the powerful Core Data Services language to bridge local and remote data sources in service definitions.
 
 To keep things simple, the consumer service will be based on the simple bookshop model that you may have seen before, so that you can focus on the consumption parts you'll eventually add and use.
@@ -42,7 +44,7 @@ Now you can run the following command to install `@sap/cds` globally, knowing th
 npm install -g @sap/cds
 ```
 
-To satisfy yourself that the install proceeded successfully, invoke the `cds` executable with the `v` option and check that you get sensible output. Here's an example of what that might look like:
+To satisfy yourself that the install proceeded successfully, invoke the `cds` executable with the `-v` option and check that you get sensible output. Here's an example of what that might look like (versions may be different):
 
 ```Bash
 $ cds -v
@@ -121,7 +123,6 @@ Now edit the `srv/cat-service.cds` file to have each of these three entities exp
 ```CDS
 using my.bookshop as my from '../db/data-model';
 
-
 service CatalogService {
     entity Books as projection on my.Books;
     entity Authors as projection on my.Authors;
@@ -183,7 +184,7 @@ ID,BOOK_ID,QUANTITY
 To effect the loading of this seed data, run the following command in an integrated terminal within your project in VS Code (ensure you're in the project directory before you do):
 
 ```Bash
-cds deploy
+cds deploy --to sqlite
 ```
 
 You should see output similar to this:
@@ -192,7 +193,7 @@ You should see output similar to this:
  > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
  > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
  > filling my.bookshop.Orders from db/csv/my.bookshop-Orders.csv
-/> successfully deployed database to ./consumer-app.db
+/> successfully deployed database to ./sqlite.db
 ```
 
 Now you can start the service up ...

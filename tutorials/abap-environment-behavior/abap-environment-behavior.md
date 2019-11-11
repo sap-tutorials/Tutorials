@@ -13,7 +13,7 @@ author_profile: https://github.com/mervey45
 - You have created an SAP Cloud Platform ABAP environment trial user or
 - You have created a developer user in an SAP Cloud Platform ABAP Environment system.
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
- 
+
 ## Details
 ### You will learn  
   - How to create behavior definition
@@ -29,13 +29,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior definition](definition.png)
 
-  2. Check your behavior definition. Your implementation type is managed.
+  2. Check your behavior definition. Your **implementation type** is **managed**.
 
      Click **Next >**.
 
       ![Create behavior definition](definition2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create behavior definition](definition3.png)
 
@@ -46,7 +46,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     define behavior for ZI_Travel_M_XXX alias Travel
     persistent table ztravel_xxx
-    etag last_changed_at
+    etag master last_changed_at
     lock master
     {
     // administrative fields (read only)
@@ -67,6 +67,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   5. Save and activate.
 
+      ![save and activate](activate.png)
+
     Now the **behavior definition** is created and determines the create, update and delete functionality for travel booking.
 
 
@@ -86,11 +88,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior implementation](implementation2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create behavior implementation](implementation3.png)
 
-  4. In your global class replace your code with following:
+  4. In your **global class** replace your code with following:
 
     ```ABAP
     CLASS zcl_bp_i_travel_m_xxx DEFINITION
@@ -105,7 +107,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ENDCLASS.
     ```
 
-  5. In your local types replace your code with following:
+  5. In your **local types** replace your code with following:
 
     ```ABAP
     *"* use this source file for the definition and implementation of
@@ -131,6 +133,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
   6. Save and activate.
 
+      ![save and activate](activate.png)
+
      The **behavior** implementation is created for travel booking. By using the managed approach, the implementation of create, update and delete is done automatically.
 
 [DONE]
@@ -147,7 +151,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior definition for projection view](projection2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create behavior definition for projection view](projection3.png)
 
@@ -170,6 +174,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ```
 
   5. Save and activate.
+
+      ![save and activate](activate.png)
 
   6. Now switch to your service binding and double click on `TravelProcessor`.
 

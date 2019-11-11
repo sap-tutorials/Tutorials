@@ -9,10 +9,11 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ## Prerequisites
  - An account on Amazon AWS
- - Installed Jenkins in a Docker container on AWS EC2 instance
- - Created an SAP Cloud SDK app
  - An account on SAP Cloud Platform for Cloud Foundry
  - Cloud Foundry CLI installed
+ - An account on GitHub
+ - Installed Jenkins in a Docker container on AWS EC2 instance
+ - Created an SAP Cloud SDK app
 
 ## Details
 ### You will learn
@@ -150,7 +151,7 @@ To create a feature branch, go back to your project in SAP Web IDE, open the **G
 
 At the popup dialog, enter the name of your new local feature branch:
 
-```
+```git
 feature-changeservlet
 ```
 
@@ -189,13 +190,13 @@ Open SAP Web IDE, navigate to your **`cloudsdk-cf-aws`** project, and open the *
 
 In the servlet's **`doGet`** method, change the string that's written to the response from:
 
-```
+```java
 Hello World!
 ```
 
 to:
 
-```
+```java
 Hello Universe!
 ```
 

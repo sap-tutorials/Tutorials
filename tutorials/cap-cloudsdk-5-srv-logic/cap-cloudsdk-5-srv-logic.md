@@ -18,6 +18,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - One way to combine local and remote data for an OData response
 - How to look at the details of an incoming OData request
 
+**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+
 In the previous tutorial you set up the relationship between local and remote entities declaratively, in the service definition CDS file (`srv/cat-service.cds`). But that's only half the story. Now it's time to make that relationship come to life with some JavaScript in a service implementation that uses the [registration of custom handlers](https://help.sap.com/viewer/66de2977205c403bbc107264b8eccf4b/Cloud/en-US/94c7b69cc4584a1a9dfd9cb2da295d5e.html).
 
 In this tutorial, you will add some implementation logic to handle the case where the OData [$expand query option](http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html#_Toc372793860) is used to return addresses for the business partners associated with the orders for the books. In other words, to resolve this type of OData query:
@@ -59,11 +61,11 @@ This will also cause the SAP Cloud SDK core libraries to be installed, along wit
 
 Create a new file at the same level as the `cat-service.cds` file (in the `srv/` directory), and with the same name but with a `.js` extension (`srv/cat-service.js`).
 
-In this file, define a couple of key constants as follows:
+In this file, define some key constants as follows:
 
 ```JavaScript
-const BusinessPartnerAddress = require('@sap/cloud-sdk-vdm-business-partner-service').BusinessPartnerAddress
-const FilterList = require('@sap/cloud-sdk-core').FilterList
+const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-service')
+const { FilterList } = require('@sap/cloud-sdk-core')
 const destination = {
     url: 'http://localhost:3000/v2'
 }
@@ -73,7 +75,9 @@ The first two lines make use of features in [SAP Cloud SDK](https://developers.s
 
 Because SAP Cloud SDK has now been installed, these constant declarations will work when executed.
 
-The declaration of `destination` is as a small structure (that might also contain credential information in other circumstances) that locally represents the equivalent of a destination on SAP Cloud Platform. The URL refers, of course, to the root of the OData V2 service that is running from a previous tutorial in this mission. Check that the service is still running by checking that a URL like this successfully returns data: <http://localhost:3000/v2/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress>.
+The declaration of `destination` is as a small structure (that might also contain credential information in other circumstances) that locally represents the equivalent of a destination on SAP Cloud Platform. The URL refers, of course, to the root of the OData V2 service that is running from a previous tutorial in this mission.
+
+Check that the service is still running by checking that a URL like this successfully returns data: <http://localhost:3000/v2/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress>. If it's not, go over to the Integrated Terminal within the other main VS Code window and issue a `npm start` command.
 
 [DONE]
 [ACCORDION-END]
@@ -203,8 +207,8 @@ Here's a brief explanation:
 Check that what you have in `srv/cat-service.js` matches up with the following, which is what the entirety of that JavaScript file should be:
 
 ```JavaScript
-const BusinessPartnerAddress = require('@sap/cloud-sdk-vdm-business-partner-service').BusinessPartnerAddress
-const FilterList = require('@sap/cloud-sdk-core').FilterList
+const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-service')
+const { FilterList } = require('@sap/cloud-sdk-core')
 const destination = {
   url: 'http://localhost:3000/v2'
 }
@@ -278,8 +282,8 @@ cds run
 This time you should notice that the startup messages also mention the fact that the main service (`CatalogService`) has an implementation in `cat-service.js`, which (by implication) has also been successfully loaded:
 
 ```
-[cds] - connect to datasource - sqlite:consumer-app.db
-[cds] - serving CatalogService at /catalog - impl: cat-service.js     <---------
+[cds] - connect to datasource - sqlite:sqlite.db
+[cds] - serving CatalogService at /catalog - with impl: srv/cat-service.js
 [cds] - service definitions loaded from:
 
   srv/cat-service.cds
@@ -288,13 +292,16 @@ This time you should notice that the startup messages also mention the fact that
   db/data-model.cds
   node_modules/@sap/cds/common.cds
 
-[cds] - server listens at http://localhost:4004 ... (terminate with ^C)
-[cds] - launched in: 1250.645ms
+[cds] - launched in: 1963.309ms
+[cds] - server listening on http://localhost:4004 ...
+[ terminate with ^C ]
 ```
 
 > Regarding each of the definition files listed in this output, take a moment to make sure you understand why each of them has been loaded.
 
-Now the service has been started up, you can explore the data again, using OData queries like these:
+> You're running your `consumer-app` service, but also make sure your mock service (from the first two tutorials in this mission) is still running. You can check by requesting data from it at this URL: <http://localhost:3000/v2/sap/opu/odata/sap/API_BUSINESS_PARTNER/A_BusinessPartnerAddress>. If you get no response, pop back over to the tutorial "[Install an OData V2 Adapter](https://developers.sap.com/tutorials/cap-cloudsdk-2-v2-adapter.html)" earlier in this mission, specifically to Step 3 ("Start the service and check the OData responses") to see how to restart it.
+
+Now the `consumer-app` service has been started up, you can explore the data again, using OData queries like these:
 
 - The book orders: <http://localhost:4004/catalog/Orders?$expand=book>
 - The authors and their books: <http://localhost:4004/catalog/Authors?$expand=books>
@@ -304,7 +311,7 @@ But you can now also explore the orders with the corresponding addresses, like t
 
 - The orders and the addresses of the ordering business partners: <http://localhost:4004/catalog/Orders?$expand=address>
 
-This last query should return something that looks like this:
+This last query causes a call to be made to the mock service in order to fully prepare the response, and should return something that looks like this:
 
 ```JSON
 {
