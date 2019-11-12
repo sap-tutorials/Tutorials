@@ -1,11 +1,16 @@
 ---
-title: Define a Rule and Trigger an Action
-description: Define a rule to monitor the things and create an action to send an Email notification
+title: Define a Leonardo IoT Rule and Trigger an Action
+description: Define a Leonardo IoT rule to monitor the things and create an action to send an Email notification
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
 primary_tag: products>sap-leonardo-iot
 ---
+
+## Prerequisites  
+ - **Tutorials:** [Create a Simple IoT Device Model](iot-express-2-create-device-model) and [Create Thing Model](iot-express-4-create-thing-model)
+ - **Configuration** You or someone else that is an administrator in your global account has walked through the following end-to-end configuration and onboarding guide: [Getting Started with SAP Leonardo IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest).
+
 
 ## Details
 ### You will learn
