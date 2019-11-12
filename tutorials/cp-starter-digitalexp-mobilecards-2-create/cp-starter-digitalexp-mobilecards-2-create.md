@@ -103,7 +103,7 @@ Tap **SCAN QR CODE** to begin the on-boarding process.
 
 ![MobileCards](img_1.jpg)
 
->If you see some trouble during on-boarding process, make sure that Mobile Services app state is in Started mode.
+>If you see some trouble during on-boarding process, make sure that Mobile Services app state is in Started mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
 >![MobileCards](img_102.png)
 
 Tap **I AGREE** on `End User License Agreement`.
@@ -162,7 +162,7 @@ Scan the QR code with your camera and select the toast message to launch the SAP
 
 ![MobileCards](img_017.png)
 
->If you see some trouble during on-boarding process, make sure that Mobile Services app state is in Started mode.
+>If you see some trouble during on-boarding process, make sure that Mobile Services app state is in Started mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
 >![MobileCards](img_102.png)
 
 Enter your SAP Cloud Platform credentials and choose **Log On**.
