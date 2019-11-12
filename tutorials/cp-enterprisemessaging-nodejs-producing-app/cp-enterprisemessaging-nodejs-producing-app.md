@@ -1,6 +1,6 @@
 ---
 title: Create an Application for Producing Messages
-description: Build a basic Node.js app for sending messages to a queue.
+description: Develop and deploy a basic Node.js-based messaging application for sending messages to an SAP Cloud Platform Enterprise Message Queue.
 time: 20
 auto_validation: true
 tags: [ tutorial>beginner, topic>node-js, topic>java, products>sap-cloud-platform-for-the-cloud-foundry-environment]

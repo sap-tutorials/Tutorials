@@ -1,6 +1,6 @@
 ---
 title: Learn about Enterprise Messaging
-description: Learn about enterprise messaging, central concepts, and the benefits of decoupled communication.
+description: Learn about SAP Cloud Platform Enterprise Messaging, central concepts, and the benefits of decoupled communication and capabilities supported.
 time: 10
 auto_validation: true
 tags: [ tutorial>beginner, topic>node-js, topic>java, products>sap-cloud-platform-for-the-cloud-foundry-environment]

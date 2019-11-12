@@ -1,14 +1,11 @@
 ---
-title: Create an instance of SAP Cloud Platform Enterprise Messaging Service
-description: Create instance to manage queues and Topics to start working on SAP Cloud Platform Enterprise Messaging Service  
+title: Create Instance of SAP Cloud Platform Enterprise Messaging Service
+description:  Create an instance of SAP Cloud Platform Enterprise Messaging service from SAP Cloud Platform Cockpit and understand in detail about it's each property.  
 time: 15
 auto_validation: true
 tags: [ tutorial>beginner, topic>cloud]
 primary_tag: products>sap-cloud-platform-enterprise-messaging
 ---
-
-## Prerequisites
-  - You have a trial or productive account in SAP Cloud Platform Cloud Foundry.
 
 ## Details
 ### You will learn
@@ -16,6 +13,13 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
 >**IMPORTANT:** It is really important to learn the basics of messaging before going ahead with this tutorial. Check out [The Basics of Enterprise Messaging](cp-enterprisemessaging-learn-messaging-concepts).
 
+
+## Prerequisites
+
+  You must fulfill at least one of the following two points to be able to proceed with this tutorial.
+
+  - An account in SAP Cloud Platform (Cloud Foundry) trial environment
+  - SAP Cloud Platform (Cloud Foundry) environment with SAP Cloud Platform Enterprise Messaging entitlement  
 
 ---
 
@@ -62,8 +66,7 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 }
     ```
 
-    You can download this sample JSON file [here](https://developers-qa.sap.com/tutorials/cp-enterprisemessaging-instance-create/ems_sample.json
-).
+
 
     Service descriptor defines the message client. Each service instance is a message client that contains a name, namespace and a set of rules.
 
