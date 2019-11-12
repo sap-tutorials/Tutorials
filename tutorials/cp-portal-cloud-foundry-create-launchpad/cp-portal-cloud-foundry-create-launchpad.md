@@ -2,7 +2,7 @@
 title: Expose Your App to the Portal Service (Cloud Foundry)
 description: Create a launchpad module in SAP Web IDE to make your SAP Fiori app available for use in the Portal.
 auto_validation: true
-time: 20
+time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>html5, topic>sapui5, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform-portal
 ---
