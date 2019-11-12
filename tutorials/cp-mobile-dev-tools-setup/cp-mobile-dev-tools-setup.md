@@ -20,7 +20,9 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Log onto SAP Web IDE)]
 
-Click **Go to Service** to open the SAP Web IDE.
+Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://cockpit.hanatrial.ondemand.com/cockpit) to open the home page).
+
+Click on **Launch SAP Web IDE** to open SAP Web IDE page.
 
 ![MDK](img_004.png)
 

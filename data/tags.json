@@ -109,6 +109,10 @@
       "value": "products>build"
     },
     {
+      "name": "SAP Cloud Application Programming Model",
+      "value": "software-product-function>sap-cloud-application-programming-model"
+    },
+    {
       "name": "SAP Cloud Platform",
       "value": "products>sap-cloud-platform"
     },

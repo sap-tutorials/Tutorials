@@ -1,6 +1,6 @@
 ---
-title: Create SAP SuccessFactors Timesheet and To Dos Card
-description: Create a timesheet and a To Do card displaying data from SAP SuccessFactors.
+title: Create SAP SuccessFactors To Dos and Timesheet Card
+description: Create a To Do and a timesheet card displaying data from SAP SuccessFactors.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
@@ -19,22 +19,22 @@ author_profile: https://github.com/jitendrakansal
 
 Continuing from the destination you created in the previous tutorial, you will create two cards:
 
-  - `**Timesheet card:**` A card that shows a user's Time Sheet log for a given date
-
   - `**To Do card:**` A collection of cards that captures tasks in a To-do list -- each task has a card of its own
+
+  - `**Timesheet card:**` A card that shows a user's Time Sheet log for a given date
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Timesheet card)]
+[ACCORDION-BEGIN [Step 1: ](Create To Do card)]
 
-Enter **Name** as `TimeSheetCard` and click **Save**.
+Enter **Name** as `ToDosCard` and click **Save**.
 
 ![MobileCards](img_1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create To Do card)]
+[ACCORDION-BEGIN [Step 2: ](Create Timesheet card)]
 
 Choose **Create a New Card**.
 
@@ -44,10 +44,10 @@ Provide the following values for the new card:
 
 | Field | Value |
 |----|----|
-| **Name** | `ToDosCard` |
+| **Name** | `TimeSheetCard` |
 | **Destination** | `SFDEMO_APIHUB` |
 | **Template Source** | `Template Manager` |
-| **HTML Template** | `SuccessFactors My To Dos` |
+| **HTML Template** | `SuccessFactors My TimeSheet` |
 
 > If you see a pop-up, choose **OK**.
 
@@ -102,6 +102,9 @@ Choose the **APIs** tab to view the registration QR code. Scan the QR code appli
 Tap **SCAN QR CODE** to begin the on-boarding process.
 
 ![MobileCards](img_1.jpg)
+
+>If you see some trouble during on-boarding process, make sure that Mobile Services app state is in Started mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
+>![MobileCards](img_102.png)
 
 Tap **I AGREE** on `End User License Agreement`.
 
@@ -158,6 +161,9 @@ You can now view both the cards.
 Scan the QR code with your camera and select the toast message to launch the SAP Mobile Cards app.
 
 ![MobileCards](img_017.png)
+
+>If you see some trouble during on-boarding process, make sure that Mobile Services app state is in Started mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
+>![MobileCards](img_102.png)
 
 Enter your SAP Cloud Platform credentials and choose **Log On**.
 

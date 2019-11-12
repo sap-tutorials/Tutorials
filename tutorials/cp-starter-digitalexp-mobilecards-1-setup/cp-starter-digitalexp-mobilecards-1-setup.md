@@ -99,7 +99,7 @@ In this step, you will create a destination connecting to SuccessFactors sandbox
 
     ![MobileCards](img_12.png)
 
-5. Scroll down and choose `SuccessFactors My TimeSheet` and select the  **Create Card Template** icon.
+5. Scroll down and choose `SuccessFactors My ToDos` and select the  **Create Card Template** icon.
 
     ![MobileCards](img_13.png)
 
@@ -128,7 +128,7 @@ In this step, you will create a destination connecting to SuccessFactors sandbox
 [VALIDATE_1]
 [ACCORDION-END]
 
-In this tutorial, you have successfully created a destination connecting to a SAP SuccessFactors sandbox system. In the next tutorial, you will use this destination to create two cards displaying `TimeSheet` and `ToDos` data.
+In this tutorial, you have successfully created a destination connecting to a SAP SuccessFactors sandbox system. In the next tutorial, you will use this destination to create two cards displaying `ToDos` and `TimeSheet` data.
 
 
 ---

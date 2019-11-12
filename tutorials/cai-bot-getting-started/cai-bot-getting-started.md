@@ -275,7 +275,7 @@ Now let's build a skill to tell a joke.
 
     ![Skill trigger condition](SkillCondition.png)
 
-    - Click on the **+** sign (**Add a new list of conditions**), and repeat the above for `@laugh` and `@lame` intents.
+    - Click on the **+** sign -- **Add a new list of conditions** -- and repeat the above for `@laugh` and `@lame` intents.
 
     - Change the logical conditions to `Or` between each `If` statement, simple by clicking on the `And`.
 

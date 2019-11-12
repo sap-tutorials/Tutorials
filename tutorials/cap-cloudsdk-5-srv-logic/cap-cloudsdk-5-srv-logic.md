@@ -18,6 +18,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - One way to combine local and remote data for an OData response
 - How to look at the details of an incoming OData request
 
+**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+
 In the previous tutorial you set up the relationship between local and remote entities declaratively, in the service definition CDS file (`srv/cat-service.cds`). But that's only half the story. Now it's time to make that relationship come to life with some JavaScript in a service implementation that uses the [registration of custom handlers](https://help.sap.com/viewer/66de2977205c403bbc107264b8eccf4b/Cloud/en-US/94c7b69cc4584a1a9dfd9cb2da295d5e.html).
 
 In this tutorial, you will add some implementation logic to handle the case where the OData [$expand query option](http://docs.oasis-open.org/odata/odata/v4.0/os/part2-url-conventions/odata-v4.0-os-part2-url-conventions.html#_Toc372793860) is used to return addresses for the business partners associated with the orders for the books. In other words, to resolve this type of OData query:

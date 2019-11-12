@@ -47,10 +47,11 @@ You will create a project using the SAP Core Data and Services Node.js module fr
 
 Paste the following commands into the Cloud shell panel and press **Enter**
 
-```text
+```shell
 npm config set @sap:registry https://npm.sap.com
 npm install --global @sap/cds@3.13.0
 ```
+
 For example:
 
 ![Code Editor](4.png)
@@ -67,9 +68,10 @@ You will initialize your application using the Cloud Application Programming mod
 
 Execute the following command to set up a Core Data and Services project:
 
-```text  
+```shell
 cds init --modules db,srv --insecure --db-technology hana --verbose teched
 ```
+
 You will see a new folder has been created. Expand it to see the two new modules:
 
 ![Code Editor](5.png)
@@ -82,7 +84,7 @@ You will now create the design-time artifacts for your database. You will define
 
 In the `db` folder, open the sample file **`data-model.cds`** and replace the content with the following:
 
-```text
+```cds
 namespace teched.recipes;
 
 entity Foods {
@@ -98,7 +100,6 @@ entity Ingredients {
     quantity : Decimal(13, 3);
     unit :  String(3);
 }
-
 ```
 
 For example:
@@ -123,13 +124,13 @@ Under `db/src`, create a folder called `loads`
 
 In the `loads` folder, create a new file with the following name:
 
-```text
+```file
 data_load.hdbtabledata
 ```
 
 Add the following content into it:
 
-```text
+```json
 {
 	"format_version": 1,
 	"imports": [{
@@ -181,7 +182,7 @@ If you look at the file you created in the previous step, you will see it refere
 
 In the command line, navigate into the `loads` directory and enter the following command
 
-```text
+```shell
 cd ./teched/db/src/loads
 touch ingredients.csv recipes.csv
 edit ingredients.csv
@@ -191,7 +192,7 @@ This will create two files and open the `ingredients.csv` file in the editor.
 
 Paste the following content into the **ingredients** file:
 
-```text
+```c
 INGREDIENT,NAME,QUANTITY,UNIT,FOODID_ID
 1,MILK,1,L,1
 1,MILK,1,L,4
@@ -227,7 +228,7 @@ Open the file **`recipes.csv`** file
 
 Paste the following content into `recipes.csv`
 
-```text
+```c
 ID,DESCRIPTION
 1,Rabid Nutella Chocolate Cake
 2,Unicorn fishies
@@ -238,7 +239,7 @@ ID,DESCRIPTION
 
 Use the results of the following command to complete the validation below.
 
-```text
+```shell
 cat ~/teched/db/src/loads/ingredients.csv | grep KIT
 ```
 
@@ -249,7 +250,7 @@ cat ~/teched/db/src/loads/ingredients.csv | grep KIT
 
 Open the file `srv/cat-service.cds` and paste the following content into it
 
-```text
+```cds
 using teched.recipes as recipes from '../db/data-model';
 
 
@@ -269,7 +270,7 @@ For example:
 [ACCORDION-BEGIN [Step 8: ](Use CDS to generate the artifacts for SAP HANA)]
 You will be connecting to the SAP HANA, express edition instance you created in the previous tutorial. Use the following two commands to create the `hdbcds` files.
 
-```text
+```shell
 cd ~/teched/db/
 npm install
 ```

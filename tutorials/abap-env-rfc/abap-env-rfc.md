@@ -79,7 +79,7 @@ First, you need to connect your ABAP on-premise system to a Neo subaccount by me
   - **Display Name** = (Neo Subaccount) Display Name. You can find this in by choosing your SAP Cloud Platform, NEO, subaccount in SAP Cloud Cockpit (see screenshot below)
   - **Subaccount User** = for the Neo Subaccount
   - **Password**
-  - **Location ID** = Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. here, `MyInstance`
+  - **Location ID** = Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. your initials
 
   ![Image depicting step1g-create-subacc](step1g-create-subacc.png)
   ![Image depicting step1f-choose-subacc](step1f-choose-subacc.png)
@@ -93,7 +93,7 @@ Your configuration should now look like this:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add your on-Premise System)]
-1. In your sub-account (**Display Name**), choose **Cloud to On-Premise > Access Control**.
+1. In your sub-account, **Display Name**, choose **Cloud to On-Premise > Access Control**.
 
   ![Image depicting step2e-add-onP-system](step2e-add-onP-system.png)
 
@@ -168,7 +168,7 @@ You will now create two destinations in the ABAP Environment. These must be crea
     - Name, e.g. : `ES5_RFC_XXX`
     - Type: `RFC`
     - Description, e.g. Test ES5
-    - Location ID: same as in step 1, e.g. `MyInstance`
+    - Location ID: same as in step 1, e.g. your initials
     - User: Your user for the on-premise system
     - Password: Your password
 
@@ -359,7 +359,7 @@ ENDCLASS.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Test the class)]
-1. Save and activate the class (**`Ctrl+S, Ctrl+F3`**).
+1. Save and activate the class, using **`Ctrl+S, Ctrl+F3`**.
 
 2. Run the class by choosing **`F9`**. Some system information, such as the hostname, the System ID ( `<SID>` ), and the IP address should be displayed.
 
