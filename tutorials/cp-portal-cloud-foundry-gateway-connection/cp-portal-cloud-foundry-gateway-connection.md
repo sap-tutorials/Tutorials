@@ -1,6 +1,6 @@
 ---
 title: Connect SAP Cloud Platform to Your SAP Gateway Demo System Account
-description: In order to add apps from a backend system to your Portal site, you need to create a connection between SAP Cloud Platform and the SAP Gateway Demo System.
+description: Create a connection between SAP Cloud Platform and the SAP Gateway Demo System in order to add apps from a backend system to your Portal site.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform]
