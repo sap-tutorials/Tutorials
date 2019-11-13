@@ -106,7 +106,7 @@ For example:
 
 ![Code Editor](6.png)
 
-Take a look at the code you have just pasted. You can see two entities, one for Food and one for ingredients. These entities are associated to each other, as a recipe for one food item will be associated to many ingredients.
+Take a look at the code you have just pasted. You can see two entities, one for Food and one for Ingredients. These entities are associated to each other, as a recipe for one food item will be associated to many ingredients.
 
 These two entities will be translated into tables in the database.
 
@@ -183,14 +183,14 @@ If you look at the file you created in the previous step, you will see it refere
 In the command line, navigate into the `loads` directory and enter the following command
 
 ```shell
-cd ./teched/db/src/loads
+cd ~/teched/db/src/loads
 touch ingredients.csv recipes.csv
 edit ingredients.csv
 ```
 
 This will create two files and open the `ingredients.csv` file in the editor.
 
-Paste the following content into the **ingredients** file:
+Paste the following content into the `ingredients.csv` file:
 
 ```c
 INGREDIENT,NAME,QUANTITY,UNIT,FOODID_ID
@@ -246,7 +246,7 @@ cat ~/teched/db/src/loads/ingredients.csv | grep KIT
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Adapt the services)]
+[ACCORDION-BEGIN [Step 7: ](Update the service declaration)]
 
 Open the file `srv/cat-service.cds` and paste the following content into it
 
@@ -260,7 +260,8 @@ service CatalogService {
 }
 
 ```
-For example:
+
+The result should look like this in the Editor for Cloud Shell.
 
 ![Open service file](11.png)
 
@@ -274,13 +275,20 @@ You will be connecting to the SAP HANA, express edition instance you created in 
 cd ~/teched/db/
 npm install
 ```
-You will see  the progress in the console.
+
+You will see the progress in the console.
 
 ![Open service file](12.png)
 
 Expand the `gen` folder that was generated after the last commands.
 
 ![Open service file](13.png)
+
+You can check as well from the console using the following command.
+
+```shell
+ls ~/teched/db/src/gen/*.hdbcds
+```
 
 
 [VALIDATE_2]
