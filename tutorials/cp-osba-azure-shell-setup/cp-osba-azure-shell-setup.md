@@ -80,10 +80,6 @@ Launch the Azure Cloud Shell by clicking on the highlighted control below:
 
 [OPTION BEGIN [SAP TechEd Account]]
 
-The SAP experts have already set up the Azure Cloud Shell. Select the `Microsoft` directory as follows:
-
-> ![choose microsoft directory](choose-directory.png)
-
 >If you are interested in the necessary steps to set up the Azure Cloud Shell, click on the **Own Account** tab.
 
 > ![use your own account via the tab Own Account](own-account-usage.png)
