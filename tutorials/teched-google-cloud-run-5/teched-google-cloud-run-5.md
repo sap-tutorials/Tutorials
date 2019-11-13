@@ -165,7 +165,7 @@ Flag **Allow unauthenticated invocations** and click **Show Optional Revision Se
 
 In the environment variable, add a variable called `VCAP_SERVICES` and use the content of the file `default-env.json` as a string from the previous step.
 
-Do not copy the `VCAP_SERVICES=` assignment. You only need the content of the variable after it.
+Do not copy the `VCAP_SERVICES=` assignment. You only need the value of the variable.
 
 ![Create Cloud Run](13x.png)
 
