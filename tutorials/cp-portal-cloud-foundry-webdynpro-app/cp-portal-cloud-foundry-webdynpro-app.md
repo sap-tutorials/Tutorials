@@ -1,6 +1,6 @@
 ---
 title: Add a Web Dynpro ABAP App to Your Portal Site
-description: SAP customers who run classic SAP UI apps on their data center backend, can use these apps in their SAP Cloud Platform Portal.
+description: Add a classic SAP UI app (like those typically run by SAP customers on the data center backends), to an SAP Cloud Platform Portal site.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
