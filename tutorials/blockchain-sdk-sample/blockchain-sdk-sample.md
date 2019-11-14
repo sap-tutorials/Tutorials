@@ -22,6 +22,8 @@ author_profile: https://github.com/akrompholz
 
 This tutorial will guide you how to create a Java application for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud SDK. You will use the SAP Cloud Platform Blockchain service for MultiChain and generate a project using the SAP Cloud SDK Maven archetype, implement blockchain features to store data retrieving from a S/4HANA OData service. You will deploy the application to SAP Cloud Foundry and monitor it with the SAP Cloud Platform Blockchain Dashboard for Multichain.
 
+<b>GitHub Source:</b> You can also download the source file for this application, and instructions on how to install it, from [GitHub.com/SAP-Samples](https://github.com/SAP-samples/cloud-blockchain-bankdata-management-example).
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Generate Spring Boot project)]
