@@ -47,13 +47,13 @@ The `.hdbcds` files have now been translated into tables in the HDI container yo
 Go into the root directory and start the services using the following two commands:
 
 ```shell
-cd ..
+cd ~/teched
 npm start
 ```
 
 You will see `server listens at...`. This is the service being exposed from the Cloud Shell virtual machine.
 
-![deploy service](3.png)
+![deploy service](3a.png)
 
 [DONE]
 [ACCORDION-END]
