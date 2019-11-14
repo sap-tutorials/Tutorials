@@ -13,6 +13,7 @@ author_profile: https://github.com/niloofar-naseri
  - Create a developer user in a SAP Cloud Platform ABAP Environment system.
  - Add the lifecycle management - Software Components business catalog (ID: `SAP_A4C_BC_MSCL_PC`) to your business role
  - Download Eclipse Photon or Oxygen and install ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
+ - Read following blog post about [Software Lifecycle Management for SAP Cloud Platform ABAP Environment](https://blogs.sap.com/2019/11/13/software-lifecycle-management-for-sap-cloud-platform-abap-environment/).
 
 ## Details
 ### You will learn  
