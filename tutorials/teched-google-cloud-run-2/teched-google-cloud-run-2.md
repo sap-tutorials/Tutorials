@@ -30,10 +30,6 @@ Click on the cloud shell icon ![cloud shell icon](icon.png) toward the right sid
 
 ![Code Editor](1.png)
 
-Click **Start Cloud Shell**
-
-![Code Editor](3.png)
-
 The cloud shell panel will open up at the bottom of the window.  **Launch the code editor**:
 
 ![Code Editor](2b.png)
@@ -287,7 +283,7 @@ Expand the `gen` folder that was generated after the last commands.
 You can check as well from the console using the following command.
 
 ```shell
-ls ~/teched/db/src/gen/*.hdbcds
+ls -l ~/teched/db/src/gen/*.hdbcds
 ```
 
 
