@@ -118,8 +118,6 @@ If you log in successfully, then you should see the result of the SQL query, i.e
 
 ![HANA ssh](6a.png)
 
-Type `\quit` to exit `hdbsql` and to return to the OS shell.
-
 **Leave this window open**. You will need the contents of the service key in next steps.
 
 [DONE]
