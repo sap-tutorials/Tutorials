@@ -36,7 +36,7 @@ Click **Start Cloud Shell**
 
 The cloud shell panel will open up at the bottom of the window.  **Launch the code editor**:
 
-![Code Editor](2.png)
+![Code Editor](2b.png)
 
 [DONE]
 [ACCORDION-END]
