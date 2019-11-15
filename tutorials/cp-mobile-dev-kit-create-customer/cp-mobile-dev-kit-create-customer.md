@@ -13,6 +13,8 @@ author_profile: https://github.com/jitendrakansal
 - You have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
 
 ## Details
+**Note**: Ensure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
+
 ### You will learn
   - How to create a customer record with information such as name, email, phone number & date of birth
   - How to store this record locally
@@ -21,8 +23,6 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create new page for new customer record)]
-
-Ensure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
 
 In this step, you will create the `Customers_Create.page` as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
 

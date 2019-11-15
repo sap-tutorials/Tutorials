@@ -27,11 +27,11 @@ You will now create an HDI container, connect to it from your application in Goo
 
 [ACCORDION-BEGIN [Step 1: ](Create an HDI container)]
 
-Go back to the SSH console window where SAP HANA, express edition, was finishing its configuration and starting its applications.
+Go back to the SSH console window where you have connected to the virtual machine with the deployed SAP HANA, express edition.
 
 Maximize the console for a better experience:
 
-![HANA ssh](max.png)
+![HANA ssh](max_with_arrow.png)
 
 > Note: If you have closed this window, you can go back into the **Google Compute Engine** `https://console.cloud.google.com/compute/instances` (in incognito mode of the web browser) and click on the `SSH` button right next to the virtual machine.
 >  ![HANA ssh](ssh.png)
@@ -116,9 +116,7 @@ Use the values of **`user`** and **`password`** properties from the service key 
 
 If you log in successfully, then you should see the result of the SQL query, i.e. the content of the system `dummy` table.
 
-![HANA ssh](6a.png)
-
-Type `\quit` to exit `hdbsql` and to return to the OS shell.
+![HANA ssh](6b.png)
 
 **Leave this window open**. You will need the contents of the service key in next steps.
 

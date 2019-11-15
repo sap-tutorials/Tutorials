@@ -1,5 +1,5 @@
 ---
-title: Register SAP Cloud Platform Neo Subaccount in SAP Cloud Platform Identity Authentication Service
+title: Register a Neo Subaccount in SAP Cloud Platform Identity Authentication Service
 description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Platform Identity Authentication service and an SAP Cloud Platform Neo subaccount.
 auto_validation: true
 time: 25

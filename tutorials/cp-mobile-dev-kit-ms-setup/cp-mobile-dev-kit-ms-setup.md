@@ -1,6 +1,6 @@
 ---
 title: Set Up Initial Configuration for an MDK App
-description: Configure a new app of type mobile development kit in the SAP Cloud Platform Mobile Services cockpit.
+description: Configure a new app in the SAP Cloud Platform Mobile Services cockpit and assign some server side features.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
