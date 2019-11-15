@@ -55,25 +55,25 @@ The rule context defines the data objects that can be used in a rule. Currently,
 
 1. From the launchpad, choose the **Rule Contexts** tile.
 
-    ![New Rule Context](NewRule-Context.png)
-
 2. Choose **New**.
 
 3. Set **Name** for the rule context to `envData` for `Greenhouse`. Optionally, you can also enter a **Short Text** and a **Description**.
 
-    ![Select Property Set](Select-PropertySet.png)
+    ![New Rule Context](NewRule-Context.png)
 
 4. Under **Data Objects > Thing Data - Property Sets**, click **Add**.
 
 5. In the popup window, for **Package**, select your package, for example `greenhouse`. For **Thing Type**, select your thing type, for example `greenhouseType`.
 
-    ![EnvData for Greenhouse](EnvData-Greenhouse.png)
-
 6. Choose the property set `envData` for the new rule context and click **OK**.
+
+    ![Select Property Set](Select-PropertySet.png)
 
     The system immediately associates the selected property set with the rule context and navigates you back to the rule context detail screen.
 
 7. Click the `envData` property set to check the properties and details. When done, click **Close**.
+
+    ![EnvData for Greenhouse](EnvData-Greenhouse.png)
 
 8. Choose **Save**.
 
@@ -97,11 +97,11 @@ In this tutorial, you will make a streaming rule.
 
 2. Choose **New Rule**.
 
-    ![Activate a New Rule](New-Rule.png)
-
 3. From the menu, choose **Streaming Cloud** for the type of the rule that you want to create.
 
     The system presents an empty detail screen where you can enter the settings for the new rule on the **General Information** page.
+
+    ![Activate a New Rule](New-Rule.png)
 
 4. Set **Name** to **`Temperature above 70`** for the rule. Optionally, you can also enter a **Short Text** and **Description**.
 
@@ -109,13 +109,13 @@ In this tutorial, you will make a streaming rule.
 
 6. When done with the **General Information**, move on to the **Definition** tab.
 
-    ![General Information for a New Rule](NewRule-GeneralInfo.png)
-
 7. From the list of **Rule Contexts**, select your rule context, for example, `envData for Greenhouse`.
 
 8. Once you have selected your rule context it will open another window to select the property set for this rule context.
 
     Click `envData` to select as example here.
+
+    ![General Information for a New Rule](NewRule-GeneralInfo.png)
 
     The system informs you that the rule context cannot be changed anymore, once it has been assigned to a rule. Confirm the information to assign the rule context. The system automatically displays the Thing Type to which the rule context belongs.
 
@@ -125,11 +125,11 @@ In this tutorial, you will make a streaming rule.
 
     >**Hint:** Entering a space in the **If** condition will give you a context dialog that enables you to select the right object or operator of the rule. By this way, you cannot enter an erroneous rule.
 
-    ![Rule Editor to Set Temperature Details](RuleEditor-Step2.png)
-
 10. Set **IoT Event Name** to **`High Temperature`** and **IoT Event Severity** to **`Medium`**.
 
     >**Hint:** The event name that you can use in the action to give a meaningful context. To set the **Event Severity**, use **`Low`**, **`Medium`** or **`High`**.
+
+    ![Rule Editor to Set Temperature Details](RuleEditor-Step2.png)
 
 11. Click **Save**. The system goes back to the rule list view.
 
