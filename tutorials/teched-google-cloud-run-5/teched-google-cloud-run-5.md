@@ -20,31 +20,13 @@ These tutorials are meant to be completed at the Developer Garage at SAP TechEd.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create NPM configuration file)]
+[ACCORDION-BEGIN [Step 1: ](Create project NPM configuration file)]
 
-Use the following two commands to create a file called `.npmrc` in the `srv` directory. This file is used by `NPM` for configuration.
-
-```shell
-touch ~/teched/srv/.npmrc
-edit ~/teched/srv/.npmrc
-```
-
-![NPM config](1.png)
-
-Paste the following line into the file:
-
-```text
-@sap:registry=https://npm.sap.com
-```
-
-![NPM config](2.png)
-
-Copy the `.npmrc` file to the root folder too with the following command:
+Copy the `.npmrc` global configuration file to the project's root folder with the following command:
 
 ```shell
-cp ./srv/.npmrc ~/teched
+cp ~/.npmrc ~/teched
 ```
-
 
 [DONE]
 [ACCORDION-END]
@@ -74,7 +56,6 @@ WORKDIR /usr/src/app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied.
 # Copying this separately prevents re-running npm install on every code change.
 COPY /package*.json ./
-COPY /srv/.npmrc .npmrc
 COPY .npmrc ./
 
 # Install dependencies.
@@ -85,6 +66,7 @@ COPY . .
 
 # Run the web service on container startup.
 CMD [ "npm", "start" ]
+
 ```
 
 ![NPM config](3.png)
