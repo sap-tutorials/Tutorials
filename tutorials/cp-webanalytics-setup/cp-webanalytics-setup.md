@@ -21,8 +21,6 @@ SAP Web Analytics is a software as a service (SaaS) offering on the SAP Cloud Pl
 
 The service lets you collect, report, and analyze the usage data of your website that helps you to identify meaningful patterns from various digital channels. These insights may lead you to implement improvements that can help you optimize the overall user experience of your websites.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bXMtor_AmPE" frameborder="0" allowfullscreen></iframe>
-
 A **customer admin** in SAP Web Analytics is an administrator for that particular subscription. For example, the IT department of an organization that subscribes to the service.
 
 As a customer admin for Web Analytics service, within your subscription, you create unique workspaces. In SAP Web Analytics, these workspaces are called **Spaces**.
@@ -116,8 +114,8 @@ Skip this step if you already have a subaccount with Amazon Web Services (AWS) i
 1. Select your subaccount to navigate back to subaccount overview page.
 2. In the left pane, select **Security** and then **Trust Configuration**.
 3. Select **SAP ID Service**. If you've configured your own ID service with SAP Cloud Platform, select your custom ID service.
-4. Enter the e-mail address of the user (or the attribute that you've configured in the custom ID service) you want to onboard as the customer admin and select **Show Assignments**.
-5. If the user is not part of the ID service, add the user.
+4. Enter your e-mail address (or the attribute that you've configured in the custom ID service) so that you can onboard yourself as the customer admin and select **Show Assignments**.
+5. If your e-mail address is not part of the ID service, add the same.
 6. Select **Assign Role Collection**.
 7. In the **Role Collection** dropdown, select the new role that you created for SAP Web Analytics and select **Assign Role Collection**.
 
