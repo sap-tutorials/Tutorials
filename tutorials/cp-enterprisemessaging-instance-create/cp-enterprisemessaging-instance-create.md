@@ -18,7 +18,6 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
   You must fulfill at least one of the following two points to be able to proceed with this tutorial.
 
-  - An account in SAP Cloud Platform (Cloud Foundry) trial environment
   - SAP Cloud Platform (Cloud Foundry) environment with SAP Cloud Platform Enterprise Messaging entitlement  
 
 ---
