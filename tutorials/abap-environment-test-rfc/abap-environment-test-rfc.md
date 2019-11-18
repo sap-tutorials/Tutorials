@@ -28,7 +28,7 @@ In future, we hope to provide a helper class that generates the appropriate DDL 
 [ACCORDION-BEGIN [Step 1: ](Create an ABAP class)]
 1. As before, in the Package Explorer, select your package and choose **New > ABAP Class** from the context menu.
 
-2. Enter a name and description for your class and choose Next. **Remember to change `XXX` to your group number**.
+2. Enter a name and description for your class, e.g. `ZCL_OUTPUT_TEST_XXX` and choose Next. **Remember to change `XXX` to your group number**.
 
 3. Choose or create a transport request, then choose Finish.
 
@@ -147,7 +147,7 @@ Finally, call the remote BAPI. The exception handling is mandatory to avoid seri
 CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
   DESTINATION lv_rfc_dest_name
 *   EXPORTING
-*     max_rows              = 5
+*     max_rows              = 25
     TABLES
       headerdata            = lt_product
     EXCEPTIONS
@@ -257,7 +257,7 @@ CLASS zjp_out_test IMPLEMENTATION.
         CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
           DESTINATION lv_rfc_dest_name
           EXPORTING
-             max_rows              = 10
+             max_rows              = 25
           TABLES
             headerdata            = lt_product
           EXCEPTIONS
