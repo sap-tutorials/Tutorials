@@ -47,6 +47,7 @@ Under the **Privacy Settings** header, do the following:
 > In the production landscape, you can use this toggle if your website is used by employees only.
 
 2. Enter the number of days to remember the visitors. Do not enable **Set as session**.
+>If you enable **Set as session**, a new visitor ID is generated for every visit. Hence, you won't be able to differentiate new and returning visitors.
 
     |  Field Name       | Value
     |  :-------------   | :-------------

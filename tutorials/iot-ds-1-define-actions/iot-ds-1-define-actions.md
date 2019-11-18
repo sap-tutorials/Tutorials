@@ -18,6 +18,8 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 ---
 In this tutorial, you'll create a streaming rule for high greenhouse temperature which triggers an action of type Decision Support.  This action will in turn trigger another action of type In-App Notification which creates SAP Fiori Notifications for a set of recipients.  You'll also define a Decision Support configuration with two options.  One is a Quick Create application and the other one is a SAP Fiori Navigation.
 
+---
+
 [ACCORDION-BEGIN [Step 1: ](Create rule context)]
   Please complete the prerequisites before starting this step.
 
@@ -25,7 +27,9 @@ In this tutorial, you'll create a streaming rule for high greenhouse temperature
 
     ![New Rule Context 0](/images/launchpad_tile_rulecontexts.png)
 
-  2. Create a new Rule Context. If you have already created a Rule Context for greenhouse from the tutorial [Define a Rule and Trigger an Action](iot-express-4a-define-rule-action), you can skip to the next Step **Create streaming rule**.
+  2. Create a new Rule Context.
+
+    >If you already have created a rule context for `greenhouse`, you can skip to the next step, **Create streaming rule**.
 
     ![New Rule Context 1](/images/rulectxt_new_1.png)
 
