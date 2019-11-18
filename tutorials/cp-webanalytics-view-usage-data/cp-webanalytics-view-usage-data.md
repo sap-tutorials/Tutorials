@@ -33,7 +33,9 @@ primary_tag: products>sap-web-analytics
 
     ![Home dashboard](Home dashboard.png)
 
-2. Navigate to other dashboards like Visitors, Pages, Technology, Referrer, and Click Map.
+2. Pick a timeline based on your data generation. For example, if you'd used the website within the last 24 hours, select **Last 24 Hours**.
+
+3. Navigate to other dashboards like Visitors, Pages, Technology, Referrer, and Click Map.
 
 >To learn more about SAP Web Analytics, refer to the [official help documentation](https://help.sap.com/viewer/e342b49c78c74d4e8ebc00700a791aee/Cloud/en-US/).
 
