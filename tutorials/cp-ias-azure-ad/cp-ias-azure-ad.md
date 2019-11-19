@@ -24,7 +24,7 @@ To summarize the steps in this tutorial overall: You are going to exchange metad
 
 [ACCORDION-BEGIN [Step 1: ](Log into Azure Portal)]
 
-Login to **Azure Portal** by going to [portal.azure.com](portal.azure.com) and provide your credentials.
+Login to **Azure Portal** by going to [https://portal.azure.com](https://portal.azure.com) and provide your credentials.
 
 Make sure you are using the right directory within the Azure subscription. The current directory is shown below your user name.
 
