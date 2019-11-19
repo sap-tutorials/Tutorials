@@ -41,8 +41,7 @@ Right click on Workspace folder and select **New** | **MDK CRUD Project**.
 
 >_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
 
->More details on _MDK template_ is available in
-[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+>More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
 
 Enter the Project Name as `MDK_Styling` and click **Next**.
 
@@ -62,7 +61,7 @@ In _Service Creation_ step, provide and select the below information:
 
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
-![MDK](img_004.1.png)
+![MDK](img_004.png)
 
 Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
 
@@ -139,6 +138,8 @@ ToolBar {
   background-color: @mdkRed1;
 }
 ```
+
+>By default there is a tint overlay overlay on the toolbar.  If you want a solid color toolbar that matches the action bar you need to use the `bartintcolor` property in the style instead of the background color (or in addition to). `bartintcolor: blue;`
 
 ![MDK](img_007.png)
 

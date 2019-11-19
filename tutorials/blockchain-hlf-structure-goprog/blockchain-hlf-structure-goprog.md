@@ -84,9 +84,9 @@ When you instantiate or upgrade a chaincode, the chaincode's `Init` function is 
 
 When you invoke or query a chaincode, the chaincode's `Invoke` function is executed. You can use this to update or query the ledger.
 
-NOTE: Further information about this interface can be found at [`GoDoc.org`](https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#Chaincode)
+NOTE: Further information about this interface can be found at [`GoDoc.org`](https://godoc.org/github.com/hyperledger/fabric/core/chaincode)
 
-The `Init` and `Invoke` functions are both called with the [stub interface](https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStubInterface), which can be used to access transaction parameters and to modify the ledger.
+The `Init` and `Invoke` functions are both called with the [stub interface](https://godoc.org/github.com/hyperledger/fabric/core/chaincode), which can be used to access transaction parameters and to modify the ledger.
 
 Open your `hello_world.go` file and copy and paste the init and invoke functions below the import packages:
 

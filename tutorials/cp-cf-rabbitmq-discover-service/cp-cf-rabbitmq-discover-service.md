@@ -14,6 +14,10 @@ time: 15
 
 ---
 
+> The SAP managed offerings for PostgreSQL, Mongo DB, Redis and RabbitMQ will be removed from the price list starting Q3/2019 i.e. July 15th and are scheduled to be retired as of Jan 15, 2020.
+
+> **Therefore, depending on you account type, you might not be able to complete this tutorial anymore**
+
 [ACCORDION-BEGIN [Step 1: ](Get to know the service via the CLI)]
 > You can use the commands introduced in this section to get familiar with the CLI. However, you are not required to run those commands in order to complete this tutorial.
 

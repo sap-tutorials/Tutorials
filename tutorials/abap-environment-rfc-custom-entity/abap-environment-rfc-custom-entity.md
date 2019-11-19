@@ -3,29 +3,42 @@ title: Get Data from a Remote System Using a Custom Entity
 description: Get data from an on-Premise System Using RFC, by Implementing a Custom Entity in ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ## Prerequisites
+- Either: An entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
+- Or: [SAP Cloud Platform, ABAP environment, trial version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
 
 ## Details
 ### You will learn
   - How to create a suitable custom entity to get data from a remote system
   - How to implement a query provider class to get the data, using a BAPI (Business Application Programming Interface)
-  - How to expose the custom entity as a business service
-  - How to display the data in a Fiori Elements Preview, using the service binding
+  - How to expose the custom entity as a Business Service Definition
+  - How to display the data in a Fiori Elements Preview, using the Business Service Binding
+
+Note that, if you are using the trial version, currently you cannot access an on-premise system using RFC. In that case, you will test the class using mock data.
 
 A BAPI is a standard interface to a business object model, implemented as a function module. For more information, see: [BAPI](https://help.sap.com/viewer/166400f6be7b46e8adc6b90fd20f3516/1709%20002/en-US)
 
-Custom entities are used for data models whose runtime is implemented manually. There is no SELECT statement on the data source. Rather, you define the elements and their types in the custom entity. Then you implement the data retrieval logic in an ABAP class, which is referenced in an entity annotation.
-Custom entities allow you to get data using an OData service or, as here, using RFC.
+Custom entities are used for data models whose runtime is implemented manually. There is no SELECT statement on the data source. Rather, you define the elements and their types in the custom entity. Then you implement the data retrieval logic in an ABAP class, which is referenced in an entity annotation. Custom entities allow you to get data using an OData service or, as here, using RFC.
 
-For more information on CDS custom entities, see [SAP Help Portal: Using a CDS Custom Entity to Define the Data Model for an OData Service](https://help.sap.com/viewer/c0d02c4330c34b3abca88bdd57eaccfc/Cloud/en-US/6a064c09c508435a81357898e8e65d06.html)
+For more information, see:
 
-To see this tutorial group as a blog series by Andre Fischer, see: [How to call a remote function module in your on-premise SAP system from SAP Cloud Platform – ABAP Environment](https://blogs.sap.com/2019/02/28/how-to-call-a-remote-function-module-in-your-on-premise-sap-system-from-sap-cloud-platform-abap-environment/)
+- [SAP Help Portal: Using a CDS Custom Entity to Define the Data Model for an OData Service](https://help.sap.com/viewer/c0d02c4330c34b3abca88bdd57eaccfc/Cloud/en-US/6a064c09c508435a81357898e8e65d06.html)
 
-This includes a longer class code sample, which implements filtering.
+Background reading:
+
+- [Implement a custom entity in the ABAP RESTful Programming Model using a BAPI](https://blogs.sap.com/2019/03/01/how-to-implement-a-custom-entity-in-the-abap-restful-programming-model-using-remote-function-modules/) - includes handling a single record, filtering, and ordering
+
+- [Insert test data into tables in SAP Cloud Platform, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
+
+- [Call a remote OData service from the trial version of SAP Cloud Platform ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
+
+- [OData service development with SAP Gateway using CDS](https://blogs.sap.com/2016/06/01/odata-service-development-with-sap-gateway-using-cds-via-referenced-data-sources/) - pertains to on-Premise Systems, but contains lots of useful background information on the relationships between CDS views, OData services
+
+- [OData – Everything that you need to know](https://blogs.sap.com/2016/02/08/odata-everything-that-you-need-to-know-part-1/) - especially Parts 1-3 (Community content)
 
 ---
 
@@ -47,7 +60,7 @@ First, you create the class that implements the data retrieval logic.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add the interfaces statement)]
-The signature of the method `IF_A4C_RAP_QUERY_PROVIDER~SELECT` contains the import parameter `io_request`. This parameter represents the OData query options that are delegated from the UI and used as input for the SELECT method. Whenever the OData client requests data, the query implementation class must return the data that matches the request, or throw an exception if the request cannot be fulfilled.
+The signature of the method `IF_RAP_QUERY_PROVIDER~SELECT` contains the import parameter `io_request`. This parameter represents the OData query options that are delegated from the UI and used as input for the SELECT method. Whenever the OData client requests data, the query implementation class must return the data that matches the request, or throw an exception if the request cannot be fulfilled.
 
 1. Implement the interface by adding this statement to the public section:
 
@@ -64,8 +77,8 @@ Later in this tutorial, you will implement the SELECT method of the interface.
 1. Now choose **New >  Other... > Core Data Services > Data Definition**.
 
 2. Enter a name and description:
-    - `zce_product_via_rfc_xxx`
-    - Read product data via `RFC` from On-Premise
+    - `zce_product_xxx`
+    - Read product data via `RFC`
 
 3. Choose the transport request, then choose **Next**. Do **not** choose **Finish**, yet!
 
@@ -77,11 +90,11 @@ Later in this tutorial, you will implement the SELECT method of the interface.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Specify the class in the custom entity)]
-Add the following annotation to the view, pointing to the class you have just created:
+Add the following annotation to the view (immediately after the '@EndUserText.label' annotation), pointing to the class you have just created - NOTE: Use upper case!
 
 ```ABAP
 
-@ObjectModel.query.implementedBy: 'ABAP:zcl_product_via_rfc_xxx'
+@ObjectModel.query.implementedBy: 'ABAP:ZCL_PRODUCT_VIA_RFC_XXX'
 
 ```
 
@@ -94,7 +107,7 @@ Add the following annotation to the view, pointing to the class you have just cr
     ```ABAP
 
 
-    define root custom entity zce_product_via_rfc_xxx
+    define root custom entity zce_product_xxx
     with parameters parameter_name : parameter_type {
      key key_element_name : key_element_type;
      element_name : element_type;
@@ -104,7 +117,7 @@ Add the following annotation to the view, pointing to the class you have just cr
     ```
 
 
-2. Add the following to the view, after the `@QueryImplementedBy` annotation:
+2. Add the header information to the view, after the `@QueryImplementedBy` annotation:
 
     ```ABAP
 
@@ -115,7 +128,13 @@ Add the following annotation to the view, pointing to the class you have just cr
       }
     }
 
-    define root custom entity zce_product_via_rfc_xxx
+    ```
+
+3. Add the fields and their associations.
+
+    ```ABAP
+
+    define root custom entity zce_product_xxx
     {
 
           @UI.facet     : [
@@ -186,29 +205,47 @@ You will now implement the data retrieval logic in the class.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Define some variables in the class)]
-Go back to the class. You will start by defining an local internal table and structure, which you will fill by retrieving the data from the back end. The type of the local variables is the CDS View that you just created. Add the following code to the `if_rap_query_provider~select` method.
+Go back to the class.
 
-```ABAP
+1. You will start by defining an local internal table and structure, which you will fill by retrieving the data from the back end. The type of the local variables is the CDS View that you just created. Add the following code to the `if_rap_query_provider~select` method.
 
-DATA lt_product TYPE STANDARD TABLE OF zce_product_via_rfc_xxx.
-DATA ls_product TYPE zce_product_via_rfc_xxx.
+    ```ABAP
 
-```
+    DATA lt_product TYPE STANDARD TABLE OF zce_product_xxx.
+    DATA ls_product TYPE zce_product_xxx.
+
+    ```
+
+2. Create a variable, `lv_abap_trial`. **If** you are using the trial version, set it to **true**, otherwise false.
+
+    ```ABAP
+
+    DATA(lv_abap_trial) = abap_true.  
+
+    ```
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Define the connection to the on-premise system)]
-Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now.
+Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
 
     ```ABAP
 
-    DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
-                                i_name                  = 'ES5_RFC_XXX'
-                                i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
-       ).
+    IF lv_abap_trial = abap_false.
 
-    DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
+      TRY.
+        DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
+                                    i_name                  = 'ES5_RFC_XXX'
+                                    i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
+           ).
+
+        DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
+
+      CATCH cx_rfc_dest_provider_error INTO DATA(lx_dest).
+      ENDTRY.
+
+    ENDIF.
 
     ```
 
@@ -216,7 +253,7 @@ Define the connection as follows, replacing `XXX` in both `i_name` and `i_servic
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Call the remote BAPI)]
+[ACCORDION-BEGIN [Step 8: ](Call the remote BAPI or insert the mock data)]
 1. Check whether data is being requested.
 
     ```ABAP
@@ -226,23 +263,38 @@ Define the connection as follows, replacing `XXX` in both `i_name` and `i_servic
     ENDIF.
     ```
 
-2. If so, call the BAPI.
+2. Now add an `IF... ELSE. ... ENDIF.` block.
+
+3. If you are using the trial version, fill the internal table `lt_product` with the mock data. If not, call the `BAPI`.
 
     ```ABAP
 
-    DATA lv_maxrows TYPE int4.
+     DATA lv_maxrows TYPE int4.
 
      DATA(lv_skip) = io_request->get_paging( )->get_offset(  ).
      DATA(lv_top) = io_request->get_paging( )->get_page_size(  ).
 
      lv_maxrows = lv_skip + lv_top.
 
+     IF lv_abap_trial = abap_true.
+          lt_product = VALUE #( ( productid = 'HT-1000' name = 'Notebook' )
+                                ( productid = 'HT-1001' name = 'Notebook' )
+                                ( productid = 'HT-1002' name = 'Notebook' )
+                                ( productid = 'HT-1003' name = 'Notebook' )
+                                ( productid = 'HT-1004' name = 'Notebook' )
+                                ( productid = 'HT-1005' name = 'Notebook' )
+                          ).
+
+
+    ELSE.                      
      CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
        DESTINATION lv_rfc_dest_name
        EXPORTING
          max_rows   = lv_maxrows
        TABLES
          headerdata = lt_product.
+
+    ENDIF.
 
     ```
 
@@ -260,7 +312,7 @@ Define the connection as follows, replacing `XXX` in both `i_name` and `i_servic
 
     ```
 
-2. Return the data in the internal table.
+2. Output the data in the internal table.
 
     ```ABAP
 
@@ -272,7 +324,7 @@ Define the connection as follows, replacing `XXX` in both `i_name` and `i_servic
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Catch the exception if raised)]
-Wrap the whole `BAPI` call in a `TRY...CATCH` block. Add the `TRY.` statement immediately after the `DATA` declarations. Add the `CATCH. ... ENDTRY.` statements just before `ENDMETHOD.`.
+Wrap the whole data retrieval logic call in a second `TRY. ..CATCH...ENDTRY` block.
 
     ```ABAP
 
@@ -283,7 +335,7 @@ Wrap the whole `BAPI` call in a `TRY...CATCH` block. Add the `TRY.` statement im
 
     ```
 
-    ![Image depicting step10-try-catch](step10-try-catch.png)
+![Image depicting step10-try-catch](step10-try-catch.png)
 
 [DONE]
 [ACCORDION-END]
@@ -292,7 +344,7 @@ Wrap the whole `BAPI` call in a `TRY...CATCH` block. Add the `TRY.` statement im
 
 ```ABAP
 
-CLASS zcl_product_via_rfc_xxx DEFINITION
+CLASS `zcl_product_via_rfc_xxx` DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -303,51 +355,66 @@ CLASS zcl_product_via_rfc_xxx DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-CLASS zcl_product_via_rfc_xxx IMPLEMENTATION.
+CLASS `zcl_product_via_rfc_xxx` IMPLEMENTATION.
   METHOD if_rap_query_provider~select.
 
-    "variables needed to call BAPIs - zce_product_via_rfc_xxx = the CDS View
-    DATA lt_product TYPE STANDARD TABLE OF zce_product_via_rfc_xxx.
-    DATA ls_product TYPE zce_product_via_rfc_xxx.
+    DATA lt_product TYPE STANDARD TABLE OF  ZCE_PRODUCT_XXX .
+    DATA ls_product TYPE ZCE_PRODUCT_XXX .
 
-      TRY.
-          DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
-                                i_name                  = 'ES5_RFC_XXX'
-                                i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
+    "In the trial version we cannot call RFC function module in backend systems
+    DATA(lv_abap_trial) = abap_true.
 
-                                     ).
+    "Set RFC destination
+    TRY.
 
-          DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
+      data(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
+            i_name = 'ES5_RFC_XXX'
+            i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
+
+        ).
+
+      DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name(  ).
 
 
-          IF io_request->is_data_requested( ).
+        "Check if data is requested
+        IF io_request->is_data_requested(  ).
 
-                DATA lv_maxrows TYPE int4.
+            DATA lv_maxrows TYPE int4.
+            DATA(lv_skip) = io_request->get_paging( )->get_offset(  ).
+            DATA(lv_top) = io_request->get_paging( )->get_page_size(  ).
+            lv_maxrows = lv_skip + lv_top.
 
-                DATA(lv_skip) = io_request->get_paging( )->get_offset(  ).
-                DATA(lv_top) = io_request->get_paging( )->get_page_size(  ).
+                IF lv_abap_trial = abap_true.
+                    lt_product = VALUE #(
+                              ( productid = 'HT-1000' name = 'Notebook' )
+                              ( productid = 'HT-1001' name = 'Notebook' )
+                              ( productid = 'HT-1002' name = 'Notebook' )
+                              ( productid = 'HT-1003' name = 'Notebook' )
+                              ( productid = 'HT-1004' name = 'Notebook' )
+                              ( productid = 'HT-1005' name = 'Notebook' )
+                              ).
 
-                lv_maxrows = lv_skip + lv_top.
+                ELSE.
+                  "Call BAPI
+                  CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
+                       DESTINATION lv_rfc_dest_name
+                       EXPORTING
+                         max_rows   = lv_maxrows
+                       TABLES
+                         headerdata = lt_product
+                         .
 
-*               Retrieve data by calling BAPI
-                CALL FUNCTION 'BAPI_EPM_PRODUCT_GET_LIST'
-                  DESTINATION lv_rfc_dest_name
-                  EXPORTING
-                    max_rows   = lv_maxrows
-                  TABLES
-                    headerdata = lt_product.
+                ENDIF.
+                  "Set total no. of records
+                  io_response->set_total_number_of_records( lines( lt_product ) ).
+                  "Output data
+                  io_response->set_data( lt_product ).
 
-*            Set total no. of records
-             IF io_request->is_total_numb_of_rec_requested( ).
-                io_response->set_total_number_of_records( lines( lt_product ) ).
-             ENDIF.
+        ENDIF.
 
-*            Output the data
-             io_response->set_data( lt_product ).
-
-          ENDIF.
-      CATCH cx_a4c_rap_query_provider INTO DATA(lx_exc).
+    CATCH  cx_rfc_dest_provider_error INTO DATA(lx_dest).
     ENDTRY.
+
 
   ENDMETHOD.
 ENDCLASS.
@@ -358,15 +425,27 @@ ENDCLASS.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Create a service definition)]
-Now that you have defined your view, and retrieved the data using the class, you can expose the view as a service. A service consists of a definition and a binding. This allows you to provide several bindings for the same definition, e.g. to expose the service to a UI, and to an `A2X` provider. Start with the definition:
+Now that you have defined your view, and retrieved the data using the class, you can expose the view as a **Business Service**. A **Business Service** consists of a **Service Definition** and a **Service Binding**.
 
-1. From your package, select your custom entity, **`zce_product_via_rfc_xxx`**, then choose **New > Service Definition** from the context menu, then choose **Next**.
+You use a **Service Definition** to define which data is to be exposed (with the required granularity) as a Business Service.
+
+You then use the **Service Binding** to bind a service definition to a client-server communication protocol such as OData. This allows you to provide several bindings for the same definition, e.g. to expose the service to a UI, and to an `A2X` provider.
+
+For more information, see:
+
+- Business Service Definition in ADT Help.
+
+- Business Service Binding in ADT Help.
+
+Start with the Service Definition:
+
+1. From your package, select your custom entity, **`zce_product_xxx`**, then choose **New > Service Definition** from the context menu, then choose **Next**.
 
     ![Image depicting step12-choose-service-def](step12-choose-service-def.png)
 
 2. Choose a name and description:
-    - `ZSD_A4C_RFC_XXX`
-    - Read product data via RFC
+    - `ZSD_PRODUCT_XXX`
+    - Expose product data from on-Premise
 
 3. Choose the transport request; choose **Next**.
 
@@ -385,10 +464,10 @@ Now that you have defined your view, and retrieved the data using the class, you
 1. Select your service definition, then choose **Service Binding** from the context menu, then choose **Next**.
 
 2. Choose:
-    - Name = `ZSB_A4C_RFC_XXX`
-    - Description = Read product data via RFC
+    - Name = `ZSB_PRODUCT_XXX`
+    - Description = Bind product data via RFC
     - Binding Type = ODATA V2 (UI...)
-    - Service Definition = `ZSD_A4C_RFC_XXX`
+    - Service Definition = `ZSD_PRODUCT_XXX`
 
       ![Image depicting step12-choose-binding-type](step12-choose-binding-type.png)
 
@@ -401,7 +480,7 @@ The service binding automatically references the service definition and thus the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Activate the service binding; )]
+[ACCORDION-BEGIN [Step 14: ](Activate the service binding)]
 1. In the editor that appears, choose **Activate**.
 
     ![Image depicting step13-activate-service-endpoint](step13-activate-service-endpoint.png)
@@ -409,6 +488,12 @@ The service binding automatically references the service definition and thus the
 2. You can now see the Service URL and Entity Set.
 
     ![Image depicting step13b-service-binding-details](step13b-service-binding-details.png)
+
+3. You can open the Service Document (`XML`) in your browser, by choosing **Service URL**.
+
+2shotsbla
+
+4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `sap/opu/odata/sap/Z_BIND_PRODUCT_TEST_001/$metadata`.
 
 [DONE]
 [ACCORDION-END]
@@ -433,7 +518,7 @@ The service binding automatically references the service definition and thus the
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Troubleshooting: Test data retrieval using the ABAP Console)]
-If the data does not display, check that the BAPI is retrieving the data, as follows:
+If the data does not display (and you are using the licensed version), check that the BAPI is retrieving the data, as follows:
 
 1. Open the class you created in [Test the Connection to the Remote System](abap-environment-test-rfc).
 

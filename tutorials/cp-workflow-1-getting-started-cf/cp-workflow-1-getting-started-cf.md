@@ -126,13 +126,9 @@ time: 5
 
 6. Switch to the **Cloud Foundry** preference.
 
-7. Enter the following details, and save the changes:
+7. Enter your API endpoint, and select the organization and space from the respective dropdowns.
 
-    | Field                    | Value                                         |
-    | :----------------------- | :-------------------------------------------- |
-    | **API End Point**        | `https://api.cf.eu10.hana.ondemand.com`       |
-    | **Organization**         | `<choose your trial organisation>`            |
-    | **Space**                | `<choose your trial space>`                   |
+8. Save your changes.
 
 > In the credentials popup, enter your trial user email and password.
 
