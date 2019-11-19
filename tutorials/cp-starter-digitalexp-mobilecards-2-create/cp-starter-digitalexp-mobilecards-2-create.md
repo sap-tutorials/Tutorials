@@ -171,40 +171,40 @@ Scan the QR code with your camera and select the toast message to launch the SAP
 
 Enter your SAP Cloud Platform credentials and choose **Log On**.
 
-![MobileCards](IMG_1.1.PNG)
+![MobileCards](img_1.1.png)
 
 Choose a passcode with at least 8 characters to unlock the app.
 
-![MobileCards](IMG_1.2.png)
+![MobileCards](img_1.2.png)
 
 Confirm the passcode and choose **Done**.
 
-![MobileCards](IMG_1.3.PNG)
+![MobileCards](img_1.3.png)
 
 Tap **More** to add subscriptions.
 
-![MobileCards](IMG_1.5.PNG)
+![MobileCards](img_1.5.png)
 
 Choose **Subscriptions**.
 
-![MobileCards](IMG_1.6.PNG)
+![MobileCards](img_1.6.png)
 
 Select **All** and then choose `TimeSheetCard`.
 
-![MobileCards](IMG_1.7.png)
+![MobileCards](img_1.7.png)
 
 Tap **Subscribe** to subscribe the timesheet card.
 
-![MobileCards](IMG_1.8.png)
+![MobileCards](img_1.8.png)
 
 Repeat steps above for the `ToDosCard` and choose **Subscribe**.
 
-![MobileCards](IMG_1.9.png)
+![MobileCards](img_1.9.png)
 
 Tap the **All Cards** at bottom of your screen to see all your currently subscribed cards.
 
-![MobileCards](IMG_1.10.PNG)
-![MobileCards](IMG_1.11.PNG)
+![MobileCards](img_1.10.png)
+![MobileCards](img_1.11.png)
 
 [OPTION END]
 
