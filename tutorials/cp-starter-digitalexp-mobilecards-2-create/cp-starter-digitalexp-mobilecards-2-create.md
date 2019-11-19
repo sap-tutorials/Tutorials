@@ -103,7 +103,7 @@ Tap **SCAN QR CODE** to begin the on-boarding process.
 
 ![MobileCards](img_301.png)
 
->**Note**: In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
+>**note:** In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
 
 >If you see some trouble during on-boarding process, make sure that Mobile Services app state is in **Started** mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
 >![MobileCards](img_102.png)
@@ -164,7 +164,7 @@ Scan the QR code with your camera and select the toast message to launch the SAP
 
 ![MobileCards](img_017.png)
 
->**Note**: In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
+>**note:** In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
 
 >If you see some trouble during on-boarding process, make sure that Mobile Services app state is in **Started** mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
 >![MobileCards](img_102.png)
