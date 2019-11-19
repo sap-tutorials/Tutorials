@@ -65,7 +65,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
     ![Add additional roles](2.5.add-additional-roles.png)
 
-    >You add these roles to grant you user the required permissions to access the Integration Flow Designer and model an integration flow. For more information on roles in SAP Cloud Platform Integration, check out the official documentation on [Available Roles and Authorization Groups](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/07f62efe97544149bf637f9b67c2e838.html).
+    >You add these roles to grant you user the required permissions to access the Integration Flow Designer and model an integration flow. For additional information on roles in SAP Cloud Platform Integration, check out the official documentation on [Available Roles and Authorization Groups](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/07f62efe97544149bf637f9b67c2e838.html).
 
 [VALIDATE_7]
 
