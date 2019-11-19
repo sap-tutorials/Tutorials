@@ -1,7 +1,7 @@
 ---
 author_name: Iwona Hahn
 author_profile: https://github.com/iwonahahn
-title: Create a Business Service with Node.js using Visual Studio Code
+title: Create a Business Service with Node.js Using Visual Studio Code
 description: Develop a sample business service using Core Data & Services (CDS), Node.js, and SQLite, by using the SAP Cloud Application Programming Model (CAP) and developing on your local environment.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
@@ -28,23 +28,23 @@ time: 40
 
 [ACCORDION-BEGIN [Step 1: ](Set up local development environment)]
 
-Before you start, make sure that you've completed the prerequisites.
+1. Before you start, make sure that you've completed the prerequisites.
 
-1. Configure the NPM registry by executing the following command:
+2. Configure the NPM registry by executing the following command:
 
     ```Shell/Bash
     npm set @sap:registry=https://npm.sap.com
     ```
 
-2. Install the CDS command-line tools by executing the following command:
+3. Install the CDS command-line tools by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
     ```
 
-    >This installs the `cds` command, which we'll use in the next steps.
+    This installs the `cds` command, which we'll use in the next steps.
 
-3. To verify that the installation was successful, run `cds` without arguments:
+4. To verify that the installation was successful, run `cds` without arguments:
 
     ```Shell/Bash
     cds
@@ -52,7 +52,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     ![cds commands](cds-commands.png)
 
-    >This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed.
+    This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed.
 
 [DONE]
 
@@ -80,15 +80,13 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 3: ](Start project)]
 
-[OPTION BEGIN [Windows]]
-
 1. Open a command-line window and run the following command in a folder of your choice:
 
     ```Shell/Bash
     cds init my-bookshop
     ```
 
-    >This creates a folder `my-bookshop` in the current directory.
+    This creates a folder `my-bookshop` in the current directory.
 
 2. Open Visual Studio Code, go to **File | Open Folder** and choose the **`my-bookshop`** folder.
 
@@ -100,48 +98,15 @@ Before you start, make sure that you've completed the prerequisites.
       cds watch
     ```
 
-    >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
+   This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
-    ```Shell/Bash
-    [cds] - running nodemon...
-    --exec cds run --with-mocks --in-memory?
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
-    No models found at ./db ./srv ./schema.cds ./services.cds.
-    Waiting for some to arrive...
-    ```
-[OPTION END]
-
-[OPTION BEGIN [Mac and Linux]]
-
-1. Open a command-line window and run the following command in a folder of your choice:
-
-    ```Shell/Bash
-    cds init my-bookshop
-    ```
-
-    >This creates a folder `my-bookshop` in the current directory.
-
-2. Open Visual Studio Code, go to **File | Open...** and choose the **`my-bookshop`** folder.
-
-    ![Open project](open-project.png)
-
-3. Go to **View | Command Palette... | Terminal: Create New Integrated Terminal** to open a command-line window within Visual Studio Code and run the following command:
-
-    ```Shell/Bash
-      cds watch
-    ```
->This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
-
-
-    ```Shell/Bash
-    [cds] - running nodemon...
-    --exec cds run --with-mocks --in-memory?
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
-    No models found at ./db ./srv ./schema.cds ./services.cds.
-    Waiting for some to arrive...
-    ```
-
-[OPTION END]
+```Shell/Bash
+[cds] - running nodemon...
+--exec cds run --with-mocks --in-memory?
+--ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
+No models found at ./db ./srv ./schema.cds ./services.cds.
+Waiting for some to arrive...
+```
 
 [DONE]
 
@@ -155,7 +120,7 @@ Create a simplistic all-in-one service definition.
 
     ![Add new file](new-file.png)
 
-    >This creates a folder called **`srv`** and a file called **`cat-service.cds`**.
+    This creates a folder called **`srv`** and a file called **`cat-service.cds`**.
 
 2. Open the file and add the following code:
 
@@ -201,7 +166,7 @@ Create a simplistic all-in-one service definition.
 
 5. To test your service, go to: (http://localhost:4004)
 
-    >You won't see data, because you haven't added a data model yet. However, click on the available links and confirm that the service is running.
+    You won't see data, because you haven't added a data model yet. However, click on the available links and confirm that the service is running.
 
 [DONE]
 
@@ -258,7 +223,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
     ![Add new file](new-file2.png)
 
-    >This creates a folder called **db** and a file called **`data-model.cds`**. Your project structure should look like this:
+    This creates a folder called **db** and a file called **`data-model.cds`**. Your project structure should look like this:
 
     ![Project structure](project-structure.png)
 
@@ -311,7 +276,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 Add plain CSV files under **`db/csv`** to fill your database tables with initial data.
 
-1. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Authors.csv`**. Add the following to the file:
+1. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Authors.csv`**.   Add the following to the file:
 
     ```CSV
     ID;name
@@ -321,7 +286,7 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
     170;Richard Carpenter
     ```
 
-2. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Books.csv`**. Add the following to the file:
+2. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Books.csv`**.  Add the following to the file:
 
     ```CSV
     ID;title;author_ID;stock
@@ -332,9 +297,9 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
     271;Catweazle;170;22
     ```
 
-    >Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
+    >Make sure that you now have a folder hierarchy `db/csv/...`. And remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
-    >As we now have a fully capable SQL database connected filled with some initial data, we can send complex OData queries, served by the built-in generic providers.
+    As we now have a fully capable SQL database connected filled with some initial data, we can send complex OData queries, served by the built-in generic providers.
 
 3. Remove the code with mock data in `cat-service.js`, because we want to see the data loaded from the `csv` files.
 
@@ -355,27 +320,25 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
 [ACCORDION-BEGIN [Step 8: ](Add persistent database)]
 
 Instead of using in-memory, we can also use persistent databases.
+    >If `cds watch` is running, press `CTRL+C` to stop the service.
 
-1. If `cds watch` is running, press `CTRL+C` to stop the service.
-
-2. Install `SQLite3` packages
+1. Install `SQLite3` packages
 
     ```Shell/Bash
     npm i sqlite3 -D
     ```
 
-3. Deploy the data model to an `SQLite` database:
+2. Deploy the data model to an `SQLite` database:
 
     ```Shell/Bash
     cds deploy --to sqlite:db/my-bookshop.db
     ```
 
-    >You've now created an `SQLite` database file under `db/my-bookshop.db`.
-
-    >This configuration is saved in your `package.json` as your default data source. For subsequent deployments using the default configuration, you just need to run `cds deploy`.
+    You've now created an `SQLite` database file under `db/my-bookshop.db`.
+    This configuration is saved in your `package.json` as your default data source. For subsequent deployments using the default configuration, you just need to run `cds deploy`.
     The difference to the automatically provided in-memory db is that we now get a persistent database stored in the local file.
 
-4. Open `SQLite` and view the newly created database:
+3. Open `SQLite` and view the newly created database:
 
     ```Shell/Bash
     sqlite3 db/my-bookshop.db -cmd .dump
@@ -383,9 +346,9 @@ Instead of using in-memory, we can also use persistent databases.
 
     >If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db\my-bookshop.db -cmd .dump`.
 
-5. To stop `SQLite` and go back to your project directory, press `CTRL+C`.
+4. To stop `SQLite` and go back to your project directory, press `CTRL+C`.
 
-6. Run your service.
+5. Run your service.
 
     ```Shell/Bash
     cds watch
@@ -417,11 +380,11 @@ We can now see the generic handlers shipped with CAP in action.
 
     ![Postman import](postman-import.png)
 
-4. Choose **Import from File** in the wizard.  Click on **Choose Files** and select the file that you saved before.
+    Choose **Import from File** in the wizard.  Click on **Choose Files** and select the file that you saved before.
 
     ![Postman import from file](postman-import-from-file.png)
 
-5. In the imported collection, execute the various requests in the `metadata` and `CRUD` groups.  They should all return proper responses.
+4. In the imported collection, execute the various requests in the `metadata` and `CRUD` groups.  They should all return proper responses.
 
     ![Test the request](postman-test-request.png)
 
@@ -461,21 +424,21 @@ We can now see the generic handlers shipped with CAP in action.
     }
     ```
 
-    >Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.
+    Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.
 
 2. In Postman, execute the `GET Books` request.
 
-    >Look at the stock of book `201`.
+    Look at the stock of book `201`.
 
     ![Test the request](postman-get-books.png)
 
 3. Execute one of the `POST Orders` requests.
 
-    >This triggers the logic above and reduce the stock.
+    This triggers the logic above and reduce the stock.
 
 4. Execute the `GET Books` request again.
 
-    >The stock of book `201` is lower than before.
+    The stock of book `201` is lower than before.
 
 [DONE]
 
