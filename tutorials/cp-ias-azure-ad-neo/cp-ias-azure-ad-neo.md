@@ -1,5 +1,5 @@
 ---
-title: Register SAP Cloud Platform Neo Subaccount in SAP Cloud Platform Identity Authentication Service
+title: Register a Neo Subaccount in SAP Cloud Platform Identity Authentication Service
 description: Establish trust between a SAML 2.0 identity provider in SAP Cloud Platform Identity Authentication service and an SAP Cloud Platform Neo subaccount.
 auto_validation: true
 time: 25
@@ -149,7 +149,7 @@ Now, users that have access to the Application in Azure Active Directory and to 
 
 Therefore, we will create a new test user in Azure Active Directory and add it to the enterprise application in Azure Active Directory.
 
-Go to the [Azure Portal](portal.azure.com) and search for **Azure Active Directory** and select the according result.
+Go to the [Azure Portal](https://portal.azure.com) and search for **Azure Active Directory** and select the according result.
 
 ![search for azure active directory](azure-active-directory.png)
 
