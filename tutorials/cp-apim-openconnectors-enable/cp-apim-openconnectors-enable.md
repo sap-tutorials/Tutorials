@@ -20,7 +20,7 @@ By enabling the service, you get your own instance of Open Connectors, which all
 
 [ACCORDION-BEGIN [Step 1: ](Enter Your Trial Account)]
 
-Enter your trial account by clicking on **Enter Your Trial Account**
+Enter Your Trial Account by clicking on **Enter Your Trial Account**.
 
 ![Log into cockpit](00-Login-trial-account.png)
 
