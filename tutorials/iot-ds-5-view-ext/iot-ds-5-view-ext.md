@@ -13,56 +13,55 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
 ## Details
 ### You will learn
-  - How to extend a Decision Support application with custom SAPUI5 view
-  - How to expose device event payload data in Decision Support application
+  - How to extend a decision support application with custom SAPUI5 view
+  - How to expose device event payload data in decision support application
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure externalized data in Decision Support definition)]
+[ACCORDION-BEGIN [Step 1: ](Configure externalized data in decision support definition)]
 
-  In order to display device event payload data to a custom SAPUI5 view, the person configuring the Decision Support Action must explicitly expose the data by defining Externalized Data configuration in Decision Support definition.
+  In order to display device event payload data to a custom SAPUI5 view, the person configuring the decision support action must explicitly expose the data by defining externalized data configuration in decision support definition.
 
-  1. From Leonardo IoT Launchpad, launch the Decision Support Definition application
+  1. From Leonardo IoT launchpad, launch the **Decision Support Definition** application.
 
-    ![Launch DS config](/images/launchpad_tile_ds.png)
+    ![Select Decision Support from SAP Fiori launchpad](/images/launchpad_tile_ds.png)
 
-  2. Select `High Greenhouse Temperature` from the list of Decision Support Definitions.
+  2. Select `High Greenhouse Temperature` from the list of decision support definitions.
 
-  3. In the details page, create a new entry for **Externalized Data**.
+  3. In the **Definition** page, create a new entry for **Externalized Data**.
 
-    ![DS Config Ext Data 1](/images/ds_config_ext_data_1.png)
+    ![Create new externalized data](/images/ds_config_ext_data_1.png)
 
-  4. Enter a value for the field **Alias**. In this example, we'll enter the value `DEVICE`. This value will be used in the controller of the Custom SAPUI5 view.  
+  4. Enter a value for the field **Alias**. In this example, we'll enter the value `DEVICE`. This value will be used in the controller of the custom SAPUI5 view.  
 
-  5. Enter the binding path for this alias.  This path should be define according to the JSON structure of the payload defined in the Decision Support Action.
+  5. Enter the binding path for this alias.  This path should be defined according to the JSON structure of the payload defined in the decision support action.
 
-    Here is the payload that we have defined in the Decision Support Action in Step 3 of [Model the needed Decision Support based on IoT data](iot-ds-1-define-actions).
+    Here is the payload that we have defined in the decision support action in step 3 of [Model the needed Decision Support based on IoT data](iot-ds-1-define-actions).
 
-    !![DS Config Ext Data 2](/images/ds_config_ext_data_2.png)
-
+    ![Display of a sample payload](/images/ds_config_ext_data_2.png)
 
     The value of the field **Data Binding** should have the format:
 
     `{ Path of exposed data in JSON payload }`
 
-    In this example, we would like to expose the data under `properties.device`, We enter the value `{properties.device}` in the field.
+    In this example, we would like to expose the data under `properties.device`, we enter the value `{properties.device}` in the field.
 
-    ![DS Config Ext Data 2](/images/ds_config_ext_data_3.png)
+    ![Enter configuration for externalized data](/images/ds_config_ext_data_3.png)
 
   6. Select the field **User Interface Relevant**.
 
-  7. Click **Save** to save the changes.
+  7. Click **Save**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add view extension to application descriptor)]
 
-  1. Open the project with Decision Support application in Web IDE.
+  1. Open the project with decision support application in SAP Web IDE.
 
-  2. Open the ``manifest.json`` in the Code Editor.
+  2. Open the ``manifest.json`` in the **Code Editor**.
 
-    ![View Ext 1](/images/ds_view_ext_1.png)
+    ![Open manifest.json in code editor](/images/ds_view_ext_1.png)
 
   3. Update the value of JSON key ``sap.ui5.extends.extensions.sap.ui.viewExtensions.sap.suite.ui.generic.template.ObjectPage.view.Details`` as follows:
 
@@ -83,13 +82,13 @@ primary_tag: products>sap-cloud-platform-internet-of-things
     }
     ```
 
-  4. Replace `<HTML5 Module Name>` with the name of the Decision Support HTML5 module.  You can find this name from the ``sap.app.id`` property in the same manifest.json.  In this example, it's `greenhousedecisionsupport`.
+  4. Replace `<HTML5 Module Name>` with the name of the decision support HTML5 module.  You can find this name from the ``sap.app.id`` property in the same manifest.json.  In this example, it's `greenhousedecisionsupport`.
 
-    ![View Ext 3](/images/ds_view_ext_3.png)
+    ![Highlight of application id](/images/ds_view_ext_3.png)
 
     After replacing `<HTML5 Module Name>`:
 
-    ![View Ext 2](/images/ds_view_ext_2.png)
+    ![Add view extension configuration](/images/ds_view_ext_2.png)
 
   5. **Save** the changes.
 
@@ -100,17 +99,17 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
   1. Under the `webapp` folder add an `ext` folder.
 
-    ![View Ext 4](/images/ds_view_ext_4.png)
+    ![Add new folder in project](/images/ds_view_ext_4.png)
 
-    ![View Ext 5](/images/ds_view_ext_5.png)
+    ![Enter name for new folder](/images/ds_view_ext_5.png)
 
   2. Inside `ext` folder, add 2 additional folders `controller` and `view`.
 
   3. Inside the `controller` folder, add a new file named `EventInfo.controller.js`.
 
-    ![View Ext 6](/images/ds_view_ext_6.png)
+    ![Add new file to project](/images/ds_view_ext_6.png)
 
-    ![View Ext 7](/images/ds_view_ext_7.png)
+    ![Enter name for new file](/images/ds_view_ext_7.png)
 
   4. Copy the following content into the file:
 
@@ -137,11 +136,11 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
   6. Replace `<EXTERNALIZED_DATA_ALIAS>` with the alias defined in Step 1 of this tutorial.
 
-  6. **Save** the file.
+  7. **Save** the file.
 
-    ![View Ext 8](/images/ds_view_ext_8.png)  
+    ![Updated controller file](/images/ds_view_ext_8.png)  
 
-  7. Inside the `view` folder, add a new file named `EventInfo.view.xml` with the following content:
+  8. Inside the `view` folder, add a new file named `EventInfo.view.xml` with the following content:
 
     ```XML
     <mvc:View controllerName="<HTML5 Module Name>.ext.controller.EventInfo"
@@ -169,14 +168,14 @@ primary_tag: products>sap-cloud-platform-internet-of-things
     </mvc:View>    
     ```
 
-  8. Replace `<HTML5 Module Name>` with sap.app.id defined in `manifest.json`.
+  9. Replace `<HTML5 Module Name>` with sap.app.id defined in `manifest.json`.
 
-  9. **Save** the file.
+  10. **Save** the file.
 
-    ![View Ext 9](/images/ds_view_ext_9.png)  
+    ![Update view xml file](/images/ds_view_ext_9.png)  
 
 
-  For additional information on SAPUI5 Model View Controller programming model, see [Model View Controller](https://sapui5.hana.ondemand.com/#/topic/91f233476f4d1014b6dd926db0e91070.html).
+  For additional information on SAPUI5 model view controller programming model, see [Model View Controller](https://sapui5.hana.ondemand.com/#/topic/91f233476f4d1014b6dd926db0e91070.html).
 
 [DONE]
 [ACCORDION-END]
@@ -214,7 +213,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
   2. **Save** the file.
 
-  ![View Ext 11](/images/ds_view_ext_11.png)  
+    ![Updated translation file](/images/ds_view_ext_11.png)  
 
 [DONE]
 [ACCORDION-END]
@@ -225,9 +224,9 @@ Please follow in instructions in [Build, Deploy and test Notification and Decisi
 
 >**A new Notification has to be generated in order for the new Externalized Data definition to take effect.**  If you open a notification that was generated before the Externalized Data definition was defined, the fields in the custom view will not display any values.
 
-Decision Support application with a custom SAPUI5 view displaying data from the device event payload.
+Decision support application with a custom SAPUI5 view displaying data from the device event payload.
 
-!![View Ext 5](/images/ds_view_ext_10.png)  
+![Decision Support runtime with view extension](/images/ds_view_ext_10.png)  
 
 
 [VALIDATE_1]
@@ -237,13 +236,13 @@ Decision Support application with a custom SAPUI5 view displaying data from the 
 
 [ACCORDION-BEGIN [Step 6: ](Add custom image to page header)]
 
-  1. Import an image to `webapp/asset` folder of the Decision Support application in Web IDE.
+  1. Import an image to `webapp/asset` folder of the decision support application in SAP Web IDE.
 
-    ![View Ext 12](/images/ds_view_ext_12.png)  
+    ![Import a new image file to project](/images/ds_view_ext_12.png)  
 
   2. Select the image from your system.  Click **OK**.
 
-    ![View Ext 13](/images/ds_view_ext_13.png)  
+    ![Select the image file from local file system](/images/ds_view_ext_13.png)  
 
   3. Open the file `annotations.xml` in `webapp` folder.
 
@@ -253,13 +252,13 @@ Decision Support application with a custom SAPUI5 view displaying data from the 
     <PropertyValue Property="ImageUrl" String="asset/your image name"/>
     ```
 
-    ![View Ext 14](/images/ds_view_ext_14.png)  
+    ![Update annotation](/images/ds_view_ext_14.png)  
 
   5. **Save** the file.
 
   6. To test the changes, please follow the instructions in [Build, Deploy and test Notification and Decision Support application](http://www.google.com).
 
-    ![View Ext 15](/images/ds_view_ext_15.png)  
+    ![Decision Support runtime with header image](/images/ds_view_ext_15.png)  
 
 
 [DONE]
@@ -269,11 +268,11 @@ Decision Support application with a custom SAPUI5 view displaying data from the 
 
 You can provide a link as part of the action history entry that allows a user to navigate to a page which has additional information about the result of the executed option. To enter a link for action history:
 
-  1. From Leonardo IoT Launchpad, select the **Decision Support Definition** tile.
+  1. From Leonardo IoT launchpad, select the **Decision Support Definition** tile.
 
-    ![DS Tile](/images/launchpad_tile_ds.png)
+    ![Select Decision Support in SAP Fiori launchpad](/images/launchpad_tile_ds.png)
 
-  2. Select a Decision Support configuration.
+  2. Select a decision support configuration.
 
   3. Select an existing option under **Possible Actions** section.
 
@@ -281,15 +280,15 @@ You can provide a link as part of the action history entry that allows a user to
 
   5. Enter a link in the field **Action History Intent or URL**.
 
-    !![DS Tile](/images/ds_option_hist_intent_1.png)
+    ![Configuration of action history](/images/ds_option_hist_intent_1.png)
 
     * The link can be an URL (starts with http or https) or a SAP Fiori intent (e.g. MySalesOrder-display)
 
     * The link can include values returned in the response of the executed option using the notation {result.somefield}. Please consult the documentation of each service for the field names in the response.
 
-        For example, `ObjectID` is a name of one of the fields returned in the response from the executed option and its value is bound to the parameter `internalID` of the link to a Service Ticket: `https://mytenant.crm.ondemand.com/sap/ap/ui/clogin?internalID=` **{result.ObjectID}** `&type=COD_SRQ_AGENT_TT`.
+        For example, `ObjectID` is a name of one of the fields returned in the response from the executed option and its value is bound to the parameter `internalID` of the link to a service ticket: `https://mytenant.crm.ondemand.com/sap/ap/ui/clogin?internalID=` **{result.ObjectID}** `&type=COD_SRQ_AGENT_TT`.
 
-    * The string can also include values from event payload as in the other fields in DSS configuration. Please see Step 3 of [Model the Needed Decision Support Based on IoT Data](iot-ds-1-define-actions) for more information on the definition of the event payload.
+    * The string can also include values from event payload as in the other fields in decision support configuration. Please see step 3 of [Model the Needed Decision Support Based on IoT Data](iot-ds-1-define-actions) for more information on the definition of the event payload.
 
         For example:
         `https://mytenant.crm.ondemand.com/sap/ap/ui/clogin?internalID=` **{properties.device.CustomerID}** `&type=COD_SRQ_AGENT_TT`.
@@ -298,7 +297,7 @@ You can provide a link as part of the action history entry that allows a user to
 
   7. A link **View Object** will be displayed on the action history entry for the configured option.
 
-    !![DS Tile](/images/ds_option_hist_intent_2.png)
+    ![Display of View Object link in action history](/images/ds_option_hist_intent_2.png)
 
 [DONE]
 [ACCORDION-END]
