@@ -44,6 +44,8 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This installs the `cds` command, which we'll use in the next steps.
 
+    >On MacOS/Linux, you may need to use `sudo npm i -g @sap/cds-dk`.
+
 3. To verify that the installation was successful, run `cds` without arguments:
 
     ```Shell/Bash
@@ -60,15 +62,15 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
 
-1. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloud) and download the CDS extension (`vsix` file) for [Visual Studio Code](https://code.visualstudio.com/).
+1. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloud) and download the CDS extension (`vsix` file) for Visual Studio Code.
 
 2. Open Visual Studio Code and install the extension:
 
-    ![Visual Studio menu](visual-studio-menu1.png)
+    ![Visual Studio extension](visual-studio-extension.png)
 
     &nbsp;
 
-    ![Visual Studio more](visual-studio-more1.png)
+    ![Visual Studio extension](visual-studio-extension-vsix.png)
 
     And look for the `vsix` file you downloaded.
 
@@ -100,7 +102,9 @@ Before you start, make sure that you've completed the prerequisites.
       cds watch
     ```
 
-    >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
+    >This command tries to start a `cds` server process.
+
+    As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
     ```Shell/Bash
     [cds] - running nodemon...
@@ -121,11 +125,9 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File | Open...** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File | Open** and choose the **`my-bookshop`** folder.
 
-    ![Open project](open-project.png)
-
-3. Go to **View | Command Palette... | Terminal: Create New Integrated Terminal** to open a command-line window within Visual Studio Code and run the following command:
+3. Go to **View | Command Palette | Terminal: Create New Integrated Terminal** to open a command-line window within Visual Studio Code and run the following command:
 
     ```Shell/Bash
       cds watch
@@ -199,9 +201,9 @@ Create a simplistic all-in-one service definition.
     [cds] - server listening on http://localhost:4004 ...
     ```
 
-5. To test your service, go to: (http://localhost:4004)
+5. To test your service, go to: <http://localhost:4004>
 
-    >You won't see data, because you haven't added a data model yet. However, click on the available links and confirm that the service is running.
+    >You won't see data, because you haven't added a data model yet. However, click on the available links to see the service is running.
 
 [DONE]
 
@@ -240,11 +242,11 @@ Add service provider logic to return mock data.
 
 4. To test your service, click on these links:
 
-    - (http://localhost:4004/catalog/Books)
+    - <http://localhost:4004/catalog/Books>
 
-    - (http://localhost:4004/catalog/Authors)
+    - <http://localhost:4004/catalog/Authors>
 
-    >You should see the mock data that you added for the Books and Authors entities.
+    >You should see the mock data that you added for the `Books` and `Authors` entities.
 
 [DONE]
 
@@ -303,7 +305,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 >Remember to save your files.
 
-[VALIDATE_1]
+[DONE]
 
 [ACCORDION-END]
 
@@ -334,17 +336,19 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
 
     >Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
-    >As we now have a fully capable SQL database connected filled with some initial data, we can send complex OData queries, served by the built-in generic providers.
+    >As we now have a fully capable SQL database with some initial data, we can send complex OData queries, served by the built-in generic providers.
 
 3. Remove the code with mock data in `cat-service.js`, because we want to see the data loaded from the `csv` files.
 
 4. To test your service, open a web browser and go to:
 
-    (http://localhost:4004/catalog/Books)
+    <http://localhost:4004/catalog/Books>
 
-    (http://localhost:4004/catalog/Authors)
+    <http://localhost:4004/catalog/Authors>
 
-    (http://localhost:4004/catalog/Authors?$expand=books($select=ID,title))
+    >As we now have a fully capable SQL database with some initial data, we can send complex OData queries, served by the built-in generic providers.
+
+    <http://localhost:4004/catalog/Authors?$expand=books($select=ID,title)>
 
     >You should see a book titled Jane Eyre. If not, make sure you've removed the mock data from `cat-service.js`.
 
@@ -358,7 +362,7 @@ Instead of using in-memory, we can also use persistent databases.
 
 1. If `cds watch` is running, press `CTRL+C` to stop the service.
 
-2. Install `SQLite3` packages
+2. Install `SQLite3` packages.
 
     ```Shell/Bash
     npm i sqlite3 -D
@@ -427,7 +431,7 @@ We can now see the generic handlers shipped with CAP in action.
 
     > With our current service implementation, we can get only POST orders. Any GET or DELETE to an order fails, since we've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
 
-[VALIDATE_2]
+[VALIDATE_1]
 
 [ACCORDION-END]
 
