@@ -3,7 +3,7 @@ title: Create an Application for Receiving Messages
 description: Develop and deploy a basic Node.js-based messaging application for receiving messages from an SAP Cloud Platform Enterprise Message Queue.
 time: 20
 auto_validation: true
-tags: [ tutorial>beginner, topic>node-js, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [ tutorial>beginner, topic>node-js, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>license]
 primary_tag: products>sap-cloud-platform-enterprise-messaging
 ---
 
