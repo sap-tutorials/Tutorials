@@ -1,5 +1,5 @@
 ---
-title: Set Up a Sample Lead-to-Cash Process
+title: Set Up a Sample Lead-to-Cash Business Process
 description: Set up a pre-configured lead-to-cash business process to experience the Process Visibility service.
 auto_validation: true
 time: 15
