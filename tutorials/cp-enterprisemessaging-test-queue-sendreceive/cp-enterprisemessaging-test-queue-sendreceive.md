@@ -3,7 +3,7 @@ title: Send and Receive Test Enterprise Messages
 description: Test send and receive of message with REST protocol using the Postman tool for a SAP Cloud Platform Enterprise Message instance.   
 time: 15
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud]
+tags: [ tutorial>beginner, topic>cloud, tutorial>license]
 primary_tag: products>sap-cloud-platform-enterprise-messaging
 ---
 

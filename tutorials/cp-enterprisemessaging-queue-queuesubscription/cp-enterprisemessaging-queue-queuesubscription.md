@@ -3,7 +3,7 @@ title: Create Queues and Queue Subscriptions for Enterprise Messaging
 description: Navigate and explore the SAP Cloud Platform Enterprise Messaging management dashboard to implement messaging concepts like queues and queue subscriptions.
 time: 30
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud]
+tags: [ tutorial>beginner, topic>cloud, tutorial>license]
 primary_tag: products>sap-cloud-platform-enterprise-messaging
 ---
 
