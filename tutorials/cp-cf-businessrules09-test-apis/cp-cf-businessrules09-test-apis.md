@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,
 primary_tag: products>sap-cloud-platform-business-rules
 ---
 
+## Prerequisites
+ - You have assigned the roles **`RuleRuntimeSuperUser`** and **`RuleRepositorySuperUser`** to you in SAP Cloud Platform Cockpit. For more information, see [Assign Roles to Users for Managing Business Rules](cp-cf-businessrules02-assign-roles).
+
 ## Details
 ### You will learn
   - How to use Business Rules APIs

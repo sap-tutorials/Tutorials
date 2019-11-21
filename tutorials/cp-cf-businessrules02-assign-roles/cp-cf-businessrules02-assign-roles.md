@@ -70,7 +70,9 @@ primary_tag: products>sap-cloud-platform-business-rules
 
     ![Show assignments](trust_config03.png)
 
-    There is no role collection assigned at this point.
+    There is no role collection assigned at this point. If a user is not added to the respective identity provider, add the user by selecting **Add User** in the confirmation dialog box.
+
+    ![Add User](trust_config03_1.png)
 
 4. Choose **Assign Role Collection**.
 
