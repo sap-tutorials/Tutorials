@@ -230,8 +230,7 @@ function updateInbox() {
 }
 updateInbox();
 ```
-2. Use this function `updateHistory` as a callback whenever the refresh button
-is pressed.
+2. Use this function `updateHistory` as a callback whenever the refresh button is pressed.
 ```JavaScript
 new sap.m.Button({
   icon: 'sap-icon://refresh',
