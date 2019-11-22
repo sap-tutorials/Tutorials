@@ -45,6 +45,8 @@ Enter Admin user password and click **OK**.
 
 ![MDK](img_003.png)
 
+>You may need to grant admin access via Privileges app. 
+
 The installer will list all required components for iOS and Android platform and automatically check if they are already installed in the machine. Follow the installer UI to install the components you selected.
 
 ![MDK](img_004.gif)
