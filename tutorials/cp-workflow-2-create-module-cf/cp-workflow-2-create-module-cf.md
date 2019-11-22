@@ -84,9 +84,9 @@ To really ensure that the updated instance name is used in all respective places
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Build and deploy your launchpad project)]
-1. Right-click your **`sample.workflowtiles.mta`** project in the workspace, and choose **Build** | **Build**.
+1. Right-click your **`sample.workflowtiles.mta`** project in the workspace, and choose **Build** | **Build with Cloud MTA Build Tool (recommended)**.
 
-    ![Build FLP Project](build-flp-project-new.png)
+    ![Build FLP Project](build-flp-project-rec.png)
 
     The console shows the status of the build: Build of `MyFLPProject` completed.
 
