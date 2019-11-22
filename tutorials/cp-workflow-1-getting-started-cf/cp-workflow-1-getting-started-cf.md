@@ -17,30 +17,7 @@ time: 5
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure entitlements)]
-
-1. In your Web browser, open the [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com) cockpit. If you do not have a trial account, see Prerequisites.
-
-2. Choose **Enter Your Trial Account**.
-
-    ![Enter Trial Account](enter-trial-account.png)
-
-3. Choose the **trial** subaccount.
-
-4. Choose **Entitlements** from the left-hand navigation, then choose **Configure Entitlements**.
-
-    ![Choose Entitlements](choose-entitlements-corr2.png)
-
-5. Search for `workflow`.
-
-6. Select the **Workflow** service, and choose **Add Service Plans**.
-
-    ![Add Service Plans](add-service-plans-corr2.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Add a workflow instance)]
+[ACCORDION-BEGIN [Step 1: ](Add a workflow instance)]
 
 1. From the breadcrumbs choose **trial**.
 
@@ -65,7 +42,7 @@ time: 5
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create role collection)]
+[ACCORDION-BEGIN [Step 2: ](Create role collection)]
 
 1. Go back to your trial subaccount by choosing the **trial** from the breadcrumbs.
 
@@ -87,7 +64,7 @@ time: 5
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign role collection)]
+[ACCORDION-BEGIN [Step 3: ](Assign role collection)]
 
 1. Go back to your trial subaccount by choosing the **trial** from the breadcrumbs.
 
@@ -108,7 +85,7 @@ time: 5
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enable the workflow extension and Cloud Foundry)]
+[ACCORDION-BEGIN [Step 4: ](Enable the workflow extension and Cloud Foundry)]
 
 1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
 
