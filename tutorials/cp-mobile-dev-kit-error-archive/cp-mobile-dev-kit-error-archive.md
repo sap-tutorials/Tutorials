@@ -53,8 +53,7 @@ Right click on Workspace folder and select **New** | **MDK CRUD Project**.
 
 >_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
 
->More details on _MDK template_ is available in
-[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+>More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
 
 Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
 
@@ -239,9 +238,9 @@ Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Comp
 
 ![MDK](img_007.12.png)
 
-In the **Properties** | **Target** pane, click **Object Browser** icon, provide `#Property:AffectedEntity` in **Expression** box and click **OK**.
+In the **Properties** | **Target** pane, choose **String Target** from the dropdown and provide `#Property:AffectedEntity` value.
 
-![MDK](img_007.13.gif)
+![MDK](img_007.13.png)
 
 In **Appearance** section, provide below properties:
 
@@ -457,7 +456,7 @@ Save your changes to the `DecideWhichEditPage.js` file.
 
 Next, bind this file to `onPress` of **Object Table** in **Error Details** page.
 
-Open **Error Details** page | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+Open **Error Details** page | Select **Object Table** control | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
 Double click on the `DecideWhichEditPage.js` action and click **OK** to set it as the `OnPress` Action.
 
@@ -510,7 +509,7 @@ Save the changes to the `Main` page.
 
 [ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
 
-So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
 Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 

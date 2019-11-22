@@ -26,7 +26,7 @@ author_profile: https://github.com/mervey45
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Define inbound tile)]
-Define inbound tile in `webapp/manifest.json`.
+Open SAP Web IDE and open `webapp/manifest.json` file to define your inbound tile.
 
 ![Define inbound tile](tile.png)
 

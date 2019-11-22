@@ -103,6 +103,8 @@ In the **Optional Features** step, you have the option to enable **logging** and
 
 Make sure the checkboxes **Enable Log Upload**, **Enable Remote Notifications** and **Use Discovery Service for Application bootstrapping** are selected, and the **OData Provider** radio button is set to **Enable Online OData** and click **Next** to proceed to the **Xcode Project** step.
 
+> **Note:** Remember to wait until the Discovery Service has the address generated. You can see the a spinner if you scroll down to the bottom. Wait until the address shows up and the spinner disappears before continuing with the next step! 
+
 [DONE]
 [ACCORDION-END]
 

@@ -17,6 +17,10 @@ time: 20
 
 ---
 
+> The SAP managed offerings for PostgreSQL, Mongo DB, Redis and RabbitMQ will be removed from the price list starting Q3/2019 i.e. July 15th and are scheduled to be retired as of Jan 15, 2020.
+
+> **Therefore, depending on you account type, you might not be able to complete this tutorial anymore**
+
 [ACCORDION-BEGIN [Step ](Messaging in a microservices architecture)]
 Microservices architecture became popular around 2014 and is still extremely popular. In such an architecture, applications do not consist of a single monolith, but are built from several "independent" components/services which interact collaboratively ([Martin Fowler](https://martinfowler.com/microservices/) spent some time collecting interesting information about it).
 

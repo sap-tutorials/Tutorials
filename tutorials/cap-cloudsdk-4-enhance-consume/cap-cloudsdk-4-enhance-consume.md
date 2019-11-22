@@ -18,6 +18,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - How to define consumption of a remote service
 - What constraints look like on a navigation property definition
 
+**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+
 It's time to extend the basic CAP-based service you created in the previous tutorial in this mission. You will add to the `Orders` entity a couple more fields that will be used in a relationship constraint definition, and then extend the service as a whole to describe the consumption of business partner address data that will be provided by the remote mock S/4HANA service.
 
 ---

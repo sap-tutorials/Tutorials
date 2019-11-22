@@ -13,7 +13,7 @@ time: 15
 ### You will learn  
   - How to register on the SAP website
   - How to start your SAP Cloud Platform trial
-  - Learn how to 90 days trial works
+  - How the 90-day trial works
   - How to navigate to your sub-account and space
   - Where to find information on three important Cloud Foundry areas:  Applications, Service Marketplace, and Service Instances
 

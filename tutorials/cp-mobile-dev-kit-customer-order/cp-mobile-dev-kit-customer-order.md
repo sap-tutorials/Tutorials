@@ -44,10 +44,6 @@ Enter the **Page Name** `Customers_Orders` and click **Next** and then **Finish*
 
 ![MDK](img_002.png)
 
-In `Customers_Orders.page` , select the page header area and then click **Page**.
-
-![MDK](img_002.1.png)
-
 In the **Properties** pane, set the caption to **Customer Orders**.
 
 ![MDK](img_003.png)
@@ -81,7 +77,8 @@ Provide the below information:
 | Property | Value |
 |----|----|
 | `Description`| `$(D,{CreatedAt})` |
-| `Footnote` | Leave it blank |
+| `DetailImage`| Remove the default value and leave it blank |
+| `Footnote` | Remove the default value and leave it blank  |
 | `PreserveIconStackSpacing`| `false` |
 | `ProgressIndicator` | Leave it blank |
 | `Status`| `$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` |
@@ -123,8 +120,6 @@ In SAP Web IDE project, right-click the **Pages** folder | **New MDK Page** | **
 Enter the Page Name `SalesOrders_Detail` and click **Next** and the **Finish** on the confirmation step.
 
 ![MDK](img_010.png)
-
-In `SalesOrders_Detail.page` , select the page header area and then click **Page**.
 
 In the **Properties** pane set the Caption to **Order Details**.
 
@@ -305,6 +300,7 @@ In the **Appearance** section of the **Properties** pane, provide the below info
 | Property | Value |
 |----|----|
 | `Description`| Leave it blank |
+| `DetailImage`| Leave it blank |
 | `Footnote` | Leave it blank |
 | `PreserveIconStackSpacing`| `false` |
 | `ProgressIndicator` | Leave it blank |

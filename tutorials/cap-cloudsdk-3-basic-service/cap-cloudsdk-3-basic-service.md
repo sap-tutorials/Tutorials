@@ -18,6 +18,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - How to supply seed data in CSV form
 - How to start up a CAP service locally
 
+**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+
 So you have a mock service running, and supporting V2 as well as V4 flavored responses to OData operation requests. Now it's time to put together a second service that will eventually consume data from (make requests to) this mock service. We'll use the SAP Cloud Application Programming Model for this second consumer service so we can take advantage of the powerful Core Data Services language to bridge local and remote data sources in service definitions.
 
 To keep things simple, the consumer service will be based on the simple bookshop model that you may have seen before, so that you can focus on the consumption parts you'll eventually add and use.

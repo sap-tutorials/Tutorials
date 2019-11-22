@@ -11,21 +11,23 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
  - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
- - You have a **subaccount and dev space with Europe (Frankfurt) as region**.
+ - You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**.
 
 ## Details
 ### You will learn  
   - How to create a trial user
   - How to create an ABAP Cloud project
 
->You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt)** as Region.
+>You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt)** or **US East (VA)** as Region.
 
->**If you don't have a subaccount with this region**, please **create a subaccount and space with Europe (Frankfurt)** as region to make the SAP Cloud Platform ABAP Environment Trial visible as a service in your service marketplace.
+>**If you don't have a subaccount with this region**, please **create a subaccount and space with Europe (Frankfurt)** or **US East (VA)** as region to make the SAP Cloud Platform ABAP Environment Trial visible as a service in your service marketplace.
 
 >You can use following for the subaccount creation:
+
 >![Select ABAP Trial](start.png)
 
->Enter a subaccount, for e.g. trial. Select **Cloud Foundry as Environment**, **Amazon Web Services (AWS) as Provider**, **Europe (Frankfurt)** as region and your **global account as subdomain**. Click **Create**.
+
+>Enter a subaccount, for e.g. trial. Select **Cloud Foundry as Environment**, **Amazon Web Services (AWS) as Provider**, **Europe (Frankfurt) or US East (VA)** as region and your **global account as subdomain**. Click **Create**.
 >
 
 ---
@@ -36,11 +38,18 @@ author_profile: https://github.com/mervey45
     If you aren't logged on to your SAP Cloud Platform Trial Cockpit, then please logon to <https://cockpit.hanatrial.ondemand.com/> and select **Enter Your Trial Account**.
 
 
-  2. **You can see your trial subaccount with Europe (Frankfurt) as region**.
+  2. **You can see your trial subaccount with Europe (Frankfurt) or US East (VA) as region**.
 
-      Click **trial** to get to your trial subaccount.
+    **Europe (Frankfurt):**
 
       ![Select ABAP Trial](welcometrial.png)
+
+
+    Or **US East (VA):**
+
+      ![Select ABAP Trial](us.png)
+
+      Click **trial** to get to your trial subaccount.
 
   3. As we use Cloud Foundry every app and service is scoped to a space.
      Therefore choose in your trial subaccount your space **dev** to navigate to it.
@@ -60,7 +69,7 @@ author_profile: https://github.com/mervey45
 
 [DONE]
 [ACCORDION-END]
- 
+
 [ACCORDION-BEGIN [Step 2: ](Configure SAP Cloud Platform Entitlements)]
 
   1. **Skip step 2 - Configure SAP Cloud Platform Entitlements**, if you could enter **ABAP Trial**.

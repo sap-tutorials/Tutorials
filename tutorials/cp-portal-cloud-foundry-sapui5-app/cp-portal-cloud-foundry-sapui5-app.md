@@ -1,5 +1,5 @@
 ---
-title: Integrate an SAP Fiori App into Your Portal Site (Cloud Foundry)
+title: Integrate an SAPUI5 App into Your Portal Site (Cloud Foundry)
 description: Add the app that you created in SAP Web IDE to your Portal site on Cloud Foundry.
 auto_validation: true
 time: 10

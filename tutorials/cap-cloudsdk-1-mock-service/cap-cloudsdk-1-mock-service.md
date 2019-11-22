@@ -21,6 +21,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - How one might successfully combine use of the `@sap/cds` and `express` packages
 - What an OData V4 entity set looks like
 
+**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
 
 This is the first tutorial in the SAP TechEd 2019 App Space mission _S/4HANA Extension with Cloud Application Programming Model_, which will show you how the SAP Cloud Application Programming Model can be used with the SAP Cloud SDK to consume a service from an SAP S/4HANA system in the context of extending core functionality with a new app and service.
 

@@ -22,11 +22,12 @@ You will learn how to set up the roles, synonyms and deployment configuration to
 
 [ACCORDION-BEGIN [Step 1: ](Create the target container as a resource)]
 
-This tutorial uses the SAP HANA `INteractive` Education model as an example for a target container. You can learn how to import the SHINE model [in this tutorial](http://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html). This tutorial will refer to this container as the **target** container.
+This tutorial uses the SAP HANA `INteractive` Education model as an example of a target HDI container. Create this
+target container by following the XSA-specific instructions found in the [SHINE source code repository](https://github.com/SAP/hana-shine-xsa/blob/master/SHINE-XSA.md). In this tutorial, we will refer to this container as the **target** container.
 
 Your current database module will use two containers, the `hdi-container` created with the database module and the target container from the SHINE application.
 
-- If you are using SAP HANA 2.0 SPS03, right-click on the `db` module and choose **Add External SAP HANA service**
+- If you are using SAP HANA 2.0 SPS03 or later, right-click on the `db` module and choose **Add External SAP HANA service**
 
   ![Add external SAP HANA Service](sps03.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Sign up for Mircosoft Azure
+title: Sign up for Microsoft Azure
 description: Go through the registration process for a new Microsoft Azure account.
 auto_validation: true
 primary_tag: topic>cloud

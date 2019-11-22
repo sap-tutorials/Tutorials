@@ -18,15 +18,11 @@ By enabling the service, you get your own instance of Open Connectors, which all
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-Log into SAP Cloud Platform
+Enter your trial account by clicking on **Enter Your Trial Account**.
 
 ![Log into cockpit](00-Login-trial-account.png)
-
-Click **Enter Your Trial Account** to open the cockpit for the Cloud Foundry environment.
-
-![Access Cloud Foundry](01-CF-trial-account.png)
 
 Click on **trial** tile to open the cockpit for the Cloud Foundry trial environment.
 

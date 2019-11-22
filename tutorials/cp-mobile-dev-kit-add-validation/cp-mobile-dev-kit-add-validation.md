@@ -77,6 +77,9 @@ if((atSign.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@')) === -1){
 
 >The [`indexOf()` method](https://www.w3schools.com/jsref/jsref_indexof.asp) returns the index within the calling String object of the first occurrence of the specified value and -1, if no occurrence is found.
 
+>In above code there is a reference to `ValidationFailure.action` , you can navigate directly from here to the MDK file by right clicking on it.
+![MDK](img_001.1.png)
+
 [DONE]
 [ACCORDION-END]
 
