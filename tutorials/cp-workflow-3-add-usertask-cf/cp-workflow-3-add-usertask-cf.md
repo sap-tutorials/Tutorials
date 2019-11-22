@@ -120,9 +120,9 @@ A message confirms that the form has been created.
 
 [ACCORDION-BEGIN [Step 6: ](Build the workflow project)]
 
-1. Build the **`MyWorkflowProject`** project by right-clicking it and choosing **Build** | **Build**.
+1. Build the **`MyWorkflowProject`** project by right-clicking it and choosing **Build** | **Build with Cloud MTA Build Tool (recommended)**.
 
-    ![Build Workflow Project](build-wf-project-new.png)
+    ![Build Workflow Project](build-wf-project-rec.png)
 
     You will receive a build confirmation popup.
 
@@ -147,7 +147,7 @@ A message confirms that the form has been created.
 
 2. Choose the **Workflow Monitor - Workflow Definitions** tile, and for the `ApprovalWorkflow` task choose **Start New Instance**.
 
-  ![Start New Instance](start-new-instance.png)
+    ![Start New Instance](start-new-instance.png)
 
 3. Leave the `JSON` context as is, and choose **Start New Instance**.
 
