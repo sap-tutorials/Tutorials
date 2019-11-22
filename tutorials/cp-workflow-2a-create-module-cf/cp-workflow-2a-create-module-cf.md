@@ -40,7 +40,7 @@ time: 5
 
 You now see a project with an `mta.yaml` file in your workspace:
 
-![Workflow Project](workflow-project2.png)
+![Workflow Project](workflow-yaml.png)
 
 > If there are layout issues with the editor window (can't see the properties), simply refresh the SAP Web IDE window (F5).
 
@@ -75,15 +75,15 @@ You now see your new workflow:
 
     ![Open MTA Editor](open-wf-mta-editor-new.png)
 
-2. On the **Modules** tab, check that `my-workflow-instance (resource)` is listed under **Requires**.
-
-    ![Check Requires Section](check-requires.png)
-
-3. Switch to the **Resources** tab, and change the name from `workflow_MyWorkflowProject` to `my-workflow-instance`, and under **Type**, select `org.cloudfoundry.existing-service`. Then change the service plan value to **lite**.
+2. Switch to the **Resources** tab, and change the name from `workflow_MyWorkflowProject` to `my-workflow-instance`, and under **Type**, select `org.cloudfoundry.existing-service`. Then change the service plan value to **lite**.
 
     ![Update Resource](existing-instance-new.png)
 
-6. Save your changes.
+3. On the **Modules** tab, check that `my-workflow-instance (resource)` is listed under **Requires**.
+
+    ![Check Requires Section](check-requires.png)
+
+4. Save your changes.
 
 [VALIDATE_9]
 [ACCORDION-END]
