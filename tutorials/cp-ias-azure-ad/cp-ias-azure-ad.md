@@ -161,7 +161,7 @@ Go to the **Tenant Settings** in SAP Cloud Platform Identity Authentication Serv
 
 You have already uploaded the metadata file from Azure Active Directory to SAP Cloud Platform Identity Authentication Service. It's time to do it the other way round now and upload the metadata of SAP Cloud Platform Identity Authentication Service to Azure Active Directory.
 
-Go back to the [Azure Portal](portal.azure.com) and search for **Enterprise application** in the search bar on top of the page. Select the according result.
+Go back to the [https://portal.azure.com](https://portal.azure.com) and search for **Enterprise application** in the search bar on top of the page. Select the according result.
 
 ![search for enterprise applications](search-enterprise-applications.png)
 
