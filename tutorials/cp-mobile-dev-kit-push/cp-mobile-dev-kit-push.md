@@ -460,6 +460,8 @@ Paste the downloaded `google-services.json` file to `/demosampleapp.mdkproject/A
 
     ![MDK](img_017.1.png)
 
+    >You can run the `create-client command` from any directory.  The resulting MDK client will be created in the directory where the `create-client command` is run from.
+
 2. You will be asked whether you would like to build for iOS or Android or All?
 
     ![MDK](img_018.1.png)
@@ -487,6 +489,8 @@ You will also find your app created under the `MDKClient_SDK` folder.
 1. You can create a client by running `create-client.cmd` and providing the path to a valid `.mdkproject` directory.
 
     ![MDK](img_017.1.2.PNG)
+
+    >You can run the `create-client cmd` from any directory.  The resulting MDK client will be created in the directory where the `create-client cmd` is run from.
 
 2. Once the `create-client.cmd` script executed successfully, you will see **Application ready** message in terminal console.
 
