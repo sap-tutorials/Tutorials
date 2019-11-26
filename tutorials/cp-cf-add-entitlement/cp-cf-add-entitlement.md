@@ -23,16 +23,19 @@ Entitlements are the hearth of all subaccounts in the Cloud Foundry environment.
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
 2. Click on "Enter Your Access Trial Account" to access the Cloud Foundry environment.
-![accesstrial](accesstrial.png)
+
+    ![accesstrial](accesstrial.png)
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Switch to the Entitlements View)]
 
 1. Select the tile of the subaccount you want to add entitlements to.
+
     ![subaccount](selectsubaccount.png)
 
 2. Click on **Entitlements** in the left-hand sidebar.
+
     ![openentitlements](openentitlements.png)
 
 [DONE]
@@ -40,14 +43,18 @@ Entitlements are the hearth of all subaccounts in the Cloud Foundry environment.
 [ACCORDION-BEGIN [Step: ](Add new Entitlements to the Subaccount)]
 
 1. You can use the filter box if you see too many entries to find the entitlement you are looking for. Click on **Configure Entitlements** to switch the table into edit mode.
+
     ![findentitlement](findentitlement.png)
 
 2. Click on **Add Service Plans** to see all available entitlements.
+
     ![addserviceplan](addserviceplan.png)
 
 3. Use the filter bar the search for **`hana`** to reduce the number of available entitlements. Click the checkbox to select the service plan **hdi-shared**. Finally, confirm your selection by clicking on **Add 1 Service Plan**.
+
     ![addplan](addplan.png)
 4. In the table, you can see the quota you are going to assign to the subaccount. As the trial landscape is for free, you can max out all your service plans.
+
     ![quotamax](quotamax.png)
 
 > If you are not able to increase the quota of a given service plan, you might already consume this service plan in another subaccount. Please make sure to release the quota from other subaccounts, before reassigning it.
@@ -78,6 +85,7 @@ Congratulations, you just enabled the SAP HANA service in your Cloud Foundry env
 [ACCORDION-BEGIN [Step: ](Save the new entitlements)]
 
 Confirm you selection with **Save**.
+
 ![save](save.png)
 
 
