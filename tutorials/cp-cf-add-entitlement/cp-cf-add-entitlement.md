@@ -82,7 +82,7 @@ Congratulations, you just enabled the SAP HANA service in your Cloud Foundry env
 
 [VALIDATE_1]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Save the new entitlements)]
+[ACCORDION-BEGIN [Step: ](Save the Entitlements)]
 
 Confirm you selection with **Save**.
 
