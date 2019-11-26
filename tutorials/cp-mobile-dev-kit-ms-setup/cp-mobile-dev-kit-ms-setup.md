@@ -117,7 +117,7 @@ Click `com.sap.mdk.demo` to navigate back to app configuration page.
 
 ![MDK](img_0015.png)
 
-**Mobile App Update:** - Since we specified Mobile Development Kit as the app type, the App Update feature is assigned to the app by default. This feature keeps MDK apps up-to-date and manage the apps' life cycles.
+**Mobile App Update:** - This feature keeps MDK apps up-to-date and manage the apps' life cycles.
 
 **Mobile Offline Access:** - Define offline settings for the selected application. Offline support enables client applications to access back-end data without a connection. When offline, applications access data from an offline store on the client. SAP Cloud Platform Mobile Services moves data between the back end and the client offline store.
 
