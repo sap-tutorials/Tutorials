@@ -64,7 +64,7 @@ Make sure **Define source without mapping** is checked, here the actual mapping 
 
 >![SAP Cloud Platform Mobile Services - Opera](img_011.png)
 
-Scroll down and you will find [Handlebars block helper](https://handlebarsjs.com/block_helpers.html) function **each**, it points to the correct JSON path of the items result set.
+Scroll down and you will find [Handlebars block helper](https://handlebarsjs.com/guide/#evaluation-context) function **each**, it points to the correct JSON path of the items result set.
 
 ![SAP Cloud Platform Mobile Services - Opera](img_015.png)
 
