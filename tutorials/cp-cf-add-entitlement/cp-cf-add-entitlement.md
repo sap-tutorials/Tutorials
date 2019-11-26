@@ -40,7 +40,7 @@ Entitlements are the hearth of all subaccounts in the Cloud Foundry environment.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Add new Entitlements to the Subaccount)]
+[ACCORDION-BEGIN [Step: ](Add a SAP Hana Service Entitlement to the Subaccount)]
 
 1. You can use the filter box if you see too many entries to find the entitlement you are looking for. Click on **Configure Entitlements** to switch the table into edit mode.
 
