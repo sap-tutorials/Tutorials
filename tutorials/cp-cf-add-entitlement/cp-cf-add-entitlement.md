@@ -13,6 +13,8 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
   - Where to find all entitlements of your subaccount
   - How to add a new entitlement to your subaccount
 
+Entitlements are the hearth of all subaccounts in the Cloud Foundry environment. They define which service and runtime artifacts you are able to use. This tutorial will show you how you can set up the entitlements you need to develop success solutions on SAP Cloud Platform Cloud Foundry environment.
+
 ---
 
 [ACCORDION-BEGIN [Step: ](Log into SAP Cloud Platform)]
