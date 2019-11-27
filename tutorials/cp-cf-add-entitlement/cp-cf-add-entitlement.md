@@ -42,6 +42,8 @@ Entitlements are the hearth of all subaccounts in the Cloud Foundry environment.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Add a SAP Hana Service Entitlement to the Subaccount)]
 
+In this step we will add a new service plan to a subaccount. Depending on when you created the SAP Cloud Platform account, this entitlement might already be assigned to the subaccount.
+
 1. You can use the filter box if you see too many entries to find the entitlement you are looking for. Click on **Configure Entitlements** to switch the table into edit mode.
 
     ![findentitlement](findentitlement.png)
@@ -78,6 +80,8 @@ Congratulations, you just enabled the SAP HANA service in your Cloud Foundry env
 |Workflow|lite|To use the SAP Cloud Platform Workflow service within the Cloud Foundry environment.|
 |Functions|beta|Use the beta release of our Functions-as-a-service offering.|
 > This is an incomplete enumeration.
+
+Follow the instructions from the previous step to add these new entitlements to your subaccount.
 
 
 [VALIDATE_1]
