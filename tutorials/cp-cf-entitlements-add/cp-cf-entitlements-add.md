@@ -1,6 +1,6 @@
 ---
-title: Add a new Entitlement to your Subaccount
-description: See an overview of all entitlements and add additional ones.
+title: Add a New Entitlement to Your Subaccount
+description: Each subaccount in your global SAP Cloud Platform account is given a share of the resources through Entitlements. In this tutorial you will add additional entitlements (= resources) to your default subaccount.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform]
@@ -28,7 +28,7 @@ Entitlements are the hearth of all subaccounts in the Cloud Foundry environment.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Switch to the Entitlements View)]
+[ACCORDION-BEGIN [Step: ](Switch to entitlements view)]
 
 1. Select the tile of the subaccount you want to add entitlements to.
 
@@ -40,7 +40,7 @@ Entitlements are the hearth of all subaccounts in the Cloud Foundry environment.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Add a SAP Hana Service Entitlement to the Subaccount)]
+[ACCORDION-BEGIN [Step: ](Add a SAP HANA service entitlement to subaccount)]
 
 In this step we will add a new service plan to a subaccount. Depending on when you created the SAP Cloud Platform account, this entitlement might already be assigned to the subaccount.
 
@@ -55,6 +55,7 @@ In this step we will add a new service plan to a subaccount. Depending on when y
 3. Use the filter bar the search for **`hana`** to reduce the number of available entitlements. Click the checkbox to select the service plan **hdi-shared**. Finally, confirm your selection by clicking on **Add 1 Service Plan**.
 
     ![addplan](addplan.png)
+
 4. In the table, you can see the quota you are going to assign to the subaccount. As the trial landscape is for free, you can max out all your service plans.
 
     ![quotamax](quotamax.png)
@@ -64,7 +65,7 @@ In this step we will add a new service plan to a subaccount. Depending on when y
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Add more Entitlements to the Subaccount)]
+[ACCORDION-BEGIN [Step: ](Add more entitlements to subaccount)]
 
 Congratulations, you just enabled the SAP HANA service in your Cloud Foundry environment. Depending on what you want to build, you might want to add one of more of the following service plans as well:
 
@@ -86,7 +87,7 @@ Follow the instructions from the previous step to add these new entitlements to 
 
 [VALIDATE_1]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Save the Entitlements)]
+[ACCORDION-BEGIN [Step: ](Save the entitlements)]
 
 Confirm you selection with **Save**.
 

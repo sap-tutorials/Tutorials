@@ -109,6 +109,7 @@ You will then see a dialog box while the account is set up.  When complete, the 
 You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 
 ![enter trial account](enter-trial.png)
+> Bookmark the link for fast and quick access to the cockpit.  
 
 The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
