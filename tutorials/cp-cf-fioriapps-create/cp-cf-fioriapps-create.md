@@ -1,5 +1,5 @@
 ---
-title: Develop SAP Fiori Applications for SAP Cloud Platform on Cloud Foundry
+title: Develop SAP SAPUI5 Application for SAP Cloud Platform on Cloud Foundry
 description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP Cloud Platform Cloud Foundry environment.
 auto_validation: true
 time: 25
@@ -9,6 +9,7 @@ primary_tag: products>sap-web-ide
 
 ## Prerequisites
  - Make sure you have access to the trial version of SAP Web IDE Full-Stack.
+ - To access Web IDE go through tutorial of [Prepare SAP Web IDE for Cloud Foundry Development](https://developers.sap.com/tutorials/sapui5-webide-open-webide.html)
 
 ## Details
 ### You will learn
@@ -21,6 +22,7 @@ primary_tag: products>sap-web-ide
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a new project)]
+
 1. In SAP Web IDE Full-Stack, right-click your workspace choose **New > Project from Template**.
 
     ![Open template](step1-new-template.png)
@@ -108,7 +110,7 @@ Now, before you can build and deploy your new application, check your Cloud Foun
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test your new application)]
-Now you need to run your new application to test it.
+Now you need  to run your new application to test it.
 
 But first, check the project settings to make sure that Cloud Foundry is enabled for your project.
 
@@ -165,49 +167,56 @@ The **Deploy to SAP Cloud Platform** dialog box opens. The fields are automatica
 
 The deployment process takes a few minutes. You can see that the deployment is still in progress in the status bar at the bottom right of your screen.
 
-When the deployment process is complete, you should see a notification in the console at the bottom of your screen and also at the top right of your screen.
+When the deployment process is complete, you should see the notification in the console at the bottom of your screen and also at the top right of the screen.
 
 ![Console](step7-console.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create a URL for your new application)]
+[ACCORDION-BEGIN [Step 8: ]( Get the URL to access your application)]
 Now you can access your deployed application in the SAP Cloud Platform cockpit. The steps below show you how to create a URL that you can use to access your new application.
 
 1. From the **Tools** menu click **SAP Cloud Platform Cockpit**.
 
     ![Open cockpit](step8-open-cockpit.png)
 
-2. Click **Home** in the breadcrumbs at the top of the screen and then click **Cloud Foundry Trial**.
+2. Click **Home [Europe (Rot)-Trial]** at the top of the screen.
 
-    ![Cloud Foundry trial](step8-cf-trial.png)
+    ![Click Home Europe (Rot)-Trial](Step8-home.png)
 
-3. Click the **trial** subaccount box, assuming you are working on the trial version of SAP Web IDE. Otherwise, your subaccount will have a different name.
+3. Click **Enter your Trial Account**.
 
-    ![Click "trial" subaccount](step8-subaccount.png)
+    ![Enter Trial Account](Step8-Trial2.png)
 
-4. Click **Spaces** in the side navigation panel and then click the number link to your Cloud Foundry spaces.
 
-    ![Click space](step8-choose-space.png)
 
-5. Click your space box to open it.
+4. Click the **trial** subaccount box, assuming you are working on the trial version of SAP Web IDE. Otherwise, your subaccount will have a different name.
+
+    ![Click subaccount](Step8-subaccount2.png)
+
+
+5. Click **Spaces** in the side navigation panel and then click the number link to your Cloud Foundry spaces.
+
+    ![Click space](Step8-Space2.png)
+
+6. Click your space box to open it.
 
     ![Open space](step8-choose-space-box.png)
 
-6. On your **Applications** page, you should see your new application in the list: `mta_FioriDemo_appRouter` and that it has a **Started** status. Click this link.
+7. On your **Applications** page, you should see your new application in the list: `mta_FioriDemo_appRouter` and that it has a **Started** status. Click this link.
 
     ![Application list](step8-app-approuter.png)
 
-7. A new page opens: **Application: `mta-FioriDemo_appRouter` - Overview.** Right-click the URL under **Application Routes** and save the URL in a text file such as in  **Notepad** or **Notes**.
+8. A new page opens: **Application: `mta-FioriDemo_appRouter` - Overview.** Right-click the URL under **Application Routes** and save the URL in a text file such as in  **Notepad** or **Notes**.
 
     ![Get URL](step8-url.png)
 
-8. In your text editor you need to add the following suffix to the URL that you saved in step 7: `/mynamespaceFioriDemo/index.html`
+9. In your text editor you need to add the following suffix to the URL that you saved in step 8: `/mynamespaceFioriDemo/index.html`
 
 > For future reference, bear in mind that this is the construct of the final URL: `<URL_from_application_overview_page>/<mynamespace><project_name>/index.html`
 
-You can now use this URL in any browser to access your new application.
+You can use this URL in any browser to access your new application.
 
 [VALIDATE_8]
 [ACCORDION-END]

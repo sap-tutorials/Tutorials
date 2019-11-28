@@ -1,6 +1,6 @@
 ---
 title: Build a Decision Support UI in SAP Web IDE
-description: Create a Decision Support application using the SAP Leonardo IoT extension for SAP Web IDE.  
+description: Create a decision support application using the SAP Leonardo IoT extension for SAP Web IDE.  
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-web-ide-plug-ins, topic>sapui5, products>sap-web-ide, products>sap-leonardo-iot]
@@ -21,7 +21,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
   3. Click **Save**.
 
-    ![WebIde IoT feature](images/webide_iot_feature.png)
+    ![Enable SAP Leonardo IoT extension in SAP Web IDE](images/webide_iot_feature.png)
 
 
 [DONE]
@@ -30,13 +30,13 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
 [ACCORDION-BEGIN [Step 2: ](Add decision support application to MTA project)]
 
-  1. Right click on your MTA project and add a new HTML5 Module.  We'll reuse the MTA project created in the tutorial [Setting up the SAP Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp).
+  1. Right click your MTA project and add a new HTML5 Module.  We'll reuse the MTA project created in the tutorial [Setting up the SAP Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp).
 
-    ![WebIde DS app 1](images/webide_ds_1.png)
+    ![Add new HTML5 module](images/webide_ds_1.png)
 
-  2. Choose `IoT Decision Support Application` from the `Internet of Things` Category, click **Next**.
+  2. Choose `IoT Decision Support Application` from the `Internet of Things` category, click **Next**.
 
-    ![WebIde DS app 2](images/webide_create_ds_2.png)
+    ![Select IoT Decision Support application template](images/webide_create_ds_2.png)
 
   3. Enter `greenhousedecisionsupport` as a **Module Name**.
 
@@ -46,11 +46,11 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
   6. Click **Finish**.
 
-    ![WebIde DS app 3](images/webide_create_ds_3_a.png)
+    ![Enter basic information](images/webide_create_ds_3_a.png)
 
-  7. The Leonardo IoT Decision Support module is added to the project. Now open any of the subfolders to examine the generated source files.  You can also toggle the visibility of hidden files.
+  7. The Leonardo IoT decision support module is added to the project. Now open any of the subfolders to examine the generated source files.  You can also toggle the visibility of hidden files.
 
-    ![WebIde DS app 4](images/webide_ds_4.png)
+    ![New IoT Decision Support application is created](images/webide_ds_4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -63,29 +63,29 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
 3. Enter `display` as the value for **Action**.
 
-4. From the Web IDE Toolbar, click **Save** in the File menu to save the changes.
+4. From the Web IDE toolbar, click **Save** in the **File** menu to save the changes.
 
-    ![WebIde DS app 5](images/webide_create_ds_6.png)
+    ![Enter semantic object and action in application manifest](images/webide_create_ds_6.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create sample Quick Create application (Part 1))]
+[ACCORDION-BEGIN [Step 4: ](Create sample quick create application (part 1))]
 
-In this step, we'll create a sample Service Ticket Quick Create application which will be one of the configured option in the Decision Support application for the greenhouse demo scenario. Quick Create application is a SAP Fiori application based on the SAP Fiori Quick Create element.
+In this step, we'll create a sample service ticket quick create application which will be one of the configured option in the decision support application for the greenhouse demo scenario. Quick create application is a SAP Fiori application based on the SAP Fiori quick create element.
 
-This sample Quick Create application uses mock data.
+This sample quick create application uses mock data.
 
-  1. Right click on the project and create a new folder with the name `ServiceTicketQC`.
+  1. Right click the project and create a new folder with the name `ServiceTicketQC`.
 
-    ![Create QC 1](images/qc_create_1.png)
+    ![Create new folder in project](images/qc_create_1.png)
 
   2. In the new folder `ServiceTicketQC`, create a new folder `webapp`.
 
   3. In the folder `webapp`, create two new folders named `annotations` and `data`.
 
-    !![Create QC 2](images/qc_create_2.png)
+    ![Folder structure shown](images/qc_create_2.png)
 
   4. In the folder `webapp\annotations`, create a new file `annotations.xml` with the following content:
 
@@ -516,16 +516,16 @@ This sample Quick Create application uses mock data.
 
   13. Your `ServiceTicketQC` folder should look like this:
 
-    ![Create QC 3](/images/qc_create_3.png)        
+    ![Quick create application created](/images/qc_create_3.png)        
 
 [DONE]
 [ACCORDION-END]
 
-  [ACCORDION-BEGIN [Step 5: ](Create sample Quick Create application (Part 2))]
+  [ACCORDION-BEGIN [Step 5: ](Create sample quick create application (part 2))]
 
   1. Double-click the `mta.yaml` file to open it in **Code Editor**.  
 
-    ![Import QC 6](/images/import_qc_6.png)    
+    ![Open mta.yaml file in code editor](/images/import_qc_6.png)    
 
   2. Add the following configuration as a required `build-parameters`  of  `iot-ds_ui_deployer`.  Please use the *Copy* button to copy the formatted configuration and paste it in the specified location in the `yaml` file.
 
@@ -547,22 +547,22 @@ This sample Quick Create application uses mock data.
           supported-platforms: []
           build-result: dist
     ```
-    ![Import QC 7](/images/import_qc_7.png)
+    ![Add ServiceTicketQC module to mta.yaml](/images/import_qc_7.png)
 
     >Please **use spaces** and **not tabs** when applying indentations in the `mta.yaml` file.
 
-  4. Since we are going to register the Decision Support and Quick Create applications with the SAP Fiori launchpad site in the next step, these modules have to be declared before the SAP Fiori launchpad site module (type: `com.sap.portal.content`) in the `mta.yaml`, otherwise, we'll get an error when we try to deploy the project in a later step.
+  4. Since we are going to register the decision support and quick create applications with the SAP Fiori launchpad site in the next step, these modules have to be declared before the SAP Fiori launchpad site module (type: `com.sap.portal.content`) in the `mta.yaml`, otherwise, we'll get an error when we try to deploy the project in a later step.
 
-    ![Reorder resource 1](/images/reorder_ds_resource.png)
+    ![Reorder resources](/images/reorder_ds_resource.png)
 
-  5. Click **Save** to save the changes.
+  5. Click **Save**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Register UI components in SAP Fiori launchpad site)]
 
-  In order to run the Decision Support application, it needs to be registered with a SAP Fiori launchpad site.  We'll reuse the Fiori launchpad site created in the tutorial [Setting up the Fiori launchpad in Cloud Foundry to receive Notifications](iot-ds-2-create-flp).  We'll also register the sample Quick Create application.
+  In order to run the decision support application, it needs to be registered with a SAP Fiori launchpad site.  We'll reuse the Fiori launchpad site created in the tutorial [Setting up the Fiori launchpad in Cloud Foundry to receive notifications](iot-ds-2-create-flp).  We'll also register the sample quick create application.
 
   1. Open `CommonDataModel.json` in **Code Editor**.
 
@@ -578,7 +578,7 @@ This sample Quick Create application uses mock data.
     }]    
     ```
 
-    ![Portal Register 1](/images/portal_reg_cdm_1.png)
+    ![Update CommonDataModel.json file](/images/portal_reg_cdm_1.png)
 
   3. **Save** the changes.
 

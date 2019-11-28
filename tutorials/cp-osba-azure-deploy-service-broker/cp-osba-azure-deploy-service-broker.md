@@ -145,19 +145,7 @@ az redis list-keys -n <name-redis-cache> -g SAPTechEd --query [primaryKey] --out
 
 [ACCORDION-BEGIN [Step 6: ](Update manifest.yml − service principal information)]
 
-[OPTION BEGIN [SAP TechEd Account]]
-
-If you are attending SAP TechEd on site and are using the provided Azure credentials, **please ask the SAP Staff** on the booth for the service principal details to replace it in the `manifest.yml`.
-
-Replace the remaining placeholders `<YOUR TENANT ID>`, `<APPID FROM SERVICE PRINCIPAL>` and `<PASSWORD FROM SERVICE PRINCIPAL>` in the `manifest.yml` with the service principal information you have received from the SAP staff.
-
-[OPTION END]
-
-[OPTION BEGIN [Own Account]]
-
 Replace the remaining placeholders `<YOUR TENANT ID>`, `<APPID FROM SERVICE PRINCIPAL>` and `<PASSWORD FROM SERVICE PRINCIPAL>` in the `manifest.yml` with the service principal information you have created in the previous tutorial. (You should have taken a screenshot or copied it into a text document.)
-
-[OPTION END]
 
 |  Placeholder       | Attribute Name of Service Principal
 |  :-------------    | :-------------

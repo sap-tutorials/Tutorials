@@ -9,93 +9,91 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
 ## Details
 ### You will learn
-  - How to create a new Rule Context
-  - How to create a new Streaming Rule
-  - How to create an Action of type Decision Support
-  - How to create an Action of type In-App Notification
-  - How to create a Decision Support Configuration
+  - How to create a new rule context
+  - How to create a new streaming rule
+  - How to create an action of type decision support
+  - How to create an action of type in-app notification
+  - How to create a decision support configuration
 
 ---
-In this tutorial, you'll create a streaming rule for high greenhouse temperature which triggers an action of type Decision Support.  This action will in turn trigger another action of type In-App Notification which creates SAP Fiori Notifications for a set of recipients.  You'll also define a Decision Support configuration with two options.  One is a Quick Create application and the other one is a SAP Fiori Navigation.
+In this tutorial, you'll create a streaming rule for high greenhouse temperature which triggers an action of type decision support.  This action will in turn trigger another action of type in-app notification which creates SAP Fiori notifications for a set of recipients.  You'll also define a decision support configuration with two options.  One is a quick create application and the other one is a SAP Fiori navigation.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create rule context)]
-  Please complete the prerequisites before starting this step.
+  Please complete the prerequisites before starting this step. If you already have created a rule context for `greenhouse`, you can skip to the next step **Create streaming rule**.
 
-  1. From Leonardo IoT Launchpad, select the **Rule Contexts** tile.
+  1. From Leonardo IoT launchpad, select the **Rule Contexts** tile.
 
-    ![New Rule Context 0](/images/launchpad_tile_rulecontexts.png)
+    ![Select rule contexts on SAP Fiori launchpad](/images/launchpad_tile_rulecontexts.png)
 
-  2. Create a new Rule Context.
+  2. Create a new rule context.
 
-    >If you already have created a rule context for `greenhouse`, you can skip to the next step, **Create streaming rule**.
-
-    ![New Rule Context 1](/images/rulectxt_new_1.png)
+    ![Add new rule context](/images/rulectxt_new_1.png)
 
   3. Enter `greenhouserulecontext` in field **Name**.
 
   4. Enter `Greenhouse Rule Context` in the field **Short Text** and **Description**.
 
-    !![New Rule Context 4](/images/rulectxt_new_4_1.png)
+    ![Enter basic data](/images/rulectxt_new_4_1.png)
 
   5. Add a new **Property Set**.
 
-    !![New Rule Context 5](/images/rulectxt_new_5.png)
+    ![Add new property set](/images/rulectxt_new_5.png)
 
   6. In the dialog, select `greenhouse` for **Package** and `greenhouseType` for **Thing Type**.  The entry `envData` should be displayed automatically in the **Property Sets** section.  Select `envData` and click **OK**.
 
-    ![New Rule Context 2](/images/rulectxt_new_2_1.png)
+    ![Select property set](/images/rulectxt_new_2_1.png)
 
   7. The new property set `envData` has been added.
 
-    !![New Rule Context 3](/images/rulectxt_new_3_1.png)
+    ![Completed basic data and data object](/images/rulectxt_new_3_1.png)
 
-  8. Click **Save** to save the changes.
+  8. Click **Save**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create streaming rule)]
-This tutorial is based on the greenhouse device used in the Leonardo IoT Foundation tutorials.  You can find these tutorials under Prerequisites.  Please complete them before continuing with this tutorial.
+This tutorial is based on the greenhouse device used in the Leonardo IoT Foundation tutorials.  You can find these tutorials under prerequisites.  Please complete them before continuing with this tutorial.
 
-1. From Leonardo IoT Launchpad, select the **Rules** tile.
+1. From Leonardo IoT launchpad, select the **Rules** tile.
 
-    ![New Rule 0](/images/launchpad_tile_rules.png)
+    ![Select rule on SAP Fiori launchpad](/images/launchpad_tile_rules.png)
 
 2. Create a new **Streaming Cloud** rule.
 
-    !![New Rule 1](/images/rule_new_1_1.png)
+    ![Create new rule of type streaming cloud](/images/rule_new_1_1.png)
 
-3. In General Information, enter `High Greenhouse Temperature` in the **Name** field.
+3. In **General Information**, enter `High Greenhouse Temperature` in the **Name** field.
 
 4. In the field **Description**, enter `Temperature in Greenhouse is above 25 degrees`.
 
-    !![New Rule 2](/images/rule_new_2.png)
+    ![Enter general information for new rule](/images/rule_new_2.png)
 
-5. In Definition, click on the field **Rule Context**.
+5. In **Definition**, click the field **Rule Context**.
 
-    !![New Rule 3](/images/rule_new_3_1.png)
+    ![Select rule context](/images/rule_new_3_1.png)
 
-6. Select the Rule Context for your Greenhouse. The name of your rule context might be different.
+6. Select the rule context for your greenhouse. The name of your rule context might be different.
 
-    ![New Rule 4](/images/rule_new_4.png)
+    ![Select greenhouserulecontext](/images/rule_new_4.png)
 
 7. In the next dialog, select `envData`.
 
-    ![New Rule 8](/images/rule_new_8.png)
+    ![Select envdata](/images/rule_new_8.png)
 
 8. Confirm the selection.
 
-    ![New Rule 5](/images/rule_new_5_1.png)
+    ![Confirm rule context selection](/images/rule_new_5_1.png)
 
-9. Enter the following rule in the **If** field of Ruled Editor:
+9. Enter the following rule in the **If** field of **Ruled Editor**:
 
     `temperature of envData is greater than 25`
 
-    !![New Rule 6](/images/rule_new_6.png)
+    ![Enter if condition for new rule](/images/rule_new_6.png)
 
-    !![New Rule 7](/images/rule_new_7_1.png)
+    ![Completed if condition](/images/rule_new_7_1.png)
 
 10. **Activate** the rule.
 
@@ -104,13 +102,13 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
 [ACCORDION-BEGIN [Step 3: ](Create decision support action)]
 
-  1. From Leonardo IoT Launchpad, select the **Actions** tile.
+  1. From Leonardo IoT launchpad, select the **Actions** tile.
 
-    ![Actions Tile](/images/launchpad_tile_actions.png)
+    ![Actions tile on SAP Fiori launchpad](/images/launchpad_tile_actions.png)
 
-  2. On the Actions page, click **New** to create a new action.
+  2. On the **Actions** page, click **New** to create a new action.
 
-    ![Actions New](/images/actions_new.png)
+    ![Create new action](/images/actions_new.png)
 
   3. Set **Name** to `Greenhouse Action`.
 
@@ -122,13 +120,13 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
   7. Enter `Greenhouse_CF` for **Alias** field.  You can enter a different value of your preference. This value will be used in a later tutorial step.
 
-  8. If you want to display device event data and `Thing` master data in a Decision Support application, you can do so by providing a JSON payload. To include master data properties from the `Thing` model, please use the following notation:
+  8. If you want to display device event data and `Thing` master data in a decision support application, you can do so by providing a JSON payload. To include master data properties from the `Thing` model, please use the following notation:
 
     `${propertyname}`
 
     For example:
 
-    !![Actions paylod thing data](/images/actions_payload_thing_data.png)
+    ![Reference thing properties in payload](/images/actions_payload_thing_data.png)
 
     For this scenario, you'll enter a sample JSON payload with a set of static values in the **Payload** text area.
 
@@ -146,9 +144,9 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
     }
     ```	  
 
-  9. Click **Save** to save your change.
+  9. Click **Save**.
 
-    !![Actions Create](/images/actions_new_ds_details_1.png)
+    ![New action screen with entered data](/images/actions_new_ds_details_1.png)
 
 
 [DONE]
@@ -156,9 +154,9 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
 [ACCORDION-BEGIN [Step 4: ](Create in-app notification)]
 
-  1. On the Actions page, click **New** to create a new action.
+  1. On the **Actions** page, click **New** to create a new action.
 
-    ![Actions InApp New](/images/actions_new.png)
+    ![Create new action](/images/actions_new.png)
 
   2. Enter `Greenhouse In-App Notification Action` in the **Name** field.  
 
@@ -170,13 +168,13 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
   6. In **Recipients** field, enter your email address.  
 
-  7. Enter `GreenhouseDSApp` as **Target Object** and `display` as **Target Action**.  These values are defined in Step 2 of [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui)
+  7. Enter `GreenhouseDSApp` as **Target Object** and `display` as **Target Action**.  These values are defined in step 2 of [Building the Decision Support UI in the Web IDE](iot-ds-3-create-ui)
 
   8. In **Text** field, enter `High Greenhouse Temperature Alert`.
 
   9. Click **New** in the section **Target Parameters**.
 
-    !![Actions InApp Target](/images/actions_new_inappnotif_details_1.png)
+    ![Create new target parameter](/images/actions_new_inappnotif_details_1.png)
 
   10. Enter `Guid` for **Key** field.  
 
@@ -184,11 +182,11 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
   12.  Click **Save**.
 
-    ![Actions InApp Target](/images/actions_new_inappnotif_details_2.png)
+    ![Target parameter values](/images/actions_new_inappnotif_details_2.png)
 
-  13. Click **Save** to save your changes.  
+  13. Click **Save**.  
 
-    !![Actions Details](/images/actions_new_inappnotif_details.png)
+    ![New action screen with entered data](/images/actions_new_inappnotif_details.png)
 
 [VALIDATE_1]
 
@@ -197,13 +195,13 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
 [ACCORDION-BEGIN [Step 5: ](Create decision support configuration)]
 
-  1. From Leonardo IoT Launchpad, select the **Decision Support Definition** tile.
+  1. From Leonardo IoT launchpad, select the **Decision Support Definition** tile.
 
-    ![DS Tile](/images/launchpad_tile_ds.png)
+    ![Select Decision Support tile in SAP Fiori launchpad](/images/launchpad_tile_ds.png)
 
-  2. On the Decision Support page, click **Create** to create a new Decision Support.
+  2. On the **Decision Support Definition** page, click **Create** to create a new decision support configuration.
 
-    ![DS New](/images/ds_new.png)
+    ![Create new Decision Support configuration](/images/ds_new.png)
 
   3. On the next page, set **Name** to `High Greenhouse Temperature`.
 
@@ -211,11 +209,11 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
   5. Check the checkbox **Active**
 
-  6. Click **Save** to save the changes.
+  6. Click **Save**.
 
   7. You will navigate back to the previous page.
 
-    ![DS Config_1](/images/ds_new_config_1.png)
+    ![General information for new decision support configuration](/images/ds_new_config_1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -224,9 +222,9 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
   1. Select the entry `High Greenhouse Temperature` on the list.
 
-  2. In the Details page, click the **Create** button under the section "Possible Actions".
+  2. On the next page, click the **Create** button under the section **Possible Actions**.
 
-    !![DS Create Action_Button](/images/ds_create_action_button.png)
+    ![Create a new possible action](/images/ds_create_action_button.png)
 
   3. In the **Alias** field, enter `Greenhouse_quickcreate`.
 
@@ -256,18 +254,18 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
     }
     ```
 
-  11. Click **Save** to save the changes.
+  11. Click **Save**.
 
-    ![DS QC Def](/images/ds_quickcreate_def_1.png)
+    ![New possible action with data entered](/images/ds_quickcreate_def_1.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Define a SAP Fiori navigation option)]
 
-  1. In the Details page, click the **Create** button under the section "Possible Actions".
+  1. In the **Definition** page, click the **Create** button under the section **Possible Actions**.
 
-    !![DS Create Action_Button](/images/ds_create_action_button.png)
+    ![Create new possible action](/images/ds_create_action_button.png)
 
   2. In the **Alias** field, enter `Greenhouse_fiori_nav`.
 
@@ -283,17 +281,17 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
   8. In the **Fiori Navigation Intent** field, enter `Shell-home`.
 
-  9. Click **Save** to save the changes.
+  9. Click **Save**.
 
-    ![DS FioriNav_Def](/images/ds_fiori_nav_def_2.png)
+    ![New possible action with data entered](/images/ds_fiori_nav_def_2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Define an action service option (optional))]
-In addition to defining Quick Create and SAP Fiori Navigation options, you can also define an Action Service option.  You will not define an Action Service option in this tutorial but you can define one if you have an Action Service that you'd like to use as an additional option.
+In addition to defining quick create and SAP Fiori navigation options, you can also define an action service option.  We will not define an action service option in this tutorial but you can define one if you have an action service that you'd like to use as an additional option.
 
-![DS ActionService_Def](/images/ds_action_service_def.png)
+![Select action service as action mode](/images/ds_action_service_def.png)
 
 [DONE]
 [ACCORDION-END]

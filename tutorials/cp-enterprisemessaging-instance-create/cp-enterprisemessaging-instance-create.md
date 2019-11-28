@@ -3,7 +3,7 @@ title: Create Instance of SAP Cloud Platform Enterprise Messaging Service
 description:  Create an instance of SAP Cloud Platform Enterprise Messaging service from SAP Cloud Platform Cockpit and understand in detail about it's each property.  
 time: 15
 auto_validation: true
-tags: [ tutorial>beginner, topic>cloud]
+tags: [ tutorial>beginner, topic>cloud, tutorial>license]
 primary_tag: products>sap-cloud-platform-enterprise-messaging
 ---
 
@@ -18,15 +18,14 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
   You must fulfill at least one of the following two points to be able to proceed with this tutorial.
 
-  - An account in SAP Cloud Platform (Cloud Foundry) trial environment
-  - SAP Cloud Platform (Cloud Foundry) environment with SAP Cloud Platform Enterprise Messaging entitlement  
+  - SAP Cloud Platform, Cloud Foundry environment with SAP Cloud Platform Enterprise Messaging entitlement  
 
 ---
 
 
 [ACCORDION-BEGIN [Step 1: ](Create an instance)]
 
-1. Open the SAP Cloud Platform cockpit(Cloud Foundry).
+1. Open the SAP Cloud Platform cockpit, Cloud Foundry environment.
 
 2. Navigate to a **Space** in your Cloud Foundry environment and select **Services >  Service Marketplace > Enterprise Messaging Service**.
 
@@ -38,28 +37,29 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
     ```JSON
     {
-    "emname": "em-instance-name",
-    "namespace": "company/myscenario/1",
+    "emname": "<yourmessageclientname>",
+    "namespace": "<yourorgname>/<yourmessageclientname>/<uniqueID>",
+    "version": "1.1.0",
     "options": {
         "management": true,
         "messagingrest": true,
         "messaging": true
     },
-    "rules": {
+	"rules": {
         "queueRules": {
-            "inboundFilter": [
-                "${namespace}/#"
+            "publishFilter": [
+                "${namespace}/*"
             ],
-            "outboundFilter": [
-                "${namespace}/#"
+            "subscribeFilter": [
+                "${namespace}/*"
             ]
         },
         "topicRules": {
-            "inboundFilter": [
-                "${namespace}/#"
+            "publishFilter": [
+                "${namespace}/*"
             ],
-            "outboundFilter": [
-                "${namespace}/#"
+            "subscribeFilter": [
+                "${namespace}/*"
             ]
         }
     }
@@ -74,7 +74,7 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
     - **emname** - It specifies the name of the message client. Should be unique for a subaccount.
 
-    - **namespace** - The namespace ensures that every message client within a subaccount is unique. The namespace should be provided as a prefix and is not done automatically. The namespace contains exactly 3 segments (max length of 24 characters) with recommended approach as company/product/applicationName.
+    - **namespace** - The namespace ensures that every message client within a subaccount is unique. The namespace should be provided as a prefix and is not done automatically. The namespace contains exactly 3 segments (max length of 24 characters) with recommended approach as orgName/clientName/uniqueId.
 
     - **options** -  It is used to define the access channels for the message client.
 

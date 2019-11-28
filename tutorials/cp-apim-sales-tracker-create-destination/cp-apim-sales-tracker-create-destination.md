@@ -18,7 +18,7 @@ primary_tag: products>sap-api-management
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
 
-Login to [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com ).
+Login to [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com ) and navigate to Neo Trial account.
 
 ![Open Trial](15-CP-cockpit.png)
 

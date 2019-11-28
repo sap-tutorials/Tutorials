@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - What the OData V2 Adapter is and how it can be used
 - How to make basic use of the SAP Cloud SDK
 
-**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+>For a quick map and overview of what this tutorial is, and where it sits in the overall [Use CAP and SAP Cloud SDK to Extend S/4HANA  mission](mission.cap-s4hana-cloud-extension), see the diagram in the blog post [Mission "Use CAP and SAP Cloud SDK to Extend S/4HANA" – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).
 
 Right now your mock SAP S/4HANA service returns OData V4 responses. There are certain circumstances where this may not be directly consumable. The [SAP Cloud SDK](https://developers.sap.com/topics/cloud-sdk.html) is one consumer that currently expects OData V2. You may also have UI libraries, for example, that expect OData V2 data sources.
 
@@ -25,6 +25,7 @@ The OData V2 Adapter is a piece of [Express middleware](https://expressjs.com/en
 
 In this tutorial, you will install and configure the OData V2 Adapter so that your mock service can return OData V2 responses, to be consumed eventually by the SAP Cloud SDK in a subsequent tutorial.
 
+---
 
 [ACCORDION-BEGIN [Step 1: ](Install the V2 adapter package)]
 

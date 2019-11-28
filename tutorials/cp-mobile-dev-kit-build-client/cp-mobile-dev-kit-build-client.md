@@ -1,6 +1,6 @@
 ---
 title: Build your MDK Client
-description: Build and run the MDK client to connect to your SAP Cloud Platform mobile application.
+description: Build and run the Mobile Development Kit client to connect to your SAP Cloud Platform mobile application.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -44,6 +44,8 @@ MDK Dependencies Installer checks the status of the MDK dependencies and will in
 Enter Admin user password and click **OK**.
 
 ![MDK](img_003.png)
+
+>You may need to grant admin access via Privileges app.
 
 The installer will list all required components for iOS and Android platform and automatically check if they are already installed in the machine. Follow the installer UI to install the components you selected.
 
@@ -169,11 +171,11 @@ Open the `MDKProject.json` file and update it as needed. This file has some buil
 
 ![MDK](img_011.png)
 
->Provide a unique `AppName`, for example: "Demo Sample App". This is the name of the application on the home screen of the device.
+>`AppName`: Provide a name for example: "Demo Sample App". This is the name of the application on the home screen of the device.
 
->For iOS `MDKProject.json's BundleID` should be the same **Identifier** `(AppID)` that is registered in Apple Developer account.
+>`BundleID`: It should be unique for iOS and same as **Identifier** `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is setup to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure.
 
->Without matching them, trying to run the custom client in iOS device will result in failure.
+>`URL Scheme`: It also needs to be unique for iOS if the user is going to use QR onboarding.
 
 >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 
@@ -197,7 +199,9 @@ Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to
 
 ![MDK](img_015.png)
 
->For android client, screen sharing or taking screen shots are disabled by default. To enable it, `add "EnableScreenSharing": true` in `ConnectionSettings` section.
+>For Android (7 and below), screen sharing or taking screen shots are disabled by default. To enable it, `add "EnableScreenSharing": true` in `ConnectionSettings` section.
+
+>Screen sharing is already enabled in Android 8 and above.
 
 Regarding other properties:
 **Debug settings**: The settings in the `DebugSettings` property are for development use and should not be enabled in a production setting.
@@ -232,6 +236,8 @@ In the last section of `BrandedSettings.json` file, make these changes:
 You can create a client by running `./create-client.command` and providing the path to a valid `.mdkproject` directory.
 
 ![MDK](img_017.png)
+
+>You can run the `create-client cmd` from any directory.  The resulting MDK client will be created in the directory where the `create-client cmd` is run from.
 
 You will be asked whether you would like to build for iOS or Android or All?
 
@@ -294,9 +300,7 @@ In terminal or command line window, navigate to the app name folder **Demo Sampl
 
 ![MDK](img_020.4.png)
 
->To run the MDK client on Android simulator, use `tns run android --emulator` command. Make sure that you have created a virtual device in Android Studio prior to running this command.
-
->Note: Before trying to launch the client on Android emulator, make sure that you have already configured a virtual device (Android Studio>AVD Manager). Otherwise, you may get error like No emulator image available for device identifier.
+>To run the MDK client on Android emulator, you need to first create the client for emulator and then use `tns run android --emulator` command. Before trying to launch the client on Android emulator, make sure that you have already configured a virtual device (Android Studio>AVD Manager). Otherwise, you may get error like No emulator image available for device identifier.
 
 Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
 
@@ -321,10 +325,6 @@ Choose a passcode with at least 8 characters for unlocking the app and tap **NEX
 Confirm the passcode and tap **DONE**.
 
 ![MDK](img_033.jpg)
-
-Optionally, you can enable fingerprint to get faster access to the app data.
-
-![MDK](img_034.jpg)
 
 Since there is no app metadata deployed yet to Mobile Services, hence you will see an empty screen.
 
@@ -375,10 +375,6 @@ Choose a passcode with at least 8 characters for unlocking the app and tap **Nex
 Confirm the passcode and tap **Done**.
 
 ![MDK](img_026.png)
-
-Optionally, you can enable Touch ID to get faster access to the app data, tap **Enable**.
-
-![MDK](img_026.1.png)
 
 Since there is no app metadata deployed yet to Mobile Services, hence you will see an empty screen.
 

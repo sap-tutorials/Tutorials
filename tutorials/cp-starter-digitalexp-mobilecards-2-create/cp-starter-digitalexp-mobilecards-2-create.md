@@ -103,7 +103,7 @@ Tap **SCAN QR CODE** to begin the on-boarding process.
 
 ![MobileCards](img_301.png)
 
->**Note**: In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
+>In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
 
 >If you see some trouble during on-boarding process, make sure that Mobile Services app state is in **Started** mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
 >![MobileCards](img_102.png)
@@ -164,7 +164,7 @@ Scan the QR code with your camera and select the toast message to launch the SAP
 
 ![MobileCards](img_017.png)
 
->**Note**: In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
+>In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
 
 >If you see some trouble during on-boarding process, make sure that Mobile Services app state is in **Started** mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
 >![MobileCards](img_102.png)
@@ -175,7 +175,7 @@ Enter your SAP Cloud Platform credentials and choose **Log On**.
 
 Choose a passcode with at least 8 characters to unlock the app.
 
-![MobileCards](IMG_1.2.png)
+![MobileCards](IMG_1.2.PNG)
 
 Confirm the passcode and choose **Done**.
 
@@ -191,15 +191,15 @@ Choose **Subscriptions**.
 
 Select **All** and then choose `TimeSheetCard`.
 
-![MobileCards](IMG_1.7.png)
+![MobileCards](IMG_1.7.PNG)
 
 Tap **Subscribe** to subscribe the timesheet card.
 
-![MobileCards](IMG_1.8.png)
+![MobileCards](IMG_1.8.PNG)
 
 Repeat steps above for the `ToDosCard` and choose **Subscribe**.
 
-![MobileCards](IMG_1.9.png)
+![MobileCards](IMG_1.9.PNG)
 
 Tap the **All Cards** at bottom of your screen to see all your currently subscribed cards.
 

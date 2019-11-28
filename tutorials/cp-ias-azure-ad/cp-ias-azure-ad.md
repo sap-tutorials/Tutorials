@@ -24,7 +24,7 @@ To summarize the steps in this tutorial overall: You are going to exchange metad
 
 [ACCORDION-BEGIN [Step 1: ](Log into Azure Portal)]
 
-Login to **Azure Portal** by going to [portal.azure.com](portal.azure.com) and provide your credentials.
+Login to **Azure Portal** by going to [https://portal.azure.com](https://portal.azure.com) and provide your credentials.
 
 Make sure you are using the right directory within the Azure subscription. The current directory is shown below your user name.
 
@@ -161,7 +161,7 @@ Go to the **Tenant Settings** in SAP Cloud Platform Identity Authentication Serv
 
 You have already uploaded the metadata file from Azure Active Directory to SAP Cloud Platform Identity Authentication Service. It's time to do it the other way round now and upload the metadata of SAP Cloud Platform Identity Authentication Service to Azure Active Directory.
 
-Go back to the [Azure Portal](portal.azure.com) and search for **Enterprise application** in the search bar on top of the page. Select the according result.
+Go back to the [https://portal.azure.com](https://portal.azure.com) and search for **Enterprise application** in the search bar on top of the page. Select the according result.
 
 ![search for enterprise applications](search-enterprise-applications.png)
 

@@ -64,7 +64,7 @@ The **`cf-businessruleseditor.zip`** is downloaded to your file system.
 
 [ACCORDION-BEGIN [Step 3: ](Modify mta.yaml file (optional))]
 
-If you have created a service instance with the name other than **`businessrules`**, you need to perform the following procedure.
+If you have created a service instance with the name other than **`business-rules`**, you need to perform the following procedure.
 
 1. Right-click the `mta.yaml` file and choose **Open MTA Editor**.
 
@@ -79,7 +79,7 @@ If you have created a service instance with the name other than **`businessrules
 
 [ACCORDION-BEGIN [Step 4: ](Build and deploy project)]
 
-1. Right-click on the **`businessruleseditor`** project and choose **Build > Build**.
+1. Right-click on the **`cf-businessruleseditor`** project and choose **Build > Build with Cloud MTA Build Tool (recommended)**.
 
     ![Build command](MTA_9.png)
 

@@ -37,7 +37,7 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Plat
 
 [ACCORDION-BEGIN [Step : ](Enter the Neo Environment)]
 
-Click on **Neo Trial** to enter the Neo environment.
+Scroll down the page and click on **Access Neo Trial** to enter the Neo environment.
 
 ![neopage](scp-neo-logon.png)
 
