@@ -1,6 +1,6 @@
 ---
 title: Inspect Your Class in the ABAP Debugger
-description: later
+description: Work with ABAP classes in the ABAP Debugger in (ADT) for both a console application and SAP Fiori application.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
@@ -9,9 +9,11 @@ primary_tag: products>sap-cloud-platform--abap-environment
 
 ## Details
 ### You will learn
-  - How to debug an ABAP Console application in ABAP Development Tools (ADT).
-  - How to debug an ABAP class that provides the business logic for a SAP Fiori application (short introduction).  
-  - Become familiar with the relevant tools, whether you are an ABAP newbie, experienced in SAPUI5 development, or an ABAP developer who is new to ADT / SAP Cloud Platform, ABAP Environment.
+  - How to debug an ABAP Console application in ABAP Development Tools (ADT)
+  - How to debug an ABAP class that provides the business logic for a SAP Fiori application
+
+
+This tutorial will get you familiar with the relevant tools, whether you are an ABAP newbie, experienced in SAPUI5 development, or an ABAP developer who is new to ADT / SAP Cloud Platform, ABAP Environment.
 
 For more information, see:
 
@@ -20,15 +22,17 @@ For more information, see:
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Optional: Duplicate your class)]
-1. Select your class, `ZCL_OUTPUT_TEST_XXX` and choose **Duplicate** from the context menu. (This is clearly not standard practice. However, you are working with the ABAP Debugger for the first time, and also adding some dummy code to your class.)
+[ACCORDION-BEGIN [Step 1: ](Duplicate your class)]
+1. Select your class, `ZCL_OUTPUT_TEST_XXX` and choose **Duplicate** from the context menu.
+
+    This is clearly not standard practice. However, you are working with the ABAP Debugger for the first time, and also adding some dummy code to your class.
 
 2. Enter a name, e.g. `ZCL_OUTPUT_TEST_DEBUG_XXX` and choose **Finish**.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Change the ABAP Debugger setting to user)]
+[ACCORDION-BEGIN [Step 2: ](Change ABAP Debugger setting to user)]
 
 1. In the Project Explorer, select your project and choose **Properties** from the context menu.
 
@@ -36,7 +40,7 @@ For more information, see:
 
 2. Choose  **ABAP Development > Debug**.
 
-3. Change the setting **Breakpoint activation...** to **User:** and enter your logon user.
+3. Change the setting **Breakpoint activation ...** to **User** and enter your logon user.
 
     ![Image depicting step2a-debug-user](step2a-debug-user.png)
 
@@ -50,19 +54,19 @@ Note that breakpoints in the ABAP Development Tools (ADT) are by default externa
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add some dummy code and two breakpoints)]
+[ACCORDION-BEGIN [Step 3: ](Add dummy code and breakpoints)]
 1. Right at the start of the method, add some simple code, e.g.
 
     ```ABAP
-
     IF 0 = 1.
     ENDIF.
-
     ```
 
 2. At the statement `IF 0 = 1.`, set a breakpoint by double-clicking the ruler.
 
     ![Link text step3a-add-bp](step3a-add-bp.png)
+
+3. Repeat this - add the same code, then add a breakpoint - right at the end of the code, just before `ENDTRY`.
 
 [DONE]
 [ACCORDION-END]
@@ -81,11 +85,12 @@ The Debugger perspective opens.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add a variable to the list; inspect an internal table)]
+[ACCORDION-BEGIN [Step 5: ](Add variable to list)]
 1. Switch to the **Variables** tab (to the right of the Class Editor).
 
-2. Add the system field **`SY-TABIX`** to the list, by clicking on **` < Enter Variable > `**
-This field is filled by the runtime system. You can then use them in programs to query the system status.
+2. Add the system field **`SY-TABIX`** to the list, by clicking: **` < Enter Variable > `**
+
+    This field is filled by the runtime system. You can then use them in programs to query the system status.
 
     ![Link text step5a-sy-tabix](step5a-sy-tabix.png)
 
@@ -137,7 +142,7 @@ However, in the **Variables View**, `ls_product` is still empty. `SY-TABIX` = 25
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Step through the LOOP statement, noting the variable values)]
+[ACCORDION-BEGIN [Step 7: ](Step through LOOP statement)]
 1. Proceed until you get to the statement `LOOP AT lt_product INTO ls_product.`.
 
 2. Step through the `LOOP...ENDLOOP.` using `F5`. Note that the variable `SY-TABIX` starts at **1**, then increments by 1 for each loop pass.
@@ -149,7 +154,7 @@ However, in the **Variables View**, `ls_product` is still empty. `SY-TABIX` = 25
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Set a breakpoint for a specific ABAP statement)]
+[ACCORDION-BEGIN [Step 8: ](Set breakpoint for an ABAP statement)]
 To jump straight from your first breakpoint to the `CASE` statement:
 
 1. Choose **Run > ABAP Breakpoints > Add Statement Breakpoint...**
@@ -165,7 +170,7 @@ To jump straight from your first breakpoint to the `CASE` statement:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Optional: Set a watchpoint for a variable with a condition)]
+[ACCORDION-BEGIN [Step 9: ](Set watchpoint for variable with a condition)]
 You may want to stop, not at a specific statement, but when a variable hits a specific value.
 To do this, run the Debugger again and proceed as follows:
 
@@ -197,7 +202,7 @@ You can define a wide range of complex conditions for breakpoints and `watchpoin
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Optional: Set a watchpoint for a variable, with a condition for the table row index)]
+[ACCORDION-BEGIN [Step 10: ](Set watchpoint for  variable with condition for table row index)]
 You can also specify a specific value for a different variable.
 
 1. Start the Debugger again. Unlike a breakpoint, a `watchpoint` lasts only for the current Debugger session.
@@ -217,8 +222,8 @@ You can also specify a specific value for a different variable.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Optional: Debug a class that implements a custom entity)]
-The class that you created previously ( in [Get Data from a Remote System Using a Custom Entity](abap-environment-rfc-custom-entity) ) is not displayed in the ABAP Console. However, you can start the ABAP Debugger for it as follows:
+[ACCORDION-BEGIN [Step 11: ](Open ABAP Debugger from Fiori Elements Preview)]
+The class that you created previously (in [Get Data from a Remote System Using a Custom Entity](abap-environment-rfc-custom-entity)) is not displayed in the ABAP Console. However, you can start the ABAP Debugger for it as follows:
 
 1. Again, duplicate the class, in this case `zcl_product_via_rfc_xxx`.
 
@@ -236,13 +241,15 @@ The class that you created previously ( in [Get Data from a Remote System Using 
 
     ![Image depicting step14-preview](step14-preview.png)
 
-5. Log in using your ABAP Environment user and password; the Fiori Elements Preview appears.
+5. Log in using your ABAP Environment user and password.
+
+    The SAP Fiori elements preview then appears.
 
 6. Display the data by choosing **Go**.
 
     ![Image depicting step14b-preview-with-data](step14b-preview-with-data.png)
 
-You can also debug your application, displayed in Fiori Elements Preview, in the browser. This is  beyond the scope of this tutorial, but for more information, see:
+You can also debug your application, displayed in the SAP Fiori elements preview, in the browser. This is  beyond the scope of this tutorial, but for more information, see:
 
 - [SAPUI5: UI Development Toolkit for HTML5: `Walkthrough` : Debugging](https://help.sap.com/doc/saphelp_uiaddon20/2.05/en-US/c9/b0f8cca852443f9b8d3bf8ba5626ab/frameset.htm)
 - [Browser Debugging for ABAP Developers](https://help.sap.com/doc/saphelp_uiaddon20/2.05/en-US/c9/b0f8cca852443f9b8d3bf8ba5626ab/frameset.htm)
