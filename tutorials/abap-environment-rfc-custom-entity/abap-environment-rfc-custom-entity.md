@@ -92,7 +92,7 @@ Later in this tutorial, you will implement the SELECT method of the interface.
 [ACCORDION-BEGIN [Step 4: ](Specify the class in the custom entity)]
 Add the following annotation to the view (immediately after the '@EndUserText.label' annotation), pointing to the class you have just created - NOTE: Use upper case!
 
-```ABAP
+```CDS
 
 @ObjectModel.query.implementedBy: 'ABAP:ZCL_PRODUCT_VIA_RFC_XXX'
 
@@ -104,7 +104,7 @@ Add the following annotation to the view (immediately after the '@EndUserText.la
 [ACCORDION-BEGIN [Step 5: ](Define the CDS view)]
 1. Remove the following lines from the view:
 
-    ```ABAP
+    ```CDS
 
 
     define root custom entity zce_product_xxx
@@ -119,7 +119,7 @@ Add the following annotation to the view (immediately after the '@EndUserText.la
 
 2. Add the header information to the view, after the `@QueryImplementedBy` annotation:
 
-    ```ABAP
+    ```CDS
 
     @UI: {
       headerInfo: {
@@ -132,7 +132,7 @@ Add the following annotation to the view (immediately after the '@EndUserText.la
 
 3. Add the fields and their associations.
 
-    ```ABAP
+    ```CDS
 
     define root custom entity zce_product_xxx
     {
@@ -207,12 +207,11 @@ You will now implement the data retrieval logic in the class.
 [ACCORDION-BEGIN [Step 6: ](Define some variables in the class)]
 Go back to the class.
 
-1. You will start by defining an local internal table and structure, which you will fill by retrieving the data from the back end. The type of the local variables is the CDS View that you just created. Add the following code to the `if_rap_query_provider~select` method.
+1. You will start by defining an local internal table, which you will fill by retrieving the data from the back end. The type of the local variable is the CDS View that you just created. Add the following code to the `if_rap_query_provider~select` method.
 
     ```ABAP
 
     DATA lt_product TYPE STANDARD TABLE OF zce_product_xxx.
-    DATA ls_product TYPE zce_product_xxx.
 
     ```
 
@@ -359,7 +358,6 @@ CLASS `zcl_product_via_rfc_xxx` IMPLEMENTATION.
   METHOD if_rap_query_provider~select.
 
     DATA lt_product TYPE STANDARD TABLE OF  ZCE_PRODUCT_XXX .
-    DATA ls_product TYPE ZCE_PRODUCT_XXX .
 
     "In the trial version we cannot call RFC function module in backend systems
     DATA(lv_abap_trial) = abap_true.

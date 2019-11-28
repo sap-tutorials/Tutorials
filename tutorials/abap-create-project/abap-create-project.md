@@ -11,6 +11,7 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
+ - You have a valid instance of an AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
  - You have downloaded and installed the latest Eclipse IDE from [Eclipse IDE for Java Developers ](http://www.eclipse.org/) site, and opened the application.
 
 ## Details
