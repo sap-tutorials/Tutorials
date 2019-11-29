@@ -1,4 +1,6 @@
 ---
+author_name: Paola Laufer
+author_profile: https://github.com/Paolaufer
 title: Develop SAP SAPUI5 Application for SAP Cloud Platform on Cloud Foundry
 description: Create an SAPUI5 application in SAP Web IDE Full-Stack and deploy it to your SAP Cloud Platform Cloud Foundry environment.
 auto_validation: true
