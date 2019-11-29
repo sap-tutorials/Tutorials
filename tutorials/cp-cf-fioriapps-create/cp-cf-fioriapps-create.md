@@ -177,13 +177,14 @@ When the deployment process is complete, you should see the notification in the 
 [ACCORDION-BEGIN [Step 8: ]( Get the URL to access your application)]
 Now you can access your deployed application in the SAP Cloud Platform cockpit. The steps below show you how to create a URL that you can use to access your new application.
 
-1. From the **Tools** menu click **SAP Cloud Platform Cockpit**.
+1. From the **Tools** menu  click **SAP Cloud Platform Cockpit**.
 
     ![Open cockpit](step8-open-cockpit.png)
 
 2. Click **Home [Europe (Rot)-Trial]** at the top of the screen.
 
-    ![Click Home Europe (Rot)-Trial](Step8-home.png)
+    ![Click Home Europe (Rot)-Trial](step8-home2.png)
+
 
 3. Click **Enter your Trial Account**.
 
