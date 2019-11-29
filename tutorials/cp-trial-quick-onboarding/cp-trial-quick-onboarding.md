@@ -14,7 +14,7 @@ primary_tag: products>sap-cloud-platform
 ## Details
 ### You will learn
   - What SAP Cloud Platform trial offers
-  - The relationship between global accounts, subaccounts, organizations and spaces
+  - The relationship between global accounts, subaccounts, orgs and spaces
   - How to create a trial account in the Cloud Foundry environment
   - How to use services in the Cloud Foundry environment
   - How to navigate the cockpit
@@ -35,7 +35,7 @@ Trial accounts are intended for personal exploration, and not for production use
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step: ](Global accounts, subaccounts, organizations and spaces)]
+[ACCORDION-BEGIN [Step: ](Global accounts, subaccounts, orgs and spaces)]
 
 Now that you know what to expect from your trial account, let's learn about how things are structured on SAP Cloud Platform.
 
@@ -49,11 +49,11 @@ A **global account** is the realization of a contract you made with SAP (be it e
 
 When you register for a trial account on SAP Cloud Platform, your Cloud Foundry trial global account is not automatically created. You must create one yourself from the cockpit (more details on how to do that later).
 
-In addition to global accounts and subaccounts, Cloud Foundry includes another hierarchical level represented by **organizations** and **spaces**.
+In addition to global accounts and subaccounts, Cloud Foundry includes another hierarchical level represented by **orgs** and **spaces**.
 
-**Each Cloud Foundry subaccount contains exactly one Cloud Foundry organization.** They have a 1:1 relationship. When you create a Cloud Foundry trial account, you get a global account with one Cloud Foundry subaccount in it, where the organization is created automatically. You have the option of creating additional Cloud Foundry subaccounts within your trial global account, however in those you must create an organization yourself by clicking on the **Enable Cloud Foundry** button.
+**Each Cloud Foundry subaccount contains exactly one Cloud Foundry org.** They have a 1:1 relationship. When you create a Cloud Foundry trial account, you get a global account with one Cloud Foundry subaccount in it, where the org is created automatically. You have the option of creating additional Cloud Foundry subaccounts within your trial global account, however in those you must create an org yourself by clicking on the **Enable Cloud Foundry** button.
 
-**In your organization you can then create one or more spaces, where you deploy apps and use services.** Similar to subaccounts, spaces enable you to once again structure and sub-divide quota if you want to. When you create your Cloud Foundry trial global account in the cockpit, one space is also automatically created within your organization. You also have the option of adding additional ones if you like.
+**In your org you can then create one or more spaces, where you deploy apps and use services.** Similar to subaccounts, spaces enable you to once again structure and sub-divide quota if you want to. When you create your Cloud Foundry trial global account in the cockpit, one space is also automatically created within your org. You also have the option of adding additional ones if you like.
 
 ![Cloud Foundry trial account model](cf-trial-account-model.png)
 
@@ -66,7 +66,7 @@ There are 2 ways of navigating in the cockpit:
 - using the left hand-side navigation
 - using the breadcrumbs at the top of the page
 
-There are certain actions you can perform at each level - we will refer to the sum of these actions as a **scope**. For example, when you are in a global account you can add global account members, create subaccounts and add entitlements to subaccounts. They represent the **global account scope**.
+There are certain actions you can perform at each hierarchical level (global account, subaccount, space etc.) - we will refer to the sum of these actions as a **scope**. For example, when you are in a global account you can add global account members, create subaccounts and add entitlements to subaccounts. They represent the **global account scope**.
 
 This scope is reflected in both the left hand-side navigation and the breadcrumbs. This step helps you understand how to use both of them together to navigate through the cockpit in the most efficient way possible.
 
@@ -153,22 +153,4 @@ To integrate services with applications, the service credentials must be deliver
 
 [VALIDATE_4]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Guided tours in the cockpit)]
-
-One more thing before you go! If you ever get lost in the cockpit, we have a few guided tours ready to help you and make sure you can always get to the page you need. To access them, follow these steps:
-
-1. Navigate to the homepage of your trial account on SAP Cloud Platform (you can just click the first item in your breadcrumbs, it will always take you there).
-
-2. Click on the help icon next to your name in the header, which opens a carousel on the right hand-side of the cockpit.
-
-    ![Help icon](help-icon.png)
-
-3. In that carousel, you will see a tile called **Guided Tours** - click on it and choose the tour you're interested in from the list.
-
-    ![Guided tours tile](guided-tours-tile.png)
-
-[DONE]
-[ACCORDION-END]
-
-
 ---
