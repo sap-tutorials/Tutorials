@@ -21,11 +21,7 @@ In this tutorial, we will add web content to a Portal page and design its layout
 
 Let's add meaningful content to your `Home` page.
 
->**Note for those doing this tutorial at SAP TechEd:** Due to time limitations, you can do only Steps 2 and 6. The other steps show you additional capabilities but take longer.
-
->However, to get credit for completing the mission and to get a prize, you still must click the **DONE** buttons in the steps you skipped.
-
----
+> NOTE: if your time is limited, you need only do Steps 2 and 6. The other steps show you additional capabilities but take longer.
 
 [ACCORDION-BEGIN [Step 1: ](Download resources)]
 
@@ -66,21 +62,23 @@ Before you start, first download the following images that you will add to your 
 
 3. Click **Delete** on the confirmation dialog.
 
-3. Click the **Header** section again and then click the **+** icon on the right to open the widget gallery.
+4. Click the **Header** section again and then click the **+** icon on the right to open the widget gallery.
 
     ![Edit header section](19_edit_header_section.png)
 
-4. Click the **Headline Carousel** widget from the **Web Content Widgets: Carousel** category.
+5. Click the **Headline Carousel** widget from the **Web Content Widgets: Carousel** category.
 
     >You can also locate this widget in the **Add Widgets** dialog box, by typing the name of the widget (in this case `Headline Carousel`), in the search box and clicking the search icon.
 
       ![Add new header](20_add_header_widget.png)
 
-5. **Section 1** is the second section in this page that has no widgets in it. Click in this section as seen in the image.
+6. **Section 1** is the second section in this page that has no widgets in it. Click in this section as seen in the image.
 
      ![Click Section 1](20a_select_section1.png)
 
-6. Add the following widgets.
+7. Add the following widgets.
+
+    >Note: A section can contain multiple widgets. When you click on a widget, the widget editing icons appear at the top left of the widget, and the section editing icons appear at the top right of the section.
 
     >Don't worry about the content yet. You'll edit this later. Just keep clicking the **+** icon to add the widgets. You can also use the **Search** feature to find the widgets that you want.
 
@@ -88,13 +86,13 @@ Before you start, first download the following images that you will add to your 
 
     -	**Aligned Story Card** from the **Web Content Widgets: Cards** category.
 
-7. Scroll down and click in **Section 2** of the page and add these widgets:
+8. Scroll down and click in **Section 2** of the page and add these widgets:
 
     -	**Header with Titles** from the **Web Content Widgets: Basic** category.
 
     - **Centered Story Card** from the **Web Content Widgets: Cards** category.
 
-8. Click in **Section 3** of the page and add these widgets:
+9. Click in **Section 3** of the page and add these widgets:
 
     -	**Image** from the **Web Content Widgets: Basic** category.
 
@@ -108,8 +106,6 @@ You have a page full of widgets that still have their default content. So now le
 [ACCORDION-BEGIN [Step 3: ](Add your own content to the site)]
 
 1. Click the `Headline Carousel` widget from the **Header** section to expose the widget and section editing icons.
-
-    >Note: A section can contain multiple widgets. When you click on a widget, the widget editing icons appear at the top left of the widget, and the section editing icons appear at the top right of the section.
 
 2.	Click **Edit content** (the pencil icon in the top left) to edit the content of this widget.
 
@@ -303,7 +299,7 @@ You've replaced all the default content in the widgets with your own. Let's arra
 In this step, you'll arrange the widgets in the different sections of the page and configure the visual settings of the sections (like minimum height).
 
 
-1. Click in page **Section 1** or on any widget in this section, to expose the editing icons for this section.
+1. Click in **Section 1** or on any widget in this section, to expose the editing icons for this section.
 
 2. Click the **Edit section settings** icon on the right.
 
@@ -437,6 +433,7 @@ And this is what you'll see:
 Congratulations!  You've created a very attractive `Home` page. In our next tutorial, we're going to add a URL app to our `Launchpad` page.   
 
 [VALIDATE_7]
+
 [ACCORDION-END]
 
 

@@ -125,7 +125,7 @@ In this step, you will create a group and assign it to your app.
 
     ![Add a new group](7-add-group.png)
 
-2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type `In` to search for your app. You should see **Innovation at SAP**.
+2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type in the first two letters of your app (in this case it will be `In`), to search for your app. You should see **Innovation at SAP**.
 
 3. In the **Results** list, click + to assign this group to your app.
 

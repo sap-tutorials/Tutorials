@@ -54,6 +54,8 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
 1. Click on your subaccount again using the breadcrumbs at the top.
 
+    ![Open subaccount using breadcrumbs](3a_use_breadcrumbs.png)
+
 2. Click **Security > Role Collections** from the side menu.
 
     ![Open Role Collections](04_role_collections.png)
@@ -70,7 +72,7 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
     |  Property     | Value
     |  :------------- | :-------------
-    |  Application Identifier           | **`portal-cf-service!<id>`** <div>&nbsp;</div> In the screen capture below, the **Application Identifier** has an ID at the end.  This ID may be different on your system -- just make sure that you choose the value with this format: **portal-cf-service!`<id>`**
+    |  Application Identifier           | **`portal-cf-service!<id>`** <div>&nbsp;</div> In the screen capture below, the **Application Identifier** has an ID at the end.  This ID is different on your system -- just make sure that you choose the value with this format: **portal-cf-service!`<id>`**
     |  Role Template           | **`Super_Admin`**
     |  Role    | **`Super_Admin`**
 

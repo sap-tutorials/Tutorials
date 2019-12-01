@@ -97,9 +97,9 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
     Click **Add**.  
 
-    This takes you back to the **Menu Editor**. You'll see that the page you called `Home` has been added to the site's menu structure.
-
     ![Menu item details](11a_edit_menu.png)
+
+    This takes you back to the **Menu Editor**. You'll see that the page you called `Home` has been added to the site's menu structure.
 
 5. Now add the `Launchpad` page to the site menu.
 
