@@ -3,7 +3,7 @@ title: Inspect Your Class in the ABAP Debugger
 description: Work with ABAP classes in the ABAP Debugger in (ADT) for both a console application and SAP Fiori application.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+tags: [ tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
