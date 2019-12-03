@@ -23,12 +23,26 @@ Note that your application code is not dependent on the platform you are using. 
 ### You will learn
 In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on `SAP Cloud Platform` based on `Cloud Foundry`, and write an integration test.
 If you want to follow this tutorial, it is highly recommended to check out the previous tutorials in the series. You will not need any additional software besides the setup explained in the first part of the series as the server will run on your local machine.
-**Note**: This tutorial requires access to an `SAP ERP` system or, as a fallback, any other `OData V2` service.
+**Note**: This tutorial requires access to an `SAP ERP` system or, as a fallback, a mock server providing the Business Partner `OData V2` service.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Virtual Data Model)]
+[ACCORDION-BEGIN [Step 1: ](Set up a local mock server or get access to the API Business Hub sandbox (optional))]
+
+>**Note:** If you have access to an `SAP S/4HANA Cloud` system with a technical user, you can skip this part.
+
+In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
+
+Once it is up and running you should see the list of services at `http://localhost:3000/`.
+
+Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click on "Show API Key".
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Virtual Data Model)]
 
 This section explains the concepts of the S/4HANA Virtual Data Model. If you would like to first implement the S/4HANA integration, jump ahead to [the next section](https://blogs.sap.com/2017/05/21/step-4-with-sap-s4hana-cloud-sdk-calling-an-odata-service/#WriteBusinessPartnerServlet) and revisit the content of this section later.
 
@@ -41,12 +55,12 @@ The SAP Cloud SDK now brings the VDM for OData to the Java world to make the typ
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](The manual way to OData)]
+[ACCORDION-BEGIN [Step 3: ](The manual way to OData)]
 
 Let's take a look at typical code we could write to access any OData service using the [SAP Cloud Platform SDK for service development](https://blogs.sap.com/2017/10/17/introducing-the-sap-cloud-platform-sdk-for-service-development/). Here, we retrieve a list of business partners from an S/4HANA system:
 
 ```Java
-final ErpConfigContext configContext = new ErpConfigContext();
+final ErpHttpDestination destination = DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
 final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
         .withEntity("/sap/opu/odata/sap/API_BUSINESS_PARTNER",
                 "A_BusinessPartner")
@@ -57,7 +71,7 @@ final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
                 "IsFemale",
                 "CreationDate")
         .build()
-        .execute(configContext)
+        .execute(destination)
         .asList(MyBusinessPartnerType.class);
 ```
 
@@ -73,7 +87,7 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Virtual Data Model: The new way to OData)]
+[ACCORDION-BEGIN [Step 4: ](Virtual Data Model: The new way to OData)]
 
 Now that we have explained the possible pitfalls of the current approach, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
@@ -117,7 +131,7 @@ For any OData service not part of SAP's API Business Hub, the `ODataQueryBuilder
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Write the BusinessPartnerServlet)]
+[ACCORDION-BEGIN [Step 5: ](Write the BusinessPartnerServlet)]
 
 The `SAP Cloud SDK` provides simple and convenient ways to access your ERP systems out of the box. In this example you will implement an endpoint that performs an `OData` query to `SAP S/4HANA` in order to retrieve a list of **business partners** from your ERP system. More specifically, we want to retrieve all persons (a specific kind of business partner) with their name and a few additional properties.
 
@@ -210,7 +224,7 @@ Any `ODataException` thrown by the OData call is caught and logged, before retur
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploying the Project)]
+[ACCORDION-BEGIN [Step 6: ](Deploying the Project)]
 
 Depending on your chosen archetype and SAP Cloud Platform setup you can deploy the project on either *SAP Cloud Platform Neo* or *SAP Cloud Platform Cloud Foundry*.
 
@@ -395,7 +409,7 @@ cf restart firstapp
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Integration Test for BusinessPartnerServlet)]
+[ACCORDION-BEGIN [Step 7: ](Integration Test for BusinessPartnerServlet)]
 
 To construct an extensible integration test for the newly created `BusinessPartnerServlet`, the following items will be prepared:
 
@@ -427,7 +441,7 @@ First, let's adjust the Maven pom file of the `integrations-tests` sub-module by
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](test class)]
+[ACCORDION-BEGIN [Step 8: ](test class)]
 
 Navigate to the integration-tests project and create a new class:
 
@@ -507,7 +521,7 @@ What you see here in the actual `testService` method, is the usage of `RestAssur
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](JSON Schema for servlet response validation)]
+[ACCORDION-BEGIN [Step 9: ](JSON Schema for servlet response validation)]
 
 Inside the `integration-tests` project, create a new resource file
 
@@ -534,7 +548,7 @@ As you can see, the properties `BusinessPartner` and `LastName` will be marked a
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Systems.json and credentials)]
+[ACCORDION-BEGIN [Step 10: ](Systems.json and credentials)]
 
 If you run your application on SAP Cloud Platform, the SDK can simply read the ERP destinations from the destination service. However, since the tests should run locally, we need a way to supply our tests with an ERP destination.
 
