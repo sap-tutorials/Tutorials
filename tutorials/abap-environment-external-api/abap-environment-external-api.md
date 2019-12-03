@@ -95,33 +95,36 @@ This enables you to run the class in the console.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implement the method)]
-  1. Add the method implementation below and wrap it in an exception.
-  2. Then replace the `xxx` of `i_name` and `i_service_instance_name` with your group number.
+[ACCORDION-BEGIN [Step 5: ](Create HTTP client)]
+To be able to access the external service, you must maintain a cloud destination for the foreign system and create an HTTP client. Proceed as follows:
+
+1. Add the method implementation below and wrap it in an exception.
+
+2. Then replace the `xxx` of `i_name` and `i_service_instance_name` with your group number.
   (To get the `i_service_instance_name`, see the tutorial [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api), step 7).
 
-```ABAP
-METHOD if_oo_adt_classrun~main.
-    TRY.
-        DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
-          i_name                  = 'Z_STREETMAP_XXX'
-          i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
-          i_authn_mode = if_a4c_cp_service=>service_specific ).
+    ```ABAP
+    METHOD if_oo_adt_classrun~main.
+        TRY.
+            DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
+              i_name                  = 'Z_STREETMAP_XXX'
+              i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
+              i_authn_mode = if_a4c_cp_service=>service_specific ).
 
-        DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
-        DATA(lo_request) = lo_http_client->get_http_request( ).
+            DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
+            DATA(lo_request) = lo_http_client->get_http_request( ).
 
 
 
-        DATA(lo_response) = lo_http_client->execute( i_method = if_web_http_client=>get ).
-          out->write( lo_response->get_text( ) ).
+            DATA(lo_response) = lo_http_client->execute( i_method = if_web_http_client=>get ).
+              out->write( lo_response->get_text( ) ).
 
-      CATCH cx_root INTO DATA(lx_exception).
-        out->write( lx_exception->get_text( ) ).
-    ENDTRY.
-  ENDMETHOD.
+          CATCH cx_root INTO DATA(lx_exception).
+            out->write( lx_exception->get_text( ) ).
+        ENDTRY.
+      ENDMETHOD.
 
-```
+    ```
 
 [DONE]
 
