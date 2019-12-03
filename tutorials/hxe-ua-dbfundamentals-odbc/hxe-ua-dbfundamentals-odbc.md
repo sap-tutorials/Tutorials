@@ -2,17 +2,19 @@
 title: Install and Configure unixODBC
 description: Learn how to complete common tasks when setting up a new database. In this tutorial, you will install and configure unixODBC.
 auto_validation: true
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition  ]
 time: 15
 ---
-## Prerequisites  
+## Prerequisites
  - [Create a Backup](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-backups.html)
  - A registered version of SUSE. See the [SAP HANA Academy](https://www.youtube.com/watch?v=e6SIsAFVPoY) video for details.
 
 
 ## Details
-### You will learn  
+### You will learn
   - How to download, install, and configure `unixODBC` to connect from your SAP HANA, express edition host machine to a client machine
 
 

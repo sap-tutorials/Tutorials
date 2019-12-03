@@ -59,6 +59,8 @@ sudo docker login
 
 Follow the prompts and provide your Docker ID and password.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ]((Optional) Test Your Docker Installation)]

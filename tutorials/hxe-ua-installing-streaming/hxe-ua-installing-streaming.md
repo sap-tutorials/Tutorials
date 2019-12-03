@@ -36,6 +36,8 @@ Enter the following command:
 HXEDownloadManager_linux.bin linuxx86_64 installer hsa.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Navigate to the `Downloads` directory.)]
@@ -45,6 +47,8 @@ Enter:
 ```bash
 cd /usr/sap/HXE/home/Downloads
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -56,6 +60,8 @@ Enter:
 ls
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extract the file.)]
@@ -65,6 +71,8 @@ Enter:
 ```bash
 tar -xvzf hsa.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -76,6 +84,8 @@ Enter:
 cd HANA_EXPRESS_20
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Edit the /etc/hosts file.)]
@@ -85,6 +95,8 @@ If you are installing streaming analytics on an SAP HANA, express edition virtua
 ```
 <VM_IP_address>  hxehost.localdomain.com   hxehost
 ```    
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -103,5 +115,6 @@ Follow the prompts to configure your installation.
 > The system database user (SYSTEM) password you enter during installation is used for the `SYS_STREAMING` and `SYS_STREAMING_ADMIN` users.
 
 
-[ACCORDION-END]
+[DONE]
 
+[ACCORDION-END]

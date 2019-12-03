@@ -41,6 +41,8 @@ Enter the following command:
 -   `x86_64`: `./HXEDownloadManager_linux.bin linuxx86_64 installer shine.tgz`
 -   `PowerPC`: `java -jar HXEDownloadManager.jar linuxppc64le installer shine.tgz`
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extract `shine.tgz`)]
@@ -50,6 +52,8 @@ Extract `shine.tgz`:
 ```bash
 tar -xvzf shine.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -86,6 +90,8 @@ To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide]
 >
 >
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Install SHINE for XSA)]
@@ -101,5 +107,7 @@ To install SHINE for XSA, run the following as <sid>`adm`:
 ```bash
 <extracted_path>/HANA_EXPRESS_20/install_shine.sh
 ```
+
+[DONE]
 
 [ACCORDION-END]
