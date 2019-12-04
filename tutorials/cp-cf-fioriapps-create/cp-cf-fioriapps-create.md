@@ -29,9 +29,10 @@ primary_tag: products>sap-web-ide
 
     ![Open template](step1-new-template.png)
 
-2. In the template wizard that opens, in the **Environment** dropdown list, make sure that **Cloud Foundry** is selected.
+2. In the template wizard that opens, in the **Environment** dropdown list, make sure that **Cloud Foundry** is selected and **Category** should be **Featured** otherwise the SAPUI5 Application tile will not appear.
 
-    ![Select environment](step1-environment-selection.png)
+    ![Select environment](step1-environment.png)
+  
 
 3. Scroll down and click the **SAPUI5 Application** tile and then click **Next**.
 
@@ -45,7 +46,7 @@ primary_tag: products>sap-web-ide
 
     ![Finish](step1-finish.png)
 
-A new MTA project called `mta_FioriDemo` containing the `FioriDemo` HTML5 module now appears in your SAP Web IDE workspace.
+A new MTA project called `mta_FioriDemo` containing the `FioriDemo` HTML5 module now appears in your SAP Web IDE workspace. When developing apps in the Cloud Foundry environment, you create a Multi-Target Application (MTA) file in SAP Web IDE. Each SAP Fiori app is developed as an SAPUI5 module of the MTA.
 
   ![View MTA file](step1-view-mta.png)
 
