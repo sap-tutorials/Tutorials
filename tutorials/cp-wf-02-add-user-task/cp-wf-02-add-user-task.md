@@ -39,7 +39,7 @@ Here, `XYZ` represents your trial subaccount name, such as `p999999trial`.
 
 You can find out more about accessing the SAP Web IDE in the Help Portal, specifically in the [Open SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html) section.
 
-Once you're in SAP Web IDE, ensure you're in the workspace containing your `NorthwindOrderProcess` project that you started working on in the previous tutorial [Create a workflow definition using an external service].
+Once you're in SAP Web IDE, ensure you're in the workspace containing your `NorthwindOrderProcess` project that you started working on in the previous tutorial [Create a workflow definition using an external service](https://developers.sap.com/tutorials/cp-wf-01-create-definition.html).
 
 [DONE]
 [ACCORDION-END]
