@@ -7,7 +7,12 @@ tags: [  tutorial>beginner, topic>abap-development  ]
 time: 60
 ---
 
+## Prerequisites  
+-	You have a valid instance of an AS ABAP server, version 7.52 or higher. (The text-based Table Editor is not available for earlier ABAP server versions)
+- You have downloaded and installed SAP ABAP Development Tools. We recommend the latest version, available from [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
+
 ## Details
+
 ### You will learn  
 - How to create a table in ABAP, representing a table in your database
 - How to add an input check to a field
@@ -22,7 +27,7 @@ The table in this tutorial will store bank account details for customers. The ta
 - `bank_name`
 - `account_category`
 - `city`
--  `last_entry`
+- `last_entry`
 
 For more information on:
 

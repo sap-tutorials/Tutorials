@@ -3,7 +3,7 @@ title: Create Cloud Foundry App with Blockchain Features of SAP Cloud SDK
 description: Learn how to create your first sample application on Cloud Foundry using the blockchain features of the SAP Cloud SDK.
 auto_validation: true
 time: 20
-tags: [ tutorial>intermediate, topic>java, products>sap-cloud-sdk, products>sap-s-4hana]
+tags: [ tutorial>intermediate, topic>java, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana]
 primary_tag: topic>blockchain
 author_name: Andreas Krompholz
 author_profile: https://github.com/akrompholz

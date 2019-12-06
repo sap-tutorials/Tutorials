@@ -88,7 +88,7 @@ If you have created a service instance with the name other than `pvservice`, you
 
 [ACCORDION-BEGIN [Step 4: ](Build and deploy project)]
 
-1. Right-click on the `FLPConfigForPVS` project and choose **Build > Build**.
+1. Right-click on the `FLPConfigForPVS` project and choose **Build > Build with Cloud Build Tool**.
 
     ![import file](FLP-step4-build.png)
 

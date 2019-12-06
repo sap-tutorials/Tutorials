@@ -29,6 +29,8 @@ Right-click on your SAP HANA or SAP HANA, express edition connection in the **Se
 > **Note:**
 > The SAP HANA Plugin works with SAP HANA and SAP HANA, express edition. For these tutorials, we use an SAP HANA, express edition installation as an example.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Cleanup Student Score Tables)]
@@ -50,6 +52,8 @@ Click ![Play Button](execute_button.png) **Execute** to execute the statements.
 
 > **Note:**
 > If this is your first time going through this tutorial, then this step will not yield a positive result. It ensures that the rest of the tutorial will run successfully if you have run through the tutorial previously.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -73,6 +77,8 @@ Click ![Play Button](execute_button.png) **Execute** to execute the statements.
 > If this is the first time you are running the script, then you will receive an error if you verify the script because the _INSERT_ statements add values to the table the first statement makes.
 
 This table is the basis for the rest of the tutorial.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -144,6 +150,8 @@ BEGIN
 END;
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Fixing Errors)]
@@ -159,5 +167,7 @@ DECLARE CURSOR C_HISTORY_SCORES FOR SELECT SCORE_HISTORY FROM SYSTEM.DEMO_STUDEN
 ```
 
 When you run the code again, it runs successfully and calculates the average History and Math class scores.
+
+[DONE]
 
 [ACCORDION-END]

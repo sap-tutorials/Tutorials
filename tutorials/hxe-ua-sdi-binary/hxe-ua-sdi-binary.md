@@ -29,6 +29,8 @@ Download `sdi.tgz` using the built-in Download Manager. Enter:
 HXEDownloadManager_linux.bin linuxx86_64 installer sdi.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extract sdi.tgz)]
@@ -38,6 +40,8 @@ Extract `sdi.tgz`:
 ```bash
 tar -xvzf sdi.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -49,10 +53,14 @@ As the <sid>`adm` user, run:
 HANA_EXPRESS_20/install_sdi.sh
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Next steps)]
 
 To use adapters other than the OData adapter, you will also need to install the Data Provisioning Agent.
+
+[DONE]
 
 [ACCORDION-END]
