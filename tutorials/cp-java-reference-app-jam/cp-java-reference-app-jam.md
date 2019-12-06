@@ -155,6 +155,7 @@ Group templates are used to organize content in a way that provides guidance to 
 2. Activate the group template
 
     Click the slider button next to the `ESPM` group template to enable it. The group template is now active.
+
 [DONE]
 [ACCORDION-END]
 
@@ -166,6 +167,7 @@ Group templates are used to organize content in a way that provides guidance to 
 2. Select **ESPM** from the **Name** column.
 
 3. Select **Products** from the **Type** column. A list of IDs from `ESPM` will be displayed.
+
 [DONE]
 [ACCORDION-END]
 
@@ -248,6 +250,7 @@ You can manage the appearance and page design of your groups with the easy-to-us
 2. Leave the **Major change** radio button checked and click **Publish**.
 
 The Overview page will now display rich information about the product and its reviews. Start collaborating with other users on this `ESPM` Review group! Try creating other sales collaboration groups for other items from the `ESPM` web shop business records as well.
+
 [DONE]
 [ACCORDION-END]
 ---

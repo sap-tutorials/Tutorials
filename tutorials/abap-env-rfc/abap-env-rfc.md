@@ -8,11 +8,12 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ## Prerequisites
--	A SAP CP Neo subaccount
--	An ABAP on-premise system, such as [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/)
--	In this on-premise system, a SAP Cloud Connector, configured with your Neo sub-account. See: [SAP Help Portal: SAP Cloud Connector: Installation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html)
-
-
+-	An entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
+- A SAP CP Neo subaccount
+-	An ABAP on-premise system, such as:
+    - [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/) or:
+    - [The SAP Gateway Demo System (ES5)](https://blogs.sap.com/2017/12/05/new-sap-gateway-demo-system-available/)
+-	In this on-premise system, a SAP Cloud Connector
 
 ## Details
 ### You will learn
@@ -37,6 +38,8 @@ To see this tutorial group as a blog series by Andre Fischer, see:
 - [How to call a remote function module in your on-premise SAP system from SAP Cloud Platform – ABAP Environment](https://blogs.sap.com/2019/02/28/how-to-call-a-remote-function-module-in-your-on-premise-sap-system-from-sap-cloud-platform-abap-environment/)
 
 Throughout this tutorial, replace `XXX` with your initials or group number.
+
+If you have bought an entitled to SAP
 
 **The problem:**
 
@@ -66,52 +69,83 @@ There are two problems when setting up connectivity between the Cloud Platform A
 First, you need to connect your ABAP on-premise system to a Neo subaccount by means of SAP Cloud Connector.
 
 1. Log on to SAP Cloud Connector:
-    - Address = `https://localhost:<port>` (Default = 8443)
+    - Address = e.g. `https://localhost:<port>` (Default = 8443)
     - User = Administrator
     - Initial password = Manage (You will change this when you first log in)
 
 2. Choose **Add Subaccount**:
-  - **Region** = e.g. Europe (Rot). You can find this in SAP Cloud Cockpit (see screenshot below)
+  - **Region** = Your region. You can find this in SAP Cloud Cockpit (see screenshot below). Note that your Neo and Cloud Foundry accounts need to run in the same region (e.g. here, Europe Rot)
   - **Subaccount** = "Neo Technical Name". You can find this by choosing your SAP Cloud Platform, NEO, subaccount in SAP Cloud Cockpit and choosing the **information (i)** icon. (see screenshot below)
   - **Display Name** = (Neo Subaccount) Display Name. You can find this in by choosing your SAP Cloud Platform, NEO, subaccount in SAP Cloud Cockpit (see screenshot below)
   - **Subaccount User** = for the Neo Subaccount
   - **Password**
-  - **Location ID** = Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. your initials, or your location
+  - **Location ID** = Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. your initials
 
   ![Image depicting step1g-create-subacc](step1g-create-subacc.png)
   ![Image depicting step1f-choose-subacc](step1f-choose-subacc.png)
   ![Image depicting step1b-neo-tech-name ](step1b-neo-tech-name.png)
 
-3. Your configuration should now look like this:
+Your configuration should now look like this:
 
   ![Image depicting step1-check-scc](step1-check-scc.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Specify the remote function module)]
-Now, still in the Cloud Connector, enter the resource you need, `RFC_SYSTEM_INFO`.
+[ACCORDION-BEGIN [Step 2: ](Add your on-Premise System)]
+1. In your sub-account, **Display Name**, choose **Cloud to On-Premise > Access Control**.
 
-1. In your subaccount, choose **Cloud to On-Premise > Access Control**.
+  ![Image depicting step2e-add-onP-system](step2e-add-onP-system.png)
 
-2. Check the **Mapping Virtual to Internal System**. Here, `myHost` represents an external hostname, so that you can hide the internal hostname from the outside world. You will need this external hostname and port later. Check that the status = `Reachable`. If not, check that you chose the correct port, or whether an internal firewall is preventing communication.
+2. In the **Mapping Virtual...** pane, choose **Add (+)**.
 
-    ![Image depicting step1a-scc-resources-sid](step1a-scc-resources-sid.png)  
+  ![Image depicting step2f-add-2](step2f-add-2.png)
 
-3. Add the resource **`RFC_SYSTEM_INFO`** by choosing **+**.
+3. Enter the following values, and choose **Save**.
 
-    ![Image depicting step1d-new-rfc](step1d-new-rfc.png)
+    - Backend Type = ABAP
+    - Protocol = RFC
+    - **Without** load balancing...
+    - Internal Host and port (see below)
+    - Virtual Host = e.g. `es5host`. Here, `es5host` represents an external hostname, so that you can hide the internal hostname from the outside world. You will need this external hostname and port later.
+    - Virtual Port = usually, enter the internal Port
+    - Principal Type = None
+    - Check Internal Host = Ticked
 
-4. Enter the name of the RFC, e.g. **`RFC_SYSTEM_INFO`** and choose **Save**.
+    ![Image depicting step2g-map-internal-system](step2g-map-internal-system.png)
 
-    ![Image depicting step1e-name-rfc](step1e-name-rfc.png)
+4. To find the port, in your on-premise system, choose the transaction **`SMICM` > `Goto` > Services**, then choose an active `HTTP` port.
 
-The RFC appears in the list of resources.
+The mapping should now look something like this. Check that the status = `Reachable`. If not, check that you chose the correct port, or whether an internal firewall is preventing communication:
+
+![Image depicting step1a-scc-resources-sid](step1a-scc-resources-sid.png)  
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the destination service instance)]
+[ACCORDION-BEGIN [Step 3: ](Specify the remote function modules and BAPIs)]
+Now, still in the **Cloud to On-Premise > Access Control** tab, enter the resource you need, `RFC_SYSTEM_INFO`.
+
+1. Add the resource **`RFC_SYSTEM_INFO`** by choosing the **Protocol = RFC**, then choosing **+**.
+
+    ![Image depicting step1d-new-rfc](step1d-new-rfc.png)
+
+3. Enter the name of the RFC, e.g. **`RFC_SYSTEM_INFO`**. Alternatively, add **`RFC`** as a **Prefix**. Then choose **Save**
+
+    ![Image depicting step1e-name-rfc](step1e-name-rfc.png)
+
+4. Add BAPIs to the list of resources by choosing **+** again. (You will need this BAPI in a later tutorial.)
+
+5. Enter the name **`BAPI_EPM`** as a **Prefix**, then choose **Save**.
+
+6. The list of resources should now look like this:
+
+    ![Image depicting step1e-name-rfc](step1e-name-rfc.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Open the destination service instance)]
 You will now create two destinations in the ABAP Environment. These must be created at Space level, e.g. `Dev`, not subaccount level.
 
 1. In SAP Cloud Cockpit, open your **ABAP Environment > your space, such as Dev**, then choose **Service Instances**.
@@ -129,49 +163,42 @@ You will now create two destinations in the ABAP Environment. These must be crea
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a new HTTP destination for the destination service instance)]
-1. In the Destination Configuration pane, enter the following values:
-    - Name, e.g. : `S4HTEST_HTTP_XXX` (You should include the suffix `HTTP` and replace `XXX` with your initials or group number.)
-    - Type: `HTTP`
-    - Description, e.g. Test S4H HTTP connection
-    - URL: `http://<myHost>:51080/sap/bc/ping` - where `myHost` = the external hostname of your on-premise ABAP System
-    - `OnPremise`
-    - `BasicAuthentication`
-    - User: Your user for the on-premise ABAP system
-    - Password: Your password
-
-    The IP address and port must be the one you specified in the Cloud Connector earlier.
-
-2. Choose **Save**.
-
-The destination appears in the list.
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 5: ](Create a new RFC destination for the destination service instance)]
 1. Again, choose **New Destination** and enter the following values:
-    - Name, e.g. : `S4HTEST_RFC_XXX` (You should include the suffix `RFC` and use the same prefix as for your HTTP connection)
+    - Name, e.g. : `ES5_RFC_XXX`
     - Type: `RFC`
-    - Description, e.g. Test S4H RFC connection
+    - Description, e.g. Test ES5
     - Location ID: same as in step 1, e.g. your initials
-    - User: Your user
+    - User: Your user for the on-premise system
     - Password: Your password
 
 2. Add the following additional properties and values, by choosing **New Property**:
     - `jco.client.ashost` = `<myHost>` - again, the external hostname of your on-premise ABAP System in lower-case
-    - `jco.client.client` = `<Your ABAP System client`, e.g. 100
-    - `jco.client.sysnr` = `<Your ABAP System number>`, e.g. 10
+    - `jco.client.client` = `<Your ABAP System client`, e.g. 002
+    - `jco.client.sysnr` = `<Your ABAP System number>`, e.g. 11
+
+    ![Image depicting step5-rfc-destination](step5-rfc-destination.png)    
+
+You have now created a destination service instance destination for your communication arrangement. Take note of the name, here `ES5_RFC_XXX`, since you will need it later.
+
 
 [DONE]
 [ACCORDION-END]
 
-
-
 [ACCORDION-BEGIN [Step 6: ](Create a Communication System for SAP Cloud Connector)]
-1. Again, in the Dashboard, choose **Communication Systems > New**.
+(When you created the Communication System for outbound communication, you created the Arrangement first, then the System. This time, it is easiest to create the System first, then the Arrangement.)
 
-2. Enter the credentials for the SAP Cloud Connector administration user for your SAP CP Neo account (i.e. the same user as in step 1 above):
+1. Go back to your space **`Dev`** and choose **Service Instances**, then choose your `abap` service instance, e.g. **T02**.
+
+    ![Image depicting step6-open-t02](step6-open-t02.png)
+
+2. Open the Dashboard.
+
+    ![Image depicting step6-open-dashboard](step6-open-dashboard.png)
+
+3. In the Dashboard, choose **Communication Systems > New**.
+
+4. Enter the credentials for the SAP Cloud Connector administration user for your SAP CP Neo account (i.e. the same user as in step 1 above):
       - Hostname
 
         ![Image depicting step8b-comm-system-1](step8b-comm-system-1.png)
@@ -205,7 +232,7 @@ The destination appears in the list.
 [ACCORDION-BEGIN [Step 8: ](Create an ABAP class for the RFC connection)]
 1. Create a new ABAP class: Choose **File > New > Other... > ABAP Class**.
 
-2. Enter a name and description. The name should be in the form `Z_...RFC_XXX`. Replace `XXX` with your group number or initials.
+2. Enter a name and description. The name should be in the form `ZCL_...RFC_XXX`. Replace `XXX` with your group number or initials.
 
 3. Create or assign a transport request.
 
@@ -232,8 +259,8 @@ The destination appears in the list.
 
     ```ABAP
     DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
-                             I_SERVICE_INSTANCE_NAME = 'OutboundComm_for_RFCDemo_XXX'
-                             I_NAME                  = 'S4TEST_RFC_XXX'
+                            i_name                  = 'ES5_RFC_XXX'
+                            i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
                            ).
 
     DATA(lv_destination) = lo_destination->get_destination_name( ).
@@ -290,7 +317,7 @@ endtry.
 You code should look roughly like this:
 
 ```ABAP
-class Z_A4C_RFC_XXX definition
+class ZCL_A4C_RFC_XXX definition
   public
   final
   create public .
@@ -303,12 +330,12 @@ ENDCLASS.
 
 
 
-CLASS Z_A4C_RFC_XXX IMPLEMENTATION.
+CLASS ZCL_A4C_RFC_XXX IMPLEMENTATION.
   METHOD IF_OO_ADT_CLASSRUN~MAIN.
     TRY.
       DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
-                               I_SERVICE_INSTANCE_NAME = 'OutboundComm_for_RFCDemo_XXX'
-                               I_NAME                  = 'S4TEST_RFC_XXX'
+                              i_name                  = 'ES5_RFC_XXX'
+                              i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
                              ).
 
       DATA(lv_destination) = lo_destination->get_destination_name( ).
@@ -332,7 +359,7 @@ ENDCLASS.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Test the class)]
-1. Save and activate the class (**`Ctrl+S, Ctrl+F3`**).
+1. Save and activate the class, using **`Ctrl+S, Ctrl+F3`**.
 
 2. Run the class by choosing **`F9`**. Some system information, such as the hostname, the System ID ( `<SID>` ), and the IP address should be displayed.
 
@@ -344,48 +371,7 @@ ENDCLASS.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Optional: Create an ABAP class for the HTTP connection)]
-This class allows you to troubleshoot the RFC connection by checking that the HTTP connection works.
-
-```ABAP
-class Z_A4C_HTTP_TEST_XXX definition
-  public
-  final
-  create public .
-
-public section.
-  interfaces if_oo_adt_classrun.
-protected section.
-private section.
-ENDCLASS.
-
-CLASS Z_A4C_HTTP_TEST_XXX IMPLEMENTATION.
-  METHOD IF_OO_ADT_CLASSRUN~MAIN.
-    TRY.
-        DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
-          i_name                  = 'S4HTEST_HTTP_XXX'
-          i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
-          i_authn_mode = if_a4c_cp_service=>service_specific ).
-
-        DATA(lo_http_client) = cl_web_http_client_manager=>create_by_http_destination( i_destination = lo_destination ).
-        DATA(lo_request) = lo_http_client->get_http_request( ).
-        DATA(lo_response) = lo_http_client->execute( i_method = if_web_http_client=>get ).
-          out->write( lo_response->get_status( ) ).
-          out->write( lo_response->get_text( ) ).
-
-      CATCH cx_root INTO DATA(lx_exception).
-        out->write( lo_response->get_status( ) ).
-        out->write( lx_exception->get_text( ) ).
-    ENDTRY.
-
-  endmethod.
-ENDCLASS.
-
-```
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 18: ](Add error handling to the class for the RFC connection )]
+[ACCORDION-BEGIN [Step 17: ](Add error handling to the class for the RFC connection )]
 1. Go back to your RFC class. Remove the period (.) after the IMPORTING parameter and add the following exception parameters to the function call `RFC_SYSTEM_INFO`:
 
     ```ABAP

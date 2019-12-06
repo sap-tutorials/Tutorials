@@ -2,8 +2,6 @@
 title: SAP HANA XS Advanced, Creating an HDI Module
 description: Create your first HDI module for database content within your XSA application
 auto_validation: true
-author_name: Lucia Subatin
-author_profile: https://github.com/lsubatin
 primary_tag: products>sap-hana
 tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data, tutorial>beginner ]
 
@@ -308,7 +306,7 @@ Right-click on the Header table and use the generated SQL statement in the valid
 
 There are several ways to load data into your tables in SAP HANA. you will use an artifact similar to the former `.hdbti` development object, that allows you to upload a file into your directory in SPA Web IDE and load the data into a table or tables according to the configuration. This is handy for initial loads or small configuration tables.
 
-In your `data` folder, **create a file** named `load.hdbtabledata` and enter this text into it. Don't forget to save the file afterwards.
+In your `db/src/data` folder, **create a file** named `load.hdbtabledata` and enter this text into it. Don't forget to save the file afterwards.
 
 ```json
 {
@@ -396,14 +394,14 @@ In your `data` folder, **create a file** named `load.hdbtabledata` and enter thi
 
 Skim through the contents of the file you have just created and you will see the `file_name` fields.
 
-**Create a file** called `header.csv` with the following content:
+**Create a file** in that same `db/src/data` folder named `header.csv` with the following content:
 
 ```text
 0500000000,0000000033,20120101,0000000033,20120101,9000000001,0100000000,EUR,13224.47,11113,2111.47,N,I,I,I,I
 0500000001,0000000033,20120102,0000000033,20120102,9000000001,0100000002,EUR,12493.73,10498.94,1994.79,N,I,I,I,I
 ```
 
-**Create a file** called `item.csv` and use the following data.  Don't forget to **save** all of the files.
+**Create a file** in the same folder named `item.csv` and use the following data.  Don't forget to **save** all of the files.
 
 ```text
 0500000000,0000000010,HT-1000,,EUR,1137.64,956,181.64,1,EA,20121204

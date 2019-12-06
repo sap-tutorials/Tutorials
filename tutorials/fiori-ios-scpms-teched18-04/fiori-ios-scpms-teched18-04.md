@@ -8,8 +8,8 @@ time: 25
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
 - **Hardware Optional:** Apple iPad
 
 ## Details
@@ -157,10 +157,10 @@ private lazy var dateFormatter: DateFormatter = {
 private func timelineMarkerCell(representing deliveryStatusType: DeliveryStatusType, forRowAt indexPath: IndexPath) -> FUITimelineMarkerCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineMarkerCell", for: indexPath) as! FUITimelineMarkerCell
 
-    cell.nodeImage = nodeImage(for: deliveryStatusType)
+    cell.nodeType = timelineMarkerNodeType(for: deliveryStatusType)
     cell.showLeadingTimeline = indexPath.row != 0
     cell.showTrailingTimeline = indexPath.row != (self.entities.count - 1)
-    cell.eventText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
+    cell.timestampText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
     cell.titleText = deliveryStatusType.status
 
     return cell
@@ -170,22 +170,30 @@ private func timelineCell(representing deliveryStatusType: DeliveryStatusType, f
 
     let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineCell", for: indexPath) as! FUITimelineCell
 
-    cell.nodeImage = nodeImage(for: deliveryStatusType)
-    cell.eventText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
+    cell.nodeType = timelineNodeType(for: deliveryStatusType)
+    cell.timestampText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
     cell.headlineText = deliveryStatusType.status
     cell.subheadlineText = deliveryStatusType.location
 
     return cell
 }
 
-private func nodeImage(for deliveryStatusType: DeliveryStatusType) -> UIImage {
+private func timelineMarkerNodeType(for deliveryStatusType: DeliveryStatusType) -> FUITimelineMarkerCell.NodeType {
     switch deliveryStatusType.statusType! {
-    case "start"    : return FUITimelineNode.start
-    case "inactive" : return FUITimelineNode.inactive
-    case "complete" : return FUITimelineNode.complete
-    case "earlyEnd" : return FUITimelineNode.earlyEnd
-    case "end"      : return FUITimelineNode.end
-    default         : return FUITimelineNode.open
+    case "start"    : return FUITimelineMarkerCell.NodeType.start
+    case "beforeEnd" : return FUITimelineMarkerCell.NodeType.beforeEnd
+    case "beforeStart" : return FUITimelineMarkerCell.NodeType.beforeStart
+    case "default" : return FUITimelineMarkerCell.NodeType.default
+    case "end"      : return FUITimelineMarkerCell.NodeType.end
+    default         : return FUITimelineMarkerCell.NodeType.start
+    }
+}
+
+private func timelineNodeType(for deliveryStatusType: DeliveryStatusType) -> FUITimelineCell.NodeType {
+    switch deliveryStatusType.statusType! {
+    case "complete": return FUITimelineCell.NodeType.complete
+    case "open" : return FUITimelineCell.NodeType.open
+    default: return FUITimelineCell.NodeType.open
     }
 }
 

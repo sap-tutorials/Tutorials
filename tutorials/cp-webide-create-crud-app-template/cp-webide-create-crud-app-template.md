@@ -2,6 +2,8 @@
 title: Create a CRUD Master-Detail App
 description: Create a CRUD Master-Detail app using the template provided by SAP Web IDE, and get it ready to be built as a hybrid app.
 auto_validation: true
+author_name: Ludo Noens
+author_profile: https://github.com/lnoenssap
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>mobile, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 time: 15
@@ -20,21 +22,25 @@ time: 15
 
 [ACCORDION-BEGIN [Step 1: ](Log in to SAP Cloud Platform)]
 
-Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
+Go to <https://cockpit.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit and select **Enter Your Trial Account**.
 
 ![Some alternative text](step1.png)
+
+SAP offers SAP Cloud Platform Trial on both Cloud Foundry as well as Neo. For this tutorial and the subsequent mobile tutorial please select the Neo Trial environment. On the cockpit page, scroll down to the Environments section and select **Access Neo Trial**.
+
+![Some alternative text](step1-part2.png)
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable mobile service for development and operations)]
+[ACCORDION-BEGIN [Step 2: ](Enable Mobile Services)]
 
-Choose **Services** on the left pane, scroll down and then choose **Development & Operations, std**.
+Choose **Services** on the left pane, scroll down and then choose **Mobile Services, users**. You can also search for **mobile**.
 
 ![Some alternative text](step2.png)
 
-On the **Service: Development & Operations, std - Overview** page, click **Enable**.
+On the **Service: Mobile Services, users - Overview** page, click **Enable**.
 
 Use this service to access the destination that you create, and to build your app as a mobile app using the cloud build service.
 
@@ -96,8 +102,8 @@ From the **Service: Web IDE Full-Stack - Overview** page, choose **Go to Service
 
 [ACCORDION-BEGIN [Step 5: ](Choose a new project template)]
 
-Select **File** > **New** > **Project from Template**.
-On the **Template Selection** page, choose **All Categories** from the **Category** list.
+In SAP Web IDE, please Select **File** > **New** > **Project from Template**.
+On the **Template Selection** page, choose **Neo** from the Environment list and **All Categories** from the **Category** list.
 From the displayed templates, choose the CRUD Master-Detail Application template and select **Next**.
 
 ![Some alternative text](step5.png)

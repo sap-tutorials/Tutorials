@@ -4,7 +4,7 @@ description: Create a table type and use it to retrieve data from a database tab
 auto_validation: true
 time: 20
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 ---
 ## Prerequisites
 - You have a sub-account with the entitlement SAP Cloud Platform, ABAP environment, release 1902 or higher. For more details, see [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html).
@@ -19,14 +19,20 @@ tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform 
 
 Table types can also be defined in, for example, an ABAP program or class. The differences between the two approaches include:
 -	Table types in the ABAP Data Dictionary are maintained in a form-based editor, table types in ABAP in a text-based editor
--	Table types can only be used by other Dictionary types if they are defined in the Data Dictionary
--	Table types in the Dictionary are stand-alone objects, whereas table types in ABAP are always part of another Repository object
+-	**Reuse**: Table types can only be used by other Dictionary types if they are defined in the Data Dictionary
+-	**Modularization**: Table types in the Dictionary are stand-alone objects, whereas table types in ABAP are always part of another Repository object
+
+Throughout this tutorial, objects have the suffix **`XXX`**. Remember to always replace this with your initials or group number.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a table type)]
 
-1. Select your ABAP Cloud Project and choose **New > Other ABAP Repository Object > Dictionary > Table Type**.
+1. Open your ABAP Cloud Project from the previous tutorial, then open the package in which you created the database table.
+
+    ![Image depicting step1a-package](step1a-package.png)
+
+2. Select your package and choose **New > Other ABAP Repository Object > Dictionary > Table Type** from the context menu.
 
     ![Image depicting step1-new-table-type](step1-new-table-type.png)
 
@@ -36,11 +42,9 @@ Table types can also be defined in, for example, an ABAP program or class. The d
 
 3. Create or assign a transport request and choose **Finish**.
 
-    ![Image depicting step1c-tr](step1c-tr.png)
+The table type appears in a new editor.  
 
-The table type appears in a new editor:
-
-![Image depicting step1d-ttyp-editor](step1d-ttyp-editor.png)
+![Image depicting step1e-table-type-editor](step1e-table-type-editor.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -48,6 +52,8 @@ The table type appears in a new editor:
 [ACCORDION-BEGIN [Step 2: ](Define a type)]
 Choose the category **Dictionary Type** For the type name, choose the database table you created in a previous tutorial, for example **`Z_BOOKING_XXX`** (replacing `XXX` with your group number or initials).
 
+![Image depicting step2a-search-type](step2a-search-type.png)
+.
 ![Image depicting step2-define-type](step2-define-type.png)
 
 Note that, in the ABAP Environment, you can only work with whitelisted objects. The majority of tables you might expect, such as `SFLIGHT` are not whitelisted. For a complete list of whitelisted objects, see the folder **Released Objects**. To sort objects by object type, not package, use a Duplicate Tree:
@@ -95,7 +101,7 @@ Users may want to query a database table using something other than the primary 
 
     ![Image depicting step4b-secondary-key-comps](step4b-secondary-key-comps.png)
 
-The keys are listed on the left:
+The keys are listed.
 
   ![Image depicting step4c-keys-list](step4c-keys-list.png)
 
@@ -113,7 +119,7 @@ Finally, you will test your table type by using it to:
 
     ![Image depicting step5-create-class](step5-create-class.png)
 
-2. Enter a name, such as **`Z_OUTPUT_BOOKINGS_XXX`** and description for your class (replacing `XXX` with your group number or initials).
+2. Enter a name, such as **`ZCL_OUTPUT_BOOKINGS_XXX`** and description for your class (replacing `XXX` with your group number or initials).
 
     ![Image depicting step5-name-class](step5-name-class.png)
 
@@ -138,23 +144,27 @@ It also lets you display text or data in the Console View.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Implement the method)]
-1. Add the following code, remembering to rename the table type and database table to your own (for example, replacing `XXX` with your group number or initials).
-2. Then save and activate your class using **`Ctrl+S, Ctrl+F3`**.
+You will now add the following code to the `main` method, remembering to rename the table type and database table to your own (for example, replacing `XXX` with your group number or initials)..
 
+1. Create an internal table `lt_bookings` with the table type that you just created, `ZTT_BOOKING_XXX`.
 
-```ABAP
-METHOD if_oo_adt_classrun~main.
-   DATA:
-       lt_bookings type Z_BOOKING_XXX.
+    `DATA: lt_bookings type ZTT_BOOKING_XXX.`
 
-select * from zjp_bookings
-into table @lt_bookings.
-out->write( EXPORTING data = lt_bookings
-            name = 'Bookings:' ).
-ENDMETHOD.
-```
+2. Select data from the database table from the previous tutorial `ZTBOOKING_XXX` and add it to the internal table.
 
-This method simply selects all the fields from your database table (here, `zjp_bookings`) into the internal table whose type is defined by the table type you created.
+    `select * from ZTBOOKING_XXX`
+
+    `into table @lt_bookings.`
+
+3. Output the internal table to the console.
+
+    `out->write( EXPORTING`
+
+    `data = lt_bookings`
+
+    `name = 'Bookings:' ).`
+
+4. Then save and activate your class using **`Ctrl+S, Ctrl+F3`**.
 
 [DONE]
 [ACCORDION-END]
@@ -163,28 +173,31 @@ This method simply selects all the fields from your database table (here, `zjp_b
 The complete class should look like this:
 
 ```ABAP
-class ZJP_OUTPUT_BOOKINGS definition
-  public
-  final
-  create public .
 
-public section.
- interfaces if_oo_adt_classrun.
-protected section.
-private section.
+CLASS zcl_output_bookings_xxx DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    INTERFACES if_oo_adt_classrun.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
 ENDCLASS.
 
-CLASS Z_OUTPUT_BOOKINGS_XXX IMPLEMENTATION.
+CLASS zcl_output_bookings_xxx IMPLEMENTATION.
+
   METHOD if_oo_adt_classrun~main.
-    DATA:
-        lt_bookings type z_booking_xxx.
+     DATA:
+         lt_bookings type ZTT_BOOKING_XXX.
 
-select * from zjp_bookings
-into table @lt_bookings.
-out->write( EXPORTING data = lt_bookings
-             name = 'Bookings:' ).
+  select * from ZTBOOKING_XXX
+  into table @lt_bookings.
+  out->write( EXPORTING
+                  data = lt_bookings
+                  name = 'Bookings:' ).
+  ENDMETHOD.
 
- ENDMETHOD.
 ENDCLASS.
 
 ```

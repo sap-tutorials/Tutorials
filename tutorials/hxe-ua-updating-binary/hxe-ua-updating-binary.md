@@ -23,6 +23,8 @@ Login as `<sid>adm`. Depending on your current version of SAP HANA, express edit
 * If you do not have the update utility, use the Download Manager, select Binary Installer and download the latest files for `hxe.tgz`, and `hxexsa.tgz` for Applications if applicable.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extract the Packages)]
@@ -37,6 +39,8 @@ tar -zxf <downloaded_path>/hxe.tgz
 tar -zxf <downloaded_path>/hxexsa.tgz
 ```
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -68,7 +72,8 @@ Follow the prompts to complete the server update.
 > Upgrading is supported only for SAP HANA, express edition 2.0 SP 00 and newer.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 ---
-

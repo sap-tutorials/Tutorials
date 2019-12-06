@@ -1,5 +1,5 @@
 ---
-title: Enhance an MDK App with Customer Orders
+title: Extend an MDK App with Customer Orders
 description: Display a customer order list and its details.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
@@ -40,7 +40,7 @@ In SAP Web IDE project, right-click the **Pages** folder | **New MDK Page** | **
 
 >You can find more details about [section pages](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
-Enter the **Page Name** `CustomerOrders` and click **Next** and then **Finish** on the confirmation step.
+Enter the **Page Name** `Customers_Orders` and click **Next** and then **Finish** on the confirmation step.
 
 ![MDK](img_002.png)
 
@@ -77,7 +77,8 @@ Provide the below information:
 | Property | Value |
 |----|----|
 | `Description`| `$(D,{CreatedAt})` |
-| `Footnote` | Leave it blank |
+| `DetailImage`| Remove the default value and leave it blank |
+| `Footnote` | Remove the default value and leave it blank  |
 | `PreserveIconStackSpacing`| `false` |
 | `ProgressIndicator` | Leave it blank |
 | `Status`| `$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` |
@@ -103,7 +104,7 @@ In the **Empty** section of the **Properties** pane, provide **`No Orders Found`
 
 ![MDK](img_009.png)
 
-Save your changes to the **Customer Orders** page.
+Save your changes to the `CustomerOrders.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -116,7 +117,7 @@ In SAP Web IDE project, right-click the **Pages** folder | **New MDK Page** | **
 
 ![MDK](img_001.gif)
 
-Enter the Page Name `OrderDetails` and click **Next** and the **Finish** on the confirmation step.
+Enter the Page Name `SalesOrders_Detail` and click **Next** and the **Finish** on the confirmation step.
 
 ![MDK](img_010.png)
 
@@ -182,7 +183,7 @@ You should have final binding for all key value items as below:
 
 ![MDK](img_016.png)
 
-Save your changes to the **Order Details** page.
+Save your changes to the `OrderDetails.page`.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -191,16 +192,14 @@ Save your changes to the **Order Details** page.
 
 Now, you will create two **Navigation actions** that opens the **Order List** and **Order Details** page when called.
 
-Right-click the **Actions** folder | **New MDK Action** | **Navigation Action** | **Next**.
-
-![MDK](img_017.gif)
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
 Provide the below information:
 
 | Field | Value |
 |----|----|
-| `Action Name`| `ShowAllOrders` |
-| `Page to Open` | `CustomerOrders.page` |
+| `Action Name`| `NavToCustomers_Orders` |
+| `Page to Open` | `Customers_Orders.page` |
 
 ![MDK](img_018.png)
 
@@ -208,14 +207,12 @@ Click **Next** and then **Finish** on the confirmation step.
 
 Repeat the above step and create a new navigation action.
 
-![MDK](img_017.gif)
-
 Provide the below information:
 
 | Field | Value |
 |----|----|
-| `Action Name`| `ShowOrderDetails` |
-| `Page to Open` | `OrderDetails.page` |
+| `Action Name`| `NavToSalesOrders_Details` |
+| `Page to Open` | `SalesOrders_Detail.page` |
 
 ![MDK](img_019.png)
 
@@ -226,28 +223,28 @@ Click **Next** and then **Finish** on the confirmation step.
 
 [ACCORDION-BEGIN [Step 4: ](Set the OnPress of the customer Orders)]
 
-Go back to the **Customer Orders page** and set the `OnPress` event of the Object Table. You will link the Object Table to the `ShowOrderDetails` action so that when an end-user selects a order, the **Order Details** page will open. MDK automatically passes the selected order to the details page.
+Go back to the `Customers_Orders.page` and set the `OnPress` event of the Object Table. You will link the Object Table to the `NavToSalesOrders_Details.action` so that when an end-user selects a order, the `SalesOrders_Detail.page` will open. MDK automatically passes the selected order to the details page.
 
-In `CustomerOrders` page, select the Object Table, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
+In `Customers_Orders.page`, select the Object Table, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
-Double-click the `ShowOrderDetails` action and click **OK** to set it as the `OnPress` Action.
+Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as the `OnPress` Action.
 
 ![MDK](img_020.gif)
 
-Save the changes to the `CustomerOrders` page.
+Save the changes to the `Customers_Orders.page`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Write JavaScript logic to calculate total number of orders)]
 
-You will show a total count of orders for a customer in `CustomerDetail` page. You will write a JavaScript logic for this calculation.
+You will show a total count of orders for a customer in `Customers_Detail.page`. You will write a JavaScript logic for this calculation.
 
 Right-click the **Rules** folder | **New** | **File**.
 
 ![MDK](img_021.png)
 
-Enter the file name `CustomerOrderCount.js`, click **OK**.
+Enter the file name `Customers_OrderCount.js`, click **OK**.
 
 Copy and paste the following code.
 
@@ -263,20 +260,20 @@ export default function CustomerOrderCount(sectionProxy) {
 }
 ```
 
-Save the changes to the `CustomerOrderCount.js` file.
+Save the changes to the `Customers_OrderCount.js` file.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Display top 5 orders in customer detail page)]
 
-Next, you will add an **Object Table** compound to display top 5 orders information in the **Customer Detail** page.
+Next, you will add an **Object Table** compound to display top 5 orders information in the `Customers_Detail.page`.
 
 In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
 
 ![MDK](img_022.gif)
 
-In the **Properties** pane, select the previously added service from the **Service** drop down and then select `SalesOrderHeaders` entity set from the dropdown. This way, the Object Table has been bound to `SalesOrderHeaders` entity.
+In the **Properties** pane, select the previously added service from the **Service** drop down.
 
 Provide below Properties:
 
@@ -303,6 +300,7 @@ In the **Appearance** section of the **Properties** pane, provide the below info
 | Property | Value |
 |----|----|
 | `Description`| Leave it blank |
+| `DetailImage`| Leave it blank |
 | `Footnote` | Leave it blank |
 | `PreserveIconStackSpacing`| `false` |
 | `ProgressIndicator` | Leave it blank |
@@ -325,15 +323,15 @@ In the **Empty** section of the **Properties** pane, provide  **`No Customer Ord
 
 ![MDK](img_024.png)
 
-You may also want to open **Order Details** page when clicking on any order in customer detail page. For this, you will set `OnPress` event of the **Object Collection** and link it to `ShowOrderDetails.action` so that when an end-user selects a order, the Order Details page will open. MDK automatically passes the selected order to the details page.
+You may also want to open `SalesOrders_Detail.page` when clicking on any order in `Customers_Detail.page`. For this, you will set `OnPress` event of the **Object Collection** and link it to `NavToSalesOrders_Details.action` so that when an end-user selects a order, the Order Details page will open. MDK automatically passes the selected order to the details page.
 
-In `CustomerDetail` page, select the Object Collection, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
+In `Customers_Detail.page`, select the Object Collection, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
-Double-click the `ShowOrderDetails` action and click **OK** to set it as the `OnPress` Action.
+Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as the `OnPress` action.
 
 ![MDK](img_025.gif)
 
-Save the changes to the `CustomerDetail` page.
+Save the changes to the `Customers_Detail.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -354,7 +352,7 @@ Provide the below information:
 
 ![MDK](img_027.png)
 
-Save the changes to the `CustomerDetail` page.
+Save the changes to the `Customers_Detail.page`.
 
 >You can find more details about [Header controls](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/c71b8b1f71294fcbb199613439c51222.html).
 
@@ -373,7 +371,7 @@ Provide the below information:
 
 | Property | Value |
 |----|----|
-| `Attribute Label`| bind it to `CustomerOrderCount.js` |
+| `Attribute Label`| Click on link icon, choose Rules from down and bind to `Customers_OrderCount.js` |
 | `Caption`| `See All` |
 | `FooterStyle`| `attribute` |
 | `AccessoryType`| `DisclosureIndicator` |
@@ -382,70 +380,79 @@ Provide the below information:
 
 >You can find more details about [Footer controls](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/df3e0a2efa2948d2b66e8f5071f5b48e.html).
 
-You may also want to open **Customer Orders** page when clicking on **See All**. For this, you will set `OnPress` event of the **Footer** control and link it to `ShowAllOrders.action` so that when an end-user clicks on **See All**, the **Customer Orders** page will open.
+You may also want to open **Customer Orders** page when clicking on **See All**. For this, you will set `OnPress` event of the **Footer** control and link it to `NavToCustomers_Orders.action` so that when an end-user clicks on **See All**, the **Customer Orders** page will open.
 
-In `CustomerDetail` page, select the Footer control, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
+In `Customers_Detail.page`, select the Footer control, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
-Double-click the `ShowAllOrders.action` and click **OK** to set it as the `OnPress` Action.
+Double-click the `NavToCustomers_Orders.action` and click **OK** to set it as the `OnPress` Action.
 
 ![MDK](img_028.png)
 
-Save the changes to the `CustomerDetail` page.
+Save the changes to the `Customers_Detail.page`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Deploy, activate and test the application)]
+[ACCORDION-BEGIN [Step 9: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 
-Right-click the MDK application in the project explorer pane and select **MDK Deploy and Activate**, click **Next**, and deploy to Mobile Services.
+Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-![MDK](img_031.png)
+![MDK](img_026.1.png)
 
->Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
+Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+
+![MDK](img_014.1.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Test the application)]
+
+[OPTION BEGIN [Android]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or fingerprint. When you see a confirmation pop-up, tap **OK**. Tap **CUSTOMER LIST**.
+
+![MDK](img_032.1.jpg)
+
+You will see the **CUSTOMER ORDERS** area in customer detail page and also total count of orders.
+
+>In sample service backend, Not every customer has related Sales Orders in case if you see _No Customer Orders Found_ message. Try with other customer record.
+
+![MDK](img_033.1.jpg)
+
+Tapping on any order navigates to its details page.
+
+![MDK](img_034.1.jpg)
+
+Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
+
+![MDK](img_035.1.jpg)
+
+![MDK](img_036.1.jpg)
+
+[OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. When you see a confirmation pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. When you see a confirmation pop-up, tap **OK**.
 
 ![MDK](img_032.png)
 
 You will see the **Customer Orders** area in customer detail page and also total count of orders.
 
+>In sample service backend, Not every customer has related Sales Orders in case if you see _No Customer Orders Found_ message. Try with other customer record.
+
 ![MDK](img_033.png)
 
-Clicking on any order navigates to its details page.
+Tapping on any order navigates to its details page.
 
 ![MDK](img_034.png)
 
-Navigate back to **Customer Detail** page, click **See All**, which navigates to the **Customer Orders** page.  
+Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
 ![MDK](img_035.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Android]]
-
-Re-launch the app on your device, you may asked to authenticate with passcode or fingerprint. When you see a confirmation pop-up, click **OK**. Click **CUSTOMER LIST**.
-
-![MDK](img_032.1.jpg)
-
-You will see the **Customer Orders** area in customer detail page and also total count of orders.
-
-![MDK](img_033.1.jpg)
-
->There are many customer records in the sample backend which do not have any order. If you see count 0 then look for another customer record. 
-
-Clicking on any order navigates to its details page.
-
-![MDK](img_034.1.jpg)
-
-Navigate back to **Customer Detail** page, click **See All**, which navigates to the **Customer Orders** page.  
-
-![MDK](img_035.1.jpg)
-
-![MDK](img_036.1.jpg)
 
 [OPTION END]
 

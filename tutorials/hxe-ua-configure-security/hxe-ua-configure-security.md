@@ -21,6 +21,8 @@ time: 5
 Installing SAP HANA 2.0, express edition installs a permanent 32 GB license automatically. No license configuration is required.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change the SSFS Master Keys and Root Keys)]
@@ -36,6 +38,8 @@ The **`change_key.sh`** utility:
 - Changes the encryption root keys. The script generates new keys, backs them up, and activates them.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run the script)]
@@ -47,6 +51,8 @@ At the command prompt, type:
 /usr/sap/HXE/home/bin/change_key.sh
 ```
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -62,6 +68,8 @@ Root key backup password            | Enter a strong password. The root key back
 Root key directory                  | A directory to store the root key backup password securely. Choose a non-temporary directory. For example `/usr/sap/HXE/HDB90`.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Enter Y when prompted)]
@@ -71,12 +79,16 @@ Enter **Y** when prompted. The script runs. Wait for the `hxehost:hxeadm>` promp
 New data will now be encrypted with the new keys.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Deactivate the SYSTEM user)]
 
 SYSTEM is the database `superuser` and is not intended for day-to-day activities in production systems. For better security, you can create other database users with only the privileges that they require for their tasks (for example, user administration), then deactivate the SYSTEM user.
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -86,6 +98,8 @@ In a terminal, log in as the `hxeadm` user:
 
 `sudo su -l hxeadm`
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -100,6 +114,8 @@ Create a new admin user with the USER ADMIN system privilege:
 ```
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Deactivate the SYSTEM user)]
@@ -111,5 +127,6 @@ Use the new admin user to deactivate the SYSTEM user:
 ```
 
 
-[ACCORDION-END]
+[DONE]
 
+[ACCORDION-END]

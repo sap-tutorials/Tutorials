@@ -35,7 +35,7 @@ module.exports = {
             },
         ],
         link: {
-            regexp: new RegExp('(?<![`\\(\\[]|(href=")|(link=")|(src="))(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:/~+#-]*[\\w@?^=%&/~+#-])\\/?(?=([^`]*`[^`]*`)*[^`]*$)(?!(([^\\[]*\\])|([^\\<]*\\>)|([^\\(]*\\))))'),
+            regexp: new RegExp('(?<![`\\(\\[]|(href=")|(link=")|(src=")|(\<))(http|ftp|https):\\/\\/([\\w\d_-]+(?:(?:\\.?[\\w\d_-]+)+))([\\w\d.,@?^=%&:/~+#-]*[\\w\d@?^=%&/~+#-])\\/?(?=([^`]*`[^`]*`)*[^`]*$)(?!(([^\\[]*\\])|(\>)|([^\\<]*\\>)|([^\\(]*\\))))'),
             message: 'plain text URL',
             description: 'wrap URL in <> or format with [Link text](URL)',
         },
@@ -54,7 +54,7 @@ module.exports = {
             message: 'no H1 (single #) allowed',
         },
         mdnImg: {
-            regexp: /\!?\[[^\]]+\]\((?![ <]*http)([\d\w_\-\.\/]+\.(jpg|jpeg|png|gif|svg|ico))\)/gi,
+            regexp: /\!?\[\s*[^\]]+\s*\]\s*?\(\s*(?![ <]*http)([\d\w\s_\-\.\/]+\.(jpg|jpeg|png|gif|svg|ico))\s*\)/gi,
             messages: {
                 size: 'file size is more than 1 MB',
                 existence: 'missing image',
@@ -70,13 +70,36 @@ module.exports = {
             message: 'Tutorial with this name doesn\'t exist',
         },
         localFileLink: {
-            regexp: /\[[^\]]+\]\((?![ <]*http)([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/i,
+            regexp: /\[[^\]]+\]\((?![ <]*(http|mission\.|group\.))([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/i,
             message: 'Incorrect link to local file, use full link to file on GitHub (starting https://raw.githubusercontent.com)',
         },
         internalLink: {
             regexp: new RegExp('(sap\.corp)'),
             message: 'Internal link'
         },
+        remoteImage: {
+            regexp: /!\[[^\]]+\]\(http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)\)/gi,
+            message: 'Bad image - image URL does not return image file',
+        },
+        codeBlockInNote: /^>\s*```/,
+        metadata: {
+          title: {
+            regexp: /^\s*title:\s*.+$/,
+            message: 'title is required',
+          },
+          description: {
+            regexp: /^\s*description:\s*.+$/,
+            message: 'description is required',
+          },
+          tags: {
+            regexp: /^\s*tags:\s*\[(.+)>(.+),?\s*\]\s*$/,
+            message: 'tags are required',
+          },
+          primaryTag: {
+            regexp: /^\s*primary_tag:\s*(.+)>(.+)\s*$/,
+            message: 'primary tag is required',
+          },
+      },
     },
     validation: {
         auto_validation: /auto_validation:\s(.*)\r?\n/i,
@@ -130,12 +153,12 @@ module.exports = {
     link: {
         absoluteURL: new RegExp('^[a-z][a-z0-9+.-]*:'),
         markdown: [
-            /\[[^\]]*\]\((http[s]?:\/\/.+?)\)/g,
+            /\[[^\]]*\]\s*?\((http[s]?:\/\/.+?)\)/g,
             /\[[^\]]*\]\s*?:\s*?<(http[s]?:\/\/.+?)>/g,
             /<(http[s]?:\/\/.*?)>/g,
             /href=["'](http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*))["']/g,
         ],
-        pure: /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi
+        pure: /(http[s]?:\/\/.*?)[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi
     },
     fileName: {
         restrictedSymbols: new RegExp('[^a-z0-9-]'),

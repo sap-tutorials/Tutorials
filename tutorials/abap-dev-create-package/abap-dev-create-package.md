@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 time: 10
 ---
 ##Prerequisites
-- Either: **Tutorial**: [Create an ABAP project](abap-dev-create-package)
+- **Tutorial**: [Create an ABAP project](abap-dev-create-package)
 
 ## Details
 ### You will learn  
@@ -84,7 +84,7 @@ Select the project you created previously, then choose *<Project>* > **New > ABA
 
     ![Image depicting step4-add-fave-package](step4-add-fave-package.png)
 
-2. Enter the first three characters of your package (**`Zxx`**, where **`xx`** = your initials), then choose the package, then choose **OK**:
+2. Enter the first three characters of your package -- **`Zxx`**, where **`xx`** = your initials. Then choose the package, then choose **OK**.
 
     ![Image depicting step4b-choose-package](step4b-choose-package.png)
 

@@ -1,6 +1,6 @@
 ---
 title: Enable the Push Notification service for your iOS app
-description: Use the SAP Cloud Platform Mobile Service and Apple Developer Account to enable Push Notifications for you iOS app.
+description: Use the SAP Cloud Platform Mobile Services and Apple Developer Account to enable Push Notifications for you iOS app.
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 auto_validation: true
@@ -16,7 +16,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to setup Push Notifications on SAP Cloud Platform Mobile Service and Apple Developer account.
+In this tutorial you will learn how to setup Push Notifications on SAP Cloud Platform Mobile Services and Apple Developer account.
 
 ### Time to Complete
 **30 Min**.
@@ -37,7 +37,7 @@ You can use the Apple Push Notification Service to propagate information from th
 
 [ACCORDION-BEGIN [Step 1: ](Use Xcode to create an App ID and Provisioning Profile)]
 
-The App ID is used to identify your app and ensures the Apple Push Notification Servers will properly send push notifications to your app. The Provisioning Profile will be used to sign you app later on.
+The App ID is used to identify your app and ensures the Apple Push Notification Servers will properly send push notifications to your app. The Provisioning Profile will be used to sign your app later on.
 
 With the help of Xcode we don't have to do much manually to create those two things.
 Open up your Product Sample App project in Xcode.
@@ -65,7 +65,7 @@ On your Mac, open the **Keychain Access** application, and navigate to **Keychai
 
 ![CSR creation](fiori-ios-hcpms-push-notifications-03.png)
 
-In the dialog, enter the email address you use which is associated with your Apple Developer account. Also, make sure you tick the **Request is saved to disk** and the **Let me specify key pair information** option.
+In the dialog, enter the email address which is associated with your Apple Developer account. Also, make sure you check the **Request is saved to disk** and the **Let me specify key pair information** option.
 
 ![CSR creation](fiori-ios-hcpms-push-notifications-04.png)
 
@@ -86,46 +86,45 @@ The certificate is now saved to you hard drive and added to your Keychain as wel
 
 [ACCORDION-BEGIN [Step 3: ](Create .CER file in your Apple Developer Account)]
 
-Go to your [Apple Developer Account](https://developer.apple.com) and click on **App IDs**. Your app should appear here because we made sure Xcode will take care of adding an App ID to your profile.
-
-> If in any case you can't see your app listed here please go ahead and follow the creation process of an App ID with the **Plus** icon. Make sure the app name and identifier are the same as your Xcode project.
+Go to your [Apple Developer Account](https://developer.apple.com) and click on **Certificates, Identifiers & Profiles**.
 
 ![CER creation](fiori-ios-hcpms-push-notifications-07.png)
 
-Select your app from the list to expand the view to see more information.
+From there click on **Identifiers** to get the list of all your apps.
 
 ![CER creation](fiori-ios-hcpms-push-notifications-08.png)
 
-YOu can see Xcode also made sure that **Push Notifications** are enabled for your app. Now you have to configure this app feature. Click on **Edit**.
+Now locate the `com.sap.mobile.example.ProductApp`. Click on it to see the details.
+
+> If by any chance you've used a different App name or/and bundle identifier, select that one in the list.
+
+> If in any case you can't see your app listed here please go ahead and follow the creation process of an App ID with the **Plus** icon. Make sure the app name and identifier are the same as your Xcode project.
 
 ![CER creation](fiori-ios-hcpms-push-notifications-09.png)
 
-Click on **Create Certificate** to start the workflow for creating the needed `.CER` file.
+In the upcoming detail screen please scroll down until you see the **Push Notifications** shows up in the list.
+
+You can see Xcode also made sure that **Push Notifications** are enabled for your app. Now you have to configure this app feature. Click on **Configure**.
 
 ![CER creation](fiori-ios-hcpms-push-notifications-10.png)
 
-Click on **Continue** after you read the information provided by Apple.
+Click on **Create Certificate** to start the workflow for creating the needed `.CER` file.
 
 ![CER creation](fiori-ios-hcpms-push-notifications-10a.png)
 
-Now click on **Choose** to upload the previously created `CSR` file. This will create a `.CER` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
+The workflow asks you to upload the previously created `CSR` file. Please click on **Choose File** and upload the file. To download your `CER` please click on **Continue**.
+
+Apple will now create a `.CER` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
 
 ![CER creation](fiori-ios-hcpms-push-notifications-10b.png)
 
-Now click on **Continue** to download your certificate.
+Click on the **Download** button to download your certificate.
 
 ![CER creation](fiori-ios-hcpms-push-notifications-10c.png)
 
-Click on the **Download** button to download your certificate.
-Click **Done** to see the overview of all your Certificates.
+If you go back to the certificates list of your app, you should see the just created certificate listed.
 
 ![CER creation](fiori-ios-hcpms-push-notifications-11.png)
-
-Under the **Certificates** section you can see the just created certificate.
-
-![CER creation](fiori-ios-hcpms-push-notifications-12.png)
-
-If you go back to you App ID and select the app you will see that under **Push Notifications** we enabled the service.
 
 [DONE]
 [ACCORDION-END]
@@ -133,6 +132,8 @@ If you go back to you App ID and select the app you will see that under **Push N
 [ACCORDION-BEGIN [Step 4: ](Install the .CER file and create the .p12 file)]
 
 In order to configure the `APNS` on **SAP Cloud Platform Mobile Services** we need to install the `.CER` file and create the needed `.p12` file.
+
+> A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for the `APNS` configuration.
 
 Locate your downloaded `.CER` file and double click on it in order to install the certificate.
 
@@ -146,7 +147,7 @@ Select the certificate as well as the private key and right-click to export thos
 
 ![P12 creation](fiori-ios-hcpms-push-notifications-15.png)
 
-Make sure in the dropdown **Personal Information Exchange (.p12)** is selected and click on **Save**. You will be prompted to enter a password, click on **OK** to export the files.
+Make sure that in the dropdown **Personal Information Exchange (.p12)** is selected and click on **Save**. You will be prompted to enter a password, click on **OK** to export the files.
 
 > While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Cloud Platform mobile service for development and operations.
 
@@ -157,17 +158,17 @@ Make sure in the dropdown **Personal Information Exchange (.p12)** is selected a
 
 [ACCORDION-BEGIN [Step 5: ](Assign Notification User Role to your Cloud Platform account)]
 
-To later send push notifications to your app it is necessary to assign yourself to the **Notification User** role.
+In order to send notifications later on, you need a **Notification User** role.
 
 Open up the [SAP Cloud Platform Cockpit](http://hanatrial.ondemand.com/) and select **Neo Trial** to go to the Neo landscape.
 
 ![Notification Role Config](fiori-ios-hcpms-push-notifications-17.png)
 
-Assign your user the **Notification User** role
+Assign your P/S-User to the **Notification User** role
 
 ![Notification Role Config](fiori-ios-hcpms-push-notifications-18.png)
 
-After you have assigned the role, navigate back to to **Development & Operations** and click **Go to Service** to open **SAP Cloud Platform mobile service for development and operations**
+After you have assigned the role, navigate back to to **Development & Operations** and click on **Go to Service** to open **SAP Cloud Platform Mobile Services**
 
 Navigate to **Applications**, select your application and from the context menu select **Configure** and switch to the **Push** tab.
 

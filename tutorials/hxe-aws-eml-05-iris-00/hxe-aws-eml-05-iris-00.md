@@ -1,6 +1,8 @@
 ---
 title: Import the Iris dataset into SAP HANA, express edition
 description: Download and import the Iris dataset into SAP HANA, express edition
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: topic>machine-learning
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
@@ -57,6 +59,8 @@ wget -P /usr/sap/HXE/HDB90/work/iris "http://download.tensorflow.org/data/iris_t
 wget -P /usr/sap/HXE/HDB90/work/iris "http://download.tensorflow.org/data/iris_test.csv" -q
 ```
 This will create a new directory where the Iris training and test dataset will be downloaded.
+
+**Please ensure ports 80 & 443 are opened for outbound communication.**
 
 [DONE]
 [ACCORDION-END]

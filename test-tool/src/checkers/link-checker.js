@@ -2,7 +2,7 @@ const https = require('https');
 const url = require('url');
 const fetch = require('node-fetch');
 
-const { regexp: { content: { internalLink } }, linkCheck } = require('../constants');
+const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
 const { domains } = require('../../config/trusted.links.json');
 const { linkUtils } = require('../utils');
 
@@ -17,13 +17,13 @@ const checkLinks = async (links, onCheck) => {
     }));
   }
   const processedResults = await Promise.all(processingLinks);
-  const results = processedResults.filter(({ err, code }) => err || !linkUtils.is2xx(code)).map(({ link, code, err}) => {
+  const results = processedResults.filter(({ err, code }) => err || linkUtils.isErrorStatusCode(code)).map(({ link, code, err }) => {
     const isTrusted = !!domains.find(domain => link.includes(domain));
     return {
       link,
       code,
       isTrusted,
-      reason: (err && (err.message || err )),
+      reason: (err && (err.message || err)),
     };
   });
   return results;
@@ -62,6 +62,7 @@ const checkAttempt = async (options, attempt, maxAttempts) => {
     }
 
     return {
+      response,
       link: options.uri,
       code: response.status
     };
@@ -74,6 +75,7 @@ const checkAttempt = async (options, attempt, maxAttempts) => {
       const response = await fetch(options.uri, { ...fetchOptions, method: 'get' });
 
       return {
+        response,
         link: options.uri,
         code: response.status,
       };
@@ -92,8 +94,33 @@ const checkAttempt = async (options, attempt, maxAttempts) => {
   }
 };
 
+const checkImageLink = async (link) => {
+  const result = await checkLink(link);
+  result.error = result.error || result.err;
+
+  if (result.error) {
+    // ignore, in case of error link checker will throw it
+    delete result.error;
+    return result;
+  }
+
+  if (result.response && !linkUtils.isErrorStatusCode(result.response.status)) {
+    const { response } = result;
+    const contentType = (response.headers.get('Content-Type') || '');
+
+    if (contentType.includes('image/')) {
+      return result;
+    } else {
+      result.error = remoteImage.message;
+    }
+  }
+
+  return result;
+};
+
 module.exports = {
   checkLinks,
   checkLink,
+  checkImageLink,
 };
 

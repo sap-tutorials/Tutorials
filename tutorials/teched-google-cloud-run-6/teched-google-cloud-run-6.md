@@ -30,7 +30,7 @@ Click on **Use it for free**.
 
 ![Open Data Studio](2.png)
 
-Choose **Blank Report**.
+Click **Blank Report** tile.
 
 ![Open Data Studio](3.png)
 
@@ -51,7 +51,7 @@ Create a blank report.
 
 ![Open Data Studio](3.png)
 
-Click **Add a data source** to connect to your OData services.
+Click **Create New Data Source** in **Add a data source** column to connect to your OData services.
 
 ![Open Data Studio](7.png)
 

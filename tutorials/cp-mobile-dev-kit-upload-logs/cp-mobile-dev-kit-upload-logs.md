@@ -17,31 +17,11 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
->**This tutorial has been executed with Mobile Services in SAP Cloud Platform Neo and Cloud Foundry environment, please switch to either tab according to your environment.**
-
 [ACCORDION-BEGIN [Step 1: ](Define client log policy in Mobile Services cockpit )]
 
 SAP Cloud Platform Mobile Services provides administrators, developers and support staff with extensive logs and traces functionality to troubleshoot application issues. You can control the amount of information that is captured by setting the log level for individual logging components.
 
 In this step, you will enable client log upload policy in **SAP Cloud Platform Mobile Services Cockpit** for a given MDK app.
-
-[OPTION BEGIN [Neo]]
-
-Login to [Mobile Services Cockpit](fiori-ios-hcpms-setup), click `com.sap.mdk.demo` | **Client Policies**.
-
-![MDK](img_001.png)
-
-**Enable Client Log Upload** option and click **Save**.
-
-![MDK](img_002.png)
-
->Other policy parameters like Log Level, Delete Uploaded Log After, Maximum Number of Logs and Maximum Log Size currently have no effect.
-
->You can find more details about [Client Log Upload feature](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/36178b64b6bd4c9392cd421f6aa9ef12.html).
-
-[OPTION END]
-
-[OPTION BEGIN [Cloud Foundry]]
 
 Login to [Mobile Services Cockpit](fiori-ios-hcpms-setup), click `com.sap.mdk.demo` | click **+** icon to add client log upload feature to the app.
 
@@ -57,9 +37,7 @@ Check **Log Upload** option and click **Save**.
 
 >Other policy parameters like Log Level, Delete Uploaded Log After, Maximum Number of Logs and Maximum Log Size currently have no effect.
 
->You can find more details about [Client Log Upload feature](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/662c8a51d3df48bb99baea65855f3441.html).
-
-[OPTION END]
+>You can find more details about [Client Log Upload feature](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/ee280404f7ea4bb1ac12d2271815e3e0.html).
 
 [DONE]
 [ACCORDION-END]
@@ -82,7 +60,7 @@ You will create 3 actions:
 
 First, create a log action of type `SetState`:
 
-Right-click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
 ![MDK](img_004.png)
 
@@ -100,7 +78,7 @@ Click **Next** and then **Finish** on the confirmation step.
 
 Next, create a log action of type `SetLevel`:
 
-Right-click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
 Provide the below information:
 
@@ -118,7 +96,7 @@ Click **Next** and then **Finish** on the confirmation step.
 
 Next, create a log action of type `Upload`:
 
-Right-click on the **Actions** folder | **New MDK Action** | **Log Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
 Provide the below information:
 
@@ -145,21 +123,15 @@ Click **Save**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Set State log action at app OnLaunch)]
+[ACCORDION-BEGIN [Step 4: ](Bind Set State log action to success of InitializeOffline action)]
 
-You will add `LogSetState.action` at application `onLaunch` event so that app can start gathering logs on launch.
+When the metadata is downloaded from App Update, `OnDidUpdate` event is being called which eventually triggers `InitializeOffline.action`. You can look at `Application.app` file for the details.
 
-Double click on the `Application.app` file | click on **+** icon to add required action.
+You will bind `LogSetState.action` at success of  `InitializeOffline.action`.
 
-![MDK](img_008.png)
+Open the `InitializeOffline.action`, scroll-down and expand **Common Action Properties** section, select `LogSetState.action` for the **Success Action**.  
 
-Double-click  `LogSetState.action` and click **OK**.
-
-![MDK](img_009.png)
-
-This is how final results should look like.
-
-![MDK](img_010.png)
+![MDK](img_1.gif)
 
 Click **Save**.
 
@@ -172,7 +144,7 @@ You will define two message actions for displaying success or failure when _Log 
 
 First, you will create a success message action.
 
-Right-click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
 Provide the below information:
 
@@ -183,7 +155,7 @@ Provide the below information:
 | `Message`| `Log File Uploaded` |
 | `MaxNumberOfLines`| 1 |
 | `Duration` | 3 |
-| `IsIconHidden`| `false` |
+| `IsIconHidden`| `true` |
 | `Animated` | `true` |
 
 ![MDK](img_011.png)
@@ -192,7 +164,7 @@ Click **Next** and then **Finish** on the confirmation step.
 
 Next, create a failure message action.
 
-Right-click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
+Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
 Provide the below information:
 
@@ -233,7 +205,7 @@ You will add a toolbar item to the _main page_ called **Upload Logs**. You will 
 
 In `Main` page, drag and drop an **Toolbar Item** to the bottom right of the page.
 
-![MDK](img_014.gif)
+![MDK](img_014.png)
 
 Replace **Caption** to _Upload Logs_.
 
@@ -245,44 +217,53 @@ Double Click on the `LogUpload.action` action and click **OK** to set it as the 
 
 ![MDK](img_016.png)
 
-Save the changes to the `Main` page.
+Save the changes to the `Main.page`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy, activate and test the application)]
+[ACCORDION-BEGIN [Step 7: ](Deploy and activate the application)]
 
 Deploy the updated application to your MDK client.
 
-Right-click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**, click **Next** and deploy to Mobile Services.
+Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
->Make sure to select required **Destination Name** and **Application Id** as per your target environment (Neo or Cloud Foundry).
+![MDK](img_026.png)
 
-[OPTION BEGIN [iOS]]
+Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, click **OK**.
+![MDK](img_014.1.png)
 
-At `OnLaunch` event, app starts gathering logs.
+[DONE]
+[ACCORDION-END]
 
-Click **Upload Logs** to upload client logs from app to SAP Cloud Platform Mobile Services.
-
-![MDK](img_017.png)
-
-![MDK](img_018.png)
-
-[OPTION END]
+[ACCORDION-BEGIN [Step 8: ](Test the application)]
 
 [OPTION BEGIN [Android]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, click **OK**.
+Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
 
 At `OnLaunch` event, app starts gathering logs.
 
-Click **UPLOAD LOGS** to upload client logs from app to SAP Cloud Platform Mobile Services.
+Tap **UPLOAD LOGS** to upload client logs from app to SAP Cloud Platform Mobile Services.
 
 ![MDK](img_017.1.jpg)
 
 ![MDK](img_018.1.jpg)
+
+[OPTION END]
+
+[OPTION BEGIN [iOS]]
+
+Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+
+At `OnLaunch` event, app starts gathering logs.
+
+Tap **Upload Logs** to upload client logs from app to SAP Cloud Platform Mobile Services.
+
+![MDK](img_017.png)
+
+![MDK](img_018.png)
 
 [OPTION END]
 
@@ -291,37 +272,13 @@ Click **UPLOAD LOGS** to upload client logs from app to SAP Cloud Platform Mobil
 
 [ACCORDION-BEGIN [Step 8: ](Examine uploaded logs in Mobile Services cockpit)]
 
-[OPTION BEGIN [Neo]]
-
-Open SAP Cloud Platform Mobile Services Cockpit, click **Analytics** | **Logs**.
-
-![MDK](img_019.png)
-
-Navigate to **Technical Logs** tab. You may set criteria to filter some specific log entries.
-For example, choose **Application ID** as `com.sap.mdk.demo`
-and **Type** as `Client Log`.
-
-![MDK](img_020.png)
-
-You may select required log entries and then either view them directly in Mobile Services Cockpit or download them locally.
-
-![MDK](img_021.png)
-
->You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/viewer/DRAFT/7f3bded2efb9424eb0affaee75bd58ce/1.1/en-US/7dfa70b6be6f4d5ebb6845e7f1e4ae82.html).
-
-[OPTION END]
-
-[OPTION BEGIN [Cloud Foundry]]
-
-Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click on MDK app | **Mobile Client Log Upload | **Logs**.
+Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click on MDK app | **Mobile Client Log Upload** | **Logs**.
 
 ![MDK](img_019.1.png)
 
 You may view log entries directly in Mobile Services Cockpit or download them locally.
 
->You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/viewer/DRAFT/7f3bded2efb9424eb0affaee75bd58ce/1.1/en-US/7dfa70b6be6f4d5ebb6845e7f1e4ae82.html).
-
-[OPTION END]
+>You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/38f23c1381344df9a3ab2d0ea22e689d.html).
 
 [VALIDATE_1]
 [ACCORDION-END]

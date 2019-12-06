@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Authorization in SAP Cloud Platform ABAP environment
 description: Create IAM Apps, services and catalogs for authorization in the SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 20
 ---
 
@@ -51,7 +51,6 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Create authorization field](field5.png)
 
-
 [DONE]
 [ACCORDION-END]
 
@@ -81,7 +80,11 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create authorization object](object5.png)
 
-[DONE]
+5. Add `WDF` as value to authorization field `Z_LOCAFXXX`.
+
+      ![Create authorization object](object6.png)
+
+[DONE] 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create access control)]
@@ -111,17 +114,17 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
   6. Edit your service definition:
     ```ABAP
-        @EndUserText.label: 'Room'
-        @MappingRole: true
-        define role Z_I_Room_XXX
-        {
-          grant
-            select
-                on
-                    Z_I_ROOM_XXX
-                        where
-                            (location) = aspect pfcg_auth(Z_LOCAOXXX, Z_LOCAFXXX, ACTVT = '03');  
-        }
+    @EndUserText.label: 'Room'
+    @MappingRole: true
+    define role Z_I_Room_XXX
+    {
+      grant
+        select
+            on
+                Z_I_ROOM_XXX
+                    where
+                        (location) = aspect pfcg_auth(Z_LOCAOXXX, Z_LOCAFXXX, ACTVT = '03');  
+    }
     ```
     Save and activate.
 
@@ -153,6 +156,8 @@ Save and activate.
 
       ![Edit authorization default values](default2.png)
 
+  3. Set your default values for objects `S_SERVICE` and  `Z_LOCAOXXX`.
+
 
 [DONE]
 [ACCORDION-END]
@@ -166,7 +171,7 @@ Save and activate.
 
       ![Create Access Control](app2.png)
 
-  3.  Create your **service definition:**
+  3.  Create your **IAM App:**
      - Name: **`Z_ROOM_XXX`**
      - Description: **`Room`**
 

@@ -38,6 +38,8 @@ hdbcons -e hdbnameserver "mm gc -f"
 ```
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Copy the First SAP HANA Academy Script)]
@@ -52,6 +54,8 @@ Click on **Raw**.
 
 Use the keys _Ctrl_ + _a_ to select all, and _Ctrl_ + _c_ to copy the script.
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -70,6 +74,8 @@ Open an SQL command line to your **tenant** database through your **new user**. 
 This builds the model used for predictive analysis.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Copy the Second SAP HANA Academy Script)]
@@ -85,6 +91,8 @@ Click on **Raw**.
 Use the keys _Ctrl_ + _a_ to select all, and _Ctrl_ + _c_ to copy the code.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run the Predict SQL Script)]
@@ -96,6 +104,8 @@ Back in your command line, paste the script and click the **Execute** icon ![Exe
 
 ![Results Page](arima_predict_results_2.png)
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -110,6 +120,8 @@ From there, you can view the raw data or create charts under the *Analysis* tab.
 ![Data Preview](data_preview_2.png)
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info: ](Script Information)]
@@ -117,5 +129,6 @@ From there, you can view the raw data or create charts under the *Analysis* tab.
 For more information about the scripts, watch the SAP HANA Academy videos [PAL: 110. Time Series - Auto ARIMA Model](https://www.youtube.com/watch?v=YpC6wATFTA8&index=132) and [PAL: 111. Time Series - Auto ARIMA Predict](https://www.youtube.com/watch?v=qiCuxj7yJmU).
 
 
-[ACCORDION-END]
+[DONE]
 
+[ACCORDION-END]

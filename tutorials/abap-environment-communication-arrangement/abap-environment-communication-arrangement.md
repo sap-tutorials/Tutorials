@@ -3,7 +3,7 @@ auto_validation: true
 title: Maintain a Communication Arrangement for Inbound Communication
 description: Create a communication user and a communication system for an OData service in SAP Cloud Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
 author_name: Niloofar Naseri
 author_profile: https://github.com/niloofar-naseri
@@ -144,7 +144,7 @@ Select your communication scenario that you created in the last tutorial, `Expos
 
       The URL from the communication arrangement should look as followed:
 
-      `https://<your-system>-api.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/Z_BIND_XXX` (where XXX is your group number)
+      `https://<your-system>.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/Z_BIND_XXX` (where XXX is your group number)
 
       ![Enter Data](Picture14.png)
 
@@ -152,14 +152,14 @@ Select your communication scenario that you created in the last tutorial, `Expos
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Check the service URL)]
+[ACCORDION-BEGIN [Step 11: ](Check the service URL via Postman)]
+You can check your service URL via Postman. In Step 12 you'll learn how to check your communication scenario via SAP Cloud Platform Cockpit.
+
   1. Paste your service URL in a browser or in Postman.
 
-  2. Remove `-api` from the link.
+  2. Use the communication user and password.
 
-  3. Use the communication user and password.
-
-  4. Check if you can connect to the service and there is no error.
+  3. Check if you can connect to the service and there is no error.
 
       ![check Service](Picture15b.png)
 
@@ -168,7 +168,69 @@ Select your communication scenario that you created in the last tutorial, `Expos
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test yourself)]
+
+[ACCORDION-BEGIN [Step 12: ](Check communication scenario via SAP Cloud Platform Cockpit)]
+  1. Logon to your [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com).
+
+    ![check scenario](check.png)
+
+  2. Select your global account.
+
+    ![check scenario](check2.png)
+
+  3. Select Subaccounts.
+
+    ![check scenario](check3.png)
+
+  4. Select your subaccount.
+
+    ![check scenario](check4.png)
+
+  5. Select your space dev.
+
+    ![check scenario](check5.png)
+
+  6. Select Service Instances.
+
+    ![check scenario](check6.png)
+
+  7. Select your service instance.
+
+    ![check scenario](check7.png)
+
+  8. Select Service Keys.
+
+    ![check scenario](check8.png)
+
+  9. Click Create Service Key.
+
+    ![check scenario](check9.png)
+
+
+  10. Create Service key with following parameters:
+      - Name: ADT
+      - Configuration Parameters (JSON):
+
+    ```JSON
+    {
+     "scenario_id":"Z_COMMU_XXX",
+     "type":"basic"
+     }
+    ```
+
+    ![check scenario](check10.png)
+
+  11. Now your service key is listed. The successful creation of the service key proved the existence of the communication scenario.
+
+    ![check scenario](check11.png)
+
+
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 13: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

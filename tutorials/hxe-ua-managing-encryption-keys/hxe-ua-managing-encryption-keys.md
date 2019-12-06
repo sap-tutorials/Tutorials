@@ -36,6 +36,8 @@ You receive four results pages. The first page will give you the reset count to 
 The next three result pages should not contain any entries. If one of these pages has an entry, you may want to contact your HANA administrator before proceeding as you will lose access to the files listed.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Copy the SAP HANA Academy code)]
@@ -46,6 +48,8 @@ Using your preferred web browser, go to the [SAP HANA Academy GitHub](https://gi
 
 Press **Ctrl + a** to select all, and then **Ctrl + c** to copy the code.
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -68,6 +72,8 @@ vi changeSSFSMasterKeys.sh
 In the editor, paste the code from the SAP HANA Academy page. Press `Esc` to exit then `:wq` to write and quit the editor.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Change the Permissions of changeSSFSMasterKeys.sh)]
@@ -78,6 +84,8 @@ Give `changeSSFSMasterKeys.sh` execute permissions.
 chmod u+x changeSSFSMasterKeys.sh
 ```
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -92,6 +100,8 @@ Execute the `changeSSFSMasterKeys.sh` script.
 Follow the on-screen prompts to reset your encryption keys. This process will take some time.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Check if Encryption Was Successful)]
@@ -105,5 +115,6 @@ SELECT * FROM SYS.M_SECURESTORE;
 The `RESET_COUNT` for the `KEY_TYPE` `DPAPI` will increase by 1.
 
 
-[ACCORDION-END]
+[DONE]
 
+[ACCORDION-END]

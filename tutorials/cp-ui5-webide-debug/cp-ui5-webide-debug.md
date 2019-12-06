@@ -52,6 +52,8 @@ data-sap-ui-logLevel="debug"
 [ACCORDION-BEGIN [Step : ](Write a log message to the console)]
 
 Import the logger to the file `tutorial/ui/webapp/controller/View1.controller.xml` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
+
+Replace line #2 and #3 with this snippet:
 ```JavaScript
 ,
 	"sap/base/Log"
@@ -67,6 +69,7 @@ onBeforeRendering: function() {
 },
 ```
 
+The controller code should like as follows now:
 ![logger](./logger.png)
 
 

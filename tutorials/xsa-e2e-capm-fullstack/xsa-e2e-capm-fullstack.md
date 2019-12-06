@@ -8,9 +8,8 @@ primary_tag: products>sap-cloud-platform--sap-hana-service
 ---
 
 ## Prerequisites
- - You have [created a trial account in SAP Cloud Platform](hcp-create-trial-account)
+ - You have [created a trial account in SAP Cloud Platform in region `EU10`](hcp-create-trial-account)
  - You have [enabled SAP Web IDE Full stack](webide-multi-cloud)
- - You have configured and [installed a builder](https://developers.sap.com/tutorials/webide-customize.html#da2f1d94-18a2-44df-ae0d-9ee14f752ca2) in your space
  - You have enabled the extensions for SAP HANA, Business Applications Development tools and SAP HANA under `Preferences -> Extensions`
 
 ## Details

@@ -2,10 +2,12 @@
 title: Create a Tenant Database
 description: Learn how to complete common tasks when setting up a new database. In this tutorial, you will create a tenant database using either HANA cockpit or an SQL command line.
 primary_tag: products>sap-hana\,-express-edition
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition  ]
 time: 15
 ---
-## Prerequisites  
+## Prerequisites
  - [Sample Project](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-sample-project.html)
 
 
@@ -13,10 +15,10 @@ time: 15
  - [Create a Backup](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-backups.html)
 
 ## Details
-### You will learn  
+### You will learn
   - How to create a tenant database using either HANA Cockpit or an SQL command line
 
-  
+
 ---
 
 > When creating a tenant database, expect your system to use more memory. Ensure your system has enough memory to run an additional database.
@@ -51,6 +53,8 @@ time: 15
     ![Successfully Created Tenant Database](success.png)
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Option 2: ](Using an SQL Command Line)]
@@ -70,5 +74,6 @@ CREATE DATABASE TENANTDB SYSTEM USER PASSWORD Password1
 This creates the tenant database "TENANTDB" with the SYSTEM user password "`Password1`".
 
 
-[ACCORDION-END]
+[DONE]
 
+[ACCORDION-END]

@@ -134,11 +134,11 @@ primary_tag: products>sap-api-management
         </div>
         </div>
         ```
-        ![UI Front](08-code-ui-front.png)
+    ![UI Front](08-code-ui-front.png)
 
-9. Click **Flip to Back**
+9. Click **Flip to Back**.
 
-![UI Front](06-flip-to-back.png)
+    ![UI Front](06-flip-to-back.png)
 
 10.	Copy the below code and paste it into the Source Code box.
 
@@ -170,8 +170,7 @@ primary_tag: products>sap-api-management
         {{/each}}
           </table>
         </div>
-
-    ```
+        ```
 
 11. Click the **Data Mapping** tab
 
@@ -233,8 +232,6 @@ primary_tag: products>sap-api-management
     >Skip any passcode requirements.
 
 2. Subscribe to the card `SalesOrderCard`.
-
-    ![Scan QR](13-qr-code.png)
 
 3.	You will now have a Mobile Card on your phone with record information provided from S4HANA.
 

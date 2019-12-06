@@ -1,6 +1,8 @@
 ---
 title: Analyze the Iris Dataset with Pandas using the SAP HANA Python Data Frame
 description: Download and Analyze the Iris dataset using your SageMaker Notebook and Pandas
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: topic>machine-learning
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
@@ -64,8 +66,8 @@ Rename your notebook document **`hxe-aws-eml-iris-01.ipynb`** using the menu bar
 In the first cell, paste the following code then press **SHIFT** + **ENTER** to execute the code:
 
 ```Python
-!pip install /home/ec2-user/sap/hdbclient/hdbcli-*.tar.gz
-!pip install /home/ec2-user/sap/hdbclient/hana_ml-*.tar.gz
+!pip install -q /home/ec2-user/SageMaker/sap/hdbclient/hdbcli-*.tar.gz
+!pip install -q /home/ec2-user/SageMaker/sap/hdbclient/hana_ml-*.tar.gz
 ```
 
 [DONE]

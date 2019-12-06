@@ -1,5 +1,5 @@
 const { URL } = require('url');
-const { regexp } = require('../constants');
+const { regexp, linkCheck: { EXCLUDED_HOSTS }  } = require('../constants');
 
 function removeTrailingSign(string, sign) {
   if (string.endsWith(sign)) {
@@ -27,12 +27,18 @@ const extractLinks = (content) => {
     while (match = regex.exec(clearContent)) {
       links.push(match[1]);
     }
+
     return links;
   })
     .reduce((prev, curr) => prev.concat(curr), [])
     .map((mdLink) => {
       try {
-        const url = new URL(mdLink).toString();
+        const urlObject = new URL(mdLink);
+
+        if (EXCLUDED_HOSTS.includes(urlObject.hostname)) {
+          return;
+        }
+        const url = urlObject.toString();
         return removeTrailingSign(url, '/');
       } catch (e) {
         console.warn('Not a valid url', mdLink);
@@ -43,11 +49,11 @@ const extractLinks = (content) => {
   return [...(new Set(links))];
 };
 
-const is2xx = statusCode => /^2/.test(`${statusCode}`);
+const isErrorStatusCode = statusCode => /^(4|5)/.test(`${statusCode}`);
 const isHttps = url => new URL(url).protocol.startsWith('https');
 
 module.exports = {
   extractLinks,
-  is2xx,
   isHttps,
+  isErrorStatusCode,
 };

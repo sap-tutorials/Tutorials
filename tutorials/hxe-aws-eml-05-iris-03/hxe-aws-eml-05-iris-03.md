@@ -1,6 +1,8 @@
 ---
 title: Train your Iris Model using Amazon SageMaker
 description: Leverage the TensorFlow Python SDK for SageMaker to build your classification model
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: topic>machine-learning
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
@@ -277,9 +279,6 @@ tar xf ./model/model.tar.gz
 # display all model signatures
 saved_model_cli show --all --dir ./export/Servo/*
 
-# cleanup
-rm -Rf ./export
-rm -Rf ./model
 ```
 
 Provide an answer to the question below then click on **Validate**.

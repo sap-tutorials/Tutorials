@@ -13,7 +13,7 @@ author_profile: https://github.com/jitendrakansal
 - **Tutorial:** [Setup initial configuration for an MDK App in SAP Cloud Platform Mobile Services](cp-mobile-dev-kit-ms-setup)
 - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
 - **Download and install:** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
-- **Download and install:** [Lightning QR Scanner](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) (required only for Android device)
+- **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
 ### You will learn
@@ -41,12 +41,8 @@ You have built an MDK app with offline functionality. In offline store, you make
 
 ![MDK](img_1.gif)
 
->**This tutorial has been executed with Mobile Services in SAP Cloud Platform Neo and Cloud Foundry environment, please switch to either tab according to your environment.**
-
 [ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Web IDE)]
 
-[OPTION BEGIN [Neo]]
-
 This step includes creating the Mobile Development Kit project in the Editor.
 
 Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
@@ -57,55 +53,7 @@ Right click on Workspace folder and select **New** | **MDK CRUD Project**.
 
 >_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
 
->More details on _MDK template_ is available in
-[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
-
-Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
-
-![MDK](img_002.png)
-
-Leave the default values in _Application Creation_ step as it is, click **Next**.
-
-In _Service Creation_ step, provide and select the below information:
-
-| Field | Value |
-|----|----|
-| `Name`| `SampleServiceV2` |
-| `Service URL` | `/destinations/mobileservices` |
-| `Application ID` | `com.sap.mdk.demo` |
-| `Service URL` | `com.sap.edm.sampleservice.v2` |
-| `Enable Offline Store` | `Should be checked` |
-
->For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
-
-![MDK](img_004.png)
-
-Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
-
-Since you will create an offline based app, hence _Enable Offline Store_ option is selected.
-
-Click **Check Service** to validate the service properties. If all the details are fine, you will see a success message. Click **Next**.
-
-![MDK](img_005.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Cloud Foundry]]
-
-Make sure that you have already created a new destination `mobileservices_cf` as per [previous tutorial](fiori-ios-hcpms-setup). This is required to connect SAP Web IDE to Mobile Services running in Cloud Foundry environment.
-
-This step includes creating the Mobile Development Kit project in the Editor.
-
-Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
-
-Right click on Workspace folder and select **New** | **MDK CRUD Project**.
-
-![MDK](img_001.1.png)
-
->_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
-
->More details on _MDK template_ is available in
-[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+>More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
 
 Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
 
@@ -123,6 +71,8 @@ In _Service Creation_ step, provide and select the below information:
 | `Service URL` | `com.sap.edm.sampleservice.v2` |
 | `Enable Offline Store` | `Should be checked` |
 
+> If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
+
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
 ![MDK](img_004.1.png)
@@ -135,13 +85,15 @@ Click **Check Service** to validate the service properties. If all the details a
 
 ![MDK](img_005.png)
 
-[OPTION END]
-
 >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
 
-In following steps, click **Next** with default selections and **Finish** the project creation.
+In **Metadata Source** step, select `PurchaseOrderHeaders` and `PurchaseOrderItems`‚ and click **Next**.
+
+In following steps go with default selections and **Finish** the project creation.
 
 ![MDK](img_006.gif)
+
+After clicking Finish, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_ErrorArchive` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -286,9 +238,9 @@ Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Comp
 
 ![MDK](img_007.12.png)
 
-In the **Properties** | **Target** pane, click **Object Browser** icon, provide `#Property:AffectedEntity` in **Expression** box and click **OK**.
+In the **Properties** | **Target** pane, choose **String Target** from the dropdown and provide `#Property:AffectedEntity` value.
 
-![MDK](img_007.13.gif)
+![MDK](img_007.13.png)
 
 In **Appearance** section, provide below properties:
 
@@ -421,7 +373,7 @@ Save your changes to the `ErrorList.page` file.
 
 [ACCORDION-BEGIN [Step 5: ](Navigate from Error details page to affected record)]
 
-When you clicks on an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
+When you click on an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
 
 You can write a logic in JavaScript to handle the `affectedEntity` and then decide which action to call depends on which `@odata.id` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message.
 
@@ -469,7 +421,9 @@ export default function DecideWhichEditPage(context) {
   let affectedEntityType = "Unknown Entity Set"; //By default it's unknown type
   if (id.indexOf("(") > 0) {
     //Extracting the entity set type from @odata.id e.g. PurchaseOrderHeaders
-    affectedEntityType = id.substring(0, id.indexOf("("));
+    var patt = /\/?(.+)\(/i;
+   var result = id.match(patt);
+   affectedEntityType = result[1];
   }
   console.log("Affected Entity Type Is:");
   console.log(affectedEntityType);
@@ -502,7 +456,7 @@ Save your changes to the `DecideWhichEditPage.js` file.
 
 Next, bind this file to `onPress` of **Object Table** in **Error Details** page.
 
-Open **Error Details** page | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+Open **Error Details** page | Select **Object Table** control | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
 Double click on the `DecideWhichEditPage.js` action and click **OK** to set it as the `OnPress` Action.
 
@@ -532,7 +486,7 @@ Provide the below information:
 
 ![MDK](img_007.26.png)
 
-Next, on **Main page**, drag and drop the **Section Button** container onto the Page.
+Next, on **Main page**, drag and drop the **Section Button** Container Item control onto the Page.
 
 ![MDK](img_007.27.gif)
 
@@ -557,7 +511,7 @@ Save the changes to the `Main` page.
 
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
 ![MDK](img_009.png)
 
@@ -567,23 +521,13 @@ Let the default configuration as it is and click **Next**.
 
 >_Filter Files_ will be filtered and ignored in web packing process.
 
->_Externals_ is a list of NPM modules to be excluded from the bundle.
+>_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
+
+Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
 
 >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-[OPTION BEGIN [Neo]]
-
-![MDK](img_014.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Cloud Foundry]]
-
-Based on the `mobileservices_cf` destination, you will find list of existing application IDs , select the one you have chosen while creating the project in step 1
-
 ![MDK](img_014.1.png)
-
-[OPTION END]
 
 Click **Next** to finish the deployment from SAP Web IDE.
 
@@ -598,7 +542,7 @@ You should see **Application deployed successfully** message in console log.
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-Right click on the MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
 ![MDK](img_009.png)
 
@@ -606,56 +550,142 @@ Let the default configuration as it is and click **Next**.
 
 ![MDK](img_010.png)
 
-[OPTION BEGIN [Neo]]
-
-Click on QR code icon to populate QR code for app on-boarding.
-
-![MDK](img_012.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Cloud Foundry]]
-
-Click on QR code icon to populate QR code for app on-boarding.
+Click on the **QR-code icon** to populate the QR-code for app on-boarding.
 
 ![MDK](img_012.1.png)
-
-[OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run the app in MDK client)]
 
->Below steps & screenshots were captured with iOS device. You will have similar on-boarding experience with Android as well.
+>Make sure you are choosing the right device platform tab above.
+
+[OPTION BEGIN [Android]]
+
+On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
+
+Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
+
+Tap **Open browser**. It will open SAP Mobile Services Client app.
+
+![MDK](img_013.1.jpg)
+
+Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+
+![MDK](img_016.1.jpg)
+
+Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+
+![MDK](img_017.1.png)
+
+Tap **AGREE** on `End User License Agreement`.
+
+![MDK](img_018.1.jpg)
+
+Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+
+![MDK](img_019.1.jpg)
+
+Confirm the passcode and tap **DONE**.
+
+![MDK](img_021.1.png)
+
+Optionally, you can enable fingerprint to get faster access to the app data.
+
+![MDK](img_022.1.png)
+
+Tap **OK**.
+
+![MDK](img_023.1.png)
 
 The MDK client receives deployed metadata definitions as a bundle.
 
-Click **Start** to connect MDK client to SAP Cloud Platform.
+Now, you will see **Main** page with some entity sets being displayed and Offline store is being initialized.
+
+![MDK](img_023.2.png)
+
+You will modify a `PURCHASEORDERHEADERS` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
+
+Navigate to `PURCHASEORDERHEADERS` list, tap either one of the record.
+
+![MDK](img_023.3.png)
+
+![MDK](img_023.4.png)
+
+Tap edit icon.
+
+![MDK](img_023.5.png)
+
+Make some changes to `SUPPLIERID` value and **SAVE** it.
+
+![MDK](img_023.6.png)
+
+You will see **Entity Updated** toast message. You can always see this updated record reflecting in `PURCHASEORDERHEADERS` list which means offline store has accepted this change.
+
+Navigate to `Main.page`, click **SYNC** to upload local changes from device to the backend and to download the latest changes from backend to the device.
+
+![MDK](img_023.7.png)
+
+Once you see Sync success message, navigate to **ERROR ARCHIVE** list.
+
+![MDK](img_023.8.png)
+
+There you will find affected entity which couldn't get accepted by backend due to some business logic failure.
+
+![MDK](img_023.9.png)
+
+Tapping any record navigates to **Error Details** page with more information about error.
+
+Here in **ERROR MESSAGE** you will see `violates foreign key constraint` and in **REQUEST BODY**, it shows the property that caused this failure.
+
+![MDK](img_024.1.png)
+
+It's now up-to developers how to handle such errors and let users to modify record with correct values.
+
+In this tutorial, we have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **SYNC** it with backend.
+
+Tap **Edit Affected Entity** and modify record with correct values.
+
+![MDK](img_024.2.png)
+
+![MDK](img_024.3.png)
+
+[OPTION END]
+
+[OPTION BEGIN [iOS]]
+
+On iPhone, open your camera app and start scanning the QR code, as shown below.
+
+![MDK](img_013.png)
+
+Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
+
+Tap **Start** to connect MDK client to SAP Cloud Platform.
 
 ![MDK](img_016.png)
 
-Enter your SAP Cloud Platform credentials and click **Log On** to authenticate.
+Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-![MDK](img_017.png)
+![MDK](img_017.17.png)
 
-**Agree** on `End User License Agreement`.
+Tap **Agree** on `End User License Agreement`.
 
 ![MDK](img_018.png)
 
-Choose a passcode with at least 8 characters for unlocking the app and click **Next**.
+Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
 ![MDK](img_019.png)
 
-Confirm the passcode and click **Done**.
+Confirm the passcode and tap **Done**.
 
 ![MDK](img_020.png)
 
-Optionally, you can enable Touch ID to get faster access to the app data, click **Enable**.
+Optionally, you can enable Touch ID to get faster access to the app data, tap **Enable**.
 
 ![MDK](img_021.png)
 
-Click **OK**.
+Tap **OK**.
 
 ![MDK](img_022.png)
 
@@ -665,13 +695,13 @@ Now, you will see **Main** page with some entity sets being displayed and Offlin
 
 You will modify a `PurchaseOrderHeaders` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
 
-Navigate to `PurchaseOrderHeaders` list, click either one of the record.
+Navigate to `PurchaseOrderHeaders` list, tap either one of the record.
 
 ![MDK](img_024.png)
 
 ![MDK](img_025.png)
 
-Click **Edit**.
+Tap **Edit**.
 
 ![MDK](img_026.png)
 
@@ -693,7 +723,7 @@ There you will find affected entity which couldn't get accepted by backend due t
 
 ![MDK](img_029.png)
 
-Clicking any record navigates to **Error Details** page with more information about error.
+Tapping any record navigates to **Error Details** page with more information about error.
 
 Here in **Error Message** you will see `SQL Exception: Foreign key constraint violation occured` and in **Request Body**, it shows the property that caused this failure.
 
@@ -703,11 +733,13 @@ It's now up-to developers how to handle such errors and let users to modify reco
 
 In this tutorial, we have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **Sync** it with backend.
 
-Click **Edit Affected Entity** and modify record with correct values.
+Tap **Edit Affected Entity** and modify record with correct values.
 
 ![MDK](img_031.png)
 
 ![MDK](img_032.png)
+
+[OPTION END]
 
 [VALIDATE_1]
 [ACCORDION-END]
