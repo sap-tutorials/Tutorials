@@ -48,7 +48,7 @@ function deleteBusinessPartnerAddress(businessPartnerId: string, addressId: stri
 This follows the implementation in the previous tutorials. `deleteBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next step. Now open `application.ts`, import the function and add the following route definition:
 
 ```JavaScript / TypeScript
-import { businessPartnerRoute } from './business-partner-route';
+import { businessPartnersRoute } from './business-partners-route';
 import { singleBusinessPartnerRoute } from './single-business-partner-route';
 import { createBusinessPartnerAddressRoute } from './create-business-partner-address-route';
 import { updateBusinessPartnerAddressRoute } from './update-business-partner-address-route';
@@ -59,15 +59,15 @@ import { deleteBusinessPartnerAddressRoute } from './delete-business-partner-add
 private routes(): void {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
-  router.get("/business-partners", businessPartnerRoute);
-  router.get("/business-partners/:id", singleBusinessPartnerRoute);
-  router.post("/business-partners/:id/address", createBusinessPartnerAddressRoute);
-  router.put("/business-partners/:id/address/:addressId", updateBusinessPartnerAddressRoute)
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
+  router.get('/business-partners', businessPartnersRoute);
+  router.get('/business-partners/:id', singleBusinessPartnerRoute);
+  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
+  router.put('/business-partners/:id/address/:addressId', updateBusinessPartnerAddressRoute);
   // add the following line
-  router.delete("/business-partners/:id/address/:addressId", deleteBusinessPartnerAddressRoute)
-  this.app.use("/", router);
+  router.delete('/business-partners/:id/address/:addressId', deleteBusinessPartnerAddressRoute);
+  this.app.use('/', router);
 }
 ```
 [OPTION END]
@@ -98,7 +98,7 @@ function deleteBusinessPartnerAddress(businessPartnerId, addressId) {
 This follows the implementation in the previous tutorials. `deleteBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next step. Now open `application.js`, import the function and add the following route definition:
 
 ```JavaScript
-const { businessPartnerRoute } = require('./business-partner-route');
+const { businessPartnersRoute } = require('./business-partners-route');
 const { singleBusinessPartnerRoute } = require('./single-business-partner-route');
 const { createBusinessPartnerAddressRoute } = require('./create-business-partner-address-route');
 const { updateBusinessPartnerAddressRoute } = require('./update-business-partner-address-route');
@@ -109,15 +109,15 @@ const { deleteBusinessPartnerAddressRoute } = require('./delete-business-partner
 private routes() {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
-  router.get("/business-partners", businessPartnerRoute);
-  router.get("/business-partners/:id", singleBusinessPartnerRoute);
-  router.post("/business-partners/:id/address", createBusinessPartnerAddressRoute);
-  router.put("/business-partners/:id/address/:addressId", updateBusinessPartnerAddressRoute)
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
+  router.get('/business-partners', businessPartnersRoute);
+  router.get('/business-partners/:id', singleBusinessPartnerRoute);
+  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
+  router.put('/business-partners/:id/address/:addressId', updateBusinessPartnerAddressRoute);
   // add the following line
-  router.delete("/business-partners/:id/address/:addressId", deleteBusinessPartnerAddressRoute)
-  this.app.use("/", router);
+  router.delete('/business-partners/:id/address/:addressId', deleteBusinessPartnerAddressRoute);
+  this.app.use('/', router);
 }
 ```
 [OPTION END]
