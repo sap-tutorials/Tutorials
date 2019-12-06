@@ -48,6 +48,8 @@ Download and install the appropriate Docker Edition for your system. Visit the [
 
 > **Note:** Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Manage Storage System)]
@@ -74,6 +76,8 @@ sudo systemctl restart docker.service
 
 For more information on the storage driver, visit the [Docker storage drivers](https://docs.docker.com/storage/storagedriver/select-storage-driver/) documentation page.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Log Into Docker)]
@@ -85,6 +89,8 @@ sudo docker login
 ```
 
 Follow the prompts and provide your Docker ID and password.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -116,6 +122,8 @@ Remove the alpine image with the following command:
 ```bash
 sudo docker image rm alpine -f
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -150,6 +158,8 @@ The SAP HANA, express edition image will be listed as `hanaexpressxsa`.
 > **Note:**
 > You may have to log into your Docker account to pull the image. From your Docker-enabled command line, run `docker login` and follow the prompts to enter your Docker ID and password. Once you have logged in, try the pull command again.
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -173,6 +183,8 @@ Load the changes by running:
 sudo /sbin/sysctl -p
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Edit the /etc/hosts file)]
@@ -184,6 +196,8 @@ Use the following command:
 ```bash
 sudo sh -c 'echo <hxehost_IP_address>    hxehost >> /etc/hosts'
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -245,6 +259,8 @@ Be sure to do this with each `json` file you use for your Docker containers.
 
 Make a note of the path to the `json` file. You will need this to load the SAP HANA, express edition container.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Start SAP HANA, express edition Container)]
@@ -305,6 +321,8 @@ This example creates the SAP HANA, express edition container with the name `expr
 > **Note:**
 > For Linux kernel versions earlier than 4, omit the `net.ipv4.ip_local_port_range` option.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Log into SAP HANA, express edition Container)]
@@ -321,6 +339,8 @@ Example:
 sudo docker exec -it express_edition bash
 ```
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -346,6 +366,8 @@ And you should see the following services running:
 * `hdbcompileserver`
 * `hdbdiserver`
 * `hdbwebdispatcher`
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -397,6 +419,8 @@ ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_
 >```
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ]((Optional) Test SAP Web IDE)]
@@ -431,6 +455,8 @@ Example: https://hxehost:53075
 Log on to Web IDE using the `XSA_DEV` user and the password you made during installation.
 
 If you are prompted to change your password, follow the instructions.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -474,6 +500,8 @@ sudo ./hxe_upgrade.sh
 
 Follow the prompts to complete the server update.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Docker Run Usage: ](-Help Command)]
@@ -502,6 +530,8 @@ usage: [options]
 
 --agree-to-sap-license             Indicates you agree to the SAP Developer Center Software Developer License Agreement.
 ```
+
+[DONE]
 
 [ACCORDION-END]
 

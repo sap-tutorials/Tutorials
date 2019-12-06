@@ -43,10 +43,6 @@ Enter the Page Name `Customers_Detail` and click **Next** and the **Finish** on 
 
 ![MDK](img_002.png)
 
-In `Customers_Detail` page, select the page header area and then click **Page**.
-
-![MDK](img_002.1.png)
-
 In the **Properties** pane set the Caption to **Customer Detail**.
 
 ![MDK](img_003.1.png)

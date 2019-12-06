@@ -41,6 +41,8 @@ Run the `hxe_gc` memory management script to free up available VM memory
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download sdi.tgz)]
@@ -50,6 +52,8 @@ In your VM, download `sdi.tgz` using the built-in Download Manager. From the sam
 ```bash
 HXEDownloadManager_linux.bin linuxx86_64 vm sdi.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -61,6 +65,8 @@ In your VM, extract `sdi.tgz`:
 tar -xvzf sdi.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run the installation script)]
@@ -71,10 +77,14 @@ As the `hxeadm` user, run:
 HANA_EXPRESS_20/install_sdi.sh
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Next steps)]
 
 To use adapters other than the OData adapter, you will also need to install the Data Provisioning Agent.
+
+[DONE]
 
 [ACCORDION-END]

@@ -26,7 +26,7 @@ time: 15
 [ACCORDION-BEGIN [Step 2: ](Create task form)]
 1. In your workspace, choose **`MyWorkflowProject`** | **`MyWorkflow`** | **`workflows`**. Then double-click the **`ApprovalWorkflow.workflow`** file.
 
-    ![Open File](open-approvalwf.png)
+    ![Open File](open-approvalwf-new.png)
 
 2. To create a user task in the editor, select **`StartEvent1`** and then from the `speedbuttons` choose **User Task** .
 
@@ -98,7 +98,7 @@ A message confirms that the form has been created.
 
 
 [ACCORDION-BEGIN [Step 5: ](Complete the user task)]
-1. Right-click the `ApprovalWorkflow.workflow` file, and choose **Workflow Editor**.
+1. Go back to the `ApprovalWorkflow.workflow` file. If you have closed it, reopen it by selecting and choosing **Workflow Editor**.
 
 2. Under **User Task Properties** | **GENERAL**, enter `ApproveBook` in the **Name** field.
 
@@ -120,13 +120,15 @@ A message confirms that the form has been created.
 
 [ACCORDION-BEGIN [Step 6: ](Build the workflow project)]
 
-1. Build the **`MyWorkflowProject`** project by right-clicking it and choosing **Build** | **Build**.
+1. Build the **`MyWorkflowProject`** project by right-clicking it and choosing **Build** | **Build with Cloud MTA Build Tool (recommended)**.
 
-    ![Build Workflow Project](build-wf-project.png)
+    ![Build Workflow Project](build-wf-project-rec.png)
+
+    You will receive a build confirmation popup.
 
 2. In your workspace from the **`mta_archives`** folder, right-click the `MyWorkflowProject_0_0_1.mtar` file and choose **Deploy** | **Deploy to SAP Cloud Platform**.
 
-    ![Deploy File](deploy-wf-mtar.png)
+    ![Deploy File](deploy-wf-mtar-new.png)
 
 3. In the popup, select your API endpoint, organization, and space.
 
@@ -134,16 +136,18 @@ A message confirms that the form has been created.
 
     ![Deploy](deploy.png)
 
+    You will receive a deploy confirmation popup.
+
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 7: ](Open the Workflow Monitor - Workflow Definitions app)]
-1. Access your SAP Fiori launchpad at `https://<dev space name>-trial-dev-myflpproject-approuter.cfapps.<your endpoint>.hana.ondemand.com/cp.portal`.
+1. Open your browser and access your SAP Fiori launchpad at: `https://<dev space name>-trial-dev-workflowtilesapprouter.cfapps.<your endoint>.hana.ondemand.com`.
 
 2. Choose the **Workflow Monitor - Workflow Definitions** tile, and for the `ApprovalWorkflow` task choose **Start New Instance**.
 
-  ![Start New Instance](start-new-instance.png)
+    ![Start New Instance](start-new-instance.png)
 
 3. Leave the `JSON` context as is, and choose **Start New Instance**.
 

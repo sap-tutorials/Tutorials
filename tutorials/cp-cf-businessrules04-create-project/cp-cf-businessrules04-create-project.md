@@ -8,6 +8,8 @@ primary_tag: products>sap-cloud-platform-business-rules
 author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
+## Prerequisites
+ - You have accessed the **Manage Rules Project** application. For more information, see [Set up the Manage Rules Project Application](cp-cf-businessrules03-setup-mrp).
 
 ## Details
 ### You will learn
@@ -17,9 +19,7 @@ A project is used to configure and manage the entities of business rules. It con
 
 [ACCORDION-BEGIN [Step 1: ](Open Manage Rules Project application)]
 
-Use application URL that you configured using the previous tutorial to open the **Manage Rules Project** application.
-
-In the Manage Rules Project screen, choose +.
+ Open the **Manage Rules Project** application. In the **Manage Rules Project** screen, choose +.
 
 ![Manage Rule Project Application](create_project0.png)
 

@@ -17,6 +17,8 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - Basic annotations for controlling the UI of SAP Fiori Element List Reports
 - How SAP Fiori Elements apps cause appropriate OData operations to be generated
 
+**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+
 In the previous tutorial you got the consumer app retrieving data from the remote mock service, and saw the data in raw form (<http://localhost:4004/catalog/Orders?$expand=address>) -- that is, a JSON representation of a response to an OData query operation.
 
 To complete this mission, you will now make use of the SAP Cloud Application Programming Model runtime's _SAP Fiori preview_ feature, and supply annotations describing what information should appear in that preview. Needless to say, you'll specify information from both local and remote sources.
@@ -217,8 +219,7 @@ annotate CatalogService.Orders with @(
 		HeaderInfo: {
 			TypeName: 'Order',
 			TypeNamePlural: 'Orders',
-			Title: { Value: book.title },
-			Description: { Value: book.author.name }
+			Description: { Value: book.title }
 		}
 	}
 
@@ -233,7 +234,7 @@ It will also cause the display of any selected item from the list, to look like 
 
 ![display of selected item](selected-item-display.png)
 
-Note that the value for the description follows multiple navigation paths, from the order through the book navigation property, and from there, through the author navigation property, to the name property (`book.author.name`). Lovely!
+Lovely!
 
 [DONE]
 [ACCORDION-END]

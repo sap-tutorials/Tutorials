@@ -13,7 +13,7 @@ time: 15
 ### You will learn  
   - How to register on the SAP website
   - How to start your SAP Cloud Platform trial
-  - Learn how to 90 days trial works
+  - How the 90-day trial works
   - How to navigate to your sub-account and space
   - Where to find information on three important Cloud Foundry areas:  Applications, Service Marketplace, and Service Instances
 
@@ -109,6 +109,7 @@ You will then see a dialog box while the account is set up.  When complete, the 
 You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 
 ![enter trial account](enter-trial.png)
+> Bookmark the link for fast and quick access to the cockpit.  
 
 The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 

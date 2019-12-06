@@ -17,6 +17,10 @@ time: 20
 
 ---
 
+> The SAP managed offerings for PostgreSQL, Mongo DB, Redis and RabbitMQ will be removed from the price list starting Q3/2019 i.e. July 15th and are scheduled to be retired as of Jan 15, 2020.
+
+> **Therefore, depending on you account type, you might not be able to complete this tutorial anymore**
+
 [ACCORDION-BEGIN [Step 1: ](Define and install the dependencies)]
 
 Before you can start the actual development of the application, you need to define some dependencies and the metadata of the project. To do this, create a new `package.json` file:

@@ -37,7 +37,7 @@ Check **Log Upload** option and click **Save**.
 
 >Other policy parameters like Log Level, Delete Uploaded Log After, Maximum Number of Logs and Maximum Log Size currently have no effect.
 
->You can find more details about [Client Log Upload feature](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/662c8a51d3df48bb99baea65855f3441.html).
+>You can find more details about [Client Log Upload feature](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/ee280404f7ea4bb1ac12d2271815e3e0.html).
 
 [DONE]
 [ACCORDION-END]
@@ -123,21 +123,15 @@ Click **Save**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Set State log action at app OnLaunch)]
+[ACCORDION-BEGIN [Step 4: ](Bind Set State log action to success of InitializeOffline action)]
 
-You will add `LogSetState.action` at application `onLaunch` event so that app can start gathering logs on launch.
+When the metadata is downloaded from App Update, `OnDidUpdate` event is being called which eventually triggers `InitializeOffline.action`. You can look at `Application.app` file for the details.
 
-Double click on the `Application.app` file | click on **+** icon to add required action.
+You will bind `LogSetState.action` at success of  `InitializeOffline.action`.
 
-![MDK](img_008.png)
+Open the `InitializeOffline.action`, scroll-down and expand **Common Action Properties** section, select `LogSetState.action` for the **Success Action**.  
 
-Double-click  `LogSetState.action` and click **OK**.
-
-![MDK](img_009.png)
-
-This is how final results should look like.
-
-![MDK](img_010.png)
+![MDK](img_1.gif)
 
 Click **Save**.
 
@@ -284,7 +278,7 @@ Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** |
 
 You may view log entries directly in Mobile Services Cockpit or download them locally.
 
->You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/viewer/DRAFT/7f3bded2efb9424eb0affaee75bd58ce/1.1/en-US/7dfa70b6be6f4d5ebb6845e7f1e4ae82.html).
+>You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/38f23c1381344df9a3ab2d0ea22e689d.html).
 
 [VALIDATE_1]
 [ACCORDION-END]

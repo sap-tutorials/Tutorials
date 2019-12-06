@@ -27,165 +27,66 @@ time: 15
 
     ![Show Hidden Files](show-hidden-files.png)
 
-5. Under **Files**, right-click **Workspace** and choose **New** | **Project from Template**.
+5. Under **Files**, right-click **Workspace** and choose **New** | **New Project from Sample Application**.
 
-    ![Choose Workspace](choose-workspace2.png)
+    ![Create Project](create-sample-project.png)
 
-6. In the wizard, set **Environment** to **Cloud Foundry** and select the **Multi-Target Application** template. Then choose **Next**.
+6. In the wizard, set **Category** to **Workflow Sample Application** and select the **Workflow Applications on SAP Fiori Launchpad for Cloud Foundry** template. Then choose **Next**.
 
-    ![Choose Multi-Target Application](select-app.png)
+    ![Choose Workflow Sample Application](select-wf-sample-app.png)
 
-7. Enter a name for the new project, for example, `MyFLPProject`, then choose **Next**.
+7. Select the checkbox and provide your consent to create the application, and choose **Finish**.
 
-    ![Enter Project Name](flp-launchpad3-project.png)
-
-8. Select **Use HTML5 Application Repository**, then choose **Finish**.
-
-    ![Check HTML5](html5-checked-2.png)
-
-[DONE]
-[ACCORDION-END]
+    ![Consent to Creation](consent-creation.png)
 
 
-[ACCORDION-BEGIN [Step 2: ](Add an SAP Fiori launchpad module)]
-1. Right-click your `MyFLPProject` project, and choose **New** | **SAP Fiori Launchpad Site Module**.
+You now see a project with an `mta.yaml` file in your workspace:
 
-    ![Create Launchpad Site Module](flp-site-module.png)
+![Sample Application](sample-app.png)    
 
-2. Enter the module name `MyFLP`, and choose **Finish**.
-
-    ![Enter Module Name](flp-module-name-corr.png)
-
-3. To create launchpad tiles, double-click the `CommonDataModel.json` under **`MyFLPProject`** | **`MyFLP`** | **`portal-site`**. Then choose the **+** icon.
-
-    ![Open Json File](open-common-data-model-corr.png)
-
-4. On the **Select Project Apps** popup, click the **+** icon three times to insert three table rows. Then enter the following data, and choose **Select**:
-
-    | App ID                               | Intent Navigation                               |
-    | :----------------------------------- | :---------------------------------------------- |
-    | **`cross.fnd.fiori.inbox`**          | **`WorkflowTask-DisplayMyInbox`**               |
-    | **`com.sap.bpm.monitorworkflow`**    | **`bpmworkflowmonitor-DisplayInstances`**       |
-    | **`com.sap.bpm.monitorworkflow`**    | **`bpmworkflowmonitor-DisplayDefinitions`**     |
-
-
-    ![Enter Data](insert-table-rows.png)
-
-5. Save your changes.
-
-    ![Save Changes](save-changes-common-data.png)
-
-[VALIDATE_8]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Configure the User Account and Authentication module to access SAP Fiori launchpad)]
-1. Right-click your `MyFLPProject` project, and choose **New** | **Folder**.  
-
-    ![Create New Folder](create-new-folder.png)
-
-2. Enter the folder name `MyFLPProject_UAA`, and choose **OK**.
-
-3. Right-click your `MyFLPProject_UAA` folder, and choose **New** | **File**.  
-
-    ![Create New File](create-new-file.png)
-
-4. Enter the file name `xs-security.json`, and choose **OK**.
-
-5. Paste the following code into the `xs-security.json` file.
-
-    ``` JSON
-    {
-      "xsappname":"MyFLPProject_UAA",
-      "tenant-mode": "dedicated",
-      "description": "Security profile of called application",
-      "scopes": [
-        {
-          "name": "uaa.user",
-          "description": "UAA"
-        }
-      ],
-      "role-templates": [
-        {
-          "name": "Token_Exchange",
-          "description": "UAA",
-          "scope-references": [
-            "uaa.user"
-          ]
-        }
-      ]
-    }
-    ```
-6. Save your changes.
+> If there are layout issues with the editor window (can't see the properties), simply refresh the SAP Web IDE window (F5).
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add resources to the MTA launchpad project)]
-1. In your workspace in the **`MyFLPProject`** project, right-click the **`mta.yaml`** file and choose **Open MTA Editor**.
+[ACCORDION-BEGIN [Step 2: ](Use existing workflow instance project)]
+1. In your workspace in the **`sample.workflowtiles.mta`** project, right-click the **`mta.yaml`** file and choose **Open MTA Editor**.
 
     ![Open MTA Editor](open-mta-editor.png)
 
-2. Switch to the **Resources** tab, and add the `UAA` resource. On the left-hand side, press the plus icon and enter `uaa_MyFLPProject` in the new field. Choose `org.cloudfoundry.managed-service` in the **Type** field. Add the following parameters, by choosing the plus icon under **Parameters**.
+2. On the **Resources** tab, replace the workflow resource. On the left-hand side, select `workflow_workflowtiles` and change it to `my-workflow-instance`. Choose `org.cloudfoundry.existing-service` in the **Type** field.
 
-    | Key                  | Value                                           |
-    | :------------------- | :---------------------------------------------- |
-    | **path**             | **`./MyFLPProject_UAA/xs-security.json`**       |
-    | **`service-plan`**   | **application**                                 |
-    | **service**          | **`xsuaa`**                                     |
+    ![Use Workflow Resource](use-wf-resource.png)
 
-    ![Add Resource](add-resource.png)
+3. Under **Parameters**, change the value of the **service-plan** key to **lite**.
 
-3. Still on the **Resources** tab, and add the workflow resource. On the left-hand side, press the plus icon and enter `my-workflow-instance` in the new field. Choose `org.cloudfoundry.existing-service` in the **Type** field.
+    ![Set Service Plan](set-lite.png)
 
-    ![Add Workflow Resource](add-wf-resource.png)
+4. Save your changes.
+
+5. Switch to the **Modules** tab, and select **`workflowtilesApprouter`**. Under **Requires** replace one of the `uaa_workflowtiles (resource)` entries with a **my-workflow-instance (resource)** resource entry.
+
+    ![Add Workflow Resource](requires-section.png)
+
+
+To really ensure that the updated instance name is used in all respective places, execute the following steps:
+
+1. Select the **`workflowtilesFLP`** module and under **Requires** switch the **my-workflow-instance (resource)** entry to some other entry.
+
+2. Save your changes.
+
+3. Switch the changed resource entry back to **my-workflow-instance (resource)**.
 
 4. Save your changes.
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Build and deploy your launchpad project)]
+1. Right-click your **`sample.workflowtiles.mta`** project in the workspace, and choose **Build** | **Build with Cloud MTA Build Tool (recommended)**.
 
-[ACCORDION-BEGIN [Step 5: ](Add required resources to the modules)]
-1. In the **`MTA Editor`**, switch to the **Modules** tab.
-
-2. Select **`MyFLPProject_appRouter`**.
-
-3. In the **Requires** section, press the plus icon twice and enter `my-workflow-instance` and `uaa_MyFLPProject` into the new lines.
-
-    >You have to scroll down in the list after you press the plus icon. The new lines are pre-filled with the text of the first entry. Overwrite these entries.
-
-    ![Add Required Resource](add-project-resources.png)
-
-4. Select **`MyFLP`**.
-
-5. In the **Requires** section, press the plus icon and enter `my-workflow-instance`. The `uaa_MyFLPProject` resource is added automatically.
-
-    ![Add Required Resource to FLP](add-myflp-resources.png)
-
-6. Save your changes.
-
-7. Clean up the superfluous `MyFLPProject_ui_deployer` module in this order:
-
-    - Go back to the **Modules** tab and select the `MyFLP` module. In the **Requires** section, place your cursor inside the **Group** field next to the `MyFLPProject_ui_deployer` entry and choose the **Remove** icon.
-
-    ![Delete UI Deployer](delete-ui-deployer-corr.png)
-
-    - Save your changes.
-
-    - Delete the **`MyFLPProject_ui_deployer`** folder from the **`MyFLPProject`** project in your workspace by right-clicking and choosing **Edit** | **Delete**.
-
-    ![Delete UI Deployer](delete-ui-deployer2.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 6: ](Build and deploy your launchpad project)]
-1. Right-click your **`MyFLPProject`** project in the workspace, and choose **Build** | **Build**.
-
-    ![Build FLP Project](build-flp-project.png)
+    ![Build FLP Project](build-flp-project-rec.png)
 
     The console shows the status of the build: Build of `MyFLPProject` completed.
 
@@ -193,7 +94,7 @@ time: 15
 
 3. Right-click your **`.mtar`** file, and choose **Deploy** | **Deploy to SAP Cloud Platform**.
 
-    ![Deploy File](deploy-mtar-corr.png)
+    ![Deploy File](deploy-project.png)
 
 4. Enter your API endpoint, and choose **Deploy**.
 
@@ -203,12 +104,14 @@ time: 15
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Access your SAP Fiori launchpad apps)]
-1. Open the SAP Web IDE console, and search for the launchpad URL `https://<dev space name>-trial-dev-myflpproject-approuter.cfapps.<your endoint>.hana.ondemand.com`.
+[ACCORDION-BEGIN [Step 3: ](Access your SAP Fiori launchpad apps)]
+1. Open the SAP Web IDE console, and search for the launchpad URL `https://<dev space name>-trial-dev-workflowtilesapprouter.cfapps.<your endoint>.hana.ondemand.com`.
 
-    ![Copy URL](console-url.png)
+    ![Copy URL](console-url2.png)
 
-2. Copy it to your browser and append `/cp.portal` to it.
+2. Copy the URL to your browser.
+
+    >If the URL does not work, append `/cp.portal` to it.
 
 3. Log on to your trial account by entering your email address and password. Your home page of SAP Fiori launchpad is displayed.
 

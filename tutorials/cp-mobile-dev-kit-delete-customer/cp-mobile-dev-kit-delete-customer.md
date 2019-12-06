@@ -142,10 +142,6 @@ In `Customers_Detail.page`, drag and drop an **Action Bar Item** to the upper ri
 
 >**Action Bar Item** is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
 
-In the **Properties** pane, set **Position** to **Right**.
-
-![MDK](img_016_2.png)
-
 Click the **link icon** to open the object browser for the **System Item** property.
 
 Double click on the **Trash** type and click **OK**.
@@ -202,7 +198,7 @@ Since this is an Offline application, record has been removed from local store a
 
 On Main page, tap **SYNC**, a successful message will be shown.
 
-![MDK](img_036.1.jpg)
+![MDK](img_036.1.png)
 
 [OPTION END]
 
@@ -232,7 +228,7 @@ You can cross verify if this record has been deleted in the backend.
 
 >Backend URL can be found in Mobile Services Cockpit.
 
->Mobile Applications | Native/Hybrid | Click on the MDK App | Sample Back End | click Root URL `v2` | append `/Customers`
+>Mobile Applications | Native/Hybrid | Click on the MDK App | Mobile Sample OData ESPM | click Root URL `v2` | append `/Customers`
 
 >As Sync is pressed, `UploadOffline.action` gets trigger to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
 

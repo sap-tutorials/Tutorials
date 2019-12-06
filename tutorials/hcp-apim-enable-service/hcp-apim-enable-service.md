@@ -36,6 +36,10 @@ With this SAP API Management service you have your own instance of SAP API Manag
 
 [ACCORDION-BEGIN [Step 2: ](Select Services in SAP Cloud Platform cockpit)]
 
+Navigate to [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit), select **Access Neo Trial**.
+
+![Access Neo Trial](00-neo-trial.png)
+
 From the **SAP Cloud Platform cockpit**, select **Services**.
 
 ![Click on Services](01-services.png)
@@ -71,5 +75,3 @@ and the SAP API Management Dev Portal
 [DONE]
 
 [ACCORDION-END]
-
-

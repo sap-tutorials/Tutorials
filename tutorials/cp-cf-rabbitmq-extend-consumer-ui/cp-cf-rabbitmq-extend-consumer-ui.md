@@ -17,6 +17,10 @@ The app will display a select control to offer supported queues and a list which
 
 ---
 
+> The SAP managed offerings for PostgreSQL, Mongo DB, Redis and RabbitMQ will be removed from the price list starting Q3/2019 i.e. July 15th and are scheduled to be retired as of Jan 15, 2020.
+
+> **Therefore, depending on you account type, you might not be able to complete this tutorial anymore**
+
 [ACCORDION-BEGIN [Step  ](Bootstrap SAPUI5)]
 Create a new file named `index.html` in the `webapp` folder of your project and insert the following content.
 This snippet bootstraps the SAPUI5 SDK in the first `<script>` tag. The second `<script>` tag renders a simple text control on the page once the bootstrapping has finished.
@@ -226,8 +230,7 @@ function updateInbox() {
 }
 updateInbox();
 ```
-2. Use this function `updateHistory` as a callback whenever the refresh button
-is pressed.
+2. Use this function `updateHistory` as a callback whenever the refresh button is pressed.
 ```JavaScript
 new sap.m.Button({
   icon: 'sap-icon://refresh',

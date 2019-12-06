@@ -21,14 +21,13 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - How one might successfully combine use of the `@sap/cds` and `express` packages
 - What an OData V4 entity set looks like
 
+>For a quick map and overview of what this tutorial is, and where it sits in the overall [Use CAP and SAP Cloud SDK to Extend S/4HANA  mission](mission.cap-s4hana-cloud-extension), see the diagram in the blog post [Mission "Use CAP and SAP Cloud SDK to Extend S/4HANA" – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).
 
-This is the first tutorial in the SAP TechEd 2019 App Space mission _S/4HANA Extension with Cloud Application Programming Model_, which will show you how the SAP Cloud Application Programming Model can be used with the SAP Cloud SDK to consume a service from an SAP S/4HANA system in the context of extending core functionality with a new app and service.
+This is the first tutorial in the [Use CAP and SAP Cloud SDK to Extend S/4HANA mission](mission.cap-s4hana-cloud-extension), which will show you how the SAP Cloud Application Programming Model can be used with the SAP Cloud SDK to consume a service from an SAP S/4HANA system in the context of extending core functionality with a new app and service.
 
 Instead of consuming a service from a real SAP S/4HANA system, you'll create and use a mock service, which mimics the equivalent service in a real SAP S/4HANA system. This keeps things simple and allows you to practice this tutorial at home too.
 
 In this tutorial, you will set up this mock SAP S/4HANA service and start it running locally. This will then become the base, and in subsequent tutorials you will add more to it and eventually consume it from another CAP-based application.
-
-> If you're using one of the workstations in the App Space within the Developer Garage at SAP TechEd, all the prerequisites for this tutorial should be met already for you.
 
 ---
 
@@ -204,5 +203,3 @@ Congratulations!
 
 [DONE]
 [ACCORDION-END]
-
-

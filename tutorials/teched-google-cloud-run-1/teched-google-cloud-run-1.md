@@ -119,7 +119,7 @@ Click on the **SSH** button to open a web console.
 
 Once the SSH terminal has loaded, copy and paste the following command into it
 
-```ssh
+```shell
 sudo su - hxeadm
 ```
 
