@@ -13,7 +13,7 @@ author_profile: https://github.com/sandeep-tds
 
 ## Details
 ### You will learn
- - How to build a new version of an SAP Mobile Card
+ - How to deploy a new version of an SAP Mobile Card
  - How to implement actions within an SAP Mobile Card
  - How to take an end user's input within an SAP Mobile Card
  - How SAP Mobile Card can be used for Approval workflows
