@@ -1,203 +1,367 @@
 ---
-title: Create Cards with Actions (Like Approve Or Reject)
-description: Implement actions within an SAP Mobile Card, like approve or reject.
+title: Create Cards with Actions to Enable Workflows (Like Approve Or Reject)
+description: Implement actions within an SAP Mobile Card to enable workflows like approve or reject.
 auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
-time: 20
-author_name: Jitendra Kansal
-author_profile: https://github.com/jitendrakansal
+time: 30
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
+## Prerequisites
+ - [Tutorial: Create Cards Automatically with the Automatic Instance Generation Template](cp-mobile-cards-automatic-instance-generation)
 
 ## Details
 ### You will learn
- - How to implement actions within a SAP Mobile Card
+ - How to build a new version of an SAP Mobile Card
+ - How to implement actions within an SAP Mobile Card
+ - How to take an end user's input within an SAP Mobile Card
+ - How SAP Mobile Card can be used for Approval workflows
 
  Using the sample data service that is part of SAP Cloud Platform Mobile Services, you will connect to a system and add an action to approve or reject a sales order.
 
- Actions allow users to trigger a REST call from a card. This tutorial will change the status of a sales order from the sample service. After completing the tutorial, you can change the sales order's status from **New** to **Approved** or **Rejected**. This allows you to build simple workflow solutions for the mobile device.
-
- ![SAP Cloud Platform Mobile Services - Opera](img_1.gif)
+ Actions allow users to trigger a REST call from a card. This tutorial will change the status of a sales order. After completing the tutorial, you can change the sales order's status from **New** to **Approved** or **Rejected**. This allows you to build simple workflow solutions for the mobile device.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get familiar with real world use case)]
 
-A company wants to allow managers to approve sales order on a mobile device.
+A sales manager in a company usually needs to log into her computer to Approve or Reject Sales Order that her team has created. Since she is constantly on the move, she wants a way to perform these actions on her Mobile Device.
 
-The action card could be of type Automatic Instance Card to load all requests in a certain state. So, the query asks for all items of the sales order that need to be approved. Each item of the result set would show as a single card. The manager can then select an action on the card and approve or reject the sales order.
+In this tutorial, you will see how you can quickly mobilize this use-case using SAP Mobile Cards. The Automatic Instance card will show three cards with the sales order information. Each card will have the Approve / Reject action. The sales manager can then select an action on a specific card to approve or reject the respective sales order.
+
+!![MobileCardsImage](img_1.gif)
+!![MobileCardsImage](img_2.gif)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new action card)]
+[ACCORDION-BEGIN [Step 2: ](Create a new version of the card)]
 
-Make sure you have logged into SAP Cloud Platform Mobile Services cockpit. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
+Please ensure that you have completed the [Automatic Instance Generation tutorial](cp-mobile-cards-automatic-instance-generation) before you proceed with the following steps.
 
-![SAP Cloud Platform Mobile Services - Opera](img_000.png)
+> At any given time, only one version can be productive. You need to create a new version to make any changes to a productive version. While you are working on a new version, the end-users can keep using the productive version. Once you deploy the new version, the end-user's card will be updated.
 
-Click the **Create a New Card** icon.
+Make sure you have logged in to SAP Cloud Platform Mobile Services cockpit. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
-![SAP Cloud Platform Mobile Services - Opera](img_001.png)
+!![MobileCardsImage](img_3.png)
 
-Provide the required information as per below.
+Click **Automatic Instance Card** in the Card Templates Tab.
 
-| Field | Value |
-|----|----|
-| **Name** | `ActionCard` |
-| **Destination** | `com.sap.edm.sampleservice.v2` |
-| **Template Source** | `Template Manager` |
-| **HTML Template** | `Sample Sales Orders Template` |
+!![MobileCardsImage](img_4.png)
 
-> If you see a pop-up, click OK.
+Click create new **Version** in the Versions table.
 
-![SAP Cloud Platform Mobile Services - Opera](img_009.png)
+!![MobileCardsImage](img_5.png)
 
->**Destination** defines the root for the queries that are going to be used for this card.
+Click **Yes** on the Confirmation dialog.
 
-Navigate to the **URLs** tab to view data endpoint definitions.
+!![MobileCardsImage](img_6.png)
 
-Click **Get Data** to retrieve sample JSON response based on a defined URL.
+Click the **Edit** Button (Pencil Icon) for the new version of the card.
 
-![SAP Cloud Platform Mobile Services - Opera](img_009.1.png)
+!![MobileCardsImage](img_7.png)
 
-Click **URL 0** to view the sample JSON response. You can format JSON data by clicking on icon as per below screenshot.
+Enter the version as **1.1** and Click **Save**.
 
-![SAP Cloud Platform Mobile Services - Opera](img_010.png)
+!![MobileCardsImage](img_8.png)
+
+> You will be re-directed to the Card Templates Tab.
+
+Click **Automatic Instance Card** in the Card Templates Tab.
+
+!![MobileCardsImage](img_9.png)
+
+A new card with version `1.1` is created, and the state of this card is Development.
+
+!![MobileCardsImage](img_10.png)
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Update the card's title)]
 
-Click **Editor**.
+Click the **Edit** Button (Pencil Icon) for the development `1.1 version` card.
 
-![SAP Cloud Platform Mobile Services - Opera](img_014.png)
+> To ensure you are editing the correct version, please notice the green vertical bar in the Versions Table. This bar indicates the version of the current view on SAP Cloud Platform Mobile Services Cockpit.
 
-Replace `SalesOrder` text with **Action Card** to rename the title of card. This helps later to identify the right card on the device.
+!![MobileCardsImage](img_11.png)
 
-![SAP Cloud Platform Mobile Services - Opera](img_015.png)
+Click the **Editor** tab.
+
+!![MobileCardsImage](img_12.png)
+
+Replace `SalesOrder` text with **Action Card** to rename the title of card.
+
+!![MobileCardsImage](img_13.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add actions to the card)]
+[ACCORDION-BEGIN [Step 4: ](Add Approve Action)]
 
-Navigate to the **Actions** tab to start adding actions to the card.
+Click the **Actions** tab.
+
+!![MobileCardsImage](img_14.png)
+
+Change Behavior after Action to Active.
+
+!![MobileCardsImage](img_15.png)
 
 >The default value for behavior for an action is **INACTIVE**. An inactive action does not allow any new actions after a successful call.
+
+Add `/` as the XCSRF Token URL.
+
+!![MobileCardsImage](img_16.png)
 
 Click the **+** icon to add an action and provide the required information:
 
 | Field | Value |
 |----|----|
-| **Name** | `Accept` |
-| **Label** | `accept` |
+| **Name** | `approve` |
+| **Label** | `Approve` |
 | **URL** | `/SalesOrderHeaders('${SalesOrderId}')` |
 | **HTTP Method** | `PATCH` |
+| **Consider Action As** | `Positive` |
 | **Action Body** | `{"LifeCycleStatusName": "Accepted", "LifeCycleStatus": "A"}` |
 
-![SAP Cloud Platform Mobile Services - Opera](img_020.png)
+!![MobileCardsImage](img_17.png)
 
->Here `URL` will call the current `SalesOrder` which the card represents.
+>Here **URL** will call the current `SalesOrder` which the card represents.
 
->`${SalesOrderId}` defines the placeholder where the current `SalesOrderID` will be put in from the OData JSON response. ![SAP Cloud Platform Mobile Services - Opera](img_020.1.png)
+>`${SalesOrderId}` defines the placeholder where the current `SalesOrderID` will be put in from the OData JSON response. !![MobileCardsImage](img_18.png)
+
+>**Consider Action As** will assign an icon for the actions on Android.
 
 >**Action Body** will patch the `SalesOrder` status from `New` to `Accepted` if the action is triggered.
-
-Now, create a **Request Header** for the `Accept` action. Click the **+** icon and provide the required information:
-
-| **Field** | **Value** |
-|----|----|
-| **X-Requested-With** | `XMLHttpRequest` |
-
-![SAP Cloud Platform Mobile Services - Opera](img_022.png)
-
-Click the **+** icon to create another action and provide the required information:
-
-| Field | Value |
-|----|----|
-| **Name** | `Reject` |
-| **Label** | `reject` |
-| **URL** | `/UpdateSalesOrderStatus?id='${SalesOrderId}'&newStatus='R'`|
-| **HTTP Method** | `POST` |
-
-![SAP Cloud Platform Mobile Services - Opera](img_024.png)
-
->This `URL` will call the OData function `UpdateSalesOrderStatus`, which is implemented on the sample service and passes the current  `SalesOrderID` as well as the new status. This is the second option to change a `SalesOrder` status.
-
-Now, create a **Request Header** for the `Reject` action. Click the **+** icon and provide the required information:
-
-| Field | Value |
-|----|----|
-| **X-Requested-With** | `XMLHttpRequest` |
-
-![SAP Cloud Platform Mobile Services - Opera](img_028.png)
-
-Click **Save**.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Subscribe to the card in SAP Mobile Cards)]
+[ACCORDION-BEGIN [Step 5: ](Add Reject Action)]
 
-In the SAP Mobile Cards application, click **More** | **Subscriptions**.
+Click the **+** icon to create another action.
 
-![Card](img_031.png)
+!![MobileCardsImage](img_19.png)
 
-Click `ActionCard` under the **All** tab.
+> For Reject, we want the Sales Manager to provide a reason. Thus, we will create an **Action Parameter**, before we fill the details for the action.
 
-![Chrome Remote Desktop](img_033.png)
+Click **+ Parameter** button to create an action parameter and provide the required information:
 
-Click **Subscribe** to activate the `ActionCard` subscription.
+| Field | Value |
+|----|----|
+| **Name** | `reasonForRejection` |
+| **Label** | `Please provide a reason for rejection` |
+| **Data Type** | `Edm.String` |
+| **Maximum Length** | `255` |
+| **Is Nullable** | `Uncheck` |
 
-![Chrome Remote Desktop](img_034.png)
+!![MobileCardsImage](img_20.png)
 
-Click **All Cards** or **New Cards** to view this card.
+> In SAP Mobile Cards, you can allow the user to provide an input while performing an action. This input is stored in an Action Parameter.
 
-![Chrome Remote Desktop](img_035.png)
+Click **Action 2** field in the Actions Table and provide the required information:
 
-Click the **action icon** at the bottom-left to open the available actions on the card and click **accept** to accept the card and trigger a change in status.
+| Field | Value |
+|----|----|
+| **Name** | `reject` |
+| **Label** | `Reject` |
+| **URL** | `/SalesOrderHeaders('${SalesOrderId}')` |
+| **HTTP Method** | `PATCH` |
+| **Consider Action As** | `Negative` |
+| **Action Body** | `{"LifeCycleStatusName": "Rejected: ${reasonForRejection}", "LifeCycleStatus": "R"}` |
 
-![Chrome Remote Desktop](img_038.png)
+!![MobileCardsImage](img_21.png)
 
-You will see a successful completion of the REST call.
+>We are storing user's input the Action Parameter `reasonForRejection`. We then send the value in this parameter as a part of the body. Upon successful execution, the card will display the reason entered by the user.
 
-![SAP Cloud Platform Mobile Services - Opera](img_046.png)
+[VALIDATE_2]
+[ACCORDION-END]
 
->In case of any failure, you can navigate to **Activity Logs** by clicking on **More** | **Logs** and then look in **Pending Actions**.
+[ACCORDION-BEGIN [Step 6: ](Deploy a new version of the Card)]
 
->![SAP Cloud Platform Mobile Services - Opera](img_00.gif)
+Click the **Info** tab.
+
+!![MobileCardsImage](img_22.png)
+
+In the Versions Table, click the highlighted icon to change the state to **Productive**.
+
+!![MobileCardsImage](img_23.png)
+
+Choose **Yes** to confirm.
+
+![MobileCards](img_24.png)
+
+Notice that the **State** of the versions has changed. The newly published version - `1.1` is now in **Productive** state, and the older version - `1.0` is now in *Backup* state.
+
+!![MobileCardsImage](img_25.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Cross verify status update in the back end)]
+[ACCORDION-BEGIN [Step 7: ](Subscribe to the card in SAP Mobile Cards)]
+
+>Make sure you are choosing the right device platform tab **above**.
+
+> The SAP Mobile Services client syncs new versions periodically. In the interest of time, you can choose to un-subscribe and subscribe the card to **force the changes immediately**.
+
+[OPTION BEGIN [Android]]
+
+Do a pull refresh.
+
+!![MobileCardsImage](img_26.png)
+
+In the card properties view, notice that the version of the `Automatic Instance Card` is **1.1**.
+
+!![MobileCardsImage](img_27.png)
+
+Tap **<-** 'Back' to to see latest cards downloaded on the device and tap **v** to expand the card action menu.
+
+!![MobileCardsImage](img_29.png)
+
+Tap **Reject** to reject the Sales Order.
+
+!![MobileCardsImage](img_30.png)
+
+> The Icons seen here appear because of the `Consider Action As` property.
+
+> Make a note of the `LifeCycleStatus` and Action Card Id.
+
+Enter a reason for Rejection and Tap on **Reject**.
+
+!![MobileCardsImage](img_31.png)
+
+> The user is asked for a reason because we added an action parameter for the reject option.
+
+You will now see 2 toast messages: `Performing Action` and `Performed Action Successfully`.
+
+!![MobileCardsImage](img_32.png)
+!![MobileCardsImage](img_33.png)
+
+> If you don't see these toast messages, there may be some error in the code.
+
+Tap on the card to open it. Notice, that the Life `LifeCycleStatus` has changed from `New` to `Rejected: Invalid Data`.
+
+!![MobileCardsImage](img_34.png)
+
+Now let's say that the necessary action has been taken, and this Sales Order can be approved.
+
+Tap on the **Action Bar** button to view the actions, and then tap on **Approve**.
+
+!![MobileCardsImage](img_35.png)
+
+You will now see 2 toast messages: `Performing Action` and `Performed Action Successfully`.
+
+!![MobileCardsImage](img_36.png)
+!![MobileCardsImage](img_37.png)
+
+> If you don't see these toast messages, there may be some error in the code.
+
+For the same card, `LifeCycleStatus` has changed from `Rejected: Invalid Data` to `Accepted`.
+
+!![MobileCardsImage](img_38.png)
+
+[OPTION END]
+
+[OPTION BEGIN [iOS]]
+
+Do a pull refresh.
+
+!![MobileCardsImage](img_39.png)
+
+In the card properties view, notice that the version of the `Automatic Instance Card` is **1.1**.
+
+!![MobileCardsImage](img_40.png)
+
+Tap New Cards to to see latest cards downloaded on the device.
+
+!![MobileCardsImage](img_42.png)
+
+Tap on a card to open it.
+
+!![MobileCardsImage](img_43.png)
+
+> Make a note of the `LifeCycleStatus` and Action Card Id.
+
+Tap on the **Action Menu** button to view the actions.
+
+!![MobileCardsImage](img_44.png)
+
+Tap **Reject** to reject the Sales Order.
+
+!![MobileCardsImage](img_45.png)
+
+Enter a reason for Rejection and Tap on **Reject**.
+
+!![MobileCardsImage](img_46.png)
+
+> The user is asked for a reason because we added an action parameter for the reject option.
+
+You will now see 2 toast messages: `Performing Action` and `Action Successfully Performed`.
+
+!![MobileCardsImage](img_47.png)
+!![MobileCardsImage](img_48.png)
+
+> If you don't see these toast messages, there may be some error in the code.
+
+Notice, that the Life `LifeCycleStatus` has changed from `New` to `Rejected: Incorrect Date`.
+
+!![MobileCardsImage](img_49.png)
+
+Now let's say that the necessary action has been taken, and this Sales Order can be approved.
+
+Tap on the **Action Menu** button to view the actions.
+
+!![MobileCardsImage](img_50.png)
+
+Tap **Approve** to reject the Sales Order.
+
+!![MobileCardsImage](img_51.png)
+
+You will now see 2 toast messages: `Performing Action` and `Action Successfully Performed`.
+
+!![MobileCardsImage](img_52.png)
+!![MobileCardsImage](img_53.png)
+
+> If you don't see these toast messages, there may be some error in the code.
+
+Notice, that the Life `LifeCycleStatus` has changed from `Rejected: Incorrect Date` to `Aceepted`.
+
+!![MobileCardsImage](img_54.png)
+
+[OPTION END]
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Cross verify status update in the back end)]
 
 In the Mobile Services cockpit, click **Connectivity** under the **Features** tab.
 
-![SAP Cloud Platform Mobile Services - Opera](img_040.png)
+!![MobileCardsImage](img_55.png)
 
-Click the **OData destination test** icon.
+For the `com.sap.edm.sampleservice.v2` sample service, click the **OData destination test** icon.
 
-![SAP Cloud Platform Mobile Services - Opera](img_041.png)
+!![MobileCardsImage](img_56.png)
 
 Click **Next**.
 
-![SAP Cloud Platform Mobile Services - Opera](img_042.png)
+!![MobileCardsImage](img_57.png)
 
-Make sure entity set `SalesOrderHeaders` is selected. Here you can see entity data.
+Select `SalesOrderHeaders` as the Metadata Entity Set.
 
-![SAP Cloud Platform Mobile Services - Opera](img_043.png)
+!![MobileCardsImage](img_58.png)
 
-If you can not find particular data set, click on **Entity Properties** to select some properties, click **OK**.
+If you can not find particular data set, click **Entity Properties** to select some properties, click **OK**.
 
-![SAP Cloud Platform Mobile Services - Opera](img_044.png)
+!![MobileCardsImage](img_59.png)
 
-See that the `SalesOrder` has changed the status accordingly.
+Verify the `LifeCycleStatus` for the Sales Orders on which you have performed an action.
 
-![SAP Cloud Platform Mobile Services - Opera](img_045.png)
+!![MobileCardsImage](img_60.png)
+
+Congratulations, you have built a work-flow capable SAP Mobile Cards. You can now use this knowledge to build other workflow applications.
 
 [DONE]
-
 [ACCORDION-END]
