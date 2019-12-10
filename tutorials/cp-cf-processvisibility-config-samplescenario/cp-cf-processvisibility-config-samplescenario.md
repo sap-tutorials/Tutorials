@@ -38,7 +38,7 @@ In this step, you will download the sample design-to-operate business scenario a
 
 3. Now, from the GitHub, choose the `DesigntoOperate.zip` file.
 
-    ![GitHub2](screen2-git.png)
+    ![GitHub2](designzip.png)
 
     >This downloads the `DesigntoOperate.zip` file to your local system.
 

@@ -41,6 +41,8 @@ Run the `hxe_gc` memory management script to free up available VM memory.
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download `shine.tgz`)]
@@ -50,6 +52,8 @@ In your VM, download `shine.tgz` using the built-in Download Manager. From the s
 ```bash
 HXEDownloadManager_linux.bin linuxx86_64 vm shine.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -61,6 +65,8 @@ In your VM, extract `shine.tgz`:
 tar -xvzf shine.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run the installation script)]
@@ -70,5 +76,7 @@ As the `hxeadm` user, run:
 ```bash
 <extracted_path>/HANA_EXPRESS_20/install_shine.sh
 ```
+
+[DONE]
 
 [ACCORDION-END]

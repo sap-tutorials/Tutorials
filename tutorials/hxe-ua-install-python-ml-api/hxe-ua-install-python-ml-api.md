@@ -75,6 +75,8 @@ This command installs the `hana_ml` package containing the following modules and
 -   `hana_ml.ml_exceptions`
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Test your installation.)]
@@ -93,5 +95,7 @@ pip list
 ```
 
 You will receive a list of various Python packages that are installed on your system. If you see `hana-ml` and the appropriate version, the Python Client API for ML was installed.
+
+[DONE]
 
 [ACCORDION-END]

@@ -52,7 +52,7 @@ In this step we will add a new service plan to a subaccount. Depending on when y
 
     ![addserviceplan](addserviceplan.png)
 
-3. Use the filter bar the search for **`hana`** to reduce the number of available entitlements. Click the checkbox to select the service plan **hdi-shared**. Finally, confirm your selection by clicking on **Add 1 Service Plan**.
+3. Use the filter bar the search for **`hana`** to reduce the number of available entitlements. Click the checkbox to select the service plans **`hdi-shared`**, **`securestore`**, and **`schema`**. Finally, confirm your selection by clicking on **Add 3 Service Plan**.
 
     ![addplan](addplan.png)
 

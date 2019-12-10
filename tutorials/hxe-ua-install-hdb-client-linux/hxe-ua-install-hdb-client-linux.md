@@ -74,6 +74,8 @@ Install the Download Manager to your client machine and download the client pack
     -   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the SAP HANA HDB client)]
@@ -104,11 +106,15 @@ To install the SAP HANA client on a Linux machine, do the following:
     Follow the instructions on the screen to install the SAP HANA client.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Log the installation)]
 
 The system automatically logs the SAP HANA HDB client installation. The log files are stored at `/var/temp/hdb_client_<time_stamp>` for Linux.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -123,6 +129,8 @@ See these `Tutorials`:
 -   [Connect to SAP HANA, express edition using Python](https://developers.sap.com/tutorials/hxe-python-connection.html)
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Uninstall the SAP HANA HDB client)]
@@ -135,6 +143,6 @@ sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
+[DONE]
+
 [ACCORDION-END]
-
-

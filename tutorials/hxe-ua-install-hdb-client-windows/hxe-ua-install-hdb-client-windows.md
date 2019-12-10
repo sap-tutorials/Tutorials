@@ -69,6 +69,8 @@ Install the Download Manager to your client machine and download the client pack
     -   `xs.onpremise.runtime.client_ntamd64.zip`
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the SAP HANA HDB client)]
@@ -110,11 +112,15 @@ SAP HANA HDB client installation supports both GUI and console methods.
 4.  Add the installation path to the PATH environment variable. For information on setting environments variables, see the documentation for your operating system.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Log the installation)]
 
 The system automatically logs the SAP HANA HDB client installation. The log files are stored at `%TEMP%\hdb_client_<time_stamp>`.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -129,6 +135,8 @@ See these `Tutorials`:
 -   [Connect to SAP HANA, express edition using Python](https://developers.sap.com/tutorials/hxe-python-connection.html)
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Uninstall the SAP HANA HDB client)]
@@ -140,5 +148,7 @@ Each installation has its own uninstallation tool. Use the `hdbuninst` command t
 ```
 
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
+
+[DONE]
 
 [ACCORDION-END]

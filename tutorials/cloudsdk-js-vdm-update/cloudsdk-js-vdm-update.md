@@ -32,8 +32,8 @@ import { BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-serv
 
 export function updateBusinessPartnerAddressRoute(req: Request, res: Response) {
   updateBusinessPartnerAddress(buildAddress(req.body, req.params.id, req.params.addressId))
-    .then(businessPartner => {
-      res.status(200).send(businessPartner);
+    .then(address => {
+      res.status(200).send(address);
     })
     .catch(error => {
       res.status(500).send(error.message);
@@ -45,7 +45,7 @@ function updateBusinessPartnerAddress(address: BusinessPartnerAddress): Promise<
 }
 
 function buildAddress(body: any, businessPartnerId: string, addressId: string): BusinessPartnerAddress {
-  const address = BusinessPartnerAddress.builder().fromJson(body) as BusinessPartnerAddress;
+  const address = BusinessPartnerAddress.builder().fromJson(body);
   address.businessPartner = businessPartnerId;
   address.addressId = addressId;
   return address;
@@ -55,7 +55,7 @@ function buildAddress(body: any, businessPartnerId: string, addressId: string): 
 This follows the implementation in the previous tutorials. `updateBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next step. Now open `application.ts`, import the function and add the following route definition:
 
 ```JavaScript / TypeScript
-import { businessPartnerRoute } from './business-partner-route';
+import { businessPartnersRoute } from './business-partners-route';
 import { singleBusinessPartnerRoute } from './single-business-partner-route';
 import { createBusinessPartnerAddressRoute } from './create-business-partner-address-route';
 import { updateBusinessPartnerAddressRoute } from './update-business-partner-address-route';
@@ -65,14 +65,14 @@ import { updateBusinessPartnerAddressRoute } from './update-business-partner-add
 private routes(): void {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
-  router.get("/business-partners", businessPartnerRoute);
-  router.get("/business-partners/:id", singleBusinessPartnerRoute);
-  router.post("/business-partners/:id/address", createBusinessPartnerAddressRoute);
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
+  router.get('/business-partners', businessPartnersRoute);
+  router.get('/business-partners/:id', singleBusinessPartnerRoute);
+  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
   // add the following line
-  router.put("/business-partners/:id/address/:addressId", updateBusinessPartnerAddressRoute)
-  this.app.use("/", router);
+  router.put('/business-partners/:id/address/:addressId', updateBusinessPartnerAddressRoute);
+  this.app.use('/', router);
 }
 ```
 [OPTION END]
@@ -85,8 +85,8 @@ const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-
 
 function updateBusinessPartnerAddressRoute(req, res) {
   updateBusinessPartnerAddress(buildAddress(req.body, req.params.id, req.params.addressId))
-    .then(businessPartner => {
-      res.status(200).send(businessPartner);
+    .then(address => {
+      res.status(200).send(address);
     })
     .catch(error => {
       res.status(500).send(error.message);
@@ -110,7 +110,7 @@ function buildAddress(body, businessPartnerId, addressId) {
 This follows the implementation in the previous tutorials. `updateBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next step. Now open `application.js`, import the function and add the following route definition:
 
 ```JavaScript
-const { businessPartnerRoute } = require('./business-partner-route');
+const { businessPartnersRoute } = require('./business-partners-route');
 const { singleBusinessPartnerRoute } = require('./single-business-partner-route');
 const { createBusinessPartnerAddressRoute } = require('./create-business-partner-address-route');
 const { updateBusinessPartnerAddressRoute } = require('./update-business-partner-address-route');
@@ -120,14 +120,14 @@ const { updateBusinessPartnerAddressRoute } = require('./update-business-partner
 private routes() {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
-  router.get("/business-partners", businessPartnerRoute);
-  router.get("/business-partners/:id", singleBusinessPartnerRoute);
-  router.post("/business-partners/:id/address", createBusinessPartnerAddressRoute);
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
+  router.get('/business-partners', businessPartnersRoute);
+  router.get('/business-partners/:id', singleBusinessPartnerRoute);
+  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
   // add the following line
-  router.put("/business-partners/:id/address/:addressId", updateBusinessPartnerAddressRoute)
-  this.app.use("/", router);
+  router.put('/business-partners/:id/address/:addressId', updateBusinessPartnerAddressRoute);
+  this.app.use('/', router);
 }
 ```
 [OPTION END]
