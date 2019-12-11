@@ -17,8 +17,6 @@ primary_tag: products>sap-cloud-platform
   - The relationship between global accounts, subaccounts, orgs and spaces
   - How to create a trial account in the Cloud Foundry environment
   - How to use services in the Cloud Foundry environment
-  - How to navigate the cockpit
-  - How to use the cockpit in-app help if you get stuck
 
 ---
 
@@ -105,7 +103,7 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 5. Finally, you have your **deployed application** - this is the current scope.
 
-[VALIDATE_5]
+[DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Services in the Cloud Foundry environment)]
 
