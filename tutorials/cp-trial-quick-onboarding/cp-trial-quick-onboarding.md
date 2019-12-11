@@ -103,7 +103,7 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 5. Finally, you have your **deployed application** - this is the current scope.
 
-[VALIDATE_5]
+[DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Services in the Cloud Foundry environment)]
 
