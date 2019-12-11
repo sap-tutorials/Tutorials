@@ -17,8 +17,6 @@ primary_tag: products>sap-cloud-platform
   - The relationship between global accounts, subaccounts, orgs and spaces
   - How to create a trial account in the Cloud Foundry environment
   - How to use services in the Cloud Foundry environment
-  - How to navigate the cockpit
-  - How to use the cockpit in-app help if you get stuck
 
 ---
 
