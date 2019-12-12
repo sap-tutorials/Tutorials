@@ -18,7 +18,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 >**Note:** If you have access to an `SAP S/4HANA Cloud` system with a technical user, you can skip this part.
 
-In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
+In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap-samples.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
 
 Once it is up and running you should see the list of services at `http://localhost:3000/`.
 
