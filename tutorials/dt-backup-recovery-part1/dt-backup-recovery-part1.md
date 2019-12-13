@@ -1,6 +1,7 @@
 ---
 title: Initializing Database Backup and Recovery
 description: Setting up backup and recovery for Dynamic Tiering.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -12,7 +13,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
 - **Credentials:** Have access to "`<SID>adm`" for a SSH session on the HANA hosts.
 
 ## Next Steps
- - **Tutorials** [Creating Database Backups](https://developers.sap.com/tutorials/dt-backup-recovery-part2.html)
+ - **Tutorials** [Creating Database Backups](https://www.sap.com/)
 
 ## Details
 ### You will learn
@@ -38,6 +39,7 @@ The overall HANA system including Dynamic Tiering is a single database system wh
 
 In this set of tutorials, we will be backing up and recovering one of our Tenant databases, `PM1`.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -50,6 +52,7 @@ To view the currently configured directory paths for the HANA and Dynamic Tierin
 
 > Note: The configuration parameters can be set at the Tenant level and System level, however the configurations in Tenant and System will be the same regardless of where the configuration parameters are set. In this tutorial, we set the configuration parameters at the Tenant level.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -64,6 +67,6 @@ You will need to assign the TPCH user the required roles and permissions to crea
 
 Click the deploy button near the top right or the F8 key on your keyboard to execute the changes.
 
+[DONE]
 
 [ACCORDION-END]
-
