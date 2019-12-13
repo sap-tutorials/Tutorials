@@ -22,7 +22,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](What is the OData virtual data model?)]
+[ACCORDION-BEGIN [Step 1: ](What is the SAP Cloud SDK's Virtual Data Model?)]
 
 Most of the services exposed by SAP S/4HANA Cloud and On-Premise are OData services. OData is a [RESTful API protocol](https://www.odata.org/) that has two key features: First, each services is described by a metadata document that lists all entities, their properties and relations, and which operations can be executed on them. Second, OData defines a set of SQL-like operators that allow constructing powerful queries.
 
@@ -57,28 +57,28 @@ Start by creating a file called `business-partners-route.ts` in the `src` folder
 ```JavaScript / TypeScript
 import { Request, Response } from 'express';
 
-export function businessPartnerRoute(req: Request, res: Response) {
+export function businessPartnersRoute(req: Request, res: Response) {
   res.status(200).send('Nothing to see yet...');
 }
 ```
 
-The function `businessPartnerRoute` is the function that will handle requests to the API endpoint that we create. Every function in `Express.js` that handles a request takes two parameters: the `Request` object and the `Response` object (though we don't need the `Request` for now).
+The function `businessPartnersRoute` is the function that will handle requests to the API endpoint that we create. Every function in `Express.js` that handles a request takes two parameters: the `Request` object and the `Response` object (though we don't need the `Request` for now).
 
-Now you need to instruct the `Express.js` router to delegate incoming requests to `/business-partners` to the `businessPartnerRoute` function. To do so, open the `application.ts` file, import your function and add a route to the `router`:
+Now you need to instruct the `Express.js` router to delegate incoming requests to `/business-partners` to the `businessPartnersRoute` function. To do so, open the `application.ts` file, import your function and add a route to the `router`:
 
 ```JavaScript / TypeScript
-import { businessPartnerRoute } from './business-partner-route';
+import { businessPartnersRoute } from './business-partners-route';
 
 // ...
 
 private routes(): void {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
   // add the following line
-  router.get("/business-partners", businessPartnerRoute);
-  this.app.use("/", router);
+  router.get('/business-partners', businessPartnersRoute);
+  this.app.use('/', router);
 }
 ```
 
@@ -91,30 +91,30 @@ Now you can start your app using `npm run start:local` or `npm run serve-debug`.
 Start by creating a file called `business-partners-route.js` in the `src` folder of the project. Copy the following code into the file:
 
 ```JavaScript
-function businessPartnerRoute(req, res) {
+function businessPartnersRoute(req, res) {
   res.status(200).send('Nothing to see yet...');
 }
 
-module.exports.businessPartnerRoute = businessPartnerRoute;
+module.exports.businessPartnersRoute = businessPartnersRoute;
 ```
 
-The function `businessPartnerRoute` is the function that will handle requests to the API endpoint that we create. Every function in `Express.js` that handles a request takes two parameters: the `Request` object and the `Response` object (though we don't need the `Request` for now).
+The function `businessPartnersRoute` is the function that will handle requests to the API endpoint that we create. Every function in `Express.js` that handles a request takes two parameters: the `Request` object and the `Response` object (though we don't need the `Request` for now).
 
-Now you need to instruct the `Express.js` router to delegate incoming requests to `/business-partners` to the `businessPartnerRoute` function. To do so, open the `application.js` file, import your function and add a route to the `router`:
+Now you need to instruct the `Express.js` router to delegate incoming requests to `/business-partners` to the `businessPartnersRoute` function. To do so, open the `application.js` file, import your function and add a route to the `router`:
 
 ```JavaScript
-const { businessPartnerRoute } = require('./business-partner-route');
+const { businessPartnersRoute } = require('./business-partners-route');
 
 // ...
 
 private routes() {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
   // add the following line
-  router.get("/business-partners", businessPartnerRoute);
-  this.app.use("/", router);
+  router.get('/business-partners', businessPartnersRoute);
+  this.app.use('/', router);
 }
 ```
 
@@ -137,7 +137,7 @@ Following this pattern, update your code as shown below (mind the updated `impor
 import { Request, Response } from 'express';
 import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 
-export function businessPartnerRoute(req: Request, res: Response) {
+export function businessPartnersRoute(req: Request, res: Response) {
   res.status(200).send('Nothing to see yet...');
 }
 
@@ -170,11 +170,11 @@ Following this pattern, update your code as shown below (mind the updated `requi
 ```JavaScript
 const { BusinessPartner } = require('@sap/cloud-sdk-vdm-business-partner-service');
 
-function businessPartnerRoute(req, res) {
+function businessPartnersRoute(req, res) {
   res.status(200).send('Nothing to see yet...');
 }
 
-module.exports.businessPartnerRoute = businessPartnerRoute;
+module.exports.businessPartnersRoute = businessPartnersRoute;
 
 function getAllBusinessPartners() {
   return BusinessPartner.requestBuilder()
@@ -233,7 +233,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
       APIKey: 'YOUR-API-KEY'
     })
     .execute({
-      url: "https://sandbox.api.sap.com/s4hanacloud/"
+      url: 'https://sandbox.api.sap.com/s4hanacloud/'
     });
 }
 ```
@@ -270,7 +270,7 @@ function getAllBusinessPartners() {
       APIKey: 'YOUR-API-KEY'
     })
     .execute({
-      url: "https://sandbox.api.sap.com/s4hanacloud/"
+      url: 'https://sandbox.api.sap.com/s4hanacloud/'
     });
 }
 ```
@@ -596,7 +596,7 @@ You've finished the implementation of `getAllBusinessPartners`! To make the resu
 import { Request, Response } from 'express';
 import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 
-export function businessPartnerRoute(req: Request, res: Response) {
+export function businessPartnersRoute(req: Request, res: Response) {
   getAllBusinessPartners()
     .then(businessPartners => {
       res.status(200).send(businessPartners);
@@ -630,7 +630,7 @@ You've finished the implementation of `getAllBusinessPartners`! To make the resu
 ```JavaScript
 const { BusinessPartner } = require('@sap/cloud-sdk-vdm-business-partner-service');
 
-function businessPartnerRoute(req, res) {
+function businessPartnersRoute(req, res) {
   getAllBusinessPartners()
     .then(businessPartners => {
       res.status(200).send(businessPartners);
@@ -640,7 +640,7 @@ function businessPartnerRoute(req, res) {
     })
 }
 
-module.exports.businessPartnerRoute = businessPartnerRoute;
+module.exports.businessPartnersRoute = businessPartnersRoute;
 
 function getAllBusinessPartners() {
   return BusinessPartner.requestBuilder()
@@ -660,7 +660,7 @@ function getAllBusinessPartners() {
 ```
 [OPTION END]
 
-`businessPartnerRoute` now calls the `getAllBusinessPartners`, which returns a `Promise`. A `Promise` can have two result states. Either the execution of the wrapped function succeeded, or it failed.
+`businessPartnersRoute` now calls the `getAllBusinessPartners`, which returns a `Promise`. A `Promise` can have two result states. Either the execution of the wrapped function succeeded, or it failed.
 
 The success case can be handled with the `then` function. This gives you access to the return value of the wrapped function, which is an array of business partners. `res.status(200).send(businessPartners)` sends a response to the client with HTTP status code `200` and the business partner array as body.
 
