@@ -102,7 +102,10 @@ This step describes how to create a new Schema in the cockpit and bind it to the
     b. Select the New button and enter the following information in the pop up window that appears, then click Save.
 
     Database ID: **`espm`**
+
     Database System: **`HANA MDC (<trial>)`**
+
+    Password: The password for the database user. This is the one you chose when you created the **SAP HANA / SAP ASE** > **Databases & Schemas**
 
 
 2. Bind the database to the application
@@ -115,9 +118,11 @@ This step describes how to create a new Schema in the cockpit and bind it to the
 
     d. Select the **New Binding** button and enter the following information in the pop up window, then select **Save**.
 
-Data Source: **`<default>`**
-DB/Schema ID: **`espm`**
-Database System: **`HANA (<shared>)`**
+    Data Source: **`<default>`**
+
+    DB/Schema ID: **`espm`**
+
+    Database System: **`HANA (<shared>)`**
 
 [DONE]
 [ACCORDION-END]
