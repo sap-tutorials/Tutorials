@@ -1,6 +1,7 @@
 ---
 title: Adding Analytic Privileges and the SAP HANA Modeler Perspective
 description: Understanding the various types of Information Views used in SAP HANA to create analytical reports.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -33,6 +34,7 @@ The window will open on the right. Navigate to the bottom, and select "**Analyti
 
 Once you add the privilege for the `TPCH` user, click the green execution arrow at the top right.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -65,9 +67,9 @@ These calculation views can be either graphical or scripted, depending on how th
 
 For simplicity, in the upcoming set of tutorials, we will only be developing in the graphical environment.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](SAP HANA Modeler Perspective)]
 
@@ -78,5 +80,6 @@ To open the SAP HANA Modeler perspective, click the **Open Perspective** icon lo
 Select "**SAP HANA Modeler**" from the pop-up window, and click **OK**. The system will then open the Modeler perspective tab.
 ![Select SAP HANA Modeler Perspective](sap-hana-modeler.png)
 
+[DONE]
 
 [ACCORDION-END]
