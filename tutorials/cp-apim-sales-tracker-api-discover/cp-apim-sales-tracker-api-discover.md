@@ -86,6 +86,7 @@ primary_tag: products>sap-api-management
 
     ![Execute API](12-execute.png)
     >The call will fail as it requires **Verify API Key** policy.
+
     >The Verify API Key policy lets you enforce verification of API keys at runtime, letting only apps with approved API keys access your APIs. This policy ensures that API keys are valid, have not been revoked, and are approved to consume the specific resources associated with your API products.
 
 [DONE]
