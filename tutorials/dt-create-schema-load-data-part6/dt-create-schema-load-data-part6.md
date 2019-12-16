@@ -1,6 +1,7 @@
 ---
 title: Migrate Records in Related Tables Using Stored Procedure
 description: Using a stored procedure to migrate records in related tables as a single transaction.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -47,6 +48,7 @@ Verify everything executed correctly.
 
 ![Restore Success](restore-success.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -89,6 +91,7 @@ END;
 
 ![Create Success](create-success.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -121,6 +124,6 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 ![Verify Column Store](verify-cs.png)
 
+[DONE]
 
 [ACCORDION-END]
-
