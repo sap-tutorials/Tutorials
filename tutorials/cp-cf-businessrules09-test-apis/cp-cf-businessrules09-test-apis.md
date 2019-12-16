@@ -61,7 +61,7 @@ Here, you need to configure the environment to link it to the business rules pro
     |  `Secret`      | **`<clientsecret from service key>`**
     |  `tokenurl`     | **`<url from service key>`**
 
-> Enter the token URL without **`https://`**. For example, if the token URL in the service key is **`https://<trial ID>.authentication.eu10.hana.ondemand.com`**, then enter **`//<trial ID>.authentication.eu10.hana.ondemand.com`**.
+> Enter the token URL without **`https://`**. For example, if the token URL in the service key is **`https://<trial ID>.authentication.eu10.hana.ondemand.com`**, then enter **`<trial ID>.authentication.eu10.hana.ondemand.com`**.
 
 
 ![Configure environment](testing6.png)

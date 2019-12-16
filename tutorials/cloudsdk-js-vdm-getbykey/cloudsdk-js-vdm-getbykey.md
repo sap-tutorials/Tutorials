@@ -39,7 +39,7 @@ export function singleBusinessPartnerRoute(req: Request, res: Response) {
 Then open `application.ts`, import the function and add a route definition:
 
 ```JavaScript / TypeScript
-import { businessPartnerRoute } from './business-partner-route';
+import { businessPartnersRoute } from './business-partners-route';
 import { singleBusinessPartnerRoute } from './single-business-partner-route';
 
 // ...
@@ -47,12 +47,12 @@ import { singleBusinessPartnerRoute } from './single-business-partner-route';
 private routes(): void {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
-  router.get("/business-partners", businessPartnerRoute);
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
+  router.get('/business-partners', businessPartnersRoute);
   // add the following line
-  router.get("/business-partners/:id", singleBusinessPartnerRoute);
-  this.app.use("/", router);
+  router.get('/business-partners/:id', singleBusinessPartnerRoute);
+  this.app.use('/', router);
 }
 ```
 [OPTION END]
@@ -73,7 +73,7 @@ module.exports.singleBusinessPartnerRoute = singleBusinessPartnerRoute;
 Then open `application.js`, import the function and add a route definition:
 
 ```JavaScript
-const { businessPartnerRoute } = require('./business-partner-route');
+const { businessPartnersRoute } = require('./business-partners-route');
 const { singleBusinessPartnerRoute } = require('./single-business-partner-route');
 
 // ...
@@ -81,12 +81,12 @@ const { singleBusinessPartnerRoute } = require('./single-business-partner-route'
 private routes() {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
-  router.get("/business-partners", businessPartnerRoute);
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
+  router.get('/business-partners', businessPartnersRoute);
   // add the following line
-  router.get("/business-partners/:id", singleBusinessPartnerRoute);
-  this.app.use("/", router);
+  router.get('/business-partners/:id', singleBusinessPartnerRoute);
+  this.app.use('/', router);
 }
 ```
 [OPTION END]
@@ -311,7 +311,7 @@ Now that you've finished implementing the function, you only need to call it in 
 
 [OPTION BEGIN [TypeScript]]
 ```JavaScript / TypeScript
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 import { BusinessPartner, BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-service';
 
 export function singleBusinessPartnerRoute(req: Request, res: Response) {

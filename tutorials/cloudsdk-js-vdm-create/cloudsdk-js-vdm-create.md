@@ -38,7 +38,7 @@ export function createBusinessPartnerAddressRoute(req: Request, res: Response) {
 Now open `application.ts` again, import the function and add the following route definition:
 
 ```JavaScript / TypeScript
-import { businessPartnerRoute } from './business-partner-route';
+import { businessPartnersRoute } from './business-partners-route';
 import { singleBusinessPartnerRoute } from './single-business-partner-route';
 import { createBusinessPartnerAddressRoute } from './create-business-partner-address-route';
 
@@ -47,13 +47,13 @@ import { createBusinessPartnerAddressRoute } from './create-business-partner-add
 private routes(): void {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
-  router.get("/business-partners", businessPartnerRoute);
-  router.get("/business-partners/:id", singleBusinessPartnerRoute);
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
+  router.get('/business-partners', businessPartnersRoute);
+  router.get('/business-partners/:id', singleBusinessPartnerRoute);
   // add the following line
-  router.post("/business-partners/:id/address", createBusinessPartnerAddressRoute);
-  this.app.use("/", router);
+  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
+  this.app.use('/', router);
 }
 ```
 [OPTION END]
@@ -74,7 +74,7 @@ module.exports.createBusinessPartnerAddressRoute = createBusinessPartnerAddressR
 Now open `application.js` again, import the function and add the following route definition:
 
 ```JavaScript
-const { businessPartnerRoute } = require('./business-partner-route');
+const { businessPartnersRoute } = require('./business-partners-route');
 const { singleBusinessPartnerRoute } = require('./single-business-partner-route');
 const { createBusinessPartnerAddressRoute } = require('./create-business-partner-address-route');
 
@@ -83,13 +83,13 @@ const { createBusinessPartnerAddressRoute } = require('./create-business-partner
 private routes() {
   const router = express.Router();
 
-  router.get("/", indexRoute);
-  router.get("/hello", helloWorld);
-  router.get("/business-partners", businessPartnerRoute);
-  router.get("/business-partners/:id", singleBusinessPartnerRoute);
+  router.get('/', indexRoute);
+  router.get('/hello', helloWorld);
+  router.get('/business-partners', businessPartnersRoute);
+  router.get('/business-partners/:id', singleBusinessPartnerRoute);
   // add the following line
-  router.post("/business-partners/:id/address", createBusinessPartnerAddressRoute);
-  this.app.use("/", router);
+  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
+  this.app.use('/', router);
 }
 ```
 [OPTION END]
@@ -145,7 +145,7 @@ So far, there's an API endpoint and a function that takes an address and creates
 [OPTION BEGIN [TypeScript]]
 ```JavaScript / TypeScript
 function buildAddress(body: any, businessPartnerId: string): BusinessPartnerAddress {
-  const address = BusinessPartnerAddress.builder().fromJson(body) as BusinessPartnerAddress;
+  const address = BusinessPartnerAddress.builder().fromJson(body);
   address.businessPartner = businessPartnerId;
   return address;
 }
@@ -178,8 +178,8 @@ import { BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-serv
 
 export function createBusinessPartnerAddressRoute(req: Request, res: Response) {
   createBusinessPartnerAddress(buildAddress(req.body, req.params.id))
-    .then(bupa => {
-      res.status(200).send(bupa);
+    .then(address => {
+      res.status(200).send(address);
     })
     .catch(error => {
       res.status(500).send(error.message);
@@ -195,7 +195,7 @@ function createBusinessPartnerAddress(address: BusinessPartnerAddress): Promise<
 }
 
 function buildAddress(body: any, businessPartnerId: string): BusinessPartnerAddress {
-  const address = BusinessPartnerAddress.builder().fromJson(body) as BusinessPartnerAddress;
+  const address = BusinessPartnerAddress.builder().fromJson(body);
   address.businessPartner = businessPartnerId;
   return address;
 }
@@ -208,8 +208,8 @@ const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-
 
 function createBusinessPartnerAddressRoute(req, res) {
   createBusinessPartnerAddress(buildAddress(req.body, req.params.id))
-    .then(bupa => {
-      res.status(200).send(bupa);
+    .then(address => {
+      res.status(200).send(address);
     })
     .catch(error => {
       res.status(500).send(error.message);
