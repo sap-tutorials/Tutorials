@@ -118,7 +118,7 @@ The Card now spreads across the whole screen, this behavior is intended so it ta
 
     Execute this in your terminal:
 
-    ```ShellBar
+    ```Shell
     npm install @ui5/webcomponents-react-base --save
     ```
 
