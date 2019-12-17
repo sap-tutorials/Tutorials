@@ -1,6 +1,6 @@
 ---
 title: Add Custom Styles and Components for UI5 Web Components
-description: Add custom styles and custom components to your application.
+description: Add custom styles and custom components to your application using UI5 Web Components for React.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-fiori]
@@ -13,12 +13,12 @@ primary_tag: topic>html5
 -  How to style own components
 
 
-In this tutorial you will learn how to apply styling to the UI5 Web Components. You can add custom styles and even overwrite CSS Variables on any level. Also you'll learn how to style your custom components with the styling approach of SAP Fiori
+In this tutorial, you will learn how to apply styling to the UI5 Web Components. You can add custom styles and even overwrite CSS Variables on any level. Also you'll learn how to style your custom components with the styling approach of SAP Fiori
 
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Changing the style for existing components)]
+[ACCORDION-BEGIN [Step: ](Change style for existing components)]
 You can change the appearance of the Web Components by using [CSS Variables](https://www.w3schools.com/Css/css3_variables.asp). Per default, the Fiori 3 theme parameters are injected into the document head as CSS Variables. If you want to change e.g. the color of all texts, you can do that by creating another style element.
 
 Open the `index.html` file inside of your `public` folder and add the following content inside of the `<head>` element:
@@ -41,19 +41,20 @@ A full list of all supported CSS Variables can be found [here](https://github.co
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step: ](Style your own component)]
 
-If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components. You can hook into the theming by using [react-jss](https://cssinjs.org/react-jss/?v=v10.0.0)
+If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components. You can hook into the theming by using [react-jss](https://cssinjs.org/react-jss/?v=v10.0.0).
 
-1. Install `react-jss`
+1. Install `react-jss`.
 
-    ```sh
+    ```Shell
     npm install react-jss
     ```
 
 2. Create a custom component `MyCustomElement.jsx` under `./src` with following content:
 
-    ```JSX
+    ```JavaScript / JSX
     import React from "react";
     import { createUseStyles } from "react-jss";
 
@@ -86,7 +87,7 @@ If you want to add a custom component to your app, but still want to use the sty
     ```
     When using the jss styling functions, the function will be called with an object with three properties:
 
-    ```JSX
+    ```JavaScript / JSX
     {
      theme: 'the current theme as string, e.g. "sap_fiori_3"',
      parameters: "object with all styling parameters, please check the CSS Variables link.",
@@ -96,11 +97,11 @@ If you want to add a custom component to your app, but still want to use the sty
 
 3. Import the custom component and add it to your `Home` component.
 
-    ```JSX
+    ```JavaScript / JSX
     import { MyCustomElement } from "./MyCustomElement";
     ```
 
-    ```JSX
+    ```JavaScript / JSX
      return (
         <FlexBox
           justifyContent={FlexBoxJustifyContent.Center}

@@ -1,6 +1,6 @@
 ---
 title: Create an Analytical Dashboard via UI5 Web Component
-description: Create an analytical dashboard with different components.
+description: Create an analytical dashboard with different components using UI5 Web Components for React.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori]
@@ -13,14 +13,14 @@ primary_tag: topic>html5
 -  How to use the `AnalyticalTable` component
 -  How to style components
 
-So far, you have build your first `Card` component. Now to take things further, it's time to build something bigger. In this step you will learn how different components will work together by building an analytical dashboard.
+So far, you have built your first `Card` component. Now to take things further, it's time to build something bigger. In this step, you will learn how different components work together by building an analytical dashboard.
 
 ---
 
-[ACCORDION-BEGIN [Step  ](Add necessary imports)]
+[ACCORDION-BEGIN [Step   ](Add necessary imports)]
 To make things easier, first import all the components you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.jsx`.
 
-```JSX
+```JavaScript / JSX
 import {
   Card,
   Text,
@@ -42,6 +42,7 @@ import {
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step: ](Add a ShellBar)]
 
 The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
@@ -50,7 +51,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
 1. Start with adding the `ShellBar` above your `Card` component and add a `primaryTitle` prop.
 
-    ```JSX
+    ```JavaScript / JSX
     <ShellBar primaryTitle="My App" />
     ```
 
@@ -60,21 +61,22 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     Use the `logo` and `profile` prop to achieve this. Both props accept either a URL or a path to your image, you can use your own image or simply download the images below and add them to your `public` folder in your project.
 
-    [//]: # (reactLogo.png(https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ui5-webcomponents-react-dashboard/resources/reactLogo.png))
+    [`reactLogo.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/reactLogo.png)
 
-    [//]: # (profilePictureExample.png(https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/ui5-webcomponents-react-dashboard/resources/profilePictureExample.png))
+    [`profilePictureExample.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/profilePictureExample.png)
 
-    ```JSX
+    ```JavaScript / JSX
     <ShellBar
       logo={"reactLogo.png"}
       profile={"profilePictureExample.png"}
       primaryTitle={"My App"}  />
     ```
+
 3. Add custom elements
 
     By passing a `ShellBarItem` as `child` you are able to add custom elements to your `ShellBar`. The element is basically a `Button` with responsive behavior and styling adapted to the `ShellBar`.
 
-    ```JSX
+    ```JavaScript / JSX
     <ShellBar
       logo={"reactLogo.png"}
       profile={"profilePictureExample.png"}
@@ -83,16 +85,17 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     </ShellBar>
     ```
 
-    That is strange, when you render your component, the `ShellBarItem` is not shown.
+    That is strange -- when you render your component, the `ShellBarItem` is not shown.
 
-    If you take a look at the developer tools of your browser you will see a warning.
+    If you take a look at the developer tools of your browser, you will see a warning.
 
     ![warning](01_warning.png)
 
-    Every `Icon` that is used in a component, has to be imported manually. All available icons can be found [here](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#/overview/SAP-icons).
+    Every `Icon` that is used in a component has to be imported manually. All available icons can be found [here](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html#/overview/SAP-icons).
 
     Add this line to your imports:
-    ```JSX
+
+    ```JavaScript / JSX
     import "@ui5/webcomponents/dist/icons/add.js";
     ```
 
@@ -102,7 +105,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
 Your component should look like this:
 
-```JSX
+```JavaScript / JSX
 import React, { useState } from "react";
 import {
     Card,
@@ -190,7 +193,7 @@ export function MyApp() {
 
 1. To wrap the `List` add a `Card` (right after the first one).
 
-    ```JSX
+    ```JavaScript / JSX
     <Card
         heading="Progress"
         subtitle="List"
@@ -200,13 +203,13 @@ export function MyApp() {
 
 2. Add the `List` component as child of the `Card`.
 
-    ```JSX
+    ```JavaScript / JSX
     <List></List>
     ```
 
 3. To render elements of the list, use the `StandardListItem` and pass a `string` as child.
 
-    ```JSX
+    ```JavaScript / JSX
      <List>
        <StandardListItem>Activity 1</StandardListItem>
      </List>
@@ -214,7 +217,7 @@ export function MyApp() {
 
 4. The user should know the status of the activities. Add the `info` prop to the `StandardListItem`. To visualize if the status is neutral, positive or negative, also add the `infoState` prop.
 
-    ```JSX
+    ```JavaScript / JSX
      <StandardListItem info="finished" infoState={ValueState.Success}>
        Activity 1
      </StandardListItem>
@@ -234,7 +237,7 @@ export function MyApp() {
     - `width`: The width of the indicator
     - `state`: The value-state (color) of the indicator  
 
-    ```JSX
+    ```JavaScript / JSX
     <StandardListItem info="in progress" infoState={ValueState.Warning}>
         <Title level={TitleLevel.H5}>Activity 3</Title>
         <ProgressIndicator
@@ -252,6 +255,7 @@ export function MyApp() {
             state={ValueState.Error} />
     </StandardListItem>
     ```
+
 6.  The components are shown but they don't fit inside the row and overflow.
 
     To fix this, first adjust the height of the `StandardListItem`. Then, pass a `style` prop to the component to use the default [React `inlineStyle` syntax](https://reactjs.org/docs/dom-elements.html) and then wrap your `Title` and `ProgressIndicator` inside of a `FlexBox` component.
@@ -259,7 +263,7 @@ export function MyApp() {
 
     The finished `List` component should now look like this:
 
-    ```JSX
+    ```JavaScript / JSX
     <List>
       <StandardListItem info="finished" infoState={ValueState.Success}>
         Activity 1
@@ -300,23 +304,23 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
 ![List](03_list.png)
 
-
-
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Add an AnalyticalTable)]
 
 1. The last tile should contain a `AnalyticalTable` component. Again, create a `Card` to wrap the Table and set the `max-width` to `900px`.
-```JSX
-<Card heading="AnalyticalTable" style={{maxWidth: "900px"}}>
-  <AnalyticalTable />
-</Card>
-```
+
+    ```JavaScript / JSX
+    <Card heading="AnalyticalTable" style={{maxWidth: "900px"}}>
+      <AnalyticalTable />
+    </Card>
+    ```
+
 2. Add data and columns to the table. The `columns` prop expects an array of objects that include at least the `accessor` to the data. The value of `Header` will be shown as column header.
 
     You can create your own data or just use the code below and paste it right after the definition of the `labels` of the chart.
 
-    ```JSX
+    ```JavaScript / JSX
     const tableData = new Array(500).fill(null).map((_, index) => {
       return {
         name: `name${index}`,
@@ -347,8 +351,10 @@ Now the components inside the card fit (we'll arrange the cards themselves later
       }
     ];
     ```
+
 3. Display the data by replacing the current table with.
-    ```JSX
+
+    ```JavaScript / JSX
     <AnalyticalTable
       data={tableData}
       columns={tableColumns} />
@@ -362,7 +368,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
     The default visible rows count is at 15. This number is a bit to high for a dashboard table. Reduce the `visibleRows` count to 5 by setting the corresponding prop.
 
-    ```JSX
+    ```JavaScript / JSX
     <AnalyticalTable
       data={tableData}
       columns={tableColumns}
@@ -379,7 +385,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
 
     To add a padding to the cards, you can use `spacing` again. Inside of the style property [spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) the `spacing` object and append the style. Do this for each `Card` component.
 
-    ```JSX
+    ```JavaScript / JSX
     <Card
         heading="Stock Price"
         style={{ width: "300px" }}
@@ -389,11 +395,11 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
         style={{ width: "300px", ...spacing.sapUiContentPadding }} >
     ```
 
-    ```JSX
+    ```JavaScript / JSX
     <Card heading="Progress" subtitle="List" style={{ width: "300px", ...spacing.sapUiContentPadding }}>
     ```
 
-    ```JSX
+    ```JavaScript / JSX
     <Card heading="AnalyticalTable" subtitle="List" style={{ width: "900px", ...spacing.sapUiContentPadding }}>
     ```
 
@@ -401,7 +407,7 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
 
     To properly align the tiles, use a `FlexBox` component and wrap your `Cards` inside of it. Use the `justifyContent` prop to center align all elements and `wrap` to make them move to the next line if not enough space is available.
 
-    ```JSX
+    ```JavaScript / JSX
     <FlexBox
         justifyContent={FlexBoxJustifyContent.Center}
         wrap={FlexBoxWrap.Wrap} >
@@ -413,7 +419,7 @@ Your component should now look like this:
 
 !![Dashboard](05_dashboard.png)
 
-```JSX
+```JavaScript / JSX
 import React, { useState } from "react";
 import {
     Card,
