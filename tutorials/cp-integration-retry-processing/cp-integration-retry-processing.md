@@ -1,6 +1,6 @@
 ---
-title: Retry Message Processing in case of an Error
-description: How to retry message processing in case of an error, instead of setting the message status to Failed or asking the sender to resend the message.
+title: Retry Message Processing in Case of an Error
+description: Retry message processing in case of an error, instead of setting the message status to Failed or asking the sender to resend the message.
 time: 20
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-cloud-platform-connectivity]
@@ -13,9 +13,9 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 ## Details
 ### You will learn
-  - How to use Enterprise Messaging.
-  - How to automate retry of message processing in case of an errors.
-  - How to model exactly once processing in SAP Cloud Platform Integration.
+  - How to use Enterprise Messaging
+  - How to automate retry of message processing in case of an errors
+  - How to model exactly once processing in SAP Cloud Platform Integration
 
 In the previous chapter, we simply sent an intimation of error through mail and expected the sender to resend the message in case of an error.
 
@@ -71,7 +71,7 @@ To enable retry, we will store the failed message in a JMS queue and pick it up 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Write the incoming message to a JMS Queue in case of an exception)]
+[ACCORDION-BEGIN [Step 2: ](Write incoming message to JMS Queue for exceptions)]
 
 In this step, we assume that an exception has happened. We will now store the incoming message into a JMS queue. For this purpose, we cannot take the message on the pipeline as we can never be sure where an exception can occur. So we need to use the message that we parked in the previous step - this way we are always sure that we are working on the incoming message and can duplicate the entire processing while we retry.
 
@@ -179,7 +179,7 @@ In this step, we assume that an exception has happened. We will now store the in
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a duplicate flow that reads messages from the JMS queue)]
+[ACCORDION-BEGIN [Step 5: ](Create duplicate flow for reading messages from JMS queue)]
 
 In this exercise, we shall copy the original flow and make the following changes in it:
 
@@ -247,7 +247,7 @@ In this exercise, we shall copy the original flow and make the following changes
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure retry setting in the JMS queue)]
+[ACCORDION-BEGIN [Step 5: ](Configure retry setting in JMS queue)]
 
 Configure the JMS sender as follows:
 

@@ -1,6 +1,6 @@
 ---
-title: Add Conditional Routing to your Integration Flow
-description: Check the value of an element and pursue different routes of processing with independent logic
+title: Add Conditional Routing to Your Integration Flow
+description: Check the value of an element and pursue different routes of processing with independent logic.
 time: 15
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-cloud-platform]
@@ -9,10 +9,10 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 ## Details
 ### You will learn
-  - How to add conditional routing in an integration flow.
-  - How to define routing conditions.
-  - How to define routing conditions based on message content.
-  - How to configure multiple routes in your integration flow.
+  - How to add conditional routing in an integration flow
+  - How to define routing conditions
+  - How to define routing conditions based on message content
+  - How to configure multiple routes in your integration flow
 
 Lets us check the value of the code retrieved in the previous exercise to define how the purchase order needs to be processed.
 

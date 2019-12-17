@@ -16,17 +16,17 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
   - Different ways of calling external endpoints.
   - Difference between Request-Reply and Content Enricher.
 
-__Additional information:__
-
 Instead of using an external API, we shall use an API exposed on your tenant. To expose the API, we shall create an additional flow. We will expose an SOAP endpoint through this integration flow and then consume it in the basic flow that was created in the previous chapter.
 
-__Feel free to replace the same with any externally available API.__
+Feel free to replace the same with any externally available API.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a flow that exposes an SOAP endpoint and returns the closest warehouse code)]
+[ACCORDION-BEGIN [Step 1: ](Create flow to expose SOAP endpoint)]
 1. Go to the package __SAP Cloud Platform Integration Tutorials__.
+
 2. Add an integration flow to this package.
+
     - Go to the __Artifacts__ tab.
     - Click __Edit__.
     - In the __Add__ dropdown, choose __Integration Flow__.
@@ -144,7 +144,7 @@ __Feel free to replace the same with any externally available API.__
 
     > Now the message in the pipeline is only the text of the address field of the incoming message. All other message content get discarded.
 
-  9. Add a script step to compute the warehouse code from the recipient's address-
+  11. Add a script step to compute the warehouse code from the recipient's address-
     * Click on the design Palette.
     * Choose __Message Transformers__.
     * Choose __Script__.
@@ -168,7 +168,7 @@ __Feel free to replace the same with any externally available API.__
 
     * Add the following code to the script's __processData__ method:
 
-    ```
+    ```Groovy
     def Message processData(Message message)
     {
      def body = message.getBody();
@@ -187,7 +187,7 @@ __Feel free to replace the same with any externally available API.__
 
     * Click __Ok__.
 
-10. Create an XML body using a Content Modifier:
+12. Create an XML body using a Content Modifier:
     * Click on the design Palette.
     * Choose __Message Transformers__.
     * Choose __Content Modifier__.

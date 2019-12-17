@@ -1,6 +1,6 @@
 ---
 title: Create a Basic Flow with a SOAP Endpoint
-description: This tutorial shows how to create a basic integration flow with a SOAP endpoint in SAP Cloud Platform Integration
+description: Create a basic integration flow with a SOAP endpoint in SAP Cloud Platform Integration.
 time: 20
 auto_validation: true
 tags: [ tutorial>beginner, products>sap-cloud-platform]
@@ -9,25 +9,26 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 ## Prerequisites
 - You have an SAP Cloud Platform Integration tenant.
-- You have assigned ESBMessaging.send role in the Cloud Platform cockpit to the user that will be used for calling the flow.
+- You have assigned `ESBMessaging.send` role in the SAP Cloud Platform cockpit to the user that will be used for calling the flow.
 
 ## Details
 ### You will learn
-  - How to create a basic integration flow.
-  - How to add sender and receiver channel.
-  - How to expose a SOAP endpoint.
-  - How to configure a mail receiver.
-  - How to deploy, execute and monitor an integration flow.
+  - How to create a basic integration flow
+  - How to add sender and receiver channel
+  - How to expose a SOAP endpoint
+  - How to configure a mail receiver
+  - How to deploy, execute and monitor an integration flow
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Launch Cloud Platform Integration)]
+[ACCORDION-BEGIN [Step 1: ](Launch SAP Cloud Platform Integration)]
 
 1. Launch an HTML5 compliant internet browser.
-2. Access the Web Interface using the URL ```<tenant URL>/itspaces/```.
 
-    *If you  get a security warning dialog, click __yes__  and proceed.*
+2. Access the Web Interface using the URL: `<tenant URL>/itspaces/`
+
+    If you  get a security warning dialog, click __yes__  and proceed.
 
     ![Security](Security.png)  
 
@@ -38,10 +39,11 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
     > With the navigation on the left, you can switch between the following sections of the Web Interface:
 
-    > - Discover → SAP's reference catalog.
-    > - Design → customer's workspace - design time.
+    > - **Discover** → SAP's reference catalog.
 
-    > - Monitor → Monitoring  messages, deployed artifacts and perform other operational tasks.
+    > - **Design** → customer's workspace - design time.
+
+    > - **Monitor** → Monitoring  messages, deployed artifacts and perform other operational tasks.
 
 [DONE]
 [ACCORDION-END]
@@ -71,7 +73,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
     Version                | 1.0.0
     Vendor                 | SAP
 
-3. Click Save.
+3. Click **Save**.
 
     ![Create Package](New Package details.png)
 
@@ -118,7 +120,9 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 1. Give a name to the sender system:
     - Click on the Sender.
-    - Go to the __Properties sheet__.
+
+    - Go to the properties sheet.
+
     - Set the name to __e-Commerce Vendor__.
 
     ![Set sender name](Set sender name.png)

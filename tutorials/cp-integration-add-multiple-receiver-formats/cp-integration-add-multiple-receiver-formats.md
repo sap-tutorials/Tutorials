@@ -1,6 +1,6 @@
 ---
 title: Add Multiple Receivers and Convert Message Format
-description: Add different receivers and send messages in different formats to the different receivers
+description: Add different receivers and send messages in different formats to the different receivers.
 time: 15
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-cloud-platform]
@@ -9,18 +9,18 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 ## Details
 ### You will learn
-  - How to add additional routes to the router.
-  - How to send messages to different receivers based on the value of the warehouse code.
-  - How to convert message formats based on the requirements of the different receivers.
-  - How to copy channel configuration from a configured channel to another.
+  - How to add additional routes to the router
+  - How to send messages to different receivers based on the value of the warehouse code
+  - How to convert message formats based on the requirements of the different receivers
+  - How to copy channel configuration from a configured channel to another
 
-In this exercise, we will add one additional route for a different warehouse code (KWA2MNW2U). We will add receivers to each route and also additional processing to show how you can vary the processing to adjust the message as required by the receiver.
+In this exercise, you will add one additional route for a different warehouse code (KWA2MNW2U). You will add receivers to each route and also additional processing to show how you can vary the processing to adjust the message as required by the receiver.
 
-For the sake of simplicity, we shall continue to send mails to each of the different receivers but with different Subject.
+For the sake of simplicity, you shall continue to send mails to each of the different receivers but with different Subject.
 
 > Each receiver could ideally have different modes of communication, like API call (via OData, HTTP, SOAP, etc.), file transfer, remote function call, IDOC, etc.
 
-Finally, we shall convert the message to different formats like flat file and JSON for different receivers.
+Finally, you shall convert the message to different formats like flat file and JSON for different receivers.
 
 ---
 
@@ -95,7 +95,7 @@ Finally, we shall convert the message to different formats like flat file and JS
 
   5. Save, deploy and execute the flow with the existing input message with the changed address field again.
 
-    Last time we executed the flow, we did not receive any mail. However, now you should be able to see the below mail with the following address:
+    Last time you executed the flow, you did not receive any mail. However, now you should be able to see the below mail with the following address:
 
     __2025 M Street,Northwest,Washington DC,20036__:
 

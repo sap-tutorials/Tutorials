@@ -1,6 +1,6 @@
 ---
 title: Map Message Structure
-description: Use the mapping step to convert the message structure to a structure desired by the recipient
+description: Use the mapping step to convert the message structure to a structure desired by the recipient.
 time: 15
 auto_validation: true
 tags: [ tutorial>intermediate, products>sap-cloud-platform]
@@ -9,16 +9,17 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 ## Details
 ### You will learn
-  - How to map message structures.
-  - How to use the visual mapping editor.
-  - How to use standard mapping functions.
-  - How to create a custom groovy function in Message mapping.
-  - How to create a custom function with multiple outputs.
-  - How to simulate mappings.
-  - How to work with resources.
+  - How to map message structures
+  - How to use the visual mapping editor
+  - How to use standard mapping functions
+  - How to create a custom groovy function in Message mapping
+  - How to create a custom function with multiple outputs
+  - How to simulate mappings
+  - How to work with resources
 
-In this exercise, we shall convert the message structure from:
-```
+In this exercise, you shall convert the message structure from:
+
+```xml
 <orders>
 	<order>
 		<orderID>BS00010023</orderID>
@@ -48,9 +49,10 @@ In this exercise, we shall convert the message structure from:
 	</order>
 </orders>
 ```
-__to:__
 
-```
+to:
+
+```XML
 <orders>
 	<order>
 		<orderID>BS00010023</orderID>
@@ -117,31 +119,31 @@ __to:__
     ![Source Target added](Source Target added.png)
 
     * Map the following fields one-to-one by dragging a field from the source to the corresponding field on the target:
-```
-        * orders
-        * order
-        * orderID
-        * OrderDate
-        * ContactNumber
-        * items
-        * item
-        * Quantity
-        * ItemValue
-        * Shipping
-        * OrderValue
-        * ShippingType
-        * SpecialPackaging
-        * PaymentType
-```
-    ![Add MMap Connections](Add MMap Connections.png)
+
+        * `orders`
+        * `order`
+        * `orderID`
+        * `OrderDate`
+        * `ContactNumber`
+        * `items`
+        * `item`
+        * `Quantity`
+        * `ItemValue`
+        * `Shipping`
+        * `OrderValue`
+        * `ShippingType`
+        * `SpecialPackaging`
+        * `PaymentType`
+
+        ![Add MMap Connections](Add MMap Connections.png)
 
     * Map the following fields:
-```
-    | Source | Target     |
-    | :------------- | :------------- |
-    | ProductID       | ProductCode       |
-    | ProductDescription | ProductDetails |
-```
+
+        | Source | Target     |
+        | :------------- | :------------- |
+        | `ProductID`      | `ProductCode`       |
+        | `ProductDescription` | `ProductDetails` |
+
 
 [DONE]
 [ACCORDION-END]
@@ -156,14 +158,13 @@ __to:__
 
 4. Connect the following:       
 
-    ```concat``` --> ```CustomerName```
+    `concat` → `CustomerName`
 
-    ```CustomerName``` --> string1
+    `CustomerName` → `string1`
 
-    ```CustomerLastName``` --> string2
+    `CustomerLastName` → `string2`
 
-    Delimiter string = ```<space>
-    ```
+    `Delimiter string` → space
 
     ![CustomerNameConcat](CustomerNameConcat.png)
 
@@ -175,24 +176,25 @@ __to:__
 
 1. Connect __Address__ on the source to the following fields on the target:
 
-    * ```HouseNumber```
-    * AddressLine1
-    * AddressLine2
-    * City
-    * State
-    * Pin
-    * Country
+    * `HouseNumber`
+    * `AddressLine1`
+    * `AddressLine2`
+    * `City`
+    * `State`
+    * `Pin`
+    * `Country`
 
     ![Map Address](Map Address.png)
 
 2. Go to visual editor at the bottom and click on __Create__ function.
+
 3. In the pop-up dialog, give ```SplitAddr``` as the __Script Name__ and click __OK__.
 
     ![Add Script for Address](Add Script for Address.png)
 
 4. Paste the following code in the script file:
 
-    ```
+    ```Groovy
     def void splitAddress(String[] Address, Output HouseNumber, Output AddressLine1, Output AddressLine2, Output City, Output State, Output Pin, Output Country)
     {
         String Addr = Address[0];
@@ -212,33 +214,36 @@ __to:__
     ![script](script.png)
 
 6. Click on __Add__ functions.
+
 7. Choose __splitAddr.groovy__ in the pop-up dialog.
+
 8. You will now see ```splitAddr``` added to the list of custom functions under the standard functions:
 
     ![AddCustom](AddCustom.png)
 
 9. Click on ```splitAddr``` and drag the function ```splitAddress``` to the visual editor and connect the relevant fields.
 
-    Finally, you should see the following:
+Finally, you should see the following:
 
-    ![AddressMap](AddressMap.png)  
+![AddressMap](AddressMap.png)  
 
-    Once all the fields are mapped, your mapping should look like:
+Once all the fields are mapped, your mapping should look like:
 
-    ![Map 1](Map 1.png)
+![Map 1](Map 1.png)
 
-    ![Map 2](Map 2.png)
+![Map 2](Map 2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Simulate mapping)]
 
-We will now use the __Simulate__ functionality to test if the mapping is configured correctly and the desired output is generated.
+You will now use the __Simulate__ functionality to test if the mapping is configured correctly and the desired output is generated.
 
 Store the [Input Message](https://sap-my.sharepoint.com/:u:/p/meghna_shishodiya/EfVlE7h0-sJHgj4qiBH9ZakBnu2Pqx6oERvlFjxtwGXwhw?e=MKsQkO) to you file system.
 
 1. Click on __Simulate__.
+
 2. Click on __Browse__ and import the __Input Message__.
 
     ![Simulate](Simulate.png)
@@ -262,13 +267,15 @@ Store the [Input Message](https://sap-my.sharepoint.com/:u:/p/meghna_shishodiya/
 
 [ACCORDION-BEGIN [Step 5: ](Explore resources)]
 
-In the process of defining a message map, we created or uploaded a lot of artifacts, like ```XMLs, XSDs```, scripts and message maps.
+In the process of defining a message map, you created or uploaded a lot of artifacts, like ```XMLs, XSDs```, scripts and message maps.
 
 You can find each of the artifacts under the __Resources view__.
 
 1. Click on the __Canvas__.
+
 2. Go to the __Properties Sheet__.
-3. Go to the __Resources__ tab:
+
+3. Go to the __Resources__ tab.
 
     ![Find Resources](Find Resources.png)
 
