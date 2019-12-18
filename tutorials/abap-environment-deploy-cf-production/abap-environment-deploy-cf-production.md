@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Create HTML5 Module and SAP Fiori Launchpad Site Module and Deploy UI to Cloud Foundry  
+title: Create and Deploy HTML5 and SAP Fiori Launchpad Site Modules 
 description: Create HTML5 Module and SAP Fiori Launchpad Site Module. Deploy your UI to Cloud Foundry and run your application as a business user.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
