@@ -58,6 +58,7 @@ Install the streaming analytics plugin for SAP HANA studio, add a connection to 
 
 11. If you are installing the plugin into studio for Linux, log off of the machine and log back in.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -70,6 +71,8 @@ Install the streaming analytics plugin for SAP HANA studio, add a connection to 
 2. Select _Window > Perspective > Open Perspective > SAP HANA Streaming Run-Test_:
 
     ![SAP HANA Streaming Run-Test perspective](open-run-test.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -115,6 +118,7 @@ Here we will connect studio to the SAP HANA streaming analytics server.
 
     ![Default Server URL](set-default-server-url-hdbstudio.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -147,5 +151,6 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
     ![Discover](discover-hdbstudio.png)
 
+[DONE]
 
 [ACCORDION-END]
