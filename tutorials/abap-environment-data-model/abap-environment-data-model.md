@@ -142,7 +142,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
-    @AccessControl.authorizationCheck: #NOT_REQUIRED
+    @AccessControl.authorizationCheck: #CHECK
 
     @UI: {
      headerInfo: { typeName: 'Travel', typeNamePlural: 'Travels', title: { type: #STANDARD, value: 'TravelID' } } }

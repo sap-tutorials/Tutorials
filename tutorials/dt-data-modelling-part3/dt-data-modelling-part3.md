@@ -1,6 +1,7 @@
 ---
 title: Information View Conversion
 description: How to convert information views
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -44,7 +45,7 @@ In the next screen, we will select our source and target packages for the mass c
 
 ![Configure Package Mappings](configure-package-mappings.png)
 
-Select tutorial from the left panel, and click **Add* to select all views for copying. Make sure to check off the "**Copy as Calculation views**" box. This is *crucial*. Finally, click **Next**.
+Select tutorial from the left panel, and click **Add** to select all views for copying. Make sure to check off the "**Copy as Calculation views**" box. This is *crucial*. Finally, click **Next**.
 
 ![Select Models for Copying](select-models-for-copying.png)
 
@@ -58,6 +59,7 @@ Once that is complete, you can find your calculation views inside the tutorial.
 
 ![View Calculation Views](view-calculation-views.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -87,5 +89,6 @@ This view takes the attribute view created before (`AT_REGION`) and joins it wit
 **`CALC_ORDERS`**
 This view performs the same functionality as `AV_ORDERS`, but is created as a calculation view type. It uses a union node to join `AT_REGION` and `ORDERS_CS`, to output a table showing each customer key, and the corresponding region name, order status, order date, and total price.
 
+[DONE]
 
 [ACCORDION-END]

@@ -1,6 +1,7 @@
 ---
 title: Selectively Move Data Between In-Memory and Extended Tables
 description: Move data between in-memory and extended tables. Set connection property values.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -40,6 +41,7 @@ The result should be empty to indicate the data has been deleted.
 
 ![Empty Result](empty-result.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -60,6 +62,7 @@ Click on the value cell for **Auto Commit** and change it to **Off**.
 
 ![Auto Commit](auto-commit.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -78,6 +81,7 @@ Left click on the SQL console, and you should be prompted by a "Rollback Connect
 
 ![Rollback Connection](rollback-connection.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -117,6 +121,6 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 ![Verify Column Store](verify-cs.png)
 
+[DONE]
 
 [ACCORDION-END]
-
