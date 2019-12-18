@@ -25,7 +25,7 @@ author_profile: https://github.com/mervey45
 ---
 [ACCORDION-BEGIN [Step 1: ](Create package)]
 
-  1. Open your **ABAP Development Tools** and right-click on **`ZLOCAL`**, select **New** > **ABAP Package**.
+  1. Open your **ABAP Development Tools**, logon to your **ABAP system** and right-click on **`ZLOCAL`**, select **New** > **ABAP Package**.
 
       ![package](package.png)
 
