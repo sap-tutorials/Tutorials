@@ -4,7 +4,7 @@ description: The `hxehost` IP address is private to the VM. In order for applica
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition, tutorial>cp-starter-scenario    ]
 time: 2
 ---
 
@@ -15,8 +15,12 @@ time: 2
 ### You will learn
 You'll learn how to configure your host machine to communicate with the server. OK.
 
+!![My image](image.png)
 
-
+[Test link](https://localhost:4004/testLink.html)
+[Test link 3](https://localhost/testLink)
+[Test link 4](https://127.0.0.1/testLink.html)
+test
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Update etc/hosts)]
