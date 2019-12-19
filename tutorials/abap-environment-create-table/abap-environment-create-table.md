@@ -206,14 +206,6 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Define a table (without metadata) with following information in the correct order:
-
- - Name: `ztestyourself`
- - Key-Element: `key client`: `abap.clnt not null`
- - Elements:
-    - `customername`: `abap.char(50)`
-    - `country`: `abap.char(50)`
-    - `emailaddress`: `abap.char(50)`
-
+ 
 [VALIDATE_1]
 [ACCORDION-END]
