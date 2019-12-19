@@ -1,12 +1,13 @@
 ---
 title: Visualize a Graphical Query Plan
 description: Generate and compare query plan for in-memory and extended tables.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. For older systems, please refer to [Dynamic Tiering Quick Start Guide - Lesson 2 - Query Processing in SAP HANA Dynamic Tiering](https://www.sap.com/documents/2016/06/3eb50dbc-757c-0010-82c7-eda71af511fa.html) for instructions.
+ - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed.
  - **Integrated Development Environment:** Basic working knowledge of SAP HANA Studio. E.g. You should be able to connect to your HANA instance from SAP HANA Studio and feel comfortable with executing simple queries.
  - **Tutorials:** [Create Tables and Import Data](https://developers.sap.com/tutorials/dt-create-schema-load-data-part3.html). This includes the `TPCH` user with all the permissions and the created tables with all the sample data loaded.
 
@@ -59,6 +60,7 @@ IMPORT FROM CSV FILE '/hana/shared/<SID>/HDB00/work/TPCH_DATA/LineItem.csv' INTO
 
 ![Refresh Data](refresh-data.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -70,6 +72,8 @@ When Dynamic Tiering tables are identified, the portions of the query that invol
 The federation layer generates SQL queries and ships them to the Dynamic Tiering engine to process the Dynamic Tiering portions of the query. The Dynamic Tiering engine parses the received SQL statements, optimizes the query, executes the generated plan and finally returns the results back to the core HANA node. It is important for the Dynamic Tiering engine to perform its own optimization as it understands the on disk structures that are used by the Dynamic Tiering engine within the HANA system.
 
 >These results of Query Optimization are based on SAP HANA Dynamic Tiering 2.0 SPS00 Rev 00. You may see changes in the query plans with different versions of HANA and/or Dynamic Tiering.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -114,6 +118,7 @@ You should now see the Prepared Query Plan for the column store statements. You 
 
 ![Prepared CS Plan](estimated-cs.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -136,7 +141,6 @@ You will now be able to view the Prepared Query Plan for the extended table.
 
 >NOTE: The "Prepare" plan option only generates an Prepared Plan. HANA does not send the Dynamic Tiering specific portions of the query to the Dynamic Tiering engine to generate an Prepared Plan. Rather, the Prepared Plan simply recognizes the Dynamic Tiering tables as existing in extended storage and shows that a "Remote Row Scan" is required in the Prepared Query Plan.
 
+[DONE]
 
 [ACCORDION-END]
-
-

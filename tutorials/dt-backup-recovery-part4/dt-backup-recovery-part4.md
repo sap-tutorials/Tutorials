@@ -1,17 +1,18 @@
 ---
 title: Reviewing Available Backups
 description: Reviewing available backups with HANA's backup catalog
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://developers.sap.com/tutorials/dt-backup-recovery-part3.html)
+ - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://www.sap.com/)
 
 
 ## Next Steps
- - **Tutorials** [Managing Backup Files](https://developers.sap.com/tutorials/dt-backup-recovery-part5.html)
+ - **Tutorials** [Managing Backup Files](https://www.sap.com/)
 
 ## Details
 ### You will learn
@@ -31,6 +32,7 @@ HANA has a backup catalog that tracks all backups that have been performed. You 
 > Additionally, we are using the `TPCH` user for this,
 ![Backup Catalog - Esserver](backup-catalog.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -49,6 +51,6 @@ Once you click this, you can view the log and data backups in the files.
 
 ![View Log and Data Backups](view-backups.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
-

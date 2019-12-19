@@ -1,6 +1,7 @@
 ---
 title: Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming
 description: Part 3 of 9. Add a filter and output the desired events to a SAP HANA Table through SAP HANA Output adapter.
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 author_name: Bill Jiang
@@ -18,7 +19,7 @@ time: 15
 
 ---
 
-#### Add a Filter
+[ACCORDION-BEGIN [Step 1: ](Add a Filter)]    
 
 1. Drag and drop the **Filter** item in the **Streams and Windows** drawer of the **Palette** into the canvas.
 
@@ -48,8 +49,11 @@ time: 15
 
     ![collapse all](filter/7-collapse.png)
 
+[VALIDATE_1]
 
-#### Capture Events in HANA Table
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Capture Events in HANA Table)]    
 
 1. Select **HANA Output** from the **Palette** and drag it to the canvas.
 
@@ -75,7 +79,11 @@ time: 15
 
     ![connect](hana-table/6-connector.png)
 
-#### Compile and Check for Errors
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Compile and Check for Errors)]    
 
 1. Click the Compile Project icon shown below.
 
@@ -84,3 +92,7 @@ time: 15
 2. Check the **Problems** view to see if the project compiled without errors.
 
     ![check errors](compile/2-check-errors.png)
+
+[DONE]
+
+[ACCORDION-END]

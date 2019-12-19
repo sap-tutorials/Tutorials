@@ -1,6 +1,7 @@
 ---
 title: Converting Between an In-Memory Table and an Extended Table
 description: Convert an in-memory column store table to an extended table and vice versa.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -38,6 +39,7 @@ Verify the table has been correctly converted. You should see that the **`NATION
 
 ![Converted to In-memory](converted-to-in-memory.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -58,6 +60,7 @@ Verify the table has been correctly converted. You should see that the **`NATION
 
 ![Converted to Extended Storage](converted-es.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -82,6 +85,7 @@ After the refresh is completed, you should see that the **`NATION_DT`** table no
 
 ![Converted to In-memory](converted-to-in-memory.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -99,6 +103,7 @@ Refresh the **Tables** folder and you should see that the **`NATION_DT`** table 
 
 ![Converted to In-memory](converted-to-extended.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -118,6 +123,6 @@ SELECT * FROM "SYS"."REFERENTIAL_CONSTRAINTS"
 
 You can look at the columns: `TABLE_NAME`, `REFERENCED_TABLE_NAME` and `CONSTRAINT_NAME` to identify which tables have the foreign key constraint on them and what the constraint is. Examples of tables that hold a foreign key constraint in this schema are `ORDERS_CS`, `CUSTOMER_CS`, `SUPPLIER_CS`, `LINEITEM_CS`, `NATION_CS` and `REGION_CS`. Therefore, these tables cannot be converted to extended tables, unless the foreign key is dropped.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
-

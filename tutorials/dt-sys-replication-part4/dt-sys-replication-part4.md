@@ -1,6 +1,7 @@
 ---
 title: Disabling SAP HANA System Replication
 description: Disabling system replication
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
@@ -57,5 +58,6 @@ Leave the **Ignore secondary system** unchecked, which will remove all secondary
 
 System Replication has now been disabled.
 
+[VALIDATE_1]
 
 [ACCORDION-END]

@@ -1,6 +1,7 @@
 ---
 title: Performing a Failback
 description: How to initiate failbacks in HANA Studio
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
@@ -31,8 +32,10 @@ Before you perform a fail-back, ensure that the following pre-requisites are met
 - The original primary system is not running.
 - The current primary system is running.
 
+[DONE]
 
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 2: ](Performing a Failback)]
 After a takeover has been carried out the roles between primary and secondary can be switched over.
 
@@ -97,5 +100,6 @@ Review the details, and click **Finish**.
 
 The primary system and secondary system have their original roles again.
 
+[VALIDATE_1]
 
 [ACCORDION-END]

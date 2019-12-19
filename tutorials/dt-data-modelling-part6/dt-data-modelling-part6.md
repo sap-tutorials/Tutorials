@@ -1,6 +1,7 @@
 ---
 title: Seeing Calculation View Results
-description: Generating select statements for results and visulization
+description: Generating select statements for results and visualization
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 time: 15
@@ -56,6 +57,7 @@ The results should look like the following image:
 
 ![Where Results](where-results.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -76,5 +78,6 @@ Double click one of the results, and it will zoom into the selected operator. As
 
 ![Remote Row Scan](extended-storage.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]

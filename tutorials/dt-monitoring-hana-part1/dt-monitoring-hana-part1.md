@@ -1,14 +1,14 @@
 ---
 title: Monitoring SAP HANA Using SAP HANA Cockpit and SAP HANA Studio for SAP HANA Dynamic Tiering
 description: Checking the esserver process and coordinator types to determine if Dynamic Tiering is running and if extended storage is created and running.
-
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, topic>big-data, topic>sql ]
 ---
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. 
+- **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed.
 - **Integrated Development Environment:** Cockpit is already installed and configured. Basic working knowledge of SAP HANA Studio and SAP HANA Cockpit. E.g. You should be able to connect to your HANA instance from SAP HANA Studio and feel comfortable with executing simple queries.
 - **Credentials:** Have a cockpit admin user and password with access to your HANA system and access to "`<SID>adm`" for a SSH session
 
@@ -73,6 +73,7 @@ Once you are logged in as `<sid>adm` you may run the command "**`HDB info`**" to
 
 ![Check esserver](esserver-putty.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -91,7 +92,6 @@ select * from M_SERVICES
 ```
 ![Coordinator Type](coordinator-type-studio.png)
 
+[DONE]
 
 [ACCORDION-END]
-
-
