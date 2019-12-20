@@ -1,8 +1,8 @@
 ---
 title: Set up SAP HANA, express edition on Amazon Web Services (XS Advanced)
 description: Set up your SAP HANA, express edition with XS Advanced on Amazon Web Services.
-author_name: Josh Bentley
-author_profile: https://github.com/jarjarbentley
+author_name: 
+author_profile: 
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
