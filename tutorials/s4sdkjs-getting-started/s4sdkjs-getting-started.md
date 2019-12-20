@@ -19,34 +19,36 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 [ACCORDION-BEGIN [Step 1: ](Scaffold an application)]
 
-Personally, we are fans of `TypeScript` and recommend using it for most applications. However, we also offer a version of our application scaffolding for plain `JavaScript`. If a step in a tutorial contains instructions or code that is specific to `TypeScript` or `JavaScript`, you can toggle between whatever you prefer at the top of each step.
+Personally, we are fans of `TypeScript` and recommend using it for most applications. However, if you prefer using plain `JavaScript`, we recommend looking at step 4. If a step in a tutorial contains instructions or code that is specific to `TypeScript` or `JavaScript`, you can toggle between whatever you prefer at the top of each step.
 
 The main differences you will notice between `TypeScript` and `JavaScript` are the type annotations and module definitions - ES6 modules in `TypeScript` vs. `commonJS` modules in `JavaScript`. To migrate a `TypeScript` file to `JavaScript`, you only need to change the file extension from `.ts` to `.js`, remove all type annotations and change the `import`s and `export`s.
 
-[OPTION BEGIN [TypeScript]]
-
-To create an `Express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our TypeScript scaffolding application as follows.
+To create an application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, you can use SDK's command line interface (CLI). To get the CLI, run the following command:
 
 ```Shell
-git clone --single-branch --branch scaffolding-ts --origin scaffolding https://github.com/SAP/cloud-s4-sdk-examples.git <path/to/your/project>
+npm install -g @sap-cloud-sdk/cli
 ```
 
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-
-To create an `Express.js` application that already contains all the files and configuration you need to use the SAP Cloud SDK for JavaScript, simply clone our JavaScript scaffolding application as follows.
+This will install the CLI globally on your machine, allowing you to use it anywhere.
+Now you can create a new project by running the CLI's `init` command:
 
 ```Shell
-git clone --single-branch --branch scaffolding-js --origin scaffolding https://github.com/SAP/cloud-s4-sdk-examples.git <path/to/your/project>
+sap-cloud-sdk init my-sdk-project
 ```
 
-[OPTION END]
-
-and enter the freshly cloned project:
+If your folder is empty, this will create a new `nest.js` application from scratch. During the process, the CLI will ask to you provide some details, like your project's name. Since this will already install all the necessary dependencies, this might take a minute. If everything worked correctly, you should see output like this:
 
 ```Shell
-cd <path/to/your/project>
++---------------------------------------------------------------+
+| ✅ Init finished successfully.                                |
+|                                                               |
+| 🚀 Next steps:                                                |
+| - Run the application locally (`npm run start:dev`)           |
+| - Deploy your application (`npm run deploy`)                  |
+|                                                               |
+| 🔨 Consider setting up Jenkins to continuously build your app |
+| Use `sap-cloud-sdk add-cx-server` to create the setup script  |
++---------------------------------------------------------------+
 ```
 
 [DONE]
@@ -58,12 +60,13 @@ The project contains the following files and folders, among others, to get you s
 
 ### NPM / Project
 
-- **`package.json`**: Specifies dependencies, metadata and user-defined scripts. The provided scaffolding comes with some predefined scripts and dependencies, that will be explained in detail in the course of this group of tutorials.
+- **`package.json`**: Specifies dependencies, metadata and user-defined scripts. The application comes with some predefined scripts and dependencies, that will be explained in detail in the course of this group of tutorials.
 - **`.npmrc`**: The **`npm`** configuration file. In the scaffolding we specify the registry for the `@sap` scope, where the `SAP Cloud SDK` libraries are published.
 
 ### TypeScript
 
 - **`tsconfig.json`**: Configuration file for `TypeScript`. This is not present in the plain `JavaScript` version.
+- **`tslint.json`**: Configuration file for `tslint`, the de facto default linter for `TypeScript`.
 
 ### Continuous Delivery
 
@@ -78,46 +81,51 @@ The project contains the following files and folders, among others, to get you s
 ### Local development
 
 - **`initialize.js`**: Script for initial setup.
+- **`src/`**: Source code for the initial application.
 
-* **`src/`**: Source code for an initial hello world express application.
+### SDK specific
+
+- **`systems.json`+`credentials.json`**: Allows you to maintain destinations for testing purposes.
+- **`sap-cloud-sdk-analytics.json`**: Only if you have agreed to usage analytics during the initialization of your project. You can find more information about anonymous usage analytics [in the CLI's repository](https://github.com/SAP/cloud-sdk-cli/blob/master/usage-analytics.md).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run the application)]
 
-Before you can run the app, you should run the initialization script. This will install your dependencies and replace some placeholders with your application name. This is only necessary once at the start of development. Feel free to delete this file afterwards.
+To run the application locally, simply run the following command:
 
 ```Shell
-npm run init -- <YOUR-APPLICATION-NAME>
+npm run start:dev
 ```
 
-Now, you are all set to start the application, run:
+Go to `http://localhost:3000` and you should get a 'Hello, World!' in response. Before continuing with the next tutorial, open `src/main.ts` and switch the port from `3000` to `8080`. The corresponding line should then look like this:
 
-```Shell
-npm run start:local
+```JavaScript/TypeScript
+await app.listen(process.env.PORT || 8080);
 ```
 
-Go to `http://localhost:8080/hello` and you should get a 'Hello, World!' in response.
+Since `nest` was started in watch mode, it should detect this change and restart the server.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Use the SDK in an existing project (optional))]
 
-If you already have an existing project, you will need to specify the registry for the `@sap` scope, in order to make the `SAP Cloud SDK for JavaScript` libraries available. If it does not yet exist create a `.npmrc` file in the root folder of your project. Paste the following line into it:
+If you already have an existing project that you want to start using the SAP Cloud SDK for JavaScript in, the SDK's command line interface (CLI) allows you to add the necessary configuration in a single step. If you haven't done so already, start by installing the CLI with the following command:
 
 ```Shell
-@sap:registry=https://npm.sap.com
+npm install -g @sap-cloud-sdk/cli
 ```
 
-Now you can install the necessary libraries, first of all the `@sap/cloud-sdk-core`, the heart of the `SAP Cloud SDK for JavaScript` and basis for the service libraries you might want to use.
+Then navigate to your project and execute the CLI's `init` command:
 
 ```Shell
-npm install @sap/cloud-sdk-core
+cd <path/to/your/project>
+sap-cloud-sdk init
 ```
 
-We recommend to also take a look at the continuous delivery artifacts in the scaffold application and adopt those along with the respective **`npm`** scripts.
+Most importantly, the will add the necessary dependencies to your project, along with a set of scripts that allow you to use the [`SAP Cloud SDK's Continuous Delivery Toolkit`](https://github.com/SAP/cloud-s4-sdk-pipeline).
 
 [DONE]
 [ACCORDION-END]
