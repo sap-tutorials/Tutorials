@@ -43,7 +43,7 @@ cf login
 
 Finally, if you have logged in successfully, you can call `cf push` from the root folder of the project. **`cf` CLI** will automatically pick up the `manifest.yml` of the project.
 
-The file should look like this:
+The file should look like this (where `<YOUR-APPLICATION-NAME>` is replaced by the name you specified when initializing the project):
 
 ```YAML
 applications:
@@ -52,11 +52,9 @@ applications:
     buildpacks:
       - nodejs_buildpack
     memory: 256M
-    command: cd cloud-sdk-starter-app/dist/ && node index.js
+    command: npm run start:prod
     random-route: true
 ```
-
->**Note:** If the value for name is `cloud-sdk-starter-app`, you probably forgot to call `npm run init -- <YOUR-APPLICATION-NAME>`. This might cause your deployment to fail.
 
 Take a look at the `path` and the `command` attributes. The specified path instructs **`cf` CLI** to upload all the files from the `deployment/` folder. The command specified under the `command` attribute tells the `buildpack` what command to issue to start the application.
 
@@ -80,7 +78,7 @@ start command:   node index.js
 #0   running   2019-03-21T13:05:47Z   0.0%   16M of 256M   126.8M of 1G
 ```
 
-Make sure that the application works correctly by calling the `index` route or the `hello` route. Should the application not work for whatever reason, you can call the following command to access the logs:
+Make sure that the application works correctly by calling the `index` route. Should the application not work for whatever reason, you can call the following command to access the logs:
 
 ```Shell
 cf logs <YOUR-APPLICATION-NAME> --recent
