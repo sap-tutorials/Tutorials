@@ -10,8 +10,7 @@ author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
-- You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding).
-or a license.
+- You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
 
 ## Details
 ### You will learn  
