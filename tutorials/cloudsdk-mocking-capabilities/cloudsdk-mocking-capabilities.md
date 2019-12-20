@@ -309,7 +309,7 @@ public class GetBusinessPartnerMockedTest {
         final BusinessPartnerService service = Mockito.mock(BusinessPartnerService.class, RETURNS_DEEP_STUBS);
         final HttpDestination httpDestination = Mockito.mock(HttpDestination.class);
         when(service.getAllBusinessPartner()
-                .filter(BusinessPartner.CUSTOMER.ne("")).
+                .filter(BusinessPartner.CUSTOMER.ne(""))
                 .select(any(BusinessPartnerSelectable.class))
                 .execute(any(HttpDestination.class)))
                 .thenReturn(Lists.newArrayList(alice));
