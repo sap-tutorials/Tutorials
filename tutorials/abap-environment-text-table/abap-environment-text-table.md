@@ -8,9 +8,9 @@ time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
- 
+
 ## Prerequisites  
-- You need a SAP Cloud Platform ABAP Environment license.
+- You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
 
 ## Details
 ### You will learn  
