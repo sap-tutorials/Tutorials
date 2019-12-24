@@ -32,7 +32,7 @@ The tutorial will show you the first steps when developing applications for the 
 Since you have already installed Maven, you can use it to generate a project stub from the `SAP Cloud SDK`  Maven archetype. Just use your console (IDE or OS), navigate to the parent directory for your project and run the following command.
 
 ```
-mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.s4hana.archetypes -DarchetypeArtifactId=scp-neo-javaee6 -DarchetypeVersion=LATEST
+mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.sdk.archetypes -DarchetypeArtifactId=scp-neo-javaee7 -DarchetypeVersion=RELEASE
 ```
 
 Once the generation process has started, Maven will ask you for the usual module parameters. For this tutorial, choose `firstapp` as `artifactId` / project name.
@@ -249,7 +249,9 @@ mvn scp:clean scp:push -pl application
 
 The first command will cascade the goal execution of `clean` and `install` to both Maven `submodules`. It will break in case of any compilation errors or test failures.
 
-The second command will run a cleanup and startup for the `SCP Neo` application. The `-pl` argument defines the project location in which the Maven goals are being executed. If there is already a previously started instance of the application running, the goal `scp:clean` will try to stop it on `localhost:8080` and will remove the cached server files of the application. `scp:push` will start the application on `localhost:8080`. The web server is started as background process and will take additional seconds to initialize. When the second command asks for a `username` for the  `destination ErpQueryEndpoint`, enter any dummy username, for example, `DUMMY`, followed by any value for the password. You can enter arbitrary values for now, because the destination is not used at this point of the tutorial.
+The second command will run a cleanup and startup for the `SCP Neo` application. The `-pl` argument defines the project location in which the Maven goals are being executed. If there is already a previously started instance of the application running, the goal `scp:clean` will try to stop it on `localhost:8080` and will remove the cached server files of the application. `scp:push` will start the application on `localhost:8080`. The web server is started as background process and will take additional seconds to initialize. 
+
+The second command will also ask for URL, user and password for the destination `ErpQueryEndpoint`. Since this destination is not used at this point of the tutorial, any arbitrary value can be entered here, e.g. `dummy`.
 
 ![deployment](deployment.png)
 
@@ -374,7 +376,7 @@ kill -9 <PID>
 If you are using `PowerShell` on Windows, always put Maven arguments (supplied with `-D`) in quotes, for example:
 
 ```
-mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-DarchetypeArtifactId=scp-neo-javaee6" "-DarchetypeVersion=LATEST"
+mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-DarchetypeArtifactId=scp-neo-javaee6" "-DarchetypeVersion=RELEASE"
 ```
 
 [DONE]
