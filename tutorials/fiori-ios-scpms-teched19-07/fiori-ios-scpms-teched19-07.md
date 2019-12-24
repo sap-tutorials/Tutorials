@@ -160,7 +160,7 @@ Implement a method called `updateClassifications(for:)`:
 func updateClassifications(for image: UIImage) {
 
     // show the loading indicator
-    self.showFioriLoadingIndicator("Finding similiar products...")
+    self.showFioriLoadingIndicator("Finding similar products...")
 
     // make sure the orientation of the image is passed in the CGImagePropertyOrientation to set the orientation of the image
     let orientation = CGImagePropertyOrientation(image.imageOrientation)

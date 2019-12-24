@@ -88,7 +88,7 @@ Change the value of `groupMembershipClaims` and save. In this tutorial, you are 
 Go back to **Azure Active Directory > Enterprise applications >** **`MyAzureTutorial`** **> Single Sign-on** , and you will note that the `Groups` attribute has been added to **User Attributes & Claims**.
 
 > Note:
-> A claim is usually a pice of information about a user, which is then provided to the connected application
+> A claim is usually a piece of information about a user, which is then provided to the connected application
 
 ![group assertion were automatically added](group-assertion-added.png)
 
