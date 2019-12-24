@@ -8,18 +8,17 @@ time: 20
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Set up your local infrastructure to develop with SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-setup.html)
+ - **Tutorials:** [Set Up Your Local Infrastructure to Develop with SAP Cloud SDK](s4sdk-setup)
 
-## Next Steps
-- **Tutorial:** [Connect to OData service on Neo using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html)
+## Details  
+### You will learn
+ - How to generate a project stub using a Maven Archetype
+ - How to understand the project structure and its artifacts
+ - How to implement and understand the Hello World Servlet
+ - How to implement and understand the integration test
+ - How to deploy the project
 
-### Details  
-The tutorial will show you the first steps when developing applications for the SCP Neo using the SAP Cloud SDK. To be precise, we will cover the following steps:
-  1. Generate a project stub using a Maven Archetype
-  2. Understand the project structure and its artifacts
-  3. Implement and understand the Hello World Servlet
-  4. Implement and understand the integration test
-  5. Deployment
+This tutorial shows you the first steps when developing applications for the SCP Neo using the SAP Cloud SDK.
 
 ![deployed application result](deployed_application_result.png)
 
@@ -31,7 +30,7 @@ The tutorial will show you the first steps when developing applications for the 
 
 Since you have already installed Maven, you can use it to generate a project stub from the `SAP Cloud SDK`  Maven archetype. Just use your console (IDE or OS), navigate to the parent directory for your project and run the following command.
 
-```
+```Shell
 mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.sdk.archetypes -DarchetypeArtifactId=scp-neo-javaee7 -DarchetypeVersion=RELEASE
 ```
 
@@ -49,7 +48,7 @@ After the required values are provided, Maven will generate the new project from
 
 Now you can work with it just like any other Maven project.
 
-```
+```Shell
 cd /path/to/firstapp
 mvn clean install
 ```
@@ -58,7 +57,7 @@ mvn clean install
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Understand the project structure and its artifacts)]
+[ACCORDION-BEGIN [Step 2: ](Understand project structure and artifacts)]
 Once the Maven project is generated, you can open your favorite IDE and load the project as `Maven Project`. After importing the project into your IDE, the overall structure will look like this:
 
 ![project folders](project_folders.png)
@@ -132,7 +131,7 @@ During development it becomes important to test newly implemented code on the ex
 
 Now that you understand the project structure, take a closer look at the `HelloWorldServlet.java`
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import org.slf4j.Logger;
@@ -173,7 +172,7 @@ By overriding the function `doGet`, you define what happens when a client perfor
 [ACCORDION-BEGIN [Step 4: ](Integration test)]
 Let's take a look into the integration test project. It already contains a test for our simple `HelloWorldServlet`:
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import com.jayway.restassured.RestAssured;
@@ -242,14 +241,14 @@ As you can see, `HelloWorldServiceTest` uses `JUnit` to define the test.
 
 To run all required Maven goals, you can use the following commands in the project root path, i.e. parent module:
 
-```
+```Shell
 mvn clean install
 mvn scp:clean scp:push -pl application
 ```
 
 The first command will cascade the goal execution of `clean` and `install` to both Maven `submodules`. It will break in case of any compilation errors or test failures.
 
-The second command will run a cleanup and startup for the `SCP Neo` application. The `-pl` argument defines the project location in which the Maven goals are being executed. If there is already a previously started instance of the application running, the goal `scp:clean` will try to stop it on `localhost:8080` and will remove the cached server files of the application. `scp:push` will start the application on `localhost:8080`. The web server is started as background process and will take additional seconds to initialize. 
+The second command will run a cleanup and startup for the `SCP Neo` application. The `-pl` argument defines the project location in which the Maven goals are being executed. If there is already a previously started instance of the application running, the goal `scp:clean` will try to stop it on `localhost:8080` and will remove the cached server files of the application. `scp:push` will start the application on `localhost:8080`. The web server is started as background process and will take additional seconds to initialize.
 
 The second command will also ask for URL, user and password for the destination `ErpQueryEndpoint`. Since this destination is not used at this point of the tutorial, any arbitrary value can be entered here, e.g. `dummy`.
 
@@ -270,7 +269,7 @@ That's it.
 
 When you are done and want to close the local `SCP` deployment, please use the `scp:clean` command for the application project. It will close any connection and stop the server.
 
-```
+```Shell
 mvn scp:clean -pl application
 ```
 
@@ -313,7 +312,7 @@ The hostname usually depends on your general location:
 
 Now run the required Maven goals in the project root path and use `neo` to deploy the packaged application to the remote `Neo` instance.
 
-```
+```Shell
 mvn clean install
 /path/to/neo deploy --host HOST --account ACCOUNT --user USER --application firstapp --source application/target/firstapp-app-1.0-SNAPSHOT.war
 /path/to/neo start --host HOST --account ACCOUNT --user USER --application firstapp
@@ -323,7 +322,7 @@ mvn clean install
 
 You can check the `status` of your deployment with the status command:
 
-```
+```Shell
 /path/to/neo status --host HOST --account ACCOUNT --user USER --application firstapp
 ```
 
@@ -331,7 +330,7 @@ You can check the `status` of your deployment with the status command:
 
 If you want to list all running applications use the `list-applications` command:
 
-```
+```Shell
 /path/to/neo list-applications --host HOST --account ACCOUNT --user USER
 ```
 
@@ -359,14 +358,14 @@ In case the Maven `scp:clean` goal does not shut down the application background
 
 **On Windows:**
 
-```
+```Shell
 netstat -o -n -a | findstr 0.0:8003
 taskkill /F /PID <PID>
 ```
 
 **On OS X:**
 
-```
+```Shell
 lsof -i :8003
 kill -9 <PID>
 ```
@@ -375,7 +374,7 @@ kill -9 <PID>
 
 If you are using `PowerShell` on Windows, always put Maven arguments (supplied with `-D`) in quotes, for example:
 
-```
+```Shell
 mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-DarchetypeArtifactId=scp-neo-javaee6" "-DarchetypeVersion=RELEASE"
 ```
 

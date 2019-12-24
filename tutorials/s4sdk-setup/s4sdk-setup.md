@@ -11,12 +11,12 @@ time: 10
 ### You will learn  
 In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
 
-For a complete overview visit the [SAP Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
+For a complete overview, visit the [SAP Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare the Infrastructure)]
+[ACCORDION-BEGIN [Step 1: ](Prepare infrastructure)]
 
 To develop with the SAP Cloud SDK for Java you will need to have two things installed:
 
@@ -99,7 +99,7 @@ We recommend using [`Intellij IDEA`](https://www.jetbrains.com/idea/#chooseYourE
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Troubleshooting with Corporate Proxies)]
+[ACCORDION-BEGIN [Step 3: ](Troubleshoot with corporate proxies)]
 
 Some of the steps in the upcoming tutorial blogs will fail if you sit behind a corporate proxy. If you cannot escape the proxy, you need to tell Maven where your proxy is located.
 To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users/<username>/.m2"`") and create a file called `settings.xml`. Then you paste the following content:
