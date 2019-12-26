@@ -95,7 +95,7 @@ primary_tag: products>sap-cloud-platform
 
     > Start context will be filled as you have defined the same in workflow properties while enhancing sample workflow application from `Web IDE`. This start context is valid only if you have configured `SuccessFactors` system.
 
-    >If you have not configured `SuccessFactors` destination in setup tutorial, then replace the default context with the following code. This is the sample employee information as fetched from `SuccessFactors`. Make sure you enter your SAP Cloud Platform trial user email ID as `buddyId` and `managerId` in the end. 
+    >If you have not configured `SuccessFactors` destination in setup tutorial, then replace the default context with the following code. This is the sample employee information as fetched from `SuccessFactors`. Make sure you enter your SAP Cloud Platform trial user email ID as `buddyId` and `managerId` in the end.
 
     ``` JavaScript  
       {
@@ -234,7 +234,7 @@ primary_tag: products>sap-cloud-platform
 
 2. **Refresh** the tasks list and execute the **Accept Workplace** task:
 
-    - If you have assigned the the same user for `buddyId` and `managerId`, refresh the **My Inbox** tile to see the `Accept Workplace` task.
+    - If you have assigned the same user for `buddyId` and `managerId`, refresh the **My Inbox** tile to see the `Accept Workplace` task.
 
     - If you have used two different users, log off and log on using the buddy user ID. Then access the **My Inbox** tile.
 
@@ -255,15 +255,17 @@ primary_tag: products>sap-cloud-platform
 
 [ACCORDION-BEGIN [Step 7: ](View the process visibility workspace for completed workflow)]
 
-1. In the SAP Fiori launchpad, choose **Monitor Scenarios** and the process the new set of events.
+1. In the SAP Fiori launchpad, choose **Monitor Scenarios** to process the new set of events.
 
     ![See Processed data](processeddata_2.png)
 
-2. Choose the **Process Workspace** tile and open `Employee Onboarding` scenario.
+2. Go back to the homepage, choose **Process Workspace** tile and open `Employee Onboarding` scenario.
 
     >You will see that the **Completed Instances** and **Cycle Time** numbers have changed.
 
     ![View Scenario4](viewscenario_4.png)
+
+With this you complete the mission on **Automating and Extending Employee Onboarding** process using Intelligent Business Process Management services. In this mission, you learnt about SAP Cloud Platform Workflow, Business Rules and Process Visibility and how these services come together to help you automate the process and decisions, together with providing out-of-box visibility into the workflows.
 
 [VALIDATE_6]
 [ACCORDION-END]

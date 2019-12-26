@@ -19,12 +19,13 @@ primary_tag: products>sap-cloud-platform
 1. In your web browser, open [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
+    > If you are new user then Web IDE Full-Stack will not be enabled for your account and you will see a message saying "SAP Web IDE Full-Stack is not be enabled for this account". Follow the instructions on the Web IDE page, to enable the Web IDE.
 
     ![Launch Web IDE](launchwebide.png)
 
 1. In the navigation area of the **SAP Web IDE**, choose the **Development** icon.
 
-2. Choose **New** | **Project from Sample Application**.
+2. Right click on the **Workspace** folder and choose **New** | **Project from Sample Application**.
 
     ![Choose Development](choose-dev.png)
 
@@ -47,7 +48,7 @@ primary_tag: products>sap-cloud-platform
 
 [ACCORDION-BEGIN [Step 2: ](Configure sample application)]
 
-SAP Cloud Platform Workflow supports the **multi-target** application model to create, build, and deploy workflow applications in the Cloud Foundry environment. A multi-target application contains multiple modules created with different services, build and deployed to different targets but with a common lifecycle.
+SAP Cloud Platform Workflow supports the `multitarget` application model to create, build, and deploy workflow applications in the Cloud Foundry environment. A multi-target application contains multiple modules created with different services, build and deployed to different targets but with a common lifecycle.
 
 An MTA model is a platform-independent description of the different modules, their dependencies and the configuration data that they expose, and the resource that they require to run. This model is specified using YAML (<https://yaml.org>).
 
@@ -62,18 +63,24 @@ An MTA model is a platform-independent description of the different modules, the
 
     ![Update mta.yaml File](change-mta-yaml.png)
 
-2. Modify the workflow sample data and **Save**.
+    - Switch to the **Code Editor**
+    - In Line Number 30, replace the entry with `workflow` in `onboarding` module.
+    > This is to update the reference of the resource that you created above in the `onboarding` module.
+    - **Save** the editor.
 
-    Update the `SampleInputContext.json` with your trial user email as both `buddyId` and `managerId`.
+     ![Update MTA](updateMTA.png)
+
+
+2. Open `SampleInputContext.json` and change both `buddyId` and `managerId` with your trial user email and **Save**.
 
     ![Update json File](update-json.png)
 
 
 3. Modify the workflow definition.
 
-    If you do not have `SuccessFactors` system and have not configured `SuccessFactors` destination in the setup tutorial, then you will have to update the workflow definition otherwise skip this step.
+    If you do not have `SuccessFactors` system and have not configured `SuccessFactors` destination in the setup tutorial, then you will have to update the workflow definition. Otherwise, skip this step.
 
-    - Open `onboard` workflow.
+    - Open `onboard.workflow` file.
     - Click on `Get Employee Details from SuccessFactors` service task and select **Delete** option.
 
     ![Delete taks](deletetask_1.png)
@@ -93,7 +100,7 @@ An MTA model is a platform-independent description of the different modules, the
 
 Now, you will see how easy it is to integrate the business rules with your sample workflow. These business rules you have already imported and deployed in previous chapter. It will give the list of equipment needed for the new hire.
 
-1. In `onboard` workflow, select the `Determine Equipment` task and in the **Script Task Properties** change the name to `Prepare Rules Input`.
+1. In `onboard.workflow` file, select the `Determine Equipment` task and in the **Script Task Properties** change the name to `Prepare Rules Input`.
 
 2. To update the script, select the `DetermineEquipment.js` file under **Script File**.
 
@@ -136,7 +143,7 @@ Now, you will see how easy it is to integrate the business rules with your sampl
       $.context.empData.personalInfo = attributes;
     ```
 
-4. Select the `Prepare Rules Input` task and from the speed buttons choose **Service Task**.
+4. To add a **Service Task**, select the `Prepare Rules Input` task and from the speed buttons choose **Service Task** option.
 
     ![Integrate Rule](integrateRule_2.png)
 
@@ -154,7 +161,7 @@ Now, you will see how easy it is to integrate the business rules with your sampl
 
     ![Integrate Rule](integrateRule_3.png)
 
-7. Select the `Determine Equipment` task, and choose from the speed buttons **Script Task**.
+7. To add a **Script Task**, select the `Determine Equipment` task, and choose from the speed buttons **Script Task** option.
 
     ![Integrate Rule](integrateRule_4.png)
 
@@ -201,39 +208,23 @@ You will see the workflow enhanced with new tasks to integrate business rules.
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add workflow attributes)]
+[ACCORDION-BEGIN [Step 4: ](Build and deploy the sample application)]
 
-1. Select `onboard.workflow` to open the **Workflow Properties**.
-
-2. Switch to **ATTRIBUTES**.
-
-3. Choose **Add**, and enter the following attribute details:
-
-    | ID             | Label          | Type          | Value                                   |
-    | :------------- | :------------- |:------------- | :-------------------------------------- |
-    | `username`     | User Name      | String        | ${context.empData.personalInfo.username}|
-    | `division`     | Division       | String        | ${context.empData.personalInfo.division}|
-    | `country`      | Country        | String        | ${context.empData.personalInfo.country} |
-    | `jobTitle`     | Job Title      | String        | ${context.empData.personalInfo.jobTitle}|
-
-    ![Add Workflow Attributes](workflowattributes.png)
-
-4. **Save** the workflow.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Build and deploy the sample application)]
-
-1. Right-click the `sample.onboarding.mta` project, and choose **Build**.
+1. Right-click the `sample.onboarding.mta` project, and choose the **Build** option.
+    > Use the deprecated option to build the resources
 
     ![Build mta File](build-mta.png)
+
 
 2. In the build archive, right-click the `sample.onboarding.mta_<xxx>.mtar` file and choose **Deploy** | **Deploy to SAP Cloud Platform**.
 
     ![Deploy Workflow](deployworkflow.png)
 
-A successful deployment message is shown at the top-right corner.
+    > In the popup, select the Cloud Foundry API Endpoint, Organisation and Space where you would want to deploy the application.
+
+    ![Deploy MTA](deploydialog.png)
+
+A successful deployment message will be shown at the top-right corner once the deployment successfully completes.
 
 ![View Success Messages](success-message.png)
 
