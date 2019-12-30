@@ -245,7 +245,7 @@ self.getView().getModel("results").setProperty("/data", jsonResults);
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run your application)]
-**RUN** your application. You should now see 5 tiles with the name of the first 5 users and their job titles. As you change the query parameters in the URL, you would be able to see more users or adjust the details displayed on the title. For example, if a user profile picture was an available field, you could additionally select that field and replace the hard-coded icon with that user's picture. You are just getting started with the SAP API Business Hub. Stayed tuned for more of it's cool features!
+**RUN** your application. You should now see 5 tiles with the name of the first 5 users and their job titles. As you change the query parameters in the URL, you would be able to see more users or adjust the details displayed on the title. For example, if a user profile picture was an available field, you could additionally select that field and replace the hard-coded icon with that user's picture. You are just getting started with the SAP API Business Hub. 
 
 ![final running UI5 application](final.png)
 
