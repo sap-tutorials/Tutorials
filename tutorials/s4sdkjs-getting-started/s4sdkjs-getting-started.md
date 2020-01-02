@@ -19,7 +19,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 [ACCORDION-BEGIN [Step 1: ](Scaffold an application)]
 
-Personally, we are fans of `TypeScript` and recommend using it for most applications. However, if you prefer using plain `JavaScript`, we recommend looking at step 4. If a step in a tutorial contains instructions or code that is specific to `TypeScript` or `JavaScript`, you can toggle between whatever you prefer at the top of each step.
+Personally, we are fans of `TypeScript` and recommend using it for most applications. However, if you prefer using plain `JavaScript`, we recommend looking at step 4.
 
 The main differences you will notice between `TypeScript` and `JavaScript` are the type annotations and module definitions - ES6 modules in `TypeScript` vs. `commonJS` modules in `JavaScript`. To migrate a `TypeScript` file to `JavaScript`, you only need to change the file extension from `.ts` to `.js`, remove all type annotations and change the `import`s and `export`s.
 
@@ -36,7 +36,7 @@ Now you can create a new project by running the CLI's `init` command:
 sap-cloud-sdk init my-sdk-project
 ```
 
-If your folder is empty, this will create a new `nest.js` application from scratch. During the process, the CLI will ask to you provide some details, like your project's name. Since this will already install all the necessary dependencies, this might take a minute. If everything worked correctly, you should see output like this:
+Since the target folder is empty, the CLI will ask you whether a new `nest.js` project should be initialized. Answer with `y` and subsequently accept the suggested project name. The CLI will already install all the necessary dependencies for the project, so this might take a minute. If everything worked correctly, you should see output like this:
 
 ```Shell
 +---------------------------------------------------------------+
@@ -65,14 +65,13 @@ The project contains the following files and folders, among others, to get you s
 
 ### TypeScript
 
-- **`tsconfig.json`**: Configuration file for `TypeScript`. This is not present in the plain `JavaScript` version.
+- **`tsconfig.json`**: Configuration file for `TypeScript`. This is not needed in the plain `JavaScript` version.
 - **`tslint.json`**: Configuration file for `tslint`, the de facto default linter for `TypeScript`.
 
 ### Continuous Delivery
 
 - **`Jenkinsfile`**: Jenkins pipeline definition file for quality assurance. It uses the [`SAP Cloud SDK's Continuous Delivery Toolkit`](https://github.com/SAP/cloud-s4-sdk-pipeline).
 - **`pipeline_config.yml`**: Pipeline configuration file for the Jenkins pipeline.
-- **`cx-server/`**: A directory containing scripts to quickly deploy and start your own CI / CD server based on Jenkins.
 
 ### Cloud Foundry
 
@@ -80,7 +79,6 @@ The project contains the following files and folders, among others, to get you s
 
 ### Local development
 
-- **`initialize.js`**: Script for initial setup.
 - **`src/`**: Source code for the initial application.
 
 ### SDK specific
