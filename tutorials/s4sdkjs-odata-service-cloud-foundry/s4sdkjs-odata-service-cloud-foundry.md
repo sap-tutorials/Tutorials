@@ -76,7 +76,7 @@ In order to use the `SAP Cloud SDK for JavaScript` to make a call to an `OData` 
 npm install @sap/cloud-sdk-vdm-business-partner-service
 ```
 
-Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner.constroller.ts`.
+Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner.controller.ts`.
 
 ```JavaScript / TypeScript
 import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
@@ -134,6 +134,9 @@ As network requests are asynchronous by nature, the return value of this functio
 Let's add the execution of this request to `getBusinessPartners` method:
 
 ```JavaScript / TypeScript
+import { Controller, Get, HttpException } from '@nestjs/common';
+import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
+
 @Get('business-partners')
 getBusinessPartners() {
   return getAllBusinessPartners()
@@ -169,7 +172,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 }
 ```
 
-Now restart your server and reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
+Reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
 
 Congratulations, you just made your first call with the SAP Cloud SDK!
 
@@ -178,14 +181,7 @@ Congratulations, you just made your first call with the SAP Cloud SDK!
 
 [ACCORDION-BEGIN [Step 5: ](Manage destinations centrally (optional))]
 
-In order to not repeat your destination configuration for every request execution, you can set a `destinations` environment variable to manage your destinations. If you prefer, you can set system wide environment variables. However, we will show you how to set them non-invasively for one project only.
-
-We will use the `dotenv` npm module to facilitate setting environment variables on a node process.
-```Shell
-# install dotenv as a devDependency
-npm install --save-dev dotenv
-```
-Then create a `.env` file in the root directory of your project and define your a `destinations` environment variable as follows:
+In order to not repeat your destination configuration for every request execution, you can set a `destinations` environment variable to manage your destinations. In `Node.js` application, it is common to use a `.env` file to maintain such environment variables for a given project. Create a `.env` file in the root directory of your project and define the `destinations` environment variable as follows:
 
 ```
 destinations=[{"name": "<DESTINATIONNAME>", "url": "<URL to your system>", "username": "<USERNAME>", "password": "<PASSWORD>"}]
@@ -197,7 +193,30 @@ This is what it would look like for the mock server:
 destinations=[{"name": "MockServer", "url": "http://localhost:3000"}]
 ```
 
-Now to reference a destination in the request execution, simply replace the `url` with a `destinationName` - `MockServer` in our example:
+Now that we have defined our destinations, we need to make sure that they are available in our process. For this we use the `config` package provided by `nest.js`. You can install it with the following command:
+
+```
+npm install @nestjs/config
+```
+
+In order to load the environment variables defined in the `.env` file, we need to add the `ConfigModule` provided by the `config` package to the application's `@Module` definition. Open `app.module.ts` and update it with the following code:
+
+```JavaScript / TypeScript
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { BusinessPartnerController } from './business-partner.controller';
+
+@Module({
+  imports: [ConfigModule],
+  controllers: [AppController, BusinessPartnerController],
+  providers: [AppService],
+})
+export class AppModule {}
+```
+
+In line 2, `ConfigModule` is imported from the `config` package and in line 8 we add it to the module's `imports`. To reference a destination in the request execution, simply replace the `url` with a `destinationName` - `MockServer` in our example:
 
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
@@ -210,13 +229,6 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 ```
 
 Note, that every environment variable in the `.env` file has to be defined *on one line*. You can add more destinations to the array.
-
-In order to register the `.env` file in your node process, adjust the `"start:local"` script in the `package.json` as follows:
-
-```Shell
-"start:local": "npx ts-node -r dotenv/config src/"
-```
-Now, when you execute `npm run start:local` and call `localhost:8080/business-partners`, you can also use your remote destination locally.
 
 [DONE]
 [ACCORDION-END]
