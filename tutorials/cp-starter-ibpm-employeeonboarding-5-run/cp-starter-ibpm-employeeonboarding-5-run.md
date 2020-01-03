@@ -15,6 +15,7 @@ primary_tag: products>sap-cloud-platform
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Set up sample events for workflow)]
+First, we will import sample events & data , process these events and view them in workspace using different process visibility applications. This is mainly done to give you a demo-ready workspace with pre filled data. Later, you will run the `employee onboarding` workflow and see the process workspace being updated automatically in real time.
 
 1. Download the events `EmployeeOnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
 
@@ -75,7 +76,7 @@ primary_tag: products>sap-cloud-platform
 
     ![Open Scenario](openscenarioworkspace.png)
 
-3. The process visibility workspace for `Employee Onboarding` workflow is displayed.
+3. The process visibility workspace for `Employee Onboarding` scenario is displayed with sample data.
 
     ![View Scenario2](viewscenario_2.png)
 
@@ -85,6 +86,8 @@ primary_tag: products>sap-cloud-platform
 
 [ACCORDION-BEGIN [Step 4: ](Execute the workflow sample application)]
 
+Now, you will run the workflow and see how the new events and data are automatically processed and shown in process workspace in real time. 
+
 1. In the SAP Fiori launchpad, open the **Monitor Workflow - Workflow Definitions** tile to see all deployed workflow definitions.
 
     ![Open Monitor Workflows](monitor-workflow.png)
@@ -92,94 +95,6 @@ primary_tag: products>sap-cloud-platform
 2. Select the `onboard` workflow, and choose **Start New Instance**.
 
 3. The start context is already filled. Choose **Start New Instance**.
-
-    > Start context will be filled as you have defined the same in workflow properties while enhancing sample workflow application from `Web IDE`. This start context is valid only if you have configured `SuccessFactors` system.
-
-    >If you have not configured `SuccessFactors` destination in setup tutorial, then replace the default context with the following code. This is the sample employee information as fetched from `SuccessFactors`. Make sure you enter your SAP Cloud Platform trial user email ID as `buddyId` and `managerId` in the end.
-
-    ``` JavaScript  
-      {
-      "empData": {
-        "d": {
-          "results": [
-            {
-              "zipCode": "94404",
-              "lastName": "Grant",
-              "country": "United States",
-              "hireDate": "/Date(978307200000)/",
-              "reloLocation": null,
-              "city": "San Mateo",
-              "jobTitle": "General Manager, Industries",
-              "jobCode": "Vice President, Sales (VP-SALES)",
-              "title": "VP, Sales",
-              "userId": "cgrant1",
-              "division": "Industries (IND)",
-              "defaultFullName": "Carla Grant",
-              "firstName": "Carla",
-              "empInfo": {
-                "__metadata": {
-                  "type": "SFOData.EmpEmployment"
-                },
-                "jobInfoNav": {
-                  "results": [
-                    {
-                      "isFulltimeEmployee": true,
-                      "businessUnit": "ACE_IND",
-                      "costCenter": "30001",
-                      "jobTitle": "VP, Sales",
-                      "countryOfCompany": "USA",
-                      "jobCode": "VP-SALES",
-                      "managerId": "athompson1",
-                      "division": "IND",
-                      "company": "ACE_USA",
-                      "position": "VP_SALES",
-                      "department": "SALES",
-                      "startDate": "/Date(1343606400000)/"
-                    }
-                  ]
-                }
-              },
-              "reloWilling": null,
-              "addressLine1": "1500 Fashion Island Blvd",
-              "location": "San Mateo (US_SFO)",
-              "department": "Sales (SALES)",
-              "keyPosition": false
-            }
-          ]
-        },
-        "team": {
-          "d": {
-            "directReports": {
-              "results": [
-                {
-                  "__metadata": {
-                    "type": "SFOData.User"
-                  },
-                  "userId": "dsharp1"
-                },
-                {
-                  "__metadata": {
-                    "type": "SFOData.User"
-                  },
-                  "userId": "cgrant1"
-                },
-                {
-                  "__metadata": {
-                    "type": "SFOData.User"
-                  },
-                  "userId": "sthomas1"
-                }
-              ]
-            }
-          }
-        },
-        "buddies": "dsharp1,cgrant1,sthomas1"
-      },
-      "managerId": "your trial email id",
-      "buddyId": "your trial email id",
-      "userId": "cgrant1"
-    }
-    ```
 
     ![Start New Instance](start-new-instance-json.png)
 
@@ -222,11 +137,7 @@ primary_tag: products>sap-cloud-platform
 
 1. Go back to **My Inbox** application, execute the `Approve Equipment` task:
 
-    - If you have assigned the the same user for `buddyId` and `managerId`, refresh the **My Inbox** tile to see the `Approve Equipment` task.
-
-    - If you have used two different users, log off and log on using the manager user ID. Then access the **My Inbox** tile.
-
-    - If you do not see the task then refresh the tasks list.
+    - If you do not see the task, refresh the **My Inbox** tile to see the `Approve Equipment` task.
 
     The `Approve Equipment` task shows the equipment configured by the buddy. As the manager you can either approve or reject the proposed equipment for the new hire. To complete the task, choose `Approve`.
 
@@ -234,11 +145,7 @@ primary_tag: products>sap-cloud-platform
 
 2. **Refresh** the tasks list and execute the **Accept Workplace** task:
 
-    - If you have assigned the same user for `buddyId` and `managerId`, refresh the **My Inbox** tile to see the `Accept Workplace` task.
-
-    - If you have used two different users, log off and log on using the buddy user ID. Then access the **My Inbox** tile.
-
-    As the buddy choose **Accept** to complete the task. The workflow status is set to **Completed**.
+    > As the buddy choose **Accept** to complete the task. The workflow status is set to **Completed**.
 
     ![Accept Equipment](accept-equipment.png)
 

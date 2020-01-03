@@ -1,6 +1,6 @@
 ---
 title: Set Up Business Process Management Services in Cloud Cockpit
-description: Intelligent Business Process Management is a family of services to automate business processes, manage decision logic and gain end-to-end visibility in your processes. Users can now use SAP Cloud Platform Workflow, SAP Cloud Platform Business Rules and SAP Cloud Platform Process Visibility services together to create process extensions on top of any business application, orchestrate tasks or build process-centric differentiating applications. In this tutorial mission, you will learn how to setup and use these services to automate and achieve operational insights into employee onboarding process.
+description:  Setup services to automate and achieve operational insights into employee onboarding process.
 
 auto_validation: true
 time: 20
@@ -12,6 +12,7 @@ primary_tag: products>sap-cloud-platform
 ### You will learn
   - How to enable and configure workflow, business rules and process visibility services
 
+Intelligent Business Process Management is a family of services to automate business processes, manage decision logic and gain end-to-end visibility in your processes. Users can now use SAP Cloud Platform Workflow, SAP Cloud Platform Business Rules and SAP Cloud Platform Process Visibility services together to create process extensions on top of any business application, orchestrate tasks or build process-centric differentiating applications. In this tutorial mission, setup and use these services to automate and achieve operational insights into employee onboarding process.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Check Entitlements)]
@@ -54,6 +55,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
+    > If you are new user then Web IDE Full-Stack will not be enabled for your account and you will see a message saying "SAP Web IDE Full-Stack is not be enabled for this account". Follow the instructions on the Web IDE page, to enable the Web IDE.
 
     ![Launch Web IDE](launchwebide.png)
 
@@ -216,33 +218,8 @@ The sample business rules used in this scenario is published in API Business Hub
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create destination for SuccessFactors APIs)]
 
-The sample workflow calls `SuccessFactors` to get the user details of the new hire and the team members. This destination will be used in the workflow to call these APIs.
-
-> **If you already have a SuccessFactors system**, then you can use the username, password and company ID of that system. You can also get API URLs for the respective data centre from the [note](https://apps.support.sap.com/sap/support/knowledge/public/en/2215682).
-
-> **If you do not have a SuccessFactors system**, then with your S-user account, you can  request for a new SuccessFactors test tenant at: [Partner Demo Request Tool](https://hcmcloudops.successfactors.com/DemoInstance/PartnerDemo).
-
-> If you still do not have SuccessFactors system, then skip this step.
-
-Choose **New Destination**, and enter the following data:
-
-|  Field Name     | Value
-|  :------------- | :-------------
-|  Name           | `SFSF`
-|  URL            | API URL based on your SuccessFactors Data Center
-|  Authentication | `BasicAuthentication`
-|  User           | `UserName@CompanyID`. Where `CompanyID` is the SuccessFactors company ID.
-|  Password       | given SuccessFactors password for the user name
-
-![Configure Destination](createdestination-sfsf.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Create destination for Business Rules APIs)]
+[ACCORDION-BEGIN [Step 8: ](Create destination for Business Rules APIs)]
 
 The sample workflow calls business rules to determine the list of equipment needed for the new hire. This destination (`BUSINESS_RULES`) will be used while modelling the workflow to call the business rules APIs.
 
@@ -257,14 +234,14 @@ Choose **New Destination**, and enter the following data:
 |  Client Secret     | `<use your secret from the Business Rules service instance>`
 |  Token Service URL | `https://<userid>.authentication.eu10.hana.ondemand.com/oauth/token` where `userid` is your trial account user id
 
-![Configure Destination](createdestination-rules.png)
-
 >Replace `eu10` with `us10` in the URLs if your trial account is in US region. For example, the URL in above destination will become:
 
 > `https://bpmruleruntime.cfapps.us10.hana.ondemand.com/rules-service`
 
->To get Client ID, Client Secret and Token Service URL: (a) navigate into **dev** space, (b) select **Service Instances**, (c) search for **rules** instance, and then select **`businessrules`** service instance and (d) navigate into **`businessrules`** to get `clientid`, `clientsecret`, and `url`.
+>To get Client ID, Client Secret and Token Service URL: (a) navigate into your **dev** space in your trial cockpit, (b) select **Service Instances** from left panel, (c) search for **rules**, and then select **`businessrules`** service instance and (d) navigate into **`businessrules`** to get `clientid`, `clientsecret`, and `url`.
 ![Get Security Token](getsecurity.png)
+
+![Configure Destination](createdestination-rules.png)
 
 
 [DONE]
