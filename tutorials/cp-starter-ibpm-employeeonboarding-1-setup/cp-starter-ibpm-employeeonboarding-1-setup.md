@@ -1,6 +1,6 @@
 ---
 title: Set Up Business Process Management Services in Cloud Cockpit
-description:  Setup services to automate and achieve operational insights into employee onboarding process.
+description:  Set up services to automate and achieve operational insights into employee onboarding process.
 
 auto_validation: true
 time: 20
@@ -12,7 +12,12 @@ primary_tag: products>sap-cloud-platform
 ### You will learn
   - How to enable and configure workflow, business rules and process visibility services
 
-Intelligent Business Process Management is a family of services to automate business processes, manage decision logic and gain end-to-end visibility in your processes. Users can now use SAP Cloud Platform Workflow, SAP Cloud Platform Business Rules and SAP Cloud Platform Process Visibility services together to create process extensions on top of any business application, orchestrate tasks or build process-centric differentiating applications. In this tutorial mission, setup and use these services to automate and achieve operational insights into employee onboarding process.
+Intelligent Business Process Management is a family of services to automate business processes, manage decision logic and gain end-to-end visibility in your processes.
+
+Users can now use SAP Cloud Platform Workflow, SAP Cloud Platform Business Rules and SAP Cloud Platform Process Visibility services together to create process extensions on top of any business application, orchestrate tasks or build process-centric differentiating applications.
+
+In this tutorial mission, setup and use these services to automate and achieve operational insights into employee onboarding process.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Check Entitlements)]
@@ -23,15 +28,21 @@ To create service instances for business process management services, you need t
 
 2. Navigate into the trial subaccount
 
-      ![Open Trial Account](opentrialaccount.png)
+      !![Open Trial Account](opentrialaccount.png)
 
     >The trial account should contain one `subaccount` and `space`
 
 3. Open **Entitlements** from left panel. You should have the following entitlements in your account.
 
-    - If not, then use **Configure Environments** to add these entitlements.
+    >If not, then use **Configure Environments** to add these entitlements.
 
-    >Here is an explanation of these different entitlements: (a) Connectivity is needed to configure destination, (b) Portal and HTML5 Application is needed to access Process Visibility and Workflow applications from Fiori Launchpad, (c) Business Rules, Workflow and Process Visibility is needed to create service instances of these respective services in order to work with them.
+    Here is an explanation of these different entitlements:
+
+    - Connectivity is needed to configure destination
+
+    - Portal and HTML5 Application is needed to access Process Visibility and Workflow applications from Fiori Launchpad
+
+    - Business Rules, Workflow and Process Visibility is needed to create service instances of these respective services in order to work with them.
 
     ![Check Entitlements](cfentitlements.png)
 
@@ -42,9 +53,9 @@ To create service instances for business process management services, you need t
 
 Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases) in your local file system.
 
->This `multitarget` application when deployed will (a) create new service instances for workflow, business rules and process visibility in cloud foundry environment, (b) creates an application to access business rules editor and Fiori Launchpad for workflow and process visibility applications.
+>This multitarget application when deployed will (a) create new service instances for workflow, business rules and process visibility in cloud foundry environment, (b) creates an application to access business rules editor and Fiori Launchpad for workflow and process visibility applications.
 
-![Download MTA](downloadmta.png)
+!![Download MTA](downloadmta.png)
 
 
 [DONE]
@@ -57,7 +68,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 2. Choose **Launch SAP Web IDE**.
     > If you are new user then Web IDE Full-Stack will not be enabled for your account and you will see a message saying "SAP Web IDE Full-Stack is not be enabled for this account". Follow the instructions on the Web IDE page, to enable the Web IDE.
 
-    ![Launch Web IDE](launchwebide.png)
+    !![Launch Web IDE](launchwebide.png)
 
 3. In the navigation area of **SAP Web IDE**, choose the **Preferences** icon.
 
@@ -100,7 +111,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 
     ![Import MTA](importzip.png)
 
-4. The `multitarget` application gets imported under the **Workspace** folder and the file structure is shown below.
+4. The multitarget application gets imported under the **Workspace** folder and the file structure is shown below.
 
     >Ensure that have chosen **Show Hidden Files** to be able to view the `app-router` file structure as shown.
 
@@ -115,24 +126,28 @@ When you build and deploy this application, there will be new service instances 
 
 1. Right-click on the `BPMServicesFLP` project and choose any of the **Build** option.
 
-    ![Build MTA](build.png)
+    !![Build MTA](build.png)
 
 2. After the build completes, navigate to the **`mta_archives` | `BPMServicesFLP_0.0.1.mtar`** file.
 
-    ![Build MTA](build-logs.png)
+    !![Build MTA](build-logs.png)
 
-    ![Build MTA](buildarchives.png)
+    !![Build MTA](buildarchives.png)
 
 
 3. Right-click `BPMServicesFLP_0.0.1.mtar` and choose **Deploy | Deploy to SAP Cloud Platform**.
 
-    ![Deploy MTA](deploymta.png)
+    !![Deploy MTA](deploymta.png)
 
     > In the popup, select the Cloud Foundry API Endpoint, Organisation and Space where you would want to deploy the application.
 
     ![Deploy MTA](deploydialog.png)
 
-    >There could be deployment errors, (a) if you have not enabled the entitlements of `workflow`, `business rules`, `process visibility` and `portal`. Ensure that you have followed Step 1 to do the necessary entitlements (b) if you already have the instance of either workflow, business rules or process visibility created of same name. In that case, update `modules` and `resources` section in `mta.yaml` to replace that service instance name with a new unique name.
+    >There could be deployment errors:
+
+    > - if you have not enabled the entitlements of `workflow`, `business rules`, `process visibility` and `portal`. Ensure that you have followed Step 1 to do the necessary entitlements.
+
+    > - if you already have the instance of either workflow, business rules or process visibility created of same name. In that case, update `modules` and `resources` section in `mta.yaml` to replace that service instance name with a new unique name.
 
 [DONE]
 [ACCORDION-END]

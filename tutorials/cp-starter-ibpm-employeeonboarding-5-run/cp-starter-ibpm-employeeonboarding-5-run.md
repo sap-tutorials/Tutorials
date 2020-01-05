@@ -31,11 +31,9 @@ First, we will import sample events & data , process these events and view them 
 
     ![Import Events](eventaquisition_2.png)
 
-
 4. **Browse** to the downloaded events file location, select the file and click **Import**
 
     ![Import Events](importevents.png)
-
 
 5. Once the events are imported successfully, choose **Filter** and enter `onboard` as **Process Definition ID** to see all the imported events.
 
@@ -44,6 +42,7 @@ First, we will import sample events & data , process these events and view them 
     ![See Events](eventaquisition_4.png)
 
     All the sample events are displayed.
+
     ![See Events](eventaquisition_5.png)
 
 [DONE]
@@ -57,11 +56,11 @@ First, we will import sample events & data , process these events and view them 
 
 2. Select `Employee Onboarding` scenario and click **Process Data**.
 
-    ![Process Events Data](processdata.png)
+    !![Process Events Data](processdata.png)
 
 3. **Refresh** to see the processing details.
 
-    ![View Processed Data](processeddata.png)
+    !![View Processed Data](processeddata.png)
 
 [DONE]
 [ACCORDION-END]
@@ -86,7 +85,7 @@ First, we will import sample events & data , process these events and view them 
 
 [ACCORDION-BEGIN [Step 4: ](Execute the workflow sample application)]
 
-Now, you will run the workflow and see how the new events and data are automatically processed and shown in process workspace in real time. 
+Now, you will run the workflow and see how the new events and data are automatically processed and shown in process workspace in real time.
 
 1. In the SAP Fiori launchpad, open the **Monitor Workflow - Workflow Definitions** tile to see all deployed workflow definitions.
 
@@ -100,7 +99,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 4. Choose **Show Instances** to see all workflow instances of the onboard workflow definition.
 
-    ![View Details of Instance](workflow-instance-1.png)
+    !![View Details of Instance](workflow-instance-1.png)
 
 5. Go back to the SAP Fiori launchpad homepage. The **My Inbox** tile shows one open task.
 
@@ -111,6 +110,7 @@ Now, you will run the workflow and see how the new events and data are automatic
     - You can add new equipment, by choosing the **+** button.
 
     - To complete the task, choose **Confirm**. The task then disappears from the list.
+
     ![Confirm Task](confirm-equipment.png)
 
 [DONE]
@@ -120,7 +120,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 1. In the SAP Fiori launchpad, open **Monitor Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
 
-    ![New Workflow Event Processed](processworkflowevents.png)
+    !![New Workflow Event Processed](processworkflowevents.png)
 
     > In productive scenarios, you can switch on the *Schedule Job* so that the events will be automatically processed at an interval of 5 minutes.
 
@@ -145,7 +145,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 2. **Refresh** the tasks list and execute the **Accept Workplace** task:
 
-    > As the buddy choose **Accept** to complete the task. The workflow status is set to **Completed**.
+    > As the buddy, choose **Accept** to complete the task. The workflow status is set to **Completed**.
 
     ![Accept Equipment](accept-equipment.png)
 
@@ -160,11 +160,11 @@ Now, you will run the workflow and see how the new events and data are automatic
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](View the process visibility workspace for completed workflow)]
+[ACCORDION-BEGIN [Step 7: ](View process visibility workspace for completed workflow)]
 
 1. In the SAP Fiori launchpad, choose **Monitor Scenarios** to process the new set of events.
 
-    ![See Processed data](processeddata_2.png)
+    !![See Processed data](processeddata_2.png)
 
 2. Go back to the homepage, choose **Process Workspace** tile and open `Employee Onboarding` scenario.
 

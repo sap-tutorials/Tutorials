@@ -15,9 +15,9 @@ primary_tag: products>sap-cloud-platform
 
 [ACCORDION-BEGIN [Step 1: ](Download sample application)]
 
-1. Download `Employee Onboarding` sample application from [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-onboarding-sample/resources/cf-onboarding-sample.zip) in your local file system.
+Download `Employee Onboarding` sample application from [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-onboarding-sample/resources/cf-onboarding-sample.zip) in your local file system.
 
-    ![Download Sample Workflow](downloadsample.png)
+!![Download Sample Workflow](downloadsample.png)
 
 [DONE]
 [ACCORDION-END]
@@ -25,9 +25,10 @@ primary_tag: products>sap-cloud-platform
 [ACCORDION-BEGIN [Step 3: ](Import sample application)]
 
 1. Choose **Launch SAP Web IDE**.
+
     > If you are new user then Web IDE Full-Stack will not be enabled for your account and you will see a message saying "SAP Web IDE Full-Stack is not be enabled for this account". Follow the instructions on the Web IDE page, to enable the Web IDE.
 
-    ![Launch Web IDE](launchwebide.png)
+    !![Launch Web IDE](launchwebide.png)
 
 2. In the navigation area of the **SAP Web IDE**, choose the **Development** icon.
 
@@ -40,7 +41,12 @@ primary_tag: products>sap-cloud-platform
     ![Import Sample MTA](importsamplezip.png)
 
 5. You will see the sample `Employee Onboarding` application is imported into your workspace.
-> This sample workflow has (a) **Business Rules** integrated into it. You can find the integration as part of service task with name `Determine Equipment`, (b) **User Tasks** for confirmation of the equipment selected via business rules and for the approval of equipment. You can find these user tasks with name `Confirm and Change Equipment` and `Approve Equipment` respectively.  The user interface associated with these user tasks have been built as SAPUI component and you can find these modules bundled under `confirmEquip` and `approveEquip` respectively in the same multi target application.
+
+    > This sample workflow has:
+
+    > - **Business Rules** integrated into it. You can find the integration as part of service task with name `Determine Equipment`.
+
+    > - **User Tasks** for confirmation of the equipment selected via business rules and for the approval of equipment. You can find these user tasks with name `Confirm and Change Equipment` and `Approve Equipment` respectively.  The user interface associated with these user tasks have been built as SAPUI component and you can find these modules bundled under `confirmEquip` and `approveEquip` respectively in the same multi target application.
 
     ![Workflow Added](sampleworkflowadded.png)
 

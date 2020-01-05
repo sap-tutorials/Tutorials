@@ -1,6 +1,6 @@
 ---
 title: Set Up Business Rules for Determining Equipment
-description: Import, configure, and deploy business rules to determine equipment for new hire using SAP Cloud Platform Business Rules
+description: Import, configure, and deploy business rules to determine equipment for new hire using SAP Cloud Platform Business Rules.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform]
@@ -18,7 +18,7 @@ In this sample content, you will learn how to author and manage rules to identif
 ---
 
 
-[ACCORDION-BEGIN [Step 2: ](Configure a system)]
+[ACCORDION-BEGIN [Step 1: ](Configure a system)]
 
 To import the business rules project from API Business Hub, you need to configure a system which points to the API Hub destination and then use this system to import the project.
 
@@ -49,11 +49,11 @@ To import the business rules project from API Business Hub, you need to configur
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Import business rules)]
+[ACCORDION-BEGIN [Step 2: ](Import business rules)]
 
 1. Click **Design** icon and select **Import Project from API Business API Hub**.
 
-    ![Import Business Rules](ImportAPIHub.png)
+    !![Import Business Rules](ImportAPIHub.png)
 
 2. In the popup, do the following:
     - In the **System** field, select `APIHub` or the name you entered while configuring the system.

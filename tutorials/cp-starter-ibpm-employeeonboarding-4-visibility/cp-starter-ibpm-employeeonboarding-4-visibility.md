@@ -94,7 +94,7 @@ The business scenario will be created with **Draft** status.
     |  **Event A**         | `Approve Equipment Created`
     |  **Event B**         | `Approve Equipment Completed`
 
-    ![Add Risk Status Props](configurestatus_3.png)
+    !![Add Risk Status Props](configurestatus_3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -105,7 +105,7 @@ To activate the business scenario, choose **Activate**.
 
 >Activate operation saves and activates the scenario. Only an activated business scenario can be consumed.
 
-![Activate Scenario](activatescenario.png)
+!![Activate Scenario](activatescenario.png)
 
 [VALIDATE_7]
 [ACCORDION-END]
