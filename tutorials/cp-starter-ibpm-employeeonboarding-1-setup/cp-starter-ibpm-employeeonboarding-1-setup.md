@@ -1,6 +1,7 @@
 ---
 title: Set Up Business Process Management Services in Cloud Cockpit
-description: Set up workflow, business rules and process visibility services in cloud cockpit.
+description:  Setup services to automate and achieve operational insights into employee onboarding process.
+
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-cloud-platform]
@@ -11,6 +12,7 @@ primary_tag: products>sap-cloud-platform
 ### You will learn
   - How to enable and configure workflow, business rules and process visibility services
 
+Intelligent Business Process Management is a family of services to automate business processes, manage decision logic and gain end-to-end visibility in your processes. Users can now use SAP Cloud Platform Workflow, SAP Cloud Platform Business Rules and SAP Cloud Platform Process Visibility services together to create process extensions on top of any business application, orchestrate tasks or build process-centric differentiating applications. In this tutorial mission, setup and use these services to automate and achieve operational insights into employee onboarding process.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Check Entitlements)]
@@ -40,7 +42,7 @@ To create service instances for business process management services, you need t
 
 Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases) in your local file system.
 
->This multi target application when deployed will (a) create new service instances for workflow, business rules and process visibility in cloud foundry environment, (b) creates an application to access business rules editor and Fiori Launchpad for workflow and process visibility applications.
+>This `multitarget` application when deployed will (a) create new service instances for workflow, business rules and process visibility in cloud foundry environment, (b) creates an application to access business rules editor and Fiori Launchpad for workflow and process visibility applications.
 
 ![Download MTA](downloadmta.png)
 
@@ -53,6 +55,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
 2. Choose **Launch SAP Web IDE**.
+    > If you are new user then Web IDE Full-Stack will not be enabled for your account and you will see a message saying "SAP Web IDE Full-Stack is not be enabled for this account". Follow the instructions on the Web IDE page, to enable the Web IDE.
 
     ![Launch Web IDE](launchwebide.png)
 
@@ -63,6 +66,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 4. Select the **Extensions** preference, and search for **workflow**.
 
 5. Toggle the button to switch on the **Workflow Editor** extension, and **Save** the changes.
+    > If a confirmation popup appears, then click **Refresh** to apply the changes.
 
     ![Enable Workflow Feature](wfextension.png)
 
@@ -70,11 +74,11 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 
 7. Enter the following details, and **Save** the changes:
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  **API End Point**  | `https://api.cf.eu10.hana.ondemand.com` or `https://api.cf.us10.hana.ondemand.com` depending upon the region of your trial account
-    |  **Organization**   | Your trial organization
-    |  **Space**          | Your trial space  
+    |  Field Name         | Value                    | Example  
+    |  :------------------| :------------------------| :-------------
+    |  **API End Point**  | Your trial API End point | `https://api.cf.eu10.hana.ondemand.com` or `https://api.cf.us10.hana.ondemand.com` depending upon the region of your trial account
+    |  **Organization**   | Your trial organisation  | trial_P237800
+    |  **Space**          | Your trial space         | dev
 
     > In the credentials popup, enter your trial user email and password. If you normally login via single-sign on, login with your domain password.
 
@@ -96,7 +100,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 
     ![Import MTA](importzip.png)
 
-4. The multi-target application gets imported under the **Workspace** folder and the file structure is shown below.
+4. The `multitarget` application gets imported under the **Workspace** folder and the file structure is shown below.
 
     >Ensure that have chosen **Show Hidden Files** to be able to view the `app-router` file structure as shown.
 
@@ -109,7 +113,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 
 When you build and deploy this application, there will be new service instances created for each workflow, business rules and process visibility service in cloud foundry.
 
-1. Right-click on the `BPMServicesFLP` project and choose **Build | Build**.
+1. Right-click on the `BPMServicesFLP` project and choose any of the **Build** option.
 
     ![Build MTA](build.png)
 
@@ -123,6 +127,10 @@ When you build and deploy this application, there will be new service instances 
 3. Right-click `BPMServicesFLP_0.0.1.mtar` and choose **Deploy | Deploy to SAP Cloud Platform**.
 
     ![Deploy MTA](deploymta.png)
+
+    > In the popup, select the Cloud Foundry API Endpoint, Organisation and Space where you would want to deploy the application.
+
+    ![Deploy MTA](deploydialog.png)
 
     >There could be deployment errors, (a) if you have not enabled the entitlements of `workflow`, `business rules`, `process visibility` and `portal`. Ensure that you have followed Step 1 to do the necessary entitlements (b) if you already have the instance of either workflow, business rules or process visibility created of same name. In that case, update `modules` and `resources` section in `mta.yaml` to replace that service instance name with a new unique name.
 
@@ -210,33 +218,8 @@ The sample business rules used in this scenario is published in API Business Hub
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create destination for SuccessFactors APIs)]
 
-The sample workflow calls `SuccessFactors` to get the user details of the new hire and the team members. This destination will be used in the workflow to call these APIs.
-
-> If you already have a SuccessFactors system, then you can use the username, password and company ID of that system. You can also get API URLs for the respective data centre from the [note](https://apps.support.sap.com/sap/support/knowledge/public/en/2215682).
-
-> If you do not have a SuccessFactors system, then with your S-user account, you can  request for a new SuccessFactors test tenant at: [Partner Demo Request Tool](https://hcmcloudops.successfactors.com/DemoInstance/PartnerDemo).
-
-> If you still do not have SuccessFactors system, then skip this step.
-
-Choose **New Destination**, and enter the following data:
-
-|  Field Name     | Value
-|  :------------- | :-------------
-|  Name           | `SFSF`
-|  URL            | API URL based on your SuccessFactors Data Center
-|  Authentication | `BasicAuthentication`
-|  User           | `UserName@CompanyID`. Where `CompanyID` is the SuccessFactors company ID.
-|  Password       | given SuccessFactors password for the user name
-
-![Configure Destination](createdestination-sfsf.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Create destination for Business Rules APIs)]
+[ACCORDION-BEGIN [Step 8: ](Create destination for Business Rules APIs)]
 
 The sample workflow calls business rules to determine the list of equipment needed for the new hire. This destination (`BUSINESS_RULES`) will be used while modelling the workflow to call the business rules APIs.
 
@@ -255,10 +238,10 @@ Choose **New Destination**, and enter the following data:
 
 > `https://bpmruleruntime.cfapps.us10.hana.ondemand.com/rules-service`
 
-![Configure Destination](createdestination-rules.png)
-
->To get Client ID, Client Secret and Token Service URL: (a) navigate into **dev** space, (b) select **Service Instances**, (c) search for **rules** instance, and then select **`businessrules`** service instance and (d) navigate into **`businessrules`** to get `clientid`, `clientsecret`, and `url`.
+>To get Client ID, Client Secret and Token Service URL: (a) navigate into your **dev** space in your trial cockpit, (b) select **Service Instances** from left panel, (c) search for **rules**, and then select **`businessrules`** service instance and (d) navigate into **`businessrules`** to get `clientid`, `clientsecret`, and `url`.
 ![Get Security Token](getsecurity.png)
+
+![Configure Destination](createdestination-rules.png)
 
 
 [DONE]
@@ -278,7 +261,7 @@ You can open both the links in different browser tabs and use them in further tu
 
 3. In the **Overview** section, click app-router link to open workflow, business rules and process visibility applications.
 
-    > Logon with your trial user id and password to the application.
+    > Log on with your trial user ID and password to the application.
 
     ![Open FLP](approuterlink.png)
 
@@ -292,6 +275,7 @@ You can open both the links in different browser tabs and use them in further tu
 
     ![Open Rule Editor](openruleeditor.png)
 
+This completes the set up of starter scenario for Intelligent Business Process Management in your trial account. In next tutorial, you will access the sample content of these different services, quickly set them up in your account and then run the scenario to get an integrated experience.
 
 [DONE]
 [ACCORDION-END]
