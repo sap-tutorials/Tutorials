@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, pro
 time: 25
 ---
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
+- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher 
 - **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
 - [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
 - [Set Up the SAP Cloud Platform SDK for iOS](https://developers.sap.com/group.ios-sdk-setup.html)
