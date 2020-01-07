@@ -17,7 +17,7 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - Basic annotations for controlling the UI of SAP Fiori Element List Reports
 - How SAP Fiori Elements apps cause appropriate OData operations to be generated
 
-**For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).**
+> For a quick map and overview of what this tutorial is, and where it sits in the overall "S/4HANA Extensions with Cloud Application Programming Model (CAP)" mission, see the diagram in this blog post: [SAP TechEd Mission – API Hub, Cloud SDK and CAP – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).
 
 In the previous tutorial you got the consumer app retrieving data from the remote mock service, and saw the data in raw form (<http://localhost:4004/catalog/Orders?$expand=address>) -- that is, a JSON representation of a response to an OData query operation.
 
@@ -31,7 +31,7 @@ To complete this mission, you will now make use of the SAP Cloud Application Pro
 Based on this tutorial's prerequisites within the context of the mission, your consumer app should be running and available at <http://localhost:4004>. If it isn't, go to the integrated terminal in your VS Code instance where you've been editing your consumer app and start it with:
 
 ```Bash
-cds run
+npm start
 ```
 
 At the root URL <http://localhost:4004> you should see something similar to this:
@@ -44,6 +44,23 @@ Next to the link to the `Orders` entity set, there's the **`...in Fiori`** link,
 
 This is the basis upon which you will build, adding annotations to declare what should appear.
 
+**Note:**
+_If you see an error at this stage, along the lines of "Error when creating the view. Cannot read property 'getService' of undefined', you will need to apply a quick fix as a workaround (this will be addressed soon in the development kit):_
+
+_In the file `node_modules/@sap/cds/lib/utils/app/fiori-preview.js` find the line with a `<script>` tag that loads the UI5 core (it will be within the `_html()` function definition):_
+
+```
+<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+```
+
+_and insert a specific version of UI5 to load. That version should be 1.72.3, i.e. modify the line so that it looks like this:_
+
+```
+<script src="https://sapui5.hana.ondemand.com/1.72.3/resources/sap-ui-core.js"
+```
+
+_If you don't get this error, you can ignore this workaround._
+
 Note that there are two empty records in the list, and if you were wondering if there were two because you have two `Orders` records currently stored in your consumer app service, you'd be correct.
 
 [VALIDATE_1]
@@ -51,7 +68,7 @@ Note that there are two empty records in the list, and if you were wondering if 
 
 [ACCORDION-BEGIN [Step 2: ](Create an annotations file)]
 
-Alongside the `cat-service.cds` and `cat-service.js` files you already have in the `srv/` directory of your consumer app project, create a new file called `annotations.cds`.
+Alongside the `service.cds` and `service.js` files you already have in the `srv/` directory of your consumer app project, create a new file called `annotations.cds`.
 
 > All of the annotations that you're about to add are UI-related and are documented in the [OData 4.0 Vocabularies - SAP UI](https://wiki.scn.sap.com/wiki/display/EmTech/OData+4.0+Vocabularies+-+SAP+UI) Wiki page.
 
@@ -71,7 +88,7 @@ annotate CatalogService.Orders with @UI.SelectionFields: [ addressID ];
 Now restart the service by issuing this command in the integrated terminal (you may have to cancel the existing execution with **Ctrl-C**):
 
 ```Bash
-cds run
+npm start
 ```
 
 After restarting the service, refresh the SAP Fiori preview page for the `Orders` entity (this page: <http://localhost:4004/$fiori-preview?service=CatalogService&entity=Orders>). You should see that there is now only a single selection field plus the search field, so that it looks similar to this:
