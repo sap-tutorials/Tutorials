@@ -29,9 +29,9 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
     ![service keys for rest protocol](service-keys-rest.PNG)
 
-4. Provide the **token endpoint URL** in Postman URL from the **Service Keys** for the protocol type HTTPREST.
+4. Provide the *token endpoint URL* in Postman URL from the *Service Keys* for the protocol type HTTPREST.
 
-    Build the postman URL by appending the `GRANTTYPE` as **CLIENTCREDENTIALS** and `RESPONSETYPE` as **token**
+    Build the postman URL by appending the `GRANTTYPE` as *CLIENTCREDENTIALS* and `RESPONSETYPE` as *token*
 
     So the final postman URL should look like this:
 
@@ -41,18 +41,18 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
     ?grant_type=client_credentials&response_type=token
     ```
 
-    In the **Headers** tab, enter `Content-Type` as **KEY** and `application/x-www-form-urlencoded` as **VALUE**.
+    In the *Headers* tab, enter `Content-Type` as *KEY* and `application/x-www-form-urlencoded` as *VALUE*.
 
     ![postman headers](postman-header.PNG)
 
-    In the **Authorization** tab, select the **Type** as `Basic Auth` from the dropdown.
+    In the *Authorization* tab, select the *Type* as `Basic Auth` from the dropdown.
 
-      - In **Username**, provide the <`clientid`> value from the **Service Keys** for httprest protocol.
-      - In **Password**, provide the <`clientsecret`> value from the **Service Keys** for httprest protocol.
+      - In *Username*, provide the <`clientid`> value from the *Service Keys* for httprest protocol.
+      - In *Password*, provide the <`clientsecret`> value from the *Service Keys* for httprest protocol.
 
       ![postman authorization](postman-authorization.PNG)
 
-    Select the **POST** option in **Postman** and click on the **Send** button. You will get the `access_token`.
+    Select the *POST* option in *Postman* and click on the *Send* button. You will get the `access_token`.
 
 [DONE]
 [ACCORDION-END]
@@ -62,10 +62,10 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 Open a new tab in the Postman.
 
   1. Build the postman URL as below
-        https://<`uri` of the rest protocol based section from **Service Keys**>/messaging/v1/queues/<`Queue name`>/messages.
+        https://<`uri` of the rest protocol based section from *Service Keys*>`/messagingrest/v1/queues/<Queue name>/messages`.
         `Queue name` is queue name along with the namespace. Replace the `/` present in the namespace with `%2f`while executing.  
 
-  2. Open the **Headers** tab add below two key-value pairs.
+  2. Open the *Headers* tab add below two key-value pairs.
 
     |       KEY      |                 VALUE                 |
     | :------------- | :------------------------------------ |
@@ -74,15 +74,15 @@ Open a new tab in the Postman.
 
     ![postman header for publishing message](postman-post-header.PNG)
 
-  3. Open the **Authorization** tab and select the **TYPE** as `No Auth`.
+  3. Open the *Authorization* tab and select the *TYPE* as `No Auth`.
 
     ![postman authorization for publishing message](postman-post-authorization.PNG)
 
-  4. Open the **Body** tab and select the type as **raw**. And enter some test message in the body.
+  4. Open the *Body* tab and select the type as *raw*. And enter some test message in the body.
 
     ![postman body for publishing message](Postman-Post-Body.PNG)
 
-  5. Select the **POST** option in **Postman** and click on the **Send** button. If sending message is successful, you shall get a status as `204 No Content`.
+  5. Select the *POST* option in *Postman* and click on the *Send* button. If sending message is successful, you shall get a status as `204 No Content`.
 
 [DONE]
 [ACCORDION-END]
@@ -92,24 +92,24 @@ Open a new tab in the Postman.
 Open a new tab in the Postman.
 
   1. Build the postman URL as below
-        https://< `uri` of the rest protocol based section from **Service Keys**>/messaging/v1/queues/<Queue name>/messages/consumption
+        https://< `uri` of the rest protocol based section from *Service Keys*>`/messagingrest/v1/queues/<Queue name>/messages/consumption`
 
-  2. Open the **Headers** tab add below two key value pair.
+  2. Open the *Headers* tab add below two key value pair.
 
     |       KEY      |                 VALUE                 |
     | :------------- | :------------------------------------ |
     |      x-qos     |                 0 or 1                |
     | authorization  | Bearer <the retrieved `access_token` >|     
 
-    ![postman header for publishing message](postman-post-header.PNG)
+    ![postman header for publishing message](consumption-header.PNG)
 
-  3. Open the **Authorization** tab and select the TYPE as **No Auth**.
+  3. Open the *Authorization* tab and select the TYPE as *No Auth*.
 
-    ![postman authorization for publishing message](postman-post-authorization.PNG)
+    ![postman authorization for publishing message](consumption-noauth.PNG)
 
-  4. Open the **Body** tab and select the type as **raw**. And enter some test message in the body.
+  4. Open the *Body* tab and select the type as *raw*. And enter some test message in the body.
 
-  5. Select the **POST** option in **Postman** and click on the **Send** button. If sending message is successful, you shall get a status as `200 OK`. And in the body tab you can view the message.
+  5. Select the *POST* option in *Postman* and click on the *Send* button. If sending message is successful, you shall get a status as `200 OK`. And in the body tab you can view the message.
 
 [VALIDATE_2]
 
