@@ -103,7 +103,7 @@ You should end up with two VS Code top-level windows, one showing your `teched20
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a schema and service definition)
+[ACCORDION-BEGIN [Step 3: ](Add a schema and service definition)]
 
 Initializing the project created a number of empty directories, predominantly the following:
 
@@ -192,7 +192,11 @@ At the end of this step, the relevant sections in your `package.json` file shoul
     "@sap/cds": "^3",
     "express": "^4"
   },
-  [...],
+```
+
+and this:
+
+```JSON
   "devDependencies": {
     "sqlite3": "^4.1.1"
   }
@@ -204,7 +208,7 @@ You can cross-reference this list with what `npm` thinks is installed, with the 
 npm list --depth=0
 ```
 
-This should give you a top-level list (i.e. without nested dependencies) of the packages installed in this project directory. The output should look something like this:
+This should give you a top-level list (i.e. without nested dependencies) of the packages installed in this project. The output should look something like this (version numbers may be different):
 
 ```
 consumer-app@1.0.0 /home/qmacro/mission-temp/consumer-app
@@ -291,3 +295,5 @@ npm start
 [ACCORDION-END]
 
 At this point in the mission, you have a mocked SAP S/4HANA Business Partner service supplying address data, and a bookshop style service (to which you'll eventually add a simple user interface), which will be extended to consume that address data and combine it with the bookshop order information.
+
+

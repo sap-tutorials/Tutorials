@@ -1,4 +1,5 @@
-service Add Service Logic to Consume Remote Address Data
+---
+title: Add Service Logic to Consume Remote Address Data
 description: Add service implementation logic to handle the OData requests for address information.
 auto_validation: true
 time: 20
