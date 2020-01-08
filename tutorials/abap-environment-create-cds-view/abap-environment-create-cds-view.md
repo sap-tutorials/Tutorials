@@ -202,7 +202,7 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
           @UI: { identification:[ { position: 100, label: 'Last Changed At' } ] }
           lastchangedat                          as LastChangedAt,
 
-          //publich associations
+          //public associations
           _Country,
           _Currency
     }
@@ -318,7 +318,7 @@ Click **Activate** to publish your service binding.
 
   6. Check your result:
 
-      ![Open SPA Fiori elements view](fiori6.png)
+      ![Open SAP Fiori elements view](fiori6.png)
 
 [DONE]
 [ACCORDION-END]

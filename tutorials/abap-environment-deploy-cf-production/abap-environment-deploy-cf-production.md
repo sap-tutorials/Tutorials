@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Create and Deploy HTML5 and SAP Fiori Launchpad Site Modules 
+title: Create and Deploy HTML5 and SAP Fiori Launchpad Site Modules
 description: Create HTML5 Module and SAP Fiori Launchpad Site Module. Deploy your UI to Cloud Foundry and run your application as a business user.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
@@ -263,9 +263,9 @@ time: 15
 
 [ACCORDION-BEGIN [Step 9: ](Create SAP Fiori launchpad site module)]
 
-  1. Open SAP Web IDE and right-click on your project **`MTA_Project_XXX`** and select **Build** > **SAP Fiori Launchpad Site Module**.
+  1. Open SAP Web IDE and right-click on your project **`MTA_Project_XXX`** and select **New** > **SAP Fiori Launchpad Site Module**.
 
-    ![Define inbound tile](site.png)
+      ![Define inbound tile](site.png)
 
   2. Create a SAP Fiori launchpad site module:
      - Module name: **`FLP_Site_Module_XXX`**
