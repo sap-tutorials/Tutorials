@@ -1,6 +1,6 @@
 ---
 title: Create a Card Component
-description: Define your first component using UI5 web components for React.
+description: Define your first component using UI5 Web Components for React.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-fiori]
@@ -19,25 +19,26 @@ There you can try out the different components and also take a look at the codin
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add components to 'MyApp.jsx')]
+[ACCORDION-BEGIN [Step : ](Add components to MyApp.jsx)]
 First you need to import the components you want to use.
 
- You can check out all available components in the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/welcome-getting-started--page). Take your time to play around a little, change some `props` and take a look at the coding.
+You can check out all available components in the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/welcome-getting-started--page). Take your time to play around a little, change some `props` and take a look at the coding.
 
 1. For the sake of keeping the coding as short as possible, this tutorial will only use direct imports. Start with importing a `Card` component into your `MyApp.jsx` file (right below the existing import statement).
 
-    ```JSX
+    ```JavaScript / JSX
     import { Card } from "@ui5/webcomponents-react";
     ```
-
 
     > Direct import of components from `@ui5/webcomponents-react` have a **negative impact on your bundle size**. If you want to keep the bundle size small, import the components like this:
 
     >    `import { Card } from "@ui5/webcomponents-react/lib/Card";`
 
-2. So, you imported the `Card` component now it's time to use it. Replace the content of your `<div>` with a `<Card>`. In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/ui5-web-components-card--default-story) you can see that Cards can receive different props. For now only add `heading='Card'`.
+2. So, you imported the `Card` component. Now it's time to use it. Replace the content of your `<div>` with a `<Card>`.
 
-    ```JSX
+    In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/ui5-web-components-card--default-story), you can see that Cards can receive different props. For now only add `heading='Card'`.
+
+    ```JavaScript / JSX
     <div>
       <Card heading="Card"></Card>
     </div>
@@ -49,7 +50,7 @@ Your webpage should now look like this.
 
 And the file like this:
 
-```JSX
+```JavaScript / JSX
 import { Card } from "@ui5/webcomponents-react";
 
 export function MyApp() {
@@ -70,7 +71,7 @@ The content area of the `Card` component is empty, this is because it didn't rec
 
 1. Add the following lines to your Card component:
 
-    ```JSX
+    ```JavaScript / JSX
     <Card heading="Card">
       <div>This is the content area of the Card</div>
     </Card>
@@ -80,15 +81,17 @@ The content area of the `Card` component is empty, this is because it didn't rec
 
     Replace with import statement to add another component `Text` to your `MyApp.jsx` file.
 
-    ```JSX
+    ```JavaScript / JSX
     import { Card, Text } from "@ui5/webcomponents-react";
     ```
-And replace the inner `div` with the `Text` component.
-```JSX
-<Card heading="Card">
-  <Text>This is the content area of the Card</Text>
-</Card>
-```
+
+    And replace the inner `div` with the `Text` component.
+
+    ```JavaScript / JSX
+    <Card heading="Card">
+      <Text>This is the content area of the Card</Text>
+    </Card>
+    ```
 
 The `font-family` of the content now corresponds to the `font-family` of the header.
 
@@ -101,26 +104,33 @@ In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-e
 
 The Card now spreads across the whole screen, this behavior is intended so it takes up the whole space of its container.
 
-1. To restrict the `width` of the `Card` add the `style` prop.
-    ```JSX
+1. To restrict the `width` of the `Card`, add the `style` prop.
+
+    ```JavaScript / JSX
     <Card heading="Card" style={{ width: "300px" }}>
       <Text>This is the content area of the Card</Text>
     </Card>
     ```
+
     ![Card02](02_card.png)
 
-2. The content of the card is way too close to the border of the `Card`, so a `padding` is needed. UI5 Web Components comes with an Util library, which includes `padding` sizes.
+2. The content of the card is way too close to the border of the `Card`, so a `padding` is needed. UI5 Web Components comes with a `Util` library, which includes `padding` sizes.
 
-Execute this in your terminal:
-    ```sh
+    Execute this in your terminal:
+
+    ```Shell
     npm install @ui5/webcomponents-react-base --save
     ```
+
     Then import:
-    ```JSX
+
+    ```JavaScript / JSX
     import { spacing } from "@ui5/webcomponents-react-base";
     ```
+
     And finally add this to your `Text` component:
-    ```JSX
+
+    ```JavaScript / JSX
     <Text style={spacing.sapUiContentPadding}>
       This is the content area of the Card
     </Text>
@@ -128,7 +138,7 @@ Execute this in your terminal:
     Hereby you get a standardized content-padding. `spacing` comes with many more properties, feel free to test them and see what they do.
 
 After this step `MyApp.jsx` should look like this:
-```JSX
+```JavaScript / JSX
 import React from "react";
 import { Card, Text } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
@@ -145,7 +155,7 @@ export function MyApp() {
   );
 }
 ```
-And your Application like this:
+And your application like this:
 
 ![Card03](03_card.png)
 
@@ -154,15 +164,17 @@ And your Application like this:
 
 [ACCORDION-BEGIN [Step ](Event handling)]
 
-1. The Card-header can also be clickable, for this you need to set the `headerInteractive` prop to true.
+1. The Card header can also be clickable. For this you need to set the `headerInteractive` prop to true.
 
-    ```JSX
+    ```JavaScript / JSX
     <Card heading="Card" style={{ width: "300px" }} headerInteractive>
     ```
-  We didn't pass a value to `headerInteractive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted.
+
+    We didn't pass a value to `headerInteractive`, because it [defaults to true](https://reactjs.org/docs/jsx-in-depth.html#props-default-to-true) if the value is omitted.
 
 2.  To make the header react to a click, add a function as value to the `onHeaderClick` prop.
-    ```JSX
+
+    ```JavaScript / JSX
     <Card
       heading="Card"
       style={{ width: "300px" }}
@@ -172,7 +184,7 @@ And your Application like this:
     ```
 
 3. Now, add the callback function right in the beginning of the component (definition function):
-    ```JSX
+    ```JavaScript / JSX
     export function MyApp() {
       const handleHeaderClick = () => {
         alert("Header clicked");
@@ -180,7 +192,7 @@ And your Application like this:
     ```
 
 The file now looks like this:
-```JSX
+```JavaScript / JSX
 import React from "react";
 import { Card, Text } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";

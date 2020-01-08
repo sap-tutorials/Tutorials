@@ -1,6 +1,7 @@
 ---
 title: Configure SAP HANA Smart Data Streaming Server Connection
 description: Part 1 of 9. Configure SAP HANA streaming connection and add SAP HANA data service in SAP HANA Studio.
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 author_name: Bill Jiang
@@ -22,7 +23,7 @@ time: 20
 
 ---
 
-#### Connect to a SAP HANA System
+[ACCORDION-BEGIN [Step 1: ](Connect to a SAP HANA System)]    
 
 1. Open HANA Studio. In the **SAP HANA Administration Console** perspective, right click in the white space within the **Systems** view. Next select the **Add System...** menu item to execute it. You can also press **s**.
 
@@ -45,8 +46,11 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Click Finish](connect-to-hana-system-5-click-finish.png)
 
+[DONE]
 
-#### Open Streaming Perspective
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Open Streaming Perspective)]    
 
 1. Go to **Windows** > **Perspective** > **Open Perspective** and click the **Other...** menu item to execute it. You can also press **o**.
 
@@ -62,8 +66,11 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Select Streaming Run-Test](open-perspective-4-hana-run-test.png)
 
+[VALIDATE_1]
 
-#### Create Server Connection in SAP HANA Streaming Development Perspective
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Create Server Connection in SAP HANA Streaming Development Perspective)]    
 
 1. Go to the **SAP HANA Streaming Run-Test** perspective.
 
@@ -100,8 +107,11 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Default Server](add-streaming-server-8-default-server.png)
 
+[DONE]
 
-#### Configure HANA Data Service
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Configure HANA Data Service)]    
 
 1. Click **SAP HANA Streaming Development** tab to open this perspective.
 
@@ -134,3 +144,7 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 8. To verify that the service is properly configured, right click again on the **`freezermon_service`** service, and select **Discover**. When the service is correctly configured, executing the **Discover** operation will display the database schema that is accessible through the service.
 
     ![Discover Schema](configure-data-service-8-discover-schema.png)
+
+[DONE]
+
+[ACCORDION-END]

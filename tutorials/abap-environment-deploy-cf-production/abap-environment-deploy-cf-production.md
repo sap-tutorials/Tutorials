@@ -1,50 +1,52 @@
 ---
 auto_validation: true
-title: Create an HTML5 Module and Deploy UI to Cloud Foundry  
-description: Create a UI in Neo and deploy it to Cloud Foundry via a multi-target application.
+title: Create and Deploy HTML5 and SAP Fiori Launchpad Site Modules
+description: Create HTML5 Module and SAP Fiori Launchpad Site Module. Deploy your UI to Cloud Foundry and run your application as a business user.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
 
 ## Prerequisites  
-- You need the appropriate SAP Cloud Platform ABAP Environment licenses to complete this tutorial.
-- OData Service in ABAP System created 
-- you are a Space Developer in the Space your ABAP Instance is running in
+- You need a SAP Cloud Platform ABAP Environment trial user or a license.
+- You need to have enough quota for HTML5 application and portal services. These services can be found in the entitlements of your subaccount.  
+
 
 ## Details
 ### You will learn  
 - How to add ABAP services to multi-target application
 - How to create HTML5 module
-- How to deploy UI to Cloud foundry
-- How to check application existence
+- How to create SAP Fiori launchpad site module
+- How to deploy UI to Cloud Foundry
+- How to run application as business user
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Create multi-target application)]
 
-  1. Login to your SAP Cloud Platform Cockpit with your global account and choose your Neo subaccount.
+  1. If you are using your trial user, then login to your [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/) and select **Launch SAP Web IDE**.
 
-  2. Click **Services** and choose **SAP Web IDE Full-Stack**.
+      ![open web ide](WebIDE0.png)
+
+     Otherwise login to your [SAP Cloud Platform cockpit](https://account.hana.ondemand.com/), click **Services**, choose **SAP Web IDE Full-Stack** and click **Go to Service**.
 
       ![open web ide](WebIDE.png)
 
-  3. Click **Go to Service**.
-
       ![go to service](gotoservice.png)
 
-  4. Login to your SAP Web IDE account and select **File** > **New** > **Project from Template**.
+  2. In your SAP Web IDE account select **File** > **New** > **Project from Template**.
 
       ![template](fromTemplate.png)
 
-  5. Search for multi-target, select **Multi-Target Application** and click **Next**.
+  3. Search for multi-target, select **Multi-Target Application** and click **Next**.
 
       ![multi target](MultiTarget.png)
 
-  6. Enter project name **`MTA_Project_XXX`** and click **Next**.
+  4. Enter project name **`MTA_Project_XXX`** and click **Next**.
 
       ![project name](projectName.png)
 
-  7. Enter **`MTA_Project_XXX`** as application ID, select **`0.0.1`** as application version. Check **Use HTML5 Application Repository** and click  **Finish**.
+  5. Enter **`MTA_Project_XXX`** as application ID, select **`0.0.1`** as application version.
+  Check **Use HTML5 Application Repository** and click **Finish**.
 
       ![HTML5 app](AppID.png)
 
@@ -53,28 +55,28 @@ time: 15
 
 [ACCORDION-BEGIN [Step 2: ](Copy API endpoint)]
 
-  1. Login to your SAP Cloud Platform Cockpit and select your global account.
+  1.  Login to your **SAP Cloud Platform cockpit trial** and select **trial**.
+
+      ![global](trial2.png)
+
+     Or Login to your **SAP Cloud Platform cockpit** and select your global account. Select **Subaccounts** and your **subaccount**.
 
       ![global](global.png)
 
-  2. Select **Subaccounts**.
-
       ![subaccount](subaccount.png)
-
-  3. Select your subaccount.
 
       ![sub2](sub2.png)
 
   4. Copy your API endpoint for later use.
 
-      ![global](endpoint.png)
+      ![global](endpoint2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure project settings)]
 
-  1. Right-click on your project **`MTA_Project_XXX`** select **Project** > **Project Settings**.
+  1. Switch to SAP Web IDE and right-click on your project **`MTA_Project_XXX`** select **Project** > **Project Settings**.
 
       ![open web ide](setting.png)
 
@@ -96,7 +98,11 @@ time: 15
 
       ![open web ide](new.png)
 
-  2. Search for **ABAP**, select it and click **Next**.
+  2. If you are using the SAP Cloud Platform trial cockpit, search for **ABAP**, select **`abap-trial`** and click **Next**.
+
+      ![open web ide](abaptrial.png)
+
+     If you are using the SAP Cloud Platform cockpit, then search for **ABAP**, select it and click **Next**.
 
       ![open web ide](abap.png)
 
@@ -118,30 +124,30 @@ time: 15
       ![Module](module1.png)
 
   3. Provide following information:
-     - Module Name: **`MTA_Project_XXX`**
-     - Title: **`MTA_Project_XXX`**
+     - Module Name: **`TRAVEL_APP_XXX`**
+     - Title: **`TRAVEL_APP_XXX`**
 
      Click **Next**.
 
       ![Module](module2.png)
 
-  4. Select **SAP Cloud Platform Service**, then click on your resource **`Z_I_BOOKING_XXX`**.
+  4. Select **SAP Cloud Platform Service**, then click on your resource.
 
       ![Choose service catalog](ServiceCatalog.png)
 
-  5. Logon to SAP Cloud Platform ABAP environment and switch back to SAP Web IDE.
+  5. Logon to SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment and switch back to SAP Web IDE.
 
       ![Environment](environment.png)
 
-  6. Select your resource **`Z_I_BOOKING_XXX`** and click **Next**.
+  6. Select your resource **`ZUI_C_TRAVEL_M_XXX`** and click **Next**.
 
       ![Service](service2.png)
 
-  7. Check **Selected Service Metadata** and **`Z_I_BOOKING_XXX_VAN`**. Click **Next**.
+  7. Check **Selected Service Metadata** and click **Next**.
 
       ![Service](service3.png)
 
-  8. Select **Booking** as OData collection, **`to_Country`** as OData navigation and click **Finish**.
+  8. Select **`TravelProcessor`** as OData collection and click **Finish**.
 
       ![Service](service4.png)
 
@@ -163,89 +169,22 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create index.html file)]
 
-  1. Open your HTML5 module **`MTA_Project_XXX`**, right-click on your **`webapp`** folder and select **New** > **File**.
-
-      ![HTML5 Module](index.png)
-
-  2. Write **`index.html`** and click **OK**.
-
-      ![Module](index2.png)
-
-  3. Copy this code, paste it in your **`index.html`** file and replace **`MTA_Project_XXX`** with your HTML5 module name.
-
-    ```HTML
-    <!DOCTYPE html>
-    <html>
-     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Booking</title>
-
-        <!-- Bootstrapping UI5 -->
-        <script id="sap-ui-bootstrap"
-                src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-                data-sap-ui-libs="sap.m"
-                data-sap-ui-theme="sap_belize"
-                data-sap-ui-compatVersion="edge"
-                data-sap-ui-preload="async"
-                data-sap-ui-resourceroots='{"MTA_Project_XXX": "."}'
-                data-sap-ui-frameOptions="trusted">
-        </script>
-
-        <script>
-            sap.ui.getCore().attachInit(function () {
-                sap.ui.require([
-                    "sap/m/Shell",
-                    "sap/ui/core/ComponentContainer"
-                ], function (Shell, ComponentContainer) {
-                    // initialize the UI component
-                    new Shell({
-                        app: new ComponentContainer({
-                            height : "100%",
-                            name : "MTA_Project_XXX"
-                        }),
-                        appWidthLimited : false
-                    }).placeAt("content");
-                });
-            });
-        </script>
-
-     </head>
-
-      <!-- UI Content -->
-      <body class="sapUiBody" id="content">
-      </body>
-    </html>
-
-    ```
-
-  4. Save your code.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Disable csrfProtection)]
+[ACCORDION-BEGIN [Step 7: ](Disable csrfProtection)]
 
   1. 	In the HTML5 module open the file **`xs-app.json`**.
 
       ![run](disable.png)
 
-  2.  Set **`/index.html`** as welcome file.
-
-      ![add](disable2.png)
-
-  3. Add the **`csrfProtection`** property to the route in order to disable `csrf` token protection in the UI. Create your run configuration. Therefore add the `csrfProtection` property in your **`xs-app.json`** file.
+  2. Add the **`csrfProtection`** property to the route in order to disable `csrf` token protection in the UI. Create your run configuration. Therefore add the `csrfProtection` property in your **`xs-app.json`** file.
 
       ![add](disable3.png)
 
-  4. Your code should like following:
+  3. Your code should like following:
 
     ```JSON
      {
-      "welcomeFile": "/index.html",
+      "welcomeFile": "/test/flpSandbox.html",
       "authenticationMethod": "route",
       "logout": {
         "logoutEndpoint": "/do/logout"
@@ -276,14 +215,14 @@ time: 15
     }
     ```
 
-  5. Save your file.
+  4. Save your file.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test UI on Cloud Foundry)]
+[ACCORDION-BEGIN [Step 8: ](Test UI on Cloud Foundry)]
 
-  1. Right-click on **`MTA_Project_XXX`** and select **Run** > **Run Configurations**.
+  1. Right-click on **`TRAVEL_APP_XXX`** and select **Run** > **Run Configurations**.
 
       ![run](run.png)
 
@@ -296,131 +235,159 @@ time: 15
       ![run](run2.png)
 
   4. Create your run configuration.
-     - Name: **`Run index.html on Cloud Foundry`**
+     - Name: **`Run TRAVEL APP XXX on Cloud Foundry`**
      - Select your **`flpSandbox.html`** file.
 
      Click **Run on Cloud Foundry**, select **Without Frame** and click **Save and Run**.
 
      ![run](run3.png)
 
-  5. Logon to your SAP Cloud Platform ABAP environment.
+  5. Logon to your SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment.
 
       ![run](environment.png)
 
-  6. Select the **`MTA_Project_XXX`** tile to test your application.
+  6. Select the **`TRAVEL_APP_XXX`** tile to test your application.
 
       ![test](test.png)
 
-  7. Select the gear symbol to add columns.
-
-      ![run](test2.png)
-
-  8. Click **Select All** to add all columns, then click **OK**.
-
-      ![run](test3.png)
-
-  9. Select **Go**, to see your result.
+  7. Select **Go**, to see your result.
 
       ![run](test4.png)
 
-  10. Check your result.
+  8. Check your result.
 
       ![run](test5.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Deploy UI to Cloud Foundry)]
+[ACCORDION-BEGIN [Step 9: ](Create SAP Fiori launchpad site module)]
 
-  1. Right-click on your project **`MTA_Project_XXX`** and select **Build** > **Build**.
+  1. Open SAP Web IDE and right-click on your project **`MTA_Project_XXX`** and select **New** > **SAP Fiori Launchpad Site Module**.
 
-      ![build](build.png)
+      ![Define inbound tile](site.png)
 
-  2. Click on the **`+`** symbol to open **`mta_archives`**.
+  2. Create a SAP Fiori launchpad site module:
+     - Module name: **`FLP_Site_Module_XXX`**
 
-      ![plus](plus.png)
+    ![Define inbound tile](site2.png)
 
-  3. Right-click on your `mtar` file **`MTA_Project_XXX_0.0.1.mtar`** and select **Deploy** > **Deploy to SAP Cloud Platform**.
-
-      ![deploy](deploysapcp.png)
-
-  4. Deploy your **`mtar`** file to SAP Cloud Platform.
-
-     - Cloud Foundry API Endpoint: **`<your_api_endpoint>`**
-     - Organization: **`<your_organization>`**
-     - Space: **`<your_space>`**
-
-     Click **Deploy**.
-
-    ![run](deploysapcp2.png)
-
-  5. Check your deployment.
-
-      ![check](check.png)
+      Click **Finish**.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Check app existence on Cloud Foundry and run as a business user)]
+[ACCORDION-BEGIN [Step 10: ](Create inbound tile)]
 
-  1. Login to your SAP Cloud Platform Cockpit and select your global account.
+1. Open **`manifest.json`** and select **Navigation**.
 
-      ![global](global.png)
+    Create semantic object:
 
-  2. Select **Subaccounts**.
+    - Semantic object: `Travel_App_XXX`
+    - Action: display
 
-      ![subaccount](subaccount.png)
+    Create inbound tile:
 
-  3. Select your subaccount.
+    - Title: `Travel_App_XXX`
+    - Subtitle: `Travel_booking_application`
+    - icon: `sap-icon://sap-logo-shape`
 
-      ![sub2](sub2.png)
+      ![Define inbound tile](manitile.png)
 
-  4. Click Spaces.
-
-      ![space](space.png)
-
-  5. Select your space.
-
-      ![space2](space2.png)
-
-  6. Select your application **`MTA_Project_XXX_appRouter`**.
-
-      ![mta](mta.png)
-
-  7. Copy application routes URL for later use.
-
-      ![url](url.png)
-
-  8. Switch to SAP Web IDE, select your **`MTA_Project_XXX`** and open the **`manifest.json`** file. Copy the ID and application version for later use.
-
-      ![copy](copy.png)
-
-  9. Create your URL by using following:
-     `<application_routes>/<id>-<version>/`
-
-      ```Example
-              Example: <application_routes>/MTA_Project_XXX-1.0.0/
-      ```
-
-  10. Copy your URL into a browser of choice and logon to SAP Cloud Platform ABAP environment.
-
-      ![logon](environment.png)
-
-  11. Select your Application **`MTA_Project_XXX`**.
-
-      ![project](project.png)
-
-  12. Check your result.
-
-      ![project2](project2.png)
+2. Save your changes.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test yourself)]
+[ACCORDION-BEGIN [Step 11: ](Create SAP Fiori launchpad site module)]
+  1. Open the **`CommonDataModel.json`** file in **`FLP_Site_Module_XXX`** and click **Add Group**.
+
+    ![Define inbound tile](tile.png)
+
+  2. Create new group:
+     - Group name: **`Travel App XXX`**
+
+    ![Define inbound tile](tile2.png)
+
+  3. Click on your group.
+
+    ![Define inbound tile](tile3.png)
+
+  4. Add your project app **`Travel_App_XXX`** to your group and click **Select**.
+
+    ![Define inbound tile](tile4.png)
+
+  5. Now your project app **`Travel_App_XXX`** is added to your group.
+
+    ![Define inbound tile](tile5.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 12: ](Deploy UI to Cloud Foundry)]
+
+  1. Right click on **`MTA_Project_XXX`** and select **Build** > **Build with Cloud MTA Build Tool (recommended)**.
+
+      ![Deploy UI to Cloud Foundry](Build22.png)
+
+  2.  Open **`mta_archives`**.
+
+      ![Deploy UI to Cloud Foundry](build2.png)
+
+  3.  Right-click on **`MTA_Project_XXX_0.0.1.mtar`**, select **Deploy** > **Deploy to SAP Cloud Platform**.
+
+      ![Deploy UI to Cloud Foundry](build3.png)
+
+  4.  Deploy your **`mtar`** file to SAP Cloud Platform.
+
+       - Cloud Foundry API Endpoint: **`<your_api_endpoint>`**
+       - Organization: **`<your_organization>`**
+       - Space: **`<your_space>`**
+
+       Click **Deploy**.
+
+      ![Deploy UI to Cloud Foundry](build4.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 13: ](Run application on Cloud Foundry as business user)]
+
+  1. Open SAP Cloud Platform cockpit trial or SAP Cloud Platform cockpit and navigate to your **trial subaccount**.  
+     Select your space **dev**.
+
+      ![Deploy UI to Cloud Foundry](dev.png)
+
+  2.  Select **`MTA_Project_XXX_appRouter`**.
+
+      ![Deploy UI to Cloud Foundry](dev2.png)
+
+  3.  Click on your application routes to open your application in your launchpad.
+
+      ![Deploy UI to Cloud Foundry](dev3.png)
+
+  4. Logon to your SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment system.
+
+      ![Deploy UI to Cloud Foundry](environment.png)
+
+  5. You application is now available as a tile in the launchpad. Select your application **`Travel_App_XXX`**.
+
+      ![Deploy UI to Cloud Foundry](app.png)
+
+  6. Click **Go** to see your result.
+
+      ![Deploy UI to Cloud Foundry](app2.png)
+
+  7. Check your result.
+
+      ![Deploy UI to Cloud Foundry](app3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 14: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-
 ---

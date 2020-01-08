@@ -77,7 +77,7 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 [ACCORDION-BEGIN [Step 3: ](Virtual Data Model: The new way to OData)]
 
-Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
+Now that we have explained the possible pitfalls of the current approach, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
 ```Java
 final List<BusinessPartner> businessPartners =

@@ -3,7 +3,7 @@ title: Setup Jenkins and Cloud Foundry for Production Deployment
 description: Set up and prepare your SAP Cloud SDK app, the Jenkins Cx Server / Project Piper pipeline and Cloud Foundry for a Production Deployment
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>cloud]
+tags: [ tutorial>beginner, topic>cloud ]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 

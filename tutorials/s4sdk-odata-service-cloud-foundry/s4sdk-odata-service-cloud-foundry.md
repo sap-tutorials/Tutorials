@@ -8,9 +8,18 @@ time: 20
 ---
 
 ## Prerequisites  
- - In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the business partner service introduced here with any other API published on the SAP API `BusinessHub`. If you do not have an `S/4HANA` system available, you may use a public service such as the [Northwind OData Service](http://services.odata.org/V2/Northwind/Northwind.svc) as a fallback solution.
+In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the business partner service introduced here with any other API published on the SAP API Business Hub.
+&nbsp;
+If you do not have an S/4HANA system available, you may use a public service, such as the [Northwind OData Service](http://services.odata.org/V2/Northwind/Northwind.svc) as a fallback solution.
+&nbsp;
+This tutorial requires access to an SAP ERP system or, as a fallback, a mock server providing the Business Partner OData V2 service.
 
 ## Details
+### You will learn
+In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on `SAP Cloud Platform` based on `Cloud Foundry`, and write an integration test.
+
+If you want to follow this tutorial, it is highly recommended to check out the previous tutorials in the series. You will not need any additional software besides the setup explained in the first part of the series as the server will run on your local machine.
+
 Please note that depending on the platform you are using (`Neo` or `Cloud Foundry`), the configuration to the respective `S/4HANA` system might be different. In this tutorial, you will find the methods using which you can access your system on `Cloud Foundry`. For `SAP Cloud Platform Cloud Foundry`, the following `S/4HANA` connection capabilities exist.
 
 |  | `SAP Cloud Platform, Cloud Foundry`
@@ -20,15 +29,24 @@ S/4HANA Cloud | Direct Connection with `BASIC Auth` (Technical User, see below)
 
 Note that your application code is not dependent on the platform you are using. Using the `SAP Cloud SDK`, you can write your code once, and it will be capable of dealing with all different authentication and connectivity options.
 
-### You will learn
-In this tutorial, you will enhance the `HelloWorld` project stub to call an existing `OData` service, deploy the project on `SAP Cloud Platform` based on `Cloud Foundry`, and write an integration test.
-If you want to follow this tutorial, it is highly recommended to check out the previous tutorials in the series. You will not need any additional software besides the setup explained in the first part of the series as the server will run on your local machine.
-**Note**: This tutorial requires access to an `SAP ERP` system or, as a fallback, any other `OData V2` service.
-
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Virtual Data Model)]
+[ACCORDION-BEGIN [Step 1: ](Set up mock server or get access to Business Hub sandbox (optional))]
+
+>If you have access to an SAP S/4HANA Cloud system with a technical user, you can skip this part.
+
+In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
+
+Once it is up and running you should see the list of services at `http://localhost:3000/`.
+
+Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click on "Show API Key".
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Virtual Data Model)]
 
 This section explains the concepts of the S/4HANA Virtual Data Model. If you would like to first implement the S/4HANA integration, jump ahead to [the next section](https://blogs.sap.com/2017/05/21/step-4-with-sap-s4hana-cloud-sdk-calling-an-odata-service/#WriteBusinessPartnerServlet) and revisit the content of this section later.
 
@@ -41,12 +59,12 @@ The SAP Cloud SDK now brings the VDM for OData to the Java world to make the typ
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](The manual way to OData)]
+[ACCORDION-BEGIN [Step 3: ](The manual way to OData)]
 
 Let's take a look at typical code we could write to access any OData service using the [SAP Cloud Platform SDK for service development](https://blogs.sap.com/2017/10/17/introducing-the-sap-cloud-platform-sdk-for-service-development/). Here, we retrieve a list of business partners from an S/4HANA system:
 
 ```Java
-final ErpConfigContext configContext = new ErpConfigContext();
+final ErpHttpDestination destination = DestinationAccessor.getDestination("MyErpSystem").asHttp().decorate(DefaultErpHttpDestination::new);
 final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
         .withEntity("/sap/opu/odata/sap/API_BUSINESS_PARTNER",
                 "A_BusinessPartner")
@@ -57,7 +75,7 @@ final List<MyBusinessPartnerType> businessPartners = ODataQueryBuilder
                 "IsFemale",
                 "CreationDate")
         .build()
-        .execute(configContext)
+        .execute(destination)
         .asList(MyBusinessPartnerType.class);
 ```
 
@@ -73,7 +91,7 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Virtual Data Model: The new way to OData)]
+[ACCORDION-BEGIN [Step 4: ](Virtual Data Model: The new way to OData)]
 
 Now that we have explained the possible pitfalls of the current approach, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
@@ -117,7 +135,7 @@ For any OData service not part of SAP's API Business Hub, the `ODataQueryBuilder
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Write the BusinessPartnerServlet)]
+[ACCORDION-BEGIN [Step 5: ](Write the BusinessPartnerServlet)]
 
 The `SAP Cloud SDK` provides simple and convenient ways to access your ERP systems out of the box. In this example you will implement an endpoint that performs an `OData` query to `SAP S/4HANA` in order to retrieve a list of **business partners** from your ERP system. More specifically, we want to retrieve all persons (a specific kind of business partner) with their name and a few additional properties.
 
@@ -126,7 +144,7 @@ To get started, open your previously created `Hello World` project (in our case,
 `./application/src/main/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServlet.java`
 
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import com.google.gson.Gson;
@@ -210,7 +228,7 @@ Any `ODataException` thrown by the OData call is caught and logged, before retur
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploying the Project)]
+[ACCORDION-BEGIN [Step 6: ](Deploy the Project)]
 
 Depending on your chosen archetype and SAP Cloud Platform setup you can deploy the project on either *SAP Cloud Platform Neo* or *SAP Cloud Platform Cloud Foundry*.
 
@@ -224,7 +242,7 @@ In order for your application to run you need to provide it with information abo
 
 As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine. How you set an environment variable depends on your OS. The following instructions target Windows. If you are using a Mac please select Mac OS at the switch above.
 
-```cmd
+```Shell
 set destinations=[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]
 ```
 
@@ -232,7 +250,7 @@ Please change the values URL, USER and PASSWORD accordingly. You may use any nam
 
 
 
-```cmd
+```Shell
 set destinations
 ```
 
@@ -240,7 +258,7 @@ _Note: You can also add more ERP endpoints to this JSON representation, followin
 
 Be aware that the variable is only available in your current terminal session. If you are having trouble settings the variable, take a look at the troubleshooting section. Once the variable has been set, re-build and start the server as follows:
 
-```bash
+```Bash
 cd /path/to/firstapp
 mvn clean install
 mvn tomee:run -pl application
@@ -257,7 +275,7 @@ On SCP Cloud Foundry, you can either supply the same environment variable `desti
 Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
 
 
-```cmd
+```Shell
 cf set-env firstapp destinations "[{name: \"MyErpSystem\", url: \"https://URL\", username: \"USER\", password: \"PASSWORD\"}]"
 ```
 
@@ -271,13 +289,13 @@ Whenever this environment variable is set, the SAP Cloud SDK will use it to dete
 
 As mentioned in the Tutorial `Create a sample application on Cloud Foundry using SAP Cloud SDK` of this tutorial series, you can run the project on a local `TomEE` server. Here, you need to supply the destinations as an environment variable on your local machine.
 
-```bash
+```Bash
 export destinations='[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]'
 ```
 
 Please change the values URL, USER and PASSWORD accordingly. You may use any name you like. If you do decide to change it though, remember to also adapt it in the code above. Make sure the variable has been properly set:
 
-```bash
+```Bash
 echo $destinations
 ```
 
@@ -285,7 +303,7 @@ _Note: You can also add more ERP endpoints to this JSON representation, followin
 
 Be aware that the variable is only available in your current terminal session. If you are having trouble settings the variable, take a look at the troubleshooting section. Once the variable has been set, re-build and start the server as follows:
 
-```bash
+```Bash
 cd /path/to/firstapp
 mvn clean install
 mvn tomee:run -pl application
@@ -301,7 +319,7 @@ On SCP Cloud Foundry, you can either supply the same environment variable `desti
 
 Nevertheless, there may be circumstances that make the approach via the environment variable easier to use or otherwise preferable for initial testing. To set the environment variable using the Cloud Foundry command line interface (CLI), execute the following command:
 
-```bash
+```Bash
 cf set-env firstapp destinations '[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]'
 ```
 
@@ -320,7 +338,7 @@ The destination handling is available as a service on Cloud Foundry. You need to
 
 Use the Cloud Foundry CLI to create the two required service instances:
 
-```bash
+```Bash
 cf create-service xsuaa application my-xsuaa
 cf create-service destination lite my-destination
 ```
@@ -329,7 +347,7 @@ This creates two service instances in your space: one instance named `my-xsuaa` 
 
 To bind the two newly created service instances to your application when it is deployed, adapt the `manifest.yml` file by adding the two instances to the services section at the end. The remainder of the file remains as before:
 
-```yaml
+```YAML
 
 applications:
 
@@ -377,7 +395,7 @@ Please note that the above settings represent the setup for a connection to SAP 
 
 Now you can deploy your application to `Cloud Foundry` using the `Cloud Foundry CLI` (command line interface):
 
-```bash
+```Bash
 cd /path/to/firstapp
 mvn clean install
 cf push
@@ -387,7 +405,7 @@ Access the new servlet at `https://YOUR-ROUTE/businesspartners`.
 
 If you change the destinations afterwards, you need to at least [restart (or restage)](https://docs.cloudfoundry.org/devguide/deploy-apps/start-restart-restage.html) your application to make sure that the changes become effective due to caching:
 
-```bash
+```Bash
 cf restart firstapp
 ```
 
@@ -395,7 +413,7 @@ cf restart firstapp
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Integration Test for BusinessPartnerServlet)]
+[ACCORDION-BEGIN [Step 7: ](Integration test for BusinessPartnerServlet)]
 
 To construct an extensible integration test for the newly created `BusinessPartnerServlet`, the following items will be prepared:
 
@@ -408,7 +426,7 @@ First, let's adjust the Maven pom file of the `integrations-tests` sub-module by
 
 `./integration-tests/pom.xml`
 
-```xml
+```XML
 <dependency>
     <groupId>io.rest-assured</groupId>
     <artifactId>json-schema-validator</artifactId>
@@ -427,13 +445,13 @@ First, let's adjust the Maven pom file of the `integrations-tests` sub-module by
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](test class)]
+[ACCORDION-BEGIN [Step 8: ](Test class)]
 
 Navigate to the integration-tests project and create a new class:
 
 `./integration-tests/src/test/java/com/sap/cloud/sdk/tutorial/BusinessPartnerServletTest.java`
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import io.restassured.RestAssured;
@@ -507,13 +525,13 @@ What you see here in the actual `testService` method, is the usage of `RestAssur
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](JSON Schema for servlet response validation)]
+[ACCORDION-BEGIN [Step 9: ](Create JSON Schema for servlet response validation)]
 
 Inside the `integration-tests` project, create a new resource file
 
 `./integration-tests/src/test/resources/businesspartners-schema.json`
 
-```json-schema
+```JSON
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Business Partner List",
@@ -534,7 +552,7 @@ As you can see, the properties `BusinessPartner` and `LastName` will be marked a
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Systems.json and credentials)]
+[ACCORDION-BEGIN [Step 10: ](Systems.json and credentials)]
 
 If you run your application on SAP Cloud Platform, the SDK can simply read the ERP destinations from the destination service. However, since the tests should run locally, we need a way to supply our tests with an ERP destination.
 
@@ -542,7 +560,7 @@ Luckily, the SDK provides a utility class for such purposes – `MockUtil`. This
 
 `./integration-tests/src/test/resources/systems.yml`
 
-```yaml
+```YAML
 
 ---
 erp:
@@ -570,7 +588,7 @@ If you want to run the tests without Maven, please remember to also include the 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Appendix: ](Supplying credentials as a file: credentials.yml)]
+[ACCORDION-BEGIN [Appendix: ](Supply credentials as a file: credentials.yml)]
 
 **Credentials file**
 
@@ -580,7 +598,7 @@ To do this, create the following `credentials.yml` file in a save location (e.g.
 
 `/secure/local/path/credentials.yml`
 
-```yaml
+```YAML
 
 ---
 credentials:
@@ -604,7 +622,7 @@ Afterwards you may pass the credentials file as follows when running tests. Make
 
 On Windows you can set an environment variable via:
 
-```cmd
+```Shell
 set destinations=[{name: "MyErpSystem", url: "https://URL", username: "USER", password: "PASSWORD"}]
 ```
 
@@ -628,7 +646,7 @@ If you are still facing problems when connecting to the OData service, try the f
   - Add a logger implementation to the test artifact's dependencies in order to get more detailed log output during tests: expand the dependencies section of `integration-tests/pom.xml` with:
 
 
-```xml
+```XML
 <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>

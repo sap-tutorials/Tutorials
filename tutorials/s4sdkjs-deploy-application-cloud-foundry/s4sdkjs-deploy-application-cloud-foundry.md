@@ -25,17 +25,14 @@ In your command line, run:
 npm run ci-build && npm run ci-package
 ```
 
->**Note:** We are aware, that the `ci-package` script currently does not work when executed in Windows' CMD. Currently, the easiest workaround is to install a `bash` on your system (by default, `git` for Windows comes with [Git Bash](https://gitforwindows.org/)) and configure npm to execute scripts in that bash. This can be done by executing `npm config set script-shell <P:\ath\to\your\bash.exe>`.
+In order to deploy our application, we first need to login to `Cloud Foundry` in `SAP Cloud Platform` using the **`cf` CLI**. First we need to set an `API` endpoint. The exact URL of this `API` endpoint depends on the region your `subaccount` is in. Open the [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the `subaccount` you are planning to deploy your application to. Click on "Overview" on the left and you can see the URL of the `API` endpoint.
 
-In order to deploy our application, we first need to login to `Cloud Foundry` in `SAP Cloud Platform` using the **`cf` CLI**. First we need to set an `API` endpoint. Depending on the region in which you have created your account, choose one of the following `API` endpoints:
+![API_Endpoint_in_Subaccount](subaccount_api_endpoint.png)
 
- - EU: [https://api.cf.eu10.hana.ondemand.com] (https://api.cf.eu10.hana.ondemand.com)
- - US EAST: [https://api.cf.us10.hana.ondemand.com] (https://api.cf.us10.hana.ondemand.com)
-
-For the rest of this tutorial, we will assume the region to be EU. Enter the following commands in your command line:
+Copy the URL and paste it into the following command in your command line:
 
 ```Shell
-cf api https://api.cf.eu10.hana.ondemand.com
+cf api https://api.cf.<region>.hana.ondemand.com
 cf login
 ```
 
@@ -43,7 +40,7 @@ cf login
 
 Finally, if you have logged in successfully, you can call `cf push` from the root folder of the project. **`cf` CLI** will automatically pick up the `manifest.yml` of the project.
 
-The file should look like this:
+The file should look like this (where `<YOUR-APPLICATION-NAME>` is replaced by the name you specified when initializing the project):
 
 ```YAML
 applications:
@@ -52,11 +49,9 @@ applications:
     buildpacks:
       - nodejs_buildpack
     memory: 256M
-    command: cd cloud-sdk-starter-app/dist/ && node index.js
+    command: npm run start:prod
     random-route: true
 ```
-
->**Note:** If the value for name is `cloud-sdk-starter-app`, you probably forgot to call `npm run init -- <YOUR-APPLICATION-NAME>`. This might cause your deployment to fail.
 
 Take a look at the `path` and the `command` attributes. The specified path instructs **`cf` CLI** to upload all the files from the `deployment/` folder. The command specified under the `command` attribute tells the `buildpack` what command to issue to start the application.
 
@@ -80,7 +75,7 @@ start command:   node index.js
 #0   running   2019-03-21T13:05:47Z   0.0%   16M of 256M   126.8M of 1G
 ```
 
-Make sure that the application works correctly by calling the `index` route or the `hello` route. Should the application not work for whatever reason, you can call the following command to access the logs:
+Make sure that the application works correctly by calling the `index` route. Should the application not work for whatever reason, you can call the following command to access the logs:
 
 ```Shell
 cf logs <YOUR-APPLICATION-NAME> --recent
@@ -112,7 +107,7 @@ Next, navigate to your respective subaccount (in case of a trial account it shou
 
 ![SAP_Cloud_Platform_Cockpit](sap_cloud_platform_cockpit.png)
 
-For **Name**, choose a name that describes your system. For the tutorial, we will go with **`BusinessPartnerService`**.
+For **Name**, choose a name that describes your system. For the tutorial, we will go with **`MockServer`**.
 
 If you use the Business Partner mock server, enter for **URL** the URL that you have saved from the previous step and use **`NoAuthentication`** for **Authentication**. If you use an SAP S/4HANA Cloud system, enter the systems URL in the **URL** field and choose **`BasicAuthentication`** as authentication type. This will make the fields **User** and **Password** appear. Enter here the credentials of a technical user for your SAP S/4HANA Cloud system.
 
@@ -181,7 +176,7 @@ applications:
       - my-xsuaa
 ```
 
-Finally, we need to adapt the `getAllBusinessPartners` function in `business-partner-route.ts` to use the destination defined in the Cloud Platform Cockpit.
+Finally, we need to adapt the `getAllBusinessPartners` function in `business-partner.controller.ts` to use the destination defined in the Cloud Platform Cockpit.
 
 The new function now looks like this:
 
@@ -190,12 +185,12 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
     .getAll()
     .execute({
-      destinationName: 'BusinessPartnerService'
+      destinationName: 'MockServer'
     });
 }
 ```
 
-We replaced the parameter of `execute` with an object whose key `destinationName` refers to the name of the destination we defined earlier. If you chose a different name than `BusinessPartnerService`, make sure to use it here accordingly.
+We replaced the parameter of `execute` with an object whose key `destinationName` refers to the name of the destination we defined earlier. If you followed step 5 in the previous tutorial, your code will already refer to the correct `destinationName`. If you chose a different name than `MockServer`, make sure to use it here accordingly.
 
 Now we can recompile and redeploy the application. In your command line, run `npm run ci-build && npm run ci-package && cf push`.
 

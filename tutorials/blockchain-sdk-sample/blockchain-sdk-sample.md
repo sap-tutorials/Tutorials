@@ -356,7 +356,7 @@ public ResponseEntity<String> getBankData( @RequestParam( defaultValue = "" ) fi
   String streamEntryKey = BANKCOUNTRY + "_" + id;
     List<MultichainResult> queryResult = mcService.listStreamKeyItems(MULTICHAIN_STREAM_NAME, streamEntryKey, false, 1, -1, false);
     if (queryResult.size() > 0) {
-      // Entry found. Since query parameter count is set to 1, only the latest enrty is provided
+      // Entry found. Since query parameter count is set to 1, only the latest entry is provided
       MultichainResult resultEntry = queryResult.get(0);
       HashMap<String, String> payload = (HashMap<String, String>) resultEntry.getJsonData().get("json");
 

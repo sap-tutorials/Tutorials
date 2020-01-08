@@ -17,8 +17,6 @@ primary_tag: products>sap-cloud-platform
   - The relationship between global accounts, subaccounts, orgs and spaces
   - How to create a trial account in the Cloud Foundry environment
   - How to use services in the Cloud Foundry environment
-  - How to navigate the cockpit
-  - How to use the cockpit in-app help if you get stuck
 
 ---
 
@@ -95,17 +93,17 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 ![Breadcrumbs](cf-breadcrumbs.png)
 
-1. **Trial Home** - here you can find your trial homepage
+1. **Trial Home**: Here you can find your trial homepage.
 
-2. **Global account** - this contains all your subaccounts and entitlements
+2. **Global account**: This contains all your subaccounts and entitlements.
 
 3. The 3rd item represents your **subaccount**.
 
 4. Afterwards, you have your **space** as the 4th item.
 
-5. Finally, you have your **deployed application** - this is the current scope.
+5. Finally, you have your **deployed application**, which is the current scope.
 
-[VALIDATE_5]
+[DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Services in the Cloud Foundry environment)]
 

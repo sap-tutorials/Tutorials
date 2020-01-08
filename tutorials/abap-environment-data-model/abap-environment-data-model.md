@@ -142,7 +142,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
-    @AccessControl.authorizationCheck: #NOT_REQUIRED
+    @AccessControl.authorizationCheck: #CHECK
 
     @UI: {
      headerInfo: { typeName: 'Travel', typeNamePlural: 'Travels', title: { type: #STANDARD, value: 'TravelID' } } }
@@ -250,7 +250,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   4. Replace your code with following:
 
     ```ABAP
-    @EndUserText.label: 'Service Defintion for ZC_Travel_M_XXX'
+    @EndUserText.label: 'Service Definition for ZC_Travel_M_XXX'
     define service ZUI_C_TRAVEL_M_XXX
     {
       expose ZC_TRAVEL_M_XXX as TravelProcessor;

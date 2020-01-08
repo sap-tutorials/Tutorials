@@ -50,13 +50,9 @@ git clone https://github.com/SAP-samples/teched2019-mission-mock-service-bupa.gi
 
 Open up the new project directory in VS Code. You can do this by either:
 
-  - From the command line, invoking the `code` command and specifying the name of the directory just created from the `git clone` action in the previous step, like this:
+- From the command line, invoking the `code` command and specifying the name of the directory just created from the `git clone` action in the previous step, like this: `code teched2019-mission-mock-service-bupa`
 
-	```Bash
-	code teched2019-mission-mock-service-bupa
-	```
-
-	- Opening VS Code via your operating system menu and then using VS Code menu path **File | Open ...** to search for and select the new `teched2019-mission-mock-service-bupa` directory.
+- Opening VS Code via your operating system menu and then using VS Code menu path **File | Open ...** to search for and select the new `teched2019-mission-mock-service-bupa` directory.
 
 > VS Code may open up with a file `cli.js` already open in the editor. You can safely close this file.
 
@@ -64,7 +60,7 @@ Now open the the `package.json` file to have a look inside. It should look simil
 
 ![looking at the package.json file in VS Code](vscode-open.png)
 
-Note the two main dependencies for this project are `@sap/cds` and `express`. The `express` package is the popular [web framework for Node.js](https://expressjs.com/). The `@sap/cds` package is the main Node.js package for the SAP Cloud Application Programming Model, and is available from the [SAP NPM Registry](https://blogs.sap.com/2017/05/16/sap-npm-registry-launched-making-the-lives-of-node.js-developers-easier/).
+Note the two main dependencies for this project are `@sap/cds` and `express`. The `express` package is the popular [web framework for Node.js](https://expressjs.com/). The `@sap/cds` package is the main runtime Node.js package for the SAP Cloud Application Programming Model, and is available from the [SAP NPM Registry](https://blogs.sap.com/2017/05/16/sap-npm-registry-launched-making-the-lives-of-node.js-developers-easier/).
 
 In the `.npmrc` file in this project, you will see configuration for `npm` (the Node.js package manager) that directs it to use the SAP NPM Registry for packages in the `@sap` scope. The entry in this file is a package-level configuration equivalent of what you may have seen elsewhere like this:
 
@@ -185,7 +181,7 @@ server listening on http://localhost:3000
 Adding sample data...
 ```
 
-Your mock service is now running. If you try to access the base URL, <http://localhost:3000>, you will see that nothing is served at that location (that is, the `/` root path): the message "Cannot GET /" appears as a response in your browser. Note that this is different to the browser showing you an HTTP 404 NOT FOUND error.
+Your mock service is now running. If you try to access the base URL, <http://localhost:3000>, you will see that nothing is served at that location (that is, the `/` root path): the message "Cannot GET /" appears as a response in your browser. Note that this is different to the browser showing you a "this site cannot be reached" error.
 
 Remember the path defined in the `srv/cat-service.cds` file? It's at this location that the mock service is served.
 

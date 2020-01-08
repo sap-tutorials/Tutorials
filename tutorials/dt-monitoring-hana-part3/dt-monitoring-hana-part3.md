@@ -1,6 +1,7 @@
 ---
 title: Stopping and Restarting the Extended Storage Service
 description: Occasionally you will need to stop your extended storage service. One case where this will be required is when you change a configuration parameter, you will need to manually stop the service and then do a restart, in order for the change to take place.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -43,6 +44,7 @@ Another way to stop the extended storage service is by double clicking on "**<SI
 
 > Note: The screenshots above illustrate stopping the `esserver` process when connected through SAP HANA Studio as the `SYSTEM` user. You would need to allocate an additional permission (SERVICE ADMIN) for the TPCH user to have the same privilege. Make sure to close the Administration window for the TPCH user if you already had it open and then open the Administration window again after you assign the new permissions. This is an example where a database developer would typically not have the same permissions as an administrator and hence cannot do the same functionality. So it is better to stop the services by the SYSTEM user, if you are using Studio to stop the service.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -53,6 +55,6 @@ To restart the extended storage service from a SSH session, use the "`HDB start`
 
 With SAP HANA Studio, there is no need to manually restart the extended storage service since it automatically restarts after you stop it.
 
+[DONE]
 
 [ACCORDION-END]
-

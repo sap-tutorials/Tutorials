@@ -737,7 +737,7 @@ app.get("/node", (req, res) => {
 	res.redirect(odataURL);
 });
 
-//Setup Additonal Node.js Routes
+//Set Up Additional Node.js Routes
 //require("./router")(app, server);
 
 //Start the Server

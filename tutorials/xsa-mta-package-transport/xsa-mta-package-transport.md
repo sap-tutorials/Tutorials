@@ -2,7 +2,7 @@
 title: SAP HANA XS Advanced - Package your MTA application for transport
 description: Transport your XS Advanced application for transport
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner ]
+tags: [  tutorial>beginner  ]
 time: 10
 ---
 
@@ -71,4 +71,3 @@ And the application using `xs apps` in the corresponding space (for example, dev
 
 
 [ACCORDION-END]
-
