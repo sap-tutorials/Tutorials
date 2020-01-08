@@ -3,7 +3,7 @@ title: Create a Smart Business KPI from an Analytical Query
 description: Create a KPI to analyze a specific key figure (e.g., cost per employee) and display this on the SAP Fiori launchpad.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-s-4hana ]
+tags: [  tutorial>intermediate, topic>abap-development, products>sap-s-4hana  ]
 time: 30
 ---
 
@@ -275,4 +275,3 @@ as it is shown on the similar picture below.
 
 [DONE]
 [ACCORDION-END]
-
