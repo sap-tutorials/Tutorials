@@ -37,7 +37,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     validation validateStatus   on save { field overall_status; }
     ```
 
-  2. You result should look like this. Replace your code with following:
+  2. Your result should look like this. Replace your code with following:
 
     ```ABAP
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
@@ -71,7 +71,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     }
     ```
 
-  3. Save and activate.
+  3. Ignore the warning, save and activate.
 
       ![save and activate](activate.png)
 
@@ -312,7 +312,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     use action acceptTravel;
     ```
 
-  2. You result should look like this. Replace your code with following:
+  2. Your result should look like this. Replace your code with following:
 
     ```ABAP
     projection;
@@ -331,7 +331,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     }
     ```
 
-  3. Save and activate.
+  3. ignore the warning, save and activate.
 
       ![save and activate](activate.png)
 

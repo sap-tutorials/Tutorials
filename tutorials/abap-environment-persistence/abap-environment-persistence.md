@@ -38,7 +38,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
      Use your number instead of `XXX`.
 
      Click **Next >**.
-
+ 
       ![Create ABAP package](package2.png)
 
   3. `ZLOCAL` will be added as software component. Click **Next >**.
@@ -79,7 +79,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create database table](table3.png)
 
-  4. Click **Finish** to use your transport request.
+  4. Click **Finish** to create your transport request.
 
       ![Create database table](table4.png)
 
@@ -136,7 +136,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create ABAP class](class2.png)
 
-  3. Click **Finish** to use your transport request.
+  3. Click **Finish** to create your transport request.
 
       ![Create ABAP class](class3.png)
 
