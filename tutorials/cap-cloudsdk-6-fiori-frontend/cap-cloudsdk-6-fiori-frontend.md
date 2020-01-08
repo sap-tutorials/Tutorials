@@ -44,22 +44,21 @@ Next to the link to the `Orders` entity set, there's the **`...in Fiori`** link,
 
 This is the basis upon which you will build, adding annotations to declare what should appear.
 
-**Note:**
-_If you see an error at this stage, along the lines of "Error when creating the view. Cannot read property 'getService' of undefined', you will need to apply a quick fix as a workaround (this will be addressed soon in the development kit):_
+>If you see an error at this stage, along the lines of "Error when creating the view. Cannot read property `getService` of undefined', you will need to apply a quick fix as a workaround (this will be addressed soon in the development kit):
 
-_In the file `node_modules/@sap/cds/lib/utils/app/fiori-preview.js` find the line with a `<script>` tag that loads the UI5 core (it will be within the `_html()` function definition):_
+>In the file `node_modules/@sap/cds/lib/utils/app/fiori-preview.js` find the line with a `<script>` tag that loads the UI5 core (it will be within the `_html()` function definition):
 
-```
+>```
 <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 ```
 
-_and insert a specific version of UI5 to load. That version should be 1.72.3, i.e. modify the line so that it looks like this:_
+>Then insert a specific version of UI5 to load. That version should be 1.72.3, i.e. modify the line so that it looks like this:
 
-```
+>```
 <script src="https://sapui5.hana.ondemand.com/1.72.3/resources/sap-ui-core.js"
 ```
 
-_If you don't get this error, you can ignore this workaround._
+>If you don't get this error, you can ignore this workaround.
 
 Note that there are two empty records in the list, and if you were wondering if there were two because you have two `Orders` records currently stored in your consumer app service, you'd be correct.
 
@@ -264,4 +263,3 @@ At this point, at the end of the mission, you should have the following:
 - All powered by the SAP Cloud Application Programming Model
 
 Good work!
-
