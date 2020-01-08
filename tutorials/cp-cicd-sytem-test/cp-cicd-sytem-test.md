@@ -1,13 +1,12 @@
 ---
 title: Add Automated System Tests to Your CI/CD Pipeline
 description: Create system tests with UIVeri5 against the user interface of an SAPUI5 application. Add the tests to a continuous integration and delivery pipeline to run them automatically.
-
 auto_validation: true
 time: 60
 tags: [tutorial>beginner, topic>sapui5, products>sap-fiori, topic>cloud]
 primary_tag: products>sap-cloud-platform
 author_name: Sarah Noack
-author_profile: <https://github.com/SarahNoack>
+author_profile: https://github.com/SarahNoack
 ---
 
 ## Prerequisites
