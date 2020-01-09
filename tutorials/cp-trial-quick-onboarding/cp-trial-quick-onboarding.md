@@ -93,15 +93,15 @@ Let's have a look at the following screenshot, taken from an application deploye
 
 ![Breadcrumbs](cf-breadcrumbs.png)
 
-1. **Trial Home** - here you can find your trial homepage
+1. **Trial Home**: Here you can find your trial homepage.
 
-2. **Global account** - this contains all your subaccounts and entitlements
+2. **Global account**: This contains all your subaccounts and entitlements.
 
 3. The 3rd item represents your **subaccount**.
 
 4. Afterwards, you have your **space** as the 4th item.
 
-5. Finally, you have your **deployed application** - this is the current scope.
+5. Finally, you have your **deployed application**, which is the current scope.
 
 [DONE]
 [ACCORDION-END]

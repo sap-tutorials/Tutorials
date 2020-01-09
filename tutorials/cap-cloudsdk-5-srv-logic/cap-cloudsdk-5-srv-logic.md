@@ -41,7 +41,7 @@ You won't get very far without SAP Cloud SDK for this tutorial, so in this first
 
 Do this as follows (you may have already done this in a previous tutorial in this mission, in which case you can skip doing it again):
 
- (you may have already done this in a previous tutorial in this mission, in which case you can skip doing it again)```Bash
+```Bash
 npm config set @sap:registry https://npm.sap.com
 ```
 

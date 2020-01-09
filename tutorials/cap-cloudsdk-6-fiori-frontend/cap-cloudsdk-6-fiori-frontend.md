@@ -44,23 +44,6 @@ Next to the link to the `Orders` entity set, there's the **`...in Fiori`** link,
 
 This is the basis upon which you will build, adding annotations to declare what should appear.
 
-**Note:**
-_If you see an error at this stage, along the lines of "Error when creating the view. Cannot read property 'getService' of undefined', you will need to apply a quick fix as a workaround (this will be addressed soon in the development kit):_
-
-_In the file `node_modules/@sap/cds/lib/utils/app/fiori-preview.js` find the line with a `<script>` tag that loads the UI5 core (it will be within the `_html()` function definition):_
-
-```
-<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-```
-
-_and insert a specific version of UI5 to load. That version should be 1.72.3, i.e. modify the line so that it looks like this:_
-
-```
-<script src="https://sapui5.hana.ondemand.com/1.72.3/resources/sap-ui-core.js"
-```
-
-_If you don't get this error, you can ignore this workaround._
-
 Note that there are two empty records in the list, and if you were wondering if there were two because you have two `Orders` records currently stored in your consumer app service, you'd be correct.
 
 [VALIDATE_1]
@@ -98,7 +81,32 @@ After restarting the service, refresh the SAP Fiori preview page for the `Orders
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Rework the annotation syntax)]
+[ACCORDION-BEGIN [Step 3: ](Invoke auto restart with cds watch)]
+
+In subsequent steps in this tutorial you'll be making a number of small incremental changes, and restarting the service each time, with `npm start`, to check. There's a better way, and that's using the [watch](https://cap.cloud.sap/docs/get-started/in-a-nutshell#run) facility.
+
+In the terminal, invoke the following command:
+
+```Bash
+cds watch
+```
+
+You should see output similar to this:
+
+```
+[cds] - running nodemon...
+--exec cds run --with-mocks --in-memory?
+--ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+```
+
+followed by the regular output that you've seen from `npm start` (which, if you look inside the `package.json` file, actually invokes `cds run`).
+
+You can now continue to make the changes in the rest of this tutorial without having to use `npm start` each time. Nice!
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Rework the annotation syntax)]
 
 Let's use our newly discovered annotation power to good effect and enhance the display of the preview by specifying properties that should appear on each line (which are still currently empty).
 
@@ -114,12 +122,12 @@ annotate CatalogService.Orders with @(
 );
 ```
 
-Syntactically this is just the same as what you had before, except that it's a bit more verbose. For example, notice that the curly braces are in place after the `UI` part, wrapping the `SelectionFields` child term in such a way that you can add further siblings in the same expression. If you're not convinced, simply restart the service and refresh the browser tab to check.
+Syntactically this is just the same as what you had before, except that it's a bit more verbose. For example, notice that the curly braces are in place after the `UI` part, wrapping the `SelectionFields` child term in such a way that you can add further siblings in the same expression. If you're not convinced, simply refresh the browser tab to check.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add line item annotations)]
+[ACCORDION-BEGIN [Step 5: ](Add line item annotations)]
 
 Now that you have reworked the annotations, it's easier to add further elements. In this step, add a `UI.LineItem` annotation by modifying what you have in the latter half of `srv/annotations.cds` so it looks like this (that is,  add the `LineItem` section directly below the `SelectionFields` annotation):
 
@@ -141,7 +149,7 @@ annotate CatalogService.Orders with @(
 
 Note that the second property is `book.title` -- a property of the `Books` entity that is related via the `book` navigation property of the `Orders` entity.
 
-Check this out by restarting the service as before, and also opening the Chrome Developer Tools in your Chrome browser (you _are_ using Chrome, right?) by right-clicking anywhere on the main app display in the **Preview - List of CatalogService.Orders** tab and choosing **Inspect**. Once open, select the **Network** panel, specify the word **`batch`** in the **Filter** field, and refresh the tab.
+Check this out in the browser tab, and also by opening the Chrome Developer Tools in your Chrome browser (you _are_ using Chrome, right?) by right-clicking anywhere on the main app display in the **Preview - List of CatalogService.Orders** tab and choosing **Inspect**. Once open, select the **Network** panel, specify the word **`batch`** in the **Filter** field, and refresh the tab.
 
 You should see something like this (on your instance of Chrome, the Developer Tools may have opened to the right rather than at the bottom, that's also fine):
 
@@ -170,10 +178,10 @@ Orders
 
 Take note of the `$expand` system query option to retrieve the ID and title properties of the `Books` entity, via the `book` navigation property.
 
-[VALIDATE_3]
+[VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add a further list item annotation for the remote data)]
+[ACCORDION-BEGIN [Step 6: ](Add a further list item annotation for the remote data)]
 
 It's time to add one more `ListItem` annotation to bring in some data from the remote mock service -- the name of the business partner's city.
 
@@ -191,7 +199,7 @@ Add another line to the `ListItem` annotation for `address.cityName` so that it 
 
 By now you might be able to guess what this will do -- cause the OData query operation to have further `$expand` requirements for the `address` navigation property, selecting (in addition to the foreign keys that makes the managed association work) the `cityName` property.
 
-Restart the service, and refresh the browser tab, while you still have the Chrome Developer Tools open at the **Network** panel, with the value **`batch`** still in the filter field. Once the page has reloaded, select the latest `$batch` request listed, and scroll down to the bottom of the **Network** panel to see something that should look like this:
+Refresh the browser tab while you still have the Chrome Developer Tools open at the **Network** panel, with the value **`batch`** still in the filter field. Once the page has reloaded, select the latest `$batch` request listed, and scroll down to the bottom of the **Network** panel to see something that should look like this:
 
 ![request with extra expand on the address entity](expand-address.png)
 
@@ -211,7 +219,7 @@ And of course, you will notice that data from your remote mock service, specific
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Finish off with a few more annotations)]
+[ACCORDION-BEGIN [Step 7: ](Finish off with a few more annotations)]
 
 To finish off, it's worth adding a few more annotations; first, to give a title to the list items, and second to start off some display of an item when selected, because the display of a selected item from the list currently looks rather empty:
 
@@ -243,7 +251,7 @@ annotate CatalogService.Orders with @(
 );
 ```
 
-After you restart the service again, this will result in a nice title to the list report, like this:
+After the service has been restarted again by the `cds watch` facility, this will result in a nice title to the list report, like this:
 
 ![title for the list report](list-report-title.png)
 
@@ -264,4 +272,3 @@ At this point, at the end of the mission, you should have the following:
 - All powered by the SAP Cloud Application Programming Model
 
 Good work!
-
