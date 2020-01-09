@@ -62,7 +62,7 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 Open a new tab in the Postman.
 
   1. Build the postman URL as below
-        https://<`uri` of the rest protocol based section from **Service Keys**>/messaging/v1/queues/<`Queue name`>/messages.
+        https://<`uri` of the rest protocol based section from **Service Keys**>`/messagingrest/v1/queues/<Queue name>/messages`.
         `Queue name` is queue name along with the namespace. Replace the `/` present in the namespace with `%2f`while executing.  
 
   2. Open the **Headers** tab add below two key-value pairs.
@@ -92,7 +92,7 @@ Open a new tab in the Postman.
 Open a new tab in the Postman.
 
   1. Build the postman URL as below
-        https://< `uri` of the rest protocol based section from **Service Keys**>/messaging/v1/queues/<Queue name>/messages/consumption
+        https://< `uri` of the rest protocol based section from **Service Keys**>`/messagingrest/v1/queues/<Queue name>/messages/consumption`
 
   2. Open the **Headers** tab add below two key value pair.
 
@@ -101,11 +101,11 @@ Open a new tab in the Postman.
     |      x-qos     |                 0 or 1                |
     | authorization  | Bearer <the retrieved `access_token` >|     
 
-    ![postman header for publishing message](postman-post-header.PNG)
+    ![postman header for publishing message](consumption-header.PNG)
 
   3. Open the **Authorization** tab and select the TYPE as **No Auth**.
 
-    ![postman authorization for publishing message](postman-post-authorization.PNG)
+    ![postman authorization for publishing message](consumption-noauth.PNG)
 
   4. Open the **Body** tab and select the type as **raw**. And enter some test message in the body.
 
