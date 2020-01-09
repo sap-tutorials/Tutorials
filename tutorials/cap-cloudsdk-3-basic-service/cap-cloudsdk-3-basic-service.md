@@ -47,6 +47,8 @@ Execute the following commands in a command prompt (even one in an integrated te
 npm install -g @sap/cds-dk
 ```
 
+>If you come across permissions issues on Windows, make sure you use a command prompt with Admin access, and you may also have to uninstall an older `@sap/cds` package (use `npm remove -g @sap/cds`) before continuing - check for the messages resulting from the install.
+
 To satisfy yourself that the install proceeded successfully, invoke the `cds` executable with the `-v` option and check that you get sensible output. Here's an example of what that might look like (versions may be different):
 
 ```Bash
