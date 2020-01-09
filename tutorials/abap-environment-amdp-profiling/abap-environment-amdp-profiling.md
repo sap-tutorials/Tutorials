@@ -494,6 +494,12 @@ The **Trace Results** view appears. The **ABAP Managed Database Procedures** tab
 
 ![Image depicting step12d-amdp-tab](step12d-amdp-tab.png)
 
+> In the ABAP Profiler display for the AMDP Trace, the column "Execution Time" sometimes contains values that are larger than the values in column "Duration". As the ABAP Profiler usually displays elapsed time, the column "Execution Time" may only be smaller than "Duration", as there might be some "Compile Time" involved in the overall duration.
+
+> This is a known issue and is fixed in SAP AS ABAP Release 7.55.
+
+> For more details, see: [SAP Note 2874907 - Display Elapsed Time Values in AMDP Profiler](https://launchpad.support.sap.com/#/notes/2874907)
+
 [DONE]
 [ACCORDION-END]
 
