@@ -68,10 +68,6 @@ const reportStructure = {
       type: 'VALIDATION',
       messages: [],
     },
-    syntaxCheck: {
-      type: 'SYNTAX',
-      messages: [],
-    },
     linkCheck: {
       type: 'LINKS',
       files: []
