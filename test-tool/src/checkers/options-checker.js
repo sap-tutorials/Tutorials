@@ -12,8 +12,7 @@ const {
     },
 } = regexp;
 
-function lineOf({ content, searchText, searchAfterLine = 0 }) {
-    let line = 0;
+function lineOf({ content, searchText, searchAfterLine = 0, lineStart: line = 0 }) {
     let matchedChars = 0;
 
     for (let i = 0; i < content.length; i += 1) {
@@ -45,7 +44,7 @@ function makeMatchSafe(matchResult) {
 }
 
 function buildErrorObject({ errorData, content, accordionLine }) {
-    const { errorMessage, searchText } = errorData;
+    const { errorMessage, searchText, lineStart = 0 } = errorData;
 
     return {
         msg: errorMessage,
@@ -53,6 +52,7 @@ function buildErrorObject({ errorData, content, accordionLine }) {
             content,
             searchText,
             searchAfterLine: accordionLine,
+            lineStart,
         }),
     };
 }
@@ -61,20 +61,20 @@ const checkers = {
     contentBetween(data) {
         const { accordion } = data;
         const contentBetweenLines = makeMatchSafe(accordion.match(regexps.contentBetween))
-            .reduce((result, matchStr) => [...result, ...matchStr.split('\n')], []);
+          .reduce((result, matchStr) => [...result, ...matchStr.split('\n')], []);
 
         const contentBetween = contentBetweenLines
-            .map((line) => {
-                // ignore option syntax components
-                if (line.startsWith('[OPTION BEGIN')) {
-                    line = '';
-                }
+          .map((line) => {
+              // ignore option syntax components
+              if (line.startsWith('[OPTION BEGIN')) {
+                  line = '';
+              }
 
-                return line
-                    .replace('[OPTION END]', '')
-                    .trim();
-            })
-            .filter(result => !!result);
+              return line
+                .replace('[OPTION END]', '')
+                .trim();
+          })
+          .filter(result => !!result);
 
         if (contentBetween.length > 0) {
             return contentBetween.map(content => ({
@@ -89,7 +89,9 @@ const checkers = {
         if (optionEnds.length !== optionStarts.length) {
             return {
                 errorMessage: messages.mess,
-                searchText: optionStarts[0],
+                searchText: optionStarts[0] || optionEnds[0],
+                // regexp for option-end will not return option-end in the substring
+                lineStart: (!optionStarts[0] && optionEnds[0]) ? 1 : 0,
             };
         }
     },
@@ -108,7 +110,7 @@ const checkers = {
 
         options.forEach((optionMatch) => {
             titles.push(...makeMatchSafe(optionMatch.match(regexps.title))
-                .map(title => title.replace('[OPTION BEGIN [', '')));
+              .map(title => title.replace('[OPTION BEGIN [', '')));
         });
 
         const uniqueTitles = Array.from(new Set(titles));
@@ -123,15 +125,15 @@ const checkers = {
             const errors = [];
 
             Object
-                .entries(counts)
-                .forEach(([title, count]) => {
-                    if (count > 1) {
-                        errors.push({
-                            errorMessage: messages.duplicate,
-                            searchText: title,
-                        });
-                    }
-                });
+              .entries(counts)
+              .forEach(([title, count]) => {
+                  if (count > 1) {
+                      errors.push({
+                          errorMessage: messages.duplicate,
+                          searchText: title,
+                      });
+                  }
+              });
             return errors;
         }
     },
@@ -145,9 +147,9 @@ module.exports = {
         accordionMatch.forEach((str) => {
             const options = makeMatchSafe(str.match(regexps.full));
             const optionEnds = makeMatchSafe(str.match(regexps.end))
-                .filter(result => !!result);
+              .filter(result => !!result);
             const optionStarts = makeMatchSafe(str.match(regexps.start))
-                .filter(result => !!result);
+              .filter(result => !!result);
 
             const accordionLine = lineOf({
                 content,
@@ -155,40 +157,40 @@ module.exports = {
             });
 
             Object
-                .values(checkers)
-                .forEach((handler) => {
-                    const result = handler({
-                        accordion: str,
-                        options,
-                        optionStarts,
-                        optionEnds,
-                    });
+              .values(checkers)
+              .forEach((handler) => {
+                  const result = handler({
+                      accordion: str,
+                      options,
+                      optionStarts,
+                      optionEnds,
+                  });
 
-                    if (!result) {
-                        return;
-                    }
+                  if (!result) {
+                      return;
+                  }
 
 
-                    if (Array.isArray(result)) {
-                        result.forEach((error) => {
-                            const errorObject = buildErrorObject({
-                                accordionLine,
-                                content,
-                                errorData: error,
-                            });
+                  if (Array.isArray(result)) {
+                      result.forEach((error) => {
+                          const errorObject = buildErrorObject({
+                              accordionLine,
+                              content,
+                              errorData: error,
+                          });
 
-                            errors.push(errorObject);
-                        });
-                    } else {
-                        const errorObject = buildErrorObject({
-                            accordionLine,
-                            content,
-                            errorData: result,
-                        });
+                          errors.push(errorObject);
+                      });
+                  } else {
+                      const errorObject = buildErrorObject({
+                          accordionLine,
+                          content,
+                          errorData: result,
+                      });
 
-                        errors.push(errorObject);
-                    }
-                });
+                      errors.push(errorObject);
+                  }
+              });
         });
 
         return errors;
