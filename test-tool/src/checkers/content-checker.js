@@ -5,7 +5,9 @@ const fs = require('fs');
 
 const tagChecker = require('./tags-checker');
 const linkChecker = require('./link-checker');
+const syntaxChecker = require('./syntax-checker');
 const metadataChecker = require('./metadata-checker');
+
 const { regexp, constraints } = require('../constants');
 
 const fileExistsSyncCS = (filePath) => {
@@ -53,6 +55,7 @@ module.exports = {
       contentCheckResult: [],
       tagsCheckResult: [],
       stepSpellCheckResult: [],
+      syntaxCheckResult: [],
     };
     const dir = path.dirname(filePath);
     const {
@@ -213,6 +216,7 @@ module.exports = {
           }
 
           if (remoteImageMatches) {
+
             await Promise.all(remoteImageMatches.map(async (item) => {
               // using new RegExp to reset g flag
               const [imageUrl] = item.match(new RegExp(pureLink, 'i'));
@@ -233,6 +237,11 @@ module.exports = {
               msg: localFileLink.message,
             });
           }
+        }
+
+        const syntaxCheckResult = syntaxChecker.check(line, index + 1);
+        if (syntaxCheckResult) {
+          result.syntaxCheckResult.push(syntaxCheckResult);
         }
       }
     }));

@@ -57,7 +57,8 @@ const checkTutorialGrouping = async ({ projectPath, interceptors, checkResult, r
   });
 };
 
-const setLinkCheckResult = ({ linkCheckResult, checkResult, uniqueLinksToFiles, files, results }) => {
+const setLinkCheckResult = (options) => {
+  const { linkCheckResult, checkResult, uniqueLinksToFiles, files, results } = options;
   const filesPaths = uniqueLinksToFiles.get(linkCheckResult.link);
   if (filesPaths) {
     filesPaths.forEach((filePath) => {
@@ -122,16 +123,18 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
       contentCheckResult,
       tagsCheckResult,
       stepSpellCheckResult,
+      syntaxCheckResult,
     } = await contentChecker.check(filePath, contentLines, allTutorials);
 
     if (checkResult.passed) {
       checkResult.passed = !(fileNameCheckResult
-          || spellCheckResult.length
-          || stepSpellCheckResult.length
-          || contentCheckResult.length
-          || tagsCheckResult.length
-          || optionsCheckResult.length
-          || validationsCheckResult.length);
+        || spellCheckResult.length
+        || stepSpellCheckResult.length
+        || contentCheckResult.length
+        || tagsCheckResult.length
+        || syntaxCheckResult.length
+        || optionsCheckResult.length
+        || validationsCheckResult.length);
     }
 
     results.set(filePath, {
@@ -142,6 +145,7 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
       contentCheckResult: [...contentCheckResult, ...optionsCheckResult],
       tagsCheckResult: tagsCheckResult.length > 0 ? tagsCheckResult : null,
       validationsCheckResult,
+      syntaxCheckResult,
       spellCheckResult: spellCheckResult.concat(stepSpellCheckResult),
       linkCheckResult: [],
     });
