@@ -45,7 +45,7 @@ In the left pane, choose **Services** > **Service Marketplace**.
 
 ![cf Trial](img_5.png)
 
-Scroll down and then choose any of Mobile tile.
+Search the **Mobile Services** and click on it.
 
 ![cf Trial](img_6.png)
 
