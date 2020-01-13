@@ -725,7 +725,7 @@ There you will find affected entity which couldn't get accepted by backend due t
 
 Tapping any record navigates to **Error Details** page with more information about error.
 
-Here in **Error Message** you will see `SQL Exception: Foreign key constraint violation occured` and in **Request Body**, it shows the property that caused this failure.
+Here in **Error Message** you will see `SQL Exception: Foreign key constraint violation occurred` and in **Request Body**, it shows the property that caused this failure.
 
 ![MDK](img_030.png)
 

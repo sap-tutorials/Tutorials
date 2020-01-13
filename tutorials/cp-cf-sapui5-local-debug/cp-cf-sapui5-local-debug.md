@@ -39,7 +39,7 @@ Replace the existing page in the file `webapp/view/MainView.view.xml` with
 Add this `onBeforeRendering` hook to the file `webapp/controller/MainView.controller.xml`. This error function allows you to write error messages to the console. Error messages also write the stack trace to the console, which can be used to trace the message back to the line of invocation.
 ```JavaScript
 onBeforeRendering: function() {
-  jQuery.sap.log.error("A problem occured!");
+  jQuery.sap.log.error("A problem occurred!");
 }
 ```
 
