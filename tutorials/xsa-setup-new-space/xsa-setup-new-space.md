@@ -3,17 +3,13 @@ title: SAP HANA - Create a Space in XS Advanced
 description: Create a new space for XS Advanced
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
+time: 15
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
 Describe what the user will learn from your tutorial and what the outcome will be.
 
-### Time to Complete
-**15 Min**
 
 ---
 

@@ -3,24 +3,17 @@ title: Create a Tiny World Python Application using the Flask framework, to cons
 description: Create a sample Python application using the Flask Web framework, which connects to SAP HANA, Express Edition using OData Services
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition, tutorial>how-to  ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - You have an instance of SAP HANA, Express Edition deployed and running.
  - You have an OData service deployed on the instance of SAP HANA, Express Edition as per the prerequisite OData tutorial.
- - **Tutorials:** [SAP HANA, express edition, in Google Cloud Platform Launcher](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html)
-
-
-## Next Steps
- - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
+ - **Tutorials:** [SAP HANA, express edition, in Google Cloud Platform Launcher](hxe-gcp-getting-started-launcher)
 
 ## Details
 ### You will learn  
 This tutorial will guide you through the process of creating a sample Python/Flask application to connect to SAP HANA, Express Edition, using OData services. This tutorial assumes that you have already created an OData service as mentioned in the prerequisite tutorial.
-
-### Time to Complete
-**15 Min**
 
 ---
 
