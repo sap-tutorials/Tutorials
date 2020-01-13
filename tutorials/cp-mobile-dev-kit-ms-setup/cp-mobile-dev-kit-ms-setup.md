@@ -113,7 +113,7 @@ Click `com.sap.mdk.demo` to navigate back to app configuration page.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Get familar with other assigned features)]
+[ACCORDION-BEGIN [Step 4: ](Get familiar with other assigned features)]
 
 ![MDK](img_0015.png)
 

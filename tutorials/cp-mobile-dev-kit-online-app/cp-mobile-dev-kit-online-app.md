@@ -92,7 +92,7 @@ After clicking Finish, the wizard will generate your MDK Application based on yo
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Get familar with generated project structure)]
+[ACCORDION-BEGIN [Step 3: ](Get familiar with generated project structure)]
 
 This is how the project structure looks like within the workspace.
 
