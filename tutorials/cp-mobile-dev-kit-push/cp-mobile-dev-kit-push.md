@@ -80,6 +80,7 @@ In this step, you will create the following actions:
 
     ![MDK](img_005.png)
 
+
     Provide the below information:
 
     | Property | Value |
@@ -400,7 +401,7 @@ To enable your app for push notifications, you need to carry out the following t
     |  :------------- | :-------------
     |  APNS Endpoint | Select `Sandbox`
     |  Authenticate | Select `Certificate`
-    |  Certificate | `Browse to the `.p12` certificate you just exported`
+    |  Certificate | `Browse to the `.p12`certificate you just exported`
     |  Password | Enter the password you provided during the export
 
 3. Click **Save**. You have now successfully configured the APNS Endpoint on the server side in Mobile Services cockpit.
