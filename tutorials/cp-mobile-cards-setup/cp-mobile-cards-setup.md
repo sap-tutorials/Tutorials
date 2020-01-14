@@ -51,7 +51,7 @@ In the left pane, choose **Services** > **Service Marketplace**.
 
 ![MobileCards](img_3.png)
 
-Search for **Mobile Card Kit**, and click on the tile.  
+Search for **Mobile**, and click on the **SAP Mobile Services** tile.  
 
 ![MobileCards](img_4.png)
 
