@@ -198,7 +198,6 @@ export function Detail() {
                 wrap={FlexBoxWrap.Wrap} >
                 <Card
                     heading="Stock Price"
-                    style={{ width: "300px" }}
                     headerInteractive
                     onHeaderClick={handleHeaderClick}
                     subtitle={`Click here to switch to ${switchToChart}`}
