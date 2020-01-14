@@ -237,11 +237,11 @@ module.exports = {
               msg: localFileLink.message,
             });
           }
-        }
 
-        const syntaxCheckResult = syntaxChecker.check(line, index + 1);
-        if (syntaxCheckResult) {
-          result.syntaxCheckResult.push(syntaxCheckResult);
+          const syntaxCheckResult = syntaxChecker.check(line, index + 1);
+          if (syntaxCheckResult) {
+            result.syntaxCheckResult.push(syntaxCheckResult);
+          }
         }
       }
     }));
