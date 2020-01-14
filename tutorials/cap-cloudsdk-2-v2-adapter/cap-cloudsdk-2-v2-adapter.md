@@ -200,7 +200,7 @@ You won't see much initially -- just a simple **`>`** prompt. At this prompt, en
 const BusinessPartnerAddress = require('@sap/cloud-sdk-vdm-business-partner-service').BusinessPartnerAddress
 ```
 
-What this returns is not particularly spectacular (`undefined`) ... but don't be fooled - at this point you now have an object bristling with potential. If you're interested in seeing this potential, just enter `BusinessPartnerAddress.`, including the period at the end, and then hit **Tab** to see the possibilities). Now you can use this object, and invoke the request builder to make a call to the service that you have running in the other integrated terminal.
+What this returns is not particularly spectacular (`undefined`) ... but don't be fooled -- at this point you now have an object bristling with potential. If you're interested in seeing this potential, just enter `BusinessPartnerAddress.`, including the period at the end, and then hit **Tab** to see the possibilities. Now you can use this object, and invoke the request builder to make a call to the service that you have running in the other integrated terminal.
 
 Switch to editor mode in the Node.js REPL with the command `.editor` (note the period at the start -- see [Commands and Special Keys](https://nodejs.org/api/repl.html#repl_commands_and_special_keys)) so you can paste in the following all at once:
 

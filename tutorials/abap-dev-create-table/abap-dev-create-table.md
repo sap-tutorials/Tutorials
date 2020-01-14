@@ -193,7 +193,7 @@ Before you activate the table, change the technical settings at the top as follo
 
     ![Image depicting step9a-tech-settings](step9a-tech-settings.png)
 
-3. Then choose `#EXTENSIBLE_CHARACTER_NUMERIC` from the dropdown list. (your table contains both character-type and numeric-type fields but does not contain any deep structures (such as a structure included within a table row.)
+3. Then choose `#EXTENSIBLE_CHARACTER_NUMERIC` from the dropdown list. Your table contains both character-type and numeric-type fields but does not contain any deep structures (such as a structure included within a table row).
 
 4. Complete the other settings as follows (or copy the code below).
     - **`tableCategory`** : Transparent = your table represents a table in the database.

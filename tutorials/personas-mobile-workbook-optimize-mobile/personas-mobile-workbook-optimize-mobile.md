@@ -106,5 +106,5 @@ You can see that all of the required fields are easily accessible, so there is n
 
 If desired for extra practice, you can also build adaptive versions of your flavor for mobile phones in Portrait and Landscape orientation. The process is the same as the above but, rather than selecting **`Apple iPad`** as your device during the creation of the adaptive flavor, you will select the mobile device of your choice. You will then have to rearrange the objects on screen to fit within the bounds of the new screen size, just as before.
 
-[VALIDATE_1]]
+[VALIDATE_1]
 [ACCORDION-END]

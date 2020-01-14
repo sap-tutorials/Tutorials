@@ -1,6 +1,6 @@
 ---
 title: Import GDELT Data in SAP HANA, express edition
-description: Learn how to import data from the Global Database of Events, Language and Tone (GDELT) Project into SAP HANA, express edition.
+description: Import data from the Global Database of Events, Language and Tone (GDELT) Project into SAP HANA, express edition.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
@@ -24,9 +24,11 @@ However, it allows you to import data directly from your client and not the SAP 
 
 For more information, you can check the following tutorial: <a href="https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html" target="&#95;blank">Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse</a>
 
-> ### **Warning:** If you are not planning to complete the all series and in order to avoid being billed for AWS usage, make sure to go thru the [Cleanup before you leave]https://developers.sap.com/tutorials/hxe-aws-athena-07.html) tutorial.
+> ### **WARNING:** If you are not planning to complete the all series and in order to avoid being billed for AWS usage, make sure to go thru the [Cleanup before you leave](hxe-aws-athena-07) tutorial.
 
-[ACCORDION-BEGIN [Step 1: ](Download the data files)]
+---
+
+[ACCORDION-BEGIN [Step 1: ](Download data files)]
 
 The lookup tables that will be loaded in SAP HANA, express edition are available on the <a href="https://www.gdeltproject.org/data/lookups/" target="&#95;blank">GDELT CAMEO</a> site.
 

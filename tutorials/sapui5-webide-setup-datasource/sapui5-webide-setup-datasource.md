@@ -90,7 +90,7 @@ In a [previous tutorial](hcp-create-destination) the OData test service called "
 
     ![Deploymentprocess](6.png)
 
-> This initial deployment might take a couple of minutes. But don't worry, the next deployment will be super fast :)!
+> This initial deployment might take a couple of minutes. But don't worry, the next deployment will be super fast!
 
 
 [DONE]

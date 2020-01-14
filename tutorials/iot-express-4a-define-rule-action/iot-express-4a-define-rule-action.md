@@ -164,7 +164,7 @@ In the final step, you define an action that sends an email.
 
 7.	In the **Action Type** dropdown, select `Email Notification`.
 
-8.	Enter value in the **Email Information** fields. Hint: By entering "${" + another letter(s), you will get a context menu with variables that you can use in the notification text.
+8.	Enter value in the **Email Information** fields. Hint: By entering `"${"` + another letter(s), you will get a context menu with variables that you can use in the notification text.
 
 9.	Choose **Save** to save your change.
 

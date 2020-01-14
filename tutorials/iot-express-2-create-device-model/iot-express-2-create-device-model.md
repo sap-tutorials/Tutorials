@@ -10,8 +10,7 @@ tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, 
 ## Prerequisites  
 - **Tutorials:** [Get Your Hands on SAP Leonardo IoT Foundation Software and Hardware](iot-express-1-buy-sapstore)
 - **Configuration:**
-1. You or someone from your team should has followed this guide [Enabling the Internet of Things Service for the Cloud
-  Foundry Environment](https://help.sap.com/viewer/c48328a1bee749da9902d52f080dba0d/Cloud/en-US).
+1. You or someone from your team should has followed this guide [Enabling the Internet of Things Service for the Cloud Foundry Environment](https://help.sap.com/viewer/c48328a1bee749da9902d52f080dba0d/Cloud/en-US).
 2. You or someone from your team has created a tenant and a user to work in for yourself based on the instance owner credentials from the previous step and this guide [Creating User and Tenant](https://help.sap.com/viewer/78ac6b240a97447986e09b991d8a570a/Cloud/en-US).
 3. To be able to see the data created in this tutorial in SAP Leonardo IoT, it is necessary to follow [this guide](https://help.sap.com/viewer/a7172eb02bf54229add4664fff702676/Cloud/en-US/b15fcfae611f400cb582a8ece97306b1.html) for configuring the message processing of SAP Internet of Things.
 
@@ -294,7 +293,7 @@ If you have the hardware kit, then modify the function `generateData()` to actua
 [ACCORDION-BEGIN [Step 7: ](Check device ingested data)]
 
 1. Navigate to your device:
-   **Device Management > Devices > `device1`**)
+   **`Device Management` > `Devices` > `device1`**
 
 2. Click on the `Data Visualization` tab.
 

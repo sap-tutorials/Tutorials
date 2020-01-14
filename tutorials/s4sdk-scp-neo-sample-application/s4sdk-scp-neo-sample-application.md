@@ -382,7 +382,7 @@ mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-Da
 
 [ACCORDION-END]
 
-ACCORDION-BEGIN [Appendix: ](Test yourself)]
+[ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
 [VALIDATE_1]
 

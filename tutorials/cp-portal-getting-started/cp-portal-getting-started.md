@@ -1,14 +1,14 @@
 ---
-title: Prepare Portal Environment for Creating Sites
+title: Prepare the Portal Environment for Creating Sites (Neo)
 description: Prepare your environment so you can create Portal freestyle sites.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
-tags: [ tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
+tags: [tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
+time: 10
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - You have created a SAP Cloud Platform trial account. See [Sign up for a free trial account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
+ - You have created a SAP Cloud Platform trial account. See [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account).
 
 ## Details
 ### You will learn  
@@ -16,8 +16,7 @@ tags: [ tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
   - How to open your trial subaccount
   - How to enable the SAP Cloud Platform Portal service
 
-### Time to Complete
-**10 Min**
+---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform cockpit)]
 
@@ -32,8 +31,7 @@ tags: [ tutorial>beginner, topic>cloud,products>sap-cloud-platform-portal ]
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN
-[Step 2: ](Open your trial subaccount)]
+[ACCORDION-BEGIN [Step 2: ](Open your trial subaccount)]
 
 1. Select **Neo Trial**.
 

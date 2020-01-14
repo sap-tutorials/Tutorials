@@ -4,16 +4,13 @@ description: Enhance your app with a Fiori List Report Floorplan
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Using the SAP Fiori Mentor app](https://developers.sap.com/tutorials/fiori-ios-scpms-mentor.html)
+ - **Tutorials:** [Using the SAP Fiori Mentor app](fiori-ios-scpms-mentor)
 
-
-## Next Steps
- - [Push Notifications](https://developers.sap.com/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Details
 ### You will learn  
@@ -25,7 +22,7 @@ In this tutorial, you will learn three things:
 
 In this example, you build upon the demo app created using the **Sample OData** service. If you examine the service's metadata (URL: `https://hcpms-YourIDtrial.hanatrial.ondemand.com/SampleServices/ESPM.svc/$metadata`) you see entity **Supplier** has a one-to-many relationship with **Products**:
 
-```xml
+```XML
 <EntityType Name="Supplier">
   <Key>
     <PropertyRef Name="SupplierId"/>
@@ -46,9 +43,6 @@ In this example, you build upon the demo app created using the **Sample OData** 
 
 In this tutorial, you will enhance the **Suppliers** entity detail view to show its related **Products** in a **List Report Floorplan**.
 
-
-### Time to Complete
-**20 Min**
 
 ---
 
@@ -85,7 +79,7 @@ Click **Next**. In the next screen, make sure the new class file is stored in gr
 
 In the newly created file `SupplierProductsViewController.swift`, under the `import UIKit` statement, add the following import statements:
 
-```swift
+```Swift
 import SAPOData
 import SAPFoundation
 import SAPFiori
@@ -94,7 +88,7 @@ import SAPCommon
 
 Just below the line `class SupplierProductsViewController: UITableViewController {`, add the following declarations:
 
-```swift
+```Swift
 private let appDelegate = UIApplication.shared.delegate as! AppDelegate
 private let logger: Logger = Logger.shared(named: "SupplierProductsViewController")
 
@@ -145,7 +139,7 @@ Locate method `tableView(_ tableView:, numberOfRowsInSection section:)`. Current
 
 Set the return value to `11`:
 
-```swift
+```Swift
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 11
 }
@@ -156,7 +150,7 @@ It contains a `switch` statement which, depending on the `indexPath.row` value, 
 
 To display the added Table View Cell, add an extra `case` statement, just above the `default:` switch:
 
-```swift
+```Swift
 case 10:
     let navigationLink = tableView.dequeueReusableCell(withIdentifier: "NavigationLink",
         for: indexPath) as UITableViewCell
@@ -184,7 +178,7 @@ Open the file `./MyDeliveries/ViewControllers/DetailViewController.swift`.
 
 In method `viewDidLoad()`, locate the line:
 
-```swift
+```Swift
 self.tableView.allowsSelection = false
 ```
 
@@ -192,7 +186,7 @@ To enable navigating from this view to the Tracking Info view, set this property
 
 Next, scroll down, and just above the method `cancel()` add the following function:
 
-```swift
+```Swift
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "showSupplierProducts" {
 
@@ -233,7 +227,7 @@ First, you need to bind the related **Products** to the view.
 
 Replace the method `viewDidLoad()` with the following:
 
-```swift
+```Swift
 override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -250,7 +244,7 @@ This sets the view's title, registers the **SAP Fiori Object Table View Cell** c
 
 Next, change the method `numberOfSections(in tableView:)` to:
 
-```swift
+```Swift
 override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
 }
@@ -258,7 +252,7 @@ override func numberOfSections(in tableView: UITableView) -> Int {
 
 ...and change method `tableView(_ tableView:, numberOfRowsInSection section:)` so it returns the number of related **Products**:
 
-```swift
+```Swift
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self._entity.products.count
 }
@@ -310,13 +304,13 @@ In this step, you will add a search bar where you can filter the list of Product
 
 First, have your class `SupplierProductsViewController` extend from `UISearchResultsUpdating`:
 
-```swift
+```Swift
 class SupplierProductsViewController: UITableViewController, UISearchResultsUpdating {
 ```
 
 Just above method `viewDidLoad()`, add the following fields:
 
-```swift
+```Swift
 var searchController: FUISearchController = FUISearchController(searchResultsController: nil)
 var filteredProducts: [Product] = []
 var isFiltered: Bool = false
@@ -328,7 +322,7 @@ The third field flags whether the list is filtered or not.
 
 Inside method `viewDidLoad()`, add the following lines of code:
 
-```swift
+```Swift
 searchController.searchResultsUpdater = self as UISearchResultsUpdating
 searchController.searchBar.placeholderText = "Search product"
 self.tableView.tableHeaderView = searchController.searchBar
@@ -338,7 +332,7 @@ This registers the search updater, sets a placeholder text in the search bar, an
 
 In step 6, you have changed method `tableView(_ tableView:, numberOfRowsInSection section:)` so it returns the number of related **Products**. Because the result can be filtered, change the method again to return either the filtered result count, or the total result count:
 
-```swift
+```Swift
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return isFiltered ? self.filteredProducts.count : self._entity.products.count
 }
@@ -346,13 +340,13 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 In method `tableView(_ tableView:, cellForRowAt indexPath:)`, change the reference to constant `product` to be either from the filtered or unfiltered array:
 
-```swift
+```Swift
 let product = isFiltered ? self.filteredProducts[indexPath.row] : self._entity.products[indexPath.row]
 ```
 
 Finally, add the following event handler:
 
-```swift
+```Swift
 func updateSearchResults(for searchController: UISearchController) {
 
     guard let searchString = searchController.searchBar.text, !searchString.isEmpty else {
@@ -394,7 +388,7 @@ In this step, you add a couple of toolbar buttons to complement the view. We won
 
 First, add the following event handlers:
 
-```swift
+```Swift
 func addProduct() {
     // Add your own implementation, i.e. OData create
 }
@@ -410,7 +404,7 @@ func setEditMode() {
 
 Then, in method `viewDidLoad()`, add the following lines of code:
 
-```swift
+```Swift
 self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(setEditMode))
 
 let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addProduct))
@@ -451,19 +445,19 @@ Open the `info.plist` file and add the following entry:
 
 Add the following import statement:
 
-```swift
+```Swift
 import SAPFiori
 ```
 
 In method `viewDidLoad()`, just above the last line:
 
-```swift
+```Swift
 self.tableView.tableHeaderView = searchController.searchBar
 ```
 
 add the following lines of code:
 
-```swift
+```Swift
 searchController!.searchBar.isBarcodeScannerEnabled = true
 searchController!.searchBar.barcodeScanner?.scanResultTransformer = { (scanString) -> String in
     return scanString
@@ -513,4 +507,3 @@ The list should now be filtered based on the scanned results:
 
 [VALIDATE_11]
 [ACCORDION-END]
-
