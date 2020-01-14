@@ -83,9 +83,9 @@ You will notice that the **State** has been changed to **Productive**.
 
 >Make sure you are choosing the right device platform tab **above**.
 
-Congratulations, you have your first SAP Mobile card on the device.
+Welcome cards are auto subscribed by default and downloaded automatically after registration.
 
-> Welcome cards are auto subscribed by default and downloaded automatically after registration.
+You should see a Welcome Card in your Mobile application.
 
 [OPTION BEGIN [Android]]
 
@@ -98,6 +98,8 @@ Congratulations, you have your first SAP Mobile card on the device.
 !![MobileCards](img_10.png)
 
 [OPTION END]
+
+Congratulations, you have your first SAP Mobile card on the device.
 
 [DONE]
 [ACCORDION-END]
