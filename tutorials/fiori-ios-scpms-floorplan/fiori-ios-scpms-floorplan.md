@@ -9,8 +9,7 @@ time: 20
 
 ## Prerequisites  
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Using the SAP Fiori Mentor app](fiori-ios-scpms-mentor)
-
+ 
 
 ## Details
 ### You will learn  
