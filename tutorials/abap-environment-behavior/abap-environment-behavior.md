@@ -46,7 +46,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     define behavior for ZI_Travel_M_XXX alias Travel
     persistent table ztravel_xxx
-    etag master last_changed_at
+    etag last_changed_at
     lock master
     {
     // administrative fields (read only)
@@ -68,6 +68,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. Save and activate.
 
       ![save and activate](activate.png)
+
+    A warning will appear first, but after the creation of the behavior implementation it will disappear.  
 
     Now the **behavior definition** is created and determines the create, update and delete functionality for travel booking.
 

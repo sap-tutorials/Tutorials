@@ -151,7 +151,7 @@ author_profile: https://github.com/mervey45
       ![table](table.png)
 
   2. Create a data definition:
-     - Name: **`ZCAL_HOLITXT_XXX`**
+     - Name: **`ZCAL_I_HOLITXT_XXX `**
      - Description: **`CDS View for Holiday Text Table`**
 
       ![table](table2.png)
@@ -160,7 +160,7 @@ author_profile: https://github.com/mervey45
 
   3. Select **Define View with To-Parent Association** and click **Finish**.
 
-      ![table](table4.png)
+      ![table](table4.png) 
 
   4. Replace your code with following:
 

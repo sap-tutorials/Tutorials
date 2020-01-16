@@ -77,9 +77,9 @@ author_profile: https://github.com/mervey45
     ```ABAP
     determination det_create_and_change_texts on save
       { field HolidayDescription; }
-    ```
+    ``` 
 
-      ![determination](det.png)
+      ![determination](det2.png)
 
   5. Save and activate.
 

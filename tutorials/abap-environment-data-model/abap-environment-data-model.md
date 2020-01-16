@@ -53,7 +53,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define root view ZI_TRAVEL_M_XXX as select from ztravel_xxx            
     ```
 
-  6. You result should look like this. Replace your code with following:
+  6. Your result should look like this. Replace your code with following:
 
     ```ABAP
     @AbapCatalog.sqlViewName: 'ZVI_TRAVEL_M_XXX'
@@ -138,7 +138,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define root view entity ZC_TRAVEL_M_XXX as projection on ZI_Travel_M_XXX        
     ```
 
-  6. You result should look like this. Replace your code with following:
+  6. Your result should look like this. Replace your code with following:
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
