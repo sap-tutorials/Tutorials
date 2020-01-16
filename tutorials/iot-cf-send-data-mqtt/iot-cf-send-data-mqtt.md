@@ -231,7 +231,7 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
 
 9.  Choose the **MQTT** tab of the connection.
 
-10. Add the **Server URI** as follows: `ssl://<HOST_NAME>:8883` → `ssl://demo.eu10.cp.iot.sap:8883`
+10. Add the **Server URI** as follows: `ssl://<HOST_NAME>:8883`
 
 11. Add the **Client ID**: The Alternate ID of the device as a string: `22334455`
 
