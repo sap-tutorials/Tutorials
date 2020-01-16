@@ -9,12 +9,16 @@ author_name: Niloofar Naseri
 author_profile: https://github.com/niloofar-naseri
 ---
 
+## Prerequisites  
+- You have the business catalog **communication management (`SAP_CORE_BC_COM`)** assigned to your business user.
 
 ## Details
 ### You will learn  
 - How to create a communication user
 - How to create a communication system
 - How to create a communication arrangement
+
+
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
