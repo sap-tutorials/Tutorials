@@ -62,7 +62,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
 
-1. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloud) and download the CDS extension (`vsix` file) for Visual Studio Code.
+1. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloud-vscodecds) and download the `vsix` file for CDS Language Support for Visual Studio Code.
 
 2. Open Visual Studio Code and install the extension:
 
