@@ -18,7 +18,25 @@ primary_tag: topic>sapui5
 
 [ACCORDION-BEGIN [Step 1: ](Scaffold a SAPUI5 project)]
 
-Run `yo easy-ui5` to trigger the creation of a new project. You will be prompted for a couple of parameters, accept all the default values here.
+Run the following command to trigger the creation of a new project.
+```
+yo easy-ui5
+```
+
+
+Choose the following responses for the prompted parameters.
+
+|  Parameter     | Value
+|  :------------- | :-------------
+| On which platform would you like to host the application | **`Application Router @ Cloud Foundry`**
+|  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
+|  Would you like to create a new directory for the project?    | **`Yes`**
+|  Would you like to create a new directory for the project?          | **`myUI5App`**
+|  Which namespace do you want to use?    | **`com.myorg`**
+|  Which view type do you want to use? | **`XML`**
+|  How do you want to name your main view? | **`MainView`**
+
+
 
 ![yeomangen](./yo.png)
 
