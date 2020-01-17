@@ -62,7 +62,7 @@ export function Detail() {
     </HashRouter>
     ```
 
-    > You can replace your `div` with the `HashRouter` as the `HashRouter` also works as container.
+    > You can replace your `div` with the `HashRouter` as the `HashRouter` also functions as container.
 
 [DONE]
 [ACCORDION-END]
@@ -89,20 +89,20 @@ export function Detail() {
     ```JavaScript / JSX
     import React from "react";
     import { ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
-    import "@ui5/webcomponents/dist/icons/add.js";
+    import "@ui5/webcomponents-icons/dist/icons/add.js";
 
     export function MyApp() {
-
-        return (
-            <div>
-                <ShellBar
-                    logo={"reactLogo.png"}
-                    profile={"profilePictureExample.png"}
-                    primaryTitle={"My App"}  >
-                    <ShellBarItem src="sap-icon://add" text="Add" />
-                </ShellBar>
-            </div>
-        );
+      return (
+        <div>
+          <ShellBar
+            logo={"reactLogo.png"}
+            profile={"profilePictureExample.png"}
+            primaryTitle={"My App"}
+          >
+            <ShellBarItem icon="add" text="Add" />
+          </ShellBar>
+        </div>
+      );
     }
     ```
 
@@ -111,147 +111,181 @@ export function Detail() {
     ```JavaScript / JSX
     import React, { useState } from "react";
     import {
-        Card,
-        Text,
-        List,
-        StandardListItem,
-        ValueState,
-        ProgressIndicator,
-        Title,
-        TitleLevel,
-        FlexBox,
-        FlexBoxJustifyContent,
-        FlexBoxWrap,
-        FlexBoxDirection,
-        AnalyticalTable
+      Card,
+      Text,
+      List,
+      StandardListItem,
+      ValueState,
+      ProgressIndicator,
+      Title,
+      TitleLevel,
+      FlexBox,
+      FlexBoxJustifyContent,
+      FlexBoxWrap,
+      FlexBoxDirection,
+      AnalyticalTable,
+      Icon
     } from "@ui5/webcomponents-react";
     import { spacing } from "@ui5/webcomponents-react-base";
     import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
+    import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
+    import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
+    import "@ui5/webcomponents-icons/dist/icons/list.js";
+    import "@ui5/webcomponents-icons/dist/icons/table-view.js";
 
     export function Home() {
+      const [toggleCharts, setToggleCharts] = useState("lineChart");
+      const [loading, setLoading] = useState(false);
 
-        const [toggleCharts, setToggleCharts] = useState("lineChart");
-        const [loading, setLoading] = useState(false);
-        const handleHeaderClick = () => {
-            if (toggleCharts === "lineChart") {
-                setLoading(true);
-                setTimeout(() => {
-                    setLoading(false);
-                    setToggleCharts("barChart");
-                }, 2000);
-            } else {
-                setLoading(true);
-                setTimeout(() => {
-                    setLoading(false);
-                    setToggleCharts("lineChart");
-                }, 2000);
-            }
+      const handleHeaderClick = () => {
+        if (toggleCharts === "lineChart") {
+          setLoading(true);
+          setTimeout(() => {
+            setLoading(false);
+            setToggleCharts("barChart");
+          }, 2000);
+        } else {
+          setLoading(true);
+          setTimeout(() => {
+            setLoading(false);
+            setToggleCharts("lineChart");
+          }, 2000);
+        }
+      };
+      const datasets = [
+        {
+          label: "Stock Price",
+          data: [65, 59, 80, 81, 56, 55, 40]
+        }
+      ];
+      const labels = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July"
+      ];
+      const tableData = new Array(500).fill(null).map((_, index) => {
+        return {
+          name: `name${index}`,
+          age: Math.floor(Math.random() * 100),
+          friend: {
+            name: `friend.Name${index}`,
+            age: Math.floor(Math.random() * 100)
+          }
         };
-        const contentTitle = toggleCharts === 'lineChart' ? 'Line Chart' : 'Bar Chart';
-        const switchToChart = toggleCharts === 'lineChart' ? 'Bar Chart' : 'Line Chart';
-        const datasets = [{
-            label: "Stock Price",
-            data: [65, 59, 80, 81, 56, 55, 40]
-        }];
-        const labels = [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July"
-        ];
+      });
 
-        const tableData = new Array(500).fill(null).map((_, index) => {
-            return {
-                name: `name${index}`,
-                age: Math.floor(Math.random() * 100),
-                friend: {
-                    name: `friend.Name${index}`,
-                    age: Math.floor(Math.random() * 100)
+      const tableColumns = [
+        {
+          Header: "Name",
+          accessor: "name" // String-based value accessors!
+        },
+        {
+          Header: "Age",
+          accessor: "age"
+        },
+        {
+          Header: "Friend Name",
+          accessor: "friend.name"
+        },
+        {
+          Header: "Friend Age",
+          accessor: "friend.age"
+        }
+      ];
+      const contentTitle =
+        toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+      const switchToChart =
+        toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+      return (
+        <FlexBox
+          justifyContent={FlexBoxJustifyContent.Center}
+          wrap={FlexBoxWrap.Wrap}
+        >
+          <Card
+            avatar={
+              <Icon
+                name={
+                  toggleCharts === "lineChart"
+                    ? "line-chart"
+                    : "horizontal-bar-chart"
                 }
-            };
-        });
-
-        const tableColumns = [
-            {
-                Header: "Name",
-                accessor: "name" // String-based value accessors!
-            },
-            {
-                Header: "Age",
-                accessor: "age"
-            },
-            {
-                Header: "Friend Name",
-                accessor: "friend.name"
-            },
-            {
-                Header: "Friend Age",
-                accessor: "friend.age"
+              />
             }
-        ];
-        return (
-            <FlexBox
-                justifyContent={FlexBoxJustifyContent.Center}
-                wrap={FlexBoxWrap.Wrap} >
-                <Card
-                    heading="Stock Price"
-                    headerInteractive
-                    onHeaderClick={handleHeaderClick}
-                    subtitle={`Click here to switch to ${switchToChart}`}
-                    style={{ width: "300px", ...spacing.sapUiContentPadding }} >
-                    <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-                    {toggleCharts === "lineChart" ? (
-                        <LineChart datasets={datasets} labels={labels} loading={loading} />
-                    ) : (
-                            <BarChart datasets={datasets} labels={labels} loading={loading} />
-                        )}
-                </Card>
-                <Card heading="Progress" subtitle="List" style={{ width: "300px", ...spacing.sapUiContentPadding }}>
-                    <List>
-                        <StandardListItem info="finished" infoState={ValueState.Success}>
-                            Activity 1
-                </StandardListItem>
-                        <StandardListItem info="failed" infoState={ValueState.Error}>
-                            Activity 2
-                </StandardListItem>
-                        <StandardListItem
-                            info="in progress"
-                            infoState={ValueState.Warning}
-                            style={{ height: "80px" }}>
-                            <FlexBox direction={FlexBoxDirection.Column}>
-                                <Title level={TitleLevel.H5}>Activity 3</Title>
-                                <ProgressIndicator
-                                    displayValue="89%"
-                                    percentValue={89}
-                                    width="180px"
-                                    state={ValueState.Success} />
-                            </FlexBox>
-                        </StandardListItem>
-                        <StandardListItem
-                            info="in progress"
-                            infoState={ValueState.Warning}
-                            style={{ height: "80px" }} >
-                            <FlexBox direction={FlexBoxDirection.Column}>
-                                <Title level={TitleLevel.H5}>Activity 4</Title>
-                                <ProgressIndicator
-                                    displayValue="5%"
-                                    percentValue={5}
-                                    width="180px"
-                                    state={ValueState.Error} />
-                            </FlexBox>
-                        </StandardListItem>
-                    </List>
-                </Card>
-                <Card heading="AnalyticalTable" subtitle="List" style={{ width: "900px", ...spacing.sapUiContentPadding }}>      <AnalyticalTable
-                    data={tableData}
-                    columns={tableColumns}
-                    visibleRows={5} />
-                </Card>
-            </FlexBox>
-        );
+            heading="Stock Price"
+            headerInteractive
+            onHeaderClick={handleHeaderClick}
+            subtitle={`Click here to switch to ${switchToChart}`}
+            style={{ width: "300px", ...spacing.sapUiContentPadding }}
+          >
+            <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+            {toggleCharts === "lineChart" ? (
+              <LineChart datasets={datasets} labels={labels} loading={loading} />
+            ) : (
+              <BarChart datasets={datasets} labels={labels} loading={loading} />
+            )}
+          </Card>
+          <Card
+            heading="Progress"
+            subtitle="List"
+            style={{ width: "300px", ...spacing.sapUiContentPadding }}
+            avatar={<Icon name="list" />}
+          >
+            <List>
+              <StandardListItem info="finished" infoState={ValueState.Success}>
+                Activity 1
+              </StandardListItem>
+              <StandardListItem info="failed" infoState={ValueState.Error}>
+                Activity 2
+              </StandardListItem>
+              <StandardListItem
+                info="in progress"
+                infoState={ValueState.Warning}
+                style={{ height: "80px" }}
+              >
+                <FlexBox direction={FlexBoxDirection.Column}>
+                  <Title level={TitleLevel.H5}>Activity 3</Title>
+                  <ProgressIndicator
+                    displayValue="89%"
+                    percentValue={89}
+                    width="180px"
+                    state={ValueState.Success}
+                  />
+                </FlexBox>
+              </StandardListItem>
+              <StandardListItem
+                info="in progress"
+                infoState={ValueState.Warning}
+                style={{ height: "80px" }}
+              >
+                <FlexBox direction={FlexBoxDirection.Column}>
+                  <Title level={TitleLevel.H5}>Activity 4</Title>
+                  <ProgressIndicator
+                    displayValue="5%"
+                    percentValue={5}
+                    width="180px"
+                    state={ValueState.Error}
+                  />
+                </FlexBox>
+              </StandardListItem>
+            </List>
+          </Card>
+          <Card
+            heading="AnalyticalTable"
+            style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
+            avatar={<Icon name="table-view" />}
+          >
+            <AnalyticalTable
+              data={tableData}
+              columns={tableColumns}
+              visibleRows={5}
+            />
+          </Card>
+        </FlexBox>
+      );
     }
     ```
 
@@ -359,33 +393,34 @@ If needed, you can compare your files with the following solutions:
 ```JavaScript / JSX
 import React from "react";
 import { ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
-import "@ui5/webcomponents/dist/icons/add.js";
+import "@ui5/webcomponents-icons/dist/icons/add.js";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Home } from "./Home";
 import { Detail } from "./Detail";
 import { useHistory } from "react-router-dom";
 
 export function MyApp() {
-    const history = useHistory();
-    const handleLogoClick = () => {
-        history.push("./");
-    };
-    return (
-        <>
-            <ShellBar
-                logo={"reactLogo.png"}
-                onLogoClick={handleLogoClick}
-                profile={"profilePictureExample.png"}
-                primaryTitle={"My App"} >
-                <ShellBarItem src="sap-icon://add" text="Add" />
-            </ShellBar>
-            <Switch>
-                <Route path="/home" component={Home} />
-                <Route path="/detail" component={Detail} />
-                <Redirect from="/" to="/home" />
-            </Switch>
-        </>
-    );
+  const history = useHistory();
+  const handleLogoClick = () => {
+    history.push("./");
+  };
+  return (
+    <>
+      <ShellBar
+        logo={"reactLogo.png"}
+        onLogoClick={handleLogoClick}
+        profile={"profilePictureExample.png"}
+        primaryTitle={"My App"}
+      >
+        <ShellBarItem icon="add" text="Add" />
+      </ShellBar>
+      <Switch>
+        <Route path="/home" component={Home} />
+        <Route path="/detail" component={Detail} />
+        <Redirect from="/" to="/home" />
+      </Switch>
+    </>
+  );
 }
 ```
 
@@ -394,158 +429,188 @@ export function MyApp() {
 ```JavaScript / JSX
 import React, { useState } from "react";
 import {
-    Card,
-    Text,
-    List,
-    StandardListItem,
-    ValueState,
-    ProgressIndicator,
-    Title,
-    TitleLevel,
-    FlexBox,
-    FlexBoxJustifyContent,
-    FlexBoxWrap,
-    FlexBoxDirection,
-    AnalyticalTable
+  Card,
+  Text,
+  List,
+  StandardListItem,
+  ValueState,
+  ProgressIndicator,
+  Title,
+  TitleLevel,
+  FlexBox,
+  FlexBoxJustifyContent,
+  FlexBoxWrap,
+  FlexBoxDirection,
+  AnalyticalTable,
+  Icon
 } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
+import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
+import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
+import "@ui5/webcomponents-icons/dist/icons/list.js";
+import "@ui5/webcomponents-icons/dist/icons/table-view.js";
 import { useHistory } from "react-router-dom";
 
 export function Home() {
+  const [toggleCharts, setToggleCharts] = useState("lineChart");
+  const [loading, setLoading] = useState(false);
 
-    const [toggleCharts, setToggleCharts] = useState("lineChart");
-    const [loading, setLoading] = useState(false);
-    const handleHeaderClick = () => {
-        if (toggleCharts === "lineChart") {
-            setLoading(true);
-            setTimeout(() => {
-                setLoading(false);
-                setToggleCharts("barChart");
-            }, 2000);
-        } else {
-            setLoading(true);
-            setTimeout(() => {
-                setLoading(false);
-                setToggleCharts("lineChart");
-            }, 2000);
-        }
+  const handleHeaderClick = () => {
+    if (toggleCharts === "lineChart") {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setToggleCharts("barChart");
+      }, 2000);
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+        setToggleCharts("lineChart");
+      }, 2000);
+    }
+  };
+  const history = useHistory();
+  const handleProgressHeaderClick = () => {
+    history.push("/detail");
+  };
+  const datasets = [
+    {
+      label: "Stock Price",
+      data: [65, 59, 80, 81, 56, 55, 40]
+    }
+  ];
+  const labels = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July"
+  ];
+  const tableData = new Array(500).fill(null).map((_, index) => {
+    return {
+      name: `name${index}`,
+      age: Math.floor(Math.random() * 100),
+      friend: {
+        name: `friend.Name${index}`,
+        age: Math.floor(Math.random() * 100)
+      }
     };
-    const history = useHistory();
-    const handleProgressHeaderClick = () => {
-        history.push("/detail");
-    };
-    const contentTitle = toggleCharts === 'lineChart' ? 'Line Chart' : 'Bar Chart';
-    const switchToChart = toggleCharts === 'lineChart' ? 'Bar Chart' : 'Line Chart';
-    const datasets = [{
-        label: "Stock Price",
-        data: [65, 59, 80, 81, 56, 55, 40]
-    }];
-    const labels = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July"
-    ];
+  });
 
-    const tableData = new Array(500).fill(null).map((_, index) => {
-        return {
-            name: `name${index}`,
-            age: Math.floor(Math.random() * 100),
-            friend: {
-                name: `friend.Name${index}`,
-                age: Math.floor(Math.random() * 100)
+  const tableColumns = [
+    {
+      Header: "Name",
+      accessor: "name" // String-based value accessors!
+    },
+    {
+      Header: "Age",
+      accessor: "age"
+    },
+    {
+      Header: "Friend Name",
+      accessor: "friend.name"
+    },
+    {
+      Header: "Friend Age",
+      accessor: "friend.age"
+    }
+  ];
+  const contentTitle =
+    toggleCharts === "lineChart" ? "Line Chart" : "Bar Chart";
+  const switchToChart =
+    toggleCharts === "lineChart" ? "Bar Chart" : "Line Chart";
+  return (
+    <FlexBox
+      justifyContent={FlexBoxJustifyContent.Center}
+      wrap={FlexBoxWrap.Wrap}
+    >
+      <Card
+        avatar={
+          <Icon
+            name={
+              toggleCharts === "lineChart"
+                ? "line-chart"
+                : "horizontal-bar-chart"
             }
-        };
-    });
-
-    const tableColumns = [
-        {
-            Header: "Name",
-            accessor: "name" // String-based value accessors!
-        },
-        {
-            Header: "Age",
-            accessor: "age"
-        },
-        {
-            Header: "Friend Name",
-            accessor: "friend.name"
-        },
-        {
-            Header: "Friend Age",
-            accessor: "friend.age"
+          />
         }
-    ];
-    return (
-        <FlexBox
-            justifyContent={FlexBoxJustifyContent.Center}
-            wrap={FlexBoxWrap.Wrap} >
-            <Card
-                heading="Stock Price"
-                style={{ width: "300px" }}
-                headerInteractive
-                onHeaderClick={handleHeaderClick}
-                subtitle={`Click here to switch to ${switchToChart}`}
-                style={{ width: "300px", ...spacing.sapUiContentPadding }} >
-                <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-                {toggleCharts === "lineChart" ? (
-                    <LineChart datasets={datasets} labels={labels} loading={loading} />
-                ) : (
-                        <BarChart datasets={datasets} labels={labels} loading={loading} />
-                    )}
-            </Card>
-            <Card
-                heading="Progress"
-                subtitle="List"
-                style={{ width: "300px", ...spacing.sapUiContentPadding }}
-                headerInteractive
-                onHeaderClick={handleProgressHeaderClick} >
-                <List>
-                    <StandardListItem info="finished" infoState={ValueState.Success}>
-                        Activity 1
-            </StandardListItem>
-                    <StandardListItem info="failed" infoState={ValueState.Error}>
-                        Activity 2
-            </StandardListItem>
-                    <StandardListItem
-                        info="in progress"
-                        infoState={ValueState.Warning}
-                        style={{ height: "80px" }}>
-                        <FlexBox direction={FlexBoxDirection.Column}>
-                            <Title level={TitleLevel.H5}>Activity 3</Title>
-                            <ProgressIndicator
-                                displayValue="89%"
-                                percentValue={89}
-                                width="180px"
-                                state={ValueState.Success} />
-                        </FlexBox>
-                    </StandardListItem>
-                    <StandardListItem
-                        info="in progress"
-                        infoState={ValueState.Warning}
-                        style={{ height: "80px" }} >
-                        <FlexBox direction={FlexBoxDirection.Column}>
-                            <Title level={TitleLevel.H5}>Activity 4</Title>
-                            <ProgressIndicator
-                                displayValue="5%"
-                                percentValue={5}
-                                width="180px"
-                                state={ValueState.Error} />
-                        </FlexBox>
-                    </StandardListItem>
-                </List>
-            </Card>
-            <Card heading="AnalyticalTable" subtitle="List" style={{ width: "900px", ...spacing.sapUiContentPadding }}>      <AnalyticalTable
-                data={tableData}
-                columns={tableColumns}
-                visibleRows={5} />
-            </Card>
-        </FlexBox>
-    );
+        heading="Stock Price"
+        headerInteractive
+        onHeaderClick={handleHeaderClick}
+        subtitle={`Click here to switch to ${switchToChart}`}
+        style={{ width: "300px", ...spacing.sapUiContentPadding }}
+      >
+        <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+        {toggleCharts === "lineChart" ? (
+          <LineChart datasets={datasets} labels={labels} loading={loading} />
+        ) : (
+          <BarChart datasets={datasets} labels={labels} loading={loading} />
+        )}
+      </Card>
+      <Card
+        heading="Progress"
+        subtitle="List"
+        style={{ width: "300px", ...spacing.sapUiContentPadding }}
+        headerInteractive
+        onHeaderClick={handleProgressHeaderClick}
+        avatar={<Icon name="list" />}
+      >
+        <List>
+          <StandardListItem info="finished" infoState={ValueState.Success}>
+            Activity 1
+          </StandardListItem>
+          <StandardListItem info="failed" infoState={ValueState.Error}>
+            Activity 2
+          </StandardListItem>
+          <StandardListItem
+            info="in progress"
+            infoState={ValueState.Warning}
+            style={{ height: "80px" }}
+          >
+            <FlexBox direction={FlexBoxDirection.Column}>
+              <Title level={TitleLevel.H5}>Activity 3</Title>
+              <ProgressIndicator
+                displayValue="89%"
+                percentValue={89}
+                width="180px"
+                state={ValueState.Success}
+              />
+            </FlexBox>
+          </StandardListItem>
+          <StandardListItem
+            info="in progress"
+            infoState={ValueState.Warning}
+            style={{ height: "80px" }}
+          >
+            <FlexBox direction={FlexBoxDirection.Column}>
+              <Title level={TitleLevel.H5}>Activity 4</Title>
+              <ProgressIndicator
+                displayValue="5%"
+                percentValue={5}
+                width="180px"
+                state={ValueState.Error}
+              />
+            </FlexBox>
+          </StandardListItem>
+        </List>
+      </Card>
+      <Card
+        heading="AnalyticalTable"
+        style={{ maxWidth: "900px", ...spacing.sapUiContentPadding }}
+        avatar={<Icon name="table-view" />}
+      >
+        <AnalyticalTable
+          data={tableData}
+          columns={tableColumns}
+          visibleRows={5}
+        />
+      </Card>
+    </FlexBox>
+  );
 }
 ```
 

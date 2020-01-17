@@ -174,14 +174,56 @@ Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to impleme
     </Card>
     ```
 
-Done! Now you can toggle between charts by clicking on the header of the `Card`.
+    Done! Now you can toggle between charts by clicking on the header of the `Card`.
+
+4. You can further improve your `Card` component by using the `avatar` `prop` and adding an `Icon` to it.
+
+    Add the following import to your component:
+    ```JavaScript / JSX
+    import { Card, Text, Icon } from "@ui5/webcomponents-react";
+    ```
+
+    And the `avatar` prop, which receives an `Icon` as value, to the `Card` component:
+    ```JavaScript / JSX
+    <Card
+      avatar={<Icon name="line-chart" />}
+      ...
+    </Card>
+    ```
+
+    To reduce bundle size, `Icons` need to be imported manually. As we used a `line-chart` add this to your imports.
+
+    ```JavaScript / JSX
+    import '@ui5/webcomponents-icons/dist/icons/line-chart.js';
+    ```
+
+    The `Icons` should also be conditionally rendered. Luckily this is easy. First add the `bar-chart` import:
+    ```JavaScript / JSX
+    import '@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js';
+    ```
+
+    Then change the `name` prop of the `Icon` to the following:
+    ```JavaScript / JSX
+    <Card
+       avatar={ <Icon name={ toggleCharts === "lineChart" ? "line-chart" : "horizontal-bar-chart" } /> }
+       ...
+     >
+    ```
+
+    Now the `Card` also changes the `Icon` by clicking on the header.
+    
+    ![LineChart](02_bothCharts.png)
+
+
 
 If something went wrong you can compare your component to this code snippet:
 ```JavaScript / JSX
 import React, { useState } from "react";
-import { Card, Text } from "@ui5/webcomponents-react";
+import { Card, Text, Icon } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
+import '@ui5/webcomponents-icons/dist/icons/line-chart.js';
+import '@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js';
 
 export function MyApp() {
     const [toggleCharts, setToggleCharts] = useState("lineChart");
@@ -208,6 +250,7 @@ export function MyApp() {
     return (
         <div>
             <Card
+                avatar={<Icon name={toggleCharts === 'lineChart' ? "line-chart": "horizontal-bar-chart"} />}
                 heading="Card"
                 style={{ width: "300px" }}
                 headerInteractive
@@ -218,8 +261,8 @@ export function MyApp() {
                 {toggleCharts === "lineChart" ? (
                     <LineChart datasets={datasets} labels={labels} />
                 ) : (
-                     <BarChart datasets={datasets} labels={labels} />
-                 )}
+                    <BarChart datasets={datasets} labels={labels} />
+                )}
             </Card>
         </div>
     );
@@ -294,18 +337,19 @@ To make your `Card` look cleaner and to give the user the information that the h
 
     ```JavaScript / JSX
     <Card
-        heading="Stock Price"
-        style={{ width: "300px" }}
-        headerInteractive
-        onHeaderClick={handleHeaderClick}
-        subtitle={`Click here to switch to ${switchToChart}`} >
-        <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
-        {toggleCharts === "lineChart" ? (
-            <LineChart datasets={datasets} labels={labels} loading={loading} />
-        ) : (
-            <BarChart datasets={datasets} labels={labels} loading={loading} />
-        )}
-    </Card>
+         avatar={<Icon name={toggleCharts === 'lineChart' ? "line-chart": "horizontal-bar-chart"} />}
+         heading="Stock Price"
+         style={{ width: "300px" }}
+         headerInteractive
+         onHeaderClick={handleHeaderClick}
+         subtitle={`Click here to switch to ${switchToChart}`} >
+         <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
+         {toggleCharts === "lineChart" ? (
+             <LineChart datasets={datasets} labels={labels} loading={loading} />
+         ) : (
+             <BarChart datasets={datasets} labels={labels} loading={loading} />
+         )}
+     </Card>
     ```
 
 [DONE]
