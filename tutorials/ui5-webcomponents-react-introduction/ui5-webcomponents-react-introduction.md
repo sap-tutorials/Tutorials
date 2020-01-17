@@ -32,20 +32,11 @@ This first tutorial will start by creating a React application that is able to c
 Navigate to a folder where you want to create your Web App and open a terminal there. Then use the following command:
 
 ```Shell
-npx create-react-app my-app
+npx create-react-app my-app --template @ui5/cra-template-webcomponents-react
 cd my-app
 ```
 
- [Here](https://facebook.github.io/create-react-app/) you can find out more about `create-react-app`.
-
-[DONE]
-[ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Install the ui5-webcomponents-react npm module)]
-
-To add the UI5 Web Components for React components library open the terminal in your project folder and execute this command:
-```Shell
-npm install @ui5/webcomponents-react --save
-```
+ This command leverages [create-react-app](https://facebook.github.io/create-react-app/) to create a React Application with all necessary dependencies for UI5 Web Components for React.
 
 [DONE]
 [ACCORDION-END]
@@ -75,47 +66,24 @@ With this you created your first `React` component. To actually render the compo
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Embed your new component)]
 
-1. In `App.js` remove everything inside of the `<div>`. You can also delete the `className` property and the `import` of the logo and `"./App.css"` as they are not needed anymore for this tutorial.
+1. In `App.js` remove everything inside of the `<ThemeProvider>`. You can also delete the `className` property and the `import` of the logo and `"./App.css"` as they are not needed anymore for this tutorial.
 
 2. Import your created component.
 
     ```JavaScript  / JSX
     import { MyApp } from "./MyApp";
     ```
-5. Add the component to the `return` value of `App()`.
+3. Add the component to the `return` value of `App()`.
 
     ```JavaScript  / JSX
     function App() {
       return (
-        <div>
+        <ThemeProvider withToastContainer>
           <MyApp />
-        </div>
+        </ThemeProvider>
       );
     }
     ```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Let your app consume UI5 web components)]
-
-In `src/App.js`, import the `ThemeProvider`.
-
-```JavaScript  / JSX
-import { ThemeProvider } from "@ui5/webcomponents-react/lib/ThemeProvider";
-```
-
-Then wrap your application's root component inside of the `ThemeProvider`.
-
-```JavaScript  / JSX
-return (
-  <div>
-    <ThemeProvider withToastContainer>
-      <MyApp />
-    </ThemeProvider>
-  </div>
-);
-```
 
 Your `App.js` file should now look like this:
 
@@ -126,17 +94,14 @@ import { ThemeProvider } from "@ui5/webcomponents-react/lib/ThemeProvider";
 
 function App() {
   return (
-    <div>
-      <ThemeProvider withToastContainer>
-        <MyApp />
-      </ThemeProvider>
-    </div>
+    <ThemeProvider withToastContainer>
+      <MyApp />
+    </ThemeProvider>
   );
 }
 
 export default App;
 ```
-
 
 [DONE]
 [ACCORDION-END]
