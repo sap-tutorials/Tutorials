@@ -103,6 +103,8 @@ resources:
 
 [ACCORDION-END]
 
+[DONE]
+
 [ACCORDION-BEGIN [Step 2: ](Check or create roles in the target container)]
 
 The technical users created for the consuming `hdi-container` will need to be granted permissions in the target or consumed container. The permissions can be roles in the target container.
@@ -116,6 +118,7 @@ In the SHINE application, the available roles are `admin.hdbrole` and `core-db`.
 
 [ACCORDION-END]
 
+[DONE]
 
 [ACCORDION-BEGIN [Step 3: ](Create a grants file)]
 
@@ -146,6 +149,8 @@ Here is a sample file to grant permissions to both an administration and applica
 
 [ACCORDION-END]
 
+[DONE]
+
 [ACCORDION-BEGIN [Step 4: ](Create synonyms)]
 
 Create a file with extension `.hdbsynonym` in a folder called `synonyms` under `src`. You can use the **+**  sign to add synonyms from the target container:
@@ -162,6 +167,8 @@ Build the consuming database module.
 > You can move the configuration to a `.hdbsynonymconfig` file. This will allow you to reference the target schema dynamically, without indicating the name explicitly, among other options. Check the [documentation for your version on the Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/4adba34bd86544a880db8f9f1e32efb7.html).
 
 [ACCORDION-END]
+
+[DONE]
 
 [ACCORDION-BEGIN [Step 5: ](Use the synonyms in a view)]
 
@@ -199,3 +206,5 @@ Or the view you have created
 ![See database explorer](db2.png)
 
 [ACCORDION-END]
+
+[DONE]
