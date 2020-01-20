@@ -1,6 +1,6 @@
 ---
 title: Create and Deep Insert with the Virtual Data Model for OData
-description: This tutorial post introduces to you the create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK in more detail.
+description: Create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK in more detail.
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
@@ -8,43 +8,42 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites
- - [Introduce resilience to your application](https://developers.sap.com/tutorials/s4sdk-resilience.html)
- - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-odata-service-cloud-foundry.html)
- - [Develop an S/4HANA Extension Without a S/4HANA System](https://developers.sap.com/tutorials/cloudsdk-mocking-capabilities.html)
+ - [Introduce Resilience to Your Application](s4sdk-resilience)
+ - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
+ - [Develop an S/4HANA Extension Without an S/4HANA System](cloudsdk-mocking-capabilities)
 
 ## Details
 ### You will learn
-  - How to build up a complex data structure using the virtual data model.
-  - How to write deeply nested data to SAP S/4HANA in a single call.
+  - How to build up a complex data structure using the virtual data model
+  - How to write deeply nested data to SAP S/4HANA in a single call
   - How to write unit and integration tests for deep insertion
 
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Motivation)]
-Deep Insert is already part of the [OData specification, version2](https://www.odata.org/documentation/odata-version-2-0/operations/) without this explicit name. Although not supported yet, the [OData specification, version4](http://docs.oasis-open.org/odata/odata/v4.0/os/part1-protocol/odata-v4.0-os-part1-protocol.html#_Toc372793718) is much more explicit on the semantics. Citing from the spec, Deep Insert is defined as:
+Deep Insert is already part of the [OData specification, version2](https://www.odata.org/documentation/odata-version-2-0/operations/) without this explicit name. Although not supported yet, the [OData specification, version4](http://docs.oasis-open.org/odata/odata/v4.0/os/part1-protocol/odata-v4.0-os-part1-protocol.html#_Toc372793718) is much more explicit on the semantics.
+
+Citing from the spec, Deep Insert is defined as:
 
 - A request to create an entity that includes related entities, represented using the appropriate inline representation, is referred to as a deep insert.
 
-- On success, the service MUST create all entities and relate them.
+- On success, the service **MUST** create all entities and relate them.
 
-- On failure, the service MUST NOT create any of the entities.
+- On failure, the service **MUST NOT** create any of the entities.
 
-This means deep insert is an atomic operation that is either successful or fails for all entities. Furthermore, it is for insert-only operations, i.e., the OData spec does not foresee any 'deep update' operation yet (to be fair, it is part of the [4.01 working draft spec](https://issues.oasis-open.org/browse/ODATA-666), however, the tutorials haven't covered any provider implementations yet, in particular as S/4HANA APIs are based on OData V2).
-
-
-
+This means deep insert is an atomic operation that is either successful or fails for all entities. Furthermore, it is for insert-only operations, that is, the OData spec does not foresee any deep update operation yet. To be fair, it is part of the [4.01 working draft spec](https://issues.oasis-open.org/browse/ODATA-666), but the tutorials haven't covered any provider implementations yet, in particular as S/4HANA APIs are based on OData V2.
 
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 2: ](Writing the application code)]
+[ACCORDION-BEGIN [Step 2: ](Write the application code)]
 
 To get started, you first of all create a new class called `StoreBusinessPartnerCommand`. It will serve as a single place to build the commands we want to execute. If you did our previous tutorials the following code might look familiar.
 
 The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory.
-```java
+
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
@@ -94,9 +93,9 @@ Within the run() method, i.e., whenever the command is executed, it calls the `b
 
 !![DataModel-4](DataModel-4.png)
 
-For this purpose, you are creating a new simple servlet that exposes a POST method to our clients:
+For this purpose, you are creating a new simple servlet that exposes a POST method to our clients.
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import com.google.gson.Gson;
@@ -215,26 +214,30 @@ public class BusinessPartnerServlet extends HttpServlet {
 >
 > In case of an exception, you simply return the error message, ignoring any pretty printing or JSON formatting here for simplicity reasons.
 
-You can deploy the above created code to SAP Cloud Platform or to a local instance (please consider previous tutorials such as [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html)). To run it on a localhost, run the following:
-```BASH
+You can deploy the above created code to SAP Cloud Platform or to a local instance (please consider previous tutorials such as [Create a Sample Application on Cloud Foundry Using SAP Cloud SDK](https://developers.sap.com/tutorials/s4sdk-cloud-foundry-sample-application.html)).
+
+To run it on a localhost, run the following:
+
+```Bash
  mvn clean install
  mvn tomee:run -pl application
 ```
 
-Then you can use a tool like Postman or Curl to check whether the code works. As you can see in this example, the business partner has been successfully posted and contains a `BusinessPartner` ID and UUID which was enriched by S/4HANA:
+Then you can use a tool like Postman or Curl to check whether the code works. As you can see in this example, the business partner has been successfully posted and contains a `BusinessPartner` ID and UUID, which was enriched by S/4HANA.
 
 !![screenshot](screenshot.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Writing an unit test)]
+[ACCORDION-BEGIN [Step 3: ](Write a unit test)]
 As learned in [Develop an S/4HANA Extension Without a S/4HANA System](https://developers.sap.com/tutorials/cloudsdk-mocking-capabilities.html) you can utilize mocking to test the functionality without an S/4HANA system to achieve code coverage, fast running tests and better testable code.
 
-For this purpose, you are creating the following test class which checks the basic assumptions of our API as well as the failure case:
+For this purpose, you are creating the following test class, which checks the basic assumptions of our API as well as the failure case.
 
 The file needs to be put under your `<projectroot>/unit-tests/src/test/java/com/sap/cloud/sdk/tutorial` directory.
-```java
+
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import com.google.common.collect.Lists;
@@ -328,12 +331,12 @@ public class GetBusinessPartnerMockedTest {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Writing an integration test)]
-Just the unit test might not be sufficient when you want to test the real integration with S/4HANA. Therefore, you would also like to leverage an integration test as used in previous tutorials:
+[ACCORDION-BEGIN [Step 4: ](Write an integration test)]
+Just the unit test might not be sufficient when you want to test the real integration with S/4HANA. Therefore, you would also like to leverage an integration test as used in previous tutorials.
 
 The file needs to be put under your `<projectroot>/integration-tests/src/test/java/com/sap/cloud/sdk/tutorial` directory.
 
-```java
+```Java
 package com.sap.cloud.sdk.tutorial;
 
 import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
@@ -409,7 +412,7 @@ Both tests together give us a code coverage of 91%:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 In this tutorial you learned how to leverage the deep insert functionality of the S/4HANA Cloud SDK to easily insert deeply nested data to SAP S/4HANA in a single call. Besides the pure functionality, you also learned how to implement unit and integration tests for this functionality.
 
 [VALIDATE_1]
