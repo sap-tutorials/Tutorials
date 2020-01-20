@@ -76,9 +76,9 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
     >This process takes some minutes.
 
-    >The first command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in the previous tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).
+    >The first command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in the previous step.
 
-3. In the deploy log, find the application URL in the `routes` line at the very end:
+3. In the deploy log, find the application URL in the `routes` line at the end:
 
     ```Shell/Bash
     name:              my-bookshop-srv
@@ -112,7 +112,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
     >This process takes some minutes.
 
-    >The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in the previous tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).
+    >The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in step 2.
 
 3. In the deploy log, find the application URL in the `routes` line at the very end:
 
