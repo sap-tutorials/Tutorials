@@ -213,8 +213,9 @@ export function MyApp() {
     <Card
         heading="Progress"
         subtitle="List"
-        style={{ width: "300px" }} >
+        style={{ width: "300px" }}
         avatar={<Icon name="list" />}
+    >
     </Card>
     ```
 
