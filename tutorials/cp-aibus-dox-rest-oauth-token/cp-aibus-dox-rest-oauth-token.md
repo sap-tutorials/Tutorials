@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Document Information Extraction Using a REST C
 description: Use the Document Information Extraction Authentication API to retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
+tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment ]
 primary_tag: topic>machine-learning
 ---
 
