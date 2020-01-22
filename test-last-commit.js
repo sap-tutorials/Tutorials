@@ -1,6 +1,5 @@
 'use strict';
 
-const { sep } = require('path');
 const gitLog = require('gitlog');
 const testTool = require('./test-tool/src');
 
@@ -31,7 +30,7 @@ gitLog(options, function (error, commits) {
   const mdFiles = files.filter(f =>
     f.toLowerCase().endsWith('.md')
     && !f.includes('work-in-progress')
-    && f.includes(`${sep}tutorials${sep}`)
+    && f.includes('tutorials')
   );
 
   if (mdFiles.length > 0) {
