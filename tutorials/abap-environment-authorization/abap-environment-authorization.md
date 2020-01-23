@@ -340,7 +340,7 @@ Save and activate.
 
 [ACCORDION-BEGIN [Step 9: ](Create restriction type)]
 
-Open your business catalog **`Z_ROOM_BC_XXX`**, add **`Z_LOC_RT_XXX`** as a restriction type, select write as and click **Publish Locally**.
+Open your business catalog **`Z_ROOM_BC_XXX`**, add **`Z_LOC_RT_XXX`** as a restriction type, select write and click **Publish Locally**.
 
 ![Create restriction type](restriction.png)
 
