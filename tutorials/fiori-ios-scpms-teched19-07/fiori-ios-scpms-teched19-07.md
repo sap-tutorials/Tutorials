@@ -3,7 +3,7 @@ title: Implement Image classification Using a Trained Core ML Model and Vision F
 description: Import a trained Core ML model and use the Vision framework to prepare a certain image for the classification; you will then use the classification result to fetch products of a certain product category from the sample data service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 25
 ---
 

@@ -3,7 +3,7 @@ title: Create Xcode Project with SAP Cloud Platform SDK for iOS
 description: Enable SAP Cloud Platform Mobile Services, create a connection in the SAP Cloud Platform SDK for iOS Assistant, and generate a master-detail view app with the iOS Assistant.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 15
 ---
 
