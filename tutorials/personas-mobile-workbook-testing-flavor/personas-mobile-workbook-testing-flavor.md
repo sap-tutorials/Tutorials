@@ -9,7 +9,6 @@ primary_tag: products>sap-screen-personas
 
 ## Prerequisites
  - SAP Screen Personas SP06 or higher
- - Completion of the **Build a Simple SAP Screen Personas Dashboard**, **Personalize You SAP Screen Personas Flavor**, and **Optimize Your Flavor for Mobile Use** tutorials
 
 ## Details
 ### You will learn
@@ -25,7 +24,7 @@ At this time, the use of native device functionality (such as a camera to use th
 
 [Google Play Market](https://play.google.com/store/apps/details?id=com.sap.fiori.client&hl=enhttps://play.google.com/store/apps/details?id=com.sap.fiori.client&hl=en)
 
-[Apple App Store](https://play.google.com/store/apps/details?id=com.sap.fiori.client&hl=enhttps://play.google.com/store/apps/details?id=com.sap.fiori.client&hl=en)
+[Apple App Store](https://apps.apple.com/us/app/sap-fiori-client/id824997258)
 
 
 
