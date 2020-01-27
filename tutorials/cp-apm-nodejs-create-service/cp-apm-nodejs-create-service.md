@@ -385,7 +385,7 @@ Instead of using in-memory, we can also use persistent databases.
     sqlite3 db/my-bookshop.db -cmd .dump
     ```
 
-    >If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db\my-bookshop.db -cmd .dump`.
+    >If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`.
 
 5. To stop `SQLite` and go back to your project directory, press `CTRL+C`.
 
@@ -397,7 +397,7 @@ Instead of using in-memory, we can also use persistent databases.
 
     ```Shell/Bash
     [cds] - connect to datasource - sqlite:db/my-bookshop.db
-    [cds] - serving CatalogService at /catalog - with impl: srv\cat-service.js
+    [cds] - serving CatalogService at /catalog - with impl: srv/cat-service.js
     [cds] - launched in: 4356.854ms
     [cds] - server listening on (http://localhost:4004) ...
     ```
