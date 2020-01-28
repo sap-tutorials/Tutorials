@@ -12,7 +12,6 @@ author_profile: https://github.com/jitendrakansal
  - **Tutorial:** If you're new to SAP Cloud Platform, follow the tutorial [View the SAP Cloud Platform from 10,000 Meters](cp-explore-cloud-platform).
  - **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
 
-
 ## Details
 ### You will learn  
 - How to enable SAP Cloud Platform Mobile Services in your Cloud Foundry or Neo trial account
