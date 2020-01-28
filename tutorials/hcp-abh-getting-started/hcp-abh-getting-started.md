@@ -76,7 +76,7 @@ This will enable to Parameter fields to make them editable. You can test differe
 
 ![editable fields on User endpoint](12.png)
 
-The `GET /User` method will return a list of users from Success Factors. The top parameter tells the query to retrieve only the top _n_ results once all the other filtering is done. We don't want to see all a users data, only selected data points. In the `$select` parameter, using the _control_ key for Windows or _command_ key for MacOS, select `firstName`, `lastName`, and `jobTitle`. This will limit the data set returned to this 3 fields for the matching results and therefore reduce the size of the resulting data set. Also set an [OData Filtering Expression](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374625) to show only employees named `Sami`: **`firstName eq 'Sami'`**.
+The `GET /User` method will return a list of users from Success Factors. The top parameter tells the query to retrieve only the top _n_ results once all the other filtering is done. We don't want to see all a users data, only selected data points. In the `$select` parameter, using the _control_ key for Windows or _command_ key for MacOS, select `firstName`, `lastName`, and `jobTitle`. This will limit the data set returned to this 3 fields for the matching results and therefore reduce the size of the resulting data set. Also set an [OData Filtering Expression](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374625) to show only users named `Sami`: **`firstName eq 'Sami'`**.
 
 ![Query parameters populated in the API Hub](13.jpg)
 
