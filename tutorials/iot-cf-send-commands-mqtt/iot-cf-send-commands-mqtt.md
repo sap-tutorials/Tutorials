@@ -1,4 +1,5 @@
 ---
+author_name: Supriya Cherukunnathu
 title: Send Commands with MQTT
 description: Send commands to the SAP Cloud Platform Internet of Things Service Cloud using MQTT.
 auto_validation: true
@@ -6,7 +7,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud, tutorial>license ]
 ---
 
-<!-- loio957975dfd7ad42cfbda0402c5f0e936b -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
