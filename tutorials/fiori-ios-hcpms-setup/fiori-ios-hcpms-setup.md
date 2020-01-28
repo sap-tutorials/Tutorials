@@ -9,7 +9,8 @@ author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
- - **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](hcp-create-trial-account).
+ - **Tutorial:** If you're new to SAP Cloud Platform, follow the tutorial [View the SAP Cloud Platform from 10,000 Meters](cp-explore-cloud-platform).
+ - **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
 
 ## Details
 ### You will learn  
