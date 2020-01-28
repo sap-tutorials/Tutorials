@@ -1,4 +1,5 @@
 ---
+author_name: Supriya Cherukunnathu
 title: Send Data with MQTT
 description: Send data to the SAP Cloud Platform Internet of Things Service Cloud using MQTT. As a sample client for MQTT the Paho client is used.
 auto_validation: true
@@ -6,7 +7,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud, tutorial>license ]
 ---
 
-<!-- loiofa221f5ebf8d46cca04a4a875787aacb -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
