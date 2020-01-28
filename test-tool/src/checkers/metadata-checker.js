@@ -1,6 +1,7 @@
 'use strict';
 
 const regexp = require('../constants/regexp');
+const linkChecker = require('./link-checker');
 
 const { content: { metadata } } = regexp;
 
@@ -37,5 +38,13 @@ module.exports = {
 
       return result;
     }, []);
+  },
+
+  async checkAuthorProfile(url) {
+    const result = await linkChecker.checkLink(url);
+
+    if (result.err) {
+      return result;
+    }
   },
 };
