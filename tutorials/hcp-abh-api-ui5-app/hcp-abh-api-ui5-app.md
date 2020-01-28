@@ -9,6 +9,9 @@ time: 20
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
+## Prerequisites  
+- **Tutorials:**  [Open the SAP Web IDE](sapui5-webide-open-webide)
+
 ## Details
 ### You will learn  
 In this tutorial, you will build a basic UI5 application that uses data from the SAP Success Factors API, that you test in the SAP Business Hub, to populate a list. Each User will have a list item that displays relevant information about that person.
