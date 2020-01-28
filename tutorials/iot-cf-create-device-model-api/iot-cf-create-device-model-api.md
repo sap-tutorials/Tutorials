@@ -1,4 +1,5 @@
 ---
+author_name: Supriya Cherukunnathu
 title: Create a Device Model Using the API
 description: Create a device model for the SAP Cloud Platform Internet of Things Service using the Device Management API.
 auto_validation: true
@@ -6,7 +7,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud, tutorial>license ]
 ---
 
-<!-- loioc4da75750e5b42488cb5874d3fc623da -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -313,10 +313,10 @@ In the following, a sensor entity is created. The sensor will be assigned to the
     ```JSON
     {
       "id": "91",
-      "deviceId": "5",
-      "sensorTypeId": "052bbcf8-a48d-4822-ad5e-fa1765783dfb",
+      "alternateId": "716647de52209f61",
       "name": "MySensor",
-      "alternateId": "716647de52209f61"
+      "deviceId": "5",
+      "sensorTypeId": "052bbcf8-a48d-4822-ad5e-fa1765783dfb"
     }
     ```
 
@@ -334,9 +334,9 @@ In the following, it is described how the payload looks like for sending data to
 
     ```JSON
     {
-    "capabilityAlternateId": "{capabilityAlternateId}",
-    "sensorAlternateId":"{sensorAlternateId}",
-    "measures":[ ["{MEASURE}"] ]
+      "capabilityAlternateId": "{capabilityAlternateId}",
+      "sensorAlternateId":"{sensorAlternateId}",
+      "measures":[ ["{MEASURE}"] ]
     }
     ```
 
@@ -348,9 +348,9 @@ In the following, it is described how the payload looks like for sending data to
 
     ```JSON
     {
-    "capabilityAlternateId": "ba19f8b6584cf3bd",
-    "sensorAlternateId": "716647de52209f61",
-    "measures": [{ "temperature":22.4, "humidity":90 }]
+      "capabilityAlternateId": "ba19f8b6584cf3bd",
+      "sensorAlternateId": "716647de52209f61",
+      "measures": [{ "temperature":22.4, "humidity":90 }]
     }
     ```
 
@@ -368,10 +368,10 @@ In the following, it is described how the payload looks like for sending data to
 
     ```JSON
     {
-    "sensorAlternateId":"{sensorAlternateId}",
-    "capabilityAlternateId": "{capabilityAlternateId}",
-    "sensorTypeAlternateId":"{sensorTypeAlternateId}",
-    "measures":[ ["{MEASURE}"] ]
+      "sensorAlternateId":"{sensorAlternateId}",
+      "capabilityAlternateId": "{capabilityAlternateId}",
+      "sensorTypeAlternateId":"{sensorTypeAlternateId}",
+      "measures":[ ["{MEASURE}"] ]
     }
     ```
 
@@ -385,10 +385,10 @@ In the following, it is described how the payload looks like for sending data to
 
     ```JSON
     {
-    "sensorAlternateId":"sensor1",
-    "capabilityAlternateId": "ba19f8b6584cf3bd",
-    "sensorTypeAlternateId": "1",
-    "measures": [{ "temperature":22.4, "humidity":90 }]
+      "sensorAlternateId":"sensor1",
+      "capabilityAlternateId": "ba19f8b6584cf3bd",
+      "sensorTypeAlternateId": "1",
+      "measures": [{ "temperature":22.4, "humidity":90 }]
     }
     ```
 
