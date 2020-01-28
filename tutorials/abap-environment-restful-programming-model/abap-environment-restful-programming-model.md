@@ -3,14 +3,11 @@ auto_validation: true
 title: Get to Know the ABAP RESTful Programming Model
 description: Learn how the ABAP RESTful Programming Model and the development flow are structured.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
 time: 5
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
-
-## Prerequisites  
- - no prerequisites needed
 
 ## Details
 ### You will learn  
@@ -22,6 +19,8 @@ In the course of the following tutorials you will be able to build a travel book
 
 Start to have a closer look to the ABAP RESTful Programming Model and the relationships.
 
+After this tutorial, you'll understand the theory behind the ABAP RESTful Programming Model and apply it to the flight model example in the upcoming tutorials.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get to know the ABAP RESTful Programming Model overview)]
@@ -29,7 +28,7 @@ The ABAP RESTful Programming Model consists of three main layers:
 
  - Data Modeling & Behavior
  - Business Services Provisioning
- - Service Consumption
+ - Service Consumption  
 
 The **data modeling and behavior layer** contains domain-specific business objects, that are defined with Core Data Services (CDS) and transactional behavior.
 

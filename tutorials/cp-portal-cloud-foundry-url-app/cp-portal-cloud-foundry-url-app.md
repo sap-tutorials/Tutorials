@@ -1,8 +1,8 @@
 ---
-title: Integrate a URL App into Your Portal Site (Cloud Foundry)
+title: Integrate a URL App into Your Portal Site
 description: Create a URL app and add it to the launchpad page on your Portal site on Cloud Foundry.
 auto_validation: true
-time: 5
+time: 15
 tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
 primary_tag: products>sap-cloud-platform-portal
 ---
@@ -78,7 +78,7 @@ The App editor opens on the **PROPERTIES** tab.
 
     * **Information**:  `Learn about SAP.iO`
 
-    * **Icon**: Click the browse icon, type `Search` and click **OK**.
+    * **Icon**: Click the browse icon, type `Visits` and click **OK**.
 
       You see a preview of the tile with all the properties you entered.
 
@@ -108,7 +108,7 @@ In the Content Manager, you see your app in the list:
 
 You have now created a URL app.
 
-For end users to view the app in runtime, you must assign a role to the app. Any end user who needs to view this app, should be a member of the role that you have assigned to the app. In this tutorial, we use the `Everyone` role.
+For end users to view the app in runtime, you must assign a role to the app. Any end user who needs to view this app, should be a member of the role that you have assigned to the app. In this tutorial, we use the `Everyone` role.  You also need to assign the app to a group so that it's visible in the Launchpad page.
 
 This is described in the following steps.
 
@@ -125,7 +125,7 @@ In this step, you will create a group and assign it to your app.
 
     ![Add a new group](7-add-group.png)
 
-2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type `In` to search for your app. You should see **Innovation at SAP**.
+2. Enter the **Title** `SAP` and in the **Assignments** panel on the upper right of the screen, type in the first two letters of your app (in this case it will be `In`), to search for your app. You should see **Innovation at SAP**.
 
 3. In the **Results** list, click + to assign this group to your app.
 

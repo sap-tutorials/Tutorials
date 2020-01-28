@@ -1,5 +1,5 @@
 ---
-title: Create a Portal Site (Cloud Foundry)
+title: Create a Portal Site
 description: Create a Portal site with a launchpad and other pages that will contain apps and web content.
 auto_validation: true
 time: 10
@@ -86,7 +86,7 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
     ![Add a menu item](11_add_menu_item.png)
 
-3. Set the following values:
+3. Enter the following values:
 
 
     |  Field Name     | Value
@@ -97,9 +97,9 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
     Click **Add**.  
 
-    This takes you back to the **Menu Editor**. You will see that the page you called `Home` has been added to the site's menu structure.
-
     ![Menu item details](11a_edit_menu.png)
+
+    This takes you back to the **Menu Editor**. You'll see that the page you called `Home` has been added to the site's menu structure.
 
 5. Now add the `Launchpad` page to the site menu.
 

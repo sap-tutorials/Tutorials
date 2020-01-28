@@ -66,7 +66,7 @@ An MTA project is a wrapper for all modules (microservices) which are part of a 
 
 Build (aka package) the project to a `mtar` archive to be able to deploy it to Cloud Foundry.  
 
-1. Right-click on the project and select **Build** and **Build** to trigger this process.
+1. Right-click on the project and select **Build** and **Build with Cloud MTA Build Tool (recommended)** to trigger this process.
 
     ![build](./build.png)
 

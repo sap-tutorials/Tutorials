@@ -1,6 +1,6 @@
 ---
-title: Build your MDK Client
-description: Build and run the MDK client to connect to your SAP Cloud Platform mobile application.
+title: Build Your MDK Client
+description: Build and run the Mobile Development Kit client to connect to your SAP Cloud Platform mobile application.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Download the latest version of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://www.sap.com/developer/trials-downloads/additional-downloads/mobile-development-kit-client-14516.html) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
+- **Download the latest version of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
 
 ## Details
 ### You will learn
@@ -23,6 +23,8 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Run MDK Dependencies Installer)]
 
+>Make sure you are choosing the right development platform tab above.
+
 Make sure that you have download latest version of MDK SDK as described in Prerequisites.
 
 [OPTION BEGIN [Mac]]
@@ -31,7 +33,7 @@ Extract the downloaded zip file on your Mac OS.
 
 ![MDK](img_001.png)
 
->You will find also other files in the extracted folder. `README` file contains information about version requirements, dependencies matrix and some help guide.
+>You will also find other files in the extracted folder. The README file contains information about the version requirements, dependencies and some getting started links.
 
 MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click `MDK Dependencies Installer.app` file, click **Open**.
 
@@ -42,6 +44,8 @@ MDK Dependencies Installer checks the status of the MDK dependencies and will in
 Enter Admin user password and click **OK**.
 
 ![MDK](img_003.png)
+
+>You may need to grant admin access via Privileges app.
 
 The installer will list all required components for iOS and Android platform and automatically check if they are already installed in the machine. Follow the installer UI to install the components you selected.
 
@@ -55,7 +59,7 @@ Extract the downloaded zip file on your Windows OS.
 
 ![MDK](img_001.1.PNG)
 
->You will find also other files in the extracted folder. `README` file contains information about version requirements, dependencies matrix and some help guide.
+>You will also find other files in the extracted folder. The README file contains information about the version requirements, dependencies and some getting started links.
 
 Extract `MDKDependenciesInstallerWindows.zip` file.
 
@@ -82,9 +86,11 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [ACCORDION-BEGIN [Step 2: ](Installing the SDK dependencies)]
 
+>Make sure you are choosing the right development platform tab above.
+
 [OPTION BEGIN [Mac]]
 
-To use the SDK to generate a mobile development kit client, the first step is to install some dependencies. Unzip `MDKClient_SDK.zip` if it is not already extracted.
+To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
 
 ![MDK](img_005.png)
 
@@ -100,7 +106,7 @@ Once this completes, close the window. Notice that the `create-client.command` f
 
 [OPTION BEGIN [Windows]]
 
-To use the SDK to generate a mobile development kit client, the first step is to install some dependencies. Unzip `MDKClient_SDK.zip` if it is not already extracted.
+To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
 
 ![MDK](img_004.PNG)
 
@@ -123,16 +129,19 @@ Once this completes, close the window. Notice that the `create-client.cmd` file 
 
 [ACCORDION-BEGIN [Step 3: ](Create your .mdkproject folder)]
 
+>Make sure you are choosing the right development platform tab above.
+
 [OPTION BEGIN [Mac]]
 
-In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and rename it what ever you want.
+In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and you can rename template to whatever you want but the directory name needs to end in `.mdkproject`.
 
 ![MDK](img_007.1.png)
 
-Idea of retaining `.mdkproject` folder is have a backup in case `create-client` script fails.
+The idea of retaining the `.mdkproject` folder is so you can use it again in the future to build additional MDK clients using the same settings using a different version of the MDK SDK.
 
 >For this tutorial, I have named my `.mdkproject` folder `demosampleapp.mdkproject` and put it outside of the MDK Client folder structure. I will refer this name for the rest of this tutorial.
-![MDK](img_009.png)
+
+>![MDK](img_009.png)
 
 Next, you will need to update the `BrandedSettings.json` and `MDKProject.json` files as needed for your client. Go into the `demosampleapp.mdkproject` folder.
 
@@ -142,11 +151,11 @@ Next, you will need to update the `BrandedSettings.json` and `MDKProject.json` f
 
 [OPTION BEGIN [Windows]]
 
-In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and rename it what ever you want.
+In the `MDKClient_SDK` folder, you will find the `template.mdkproject` folder. It is recommended that you copy this folder to another location to use it for future builds and paste it anywhere want and you can rename template to whatever you want but the directory name needs to end in `.mdkproject`.
 
 ![MDK](img_007.1.1.PNG)
 
-Idea of retaining `.mdkproject` folder is have a backup in case `create-client` script fails.
+The idea of retaining the `.mdkproject` folder is so you can use it again in the future to build additional MDK clients using the same settings using a different version of the MDK SDK.
 
 >For this tutorial, I have named my `.mdkproject` folder `demosampleapp.mdkproject` and put it outside of the MDK Client folder structure. I will refer this name for the rest of this tutorial.
 
@@ -162,8 +171,11 @@ Open the `MDKProject.json` file and update it as needed. This file has some buil
 
 ![MDK](img_011.png)
 
->For iOS `MDKProject.json's BundleID` should be the same **Identifier** `(AppID)` that is registered in Apple Developer account.
-Without matching them, trying to run the custom client in iOS device will result in failure.
+>`AppName`: Provide a name for example: "Demo Sample App". This is the name of the application on the home screen of the device.
+
+>`BundleID`: It should be unique for iOS and same as **Identifier** `(AppID)` that is registered in Apple Developer account since that determines if the application can be installed alongside other applications. If the `XCode` project is setup to use _Automatically manage signing_ then when building, `XCode` will automatically generate a signing profile for the specified bundle id. Without matching them, trying to run the custom client in iOS device will result in failure.
+
+>`URL Scheme`: It also needs to be unique for iOS if the user is going to use QR onboarding.
 
 >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 
@@ -171,24 +183,30 @@ Now open the `BrandedSettings.json` file and update it with information from you
 
 ![MDK](img_012.png)
 
-To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#00512449-638b-4de6-aa68-87609545f186) and find your MDK application that you want to link to this client.  Click on **Security** from the MDK app main page, then click on the OAuth client link.
+To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#08a4320f-424c-4f94-8de0-d9a7be8378d5) and find your MDK application that you want to link to this client.
+
+Click on `com.sap.mdk.demo` > **Security** tab.
+
+Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
 ![MDK](img_013.png)
 
-`AppId`: App ID from App info page.
+`AppId`: App ID from `Info` tab.
 
 ![MDK](img_014.png)
 
-`SapCloudPlatformEndpoint`: Server URL from App API page.
+`SapCloudPlatformEndpoint`: Server URL from `APIs` tab.
 
 ![MDK](img_015.png)
 
->For android client, screen sharing or taking screen shots are disabled by default. To enable it, `add "EnableScreenSharing": true` in `ConnectionSettings` section.
+>For Android (7 and below), screen sharing or taking screen shots are disabled by default. To enable it, `add "EnableScreenSharing": true` in `ConnectionSettings` section.
+
+>Screen sharing is already enabled in Android 8 and above.
 
 Regarding other properties:
 **Debug settings**: The settings in the `DebugSettings` property are for development use and should not be enabled in a production setting.
 
-**Log Settings**: Use the property if you would like the logger to be started as soon as the client is launched.
+**Log Settings**: Set this to the log level to be used when the client is launched.
 
 **Demo**: If you want to access the app in the demo mode, you can configure required settings.
 
@@ -211,11 +229,15 @@ In the last section of `BrandedSettings.json` file, make these changes:
 
 [ACCORDION-BEGIN [Step 4: ](Create the MDK Client)]
 
+>Make sure you are choosing the right development platform tab above.
+
 [OPTION BEGIN [Mac]]
 
 You can create a client by running `./create-client.command` and providing the path to a valid `.mdkproject` directory.
 
 ![MDK](img_017.png)
+
+>You can run the `create-client cmd` from any directory.  The resulting MDK client will be created in the directory where the `create-client cmd` is run from.
 
 You will be asked whether you would like to build for iOS or Android or All?
 
@@ -262,6 +284,58 @@ Once the `create-client.cmd` script executed successfully, you will see **Applic
 
 [ACCORDION-BEGIN [Step 5: ](Run the MDK Client)]
 
+>Make sure you are choosing the right device platform tab above.
+
+[OPTION BEGIN [Android]]
+
+In this step, you will run the app on an android device. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
+
+![MDK](img_020.3.png)
+
+>Make sure **Developer option** and **USB debugging** option is enabled in android device.
+
+Copy the **Device Identifier** value for your device.
+
+In terminal or command line window, navigate to the app name folder **Demo Sample App** (in `MDClient_SDK` path) and use `tns run android --device <device identifier>` command to run the MDK client on android device.
+
+![MDK](img_020.4.png)
+
+>To run the MDK client on Android emulator, you need to first create the client for emulator and then use `tns run android --emulator` command. Before trying to launch the client on Android emulator, make sure that you have already configured a virtual device (Android Studio>AVD Manager). Otherwise, you may get error like No emulator image available for device identifier.
+
+Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
+
+![MDK](img_029.jpg)
+
+Here, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
+
+Tap **START** to connect MDK client to SAP Cloud Platform.
+
+Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+
+![MDK](img_030.1.1.png)
+
+Tap **AGREE** on `End User License Agreement`.
+
+![MDK](img_031.jpg)
+
+Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+
+![MDK](img_032.jpg)
+
+Confirm the passcode and tap **DONE**.
+
+![MDK](img_033.jpg)
+
+Since there is no app metadata deployed yet to Mobile Services, hence you will see an empty screen.
+
+![MDK](img_035.jpg)
+
+>You can always interrupt running process in terminal window by pressing `control + C`.
+
+>To build an **`APK` for an Android device**, use `tns build android --release`. More information about archiving can be found in `NativeScript` documentation [here](https://docs.nativescript.org/tooling/docs-cli/project/testing/build-android).
+
+[OPTION END]
+
 [OPTION BEGIN [iOS]]
 
 In this step, you will run the app on an iOS device. Attach the device to your Mac and run `tns device ios` command to print a list of attached devices.
@@ -284,27 +358,23 @@ Once, above command gets successfully executed, you will see new MDK client up a
 
 Here, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
 
-Click **Start** to connect MDK client to SAP Cloud Platform.
+Tap **Start** to connect MDK client to SAP Cloud Platform.
 
-Enter your SAP Cloud Platform credentials and click **Log On** to authenticate.
+Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-![MDK](img_023.png)
+![MDK](img_023.1.1.png)
 
-**Agree** on `End User License Agreement`.
+Tap **Agree** on `End User License Agreement`.
 
 ![MDK](img_024.png)
 
-Choose a passcode with at least 8 characters for unlocking the app and click **Next**.
+Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
 ![MDK](img_025.png)
 
-Confirm the passcode and click **Done**.
+Confirm the passcode and tap **Done**.
 
 ![MDK](img_026.png)
-
-Optionally, you can enable Touch ID to get faster access to the app data, click **Enable**.
-
-![MDK](img_026.1.png)
 
 Since there is no app metadata deployed yet to Mobile Services, hence you will see an empty screen.
 
@@ -313,60 +383,6 @@ Since there is no app metadata deployed yet to Mobile Services, hence you will s
 >You can always interrupt running process in terminal window by pressing `control + C`.
 
 >To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
-
-[OPTION END]
-
-[OPTION BEGIN [Android]]
-
-In this step, you will run the app on an android device. Attach the device to your Mac or Windows machine and run `tns device android` command to print a list of attached devices.
-
-![MDK](img_020.3.png)
-
->Make sure **Developer option** and **USB debugging** option is enabled in android device.
-
-Copy the **Device Identifier** value for your device.
-
-In terminal or command line window, navigate to the app name folder **Demo Sample App** (in `MDClient_SDK` path) and use `tns run android --device <device identifier>` command to run the MDK client on android device.
-
-![MDK](img_020.4.png)
-
->To run the MDK client on iOS simulator, use `tns run android --emulator` command. Make sure that you have created a virtual device in Android Studio prior to running this command.
-
-Once, above command gets successfully executed, you will see new MDK client up and running in Android device.
-
-![MDK](img_029.jpg)
-
-Here, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
-
-Click **START** to connect MDK client to SAP Cloud Platform.
-
-Enter your SAP Cloud Platform credentials and click **Log On** to authenticate.
-
-![MDK](img_030.jpg)
-
-**AGREE** on `End User License Agreement`.
-
-![MDK](img_031.jpg)
-
-Choose a passcode with at least 8 characters for unlocking the app and click **NEXT**.
-
-![MDK](img_032.jpg)
-
-Confirm the passcode and click **DONE**.
-
-![MDK](img_033.jpg)
-
-Optionally, you can enable fingerprint to get faster access to the app data.
-
-![MDK](img_034.jpg)
-
-Since there is no app metadata deployed yet to Mobile Services, hence you will see an empty screen.
-
-![MDK](img_035.jpg)
-
->You can always interrupt running process in terminal window by pressing `control + C`.
-
->To build an **`APK` for an Android device**, use `tns build android --release`. More information about archiving can be found in `NativeScript` documentation [here](https://docs.nativescript.org/tooling/docs-cli/project/testing/build-android).
 
 [OPTION END]
 

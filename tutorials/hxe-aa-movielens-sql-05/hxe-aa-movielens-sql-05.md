@@ -3,7 +3,7 @@ title: MovieLens with SAP HANA PAL Apriori (MovieLens SQL)
 description: Understand the capabilities and options made available with the SAP HANA SAP HANA Predictive Analytics Library (PAL), find the algorithm to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning  ]
 time: 30
 ---
 
@@ -594,6 +594,7 @@ As you can see, the movies with no recommendations have up to 92 ratings, and th
 [ACCORDION-END]
 
 > ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-05/hxe-aa-movielens-sql-05.ipynb) to run most of the SQL statement listed in the tutorial.
-You can follow the [Use Jupyter Notebook with SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-jupyter.html)) tutorial for more details.
+
+>You can follow the [Use Jupyter Notebook with SAP HANA, express edition](mlb-hxe-tools-jupyter) tutorial for more details.
 
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.

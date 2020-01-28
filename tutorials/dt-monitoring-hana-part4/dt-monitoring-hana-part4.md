@@ -1,6 +1,7 @@
 ---
 title: Additional checks in SAP HANA Cockpit and SAP HANA Studio
 description: Performing additional checks for SAP HANA
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -45,6 +46,7 @@ In the search bar on the left side, search for the Dynamic Tiering "`Dbspace usa
 
 As a test case, you can click on "**Run Check Now**" beside the "**Edit**" button to ensure the alert is working.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -67,5 +69,6 @@ To identify what extended tables/Dynamic Tiering tables have been created in you
 SELECT * FROM "SYS"."M_ES_TABLES"
 ```
 
+[DONE]
 
 [ACCORDION-END]

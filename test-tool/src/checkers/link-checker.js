@@ -17,7 +17,7 @@ const checkLinks = async (links, onCheck) => {
     }));
   }
   const processedResults = await Promise.all(processingLinks);
-  const results = processedResults.filter(({ err, code }) => err || !linkUtils.is2xx(code)).map(({ link, code, err }) => {
+  const results = processedResults.filter(({ err, code }) => err || linkUtils.isErrorStatusCode(code)).map(({ link, code, err }) => {
     const isTrusted = !!domains.find(domain => link.includes(domain));
     return {
       link,
@@ -104,7 +104,7 @@ const checkImageLink = async (link) => {
     return result;
   }
 
-  if (result.response && linkUtils.is2xx(result.response.status)) {
+  if (result.response && !linkUtils.isErrorStatusCode(result.response.status)) {
     const { response } = result;
     const contentType = (response.headers.get('Content-Type') || '');
 

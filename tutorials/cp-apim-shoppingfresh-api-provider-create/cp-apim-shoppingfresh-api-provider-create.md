@@ -8,7 +8,7 @@ primary_tag: products>sap-api-management
 ---
 
 ## Prerequisites
-**Tutorial** [Create an Account on the Gateway Demo System](https://developers.sap.com/india/tutorials/gateway-demo-signup.html)
+  - **Tutorial** [Create an Account on the Gateway Demo System](gateway-demo-signup)
 
 ## Details
 ### You will learn

@@ -20,19 +20,19 @@ In the following steps, you will deploy the Azure service broker application to 
 
 [ACCORDION-BEGIN [Step 1: ](Set the right API endpoint)]
 
-To log onto the right SAP Cloud Platform Cloud Foundry endpoint, the right API endpoint URL is needed. Therefore, log into the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/).
+To log onto the right SAP Cloud Platform Cloud Foundry endpoint, the right API endpoint URL is needed. Therefore, log into the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/) with your SAP Cloud Platform user.
 
-Click on the Cloud Foundry tile.
+Click on **Enter Your Trial Account**.
 
-![Cloud Foundry tile](cloud-foundry-trial.png)
+![choose enter your trial account](trial-access.png)
 
 Navigate to the subaccount by clicking on the according tile.
 
-![Cloud Foundry subaccount](cloud-foundry-subaccount.png)
+![Cloud Foundry subaccount](select-subaccount.png)
 
 Copy the URL of the API endpoint to your clipboard.
 
-![Cloud Foundry enpoint](cloud-foundry-endpoint.png)
+![Cloud Foundry enpoint](api-endpoint.png)
 
 Go back to your Azure Cloud Shell and execute the following command.
 
@@ -42,7 +42,7 @@ Go back to your Azure Cloud Shell and execute the following command.
  cf api <api-endpoint-url>
 ```
 
-![CF CLI endpoint](cf-api-command.png)
+![CF CLI endpoint](cf-api-endpoint.png)
 
 [DONE]
 [ACCORDION-END]
@@ -111,7 +111,7 @@ code open-service-broker-azure/contrib/cf/manifest.yml
 As you can see, there are a couple of placeholders. Replace the `<YOUR SUBSCRIPTION ID>` with your actual subscription ID. You can retrieve it via the following command in your **Azure Cloud Shell**:
 
 ```Bash
-az account show --query id
+az account show --query id --output tsv
 ```
 ![insert azure subscription ID](azure-subscription-id.png)
 
@@ -145,19 +145,7 @@ az redis list-keys -n <name-redis-cache> -g SAPTechEd --query [primaryKey] --out
 
 [ACCORDION-BEGIN [Step 6: ](Update manifest.yml − service principal information)]
 
-[OPTION BEGIN [SAP TechEd Account]]
-
-If you are attending SAP TechEd on site and are using the provided Azure credentials, **please ask the SAP Staff** on the booth for the service principal details to replace it in the `manifest.yml`.
-
-Replace the remaining placeholders `<YOUR TENANT ID>`, `<APPID FROM SERVICE PRINCIPAL>` and `<PASSWORD FROM SERVICE PRINCIPAL>` in the `manifest.yml` with the service principal information you have received from the SAP staff.
-
-[OPTION END]
-
-[OPTION BEGIN [Own Account]]
-
 Replace the remaining placeholders `<YOUR TENANT ID>`, `<APPID FROM SERVICE PRINCIPAL>` and `<PASSWORD FROM SERVICE PRINCIPAL>` in the `manifest.yml` with the service principal information you have created in the previous tutorial. (You should have taken a screenshot or copied it into a text document.)
-
-[OPTION END]
 
 |  Placeholder       | Attribute Name of Service Principal
 |  :-------------    | :-------------

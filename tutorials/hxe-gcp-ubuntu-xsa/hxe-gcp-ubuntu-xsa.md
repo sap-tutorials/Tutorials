@@ -82,26 +82,17 @@ Choose the download manager file you have just downloaded and wait for the trans
 
 ![Upload file](transfer.png)
 
-You will also need to install the Java Runtime Environment. Go to the Downloads for the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="new"> Java Runtime Environment </a>. Accept the license agreement, right-click on the latest `.tar.gz` file and copy the URL.
+You will also need to install the Java Runtime Environment. Go to the Downloads for the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="new"> Java Runtime Environment </a>. Accept the license agreement, right-click on the latest `.tar.gz` file and download it.
 
-![download `tarfile`](jre.png)
+Upload the `.tar.gz` file.
 
-Use the following commands to download and install the Java Runtime Environment, which is required by the Download Manager. Replace the link with the URL you copied and use the name of the downloaded file after the `rpm` command.
+Use the following commands install the Java Runtime Environment, which is required by the Download Manager.
 
 ```
-wget --no-check-certificate -c --header "Cookie: oraclelicense=accept-securebackup-cookie" <<paste the link here>>
-
 chmod 777 -R <<downloaded file>>
-
 tar -xvzf <<downloaded file>>
 
 ```
-
-For example:
-
-![download tar file](java_install.png)
-
-> Note: You can right click on the image and open it on a new tab to enlarge it
 
 Update the java location with the following command:
 
@@ -162,9 +153,6 @@ And entering the full path:
 
 You can use these files to access the machine from SSH or FTP clients, such as PuTTY or WinSCP.
 
-The web SSH client is a good option for quick and background tasks, as it is intermittent. This is a known issue as explained  in the following link: <https://cloud.google.com/compute/docs/ssh-in-browser#known_issues>
-
-For longer tasks such as file uploads or installations, use a client with a good handling of network micro-cuts.
 
 Just in case, run the following command to make sure your `gcloud` console is updated:
 

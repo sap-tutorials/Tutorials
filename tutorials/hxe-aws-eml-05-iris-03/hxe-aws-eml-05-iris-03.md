@@ -62,7 +62,7 @@ import numpy as np
 import tensorflow as tf
 import pandas as pd
 
-# Disable MKL to get a better perfomance for this model.
+# Disable MKL to get a better performance for this model.
 os.environ['TF_DISABLE_MKL'] = '1'
 os.environ['TF_DISABLE_POOL_ALLOCATOR'] = '1'
 

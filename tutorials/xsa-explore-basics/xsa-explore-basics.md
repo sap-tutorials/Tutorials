@@ -13,7 +13,7 @@ time: 10
 
 
 ## Next Steps
- - [Get started with SAP HANA, XS Advanced development](https://developers.sap.com/group.hana-xsa-get-started.html)
+ - [Get started with SAP HANA, XS Advanced development](group.hana-xsa-get-started)
 
 
 ## Details
@@ -139,4 +139,3 @@ Use `F8` or the green **run** icon to execute the query. Enter the result of the
 
 [VALIDATE_1]
 [ACCORDION-END]
-

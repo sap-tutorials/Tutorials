@@ -7,9 +7,6 @@ tags: [  tutorial>beginner, tutorial>how-to, products>sap-hana\,-express-edition
 ## Prerequisites  
 - **Setup:** You are following the instructions to install SAP HANA 2.0, express edition in the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](http://developers.sap.com/tutorials/hxe-ua-installing-binary.html) tutorial or [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) tutorial.
 
-## Next Steps
-- [View similar How-Tos](http://developers.sap.com/tutorials.html) or [View all How-Tos](http://developers.sap.com/tutorials.html)
-
 
 ## How-To Details
 Perform these steps to resolve issues when installing SAP HANA 2.0, express edition.
@@ -46,7 +43,7 @@ If the status is inactive, start socket activation:
 
 `systemctl` start `uuidd.socket`
 
-
+[DONE]
 
 [ACCORDION-END]
 
@@ -75,6 +72,7 @@ You can also run the following command to see if you are running out of disk spa
 Look for the **Use%** for the `/dev/sda1 filesystem`. If it is down to just a few GB, you may have run out of disk space when performing your recent operation.
 
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -106,6 +104,7 @@ xs start <app>
 
 It may take a few minutes for the system to get started. Run `xs apps` again to see if the app has started and that under `instances` the app shows `1/1`.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -131,6 +130,7 @@ or
 
 Change the **Save directory**. Download again.     
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -144,6 +144,7 @@ Linux: **`/tmp/hxedm[yymmdd].log`**
 
 Windows: **`%TEMP%\hxedm_[yymmdd].log`**
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -163,6 +164,7 @@ If you are behind a proxy or a firewall, your institution's network may prevent 
 
 3. At the command prompt, enter `sudo ifconfig` to see if an `IPv4` address is now assigned. You do not need to restart your VM.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -179,6 +181,8 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 - Re-import `hxexsa.ova`.
 
 - Start SAP HANA 2.0, express edition installation again, and this time choose to run `XSA` configuration in the background.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -210,6 +214,8 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Issue &#151;](Memory Limit Exceeded - Additional Local Capacity)]
@@ -217,6 +223,8 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 **Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition and you wish to use more memory on your local machine.
 
 **Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory for your local installation, purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -227,6 +235,8 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 **Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory but do not have any additional memory for your local installation, consider migrating to a cloud installation. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html) homepage to view cloud offerings.
 
 Additionally, you can add more memory to your local installation and then purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -265,6 +275,8 @@ xs stop <app>
 
 This will stop the XS app and free any resources it may have been using.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Issue &#151;](Local Disk Space Full)]
@@ -275,6 +287,8 @@ This will stop the XS app and free any resources it may have been using.
 
 You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html) homepage to view cloud offerings.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Issue &#151;](Local Disk Space Threshold Limited)]
@@ -284,5 +298,8 @@ You can also move your SAP HANA, express edition installation to a cloud provide
 **Solution:** If your virtual machine is limiting how much disk space SAP HANA, express edition is allowed to use, and you have exceeded that amount, visit the virtual machine's documentation to increase the virtual machine's disk space threshold.
 
 You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html) homepage to view cloud offerings.
+
+
+[DONE]
 
 [ACCORDION-END]

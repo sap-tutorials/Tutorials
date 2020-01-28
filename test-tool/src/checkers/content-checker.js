@@ -5,6 +5,9 @@ const fs = require('fs');
 
 const tagChecker = require('./tags-checker');
 const linkChecker = require('./link-checker');
+const syntaxChecker = require('./syntax-checker');
+const metadataChecker = require('./metadata-checker');
+
 const { regexp, constraints } = require('../constants');
 
 const fileExistsSyncCS = (filePath) => {
@@ -52,6 +55,7 @@ module.exports = {
       contentCheckResult: [],
       tagsCheckResult: [],
       stepSpellCheckResult: [],
+      syntaxCheckResult: [],
     };
     const dir = path.dirname(filePath);
     const {
@@ -75,16 +79,20 @@ module.exports = {
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
+    const metaLines = [];
 
     await Promise.all(lines.map(async (line, index) => {
       const isCodeLine = (line.match(codeLine) || []).length > 0;
 
       if (isMeta) {
+        metaLines.push(line);
         if (line.replace(/\n/g, '') === '---') {
           metaBoundaries += 1;
         }
         if (metaBoundaries >= 2) {
           isMeta = false;
+          const metaValidationResult = metadataChecker.check(metaLines);
+          result.contentCheckResult.push(...metaValidationResult);
         }
 
         const primaryTagError = tagChecker.checkPrimaryTag(line, index);
@@ -208,6 +216,7 @@ module.exports = {
           }
 
           if (remoteImageMatches) {
+
             await Promise.all(remoteImageMatches.map(async (item) => {
               // using new RegExp to reset g flag
               const [imageUrl] = item.match(new RegExp(pureLink, 'i'));
@@ -227,6 +236,11 @@ module.exports = {
               line: index + 1,
               msg: localFileLink.message,
             });
+          }
+
+          const syntaxCheckResult = syntaxChecker.check(line, index + 1);
+          if (syntaxCheckResult) {
+            result.syntaxCheckResult.push(syntaxCheckResult);
           }
         }
       }

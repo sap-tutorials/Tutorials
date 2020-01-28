@@ -1,6 +1,6 @@
 ---
-title: Store Sensor Data in Cloud Storage in SAP Data Hub, Trial Edition 2.5
-description: Use Cloud Storage to store sensor data by using SAP Data Hub, trial edition 2.5.
+title: Store Sensor Data in Cloud Storage in SAP Data Hub, Trial Edition
+description: Use Cloud Storage to store sensor data by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>SAP-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-vora ]
@@ -32,7 +32,9 @@ Open the pipeline which you have created in the [previous tutorial](datahub-tria
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition 2.5](https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
 
- Now drag and drop **Write File** operator to the existing graph, and connect output port of the `Data Generator` to the `inFile` input port of the **Write File**
+>**Attention (only relevant for Microsoft Azure)**: Due to a bug in SAP Data Hub, the **Write File** operator (as well as the **Read File** operator) has a problem with the `CLOUD_STORAGE` connection used in SAP Data Hub, trial edition. To avoid this problem, please open **Connection Management** via the SAP Data Hub Launchpad. Edit the `CLOUD_STORAGE` connection and maintain the **Endpoint Suffix** as `core.windows.net`. Save the connection. Then continue with this tutorial.
+
+Now drag and drop **Write File** operator to the existing graph, and connect output port of the `Data Generator` to the `inFile` input port of the **Write File**
 
 ![picture1](datahub-trial-v2-pipelines-part02-1.png)
 
@@ -44,11 +46,13 @@ Configure the **Write File** operator by maintaining the following properties :
 | connection | Check the connection specific details after this table
 |  path  | `sensordata/file_<counter>.txt`
 
+> **Attention**: do **not** put a leading `/` in front of the path. On some platforms this can create problems (planned to be fixed with a future release).
+
 To specify connection details you can utilize the connections established in the Configuration Manager .
 
 In case you are willing to re-use the Configuration Manager connections, click on the **Connection** input field and select **Configuration Type** as **Configuration Manager** and select the desired connection from the **Connection ID** dropdown box.
 
-The **Write File** operator will write the received data to files in the `/sensordata` directory in the specified GCS or AWS S3 bucket or Azure container. The files follow the scheme `file_<counter>.txt` (where counter is an incremental integer).
+The **Write File** operator will write the received data to files in the `sensordata` directory in the specified GCS or AWS S3 bucket or Azure container. The files follow the scheme `file_<counter>.txt` (where counter is an incremental integer).
 
 [DONE]
 

@@ -117,11 +117,13 @@ Open the `mta.yaml` file and you will notice the `srv` module provides a variabl
 
 Click on the web module. You will establish its dependency with the `srv` module and declare the destination. The name of the destination here needs to match the name you used in `xs-app.json` in the previous step.
 
-1. Choose `srv_api` under **Requires**.
+1. Add a new **Requires** entry for the web module.
 
-2. Enter **`destinations`** under **Group**.
+2. Choose `srv_api` under **Requires** in the dropdown.
 
-3. Fill in the properties with the following key-value pairs ...
+3. Enter **`destinations`** under **Group**.
+
+4. Fill in the properties with the following key-value pairs ...
 
     | **Key**       | **Value**           
     | ------------- |:-------------:|
@@ -158,7 +160,7 @@ Replace it with the following code:
 <!-- 1.) Load SAPUI5 (from a remote server), select theme and control library -->
 <script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
 	id="sap-ui-bootstrap" data-sap-ui-libs="sap.m, sap.ui.table"
-	data-sap-ui-theme="sap_bluecrystal">
+	data-sap-ui-theme="sap_fiori_3">
 		</script>
 
 	<script>

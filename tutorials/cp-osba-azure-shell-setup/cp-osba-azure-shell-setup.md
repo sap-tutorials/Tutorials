@@ -8,9 +8,8 @@ primary_tag: products>sap-cloud-platform
 ---
 
 ## Prerequisites
- - If you are not attending any SAP TechEd event on site, make sure you have a Microsoft Azure subscription. [$200 Credits](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) will be provided if you enter your credit card details at the initial registration.
-  - Register for an [SAP Cloud Platform account](hcp-create-trial-account)
-  - Enable the [SAP Cloud Platform Cloud Foundry account](https://developers.sap.com/tutorials/cp-cf-create-account.html)
+ - Make sure you have a Microsoft Azure subscription. [$200 Credits](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) will be provided if you enter your credit card details at the initial registration.
+  - Register for an [SAP Cloud Platform Trial account](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -19,29 +18,21 @@ primary_tag: products>sap-cloud-platform
 
 In this tutorial, you will prepare your Azure Cloud Shell, which you will use later to deploy an application to the SAP Cloud Platform Cloud Foundry environment.
 
-In addition to SAP Cloud Platform services, this application will also use Azure services. The [Open Service Broker API] (https://www.openservicebrokerapi.org/) is used to provision these Azure services and bind them to the application (and possibly delete them later). There are similar use cases for Open Service Broker usage for other Cloud Service Provider, not only for Azure services. The responsible component, running on SAP Cloud Platform Cloud Foundry leveraging the Open Service Broker API, is called the service broker.
+In addition to SAP Cloud Platform services, this application will also use Azure services. The [Open Service Broker API] (https://www.openservicebrokerapi.org/) is used to provision these Azure services and bind them to the application (and possibly delete them later). There are similar use cases for Open Service Broker usage for other Cloud Service Provider, not only for Azure services. The responsible component, running on SAP Cloud Platform Cloud Foundry leveraging the Open Service Broker API, is called service broker.
 
 #### IMPORTANT INSTRUCTIONS
 
 Please note two basic details in this tutorial. If you follow these, you won't have any problems getting to the end successfully.
 
-  - The flow of the tutorial could differ if you are using your Azure account or the ones provided by SAP TechEd staff. In some steps, tabs are visible at the beginning that branch to different statements. Take care of these tabs and choose the appropriate ones. An example:
-
-    ![different flow](tab-usage-teched-online.png)
-
   - Do not execute any commands in your local terminal on your machine. All commands have to be executed in the Azure Cloud Shell! A local terminal is not used in these tutorials.
 
-These tutorials are primarily meant to be completed at the Developer Garage at SAP TechEd, but can also be completed online. In this case, you will need your Azure subscription, as described in the **Prerequisites** at the beginning of this tutorial.
-
-Azure subscriptions are available for SAP TechEd participants to complete these tutorials. Experts at the Microsoft booth in the Developer Garage will provide you the credentials.
-
-If you don't have an Azure subscription yet, no problem. You can easily [register](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) and as soon as you provide your credit card information, you will be granted 200 US dollars in credits that you can use for this tutorial and beyond. Only when you have exhausted this amount do you have to pay. 
+If you don't have an Azure subscription yet, no problem. You can easily [register](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/) and as soon as you provide your credit card information, you will be granted 200 US dollars in credits that you can use for this tutorial and beyond. Only when you have exhausted this amount do you have to pay.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log into the SAP Community)]
 
-Register or log into the SAP Community. This will allow you to track the progress of the tutorials and earn prizes at the Developer Garage at SAP TechEd.
+Register or log into the SAP Community. This will allow you to track the progress of the tutorials.
 
 ![Log on](zoomlogin.gif)
 
@@ -57,17 +48,7 @@ Open a new **incognito window** using Google Chrome and navigate to the Microsof
 
 The Microsoft Azure Cloud Shell is your entry point to build, manage, and monitor everything from simple web apps to complex cloud applications in a unified way on a command line.
 
-[OPTION BEGIN [SAP TechEd Account]]
-
-The SAP experts at the booth on site will provide you credentials for an account you can use during SAP TechEd.
-
-[OPTION END]
-
-[OPTION BEGIN [Own Account]]
-
 Please use the credentials for your own trial/productive account for this and the following tutorials. If you don't have an account yet, please register [here](https://azure.microsoft.com/en-us/offers/ms-azr-0044p/).
-
-[OPTION END]
 
 
 [DONE]
@@ -78,18 +59,6 @@ Please use the credentials for your own trial/productive account for this and th
 Launch the Azure Cloud Shell by clicking on the highlighted control below:
 
 ![launch azure shell](launch-azure-shell.jpg)
-
-[OPTION BEGIN [SAP TechEd Account]]
-
-The SAP experts have already set up the Azure Cloud Shell.
-
->If you are interested in the necessary steps to set up the Azure Cloud Shell, click on the **Own Account** tab.
-
-> ![use your own account via the tab Own Account](own-account-usage.png)
-
-[OPTION END]
-
-[OPTION BEGIN [Own Account]]
 
 If you have already used the Azure Cloud Shell in your account, this step is not needed and the Azure Cloud Shell is ready to use.
 
@@ -119,7 +88,9 @@ Your Azure Cloud Shell is now ready to go.
 
 ![Log ouput Azure Cloud Shell](welcome-azure-cloud-shell.png)
 
-[OPTION END]
+Please make sure you only use the option **`Bash`** and not PowerShell. Some commands in the following tutorials will only work with bash.
+
+![only use bash instead of PowerShell](use-bash-hint.png)
 
 [DONE]
 [ACCORDION-END]

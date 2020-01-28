@@ -1,6 +1,7 @@
 ---
 title: Adding a Dbspace File
 primary_tag: products>sap-hana-dynamic-tiering
+auto_validation: true
 description: Managing disk storage space using Dbspace files
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -23,10 +24,12 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
 In contrast to the core HANA in-memory data store, the Dynamic Tiering data store requires the database administrator to proactively allocate and manage disk storage space in the form of a `Dbspace`. This lesson will explain how to monitor and manage the `Dbspace`.
 
-Initially your extended extended storage will have adequate space to create objects. However, as your data volume grows, you may need to add additional storage space in which case you will need to know how to add more.
+Initially your extended storage will have adequate space to create objects. However, as your data volume grows, you may need to add additional storage space in which case you will need to know how to add more.
 
+[DONE]
 
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 2: ](Add Extended Storage Privileges to your Cockpit User)]
 
 In your HANA Studio, open up your `<SID> (SYSTEM)`. Navigate to to **Security** > **Users**.
@@ -41,8 +44,10 @@ This will open up the user window on the right. Navigate to **System Privileges*
 
 Once you add this, click the green execute button at the top right to save these changes.
 
+[DONE]
 
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 3: ](Adding a Dbspace File)]
 To add space, we navigate to HANA cockpit. To access Cockpit, use the URL given during installation, in the form `https://<hostname>:<port>`.
 
@@ -86,5 +91,7 @@ Once you have filled in the required information, you can click the "**Create**"
 ``` sql
 ALTER EXTENDED STORAGE ALTER DBSPACE ES_USER ADD FILE "ES_USER_FILE1" '<SID>ESDB_usr_1.es' SIZE 100 MB RESERVE 25 MB;
 ```
+
+[VALIDATE_1]
 
 [ACCORDION-END]

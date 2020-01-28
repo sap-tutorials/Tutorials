@@ -20,13 +20,13 @@ With this, you have your own instance of SAP API Management and Web IDE which al
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log in to SAP Cloud Platform cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Navigate to SAP Cloud Platform cockpit)]
 
-Log into SAP Cloud Platform
+[Open SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/)
 
-Click on **Neo Trial** to open the cockpit for Neo environment.
+Drag down to click on **Access Neo Trial** to open the cockpit for Neo environment.
 
-![Log into cockpit](01-Login-trial-account.png)
+![Open cockpit](01-Login-trial-account.png)
 
 [DONE]
 [ACCORDION-END]

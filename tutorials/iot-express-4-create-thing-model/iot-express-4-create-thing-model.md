@@ -51,11 +51,11 @@ time: 20
   5. Enter your package name as `greenhouse`. You can create a namespace using dots (e.g., `my.first.greenhouse`). Take notice on the scope selection: mark your package as private if you do not want to share its content in the tenant.
   6. Click **Save** (bottom right grey slice of the page).
 
-  ![Click on Packages Tile](packages_tile.png)
+  !![Click on Packages Tile](packages_tile.png)
 
-  ![Packages List](packages_list.png)
+  !![Packages List](packages_list.png)
 
-  ![Add new package](new_package.png)
+  !![Add new package](new_package.png)
 
 [DONE]
 
@@ -80,11 +80,11 @@ time: 20
 
   ![Select package](select_greenhouse_package.png)
 
-  ![New property](new_property.png)
+  !![New property](new_property.png)
 
   ![Property data](new_property_data.png)
 
-  ![Result property](new_property_save.png)
+  !![Result property](new_property_save.png)
 
 [DONE]
 
@@ -111,11 +111,11 @@ Note that we focus on the data we want to use in the business application -- the
 14. Add a property called `light`, type `Integer` and without a unit of measure.
 15. Click `Save` (on the bottom grey bar, right side of the screen).
 
-![Property sets list](property_sets_list.png)
+!![Property sets list](property_sets_list.png)
 
-![New Property Set](new_property_set.png)
+!![New Property Set](new_property_set.png)
 
-![Measures property set](measures_property_set_final.png)
+!![Measures property set](measures_property_set_final.png)
 
 [DONE]
 

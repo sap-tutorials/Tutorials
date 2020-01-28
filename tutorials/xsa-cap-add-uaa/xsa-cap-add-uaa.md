@@ -186,7 +186,7 @@ Call the resource `app-uaa` and choose type `com.sap.xs.uaa-space`.
 Under **Parameters**, use the following key-value pair:
 
 - **Key:** `path`
-- **Value:** `./xs-security.json`
+- **Value:** `xs-security.json`
 
 ![Configure dependencies](13.png)
 
@@ -250,7 +250,7 @@ Remember to **Save**.
 >   - name: app-uaa
 >     type: com.sap.xs.uaa-space
 >     parameters:
->       path: ./xs-security.json
+>       path: xs-security.json
 > ```
 
 [DONE]

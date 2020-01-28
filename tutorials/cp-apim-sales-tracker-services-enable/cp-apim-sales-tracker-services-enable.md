@@ -1,7 +1,7 @@
 ---
 title: Enable Services for Sales Tracker App
 description: Set up required services to build Sales Tracker app to demonstrate SAP API Management and other technologies.
-auto_validation: true 
+auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-api-management, products>sap-cloud-platform]
 primary_tag: products>sap-api-management
@@ -21,9 +21,9 @@ With this, you have your own instance of SAP API Management and Mobile Services 
 
 [ACCORDION-BEGIN [Step 1: ](Log in to SAP Cloud Platform cockpit)]
 
-Log into SAP Cloud Platform
+[Log into SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/)
 
-Click on **Neo Trial** to open the cockpit for Neo environment.
+Click on **Access Neo Trial** to open the cockpit for Neo environment.
 
 ![Log into cockpit](01-Login-trial-account.png)
 

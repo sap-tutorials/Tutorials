@@ -65,11 +65,16 @@ Install the Hyperledger Fabric packages that are referenced from chaincode progr
 You can use the Go language infrastructure to retrieve the following relevant packages (via GIT):
 
 ```Shell
-go get github.com/hyperledger/fabric/common/util
+Initialize GO Modules
+go mod init chaincode
 
-go get github.com/hyperledger/fabric/core/chaincode/shim
+Install Hyperledger Fabric packages
+go get github.com/hyperledger/fabric/common/util@v1.4
 
-go get github.com/hyperledger/fabric/protos/peer
+go get github.com/hyperledger/fabric/core/chaincode/shim@v1.4
+
+go get github.com/hyperledger/fabric/protos/peer@v1.4
+
 ```
 
 This installs the following contents:

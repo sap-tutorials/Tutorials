@@ -67,7 +67,7 @@ Refer to the [official documentation](https://docs.cloudfoundry.org/devguide/dep
 
 [ACCORDION-BEGIN [Step 2: ](Push the app to your SAP Cloud Platform Cloud Foundry space)]
 
-Make sure you are logged in to your SAP Cloud Platform Cloud Foundry endpoint `cf login` and navigate to your space via `cf space <SPACE>`). Execute the following command inside the `nodetutorial` directory:
+Make sure you are logged in to your SAP Cloud Platform Cloud Foundry endpoint `cf login` and navigate to your space via `cf space <SPACE>`. Execute the following command inside the `nodetutorial` directory:
 
 
 ```bash

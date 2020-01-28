@@ -1,17 +1,18 @@
 ---
 title: Creating Database Backups
 description: Creating Backups using HANA Studio's backup editor and SQL console.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials** [Initializing Database Backup and Recovery](https://developers.sap.com/tutorials/dt-backup-recovery-part1.html)
+ - **Tutorials** [Initializing Database Backup and Recovery](https://www.sap.com/)
 
 
 ## Next Steps
- - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://developers.sap.com/tutorials/dt-backup-recovery-part3.html)
+ - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://www.sap.com/)
 
 ## Details
 ### You will learn
@@ -66,6 +67,7 @@ Once the backup completes, a "**Backup Execution Summary**" screen will be displ
 
 ![Backup Execution Summary](backup-execution-summary.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -77,19 +79,6 @@ BACKUP DATA USING FILE <'<file_prefix>')
 ```
 > Note: the `<file_prefix>` refers to the Backup Prefix that will be used. This command will use the default file path specified in the Configuration, as seen in the previous tutorial.
 
+[DONE]
 
 [ACCORDION-END]
-
-<!--
-[ACCORDION-BEGIN [Additional Information: ](Creating Backups for the System Database Using the Backup Editor)]
-
-Navigate to the the Systems panel in your SAP HANA Administration Console, and right click the System database. Select **Backup and Recovery** > **Open Backup Console**. This will then open the backup editor, which allows you to view options including the crrent destination path for the backup (located under the **Configuration** tab) and existing any existing backups (under the **Backup Catalog** tab). Click the "**Open Backup**" icon (highlighted in the screenshot below) to backup the System database.
-
-![Open Backup Wizard](open-backup-wizard.png)
-
-The remainder of the process is similar to the backup we performed in **Step 1** of this tutorial..
-
-
-[ACCORDION-END]
--->
-

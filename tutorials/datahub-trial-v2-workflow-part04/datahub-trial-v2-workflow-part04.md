@@ -1,9 +1,9 @@
 ---
-title: Create Workflow (part 4), Monitor Task and Workflow Execution in SAP Data Hub, Trial Edition 2.5
-description: Monitor task execution using SAP Data Hub, trial edition 2.5.
+title: Create Workflow (part 4), Monitor Task and Workflow Execution in SAP Data Hub, Trial Edition
+description: Monitor task execution using SAP Data Hub, trial edition.
 primary_tag: products>sap-data-hub
 auto_validation: true
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora   ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 time: 15
 ---
 

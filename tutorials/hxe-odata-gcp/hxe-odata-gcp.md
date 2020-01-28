@@ -3,17 +3,14 @@ title: Deploy an OData service to expose data from SAP HANA, Express Edition dep
 description: Deploy a sample OData service to expose data from a table in the tenant database of SAP HANA, Express Edition, that is deployed on Compute Engine on Google Cloud Platform.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>odata, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition  ]
+time: 20
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - Your have a working setup of HANA Studio installed
  - You have a Google Account and/or have registered for the free trial on `cloud.google.com`
- - **Tutorials:**  [Setup HANA Studio](https://developers.sap.com/tutorials/hxe-howto-eclipse.html), [Create a new project using the Cloud Platform Console](https://cloud.google.com/resource-manager/docs/creating-managing-projects) and [SAP HANA, express edition, in Google Cloud Platform Launcher](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html)
+ - **Tutorials:**  [Setup HANA Studio](hxe-howto-eclipse), [Create a new project using the Cloud Platform Console](https://cloud.google.com/resource-manager/docs/creating-managing-projects) and [SAP HANA, express edition, in Google Cloud Platform Launcher](hxe-gcp-getting-started-launcher)
 
-
-## Next Steps
- - Python Flask OData tutorial
 
 ## Details
 ### You will learn  
@@ -21,8 +18,6 @@ This tutorial will guide you through the process to deploy a simple `OData` serv
 
 This `OData` service can then be consumed in various applications similar to consuming REST services.
 
-### Time to Complete
-**20 Min**
 
 ---
 
@@ -133,4 +128,3 @@ This `OData` service can then be consumed in various applications similar to con
 
 
 [ACCORDION-END]
-

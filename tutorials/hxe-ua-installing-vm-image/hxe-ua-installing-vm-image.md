@@ -11,7 +11,7 @@ time: 5
 <!-- loio6d73440459d4476c8f21bb852d7f36a4 -->
 
 ## Prerequisites
- - **Tutorials:**  Open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://developers.sap.com/group.hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://developers.sap.com/group.hxe-install-vm.html) tutorial group. 
+ - **Tutorials:**  Open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://developers.sap.com/group.hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://developers.sap.com/group.hxe-install-vm.html) tutorial group.
 
 ## Details
 ### You will learn
@@ -21,8 +21,8 @@ You'll decide whether the virtual machine installation method is best for you, y
 
 > Note:
 > Additional documentation, including downloadable PDF manuals, is available on the [SAP Help Portal](https://help.sap.com/viewer/p/SAP_HANA,_EXPRESS_EDITION).
-> 
-> 
+>
+>
 
 [ACCORDION-BEGIN [Step 1: ](Understand the Virtual Machine installation method)]
 
@@ -30,8 +30,8 @@ The SAP HANA 2.0, express edition VM image is platform-independent. You can inst
 
 > Note:
 > If you need a custom on-premise setup, use the Binary Installer Method, which is for Linux machines – running specific installations – that meet certain storage and memory prerequisites. See [Install SAP HANA, express edition on a native Linux machine](https://developers.sap.com/group.hxe-install-binary.html) or [Install SAP HANA, express edition on a native Linux machine (with SAP HANA XS Advanced)](https://developers.sap.com/group.hxe-install-binary-xsa.html).
-> 
-> 
+>
+>
 
 The Virtual Machine method installs:
 
@@ -49,8 +49,8 @@ You can download two different installation packages depending on your requireme
 
 > Note:
 > SAP HANA 2.0, express edition is officially supported on SLES. SAP Community members have been successful in running SAP HANA, express edition on other Linux operating systems that are not formally supported by SAP, such as `Ubuntu`, `openSUSE`, `Fedora`, and `RedHat`. SAP is not committing to resolving any issues that may arise from running SAP HANA, express edition on these platforms.
-> 
-> 
+>
+>
 
 [DONE]
 
@@ -79,8 +79,8 @@ Check if your laptop has the recommended software to successfully install and ru
 
 > Note:
 > If you plan to use the SAP HANA, express edition Download Manager for Windows or Linux, you need the **64-bit JRE**. If you are planning to use the platform-independent Download Manager, you can use either the **32-** or **64-bit** JRE.
-> 
-> 
+>
+>
 
 [DONE]
 
@@ -102,8 +102,8 @@ Go to [Determine If Your Processor Supports Intel Virtualization Technology](htt
 
 > Note:
 > Concerned about memory? The memory consumption of each optional component is listed in the[SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/DRAFT/9e4243e92f244537b2164a57a405a9fd/latest/en-US).
-> 
-> 
+>
+>
 
 [DONE]
 
@@ -113,9 +113,9 @@ Go to [Determine If Your Processor Supports Intel Virtualization Technology](htt
 
 Hypervisors are software products used for creating and running virtual machines. Install a supported hypervisor on your laptop if you don't have one already. SAP HANA 2.0, express edition has been tested on these hypervisors:
 
--   `VMware Workstation Player 12.x, 14.x, 15.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
+-   `VMware Workstation Player 15.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
 
--   `VMware Workstation Pro 12.x, 14.x, 15.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
+-   `VMware Workstation Pro 15.x` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
 
 -   `VMware Fusion 8.x, 10.x, 11` - [https://my.vmware.com/web/vmware/downloads](https://my.vmware.com/web/vmware/downloads)
 -   `Oracle VirtualBox 5.2.x, 6.0` (`https://www.virtualbox.org`)
@@ -135,12 +135,10 @@ Example installation procedure for `VMware Workstation Player 12.x`:
 
 [ACCORDION-BEGIN [Step 6: ](Go to the next tutorial)]
 
-1.   If you don't have the parent tutorial group open already, click the *Install SAP HANA 2.0, express edition on a preconfigured virtual machine* tile or the *Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)* tile at the bottom of this tutorial. 
+1.   If you don't have the parent tutorial group open already, click the *Install SAP HANA 2.0, express edition on a preconfigured virtual machine* tile or the *Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)* tile at the bottom of this tutorial.
 
-2.   Click the next tutorial in the sequence 
+2.   Click the next tutorial in the sequence
 
 [DONE]
 
 [ACCORDION-END]
-
-

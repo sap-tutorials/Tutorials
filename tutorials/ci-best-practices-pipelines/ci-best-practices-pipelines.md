@@ -46,7 +46,7 @@ The main actors are:
 
 - The developer's workspace
     - The developer who creates changes.
-    - He works in his local workspace: either locally with IDE and build tools and runtime physically installed on his PC, or on the cloud with the Web IDE). The changes done by the developer are pushed to the source code management system.
+    - He works in his local workspace: either locally with IDE and build tools and runtime physically installed on his PC, or on the cloud with the Web IDE. The changes done by the developer are pushed to the source code management system.
 - The CI/CD infrastructure
     - The source code management system.
     - A process orchestration system controlling the pipeline and providing transparency.
@@ -153,5 +153,3 @@ When discussing the concrete setup of CI process landscapes for specific SAP tec
 Finally, any CD process must fit to the individual needs of the development team and the technological boundary conditions. We will explain later in [part 4: CI/CD Process Setup](https://developers.sap.com/tutorials/ci-best-practices-intro.html) how these aspects influence the design of the CI process and how this leads to adaptations of the prototype landscape.
 
 What was discussed here so far is the process for integration into the main line. But as we have learned in section "Everything is under version control", it is possible to apply the process for feature branches as well. All what was said before applies to this case except that the "release" is not implemented as deployment into the production system but as push of the bundled changes made to the feature branch into the main line.
-
-

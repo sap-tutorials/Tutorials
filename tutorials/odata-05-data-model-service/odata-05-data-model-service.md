@@ -19,7 +19,7 @@ time: 20
 
 [Core Data & Services (CDS)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/855e00bd559742a3b8276fbed4af1008.html) powers a significant part of the [Application Programming Model for SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/855e00bd559742a3b8276fbed4af1008.html). CDS has many features, and in this tutorial you'll encounter a couple of fundamental ones - the ability to declaratively define a data model and service, and to have those declarations turned into artefacts for a persistence layer (in this case a HANA database) and a running OData service (in this case a Java-based app).
 
-You'll use SAP Web IDE, and a particular feature relating to building business apps with CDS.
+You'll use SAP Web IDE, and a particular extension relating to building business apps with CDS.
 
 The model and service you'll create is deliberately a very simple one, based on a small subset of something you've seen before if you've followed previous OData tutorials (in particular the [Learn about OData Fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html) tutorial) - the product information from the Northwind service.
 
@@ -40,11 +40,11 @@ You can find out more about accessing SAP Web IDE in the Help Portal, specifical
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Ensure the required feature is enabled)]
+[ACCORDION-BEGIN [Step 2: ](Ensure the required extension is enabled)]
 
-You'll make use of the SAP Cloud Platform Business Application Development Tools feature within SAP Web IDE in this tutorial. In SAP Web IDE, select the Preferences perspective either with the cog icon or via menu path **Tools** > **Preferences**. At the **Workspace Preferences** level, select **Features** and make sure that this feature is enabled:
+You'll make use of the SAP Cloud Platform Business Application Development Tools extension within SAP Web IDE in this tutorial. In SAP Web IDE, select the Preferences perspective either with the cog icon or via menu path **Tools** > **Preferences**. At the **Workspace Preferences** level, select **Extensions** and make sure that this extension is enabled:
 
-![SAP Cloud Platform Business Application Development Tools feature](bus-app-dev-tools-feature.png)
+![SAP Cloud Platform Business Application Development Tools extension](bus-app-dev-tools-extension.png)
 
 [DONE]
 [ACCORDION-END]
@@ -57,14 +57,6 @@ While still in the **Preferences** perspective, select the **Cloud Foundry** set
 
 ![CF preferences](cf-preferences.png)
 
-> You need a builder to facilitate the build and deploy activities that are triggered from the CDS features in SAP Web IDE; the builder is installed in your Cloud Foundry environment.
-
-Still in the **Preferences** perspective, select the **Core Data Services** settings at the **Global Preferences** level and make sure that the **Perform CDS Build upon save** option is checked:
-
-![CDS Build preference](cds-build-preference.png)
-
-This means that the CDS facilities in SAP Web IDE will do the right things at the right time for you automatically.
-
 [DONE]
 [ACCORDION-END]
 
@@ -74,13 +66,13 @@ Before proceeding, it's worth checking that you have enough quota available for 
 
 ![Subaccount overview](subaccount-overview.png)
 
-Select the **Spaces** menu item on the left to see the space(s) within the Cloud Foundry organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something like this:
+Select the **Spaces** menu item on the left to see the space(s) within the Cloud Foundry organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something similar to this:
 
 ![CF space quota details](cf-space-quota-details.png)
 
 In this example, there is 1GB memory free, which is more than enough for the OData service app that will be generated and deployed.
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the SAP Web IDE console)]
@@ -152,7 +144,7 @@ entity Products {
 }
 ```
 
-> You can either copy-paste the definition from here, or type it into the editor directly. In the latter case, you will see useful CDS specific autocomplete and syntax checking features provided by the SAP Cloud Platform Business Application Development Tools feature you enabled earlier.
+> You can either copy-paste the definition from here, or type it into the editor directly. In the latter case, you will see useful CDS specific autocomplete and syntax checking features provided by the SAP Cloud Platform Business Application Development Tools extension you enabled earlier.
 >&nbsp;
 > ![CDS autocomplete and syntax checking](cds-autocomplete-and-syntax-checking.png)
 

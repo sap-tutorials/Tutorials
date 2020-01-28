@@ -1,12 +1,14 @@
 ---
 title: Sample Project
 description: For this beginner tutorial, you will load data onto your SAP HANA 2.0, express edition installation and preview that data. You will learn how to create a new user, create a schema,  upload .csv data to your SAP HANA 2.0, express edition installation, create a new package, load and connect the .csv data to that package, and then edit and preview that data.
-primary_tag: products>sap-hana\,-express-edition  
+primary_tag: products>sap-hana\,-express-edition
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 time: 15
 ---
 
-## Prerequisites  
+## Prerequisites
  - [Install the HANA Eclipse plugin](https://developers.sap.com/tutorials/hxe-howto-eclipse.html)
  - Download the `.csv` files from the SAP HANA Academy GitHub page: <https://github.com/saphanaacademy/HXE/tree/master/STS>.
 
@@ -15,7 +17,7 @@ time: 15
  - [Create a Tenant Database](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
 
 ## Details
-### You will learn  
+### You will learn
   - How to use SAP HANA Studio to load data onto your SAP HANA 2.0, express edition installation and create the proper user and schema, create a package, load data to that package, and preview that data
 
 
@@ -52,6 +54,8 @@ In SAP HANA Studio, do the following:
     ![Create User](create_user2.png)
 
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -103,6 +107,8 @@ In SAP HANA Studio, do the following:
     Click Execute ![execute](execute.png) for each line.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Load Table Data)]
@@ -141,6 +147,8 @@ In SAP HANA Studio, do the following:
 You should see your new tables under the _Tables_ folder under your schema.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a New Package)]
@@ -166,6 +174,8 @@ The new package will appear under your _Content_ folder under your new user logi
 
 ![Create Package](create_package3.png)
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -200,6 +210,8 @@ The new package will appear under your _Content_ folder under your new user logi
 
 Here is an example: ![Connect Data](connecting_data2.png)
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -245,6 +257,8 @@ Here is an example: ![Connect Data](connecting_data2.png)
     An entry will be added to the **Job Log** window panel.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Preview Data)]
@@ -259,6 +273,8 @@ You can now preview your data by dragging _Attributes_ to the **Label axis** pan
 
 Here is an example: ![Data Preview](preview_data1.png)
 
+
+[DONE]
 
 [ACCORDION-END]
 

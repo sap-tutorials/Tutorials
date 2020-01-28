@@ -153,7 +153,7 @@ What is the standard port for accessing the Cloud Connector administration UI?
 
 > You can use LDAP (Lightweight Directory Access Protocol) to configure Cloud Connector authentication. For more information, see the [official documentation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/120ceecfd84145a181ac160d588a7a3d.html).
 
-After the installation of the Cloud Connector you can see that its **Security Status** is red (**Risk**). We will show in the next two steps how to achieve a level of low risk for the Cloud Connector.
+After the installation of the Cloud Connector you can see that its **Security Status** is red -- **Risk**. We will show in the next two steps how to achieve a level of low risk for the Cloud Connector.
 
 [DONE]
 

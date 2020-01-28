@@ -18,7 +18,7 @@ primary_tag: products>sap-cloud-platform
 
 [ACCORDION-BEGIN [Step 1: ](Set up resource provider)]
 
-The service broker uses Redis as a backing service, so you'll have to set up Redis Cache. The easiest way to do this is using the Azure Cloud Shell you have initially configured.
+The service broker uses Redis as a backing service, so you'll have to set up a Redis Cache. The easiest way to do this is using the Azure Cloud Shell you have initially configured.
 
 Verify if there is already a so-called resource provider `Microsoft.Cache` by issuing the following command:
 
@@ -49,25 +49,13 @@ az provider show -n Microsoft.Cache -o table
 
 In Azure, you group resources in so-called resource groups.
 
-[OPTION BEGIN [SAP TechEd Account]]
-
-If you are attending SAP TechEd on site and are using the provided Azure credentials, **you don't need to do** anything. The preconfigured resource group is called **`SAPTechEd`**.
-
-[OPTION END]
-
-
-[OPTION BEGIN [Own Account]]
-
 The first thing to do is to create a resource group. Call the resource group `**SAPTechEd**` and locate it in West Europe.
 
 ```Bash
-az group create -l westeurope -n SAPTechED
+az group create -l westeurope -n SAPTechEd
 ```
 
 ![resource group created](resource-group-creation.png)
-
-[OPTION END]
-
 
 [DONE]
 [ACCORDION-END]
@@ -94,14 +82,6 @@ az redis create -n <unique-cache-name> -g SAPTechEd -l WestEurope --sku Standard
 
 Once you have deployed the service broker to your Cloud Foundry space, a so-called service principal is necessary to let your service broker running on SAP Cloud Platform provision resources in Azure. This is usually done by an account owner or administrator and not done by any developer.
 
-[OPTION BEGIN [SAP TechEd Account]]
-
-If you are attending SAP TechEd on site and are using the provided Azure credentials, the SAP staff as owner of your account has already created a service principal. **You don't need to anything**, and the SAP Staff will provide you with the necessary information for the following tutorials.
-
-[OPTION END]
-
-[OPTION BEGIN [Own Account]]
-
 Create a service principal by executing the following command in the Azure Cloud Shell:
 
 ```Bash
@@ -112,9 +92,7 @@ az ad sp create-for-rbac
 
 >**IMPORTANT:** Take a screenshot of the output in the Azure Cloud Shell or copy the information to a text document as you will need the attribute values in the next tutorial.
 
->**TROUBLESHOOTING:** If your user doesn't have sufficient privileges to execute this command, please contact your administrator. 
-
-[OPTION END]
+>**TROUBLESHOOTING:** If your user doesn't have sufficient privileges to execute this command, please contact your administrator.
 
 [DONE]
 [ACCORDION-END]

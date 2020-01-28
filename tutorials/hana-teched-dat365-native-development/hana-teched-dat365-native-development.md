@@ -30,7 +30,7 @@ Replace **XXX** with the number assigned to you
 dat365-XXX@teched.cloud.sap
 ```
 
-**Password**: TBD
+**Password**: Welcome19
 
 ![Log in ](1.png)
 
@@ -212,6 +212,12 @@ You should see your very basic app:
 
 ![Create app ](74.png)
 
+> ##  What is going on?
+> You have just deployed your first micro-service into SAP Cloud Platform and bound it to two services. If you looked into your space in the Cloud Foundry account, you would see the UAA service that was automatically created for you, together with the instance of the HTML5 repository you chose to create at the beginning of the wizard:\
+>
+> [Services](wio1.png)
+>
+
 [DONE]
 [ACCORDION-END]
 
@@ -319,7 +325,7 @@ In the code editor, this is what the modified parts should look like:
 
 The technical users from your HDI container will need permissions to execute SELECT and INSERT statements on the shared HDI container. That container has two roles created in it, called `admin` and `adminGrant`.
 
-This is what the roles in the shared HDI container look like:
+For further reference, this is what the roles in the shared HDI container look like:
 
 ![Create app ](29.png)
 
@@ -425,6 +431,8 @@ Right-click on the `db` module and choose **Build**.
 Once the build has been successful, right-click on the `db` folder and choose **Open HDI container**
 
 ![Create app ](76.png)
+
+> If prompted to add a database, answer **No**
 
 You should see the synonyms for the tables in the shared HDI container and the data in them
 
@@ -535,6 +543,10 @@ extend FOODS with {
 You will see the building process in the console. After it has finished, you will see the design-time artifacts that have been generated for SAP HANA from your `CDS` definition.
 
 ![Create app ](35.png)
+
+> If you get an error while building, right-click on `data-model.cds` and choose **Build > Build CDS**
+>
+> ![Create app ](cds.png)
 
 Right-click on the `db` folder and choose **Build** for them to be created in the database:
 
@@ -725,7 +737,7 @@ app.get("/node", (req, res) => {
 	res.redirect(odataURL);
 });
 
-//Setup Additonal Node.js Routes
+//Set Up Additional Node.js Routes
 //require("./router")(app, server);
 
 //Start the Server
@@ -891,7 +903,7 @@ Keep the defaults and click **Finish**.
 
 You will now replace the empty shell with an implementation of the UI we have prepared for you.
 
-Download the archive from this `[GitHub repository](https://github.com/SAP-samples/teched2019-hana-cloud-dat365-native-development/blob/master/advUI.zip)`
+Download the archive from this [GitHub repository](https://github.com/SAP-samples/teched2019-hana-cloud-dat365-native-development/files/3617784/advUI.zip)
 
 Right-click on the `advUI` module in SAP Web IDE and choose **Import > File or Project**...
 

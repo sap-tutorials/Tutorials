@@ -169,7 +169,7 @@ client = requests.Session()
 authorization = get_oauth_token(client, 'demo-service-key.json')
 ```
 
-You are now ready to use the SAP HANA cockpit API REST endpoints :)
+You are now ready to use the SAP HANA cockpit API REST endpoints.
 
 [DONE]
 

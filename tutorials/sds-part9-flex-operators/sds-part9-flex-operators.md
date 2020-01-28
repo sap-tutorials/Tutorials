@@ -1,6 +1,7 @@
 ---
 title: Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming
 description: Part 9 of 9. Use flex operator for status reports. Advanced CCL techniques.
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 author_name: Bill Jiang
@@ -20,7 +21,7 @@ time: 20
 
 ---
 
-#### Power Outage Flex
+[ACCORDION-BEGIN [Step 1: ](Power Outage Flex)]    
 
 1. In the **SAP HANA Streaming Development** perspective. Drag and drop a **Flex** element from the **Palette** to the canvas.
 
@@ -98,18 +99,26 @@ time: 20
 
     ![compile](power-outage/12-compile.png)
 
-#### Notes on the CCL Script on the Power Outage Flex
+[VALIDATE_1]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Notes on the CCL Script on the Power Outage Flex)]    
 
 1. The DECLARE block is local to this Flex operator. Global DECLARE blocks are also supported and would be put at the top of the CCL file; outside of any CREATE... statement.
     - "`offtime`" is a dictionary that saves the time of the last Power Off event for each machine. It will be indexed by MACHINEID, which is a string. Dictionaries are key/value pairs, where both the key and the value can be a simple type (a primitive such as an integer, string or character) or a complex type (an object which may house many simple or complex data types).
     - "`outrec`" is a temporary data record structure that matches the schema of the output stream being created by this Flex operator.
+
 2. The ON EVENTS method is executed every time an event is received from the EVENTS stream
     - First, check the "`EVENT_VALUE`" field of the incoming event to see if it's a "`POWER_OFF`" event. If it is, then save the time of the Power Off event for this MACHINEID in the dictionary.
     - Next check to see if the incoming event is a Power On event. If it is, and if there is a Power Off time for this machine in the dictionary, then construct and publish an output event.
     - Anytime you publish an event from a Flex you have to explicitly set the "`OpCode`" of the event being produced – thus, the use of the "`setOpcode`" function.
 
+[DONE]
 
-#### Dashboard Flex
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Dashboard Flex)]    
 
 Now you are doing something a bit different. You are going to build another Flex operator. This flex produces what you are calling the "Dashboard" which has current status information for each Machine. The challenge is that you are receiving different types of events on the same stream, with different uses of the "value" field. This is a common problem. But it prevents us from doing a simple aggregation or update, since one event can have a temperature reading in the value field and another event on the same stream can have "Power off" in the value field. So use CCL Script to create a new window called DASHBOARD that holds a single summary row for each machine. With each incoming event, the script examines the event and updates the relevant summary row.
  - The local declare block creates a dictionary that holds the most recently received information for each machine. This dictionary starts out empty, but information is added/updated as events are received.
@@ -161,3 +170,7 @@ Now you are doing something a bit different. You are going to build another Flex
 4. In the **SAP HANA Streaming Development** perspective, click the Run button to start the project. Please refer to part 7 of this tutorial group on how to run and re-test the updated project.
 
     ![compile](dashboard/4-run.png)
+
+[DONE]
+
+[ACCORDION-END]

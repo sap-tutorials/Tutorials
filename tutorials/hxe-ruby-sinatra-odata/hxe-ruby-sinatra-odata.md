@@ -3,24 +3,19 @@ title: Deploy an application built to connect to SAP HANA Express Edition, on Ap
 description: Deploy an application built to connect to SAP HANA Express Edition, on App engine of the Google Cloud Platform (GCP)
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition  ]
+time: 30
 ---
 
 ## Prerequisites and Assumptions
- - **Proficiency:** Beginner
  - You have a working application to connect to SAP HANA, Express Edition.
  - You have a Google Account and/or have registered for the free trial on `cloud.google.com`.
  - You have a project created on the Google Cloud Platform and billing is enabled.
 
 
-## Next Steps
- - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
-
 ## Details
 ### You will learn  
 This tutorial will guide you through the process to deploy a sample application to Google Cloud Platform (GCP).
 
-### Time to Complete
-**30 Min**
 
 ---
 

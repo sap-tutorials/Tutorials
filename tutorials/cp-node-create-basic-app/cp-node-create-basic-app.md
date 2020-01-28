@@ -10,7 +10,6 @@ time: 10
 ## Prerequisites  
 - A text editor (e.g., Notepad, Atom, Sublime)
 - [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
-- [Create a Cloud Foundry Account](cp-cf-create-account)
 - [Install the Cloud Foundry Command Line Interface](cp-cf-download-cli)
 
 
@@ -126,7 +125,7 @@ user@host:~
       res.send('Hello World!');
     });
 
-    const port = process.env.PORT || 3000;;
+    const port = process.env.PORT || 3000;
     app.listen(port, function () {
       console.log('myapp listening on port ' + port);
     });

@@ -17,16 +17,21 @@ primary_tag: software-product-function>sap-cloud-application-programming-model
 - What the OData V2 Adapter is and how it can be used
 - How to make basic use of the SAP Cloud SDK
 
+>For a quick map and overview of what this tutorial is, and where it sits in the overall [Use CAP and SAP Cloud SDK to Extend S/4HANA  mission](mission.cap-s4hana-cloud-extension), see the diagram in the blog post [Mission "Use CAP and SAP Cloud SDK to Extend S/4HANA" – an overview](https://blogs.sap.com/2019/11/08/sap-teched-mission-api-hub-cloud-sdk-and-cap-an-overview/).
+
 Right now your mock SAP S/4HANA service returns OData V4 responses. There are certain circumstances where this may not be directly consumable. The [SAP Cloud SDK](https://developers.sap.com/topics/cloud-sdk.html) is one consumer that currently expects OData V2. You may also have UI libraries, for example, that expect OData V2 data sources.
 
 The OData V2 Adapter is a piece of [Express middleware](https://expressjs.com/en/guide/using-middleware.html) that will act as a proxy and adapt OData V4 responses to the OData V2 representations.
 
 In this tutorial, you will install and configure the OData V2 Adapter so that your mock service can return OData V2 responses, to be consumed eventually by the SAP Cloud SDK in a subsequent tutorial.
 
+---
 
 [ACCORDION-BEGIN [Step 1: ](Install the V2 adapter package)]
 
 The OData V2 adapter is available in the form of a Node.js package, which can be installed into the project.
+
+> You're about to enter a command in the integrated terminal. If your service is still running (which it should be) from the previous tutorial in this mission, you can terminate it with `Ctrl-C` in order to get back to the prompt.
 
 At the command prompt in the integrated terminal in VS Code, install this package into the project with:
 
@@ -182,19 +187,20 @@ In the top right menu area of the existing integrated terminal, use the plus but
 
 > You can switch between your terminals with the menu that is seen in the screenshot as showing "2: bash".
 
-In the new, second integrated terminal, start a Node.js REPL ([Read-Evaluate-Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can write JavaScript directly and have it executed immediately and interactively. You won't see much initially -- just a simple **`>`** prompt. At this prompt, enter the following, to load the specific Business Partner Address part of the SAP Cloud SDK virtual data model you installed earlier in this tutorial.
+In the new, second integrated terminal, start a Node.js REPL ([Read-Evaluate-Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can write JavaScript directly and have it executed immediately and interactively.
 
-> Here, the command prompt and the Node.js REPL's prompt is shown for context, as well as the response (undefined) - you only have to type the part starting `const` ...
-
-
-```
-14:48 $ node
-> const BusinessPartnerAddress = require('@sap/cloud-sdk-vdm-business-partner-service').BusinessPartnerAddress
-undefined
->
+```Bash
+node
 ```
 
-At this point you have an object bristling with potential (if you're interested, just enter `BusinessPartnerAddress.`, including the period at the end, and then hit **Tab** to see the possibilities). Now you can use this object, and invoke the request builder to make a call to the service that you have running in the other integrated terminal.
+You won't see much initially -- just a simple **`>`** prompt. At this prompt, enter the following, to load the specific Business Partner Address part of the SAP Cloud SDK virtual data model you installed earlier in this tutorial.
+
+
+```JavaScript
+const BusinessPartnerAddress = require('@sap/cloud-sdk-vdm-business-partner-service').BusinessPartnerAddress
+```
+
+What this returns is not particularly spectacular (`undefined`) ... but don't be fooled -- at this point you now have an object bristling with potential. If you're interested in seeing this potential, just enter `BusinessPartnerAddress.`, including the period at the end, and then hit **Tab** to see the possibilities. Now you can use this object, and invoke the request builder to make a call to the service that you have running in the other integrated terminal.
 
 Switch to editor mode in the Node.js REPL with the command `.editor` (note the period at the start -- see [Commands and Special Keys](https://nodejs.org/api/repl.html#repl_commands_and_special_keys)) so you can paste in the following all at once:
 
@@ -231,6 +237,8 @@ Promise {
      [Symbol(kWeak)]: WeakReference {} } }
 > [ 'Walldorf', 'Palo Alto', 'Hallbergmoos', 'Potsdam' ]
 ```
+
+> You may or may not see the detail of the Promise in your output (as it's shown here), depending on circumstances ... but you should at least see the data returned.
 
 The call returns a Promise from which, once resolved, we can extract data. As you can see, we've managed to retrieve the city names from the data served by this mock service (you can check the names against the initial data that is loaded in `server.js`).
 

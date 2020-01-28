@@ -9,7 +9,6 @@ primary_tag: products>sap-screen-personas
 
 ## Prerequisites
  - SAP Screen Personas SP06 or higher
- - Completion of the **Build a Simple SAP Screen Personas Dashboard** tutorial
 
 ## Details
 ### You will learn
