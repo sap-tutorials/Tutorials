@@ -1,6 +1,7 @@
 ---
 title: Creating and Removing Extended Storage
 description: Creating and removing Extended Storage using SAP HANA Studio and SAP HANA Cockpit
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -46,6 +47,7 @@ The "Delta" store option is also available here. If you want a delta enabled sto
 
 >Note: If you have created the extended storage without delta enabled, you will not be able to create delta enabled extended tables. You will need to drop and re-add the extended storage with the delta option switched "ON".
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -79,8 +81,6 @@ Once you click on "**Delete**", you should see the following show up. The "Restr
 
 ![Restrict and Cascade Option](restrict-cascade-es-cockpit.png)
 
+[DONE]
 
 [ACCORDION-END]
-
-
-

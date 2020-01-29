@@ -11,6 +11,7 @@ author_profile: https://github.com/Kavya-Gowda
 
 ## Prerequisites
  - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+ - Configure entitlement for Process Visibility in your subaccount. for more info, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html)
 
 ## Details
 ### You will learn

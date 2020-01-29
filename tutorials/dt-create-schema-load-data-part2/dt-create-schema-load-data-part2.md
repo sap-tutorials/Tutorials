@@ -1,6 +1,7 @@
 ---
 title: Create a New User and Assign Permissions
 description: Create a new `TCPH` user as well as assign roles and privileges to the new user.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -40,6 +41,7 @@ Click the green Deploy button near the top right to add the user. You will recei
 
 ![User Created](user-created.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -90,6 +92,7 @@ In order to save the changes you made, press the green Deploy button on the top 
 
 ![Change Applied](change-applied.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -106,7 +109,6 @@ You should see another connection to your system show up under the **Systems** v
 
 ![System Added](Added.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
-
-

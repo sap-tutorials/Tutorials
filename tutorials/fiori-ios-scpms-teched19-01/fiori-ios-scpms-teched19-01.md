@@ -3,14 +3,14 @@ title: Create Xcode Project with SAP Cloud Platform SDK for iOS
 description: Enable SAP Cloud Platform Mobile Services, create a connection in the SAP Cloud Platform SDK for iOS Assistant, and generate a master-detail view app with the iOS Assistant.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 15
 ---
 
 ## Prerequisites  
 - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Enable SAP Cloud Platform Mobile Services](fiori-ios-scpms-enable-ms-neo)
 - **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
+- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details
 ### You will learn  

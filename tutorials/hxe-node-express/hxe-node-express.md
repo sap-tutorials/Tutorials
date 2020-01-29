@@ -3,26 +3,20 @@ title: Deploy a Node.js Application for SAP HANA, Express Edition
 description: Deploy a sample Node.jsapplication which connects to SAP HANA, Express Edition.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition  ]
+time: 30
 ---
 
 ## Prerequisites and Assumptions
- - **Proficiency:** Beginner
  - User has Python environment setup already (preferably Python 3.5 or above)
  - User knows how to install packages and develop using Python and Node.js
- - Setup: `HANA, express edition` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](https://developers.sap.com/tutorials/hxe-db-deploy.html).
+ - Setup: `HANA, express edition` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](hxe-db-deploy).
  - This tutorial assumes that you have a database login that can access the `M_DATABASE` view in the `HANA, express edition` `SystemDB`.
  - **Tutorials:** [Create a new project using Node.js and `HANA, express edition`]
-
-
-## Next Steps
- - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
 
 ## Details
 ### You will learn  
 This tutorial will guide you through the process to deploy a sample Node.js application  which connects to SAP HANA, Express Edition.
 
-### Time to Complete
-**30 Min**
 
 ---
 

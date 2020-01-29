@@ -3,10 +3,10 @@ auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
 description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
 time: 10
 ---
- 
+
 ## Prerequisites  
 - SAP Cloud Platform ABAP Environment user
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
@@ -202,7 +202,7 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
           @UI: { identification:[ { position: 100, label: 'Last Changed At' } ] }
           lastchangedat                          as LastChangedAt,
 
-          //publich associations
+          //public associations
           _Country,
           _Currency
     }
@@ -318,7 +318,7 @@ Click **Activate** to publish your service binding.
 
   6. Check your result:
 
-      ![Open SPA Fiori elements view](fiori6.png)
+      ![Open SAP Fiori elements view](fiori6.png)
 
 [DONE]
 [ACCORDION-END]

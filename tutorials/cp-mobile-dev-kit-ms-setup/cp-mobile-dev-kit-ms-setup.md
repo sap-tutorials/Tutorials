@@ -1,6 +1,6 @@
 ---
 title: Set Up Initial Configuration for an MDK App
-description: Configure a new app of type mobile development kit in the SAP Cloud Platform Mobile Services cockpit.
+description: Configure a new app in the SAP Cloud Platform Mobile Services cockpit and assign some server side features.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -65,7 +65,11 @@ Click on **Mobile Settings Exchange** and select **Biometric Authentication Allo
 
 ![MDK](img_0010.1.1.png)
 
-Save the changes.
+**Save** the changes.
+
+Click `com.sap.mdk.demo` to navigate back to the app configuration page.
+
+![MDK](img_0010.2.png)
 
 Now, we will assign few more features like App Update, Offline in the app configuration. First, start with **Mobile App Update**. Click **+** icon to add this feature.
 
@@ -106,16 +110,14 @@ Select OData Version `V2` and click **Save**.
 
 Click `com.sap.mdk.demo` to navigate back to app configuration page.
 
-![MDK](img_0012.png)
-
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Get familar with other assigned features)]
+[ACCORDION-BEGIN [Step 4: ](Get familiar with other assigned features)]
 
 ![MDK](img_0015.png)
 
-**Mobile App Update:** - Since we specified Mobile Development Kit as the app type, the App Update feature is assigned to the app by default. This feature keeps MDK apps up-to-date and manage the apps' life cycles.
+**Mobile App Update:** - This feature keeps MDK apps up-to-date and manage the apps' life cycles.
 
 **Mobile Offline Access:** - Define offline settings for the selected application. Offline support enables client applications to access back-end data without a connection. When offline, applications access data from an offline store on the client. SAP Cloud Platform Mobile Services moves data between the back end and the client offline store.
 

@@ -18,7 +18,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-For this tutorial, you will use [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#1b6c94ec-ec39-4b11-97c1-c0e028564cf4) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
+For this tutorial, you will use [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#c65de16e-1ad8-4427-a7ce-98e3dec2bf67) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
 To implement deep insert between parent and child OData entities, you need to carry out the following tasks:
 
@@ -47,10 +47,6 @@ Enter the Page Name `SalesOrderHeaders_Create` and click **Next** and the **Fini
 
 ![MDK](img_002.png)
 
-In `SalesOrderHeaders_Create.page` , select the page header area and then click **Page**.
-
-![MDK](img_02.1.png)
-
 In the Properties pane, set the **Caption** to **Create Order**.
 
 ![MDK](img_003.png)
@@ -65,7 +61,7 @@ Drag and drop a **Simple Property** onto the Page area.
 
 ![MDK](img_004.gif)
 
-Drag and drop five additional Simple Property controls and one Date Picker control onto the page so you have seven total controls.
+Drag and drop five additional **Simple Property** controls and one **Date Picker** control onto the page so you have seven total controls.
 
 ![MDK](img_005.png)
 
@@ -305,7 +301,7 @@ Under `CreateLinks`, select the checkbox for `CustomerDetails` and provide `{{#P
 
 >`Page:-Previous`: A target path that when resolved will return the `PageProxy` object of the page before the currently displayed page.
 
->In [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#1b6c94ec-ec39-4b11-97c1-c0e028564cf4), click **Metadata URL** and you will find `CustomerDetails` navigation property for `SalesOrderHeader` entity.
+>In [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#c65de16e-1ad8-4427-a7ce-98e3dec2bf67), click **Metadata URL** and you will find `CustomerDetails` navigation property for `SalesOrderHeader` entity.
 
 >![MDK](img_028.png)
 
@@ -331,10 +327,6 @@ Now that the `SalesOrderHeaders_CreateEntity.action` has been created, you will 
 In `SalesOrderHeaders_Create.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
 ![MDK](img_030.gif)
-
-In the Properties pane, set **Position** to **Right**.
-
-![MDK](img_031.png)
 
 Click the **link** icon to open the object browser for the **System Item** property.
 

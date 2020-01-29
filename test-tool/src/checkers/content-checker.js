@@ -5,7 +5,9 @@ const fs = require('fs');
 
 const tagChecker = require('./tags-checker');
 const linkChecker = require('./link-checker');
+const syntaxChecker = require('./syntax-checker');
 const metadataChecker = require('./metadata-checker');
+
 const { regexp, constraints } = require('../constants');
 
 const fileExistsSyncCS = (filePath) => {
@@ -53,6 +55,8 @@ module.exports = {
       contentCheckResult: [],
       tagsCheckResult: [],
       stepSpellCheckResult: [],
+      syntaxCheckResult: [],
+      linkCheckResult: [],
     };
     const dir = path.dirname(filePath);
     const {
@@ -80,36 +84,14 @@ module.exports = {
 
     await Promise.all(lines.map(async (line, index) => {
       const isCodeLine = (line.match(codeLine) || []).length > 0;
-
-      if (isMeta) {
-        metaLines.push(line);
-        if (line.replace(/\n/g, '') === '---') {
-          metaBoundaries += 1;
-        }
-        if (metaBoundaries >= 2) {
-          isMeta = false;
-          const metaValidationResult = metadataChecker.check(metaLines);
-          result.contentCheckResult.push(...metaValidationResult);
-        }
-
-        const primaryTagError = tagChecker.checkPrimaryTag(line, index);
-        const xpTagError = tagChecker.checkExperienceTag(line, index);
-
-        if (primaryTagError) {
-          result.tagsCheckResult.push({
-            msg: primaryTagError,
-            line: index + 1,
-          });
-        }
-
-        if (xpTagError) {
-          result.tagsCheckResult.push({
-            msg: xpTagError,
-            line: index + 1,
-          });
-        }
+      if (line.replace(/\n/g, '') === '---') {
+        metaBoundaries += 1;
       }
-
+      if (metaBoundaries >= 2) {
+        isMeta = false;
+        const metaValidationResult = metadataChecker.check(metaLines);
+        result.contentCheckResult.push(...metaValidationResult);
+      }
       const trimmedLine = line.trim();
       if (trimmedLine.startsWith('```') || trimmedLine.match(codeBlockInNote)) {
         isCodeBlock = !isCodeBlock;
@@ -213,6 +195,7 @@ module.exports = {
           }
 
           if (remoteImageMatches) {
+
             await Promise.all(remoteImageMatches.map(async (item) => {
               // using new RegExp to reset g flag
               const [imageUrl] = item.match(new RegExp(pureLink, 'i'));
@@ -233,6 +216,46 @@ module.exports = {
               msg: localFileLink.message,
             });
           }
+
+          const syntaxCheckResult = syntaxChecker.check(line, index + 1);
+          if (syntaxCheckResult) {
+            result.syntaxCheckResult.push(syntaxCheckResult);
+          }
+        }
+      }
+
+      if (isMeta) {
+        metaLines.push(line);
+
+        const authorProfileMatch = line.match(regexp.link.authorProfile);
+        if (authorProfileMatch && authorProfileMatch.length > 0) {
+          const authorUrlMatch = line.replace(authorProfileMatch[0], '')
+            .trim();
+
+          const authorUrlCheckResult = await metadataChecker.checkAuthorProfile(authorUrlMatch);
+          if (authorUrlCheckResult) {
+            result.linkCheckResult.push({
+              line: index + 1,
+              ...authorUrlCheckResult,
+            });
+          }
+        }
+
+        const primaryTagError = tagChecker.checkPrimaryTag(line, index);
+        const xpTagError = tagChecker.checkExperienceTag(line, index);
+
+        if (primaryTagError) {
+          result.tagsCheckResult.push({
+            msg: primaryTagError,
+            line: index + 1,
+          });
+        }
+
+        if (xpTagError) {
+          result.tagsCheckResult.push({
+            msg: xpTagError,
+            line: index + 1,
+          });
         }
       }
     }));

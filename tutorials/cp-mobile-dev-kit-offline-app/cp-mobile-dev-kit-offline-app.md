@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - - **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- - **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
+- - **Tutorial:** [Open SAP Web IDE Full-Stack](webide-multi-cloud)
 - - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
 - **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
@@ -35,8 +35,7 @@ Right click on Workspace folder and select **New** | **MDK Base Project**.
 
 >The _MDK Base Project_ template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
->More details on _MDK template_ is available in
-[help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).    
+>More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).    
 
 Enter the Project Name as `DemoSampleApp` and click **Next**.
 
@@ -44,7 +43,7 @@ Enter the Project Name as `DemoSampleApp` and click **Next**.
 
 Leave the default values in _Application Creation_ step as it is, click **Next**.
 
-In _Service Creation_ step, provide and select the below information:
+In _Service Configuration_ step, provide and select the below information:
 
 | Field | Value |
 |----|----|
@@ -87,7 +86,7 @@ After clicking Finish, the wizard will generate your MDK Application based on yo
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get familar with generated project structure)]
+[ACCORDION-BEGIN [Step 2: ](Get familiar with generated project structure)]
 
 This is how the project structure looks like within the workspace.
 

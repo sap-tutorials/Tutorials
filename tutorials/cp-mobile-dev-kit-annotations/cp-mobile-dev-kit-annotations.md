@@ -1,5 +1,5 @@
 ---
-title: Leverage OData Annotations to build an MDK app with CRUD functionality
+title: Use OData Annotations to Add CRUD Functionality to an MDK App
 description: Create a fully functional CRUD native mobile application for iOS and Android.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
@@ -31,7 +31,7 @@ Mobile Development Kit brings OData annotations capabilities to your native mobi
 
 If you are a Fiori app designer, you may already be familiar with OData annotations and smart templates.  
 
-SAP Fiori elements is a UI development library based on SAP UI5. The UI is generated at runtime from metadata. App developers can use SAP Fiori elements to create SAP Fiori applications based on OData services and annotations. With little or no coding, you can create SAP Fiori applications. UI5 has a Web solution, named smart templates, that builds a starter application by parsing the annotations in your OData service.
+SAP Fiori elements provide designs for UI patterns and predefined templates for common application use cases. App developers can use SAP Fiori elements to create SAP Fiori applications based on OData services and annotations. With little or no coding, you can create SAP Fiori applications. UI5 has a Web solution, named smart templates, that builds a starter application by parsing the annotations in your OData service.
 
 You can also check out more information on the Fiori elements
 [List Report](https://experience.sap.com/fiori-design-ios/article/list-report/) and [Smart templates](https://experience.sap.com/fiori-design-web/smart-templates/)
@@ -85,11 +85,7 @@ In **Metadata Source** step, select **Customers** Entity Type and click **Next**
 
 ![MDK](img_3.png)
 
-In **Customization** step, select **Customer** Entity Type.
-
-Click **Next** and let's stick to the defaults.
-
-![MDK](img_22.png)
+In **Customization** step, click **Next** and let's stick to the defaults.
 
 In **Features** step, click **Finish**.
 
@@ -156,7 +152,7 @@ Click on QR code icon to populate QR code for app on-boarding.
 
 [OPTION BEGIN [Android]]
 
-On Android, camera app does not support scanning the QR code. You can use [Barcode Scanner](hhttps://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) app to scan it.
+On Android, camera app does not support scanning the QR code. You can use [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) app to scan it.
 
 Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
 
@@ -343,7 +339,7 @@ Click **Finish** to create list detail from OData Annotation.
 
 ![MDK](img_34.png)
 
-In MDK project, you will see new pages for Product.
+In MDK project, you will see new pages for **Product**.
 
 ![MDK](img_35.png)
 

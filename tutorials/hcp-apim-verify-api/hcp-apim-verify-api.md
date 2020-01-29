@@ -1,18 +1,14 @@
 ---
-title: Protect your API Proxy by adding an Application Key Verification
-description: In this tutorial you will learn how to protect your API Proxy with a first simple policy -  the "Verify API Key" Policy.
+title: Protect Your API Proxy by Adding Application Key Verification
+description: Protect your API Proxy with a first simple policy -- the Verify API Key policy.
 auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner, topic>cloud, topic>security, products>sap-cloud-platform, products>sap-api-management ]
+time: 20
 ---
 
 ## Prerequisites  
-- **Proficiency:** Beginner
 - **Tutorials:** [Add the API Proxy to a product](https://developers.sap.com/tutorials/hcp-apim-create-product.html)
-
-
-## Next Steps
-- [Consume the API Proxy in SAP Web IDE](https://developers.sap.com/tutorials/hcp-apim-webide-int.html)
 
 
 ## Details
@@ -21,8 +17,6 @@ SAP Cloud Platform, API Management offers several out of the box policies which 
 
 In this tutorial you will learn how to protect your API Proxy with the "Verify API Key" Policy. This policy allows you to add a simple protection via a so called API Key. Only calls which send a valid API Key along with the main request will be allowed to call the API Proxy.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -61,7 +55,7 @@ You will look at [assigning multiple policies to various processing stages](http
 
 [ACCORDION-BEGIN [Step 5: ](Access the SAP API Management API Portal)]
 
-Open the SAP API Management API Portal (you can get the URL from Enable the SAP Cloud Platform, API Management Service.
+Open the SAP API Management API Portal (you can get the URL from Enable the SAP Cloud Platform, API Management Service).
 
 ![Access the API Portal](01-access_api_portal.png)
 
@@ -167,4 +161,3 @@ Click on **Save** to save the changes to the API and enforce the new policies.
 
 ### Optional
 - When you now open the API Proxy in a browser you will get an error message stating that you need to pass an API Key in the header `APIKey`.
-

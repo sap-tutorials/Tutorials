@@ -71,7 +71,7 @@ First set up a destination and its parameters for making a connection to the SAP
 [ACCORDION-BEGIN [Step 2: ](Download the Portal tutorials repository)]
 The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5 applications, Portal widgets, and Shell plugins used in Portal tutorials. Once deployed to your SAP Cloud Platform subaccount, they are available to add to your Portal site.
 
-1. Go to [SAP Cloud Platform Portal Tutorial Samples](https://github.com/SAP/cloud-portal-tutorial-samples
+1. Go to [SAP Cloud Platform Portal Tutorial Samples](https://github.com/SAP/cloud-portal-tutorial-samples).
 
 2. Click the  **Clone or download** button and select **Download ZIP**.
 

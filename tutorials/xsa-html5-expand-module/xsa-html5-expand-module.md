@@ -120,7 +120,7 @@ Call it `ui5`. When asked to specify parameters, you can click **Next**.
 
 ![New UI5](7.png)
 
-> Note: If you do not have SPS03 yet, add the following resource to your `mta.yaml` file, adjusting the UI5 version accordingly instead of running the previous wizard, which is not available. The following example works for SPS02
+> Note: If you do not have version 2.0 SPS03 yet, add the following resource to your `mta.yaml` file, adjusting the UI5 version accordingly instead of running the previous wizard, which is not available. The following example works for SPS02
 
 > ```txt
 - name: ui5

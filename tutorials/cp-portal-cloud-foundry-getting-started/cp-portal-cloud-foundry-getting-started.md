@@ -9,7 +9,7 @@ primary_tag: products>sap-cloud-platform-portal
 
 ## Prerequisites
   - You've created a SAP Cloud Platform trial account in the Cloud Foundry environment on an AWS Data Center. You can create a trial account using this link: [Create a trial account](https://cockpit.hanatrial.ondemand.com).
-  - You can also use a subaccount in your SAP Cloud Platform global account. If you don't have a subaccount in the Cloud Foundry environment, refer to this topic: [Onboarding](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
+  - You can also use a subaccount in your SAP Cloud Platform global account. If you don't have a subaccount in the Cloud Foundry environment, refer to this topic: [Initial Setup](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
 
 ## Details
@@ -24,7 +24,7 @@ In this group of tutorials our goal is to create an attractive Portal site using
 
 Before you can access the Portal service, you need to first subscribe to it.
 
-1. Log on to SAP Cloud Platform and click **Enter Your Trial Account**.
+1. [Log onto SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com) and click **Enter Your Trial Account**.
 
     ![Enter trial account](00_enter_trial_account.png)
 
@@ -54,6 +54,8 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
 1. Click on your subaccount again using the breadcrumbs at the top.
 
+    ![Open subaccount using breadcrumbs](3a_use_breadcrumbs.png)
+
 2. Click **Security > Role Collections** from the side menu.
 
     ![Open Role Collections](04_role_collections.png)
@@ -70,7 +72,7 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
     |  Property     | Value
     |  :------------- | :-------------
-    |  Application Identifier           | **`portal-cf-service!<id>`** <div>&nbsp;</div> In the screen capture below, the **Application Identifier** has an ID at the end.  This ID may be different on your system -- just make sure that you choose the value with this format: **portal-cf-service!`<id>`**
+    |  Application Identifier           | **`portal-cf-service!<id>`** <div>&nbsp;</div> In the screen capture below, the **Application Identifier** has an ID at the end.  This ID is different on your system -- just make sure that you choose the value with this format: **portal-cf-service!`<id>`**
     |  Role Template           | **`Super_Admin`**
     |  Role    | **`Super_Admin`**
 

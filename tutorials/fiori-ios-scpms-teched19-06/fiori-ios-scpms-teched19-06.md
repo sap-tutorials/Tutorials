@@ -3,13 +3,13 @@ title: Implement Action Sheet and Image Picker
 description: Implement an Action Sheet and Popover (for regular size class on iPad) to pick an image from Photo Library or Camera; the Image will later be fed to the Core ML Image Classification Model.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 15
 ---
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
+- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details
 ### You will learn  
@@ -131,7 +131,7 @@ The Table View Controller has to have a Navigation Bar so let's embed the `Produ
 
 Last step is to create the segue from the Bar Button Item inside the Overview View Controller to the Product Classification Table View Controller.
 
-Select the added Bar Button Item and **control + drag** to the Product Classification Table View Controller, as action choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
+Select the `OverviewViewController` and **control + drag** to the Product Classification Table View Controller, choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
 
 ![Product Classification VC](fiori-ios-scpms-teched19-08.png)
 

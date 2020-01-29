@@ -8,7 +8,8 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ## Prerequisites
--	A SAP CP Neo subaccount
+-	An entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
+- A SAP CP Neo subaccount
 -	An ABAP on-premise system, such as:
     - [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/) or:
     - [The SAP Gateway Demo System (ES5)](https://blogs.sap.com/2017/12/05/new-sap-gateway-demo-system-available/)
@@ -38,6 +39,8 @@ To see this tutorial group as a blog series by Andre Fischer, see:
 
 Throughout this tutorial, replace `XXX` with your initials or group number.
 
+If you have bought an entitled to SAP
+
 **The problem:**
 
 There are two problems when setting up connectivity between the Cloud Platform ABAP Environment and an on-premise:
@@ -66,7 +69,7 @@ There are two problems when setting up connectivity between the Cloud Platform A
 First, you need to connect your ABAP on-premise system to a Neo subaccount by means of SAP Cloud Connector.
 
 1. Log on to SAP Cloud Connector:
-    - Address = `https://localhost:<port>` (Default = 8443)
+    - Address = e.g. `https://localhost:<port>` (Default = 8443)
     - User = Administrator
     - Initial password = Manage (You will change this when you first log in)
 
@@ -76,12 +79,10 @@ First, you need to connect your ABAP on-premise system to a Neo subaccount by me
   - **Display Name** = (Neo Subaccount) Display Name. You can find this in by choosing your SAP Cloud Platform, NEO, subaccount in SAP Cloud Cockpit (see screenshot below)
   - **Subaccount User** = for the Neo Subaccount
   - **Password**
-  - **Location ID** = Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. here, `MyInstance`
+  - **Location ID** = Optional here. However, it is mandatory if you want to connect several Cloud Connectors to your subaccount. This can be any text, e.g. your initials
 
   ![Image depicting step1g-create-subacc](step1g-create-subacc.png)
-  .
   ![Image depicting step1f-choose-subacc](step1f-choose-subacc.png)
-  .
   ![Image depicting step1b-neo-tech-name ](step1b-neo-tech-name.png)
 
 Your configuration should now look like this:
@@ -92,20 +93,21 @@ Your configuration should now look like this:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add your on-Premise System)]
-1. In your sub-account (**Display Name**), choose **Cloud to On-Premise > Access Control**.
+1. In your sub-account, **Display Name**, choose **Cloud to On-Premise > Access Control**.
 
-    ![Image depicting step2e-add-onP-system](step2e-add-onP-system.png)
+  ![Image depicting step2e-add-onP-system](step2e-add-onP-system.png)
 
 2. In the **Mapping Virtual...** pane, choose **Add (+)**.
 
-    ![Image depicting step2f-add-2](step2f-add-2.png)
+  ![Image depicting step2f-add-2](step2f-add-2.png)
 
 3. Enter the following values, and choose **Save**.
 
     - Backend Type = ABAP
     - Protocol = RFC
+    - **Without** load balancing...
     - Internal Host and port (see below)
-    - Virtual Host = e.g. `myHost`. Here, `myHost` represents an external hostname, so that you can hide the internal hostname from the outside world. You will need this external hostname and port later.
+    - Virtual Host = e.g. `es5host`. Here, `es5host` represents an external hostname, so that you can hide the internal hostname from the outside world. You will need this external hostname and port later.
     - Virtual Port = usually, enter the internal Port
     - Principal Type = None
     - Check Internal Host = Ticked
@@ -166,7 +168,7 @@ You will now create two destinations in the ABAP Environment. These must be crea
     - Name, e.g. : `ES5_RFC_XXX`
     - Type: `RFC`
     - Description, e.g. Test ES5
-    - Location ID: same as in step 1, e.g. `MyInstance`
+    - Location ID: same as in step 1, e.g. your initials
     - User: Your user for the on-premise system
     - Password: Your password
 
@@ -253,7 +255,7 @@ You have now created a destination service instance destination for your communi
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Create variables)]
-1. Create the data types that specify your remote connection information.
+1. Create the data types that specify your remote connection information:
 
     ```ABAP
     DATA(lo_destination) = cl_rfc_destination_provider=>CREATE_BY_CLOUD_DESTINATION(
@@ -266,11 +268,10 @@ You have now created a destination service instance destination for your communi
     DATA lv_result type c length 200.
     ```
 
-2. Replace the `i_service_instance_name` with your service instance name, specified in the Communication  Arrangement, which you created in [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api).
+2. Replace the `i_service_instance_name` with your service instance name, specified in the Communication  Arrangement (which you created in [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api)).
 
-    ![Image depicting step10a-service-instance-name-cropped](step10a-service-instance-name-cropped.png)    
 
-3. Replace the `i_name` with your the name of the specific **RFC** destination, which you created in step 5 above.
+3. Replace the `i_name` with your the name of the specific **RFC** destination (which you created in SAP Cloud Cockpit in the tutorial [Create a Communication Arrangement for Outbound Communication](abap-env-create-comm-arrangement-api)).
 
     ![Image depicting step10b-i-name](step10b-i-name.png)
 
@@ -358,7 +359,7 @@ ENDCLASS.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Test the class)]
-1. Save and activate the class (**`Ctrl+S, Ctrl+F3`**).
+1. Save and activate the class, using **`Ctrl+S, Ctrl+F3`**.
 
 2. Run the class by choosing **`F9`**. Some system information, such as the hostname, the System ID ( `<SID>` ), and the IP address should be displayed.
 

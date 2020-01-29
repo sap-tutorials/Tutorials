@@ -7,13 +7,18 @@ tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud , topic>
 time: 30
 ---
 
-
 ## Details
 ### You will learn  
   - How to subscribe to a message queue
   - How to parse the received messages
 
+
+
 ---
+
+> The SAP managed offerings for PostgreSQL, Mongo DB, Redis and RabbitMQ will be removed from the price list starting Q3/2019 i.e. July 15th and are scheduled to be retired as of Jan 15, 2020.
+
+> **Therefore, depending on you account type, you might not be able to complete this tutorial anymore**
 
 [ACCORDION-BEGIN [step ](Define and install the dependencies)]
 

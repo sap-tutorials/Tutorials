@@ -48,6 +48,8 @@ Download and install the appropriate Docker Edition for your system. Visit the [
 
 > **Note:** Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Manage Storage System)]
@@ -74,6 +76,8 @@ sudo systemctl restart docker.service
 
 For more information on the storage driver, visit the [Docker storage drivers](https://docs.docker.com/storage/storagedriver/select-storage-driver/) documentation page.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Log Into Docker)]
@@ -85,6 +89,8 @@ sudo docker login
 ```
 
 Follow the prompts and provide your Docker ID and password.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -116,6 +122,8 @@ Remove the alpine image with the following command:
 ```bash
 sudo docker image rm alpine -f
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -150,6 +158,8 @@ The SAP HANA, express edition image will be listed as `hanaexpressxsa`.
 > **Note:**
 > You may have to log into your Docker account to pull the image. From your Docker-enabled command line, run `docker login` and follow the prompts to enter your Docker ID and password. Once you have logged in, try the pull command again.
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -173,6 +183,8 @@ Load the changes by running:
 sudo /sbin/sysctl -p
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Edit the /etc/hosts file)]
@@ -185,9 +197,34 @@ Use the following command:
 sudo sh -c 'echo <hxehost_IP_address>    hxehost >> /etc/hosts'
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Set Up Password for SAP HANA, express edition)]
+[ACCORDION-BEGIN [Step 8: ]((Optional) Create a Directory to Persist SAP HANA, express edition Data Outside of the Container)]
+
+Create a directory for the SAP HANA, express edition container and grant it the proper permissions.
+
+```bash
+mkdir -p /data/<directory_name>
+chown <hxeadm userID or name>:<sapsys groupID or name> /data/<directory_name>
+```
+
+For example:
+
+```bash
+mkdir -p /data/mydirectory
+chown 12000:79 /data/mydirectory
+```
+
+The name of this directory does not need to match the name you give to your SAP HANA, express edition container.
+
+[DONE]
+
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 9: ](Set Up Password for SAP HANA, express edition)]
 
 To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in the */data/<directory_name>* directory you created earlier.
 
@@ -245,9 +282,11 @@ Be sure to do this with each `json` file you use for your Docker containers.
 
 Make a note of the path to the `json` file. You will need this to load the SAP HANA, express edition container.
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Start SAP HANA, express edition Container)]
+[ACCORDION-BEGIN [Step 10: ](Start SAP HANA, express edition Container)]
 
 Use the SAP HANA, express edition image to create a container.
 
@@ -305,9 +344,11 @@ This example creates the SAP HANA, express edition container with the name `expr
 > **Note:**
 > For Linux kernel versions earlier than 4, omit the `net.ipv4.ip_local_port_range` option.
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Log into SAP HANA, express edition Container)]
+[ACCORDION-BEGIN [Step 11: ](Log into SAP HANA, express edition Container)]
 
 To start your SAP HANA, express edition container, run the following command:
 
@@ -322,9 +363,11 @@ sudo docker exec -it express_edition bash
 ```
 
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ]((Optional) Test the Container)]
+[ACCORDION-BEGIN [Step 12: ]((Optional) Test the Container)]
 
 When you are logged into the SAP HANA, express edition container, you can test your installation by entering the following:
 
@@ -347,9 +390,11 @@ And you should see the following services running:
 * `hdbdiserver`
 * `hdbwebdispatcher`
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ]((Optional) Log Into System or Tenant Database)]
+[ACCORDION-BEGIN [Step 13: ]((Optional) Log Into System or Tenant Database)]
 
 You can log into the system database with the following command:
 
@@ -397,9 +442,11 @@ ALTER SYSTEM ALTER CONFIGURATION ('global.ini', 'system') SET ('public_hostname_
 >```
 
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ]((Optional) Test SAP Web IDE)]
+[ACCORDION-BEGIN [Step 14: ]((Optional) Test SAP Web IDE)]
 
 After you have logged in, view the list of XSA applications. Enter:
 
@@ -432,9 +479,11 @@ Log on to Web IDE using the `XSA_DEV` user and the password you made during inst
 
 If you are prompted to change your password, follow the instructions.
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ]((Optional) Update Your Docker Image)]
+[ACCORDION-BEGIN [Step 15: ]((Optional) Update Your Docker Image)]
 
 Set the root password and login.
 
@@ -474,6 +523,8 @@ sudo ./hxe_upgrade.sh
 
 Follow the prompts to complete the server update.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Docker Run Usage: ](-Help Command)]
@@ -502,6 +553,8 @@ usage: [options]
 
 --agree-to-sap-license             Indicates you agree to the SAP Developer Center Software Developer License Agreement.
 ```
+
+[DONE]
 
 [ACCORDION-END]
 

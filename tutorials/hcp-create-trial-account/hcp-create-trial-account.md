@@ -13,7 +13,7 @@ time: 15
 ### You will learn  
   - How to register on the SAP website
   - How to start your SAP Cloud Platform trial
-  - Learn how to 90 days trial works
+  - How the 90-day trial works
   - How to navigate to your sub-account and space
   - Where to find information on three important Cloud Foundry areas:  Applications, Service Marketplace, and Service Instances
 
@@ -107,7 +107,9 @@ You will then see a dialog box while the account is set up.  When complete, the 
 [ACCORDION-BEGIN [Step](Navigate to the Cloud Foundry space)]
 
 You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
+
 ![enter trial account](enter-trial.png)
+> Bookmark the link for fast and quick access to the cockpit.  
 
 The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
@@ -139,7 +141,10 @@ The **Service Marketplace** is where you can find services to attach to any of y
 [ACCORDION-BEGIN [Step](Understand the trial counter)]
 
 You can find a small counter on the top of the screen. This counter indicates how many days you have left in your free trial. Once the counter goes to zero, all your apps may be stopped and your subaccount will go to sleep. This means all apps will be stopped and you won't be able to log in via the CF CLI anymore (until you extend your trial).
-Extending the trial means you will get another 30 days until the account will go to sleep. After extending two times (e.g. 90 days) your subaccount will be deleted. E.g. all apps and services will be gone and you cannot log in via the CLI anymore. After this point, you can start your new trial from scratch via the SAP Cloud Platform Cockpit (see step 6).
+
+Extending the trial means you will get another 30 days until the account will go to sleep. After extending two times (e.g., 90 days) your subaccount will be deleted (i.e., all apps and services will be gone and you cannot log in via the CLI anymore). 
+
+After this point, you can start your new trial from scratch via the SAP Cloud Platform cockpit (see step 6).
 
 ![Select trial subaccount](trial-counter.png)
 

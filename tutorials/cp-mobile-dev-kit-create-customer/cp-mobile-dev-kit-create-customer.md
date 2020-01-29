@@ -13,6 +13,8 @@ author_profile: https://github.com/jitendrakansal
 - You have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
 
 ## Details
+**Note**: Ensure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
+
 ### You will learn
   - How to create a customer record with information such as name, email, phone number & date of birth
   - How to store this record locally
@@ -22,8 +24,6 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Create new page for new customer record)]
 
-Ensure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
-
 In this step, you will create the `Customers_Create.page` as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
 
 Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
@@ -32,15 +32,11 @@ Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **
 
 >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
->You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+>You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a0358d7a9c3b46e0819f28ae779def24.html).
 
 Enter the Page Name `Customers_Create` and click **Next** and the **Finish** on the Confirmation step.
 
 ![MDK](img_002.png)
-
-In `Customers_Create.page` , select the page header area and then click **Page**.
-
-![MDK](img_002.1.png)
 
 In the **Properties** pane, set the **Caption** to **Create Customer**.
 
@@ -180,10 +176,6 @@ In `Customers_List.page`, drag and drop an **Action Bar Item** to the upper righ
 
 ![MDK](img_016_1.gif)
 
-In the Properties pane, set **Position** to **Right**.
-
-![MDK](img_016_2.png)
-
 Click the **link icon** to open the object browser for the `SystemItem` property.
 
 Double click on the **Add** type and click **OK**.
@@ -292,10 +284,6 @@ In `Customers_Create.page`, **drag and drop** an **Action Bar Item** to the uppe
 
 ![MDK](img_029.png)
 
-In the Properties pane, set **Position** to **Right**.
-
-![MDK](img_016_2.png)
-
 Click the **link** icon to open the object browser for the **System Item** property.
 
 Double click on the **Save** type and click **OK**.
@@ -352,7 +340,7 @@ Since this is an Offline application, new entry is added to the request queue of
 
 On Main page, tap **SYNC**, a successful message will be shown.
 
-![MDK](img_035.1.jpg)
+![MDK](img_036.1.png)
 
 [OPTION END]
 

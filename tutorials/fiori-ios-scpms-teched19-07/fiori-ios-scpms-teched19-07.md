@@ -1,15 +1,15 @@
 ---
-title: Implement Image classification Using a Trained Core ML Model and Vision Framework.
-description: Import a trained Core ML model and use the Vision framework to prepare a certain image for the classification; you will then use the classification result to fetch products of a certain product category from the sample data service.
+title: Implement Image Classification Using a Trained Core ML Model and Vision Framework
+description: Import a trained Core ML model and use the Vision framework to prepare a certain image for the classification, then use the classification result to fetch products of a certain product category from the sample data service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 25
 ---
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
+- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details
 ### You will learn  
@@ -21,16 +21,16 @@ time: 25
 
 [ACCORDION-BEGIN [Step 1: ](Understand the Core ML model)]
 
-For this tutorial you will import the `TechEd2019.mlmodel` Core ML model into your Xcode project. This model has been trained on product data like notebooks and office chairs. The data service your app is talking to has similar products in the catalogue. The goal for this tutorial is to later feed an image of a MacBook as well as an image of an office chair to the model. The Core ML model should classify those two images the correct way and your app will load similar products from the data service and display them in a Table View.
+For this tutorial you will import the `ProductImageClassifier.mlmodel` Core ML model into your Xcode project. The goal for this tutorial is to later feed an image of a MacBook as well as an image of an office chair to the model. The Core ML model should classify those two images the correct way and your app will load similar products from the data service and display them in a Table View.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Import Core ML model)]
 
-In order to use the `TechEd2019.mlmodel` Core ML model you have to add it to your Xcode project. The model is located on the desktop of the `TechEd` machine in the **Tutorial Content** folder.
+In order to use the `ProductImageClassifier.mlmodel` Core ML model you have to add it to your Xcode project.
 
-Go into that folder and **drag & drop** that model into the **Project Navigator** of Xcode. Xcode will bring up a dialogue, make sure **Copy Items if needed** and **Create folder references** is selected and click on **Finish**.
+Go into the folder you've saved your model and **drag & drop** that model into the **Project Navigator** of Xcode. Xcode will bring up a dialogue, make sure **Copy Items if needed** and **Create folder references** is selected and click on **Finish**.
 
 ![Import Model](fiori-ios-scpms-teched19-01.png)
 
@@ -160,7 +160,7 @@ Implement a method called `updateClassifications(for:)`:
 func updateClassifications(for image: UIImage) {
 
     // show the loading indicator
-    self.showFioriLoadingIndicator("Finding similiar products...")
+    self.showFioriLoadingIndicator("Finding similar products...")
 
     // make sure the orientation of the image is passed in the CGImagePropertyOrientation to set the orientation of the image
     let orientation = CGImagePropertyOrientation(image.imageOrientation)
@@ -455,9 +455,9 @@ private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ im
 
 Let's classify some images!
 
-Run your app on the iOS Simulator, because the iOS Simulator doesn't have a camera you have to import the product images into the iOS Simulator's Photo Library. The needed images are located on the **Desktop** inside the **Tutorial Content** folder.
+Run your app on the iOS Simulator, because the iOS Simulator doesn't have a camera you have to import the product images into the iOS Simulator's Photo Library. You can take whatever Laptop or Office Chair image you want and the model should give the correct result.
 
-Select the **MacBook.png** and the **Office Chair.png** image and drag them onto the iOS Simulator. The iOS Simulator will open up the Photo Library and add the images.
+Select a **MacBook or other Notebook** and an **Office Chair** image and drag them onto the iOS Simulator. The iOS Simulator will open up the Photo Library and add the images.
 
 ![Create Swift Class](fiori-ios-scpms-teched19-04.png)
 
@@ -479,7 +479,7 @@ Next the Photo Library of the iOS Simulator will open up, please tap on **Recent
 
 ![Create Swift Class](fiori-ios-scpms-teched19-09.png)
 
-Select the **MacBook** in there.
+Select the **MacBook or Notebook** in there.
 
 ![Create Swift Class](fiori-ios-scpms-teched19-10.png)
 

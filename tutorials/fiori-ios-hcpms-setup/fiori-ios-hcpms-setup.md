@@ -1,6 +1,6 @@
 ---
 title: Enable SAP Cloud Platform Mobile Services
-description: Learn how to enable SAP Cloud Platform Mobile Services within a trial SAP Cloud Platform account and how to open the Mobile Services cockpit.
+description: Learn how to enable SAP Cloud Platform Mobile Services within a SAP Cloud Platform trial account and how to open the Mobile Services cockpit.
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-platform-mobile-services
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, software-product-function>sap-cloud-platform-mobile-services, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards, products>mobile-development-kit-client]
@@ -9,7 +9,8 @@ author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
- - **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](hcp-create-trial-account).
+ - **Tutorial:** If you're new to SAP Cloud Platform, follow the tutorial [View the SAP Cloud Platform from 10,000 Meters](cp-explore-cloud-platform).
+ - **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
 
 ## Details
 ### You will learn  
@@ -45,7 +46,7 @@ In the left pane, choose **Services** > **Service Marketplace**.
 
 ![cf Trial](img_5.png)
 
-Scroll down and then choose any of Mobile tile.
+Search the **Mobile Services** and click on it.
 
 ![cf Trial](img_6.png)
 

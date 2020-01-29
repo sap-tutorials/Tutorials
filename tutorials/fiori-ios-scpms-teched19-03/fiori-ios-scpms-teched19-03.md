@@ -1,15 +1,15 @@
 ---
 title: Customize the Overview View Controller to Display Customers and Products
-description: You'll use the Swift programming language and the SAP Cloud Platform SDK for iOS to implement data loading from the sample Data service and display the results in a Table View in your app. In addition, you'll add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
+description: Use the Swift programming language and the SAP Cloud Platform SDK for iOS to implement data loading from the sample data service and display the results in a Table View in your app. Also add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 15
 ---
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
+- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details
 ### You will learn  
@@ -432,7 +432,7 @@ Great! The segue is created in storyboard and have an identifier. In the next st
 
 [ACCORDION-BEGIN [Step 5: ](Implement the prepare for segue method)]
 
-The segue already works, so if you would run the app now you can navigate back and forth from the Overview View Controller to the destination View Controller you've created. For this app, it is necessary to provide the Customer ID to the destination View Controller and set the title in the Navigation Item for the Customer Detail View Controller.
+For this app, it is necessary to provide the Customer ID to the destination View Controller and set the title in the Navigation Item for the Customer Detail View Controller.
 
 iOS provides a simple API to do that.
 

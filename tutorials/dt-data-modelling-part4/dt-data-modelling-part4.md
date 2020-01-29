@@ -1,6 +1,7 @@
 ---
 title: Creating a Calculation View from the Union of In-Memory and Extended Tables
 description: How to use unions to create a calculation view
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -50,13 +51,13 @@ Select the `Warm_data` node, and you will see the details show up under the "**D
 
 ![Add all to output](add-all-to-output.png)
 
-After doing this, all the grey circles will become orange. This means those columns will be sent to the next node.
+After doing this, all the gray circles will become orange. This means those columns will be sent to the next node.
 
 Repeat this process with the `Hot_data` node.
 
 ![Hot_data: Add All To Output](hot-data-add-all-to-output.png)
 
-Now, connect the `Hot_data` node and the `Warm_data` node to `Union_1`. To do this, press your cursor over the grey dot on the top of one node, and drag it over to the grey dot of another node.
+Now, connect the `Hot_data` node and the `Warm_data` node to `Union_1`. To do this, press your cursor over the gray dot on the top of one node, and drag it over to the gray dot of another node.
 
 ![Connect Nodes to Union_1](connect-nodes.png)
 
@@ -68,7 +69,7 @@ This will add these columns to the target section, along with mapping lines. Nex
 
 ![Auto Map By Name](auto-map-by-name.png)
 
-Back in the **Scenario** panel, join `Union_1` and `Aggregation` together by clicking on the grey dot at the top of the `Union_1` node and dragging it over to the grey dot at the bottom of the `Aggregation` node.
+Back in the **Scenario** panel, join `Union_1` and `Aggregation` together by clicking on the gray dot at the top of the `Union_1` node and dragging it over to the gray dot at the bottom of the `Aggregation` node.
 
 ![Join Union_1 and Aggregation](join-union-aggregation.png)
 
@@ -92,6 +93,7 @@ The aggregation defines how `O_TOTALPRICE` will be joined. Since there shouldn't
 
 We have now completed our calculation view, which created a union between both in-memory and extended tables.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -99,5 +101,7 @@ We have now completed our calculation view, which created a union between both i
 Navigate to `tutorial_All_Calc` in **Systems**. Under `tutorial_All_Calc` > Calculation Views, right click `CA_UNION` and click **Activate**.
 
 ![Activate Views](activate-views.png)
+
+[DONE]
 
 [ACCORDION-END]

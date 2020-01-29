@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,
 primary_tag: products>sap-cloud-platform-business-rules
 ---
 
+## Prerequisites
+ - You have assigned the roles **`RuleRuntimeSuperUser`** and **`RuleRepositorySuperUser`** to you in SAP Cloud Platform Cockpit. For more information, see [Assign Roles to Users for Managing Business Rules](cp-cf-businessrules02-assign-roles).
+
 ## Details
 ### You will learn
   - How to use Business Rules APIs
@@ -58,12 +61,14 @@ Here, you need to configure the environment to link it to the business rules pro
     |  `Secret`      | **`<clientsecret from service key>`**
     |  `tokenurl`     | **`<url from service key>`**
 
+> Enter the token URL without **`https://`**. For example, if the token URL in the service key is **`https://<trial ID>.authentication.eu10.hana.ondemand.com`**, then enter **`<trial ID>.authentication.eu10.hana.ondemand.com`**.
 
-    ![Configure environment](testing6.png)
 
-    Then, choose **Save**.
+![Configure environment](testing6.png)
 
-    ![Configure environment](testing7.png)
+Then, choose **Save**.
+
+![Configure environment](testing7.png)
 
 
 [DONE]

@@ -549,11 +549,11 @@ public class ObjectstoreController {
 									contentType);
 						}
 					} catch (IOException e) {
-						logger.error("Error occured while uploading the object: " + fileItemStream.get().getName() + e);
+						logger.error("Error occurred while uploading the object: " + fileItemStream.get().getName() + e);
 					}
 				}
 			} catch (IOException e) {
-				logger.error("Error occured while uploading the object: " + fileItemStream.get().getName() + e);
+				logger.error("Error occurred while uploading the object: " + fileItemStream.get().getName() + e);
 			}
 		}
 		return new ResponseEntity<>(message, HttpStatus.ACCEPTED);
@@ -597,7 +597,7 @@ public class ObjectstoreController {
 				if (this.objectStoreService.deleteFile(fileName)) {
 					msg = fileName + " is successfully deleted.";
 				} else {
-					msg = "Error occured while deleting the object: " + fileName;
+					msg = "Error occurred while deleting the object: " + fileName;
 					return new ResponseEntity<>(msg, HttpStatus.INTERNAL_SERVER_ERROR);
 				}
 			} else {
@@ -965,7 +965,7 @@ public class ObjectStoreRepository {
 			logger.info(fileName + " is successfully downloaded.");
 
 		} catch (IOException e) {
-			logger.error("Error occured while downloading the object: " + fileName + e);
+			logger.error("Error occurred while downloading the object: " + fileName + e);
 
 		} finally {
 			getContext().close();

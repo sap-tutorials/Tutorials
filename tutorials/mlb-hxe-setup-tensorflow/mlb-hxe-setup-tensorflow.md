@@ -8,7 +8,7 @@ time: 30
 ---
 
 ## Prerequisites  
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
+- [Prepare your SAP HANA, express edition instance for Machine Learning](mlb-hxe-setup-basic)
 
 ## Details
 ### You will learn
@@ -340,7 +340,7 @@ source .profile
 
 [ACCORDION-BEGIN [Step 1: ](Install Python Virtual Environment)]
 
-Now, you can install Python Virtual Environment):
+Now, you can install Python Virtual Environment:
 
 ```shell
 pip install --user virtualenv

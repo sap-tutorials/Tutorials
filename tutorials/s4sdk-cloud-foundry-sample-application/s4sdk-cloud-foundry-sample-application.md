@@ -54,11 +54,24 @@ The CLI will ask you for your mail and your password. After entering these, you 
 
 [ACCORDION-BEGIN [Step 2: ](Generate project from archetype)]
 
-To generate your first project from the Maven archetype, run the following command: (for Windows `PowerShell` see [Appendix](Troubleshooting))
+To generate your first project from the Maven archetype, run the following command:
+
+[OPTION BEGIN [On Windows]]
+
+```bash
+mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.sdk.archetypes" "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=RELEASE"
+```
+
+[OPTION END]
+
+[OPTION BEGIN [On Mac]]
 
 ```bash
 mvn archetype:generate -DarchetypeGroupId=com.sap.cloud.sdk.archetypes -DarchetypeArtifactId=scp-cf-tomee -DarchetypeVersion=RELEASE
 ```
+
+[OPTION END]
+
 During the generation process, Maven will require additional parameters to form your project:
 
   -  **`groupId`** - An identifier representing your group, company or organization (e.g. `com.sap.cloud.sdk.tutorial`)
@@ -251,19 +264,6 @@ mvn tomee:run
 Visit `http://localhost:8080/hello` on your local machine to view the response of our application. You can stop the server by pressing Ctrl + C.
 
 Now you have a strong basis for developing your own cloud application for `SCP Cloud Foundry` using the `SAP Cloud SDK`. In the following tutorials you will learn about more advanced uses of the `SAP Cloud SDK`.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Appendix: ](Troubleshooting)]
-
-`Windows PowerShell`
-
-If you are using `PowerShell` on `Windows`, always put Maven arguments (supplied with `-D`) in quotes, for example:
-
-```bash
-mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.sdk.archetypes" "-DarchetypeArtifactId=scp-cf-tomee" "-DarchetypeVersion=RELEASE"
-```
 
 [DONE]
 [ACCORDION-END]

@@ -8,7 +8,6 @@ tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) and [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html) or [Installing SAP HANA 2.0, express edition (Binary Installer Method)](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html) and [Start Using SAP HANA 2.0, express edition (Binary Installer Method)](https://developers.sap.com/tutorials/hxe-ua-getting-started-binary.html)
-- **Additional Information:** For more information about sizing requirements for streaming analytics projects, see the [Sizing and Configuration Guidelines document](https://www.sap.com/documents/2017/01/783a6b39-a47c-0010-82c7-eda71af511fa.html).
 
 
 ## Next Steps
@@ -36,6 +35,8 @@ Enter the following command:
 HXEDownloadManager_linux.bin linuxx86_64 installer hsa.tgz
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Navigate to the `Downloads` directory.)]
@@ -45,6 +46,8 @@ Enter:
 ```bash
 cd /usr/sap/HXE/home/Downloads
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -56,6 +59,8 @@ Enter:
 ls
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extract the file.)]
@@ -65,6 +70,8 @@ Enter:
 ```bash
 tar -xvzf hsa.tgz
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -76,6 +83,8 @@ Enter:
 cd HANA_EXPRESS_20
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Edit the /etc/hosts file.)]
@@ -85,6 +94,8 @@ If you are installing streaming analytics on an SAP HANA, express edition virtua
 ```
 <VM_IP_address>  hxehost.localdomain.com   hxehost
 ```    
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -103,5 +114,6 @@ Follow the prompts to configure your installation.
 > The system database user (SYSTEM) password you enter during installation is used for the `SYS_STREAMING` and `SYS_STREAMING_ADMIN` users.
 
 
-[ACCORDION-END]
+[DONE]
 
+[ACCORDION-END]

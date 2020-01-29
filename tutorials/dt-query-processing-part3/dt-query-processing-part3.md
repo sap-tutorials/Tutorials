@@ -1,6 +1,7 @@
 ---
 title: Table Statistics and its Effect on Query Plans
 description: Create table statistics. Analyze impact of statistics on query plans.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -80,6 +81,7 @@ To open a saved plan, click on **File** > **Open File...** and then browse to wh
 
 ![Open Plan](open-prepared-plan.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -100,6 +102,7 @@ Open another set of Prepared and Executed Query Plans after running statistics f
 
 Left click on one of the tabs and drag them down slightly in order to display two tabs side by side.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -114,6 +117,7 @@ One of the major benefits to creating statistics is that the optimizer receives 
 
 >These results are based on SAP HANA Dynamic Tiering 2.0 SPS00 Rev 00. You may see a different query plan with a different version of HANA and/or Dynamic Tiering. Regardless of the version, the benefit of the statistics is providing the query optimizer with additional information to use in generating the query plan.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -128,6 +132,6 @@ Looking at the output in this example, you will notice that both the estimated #
 
 >These results are based on SAP HANA Dynamic Tiering 2.0 SPS00 Rev 00. You may see a different query plan with a different version of HANA and/or Dynamic Tiering. Regardless of the version, the benefit of the statistics is providing the query optimizer with additional information to use in generating the query plan.
 
+[DONE]
 
 [ACCORDION-END]
-

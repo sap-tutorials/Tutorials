@@ -33,11 +33,11 @@ These events are persisted, correlated, and enhanced to form end-to-end process 
 
     ![Create Scenarios](addscenario.png)
 
-3. Enter **Name** as `Employee Onboarding`, any **Description** of your choice, and click **Save**.
+3. Enter **Name** as `Employee Onboarding`, any **Description** of your choice, and click **Create**.
 
     ![Configure Scenario Name](addscenarioprops.png)
 
-The business scenario will be created with **DRAFT** status.
+The business scenario will be created with **Draft** status.
 
 ![Scenario Created](scenariocreated.png)
 
@@ -46,7 +46,7 @@ The business scenario will be created with **DRAFT** status.
 
 [ACCORDION-BEGIN [Step 2: ](Add a workflow)]
 
-1. On the **Processes** tab, choose **+** and select **Add SAP Cloud Platform Workflow** to add workflow to business scenario.
+1. Go back to the homepage and click **Processes** tab, choose **+** and select **Add SAP Cloud Platform Workflow** to add workflow to business scenario.
 
     ![Add Workflow](addworkflow.png)
 
@@ -94,7 +94,7 @@ The business scenario will be created with **DRAFT** status.
     |  **Event A**         | `Approve Equipment Created`
     |  **Event B**         | `Approve Equipment Completed`
 
-    ![Add Risk Status Props](configurestatus_3.png)
+    !![Add Risk Status Props](configurestatus_3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -103,9 +103,9 @@ The business scenario will be created with **DRAFT** status.
 
 To activate the business scenario, choose **Activate**.
 
->Only an activated business scenario can be consumed.
+>Activate operation saves and activates the scenario. Only an activated business scenario can be consumed.
 
-![Activate Scenario](activatescenario.png)
+!![Activate Scenario](activatescenario.png)
 
 [VALIDATE_7]
 [ACCORDION-END]

@@ -3,21 +3,15 @@ title: SAPUI5 User Interface
 description: SAP HANA XS Advanced, Creating a SAPUI5 user interface to consume XSJS and oData services
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](https://developers.sap.com/tutorials/xsa-xsodata-create.html)
-
-## Next Steps
-- [Consume a Basic OData Service](https://developers.sap.com/tutorials/xsa-sapui5-odata.html)
+- **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](xsa-xsodata-create)
 
 ## Details
 ### You will learn  
 In this tutorial, you will create a SAPUI5 user interface, including the view and their controllers, to call `xsjs` and OData services.
 
-
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -65,7 +59,6 @@ So that your source for the UI5 library is called with
 
 ```
 src="{{{ui5liburl}}}/resources/sap-ui-core.js"
-
 ```
 
 **Run** the web module and press `F12` to see how the source has been dynamically updated
@@ -75,17 +68,16 @@ src="{{{ui5liburl}}}/resources/sap-ui-core.js"
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a new html file)]
+[ACCORDION-BEGIN [Step 3: ](Create a new HTML file)]
 
 Return to your `web` module and create a new folder named `resources/odataView` with an HTML file called `index.html`
-
 
 ![new file](1.png)
 
 Here is the complete coding for the new page.
 
 
-```html
+```HTML
 <!DOCTYPE html>
 <html>
 <head>
@@ -155,12 +147,14 @@ Create a `common` folder in resources and add these two files.
 Here is the coding of `csrf.js` :
 
 ```JavaScript
-/*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0*/$.ajaxSetup({	    beforeSend: function(xhr,settings) {	      if (settings && settings.hasOwnProperty("type")	          && settings.type !== "GET"){	    	  var token = getCSRFToken();	        xhr.setRequestHeader("X-CSRF-Token", token);	      }	    },	    complete: function(xhr,textStatus) {	        var loginPage = xhr.getResponseHeader("x-sap-login-page");	        if (loginPage) {	            location.href = loginPage + "?x-sap-origin-location=" + encodeURIComponent(window.location.pathname);	        }	    }	});	function getCSRFToken() {	    var token = null;	    $.ajax({	        url: "/xsjs/csrf.xsjs",	        type: "GET",	        async: false,	        beforeSend: function(xhr) {	            xhr.setRequestHeader("X-CSRF-Token", "Fetch");	        },	        complete: function(xhr) {	            token = xhr.getResponseHeader("X-CSRF-Token");	        }	    });	    return token;	}```
+/*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0*/$.ajaxSetup({	    beforeSend: function(xhr,settings) {	      if (settings && settings.hasOwnProperty("type")	          && settings.type !== "GET"){	    	  var token = getCSRFToken();	        xhr.setRequestHeader("X-CSRF-Token", token);	      }	    },	    complete: function(xhr,textStatus) {	        var loginPage = xhr.getResponseHeader("x-sap-login-page");	        if (loginPage) {	            location.href = loginPage + "?x-sap-origin-location=" + encodeURIComponent(window.location.pathname);	        }	    }	});	function getCSRFToken() {	    var token = null;	    $.ajax({	        url: "/xsjs/csrf.xsjs",	        type: "GET",	        async: false,	        beforeSend: function(xhr) {	            xhr.setRequestHeader("X-CSRF-Token", "Fetch");	        },	        complete: function(xhr) {	            token = xhr.getResponseHeader("X-CSRF-Token");	        }	    });	    return token;	}
+```
 
 And here is the code for `error.js`:
 
 ```JavaScript
-/*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0*/function onErrorCall(jqXHR, textStatus, errorThrown) {	var page = sap.ui.getCore().byId("pageID");	page.setBusy(false);	if (typeof jqXHR.status === "undefined") {		var errorRes = JSON.parse(jqXHR.response.body);		sap.m.MessageBox.show(			errorRes.error.innererror.errordetail.DETAIL, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});	} else {		if (jqXHR.status === 500 || jqXHR.status === 400) {			sap.m.MessageBox.show(jqXHR.responseText, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});			return;		} else {			sap.m.MessageBox.show(jqXHR.statusText, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});			return;		}	}}function oDataFailed(oControlEvent) {	sap.m.MessageBox.show("Bad Entity Definition", {		icon: sap.m.MessageBox.Icon.ERROR,		title: "OData Service Call Error",		actions: [sap.m.MessageBox.Action.OK],		styleClass: "sapUiSizeCompact"	});	return;}```
+/*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0*/function onErrorCall(jqXHR, textStatus, errorThrown) {	var page = sap.ui.getCore().byId("pageID");	page.setBusy(false);	if (typeof jqXHR.status === "undefined") {		var errorRes = JSON.parse(jqXHR.response.body);		sap.m.MessageBox.show(			errorRes.error.innererror.errordetail.DETAIL, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});	} else {		if (jqXHR.status === 500 || jqXHR.status === 400) {			sap.m.MessageBox.show(jqXHR.responseText, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});			return;		} else {			sap.m.MessageBox.show(jqXHR.statusText, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});			return;		}	}}function oDataFailed(oControlEvent) {	sap.m.MessageBox.show("Bad Entity Definition", {		icon: sap.m.MessageBox.Icon.ERROR,		title: "OData Service Call Error",		actions: [sap.m.MessageBox.Action.OK],		styleClass: "sapUiSizeCompact"	});	return;}
+```
 
 
 [ACCORDION-END]
@@ -181,8 +175,9 @@ You also reference some images in this HTML page. They aren't critical, but if y
 
 Next you need to create your `Component.js` file in the folder `web/resources/odataView`. Here is the coding of this file:  
 
-```javascript
-/*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0*/sap.ui.define([	"sap/ui/core/UIComponent",	"sap/ui/Device"//	"/odataTest/model/models"], function(UIComponent, Device, models) {	"use strict";	return UIComponent.extend("odataTest.Component", {		metadata: {			manifest: "json"		},		init: function() {			jQuery.sap.require("sap.m.MessageBox");			jQuery.sap.require("sap.m.MessageToast");		//	this.setModel(models.createDeviceModel(), "device");			sap.ui.core.UIComponent.prototype.init.apply(				this, arguments);			this.getSessionInfo();		},		destroy: function() {			// call the base component's destroy function			UIComponent.prototype.destroy.apply(this, arguments);		},		getSessionInfo: function() {			var aUrl = "/xsjs/exercisesMaster.xsjs?cmd=getSessionInfo";			this.onLoadSession(				JSON.parse(jQuery.ajax({					url: aUrl,					method: "GET",					dataType: "json",					async: false				}).responseText));		},		onLoadSession: function(myJSON) {			for (var i = 0; i < myJSON.session.length; i++) {				var config = this.getModel("config");				config.setProperty("/UserName", myJSON.session[i].UserName);			}		}	});});```
+```JavaScript
+/*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0*/sap.ui.define([	"sap/ui/core/UIComponent",	"sap/ui/Device"//	"/odataTest/model/models"], function(UIComponent, Device, models) {	"use strict";	return UIComponent.extend("odataTest.Component", {		metadata: {			manifest: "json"		},		init: function() {			jQuery.sap.require("sap.m.MessageBox");			jQuery.sap.require("sap.m.MessageToast");		//	this.setModel(models.createDeviceModel(), "device");			sap.ui.core.UIComponent.prototype.init.apply(				this, arguments);			this.getSessionInfo();		},		destroy: function() {			// call the base component's destroy function			UIComponent.prototype.destroy.apply(this, arguments);		},		getSessionInfo: function() {			var aUrl = "/xsjs/exercisesMaster.xsjs?cmd=getSessionInfo";			this.onLoadSession(				JSON.parse(jQuery.ajax({					url: aUrl,					method: "GET",					dataType: "json",					async: false				}).responseText));		},		onLoadSession: function(myJSON) {			for (var i = 0; i < myJSON.session.length; i++) {				var config = this.getModel("config");				config.setProperty("/UserName", myJSON.session[i].UserName);			}		}	});});
+```
 
 Here you initialize the SAPUI5 component and in doing so you create an instance of the JSON configuration model. You also load your first view which you will create in the next step. Finally you see that you make a call to `xsjs/exercisesMaster.xsjs` to fill the page header with the current user id.
 
@@ -190,7 +185,7 @@ Here you initialize the SAPUI5 component and in doing so you create an instance 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Create `manifest.json` file)]
+[ACCORDION-BEGIN [Step 7: ](Create manifest.json file)]
 This file works as an application descriptor. This file provides metadata about the application, such as libraries and other technical details. It also sets the initial view details as well as creates the JSON and OData models.
 
 ```
@@ -360,4 +355,3 @@ In the running tab, you should see the `index.html` from earlier. Adjust the URL
 
 
 [ACCORDION-END]
-

@@ -60,15 +60,11 @@ Right-click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **
 
 >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
->You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+>You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a0358d7a9c3b46e0819f28ae779def24.html).
 
 Enter the Page Name `Customers_Edit` and click **Next** and the **Finish** on the Confirmation step.
 
 ![MDK](img_002.png)
-
-In `Customers_Edit.page` , select the page header area and then click **Page**.
-
-![MDK](img_002.1.png)
 
 In the **Properties** pane set the Caption to **Update Customer**.
 
@@ -202,10 +198,6 @@ In `Customers_Detail.page`, drag and drop an **Action Bar Item** to the upper ri
 
 ![MDK](img_016_1.gif)
 
-In the Properties pane, set **Position** to **Right**.
-
-![MDK](img_016_2.png)
-
 Click the **link icon** to open the object browser for the **System Item** property.
 
 Double click on the **Edit** type and click **OK**.
@@ -337,10 +329,6 @@ In `Customers_Edit.page`, **drag and drop** an **Action Bar Item** to the upper 
 
 ![MDK](img_029.png)
 
-In the Properties pane, set **Position** to **Right**.
-
-![MDK](img_016_2.png)
-
 Click the **link** icon to open the object browser for the **System Item** property.
 
 Double click on the **Save** type and click **OK**.
@@ -407,7 +395,7 @@ Since this is an Offline application, new entry is added to the request queue of
 
 On Main page, tap **SYNC**, a successful message will be shown.
 
-![MDK](img_036.1.jpg)
+![MDK](img_036.1.png)
 
 [OPTION END]
 

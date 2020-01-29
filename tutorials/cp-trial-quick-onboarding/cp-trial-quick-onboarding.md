@@ -14,37 +14,26 @@ primary_tag: products>sap-cloud-platform
 ## Details
 ### You will learn
   - What SAP Cloud Platform trial offers
-  - The relationship between global accounts, subaccounts, organizations and spaces
+  - The relationship between global accounts, subaccounts, orgs and spaces
   - How to create a trial account in the Cloud Foundry environment
   - How to use services in the Cloud Foundry environment
-  - How to navigate the cockpit
-  - How to use the cockpit in-app help if you get stuck
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Introduction to SAP Cloud Platform trial)]
+[ACCORDION-BEGIN [Step: ](Welcome to SAP Cloud Platform Trial)]
 
-So you've signed up for a trial on SAP Cloud Platform but are not quite sure where to start? This tutorial is here to help! Let's first learn a bit about what SAP Cloud Platform is and what you should expect from your trial.
-
-SAP Cloud Platform is an enterprise platform-as-a-service (enterprise PaaS) that provides application development services and capabilities which let you build, extend, and integrate business applications in the cloud.
+So you've signed up for a trial on SAP Cloud Platform but are not quite sure where to start? This tutorial is here to help!
 
 A trial account on SAP Cloud Platform enables you to experience it for free, offering access to a comprehensive set of platform services, as well as early access to beta functionality.
 
-Trial accounts are intended for personal exploration, and not for production use or team development. They allow restricted use of the platform resources and services:
+Trial accounts are intended for personal exploration, and not for production use or team development. They allow restricted use of the platform resources and services.
 
- | Cloud Foundry Trial
----|---
-**Data centers** | Runs on third-party data centers from AWS, Azure and Google Cloud Platform
-**Trial duration** | Limited to 90 days
-**Strengths** | Allows you to use multiple programming languages such as Java, Node.js and community/bring-your-own language options
-
-You can find the regions available on trial [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html) and then you can look for those regions in [this table](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html) to see what services are available in trial.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Global accounts, subaccounts, organizations and spaces)]
+[ACCORDION-BEGIN [Step: ](Global accounts, subaccounts, orgs and spaces)]
 
 Now that you know what to expect from your trial account, let's learn about how things are structured on SAP Cloud Platform.
 
@@ -58,36 +47,65 @@ A **global account** is the realization of a contract you made with SAP (be it e
 
 When you register for a trial account on SAP Cloud Platform, your Cloud Foundry trial global account is not automatically created. You must create one yourself from the cockpit (more details on how to do that later).
 
-In addition to global accounts and subaccounts, Cloud Foundry includes another hierarchical level represented by **organizations** and **spaces**.
+In addition to global accounts and subaccounts, Cloud Foundry includes another hierarchical level represented by **orgs** and **spaces**.
 
-**Each Cloud Foundry subaccount contains exactly one Cloud Foundry organization.** They have a 1:1 relationship. When you create a Cloud Foundry trial account, you get a global account with one Cloud Foundry subaccount in it, where the organization is created automatically. You have the option of creating additional Cloud Foundry subaccounts within your trial global account, however in those you must create an organization yourself by clicking on the **Enable Cloud Foundry** button.
+**Each Cloud Foundry subaccount contains exactly one Cloud Foundry org.** They have a 1:1 relationship. When you create a Cloud Foundry trial account, you get a global account with one Cloud Foundry subaccount in it, where the org is created automatically. You have the option of creating additional Cloud Foundry subaccounts within your trial global account, however in those you must create an org yourself by clicking on the **Enable Cloud Foundry** button.
 
-**In your organization you can then create one or more spaces, where you deploy apps and use services.** Similar to subaccounts, spaces enable you to once again structure and sub-divide quota if you want to. When you create your Cloud Foundry trial global account in the cockpit, one space is also automatically created within your organization. You also have the option of adding additional ones if you like.
+**In your org you can then create one or more spaces, where you deploy apps and use services.** Similar to subaccounts, spaces enable you to once again structure and sub-divide quota if you want to. When you create your Cloud Foundry trial global account in the cockpit, one space is also automatically created within your org. You also have the option of adding additional ones if you like.
 
 ![Cloud Foundry trial account model](cf-trial-account-model.png)
 
 [VALIDATE_2]
-
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Navigation in the cockpit)]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Cloud Foundry trial account)]
-As previously mentioned, a Cloud Foundry trial account is not automatically created when you register for a trial on SAP Cloud Platform. To create one, you must do the following:
+There are 2 ways of navigating in the cockpit:
 
-1. Click on the **Cloud Foundry Trial** tile on the [cockpit homepage](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trialhome).
+- using the left hand-side navigation
+- using the breadcrumbs at the top of the page
 
-    ![Environments on SAP Cloud Platform trial](trial-tiles.png)
+There are certain actions you can perform at each hierarchical level (global account, subaccount, space etc.) - we will refer to the sum of these actions as a **scope**. For example, when you are in a global account you can add global account members, create subaccounts and add entitlements to subaccounts. They represent the **global account scope**.
 
-2. Select a region (data center) for your Cloud Foundry trial subaccount
+This scope is reflected in both the left hand-side navigation and the breadcrumbs. This step helps you understand how to use both of them together to navigate through the cockpit in the most efficient way possible.
 
-    ![Choose a region for your Cloud Foundry trial](cf-trial-region.png)
+### Left hand-side navigation
 
-A Cloud Foundry subaccount, organization and space are then automatically created, and you have the option to directly navigate to your space where you can deploy apps and use services.
+ The left hand-side navigation changes depending on where you are in the cockpit. It reflects the actions possible in that scope. You can see some examples below:
 
-[VALIDATE_3]
+**Cloud Foundry Subaccount Scope:**
 
+![Cloud Foundry subaccount scope](cf-sa-scope.png)
+
+**Cloud Foundry Space Scope:**
+
+![Cloud Foundry space scope](cf-space-scope.png)
+
+
+### Breadcrumbs
+
+You may ask yourself - if the left hand-side navigation changes depending on where you are in the cockpit,  then how can you navigate back? Simple - you use the breadcrumbs at the top.
+
+The breadcrumbs coincide with the hierarchical path you've travelled in order to reach your current scope in the cockpit. For example, to reach an application in the Cloud Foundry environment you will have to go to your global account, then to the subaccount, then to the space and then finally to the application.
+
+The last item in your breadcrumbs always represents the scope you find yourself in at that moment. To go back, simply follow the breadcrumbs to retrace your steps.
+
+Let's have a look at the following screenshot, taken from an application deployed in the Cloud Foundry dev space:
+
+![Breadcrumbs](cf-breadcrumbs.png)
+
+1. **Trial Home**: Here you can find your trial homepage.
+
+2. **Global account**: This contains all your subaccounts and entitlements.
+
+3. The 3rd item represents your **subaccount**.
+
+4. Afterwards, you have your **space** as the 4th item.
+
+5. Finally, you have your **deployed application**, which is the current scope.
+
+[DONE]
 [ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Services in the Cloud Foundry environment)]
+[ACCORDION-BEGIN [Step: ](Services in the Cloud Foundry environment)]
 
 In the Cloud Foundry environment, you create service instances in your Cloud Foundry space and bind them to applications within that space.
 
@@ -132,77 +150,5 @@ To integrate services with applications, the service credentials must be deliver
     ![Cloud Foundry service instances table](cf-bind-instance.png)
 
 [VALIDATE_4]
-
 [ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Navigation in the cockpit)]
-
-There are 2 ways of navigating in the cockpit:
-
-- using the left hand-side navigation
-- using the breadcrumbs at the top of the page
-
-Remember all that stuff about global accounts, subaccounts we talked about earlier? There are certain actions you can perform at each level - we will refer to the sum of these actions as a **scope**. For example, when you are in a global account you can add global account members, create subaccounts and add entitlements to subaccounts. They represent the **global account scope**.
-
-This scope is reflected in both the left hand-side navigation and the breadcrumbs. This step helps you understand how to use both of them together to navigate through the cockpit in the most efficient way possible.
-
-### Left hand-side navigation
-
- The left hand-side navigation changes depending on where you are in the cockpit. It reflects the actions possible in that scope. You can see some examples below:
-
-**Cloud Foundry Subaccount Scope:**
-
-![Cloud Foundry subaccount scope](cf-sa-scope.png)
-
-**Cloud Foundry Space Scope:**
-
-![Cloud Foundry space scope](cf-space-scope.png)
-
-
-### Breadcrumbs
-
-You may ask yourself - if the left hand-side navigation changes depending on where you are in the cockpit,  then how can you navigate back? Simple - you use the breadcrumbs at the top.
-
-The breadcrumbs coincide with the hierarchical path you've travelled in order to reach your current scope in the cockpit. For example, to reach an application in the Cloud Foundry environment you will have to go to your global account, then to the subaccount, then to the space and then finally to the application.
-
-The last item in your breadcrumbs always represents the scope you find yourself in at that moment. To go back, simply follow the breadcrumbs to retrace your steps.
-
-Let's have a look at the following screenshot, taken from an application deployed in the Cloud Foundry dev space:
-
-![Breadcrumbs](cf-breadcrumbs.png)
-
-1. **Trial Home** - here you can find your trial homepage
-
-2. **Global account** - this contains all your subaccounts and entitlements
-
-3. The 3rd item represents your **subaccount**.
-
-4. Afterwards, you have your **space** as the 4th item.
-
-5. Finally, you have your **deployed application** - this is the current scope.
-
-[VALIDATE_5]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Guided tours in the cockpit)]
-
-One more thing before you go! If you ever get lost in the cockpit, we have a few guided tours ready to help you and make sure you can always get to the page you need. To access them, follow these steps:
-
-1. Navigate to the homepage of your trial account on SAP Cloud Platform (you can just click the first item in your breadcrumbs, it will always take you there).
-
-2. Click on the help icon next to your name in the header, which opens a carousel on the right hand-side of the cockpit.
-
-    ![Help icon](help-icon.png)
-
-3. In that carousel, you will see a tile called **Guided Tours** - click on it and choose the tour you're interested in from the list.
-
-    ![Guided tours tile](guided-tours-tile.png)
-
-[DONE]
-[ACCORDION-END]
-
-That's all you need to know to get started with your SAP Cloud Platform trial. You're all set!
-
-
 ---

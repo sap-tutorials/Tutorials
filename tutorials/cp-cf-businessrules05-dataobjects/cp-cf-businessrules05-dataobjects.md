@@ -149,7 +149,7 @@ In this tutorial, we will create data objects which hold the employee details an
     |  :------------- | :-------------
     |  Name           | **`jobTitle`**
     |  Label           | **`jobTitle`**
-    |  Description    | **`Company name`**
+    |  Description    | **`Job title of the recruit`**
     |  Business Data Type | **`String`**
 
      Then, choose **Activate**.

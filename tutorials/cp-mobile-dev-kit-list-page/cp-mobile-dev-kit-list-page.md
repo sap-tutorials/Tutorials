@@ -44,10 +44,6 @@ Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** o
 
 ![MDK](img_002.png)
 
-In `Customers_List` page, select the page header area and then click **Page**.
-
-![MDK](img_002.1.png)
-
 In the **Properties** pane, set the **Caption** to **Customers**.
 
 ![MDK](img_3.png)
@@ -60,7 +56,7 @@ In the Layout Editor, expand the **Controls** | **Compound** section, drag and d
 
 In the Properties pane, select the previously added service from the **Service** drop down and then select **Customers** Entity Set from the dropdown. This way, the _Object Table_ has been bound to **Customers** Entity.
 
-![MDK](img_005.gif)
+![MDK](img_0001.png)
 
 In the **Properties** pane, click the **link icon** to open the Object Browser for the **Headline** property.
 

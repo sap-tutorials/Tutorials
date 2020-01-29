@@ -32,6 +32,8 @@ Download and install Microsoft Visual Studio directly from Microsoft. The Micros
 
 For more information, visit the [Microsoft Visual Studio](https://www.visualstudio.com/) webpage.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the SAP HANA, express edition Download Manager )]
@@ -49,6 +51,8 @@ Click on the appropriate Download Manager version for your system to download.
 > **Note:**
 > The SAP HANA Plugin works with SAP HANA and SAP HANA, express edition. For these tutorials, we use an SAP HANA, express edition installation as an example.
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -62,6 +66,8 @@ Unzip `hdb_client_windows_x86_64.zip` and run `hdbinst.exe`. Follow the onscreen
 
 > **Note:**
 > Ensure that you are not running an instance of Microsoft Visual Studio while you are installing the plugin.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -87,5 +93,7 @@ Ensure that __Connect database__ is set to __System Database__.
 For __Login information__, the __User name:__ is __SYSTEM__ and the __Password:__ is the password you set when you installed SAP HANA or SAP HANA, express edition.
 
 ![Add Connection Sample](add_connection_sample.png)
+
+[DONE]
 
 [ACCORDION-END]

@@ -3,7 +3,7 @@ title: Enable the Script Server in SAP HANA, express edition
 description: Connect to the system database and enable the script server
 auto_validation: true
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition  ]
 time: 8
 ---
 

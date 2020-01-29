@@ -43,7 +43,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Define CDS based travel data model](model3.png)
 
-  4. Click **Finish**.
+  4. Click **Finish** to use your transport request.
 
       ![Define CDS based travel data model](model4.png)
 
@@ -53,7 +53,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define root view ZI_TRAVEL_M_XXX as select from ztravel_xxx            
     ```
 
-  6. Replace your code with following:
+  6. Your result should look like this. Replace your code with following:
 
     ```ABAP
     @AbapCatalog.sqlViewName: 'ZVI_TRAVEL_M_XXX'
@@ -128,7 +128,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create projection view for travel](projection3.png)
 
-  4. Click **Finish**.
+  4. Click **Finish** to use your transport request.
 
       ![Create projection view for travel](projection4.png)
 
@@ -138,11 +138,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define root view entity ZC_TRAVEL_M_XXX as projection on ZI_Travel_M_XXX        
     ```
 
-  6. Replace your code with following:
+  6. Your result should look like this. Replace your code with following:
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
-    @AccessControl.authorizationCheck: #NOT_REQUIRED
+    @AccessControl.authorizationCheck: #CHECK
 
     @UI: {
      headerInfo: { typeName: 'Travel', typeNamePlural: 'Travels', title: { type: #STANDARD, value: 'TravelID' } } }
@@ -243,14 +243,14 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create service definition](definition2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create service definition](definition3.png)
 
   4. Replace your code with following:
 
     ```ABAP
-    @EndUserText.label: 'Service Defintion for ZC_Travel_M_XXX'
+    @EndUserText.label: 'Service Definition for ZC_Travel_M_XXX'
     define service ZUI_C_TRAVEL_M_XXX
     {
       expose ZC_TRAVEL_M_XXX as TravelProcessor;
@@ -286,7 +286,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create service binding](binding2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to use your transport request.
 
       ![Create service binding](binding3.png)
 
@@ -301,7 +301,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. Double-click on `TravelProcessor` to see the application on the UI.
 
       ![Create service binding](binding5.png)
- 
+
   6. Logon to your ABAP system.
 
       ![Create service binding](binding6.png)

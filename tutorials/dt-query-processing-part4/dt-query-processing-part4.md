@@ -1,6 +1,7 @@
 ---
 title: Detailed Query Plan and Indexes
 description: Generate and access a detailed html query plan. Create indexes on columns.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -45,6 +46,7 @@ You should now be able to see the field **`fedtrace`** under **INDEXSERVER**. Al
 
 ![Change fedtrace](fedtrace.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -98,6 +100,7 @@ The highlighted index in the query plan below is the Fast Projection (FP) index.
 
 ![Fast Projection index](fp-index.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -116,5 +119,6 @@ As you can see, after creating the index, if we run the query again and view the
 
 ![High Group Index](high-group-index.png)
 
+[DONE]
 
 [ACCORDION-END]

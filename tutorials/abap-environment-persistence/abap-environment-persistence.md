@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Table Persistence and Generate Data
 description: Create table persistence and generate data for it.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
 time: 10
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -25,7 +25,9 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create ABAP package)]
-  1. Open ABAP Development Tools (ADT) and right-click on `ZLOCAL` and select **ABAP Package**.
+  1. Open **ABAP Development Tools (ADT)** and select your **ABAP Cloud Project** you created in [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding).
+
+     Right-click on `ZLOCAL` and select **ABAP Package**.
 
       ![Create ABAP package](package.png)
 
@@ -39,11 +41,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create ABAP package](package2.png)
 
-  3. Click **Next >**.
-
+  3. `ZLOCAL` will be added as software component. Click **Next >**.
+ 
       ![Create ABAP package](package3.png)
 
-  4. Click **Finish**.
+  4. Click **Finish** to create your transport request.
 
       ![Create ABAP package](package4.png)
 
@@ -52,7 +54,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create ABAP package](package5.png)
 
-  6. Search for `ZTRAVEL_APP_XXX`, select it and click **OK**.
+  6. Search for `ZTRAVEL_APP_XXX`, select it and click **OK** to add your package in the favorite packages section.
 
       ![Create ABAP package](package6.png)
 
@@ -77,7 +79,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create database table](table3.png)
 
-  4. Click **Finish**.
+  4. Click **Finish** to create your transport request.
 
       ![Create database table](table4.png)
 
@@ -116,7 +118,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       ![save and activate](activate.png)
 
      Now the dictionary tables are defined. The dictionary tables are the basis of our travel booking data model.
-  
+
 [DONE]
 [ACCORDION-END]
 
@@ -134,7 +136,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create ABAP class](class2.png)
 
-  3. Click **Finish**.
+  3. Click **Finish** to create your transport request.
 
       ![Create ABAP class](class3.png)
 

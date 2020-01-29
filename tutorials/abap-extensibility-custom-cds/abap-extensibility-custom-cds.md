@@ -51,7 +51,7 @@ On the general tab enter name `YY1_New_Customer` and label `New Customer`.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select fields)]
-This step is used to `taylor` a given CDS View to the needs of a customer.
+This step is used to tailor a given CDS View to the needs of a customer.
 Now switch to the Field Selection tab and **select** following **fields (1)**:
 - `Customer`
 - `CustomerName`

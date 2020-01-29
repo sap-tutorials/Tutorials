@@ -26,6 +26,8 @@ The XS advanced client-tools bundle (`xs.onpremise.runtime.client_<platform>-<ve
 
 You can use the XS command line client to perform a wide variety of developer- and administrator-related tasks. For example, in the role of a developer, you can use the XS CLI to connect to the XS Advanced runtime installed on the server machine, log on as a specific user, and deploy and manage your applications.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the client package.)]
@@ -86,6 +88,8 @@ These files are extracted:
 -   `xs.onpremise.runtime.client_darwinintel64.zip`
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Install the XS CLI client.)]
@@ -107,6 +111,8 @@ The system creates this folder:
 xs.onpremise.runtime.client_<version>
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add the bin folder to the PATH environment variable.)]
@@ -124,6 +130,8 @@ xs.onpremise.runtime.client_<version>
 
 -   (Power PC) Run `export PATH=$PATH:/<extracted_filepath>/bin`
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -143,6 +151,8 @@ https://my.hana.server:39030/v2/info
 
 The response displayed in the Web browser is a JSON string with details that indicate whether there was a successful connection to the XSA controller. The connection must exists before you can connect from within the API command.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Confirm XS Advanced is Available)]
@@ -158,6 +168,8 @@ On Linux, run these as `<sid>adm`.
 
 You see the `Client Version` in the output. If not, you cannot connect to XS Advanced runtime on SAP HANA to deploy your XS Advanced applications.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Connect to XS Advanced controller.)]
@@ -172,6 +184,8 @@ xs api https://<hostname>:3<instance_number>30
 > If this step fails, it may be due to a missing SSL certificate. Continue on to the next step to add the SSL certificate, otherwise skip the next step.
 >
 >
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -222,6 +236,8 @@ xs login -u XSA_ADMIN -p "<password>"
 >
 >
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test the XS Advanced connection.)]
@@ -231,5 +247,7 @@ To test your connection to XS Advanced by running the following command on the S
 ```bash
 xs apps
 ```
+
+[DONE]
 
 [ACCORDION-END]

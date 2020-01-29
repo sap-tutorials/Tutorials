@@ -3,14 +3,11 @@ auto_validation: true
 title: Get to Know the ABAP RESTful Programming Model
 description: Learn how the ABAP RESTful Programming Model and the development flow are structured.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
 time: 5
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
-
-## Prerequisites  
- - no prerequisites needed
 
 ## Details
 ### You will learn  
@@ -21,6 +18,8 @@ author_profile: https://github.com/mervey45
 In the course of the following tutorials you will be able to build a travel booking example with the help of the ABAP RESTful Programming Model.
 
 Start to have a closer look to the ABAP RESTful Programming Model and the relationships.
+
+After this tutorial, you'll understand the theory behind the ABAP RESTful Programming Model and apply it to the flight model example in the upcoming tutorials.
 
 ---
 

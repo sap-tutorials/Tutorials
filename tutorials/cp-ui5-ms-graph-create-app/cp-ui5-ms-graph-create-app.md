@@ -16,29 +16,23 @@ time: 20
 
 [ACCORDION-BEGIN [Step ](Create a HTML5 project)]
 
-1. Go to the **Neo** environment in the SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/) and open the **Services** menu in the side panel.
+1. Open your SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/cockpit) and open the **SAP Web IDE**.
 
-    ![Navigate to services](./cockpit_services.png)
+    ![Launch SAP Web IDE](./launch_webide.png)
 
-2. Navigate to the **SAP Web IDE Full-Stack** tile and click on it.
-
-3. Hit **Go To Service** to open the SAP Web IDE Full-Stack.
-
-    ![Go to Service link](./open_ide.png)
-
-4. Click on **New** in the header toolbar to create a **Project from Template**.
+2. Click on **New** in the header toolbar to create a **Project from Template**.
 
     ![Create new project from Template](./webidecreateproject.png)
 
-5. Select **Neo** for the environment and click on the  **SAPUI5 Application** tile. Confirm the latest SAPUI5 version **SAP Innovation** and proceed with **Next**.
+3. Select **Neo** for the environment and click on the  **SAPUI5 Application** tile. Confirm the latest SAPUI5 version **SAP Innovation** and proceed with **Next**.
 
     ![select ui5](./web-ui5.png)
 
-6. Enter the **Project name** and the **Namespace** (e.g. **`PurchaseOrderApp`** and **`com.sap.teched18.msgraph`**) you want to use.
+4. Enter the **Project name** and the **Namespace** (e.g. **`PurchaseOrderApp`** and **`com.sap.teched18.msgraph`**) you want to use.
 
     ![Create new app from WebIDE](./webide-create-app.png)
 
-7. Change the default name of the view to **`MainView`** and create the app by clicking **Finish**.
+5. Change the default name of the view to **`MainView`** and create the app by clicking **Finish**.
 
     ![Create new app from WebIDE](./webide-finish-app-creation.png)
 
