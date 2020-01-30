@@ -1,5 +1,6 @@
 ---
 author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Consume Measures
 description: Consume measures using the Internet of Things Service Cockpit or the Message Processing API.
 auto_validation: true
