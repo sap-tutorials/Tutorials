@@ -1,5 +1,6 @@
 ---
 author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Send Data with REST
 description: Send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
 auto_validation: true
