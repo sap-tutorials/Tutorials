@@ -1,5 +1,6 @@
 ---
 author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Install cURL
 description: Install cURL to send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
 auto_validation: true
