@@ -1,5 +1,6 @@
 ---
 author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Send Commands with MQTT
 description: Send commands to the SAP Cloud Platform Internet of Things Service Cloud using MQTT.
 auto_validation: true
