@@ -100,6 +100,8 @@ Back in your Web IDE, open the controller file `mta_app/app/webapp/controller/Vi
 
     ![updated controller with pre-generated API call code](14.png)
 
+It is important to note that we just inserted and API key in the UI file, that is being server to all consumers. This is only okay for demo and tutorial scenarios, **never ever insert API keys in production applications!**
+
 > You'll get a warning that hard-coded URL should not be used in JavaScript files (rule `sap-no-hardcoded-url`). As this is a tutorial, we can ignore it and disable the warning by adding the following comment in the respective line:
 
 > `// eslint-disable-line sap-no-hardcoded-url`
