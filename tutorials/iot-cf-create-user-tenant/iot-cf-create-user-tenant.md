@@ -1,5 +1,6 @@
 ---
 author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Create User and Tenant
 description: Create a user and tenant in the Internet of Things Service Cockpit.
 auto_validation: true
