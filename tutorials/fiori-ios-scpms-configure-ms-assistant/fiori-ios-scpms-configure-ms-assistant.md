@@ -3,6 +3,8 @@ title: Configure Mobile Services in iOS Assistant
 description: Enable SAP Cloud Platform Mobile Services and create a connection in the SAP Cloud Platform SDK for iOS Assistant.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios software-product-function>sap-cloud-platform-mobile-services]
 time: 15
 ---
