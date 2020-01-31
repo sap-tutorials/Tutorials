@@ -7,9 +7,9 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, pro
 time: 15
 ---
 
-## Prerequisites  
-- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0 SP00
+## Prerequisites
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details
 ### You will learn  
@@ -102,8 +102,6 @@ In the **Optional Features** step, you have the option to enable **logging** and
 ![Features](fiori-ios-scpms-create-app-teched18-part1-14.png)
 
 Make sure the checkboxes **Enable Log Upload**, **Enable Remote Notifications** and **Use Discovery Service for Application bootstrapping** are selected, and the **OData Provider** radio button is set to **Enable Online OData** and click **Next** to proceed to the **Xcode Project** step.
-
-> **Note:** Remember to wait until the Discovery Service has the address generated. You can see the a spinner if you scroll down to the bottom. Wait until the address shows up and the spinner disappears before continuing with the next step! 
 
 [DONE]
 [ACCORDION-END]
