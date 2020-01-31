@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details

@@ -7,9 +7,9 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 time: 15
 ---
 
-## Prerequisites  
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Enable SAP Cloud Platform Mobile Services](fiori-ios-scpms-enable-ms-neo)
-- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+## Prerequisites
+- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details
@@ -30,8 +30,6 @@ Before you start, make sure you:
 The SAP Cloud Platform SDK for iOS is designed to work seamlessly with a set of services provided by the SAP Cloud Platform that are optimized for communication with mobile devices, known collectively as Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
 
 To enable the service, do the tutorial [Enable SAP Cloud Platform Mobile Services](fiori-ios-scpms-enable-ms-neo).
-
->Alternatively, you can go directly to: `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
 
 [DONE]
 [ACCORDION-END]
