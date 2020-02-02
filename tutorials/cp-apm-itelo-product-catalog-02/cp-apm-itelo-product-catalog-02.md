@@ -131,7 +131,7 @@ This change touches so many files because we introduce the concept of localizati
 
 In our example, we provide a German and an English version for the strings. Keep in mind, that the translation process from English to German is not included. If you change strings in **`_i18n/i18n.properties`**, you have to translate them yourself to the localized versions.
 
-[More information about localization in CDS on the SAP Help Portal](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/b3a0321c94194a21a17a991b0f879fbb.html)
+[More information about localization in CDS on `cap.cloud.sap`](https://cap.cloud.sap/docs/guides/i18n)
 
 To see your changes on the user interface, do the following:
 
