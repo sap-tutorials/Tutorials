@@ -1,4 +1,6 @@
-'use strict';
+const constants = require('../constants');
+
+const { regexp: { validation: { done, validate } } } = constants;
 
 const closingPairs = {
   '}': '{',
@@ -54,17 +56,54 @@ function getUnmatched(content) {
   return unmatched;
 }
 
-function check(content = '', line) {
+function checkBalanced(content = '', lineNumber) {
   const unmatched = getUnmatched(content);
 
   if (unmatched.size > 0) {
-    const uniqPairs = Array.from(unmatched).map(createPair);
+    const uniqPairs = Array.from(unmatched)
+      .map(createPair);
 
-    return {
-      line,
+    return [{
+      line: lineNumber,
       msg: `${uniqPairs.join(', ')} not balanced`,
-    };
+    }];
   }
+
+  return [];
+}
+
+function checkBlankLine(lines, lineNumber) {
+  const line = lines[lineNumber];
+  const doneMatch = line.match(done);
+  const validateMatch = line.match(validate);
+  const result = [];
+
+  if (doneMatch && line.startsWith(' ')) {
+    result.push({
+      line: lineNumber + 1,
+      msg: 'Do not indent [DONE] button',
+    });
+  }
+  const prevLine = lines[lineNumber - 1];
+
+  if (prevLine && ((doneMatch || validateMatch) && prevLine.trim() !== '')) {
+    const template = doneMatch ? '[DONE] button' : '[VALIDATE] element';
+
+    result.push({
+      line: lineNumber + 1,
+      msg: `Blank line needed before ${template}`,
+    });
+  }
+  return result;
+}
+
+function check(lines, lineNumber) {
+  const balancedCheckResult = checkBalanced(lines[lineNumber], lineNumber);
+  const blankLineCheckResult = checkBlankLine(lines, lineNumber);
+
+  return []
+    .concat(balancedCheckResult)
+    .concat(blankLineCheckResult);
 }
 
 module.exports = {
