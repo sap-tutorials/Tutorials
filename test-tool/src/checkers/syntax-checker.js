@@ -99,11 +99,11 @@ function checkDoneValidate(lines, lineNumber) {
 
 function check(lines, lineNumber) {
   const balancedCheckResult = checkBalanced(lines[lineNumber], lineNumber);
-  const blankLineCheckResult = checkDoneValidate(lines, lineNumber);
+  const doneValidateCheckResult = checkDoneValidate(lines, lineNumber);
 
   return []
     .concat(balancedCheckResult)
-    .concat(blankLineCheckResult);
+    .concat(doneValidateCheckResult);
 }
 
 module.exports = {
