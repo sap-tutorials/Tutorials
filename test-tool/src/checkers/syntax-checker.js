@@ -64,7 +64,7 @@ function checkBalanced(content = '', lineNumber) {
       .map(createPair);
 
     return [{
-      line: lineNumber,
+      line: lineNumber + 1,
       msg: `${uniqPairs.join(', ')} not balanced`,
     }];
   }
