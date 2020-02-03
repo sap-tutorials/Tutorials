@@ -72,7 +72,7 @@ function checkBalanced(content = '', lineNumber) {
   return [];
 }
 
-function checkBlankLine(lines, lineNumber) {
+function checkDoneValidate(lines, lineNumber) {
   const line = lines[lineNumber];
   const doneMatch = line.match(done);
   const validateMatch = line.match(validate);
@@ -99,7 +99,7 @@ function checkBlankLine(lines, lineNumber) {
 
 function check(lines, lineNumber) {
   const balancedCheckResult = checkBalanced(lines[lineNumber], lineNumber);
-  const blankLineCheckResult = checkBlankLine(lines, lineNumber);
+  const blankLineCheckResult = checkDoneValidate(lines, lineNumber);
 
   return []
     .concat(balancedCheckResult)
