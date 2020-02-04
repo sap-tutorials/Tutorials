@@ -217,9 +217,9 @@ module.exports = {
             });
           }
 
-          const syntaxCheckResult = syntaxChecker.check(line, index + 1);
+          const syntaxCheckResult = syntaxChecker.check(lines, index);
           if (syntaxCheckResult) {
-            result.syntaxCheckResult.push(syntaxCheckResult);
+            result.syntaxCheckResult.push(...syntaxCheckResult);
           }
         }
       }
