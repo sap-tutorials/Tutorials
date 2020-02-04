@@ -48,7 +48,7 @@ time: 15
 
 [ACCORDION-BEGIN [Step 3: ](Add fields to your start form)]
 
-1. In the form editor (for the ``RequestForm.form``), select the **Fields** section.
+1. In the form editor (for the ``RequestForm.form``), select the **FIELDS** section.
 
 2. To add two new fields, click **Add Field** twice, and enter the following data to define the fields:
 
@@ -65,7 +65,7 @@ time: 15
 
 [ACCORDION-BEGIN [Step 4: ](Add a start action)]
 
-1. Switch to the **Actions** section of the form editor (for the ``RequestForm.form``).
+1. Switch to the **ACTION** section of the form editor (for the ``RequestForm.form``).
 
 2. Enter `Request Book` in the **Start Action Text** field, then choose **Select** next to **Workflow File Name**.
     The available workflow files are displayed.
@@ -88,6 +88,8 @@ time: 15
 
 2. In your workspace from the **`mta_archives`** folder, right-click the `MyWorkflowProject_0_0_1.mtar` file and choose **Deploy** | **Deploy to SAP Cloud Platform**.
 
+    ![Deploy](deploy-wf-project.png)
+
 3. In the popup, select your API endpoint, organization, and space.
 
 4. Choose **Deploy**.
@@ -97,7 +99,7 @@ time: 15
 
 
 [ACCORDION-BEGIN [Step 6: ](Configure the business application visualization for your custom tile)]
-1. In your workspace of SAP Web IDE under **`sample.workflowtiles.mta`** | **`workflowtilesFLP`**, select the **`portal-site`** folder and right-click it.
+1. In your workspace of SAP Web IDE under **`sample.`** | **`workflowtilesFLP`**, select the **`portal-site`** folder and right-click it.
 
 2. Choose **New** | **Folder**.
 
@@ -179,7 +181,7 @@ time: 15
 
 
 [ACCORDION-BEGIN [Step 7: ](Create the corresponding properties file for translation)]
-1. In your workspace under **`sample.workflowtiles.mta`** | **`workflowtilesFLP`**, select the **`portal.site`** | **`i18`** folder and right-click it.
+1. In your workspace under **`sample.workflowtiles.mta.trial`** | **`workflowtilesFLP`**, select the **`portal.site`** | **`i18`** folder and right-click it.
 
 2. Choose **New** | **File**.
 
@@ -218,7 +220,7 @@ time: 15
 
 
 [ACCORDION-BEGIN [Step 8: ](Complete the business application visualization)]
-1. In your workspace under **`sample.workflowtiles.mta`** | **`workflowtilesFLP`** | **`portal.site`** | **`business-apps`**, open the `app.json` file again.
+1. In your workspace under **`sample.workflowtiles.mta.trial`** | **`workflowtilesFLP`** | **`portal.site`** | **`business-apps`**, open the `app.json` file again.
 
 2. In line 6, replace `<translation-file-name>` with `app`.
 
@@ -233,7 +235,7 @@ time: 15
 
 
 [ACCORDION-BEGIN [Step 9 ](Create a launchpad tile for your start form)]
-1. Double-click the `CommonDataModel.json` file in your `sample.workflowtiles.mta` project. Then choose the **+** icon.
+1. Double-click the `CommonDataModel.json` file in your `sample.workflowtiles.mta.trial` project. Then choose the **+** icon.
 
     ![Create Custom Tile](add-custom-tile.png)
 
@@ -250,13 +252,13 @@ time: 15
 
 
 [ACCORDION-BEGIN [Step 10: ](Build and deploy your MyFLPProject)]
-1. Right-click your **`sample.workflowtiles.mta`** workflow project in the workspace, and choose **Build** | **Build with Cloud MTA Build Tool (recommended)**.
+1. Right-click your **`sample.workflowtiles.mta.trial`** workflow project in the workspace, and choose **Build** | **Build with Cloud MTA Build Tool (recommended)**.
 
     The console shows the status of the build.
 
 2. Open the **`mta.archives`** folder.
 
-3. Right-click your **`sample.workflowtiles.mta_0.0.1.mtar`** file, and choose **Deploy** | **Deploy to SAP Cloud Platform**.
+3. Right-click your **`sample.workflowtiles.mta.trial_0.0.1.mtar`** file, and choose **Deploy** | **Deploy to SAP Cloud Platform**.
 
 4. Choose **Deploy**.
 
