@@ -3,7 +3,7 @@ title: Use Swagger UI to Call Document Information Extraction APIs
 description: Test Document Information Extraction to find out if it fits your business needs.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform ]
+tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction ]
 primary_tag: topic>machine-learning
 ---
 
