@@ -178,7 +178,7 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
   }
 
   return {
-    results: Array.from(results.values()),
+    results: common.orderByAlphabet(Array.from(results.values())),
     passed: checkResult.passed,
   };
 };
