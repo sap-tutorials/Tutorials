@@ -244,6 +244,7 @@ Now you will create a check table for the field `clnt`. This checks the value of
       with foreign key [0..*,1] t000
         where mandt = zxx_account.clnt;
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -281,6 +282,7 @@ define table zxx_account {
 }
 
 ```
+
 [DONE]
 [ACCORDION-END]
 

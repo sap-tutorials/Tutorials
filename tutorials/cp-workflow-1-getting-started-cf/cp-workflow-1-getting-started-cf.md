@@ -19,23 +19,25 @@ time: 5
 
 [ACCORDION-BEGIN [Step 1: ](Add a workflow instance)]
 
-1. From the breadcrumbs choose **trial**.
+1. Access your account on [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit) by choosing **Enter Your Trial Account**.
 
-2. Choose **Spaces** from the left-hand navigation, and then choose **dev**.
+2. Go to your trial subaccount. If you have just created your trial account, choose **trial** from the breadcrumbs.
 
-3. Choose **Services** | **Service Marketplace** from the left-hand navigation, and search for `workflow`.
+3. Choose **Spaces** from the left-hand navigation, and then choose **dev**.
 
-4. Search for the **Workflow** service.
+4. Choose **Services** | **Service Marketplace** from the left-hand navigation, and search for `workflow`.
+
+5. Search for the **Workflow** service.
 
     ![Add Service Plans](search-workflow-tile-corr2.png)
 
     The **Workflow** tile displays the service description and the service plan.
 
-5. Choose **Instances** from the left-hand navigation, then choose **New Instance**.
+6. Choose **Instances** from the left-hand navigation, then choose **New Instance**.
 
     ![Create Instance](create-instance-corr2.png)
 
-6. In the wizard that comes up, leave the data as is and proceed by choosing **Next**. On the last page, enter `my-workflow-instance` as the instance name and choose **Finish**.
+7. In the wizard that comes up, leave the data as is and proceed by choosing **Next**. On the last page, enter `my-workflow-instance` as the instance name and choose **Finish**.
 
     ![Name Instance](create-instance-name-corr2.png)
 
@@ -44,7 +46,7 @@ time: 5
 
 [ACCORDION-BEGIN [Step 2: ](Create role collection)]
 
-1. Go back to your trial subaccount by choosing the **trial** from the breadcrumbs.
+1. Go back to your trial subaccount by choosing **trial** from the breadcrumbs.
 
 2. From the left-hand navigation, choose **Security** | **Role Collections**, then choose **New Role Collection**.
 
@@ -54,12 +56,13 @@ time: 5
 
 4. After the role collection is created, click its name and choose **Add Role**.
 
-5. In the wizard that comes up, select `workflow!b10150` in the field **Application Identifier**. Add the following roles one by one:
+5. In the wizard that comes up, select `workflow!b1774` in the field **Application Identifier**. Add the following roles one by one:
 
     - `WorkflowAdmin`
     - `WorkflowDeveloper`
     - `WorkflowInitiator`
     - `WorkflowParticipant`
+    - `WorkflowViewer`
 
 [DONE]
 [ACCORDION-END]

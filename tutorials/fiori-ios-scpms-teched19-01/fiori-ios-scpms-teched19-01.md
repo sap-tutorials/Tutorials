@@ -17,19 +17,11 @@ time: 15
   - How to create a connection in the SAP Cloud Platform SDK for iOS Assistant
   - How to generate an app with the SAP Cloud Platform SDK for iOS Assistant
 
-Before you start, make sure you:
-
-  - Have downloaded [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html) **version 3.0 SP02**.
-  - Have a trial account on SAP Cloud Platform. See [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
-  - Enabled the SAP Cloud Platform Mobile Services. See [Enable SAP Cloud Platform Mobile Services](fiori-ios-scpms-enable-ms-neo).
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enable SAP Cloud Platform Mobile Services)]
 
 The SAP Cloud Platform SDK for iOS is designed to work seamlessly with a set of services provided by the SAP Cloud Platform that are optimized for communication with mobile devices, known collectively as Mobile Services. These include not only data services, but also features like analytics, push notifications, and app configuration. Before creating your first app, you'll need to ensure that Mobile Services are enabled for your trial account.
-
-To enable the service, do the tutorial [Enable SAP Cloud Platform Mobile Services](fiori-ios-scpms-enable-ms-neo).
 
 [DONE]
 [ACCORDION-END]
