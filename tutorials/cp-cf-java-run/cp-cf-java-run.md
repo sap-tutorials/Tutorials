@@ -3,7 +3,7 @@ title: Run, Test and Deploy Your Java App
 description: Run, test and deploy your Java app to SAP Cloud Platform using SAP Web IDE.
 auto_validation: true
 primary_tag: products>sap-web-ide
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide   ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 time: 10
 ---
 
@@ -40,18 +40,19 @@ If you get the error, do the following:
 
     ![project-settings](project-settings.png)
 
-    You can also open the workspace settings by clicking on the **gear** icon on left bar, and selecting **Cloud Foundry** under **Workspace Preferences**.
+    You can also open the default global settings by clicking on the **gear** icon on left bar, and selecting **Cloud Foundry** under **Workspace Preferences**.
 
     ![project-settings-section](project-settings-section.png)
 
-  2. Select the **API Endpoint** that matched your **SAP Cloud Platform** region ( **US** or **EU** ).
-
-    ![cloud-foundry-build](cloud-foundry-build.png)
+  2. Select the **API Endpoint** that matches your **SAP Cloud Platform** region from where you login to the  **SAP Cloud Platform**.  
+  [SAP Cloud Platform (trial)](https://account.hanatrial.ondemand.com/cockpit)
 
   3. Enter your **User E-mail** and **password** to authenticate.  
+![logon-cloud-foundry-endpoint](logon-cloud-foundry-endpoint.png)
 
+  4. After authenticating, click **Install Builder**.
 
-
+    ![cloud-foundry-build](cloud-foundry-build.png)
 
 Now that this is complete, go back and run your Java app again.
 
