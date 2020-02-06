@@ -28,7 +28,7 @@ In this tutorial, you will set up your SAP Cloud Platform account so you can use
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Cloud Foundry trial)]
-If you do not already have a Cloud Foundry environment, click **Trial Home** or go to [cockpit.hanatrial.ondemand.com](cockpit.hanatrial.ondemand.com).
+Go to [https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial).
 
 Log into your SAP Cloud Platform account.
 
@@ -150,7 +150,7 @@ Choose the Cloud Foundry environment you want to deploy to.
     -	 Select **cfapps.eu10.hana.ondemand.com** for a European region.
 
     -	 Select **cfapps.us20.hana.ondemand.com** for a specific US region.      
-    
+
 -	Select **hanatrial-schema** for the database.
 
 Choose **Create**.
