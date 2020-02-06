@@ -40,19 +40,16 @@ If you get the error, do the following:
 
     ![project-settings](project-settings.png)
 
-    You can also open the default global settings by clicking on the **gear** icon on left bar, and selecting **Cloud Foundry** under **Workspace Preferences**.
+    You can also open the workspace settings by clicking on the **gear** icon on left bar, and selecting **Cloud Foundry** under **Workspace Preferences**.
 
     ![project-settings-section](project-settings-section.png)
 
-  2. Select the **API Endpoint** that matches your **SAP Cloud Platform** region from where you login to the  **SAP Cloud Platform**.  
+  2. Select the **API Endpoint** that matches your **SAP Cloud Platform** region  (**US** or **EU** ) from where you login to the  **SAP Cloud Platform**.  
   [SAP Cloud Platform (trial)](https://account.hanatrial.ondemand.com/cockpit)
 
   3. Enter your **User E-mail** and **password** to authenticate.  
 ![logon-cloud-foundry-endpoint](logon-cloud-foundry-endpoint.png)
 
-  4. After authenticating, click **Install Builder**.
-
-    ![cloud-foundry-build](cloud-foundry-build.png)
 
 Now that this is complete, go back and run your Java app again.
 
