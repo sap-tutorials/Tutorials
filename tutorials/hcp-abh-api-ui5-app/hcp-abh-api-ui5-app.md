@@ -112,7 +112,7 @@ It is important to note that we just inserted and API key in the UI file, that i
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Add a list)]
 
-1. Open the view file `mta_app/app/webapp/controller/View1.controller.js`.
+1. Open the view file `mta_app/app/webapp/view/View1.view.xml`.
 2. **Replace** the existing `<Page>` element with the following snippet to change the title and include a list that is bound to the model.
     ```XML
     <Page id="page" title="Data from the SAP API Business Hub">
