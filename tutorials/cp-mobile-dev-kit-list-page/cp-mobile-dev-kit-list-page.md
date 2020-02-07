@@ -4,7 +4,7 @@ description: Use the mobile development kit page editor to create a new page for
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
-time: 20
+time: 15
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
@@ -58,21 +58,21 @@ In the Properties pane, select the previously added service from the **Service**
 
 ![MDK](img_0001.png)
 
-In the **Properties** pane, click the **link icon** to open the Object Browser for the **Headline** property.
+In the **Properties** pane, click the **link icon** to open the Object Browser for the **Description** property.
 
-Double click on the `LastName` property of the Customer entity to set it as the binding expression and click **OK**.
+Double click on the `City` property of the Customer entity to set it as the binding expression and click **OK**.
 
 ![MDK](img_008.gif)
 
-Repeat the above steps for `Subheadline` and `Description` properties binding to `FirstName` and `City` properties of the Customer entity respectively.
+>Be careful **not** to select `City` from `Address (ESPM.Address)`.
+
+>![MDK](img_009.1.png)
+
+Repeat the above steps for `Headline` and `Subheadline` properties binding to `FirstName` and `City` properties of the Customer entity respectively.
 
 You should have final results as below.
 
 ![MDK](img_009.png)
-
->Be careful **not** to select _City_ from Address (ESPM.Address).
-
->![MDK](img_009.1.gif)
 
 In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to **true**.
 

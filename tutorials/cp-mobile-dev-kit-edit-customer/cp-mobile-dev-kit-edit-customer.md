@@ -1,5 +1,5 @@
 ---
-title: Modify a customer record in an MDK App
+title: Modify a Customer Record in an MDK App
 description: Allow editing of customer details in an MDK app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
@@ -140,7 +140,7 @@ Save the changes to the `Customers_Edit.page`.
 
 Now, you will add a button on the Edit Customer page and set it's `onPress` to `CloseModalPage_Cancel.action` created in step 1.
 
-Drag and drop an **Action Bar Item** to the upper left corner of the action bar.
+Drag and drop an **Action Bar Item** control to the upper left corner of the action bar.
 
 >Action Bar Item is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
 
@@ -381,7 +381,7 @@ Local record gets updated accordingly.
 
 You can cross verify if a record has been updated in the backend.
 
->Backend URL can be found in Mobile Services Cockpit.
+>Backend URL can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
 
 >Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 

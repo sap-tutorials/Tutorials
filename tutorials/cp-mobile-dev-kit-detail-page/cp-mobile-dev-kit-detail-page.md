@@ -55,9 +55,9 @@ In the Layout Editor, expand the **Controls** | **Container** section, drag and 
 
 Now, you will replace the default values of the control's properties with the values from customer entity.
 
-In the Properties pane, click the **link icon** to open the Object Browser for the `HeadlineText` property.
+In the Properties pane, click the **link icon** to open the Object Browser for the `BodyText` property.
 
-Double click on the `LastName` property of the Customer entity to set it as the binding expression and click **OK**.
+Double click on the `DateOfBirth` property of the Customer entity to set it as the binding expression and click **OK**.
 
 ![MDK](img_005.gif)
 
@@ -65,9 +65,9 @@ Repeat the above steps binding below Properties:
 
 | Property | Value |
 |----|----|
-| `BodyText`| `DateOfBirth` |
 | `Description` | `CustomerId` |
 | `FootNote`| `EmailAddress` |
+| `Headline`| `LastName` |
 | `Status` | `PhoneNumber` |
 | `Subhead` | `FirstName` |
 
@@ -116,19 +116,19 @@ Click the **checkbox** for _Current Object_ and double click `HouseNumber` to se
 
 ![MDK](img_015.gif)
 
->Be careful not to select `HouseNumber` from Address (ESPM.Address), final expression should be as per above animation.
+>Be careful not to select `HouseNumber` from `Address (ESPM.Address)`, final expression should be as per above animation.
 
 Now set second part of the binding.
 
-The cursor will be at the end of binding in the Expression field. Add a space and then select **Street** and click **Insert to Expression**.
+The cursor will be at the end of binding in the Expression field. Add a space and then select **Street** property and click **Insert**.
 
 Click **OK** to set the binding.
 
 ![MDK](img_016.gif)
 
->Be careful not to double click on Street as that will replace the existing expression with just the Street property.
+>Be careful not to double click on **Street** as that will replace the existing expression with just the Street property.
 
->_Street_ should be selected from Customer entity.
+>**Street** should be selected from **Customer** entity.
 
 Select the **upper right** Key Value Item and set the `KeyName` to **City**.
 
@@ -140,7 +140,7 @@ Click **OK** to set the binding.
 
 ![MDK](img_018.gif)
 
->Be careful not to select _City_ from Customer.Address (ESPM.Address) collection, final expression should be as per above screenshot.
+>Be careful not to select **City** from `Customer.Address (ESPM.Address)` collection, final expression should be as per above screenshot.
 
 Repeat the process and set the **lower left** Key Value Item Key Name to **Postal Code** and bind the value to the Postal Code entity property.
 
@@ -179,7 +179,7 @@ Click **Next** and then **Finish** on the confirmation step.
 
 [ACCORDION-BEGIN [Step 3: ](Set the OnPress of the customer list)]
 
-Go back to the `Customers_List page` and set the `OnPress` event of the Contact Cell table. You will link the Contact Cell table to the `NavToCustomers_Detail.action` so that when an end-user selects a customer, the Customer Detail page will open. MDK automatically passes the selected customer to the detail page.
+Go back to the `Customers_List page` and set the `OnPress` event of the Contact Cell table control. You will link the Contact Cell table control to the `NavToCustomers_Detail.action` so that when an end-user selects a customer, the Customer Detail page will open. MDK automatically passes the selected customer to the detail page.
 
 In `Customers_List page`, select the **Contact Cell Table** control, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
