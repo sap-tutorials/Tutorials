@@ -33,7 +33,11 @@ For more information on setup, see:
 
 - [SAP Help Portal: Integrating On-premise Systems](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/c95327fbed6c4efeb1855f12f826301d.html)
 
-To see this tutorial group as a blog series by Andre Fischer, see:
+For more information on OData services and SAP Gateway in general, see:
+
+- [OData service development with SAP Gateway using CDS](https://blogs.sap.com/2016/06/01/odata-service-development-with-sap-gateway-using-cds-via-referenced-data-sources/) - pertains to on-Premise Systems, but contains lots of useful background information on the relationships between CDS views, OData services
+
+- [OData – Everything that you need to know](https://blogs.sap.com/2016/02/08/odata-everything-that-you-need-to-know-part-1/) - especially Parts 1-3 (Community content)
 
 - [How to call a remote function module in your on-premise SAP system from SAP Cloud Platform – ABAP Environment](https://blogs.sap.com/2019/02/28/how-to-call-a-remote-function-module-in-your-on-premise-sap-system-from-sap-cloud-platform-abap-environment/)
 
@@ -355,6 +359,7 @@ CLASS ZCL_A4C_RFC_XXX IMPLEMENTATION.
 
 ENDCLASS.
 ```
+
 [DONE]
 [ACCORDION-END]
 

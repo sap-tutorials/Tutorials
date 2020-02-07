@@ -107,7 +107,7 @@ Running the WAR file in the cloud is simple.  Just run the command `cf push WAR-
 
 SAP has provided a number of services for Cloud Foundry developers.  
 
-Our services include SAP software (for example [SAP HANA](https://help.sap.com/viewer/product/HANA_SERVICE/Cloud/en-US)), and also a number of software components to connect to 3rd party platforms (for example [Open Connectors](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-Open-Connectors.85f78328-c4e3-448d-aaf2-92c06e71f05a.html)).
+Our services include SAP software (for example [SAP HANA](https://help.sap.com/viewer/product/HANA_SERVICE/Cloud/en-US)), and also a number of software components to connect to 3rd party platforms (for example [Open Connectors](https://www.sap.com/products/cloud-platform/capabilities/integration.open-connectors.html)).
 
 ![Partial list of Cloud Foundry services from SAP](sap-cf-service-list.png)
 
