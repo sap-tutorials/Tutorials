@@ -4,7 +4,7 @@ description: Use the mobile development kit editor to create a mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
-time: 20
+time: 15
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
