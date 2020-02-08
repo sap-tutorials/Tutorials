@@ -289,7 +289,7 @@ In the search box start typing the control name `FCCreatedate`. The list will fi
 
 ![MDK](img_025.gif)
 
-Repeat the above step for remaining properties: `CurrencyCode`, `NetAmount`, `TaxAmount`, `GrossAmount`, `LifeCycleStatus` and `LifeCycleStatusName`.
+Repeat the above step for remaining properties: `CurrencyCode`, `GrossAmount`, `LifeCycleStatus`, `LifeCycleStatusName`, `NetAmount` and `TaxAmount`.
 
 ![MDK](img_026.png)
 

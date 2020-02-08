@@ -364,7 +364,7 @@ Since this is an Offline application, new entry is added to the request queue of
 
 >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-On Main page, tap **Sync**, a successful message will be shown.
+On `Main` page, tap **Sync**, a successful message will be shown.
 
 ![MDK](img_036.png)
 
@@ -372,7 +372,7 @@ On Main page, tap **Sync**, a successful message will be shown.
 
 You can cross verify if a record has been updated in the backend.
 
->Backend URL can be found in Mobile Services Cockpit.
+>Backend URL can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
 
 >Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 

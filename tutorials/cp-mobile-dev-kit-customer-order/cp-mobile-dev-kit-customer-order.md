@@ -323,7 +323,7 @@ In the **Empty** section of the **Properties** pane, provide  **`No Customer Ord
 
 ![MDK](img_024.png)
 
-You may also want to open `SalesOrders_Detail.page` when clicking on any order in `Customers_Detail.page`. For this, you will set `OnPress` event of the **Object Collection** and link it to `NavToSalesOrders_Details.action` so that when an end-user selects a order, the Order Details page will open. MDK automatically passes the selected order to the details page.
+You may also want to open `SalesOrders_Detail.page` when clicking on any order in `Customers_Detail.page`. For this, you will set `OnPress` event of the **Object Table** and link it to `NavToSalesOrders_Details.action` so that when an end-user selects a order, the Order Details page will open. MDK automatically passes the selected order to the details page.
 
 In `Customers_Detail.page`, select the Object Collection, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
