@@ -60,7 +60,7 @@ In Xcode, open `ApplicationUIManager.swift` and locate the method `showApplicati
 
 Currently the code will try instantiating the first screen of the Master-Detail View. We deleted those so we have to make sure that our `ProductTableViewController` will be instantiated instead.
 
-Replace the following code inside the `showApplicationScreen(completionHandler: @escaping (Error?) -> Void)` method:
+Replace the following code inside the `showApplicationScreen(completionHandler:)` method:
 
 ```swift
   let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
