@@ -43,7 +43,7 @@ The aforementioned guide will enable you to have the following configured for yo
 
 [ACCORDION-BEGIN [Step 2: ](Acquire prototyping hardware)]
 
-If you need hardware for prototyping or subsequent tutorials, we recommend you acquire this kit to get started [https://www.sparkfun.com/products/14659?custom\_code=SAP](https://www.sparkfun.com/products/14659?custom_code=SAP). Of course, you can choose any device hardware or any supplier but the subsequent tutorials will be based on this example containing a temperature, humidity and light sensor.
+If you need hardware for prototyping or subsequent tutorials, we recommend you acquire a typical raspberry pi based kit to get started for example at [https://www.sparkfun.com/products/15361](https://www.sparkfun.com/products/15361) and digital sensors for light, temperature and humidity (e.g. [https://www.sparkfun.com/products/14459](https://www.sparkfun.com/products/14459), [https://www.sparkfun.com/products/15436](https://www.sparkfun.com/products/15436) and [https://www.sparkfun.com/products/10167](https://www.sparkfun.com/products/10167)). Of course, you can choose any device hardware or any supplier but the subsequent tutorials will be based on this example containing a temperature, humidity and light sensor.
 
 ![Hardware Kit](IMG_3333.jpg)
 
