@@ -149,7 +149,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     ![Accept Equipment](accept-equipment.png)
 
-3. In the SAP Fiori launchpad, open the **Monitor Workflow - Workflow Instances** tile, choose the filter button, add the Completed status.
+3. In the SAP Fiori launchpad, open the **Monitor Workflow - Workflow Instances** tile, choose the filter button, select the **Status** option and choose the **Completed** status.
 
     ![View Completed Workflow Instance](instance-filter-1.png)
 
