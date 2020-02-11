@@ -1,5 +1,5 @@
 const https = require('https');
-const url = require('url');
+const { URL } = require('url');
 const fetch = require('node-fetch');
 
 const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
@@ -30,13 +30,21 @@ const checkLinks = async (links, onCheck) => {
 };
 
 const checkLink = (link, reqOptions = {}, maxAttempts = 2) => {
-  const { hostname } = url.parse(link);
+  try {
+    const { hostname } = new URL(link);
 
-  if (internalLink.regexp.test(hostname)) {
+    if (internalLink.regexp.test(hostname)) {
+      return {
+        link,
+        code: 0,
+        err: internalLink.message,
+      };
+    }
+  } catch (e) {
     return {
       link,
       code: 0,
-      err: internalLink.message,
+      err: e.message,
     };
   }
 

@@ -1,4 +1,6 @@
 ---
+author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Install cURL
 description: Install cURL to send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
 auto_validation: true
@@ -6,7 +8,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---
 
-<!-- loiobc8b1a2abf7242109967c1cecdaef8bc -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -30,7 +31,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 3.  For ease of use we recommend that you add the directories from the cURL binaries to your PATH environment variable. For example, you could enter the following in your terminal (only valid for one session):
 
     `set PATH=c:\<PATH_TO_CURL.EXE>;%PATH%`
-    
+
 4.  Check the version of cURL. It must be enabled with OpenSSL. Enter the following command in the terminal:
 
     `curl --version`

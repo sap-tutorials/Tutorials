@@ -3,7 +3,7 @@ title: Get OAuth Access Token for Document Information Extraction Using a REST C
 description: Use the Document Information Extraction Authentication API to retrieve your OAuth access token, which will grant you access to the service APIs.
 auto_validation: true
 time: 10
-tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment ]
+tags: [ tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction ]
 primary_tag: topic>machine-learning
 ---
 
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 ---
 
-[ACCORDION-BEGIN [Step](Get OAuth access token details)]
+[ACCORDION-BEGIN [Step 1: ](Get OAuth access token details)]
 
 To get your OAuth access token you will need some details provided by the service key you created in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance):
 
@@ -30,7 +30,7 @@ Here is a description of values returned in your service key you'll need in upco
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Create Postman environment)]
+[ACCORDION-BEGIN [Step 2: ](Create Postman environment)]
 
 [Postman](https://learning.getpostman.com/) is a client for calling APIs. In order to ease the re-usability of your OAuth access token, you will leverage Postman's environment feature.
 
@@ -73,7 +73,7 @@ In Postman, you can create environments, which represent key-value pairs that ca
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Prepare OAuth token request)]
+[ACCORDION-BEGIN [Step 3: ](Prepare OAuth token request)]
 
 1. Open a new tab in Postman.
 
@@ -96,7 +96,7 @@ In Postman, you can create environments, which represent key-value pairs that ca
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Send OAuth token request)]
+[ACCORDION-BEGIN [Step 4: ](Send OAuth token request)]
 
 Click **Send**.
 

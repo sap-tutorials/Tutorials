@@ -13,9 +13,6 @@ time: 15
   - How to make the call to the OData service resilient by using resilience decorators
   - How to write Tests for code decorated with the new resilience decorators
   - To deploy the application on SAP Cloud Platform Cloud Foundry
-
-
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Resilience)]

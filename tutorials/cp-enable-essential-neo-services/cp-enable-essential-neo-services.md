@@ -8,8 +8,7 @@ time: 5
 ---
 
 ## Prerequisites
- - You must have an account on the **SAP Cloud Platform**, see here on how to gain access [SAP Cloud Platform](https://cloudplatform.sap.com/index.html)
- - Learn how to sign up for a free trial via this tutorial [SAP Cloud Platform sign up](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+ - Learn how to [sign up](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for a free  SAP Cloud Platform trial.
 
 ## Details
 ### You will learn

@@ -49,7 +49,7 @@ In the left pane, choose **Services** > **Service Marketplace**.
 
 ![cf Trial](img_5.png)
 
-Search with `mob` and then click **Mobile Card Kit**.
+Search the **Mobile Services** and click on it.
 
 ![cf Trial](img_6.png)
 

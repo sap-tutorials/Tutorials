@@ -66,7 +66,7 @@ SAP Cloud Platform provides both Platform as a Service (PaaS) and Software as a 
 
 Why does SAP provide both?  The combination of both PaaS and SaaS provide all the tools we have traditionally sold, new tools that are specific to the cloud, and also the ability to customize all of our products to fit each individual organization.  
 
-We have a lot of SaaS solutions available in the SAP Cloud.  They include our core package, S/4HANA, as well as Workflow, Human Resources, and new products like Internet of Things.  There are many more in the list, so [take a look at a more complete list for details](https://cloudplatform.sap.com/support/service-description.html).
+We have a lot of SaaS solutions available in the SAP Cloud.  They include our core package, S/4HANA, as well as Workflow, Human Resources, and new products like Internet of Things.  There are many more in the list, so [take a look at a more complete list for details](https://www.sap.com/about/agreements/policies/cloud-platform.html).
 
 > **Note**:  There are two different types of Services being described here.  The software listed above are stand-alone software packages, which can be used without customization.  These are all Software as a Service, but we refer to those applications as **Solutions**.  
 >
@@ -102,7 +102,7 @@ The first environment is called "Neo".  It's is the original SAP runtime environ
 
 The second environment is Cloud Foundry.  This environment was added in 2017.  [Cloud Foundry is an open source project and standard](https://www.cloudfoundry.org/), run by the Cloud Foundry Foundation (and before that, the Linux Foundation).  SAP has implemented Cloud Foundry on the SAP Cloud Platform, using servers in our expanding network of third party data centers (like AWS, Azure, Google Cloud, and Alibaba Cloud).
 
-The latest environment is the [ABAP environment](https://cloudplatform.sap.com/enterprise-paas/abap.html) allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
+The latest environment is the [ABAP environment](https://www.sap.com/cloudplatform-abap) allows you to create extensions for ABAP-based products, such as SAP S/4HANA Cloud, and develop new cloud applications. You can transform existing ABAP-based custom code or extensions to the cloud.
 
 
 Which environment is right for you?  That's a good question.  Each environment has it's strengths, and some services are only available in one of the environments.  Take a look at all of them before making a decision, and use our [online map to guide you](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html).

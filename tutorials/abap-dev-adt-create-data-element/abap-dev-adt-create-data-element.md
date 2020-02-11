@@ -190,11 +190,9 @@ Go back to your report and execute it by choosing **F8**. Your SAP List Viewer s
 The `field-symbol` `booking` has been defined as follows. Rewrite the `LOOP AT` statement using an inline declaration. Enter your code in the box below and choose **Submit Answer**:
 
 ```ABAP
-
 FIELD-SYMBOLS <booking> TYPE sbook.
 LOOP AT Booking_List ASSIGNING <booking>.
-
-
 ```
+
 [VALIDATE_1]
 [ACCORDION-END]
