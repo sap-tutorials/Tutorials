@@ -180,7 +180,7 @@ It's worth spending a bit of time looking at the build results in the Console. I
 
 ![Generated files](generated-files.png)
 
-Indeed, if you open the `CatalogService.xml` file (in the `srv/src/resources/edmx/` folder), you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. It reflects your new service definition, and looks like this:
+Indeed, if you open the `CatalogService.xml` file (in the `srv/src/main/resources/edmx/` folder), you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. It reflects your new service definition, and looks like this:
 
 ![CatalogService metadata](catalogservice-metadata.png)
 
