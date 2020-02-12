@@ -41,6 +41,7 @@ docker run hello-world
 You see an output similar to the following:
 
 ![picture_01](./datahub-docker-v2-setup_01.png)
+
 [VALIDATE_1]
 
 [ACCORDION-END]
@@ -159,6 +160,7 @@ If you like to see what is going on (after you have issued a `start` command) yo
 ```sh
 docker logs datahub
 ```
+
 [DONE]
 
 [ACCORDION-END]

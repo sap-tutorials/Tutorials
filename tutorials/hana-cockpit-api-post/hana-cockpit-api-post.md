@@ -203,6 +203,7 @@ Run the entire program (make sure to delete or comment out the calling statement
 ```
 
 In the area below, copy your Python output, and then click **Validate**.
+
 [VALIDATE_3]
 
 [ACCORDION-END]
