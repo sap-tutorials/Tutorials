@@ -54,6 +54,8 @@ In _Service Configuration_ step, provide and select the below information:
 
 > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
 
+>If a pop-up appears then enter your cloud platform User Name and password to authenticate. 
+
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
 ![MDK](img_004.png)
