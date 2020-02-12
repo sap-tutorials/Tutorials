@@ -214,7 +214,7 @@ Repeat the above step and change the title for other controls as below:
 
 ![MDK](img_013.png)
 
-Save the changes to `Main.page`.
+Save the changes to the `Main.page`.
 
 [VALIDATE_1]
 [ACCORDION-END]

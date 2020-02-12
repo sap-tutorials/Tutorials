@@ -73,6 +73,8 @@ In _Service Creation_ step, provide and select the below information:
 
 > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
 
+>If a pop-up appears then enter your cloud platform User Name and password to authenticate. 
+
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
 ![MDK](img_004.1.png)
@@ -149,10 +151,10 @@ In **Appearance** section, provide below properties:
 | `Footnote`| leave it empty |
 | `PreserveIconStackSpacing` | `false` |
 | `ProgessIndicator`| leave it empty |
-| `Status` | `{RequestMethod}` |
-| `Subhead` | `{RequestURL}` |
+| `Status` | bind it to `{RequestMethod}` |
+| `Subhead` | bind it to `{RequestURL}` |
 | `SubStatus` | `leave it empty` |
-| `Title` | `{HTTPStatusCode}` |
+| `Title` | bind it to `{HTTPStatusCode}` |
 
 ![MDK](img_007.5.png)
 
@@ -511,7 +513,7 @@ Save the changes to the `Main` page.
 
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right-click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
 ![MDK](img_009.png)
 
