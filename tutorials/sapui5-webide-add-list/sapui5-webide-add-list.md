@@ -62,6 +62,7 @@ sap.ui.define([
 ```
 
 ![controller](2.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -73,6 +74,7 @@ Now **Run** your application again.
 > This time the deploy job should be way faster.
 
 ![Running application with list view](4.png)
+
 [DONE]
 [ACCORDION-END]
 

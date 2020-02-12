@@ -105,6 +105,7 @@ case 6:
     mapNavigationCell.textLabel?.textColor = .preferredFioriColor(forStyle: .primary1)
     return mapNavigationCell
 ```
+
 [DONE]
 [ACCORDION-END]
 
