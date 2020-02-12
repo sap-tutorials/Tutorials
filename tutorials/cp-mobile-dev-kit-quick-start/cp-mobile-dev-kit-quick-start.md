@@ -1,6 +1,6 @@
 ---
-title: Quick Start with the Mobile Development Kit (MDK) and Create a Sample App
-description: Create and examine your first Offline CRUD mobile app using the Mobile development kit template connecting against a sample service.
+title: Quick Start with the Mobile Development Kit (MDK)
+description: Create and examine your first offline CRUD mobile app using the Mobile development kit template connecting against a sample service.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -53,6 +53,8 @@ In _Service Configuration_ step, provide and select the below information:
 | `Enable Offline Store` | `Should be checked` |
 
 > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
+
+>If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
 
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
