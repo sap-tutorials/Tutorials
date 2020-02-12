@@ -60,7 +60,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ```ABAP
     unmanaged implementation in class z_i_booking_xxx unique;
- 
+
     define behavior for ZI_Booking_xxx alias booking
     lock master
     etag LastChangedAt
@@ -129,6 +129,8 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     CLASS lcl_handler implementation.
       METHOD modify.
+
+        " %cid = control field
 
         LOOP AT roots_to_delete INTO DATA(ls_delete).
           IF ls_delete-booking IS INITIAL.

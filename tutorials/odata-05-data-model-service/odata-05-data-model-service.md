@@ -90,13 +90,13 @@ Notice there's also a **Run Console** option too -- you'll be switched to that a
 
 [ACCORDION-BEGIN [Step 6: ](Start a new project)]
 
-Use the project wizard to start a new project, using menu path **File** > **New** > **Project from Template**. In the **Template Selection** step, find and choose the _SAP Cloud Business Application_ template -- you may have to choose _All categories_ in the **Category** filter.
+Use the project wizard to start a new project, using menu path **File** > **New** > **Project from Template**. In the **Template Selection** step, find and choose the _SAP Cloud Business Application_ template -- you may have to choose _Cloud Foundry_ in the **Environment** filter and _All categories_ in the **Category** filter.
 
 ![SAP Cloud Platform Business Application template](bus-app-template.png)
 
 In the **Basic Information** step, enter **`Products`** for the project name.
 
-In the **Project Details** step, select **`Java`** for the Service, **`my.app`** for the Java Package, and **`SAP HANA Database`** for the Database.
+In the **Project Details** step, ensure **`Java`** is selected for the Service, specify **`my.app`** for the Java Package, and ensure **`SAP HANA Database`** is selected for the Database.
 
 When you finish the template wizard, you should have a project in your workspace that looks something like this:
 
@@ -157,7 +157,7 @@ Remember - at this stage you should *not* save the file.
 
 In a similar way to how you defined the data model, you should now define the service.
 
-From within the `srv` folder, open the **`my-service.cds`** file, and you'll see some default content, including some comment lines. Replace the entire content with this:
+From within the `srv` folder, open the **`cat-service.cds`** file, and you'll see some default content, including some comment lines. Replace the entire content with this:
 
 ```
 using my.app from '../db/data-model';
@@ -169,9 +169,7 @@ service CatalogService {
 
 The first line creates a reference to the information in the data model you defined earlier, and the service, which will be an OData service called `CatalogService`, has a single entity type `Products` which is based upon the `Products` entity definition in that data model.
 
-At this point you should have two files open, **`data-model.cds`** and **`my-service.cds`**, both with unsaved changes. It's now time to save both of them at the same time - use menu path **File** > **Save All** to do this.
-
-> Because of the **Perform CDS Build upon save** preference you checked earlier, a build of the project is triggered automatically. And as the changes to both these files reference each other, it makes more sense to save them at the same time - otherwise you'd encounter some build errors due to missing references.
+At this point you should have two files open, **`data-model.cds`** and **`cat-service.cds`**, both with unsaved changes. It's now time to save both of them at the same time - use menu path **File** > **Save All** to do this.
 
 [DONE]
 [ACCORDION-END]
@@ -182,7 +180,7 @@ It's worth spending a bit of time looking at the build results in the Console. I
 
 ![Generated files](generated-files.png)
 
-Indeed, if you open the `CatalogService.xml` file (in the `srv/src/resources/edmx/` folder), you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. It reflects your new service definition, and looks like this:
+Indeed, if you open the `CatalogService.xml` file (in the `srv/src/main/resources/edmx/` folder), you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. It reflects your new service definition, and looks like this:
 
 ![CatalogService metadata](catalogservice-metadata.png)
 
@@ -201,19 +199,6 @@ Do this by using the context menu on the `db` folder and choosing **Build** > **
 ![choosing context menu path Build > Build](build-build.png)
 
 This will cause all sorts of informational messages to be written to the Console; keep an eye on them to get a feel for what's going on. Towards the end of the messages you'll notice a deployment taking place.
-
-> If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
-
-> 1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
-
-> 1. Expand the folder `db/src/` to find the file `.hdiconfig`.
-![finding the .hdiconfig file](hdiconfig.png)
-
-> 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
-
-> 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
-like
-> 1. **Save** the file, and re-try the build.
 
 You may wish to check the results of this activity in the Cloud Foundry environment from the SAP Cloud Platform cockpit. Navigate there to your space (see earlier in this tutorial) and request a list of the service instances from the menu. You should see your database instance listed, something like this:
 

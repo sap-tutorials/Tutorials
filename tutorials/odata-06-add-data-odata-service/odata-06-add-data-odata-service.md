@@ -52,7 +52,7 @@ At this point you're ready to start up the Database Explorer and connect it to y
 
 Open it up, either using the menu path **Tools** > **Database Explorer** or simply by choosing the appropriate perspective icon on the far left hand side of SAP Web IDE.
 
-If you're starting up the feature for the first time, you will be presented with a popup asking you to connect.
+If you're starting up the feature for the first time, you may be presented with a popup asking you to connect.
 
 ![Database Explorer Connectivity](database-explorer-connectivity.png)
 
@@ -130,7 +130,7 @@ At this stage, you have a fully functioning OData service populated with test da
 
 ![app URL in the Run Console](app-url-in-run-console.png)
 
-Following the URL, through the link to the service document, you can specify the `Products` entity set and see your OData service serving the data you just entered.
+Following the URL, through the link to the service document, you can specify the `Products` entity set and see your OData service serving the data you just entered (just add `Products` to the end of the URL, so that it looks like this: `/odata/v2/CatalogService/Products`).
 
 ![products entity set](products.png)
 

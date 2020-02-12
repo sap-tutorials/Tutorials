@@ -157,5 +157,6 @@ Now you can see a list of all custom services in the S/4HANA Cloud system. But i
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Test yourself)]
+
 [VALIDATE_1]
 [ACCORDION-END]

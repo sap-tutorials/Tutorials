@@ -77,8 +77,13 @@ const findDuplicates = (arr) => {
     return result;
 };
 
+function orderByAlphabet(errors) {
+    return errors.sort((a, b) => a.fileName.localeCompare(b.fileName))
+}
+
 module.exports = {
     parseFiles,
     findDuplicates,
     isTutorialDoc,
+    orderByAlphabet,
 };
