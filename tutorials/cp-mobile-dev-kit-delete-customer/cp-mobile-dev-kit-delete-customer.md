@@ -226,9 +226,9 @@ On Main page, tap **Sync**, a successful message will be shown.
 
 You can cross verify if this record has been deleted in the backend.
 
->Backend URL can be found in Mobile Services Cockpit.
+>Backend URL can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
 
->Mobile Applications | Native/Hybrid | Click on the MDK App | Mobile Sample OData ESPM | click Root URL `v2` | append `/Customers`
+>Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 
 >As Sync is pressed, `UploadOffline.action` gets trigger to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
 

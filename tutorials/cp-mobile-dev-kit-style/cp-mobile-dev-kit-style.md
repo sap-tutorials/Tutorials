@@ -59,6 +59,10 @@ In _Service Creation_ step, provide and select the below information:
 | `Service URL` | `com.sap.edm.sampleservice.v2` |
 | `Enable Offline Store` | `Should be checked` |
 
+> If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
+
+>If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
+
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
 ![MDK](img_004.png)
@@ -204,7 +208,7 @@ Let the default configuration as it is and click **Next**.
 
 >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-Click the drop down for Destination Name and select the `mobileservices_cf` destination , you will find list of existing application IDs , select the one you have chosen while creating the project in step 1.
+Click the drop down for Destination Name and select the `mobileservices_cf` destination , you will find list of existing application IDs, select the one you have chosen while creating the project in step 1.
 
 ![MDK](img_015.png)
 
