@@ -122,9 +122,7 @@ Type           | `HTTP`
 Description    | `Mobile Services CF`
 URL            | please check note below
 Proxy Type     | `Internet`
-Authentication | `BasicAuthentication`
-User | `SCP user id`
-password | `SCP password`
+Authentication | `AppToAppSSO`
 
 >For URL field, in Mobile Services Cockpit, click **Important links** on bottom-left side and copy from the section of SAP Cloud Platform SDK Tools the link of Copy `AdminAPI` to your destination.
 >![CF Trial](img_1.1.png)
