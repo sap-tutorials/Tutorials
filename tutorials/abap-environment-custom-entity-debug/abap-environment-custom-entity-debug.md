@@ -8,10 +8,9 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ##Prerequisites
-- Either **Tutorial**: [Test the Connection to the Remote System](abap-environment-test-rfc)
-- Or: You have created 2 classes and copied the code from [Test the Connection to the Remote System](abap-environment-test-rfc), step 10 - for steps 1-10 of this tutorial
-
-- **Tutorial**:[Get Data from a Remote System Using a Custom Entity](abap-environment-rfc-custom-entity) - for step 11 of this tutorial (optional)
+- You have done one of the following:
+    - **Tutorial**: [Test the Connection to the Remote System](abap-environment-test-rfc), step 10 - for steps 1-10 of this tutorial
+    - **Tutorial**: [Get Data from a Remote System Using a Custom Entity](abap-environment-rfc-custom-entity)
 
 ## Details
 ### You will learn
