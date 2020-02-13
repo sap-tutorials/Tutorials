@@ -59,6 +59,7 @@ public void setInvoiceLink(String invoiceLink) {
 ```
 
 ![eCommerce app](getter setter.PNG)
+
 [DONE]
 [ACCORDION-END]
 
@@ -136,6 +137,7 @@ public void setInvoiceLink(String invoiceLink) {
 ```
 
 ![eCommerce app](ResourcRef.PNG)
+
 [DONE]
 [ACCORDION-END]
 
@@ -232,6 +234,7 @@ The following steps describe how to create classes for generating the Invoice PD
 ```
 
 ![ServMap](ServMap.PNG)
+
 [DONE]
 [ACCORDION-END]
 
@@ -337,6 +340,7 @@ private void updateSalesOrderHeader(String reportPath, List<SalesOrderItem> soiL
 ```
 
 ![Entity Manager](EntityManager.PNG)
+
 [DONE]
 [ACCORDION-END]
 

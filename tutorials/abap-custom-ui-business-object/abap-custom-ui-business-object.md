@@ -105,5 +105,6 @@ By exposing the service via custom communication scenario and communication arra
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
+
 [VALIDATE_1]
 [ACCORDION-END]

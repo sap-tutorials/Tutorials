@@ -4,7 +4,7 @@ description: Write a JavaScript logic to validate an email address format in an 
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
-time: 20
+time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---

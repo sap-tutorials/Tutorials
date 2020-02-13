@@ -205,6 +205,7 @@ On the **Testing Overview** page, choose **`test/flpSandbox.html`** to launch th
 Your app opens in a Web IDE preview pane.
 
 ![Some alternative text](step11-part3.png)
+
 [DONE]
 [ACCORDION-END]
 

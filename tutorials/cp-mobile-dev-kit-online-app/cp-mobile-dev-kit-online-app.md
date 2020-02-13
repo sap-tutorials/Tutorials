@@ -11,7 +11,6 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - - **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- - **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
 - - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
 - **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
@@ -25,7 +24,7 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Get familiar with use case)]
 
-With mobile development kit, you can also create applications that are online or always connected and make calls to the backend servers for each action you take in the application.
+With Mobile Development Kit, you can also create applications that are online or always connected and make calls to the backend servers for each action you take in the application.
 
 [DONE]
 [ACCORDION-END]
@@ -62,6 +61,8 @@ In _Service Creation_ step, provide and select the below information:
 | `Service URL` | `com.sap.edm.sampleservice.v2` |
 
 > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
+
+>If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
 
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 

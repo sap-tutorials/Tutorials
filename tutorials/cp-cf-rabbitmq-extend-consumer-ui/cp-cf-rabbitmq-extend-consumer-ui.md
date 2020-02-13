@@ -111,6 +111,7 @@ sap.ui.getCore().attachInit(function () {
   }).placeAt('content');
 });
 ```
+
 [VALIDATE_1]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 3: ](Add a model to the consumer web-based user interface)]
