@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 time: 10
 ---
 ##Prerequisites
+- You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 - **Tutorial**: [Create an ABAP project](abap-dev-create-package)
 
 ## Details
