@@ -7,6 +7,9 @@ tags: [  tutorial>beginner, topic>abap-development ]
 time: 5
 ---
 
+## Prerequisites  
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+
 ## Details
 ### You will learn  
 - How to make your program more readable by learning how to maintain `ABAPDoc` comments.
