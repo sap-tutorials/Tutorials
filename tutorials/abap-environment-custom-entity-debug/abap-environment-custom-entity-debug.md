@@ -7,6 +7,11 @@ tags: [ tutorial>beginner, topic>abap-development, products>sap-cloud-platform, 
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
+##Prerequisites
+- You have done one of the following:
+    - **Tutorial**: [Test the Connection to the Remote System](abap-environment-test-rfc), step 10 - for steps 1-10 of this tutorial
+    - **Tutorial**: [Get Data from a Remote System Using a Custom Entity](abap-environment-rfc-custom-entity)
+
 ## Details
 ### You will learn
   - How to debug an ABAP Console application in ABAP Development Tools (ADT)

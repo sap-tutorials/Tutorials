@@ -3,7 +3,7 @@ title: Get Data from a Remote System Using a Custom Entity
 description: Get data from an on-Premise System Using RFC, by Implementing a Custom Entity in ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform]
+tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
@@ -117,7 +117,9 @@ Add the following annotation to the view (immediately after the '@EndUserText.la
     ```
 
 
-2. Add the header information to the view, after the `@QueryImplementedBy` annotation:
+2. Add the header information to the view, after the `@QueryImplementedBy` annotation.
+For more information on the UI Annotations used here, see
+[SAP Help Portal: SAP Cloud Platform: ABAP RESTful PM: Defining UI Annotations](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/fd95e7c9905e469bb176217f49e15e71.html)
 
     ```CDS
 
