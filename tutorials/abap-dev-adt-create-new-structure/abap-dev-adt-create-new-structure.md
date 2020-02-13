@@ -7,6 +7,9 @@ tags: [  tutorial>beginner, topic>abap-development ]
 time: 15
 ---
 
+## Prerequisites  
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+
 ## Details
 ### You will learn  
 - How to create an Data Dictionary structure
