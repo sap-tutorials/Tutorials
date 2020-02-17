@@ -9,7 +9,7 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to start an instance of the workflow definition that you have defined using a start form 
+  - How to start an instance of the workflow definition that you have defined using a start form
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
@@ -145,7 +145,7 @@ A message confirms that the form has been created.
 [ACCORDION-BEGIN [Step 7: ](Open the Workflow Monitor - Workflow Definitions app)]
 1. Open your browser and access your SAP Fiori launchpad at: `https://<dev space name>-trial-dev-workflowtilesapprouter.cfapps.<your endoint>.hana.ondemand.com`.
 
-2. Choose the **Workflow Monitor - Workflow Definitions** tile, and for the `ApprovalWorkflow` task choose **Start New Instance**.
+2. Choose the **Monitor Workflows - Workflow Definitions** tile, and for the `ApprovalWorkflow` task choose **Start New Instance**.
 
     ![Start New Instance](start-new-instance.png)
 
