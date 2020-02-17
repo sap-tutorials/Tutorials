@@ -123,7 +123,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
   10. Replace your code with following:
 
-   ```ABAP
+    ```ABAP
     class z_cl_xxx definition
     public
     final
@@ -140,11 +140,11 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
     out->write('Hello world!').
     ENDMETHOD.
     ENDCLASS.
-  ```
+    ```
+ 
+      **Save** and **activate**.
 
-    **Save** and **activate**.
-
-[DONE] 
+[DONE]
 [ACCORDION-END]
 
 
