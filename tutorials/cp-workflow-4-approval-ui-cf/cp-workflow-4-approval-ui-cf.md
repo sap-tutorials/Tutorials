@@ -94,12 +94,12 @@ time: 15
 
 4. Choose **Deploy**.
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 6: ](Configure the business application visualization for your custom tile)]
-1. In your workspace of SAP Web IDE under **`sample.`** | **`workflowtilesFLP`**, select the **`portal-site`** folder and right-click it.
+1. In your workspace of SAP Web IDE under **`sample.`** | **`workflowtilesFLP.mta.trial`**, select the **`portal-site`** folder and right-click it.
 
 2. Choose **New** | **Folder**.
 
@@ -176,12 +176,12 @@ time: 15
 
 9. Save your changes.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 7: ](Create the corresponding properties file for translation)]
-1. In your workspace under **`sample.workflowtiles.mta.trial`** | **`workflowtilesFLP`**, select the **`portal.site`** | **`i18`** folder and right-click it.
+1. In your workspace under **`sample.workflowtiles.mta.trial`** | **`workflowtilesFLP`**, select the **`portal.site`** | **`i18n`** folder and right-click it.
 
 2. Choose **New** | **File**.
 
