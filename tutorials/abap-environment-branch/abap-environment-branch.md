@@ -31,7 +31,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
     ![Create software component](component.png)
 
 2. Click on your system URL.
-
+ 
     ![Create software component](component2.png)
 
 3. Logon to your ABAP system in your SAP Fiori launchpad and select **Manage Software Component**.
@@ -48,7 +48,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     Click **Save**.
 
-  ![Create software component](component5.png)
+    ![Create software component](component5.png)
 
 [DONE]
 [ACCORDION-END]
@@ -141,7 +141,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
     ENDMETHOD.
     ENDCLASS.
     ```
- 
+
       **Save** and **activate**.
 
 [DONE]
