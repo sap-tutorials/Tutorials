@@ -99,7 +99,7 @@ time: 15
 
 
 [ACCORDION-BEGIN [Step 6: ](Configure the business application visualization for your custom tile)]
-1. In your workspace of SAP Web IDE under **`sample.`** | **`workflowtilesFLP.mta.trial`**, select the **`portal-site`** folder and right-click it.
+1. In your workspace of SAP Web IDE under **`sample.workflowtiles.mta.trial`**, select the **`portal-site`** folder and right-click it.
 
 2. Choose **New** | **Folder**.
 
