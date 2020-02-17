@@ -29,9 +29,9 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 1. Logon to ADT, right-click on your ABAP cloud project and select **Properties**.
 
     ![Create software component](component.png)
-
-2. Click on your system URL.
  
+2. Click on your system URL.
+
     ![Create software component](component2.png)
 
 3. Logon to your ABAP system in your SAP Fiori launchpad and select **Manage Software Component**.
