@@ -10,6 +10,8 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Details
+  - You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/4-cp-mobile-dev-kit-customer-order) to start with this tutorial.
+
 ### You will learn
   - How to enhance customer details with its order information
   - How to create a new page for displaying the order details

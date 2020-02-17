@@ -10,6 +10,8 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Details
+  - You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/5-cp-mobile-dev-kit-link-entity) to start with this tutorial.
+
 ### You will learn
   - How to create relationship between parent and child entities
   - How to create a local child entity to an existing parent entity
@@ -424,6 +426,8 @@ On Main page, tap **Sync** to send local changes to the backend, a successful me
 ![MDK](img_040.png)
 
 [OPTION END]
+
+Congratulations, you have enhanced your MDK app with additional functionalities. You may now start exploring [other](mission.mobile-dev-kit-level-up) tutorials.
 
 [DONE]
 [ACCORDION-END]

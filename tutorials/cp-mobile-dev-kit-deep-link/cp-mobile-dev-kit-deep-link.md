@@ -10,15 +10,15 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- - **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- - **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
-- - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
+- **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 - **Download and install** **SAP Mobile Cards** on your [iOS](https://apps.apple.com/us/app/sap-mobile-cards/id1168110623) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go&hl=en) device
 - **Download and install** **SAP Fiori Client** on your [iOS](https://apps.apple.com/us/app/sap-fiori-client/id824997258) or [Android](https://play.google.com/store/apps/details?id=com.sap.fiori.client&hl=en) device
 
 ## Details
+  - You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/4-Implement-Deep-Linking-to-Another-App-from-an-MDK-App) and start directly with step 5 in this tutorial.
+
 ### You will learn
   - How to open SAP standard apps like Mobile Cards, Fiori Client from MDK generic client
   - How to open an UI5 app running in a  Fiori Client from an MDK generic client
@@ -429,6 +429,8 @@ Tapping on **Open SAP.com page** will open SAP website.
 ![MDK](img_028.5.png)
 
 [OPTION END]
+
+Congratulations, you have learned how to open a web page or navigate to an installed app from an MDK app.
 
 [DONE]
 [ACCORDION-END]

@@ -10,10 +10,11 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- You have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
+- You have created an MDK app as described in [Create Your First Mobile App with the Mobile Development Kit (MDK)](mission.mobile-dev-kit-get-started).
 
 ## Details
-**Note**: Ensure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
+  - **Note**: Ensure that you have created an MDK app as described in [Create Your First Mobile App with the Mobile Development Kit (MDK)](mission.mobile-dev-kit-get-started).
+  - You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/1-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial. 
 
 ### You will learn
   - How to create a customer record with information such as name, email, phone number & date of birth
