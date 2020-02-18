@@ -29,7 +29,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 1. Logon to ADT, right-click on your ABAP cloud project and select **Properties**.
 
     ![Create software component](component.png)
- 
+
 2. Click on your system URL.
 
     ![Create software component](component2.png)
@@ -69,7 +69,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Pull software component](pull3.png)
 
-
+ 
 [DONE]
 [ACCORDION-END]
 
