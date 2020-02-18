@@ -25,7 +25,6 @@ Note the following parameters from the service keys of your business rules insta
 
 ![Configure environment](testing5.png)
 
-
 [ACCORDION-BEGIN [Step 1: ](Log onto SAP API Business Hub)]
 
 1. Log on to [SAP API Business Hub](https://api.sap.com/)
