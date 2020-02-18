@@ -31,7 +31,7 @@ primary_tag: products>sap-cloud-platform-business-rules
 
 5. Choose **business-rules** role collection to add roles.
 
-    ![Add Roles](assign_role04.png)
+    ![Add Roles](assign-role04.png)
 
 6. Choose **Add Role**.
 
