@@ -27,7 +27,7 @@ You must create a service instance to enable SAP Cloud Platform Process Visibili
 
 2. You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 
-    ![Cloud Foundry](enter-trial.png)
+    ![Cloud Foundry](landing_page.png)
 
 [DONE]
 [ACCORDION-END]
