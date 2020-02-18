@@ -10,13 +10,13 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Details
-  - You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/5-cp-mobile-dev-kit-link-entity) to start with this tutorial.
-
 ### You will learn
   - How to create relationship between parent and child entities
   - How to create a local child entity to an existing parent entity
   - How to create a local parent entity first and then a local child  entity
   - How to implement dynamic data subscription
+
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/5-cp-mobile-dev-kit-link-entity) to start with this tutorial.
 
 ---
 

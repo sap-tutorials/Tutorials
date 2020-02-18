@@ -137,7 +137,7 @@ Update a record with no contain of **@** in Email property throws a validation f
 
 [OPTION END]
 
-Congratulations, you have created an MDK app from scratch. You can now continue enhancing this app with some other [additional functionalities](group.mobile-dev-kit-enhance).
+Congratulations, you have created an MDK app from scratch. You can now continue enhancing this app with some other [additional functionalities](mission.mobile-dev-kit-enhance).
 
 [VALIDATE_1]
 [ACCORDION-END]

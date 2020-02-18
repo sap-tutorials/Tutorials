@@ -10,12 +10,12 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Details
-  - You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/3-cp-mobile-dev-kit-upload-logs) to start with this tutorial.
-
 ### You will learn
   - How to enable log upload feature in Mobile Services
   - How to upload logs from the app
   - How to examine log details for troubleshooting
+
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/3-cp-mobile-dev-kit-upload-logs) to start with this tutorial.
 
 ---
 

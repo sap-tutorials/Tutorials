@@ -15,12 +15,12 @@ author_profile: https://github.com/jitendrakansal
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
-  - You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in_an-MDK-App) and start directly with step 7 in this tutorial.
-
 ### You will learn
   - How to access Error Archive entity set to display local upload failure
   - How to handle a logic failure errors
   - How to fix these errors
+
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in_an-MDK-App) and start directly with step 7 in this tutorial.
 
 ---
 
