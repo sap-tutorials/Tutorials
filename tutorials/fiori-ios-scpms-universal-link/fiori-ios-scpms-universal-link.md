@@ -33,11 +33,11 @@ There are two ways you can setup your app for universal links or any other capab
 
 Open up the `TutorialApp` or any other app and select the `.xcodeproj` file. Make sure your app is configured properly and Xcode recognizes your Signing Certificate and development team.
 
-![Xcode](fiori-ios-scpms-universal-link-01.png)
+!![Xcode](fiori-ios-scpms-universal-link-01.png)
 
 Click on **+ Capability** to add a new capability to your app. In the upcoming dialog search for **Associated Domains** and add the capability to your project.
 
-![Xcode](fiori-ios-scpms-universal-link-02.png)
+!![Xcode](fiori-ios-scpms-universal-link-02.png)
 
 What Xcode will do know is connect to your Apple Developer profile and register or update your App ID to use the Associated Domains capability.
 
@@ -47,15 +47,15 @@ What Xcode will do know is connect to your Apple Developer profile and register 
 
 Log in to the Apple Developer Portal at [https://developer.apple.com/](https://developer.apple.com/) and navigate to **Certificates, IDs & Profiles**.
 
-![Apple Developer Portal](fiori-ios-scpms-universal-link-03.png)
+!![Apple Developer Portal](fiori-ios-scpms-universal-link-03.png)
 
 Click the **Plus** button next to **Identifiers** to register an App ID.
 
-![Apple Developer Portal](fiori-ios-scpms-universal-link-04.png)
+!![Apple Developer Portal](fiori-ios-scpms-universal-link-04.png)
 
 Make sure that **App IDs** is selected and click on **Continue**.
 
-![Apple Developer Portal](fiori-ios-scpms-universal-link-05.png)
+!![Apple Developer Portal](fiori-ios-scpms-universal-link-05.png)
 
 Provide the following values:
 
@@ -72,7 +72,7 @@ Don't forget to enable the **Associated Domains** capability.
 
 Click **Continue** to proceed.
 
-![Apple Developer Portal](fiori-ios-scpms-universal-link-06.png)
+!![Apple Developer Portal](fiori-ios-scpms-universal-link-06.png)
 
 [OPTION END]
 
@@ -85,7 +85,7 @@ Open your running Mobile Services instance and navigate to the **Application Lin
 
 In the **Application Links** tab click on the pencil right next to the **Apple Universal Links** section to add the **Team ID** and the **Bundle ID**.
 
-![Define application link](fiori-ios-scpms-universal-link-07.png)
+!![Define application link](fiori-ios-scpms-universal-link-07.png)
 
 Fill out the upcoming form:
 
@@ -95,7 +95,7 @@ Fill out the upcoming form:
 | Team ID | `<your_team_id>` |
 | Bundle ID | `com.example.TutorialApp` |
 
-![Define application link](fiori-ios-scpms-universal-link-08.png)
+!![Define application link](fiori-ios-scpms-universal-link-08.png)
 
 Click on **OK**.
 
@@ -103,15 +103,15 @@ Click on **OK**.
 
 Mobile Services will ask you to confirm your changes. Always keep in mind that changes on the application links will take up to 10 seconds to be completed. During that time your users are not be able to connect against Mobile Services.
 
-![Define application link](fiori-ios-scpms-universal-link-09.png)
+!![Define application link](fiori-ios-scpms-universal-link-09.png)
 
 Confirm the dialog to see your application links.
 
-![Define application link](fiori-ios-scpms-universal-link-10.png)
+!![Define application link](fiori-ios-scpms-universal-link-10.png)
 
 Navigate back to the **APIs** tab. You should see two QR codes, as well as the generated links:
 
-![Define application link](fiori-ios-scpms-universal-link-11.png)
+!![Define application link](fiori-ios-scpms-universal-link-11.png)
 
 Leave the page open, you will need the server URL later.
 
@@ -122,7 +122,7 @@ Leave the page open, you will need the server URL later.
 
 Open your app project in Xcode. In your project's settings, navigate back to **Signing & Capabilities** and click the **+** icon located at the **Associated Domains** section.
 
-![Define application link](fiori-ios-scpms-universal-link-13.png)
+!![Define application link](fiori-ios-scpms-universal-link-13.png)
 
 Enter the following domain:
 
@@ -134,7 +134,7 @@ Enter the following domain:
 
 Please note the `applinks:` prefix. It is important you enter it exactly as stated.
 
-![Define application link](fiori-ios-scpms-universal-link-14.png)
+!![Define application link](fiori-ios-scpms-universal-link-14.png)
 
 [DONE]
 [ACCORDION-END]
@@ -143,7 +143,7 @@ Please note the `applinks:` prefix. It is important you enter it exactly as stat
 
 If you now build and run the app on your device, you will notice an `<app_name>.entitlements` file is created, containing the just added capability:
 
-![Define application link](fiori-ios-scpms-universal-link-15.png)
+!![Define application link](fiori-ios-scpms-universal-link-15.png)
 
 Continue and deploy the app to your physical device and walk through the onboarding process.
 
@@ -162,7 +162,7 @@ The generated `apple-app-site-association` file contains a JSON structure with t
 
 Open a browser to `https://<YourUser-CFSpace-App>-com-example-tutorialapp.cfapps.eu10.hana.ondemand.com/.well-known/apple-app-site-association` and you should see the contents of the file:
 
-![Build and deploy the app](fiori-ios-scpms-universal-link-12.png)
+!![Build and deploy the app](fiori-ios-scpms-universal-link-12.png)
 
 The asterisk at the end denotes anything. You can for instance add a product id which could directly open an entity with that product ID.
 
@@ -205,13 +205,13 @@ Build and deploy the app to your physical device. After it has started, you can 
 
 The easiest way of testing the universal link is to send it via email or scan the **Apple Launch App Code** in Mobile Services.
 
-![Try the universal link](fiori-ios-scpms-universal-link-11.png)
+!![Try the universal link](fiori-ios-scpms-universal-link-11.png)
 
 In this example, you simply provide the context `start`, but it can be anything more meaningful of course.
 
 If you now click on the link or scan the QR code, it should directly open your app without going to Safari first. If you look in the Xcode console, you see it logged the `start` context it received via the `NSUserActivity` hook.
 
-![Try the universal link](fiori-ios-scpms-universal-link-16.png)
+!![Try the universal link](fiori-ios-scpms-universal-link-16.png)
 
 [DONE]
 [ACCORDION-END]
