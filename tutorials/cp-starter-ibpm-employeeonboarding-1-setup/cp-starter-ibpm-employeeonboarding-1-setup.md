@@ -26,25 +26,31 @@ To create service instances for business process management services, you need t
 
 1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
-2. Navigate into the trial subaccount
+2. Click on **Enter Your Trial Account** to navigate into the trial account
 
       !![Open Trial Account](opentrialaccount.png)
 
     >The trial account should contain one `subaccount` and `space`
 
-3. Open **Entitlements** from left panel. You should have the following entitlements in your account.
+3. Click on the subaccount.
 
-    >If not, then use **Configure Environments** to add these entitlements.
+    !![Enter Trial Subaccount](entertrialaccount.png)
 
-    Here is an explanation of these different entitlements:
+4. Click **Entitlements** from left panel to check if you have all the below listed entitlements in your subaccount. These entitlements are needed to run other tutorials of this mission.
 
-    - Connectivity is needed to configure destination
+    |  Entitlement     | Description
+    |  :------------- | :-------------
+    |  Business Rules, Workflow and Process Visibility | These are core services of Intelligent BPM which will be needed to run the next tutorials.
+    |  Portal, Application Runtime, HTML5 Applications | These services are needed to setup and access Process Visibility and Workflow applications from Fiori Launchpad
+    |  Connectivity    | This service is needed to create and configure destinations
 
-    - Portal and HTML5 Application is needed to access Process Visibility and Workflow applications from Fiori Launchpad
+    - If you do not see these entitlements in your subaccount, then do the following:
+        - click **Configure Entitlements**
+        - next click on **Add Service Plans**
+        - In the popup, search for the entitlements listed below and select the service plan
+        - Once you have selected all the entitlements, click **Add Service Plans** to complete the configuration
 
-    - Business Rules, Workflow and Process Visibility is needed to create service instances of these respective services in order to work with them.
-
-    ![Check Entitlements](cfentitlements.png)
+        ![Check Entitlements](cfentitlements.png)
 
 [DONE]
 [ACCORDION-END]
@@ -171,6 +177,8 @@ When you build and deploy this application, there will be new service instances 
     ![Open Role Collection](openrolecollection.png)
 
 5. Click **Add Role** and select these roles to add them to the role collection one by one. In **Add Role** popup, click **Save** after each selection.
+
+    > The application identifier changes depending upon the region where the BPM services are entitled from. You will notice a different number at the end of the application identifier if the region is not Europe(Frankfurt).
 
       ![Roles](addrole.png)
 
