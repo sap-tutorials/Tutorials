@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](hcp-create-trial-account).
-- **Tutorial:** [Access SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
+- **Tutorial:** [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
 
 ## Details
 ### You will learn

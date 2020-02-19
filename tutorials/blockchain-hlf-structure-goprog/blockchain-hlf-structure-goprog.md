@@ -43,6 +43,7 @@ import (
 	"github.com/hyperledger/fabric/protos/peer"
 )
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -60,6 +61,7 @@ func main() {
 	shim.Start(new(Chaincode))
 }
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -134,6 +136,7 @@ func (ptr *Chaincode) Invoke(stub shim.ChaincodeStubInterface) peer.Response {
 	return shim.Error("Not yet implemented!")
 }
 ```
+
 [VALIDATE_1]
 [ACCORDION-END]
 

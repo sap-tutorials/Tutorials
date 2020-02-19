@@ -215,7 +215,7 @@ Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > *
 [DONE]
 [ACCORDION-END]
 
-
+ 
 [ACCORDION-BEGIN [Step 5: ](Create service definition)]
   1. Right-click on your data definition **`ZI_BOOKING_XXX`** and select **New Service Definition**
 

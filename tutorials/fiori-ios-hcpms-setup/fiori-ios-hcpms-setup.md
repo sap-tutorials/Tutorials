@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
 
 >**This tutorial has been executed with Mobile Services in SAP Cloud Platform Cloud Foundry and Neo environment, please switch to either tab according to your environment.**
 
-Once SAP Cloud Platform Mobile Services is available, you can use its features in your SAP Cloud Platform SDK for iOS, Android, Mobile development kit and Mobile Cards apps.
+Once SAP Cloud Platform Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP Cloud Platform SDK for iOS & Android apps.
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP Cloud Platform cockpit)]
 
@@ -95,7 +95,7 @@ Bookmark the **Mobile Services cockpit URL** for quick access.
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Optional: Setup a Connectivity between SAP Web IDE and Mobile Services)]
+[ACCORDION-BEGIN [Step 2: ](Setup a Connectivity between SAP Web IDE and Mobile Services)]
 
 >Make sure you are choosing the right environment platform tab above.
 
@@ -122,9 +122,7 @@ Type           | `HTTP`
 Description    | `Mobile Services CF`
 URL            | please check note below
 Proxy Type     | `Internet`
-Authentication | `BasicAuthentication`
-User | `SCP user id`
-password | `SCP password`
+Authentication | `AppToAppSSO`
 
 >For URL field, in Mobile Services Cockpit, click **Important links** on bottom-left side and copy from the section of SAP Cloud Platform SDK Tools the link of Copy `AdminAPI` to your destination.
 >![CF Trial](img_1.1.png)

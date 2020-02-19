@@ -4,7 +4,7 @@ description: Create an SAP Fiori application in SAP Business Application Studio 
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>license]
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---

@@ -218,6 +218,7 @@ consumer-app@1.0.0 /home/qmacro/mission-temp/consumer-app
 ├── express@4.17.1
 └── sqlite3@4.1.1
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -297,5 +298,3 @@ npm start
 [ACCORDION-END]
 
 At this point in the mission, you have a mocked SAP S/4HANA Business Partner service supplying address data, and a bookshop style service (to which you'll eventually add a simple user interface), which will be extended to consume that address data and combine it with the bookshop order information.
-
-

@@ -61,51 +61,15 @@ author_profile: https://github.com/mervey45
 
       ![Select ABAP Trial](account4.png)
 
-  5. **If you see the ABAP Trial tile, then select it move on with step 3.1 - Create instance** to create your instance.
-
-     **If you don't see the ABAP Trial tile, then move on with step 2.1 - Configure SAP Cloud Platform Entitlements** to configure your SAP Cloud Platform Entitlements.
+  5. Select **ABAP Trial tile**.
 
       ![Select ABAP Trial](trial.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure SAP Cloud Platform Entitlements)]
 
-  1. **Skip step 2 - Configure SAP Cloud Platform Entitlements**, if you could enter **ABAP Trial**.
-
-     Otherwise configure your entitlements to make your ABAP Trial tile visible. Navigate back to your **trial** subaccount and select **Entitlements**.
-
-      ![Select ABAP Trial](entitlement5.png)
-
-  2. Click **Configure Entitlements** to add services to your subaccount.
-
-      ![Select ABAP Trial](ent.png)
-
-  3.  Click **Add Service Plans** to add ABAP Trial as a service.
-
-      ![Select ABAP Trial](ent2.png)
-
-  4.  Select **ABAP Trial**, check **shared** and click **Add 1 Service Plan**.
-
-      ![Select ABAP Trial](entitlement11.png)
-
-  5.  Click **Save**.
-
-      ![Select ABAP Trial](ent3.png)
-
-  6.  Now ABAP Trial is listed as a service.
-
-      ![Select ABAP Trial](ent4.png)
-
-  7.  Navigate to your space dev, select **Service Marketplace** and **ABAP Trial**.
-
-      ![Select ABAP Trial](abaptrial.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Create instance)]
+[ACCORDION-BEGIN [Step 2: ](Create instance)]
   1. Create a new instance in your SAP Cloud Platform ABAP environment trial, therefore select **Instances**.
 
       ![Create instance](instance.png)
@@ -145,7 +109,7 @@ author_profile: https://github.com/mervey45
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create service key)]
+[ACCORDION-BEGIN [Step 3: ](Create service key)]
   1. Click on your instance.
 
       ![Create service key](key.png)
@@ -176,7 +140,7 @@ author_profile: https://github.com/mervey45
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Open ABAP Development Tools )]
+[ACCORDION-BEGIN [Step 4: ](Open ABAP Development Tools )]
 
 Open your local ABAP Development Tools (ADT). You can download the latest version from <https://tools.hana.ondemand.com/#abap>.
 
@@ -192,13 +156,13 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create ABAP cloud project)]
+[ACCORDION-BEGIN [Step 5: ](Create ABAP cloud project)]
   1. Select **File** > **New** > **Other** > **ABAP Cloud Project** and click **Next >**.
 
       ![Create ABAP cloud project](cloud.png)
 
   2. Select **Service Key** and click **Next >**.
-
+ 
       ![Create ABAP cloud project](project2.png)
 
   3. Paste your service key you've copied earlier from the SAP Cloud Platform Trial Cockpit and click **Next >**.
@@ -221,7 +185,7 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+[ACCORDION-BEGIN [Step 6: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

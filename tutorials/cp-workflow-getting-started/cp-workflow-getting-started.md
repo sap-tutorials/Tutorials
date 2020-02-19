@@ -21,7 +21,7 @@ time: 5
 
 1. In your Web browser, open the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
 
-2. Choose **Neo Trial**.
+2. Scroll down to **Environments**, and choose **Access Neo Trial**.
 
     ![Choose Neo Trial](choose-neo-trial.png)
 
