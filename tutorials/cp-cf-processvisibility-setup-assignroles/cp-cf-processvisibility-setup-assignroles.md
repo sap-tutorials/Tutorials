@@ -26,7 +26,7 @@ Add roles to one or more role collections and then assign these role collections
 
 2. You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 
-    ![Cloud Foundry](enter-trial.png)
+    ![Cloud Foundry](landing_page.png)
 
 3. Navigate to your subaccount.
 
