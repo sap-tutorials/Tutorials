@@ -61,9 +61,9 @@ Provide the following configuration values for the new destination:
 |  Name           | **`MobileServiceSampleData`**
 |  Type           | **`HTTP`**
 |  Description    | **`Mobile Service Sample OData Service`**
-|  URL            | **`https://hcpms-<your account number>trial.hanatrial.ondemand.com/SampleServices/ESPM.svc`**
+|  URL            | **`https://hcpms-<your account number>trial.hanatrial.ondemand.com/mobileservices/origin/hcpms/ESPM.svc/v2`**
 |  Proxy Type     | **`Internet`**
-|  Authentication | **`BasicAuthentication`**
+|  Authentication | **`App2AppSSO`**
 
 ![Some alternative text](step3-part2.png)
 
@@ -71,9 +71,7 @@ Add the following additional properties by clicking the **New Property** button 
 
 |  Field Name     | Value
 |  :------------- | :-------------
-|  **`TrustAll`** | **`true`**
 |  **`WebIDEEnabled`** | **`true`**
-|  **`WebIDESystem`** |  **`ms`**
 |  **`WebIDEUsage`** | **`odata_gen`**
 
 ![Some alternative text](step3-part3.png)
@@ -142,7 +140,7 @@ If the `MobileServiceSampleData` service doesn't appear in the dropdown menu, re
 
 [ACCORDION-BEGIN [Step 8: ](Test the data connection)]
 
-Enter **/** as the relative URL and select **Test**.
+Enter **`/mobileservices/origin/hcpms/ESPM.svc/v2`** as the relative URL and select **Test**.
 
 ![Some alternative text](step8-part1.png)
 
