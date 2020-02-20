@@ -224,6 +224,11 @@ module.exports = {
         }
       }
 
+      if (!isCodeLine) {
+        const backTicksCheckResult = syntaxChecker.checkBackticks(lines, index);
+        result.syntaxCheckResult.push(...backTicksCheckResult);
+      }
+
       if (isMeta) {
         metaLines.push(line);
 
