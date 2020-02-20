@@ -10,8 +10,7 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- - **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
+- **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
@@ -54,7 +53,7 @@ In _Service Configuration_ step, provide and select the below information:
 
 > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
 
->If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate. 
+>If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
 
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 

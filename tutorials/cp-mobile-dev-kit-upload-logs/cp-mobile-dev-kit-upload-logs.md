@@ -15,6 +15,8 @@ author_profile: https://github.com/jitendrakansal
   - How to upload logs from the app
   - How to examine log details for troubleshooting
 
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/3-cp-mobile-dev-kit-upload-logs) to start with this tutorial.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Define client log policy in Mobile Services cockpit )]

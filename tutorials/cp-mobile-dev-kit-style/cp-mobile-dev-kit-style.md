@@ -10,9 +10,7 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
-- **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
+- **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
@@ -20,6 +18,8 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to change color of action bar and tool bar
   - How to change font color and background color of SDK control properties in a section page
+
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/3-Add-Styling-to-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
 
@@ -339,6 +339,8 @@ Tap on **Customers** to navigate to Customer List. You will see that Title prope
 ![MDK](img_036.png)
 
 [OPTION END]
+
+Congratulations, you have learned how to add styling to your MDK app.
 
 [DONE]
 [ACCORDION-END]
