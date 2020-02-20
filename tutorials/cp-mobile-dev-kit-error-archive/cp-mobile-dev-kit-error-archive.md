@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
@@ -69,7 +69,7 @@ In _Service Creation_ step, provide and select the below information:
 | `Name`| `SampleServiceV2` |
 | `Service URL` | `/destinations/mobileservices_cf` |
 | `Application ID` | `com.sap.mdk.demo` |
-| `Service URL` | `com.sap.edm.sampleservice.v2` |
+| `Destination Name` | `com.sap.edm.sampleservice.v2` |
 | `Enable Offline Store` | `Should be checked` |
 
 > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
