@@ -60,6 +60,12 @@ An MTA project is a wrapper for all modules (microservices) which are part of a 
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Adjust the quota of the HTML5 module)]
+
+The `mta.yaml` file is the descriptor of each Cloud Foundry Project. The definition of the microservices and their runtime can be found in this descriptor. It also declares used backing services and binds them to the microservices.
+Make sure the UI modules has been created properly and the quota for disk and memory are set to at least `512M`.
+
+![Quota](./modulequota.png)
 
 
 [ACCORDION-BEGIN [Step : ](Build the application)]
