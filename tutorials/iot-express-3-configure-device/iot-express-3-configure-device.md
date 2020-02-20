@@ -21,7 +21,7 @@ time: 30
 ---
 [ACCORDION-BEGIN [Step 1: ](Assemble the hardware)]
 
-If you are using the [SAP Leonardo IoT Foundation Starter Kit](https://www.sparkfun.com/products/14659?custom_code=SAP) or a similar kit, assemble it based on the following pictures and instructions.
+Assemble a raspberry pi based on the following pictures and instructions.
 
 ![Pinout of the Raspberry Pi](pipinout.png)
 
@@ -233,7 +233,7 @@ This will now continuously read sensor values, print them and send the data to I
 In the following picture you have a diagram of how the final connection configuration between the Raspberry Pi and the sensors should be.
 ![Connection diagram of pi and the sensors](finalelectricaldiagram.png)
 
-Proceed by connecting the light sensor to your Raspberry Pi.
+Proceed by connecting the light sensor to your Raspberry Pi. If you use a different sensor (based on the `i2c` bus) then the one shown in the picture above then simply change `i2cAddress` below and the address of the `d0low`/`d1high` below based on the sensors data sheet and wire it up accordingly. For many sensors you can find instructions and tutorials on how to hook them up with a raspberry pi online.
 
 Start by hooking up the `3.3V PWR` of the sensor to pin no. 1 of the pi and connect the GND of the sensor to the GND of the Raspberry.
 Next, you want to connect the SCL pin of the sensor (pin no. 4) to the SCL pin of the pi (pin no. 5) and the SDA pin of the sensor (pin no. 5) to the SDA pin of the pi (pin no. 3).

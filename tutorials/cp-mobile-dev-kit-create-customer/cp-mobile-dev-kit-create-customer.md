@@ -10,15 +10,16 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- You have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
+- You have created an MDK app as described in [Create Your First Mobile App with the Mobile Development Kit (MDK)](mission.mobile-dev-kit-get-started).
 
 ## Details
-**Note**: Ensure that you have created an MDK app as described in [Get Started with the Mobile Development Kit](https://developers.sap.com/mission.mobile-dev-kit-get-started.html).
-
 ### You will learn
   - How to create a customer record with information such as name, email, phone number & date of birth
   - How to store this record locally
   - How to sync local changes with backend
+
+
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/1-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
 
 ---
 
@@ -364,7 +365,7 @@ Since this is an Offline application, new entry is added to the request queue of
 
 >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-On Main page, tap **Sync**, a successful message will be shown.
+On `Main` page, tap **Sync**, a successful message will be shown.
 
 ![MDK](img_036.png)
 
@@ -372,7 +373,7 @@ On Main page, tap **Sync**, a successful message will be shown.
 
 You can cross verify if a record has been updated in the backend.
 
->Backend URL can be found in Mobile Services Cockpit.
+>Backend URL can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
 
 >Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 

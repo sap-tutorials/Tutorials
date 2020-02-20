@@ -3,9 +3,12 @@ title: Create ABAPDoc Comments in Your Class
 description: Learn how to maintain ABAPDoc documentation for your class
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 5
 ---
+
+## Prerequisites  
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 
 ## Details
 ### You will learn  

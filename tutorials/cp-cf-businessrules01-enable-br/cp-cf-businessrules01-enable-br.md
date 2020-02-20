@@ -35,19 +35,19 @@ You can create a service instance of business rules to get started with SAP Clou
 
 1. Choose your subaccount.
 
-    ![Trial account](enablebr-1.PNG)
+    ![Trial account](enablebr_1.png)
 
 2. Navigate to **Spaces** and then choose your space.
 
-    ![choose spaces](enablebr-2.PNG)   
+    ![choose spaces](enablebr_2.png)   
 
 3. In the navigation area, choose **Service** > **Service Marketplace** and then choose **Business Rules** tile.
 
-    ![enable business rules](enablebr-3.PNG)
+    ![enable business rules](enablebr_3.png)
 
     The following service overview page opens:
 
-    ![Service overview](enablebr-4.PNG)
+    ![Service overview](enablebr_4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -56,19 +56,19 @@ You can create a service instance of business rules to get started with SAP Clou
 
 1. In the navigation area, choose **Instances** and then choose **New Instance**.
 
-    ![New Instance](enablebr-5.PNG)
+    ![New Instance](enablebr_5.png)
 
 2. Keep the default options as is, provide an **Instance Name** of your choice, then choose **Finish**.
 
-    ![Instance name](enablebr-6.PNG)
+    ![Instance name](enablebr_6.png)
 
     You can see the instance creation status in the **Business Rules – Instances** page as shown:
 
-    ![Business rules service instance](enablebr-7.PNG)
+    ![Business rules service instance](enablebr_7.png)
 
     You can see the following status once the service instance is created:
 
-    ![Service instance created](enablebr-8.PNG)
+    ![Service instance created](enablebr_8.png)
 
 [DONE]
 [ACCORDION-END]
@@ -78,19 +78,19 @@ You can create a service instance of business rules to get started with SAP Clou
 
 1. Choose the business rules service instance that you created.
 
-    ![choose service instance](service_instance1.png)
+    ![choose service instance](service_instance01.png)
 
 2. In the navigation area, choose **Service Keys** and then choose **Create Service Key**.
 
-    ![service keys](service_instance2.png)
+    ![service keys](service_instance02.png)
 
 3. Provide a **Name** of your choice and then choose **Save**.
 
-    ![service key name](service_instance3.png)
+    ![service key name](service_instance03.png)
 
-    The service key is generated as shown:
+    The service key is generated as follows:  
 
-    ![service key](service_instance4.png)
+    ![service key](service_instance04.png)
 
 
 [VALIDATE_1]

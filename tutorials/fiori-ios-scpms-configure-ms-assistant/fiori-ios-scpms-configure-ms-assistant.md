@@ -3,24 +3,21 @@ title: Configure Mobile Services in iOS Assistant
 description: Enable SAP Cloud Platform Mobile Services and create a connection in the SAP Cloud Platform SDK for iOS Assistant.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios software-product-function>sap-cloud-platform-mobile-services]
 time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
+- **Development environment:** Apple Mac running macOS Mojave or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- Have downloaded [SAP Cloud Platform SDK for iOS](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios).
+- Completed the previous tutorials in this Group.
 
 ## Details
 ### You will learn  
   - How to create a connection in the SAP Cloud Platform SDK for iOS Assistant
-
-Before you start, make sure you:
-
-  - Have downloaded [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html) **version 3.0 SP01**.
-  - Have a trial account on SAP Cloud Platform. See [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
-  - Enabled the SAP Cloud Platform Mobile Services. See [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html).
 
 ---
 
@@ -32,8 +29,6 @@ The SAP Cloud Platform SDK for iOS is designed to work seamlessly with a set of 
 
 To enable the service, do the tutorial [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html).
 
->Alternatively, you can go directly to `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
-
 [DONE]
 [ACCORDION-END]
 
@@ -43,9 +38,11 @@ The SAP Cloud Platform SDK for iOS includes an Assistant app for generating and 
 
 Once you're logged in to **SAP Cloud Platform Mobile Services**, click the **Important Links** tab in the lower left bottom. The **Important Links** section opens.
 
-Locate the tile **SAP Cloud Platform SDK for iOS Assistant** and click the **Importing URLs directly into Assistant** link:
+Locate the tile **SAP Cloud Platform SDK for iOS Assistant** and click the **Importing URLs directly** link:
 
 ![Important Links](fiori-ios-scpms-configure-ms-assistant-01.png)
+
+> NOTE: Please make sure that the SAP Cloud Platform SDK for iOS Assistant is on the main window.
 
 You should now see the following pop-up:
 
@@ -64,11 +61,9 @@ Provide the following additional details:
 | User | Your trial account user |
 | Password | Password for your trial account user |
 
-![Import URLs](fiori-ios-scpms-configure-ms-assistant-04.png)
-
 Click **Save** when finished. The account is now added to the SDK Assistant:
 
-![Import URLs](fiori-ios-scpms-configure-ms-assistant-05.png)
+![Import URLs](fiori-ios-scpms-configure-ms-assistant-04.png)
 
 Click **Back** to return to the main screen for the **SAP Cloud Platform SDK for iOS Assistant**.
 

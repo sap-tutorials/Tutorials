@@ -109,6 +109,10 @@
       "value": "products>build"
     },
     {
+      "name": "SAP Business Application Studio",
+      "value": "products>sap-business-application-studio"
+    },
+    {
       "name": "SAP Cloud Application Programming Model",
       "value": "software-product-function>sap-cloud-application-programming-model"
     },

@@ -146,6 +146,7 @@ Remove these test records from the table as they won't be needed in further exer
 ```sql
 DELETE FROM "TESTSGEO"."SPATIALSHAPES" WHERE "SHAPEID" > 15;
 ```
+
 [DONE]
 [ACCORDION-END]
 

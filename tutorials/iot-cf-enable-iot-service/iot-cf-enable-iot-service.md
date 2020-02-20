@@ -1,4 +1,6 @@
 ---
+author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Enable SAP Cloud Platform Internet of Things for Cloud Foundry
 description: Create a service instance and a service key to enable the Internet of Things service.
 auto_validation: true
@@ -6,7 +8,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things,topic>internet-of-things, topic>cloud, tutorial>license ]
 ---
 
-<!-- loio86b94ea5deab476d92d377cf988d046e -->
 
 ## Prerequisites
  - **Proficiency:** Beginner

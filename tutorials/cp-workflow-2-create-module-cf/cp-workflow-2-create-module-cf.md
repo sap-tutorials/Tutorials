@@ -31,7 +31,7 @@ time: 15
 
     ![Create Project](create-sample-project.png)
 
-6. In the wizard, set **Category** to **Workflow Sample Application** and select the **Workflow Applications on SAP Fiori Launchpad for Cloud Foundry** template. Then choose **Next**.
+6. In the wizard, set **Category** to **Workflow Sample Application** and select the **Workflow Applications on SAP Fiori Launchpad for Cloud Foundry (Trial)** template. Then choose **Next**.
 
     ![Choose Workflow Sample Application](select-wf-sample-app.png)
 
@@ -51,7 +51,7 @@ You now see a project with an `mta.yaml` file in your workspace:
 
 
 [ACCORDION-BEGIN [Step 2: ](Use existing workflow instance project)]
-1. In your workspace in the **`sample.workflowtiles.mta`** project, right-click the **`mta.yaml`** file and choose **Open MTA Editor**.
+1. In your workspace in the **`sample.trial`** project, right-click the **`mta.yaml`** file and choose **Open MTA Editor**.
 
     ![Open MTA Editor](open-mta-editor.png)
 
@@ -59,13 +59,9 @@ You now see a project with an `mta.yaml` file in your workspace:
 
     ![Use Workflow Resource](use-wf-resource.png)
 
-3. Under **Parameters**, change the value of the **service-plan** key to **lite**.
+3. Save your changes.
 
-    ![Set Service Plan](set-lite.png)
-
-4. Save your changes.
-
-5. Switch to the **Modules** tab, and select **`workflowtilesApprouter`**. Under **Requires** replace one of the `uaa_workflowtiles (resource)` entries with a **my-workflow-instance (resource)** resource entry.
+4. Switch to the **Modules** tab, and select **`workflowtilesApprouter`**. Under **Requires** replace one of the `uaa_workflowtiles (resource)` entries with a **my-workflow-instance (resource)** resource entry.
 
     ![Add Workflow Resource](requires-section.png)
 
@@ -83,12 +79,12 @@ To really ensure that the updated instance name is used in all respective places
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Build and deploy your launchpad project)]
-1. Right-click your **`sample.workflowtiles.mta`** project in the workspace, and choose **Build** | **Build with Cloud MTA Build Tool (recommended)**.
+[ACCORDION-BEGIN [Step 3: ](Build and deploy your launchpad project)]
+1. Right-click your **`sample.workflowtiles.mta.trial`** project in the workspace, and choose **Build** | **Build with Cloud MTA Build Tool (recommended)**.
 
     ![Build FLP Project](build-flp-project-rec.png)
 
-    The console shows the status of the build: Build of `MyFLPProject` completed.
+    The console shows the status of the build: Build of `sample.workflowtiles.mta.trial` completed.
 
 2. Open the **`mta_archives`** folder.
 
@@ -104,7 +100,7 @@ To really ensure that the updated instance name is used in all respective places
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access your SAP Fiori launchpad apps)]
+[ACCORDION-BEGIN [Step 4: ](Access your SAP Fiori launchpad apps)]
 1. Open the SAP Web IDE console, and search for the launchpad URL `https://<dev space name>-trial-dev-workflowtilesapprouter.cfapps.<your endoint>.hana.ondemand.com`.
 
     ![Copy URL](console-url2.png)

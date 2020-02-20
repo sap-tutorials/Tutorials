@@ -10,9 +10,7 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Tutorial:** [Enable SAP Web IDE Full-Stack](webide-multi-cloud)
-- **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
+- **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
@@ -20,6 +18,8 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to change color of action bar and tool bar
   - How to change font color and background color of SDK control properties in a section page
+
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/3-Add-Styling-to-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
 
@@ -58,6 +58,10 @@ In _Service Creation_ step, provide and select the below information:
 | `Application ID` | `com.sap.mdk.demo` |
 | `Service URL` | `com.sap.edm.sampleservice.v2` |
 | `Enable Offline Store` | `Should be checked` |
+
+> If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
+
+>If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
 
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
@@ -204,7 +208,7 @@ Let the default configuration as it is and click **Next**.
 
 >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-Click the drop down for Destination Name and select the `mobileservices_cf` destination , you will find list of existing application IDs , select the one you have chosen while creating the project in step 1.
+Click the drop down for Destination Name and select the `mobileservices_cf` destination , you will find list of existing application IDs, select the one you have chosen while creating the project in step 1.
 
 ![MDK](img_015.png)
 
@@ -335,6 +339,8 @@ Tap on **Customers** to navigate to Customer List. You will see that Title prope
 ![MDK](img_036.png)
 
 [OPTION END]
+
+Congratulations, you have learned how to add styling to your MDK app.
 
 [DONE]
 [ACCORDION-END]

@@ -4,15 +4,13 @@ description: Use the mobile development kit editor to create a mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
-time: 20
+time: 15
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- - **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- - **Tutorial:** [Open SAP Web IDE Full-Stack](webide-multi-cloud)
-- - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
+- **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
@@ -55,6 +53,8 @@ In _Service Configuration_ step, provide and select the below information:
 
 > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
 
+>If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
+
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
 ![MDK](img_004.png)
@@ -72,7 +72,7 @@ Click **Check Service** to validate the service properties. If all the details a
 >Wondering how _Service URL_, _Application ID_ & _Destination Name_ were populated? As part of [enabled Mobile Services](fiori-ios-hcpms-setup) tutorial, you created a destination `mobileservices_cf` in Cloud Platform Cockpit, SAP Web IDE fetches all these details based on this destination.
 ![MDK](img_0031.1.png)
 
->You can look in SAP Cloud Platform Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Connectivity** feature.
+>You can look in SAP Cloud Platform Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Mobile Connectivity** feature.
 ![MDK](img_0032.png)
 
 >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).

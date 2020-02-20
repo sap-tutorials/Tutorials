@@ -15,6 +15,8 @@ author_profile: https://github.com/jitendrakansal
   - How to store changes locally
   - How to sync local changes with backend
 
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/1-cp-mobile-dev-kit-create-customer) to start with this tutorial.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Store the deleted record locally)]
@@ -226,9 +228,9 @@ On Main page, tap **Sync**, a successful message will be shown.
 
 You can cross verify if this record has been deleted in the backend.
 
->Backend URL can be found in Mobile Services Cockpit.
+>Backend URL can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
 
->Mobile Applications | Native/Hybrid | Click on the MDK App | Mobile Sample OData ESPM | click Root URL `v2` | append `/Customers`
+>Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 
 >As Sync is pressed, `UploadOffline.action` gets trigger to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
 

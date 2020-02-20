@@ -3,7 +3,7 @@ title: Add a simple Java app to a Multi-Target Application
 description: Start to get a feel for modifying an existing codebase using SAP Web IDE by adding a Java module to a Multi-Target Application (MTA).
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [   tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 time: 10
 ---
 
@@ -28,6 +28,7 @@ Now, you need to right click (or use **CTRL + Click**) on your project folder `j
 Select **New > Java Module**
 
 ![new-java-module](new-java-module.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -54,6 +55,7 @@ You should have a new file tree structure.
 Click any of the folders with a **+** symbol to expand them.
 
 ![expand-java-app-tree](expand-java-app-tree.png)
+
 [DONE]
 [ACCORDION-END]
 

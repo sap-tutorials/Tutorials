@@ -1,25 +1,28 @@
 ---
-title: List Report Floorplan
-description: Enhance your app with a Fiori List Report Floorplan
+title: Create a List Report Floorplan
+description: Use the SAP Cloud Platform SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
-time: 20
+time: 60
 ---
 
-## Prerequisites  
- - **Development machine:** Access to a Mac computer
- 
+## Prerequisites
+- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn three things:
+  - How to use the `SAPFiori` UI controls to build a List Report Floorplan
 
-- Add a view to show related entities of an OData navigation link (i.e., an OData `$expand`)
-- Display this view according to the **List Report Floorplan**
-- Add barcode scanner to the List Report's search bar
+---
 
-In this example, you build upon the demo app created using the **Sample OData** service. If you examine the service's metadata (URL: `https://hcpms-YourIDtrial.hanatrial.ondemand.com/SampleServices/ESPM.svc/$metadata`) you see entity **Supplier** has a one-to-many relationship with **Products**:
+[ACCORDION-BEGIN [Step 1: ](Make the Generated App Your Own)]
+
+In this example, you build upon the Tutorial app created using the **Sample OData** service. If you examine the service's metadata you can see entity **Supplier** has a one-to-many relationship with **Products**:
 
 ```XML
 <EntityType Name="Supplier">
@@ -40,469 +43,756 @@ In this example, you build upon the demo app created using the **Sample OData** 
 </EntityType>
 ```
 
-In this tutorial, you will enhance the **Suppliers** entity detail view to show its related **Products** in a **List Report Floorplan**.
+The app you've generated with the SAP Cloud Platform SDK for iOS Assistant (iOS Assistant) has currently its UI. You're going to make that app your own now.
 
+Open the `Main.storyboard`, select all displayed View Controllers and delete them.
 
----
+![Change UI](fiori-ios-scpms-floorplan-01.png)
 
-[ACCORDION-BEGIN [Step 1: ](Create a new Table View Controller)]
+Add a new `UITableViewController` to the storyboard and embed it in a `UINavigationController`.
 
-To list the products for each supplier, the most simple approach would be to create a new Table View Controller.
+![Change UI](fiori-ios-scpms-floorplan-02.png)
 
-In Xcode, drag a **Table View Controller** object from the **Object library** onto the **Storyboard**, next to the **Detail Scene**.
+Now change the `UINavigationController` to be the **Initial View Controller**.
 
-With the just added Table View Controller selected, give it the name `Supplier Products` in the **Attribute inspector**:
+![Change UI](fiori-ios-scpms-floorplan-03.png)
 
-![New Table View Controller](fiori-ios-scpms-floorplan-01.png)
+To let the app load your newly added screen it is necessary to change the application screen code in the `ApplicationUIManager.swift`.
 
+Open the `ApplicationUIManager.swift` class and locate the `showApplicationScreen(completionHandler:)` method.
+
+![Change UI](fiori-ios-scpms-floorplan-04.png)
+
+Replace the following code inside the `showApplicationScreen(completionHandler:)` method:
+
+```Swift
+  let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+  let splitViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "MainSplitViewController") as! UISplitViewController
+  splitViewController.delegate = appDelegate
+  splitViewController.modalPresentationStyle = .currentContext
+  splitViewController.preferredDisplayMode = .allVisible
+  appViewController = splitViewController
+
+```
+
+with:
+
+```Swift
+   let navigationViewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
+   appViewController = navigationViewController
+
+```
+
+Instead of instantiating the `MainSplitViewController` the `UIStoryboard` will instantiate the initial View Controller and cast it to the `UINavigationController`.
+
+Lastly, you have to create a new class inheriting from `UITableViewController`. Create a new **Cocoa Touch Class** and name it `SupplierTableViewController`.
+
+![Change UI](fiori-ios-scpms-floorplan-05.png)
+
+Set the created class as **Custom Class** in the storyboard for the added `UITableViewController`.
+
+![Change UI](fiori-ios-scpms-floorplan-06.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create new subclass of a UITableViewController class)]
+[ACCORDION-BEGIN [Step 2: ](Fetch All Available Suppliers From the Sample Service)]
 
-**Right-click** the `ViewControllers` folder in your project, and from the context menu choose **New File...**.
+Now that you have the first `UITableViewController` setup you will add code to load and display suppliers in a `UITableView`.
 
-In the dialog, select **Cocoa Touch Class** and click **Next**.
-
-Provide the following details:
-
-| Field | Value |
-|----|----|
-| Class | `SupplierProductsViewController` |
-| Subclass Of | `UITableViewController` |
-
-![New Table View Controller subclass](fiori-ios-scpms-floorplan-02.png)
-
-Click **Next**. In the next screen, make sure the new class file is stored in group `ViewControllers` and click **Create**.
-
-In the newly created file `SupplierProductsViewController.swift`, under the `import UIKit` statement, add the following import statements:
+Open the `SupplierTableViewController.swift` class and add the following import statements for full usage of the SDK:
 
 ```Swift
 import SAPOData
 import SAPFoundation
 import SAPFiori
+import SAPFioriFlows
 import SAPCommon
+
 ```
 
-Just below the line `class SupplierProductsViewController: UITableViewController {`, add the following declarations:
+Next let the `SupplierTableViewController.swift` class conforms to the `SAPFioriLoadingIndicator` protocol provided by the iOS Assistant generated code. You can locate the protocol in the `Utils` group.
+
+```Swift
+class SupplierTableViewController: UITableViewController, SAPFioriLoadingIndicator { ... }
+
+```
+
+Xcode will ask you to fully conform to the protocol by adding a `loadingIndicator` class property. Add the following line of code directly below the class declaration:
+
+```Swift
+var loadingIndicator: FUILoadingIndicatorView?
+
+```
+
+The way the iOS Assistant generates the project you need the `AppDelegate.swift` to retrieve an instance of the generated convenience data service. Implement the following lines of code directly below the loading indicator property:
 
 ```Swift
 private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-private let logger: Logger = Logger.shared(named: "SupplierProductsViewController")
 
-private var _entity: Supplier = Supplier()
-var entity: EntityValue {
-    get { return _entity }
-    set { self._entity = newValue as! Supplier
+var dataService: ESPMContainer<OnlineODataProvider>? {
+  return OnboardingSessionManager.shared.onboardingSession?.odataController.espmContainer ?? nil
+}
+
+```
+
+> NOTE: In case you're using an `ODataOfflineProvider` you have to change the above-mentioned code to use `ODataOfflineProvider` instead of `ODataOnlineProvider`. You have to also import `SAPOfflineOData` in addition to the `SAPOData` framework.
+
+Because we're good citizens we want to use an app logger to log important information. Fortunately, SAP is offering a simple-to-use Logging API with the `SAPCommon` framework.
+
+Implement the following line of code below the data service declaration:
+
+```Swift
+private let logger = Logger.shared(named: "SupplierTableViewController")
+
+```
+
+Before you will implement the data loading methods you have to implement a supplier array property to save the loaded data in memory.
+
+Add the following line of code below the logger instantiation:
+
+```Swift
+private var suppliers = [Supplier]()
+
+```
+
+> NOTE: From now on bigger code blocks are explained with inline comments. Read the inline comments carefully to fully understand what the code is doing and why we're implementing it.
+
+Loading all available suppliers is fairly easy using the generated data service. The generated code will handle all authentication and authorization challenges for you and the data service will construct all necessary requests to load, create and update entities in your backend.
+
+Implement the following methods directly under the closing bracket of the `viewDidLoad()` method:
+
+```Swift
+// MARK: - Data loading
+
+/// When this method gets called to show a loading indicator. When the completion handler of the loadData(:) method gets executed hide the loading indicator.
+private func updateTableView() {
+    self.showFioriLoadingIndicator()
+    loadData {
+        self.hideFioriLoadingIndicator()
     }
 }
-```
 
-This adds a reference to the `AppDelegate` class, a reference to the SDK's logging mechanism, and fields to set/get the `Supplier` parent entity.
-
-Switch to the **Storyboard** and select the **Supplier Products Table View**. In the **Identity inspector**, set the **Custom Class** to `SupplierProductsViewController`:
-
-![Link Table View Controller to subclass](fiori-ios-scpms-floorplan-03.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Add navigation Table View Cell to Detail Table View)]
-
-Drag a **Table View Cell** onto the **Detail Table View**, and set the following properties in the **Attribute inspector**:
-
-| Field | Value |
-|----|----|
-| Identifier | `NavigationLink` |
-| Accessory | `Disclosure Indicator` |
-
-![Create Table View Cell](fiori-ios-scpms-floorplan-04.png)
-
-**Control-click** the just added **Table View Cell** and drag it onto the **Supplier Products Scene**. From the **Segue** pop-up, choose **Show**.
-
-Name the segue `showSupplierProducts`:
-
-![Create Segue](fiori-ios-scpms-floorplan-05.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Implement Table View Cell for Suppliers)]
-
-Open file `./MyDeliveries/TableDelegates/DetailTableDelegates/SupplierDetailTableDelegate.swift`.
-
-Locate method `tableView(_ tableView:, numberOfRowsInSection section:)`. Currently it returns **10** rows, the total number of properties the `Supplier` entity has. However, since you added an extra Table View Cell to navigate to the Supplier Products scene, you want to make this extra cell visible.
-
-Set the return value to `11`:
-
-```Swift
-func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 11
-}
-```
-Next, locate method `tableView(_ tableView:, cellForRowAt indexPath:)`.
-
-It contains a `switch` statement which, depending on the `indexPath.row` value, displays the property and corresponding value for the selected `Supplier`.
-
-To display the added Table View Cell, add an extra `case` statement, just above the `default:` switch:
-
-```Swift
-case 10:
-    let navigationLink = tableView.dequeueReusableCell(withIdentifier: "NavigationLink",
-        for: indexPath) as UITableViewCell
-    navigationLink.textLabel?.text = "Show Supplier Products..."
-    return navigationLink
-```
-
-Now the 11th row in the table will return a **Table View Cell** matching identifier `NavigationLink`, and it will display the static text `Show Supplier Products...`.
-
-If you now run and build the application, the newly added table cell is displayed:
-
-![New navigation cell displayed](fiori-ios-scpms-floorplan-06.png)
-
-However, if you click on it, nothing happens... You will solve that in the next step.
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Implement navigation logic)]
-
-In the previous step, you have noticed the navigation to the **Supplier Products** scene did not happen. That is caused since the `DetailViewController.swift` file has turned off its ability to select table cells.
-
-Open the file `./MyDeliveries/ViewControllers/DetailViewController.swift`.
-
-In method `viewDidLoad()`, locate the line:
-
-```Swift
-self.tableView.allowsSelection = false
-```
-
-To enable navigating from this view to the Tracking Info view, set this property to `true`.
-
-Next, scroll down, and just above the method `cancel()` add the following function:
-
-```Swift
-override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "showSupplierProducts" {
-
-        if (self.tableView.indexPathForSelectedRow?.row != nil) {
-            let supplierProductsView = segue.destination as! SupplierProductsViewController
-
-            let currentEntity = self.selectedEntity as? Supplier
-
-            let esSuppliers = MyServiceClassMetadata.EntitySets.suppliers
-
-            // Load all related Products for the current Supplier
-            let query = DataQuery()
-                .from(esSuppliers)
-                .withKey(Supplier.key(supplierID: currentEntity?.supplierID) )
-                .expand(Supplier.products)
-
-            do {
-                // Perform query and store the results
-                supplierProductsView.entity = try self.myServiceClass.service.suppliers(
-                    query: query)[0]
-            }
-            catch let error {
-                self.logger.error(error.localizedDescription)
-            }
+/// Load the suppliers by using the fetchSuppliers() method provided by the data service.
+private func loadData(completionHandler: @escaping () -> Void) {
+    // fetch products
+    dataService?.fetchSuppliers() { [weak self] suppliers, error in
+        // handle errors
+        if let error = error {
+            self?.logger.error("Error while fetching list of suppliers.", error: error)
+            return
         }
+
+        // set loaded suppliers to property and reload data on the table view
+        self?.suppliers = suppliers!
+        self?.tableView.reloadData()
+        completionHandler()
     }
 }
+
 ```
 
-With this code, you create a query to load all related **Product** entities for the selected **Supplier** entity, and store the results into the `SupplierProductsViewController`.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Implement the SAP Fiori List Report Floorplan)]
-
-First, you need to bind the related **Products** to the view.
-
-Replace the method `viewDidLoad()` with the following:
+Call the `updateTableView()` method inside the `viewDidLoad()`:
 
 ```Swift
 override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.title = "Supplier Products: \(self._entity.products.count)"
-
-    self.tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: "FUIObjectTableViewCell")
-
-    self.tableView.estimatedRowHeight = 98
-    self.tableView.rowHeight = UITableViewAutomaticDimension
+    updateTableView()
 }
+
 ```
 
-This sets the view's title, registers the **SAP Fiori Object Table View Cell** control, and sets the estimated row/cell height.
+Congratulations, your app is fetching data now.
 
-Next, change the method `numberOfSections(in tableView:)` to:
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Implement the Table View to display a supplier list)]
+
+Using the `UITableViewController` makes it easy for a developer to display data in a list.
+
+First, implement two necessary `UITableViewDataSource` methods which are responsible for telling the `UITableView` how many sections and rows to display. Implement those two methods directly below the `loadData(:)` method:
 
 ```Swift
+// MARK: - Table view data source
+
+/// We are only displaying one section for this screen, return 1.
 override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
 }
+
+/// Return the count of the suppliers array.
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return suppliers.count
+}
+
 ```
 
-...and change method `tableView(_ tableView:, numberOfRowsInSection section:)` so it returns the number of related **Products**:
+Using the `SAPFiori` framework allows you to choose from a large variety of `UITableViewCell` classes.
+Because we're going to display suppliers, and those have a name, an address and probably contact data the `FUIContactCell` would be a perfect fit here. You can always use the **SAP Fiori Mentor** app, available in the App Store for iPad, to get an introduction to the control.
+
+Before implementing the `tableView(_cellForRowAt:)` method responsible for dequeuing reusable cells and returning them to the `UITableView`, we want to register the `FUIContactCell` with the `UITableView` first. This is usually done in the `viewDidLoad()` method.
+
+Implement the following lines of code before the `updateTableView()` method call in the `viewDidLoad()`:
 
 ```Swift
-override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self._entity.products.count
-}
+// Register the cell with the provided convenience reuse identifier.
+tableView.register(FUIContactCell.self, forCellReuseIdentifier: FUIContactCell.reuseIdentifier)
+
+// Set the seperator style of the table view to none and the background color to the standard Fiori background base color.
+tableView.separatorStyle = .none
+tableView.backgroundColor = .preferredFioriColor(forStyle: .backgroundBase)
+
 ```
 
-Then, add the following two methods:
+It is time to implement the `tableView(_cellForRowAt:)` method to dequeue the `FUIContactCell`:
 
-```swift
+```Swift
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let product = self._entity.products[indexPath.row]
 
-    let cell = tableView.dequeueReusableCell(withIdentifier: "FUIObjectTableViewCell", for: indexPath)
-    guard let objectCell = cell as? FUIObjectTableViewCell else {
+  // Get the specific supplier for the current row.
+  let supplier = suppliers[indexPath.row]
+
+  // Dequeue the FUIContactCell using the convenience reuse identifier. Force cast it to the FUIContactCell
+  let cell = tableView.dequeueReusableCell(withIdentifier: FUIContactCell.reuseIdentifier) as! FUIContactCell
+
+  // Set values to the cell's properties.
+  cell.headlineText = supplier.supplierName ?? "No Name available!"
+  cell.subheadlineText = "\(supplier.street ?? "") \(supplier.houseNumber ?? "") \(supplier.city ?? ""), \(supplier.postalCode ?? "") \(supplier.country ?? "")"
+
+  // Because we're going to implement navigation later this cell has the disclosure indicator as accessory type indicating that navigation to the user.
+  cell.accessoryType = .disclosureIndicator
+
+  return cell
+}
+
+```
+
+You could run the app now and should see a list of suppliers getting loaded and displayed.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Add an FUIActivityControl to your FUIContactCell)]
+
+Using the `FUIContactCell` allows us to use an `FUIActivityControl` inside of the cell to let the user contact a supplier. The [`FUIActivityControl`](https://help.sap.com/doc/978e4f6c968c4cc5a30f9d324aa4b1d7/Latest/en-US/Documents/Frameworks/SAPFiori/Classes/FUIContactCell.html) documentation explains the control and its variations in more detail.
+
+First, you have to define which so-called `FUIActivityItems` you want to use in the `FUIActivityControl`.
+
+Add the following line of code below the supplier's array:
+
+```Swift
+/// Define the contact possibilities for the user: messaging, phone call, and email
+private let activities = [FUIActivityItem.message, FUIActivityItem.phone, FUIActivityItem.email]
+
+```
+
+With that, you can simply add those activities to the `FUIContactCell`. This specific cell carries the `FUIActivityControl` in its belly in is accessible through the available public API.
+
+Go back to the `tableView(_cellForRowAt:)` method and add the following lines of code directly above the assignment of the accessory type:
+
+```Swift
+cell.activityControl.addActivities(activities)
+cell.activityControl.maxVisibleItems = 3
+
+// The FUIActivityControl provides you two different ways of reacting to user's interaction. One would be with a change handler the other would be with a delegate. Because I don't want the communication logic being in the tableView(_cellForRowAt:) method we're using the delegation way.
+cell.activityControl.delegate = self
+
+```
+
+To properly react to the user's interaction with the control you will implement an extension conforming to the `FUIActivityControlDelegate`.
+
+Implement the extension:
+
+```Swift
+extension SupplierTableViewController: FUIActivityControlDelegate {
+
+  func activityControl(_ activityControl: FUIActivityControl, didSelectActivity activityItem: FUIActivityItem) {
+
+    // Use a Switch to check for the identifier and act accordingly.
+    switch activityItem.identifier {
+    case FUIActivityItem.message.identifier:
+        AlertHelper.displayAlert(with: "Messaging supplier!", error: nil, viewController: self)
+        break
+    case FUIActivityItem.phone.identifier:
+        AlertHelper.displayAlert(with: "Calling supplier!", error: nil, viewController: self)
+        break
+    case FUIActivityItem.email.identifier:
+        AlertHelper.displayAlert(with: "Send email to supplier!", error: nil, viewController: self)
+        break
+    default:
+        return
+    }
+  }
+}
+
+```
+
+In this tutorial, you will not implement the actual code for doing the communication. If you're interested in how to do so, you can use Apple's official documentation:
+
+- [`CallKit`](https://developer.apple.com/documentation/callkit)
+- [`MessageUI`](https://developer.apple.com/documentation/messageui)
+
+If you run the app now you should see the following screen:
+
+![Supplier List](fiori-ios-scpms-floorplan-07.png)
+
+Tapping on one of the `FUIActivityItem` will result in an alert dialogue showing up.
+
+![Supplier List](fiori-ios-scpms-floorplan-08.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Implement the Navigation Between the Supplier List and the Product List)]
+
+In this step, we will implement a second `UITableViewController` displaying all products a supplier provides.
+For this, we will use a storyboard segue to navigate to the `SupplierProductsTableViewController` and pass through the selected supplier.
+
+> NOTE: In case you're not familiar with segues please visit, and carefully read the official documentation before continuing. [Using Segues](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
+
+Open up the `Main.storyboard` and add a new `UITableViewController` from the **Object Library** directly next to the `SupplierTableViewController`. Create a new segue from one of the prototype cells inside of the `SupplierTableViewController` to the newly added `UITableViewController`.
+
+![Segue](fiori-ios-scpms-floorplan-09.png)
+
+Select the segue and open the **Identity Inspector** to set the Identifier to `showSupplierProducts`.
+
+![Segue](fiori-ios-scpms-floorplan-10.png)
+
+Go back to the `SupplierTableViewController` and add a new class constant of type String which will hold the segue identifier.
+
+```Swift
+private let segueIdentifier = "showSupplierProducts"
+
+```
+
+Create a new Cocoa Touch class with the name `SupplierProductsTableViewController`.
+
+![Segue](fiori-ios-scpms-floorplan-11.png)
+
+Set the **Custom Class** of the newly added `UITableViewController` to `SupplierProductsTableViewController` in the `Main.storyboard`.
+
+![Segue](fiori-ios-scpms-floorplan-12.png)
+
+Open the `SupplierProductsTableViewController` and add a class property that will contain the selected supplier.
+
+```Swift
+var supplier: Supplier!
+
+```
+
+Next, we will implement the `prepare(:for:sender:)` method which is responsible for making necessary preparations before the navigation is fully executed. In our case, we will pass the selected supplier to the `SupplierProductsTableViewController`.
+
+Implement the `prepare(:for:sender:)` method:
+
+```Swift
+// MARK: - Navigation
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+  // Check for the correct identifier
+  if segue.identifier == segueIdentifier {
+
+    // Get the selected row from the table view.
+    if let indexPathForSelectedRow = tableView.indexPathForSelectedRow {
+
+      // Get the destination view controller and cast it to SupplierProductsTableViewController.
+      let destinationVC = segue.destination as! SupplierProductsTableViewController
+
+      // Set the selected supplier.
+      destinationVC.supplier = suppliers[indexPathForSelectedRow.row]
+    }
+  }
+}
+
+```
+
+You can now navigate back and forth between the `SupplierTableViewController` and the `SupplierProductsTableViewController`.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Implement the loading and displaying of supplier-specific products)]
+
+This view is similar to the `SupplierTableViewController` but instead of fetching all products, we will fetch supplier-specific products. To achieve that, we again can utilize the OData APIs. `SAPOData` provides the possibility to create so-called `DataQuery` objects which can define typical OData arguments for a backend call.
+
+First, we need to make the needed import statements for that class:
+
+```Swift
+import SAPOData
+import SAPFoundation
+import SAPFiori
+import SAPFioriFlows
+import SAPCommon
+
+```
+
+Let's use the logger again. Add the following line of code below the supplier property:
+
+```Swift
+private let logger = Logger.shared(named: "SupplierProductsViewController")
+
+```
+
+Add a couple of class properties necessary for the data service instance and the fetched products. Implement the following lines of code:
+
+```Swift
+private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+var dataService: ESPMContainer<OnlineODataProvider>? {
+    return OnboardingSessionManager.shared.onboardingSession?.odataController.espmContainer ?? nil
+}
+
+private var products = [Product]()
+
+```
+
+Also, we want to utilize the provided loading indicator. Let the class conform to the `SAPFioriLoadingIndicator` protocol.
+
+```Swift
+class SupplierProductsTableViewController: UITableViewController, SAPFioriLoadingIndicator { ... }
+
+```
+
+Of course, don't forget the loading indicator class property:
+
+```Swift
+var loadingIndicator: FUILoadingIndicatorView?
+
+```
+
+Let's load some data!
+
+We're using the same style we've used in the `SupplierTableViewController`. Implement the following two methods and read the inline comments carefully because you will see that we utilize the `DataQuery` object for making a filter as well as an expand.
+
+> NOTE: If you're not familiar with those OData specific terms please make yourself familiar with the OData specification:
+- [URI Conventions (OData Version 2.0)](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
+- [OData Version 4.01. Part 2: URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
+
+```Swift
+
+// You know that one u{1F609}
+private func updateTableView() {
+    self.showFioriLoadingIndicator()
+    loadData {
+        self.hideFioriLoadingIndicator()
+    }
+}
+
+private func loadData(completionHandler: @escaping () -> Void) {
+
+    // Retrieve the supplier id
+    let supplierID = supplier.supplierID!
+
+    // Create a new DataQuery object applying a filter and an expand. The filter will filter on the specific
+    // supplier id and the expand will construct the URL in a way that the backend returns the stock details
+    // for each product.
+    let dataQuery = DataQuery().filter(Product.supplierID == supplierID).expand(Product.stockDetails)
+    dataService?.fetchProducts(matching: dataQuery) { [weak self] products, error in
+        // handle errors
+        if let error = error {
+            self?.logger.error("Error while fetching list of products for supplier: \(supplierID).", error: error)
+            return
+        }
+
+        // set loaded products to property and reload data on the table view
+        self?.products = products!
+        self?.tableView.reloadData()
+        completionHandler()
+    }
+}
+
+```
+
+Call the `updateTableView()` method as last statement in the `viewDidLoad()`.
+
+```Swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    updateTableView()
+}
+
+```
+
+We know that the products contain images for each product, it would be nice to display them as well, but to do so we have to write a little bit of code to make that happen.
+
+First, implement a class property holding the image URLs of all products.
+
+```Swift
+private var productImageURLs = [String]()
+
+```
+
+The user might want to scroll through the products even if the images are not fully loaded yet we have to implement a simple image cache as well as a placeholder image to keep the performance of the table stable.
+
+Add the following line of code directly below the `productImageURLs`:
+
+```Swift
+// This simple dictionary will contain all the fetched images in memory.
+private var imageCache = [String: UIImage]()
+
+```
+
+Now implement a method responsible for fetching the product images and caching them. Add the following method right below the `loadData(:)` method:
+
+```Swift
+
+/// This method will take a URL and an escaping completion handler as arguments. The URL is the backend URL for your deployed sample service.
+private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
+
+    // Retrieve the SAP URLSession from the onboarding session.
+    if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
+
+        // Create a data task, this is the same as the URLSession data task.
+        sapURLSession.dataTask(with: url, completionHandler: { data, _, error in
+            // Handle errors
+            if let error = error {
+                self.logger.error("Failed to load image!", error: error)
+                return
+            }
+
+            // Instantiate an image from data.
+            if let image = UIImage(data: data!) {
+                // safe image in image cache
+                self.imageCache[url.absoluteString] = image
+
+                // Dispatch back to the main queue.
+                DispatchQueue.main.async { completionHandler(image) }
+            }
+        }).resume()
+    }
+}
+
+```
+
+Now we have the foundation for fetching and caching images. You were probably wondering where the mapping from the fetched products to the product image URLs happens. We will implement that now.
+
+Go back to the `loadData(:)` method and add the following line of code directly below the product assignment. Your `loadData(:)` should look like this now:
+
+```Swift
+private func loadData(completionHandler: @escaping () -> Void) {
+
+    let supplierID = supplier.supplierID!
+    let dataQuery = DataQuery().filter(Product.supplierID == supplierID).expand(Product.stockDetails)
+    dataService?.fetchProducts(matching: dataQuery) { [weak self] products, error in
+        // handle errors
+        if let error = error {
+            self?.logger.error("Error while fetching list of products for supplier: \(supplierID).", error: error)
+            return
+        }
+
+        // set loaded products to property and reload data on the table view
+        self?.products = products!
+
+        // Use .map to create an array of picture URLs
+        self?.productImageURLs = products!.map { $0.pictureUrl ?? "" }
+        self?.tableView.reloadData()
+        completionHandler()
+    }
+}
+
+```
+
+Like the last time we have to register a `SAPFiori` cell with the `UITableView`, but this time it is a `FUIObjectTableViewCell`. Add the following lines of code to the `viewDidLoad()` method right before the `updateTableView(:)` method call.
+
+```Swift
+tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
+tableView.separatorStyle = .none
+tableView.backgroundColor = .preferredFioriColor(forStyle: .backgroundBase)
+
+```
+
+As the last step, we have to implement the table views data source methods similar to the `SupplierTableViewController`.
+
+Add the following methods directly below the `loadProductImageFrom(_:completionHandler:)` method:
+
+```Swift
+// MARK: - Table view data source
+
+override func numberOfSections(in tableView: UITableView) -> Int {
+    return 1
+}
+
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return products.count
+}
+
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let product = products[indexPath.row]
+
+    let cell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier) as! FUIObjectTableViewCell
+
+    cell.headlineText = product.name ?? ""
+    cell.subheadlineText = product.categoryName ?? ""
+    cell.footnoteText = product.productID ?? ""
+    cell.statusText = "Min Stock: \(product.stockDetails?.minStock?.doubleValue() ?? 0.0)"
+
+    // set a placeholder image
+    cell.detailImageView.image = FUIIconLibrary.system.imageLibrary
+
+    // This URL is found in Mobile Services API tab
+    let baseURL = "Your API found in the Sample Service assigned to your mobile app configuration in MS"
+    let url = URL(string: baseURL.appending(productImageURLs[indexPath.row]))
+
+    guard let unwrapped = url else {
+        logger.info("URL for product image is nil. Returning cell without image.")
         return cell
     }
-    objectCell.headlineText = product.name
-    objectCell.subheadlineText = product.longDescription
-    objectCell.footnoteText = product.categoryName
-    objectCell.statusText = self.formatCurrency(value: product.price!)
 
-    return objectCell
+    // check if the image is already in the cache
+    if let img = imageCache[unwrapped.absoluteString] {
+        cell.detailImageView.image = img
+    } else {
+        // The image is not cached yet, so download it.
+        loadProductImageFrom(unwrapped) { image in
+            cell.detailImageView.image = image
+        }
+    }
+
+    return cell
+    }
 }
 
-private func formatCurrency(value: BigDecimal) -> String {
-    let formatter = NumberFormatter()
-    formatter.numberStyle = .currency
-    formatter.maximumFractionDigits = 2;
-    formatter.locale = Locale(identifier: Locale.current.identifier)
-    let result = formatter.string(from: value.doubleValue() as NSNumber);
-    return result!;
-}
 ```
 
-The first method creates the **SAP Fiori Object Table View Cell** and binds the **Product** properties to the control.
+Run the app and navigate to the `SupplierProductsTableViewController`.
 
-The second method is a simple formatter to show the product's **Price** in a more human readable format.
-
-If you now build and run the application, select a **Supplier** and click the **Show Supplier Products...** link, you should see a page like this:
-
-![Floor plan](fiori-ios-scpms-floorplan-07.png)
-
+![Supplier Product List](fiori-ios-scpms-floorplan-13.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add Search Bar, Toolbar and Navigation bar)]
+[ACCORDION-BEGIN [Step 6: ](Implement the FUISearchBar to search for certain products in the list)]
 
-In this step, you will add a search bar where you can filter the list of Products by name or description.
+Wouldn't it be cool to also have a `FUISearchBar` which is inheriting from `UISearchBar`? - Of course, it would be, so let's implement that.
 
-First, have your class `SupplierProductsViewController` extend from `UISearchResultsUpdating`:
+> NOTE: In case you're not familiar with the `UISearchBar` or `UISearchController` read the official documentation:
 
-```Swift
-class SupplierProductsViewController: UITableViewController, UISearchResultsUpdating {
-```
+- [`UISearchBar`](https://developer.apple.com/documentation/uikit/uisearchbar)
+- [`UISearchController`](https://developer.apple.com/documentation/uikit/uisearchcontroller)
 
-Just above method `viewDidLoad()`, add the following fields:
-
-```Swift
-var searchController: FUISearchController = FUISearchController(searchResultsController: nil)
-var filteredProducts: [Product] = []
-var isFiltered: Bool = false
-```
-
-The first field holds a reference to the search controller.
-The second field holds an array of filtered `Product` entities.
-The third field flags whether the list is filtered or not.
-
-Inside method `viewDidLoad()`, add the following lines of code:
+Open the `SupplierProductsTableViewController.swift` class and add the following two class properties right below the products array:
 
 ```Swift
-searchController.searchResultsUpdater = self as UISearchResultsUpdating
-searchController.searchBar.placeholderText = "Search product"
-self.tableView.tableHeaderView = searchController.searchBar
+private var searchController: FUISearchController?
+
+// Will hold the searched for products in that array.
+private var searchedProducts = [Product]()
+
 ```
 
-This registers the search updater, sets a placeholder text in the search bar, and puts the search bar in the table header.
+Let's implement a bit of setup logic for the `FUISearchBar`. Add the following method to your class:
 
-In step 6, you have changed method `tableView(_ tableView:, numberOfRowsInSection section:)` so it returns the number of related **Products**. Because the result can be filtered, change the method again to return either the filtered result count, or the total result count:
+```Swift
+private func setupSearchBar() {
+    // Search Controller setup
+    searchController = FUISearchController(searchResultsController: nil)
+
+    // The SupplierProductsViewController will take care of updating the search results.
+    searchController!.searchResultsUpdater = self
+    searchController!.hidesNavigationBarDuringPresentation = true
+    searchController!.searchBar.placeholderText = "Search for products"
+
+    // No Barcode scanner needed here
+    searchController!.searchBar.isBarcodeScannerEnabled = false
+
+    self.tableView.tableHeaderView = searchController!.searchBar
+}
+
+```
+
+Xcode will complain now because the `SupplierProductsTableViewController.swift` class is not conforming to the [`UISearchResultsUpdating`](https://developer.apple.com/documentation/uikit/uisearchresultsupdating) protocol.
+
+Add an extension to your class, like we did in the `SupplierTableViewController`:
+
+```Swift
+extension SupplierProductsTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        // to implement
+    }
+}
+
+```
+
+If you run the app now you should see the `FUISearchBar` being displayed above the `UITableView`.
+
+![Supplier Product List](fiori-ios-scpms-floorplan-14.png)
+
+Now we have to implement some search logic to be called in the `updateSearchResults(for:)` method.
+
+Implement the following methods right below the `setupSearchBar()` method and carefully read the inline comments.
+
+```Swift
+// verify if the search text is empty or not
+private func searchTextIsEmpty() -> Bool {
+    return searchController?.searchBar.text?.isEmpty ?? true
+}
+
+// actual search logic for finding the correct products for the term the user is searching for
+private func searchProducts(_ searchText: String) {
+    searchedProducts = products.filter({( product : Product) -> Bool in
+        return product.name?.lowercased().contains(searchText.lowercased()) ?? false
+    })
+
+    tableView.reloadData()
+}
+
+// verify if the user is currently searching or not
+private func isSearching() -> Bool {
+    return searchController?.isActive ?? false && !searchTextIsEmpty()
+}
+
+```
+
+Cool! Let's implement the `updateSearchResults(for:)` method:
+
+```Swift
+extension SupplierProductsTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        // Get the searched-for term, note here that we don't have a time bouncer which waits for the user to finish its input. You could implement that if needed, for this simple example we do life searches for each character. I wouldn't recommend doing that over a large data set.
+        if let searchText = searchController.searchBar.text {
+            // Feed it to the search logic.
+            searchProducts(searchText)
+            return
+        }
+    }
+}
+
+```
+
+As our last task here is to change the `UITableView` data source methods to use react to potential searches by the user.
+
+Change the `tableView(_:numberOfRowsInSection:)` method to:
 
 ```Swift
 override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return isFiltered ? self.filteredProducts.count : self._entity.products.count
-}
-```
-
-In method `tableView(_ tableView:, cellForRowAt indexPath:)`, change the reference to constant `product` to be either from the filtered or unfiltered array:
-
-```Swift
-let product = isFiltered ? self.filteredProducts[indexPath.row] : self._entity.products[indexPath.row]
-```
-
-Finally, add the following event handler:
-
-```Swift
-func updateSearchResults(for searchController: UISearchController) {
-
-    guard let searchString = searchController.searchBar.text, !searchString.isEmpty else {
-        self.isFiltered = false
-        self.filteredProducts.removeAll()
-        self.tableView.reloadData()
-        return
-    }
-
-    self.isFiltered = true
-    self.filteredProducts = self._entity.products.filter( {
-        return
-            $0.productID!.contains(searchString) ||
-            $0.name!.contains(searchString) ||
-            $0.shortDescription!.contains(searchString) ||
-            $0.longDescription!.contains(searchString)
-    })
-    self.tableView.reloadData()
-}
-```
-
-Any changes in the view's search bar will fire this event, and the view will be updated with the results.
-
-Build and run the application, the view should now have the search bar visible:
-
-![Floor plan](fiori-ios-scpms-floorplan-08.png)
-
-Type in the search bar, the list should update instantly:
-
-![Floor plan](fiori-ios-scpms-floorplan-09.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Add toolbar buttons)]
-
-In this step, you add a couple of toolbar buttons to complement the view. We won't actually add any specific logic to these buttons, but it it merely there to show what can be achieved with the **List Report Floorplan**.
-
-First, add the following event handlers:
-
-```Swift
-func addProduct() {
-    // Add your own implementation, i.e. OData create
+    // if the user is searching display the searched for products and all products otherwise.
+    return isSearching() ? searchedProducts.count : products.count
 }
 
-func refreshProducts() {
-    // Add your own implementation, i.e. query products
-}
-
-func setEditMode() {
-    self.tableView.setEditing(!self.tableView.isEditing, animated: true)
-}
 ```
 
-Then, in method `viewDidLoad()`, add the following lines of code:
+Also change the `tableView(_:cellForRowAt:)` method to retrieve the product either from the product array or in case of a search from the `searchedProducts` array.
+
+Change the following line of code:
 
 ```Swift
-self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(setEditMode))
+let product = products[indexPath.count]
 
-let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addProduct))
-let filterItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshProducts))
-let spacing = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-
-self.navigationController?.isToolbarHidden = false
-self.toolbarItems = [filterItem, spacing, addItem]
 ```
 
-Build and run the application, the view should now have the buttons visible:
-
-![Floor plan](fiori-ios-scpms-floorplan-10.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Update info.plist file)]
-
-In the following steps, you will implement Barcode Scanner functionality to the search bar. If you have a long list of items, being able to scan an item to filter the list can save you a lot of time and minimizes input errors.
-
-Since the Barcode Scanner uses the camera, you first need to grant permissions to the app to use it.
-
-Open the `info.plist` file and add the following entry:
-
-| Key | Value |
-|----|----|
-| Privacy - Camera Usage Description | `$(PRODUCT_NAME) needs to use the camera as a barcode scanner` |
-
-![Navigation Controller](fiori-ios-scpms-floorplan-11.png)
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Enable Barcode Scanner in Search bar)]
-
-Add the following import statement:
+to
 
 ```Swift
-import SAPFiori
+let product = isSearching() ? searchedProducts[indexPath.row] : products[indexPath.row]
+
 ```
 
-In method `viewDidLoad()`, just above the last line:
+If you compile and run the app now you should see that you can search for products.
 
-```Swift
-self.tableView.tableHeaderView = searchController.searchBar
-```
+![Searchbar Runtime](fiori-ios-scpms-floorplan-15.png)
 
-add the following lines of code:
-
-```Swift
-searchController!.searchBar.isBarcodeScannerEnabled = true
-searchController!.searchBar.barcodeScanner?.scanResultTransformer = { (scanString) -> String in
-    return scanString
-}
-```
-
-This code adds the Search Bar and attaches the Barcode Scanner to it. Upon successful scanning, the Search bar will now be filtered with the scanned value.
-
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 11: ](Using the Barcode Scanner)]
-
-Build and run the application. Upon start, it asks to grant permission to use the Camera:
-
-![Navigation Controller](fiori-ios-scpms-floorplan-12.png)
-
-Click **OK** to continue.
-
-Notice the small barcode icon appearing in the Search bar:
-
-![Navigation Controller](fiori-ios-scpms-floorplan-13.png)
-
-If you now tap the small barcode icon in the search bar, the Barcode Scanner view opens. Try to scan one of these barcodes:
-
-Barcode 1:
-![Navigation Controller](fiori-ios-scpms-floorplan-14-1.gif)
-
-Barcode 2:
-![Navigation Controller](fiori-ios-scpms-floorplan-14-2.gif)
-
-Barcode 3:
-![Navigation Controller](fiori-ios-scpms-floorplan-14-3.gif)
-
-Barcode 4:
-![Navigation Controller](fiori-ios-scpms-floorplan-14-4.gif)
-
-Position the barcode inside the scanning area. If a barcode has been detected, this will be indicated by a green line or rectangle:
-
-![Navigation Controller](fiori-ios-scpms-floorplan-15.png)
-
-The list should now be filtered based on the scanned results:
-
-![Navigation Controller](fiori-ios-scpms-floorplan-16.jpg)
-
-
-[VALIDATE_11]
+[VALIDATE_6]
 [ACCORDION-END]

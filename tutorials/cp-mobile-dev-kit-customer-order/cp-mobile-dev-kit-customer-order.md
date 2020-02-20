@@ -14,6 +14,8 @@ author_profile: https://github.com/jitendrakansal
   - How to enhance customer details with its order information
   - How to create a new page for displaying the order details
 
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/4-cp-mobile-dev-kit-customer-order) to start with this tutorial.
+
 ---
 
 To enhance your MDK app with customer order information, you need to carry out the following tasks:
@@ -323,7 +325,7 @@ In the **Empty** section of the **Properties** pane, provide  **`No Customer Ord
 
 ![MDK](img_024.png)
 
-You may also want to open `SalesOrders_Detail.page` when clicking on any order in `Customers_Detail.page`. For this, you will set `OnPress` event of the **Object Collection** and link it to `NavToSalesOrders_Details.action` so that when an end-user selects a order, the Order Details page will open. MDK automatically passes the selected order to the details page.
+You may also want to open `SalesOrders_Detail.page` when clicking on any order in `Customers_Detail.page`. For this, you will set `OnPress` event of the **Object Table** and link it to `NavToSalesOrders_Details.action` so that when an end-user selects a order, the Order Details page will open. MDK automatically passes the selected order to the details page.
 
 In `Customers_Detail.page`, select the Object Collection, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 

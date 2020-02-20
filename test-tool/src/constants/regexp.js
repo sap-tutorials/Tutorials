@@ -151,6 +151,7 @@ module.exports = {
         },
     },
     link: {
+        authorProfile: /^\s*author_profile:/,
         absoluteURL: new RegExp('^[a-z][a-z0-9+.-]*:'),
         markdown: [
             /\[[^\]]*\]\s*?\((http[s]?:\/\/.+?)\)/g,

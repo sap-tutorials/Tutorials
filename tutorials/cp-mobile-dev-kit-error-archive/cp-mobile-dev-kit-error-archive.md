@@ -10,8 +10,7 @@ author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- **Tutorial:** [Setup initial configuration for an MDK App in SAP Cloud Platform Mobile Services](cp-mobile-dev-kit-ms-setup)
-- **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
+- **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install:** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
@@ -20,6 +19,8 @@ author_profile: https://github.com/jitendrakansal
   - How to access Error Archive entity set to display local upload failure
   - How to handle a logic failure errors
   - How to fix these errors
+
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in_an-MDK-App) and start directly with step 7 in this tutorial.
 
 ---
 
@@ -72,6 +73,8 @@ In _Service Creation_ step, provide and select the below information:
 | `Enable Offline Store` | `Should be checked` |
 
 > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
+
+>If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
 
 >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
@@ -149,10 +152,10 @@ In **Appearance** section, provide below properties:
 | `Footnote`| leave it empty |
 | `PreserveIconStackSpacing` | `false` |
 | `ProgessIndicator`| leave it empty |
-| `Status` | `{RequestMethod}` |
-| `Subhead` | `{RequestURL}` |
+| `Status` | bind it to `{RequestMethod}` |
+| `Subhead` | bind it to `{RequestURL}` |
 | `SubStatus` | `leave it empty` |
-| `Title` | `{HTTPStatusCode}` |
+| `Title` | bind it to `{HTTPStatusCode}` |
 
 ![MDK](img_007.5.png)
 
@@ -511,7 +514,7 @@ Save the changes to the `Main` page.
 
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right-click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
 ![MDK](img_009.png)
 
@@ -740,6 +743,8 @@ Tap **Edit Affected Entity** and modify record with correct values.
 ![MDK](img_032.png)
 
 [OPTION END]
+
+Congratulations, you have successfully setup your app to handle Error Archive.
 
 [VALIDATE_1]
 [ACCORDION-END]

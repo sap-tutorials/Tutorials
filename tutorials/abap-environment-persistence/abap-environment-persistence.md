@@ -40,12 +40,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
      Click **Next >**.
 
       ![Create ABAP package](package2.png)
-
-  3. `ZLOCAL` will be added as software component. Click **Next >**.
  
+  3. `ZLOCAL` will be added as software component. Click **Next >**.
+
       ![Create ABAP package](package3.png)
 
-  4. Click **Finish** to create your transport request.
+  4. Select **Create new request** and enter a request description.
 
       ![Create ABAP package](package4.png)
 
