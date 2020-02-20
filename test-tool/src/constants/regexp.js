@@ -108,7 +108,7 @@ module.exports = {
         validate_vr: validationNumber => new RegExp(`\\[VALIDATE_${validationNumber}\\].*?\\[VALIDATE_${validationNumber}\\]`, 'sig'),
         done: /\[DONE\]/g,
         codeBlock: /```.*?```/sgi,
-        codeLine: /`.*?`/gi,
+        codeLine: /`[^`].*`/gi,
         messages: {
             production: {
                 rules_vr: 'VALIDATION: rules.vr file must not be presented in the production',
