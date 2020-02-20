@@ -14,6 +14,8 @@ author_profile: https://github.com/jitendrakansal
   - How to enhance customer details with its order information
   - How to create a new page for displaying the order details
 
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/4-cp-mobile-dev-kit-customer-order) to start with this tutorial.
+
 ---
 
 To enhance your MDK app with customer order information, you need to carry out the following tasks:
