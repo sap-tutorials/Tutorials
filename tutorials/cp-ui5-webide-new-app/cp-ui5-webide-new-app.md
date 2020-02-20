@@ -67,7 +67,8 @@ Make sure the UI modules has been created properly and the quota for disk and me
 
 ![Quota](./modulequota.png)
 
-
+[DONE]
+[ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Build the application)]
 
 Build (aka package) the project to a `mtar` archive to be able to deploy it to Cloud Foundry.  
