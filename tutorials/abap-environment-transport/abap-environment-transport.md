@@ -11,8 +11,8 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
-- You need to configure a software component of type **Business configuration**
-- You have to assign the **Configuration Expert - Business Process Configuration** role to the respective users
+- You need to configure a software component of type **business configuration**: [Transport a Software Component Between Two ABAP Instances](abap-environment-gcts).
+- You have to assign the **Configuration Expert - Business Process Configuration** role to the respective users.
 
 
 ## Details
@@ -20,9 +20,23 @@ author_profile: https://github.com/mervey45
 - How to create transport class
 - How to implement save validation
 
+
+To assign role **Configuration Expert – Business Process Configuration** to the respective user please follow the following steps:
+
+  1.	Logon as administrator to your ABAP system (SAP Fiori launchpad).
+  2.	Go to Fiori app **Business Role Templates**, find the **Configuration Expert - Business Process Configuration** template and create a business role based on this template.
+
+  3.	With the authorizations contained in this business role, users can create customizing requests. You can create customizing requests in two ways:
+    - Create them directly in the Transport Organizer in the Eclipse-based ABAP development tools (ADT).
+    - Create them implicitly using the method `add_to_transport_request()`. If no request and/or task exists for a user, the API will create one, if the user has the authorization. If the user has no authorization and no request and/or task exists, the API will raise an exception.
+
+  4.	With the authorizations contained in this business role, users can release customizing requests in the Transport Organizer in the Eclipse-based ABAP development tools (ADT). When releasing the request, the business configuration content is written to the Git repository and can be pulled into the target systems.
+
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create transport class)]
+The first step is to create a central class, which offers some transport change recording to the save validation and the save method for recording of the final changes. The class will reuse the SAP Cloud Platform ABAP environment Transport `API IF_A4C_BC_HANDLER`. So it will be used to wrap the generic transport API with a factory calendar specific transport API-method to offer a transport API for the Public Holiday business object. Furthermore, the class is being used to consolidate the returned success-fields, exceptions and messages of the generic API in a single output channel.
 
   1. Right-click on **`Classes`** and select **New ABAP Class**.
 
@@ -127,6 +141,7 @@ author_profile: https://github.com/mervey45
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Implement save validation)]
+After you have created the global transport class for your business object you can integrate it into your UI. First, the creation of a validation is needed. This validation will check whether all prerequisites are fulfilled, and if the changes can be recorded on the transport request.
 
   1. Open the behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add following to the **root node**:
 
@@ -231,7 +246,11 @@ author_profile: https://github.com/mervey45
 
   8. Save and activate.
 
-  9. Open your behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add the **with additional save** statement to your **root node** and **text node**.
+      The validation is finished. If you test the factory calendar and save some changes, the validation will be executed. In case the changes cannot be recorded on the transport request, the validation will output some error messages and the save action will be cancelled.
+
+  9. For the final recording of the changes on save, we have to implement an additional save method. The previously created coding can be reused.
+
+    Open your behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add the **with additional save** statement to your **root node** and **text node**.
 
     ```ABAP
     with additional save
@@ -520,10 +539,73 @@ author_profile: https://github.com/mervey45
 
     ```
 
+    Now your whole transport functionality is ready for testing. Whenever you now save an object all keys will be written to a transport request. In case of problems, please consider checking the prerequisites section again.
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test yourself)]
+[ACCORDION-BEGIN [Step 3: ](Add ETAG to factory calendar business object)]
+
+The ABAP RESTful Programming Model supports optimistic locking using entity tags. The timestamp (last changed on) is used as ETAG-field. On save, the value of the ETAG field kept in the user interface is compared with the value of the ETAG field in the database. If the value no longer matches, another process must have changed the entity. The outdated version is detected by RAP and the saving process is aborted with an error message.
+
+  1. Open your database table **`ZCAL_HOLIDAY_XXX`** and ensure that you added field **`changedat`** of type **`timestampl`**.
+
+    ![lock](lock.png)
+
+  2. Open behavior definition **`ZCAL_I_HOLIDAY_XXX`** and add **`etag master changedat`** to the behavior definition of entity **`ZCAL_I_HOLIDAY_XXX`**.
+
+     ![lock](lock2.png)
+
+     Save and activate.
+
+  4. Your code should look like following:
+
+    ```ABAP
+    managed implementation in class zbp_cal_i_holiday_xxx unique;
+
+    define behavior for ZCAL_I_HOLIDAY_XXX alias HolidayRoot
+    persistent table ZCAL_HOLIDAY_XXX
+    lock master
+    with additional save
+    //authorization master ( instance )
+    etag master changedat
+    {
+      create;
+      update;
+      delete;
+
+      determination det_create_and_change_texts on save
+      { field HolidayDescription; }
+
+      validation val_transport on save
+    { field holiday_id, HolidayDescription, day_of_holiday, month_of_holiday;}
+
+    }
+
+    define behavior for ZCAL_I_HOLITXT_XXX alias HolidayText
+    persistent table zcal_holitxt_xxx
+    with additional save
+    lock dependent ( holiday_id = holiday_id )
+    {
+      update; delete;
+      field( readonly ) holiday_id;
+
+       validation val_transport on save
+      { field holiday_id, fcal_description, spras; }
+    }
+    ```
+
+  5. Open your service binding to start your SAP Fiori Elements preview.
+
+     If one entity of the factory calendar is edited from two users at the same time, an error message appears:
+
+      ![lock](lock3.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 4: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

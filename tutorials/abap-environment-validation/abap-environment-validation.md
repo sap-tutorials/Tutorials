@@ -18,6 +18,14 @@ author_profile: https://github.com/mervey45
 - How to add determination to root node
 
 
+In the last tutorial you learned how to add a separate translation table to your business object. In most situations, this is too time-consuming, therefore, it makes sense to provide a separate input field on the root node for the maintenance of the description.
+
+To provide the input field for the description on the root entity you have to perform the following actions:
+
+  - 	Define a read-only association from the root node to the text node for displaying the description
+  - 	Define a determination for saving the changes on the text entity.
+Let's start adding the read-only association from the root entity to the text node:
+
 ---
 [ACCORDION-BEGIN [Step 1: ](Define read-only association from the root node)]
 
@@ -77,7 +85,7 @@ author_profile: https://github.com/mervey45
     ```ABAP
     determination det_create_and_change_texts on save
       { field HolidayDescription; }
-    ``` 
+    ```
 
       ![determination](det2.png)
 
@@ -93,15 +101,15 @@ author_profile: https://github.com/mervey45
           FOR DETERMINATION HolidayRoot~det_create_and_change_texts
           IMPORTING keys FOR HolidayRoot.
 
-        METHODS create_description
+       METHODS create_description
           IMPORTING
-            i_holiday_id  TYPE zfcal_holiday_id
-            i_description TYPE zfcal_description.
+            i_holiday_id  TYPE zcal_holiday_id_xxx
+            i_description TYPE zcal_description_xxx.
 
         METHODS update_description
           IMPORTING
-            i_holiday_id  TYPE zfcal_holiday_id
-            i_description TYPE zfcal_description.
+            i_holiday_id  TYPE zcal_holiday_id_xxx
+            i_description TYPE zcal_description_xxx.
 
     ENDCLASS.
 
@@ -187,6 +195,7 @@ author_profile: https://github.com/mervey45
 
 [DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 3: ](Test yourself)]
 

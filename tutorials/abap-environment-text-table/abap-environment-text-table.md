@@ -19,6 +19,12 @@ author_profile: https://github.com/mervey45
 - How to connect to text tables
 - How to add separate text tables
 
+The last tutorial showed how to create a very simple maintenance business object using a single database table. As seen the application the UI was still empty not showing any table columns or input fields.
+
+This tutorial is going to explain how to extend the BO with UI annotations. By adding UI annotations the UI will be defined.
+
+You'll learn how to define the annotations for the detail screen. This screen is used for creating new objects and showing the full details of the underlying records. Furthermore you'll learn how you can define the columns in the search result list. After completing both sections, you should have a running application for maintaining the database table.
+
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Add UI annotation for detail screen)]
@@ -59,7 +65,7 @@ author_profile: https://github.com/mervey45
     Your complete code should look like following:
 
     ```ABAP
-    @AbapCatalog.sqlViewName: 'ZCAL_HOLIDAYXXX'
+    @AbapCatalog.sqlViewName: 'ZCAL_I_HOLID_XXX'
     @AbapCatalog.compiler.compareFilter: true
     @AbapCatalog.preserveKey: true
     @AccessControl.authorizationCheck: #CHECK
@@ -122,6 +128,8 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 2: ](Add UI annotation for list screen)]
 
+Now we want to add the column definition. Therefore we need to add the **`@UI.lineItem`** annotation before each column. For each column you can define the position and the label.
+
   1. Open your CDS View **`ZCAL_I_HOLIDAY_XXX`**. Add the **`@UI.lineItem`** annotation for all fields you want to display in the overview/search result table. Finally the annotations will look as following:
 
     ```ABAP
@@ -146,10 +154,12 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 3: ](Connect to text tables)]
 
+Many business configuration objects use text tables for providing translatable applications. Texts are maintained in the user-logon language and in secondary languages. In business configuration apps texts are maintained with the root entity and stored in text tables. Texts in other languages are maintained separately in a table.
+
   1. Right-click on your data definition **`ZCAL_I_HOLIDAY_XXX`** and select **New Data Definition**.
 
       ![table](table.png)
-
+ 
   2. Create a data definition:
      - Name: **`ZCAL_I_HOLITXT_XXX `**
      - Description: **`CDS View for Holiday Text Table`**
@@ -160,7 +170,7 @@ author_profile: https://github.com/mervey45
 
   3. Select **Define View with To-Parent Association** and click **Finish**.
 
-      ![table](table4.png) 
+      ![table](table4.png)
 
   4. Replace your code with following:
 
@@ -303,12 +313,16 @@ author_profile: https://github.com/mervey45
 
     ```ABAP
     @UI.fieldGroup: [{ position: 1,
-                            qualifier: 'Translation',
-                            label: 'Language Key'}]
-         key spras,
-         @UI.fieldGroup: [{ position: 2,
-                            qualifier: 'Translation',
-                            label: 'Translated Text' }]
+                        qualifier: 'Translation',
+                        label: 'Language Key'}]
+    key spras,
+    key holiday_id,
+    @UI.fieldGroup: [{ position: 2,
+                        qualifier: 'Translation',
+                        label: 'Translated Text' }]
+    @UI.lineItem: [{ position: 2, label: 'Translation' }]
+    fcal_description,
+    _PublicHoliday
     ```
 
   8. Save and activate.
