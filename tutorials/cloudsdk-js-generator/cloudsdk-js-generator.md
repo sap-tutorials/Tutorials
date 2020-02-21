@@ -1,5 +1,5 @@
 ---
-title: Generate Custom OData Client Library with SAP Cloud SDK's Generator
+title: Generate Custom OData Client Library with SAP Cloud SDK's Generator for JavaScript
 description: Generate a custom OData client library for the SAP SuccessFactors Candidate service of the Recruiting module.
 auto_validation: true
 time: 15
