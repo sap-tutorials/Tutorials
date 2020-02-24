@@ -135,25 +135,25 @@ Open the application settings in the application editor by double clicking on th
 
 So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-Right-click on the `MDKApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click on the `MDKApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-![MDK](img_009.png)
+    ![MDK](img_009.png)
 
-Let the default configuration as it is and click **Next**.
+2. Let the default configuration as it is and click **Next**.
 
-![MDK](img_010.png)
+    ![MDK](img_010.png)
 
->_Filter Files_ will be filtered and ignored in web packing process.
+    >_Filter Files_ will be filtered and ignored in web packing process.
 
->_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
+    >_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-Click the dropdown for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+3. Click the dropdown for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
 
-![MDK](img_014.1.png)
+    ![MDK](img_014.1.png)
 
->By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
+    >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-Click **Next** to finish the deployment from SAP Web IDE.
+4. Click **Next** to finish the deployment from SAP Web IDE.
 
 You should see **Application deployed successfully** message in console log.
 
@@ -166,17 +166,17 @@ You should see **Application deployed successfully** message in console log.
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-Right click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-![MDK](img_009.png)
+    ![MDK](img_009.png)
 
-Click **Next**.
+2. Click **Next**.
 
-![MDK](img_010.png)
+    ![MDK](img_010.png)
 
-Click on the **QR-code icon** to populate the QR-code for app on-boarding.
+3. Click on the **QR-code icon** to populate the QR-code for app on-boarding.
 
-![MDK](img_012.1.png)
+    ![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -189,39 +189,39 @@ Click on the **QR-code icon** to populate the QR-code for app on-boarding.
 
 On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
 
-Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
+1. Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
 
-Tap **Open browser**. It will open SAP Mobile Services Client app.
+2. Tap **Open browser**. It will open SAP Mobile Services Client app.
 
-![MDK](img_013.1.jpg)
+    ![MDK](img_013.1.jpg)
 
-Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+3. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
-![MDK](img_016.1.jpg)
+    ![MDK](img_016.1.jpg)
 
-Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-![MDK](img_017.1.png)
+    ![MDK](img_017.1.png)
 
-Tap **AGREE** on `End User License Agreement`.
+5. Tap **AGREE** on `End User License Agreement`.
 
-![MDK](img_018.1.jpg)
+    ![MDK](img_018.1.jpg)
 
-Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+6. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
-![MDK](img_019.1.jpg)
+    ![MDK](img_019.1.jpg)
 
-Confirm the passcode and tap **DONE**.
+7. Confirm the passcode and tap **DONE**.
 
-![MDK](img_021.1.png)
+    ![MDK](img_021.1.png)
 
-Optionally, you can enable fingerprint to get faster access to the app data.
+    Optionally, you can enable fingerprint to get faster access to the app data.
 
-![MDK](img_022.1.png)
+    ![MDK](img_022.1.png)
 
-Tap **OK**.
+8. Tap **OK**.
 
-![MDK](img_023.1.png)
+    ![MDK](img_023.1.png)
 
 The MDK client receives deployed metadata definitions as a bundle.
 
