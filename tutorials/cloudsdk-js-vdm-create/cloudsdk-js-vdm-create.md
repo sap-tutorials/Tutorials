@@ -17,150 +17,106 @@ primary_tag: products>sap-s-4hana-cloud-sdk
   - How to use the Virtual Data Model to create a new entity
   - How to trigger a create request from an API endpoint exposed by your application
 
-The goal of this tutorial group is to show you how to implement a JavaScript application that allows you to manage the addresses of business partners. This application will be using `Express.js` and the SAP Cloud SDK for JavaScript. In this tutorial, we use the SAP Cloud SDK's OData Virtual Data Model to create a new address and make this functionality available via an API endpoint.
+The goal of this tutorial group is to show you how to implement a JavaScript application that allows you to manage the addresses of business partners. This application will be using `NestJS` and the SAP Cloud SDK for JavaScript. In this tutorial, we use the SAP Cloud SDK's OData Virtual Data Model to create a new address and make this functionality available via an API endpoint.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
-[OPTION BEGIN [TypeScript]]
-Create a file called `create-business-partner-address-route.ts` in the `src` folder of your application. Then, copy the following code into it:
+In a [previous tutorial](cloudsdk-js-vdm-getall) we explained the basics about `controller`, `service` and `module` of `NestJS` application. Note: If you have already controller and service classes from the previous tutorials you can of course keep the existing files and just extend the classes by the new methods. Create a file called `business-partner.controller.ts` in the `src` folder of your application. Then, copy the following code into it:
 
 ```JavaScript / TypeScript
-import { Request, Response } from 'express';
+import { Controller, Post, Body, Param } from '@nestjs/common';
+
+@Controller('business-partners')
+export class BusinessPartnerController {
+
+  @Post('/:businessPartnerId/address')
+  @HttpCode(201)
+  getBusinessPartnerByID(@Body() requestBody, @Param('businessPartnerId') businessPartnerId): string {
+    return `This is my id: ${businessPartnerId} and body for address creation: ${JSON.stringify(requestBody)}`;
+  }
+}
+```
+
+Then prepare a service file called `business-partner.service.ts` and add this dummy implementation:
+
+```JavaScript / TypeScript
+import { Injectable } from '@nestjs/common';
 import { BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-service';
 
-export function createBusinessPartnerAddressRoute(req: Request, res: Response) {
-  res.status(200).send(req.params.id);
+@Injectable()
+export class BusinessPartnerService {
+  createAddress(address: BusinessPartnerAddress): Promise<BusinessPartnerAddress> {
+    return;
+  }
 }
 ```
 
-Now open `application.ts` again, import the function and add the following route definition:
+Finally, register the `controller` and `service` in the root application module `app.module.ts`:
 
 ```JavaScript / TypeScript
-import { businessPartnersRoute } from './business-partners-route';
-import { singleBusinessPartnerRoute } from './single-business-partner-route';
-import { createBusinessPartnerAddressRoute } from './create-business-partner-address-route';
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { BusinessPartnerController } from './business-partner.controller';
+import { BusinessPartnerService } from './business-partner.service';
 
-// ...
-
-private routes(): void {
-  const router = express.Router();
-
-  router.get('/', indexRoute);
-  router.get('/hello', helloWorld);
-  router.get('/business-partners', businessPartnersRoute);
-  router.get('/business-partners/:id', singleBusinessPartnerRoute);
-  // add the following line
-  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
-  this.app.use('/', router);
-}
-```
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-Create a file called `create-business-partner-address-route.js` in the `src` folder of your application. Then, copy the following code into it:
-
-```JavaScript
-const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-service');
-
-function createBusinessPartnerAddressRoute(req, res) {
-  res.status(200).send(req.params.id);
-}
-
-module.exports.createBusinessPartnerAddressRoute = createBusinessPartnerAddressRoute;
+@Module({
+  imports: [],
+  controllers: [AppController, BusinessPartnerController],
+  providers: [AppService, BusinessPartnerService]
+})
+export class AppModule {}
 ```
 
-Now open `application.js` again, import the function and add the following route definition:
-
-```JavaScript
-const { businessPartnersRoute } = require('./business-partners-route');
-const { singleBusinessPartnerRoute } = require('./single-business-partner-route');
-const { createBusinessPartnerAddressRoute } = require('./create-business-partner-address-route');
-
-// ...
-
-private routes() {
-  const router = express.Router();
-
-  router.get('/', indexRoute);
-  router.get('/hello', helloWorld);
-  router.get('/business-partners', businessPartnersRoute);
-  router.get('/business-partners/:id', singleBusinessPartnerRoute);
-  // add the following line
-  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
-  this.app.use('/', router);
-}
-```
-[OPTION END]
-
-Following the best practices for RESTful APIs, we used `router.post` for this route, so we need to send a `POST` request. We recommend [Postman](https://www.getpostman.com/) for testing APIs, but you can also use similar tools or `curl`.
+Following the best practices for RESTful APIs, we used the `POST` method to create a new entity. So we need to send a `POST` request. We recommend [Postman](https://www.getpostman.com/) for testing APIs, but you can also use similar tools or `curl`.
 
 ![Example POST request using Postman](postman.png)
 
-Restart your server and send a `POST` request to `http://localhost:8080/business-partners/1/address`. The server should respond with the ID that you have used in the URL, so in this case with "1".
+Start your server using `npm start` and create a  `POST` request to `http://localhost:3000/business-partners/testID/address` with a JSON body: `{"key":"Some test body."}`. The server should respond with the ID and body from the request. In our case you should get `This is my id: testID and body for address creation: {"key":"Some test body."}`
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a business partner address)]
 
-[OPTION BEGIN [TypeScript]]
-Next, we use the VDM to create a new business partner address. Open `create-business-partner-address-route.ts` and add the following function:
+Next, we use the VDM to create a new business partner address. Open `business-partner.service.ts` and implement the `createAddress()` method:
 
 ```JavaScript / TypeScript
-function createBusinessPartnerAddress(address: BusinessPartnerAddress): Promise<BusinessPartnerAddress> {
-  return BusinessPartnerAddress.requestBuilder()
-    .create(address)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
+import { Injectable } from '@nestjs/common';
+import { BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-service';
+
+@Injectable()
+export class BusinessPartnerService {
+  createAddress(address: BusinessPartnerAddress): Promise<BusinessPartnerAddress> {
+    return BusinessPartnerAddress.requestBuilder()
+      .create(address)
+      .execute({
+        url: 'https://my.s4hana.ondemand.com/'
+      });
+  }
 }
+
 ```
-[OPTION END]
 
-[OPTION BEGIN [JavaScript]]
-Next, we use the VDM to create a new business partner address. Open `create-business-partner-address-route.js` and add the following function:
-
-```JavaScript
-function createBusinessPartnerAddress(address) {
-  return BusinessPartnerAddress.requestBuilder()
-    .create(address)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
-}
-```
-[OPTION END]
-
-The `create` function takes as parameter the entity that should be created. When creating a new entity, the service will automatically generate things like key fields, the creation date, etc. and return it. The VDM makes this available to you by returning a `Promise<BusinessPartnerAddress>`.
+The `create` function takes the entity that should be created as parameter. When creating a new entity, the service will automatically generate things like key fields, the creation date, etc. and return it. The VDM makes this available to you by returning a `Promise<BusinessPartnerAddress>`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Build a business partner address from the request)]
 
-So far, there's an API endpoint and a function that takes an address and creates it in SAP S/4HANA Cloud. To connect the two, we need a function that constructs a `BusinessPartnerAddress` object. Add the following function to your code:
+So far, there's an API endpoint and a function that takes an address and creates it in SAP S/4HANA Cloud. To connect the two, we need a function that constructs a `BusinessPartnerAddress` object. Add the following method to your service class:
 
-[OPTION BEGIN [TypeScript]]
 ```JavaScript / TypeScript
-function buildAddress(body: any, businessPartnerId: string): BusinessPartnerAddress {
-  const address = BusinessPartnerAddress.builder().fromJson(body);
+buildAddress(requestBody: any, businessPartnerId: string): BusinessPartnerAddress {
+  const address = BusinessPartnerAddress.builder().fromJson(requestBody);
   address.businessPartner = businessPartnerId;
   return address;
 }
-```
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-```JavaScript
-function buildAddress(body, businessPartnerId) {
-  const address = BusinessPartnerAddress.builder().fromJson(body);
-  address.businessPartner = businessPartnerId;
-  return address;
 }
 ```
-[OPTION END]
 
 This function takes some form of body and a business partner ID. First, using the `BusinessPartnerAddress.builder().fromJson(body)`, you can create a new address from the given body. Note, that this requires the keys of the object passed to the `fromJson` function to match the respective keys of the business partner address object. We will present a working example later. Second, since we want the address to be related to a given business partner, we need to set the business partner ID on the entity.
 
@@ -169,74 +125,29 @@ This function takes some form of body and a business partner ID. First, using th
 
 [ACCORDION-BEGIN [Step 4: ](Wire everything up)]
 
-With all the building blocks in place, you can connect everything in the `createBusinessPartnerAddressRoute` function. Your final code should look like this:
+With all the building blocks in place, you can connect everything in the `business-partner.controller.ts`. Your final code should look like this:
 
-[OPTION BEGIN [TypeScript]]
 ```JavaScript / TypeScript
-import { Request, Response } from 'express';
+import { Controller, Post, Body, Param } from '@nestjs/common';
+import { BusinessPartnerService } from './business-partner.service';
 import { BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-service';
 
-export function createBusinessPartnerAddressRoute(req: Request, res: Response) {
-  createBusinessPartnerAddress(buildAddress(req.body, req.params.id))
-    .then(address => {
-      res.status(200).send(address);
-    })
-    .catch(error => {
-      res.status(500).send(error.message);
-    });
-}
+@Controller('business-partners')
+export class BusinessPartnerController {
+  constructor(private readonly businessPartnerService: BusinessPartnerService) {}
 
-function createBusinessPartnerAddress(address: BusinessPartnerAddress): Promise<BusinessPartnerAddress> {
-  return BusinessPartnerAddress.requestBuilder()
-    .create(address)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
-}
-
-function buildAddress(body: any, businessPartnerId: string): BusinessPartnerAddress {
-  const address = BusinessPartnerAddress.builder().fromJson(body);
-  address.businessPartner = businessPartnerId;
-  return address;
+  @Post('/:businessPartnerId/address')
+  @HttpCode(201)  
+  getBusinessPartnerByID(@Body() requestBody, @Param('businessPartnerId') businessPartnerId): Promise<BusinessPartnerAddress> {
+    const address = this.businessPartnerService.buildAddress(requestBody, businessPartnerId);
+    return this.businessPartnerService.createAddress(address);
+  }
 }
 ```
-[OPTION END]
 
-[OPTION BEGIN [JavaScript]]
-```JavaScript
-const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-service');
+`buildAddress()` takes the body of the incoming request as well as the ID from the URL and passes it to the SDK builder methods to construct a `BusinessPartnerAddress` entity. This is then passed to `createAddress()` to send the create request to SAP S/4HANA Cloud.
 
-function createBusinessPartnerAddressRoute(req, res) {
-  createBusinessPartnerAddress(buildAddress(req.body, req.params.id))
-    .then(address => {
-      res.status(200).send(address);
-    })
-    .catch(error => {
-      res.status(500).send(error.message);
-    });
-}
-
-module.exports.createBusinessPartnerAddressRoute = createBusinessPartnerAddressRoute;
-
-function createBusinessPartnerAddress(address) {
-  return BusinessPartnerAddress.requestBuilder()
-    .create(address)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
-}
-
-function buildAddress(body, businessPartnerId) {
-  const address = BusinessPartnerAddress.builder().fromJson(body);
-  address.businessPartner = businessPartnerId;
-  return address;
-}
-```
-[OPTION END]
-
-`createBusinessPartnerAddressRoute` takes the body of the incoming request as well as the ID from the URL and passes it to `buildAddress` to construct a `BusinessPartnerAddress` entity. This is then passed to `createBusinessPartnerAddress` to send the create request to SAP S/4HANA Cloud.
-
-Restart your server and send a `POST` request to `http://localhost:8080/business-partners/1/address` with the following body:
+Restart your server and send a `POST` request to `http://localhost:3000/business-partners/1/address` with the following body:
 
 ```JSON
 {
@@ -257,7 +168,6 @@ If there is a business partner with ID "1" in your destination system, this will
 
 The VDM also supports creating an entity together with related entities in a single request. In OData lingo, this is called "deep create". Consider the following example, where a business partner is created together with one related address:
 
-[OPTION BEGIN [TypeScript]]
 ```JavaScript / TypeScript
 import { BusinessPartner, BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-service';
 
@@ -284,36 +194,6 @@ BusinessPartner.requestBuilder()
     password: 'PASSWORD'
   });
 ```
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-```JavaScript
-const { BusinessPartner, BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-service');
-
-const businessPartner = BusinessPartner.builder()
-  .firstName('John')
-  .lastName('Doe')
-  .businessPartnerCategory('1')
-  .toBusinessPartnerAddress([
-    BusinessPartnerAddress.builder()
-      .country('DE')
-      .postalCode('14469')
-      .cityName('Potsdam')
-      .streetName('Konrad-Zuse-Ring')
-      .houseNumber('10')
-      .build()
-  ])
-  .build();
-
-BusinessPartner.requestBuilder()
-  .create(businessPartner)
-  .execute({
-    url: 'https://my.s4hana.ondemand.com/',
-    username: 'USERNAME',
-    password: 'PASSWORD'
-  });
-```
-[OPTION END]
 
 [DONE]
 [ACCORDION-END]
