@@ -130,7 +130,7 @@ Now use this entity to create a `getAll` request while selecting the properties 
 
 You will also need to provide your API Key. You can find it on the top of the SAP API Business Hub page. Simply click on `Show API Key` and then `Copy Key and Close`. Add the key as a custom header, using the `withCustomHeaders` function.
 
-For further information on how to configure a destination check our previous tutorials on how to [create an app using SAP Cloud SDK for JavaScript](https://developers.sap.com/group.s4sdk-js-cloud-foundry.html) and on how to [build an application with the Virtual Data Model](https://developers.sap.com/group.cloudsdk-js-vdm.html).
+For further information on how to configure a destination check our previous tutorials on how to [create an app using SAP Cloud SDK for JavaScript](group.s4sdk-js-cloud-foundry) and on how to [build an application with the Virtual Data Model](group.cloudsdk-js-vdm).
 
 This is what your `candidate.service.ts` file should look like:
 

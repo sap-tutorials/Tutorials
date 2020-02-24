@@ -23,7 +23,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 [ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
-In a [previous tutorial](https://developers.sap.com/tutorials/cloudsdk-js-vdm-getall.html) we explained the basics about `controller`, `service` and `module` of `NestJS` application. Note: If you have already controller and service classes from the previous tutorials you can of course keep the existing files and just extend the classes by the new methods. Create a file called `business-partner.controller.ts` in the `src` folder of your application. Then, copy the following code into it:
+In a [previous tutorial](cloudsdk-js-vdm-getall) we explained the basics about `controller`, `service` and `module` of `NestJS` application. Note: If you have already controller and service classes from the previous tutorials you can of course keep the existing files and just extend the classes by the new methods. Create a file called `business-partner.controller.ts` in the `src` folder of your application. Then, copy the following code into it:
 
 ```JavaScript / TypeScript
 import { Controller, Post, Body, Param } from '@nestjs/common';

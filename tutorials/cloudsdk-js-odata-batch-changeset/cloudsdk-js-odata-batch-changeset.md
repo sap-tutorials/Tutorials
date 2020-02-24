@@ -10,7 +10,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Prerequisites
  - Have `Node.js` and `npm` [installed on your machine](s4sdkjs-prerequisites).
  - Have access to an SAP S/4HANA Cloud system or the [SAP API Business Hub Sandbox](https://api.sap.com/getting-started), or use the [Business Partner Mock Service](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
- - Recommended to explored the more basic CRUD operations by going through [these tutorials](https://developers.sap.com/group.cloudsdk-js-vdm.html), but not required.
+ - Recommended to explore the more basic CRUD operations by going through [these tutorials](group.cloudsdk-js-vdm), but not required.
  - Basic knowledge of OData is recommended, but not required.
 
 ## Details
