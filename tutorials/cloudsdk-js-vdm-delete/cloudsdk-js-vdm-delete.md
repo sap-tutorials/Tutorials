@@ -17,153 +17,103 @@ primary_tag: products>sap-s-4hana-cloud-sdk
   - How to use the Virtual Data Model to delete an entity
   - How to trigger a delete request from an API endpoint exposed by your application
 
-The goal of this tutorial group is to show you how to implement a JavaScript application that allows you to manage the addresses of business partners. This application will be using `Express.js` and the SAP Cloud SDK for JavaScript. In this tutorial, we use the SAP Cloud SDK's OData Virtual Data Model to delete an address and make this functionality available via an API endpoint.
+The goal of this tutorial group is to show you how to implement a JavaScript application that allows you to manage the addresses of business partners. This application will be using `NestJS` and the SAP Cloud SDK for JavaScript. In this tutorial, we use the SAP Cloud SDK's OData Virtual Data Model to delete an address and make this functionality available via an API endpoint.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
-[OPTION BEGIN [TypeScript]]
-Start by creating a new file called `delete-business-partner-address-route.ts` and copy the following code into it:
+As in the [previous tutorial](cloudsdk-js-vdm-update) we have to create a controller to expose the endpoint for deleting an address. Note: If you have already controller and service classes from the previous tutorials you can of course keep the existing files and just extend the classes by the new methods. Create a `business-partner.controller.ts` and add the following implementation:
 
 ```JavaScript / TypeScript
-import { Request, Response } from 'express';
-import { BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-service';
+import { Controller, Param, HttpCode, Delete } from '@nestjs/common';
 
-export function deleteBusinessPartnerAddressRoute(req: Request, res: Response) {
-  deleteBusinessPartnerAddress(req.params.id, req.params.addressId)
-    .then(() => {
-      res.status(200).send('Entity successfully deleted!');
-    })
-    .catch(error => {
-      res.status(500).send(error.message);
-    })
-}
-
-function deleteBusinessPartnerAddress(businessPartnerId: string, addressId: string): Promise<void> {
-  return Promise.resolve();
+@Controller('business-partners')
+export class BusinessPartnerController {
+  @Delete('/:businessPartnerId/address/:addressId')
+  @HttpCode(204)
+  deleteBusinessPartnerAddress(@Param('businessPartnerId') businessPartnerId, @Param('addressId') addressId){
+    console.log(`Your request parameters are businessPartnerId:${businessPartnerId} and addressId:${addressId}.`);
+  }
 }
 ```
-
-This follows the implementation in the previous tutorials. `deleteBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next step. Now open `application.ts`, import the function and add the following route definition:
+The `deleteBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next chapter. We will do the implementation in a separate `business-partner.service.ts` file, which we will prepare already now:
 
 ```JavaScript / TypeScript
-import { businessPartnersRoute } from './business-partners-route';
-import { singleBusinessPartnerRoute } from './single-business-partner-route';
-import { createBusinessPartnerAddressRoute } from './create-business-partner-address-route';
-import { updateBusinessPartnerAddressRoute } from './update-business-partner-address-route';
-import { deleteBusinessPartnerAddressRoute } from './delete-business-partner-address-route';
+import { Injectable } from '@nestjs/common';
 
-// ...
-
-private routes(): void {
-  const router = express.Router();
-
-  router.get('/', indexRoute);
-  router.get('/hello', helloWorld);
-  router.get('/business-partners', businessPartnersRoute);
-  router.get('/business-partners/:id', singleBusinessPartnerRoute);
-  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
-  router.put('/business-partners/:id/address/:addressId', updateBusinessPartnerAddressRoute);
-  // add the following line
-  router.delete('/business-partners/:id/address/:addressId', deleteBusinessPartnerAddressRoute);
-  this.app.use('/', router);
-}
-```
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-Start by creating a new file called `delete-business-partner-address-route.js` and copy the following code into it:
-
-```JavaScript
-const { BusinessPartnerAddress } = require('@sap/cloud-sdk-vdm-business-partner-service');
-
-function deleteBusinessPartnerAddressRoute(req, res) {
-  deleteBusinessPartnerAddress(req.params.id, req.params.addressId)
-    .then(() => {
-      res.status(200).send('Entity successfully deleted!');
-    })
-    .catch(error => {
-      res.status(500).send(error.message);
-    })
-}
-
-module.exports.deleteBusinessPartnerAddressRoute = deleteBusinessPartnerAddressRoute;
-
-function deleteBusinessPartnerAddress(businessPartnerId, addressId) {
-  return Promise.resolve();
+@Injectable()
+export class BusinessPartnerService {
+  deleteBusinessPartnerAddress(businessPartnerId: string, addressId: string): Promise<void> {
+    return;
+  }
 }
 ```
 
-This follows the implementation in the previous tutorials. `deleteBusinessPartnerAddress` does not do anything useful yet, but you will implement it in the next step. Now open `application.js`, import the function and add the following route definition:
+Finally, register the `controller` and `service` in the root application module `app.module.ts`:
 
-```JavaScript
-const { businessPartnersRoute } = require('./business-partners-route');
-const { singleBusinessPartnerRoute } = require('./single-business-partner-route');
-const { createBusinessPartnerAddressRoute } = require('./create-business-partner-address-route');
-const { updateBusinessPartnerAddressRoute } = require('./update-business-partner-address-route');
-const { deleteBusinessPartnerAddressRoute } = require('./delete-business-partner-address-route');
+```JavaScript / TypeScript
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { BusinessPartnerController } from './business-partner.controller';
+import { BusinessPartnerService } from './business-partner.service';
 
-// ...
-
-private routes() {
-  const router = express.Router();
-
-  router.get('/', indexRoute);
-  router.get('/hello', helloWorld);
-  router.get('/business-partners', businessPartnersRoute);
-  router.get('/business-partners/:id', singleBusinessPartnerRoute);
-  router.post('/business-partners/:id/address', createBusinessPartnerAddressRoute);
-  router.put('/business-partners/:id/address/:addressId', updateBusinessPartnerAddressRoute);
-  // add the following line
-  router.delete('/business-partners/:id/address/:addressId', deleteBusinessPartnerAddressRoute);
-  this.app.use('/', router);
-}
+@Module({
+  imports: [],
+  controllers: [AppController, BusinessPartnerController],
+  providers: [AppService, BusinessPartnerService]
+})
+export class AppModule {}
 ```
-[OPTION END]
 
-Note, that we used `router.delete` for this route, so we need to send a `DELETE` request. Restart your server and send a `DELETE` request to `http://localhost:8080/business-partners/1/address/2`. The server should respond with `"Entity successfully deleted!"`, since `deleteBusinessPartnerAddress` returns `Promise.resolve()` and will therefore never fail.
+Note, that we used the `DELETE` method in the controller, so we need to send a `DELETE` request to trigger this controller method. Restart your server and send a `DELETE` request to `http://localhost:3000/business-partners/1/address/2`. The server should respond with  status code `204 - No content` and in the console of your local server you should see:
+`Your request parameters are businessPartnerId:1 and addressId:2.`
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Delete a business partner address)]
 
-[OPTION BEGIN [TypeScript]]
-Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.ts` and overwrite `deleteBusinessPartnerAddress` as shown below:
+Next, we use the VDM to delete a business partner address. Open `business-partner.service.ts` and overwrite `deleteBusinessPartnerAddress` as shown below:
 
 ```JavaScript / TypeScript
-function deleteBusinessPartnerAddress(businessPartnerId: string, addressId: string): Promise<void> {
-  return BusinessPartnerAddress.requestBuilder()
+import { Injectable } from '@nestjs/common';
+import {BusinessPartnerAddress} from '@sap/cloud-sdk-vdm-business-partner-service';
+
+@Injectable()
+export class BusinessPartnerService {
+  deleteBusinessPartnerAddress(businessPartnerId: string, addressId: string): Promise<void> {
+    return BusinessPartnerAddress.requestBuilder()
     .delete(businessPartnerId, addressId)
     .execute({
       url: 'https://my.s4hana.ondemand.com/'
     });
+  }
 }
 ```
-
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-Next, we use the VDM to delete a business partner address. Open `delete-business-partner-address-route.js` and overwrite `deleteBusinessPartnerAddress` as shown below:
-
-```JavaScript
-function deleteBusinessPartnerAddress(businessPartnerId, addressId) {
-  return BusinessPartnerAddress.requestBuilder()
-    .delete(businessPartnerId, addressId)
-    .execute({
-      url: 'https://my.s4hana.ondemand.com/'
-    });
-}
-```
-
-[OPTION END]
 
 As of version `1.7.0` of the SAP Cloud SDK, you can alternatively pass an entity to the `delete` method instead of the entity's key fields. This has the advantage that the version identifier of the entity is set automatically. When going with the first approach, you would have to manually supply the version identifier using the `setVersionIdentifier` method. Therefore, if you already have an instance of the entity you want to delete, passing it directly is the easier approach.
 
-Finally, be aware that executing a delete request will return a `Promise<void>`.
+Be aware that executing a delete request will return a `Promise<void>`. In order to expose the delete method to the client, we need to adjust the controller:
 
-Restart your server and send a delete request to `http://localhost:8080/business-partners/1/address/1` (or the respective IDs you used in the previous tutorials). If everything works, you should see `"Entity successfully deleted!"` in the response body!
+```JavaScript / TypeScript
+import { Controller, Param, HttpCode, Delete } from '@nestjs/common';
+import { BusinessPartnerService } from './business-partner.service';
+
+@Controller('business-partners')
+export class BusinessPartnerController {
+  constructor(private readonly businessPartnerService: BusinessPartnerService) {}
+
+  @Delete('/:businessPartnerId/address/:addressId')
+  @HttpCode(204)
+  deleteBusinessPartnerAddress(@Param('businessPartnerId') businessPartnerId, @Param('addressId') addressId): Promise<void> {
+    return this.businessPartnerService.deleteBusinessPartnerAddress(businessPartnerId, addressId);
+  }
+}
+```
+
+Restart your server and send a delete request to `http://localhost:3000/business-partners/1/address/1` (or the respective IDs you used in the previous tutorials). If everything works, you should see an empty response and return type 204 and your address should disappear in the backend.
 
 [DONE]
 [ACCORDION-END]
