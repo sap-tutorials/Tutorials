@@ -1,5 +1,5 @@
 ---
-title: Send Multiple OData Requests in batch mode with SAP Cloud SDK's Virtual Data Model
+title: Send Multiple OData Requests in Batch Mode with SAP Cloud SDK's Virtual Data Model
 description: Build and execute OData batch requests for writing and retrieving data with the SAP Cloud SDK's Virtual Data Model in your Address Manager application.
 auto_validation: true
 time: 20
