@@ -12,14 +12,17 @@ primary_tag: products>sap-cloud-platform-business-rules
   - How to create role collections and assign it to a user
 
 ---
+Add the roles required to access the **Manage Rules Project** application to the role collection and assign the role collection to your users.
 
-[ACCORDION-BEGIN [Step 1: ](Create role collections)]
+[ACCORDION-BEGIN [Step 1: ](Create a role collection)]
 
-1. In the SAP Cloud Platform cockpit, navigate to your subaccount via the breadcrumb navigation.
+1. In [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) cockpit, navigate to your subaccount.
+
+    ![Navigate to subaccount](subaccount.png)
 
 2. In the navigation area, under **Security**, choose **Role Collections**.
 
-    ![Role collections](assign_role01.png)
+    ![Role collections](assign-role01.png)
 
 3. Choose **New Role Collection**.
 
