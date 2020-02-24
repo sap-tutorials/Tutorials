@@ -11,7 +11,7 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
-
+ 
 ## Details
 ### You will learn  
 - How to add UI annotation for detail screen
@@ -159,7 +159,7 @@ Many business configuration objects use text tables for providing translatable a
   1. Right-click on your data definition **`ZCAL_I_HOLIDAY_XXX`** and select **New Data Definition**.
 
       ![table](table.png)
- 
+
   2. Create a data definition:
      - Name: **`ZCAL_I_HOLITXT_XXX `**
      - Description: **`CDS View for Holiday Text Table`**
