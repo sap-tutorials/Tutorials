@@ -11,7 +11,7 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need an SAP Cloud Platform ABAP Environment [trial user](abap-environment-trial-onboarding) or a license.
- 
+
 ## Details
 ### You will learn  
 - How to add UI annotation for detail screen
@@ -128,7 +128,7 @@ You'll learn how to define the annotations for the detail screen. This screen is
 
 [ACCORDION-BEGIN [Step 2: ](Add UI annotation for list screen)]
 
-Now we want to add the column definition. Therefore we need to add the **`@UI.lineItem`** annotation before each column. For each column you can define the position and the label.
+Now we want to add the column definition. Therefore we need to add the  **`@UI.lineItem`** annotation before each column. For each column you can define the position and the label.
 
   1. Open your CDS View **`ZCAL_I_HOLIDAY_XXX`**. Add the **`@UI.lineItem`** annotation for all fields you want to display in the overview/search result table. Finally the annotations will look as following:
 
@@ -264,7 +264,7 @@ Many business configuration objects use text tables for providing translatable a
 [ACCORDION-BEGIN [Step 4: ](Add separate text tables)]
 
   1. Open your root view **`ZCAL_I_HOLIDAY_XXX`**. Add a comma and following code into the corresponding place:
-
+ 
     ```ABAP
     {
             id: 'Translation',
@@ -346,7 +346,7 @@ Many business configuration objects use text tables for providing translatable a
  12. Check your result. Your code should look like this:
 
     ```ABAP
-    @AbapCatalog.sqlViewName: 'ZI_HOLITXT'
+    @AbapCatalog.sqlViewName: 'ZI_HOLITXTXXX'
     @AbapCatalog.compiler.compareFilter: true
     @AbapCatalog.preserveKey: true
     @AccessControl.authorizationCheck: #CHECK

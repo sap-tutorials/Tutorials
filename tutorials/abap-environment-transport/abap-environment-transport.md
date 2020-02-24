@@ -299,7 +299,7 @@ After you have created the global transport class for your business object you c
       APPEND LINES OF update-holidaytext TO all_text_keys.
       APPEND LINES OF delete-holidaytext TO all_text_keys.
 
-      DATA(holiday_transport) = NEW zcl_fcal_holiday_transport( ).
+      DATA(holiday_transport) = NEW zcl_cal_holiday_transport_xxx( )( ).
       holiday_transport->transport(
         EXPORTING
           i_check_mode       = abap_false
@@ -421,13 +421,13 @@ After you have created the global transport class for your business object you c
 
         METHODS create_description
           IMPORTING
-            i_holiday_id  TYPE zfcal_holiday_id
-            i_description TYPE zfcal_description.
+            i_holiday_id  TYPE zcal_holiday_id_xxx
+            i_description TYPE zcal_description_xxx.
 
         METHODS update_description
           IMPORTING
-            i_holiday_id  TYPE zfcal_holiday_id
-            i_description TYPE zfcal_description.
+            i_holiday_id  TYPE zcal_holiday_id_xxx
+            i_description TYPE zcal_description_xxx.
 
     ENDCLASS.
 
@@ -520,7 +520,7 @@ After you have created the global transport class for your business object you c
         APPEND LINES OF update-holidaytext TO all_text_keys.
         APPEND LINES OF delete-holidaytext TO all_text_keys.
 
-        DATA(holiday_transport) = NEW zcl_fcal_holiday_transport( ).
+        DATA(holiday_transport) = NEW zcl_cal_holiday_transport_xxx( )( ).
         holiday_transport->transport(
           EXPORTING
             i_check_mode       = abap_false
@@ -598,7 +598,7 @@ The ABAP RESTful Programming Model supports optimistic locking using entity tags
   5. Open your service binding to start your SAP Fiori Elements preview.
 
      If one entity of the factory calendar is edited from two users at the same time, an error message appears:
-
+ 
       ![lock](lock3.png)
 
 [DONE]
