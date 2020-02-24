@@ -210,7 +210,7 @@ By the end of these steps, your folder structure should look like this:
 ```Bash
 product-list
 ├── approuter
-  ├──ressources
+  ├──resources
     ├── images
       ├── HT-1000.jpg
       ├── HT-1010.jpg
