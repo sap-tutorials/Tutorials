@@ -1,6 +1,6 @@
 ---
-title: Get Started with SAP Customer Order Sourcing Trial
-description: Get familiar with the basics of SAP Customer Order Sourcing and use the trial.
+title: Create personalized Sourcing Strategy with SAP Customer Order Sourcing
+description: Learn how SAP Customer Order Sourcing can help you reduce delivery costs by applying the most efficient sourcing strategy.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, topic>topic>sap-api-business-hub]
