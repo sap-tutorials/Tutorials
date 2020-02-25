@@ -22,7 +22,7 @@ In this tutorial, you will learn the basics of the analytics features on SAP Clo
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Overview of the Analytics Features on Sap Cloud Platform Mobile Services)]
+[ACCORDION-BEGIN [Step 1: ](The analytics features on SAP Cloud Platform Mobile Services)]
 
 Open your SAP Cloud Platform Mobile Services instance on SAP Cloud Platform. On the left-hand side you can see the **Analytics** category in the side panel.
 
@@ -63,7 +63,7 @@ You can even see details to each log by clicking on the entry, this will open th
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Server Data)]
+[ACCORDION-BEGIN [Step 3: ](Server data)]
 If you want to have analytical data about backend access requests, user registrations against your system and other important data of your system you can use the server data capabilities of Mobile Service. You can make easy analytical queries to retrieve the information you need.
 
 ![Server Data](fiori-ios-hcpms-reporting-04.png)
@@ -71,7 +71,7 @@ If you want to have analytical data about backend access requests, user registra
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](User Data)]
+[ACCORDION-BEGIN [Step 4: ](User data)]
 All needed information regarding each and every single user using your app and system will be recorded in the user data section of Mobile Services. Use its analytical data to improve your app and make qualified decisions about the demographics of your user base.
 
 ![Server Data](fiori-ios-hcpms-reporting-05.png)
@@ -79,7 +79,7 @@ All needed information regarding each and every single user using your app and s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](User Feedback)]
+[ACCORDION-BEGIN [Step 5: ](User feedback)]
 Tracking and analyzing feedback of your users is crucial for you to improve your app's user experience. It also gives you the possibility to indirectly interact with your user base.
 
 For more information visit the official documentation [Managing and Monitoring Applications](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/3761042151cc4e8999295dcc561454f2.html)
