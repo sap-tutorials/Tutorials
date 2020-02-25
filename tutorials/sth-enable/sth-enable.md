@@ -40,7 +40,8 @@ In SAP Web IDE, choose **Tools** - **SAP Cloud Platform Cockpit** in the navigat
 
 [ACCORDION-BEGIN [Step 3: ](Open the service catalog)]
 
-In your SAP Cloud Platform trial account choose **Services** in the navigation area on the left.
+In your SAP Cloud Platform trial account, choose **Services** in the navigation area on the left.
+
 
 ![Open service catalog](sth-open-services.png)
 
