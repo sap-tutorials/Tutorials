@@ -5,12 +5,12 @@ auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 20
-author_name: Jitendra Kansal
-author_profile: https://github.com/jitendrakansal
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
-**Install SAP Mobile Cards Application:** Download and install on your [iPhone](https://itunes.apple.com/us/app/sap-content-to-go/id1168110623?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go)
+- **Install SAP Mobile Cards Application:** Download and install on your [iPhone](https://apps.apple.com/us/app/sap-mobile-cards/id1168110623) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go)
 
 ## Details
 ### You will learn

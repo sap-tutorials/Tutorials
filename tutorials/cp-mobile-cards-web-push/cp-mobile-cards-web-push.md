@@ -5,14 +5,14 @@ auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 20
-author_name: Jitendra Kansal
-author_profile: https://github.com/jitendrakansal
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
 - [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account)
 - [Enable SAP Cloud Platform Mobile Services](fiori-ios-hcpms-setup)
-- **Install SAP Mobile Cards Application:** Download and install on your [iPhone](https://itunes.apple.com/us/app/sap-content-to-go/id1168110623?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go)
+- **Install SAP Mobile Cards Application:** Download and install on your [iPhone](https://apps.apple.com/us/app/sap-mobile-cards/id1168110623) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go)
 
 ## Details
 ### You will learn
@@ -36,11 +36,11 @@ The salesperson can do this by sending the selected product from a webpage to th
 
 Make sure you have logged into the SAP Cloud Platform Mobile Services cockpit. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_000.png)
+![SAP Cloud Platform Mobile Services - Opera](img_000.png)
 
 Click the **Create a New Card** icon.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_001.png)
+![SAP Cloud Platform Mobile Services - Opera](img_001.png)
 
 Provide the required information:
 
@@ -54,7 +54,7 @@ Provide the required information:
 
 > If you see a pop-up, click **OK** for the confirmation.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_009.png)
+![SAP Cloud Platform Mobile Services - Opera](img_009.png)
 
 > **Destination** defines the root for the queries that are going to be used for this card.
 
@@ -67,19 +67,19 @@ Click **Save**.
 
 In the SAP Mobile Cards application, click the **+** icon to open the subscriptions.
 
-![Chrome Remote Desktop](Markdown_files/img_032.png)
+![Chrome Remote Desktop](img_032.png)
 
 Click `PushCard` under the **All** tab.
 
-![Chrome Remote Desktop](Markdown_files/img_034.png)
+![Chrome Remote Desktop](img_034.png)
 
 Click **Subscribe** to activate the `PushCard` subscription.
 
-![Chrome Remote Desktop](Markdown_files/img_035.png)
+![Chrome Remote Desktop](img_035.png)
 
 It will show **No Card available** as there is no card yet pushed from the web application.
 
-![Chrome Remote Desktop](Markdown_files/img_036.png)
+![Chrome Remote Desktop](img_036.png)
 
 [DONE]
 [ACCORDION-END]
@@ -92,19 +92,19 @@ Open SAP Web IDE Full-Stack.
 
 Right click on **Workspace** and select **New** > **Folder**.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_014.png)
+![SAP Web IDE Full-Stack - Opera](img_014.png)
 
 Provide a name to the Folder and click **OK**.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_015.png)
+![SAP Web IDE Full-Stack - Opera](img_015.png)
 
 Right click on the folder and select **New** > **File**.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_016.png)
+![SAP Web IDE Full-Stack - Opera](img_016.png)
 
 Name this file to `index.html`.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_017.png)
+![SAP Web IDE Full-Stack - Opera](img_017.png)
 
 Copy and paste the following code.
 
@@ -217,7 +217,7 @@ Copy and paste the following code.
 
 Similarly, create another file and name it to `neo-app.json`.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_018.png)
+![SAP Web IDE Full-Stack - Opera](img_018.png)
 
 Copy and paste the following code to this file:
 
@@ -249,7 +249,7 @@ Copy and paste the following code to this file:
 
 In `index.html` file, scroll down until you see the function `sendPushToMobileCards`.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_019.png)
+![SAP Cloud Platform Mobile Services - Opera](img_019.png)
 
 > `Card GUID` is a placeholder for the Mobile Cards ID. When a new card is created in Mobile Services Cockpit, a unique identifier is assigned to it.
 
@@ -260,11 +260,11 @@ In `index.html` file, scroll down until you see the function `sendPushToMobileCa
 
 Switch back to SAP Cloud Platform Mobile Services Cockpit, go to `PushCard` configuration.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_021.png)
+![SAP Cloud Platform Mobile Services - Opera](img_021.png)
 
 Copy the **ID**.
 
-![SAP Cloud Platform Mobile Services - Opera](Markdown_files/img_022.png)
+![SAP Cloud Platform Mobile Services - Opera](img_022.png)
 
 [DONE]
 [ACCORDION-END]
@@ -273,11 +273,11 @@ Copy the **ID**.
 
 Switch back to SAP Web IDE and paste the ID in place of `<YOUR Card GUID from mobile services>`.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_023.png)
+![SAP Web IDE Full-Stack - Opera](img_023.png)
 
 Click the **Save** icon.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_024.png)
+![SAP Web IDE Full-Stack - Opera](img_024.png)
 
 [DONE]
 [ACCORDION-END]
@@ -286,21 +286,21 @@ Click the **Save** icon.
 
 Click on run icon to run the web application.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_025.png)
+![SAP Web IDE Full-Stack - Opera](img_025.png)
 
 >If you see **Disable pop-up blocker**, click the right-most icon in the address bar and select the **Always allow** option, and click **Done**.
 
 >If you still see nothing happening, close the blocker pop-up and re-run the app by clicking the run icon.
 
-![SAP Web IDE Full-Stack - Opera](Markdown_files/img_028.png)
+![SAP Web IDE Full-Stack - Opera](img_028.png)
 
 Click on mobile icon next to the available products.
 
-![products 4 SAP Mobile Cards - Opera](Markdown_files/img_029.png)
+![products 4 SAP Mobile Cards - Opera](img_029.png)
 
 Once the card has been added, you will see a success message.
 
-![products 4 SAP Mobile Cards - Opera](Markdown_files/img_030.png)
+![products 4 SAP Mobile Cards - Opera](img_030.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -309,7 +309,7 @@ Once the card has been added, you will see a success message.
 
 In the SAP Mobile Cards application, you will see a new card that has been shared from the web application.
 
-![Chrome Remote Desktop](Markdown_files/img_033.png)
+![Chrome Remote Desktop](img_033.png)
 
 [DONE]
 [ACCORDION-END]
