@@ -29,7 +29,8 @@ In SAP Cloud Platform cockpit, choose the "Launch SAP Web IDE" button.
 
 [ACCORDION-BEGIN [Step 2: ](Open SAP Cloud Platform cockpit)]
 
-In Web IDE choose **Tools** - **SAP Cloud Platform Cockpit** in the navigation area.
+In SAP Web IDE, choose **Tools** - **SAP Cloud Platform Cockpit** in the navigation area.
+
 
 ![Open cockpit](sth-webide-open-cockpit.png)
 
