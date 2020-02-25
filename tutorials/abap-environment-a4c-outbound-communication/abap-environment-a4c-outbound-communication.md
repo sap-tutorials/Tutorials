@@ -21,7 +21,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 
 **Mission Scenario**:
 
-You want to get data that is only available in a remote instance of SAP Cloud Platform, ABAP Environment ( **provisioning system** ) and display it in a second instance ( **client system** )
+You want to get data that is only available in a remote instance of SAP Cloud Platform, ABAP Environment ( **provisioning system** ) and display it in a second instance ( **client system** ).
 
 You need to:
 
@@ -42,9 +42,7 @@ The communication scenario `SAP_COM_0276` is predefined by SAP. It allow you to,
 
 A communication arrangement specifies the metadata for a specific communication scenario, such as your host system and the authentication method. This metadata is contained in a service key.  You can then define one or more specific destinations for this arrangement.
 
-For more information, see:
-
-- [SAP Help Portal: Creating a Communication Arrangement](https://help.sap.com/viewer/a96b1df8525f41f79484717368e30626/Cloud/en-US/7c1b45781c6f4d9ca23177b61805d179.html)
+For more information, see: [SAP Help Portal: Creating a Communication Arrangement](https://help.sap.com/viewer/a96b1df8525f41f79484717368e30626/Cloud/en-US/7c1b45781c6f4d9ca23177b61805d179.html)
 
 [DONE]
 [ACCORDION-END]
@@ -157,7 +155,9 @@ A communication arrangement is created, along with an identically-named communic
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add service instance name)]
-Still in the **Communication Arrangement**, in the **Additional Properties** panel, replace the default value **`OUTBOUND_XXX`** of the property **Service Instance Name**, with another value, `Outbound-For-Tutorials_XXX`.  (To avoid confusion, make the Communication Arrangement name and the service instance name different).
+Still in the **Communication Arrangement**, in the **Additional Properties** panel, replace the default value **`OUTBOUND_XXX`** of the property **Service Instance Name**, with another value, `Outbound-For-Tutorials_XXX`.  
+
+>To avoid confusion, make the Communication Arrangement name and the service instance name different.
 
 [DONE]
 [ACCORDION-END]

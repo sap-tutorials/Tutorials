@@ -1,6 +1,6 @@
 ---
 title: Create Inbound Communication Objects for an OData Service
-description: Create an Inbound Communication Scenario, Arrangement, System, and User in the provisioning system of SAP Cloud Platform, ABAP Environment.
+description: Create an inbound communication scenario, arrangement, system, and user in the provisioning system of SAP Cloud Platform, ABAP Environment.
 auto_validation: true
 time: 45
 tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license]
@@ -14,8 +14,8 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ## Details
 ### You will learn
   - How to expose an OData service for external consumption, using a **Service Binding**
-  - How to make the provisioning system available for connection from other ABAP systems, by defining the necessary inbound communication artefacts. The service can then be consumed from your second SAP Cloud Platform, ABAP Environment instance
-  - Optional: How to test your service URL in Postman
+  - How to make the provisioning system available for connection from other ABAP systems
+  - How to test your service URL in Postman (optional)
 
   This involves some overhead for one consumer; however, the advantage is that you can add several consumer systems, or users (for example, with different authentication) pointing to the same HTTP service, wrapped in the same Communication Scenario.
 

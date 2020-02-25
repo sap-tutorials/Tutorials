@@ -20,7 +20,7 @@ Therefore, this tutorial will only cover in detail those aspects that are differ
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a class that implements the data retrieval logic)]
+[ACCORDION-BEGIN [Step 1: ](Create class implementing data retrieval logic)]
 First, you create the class that implements the data retrieval logic.
 
 1. In ADT, open your package **`Z_A4C_TO_A4C_XX2`** and choose **New > Class**.
@@ -35,8 +35,10 @@ First, you create the class that implements the data retrieval logic.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add the interfaces statement)]
-The signature of the method `IF_RAP_QUERY_PROVIDER~SELECT` contains the import parameter `io_request`. This parameter represents the OData query options that are delegated from the UI and used as input for the SELECT method. Whenever the OData client requests data, the query implementation class must return the data that matches the request, or throw an exception if the request cannot be fulfilled.
+[ACCORDION-BEGIN [Step 2: ](Add INTERFACES statement)]
+The signature of the method `IF_RAP_QUERY_PROVIDER~SELECT` contains the import parameter `io_request`. This parameter represents the OData query options that are delegated from the UI and used as input for the SELECT method.
+
+Whenever the OData client requests data, the query implementation class must return the data that matches the request, or throw an exception if the request cannot be fulfilled.
 
 1. Implement the interface by adding this statement to the public section:
 
@@ -52,7 +54,7 @@ Later, you will implement the SELECT method of the interface.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Specify the class in your custom entity)]
+[ACCORDION-BEGIN [Step 3: ](Specify class in your custom entity)]
 
 1. Open your CDS custom entity **`ZCE_TRAVEL_DATA_XXX`**, created in [Create a Service Consumption Model](abap-environment-create-service-model).
 
@@ -61,7 +63,6 @@ Later, you will implement the SELECT method of the interface.
     ```CDS
 
     @ObjectModel.query.implementedBy: 'ABAP:ZCL_TRAVELS_XXX'
-
     ```
 
 [DONE]
@@ -71,56 +72,56 @@ Later, you will implement the SELECT method of the interface.
 [ACCORDION-BEGIN [Step 4: ](Copy code)]
 Copy the following code into your query implementation class, **`ZCL_TRAVELS_XXX`**. Ignore the warnings.
 
-    ```ABAP
-    CLASS zcl_travels_xxx DEFINITION
-      PUBLIC
-      FINAL
-      CREATE PUBLIC .
+```ABAP
+CLASS zcl_travels_xxx DEFINITION
+  PUBLIC
+  FINAL
+  CREATE PUBLIC .
 
-      PUBLIC SECTION.
-          INTERFACES if_rap_query_provider.
-      PROTECTED SECTION.
-      PRIVATE SECTION.
-    ENDCLASS.
+  PUBLIC SECTION.
+      INTERFACES if_rap_query_provider.
+  PROTECTED SECTION.
+  PRIVATE SECTION.
+ENDCLASS.
 
-    CLASS zcl_travels_xxx IMPLEMENTATION.
-      METHOD if_rap_query_provider~select.
-              """Instantiate Client Proxy
-            DATA(lo_client_proxy) = zcl_proxy_travels_xxx=>get_client_proxy( ).
+CLASS zcl_travels_xxx IMPLEMENTATION.
+  METHOD if_rap_query_provider~select.
+          """Instantiate Client Proxy
+        DATA(lo_client_proxy) = zcl_proxy_travels_xxx=>get_client_proxy( ).
 
-          DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
+      DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
 
-          TRY.
-              """Create Read Request
-              CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
-                RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
-                  EXPORTING
-                    textid   = ZCX_TRAVELS_CONS_XXX=>query_fail
-                    previous = lx_gateway.
-        ENDTRY.
+      TRY.
+          """Create Read Request
+          CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
+            RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
+              EXPORTING
+                textid   = ZCX_TRAVELS_CONS_XXX=>query_fail
+                previous = lx_gateway.
+    ENDTRY.
 
-            """Request Count
-            IF io_request->is_total_numb_of_rec_requested( ).
-              lo_read_request->request_count( ).
-            ENDIF.
+        """Request Count
+        IF io_request->is_total_numb_of_rec_requested( ).
+          lo_read_request->request_count( ).
+        ENDIF.
 
-            """Request Paging
-            DATA(ls_paging) = io_request->get_paging( ).
-              IF ls_paging->get_offset( ) >= 0.
-                lo_read_request->set_skip( ls_paging->get_offset( ) ).
-              ENDIF.
+        """Request Paging
+        DATA(ls_paging) = io_request->get_paging( ).
+          IF ls_paging->get_offset( ) >= 0.
+            lo_read_request->set_skip( ls_paging->get_offset( ) ).
+          ENDIF.
 
-            IF ls_paging->get_page_size( ) <> if_rap_query_paging=>page_size_unlimited.
-                lo_read_request->set_top( ls_paging->get_page_size( ) ).
+        IF ls_paging->get_page_size( ) <> if_rap_query_paging=>page_size_unlimited.
+            lo_read_request->set_top( ls_paging->get_page_size( ) ).
 
-                """Execute the Request
-                DATA(lo_response) = lo_read_request->execute( ).
-            ENDIF.            
-      ENDMETHOD.
+            """Execute the Request
+            DATA(lo_response) = lo_read_request->execute( ).
+        ENDIF.            
+  ENDMETHOD.
 
-    ENDCLASS.
+ENDCLASS.
 
-    ```
+```
 
 [DONE]
 [ACCORDION-END]
@@ -380,7 +381,7 @@ define custom entity ZCE_TRAVEL_DATA_PMD
 
 
 ```
-The Fiori Elements preview should now open looking like this.
+The SAP Fiori elements preview should now open looking like this.
 
 !![step9-fiori-improved](step9-fiori-improved.png)
 
@@ -395,8 +396,10 @@ The Fiori Elements preview should now open looking like this.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 11: ](Optional: Test message class)]
-You can test your message class, for example by commenting out the value `i_service_instance_name` in the class `zcl_proxy_travels_xx2` and changing it to a non-existent value. When you run the application, by choosing **Go** in the Fiori Elements preview, then you should get an error message like this:
+[ACCORDION-BEGIN [Step 11: ](Test message class (optional))]
+You can test your message class, for example by commenting out the value `i_service_instance_name` in the class `zcl_proxy_travels_xx2` and changing it to a non-existent value.
+
+When you run the application, by choosing **Go** in the Fiori Elements preview, then you should get an error message like this:
 
 !![step11-error](step11-error.png)
 
@@ -417,7 +420,7 @@ If you are having problems, you can trace the flow of your application in ABAP D
 [DONE]
 [ACCORDION-END]
 
-## More Information
+### More Information
 
 - [Inspect Your Class in the ABAP Debugger](abap-environment-custom-entity-debug)
 

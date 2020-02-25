@@ -17,8 +17,8 @@ primary_tag: products>sap-cloud-platform--abap-environment
 
   This tutorial is based on:
 
-  - [SAP Help Portal: Preparing Access to the Remote OData Service](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/59a91c95137e4c42946d50b25dba3fd7.html#)
-  - [SAP Help Portal: Creating a Service Consumption Model](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/96132822b3554016b653d3601bb9ff1a.html)
+  - SAP Help Portal: [Preparing Access to the Remote OData Service](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/59a91c95137e4c42946d50b25dba3fd7.html#)
+  - SAP Help Portal: [SAP Help Portal: Creating a Service Consumption Model](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/96132822b3554016b653d3601bb9ff1a.html)
 
 ---
 
@@ -194,7 +194,7 @@ Since you are implementing the query manually, you need to use a custom entity a
 
 5. Remove the parameters statement and paste in the code below, between the curly brackets. Afterwards, your custom entity should now look as follows. Make sure the types of the fields match those in the abstract entity.
 
-> Custom entities do not come with a select on the data source. Therefore, you will later implement the data retrieval logic in a new ABAP class, referenced in an entity annotation.
+    > Custom entities do not come with a select on the data source. Therefore, you will later implement the data retrieval logic in a new ABAP class, referenced in an entity annotation.
 
 
     ```ABAP

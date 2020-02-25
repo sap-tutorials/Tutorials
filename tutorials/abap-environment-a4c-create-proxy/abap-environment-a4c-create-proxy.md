@@ -15,12 +15,11 @@ primary_tag: products>sap-cloud-platform--abap-environment
 
 To retrieve data from a remote service, you must:
 
-  1. connect to the provisioning system
-  2. instantiate a proxy in the client system that passes an OData request to the remote service
+1. Connect to the provisioning system
 
-This tutorial is based on:
+2. Instantiate a proxy in the client system that passes an OData request to the remote service
 
-  - [SAP Help Portal: Creating a Remote Client Proxy](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/08603b70390a411cb984f8a8107a7525.html).
+This tutorial is based on: [Creating a Remote Client Proxy](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/08603b70390a411cb984f8a8107a7525.html).
 
 Therefore, this tutorial will only cover in detail those aspects that are different - in particular, handling exceptions.
 
@@ -254,14 +253,14 @@ Define these using a code template:
 
 [ACCORDION-BEGIN [Step 8: ](Handle exceptions)]
 1. Add a **`RAISING`** clause to the method **`get_client_proxy`**, pointing to your exception class.
-The addition RAISING is used to declare one or more class-based exceptions that can be propagated from the method to the caller.
+
+    The addition RAISING is used to declare one or more class-based exceptions that can be propagated from the method to the caller.
 
     ```ABAP
     CLASS-METHODS
     get_client_proxy
       RETURNING VALUE(ro_client_proxy) TYPE REF TO /iwbep/if_cp_client_proxy
       RAISING /dmo/cx_travel_service_003.
-
     ```
 
 2. Replace the first two CATCH statements with the following code.
@@ -269,10 +268,8 @@ The addition RAISING is used to declare one or more class-based exceptions that 
     That is, replace:
 
     ```ABAP
-
     CATCH cx_http_dest_provider_error INTO DATA(lx_http_dest_provider_error).             
     CATCH cx_web_http_client_error INTO DATA(lx_web_http_client_error).
-
     ```
 
     with:
@@ -291,7 +288,6 @@ The addition RAISING is used to declare one or more class-based exceptions that 
               EXPORTING
         textid   = /dmo/cx_travel_service_003=>http_client_fail
         previous = lx_web_http_client_error.
-
     ```
 
 3. Similarly, replace:
@@ -300,8 +296,8 @@ The addition RAISING is used to declare one or more class-based exceptions that 
     CATCH cx_web_http_client_error INTO DATA(lx_http_client_error).    
     CATCH /iwbep/cx_cp_remote INTO DATA(lx_cp_remote).
     CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
-
     ```
+
     with:
 
     ```ABAP
@@ -324,7 +320,6 @@ The addition RAISING is used to declare one or more class-based exceptions that 
             EXPORTING
       textid   = /dmo/cx_travel_service_003=>gateway_fail
       previous = lx_gateway.    
-
     ```
 
 
@@ -537,9 +532,11 @@ Create a `CONSTANT` structure named **`agency_unkown`** for an exception class, 
 [VALIDATE_1]
 [ACCORDION-END]
 
-##More Information
+### More Information
 For more information on ABAP class-based exceptions, see:
+
 - [ABAP Keyword Documentation > METHODS > General Instance Methods > 4...RAISING...](https://help.sap.com/doc/abapdocu_753_index_htm/7.53/en-US/index.htm?file=abapmethods.htm)
+
 - [ABAP Keyword Documentation > ABAP Subject Directory > Search > Class-Based Exceptions, Subject](https://help.sap.com/doc/abapdocu_753_index_htm/7.53/en-US/index.htm?file=abenexceptions.htm)
 
 ---
