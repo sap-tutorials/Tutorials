@@ -53,7 +53,7 @@ primary_tag: products>sap-api-management
 
     ![Test Connection](06-test-connection.png)
 
-    >If successful, the response code is **200**.
+    >If successful, the response code is **200** and you might see 404 error. Do not get confuse with it. Your system is up and running, you can proceed.
 
 [DONE]
 [ACCORDION-END]
