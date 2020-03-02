@@ -1,5 +1,5 @@
 ---
-title: Extensibility, Type-safe Expand, and Dependency Injection with the Virtual Data Model for OData
+title: Extensibility, Type-Safe Expand, and Dependency Injection with the Virtual Data Model for OData
 description: The following tutorial will introduce you to the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
 auto_validation: true
 time: 30
@@ -13,17 +13,17 @@ primary_tag: topic>java
 
 ## Details
 ### You will learn
-  - How you can use custom field extensions from S/4HANA within the virtual data model for OData.
-  - How you can join connected entities from the virtual data model in eager fashion.
-  - How to leverage dependency injection to decouple your client code better from the SDK-provided classes.
+  - How to use custom field extensions from S/4HANA within the virtual data model for OData
+  - How to join connected entities from the virtual data model in eager fashion
+  - How to leverage dependency injection to decouple your client code better from the SDK-provided classes
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Getting ready)]
+[ACCORDION-BEGIN [Step 1: ](Get ready)]
 
-To successfully go through this tutorial, you will use the following `GetBusinessPartnerCommand` for all three features to the business partner API. The call itself requests the first and last name from all business partners which are customers.
+To successfully go through this tutorial, you will use the following `GetBusinessPartnerCommand` for all three features to the business partner API. The call itself requests the first and last name from all business partners who are customers.
 
-The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -75,7 +75,7 @@ public class GetBusinessPartnersCommand {
 
 You will be also using the following simple Servlet that consumes our `GetBusinessPartnerCommand`.
 
-The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -131,7 +131,7 @@ If you have a similar result, you are ready to proceed with this tutorial.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 2: ](Custom Field Extensibility)]
+[ACCORDION-BEGIN [Step 2: ](Custom field extensibility)]
 
 #### What is custom field extensibility?
 Oftentimes, businesses require to enhance the standard data model of the SAP S/4HANA system. Using tools of the so-called In-App Extensibility concept, key users are able to introduce additional fields to certain data structures. As an application provider, this mechanism can be also used to introduce new data fields which are relevant to your application extension.
@@ -139,13 +139,13 @@ Oftentimes, businesses require to enhance the standard data model of the SAP S/4
 Either way, you want to be able to consume and work with such custom fields in our application code.
 
 #### How-to
-In the example, the business partner data model has been enhanced with two custom fields to record by whom the business partner was originally proposed (field: `YY1_ProposedBy_bus`) and if the business partner was approved after proposal (field: `YY1_ApprovedBy_bus`).This modification is done by the so-called In-App extensibility capability of `SAP S/4HANA` which you can use based on your Fiori Launchpad with an authorized user.
+In the example, the business partner data model has been enhanced with two custom fields to record by whom the business partner was originally proposed (field: `YY1_ProposedBy_bus`) and if the business partner was approved after proposal (field: `YY1_ApprovedBy_bus`). This modification is done by the so-called In-App extensibility capability of `SAP S/4HANA` which you can use based on your Fiori Launchpad with an authorized user.
 
 Based on this extension you can check which business partners have to be approved and if they are, you consider them as valid business partners.
 
 Based on these two extended fields, you can now use these two additional fields as part of our projection criteria. As you are only interested in extension fields from the business partner, the API only accepts extension fields typed under `BusinessPartnerField`.
 
-The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -200,7 +200,7 @@ public class GetBusinessPartnersCommand {
 The only two lines added to the initial example are:
 
 - `new BusinessPartnerField<String>("YY1_ApprovedBy_bus")`
-- `new BusinessPartnerField<String>("YY1_ProposedBy_bus"))`
+- `new BusinessPartnerField<String>("YY1_ProposedBy_bus")`
 
 After deploying this again, you can now see that custom fields are correctly served:
 
@@ -221,7 +221,7 @@ In order to expose the clients of the application in a nicer representation, you
 
 Here you map only some fields of the business partner entity into better readable names.
 
-The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -249,7 +249,7 @@ public class MyBusinessPartner extends BusinessPartner {
 ```
 In our servlet, you need to adapt the logic a bit to wrap and unwrap the original business partner into our own business partner entity.
 
-The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -304,14 +304,14 @@ As a result, you can now expose our new `MyBusinessPartner` entity via our initi
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Type-safe and Eager Expand)]
+[ACCORDION-BEGIN [Step 3: ](Type-safe and eager expand)]
 
 #### What is type-safe and eager expand?
 So far, you have been working with the `BusinessPartner` entity only. However, this is merely the root entity of a more complex data model. For example, each `BusinessPartner` can be associated with zero-to-many `BusinessPartnerAddresses` which again can be associated with zero-to-many `BusinessPartnerEMailAddresses`. Another popular association in an ERP context are header-item relationships such as an invoice header and invoice line items.
 
 !![Tree](screenshot66.png)
 
-One possibility is to consider a lazy fetch of connected entities only using the `fetchXY()` methods that every instance exposes. In case of our business partner we could fetch the associated addresses with the following line of code:
+One possibility is to consider a lazy fetch of connected entities only using the `fetchXY()` methods that every instance exposes. In case of your business partner you could fetch the associated addresses with the following line of code:
 
 ```Java
 List<BusinessPartnerAddress> addresses = businessPartner.fetchBusinessPartnerAddress();
@@ -326,7 +326,7 @@ In such cases, you rather prefer to resolve the association already eagerly upon
 #### How-to
 In the example below, you present an example that expands for every business partner its corresponding list of addressed, followed by a partial projection on the `City` and `Country` properties of the associated `BusinessPartnerAddress` entity, followed by another expand to the `AddressEMailAddress` entity where you project on the `EMail_Address` property only.
 
-The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -417,7 +417,7 @@ This method returns an Optional of the return type signifying that the connected
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Dependency Injection)]
+[ACCORDION-BEGIN [Step 4: ](Dependency injection)]
 
 #### What is dependency injection?
 With SAP Cloud SDK version 3.11.0, it has also introduced the possibility to use dependency injection with the virtual data model for OData and BAPI. In a nutshell, dependency injection is a major object-oriented inversion of control principle that allows to decouple the call direction from the initialization direction. This leads to less coupled dependencies which are easier to maintain, for example, if a dependency changes, the client does not need to be touched.
@@ -434,7 +434,7 @@ This unnecessarily exposes implementation details to the client code. Instead, i
 
 To do this, you can rewrite our initial servlet with the `@Inject` annotation like this
 
-The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -494,7 +494,7 @@ When writing integration tests as learned in previous tutorials and you require 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test Yourself)]
+[ACCORDION-BEGIN [Step 5: ](Test yourself)]
 
 In this tutorial, you learned how to leverage the latest capabilities of the Virtual Data Model for `OData` using the `SAP Cloud SDK`. This includes using custom fields from `SAP S/4HANA` within your logic, leveraging type-safe expand for GET requests and relying on dependency injection to supply the service implementations. This gives you even greater capabilities and lets you integrate with `SAP S/4HANA` even faster and easier.
 
