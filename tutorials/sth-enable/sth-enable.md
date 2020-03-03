@@ -16,9 +16,10 @@ time: 5
 
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Choose the tile for the Neo environment)]
+[ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
 
-In the SAP Cloud Platform cockpit, choose the tile for a trial account in the Neo environment.
+SAP Translation Hub is currently only available on Neo Trial landscape and not on SAP Cloud Foundry. You have to choose a workaround to access SAP Translation Hub in your Trial environment. Please open your Trial instance: `https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial`
+In SAP Cloud Platform cockpit, choose the "Launch SAP Web IDE" button.
 
 ![Access trial account in Neo environment](sth-open-scp-cockpit.png)
 
@@ -26,9 +27,21 @@ In the SAP Cloud Platform cockpit, choose the tile for a trial account in the Ne
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the service catalog)]
+[ACCORDION-BEGIN [Step 2: ](Open SAP Cloud Platform cockpit)]
 
-Choose **Services** in the navigation area on the left.
+In SAP Web IDE, choose **Tools** - **SAP Cloud Platform Cockpit** in the navigation area.
+
+
+![Open cockpit](sth-webide-open-cockpit.png)
+
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Open the service catalog)]
+
+In your SAP Cloud Platform trial account, choose **Services** in the navigation area on the left.
+
 
 ![Open service catalog](sth-open-services.png)
 
@@ -36,7 +49,7 @@ Choose **Services** in the navigation area on the left.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Locate the SAP Translation Hub service)]
+[ACCORDION-BEGIN [Step 4: ](Locate the SAP Translation Hub service)]
 
 Search for the SAP Translation Hub service by entering **`transl`**, and then choose the **SAP Translation Hub** tile.
 
@@ -46,7 +59,7 @@ Search for the SAP Translation Hub service by entering **`transl`**, and then ch
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enable the service)]
+[ACCORDION-BEGIN [Step 5: ](Enable the service)]
 
 Choose **Enable**.
 
@@ -56,7 +69,7 @@ Choose **Enable**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Verify that the service is enabled)]
+[ACCORDION-BEGIN [Step 6: ](Verify that the service is enabled)]
 
 After you enable the service, the **Enabled** status is green and the link to the SAP Translation Hub UI in the **Take Action** section is active:
 

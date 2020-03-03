@@ -97,6 +97,22 @@ function checkDoneValidate(lines, lineNumber) {
   return result;
 }
 
+function checkBackticks(lines, lineNumber) {
+  const line = lines[lineNumber];
+  const result = [];
+  const trimmedLine = line.trim();
+  const backticks = '```';
+
+  if (trimmedLine.includes(backticks) && !trimmedLine.startsWith(backticks)) {
+    result.push({
+      line: lineNumber + 1,
+      msg: 'Code block tag (```) must be on its own line',
+    });
+  }
+
+  return result;
+}
+
 function check(lines, lineNumber) {
   const balancedCheckResult = checkBalanced(lines[lineNumber], lineNumber);
   const doneValidateCheckResult = checkDoneValidate(lines, lineNumber);
@@ -108,4 +124,5 @@ function check(lines, lineNumber) {
 
 module.exports = {
   check,
+  checkBackticks,
 };
