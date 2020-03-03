@@ -1,5 +1,5 @@
 ---
-title: Inspect Your Class in the ABAP Debugger
+title: Inspect Your Class in the ABAP Debugger and Feed Reader
 description: Work with ABAP classes in the ABAP Debugger in (ADT) for both a console application and SAP Fiori application.
 auto_validation: true
 time: 20
