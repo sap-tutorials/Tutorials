@@ -10,11 +10,26 @@ author_profile: https://github.com/raz-korn
 ---
 
 ## Prerequisites
- - You have access to SAP Business Application Studio.
- - A destination to ES5 is configured in the subaccount from which you accessed the SAP Business Application Studio.
- - A UAA service instance is available in the space to which you will logon.
- - A Destination service instance is available in the space to which you will logon.
- - For the deployment step, additional pre-requisites apply. You need to have the following available in the space to which you will logon:
+ - You have access to SAP Business Application Studio. See [Getting Started](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/19611ddbe82f4bf2b493283e0ed602e5.html)
+ - A destination to ES5 is configured in the subaccount from which you accessed the SAP Business Application Studio. See
+    - [Create an Account on the Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
+    - [Create a Destination within the Cloud Foundry Environment](https://developers.sap.com/tutorials/cp-cf-create-destination.html)
+    - Set the ES5 destination properties as follows
+        - Common properties
+            - Name: **ES5**
+            - Type: **HTTP**
+            - Description: **ES5**
+            - URL: **`https://sapes5.sapdevcenter.com:443`**
+            - Proxy Type: **Internet**
+            - Authentication: **`NoAuthentication`**
+        - Additional Properties: 
+            - HTML5.DynamicDestination: **true**
+            - sap-client: **002**
+            - `WebIDEEnabled`: **true**
+            - `WebIDESystem`: **ES5**
+            - `WebIDEUsage`: **`odata_abap`**
+ - Make sure that a UAA service instance and a Destination service instance are available in the space to which you will logon. If not, you need to create them (See [Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html))
+ - For the deployment step, additional pre-requisites apply. You need to have the following available in the space to which you will logon (See [Add a New Entitlement to Your Subaccount](https://developers.sap.com/tutorials/cp-cf-entitlements-add.html)):
     - Application Runtime: 1GB free
     - Destination: 1 free
     - HTML5 Applications: 1 free
