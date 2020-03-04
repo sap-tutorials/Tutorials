@@ -12,24 +12,24 @@ author_profile: https://github.com/raz-korn
 ## Prerequisites
  - You have access to SAP Business Application Studio. See [Getting Started](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/19611ddbe82f4bf2b493283e0ed602e5.html)
  - A destination to ES5 is configured in the subaccount from which you accessed the SAP Business Application Studio. See
-    - [Create an Account on the Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html)
-    - [Create a Destination within the Cloud Foundry Environment](https://developers.sap.com/tutorials/cp-cf-create-destination.html)
-    - Set the ES5 destination properties as follows
-        - Common properties
-            - Name: **ES5**
-            - Type: **HTTP**
-            - Description: **ES5**
-            - URL: **`https://sapes5.sapdevcenter.com:443`**
-            - Proxy Type: **Internet**
-            - Authentication: **`NoAuthentication`**
-        - Additional Properties: 
-            - HTML5.DynamicDestination: **true**
-            - sap-client: **002**
-            - `WebIDEEnabled`: **true**
-            - `WebIDESystem`: **ES5**
-            - `WebIDEUsage`: **`odata_abap`**
+    - [Create an Account on the Gateway Demo System](gateway-demo-signup)
+    - [Create a Destination within the Cloud Foundry Environment](cp-cf-create-destination)
+        - Set the ES5 destination properties as follows
+            - Common properties
+                - Name: **ES5**
+                - Type: **HTTP**
+                - Description: **ES5**
+                - URL: **`https://sapes5.sapdevcenter.com:443`**
+                - Proxy Type: **Internet**
+                - Authentication: **`NoAuthentication`**
+            - Additional Properties:
+                - HTML5.DynamicDestination: **true**
+                - sap-client: **002**
+                - `WebIDEEnabled`: **true**
+                - `WebIDESystem`: **ES5**
+                - `WebIDEUsage`: **`odata_abap`**
  - Make sure that a UAA service instance and a Destination service instance are available in the space to which you will logon. If not, you need to create them (See [Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html))
- - For the deployment step, additional pre-requisites apply. You need to have the following available in the space to which you will logon (See [Add a New Entitlement to Your Subaccount](https://developers.sap.com/tutorials/cp-cf-entitlements-add.html)):
+ - For the deployment step, additional pre-requisites apply. You need to have the following available in the space to which you will logon (See [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add)):
     - Application Runtime: 1GB free
     - Destination: 1 free
     - HTML5 Applications: 1 free
@@ -89,17 +89,20 @@ author_profile: https://github.com/raz-korn
     &nbsp;
     ![Select projects](AppStudio Open Workspace-2.jpg)
 
-3. Go to **Terminal > New Terminal** to open a command-line window within SAP Business Application Studio and change the directory to the `projects` directory:
-
-    ```Shell/console
-    cd ~/projects
-    ```
+3. Go to **Terminal > New Terminal** to open a command-line window within SAP Business Application Studio in the `projects` folder.
 
     >You can check that you're in the `projects` folder using the `pwd` command.
 
     ```Shell/console
     pwd
     ```
+
+    >If needed change folder to the `projects` folder using the `cd` command.
+
+    ```Shell/console
+    cd ~/projects
+    ```
+
     ![Open new terminal](AppStudio Open Terminal-1_.jpg)
 
 4. Create a new SAP Fiori project using the Yeoman generator.
@@ -264,15 +267,23 @@ Run your new application to test it.
 
     ![Create new run configuration](AppStudio Run Configurations-3_.jpg)
 
+3. Select **`webapp`**.
+
+    ![Create new run configuration](AppStudio Run Configurations-3.2_.jpg)
+
+4. Select **`index.html`**.
+
+    ![Create new run configuration](AppStudio Run Configurations-3.3_.jpg)
+
     >A new run configuration is generated for the `FioriDemo` project.
 
-3. Expand the run configuration to display the services that can be bound.
+5. Expand the run configuration to display the services that can be bound.
 
     ![Bindable objects](AppStudio Run Configurations-4_.jpg)
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-4. To bind to the test UAA service instance in your space, click the `bind` icon to the right of the UAA service resource and select an instance from the list.
+6. To bind to the test UAA service instance in your space, click the `bind` icon to the right of the UAA service resource and select an instance from the list.
 
     ![Bind to UAA service](AppStudio Run Configurations-5_.jpg)
 
@@ -284,15 +295,15 @@ Run your new application to test it.
 
     ![UAA service instance bound](AppStudio Run Configurations-9_.jpg)
 
-5. Repeat the above step to bind the app to the test destination service instance in your space.
+7. Repeat the above step to bind the app to the test destination service instance in your space.
 
     ![Destination service is bound](AppStudio Run Configurations-13_.jpg)
 
-6. Hover over the run configuration and click the Run Module icon. Wait for the notification `A service is listening to port 6004`. and click the button to launch the app in a new tab.
+8. Hover over the run configuration and click the Run Module icon. Wait for the notification `A service is listening to port 6004`. and click the button to launch the app in a new tab.
 
     ![Running the app locally](AppStudio Run Configurations-14_.jpg)
 
-7. If you are running the app for the first time, the button in the notification will say `Expose and Open`. Otherwise it will say `Open in New Tab`. Click the button.
+9. If you are running the app for the first time, the button in the notification will say `Expose and Open`. Otherwise it will say `Open in New Tab`. Click the button.
 
     ![App is running locally](AppStudio Run Configurations-15_.jpg)
 
