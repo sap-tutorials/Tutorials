@@ -1,14 +1,14 @@
 ---
 auto_validation: true
 title: Create Branches with SAP Cloud Platform ABAP Environment
-description: Use branches to switch between different versions of code with SAP Cloud Platform ABAP environment.
+description: Create your own branch with SAP Cloud Platform, ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 20
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform ABAP Environment user
+  - SAP Cloud Platform, ABAP environment user
   - ADT version 2.96 or higher
   - Administrator role assigned to user
 
@@ -69,7 +69,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
     ![Pull software component](pull3.png)
 
- 
+
 [DONE]
 [ACCORDION-END]
 
