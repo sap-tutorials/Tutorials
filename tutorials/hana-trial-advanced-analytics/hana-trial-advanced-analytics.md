@@ -73,7 +73,7 @@ If you haven't already, you will be prompted to validate your account using a ph
 
 After completing the validation, click **Log On** again and choose **US East (VA)** and **Create Account**.
 
-![Validation](2.png)
+![Validation](02_200117.jpg)
 
 > ### Already have an account in another data center?
 > To transfer your trial entitlements to the new subaccount in `US East (VA)`, refer to the [instructions in this blog post](https://blogs.sap.com/2019/04/16/how-to-change-the-region-in-your-cloud-foundry-trial/).
@@ -96,7 +96,7 @@ Once SAP Web IDE opens, access the **Preferences**.
 
 ![SAP Web IDE](5.png)
 
-Click **Extensions** and enable **SAP HANA Database Development Tools**
+Click **Extensions** and enable **SAP HANA Database Development Tools**, if not enabled.
 
 ![SAP Web IDE](6.png)
 
@@ -108,7 +108,7 @@ After SAP Web IDE has refreshed, Click **Cloud Foundry** in **Preferences**.
 
 ![SAP Web IDE](8.png)
 
-Choose `US10` as the **API Endpoint**.
+Choose `US10` as the **API Endpoint**, if not selected by default.
 
 ![SAP Web IDE](9.png)
 

@@ -9,7 +9,7 @@ primary_tag: products>sap-cloud-platform
 
 ## Prerequisites
  - You must have registered for a trial account on SAP Cloud Platform.
- Get it on the [SAP Cloud Platform website](https://cloudplatform.sap.com/index.html).
+[Sign up](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for a free trial.
 
 ## Details
 ### You will learn

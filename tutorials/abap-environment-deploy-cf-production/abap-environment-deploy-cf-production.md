@@ -110,7 +110,7 @@ time: 15
 
       ![open web ide](instance.png)
 
-[DONE]
+[DONE] 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create HTML5 module)]
@@ -126,6 +126,7 @@ time: 15
   3. Provide following information:
      - Module Name: **`TRAVEL_APP_XXX`**
      - Title: **`TRAVEL_APP_XXX`**
+     - Namespace: **`namespace_xxx`**
 
      Click **Next**.
 

@@ -276,7 +276,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
   2.  Create your **service binding:**
      - Name: **`Z_I_ROOM_BND_XXX`**
      - Description: **`Room`**
-     - Binding Type: **`ODATA V2(UI - User Interface: Consumed In SAPUI5 Apps)`**
+     - Binding Type: **`ODATA V2`**
      - Service Definition: **`Z_I_ROOM_SRV_XXX`**
 
      Click **Next>**.

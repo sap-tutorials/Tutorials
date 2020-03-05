@@ -389,6 +389,7 @@ Now, as we installed the `Rserve` as super user, we need to add proper rights to
 ```shell
 sudo chmod 755 /usr/lib64/R/bin/Rserve
 ```
+
 [DONE]
 [ACCORDION-END]
 

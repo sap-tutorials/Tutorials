@@ -834,6 +834,7 @@ Log in with your user (replace the XXX in the log in example below with your num
 You can see your first app displaying data from your services.
 
 ![Create app ](68.png)
+
 [DONE]
 [ACCORDION-END]
 

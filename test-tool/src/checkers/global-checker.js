@@ -124,6 +124,7 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
       tagsCheckResult,
       stepSpellCheckResult,
       syntaxCheckResult,
+      linkCheckResult: contentLinkCheckResult,
     } = await contentChecker.check(filePath, contentLines, allTutorials);
 
     if (checkResult.passed) {
@@ -133,6 +134,7 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
         || contentCheckResult.length
         || tagsCheckResult.length
         || syntaxCheckResult.length
+        || contentLinkCheckResult.length
         || optionsCheckResult.length
         || validationsCheckResult.length);
     }
@@ -147,7 +149,7 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
       validationsCheckResult,
       syntaxCheckResult,
       spellCheckResult: spellCheckResult.concat(stepSpellCheckResult),
-      linkCheckResult: [],
+      linkCheckResult: contentLinkCheckResult,
     });
     if (interceptors.onAction) {
       interceptors.onAction();
@@ -176,7 +178,7 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
   }
 
   return {
-    results: Array.from(results.values()),
+    results: common.orderByAlphabet(Array.from(results.values())),
     passed: checkResult.passed,
   };
 };

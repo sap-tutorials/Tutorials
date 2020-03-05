@@ -1,11 +1,16 @@
 ---
-title: Inspect Your Class in the ABAP Debugger
+title: Inspect Your Class in the ABAP Debugger and Feed Reader
 description: Work with ABAP classes in the ABAP Debugger in (ADT) for both a console application and SAP Fiori application.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
+
+##Prerequisites
+- You have done one of the following:
+    - **Tutorial**: [Test the Connection to the Remote System](abap-environment-test-rfc), step 10 - for steps 1-10 of this tutorial
+    - **Tutorial**: [Get Data from a Remote System Using a Custom Entity](abap-environment-rfc-custom-entity)
 
 ## Details
 ### You will learn

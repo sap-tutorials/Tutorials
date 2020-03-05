@@ -14,10 +14,12 @@ time: 20
 ## Details
 ### You will learn
   - How to create authorization fields
-  - How to create access control
+  - How to create access controls
   - How to edit authorization default values
   - How to create IAM Apps and services
-  - How to create business catalog
+  - How to create restriction fields and restriction types
+  - How to create business catalogs
+  - How to create restriction types
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
@@ -84,7 +86,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create authorization object](object6.png)
 
-[DONE] 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create access control)]
@@ -232,7 +234,63 @@ Save and activate.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create business catalog & add IAM app)]
+
+[ACCORDION-BEGIN [Step 7: ](Create restriction field and restriction type)]
+  1. Right-click on your package **`Z_ROOM_XXX`** and select **New** > **Other ABAP Repository Object**.
+
+    ![Create restriction field and restriction type](restriction6.png)
+
+  2. Search for **restriction field**, select it and click **Next >**.
+
+    ![Create restriction field and restriction type](restriction2.png)
+
+  3. Create your restriction field:
+    - Name: **`Z_LOC_RF_XXX`**
+    - Description: Restriction field
+
+      ![Create restriction field and restriction type](restriction3.png)
+
+    Click **Next >**.
+
+  4. Click **Finish**.  
+
+    ![Create restriction field and restriction type](restriction4.png)
+
+  5. Add **`Z_LOCAFXXX`** as authorization field, save and activate.
+
+    ![Create restriction field and restriction type](restriction5.png)
+
+  6. Right-click on your package **`Z_ROOM_XXX`** and select **New** > **Other ABAP Repository Object**.
+
+    ![Create restriction field and restriction type](restriction6.png)
+
+  7. Search for **restriction type**, select it and click **Next >**.
+
+    ![Create restriction field and restriction type](restriction7.png)
+
+  8. Create your restriction field:
+    - Name: **`Z_LOC_RT_XXX`**
+    - Description: Restriction type for location
+
+    ![Create restriction field and restriction type](restriction8.png)
+
+    Click **Next >**.
+
+  9. Click **Finish**.   
+
+    ![Create restriction field and restriction type](restriction9.png)
+
+  10. Add **`Z_LOC_RF_XXX`** as restriction field, save and activate.
+
+    ![Create restriction field and restriction type](restriction10.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+
+
+[ACCORDION-BEGIN [Step 8: ](Create business catalog & add IAM app)]
   1. Right-click on **`Z_ROOM_XXX`**, select the menu path **New** > **Other ABAP Repository Object**.
 
       ![Create Access Control](catalog.png)
@@ -280,7 +338,16 @@ Save and activate.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test yourself)]
+[ACCORDION-BEGIN [Step 9: ](Create restriction type)]
+
+Open your business catalog **`Z_ROOM_BC_XXX`**, add **`Z_LOC_RT_XXX`** as a restriction type, select write and click **Publish Locally**.
+
+![Create restriction type](restriction.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

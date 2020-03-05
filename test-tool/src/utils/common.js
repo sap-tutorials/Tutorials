@@ -6,7 +6,7 @@ const { regexp: { validation: { codeBlock, codeLine } } } = require('../constant
 
 const isTutorialDoc = filePath => filePath.includes('docs-tutorial') || filePath.includes('contributing.md');
 
-const getContentLines = content => content.split(/\r?\n/);
+const getContentLines = content => content.replace(/\r\n|\n\r|\n|\r/g, '\n').split('\n');
 
 /**
  * @description Replaces code lines with empty strings
@@ -77,8 +77,13 @@ const findDuplicates = (arr) => {
     return result;
 };
 
+function orderByAlphabet(errors) {
+    return errors.sort((a, b) => a.fileName.localeCompare(b.fileName))
+}
+
 module.exports = {
     parseFiles,
     findDuplicates,
     isTutorialDoc,
+    orderByAlphabet,
 };

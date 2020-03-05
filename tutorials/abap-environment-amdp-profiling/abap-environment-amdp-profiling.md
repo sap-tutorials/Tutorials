@@ -446,6 +446,7 @@ CLASS zcl_amdp_xxx IMPLEMENTATION.
 ENDCLASS.
 
 ```
+
 [DONE]
 [ACCORDION-END]
 

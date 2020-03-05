@@ -12,18 +12,21 @@ primary_tag: products>sap-cloud-platform-business-rules
   - How to create role collections and assign it to a user
 
 ---
+Add the roles required to access the **Manage Rules Project** application to the role collection and assign the role collection to your users.
 
-[ACCORDION-BEGIN [Step 1: ](Create role collections)]
+[ACCORDION-BEGIN [Step 1: ](Create a role collection)]
 
-1. In the SAP Cloud Platform cockpit, navigate to your subaccount via the breadcrumb navigation.
+1. In [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) cockpit, navigate to your subaccount.
+
+    ![Navigate to subaccount](subaccount.png)
 
 2. In the navigation area, under **Security**, choose **Role Collections**.
 
-    ![Role collections](assign_roles01.png)
+    ![Role collections](assign-role01.png)
 
 3. Choose **New Role Collection**.
 
-    ![New role collections](assign_roles02.png)
+    ![New role collections](assign_role02.png)
 
 4. In the **New Role Collection** window, enter **business-rules** and then choose **Save**.
 
@@ -31,7 +34,7 @@ primary_tag: products>sap-cloud-platform-business-rules
 
 5. Choose **business-rules** role collection to add roles.
 
-    ![Add Roles](assign_role04.png)
+    ![Add Roles](assign-role04.png)
 
 6. Choose **Add Role**.
 
@@ -58,29 +61,27 @@ primary_tag: products>sap-cloud-platform-business-rules
 
 [ACCORDION-BEGIN [Step 2: ](Assign role collection)]
 
-1. Navigate to the subaccount using the breadcrumb navigation. In the navigation area, under **Security**, choose **Trust Configuration**.
+1. Navigate to the subaccount using the breadcrumb navigation.
+
+2. In the navigation area, under **Security**, choose **Trust Configuration** and then choose **SAP ID Service**.
 
     ![Trust configuration](trust_config01.png)
 
-2. Choose **SAP ID Service**.
-
-    ![SAP ID service](trust_config02.png)
-
 3. Enter your e-mail address in the **User** input field and then choose **Show Assignments**.
 
-    ![Show assignments](trust_config03.png)
+    ![Show assignments](trust_config02.png)
 
     There is no role collection assigned at this point. If a user is not added to the respective identity provider, add the user by selecting **Add User** in the confirmation dialog box.
 
-    ![Add User](trust_config03_1.png)
+    ![Add User](trust_config02_1.png)
 
 4. Choose **Assign Role Collection**.
 
-    ![Assign role collections](trust_config04.png)
+    ![Assign role collections](trust_config03.png)
 
 5. In the **Assign Role Collection** window, choose **`business-rules`** from the dropdown list and then choose **Assign Role Collection**.
 
-    ![Assign role collections](trust_config05.png)
+    ![Assign role collections](trust_config04.png)
 
 
 [VALIDATE_1]

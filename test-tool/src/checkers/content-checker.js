@@ -9,6 +9,24 @@ const syntaxChecker = require('./syntax-checker');
 const metadataChecker = require('./metadata-checker');
 
 const { regexp, constraints } = require('../constants');
+const {
+  content: {
+    common,
+    link,
+    emptyLink,
+    h1,
+    mdnImg,
+    localFileLink,
+    tutorialLink,
+    tutorialLinkInvalid,
+    remoteImage,
+    codeBlockInNote,
+  },
+  validation: { accordions, codeLine, done },
+  link: {
+    pure: pureLink,
+  },
+} = regexp;
 
 const fileExistsSyncCS = (filePath) => {
   const dir = path.dirname(filePath);
@@ -48,6 +66,46 @@ const checkLocalImage = (absImgPath, altText) => {
   return result;
 };
 
+async function makeAsyncChecks({ lines, isCodeLine, isMeta, isCodeBlock, index, result }) {
+  const line = lines[index];
+
+  if (!isCodeLine && !isCodeBlock) {
+    const remoteImageMatches = line.match(remoteImage.regexp);
+
+    if (remoteImageMatches) {
+      await Promise.all(remoteImageMatches.map(async (item) => {
+        // using new RegExp to reset g flag
+        const [imageUrl] = item.match(new RegExp(pureLink, 'i'));
+        const checkResult = await linkChecker.checkImageLink(imageUrl);
+
+        if (checkResult.error) {
+          result.contentCheckResult.push({
+            line: index + 1,
+            msg: checkResult.error,
+          });
+        }
+      }));
+    }
+  }
+
+  if (isMeta) {
+    // async stuff should go last
+    const authorProfileMatch = line.match(regexp.link.authorProfile);
+    if (authorProfileMatch && authorProfileMatch.length > 0) {
+      const authorUrlMatch = line.replace(authorProfileMatch[0], '')
+        .trim();
+
+      const authorUrlCheckResult = await metadataChecker.checkAuthorProfile(authorUrlMatch);
+      if (authorUrlCheckResult) {
+        result.linkCheckResult.push({
+          line: index + 1,
+          ...authorUrlCheckResult,
+        });
+      }
+    }
+  }
+}
+
 module.exports = {
   check: async (filePath, lines, allTutorials) => {
     let isCodeBlock = false;
@@ -56,26 +114,9 @@ module.exports = {
       tagsCheckResult: [],
       stepSpellCheckResult: [],
       syntaxCheckResult: [],
+      linkCheckResult: [],
     };
     const dir = path.dirname(filePath);
-    const {
-      content: {
-        common,
-        link,
-        emptyLink,
-        h1,
-        mdnImg,
-        localFileLink,
-        tutorialLink,
-        tutorialLinkInvalid,
-        remoteImage,
-        codeBlockInNote,
-      },
-      validation: { accordions, codeLine, done },
-      link: {
-        pure: pureLink,
-      },
-    } = regexp;
     // true because meta is in the very beginning
     let isMeta = true;
     let metaBoundaries = 0;
@@ -83,38 +124,17 @@ module.exports = {
 
     await Promise.all(lines.map(async (line, index) => {
       const isCodeLine = (line.match(codeLine) || []).length > 0;
-
-      if (isMeta) {
-        metaLines.push(line);
-        if (line.replace(/\n/g, '') === '---') {
-          metaBoundaries += 1;
-        }
-        if (metaBoundaries >= 2) {
-          isMeta = false;
-          const metaValidationResult = metadataChecker.check(metaLines);
-          result.contentCheckResult.push(...metaValidationResult);
-        }
-
-        const primaryTagError = tagChecker.checkPrimaryTag(line, index);
-        const xpTagError = tagChecker.checkExperienceTag(line, index);
-
-        if (primaryTagError) {
-          result.tagsCheckResult.push({
-            msg: primaryTagError,
-            line: index + 1,
-          });
-        }
-
-        if (xpTagError) {
-          result.tagsCheckResult.push({
-            msg: xpTagError,
-            line: index + 1,
-          });
-        }
+      if (line.replace(/\n/g, '') === '---') {
+        metaBoundaries += 1;
       }
-
+      if (metaBoundaries >= 2) {
+        isMeta = false;
+        const metaValidationResult = metadataChecker.check(metaLines);
+        result.contentCheckResult.push(...metaValidationResult);
+      }
       const trimmedLine = line.trim();
-      if (trimmedLine.startsWith('```') || trimmedLine.match(codeBlockInNote)) {
+      const isCodeInNote = trimmedLine.match(codeBlockInNote);
+      if (trimmedLine.startsWith('```') || isCodeInNote) {
         isCodeBlock = !isCodeBlock;
       }
 
@@ -129,7 +149,6 @@ module.exports = {
       });
 
       if (!isCodeBlock) {
-        const remoteImageMatches = line.match(remoteImage.regexp);
         const imageMatches = line.match(mdnImg.regexp);
         const localFileMatch = line.match(localFileLink.regexp);
         const tutorialLinkInvalidMatch = line.match(tutorialLinkInvalid.regexp);
@@ -215,21 +234,6 @@ module.exports = {
             });
           }
 
-          if (remoteImageMatches) {
-
-            await Promise.all(remoteImageMatches.map(async (item) => {
-              // using new RegExp to reset g flag
-              const [imageUrl] = item.match(new RegExp(pureLink, 'i'));
-              const checkResult = await linkChecker.checkImageLink(imageUrl);
-
-              if (checkResult.error) {
-                result.contentCheckResult.push({
-                  line: index + 1,
-                  msg: checkResult.error,
-                });
-              }
-            }));
-          }
 
           if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
             result.contentCheckResult.push({
@@ -238,12 +242,39 @@ module.exports = {
             });
           }
 
-          const syntaxCheckResult = syntaxChecker.check(line, index + 1);
+          const syntaxCheckResult = syntaxChecker.check(lines, index);
           if (syntaxCheckResult) {
-            result.syntaxCheckResult.push(syntaxCheckResult);
+            result.syntaxCheckResult.push(...syntaxCheckResult);
           }
         }
       }
+
+      if (!isCodeInNote && !isCodeLine) {
+        const backTicksCheckResult = syntaxChecker.checkBackticks(lines, index);
+        result.syntaxCheckResult.push(...backTicksCheckResult);
+      }
+
+      if (isMeta) {
+        metaLines.push(line);
+        const primaryTagError = tagChecker.checkPrimaryTag(line, index);
+        const xpTagError = tagChecker.checkExperienceTag(line, index);
+
+        if (xpTagError) {
+          result.tagsCheckResult.push({
+            msg: xpTagError,
+            line: index + 1,
+          });
+        }
+
+        if (primaryTagError) {
+          result.tagsCheckResult.push({
+            msg: primaryTagError,
+            line: index + 1,
+          });
+        }
+      }
+
+      return makeAsyncChecks({ lines, isCodeLine, isMeta, isCodeBlock, index, result });
     }));
 
     return result;

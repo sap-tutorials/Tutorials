@@ -39,11 +39,11 @@ When you access the Portal service, the Site Directory is in focus. From here yo
 
     ![Open Pages](7a_open_pages_tab.png)
 
-In your new site, you will already see the default **Launchpad** page in the **Pages** panel on the left. Note that the page is marked with an eye icon with a cross. This icon indicates that the page is not part of the site menu and is not yet visible in your site. In the next step, you'll add another page.
+In your new site, you can already see the default **Launchpad** page in the **Pages** panel on the left. Note that the page is marked with an eye icon with a cross. This icon indicates that the page is not part of the site menu and is not yet visible in your site. In the next step, you'll add another page.
 
   ![View Site Manager](7_view_launchpad_page.png)
 
->Once you've created your site, you can go back to the Site Directory to see that your new site is now represented by a tile. In the future, each time you want to edit your site, you can click the pencil icon from this tile. You can also delete the site from here or preview it to see how your site users will see your site at runtime.
+>For your information: Once you've created your site, you can go back to the Site Directory. There you can see that your new site is now represented by a new tile. In the future, each time you want to edit your site, you can click the pencil icon from this tile. You can also delete the site from here or preview it to see how your site users will see your site at runtime.
 
 ![View Site Tile](8_view_site_tile.png)
 
@@ -88,12 +88,10 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
 3. Enter the following values:
 
-
-    |  Field Name     | Value
     |  :------------- | :-------------
-    |  **Display Name**           | **`Home`**
-    |  **Item Type**           | **`Page`**
-    |  **Select Page**    | **`JobCore`**
+    |  **Display Name** | **`Home`**
+    |  **Item Type**    | **`Page`**
+    |  **Select Page**  | **`JobCore`**
 
     Click **Add**.  
 
@@ -113,7 +111,7 @@ Now we have a page called `JobCore` and we have the default `Launchpad` page tha
 
 7. Enter the following values:
 
-    |  Field Name     | Value
+
     |  :------------- | :-------------
     |  **Display Name**           | **`My Apps`**
     |  **Item Type**           | **`Page`**

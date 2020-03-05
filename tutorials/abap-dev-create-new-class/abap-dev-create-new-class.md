@@ -3,11 +3,12 @@ title: Create a Global ABAP Class
 description: You will learn how to create a global ABAP class, in which you  will retrieve data from a database.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 45  
 
 ---
 ## Prerequisites
+- You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 - You have generated the data for the relevant database table by running the transaction `SEPM_DG_OIA_NEW` (or program  `RS_EPM_DGC_HANA_NEW` ).
 
 ## Details
@@ -378,6 +379,7 @@ CLASS zcl_invoice_retrieval IMPLEMENTATION.
 ENDCLASS.
 
 ```
+
 [DONE]
 [ACCORDION-END]
 

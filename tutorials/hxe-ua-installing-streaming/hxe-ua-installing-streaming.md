@@ -8,7 +8,6 @@ tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://developers.sap.com/tutorials/hxe-ua-installing-vm-image.html) and [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](https://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html) or [Installing SAP HANA 2.0, express edition (Binary Installer Method)](https://developers.sap.com/tutorials/hxe-ua-installing-binary.html) and [Start Using SAP HANA 2.0, express edition (Binary Installer Method)](https://developers.sap.com/tutorials/hxe-ua-getting-started-binary.html)
-- **Additional Information:** For more information about sizing requirements for streaming analytics projects, see the [Sizing and Configuration Guidelines document](https://www.sap.com/documents/2017/01/783a6b39-a47c-0010-82c7-eda71af511fa.html).
 
 
 ## Next Steps

@@ -108,7 +108,9 @@ module.exports = {
         validate_vr: validationNumber => new RegExp(`\\[VALIDATE_${validationNumber}\\].*?\\[VALIDATE_${validationNumber}\\]`, 'sig'),
         done: /\[DONE\]/g,
         codeBlock: /```.*?```/sgi,
-        codeLine: /`.*?`/gi,
+        codeLine: /`[^`].*`/gi,
+        // not using g flag, to capture only the first --- .... --- entry
+        metaData: /---[\0-\uFFFF]*?---/i,
         messages: {
             production: {
                 rules_vr: 'VALIDATION: rules.vr file must not be presented in the production',
@@ -151,6 +153,7 @@ module.exports = {
         },
     },
     link: {
+        authorProfile: /^\s*author_profile:/,
         absoluteURL: new RegExp('^[a-z][a-z0-9+.-]*:'),
         markdown: [
             /\[[^\]]*\]\s*?\((http[s]?:\/\/.+?)\)/g,

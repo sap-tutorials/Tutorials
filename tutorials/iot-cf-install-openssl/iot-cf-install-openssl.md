@@ -1,4 +1,6 @@
 ---
+author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Install OpenSSL
 description: Install OpenSSL to send data to the SAP Cloud Platform Internet of Things Service Cloud using MQTT and REST.
 auto_validation: true
@@ -6,7 +8,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---
 
-<!-- loio62aa257a98114802977b98495bdb4e6d -->
 
 ## Prerequisites
  - **Proficiency:** Beginner

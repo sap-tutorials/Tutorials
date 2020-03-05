@@ -3,7 +3,7 @@ title: Create an ABAP Project in ABAP Development Tools (ADT)
 description: Configure the Eclipse IDE with the ABAP Development Tools for SAP NetWeaver (ADT) and create an ABAP project.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -11,7 +11,7 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
- - You have a valid instance of an AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
  - You have downloaded and installed the latest Eclipse IDE from [Eclipse IDE for Java Developers ](http://www.eclipse.org/) site, and opened the application.
 
 ## Details

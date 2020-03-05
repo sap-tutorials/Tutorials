@@ -3,10 +3,12 @@ title: Create a Data Element
 description: Create a data element, which you will use in a later tutorial.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 5
 ---
 
+## Prerequisites  
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 
 ## Details
 ### You will learn  
@@ -190,11 +192,9 @@ Go back to your report and execute it by choosing **F8**. Your SAP List Viewer s
 The `field-symbol` `booking` has been defined as follows. Rewrite the `LOOP AT` statement using an inline declaration. Enter your code in the box below and choose **Submit Answer**:
 
 ```ABAP
-
 FIELD-SYMBOLS <booking> TYPE sbook.
 LOOP AT Booking_List ASSIGNING <booking>.
-
-
 ```
+
 [VALIDATE_1]
 [ACCORDION-END]

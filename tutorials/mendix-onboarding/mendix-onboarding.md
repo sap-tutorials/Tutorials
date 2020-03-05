@@ -20,38 +20,34 @@ You can build business applications for the SAP Cloud Platform Cloud Foundry env
 
 In this tutorial, you will set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development to build applications to be deployed on SAP Cloud Platform.
 
->This tutorial is applicable whether you have a productive or trial Neo environment, but assumes that you are using a trial Cloud Foundry environment.
+>This tutorial assumes that you are using a trial Cloud Foundry environment.
 
-> The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
+> The Mendix Studio Pro, for building your application, is available for Windows platforms only.
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log onto SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 1: ](Cloud Foundry trial)]
+Go to [https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial).
 
-Go to [https://account.hana.ondemand.com/cockpit](https://account.hana.ondemand.com/cockpit) and log into your SAP Cloud Platform account.
+Log into your SAP Cloud Platform account.
 
-![SAP Cloud Platform](mendix-onboarding1.png)
+!![SAP Cloud Platform](mendix-onboarding-newLogIn.png)
+
+You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
+
+!![enter trial account](enter-trial.png)
+> Bookmark the link for fast and quick access to the cockpit.  
+
+The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
+
+!![enter subaccount](global-account-new.png)
 
 
-[DONE]
-[ACCORDION-END]
+To get to the space, in which your applications and services live, click on the **dev** space.
 
+!![enter space](sub-account-new.png)
 
-[ACCORDION-BEGIN [Step 2: ](Cloud Foundry trial)]
-If you do not already have a Cloud Foundry environment, go to **Home** | **Cloud Foundry Trial**.
-
-![Start Cloud Foundry](mendix-onboarding2.png)
-
-Choose a region for your Cloud Foundry environment, and then choose **OK**.
-
-![Region](mendix-onboarding3.png)
-
-You will automatically be assigned a subaccount, an organization within your subaccount, and a space within your organization.
-
-Then choose **Go to Space**.
-
-![Go to space](mendix-onboarding4.png)
 
 For more information about creating a Cloud Foundry environment, see [Get a Trial Space on the Cloud Foundry Instance](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html).
 
@@ -59,18 +55,16 @@ For more information about creating a Cloud Foundry environment, see [Get a Tria
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Open the Mendix portal)]
-Go back to your Neo account. In the trial landscape, choose **Home** | **Neo Trial**.
+[ACCORDION-BEGIN [Step 2: ](Open the Mendix portal)]
+Go to [https://account.hana.ondemand.com/#/home/welcome](https://account.hana.ondemand.com/#/home/welcome) to open the Mendix portal.
 
-![Back to Neo](mendix-onboarding5.png)
+Choose **Services** (left-side navigation tree), and then find the **Rapid Application Development by Mendix** tile. You can filter the services by entering `Mendix` in the search field at the top right.
 
-Choose **Services** (left-side navigation tree), and then find the **SAP Cloud Platform RAD, by Mendix** tile. You can filter the services by entering `Mendix` in the search field at the top right.
+!![Rapid Application Development](mendix-onboarding6a-NewTile.png)
 
-![SAP Cloud Platform RAD](mendix-onboarding6a.png)
+Choose the tile, and then from the **Rapid Application Development by Mendix** service screen, choose **Open Development Portal**.
 
-Choose the tile, and then from the **SAP Cloud Platform RAD by Mendix** service screen, choose **Open Development Portal**.
-
-![Open Mendix portal](mendix-onboarding6b.png)
+!![Open Mendix portal](mendix-onboarding6b-NewDescription.png)
 
 This opens the registration page.
 
@@ -78,94 +72,112 @@ This opens the registration page.
 [ACCORDION-END]
 
 
-
-[ACCORDION-BEGIN [Step 4: ](Create a Mendix account)]
+[ACCORDION-BEGIN [Step 3: ](Create a Mendix account)]
 Choose to **Sign in**.
 
-![Sign in](mendixSignin.png)
+!![Sign in](mendixSignin-New.png)
 
 Choose to **sign in with SAP**.
 
-![Sign in with SAP](mendixSigninWithSAP.png)
+!![Sign in with SAP](mendixSigninWithSAP-New.png)
 
 Choose your SAP Cloud Platform region from the drop-down and click **Select region**.
 
-![Select region](mendixSelectRegion.png)
+!![Select region](mendixSelectRegion-New.png)
 
 This will redirect you to SAP Cloud Platform's login page. Enter your SAP Cloud Platform credentials and sign in.
 
-![Login SAP](mendixLoginSAP.png)
+!![Login SAP](mendixLoginSAP-new.png)
 
 Choose **Authorize**.
 
-![Authorize](mendixSAPAuthorize.png)
+!![Authorize](mendixSAPAuthorize-New.png)
 
 Choose **Confirm**.
 
-![Confirm](mendixConfirm.png)
+!![Confirm](mendixConfirm-New.png)
 
-Enter your name and a password, and choose **Create**.
+Enter your name and a password and choose **Create**.
 
-![Register](mendixCreateUser.png)
+!![Register](mendixCreateUser-New.png)
 
-Select an option or choose to **Skip this step**.
+Select the best option and choose **Next**.
 
-![Skip step](mendixSkipStep.png)
+!![Skip step](mendixSkipStep-New.png)
+
+Select the reason you signed up for Mendix and choose **Submit**.
+
+!![Reason](mendixReason-New.png)
 
 Now you're in the Mendix development portal.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create app and environment)]
+[ACCORDION-BEGIN [Step 4: ](Create app and environment)]
 You need to set up an environment for your SAP app. An environment points to the Cloud Foundry environment that you want to deploy to.
 
 You can do this now, or you can do this when you are ready to deploy. When you deploy, you will be prompted to create an environment. Environments are created for each project.
 
 In the development portal home page, choose **Create App**.
 
-![Open Mendix portal](mendix-onboarding7.png)
+!![Open Mendix portal](mendix-onboarding7-New.png)
 
 If not already selected, choose SAP Apps to see the SAP-related templates.
 
-![SAP templates](mendixSAPApps.png)
+!![SAP templates](mendixSAPApps-New.png)
 
-Choose the **Fiori Blank** template, and choose **View Details**.
+Choose the **Blank App for SAP Fiori themed apps** template and choose **View Details**.
 
-![Choose template](mendixFioriBlankApp.png)
+!![Choose template](mendixFioriBlankApp-New.png)
 
 Choose **Use this app**.
 
-![Create app](mendixUseThisApp.png)
+!![Create app](mendixUseThisApp-New.png)
 
 Enter a name, and choose **Create App**.
 
-![Enter name](mendix-onboarding10.png)
+!![Enter name](mendix-onboarding10-New.png)
 
-Enter your SAP Cloud Platform credentials, select a region, and choose **Sign In**.
+Select a region for SAP Cloud Platform and choose **Next**.
 
-![Sign in to SAP Cloud Platform](mendix-onboarding11.png)
+!![Sign in to SAP Cloud Platform](mendix-onboarding11-New.png)
 
-Choose the Cloud Foundry environment you want to deploy to, and choose **Create**.
+Choose the Cloud Foundry environment you want to deploy to.
 
-![Choose Cloud Foundry environment](mendix-onboarding12.png)
+- Select **cfapps.YourRegion.hana.ondemand.com** for the domain.
+
+    -	 Select **cfapps.eu10.hana.ondemand.com** for a European region.
+
+    -	 Select **cfapps.us20.hana.ondemand.com** for a specific US region.      
+
+-	Select **hanatrial-schema** for the database.
+
+Choose **Create**.
+
+!![Choose Cloud Foundry environment](mendix-onboarding12-New.png)
 
 The environment is created. To see it, go to **Environments**.
 
-![Environments](mendix-onboarding13b.png)
+!![Environments](mendix-onboarding13b-new.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 5: ](Build your app)]
+To start working on your app, choose **Edit App**.
+
+Then choose **Edit in Mendix Studio Pro**.
+
+!![Build app](mendix-onboarding14-new.png)
+
+You build apps using the Mendix Studio Pro, which is an application installed on your desktop. If you don't have the Mendix Studio Pro, install it by going to the [app store](https://appstore.home.mendix.com/link/modeler/).
+
+!![Mendix Studio Pro](mendixModeler.png)
 
 
 [VALIDATE_5]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Build your app)]
-To start working on your app, choose **Edit App**.
-
-![Build app](mendix-onboarding14.png)
-
-You build apps using the Mendix Desktop Modeler, which is an application installed on your desktop. If you don't have the modeler, install it by going to the [app store](https://appstore.home.mendix.com/link/modeler/).
-
-![Mendix Desktop Modeler](mendixModeler.png)
 
 
 [DONE]

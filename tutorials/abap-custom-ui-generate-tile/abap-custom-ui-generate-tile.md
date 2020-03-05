@@ -78,5 +78,6 @@ To get into the details screen of a Bonus Plan you can click its whole entry in 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
+
 [VALIDATE_1]
 [ACCORDION-END]

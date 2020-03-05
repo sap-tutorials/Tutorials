@@ -26,7 +26,7 @@ Add roles to one or more role collections and then assign these role collections
 
 2. You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 
-    ![Cloud Foundry](enter-trial.png)
+    ![Cloud Foundry](landing_page.png)
 
 3. Navigate to your subaccount.
 
@@ -38,7 +38,7 @@ Add roles to one or more role collections and then assign these role collections
 
 5. Click **New Role Collection** to create a role collection for your service.
 
-    ![New Role Collection](New-Role-Collection-03.png)
+    ![New Role Collection](assign_role02.png)
 
 6. Provide a name and optionally a description to your role collection, then click **Save**.
 
@@ -56,7 +56,7 @@ Add roles to one or more role collections and then assign these role collections
 
 9. Choose the role template and the corresponding role to be assigned to the users from the dropdown menu, and then click **Save**.
 
-In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`PVDeveloper`**, **`PVEventSender`** by following the steps from **Step 6**. For more information about these roles, refer to [Process Visibility Roles](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/e395bfade9c64d89922c561c4b92979f.html).
+ In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`PVDeveloper`**, **`PVEventSender`** by following the steps from **Step 6**. For more information about these roles, refer to [Process Visibility Roles](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/e395bfade9c64d89922c561c4b92979f.html).
 
 ![Admin Role](PV-Admin-08.png)
 
@@ -75,25 +75,21 @@ In this tutorial, assign the role templates **`PVAdmin`**, **`PVOperator`**, **`
 
     ![Cloud Foundry Subaccount](Trial-Subaccount.png)
 
-2. In the navigation pane, under **Security**, choose **Trust Configuration**.
+2. In the navigation pane, under **Security**, choose **Trust Configuration**. Then choose the name of your identity provider from the list of available identity providers.
 
-    ![Trust Configuration](Trust-configuration-13.png)
-
-3. Choose the name of your identity provider from the list of available identity providers.
-
-    ![Identifier](Identifier-14.png)
+    ![Trust Configuration](trust_config01.png)
 
 4. Enter the email address of the user to wish you to assign the role collection into the **E-Mail Address** field, then choose **Show Assignments**.
 
-    ![Show Assignments](Show-Assignments-15.png)
+    ![Show Assignments](trust_config02.png)
 
     If a user is not added to the respective identity provider, add the user by selecting **Add User** in the confirmation dialog box.
 
-    ![Add User](Add-User-16.png)
+    ![Add User](trust_config02_1.png)
 
 5. Choose **Assign Role Collection**. In the new window, select the desired role collection, and click **Assign Role Collection**.
 
-    ![Assign Role Collection](Assign-Role-Collection-17.png)
+    ![Assign Role Collection](trust_config03.png)
 
     ![Assign Role Collection](Assign-Role-Collection-18.png)
 

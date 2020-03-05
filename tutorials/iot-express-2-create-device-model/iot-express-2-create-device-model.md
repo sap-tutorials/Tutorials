@@ -31,8 +31,10 @@ tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, 
     - Click on the `Spaces` menu and select to your `Space`
     - Open the `Service Instances` list and click on the `Open Dashboard` icon in the *Actions* column
 
-2. If you have not done so then create a user in your tenant by logging using the service credentials  
-   (found in [`Cloud Platform Cockpit`](http://hana.ondemand.com/) -> `Global Account` -> `Cloud Foundry Subaccount` -> `Space` -> `IoT Service Instance` -> `Service Keys`) and then login with that user.
+2. If you have not done so then create a user and a tenant by logging in using the service credentials  
+   (found in [`Cloud Platform Cockpit`](http://hana.ondemand.com/) -> `Global Account` -> `Cloud Foundry Subaccount` -> `Space` -> `IoT Service Instance` -> `Service Keys`) and then create a tenant and a user for yourself. Make sure you assign your user to the tenant as an administrator. Subsequently log out.
+
+2. Login with your user id and password.   
 
 3. Click on your `tenant`.
 

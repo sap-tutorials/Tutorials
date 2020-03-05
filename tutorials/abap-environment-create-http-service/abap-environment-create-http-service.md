@@ -14,9 +14,9 @@ author_profile: https://github.com/julieplummer20
 ### You will learn  
   - How to create an HTTP service that can be accessed from a browser
   -	How to return system data using a (whitelisted) ABAP utility class
-  - How to add basic authentication (user and password) to the service, by adding an inbound Communication Scenario, Arrangement, System, and User. It can then be consumed from another SAP System compliantly.
+  - How to expose the service for external consumption, by defining the necessary inbound communication artefacts
 
-Note if you are working in S/4HANA:
+**Important**: If you are working in SAP S/4HANA:
 ICF services are direct entry points into the ABAP system via the HTTP protocol. Implementing ICF services is a security-critical task with implications on the system and landscape configuration.
 
 Therefore, to follow the best practices adopted by SAP internally, consider implementing your service as an OData service.
@@ -32,18 +32,18 @@ Therefore, to follow the best practices adopted by SAP internally, consider impl
 
     ![Image depicting step-1b-choose-HTTP-service](step-1b-choose-HTTP-service.png)
 
-3. Enter a **Name: ** and **Description** for your service and choose **Next**:
+3. Enter a **Name:`Z_GET_DATE_HTTP_XXX`** and **Description:Get system date** for your service and choose **Next**:
 
-    ![Image depicting step-1c-name-service](step-1c-name-service.png)
+    !![Image depicting step-1c-name-service](step-1c-name-service.png)
 
 4. Choose or create a **transport request**:
 
-    ![Image depicting step-1d-transport-request](step-1d-transport-request.png)
+    !![Image depicting step-1d-transport-request](step-1d-transport-request.png)
 
 The new HTTP service is displayed on a new tab. The handler class and URL are generated automatically, in the form:
 **`https://<server:port>/sap/bc/http/sap/<service_name>?sap-client=100`**
 
-![Image depicting step-1e-new-service-created](step-1e-new-service-created.png)
+!![Image depicting step-1e-new-service-created](step-1e-new-service-created.png)
 
 [DONE]
 
@@ -52,14 +52,14 @@ The new HTTP service is displayed on a new tab. The handler class and URL are ge
 [ACCORDION-BEGIN [Step 2: ](Implement the handler class)]
 Now, you will implement the handler class, starting with a simple text output.
 
-1. Open the handler class by clicking on it:
+1. Open the handler class by clicking on the hyperlink:
 
     ![Image depicting step-2a-open-handler-class](step-2a-open-handler-class.png)
 
 2. The structure of the class and the interfaces statement for `IF_HTTP_SERVICE_EXTENSION` are generated automatically.
 3. Go to the class implementation section and insert the following statement in the method:
 
-    **`response->set_text('Hello again!').`**
+    **`response->set_text('Hello!').`**
 
     ![Image depicting step-2b-insert-method](step-2b-insert-method.png)
 
@@ -68,14 +68,14 @@ Now, you will implement the handler class, starting with a simple text output.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Save and activate)]
-Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
+**Save (`Ctrl+S`)** and **Activate (`Ctrl+F3`)** your class.
 
 [DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test the service)]
-1. Test your service in the browser by clicking the URL link:
+1. Go back to your HTTP Service. Test your service in the browser by clicking the URL link:
 
     ![Image depicting step-4-test-http-service](step-4-test-http-service.png)
 
@@ -122,7 +122,7 @@ response->set_text( text ).
 Your code should look like this:
 
 ```ABAP
-class ZCL_JP_TEST_HTTP definition
+class Z_GET_DATE_HTTP_XXX definition
   public
   create public .
 
@@ -133,7 +133,7 @@ protected section.
 private section.
 ENDCLASS.
 
-CLASS ZCL_JP_TEST_HTTP IMPLEMENTATION.
+CLASS Z_GET_DATE_HTTP_XXX IMPLEMENTATION.
 
   method IF_HTTP_SERVICE_EXTENSION~HANDLE_REQUEST.
       DATA(system_date) = CL_ABAP_CONTEXT_INFO=>get_system_date( ).
@@ -246,5 +246,11 @@ Your Communication Scenario appears.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+## More Information
+
+- [SAP Help Portal: HTTP Communication](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/dee3a93a2b8d4018b3c4910f745b744f.html)
+
+- [SAP Help Portal: Components of SAP Communication Technology - HTTP Service](https://help.sap.com/doc/saphelp_nwpi71/7.1/en-US/1f/93163f9959a808e10000000a114084/frameset.htm)
 
 ---

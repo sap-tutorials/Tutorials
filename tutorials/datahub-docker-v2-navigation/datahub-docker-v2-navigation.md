@@ -58,6 +58,7 @@ Now delete `test.txt` from your local computer. Afterwards copy the file from th
 ```sh
 docker cp datahub:/tmp/test.txt test.txt
 ```
+
 [DONE]
 
 [ACCORDION-END]
@@ -96,6 +97,7 @@ Finally delete `test.txt` from HDFS again (you can verify the deletion via `http
 ```sh
 hdfs dfs -rm /tmp/test.txt
 ```
+
 [DONE]
 
 [ACCORDION-END]

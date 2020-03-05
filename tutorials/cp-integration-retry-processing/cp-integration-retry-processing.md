@@ -233,10 +233,9 @@ In this exercise, we shall copy the original flow and make the following changes
 
         ![Delete Exception subprocess](Delete Exception subprocess.png)  
 
-        * ```Exception Subprocess 1   ```
-        * ```JMSQueue```
-        * ```Receiver 1
-        ```
+        * `Exception Subprocess 1`
+        * `JMSQueue`
+        * `Receiver 1`
 
 
 

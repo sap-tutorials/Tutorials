@@ -62,9 +62,11 @@ The App editor opens on the **PROPERTIES** tab.
 
 3. Enter the following values:
 
-    * **Semantic Object**: `Innovation`
+     * **Semantic Object**: `Innovation`
 
-    * **Action**:  `Display`
+     * **Action**:  `Display`
+
+        > The unique combination of a semantic object and an action is called an intent. It is used to define navigation to an application.
 
     ![App editor navigation tab](4-app-editor-navigation.png)
 
@@ -86,7 +88,7 @@ The App editor opens on the **PROPERTIES** tab.
 
 6.  Click **Save**.
 
-You can then use the back arrow to get back to the Content Manager to see your app in the list of content items.
+You have now configured the URL app and in the next step you will go back to the Content Manager to see it in the list of content items.
 
 
 
@@ -94,7 +96,7 @@ You can then use the back arrow to get back to the Content Manager to see your a
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Go back to Content Manager)]
-Click the arrow in the top left corner of the app editor to go back to the Content Manager.
+Click the Content Manager icon in the left side panel of the App Editor to go back to the Content Manager.
 
 ![Go to content manager icon](6-go-to-content-manager-icon.png)
 
@@ -142,7 +144,7 @@ In this step you'll assign the **Everyone** role to your app.
 
 >Content assigned to the **Everyone** role is visible to all users.
 
-1. In the Content Manager, click the **Everyone** role.
+1. Go back to the Content Manager and click the **Everyone** role.
 
     ![Click Everyone role](8-everyone-role.png)
 
