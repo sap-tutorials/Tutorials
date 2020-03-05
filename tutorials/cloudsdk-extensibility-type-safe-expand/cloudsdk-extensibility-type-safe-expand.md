@@ -1,6 +1,6 @@
 ---
 title: Extensibility, Type-Safe Expand, and Dependency Injection with the Virtual Data Model for OData
-description: The following tutorial will introduce you to the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
+description: Learn the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
@@ -13,17 +13,16 @@ primary_tag: topic>java
 
 ## Details
 ### You will learn
-  - How to use custom field extensions from S/4HANA within the virtual data model for OData
+  - How to use custom field extensions from S/4HANA in the virtual data model for OData
   - How to join connected entities from the virtual data model in eager fashion
   - How to leverage dependency injection to decouple your client code better from the SDK-provided classes
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get ready)]
 
 To successfully go through this tutorial, you will use the following `GetBusinessPartnerCommand` for all three features to the business partner API. The call itself requests the first and last name from all business partners who are customers.
 
-This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory.
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -131,6 +130,7 @@ If you have a similar result, you are ready to proceed with this tutorial.
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 2: ](Custom field extensibility)]
 
 #### What is custom field extensibility?
@@ -200,7 +200,7 @@ public class GetBusinessPartnersCommand {
 The only two lines added to the initial example are:
 
 - `new BusinessPartnerField<String>("YY1_ApprovedBy_bus")`
-- `new BusinessPartnerField<String>("YY1_ProposedBy_bus")`
+- `new BusinessPartnerField<String>("YY1_ProposedBy_bus"))`
 
 After deploying this again, you can now see that custom fields are correctly served:
 
@@ -249,7 +249,7 @@ public class MyBusinessPartner extends BusinessPartner {
 ```
 In our servlet, you need to adapt the logic a bit to wrap and unwrap the original business partner into our own business partner entity.
 
-This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -311,7 +311,7 @@ So far, you have been working with the `BusinessPartner` entity only. However, t
 
 !![Tree](screenshot66.png)
 
-One possibility is to consider a lazy fetch of connected entities only using the `fetchXY()` methods that every instance exposes. In case of your business partner you could fetch the associated addresses with the following line of code:
+One possibility is to consider a lazy fetch of connected entities only using the `fetchXY()` methods that every instance exposes. In the case of your business partner, you could fetch the associated addresses with the following line of code:
 
 ```Java
 List<BusinessPartnerAddress> addresses = businessPartner.fetchBusinessPartnerAddress();
@@ -326,7 +326,7 @@ In such cases, you rather prefer to resolve the association already eagerly upon
 #### How-to
 In the example below, you present an example that expands for every business partner its corresponding list of addressed, followed by a partial projection on the `City` and `Country` properties of the associated `BusinessPartnerAddress` entity, followed by another expand to the `AddressEMailAddress` entity where you project on the `EMail_Address` property only.
 
-This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -399,6 +399,7 @@ In the `OData` VDM for Java, we have decided to combine both methods with each o
 After you did a successful API call, you may want to work with the associated entity collections. For this purpose, the VDM provides two important methods on each entity instance that can be used for retrieval:
 
 First, the `getOrFetch() method:`
+
 ```Java
  List<BusinessPartnerAddress> businessPartnerAddresses = businessPartner.getBusinessPartnerAddressOrFetch();
  ```
@@ -406,6 +407,7 @@ First, the `getOrFetch() method:`
  This method either returns the list of connected entities, if previously eagerly fetched or will lazily fetch the entities, if not. Therefore, this method guarantees to not return any null values but might break due to a thrown `ODataException`, in case a lazy fetch is initiated due to missing authorizations, timeouts or system unavailability.
 
 Secondly, a `getOrNull()` method
+
 ```Java
 Optional<List<BusinessPartnerAddress>> businessPartnerAddresses =
                 businessPartner.getBusinessPartnerAddressOrNull();
@@ -434,7 +436,7 @@ This unnecessarily exposes implementation details to the client code. Instead, i
 
 To do this, you can rewrite our initial servlet with the `@Inject` annotation like this
 
-This file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
+The file needs to be put under your `<projectroot>/application/src/main/java/com/sap/cloud/sdk/tutorial` directory:
 
 ```Java
 package com.sap.cloud.sdk.tutorial;
@@ -486,10 +488,9 @@ public class BusinessPartnerServlet extends HttpServlet {
 }
 
 ```
-That's it: The only thing you really did is get rid of the `new DefaultBusinessPartnerService()` term. Therefore, in the future whenever the implementing service changes (its name, its package, its module, etc.) your client code will not be affected and is therefore less prone to changes.
+That's it. The only thing you really did is get rid of the `new DefaultBusinessPartnerService()` term. Therefore, in the future whenever the implementing service changes (its name, its package, its module, etc.) your client code will not be affected and is therefore less prone to changes.
 
-##### Hint:
-When writing integration tests as learned in previous tutorials and you require dependency injection from your application code, please make sure that the implementing class is part of the minimal assembly. In other words, don't forget to add the class to the `TestUtil` deployment creator.
+> **HINT:** When writing integration tests as learned in previous tutorials and you require dependency injection from your application code, please make sure that the implementing class is part of the minimal assembly. In other words, don't forget to add the class to the `TestUtil` deployment creator.
 
 [DONE]
 [ACCORDION-END]
