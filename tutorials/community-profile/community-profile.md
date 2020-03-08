@@ -102,9 +102,9 @@ Take a look at the rest of the [Personal Info](https://people.sap.com/#personal_
 [VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Choose your privacy settings)]
+[ACCORDION-BEGIN [Step 6: ](Get to know your privacy settings)]
 
-As covered in Step 1 of the [Tour the SAP Community](https://developers.sap.com/tutorials/community-start.html) tutorial, in order to participate fully in the SAP Community, you need to set your account [Privacy](https://people.sap.com/#privacy) settings -- found under **Account & Settings** -- to opt in to display your profile publicly.
+As covered in Step 1 of the [Tour the SAP Community](community-start) tutorial, in order to participate fully in the SAP Community, you need to set your account [Privacy](https://people.sap.com/#privacy) settings -- found under **Account & Settings** -- to opt in to display your profile publicly.
 
 ![Privacy](Privacy.png)
 
