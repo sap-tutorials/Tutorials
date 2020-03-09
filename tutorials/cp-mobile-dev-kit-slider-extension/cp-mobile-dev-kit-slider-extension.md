@@ -812,6 +812,8 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
+    >This file is used for using types defined in MDK SDK or NativeScript. You can find more details about it in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/e6f08b787bf14850ac3f2df272908eeb.html).
+
 11. Save the `tsconfig.json` file.
 
 [VALIDATE_1]
