@@ -1,5 +1,5 @@
 ---
-title: Build Your Mobile Development Kit (MDK) Client Using MDK SDK
+title: Build Your Mobile Development Kit Client Using MDK SDK
 description: Build the Mobile Development Kit client using MDK SDK and connect to your SAP Cloud Platform mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client

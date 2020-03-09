@@ -1,5 +1,5 @@
 ---
-title: Build Your Mobile Development Kit (MDK) Client Using Cloud Build Service
+title: Build Your Mobile Development Kit Client Using Cloud Build Service
 description: Build the Mobile Development Kit client using cloud build service and connect to your SAP Cloud Platform mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
