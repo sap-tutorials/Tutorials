@@ -12,12 +12,13 @@ primary_tag: products>sap-business-application-studio
 
 ## Details
 ### You will learn
-  - How to perform the admin steps required to work in SAP Business Application Studio (based on the procedure described in the [Getting Started](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/19611ddbe82f4bf2b493283e0ed602e5.html) topic of the Administrator Guide).
+  - How to perform the admin steps required to work in SAP Business Application Studio
 
+This tutorial is based on the procedure described in the [Getting Started](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/19611ddbe82f4bf2b493283e0ed602e5.html) topic of the Administrator Guide.
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Log in to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step: 1](Log in to SAP Cloud Platform)]
 
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
@@ -29,11 +30,13 @@ primary_tag: products>sap-business-application-studio
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: ](Switch to subscriptions view)]
+[ACCORDION-BEGIN [Step: 2](Switch to subscriptions view)]
 
 1. Select the tile of the subaccount in which you want to enable the SAP Business Application Studio subscription.
 
-    >For the trial environment, SAP Business Application Studio is only available on Amazon Web Services (AWS) - Frankfurt region. If you do not have a subaccount in this region, you need to create a new subaccount, where: Provider = **Amazon Web Services (AWS)** and Region = **Europe (Frankfurt)**.
+    >For the trial environment, SAP Business Application Studio is only available on Amazon Web Services (AWS) - Frankfurt region.
+
+    >If you do not have a subaccount in this region, you need to create a new subaccount, where: Provider = **Amazon Web Services (AWS)** and Region = **Europe (Frankfurt)**.
 
     !![subaccount](2020-03 Cockpit Select Subaccount__.jpg)
 
@@ -45,9 +48,9 @@ primary_tag: products>sap-business-application-studio
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step: ](Add the SAP Business Application Studio subscription to subaccount)]
+[ACCORDION-BEGIN [Step: 3](Add SAP Business Application Studio subscription to subaccount)]
 
-In this step, we will add the SAP Business Application Studio subscription to a subaccount. Depending on when you created the SAP Cloud Platform account, this subscription might already be added in the subaccount.
+In this step, you will add the SAP Business Application Studio subscription to a subaccount. Depending on when you created the SAP Cloud Platform account, this subscription might already be added in the subaccount.
 
 1. In the **Subscriptions** page, search for **`studio`**.
 
@@ -63,11 +66,17 @@ In this step, we will add the SAP Business Application Studio subscription to a 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: ](Assigning permissions)]
+[ACCORDION-BEGIN [Step: 4](Assign permissions)]
 
-In this step, we will add the relevant role collections to your user. Role collections are user-related authorizations that restrict access to resources and services based on defined user permissions. They consist of individual roles. The roles are based on role templates. For SAP Business Application Studio, there are 2 role templates available: developer role and administrator role. The developer and administrator role collections, together with their corresponding templates, are created automatically when you subscribe to SAP Business Application Studio.
+In this step, you will add the relevant role collections to your user.
 
-> The developer role allows developers to load and develop applications using SAP Business Application Studio. The administrator role allows administrators to manage (export and delete) user data.
+Role collections are user-related authorizations that restrict access to resources and services based on defined user permissions. They consist of individual roles. The roles are based on role templates.
+
+For SAP Business Application Studio, there are 2 role templates available: developer role and administrator role. The developer and administrator role collections, together with their corresponding templates, are created automatically when you subscribe to SAP Business Application Studio.
+
+>The developer role allows developers to load and develop applications using SAP Business Application Studio.
+
+>The administrator role allows administrators to manage (export and delete) user data.
 
 1. Navigate to your subaccount.
 
@@ -101,7 +110,7 @@ In this step, we will add the relevant role collections to your user. Role colle
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: ](Launch SAP Business Application Studio)]
+[ACCORDION-BEGIN [Step: 5](Launch SAP Business Application Studio)]
 
 1. Navigate to your subaccount.
 
@@ -127,7 +136,9 @@ In this step, we will add the relevant role collections to your user. Role colle
 
 7. A new tab opens and SAP Business Application Studio loads.
 
-    >**Bookmark this page!**  If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
+    >**Bookmark this page!**
+
+    >If you create a bookmark to this page, it is easy to get back to SAP Business Application Studio later.
 
     !![sapbusinessapplicationstudioloaded](2020-03 AppStudio Loaded_.jpg)
 
