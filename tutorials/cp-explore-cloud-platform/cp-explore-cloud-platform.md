@@ -52,8 +52,8 @@ The three different service levels are:
 
 | Acronym |  Name | Description |
 | ------- | ------------ | ----------- |
-| IaaS | Infrastructure as a Service | The cloud provides the hardware, the customer provides the Operating System and everything else. |
-| PaaS | Platform as a Service | The cloud provides the hardware, and the operating system.  The customer chooses the application and provides the software. |
+| IaaS | Infrastructure as a Service | The cloud provides the hardware, and the operating system, the customer provides the runtime and everything else. |
+| PaaS | Platform as a Service | The cloud provides the hardware, the runtime and the operating system.  The customer chooses the application and provides the software. |
 | SaaS | Software as a Service | The cloud provides the hardware, the operating system, and the software.  The client uses the software directly, with no changes or customized to suit their business needs. |
 
 
