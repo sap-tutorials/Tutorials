@@ -26,7 +26,7 @@ SAP Mobile Cards is a feature within SAP Cloud Platform Mobile Services which pr
 
 You can find more details on the [SAP Mobile Cards developer page](https://developers.sap.com/topics/mobile-cards.html).
 
-![MobileCards](MobileCards.png)
+![MobileCards](img_0.png)
 
 [DONE]
 [ACCORDION-END]
@@ -35,33 +35,33 @@ You can find more details on the [SAP Mobile Cards developer page](https://devel
 
 On the [SAP Cloud Platform Trial landing page](https://cockpit.hanatrial.ondemand.com), choose **Enter your Trial Account** to see your global account.
 
-![MobileCards](img_0.png)
+![MobileCards](img_1.png)
 
 Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-![MobileCards](img_1.png)
+![MobileCards](img_2.png)
 
 Under **Spaces**, choose the available space as highlighted below.
 
-![MobileCards](img_2.png)
+![MobileCards](img_3.png)
 
 In the left pane, choose **Services** > **Service Marketplace**.
 
 >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create, and produce applications quickly and easily.
 
-![MobileCards](img_3.png)
+![MobileCards](img_4.png)
 
 Search for **Mobile**, and click on the **SAP Mobile Services** tile.  
 
-![MobileCards](img_4.png)
+![MobileCards](img_5.png)
 
 SAP Cloud Platform Mobile Services provides services to mobile applications, such as application analytics, app resources, onboarding, HTTP/HTTPS configuration and so on. Choose **Support** to open **SAP Cloud Platform Mobile Services Cockpit**.
 
-![MobileCards](img_5.png)
+![MobileCards](img_6.png)
 
 Choose the relevant **Organization** and **Space** from the dropdown list, and then select **Open**.
 
-![MobileCards](img_6.png)
+![MobileCards](img_7.png)
 
 >**Organization:** Organizations in CF enable collaboration among users and enable grouping of resources.
 
@@ -69,7 +69,7 @@ Choose the relevant **Organization** and **Space** from the dropdown list, and t
 
 You have now logged in to the SAP Mobile Services cockpit.
 
-![MobileCards](img_7.png)
+![MobileCards](img_8.png)
 
 Bookmark the **Mobile Services cockpit URL** for quick access.
 
@@ -80,35 +80,35 @@ Bookmark the **Mobile Services cockpit URL** for quick access.
 
 Navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
 
-![MobileCards](img_8.png)
+![MobileCards](img_9.png)
 
 >If the SAP Mobile Cards Advisory screen pops up, choose **Close** to close it.
 
 Click **Initialize**. This will create a new service instance for Mobile Cards.
 
-![MobileCards](img_101.png)
+![MobileCards](img_10.png)
 
 Click **Features**.
 
-![MobileCards](img_9.png)
+![MobileCards](img_11.png)
 
 Click **Mobile Sample OData ESPM** to look into available OData Version 2 and Version 4 sample endpoints.
 
-![MobileCards](img_10.png)
+![MobileCards](img_12.png)
 
 Select **OData Version** Version 2 and, click **Save**.
 
-![MobileCards](img_11.png)
+![MobileCards](img_13.png)
 
 Go back to the **Features** Tab and click **Mobile Connectivity** to look into destination endpoints, where you can create a new destination connecting to backend endpoint or select from any existing destinations.
 
-![MobileCards](img_12.png)
+![MobileCards](img_14.png)
 
 Below is a list of destinations from which the SAP Mobile Cards service can fetch data.
 
 >For this tutorial, the `com.sap.edm.sampleservice.v2` destination is used. It's important that all destinations are only pointing to the root of the service.
 
-![MobileCards](img_13.png)
+![MobileCards](img_15.png)
 
 Click **SAP Mobile Cards** navigation bar to go back to Mobile Cards admin page.
 
@@ -125,38 +125,33 @@ You will configure the SAP Mobile Cards client with your SAP Cloud Platform acco
 
 Click **APIs**. You will now scan the respective QR Card to onboard your SAP Mobile Cards Client.
 
-![MobileCards](img_14.png)
+![MobileCards](img_16.png)
 
 [OPTION BEGIN [Android]]
 
 Tap **SCAN QR CODE**.
 
-![MobileCards](img_15.png)
-
->In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
-
->If you see some trouble during on-boarding process, make sure that Mobile Services app state is in **Started** mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
->![MobileCards](img_102.png)
+![MobileCards](img_17.png)
 
 Tap **I AGREE** on `End User License Agreement`.
 
-![MobileCards](img_302.png)
+![MobileCards](img_18.png)
 
 Enter your SAP Cloud Platform credentials, and tap **Log On**.
 
-![MobileCards](img_303.png)
+![MobileCards](img_19.png)
 
 Choose a passcode with at least 8 characters to unlock the app, and tap **NEXT**.
 
-![MobileCards](img_304.png)
+![MobileCards](img_20.png)
 
 Confirm the passcode and tap **DONE**.
 
-![MobileCards](img_305.png)
+![MobileCards](img_21.png)
 
 You now have connected your SAP Mobile Cards client with your SAP Cloud Platform account.
 
-![MobileCards](img_18.png)
+![MobileCards](img_22.png)
 
 [OPTION END]
 
@@ -164,28 +159,23 @@ You now have connected your SAP Mobile Cards client with your SAP Cloud Platform
 
 Scan the QR code with your camera and select the toast message to launch the SAP Mobile Cards app.
 
-![MobileCards](img_19.png)
-
->In CF trial accounts, all applications are stopped every night for saving resources. This is by design.
-
->If you see some trouble during on-boarding process, make sure that Mobile Services app state is in **Started** mode. In SAP Cloud Platform cockpit, navigate to subaccount > Spaces> Applications
->![MobileCards](img_102.png)
+![MobileCards](img_23.png)
 
 Enter your SAP Cloud Platform credentials and choose **Log On**.
 
-![MobileCards](img_20.png)
+![MobileCards](img_24.png)
 
 Choose a passcode with at least 8 characters to unlock the app.
 
-![MobileCards](img_1.2.PNG)
+![MobileCards](img_25.png)
 
 Confirm the passcode and choose **Done**.
 
-![MobileCards](img_1.3.PNG)
+![MobileCards](img_26.png)
 
 You now have connected your SAP Mobile Cards client with your SAP Cloud Platform account.
 
-![MobileCards](img_21.png)
+![MobileCards](img_27.png)
 
 [OPTION END]
 
