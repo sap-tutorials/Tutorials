@@ -1,5 +1,5 @@
 ---
-title: Build your Mobile Development Kit Client using Cloud Build Service
+title: Build Your Mobile Development Kit (MDK) Client Using Cloud Build Service
 description: Build the Mobile Development Kit client using cloud build service and connect to your SAP Cloud Platform mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
@@ -273,7 +273,7 @@ You can find more details about Cloud Build service in [help documentation](http
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a Build Job)]
+[ACCORDION-BEGIN [Step 4: ](Create a build job)]
 
 1. Click **Create Build Job** to build your first build job.
 
@@ -318,7 +318,7 @@ You can find more details about packaging details in [help documentation](https:
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Install/Download Binary)]
+[ACCORDION-BEGIN [Step 5: ](Install/download binary)]
 
 [OPTION BEGIN [Android]]
 
@@ -327,9 +327,10 @@ You can install this new custom MDK client app either by scanning QR code from A
 ![MDK](img_023.9.1.png)
 
 ![MDK](img_023.9.9.png)
+
 ![MDK](img_023.10.10.png)
 
-  [OPTION END]
+[OPTION END]
 
 [OPTION BEGIN [iOS]]
 
@@ -338,9 +339,10 @@ You can install this new custom MDK client app either by scanning QR code from i
 ![MDK](img_023.9.1.png)
 
 ![MDK](img_023.9.png)
+
 ![MDK](img_023.10.png)
 
-  [OPTION END]
+[OPTION END]
 
 [DONE]
 [ACCORDION-END]
