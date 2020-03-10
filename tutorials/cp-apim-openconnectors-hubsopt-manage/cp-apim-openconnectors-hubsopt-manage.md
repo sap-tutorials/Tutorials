@@ -53,7 +53,7 @@ primary_tag: products>sap-api-management
 
     ![Test Connection](06-test-connection.png)
 
-    >If successful, the response code is **200** and you might see 404 error. Do not get confuse with it. Your system is up and running, you can proceed.
+    >If successful, the response code is **200** and you might see 404 error even if the system is up and running. Do not get confuse with it. Your system is up and running, you can proceed.
 
 [DONE]
 [ACCORDION-END]
@@ -99,9 +99,9 @@ primary_tag: products>sap-api-management
 
 2. Try out the URL of the proxy to get the details of accounts from HubSpot instances in the browser.
 
-    ![Try Out](12-Try-out.png)
+    `https://<HostAlias><id>trial<API Base Path>/accounts`
 
-    >`https://<HostAlias><id>trial<API Base Path>/accounts`
+    ![Try Out](12-Try-out.png)
 
 [DONE]
 [ACCORDION-END]
