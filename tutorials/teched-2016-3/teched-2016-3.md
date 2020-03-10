@@ -24,16 +24,26 @@ The SAP Gateway Demo system contains a set of EPM OData services, including the 
 
 Destinations are key building blocks in the SAP Cloud Platform Connectivity service, and are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
 
+
 A destination has a name, a URL, authentication details, and some other configuration details.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
-Log into your trial account on the [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
-Select the **Neo Trial** tile to open the cockpit for the Neo environment.
+[ACCORDION-BEGIN [Step : ](Log into SAP Cloud Platform)]
 
-![Click on Neo Trial](hcp-regions.png)
+Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
+
+![SAP Cloud Platform log in page](scp-trial-logon.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step : ](Enter the Neo Environment)]
+
+Scroll down the page and click on **Access Neo Trial** to enter the Neo environment.
+
+![neopage](scp-neo-logon.png)
 
 [DONE]
 [ACCORDION-END]
