@@ -1,6 +1,6 @@
 ---
-title: Create a Destination for the SAP Gateway Demo System
-description: Create a destination for the SAP Gateway Demo system in the SAP Cloud Platform Connectivity service.
+title: Create a Neo Destination for the SAP Gateway Demo System
+description: Create a destination for the SAP Gateway Demo system in the SAP Cloud Platform Connectivity service, Neo environment.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform ]
