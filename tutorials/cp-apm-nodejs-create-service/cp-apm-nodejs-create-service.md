@@ -106,13 +106,14 @@ Before you start, make sure that you've completed the prerequisites.
 
     As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
-    ```Shell/Bash
+    ```
     [cds] - running nodemon...
     --exec cds run --with-mocks --in-memory?
     --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
     No models found at ./db ./srv ./schema.cds ./services.cds.
     Waiting for some to arrive...
     ```
+
 [OPTION END]
 
 [OPTION BEGIN [Mac and Linux]]
@@ -134,8 +135,7 @@ Before you start, make sure that you've completed the prerequisites.
     ```
 >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
-
-    ```Shell/Bash
+    ```
     [cds] - running nodemon...
     --exec cds run --with-mocks --in-memory?
     --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
@@ -153,7 +153,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 Create a simplistic all-in-one service definition.
 
-1. In Visual Studio Code, choose the **New File** icon and type **`srv/cat-service.cds`**.
+1. After initializing the app, check whether the **`srv`** and **`dev`** folders are already created, if yes then create the respective file as mentioned in the following step. If not, choose the **New File** icon and type **`srv/cat-service.cds`** to create folder and file at once in Visual Studio Code.
 
     ![Add new file](new-file.png)
 
