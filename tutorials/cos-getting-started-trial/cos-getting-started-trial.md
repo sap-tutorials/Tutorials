@@ -10,6 +10,7 @@ primary_tag: topic>cloud
 ## Prerequisites
  - You have registered for a trial account on [SAP Cloud Platform](https://cloudplatform.sap.com/index.html).
  - You should be familiar with the SAP Cloud Platform trial landscape (see [Get Started with SAP Cloud Platform Trial](cp-trial-quick-onboarding)).
+ - You have a subaccount in the **Cloud Foundry** environment, with **Amazon Web Services (AWS)** as provider and the **Europe (Frankfurt)** region.
 
 ## Details
 ### You will learn
@@ -38,13 +39,13 @@ You are the owner of an e-commerce business or a web shop in the fashion industr
 
 1. In the [SAP Cloud Platform trial space](https://account.hanatrial.ondemand.com), enter your trial account.
 
-2. Navigate to your subaccount named `trial`.
+2. Navigate to your subaccount, probably named `trial`.
 
 3. In the navigation pane, open **Subscriptions**.
 
 4. Search for **SAP Customer Order Sourcing** and click on it to open the **Overview** page.
 
-5. Subscribe to the service.
+5. **Subscribe** to the service.
 
     **Go to Application** will be available once the subscription is activated. Later in this post, you can use this link to access the Strategy Builder.
 
@@ -79,7 +80,7 @@ You have successfully subscribed to SAP Customer Order Sourcing, but to be able 
 
 2. In the navigation pane, open **Spaces**.
 
-3. Open your already existing space.
+3. Open your already existing space, probably called `dev`.
 
 4. In the navigation pane, open **Services > Service Marketplace**.
 
@@ -118,7 +119,7 @@ Having created a service instance and the corresponding credentials, you can now
 
 3. As your starting URL choose `https://cpfs-dtrt-trial.cfapps.eu10.hana.ondemand.com/v1`.
 
-4. Enter a name for your environment.
+4. Enter a name for your environment, for example `trial_test`.
 
 5. Go back to your recently created service key in your trial space of SAP Cloud Platform, and copy the following fields to your new environment:
 
@@ -221,9 +222,13 @@ Let's check if this is the case:
 
 1. Open [SAP Customer Order Sourcing on SAP API Business Hub](https://api.sap.com/api/Sourcing_API/resource) in a new window.
 
-2. On the left-hand side, choose **Sourcing** and **Try out**.
+2. Select the environment you created earlier.
 
-3. Post the following sourcing request:
+3. On the left-hand side, choose **Sourcing**.
+
+4. In POST/sourcing choose **Try out**.
+
+5. Post the following sourcing request:
 
 ```JSON
 {

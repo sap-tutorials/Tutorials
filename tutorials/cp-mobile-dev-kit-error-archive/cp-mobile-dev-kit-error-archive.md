@@ -159,6 +159,8 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     ![MDK](img_007.5.png)
 
+    >You can find more details about [`ErrorArchive` Entity Properties](https://help.sap.com/viewer/42dc90f1e1ed45d9aafad60c80646d10/3.0.15/en-US/ff35db37335f4bb8a1e188b997a2b111.html).
+
 9. In **Search** section, update below properties:
 
     | Property | Value |
