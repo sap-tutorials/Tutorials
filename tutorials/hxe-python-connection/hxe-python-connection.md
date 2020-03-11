@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- Python is installed and running properly on your system
+- Python 3 is installed and running properly on your system
 
 ## How-To Details
 In many Python applications, you would need access to a database for storing, retrieving and manipulating data. The SAP HANA client includes a dedicated Python interface (`PyDBAPI`).
@@ -19,54 +19,28 @@ For more details about the Python driver SAP HANA, please refer to the [online d
 ### Time to Complete
 **10 Min**.
 
-[ACCORDION-BEGIN [Step 1: ](Install the SAP HANA client)]
+[ACCORDION-BEGIN [Step 1: ](Install the Python driver)]
 
-Follow the instructions from the following [SAP HANA, express edition clients](https://developers.sap.com/group.hxe-install-clients.html) group to complete your SAP HANA client installation.
+The driver is a Python package that needs to be installed using Python utility program named `pip`.
 
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the Python driver)]
-
-Once the **SAP HANA Client Software Packages** installation is completed, you can now proceed with the Python driver setup.
-
-The driver is a Python package that needs to be installed using Python utility program (either `pip` or `easy_install`). The driver package will be available at:
-
-| Platform                  | Location                                          |
-|---------------------------|---------------------------------------------------|
-| Microsoft Windows         | `C:\Program Files\SAP\hdbclient\hdbcli-X.Y.Z.zip` |
-| Linux and UNIX            | `/usr/sap/hdbclient/hdbcli-X.Y.Z.zip`             |
-
-Depending on your target platform and the Python utility program available on your system, choose one of the following command:
-
-- `pip` install
-
-```bash
-pip install "<hdbcli-N.N.N.zip path>"
-```
-
-- `easy_install`
-
-```bash
-easy_install "<hdbcli-N.N.N.zip path>"
+```Shell
+pip install hdbcli
 ```
 
 When the process completes, you should get the following messages (or similar) in your console:
 
 ```
-Processing hdbcli-2.2.26.tar.gz
-Writing /tmp/easy_install-5nJURq/hdbcli-2.2.26/setup.cfg
-Running hdbcli-2.2.26/setup.py -q bdist_egg --dist-dir /tmp/easy_install-5nJURq/hdbcli-2.2.26/egg-dist-tmp-0VMt7k
-zip_safe flag not set; analyzing archive contents...
-Adding hdbcli 2.2.26 to easy-install.pth file
-
-Installed /usr/lib/python2.7/site-packages/hdbcli-2.2.26-py2.7-linux-x86_64.egg
-Processing dependencies for hdbcli==2.2.26
-Finished processing dependencies for hdbcli==2.2.26
+Collecting hdbcli
+  Downloading hdbcli-2.4.182-cp37-cp37m-win_amd64.whl (3.3 MB)
+     |████████████████████████████████| 3.3 MB 2.2 MB/s
+Installing collected packages: hdbcli
+Successfully installed hdbcli-2.4.182
 ```
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test your Connectivity)]
+[ACCORDION-BEGIN [Step 2: ](Test your Connectivity)]
 
 Create a new Python file named `hxe-connect.py`, Then past the following content:
 
@@ -78,7 +52,7 @@ from hdbcli import dbapi
 connection = dbapi.connect('<server-host>', <port>, '<username>', '<password>')
 
 #This statement prints true if the connection is successfully established
-print connection.isconnected()
+print(connection.isconnected())
 ```
 
 Before saving, adjust the values of :

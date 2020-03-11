@@ -182,5 +182,9 @@ Enter the comment in the box below and choose **Submit Answer**.
 [VALIDATE_1]
 [ACCORDION-END]
 
+### More Information
+SAP Help Portal: [Editing ABAP Doc Comments](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.52.2/en-US/a7b235922f6944bbaf3b36949e500b12.html)
+
+
 
 ---

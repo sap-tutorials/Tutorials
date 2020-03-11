@@ -1,23 +1,38 @@
 ---
-title: Develop an SAP Fiori App using SAP Business Application Studio
+title: Develop an SAP Fiori App Using SAP Business Application Studio
 description: Create an SAP Fiori application in SAP Business Application Studio and deploy it to your SAP Cloud Platform, Cloud Foundry environment.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, tutorial>license]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-business-application-studio
 author_name: Raz Korn
 author_profile: https://github.com/raz-korn
 ---
 
 ## Prerequisites
- - You have access to SAP Business Application Studio.
- - A destination to ES5 is configured in the subaccount from which you accessed the SAP Business Application Studio.
- - A UAA service instance is available in the space to which you will logon.
- - A Destination service instance is available in the space to which you will logon.
- - For the deployment step, additional pre-requisites apply. You need to have the following available in the space to which you will logon:
-    - Application Runtime: 1GB free
-    - Destination: 1 free
-    - HTML5 Applications: 1 free
+ - You have access to SAP Business Application Studio. See [Set Up SAP Business Application Studio for Development](appstudio-onboarding).
+ - A destination to ES5 is configured in the subaccount from which you accessed the SAP Business Application Studio. See:
+    - [Create an Account on the Gateway Demo System](gateway-demo-signup)
+    - [Create a Destination within the Cloud Foundry Environment](cp-cf-create-destination), and set the ES5 destination properties as follows:
+        - Common properties
+            - Name: **ES5**
+            - Type: **HTTP**
+            - Description: **ES5**
+            - URL: **`https://sapes5.sapdevcenter.com:443`**
+            - Proxy Type: **Internet**
+            - Authentication: **`NoAuthentication`**
+        - Additional Properties:
+            - HTML5.DynamicDestination: **true**
+            - sap-client: **002**
+            - `WebIDEEnabled`: **true**
+            - `WebIDESystem`: **ES5**
+            - `WebIDEUsage`: **`odata_abap`**
+ - Make sure that a UAA service instance and a Destination service instance are available in the space to which you will logon. If not, you need to create them; see [Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html).
+ - For the deployment step, additional prerequisites apply. You need to have the following available in the space to which you will log on (see [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add)):
+      - Application Runtime: 1GB free
+      - Destination: 1 free
+      - HTML5 Applications: 1 free
+
 
 ## Details
 ### You will learn
@@ -74,17 +89,20 @@ author_profile: https://github.com/raz-korn
     &nbsp;
     ![Select projects](AppStudio Open Workspace-2.jpg)
 
-3. Go to **Terminal > New Terminal** to open a command-line window within SAP Business Application Studio and change the directory to the `projects` directory:
-
-    ```Shell/console
-    cd ~/projects
-    ```
+3. Go to **Terminal > New Terminal** to open a command-line window within SAP Business Application Studio in the `projects` folder.
 
     >You can check that you're in the `projects` folder using the `pwd` command.
 
-    ```Shell/console
+    >```Shell/console
     pwd
     ```
+
+    >If needed change folder to the `projects` folder using the `cd` command.
+
+    >```Shell/console
+    cd ~/projects
+    ```
+
     ![Open new terminal](AppStudio Open Terminal-1_.jpg)
 
 4. Create a new SAP Fiori project using the Yeoman generator.
@@ -92,6 +110,7 @@ author_profile: https://github.com/raz-korn
     ```Shell/console
     yo
     ```
+
 5. In the generator, select the following options:
 
     >Use the up/down arrow keys to select an option and press ENTER.
@@ -108,11 +127,11 @@ author_profile: https://github.com/raz-korn
     | H | Enter a View name | **Suppliers** |
     | I | Do you want to add a data service | **No** |
 
-    ![Yo parameters](AppStudio Yo Parameters 200203_.jpg)
+    !![Yo parameters](AppStudio Yo Parameters 200203_.jpg)
 
     >The **Explorer** opens and you can see the `FioriDemo` project, its folder structure, and files. If not, you can click the **Explorer** view button at the top left of the screen.
 
-    ![Project created](AppStudio Yo Completed 200203__.jpg)
+    !![Project created](AppStudio Yo Completed 200203__.jpg)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -123,29 +142,29 @@ Now you need to consume a service to bind the UI controls to the service's colle
 
 1. Open the command palette ( **View > Find Command** or **F1**) and select **Consume SAP Services**.
 
-    ![AppStudio Open Command Palette](AppStudio Command Palette.jpg)
-    &nbsp;
-    ![Consume SAP Service](AppStudio Consume SAP Service-1.jpg)
+    !![AppStudio Open Command Palette](AppStudio Command Palette.jpg)
+
+    !![Consume SAP Service](AppStudio Consume SAP Service-1.jpg)
 
 2. Select the **ns.BusinessPartners** folder.
 
-    ![Choose the UI module](AppStudio Consume SAP Service-2.jpg)
+    !![Choose the UI module](AppStudio Consume SAP Service-2.jpg)
 
     >If the project contains more than one HTML5 module, you'll have a list to select from.
 
 3. Choose **My SAP Systems** as the data source.
 
-    ![Choose the data source](AppStudio Consume SAP Service-3.jpg)
+    !![Choose the data source](AppStudio Consume SAP Service-3.jpg)
 
     >A list of data sources is displayed.
 
 4. Choose **ES5** as the data source.
 
-    ![Choose data source](AppStudio Consume SAP Service-4.jpg)
+    !![Choose data source](AppStudio Consume SAP Service-4.jpg)
 
 5. Choose **`GW_SAMPLE_BASIC`** as the service.
 
-    ![Choose service](AppStudio Consume SAP Service-5.jpg)
+    !![Choose service](AppStudio Consume SAP Service-5.jpg)
 
     >The service is successfully bound to the application. You can see that the service appears in the module's `manifest.json` `dataSources` section (**`FioriDemo` > `BusinessPartners` > `webapp`**). You can see the service metadata in **`FioriDemo` > `BusinessPartners` > `webapp` > `localService`**.
 
@@ -154,7 +173,7 @@ Now you need to consume a service to bind the UI controls to the service's colle
 
 [ACCORDION-BEGIN [Step 5: ](Open the layout editor)]
 
-Open the layout editor in SAP Business Application Studio to easily make a few changes. In this case, we will make changes so that data from the backend service is displayed when the app is running.
+Open the layout editor in SAP Business Application Studio to easily make a few changes. In this case, you will make changes so that data from the backend service is displayed when the app is running.
 
 1. Choose **`FioriDemo` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file that you created with yo generator in a previous step.
 
@@ -167,13 +186,13 @@ Open the layout editor in SAP Business Application Studio to easily make a few c
 3. You can optionally choose to open it with the code editor and see how modifications in the Layout Editor are manifested in the code editor.
 
     ![Open code editor](AppStudio Open Code Editor-XML.jpg)
-    &nbsp;
+
     ![Code editor opened](AppStudio Code Editor-XML-Open.jpg)
 
 4. For convenience, place the code editor below the Layout Editor. Use the drag & drop functionality.
 
     ![Drag-Drop editor](AppStudio Drag-Drop Code Editor.jpg)
-    &nbsp;
+
     ![Editor dropped](AppStudio Code Editor Dropped.jpg)
 
 [DONE]
@@ -194,7 +213,7 @@ Make some changes using the layout editor, with no need to do any coding.
 
 3. Select the **List** control and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
 
-    ![Open entity set bind window](AppStudio Layout Editor Bind to Entity Set-1_.jpg)
+    !![Open entity set bind window](AppStudio Layout Editor Bind to Entity Set-1_.jpg)
 
     >The `Select Entity Set` view is presented.
 
@@ -249,15 +268,23 @@ Run your new application to test it.
 
     ![Create new run configuration](AppStudio Run Configurations-3_.jpg)
 
+3. Select **`webapp`**.
+
+    ![Create new run configuration](AppStudio Run Configurations-3.2_.jpg)
+
+4. Select **`index.html`**.
+
+    ![Create new run configuration](AppStudio Run Configurations-3.3_.jpg)
+
     >A new run configuration is generated for the `FioriDemo` project.
 
-3. Expand the run configuration to display the services that can be bound.
+5. Expand the run configuration to display the services that can be bound.
 
     ![Bindable objects](AppStudio Run Configurations-4_.jpg)
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-4. To bind to the test UAA service instance in your space, click the `bind` icon to the right of the UAA service resource and select an instance from the list.
+6. To bind to the test UAA service instance in your space, click the `bind` icon to the right of the UAA service resource and select an instance from the list.
 
     ![Bind to UAA service](AppStudio Run Configurations-5_.jpg)
 
@@ -269,15 +296,15 @@ Run your new application to test it.
 
     ![UAA service instance bound](AppStudio Run Configurations-9_.jpg)
 
-5. Repeat the above step to bind the app to the test destination service instance in your space.
+7. Repeat the above step to bind the app to the test destination service instance in your space.
 
     ![Destination service is bound](AppStudio Run Configurations-13_.jpg)
 
-6. Hover over the run configuration and click the Run Module icon. Wait for the notification `A service is listening to port 6004`. and click the button to launch the app in a new tab.
+8. Hover over the run configuration and click the Run Module icon. Wait for the notification `A service is listening to port 6004`. and click the button to launch the app in a new tab.
 
     ![Running the app locally](AppStudio Run Configurations-14_.jpg)
 
-7. If you are running the app for the first time, the button in the notification will say `Expose and Open`. Otherwise it will say `Open in New Tab`. Click the button.
+9. If you are running the app for the first time, the button in the notification will say `Expose and Open`. Otherwise it will say `Open in New Tab`. Click the button.
 
     ![App is running locally](AppStudio Run Configurations-15_.jpg)
 

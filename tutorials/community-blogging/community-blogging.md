@@ -1,5 +1,5 @@
 ---
-title: Writing and Publishing Blog Posts on SAP Community
+title: Write and Publish Blog Posts on SAP Community
 description: By taking this tutorial, you'll discover how to prepare and manage your blog posts on SAP Community, get tips for better blogging, and learn how to interact with readers. You'll also earn the Blogging Savvy badge.
 auto_validation: true
 time: 25
