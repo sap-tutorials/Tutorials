@@ -16,8 +16,6 @@ primary_tag: products>sap-cloud-platform-enterprise-messaging
 
 ## Prerequisites
 
-  You must fulfill at least one of the following two points to be able to proceed with this tutorial.
-
   - SAP Cloud Platform, Cloud Foundry environment with SAP Cloud Platform Enterprise Messaging entitlement  
 
 ---
