@@ -30,7 +30,7 @@ time: 40
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Configure the NPM registry by executing the following command:
+1. Configure the NPM registry by executing the following command in a command-line window:
 
     ```Shell/Bash
     npm set @sap:registry=https://npm.sap.com
