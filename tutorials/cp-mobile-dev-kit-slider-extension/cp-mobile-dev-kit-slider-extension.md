@@ -11,7 +11,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Tutorial**: [Build Your MDK Client](cp-mobile-dev-kit-build-client)
+- **Download and install** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client&hl=en) device
+- **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
 ### You will learn
@@ -420,27 +421,22 @@ You will add this registered control in a Form Cell page.
     import { View } from "tns-core-modules/ui/core/view";
     import { layout } from "tns-core-modules/ui/core/view";
     import { device as Device } from 'tns-core-modules/platform';
-
     /*
       This is a way to keep iOS and Android implementation of your extension separate
-      You will encapsulate the MySlider class definition inside a function called GetMySliderClass
+      We will encapsulate the MySlider class definition inside a function called GetMySliderClass
       This is so that the class definition won't be executed when you load this javascript
       via require function.
       The class definition will only be executed when you execute GetMySliderClass
     */
-
     declare var com: any;
     declare var android: any;
-
     export function GetMySliderClass() {
-
       /**
        * IMPLEMENT THE ANDROID VERSION OF YOUR PLUGIN HERE
        * In this sample you have 2 controls a label and a seekbar (slider)
        * You extends this control with Observable (View) class so that you can accept listeners
        *  and notify them when UI interaction is triggered
        */
-
       function getPadding() {
         // Return left & right padding in dp
         // For tablet you want 24dp, for other type you use 16dp
@@ -454,6 +450,7 @@ You will add this registered control in a Form Cell page.
         private _seekbar;
         private _layout;
         private _value = 0;
+        private _min = 0; //Used to track min for API 25 or lower
 
         private updateText() {
           this._label.setText(this._labelText + "(" + this._value + ")")
@@ -507,7 +504,7 @@ You will add this registered control in a Form Cell page.
             //Attach a listener to be notified whenever the native Seekbar is changed so that you can notify the MDK Extension
             this._seekbar.setOnSeekBarChangeListener(new android.widget.SeekBar.OnSeekBarChangeListener({
               onStartTrackingTouch(seekBar: any){
-                // you do not have any use for this event, so do nothing here
+                // You do not have any use for this event, so do nothing here
               },
               //This handler function will be called when user let go of the handle
               // This is where you will trigger an event called "OnSliderValueChanged" to the MDK Extension Class
@@ -560,13 +557,26 @@ You will add this registered control in a Form Cell page.
           if (newVal != null && newVal != undefined) {
             this._value = newVal;
             this.updateText();
-            this._seekbar.setProgress(newVal);
+            if (this._seekbar.getProgress() < this._min ) {
+              this._seekbar.setProgress(this._min);
+            }
+            else {
+              this._seekbar.setProgress(newVal);
+            }
           }
         }
 
         public setMinValue(newMin: number): void {
           if (newMin != null && newMin != undefined) {
-            this._seekbar.setMin(newMin);
+            if (Device.sdkVersion >= 26) { //setMin is only available in set API Level 26 or newer
+               this._seekbar.setMin(newMin);
+             }
+             else {
+              this._min = newMin;
+              if (this._seekbar.getProgress() < this._min ) {
+                this._seekbar.setProgress(this._min);
+              }
+            }
           }
         }
 
@@ -802,6 +812,8 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
+    >This file is used for using types defined in MDK SDK or NativeScript. You can find more details about it in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/e6f08b787bf14850ac3f2df272908eeb.html).
+
 11. Save the `tsconfig.json` file.
 
 [VALIDATE_1]
@@ -851,9 +863,26 @@ You should see **Application deployed successfully** message in console log.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run your custom MDK client)]
+[ACCORDION-BEGIN [Step 7: ](Populate the QR code for app on-boarding)]
 
->Follow Prerequisites to create a custom MDK client if not done before.
+SAP Web IDE has a feature to generate QR code for app on-boarding.
+
+1. Right click on the `mdk_extensions` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+
+    ![MDK](img_014.png)
+
+2. Click **Next**.
+
+    ![MDK](img_016.png)
+
+3. Click on the **QR-code icon** to populate the QR-code for app on-boarding.
+
+    ![MDK](img_012.1.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Run the app in MDK client)]
 
 >Make sure you are choosing the right device platform tab above.
 
@@ -861,9 +890,43 @@ You should see **Application deployed successfully** message in console log.
 
 You will run the app on an android emulator.
 
-The MDK client receives deployed metadata definitions as a bundle. Click **OK** to confirm.
+On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
 
-![MDK](img_035.png)
+1. Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
+
+2. Tap **Open browser**. It will open SAP Mobile Services Client app.
+
+    ![MDK](img_013.1.jpg)
+
+3. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+
+    ![MDK](img_016.1.jpg)
+
+4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+
+    ![MDK](img_017.1.png)
+
+5. Tap **AGREE** on `End User License Agreement`.
+
+    ![MDK](img_018.1.jpg)
+
+6. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+
+    ![MDK](img_019.1.jpg)
+
+7. Confirm the passcode and tap **DONE**.
+
+    ![MDK](img_021.1.1.png)
+
+    Optionally, you can enable fingerprint to get faster access to the app data.
+
+    ![MDK](img_022.1.png)
+
+8. Tap **OK**.
+
+    ![MDK](img_023.1.png)
+
+The MDK client receives deployed metadata definitions as a bundle.
 
 Here you see Slider control.
 
@@ -873,15 +936,45 @@ Here you see Slider control.
 
 [OPTION BEGIN [iOS]]
 
-You will run the app on an iOS simulator.
+1. On iPhone, open your camera app and start scanning the QR code, as shown below.
 
-The MDK client receives deployed metadata definitions as a bundle. Click **OK** to confirm.
+    ![MDK](img_013.png)
 
-![MDK](img_044.png)
+2. Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
 
-Here you see Slider control.
+3. Tap **Start** to connect MDK client to SAP Cloud Platform.
 
-![MDK](img_045.gif)
+    ![MDK](img_1.6.png)
+
+4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+
+    ![MDK](img_2.9.png)
+
+5. Tap **Agree** on `End User License Agreement`.
+
+    ![MDK](img_1.8.png)
+
+6. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+
+    ![MDK](img_1.9.png)
+
+7. Confirm the passcode and tap **Done**.
+
+    ![MDK](img_2.0.png)
+
+    Optionally, you can enable Touch ID to get faster access to the app data, tap **Enable**.
+
+    ![MDK](img_2.1.png)
+
+8. Tap **OK**.
+
+    ![MDK](img_2.2.png)
+
+    The MDK client receives deployed metadata definitions as a bundle.
+
+    Here you see Slider control.
+
+    ![MDK](img_045.gif)
 
 [OPTION END]
 

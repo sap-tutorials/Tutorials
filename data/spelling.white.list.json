@@ -147,6 +147,7 @@
     "JSONView",
     "JUnit",
     "Jupyter",
+    "JupyterLab",
     "Kapsel",
     "Kubernetes",
     "keychain",
