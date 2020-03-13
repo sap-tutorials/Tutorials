@@ -56,12 +56,12 @@ Since the target folder is empty, the CLI will ask you whether a new `nest.js` p
 
 [ACCORDION-BEGIN [Step 2: ](Get familiar with the project)]
 
-The project contains the following files and folders, among others, to get you started with the `SAP Cloud SDK for JavaScript`:
+The project contains the following files and folders, among others, to get you started with the SAP Cloud SDK for JavaScript:
 
 ### NPM / Project
 
 - **`package.json`**: Specifies dependencies, metadata and user-defined scripts. The application comes with some predefined scripts and dependencies, that will be explained in detail in the course of this group of tutorials.
-- **`.npmrc`**: The **`npm`** configuration file. In the scaffolding we specify the registry for the `@sap` scope, where the `SAP Cloud SDK` libraries are published.
+- **`.npmrc`**: The **`npm`** configuration file. The SAP Cloud SDK consists of some generic libraries, that are available as Open Source Software and service libraries for the whitelisted SAP S/4HANA APIs, referred to as the Virtual Data Model (VDM). In the scaffolding we specify the registry for the `@sap` scope, where the VDM libraries are published.
 
 ### TypeScript
 
@@ -70,7 +70,7 @@ The project contains the following files and folders, among others, to get you s
 
 ### Continuous Delivery
 
-- **`Jenkinsfile`**: Jenkins pipeline definition file for quality assurance. It uses the [`SAP Cloud SDK's Continuous Delivery Toolkit`](https://github.com/SAP/cloud-s4-sdk-pipeline).
+- **`Jenkinsfile`**: Jenkins pipeline definition file for quality assurance. It uses the [SAP Cloud SDK's Continuous Delivery Toolkit](https://github.com/SAP/cloud-s4-sdk-pipeline).
 - **`pipeline_config.yml`**: Pipeline configuration file for the Jenkins pipeline.
 
 ### Cloud Foundry
@@ -123,12 +123,12 @@ cd <path/to/your/project>
 sap-cloud-sdk init
 ```
 
-Most importantly, the will add the necessary dependencies to your project, along with a set of scripts that allow you to use the [`SAP Cloud SDK's Continuous Delivery Toolkit`](https://github.com/SAP/cloud-s4-sdk-pipeline).
+Most importantly, the will add the necessary dependencies to your project, along with a set of scripts that allow you to use the [SAP Cloud SDK's Continuous Delivery Toolkit](https://github.com/SAP/cloud-s4-sdk-pipeline).
 
 [DONE]
 [ACCORDION-END]
 
-That's it! You should now have a running application that is ready to be integrated with `SAP S/4HANA Cloud`.
+That's it! You should now have a running application that is ready to be integrated with SAP S/4HANA Cloud.
 
 [ACCORDION-BEGIN [Appendix: ](Test yourself)]
 
