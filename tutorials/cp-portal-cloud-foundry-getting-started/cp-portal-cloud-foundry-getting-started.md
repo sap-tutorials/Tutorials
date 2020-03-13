@@ -18,17 +18,17 @@ primary_tag: products>sap-cloud-platform-portal
   - How to assign users to the `Super_Admin` role so that they can design Portal sites
   - How to access the Portal service
 
-In this group of tutorials our goal is to create an attractive Portal site using the SAP Cloud Platform Portal service. But before we can do this, there are some preparation steps that you need to do.
+In this group of tutorials our goal is to create an attractive Portal site using the SAP Cloud Platform Portal service. But before we can do this, there are some steps you need to do in the SAP Cloud Platform cockpit.
 
 [ACCORDION-BEGIN [Step 1: ](Subscribe to the Portal service)]
 
-Before you can access the Portal service, you need to first subscribe to it.
+Before you can access the Portal service, you first need to subscribe to it.
 
 1. [Log onto SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com) and click **Enter Your Trial Account**.
 
     ![Enter trial account](00_enter_trial_account.png)
 
-2. Click on the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can click on it instead.
+2. Click on the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can select it instead.
 
       ![Open trial account](00_open_subaccount.png)
 
@@ -96,11 +96,11 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
       ![Add user to ID Service](9_user_idservice.png)
 
-12. Click **Assign Role Collection**.  In the dialog box that opens, select the `Administrator` role collection that you defined above and then click **Assign Role Collection**.
+12. Click **Assign Role Collection**.  In the dialog box, select the `Administrator` role collection that you defined above and then click **Assign Role Collection**.
 
     ![Assign Role Collection](10_assign_role_collection.png)
 
-You have now been assigned to the `Super_Admin` role and you can access the Portal service and carry out all your admin tasks.
+You have now been assigned to the `Super_Admin` role and you can access the Portal service and carry out all of your admin tasks.
 
 [DONE]
 [ACCORDION-END]

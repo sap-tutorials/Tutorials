@@ -95,7 +95,7 @@ const checkAttempt = async (options, attempt, maxAttempts) => {
         return {
           link: options.uri,
           code: 0,
-          err: error,
+          err: error.message,
         };
       }
     }

@@ -63,7 +63,7 @@ import { BusinessPartnerController } from './business-partner.controller';
 export class AppModule {}
 ```
 
-If you've started your application with `npm run start:dev` in the previous tutorial, it should detect the change and restart automatically. If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
+If you've started your application with `npm run start:dev` in the previous tutorial, it should detect the change and restart automatically. If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:3000/business-partners` should return our placeholder string.
 
 [DONE]
 [ACCORDION-END]
@@ -172,7 +172,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 }
 ```
 
-Reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
+Reload the `http://localhost:3000/business-partners` ` url`  to retrieve a list of business partners.
 
 Congratulations, you just made your first call with the SAP Cloud SDK!
 

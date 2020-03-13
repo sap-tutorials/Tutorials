@@ -15,6 +15,8 @@ author_profile: https://github.com/jitendrakansal
   - How to store changes locally
   - How to sync local changes with backend
 
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/1-cp-mobile-dev-kit-create-customer) to start with this tutorial.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Store the deleted record locally)]
@@ -23,76 +25,76 @@ The next step is to store deleted record locally for an offline application or d
 
 First, define a failure message action for displaying a message in case deleting of a customer fails.
 
-Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
-![MDK](img_020.png)
+    ![MDK](img_020.png)
 
-Provide the below information:
+2. Provide the below information:
 
-| Property | Value |
-|----|----|
-| `Action Name`| `DeleteCustomerEntityFailureMessage` |
-| `Type` | select `Message` |
-| `Message` | `Delete entity failure - {{#ActionResults:delete/#Property:error}}` |
-| `Title` | `Delete Customer` |
-| `OKCaption` | `OK` |
-| `OnOK` | `--None--` |
-| `CancelCaption` | leave it blank |
-| `OnCancel` | `--None--` |
+    | Property | Value |
+    |----|----|
+    | `Action Name`| `DeleteCustomerEntityFailureMessage` |
+    | `Type` | select `Message` |
+    | `Message` | `Delete entity failure - {{#ActionResults:delete/#Property:error}}` |
+    | `Title` | `Delete Customer` |
+    | `OKCaption` | `OK` |
+    | `OnOK` | `--None--` |
+    | `CancelCaption` | leave it blank |
+    | `OnCancel` | `--None--` |
 
->In this expression `{{#ActionResults:delete/#Property:error}}`, _delete_ is a reference to the **Action Result** name in the _Delete Entity action_ (you will create this action in following step). This reference is used to pass the results to subsequent actions in the chain. These actions can reference the action result as needed. In this case if there is a failure, you access the error property of the action result to display the OData failure message.
+    >In this expression `{{#ActionResults:delete/#Property:error}}`, _delete_ is a reference to the **Action Result** name in the _Delete Entity action_ (you will create this action in following step). This reference is used to pass the results to subsequent actions in the chain. These actions can reference the action result as needed. In this case if there is a failure, you access the error property of the action result to display the OData failure message.
 
->This is the standard Binding Target Path (also called Dynamic Target Path) syntax used when you need to include a binding with other bindings or within a string as used in the message here.
+    >This is the standard Binding Target Path (also called Dynamic Target Path) syntax used when you need to include a binding with other bindings or within a string as used in the message here.
 
->You could exclude above expression and can just display a generic message.
+    >You could exclude above expression and can just display a generic message.
 
-![MDK](img_021.png)
+    ![MDK](img_021.png)
 
-Click **Next** and then **Finish** on the Confirmation step.
+3. Click **Next** and then **Finish** on the Confirmation step.
 
-Next, you will create the **OData Delete action** to delete a customer record.
+4. Next, you will create the **OData Delete action** to delete a customer record.
 
->You can find more details about [Delete Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a7fb91f8f07148c4bcadc4774da5e114.html).
+    >You can find more details about [Delete Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a7fb91f8f07148c4bcadc4774da5e114.html).
 
-Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
+5. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
-![MDK](img_023.png)
+    ![MDK](img_023.png)
 
-Provide the below information:
+    Provide the below information:
 
-| Property | Value |
-|----|----|
-| `Action Name`| `Customers_DeleteEntity` |
-| `Type` | `DeleteEntity` |
-| `Service`| `SampleServiceV2` |
-| `EntitySet` | `Customers` |
-| `ReadLink`| click on link icon and double click on `readLink` |
+    | Property | Value |
+    |----|----|
+    | `Action Name`| `Customers_DeleteEntity` |
+    | `Type` | `DeleteEntity` |
+    | `Service`| `SampleServiceV2` |
+    | `EntitySet` | `Customers` |
+    | `ReadLink`| click on link icon and double click on `readLink` |
 
-![MDK](img_024.png)
+    ![MDK](img_024.png)
 
->The `readlink` is a direct reference to an individual entity set entry.
+    >The `readlink` is a direct reference to an individual entity set entry.
 
-Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `Customers_DeleteEntity.action` loaded.
+      Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `Customers_DeleteEntity.action` loaded.
 
-Next, define _Success_ and _Failure_ actions for `Customers_DeleteEntity.action`.
+6. Next, define _Success_ and _Failure_ actions for `Customers_DeleteEntity.action`.
 
-In the action editor for the new action, expand the **Common Action Properties** and provide the below information:
+    In the action editor for the new action, expand the **Common Action Properties** and provide the below information:
 
-| Property | Value |
-|----|----|
-| `Action Result`| `delete` |
-| `Success Action` | `CloseModalPage_Complete.action` |
-| `Failure Action` | `DeleteCustomerEntityFailureMessage.action` |
+    | Property | Value |
+    |----|----|
+    | `Action Result`| `delete` |
+    | `Success Action` | `CloseModalPage_Complete.action` |
+    | `Failure Action` | `DeleteCustomerEntityFailureMessage.action` |
 
->When `Customers_DeleteEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_DeleteEntity.action` fails then `DeleteCustomerEntityFailureMessage.action` will be triggered.
+    >When `Customers_DeleteEntity.action` gets executed successfully then `CloseModalPage_Complete.action` will be triggered or if `Customers_DeleteEntity.action` fails then `DeleteCustomerEntityFailureMessage.action` will be triggered.
 
->`delete` value for **Action Result** is reference to `DeleteCustomerEntityFailureMessage.action` created in step 1.
+    >`delete` value for **Action Result** is reference to `DeleteCustomerEntityFailureMessage.action` created in step 1.
 
->You could also show a success message for `Success Action` or chain a message to success of `CloseModalPage_Complete.action`.
+    >You could also show a success message for `Success Action` or chain a message to success of `CloseModalPage_Complete.action`.
 
-![MDK](img_028.png)
+    ![MDK](img_028.png)
 
-Save the changes to the `Customers_DeleteEntity.action`.
+7. Save the changes to the `Customers_DeleteEntity.action`.
 
 [DONE]
 [ACCORDION-END]
@@ -103,31 +105,31 @@ In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteC
 
 >You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
 
-Right click on the **Rules** folder | **New** | **File**.
+1. Right click on the **Rules** folder | **New** | **File**.
 
-![MDK](img_001.png)
+    ![MDK](img_001.png)
 
-Enter the file name `Customers_DeleteConfirmation.js`, click **OK**.
+2. Enter the file name `Customers_DeleteConfirmation.js`, click **OK**.
 
-Copy and paste the following code.
+    Copy and paste the following code.
 
-```JavaScript
-export default function DeleteConfirmation(clientAPI) {
-	let dialogs = clientAPI.nativescript.uiDialogsModule;
-	return dialogs.confirm("Delete current record?").then((result) => {
-		if (result === true) {
-			return clientAPI.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(
-				(success) => Promise.resolve(success),
-				(failure) => Promise.reject('Delete entity failed ' + failure));
-		} else {
-			return Promise.reject('User Deferred');
-		}
-	});
-}
-```
+    ```JavaScript
+    export default function DeleteConfirmation(clientAPI) {
+    	let dialogs = clientAPI.nativescript.uiDialogsModule;
+    	return dialogs.confirm("Delete current record?").then((result) => {
+    		if (result === true) {
+    			return clientAPI.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(
+    				(success) => Promise.resolve(success),
+    				(failure) => Promise.reject('Delete entity failed ' + failure));
+    		} else {
+    			return Promise.reject('User Deferred');
+    		}
+    	});
+    }
+    ```
 
->In above code there is a reference to `Customers_DeleteEntity.action` , you can navigate directly from here to the MDK file by right clicking on it.
-![MDK](img_001.1.png)
+    >In above code there is a reference to `Customers_DeleteEntity.action` , you can navigate directly from here to the MDK file by right clicking on it.
+    ![MDK](img_001.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -136,27 +138,27 @@ export default function DeleteConfirmation(clientAPI) {
 
 You will add a button to the _Customer Detail page_ called **Trash**. You will link this button to the `Customers_DeleteConfirmation.js` rule you just created. This event will display a dialog when the **Trash** button is pressed by the end-user.
 
-In `Customers_Detail.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
+1. In `Customers_Detail.page`, drag and drop an **Action Bar Item** to the upper right of the action bar.
 
-![MDK](img_016_1.gif)
+    ![MDK](img_016_1.gif)
 
->**Action Bar Item** is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
+    >**Action Bar Item** is a button that users can use to fire actions when pressed. You can add an Action Bar Item only to the Action Bar (at the top of the page).
 
-Click the **link icon** to open the object browser for the **System Item** property.
+    Click the **link icon** to open the object browser for the **System Item** property.
 
-Double click on the **Trash** type and click **OK**.
+    Double click on the **Trash** type and click **OK**.
 
-![MDK](img_017.png)
+    ![MDK](img_017.png)
 
-Next, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+4. Next, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-Double Click on the `Customers_DeleteConfirmation.js` rule and click **OK** to set it as the `OnPress` Action.
+    Double Click on the `Customers_DeleteConfirmation.js` rule and click **OK** to set it as the `OnPress` Action.
 
->You could link `OnPress` property directly to OData delete action directly instead to this JavaScript file. Idea of linking to  JavaScript file is to let you understand another way to achieve similar functionality.
+    >You could link `OnPress` property directly to OData delete action directly instead to this JavaScript file. Idea of linking to  JavaScript file is to let you understand another way to achieve similar functionality.
 
-![MDK](img_019.1.png)
+    ![MDK](img_019.1.png)
 
-Save the changes to the `Customers_Detail.page`.
+5. Save the changes to the `Customers_Detail.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -165,13 +167,13 @@ Save the changes to the `Customers_Detail.page`.
 
 Deploy the updated application to your MDK client.
 
-Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-![MDK](img_026.1.png)
+    ![MDK](img_026.1.png)
 
-Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
 
-![MDK](img_014.1.png)
+    ![MDK](img_014.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -182,43 +184,43 @@ Since we have deployed already both the destination and app id should be pre-sel
 
 [OPTION BEGIN [Android]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
 
-Tap **CUSTOMER LIST** | tap any record | tap trash icon.
+2. Tap **CUSTOMER LIST** | tap any record | tap trash icon.
 
-![MDK](img_032.1.jpg)
+    ![MDK](img_032.1.jpg)
 
-A confirmation dialog appears for user action, tap **OK**.
+3. A confirmation dialog appears for user action, tap **OK**.
 
-![MDK](img_033.1.jpg)
+    ![MDK](img_033.1.jpg)
 
-Since this is an Offline application, record has been removed from local store and deletion request has been added to request queue. This has to be sent or uploaded to the backend explicitly.  
+    Since this is an Offline application, record has been removed from local store and deletion request has been added to request queue. This has to be sent or uploaded to the backend explicitly.  
 
->MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
+    >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-On Main page, tap **SYNC**, a successful message will be shown.
+4. On Main page, tap **SYNC**, a successful message will be shown.
 
-![MDK](img_036.1.png)
+    ![MDK](img_036.1.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
 
-Tap **Customer List** | tap any record | tap trash icon.
+2. Tap **Customer List** | tap any record | tap trash icon.
 
-![MDK](img_032.png)
+    ![MDK](img_032.png)
 
-A confirmation dialog appears for user action, tap **OK**.
+3. A confirmation dialog appears for user action, tap **OK**.
 
-![MDK](img_033.png)
+    ![MDK](img_033.png)
 
-Since this is an Offline application, record has been removed from local store and deletion request has been added to request queue. This has to be sent or uploaded to the backend explicitly.  
+    Since this is an Offline application, record has been removed from local store and deletion request has been added to request queue. This has to be sent or uploaded to the backend explicitly.  
 
->MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
+    >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-On Main page, tap **Sync**, a successful message will be shown.
+4. On Main page, tap **Sync**, a successful message will be shown.
 
 ![MDK](img_036.png)
 

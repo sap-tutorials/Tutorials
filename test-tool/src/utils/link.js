@@ -10,9 +10,10 @@ function removeTrailingSign(string, sign) {
 }
 
 function removeCodeEntries (content) {
-  const { validation: { codeBlock, codeLine } } = regexp;
+  const { validation: { codeBlock, codeLine, metaData } } = regexp;
 
   return content
+    .replace(metaData, '')
     .replace(codeBlock, '')
     .replace(codeLine, '');
 }
