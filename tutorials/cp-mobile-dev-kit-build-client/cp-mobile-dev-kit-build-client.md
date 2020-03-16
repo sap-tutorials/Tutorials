@@ -1,6 +1,6 @@
 ---
-title: Build Your MDK Client
-description: Build and run the Mobile Development Kit client to connect to your SAP Cloud Platform mobile application.
+title: Build Your Mobile Development Kit Client Using MDK SDK
+description: Build the Mobile Development Kit client using MDK SDK and connect to your SAP Cloud Platform mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -17,7 +17,7 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to install a Mobile development kit client SDK on Mac and Windows OS
   - How to build a Mobile development kit client for iOS and Android
-  - How to connect to SAP Cloud Platform Mobile application
+  - How to connect to SAP Cloud Platform Mobile app
 
 ---
 

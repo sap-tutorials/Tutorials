@@ -32,7 +32,7 @@ npm install -g @sap-cloud-sdk/cli
 
 [ACCORDION-BEGIN [Step 2: ](Get familiar with non-S/4HANA OData service)]
 
-Take a look at the [SuccessFactors recruiting service for candidates](https://api.sap.com/api/RCMCandidate/resource) on the `SAP API Business Hub` and get familiar with the entities and possible request structures. In the course of this tutorial we will generate an OData client library for this service and use it to build a query to retrieve data for the `Candidate` entity. Take a look at the capabilities around this entity and the service in general, so that you can compare your generated code later on.
+Take a look at the [SuccessFactors recruiting service for candidates](https://api.sap.com/api/RCMCandidate/resource) on the SAP API Business Hub and get familiar with the entities and possible request structures. In the course of this tutorial we will generate an OData client library for this service and use it to build a query to retrieve data for the `Candidate` entity. Take a look at the capabilities around this entity and the service in general, so that you can compare your generated code later on.
 
 ![Get familiar with the service capabilities](service-overview.png)
 
@@ -41,7 +41,7 @@ Take a look at the [SuccessFactors recruiting service for candidates](https://ap
 
 [ACCORDION-BEGIN [Step 3: ](Provide service specification files)]
 
-Download the service specification file from the `SAP API Business Hub`. In the aforementioned `Candidate` service navigate to Details and press `Download Specification`. Choose EDMX to download a file called `RCMCandidate.edmx`. Don't close this page yet, because you will still need it in one of the next steps.
+Download the service specification file from the SAP API Business Hub. In the aforementioned `Candidate` service navigate to Details and press `Download Specification`. Choose EDMX to download a file called `RCMCandidate.edmx`. Don't close this page yet, because you will still need it in one of the next steps.
 
 ![Download service specification file](service-spec.png)
 
@@ -65,7 +65,7 @@ Only the input and output directory are mandatory:
 sap-cloud-sdk generate-odata-client -i service-specification/ -o odata-client/
 ```
 
-Note that the generator relies on the `@sap/cloud-sdk-generator` package. If you have not installed this, on the first run a prompt will appear asking you to install it.
+Note that the generator relies on the `@sap-cloud-sdk/generator` package. If you have not installed this, on the first run a prompt will appear asking you to install it.
 
 After the generation is finished you should find in the `odata-client` folder multiple generated classes. But also in the `service-specification` folder a new file has been created: `serviceMapping.json`. The file should contain the following content:
 

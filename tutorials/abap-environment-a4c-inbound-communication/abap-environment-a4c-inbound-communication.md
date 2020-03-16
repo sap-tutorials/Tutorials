@@ -87,7 +87,7 @@ You can also see this Scenario in the Project Explorer.
 
 3. Enter a **System ID** and Accept the default (identical) System name, then choose **Create**.
 
-4. In **Technical Data > General > Host Name**, enter the base URL of your provisioning system. Again, you can find the URL for the dashboard by selecting your system (that is, ABAP Project in Project Explorer), then choosing **Properties > ABAP Development** from the context menu.
+4. In **Technical Data > General > Host Name**, enter the base URL of your provisioning system **without the protocol** - i.e. the URL should have the form **`<GUID>.abap.<region>.hana.ondemand.com`**. Again, you can find the URL for the dashboard by selecting your system (that is, ABAP Project in Project Explorer), then choosing **Properties > ABAP Development** from the context menu.
 
 5. Leave the other defaults and choose **Save**.
 
