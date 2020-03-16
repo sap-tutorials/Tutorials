@@ -32,7 +32,7 @@ Download `Employee Onboarding` sample application from [GitHub](https://github.c
 
 2. In the navigation area of the **SAP Web IDE**, choose the **Development** icon.
 
-3. Right click on the **Workspace** folder and choose **Import | File or Project**.
+3. Right-click the **Workspace** folder and choose **Import | File or Project**.
 
     ![Open Web IDE Development](opendev.png)
 

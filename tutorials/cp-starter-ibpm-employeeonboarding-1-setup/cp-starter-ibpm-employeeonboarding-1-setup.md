@@ -26,13 +26,13 @@ To create service instances for business process management services, you need t
 
 1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
-2. Click on **Enter Your Trial Account** to navigate into the trial account
+2. Click **Enter Your Trial Account** to navigate into the trial account
 
       !![Open Trial Account](opentrialaccount.png)
 
     >The trial account should contain one `subaccount` and `space`
 
-3. Click on the subaccount.
+3. Click the subaccount.
 
     !![Enter Trial Subaccount](entertrialaccount.png)
 
@@ -46,7 +46,7 @@ To create service instances for business process management services, you need t
 
     - If you do not see these entitlements in your subaccount, then do the following:
         - click **Configure Entitlements**
-        - next click on **Add Service Plans**
+        - next click **Add Service Plans**
         - In the popup, search for the entitlements listed below and select the service plan
         - Once you have selected all the entitlements, click **Add Service Plans** to complete the configuration
 
@@ -276,9 +276,9 @@ These applications will be used in the next tutorials to work with business rule
 
 You can open both the links in different browser tabs and use them in further tutorials.
 
-1. Click on **Spaces** and then navigate into **dev** space.
+1. Click **Spaces** and then navigate into **dev** space.
 
-2. In **dev** space, click on **Applications** and from among the available applications select `BPMServicesFLP_appRouter` application.
+2. In **dev** space, click **Applications** and from among the available applications select `BPMServicesFLP_appRouter` application.
 
     ![Open Application](openapprouter.png)
 
