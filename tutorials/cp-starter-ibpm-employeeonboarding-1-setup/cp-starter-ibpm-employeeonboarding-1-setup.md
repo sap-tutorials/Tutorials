@@ -44,11 +44,11 @@ To create service instances for business process management services, you need t
     |  Portal, Application Runtime, HTML5 Applications | These services are needed to setup and access Process Visibility and Workflow applications from Fiori Launchpad
     |  Connectivity    | This service is needed to create and configure destinations
 
-    - If you do not see these entitlements in your subaccount, then do the following:
-        - click **Configure Entitlements**
-        - next click **Add Service Plans**
-        - In the popup, search for the entitlements listed below and select the service plan
-        - Once you have selected all the entitlements, click **Add Service Plans** to complete the configuration
+    If you do not see these entitlements in your subaccount, then do the following:
+        - Click **Configure Entitlements**.
+        - Next click **Add Service Plans**.
+        - In the popup, search for the entitlements listed below and select the service plan.
+        - Once you have selected all the entitlements, click **Add Service Plans** to complete the configuration.
 
         ![Check Entitlements](cfentitlements.png)
 
