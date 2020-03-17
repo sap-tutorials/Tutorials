@@ -1,6 +1,6 @@
 ---
 title: Create Service Instance for Document Information Extraction
-description: Create a service instance and the associated service keys for the service.
+description: Create a service instance and the associated service keys for Document Information Extraction, one of the SAP AI Business Services, using the SAP Cloud Platform cockpit.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
@@ -19,7 +19,7 @@ With Document Information Extraction, you can [Use Machine Learning to Extract I
 
 [ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform trial)]
 
-1. In case you do not have a global trial account on SAP Cloud Platform, follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
+1. In case you do not have a global trial account on SAP Cloud Platform, follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account). As most of the SAP Cloud Platform services, the Document Information Extraction trial account is only available in the Europe (Frankfurt) region.
 
 2. Access the [SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and login if necessary.
 
