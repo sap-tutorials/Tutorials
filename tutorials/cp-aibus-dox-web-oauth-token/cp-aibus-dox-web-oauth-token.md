@@ -20,9 +20,8 @@ To get your OAuth access token you will need the following values from the servi
 ![DOX TOKEN](service-key-details.png)
 
 [VALIDATE_1]
-
-[DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 2: ](Get OAuth access token)]
 
