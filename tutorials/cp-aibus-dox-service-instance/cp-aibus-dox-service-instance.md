@@ -3,7 +3,7 @@ title: Create Service Instance for Document Information Extraction
 description: Create a service instance and the associated service keys for Document Information Extraction, one of the SAP AI Business Services, using the SAP Cloud Platform cockpit.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction ]
+tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -13,17 +13,21 @@ primary_tag: topic>machine-learning
   - How to create a service instance of Document Information Extraction
   - How to create service keys for your service instance
 
+With Document Information Extraction, you can [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui). Before that, you need to create a service instance and the associated service keys for Document Information Extraction using the SAP Cloud Platform Trial.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform trial)]
 
-1. Access the [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and login if necessary.
+1. In case you do not have a global trial account on SAP Cloud Platform, follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account). As most of the SAP Cloud Platform services, the Document Information Extraction trial account is only available in the Europe (Frankfurt) region.
 
-2. Click **Enter Your Trial Account** to access your global account (created in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)).
+2. Access the [SAP Cloud Platform Trial](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and login if necessary.
+
+3. Click **Enter Your Trial Account** to access your global trial account.
 
     ![Trial Home](cockpit-home.png)
 
-3. On the navigation side bar, click **Subaccounts** and select your **trial** subaccount.
+4. On the navigation side bar, click **Subaccounts** and select your **trial** subaccount.
 
     ![Subaccounts](enter-trial-account.png)
 
@@ -154,7 +158,7 @@ To list and access your service instances, there is no need to access the servic
 
 1. Go to your **dev** space using the breadcrumbs at the top of the page.
 
-    As you navigate through the SAP Cloud Platform Cockpit and dig into more detail the breadcrumbs at the top of the page show you the hierarchy of your navigation. You can use them to go back to previous steps.
+    As you navigate through the SAP Cloud Platform Trial and dig into more detail the breadcrumbs at the top of the page show you the hierarchy of your navigation. You can use them to go back to previous steps.
 
     ![Breadcrumbs](nav-back-breadcrumbs.png)
 
