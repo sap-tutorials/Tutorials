@@ -70,7 +70,7 @@ Embed one view into another one with routing to prepare for later tutorials. Edi
     ```
 
     ```JavaScript
-    "id": "App"
+    "id": "app"
     ```
 
     ![Update manifest.json to use new view](5.png)
