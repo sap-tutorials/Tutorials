@@ -1,6 +1,6 @@
 ---
 title: Use Machine Learning to Extract Information from Documents
-description: Get the prediction for the uploaded document extracted fields.
+description: Get the machine learning model prediction for the document fields you upload to Document Information Extraction.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
@@ -44,8 +44,6 @@ In the service key you created for Document Information Extraction in [Create Se
     ![DOX](png-files/Authorize2.png)
 
 [VALIDATE_1]
-
-[DONE]
 [ACCORDION-END]
 
 
@@ -114,6 +112,7 @@ You should receive a response like the following:
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 5: ](Upload a document)]
 
 Upload a PDF document, such as an invoice, to the service using the **POST /document/jobs** endpoint. You need to specify:
@@ -146,6 +145,7 @@ Copy the **`id`** from the **Response body** to see the result of the extraction
 
 [DONE]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 6: ](See extracted fields)]
 
