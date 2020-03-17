@@ -91,7 +91,7 @@ With this information we can setup the trust between Azure Active Directory and 
 
 Login to the administration console of SAP Cloud Platform Identity Authentication service through your particular URL.
 
-The URL therefore is: **`https://[TENAND_ID].accounts.ondemand.com/admin`**
+The URL therefore is: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
 >Tenant ID is an automatically generated ID by the system. The first administrator created for the tenant receives an activation e-mail with a URL in it. This URL contains the tenant ID. For more information have a look at the [Product Page](https://www.sap.com/products/cloud-platform/capabilities/foundation.identity-authentication.html#identity-authentication).
 
@@ -148,7 +148,7 @@ Change the selection to **Microsoft ADFS / Azure AD**. Save the the configuratio
 
 Go to the **Tenant Settings** in SAP Cloud Platform Identity Authentication Service and navigate to the **SAML 2.0 Configuration**.
 
-![Navigate to Tenant Settings and SAML 2.0 Configuration](saml-configuration-ias.png)
+![Navigate to Tenant Settings and SAML 2.0 Configuration](saml-config-ias.png)
 
 **Scroll down** to the bottom of the page and **Download** the metadata file.
 

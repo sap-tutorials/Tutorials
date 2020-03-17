@@ -258,7 +258,7 @@ getAllBusinessPartners(): Promise<BusinessPartner[]> {
 However, suppose we also want to retrieve business partners if they have been created in 2019 or later. For such use cases, you can use the `and` and `or` functions from the cloud-sdk-core package.
 
 ```JavaScript / TypeScript
-import { and, or } from '@sap/cloud-sdk-core';
+import { and, or } from '@sap-cloud-sdk/core';
 import * as moment from 'moment';
 
 getAllBusinessPartners(): Promise<BusinessPartner[]> {
