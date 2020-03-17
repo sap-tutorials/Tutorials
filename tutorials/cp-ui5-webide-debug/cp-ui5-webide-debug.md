@@ -69,7 +69,7 @@ onBeforeRendering: function() {
 },
 ```
 
-The controller code should like as follows now:
+The controller code should look like this now:
 ![logger](./logger.png)
 
 
