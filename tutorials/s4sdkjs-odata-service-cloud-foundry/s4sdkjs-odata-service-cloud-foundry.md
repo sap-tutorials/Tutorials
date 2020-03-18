@@ -209,14 +209,14 @@ import { AppService } from './app.service';
 import { BusinessPartnerController } from './business-partner.controller';
 
 @Module({
-  imports: [ConfigModule],
+  imports: [ConfigModule.forRoot()],
   controllers: [AppController, BusinessPartnerController],
   providers: [AppService],
 })
 export class AppModule {}
 ```
 
-In line 2, `ConfigModule` is imported from the `config` package and in line 8 we add it to the module's `imports`. To reference a destination in the request execution, simply replace the `url` with a `destinationName` - `MockServer` in our example:
+In line 2, `ConfigModule` is imported from the `config` package and in line 8 we add it to the module's `imports`. If no arguments are passed to the `forRoot()` method, the `.env` file has to be located in the project root. For details on the possible configuration see the [nest documentation](https://docs.nestjs.com/techniques/configuration).  To reference a destination in the request execution, simply replace the `url` with a `destinationName` - `MockServer` in our example:
 
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
