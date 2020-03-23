@@ -16,7 +16,7 @@ author_profile: https://github.com/jitendrakansal
   - How to create a local parent entity first and then a local child  entity
   - How to implement dynamic data subscription
 
-You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Enhance-Your-First-MDK-App-with-Additional-Functionalities/5-cp-mobile-dev-kit-link-entity) to start with this tutorial.
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Enhance-Your-First-MDK-App-with-Additional-Functionalities/4-cp-mobile-dev-kit-customer-order) to start with this tutorial.
 
 ---
 
@@ -428,6 +428,7 @@ In `Customers_Detail.page` you added total number of order counts for a given cu
 [OPTION END]
 
 Congratulations, you have enhanced your MDK app with additional functionalities. You may now start exploring [other](mission.mobile-dev-kit-level-up) tutorials.
+
 
 [DONE]
 [ACCORDION-END]
