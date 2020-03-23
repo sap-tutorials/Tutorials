@@ -130,5 +130,6 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 [ACCORDION-END]
 
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
----
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/MiBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
