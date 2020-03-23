@@ -29,7 +29,7 @@ const checkLinks = async (links, onCheck) => {
   return results;
 };
 
-const checkLink = (link, reqOptions = {}, maxAttempts = 2) => {
+const checkLink = async (link, reqOptions = {}, maxAttempts = 2) => {
   try {
     const { hostname } = new URL(link);
 
