@@ -11,7 +11,7 @@ time: 40
 
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/) version 8.9 or higher.
+- You've installed [Node.js](https://nodejs.org/en/). Use latest LTS release.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows users only) You've installed the [`SQLite`](https://sqlite.org/download.html) tools for Windows.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
@@ -193,7 +193,7 @@ Create a simplistic all-in-one service definition.
 
 4. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
 
-    ```Shell/Bash
+    ```
     [cds] - connect to datasource - sqlite::memory:
     /> successfully deployed to sqlite in-memory db
     [cds] - serving CatalogService at /catalog
@@ -395,7 +395,7 @@ Instead of using in-memory, we can also use persistent databases.
     cds watch
     ```
 
-    ```Shell/Bash
+    ```
     [cds] - connect to datasource - sqlite:db/my-bookshop.db
     [cds] - serving CatalogService at /catalog - with impl: srv/cat-service.js
     [cds] - launched in: 4356.854ms
