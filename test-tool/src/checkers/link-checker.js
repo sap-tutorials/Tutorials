@@ -14,7 +14,7 @@ const verifyLinks = async (links) => {
       beforeRequest: [(options) => {
         return new Promise((resolve) => {
           if (options.hostname.includes('github.com')) {
-            return setTimeout(resolve, 200);
+            return setTimeout(resolve, 500);
           }
 
           resolve();
