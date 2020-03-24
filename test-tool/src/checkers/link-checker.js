@@ -29,7 +29,7 @@ const checkImageLink = async (link) => {
   const result = await checkLinks([link], {
     hooks: {
       afterResponse: [(response) => {
-        const contentType = (response.headers['Content-Type'] || '');
+        const contentType = (response.headers['Content-Type'] || response.headers['content-type'] || '');
 
         if (contentType.includes('image/')) {
           return response;
