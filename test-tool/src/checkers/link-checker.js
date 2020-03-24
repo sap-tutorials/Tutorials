@@ -9,7 +9,19 @@ process.env.UV_THREADPOOL_SIZE = linkCheck.UV_THREADPOOL_SIZE;
 const isAlive = (status) => status === 'alive';
 
 const verifyLinks = async (links) => {
-  const processedResults = await checkLinks(links);
+  const processedResults = await checkLinks(links, {
+    hooks: {
+      beforeRequest: [(options) => {
+        return new Promise((resolve) => {
+          if (options.hostname.includes('github.com')) {
+            return setTimeout(resolve, 200);
+          }
+
+          resolve();
+        });
+      }],
+    },
+  });
   return Object
     .entries(processedResults)
     .filter(([link, { status }]) => !isAlive(status))
@@ -41,7 +53,7 @@ const checkImageLink = async (link) => {
     }
   });
   const linkResult = result[link];
-  const { status, statusCode } = linkResult;
+  const { status, statusCode = BAD_REQUEST } = linkResult;
 
   if (`${statusCode}` === `${NOT_ACCEPTABLE}`) {
     result.error = remoteImage.message;
@@ -61,7 +73,7 @@ const checkImageLink = async (link) => {
 const checkLink = async (link) => {
   const result = await checkLinks([link]);
   const linkResult = result[link];
-  const { status, statusCode} = linkResult;
+  const { status, statusCode } = linkResult;
   linkResult.error = isAlive(status) ? undefined : getStatusText(statusCode || BAD_REQUEST);
   linkResult.code = statusCode;
   linkResult.link = link;
