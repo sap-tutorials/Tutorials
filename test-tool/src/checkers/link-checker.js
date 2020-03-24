@@ -11,15 +11,15 @@ const isAlive = (status) => status === 'alive';
 const verifyLinks = async (links) => {
   const processedResults = await checkLinks(links, {
     hooks: {
-      beforeRequest: [(options) => {
-        return new Promise((resolve) => {
-          if (options.hostname.includes('github.com')) {
-            return setTimeout(resolve, 200);
-          }
-
-          resolve();
-        });
-      }],
+      // beforeRequest: [(options) => {
+      //   return new Promise((resolve) => {
+      //     if (options.hostname.includes('github.com')) {
+      //       return setTimeout(resolve, 200);
+      //     }
+      //
+      //     resolve();
+      //   });
+      // }],
       afterResponse: [(response) => {
         if (`${response.statusCode}` === '429') {
           console.log(response.headers);
