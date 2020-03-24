@@ -80,7 +80,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
-    ```Shell/Bash
+    ```
     name:              my-bookshop-srv
     requested state:   started
     routes:            my-bookshop-srv-....cfapps.sap.hana.ondemand.com
@@ -116,7 +116,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 3. In the deploy log, find the application URL in the `routes` line at the very end:
 
-        ```Shell/Bash
+        ```
         name:              my-bookshop-srv
         requested state:   started
         routes:            my-bookshop-srv-....cfapps.sap.hana.ondemand.com
