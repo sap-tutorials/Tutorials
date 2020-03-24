@@ -1,5 +1,5 @@
 const checkLinks = require('check-links');
-const { getStatusText, NOT_ACCEPTABLE } = require('http-status-codes');
+const { getStatusText, NOT_ACCEPTABLE, BAD_REQUEST } = require('http-status-codes');
 
 const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
 const { domains } = require('../../config/trusted.links.json');
@@ -20,7 +20,7 @@ const verifyLinks = async (links) => {
         link,
         isTrusted,
         code: statusCode || 0,
-        reason: isInternal ? internalLink.message : getStatusText(statusCode),
+        reason: isInternal ? internalLink.message : getStatusText(statusCode || BAD_REQUEST),
       };
     });
 };
@@ -48,7 +48,7 @@ const checkImageLink = async (link) => {
     return result;
   }
 
-  linkResult.error = isAlive(status) ? undefined : getStatusText(statusCode);
+  linkResult.error = isAlive(status) ? undefined : getStatusText(statusCode || BAD_REQUEST);
   if (linkResult.error) {
     // ignore, in case of error link checker will throw it
     delete linkResult.error;
@@ -61,8 +61,8 @@ const checkImageLink = async (link) => {
 const checkLink = async (link) => {
   const result = await checkLinks([link]);
   const linkResult = result[link];
-  const { status, statusCode } = linkResult;
-  linkResult.error = isAlive(status) ? undefined : getStatusText(statusCode);
+  const { status, statusCode} = linkResult;
+  linkResult.error = isAlive(status) ? undefined : getStatusText(statusCode || BAD_REQUEST);
   linkResult.code = statusCode;
   linkResult.link = link;
 
