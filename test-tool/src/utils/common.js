@@ -33,7 +33,6 @@ const parseFiles = async (filePaths) => {
     const files = new Map();
     const uniqueLinksToFiles = new Map();
     for(let filePath of filePaths) {
-        const fileName = path.basename(filePath);
         const content = await fs.readFile(filePath, 'utf8');
         const contentLines = getContentLines(content);
         const noCodeContentLines = getNoCodeContentLines(content);

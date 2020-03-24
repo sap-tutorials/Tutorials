@@ -92,7 +92,13 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
 
   // remove not existing files, case: tool ran on the last commit where some file was renamed / deleted
   for (let filePath of filePaths) {
-    if (!fs.existsSync(filePath)) {
+    const basename = path.basename(filePath);
+    if (!fs.existsSync(filePath) || !(
+      basename.startsWith('cp-starter')
+      || basename.startsWith('cp-sdk-')
+      || basename.startsWith('cp-portal-')
+      || basename.startsWith('cp-mobile-')
+    )) {
       filePaths = filePaths.filter(f => f!== filePath);
     }
   }
