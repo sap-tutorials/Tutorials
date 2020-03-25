@@ -34,12 +34,6 @@ const verifyLinks = async (links) => {
           error.url
         );
       }],
-      afterResponse: [(response) => {
-        if (`${response.statusCode}` === `${TOO_MANY_REQUESTS}`) {
-          console.log(response.statusCode);
-        }
-        return response;
-      }]
     }
   });
   return Object
