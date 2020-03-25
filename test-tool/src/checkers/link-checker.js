@@ -1,5 +1,12 @@
 const checkLinks = require('check-links');
-const { getStatusText, NOT_ACCEPTABLE, BAD_REQUEST, TOO_MANY_REQUESTS } = require('http-status-codes');
+const {
+  getStatusText,
+  GATEWAY_TIMEOUT,
+  BAD_GATEWAY,
+  NOT_ACCEPTABLE,
+  BAD_REQUEST,
+  TOO_MANY_REQUESTS
+} = require('http-status-codes');
 
 const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
 const { domains } = require('../../config/trusted.links.json');
@@ -16,13 +23,14 @@ const getErrorMessage = (statusCode) => {
   }
 };
 
+const retryStatusCodes = [TOO_MANY_REQUESTS, GATEWAY_TIMEOUT, BAD_GATEWAY];
 const verifyLinks = async (links) => {
   const processedResults = await checkLinks(links, {
     retry: {
       timeout: linkCheck.TIMEOUT,
-      statusCodes: [TOO_MANY_REQUESTS],
+      statusCodes: retryStatusCodes,
       retries: (iterations, error) => {
-        const shouldRetry = error.statusCode === TOO_MANY_REQUESTS;
+        const shouldRetry = retryStatusCodes.includes(error.statusCode);
         if (linkCheck.MAX_RETRIES < iterations || !shouldRetry) {
           return 0;
         }
