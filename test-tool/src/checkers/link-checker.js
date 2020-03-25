@@ -8,9 +8,16 @@ process.env.UV_THREADPOOL_SIZE = linkCheck.UV_THREADPOOL_SIZE;
 
 const isAlive = (status) => status === 'alive';
 
+const getErrorMessage = (statusCode) => {
+  try {
+    return getStatusText(statusCode);
+  } catch (e) {
+    return 'Unreachable link';
+  }
+};
+
 const verifyLinks = async (links) => {
   const processedResults = await checkLinks(links, {
-    timeout: linkCheck.TIMEOUT,
     retry: {
       timeout: linkCheck.TIMEOUT,
       statusCodes: [TOO_MANY_REQUESTS],
@@ -42,11 +49,12 @@ const verifyLinks = async (links) => {
     .map(([link, { statusCode }]) => {
       const isTrusted = domains.some(domain => link.includes(domain));
       const isInternal = internalLink.regexp.test(link);
+
       return {
         link,
         isTrusted,
         code: statusCode || 0,
-        reason: isInternal ? internalLink.message : getStatusText(statusCode || BAD_REQUEST),
+        reason: isInternal ? internalLink.message : getErrorMessage(statusCode),
       };
     });
 };
@@ -74,7 +82,7 @@ const checkImageLink = async (link) => {
     return result;
   }
 
-  linkResult.error = isAlive(status) ? undefined : getStatusText(statusCode || BAD_REQUEST);
+  linkResult.error = isAlive(status) ? undefined : getErrorMessage(statusCode);
   if (linkResult.error) {
     // ignore, in case of error link checker will throw it
     delete linkResult.error;
@@ -88,7 +96,7 @@ const checkLink = async (link) => {
   const result = await checkLinks([link]);
   const linkResult = result[link];
   const { status, statusCode } = linkResult;
-  linkResult.error = isAlive(status) ? undefined : getStatusText(statusCode || BAD_REQUEST);
+  linkResult.error = isAlive(status) ? undefined : getErrorMessage(statusCode);
   linkResult.code = statusCode;
   linkResult.link = link;
 
