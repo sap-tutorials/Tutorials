@@ -11,6 +11,10 @@ const isAlive = (status) => status === 'alive';
 const verifyLinks = async (links) => {
   const processedResults = await checkLinks(links, {
     timeout: linkCheck.TIMEOUT,
+    retry: {
+      limit: linkCheck.MAX_RETRIES,
+      calculateDelay: () => linkCheck.TIMEOUT,
+    },
     hooks: {
       afterResponse: [(response) => {
         if (`${response.statusCode}` === `${TOO_MANY_REQUESTS}`) {
