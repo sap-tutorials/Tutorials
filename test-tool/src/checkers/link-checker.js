@@ -14,6 +14,7 @@ const verifyLinks = async (links) => {
     retry: {
       limit: linkCheck.MAX_RETRIES,
       calculateDelay: () => linkCheck.TIMEOUT,
+      statusCodes: [429, '429']
     },
     hooks: {
       beforeRetry: [(options, error, retryCount) => {
