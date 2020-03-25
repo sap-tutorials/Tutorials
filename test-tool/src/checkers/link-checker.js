@@ -16,9 +16,9 @@ const verifyLinks = async (links) => {
       calculateDelay: () => linkCheck.TIMEOUT,
     },
     hooks: {
-      beforeRetry: (options, error, retryCount) => {
+      beforeRetry: [(options, error, retryCount) => {
         console.log('Before retry: error', error, ', retryCount is ', retryCount);
-      },
+      }],
       afterResponse: [(response) => {
         if (`${response.statusCode}` === `${TOO_MANY_REQUESTS}`) {
           console.log(response.statusCode, getStatusText(TOO_MANY_REQUESTS));
