@@ -12,19 +12,22 @@ const verifyLinks = async (links) => {
   const processedResults = await checkLinks(links, {
     timeout: linkCheck.TIMEOUT,
     retry: {
-      limit: linkCheck.MAX_RETRIES,
       timeout: linkCheck.TIMEOUT,
-      calculateDelay: () => {
-        console.log('BEFORE RETRY!!!!!!!!');
+      statusCodes: [TOO_MANY_REQUESTS],
+      retries: (iterations, error) => {
+        const shouldRetry = error.statusCode === TOO_MANY_REQUESTS;
+        if (linkCheck.MAX_RETRIES < iterations || !shouldRetry) {
+          return 0;
+        }
+
         return linkCheck.TIMEOUT;
-      },
-      statusCodes: [429, '429']
+      }
     },
     hooks: {
       beforeRetry: [(options, error, retryCount) => {
         console.log(
           'Before retry: error',
-          (error.response && error.response.statusCode) || error.code,
+          (error.statusCode || 'Unknown') || error.code,
           ', retryCount is ',
           retryCount,
           ', URL is ',
@@ -33,7 +36,7 @@ const verifyLinks = async (links) => {
       }],
       afterResponse: [(response) => {
         if (`${response.statusCode}` === `${TOO_MANY_REQUESTS}`) {
-          console.log(response.statusCode, getStatusText(TOO_MANY_REQUESTS));
+          console.log(response.statusCode);
         }
         return response;
       }]
