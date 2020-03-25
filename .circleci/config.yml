@@ -71,11 +71,11 @@ workflows:
   nightly:
     triggers:
     - schedule:
-      cron: "0 1 * * *"
-      filters:
-        branches:
-          only:
-            - master
+        cron: "0 1 * * *"
+        filters:
+          branches:
+            only:
+              - master
     jobs:
       - build-all
   commitly:
