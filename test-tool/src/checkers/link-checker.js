@@ -1,5 +1,5 @@
 const checkLinks = require('check-links');
-const { getStatusText, NOT_ACCEPTABLE, BAD_REQUEST } = require('http-status-codes');
+const { getStatusText, NOT_ACCEPTABLE, BAD_REQUEST, TOO_MANY_REQUESTS } = require('http-status-codes');
 
 const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
 const { domains } = require('../../config/trusted.links.json');
@@ -10,17 +10,15 @@ const isAlive = (status) => status === 'alive';
 
 const verifyLinks = async (links) => {
   const processedResults = await checkLinks(links, {
+    timeout: linkCheck.TIMEOUT,
     hooks: {
-      beforeRequest: [(options) => {
-        return new Promise((resolve) => {
-          if (options.hostname.includes('github.com')) {
-            return setTimeout(resolve, 1000);
-          }
-
-          resolve();
-        });
-      }],
-    },
+      afterResponse: [(response) => {
+        if (`${response.statusCode}` === `${TOO_MANY_REQUESTS}`) {
+          console.log(response.statusCode, getStatusText(TOO_MANY_REQUESTS));
+        }
+        return response;
+      }]
+    }
   });
   return Object
     .entries(processedResults)
