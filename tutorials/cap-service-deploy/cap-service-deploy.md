@@ -13,6 +13,7 @@ time: 20
 - You've finished the tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
 - If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account).
 - You've downloaded and installed the [cf command-line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
+- Log on to Cloud Foundry using `cf login`(this will ask you to select CF API, org, and space)
 
 ## Details
 ### You will learn  
@@ -40,7 +41,7 @@ It's now time to switch to SAP HANA as a database.
 2. Add the SAP HANA driver as a dependency to your project:
 
     ```Shell/Bash
-    npm add hdb
+    npm add @sap/hana-client
     ```
     >If your **`.cdsrc.json`** file contains a `"target"` entry, remove it or set it to: `"target": "gen"`. This causes deployment files to be written to this folder. Otherwise, the deployment files would be written to the source folders.
 
