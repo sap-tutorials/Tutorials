@@ -17,7 +17,14 @@ const verifyLinks = async (links) => {
     },
     hooks: {
       beforeRetry: [(options, error, retryCount) => {
-        console.log('Before retry: error', error, ', retryCount is ', retryCount);
+        console.log(
+          'Before retry: error',
+          (error.response && error.response.statusCode) || error.code,
+          ', retryCount is ',
+          retryCount,
+          ', URL is ',
+          error.url
+        );
       }],
       afterResponse: [(response) => {
         if (`${response.statusCode}` === `${TOO_MANY_REQUESTS}`) {
