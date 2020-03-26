@@ -19,7 +19,7 @@ author_profile: https://github.com/jitendrakansal
   - How to sync local changes with backend
 
 
-You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/1-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
 
 ---
 

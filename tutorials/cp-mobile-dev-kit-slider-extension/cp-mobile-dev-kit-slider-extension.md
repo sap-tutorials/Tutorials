@@ -21,7 +21,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Cloud Platform Mobile application
 
-You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/2-Create-Extension-Controls-with-NativeScript-in-an-MDK-App) and start directly with step 6 in this tutorial.
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/2-Create-Extension-Controls-with-NativeScript-in-an-MDK-App) and start directly with step 6 in this tutorial.
 
 ---
 
@@ -83,7 +83,7 @@ The extension control that you will be creating to extend the functionality of y
 
     **Control**: The name of the file under the `<MetadataProject>/Extensions/<Module>/controls` that contains the extension class. If not specified, module name would be used as the value for this property.
 
-    **Class**: The name of the exported class in the module that is to be used for the extension.
+    **Class**: The class name of your custom extension class. The client will check for this class at runtime and if it's found, your extension will be instantiated. Otherwise, a stub with an error message will be shown.
 
     **Display**: This property is used for the image to be displayed on the page editor to represent the extension control. Use the binding button to select an image from the `Workspace\MDKExtensionControls\Image` folder.
 
