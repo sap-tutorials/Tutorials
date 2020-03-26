@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/SAPDocuments/Tutorials#readme",
   "dependencies": {
-    "check-links": "^1.1.8",
+    "check-links": "1.1.8",
     "color-log": "^0.0.2",
     "command-line-args": "^4.0.7",
     "fs-extra": "^8.1.0",
