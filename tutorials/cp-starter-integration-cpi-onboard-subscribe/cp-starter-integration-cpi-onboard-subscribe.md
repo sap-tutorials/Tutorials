@@ -55,7 +55,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
 [ACCORDION-BEGIN [Step 2: ](Assign required roles)]
 >**IMPORTANT**:
- With this step, you define permissions for users accessing SAP Cloud Platform Integration. For different tasks, different role templates are predefined, each role template containing the permissions for a set of tasks done by a typical persona such like the integration developer. We propose that you define an own role template that contains the most important role templates predefined by SAP.
+ With this step, you define permissions for users accessing SAP Cloud Platform Integration. For different tasks, different role templates are predefined. Each role template contains the permissions for a set of tasks done by a typical persona such like the integration developer. We propose that you define an own role template that contains the most important role templates predefined by SAP.
 
 
 1. In the breadcrumbs, select your subaccount to navigate to the subaccount level.
@@ -67,7 +67,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
     ![Create role collection](2.2.create-role-collection.png)
 
 3. In the **Name** field, enter **`Tenant_Administrator`** and choose **Save**. Select the newly created **`Tenant_Administrator`** role collection.
-   This newly defined role collection will be  used to group all role templates predefined by SAP that you like to assign.
+   This newly defined role collection will be used to group all role templates predefined by SAP that you like to assign.
 
     ![Create tenant admin role collection](2.3.create-tenant-admin-rc.png)
 
