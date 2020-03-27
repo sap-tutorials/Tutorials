@@ -215,12 +215,9 @@ In the last section of `BrandedSettings.json` file, make these changes:
 | Field | Value |
 |----|----|
 | `DetailLabelViewText` | `My sample custom client` |
-| `EncryptDatabase` | `false` |
 | `SigninButtonText` | `Start` |
 
 ![MDK](img_016.png)
-
->It is recommended to encrypt the database in production scenarios. You might want to set this property to false to extract the database for debugging purposes.
 
 >You can find more details about branding in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 

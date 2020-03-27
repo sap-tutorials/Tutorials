@@ -11,7 +11,7 @@ time: 40
 
 
 ## Prerequisites
-- You've installed [Node.js](https://nodejs.org/en/) version 8.9 or higher.
+- You've installed [Node.js](https://nodejs.org/en/). Use latest LTS release.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
 - (For Windows users only) You've installed the [`SQLite`](https://sqlite.org/download.html) tools for Windows.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
@@ -30,7 +30,7 @@ time: 40
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Configure the NPM registry by executing the following command:
+1. Configure the NPM registry by executing the following command in a command-line window:
 
     ```Shell/Bash
     npm set @sap:registry=https://npm.sap.com
@@ -106,13 +106,14 @@ Before you start, make sure that you've completed the prerequisites.
 
     As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
-    ```Shell/Bash
+    ```
     [cds] - running nodemon...
     --exec cds run --with-mocks --in-memory?
     --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
     No models found at ./db ./srv ./schema.cds ./services.cds.
     Waiting for some to arrive...
     ```
+
 [OPTION END]
 
 [OPTION BEGIN [Mac and Linux]]
@@ -134,8 +135,7 @@ Before you start, make sure that you've completed the prerequisites.
     ```
 >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
-
-    ```Shell/Bash
+    ```
     [cds] - running nodemon...
     --exec cds run --with-mocks --in-memory?
     --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
@@ -153,7 +153,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 Create a simplistic all-in-one service definition.
 
-1. In Visual Studio Code, choose the **New File** icon and type **`srv/cat-service.cds`**.
+1. After initializing the app, check whether the **`srv`** and **`dev`** folders are already created, if yes then create the respective file as mentioned in the following step. If not, choose the **New File** icon and type **`srv/cat-service.cds`** to create folder and file at once in Visual Studio Code.
 
     ![Add new file](new-file.png)
 
@@ -193,7 +193,7 @@ Create a simplistic all-in-one service definition.
 
 4. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
 
-    ```Shell/Bash
+    ```
     [cds] - connect to datasource - sqlite::memory:
     /> successfully deployed to sqlite in-memory db
     [cds] - serving CatalogService at /catalog
@@ -395,7 +395,7 @@ Instead of using in-memory, we can also use persistent databases.
     cds watch
     ```
 
-    ```Shell/Bash
+    ```
     [cds] - connect to datasource - sqlite:db/my-bookshop.db
     [cds] - serving CatalogService at /catalog - with impl: srv/cat-service.js
     [cds] - launched in: 4356.854ms
@@ -485,4 +485,6 @@ We can now see the generic handlers shipped with CAP in action.
 
 [ACCORDION-END]
 
----
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/OCBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

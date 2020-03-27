@@ -13,7 +13,7 @@ jobs:
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
-          - node_modules
+            - node_modules
       - run:
           name: Run test tool on the last commit affected files
           command: npm run test-last-commit
@@ -71,7 +71,7 @@ workflows:
   nightly:
     triggers:
     - schedule:
-        cron: "0 0 * * *"
+        cron: "0 1 * * *"
         filters:
           branches:
             only:
