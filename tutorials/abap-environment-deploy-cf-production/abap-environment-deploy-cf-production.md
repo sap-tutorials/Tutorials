@@ -269,7 +269,7 @@ time: 15
 
     ![Define inbound tile](site2.png)
 
-      Click **Finish**.
+    Click **Finish**.
 
 [DONE]
 [ACCORDION-END]
