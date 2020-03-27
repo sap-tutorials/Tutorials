@@ -122,9 +122,9 @@ Now, still in the **Cloud to On-Premise > Access Control** tab, enter the resour
 
 5. Enter the name **`BAPI_EPM`** as a **Prefix**, then choose **Save**.
 
-6. The list of resources should now look like this:
+6. The list of resources should now look roughly like this:
 
-    ![Image depicting step1e-name-rfc](step1e-name-rfc.png)
+    ![Image depicting step3f-scc-destinations](step3f-scc-destinations.png)
 
 [DONE]
 [ACCORDION-END]
@@ -184,7 +184,7 @@ You have now created a destination service instance destination for your communi
 
 4. Enter the credentials for the SAP Cloud Connector administration user for your  SAP Cloud Platform Neo account.
 
-      - Hostname = URL for your Neo subaccount, without protocol or account, e.g. if your Neo URL = `https://account.hana.ondemand.com/` , then you need **`hana.ondemand.com/`**. 
+      - Hostname = URL for your Neo subaccount, without protocol or account, e.g. if your Neo URL = `https://account.hana.ondemand.com/` , then you need **`hana.ondemand.com/`**.
 
         ![Image depicting step8b-comm-system-1](step8b-comm-system-1.png)
 
