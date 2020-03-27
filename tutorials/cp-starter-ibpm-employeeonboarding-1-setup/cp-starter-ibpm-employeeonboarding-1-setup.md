@@ -45,10 +45,14 @@ To create service instances for business process management services, you need t
     |  Connectivity    | This service is needed to create and configure destinations
 
     If you do not see these entitlements in your subaccount, then do the following:
-        - Click **Configure Entitlements**.
-        - Next click **Add Service Plans**.
-        - In the popup, search for the entitlements listed below and select the service plan.
-        - Once you have selected all the entitlements, click **Add Service Plans** to complete the configuration.
+
+    - Click **Configure Entitlements**.
+
+    - Next click **Add Service Plans**.
+
+    - In the popup, search for the entitlements listed below and select the service plan.
+
+    - Once you have selected all the entitlements, click **Add Service Plans** to complete the configuration.
 
         ![Check Entitlements](cfentitlements.png)
 
@@ -303,4 +307,6 @@ These steps complete the setup of the starter scenario for Intelligent Business 
 [DONE]
 [ACCORDION-END]
 
----
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/MSBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

@@ -50,11 +50,6 @@ const extractLinks = (content) => {
   return [...(new Set(links))];
 };
 
-const isErrorStatusCode = statusCode => /^(4|5)/.test(`${statusCode}`);
-const isHttps = url => new URL(url).protocol.startsWith('https');
-
 module.exports = {
   extractLinks,
-  isHttps,
-  isErrorStatusCode,
 };
