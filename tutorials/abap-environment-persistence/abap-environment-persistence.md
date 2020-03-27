@@ -40,7 +40,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
      Click **Next >**.
 
       ![Create ABAP package](package2.png)
- 
+
   3. `ZLOCAL` will be added as software component. Click **Next >**.
 
       ![Create ABAP package](package3.png)
@@ -206,3 +206,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [VALIDATE_1]
 [ACCORDION-END]
 ---
+
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/NSBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
