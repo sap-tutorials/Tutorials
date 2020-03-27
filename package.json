@@ -29,6 +29,7 @@
     "command-line-args": "^4.0.7",
     "fs-extra": "^8.1.0",
     "gitlog": "^3.1.2",
+    "got": "9.6.0",
     "http-status-codes": "^1.4.0",
     "inquirer": "^5.2.0",
     "json2csv": "^4.5.1",
