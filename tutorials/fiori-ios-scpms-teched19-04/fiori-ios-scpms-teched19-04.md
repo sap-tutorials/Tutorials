@@ -9,7 +9,7 @@ time: 15
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -57,16 +57,20 @@ class CustomerDetailTableViewController: UITableViewController, SAPFioriLoadingI
 
 ```
 
-Implement the data service code to the `viewDidLoad(:)` method:
+Add the following lines of code as class properties to the `OverviewViewController.swift` class to retrieve the data service:
 
 ```Swift
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-    AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-    logger.error("OData service is nil. Please check onboarding.")
-    return
+// Retrieve the data service using the destinations dictionary and return it.
+var dataService: ESPMContainer<OnlineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
 }
-self.dataService = dataService
 
 ```
 
