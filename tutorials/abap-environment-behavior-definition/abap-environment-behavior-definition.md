@@ -1,14 +1,14 @@
 ---
 auto_validation: true
-title: Create Behavior Definition in SAP Cloud Platform ABAP environment
-description: Create behavior and services in SAP Cloud Platform ABAP environment.
+title: Create Behavior and Service in SAP Cloud Platform ABAP Environment
+description: Create behavior and services in SAP Cloud Platform, ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 20
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform ABAP Environment user
+  - SAP Cloud Platform, ABAP environment user
   - ADT version 2.96 or higher
 
 ## Details
@@ -186,7 +186,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
         LOOP AT roots_to_lock INTO DATA(ls_root_to_lock).
           TRY.
               cl_abap_lock_object_factory=>get_instance( iv_name = 'EZROOMXXX')->enqueue(
-                it_table_mode = VALUE if_abap_lock_object=>tt_table_mode( ( table_name = 'ZROOM_XXX' mode = 'E' ) )
+                it_table_mode = VALUE if_abap_lock_object=>tt_table_mode( ( table_name = 'ZROOM_XXX' ) )
                 it_parameter  = VALUE if_abap_lock_object=>tt_parameter( ( name = 'ID' value = REF #( ls_root_to_lock-id ) ) ) ).
             CATCH cx_abap_foreign_lock INTO DATA(lx_lock).
               APPEND VALUE #( id = ls_root_to_lock-id %fail = VALUE #( cause = if_abap_behv=>cause-locked ) ) TO failed-room.

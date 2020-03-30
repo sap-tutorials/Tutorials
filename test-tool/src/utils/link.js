@@ -10,9 +10,10 @@ function removeTrailingSign(string, sign) {
 }
 
 function removeCodeEntries (content) {
-  const { validation: { codeBlock, codeLine } } = regexp;
+  const { validation: { codeBlock, codeLine, metaData } } = regexp;
 
   return content
+    .replace(metaData, '')
     .replace(codeBlock, '')
     .replace(codeLine, '');
 }
@@ -49,11 +50,6 @@ const extractLinks = (content) => {
   return [...(new Set(links))];
 };
 
-const isErrorStatusCode = statusCode => /^(4|5)/.test(`${statusCode}`);
-const isHttps = url => new URL(url).protocol.startsWith('https');
-
 module.exports = {
   extractLinks,
-  isHttps,
-  isErrorStatusCode,
 };

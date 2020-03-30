@@ -292,7 +292,7 @@ Click on **Allow**.
 If you look at the log outputs in Xcode you will notice that all the `registerDeviceToken(_:withParameters:completionHandler:)` got called and registered your phone's device token.
 
 ```Swift
-2020-02-11 12:59:05.643632-0800 TutorialApp[27153:3287930] [general] # SAP.Foundation.RemoteNotificationClient.RemoteNotificationClient - INFO - (0x283415f00) - SAPcpmsRemoteNotificationClient.swift.registerDeviceToken(_:withParameters:completionHandler:) - Device token registration was succesfull
+2020-02-11 12:59:05.643632-0800 TutorialApp[27153:3287930] [general] # SAP.Foundation.RemoteNotificationClient.RemoteNotificationClient - INFO - (0x283415f00) - SAPcpmsRemoteNotificationClient.swift.registerDeviceToken(_:withParameters:completionHandler:) - Device token registration was successful
 adDeviceTokenForRemoteNotification(_:) - Register DeviceToken succeeded
 
 ```

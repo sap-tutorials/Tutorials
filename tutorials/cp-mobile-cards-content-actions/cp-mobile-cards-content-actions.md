@@ -32,11 +32,11 @@ A procurement manager at a company is about to visit the company's partner vendo
 
 Make sure you have logged into the **SAP Cloud Platform Mobile Services cockpit**. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
-![MobileCardsImage](img_2.png)
+![MobileCardsImage](img_3.png)
 
 Click the **Create a New Card** icon.
 
-![MobileCardsImage](img_3.png)
+![MobileCardsImage](img_4.png)
 
 Provide the required information:
 
@@ -50,7 +50,7 @@ Provide the required information:
 
 > If you see a pop-up, click **OK** for the confirmation.
 
-![MobileCardsImage](img_4.png)
+![MobileCardsImage](img_5.png)
 
 [DONE]
 [ACCORDION-END]
@@ -59,7 +59,7 @@ Provide the required information:
 
 Navigate to the **Editor** tab, and click **Flip to Back** to implement actions on the content.
 
-![MobileCardsImage](img_5.png)
+![MobileCardsImage](img_6.png)
 
 Replace the **Supplier Address** span, as highlighted in the image, with the following code.
 
@@ -79,7 +79,7 @@ Replace the **Supplier Address** span, as highlighted in the image, with the fol
 </span>
 ```
 
- ![MobileCardsImage](img_6.png)
+ ![MobileCardsImage](img_7.png)
 
 >By adding the `c2g_address` tag to the address, SAP Mobile Cards client can now parse the address and offer the user to show it on a map.
 
@@ -93,7 +93,7 @@ Next, replace the **Supplier Email** span, as highlighted in the image, with the
 </span>
 ```
 
-![MobileCardsImage](img_7.png)
+![MobileCardsImage](img_8.png)
 
 >By adding the `c2g_email` tag to the email, SAP Mobile Cards client can now parse the email correctly and offer the user to start writing an email directly to the contact email address of the card.
 
@@ -123,7 +123,7 @@ Finally, add new entries for **Supplier Phone Number** and **Supplier Website** 
 </div>
 ```
 
-![MobileCardsImage](img_8.png)
+![MobileCardsImage](img_9.png)
 
 >By adding the `c2g_phoneNumber` tag to the phone number, SAP Mobile Cards client can now parse the phone number correctly and offer the user to start a call or send an SMS directly to the contact number of the card.
 
@@ -131,7 +131,7 @@ Finally, add new entries for **Supplier Phone Number** and **Supplier Website** 
 
 Click **Save**.
 
-!![MobileCardsImage](img_9.png)
+!![MobileCardsImage](img_10.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -142,19 +142,19 @@ By default, status of newly created cards is **Development**. Cards can be subsc
 
 Click **Content Action Card** in the Card Templates Tab.
 
-![MobileCardsImage](img_10.png)
+![MobileCardsImage](img_11.png)
 
 Under **Actions**, click the highlighted icon to change the state to **Productive**.
 
-![MobileCardsImage](img_11.png)
+![MobileCardsImage](img_12.png)
 
 Choose **Yes** to confirm.
 
-![MobileCards](img_12.png)
+![MobileCards](img_13.png)
 
 You will notice that the **State** has been changed to **Productive**.
 
-![MobileCardsImage](img_13.png)
+![MobileCardsImage](img_14.png)
 
 [DONE]
 [ACCORDION-END]
@@ -167,49 +167,49 @@ You will notice that the **State** has been changed to **Productive**.
 
 In the SAP Mobile Cards Android client, tap **+** | **Subscriptions**.
 
-!![MobileCardsImage](img_14.png)
+!![MobileCardsImage](img_15.png)
 
 Tap `Content Action Card` under the **All Subscriptions** tab.
 
-!![MobileCardsImage](img_15.png)
+!![MobileCardsImage](img_16.png)
 
 Tap **Subscribe** to trigger the download of the Content Action Card in your SAP Mobile Cards app.
 
-!![MobileCardsImage](img_16.png)
+!![MobileCardsImage](img_17.png)
 
 Tap **<-** 'Back' to to see latest cards downloaded on the device.
 
-!![MobileCardsImage](img_17.png)
+!![MobileCardsImage](img_18.png)
 
 Tap a card to open it.
 
-!![MobileCardsImage](img_18.png)
+!![MobileCardsImage](img_19.png)
 
 Tap on the **flip** button to view the other side of the card.
 
-!![MobileCardsImage](img_19.png)
+!![MobileCardsImage](img_20.png)
 
 Tap on the **Action Bar** button to view the content based actions.
 
-!![MobileCardsImage](img_20.png)
+!![MobileCardsImage](img_21.png)
 
 Tap on **Open Maps** action to view the location of the supplier on the default maps client.
 
-!![MobileCardsImage](img_21.png)
+!![MobileCardsImage](img_22.png)
 
 > SAP Mobile Cards App passes the supplier's address to the maps application.
 
 Tap **<-** 'Back' to to see latest cards downloaded on the device.
 
-!![MobileCardsImage](img_22.png)
+!![MobileCardsImage](img_23.png)
 
 Tap **v** to expand the card action menu.
 
-!![MobileCardsImage](img_23.png)
+!![MobileCardsImage](img_24.png)
 
 Tap on **Email `abc@xyz.com`** action to draft an e-mail to the supplier.
 
-!![MobileCardsImage](img_24.png)
+!![MobileCardsImage](img_25.png)
 
 > SAP Mobile Cards launches the default mail client and populates the receiver's email id.
 
@@ -219,39 +219,39 @@ Tap on **Email `abc@xyz.com`** action to draft an e-mail to the supplier.
 
 In the SAP Mobile Cards iOS client, tap **More** | **Subscriptions**.
 
-![MobileCardsImage](img_25.png)
+![MobileCardsImage](img_26.png)
 
 Tap `Content Action Card` under the **All** tab.
 
-![MobileCardsImage](img_26.png)
+![MobileCardsImage](img_27.png)
 
 Tap **Subscribe** to trigger the download of the Content Action Card in your SAP Mobile Cards app.
 
-![MobileCardsImage](img_27.png)
+![MobileCardsImage](img_28.png)
 
 Tap on **All Cards**.
 
-![MobileCardsImage](img_28.png)
+![MobileCardsImage](img_29.png)
 
 Tap a card to open it.
 
-![MobileCardsImage](img_29.png)
+![MobileCardsImage](img_30.png)
 
 Tap on the **flip** button to view the other side of the card.
 
-![MobileCardsImage](img_30.png)
+![MobileCardsImage](img_31.png)
 
 Tap on the **flip** button to return to the front view of the card.
 
-![MobileCardsImage](img_31.png)
+![MobileCardsImage](img_32.png)
 
 Tap on the **Action Menu** button to view the content based actions.
 
-!![MobileCardsImage](img_32.png)
+!![MobileCardsImage](img_33.png)
 
 Tap on **Email `abc@xyz.com`** action to draft an e-mail to the supplier, or tap on **Open Maps** action to view the location of the supplier on the default maps client.
 
-!![MobileCardsImage](img_33.png)
+!![MobileCardsImage](img_34.png)
 
 [OPTION END]
 

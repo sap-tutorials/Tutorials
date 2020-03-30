@@ -8,37 +8,23 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ## Prerequisites
-- Either: An entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
-- Or: [SAP Cloud Platform, ABAP environment, trial version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
+- You have done one of the following:
+    - Created an entitlement to [SAP Cloud Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
+    - Created an entitlement to [SAP Cloud Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), full version
 
 ## Details
 ### You will learn
   - How to create a suitable custom entity to get data from a remote system
   - How to implement a query provider class to get the data, using a BAPI (Business Application Programming Interface)
-  - How to expose the custom entity as a Business Service Definition
-  - How to display the data in a Fiori Elements Preview, using the Business Service Binding
+  - How to expose the custom entity as a **service definition**
+  - How to display the data in a Fiori Elements Preview, using a **service binding**
 
 Note that, if you are using the trial version, currently you cannot access an on-premise system using RFC. In that case, you will test the class using mock data.
 
-A BAPI is a standard interface to a business object model, implemented as a function module. For more information, see: [BAPI](https://help.sap.com/viewer/166400f6be7b46e8adc6b90fd20f3516/1709%20002/en-US)
+A BAPI is a standard interface to a business object model, implemented as a function module.
 
 Custom entities are used for data models whose runtime is implemented manually. There is no SELECT statement on the data source. Rather, you define the elements and their types in the custom entity. Then you implement the data retrieval logic in an ABAP class, which is referenced in an entity annotation. Custom entities allow you to get data using an OData service or, as here, using RFC.
 
-For more information, see:
-
-- [SAP Help Portal: Using a CDS Custom Entity to Define the Data Model for an OData Service](https://help.sap.com/viewer/c0d02c4330c34b3abca88bdd57eaccfc/Cloud/en-US/6a064c09c508435a81357898e8e65d06.html)
-
-Background reading:
-
-- [Implement a custom entity in the ABAP RESTful Programming Model using a BAPI](https://blogs.sap.com/2019/03/01/how-to-implement-a-custom-entity-in-the-abap-restful-programming-model-using-remote-function-modules/) - includes handling a single record, filtering, and ordering
-
-- [Insert test data into tables in SAP Cloud Platform, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
-
-- [Call a remote OData service from the trial version of SAP Cloud Platform ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
-
-- [OData service development with SAP Gateway using CDS](https://blogs.sap.com/2016/06/01/odata-service-development-with-sap-gateway-using-cds-via-referenced-data-sources/) - pertains to on-Premise Systems, but contains lots of useful background information on the relationships between CDS views, OData services
-
-- [OData – Everything that you need to know](https://blogs.sap.com/2016/02/08/odata-everything-that-you-need-to-know-part-1/) - especially Parts 1-3 (Community content)
 
 ---
 
@@ -547,4 +533,15 @@ The console output should look like this:
 [DONE]
 [ACCORDION-END]
 
+## More Information
+
+- [SAP Help Portal: BAPI](https://help.sap.com/viewer/166400f6be7b46e8adc6b90fd20f3516/1709%20002/en-US)
+
+- [SAP Help Portal: Using a CDS Custom Entity to Define the Data Model for an OData Service](https://help.sap.com/viewer/c0d02c4330c34b3abca88bdd57eaccfc/Cloud/en-US/6a064c09c508435a81357898e8e65d06.html)
+
+- [Implement a custom entity in the ABAP RESTful Programming Model using RFC](https://blogs.sap.com/2019/03/01/how-to-implement-a-custom-entity-in-the-abap-restful-programming-model-using-remote-function-modules/) - includes handling a single record, filtering, and ordering
+
+- [Insert test data into tables in SAP Cloud Platform, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
+
+- [Call a remote OData service from the trial version of SAP Cloud Platform ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
 ---

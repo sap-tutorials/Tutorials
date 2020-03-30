@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
   - How to handle a logic failure errors
   - How to fix these errors
 
-You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in_an-MDK-App) and start directly with step 7 in this tutorial.
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in-an-MDK-App) and start directly with step 7 in this tutorial.
 
 ---
 
@@ -158,6 +158,8 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
     | `Title` | bind it to `{HTTPStatusCode}` |
 
     ![MDK](img_007.5.png)
+
+    >You can find more details about [`ErrorArchive` Entity Properties](https://help.sap.com/viewer/42dc90f1e1ed45d9aafad60c80646d10/3.0.15/en-US/ff35db37335f4bb8a1e188b997a2b111.html).
 
 9. In **Search** section, update below properties:
 

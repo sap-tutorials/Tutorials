@@ -6,7 +6,7 @@ const { regexp: { validation: { codeBlock, codeLine } } } = require('../constant
 
 const isTutorialDoc = filePath => filePath.includes('docs-tutorial') || filePath.includes('contributing.md');
 
-const getContentLines = content => content.split(/\r?\n/);
+const getContentLines = content => content.replace(/\r\n|\n\r|\n|\r/g, '\n').split('\n');
 
 /**
  * @description Replaces code lines with empty strings
@@ -33,7 +33,6 @@ const parseFiles = async (filePaths) => {
     const files = new Map();
     const uniqueLinksToFiles = new Map();
     for(let filePath of filePaths) {
-        const fileName = path.basename(filePath);
         const content = await fs.readFile(filePath, 'utf8');
         const contentLines = getContentLines(content);
         const noCodeContentLines = getNoCodeContentLines(content);
