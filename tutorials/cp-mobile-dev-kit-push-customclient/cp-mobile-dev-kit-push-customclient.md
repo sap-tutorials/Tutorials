@@ -1,5 +1,5 @@
 ---
-title: Enable Push Notifications in your Branded MDK Client
+title: Enable Push Notifications in Your Branded MDK Client
 description: Use the SAP Cloud Platform Mobile Services to enable push notifications in your branded MDK client.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
@@ -11,15 +11,17 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Tutorial**: [Follow](cp-mobile-dev-kit-push) steps 1 to 4 to create an MDK metadata project
-- **Download the latest version of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
-- **Apple ID**: A paid Apple developer account is required
+- **Tutorial**: Follow steps 1-4 in [Enable Push Notifications in the MDK Public Store Client](cp-mobile-dev-kit-push) to create an MDK metadata project
+- **Download the latest version of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer.
+- **Apple ID**: A paid Apple developer account is required.
 
 ## Details
 ### You will learn
-  - How to set up push notifications on an Apple Developer account & Google Firebase account
+  - How to set up push notifications on an Apple Developer and Google Firebase account
   - How to configure push settings on SAP Cloud Platform Mobile Services
   - How to send push notification in your branded MDK client
+
+You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/1-Enable-Push-Notifications-in-your-branded-MDK-client).
 
 ---
 

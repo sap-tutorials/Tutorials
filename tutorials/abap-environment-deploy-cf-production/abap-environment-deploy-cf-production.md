@@ -110,7 +110,7 @@ time: 15
 
       ![open web ide](instance.png)
 
-[DONE] 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create HTML5 module)]
@@ -391,4 +391,7 @@ time: 15
 
 [VALIDATE_1]
 [ACCORDION-END]
----
+
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/NiBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
