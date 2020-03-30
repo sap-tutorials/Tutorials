@@ -95,9 +95,12 @@ INSERT INTO "PLAIN"."PRODUCT_SEGMENT" VALUES ('HT-1004','A');
 
 If you are using SAP HANA, express edition SPS03, the process has been simplified and you can now execute a wizard that will complete many of the steps required to access a plain schema from your database module.
 
-Right-click on the database module and choose `Modeling actions -> Add external SAP HANA Service`
+Right-click on the database module and choose `Modeling actions -> Add external SAP HANA Service` Note: In newer versions of the Web IDE, this menu option has changed to `New -> SAP HANA Service Connection`
 
 ![Add external SAP HANA service](mo1.png)
+or
+
+![Add external SAP HANA service](mo2.png)
 
 Use the following values to complete the wizard
 - Service name: `CROSS_SCHEMA_PRODUCTS`

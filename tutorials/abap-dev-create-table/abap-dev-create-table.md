@@ -1,15 +1,18 @@
 ---
-title: Create a Database Table
-description: Create a database table from scratch using the ABAP Development Tools (ADT)
+title: Create an ABAP Database Table
+description: Create a database table from scratch using the ABAP Development Tools (ADT); use different Data Dictionary objects to define the fields; then fill the table with test data
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, products>sap-netweaver-7.5  ]
-time: 60
+tags: [  tutorial>beginner, products>sap-cloud-platform--abap-environment, products>sap-cloud-platform, products>sap-netweaver-7.5 ]
+time: 75
 ---
 
 ## Prerequisites  
--	You have a valid instance of an AS ABAP server, version 7.52 or higher. (The text-based Table Editor is not available for earlier ABAP server versions)
-- You have downloaded and installed SAP ABAP Development Tools. We recommend the latest version, available from [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
+- You have done one of the following:
+    - You have a valid instance of SAP Cloud Platform, ABAP Environment. For more information, see **Tutorial**: [Create Your First ABAP Console Application](abap-environment-console-application), steps 1-2
+    - You have a valid instance of an on-premise AS ABAP server, version 7.52 or higher. (The text-based Table Editor is not available for earlier ABAP server versions). For a free AS ABAP server, 7.52, SP04, see [SAP Developers: Trials and Downloads - 7.52](https://developers.sap.com/trials-downloads.html?search=7.52)
+- You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
+- You have downloaded or pulled the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
 ## Details
 
@@ -18,6 +21,7 @@ time: 60
 - How to create a reusable **domain**, which provides technical attributes for data elements
 - How to create an elementary data type, or **data element**
 - How to add an input check to a field. You can use this, for example, to check that the user is working in the correct client
+- How to fill the table with three rows of test data
 
 Tables are defined independently of the database in the ABAP Dictionary. When you activate the table in the Data Dictionary, the table is created in the underlying database.
 
@@ -25,12 +29,11 @@ The table in this tutorial will store bank account details for customers. The ta
 
 - `client`
 - `bank_customer_id`
-- `customer_first_name`
-- `customer_last_name`
 - `account_number`
-- `city`
 - `bank_name`
+- `city`
 - `balance`
+- `currency`
 - `account_category`
 - `lastchangedat`
 
@@ -46,7 +49,7 @@ Create a table in your package:
 
 2. Enter the filter text **Table**, choose **Database table**, then choose Next.
 
-3. Enter a name such as `ZDB_ACCOUNT_001` - always replacing `XXX` with your initials - and a description, then choose **Next**.
+3. Enter a name such as `ZACCOUNTS_XXX` - always replacing `XXX` with your initials - and a description, then choose **Next**.
 
     !![step1b-table-name](step1b-table-name.png)
 
@@ -176,7 +179,7 @@ Now add the field **`bank`**, based on a new data element, `z_bank_name_xxx`. Yo
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Remove error)]
-Go back to your table, **`ZDB_ACCOUNT_XXX`**. Run a syntax check  with **`Ctrl+F2`**. The error should disappear.
+Go back to your table, **`ZACCOUNTS_XXX`**. Run a syntax check  with **`Ctrl+F2`**. The error should disappear.
 
 [DONE]
 [ACCORDION-END]
@@ -191,13 +194,11 @@ Go back to your table, **`ZDB_ACCOUNT_XXX`**. Run a syntax check  with **`Ctrl+F
       key client          : abap.clnt not null;
       key account_number  : abap.numc(8) not null;
       bank_customer_id    : /dmo/customer_id not null;
-      customer_first_name : /dmo/first_name;
-      customer_last_name  : /dmo/last_name;
-      city                : /dmo/city;
       bank_name           : z_bank_name_xxx;
+      city                : /dmo/city;
       balance             : abap.curr(16,2);
       currency            : /dmo/currency_code;
-      account_category            : abap.numc(2);
+      account_category    : abap.numc(2);
       lastchangedat       : timestampl;
     }
     ```
@@ -266,7 +267,7 @@ Now you will add a check table for the field `bank_customer_id`. This checks the
   1. Add the foreign key pointing to table `/dmo/customer`, where your field `bank_customer_id` points to the check table field `customer_id` :
 
     **`with foreign key [0..*,1] /dmo/customer
-    where customer_id = zdb_account_001.bank_customer_id;`**
+    where customer_id = ZACCOUNTS_XXX.bank_customer_id;`**
 
   2. Add the screen check, which checks user input against the values in `t000.mandt`:
   	`@AbapCatalog.foreignKey.keyType : #KEY
@@ -279,13 +280,13 @@ Now you will add a check table for the field `bank_customer_id`. This checks the
 @AbapCatalog.foreignKey.screenCheck : true
 key bank_customer_id : /dmo/customer_id not null
   with foreign key [0..*,1] /dmo/customer
-    where customer_id = zdb_account_001.bank_customer_id;
+    where customer_id = ZACCOUNTS_XXX.bank_customer_id;
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Save, activate, and check code)]
+[ACCORDION-BEGIN [Step 13: ](Save, activate, and check table code)]
 Now, save (`Ctrl+S`) and activate (`Ctrl+F3`) your table. Your code should look like this:
 
 ```ABAP
@@ -294,22 +295,21 @@ Now, save (`Ctrl+S`) and activate (`Ctrl+F3`) your table. Your code should look 
 @AbapCatalog.tableCategory : #TRANSPARENT
 @AbapCatalog.deliveryClass : #A
 @AbapCatalog.dataMaintenance : #LIMITED
-define table zdb_account_XXX {
+define table ZACCOUNTS_XXX {
   key client           : mandt not null;
 
   @AbapCatalog.foreignKey.keyType : #KEY
   @AbapCatalog.foreignKey.screenCheck : true
   key bank_customer_id : /dmo/customer_id not null
     with foreign key [0..*,1] /dmo/customer
-      where customer_id = zdb_account_XXX.bank_customer_id;
+      where customer_id = ZACCOUNTS_XXX.bank_customer_id;
 
   customer_first_name  : /dmo/first_name;
   customer_last_name   : /dmo/last_name;
   account_number       : abap.numc(8) not null;
-  city                 : /dmo/city;
   bank_name            : z_bank_name_xxx;
-
-  @Semantics.amount.currencyCode : 'zdb_account_XXX.currency'
+  city                 : /dmo/city;
+  @Semantics.amount.currencyCode : 'ZACCOUNTS_XXX.currency'
   balance              : abap.curr(16,2);
   currency             : /dmo/currency_code;
   account_category     : abap.numc(2);
@@ -326,6 +326,95 @@ define table zdb_account_XXX {
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 15: ](Fill table: Create class)]
+Finally, you will fill the table with three rows of test data:
+
+1. First create the ABAP Class, by selecting your package and choosing **New > ABAP Class** from the context menu:
+
+    ![Image depicting step5-create-class](step5-create-class.png)
+
+2. Enter a name **`ZCL_FILL_ACCOUNTS_XXX`** and description for your class (replacing `XXX` with your group number or initials).
+
+    !![step15b-name-class](step15b-name-class.png)
+
+3. Assign a transport request and choose **Finish**.
+
+The class appears in a new editor.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 16: ](Add interface)]
+1. Add the following interface to your class:
+
+    ```ABAP
+     interfaces if_oo_adt_classrun.
+    ```
+
+    This interface provides a light-weight solution for executing an ABAP program without launching a full user interface.
+    It also lets you display text or data in the Console View.
+
+2. Add the implementation for the **`main`** method of this interface by selecting the interface name and choosing **Add implementation...** from the context menu.
+
+    !![step6a-add-intf](step6a-add-intf.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 17: ](Copy code)]
+1. Add the following code to the method implementation:
+
+    ```ABAP
+    DATA: lt_accounts type table of ZACCOUNTS_XXX.
+
+    "read current timestamp
+    GET TIME STAMP FIELD DATA(zv_tsl).
+
+    "fill internal table
+    lt_accounts =
+
+    VALUE #( ( CLIENT ='100' BANK_CUSTOMER_ID ='000001' ACCOUNT_NUMBER ='00000000' BANK_NAME ='Volksbank' CITY = 'Gaertringen' BALANCE ='200.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='01' LASTCHANGEDAT = zv_tsl )
+    ( CLIENT ='100' BANK_CUSTOMER_ID ='000002' ACCOUNT_NUMBER ='00000000' BANK_NAME ='Sparkasse' CITY ='Schwetzingen' BALANCE ='500.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='02' LASTCHANGEDAT = zv_tsl )
+    ( CLIENT ='100' BANK_CUSTOMER_ID ='000003' ACCOUNT_NUMBER ='00000000' BANK_NAME ='Commerzbank' CITY ='Nuernberg' BALANCE ='150.00 ' CURRENCY ='EUR' ACCOUNT_CATEGORY ='02' LASTCHANGEDAT = zv_tsl )
+    ).
+
+    "Delete possible entries; insert new entries
+    DELETE FROM ZACCOUNTS_XXX.
+
+    INSERT ZACCOUNTS_XXX from table @lt_accounts.
+
+    "Check result in console
+    out->write( sy-dbcnt ).
+    out->write(  'DONE!' ).
+
+    ```
+
+2. Save and activate ( **`Ctrl+S, Ctrl+F3`** ) your code.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 18: ](Check your table in Data Preview)]
+Select your table from the Project Explorer and choose **Open With > Data Preview** from the context menu.
+
+!![step17a-data-preview](step17a-data-preview.png)
+
+Your table should look like this:
+
+!![step17b-data-preview-2](step17b-data-preview-2.png)
+
+You can also right click on the table and choose **Copy All Rows as ABAP Value Statement** from the context menu. You can then paste it into your own code.
+
+!![step17c-copy-all-rows](step17c-copy-all-rows.png)
+
+[DONE]
+[ACCORDION-END]
+
+
 
 ### More Information
 - SAP Help Portal: [Database Tables](https://help.sap.com/viewer/ec1c9c8191b74de98feb94001a95dd76/7.5.9/en-US/cf21ea43446011d189700000e8322d00.html)
