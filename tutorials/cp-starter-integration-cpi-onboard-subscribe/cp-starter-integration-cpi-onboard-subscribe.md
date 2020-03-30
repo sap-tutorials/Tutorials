@@ -14,12 +14,9 @@ author_profile: https://github.com/Vikramkulkarni01
   - How to subscribe to the Process Integration service
   - How to set up your own SAP Cloud Platform Integration tenant
 
-###Prerequisites
-  To provision your SAP Cloud Platform Integration tenant, you must first subscribe to the Process Integration service, assign the necessary roles to your user, and then provision your SAP Cloud Platform Integration tenant.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
+[ACCORDION-BEGIN [Step 1: ](Enter your trial account and Subscribe to Process Integration service)]
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
