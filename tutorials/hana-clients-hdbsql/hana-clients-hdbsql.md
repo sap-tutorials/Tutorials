@@ -1,5 +1,5 @@
 ---
-title: Create a User, Tables and Import Data using HDBSQL
+title: Create a User, Tables and Import Data Using HDBSQL
 description: Use the command line tool HDBSQL to connect to a SAP HANA database, create a user, and create tables which will be used in subsequent tutorials in this mission.
 auto_validation: true
 time: 15
@@ -213,6 +213,8 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be tedi
     hdbsql -attemptencrypt -U USER1UserKey "SELECT * FROM HOTEL.CITY";
     ```
 
+> ### Some Tips
+
 > `HDBSQL` can [run commands](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/6097e699826343d0879244185d680a0d.html) in three different modes; interactive, non-interactive, and batch.  An example of each is shown below.
 > ```SQL
 > SELECT * FROM HOTEL.CITY; -- interactive
@@ -220,24 +222,31 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be tedi
 > hdbsql -attemptencrypt -U USER1UserKey -I cities.sql -- batch
 >```
 
-For further information, see [TABLE Statement ](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [Run Commands](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/6097e699826343d0879244185d680a0d.html).  
+>For further information, see [TABLE Statement ](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20d58a5f75191014b2fe92141b7df228.html) and [Run Commands](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/6097e699826343d0879244185d680a0d.html).  
 
-Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
+> ---
 
-```SQL
+>Should you wish to remove the contents of a table, the table itself, a schema or a user, the following statements can be executed.  Do not execute these now as `USER1` and the hotel data set will be used subsequently in this tutorial.  
+
+>```SQL
 DELETE FROM HOTEL.CITY;
 DROP TABLE HOTEL.CITY;
 DROP SCHEMA HOTEL CASCADE;
 DROP USER USER1 CASCADE;
 ```
 
-For further information on these topics, see [Grant Statement(Access Control)](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f674e1751910148a8b990d33efbdc5.html), [Object Privileges](https://help.sap.com/viewer/b3d0daf2a98e49ada00bf31b7ca7a42e/latest/en-US/d6311b15a7e74e01b3f660f7d175b318.html?q=object%20privileges), and [SET SCHEMA](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20fd550375191014b886a338afb4cd5f.html).
+>For further information on these topics, see [Grant Statement(Access Control)](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f674e1751910148a8b990d33efbdc5.html), [Object Privileges](https://help.sap.com/viewer/b3d0daf2a98e49ada00bf31b7ca7a42e/latest/en-US/d6311b15a7e74e01b3f660f7d175b318.html?q=object%20privileges), and [SET SCHEMA](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20fd550375191014b886a338afb4cd5f.html).
 
-One other sample data set can be found at [Import SFLIGHT sample data into SAP HANA from a local computer](https://blogs.sap.com/2018/12/18/howto-import-sflight-sample-data-into-sap-hana-from-a-local-computer/).  
+> ---
+
+>One other sample data set can be found at [Import SFLIGHT sample data into SAP HANA from a local computer](https://blogs.sap.com/2018/12/18/howto-import-sflight-sample-data-into-sap-hana-from-a-local-computer/).  
 
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+
+
 
 ---

@@ -200,7 +200,7 @@ If the SQL statement returns more than one screen of text, entering a space will
 
 Enter one of the below commands to exit from viewing the results of the select statement.  Note that commands can be prefixed with a forward slash(\\) or a colon(:).
 
-```HDSQL
+```HDBSQL
 \q
 :q
 ```
