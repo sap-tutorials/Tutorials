@@ -12,7 +12,7 @@ time: 60
 ## Prerequisites
 - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -125,13 +125,19 @@ var loadingIndicator: FUILoadingIndicatorView?
 
 ```
 
-The way the iOS Assistant generates the project you need the `AppDelegate.swift` to retrieve an instance of the generated convenience data service. Implement the following lines of code directly below the loading indicator property:
+Implement the following lines of code directly below the loading indicator property:
 
 ```Swift
-private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
+// Retrieve the data service using the destinations dictionary and return it.
 var dataService: ESPMContainer<OnlineODataProvider>? {
-  return OnboardingSessionManager.shared.onboardingSession?.odataController.espmContainer ?? nil
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
 }
 
 ```
@@ -438,10 +444,16 @@ private let logger = Logger.shared(named: "SupplierProductsViewController")
 Add a couple of class properties necessary for the data service instance and the fetched products. Implement the following lines of code:
 
 ```Swift
-private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
+// Retrieve the data service using the destinations dictionary and return it.
 var dataService: ESPMContainer<OnlineODataProvider>? {
-    return OnboardingSessionManager.shared.onboardingSession?.odataController.espmContainer ?? nil
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
 }
 
 private var products = [Product]()
@@ -543,6 +555,7 @@ Now implement a method responsible for fetching the product images and caching t
 private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
 
     // Retrieve the SAP URLSession from the onboarding session.
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
 
         // Create a data task, this is the same as the URLSession data task.
