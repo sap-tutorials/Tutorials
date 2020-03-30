@@ -6,7 +6,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 20
 ---
-
+ 
 ## Prerequisites  
   - SAP Cloud Platform, ABAP environment user
   - ADT version 2.96 or higher

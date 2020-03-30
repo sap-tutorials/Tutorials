@@ -96,7 +96,7 @@ Go back to the **Local Service Provider** tab and download the metadata of your 
 
 Log in to the administration console of SAP Cloud Platform Identity Authentication service through your particular URL.
 
-The URL therefore is: **`https://[TENAND_ID].accounts.ondemand.com/admin`**
+The URL therefore is: **`https://[TENANT_ID].accounts.ondemand.com/admin`**
 
 Navigate to the menu item **Applications**, **Click** on **Add** provide a name for the application.
 

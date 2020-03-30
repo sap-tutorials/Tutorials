@@ -46,7 +46,7 @@ The business scenario will be created with **Draft** status.
 
 [ACCORDION-BEGIN [Step 2: ](Add a workflow)]
 
-1. Navigate into the newly created scenario and click **Processes** tab, choose **+** and select **Add SAP Cloud Platform Workflow** to add workflow to business scenario.
+1. Navigate into the newly created scenario and click the **Processes** tab, choose **+** and select **Add SAP Cloud Platform Workflow** to add workflow to business scenario.
 
     ![Add Workflow](addworkflow.png)
 
@@ -99,7 +99,7 @@ The business scenario will be created with **Draft** status.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Activate business scenario)]
+[ACCORDION-BEGIN [Step 5: ](Activate the business scenario)]
 
 To activate the business scenario, choose **Activate**.
 

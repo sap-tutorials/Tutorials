@@ -74,7 +74,7 @@ Note, that we have left any type declaration on the body object to keep the samp
 In case you have worked on the previous tutorials before the release of version `1.11.2` of the SAP Cloud SDK make sure to update your dependencies to the latest version (any version >= `1.11.2`). Just install the used libraries again:
 
 ```Shell
-npm install @sap/cloud-sdk-core @sap/cloud-sdk-vdm-business-partner-service
+npm install @sap-cloud-sdk/core @sap/cloud-sdk-vdm-business-partner-service
 ```
 
 [DONE]
@@ -122,7 +122,7 @@ Use a type assertion (`as`) to inform the compiler that you are handling a respo
 
 Your code should look like this:
 ```JavaScript / TypeScript
-import { WriteResponses } from '@sap/cloud-sdk-core';
+import { WriteResponses } from '@sap-cloud-sdk/core';
 
 async updateAddreses(businessPartnerAddresses: BusinessPartnerAddress[]): Promise<BusinessPartnerAddress[]> {
   const updateRequests = businessPartnerAddresses.map(address => BusinessPartnerAddress.requestBuilder().update(address));
@@ -166,7 +166,7 @@ What is left to do is to take the response from the retrieve set and return it. 
 The response type of retrieval request is `ReadResponse`. `ReadResonse`s can either be responses to a request built by a `GetAllRequestBuilder` or a `GetByKeyRequestBuilder`, therefore the transformation method `as` on the `ReadResponse` returns a list of objects. In our case each list has length 1, since we used a `byKey` request. A reduce() collects all addresses in the end:
 
 ```JavaScript / TypeScript
-import { ReadResponse } from '@sap/cloud-sdk-core';
+import { ReadResponse } from '@sap-cloud-sdk/core';
 
 async updateAddreses(businessPartnerAddresses: BusinessPartnerAddress[]): Promise<BusinessPartnerAddress[]> {
   const updateRequests = businessPartnerAddresses.map(address => BusinessPartnerAddress.requestBuilder().update(address));

@@ -3,7 +3,7 @@ title: Set Up SAP Business Application Studio for Development
 description: Before you can start developing using SAP Business Application Studio, administrators must perform the required onboarding steps that are described in this tutorial.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-workflow, software-product-function>sap-cloud-application-programming-model, products>sap-cloud-platform--abap-environment, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
 primary_tag: products>sap-business-application-studio
 ---
 
@@ -23,7 +23,7 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
-2. Click "Enter Your Trial Account" to access the Cloud Foundry environment.
+2. Click **Enter Your Trial Account** to access the Cloud Foundry environment.
 
     !![Access SAP Cloud Platform Trial](2020-03 SCP Access Trial__.jpg)
 
@@ -40,7 +40,7 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
     !![subaccount](2020-03 Cockpit Select Subaccount__.jpg)
 
-2. Click on **Subscriptions** in the Navigation area.
+2. From the Navigation area, click **Subscriptions** .
 
     !![opensubscriptions](2020-03 Cockpit Navigate to Subscriptions__.jpg)
 
@@ -54,11 +54,11 @@ In this step, you will add the SAP Business Application Studio subscription to a
 
 1. In the **Subscriptions** page, search for **`studio`**.
 
-2. Select the **SAP Business Application Studio** tile.
+2. Click the **SAP Business Application Studio** tile.
 
     !![findsubscription](2020-03 Cockpit Filter and Select AppStudio Subscription__.jpg)
 
-3. Click on **Subscribe** to add the subscription to the subaccount.
+3. Click **Subscribe** to add the subscription to the subaccount.
 
     !![subscribe](2020-03 Cockpit Subscribe__.jpg)
 
@@ -90,7 +90,7 @@ For SAP Business Application Studio, there are 2 role templates available: devel
 
     !![idp](2020-03 Cockpit Navigate to IdP__.jpg)
 
-4. From the Navigation area, choose **Role Collection Assignment**, and enter the e-mail of the user to whom you want to give permissions.
+4. Enter the e-mail of the user to whom you want to give permissions, and click **Show Assignments**.
 
     !![rolecollections](2020-03 Cockpit Role Collections Show Assignments__.jpg)
 
@@ -116,7 +116,7 @@ For SAP Business Application Studio, there are 2 role templates available: devel
 
     !![subaccount](2020-03 Cockpit Role Collections Navigate to Subaccount__.jpg)
 
-2. Click on **Subscriptions** in the Navigation area.
+2. From the Navigation area, click **Subscriptions** .
 
     !![subscriptions](2020-03 Cockpit Trust Configuration Navigate to Subscriptions__.jpg)
 
@@ -130,7 +130,7 @@ For SAP Business Application Studio, there are 2 role templates available: devel
 
     !![authentication](2020-03 AppStudio Authentication__.jpg)
 
-6. Click **OK** to accept the legal terms.
+6. You might be asked to accept the legal terms. Check the box and click **OK**.
 
     !![legalterms](2020-03 AppStudio Terms__.jpg)
 

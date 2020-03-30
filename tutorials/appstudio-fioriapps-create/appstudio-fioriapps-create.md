@@ -18,16 +18,18 @@ author_profile: https://github.com/raz-korn
             - Name: **ES5**
             - Type: **HTTP**
             - Description: **ES5**
-            - URL: **`https://sapes5.sapdevcenter.com:443`**
+            - URL: **`https://sapes5.sapdevcenter.com`**
             - Proxy Type: **Internet**
-            - Authentication: **`NoAuthentication`**
+            - Authentication: **`BasicAuthentication`**
+            - User Name: **Your ES5 Gateway user**
+            - Authentication: **Your ES5 Gateway password**
         - Additional Properties:
             - HTML5.DynamicDestination: **true**
             - sap-client: **002**
             - `WebIDEEnabled`: **true**
             - `WebIDESystem`: **ES5**
             - `WebIDEUsage`: **`odata_abap`**
- - Make sure that a UAA service instance and a Destination service instance are available in the space to which you will logon. If not, you need to create them; see [Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html).
+ - Make sure that a Destination service instance is available in the space to which you will logon. If not, you need to create it; see [Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html).
  - For the deployment step, additional prerequisites apply. You need to have the following available in the space to which you will log on (see [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add)):
       - Application Runtime: 1GB free
       - Destination: 1 free
@@ -123,11 +125,11 @@ author_profile: https://github.com/raz-korn
     | D | Enter the project name | **`FioriDemo`** |
     | E | Enter an HTML5 module name | **`BusinessPartners`** |
     | F | Enter a namespace | **ns** |
-    | G | Do you want to create a UAA Service and bind it to the approuter module | **Yes** |
+    | G | Do you want to create a UAA Service and bind it to the approuter module | **No** |
     | H | Enter a View name | **Suppliers** |
     | I | Do you want to add a data service | **No** |
 
-    !![Yo parameters](AppStudio Yo Parameters 200203_.jpg)
+    !![Yo parameters](AppStudio Yo Parameters 200316_.jpg)
 
     >The **Explorer** opens and you can see the `FioriDemo` project, its folder structure, and files. If not, you can click the **Explorer** view button at the top left of the screen.
 
@@ -146,9 +148,9 @@ Now you need to consume a service to bind the UI controls to the service's colle
 
     !![Consume SAP Service](AppStudio Consume SAP Service-1.jpg)
 
-2. Select the **ns.BusinessPartners** folder.
+2. Select the **`FioriDemo/BusinessPartners/`** folder.
 
-    !![Choose the UI module](AppStudio Consume SAP Service-2.jpg)
+    !![Choose the UI module](AppStudio Consume SAP Service-2_200316_.jpg)
 
     >If the project contains more than one HTML5 module, you'll have a list to select from.
 
@@ -162,11 +164,11 @@ Now you need to consume a service to bind the UI controls to the service's colle
 
     !![Choose data source](AppStudio Consume SAP Service-4.jpg)
 
-5. Choose **`GW_SAMPLE_BASIC`** as the service.
+5. Choose **`GWSAMPLE_BASIC`** as the service.
 
     !![Choose service](AppStudio Consume SAP Service-5.jpg)
 
-    >The service is successfully bound to the application. You can see that the service appears in the module's `manifest.json` `dataSources` section (**`FioriDemo` > `BusinessPartners` > `webapp`**). You can see the service metadata in **`FioriDemo` > `BusinessPartners` > `webapp` > `localService`**.
+    >The service is successfully bound to the application. You can see that the service appears in the module's `manifest.json` `dataSources` section ( **`FioriDemo` > `BusinessPartners` > `webapp`** ). You can see the service metadata in **`FioriDemo` > `BusinessPartners` > `webapp` > `localService`**.
 
 [VALIDATE_3]
 [ACCORDION-END]
@@ -268,49 +270,41 @@ Run your new application to test it.
 
     ![Create new run configuration](AppStudio Run Configurations-3_.jpg)
 
-3. Select **`webapp`**.
-
-    ![Create new run configuration](AppStudio Run Configurations-3.2_.jpg)
-
-4. Select **`index.html`**.
+3. Select **`index.html`**.
 
     ![Create new run configuration](AppStudio Run Configurations-3.3_.jpg)
 
     >A new run configuration is generated for the `FioriDemo` project.
 
-5. Expand the run configuration to display the services that can be bound.
+4. Expand the run configuration to display the services that can be bound.
 
-    ![Bindable objects](AppStudio Run Configurations-4_.jpg)
+    !![Bindable objects](AppStudio Run Configurations-4_200316_.jpg)
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-6. To bind to the test UAA service instance in your space, click the `bind` icon to the right of the UAA service resource and select an instance from the list.
+5. To bind to the test Destination service instance in your space, click the `bind` icon to the right of the Destination service resource and select an instance from the list.
 
-    ![Bind to UAA service](AppStudio Run Configurations-5_.jpg)
+    !![Bind to Destination service](AppStudio Run Configurations-5_200316_.jpg)
 
-    ![Select UAA service instance](AppStudio Run Configurations-7_.jpg)
+    !![Select Destination service instance](AppStudio Run Configurations-7_200316_.jpg)
 
     >Once the service has been bound, the Bind icon turns green.
 
     >To unbind the service instance, click the Unbind icon.
 
-    ![UAA service instance bound](AppStudio Run Configurations-9_.jpg)
+    !![Destination service is bound](AppStudio Run Configurations-13_200316_.jpg)
 
-7. Repeat the above step to bind the app to the test destination service instance in your space.
+6. Hover over the run configuration and click the Run Module icon.  
 
-    ![Destination service is bound](AppStudio Run Configurations-13_.jpg)
+    !![Running the app locally](AppStudio Run Configurations-14_200316_.jpg)
 
-8. Hover over the run configuration and click the Run Module icon. Wait for the notification `A service is listening to port 6004`. and click the button to launch the app in a new tab.
+7. Wait for the notification `A service is listening to port 6004`. Click the notification's button.
 
-    ![Running the app locally](AppStudio Run Configurations-14_.jpg)
-
-9. If you are running the app for the first time, the button in the notification will say `Expose and Open`. Otherwise it will say `Open in New Tab`. Click the button.
+    >If you are running the app for the first time, the button in the notification will say `Expose and Open`. Otherwise it will say `Open in New Tab`.
 
     ![App is running locally](AppStudio Run Configurations-15_.jpg)
 
     >You may optionally add a port description.
-
-    >You may need to authenticate yourself to run the app (UAA is configured for this app).
 
     >You may need to authenticate yourself to access the backend.
 

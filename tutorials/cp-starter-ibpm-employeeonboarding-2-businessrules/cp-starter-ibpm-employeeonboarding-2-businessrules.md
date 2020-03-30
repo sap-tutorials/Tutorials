@@ -1,6 +1,6 @@
 ---
 title: Set Up Business Rules for Determining Equipment
-description: Import, configure, and deploy business rules to determine equipment for new hire using SAP Cloud Platform Business Rules.
+description: Import, configure, and deploy business rules to determine equipment for new employees using SAP Cloud Platform Business Rules.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform]
@@ -79,7 +79,7 @@ To import the business rules project from API Business Hub, you need to configur
 
 2. Switch to the **Rule Services** tab.
 
-3. Click **Deploy** to deploy rule services `DetermineEquipmentRuleservice` and `EquipmentApprovalRuleservice`
+3. Click **Deploy** to deploy rule services `DetermineEquipmentRuleservice` and `EquipmentApprovalRuleservice`.
 
     ![Deploy Business Rules](deploy-ruleservice_2.png)
 
