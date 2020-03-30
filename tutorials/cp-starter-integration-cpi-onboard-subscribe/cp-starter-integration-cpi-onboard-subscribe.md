@@ -15,7 +15,7 @@ author_profile: https://github.com/Vikramkulkarni01
   - How to set up your own SAP Cloud Platform Integration tenant
 
 ###Prerequisites
-To provision your SAP Cloud Platform Integration tenant, you must first subscribe to the Process Integration service, assign the necessary roles to your user, and then provision your SAP Cloud Platform Integration tenant.
+  To provision your SAP Cloud Platform Integration tenant, you must first subscribe to the Process Integration service, assign the necessary roles to your user, and then provision your SAP Cloud Platform Integration tenant.
 
 ---
 
@@ -40,7 +40,7 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
 4. Select **Subscriptions** > **Process Integration**.
 
-    ![Select process integration service](1.1.select-process-integration.png)
+    !![Select process integration service](1.1.select-process-integration.png)
 
 5. Select **Subscribe**.
 
@@ -146,9 +146,9 @@ To provision your SAP Cloud Platform Integration tenant, you must first subscrib
 
 [ACCORDION-BEGIN [Step 5: ](Create service instance and key)]
 ## Details:
-In the previous steps, you have configured the security settings for human users dealing with SAP Cloud Platform Integration (by assigning role collections for persona such like integration developer and administrator, for example). In other words, you have defined the required permissions for people working with SAP Cloud Platform Integration using the Web UI when creating or testing integration flows.
+In the previous steps, you configured the security settings for human users dealing with SAP Cloud Platform Integration (by assigning role collections for persona such like integration developer and administrator, for example). In other words, you have defined the required permissions for people working with SAP Cloud Platform Integration using the Web UI when creating or testing integration flows.
 
-With the following Step 5, you do enable a remote technical system to call SAP Cloud Platform Integration and to process integration flows deployed on the tenant. The responsible service to process integration flows is the Process Integration Runtime, and in order to enable remote systems to call the Process Integration Runtime, you need to define a service instance and a service key.
+With the following Step 5, you enable a remote technical system to call SAP Cloud Platform Integration and to process integration flows deployed on the tenant. The responsible service to process integration flows is the Process Integration Runtime, and in order to enable remote systems to call the Process Integration Runtime, you need to define a service instance and a service key.
 
 You can consider a service instance as a technical user associated with the request of the remote system. To be more precise, a service instance is an OAuth client that represents the remote system calling SAP Cloud Platform Integration.
 A service key contains the credentials for the service instance that are required to enable the remote system to communicate with SAP Cloud Platform Integration. With the following step, you generate credentials to authorize the remote system to call SAP Cloud Platform Integration with the basic authentication option. Authentication using client certificates is not possible with the trial tenant.
@@ -166,7 +166,7 @@ A service key contains the credentials for the service instance that are require
 
 3. Select **Instances** > **New Instance**.
 
-    ![Create new instance](4.3.create.new.instance.png)
+    !![Create new instance](4.3.create.new.instance.png)
 
 4. Choose **Next** to select the default service plan. In the **Specify Parameters** tab, enter:
 
@@ -179,7 +179,7 @@ A service key contains the credentials for the service instance that are require
     ```
 Service plan integration-flow is the only option which is preset because processing integration flows is what a remote system is doing when calling SAP Cloud Platform Integration.
 
-    ![Specify JSON for user role](4.4.specify-json-instance.png)
+    !![Specify JSON for user role](4.4.specify-json-instance.png)
 
 5. Choose **Next** until you have to specify the instance name. Provide any name of your choice and choose **Finish**.
 
