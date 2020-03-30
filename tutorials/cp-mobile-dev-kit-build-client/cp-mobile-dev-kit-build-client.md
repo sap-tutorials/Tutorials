@@ -1,6 +1,6 @@
 ---
-title: Build Your MDK Client
-description: Build and run the Mobile Development Kit client to connect to your SAP Cloud Platform mobile application.
+title: Build Your Mobile Development Kit Client Using MDK SDK
+description: Build the Mobile Development Kit client using MDK SDK and connect to your SAP Cloud Platform mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -17,7 +17,7 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to install a Mobile development kit client SDK on Mac and Windows OS
   - How to build a Mobile development kit client for iOS and Android
-  - How to connect to SAP Cloud Platform Mobile application
+  - How to connect to SAP Cloud Platform Mobile app
 
 ---
 
@@ -215,12 +215,9 @@ In the last section of `BrandedSettings.json` file, make these changes:
 | Field | Value |
 |----|----|
 | `DetailLabelViewText` | `My sample custom client` |
-| `EncryptDatabase` | `false` |
 | `SigninButtonText` | `Start` |
 
 ![MDK](img_016.png)
-
->It is recommended to encrypt the database in production scenarios. You might want to set this property to false to extract the database for debugging purposes.
 
 >You can find more details about branding in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 

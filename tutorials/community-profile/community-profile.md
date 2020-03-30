@@ -1,9 +1,9 @@
 ---
 title: Update and Maintain Your SAP Profile at people.sap.com
-description: Explore, set up, and manage the sections of your SAP profile (people.sap.com).
+description: By taking this tutorial, you'll explore, set up, and manage the sections of your SAP profile (people.sap.com). You'll also earn the Profile Savvy badge.
 auto_validation: true
 time: 30
-tags: [tutorial>beginner]
+tags: [tutorial>beginner ]
 primary_tag: topic>sap-community
 ---
 
@@ -22,6 +22,8 @@ primary_tag: topic>sap-community
   - About viewing and sharing your reputation
   - How to view your learning achievements
   - How to interact with other profiles
+
+Awarded on a weekly basis, **Profile Savvy** may not appear immediately in the **Reputation** section of your profile, so please expect a slight delay before you see the badge.
 
 ---
 
@@ -94,6 +96,8 @@ To fill out your profile, select [Personal Info](https://people.sap.com/#persona
 If you haven't already, take a few moments to enter a bio in the **About me** field found within the **Personal data** area. Flesh out the rest of your profile by selecting the languages you speak (from the **Languages** pulldown in the **Personal data** area), filling in the **Elsewhere** fields (providing links to your accounts on social media and LinkedIn, for example), and sharing your **Expertise**.
 
 Make sure to save when you're finished.
+
+>To learn more, read ["Get to Know Your Profile Options, Help Us Get to Know You, and Earn Badges in the Process"](https://blogs.sap.com/2020/03/09/get-to-know-your-profile-options-help-us-get-to-know-you-and-earn-badges-in-the-process/)
 
 ![About Me](About_Me.png)
 

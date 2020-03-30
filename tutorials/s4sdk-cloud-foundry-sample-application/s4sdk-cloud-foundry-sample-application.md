@@ -226,7 +226,11 @@ The manifest contains a list of applications that will be deployed to `Cloud Fou
   - **`buildpack`** -	A `buildpack` is what `Cloud Foundry` uses to build and deploy your application. Since this is a Java application, we use `sap_java_buildpack`.
   - **`env`**	- Here we can provide additional application specific environment variables. For example we specify that we want to use a `TomEE` container as our target runtime.
 
-Change `<SUBACCOUNT>` to match your user account, e.g. `p123456trial`.
+In case you want to deploy an application using _Java 11_, please add an additional line under `env`:
+
+```YAML
+JBP_CONFIG_COMPONENTS: "jres: ['com.sap.xs.java.buildpack.jdk.SAPMachineJDK']"
+```
 
 Now you can deploy the application by entering the following command:
 

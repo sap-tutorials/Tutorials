@@ -20,54 +20,43 @@ author_profile: https://github.com/mervey45
 
 >You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt)** or **US East (VA)** as Region.
 
->**If you don't have a subaccount with this region**, please **create a subaccount and space with Europe (Frankfurt)** or **US East (VA)** as region to make the SAP Cloud Platform ABAP Environment Trial visible as a service in your service marketplace.
-
->You can use following for the subaccount creation:
-
->![Select ABAP Trial](start.png)
-
-
->Enter a subaccount, for e.g. trial. Select **Cloud Foundry as Environment**, **Amazon Web Services (AWS) as Provider**, **Europe (Frankfurt) or US East (VA)** as region and your **global account as subdomain**. Click **Create**.
->
-
 ---
-[ACCORDION-BEGIN [Step 1: ](Select ABAP Trial)]
-  1. Select **Enter Your Trial Account** to get to your trial account.
 
-      ![Select ABAP Trial](welcome.png)
-    If you aren't logged on to your SAP Cloud Platform Trial Cockpit, then please logon to <https://cockpit.hanatrial.ondemand.com/> and select **Enter Your Trial Account**.
+[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
+1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-  2. **You can see your trial subaccount with Europe (Frankfurt) or US East (VA) as region**.
+2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    **Europe (Frankfurt):**
+    !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-      ![Select ABAP Trial](welcometrial.png)
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.  
 
+    >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
-    Or **US East (VA):**
+    >Choose **Continue**.
 
-      ![Select ABAP Trial](us.png)
+    >![Account setup](02_Foundation20Onboarding_Processing.png)
 
-      Click **trial** to get to your trial subaccount.
+3. From your global account page, choose the **`trial`** tile to access your subaccount. The region is either **Europe (Frankfurt)** or **US East (VA)**.
 
-  3. As we use Cloud Foundry every app and service is scoped to a space.
-     Therefore choose in your trial subaccount your space **dev** to navigate to it.
+    ![Select ABAP Trial](welcometrial.png)
 
-      ![Select ABAP Trial](dev.png)
+4. As we use Cloud Foundry every app and service is scoped to a space.
+   Therefore choose in your trial subaccount your space **dev** to navigate to it.
 
+    ![Select ABAP Trial](dev.png)
 
-  4. Click **Service Marketplace** to get to the service overview, where you can select ABAP Trial as a service.
+5. Click **Service Marketplace** to get to the service overview, where you can select ABAP Trial as a service.
 
-      ![Select ABAP Trial](account4.png)
+    ![Select ABAP Trial](account4.png)
 
-  5. Select **ABAP Trial tile**.
+6. Select **ABAP Trial** tile.
 
-      ![Select ABAP Trial](trial.png)
+    ![Select ABAP Trial](trial.png)
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Create instance)]
   1. Create a new instance in your SAP Cloud Platform ABAP environment trial, therefore select **Instances**.
@@ -162,7 +151,7 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
       ![Create ABAP cloud project](cloud.png)
 
   2. Select **Service Key** and click **Next >**.
- 
+
       ![Create ABAP cloud project](project2.png)
 
   3. Paste your service key you've copied earlier from the SAP Cloud Platform Trial Cockpit and click **Next >**.
@@ -189,4 +178,8 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
 
 [VALIDATE_1]
 [ACCORDION-END]
----
+
+
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/NCBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

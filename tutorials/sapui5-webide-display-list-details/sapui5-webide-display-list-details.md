@@ -60,7 +60,7 @@ handleListItemPress: function (oEvent) {
 3.  Open the new file `mta_app/app/webapp/view/Detail.view.xml`.  In the file, replace the `<App>` tag with the following content:
 
     ```XML
-    	<Page title="{i18n>DetailTitle}"
+    	<Page title="Detail Page"
     	      showNavButton="true"
     	      navButtonPress="handleNavButtonPress" >
     		<VBox>
@@ -76,6 +76,7 @@ handleListItemPress: function (oEvent) {
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step : ](Implement the controller logic)]
 
 Open the file `mta_app/app/webapp/controller/Detail.controller.js`, and replace the code with the following:  
