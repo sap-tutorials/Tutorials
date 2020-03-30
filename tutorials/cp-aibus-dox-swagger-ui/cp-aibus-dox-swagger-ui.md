@@ -1,9 +1,9 @@
 ---
-title: Use Swagger UI to Call Document Information Extraction APIs
-description: Test Document Information Extraction to find out if it fits your business needs.
+title: Use Machine Learning to Extract Information from Documents
+description: Get the machine learning model prediction for the document fields you upload to Document Information Extraction.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction ]
+tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
@@ -11,16 +11,19 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to call and test Document Information Extraction
   - How to access and use Swagger UI (User Interface)
+  - How to extract information from files with Document Information Extraction
+
+The core functionality of Document Information Extraction is to extract structured information from documents automatically using machine learning. When you finish this tutorial, you will get the prediction for the uploaded document extracted fields.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
 
-As an alternative to calling the Document Information Extraction APIs from Postman, you can also interact with Swagger UI via any web browser. Swagger UI allows end developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
+You will use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows end developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
 
 In the service key you created for Document Information Extraction in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
-1. Add `/document-information-extraction/v1` to the `url` value to access the Document Information Extraction Swagger UI.
+1. To access the Document Information Extraction Swagger UI, add **`/document-information-extraction/v1`** to the `url` value, paste it in any web browser and choose **Enter**.
 
     ![DOX](png-files\service-key-url.png)
 
@@ -28,7 +31,7 @@ In the service key you created for Document Information Extraction in [Create Se
 
     ![DOX](png-files/swagger0.png)
 
-3. Get the `access_token` value created in [Get OAuth Access Token for Document Information Extraction Using a REST Client](cp-aibus-dox-rest-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
+3. Get the `access_token` value created in [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **Bearer** in front of it, and enter in the **Value** field.
 
     ```
     Bearer <access_token>
@@ -58,7 +61,7 @@ You should receive a response like the following:
 
 ![DOX](png-files\capabilitiesResponse.png)
 
->If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance).
+>If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`Bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in [Get OAuth Access Token for Document Information Extraction Using a REST Client](cp-aibus-dox-rest-oauth-token).
 
 [DONE]
 [ACCORDION-END]
@@ -109,6 +112,7 @@ You should receive a response like the following:
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 5: ](Upload a document)]
 
 Upload a PDF document, such as an invoice, to the service using the **POST /document/jobs** endpoint. You need to specify:
@@ -142,6 +146,7 @@ Copy the **`id`** from the **Response body** to see the result of the extraction
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 6: ](See extracted fields)]
 
 You can now use the **GET /document/jobs/{`uuid`}** endpoint to receive the prediction.
@@ -162,28 +167,7 @@ You should receive a response like the following:
 
 ![DOX](png-files/getResultsResponse.png)
 
-In the response, you will find some general information about the document you uploaded. In the `headerFields`, such as `documentType` and `fieldName`, you will find the prediction from the extracted fields. If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE** then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Delete a client)]
-
-If you want to delete a client you created in Step 3, use the **DELETE /clients** endpoint. You need to enter a client id or a list of client ids to delete them.
-
-1. Expand the **DELETE /clients** endpoint.
-
-2. Click **Try it out**.
-
-3. Enter a client id or a list of client ids (`c_00`, for example) in the **payload** field.
-
-4. Click **Execute**.
-
-    ![DOX](png-files/deleteClient.png)
-
-You should receive a response like the following:
-
-![DOX](png-files/deleteClientResponse.png)
+In the response, you will find some general information about the document you uploaded. In the `headerFields`, such as `documentType` and `fieldName`, you will find the prediction for the extracted fields. If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE** then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
 
 [DONE]
 [ACCORDION-END]

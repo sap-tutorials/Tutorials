@@ -8,8 +8,8 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ## Prerequisites
--	An entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
-- A SAP Cloud Platform Neo subaccount
+-	A full entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html) (not a trial account)
+- A full SAP Cloud Platform Neo subaccount. **IMPORTANT**: Your SAP Cloud Platform, Cloud Foundry and SAP Cloud Platform, Neo accounts must be in the same geographical region.
 -	An ABAP on-premise system, such as:
     - [SAP S/4HANA 1809 fully activated appliance](https://blogs.sap.com/2018/12/12/sap-s4hana-fully-activated-appliance-create-your-sap-s4hana-1809-system-in-a-fraction-of-the-usual-setup-time/) or:
     - [The SAP Gateway Demo System (ES5)](https://blogs.sap.com/2017/12/05/new-sap-gateway-demo-system-available/)
@@ -29,18 +29,18 @@ Throughout this tutorial, replace `XXX` with your initials or group number.
 
 There are two problems when setting up connectivity between the Cloud Platform ABAP Environment and an on-premise:
 
-- The ABAP Environment "lives" in the Internet, but customer on-premise systems are behind a firewall.
-- RFC is not internet-enabled.
+- The ABAP Environment "lives" in the Internet, but customer on-premise systems are behind a firewall
+- RFC is not internet-enabled
 
 **The solution**:
 
-- Set up a connection from the on-premise system to the SAP Cloud Platform Neo Environment using SAP Cloud Connector.
-- Set up a connection from the SAP Neo to the SAP Cloud Foundry Environment.
+- Set up a connection from the on-premise system to the SAP Cloud Platform Neo Environment using SAP Cloud Connector
+- Set up a connection from the SAP Neo to the SAP Cloud Foundry Environment
 
 **Specifically**:
 
 1. Fetch the destination, i.e. from SAP Cloud Foundry to on-premise  (using a Cloud Foundry destination service)
-2. Send request to open a tunnel, from Cloud Foundry (i.e. ABAP) to SAP Neo
+2. Send request to open a tunnel, from Cloud Foundry (i.e. ABAP Environment) to SAP Neo
 3. Send request to open a tunnel, from Neo to the on-premise system
 4. Open a secure tunnel for HTTP and RFC
 5. Communicate through the tunnel via HTTP or RFC
@@ -122,9 +122,9 @@ Now, still in the **Cloud to On-Premise > Access Control** tab, enter the resour
 
 5. Enter the name **`BAPI_EPM`** as a **Prefix**, then choose **Save**.
 
-6. The list of resources should now look like this:
+6. The list of resources should now look roughly like this:
 
-    ![Image depicting step1e-name-rfc](step1e-name-rfc.png)
+    ![Image depicting step3f-scc-destinations](step3f-scc-destinations.png)
 
 [DONE]
 [ACCORDION-END]
@@ -182,12 +182,13 @@ You have now created a destination service instance destination for your communi
 
 3. In the Dashboard, choose **Communication Systems > New**.
 
-4. Enter the credentials for the SAP Cloud Connector administration user for your  SAP Cloud Platform Neo account (i.e. the same user as in step 1 above):
-      - Hostname
+4. Enter the credentials for the SAP Cloud Connector administration user for your  SAP Cloud Platform Neo account.
+
+      - Hostname = URL for your Neo subaccount, without protocol or account, e.g. if your Neo URL = `https://account.hana.ondemand.com/` , then you need **`hana.ondemand.com/`**.
 
         ![Image depicting step8b-comm-system-1](step8b-comm-system-1.png)
 
-      - User and Password
+      - User and Password = the same user as in step 1 above
 
         ![Image depicting step8c-comm-system-2](step8c-comm-system-2.png)
 
