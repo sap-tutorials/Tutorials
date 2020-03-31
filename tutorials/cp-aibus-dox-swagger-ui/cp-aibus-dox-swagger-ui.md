@@ -3,7 +3,7 @@ title: Use Machine Learning to Extract Information from Documents
 description: Get the machine learning model prediction for the document fields you upload to Document Information Extraction.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
