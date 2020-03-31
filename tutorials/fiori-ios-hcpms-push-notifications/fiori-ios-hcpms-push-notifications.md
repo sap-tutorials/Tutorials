@@ -11,7 +11,7 @@ time: 35
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 - [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 - [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
 - **Apple ID:** A paid Apple developer account is required
