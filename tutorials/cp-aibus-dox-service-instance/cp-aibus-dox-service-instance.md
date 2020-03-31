@@ -3,7 +3,7 @@ title: Create Service Instance for Document Information Extraction
 description: Create a service instance and the associated service keys for Document Information Extraction, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
 auto_validation: true
 time: 15
-tags: [tutorial>beginner, topic>machine-learning, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
+tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
 primary_tag: topic>machine-learning
 ---
 
