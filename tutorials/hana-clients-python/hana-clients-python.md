@@ -43,7 +43,7 @@ Check the box that says **Add Python 3.x to PATH** as shown below to ensure that
 
 ![python-install](python-install.png)
 
-You should now be able to open a new command prompt and verify that Python is installed.
+You should now be able to open a new shell and verify that Python is installed.
 
 [DONE]
 [ACCORDION-END]
@@ -52,7 +52,7 @@ You should now be able to open a new command prompt and verify that Python is in
 
 The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.
 
-```Command Prompt
+```Shell
 pip --version
 pip3 --version
 pip install --upgrade pip
@@ -88,18 +88,18 @@ pip install hdbcli
 >
 
 > To upgrade to the latest available version, enter the following command:
-> ```
+> ```Shell
 > pip install --no-cache-dir --upgrade hdbcli
 > ```
 >
 > To uninstall `hdbcli`, run the following command:
-> ```
+> ```Shell
 > pip uninstall hdbcli
 > ```
 
 > A specific version can be installed using the following command.
 >
-> ```
+> ```Shell
 > pip install hdbcli==2.4.167
 > ```
 
@@ -110,7 +110,7 @@ pip install hdbcli
 [ACCORDION-BEGIN [Step 3: ](Create Python application that queries SAP HANA)]
 
 
-1. In a command prompt, create a folder named `python`, enter the newly created directory, create a file named `pythonQuery.py`, and open the file in notepad.
+1. In a shell, create a folder named `python`, enter the newly created directory, create a file named `pythonQuery.py`, and open the file in notepad.
 
     ```Shell on Windows
     mkdir %HOMEPATH%\HANAClientsTutorial\python

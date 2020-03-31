@@ -49,7 +49,7 @@ Click on the **Drivers** tab and view the installed drivers.
 
 The following are examples of data source configurations setup to connect to SAP HANA Cloud and an SAP HANA, express edition.
 
-Notice below for the SAP HANA Cloud connection, **Multitenant** is unchecked and that both TLS options are checked.  
+Notice below for the SAP HANA Cloud connection, **Multitenant** is unchecked and that **both TLS** options are checked.  
 
 ![ODBC-HANA-Cloud](ODBC-HC.png)
 
@@ -84,9 +84,15 @@ The following steps demonstrate how to use Microsoft Excel to query data in SAP 
 
     ![Excel DSN](ExcelDSN.png)  
 
+    Enter the credentials.  
+
     ![Credential Screen](ExcelCreds.png)
 
+    Select a schema and table and press **Load**.
+
     ![Browse Schema](Excel-Browse-Schema.png)  
+
+    The selected data is now imported into a Microsoft Excel spreadsheet.
 
     ![Excel Show Data](ExcelShowData.png)  
 
