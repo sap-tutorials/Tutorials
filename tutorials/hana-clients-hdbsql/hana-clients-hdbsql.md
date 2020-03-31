@@ -22,7 +22,7 @@ This section demonstrates how to connect to a SAP HANA instance using [`HDBSQL`]
 
 1. Copy and paste the following command to see the command line options and press the space bar to advance though the information.  
 
-    ```Command Prompt
+    ```Shell
     hdbsql -h | more
     ```
 
@@ -238,8 +238,6 @@ DROP USER USER1 CASCADE;
 >For further information on these topics, see [Grant Statement(Access Control)](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f674e1751910148a8b990d33efbdc5.html), [Object Privileges](https://help.sap.com/viewer/b3d0daf2a98e49ada00bf31b7ca7a42e/latest/en-US/d6311b15a7e74e01b3f660f7d175b318.html?q=object%20privileges), and [SET SCHEMA](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20fd550375191014b886a338afb4cd5f.html).
 
 > ---
-
->One other sample data set can be found at [Import SFLIGHT sample data into SAP HANA from a local computer](https://blogs.sap.com/2018/12/18/howto-import-sflight-sample-data-into-sap-hana-from-a-local-computer/).  
 
 Congratulations! You have now created a user and some tables using HDBSQL.  This user will be used to connect and query the data in the following tutorials.
 
