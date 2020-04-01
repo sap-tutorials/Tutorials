@@ -38,18 +38,6 @@ const verifyLinks = async (links) => {
         return linkCheck.TIMEOUT;
       }
     },
-    hooks: {
-      beforeRetry: [(options, error, retryCount) => {
-        console.log(
-          'Before retry: error',
-          (error.statusCode || 'Unknown') || error.code,
-          ', retryCount is ',
-          retryCount,
-          ', URL is ',
-          error.url
-        );
-      }],
-    }
   });
   return Object
     .entries(processedResults)
