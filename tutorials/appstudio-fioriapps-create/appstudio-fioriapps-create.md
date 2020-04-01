@@ -43,6 +43,7 @@ author_profile: https://github.com/raz-korn
   - How to build and deploy an application to Cloud Foundry
 
 ---
+>Make sure to add the **HTML5.DynamicDestination** additional property in the destination configuration.
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio)]
 1. Go to your Cloud Foundry environment subaccount and click the **Subscriptions** tab.

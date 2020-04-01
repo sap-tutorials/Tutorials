@@ -11,8 +11,7 @@ time: 25
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
-- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 - [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
 
 ## Details
@@ -108,11 +107,17 @@ Next it is necessary to add two properties to the class. These properties are co
 Above the `viewDidLoad(:)` method add the following lines of code:
 
 ```swift
-  var dataService: ESPMContainer<OnlineODataProvider>? {
-    return OnboardingSessionManager.shared.onboardingSession?.odataController.espmContainer ?? nil
-  }
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-  var products = [Product]()
+// Retrieve the data service using the destinations dictionary and return it.
+var dataService: ESPMContainer<OnlineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
+}
 
 ```
 
