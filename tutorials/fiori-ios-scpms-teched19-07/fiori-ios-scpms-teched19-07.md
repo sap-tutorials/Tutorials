@@ -9,7 +9,7 @@ time: 25
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -57,10 +57,19 @@ Add the following properties right above the `viewDidLoad(_:)` method:
 
 ```Swift
 
-private var dataService: ESPMContainer<OnlineODataProvider>?
-private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
 private let logger = Logger.shared(named: "ProductClassificationTableViewController")
+
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+// Retrieve the data service using the destinations dictionary and return it.
+var dataService: ESPMContainer<OnlineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
+}
 
 private var products = [Product]()
 
@@ -98,14 +107,6 @@ tableView.estimatedRowHeight = 80
 tableView.rowHeight = UITableView.automaticDimension
 
 tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
-
-guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-    AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-    logger.error("OData service is nil. Please check onboarding.")
-    return
-}
-
-self.dataService = dataService
 
 ```
 
@@ -311,14 +312,6 @@ override func viewDidLoad() {
 
     tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
 
-    guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-        logger.error("OData service is nil. Please check onboarding.")
-        return
-    }
-
-    self.dataService = dataService
-
     updateClassifications(for: image)
 }
 
@@ -424,13 +417,10 @@ Implement the method right below the `viewDidLoad(_:)` method and read the inlin
 
 ```Swift
 
-private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
-
-    // Retrieve an instance of the SAPURLSession
+private func loadImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
-
-        // Use a data task on the SAPURLSession to load the product images
-        sapURLSession.dataTask(with: url, completionHandler: { (data, response, error) in
+        sapURLSession.dataTask(with: url, completionHandler: { data, _, error in
 
             if let error = error {
                 self.logger.error("Failed to load image!", error: error)
