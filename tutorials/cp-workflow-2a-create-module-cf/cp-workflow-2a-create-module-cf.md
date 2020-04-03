@@ -10,7 +10,7 @@ time: 5
 ## Details
 ### You will learn  
   - How to create ``multitarget`` application projects for your workflow in the SAP Web IDE.
-  - How to deploy these projects to the SAP Cloud Platform. 
+  - How to deploy these projects to the SAP Cloud Platform.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Create a workflow project)]
