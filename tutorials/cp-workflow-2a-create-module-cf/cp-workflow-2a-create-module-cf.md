@@ -13,6 +13,7 @@ time: 5
   - How to deploy these projects to the SAP Cloud Platform.
 
 ---
+
 [ACCORDION-BEGIN [Step 1: ](Create a workflow project)]
 1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
 
