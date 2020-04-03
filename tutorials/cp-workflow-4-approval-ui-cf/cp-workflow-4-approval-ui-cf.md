@@ -14,7 +14,6 @@ time: 15
 ### You will learn  
   - How to start an instance of the workflow definition that you have defined using a start form
 
-
 ---
 [ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE)]
 1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
