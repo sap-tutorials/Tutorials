@@ -189,9 +189,9 @@ Create a simplistic all-in-one service definition.
     }
     ```
 
-3. Save your file.
+    >Remember to save your files (keyboard shortcut CTRL+S).
 
-4. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
+3. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
 
     ```
     [cds] - connect to db { database: ':memory:' }
@@ -204,7 +204,7 @@ Create a simplistic all-in-one service definition.
     [ terminate with ^C ]
     ```
 
-5. To test your service, go to: <http://localhost:4004>
+4. To test your service, go to: <http://localhost:4004>
 
     >You won't see data, because you haven't added a data model yet. However, click on the available links to see the service is running.
 
@@ -241,9 +241,9 @@ Add service provider logic to return mock data.
     }
     ```
 
-3. Save the file.
+    >Remember to save your files.
 
-4. To test your service, click on these links:
+3. To test your service, click on these links:
 
     - <http://localhost:4004/catalog/Books>
 
@@ -306,7 +306,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
->Remember to save your files.
+    >Remember to save your files.
 
 [DONE]
 
@@ -336,6 +336,7 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
     252;Eleonora;150;555
     271;Catweazle;170;22
     ```
+    >Remember to save your files.
 
     >Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
@@ -469,6 +470,7 @@ We can now see the generic handlers shipped with CAP in action.
 
     }
     ```
+    >Remember to save your files.
 
     >Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.
 

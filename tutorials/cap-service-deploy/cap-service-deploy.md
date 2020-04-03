@@ -59,7 +59,7 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP Cl
 
     !![subaccount tile](subaccount.png)
 
-3. Copy the **Cloud Foundry API endpoint** value:
+3. Copy the **Cloud Foundry API Endpoint** value:
 
     !![CF API endpoint value](api-endpoint.png)
 
