@@ -40,17 +40,17 @@ In this tutorial, you will see how you can quickly mobilize this use-case using 
 
 Please ensure that you have completed the [Automatic Instance Generation tutorial](cp-mobile-cards-automatic-instance-generation) before you proceed with the following steps.
 
-> At any given time, only one version can be productive. You need to create a new version to make any changes to a productive version. While you are working on a new version, the end-users can keep using the productive version. Once you deploy the new version, the end-user's card will be updated.
+> At any given time, only one version of a card can be productive. You need to create a new version of the card to make any changes. While you are working on a new version, the end-users can keep using the productive version. Once you deploy the new version, the end-user's card will be updated.
 
 Make sure you have logged in to SAP Cloud Platform Mobile Services cockpit. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
 !![MobileCardsImage](img_3.png)
 
-Click **Automatic Instance Card** in the Card Templates Tab.
+Click **Automatic Instance Card** in the Card Templates tab.
 
 !![MobileCardsImage](img_4.png)
 
-Click create new **Version** in the Versions table.
+Click new **Version** button ![MobileCardsIcon](ico_copy.png) in the Versions table to create a new version.
 
 !![MobileCardsImage](img_5.png)
 
@@ -58,21 +58,21 @@ Click **Yes** on the Confirmation dialog.
 
 !![MobileCardsImage](img_6.png)
 
-Click the **Edit** Button (Pencil Icon) for the new version of the card.
+Click the **Edit** Button ![MobileCardsIcon](ico_edit.png) for the new version of the card.
 
 !![MobileCardsImage](img_7.png)
 
-Enter the version as **1.1** and Click **Save**.
+Enter the version as **1.1** and click **Save**.
 
 !![MobileCardsImage](img_8.png)
 
 > You will be re-directed to the Card Templates Tab.
 
-Click **Automatic Instance Card** in the Card Templates Tab.
+Click **Automatic Instance Card** in the Card Templates tab.
 
 !![MobileCardsImage](img_9.png)
 
-A new card with version `1.1` is created, and the state of this card is Development.
+A new card with the version `1.1` is created, and the state of this card is Development.
 
 !![MobileCardsImage](img_10.png)
 
@@ -80,9 +80,9 @@ A new card with version `1.1` is created, and the state of this card is Developm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Update the card's title)]
+[ACCORDION-BEGIN [Step 3: ](Update the card title)]
 
-Click the **Edit** Button (Pencil Icon) for the development `1.1 version` card.
+Click the **Edit** button ![MobileCardsIcon](ico_2.png) for the development `1.1 version` card.
 
 > To ensure you are editing the correct version, please notice the green vertical bar in the Versions Table. This bar indicates the version of the current view on SAP Cloud Platform Mobile Services Cockpit.
 
@@ -92,7 +92,7 @@ Click the **Editor** tab.
 
 !![MobileCardsImage](img_12.png)
 
-Replace `SalesOrder` text with **Action Card** to rename the title of card.
+Replace `SalesOrder` text with **Action Card** to rename the title of the card.
 
 !![MobileCardsImage](img_13.png)
 
@@ -109,13 +109,13 @@ Change Behavior after Action to Active.
 
 !![MobileCardsImage](img_15.png)
 
->The default value for behavior for an action is **INACTIVE**. An inactive action does not allow any new actions after a successful call.
+>The default value for Behavior for an action is **INACTIVE**. An inactive action does not allow any new actions after a successful call.
 
 Add `/` as the XCSRF Token URL.
 
 !![MobileCardsImage](img_16.png)
 
-Click the **+** icon to add an action and provide the required information:
+Click the ![MobileCardsIcon](ico_add.png) icon to add an action and provide the required information:
 
 | Field | Value |
 |----|----|
@@ -141,13 +141,13 @@ Click the **+** icon to add an action and provide the required information:
 
 [ACCORDION-BEGIN [Step 5: ](Add Reject Action)]
 
-Click the **+** icon to create another action.
+Click the ![MobileCardsIcon](ico_add.png) icon to create another action.
 
 !![MobileCardsImage](img_19.png)
 
-> For Reject, we want the Sales Manager to provide a reason. Thus, we will create an **Action Parameter**, before we fill the details for the action.
+> For Reject, we want the Sales Manager to provide a reason. Thus, we will create an **Action Parameter** before we fill the details for the action.
 
-Click **+ Parameter** button to create an action parameter and provide the required information:
+Click ![MobileCardsIcon](ico_add.png) **Parameter** button to create an action parameter and provide the required information:
 
 | Field | Value |
 |----|----|
@@ -161,7 +161,7 @@ Click **+ Parameter** button to create an action parameter and provide the requi
 
 > In SAP Mobile Cards, you can allow the user to provide an input while performing an action. This input is stored in an Action Parameter.
 
-Click **Action 2** field in the Actions Table and provide the required information:
+Click **Action 2** in the Actions table and provide the required information:
 
 | Field | Value |
 |----|----|
@@ -174,7 +174,7 @@ Click **Action 2** field in the Actions Table and provide the required informati
 
 !![MobileCardsImage](img_21.png)
 
->We are storing user's input the Action Parameter `reasonForRejection`. We then send the value in this parameter as a part of the body. Upon successful execution, the card will display the reason entered by the user.
+>We are storing the user's input in the Action Parameter `reasonForRejection`. We then send the value in this parameter as part of the body. Upon successful execution, the card will display the reason entered by the user.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -185,7 +185,7 @@ Click the **Info** tab.
 
 !![MobileCardsImage](img_22.png)
 
-In the Versions Table, click the highlighted icon to change the state to **Productive**.
+In the Versions table, click the ![MobileCardsIcon](ico_check.png) icon to change the state to **Productive**.
 
 !![MobileCardsImage](img_23.png)
 
@@ -202,7 +202,7 @@ Notice that the **State** of the versions has changed. The newly published versi
 
 [ACCORDION-BEGIN [Step 7: ](Subscribe to the card in SAP Mobile Cards)]
 
->Make sure you are choosing the right device platform tab **above**.
+>Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
 > The SAP Mobile Services client syncs new versions periodically. In the interest of time, you can choose to un-subscribe and subscribe the card to **force the changes immediately**.
 
@@ -216,7 +216,7 @@ In the card properties view, notice that the version of the `Automatic Instance 
 
 !![MobileCardsImage](img_27.png)
 
-Tap **<-** 'Back' to to see latest cards downloaded on the device and tap **v** to expand the card action menu.
+Tap ![MobileCardsIcon](ico_android_back.png) 'Back' to see the latest cards downloaded on the device and tap ![MobileCardsIcon](ico_android_expand.png) button to expand the card action menu.
 
 !![MobileCardsImage](img_29.png)
 
@@ -224,7 +224,7 @@ Tap **Reject** to reject the Sales Order.
 
 !![MobileCardsImage](img_30.png)
 
-> The Icons seen here appear because of the `Consider Action As` property.
+> The icons seen here appear because of the `Consider Action As` property.
 
 > Make a note of the `LifeCycleStatus` and Action Card Id.
 
@@ -239,15 +239,13 @@ You will now see 2 toast messages: `Performing Action` and `Performed Action Suc
 !![MobileCardsImage](img_32.png)
 !![MobileCardsImage](img_33.png)
 
-> If you don't see these toast messages, there may be some error in the code.
-
 Tap on the card to open it. Notice, that the Life `LifeCycleStatus` has changed from `New` to `Rejected: Invalid Data`.
 
 !![MobileCardsImage](img_34.png)
 
-Now let's say that the necessary action has been taken, and this Sales Order can be approved.
+Now, let's assume that the necessary action has been taken, and this Sales Order can be approved.
 
-Tap on the **Action Bar** button to view the actions, and then tap on **Approve**.
+Tap on the **Action Bar** button to view the actions and then tap on **Approve**.
 
 !![MobileCardsImage](img_35.png)
 
@@ -255,8 +253,6 @@ You will now see 2 toast messages: `Performing Action` and `Performed Action Suc
 
 !![MobileCardsImage](img_36.png)
 !![MobileCardsImage](img_37.png)
-
-> If you don't see these toast messages, there may be some error in the code.
 
 For the same card, `LifeCycleStatus` has changed from `Rejected: Invalid Data` to `Accepted`.
 
@@ -284,7 +280,7 @@ Tap on a card to open it.
 
 > Make a note of the `LifeCycleStatus` and Action Card Id.
 
-Tap on the **Action Menu** button to view the actions.
+Tap on the **Action Menu** button ![MobileCardsIconn](ico_ios_action.png) to view the actions.
 
 !![MobileCardsImage](img_44.png)
 
@@ -303,15 +299,13 @@ You will now see 2 toast messages: `Performing Action` and `Action Successfully 
 !![MobileCardsImage](img_47.png)
 !![MobileCardsImage](img_48.png)
 
-> If you don't see these toast messages, there may be some error in the code.
-
 Notice, that the Life `LifeCycleStatus` has changed from `New` to `Rejected: Incorrect Date`.
 
 !![MobileCardsImage](img_49.png)
 
-Now let's say that the necessary action has been taken, and this Sales Order can be approved.
+Now, let's assume that the necessary action has been taken, and this Sales Order can be approved.
 
-Tap on the **Action Menu** button to view the actions.
+Tap on the **Action Menu** button ![MobileCardsIconn](ico_ios_action.png) to view the actions.
 
 !![MobileCardsImage](img_50.png)
 
@@ -323,8 +317,6 @@ You will now see 2 toast messages: `Performing Action` and `Action Successfully 
 
 !![MobileCardsImage](img_52.png)
 !![MobileCardsImage](img_53.png)
-
-> If you don't see these toast messages, there may be some error in the code.
 
 Notice, that the Life `LifeCycleStatus` has changed from `Rejected: Incorrect Date` to `Aceepted`.
 
@@ -341,7 +333,7 @@ In the Mobile Services cockpit, click **Connectivity** under the **Features** ta
 
 !![MobileCardsImage](img_55.png)
 
-For the `com.sap.edm.sampleservice.v2` sample service, click the **OData destination test** icon.
+For the `com.sap.edm.sampleservice.v2` sample service, click the **OData destination test** icon ![MobileCardsIconn](ico_odata_test.png).
 
 !![MobileCardsImage](img_56.png)
 
@@ -353,7 +345,7 @@ Select `SalesOrderHeaders` as the Metadata Entity Set.
 
 !![MobileCardsImage](img_58.png)
 
-If you can not find particular data set, click **Entity Properties** to select some properties, click **OK**.
+If you cannot find particular data set, click **Entity Properties** to select some properties, then click **OK**.
 
 !![MobileCardsImage](img_59.png)
 

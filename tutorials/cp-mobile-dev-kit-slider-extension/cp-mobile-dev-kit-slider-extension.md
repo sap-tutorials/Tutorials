@@ -1,9 +1,9 @@
 ---
-title: Create Extension Controls in an MDK App (Using Metadata Approach)
-description: Build and run the Mobile Development Kit client with custom extension functionality for Android and iOS platforms.
+title: Create a Slider Custom Control in an MDK App (Using Metadata Approach)
+description: Build and run the Mobile Development Kit client with slider custom control functionality for Android and iOS platforms.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
