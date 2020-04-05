@@ -66,8 +66,9 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP Cl
 4. Authenticate using your login credentials using the following command in the terminal:
 
 ```Shell/Bash
-cf login  # this will ask you to select CF API, org, and space
+cf login
 ```
+> This will ask you to select CF API, org, and space.
 
 [DONE]
 [ACCORDION-END]
