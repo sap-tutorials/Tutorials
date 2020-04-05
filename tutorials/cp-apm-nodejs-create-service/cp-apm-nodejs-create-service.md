@@ -30,13 +30,13 @@ time: 40
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Configure the NPM registry by executing the following command in a command-line window:
+1. Configure the NPM registry by executing the following command in a command line window:
 
     ```Shell/Bash
     npm set @sap:registry=https://npm.sap.com
     ```
 
-2. Install the CDS command-line tools by executing the following command:
+2. Install the CDS command line tools by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -84,7 +84,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [OPTION BEGIN [Windows]]
 
-1. Open a command-line window and run the following command in a folder of your choice:
+1. Open a command line window and run the following command in a folder of your choice:
 
     ```Shell/Bash
     cds init my-bookshop
@@ -92,11 +92,11 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File | Open Folder** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** > **Open Folder** and choose the **`my-bookshop`** folder.
 
     ![Open project](open-project.png)
 
-3. Go to **Terminal | New Terminal** to open a command-line window within Visual Studio Code and run the following command:
+3. Go to **Terminal** > **New Terminal** to open a command line window within Visual Studio Code and run the following command:
 
     ```Shell/Bash
       cds watch
@@ -118,7 +118,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [OPTION BEGIN [Mac and Linux]]
 
-1. Open a command-line window and run the following command in a folder of your choice:
+1. Open a command line window and run the following command in a folder of your choice:
 
     ```Shell/Bash
     cds init my-bookshop
@@ -126,9 +126,9 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File | Open** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** > **Open** and choose the **`my-bookshop`** folder.
 
-3. Go to **View | Command Palette | Terminal: Create New Integrated Terminal** to open a command-line window within Visual Studio Code and run the following command:
+3. Go to **View** > **Command Palette** > **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command:
 
     ```Shell/Bash
       cds watch
@@ -189,7 +189,7 @@ Create a simplistic all-in-one service definition.
     }
     ```
 
-    >Remember to save your files (keyboard shortcut CTRL+S).
+    >Remember to save your files (keyboard shortcut **CTRL+S**).
 
 3. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
 
@@ -364,7 +364,7 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
 
 Instead of using in-memory, we can also use persistent databases.
 
-1. If `cds watch` is running, press `CTRL+C` to stop the service.
+1. If `cds watch` is running, press **CTRL+C** to stop the service.
 
 2. Install `SQLite3` packages.
 
@@ -391,7 +391,7 @@ Instead of using in-memory, we can also use persistent databases.
 
     >If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`.
 
-5. To stop `SQLite` and go back to your project directory, press `CTRL+C`.
+5. To stop `SQLite` and go back to your project directory, press **CTRL+C**.
 
 6. Run your service.
 
