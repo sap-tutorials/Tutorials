@@ -20,7 +20,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 [ACCORDION-BEGIN [Step 1: ](Access your workspace)]
 
-Click the **Discover** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
+Click the **Design** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
 
 ![Access workspace](1.1.access-workspace.png)
 
