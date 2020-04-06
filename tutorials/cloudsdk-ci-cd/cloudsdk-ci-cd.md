@@ -12,7 +12,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Prerequisites
 - For getting started with Continuous Integration and Delivery (`Cx`) in your project, you need to assure the following prerequisites:
     - **Linux host with Docker**: For instantiating the SAP Cloud SDK Cx-server, you need to provide a suitable host or virtual machine with a Linux operating system and Docker installed. Please also ensure that the user with whom you start the Cx-server belongs to the Docker group.
-    - **Project sources in GitHub or Git**: Your project source files need to be available on a Git or GitHub server, which is accessible from the Cx-server host. Creating your project is explained in [Step 2](https://blogs.sap.com/2017/05/21/step-2-with-sap-s4hana-cloud-sdk-helloworld-on-scp-classic/) and [Step 3](https://blogs.sap.com/2017/05/19/step-3-with-sap-s4hana-cloud-sdk-helloworld-on-scp-cloudfoundry/).
+    - **Project sources in GitHub or Git**: Your project source files need to be available on a Git or GitHub server, which is accessible from the Cx-server host. Creating your project is explained in <https://developers.sap.com/tutorials/s4sdk-scp-neo-sample-application.html> and <https://developers.sap.com/group.s4sdk-cloud-foundry.html>.
 
 The SAP Cloud SDK Pipeline uses Docker images for each individual build step. Accordingly, you do not need to take care of installing any further dependencies on your host machine. All tools required for building, testing, quality checking, and deploying your applications, are dynamically retrieved in the form of Docker images.
 
