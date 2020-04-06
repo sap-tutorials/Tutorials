@@ -5,6 +5,8 @@ description: Create business roles and maintain access management in SAP Cloud P
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 10
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
