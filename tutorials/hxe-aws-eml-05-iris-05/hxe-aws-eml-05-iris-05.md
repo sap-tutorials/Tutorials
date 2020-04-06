@@ -233,12 +233,11 @@ In the next cell, paste the following code then press **SHIFT** + **ENTER** to e
 aws ecs create-cluster --cluster-name hxe-eml-cluster
 ```
 
-The above code will create a new cluster named ***`hxe-eml-cluster`***. You can check that the cluster was properly created by accessing the Amazon ECS dashboard: <https://console.aws.amazon.com/ecs/home?#/clusters/>(
-){2}> ### **Note:**
+The above code will create a new cluster named ***`hxe-eml-cluster`***. You can check that the cluster was properly created by accessing the Amazon ECS dashboard: <https://console.aws.amazon.com/ecs/home?#/clusters/>
 
 >If the cluster already exists, you can drop it before using the following command:
 >
-```
+```Python
 aws ecs delete-cluster --cluster hxe-eml-cluster
 ```
 
