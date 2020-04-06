@@ -1,6 +1,8 @@
 ---
+author_name: Philip Herzig
+author_profile: https://github.com/HerzigP
 title: Create and Deep Insert with the Virtual Data Model for OData
-description: Create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK in more detail.
+description: Create and deep insert functionality for OData as supported by the SAP S/4HANA Cloud SDK.
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
@@ -407,7 +409,7 @@ In addition, you are using a system alias which is stored inside the `<projectro
 
 Both tests together give us a code coverage of 91%:
 
-![screenshot2](screenshot2.png)
+!![screenshot2](screenshot2.png)
 
 [DONE]
 [ACCORDION-END]

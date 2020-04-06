@@ -1,6 +1,8 @@
 ---
+author_name: Philip Herzig
+author_profile: https://github.com/HerzigP
 title: Extensibility, Type-Safe Expand, and Dependency Injection with the Virtual Data Model for OData
-description: Learn the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
+description: Use the latest features of the SAP Cloud SDK regarding extensibility, eager and type-safe expand as well as dependency injection with the Virtual Data Model for OData for any SAP S/4HANA system.
 auto_validation: true
 time: 30
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
@@ -8,7 +10,7 @@ primary_tag: topic>java
 ---
 
 ## Prerequisites
- - [Introduce resilience to your application](https://developers.sap.com/tutorials/s4sdk-resilience.html)
+ - [Introduce Resilience to Your Application](https://developers.sap.com/tutorials/s4sdk-resilience.html)
  - [Connect to OData Service on Cloud Foundry Using SAP Cloud SDK](s4sdk-odata-service-cloud-foundry)
 
 ## Details
