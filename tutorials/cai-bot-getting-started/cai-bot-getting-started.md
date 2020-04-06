@@ -33,41 +33,54 @@ Create an account with your email address, or with your [GitHub](http://github.c
 
 [ACCORDION-BEGIN [Step 2: ](Create new bot project)]
 
-Go to your home page -- the URL is `https://cai.tools.sap/<your account>` or click **Your bots** in the menu at the top.
+1. Go to your home page, by either:
 
-Click **New Bot** and fill in the form as follows:
+    - Opening the URL <https://cai.tools.sap/> followed by you account name.
 
-![New bot](NewBot.png)
+    - Clicking **Your bots** in the menu at the top.
 
-1. For the predefined skills, choose **Greetings**.
+2. Click **New Bot**.
 
-2. In the **Create your bot** section, enter the following:
+    ![New bot](NewBot.png)
 
-    |  Field Name     | Value
-    |  :------------- | :-------------
-    |  Bot name       | **`my-first-bot`**
-    |  Description    | **A bot that likes to tell jokes and have a little fun**
+    And fill in the following:
 
-3. For **Data Policy**:
+      - Select **Perform Actions**.
 
-    - Select **Non-personal**.
+        >With a standard **Perform Actions** bot, the developer is responsible for creating entities and intents with expressions. The developer is also responsible for building and managing the conversational flow that pulls information from back-end systems to help simplify processes for the chatbot end user.
 
-    - Select **Non-vulnerable**.
+        >A **FAQ** bot retrieves answers to users' questions from one or more documents (`.csv` files) that you upload. The document must include predefined pairs of questions and answers. This allows your bot to map the user's query to the best match and retrieve an answer without interpreting the intent of the question.
 
-4. For **Bot visibility**, select **Public**.
+        >To ease the complexity of the FAQ bot, the intents and entities are pre-trained, and the bot includes a set of predefined skills. However, you can design the bot responses as per your business needs.
 
-![New bot form](NewBotForm.png)
+      - For the predefined skills, choose **Greetings**.
 
-Click **Create a bot**.
+      - In the **Create your bot** section, enter the following:
 
+        |  Field Name     | Value
+        |  :------------- | :-------------
+        |  Bot name       | **`my-first-bot`**
+        |  Description    | **A bot that likes to tell jokes and have a little fun**
+
+      - For **Data Policy**:
+
+        - Select **Non-personal**.
+
+        - Select **Non-vulnerable**.
+
+      - For **Bot visibility**, select **Public**.
+
+      ![New bot form](NewBotForm.png)
+
+3. Click **Create a bot**.
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](The 5 stages of a bot's life)]
+[ACCORDION-BEGIN [Step 3: ](The 4 stages of a bot's life)]
 
-There are 5 stages in your bot's life:
+There are 4 stages in your bot's life:
 
   - **Train:** Teach your bot what it needs to understand.
 
@@ -75,19 +88,15 @@ There are 5 stages in your bot's life:
 
   - **Build:** Create your conversational flow with our Bot Builder tool. Here you give your bot skills it can perform.
 
-      Here you will create ***skills*** -- things your bot can do -- and define when they will be triggered. Your skills are defined by ***triggers***, ***requirements*** (information your bot must collect), and ***actions***.
-
-  - **Code:** Connect your bot with external APIs or a database.
+      Here you will create ***skills*** -- things your bot can do -- and define when they will be triggered. Your skills are defined by ***triggers***, ***requirements*** (information your bot must collect), and the ***actions***.
 
   - **Connect:** Ship your bot to one or several messaging platforms.
 
-  - **Monitor:** Train your bot to make it sharper, and get insights on its usage!
+  - **Monitor:** Train your bot to make it sharper, and get insights on its usage.
 
->This tutorial will not deal with code, because we won't need any external information. If you want to connect your bot with some code, you might be interested in the tutorial [Node.js Chatbot Tutorial: A Movie Bot With SAP Conversational AI](https://cai.tools.sap/blog/nodejs-chatbot-movie-bot/).
+The 4 phases are represented in the bot project by the 4 tabs.
 
-The 5 phases are represented in the bot project by the 5 tabs.
-
-![5 stages](5tabs.png)
+![4 stages](5tabs.png)
 
 [DONE]
 [ACCORDION-END]
@@ -101,13 +110,11 @@ As SAP Conversational AI is collaborative, you do not have to re-create each int
 
 1. Go to the **Train** tab.
 
-2. In the **Search** box, enter **`joke`**, and press **Search**.
+2. In the **Search** box, enter **`ask-joke`**, and press **Search**.
 
     ![Search for intents](SearchForIntent.png)
 
 3. Click **Fork** for the first one.
-
-    >We took the intent `alxios / explore **@joke**`.
 
 4. Explore the intent by clicking on it.
 
@@ -154,8 +161,6 @@ You will be able to reuse many, many intents created by others. But there are ti
 [ACCORDION-END]
 
 
-
-
 [ACCORDION-BEGIN [Step 6: ](Add expressions)]
 
 Now that we have intents, we need to add expressions -- things people might say if they had that intent. A golden rule would be to add **at least 30 expressions** to an intent, and ideally more than 50.
@@ -193,7 +198,7 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
 
 We want to now test to see if the bot can detect when a user says something matching the intent we created.
 
-1. Click the fly out tab **Test**.
+1. Click the fly-out tab **Test**.
 
     ![Test panel](TestButton.png)
 
@@ -220,23 +225,23 @@ Open the **Build** tab.
 
 Inside, you'll find the **Bot Builder**, which helps you construct the conversation flow of your bot.
 
-### What is a skill?
+> ### What is a skill?
 
-Each skill represents one thing that your bot knows how to do. Your skill can be complicated (.e.g., manage payment by credit card) or quite simple (e.g., answer a basic questions).
+>Each skill represents one thing that your bot knows how to do. Your skill can be complicated (.e.g., manage payment by credit card) or quite simple (e.g., answer a basic question).
 
-Just like intents, you can create a skill from scratch or inherit skills from other bots you've created or from other people's bots.
+>Just like intents, you can create a skill from scratch or inherit skills from other bots you've created or from other people's bots.
 
-In our project, chose the predefined skill **Greetings**.
+>In our project, chose the predefined skill **Greetings**.
 
-The **Greetings** skill -- like all skills -- has 4 tabs:
+>The **Greetings** skill -- like all skills -- has 4 tabs:
 
-  - **README.md:** A description of the purpose of your skill
+>  - **README.md:** A description of the purpose of your skill
 
-  - **Triggers:** The conditions that must occur -- general the intents that the user must express -- for the skill to be executed
+>  - **Triggers:** The conditions that must occur -- general the intents that the user must express -- for the skill to be executed
 
-  - **Requirements:** Information that must be collected in order for the skill to be executed
+>  - **Requirements:** Information that must be collected in order for the skill to be executed
 
-  - **Actions:** The action to take (basically, this is the skill)
+>  - **Actions:** The action to take (basically, this is the skill)
 
 If you navigate through the tabs, you'll see that the **Greetings** skill is structured as follows:
 
@@ -261,7 +266,7 @@ Now let's build a skill to tell a joke.
     >
     >  - **Business** and **Floating** skills are basically the same, but it is good to specify the appropriate type for your skill to better organize your skills.
     >
-    >  - **Fallback** skills trigger when no other skill has their Triggers fulfilled after a user message. Most of the time, you'll have only one of this kind, where you can remind the user what your bot can do, and ask them to rephrase.
+    >  - **Fallback** skills trigger when no other skill has their triggers fulfilled after a user message. Most of the time, you'll have only one of this kind, where you can remind the user what your bot can do, and ask them to rephrase.
 
 3. Call your skill **`tell-me-a-joke`**, set the type as **Floating**, and click **Create Skill**.
 
@@ -269,15 +274,15 @@ Now let's build a skill to tell a joke.
 
 4. Double-click the new **tell-me-a-joke** skill, and open the **Triggers** tab.
 
-5. Add 3 `If` statements, one for each of the `@ask-joke`, `@laugh`, and `@lame` intents.
+5. Add 3 **`If`** statements, one for each of the `@ask-joke`, `@laugh`, and `@lame` intents.
 
-    - Click in the empty space right after `If`, select the `@joke` intent, and then click **Save**.
+    - Click in the empty space right after `If`, select the `@ask-joke` intent, and then click **Save**.
 
     ![Skill trigger condition](SkillCondition.png)
 
-    - Click on the **+** sign -- **Add a new list of conditions** -- and repeat the above for `@laugh` and `@lame` intents.
+    - Click on the **+** sign -- **Add a new list of conditions** -- and repeat the above for `@laughs` and `@lame` intents.
 
-    - Change the logical conditions to `Or` between each `If` statement, simple by clicking on the `And`.
+    - Change the logical conditions to `Or` between each `If` statement, simply by clicking `And`.
 
     It should now look like this:
 
@@ -287,7 +292,7 @@ Now let's build a skill to tell a joke.
 
 7. Click **Add New Message Group**, then **Add Condition**.
 
-    After the `If`, select the `@joke` intent, and click **Save**.
+    After the `If`, select the `@ask-joke` intent, and click **Save**.
 
 8. Click **Send Message**, choose the **Text** format, and type in a really good joke.
 

@@ -56,9 +56,9 @@ The SAP HANA clients can be used to connect to different versions of an SAP HANA
 
     ![Clients Post Installation](Clients-post-installation.png)
 
-5. Run the following command in a newly opened command prompt to verify the installation succeeded and the path is correct.
+5. Run the following command in a newly opened shell to verify the installation succeeded and the path is correct.
 
-    ```Command Prompt
+    ```Shell
     hdbsql -v
     ```
 

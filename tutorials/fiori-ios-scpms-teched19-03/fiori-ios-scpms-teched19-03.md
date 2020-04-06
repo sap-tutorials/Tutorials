@@ -9,7 +9,7 @@ time: 15
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -45,12 +45,6 @@ Add the following lines of code inside the class brackets and right below the cl
 
 ```Swift
 
-// The data service is called ESPMContainer here and because you're using Online OData you have to define the data service as OnlineODataProvider.
-private var dataService: ESPMContainer<OnlineODataProvider>?
-
-// The AppDelegate is easily accessible through the UIApplication instance.
-private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
 // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why we can easily can get an instance here.
 private let logger = Logger.shared(named: "OverviewViewController")
 
@@ -81,16 +75,20 @@ var loadingIndicator: FUILoadingIndicatorView?
 
 Next you will implement code which is responsible for retrieving and storing a data service instance.
 
-Add the following lines of code after the delegate and data source allocation in the `viewDidLoad(:)` method of the `OverviewViewController.swift` class:
+Add the following lines of code as class properties to the `OverviewViewController.swift` class:
 
 ```Swift
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-  AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-  logger.error("OData service is nil. Please check onboarding.")
-  return
+// Retrieve the data service using the destinations dictionary and return it.
+var dataService: ESPMContainer<OnlineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
 }
-self.dataService = dataService
 
 ```
 
@@ -394,7 +392,7 @@ The Overview View Controller is almost implemented. The last thing that is missi
 
 In theory you might want the user to see a list of all customers and products, but for this tutorial series we won't implement that. This series is focusing on the machine learning capabilities, so that's why you only will implement the Customer Detail Screen. For that, you will implement the defined delegate method in this step.
 
-In the iOS world, there are so-called **segues**, which can be used to perform navigation from one View Controller to another. Segues also allows you to access the so-called destination View Controller, this allows you to hand over data and do other setups for that View Controller. Let's define the segues to give you a better understanding.
+In the iOS world, there are so-called **segues**, which can be used to perform navigation from one View Controller to another. Segues also allows you to access the so-called destination View Controller, this enables you to hand over data and do other setups for that View Controller. Let's define the segues to give you a better understanding.
 You will create a segue that goes from the Table View Cell that contains the customer data to the actual Customer Detail View Controller.
 
 Open the `Main.storyboard` and locate your `OverviewViewController`.

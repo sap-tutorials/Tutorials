@@ -108,10 +108,10 @@ Before you start, make sure that you've completed the prerequisites.
 
     ```
     [cds] - running nodemon...
-    --exec cds run --with-mocks --in-memory?
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
-    No models found at ./db ./srv ./schema.cds ./services.cds.
-    Waiting for some to arrive...
+    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+
+        No models found at db/,srv/,app/,schema,services,.
+        Waiting for some to arrive...
     ```
 
 [OPTION END]
@@ -137,10 +137,10 @@ Before you start, make sure that you've completed the prerequisites.
 
     ```
     [cds] - running nodemon...
-    --exec cds run --with-mocks --in-memory?
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
-    No models found at ./db ./srv ./schema.cds ./services.cds.
-    Waiting for some to arrive...
+    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+
+        No models found at db/,srv/,app/,schema,services,.
+        Waiting for some to arrive...
     ```
 
 [OPTION END]
@@ -194,11 +194,14 @@ Create a simplistic all-in-one service definition.
 4. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
 
     ```
-    [cds] - connect to datasource - sqlite::memory:
+    [cds] - connect to db { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
-    [cds] - serving CatalogService at /catalog
-    [cds] - launched in: 977.671ms
-    [cds] - server listening on http://localhost:4004 ...
+
+    [cds] - serving CatalogService { at: '/catalog' }
+
+    [cds] - launched in: 696.753ms
+    [cds] - server listening on { url: 'http://localhost:4004' }
+    [ terminate with ^C ]
     ```
 
 5. To test your service, go to: <http://localhost:4004>
@@ -396,10 +399,12 @@ Instead of using in-memory, we can also use persistent databases.
     ```
 
     ```
-    [cds] - connect to datasource - sqlite:db/my-bookshop.db
-    [cds] - serving CatalogService at /catalog - with impl: srv/cat-service.js
-    [cds] - launched in: 4356.854ms
-    [cds] - server listening on (http://localhost:4004) ...
+    [cds] - connect to db { database: 'db/my-bookshop.db' }
+    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+
+    [cds] - launched in: 610.318ms
+    [cds] - server listening on { url: 'http://localhost:4004' }
+    [ terminate with ^C ]
     ```
 
 [DONE]
@@ -421,7 +426,7 @@ We can now see the generic handlers shipped with CAP in action.
 
     ![Postman import](postman-import.png)
 
-4. Choose **Import from File** in the wizard.  Click on **Choose Files** and select the file that you saved before.
+4. Choose **Import File** in the wizard.  Click on **Choose Files** and select the file that you saved before.
 
     ![Postman import from file](postman-import-from-file.png)
 
@@ -429,7 +434,7 @@ We can now see the generic handlers shipped with CAP in action.
 
     ![Test the request](postman-test-request.png)
 
-    > With our current service implementation, we can get only POST orders. Any GET or DELETE to an order fails, since we've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
+    > With our current service implementation, we can get only `POST` orders. Any `GET` or `DELETE` to an order fails, since we've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
 
 [VALIDATE_1]
 
