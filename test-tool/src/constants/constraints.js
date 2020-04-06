@@ -3,7 +3,6 @@ module.exports = {
         maxFoldersDepth: 2,
         includedFolders: [
             'tutorials',
-            'work-in-progress',
         ],
     },
     fileName: {
