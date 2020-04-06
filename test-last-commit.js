@@ -29,7 +29,6 @@ gitLog(options, function (error, commits) {
   const { files } = lastCommit;
   const mdFiles = files.filter(f =>
     f.toLowerCase().endsWith('.md')
-    && !f.includes('work-in-progress')
     && f.includes('tutorials')
   );
 
