@@ -30,7 +30,7 @@ It's now time to switch to SAP HANA as a database.
     "cds": {
         "requires": {
           "db": {
-            "kind": "sql"
+            "kind": "hana"
           }
         }
       }
@@ -41,7 +41,6 @@ It's now time to switch to SAP HANA as a database.
     ```Shell/Bash
     npm add @sap/hana-client
     ```
-    >If your **`.cdsrc.json`** file contains a `"target"` entry, remove it or set it to: `"target": "gen"`. This causes deployment files to be written to this folder. Otherwise, the deployment files would be written to the source folders.
 
 [DONE]
 
@@ -94,7 +93,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application:
 
     ```Shell/Bash
-    cds build/all
+    cds build
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
@@ -132,7 +131,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application:
 
     ```Shell/Bash
-    cds build/all && cf push -f gen/db && cf push -f gen/srv --random-route
+    cds build && cf push -f gen/db && cf push -f gen/srv --random-route
     ```
 
     >This process takes some minutes.
