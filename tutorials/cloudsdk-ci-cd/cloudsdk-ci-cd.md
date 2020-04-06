@@ -3,6 +3,7 @@ author_name: Benjamin Heilbrunn
 author_profile: https://github.com/benhei
 title: Set Up Continuous Integration and Delivery for SAP Cloud SDK
 description: Use the SAP Cloud SDK Continuous Integration and Continuous Delivery toolkit to build, test, and deploy your project.
+auto_validation: true
 time: 30
 tags: [tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
 primary_tag: products>sap-s-4hana-cloud-sdk
@@ -118,7 +119,8 @@ Initiating safe shutdown...
 Waiting for running jobs to finish...... success.
 ```
 
-[DONE]
+[VALIDATE_1]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create SAP Cloud SDK Cx-server container)]
@@ -148,6 +150,8 @@ As of today, the following options can be customized:
 no_proxy="localhost,.corp"`
 
 >If you choose to store Jenkins home in a local folder, you have to ensure that the Jenkins user within the Cx-server container, which is fixed to `uid=1000`, is able to read and write within the specified folder. To avoid permission related issues, we recommend to use named Docker volumes.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -230,9 +234,9 @@ We recommend to increase the number executors to at least the number of cores of
 
 For more information on the SAP Cloud SDK Pipeline, feel free to continue reading our [deep dive article](https://blogs.sap.com/2017/11/04/the-continuous-delivery-pipeline-for-sap-s4hana-cloud-sdk-based-projects/). There, you can learn more about its capabilities, design principles, and integrated quality checks. Its configuration can be found on [GitHub](https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/configuration.md).
 
+[DONE]
 
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 4: ](Troubleshoot)]
 
@@ -273,6 +277,8 @@ This is a general security risk in setups where Docker containers need to be abl
 [Jenkins Documentation](https://jenkins.io/doc/)
 
 [Docker Documentation](https://docs.docker.com/)
+
+[DONE]
 
 [ACCORDION-END]
 
