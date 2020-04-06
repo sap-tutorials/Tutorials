@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Learn about OData Fundamentals
 description: Discover OData's origins and learn about the fundamentals of OData by exploring a public OData service.
 auto_validation: false
@@ -44,8 +46,8 @@ The resulting RSS content of this resource should look something like this:
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Latest blog posts for SAP Cloud Platform Workflow</title>
-  <link rel="alternate" type="text/html" href="https://www.sap.com/community.html" />
-  <id>https://www.sap.com/community.html</id>
+  <link rel="alternate" type="text/html" href="https://www.sap.com.community.html" />
+  <id>https://www.sap.com.community.html</id>
   <rights>© 2018 SAP SE https://www.sap.com/about/legal/copyright.html</rights>
   <logo>https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg</logo>
   <updated>2018-07-22T07:55:37Z</updated>

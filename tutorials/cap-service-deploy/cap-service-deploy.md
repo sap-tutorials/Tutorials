@@ -12,7 +12,7 @@ time: 20
 ## Prerequisites
 - You've finished the tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
 - If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account).
-- You've downloaded and installed the [cf command-line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
+- You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## Details
 ### You will learn  
@@ -30,7 +30,7 @@ It's now time to switch to SAP HANA as a database.
     "cds": {
         "requires": {
           "db": {
-            "kind": "sql"
+            "kind": "hana"
           }
         }
       }
@@ -41,7 +41,6 @@ It's now time to switch to SAP HANA as a database.
     ```Shell/Bash
     npm add @sap/hana-client
     ```
-    >If your **`.cdsrc.json`** file contains a `"target"` entry, remove it or set it to: `"target": "gen"`. This causes deployment files to be written to this folder. Otherwise, the deployment files would be written to the source folders.
 
 [DONE]
 
@@ -59,15 +58,16 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP Cl
 
     !![subaccount tile](subaccount.png)
 
-3. Copy the **Cloud Foundry API endpoint** value:
+3. Copy the **Cloud Foundry API Endpoint** value:
 
     !![CF API endpoint value](api-endpoint.png)
 
 4. Authenticate using your login credentials using the following command in the terminal:
 
 ```Shell/Bash
-cf login  # this will ask you to select CF API, org, and space
+cf login
 ```
+> This will ask you to select CF API, org, and space.
 
 [DONE]
 [ACCORDION-END]
@@ -93,7 +93,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application:
 
     ```Shell/Bash
-    cds build/all
+    cds build
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
@@ -131,7 +131,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application:
 
     ```Shell/Bash
-    cds build/all && cf push -f gen/db && cf push -f gen/srv --random-route
+    cds build && cf push -f gen/db && cf push -f gen/srv --random-route
     ```
 
     >This process takes some minutes.
