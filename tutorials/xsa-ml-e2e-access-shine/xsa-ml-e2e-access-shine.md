@@ -2,6 +2,8 @@
 title: SAP HANA XS Advanced - Clone and run SHINE applications
 description: This tutorial will walk you through the prerequisites and initial setup to enable the SHINE objects in XS Advanced
 auto_validation: true
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana ]
 ---
