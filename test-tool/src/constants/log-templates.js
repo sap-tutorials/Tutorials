@@ -84,13 +84,11 @@ HELP: Your possibilities for the input:
       -h or --help for Help 
       -f: to log all filenames, which get tested 
       -a: for testing everything (including files, which aren't tutorials) 
-      -g: only in combination with t: for testing everything except from the work-in-progress folder (including files, which aren't tutorials) 
-      -w & -t: for testing every tutorial in both folders 
-      -w: for testing all files in the work-in-progress folder 
+      -g: only in combination with t: for testing everything (including files, which aren't tutorials) 
       -t: for testing all files in the tutorials folder 
       -s: for dialog to choose specific tutorials 
       -i: to give an filename behind with *
-          to resctrict the scope: enter -w or/and -t
+          to resctrict the scope: enter -t
       -p: to turn off the progressbar `;
 
 const optionsError = `Error: no available command identified )
