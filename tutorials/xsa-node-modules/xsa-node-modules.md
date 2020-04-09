@@ -14,7 +14,7 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 - [HANA Database Access from Node.js](https://developers.sap.com/tutorials/xsa-node-dbaccess.html)
 
 ## Details
-
+### You will learn
 In a previous tutorial you created [a Node.js Module](https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html), but didn't really do much Node.js specific programming.  You were only using Node.js to run XSJS and XSODATA services. The support for XSJS and XSODATA is an important feature for XS Advanced. It not only allows backward compatible support for much of your existing development, but it also provides a simplified programming model as an alternative to the non-blocking I/O event-driven programming model normally used by Node.js, but you certainly aren't limited to only the functionality provided by XSJS and XSODATA. You have access to the full programming model of Node.js as well. In this section you will learn how to extend your existing Node.js module in the SAP Web IDE for SAP HANA.You will learn about how to create and use reusable code in the form of Node.js modules. You will use `package.json` to define dependencies to these modules which make the installation of them quite easy. You will use one of the most popular modules – **express** - which helps with the setup the handling of the request and response object. You will use `express` to handle multiple HTTP handlers in the same service by using routes.You will learn about the fundamentals of the asynchronous nature of Node.js You will also see how this asynchronous capability allows for non-blocking input and output. This technique is one of the basic things that makes Node.js development different from other JavaScript development and also creates one of the reasons for its growing popularity. You will see how these techniques are applied to common operations like HTTP web service calls or even SAP HANA database access. You will also see how to create language translatable text strings and HANA database queries from Node.jsYour final part of this section will demonstrate the ease at which you can tap into the powerful web sockets capabilities of Node.js You will use web sockets to build a simple chat application. Any message sent from the SAPUI5 client side application will be propagated by the server to all listening clients.
 
 
@@ -111,6 +111,8 @@ Please take a look at the code you have just pasted.
 
 First, the `@sap/logging` module is used to write log and trace files. By calling the external node module, `passport`, you are enforcing the UAA authentication you defined earlier. How? By using a JWT (JSON web token) strategy, a middleware function passes the request to the actual route which, in this case, is the `xsuaa` service you defined at the very beginning using the XS client. You are then injecting  an instance of `@sap/hdbext`, called `xsHDBConn`. This module is designed to expose pooled HANA database connections as a Node.js middleware.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create route handler)]
@@ -140,7 +142,7 @@ module.exports = (app, server) => {
 
 Add the code to the new `index.js` file and **save**.
 
-
+[DONE]
 
 [ACCORDION-END]
 
@@ -170,6 +172,7 @@ module.exports = function() {
 ```
 You are now responding to a `GET` request to the relative root location of the file (in this case, `router`).  However, in the `index.js` file inside the `router` folder, you set the path to `/node` in the URL. You need to map this route in the `xs-app.json` file in the HTML5 module.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -199,6 +202,8 @@ We also need to go to the mta.yaml and now extend the web module to include a de
 Now we need to extend the dependencies for the `core_node` module itself so it has access to the UAA and HANA service also. Add entries in the `Requires` section for these resources.
 ![Add dependency in mta.yaml for core_node](5-2.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Extend dependencies in package.json)]
@@ -227,6 +232,8 @@ Back in step 1 you added the modules `express`, `passport` and several other mod
 "then-request": "latest"
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Build and Run )]
@@ -243,7 +250,7 @@ You can also test the newly added router by adding `/node` to the URL:
 
 ![Replace with node](10.png)
 
-
+[DONE]
 
 [ACCORDION-END]
 
