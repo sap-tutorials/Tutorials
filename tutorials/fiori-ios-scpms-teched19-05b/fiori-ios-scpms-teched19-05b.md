@@ -53,29 +53,29 @@ With this easy to use tool you can quickly create, train, and test the above men
 
 For this tutorial series you're going to need an Image Classification Model to identify products.
 
-After you have installed [Create ML](https://developer.apple.com/machine-learning/create-ml/) you should see a popup asking you to create a **New Document**. Please select that to reach the template screen in Create ML.
+1. After you have installed [Create ML](https://developer.apple.com/machine-learning/create-ml/) you should see a popup asking you to create a **New Document**. Please select that to reach the template screen in Create ML.
 
-![Create ML](fiori-ios-scpms-teched19-01.png)
+    ![Create ML](fiori-ios-scpms-teched19-01.png)
 
-Now please select the **Image Classifier** template as a starting point and click on **Next**.
+2. Now please select the **Image Classifier** template as a starting point and click on **Next**.
 
-![Create ML](fiori-ios-scpms-teched19-02.png)
+    ![Create ML](fiori-ios-scpms-teched19-02.png)
 
-Fill out the required fields like the following and click on **Next**:
+3. Fill out the required fields like the following and click on **Next**:
 
-| Field  | Value |
-| ------------- | ------------- |
-| Project Name  | `ProductImageClassifier`  |
-| Author  | `Your name`  |
-| Description  | A machine learning model that has been trained to recognize images. When you give it an image, it responds with a label for that image. It is trained on product images. |
+    | Field  | Value |
+    | ------------- | ------------- |
+    | Project Name  | `ProductImageClassifier`  |
+    | Author  | `Your name`  |
+    | Description  | A machine learning model that has been trained to recognize images. When you give it an image, it responds with a label for that image. It is trained on product images. |
 
-![Create ML](fiori-ios-scpms-teched19-03.png)
+    ![Create ML](fiori-ios-scpms-teched19-03.png)
 
-Create ML will ask you for a location to safe the project at. Please select your preferred location and click on **Create**.
+    Create ML will ask you for a location to safe the project at. Please select your preferred location and click on **Create**.
 
-You should see the project opening up.
+    You should see the project opening up.
 
-![Create ML](fiori-ios-scpms-teched19-04.png)
+    ![Create ML](fiori-ios-scpms-teched19-04.png)
 
 [DONE]
 [ACCORDION-END]
