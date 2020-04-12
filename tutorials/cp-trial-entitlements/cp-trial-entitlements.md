@@ -7,8 +7,7 @@ primary_tag: products>sap-cloud-platform
 ---
 
 ## Prerequisites
-- You must have registered for a trial account on SAP Cloud Platform.
-[Sign up](https://developers.sap.com/tutorials/hcp-create-trial-account.html) for a free trial.
+- You must have registered for a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn
@@ -16,47 +15,41 @@ primary_tag: products>sap-cloud-platform
   - How to move entitlements from one subaccount to another
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Understand entitlements and quota)]
-
-
+[ACCORDION-BEGIN [Step 1: ](Entitlements and quota)]
 
 Before you get started, you should understand the difference between entitlements and quota, because you'll encounter these 2 terms quite often.
 
-
-
-- **Entitlements** are your right to provision and consume a resource. They refer to **what** you're entitled to use (e.g. which services and service plans).
+- **Entitlements** are your right to provision and consume a resource. They refer to **what** you're entitled to use (e.g., which services and service plans).
 
 - **Quota** is the numeric quantity that defines the maximum allowed consumption of that resource. In other words, **how much** of a service plan you're entitled to use.
-
-
 
 Entitlements and quotas are managed at the global account level, distributed to subaccounts, and consumed by the subaccounts.
 
 When you remove quotas or entitlements from a subaccount, they become available again at global account level and can be assigned to other subaccounts.
 
 
+[DONE]
+[ACCORDION-END]
 
-When you sign up for a trial account, you get a subaccount called trial automatically created for you, and all trial entitlements assigned to it by default. If you choose to create an additional subaccount and try things out there, you need to manually move the entitlements from the default subaccount to the new subaccount. You may want to move over all trial entitlements, only some of them, or even split quota for a service plan between the 2 subaccounts.
+[ACCORDION-BEGIN [Step 2: ](Subaccounts and service plans)]
 
+When you sign up for a trial account, you get a subaccount called **`trial`** automatically created for you, and all trial entitlements assigned to it by default. If you choose to create an additional subaccount and try things out there, you need to manually move the entitlements from the default subaccount to the new subaccount. You may want to:
 
+  - Move over all trial entitlements.
 
-Each service has one or more **service plans** available. A service plan is the representation of the costs and benefits for a given variant of a particular service. For instance, a database may be configured with various "t-shirt sizes", each of which is a different service plan.
+  - Move over only some of them.
 
+  - Split quota for a service plan between the 2 subaccounts.
 
+Each service has one or more **service plans** available. A service plan is the representation of the costs and benefits for a given variant of a particular service. For instance, a database may be configured with various "T-shirt sizes", each of which is a different service plan.
 
-Some service plans use numeric quota, which means that you can increase or decrease the number of units available in a subaccount. Depending on the service, these units represent different things and may impact the amount of service instances, applications or routes you can have in a subaccount. For example, 1 GiB of Application Runtime comes with 10 routes. If you want to learn more about what the different service plans and units mean for each service, check out the latest [SAP Cloud Platform Service Description Guide and Agreement](https://www.sap.com/about/agreements/policies/cloud-platform.html).
+Some service plans use numeric quota, which means that you can increase or decrease the number of units available in a subaccount. Depending on the service, these units represent different things and may impact the amount of service instances, applications or routes you can have in a subaccount.
 
-
+For example, 1 GiB of Application Runtime comes with 10 routes. If you want to learn more about what the different service plans and units mean for each service, check out the latest [SAP Cloud Platform Service Description Guide and Agreement](https://www.sap.com/about/agreements/policies/cloud-platform.html).
 
 There are also service plans where the quota is simply shown as "limited". In that case, you can entitle that service to multiple subaccounts without having to worry about how much of it to distribute to each subaccount. You can think of assigning entitlements for such service plans as "enabling" subaccounts to use them.
 
-
-
-There are two places in the cockpit where you can view and configure entitlements and quotas for subaccounts - at **global account** level and **subaccount level**. In this tutorial, you'll work on global account level. You have one global account that is your trial account.
-
-
-
-
+There are two places in the cockpit where you can view and configure entitlements and quotas for subaccount: at **global account** level and **subaccount level**. In this tutorial, you'll work on global account level. You have one global account that is your trial account.
 
 [DONE]
 
@@ -146,7 +139,7 @@ If you choose to create an additional subaccount and try things out there, you n
     ![Remove Entitlements](12_RemoveAlertNotification.png)
     In this example, the Alert Notification service is removed.
 
-    **To remove quota for a service plan:** In the **Quota** column, choose the +/- buttons to adjust the amount you want to keep in the default subaccount.
+    **To remove quota for a service plan:** In the **Quota** column, choose the **+/-** buttons to adjust the amount you want to keep in the default subaccount.
 
     ![Remove Entitlements](13_DecreaseApplicationRuntime.png)
 
@@ -176,12 +169,5 @@ If you choose to create an additional subaccount and try things out there, you n
 
 You've now changed the entitlements and quota distribution across your 2 subaccounts and are ready to deploy applications and create service instances in your new subaccount.
 
-
-
-
 [DONE]
 [ACCORDION-END]
-
-
-
----
