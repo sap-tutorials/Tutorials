@@ -34,7 +34,7 @@ Enter the name as `businessPartners.xsodata` and click **OK**.
 
 ![file name](2.png)
 
-
+[DONE]
 
 [ACCORDION-END]
 
@@ -56,6 +56,8 @@ service {
 
 You can ignore the error marker in the `xsodata` editor.  If it a false error, unfortunately.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Save and run)]
@@ -64,6 +66,7 @@ Save the file and build the Node.js `core_xsjs` module. Then run the `html5` mod
 
 ![test oData](4.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -77,6 +80,7 @@ You can see the field descriptions for all the attributes of the OData service.
 
 ![access metadata](5.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -85,6 +89,8 @@ You can see the field descriptions for all the attributes of the OData service.
 In order to view the data of the entity, you would append `BP` to the end of the URL:
 
 For Example:`/xsodata/businessPartners.xsodata/BusinessPartners?$format=json`You are now able to see the data from the `businessPartner` table.  ![Business Partner data](6.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -96,5 +102,6 @@ For Example:`/xsodata/businessPartners.xsodata/BusinessPartners?$top=3&$skip=5&
 
 ![output](7.png)
 
+[DONE]
 
 [ACCORDION-END]
