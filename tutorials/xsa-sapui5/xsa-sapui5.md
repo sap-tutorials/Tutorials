@@ -725,5 +725,6 @@ In the running tab, you should see the `index.html` from earlier. Adjust the URL
 
 ![results](15.png)
 
+[DONE]
 
 [ACCORDION-END]
