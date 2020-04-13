@@ -236,7 +236,7 @@ module.exports = {
 
           if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
             const relPath = `${localFileMatch[2]}${localFileMatch[3] || ''}`;
-            const fullPath = path.resolve(dir, relPath);
+            const fullPath = path.normalize(path.resolve(dir, relPath));
 
             if (!fs.existsSync(fullPath)) {
               result.contentCheckResult.push({
