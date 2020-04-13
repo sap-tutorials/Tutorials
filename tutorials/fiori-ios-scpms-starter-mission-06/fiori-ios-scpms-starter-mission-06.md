@@ -2,6 +2,8 @@
 title: Adapt Your App to the Needs of a MacOS Application.
 description: Embed your app flow in a Split View Controller for Mac Catalyst only, create a settings bundle to enable a preferences menu, and change the menu bar items to have a refresh menu ready to use.
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 35

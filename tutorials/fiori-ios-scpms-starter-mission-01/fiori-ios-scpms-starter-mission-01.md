@@ -2,6 +2,8 @@
 title: Get Familiar with SAP Cloud Platform SDK for iOS
 description: Get introduced to the SAP Cloud Platform SDK for iOS, SAP Cloud Platform Mobile Services, and the power of the SDK.
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 15

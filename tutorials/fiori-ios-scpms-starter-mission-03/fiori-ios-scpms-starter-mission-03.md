@@ -2,6 +2,8 @@
 title: Build a Product List
 description: Build an entity list using SAP Cloud Platfrom SDK for iOS controls, with storyboard segues for navigation between the overview screen and the product list.
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 35

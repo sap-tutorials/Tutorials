@@ -2,6 +2,8 @@
 title: Build a Customer List
 description: Build an entity list using SAP Cloud Platform SDK for iOS controls. Use storyboard segues to perform navigation between the Overview screen and the customer list.
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 25
