@@ -169,11 +169,13 @@ You can now use the **GET /document/jobs/{`uuid`}** endpoint to receive the pred
 
 2. Click **Try it out**.
 
-3. Enter the **`clientId`** you used in the previous step (`c_00`, for example).
+3. Set **`extractedValues`** to `true` to get the extracted values.
 
-4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`uuid`**.
+4. Enter the **`clientId`** you used in the previous step (`c_00`, for example).
 
-5. Click **Execute**.
+5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`uuid`**.
+
+6. Click **Execute**.
 
     ![DOX](png-files/getResults.png)
 
