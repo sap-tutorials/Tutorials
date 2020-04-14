@@ -1,6 +1,6 @@
 ---
 title: Use Machine Learning to Extract Information from Documents
-description: Get the machine learning model prediction for the document fields you upload to Document Information Extraction.
+description: Get the machine learning model prediction for the documents you upload to Document Information Extraction.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
@@ -13,7 +13,7 @@ primary_tag: topic>machine-learning
   - How to access and use Swagger UI (User Interface)
   - How to extract information from files with Document Information Extraction
 
-The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the document you upload to Document Information Extraction.
+The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction.
 
 ---
 
@@ -71,13 +71,13 @@ You should receive a response like the following:
 
 To use Document Information Extraction, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
 
-You can either create only one client or create a list of clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here can be used in all the other service endpoints.
+You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
 
 1. Expand the **POST /clients** endpoint.
 
 2. Click **Try it out**.
 
-3. Enter your **`clientId`** and **`clientName`** values in the **payload** field in the format you see in **Examples for payload parameter**.
+3. Enter your **`clientId`** and **`clientName`** values in the **payload** field in the format you see in **Examples for payload parameter** (`c_00` and `client 00`, for example).
 
 4. Click **Execute**.
 
@@ -94,7 +94,7 @@ You should receive a response like the following:
 
 >- Maximum 40 uploaded documents per week​
 
->- Maximum 1 created `clientIds`
+>- Maximum 1 created `clientId`
 
 >- Maximum 10 created enrichment `dataIds`
 
@@ -145,7 +145,7 @@ Do the following:
 
 3. Upload a document PDF file.
 
-4. Enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), a client id or a list of client ids (`c_00`, for example), and the document type (`invoice`, for example).
+4. Enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), a client id or multiple client ids (`c_00`, for example), and the document type (`invoice`, for example).
 
 5. Click **Execute**.
 
@@ -191,13 +191,13 @@ You have now successfully used our machine learning model to get field value pre
 
 [ACCORDION-BEGIN [Step 7: ](Delete client)]
 
-If you want to delete a client you created in Step 3, use the **DELETE /clients** endpoint. You need to enter a client id or a list of client ids to delete them.
+If you want to delete a client you created in Step 3, use the **DELETE /clients** endpoint.
 
 1. Expand the **DELETE /clients** endpoint.
 
 2. Click **Try it out**.
 
-3. Enter a client id or a list of client ids (`c_00`, for example) in the **payload** field.
+3. Enter in the **payload** field the client id or multiple client ids (`c_00`, for example) you want to delete.
 
 4. Click **Execute**.
 
