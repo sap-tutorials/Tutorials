@@ -73,7 +73,7 @@ const handleAllChoice = async () => {
 
 const interact = async (projectPath) => {
   readMethods.readTutorialsPaths = readMethodFactory(projectPath, './tutorials', ['!*.md']);
-  readMethods.readRestFilesPaths = readMethodFactory(projectPath, './', ['!*.md', 'tutorials\*', 'node_modules\*', 'templates\*', ""]);
+  readMethods.readRestFilesPaths = readMethodFactory(projectPath, './', ['!*.md', 'tutorials\*', 'node_modules\*', 'templates\*', 'work-in-progress\*', ""]);
 
   const inputOptions = commandLineArgs(options.consoleInputOptionsDefinitions);
   let filePaths = [];

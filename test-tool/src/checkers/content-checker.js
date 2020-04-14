@@ -234,16 +234,12 @@ module.exports = {
             });
           }
 
-          if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
-            const relPath = `${localFileMatch[2]}${localFileMatch[3] || ''}`;
-            const fullPath = path.resolve(dir, relPath);
 
-            if (!fs.existsSync(fullPath)) {
-              result.contentCheckResult.push({
-                line: index + 1,
-                msg: `${localFileLink.message}: ${relPath}`,
-              });
-            }
+          if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
+            result.contentCheckResult.push({
+              line: index + 1,
+              msg: localFileLink.message,
+            });
           }
 
           const syntaxCheckResult = syntaxChecker.check(lines, index);
