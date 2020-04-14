@@ -209,7 +209,7 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
   5. Check the checkbox **Active**
 
-  6. Click **Save**.Q
+  6. Click **Save**.
 
   7. You will navigate back to the previous page.
 
