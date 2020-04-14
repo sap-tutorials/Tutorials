@@ -1,5 +1,5 @@
 ---
-title: Adapt Your App to the Needs of a MacOS Application.
+title: Adapt Your App to the Needs of a MacOS Application
 description: Embed your app flow in a Split View Controller for Mac Catalyst only, create a settings bundle to enable a preferences menu, and change the menu bar items to have a refresh menu ready to use.
 auto_validation: true
 author_name: Kevin Muessig

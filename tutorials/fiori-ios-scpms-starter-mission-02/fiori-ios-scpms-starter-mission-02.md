@@ -1,5 +1,5 @@
 ---
-title: Implement the first Screen
+title: Implement Your First Screen in an iOS App
 description: Implement the first screen of your SAP Cloud Platform SDK for iOS app.
 auto_validation: true
 author_name: Kevin Muessig
