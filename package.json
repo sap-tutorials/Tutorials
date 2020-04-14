@@ -6,6 +6,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "test": "node --max-http-header-size 15000 test.js -t",
+    "analyze-mem-usage": "node analytics/check-mem",
     "test-prod": "cross-env NODE_ENV=production node --max-http-header-size 15000 test.js -t",
     "test-last-commit": "node --max-http-header-size 15000 test-last-commit"
   },
