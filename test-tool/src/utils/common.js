@@ -95,9 +95,6 @@ function normalizePath(fullPath) {
         return path.join(result, next);
     });
 
-    console.log(fullPath, 'before');
-    console.log(result, 'after');
-
     if (fullPath.startsWith(path.sep)) {
         return `${path.sep}${result}`;
     }
