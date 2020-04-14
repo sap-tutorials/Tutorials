@@ -80,9 +80,34 @@ function orderByAlphabet(errors) {
     return errors.sort((a, b) => a.fileName.localeCompare(b.fileName))
 }
 
+function normalizePath(fullPath) {
+    if (process.platform.startsWith('win')) {
+        // windows allows mixed separators
+        return fullPath;
+    }
+
+    const parts = fullPath.split(path.sep);
+    const re = new RegExp(`\\${path.win32.sep}`, 'g');
+
+    const result = parts.reduce((result, next) => {
+        next = next.replace(re, path.sep);
+
+        return path.join(result, next);
+    });
+
+    console.log(fullPath, 'before');
+    console.log(result, 'after');
+
+    if (fullPath.startsWith(path.sep)) {
+        return `${path.sep}${result}`;
+    }
+    return result;
+}
+
 module.exports = {
     parseFiles,
     findDuplicates,
     isTutorialDoc,
     orderByAlphabet,
+    normalizePath,
 };

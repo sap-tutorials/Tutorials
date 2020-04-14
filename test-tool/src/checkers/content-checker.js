@@ -7,6 +7,7 @@ const tagChecker = require('./tags-checker');
 const linkChecker = require('./link-checker');
 const syntaxChecker = require('./syntax-checker');
 const metadataChecker = require('./metadata-checker');
+const utils = require('../utils');
 
 const { regexp, constraints } = require('../constants');
 const {
@@ -165,15 +166,6 @@ module.exports = {
           }
         }
 
-        const doneMatch = line.match(done);
-
-        if (doneMatch && line.startsWith(' ')) {
-          result.contentCheckResult.push({
-            line: index + 1,
-            msg: 'Do not indent [DONE] button',
-          });
-        }
-
         const h1Match = line.match(h1.regexp);
         if (h1Match) {
           result.contentCheckResult.push({
@@ -225,8 +217,9 @@ module.exports = {
                 .replace(/!?[\[\]]/g, '')
                 .trim()
                 .replace(`(${imgName})`, '');
-              const filePath = path.join(dir, imgName);
+              const filePath = utils.common.normalizePath(path.join(dir, imgName));
               const errors = checkLocalImage(filePath, altText);
+
               result.contentCheckResult.push(...errors.map(err => ({
                 line: index + 1,
                 msg: err,
@@ -236,7 +229,7 @@ module.exports = {
 
           if (localFileMatch && !imageMatches && !accordionMatch && !tutorialLinkInvalidMatch) {
             const relPath = `${localFileMatch[2]}${localFileMatch[3] || ''}`;
-            const fullPath = path.normalize(path.resolve(dir, relPath));
+            const fullPath = utils.common.normalizePath(path.resolve(dir, relPath));
 
             if (!fs.existsSync(fullPath)) {
               result.contentCheckResult.push({
