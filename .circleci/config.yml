@@ -1,6 +1,24 @@
 version: 2
 jobs:
-  analyze:
+  build-all:
+    docker:
+      - image: circleci/node:10.16.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: npm install --production
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run test tool on the all tutorials
+          command: npm run test
+          no_output_timeout: '15m'
+  build:
     docker:
       - image: circleci/node:10.16.0
     steps:
@@ -22,7 +40,7 @@ jobs:
           name: Run test tool on the all tutorials
           command: |
             if [[ ${RUN_BUILD} ]]; then
-              npm run analyze-mem-usage
+              npm run test
             fi
           no_output_timeout: '15m'
 
