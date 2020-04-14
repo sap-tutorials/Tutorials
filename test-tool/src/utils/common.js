@@ -81,6 +81,8 @@ function orderByAlphabet(errors) {
 }
 
 function normalizePath(fullPath) {
+    fullPath = path.normalize(fullPath);
+
     if (process.platform.startsWith('win')) {
         // windows allows mixed separators
         return fullPath;
