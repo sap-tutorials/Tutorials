@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build :
     docker:
       - image: circleci/node:12.16.1
     steps:
@@ -11,9 +11,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
-            if [[ ${RUN_BUILD} ]]; then
-              npm install --production
-            fi
+            npm install --production
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -21,9 +19,7 @@ jobs:
       - run:
           name: Memory Usage Analysis
           command: |
-            if [[ ${RUN_BUILD} ]]; then
-              npm run analyze-mem-usage
-            fi
+            npm run analyze-mem-usage
           no_output_timeout: '15m'
 
 notify:
