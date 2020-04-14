@@ -67,7 +67,7 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a client)]
+[ACCORDION-BEGIN [Step 3: ](Create client)]
 
 To use Document Information Extraction, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
 
@@ -125,7 +125,7 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Upload a document)]
+[ACCORDION-BEGIN [Step 5: ](Upload document)]
 
 >Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
 
@@ -165,13 +165,13 @@ Copy the **`id`** from the **Response body** to see the result of the extraction
 
 You can now use the **GET /document/jobs/{`uuid`}** endpoint to receive the prediction.
 
-1. Expand the endpoint.
+1. Expand the **GET /document/jobs/{`uuid`}** endpoint.
 
 2. Click **Try it out**.
 
 3. Enter the **`clientId`** you used in the previous step (`c_00`, for example).
 
-4. Enter the **`id`** received in the **POST /jobs** endpoint as the **`uuid`**.
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`uuid`**.
 
 5. Click **Execute**.
 
@@ -183,7 +183,31 @@ You should receive a response like the following:
 
 In the response, you will find some general information about the document you uploaded. In the `headerFields`, such as `documentType` and `fieldName`, you will find the prediction for the extracted fields. If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE**, then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
 
-Congratulations, you completed the tutorial. You have now used our machine learning model to get field value predictions for the document you uploaded to Document Information Extraction.
+You have now successfully used our machine learning model to get field value predictions for the document you uploaded to Document Information Extraction.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 7: ](Delete clients)]
+
+If you want to delete a client you created in Step 3, use the **DELETE /clients** endpoint. You need to enter a client id or a list of client ids to delete them.
+
+1. Expand the **DELETE /clients** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter a client id or a list of client ids (`c_00`, for example) in the **payload** field.
+
+4. Click **Execute**.
+
+![DOX](png-files/deleteClient.png)
+
+You should receive a response like the following:
+
+![DOX](png-files/deleteClientResponse.png)
+
+Congratulations, you have completed this tutorial.
 
 [DONE]
 [ACCORDION-END]
