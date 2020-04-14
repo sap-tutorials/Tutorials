@@ -94,7 +94,7 @@ You should receive a response like the following:
 
 >- Maximum 40 uploaded documents per week​
 
->- Maximum 10 created `clientIds`
+>- Maximum 1 created `clientIds`
 
 >- Maximum 10 created enrichment `dataIds`
 
@@ -189,7 +189,7 @@ You have now successfully used our machine learning model to get field value pre
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Delete clients)]
+[ACCORDION-BEGIN [Step 7: ](Delete client)]
 
 If you want to delete a client you created in Step 3, use the **DELETE /clients** endpoint. You need to enter a client id or a list of client ids to delete them.
 
