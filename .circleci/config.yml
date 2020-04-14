@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  analyze:
+  build:
     docker:
       - image: circleci/node:12.16.1
     steps:
