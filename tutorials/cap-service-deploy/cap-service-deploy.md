@@ -39,7 +39,7 @@ It's now time to switch to SAP HANA as a database.
 2. Add the SAP HANA driver as a dependency to your project:
 
     ```Shell/Bash
-    npm add @sap/hana-client
+    npm add hana
     ```
 
 [DONE]
