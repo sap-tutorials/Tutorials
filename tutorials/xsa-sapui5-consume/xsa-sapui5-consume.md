@@ -23,7 +23,7 @@ You will begin by making a copy of the previous exercise.
 
 ![copy](1.png)
 
- Right-click on the `resources` folder . Choose Paste.
+ Right-click on the `resources` folder. Choose Paste.
 
 ![paste](2.png)
 
@@ -181,7 +181,7 @@ callUserUpdate: function () {
   var mParams = {};
   mParams.error = onODataError;
   mParams.success = function () {
-    sap.ui.require(["sap/m/MessageToast"], (MessageToast) => {
+    sap.ui.require(["sap/m/MessageToast"], function (MessageToast) {
       MessageToast.show("Update successful");
     });
   };
