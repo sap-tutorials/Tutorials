@@ -1,7 +1,7 @@
 ---
 author_name: Max Streifeneder
 author_profile: https://github.com/maxstreifeneder
-title: Use SAP HANA as the database for a CAP Java application.
+title: Use SAP HANA as the Satabase for a CAP Java Application
 description: Use SAP HANA in SAP Cloud Platform as database for your CAP Java application instead of SQLite.
 auto_validation: true
 time: 20
