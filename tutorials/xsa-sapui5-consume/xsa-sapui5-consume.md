@@ -158,7 +158,7 @@ callUserService: function () {
   });
   var mParams = {};
   mParams.success = function () {
-    sap.ui.require(["sap/m/MessageToast"], (MessageToast) => {
+    sap.ui.require(["sap/m/MessageToast"], function (MessageToast) {
       MessageToast.show("Create successful");
     });
   };
