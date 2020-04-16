@@ -190,7 +190,12 @@ callUserUpdate: function () {
 }
 ```
 
-Finally, delete the error handling function as we will use the reusable function from `common/error.js` which was created earlier.
+Finally, delete the error handling function as we will use the reusable function from `common/error.js` which was created earlier.  But we also need add this `error.js` reference to our index.html
+
+```html
+	<script type="text/javascript" src="/common/error.js" ></script>
+```
+![Add error.js](16.png)
 
 [DONE]
 
