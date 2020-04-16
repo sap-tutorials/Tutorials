@@ -34,7 +34,7 @@ The **`cf-businessruleseditor.zip`** is downloaded to your file system.
 
 1. Log on to [SAP Cloud Platform Cockpit](http://cockpit.hanatrial.ondemand.com) and choose **Launch SAP Web IDE**.
 
-    ![Lauch Web IDE](MTA_1.png)
+    ![Lauch Web IDE](MTA-1.png)
 
 2. In SAP Web IDE Full-Stack, open the **Development** perspective.
 
