@@ -3,7 +3,7 @@ title: Embed an SAP Analytics Cloud Story in a Simple Web App
 description: Create a simple Node.js web application that manages OAuth authorization and embed an SAP Analytics Cloud story into it.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, topic>node-js, topic>security ]
+tags: [ tutorial>beginner, topic>node-js, topic>security, tutorial>license ]
 primary_tag: products>sap-analytics-cloud
 ---
 
@@ -23,8 +23,10 @@ primary_tag: products>sap-analytics-cloud
   SAP Analytics Cloud is SAP's cloud-based analytics solution. All data visualizations are provided by so-called stories. This tutorial describes how to embed an existing SAP Analytics Cloud story into a simple external web app. It makes use of the SAP Analytics Cloud URL API that allows you to directly open stories in a URL. The embedding happens in an `<iframe>` element of a web page of the app.
 
   For that purpose you need:
-  1. A user for a non-trial SAP Analytics Cloud system. A trial account would not be sufficient as the user does not have required permissions.
-  2. Edit rights of the administration settings. If you do not have edit rights another user with the Admin or the BI Admin role might help you here.
+
+  * A user for a non-trial SAP Analytics Cloud system. Such a system could also be a system that belongs to an instance of SAP Analytics Cloud, embedded edition. A trial account would not be sufficient as the user does not have required permissions.
+
+  * Edit rights of the administration settings. If you do not have edit rights another user with the Admin or the BI Admin role might help you here.
 
   The challenging part is how to handle the login screen of the identity provider assigned to your SAP Analytics Cloud system. A mandatory step is to authenticate the user on whose behalf the app wants to access the user's protected SAP Analytics Cloud content before the story data can be rendered in the `<iframe>` element.
 
@@ -69,20 +71,21 @@ You need to prepare SAP Analytics Cloud to enable the app to read the protected 
 
     -	Specify the **Redirect URI**. For this tutorial we use `http://localhost:<port>/callback`. For `<port>` choose any free port (for example, `8081`).
 
-The remaining part of the OAuth client creation task differs between the SAP Cloud Platform environments. Please check the part of the [Managing OAuth Clients documentation](https://help.sap.com/doc/00f68c2e08b941f081002fd3691d86a7/release/en-US/4f43b54398fc4acaa5efa32badfe3df6.html) relevant for your environment. In general, the OAuth client creation process on Cloud Foundry is a bit leaner because more parameters are created automatically (e.g. OAuth Client ID and Secret). In the Neo environment, the **Authorization Grant** has to be set to **`Authorization Code`**.
+    The remaining part of the OAuth client creation task differs between the SAP Cloud Platform environments. Please check the part of the [Managing OAuth Clients documentation](https://help.sap.com/doc/00f68c2e08b941f081002fd3691d86a7/release/en-US/4f43b54398fc4acaa5efa32badfe3df6.html) relevant for your environment. In general, the OAuth client creation process on Cloud Foundry is a bit leaner because more parameters are created automatically (e.g. OAuth Client ID and Secret). In the Neo environment, the **Authorization Grant** has to be set to **`Authorization Code`**.
 
-When you set up the OAuth client later in the `server.js` file, you need:
+    When you set up the OAuth client later in the `server.js` file, you need:
 
-  - The OAuth client ID
+    - The OAuth client ID
 
-  - The secret (for Neo, this is not required if **Confidential** is not set)
+    - The secret (for Neo, this is not required if **Confidential** is not set)
 
-  - The redirect URI
+    - The redirect URI
 
 >Note that the ID and the secret are generated when saving the new OAuth client in the case of **Cloud Foundry**.
 
 >If your system is hosted on a **Neo environment**, you must set those values manually.
 
+  If you are using the SAP Analytics Cloud, embedded edition, please refer to this [documentation](https://help.sap.com/viewer/8c9fe042688a4354876cc536267d442f/1.0/en-US/cfb3204772034009bcff19f6c753c619.html).
 
 [DONE]
 [ACCORDION-END]
@@ -177,6 +180,7 @@ After performing the preparatory steps, you can now create the app.
             |`/oauth/token`|Cloud Foundry|
 
 
+    If you are using the SAP Analytics Cloud, embedded edition, please refer to this [documentation](https://help.sap.com/viewer/8c9fe042688a4354876cc536267d442f/1.0/en-US/878a785ea23a412199a9bbd1bda78482.html).
 
 [DONE]
 [ACCORDION-END]

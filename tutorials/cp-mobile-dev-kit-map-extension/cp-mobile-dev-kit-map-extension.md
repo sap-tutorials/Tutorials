@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Cloud Platform Mobile application
 
-You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/3-Extend-Your-MDK-App-With-Map-Custom-Control) and start directly with step 5 in this tutorial.
+You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/3-Extend-Your-MDK-App-With-Map-Custom-Control-using-Metadata-approach) and start directly with step 5 in this tutorial.
 
 ---
 
@@ -210,9 +210,9 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     ```JavaScript / TypeScript
     import * as app from 'tns-core-modules/application';
-    import { IControl } from './controls/IControl';
-    import { BaseObservable } from './observables/BaseObservable';
-    import { EventHandler } from './EventHandler';
+    import { IControl } from 'mdk-core/controls/IControl';
+    import { BaseObservable } from 'mdk-core/observables/BaseObservable';
+    import { EventHandler } from 'mdk-core/EventHandler'
 
     export class MyMapClass extends IControl {
     private _observable: BaseObservable;
@@ -606,6 +606,8 @@ In this step, you will run the app on an android device.
     >To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
 
 [OPTION END]
+
+Congratulations, you have completed **Create Extension Controls in Mobile Development Kit (MDK) Apps** mission.
 
 [DONE]
 [ACCORDION-END]

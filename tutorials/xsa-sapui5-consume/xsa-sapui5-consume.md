@@ -23,7 +23,7 @@ You will begin by making a copy of the previous exercise.
 
 ![copy](1.png)
 
- Right-click on the `resources` folder . Choose Paste.
+ Right-click on the `resources` folder. Choose Paste.
 
 ![paste](2.png)
 
@@ -158,7 +158,7 @@ callUserService: function () {
   });
   var mParams = {};
   mParams.success = function () {
-    sap.ui.require(["sap/m/MessageToast"], (MessageToast) => {
+    sap.ui.require(["sap/m/MessageToast"], function (MessageToast) {
       MessageToast.show("Create successful");
     });
   };
@@ -181,7 +181,7 @@ callUserUpdate: function () {
   var mParams = {};
   mParams.error = onODataError;
   mParams.success = function () {
-    sap.ui.require(["sap/m/MessageToast"], (MessageToast) => {
+    sap.ui.require(["sap/m/MessageToast"], function (MessageToast) {
       MessageToast.show("Update successful");
     });
   };
@@ -190,7 +190,12 @@ callUserUpdate: function () {
 }
 ```
 
-Finally, delete the error handling function as we will use the reusable function from `common/error.js` which was created earlier.
+Finally, delete the error handling function as we will use the reusable function from `common/error.js` which was created earlier.  But we also need add this `error.js` reference to our index.html
+
+```html
+	<script type="text/javascript" src="/common/error.js" ></script>
+```
+![Add error.js](16.png)
 
 [DONE]
 

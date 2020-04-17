@@ -21,7 +21,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Cloud Platform Mobile application
 
-You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/2-Create-Extension-Controls-with-NativeScript-in-an-MDK-App) and start directly with step 6 in this tutorial.
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/1-Create-a-Slider-Custom-Control-Using-Metadata-Approach) and start directly with step 6 in this tutorial.
 
 ---
 
@@ -274,7 +274,7 @@ You will add this registered control in a Form Cell page.
 2. In `MySliderExtension.ts` file, copy and paste the following code.
 
     ```JavaScript / TypeScript
-    import { BaseControl } from './controls/BaseControl';
+    import { BaseControl } from 'mdk-core/controls/BaseControl';
     import { MySlider } from './MySliderPlugin/MySlider'
 
     export class MySliderClass extends BaseControl {
@@ -867,40 +867,34 @@ You should see **Application deployed successfully** message in console log.
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-1. Right click on the `mdk_extensions` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right click on the `mdk_extensions` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-    ![MDK](img_014.png)
+![MDK](img_014.1.png)
 
-2. Click **Next**.
+>**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
-    ![MDK](img_016.png)
-
-3. Click on the **QR-code icon** to populate the QR-code for app on-boarding.
-
-    ![MDK](img_012.1.png)
+![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above.
+>Make sure you are choosing the right device platform tab above. Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
-You will run the app on an android emulator.
-
-On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
-
-1. Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
-
-2. Tap **Open browser**. It will open SAP Mobile Services Client app.
-
-    ![MDK](img_013.1.jpg)
-
-3. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
     ![MDK](img_016.1.jpg)
+
+2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+
+    ![MDK](img_013.2.png)
+
+3. Once scan is succeeded, tap **CONTINUE**.
+
+    ![MDK](img_013.3.png)
 
 4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
@@ -936,29 +930,27 @@ Here you see Slider control.
 
 [OPTION BEGIN [iOS]]
 
-1. On iPhone, open your camera app and start scanning the QR code, as shown below.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
 
-    ![MDK](img_013.png)
+    ![MDK](img_013.13.png)
 
-2. Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
+2. Once scan is succeeded, tap **Continue**.
 
-3. Tap **Start** to connect MDK client to SAP Cloud Platform.
+    ![MDK](img_013.1.png)
 
-    ![MDK](img_1.6.png)
-
-4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_2.9.png)
 
-5. Tap **Agree** on `End User License Agreement`.
+4. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img_1.8.png)
 
-6. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img_1.9.png)
 
-7. Confirm the passcode and tap **Done**.
+6. Confirm the passcode and tap **Done**.
 
     ![MDK](img_2.0.png)
 
@@ -966,7 +958,7 @@ Here you see Slider control.
 
     ![MDK](img_2.1.png)
 
-8. Tap **OK**.
+7. Tap **OK**.
 
     ![MDK](img_2.2.png)
 
@@ -976,7 +968,11 @@ Here you see Slider control.
 
     ![MDK](img_045.gif)
 
+    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
+
+Congratulations, you have successfully created a Slider Custom Control in your MDK App Using Metadata Approach and you are now all set to [Add NativeScript Plugins in an MDK App](cp-mobile-dev-kit-nativescript-geolocation).
 
 [DONE]
 [ACCORDION-END]
