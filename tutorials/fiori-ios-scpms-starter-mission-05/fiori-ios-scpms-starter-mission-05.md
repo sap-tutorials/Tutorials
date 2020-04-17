@@ -63,8 +63,7 @@ The great thing when you transform your app with Mac Catalyst is that Apple give
   - Scroll support while inactive window
   - Using a settings bundle will automatically give you a settings menu
 
-If you're interested in more information about Mac Catalyst you can always visit the following resources:
-
+If you want more information about Mac Catalyst you can always visit the following resources:
 - [Mac Catalyst Developer Guide](https://developer.apple.com/documentation/uikit/mac_catalyst)
 - [iPad Apps for Mac - WWDC Videos](https://developer.apple.com/videos/all-videos/?q=iPad%20Apps%20for%20Mac)
 
@@ -76,23 +75,23 @@ If you're interested in more information about Mac Catalyst you can always visit
 
 Before we do the necessary steps to make our app Mac ready let's take a look on how the app is going to look like on all three platforms.
 
-![Finished Apps](fiori-ios-scpms-starter-mission-05-1.png)
+!![Finished Apps](fiori-ios-scpms-starter-mission-05-1.png)
 
 You can see that we're going to change the appearance on MacOS to a split view having a side bar.
 
 1. In your Xcode project click on the `TutorialApp.xcproj` file located in the project navigator and make sure that **Mac** is selected in the **Deployment Info** section.
 
-    ![Mac Catalyst Project](fiori-ios-scpms-starter-mission-05-2.png)
+    !![Mac Catalyst Project](fiori-ios-scpms-starter-mission-05-2.png)
 
 2. Click on **Signing & Capabilities** tab and select your **Team**, and **Signing Certificate**. You can also see that the **Bundle Identifier** changed using a new prefix `maccatalyst` to identify a Mac Catalyst app.
 
-    ![Mac Catalyst Project](fiori-ios-scpms-starter-mission-05-3.png)
+    !![Mac Catalyst Project](fiori-ios-scpms-starter-mission-05-3.png)
 
     That is all you have to do.
 
 3. Run the app now on `MacOS` choosing the **My Mac** scheme.
 
-    ![Mac Catalyst Project](fiori-ios-scpms-starter-mission-05-4.png)
+    !![Mac Catalyst Project](fiori-ios-scpms-starter-mission-05-4.png)
 
 [VALIDATE_4]
 [ACCORDION-END]
