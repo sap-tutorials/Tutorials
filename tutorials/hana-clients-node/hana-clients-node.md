@@ -48,6 +48,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![Search for hana-client](search-hana-client.png)  
 
+    The @sap/hana-client package in npm.
     ![npm page for hana-client](npm-hana-client.png)  
 
 2. Create a folder named `node` and enter the newly created directory.
@@ -76,7 +77,7 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
 The following command will list the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  Note that the extraneous message can be ignored.  
 
-```Command Prompt
+```Shell
 npm list
 ```
 
