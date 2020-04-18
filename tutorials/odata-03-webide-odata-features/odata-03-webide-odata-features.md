@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Use SAP Web IDE OData Features to Create a Simple App
 description: Explore basic OData features built into the SAP Web IDE by building a simple SAPUI5 app.
 auto_validation: true

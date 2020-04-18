@@ -32,13 +32,13 @@ In this tutorial, you will see how you can quickly mobilize this use-case using 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Automatic Instance card)]
+[ACCORDION-BEGIN [Step 2: ](Create an Automatic Instance card)]
 
 Make sure you have logged in to SAP Cloud Platform Mobile Services cockpit. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
 ![MobileCardsImage](img_3.png)
 
-Click the **Create a New Card** icon.
+Click the **Create a New Card** icon ![MobileCardsIcon](ico_new_card.png).
 
 ![MobileCardsImage](img_4.png)
 
@@ -60,7 +60,7 @@ Provide the required information:
 
 >The Type **Automatic Instance Generation** will create a card instance for each result in the result set returned by the query. The query is based on the destination. This query returns a result set of three sales orders from the sample services.
 
-Click **URLs** tab, to view the sample JSON response. The JSON response here represents one result set out of the three that the query would return. This data is used by the data mapper to render a sample card in the editor.
+Click the **URLs** tab, to view the sample JSON response. The JSON response here represents one result set out of the three that the query would return. This data is used by the data mapper to render a sample card in the editor.
 
 ![MobileCardsImage](img_6.gif)
 
@@ -81,13 +81,13 @@ Click **Save**.
 
 [ACCORDION-BEGIN [Step 3: ](Set card status to productive)]
 
-By default, status of newly created cards is **Development**. Cards can be subscribed to only when they are in a **Productive** state.
+By default, the status of newly created cards is **Development**. Cards can be subscribed to only when they are in a **Productive** state.
 
-Click **Automatic Instance Card** in the Card Templates Tab.
+Click **Automatic Instance Card** in the Card Templates tab.
 
 ![MobileCardsImage](img_10.png)
 
-Under **Actions**, click the highlighted icon to change the state to **Productive**.
+Under **Actions**, click the check mark icon ![MobileCardsIcon](ico_check.png) to change the state to **Productive**.
 
 ![MobileCardsImage](img_11.png)
 
@@ -104,7 +104,7 @@ You will notice that the **State** has been changed to **Productive**.
 
 [ACCORDION-BEGIN [Step 4: ](Subscribe to the card in SAP Mobile Cards)]
 
->Make sure you are choosing the right device platform tab **above**.
+>Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
 [OPTION BEGIN [Android]]
 
@@ -120,7 +120,7 @@ Tap **Subscribe** to trigger the download of the Automatic Instance cards in you
 
 ![MobileCardsImage](img_16.png)
 
-Tap **<-** 'Back' to to see latest cards downloaded on the device.
+Tap ![MobileCardsIcon](ico_android_back.png) 'Back' to to see latest cards downloaded on the device.
 
 ![MobileCardsImage](img_17.png)
 
@@ -128,7 +128,7 @@ Tap a card to open it.
 
 ![MobileCardsImage](img_18.png)
 
-Tap on the **flip** button to view the other side of the card.
+Tap on the **flip** button ![MobileCardsIcon](ico_android_flip.png) to view the other side of the card.
 
 ![MobileCardsImage](img_19.png)
 
@@ -160,14 +160,14 @@ Tap a card to open it.
 
 ![MobileCardsImage](img_25.png)
 
-Tap on the **flip** button to view the other side of the card.
+Tap on the **flip** button ![MobileCardsIcon](ico_ios_flip.png) to view the other side of the card.
 
 ![MobileCardsImage](img_26.png)
 
 
 [OPTION END]
 
-Congratulations, you have built a query-based card that creates an instance of a card for each query result set. The sales manager can now view latest sales order on her mobile device.
+Congratulations, you have built a query-based card that creates an instance of a card for each query result set. The sales manager can now view the latest sales order on her mobile device.
 
 [DONE]
 [ACCORDION-END]
