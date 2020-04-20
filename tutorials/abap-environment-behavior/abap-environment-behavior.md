@@ -46,7 +46,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     define behavior for ZI_Travel_M_XXX alias Travel
     persistent table ztravel_xxx
-    etag last_changed_at
+    etag master last_changed_at
     lock master
     {
     // administrative fields (read only)
@@ -55,14 +55,15 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     // mandatory fields that are required to create a travel
     field ( mandatory ) agency_id, overall_status, booking_fee, currency_code;
 
-    // dynamic field control
-    field (features : instance ) travel_id;
+    // semantic key is calculated in a determination
+    field ( readonly ) travel_id;
 
     // standard operations for travel entity
     create;
     update;
     delete;
     }
+
     ```
 
   5. Save and activate.
@@ -77,72 +78,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create behavior implementation)]
-  1. Right-click on your behavior definition `ZI_TRAVEL_M_XXX` and select **New Behavior Implementation**.
-
-      ![Create behavior implementation](implementation.png)
-
-  2. Create a new behavior implementation:
-
-     - Name: `ZCL_BP_I_TRAVEL_M_XXX`
-
-     Click **Next >**.
-
-      ![Create behavior implementation](implementation2.png)
-
-  3. Click **Finish** to use your transport request.
-
-      ![Create behavior implementation](implementation3.png)
-
-  4. In your **global class** replace your code with following:
-
-    ```ABAP
-    CLASS zcl_bp_i_travel_m_xxx DEFINITION
-    PUBLIC
-    ABSTRACT
-    FINAL
-    FOR BEHAVIOR OF ZI_Travel_M_XXX.
-
-    ENDCLASS.
-
-    CLASS zcl_bp_i_travel_m_xxx IMPLEMENTATION.
-    ENDCLASS.
-    ```
-
-  5. In your **local types** replace your code with following:
-
-    ```ABAP
-    *"* use this source file for the definition and implementation of
-    *"* local helper classes, interface definitions and type
-    *"* declarations
-    CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
-
-      PRIVATE SECTION.
-
-        TYPES tt_travel_update TYPE TABLE FOR UPDATE zi_travel_m_xxx.
-
-        METHODS get_features               FOR FEATURES IMPORTING keys REQUEST    requested_features FOR travel    RESULT result.
-
-    ENDCLASS.
-
-    CLASS lhc_travel IMPLEMENTATION.
-
-      METHOD get_features.
-      ENDMETHOD.
-
-    ENDCLASS.
-    ```
-
-  6. Save and activate.
-
-      ![save and activate](activate.png)
-
-     The **behavior** implementation is created for travel booking. By using the managed approach, the implementation of create, update and delete is done automatically.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Create behavior definition for projection view)]
+[ACCORDION-BEGIN [Step 2: ](Create behavior definition for projection view)]
   1. Right-click on your data definition `ZC_TRAVEL_M_XXX` and select **New Behavior Definition**.
 
       ![Create behavior definition for projection view](projection.png)
@@ -183,12 +119,81 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create behavior definition for projection view](projection4.png)
 
-  7. Check your result.
+  7. **Refresh** your browser and check your result.
 
      The create and delete button appears on the UI because of the managed scenario.
      You can create and edit travel bookings or you' re able to delete existing ones.
 
+     Please note that the semantic key Travel ID is not calculated yet. We will do this in the next tutorial.
+
       ![Create behavior definition for projection view](projection5.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Create implementation class)]
+1. In your behavior definition `ZI_Travel_M_XXX` set the cursor before the implementation class `ZCL_BP_I_TRAVEL_M_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `zcl_bp_i_travel_m_xxx`** to create your implementation class.
+
+      ![Create behavior implementation](implementationx.png)
+
+  2. Create a new behavior implementation:
+
+     - Description: Behavior implementation for `ZI_TRAVEL_M_XXX`
+
+     Click **Next >**.
+
+      ![Create behavior implementation](implementationx2.png)
+
+  3. Click **Finish** to use your transport request.
+
+      ![Create behavior implementation](implementation3.png)
+
+  4. In your global class replace your code with following:
+
+    ```ABAP
+    CLASS zcl_bp_i_travel_m_xxx DEFINITION
+    PUBLIC
+    ABSTRACT
+    FINAL
+    FOR BEHAVIOR OF ZI_Travel_M_XXX.
+
+    ENDCLASS.
+
+    CLASS zcl_bp_i_travel_m_xxx IMPLEMENTATION.
+    ENDCLASS.
+
+    ```
+
+  5. In your local types replace your code with following:
+
+    ```ABAP
+    *"* use this source file for the definition and implementation of
+    *"* local helper classes, interface definitions and type
+    *"* declarations
+    CLASS lhc_travel DEFINITION INHERITING FROM cl_abap_behavior_handler.
+
+      PRIVATE SECTION.
+
+        TYPES tt_travel_update TYPE TABLE FOR UPDATE zi_travel_m_xxx.
+
+        METHODS get_features               FOR FEATURES IMPORTING keys REQUEST    requested_features FOR travel    RESULT result.
+
+    ENDCLASS.
+
+    CLASS lhc_travel IMPLEMENTATION.
+
+      METHOD get_features.
+      ENDMETHOD.
+
+    ENDCLASS.
+
+    ```
+
+  6. Save and activate.
+
+      ![Create behavior implementation](activate.png)
+
+    The behavior implementation is created for travel booking. By using the managed approach, the implementation of create, update and delete is done automatically.
 
 [DONE]
 [ACCORDION-END]

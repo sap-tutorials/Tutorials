@@ -2,6 +2,8 @@
 title: SAP HANA XS Advanced - Clone and run SHINE applications
 description: This tutorial will walk you through the prerequisites and initial setup to enable the SHINE objects in XS Advanced
 auto_validation: true
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana ]
 ---
@@ -14,7 +16,7 @@ tags: [  tutorial>beginner, products>sap-hana ]
 How to clone the SAP HANA `INteractive` Education source code from Git Hub, generate the dependencies and deploy the applications using Web IDE for SAP HANA.
 
 ### Time to Complete
-**15 Min**
+**25 Min**
 
 ---
 
@@ -32,7 +34,7 @@ Copy the URL `https://github.com/SAP/hana-shine-xsa` into the `Clone Git Reposit
 
 ![Clone Git](clone.png)
 
-Wait until the repository is cloned. You will see a success message on the top right corner of Web IDE and the folder in your workspace:
+Wait until the repository is cloned. If you receive a dialog about `Git Ignore System Files`, please choose **Do it later**. You will see a success message on the top right corner of Web IDE and the folder in your workspace:
 
 ![Clone Git](cloned.png)
 
@@ -80,6 +82,7 @@ Finally, you will change the name of the service for the shine-container so you 
 ![edit YAML](container.png)
 
 [DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create additional services)]
@@ -117,6 +120,7 @@ xs t -s development
 xs create-service xsuaa default shine-uaa -c <<path to xs-security.json>>
 xs cs jobscheduler default shine-scheduler
 xs cs auditlog free shine-auditlog
+xs cs hana securestore secureStore
 ```
 For example:
 
@@ -158,7 +162,7 @@ The rest of the modules will be built automatically before they are run in the n
 
 You will now run the modules in an order that satisfies dependencies between them. They will be built automatically before running. If you encounter an error stating `No compatible version found`, use the latest version quoted in the error to update the `package.json` file in the module that is failing.
 
-For example, right-click con the `user-js` module and then click on `Run->Run as->Node.js Application`
+For example, right-click con the `user-xsjs` module and then click on `Run->Run as->Node.js Application`
 
 ![Run modules](run-user.png)
 
@@ -170,7 +174,7 @@ And take note of the versions suggested by `npm`
 
 ![Run modules](error.png)
 
-Open the `package.json` file for this module and update the dependency:
+Open the `package.json` file for this module and update any dependencies that are needed according to the previous error log:
 
 ![Run modules](json.png)
 
@@ -180,23 +184,16 @@ You can also get a hint of the dependencies you will need to adjust by right-cli
 
 **Save** the `package.json` file with the updated dependencies and run the module.
 
-Once the `user-js` module is running, run the `core-js` module:
+Once the `user-xsjs` module is running, run the `core-xsjs` module:
 
 ![Run modules](run-core.png)
 
-Then run the `user-java` module:
+Then run the `core-node` module:
 
-![Run modules](run-java.png)
-
->Note: If you get an error about a dependency not being resolved, use **Show dependency updates** and update the file `pom.xml`
-
-![Update java](pom.png)
-
-![Update java](pom2.png)
+![Run modules](run-core-node.png)
 
 Check all the modules are running. You can quickly verify because you will see a green tick next to each one of them:
-
-![Run modules](run-java.png)
+![Run all](run-all.png)
 
 Finally, run the web module. Right-click on the `web->resources->launchpad->index.html` and click on **Run as Web Application**:
 

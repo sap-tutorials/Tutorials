@@ -22,7 +22,7 @@ primary_tag: topic>sap-community
 -	How to connect with your audience
 -	Which blogging missions you can complete
 
-Awarded on a weekly basis, **Blogging Savvy** may not appear immediately in the **Reputation** section of your profile, so please expect a slight delay before you see the badge.
+Awarded on a weekly basis, **Blogging Savvy** may not appear in the **Reputation** section of your profile immediately, so please expect a slight delay before you see the badge.
 
 ---
 

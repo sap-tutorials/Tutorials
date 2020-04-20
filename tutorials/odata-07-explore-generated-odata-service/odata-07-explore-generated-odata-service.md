@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Explore Your Generated OData Service
 description: Explore the product data in your OData service you've just generated.
 auto_validation: true
