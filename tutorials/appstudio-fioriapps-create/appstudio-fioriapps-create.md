@@ -221,6 +221,48 @@ Make some changes using the layout editor, with no need to do any coding.
 [VALIDATE_5]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 8: ](Set Cloud Foundry preferences)]
+
+Before you can deploy your new application, set your Cloud Foundry preferences.
+
+1. Open the **command palette** and select **CF: Login to cloud foundry**.
+
+    !![Command Palette-Login to CF](08-01 AppStudio CF Login_.jpg)
+    &nbsp;
+    !![Command Palette-Login to CF](08-01-02 AppStudio CF Login_.jpg)
+
+2. When prompted, select the API endpoint, organization and space for your project.
+
+    >The Cloud Foundry organization and space appear in the status line at the bottom left part of the screen.
+
+    !![Logged in to CF](08-02 AppStudio CF Login_.jpg)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Add a Destination Service Instance in Your Space)]
+
+A destination service instance is required for test running the app.
+
+1. Open a new terminal.
+
+    !![Link text e.g., Destination screen](Open Terminal_.jpg)
+    &nbsp;
+    !![Link text e.g., Destination screen](Open Terminal-2_.jpg)
+
+2. Create a new destination service called **`destination_ES5`**.
+
+    ```Shell/console
+      cf create-service destination lite destination_ES5
+    ```
+
+    !![Link text e.g., Destination screen](Terminal Create Destination Service_.jpg)
+    &nbsp;
+    !![Link text e.g., Destination screen](Terminal Create Destination Service-2_.jpg)
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 6: ](Test run the application)]
 
 Run your new application to test it.
@@ -246,25 +288,25 @@ Run your new application to test it.
 
 4. Expand the run configuration to display the services that can be bound.
 
-    !![Bindable objects](06-04 AppStudio Run Configurations_.jpg)
+    !![Link text e.g., Destination screen](Dest Service Bind-1_.jpg)
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-5. To bind to the destination, click the `bind` icon to the right of the Destination  resource and select an destination from the list.
+5. To bind to the destination service, click the `bind` icon to the right of the Destination Service resource and select an destination service from the list.
 
-    !![Bind to Destination](06-05 AppStudio Run Configurations Bind Destination_.jpg)
+    !![Link text e.g., Destination screen](Dest Service Bind-2_.jpg)
     &nbsp;
-    !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination.jpg)
+    !![Link text e.g., Destination screen](Dest Service Bind-3_.jpg)
 
-    >Once the destination has been bound, the Bind icon turns green.
+    >Once the destination service has been bound, the Bind icon turns green.
 
-    >To unbind the destination, click the Unbind icon.
+    >To unbind the destination service, click the Unbind icon.
 
-    !![Destination is bound](06-05-03 AppStudio Run Configurations Bind Destination_.jpg)
+    !![Link text e.g., Destination screen](Dest Service Bind-4_.jpg)
 
 6. Hover over the run configuration and click the Run Module icon.  
 
-    !![Running the app locally](06-06 AppStudio Run Configurations Run_.jpg)
+    !![Link text e.g., Destination screen](Test Run App_.jpg)
 
 7. Wait for the notification `A service is listening to port 6004`. Click the notification's button.
 
@@ -304,25 +346,6 @@ Run your new application to test it.
     >The build process creates a multi target archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the MTAR file in the `DemoFiori/mta_archives` folder.
 
     !![terminal mbt build results](07-02-02 AppStudio Terminal MBT Build_.jpg)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Set Cloud Foundry preferences)]
-
-Before you can deploy your new application, set your Cloud Foundry preferences.
-
-1. Open the **command palette** and select **CF: Login to cloud foundry**.
-
-    !![Command Palette-Login to CF](08-01 AppStudio CF Login_.jpg)
-    &nbsp;
-    !![Command Palette-Login to CF](08-01-02 AppStudio CF Login_.jpg)
-
-2. When prompted, select the API endpoint, organization and space for your project.
-
-    >The Cloud Foundry organization and space appear in the status line at the bottom left part of the screen.
-
-    !![Logged in to CF](08-02 AppStudio CF Login_.jpg)
 
 [DONE]
 [ACCORDION-END]
