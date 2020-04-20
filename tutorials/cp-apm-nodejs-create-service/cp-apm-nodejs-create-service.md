@@ -30,7 +30,7 @@ time: 40
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Configure the NPM registry by executing the following command in a command line window:
+1. Set the NPM registry for `@sap` packages by executing the following command in a command line window:
 
     ```Shell/Bash
     npm set @sap:registry=https://npm.sap.com
@@ -45,6 +45,8 @@ Before you start, make sure that you've completed the prerequisites.
     >This installs the `cds` command, which we'll use in the next steps.
 
     >On MacOS/Linux, you may need to use `sudo npm i -g @sap/cds-dk`.
+
+    >In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 
 3. To verify that the installation was successful, run `cds` without arguments:
 
@@ -153,7 +155,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 Create a simplistic all-in-one service definition.
 
-1. After initializing the app, check whether the **`srv`** and **`dev`** folders are already created, if yes then create the respective file as mentioned in the following step. If not, choose the **New File** icon and type **`srv/cat-service.cds`** to create folder and file at once in Visual Studio Code.
+1. After initializing the app, check whether the **`srv`** and **`db`** folders are already created, if yes then create the respective file as mentioned in the following step. If not, choose the **New File** icon and type **`srv/cat-service.cds`** to create folder and file at once in Visual Studio Code.
 
     ![Add new file](new-file.png)
 

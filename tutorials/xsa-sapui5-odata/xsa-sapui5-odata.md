@@ -37,6 +37,76 @@ Create a folder named `odataBasic` within the `web/resources` folder
 
 ![new structure](2.png)
 
+After the import, please check to see if you have a `/web/resources/common` folder with a file `startup.js` within it.  This could have been created earlier if you completed tutorial [SAP HANA XS Advanced - Asynchronous Non-Blocking I/O within Node.js SAP HANA applications](xsa-node-async).  If you do not have this file, you can create it now without having to perform the entire previous tutorial.  Here is the source code of `startup.js`.
+
+```JavaScript
+/*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0, no-shadow:0*/
+function onLoadSession(myJSON) {
+	try {
+		var result = JSON.parse(myJSON);
+		if (result.session.length > 0) {
+			if (result.session[0].familyName !== "") {
+				return result.session[0].givenName + " " + result.session[0].familyName;
+			} else {
+				return result.session[0].UserName;
+			}
+		}
+	} catch (e) {
+		return "";
+	}
+	return "";
+}
+
+function getSessionInfo() {
+	var aUrl = "/node/getSessionInfo";
+
+	return onLoadSession(
+		jQuery.ajax({
+			url: aUrl,
+			method: "GET",
+			dataType: "json",
+			async: false
+		}).responseText);
+}
+
+function localShellStartup(name) {
+
+	sap.ui.getCore().attachInit(function () {
+		var ComponentContainer = new sap.ui.core.ComponentContainer({
+			height: "100%"
+		});
+		var username = "Test User";
+		// create a shell
+		new sap.ui.unified.Shell({
+			id: "myShell",
+			icon: "/images/sap_18.png",
+			headEndItems: new sap.ui.unified.ShellHeadItem({
+				icon: "sap-icon://log",
+				tooltip: "Logoff",
+				press: function () {
+					window.location.href = "/my/logout";
+				}
+			}),
+			user: new sap.ui.unified.ShellHeadUserItem({
+				image: "sap-icon://person-placeholder",
+				username: username
+			}),
+			content: ComponentContainer
+		}).placeAt("content");
+
+		var oComponent = sap.ui.component({
+			id: "comp",
+			name: name,
+			manifestFirst: true,
+			async: true
+		}).then(function (oComponent) {
+			ComponentContainer.setComponent(oComponent);
+		});
+
+	});
+}
+```
+
 [DONE]
 
 [ACCORDION-END]
