@@ -1,6 +1,6 @@
 ---
-title: Create ABAPDoc Comments in Your Class in SAP Cloud Platform, ABAP Environment
-description: Learn how to maintain ABAPDoc documentation for your class
+title: Create ABAPDoc Comments in Your Class
+description: Learn how to maintain ABAPDoc documentation for your class in SAP Cloud Platform, ABAP Environment so your comments appear in the Outline view.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform--abap-environment, products>sap-cloud-platform]
