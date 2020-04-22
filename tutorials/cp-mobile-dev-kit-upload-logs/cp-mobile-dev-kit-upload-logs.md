@@ -58,7 +58,7 @@ You will create 3 actions:
 
 1. Create a log action of type `SetState`:
 
-    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     ![MDK](img_004.png)
 
@@ -76,7 +76,7 @@ You will create 3 actions:
 
 2. Create a log action of type `SetLevel`:
 
-    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     Provide the below information:
 
@@ -94,7 +94,7 @@ You will create 3 actions:
 
 3. Create a log action of type `Upload`:
 
-    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     Provide the below information:
 
@@ -112,7 +112,7 @@ You will create 3 actions:
 
 [ACCORDION-BEGIN [Step 3: ](Bind Set Level log action to the success of Set State action)]
 
-1. Double click on the `LogSetState.action` file | expand **Common Action Properties** and select `LogSetLevel.action` for **Success Action**.
+1. Double click the `LogSetState.action` file | expand **Common Action Properties** and select `LogSetLevel.action` for **Success Action**.
 
     ![MDK](MDK_007.2.png)
 
@@ -142,7 +142,7 @@ You will define two message actions for displaying success or failure when _Log 
 
 1. You will create a success message action.
 
-    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
     Provide the below information:
 
@@ -162,7 +162,7 @@ You will define two message actions for displaying success or failure when _Log 
 
 2. Create a failure message action.
 
-    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
     Provide the below information:
 
@@ -183,7 +183,7 @@ You will define two message actions for displaying success or failure when _Log 
 
 3. Bind both actions in **Common Action Properties** of `LogUpload.action`.
 
-    Double click on the `LogUpload.action` and provide the below information:
+    Double click the `LogUpload.action` and provide the below information:
 
     | Property | Value |
     |----|----|
@@ -211,7 +211,7 @@ You will add a toolbar item to the _main page_ called **Upload Logs**. You will 
 
 3. In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-    Double Click on the `LogUpload.action` action and click **OK** to set it as the `OnPress` Action.
+    Double click the `LogUpload.action` action and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_016.png)
 
@@ -224,7 +224,7 @@ You will add a toolbar item to the _main page_ called **Upload Logs**. You will 
 
 Deploy the updated application to your MDK client.
 
-1. Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_026.png)
 
@@ -270,7 +270,7 @@ Deploy the updated application to your MDK client.
 
 [ACCORDION-BEGIN [Step 8: ](Examine uploaded logs in Mobile Services cockpit)]
 
-Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click on MDK app | **Mobile Client Log Upload** | **Logs**.
+Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click MDK app | **Mobile Client Log Upload** | **Logs**.
 
 ![MDK](img_019.1.png)
 

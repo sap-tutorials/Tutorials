@@ -35,7 +35,7 @@ MDK Template supports Style **LESS** file for styling for `NativeScript`, Androi
 
 2. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-3. Right click on Workspace folder and select **New** | **MDK CRUD Project**.
+3. Right click Workspace folder and select **New** | **MDK CRUD Project**.
 
     ![MDK](img_001.1.png)
 
@@ -211,29 +211,29 @@ In this step, you will bind style classes:
 * `objectHeaderSubhead` to `Subhead` property of Object Header in `Customers_Detail.page`
 * `objectHeaderSubStatus` to `SubstatusText` property of Object Header in `Customers_Detail.page`
 
-1.  Double-click on `Main.page`, select `SalesOrderHeaders` section button, click on **link** icon next to **Style** property.
+1.  Double-click `Main.page`, select `SalesOrderHeaders` section button, click **link** icon next to **Style** property.
 
     ![MDK](img_009.png)
 
-2. In Object browser, select **SDK Style Classes** from dropdown, double-click on `MySalesOrderButton` class to bind style property and click **OK**.
+2. In Object browser, select **SDK Style Classes** from dropdown, double-click `MySalesOrderButton` class to bind style property and click **OK**.
 
     ![MDK](img_010.png)
 
 3. Save the changes to `Main.page`.
 
-4. Navigate to **Pages** | **Customers**, double-click on `Customers_List.page`, select **Object Table** control, scroll-down to **Style** section.
+4. Navigate to **Pages** | **Customers**, double-click `Customers_List.page`, select **Object Table** control, scroll-down to **Style** section.
 
-5. Click on **link** icon next to **Title** property.
+5. click **link** icon next to **Title** property.
 
     ![MDK](img_011.png)
 
-5. In Object browser, select **SDK Style Classes** from dropdown, double-click on `ObjectTableTitle` class to bind style property and click **OK**.
+5. In Object browser, select **SDK Style Classes** from dropdown, double-click `ObjectTableTitle` class to bind style property and click **OK**.
 
     ![MDK](img_012.png)
 
 6. Save the changes to `Customers_List.page`.
 
-7. Navigate to **Pages** | **Customers**, double-click on `Customers_Detail.page`, select **Object Header** control, scroll-down to **Style** section and bind control properties to style properties.
+7. Navigate to **Pages** | **Customers**, double-click `Customers_Detail.page`, select **Object Header** control, scroll-down to **Style** section and bind control properties to style properties.
 
     ![MDK](img_011.1.png)
 
@@ -247,7 +247,7 @@ In this step, you will bind style classes:
 
 So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right click on the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right click the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_013.png)
 
@@ -278,7 +278,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-Right click on the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Right click the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
 ![MDK](img_013.1.png)
 
@@ -291,7 +291,7 @@ Right click on the `MDK_Styling` MDK Application in the project explorer pane an
 
 [ACCORDION-BEGIN [Step 6: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
@@ -345,7 +345,7 @@ Right click on the `MDK_Styling` MDK Application in the project explorer pane an
 
     ![MDK](img_038.png)        
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
@@ -397,7 +397,7 @@ Right click on the `MDK_Styling` MDK Application in the project explorer pane an
 
     ![MDK](img_037.png)    
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use device Camera in iOS, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
