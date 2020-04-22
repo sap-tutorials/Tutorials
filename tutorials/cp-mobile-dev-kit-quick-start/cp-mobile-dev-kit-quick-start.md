@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
@@ -27,7 +27,7 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the SAP Web IDE and select the **MDK** perspective by clicking on the icon in the left panel.
 
-2. Right click on Workspace folder and select **New** | **MDK CRUD Project**.
+2. Right click Workspace folder and select **New** | **MDK CRUD Project**.
 
     ![MDK](img_001.png)
 
@@ -135,7 +135,7 @@ Open the application settings in the application editor by double clicking on th
 
 So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right-click on the `MDKApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `MDKApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_009.png)
 
@@ -166,7 +166,7 @@ You should see **Application deployed successfully** message in console log.
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-Right click on the `MDKApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Right click the `MDKApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
 >**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
@@ -179,7 +179,7 @@ Right click on the `MDKApp` MDK Application in the project explorer pane and sel
 
 [ACCORDION-BEGIN [Step 5: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
@@ -221,11 +221,11 @@ Right click on the `MDKApp` MDK Application in the project explorer pane and sel
 
     The MDK client receives deployed metadata definitions as a bundle.
 
-    Now, you will see the list of entities on the **Main** page, **LOGOUT** and **SYNC** options at bottom of the page and Offline store is being initialized. Click on either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **SYNC** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
+    Now, you will see the list of entities on the **Main** page, **LOGOUT** and **SYNC** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **SYNC** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
 
     ![MDK](img_023.1.gif)
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
@@ -266,11 +266,11 @@ Right click on the `MDKApp` MDK Application in the project explorer pane and sel
 
     The MDK client receives deployed metadata definitions as a bundle.
 
-    Now, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page and Offline store is being initialized. Click on either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **Sync** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
+    Now, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **Sync** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
 
     ![MDK](img_023.gif)
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use device Camera in iOS, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
