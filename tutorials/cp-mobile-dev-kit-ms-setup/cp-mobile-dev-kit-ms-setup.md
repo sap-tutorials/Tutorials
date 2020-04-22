@@ -72,7 +72,7 @@ A sample OData service is available for developers to use during development and
 
 >For more information about these fields, see [Sample Back End](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html) in the SAP Cloud Platform documentation.
 
-Click on the **+** icon to add **Mobile Sample OData ESPM** feature to your MDK app.
+click the **+** icon to add **Mobile Sample OData ESPM** feature to your MDK app.
 
 Here, you can view the root service and metadata URLs, and generate sample sales orders and purchase orders for multiple entity sets. You can view the data for each entity in a separate text file, and even can reset the sample data.
 

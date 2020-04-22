@@ -212,7 +212,7 @@ You should see **Application deployed successfully** message in console log.
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-Right click on the `mdk_push` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Right click the `mdk_push` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
 ![MDK](img_010.1.png)
 
@@ -225,7 +225,7 @@ Right click on the `mdk_push` MDK Application in the project explorer pane and s
 
 [ACCORDION-BEGIN [Step 7: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
@@ -265,7 +265,7 @@ Right click on the `mdk_push` MDK Application in the project explorer pane and s
 
     ![MDK](img_055.png)
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
     It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services push notification feature**.
 
@@ -328,7 +328,7 @@ Right click on the `mdk_push` MDK Application in the project explorer pane and s
 
     ![MDK](img_023.1.12.PNG)
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use device Camera in iOS, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
     It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services push notification feature**.
 
