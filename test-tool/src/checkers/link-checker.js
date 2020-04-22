@@ -5,8 +5,7 @@ const {
   BAD_GATEWAY,
   NOT_ACCEPTABLE,
   BAD_REQUEST,
-  TOO_MANY_REQUESTS,
-  OK,
+  TOO_MANY_REQUESTS
 } = require('http-status-codes');
 
 const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
@@ -14,7 +13,7 @@ const { domains } = require('../../config/trusted.links.json');
 
 process.env.UV_THREADPOOL_SIZE = linkCheck.UV_THREADPOOL_SIZE;
 
-const isAlive = (statusCode) => statusCode >= OK && statusCode < BAD_REQUEST;
+const isAlive = (status) => status === 'alive';
 
 const getErrorMessage = (statusCode) => {
   try {
@@ -42,7 +41,7 @@ const verifyLinks = async (links) => {
   });
   return Object
     .entries(processedResults)
-    .filter(([link, { statusCode }]) => !isAlive(statusCode))
+    .filter(([link, { status }]) => !isAlive(status))
     .map(([link, { statusCode }]) => {
       const isTrusted = domains.some(domain => link.includes(domain));
       const isInternal = internalLink.regexp.test(link);
@@ -72,14 +71,14 @@ const checkImageLink = async (link) => {
     }
   });
   const linkResult = result[link];
-  const { statusCode = BAD_REQUEST } = linkResult;
+  const { status, statusCode = BAD_REQUEST } = linkResult;
 
   if (`${statusCode}` === `${NOT_ACCEPTABLE}`) {
     result.error = remoteImage.message;
     return result;
   }
 
-  linkResult.error = isAlive(statusCode) ? undefined : getErrorMessage(statusCode);
+  linkResult.error = isAlive(status) ? undefined : getErrorMessage(statusCode);
   if (linkResult.error) {
     // ignore, in case of error link checker will throw it
     delete linkResult.error;
@@ -92,8 +91,8 @@ const checkImageLink = async (link) => {
 const checkLink = async (link) => {
   const result = await checkLinks([link]);
   const linkResult = result[link];
-  const { statusCode } = linkResult;
-  linkResult.error = isAlive(statusCode) ? undefined : getErrorMessage(statusCode);
+  const { status, statusCode } = linkResult;
+  linkResult.error = isAlive(status) ? undefined : getErrorMessage(statusCode);
   linkResult.code = statusCode;
   linkResult.link = link;
 
