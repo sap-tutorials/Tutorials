@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
 When allowing end-users to make updates to data, it is important to add validation rules to verify that they are entering valid information.
 If the Update action fails due to the validation rule, the application will display a validation failure message to the end-user. You can customize this message by creating a Message action and adding the action to the validation Failure Message field in the Update action.
 
-1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
     ![MDK](img_020.png)
 
@@ -51,7 +51,7 @@ In the MDK editor, you will create a new JavaScript file called `EmailValidation
 
 >You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
 
-1. Right click on the **Rules** folder | **New** | **File**.
+1. Right-click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.png)
 
@@ -85,7 +85,7 @@ In the MDK editor, you will create a new JavaScript file called `EmailValidation
 
 [ACCORDION-BEGIN [Step 3: ](Add the validtion rule to the Update entity)]
 
-Now that you have created the validation rule, you will add it to the Update action. This will tell the Update action to run the validation rule before saving any data. If the validation rule is successful, the Update action will save the changes as expected. If the validation rule fails, the end-user receives the validation failure message telling them useful information so they can fix the problem before continuing.
+Now, that you have created the validation rule, you will add it to the Update action. This will tell the Update action to run the validation rule before saving any data. If the validation rule is successful, the Update action will save the changes as expected. If the validation rule fails, the end-user receives the validation failure message telling them useful information so they can fix the problem before continuing.
 
 1. Open `Customers_UpdateEntity.action` by double clicking on the action in the project explorer pane.
 
@@ -100,7 +100,7 @@ Now that you have created the validation rule, you will add it to the Update act
 
 Deploy the updated application to your MDK client.
 
-1. Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_026.1.png)
 

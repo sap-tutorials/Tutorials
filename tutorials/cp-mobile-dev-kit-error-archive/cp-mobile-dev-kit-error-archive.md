@@ -48,7 +48,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
 1. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-2. Right click on Workspace folder and select **New** | **MDK CRUD Project**.
+2. Right click Workspace folder and select **New** | **MDK CRUD Project**.
 
     ![MDK](img_001.1.png)
 
@@ -208,7 +208,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 5. Next, write a business logic to get the **affected entity object** and this object value will be shown in error details page.
 
-    Right click on the **Rules** folder | **New** | **File**.
+    Right click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.0.png)
 
@@ -346,11 +346,11 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 [ACCORDION-BEGIN [Step 4: ](Navigate from Error list page to Error details page)]
 
-When you click on any record in **Error List** page, you want to navigate to **Error Details** page to view more information about this error.
+When you click any record in **Error List** page, you want to navigate to **Error Details** page to view more information about this error.
 
 1. Create a **Navigation Action**.
 
-    Right click on the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
+    Right click the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
 
     ![MDK](img_007.25.png)
 
@@ -367,7 +367,7 @@ When you click on any record in **Error List** page, you want to navigate to **E
 
     Open **Error List** page | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-    Double click on the `ShowErrorDetails.action` action and click **OK** to set it as the `OnPress` Action.
+    Double click the `ShowErrorDetails.action` action and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_007.25.2.gif)
 
@@ -378,13 +378,13 @@ When you click on any record in **Error List** page, you want to navigate to **E
 
 [ACCORDION-BEGIN [Step 5: ](Navigate from Error details page to affected record)]
 
-When you click on an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
+When you click an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
 
 You can write a logic in JavaScript to handle the `affectedEntity` and then decide which action to call depends on which `@odata.id` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message.
 
 1. Create a **Message Action** to display this toast message.
 
-    Right click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
+    Right click the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
 
     ![MDK](img_007.22.png)
 
@@ -404,7 +404,7 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
 2. Write a business logic to decide which action to call depends on which `@odata.type` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message saying this affected entity doesn't have a handle yet.
 
-3. Right click on the **Rules** folder | **New** | **File**.
+3. Right click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.0.png)
 
@@ -463,7 +463,7 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
     Open **Error Details** page | Select **Object Table** control | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-    Double click on the `DecideWhichEditPage.js` action and click **OK** to set it as the `OnPress` Action.
+    Double click the `DecideWhichEditPage.js` action and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_007.24.gif)
 
@@ -474,11 +474,11 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
 [ACCORDION-BEGIN [Step 6: ](Add a button on main page to view Error list)]
 
-Now that the **Error List** page is created, you will add a button on the **Main** page that navigates to **Error List** page.
+Now, that the **Error List** page is created, you will add a button on the **Main** page that navigates to **Error List** page.
 
 1. Create a **Navigation Action**.
 
-    Right click on the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
+    Right click the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
 
     ![MDK](img_007.25.png)
 
@@ -503,7 +503,7 @@ Now that the **Error List** page is created, you will add a button on the **Main
 
       Go to **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-      Double click on the `ShowErrorList.action` action and click **OK** to set it as the `OnPress` Action.
+      Double click the `ShowErrorList.action` action and click **OK** to set it as the `OnPress` Action.
 
       ![MDK](img_007.29.gif)
 
@@ -516,7 +516,7 @@ Now that the **Error List** page is created, you will add a button on the **Main
 
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right-click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_009.png)
 
@@ -547,7 +547,7 @@ So far, you have learnt how to build an MDK application in the SAP Web IDE edito
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Right click the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
 ![MDK](img_009.1.png)
 
@@ -560,7 +560,7 @@ Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pa
 
 [ACCORDION-BEGIN [Step 9: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
@@ -654,7 +654,7 @@ On Android, the camera app does not support scanning the QR-code. As alternative
 
     ![MDK](img_024.3.png)
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
@@ -742,7 +742,7 @@ On Android, the camera app does not support scanning the QR-code. As alternative
 
     ![MDK](img_032.png)
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use device Camera in iOS, if you would like to scan a different onboarding URL.    
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 

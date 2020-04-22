@@ -31,7 +31,7 @@ To enhance your MDK app with customer details information, you need to carry out
 
 This page will show related details for a customer. In this page, you will add an **Object Header** control that is used to display information (like first name, last name, date of birth, email address & phone number) about the header of an object and **Static Key Value** control to display key value pair items like address, city, postal code & country.
 
-1. In SAP Web IDE project, Right-click on the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
+1. In SAP Web IDE project, Right-click the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
 
     ![MDK](img_001.png)
 
@@ -53,7 +53,7 @@ This page will show related details for a customer. In this page, you will add a
 
     In the Properties pane, click the **link icon** to open the Object Browser for the `BodyText` property.
 
-6. Double click on the `DateOfBirth` property of the Customer entity to set it as the binding expression and click **OK**.
+6. Double click the `DateOfBirth` property of the Customer entity to set it as the binding expression and click **OK**.
 
     ![MDK](img_005.gif)
 
@@ -114,7 +114,7 @@ This page will show related details for a customer. In this page, you will add a
 
     >Be careful not to select `HouseNumber` from `Address (ESPM.Address)`, final expression should be as per above animation.
 
-    Now set second part of the binding.
+    Now, set second part of the binding.
 
     The cursor will be at the end of binding in the Expression field. Add a space and then select **Street** property and click **Insert**.
 
@@ -122,7 +122,7 @@ This page will show related details for a customer. In this page, you will add a
 
     ![MDK](img_016.gif)
 
-    >Be careful not to double click on **Street** as that will replace the existing expression with just the Street property.
+    >Be careful not to double click **Street** as that will replace the existing expression with just the Street property.
 
     >**Street** should be selected from **Customer** entity.
 
@@ -155,7 +155,7 @@ This page will show related details for a customer. In this page, you will add a
 
 Now, you will create a Navigation action that opens the `Customers_Detail.page` when called.
 
-1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
+1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
     ![MDK](img_017.1.gif)
 
@@ -179,7 +179,7 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
 
 2. In `Customers_List page`, select the **Contact Cell Table** control, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
-3. Double Click on the `NavToCustomers_Detail.action` and click **OK** to set it as the `OnPress` Action.
+3. Double click the `NavToCustomers_Detail.action` and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_025.gif)
 
@@ -192,7 +192,7 @@ Now, you will create a Navigation action that opens the `Customers_Detail.page` 
 
 Deploy the updated application to your MDK client.
 
-1. Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_026.png)
 

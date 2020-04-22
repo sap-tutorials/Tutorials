@@ -34,7 +34,7 @@ This page is a searchable list that displays all customers.
 To create the Customer List page, you will create a **Section page** and drag the Customer **Contact Cell Table** control onto the page. In the property palette, you will link the control to the Customer Collection and then map data and actions to different areas of the cell object in the property palette. One nice feature about the **Contact Cell Table** control is that it has icons that can activate device functionality such as phone, email, video and more.
 
 
-1. In SAP Web IDE project, right-click on the **Pages** | **New MDK Page** | **Section Page** | **Next**.
+1. In SAP Web IDE project, right-click the **Pages** | **New MDK Page** | **Section Page** | **Next**.
 
     ![MDK](img_001.png)
 
@@ -60,7 +60,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
 6. In the **Properties** pane, click the **link icon** to open the Object Browser for the **Description** property.
 
-7. Double click on the `City` property of the Customer entity to set it as the binding expression and click **OK**.
+7. Double click the `City` property of the Customer entity to set it as the binding expression and click **OK**.
 
     ![MDK](img_008.gif)
 
@@ -103,7 +103,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
 Now, you will create a Navigation action that opens the `Customers_List.page` when called.
 
-1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
+1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
     ![MDK](img_017.gif)
 
@@ -123,7 +123,7 @@ Now, you will create a Navigation action that opens the `Customers_List.page` wh
 
 [ACCORDION-BEGIN [Step 3: ](Add a button to view customer list)]
 
-Now that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Section Button Table** control.
+Now, that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Section Button Table** control.
 
 1. In `Main_page`, drag and drop the **Section Button Table** container control onto the Page.
 
@@ -147,7 +147,7 @@ Now that the Customer List page is created, you will add a button to the Main pa
 
 4. Under **Events** tab, click the **link icon** for the `OnPress` Handler property to open the Object Browser.
 
-5. Double Click on the `NavToCustomers_List` action and click **OK** to set it as the `OnPress` Handler Action.
+5. Double click the `NavToCustomers_List` action and click **OK** to set it as the `OnPress` Handler Action.
 
     ![MDK](img_025.gif)
 
@@ -160,7 +160,7 @@ Now that the Customer List page is created, you will add a button to the Main pa
 
 Deploy the updated application to your MDK client.
 
-1. Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_026.png)
 
