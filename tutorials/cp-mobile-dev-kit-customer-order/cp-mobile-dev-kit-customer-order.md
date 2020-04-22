@@ -38,7 +38,7 @@ This page will display customer orders list, you will add an **Object Table** co
 
 1. In SAP Web IDE project, right-click the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
 
-    ![MDK](img_001.gif)
+    ![MDK](img_001.png)
 
     >You can find more details about [section pages](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
@@ -117,9 +117,9 @@ This page will show related details for an order. In this page, you will add an 
 
 1. In SAP Web IDE project, right-click the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
 
-    ![MDK](img_001.gif)
+    ![MDK](img_001.png)
 
-2. Enter the Page Name `SalesOrders_Detail` and click **Next** and the **Finish** on the confirmation step.
+2. Enter the Page Name `SalesOrders_Details` and click **Next** and the **Finish** on the confirmation step.
 
     ![MDK](img_010.png)
 
@@ -185,7 +185,7 @@ This page will show related details for an order. In this page, you will add an 
 
     ![MDK](img_016.png)
 
-7. Save your changes to the `OrderDetails.page`.
+7. Save your changes to the `SalesOrder_Details.page`.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -214,7 +214,7 @@ This page will show related details for an order. In this page, you will add an 
     | Field | Value |
     |----|----|
     | `Action Name`| `NavToSalesOrders_Details` |
-    | `Page to Open` | `SalesOrders_Detail.page` |
+    | `Page to Open` | `SalesOrders_Details.page` |
 
     ![MDK](img_019.png)
 
@@ -227,13 +227,13 @@ This page will show related details for an order. In this page, you will add an 
 
 1. Go back to the `Customers_Orders.page` and set the `OnPress` event of the Object Table. You will link the Object Table to the `NavToSalesOrders_Details.action` so that when an end-user selects a order, the `SalesOrders_Detail.page` will open. MDK automatically passes the selected order to the details page.
 
-2. In `Customers_Orders.page`, select the Object Table, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
+    In `Customers_Orders.page`, select the Object Table, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
-3. Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as the `OnPress` Action.
+    Double-click the `NavToSalesOrders_Details.action` and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_020.gif)
 
-4. Save the changes to the `Customers_Orders.page`.
+2. Save the changes to the `Customers_Orders.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -269,13 +269,13 @@ This page will show related details for an order. In this page, you will add an 
 
 [ACCORDION-BEGIN [Step 6: ](Display top 5 orders in customer detail page)]
 
-1. Next, you will add an **Object Table** compound to display top 5 orders information in the `Customers_Detail.page`.
+1. You will add an **Object Table** compound to display top 5 orders information in the `Customers_Detail.page`.
 
-2. In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
+    In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
 
     ![MDK](img_022.gif)
 
-3. In the **Properties** pane, select the previously added service from the **Service** drop down.
+2. In the **Properties** pane, select the previously added service from the **Service** drop down.
 
     Provide below Properties:
 
@@ -295,7 +295,7 @@ This page will show related details for an order. In this page, you will add an 
 
     >**Query** expression will filter order entries returned in descending when sorted by the order creation date property.
 
-4. Now start binding Object Table properties with `SalesOrderHeaders` entity set properties.
+3. Now start binding Object Table properties with `SalesOrderHeaders` entity set properties.
 
     In the **Appearance** section of the **Properties** pane, provide the below information:
 
@@ -317,15 +317,15 @@ This page will show related details for an order. In this page, you will add an 
 
     >`$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})` is an expression of how to format currency value, end result would be like 200.44 €. By default it will be formatted to the device's locale setting.
 
-5. In the **Behavior** section of the **Properties** pane, select `DisclosureIndicator` to **`AccessoryType`** property.
+4. In the **Behavior** section of the **Properties** pane, select `DisclosureIndicator` to **`AccessoryType`** property.
 
     ![MDK](img_008.png)
 
-6. In the **Empty** section of the **Properties** pane, provide  **`No Customer Orders Found`** to **Caption** property.
+5. In the **Empty** section of the **Properties** pane, provide  **`No Customer Orders Found`** to **Caption** property.
 
     ![MDK](img_024.png)
 
-7. You may also want to open `SalesOrders_Detail.page` when clicking on any order in `Customers_Detail.page`. For this, you will set `OnPress` event of the **Object Table** and link it to `NavToSalesOrders_Details.action` so that when an end-user selects a order, the Order Details page will open. MDK automatically passes the selected order to the details page.
+6. You may also want to open `SalesOrders_Detail.page` when clicking on any order in `Customers_Detail.page`. For this, you will set `OnPress` event of the **Object Table** and link it to `NavToSalesOrders_Details.action` so that when an end-user selects a order, the Order Details page will open. MDK automatically passes the selected order to the details page.
 
     In `Customers_Detail.page`, select the Object Collection, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
@@ -333,7 +333,7 @@ This page will show related details for an order. In this page, you will add an 
 
     ![MDK](img_025.gif)
 
-8. Save the changes to the `Customers_Detail.page`.
+7. Save the changes to the `Customers_Detail.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -384,13 +384,13 @@ This page will show related details for an order. In this page, you will add an 
 
 3. You may also want to open **Customer Orders** page when clicking on **See All**. For this, you will set `OnPress` event of the **Footer** control and link it to `NavToCustomers_Orders.action` so that when an end-user clicks on **See All**, the **Customer Orders** page will open.
 
-4. In `Customers_Detail.page`, select the Footer control, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
+    In `Customers_Detail.page`, select the Footer control, **click** the link icon under the **Events** tab for the `OnPress` property to open the Object Browser.
 
-5. Double-click the `NavToCustomers_Orders.action` and click **OK** to set it as the `OnPress` Action.
+    Double-click the `NavToCustomers_Orders.action` and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_028.png)
 
-6. Save the changes to the `Customers_Detail.page`.
+4. Save the changes to the `Customers_Detail.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -420,13 +420,13 @@ This page will show related details for an order. In this page, you will add an 
 
     You will see the **CUSTOMER ORDERS** area in customer detail page and also total count of orders.
 
-    >In sample service backend, Not every customer has related Sales Orders in case if you see _No Customer Orders Found_ message. Try with other customer record.
-
     ![MDK](img_033.1.jpg)
 
 2. Tapping on any order navigates to its details page.
 
     ![MDK](img_034.1.jpg)
+
+    >In sample service backend, Not every customer has related Sales Orders in case if you see _No Customer Orders Found_ message. Try with other customer record.
 
 3. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
@@ -444,23 +444,23 @@ This page will show related details for an order. In this page, you will add an 
 
     You will see the **Customer Orders** area in customer detail page and also total count of orders.
 
-    >In sample service backend, Not every customer has related Sales Orders in case if you see _No Customer Orders Found_ message. Try with other customer record.
-
     ![MDK](img_033.png)
 
 2. Tapping on any order navigates to its details page.
 
     ![MDK](img_034.png)
 
+    >In sample service backend, Not every customer has related Sales Orders in case if you see _No Customer Orders Found_ message. Try with other customer record.
+
 3. Navigate back to **Customer Detail** page, tap **See All**, which navigates to the **Customer Orders** page.  
 
     ![MDK](img_035.png)
 
+
+
 [OPTION END]
 
->_Are you wondering how exactly MDK knew that clicking on a record in  list page would display respective record in detail page?_
-
->The MDK sets the current object to the selected record when running the on press action on the list.  The detail page then just needs to reference the correct properties assuming they are part of the object from the list page.
+You have successfully extended MDK app with Customer orders and you are now all set to [Implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
 
 [DONE]
 [ACCORDION-END]

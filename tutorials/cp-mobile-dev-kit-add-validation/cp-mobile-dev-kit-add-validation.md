@@ -137,7 +137,7 @@ Deploy the updated application to your MDK client.
 
 [OPTION END]
 
-Congratulations, you have created an MDK app from scratch. You can now continue enhancing this app with some other [additional functionalities](mission.mobile-dev-kit-enhance).
+Congratulations, you have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 [VALIDATE_1]
 [ACCORDION-END]

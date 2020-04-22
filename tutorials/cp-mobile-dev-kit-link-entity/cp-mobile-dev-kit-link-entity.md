@@ -39,7 +39,7 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
 
 1. Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
 
-    ![MDK](img_001.gif)
+    ![MDK](img_001.1.png)
 
     >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
@@ -427,7 +427,7 @@ In `Customers_Detail.page` you added total number of order counts for a given cu
 
 [OPTION END]
 
-Congratulations, you have enhanced your MDK app with additional functionalities. You may now start exploring [other](mission.mobile-dev-kit-level-up) tutorials.
+Congratulations, you have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up)mission.
 
 
 [DONE]

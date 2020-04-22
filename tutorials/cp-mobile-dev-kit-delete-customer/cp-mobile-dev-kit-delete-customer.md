@@ -23,9 +23,9 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 The next step is to store deleted record locally for an offline application or delete directly back to the backed for online applications. You will now create an OData delete action to delete a customer record. You will also show a failure message if the delete action fails.
 
-First, define a failure message action for displaying a message in case deleting of a customer fails.
+1. Define a failure message action for displaying a message in case deleting of a customer fails.
 
-1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
     ![MDK](img_020.png)
 
@@ -56,7 +56,7 @@ First, define a failure message action for displaying a message in case deleting
 
     >You can find more details about [Delete Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a7fb91f8f07148c4bcadc4774da5e114.html).
 
-5. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
+    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
     ![MDK](img_023.png)
 
@@ -76,7 +76,7 @@ First, define a failure message action for displaying a message in case deleting
 
       Click **Next** and **Finish** on the confirmation screen. The action editor will open with the `Customers_DeleteEntity.action` loaded.
 
-6. Next, define _Success_ and _Failure_ actions for `Customers_DeleteEntity.action`.
+5. Next, define _Success_ and _Failure_ actions for `Customers_DeleteEntity.action`.
 
     In the action editor for the new action, expand the **Common Action Properties** and provide the below information:
 
@@ -94,7 +94,7 @@ First, define a failure message action for displaying a message in case deleting
 
     ![MDK](img_028.png)
 
-7. Save the changes to the `Customers_DeleteEntity.action`.
+6. Save the changes to the `Customers_DeleteEntity.action`.
 
 [DONE]
 [ACCORDION-END]
@@ -220,7 +220,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-4. On Main page, tap **Sync**, a successful message will be shown.
+4. On Main page, tap **Sync**, a successful message will be shown. As Sync is pressed, `UploadOffline.action` gets trigger to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
 
 ![MDK](img_036.png)
 
@@ -228,11 +228,11 @@ Deploy the updated application to your MDK client.
 
 You can cross verify if this record has been deleted in the backend.
 
->Backend URL can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
+>Backend URL can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
 
 >Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 
->As Sync is pressed, `UploadOffline.action` gets trigger to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
+You have successfully deleted a Customer Record and you are now all set to [Upload Logs from an MDK App](cp-mobile-dev-kit-upload-logs).
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -383,6 +383,8 @@ Since there is no app metadata deployed yet to Mobile Services, hence you will s
 
 [OPTION END]
 
+Congratulations, you have successfully built Your Mobile Development Kit Client Using MDK SDK and you are now all set to [Build Your Mobile Development Kit Client Using Cloud Build Service](cp-mobile-dev-kit-cbs-client).
+
 [DONE]
 [ACCORDION-END]
 

@@ -25,15 +25,11 @@ SAP Cloud Platform Mobile Services provides administrators, developers and suppo
 
 In this step, you will enable client log upload policy in **SAP Cloud Platform Mobile Services Cockpit** for a given MDK app.
 
-1. Login to [Mobile Services Cockpit](fiori-ios-hcpms-setup), click `com.sap.mdk.demo` | click **+** icon to add client log upload feature to the app.
+1. Login to [Mobile Services Cockpit](fiori-ios-hcpms-setup), click `com.sap.mdk.demo` | **Mobile Client Log Upload**.
 
     ![MDK](img_001.1.png)
 
-2. Select **Mobile Client Log Upload** option and click **OK**.
-
-    ![MDK](img_002.2.png)
-
-3. Check **Log Upload** option and click **Save**.
+2. Check **Log Upload** option and click **Save**.
 
     ![MDK](CF-logpolicy.png)
 
@@ -131,7 +127,7 @@ When the metadata is downloaded from App Update, `OnDidUpdate` event is being ca
 
 You will bind `LogSetState.action` at success of  `InitializeOffline.action`.
 
-1. Open the `InitializeOffline.action`, scroll-down and expand **Common Action Properties** section, select `LogSetState.action` for the **Success Action**.  
+1. Navigate to `DemoSampleApp` | `Actions` | `Service` | `InitializeOffline.action`, scroll-down and expand **Common Action Properties** section, select `LogSetState.action` for the **Success Action**.  
 
     ![MDK](img_1.gif)
 
@@ -281,6 +277,9 @@ Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** |
 You may view log entries directly in Mobile Services Cockpit or download them locally.
 
 >You can find more details about [Uploading and Viewing Client Logs](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/38f23c1381344df9a3ab2d0ea22e689d.html).
+
+You have successfully uploaded client logs to SAP Cloud Platform Mobile Services and you are now all set to [Extend an MDK App with Customer Orders](cp-mobile-dev-kit-customer-order).
+
 
 [VALIDATE_1]
 [ACCORDION-END]

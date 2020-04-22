@@ -29,7 +29,7 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
 
 1. Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
 
-    ![MDK](img_001.gif)
+    ![MDK](img_001.1.png)
 
     >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
@@ -133,17 +133,17 @@ Now, you will add a button on the Create Customer page and set it's `onPress` to
 
     ![MDK](img_013.1.png)
 
-      >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
+    >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
 
-        Now, you will set `onPress` to `CloseModalPage_Cancel.action`.
+4. Now, you will set `onPress` to `CloseModalPage_Cancel.action`.
 
-4. In **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+    In **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-5. Double click on the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
+    Double click on the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_015.gif)
 
-6. Save the changes to the `Customers_Create.page`.
+5. Save the changes to the `Customers_Create.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -198,9 +198,9 @@ You will add a button to the `Customers_List.page` called **Add**. You will link
 
 The next step is to store newly created record locally for an offline application or send the new record directly back to the backed for online applications. You will now create an action to map the changes received from the `Customers_Create.page` to the corresponding field in the OData service. You will also show a failure message if the create action fails to save the changes.
 
-First, define a failure message.
+1. First, define a failure message.
 
-1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
     ![MDK](img_020.png)
 
@@ -277,7 +277,7 @@ First, define a failure message.
 
 10. Save the changes to the `Customers_CreateEntity.action`.
 
-    Next, you will set the `OnPress` of the _Save_ button.
+11. Next, you will set the `OnPress` of the _Save_ button.
 
     Now that the Create action is created, you will need to call the Create action when the end-user presses the **Save** button. You will add a **Save** button on the `Customers_Create.page` and link it to the `Customers_CreateEntity.action`.
 
@@ -285,7 +285,7 @@ First, define a failure message.
 
     ![MDK](img_029.png)
 
-11. Click the **link** icon to open the object browser for the **System Item** property.
+12. Click the **link** icon to open the object browser for the **System Item** property.
 
     Double click on the **Save** type and click **OK**.
 
@@ -295,7 +295,7 @@ First, define a failure message.
 
     ![MDK](img_031.png)
 
-12. Save the changes to the `Customers_Create.page`.
+13. Save the changes to the `Customers_Create.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -365,7 +365,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-4. On `Main` page, tap **Sync**, a successful message will be shown.
+4. On `Main` page, tap **Sync**, a successful message will be shown. As Sync is pressed, `UploadOffline.action` gets trigger to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
 
     ![MDK](img_036.png)
 
@@ -373,13 +373,13 @@ Deploy the updated application to your MDK client.
 
 You can cross verify if a record has been updated in the backend.
 
->Backend URL can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
+>Backend URL can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
 
 >Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 
 ![MDK](img_037.png)
 
->As Sync is pressed, `UploadOffline.action` gets trigger to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
+You have successfully created a Customer Record and you are now all set to [Delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
 
 [VALIDATE_1]
 [ACCORDION-END]
