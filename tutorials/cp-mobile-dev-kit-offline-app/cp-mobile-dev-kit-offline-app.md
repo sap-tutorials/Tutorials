@@ -27,7 +27,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
 1. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-2. Right click on Workspace folder and select **New** | **MDK Base Project**.
+2. Right click Workspace folder and select **New** | **MDK Base Project**.
 
     ![MDK](img_001.png)
 
@@ -119,7 +119,7 @@ Open the application settings in the application editor by double clicking on th
 
 So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_009.1.1.png)
 
@@ -150,7 +150,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-Right click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Right click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
 ![MDK](img_009.png)
 
@@ -163,7 +163,7 @@ Right click on the `DemoSampleApp` MDK Application in the project explorer pane 
 
 [ACCORDION-BEGIN [Step 5: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
@@ -209,7 +209,7 @@ Right click on the `DemoSampleApp` MDK Application in the project explorer pane 
 
     ![MDK](img_023.1.jpg)
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
@@ -253,7 +253,7 @@ Right click on the `DemoSampleApp` MDK Application in the project explorer pane 
 
     ![MDK](img_023.gif)
 
-    >Once you has scanned and onboarded using the onboarding URL, it will be remembered and next time you logged out and onboard again, same onboarding URLs settings will be reused without the need to scan. You will need to use device Camera in iOS, if you would like to scan a different onboarding URL.
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
