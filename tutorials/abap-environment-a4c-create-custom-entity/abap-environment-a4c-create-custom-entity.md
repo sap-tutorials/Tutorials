@@ -91,10 +91,9 @@ CLASS zcl_travels_xxx IMPLEMENTATION.
           """Instantiate Client Proxy
         DATA(lo_client_proxy) = zcl_proxy_travels_xxx=>get_client_proxy( ).
 
-      DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
-
       TRY.
           """Create Read Request
+          DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
           CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
             RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
               EXPORTING
@@ -204,10 +203,11 @@ CLASS zcl_travels_xxx IMPLEMENTATION.
     METHOD if_rap_query_provider~select.
           """Instantiate Client Proxy
     DATA(lo_client_proxy) = zcl_proxy_travels_xxx=>get_client_proxy( ).
-    DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
 
-    TRY.
-          """Create Read Request
+    """Create Read Request
+    TRY.      
+          DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
+
           CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
             RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
               EXPORTING
