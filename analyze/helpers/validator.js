@@ -16,7 +16,7 @@ const {
   },
 } = regexp;
 
-const fieldNames = Object.keys(csvHeaders);
+const fieldNames = Object.keys(csvHeaders.validation);
 
 function buildResultStructure() {
   return fieldNames.reduce((result, fieldName) => {

@@ -5,7 +5,7 @@ const colorLog = require('color-log');
 const { csvHeaders } = require('../constants');
 
 function buildMessage(key, value = 0) {
-  return `  ${csvHeaders[key]}: ${value}\n`;
+  return `  ${csvHeaders.validation[key]}: ${value}\n`;
 }
 
 function wrapMessage(message, fileName) {
