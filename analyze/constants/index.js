@@ -46,6 +46,7 @@ module.exports = {
       tutorial: 'TUTORIAL',
       file: 'FILE',
       size: 'SIZE',
+      error: 'ERROR',
     },
   },
 };

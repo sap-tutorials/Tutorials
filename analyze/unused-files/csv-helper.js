@@ -10,6 +10,11 @@ class UnusedFilesCsvHelper extends CsvHelper {
     super(checkTypes.unusedFiles);
   }
 
+  save(rows, env) {
+    this.fileName = this.fileName.replace('report_', `report_${env}_`);
+    super.save(rows);
+  }
+
   prepare(rows) {
     const fields = Object
       .entries(csvHeaders[this.type])
