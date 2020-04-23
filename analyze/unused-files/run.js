@@ -3,11 +3,14 @@
 const path = require('path');
 const readline = require('readline');
 
+const colorLog = require('color-log');
+
 const fs = require('../helpers/fs');
 const constants = require('../constants');
 
 const csvHelper = require('./csv-helper');
-const output = require('../helpers/output');
+
+const excludedFiles = ['rules.vr'];
 
 async function getUnusedFiles({ parentDir, filePath, files }) {
   return new Promise((resolve, reject) => {
@@ -64,6 +67,7 @@ async function run(pathToQA) {
 
   const promises = tutorials
     .filter((tutorial) => {
+      // filter off files, we need directories only
       return path.extname(tutorial) === '';
     })
     .map(async (tutorialName) => {
@@ -71,7 +75,9 @@ async function run(pathToQA) {
       const mdFilePath = path.join(tutorialsPath, tutorialName, tutorialFileName);
       const tutorialDir = path.join(tutorialsPath, tutorialName);
       let allFiles = await fs.readDir(tutorialDir);
-      allFiles = allFiles.filter(file => file !== tutorialFileName);
+      allFiles = allFiles.filter((file) => {
+        return file !== tutorialFileName && !excludedFiles.includes(file);
+      });
 
       return getUnusedFiles({
         filePath: mdFilePath,
@@ -82,19 +88,31 @@ async function run(pathToQA) {
         .then((stats) => {
           if (stats.files.length > 0) {
             stats.files.forEach(([fileName, size]) => {
-              result.push({ tutorial: tutorialName, file: fileName, size: `${size}Kb` });
+              result.push({
+                tutorial: tutorialName,
+                file: fileName,
+                size: `${size}Kb`,
+                error: '',
+              });
             });
 
-            result.push({ tutorial: 'TOTAL', file: '', size: `${stats.totalSize.toFixed(2)}Kb` });
+            result.push({
+              tutorial: 'TOTAL',
+              file: '',
+              size: `${stats.totalSize.toFixed(2)}Kb`,
+              error: '',
+            });
           }
           sizeToRemove += stats.totalSize;
         })
         .catch((error) => {
           result.push({
             tutorial: tutorialName,
-            file: error.message,
+            file: 'UNKNOWN',
             size: 'UNKNOWN',
-          })
+            error: error.message,
+          });
+          colorLog.error(`${tutorialName} FAILED:\n${error.message}`);
         });
     });
 
@@ -102,8 +120,8 @@ async function run(pathToQA) {
     .all(promises)
     .then(() => {
       result.push({ tutorial: 'GRAND TOTAL', file: '', size: `${Number(sizeToRemove / 1024).toFixed(2)}Mb` });
-      csvHelper.save(result);
+      csvHelper.save(result, pathToQA ? 'qa':  'prod');
     });
 }
 
-module.exports = run("C:\\Users\\Yevheniia_Rakhmatova\\Documents\\projects\\With Space\\Tutorials-Contribution");
+module.exports = run();
