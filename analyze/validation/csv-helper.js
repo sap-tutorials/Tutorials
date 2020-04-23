@@ -2,22 +2,17 @@
 
 const { Parser } = require('json2csv');
 
-const { csvHeaders, reportFileName, validationKeysMap } = require('../constants');
-const fs = require('./fs');
+const { csvHeaders, checkTypes, validationKeysMap } = require('../constants');
+const CsvHelper = require('../helpers/csv');
 
-const fileName = reportFileName.replace('{{date}}', Date.now());
-
-module.exports = {
-  fileName,
-  save(rows) {
-    const csv = this.prepare(rows);
-
-    return fs.writeFile(fileName, csv);
-  },
+class ValidationCsvHelper extends CsvHelper {
+  constructor() {
+    super(checkTypes.validation);
+  }
 
   prepare(rows) {
     const fields = Object
-      .entries(csvHeaders)
+      .entries(csvHeaders[this.type])
       .reduce((result, [value, label]) => {
         if (value !== validationKeysMap.everythingValid) {
           return result.concat({
@@ -32,5 +27,7 @@ module.exports = {
     const parser = new Parser({ fields });
 
     return parser.parse(rows);
-  },
-};
+  }
+}
+
+module.exports = new ValidationCsvHelper();

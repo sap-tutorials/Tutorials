@@ -6,8 +6,8 @@ const commandArgs = require('command-line-args');
 const constants = require('../constants');
 const fs = require('./fs');
 
-const configPath = path.join(__dirname, `../../${constants.configFileName}`);
-const qaPath = path.join(__dirname, `../../../${constants.qaRepoName}`);
+const configPath = path.join(__dirname, `../../../${constants.configFileName}`);
+const qaPath = path.join(__dirname, `../../../../${constants.qaRepoName}`);
 
 module.exports = {
   configExists() {
@@ -38,10 +38,14 @@ module.exports = {
     return result;
   },
 
-  async getQaPath() {
-    // assuming it is in a parent folder
-    if (fs.access(qaPath)) {
-      return qaPath;
+  async getOption(name) {
+    switch (name) {
+      case 'qaPath':
+        if (await fs.access(qaPath)) {
+          return qaPath;
+        }
+      default:
+        return undefined;
     }
   },
 };
