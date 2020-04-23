@@ -10,9 +10,11 @@ const csvHelper = require('./csv-helper');
 const output = require('../helpers/output');
 
 async function getUnusedFiles({ parentDir, filePath, files }) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
+    const stream = fs.createReadStream(filePath);
+
     const lineReader = readline.createInterface({
-      input: fs.createReadStream(filePath),
+      input: stream,
     });
     let notFound = [...files];
 
@@ -23,6 +25,8 @@ async function getUnusedFiles({ parentDir, filePath, files }) {
         notFound.splice(notFound.indexOf(v), 1);
       });
     });
+    stream.on('error', reject);
+    lineReader.on('error', reject);
     lineReader.on('close', () => {
       resolve(notFound);
     });
@@ -59,6 +63,9 @@ async function run(pathToQA) {
   let sizeToRemove = 0;
 
   const promises = tutorials
+    .filter((tutorial) => {
+      return path.extname(tutorial) === '';
+    })
     .map(async (tutorialName) => {
       const tutorialFileName = `${tutorialName}.md`;
       const mdFilePath = path.join(tutorialsPath, tutorialName, tutorialFileName);
@@ -78,19 +85,25 @@ async function run(pathToQA) {
               result.push({ tutorial: tutorialName, file: fileName, size: `${size}Kb` });
             });
 
-            result.push({ tutorial: 'TOTAL', file: '', size: `${stats.totalSize.toFixed(2)}Kb`});
+            result.push({ tutorial: 'TOTAL', file: '', size: `${stats.totalSize.toFixed(2)}Kb` });
           }
           sizeToRemove += stats.totalSize;
+        })
+        .catch((error) => {
+          result.push({
+            tutorial: tutorialName,
+            file: error.message,
+            size: 'UNKNOWN',
+          })
         });
     });
 
   return Promise
     .all(promises)
     .then(() => {
-      debugger;
-      result.push({ tutorial: 'GRAND TOTAL', file: '', size: `${Number(sizeToRemove / 1024).toFixed(2)}Mb`});
+      result.push({ tutorial: 'GRAND TOTAL', file: '', size: `${Number(sizeToRemove / 1024).toFixed(2)}Mb` });
       csvHelper.save(result);
     });
 }
 
-module.exports = run();
+module.exports = run("C:\\Users\\Yevheniia_Rakhmatova\\Documents\\projects\\With Space\\Tutorials-Contribution");
