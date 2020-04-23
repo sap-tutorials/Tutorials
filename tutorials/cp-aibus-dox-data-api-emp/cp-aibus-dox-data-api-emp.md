@@ -55,7 +55,6 @@ You should receive a response like the following:
 
 >- Maximum 10 created enrichment `dataIds`
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
 
 [DONE]
 [ACCORDION-END]
@@ -138,6 +137,8 @@ You should receive a response like the following with status SUCCESS:
 
 [ACCORDION-BEGIN [Step 4: ](Upload document to get prediction with enrichment data)]
 
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
+
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`uuid`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
 
 ```JSON
@@ -157,11 +158,14 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
 
 2. Click **Try it out**.
 
-3. Upload the document PDF file you want to enrich.
+3. Right click [Sample Invoice 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-data-api-emp/sample-invoice-2.pdf), then use the ***Save link as*** option to download locally the document PDF file recommended for this enrich employee data example.
+> You can also upload and enrich your own document in PDF format with content in headers and tables (an invoice, for example). In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
 
-4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), the client id you created in step 1 (`c_27`, for example), the document type (`invoice`, for example) and the enrichment data type `employee`.
+4. Upload the document PDF file you want to enrich.
 
-5. Click **Execute**.
+5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), the client id you created in step 1 (`c_27`, for example), the document type (`invoice`, for example) and the enrichment data type `employee`.
+
+6. Click **Execute**.
 
 This is how the request should look like:
 

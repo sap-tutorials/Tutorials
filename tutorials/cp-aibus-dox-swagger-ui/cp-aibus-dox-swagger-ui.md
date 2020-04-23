@@ -129,13 +129,17 @@ You should receive a response like the following:
 
 >Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
 
-Upload to the service any document in PDF format that has content in headers and tables, such as an invoice, using the **POST /document/jobs** endpoint. You need to specify the following:
+Upload to the service any document in PDF format that has content in headers and tables, such as an invoice, using the **POST /document/jobs** endpoint.
 
-  - A file.
 
-  - A **`clientId`**.
+>As an alternative to uploading your own document in PDF format to the service, you can use any of the following sample invoice files:
 
-  - The fields to be extracted. You can find the list of available fields that can be extracted in the response of the **GET /capabilities** endpoint.
+>- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf)
+
+>- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-2.pdf)
+
+>- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-3.pdf)
+
 
 Do the following:
 
