@@ -33,26 +33,27 @@ async function analyzeFiles({ parentDir, filePath, files }) {
     stream.on('error', reject);
     lineReader.on('error', reject);
     lineReader.on('close', async () => {
-      resolve({ notFound, found });
+      resolve(notFound);
     });
   })
-    .then(({ notFound, found }) => {
-      let totalSize = 0;
+    .then((notFound) => {
+      let bigFilesTotalSize = 0;
+      let unusedFilesTotalSize = 0;
 
       const unusedFiles = notFound.reduce((result, fileName) => {
         const { size } = fs.statSync(path.join(parentDir, fileName));
         const kbSize = Number(size / 1024.0);
-        totalSize += kbSize;
+        unusedFilesTotalSize += kbSize;
         result.push({ fileName, size: kbSize.toFixed(2) });
 
         return result;
       }, []);
 
-      const bigFiles = found.reduce((result, fileName) => {
+      const bigFiles = files.reduce((result, fileName) => {
         const { size } = fs.statSync(path.join(parentDir, fileName));
         const kbSize = Number(size / 1024.0);
         if (kbSize > bigFileSize) {
-          totalSize += kbSize;
+          bigFilesTotalSize += kbSize;
           result.push({ fileName, size: kbSize.toFixed(2) });
         }
 
@@ -60,7 +61,8 @@ async function analyzeFiles({ parentDir, filePath, files }) {
       }, []);
 
       return {
-        totalSize,
+        bigFilesTotalSize,
+        unusedFilesTotalSize,
         bigFiles,
         unusedFiles,
       };
@@ -75,7 +77,9 @@ async function run(pathToQA) {
   let result = [];
 
   const tutorials = await fs.readDir(tutorialsPath);
-  let sizeToRemove = 0;
+  let bigFilesTotalSize = 0;
+  let unusedFilesTotalSize = 0;
+
   const counters = {
     unusedFiles: 0,
     bigFiles: 0,
@@ -122,12 +126,15 @@ async function run(pathToQA) {
                 bigFile: bigFile.fileName,
                 bigFileSize: bigFile.size ? `${bigFile.size}Kb` : '',
                 error: '',
-                total: isLast ? `${stats.totalSize.toFixed(2)}Kb` : '',
+                total: isLast
+                  ? `${(stats.bigFilesTotalSize + stats.unusedFilesTotalSize).toFixed(2)}Kb`
+                  : '',
               });
             }
           }
 
-          sizeToRemove += stats.totalSize;
+          bigFilesTotalSize += stats.bigFilesTotalSize;
+          unusedFilesTotalSize += stats.unusedFilesTotalSize;
 
           return result;
         })
@@ -149,11 +156,11 @@ async function run(pathToQA) {
     .all(promises)
     .then(() => result.sort((a, b) => a.tutorial.localeCompare(b.tutorial)))
     .then(() => {
-      const sizeMb = `${Number(sizeToRemove / 1024).toFixed(2)}Mb`;
+      const sizeMb = `${Number((bigFilesTotalSize + unusedFilesTotalSize) / 1024).toFixed(2)}Mb`;
       result.push({
         tutorial: 'GRAND TOTAL',
-        unusedFile: `${counters.unusedFiles} unused files`,
-        bigFile: `${counters.bigFiles} big files`,
+        unusedFile: `${counters.unusedFiles} unused files (${( unusedFilesTotalSize / 1024).toFixed(2)})Mb`,
+        bigFile: `${counters.bigFiles} big files (${(bigFilesTotalSize / 1024).toFixed(2)})Mb`,
         unusedFileSize: '',
         bigFileSize: '---',
         total: sizeMb,
