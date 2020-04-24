@@ -159,8 +159,8 @@ async function run(pathToQA) {
       const sizeMb = `${Number((bigFilesTotalSize + unusedFilesTotalSize) / 1024).toFixed(2)}Mb`;
       result.push({
         tutorial: 'GRAND TOTAL',
-        unusedFile: `${counters.unusedFiles} unused files (${( unusedFilesTotalSize / 1024).toFixed(2)})Mb`,
-        bigFile: `${counters.bigFiles} big files (${(bigFilesTotalSize / 1024).toFixed(2)})Mb`,
+        unusedFile: `${counters.unusedFiles} unused files (${( unusedFilesTotalSize / 1024).toFixed(2)}Mb)`,
+        bigFile: `${counters.bigFiles} big files (${(bigFilesTotalSize / 1024).toFixed(2)}Mb)`,
         unusedFileSize: '',
         bigFileSize: '---',
         total: sizeMb,
