@@ -11,6 +11,7 @@ async function runMemoryCheck() {
     options = await extractRunOptions.readCmdOptions(constants.CONFIG_CMD_OPTIONS.name, true);
   } catch (e) {
     console.error(e);
+    process.exit(1);
   }
 
   return run(options.qaPath);

@@ -9,36 +9,53 @@ const fs = require('../helpers/fs');
 module.exports = {
   async readCmdOptions(name, isRequired) {
     const options = commandArgs(constants.commandLineOptions);
-    console.log(options);
     const configOptions = await configHelper.read();
 
-    if (!options[name] && isRequired) {
-      if (!configOptions[name]) {
-        configOptions[name] = await configHelper.getOption(name);
-        await configHelper.write(`--${name} ${configOptions[name]}`);
+    if (isRequired) {
+      if (!options[name]) {
+        if (!configOptions[name]) {
+          configOptions[name] = await configHelper.getOption(name);
+
+          if (configOptions[name]) {
+            const isValid = await this.validate(configOptions, name);
+            if (isValid) {
+              Object.assign(options, configOptions);
+              await configHelper.write(`--${name} "${configOptions[name]}"`);
+            }
+          }
+        } else {
+          const isValid = await this.validate(configOptions, name);
+          console.log(configOptions);
+          if (isValid) {
+            Object.assign(options, configOptions);
+          }
+        }
       }
 
-      Object.assign(options, configOptions);
-    } else {
-      await this.validate(options, name);
-    }
+      if (!options[name]) {
+        throw new Error(
+          `${name} not found. Please run the command  with the following parameters "--${name} <value>"`
+        );
+      }
 
-    if (!options[name] && isRequired) {
-      throw new Error(
-        'Path to QA repo not found. Please run the command  with the following parameters "--qaPath <your path to QA repo>"'
-      );
-    }
+      const isSame = configOptions[name] === options[name];
 
-    const isSame = configOptions[name] === options[name];
-
-    if (!configOptions[name] || !isSame) {
-      await configHelper.write(`--qaPath ${options[name]}`);
+      if ((!configOptions[name] || !isSame)) {
+        await configHelper.write(`--${name} ${options[name]}`);
+      }
     }
 
     return options;
   },
 
   validate(options, name) {
-    return fs.access(options[name]);
+    switch (name) {
+      case 'qaPath':
+        return fs.access(options[name])
+          .then(() => true)
+          .catch(() => false);
+      default:
+        return false;
+    }
   },
 };

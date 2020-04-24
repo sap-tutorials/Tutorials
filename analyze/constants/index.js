@@ -4,7 +4,7 @@ const CONFIG_CMD_OPTIONS = { name: 'qaPath', alias: 'q', type: String };
 
 const checkTypes = {
   validation: 'validation',
-  unusedFiles: 'unused-files',
+  memoryUsage: 'memory-usage',
 };
 
 const validationKeysMap = {
@@ -42,11 +42,14 @@ module.exports = {
       [validationKeysMap.noSteps]: 'NO STEPS',
       [validationKeysMap.everythingValid]: 'OTHER',
     },
-    [checkTypes.unusedFiles]: {
+    [checkTypes.memoryUsage]: {
       tutorial: 'TUTORIAL',
-      file: 'FILE',
-      size: 'SIZE',
+      unusedFile: 'UNUSED FILE',
+      unusedFileSize: 'UNUSED FILE SIZE',
+      bigFile: 'BIG FILE',
+      bigFileSize: 'BIG FILE SIZE',
       error: 'ERROR',
+      total: 'TOTAL',
     },
   },
 };

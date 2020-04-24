@@ -5,9 +5,9 @@ const { Parser } = require('json2csv');
 const { csvHeaders, checkTypes } = require('../constants');
 const CsvHelper = require('../helpers/csv');
 
-class UnusedFilesCsvHelper extends CsvHelper {
+class MemoryCsvHelper extends CsvHelper {
   constructor() {
-    super(checkTypes.unusedFiles);
+    super(checkTypes.memoryUsage);
   }
 
   save(rows, env) {
@@ -31,4 +31,4 @@ class UnusedFilesCsvHelper extends CsvHelper {
   }
 }
 
-module.exports = new UnusedFilesCsvHelper();
+module.exports = new MemoryCsvHelper();

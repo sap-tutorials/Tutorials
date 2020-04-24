@@ -95,7 +95,11 @@ async function run(pathToQA) {
           return temp;
         }, {});
 
-      return output(stats, csvHelper.fileName);
+      return output({
+        stats,
+        fileName: csvHelper.fileName,
+        type: constants.checkTypes.validation,
+      });
     })
     .catch((error) => {
       colorLog.error(error);

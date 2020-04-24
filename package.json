@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "test": "node --max-http-header-size 15000 test.js -t",
-    "analyze-mem-usage": "node analyze/unused-files",
+    "check-memory": "node analyze/memory",
     "check-validation": "node analyze/validation",
     "test-prod": "cross-env NODE_ENV=production node --max-http-header-size 15000 test.js -t",
     "test-last-commit": "node --max-http-header-size 15000 test-last-commit"
@@ -39,7 +39,8 @@
     "marked": "0.3.12",
     "node-fetch": "^2.3.0",
     "progress": "^2.0.0",
-    "recursive-readdir": "^2.2.1"
+    "recursive-readdir": "^2.2.1",
+    "shell-quote": "^1.7.2"
   },
   "devDependencies": {
     "cross-env": "^6.0.0"
