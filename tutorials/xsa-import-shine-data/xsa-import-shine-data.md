@@ -2,6 +2,8 @@
 title: Import Tables and Large Datasets (XS Advanced)
 description: Import SHINE sample tables and data using SAP Web IDE for SAP HANA.
 primary_tag: products>sap-hana
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 auto_validation: true
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]
 time: 5
@@ -20,7 +22,7 @@ If you are looking to import the entire SAP HANA `INteractive` Education model f
 
 [ACCORDION-BEGIN [Step 1: ](Download the archive)]
 
-Download the file `data.zip` from our public [GitHub repository](https://github.com/SAP/com.sap.openSAP.hana5.templates/raw/hana2_sps01/ex2/core-db/data.zip).
+Download the file `data.zip` from our public [GitHub repository](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/snippets_2.4.0/ex2/core-db/data.zip).
 
 [DONE]
 [ACCORDION-END]
@@ -45,9 +47,15 @@ Import the archive into the data folder. This will probably be `src\data`. Right
 
 [ACCORDION-BEGIN [Step 3: ](Purge duplicates and Build)]
 
-Delete the files `FLIGHT.hdbcds`, `header.csv`,  `item.csv` and `load.hdbtabledata` (if available) to avoid conflicts during build:
+Delete the files  `header.csv`,  `item.csv` and `load.hdbtabledata` (if available) to avoid conflicts during build:
 
 ![Delete](4.png)
+
+Also delete `PurchaseOrder.hdbtable` and `PurchaseOrderItem.hdbtable` (if available).
+![Delete](4-1.png)
+
+Also delete the `SFlight` folder (if available).
+![Delete](4-2.png)
 
 **Build** the db module:
 

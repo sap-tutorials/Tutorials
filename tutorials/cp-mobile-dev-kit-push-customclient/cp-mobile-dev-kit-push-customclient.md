@@ -184,21 +184,8 @@ To enable your app for push notifications, you need to carry out the following t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign push notification in app configuration)]
 
-1. Open the [SAP Cloud Platform Mobile Services cockpit](cp-mobile-dev-kit-ms-setup), click **+** icon to assign a new feature.
-
-    ![MDK](img_022.png)
-
-2. Select **Mobile Push Notification**, click **OK**.
-
-    ![MDK](img_023.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Provide information to Mobile Services)]
+[ACCORDION-BEGIN [Step 2: ](Provide information to Mobile Services)]
 
 >Make sure you are choosing the right device platform tab above.
 
@@ -212,7 +199,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     ![MDK](img_025.png)
 
-3. Paste this Server Key value in **Android** push settings in Mobile Services cockpit.
+3. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Push Notification`. Paste the Server Key value in **Android** push settings in Mobile Services cockpit.
 
     ![MDK](img_026.png)
 
@@ -497,6 +484,8 @@ If you have Apple watch connected to the iPhone device, you can also see same pu
 >MDK supports rich push notification. MDK does not run on smart watches or as an Apple watch application.
 
 [OPTION END]
+
+Congratulations, you have successfully completed **Brand Your Customized App with Mobile Development Kit SDK** mission and you are now all set to [Create Extension Controls in Mobile Development Kit (MDK) Apps](mission.mobile-dev-kit-controls) mission.
 
 [DONE]
 [ACCORDION-END]
