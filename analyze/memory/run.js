@@ -113,6 +113,7 @@ async function run(pathToQA) {
             for (let i = 0; i < maxLength; i++) {
               const unusedFile = (stats.unusedFiles[i] || { fileName: '', size: '' });
               const bigFile = (stats.bigFiles[i] || { fileName: '', size: '' });
+              const isLast = i === (maxLength - 1);
 
               result.push({
                 tutorial: tutorialName,
@@ -121,19 +122,9 @@ async function run(pathToQA) {
                 bigFile: bigFile.fileName,
                 bigFileSize: bigFile.size ? `${bigFile.size}Kb` : '',
                 error: '',
-                total: '',
+                total: isLast ? `${stats.totalSize.toFixed(2)}Kb` : '',
               });
             }
-
-            result.push({
-              tutorial: tutorialName,
-              unusedFile: '---',
-              bigFile: '---',
-              unusedFileSize: '---',
-              bigFileSize: '---',
-              error: '---',
-              total: `${stats.totalSize.toFixed(2)}Kb`,
-            });
           }
 
           sizeToRemove += stats.totalSize;
@@ -143,8 +134,10 @@ async function run(pathToQA) {
         .catch((error) => {
           result.push({
             tutorial: tutorialName,
-            file: 'UNKNOWN',
-            size: 'UNKNOWN',
+            unusedFile: 'UNKNOWN',
+            unusedFileSize: 'UNKNOWN',
+            bigFile: 'UNKNOWN',
+            bigFileSize: 'UNKNOWN',
             error: error.message,
             total: '',
           });
@@ -159,9 +152,9 @@ async function run(pathToQA) {
       const sizeMb = `${Number(sizeToRemove / 1024).toFixed(2)}Mb`;
       result.push({
         tutorial: 'GRAND TOTAL',
-        unusedFile: '---',
-        bigFile: '---',
-        unusedFileSize: '---',
+        unusedFile: `${counters.unusedFiles} unused files`,
+        bigFile: `${counters.bigFiles} big files`,
+        unusedFileSize: '',
         bigFileSize: '---',
         total: sizeMb,
         error: '---',
