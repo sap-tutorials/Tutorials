@@ -25,7 +25,6 @@ module.exports = {
           }
         } else {
           const isValid = await this.validate(configOptions, name);
-          console.log(configOptions);
           if (isValid) {
             Object.assign(options, configOptions);
           }

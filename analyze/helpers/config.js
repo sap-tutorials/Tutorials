@@ -11,8 +11,6 @@ const fs = require('./fs');
 const configPath = path.join(__dirname, `../../${constants.configFileName}`);
 const qaPath = path.join(__dirname, `../../../${constants.qaRepoName}`);
 
-console.log(qaPath);
-
 module.exports = {
   configExists() {
     return fs.access(configPath)
@@ -36,7 +34,7 @@ module.exports = {
     try {
       result = commandArgs(constants.commandLineOptions, { argv: parse(contents) });
     } catch (e) {
-      console.debug('Couldn\'t read local config. Trying to find QA repository in parent directory...');
+      console.debug('Couldn\'t read local config');
     }
 
     return result;
