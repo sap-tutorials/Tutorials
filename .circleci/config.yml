@@ -2,7 +2,7 @@ version: 2
 jobs:
   analyze:
     docker:
-      - image: circleci/node:12.16.1
+      - image: circleci/node:10.16.0
     steps:
       - run: echo "RUN_BUILD is ${RUN_BUILD}"
       - checkout
@@ -19,7 +19,7 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Memory Usage Analysis
+          name: Run test tool on the all tutorials
           command: |
             if [[ ${RUN_BUILD} ]]; then
               npm run analyze-mem-usage
@@ -30,3 +30,15 @@ notify:
   webhooks:
     # gitter hook
     - url: https://webhooks.gitter.im/e/15f197634234d80a32fa
+workflows:
+  version: 2
+  nightly:
+    triggers:
+    - schedule:
+        cron: "0 1 * * 0-5"
+        filters:
+          branches:
+            only:
+              - master
+    jobs:
+      - build-all
