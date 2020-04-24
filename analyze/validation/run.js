@@ -5,7 +5,7 @@ const colorLog = require('color-log');
 
 const fs = require('../helpers/fs');
 const constants = require('../constants');
-const validator = require('../helpers/validator');
+const validator = require('./validator');
 const output = require('../helpers/output');
 const csvHelper = require('./csv-helper');
 

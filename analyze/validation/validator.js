@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('./fs');
+const fs = require('../helpers/fs');
 const { regexp } = require('../../test-tool/src/constants');
 const { common } = require('../../test-tool/src/utils');
 const { csvHeaders, validationKeysMap } = require('../constants');
