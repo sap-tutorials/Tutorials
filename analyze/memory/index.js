@@ -8,7 +8,7 @@ async function runMemoryCheck() {
   let options = {};
 
   try {
-    options = await extractRunOptions.readCmdOptions(constants.CONFIG_CMD_OPTIONS.name, true);
+    options = await extractRunOptions.readCmdOptions(constants.CONFIG_CMD_OPTIONS.name, false);
   } catch (e) {
     console.error(e);
   }
