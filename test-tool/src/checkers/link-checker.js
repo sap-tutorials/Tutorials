@@ -5,7 +5,9 @@ const {
   BAD_GATEWAY,
   NOT_ACCEPTABLE,
   BAD_REQUEST,
-  TOO_MANY_REQUESTS
+  TOO_MANY_REQUESTS,
+  MOVED_PERMANENTLY,
+  MOVED_TEMPORARILY,
 } = require('http-status-codes');
 
 const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
@@ -17,6 +19,9 @@ const isAlive = (status) => status === 'alive';
 
 const getErrorMessage = (statusCode) => {
   try {
+    if (statusCode === MOVED_PERMANENTLY || statusCode === MOVED_TEMPORARILY) {
+      return 'Too Many Redirects';
+    }
     return getStatusText(statusCode);
   } catch (e) {
     return 'Unreachable link';

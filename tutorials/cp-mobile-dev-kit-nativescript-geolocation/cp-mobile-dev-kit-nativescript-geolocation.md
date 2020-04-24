@@ -60,7 +60,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 >You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
 
-1. Right click on the **Rules** folder | **New** | **File**.
+1. Right click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.1.png)
 

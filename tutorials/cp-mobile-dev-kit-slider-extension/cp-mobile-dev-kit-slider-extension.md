@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client&hl=en) device
+- **Download and install** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
@@ -867,7 +867,7 @@ You should see **Application deployed successfully** message in console log.
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-Right click on the `mdk_extensions` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Right click the `mdk_extensions` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
 ![MDK](img_014.1.png)
 

@@ -39,43 +39,43 @@ In [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup), you learned
 
     > The Interface Builder allows you to create complete app flows including the UI for each screen of those flows.
 
-    ![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-1.png)
+    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-1.png)
 
     For now go ahead and select all displayed View Controllers in the `Main.storyboard` and simply delete them.
 
-    ![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-2.gif)
+    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-2.gif)
 
 2. Next, click the **Object Library** and search for **`Table View Controller`**. Drag and drop the object on the canvas of the Interface Builder.
 
-    ![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-3.gif)
+    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-3.gif)
 
 3. Thinking ahead, we know that we want to have navigation to various screens from the overview screen. Using a Navigation Controller and embedding the just-created View Controller in it allows us to use the power of the Navigation Controller for navigation. The Navigation Controller handles the navigation stack for you, which is exactly what we want.
 
     Select the added View Controller and click **Editor > Embed In > Navigation Controller**. This will embed your View Controller in a Navigation Controller. You should see the Navigation Bar appear in the View Controller.
 
-    ![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-4.png)
+    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-4.png)
 
-    ![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-5.png)
+    !![Xcode Main Storyboard](fiori-ios-scpms-starter-mission-02-5.png)
 
 4. Almost every View Controller you're adding to the storyboard needs a **Cocoa Touch Class** representing the logic implementation of that View Controller.
 
     Control + click your project source in the **Project Navigator** on the left-hand side and select **New File**.
 
-    ![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6.png)
+    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6.png)
 
 5. Select the **Cocoa Touch Class** in the upcoming modal sheet, and click **Next**.
 
-    ![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6-1.png)
+    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6-1.png)
 
     Make sure that your class is going to subclass of **`UITableViewController`** and change the name to **`OverviewTableViewController`**. Click **Next** and then **Create**.
 
-    ![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6-2.png)
+    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-6-2.png)
 
     Great! You've created your first Table View Controller Swift class, now you have to set this class as **Custom Class** in the **`Main.storyboard`** View Controller.
 
 6. Open the storyboard and select the created View Controller. On the right side, you can see the side bar. Click the **Identity Inspector** to set the custom class to **`OverviewTableViewController`** and hit return on your keyboard.
 
-    ![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-7.png)
+    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-7.png)
 
     Notice the title of the Table View Controller on the left side changes accordingly to the entered custom class.
 
@@ -83,7 +83,7 @@ In [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup), you learned
 
     Select the **Navigation Controller** and open the **Attributes Inspector** to check the box next to **Is Initial View Controller**.
 
-    ![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-8.png)
+    !![Xcode Overview Class](fiori-ios-scpms-starter-mission-02-8.png)
 
 [DONE]
 [ACCORDION-END]
@@ -96,7 +96,7 @@ In order to display the newly added overview screen right after the onboarding p
 
     > **Hint:** You can use the `Open Quickly` feature of Xcode to search for the `ApplicationUIManager` class with `Command + Shift + O`. Once you've opened the file, you can quickly jump to the `showApplicationScreen(completionHandler:)` function by using the **jump bar** at the top of the editor area pane.
 
-    ![Application UI Manager](fiori-ios-scpms-starter-mission-02-9.png)
+    !![Application UI Manager](fiori-ios-scpms-starter-mission-02-9.png)
 
     In the method you see an `if-else` statement initializing a Split View Controller, which is non-existing anymore because you have your Overview Table View Controller.
 
@@ -157,7 +157,7 @@ As you can see, the overview screen is a little bit more complicated then just s
 
 If you look at the list of controls you might recognize that we're picking from not only SAP Fiori controls but also from Apple `UIKit` controls. Because all of the SAP Fiori controls are written natively in Swift and inherit of `UIKit` controls, you can pick and choose the controls you need.
 
-![Control Inheritance Overview](fiori-ios-scpms-starter-mission-02-11.png)
+!![Control Inheritance Overview](fiori-ios-scpms-starter-mission-02-11.png)
 
 You will now implement some code to set up the `OverviewTableViewController` for displaying all the above mentioned controls, load data from the backend using the `SAPOData` framework, and perform navigation to the customer and product list.
 
