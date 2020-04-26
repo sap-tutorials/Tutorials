@@ -179,13 +179,13 @@ Open the `MDKProject.json` file and update it as needed. This file has some buil
 
 >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 
-Now open the `BrandedSettings.json` file and update it with information from your MDK Mobile Services application.
+Now, open the `BrandedSettings.json` file and update it with information from your MDK Mobile Services application.
 
 ![MDK](img_012.png)
 
 To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#08a4320f-424c-4f94-8de0-d9a7be8378d5) and find your MDK application that you want to link to this client.
 
-Click on `com.sap.mdk.demo` > **Security** tab.
+click `com.sap.mdk.demo` > **Security** tab.
 
 Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
@@ -382,6 +382,8 @@ Since there is no app metadata deployed yet to Mobile Services, hence you will s
 >To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
 
 [OPTION END]
+
+Congratulations, you have successfully built Your Mobile Development Kit Client Using MDK SDK and you are now all set to [Build Your Mobile Development Kit Client Using Cloud Build Service](cp-mobile-dev-kit-cbs-client).
 
 [DONE]
 [ACCORDION-END]

@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Cloud Platform Mobile application
   - How to capture the device's current location
 
-You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/4-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
+You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
 
@@ -60,7 +60,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 >You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
 
-1. Right click on the **Rules** folder | **New** | **File**.
+1. Right click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.1.png)
 
@@ -69,9 +69,9 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 3. Copy and paste the following code.
 
     ```JavaScript
-    export default function GetCoordinates(context) {
-    	var geolocation = require('nativescript-geolocation');
-    	var Accuracy = require('tns-core-modules/ui/enums').Accuracy;
+      import * as geolocation from "nativescript-geolocation";
+      import { Accuracy } from "tns-core-modules/ui/enums";
+      export default function GetCoordinates(context) {
     	var logger = context.getLogger();
     	console.log("Current Log Level: " + logger.getLevel());
     	// check if geolocation is not enabled
@@ -249,7 +249,7 @@ In Main page, you will see device's current location.
 
 [OPTION END]
 
-Congratulations, you have learned how to capture device's current location in an MDK app.
+Congratulations, you have learned how to capture device's current location in an MDK app and you are now all set to [Extend Your MDK App With a Map Custom Control (Using Metadata Approach)](cp-mobile-dev-kit-map-extension).
 
 [DONE]
 [ACCORDION-END]
