@@ -24,7 +24,8 @@ async function analyzeFiles({ parentDir, filePath, files }) {
     let found = [];
 
     lineReader.on('line', (line) => {
-      found = notFound.filter(v => line.includes(v));
+      // FS is case insensitive
+      found = notFound.filter(v => line.toLowerCase().includes(v.toLowerCase()));
 
       found.forEach((v) => {
         notFound.splice(notFound.indexOf(v), 1);
@@ -69,7 +70,15 @@ async function analyzeFiles({ parentDir, filePath, files }) {
     });
 }
 
-async function run(pathToQA) {
+async function removeFromFs(parentDir, files) {
+  return Promise.all(files.map((f) => {
+    const fullPath = path.join(parentDir, f.fileName);
+
+    return fs.unlink(fullPath);
+  }));
+}
+
+async function run({ pathToQA, deleteFiles }) {
   const tutorialsPath = pathToQA
     ? path.join(pathToQA, constants.tutorialsFolderName)
     : path.resolve('./', constants.tutorialsFolderName);
@@ -136,6 +145,11 @@ async function run(pathToQA) {
           bigFilesTotalSize += stats.bigFilesTotalSize;
           unusedFilesTotalSize += stats.unusedFilesTotalSize;
 
+          if (deleteFiles) {
+            removeFromFs(tutorialDir, stats.unusedFiles)
+              .catch(colorLog.warn);
+          }
+
           return result;
         })
         .catch((error) => {
@@ -159,7 +173,7 @@ async function run(pathToQA) {
       const sizeMb = `${Number((bigFilesTotalSize + unusedFilesTotalSize) / 1024).toFixed(2)}Mb`;
       result.push({
         tutorial: 'GRAND TOTAL',
-        unusedFile: `${counters.unusedFiles} unused files (${( unusedFilesTotalSize / 1024).toFixed(2)}Mb)`,
+        unusedFile: `${counters.unusedFiles} unused files (${(unusedFilesTotalSize / 1024).toFixed(2)}Mb)`,
         bigFile: `${counters.bigFiles} big files (${(bigFilesTotalSize / 1024).toFixed(2)}Mb)`,
         unusedFileSize: '',
         bigFileSize: '---',

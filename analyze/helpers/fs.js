@@ -8,6 +8,7 @@ const redefined = {
   writeFile: util.promisify(fs.writeFile.bind(fs)),
   readFile: util.promisify(fs.readFile.bind(fs)),
   readDir: util.promisify(fs.readdir.bind(fs)),
+  unlink: util.promisify(fs.unlink.bind(fs)),
 };
 
 const proxy = new Proxy(fs, {

@@ -1,6 +1,11 @@
 'use strict';
 
-const CONFIG_CMD_OPTIONS = { name: 'qaPath', alias: 'q', type: String };
+const PATH_TO_QA_CMD_OPTION = {
+  name: 'qaPath', alias: 'q', type: String,
+};
+const DELETE_FILES_CMD_OPTION = {
+  name: 'deleteFiles', alias: 'd', type: Boolean,
+};
 
 const checkTypes = {
   validation: 'validation',
@@ -20,9 +25,10 @@ const validationKeysMap = {
 
 module.exports = {
   commandLineOptions: [
-    CONFIG_CMD_OPTIONS,
+    PATH_TO_QA_CMD_OPTION,
+    DELETE_FILES_CMD_OPTION,
   ],
-  CONFIG_CMD_OPTIONS,
+  PATH_TO_QA_CMD_OPTION,
   requiredOptions: ['qaPath'],
   configFileName: '.config',
   qaRepoName: 'Tutorials-Contribution',
