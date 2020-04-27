@@ -14,7 +14,7 @@ time: 2
 ## Details
 ### You will learn
 You'll learn how to configure your host machine to communicate with the server. OK. More stuff. Even more stuff.
-
+test test
 !![My image](image.png)
 [Test link](https://localhost:Reloa4004/testLink.html)
 [Test link 3](https://localhost/testLink)
