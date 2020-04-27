@@ -1,5 +1,5 @@
 ---
-title: Add API Call to Webhook to Retrieve Tracking Info
+title: Add Webhook to Bot to Retrieve Tracking Info
 description: Add a webhook call in the package-tracking bot to retrieve information for a specific tracking number.
 auto_validation: true
 time: 10
@@ -12,6 +12,7 @@ primary_tag: products>sap-conversational-ai
 
 ## Details
 ### You will learn
+  - How to set a default webhook endpoint
   - How to call a webhook during a conversation
   - How to display the response
 
