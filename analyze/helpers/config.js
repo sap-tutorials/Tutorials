@@ -1,7 +1,9 @@
 'use strict';
 
 const path = require('path');
+
 const commandArgs = require('command-line-args');
+const parse = require('shell-quote').parse;
 
 const constants = require('../constants');
 const fs = require('./fs');
@@ -30,18 +32,25 @@ module.exports = {
     let result = {};
 
     try {
-      result = commandArgs(constants.commandLineOptions, { argv: contents.split(' ') });
+      result = commandArgs(constants.commandLineOptions, { argv: parse(contents) });
     } catch (e) {
-      console.debug('Couldn\'t read local config. Trying to find QA repository in parent directory...');
+      console.debug('Couldn\'t read local config');
     }
 
     return result;
   },
 
-  async getQaPath() {
-    // assuming it is in a parent folder
-    if (fs.access(qaPath)) {
-      return qaPath;
+  async getOption(name) {
+    switch (name) {
+      case 'qaPath':
+        try {
+          await fs.access(qaPath);
+          return qaPath;
+        } catch (e) {
+          return undefined;
+        }
+      default:
+        return undefined;
     }
   },
 };

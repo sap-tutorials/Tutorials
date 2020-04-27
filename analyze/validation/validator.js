@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('./fs');
+const fs = require('../helpers/fs');
 const { regexp } = require('../../test-tool/src/constants');
 const { common } = require('../../test-tool/src/utils');
 const { csvHeaders, validationKeysMap } = require('../constants');
@@ -16,7 +16,7 @@ const {
   },
 } = regexp;
 
-const fieldNames = Object.keys(csvHeaders);
+const fieldNames = Object.keys(csvHeaders.validation);
 
 function buildResultStructure() {
   return fieldNames.reduce((result, fieldName) => {

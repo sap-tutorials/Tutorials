@@ -3,14 +3,14 @@
 const path = require('path');
 const colorLog = require('color-log');
 
-const fs = require('./helpers/fs');
-const constants = require('./constants');
-const validator = require('./helpers/validator');
-const csvHelper = require('./helpers/csv');
-const output = require('./helpers/output');
+const fs = require('../helpers/fs');
+const constants = require('../constants');
+const validator = require('./validator');
+const output = require('../helpers/output');
+const csvHelper = require('./csv-helper');
 
 const { validationKeysMap } = constants;
-const fieldNames = Object.keys(constants.csvHeaders);
+const fieldNames = Object.keys(constants.csvHeaders.validation);
 
 function buildResultStructure() {
   return fieldNames.reduce((result, fieldName) => {
@@ -21,7 +21,7 @@ function buildResultStructure() {
 }
 
 async function run(pathToQA) {
-  const tutorialsPath = path.join(__dirname, '../', constants.tutorialsFolderName);
+  const tutorialsPath = path.join(__dirname, '../../', constants.tutorialsFolderName);
   const prodTutorials = await fs.readDir(tutorialsPath);
   const result = buildResultStructure();
 
@@ -31,36 +31,36 @@ async function run(pathToQA) {
 
   return Promise
     .all(prodTutorials
-      .map(async (tutorialName) => {
-        const mdFilePath = path.join(tutorialsPath, tutorialName, `${tutorialName}.md`);
-        const rulesFilePath = path.join(
-          pathToQA,
-          constants.tutorialsFolderName,
-          tutorialName,
-          constants.rulesFileName
-        );
+    .map(async (tutorialName) => {
+      const mdFilePath = path.join(tutorialsPath, tutorialName, `${tutorialName}.md`);
+      const rulesFilePath = path.join(
+        pathToQA,
+        constants.tutorialsFolderName,
+        tutorialName,
+        constants.rulesFileName
+      );
 
-        try {
-          const content = await fs.readFile(mdFilePath, 'utf-8');
-          const validationResult = await validator.check({
-            content,
-            rulesFilePath,
-            filePath: mdFilePath,
+      try {
+        const content = await fs.readFile(mdFilePath, 'utf-8');
+        const validationResult = await validator.check({
+          content,
+          rulesFilePath,
+          filePath: mdFilePath,
+        });
+
+        Object
+          .entries(validationResult)
+          .forEach(([checkName, checkResult]) => {
+            if (checkResult) {
+              result[checkName].push(tutorialName);
+            }
           });
 
-          Object
-            .entries(validationResult)
-            .forEach(([checkName, checkResult]) => {
-              if (checkResult) {
-                result[checkName].push(tutorialName);
-              }
-            });
-
-          return result;
-        } catch (e) {
-          result[validationKeysMap.failedToProcess].push(tutorialName);
-        }
-      }))
+        return result;
+      } catch (e) {
+        result[validationKeysMap.failedToProcess].push(tutorialName);
+      }
+    }))
     .then(() => {
       cache.resultEntries = Object.entries(result);
       const lengths = cache.resultEntries.map(([, array]) => array.length);
@@ -95,7 +95,11 @@ async function run(pathToQA) {
           return temp;
         }, {});
 
-      return output(stats, csvHelper.fileName);
+      return output({
+        stats,
+        fileName: csvHelper.fileName,
+        type: constants.checkTypes.validation,
+      });
     })
     .catch((error) => {
       colorLog.error(error);
