@@ -470,6 +470,9 @@ Starting from where we left in the filter dialog, we click on the dimension we w
 ![Filter_Value_ID](filter_value_id.png)
 
 [DONE]
+
+[VALIDATE_1]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Start the web application)]
@@ -495,9 +498,7 @@ After applying the new filter, as defined by your filter parameters, you find a 
 
 ![Enhanced_Web_App_Appl_Fltr](applied_filter_web_app.png)
 
-
-[VALIDATE_1]
-
 [VALIDATE_2]
+
 [ACCORDION-END]
 ---
