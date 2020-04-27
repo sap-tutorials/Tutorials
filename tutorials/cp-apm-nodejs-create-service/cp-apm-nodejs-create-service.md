@@ -30,7 +30,7 @@ time: 40
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Configure the NPM registry by executing the following command in a command line window:
+1. Set the NPM registry for `@sap` packages by executing the following command in a command line window:
 
     ```Shell/Bash
     npm set @sap:registry=https://npm.sap.com
@@ -44,7 +44,11 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This installs the `cds` command, which we'll use in the next steps.
 
-    >On MacOS/Linux, you may need to use `sudo npm i -g @sap/cds-dk`.
+    >On MacOS/Linux, you may need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+
+    > If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
+
+    > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 
 3. To verify that the installation was successful, run `cds` without arguments:
 
@@ -151,13 +155,13 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 4: ](Define your first service)]
 
-Create a simplistic all-in-one service definition.
+After initializing, you should see the following empty folders:
 
-1. After initializing the app, check whether the **`srv`** and **`dev`** folders are already created, if yes then create the respective file as mentioned in the following step. If not, choose the **New File** icon and type **`srv/cat-service.cds`** to create folder and file at once in Visual Studio Code.
+- `app/`: for UI artifacts
+- `db/`: for the database level schema model
+- `srv/`: for the service definition layer
 
-    ![Add new file](new-file.png)
-
-    >This creates a folder called **`srv`** and a file called **`cat-service.cds`**.
+1. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`cat-service.cds`**.
 
 2. Open the file and add the following code:
 
@@ -259,13 +263,7 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. Choose **New File** and type **`db/data-model.cds`**.
-
-    ![Add new file](new-file2.png)
-
-    >This creates a folder called **db** and a file called **`data-model.cds`**. Your project structure should look like this:
-
-    ![Project structure](project-structure.png)
+1. In the **`db`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`db/data-model.cds`**.
 
 2. Add the following code to the **`data-model.cds`** file:
 
@@ -294,7 +292,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
-3. Open **`cat-service.cds`** and replace the code with:
+3. Open the file **`cat-service.cds`** and replace the existing code with:
 
     ```CDS
     using my.bookshop as my from '../db/data-model';
@@ -314,7 +312,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 [ACCORDION-BEGIN [Step 7: ](Add initial data)]
 
-Add plain CSV files under **`db/csv`** to fill your database tables with initial data.
+In Visual Studio Code add plain CSV files under **`db/csv`** to fill your database tables with initial data.
 
 1. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Authors.csv`**. Add the following to the file:
 
