@@ -13,6 +13,34 @@ const csvHelper = require('./csv-helper');
 const excludedFiles = ['rules.vr'];
 const bigFileSize = 1024; // 1 Mb
 
+/**
+ * @description recursively reads files of the parentDir
+ * */
+async function extractFiles(parentDir) {
+  const contents = await fs.readDir(parentDir);
+  const result = [];
+
+  await Promise.all(contents.map(async (v) => {
+    const stats = await fs.stat(path.join(parentDir, v));
+
+    if (stats.isDirectory()) {
+      const files = await extractFiles(path.join(parentDir, v));
+
+      result.push(...files);
+      return result;
+    }
+
+    result.push({
+      fileName: v,
+      filePath: path.join(parentDir, v),
+    });
+
+    return result;
+  }));
+
+  return result;
+}
+
 async function analyzeFiles({ parentDir, filePath, files }) {
   return new Promise((resolve, reject) => {
     const stream = fs.createReadStream(filePath);
@@ -25,10 +53,10 @@ async function analyzeFiles({ parentDir, filePath, files }) {
 
     lineReader.on('line', (line) => {
       // FS is case insensitive
-      found = notFound.filter(v => line.toLowerCase().includes(v.toLowerCase()));
+      found = notFound.filter(v => line.toLowerCase().includes(v.fileName.toLowerCase()));
 
       found.forEach((v) => {
-        notFound.splice(notFound.indexOf(v), 1);
+        notFound = notFound.filter(f => f.fileName !== v.fileName);
       });
     });
     stream.on('error', reject);
@@ -41,17 +69,21 @@ async function analyzeFiles({ parentDir, filePath, files }) {
       let bigFilesTotalSize = 0;
       let unusedFilesTotalSize = 0;
 
-      const unusedFiles = notFound.reduce((result, fileName) => {
-        const { size } = fs.statSync(path.join(parentDir, fileName));
+      const unusedFiles = notFound.reduce((result, { fileName, filePath }) => {
+        const { size } = fs.statSync(filePath);
         const kbSize = Number(size / 1024.0);
         unusedFilesTotalSize += kbSize;
-        result.push({ fileName, size: kbSize.toFixed(2) });
+        result.push({
+          fileName,
+          filePath,
+          size: kbSize.toFixed(2),
+        });
 
         return result;
       }, []);
 
-      const bigFiles = files.reduce((result, fileName) => {
-        const { size } = fs.statSync(path.join(parentDir, fileName));
+      const bigFiles = files.reduce((result, { fileName, filePath }) => {
+        const { size } = fs.statSync(filePath);
         const kbSize = Number(size / 1024.0);
         if (kbSize > bigFileSize) {
           bigFilesTotalSize += kbSize;
@@ -70,17 +102,15 @@ async function analyzeFiles({ parentDir, filePath, files }) {
     });
 }
 
-async function removeFromFs(parentDir, files) {
+async function removeFromFs(files) {
   return Promise.all(files.map((f) => {
-    const fullPath = path.join(parentDir, f.fileName);
-
-    return fs.unlink(fullPath);
+    return fs.unlink(f.filePath);
   }));
 }
 
-async function run({ pathToQA, deleteFiles }) {
-  const tutorialsPath = pathToQA
-    ? path.join(pathToQA, constants.tutorialsFolderName)
+async function run({ qaPath, deleteFiles }) {
+  const tutorialsPath = qaPath
+    ? path.join(qaPath, constants.tutorialsFolderName)
     : path.resolve('./', constants.tutorialsFolderName);
 
   let result = [];
@@ -105,9 +135,10 @@ async function run({ pathToQA, deleteFiles }) {
       const tutorialFileName = `${tutorialName}.md`;
       const mdFilePath = path.join(tutorialsPath, tutorialName, tutorialFileName);
       const tutorialDir = path.join(tutorialsPath, tutorialName);
-      let allFiles = await fs.readDir(tutorialDir);
+
+      let allFiles = await extractFiles(tutorialDir);
       allFiles = allFiles.filter((file) => {
-        return file !== tutorialFileName && !excludedFiles.includes(file);
+        return file.fileName !== tutorialFileName && !excludedFiles.includes(file.fileName);
       });
 
       return analyzeFiles({
@@ -146,7 +177,7 @@ async function run({ pathToQA, deleteFiles }) {
           unusedFilesTotalSize += stats.unusedFilesTotalSize;
 
           if (deleteFiles) {
-            removeFromFs(tutorialDir, stats.unusedFiles)
+            removeFromFs(stats.unusedFiles)
               .catch(colorLog.warn);
           }
 
@@ -180,7 +211,7 @@ async function run({ pathToQA, deleteFiles }) {
         total: sizeMb,
         error: '---',
       });
-      csvHelper.save(result, pathToQA ? 'qa' : 'prod');
+      csvHelper.save(result, qaPath ? 'qa' : 'prod');
 
       const stats = {
         total: sizeMb,

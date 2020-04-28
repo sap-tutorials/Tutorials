@@ -5,6 +5,7 @@ const util = require('util');
 
 const redefined = {
   access: util.promisify(fs.access.bind(fs)),
+  stat: util.promisify(fs.stat.bind(fs)),
   writeFile: util.promisify(fs.writeFile.bind(fs)),
   readFile: util.promisify(fs.readFile.bind(fs)),
   readDir: util.promisify(fs.readdir.bind(fs)),
