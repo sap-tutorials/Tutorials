@@ -24,7 +24,7 @@ time: 20
 
 It's now time to switch to SAP HANA as a database.
 
-1. Add the following configuration in the **`package.json`** file of your `my-bookshop` project (overwrite any existing `cds` configuration):
+1. In Visual Studio Code add the following configuration in the **`package.json`** file of your `my-bookshop` project (overwrite any existing `cds` configuration):
 
     ```JSON
     "cds": {
@@ -36,7 +36,7 @@ It's now time to switch to SAP HANA as a database.
       }
     ```
 
-2. Add the SAP HANA driver as a dependency to your project:
+2. In the terminal add the SAP HANA driver as a dependency to your project:
 
     ```Shell/Bash
     npm add hana
