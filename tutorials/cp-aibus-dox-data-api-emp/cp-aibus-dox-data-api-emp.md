@@ -154,15 +154,14 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
   }
 ```
 
+
+Do the following:
+
 1. Expand the **POST /document/jobs** endpoint.
 
 2. Click **Try it out**.
 
-<<<<<<< HEAD
-3. Right click [Sample Invoice 2](`https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/sample-invoice-2.pdf`), then use the ***Save link as*** option to download locally the document PDF file recommended for this enrich employee data example.
-=======
-3. Right click [Sample Invoice 2](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-aibus-dox-data-api-emp/sample-invoice-2.pdf), then use the ***Save link as*** option to download locally the document PDF file recommended for this enrich employee data example.
->>>>>>> upstream/master
+3. Right click [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-2.pdf), then click ***Save link as*** to download locally the document PDF file for this enrich employee data example.
 > You can also upload and enrich your own document in PDF format with content in headers and tables (an invoice, for example). In this case, make sure the data you define in the **`payload`** field, in step 2, matches your document fields.
 
 4. Upload the document PDF file you want to enrich.
