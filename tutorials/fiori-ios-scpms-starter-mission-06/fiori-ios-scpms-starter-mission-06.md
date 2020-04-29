@@ -287,16 +287,20 @@ Before we go ahead and implement the interaction with these cells we make sure t
 
 5. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
 
+6. Important is that you set an identity for the `original` Navigation Controller. In the `Main.storyboard`, click on the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
+
+    !![Storyboard ID](fiori-ios-scpms-starter-mission-06-21.png)
+
     And that's it, you have a working split view controller with a sidebar and working navigation.
 
-6. The last step we want to do is change the navigation item's title from **Root View Controller** to **Navigation**. Add the following line of code to the `viewDidLoad()` method:
+7. The last step we want to do is change the navigation item's title from **Root View Controller** to **Navigation**. Add the following line of code to the `viewDidLoad()` method:
 
     ```Swift
     navigationItem.title = NSLocalizedString("Navigation", comment: "")
 
     ```
 
-7. Compile and run the app on **My Mac** and try your hard work.
+8. Compile and run the app on **My Mac** and try your hard work.
 
     !![Menu Bar](fiori-ios-scpms-starter-mission-06-14.png)
 
@@ -323,7 +327,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
     import UIKit
     ```
 
-3. The override `buildMenu(with:)` allows us to manipulate and create menu items for the menu bar. Implement the `buildMenu(with:)` method and read the inline comments carefully:
+3. The override `buildMenu(with:)` allows us to manipulate and create menu items for the menu bar. Implement the `buildMenu(with:)` method inside an extension and read the inline comments carefully:
 
     ```Swift
     extension AppDelegate {
@@ -345,7 +349,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
                                         image: nil,
                                         identifier: UIMenu.Identifier("com.sap.example.MySampleAppCatalyst.Synchronize"),
                                         options: .displayInline,
-                                        children: [reloadDataCommand])
+                                        children: [reloadMenuItem])
 
             // Tell the UIMenuBuilder where to insert the menu.
             builder.insertChild(reloadDataMenu, atEndOfMenu: .file)
@@ -353,7 +357,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
     }
     ```
 
-4. Save the file and open the `OverviewTableViewController.swift` class and change the `loadData()` method declaration to:
+4. Save the file and open the `OverviewTableViewController.swift` class and change the `loadData()` method declaration to internal and add the `@objc` attribute. The `@objc` allows to make method callable for the `Objective-C` runtime:
 
     ```Swift
     @objc func loadData() { ... }
