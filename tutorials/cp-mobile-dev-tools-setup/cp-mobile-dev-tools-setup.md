@@ -17,38 +17,36 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Log onto SAP Web IDE)]
 
-Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://cockpit.hanatrial.ondemand.com/cockpit) to open the home page).
+1. Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://cockpit.hanatrial.ondemand.com/cockpit) to open the home page).
 
-Click **Launch SAP Web IDE** to open SAP Web IDE page.
+2. Click **SAP Web IDE** to open SAP Web IDE page.
 
-![MDK](img_004.png)
+    ![MDK](img_009.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable Mobile Services tools extension)]
 
-Open **Preferences** window by clicking on the gear icon and click **Extensions**.
+1. Open **Preferences** window by clicking on the gear icon and click **Extensions**.
 
-![MDK](img_005.png)
+    ![MDK](img_005.png)
 
-Search with **mobile** to find required extension, toggle it to **ON** and choose **Save**.
+2. Search with **mobile** to find required extension, toggle it to **ON** and choose **Save**.
 
->This extension is used for creating and developing Mobile development kit and SAP Mobile Cards based applications along with creating backend OData service (from Scratch) that provides capabilities enabling you to quickly build an mobile enabled OData service that constitutes your mobile back-end service for mobile applications.  
+    >This extension is used for creating and developing Mobile development kit and SAP Mobile Cards based applications along with creating backend OData service (from Scratch) that provides capabilities enabling you to quickly build an mobile enabled OData service that constitutes your mobile back-end service for mobile applications.  
 
-![MDK](img_006.png)
+    ![MDK](img_006.png)
 
-Click **Refresh** to reload the SAP Web IDE page for the changes to take effect.
+3. Click **Refresh** to reload the SAP Web IDE page for the changes to take effect.
 
-![MDK](img_007.png)
+    ![MDK](img_007.png)
 
->You will notice that there is now a dedicated workspace for MDK based applications.
+    >You will notice that there is now a dedicated workspace for MDK based applications. You can find more information on Mobile Services App Development Tools [help documentation](https://help.sap.com/viewer/product/MS_APPDEV_ON_WEBIDE/Latest/en-US).
 
-You can now use the Mobile Development Kit editor feature to create and develop your project.
+    ![MDK](img_008.png)
 
-![MDK](img_008.png)
-
->You can find more information on Mobile Services App Development Tools [help documentation](https://help.sap.com/viewer/product/MS_APPDEV_ON_WEBIDE/Latest/en-US).
+Congratulations, you have done with the setup required to get start with MDK and you are now all set to [create your first app using Mobile Development kit](mission.mobile-dev-kit-get-started).
 
 [VALIDATE_1]
 [ACCORDION-END]
