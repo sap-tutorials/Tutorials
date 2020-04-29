@@ -134,11 +134,19 @@ Upload to the service any document in PDF format that has content in headers and
 
 >As an alternative to uploading your own document in PDF format to the service, you can use any of the following sample invoice files:
 
+<<<<<<< HEAD
 >- [Sample Invoice 1](`https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf`)
 
 >- [Sample Invoice 2](`https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-2.pdf`)
 
 >- [Sample Invoice 3](`https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-3.pdf`)
+=======
+>- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf)
+
+>- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-2.pdf)
+
+>- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-3.pdf)
+>>>>>>> upstream/master
 
 
 Do the following:

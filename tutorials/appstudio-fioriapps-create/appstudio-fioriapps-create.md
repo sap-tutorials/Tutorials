@@ -282,7 +282,6 @@ Run your new application to test it.
     | A | What would you like to run | **`BusinessPartners`** |
     | B | Select a runnable file | **index.html** |
     | C | Select a UI5 version | **latest** |
-    | D | Enter a name | **Run ES5** |
 
     >A new run configuration is generated for the `FioriDemo` project.
 
@@ -343,7 +342,7 @@ Run your new application to test it.
 
     !![terminal mbt build](07-02 AppStudio Terminal MBT Build.jpg)
 
-    >The build process creates a multi target archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the MTAR file in the `DemoFiori/mta_archives` folder.
+    >The build process creates a multi target archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the MTAR file in the `FioriDemo/mta_archives` folder.
 
     !![terminal mbt build results](07-02-02 AppStudio Terminal MBT Build_.jpg)
 
