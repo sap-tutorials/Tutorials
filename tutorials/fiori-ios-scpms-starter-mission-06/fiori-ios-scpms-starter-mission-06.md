@@ -223,19 +223,7 @@ We're going to display a list with three cells containing the navigation possibi
 
 In order to let the user have interactions with the list items we have to write some code.
 
-Before we go ahead and implement the interaction with these cells we make sure to have a default selection being made when starting the application.
-
-1. Implement a private helper method to make a decision which view controller to display as detail view controller.
-
-    Add the following class property to the **`SidebarTableViewController`**:
-
-    ```Swift
-    // Store the selected index path
-    private var selectedCellIndexPath: IndexPath?
-
-    ```
-
-2. In the `SidebarTableViewController` add the following method below the data source methods. Read the inline comments carefully:
+1. In the `SidebarTableViewController` add the following method below the data source methods. Read the inline comments carefully:
 
     ```Swift
     // CollectionType selection helper
@@ -243,7 +231,6 @@ Before we go ahead and implement the interaction with these cells we make sure t
         // Load the EntityType specific ViewController from the specific storyboard"
         var viewController: UIViewController!
 
-        self.selectedCellIndexPath = indexPath
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
         // Decide which View Controller to instantiate.
@@ -268,7 +255,7 @@ Before we go ahead and implement the interaction with these cells we make sure t
 
     ```
 
-3. We have to make sure that the `viewSelected(at:)` method gets called as soon as the user clicks on a list item. Add the following table view delegate method directly below the data source methods:
+2. We have to make sure that the `viewSelected(at:)` method gets called as soon as the user clicks on a list item. Add the following table view delegate method directly below the data source methods:
 
     ```Swift
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -279,28 +266,28 @@ Before we go ahead and implement the interaction with these cells we make sure t
 
     This will make sure that the correct index path gets passed into the `viewSelected(at:)` method.
 
-4. Last step is to set those above implemented storyboard identifiers for the respective view controllers is necessary to instantiate the screens.
+3. Last step is to set those above implemented storyboard identifiers for the respective view controllers is necessary to instantiate the screens.
 
     Open the **`Main.storyboard`** and select the **Overview Table View Controller**. Open the **Identity Inspector** and set the **Identity** to `OverviewTableViewController`.
 
     !![Menu Bar](fiori-ios-scpms-starter-mission-06-20.png)
 
-5. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
+4. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
 
-6. Important is that you set an identity for the `original` Navigation Controller. In the `Main.storyboard`, click on the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
+5. Important is that you set an identity for the `original` Navigation Controller. In the `Main.storyboard`, click on the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
 
     !![Storyboard ID](fiori-ios-scpms-starter-mission-06-21.png)
 
     And that's it, you have a working split view controller with a sidebar and working navigation.
 
-7. The last step we want to do is change the navigation item's title from **Root View Controller** to **Navigation**. Add the following line of code to the `viewDidLoad()` method:
+6. The last step we want to do is change the navigation item's title from **Root View Controller** to **Navigation**. Add the following line of code to the `viewDidLoad()` method:
 
     ```Swift
     navigationItem.title = NSLocalizedString("Navigation", comment: "")
 
     ```
 
-8. Compile and run the app on **My Mac** and try your hard work.
+7. Compile and run the app on **My Mac** and try your hard work.
 
     !![Menu Bar](fiori-ios-scpms-starter-mission-06-14.png)
 
