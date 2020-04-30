@@ -11,7 +11,7 @@ const {
 } = require('http-status-codes');
 
 const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
-const { domains } = require('../../config/trusted.links.json');
+const { domains } = require('../../../data/trusted.links.json');
 
 process.env.UV_THREADPOOL_SIZE = linkCheck.UV_THREADPOOL_SIZE;
 
