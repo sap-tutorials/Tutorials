@@ -18,29 +18,37 @@ primary_tag: products>sap-cloud-platform-portal
   - How to assign users to the `Super_Admin` role so that they can design Portal sites
   - How to access the Portal service
 
-In this group of tutorials our goal is to create an attractive Portal site using the SAP Cloud Platform Portal service. But before we can do this, there are some preparation steps that you need to do.
+In this group of tutorials our goal is to create an attractive Portal site using the SAP Cloud Platform Portal service. But before we can do this, there are some steps you need to do in the SAP Cloud Platform cockpit.
 
 [ACCORDION-BEGIN [Step 1: ](Subscribe to the Portal service)]
 
-Before you can access the Portal service, you need to first subscribe to it.
+Before you can access the Portal service, you first need to subscribe to it.
 
 1. [Log onto SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com) and click **Enter Your Trial Account**.
 
-    ![Enter trial account](00_enter_trial_account.png)
+    ![Enter trial account](01_Foundation20Onboarding_Home.png)
 
-2. Click on the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can click on it instead.
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.
+
+    >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.  
+
+2. Click **Continue**.
+
+    ![Processing](02_Foundation20Onboarding_Processing.png)
+
+3. Click on the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can select it instead.
 
       ![Open trial account](00_open_subaccount.png)
 
-3. Click **Subscriptions** from the side menu.
+4. Click **Subscriptions** from the side menu.
 
     ![Click Subscriptions](01_click_subscriptions.png)
 
-4. Enter `Portal` in the search box and click the **Portal** service tile.
+5. Enter `Portal` in the search box and click the **Portal** service tile.
 
     ![Click Portal tile](02_unsubscribed_portal.png)
 
-5. Click **Subscribe** and wait for the status to change to **Subscribed**.
+6. Click **Subscribe** and wait for the status to change to **Subscribed**.
 
     ![Subscribe to the Portal](03_subscribe.png)
 
@@ -96,11 +104,11 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
       ![Add user to ID Service](9_user_idservice.png)
 
-12. Click **Assign Role Collection**.  In the dialog box that opens, select the `Administrator` role collection that you defined above and then click **Assign Role Collection**.
+12. Click **Assign Role Collection**.  In the dialog box, select the `Administrator` role collection that you defined above and then click **Assign Role Collection**.
 
     ![Assign Role Collection](10_assign_role_collection.png)
 
-You have now been assigned to the `Super_Admin` role and you can access the Portal service and carry out all your admin tasks.
+You have now been assigned to the `Super_Admin` role and you can access the Portal service and carry out all of your admin tasks.
 
 [DONE]
 [ACCORDION-END]

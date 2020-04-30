@@ -1,14 +1,14 @@
 ---
 auto_validation: true
-title: Create Authorization in SAP Cloud Platform ABAP environment
-description: Create IAM Apps, services and catalogs for authorization in the SAP Cloud Platform ABAP environment.
+title: Create Authorization Model and App in SAP Cloud Platform ABAP Environment
+description: Create IAM Apps, services and catalogs for authorization model in the SAP Cloud Platform ABAP, environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 20
 ---
 
 ## Prerequisites  
-  - SAP Cloud Platform ABAP Environment user
+  - SAP Cloud Platform ABAP, environment user
   - ADT version 2.96 or higher
 
 ## Details
@@ -98,7 +98,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
       ![Create Access Control](access2.png)
 
-  3.  Create your **service definition:**
+  3.  Create your **access control:**
      - Name: **`Z_I_ROOM_XXX`**
      - Description: **`Room`**
 

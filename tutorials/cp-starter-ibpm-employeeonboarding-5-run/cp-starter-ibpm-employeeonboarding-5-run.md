@@ -15,13 +15,13 @@ primary_tag: products>sap-cloud-platform
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Set up sample events for workflow)]
-First, we will import sample events & data , process these events and view them in workspace using different process visibility applications. This is mainly done to give you a demo-ready workspace with pre filled data. Later, you will run the `employee onboarding` workflow and see the process workspace being updated automatically in real time.
+First, we will import sample events & data, process these events and view them in workspace using different process visibility applications. This is mainly done to give you a demo-ready workspace with pre-filled data. Later, you will run the `employee onboarding` workflow and see the process workspace being updated automatically in real time.
 
 1. Download the events `EmployeeOnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
 
 2. In the SAP Fiori launchpad, open the **Event Acquisition** application.
 
-    >You would have gotten the launchpad link in the last step of the setup tutorial. The link would be like:  
+    >You got the launchpad link in the last step of the setup tutorial. The link would be like:  
 
     > `https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
 
@@ -126,7 +126,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 2. Go back to SAP Fiori launchpad, choose the **Process Workspace** tile and open `Employee Onboarding` scenario.
 
-    > You will notice the **Open Instances** number has changed which means the workflow instance has been processed and its progress can be tracked from this process visibility workspace.
+    > You will notice that the **Open Instances** number has changed which means the workflow instance has been processed and its progress can be tracked from this process visibility workspace.
 
     ![Process Workspace](viewscenario_3.png)    
 
@@ -139,7 +139,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     - If you do not see the task, refresh the **My Inbox** tile to see the `Approve Equipment` task.
 
-    The `Approve Equipment` task shows the equipment configured by the buddy. As the manager you can either approve or reject the proposed equipment for the new hire. To complete the task, choose `Approve`.
+    The `Approve Equipment` task shows the equipment configured by the buddy. As the manager, you can either approve or reject the proposed equipment for the new hire. To complete the task, choose `Approve`.
 
     ![Approve Equipment](approve-equipment.png)
 
@@ -166,13 +166,13 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     !![See Processed data](processeddata_2.png)
 
-2. Go back to the homepage, choose **Process Workspace** tile and open `Employee Onboarding` scenario.
+2. Go back to the homepage, choose **Process Workspace** tile and open the `Employee Onboarding` scenario.
 
     >You will see that the **Completed Instances** and **Cycle Time** numbers have changed.
 
     ![View Scenario4](viewscenario_4.png)
 
-With this you complete the mission on **Automating and Extending Employee Onboarding** process using Intelligent Business Process Management services. In this mission, you learnt about SAP Cloud Platform Workflow, Business Rules and Process Visibility and how these services come together to help you automate the process and decisions, together with providing out-of-box visibility into the workflows.
+Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Intelligent Business Process Management services. In this mission, you learnt about SAP Cloud Platform Workflow, Business Rules and Process Visibility and how these services come together to help you automate the process and decisions, together with providing out-of-box visibility into the workflows.
 
 [VALIDATE_6]
 [ACCORDION-END]
