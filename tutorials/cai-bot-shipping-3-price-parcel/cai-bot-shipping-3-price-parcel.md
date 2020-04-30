@@ -44,7 +44,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
     And instead of you entering each size separately, we have supplied the sizes in a CSV file. Do the following:
 
-    - Download the [CSV file](`https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cai-bot-shipping-3-track-bot/parcel-sizes`), which contains a fixed set of sizes expressed in various ways.
+    - Download the [CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cai-bot-shipping-3-price-parcel/parcel-sizes.csv), which contains a fixed set of sizes expressed in various ways.
     - Click the new entity.
     - Click **Import a CSV File**.
     - Click **Browse** and select your file.

@@ -124,17 +124,57 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      By using **actions** your are able to change the status of your booking status.
 
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Create implementation class)]
+  1. In your behavior definition `ZI_Travel_M_XXX` set the cursor before the implementation class `ZCL_BP_I_TRAVEL_M_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `zcl_bp_i_travel_m_xxx`** to create your implementation class.
+
+      ![Create behavior implementation](implementationx.png)
+
+  2. Create a new behavior implementation:
+
+     - Description: Behavior implementation for `ZI_TRAVEL_M_XXX`
+
+     Click **Next >**.
+
+      ![Create behavior implementation](implementationx2.png)
+
+  3. Click **Finish** to use your transport request.
+
+      ![Create behavior implementation](implementation3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Enhance behavior implementation)]
-  1. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to local types to replace your code.
+[ACCORDION-BEGIN [Step 4: ](Enhance behavior implementation)]
+
+  1. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to **global class** to replace your code.
+
+      ![Enhance behavior implementation](implementation4.png)
+
+
+  2. In your **global class** replace your code with following:
+
+    ```ABAP
+    CLASS zcl_bp_i_travel_m_xxx DEFINITION
+    PUBLIC
+    ABSTRACT
+    FINAL
+    FOR BEHAVIOR OF ZI_Travel_M_XXX.
+
+    ENDCLASS.
+
+    CLASS zcl_bp_i_travel_m_xxx IMPLEMENTATION.
+    ENDCLASS.
+
+    ```
+
+  3. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to **local types** to replace your code.
 
       ![Enhance behavior implementation](implementation.png)
 
-  2. In your **local types** replace your code with following:
+  4. In your **local types** replace your code with following:
 
     ```ABAP
     *"* use this source file for the definition and implementation of
@@ -339,18 +379,19 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     ENDCLASS.
     ```
 
-  3. Save and activate.
+  5. Save and activate.
 
       ![save and activate](activate.png)
 
-  4. Now switch to your service binding and double click on `TravelProcessor`.
+  6. Now switch to your service binding and double click on `TravelProcessor`.
 
       ![Enhance behavior definition for projection view](projection.png)
 
-  5. Check your result.
+  7. Check your result.
 
+      The behavior implementation is created for travel booking. By using the managed approach, the implementation of create, update and delete is done automatically.
 
-     The accept travel button appears, but this can take a few minutes.
+     The accept travel button appears.
      Create a new travel booking with the booking status O.
      O stands for open. Save your travel booking and you are able to accept your created travel booking.
 
