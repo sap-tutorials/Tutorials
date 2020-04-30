@@ -36,7 +36,7 @@ Before you start, make sure that you've completed the prerequisites.
     npm set @sap:registry=https://npm.sap.com
     ```
 
-2. Install the CDS command line tools by executing the following command:
+2. Install the `cds` development kit globally by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -58,7 +58,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     ![cds commands](cds-commands.png)
 
-    >This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed.
+    >This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed. To know what is the latest version, watch the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
 [DONE]
 
@@ -88,7 +88,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [OPTION BEGIN [Windows]]
 
-1. Open a command line window and run the following command in a folder of your choice:
+1. Open a command line window and run the following command in a folder of your choice to create the project:
 
     ```Shell/Bash
     cds init my-bookshop
@@ -108,7 +108,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This command tries to start a `cds` server process.
 
-    As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
+    >This tries starting a `cds` server, but as there's no content in our project so far it just keeps waiting with a message as shown below:
 
     ```
     [cds] - running nodemon...
@@ -122,7 +122,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [OPTION BEGIN [Mac and Linux]]
 
-1. Open a command line window and run the following command in a folder of your choice:
+1. Open a command line window and run the following command in a folder of your choice to create the project:
 
     ```Shell/Bash
     cds init my-bookshop
@@ -137,7 +137,7 @@ Before you start, make sure that you've completed the prerequisites.
     ```Shell/Bash
       cds watch
     ```
->This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
+    >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
     ```
     [cds] - running nodemon...
@@ -161,7 +161,7 @@ After initializing, you should see the following empty folders:
 - `db/`: for the database level schema model
 - `srv/`: for the service definition layer
 
-1. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`cat-service.cds`**.
+1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`cat-service.cds`**.
 
 2. Open the file and add the following code:
 
@@ -195,7 +195,7 @@ After initializing, you should see the following empty folders:
 
     >Remember to save your files (keyboard shortcut **CTRL+S**).
 
-3. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
+3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
     ```
     [cds] - connect to db { database: ':memory:' }
@@ -207,6 +207,7 @@ After initializing, you should see the following empty folders:
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
+    >This means, `cds watch` detected the changes in `db/schema.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
 
 4. To test your service, go to: <http://localhost:4004>
 
