@@ -24,15 +24,21 @@ In this tutorial mission, setup and use these services to automate and achieve o
 
 To create service instances for business process management services, you need to ensure that you have the right set of entitlements in your trial account.
 
-1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-2. Click **Enter Your Trial Account** to navigate into the trial account
+2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-      !![Open Trial Account](opentrialaccount.png)
+    !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-    >The trial account should contain one `subaccount` and `space`
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.  
 
-3. Click the subaccount.
+    >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
+
+    >Choose **Continue**.
+
+    >![Account setup](02_Foundation20Onboarding_Processing.png)
+
+3. From your global account page, choose the `trial` tile to access your subaccount.
 
     !![Enter Trial Subaccount](entertrialaccount.png)
 
@@ -44,17 +50,8 @@ To create service instances for business process management services, you need t
     |  Portal, Application Runtime, HTML5 Applications | These services are needed to setup and access Process Visibility and Workflow applications from Fiori Launchpad
     |  Connectivity    | This service is needed to create and configure destinations
 
-    If you do not see these entitlements in your subaccount, then do the following:
+    > If you do not see these entitlements in your subaccount then follow this [tutorial](https://developers.sap.com/tutorials/cp-trial-entitlements.html) that describes how to configure entitlements in your account.
 
-    - Click **Configure Entitlements**.
-
-    - Next click **Add Service Plans**.
-
-    - In the popup, search for the entitlements listed below and select the service plan.
-
-    - Once you have selected all the entitlements, click **Add Service Plans** to complete the configuration.
-
-        ![Check Entitlements](cfentitlements.png)
 
 [DONE]
 [ACCORDION-END]

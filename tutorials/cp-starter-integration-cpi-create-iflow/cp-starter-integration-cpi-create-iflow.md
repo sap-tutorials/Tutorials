@@ -5,6 +5,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-integration-for-process-services
+author_name: Vikram Kulkarni
+author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
@@ -18,7 +20,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 [ACCORDION-BEGIN [Step 1: ](Access your workspace)]
 
-Click the **Discover** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
+Click the **Design** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
 
 ![Access workspace](1.1.access-workspace.png)
 

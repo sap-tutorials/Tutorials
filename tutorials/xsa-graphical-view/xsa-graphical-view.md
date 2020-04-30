@@ -2,8 +2,8 @@
 title: Create a Dimension Graphical Calculation View (XS Advanced)
 description: Create a graphical calculation view with a dimension data type.
 primary_tag: products>sap-hana
-author_name: Lucia Subatin
-author_profile: https://github.com/lsubatin
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 auto_validation: true
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
@@ -15,21 +15,21 @@ time: 15
 ### You will learn  
 - How to create a calculation view with a Dimension data type
 - How to perform the basic modelling operations, such as projections and joins
-- This tutorial is also available for [SPS01 as a video](https://youtube.com/watch?v=c520hUfd88E)
+- This tutorial is also available [as a video](https://www.youtube.com/watch?v=HEiyR7clkrQ)
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a new folder with a namespace)]
 
-Create a new file called `models/.hdinamespace` under `src`.
+Create a new file called `models/.hdinamespace` under `/db/src`.
 
 ![Create namespace](hdi.png)
 
-> Although there is no need to use namespaces in general, calculation views work best with namespaces
+> Although there is no need to use namespaces in general, calculation views are consumed from external reporting tools best with namespaces
 
 Use the following code in the file
 
-```text
+```JSON
 {
     "name":    "db.models",
     "subfolder": "ignore"
@@ -164,7 +164,7 @@ Rename the join node to `ProductDesc`.
 
 [ACCORDION-BEGIN [Step 7: ](Finalize the projection)]
 
-Connect the node `ProductDesc` to the projection node. Use the `AutoLayout` feature to align the nodes and the `Auto Map by name` button to create the output.
+Connect the node `ProductDesc` to the projection node. Use the `AutoLayout` feature to align the nodes and the `Auto Map by name` button to create the output.  Save the Calculation View.
 
 ![Final view](final.png)
 

@@ -25,7 +25,6 @@ Run the following command to package the project into one single archive. This a
 npm run build:mta
 ```
 
-
 [DONE]
 [ACCORDION-END]
 

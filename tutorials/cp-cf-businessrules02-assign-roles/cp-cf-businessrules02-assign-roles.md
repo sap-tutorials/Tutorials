@@ -11,6 +11,7 @@ primary_tag: products>sap-cloud-platform-business-rules
 ### You will learn
   - How to create role collections and assign it to a user
 
+
 ---
 Add the roles required to access the **Manage Rules Project** application to the role collection and assign the role collection to your users.
 
@@ -18,27 +19,27 @@ Add the roles required to access the **Manage Rules Project** application to the
 
 1. In [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) cockpit, navigate to your subaccount.
 
-    ![Navigate to subaccount](subaccount.png)
+    ![Navigate to subaccount](subaccount_1.png)
 
 2. In the navigation area, under **Security**, choose **Role Collections**.
 
-    ![Role collections](assign-role01.png)
+    ![Role collections](assign_roles1.png)
 
 3. Choose **New Role Collection**.
 
-    ![New role collections](assign_role02.png)
+    ![New role collections](assign_roles2.png)
 
 4. In the **New Role Collection** window, enter **business-rules** and then choose **Save**.
 
-    ![New role collection1](assign_role03.png)
+    ![New role collection1](assign_roles3.png)
 
 5. Choose **business-rules** role collection to add roles.
 
-    ![Add Roles](assign-role04.png)
+    ![Add Roles](assign_roles4.png)
 
 6. Choose **Add Role**.
 
-    ![Add role](assign_role05.png)
+    ![Add role](assign_roles5.png)
 
 7. In the **Add Role** window, choose the following values:
 
@@ -50,11 +51,11 @@ Add the roles required to access the **Manage Rules Project** application to the
 
     Choose **Save**.
 
-    ![Business Rules roles](assign_role06.png)
+    ![Business Rules roles](assign_roles6.png)
 
 8. Similarly add the role **`RuleRuntimeSuperUser`** to the application identifier **`bpmrulebroker!b2466`** and then choose **Save**.
 
-    ![Business Rules roles1](assign_role06_1.png)
+    ![Business Rules roles1](assign_roles6_1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -65,23 +66,23 @@ Add the roles required to access the **Manage Rules Project** application to the
 
 2. In the navigation area, under **Security**, choose **Trust Configuration** and then choose **SAP ID Service**.
 
-    ![Trust configuration](trust_config01.png)
+    ![Trust configuration](trust_config1.png)
 
 3. Enter your e-mail address in the **User** input field and then choose **Show Assignments**.
 
-    ![Show assignments](trust_config02.png)
+    ![Show assignments](trust_config2.png)
 
     There is no role collection assigned at this point. If a user is not added to the respective identity provider, add the user by selecting **Add User** in the confirmation dialog box.
 
-    ![Add User](trust_config02_1.png)
+    ![Add User](trust_config2_1.png)
 
 4. Choose **Assign Role Collection**.
 
-    ![Assign role collections](trust_config03.png)
+    ![Assign role collections](trust_config3.png)
 
 5. In the **Assign Role Collection** window, choose **`business-rules`** from the dropdown list and then choose **Assign Role Collection**.
 
-    ![Assign role collections](trust_config04.png)
+    ![Assign role collections](trust_config4.png)
 
 
 [VALIDATE_1]

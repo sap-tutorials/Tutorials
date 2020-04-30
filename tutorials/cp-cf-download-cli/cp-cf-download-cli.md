@@ -96,7 +96,6 @@ cf login -a <URL>
 ```
 > Replace the `<URL>` section with the URL you selected from the table.
 
-
 When prompted, enter your username and password.  Once you are logged in, you should see your API endpoint, user, org, and space.
 
 You are now set up to use the Cloud Foundry systems on SAP Cloud Platform.

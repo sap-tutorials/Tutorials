@@ -30,13 +30,13 @@ time: 40
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Configure the NPM registry by executing the following command in a command-line window:
+1. Set the NPM registry for `@sap` packages by executing the following command in a command line window:
 
     ```Shell/Bash
     npm set @sap:registry=https://npm.sap.com
     ```
 
-2. Install the CDS command-line tools by executing the following command:
+2. Install the CDS command line tools by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -44,7 +44,11 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This installs the `cds` command, which we'll use in the next steps.
 
-    >On MacOS/Linux, you may need to use `sudo npm i -g @sap/cds-dk`.
+    >On MacOS/Linux, you may need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
+
+    > If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
+
+    > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 
 3. To verify that the installation was successful, run `cds` without arguments:
 
@@ -84,7 +88,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [OPTION BEGIN [Windows]]
 
-1. Open a command-line window and run the following command in a folder of your choice:
+1. Open a command line window and run the following command in a folder of your choice:
 
     ```Shell/Bash
     cds init my-bookshop
@@ -92,11 +96,11 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File | Open Folder** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** > **Open Folder** and choose the **`my-bookshop`** folder.
 
     ![Open project](open-project.png)
 
-3. Go to **Terminal | New Terminal** to open a command-line window within Visual Studio Code and run the following command:
+3. Go to **Terminal** > **New Terminal** to open a command line window within Visual Studio Code and run the following command:
 
     ```Shell/Bash
       cds watch
@@ -108,17 +112,17 @@ Before you start, make sure that you've completed the prerequisites.
 
     ```
     [cds] - running nodemon...
-    --exec cds run --with-mocks --in-memory?
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
-    No models found at ./db ./srv ./schema.cds ./services.cds.
-    Waiting for some to arrive...
+    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+
+        No models found at db/,srv/,app/,schema,services,.
+        Waiting for some to arrive...
     ```
 
 [OPTION END]
 
 [OPTION BEGIN [Mac and Linux]]
 
-1. Open a command-line window and run the following command in a folder of your choice:
+1. Open a command line window and run the following command in a folder of your choice:
 
     ```Shell/Bash
     cds init my-bookshop
@@ -126,9 +130,9 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This creates a folder `my-bookshop` in the current directory.
 
-2. Open Visual Studio Code, go to **File | Open** and choose the **`my-bookshop`** folder.
+2. Open Visual Studio Code, go to **File** > **Open** and choose the **`my-bookshop`** folder.
 
-3. Go to **View | Command Palette | Terminal: Create New Integrated Terminal** to open a command-line window within Visual Studio Code and run the following command:
+3. Go to **View** > **Command Palette** > **Terminal: Create New Integrated Terminal** to open a command line window within Visual Studio Code and run the following command:
 
     ```Shell/Bash
       cds watch
@@ -137,10 +141,10 @@ Before you start, make sure that you've completed the prerequisites.
 
     ```
     [cds] - running nodemon...
-    --exec cds run --with-mocks --in-memory?
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,edmx,xml
-    No models found at ./db ./srv ./schema.cds ./services.cds.
-    Waiting for some to arrive...
+    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+
+        No models found at db/,srv/,app/,schema,services,.
+        Waiting for some to arrive...
     ```
 
 [OPTION END]
@@ -151,13 +155,13 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 4: ](Define your first service)]
 
-Create a simplistic all-in-one service definition.
+After initializing, you should see the following empty folders:
 
-1. After initializing the app, check whether the **`srv`** and **`dev`** folders are already created, if yes then create the respective file as mentioned in the following step. If not, choose the **New File** icon and type **`srv/cat-service.cds`** to create folder and file at once in Visual Studio Code.
+- `app/`: for UI artifacts
+- `db/`: for the database level schema model
+- `srv/`: for the service definition layer
 
-    ![Add new file](new-file.png)
-
-    >This creates a folder called **`srv`** and a file called **`cat-service.cds`**.
+1. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`cat-service.cds`**.
 
 2. Open the file and add the following code:
 
@@ -189,19 +193,22 @@ Create a simplistic all-in-one service definition.
     }
     ```
 
-3. Save your file.
+    >Remember to save your files (keyboard shortcut **CTRL+S**).
 
-4. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
+3. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
 
     ```
-    [cds] - connect to datasource - sqlite::memory:
+    [cds] - connect to db { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
-    [cds] - serving CatalogService at /catalog
-    [cds] - launched in: 977.671ms
-    [cds] - server listening on http://localhost:4004 ...
+
+    [cds] - serving CatalogService { at: '/catalog' }
+
+    [cds] - launched in: 696.753ms
+    [cds] - server listening on { url: 'http://localhost:4004' }
+    [ terminate with ^C ]
     ```
 
-5. To test your service, go to: <http://localhost:4004>
+4. To test your service, go to: <http://localhost:4004>
 
     >You won't see data, because you haven't added a data model yet. However, click on the available links to see the service is running.
 
@@ -238,9 +245,9 @@ Add service provider logic to return mock data.
     }
     ```
 
-3. Save the file.
+    >Remember to save your files.
 
-4. To test your service, click on these links:
+3. To test your service, click on these links:
 
     - <http://localhost:4004/catalog/Books>
 
@@ -256,13 +263,7 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. Choose **New File** and type **`db/data-model.cds`**.
-
-    ![Add new file](new-file2.png)
-
-    >This creates a folder called **db** and a file called **`data-model.cds`**. Your project structure should look like this:
-
-    ![Project structure](project-structure.png)
+1. In the **`db`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`db/data-model.cds`**.
 
 2. Add the following code to the **`data-model.cds`** file:
 
@@ -291,7 +292,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
-3. Open **`cat-service.cds`** and replace the code with:
+3. Open the file **`cat-service.cds`** and replace the existing code with:
 
     ```CDS
     using my.bookshop as my from '../db/data-model';
@@ -303,7 +304,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
->Remember to save your files.
+    >Remember to save your files.
 
 [DONE]
 
@@ -311,7 +312,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 [ACCORDION-BEGIN [Step 7: ](Add initial data)]
 
-Add plain CSV files under **`db/csv`** to fill your database tables with initial data.
+In Visual Studio Code add plain CSV files under **`db/csv`** to fill your database tables with initial data.
 
 1. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Authors.csv`**. Add the following to the file:
 
@@ -333,6 +334,7 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
     252;Eleonora;150;555
     271;Catweazle;170;22
     ```
+    >Remember to save your files.
 
     >Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
@@ -360,7 +362,7 @@ Add plain CSV files under **`db/csv`** to fill your database tables with initial
 
 Instead of using in-memory, we can also use persistent databases.
 
-1. If `cds watch` is running, press `CTRL+C` to stop the service.
+1. If `cds watch` is running, press **CTRL+C** to stop the service.
 
 2. Install `SQLite3` packages.
 
@@ -387,7 +389,7 @@ Instead of using in-memory, we can also use persistent databases.
 
     >If this doesn't work, check if you have [SQLite](https://sqlite.org/download.html) installed. On Windows, you might need to enter the full path to SQLite, for example: `C:\sqlite\sqlite3 db/my-bookshop.db -cmd .dump`.
 
-5. To stop `SQLite` and go back to your project directory, press `CTRL+C`.
+5. To stop `SQLite` and go back to your project directory, press **CTRL+C**.
 
 6. Run your service.
 
@@ -396,10 +398,12 @@ Instead of using in-memory, we can also use persistent databases.
     ```
 
     ```
-    [cds] - connect to datasource - sqlite:db/my-bookshop.db
-    [cds] - serving CatalogService at /catalog - with impl: srv/cat-service.js
-    [cds] - launched in: 4356.854ms
-    [cds] - server listening on (http://localhost:4004) ...
+    [cds] - connect to db { database: 'db/my-bookshop.db' }
+    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+
+    [cds] - launched in: 610.318ms
+    [cds] - server listening on { url: 'http://localhost:4004' }
+    [ terminate with ^C ]
     ```
 
 [DONE]
@@ -421,7 +425,7 @@ We can now see the generic handlers shipped with CAP in action.
 
     ![Postman import](postman-import.png)
 
-4. Choose **Import from File** in the wizard.  Click on **Choose Files** and select the file that you saved before.
+4. Choose **Import File** in the wizard.  Click on **Choose Files** and select the file that you saved before.
 
     ![Postman import from file](postman-import-from-file.png)
 
@@ -429,7 +433,7 @@ We can now see the generic handlers shipped with CAP in action.
 
     ![Test the request](postman-test-request.png)
 
-    > With our current service implementation, we can get only POST orders. Any GET or DELETE to an order fails, since we've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
+    > With our current service implementation, we can get only `POST` orders. Any `GET` or `DELETE` to an order fails, since we've specified the `Orders` entity to be `@insertonly` in `srv/cat-service.cds`.
 
 [VALIDATE_1]
 
@@ -464,6 +468,7 @@ We can now see the generic handlers shipped with CAP in action.
 
     }
     ```
+    >Remember to save your files.
 
     >Whenever orders are created, this code is triggered. It updates the book stock by the given amount, unless there aren't enough books left.
 
