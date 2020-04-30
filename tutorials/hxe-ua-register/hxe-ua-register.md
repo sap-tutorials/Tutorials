@@ -1,5 +1,5 @@
 ---
-title: Register
+title: Register for SAP HANA, express edition
 description: Register your copy of SAP HANA, express edition to access the download manager.
 author_name: John Currie
 author_profile: https://github.com/JCurrie27
@@ -39,8 +39,8 @@ On the registration form, enter all required information and click the *Submit* 
 
 > Note:
 > If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
-> 
-> 
+>
+>
 
 You will receive an email indicating successful registration.
 
@@ -58,8 +58,8 @@ If you have a Mac, or another type of machine, click *Platform-independent DM* f
 
 > Note:
 > You must click the download manager links on the Registration Success page. If you attempt to copy a download manager URL to your browser, the download will fail with an error.
-> 
-> 
+>
+>
 
 [DONE]
 
@@ -73,11 +73,9 @@ Save the download manager file to your laptop and open it. If your system displa
 
 > Note:
 > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator for your proxy host and proxy port information.
-> 
-> 
+>
+>
 
 [DONE]
 
 [ACCORDION-END]
-
-
