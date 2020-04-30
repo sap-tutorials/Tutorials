@@ -223,19 +223,7 @@ We're going to display a list with three cells containing the navigation possibi
 
 In order to let the user have interactions with the list items we have to write some code.
 
-Before we go ahead and implement the interaction with these cells we make sure to have a default selection being made when starting the application.
-
-1. Implement a private helper method to make a decision which view controller to display as detail view controller.
-
-    Add the following class property to the **`SidebarTableViewController`**:
-
-    ```Swift
-    // Store the selected index path
-    private var selectedCellIndexPath: IndexPath?
-
-    ```
-
-2. In the `SidebarTableViewController` add the following method below the data source methods. Read the inline comments carefully:
+1. In the `SidebarTableViewController` add the following method below the data source methods. Read the inline comments carefully:
 
     ```Swift
     // CollectionType selection helper
@@ -243,7 +231,6 @@ Before we go ahead and implement the interaction with these cells we make sure t
         // Load the EntityType specific ViewController from the specific storyboard"
         var viewController: UIViewController!
 
-        self.selectedCellIndexPath = indexPath
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
         // Decide which View Controller to instantiate.
@@ -268,7 +255,7 @@ Before we go ahead and implement the interaction with these cells we make sure t
 
     ```
 
-3. We have to make sure that the `viewSelected(at:)` method gets called as soon as the user clicks on a list item. Add the following table view delegate method directly below the data source methods:
+2. We have to make sure that the `viewSelected(at:)` method gets called as soon as the user clicks on a list item. Add the following table view delegate method directly below the data source methods:
 
     ```Swift
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -279,13 +266,17 @@ Before we go ahead and implement the interaction with these cells we make sure t
 
     This will make sure that the correct index path gets passed into the `viewSelected(at:)` method.
 
-4. Last step is to set those above implemented storyboard identifiers for the respective view controllers is necessary to instantiate the screens.
+3. Last step is to set those above implemented storyboard identifiers for the respective view controllers is necessary to instantiate the screens.
 
     Open the **`Main.storyboard`** and select the **Overview Table View Controller**. Open the **Identity Inspector** and set the **Identity** to `OverviewTableViewController`.
 
     !![Menu Bar](fiori-ios-scpms-starter-mission-06-20.png)
 
-5. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
+4. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
+
+5. Important is that you set an identity for the `original` Navigation Controller. In the `Main.storyboard`, click on the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
+
+    !![Storyboard ID](fiori-ios-scpms-starter-mission-06-21.png)
 
     And that's it, you have a working split view controller with a sidebar and working navigation.
 
@@ -323,7 +314,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
     import UIKit
     ```
 
-3. The override `buildMenu(with:)` allows us to manipulate and create menu items for the menu bar. Implement the `buildMenu(with:)` method and read the inline comments carefully:
+3. The override `buildMenu(with:)` allows us to manipulate and create menu items for the menu bar. Implement the `buildMenu(with:)` method inside an extension and read the inline comments carefully:
 
     ```Swift
     extension AppDelegate {
@@ -345,7 +336,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
                                         image: nil,
                                         identifier: UIMenu.Identifier("com.sap.example.MySampleAppCatalyst.Synchronize"),
                                         options: .displayInline,
-                                        children: [reloadDataCommand])
+                                        children: [reloadMenuItem])
 
             // Tell the UIMenuBuilder where to insert the menu.
             builder.insertChild(reloadDataMenu, atEndOfMenu: .file)
@@ -353,7 +344,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
     }
     ```
 
-4. Save the file and open the `OverviewTableViewController.swift` class and change the `loadData()` method declaration to:
+4. Save the file and open the `OverviewTableViewController.swift` class and change the `loadData()` method declaration to internal and add the `@objc` attribute. The `@objc` allows to make method callable for the `Objective-C` runtime:
 
     ```Swift
     @objc func loadData() { ... }
