@@ -44,13 +44,13 @@ A full list of all supported CSS Variables can be found [here](https://github.co
 
 [ACCORDION-BEGIN [Step: ](Style your own component)]
 
-If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components, you can import the `ThemingParameters` that contain the various CSS variables used in our theming. If you want to style your components with the [`react-jss`](https://cssinjs.org/react-jss/?v=v10.1.1) syntax, you can use the `createComponentStyles` hook.
+If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components, you can import the `ThemingParameters` that contain the various CSS variables used in our theming. If you want to style your components with the [`react-jss`](https://cssinjs.org/react-jss/?v=v10.1.1) syntax, you can use the custom `jss` styling hook `createUseStyles`.
 
 1. Create a custom component `MyCustomElement.jsx` under `./src` with following content:
 
     ```JavaScript / JSX
     import React from "react";
-    import { createComponentStyles } from "@ui5/webcomponents-react-base/lib/createComponentStyles";
+    import { createUseStyles } from 'react-jss';
     import { ThemingParameters } from "@ui5/webcomponents-react-base/lib/ThemingParameters";
 
     export const MyCustomElement = () => {
@@ -71,11 +71,11 @@ If you want to add a custom component to your app, but still want to use the sty
 
     The `ThemingParameters` contain all available styling parameters. With this it is possible to style custom components with the standardized styles of the UI5 Web Components.
 
-3. Add styling with `react-jss` and the `createComponentStyles` hook
+3. Add styling with `react-jss` and the `createUseStyles` hook
 
     ```JavaScript / JSX
     import React from "react";
-    import { createComponentStyles } from "@ui5/webcomponents-react-base/lib/createComponentStyles";
+    import { createUseStyles } from 'react-jss';
     import { ThemingParameters } from "@ui5/webcomponents-react-base/lib/ThemingParameters";
 
     const styles = {
@@ -89,7 +89,7 @@ If you want to add a custom component to your app, but still want to use the sty
       }
     };
 
-    const useStyles = createComponentStyles(styles);
+    const useStyles = createUseStyles(styles);
 
     export const MyCustomElement = () => {
       const classes = useStyles();
@@ -103,8 +103,6 @@ If you want to add a custom component to your app, but still want to use the sty
       );
     };
     ```
-
-    `createComponentStyles` leverages the jss styling function `createUseStyles` and therefore enables you to use the JSS syntax.
 
 4. Import the custom component and add it to your `Home` component.
 
