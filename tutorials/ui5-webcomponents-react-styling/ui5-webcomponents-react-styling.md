@@ -1,5 +1,5 @@
 ---
-title: Add Custom Styles and Components for UI5 Web Components
+title: Add Custom Styles and Components for UI5 Web Components for React
 description: Add custom styles and custom components to your application using UI5 Web Components for React.
 auto_validation: true
 time: 10
@@ -26,52 +26,68 @@ Open the `index.html` file inside of your `public` folder and add the following 
 ```HTML
   <style>
     * {
-      --sapUiTileTitleTextColor: limegreen;
+      --sapTile_TitleTextColor: limegreen;
     }
   </style>
 ```
 
-The `sapUiTileTitleTextColor` CSS Variable changes the style of the `Card` titles and the `*` selector appends the style to all elements.
+The `sapTile_TitleTextColor` CSS Variable changes the style of the `Card` titles and the `*` selector appends the style to all elements.
 
 ![Custom Style](02_customStyle.png)
 
 As a consequence, all HTML Elements in the subtree where this style was applied are now displaying their texts in `limegreen` instead of `#6a6d70` which would be the default value for Fiori 3. You can change CSS Variables on any level - in the head, or on every single element by using either CSS classes or element style.
 
-A full list of all supported CSS Variables can be found [here](https://github.com/SAP/ui5-webcomponents-react/blob/master/packages/base/src/styling/sap_fiori_3.ts) or in the [SAPUI5 Theming Parameters Toolbox](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/theming/webapp/index.html).
+A full list of all supported CSS Variables can be found [here](https://github.com/SAP/ui5-webcomponents-react/blob/master/packages/base/src/styling/sap_fiori_3.ts).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step: ](Style your own component)]
 
-If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components. You can hook into the theming by using [react-jss](https://cssinjs.org/react-jss/?v=v10.0.0).
+If you want to add a custom component to your app, but still want to use the styling approach of the UI5 Web Components, you can import the `ThemingParameters` that contain the various CSS variables used in our theming. If you want to style your components with the [`react-jss`](https://cssinjs.org/react-jss/?v=v10.1.1) syntax, you can use the custom `jss` styling hook `createUseStyles`.
 
-1. Install `react-jss`.
-
-    ```Shell
-    npm install react-jss
-    ```
-
-2. Create a custom component `MyCustomElement.jsx` under `./src` with following content:
+1. Create a custom component `MyCustomElement.jsx` under `./src` with following content:
 
     ```JavaScript / JSX
     import React from "react";
-    import { createUseStyles } from "react-jss";
+    import { createUseStyles } from 'react-jss';
+    import { ThemingParameters } from "@ui5/webcomponents-react-base/lib/ThemingParameters";
 
-    const styles = ({ parameters }) => ({
+    export const MyCustomElement = () => {
+      return (
+        <div >
+          <span>My custom Text Element</span>
+        </div>
+      );
+    };
+    ```
+2. Add inline-styles with the `ThemingParameters` to the `<span>`
+
+    ```JavaScript / JSX
+    <span style={{ color: ThemingParameters.sapNegativeColor, fontSize: ThemingParameters.sapFontHeader1Size }}>
+      My custom Text Element
+    </span>
+    ```
+
+    The `ThemingParameters` contain all available styling parameters. With this it is possible to style custom components with the standardized styles of the UI5 Web Components.
+
+3. Add styling with `react-jss` and the `createUseStyles` hook
+
+    ```JavaScript / JSX
+    import React from "react";
+    import { createUseStyles } from 'react-jss';
+    import { ThemingParameters } from "@ui5/webcomponents-react-base/lib/ThemingParameters";
+
+    const styles = {
       container: {
-        backgroundColor: parameters.sapUiGlobalBackgroundColor,
-        fontFamily: parameters.sapUiFontFamily,
+        backgroundColor: ThemingParameters.sapBackgroundColor,
+        fontFamily: ThemingParameters.sapFontFamily,
         height: "50px",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
-      },
-      text: {
-        color: parameters.sapUiNegativeText,
-        fontSize: parameters.sapUiFontHeader1Size
+        alignItems: "center",
       }
-    });
+    };
 
     const useStyles = createUseStyles(styles);
 
@@ -80,22 +96,15 @@ If you want to add a custom component to your app, but still want to use the sty
 
       return (
         <div className={classes.container}>
-          <span className={classes.text}>My custom Text Element</span>
+          <span style={{ color: ThemingParameters.sapNegativeColor, fontSize: ThemingParameters.sapFontHeader1Size }}>
+            My custom Text Element
+          </span>
         </div>
       );
     };
     ```
-    When using the jss styling functions, the function will be called with an object with three properties:
 
-    ```JavaScript / JSX
-    {
-     theme: 'the current theme as string, e.g. "sap_fiori_3"',
-     parameters: "object with all styling parameters, please check the CSS Variables link.",
-     contentDensity: 'Current Content Density mode, either "Compact" or "Cozy".'
-    }
-    ```
-
-3. Import the custom component and add it to your `Home` component.
+4. Import the custom component and add it to your `Home` component.
 
     ```JavaScript / JSX
     import { MyCustomElement } from "./MyCustomElement";

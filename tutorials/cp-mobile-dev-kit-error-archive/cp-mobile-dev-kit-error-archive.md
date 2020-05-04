@@ -48,7 +48,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
 1. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-2. Right click on Workspace folder and select **New** | **MDK CRUD Project**.
+2. Right click Workspace folder and select **New** | **MDK CRUD Project**.
 
     ![MDK](img_001.1.png)
 
@@ -78,7 +78,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
     >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
-    ![MDK](img_004.1.png)
+    ![MDK](img_004.png)
 
     Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
 
@@ -111,7 +111,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 2. In SAP Web IDE project, right-click the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
 
-    ![MDK](img_007.gif)
+    ![MDK](img_1.png)
 
     >You can find more details about [section pages](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
@@ -194,7 +194,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 2. In SAP Web IDE project, right-click the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
 
-    ![MDK](img_007.gif)
+    ![MDK](img_1.png)
 
 3. Enter the **Page Name** as `ErrorDetails` and click **Next** and then **Finish** on the confirmation step.
 
@@ -208,11 +208,11 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
 5. Next, write a business logic to get the **affected entity object** and this object value will be shown in error details page.
 
-6. Right click on the **Rules** folder | **New** | **File**.
+    Right click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.0.png)
 
-7. Enter the file name `GetAffectedEntityHeaderCaption.js`, click **OK**.
+6. Enter the file name `GetAffectedEntityHeaderCaption.js`, click **OK**.
 
     Copy and paste the following code.
 
@@ -235,19 +235,19 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     >`AffectedEntity`: A navigation property that allows applications to navigate from an `ErrorArchive` entity to an entity in the offline store that is affected by the error.
 
-8. Save your changes to the `GetAffectedEntityHeaderCaption.js` file.
+7. Save your changes to the `GetAffectedEntityHeaderCaption.js` file.
 
-9. Next, add an **Object Table** control in `ErrorDetails.page` to display some information like affected entity and id for affected record.
+8. Next, add an **Object Table** control in `ErrorDetails.page` to display some information like affected entity and id for affected record.
 
     Open `ErrorDetails.page`, in the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Object Table** control onto the page area.
 
     ![MDK](img_007.12.png)
 
-10. In the **Properties** | **Target** pane, choose **String Target** from the dropdown and provide `#Property:AffectedEntity` value.
+9. In the **Properties** | **Target** pane, choose **String Target** from the dropdown and provide `#Property:AffectedEntity` value.
 
     ![MDK](img_007.13.png)
 
-11. In **Appearance** section, provide below properties:
+10. In **Appearance** section, provide below properties:
 
     | Property | Value |
     |----|----|
@@ -266,7 +266,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     >`@odata.id`: an annotation that contains the entity-id. More details can be found [here](http://docs.oasis-open.org/odata/odata-json-format/v4.0/cs01/odata-json-format-v4.0-cs01.html#_Toc36546468).
 
-12. In **Behavior** section, update below properties:
+11. In **Behavior** section, update below properties:
 
     | Property | Value |
     |----|----|
@@ -274,7 +274,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     ![MDK](img_007.7.png)
 
-13. Next, add a **Header** section bar to display affected entity information.
+12. Next, add a **Header** section bar to display affected entity information.
 
     In the Layout Editor, expand the **Controls** | **Section Bar** section, drag and drop the **Header** control onto the **Object Table** control.
 
@@ -284,7 +284,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     ![MDK](img_007.16.gif)
 
-14. Next, you can also display additional information like detailed error message, request body, request URL etc.
+13. Next, you can also display additional information like detailed error message, request body, request URL etc.
 
     In the Layout Editor, expand the **Controls** | **Container** section, drag and drop the **Static Key Value** control on the page area.
 
@@ -296,7 +296,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     >You can limit the number of columns to be displayed.
 
-15. Next, you will add items to the container.
+14. Next, you will add items to the container.
 
     In the Layout Editor, expand the **Controls** | **Container Item** section, drag and drop the **Key Value Item** control in the **Static Key Value** control.
 
@@ -339,18 +339,18 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     >>More details on _`ErrorArchive` Entity Properties_ is available in [help documentation](https://help.sap.com/viewer/fc1a59c210d848babfb3f758a6f55cb1/Latest/en-US/ff35db37335f4bb8a1e188b997a2b111.html).
 
-16. Save your changes to the **Error Details** page.
+15. Save your changes to the **Error Details** page.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Navigate from Error list page to Error details page)]
 
-When you click on any record in **Error List** page, you want to navigate to **Error Details** page to view more information about this error.
+When you click any record in **Error List** page, you want to navigate to **Error Details** page to view more information about this error.
 
 1. Create a **Navigation Action**.
 
-    Right click on the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
+    Right click the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
 
     ![MDK](img_007.25.png)
 
@@ -367,7 +367,7 @@ When you click on any record in **Error List** page, you want to navigate to **E
 
     Open **Error List** page | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-    Double click on the `ShowErrorDetails.action` action and click **OK** to set it as the `OnPress` Action.
+    Double click the `ShowErrorDetails.action` action and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_007.25.2.gif)
 
@@ -378,13 +378,13 @@ When you click on any record in **Error List** page, you want to navigate to **E
 
 [ACCORDION-BEGIN [Step 5: ](Navigate from Error details page to affected record)]
 
-When you click on an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
+When you click an **affected entity** in **Error details** page, you want to bring the affected record so that you can fix business failure by modifying previous changes right there.
 
 You can write a logic in JavaScript to handle the `affectedEntity` and then decide which action to call depends on which `@odata.id` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message.
 
 1. Create a **Message Action** to display this toast message.
 
-    Right click on the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
+    Right click the **Actions** folder | **New MDK Action** | **Message Action** | **Next**.
 
     ![MDK](img_007.22.png)
 
@@ -404,7 +404,7 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
 2. Write a business logic to decide which action to call depends on which `@odata.type` is the `affectedEntity` and if there is no handler for an affected entity, app will display a toast message saying this affected entity doesn't have a handle yet.
 
-3. Right click on the **Rules** folder | **New** | **File**.
+3. Right click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.0.png)
 
@@ -463,7 +463,7 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
     Open **Error Details** page | Select **Object Table** control | **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-    Double click on the `DecideWhichEditPage.js` action and click **OK** to set it as the `OnPress` Action.
+    Double click the `DecideWhichEditPage.js` action and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_007.24.gif)
 
@@ -474,11 +474,11 @@ You can write a logic in JavaScript to handle the `affectedEntity` and then deci
 
 [ACCORDION-BEGIN [Step 6: ](Add a button on main page to view Error list)]
 
-Now that the **Error List** page is created, you will add a button on the **Main** page that navigates to **Error List** page.
+Now, that the **Error List** page is created, you will add a button on the **Main** page that navigates to **Error List** page.
 
 1. Create a **Navigation Action**.
 
-    Right click on the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
+    Right click the Actions folder | **New MDK Action** | **Navigation Action** | **Next**.
 
     ![MDK](img_007.25.png)
 
@@ -503,7 +503,7 @@ Now that the **Error List** page is created, you will add a button on the **Main
 
       Go to **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-      Double click on the `ShowErrorList.action` action and click **OK** to set it as the `OnPress` Action.
+      Double click the `ShowErrorList.action` action and click **OK** to set it as the `OnPress` Action.
 
       ![MDK](img_007.29.gif)
 
@@ -516,7 +516,7 @@ Now that the **Error List** page is created, you will add a button on the **Main
 
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right-click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_009.png)
 
@@ -547,38 +547,36 @@ So far, you have learnt how to build an MDK application in the SAP Web IDE edito
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-1. Right click on the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right click the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-    ![MDK](img_009.png)
+![MDK](img_009.1.png)
 
-2. Let the default configuration as it is and click **Next**.
+>**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
-    ![MDK](img_010.png)
-
-3. Click on the **QR-code icon** to populate the QR-code for app on-boarding.
-
-    ![MDK](img_012.1.png)
+![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
 On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
 
-1. Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
-
-2. Tap **Open browser**. It will open SAP Mobile Services Client app.
-
-    ![MDK](img_013.1.jpg)
-
-3. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
     ![MDK](img_016.1.jpg)
+
+2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+
+    ![MDK](img_013.2.png)
+
+3. Once scan is succeeded, tap **CONTINUE**.
+
+    ![MDK](img_013.3.png)
 
 4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
@@ -656,33 +654,33 @@ On Android, the camera app does not support scanning the QR-code. As alternative
 
     ![MDK](img_024.3.png)
 
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. On iPhone, open your camera app and start scanning the QR code, as shown below.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
 
     ![MDK](img_013.png)
 
-2. Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
+2. Once scan is succeeded, tap **Continue**.
 
-3. Tap **Start** to connect MDK client to SAP Cloud Platform.
+    ![MDK](img_013.1.png)
 
-    ![MDK](img_016.png)
-
-4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_017.17.png)
 
-5. Tap **Agree** on `End User License Agreement`.
+4. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img_018.png)
 
-6. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img_019.png)
 
-7. Confirm the passcode and tap **Done**.
+6. Confirm the passcode and tap **Done**.
 
     ![MDK](img_020.png)
 
@@ -690,7 +688,7 @@ On Android, the camera app does not support scanning the QR-code. As alternative
 
     ![MDK](img_021.png)
 
-8. Tap **OK**.
+7. Tap **OK**.
 
     ![MDK](img_022.png)
 
@@ -698,7 +696,7 @@ On Android, the camera app does not support scanning the QR-code. As alternative
 
     ![MDK](img_023.png)
 
-9. You will modify a `PurchaseOrderHeaders` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
+8. You will modify a `PurchaseOrderHeaders` record, save it locally, sync it to the backend and if backend doesn't accept this change due to some business logic failure, this record will appear in **Error Archive** list.
 
     Navigate to `PurchaseOrderHeaders` list, tap either one of the record.
 
@@ -716,11 +714,11 @@ On Android, the camera app does not support scanning the QR-code. As alternative
 
     You will see **Entity Updated** toast message. You can always see this updated record reflecting in `PurchaseOrderHeaders` list which means offline store has accepted this change.
 
-10. Navigate to `Main.page`, click **Sync** to upload local changes from device to the backend and to download the latest changes from backend to the device.
+9. Navigate to `Main.page`, click **Sync** to upload local changes from device to the backend and to download the latest changes from backend to the device.
 
     ![MDK](img_028.png)
 
-11. Once you see Sync success message, navigate to **Error Archive** list.
+10. Once you see Sync success message, navigate to **Error Archive** list.
 
     ![MDK](img_028.1.png)
 
@@ -738,15 +736,17 @@ On Android, the camera app does not support scanning the QR-code. As alternative
 
     In this tutorial, we have added a business logic to find out which is affected entity and how to navigate to respective record to let users to modify this record with correct values. Once done, user can again **Sync** it with backend.
 
-12. Tap **Edit Affected Entity** and modify record with correct values.
+11. Tap **Edit Affected Entity** and modify record with correct values.
 
     ![MDK](img_031.png)
 
     ![MDK](img_032.png)
 
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
 
-Congratulations, you have successfully setup your app to handle Error Archive.
+Congratulations, you have successfully setup your app to handle Error Archive and you are now all set to [Add Styling to an MDK App](cp-mobile-dev-kit-style).
 
 [VALIDATE_1]
 [ACCORDION-END]
