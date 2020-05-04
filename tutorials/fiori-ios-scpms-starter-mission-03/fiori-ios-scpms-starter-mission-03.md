@@ -263,6 +263,7 @@ The Product List is a Table View Controller which means the structure is similar
     }
 
     private func loadImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
             sapURLSession.dataTask(with: url, completionHandler: { data, _, error in
 

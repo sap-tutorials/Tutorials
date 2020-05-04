@@ -1,5 +1,5 @@
 ---
-title: Add Routing to a UI5 Web Components Project
+title: Add Routing to a UI5 Web Components for React Project
 description: Use routes to navigate between different pages using UI5 Web Components for React.
 auto_validation: true
 time: 15
@@ -56,7 +56,7 @@ export function Detail() {
 
     ```JavaScript / JSX
     <HashRouter>
-      <ThemeProvider withToastContainer>
+      <ThemeProvider>
         <MyApp />
       </ThemeProvider>
     </HashRouter>
@@ -96,7 +96,7 @@ export function Detail() {
         <div>
           <ShellBar
             logo={"reactLogo.png"}
-            profile={"profilePictureExample.png"}
+            profile={<Avatar image="profilePictureExample.png" />}
             primaryTitle={"My App"}
           >
             <ShellBarItem icon="add" text="Add" />
@@ -218,7 +218,7 @@ export function Detail() {
             heading="Stock Price"
             headerInteractive
             onHeaderClick={handleHeaderClick}
-            subtitle={`Click here to switch to ${switchToChart}`}
+            subheading={`Click here to switch to ${switchToChart}`}
             style={{ width: "300px", ...spacing.sapUiContentPadding }}
           >
             <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
@@ -230,7 +230,7 @@ export function Detail() {
           </Card>
           <Card
             heading="Progress"
-            subtitle="List"
+            subheading="List"
             style={{ width: "300px", ...spacing.sapUiContentPadding }}
             avatar={<Icon name="list" />}
           >
@@ -308,7 +308,7 @@ export function Detail() {
         <>
             <ShellBar
                 logo={"reactLogo.png"}
-                profile={"profilePictureExample.png"}
+                profile={<Avatar image="profilePictureExample.png" />}
                 primaryTitle={"My App"}>
                 <ShellBarItem src="sap-icon://add" text="Add" />
             </ShellBar>
@@ -340,7 +340,7 @@ Except for changing the URL of the App the user doesn't have options to navigate
     ```JavaScript / JSX
     <Card
       heading="Progress"
-      subtitle="List"
+      subheading="List"
       style={{ width: "300px", ...spacing.sapUiContentPadding }}
       headerInteractive
       onHeaderClick={handleProgressHeaderClick} >
@@ -377,7 +377,7 @@ Except for changing the URL of the App the user doesn't have options to navigate
     <ShellBar
       logo={"reactLogo.png"}
       onLogoClick={handleLogoClick}
-      profile={"profilePictureExample.png"}
+      profile={<Avatar image="profilePictureExample.png" />}
       primaryTitle={"My App"}
     >
     ```
@@ -409,7 +409,7 @@ export function MyApp() {
       <ShellBar
         logo={"reactLogo.png"}
         onLogoClick={handleLogoClick}
-        profile={"profilePictureExample.png"}
+        profile={<Avatar image="profilePictureExample.png" />}
         primaryTitle={"My App"}
       >
         <ShellBarItem icon="add" text="Add" />
@@ -541,7 +541,7 @@ export function Home() {
         heading="Stock Price"
         headerInteractive
         onHeaderClick={handleHeaderClick}
-        subtitle={`Click here to switch to ${switchToChart}`}
+        subheading={`Click here to switch to ${switchToChart}`}
         style={{ width: "300px", ...spacing.sapUiContentPadding }}
       >
         <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
@@ -553,7 +553,7 @@ export function Home() {
       </Card>
       <Card
         heading="Progress"
-        subtitle="List"
+        subheading="List"
         style={{ width: "300px", ...spacing.sapUiContentPadding }}
         headerInteractive
         onHeaderClick={handleProgressHeaderClick}

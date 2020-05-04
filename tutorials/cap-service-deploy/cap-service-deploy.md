@@ -24,22 +24,23 @@ time: 20
 
 It's now time to switch to SAP HANA as a database.
 
-1. Add the following configuration in the **`package.json`** file of your `my-bookshop` project (overwrite any existing `cds` configuration):
+1. In Visual Studio Code add the following configuration in the **`package.json`** file of your `my-bookshop` project (overwrite any existing `cds` configuration):
 
     ```JSON
     "cds": {
         "requires": {
           "db": {
-            "kind": "hana"
+            "kind": "sql"
           }
         }
       }
     ```
-
-2. Add the SAP HANA driver as a dependency to your project:
+   > `kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases. In the steps below you will learn how to do this.
+      
+2. In the terminal add the SAP HANA driver as a dependency to your project:
 
     ```Shell/Bash
-    npm add hana
+    npm add @sap/hana-client --save
     ```
 
 [DONE]
@@ -62,7 +63,7 @@ The Cloud Foundry API endpoint is required so that you can log on to your SAP Cl
 
     !![CF API endpoint value](api-endpoint.png)
 
-4. Authenticate using your login credentials using the following command in the terminal:
+4. Open a terminal. Authenticate using your login credentials using the following command:
 
 ```Shell/Bash
 cf login
@@ -93,7 +94,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application:
 
     ```Shell/Bash
-    cds build
+    SET CDS_ENV production && cds build
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
@@ -131,7 +132,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application:
 
     ```Shell/Bash
-    cds build && cf push -f gen/db && cf push -f gen/srv --random-route
+    CDS_ENV=production cds build && cf push -f gen/db && cf push -f gen/srv --random-route
     ```
 
     >This process takes some minutes.

@@ -15,6 +15,8 @@ primary_tag: products>sap-cloud-platform-business-rules
   - How to use Business Rules APIs
   - How to test Business Rules project
 
+Generally, after a rule service is deployed to a custom application, the rule service should be invoked to implement the decision logic. In this tutorial, we will simulate the rule service invocation by invoking the rule service from SAP API Business Hub.
+
 SAP Cloud Platform Business Rules REST APIs are available on SAP API Business Hub which lets you execute rules from custom applications and external REST Clients. Since these APIs are based on OAuth 2.0, you need the service key parameters to use the APIs.
 
 Note the following parameters from the service keys of your business rules instance:
