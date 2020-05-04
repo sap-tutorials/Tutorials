@@ -31,7 +31,6 @@ In this tutorial, we will create the decision logic required to assign equipment
     |  :------------- | :-------------
     |  Name           | **`DetermineEquipmentRules`**
     |  Type          | **`Decision Table`**
-    |  Mode    | **`Advanced`**
 
     Then choose **Create**.
 
