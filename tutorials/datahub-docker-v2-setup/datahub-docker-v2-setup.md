@@ -131,7 +131,7 @@ Open a web browser and test the following URLs (replace `localhost` with the IP 
 * `http://localhost:9225` (SAP Vora Tools)
 * `http://localhost:50070` (Apache Hadoop User Interface)
 
- Where necessary enter **Username** and **Password** which you have set while building the Docker image.
+ Where necessary enter **Username** and **Password** which you have set while strating the Container using the Docker build image (VORA_USERNAME and VORA_PASSWORD environment variables)
 
 If all URLs are working, you can assume that you have successfully set up SAP Data Hub, developer edition on your local computer.
 
