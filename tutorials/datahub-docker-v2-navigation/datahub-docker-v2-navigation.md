@@ -24,7 +24,7 @@ To access the different user interfaces running inside the Docker container use 
 * `http://localhost:9225` (SAP Vora Tools)
 * `http://localhost:50070` (Apache Hadoop User Interface)
 
-Where necessary enter **Username** and **Password** which you have set while running the Docker image.
+Where necessary enter **Username** and **Password** which you have set while running the Docker image (VORA_USERNAME and VORA_PASSWORD enviroment variables)
 
 [DONE]
 
@@ -50,13 +50,13 @@ If you like to copy files from your local computer to the Docker container (or v
 Create a text file `test.txt` on your local computer. You can use any text editor for this. Then open a terminal window and navigate to the directory where you have saved `test.txt`.  Enter the following command to copy `test.txt` from your local computer to the `/tmp` directory inside the container.
 
 ```sh
-docker cp test.txt datahub:/tmp/test.txt
+docker cp test.txt hdfs:/tmp/test.txt
 ```
 
 Now delete `test.txt` from your local computer. Afterwards copy the file from the `/tmp` directory inside the container back to your local computer by entering the following command.
 
 ```sh
-docker cp datahub:/tmp/test.txt test.txt
+docker cp hdfs:/tmp/test.txt test.txt
 ```
 
 [DONE]
