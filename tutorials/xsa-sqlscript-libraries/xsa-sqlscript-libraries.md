@@ -19,6 +19,7 @@ In this tutorial, you will learn how to create SQLScript User Defined Libraries.
 
 ### Time to Complete
 **15 Min**.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create Libraries Folder)]
