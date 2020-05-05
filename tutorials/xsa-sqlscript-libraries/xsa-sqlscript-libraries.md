@@ -24,9 +24,11 @@ In this tutorial, you will learn how to create SQLScript User Defined Libraries.
 
 [ACCORDION-BEGIN [Step 1: ](Create Libraries Folder)]
 Return to the SAP Web IDE for SAP HANA and right click on the `src` folder and choose **New**, then **Folder**.
+
 ![editor](1.png)
 
 Enter the name of the folder as **libraries** and click **OK**.
+
 ![dialog](2.png)
 
 [DONE]
@@ -34,9 +36,11 @@ Enter the name of the folder as **libraries** and click **OK**.
 
 [ACCORDION-BEGIN [Step 2: ](Create New User Defined Library)]
 Right click on the libraries folder and choose **New**, then **Database Artifact**.
+
 ![editor](3.png)
 
 Enter the name of the file as `masterdata`, set the artifact type as `.hdblibrary` and click **OK**.
+
 ![dialog](4.png)
 
 [DONE]
@@ -185,6 +189,7 @@ END;
 
 [ACCORDION-BEGIN [Step 9: ](Create a Procedure)]
 Use what you have learned and create a new procedure in the procedures folder called `get_master_data`. Because our library procedures actually update the library variable, we need our consuming procedure to be Read/Write as well, so make sure to remove the **READS SQL DATA** from this procedure as shown.
+
 ![save](7.png)
 
 [DONE]
