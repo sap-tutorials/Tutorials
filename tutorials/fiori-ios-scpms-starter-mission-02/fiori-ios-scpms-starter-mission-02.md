@@ -117,7 +117,7 @@ In order to display the newly added overview screen right after the onboarding p
         if let savedViewController = self._savedApplicationRootViewController {
             appViewController = savedViewController
         } else {
-            // This will retrieve an instance of the Main storyboard and instantiate the intial view controller which is the Navigation Controller. Force cast to UINavigationController and assign the instance as appViewController.
+            // This will retrieve an instance of the Main storyboard and instantiate the initial view controller which is the Navigation Controller. Force cast to UINavigationController and assign the instance as appViewController.
 
             let overviewTVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
             appViewController = overviewTVC
@@ -455,8 +455,6 @@ Thanks to the generated data service and proxy classes, we don't have to impleme
 
 4. Now let's bring both of those methods together by implementing a `loadData()` method right above the `fetchCustomers(_:)` method.
 
-    > The code won't compile yet as you haven't conformed to the **`SAPFioriLoadingIndicator`** protocol yet.
-
     ```Swift
 
     /**
@@ -481,6 +479,8 @@ Thanks to the generated data service and proxy classes, we don't have to impleme
     }
 
     ```
+
+    > The code won't compile yet as you haven't conformed to the **`SAPFioriLoadingIndicator`** protocol yet.
 
 5. Let the `OverviewTableViewController` class conform to the **`SAPFioriLoadingIndicator`** protocol and implement the needed property:
 

@@ -93,6 +93,8 @@ In this tutorial, we will create the rule services and rule sets required to dep
     |  Description    | **`Ruleset that contain the rules needed to determine the equipment required for a new hire.`**
     |  Rule Service   |  **`DetermineEquipmentRuleservice`**
 
+    >You can leave the **Priority** and **Policy** fields and **Vocabulary** section as it is.
+
     ![Ruleset details](create_ruleset2.png)
 
 3. Choose the **Rules** tab, choose **Add Rule** > **Insert First**.
@@ -111,6 +113,8 @@ In this tutorial, we will create the rule services and rule sets required to dep
     |  Label         | **`EquipmentApprovalRuleset`**
     |  Description    | **`Ruleset to contain rules that determine if the approval is needed for the list of equipment order or not.`**
     |  Rule Service   |  **`EquipmentApprovalRuleservice`**
+
+    >You can leave the **Priority** and **Policy** fields and **Vocabulary** section as it is.
 
     In the **Rules** tab, choose **`EquipmentApprovalRules`** from the dropdown list and then choose **Activate**.
 

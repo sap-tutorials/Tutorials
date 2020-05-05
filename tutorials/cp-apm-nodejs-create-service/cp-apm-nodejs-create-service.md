@@ -36,7 +36,7 @@ Before you start, make sure that you've completed the prerequisites.
     npm set @sap:registry=https://npm.sap.com
     ```
 
-2. Install the CDS command line tools by executing the following command:
+2. Install the `cds` development kit globally by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -44,9 +44,11 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This installs the `cds` command, which we'll use in the next steps.
 
-    >On MacOS/Linux, you may need to use `sudo npm i -g @sap/cds-dk`.
+    >On MacOS/Linux, you may need to follow the steps as described [here](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally).
 
-    >In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
+    > If there's an older `@sap/cds` package already installed on the machine, you may have to remove it first; if so, you'll be instructed to do so.
+
+    > In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 
 3. To verify that the installation was successful, run `cds` without arguments:
 
@@ -56,7 +58,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     ![cds commands](cds-commands.png)
 
-    >This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed.
+    >This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed. To know what is the latest version, watch the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
 [DONE]
 
@@ -86,7 +88,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [OPTION BEGIN [Windows]]
 
-1. Open a command line window and run the following command in a folder of your choice:
+1. Open a command line window and run the following command in a folder of your choice to create the project:
 
     ```Shell/Bash
     cds init my-bookshop
@@ -106,7 +108,7 @@ Before you start, make sure that you've completed the prerequisites.
 
     >This command tries to start a `cds` server process.
 
-    As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
+    >This tries starting a `cds` server, but as there's no content in our project so far it just keeps waiting with a message as shown below:
 
     ```
     [cds] - running nodemon...
@@ -120,7 +122,7 @@ Before you start, make sure that you've completed the prerequisites.
 
 [OPTION BEGIN [Mac and Linux]]
 
-1. Open a command line window and run the following command in a folder of your choice:
+1. Open a command line window and run the following command in a folder of your choice to create the project:
 
     ```Shell/Bash
     cds init my-bookshop
@@ -135,7 +137,7 @@ Before you start, make sure that you've completed the prerequisites.
     ```Shell/Bash
       cds watch
     ```
->This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
+    >This command tries to start a `cds` server process. As there's no content in the project so far, it just keeps waiting for content with a message as shown below:
 
     ```
     [cds] - running nodemon...
@@ -153,13 +155,13 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 4: ](Define your first service)]
 
-Create a simplistic all-in-one service definition.
+After initializing, you should see the following empty folders:
 
-1. After initializing the app, check whether the **`srv`** and **`db`** folders are already created, if yes then create the respective file as mentioned in the following step. If not, choose the **New File** icon and type **`srv/cat-service.cds`** to create folder and file at once in Visual Studio Code.
+- `app/`: for UI artifacts
+- `db/`: for the database level schema model
+- `srv/`: for the service definition layer
 
-    ![Add new file](new-file.png)
-
-    >This creates a folder called **`srv`** and a file called **`cat-service.cds`**.
+1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`cat-service.cds`**.
 
 2. Open the file and add the following code:
 
@@ -193,7 +195,7 @@ Create a simplistic all-in-one service definition.
 
     >Remember to save your files (keyboard shortcut **CTRL+S**).
 
-3. As soon as you've saved your file, the running `cds watch` reacts immediately with an output as shown below:
+3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
     ```
     [cds] - connect to db { database: ':memory:' }
@@ -205,6 +207,7 @@ Create a simplistic all-in-one service definition.
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
+    >This means, `cds watch` detected the changes in `db/schema.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
 
 4. To test your service, go to: <http://localhost:4004>
 
@@ -261,13 +264,7 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. Choose **New File** and type **`db/data-model.cds`**.
-
-    ![Add new file](new-file2.png)
-
-    >This creates a folder called **db** and a file called **`data-model.cds`**. Your project structure should look like this:
-
-    ![Project structure](project-structure.png)
+1. In the **`db`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`db/data-model.cds`**.
 
 2. Add the following code to the **`data-model.cds`** file:
 
@@ -296,7 +293,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
-3. Open **`cat-service.cds`** and replace the code with:
+3. Open the file **`cat-service.cds`** and replace the existing code with:
 
     ```CDS
     using my.bookshop as my from '../db/data-model';
@@ -316,7 +313,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 [ACCORDION-BEGIN [Step 7: ](Add initial data)]
 
-Add plain CSV files under **`db/csv`** to fill your database tables with initial data.
+In Visual Studio Code add plain CSV files under **`db/csv`** to fill your database tables with initial data.
 
 1. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Authors.csv`**. Add the following to the file:
 

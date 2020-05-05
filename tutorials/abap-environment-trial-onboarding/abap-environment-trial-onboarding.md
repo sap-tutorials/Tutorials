@@ -4,7 +4,7 @@ title: Create an SAP Cloud Platform ABAP Environment Trial User
 description: Create a trial user and ABAP cloud project with SAP Cloud Platform ABAP environment.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
-time: 5
+time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---

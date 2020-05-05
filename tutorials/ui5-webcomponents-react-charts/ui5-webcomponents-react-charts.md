@@ -211,7 +211,7 @@ Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to impleme
     ```
 
     Now the `Card` also changes the `Icon` by clicking on the header.
-    
+
     ![LineChart](02_bothCharts.png)
 
 
@@ -333,7 +333,7 @@ To make your `Card` look cleaner and to give the user the information that the h
 2. Change the title and add a subtitle to your `Card`
 
     First change the value of `heading` to something that explains the content of the `Card` (e.g., `"Stock Price"`).
-    Then add a `subtitle` prop. Here you can give the users the information that they can switch between charts by clicking the header.
+    Then add a `subheading` prop. Here you can give the users the information that they can switch between charts by clicking the header.
 
     ```JavaScript / JSX
     <Card
@@ -342,7 +342,7 @@ To make your `Card` look cleaner and to give the user the information that the h
          style={{ width: "300px" }}
          headerInteractive
          onHeaderClick={handleHeaderClick}
-         subtitle={`Click here to switch to ${switchToChart}`} >
+         subheading={`Click here to switch to ${switchToChart}`} >
          <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
          {toggleCharts === "lineChart" ? (
              <LineChart datasets={datasets} labels={labels} loading={loading} />
