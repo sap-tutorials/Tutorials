@@ -32,7 +32,7 @@ Return to the procedure called `build_products` in the procedure folder.
 [ACCORDION-BEGIN [Step 2: ](Remove Previous Code)]
 Remove the code inside the body, between the BEGIN and END statements leaving only the two lines shown here.
 
-[procedure editor](2.png)
+[remove](2.png)
 
 [DONE]
 [ACCORDION-END]
