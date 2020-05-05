@@ -15,7 +15,7 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 
 ## Details
 ### You will learn  
-In this exercise we will show you how you can invoke SQLScript logic without the need to create a persistent logic container such as a procedure or function. Instead we will use so called anonymous blocks.
+In this exercise we will show you how you can invoke SQLScript logic without the need to create a persistent logic container such as a procedure or function. Instead we will use so called anonymous blocks. 
 
 ### Time to Complete
 **15 Min**.
