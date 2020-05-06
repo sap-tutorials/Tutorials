@@ -1,28 +1,23 @@
 ---
 title: Anonymous Blocks
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Creating SQLScript User Defined Libraries](https://developers.sap.com/tutorials/xsa-sqlscript-libraries.html)
-
-## Next Steps
-- [Debugging Stored Procedures](https://developers.sap.com/tutorials/xsa-sqlscript-debugging.html)
+- **Tutorials:** [Creating SQLScript User Defined Libraries](xsa-sqlscript-libraries)
 
 ## Details
 ### You will learn  
-In this exercise we will show you how you can invoke SQLScript logic without the need to create a persistent logic container such as a procedure or function. Instead we will use so called anonymous blocks. 
+- How to invoke SQLScript logic without a persistent logic container  
 
-### Time to Complete
-**15 Min**.
-
+In this exercise, we will show you how you can invoke SQLScript logic without the need to create a persistent logic container such as a procedure or function. Instead we will use so called anonymous blocks.
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Anonymous Block )]
+[ACCORDION-BEGIN [Step 1: ](Create anonymous block )]
 
 From the Database Explorer page, click the "SQL Console" button
 
@@ -36,7 +31,7 @@ To have an anonymous block you need a do begin … end.  Enter the this code in 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Body of Statement)]
+[ACCORDION-BEGIN [Step 2: ](Add body of statement)]
 
 Copy the logic from the procedure `get_po_header_data` into the body.  Make sure to only copy the code between the BEGIN and END statements
 
@@ -45,7 +40,7 @@ Copy the logic from the procedure `get_po_header_data` into the body.  Make sure
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Declare Required Variable)]
+[ACCORDION-BEGIN [Step 3: ](Declare required variable)]
 
 Copy the signature from the procedure `get_po_header_data` into the signature part of the anonymous block. Ensure the parameter is assigned to a query parameter placeholder (?) as shown.
 
@@ -55,7 +50,7 @@ Copy the signature from the procedure `get_po_header_data` into the signature pa
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Check Complete Code)]
+[ACCORDION-BEGIN [Step 5: ](Check complete code)]
 
 The completed code should look very similar to this.
 
@@ -103,7 +98,7 @@ EX_TOP_3_EMP_PO_COMBINED_CNT =
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Run and Check Results)]
+[ACCORDION-BEGIN [Step 6: ](Run and check results)]
 
 Click **Run**.  You will notice that the SQLScript code is executed and results are shown.  Again, there is no procedure or function created here, just the SQLScript being executed by the engine.
 

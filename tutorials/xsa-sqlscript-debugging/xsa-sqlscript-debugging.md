@@ -1,28 +1,24 @@
 ---
 title: Debugging Stored Procedures
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 10
 ---
-## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Anonymous Blocks](https://developers.sap.com/tutorials/xsa-sqlscript-anonymous.html)
 
-## Next Steps
-- [Using Index Based Cell Access](https://developers.sap.com/tutorials/xsa-sqlscript-usingindexbased.html)
+## Prerequisites  
+- **Tutorials:** [Anonymous Blocks](xsa-sqlscript-anonymous)
 
 ## Details
 ### You will learn  
 In the following exercise we will show how to debug a procedure using the SQLScript debugger. This includes setting breakpoints, evaluating expressions and intermediate results.
 
-### Time to Complete
-**10 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Start the Debugger)]
+[ACCORDION-BEGIN [Step 1: ](Start debugger)]
 
 Go to the Database Explorer page and right-click on the procedure called `get_po_header_data` and choose **Open for Debugging**.
 
@@ -35,7 +31,7 @@ Make sure the configuration is set as shown here and click **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set Breakpoints)]
+[ACCORDION-BEGIN [Step 2: ](Set breakpoints)]
 
 Set breakpoints at the lines shown here by simply clicking on the line number.
 
@@ -53,7 +49,7 @@ A new SQL tab will be opened.  Click on the **Run** button.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](View the Debugger Pane)]
+[ACCORDION-BEGIN [Step 3: ](View debugger pane)]
 
 Execution of the procedure has started, and a debugger pane is now visible which is displayed on the right. You can see all of the variables and parameters for this procedure.  You might notice that this pane is currently not showing the intermediate table variables at this point.
 
@@ -63,7 +59,7 @@ Execution of the procedure has started, and a debugger pane is now visible which
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Use Step Over)]
+[ACCORDION-BEGIN [Step 4: ](Use step over)]
 
 Click the **Step Over** button.
 
@@ -85,7 +81,7 @@ A new window is then opened showing the data in the table. Review the data and c
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](View Expression Editor)]
+[ACCORDION-BEGIN [Step 5: ](View expression editor)]
 
 Click the **Expression** tab and click **+** button.
 
@@ -104,7 +100,7 @@ You will notice the expression is then added to the "Expressions" section.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](View Expressions)]
+[ACCORDION-BEGIN [Step 6: ](View expressions)]
 
 Select the expression and click  **Display Content**.
 
@@ -118,7 +114,7 @@ Review the results and close the window.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check Output)]
+[ACCORDION-BEGIN [Step 7: ](Check output)]
 
 Once again click the **Step Over** button. Notice the next intermediate table variables is also added.  You can review the data in this table as well.
 
@@ -132,7 +128,7 @@ Continue to step through the code and when execution stops at the END statement 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Resume Execution)]
+[ACCORDION-BEGIN [Step 8: ](Resume execution)]
 
 Click the **Resume** button.
 
