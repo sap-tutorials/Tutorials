@@ -103,7 +103,7 @@ Our bot must be able to extract the parcel number from within the conversation. 
 
     ![Add values](CreateEntity_AddValues.png)
 
-    We have also supplied the numbers as a [CSV file](`https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cai-bot-shipping-1-track-bot/parcel-numbers`). Instead of manually entering the numbers, you can download the file, then click **Import a CSV File**, select the file, and click **Upload**.
+    We have also supplied the numbers as a [CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cai-bot-shipping-1-track-bot/parcel-numbers.csv). Instead of manually entering the numbers, you can download the file, then click **Import a CSV File**, select the file, and click **Upload**.
 
 > ### About Entities
 >
