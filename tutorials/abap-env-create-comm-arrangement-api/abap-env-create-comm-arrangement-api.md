@@ -10,10 +10,11 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
-- You have opened an ABAP service instance in SAP Cloud Cockpit
-[Connect to the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
 - A business role has been created containing the business catalog `SAP_CORE_BC_COM`, and is assigned to your user [How to Create a Business Role from Scratch](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f65e51a7203443efb58fe535c3d13e5f.html)
 - You have opened the SAP Cloud Platform cockpit and navigated to the correct space. See [SAP Help Portal: SAP Cloud Platform Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e47748b5bb571014afedc70595804f3e.html)
+- You have opened an ABAP service instance in SAP Cloud Cockpit
+[Connect to the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
+- **Tutorial**: [Create Your First ABAP Console Application](https://developers.sap.com/tutorials/abap-environment-console-application.html), steps 1-3
 
 
 ## Details
@@ -23,16 +24,6 @@ author_profile: https://github.com/julieplummer20
 
   The communication scenario `SAP_COM_0276` is predefined by SAP. It allow you to, for example, exchange data between an ABAP Environment instance and an on-premise S/4HANA System, or a third-party API.
   A communication arrangement specifies the metadata for a specific communication scenario, such as your host system and the authentication method. This metadata is contained in a service key.  You can then define one or more specific destinations for this arrangement.
-
-  For more information, see:
-
-  - [SAP Help Portal: Creating a Communication Arrangement...](https://help.sap.com/viewer/a96b1df8525f41f79484717368e30626/Cloud/en-US/7c1b45781c6f4d9ca23177b61805d179.html)
-
-  - [SAP Help Portal: Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html)
-
-  - [Cloud Foundry: Managing Service Keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html)
-
-For more information on SAP Cloud Platform, accounts, and environments, see [SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
 
 Throughout this tutorial, objects name include the suffix `2` or `XXX`. Replace this suffix with your group number or initials.
 
@@ -161,4 +152,13 @@ Still in the **Communication Arrangement**, in the **Additional Properties** pan
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+### More Information
+- [SAP Help Portal: Creating a Communication Arrangement...](https://help.sap.com/viewer/a96b1df8525f41f79484717368e30626/Cloud/en-US/7c1b45781c6f4d9ca23177b61805d179.html)
+
+- [SAP Help Portal: Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html)
+
+- [Cloud Foundry: Managing Service Keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html)
+
+For more information on SAP Cloud Platform, accounts, and environments, see [SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
 ---

@@ -12,7 +12,7 @@ time: 20
 ## Prerequisites
 - You've finished the tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
 - If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account).
-- You've downloaded and installed the [cf command-line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
+- You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## Details
 ### You will learn  
@@ -24,31 +24,56 @@ time: 20
 
 It's now time to switch to SAP HANA as a database.
 
-1. Add the following configuration in the **`package.json`** file of your `my-bookshop` project (overwrite any existing `cds` configuration):
+1. In Visual Studio Code add the following configuration in the **`package.json`** file of your `my-bookshop` project (overwrite any existing `cds` configuration):
 
     ```JSON
-    "cds":{
-      "requires": {
+    "cds": {
+        "requires": {
           "db": {
-          "kind": "hana",
-          "model": ["db","srv"]
+            "kind": "sql"
           }
+        }
       }
-    }
     ```
-
-2. Add the SAP HANA driver as a dependency to your project:
+   > `kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases. In the steps below you will learn how to do this.
+      
+2. In the terminal add the SAP HANA driver as a dependency to your project:
 
     ```Shell/Bash
-    npm add hdb
+    npm add @sap/hana-client --save
     ```
-    >If your **`.cdsrc.json`** file contains a `"target"` entry, remove it or set it to: `"target": "gen"`. This causes deployment files to be written to this folder. Otherwise, the deployment files would be written to the source folders.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy using cf push)]
+[ACCORDION-BEGIN [Step 2: ](Identify SAP Cloud Platform Cloud Foundry endpoint)]
+
+The Cloud Foundry API endpoint is required so that you can log on to your SAP Cloud Platform Cloud Foundry space through Cloud Foundry CLI.
+
+1. Go to the [SAP Cloud Platform Trial Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit#/home/trial) and choose **Enter Your Trial Account**.
+
+    !![cloud platform cockpit view](cockpit.png)
+
+2. Navigate to your Subaccount:
+
+    !![subaccount tile](subaccount.png)
+
+3. Copy the **Cloud Foundry API Endpoint** value:
+
+    !![CF API endpoint value](api-endpoint.png)
+
+4. Open a terminal. Authenticate using your login credentials using the following command:
+
+```Shell/Bash
+cf login
+```
+> This will ask you to select CF API, org, and space.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Deploy using cf push)]
 
 Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https://docs.cloudfoundry.org/devguide/push.html) command to deploy applications. It needs the application files plus an optional **`manifest.yml`** file to push the application code and to bind the relevant services to the application.
 
@@ -69,7 +94,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application:
 
     ```Shell/Bash
-    cds build/all
+    SET CDS_ENV production && cds build
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
@@ -78,15 +103,15 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
     >The first command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in the previous step.
 
-3. In the deploy log, find the application URL in the `routes` line at the end:
+4. In the deploy log, find the application URL in the `routes` line at the end:
 
-    ```Shell/Bash
+    ```
     name:              my-bookshop-srv
     requested state:   started
     routes:            my-bookshop-srv-....cfapps.sap.hana.ondemand.com
     ```
 
-4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+5. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
 
 [OPTION END]
 
@@ -107,7 +132,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 2. Now, build and deploy both the database part and the actual application:
 
     ```Shell/Bash
-    cds build/all && cf push -f gen/db && cf push -f gen/srv --random-route
+    CDS_ENV=production cds build && cf push -f gen/db && cf push -f gen/srv --random-route
     ```
 
     >This process takes some minutes.
@@ -116,7 +141,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 3. In the deploy log, find the application URL in the `routes` line at the very end:
 
-        ```Shell/Bash
+        ```
         name:              my-bookshop-srv
         requested state:   started
         routes:            my-bookshop-srv-....cfapps.sap.hana.ondemand.com
@@ -130,5 +155,6 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 [ACCORDION-END]
 
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
----
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/MiBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

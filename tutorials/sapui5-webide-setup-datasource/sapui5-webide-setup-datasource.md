@@ -17,7 +17,7 @@ Now that you have set up a destination in the SAP Cloud Platform cockpit, you wi
 
 There are three steps to connect the OData service to your application.  
 
-1.  Define the Data Source in your `mainfest.json` file.  
+1.  Define the Data Source in your `manifest.json` file.  
 2.  Create a Model.   (The Model is the data source, based on [the Model-View-Controller architecture](https://blog.codinghorror.com/understanding-model-view-controller/)).  
 3.  Test the application
 
@@ -29,7 +29,7 @@ There are three steps to connect the OData service to your application.
 In a [previous tutorial](hcp-create-destination) the OData test service called "Northwind" was set up for all SAP Cloud Platform applications.  Next, this specific application must connect to that "Destination".  
 
 
-1.  Open the `mta_app/app/webapp/mainfest.json` file with the **Descriptor Editor**, by double clicking on the file.
+1.  Open the `mta_app/app/webapp/manifest.json` file with the **Descriptor Editor**, by double clicking on the file.
 
     > If you open the file, and you get a code editor (and not the form editor shown below), click the **Descriptor Editor** link at the bottom of the page.  This will change to the Code Editor.
 
@@ -57,7 +57,7 @@ In a [previous tutorial](hcp-create-destination) the OData test service called "
 
 4.   Click **Next** to continue.
 
-    ![Test the new OData service](2.png)
+    !![Test the new OData service](2.png)
 
 
 

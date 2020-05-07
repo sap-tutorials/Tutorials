@@ -1,5 +1,4 @@
 const fs = require('fs-extra');
-const path = require('path');
 
 const linkUtils = require('./link');
 const { regexp: { validation: { codeBlock, codeLine } } } = require('../constants');
@@ -33,7 +32,6 @@ const parseFiles = async (filePaths) => {
     const files = new Map();
     const uniqueLinksToFiles = new Map();
     for(let filePath of filePaths) {
-        const fileName = path.basename(filePath);
         const content = await fs.readFile(filePath, 'utf8');
         const contentLines = getContentLines(content);
         const noCodeContentLines = getNoCodeContentLines(content);

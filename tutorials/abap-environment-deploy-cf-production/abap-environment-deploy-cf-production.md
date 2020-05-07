@@ -61,10 +61,6 @@ time: 15
 
      Or Login to your **SAP Cloud Platform cockpit** and select your global account. Select **Subaccounts** and your **subaccount**.
 
-      ![global](global.png)
-
-      ![subaccount](subaccount.png)
-
       ![sub2](sub2.png)
 
   4. Copy your API endpoint for later use.
@@ -110,7 +106,7 @@ time: 15
 
       ![open web ide](instance.png)
 
-[DONE] 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create HTML5 module)]
@@ -273,7 +269,7 @@ time: 15
 
     ![Define inbound tile](site2.png)
 
-      Click **Finish**.
+    Click **Finish**.
 
 [DONE]
 [ACCORDION-END]
@@ -360,27 +356,31 @@ time: 15
 
       ![Deploy UI to Cloud Foundry](dev.png)
 
-  2.  Select **`MTA_Project_XXX_appRouter`**.
+  2. Run your app router **`mta-project-xxx-approuter`**.  
+
+      ![Deploy UI to Cloud Foundry](devx.png)
+
+  3.  Select **`mta-project-xxx-approuter`**.
 
       ![Deploy UI to Cloud Foundry](dev2.png)
 
-  3.  Click on your application routes to open your application in your launchpad.
+  4.  Click on your application routes to open your application in your launchpad.
 
       ![Deploy UI to Cloud Foundry](dev3.png)
 
-  4. Logon to your SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment system.
+  5. Logon to your SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment system.
 
       ![Deploy UI to Cloud Foundry](environment.png)
 
-  5. You application is now available as a tile in the launchpad. Select your application **`Travel_App_XXX`**.
+  6. You application is now available as a tile in the launchpad. Select your application **`Travel_App_XXX`**.
 
       ![Deploy UI to Cloud Foundry](app.png)
 
-  6. Click **Go** to see your result.
+  7. Click **Go** to see your result.
 
       ![Deploy UI to Cloud Foundry](app2.png)
 
-  7. Check your result.
+  8. Check your result.
 
       ![Deploy UI to Cloud Foundry](app3.png)
 
@@ -391,4 +391,7 @@ time: 15
 
 [VALIDATE_1]
 [ACCORDION-END]
----
+
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/NiBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
