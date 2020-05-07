@@ -107,7 +107,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 - Line 3 indicates, that we want to create a request to get all the business partners.
 - Line 4 ff. takes care of the execution and sends a request to a `url` based on the given destination `url`.
 
-In the code snippet above we assume that you have a mock server running locally on port 3000. For details on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
+In the code snippet above we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
 
 ```JavaScript / TypeScript
 .execute({
