@@ -43,7 +43,7 @@ The routes are added to the `webapp/manifest.json` file. The generator asks you 
 As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, we have to make some modifications to the `webapp/manifest.json` application descriptor.
 
 **Open** the file and replace the routing pattern of the new view with an empty string.
-```JSON [3]
+```JSON
 {
   "name": "Products",
   "pattern": "",
@@ -60,7 +60,7 @@ As you can see in the log, there are two new files and one modified file. As the
 
 1. The `webapp/view/Mainview.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<App>` tag.
 
-    ```XML [5]
+    ```XML
     <mvc:View controllerName="tutorial.products.controller.MainView"
       displayBlock="true"
       xmlns="sap.m"
