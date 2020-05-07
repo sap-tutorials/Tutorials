@@ -64,7 +64,7 @@ Copy this URL to your browser to access the app.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Save a customer filter variant)]
+[ACCORDION-BEGIN [Step: ](Save a custom filter variant)]
 
 1. When opening the URL of the application (the approuter to be more precise), you are prompted for credentials. Use the same credentials you used to log in to SAP Cloud Platform.
 
@@ -84,10 +84,43 @@ Copy this URL to your browser to access the app.
 
     !![Define name](./setname.png)
 
-6. Open another browser or an incognito window and reopen the web app there. You notice the filter is still there. This is proof that the variant is persisted in the backend and not cached in the browser.
+
 
 
 [VALIDATE_1]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step: ](Personalize the detail page)]
+
+This step will test another feature of the UI5 flexibility service, the "Personalize App" functionality.
+
+1. Click on any product to switch to the detail view.
+2. Click on the user icon on the top right corner and select **Personalize App** from the dropdown.
+
+    !![start p13n](./startP13n.png)
+
+3. You'll noticed that the UI shows additional buttons and there is a hover effect on  sections.
+4. **Remove** the info section of this detail page. No worries, you'll be able to add it back again.
+
+    !![Remove section](./removeSection.png)
+
+5. Exit the personalization view by clicking the **Done** button on the bottom right.
+
+    !![Save p13n](./saveP13n.png)
+
+
+
+
+
+
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step: ](Check )]
+
+In the previous two tutorial, you made changes to both views of the Fiori app. These changes are only be visible to you. Open another browser or an incognito window and **reopen the web app** there. You notice the filter variant is still there and the info section of the detail view is hidden. This is proof that the variant is persisted in the backend -- by the portal service, to be more precise -- and not cached in the browser.
+
+!![p13n in action](./p13nInAction.png)
+
+[DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Further references)]
 
