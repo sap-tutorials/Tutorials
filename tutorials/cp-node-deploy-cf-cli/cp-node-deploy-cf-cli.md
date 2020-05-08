@@ -58,7 +58,7 @@ Explanation for the manifest properties:
 |  `host`          | Where the application (subdomain of the SAP Cloud Platform region) should be reachable.
 |  `path`           | The path of the local file system from which the content/artifact has to be deployed.
 |  `memory`         | The memory quota which should be allocated for this application.
-|  random-route        | if this property is set to **true**, Cloud Foundry will assign a random route (URL) to the application
+|  `random-route`        | if this property is set to **true**, Cloud Foundry will assign a random route (URL) to the application 
 
 Refer to the [official documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) for more fields of the manifest file.
 
