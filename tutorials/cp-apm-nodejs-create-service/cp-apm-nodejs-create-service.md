@@ -13,7 +13,7 @@ time: 40
 ## Prerequisites
 - You've installed [Node.js](https://nodejs.org/en/). Use latest long-term support (LTS) version. In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP.
 - You've installed the latest version of [Visual Studio Code](https://code.visualstudio.com/).
-- (For Windows users only) You've installed the [`SQLite`](https://sqlite.org/download.html) tools for Windows.
+- (For Windows users only) You've installed the [SQLite](https://sqlite.org/download.html) tools for Windows.
 - You've installed [Postman application](https://www.getpostman.com/) or any other HTTP client.
 
 ## Details
@@ -215,7 +215,7 @@ After initializing the project, you should see the following empty folders:
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
-    >This means, `cds watch` detected the changes in `db/schema.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
+    >This means, `cds watch` detected the changes in `cat-service.cds` and automatically bootstrapped an in-memory SQLite database when restarting the server process.
 
 4. To test your service, go to: <http://localhost:4004>
 
@@ -440,7 +440,7 @@ You can now see the generic handlers shipped with CAP in action.
     >You can use any other HTTP client than Postman.
 
 
-2. Click on the following link and save the file to a folder of your choice: [`postman.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
+2. Click on the following link and save the file to a folder of your choice: ['postman.json'](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
 
 3. In the Postman app, use the **Import** button in the toolbar:
 
