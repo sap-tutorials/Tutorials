@@ -131,7 +131,7 @@ In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteC
     >In above code there is a reference to `Customers_DeleteEntity.action` , you can navigate directly from here to the MDK file by right clicking on it.
     ![MDK](img_001.1.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add a trash button to customer details page)]

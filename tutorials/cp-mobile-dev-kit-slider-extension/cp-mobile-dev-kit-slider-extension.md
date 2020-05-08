@@ -105,7 +105,7 @@ The first time you create an extension control, a directory named `MDKExtensionC
 
 >You can find more details about registering extension control in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/bcc1a204cb614cd99f75c6b2120c5f2e.html) guide.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Consume Extension Control in MDK Metadata)]
@@ -816,7 +816,7 @@ You will add this registered control in a Form Cell page.
 
 11. Save the `tsconfig.json` file.
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Set first page as the extension page)]
