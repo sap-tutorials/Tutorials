@@ -96,7 +96,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
 14. Save your changes to the `Customers_List.page`.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create navigation action)]
