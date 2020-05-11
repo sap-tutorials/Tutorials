@@ -117,7 +117,7 @@ In order to display the newly added overview screen right after the onboarding p
         if let savedViewController = self._savedApplicationRootViewController {
             appViewController = savedViewController
         } else {
-            // This will retrieve an instance of the Main storyboard and instantiate the intial view controller which is the Navigation Controller. Force cast to UINavigationController and assign the instance as appViewController.
+            // This will retrieve an instance of the Main storyboard and instantiate the initial view controller which is the Navigation Controller. Force cast to UINavigationController and assign the instance as appViewController.
 
             let overviewTVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! UINavigationController
             appViewController = overviewTVC
@@ -395,6 +395,8 @@ Thanks to the generated data service and proxy classes, we don't have to impleme
     }
 
     ```
+
+    > Important here is that the class `Comsapedmsampleservicev2OnlineODataController` can vary in name depending on your destination and if you're using online or offline OData. In example I am using Online OData as I have removed the Offline capability before generating the app, which is why my class name has Online in it. By default, the SAP Mobile Services creates each mobile app configuration with Offline OData, which changes the name to `Comsapedmsampleservicev2OfflineODataController` in the case of using the Sample ESPM Service.
 
 2. To fetch available customers, implement the following method below the closing bracket of the `viewDidLoad()` method:
 

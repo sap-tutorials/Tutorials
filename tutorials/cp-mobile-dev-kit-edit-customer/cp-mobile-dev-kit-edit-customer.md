@@ -133,7 +133,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 
 11. Save the changes to the `Customers_Edit.page`.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add cancel button on the Edit Customer page)]
@@ -354,7 +354,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_014.1.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Test the application)]

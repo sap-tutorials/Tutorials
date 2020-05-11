@@ -132,7 +132,7 @@ You should receive a response like the following:
 Upload to the service any document in PDF format that has content in headers and tables, such as an invoice, using the **POST /document/jobs** endpoint.
 
 
->As an alternative to uploading your own document in PDF format to the service, you can use any of the following sample invoice files:
+>As an alternative to uploading your own document in PDF format to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
 >- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf)
 

@@ -66,7 +66,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
     - Click again  **Add New Pair**, enter **`price`** and **`null`**, and then press **Enter**.
 
-    - Add 4 enrichment groups. For each, click **Add New Group**, specify a name ( **>10kg**, **3-10kg**, **1-3kg** or **0-1kg** ), and then click **Save**.
+    - Add 4 enrichment groups. For each, click **Add New Group**, specify a name ( **`>10kg`**, **`3-10kg`**, **`1-3kg`** or **`0-1kg`** ), and then click **Save**.
 
         For each group, click the pencil icon, select the corresponding entity values for the group, and set the values for the fields **`name`** and **`price`**.
 
@@ -100,7 +100,7 @@ You now want to define an intent so the bot can know when the customer is asking
 
 For this intent, you can also fork it.
 
-1. Go to [cai-adoption / ups-bot / intents / @rate-parcel](https://cai.tools.sap/cai-adoption/ups-bot/train/intents/rate-parcel).
+1. Go to [`cai-adoption / ups-bot / intents / @rate-parcel`](https://cai.tools.sap/cai-adoption/ups-bot/train/intents/rate-parcel).
 
 2. Just above the list of values -- **NOT** at the top of the page (that is to fork the entire project) -- click **Fork**.
 
@@ -160,7 +160,9 @@ You must require that the bot know the size and location, and in addition get a 
 1. In the **Requirements** subtab, add the requirements as follows:
 
     - Add 2 requirements: **`#parcel-size`** and **`#location`**
+
     - Add another requirement list, and add 2 requirements: @yes and @no
+
     - Between @yes and @no, click **And** to change it to **Or**.
 
     Your requirements should look like this:
@@ -170,7 +172,9 @@ You must require that the bot know the size and location, and in addition get a 
 2. Now add a message in case the parcel size is missing.
 
     - Expand the **`#parcel-size`** requirement, and click **New Replies** in the case the requirement is missing.
+
     - Click **Send Message | Carousel**.
+
     - Add a card for the user to specify the small size (use the `postback` button type).
 
         ![Carousel small](Carousel_card.png)

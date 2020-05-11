@@ -200,7 +200,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_014.1.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test the application)]
