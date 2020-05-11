@@ -5,8 +5,8 @@ description: Create a service definition, service binding and communication scen
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
-author_name: Niloofar Naseri
-author_profile: https://github.com/niloofar-naseri
+author_name: Niloofar Flothkoetter
+author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ## Details
@@ -15,7 +15,7 @@ author_profile: https://github.com/niloofar-naseri
   - How to create a service binding
   - How to create a communication scenario
 
-In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
+  In this tutorial, wherever `XXX` appears, use a number e.g. `000` or your initials.
 
 Create all business services with ABAP namespace `Z...`.
 
@@ -50,7 +50,7 @@ Mark this steps as completed by pressing `Done` if you have already created the 
 
   1. Open Eclipse and connect to your system.
 
-  2. Right click on main package `ZLOCAL` choose **New** > **ABAP Package**.
+  2. Do a right click on main package `ZLOCAL` choose **New** > **ABAP Package**.
 
   3. Create your own ABAP development package `Z_PACKAGE_XXX`  as a sub package of `ZLOCAL`.
       - Name: `Z_PACKAGE_XXX`
@@ -135,7 +135,7 @@ We want to create service binding to bind service to a protocol and preview.
 
 [DONE]
 [ACCORDION-END]
- 
+
 
 [ACCORDION-BEGIN [Step 7: ](Activate your service binding)]
 Click **Activate**, and then you will see the service name and service URL in the table.
@@ -206,7 +206,7 @@ After publishing the business service, you can preview the published business se
 
  3. Click **Add** inbound service.
 
- 4. Browse the service binding created before, `Z_BIND_XXX`, and select inbound service ID `Z_BIND_XXX_IWSG` instead (where `XXX` is your group number) .
+ 4. Browse the service binding created before, `Z_BIND_XXX`, and select inbound service ID `Z_BIND_XXX_IWSG` instead ,where `XXX` is your group number.
 
       ![Add Inbound](Picture11.png)
 
