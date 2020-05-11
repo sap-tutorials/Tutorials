@@ -128,7 +128,7 @@ Open the application settings in the application editor by double clicking on th
 
 ![MDK](img_008.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Deploy and activate the application)]
