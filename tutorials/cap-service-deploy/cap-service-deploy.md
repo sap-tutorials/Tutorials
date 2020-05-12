@@ -11,7 +11,7 @@ time: 20
 
 ## Prerequisites
 - You've finished the tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
-- If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) and, if necessary [Manage Entitlements](https://developers.sap.com/tutorials/cp-trial-entitlements.html).
+- If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) and, if necessary [Manage Entitlements](cp-trial-entitlements).
 - You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## Details
@@ -94,8 +94,8 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 2. Now, build and deploy both the database part and the actual application and add:
 
-    ```Shell/Bash
-    SET CDS_ENV production && cds build
+    ```
+    SET CDS_ENV=production && cds build
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
