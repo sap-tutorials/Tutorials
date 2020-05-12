@@ -9,21 +9,21 @@ author_name: Niloofar Flothkoetter
 author_profile: https://github.com/niloofar-flothkoetter
 ---
 
-### Prerequisites  
-- Communication arrangement for scenario `SAP_COM_0008` was created in your SAP S/4HANA Cloud system
-- Communication arrangement for scenario `SAP_COM_0276` was created with service instance name  `OutboundCommunication` in your ABAP system.
+### Prerequisites
+- Communication arrangement for scenario `SAP_COM_0008` was created in your SAP S/4HANA Cloud system.
+- Communication arrangement for scenario `SAP_COM_0276` was created with service instance name `OutboundCommunication` in your ABAP system.
 - Business user in SAP S/4 HANA Cloud has business role `SAP_BR_BUPA_MASTER_SPECIALIST` in order to create business partners in SAP S/4 HANA​.
 - Integration between S/4 HANA Cloud and SAP Cloud Platform ABAP Environment completed​.
 
 ## Details
-### You will learn  
+### You will learn
   - How to implement outbound service call from SAP Cloud Platform ABAP Environment to S/4 HANA Cloud service
   - How to retrieve data of logged in business user in SAP Cloud Platform ABAP Environment
   - Create business partner in S/4 HANA Cloud system based on data of business user in SAP Cloud Platform ABAP Environment (use Business Partner Integration Service in SAP S/4 HANA)​
   - Return business partner id after creation
 
 Create all ABAP artifacts with namespace `Z...` for local development.
-In this tutorial, wherever `XXX` appears, use a number e.g. `000`.
+Always replace `XXX` with your initials or group number.
 
 ---
 
@@ -34,7 +34,7 @@ In this tutorial, wherever `XXX` appears, use a number e.g. `000`.
 
       ![Download Service Metadata](Metadata1.png)
 
-  3. Do a right click on the page and save the Metadata as a `.edmx` file.
+  3. Right click the page and save the Metadata as a `.edmx` file.
 
       ![Save Service Metadata](Metadata2.png)
 
@@ -47,7 +47,7 @@ Mark the steps 2 as completed by pressing `Done` if you have already created the
 
   1. Open Eclipse and connect to your system.
 
-  2. Right click on main package **ZLOCAL**  and choose **New** > **ABAP Package**.
+  2. Right click the main package **ZLOCAL**  and choose **New** > **ABAP Package**.
 
   3. Create your own ABAP development package `Z_PACKAGE_XXX`  as a sub package of **ZLOCAL**.
       - Name: `Z_PACKAGE_XXX`
@@ -133,7 +133,7 @@ Open service definitions in your package and make sure if your new service defin
 
 
 [ACCORDION-BEGIN [Step 8: ](Add HTTP service)]
-  1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **HTTP Service**.
+  1. Right click your package and choose **New** > **Other ABAP Repository Object** > **HTTP Service**.
 
       ![Add HTTP Service](http1.png)
 
