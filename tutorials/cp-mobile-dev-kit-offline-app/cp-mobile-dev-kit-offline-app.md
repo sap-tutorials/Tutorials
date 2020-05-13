@@ -112,7 +112,7 @@ Open the application settings in the application editor by double clicking on th
 
 ![MDK](img_008.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Deploy and activate the application)]
@@ -143,7 +143,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     ![MDK](img_015.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Populate the QR code for app on-boarding)]

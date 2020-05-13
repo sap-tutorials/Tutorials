@@ -114,7 +114,7 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
 
 12. Save the changes to the `Customers_Create.page`.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add cancel button on create customer page)]

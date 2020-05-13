@@ -26,6 +26,13 @@ There are 3 options for mobile development kit client:
 
 In this tutorial, you will learn how to use Cloud Build service to generate a custom MDK client (option 2).
 
+SAP Cloud Platform Mobile Services provides the capability to build the MDK client without client-side installations
+You need to:
+▪ Add Cloud Build service feature to your MDK app configuration
+▪ Upload signing profiles and/or app information
+▪ Upload app icon
+▪ Initiate the build
+After a successful build, you can download the IPA or APK file.
 
 ---
 
