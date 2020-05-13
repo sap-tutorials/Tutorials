@@ -11,7 +11,7 @@ time: 20
 
 ## Prerequisites
 - You've finished the tutorial [Create a Business Service with Node.js using Visual Studio Code](cp-apm-nodejs-create-service).  
-- If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account).
+- If you don't have a Cloud Foundry Trial Subaccount on [SAP Cloud Platform](https://cockpit.hanatrial.ondemand.com/cockpit/) yet, create your [Cloud Foundry Trial Account](hcp-create-trial-account) and, if necessary [Manage Entitlements](cp-trial-entitlements).
 - You've downloaded and installed the [cf command line client](https://github.com/cloudfoundry/cli#downloads) for Cloud Foundry as described in the tutorial [Install the Cloud Foundry Command Line Interface (CLI)](cp-cf-download-cli).
 
 ## Details
@@ -94,8 +94,8 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 2. Now, build and deploy both the database part and the actual application and add:
 
-    ```Shell/Bash
-    SET CDS_ENV production && cds build
+    ```
+    SET CDS_ENV=production && cds build
     cf push -f gen/db
     cf push -f gen/srv --random-route
     ```
@@ -138,7 +138,7 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
     >This process takes some minutes.
 
-    >The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in step 2.
+    >The first part of the command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in the previous step.
 
 3. In the deploy log, find the application URL in the `routes` line at the end:
 
