@@ -222,8 +222,8 @@ The creation of Core Data Services-View (CDS-View) takes here place. CDS views a
 
   8. Add annotations for administrative data. The annotation provide the business object semantic information about the purpose of the corresponding fields. By saving the business object the fields will be updated automatically. You can add the following annotations:
 
-      ![view](cds8.png)
- 
+      ![view](cds8x.png)
+
 
   9. Save and activate.
 
