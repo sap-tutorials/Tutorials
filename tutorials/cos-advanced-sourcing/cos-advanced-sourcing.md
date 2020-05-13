@@ -164,7 +164,8 @@ If you want to learn how to create a sourcing strategy in a short and effective 
 8. Search for and add the sources listed above to your list.
 
 9. Save your source list.
-![Sources USA](SourceList_USA.png)
+
+    ![Sources USA](SourceList_USA.png)
 
 10. Go back to your strategy creation screen.
 
@@ -175,7 +176,8 @@ If you want to learn how to create a sourcing strategy in a short and effective 
 13. Drag and drop the rule **Shortest Distance to Destination** into the second box.
 
 14. Save your strategy.
-![Strategy USA](SourcingStrategy_USA.png)
+
+    ![Strategy USA](SourcingStrategy_USA.png)
 
 [DONE]
 [ACCORDION-END]
@@ -199,7 +201,8 @@ If you want to learn how to create a sourcing strategy in a short and effective 
 8. Search for and add the sources listed above to your list.
 
 9. Save your source list.
-![Sources USA](SourceList_Canada_Worldwide.png)
+
+    ![Sources USA](SourceList_Canada_Worldwide.png)
 
 10. Go back to your strategy creation screen.
 
@@ -210,7 +213,8 @@ If you want to learn how to create a sourcing strategy in a short and effective 
 13. Drag and drop the rule **Highest Availability** into the second box.
 
 14. Save your strategy.
-![Strategy Canada](SourcingStrategy_Canada.png)
+
+    ![Strategy Canada](SourcingStrategy_Canada.png)
 
 
 [DONE]
@@ -233,7 +237,7 @@ In Germany, the sourcing strategy will change. This change will take place after
 
 6. Save your strategy.
 
-![First Strategy Germany](SourcingStrategy_Germany1.png)
+    ![First Strategy Germany](SourcingStrategy_Germany1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -257,7 +261,8 @@ In Germany, the sourcing strategy will change. This change will take place after
 8. For **Comparator**, choose **`Highest Value`**.
 
 9. Save your rule.
-![Capacity](Rule_Capacity.png)
+
+    ![Capacity](Rule_Capacity.png)
 
 10. Go back to your strategy creation screen.
 
@@ -268,7 +273,8 @@ In Germany, the sourcing strategy will change. This change will take place after
 13. Drag and drop the rule **Highest Capacity** into the second box.
 
 14. Save your strategy.
-![Strategy Worldwide](SourcingStrategy_World.png)
+
+    ![Strategy Worldwide](SourcingStrategy_World.png)
 
 [DONE]
 [ACCORDION-END]
@@ -400,7 +406,7 @@ Let's check where the products are sourced from:
 
 3. Save your strategy.
 
-![Second Strategy Germany](SourcingStrategy_Germany2.png)
+    ![Second Strategy Germany](SourcingStrategy_Germany2.png)
 
 Let's check where the products are sourced from for the second order:
 
