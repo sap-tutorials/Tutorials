@@ -24,7 +24,7 @@ To access the different user interfaces running inside the Docker container use 
 * `http://localhost:9225` (SAP Vora Tools)
 * `http://localhost:50070` (Apache Hadoop User Interface)
 
-Where necessary enter **Username** and **Password** which you have set while running the Docker image (VORA_USERNAME and VORA_PASSWORD enviroment variables)
+Where necessary enter **Username** and **Password** which you have set while running the Docker image (`VORA_USERNAME` and `VORA_PASSWORD` environment variables)
 
 [DONE]
 
