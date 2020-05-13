@@ -46,7 +46,6 @@ Your page should now display product names and contain a smart header.
     Feel free to remove this property from the view to see how the displayed data changes.
 
 
-
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Use the smart filter bar)]

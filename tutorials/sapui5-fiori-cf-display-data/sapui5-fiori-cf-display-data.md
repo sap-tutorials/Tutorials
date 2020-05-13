@@ -20,7 +20,6 @@ primary_tag: topic>odata
 
 Add a new view to display a list of products. For this, you can use another `easy-ui5` sub-generator.
 
-
 **Open** a new terminal session, to keep local web server running, and execute:
 
 ```Terminal
