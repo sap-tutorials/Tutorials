@@ -5,6 +5,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
+author_name: Jessica Katz
+author_profile: https://github.com/Jessica-Katz
 ---
 
 ## Prerequisites

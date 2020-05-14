@@ -121,10 +121,10 @@ author_profile: https://github.com/mervey45
 
       ![Create service key](key3.png)
 
-  5. Now your service key appears. Copy your service key for later use.
+  5. Now your service key appears. Download your service key for later use.
      The service key enables the connection to the SAP Cloud Platform ABAP environment system in ADT.
 
-     ![Create service key](key4.png)
+     ![Create service key](servicekeyx.png)
 
 [DONE]
 [ACCORDION-END]
@@ -154,19 +154,27 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
 
       ![Create ABAP cloud project](project2.png)
 
-  3. Paste your service key you've copied earlier from the SAP Cloud Platform Trial Cockpit and click **Next >**.
+  3. Select **Import** to import your downloaded service key.
+
+      ![Create ABAP cloud project](projectx1.png)
+
+  4. You can find your service key in your default download folder. Search for **`ADT.json`**, select it and click **Open**.
+
+      ![Create ABAP cloud project](projectx2.png)
+
+  5. Now your service key is pasted. Click **Next**.
 
       ![Create ABAP cloud project](project3.png)
 
-  4. Logon to your ABAP trial account with your e-mail address and password.
+  6. Logon to your ABAP trial account with your e-mail address and password.
 
       ![Create ABAP cloud project](project4.png)
 
-  5. Click Finish.
+  7. Click Finish.
 
       ![Create ABAP cloud project](project5.png)
 
-  6. Your trial system appears on the project explorer.
+  8. Your trial system appears on the project explorer.
 
       ![Create ABAP cloud project](project6.png)
 

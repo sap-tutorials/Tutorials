@@ -1,28 +1,23 @@
 ---
 title: Parallel Processing and Parameters
-description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
+description: Leveraging SQLScript in stored procedures, user-defined functions, and user-defined libraries.
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Creating Stored Procedures](https://developers.sap.com/tutorials/xsa-sqlscript-stored-proc.html)
-
-## Next Steps
-- [Intermediate Table Variables](https://developers.sap.com/tutorials/xsa-sqlscript-table-var.html)
+- **Tutorials:** [Creating Stored Procedures](xsa-sqlscript-stored-proc)
 
 ## Details
 ### You will learn  
 In this exercise we will modify the code of procedure `get_po_header_data`  so that it takes full advantage of the parallel processing within HANA by using table variables.
 
-### Time to Complete
-**15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit Previous Procedure)]
+[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
 
 Return to your procedure called `get_po_header_data`.
 
@@ -36,7 +31,7 @@ Define two tabular output parameters which will be used to explicitly pass the r
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign SELECT Statements)]
+[ACCORDION-BEGIN [Step 2: ](Assign SELECT statements)]
 
 Next, assign SELECT statements to the output parameters as shown here.
 
@@ -79,7 +74,7 @@ END
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Save and Build)]
+[ACCORDION-BEGIN [Step 3: ](Save and build)]
 
 Save the procedure.
 
@@ -93,7 +88,7 @@ Perform a build on the `hdb` module.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run the Procedure Again)]
+[ACCORDION-BEGIN [Step 4: ](Run the procedure again)]
 
 Return to the Database Explorer page and run the procedure again.
 
@@ -107,7 +102,7 @@ The CALL statement will be inserted into a new "SQL" tab. Click the **Run** butt
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Execution Time)]
+[ACCORDION-BEGIN [Step 5: ](Check execution time)]
 
 Check the execution time again, you may notice that it is a bit faster this time. The reason is that these SQL statements are now executed in parallel.
 

@@ -37,6 +37,8 @@ For more information, visit the official [SAP Cloud Platform Mobile Services](ht
 
 This tutorial series will not only show you how to get started with the iOS SDK, SAP Cloud Platform Mobile Services and the SAP Cloud Platform, but also will give you an introduction to the Mac Catalyst technology.
 
+> The full project as a reference, you can find [here](https://github.com/SAP-samples/cloud-sdk-ios-maccatalyst-mission-project).
+
 [DONE]
 [ACCORDION-END]
 

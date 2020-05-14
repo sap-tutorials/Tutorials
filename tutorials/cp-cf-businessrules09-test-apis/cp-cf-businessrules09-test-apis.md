@@ -104,7 +104,7 @@ Then, choose **Save**.
       "Vocabulary": [
         {
           "Employee": {
-            "isFullTimeEmployee": true,
+            "IsFullTimeEmployee": true,
             "countryofCompany": "USA",
             "jobTitle": "Engineer II",
              "company": "2000"

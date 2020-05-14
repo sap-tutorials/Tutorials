@@ -7,7 +7,6 @@ tags: [ tutorial>beginner, topic>sapui5,  products>sap-cloud-platform-portal, pr
 primary_tag: topic>odata
 ---
 
-
 ## Details
 ### You will learn
   - How to use a sub-generator to add an OData model to the SAPUI5 application
@@ -19,8 +18,7 @@ primary_tag: topic>odata
 [ACCORDION-BEGIN [Step : ](Add a new view)]
 
 
-Add a new view to display a list of products. For this, you can use another easy-ui5 sub-generator.
-
+Add a new view to display a list of products. For this, you can use another `easy-ui5` sub-generator.
 
 **Open** a new terminal session, to keep local web server running, and execute:
 
@@ -34,7 +32,7 @@ yo easy-ui5:newview
 |  Would you like to create a corresponding controller as well?     | **`Yes`**
 |  Would you like to create a route in the manifest?  | **`Yes`**
 
-The routes are added to the `webapp/manifest.json` file. The generator asks you whether you want to override the manifest.json file. If prompted, accept this.
+The routes are added to the `webapp/manifest.json` file. The generator asks you whether you want to override the `manifest.json` file. If prompted, accept this.
 
 [DONE]
 [ACCORDION-END]
@@ -43,7 +41,7 @@ The routes are added to the `webapp/manifest.json` file. The generator asks you 
 As you can see in the log, there are two new files and one modified file. As the generator is only able to create boilerplate code, we have to make some modifications to the `webapp/manifest.json` application descriptor.
 
 **Open** the file and replace the routing pattern of the new view with an empty string.
-```JSON
+```JSON [3]
 {
   "name": "Products",
   "pattern": "",
@@ -60,7 +58,7 @@ As you can see in the log, there are two new files and one modified file. As the
 
 1. The `webapp/view/Mainview.view.xml` will be the outer container of the application. Therefore, **remove** the entire content (nested tags) of the `<App>` tag.
 
-    ```XML
+    ```XML [5]
     <mvc:View controllerName="tutorial.products.controller.MainView"
       displayBlock="true"
       xmlns="sap.m"
@@ -73,17 +71,20 @@ As you can see in the log, there are two new files and one modified file. As the
 
 2. The newly generated view `webapp/view/Products.view.xml` defines one page of the whole application. **Replace** the current content of the view, the `<App>` tag, with a page that contains one list that uses an [aggregation binding](https://sapui5.hana.ondemand.com/#/topic/91f057786f4d1014b6dd926db0e91070.html).
 
-    ```XML
-    <Page title="Available Products">
+    ```XML [4-10]
+    <mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
+      xmlns="sap.m"
+      xmlns:mvc="sap.ui.core.mvc">
+      <Page id="Products" title="Available Products">
         <content>
-            <List items="{/Products}">
-                <StandardListItem type="Active" title="{ProductName}" />
-            </List>
+          <List items="{/Products}">
+            <StandardListItem type="Active" title="{ProductName}" />
+          </List>
         </content>
-    </Page>
+      </Page>
+    </mvc:View>
     ```
 
-    !![product view](productview.png)
 
 You'll immediately be able to see that the `MainView` embeds the `Products` view and displays an empty list. The list is still empty, because there is not data source bound to the application yet.
 
@@ -120,7 +121,7 @@ Again, please accept the modification of the manifest file.
 
     **Modify** the `approuter/xsapp.json` file to redirect the traffic to a destination. Also, turn off the authentication and replace the entire file with the following content.
 
-    ```JSON
+    ```JSON [3, 7-14]
     {
       "welcomeFile": "/cp.portal",
       "authenticationMethod": "none",
@@ -148,6 +149,8 @@ Again, please accept the modification of the manifest file.
         url: "https://services.odata.org/"
     ```
 
+    > YAML is quite nice to read but writing can be cumbersome. If you do edit this file often, I recommend using IDE plugins to make your life easier like [this one](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) to [validate the format](https://sap.github.io/ui5-tooling/pages/Configuration/#validation-ide-support)
+
 3. Switch to the first terminal session, stop the process and restart it. Restarting is necessary because the live-reload feature doesn't notice changes in the `ui5.yaml` file.
 
 ```Terminal
@@ -155,7 +158,7 @@ Again, please accept the modification of the manifest file.
 npm start
 ```
 
-> Alternatively, you can directly invoke `npx ui5 serve -o flpSandbox.html` (which is equivalent to `npm start` or run `npx ui5 serve` (which won't open a new page in the browser))
+> Alternatively, you can directly invoke `npx ui5 serve -o flpSandbox.html`, which is equivalent to `npm start` or run `npx ui5 serve`, the later one won't open a new page in the browser.
 
 Now you should see the Northwind products in the SAPUI5 list control:
 
@@ -182,7 +185,7 @@ In this step, you will add a detail page that shows some additional information.
     Accept that the generator can overwrite the `manifest.json` file.
 
 2. **Open** the `webapp/manifest.json` file and add the product ID to the pattern of the newly created route `ProductDetail`.
-    ```JSON
+    ```JSON [3]
     {
       "name": "ProductDetail",
       "pattern": "Product/{productId}",
@@ -202,14 +205,24 @@ In this step, you will add a detail page that shows some additional information.
     !![standard list item](listitem.png)
 
 4. Add navigation logic to the `webapp/controller/Products.controller.js` to handle the press event.
-    ```JavaScript
-    handleListItemPress: function (oEvent) {
-      var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      var selectedProductId = oEvent.getSource().getBindingContext().getProperty("ProductID");
-      oRouter.navTo("ProductDetail", {
-        productId: selectedProductId
+
+    ```JavaScript [8-14]
+    sap.ui.define([
+      "tutorial/products/controller/BaseController"
+    ], function (Controller) {
+      "use strict";
+
+      return Controller.extend("tutorial.products.controller.Products", {
+
+        handleListItemPress: function (oEvent) {
+          var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+          var selectedProductId = oEvent.getSource().getBindingContext().getProperty("ProductID");
+          oRouter.navTo("ProductDetail", {
+            productId: selectedProductId
+          });
+        }
       });
-    }
+    });
     ```
 
     !![handle press](handlepress.png)
@@ -224,40 +237,54 @@ In this step, you will add a detail page that shows some additional information.
 
 1. Add controller logic to `webapp/controller/ProductDetail.controller.js` to parse selected product from the routing arguments and to bind the product to the view.
 
-    ```JavaScript
-    onInit: function () {
-      const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      oRouter.getRoute("ProductDetail").attachMatched(this._onRouteMatched, this);
-    },
+    ```JavaScript [8-27]
+    sap.ui.define([
+      "tutorial/products/controller/BaseController"
+    ], function(Controller) {
+      "use strict";
 
-    _onRouteMatched: function (oEvent) {
-      const iProductId = oEvent.getParameter("arguments").productId;
-      const oView = this.getView();
-      oView.bindElement({
-        path: "/Products(" + iProductId + ")",
-        events: {
-          dataRequested: function () {
-            oView.setBusy(true);
-          },
-          dataReceived: function () {
-            oView.setBusy(false);
-          }
-        }
+      return Controller.extend("tutorial.products.controller.ProductDetail", {
+
+        onInit: function () {
+          const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+          oRouter.getRoute("ProductDetail").attachMatched(this._onRouteMatched, this);
+        },
+
+        _onRouteMatched: function (oEvent) {
+          const iProductId = oEvent.getParameter("arguments").productId;
+          const oView = this.getView();
+          oView.bindElement({
+            path: "/Products(" + iProductId + ")",
+            events: {
+              dataRequested: function () {
+                oView.setBusy(true);
+              },
+              dataReceived: function () {
+                oView.setBusy(false);
+              }
+            }
+          });
+        },
+
       });
-    },
+    });
     ```
 
 2. Add the required declarations to the `webapp/view/ProductDetail.view.xml` view to display some properties.
 
-    ```XML
-    <Page title="Detail Page">
+    ```XML [4-11]
+    <mvc:View controllerName="tutorial.products.controller.ProductDetail" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+      <Page id="ProductDetail" title="Detail Page">
         <VBox>
-            <Text text="{ProductName}" />
-            <Text text="{UnitPrice}" />
-            <Text text="{QuantityPerUnit}" />
-            <Text text="{UnitsInStock}" />
+          <Text text="{ProductName}" />
+          <Text text="{UnitPrice}" />
+          <Text text="{QuantityPerUnit}" />
+          <Text text="{UnitsInStock}" />
         </VBox>
-    </Page>
+      </Page>
+    </mvc:View>
     ```
 
 3. Once you saved the view, the web app should update automatically and display a view similar to this this one.
