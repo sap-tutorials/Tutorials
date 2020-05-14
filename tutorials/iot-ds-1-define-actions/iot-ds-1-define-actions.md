@@ -291,7 +291,14 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 [ACCORDION-BEGIN [Step 8: ](Define an action service option (optional))]
 In addition to defining quick create and SAP Fiori navigation options, you can also define an action service option.  We will not define an action service option in this tutorial but you can define one if you have an action service that you'd like to use as an additional option.
 
-![Select action service as action mode](/images/ds_action_service_def.png)
+  ![Select action service as action mode](/images/ds_action_service_def.png)
+
+>**Note**: Only action service of type "Decision Support" can be used as a decision support configured option. If you do not see your action service displayed in the **Action Service ID** dropdown, please check that your action service is defined with the type "Decision Support".
+
+  ![Select action service as action mode](/images/ds_action_service_type_example.png)
+
+  ![Select action service as action mode](/images/ds_action_service_type.png)
+
 
 [DONE]
 [ACCORDION-END]

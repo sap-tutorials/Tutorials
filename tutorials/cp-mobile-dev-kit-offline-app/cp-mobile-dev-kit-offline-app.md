@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
@@ -27,7 +27,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
 1. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-2. Right click on Workspace folder and select **New** | **MDK Base Project**.
+2. Right click Workspace folder and select **New** | **MDK Base Project**.
 
     ![MDK](img_001.png)
 
@@ -112,16 +112,16 @@ Open the application settings in the application editor by double clicking on th
 
 ![MDK](img_008.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Deploy and activate the application)]
 
 So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-    ![MDK](img_009.png)
+    ![MDK](img_009.1.1.png)
 
 2. Let the default configuration as it is and click **Next**.
 
@@ -143,59 +143,55 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     ![MDK](img_015.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Populate the QR code for app on-boarding)]
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-1. Right click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-    ![MDK](img_009.png)
+![MDK](img_009.png)
 
-2. Click **Next**.
+>**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
-    ![MDK](img_010.png)
-
-3. Click on the **QR-code icon** to populate the QR-code for app on-boarding.
-
-    ![MDK](img_012.1.png)
+![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
-1. On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
-
-2. Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
-
-3. Tap **Open browser**. It will open SAP Mobile Services Client app.
-
-    ![MDK](img_013.1.jpg)
-
-4. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
     ![MDK](img_016.1.jpg)
 
-5. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+
+    ![MDK](img_013.2.png)
+
+3. Once scan is succeeded, tap **CONTINUE**.
+
+    ![MDK](img_013.3.png)
+
+4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_017.1.png)
 
-6. Tap **AGREE** on `End User License Agreement`.
+5. Tap **AGREE** on `End User License Agreement`.
 
     ![MDK](img_018.1.jpg)
 
-7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+6. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
     ![MDK](img_019.1.jpg)
 
-8. Confirm the passcode and tap **DONE**.
+7.  Confirm the passcode and tap **DONE**.
 
     ![MDK](img_021.1.png)
 
@@ -203,7 +199,7 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_022.1.png)
 
-9. Tap **OK**.
+8. Tap **OK**.
 
     ![MDK](img_023.1.png)
 
@@ -213,33 +209,33 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_023.1.jpg)
 
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. On iPhone, open your camera app and start scanning the QR code, as shown below.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
 
     ![MDK](img_013.png)
 
-2. Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
+2. Once scan is succeeded, tap **Continue**.
 
-3. Tap **Start** to connect MDK client to SAP Cloud Platform.
+    ![MDK](img_013.1.png)
 
-    ![MDK](img_016.png)
-
-4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_029.png)
 
-5. Tap **Agree** on `End User License Agreement`.
+4. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img_018.png)
 
-6. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img_019.png)
 
-7. Confirm the passcode and tap **Done**.
+6. Confirm the passcode and tap **Done**.
 
     ![MDK](img_020.png)
 
@@ -247,7 +243,7 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_021.png)
 
-8. Tap **OK**.
+7. Tap **OK**.
 
     ![MDK](img_022.png)
 
@@ -257,7 +253,11 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_023.gif)
 
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
+
+You have successfully created an MDK offline app and you are now all set to [Create a Customer List Page](cp-mobile-dev-kit-list-page).
 
 [VALIDATE_1]
 [ACCORDION-END]

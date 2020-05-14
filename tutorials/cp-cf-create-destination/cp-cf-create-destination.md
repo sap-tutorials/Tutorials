@@ -76,7 +76,7 @@ When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK trust
 
 Click on the `Check Connection` icon on the newly created Destination to see if everything works.
 
-!![check destination function](./checkDest.png)
+!![check destination function](./checkDestination.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

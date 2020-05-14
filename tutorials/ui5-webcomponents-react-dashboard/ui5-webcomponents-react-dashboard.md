@@ -1,5 +1,5 @@
 ---
-title: Create an Analytical Dashboard via UI5 Web Component
+title: Create an Analytical Dashboard via UI5 Web Components for React
 description: Create an analytical dashboard with different components using UI5 Web Components for React.
 auto_validation: true
 time: 20
@@ -22,6 +22,7 @@ To make things easier, first import all the components you will need in this ste
 
 ```JavaScript / JSX
 import {
+  Avatar,
   Card,
   Text,
   ShellBar,
@@ -60,7 +61,9 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     The logo of the application should be displayed and also a profile picture would be nice.
 
-    Use the `logo` and `profile` prop to achieve this. Both props accept either a URL or a path to your image, you can use your own image or simply download the images below and add them to your `public` folder in your project.
+    Use the `logo` and `profile` prop to achieve this. The `logo` prop accepts either a URL or a path to your image, the `profile` prop only accepts an `Avatar` component. Add the `image` prop to the `Avatar` component and add an image in the same way you did with the `logo`.
+
+    You can use your own image or simply download the images below and add them to your `public` folder in your project.
 
     [`reactLogo.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/reactLogo.png)
 
@@ -69,7 +72,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     ```JavaScript / JSX
     <ShellBar
       logo={"reactLogo.png"}
-      profile={"profilePictureExample.png"}
+      profile={<Avatar image="profilePictureExample.png" />}
       primaryTitle={"My App"}  />
     ```
 
@@ -80,7 +83,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     ```JavaScript / JSX
     <ShellBar
       logo={"reactLogo.png"}
-      profile={"profilePictureExample.png"}
+      profile={<Avatar image="profilePictureExample.png" />}
       primaryTitle={"My App"}>
        <ShellBarItem icon="add" text="Add" />
     </ShellBar>
@@ -170,7 +173,7 @@ export function MyApp() {
     <div>
       <ShellBar
         logo={"reactLogo.png"}
-        profile={"profilePictureExample.png"}
+        profile={<Avatar image="profilePictureExample.png" />}
         primaryTitle={"My App"}
       >
         <ShellBarItem icon="add" text="Add" />
@@ -189,7 +192,7 @@ export function MyApp() {
         style={{ width: "300px" }}
         headerInteractive
         onHeaderClick={handleHeaderClick}
-        subtitle={`Click here to switch to ${switchToChart}`}
+        subheading={`Click here to switch to ${switchToChart}`}
       >
         <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
         {toggleCharts === "lineChart" ? (
@@ -212,7 +215,7 @@ export function MyApp() {
     ```JavaScript / JSX
     <Card
         heading="Progress"
-        subtitle="List"
+        subheading="List"
         style={{ width: "300px" }}
         avatar={<Icon name="list" />}
     >
@@ -421,16 +424,16 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
       heading="Stock Price"
       headerInteractive
       onHeaderClick={handleHeaderClick}
-      subtitle={`Click here to switch to ${switchToChart}`}
+      subheading={`Click here to switch to ${switchToChart}`}
     >
     ```
 
     ```JavaScript / JSX
-    <Card heading="Progress" subtitle="List" style={{ width: "300px", ...spacing.sapUiContentPadding }} avatar={<Icon name="list" />}>
+    <Card heading="Progress" subheading="List" style={{ width: "300px", ...spacing.sapUiContentPadding }} avatar={<Icon name="list" />}>
     ```
 
     ```JavaScript / JSX
-    <Card heading="AnalyticalTable" subtitle="List" style={{ width: "900px", ...spacing.sapUiContentPadding }} avatar={<Icon name="table-view" />}>
+    <Card heading="AnalyticalTable" subheading="List" style={{ width: "900px", ...spacing.sapUiContentPadding }} avatar={<Icon name="table-view" />}>
     ```
 
 2. Align the elements
@@ -548,7 +551,7 @@ export function MyApp() {
     <div>
       <ShellBar
         logo={"reactLogo.png"}
-        profile={"profilePictureExample.png"}
+        profile={<Avatar image="profilePictureExample.png" />}
         primaryTitle={"My App"}
       >
         <ShellBarItem icon="add" text="Add" />
@@ -570,7 +573,7 @@ export function MyApp() {
           heading="Stock Price"
           headerInteractive
           onHeaderClick={handleHeaderClick}
-          subtitle={`Click here to switch to ${switchToChart}`}
+          subheading={`Click here to switch to ${switchToChart}`}
           style={{ width: "300px", ...spacing.sapUiContentPadding }}
         >
           <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
@@ -582,7 +585,7 @@ export function MyApp() {
         </Card>
         <Card
           heading="Progress"
-          subtitle="List"
+          subheading="List"
           style={{ width: "300px", ...spacing.sapUiContentPadding }}
           avatar={<Icon name="list" />}
         >

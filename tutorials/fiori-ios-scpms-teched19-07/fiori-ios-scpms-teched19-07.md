@@ -344,6 +344,16 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 ```
 
+Before you go ahead and implement the `tableView(_:viewDidLoad:)`, you need to retrieve the URL of your service. The data task we're going to use will use the URL to download the needed product images.
+
+Open your Mobile Services instance and select your app configuration in the `Native/Hybrid` screen. There you click  **Mobile Sample OData ESPM** in the **Assigned Features** section.
+
+!![MS APIs](fiori-ios-scpms-teched19-00.png)
+
+The detail screen for the `Mobile Sample OData ESPM` will open. There you find the **`Runtime Root URL`** for this service, copy the whole URL as you will need it in a second.
+
+!![MS APIs](fiori-ios-scpms-teched19-00a.png)
+
 Next implement the `tableView(_:cellForRowAt:)` method and read the inline comments carefully:
 
 ```Swift
@@ -374,8 +384,8 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
     // The data service will return the image url in the following format: /imgs/HT-2000.jpg
     // In order to build together the URL you have to define the base URL.
-    // The Base URL is found in the Mobile Services API tab.
-    let baseURL = "https://hcpms-d061070trial.hanatrial.ondemand.com/com.sap.edm.sampleservice.v2"
+    // The Base URL is found in the Mobile Services App configuration's service.
+    let baseURL = <YOUR URL>
     let url = URL(string: baseURL.appending(productImageURLs[indexPath.row]))
 
     // Safe unwrap the URL, the code above could fail when the URL is not in the correct format, so you have to make sure it is safely unwrapped so you can react accordingly. You won't show the product image if the URL is nil.
@@ -400,6 +410,8 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 }
 
 ```
+
+Inside the just implemented method, assign the copied `URL` to the `baseURL` instead of `<YOUR URL>` placeholder.
 
 Before you will implement the `loadProductImageFrom(_:)` method, you have to define an image cache. As a cache you will simply use a dictionary.
 

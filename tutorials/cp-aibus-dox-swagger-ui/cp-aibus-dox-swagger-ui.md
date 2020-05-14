@@ -1,6 +1,6 @@
 ---
 title: Use Machine Learning to Extract Information from Documents
-description: Get the machine learning model prediction for the document fields you upload to Document Information Extraction.
+description: Get the machine learning model prediction for the documents you upload to Document Information Extraction.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
@@ -13,7 +13,7 @@ primary_tag: topic>machine-learning
   - How to access and use Swagger UI (User Interface)
   - How to extract information from files with Document Information Extraction
 
-The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the document you upload to Document Information Extraction.
+The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction.
 
 ---
 
@@ -67,17 +67,17 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a client)]
+[ACCORDION-BEGIN [Step 3: ](Create client)]
 
 To use Document Information Extraction, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
 
-You can either create only one client or create a list of clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here can be used in all the other service endpoints.
+You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
 
 1. Expand the **POST /clients** endpoint.
 
 2. Click **Try it out**.
 
-3. Enter your **`clientId`** and **`clientName`** values in the **payload** field in the format you see in **Examples for payload parameter**.
+3. Enter your **`clientId`** and **`clientName`** values in the **payload** field in the format you see in **Examples for payload parameter** (`c_00` and `client 00`, for example).
 
 4. Click **Execute**.
 
@@ -94,7 +94,7 @@ You should receive a response like the following:
 
 >- Maximum 40 uploaded documents per week​
 
->- Maximum 10 created `clientIds`
+>- Maximum 1 created `clientId`
 
 >- Maximum 10 created enrichment `dataIds`
 
@@ -125,17 +125,21 @@ You should receive a response like the following:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Upload a document)]
+[ACCORDION-BEGIN [Step 5: ](Upload document)]
 
 >Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
 
-Upload to the service any document in PDF format that has content in headers and tables, such as an invoice, using the **POST /document/jobs** endpoint. You need to specify the following:
+Upload to the service any document in PDF format that has content in headers and tables, such as an invoice, using the **POST /document/jobs** endpoint.
 
-  - A file.
 
-  - A **`clientId`**.
+>As an alternative to uploading your own document in PDF format to the service, you can use any of the following sample invoice files (right click on the link, then click ***Save link as*** to download the files locally):
 
-  - The fields to be extracted. You can find the list of available fields that can be extracted in the response of the **GET /capabilities** endpoint.
+>- [Sample Invoice 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-1.pdf)
+
+>- [Sample Invoice 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-2.pdf)
+
+>- [Sample Invoice 3](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-aibus-dox-swagger-ui/data/sample-invoice-3.pdf)
+
 
 Do the following:
 
@@ -145,7 +149,7 @@ Do the following:
 
 3. Upload a document PDF file.
 
-4. Enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), a client id or a list of client ids (`c_00`, for example), and the document type (`invoice`, for example).
+4. Enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), a client id or multiple client ids (`c_00`, for example), and the document type (`invoice`, for example).
 
 5. Click **Execute**.
 
@@ -165,15 +169,17 @@ Copy the **`id`** from the **Response body** to see the result of the extraction
 
 You can now use the **GET /document/jobs/{`uuid`}** endpoint to receive the prediction.
 
-1. Expand the endpoint.
+1. Expand the **GET /document/jobs/{`uuid`}** endpoint.
 
 2. Click **Try it out**.
 
-3. Enter the **`clientId`** you used in the previous step (`c_00`, for example).
+3. Set **`extractedValues`** to `true` to get the extracted values.
 
-4. Enter the **`id`** received in the **POST /jobs** endpoint as the **`uuid`**.
+4. Enter the **`clientId`** you used in the previous step (`c_00`, for example).
 
-5. Click **Execute**.
+5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`uuid`**.
+
+6. Click **Execute**.
 
     ![DOX](png-files/getResults.png)
 
@@ -183,7 +189,31 @@ You should receive a response like the following:
 
 In the response, you will find some general information about the document you uploaded. In the `headerFields`, such as `documentType` and `fieldName`, you will find the prediction for the extracted fields. If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE**, then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
 
-Congratulations, you completed the tutorial. You have now used our machine learning model to get field value predictions for the document you uploaded to Document Information Extraction.
+You have now successfully used our machine learning model to get field value predictions for the document you uploaded to Document Information Extraction.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 7: ](Delete client)]
+
+If you want to delete a client you created in Step 3, use the **DELETE /clients** endpoint.
+
+1. Expand the **DELETE /clients** endpoint.
+
+2. Click **Try it out**.
+
+3. Enter in the **payload** field the client id or multiple client ids (`c_00`, for example) you want to delete.
+
+4. Click **Execute**.
+
+![DOX](png-files/deleteClient.png)
+
+You should receive a response like the following:
+
+![DOX](png-files/deleteClientResponse.png)
+
+Congratulations, you have completed this tutorial.
 
 [DONE]
 [ACCORDION-END]

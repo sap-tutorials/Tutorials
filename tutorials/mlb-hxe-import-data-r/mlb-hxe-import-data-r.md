@@ -12,7 +12,7 @@ time: 10
 
 ## Details
 ### You will learn
-As part of the [R Datasets package](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html), you can get access to over a hundred sample datasets to address many Machine learning scenarios.
+As part of the [R Datasets package](https://www.rdocumentation.org/packages/datasets), you can get access to over a hundred sample datasets to address many Machine learning scenarios.
 
 In this tutorial, you will learn how to proceed to import the sample dataset into your SAP HANA, express edition instance.
 
@@ -68,7 +68,7 @@ For example, the `ts` R type is not supported.
 
 Before being able to import the data inside of your SAP HANA, express edition instance you will need to create the dataset table.
 
-The [R Datasets package documentation](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html) doesn't always provide the details to create the corresponding table as data type are not always documented.
+The [R Datasets package documentation](https://www.rdocumentation.org/packages/datasets) doesn't always provide the details to create the corresponding table as data type are not always documented.
 
 However, as most datasets are in fact available as data frame or vectors, and sometime time series, you can easily retrieve the structure and details about the data types.
 
