@@ -19,25 +19,28 @@ You will enable trust between SAP Cloud Platform Cloud Foundry subaccount and yo
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download metadata file from Cloud Foundry subaccount)]
+[ACCORDION-BEGIN [Step 1: ](Identify tenant name and region from your Cloud Foundry subaccount)]
 
->Note:
-> Your Azure Portal might look different according to your configured colour scheme. You can change your colour scheme whenever you want in the portal settings section.
+You have to replace some variables in provided URLs throughout the tutorial like a **`tenant_name`** or **`region`**.
 
 Navigate to your SAP Cloud Platform Cloud Foundry subaccount in the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit/#/home/trialhome) in order to have your `tenant` and `region` values for the next step handy.
 
+>The **`tenant_name`** is equal to the subaccount domain, which can be found on the **Overview** page of the SAP Cloud Platform Cloud Foundry subaccount.
+
+>The correct **`region`** is part of the API Endpoint URL on the same page.
+
 ![tenant and region replacement](tenant-region-replacement.png)
 
-To download the metadata file of your SAP Cloud Platform Cloud Foundry subaccount, open a new browser window and enter the UAA (User Account and Authentication Server) tenant URL, replacing the tenant name and the region of the subaccount accordingly:
+[DONE]
+[ACCORDION-END]
 
-`https://<tenant_name>.authentication.<region>.hana.ondemand.com/saml/metadata`
+[ACCORDION-BEGIN [Step 2: ](Download UAA metadata file for your SAP Cloud Platform Cloud Foundry subaccount)]
 
->**IMPORTANT**: You have to replace some variables in provided URLs throughout the tutorial.
+1. To download the metadata file of your SAP Cloud Platform Cloud Foundry subaccount, navigate to the **Trust Configuration** section in your SAP Cloud Platform Cockpit.
 
->The **`tenant_name`** is equal to the subaccount domain, which can be found in the **Overview** page of the SAP Cloud Platform Cloud Foundry subaccount.
+2. Click on **SAML Metadata** to download the corresponding SAML metadata file.
 
->The correct **`region`** can be found in the API Endpoint in the same page.
-
+    !![download saml metadata](download-saml-metadata.png)
 
 [DONE]
 [ACCORDION-END]
@@ -47,6 +50,9 @@ To download the metadata file of your SAP Cloud Platform Cloud Foundry subaccoun
 Go to the [Microsoft Azure Portal](https://portal.azure.com/) and navigate to **Azure Active Directory** and to the sub menu **Enterprise applications**.
 
 ![Azure AD enterprise application](ad-enterprise-applications.png)
+
+>Note:
+> Your Azure Portal might look different according to your configured colour scheme. You can change your colour scheme whenever you want in the portal settings section.
 
 Click **New Application**.
 
@@ -88,7 +94,7 @@ Change the value of `groupMembershipClaims` and save. In this tutorial, you are 
 Go back to **Azure Active Directory > Enterprise applications >** **`MyAzureTutorial`** **> Single Sign-on** , and you will note that the `Groups` attribute has been added to **User Attributes & Claims**.
 
 > Note:
-> A claim is usually a pice of information about a user, which is then provided to the connected application
+> A claim is usually a piece of information about a user, which is then provided to the connected application
 
 ![group assertion were automatically added](group-assertion-added.png)
 
