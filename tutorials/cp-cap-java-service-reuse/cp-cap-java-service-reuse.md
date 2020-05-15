@@ -76,7 +76,7 @@ First, we need to simulate a release of the `product-service` module, and consum
 
     > `npm pack` creates a tarball from the `products-service`, which is then directly used as a dependency in the bookstore application. More about `npm pack`: <https://docs.npmjs.com/cli-commands/pack.html>.
 
-    >You'll find a `sap-tutorial-products-1.0.0.tgz` in the root folder of the bookstore project, which is the tarball file of the `products-service` project.
+    >You'll find a `sap-capire-products-1.0.0.tgz` in the root folder of the bookstore project, which is the tarball file of the `products-service` project.
 
 3. Install all other packages and simplify the overall dependency structure [`npm dedupe`](https://docs.npmjs.com/cli/dedupe)
 
