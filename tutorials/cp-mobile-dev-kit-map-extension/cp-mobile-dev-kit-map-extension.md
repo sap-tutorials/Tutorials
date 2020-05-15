@@ -463,9 +463,9 @@ Since you will display the customer's address in Google Maps on Android device, 
 
 [ACCORDION-BEGIN [Step 7: ](Create Your Branded MDK Client (Required only for Android))]
 
-For Android, you will need to pass the API key to the MDK client, there is no way public store client can access it, hence you will required to create a branded client using MDK SDK. Follow steps 1 to 4 from [this tutorial](cp-mobile-dev-kit-build-client).
+For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK. Follow steps 1 to 4 from [this tutorial](cp-mobile-dev-kit-build-client).
 
-For iOS, you can just use App store client. Continue with next step.
+For iOS, you can just use the App store client. Continue with next step.
 
 [DONE]
 [ACCORDION-END]
@@ -558,7 +558,7 @@ In this step, you will run the app on an android device.
 
 [OPTION BEGIN [iOS]]
 
-  1. SAP Web IDE has a feature to generate QR code for app on-boarding.
+  1. SAP Web IDE has a feature to generate QR code for app onboarding.
 
     Right click the `mdk_maps` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
@@ -570,7 +570,7 @@ In this step, you will run the app on an android device.
 
     >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use device Camera, if you would like to scan a different onboarding URL.
 
-  2. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
+  2. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_020.2.png)
 
