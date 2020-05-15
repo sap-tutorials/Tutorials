@@ -76,6 +76,7 @@ handleListItemPress: function (oEvent) {
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step : ](Implement the controller logic)]
 
 Open the file `mta_app/app/webapp/controller/Detail.controller.js`, and replace the code with the following:  

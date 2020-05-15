@@ -3,29 +3,29 @@ title: Set Up SAP Business Application Studio for Development
 description: Before you can start developing using SAP Business Application Studio, administrators must perform the required onboarding steps that are described in this tutorial.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-workflow, software-product-function>sap-cloud-application-programming-model, products>sap-cloud-platform--abap-environment, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
 primary_tag: products>sap-business-application-studio
 ---
 
 ## Prerequisites
- - You have an SAP Cloud Platform account. See [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
+ - You have an SAP Cloud Platform account: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn
-  - How to perform the admin steps required to work in SAP Business Application Studio
+  - How to set up SAP Business Application Studio
 
-This tutorial is based on the procedure described in the [Getting Started](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/19611ddbe82f4bf2b493283e0ed602e5.html) topic of the Administrator Guide.
+This tutorial is based on the procedure described in the [Getting Started](https://help.sap.com/viewer/9d1db9835307451daa8c930fbd9ab264/Cloud/en-US/19611ddbe82f4bf2b493283e0ed602e5.html) topic of the SAP Business Application Studio Administrator Guide.
 
 ---
 
-[ACCORDION-BEGIN [Step: 1](Log in to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step: 1](Log into SAP Cloud Platform)]
 
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
-2. Click "Enter Your Trial Account" to access the Cloud Foundry environment.
+2. Click **Enter Your Trial Account** to access the Cloud Foundry environment.
 
-    !![Access SAP Cloud Platform Trial](2020-03 SCP Access Trial__.jpg)
+    !![Access SAP Cloud Platform Trial](2020-05 SCP Access Trial_.jpg)
 
 [DONE]
 [ACCORDION-END]
@@ -36,11 +36,14 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
     >For the trial environment, SAP Business Application Studio is only available on Amazon Web Services (AWS) - Frankfurt region.
 
-    >If you do not have a subaccount in this region, you need to create a new subaccount, where: Provider = **Amazon Web Services (AWS)** and Region = **Europe (Frankfurt)**.
+    >If you do not have a subaccount in this region, you need to create a new subaccount, where:
+
+    > - Provider = **Amazon Web Services (AWS)**
+    > - Region = **Europe (Frankfurt)**.
 
     !![subaccount](2020-03 Cockpit Select Subaccount__.jpg)
 
-2. Click on **Subscriptions** in the Navigation area.
+2. From the navigation area, click **Subscriptions** .
 
     !![opensubscriptions](2020-03 Cockpit Navigate to Subscriptions__.jpg)
 
@@ -54,11 +57,11 @@ In this step, you will add the SAP Business Application Studio subscription to a
 
 1. In the **Subscriptions** page, search for **`studio`**.
 
-2. Select the **SAP Business Application Studio** tile.
+2. Click the **SAP Business Application Studio** tile.
 
     !![findsubscription](2020-03 Cockpit Filter and Select AppStudio Subscription__.jpg)
 
-3. Click on **Subscribe** to add the subscription to the subaccount.
+3. Click **Subscribe** to add the subscription to the subaccount.
 
     !![subscribe](2020-03 Cockpit Subscribe__.jpg)
 
@@ -72,25 +75,26 @@ In this step, you will add the relevant role collections to your user.
 
 Role collections are user-related authorizations that restrict access to resources and services based on defined user permissions. They consist of individual roles. The roles are based on role templates.
 
-For SAP Business Application Studio, there are 2 role templates available: developer role and administrator role. The developer and administrator role collections, together with their corresponding templates, are created automatically when you subscribe to SAP Business Application Studio.
+For SAP Business Application Studio, there are 2 role templates available:
 
->The developer role allows developers to load and develop applications using SAP Business Application Studio.
+- **Developer** role, which allows developers to load and develop applications using SAP Business Application Studio
+- **Administrator** role, which allows administrators to manage (export and delete) user data
 
->The administrator role allows administrators to manage (export and delete) user data.
+The developer and administrator role collections, together with their corresponding templates, are created automatically when you subscribe to SAP Business Application Studio.
 
 1. Navigate to your subaccount.
 
     !![subaccount](2020-03 Cockpit Subscription Navigate to Subaccount__.jpg)
 
-2. From the Navigation area, choose **Security > Trust Configuration**.
+2. From the navigation area, choose **Security > Trust Configuration**.
 
     !![trustconfiguration](2020-03 Cockpit Navigate to Trust Configuration__.jpg)
 
-3. Select the relevant `IdP` (SAP ID Service).
+3. Select the default IdP by clicking on the `Name` attribute. The name might be `SAP ID Service` or `Default Identity Provider` or `sap.default` or similar.
 
     !![idp](2020-03 Cockpit Navigate to IdP__.jpg)
 
-4. From the Navigation area, choose **Role Collection Assignment**, and enter the e-mail of the user to whom you want to give permissions.
+4. Enter the e-mail of the user to whom you want to give permissions, and click **Show Assignments**.
 
     !![rolecollections](2020-03 Cockpit Role Collections Show Assignments__.jpg)
 
@@ -116,7 +120,7 @@ For SAP Business Application Studio, there are 2 role templates available: devel
 
     !![subaccount](2020-03 Cockpit Role Collections Navigate to Subaccount__.jpg)
 
-2. Click on **Subscriptions** in the Navigation area.
+2. From the navigation area, click **Subscriptions** .
 
     !![subscriptions](2020-03 Cockpit Trust Configuration Navigate to Subscriptions__.jpg)
 
@@ -126,15 +130,25 @@ For SAP Business Application Studio, there are 2 role templates available: devel
 
     !![gotoapplication](2020-03 Cockpit Go to Application__.jpg)
 
-5. Enter your credentials, and click **Log On**.
-
-    !![authentication](2020-03 AppStudio Authentication__.jpg)
-
-6. Click **OK** to accept the legal terms.
+6. You might be asked to accept the legal terms. Check the box and click **OK**.
 
     !![legalterms](2020-03 AppStudio Terms__.jpg)
 
-7. A new tab opens and SAP Business Application Studio loads.
+7. An **Access Denied** page may appear. Logout from SAP Business Application Studio and then login as depicted below.
+
+    !![Logout](2020-05 AppStudio Access Denied Logout_.jpg)
+    &nbsp;
+    !![Login](2020-05 AppStudio Access Denied Login_.jpg)
+
+8. Enter your credentials, and click **Log On**.
+
+    !![authentication](2020-03 AppStudio Authentication__.jpg)
+
+9. You might be asked to accept the legal terms. Check the box and click **OK**.
+
+    !![legalterms](2020-03 AppStudio Terms__.jpg)
+
+10. A new tab opens and SAP Business Application Studio loads.
 
     >**Bookmark this page!**
 

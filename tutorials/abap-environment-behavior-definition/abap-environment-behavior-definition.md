@@ -186,7 +186,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
         LOOP AT roots_to_lock INTO DATA(ls_root_to_lock).
           TRY.
               cl_abap_lock_object_factory=>get_instance( iv_name = 'EZROOMXXX')->enqueue(
-                it_table_mode = VALUE if_abap_lock_object=>tt_table_mode( ( table_name = 'ZROOM_XXX' mode = 'E' ) )
+                it_table_mode = VALUE if_abap_lock_object=>tt_table_mode( ( table_name = 'ZROOM_XXX' ) )
                 it_parameter  = VALUE if_abap_lock_object=>tt_parameter( ( name = 'ID' value = REF #( ls_root_to_lock-id ) ) ) ).
             CATCH cx_abap_foreign_lock INTO DATA(lx_lock).
               APPEND VALUE #( id = ls_root_to_lock-id %fail = VALUE #( cause = if_abap_behv=>cause-locked ) ) TO failed-room.

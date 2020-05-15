@@ -36,7 +36,7 @@ You can check out all available components in the [Storybook](https://sap.github
 
 2. So, you imported the `Card` component. Now it's time to use it. Replace the content of your `<div>` with a `<Card>`.
 
-    In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/ui5-web-components-card--default-story), you can see that Cards can receive different props. For now only add `heading='Card'`.
+    In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/4-ui5-web-components-card--default-story), you can see that Cards can receive different props. For now only add `heading='Card'`.
 
     ```JavaScript / JSX
     <div>

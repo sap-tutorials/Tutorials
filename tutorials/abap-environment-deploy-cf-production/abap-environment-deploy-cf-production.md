@@ -61,10 +61,6 @@ time: 15
 
      Or Login to your **SAP Cloud Platform cockpit** and select your global account. Select **Subaccounts** and your **subaccount**.
 
-      ![global](global.png)
-
-      ![subaccount](subaccount.png)
-
       ![sub2](sub2.png)
 
   4. Copy your API endpoint for later use.
@@ -110,7 +106,7 @@ time: 15
 
       ![open web ide](instance.png)
 
-[DONE] 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create HTML5 module)]
@@ -171,57 +167,7 @@ time: 15
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Disable csrfProtection)]
-
-  1. 	In the HTML5 module open the file **`xs-app.json`**.
-
-      ![run](disable.png)
-
-  2. Add the **`csrfProtection`** property to the route in order to disable `csrf` token protection in the UI. Create your run configuration. Therefore add the `csrfProtection` property in your **`xs-app.json`** file.
-
-      ![add](disable3.png)
-
-  3. Your code should like following:
-
-    ```JSON
-     {
-      "welcomeFile": "/test/flpSandbox.html",
-      "authenticationMethod": "route",
-      "logout": {
-        "logoutEndpoint": "/do/logout"
-      },
-      "routes": [
-        {
-          "source": "^/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(.*)$",
-          "target": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations$1",
-          "authenticationType": "xsuaa",
-          "service": "com.sap.cloud.abap",
-          "endpoint": "abap"
-        },
-        {
-          "source": "^/sap/opu/odata/sap/Z_I_BOOKING_XXX/(.*)$",
-          "target": "/sap/opu/odata/sap/Z_I_BOOKING_XXX/$1",
-          "authenticationType": "xsuaa",
-          "service": "com.sap.cloud.abap",
-          "endpoint": "abap",
-          "csrfProtection": false
-        },
-        {
-          "source": "^(.*)$",
-          "target": "$1",
-          "service": "html5-apps-repo-rt",
-          "authenticationType": "xsuaa"
-        }
-      ]
-    }
-    ```
-
-  4. Save your file.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Test UI on Cloud Foundry)]
+[ACCORDION-BEGIN [Step 7: ](Test UI on Cloud Foundry)]
 
   1. Right-click on **`TRAVEL_APP_XXX`** and select **Run** > **Run Configurations**.
 
@@ -262,7 +208,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create SAP Fiori launchpad site module)]
+[ACCORDION-BEGIN [Step 8: ](Create SAP Fiori launchpad site module)]
 
   1. Open SAP Web IDE and right-click on your project **`MTA_Project_XXX`** and select **New** > **SAP Fiori Launchpad Site Module**.
 
@@ -271,14 +217,14 @@ time: 15
   2. Create a SAP Fiori launchpad site module:
      - Module name: **`FLP_Site_Module_XXX`**
 
-    ![Define inbound tile](site2.png)
+      ![Define inbound tile](site2.png)
 
-      Click **Finish**.
+    Click **Finish**.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create inbound tile)]
+[ACCORDION-BEGIN [Step 9: ](Create inbound tile)]
 
 1. Open **`manifest.json`** and select **Navigation**.
 
@@ -300,7 +246,7 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Create SAP Fiori launchpad site module)]
+[ACCORDION-BEGIN [Step 12: ](Create SAP Fiori launchpad site module)]
   1. Open the **`CommonDataModel.json`** file in **`FLP_Site_Module_XXX`** and click **Add Group**.
 
     ![Define inbound tile](tile.png)
@@ -326,7 +272,7 @@ time: 15
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Deploy UI to Cloud Foundry)]
+[ACCORDION-BEGIN [Step 11: ](Deploy UI to Cloud Foundry)]
 
   1. Right click on **`MTA_Project_XXX`** and select **Build** > **Build with Cloud MTA Build Tool (recommended)**.
 
@@ -353,42 +299,49 @@ time: 15
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Run application on Cloud Foundry as business user)]
+[ACCORDION-BEGIN [Step 12: ](Run application on Cloud Foundry as business user)]
 
   1. Open SAP Cloud Platform cockpit trial or SAP Cloud Platform cockpit and navigate to your **trial subaccount**.  
      Select your space **dev**.
 
       ![Deploy UI to Cloud Foundry](dev.png)
 
-  2.  Select **`MTA_Project_XXX_appRouter`**.
+  2. Run your app router **`mta-project-xxx-approuter`**.  
+
+      ![Deploy UI to Cloud Foundry](devx.png)
+
+  3.  Select **`mta-project-xxx-approuter`**.
 
       ![Deploy UI to Cloud Foundry](dev2.png)
 
-  3.  Click on your application routes to open your application in your launchpad.
+  4.  Click on your application routes to open your application in your launchpad.
 
       ![Deploy UI to Cloud Foundry](dev3.png)
 
-  4. Logon to your SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment system.
+  5. Logon to your SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment system.
 
       ![Deploy UI to Cloud Foundry](environment.png)
 
-  5. You application is now available as a tile in the launchpad. Select your application **`Travel_App_XXX`**.
+  6. You application is now available as a tile in the launchpad. Select your application **`Travel_App_XXX`**.
 
       ![Deploy UI to Cloud Foundry](app.png)
 
-  6. Click **Go** to see your result.
+  7. Click **Go** to see your result.
 
       ![Deploy UI to Cloud Foundry](app2.png)
 
-  7. Check your result.
+  8. Check your result.
 
       ![Deploy UI to Cloud Foundry](app3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+[ACCORDION-BEGIN [Step 13: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
----
+
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/NiBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

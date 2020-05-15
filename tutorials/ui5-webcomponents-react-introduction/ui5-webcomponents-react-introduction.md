@@ -78,7 +78,7 @@ With this you created your first `React` component. To actually render the compo
     ```JavaScript  / JSX
     function App() {
       return (
-        <ThemeProvider withToastContainer>
+        <ThemeProvider>
           <MyApp />
         </ThemeProvider>
       );
@@ -94,7 +94,7 @@ import { ThemeProvider } from "@ui5/webcomponents-react/lib/ThemeProvider";
 
 function App() {
   return (
-    <ThemeProvider withToastContainer>
+    <ThemeProvider>
       <MyApp />
     </ThemeProvider>
   );

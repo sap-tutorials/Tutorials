@@ -63,7 +63,7 @@ import { BusinessPartnerController } from './business-partner.controller';
 export class AppModule {}
 ```
 
-If you've started your application with `npm run start:dev` in the previous tutorial, it should detect the change and restart automatically. If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:3000/business-partners` should return our placeholder string.
+If you've started your application with `npm run start:dev` in the previous tutorial, it should detect the change and restart automatically. If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
 
 [DONE]
 [ACCORDION-END]
@@ -107,7 +107,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 - Line 3 indicates, that we want to create a request to get all the business partners.
 - Line 4 ff. takes care of the execution and sends a request to a `url` based on the given destination `url`.
 
-In the code snippet above we assume that you have a mock server running locally. If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
+In the code snippet above we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
 
 ```JavaScript / TypeScript
 .execute({
@@ -172,7 +172,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 }
 ```
 
-Reload the `http://localhost:3000/business-partners` ` url`  to retrieve a list of business partners.
+Reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
 
 Congratulations, you just made your first call with the SAP Cloud SDK!
 
@@ -209,14 +209,14 @@ import { AppService } from './app.service';
 import { BusinessPartnerController } from './business-partner.controller';
 
 @Module({
-  imports: [ConfigModule],
+  imports: [ConfigModule.forRoot()],
   controllers: [AppController, BusinessPartnerController],
   providers: [AppService],
 })
 export class AppModule {}
 ```
 
-In line 2, `ConfigModule` is imported from the `config` package and in line 8 we add it to the module's `imports`. To reference a destination in the request execution, simply replace the `url` with a `destinationName` - `MockServer` in our example:
+In line 2, `ConfigModule` is imported from the `config` package and in line 8 we add it to the module's `imports`. If no arguments are passed to the `forRoot()` method, the `.env` file has to be located in the project root. For details on the possible configuration see the [nest documentation](https://docs.nestjs.com/techniques/configuration).  To reference a destination in the request execution, simply replace the `url` with a `destinationName` - `MockServer` in our example:
 
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {

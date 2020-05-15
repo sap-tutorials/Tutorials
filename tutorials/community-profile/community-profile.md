@@ -3,7 +3,7 @@ title: Update and Maintain Your SAP Profile at people.sap.com
 description: By taking this tutorial, you'll explore, set up, and manage the sections of your SAP profile (people.sap.com). You'll also earn the Profile Savvy badge.
 auto_validation: true
 time: 30
-tags: [tutorial>beginner]
+tags: [tutorial>beginner ]
 primary_tag: topic>sap-community
 ---
 

@@ -26,6 +26,13 @@ There are 3 options for mobile development kit client:
 
 In this tutorial, you will learn how to use Cloud Build service to generate a custom MDK client (option 2).
 
+SAP Cloud Platform Mobile Services provides the capability to build the MDK client without client-side installations
+You need to:
+▪ Add Cloud Build service feature to your MDK app configuration
+▪ Upload signing profiles and/or app information
+▪ Upload app icon
+▪ Initiate the build
+After a successful build, you can download the IPA or APK file.
 
 ---
 
@@ -256,26 +263,9 @@ You can find more details about Cloud Build service in [help documentation](http
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Assign Cloud Build feature in app configuration)]
+[ACCORDION-BEGIN [Step 3: ](Create a build job in Cloud Build service)]
 
-1. Navigate to **Mobile Applications** | **Native/Hybrid** and click `com.sap.mdk.demo` app.
-
-    ![MDK](img_022.6.png)
-
- 2. Click **+** icon to assign a new feature.
-
-    ![MDK](img_022.7.png)
-
-3. Select **Mobile Cloud Build** and click **OK**.
-
-    ![MDK](img_022.8.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Create a build job)]
-
-1. Click **Create Build Job** to build your first build job.
+1. In Mobile Services cockpit, navigate to `Mobile Applications` | `Native/Hybrid` | `com.sap.mdk.demo` | `Mobile Cloud Build`. Click **Create Build Job** to build your first build job.
 
     ![MDK](img_022.9.png)
 
@@ -318,7 +308,7 @@ You can find more details about packaging details in [help documentation](https:
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Install/download binary)]
+[ACCORDION-BEGIN [Step 4: ](Install/download binary)]
 
 [OPTION BEGIN [Android]]
 
@@ -343,6 +333,8 @@ You can install this new custom MDK client app either by scanning QR code from i
 ![MDK](img_023.10.png)
 
 [OPTION END]
+
+Congratulations, you have successfully built Your Mobile Development Kit Client Using Cloud Build Service and you are now all set to [Enable Push Notifications in Your Branded MDK Client](cp-mobile-dev-kit-push-customclient).
 
 [DONE]
 [ACCORDION-END]
