@@ -87,6 +87,8 @@ Before you start, make sure that you've completed the prerequisites.
 
 [OPTION BEGIN [Windows]]
 
+With your installed CDS command line tool, you can now create a new CAP-based project, in the form of a new directory with various things preconfigured.
+
 1. Open a command line window and run the following command in a folder of your choice to create the project:
 
     ```Shell/Bash
@@ -115,7 +117,7 @@ Before you start, make sure that you've completed the prerequisites.
     [cds] - running nodemon...
     --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
 
-        No models found at db/,srv/,app/,schema,services,.
+        No models found at db/,srv/,app/,schema,services.
         Waiting for some to arrive...
     ```
 
@@ -149,7 +151,7 @@ Before you start, make sure that you've completed the prerequisites.
     [cds] - running nodemon...
     --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
 
-        No models found at db/,srv/,app/,schema,services,.
+        No models found at db/,srv/,app/,schema,services.
         Waiting for some to arrive...
     ```
 
@@ -169,9 +171,9 @@ After initializing the project, you should see the following empty folders:
 
 ![Folder structure](folder-structure.png)
 
-1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`cat-service.cds`**.
+1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called `cat-service.cds`.
 
-2. Add the following code to the file **`cat-service.cds`**:
+2. Add the following code to the file `cat-service.cds`:
 
     ```CDS
     using { Country, managed } from '@sap/cds/common';
@@ -229,9 +231,9 @@ After initializing the project, you should see the following empty folders:
 
 Add service provider logic to return mock data.
 
-1. In the **`srv`** folder, create a new file called **`cat-service.js`**.
+1. In the **`srv`** folder, create a new file called `cat-service.js`.
 
-2. Add the following code to the file **`cat-service.js`**:
+2. Add the following code to the file `cat-service.js`:
 
     ```JavaScript
     module.exports = (srv) => {
@@ -272,9 +274,9 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. In the **`db`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`data-model.cds`**.
+1. In the **`db`** folder choose the **New File** icon in Visual Studio Code and create a new file called `data-model.cds`.
 
-2. Add the following code to the file **`data-model.cds`**:
+2. Add the following code to the file `data-model.cds`:
 
     ```CDS
     namespace my.bookshop;
@@ -301,7 +303,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
-3. Open the file **`cat-service.cds`** and replace the existing code with:
+3. Open the file `cat-service.cds` and replace the existing code with:
 
     ```CDS
     using my.bookshop as my from '../db/data-model';
@@ -321,9 +323,9 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 [ACCORDION-BEGIN [Step 7: ](Add initial data)]
 
-In Visual Studio Code add plain CSV files under **`db/csv`** to fill your database tables with initial data.
+In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill your database tables with initial data.
 
-1. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Authors.csv`**. Add the following to the file:
+1. In the `db` folder, choose **New File** and enter `csv/my.bookshop-Authors.csv` to create a new folder `csv` with the file named `csv/my.bookshop-Authors.csv`. Add the following to the file:
 
     ```CSV
     ID;name
@@ -333,7 +335,7 @@ In Visual Studio Code add plain CSV files under **`db/csv`** to fill your databa
     170;Richard Carpenter
     ```
 
-2. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Books.csv`**. Add the following to the file:
+2. In the newly created `csv` folder, choose **New File** and create a file called `my.bookshop-Books.csv`. Add the following to the file:
 
     ```CSV
     ID;title;author_ID;stock
@@ -379,6 +381,8 @@ In Visual Studio Code add plain CSV files under **`db/csv`** to fill your databa
 
 [ACCORDION-BEGIN [Step 8: ](Add persistent database)]
 
+Before you continue, make sure that you've completed the prerequisites and installed SQLite (for Windows users only).
+
 Instead of using in-memory, you can also use persistent databases.
 
 1. If `cds watch` is running, press **CTRL+C** in the command line to stop the service.
@@ -418,7 +422,6 @@ Instead of using in-memory, you can also use persistent databases.
 
     ```
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
-    [cds] - connect to db { database: 'db/my-bookshop.db' }
     [cds] - connect to sqlite db { database: 'db/my-bookshop.db' }
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
 
@@ -462,7 +465,7 @@ You can now see the generic handlers shipped with CAP in action.
 
 [ACCORDION-BEGIN [Step 10: ](Add custom logic)]
 
-1. In Visual Studio Code add the following code in the file **`srv/cat-service.js`**:
+1. In Visual Studio Code open the file `cat-service.js` and replace the existing code with::
 
     ```JavaScript
       module.exports = (srv) => {

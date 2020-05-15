@@ -24,7 +24,9 @@ time: 20
 
 It's now time to switch to SAP HANA as a database.
 
-1. In Visual Studio Code add the following configuration in the file **`package.json`** of your `my-bookshop` project. Overwrite any existing `cds` configuration:
+1. If `cds watch` is still running in Visual Studio Code, press **CTRL+C** in the command line to stop the service.
+
+2. In Visual Studio Code add the following configuration in the file `package.json` of your `my-bookshop` project. Overwrite any existing `cds` configuration:
 
     ```JSON
     "cds": {
@@ -38,7 +40,7 @@ It's now time to switch to SAP HANA as a database.
 
 >`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
 
-2. In the command line add the SAP HANA driver as a dependency to your project:
+3. In the command line add the SAP HANA driver as a dependency to your project:
 
     ```Shell/Bash
     npm add @sap/hana-client --save
@@ -76,7 +78,7 @@ cf login
 
 [ACCORDION-BEGIN [Step 3: ](Deploy using cf push)]
 
-Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https://docs.cloudfoundry.org/devguide/push.html) command to deploy applications. It needs the application files plus an optional **`manifest.yml`** file to push the application code and to bind the relevant services to the application.
+Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https://docs.cloudfoundry.org/devguide/push.html) command to deploy applications. It needs the application files plus an optional `manifest.yml` file to push the application code and to bind the relevant services to the application.
 
 [OPTION BEGIN [Windows]]
 
