@@ -1,5 +1,5 @@
 ---
-title: Deploy Your DanielSAPChatBot on Facebook Messenger
+title: Deploy Your ChatBot on Facebook Messenger
 description: Create, test, and publish a Facebook Messenger chatbot with SAP Conversational AI.
 auto_validation: true
 time: 20

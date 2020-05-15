@@ -14,7 +14,6 @@ time: 15
 ### You will learn  
 In this tutorial, you will create a SAPUI5 user interface, including the view and their controllers, to call `xsjs` and OData services. Be sure to have completed [SAP HANA XS Advanced - Consume the OData service in a basic HTML5 module](xsa-html5-expand-module) as this tutorial adds the SAPUI5 service to the project and properly wires it into the `web` module.  With this step done we can focus on creating new SAPUI5 interfaces which leverage this work.
 
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a new HTML file)]
@@ -664,7 +663,7 @@ sap.ui.define([
 
 [ACCORDION-BEGIN [Step 10: ](Add model helpers)]
 
-We can also have reusable functions like formatters, sorters, and grouping functions.  We have prepared these model support tools for you.  You can download the model.zip file from `Github` here: [https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/snippets_2.4.0/ex4/model.zip](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/snippets_2.4.0/ex4/model.zip).
+We can also have reusable functions like formatters, sorters, and grouping functions.  We have prepared these model support tools for you.  You can download the `model.zip` file from `Github` here: [https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/snippets_2.4.0/ex4/model.zip](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/snippets_2.4.0/ex4/model.zip).
 
 Please import this file into the `odataView/model` folder.
 
