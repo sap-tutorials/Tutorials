@@ -53,10 +53,10 @@ cf plugins
 The actual SAP Cloud Platform application, which is supposed to use Azure services in the background, is publicly accessible in the form of an already built Multi-Target Application Archive (MTA Archive). Please download the file via your Azure Cloud Shell by executing the following command:
 
 ```Bash
-curl https://github.com/SAP-samples/cloud-foundry-cap-azure-cities/releases/download/1.7.4/city-explorer-demo-app.mtar -L --output ~/cap-azure-sample-app.mtar
+curl https://github.com/SAP-samples/cloud-foundry-cap-azure-cities/releases/download/1.7.6/city-explorer-demo-app.mtar -L --output ~/cap-azure-sample-app.mtar
 ```
 
-![git download release](git-download.png)
+!![git download release](git-download.png)
 
 You should now have downloaded the MTA archive into your directory. Type the following command in your Azure Cloud Shell to list the content of your directory:
 
@@ -66,7 +66,7 @@ cd ~ && ls -l
 
 Your directory should look similar to the one shown in the screenshot below. Make sure there is the following:  **`cap-azure-sample-app.mtar`**
 
-![List directory structure](list-application.png)
+!![List directory structure](list-application.png)
 
 > If you want to have a look at the source code of this application check out the [GitHub repository](https://github.com/SAP-samples/cloud-foundry-cap-azure-cities/).
 
