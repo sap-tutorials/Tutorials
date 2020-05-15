@@ -1,6 +1,6 @@
 ---
-title: Create a Bot that Lets Customers Track Packages
-description: Create a bot that calls an API, in this case to let customers track their packages, and see how to make use of the memory.
+title: Create a Chatbot that Lets Customers Track Packages
+description: With SAP Conversational AI, create a chatbot that calls an API, in this case to let customers track their packages, and see how to make use of the memory, using SAP Conversational AI.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
@@ -8,7 +8,7 @@ primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - You understand the basics of creating a bot, as described in the tutorial [Build Your First Bot with SAP Conversational AI](cai-bot-getting-started).
+ - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
 ## Details
 ### You will learn

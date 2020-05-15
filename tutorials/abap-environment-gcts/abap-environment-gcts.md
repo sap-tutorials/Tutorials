@@ -1,12 +1,12 @@
 ---
 auto_validation: true
-title: Transport a Software Component Between Test and Development Systems
+title: Transport a Software Component Between Development and Test Systems
 description: Create and import a new software component into an SAP Cloud Platform ABAP Environment instance, add ABAP sources and export it to a new SAP Cloud Platform ABAP Environment instance.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
-author_name: Niloofar Naseri
-author_profile: https://github.com/niloofar-naseri
+author_name: Niloofar Flothkoetter
+author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ## Prerequisites  

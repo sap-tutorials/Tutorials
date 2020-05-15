@@ -20,7 +20,7 @@ primary_tag: products>sap-fiori
 1. To import smart controls to the view, *add* new XML namespaces to the `webapp/view/Products.view.xml` file.
 2. Replace <Page> in the same view with a page that contains the smart controls `smartFilterBar` and `smartList`
 
-```XML
+```XML [2-4,6-12]
 <mvc:View controllerName="tutorial.products.controller.Products" displayBlock="true"
 xmlns="sap.m"
 xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
@@ -46,7 +46,6 @@ Your page should now display product names and contain a smart header.
     Feel free to remove this property from the view to see how the displayed data changes.
 
 
-
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Use the smart filter bar)]
@@ -64,7 +63,7 @@ You've already learned about the cool expand-feature of OData in the previous st
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Navigate to the detail view)]
 
-**Click** on item **`Rhönbräu Klosterbier`** to navigate to the detail view. You'll upgrade this simple view to a full [`ObjectPage`](https://sapui5.hana.ondemand.com/#/api/sap.uxap.ObjectPageSubSection) in the next steps.
+**Click** on item **`Rhönbräu Klosterbier`** to navigate to the detail view. You'll upgrade this simple view to a full `ObjectPage` [control](https://sapui5.hana.ondemand.com/#/api/sap.uxap.ObjectPageSubSection) in the next steps.
 
 !![list item beer](klosterbier.png)
 
@@ -76,7 +75,7 @@ You've already learned about the cool expand-feature of OData in the previous st
 1. Similar to step 1, **include** new XML namespaces to the `webapp/view/ProductDetail.view.xml` view to allow the usage of new controls.
 2. **Replace** the current page of the view with this smart `ObjectPage`.
 
-```XML
+```XML [2-4, 6-29]
 <mvc:View controllerName="tutorial.products.controller.ProductDetail" displayBlock="true"
   xmlns="sap.m"
   xmlns:uxap="sap.uxap"
@@ -150,6 +149,8 @@ You've already learned about the cool expand-feature of OData in the previous st
     !![code 2](code2.png)
 
 5. **Mark the page as a favorite** via the button in the header of the page to make sure the event handlers work as expected.
+
+> Note that the icon is not supposed to do anything but being a toggle button (as there is no real controller logic associated with the control). It won't store the state in the data model.
 
 [DONE]
 [ACCORDION-END]
@@ -266,7 +267,7 @@ You probably noticed empty fields that do not show data yet.
 
     **Update** the binding definition, to expand the suppliers and categories, in the `_onRouteMatched` method of the controller `webapp/controller/ProductDetail.controller.js`.
 
-    ```JavaScript
+    ```JavaScript [4-18]
     _onRouteMatched: function (oEvent) {
       const iProductId = oEvent.getParameter("arguments").productId;
       const oView = this.getView();
@@ -362,7 +363,7 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
     }
     ```
 
-3. Add a new history item when the controller of the list view (`webapp/controller/Products.controller.js`) is initialized.
+3. Add a new history item when the controller of the list view (`webapp/controller/Products.controller.js`.) is initialized.
 
     ```JavaScript
     onInit : function () {
@@ -403,7 +404,6 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
     ```
 
 Click on the name of the Fiori App to see the hierarchy menu in action.
-
 !![hierarchy](hierarchy.png)
 
 [DONE]
