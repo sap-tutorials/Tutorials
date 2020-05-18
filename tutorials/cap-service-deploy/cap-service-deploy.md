@@ -6,7 +6,7 @@ description: This tutorial shows you how to deploy your SAP Cloud Application Pr
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
-time: 20
+time: 30
 ---
 
 ## Prerequisites

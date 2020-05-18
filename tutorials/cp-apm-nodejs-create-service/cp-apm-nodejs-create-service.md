@@ -6,7 +6,7 @@ description: Develop a sample business service using Core Data & Services (CDS),
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
-time: 40
+time: 50
 ---
 
 
