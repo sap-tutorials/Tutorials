@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform
 time: 15
 ---
 ## Prerequisites  
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
+- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
 
 ## Details
 ### You will learn  
@@ -15,7 +15,7 @@ time: 15
 > ### DEPRECATED
 >This tutorial, which deals with writing Java in the Neo environment of SAP Cloud Platform, is deprecated.
 
-> - If you are interested in building Java applications using the SAP Cloud Platform's Cloud Foundry Environment, please see [Create, Debug and Deploy Your First Java App](group.scp-4-java).
+>If you are interested in building Java applications using the SAP Cloud Platform's Cloud Foundry Environment, please see [Build a Business Application Using CAP for Java](mission.cap-java-app).
 
 
 In this tutorial, you'll learn everything you need to know to set up your local development environment based on Eclipse. The main steps are:
