@@ -174,16 +174,42 @@ Replace the application name as shown in the screenshot below with your own uniq
 
 ![unique application name](unique-application-name.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Push service broker application to Cloud Foundry space)]
-
 Make sure you have saved the `manifest.yml` file. Saving the file is possible either via **Command + S** or via right-clicking in the editor and choosing the **Save** option.
 
 Check if the file is saved by the appearance of the sign next to the file name as shown in the screenshot below. If it's still there, it's NOT saved.
 
 ![save file options](save-file.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Check creation of Redis Cache in Azure)]
+
+The application you will be deploying to SAP Cloud Platform (the service broker application) will use the Redis Cache you have created in the previous tutorial.
+If the Redis Cache is not fully provisioned yet (you have only triggered the creation in the previous tutorial), the service broker application will not be functional.
+
+1. Copy the following commands to the **Azure Cloud Shell** and hit enter to execute the commands.
+    >Replace `<name-redis-cache>` with your unique `Redis Cache` name from the previous tutorial.
+
+    ```Bash
+    while true; do sleep 10; az redis show --name <name-redis-cache> --resource-group SAPCloudPlatform --query provisioningState --output tsv;done
+    ```
+
+    This command will check the provisioning state of the Redis Cache. This can take between **5 and 15 minutes** until the the provisioning finishes.
+    **Continue with the next step once the output changes to `Succeeded`**.
+
+    > Troubleshooting: If the output of this command is neither `Succeeded` nor `Creating` you either haven't created the Redis Cache correctly in the previous tutorial or you haven't replaced the  `--name` parameter in this step correctly.
+
+    !![output provisioning state check - creating](creating-state.png)
+
+    !![output provisioning state check - Succeeded](succeeded-state.png)
+
+2. Stop the execution of the ongoing command output by pressing **CTRL + C**.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Push service broker application to Cloud Foundry space)]
 
 Push (deploy) the application to your SAP Cloud Platform Cloud Foundry space by executing the following command in the Azure Cloud Shell.
 
@@ -200,7 +226,7 @@ Copy the route information of this log output to your clipboard as it's needed i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Register service broker in Cloud Foundry space)]
+[ACCORDION-BEGIN [Step 10: ](Register service broker in Cloud Foundry space)]
 
 The service broker application is now running, but not yet acting as a proper service broker within your space. Thus it's necessary to register the application as a service broker.
 
@@ -232,7 +258,7 @@ Since your service broker is now fully functional, you should be able to use the
 cf marketplace
 ```
 
-You should now receive SAP Cloud Platform services as well as Azure services.
+You should now get SAP Cloud Platform services and Azure services listed in the marketplace.
 
 [VALIDATE_1]
 [ACCORDION-END]
