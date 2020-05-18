@@ -28,6 +28,8 @@ You will add a new `<List>` element, and define how every item will be displayed
 
 ![View1.view.xml file](1.png)
 
+> Besides using the text editor to manipulate the view, you can also make use of the graphical layout editor
+
 
 [DONE]
 [ACCORDION-END]

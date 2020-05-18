@@ -5,7 +5,7 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, software-product-function>sap-cloud-platform-mobile-services ]
 time: 25
 ---
 
@@ -296,7 +296,7 @@ If you run the app on the simulator now, you should see a search bar appearing o
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Implemnt the search result handling and update of the UITableViewController)]
+[ACCORDION-BEGIN [Step 5: ](Implement the search result handling and update of the UITableViewController)]
 
 At the moment the search bar doesn't do much, so let's go ahead and implement the search logic.
 
@@ -457,7 +457,10 @@ You will see a compile error because the `ProductTableViewController` doesn't co
 ```swift
 extension ProductTableViewController: FUIBarcodeScanViewControllerDelegate {
     func barcodeScanViewController(_ barcodeScanViewController: FUIBarcodeScanViewController, didReceiveScanResult scanResult: FUIBarcodeScanResult?) {
-        // TODO: implement
+        if let resultString = scanResult?.scanResultString {
+            searchProducts(resultString)
+            return
+        }
     }
 }
 

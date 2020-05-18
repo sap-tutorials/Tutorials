@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Use SAP Web IDE OData Features to Create a Simple App
 description: Explore basic OData features built into the SAP Web IDE by building a simple SAPUI5 app.
 auto_validation: true
@@ -43,7 +45,7 @@ Once you start the SAP Web IDE, use the menu path **File** > **New** > **Project
 
 You'll be presented with a multi-step wizard.
 
-In the **Template Selection** step, choose the category **SAP Fiori Application**, select the **SAP Fiori Worklist** application template, and proceed with **Next**.
+In the **Template Selection** step, choose the category **SAP Fiori Application** from the **Neo** environment, select the **SAP Fiori Worklist** application template, and proceed with **Next**.
 
 ![the Template Selection step](template-selection.png)
 

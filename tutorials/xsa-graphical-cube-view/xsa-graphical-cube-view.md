@@ -2,6 +2,8 @@
 title: Create a Cube Calculation View (XS Advanced)
 description: Create a graphical calculation view with a cube data type.
 primary_tag: products>sap-hana
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 auto_validation: true
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
@@ -72,7 +74,7 @@ Join the `PRODUCTID` and `PRODUCT.PRODUCTID` as an inner join.
 
 [ACCORDION-BEGIN [Step 4: ](Create an input parameter)]
 
-In the Input Parameters tab, create an input parameter named `IP_O_TARGET_CURRENCY`.
+In the Parameters tab of the Star Join Node, create an input parameter named `IP_O_TARGET_CURRENCY`.
 
 ![Mapping](7.png)
 
@@ -96,9 +98,13 @@ Change the name of the duplicate column to `OriginalGrossAmount`.
 
 ![Mapping](10.png)
 
-Click the semantics node and assign semantics for `GROSSAMOUNT`.
+Click the semantics node.  Change the Type of the `PURCHASEORDERID` to be an Attribute.
 
-![Mapping](11.png)
+![Attribute](10-1.png)
+
+Assign semantics for `GROSSAMOUNT`.
+
+![Assign Semantics](11.png)
 
 Choose **Amount with Currency Code** and configure as follows:
 

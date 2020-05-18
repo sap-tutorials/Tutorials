@@ -1,5 +1,5 @@
 ---
-title: Connect Using the SAP HANA Client for Node.js
+title: Connect Using the SAP HANA Node.js Interface
 description: Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
@@ -15,7 +15,7 @@ primary_tag: products>sap-hana
   - How to install Node.js and the SAP HANA client Node.js driver
   - How to create a Node.js application that queries a SAP HANA database
 
-Node.js provides a JavaScript engine outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/).  
+Node.js provides a JavaScript runtime outside of the browser and uses an asynchronous event driven programming model.  For more details, see [Introduction to Node.js](https://nodejs.dev/).  
 
 ---
 
@@ -35,7 +35,7 @@ During the installation, there is no need to check the following box as you do n
 
 ![Chocolatey](Chocolatey.png)
 
->The SAP HANA client provides a 32-bt and a 64-bit install, as does Node.js.  It is important that both versions are the same (i.e., 64-bit)
+>The SAP HANA client provides a 32-bt and a 64-bit install, as does Node.js.  It is important that both versions are the same (i.e., 64-bit).  For additional details see SAP note [2499500 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/2499500).
 
 [DONE]
 [ACCORDION-END]
@@ -48,41 +48,45 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![Search for hana-client](search-hana-client.png)  
 
+    The @sap/hana-client package in npm.
     ![npm page for hana-client](npm-hana-client.png)  
 
 2. Create a folder named `node` and enter the newly created directory.
 
-    ```Shell for Windows
+    ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\node
     cd %HOMEPATH%\HANAClientsTutorial\node
     ```
 
-    ```Terminal for Linux or Mac
+    ```Shell (Linux or Mac)
     mkdir $HOME/HANAClientsTutorial/node
     cd $HOME/HANAClientsTutorial/node
     ```
 
-3. Install the `hana-client` driver from NPM.
+3. Initialize the project and install the `hana-client` driver from NPM.
 
     ```Shell
+    npm init -y
     npm install @sap/hana-client
     ```
 
-    >The hana-client driver is also available from the HANA clients install folder.
+    >The hana-client driver is also available from the HANA client install folder.  The install location was set during the install.
 
     >```Shell
     >npm install C:\SAP\hdbclient\node
     ```
 
+    >If you encounter an error about permissions, on Microsoft Windows, run or open the command prompt as an administrator, or use `sudo` on Linux or Mac.
+
 The following command will list the Node.js modules that are now installed locally into the `HANAClientsTutorial\node` folder.  Note that the extraneous message can be ignored.  
 
-```Command Prompt
+```Shell
 npm list
 ```
 
 > ### Some Tips
 
->At this point, a project has been created and the SAP HANA client module has been installed.  The following is some extra optional information on npm.  
+>At this point, the SAP HANA client module has been installed into the `HANAClientsTutorials\node\node_modules` folder and added as a dependency in the `packages.json` file.  The following is some extra optional information on NPM.  
 
 > ---
 
@@ -94,16 +98,6 @@ npm list
 >npm list -g
 >npm list -g --depth=0
 >```  
-
->To enable debug logging of the HANA Node.js client, enter the following command:
-
->```Shell for Windows
->SET DEBUG=*
->```  
-
->```Terminal for Linux or Mac
-DEBUG=*
->```    
 
 >Command line help for NPM is available.  A few examples of this are shown below.
 
@@ -127,28 +121,35 @@ DEBUG=*
 >npm list @sap/hana-client
 >npm update @sap/hana-client
 >npm list @sap/hana-client
->```  
+>```
+
+>SAP also maintains a NPM registry.  The following steps show some commands on how to configure NPM to use the registry npm.sap.com.
+>
+>```Shell
+>npm config list
+>npm config set @sap:registry="https://npm.sap.com"
+>npm info @sap/hana-client
+>npm config set @sap:registry=
+>```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Node.js application that queries SAP HANA)]
+[ACCORDION-BEGIN [Step 3: ](Create a Node.js application that queries SAP HANA)]
 
-1. Create a file named nodeQuery.js and open the file in notepad.
+1. Open an editor on a file named nodeQuery.js.
 
-    ```Shell for Windows
-    echo.> nodeQuery.js
+    ```Shell (Microsoft Windows)
     notepad nodeQuery.js
     ```
 
-    Substitute `kate` below for your preferred text editor.  
+    Substitute `pico` below for your preferred text editor.  
 
-    ```Terminal for Linux or Mac
-    echo > nodeQuery.js
-    kate nodeQuery.js
+    ```Shell (Linux or Mac)
+    pico nodeQuery.js
     ```
 
-2. Add the code below to `nodeQuery.js`.
+2. Add the code below to `nodeQuery.js` and update the `serverNode` values in the `connOptions` to match your SAP HANA host and port.
 
     ```JavaScript
     'use strict';
@@ -162,7 +163,8 @@ DEBUG=*
         UID: 'USER1',
         PWD: 'Password1',
         encrypt: 'true',  //Must be set to true when connecting to SAP HANA Cloud
-        sslValidateCertificate: 'false',  //Must be set to false when connecting to a HANA, express instance that uses a self signed certificate.
+        sslValidateCertificate: 'false',  //Must be set to false when connecting
+        //to a HANA, express instance that uses a self signed certificate.
     };
 
     var connection = hana.createConnection();
@@ -187,7 +189,6 @@ DEBUG=*
     });
     ```  
 
-3. Update the `serverNode` values in the `connOptions` to match your SAP HANA host and port.
 
 4. Run the app.
 
@@ -198,14 +199,26 @@ DEBUG=*
 
 Note the above app makes use of some of the SAP HANA client Node.js driver methods, such as [connect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/d7226e57dbd943aa9d8cd0b840da3e3e.html), [execute](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/ef5564058b1747ce99fd3d1e03266b39.html) and [disconnect](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/fdafeb1d881947bb99abd53623996b70.html).
 
-In the above example, the asynchronous versions of these methods are used as the optional callback function is provided as opposed to the synchronous version, which does not provide a callback. For readers that are unfamiliar with synchronous and asynchronous operations, see [The Node.js Event Loop, Timers, and process.nextTick()](https://nodejs.org/de/docs/guides/event-loop-timers-and-nexttick/).
+In nodeQuery.js, the asynchronous versions of these methods are used because the optional callback function is provided.  For readers that are unfamiliar with synchronous and asynchronous operations, see [The Node.js Event Loop, Timers, and process.nextTick()](https://nodejs.org/de/docs/guides/event-loop-timers-and-nexttick/).
+
+>To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
+
+>```Shell (Microsoft Windows)
+>SET DEBUG=*
+>```  
+
+>```Shell (Linux or Mac)
+export DEBUG=*
+>```    
+
+> ![debug output](debug_flag.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Debug the application)]
 
-Visual Studio Code can be used to run and debug a Node.js.  
+Visual Studio Code can be used to run and debug a Node.js application.  
 
 1. [Download Visual Studio Code.](https://code.visualstudio.com/Download)
 
@@ -215,14 +228,12 @@ Visual Studio Code can be used to run and debug a Node.js.
 
 3. Open the file `nodeQuery.js`.
 
-4. Place a breakpoint at line 26. Select **Run | Start Debugging**.  
+4. Place a breakpoint inside the `connection.exec` callback.  Select **Run | Start Debugging**.  
 
     Notice that the program stops running at the breakpoint that was set. Observe the variable values in the leftmost pane.  Step through code.
 
     ![VS Code Debugging](debugging.png)
 
-
-There are two further examples in the SAP HANA client install directory `C:\SAP\hdbclient\node\examples` that may be of interest.
 
 Congratulations! You have created and debugged a Node.js application that connects to and queries an SAP HANA database.
 

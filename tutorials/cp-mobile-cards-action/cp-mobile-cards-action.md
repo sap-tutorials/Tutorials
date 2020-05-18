@@ -9,7 +9,7 @@ author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
 ## Prerequisites
- - [Tutorial: Create Cards Automatically with the Automatic Instance Generation Template](cp-mobile-cards-automatic-instance-generation)
+ - **Tutorial:** [Create Cards Automatically with the Automatic Instance Generation Template](cp-mobile-cards-automatic-instance-generation)
 
 ## Details
 ### You will learn
@@ -82,7 +82,7 @@ A new card with the version `1.1` is created, and the state of this card is Deve
 
 [ACCORDION-BEGIN [Step 3: ](Update the card title)]
 
-Click the **Edit** button ![MobileCardsIcon](ico_2.png) for the development `1.1 version` card.
+Click the **Edit** button for the development `1.1 version` card.
 
 > To ensure you are editing the correct version, please notice the green vertical bar in the Versions Table. This bar indicates the version of the current view on SAP Cloud Platform Mobile Services Cockpit.
 
