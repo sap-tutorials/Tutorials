@@ -20,6 +20,7 @@ primary_tag: products>sap-conversational-ai
 An FAQ chatbot lets a user ask questions and lets you guide them to the correct answer.
 
 ![Example](FAQ-intro.png)
+&nbsp;
 
 The FAQ bot project gives you the following automatically:
 
@@ -31,6 +32,7 @@ For an overview of creating an FAQ chatbot, see this 3-minute video:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YHmeh_yAYZg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+&nbsp;
 
 ---
 
@@ -66,7 +68,7 @@ More guidelines are in the [Help Documentation](https://help.sap.com/viewer/a452
 
 [ACCORDION-BEGIN [Step 2: ](Download CSV with questions)]
 
-Download our sample [`HowToBuildAChatbot.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/conversational-ai-faq-chatbot-beginner/HowToBuildAChatbot.csv), which has questions and answers related to learning how to create chatbots with SAP Conversational AI.
+Download our sample <a href="https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/conversational-ai-faq-chatbot-beginner/HowToBuildAChatbot.csv" download>`HowToBuildAChatbot.csv`</a>, which has questions and answers related to learning how to create chatbots with SAP Conversational AI.
 
 ![Microsoft Excel](FAQ-excel.png)
 
