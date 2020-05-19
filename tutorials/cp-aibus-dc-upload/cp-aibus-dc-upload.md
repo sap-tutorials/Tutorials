@@ -55,7 +55,7 @@ Now that everything is installed, you can proceed and connect with your service 
 
 [ACCORDION-BEGIN [Step 2: ](Prepare environment configuration)]
 
-Next, you make use of the service keys that were created in this [tutorial](cp-aibus-dc-service-instance).
+Next, you make use of the service keys that were created in this [tutorial](cp-aibus-dc-prod-service-instance).
 
 Scroll down in your notebook and click the next cell as you can see in the image below. You will now have to adapt the template and fill it with your service keys values. Use the table below and insert the values from your service key into the corresponding spaces of the code:
 
