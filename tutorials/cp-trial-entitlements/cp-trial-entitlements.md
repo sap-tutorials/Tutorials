@@ -45,8 +45,6 @@ Each service has one or more **service plans** available. A service plan is the 
 
 Some service plans use numeric quota, which means that you can increase or decrease the number of units available in a subaccount. Depending on the service, these units represent different things and may impact the amount of service instances, applications or routes you can have in a subaccount.
 
-For example, 1 GiB of Application Runtime comes with 10 routes. If you want to learn more about what the different service plans and units mean for each service, check out the latest [SAP Cloud Platform Service Description Guide and Agreement](https://www.sap.com/about/agreements/policies/cloud-platform.html).
-
 There are also service plans where the quota is simply shown as "limited". In that case, you can entitle that service to multiple subaccounts without having to worry about how much of it to distribute to each subaccount. You can think of assigning entitlements for such service plans as "enabling" subaccounts to use them.
 
 There are two places in the cockpit where you can view and configure entitlements and quotas for subaccount: at **global account** level and **subaccount level**. In this tutorial, you'll work on global account level. You have one global account that is your trial account.
