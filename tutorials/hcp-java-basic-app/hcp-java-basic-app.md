@@ -17,7 +17,7 @@ time: 15
 > ### DEPRECATED
 >This tutorial, which deals with writing Java in the Neo environment of SAP Cloud Platform, is deprecated.
 
-> - If you are interested in building Java applications using the SAP Cloud Platform's Cloud Foundry Environment, please see [Create, Debug and Deploy Your First Java App](group.scp-4-java).
+>If you are interested in building Java applications using the SAP Cloud Platform's Cloud Foundry Environment, please see [Build a Business Application Using CAP for Java](mission.cap-java-app).
 
 ---
 

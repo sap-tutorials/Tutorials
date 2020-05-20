@@ -240,7 +240,7 @@ In this step, you will bind style classes:
 6. Save the changes to `Customers_Detail.page`.
 
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
@@ -403,7 +403,7 @@ Right click the `MDK_Styling` MDK Application in the project explorer pane and s
 
 Congratulations, you have successfully styled your MDK app and you are now all set to [Implement Deep Linking to Another App from an MDK App](cp-mobile-dev-kit-deep-link).
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 

@@ -29,7 +29,7 @@ You can find more details in the [Mobile Development Kit developer page](https:/
 
 ![MDK](MDK.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure a new MDK app in Mobile Services cockpit)]
@@ -63,7 +63,7 @@ Make sure that you have completed required pre-Prerequisites mentioned in this t
 
     >You can find more information on available features in SAP Cloud Platform Mobile Services in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/99f9cedcd0974faeb12c20cb3efa94b3.html).
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add a sample backend to your MDK app)]
