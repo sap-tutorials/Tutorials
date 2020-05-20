@@ -1,5 +1,4 @@
 const fs = require('fs-extra');
-const path = require('path');
 
 const linkUtils = require('./link');
 const { regexp: { validation: { codeBlock, codeLine } } } = require('../constants');

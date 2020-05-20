@@ -25,13 +25,13 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
 1. Before we do that, open the **`Main.storyboard`** and use the **Object Library** to create another Table View Controller and place it directly below the **Products Table View Controller**.
 
-    ![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-1.png)
+    !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-1.png)
 
 2. Use the project navigator to create a new Table View Controller Cocoa Touch Class  **`TutorialApp > New File ... > Cocoa Touch Class`**. Name the class **`CustomersTableViewController`**.
 
 3. Open the **`Main.storyboard`** and set the **Custom Class** of the newly added Table View Controller to `CustomersTableViewController`.
 
-    ![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2.png)
+    !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -298,13 +298,13 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
 1. Open the `Main.storyboard`, there select the `OverviewTableViewController` and **`control + drag`** to the `CustomersTableViewController`.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-3.gif)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-3.gif)
 
 2. If you look closely, you can see that the `CustomersTableViewController` has a Navigation Item now allowing your user to navigate back to the Overview Screen.
 
     Select the segue in Interface Builder and click on the **Attributes Inspector**. As identifier enter `showCustomersList` and hit return.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-4.png)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -374,7 +374,7 @@ You can store the segue identifier in a class property for cleaner code and use 
 
 4. If you run the app now you can navigate between Overview Screen and Customer List Screen.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-5.gif)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-04-5.gif)
 
 [DONE]
 [ACCORDION-END]

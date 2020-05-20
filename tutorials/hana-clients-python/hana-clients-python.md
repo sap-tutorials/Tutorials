@@ -1,5 +1,5 @@
 ---
-title: Connect Using the SAP HANA Client for Python
+title: Connect Using the SAP HANA Python Interface
 description: Create and debug a Python application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
@@ -17,7 +17,7 @@ primary_tag: products>sap-hana
 
 In the 2019 Stack Overflow's annual developer survey, Python ranked 4th in the [Most Popular Technologies](https://insights.stackoverflow.com/survey/2019#technology) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/).
 
-The [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) supports Python 3.4+ and Python 2.7.  
+The [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) supports Python 3.4+ and  Python 2.7.  For further details see SAP note [2499500 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/2499500).  
 
 The following steps will create a simple Python app that can connect to and query an SAP HANA database.  
 
@@ -37,7 +37,7 @@ If Python is installed, the command will return a value such as Python 3.7.4.  U
 
 If Python is not installed, it can be downloaded from [Python downloads](https://www.python.org/downloads/).
 
->On Windows, be sure to download the 64-bit version of Python, since the 32-bit version is not supported by SAP's Python client.  On Windows, the 64-bit version will have a file name like python-3.8.2-amd64.exe.  
+>On Microsoft Windows, be sure to download the 64-bit version of Python, since the 32-bit version is not supported by SAP's Python client.  The 64-bit version will have a file name like python-3.8.2-amd64.exe.  
 
 Check the box that says **Add Python 3.x to PATH** as shown below to ensure that the interpreter will be placed in your path.   
 
@@ -50,7 +50,7 @@ You should now be able to open a new shell and verify that Python is installed.
 
 [ACCORDION-BEGIN [Step 2: ](Install SAP HANA client for Python using pip and PyPI)]
 
-The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.
+The standard package installer for Python is [pip](https://pypi.org/project/pip/).  The following commands will check the version of pip and attempt to upgrade it to the latest available version.  Again, use the pip or pip3 command that returns a version 3.4 or greater of Python.
 
 ```Shell
 pip --version
@@ -110,22 +110,20 @@ pip install hdbcli
 [ACCORDION-BEGIN [Step 3: ](Create Python application that queries SAP HANA)]
 
 
-1. In a shell, create a folder named `python`, enter the newly created directory, create a file named `pythonQuery.py`, and open the file in notepad.
+1. In a shell, create a folder named `python`, enter the newly created directory, and open an editor on a file name `pythonQuery.py`.
 
-    ```Shell on Windows
+    ```Shell (Microsoft Windows)
     mkdir %HOMEPATH%\HANAClientsTutorial\python
     cd %HOMEPATH%\HANAClientsTutorial\python
-    echo.> pythonQuery.py
     notepad pythonQuery.py
     ```
 
-    Substitute `kate` below for your preferred text editor.  
+    Substitute `pico` below for your preferred text editor.  
 
-    ```Terminal on Mac or Linux
+    ```Shell (Linux or Mac)
     mkdir $HOME/HANAClientsTutorial/python
     cd $HOME/HANAClientsTutorial/python
-    touch pythonQuery.py
-    kate pythonQuery.py
+    pico pythonQuery.py
     ```
 
 2. Add the code below to `pythonQuery.py`.
@@ -177,7 +175,7 @@ The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification]
 
   - For further examples of accessing a database from Python, see [Python and SQL](https://www.python-course.eu/sql_python.php) and [Python MySQL](https://www.w3schools.com/python/python_mysql_insert.asp).  
 
-  - For information information on the SAP HANA Python client, see [Python Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html).
+  - For information on the SAP HANA Python client, see [Python Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html).
 
 [DONE]
 [ACCORDION-END]
@@ -186,9 +184,9 @@ The code in `pythonQuery.py` uses [PEP 249 -- Python Database API Specification]
 
 Visual Studio Code provides plugins for Python and can be used to debug an application.  
 
-1. [Download Visual Studio Code.](https://code.visualstudio.com/Download)
+1. If you have not already done so, download [Visual Studio Code](https://code.visualstudio.com/Download).
 
-2. In Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
+2. If you have not already done so, in Visual Studio Code, choose **File | Add Folder to Workspace**, and then add the `HANAClientsTutorial` folder.
 
     ![Workspace](workspace.png)
 
@@ -196,11 +194,13 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
     ![Python Extension](extension.png)
 
-    Visual Studio Code will recognize the `py` file extension and will suggest plugins to install.
+    Visual Studio Code will recognize the `py` file extension and will suggest installing the Python extension.  Click **Install**.
 
-4. Place a breakpoint at line 28. Then select **Run | Start Debugging**.
+4. Place a breakpoint.
 
-5. Select **Python File** from the debug configuration options.  
+5. Select **Run | Start Debugging**.
+
+6. Select **Python File** from the debug configuration options.  
 
     Notice that the program stops running at the breakpoint that was set.
 

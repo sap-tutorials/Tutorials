@@ -1,6 +1,6 @@
 ---
 title: Choose an SAP HANA Database
-description: Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA clients in subsequent tutorials.
+description: Learn about SAP HANA Cloud and SAP HANA, express edition and choose one that will be used with the SAP HANA database clients in subsequent tutorials.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
@@ -8,7 +8,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - A Windows, Mac or Linux computer
+ - A Microsoft Windows, Linux or Mac computer
  - Access or the license to create an SAP HANA Cloud database or access to a machine that can run SAP HANA, express edition
 
 ## Details
@@ -48,7 +48,7 @@ Here are a few benefits of using SAP HANA in the cloud:
 
 * Software updates are automatically applied by SAP.
 
-* Hardware is managed by the cloud provider (e.g., AWS, Azure, GCP, SAP).
+* Hardware is managed by the cloud provider (e.g. AWS, Azure, GCP, or SAP).
 
 * [Backups](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/89d71f01daca4ecaaa069d6a060167f5.html) are automatic and recovery requests are handled via [service requests](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/918e714867e1409da47fa01ce03ba8f3.html).  
 
@@ -70,7 +70,7 @@ Here are a few differences between SAP HANA Cloud and an on-premise version:
 
 
 [ACCORDION-BEGIN [Step 3: ](Connect to SAP HANA Cloud)]
-> This step requires access a license for SAP HANA Cloud.
+> This step requires access to a license for SAP HANA Cloud.
 
 >A trial option is planned for SAP HANA Cloud.  For further details and to sign up for emails on HANA Cloud including news on the trial, see the topic _What to Expect from the SAP HANA Cloud Trial_ at [Getting Started with SAP HANA Cloud](https://saphanacloudservices.com/hana-cloud/learning-article/what-is-sap-hana-cloud/).
 
@@ -86,9 +86,9 @@ Here are a few differences between SAP HANA Cloud and an on-premise version:
 
     - [https://help.sap.com/viewer/product/CP/Cloud/en-US](https://help.sap.com/viewer/product/CP/Cloud/en-US)
 
-    Once the SAP HANA Cloud instance is created, take note of the endpoint or host and port needed to connect to the database as well as the admin user.  This will be needed in subsequent tutorials in this mission.  
+    Once the SAP HANA Cloud instance is created, take note of the admin user as well as the endpoint (host:port) needed to connect to the database.  This will be needed in subsequent tutorials in this mission.  
 
-2. Open the Database Explorer.  
+2. Open the Database Explorer by choosing **Open In, Database Explorer**.
 
     ![Open with DBX](OpenWithDBExplorer.png)
 
@@ -98,9 +98,10 @@ Here are a few differences between SAP HANA Cloud and an on-premise version:
 
     The Database Explorer provides the ability to browse catalog objects and execute SQL statements from the SQL console.  For more information, see [Getting Started With the SAP HANA Database Explorer](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/Cloud/en-US).  
 
-    ![Database Explorer](databaseExplorer.png)
 
 3. Open a SQL console by clicking the **Open SQL Console** toolbar item in the top-left of the screen.  
+
+    ![Database Explorer](databaseExplorer.png)  
 
 4. Run the following query to see the name of the database you are currently connected to.  Notice it is `H00`.  
 
@@ -108,31 +109,31 @@ Here are a few differences between SAP HANA Cloud and an on-premise version:
     SELECT * FROM M_DATABASE;
     ```
 
-    Alternatively, right-click the connection and choose **Connection Details**.
+    ![Database Explorer Result](databaseExplorerResult.png)  
 
-    In the Database Explorer, the current schema shows DBADMIN.  
+5. In the Database Explorer, the current schema shows DBADMIN.  
 
     ![current schema](current-schema.png)
 
-Another way to see the current schema and the connected user is via SQL as shown below:
+    Another way to see the current schema and the connected user is via SQL as shown below:
 
-```SQL
-SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
-```
+    ```SQL
+    SELECT CURRENT_USER, CURRENT_SCHEMA FROM DUMMY;
+    ```
 
-To see the list of services, enter the following SQL:
+6. To see the list of services, enter the following SQL statement:
 
-```SQL
-SELECT * FROM M_SERVICES;
-```
+    ```SQL
+    SELECT * FROM M_SERVICES;
+    ```
 
-To see information about the database server, enter the following SQL:
+7. To see information about the database server, enter the following SQL statement:
 
-```SQL
-SELECT * FROM M_HOST_INFORMATION;
-```
+    ```SQL
+    SELECT * FROM M_HOST_INFORMATION;
+    ```
 
-Congratulations! You have connected to SAP HANA Cloud.
+Congratulations! You have connected to SAP HANA Cloud and performed a few queries.
 
 [DONE]
 [ACCORDION-END]
@@ -141,7 +142,7 @@ Congratulations! You have connected to SAP HANA Cloud.
 
 SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).
 
-SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides VM images that can be run on Windows, OS X and Linux laptops as well as binary installs.  There are many different install options that are explained at [Try SAP HANA, express edition](https://developers.sap.com/topics/sap-hana.html).  The currently available version can be seen in the [release notes](https://developers.sap.com/topics/sap-hana.html#releaseNotes).  
+SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, OS X and Linux machines as well as binary installs.  There are many different install options that are explained at [Try SAP HANA, express edition](https://developers.sap.com/topics/sap-hana.html).  The currently available version can be seen in the [release notes](https://developers.sap.com/topics/sap-hana.html#releaseNotes).  
 
 Choose an option and proceed to install SAP HANA, express edition.  The server-only install, which requires less memory, is sufficient to complete the tutorials in this mission.  Be sure to note the SAP HANA database master password, as it will be needed later for connecting.
 
@@ -156,13 +157,13 @@ A default installation will contain one [system](https://help.sap.com/viewer/6b9
 
 The system database contains information about the tenant database(s) and is used for overall administration.  The default port for the system database is **`39013`**.  Later in this tutorial mission, a connection to the tenant database will be made and tables will be created and populated with data.  For more information, see [SAP HANA Tenant Databases Operations Guide](https://help.sap.com/viewer/78209c1d3a9b41cd8624338e42a12bf6/latest/en-US/0ba9f43aed594a449d497fabf6bc381e.html).
 
-The SAP HANA, express edition VM install includes a command line tool (part of the SAP HANA clients install) called **[`HDBSQL`](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/c22c67c3bb571014afebeb4a76c3d95d.html)** that can be used to query the database.  
+The SAP HANA, express edition VM install includes a command line tool (part of the SAP HANA client install) called **[`HDBSQL`](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/c22c67c3bb571014afebeb4a76c3d95d.html)** that can be used to query the database.  
 
 >If you choose another SAP HANA, express edition install type, simply read through the following examples.  The installation and further examples of running `HDBSQL` will be covered in subsequent tutorials.
 
 In the VMware Workstation player, enter the following to connect to the system database:
 
-```Terminal
+```Shell
 hdbsql -n localhost:39013 -u SYSTEM -p Your_Password
 ```
 
@@ -174,13 +175,13 @@ The example above uses localhost since `hdbsql` is running on the same machine t
 
 A command to show the machines current IP address is shown below:
 
-```Terminal
+```Shell
 ip addr
 ```
 
 The following are a couple examples of [commands](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/c24d054bbb571014b253ac5d6943b5bd.html) followed by a SQL query, which when run against **`SYSTEMDB`** returns information about the databases running on the SAP HANA instance.
 
-```HDBSQL
+```SQL
 \al
 \s
 SELECT * FROM SYS_DATABASES.M_SERVICES WHERE SQL_PORT != 0;
@@ -207,7 +208,7 @@ Enter one of the below commands to exit from viewing the results of the select s
 
 Connect using the instance number and database name as shown below.
 
-```Terminal
+```Shell
 hdbsql -n localhost -i 90 -d HXE -u SYSTEM -p Your_Password
 ```
 

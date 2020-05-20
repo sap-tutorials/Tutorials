@@ -27,9 +27,9 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 In this step, you will create the `Customers_Create.page` as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
 
-1. Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
+1. Right-click the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
 
-    ![MDK](img_001.gif)
+    ![MDK](img_001.1.png)
 
     >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
@@ -114,7 +114,7 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
 
 12. Save the changes to the `Customers_Create.page`.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add cancel button on create customer page)]
@@ -129,21 +129,21 @@ Now, you will add a button on the Create Customer page and set it's `onPress` to
 
 2. In the **Properties** pane, click the **link icon** to open the object browser for the **System Item** property.
 
-3. Double click on the **Cancel** type and click **OK**.
+3. Double click the **Cancel** type and click **OK**.
 
     ![MDK](img_013.1.png)
 
-      >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
+    >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
 
-        Now, you will set `onPress` to `CloseModalPage_Cancel.action`.
+4. Now, you will set the `onPress` event to `CloseModalPage_Cancel.action`.
 
-4. In **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
+    In **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-5. Double click on the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
+    Double click the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_015.gif)
 
-6. Save the changes to the `Customers_Create.page`.
+5. Save the changes to the `Customers_Create.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -152,7 +152,7 @@ Now, you will add a button on the Create Customer page and set it's `onPress` to
 
 Now, create a navigation action that will open the `Customers_Create.page` when executed.
 
-1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
+1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
 2. Provide the below information:
 
@@ -179,13 +179,13 @@ You will add a button to the `Customers_List.page` called **Add**. You will link
 
 2. Click the **link icon** to open the object browser for the `SystemItem` property.
 
-3. Double click on the **Add** type and click **OK**.
+3. Double click the **Add** type and click **OK**.
 
 4. ![MDK](img_017.png)
 
     In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-5. Double Click on the `NavToCustomers_Create.action` action and click **OK** to set it as the `OnPress` Action.
+5. Double click the `NavToCustomers_Create.action` action and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_019.gif)
 
@@ -198,9 +198,9 @@ You will add a button to the `Customers_List.page` called **Add**. You will link
 
 The next step is to store newly created record locally for an offline application or send the new record directly back to the backed for online applications. You will now create an action to map the changes received from the `Customers_Create.page` to the corresponding field in the OData service. You will also show a failure message if the create action fails to save the changes.
 
-First, define a failure message.
+1. First, define a failure message.
 
-1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
     ![MDK](img_020.png)
 
@@ -225,7 +225,7 @@ First, define a failure message.
 
     >You can find more details about [Create Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/9cafb37ca8ad49e6930dba857352a3e6.html).
 
-4. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
+4. Right-click the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
     ![MDK](img_023.png)
 
@@ -250,7 +250,7 @@ First, define a failure message.
 
     Change the drop down in the object browser to `Controls & ClientData`, click the **Current Page** radio button.
 
-    In the search box start typing the control name `FCCreateDOB`. The list will filter down to show the matching values. Double click on the **Value (Value)** entry under the `FCCreateDOB` field and click **OK** to set binding.
+    In the search box start typing the control name `FCCreateDOB`. The list will filter down to show the matching values. Double click the **Value (Value)** entry under the `FCCreateDOB` field and click **OK** to set binding.
 
     ![MDK](img_026.gif)
 
@@ -277,17 +277,17 @@ First, define a failure message.
 
 10. Save the changes to the `Customers_CreateEntity.action`.
 
-    Next, you will set the `OnPress` of the _Save_ button.
+11. Next, you will set the `OnPress` event of the _Save_ button.
 
-    Now that the Create action is created, you will need to call the Create action when the end-user presses the **Save** button. You will add a **Save** button on the `Customers_Create.page` and link it to the `Customers_CreateEntity.action`.
+    Now, that the Create action is created, you will need to call the Create action when the end-user presses the **Save** button. You will add a **Save** button on the `Customers_Create.page` and link it to the `Customers_CreateEntity.action`.
 
     In `Customers_Create.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
     ![MDK](img_029.png)
 
-11. Click the **link** icon to open the object browser for the **System Item** property.
+12. Click the **link** icon to open the object browser for the **System Item** property.
 
-    Double click on the **Save** type and click **OK**.
+    Double click the **Save** type and click **OK**.
 
     ![MDK](img_030.png)
 
@@ -295,7 +295,7 @@ First, define a failure message.
 
     ![MDK](img_031.png)
 
-12. Save the changes to the `Customers_Create.page`.
+13. Save the changes to the `Customers_Create.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -304,7 +304,7 @@ First, define a failure message.
 
 Deploy the updated application to your MDK client.
 
-1. Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_026.1.png)
 
@@ -365,7 +365,7 @@ Deploy the updated application to your MDK client.
 
     >MDK base template has added a **Sync** button on main page of the app to upload local changes from device to the backend and to download the latest changes from backend to the device. Actions | Service | `UploadOffline.action` & `DownloadOffline.action`.
 
-4. On `Main` page, tap **Sync**, a successful message will be shown.
+4. On `Main` page, tap **Sync**, a successful message will be shown. As Sync is pressed, `UploadOffline.action` gets triggered to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
 
     ![MDK](img_036.png)
 
@@ -373,13 +373,13 @@ Deploy the updated application to your MDK client.
 
 You can cross verify if a record has been updated in the backend.
 
->Backend URL can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
+>Backend URL can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
 
->Mobile Applications | Native/Hybrid | Click on the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
+>Mobile Applications | Native/Hybrid | click the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 
 ![MDK](img_037.png)
 
->As Sync is pressed, `UploadOffline.action` gets trigger to upload local changes from device to the backend and on success of this call, `DownloadOffline.action` is being called.
+You have successfully created a Customer Record and you are now all set to [Delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
 
 [VALIDATE_1]
 [ACCORDION-END]

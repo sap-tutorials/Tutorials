@@ -36,27 +36,27 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
 1. Open the `Main.storyboard` and select the **Navigation Controller**, open the **Attributes Inspector** to uncheck the **Is Initial View Controller**. This is necessary because the new main entry point is going to be the Split View Controller.
 
-    ![Split View Controller](fiori-ios-scpms-starter-mission-06-1.png)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-1.png)
 
 2. Use the **Object Library** to search for **Split View Controller** and drag + drop it next to the navigation controller.
 
-    ![Split View Controller](fiori-ios-scpms-starter-mission-06-2.png)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-2.png)
 
 3. With that in place we can connect the Split View Controller with our current app flow. Delete the View Controller Scene of the Split View Controller in Storyboard first.
 
-    ![Split View Controller](fiori-ios-scpms-starter-mission-06-3.png)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-3.png)
 
     After deleting your storyboard should look like this now:
 
-    ![Split View Controller](fiori-ios-scpms-starter-mission-06-3-1.png)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-3-1.png)
 
 4. Drag the Navigation Controller of the app flow right next to the Split View Controller and create a storyboard segue between the **Split View Controller** and the **Navigation Controller**. As the segue type, select **detail view controller** and safe.
 
-    ![Split View Controller](fiori-ios-scpms-starter-mission-06-4.gif)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-4.gif)
 
 5. Make the Master View Controller the initial view controller for the app by selecting the Master View controller and using the **Attributes Inspector** to check the box for **Is Initial View Controller**.
 
-    ![Split View Controller](fiori-ios-scpms-starter-mission-06-5.png)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-5.png)
 
     Let's quickly go over what we did here. First we added a new Split View Controller which is a standard Apple UI control. Then we added our app flow to the Split View Controller through a **detail view controller** segue. This allows the Split View Controller to automatically manage your Split View lifecycle. We leave the Navigation Controller in as we want to maintain our regular app flow.
 
@@ -112,7 +112,7 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
 7. Run the app on the **My Mac** scheme and you should see you app being in Split View now and you can see that beautiful empty sidebar. Also if you have noticed the system automatically knows that your app wants to receive Push Notifications and the Mac Catalyst makes sure that MacOS displays it accordingly.
 
-    ![Split View Controller](fiori-ios-scpms-starter-mission-06-6.png)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-6.png)
 
 [DONE]
 [ACCORDION-END]
@@ -128,7 +128,7 @@ We're going to display a list with three cells containing the navigation possibi
 
 2. Open the `Main.storyboard` and set the `SidebarTableViewController` as **Custom Class** on the **`Root View Controller`**.
 
-    ![Split View Controller](fiori-ios-scpms-starter-mission-06-7.png)
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-7.png)
 
 3. Switch back to the `SidebarTableViewController.swift` file to implement the views logic.
 
@@ -223,19 +223,7 @@ We're going to display a list with three cells containing the navigation possibi
 
 In order to let the user have interactions with the list items we have to write some code.
 
-Before we go ahead and implement the interaction with these cells we make sure to have a default selection being made when starting the application.
-
-1. Implement a private helper method to make a decision which view controller to display as detail view controller.
-
-    Add the following class property to the **`SidebarTableViewController`**:
-
-    ```Swift
-    // Store the selected index path
-    private var selectedCellIndexPath: IndexPath?
-
-    ```
-
-2. In the `SidebarTableViewController` add the following method below the data source methods. Read the inline comments carefully:
+1. In the `SidebarTableViewController` add the following method below the data source methods. Read the inline comments carefully:
 
     ```Swift
     // CollectionType selection helper
@@ -243,7 +231,6 @@ Before we go ahead and implement the interaction with these cells we make sure t
         // Load the EntityType specific ViewController from the specific storyboard"
         var viewController: UIViewController!
 
-        self.selectedCellIndexPath = indexPath
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
         // Decide which View Controller to instantiate.
@@ -268,7 +255,7 @@ Before we go ahead and implement the interaction with these cells we make sure t
 
     ```
 
-3. We have to make sure that the `viewSelected(at:)` method gets called as soon as the user clicks on a list item. Add the following table view delegate method directly below the data source methods:
+2. We have to make sure that the `viewSelected(at:)` method gets called as soon as the user clicks on a list item. Add the following table view delegate method directly below the data source methods:
 
     ```Swift
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -279,13 +266,17 @@ Before we go ahead and implement the interaction with these cells we make sure t
 
     This will make sure that the correct index path gets passed into the `viewSelected(at:)` method.
 
-4. Last step is to set those above implemented storyboard identifiers for the respective view controllers is necessary to instantiate the screens.
+3. Last step is to set those above implemented storyboard identifiers for the respective view controllers is necessary to instantiate the screens.
 
     Open the **`Main.storyboard`** and select the **Overview Table View Controller**. Open the **Identity Inspector** and set the **Identity** to `OverviewTableViewController`.
 
-    ![Menu Bar](fiori-ios-scpms-starter-mission-06-20.png)
+    !![Menu Bar](fiori-ios-scpms-starter-mission-06-20.png)
 
-5. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
+4. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
+
+5. Important is that you set an identity for the `original` Navigation Controller. In the `Main.storyboard`, click on the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
+
+    !![Storyboard ID](fiori-ios-scpms-starter-mission-06-21.png)
 
     And that's it, you have a working split view controller with a sidebar and working navigation.
 
@@ -323,7 +314,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
     import UIKit
     ```
 
-3. The override `buildMenu(with:)` allows us to manipulate and create menu items for the menu bar. Implement the `buildMenu(with:)` method and read the inline comments carefully:
+3. The override `buildMenu(with:)` allows us to manipulate and create menu items for the menu bar. Implement the `buildMenu(with:)` method inside an extension and read the inline comments carefully:
 
     ```Swift
     extension AppDelegate {
@@ -345,7 +336,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
                                         image: nil,
                                         identifier: UIMenu.Identifier("com.sap.example.MySampleAppCatalyst.Synchronize"),
                                         options: .displayInline,
-                                        children: [reloadDataCommand])
+                                        children: [reloadMenuItem])
 
             // Tell the UIMenuBuilder where to insert the menu.
             builder.insertChild(reloadDataMenu, atEndOfMenu: .file)
@@ -353,7 +344,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
     }
     ```
 
-4. Save the file and open the `OverviewTableViewController.swift` class and change the `loadData()` method declaration to:
+4. Save the file and open the `OverviewTableViewController.swift` class and change the `loadData()` method declaration to internal and add the `@objc` attribute. The `@objc` allows to make method callable for the `Objective-C` runtime:
 
     ```Swift
     @objc func loadData() { ... }
@@ -361,7 +352,7 @@ We can create an extension swift file containing an `AppDelegate` extension cont
 
 5. Run the app on **My Mac** scheme.
 
-    ![Menu Bar](fiori-ios-scpms-starter-mission-06-10.png)
+    !![Menu Bar](fiori-ios-scpms-starter-mission-06-10.png)
 
     Of course you can add all sorts of menu entries as long as they make sense being there. Usually you want to have more global tasks in there. If you're interested in more about the menu bar on `MacOS` visit the official documentation [Adding Menus and Shortcuts to the Menu Bar and User Interface](https://developer.apple.com/documentation/uikit/uicommand/adding_menus_and_shortcuts_to_the_menu_bar_and_user_interface).
 
@@ -377,13 +368,13 @@ Here we're going to implement some settings with help of the settings bundle.
 
 1. Use the **Project Navigator** to open the context menu and click on **New File...**. In the search field of the upcoming dialog, search for **Settings**, select the **Settings Bundle** and click on **Next** and then **Create**.
 
-    ![Preferences](fiori-ios-scpms-starter-mission-06-11.png)
+    !![Preferences](fiori-ios-scpms-starter-mission-06-11.png)
 
     As a result you will get a brand new `settings.bundle` file in the project navigator.
 
 2. If you run the app now and open the app's preferences you should see the preferences screen displayed below.
 
-    ![Preferences](fiori-ios-scpms-starter-mission-06-12.png)
+    !![Preferences](fiori-ios-scpms-starter-mission-06-12.png)
 
 3. You can see that the `Root.plist` file contains all the settings for the displayed preferences. We can go and change the different preferences now.
 
@@ -391,11 +382,11 @@ Here we're going to implement some settings with help of the settings bundle.
 
     Leave **Item 1 (Text Field - Name)** as is and delete the remaining items.
 
-    ![Preferences](fiori-ios-scpms-starter-mission-06-16.png)
+    !![Preferences](fiori-ios-scpms-starter-mission-06-16.png)
 
 4. Run the app now and open the preferences you should see the title has changed and the other items are gone.
 
-    ![Preferences](fiori-ios-scpms-starter-mission-06-17.png)
+    !![Preferences](fiori-ios-scpms-starter-mission-06-17.png)
 
 [DONE]
 [ACCORDION-END]
@@ -409,7 +400,7 @@ Maybe you have noticed that the app's title is still `TutorialApp`, let's change
 
 2. Change the **Display Name** in the **Identity** section to `Sales Assistant`.
 
-    ![App Title](fiori-ios-scpms-starter-mission-06-18.png)
+    !![App Title](fiori-ios-scpms-starter-mission-06-18.png)
 
 3. Of course you might want to change the bundle identifier as well to match the display name or create the whole project with the correct name in the beginning. As we're extending the app created in the prerequisites, we just change the display name here.
 

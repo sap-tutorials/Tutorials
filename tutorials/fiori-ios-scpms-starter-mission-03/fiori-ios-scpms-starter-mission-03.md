@@ -28,27 +28,27 @@ In this tutorial, you will implement the product list first, a `FUISearchBar` to
 
 1. Open the **`Main.storyboard`** and use the **Object Library** like before to drag a new Table View Controller to the storyboard right next to the Overview Table View Controller.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-1.png)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-1.png)
 
 2. Create a new **Cocoa Touch Class** using the Project Navigator **`TutorialApp > New File ... > Cocoa Touch Class`** . Make sure the new class is inheriting from `UITableViewController` and give it the name `ProductsTableViewController`.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-2.png)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-2.png)
 
 3. Go back to the **`Main.storyboard`** and set the **Custom Class** of the newly added Table View Controller to `ProductsTableViewController`.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-3.png)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-3.png)
 
     To enable the user to navigate between screens and passing data between view controllers you can use Storyboard Segues to you advantage. Segues can be created in Interface Builder and are accessible in the View Controllers class through the override `prepareForSegue(for:sender:)` method.
 
 4. You should be still in the `Main.storyboard`, there select the `OverviewTableViewController` and **`control + drag`** to the `ProductsTableViewController`.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-4.gif)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-4.gif)
 
     If you look closely, you can see that the `ProductsTableViewController` has a Navigation Item now allowing your user to navigate back to the Overview Screen. You get the back navigation out of the box because you've embedded the `OverviewTableViewController` in a Navigation Controller. The arrow between the View Controllers indicates a segue, for you to be able to distinguish multiple segues from each other they, like the Table View Cells, need an identifier.
 
 5. Select the segue in Interface Builder and click on the **Attributes Inspector**. As identifier enter `showProductsList` and hit return.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-5.png)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-5.png)
 
 [DONE]
 [ACCORDION-END]
@@ -110,7 +110,7 @@ You can store the segue identifier in a class property for cleaner code and use 
 
 4. If you run the app now you can navigate between Overview Screen and Product List Screen.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-6.gif)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-6.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -263,6 +263,7 @@ The Product List is a Table View Controller which means the structure is similar
     }
 
     private func loadImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
             sapURLSession.dataTask(with: url, completionHandler: { data, _, error in
 
@@ -429,7 +430,7 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
 9. Run the app now and you should be able to search for products.
 
-    ![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-8.gif)
+    !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-8.gif)
 
 [VALIDATE_4]
 [ACCORDION-END]

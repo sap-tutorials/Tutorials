@@ -37,6 +37,8 @@ For more information, visit the official [SAP Cloud Platform Mobile Services](ht
 
 This tutorial series will not only show you how to get started with the iOS SDK, SAP Cloud Platform Mobile Services and the SAP Cloud Platform, but also will give you an introduction to the Mac Catalyst technology.
 
+> The full project as a reference, you can find [here](https://github.com/SAP-samples/cloud-sdk-ios-maccatalyst-mission-project).
+
 [DONE]
 [ACCORDION-END]
 
@@ -44,7 +46,7 @@ This tutorial series will not only show you how to get started with the iOS SDK,
 
 The way the SAP iOS SDK is structured you have full flexibility using the included frameworks.
 
-![Key Frameworks](fiori-ios-scpms-starter-mission-01-0.png)
+!![Key Frameworks](fiori-ios-scpms-starter-mission-01-0.png)
 
 
 |  Framework                          | Description
@@ -77,28 +79,28 @@ When downloading the iOS SDK, it will come packaged in the SAP Cloud Platform SD
 
 In the iOS Assistant, you can define a set of features you want to use as well as different options for UI generation.
 
-![iOS Assistant](fiori-ios-scpms-starter-mission-01-1.png)
+!![iOS Assistant](fiori-ios-scpms-starter-mission-01-1.png)
 
 The main benefit of the iOS Assistant is that it generates your complete model and data service layer in your app based on the metadata document of your OData service. This leaves you far more time focusing on the user experience of your app.
 
-![Development Time](fiori-ios-scpms-starter-mission-01-2.gif)
+!![Development Time](fiori-ios-scpms-starter-mission-01-2.gif)
 
 **SAP Fiori Mentor app**
 
 The SAP Fiori Mentor app is developed by SAP to be a great addition to your development environment. It gives you an easy entry level to understand the different UI components of the `SAPFiori` framework.
 Currently the SAP Fiori Mentor app is available for iPad only and can be found for free in the Apple App Store [SAP Fiori Mentor](https://apps.apple.com/us/app/sap-fiori-mentor/id1215284965).
 
-![SAP Mentor](fiori-ios-scpms-starter-mission-01-3.png)
+!![SAP Mentor](fiori-ios-scpms-starter-mission-01-3.png)
 
 Using the SAP Fiori Mentor app allows you to take a look at the different UI controls, preview them for different size classes and manipulate its attributes to see how the control changes.
 
-![SAP Mentor](fiori-ios-scpms-starter-mission-01-4.png)
-![SAP Mentor](fiori-ios-scpms-starter-mission-01-4-1.png)
-![SAP Mentor](fiori-ios-scpms-starter-mission-01-4-2.png)
+!![SAP Mentor](fiori-ios-scpms-starter-mission-01-4.png)
+!![SAP Mentor](fiori-ios-scpms-starter-mission-01-4-1.png)
+!![SAP Mentor](fiori-ios-scpms-starter-mission-01-4-2.png)
 
 It also allows you to export code snippets of your customized control to use in your app project. To share the created code snippets, you can simply use **AirDrop**, **Universal Keyboard** and other common ways of sharing.
 
-![SAP Mentor](fiori-ios-scpms-starter-mission-01-5.png)
+!![SAP Mentor](fiori-ios-scpms-starter-mission-01-5.png)
 
 [VALIDATE_3]
 [ACCORDION-END]
