@@ -47,7 +47,7 @@ To try out Document Information Extraction, you need to make sure that your suba
 
 1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-2. Search for **Document Information Extraction**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.
+2. Search for **Document Information Extraction Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and go to step 3.
 
     ![Entitlements](check-entitlements.png)
 
@@ -57,19 +57,21 @@ If you do not find the service in your list, proceed as follows:
 
     ![Configure Entitlements](configure-entitlements.png)
 
-  2. Click **Add Service Plans** to add service plans to your entitlements.
+  2. Click **Add Service Plans**.
 
     ![Add Service Plan](add-service-plans.png)
 
-  3. Select **Document Information Extraction**, and choose the **default** service plan. Click **Add 1 Service Plan**.
+  3. Select **Document Information Extraction Trial**, and choose the **default** service plan. Click **Add 1 Service Plan**.
 
     ![Add Service Plan](add-entitlements.png)
 
-  4. **Save** your entitlement changes.
+  4. **Save** your **Entitlements** changes.
 
     ![Add Service Plan](save-entitlements.png)    
 
-You are now entitled to use the service and to create instances of the service.
+You are now entitled to use Document Information Extraction and create instances of the service.
+
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]

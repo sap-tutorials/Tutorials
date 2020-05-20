@@ -1,10 +1,12 @@
 ---
-title: Add Routing to a UI5 Web Components Project
+title: Add Routing to a UI5 Web Components for React Project
 description: Use routes to navigate between different pages using UI5 Web Components for React.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-fiori]
 primary_tag: topic>html5
+author_name: Lukas Harbarth
+author_profile: https://github.com/Lukas742
 ---
 
 ## Details
@@ -18,7 +20,7 @@ In this tutorial, you will learn how to create routes to different paths of your
 
 ---
 
-[ACCORDION-BEGIN [Step: ](Create a Detail page)]
+[ACCORDION-BEGIN [Step 1: ](Create a Detail page)]
 In `src` create a `Detail.jsx` file.
 
 Inside of that file, create the `Detail` component that will return a title to your linking.
@@ -34,7 +36,7 @@ export function Detail() {
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Add Router)]
+[ACCORDION-BEGIN [Step 2: ](Add Router)]
 
 1. Install `react-router-dom`.
 
@@ -56,7 +58,7 @@ export function Detail() {
 
     ```JavaScript / JSX
     <HashRouter>
-      <ThemeProvider withToastContainer>
+      <ThemeProvider>
         <MyApp />
       </ThemeProvider>
     </HashRouter>
@@ -66,7 +68,7 @@ export function Detail() {
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Create Home component)]
+[ACCORDION-BEGIN [Step 3: ](Create Home component)]
 
 1. In `src`, create a new `Home.jsx` file.
 
@@ -96,7 +98,7 @@ export function Detail() {
         <div>
           <ShellBar
             logo={"reactLogo.png"}
-            profile={"profilePictureExample.png"}
+            profile={<Avatar image="profilePictureExample.png" />}
             primaryTitle={"My App"}
           >
             <ShellBarItem icon="add" text="Add" />
@@ -218,7 +220,7 @@ export function Detail() {
             heading="Stock Price"
             headerInteractive
             onHeaderClick={handleHeaderClick}
-            subtitle={`Click here to switch to ${switchToChart}`}
+            subheading={`Click here to switch to ${switchToChart}`}
             style={{ width: "300px", ...spacing.sapUiContentPadding }}
           >
             <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
@@ -230,7 +232,7 @@ export function Detail() {
           </Card>
           <Card
             heading="Progress"
-            subtitle="List"
+            subheading="List"
             style={{ width: "300px", ...spacing.sapUiContentPadding }}
             avatar={<Icon name="list" />}
           >
@@ -291,7 +293,7 @@ export function Detail() {
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step: ](Import Router components)]
+[ACCORDION-BEGIN [Step 4: ](Import Router components)]
 
 1. In `MyApp.jsx`, import `Switch`, `Route` and `Redirect` from `react-router-dom` and the `Home` and `Detail` components.
 
@@ -308,7 +310,7 @@ export function Detail() {
         <>
             <ShellBar
                 logo={"reactLogo.png"}
-                profile={"profilePictureExample.png"}
+                profile={<Avatar image="profilePictureExample.png" />}
                 primaryTitle={"My App"}>
                 <ShellBarItem src="sap-icon://add" text="Add" />
             </ShellBar>
@@ -331,7 +333,7 @@ Your current URL now displays the `#/home` path. If you replace `home` with `det
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Handle navigation)]
+[ACCORDION-BEGIN [Step 5: ](Handle navigation)]
 
 Except for changing the URL of the App the user doesn't have options to navigate to the `Detail` page. The page could contain some more information about activities and should therefore be connected to the `Progress Card`.
 
@@ -340,7 +342,7 @@ Except for changing the URL of the App the user doesn't have options to navigate
     ```JavaScript / JSX
     <Card
       heading="Progress"
-      subtitle="List"
+      subheading="List"
       style={{ width: "300px", ...spacing.sapUiContentPadding }}
       headerInteractive
       onHeaderClick={handleProgressHeaderClick} >
@@ -377,14 +379,14 @@ Except for changing the URL of the App the user doesn't have options to navigate
     <ShellBar
       logo={"reactLogo.png"}
       onLogoClick={handleLogoClick}
-      profile={"profilePictureExample.png"}
+      profile={<Avatar image="profilePictureExample.png" />}
       primaryTitle={"My App"}
     >
     ```
 
 [VALIDATE_1]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Code overview)]
+[ACCORDION-BEGIN [Step 6: ](Code overview)]
 
 If needed, you can compare your files with the following solutions:
 
@@ -409,7 +411,7 @@ export function MyApp() {
       <ShellBar
         logo={"reactLogo.png"}
         onLogoClick={handleLogoClick}
-        profile={"profilePictureExample.png"}
+        profile={<Avatar image="profilePictureExample.png" />}
         primaryTitle={"My App"}
       >
         <ShellBarItem icon="add" text="Add" />
@@ -541,7 +543,7 @@ export function Home() {
         heading="Stock Price"
         headerInteractive
         onHeaderClick={handleHeaderClick}
-        subtitle={`Click here to switch to ${switchToChart}`}
+        subheading={`Click here to switch to ${switchToChart}`}
         style={{ width: "300px", ...spacing.sapUiContentPadding }}
       >
         <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
@@ -553,7 +555,7 @@ export function Home() {
       </Card>
       <Card
         heading="Progress"
-        subtitle="List"
+        subheading="List"
         style={{ width: "300px", ...spacing.sapUiContentPadding }}
         headerInteractive
         onHeaderClick={handleProgressHeaderClick}

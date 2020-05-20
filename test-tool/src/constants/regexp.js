@@ -70,8 +70,8 @@ module.exports = {
             message: 'Tutorial with this name doesn\'t exist',
         },
         localFileLink: {
-            regexp: /\[[^\]]+\]\((?![ <]*(http|mission\.|group\.))([\w\d\-\.\\\/]+?)(\.[a-z]{2,10})\)/i,
-            message: 'Local file doesn\'t exist',
+            regexp: /\[[^\]]+\]\((?![ <]*(http|mission\.|group\.))([a-z\-_A-Z0-9]+?)\.[a-z]{2,10}\)/i,
+            message: 'Incorrect link to local file, use full link to file on GitHub (starting https://raw.githubusercontent.com)',
         },
         internalLink: {
             regexp: new RegExp('(sap\.corp)'),

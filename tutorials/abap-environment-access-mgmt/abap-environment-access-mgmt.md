@@ -5,6 +5,8 @@ description: Create business roles and maintain access management in SAP Cloud P
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 10
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
@@ -79,13 +81,13 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
   1. Select your user and click **Maintain Restrictions**.
       ![Edit authorization default values](restrictions.png)
 
-  2. Set your write, read and value help restriction unrestricted.
+  2. Set your write restrictions and click **OK**.
 
-      ![Edit authorization default values](restrictions2.png)
+      ![Edit authorization default values](restrictions2x.png)
 
   3. Go back to general role details and click **Save**.
 
-      ![Edit authorization default values](restrictions3.png)
+      ![Edit authorization default values](restrictions3x.png)
 
 Save and activate.
 
