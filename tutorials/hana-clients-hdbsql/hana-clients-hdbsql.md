@@ -155,7 +155,7 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     ```
     `hdbuserstore` is included with the install of the SAP HANA database clients.
 
-2. Using `hdbuserstore`, specify a key named `USER1UserKey` that has the host, port and credentials.  Details on where t find these values are covered in [first tutorial](hana-clients-choose-hana-instance) in this mission.
+2. Using `hdbuserstore`, specify a key named `USER1UserKey` that has the host, port and credentials.  Details on where to find these values are covered in [first tutorial](hana-clients-choose-hana-instance) in this mission.
 
     ```Shell
     hdbuserstore Set USER1UserKey <host name>:<port> USER1 Password1
