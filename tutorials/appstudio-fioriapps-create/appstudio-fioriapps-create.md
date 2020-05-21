@@ -24,7 +24,7 @@ author_profile: https://github.com/raz-korn
             - User Name: **Your ES5 Gateway user**
             - Authentication: **Your ES5 Gateway password**
         - Additional Properties:
-            - HTML5.DynamicDestination: **true**
+            - HTML5.DynamicDestination: **true** (Type it in manually as it is not available in the drop-down list)
             - sap-client: **002**
             - `WebIDEEnabled`: **true**
             - `WebIDESystem`: **ES5**
