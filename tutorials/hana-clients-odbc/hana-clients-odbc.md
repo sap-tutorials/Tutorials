@@ -92,7 +92,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
     ![odbcinst](odbcinst.png)
 
-4. Edit the `.odbc.ini` file to create one or more data sources.  Note that the driver's file extension is `dylib` instead of `so` on a Mac.
+4. Edit the `.odbc.ini` file (or create it if it does not exist) to add one or more data sources.  Note that the driver's file extension is `dylib` instead of `so` on a Mac.
 
     ```.odbci.ini
     [HANA_Cloud]
