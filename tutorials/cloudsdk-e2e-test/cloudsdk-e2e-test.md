@@ -15,16 +15,16 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Details
 ### You will learn
   - How to write end to end tests for your application
-  - How to configure nightwach-api
-  - How to configure cucumber
+  - How to configure Nightwatch-api
+  - How to configure Cucumber
   - How to set up a e2e test stage in pipeline in a way that it can execute in a pipeline
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](End-To-End Tests)]
-For the E2E tests we use [cucumber](https://github.com/cucumber/cucumber-js) and [nightwatch-api](https://nightwatch-api.netlify.com/). It runs your tests using the chrome driver in the browser against a running version of your application. The version can run locally or in the SAP Cloud Platform.
+[ACCORDION-BEGIN [Step 1: ](End-to-end tests)]
+For the E2E tests we use [Cucumber](https://github.com/cucumber/cucumber-js) and [Nightwatch-api](https://nightwatch-api.netlify.com/). It runs your tests using the chrome driver in the browser against a running version of your application. The version can run locally or in the SAP Cloud Platform.
 
-From the previous [tutorial](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html) we have an application which can list and create business partners. Our first test is to load the page and check that it was loaded successfully. Tests can be defined in the cucumber format:
+From the previous tutorial [Connect to OData service](https://developers.sap.com/tutorials/s4sdk-odata-service-neo.html) we have an application which can list and create business partners. Our first test is to load the page and check that it was loaded successfully. Tests can be defined in the Cucumber format:
 
 ```
 Feature: Address Manager App
@@ -91,7 +91,7 @@ module.exports = {
 
 [ACCORDION-BEGIN [Step 2: ](Configure Nightwatch)]
 
-To configure `nightwach` we create the following file in `e2e-tests/nightwatch.conf.js`:
+To configure Nightwatch we create the following file in `e2e-tests/nightwatch.conf.js`:
 
 ```
 const chromedriver = require('chromedriver');
@@ -172,7 +172,7 @@ This configuration file defines some constants and places where the reports are 
 
 [ACCORDION-BEGIN [Step 3: ](Configure Cucumber)]
 
-Furthermore, we also have to configure `cucumber` to start and configure `chromedriver` as well as `nightwatch`. Therefore, we create the file `e2e-tests/cucumber.conf.js` with the following content:
+Furthermore, we also have to configure Cucumber to start and configure `chromedriver` as well as Nightwatch. Therefore, we create the file `e2e-tests/cucumber.conf.js` with the following content:
 
 ```
 const fs = require('fs');
@@ -255,9 +255,9 @@ The final folder structure looks as follows:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Execute Test)]
+[ACCORDION-BEGIN [Step 4: ](Execute test)]
 
-Now you can run the following commands to execute your tests. Note that the launch URL must be unprotected as we have not yet implemented a login step. [End-To-End Tests Against Secured Applications](https://developers.sap.com/tutorials/cloudsdk-e2e-test-secure-applications.html) explains how you can also target apps that require authentication.
+Now you can run the following commands to execute your tests. Note that the launch URL must be unprotected as we have not yet implemented a login step. [End-to-end tests against secured applications](https://developers.sap.com/tutorials/cloudsdk-e2e-test-secure-applications.html) explains how you can also target apps that require authentication.
 
 ```Shell
 npm install
@@ -278,7 +278,7 @@ npm run ci-e2e -- --launchUrl=https://path/to/your/running/application --NIGHTWA
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run E2E Tests in the Pipeline)]
+[ACCORDION-BEGIN [Step 5: ](Run E2E tests in the pipeline)]
 
 !![S4SDK Pipeline](e2epipeline.png)
 
@@ -309,7 +309,7 @@ stages:
 
 The section `endToEndTests` consists of two sections. Before you can run the E2E tests, you first have to deploy our application to the SAP Cloud Platform. As for the productive deployment, you define a section called `cfTargets` or `neoTargets` to configure the deployment. Afterwards in `appUrls` you define a list of URL and credential ids specifying the launch URL for the tests and the credentials used as username and password environment variables.
 
->`credentialId: e2e-test-user-cf` only required if you have implemented [End-To-End Tests Against Secured](https://developers.sap.com/tutorials/cloudsdk-e2e-test-secure-applications.html)
+>`credentialId: e2e-test-user-cf` only required if you have implemented [End-to-End tests against secured](https://developers.sap.com/tutorials/cloudsdk-e2e-test-secure-applications.html)
 
 The tests are executed once per entry in the list. For each entry the URL is passed as `launchUrl` to the test. The `credentialsId` is used to read the corresponding credentials from the credentials store in Jenkins. Thus, you have to create these credentials, as explained in [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html). The `username` and `password` is read from the credentials store and passed as environment variable to the test.
 
@@ -318,7 +318,7 @@ The tests are executed once per entry in the list. For each entry the URL is pas
 
 
 
-[ACCORDION-BEGIN [Step 6: ](Troubleshoot and Questions)]
+[ACCORDION-BEGIN [Step 6: ](Troubleshoot and questions)]
 
 Are you facing a development question? Then check out Stack Overflow for SAP Cloud SDK related questions. If you do not find an answer, feel free to post your question and make sure to attach the tag `s4sdk`. Our team, as well as the whole Stack Overflow community, are at your service and will quickly react to your question.
 

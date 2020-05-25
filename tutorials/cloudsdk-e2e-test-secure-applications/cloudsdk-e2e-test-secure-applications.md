@@ -11,8 +11,8 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ## Prerequisites
   - [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html)
-  - [End to End Test](https://developers.sap.com/tutorials/cloudsdk-e2e-testing.html)
-  - [Secure your Application](https://developers.sap.com/tutorials/s4sdk-secure-cloudfoundry.html)
+  - [End to end test](https://developers.sap.com/tutorials/cloudsdk-e2e-testing.html)
+  - [Secure your application](https://developers.sap.com/tutorials/s4sdk-secure-cloudfoundry.html)
 
 
 ## Details
@@ -23,9 +23,9 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Authentication to E2E Tests)]
+[ACCORDION-BEGIN [Step 1: ](Add authentication to E2E tests)]
 
-The basic idea is that the first part of the test is to log in into the application as a user. You created an application which is secured as explained in [Secure your Application](https://developers.sap.com/tutorials/s4sdk-secure-cloudfoundry.html). The first page you see accessing the application is the app-router showing a login form. You adapt the tests in a way that they first visit the login page, enter the credentials and then press the login button.
+The basic idea is that the first part of the test is to log in into the application as a user. You created an application which is secured as explained in [Secure your application](https://developers.sap.com/tutorials/s4sdk-secure-cloudfoundry.html). The first page you see accessing the application is the app-router showing a login form. You adapt the tests in a way that they first visit the login page, enter the credentials and then press the login button.
 
 First, you create the following page object in `e2e-tests/page_objects/login.js`. This page object reads the credentials from the configuration and enters them into the input fields. The selectors of these fields are specified in the elements section. These selectors are working for the standard app-router. For other forms, e.g. on Cloud Platform Neo, or customized forms these selectors need to be updated.
 
@@ -174,7 +174,7 @@ module.exports = {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run E2E Test locally)]
+[ACCORDION-BEGIN [Step 2: ](Run E2E test locally)]
 
 To run the tests locally you can use the same command as used in [End to End Test]((https://developers.sap.com/tutorials/cloudsdk-e2e-testing.html)). However, in SAP Cloud Platform Cloud Foundry the application URL `launchUrl` should point to the `app-router`. In the Neo environment, it should point to the `application` because the user is redirected to the login form automatically.
 
@@ -192,11 +192,11 @@ npm run ci-e2e -- --launchUrl=https://path/to/your/running/app-router
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run E2E Tests in the Pipeline)]
+[ACCORDION-BEGIN [Step 3: ](Run E2E tests in the pipeline)]
 
 !![S4SDK Pipeline](e2epipeline.png)
 
-To run the tests in our pipeline you have to adapt the `.pipeline/config.yml`. In [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html) you learned that this file configures the behavior of the pipeline. To execute the `E2E test` you have to add a section called `endToEndTests` representing a stage in the section `stages`. The final configuration is shown below.
+To run the tests in our pipeline you have to adapt the `.pipeline/config.yml`. In [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html) you learned that this file configures the behavior of the pipeline. To execute the E2E test you have to add a section called `endToEndTests` representing a stage in the section `stages`. The final configuration is shown below.
 
 ```
 #Project Setup
@@ -259,7 +259,7 @@ stages:
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Questions and Troubleshooting)]
+[ACCORDION-BEGIN [Step 4: ](Questions and troubleshooting)]
 
 Are you facing a development question? Then check out Stack Overflow for SAP Cloud SDK related questions. If you do not find an answer, feel free to post your question and make sure to attach the tag `s4sdk`. Our team, as well as the whole Stack Overflow community, are at your service and will quickly react to your question.
 

@@ -15,14 +15,14 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Details
 ### You will learn
   - How to set up performance test stage in CI/CD
-  - How to do performance testing using `JMeter`
+  - How to do performance testing using JMeter
   - How to do performance testing using Gatling
 
-Performance tests are the tests to determine the behavior of the software system and change in responsiveness under simulated load conditions. SAP Cloud SDK Pipeline has integrated support for performance tests using [`JMeter`](https://jmeter.apache.org/) and [Gatling](https://gatling.io/).
+Performance tests are the tests to determine the behavior of the software system and change in responsiveness under simulated load conditions. SAP Cloud SDK Pipeline has integrated support for performance tests using [JMeter](https://jmeter.apache.org/) and [Gatling](https://gatling.io/).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Performance Tests Stage In CI-CD)]
+[ACCORDION-BEGIN [Step 1: ](Performance tests stage in CI-CD)]
 
 SAP Cloud SDK Pipeline executes performance tests as part of remote tests in parallel to End to End tests of the system. In order to keep the isolation of performance tests from E2E tests, it is necessary to have dedicated deployments for each.
 
@@ -39,18 +39,18 @@ stages:
         manifest: 'manifest-perf.yml'
 ```
 
-The following steps will elaborate the configuration of the performance tests with `JMeter` and Gatling in detail in an SAP Cloud SDK Pipeline context.
+The following steps will elaborate the configuration of the performance tests with JMeter and Gatling in detail in an SAP Cloud SDK Pipeline context.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Performance Tests By `JMeter`)]
+[ACCORDION-BEGIN [Step 2: ](Performance tests by JMeter)]
 
-[Apache `JMeter`](https://jmeter.apache.org/) is an open source performance tests tool which is developed primarily to work with JAVA based applications. One can prepare test plan either [manually](https://jmeter.apache.org/usermanual/build-web-test-plan.html) or by recording it with the help of a [recorder](https://jmeter.apache.org/usermanual/jmeter_proxy_step_by_step.html). SAP Cloud SDK Pipeline uses a docker image with preinstalled `JMeter` to execute the tests.
+[Apache JMeter](https://jmeter.apache.org/) is an open source performance tests tool which is developed primarily to work with JAVA based applications. One can prepare test plan either [manually](https://jmeter.apache.org/usermanual/build-web-test-plan.html) or by recording it with the help of a [recorder](https://jmeter.apache.org/usermanual/jmeter_proxy_step_by_step.html). SAP Cloud SDK Pipeline uses a docker image with preinstalled JMeter to execute the tests.
 
-Once the test plans are ready, they can be copied to project directory. If only `JMeter` is used as a performance tests tool then test plans can be placed in a default location, which is `project_root/performance-tests` directory. However, if `JMeter` is used along with Gatling, then `JMeter` test plans should be kept in a subdirectory under a directory `performance-tests` for example `./performance-tests/JMeter/`.
+Once the test plans are ready, they can be copied to project directory. If only JMeter is used as a performance tests tool then test plans can be placed in a default location, which is `project_root/performance-tests` directory. However, if JMeter is used along with Gatling, then JMeter test plans should be kept in a subdirectory under a directory `performance-tests` for example `./performance-tests/JMeter/`.
 
-After placing the test plans in an appropriate directory, `JMeter` tests can be enabled in the pipeline by placing below configuration in `.pipeline/config.yml`. Where default threshold for failure is set at 80 and unstable is set to 70. Whenever an error rate is beyond these thresholds, the pipeline would result in a failure status.
+After placing the test plans in an appropriate directory, JMeter tests can be enabled in the pipeline by placing below configuration in `.pipeline/config.yml`. Where default threshold for failure is set at 80 and unstable is set to 70. Whenever an error rate is beyond these thresholds, the pipeline would result in a failure status.
 
 ```
 #Steps Specific Configuration
@@ -63,7 +63,7 @@ steps:
     unstableThreshold: 70
 ```
 
-By default, `JMeter` is executed in non-GUI mode (-n) and both logs and the dashboard are created as part of the execution. If the performance tests are being executed behind a proxy, the user has the flexibility to configure the proxy by passing them as an option as shown in below configuration except.
+By default, JMeter is executed in non-GUI mode (-n) and both logs and the dashboard are created as part of the execution. If the performance tests are being executed behind a proxy, the user has the flexibility to configure the proxy by passing them as an option as shown in below configuration except.
 
 ```
 #Steps Specific Configuration
@@ -86,9 +86,9 @@ If the test results exceed the thresholds, the status of the pipeline will be se
 10:57:01 [Performance Tests] Performance: File JMeter-report.jtl reported 17.4% of errors [FAILURE]. Build status is: FAILURE
 ```
 
-If the test results are within the threshold, pipeline status will be set to success and performance tests reports are published in Jenkins along with log files. Log files can be accessed in artifact section whereas reports will be available on the dashboard. A sample `JMeter` performance tests report is shown below.
+If the test results are within the threshold, pipeline status will be set to success and performance tests reports are published in Jenkins along with log files. Log files can be accessed in artifact section whereas reports will be available on the dashboard. A sample JMeter performance tests report is shown below.
 
-!![`JMeter`](JMeter-1.png)
+!![JMeter](JMeter-1.png)
 
 As the time of writing this tutorial, SAP Cloud SDK Pipeline does not support [Remote Testing](https://jmeter.apache.org/usermanual/remote-test.html).
 
@@ -96,7 +96,7 @@ As the time of writing this tutorial, SAP Cloud SDK Pipeline does not support [R
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Performance Tests By Gatling)]
+[ACCORDION-BEGIN [Step 3: ](Performance tests by Gatling)]
 
 [Gatling](https://gatling.io/) is yet another powerful and open source performance testing tool for web applications. Gatling performance tests are executed as maven targets, generally as part of the test phase.
 
@@ -136,7 +136,7 @@ One needs to add Scala and Gatling plugins to the maven dependency since Gatling
 </build>
 ```
 
-Gatling tests can be launched with a maven command `mvn test -Dgatling.simulationClass=yoursimulationname`. Where a simulation class is a Scala class with a test plan. Like in `JMeter`, in Gatling too one can either use a [recorder](https://gatling.io/docs/2.3/http/recorder/) or a [manual](https://gatling.io/docs/2.3/advanced_tutorial/) test plan creation. You can find an example test plan below.
+Gatling tests can be launched with a maven command `mvn test -Dgatling.simulationClass=yoursimulationname`. Where a simulation class is a Scala class with a test plan. Like in JMeter, in Gatling too one can either use a [recorder](https://gatling.io/docs/2.3/http/recorder/) or a [manual](https://gatling.io/docs/2.3/advanced_tutorial/) test plan creation. You can find an example test plan below.
 
 ```
 package com.sap.cloud.sdk.tutorial;
@@ -238,7 +238,7 @@ Performance tests will help you to understand the behavior of the application un
 
 [Gatling Documentation](https://gatling.io/docs/2.3/general/)
 
-[`JMeter` Getting Started](https://jmeter.apache.org/usermanual/get-started.html)
+[JMeter Getting Started](https://jmeter.apache.org/usermanual/get-started.html)
 
 [DONE]
 [ACCORDION-END]
