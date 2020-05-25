@@ -30,7 +30,7 @@ Make sure you have logged into SAP Cloud Platform Mobile Services cockpit. In th
 
 !![MobileCards](img_1.png)
 
-Click the **Create a New Card** icon ![MobileCardsIcon](ico_new_card.png) to create a new card.
+Click the **Create Card Template** icon ![MobileCardsIcon](ico_new_card.png) to create a new card.
 
 !![MobileCards](img_2.png)
 
