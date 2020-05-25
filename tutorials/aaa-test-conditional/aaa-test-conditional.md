@@ -17,7 +17,10 @@ test
 [Test link](https://localhost:Reloa4004/testLink.html)
 [Test link 3](https://localhost/testLink)
 [Test link 4](https://127.0.0.1/testLink.html)
-[QA GitHub URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/tutorials/smth)
+[QA GitHub URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials/tutorials/smth)
+
+
+<a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/tutorials/smth">GitHub URL</a>
 New test of unused files.
 ---
 
