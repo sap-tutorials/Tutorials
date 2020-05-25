@@ -1,6 +1,15 @@
 const { URL } = require('url');
 const { regexp, linkCheck: { EXCLUDED_HOSTS }  } = require('../constants');
 
+function removeTrailingSign(string, sign) {
+  if (string.endsWith(sign)) {
+    return string.substring(0, string.length - 1);
+  }
+
+  return string;
+}
+
+
 function removeCodeEntries(content) {
   const { validation: { codeBlock, codeLine, metaData } } = regexp;
 
