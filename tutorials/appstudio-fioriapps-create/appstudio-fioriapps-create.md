@@ -360,7 +360,7 @@ Access your deployed application in the SAP Cloud Platform cockpit. The steps be
 
     !![app id from manifest](10-04 AppStudio SAP Fiori Project Manifest_.jpg)
 
-    > For future reference, this is the construct of the final URL: `<URL_from_application_overview_page>/<mynamespace><project_name>/index.html`. Example: https://SUBACCOUNT-SPACE-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/nsBusinessPartners/index.html
+    > For future reference, this is the construct of the final URL: `<URL_from_application_overview_page>/<mynamespace><project_name>/index.html`. Example: `https://SUBACCOUNT-SPACE-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/nsBusinessPartners/index.html`
 
     You can use this URL in any browser to access your new application.
 
