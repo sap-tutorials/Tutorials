@@ -17,8 +17,8 @@ test
 [Test link](https://localhost:Reloa4004/testLink.html)
 [Test link 3](https://localhost/testLink)
 [Test link 4](https://127.0.0.1/testLink.html)
+[QA GitHub URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/tutorials/smth)
 New test of unused files.
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Update etc/hosts)]
@@ -29,9 +29,8 @@ My special `code`.
 
 #### My special `code`
 
-
-[SAP](mission.cp-starter-ibpm-employeeonboarding)
-
+`LOLO`  `lolo` sap [`SAPDocuments`](mission.cp-starter-ibpm-employeeonboarding)
+(e.g. `123`)
 !![test](Noborder.png)
 
 [Link in other folder](..\abap-connectivity-daemon-mqtt-bridge\add-unimplemented-methods.png)
@@ -40,9 +39,9 @@ AAAAAAAAAAAAAAAAA
 
 <rac-support@sap.com>
 
-![Link text e.g., Destination screen](HXE_Hosts_Windows_0.png)
+ `code` ![Link text e.g., Destination screen](HXE_Hosts_Windows_0.png)
 
-![Link text e.g., Destination screen](https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)
+![Link text e.g., Destination `screen`](https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)
 
 <https://localhost:4000>
 
