@@ -1,5 +1,5 @@
 ---
-title: Let Customers Ask Bot for Shipping Price
+title: Let Customers Ask Chatbot for Shipping Price
 description: Create an intent for requesting the price of shipping a package, use carousel for selecting package size, call API to retrieve Google map, retrieve memory data and put in message.
 auto_validation: true
 time: 30
@@ -8,7 +8,7 @@ primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - You created a bot that enables customers to track packages, as described in the tutorial [Add API Call to Webhook to Retrieve Tracking Info](cai-bot-shipping-2-api).
+ - You created a chatbot with SAP Conversational AI that enables customers to track packages, as described in the tutorial [Add Webhook to Chatbot to Retrieve Tracking Info](cai-bot-shipping-2-api).
 
 ## Details
 ### You will learn
@@ -17,7 +17,7 @@ primary_tag: products>sap-conversational-ai
   - How to call an webhook to retrieve a Google
   - How to retrieve data from memory, and to reset memory
 
-You will add features to your bot to let customers ask to price a package, require them to include a size and location, validate the location, show a Google map when a location is validated, and display a message with data from the memory.
+You will add features to your chatbot to let customers ask to price a package, require them to include a size and location, validate the location, show a Google map when a location is validated, and display a message with data from the memory.
 
 ---
 
@@ -248,7 +248,7 @@ You can open a chat and test this, by entering: **How much to send package to Pa
 
 [ACCORDION-BEGIN [Step 6: ](Display confirmation)]
 
-1. In the requirements, click **New Replies** if **`@Yes`** or **`@No`** are missing).
+1. In the requirements, click **New Replies** (if **`@Yes`** or **`@No`** are missing).
 
 2. Click **Send Message | Quick Replies**.
 

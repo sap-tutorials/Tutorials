@@ -21,7 +21,7 @@ primary_tag: products>sap-cloud-platform
     cf apps
     ```
 
-    ![output list of cf apps command](cf-apps-router-url.png)
+    !![output list of cf apps command](cf-apps-router-url.png)
 
 2. Copy the URL of your application and paste it into a new browser tab. This lets you make sure that the application is working properly.
 
@@ -29,9 +29,9 @@ primary_tag: products>sap-cloud-platform
 
     ![fiori launchpad view](click-fiori-tile.png)
 
-**TROUBLESHOOTING:** If one of the applications starting with `city-` is not in state **started**, have a look at the logs. **city-app-db** should be in status **stopped** since it's a Cloud Foundry task and supposed to be stopped after its initial run.
+**TROUBLESHOOTING:** If one of the applications starting with `city-` is not in state **started**, have a look at the logs. **city-app-db-deployer** should be in status **stopped** since it's a Cloud Foundry task and supposed to be stopped after its initial run.
 
-You can access the logs by executing the following command in the Azure Cloud Shell: 
+You can access the logs by executing the following command in the Azure Cloud Shell:
 
 ```Bash
 cf logs <appname> --recent
