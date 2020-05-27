@@ -60,7 +60,7 @@ handleListItemPress: function (oEvent) {
 3.  Open the new file `mta_app/app/webapp/view/Detail.view.xml`.  In the file, replace the `<App>` tag with the following content:
 
     ```XML
-    	<Page title="Detail Page"
+    	<Page title="{i18n>DetailTitle}"
     	      showNavButton="true"
     	      navButtonPress="handleNavButtonPress" >
     		<VBox>

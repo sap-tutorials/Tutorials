@@ -197,6 +197,10 @@
       "value": "products>sap-hana"
     },
     {
+      "name": "SAP HANA Cloud",
+      "value": "products>sap-hana-cloud"
+    },
+    {
       "name": "SAP HANA, dynamic tiering",
       "value": "products>sap-hana-dynamic-tiering"
     },

@@ -42,7 +42,7 @@ When the **Status** tab indicates that the pipeline is running, use the context 
 
 ![picture_02](datahub-docker-v2-examples_02.png)
 
-Copy any row of the terminal output and paste it in the frame below and click on **Validate**.
+Copy any row of the terminal output and paste it in the text area below and click on **Submit Answer** button to complete Step 2.
 
 
 [VALIDATE_1]

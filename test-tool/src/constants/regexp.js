@@ -108,7 +108,8 @@ module.exports = {
         validate_vr: validationNumber => new RegExp(`\\[VALIDATE_${validationNumber}\\].*?\\[VALIDATE_${validationNumber}\\]`, 'sig'),
         done: /\[DONE\]/g,
         codeBlock: /```.*?```/sgi,
-        codeLine: /`[^`].*`/gi,
+        codeLine: /(^|[^`])?(`[^`]+`)([^`]|$)?/gi,
+        inlineCodeBlock: /`?``.[^\n^\r]*`?``/gi,
         // not using g flag, to capture only the first --- .... --- entry
         metaData: /---[\0-\uFFFF]*?---/i,
         messages: {

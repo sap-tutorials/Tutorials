@@ -1,10 +1,12 @@
 ---
-title: Create an Analytical Dashboard via UI5 Web Component
+title: Create an Analytical Dashboard via UI5 Web Components for React
 description: Create an analytical dashboard with different components using UI5 Web Components for React.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori]
 primary_tag: topic>html5
+author_name: Lukas Harbarth
+author_profile: https://github.com/Lukas742
 ---
 
 ## Details
@@ -17,11 +19,12 @@ So far, you have built your first `Card` component. Now to take things further, 
 
 ---
 
-[ACCORDION-BEGIN [Step   ](Add necessary imports)]
+[ACCORDION-BEGIN [Step 1: ](Add necessary imports)]
 To make things easier, first import all the components you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.jsx`.
 
 ```JavaScript / JSX
 import {
+  Avatar,
   Card,
   Text,
   ShellBar,
@@ -44,7 +47,7 @@ import {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: ](Add a ShellBar)]
+[ACCORDION-BEGIN [Step 2: ](Add a ShellBar)]
 
 The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
 
@@ -60,7 +63,9 @@ The `ShellBar` is the central navigation element in your Web Application and sho
 
     The logo of the application should be displayed and also a profile picture would be nice.
 
-    Use the `logo` and `profile` prop to achieve this. Both props accept either a URL or a path to your image, you can use your own image or simply download the images below and add them to your `public` folder in your project.
+    Use the `logo` and `profile` prop to achieve this. The `logo` prop accepts either a URL or a path to your image, the `profile` prop only accepts an `Avatar` component. Add the `image` prop to the `Avatar` component and add an image in the same way you did with the `logo`.
+
+    You can use your own image or simply download the images below and add them to your `public` folder in your project.
 
     [`reactLogo.png`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/ui5-webcomponents-react-dashboard/reactLogo.png)
 
@@ -69,7 +74,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     ```JavaScript / JSX
     <ShellBar
       logo={"reactLogo.png"}
-      profile={"profilePictureExample.png"}
+      profile={<Avatar image="profilePictureExample.png" />}
       primaryTitle={"My App"}  />
     ```
 
@@ -80,7 +85,7 @@ The `ShellBar` is the central navigation element in your Web Application and sho
     ```JavaScript / JSX
     <ShellBar
       logo={"reactLogo.png"}
-      profile={"profilePictureExample.png"}
+      profile={<Avatar image="profilePictureExample.png" />}
       primaryTitle={"My App"}>
        <ShellBarItem icon="add" text="Add" />
     </ShellBar>
@@ -170,7 +175,7 @@ export function MyApp() {
     <div>
       <ShellBar
         logo={"reactLogo.png"}
-        profile={"profilePictureExample.png"}
+        profile={<Avatar image="profilePictureExample.png" />}
         primaryTitle={"My App"}
       >
         <ShellBarItem icon="add" text="Add" />
@@ -189,7 +194,7 @@ export function MyApp() {
         style={{ width: "300px" }}
         headerInteractive
         onHeaderClick={handleHeaderClick}
-        subtitle={`Click here to switch to ${switchToChart}`}
+        subheading={`Click here to switch to ${switchToChart}`}
       >
         <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
         {toggleCharts === "lineChart" ? (
@@ -205,14 +210,14 @@ export function MyApp() {
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add a List)]
+[ACCORDION-BEGIN [Step 3: ](Add a List)]
 
 1. To wrap the `List` add a `Card` (right after the first one).
 
     ```JavaScript / JSX
     <Card
         heading="Progress"
-        subtitle="List"
+        subheading="List"
         style={{ width: "300px" }}
         avatar={<Icon name="list" />}
     >
@@ -330,7 +335,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add an AnalyticalTable)]
+[ACCORDION-BEGIN [Step 4: ](Add an AnalyticalTable)]
 
 1. The last tile should contain a `AnalyticalTable` component. Again, create a `Card` to wrap the Table and set the `max-width` to `900px`.
 
@@ -406,7 +411,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Dashboard layout)]
+[ACCORDION-BEGIN [Step 5: ](Dashboard layout)]
 
 At the moment, the dashboard doesn't really look like a dashboard. The components are way too close to each other and not aligned correctly. Let's change that.
 
@@ -421,16 +426,16 @@ At the moment, the dashboard doesn't really look like a dashboard. The component
       heading="Stock Price"
       headerInteractive
       onHeaderClick={handleHeaderClick}
-      subtitle={`Click here to switch to ${switchToChart}`}
+      subheading={`Click here to switch to ${switchToChart}`}
     >
     ```
 
     ```JavaScript / JSX
-    <Card heading="Progress" subtitle="List" style={{ width: "300px", ...spacing.sapUiContentPadding }} avatar={<Icon name="list" />}>
+    <Card heading="Progress" subheading="List" style={{ width: "300px", ...spacing.sapUiContentPadding }} avatar={<Icon name="list" />}>
     ```
 
     ```JavaScript / JSX
-    <Card heading="AnalyticalTable" subtitle="List" style={{ width: "900px", ...spacing.sapUiContentPadding }} avatar={<Icon name="table-view" />}>
+    <Card heading="AnalyticalTable" subheading="List" style={{ width: "900px", ...spacing.sapUiContentPadding }} avatar={<Icon name="table-view" />}>
     ```
 
 2. Align the elements
@@ -548,7 +553,7 @@ export function MyApp() {
     <div>
       <ShellBar
         logo={"reactLogo.png"}
-        profile={"profilePictureExample.png"}
+        profile={<Avatar image="profilePictureExample.png" />}
         primaryTitle={"My App"}
       >
         <ShellBarItem icon="add" text="Add" />
@@ -570,7 +575,7 @@ export function MyApp() {
           heading="Stock Price"
           headerInteractive
           onHeaderClick={handleHeaderClick}
-          subtitle={`Click here to switch to ${switchToChart}`}
+          subheading={`Click here to switch to ${switchToChart}`}
           style={{ width: "300px", ...spacing.sapUiContentPadding }}
         >
           <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
@@ -582,7 +587,7 @@ export function MyApp() {
         </Card>
         <Card
           heading="Progress"
-          subtitle="List"
+          subheading="List"
           style={{ width: "300px", ...spacing.sapUiContentPadding }}
           avatar={<Icon name="list" />}
         >

@@ -60,7 +60,7 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 >You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
 
-1. Right click on the **Rules** folder | **New** | **File**.
+1. Right click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.1.png)
 
@@ -215,7 +215,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [ACCORDION-BEGIN [Step 7: ](Create & Run the MDK client)]
 
-Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device/simulator.
+Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
 
 [OPTION BEGIN [Android]]
 

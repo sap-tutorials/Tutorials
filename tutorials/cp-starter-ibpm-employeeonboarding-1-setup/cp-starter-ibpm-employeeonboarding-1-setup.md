@@ -289,15 +289,9 @@ You can open both the links in different browser tabs and use them in further tu
 
     ![Open FLP](approuterlink.png)
 
-    The app-router link will open the SAP Fiori launchpad with **Workflow** and **Process Visibility** tiles.
+    The app-router link will open the SAP Fiori launchpad with **Business Rules**, **Workflow** and **Process Visibility** applications.
 
     ![Open BPM FLP](bpmFLP.png)
-
-    In the same app-router link, copy and paste this URL fragment `/comsapbpmrule.ruleeditor/index.html` in the end to open business rules editor.
-
-    > For example: `https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/comsapbpmrule.ruleeditor/index.html`
-
-    ![Open Rule Editor](openruleeditor.png)
 
 These steps complete the setup of the starter scenario for Intelligent Business Process Management in your trial account. In the next tutorial, you will access the sample content of these different services, quickly set them up in your account and then run the scenario to get an integrated experience.
 

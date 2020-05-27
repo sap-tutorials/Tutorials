@@ -24,7 +24,7 @@ author_profile: https://github.com/raz-korn
             - User Name: **Your ES5 Gateway user**
             - Authentication: **Your ES5 Gateway password**
         - Additional Properties:
-            - HTML5.DynamicDestination: **true**
+            - HTML5.DynamicDestination: **true** (Type this additional property manually as it is not available in the drop-down list)
             - sap-client: **002**
             - `WebIDEEnabled`: **true**
             - `WebIDESystem`: **ES5**
@@ -192,7 +192,7 @@ Make some changes using the layout editor, with no need to do any coding.
 
     !![Drag and drop](05-02 AppStudio Layout Editor List Dropped_.jpg)
 
-3. Select the **List** control and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
+3. Select the **Standard List Item** control and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
 
     !![Open entity set bind window](05-03 AppStudio Layout Editor Bind to Entity Set_.jpg)
 
@@ -221,48 +221,6 @@ Make some changes using the layout editor, with no need to do any coding.
 [VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Set Cloud Foundry preferences)]
-
-Before you can deploy your new application, set your Cloud Foundry preferences.
-
-1. Open the **command palette** and select **CF: Login to cloud foundry**.
-
-    !![Command Palette-Login to CF](08-01 AppStudio CF Login_.jpg)
-    &nbsp;
-    !![Command Palette-Login to CF](08-01-02 AppStudio CF Login_.jpg)
-
-2. When prompted, select the API endpoint, organization and space for your project.
-
-    >The Cloud Foundry organization and space appear in the status line at the bottom left part of the screen.
-
-    !![Logged in to CF](08-02 AppStudio CF Login_.jpg)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Add a Destination Service Instance in Your Space)]
-
-A destination service instance is required for test running the app.
-
-1. Open a new terminal.
-
-    !![Link text e.g., Destination screen](Open Terminal_.jpg)
-    &nbsp;
-    !![Link text e.g., Destination screen](Open Terminal-2_.jpg)
-
-2. Create a new destination service called **`destination_ES5`**.
-
-    ```Shell/console
-      cf create-service destination lite destination_ES5
-    ```
-
-    !![Link text e.g., Destination screen](Terminal Create Destination Service_.jpg)
-    &nbsp;
-    !![Link text e.g., Destination screen](Terminal Create Destination Service-2_.jpg)
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 6: ](Test run the application)]
 
 Run your new application to test it.
@@ -288,25 +246,25 @@ Run your new application to test it.
 
 4. Expand the run configuration to display the services that can be bound.
 
-    !![Link text e.g., Destination screen](Dest Service Bind-1_.jpg)
+    !![Bindable objects](06-04 AppStudio Run Configurations_.jpg)
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-5. To bind to the destination service, click the `bind` icon to the right of the Destination Service resource and select an destination service from the list.
+5. To bind to the destination, click the `bind` icon to the right of the Destination  resource and select an destination from the list.
 
-    !![Link text e.g., Destination screen](Dest Service Bind-2_.jpg)
+    !![Bind to Destination](06-05 AppStudio Run Configurations Bind Destination_.jpg)
     &nbsp;
-    !![Link text e.g., Destination screen](Dest Service Bind-3_.jpg)
+    !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination.jpg)
 
-    >Once the destination service has been bound, the Bind icon turns green.
+    >Once the destination has been bound, the Bind icon turns green.
 
-    >To unbind the destination service, click the Unbind icon.
+    >To unbind the destination, click the Unbind icon.
 
-    !![Link text e.g., Destination screen](Dest Service Bind-4_.jpg)
+    !![Destination is bound](06-05-03 AppStudio Run Configurations Bind Destination_.jpg)
 
 6. Hover over the run configuration and click the Run Module icon.  
 
-    !![Link text e.g., Destination screen](Test Run App_.jpg)
+    !![Running the app locally](06-06 AppStudio Run Configurations Run_.jpg)
 
 7. Wait for the notification `A service is listening to port 6004`. Click the notification's button.
 
@@ -350,6 +308,25 @@ Run your new application to test it.
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 8: ](Set Cloud Foundry preferences)]
+
+Before you can deploy your new application, set your Cloud Foundry preferences.
+
+1. Open the **command palette** and select **CF: Login to cloud foundry**.
+
+    !![Command Palette-Login to CF](08-01 AppStudio CF Login_.jpg)
+    &nbsp;
+    !![Command Palette-Login to CF](08-01-02 AppStudio CF Login_.jpg)
+
+2. When prompted, select the API endpoint, organization and space for your project.
+
+    >The Cloud Foundry organization and space appear in the status line at the bottom left part of the screen.
+
+    !![Logged in to CF](08-02 AppStudio CF Login_.jpg)
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 9: ](Deploy the application)]
 
 Deploy your application to SAP Cloud Platform, Cloud Foundry environment.
@@ -383,7 +360,7 @@ Access your deployed application in the SAP Cloud Platform cockpit. The steps be
 
     !![app id from manifest](10-04 AppStudio SAP Fiori Project Manifest_.jpg)
 
-    > For future reference, this is the construct of the final URL: `<URL_from_application_overview_page>/<mynamespace><project_name>/index.html`
+    > For future reference, this is the construct of the final URL: `<URL_from_application_overview_page>/<mynamespace><project_name>/index.html`. Example: `https://SUBACCOUNT-SPACE-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/nsBusinessPartners/index.html`
 
     You can use this URL in any browser to access your new application.
 
