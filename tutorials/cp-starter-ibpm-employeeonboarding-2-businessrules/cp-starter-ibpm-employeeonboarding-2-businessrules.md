@@ -11,7 +11,7 @@ primary_tag: products>sap-cloud-platform
 ### You will learn
 - How to quickly set up and deploy business rules in your account
 
-**SAP Cloud Platform Business Rules** is a platform service, which enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different `runtimes`.
+**SAP Cloud Platform Business Rules** is a platform service, which enables business users and application developers to automate their decisions and enhance their decision-making experience. It offers a simplified Fiori-based rule authoring tool and a central rule repository with various deployment options to different platforms.
 
 In this sample content, you will learn how to author and manage rules to identify the list of equipment to be provisioned for the newly hired employee based on their role and work location using SAP Cloud Platform Business Rules.
 
@@ -22,11 +22,13 @@ In this sample content, you will learn how to author and manage rules to identif
 
 To import the business rules project from API Business Hub, you need to configure a system which points to the API Hub destination and then use this system to import the project.
 
-1. In your web browser, open the business rules editor.
+1. In your web browser, open the SAP Fiori launchpad and click the **Manage Rule Projects** tile..
 
-    >You should have gotten the business rules editor link in the last step of the setup tutorial. The link should be like this:
+    >You got the launchpad link in the last step of the setup tutorial. The link would be like:  
 
-    >`https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/comsapbpmrule.ruleeditor/index.html`
+    > `https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
+
+    ![Rule Editor](ruleeditor.png)
 
 2. Open **Configure Systems**.
 

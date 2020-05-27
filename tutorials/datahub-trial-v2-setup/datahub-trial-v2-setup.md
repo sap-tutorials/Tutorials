@@ -1,46 +1,62 @@
 ---
-title: Set Up SAP Data Hub, Trial Edition
-description: Create a solution instance of SAP Data Hub, trial edition.
+title: Set Up SAP Data Intelligence, Trial Edition
+description: Create a solution instance of SAP Data Intelligence 3.0, Trial Edition.
 auto_validation: true
-primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+primary_tag: products>sap-data-intelligence
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
+time: 240
 ---
 
 ## Details
 ### You will learn  
-During this tutorial, you will learn how to create a solution instance of SAP Data Hub, trial edition. SAP Data Hub, trial edition is provisioned via SAP Cloud Appliance Library. It runs in your account on Cloud Providers that you choose from GCP, AWS or Azure. Please note here in this tutorial GCP refers to Google Cloud platform, AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
+- How to create a solution instance of SAP Data Intelligence, Trial Edition
 
-### Time to Complete
-**150 Min**
+SAP Data Intelligence, Trial Edition is provisioned via SAP Cloud Appliance Library. It runs in your account on Cloud Providers that you choose from Google Cloud platform (GCP), Amazon Web Services (AWS) or Microsoft Azure (or simply Azure).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create Cloud Account or Project)]
-Running SAP Data Hub, trial edition requires you to have access to an Amazon Web Services account, a Google Cloud Platform project or an Azure Subscription.
+[ACCORDION-BEGIN [Step 1: ](Configure your cloud account)]
+Running SAP Data Intelligence, Trial Edition requires you to have your own administrator access to one of the following (alphabetically):
 
-If you do not yet have an account on Google Cloud Platform, Amazon Web Services or Azure, then create one.
+* an Amazon Web Services account,
+* an Azure Subscription, or
+* a Google Cloud Platform project.
+
+If you do not yet have one of the above, then create it first.
+
+The necessary prerequisites for each cloud provider accounts are described in the [Getting Started with SAP Data Intelligence, Trial Edition] (https://caldocs.hana.ondemand.com/caldocs/help/a318f6b5-aa5a-4dfb-893e-1aac356ca5f8_Getting_Started_Guide_v37.pdf) guide (chapter 2.1).
+
+
+
+[OPTION BEGIN [Amazon Web Services]]
+
+For  Amazon Web Services you need to get access to AWS Management Console for the Amazon Web Services account under certain ID. After getting access you need to also have Access Key and Secret Key as a basis to connect from CAL to AWS backend and spin up the SAP Data Intelligence 3.0 instance
+
+* Amazon Web Services Account : <https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/>
+* Amazon Web Services Understanding and Getting Your Security Credentials : <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
+
+[OPTION END]
+
+[OPTION BEGIN [Microsoft Azure]]
+
+For Microsoft Azure you need to create a corresponding Azure subscription using your Microsoft Azure account. And then using the Subscription ID provided to connect CAL from Azure.
+
+* Getting your Microsoft Azure account and unique subscription ID : <https://wiki.scn.sap.com/wiki/display/SAPCAL/FAQ+-+Specific+questions+for+Microsoft+Azure>
+
+[OPTION END]
+
+
+
+[OPTION BEGIN [Google Cloud Platform]]
 
 For Google Cloud Platform create a corresponding Google Cloud Platform project. Moreover you also need a so-called service account which is used by SAP Cloud Appliance Library while accessing Google Cloud Platform. You find more information about projects and service accounts in the Google Cloud Platform documentation.
 
 * Google Cloud Platform Projects: <https://cloud.google.com/storage/docs/projects>
 * Google Cloud Platform Service Accounts: <https://cloud.google.com/iam/docs/service-accounts>
 
-For  Amazon Web Services you need to get access to AWS Management Console for the Amazon Web Services account under certain ID. After getting access you need to also have Access Key and Secret Key as a basis to connect from CAL to AWS backend and spin up the SAP Data Hub 2.5 instance
-
-* Amazon Web Services Account : <https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/>
-* Amazon Web Services Understanding and Getting Your Security Credentials : <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>
-
-For Microsoft Azure you need to create a corresponding Azure subscription using your Microsoft Azure account. And then using the Subscription ID provided to connect CAL from Azure.
-
-* Getting your Microsoft Azure account and unique subscription ID : <https://wiki.scn.sap.com/wiki/display/SAPCAL/FAQ+-+Specific+questions+for+Microsoft+Azure>
-
-
-The necessary policies for Amazon Web Services account, Google Cloud Platform roles for the service account and Microsoft Azure account are described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide (chapter 2.1).
-
-For Google Cloud Platform, you need to enable certain APIs which are also described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide (chapter 2.1).
+[OPTION END]
 
 [DONE]
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Link project to SAP Cloud Appliance Library)]
@@ -55,26 +71,41 @@ If you are a first-time user of SAP Cloud Appliance Library, familiarize yoursel
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create solution instance)]
-Next, you can create a solution instance of SAP Data Hub, trial edition via SAP Cloud Appliance Library. The necessary steps to do so are described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide (chapter 2.3).
+Next, you can create a solution instance of SAP Data Intelligence, Trial Edition in SAP Cloud Appliance Library.
 
-The creation of the solution instance takes around 90-150 minutes (the startup time strongly depends on cloud provider and region).
+The necessary steps to do so are described in the [Getting Started with SAP Data Intelligence, Trial Edition] (https://caldocs.hana.ondemand.com/caldocs/help/a318f6b5-aa5a-4dfb-893e-1aac356ca5f8_Getting_Started_Guide_v37.pdf) guide (chapter 2.3).
+
+The creation of the solution instance can take up to **between 3 to 4 hours** and depends on a cloud provider and a region.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Connect to SAP Data Hub Launchpad)]
-After the solution instance is up and running, you can finally connect to it.
+[ACCORDION-BEGIN [Step 4: ](Connect to SAP Data Intelligence Launchpad)]
+After the solution instance is up and running, you can connect to it.
 
-Therefore you first maintain your local host file as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide (chapter 3.2).
+To access the SAP Data Intelligence Launchpad follow the corresponding chapter from [Getting Started with SAP Data Intelligence, Trial Edition] (https://caldocs.hana.ondemand.com/caldocs/help/a318f6b5-aa5a-4dfb-893e-1aac356ca5f8_Getting_Started_Guide_v37.pdf) guide:
 
-To access the SAP Data Hub Launchpad in AWS or GCP or Azure you need go through the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
+* chapter 3.3 for Amazon Web Services
+* chapter 3.4 for Microsoft Azure
+* chapter 3.5 for Google Cloud Platform
 
-Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page. If you see an error message that the web browser is not able to verify the security certificate, you need to confirm this error message (because the appliance uses self-signed certificates).
+> If you see an error message that the web browser is not able to verify the security certificate, you need to confirm this error message (because the appliance uses self-signed certificates).
 
-![picture_01](./datahub-trial-v2-setup_01.png)
+Once the logon screen is displayed enter corresponding values and press **Login**.
 
-In the SAP Data Hub Launchpad, find and open the link **Modeler**. Copy the URL from the webpage address bar and paste it in the frame below and click on **Validate**.
+!![Logon](login.png)
+
+|-|-|
+|Tenant|`default`|
+|Username|`system`|
+|Password|the password which you have selected during system setup|
+
+The **Application Launchpad** page is displayed.
+
+![Launchpad](launchpad.png)
+
+In the SAP Data Intelligence Launchpad, find and open the link **Modeler**. Copy the URL from the webpage address bar and paste it in the frame below, then click on **Validate**.
 
 [VALIDATE_1]
 
