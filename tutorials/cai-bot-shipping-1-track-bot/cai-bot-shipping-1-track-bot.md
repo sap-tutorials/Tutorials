@@ -1,6 +1,6 @@
 ---
-title: Create a Bot that Lets Customers Track Packages
-description: Create a bot that calls an API, in this case to let customers track their packages, and see how to make use of the memory.
+title: Create a Chatbot that Lets Customers Track Packages
+description: With SAP Conversational AI, create a chatbot that calls an API, in this case to let customers track their packages, and see how to make use of the memory, using SAP Conversational AI.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
@@ -8,7 +8,7 @@ primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - You understand the basics of creating a bot, as described in the tutorial [Build Your First Bot with SAP Conversational AI](cai-bot-getting-started).
+ - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
 ## Details
 ### You will learn
@@ -103,7 +103,7 @@ Our bot must be able to extract the parcel number from within the conversation. 
 
     ![Add values](CreateEntity_AddValues.png)
 
-    We have also supplied the numbers as a [CSV file](`https://github.com/SAPDocuments/Tutorials-Contribution/raw/master/tutorials/cai-bot-shipping-1-track-bot/parcel-numbers`). Instead of manually entering the numbers, you can download the file, then click **Import a CSV File**, select the file, and click **Upload**.
+    We have also supplied the numbers as a [CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cai-bot-shipping-1-track-bot/parcel-numbers.csv). Instead of manually entering the numbers, you can download the file, then click **Import a CSV File**, select the file, and click **Upload**.
 
 > ### About Entities
 >

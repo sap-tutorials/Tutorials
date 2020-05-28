@@ -24,7 +24,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 [ACCORDION-BEGIN [Step 1: ](Add an API endpoint)]
 
-In a [previous tutorial](cloudsdk-js-vdm-getall) we explained a bit the basics about `controller`, `service` and `module` of `NestJS` applications. Note: If you have already controller and service classes from the previous tutorial you can of course keep the existing files and just extend the classes by the new methods. Since, we want to expose a new endpoint, start by creating  a controller file called `business-partner.controller.ts` in the `src` folder of your project. Then, copy the following code into it:
+In a [previous tutorial](cloudsdk-js-vdm-getall) we explained a bit the basics about `controller`, `service` and `module` of `NestJS` applications. Note: If you have already controller and service classes from the previous tutorial you can of course keep the existing files and just extend the classes by the new methods. Since we want to expose a new endpoint, start by creating  a controller file called `business-partner.controller.ts` in the `src` folder of your project. Then, copy the following code into it:
 
 ```JavaScript / TypeScript
 import { Controller, Get, Param } from '@nestjs/common';
