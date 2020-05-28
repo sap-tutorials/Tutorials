@@ -31,7 +31,6 @@ In this tutorial, we will create the decision logic required to assign equipment
     |  :------------- | :-------------
     |  Name           | **`DetermineEquipmentRules`**
     |  Type          | **`Decision Table`**
-    |  Mode    | **`Advanced`**
 
     Then choose **Create**.
 
@@ -48,7 +47,7 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     The decision table settings window opens.
 
-4. In the decision table settings window, select the **Hit Policy** as **All Match**. With **Hit Policy** as **All Match**, the decision table returns all the rows that matches the condition.
+4. In the decision table settings window, select the **Hit Policy** as **First Match**. With **Hit Policy** as **First Match**, the decision table returns the first row that matches the condition.
 
     ![Hit Policy](create_dt_4.png)
 

@@ -1,6 +1,6 @@
 ---
-title: Build Your MDK Client
-description: Build and run the Mobile Development Kit client to connect to your SAP Cloud Platform mobile application.
+title: Build Your Mobile Development Kit Client Using MDK SDK
+description: Build the Mobile Development Kit client using MDK SDK and connect to your SAP Cloud Platform mobile app.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
 tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
@@ -11,13 +11,22 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Download the latest version of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
+- **Download the latest version (4.2.1) of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
 
 ## Details
 ### You will learn
   - How to install a Mobile development kit client SDK on Mac and Windows OS
   - How to build a Mobile development kit client for iOS and Android
-  - How to connect to SAP Cloud Platform Mobile application
+  - How to connect to SAP Cloud Platform Mobile app
+
+  The SAP Mobile Services client available in the App Store is meant for demo and development or learning purposes. For distribution to your users, you need to build a custom client. This enables you to:
+  ▪ Provide customer app icon
+  ▪ Use your signing profiles
+  ▪ Distribute custom extensions
+  ▪ Provide app-specific settings (Custom EULA texts, Add app assets)
+  ▪ Add demo mode
+  ▪ Customize languages (for onboarding screens)
+  ▪ Use your own distribution channels, like the mobile device management of your choice
 
 ---
 
@@ -81,7 +90,7 @@ There might be some issue due to Security Policy. It can be fixed by executing t
 
 Once you've installed these prerequisites, your machine is ready to generate and build an MDK project.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Installing the SDK dependencies)]
@@ -179,13 +188,13 @@ Open the `MDKProject.json` file and update it as needed. This file has some buil
 
 >You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 
-Now open the `BrandedSettings.json` file and update it with information from your MDK Mobile Services application.
+Now, open the `BrandedSettings.json` file and update it with information from your MDK Mobile Services application.
 
 ![MDK](img_012.png)
 
 To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#08a4320f-424c-4f94-8de0-d9a7be8378d5) and find your MDK application that you want to link to this client.
 
-Click on `com.sap.mdk.demo` > **Security** tab.
+click `com.sap.mdk.demo` > **Security** tab.
 
 Copy the Client ID, Redirect URL, OAuth Authorization & OAuth Token and paste to `ClientId`, `RedirectUrl`, `AuthorizationEndPointUrl` and `TokenUrl` parameters respectively.
 
@@ -215,12 +224,9 @@ In the last section of `BrandedSettings.json` file, make these changes:
 | Field | Value |
 |----|----|
 | `DetailLabelViewText` | `My sample custom client` |
-| `EncryptDatabase` | `false` |
 | `SigninButtonText` | `Start` |
 
 ![MDK](img_016.png)
-
->It is recommended to encrypt the database in production scenarios. You might want to set this property to false to extract the database for debugging purposes.
 
 >You can find more details about branding in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 
@@ -385,6 +391,8 @@ Since there is no app metadata deployed yet to Mobile Services, hence you will s
 >To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
 
 [OPTION END]
+
+Congratulations, you have successfully built Your Mobile Development Kit Client Using MDK SDK and you are now all set to [Build Your Mobile Development Kit Client Using Cloud Build Service](cp-mobile-dev-kit-cbs-client).
 
 [DONE]
 [ACCORDION-END]

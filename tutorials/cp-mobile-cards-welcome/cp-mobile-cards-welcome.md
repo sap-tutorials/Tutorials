@@ -30,7 +30,7 @@ Make sure you have logged into SAP Cloud Platform Mobile Services cockpit. In th
 
 !![MobileCards](img_1.png)
 
-Click the **Create a New Card** icon to create a new card.
+Click the **Create Card Template** icon ![MobileCardsIcon](ico_new_card.png) to create a new card.
 
 !![MobileCards](img_2.png)
 
@@ -58,13 +58,13 @@ You will then see a list of existing mobile cards created in your account.
 
 [ACCORDION-BEGIN [Step 3: ](Set card status to productive)]
 
-By default, status of newly created cards is **Development**. Cards can be subscribed to only when they are in a **Productive** state.
+By default, the status of newly created cards is **Development**. Cards can be subscribed to only when they are in a **Productive** state.
 
 Click `WelcomeCard` in the Card Templates Tab.
 
 !![MobileCardsImage](img_5.png)
 
-Under **Actions**, click the highlighted icon to change the state to **Productive**.
+Under **Actions**, click the check mark icon ![MobileCardsIcon](ico_check.png) to change the state to **Productive**.
 
 !![MobileCardsImage](img_6.png)
 
@@ -81,7 +81,7 @@ You will notice that the **State** has been changed to **Productive**.
 
 [ACCORDION-BEGIN [Step 4: ](View the Welcome Card in Mobile Cards client)]
 
->Make sure you are choosing the right device platform tab **above**.
+>Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
 Welcome cards are auto subscribed by default and downloaded automatically after registration.
 
@@ -99,7 +99,7 @@ You should see a Welcome Card in your Mobile application.
 
 [OPTION END]
 
-Congratulations, you have your first SAP Mobile card on the device.
+Congratulations, you can now view your first SAP Mobile card on the device.
 
 [DONE]
 [ACCORDION-END]

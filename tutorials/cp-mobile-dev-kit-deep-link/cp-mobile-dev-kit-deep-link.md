@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
 - **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 - **Download and install** **SAP Mobile Cards** on your [iOS](https://apps.apple.com/us/app/sap-mobile-cards/id1168110623) or [Android](https://play.google.com/store/apps/details?id=com.sap.content2go&hl=en) device
 - **Download and install** **SAP Fiori Client** on your [iOS](https://apps.apple.com/us/app/sap-fiori-client/id824997258) or [Android](https://play.google.com/store/apps/details?id=com.sap.fiori.client&hl=en) device
@@ -22,7 +22,7 @@ author_profile: https://github.com/jitendrakansal
   - How to open an UI5 app running in a  Fiori Client from an MDK generic client
   - How to open a web page
 
-You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/4-Implement-Deep-Linking-to-Another-App-from-an-MDK-App) and start directly with step 5 in this tutorial.
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/4-Implement-Deep-Linking-to-Another-App-from-an-MDK-App) and start directly with step 5 in this tutorial.
 
 ---
 
@@ -43,7 +43,7 @@ If you are building a custom version of Mobile development kit client, there you
 
 2. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-3. Right click on Workspace folder and select **New** | **MDK Empty Project**.
+3. Right-click Workspace folder and select **New** | **MDK Empty Project**.
 
     ![MDK](img_001.png)
 
@@ -66,20 +66,20 @@ If you are building a custom version of Mobile development kit client, there you
 
 [ACCORDION-BEGIN [Step 2: ](Create a new rule)]
 
-1. In the MDK editor, you will create 4 new JavaScript files:
+In the MDK editor, you will create 4 new JavaScript files:
 
-    * `OpenSAPMobileCards.js` to open SAP Mobile Cards app
-    * `OpenSAPFioriClient.js` to open SAP Fiori Client app
-    * `OpenUI5.js` to open an UI5 app running in SAP Fiori Client app
-    * `OpenSAPcom.js` to open `SAP.com` web page
+  * `OpenSAPMobileCards.js` to open SAP Mobile Cards app
+  * `OpenSAPFioriClient.js` to open SAP Fiori Client app
+  * `OpenUI5.js` to open an UI5 app running in SAP Fiori Client app
+  * `OpenSAPcom.js` to open `SAP.com` web page
 
     >You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
 
-2. Right click on the **Rules** folder | **New** | **File**.
+1. Right-click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_004.png)
 
-3. Enter the file name `OpenSAPMobileCards.js`, click **OK**.
+2. Enter the file name `OpenSAPMobileCards.js`, click **OK**.
 
     Copy and paste the following code.
 
@@ -105,7 +105,7 @@ If you are building a custom version of Mobile development kit client, there you
 
     >`openUrl` is a `NativeScript` API to open an URL on device. You can find more details about [this API](https://docs.nativescript.org/core-concepts/utils#openurl-function).
 
-4. Repeat the above step and create another new file:
+3. Repeat the above step and create another new file:
 
     Enter the file name `OpenSAPFioriClient.js`, click **OK**.
 
@@ -132,7 +132,7 @@ If you are building a custom version of Mobile development kit client, there you
 
     ![MDK](img_006.png)
 
-5. Repeat the above step and create another new file:
+4. Repeat the above step and create another new file:
 
     Enter the file name `OpenUI5.js`, click **OK**.
 
@@ -159,7 +159,7 @@ If you are building a custom version of Mobile development kit client, there you
 
     ![MDK](img_007.png)
 
-6. Create one more file and name it to `OpenSAPcom.js`.
+5. Create one more file and name it to `OpenSAPcom.js`.
 
     Copy and paste the following code.
 
@@ -182,7 +182,7 @@ If you are building a custom version of Mobile development kit client, there you
     }
 ```
 
-7. Save the changes.
+6. Save the changes.
 
 [DONE]
 [ACCORDION-END]
@@ -225,7 +225,7 @@ If you are building a custom version of Mobile development kit client, there you
 
     In `Main.page`, select **Open SAP Mobile Cards** button. In the Properties pane, click the **Events** tab, click the **link icon** for the `Handler` property to open the object browser.
 
-2. Double Click on the `OpenSAPMobileCards.js` and click **OK** to set it as the `OnPress` action.
+2. Double click the `OpenSAPMobileCards.js` and click **OK** to set it as the `OnPress` action.
 
     ![MDK](img_014.gif)
 
@@ -246,7 +246,7 @@ If you are building a custom version of Mobile development kit client, there you
 
 So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right click on the `MDKDeepLink` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `MDKDeepLink` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_015.png)
 
@@ -260,11 +260,13 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
 
+    ![MDK](img_018.png)
+
 4. Click **Next** to finish the deployment from SAP Web IDE.
 
     You should see **Application deployed successfully** message in console log.
 
-    ![MDK](img_018.png)
+    ![MDK](img_015.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -273,54 +275,48 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-1. Right click on the `MDKDeepLink` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right-click the `MDKDeepLink` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-    ![MDK](img_015.png)
+![MDK](img_013.1.png)
 
-2. Let the default configuration as it is and click **Next**.
+>**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
-    ![MDK](img_016.png)
-
-3. Click on the **QR-code icon** to populate the QR-code for app on-boarding.
-
-    ![MDK](img_020.png)
+![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above.
-
-The MDK client receives deployed metadata definitions as a bundle.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
-1. On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
-
-2. Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
-
-3. Tap **Open browser**.  It will open SAP Mobile Services Client app.
-
-    ![MDK](img_013.1.jpg)
-
-4. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
     ![MDK](img_031.1.jpg)
 
-5. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+
+    ![MDK](img_013.2.png)
+
+3. Once scan is succeeded, tap **CONTINUE**.
+
+    ![MDK](img_013.3.png)
+
+4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_017.1.png)
 
-6. Tap **AGREE** on `End User License Agreement`.
+5. Tap **AGREE** on `End User License Agreement`.
 
     ![MDK](img_033.jpg)
 
-7. Choose a passcode with at least 8 characters for unlocking the app and click **NEXT**.
+6. Choose a passcode with at least 8 characters for unlocking the app and click **NEXT**.
 
     ![MDK](img_034.png)
 
-8. Confirm the passcode and tap **DONE**.
+7. Confirm the passcode and tap **DONE**.
 
     ![MDK](img_035.jpg)
 
@@ -328,7 +324,7 @@ The MDK client receives deployed metadata definitions as a bundle.
 
     ![MDK](img_036.jpg)
 
-9. Tap **OK**.
+8. Tap **OK**.
 
     ![MDK](img_037.jpg)
 
@@ -338,7 +334,7 @@ The MDK client receives deployed metadata definitions as a bundle.
 
     ![MDK](img_038.1.jpg)
 
-10. Tap **OPEN SAP MOBILE CARDS** and then tap **OK**.
+9. Tap **OPEN SAP MOBILE CARDS** and then tap **OK**.
 
     ![MDK](img_039.jpg)
 
@@ -346,49 +342,49 @@ The MDK client receives deployed metadata definitions as a bundle.
 
     ![MDK](img_040.jpg)
 
-11. Tapping on **OPEN SAP FIORI CLIENT** will open **SAP Fiori Client** app.
+10. Tapping on **OPEN SAP FIORI CLIENT** will open **SAP Fiori Client** app.
 
     >If you have access to any Fiori app or Fiori Launchpad page for example [SAP Support Launchpad](https://launchpad.support.sap.com), then enter that URL in your Fiori Client app.
 
     ![MDK](img_041.jpg)
 
-12. Tapping on **OPEN UI5 APP** will open a specific app running in SAP Fiori Client as per `OpenUI5.js` file.
+11. Tapping on **OPEN UI5 APP** will open a specific app running in SAP Fiori Client as per `OpenUI5.js` file.
 
     In below screenshot, there is one Software Downloads UI5 app part of SAP Support Launchpad.
 
     ![MDK](img_042.jpg)
 
-13. Tapping on **OPEN SAP.COM PAGE** will open SAP website.
+12. Tapping on **OPEN SAP.COM PAGE** will open SAP website.
 
     ![MDK](img_043.jpg)
+
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. On iPhone, open your camera app and start scanning the QR code, as shown below.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
 
-    ![MDK](img_013_1.png)
+    ![MDK](img_013.4.png)
 
-2. Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
+2. Once scan is succeeded, tap **Continue**.
 
-3. Tap **Start** to connect MDK client to SAP Cloud Platform.
+    ![MDK](img_013.5.png)
 
-    ![MDK](img_021.png)
-
-4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_022.png)
 
-5. Tap **Agree** on `End User License Agreement`.
+4. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img_023.png)
 
-6. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img_024.png)
 
-7. Confirm the passcode and tap **Done**.
+6. Confirm the passcode and tap **Done**.
 
     ![MDK](img_025.png)
 
@@ -396,7 +392,7 @@ The MDK client receives deployed metadata definitions as a bundle.
 
     ![MDK](img_026.png)
 
-8. Tap **OK**.
+7. Tap **OK**.
 
     ![MDK](img_027.png)
 
@@ -404,7 +400,7 @@ The MDK client receives deployed metadata definitions as a bundle.
 
     ![MDK](img_028.png)
 
-9. Tap **Open SAP Mobile Cards** and then tap **OK**.
+8. Tap **Open SAP Mobile Cards** and then tap **OK**.
 
     ![MDK](img_028.1.png)
 
@@ -412,25 +408,27 @@ The MDK client receives deployed metadata definitions as a bundle.
 
     ![MDK](img_028.2.png)
 
-10. Tapping on **Open SAP Fiori Client** will open **SAP Fiori Client** app.
+9. Tapping on **Open SAP Fiori Client** will open **SAP Fiori Client** app.
 
     >If you have access to any Fiori app or Fiori Launchpad page for example [SAP Support Launchpad](https://launchpad.support.sap.com), then enter that URL in your Fiori Client app.
 
     ![MDK](img_028.3.png)
 
-11. Tapping on **Open UI5 App** will open a specific app running in SAP Fiori Client as per `OpenUI5.js` file.
+10. Tapping on **Open UI5 App** will open a specific app running in SAP Fiori Client as per `OpenUI5.js` file.
 
     In below screenshot, there is one Software Downloads UI5 app part of SAP Support Launchpad.
 
     ![MDK](img_028.4.png)
 
-12. Tapping on **Open SAP.com page** will open SAP website.
+11. Tapping on **Open SAP.com page** will open SAP website.
 
     ![MDK](img_028.5.png)
 
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
 
-Congratulations, you have learned how to open a web page or navigate to an installed app from an MDK app.
+Congratulations, you have successfully implemented Deep Linking to Another App from your MDK App and you are now all set to [Use OData Annotations to Add CRUD Functionality to an MDK App](cp-mobile-dev-kit-annotations).
 
 [DONE]
 [ACCORDION-END]

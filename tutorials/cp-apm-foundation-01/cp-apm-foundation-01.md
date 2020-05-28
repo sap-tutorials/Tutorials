@@ -129,7 +129,7 @@ Let's check what the builder generated for you.
 
 These are all code snippets the CDS builder generates out of your added association, which you would otherwise have to code manually in all these separate files.
 
-[More information about associations in CDS on the SAP Help Portal](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/b3a0321c94194a21a17a991b0f879fbb.html)
+[More information about associations in CDS on the SAP Help Portal](https://cap.cloud.sap/docs/cds/cdl#associations)
 
 Question: Where has the `Association` and `AssociationSet` been added?
 >**Hint:** It's in the **`srv/src/main/resources/edmx/clouds.products.CatalogService.xml`** file. But in which part of the file?

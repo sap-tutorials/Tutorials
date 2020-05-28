@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Continue Your OData Exploration with EPM
 description: Continue your exploration of OData with the Enterprise Procurement Model (EPM) data set in the Gateway demo system.
 auto_validation: true
@@ -26,7 +28,7 @@ The EPM and the related OData services are available in the SAP Gateway demo sys
 
 In this step you'll find the EPM OData service by looking for it via the maintenance transaction for the Internet Communication Framework (ICF), to understand how web-based resources in general and OData services in particular are managed within an ABAP system.
 
-Log on to the SAP Gateway Demo system via the [Web GUI](https://sapes5.sapdevcenter.com/). If necessary, use the menu path `Gui Actions and Settings -> Show OK Code Field` to make the OK Code field appear, so you can enter transaction codes.
+Log on to the SAP Gateway Demo system via the [Web GUI](https://sapes5.sapdevcenter.com/). If necessary, use the arrow button to make the OK Code field appear, so you can enter transaction codes.
 
 ![menu option to show the OK Code field](show-okcode-field.png)
 

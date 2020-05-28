@@ -183,6 +183,8 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 4: ](Create CDS view)]
 
+The creation of Core Data Services-View (CDS-View) takes here place. CDS views are the foundation of each business object node.
+
   1. Right-click on **`Z_Calendar_XXX`**, select **New** > **Other ABAP Repository Object**.
 
       ![view](cds.png)
@@ -220,15 +222,19 @@ author_profile: https://github.com/mervey45
 
   8. Add annotations for administrative data. The annotation provide the business object semantic information about the purpose of the corresponding fields. By saving the business object the fields will be updated automatically. You can add the following annotations:
 
-      ![view](cds8.png)
+      ![view](cds8x.png)
 
 
   9. Save and activate.
+
+    Now the CDS view for the database table is created. Up to now the CDS view only repeats the database table field definition and adds some annotations to the table.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create behavior definition)]
+
+Now it is time to create behavior definition. The behavior definition defines the nodes of the business object and its properties. Here you can define which node-actions the business object supports. By default, this will be create, update and delete. Furthermore, lock objects, implementation classes and authorization checks can be defined.
 
   1. Right-click on your data definition **`ZCAL_I_HOLIDAY_XXX`**, select **New Behavior Definition**.
 
@@ -269,6 +275,8 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 6: ](Create service definition)]
 
+Service definitions expose a set of business objects and their entities to a service-URL.
+
   1. Right-click on your data definition **`ZCAL_I_HOLIDAY_XXX`**, select **New Service Definition**.
 
       ![definition](definition.png)
@@ -291,18 +299,21 @@ author_profile: https://github.com/mervey45
 
   5. Expose the CDS view in the service definition. Therefore, add **`HolidayRoot`** as alias to the service definition.
 
-       ![definition](definition5.png)
+      ![definition](definition5.png)
 
   6. Save and activate.
 
-  6. Now the service definition is done, and the business object is almost ready for use.
+  7. Now the service definition is done, and the business object is almost ready for use.
 
       ![definition](definition6.png)
+
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create service binding)]
+
+Service bindings expose service definitions to the Web browser.
 
   1. Right-click on your service definition **`ZCAL_I_HOLIDAY_SD_XXX`** and select **New Service Binding**.
 

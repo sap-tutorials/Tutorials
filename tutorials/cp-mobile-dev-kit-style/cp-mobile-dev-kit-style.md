@@ -19,7 +19,7 @@ author_profile: https://github.com/jitendrakansal
   - How to change color of action bar and tool bar
   - How to change font color and background color of SDK control properties in a section page
 
-You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/3-Level-Up-with-the-Mobile-Development-Kit/3-Add-Styling-to-an-MDK-App) and start directly with step 4 in this tutorial.
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/3-Add-Styling-to-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
 
@@ -35,7 +35,7 @@ MDK Template supports Style **LESS** file for styling for `NativeScript`, Androi
 
 2. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-3. Right click on Workspace folder and select **New** | **MDK CRUD Project**.
+3. Right click Workspace folder and select **New** | **MDK CRUD Project**.
 
     ![MDK](img_001.1.png)
 
@@ -124,7 +124,7 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
         color: brown;
     }
 
-    //// UploadToolbarItem is tool bar item for Upload in Main.page
+    //// UploadToolbarItem is tool bar item for Sync in Main.page
     #UploadToolbarItem  {
         color: green;
     }
@@ -141,11 +141,51 @@ The `LESS` stylesheet provides the ability to define styling styles that can be 
       font-color: @mdkYellow1;
       background-color: @mdkRed1;
     }
+
+    //// below snippet is to style Object Header control in Customers_Detail.page
+
+    .objectHeaderBodyText {
+      font-color: red;
+    }
+
+    .objectHeaderDescription {
+      font-color: blue;
+    }
+
+    .objectHeaderFootNote {
+      font-color: green;
+    }
+
+    .objectHeaderHeadline {
+      font-color: #ff00ff;
+    }
+
+    .objectHeaderBackground {
+    background-color: #DC143C;
+    }
+
+    .objectHeaderStatus {
+      background-color: #cccccc;
+      font-color: red;
+      font-name: italicSystem;
+      font-style: italic;
+      font-size: 18;
+    }
+
+    .objectHeaderSubhead {
+      font-color: yellow;
+    }
+
+    .objectHeaderSubStatus {
+      background-color: #cccccc;
+      font-color: blue;
+      font-name: italicSystem;
+      font-style: italic;
+      font-size: 18;
+    }
     ```
 
     >By default there is a tint overlay overlay on the toolbar.  If you want a solid color toolbar that matches the action bar you need to use the `bartintcolor` property in the style instead of the background color (or in addition to). `bartintcolor: blue;`
-
-    ![MDK](img_007.png)
 
 3. Save your changes to the `Styles.less` file.
 
@@ -162,37 +202,52 @@ In this step, you will bind style classes:
 
 * `MySalesOrderButton` to `SalesOrderHeaders` section button control on `Main.page`
 * `ObjectTableTitle` to Title property of Object Table in `Customers_List.page`
+* `objectHeaderBodyText` to `BodyText` property of Object Header in `Customers_Detail.page`
+* `objectHeaderDescription` to `Description` property of Object Header in `Customers_Detail.page`
+* `objectHeaderFootNote` to `Footnote` property of Object Header in `Customers_Detail.page`
+* `objectHeaderHeadline` to `HeadlineText` property of Object Header in `Customers_Detail.page`
+* `objectHeaderBackground` to `ObjectHeader` property of Object Header in `Customers_Detail.page`
+* `objectHeaderStatus` to `StatusText` property of Object Header in `Customers_Detail.page`
+* `objectHeaderSubhead` to `Subhead` property of Object Header in `Customers_Detail.page`
+* `objectHeaderSubStatus` to `SubstatusText` property of Object Header in `Customers_Detail.page`
 
-1.  Double-click on `Main.page`, select `SalesOrderHeaders` section button, click on **link** icon next to **Style** property.
+1.  Double-click `Main.page`, select `SalesOrderHeaders` section button, click **link** icon next to **Style** property.
 
     ![MDK](img_009.png)
 
-2. In Object browser, select **SDK Style Classes** from dropdown, double-click on `MySalesOrderButton` class to bind style property and click **OK**.
+2. In Object browser, select **SDK Style Classes** from dropdown, double-click `MySalesOrderButton` class to bind style property and click **OK**.
 
     ![MDK](img_010.png)
 
 3. Save the changes to `Main.page`.
 
-4. Navigate to **Pages** | **Customers**, double-click on `Customers_List.page`, select **Object Table** control, scroll-down to **Style** section.
+4. Navigate to **Pages** | **Customers**, double-click `Customers_List.page`, select **Object Table** control, scroll-down to **Style** section.
 
-5. Click on **link** icon next to **Title** property.
+5. click **link** icon next to **Title** property.
 
     ![MDK](img_011.png)
 
-5. In Object browser, select **SDK Style Classes** from dropdown, double-click on `ObjectTableTitle` class to bind style property and click **OK**.
+5. In Object browser, select **SDK Style Classes** from dropdown, double-click `ObjectTableTitle` class to bind style property and click **OK**.
 
     ![MDK](img_012.png)
 
 6. Save the changes to `Customers_List.page`.
 
-[DONE]
+7. Navigate to **Pages** | **Customers**, double-click `Customers_Detail.page`, select **Object Header** control, scroll-down to **Style** section and bind control properties to style properties.
+
+    ![MDK](img_011.1.png)
+
+6. Save the changes to `Customers_Detail.page`.
+
+
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
 
 So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right click on the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right click the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_013.png)
 
@@ -214,59 +269,57 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     You should see **Application deployed successfully** message in console log.
 
+    ![MDK](img_015.1.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app on-boarding)]
 
 SAP Web IDE has a feature to generate QR code for app on-boarding.
 
-1. Right click on the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right click the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-    ![MDK](img_013.png)
+![MDK](img_013.1.png)
 
-2. Let the default configuration as it is and click **Next**.
+>**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
-    ![MDK](img_014.png)
-
-3. Click on QR code icon to populate QR code for app on-boarding.
-
-    ![MDK](img_016.png)
+![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the app in MDK client)]
+[ACCORDION-BEGIN [Step 6: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
-1. On Android, camera app does not support scanning the QR code. You can use [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) app to scan it.
-
-2. Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
-
-3. Tap **Open browser**. It will open SAP Mobile Services Client app.
-
-    ![MDK](img_017.jpg)
-
-4. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
     ![MDK](img_018.jpg)
 
-5. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+
+    ![MDK](img_013.2.png)
+
+3. Once scan is succeeded, tap **CONTINUE**.
+
+    ![MDK](img_013.3.png)
+
+4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_019.png)
 
-6. **AGREE** on `End User License Agreement`.
+5. **AGREE** on `End User License Agreement`.
 
     ![MDK](img_020.png)
 
-7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+6. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
     ![MDK](img_021.png)
 
-8. Confirm the passcode and tap **DONE**.
+7. Confirm the passcode and tap **DONE**.
 
     ![MDK](img_022.png)
 
@@ -274,7 +327,7 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_023.png)
 
-9. Tap **OK**.
+8. Tap **OK**.
 
     ![MDK](img_024.png)
 
@@ -284,37 +337,41 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_025.png)
 
-10. Tap on **CUSTOMERS** to navigate to Customer List. You will see that Title property has been styled.
+9. Tap on **CUSTOMERS** to navigate to Customer List. You will see that Title property has been styled.
 
     ![MDK](img_026.png)
+
+10. Tap on any record to navigate to Customer Detail page. You will see that Object Header control has been styled.
+
+    ![MDK](img_038.png)        
+
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. On iPhone, open your camera app and start scanning the QR code, as shown below.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
 
-    ![MDK](img_027.png)
+    ![MDK](img_013.2.2.png)
 
-2. Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
+2. Once scan is succeeded, tap **Continue**.
 
-3. Tap **Start** to connect MDK client to SAP Cloud Platform.
+    ![MDK](img_013.1.2.png)
 
-    ![MDK](img_028.png)
-
-4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_029.png)
 
-5. **Agree** on `End User License Agreement`.
+4. **Agree** on `End User License Agreement`.
 
     ![MDK](img_030.png)
 
-6. Choose a passcode with at least 8 characters for unlocking the app and click **Next**.
+5. Choose a passcode with at least 8 characters for unlocking the app and click **Next**.
 
     ![MDK](img_031.png)
 
-7. Confirm the passcode and click **Done**.
+6. Confirm the passcode and click **Done**.
 
     ![MDK](img_032.png)
 
@@ -322,7 +379,7 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_033.png)
 
-8. Tap **OK**.
+7. Tap **OK**.
 
     ![MDK](img_034.png)
 
@@ -332,15 +389,21 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_035.png)
 
-9. Tap on **Customers** to navigate to Customer List. You will see that Title property has been styled.
+8. Tap on **Customers** to navigate to Customer List. You will see that Title property has been styled.
 
     ![MDK](img_036.png)
 
+9. Tap on any record to navigate to Customer Detail page. You will see that Object Header control has been styled.
+
+    ![MDK](img_037.png)    
+
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
 
-Congratulations, you have learned how to add styling to your MDK app.
+Congratulations, you have successfully styled your MDK app and you are now all set to [Implement Deep Linking to Another App from an MDK App](cp-mobile-dev-kit-deep-link).
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 

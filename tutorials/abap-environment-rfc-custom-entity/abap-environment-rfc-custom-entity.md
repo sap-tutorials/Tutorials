@@ -8,37 +8,23 @@ primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
 ## Prerequisites
-- Either: An entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
-- Or: [SAP Cloud Platform, ABAP environment, trial version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
+- You have done one of the following:
+    - Created an entitlement to [SAP Cloud Platform, ABAP Environment, Trial Version](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/)
+    - Created an entitlement to [SAP Cloud Platform, ABAP Environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d60#14a68d825.html), full version
 
 ## Details
 ### You will learn
   - How to create a suitable custom entity to get data from a remote system
   - How to implement a query provider class to get the data, using a BAPI (Business Application Programming Interface)
-  - How to expose the custom entity as a Business Service Definition
-  - How to display the data in a Fiori Elements Preview, using the Business Service Binding
+  - How to expose the custom entity as a **service definition**
+  - How to display the data in a Fiori Elements Preview, using a **service binding**
 
 Note that, if you are using the trial version, currently you cannot access an on-premise system using RFC. In that case, you will test the class using mock data.
 
-A BAPI is a standard interface to a business object model, implemented as a function module. For more information, see: [BAPI](https://help.sap.com/viewer/166400f6be7b46e8adc6b90fd20f3516/1709%20002/en-US)
+A BAPI is a standard interface to a business object model, implemented as a function module.
 
 Custom entities are used for data models whose runtime is implemented manually. There is no SELECT statement on the data source. Rather, you define the elements and their types in the custom entity. Then you implement the data retrieval logic in an ABAP class, which is referenced in an entity annotation. Custom entities allow you to get data using an OData service or, as here, using RFC.
 
-For more information, see:
-
-- [SAP Help Portal: Using a CDS Custom Entity to Define the Data Model for an OData Service](https://help.sap.com/viewer/c0d02c4330c34b3abca88bdd57eaccfc/Cloud/en-US/6a064c09c508435a81357898e8e65d06.html)
-
-Background reading:
-
-- [Implement a custom entity in the ABAP RESTful Programming Model using a BAPI](https://blogs.sap.com/2019/03/01/how-to-implement-a-custom-entity-in-the-abap-restful-programming-model-using-remote-function-modules/) - includes handling a single record, filtering, and ordering
-
-- [Insert test data into tables in SAP Cloud Platform, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
-
-- [Call a remote OData service from the trial version of SAP Cloud Platform ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
-
-- [OData service development with SAP Gateway using CDS](https://blogs.sap.com/2016/06/01/odata-service-development-with-sap-gateway-using-cds-via-referenced-data-sources/) - pertains to on-Premise Systems, but contains lots of useful background information on the relationships between CDS views, OData services
-
-- [OData – Everything that you need to know](https://blogs.sap.com/2016/02/08/odata-everything-that-you-need-to-know-part-1/) - especially Parts 1-3 (Community content)
 
 ---
 
@@ -217,11 +203,11 @@ Go back to the class.
 
     ```
 
-2. Create a variable, `lv_abap_trial`. **If** you are using the trial version, set it to **true**, otherwise false.
+2. Create a variable, `lv_abap_trial`. **If** you are using the full version of SAP Cloud Platform, ABAP Environment, set it to **false**, otherwise **true**.
 
     ```ABAP
 
-    DATA(lv_abap_trial) = abap_true.  
+    DATA(lv_abap_trial) = abap_false.  
 
     ```
 
@@ -229,7 +215,7 @@ Go back to the class.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Define the connection to the on-premise system)]
-Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
+If your are working in the full version of ABAP Environment: Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
 
     ```ABAP
 
@@ -249,10 +235,12 @@ Define the connection as follows, replacing `XXX` in both `i_name` and `i_servic
     ENDIF.
 
     ```
-
+If you are working in the trial version, omit this step.
 
 [DONE]
 [ACCORDION-END]
+
+
 
 [ACCORDION-BEGIN [Step 8: ](Call the remote BAPI or insert the mock data)]
 1. Check whether data is being requested.
@@ -444,8 +432,8 @@ Start with the Service Definition:
     ![Image depicting step12-choose-service-def](step12-choose-service-def.png)
 
 2. Choose a name and description:
-    - `ZSD_PRODUCT_XXX`
-    - Expose product data from on-Premise
+    - **`Z_EXPOSE_PRODUCTS_XXX`**
+    - Expose product data via RFC
 
 3. Choose the transport request; choose **Next**.
 
@@ -455,8 +443,6 @@ Start with the Service Definition:
 
 5. Save and activate ( **`Ctrl+S, Ctrl+F3`** ) the service definition.
 
-
-
 [DONE]
 [ACCORDION-END]
 
@@ -464,23 +450,21 @@ Start with the Service Definition:
 1. Select your service definition, then choose **Service Binding** from the context menu, then choose **Next**.
 
 2. Choose:
-    - Name = `ZSB_PRODUCT_XXX`
+    - Name = **`Z_BIND_PRODUCTS_XXX`**
     - Description = Bind product data via RFC
     - Binding Type = ODATA V2 (UI...)
     - Service Definition = `ZSD_PRODUCT_XXX`
 
       ![Image depicting step12-choose-binding-type](step12-choose-binding-type.png)
 
-3. Choose the transport request; choose **Next**.
-
-4. Use the selected template; choose **Finish**.
+3. Choose the transport request; choose **Finish**.
 
 The service binding automatically references the service definition and thus the exposed custom entity.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Activate the service binding)]
+[ACCORDION-BEGIN [Step 14: ](Activate service binding)]
 1. In the editor that appears, choose **Activate**.
 
     ![Image depicting step13-activate-service-endpoint](step13-activate-service-endpoint.png)
@@ -491,9 +475,11 @@ The service binding automatically references the service definition and thus the
 
 3. You can open the Service Document (`XML`) in your browser, by choosing **Service URL**.
 
-2shotsbla
+    !![step14c-service-url-in-browser](step14c-service-url-in-browser.png)
 
 4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `sap/opu/odata/sap/Z_BIND_PRODUCT_TEST_001/$metadata`.
+
+    !![step14d-service-metadata-in-browser](step14d-service-metadata-in-browser.png)
 
 [DONE]
 [ACCORDION-END]
@@ -547,4 +533,15 @@ The console output should look like this:
 [DONE]
 [ACCORDION-END]
 
+## More Information
+
+- [SAP Help Portal: BAPI](https://help.sap.com/viewer/166400f6be7b46e8adc6b90fd20f3516/1709%20002/en-US)
+
+- [SAP Help Portal: Using a CDS Custom Entity to Define the Data Model for an OData Service](https://help.sap.com/viewer/c0d02c4330c34b3abca88bdd57eaccfc/Cloud/en-US/6a064c09c508435a81357898e8e65d06.html)
+
+- [Implement a custom entity in the ABAP RESTful Programming Model using RFC](https://blogs.sap.com/2019/03/01/how-to-implement-a-custom-entity-in-the-abap-restful-programming-model-using-remote-function-modules/) - includes handling a single record, filtering, and ordering
+
+- [Insert test data into tables in SAP Cloud Platform, ABAP Environment](https://blogs.sap.com/2019/09/30/how-to-insert-test-data-into-tables-in-sap-cloud-platform-abap-environment/)
+
+- [Call a remote OData service from the trial version of SAP Cloud Platform ABAP environment](https://blogs.sap.com/2019/10/20/how-to-call-a-remote-odata-service-from-the-trial-version-of-sap-cloud-platform-abap-environment/)
 ---

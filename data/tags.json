@@ -25,6 +25,10 @@
       "value": "topic>abap-extensibility"
     },
     {
+      "name": "Artificial Intelligence",
+      "value": "topic>artificial-intelligence"
+    },
+    {
       "name": "Big Data",
       "value": "topic>big-data"
     },
@@ -191,6 +195,10 @@
     {
       "name": "SAP HANA",
       "value": "products>sap-hana"
+    },
+    {
+      "name": "SAP HANA Cloud",
+      "value": "products>sap-hana-cloud"
     },
     {
       "name": "SAP HANA, dynamic tiering",
