@@ -17,14 +17,6 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 [ACCORDION-BEGIN [Step 1: ](Deploy application to Cloud Foundry)]
 
-Before we can deploy our application, we first need to transpile our TypeScript to JavaScript and assemble our artifact for deployment. The `package.json` already defines two scripts for this purpose: `ci-build` and `ci-package`. `ci-build` takes care of compilation and `ci-package` takes care of assembly.
-
-In your command line, run:
-
-```Shell
-npm run ci-build && npm run ci-package
-```
-
 In order to deploy our application, we first need to login to `Cloud Foundry` in `SAP Cloud Platform` using the **`cf` CLI**. First we need to set an `API` endpoint. The exact URL of this `API` endpoint depends on the region your `subaccount` is in. Open the [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com/) and navigate to the `subaccount` you are planning to deploy your application to. Click on "Overview" on the left and you can see the URL of the `API` endpoint.
 
 ![API_Endpoint_in_Subaccount](subaccount_api_endpoint.png)
@@ -38,9 +30,17 @@ cf login
 
 `cf login` will prompt you for your username and your password. Should you have more then one organization or space, you will also have to select those.
 
-Finally, if you have logged in successfully, you can call `cf push` from the root folder of the project. **`cf` CLI** will automatically pick up the `manifest.yml` of the project.
+Finally, if you have logged in successfully, it is time to build and deploy your application.
+The `package.json` contains a few scripts that can be used for this purpose. In productive environments you would transpile the application from TypeScript to JavaScript using the `ci-build` script, package our deployment using the `ci-package` script and deploy the application using `cf push`.
 
-The file should look like this (where `<YOUR-APPLICATION-NAME>` is replaced by the name you specified when initializing the project):
+For manual deployments, run:
+```Shell
+npm run deploy
+```
+
+This will use your local sources for deployment.
+
+The **`cf` CLI** will automatically pick up the `manifest.yml` of the project when deploying your application. The file should look like this (where `<YOUR-APPLICATION-NAME>` is replaced by the name you specified when initializing the project):
 
 ```YAML
 applications:
