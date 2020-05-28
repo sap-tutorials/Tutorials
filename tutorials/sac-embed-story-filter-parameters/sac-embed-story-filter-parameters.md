@@ -469,8 +469,6 @@ Starting from where we left in the filter dialog, we click on the dimension we w
 
 ![Filter_Value_ID](filter_value_id.png)
 
-[DONE]
-
 [VALIDATE_1]
 
 [ACCORDION-END]
