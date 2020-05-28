@@ -31,14 +31,14 @@ cf login
 `cf login` will prompt you for your username and your password. Should you have more then one organization or space, you will also have to select those.
 
 Finally, if you have logged in successfully, it is time to build and deploy your application.
-The `package.json` contains a few scripts that can be used for this purpose. In productive environments you would transpile the application from TypeScript to JavaScript using the `ci-build` script, package our deployment using the `ci-package` script and deploy the application using `cf push`.
+The `package.json` contains a few scripts that can be used for this purpose. In productive environments you would transpile the application from TypeScript to JavaScript using the `ci-build` script, package our deployment using the `ci-package` script and deploy the application using `cf push`. Now you want to see your app in action without employing a pipeline and instead deploy it manually.
 
 For manual deployments, run:
 ```Shell
 npm run deploy
 ```
 
-This will use your local sources for deployment.
+This command will use your local sources for transpiling, packaging and deployment, but will omit packaging your local `node_modules` as those can be system dependent. Dependencies will instead be installed automatically when deploying to `Cloud Foundry`.
 
 The **`cf` CLI** will automatically pick up the `manifest.yml` of the project when deploying your application. The file should look like this (where `<YOUR-APPLICATION-NAME>` is replaced by the name you specified when initializing the project):
 
