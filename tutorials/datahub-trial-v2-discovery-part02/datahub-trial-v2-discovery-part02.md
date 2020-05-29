@@ -1,89 +1,171 @@
 ---
-title: Explore Data in SAP Vora in SAP Data Hub, Trial Edition
-description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition.
+title: Explore Data Rules and Rulebooks with Metadata Explore in SAP Data Intelligence, Trial Edition
+description: Create rules and rulebooks in Metadata Explorer to evaluate and view details of the data quality from different aspects by using SAP Data Intelligence, trial edition.
 auto_validation: true
-primary_tag: products>SAP-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>SAP-data-hub, products>SAP-VORA ]
+primary_tag: products>SAP-data-intelligence
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-intelligence ]
+time: 25
+author_name: Dimitri Vorobiev
+author_profile: https://github.com/dimvor
 ---
 
 ## Details
 ### You will learn  
-During this tutorial, you will learn that Metadata Explorer cannot only be used on files (for example stored in AWS S3, Google Cloud Storage or Azure Storage Blob). Metadata Explorer also works on other data stores, in particular SAP Vora.
-Please note here in this tutorial GCP refers to Google Cloud platform, AWS refers to Amazon Web Services and Azure refers to Microsoft Azure.
-
-### Time to Complete
-**30 Min**
+- How to create rules with Metadata Explorer in SAP Data Intelligence
+- How to create a rulebook and associate rules
+- How to evaluate the quality of the dataset
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Load data into SAP Vora)]
-To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub App Launchpad via a web browser. To access the SAP Data Hub App Launchpad in AWS or GCP  or Azure you need go to the chapters 3.3 and 3.4 as described in the [Getting Started with SAP Data Hub, trial edition] (https://caldocs.hana.ondemand.com/caldocs/help/8772c957-0de5-459b-b98a-27180932f0da_Getting_Started_Guide_v28.pdf) guide.
+[ACCORDION-BEGIN [Step 1: ](Create new rules)]
 
-Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
+In this section, you will use the Metadata Explorer to create validation rules to ensure that our data passes data quality standards and to determine whether the data complies with business constraints and requirements.
 
-![picture_01](./datahub-trial-v2-discovery-part02_01.png)  
+1. Navigate to the **Metadata Explorer** by clicking on the title in the launchpad.
 
-Navigate to the **SAP Vora Tools** by clicking on the icon from the launchpad. The system then displays the **SAP Vora Tools**.
+    !![Open Metadata Explorer](./datahub-trial-v2-discovery-part02_01.png)
 
-![picture_02](./datahub-trial-v2-discovery-part02_02.png)  
+2. Go to **View Rules**.
+    - Click **Data Intelligence Metadata Explorer**.
+    - Click **Rules**.
+    - Click **View Rules**.
 
-Create a new On Disk Relational Table by clicking **Create New** button. If you don't see the welcome screen like the one in the above screenshot, click on the **+** button (highlighted in the screenshot, in upper left corner) and navigate to **Create Relational Table on Disk**.
+    !![Go to View Rules](view_rules.png)
 
-![picture_03](./datahub-trial-v2-discovery-part02_03.png)  
+3. Rules are created within a rule category. You may use the predefined categories listed here or create your own rule category. In this exercise you will create an *Accuracy* rule and a *Conformity* rule.
 
-Enter the following information to create the relational table and then click **Next** :
+    - Click on **more action icon** (at the most right) to the top rule category: Accuracy.
 
-| Field                          | Value                                                                                        |
-| :----------------------------- | :------------------------------------------------------------------------------------------- |
-| `Name`                         | `CUSTOMERS`                                                                                  |
-| `Schema`                       | `default`                                                                                    |
-| `Engine`                       | `Relational Disk`                                                                            |
-| `Table Type`                   | `Data Source`                                                                                |
-| `File System`                  | `GCS` (when using Google Cloud Platform) or `S3` (when using Amazon Web Services) or `WASB` (when using Microsoft Azure) |
-| `Connection Type`              | `Connection Manager`                                                                         |
-| `Connection ID`                | `CLOUD_STORAGE`                                                                              |
-| `File Path`                    | file path via **Browse** button, in our case /Customers.csv                                  |
+    - Select **Create New Rule**.
 
-Finally click **Finish** to create the table.
+    !![Create New Rule](datahub-trial-v2-discovery-part02_03.png)  
 
-![picture_04](./datahub-trial-v2-discovery-part02_04.png)
+4. Save the rule.
 
-After the table is created, click on the **Data Preview** button to display the preview of the loaded table data.
+    - Set **Rule ID** as `CountryAccuracyRule` and then click **Save** in the lower right corner.
 
-![picture_05](./datahub-trial-v2-discovery-part02_05.png)
+    !![Save Rule](create_accuracy_rule.png)  
+
+5. Add Parameter as an input to the rule.
+
+    - Click the + to add a parameter.
+
+    - Set **Name** as Country.
+
+    - Keep **Type** as String.
+
+    - Click **Save**.
+
+    !![Parameter: Country](CountryParameter.png)
+
+6. Add two conditions to the Country parameter:
+
+    * `CountryNotNull`: The Country column must not contain a null value
+    * `CountryInUS`: The Country column must match the value in our list which happens to only contain one entry: "US"
+
+    !![Conditions: CountryNotNull and CountryInUS](CountryConditions.png)
+
+    Save each condition using the floppy disk icon on the right.
+
+7. Use the back button in the upper left corner to go back to the Rule Overview and create a new rule under the rule category *Conformity* with the name **`ZipCodeConformityRule`**
+
+    !![Add Parameter](create_conformity_rule.png)
+
+8. Using the **+** button, create a new parameter **`ZipCode`** and set the data type to be *Integer*. Be sure to save the parameter using the save icon on the right before proceeding to the next step.
+
+    !![Parameter: ZipCode](parameter_zipcode.png)
+
+9. Add two conditions to the `ZipCode` parameter:
+
+    * `ZipCodeNotNull`: The `ZipCode` column must not contain a null value
+
+    * `ZipCodeInRange`: The `ZipCode` column must be less than or equal to 99999
+
+    !![Conditions: ZipCode](conditions_zipcode.png)
+
+    Save each condition using the floppy disk icon on the right.
+
+This concludes this exercise on creating validation rules. In the next section you will create a rulebook and bind these rules to a dataset for evaluation.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Profile table)]
-Go back to the SAP Data Hub Application Launchpad and navigate to **Metadata Explorer**.
+[ACCORDION-BEGIN [Step 2: ](Create a rulebook)]
+Navigate to **Metadata Explorer**.
 
-![picture_06](./datahub-trial-v2-discovery-part02_06.png)
+In this section, you will create a rulebook and associate our previously created rules to evaluate the quality of our dataset.
 
-From the Metadata Explorer, click on **Browse Connections**
+Rather than running a validation on a dataset using a single rule, you will run a rulebook that can contain many rules. These rules can come from one or more rule categories and the rules may be bound to one or more datasets.
 
-![picture_07](./datahub-trial-v2-discovery-part02_07.png)  
+1. Begin by selecting **View Rulebooks** from the Metadata Explorer dropdown menu.
 
-From the connections page, click on **VORA** and then click on **default** to display the tables in SAP Vora in schema `default`.
-Based on our example, we select the table `CUSTOMERS`, which you have created during the previous step.
+    !![View Rulebooks](view_rulebooks.png)
 
-![picture_08](./datahub-trial-v2-discovery-part02_08.png)
+2. Create a new rulebook with the name *`CustomerDataQuality`* using the **+** icon and then Save.
 
-Click on the **More Actions(1)** button for `CUSTOMERS` and from the context menu, click on **Start Profiling(2)**. The system indicates that profiling has started. It can take several minutes for profiling to complete.
+    !![Create rulebook](create_rulebook.png)
 
-As soon as the profiling completes, you will see a notification in the top right corner and you will see more details after you click on the icon.
+3. Click on the the **Import Rules** button
+
+    !![Import rules](import_rules.png)
+
+4. Import the two rules that you created *`CountryAccuracyRule`* and *`ZipCodeConformityRule`* and then Save.
+
+    !![Select rules](select_rules.png)
+
+5. Create a rule binding for *`CountryAccuracyRule`*  which maps to the column `Country` and create a rule binding for *`ZipCodeConformityRule`* to which maps to the column `Zipcode`.
+
+    - Click on either of the two **+** icons to create a new rule binding.
+
+    - Click on *Select a dataset* under **Qualified Name**.
+
+    - Click **Browse**.
+
+    - Select `CLOUD_STORAGE`.
+
+    - Select `Contacts_USA.csv`.
+
+    - Click **OK**.
+
+    - Click **Save**.
+
+    !![Assign rule binding](assign_rule_binding.png)
+
+6. Because the Country parameter is identical to the Country column name it is automatically mapped
+
+    !![Rule binding: Country](rulebinding_country.png)
+
+7. Since the `ZipCode` parameter is spelled with a capital C, but the column is spelled with a lower case c you have to manually choose to map it each other
+
+    !![Rule binding: ZipCode](rulebinding_zipcode.png)
+
+Congratulations, you've completed creating the rulebook and assigned it to your dataset. In the next section you will use it to evaluate and validate the quality of our dataset.
+
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Display metadata and fact sheet)]
-You can take a look at metadata and fact sheet of the `CUSTOMERS` table just like you did during the previous tutorial for the files.
+[ACCORDION-BEGIN [Step 3: ](Execute and evaluate rules results)]
 
-Open the fact sheet for `CUSTOMERS` that you have profiled just now and answer the following questions with the help of the below screenshot :
+Now that the rule bindings have been assigned you can evaluate our data.
 
-![picture_09](./datahub-trial-v2-discovery-part02_09.png)  
+1. Run  rules.
+
+    - Click the **Run All**.
+
+    - A spinning wheel will appear to show that this activity is pending. Once complete, you may click on the **View Results** button.
+
+    - Click on the **View Result**.
+
+    !![Run validation](run_rules.png)
+
+2. The results reveal that only 74.39% of the data passes the two rules that you have defined. For each rule you may drill down view a sample of the rows that do not pass validation.
+
+    !![Failed rows](failed_rows.png)
+
+This concludes this exercise on using SAP Data Intelligence to create a rulebook and bind rules to evaluate the quality of our dataset. In the next section you can enhance the dataset by creating a data preparation task.
 
 [VALIDATE_1]
 

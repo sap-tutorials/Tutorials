@@ -154,7 +154,7 @@ For update requests, the VDM will handle version identifiers for you\. Whenever 
 ```JavaScript / TypeScript
 import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 
-// pre-existing businessPartner
+// pre-existing businessPartner instance
 
 BusinessPartner.requestBuilder()
   .update(businessPartner)

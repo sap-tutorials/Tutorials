@@ -3,7 +3,7 @@ title: Connect Using the SAP HANA ODBC Driver
 description: Connect to SAP HANA using an ODBC data source.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
 primary_tag: products>sap-hana
 ---
 
@@ -77,18 +77,22 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
     ![YaST installer](unixODBC-install.png)
 
-2. On a Mac, unixODBC can be installed using brew.
+2. On a Mac, unixODBC can be installed using [Homebrew](https://brew.sh/).
+
+     ```Shell (Mac)    
+     brew install unixodbc
+     ```
 
 3. The following commands can be used to confirm that unixODBC is installed, the location of the .odbc.ini file, and to confirm the location of the SAP HANA client install that contains the ODBC driver.
 
-    ```Shell (Linux)
+    ```Shell (Linux or Mac)
     odbcinst -j
     which hdbsql
     ```
 
     ![odbcinst](odbcinst.png)
 
-4. Edit the `.odbc.ini` file to create one or more data sources.
+4. Edit the `.odbc.ini` file (or create it if it does not exist) to add one or more data sources.  Note that the driver's file extension is `dylib` instead of `so` on a Mac.
 
     ```.odbci.ini
     [HANA_Cloud]
@@ -103,9 +107,15 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
     databasename = HXE
     ```
 
-5. `unixODBC` provides a basic SQL query tool called `isql` that can be used to validate a data source.
+5.  unixODBC provides a basic SQL query tool called `isql` that can be used to validate a data source.
+
+    ```Shell (Linux or Mac)
+    isql HANA_Express User1 Password1
+    ```
 
     ![isql](isqlQuery.png)
+
+
 
 [DONE]
 [ACCORDION-END]
