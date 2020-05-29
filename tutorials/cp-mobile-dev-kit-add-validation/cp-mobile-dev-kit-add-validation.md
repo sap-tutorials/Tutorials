@@ -135,6 +135,7 @@ Deploy the updated application to your MDK client.
     ![MDK](img_013.png)
     ![MDK](img_012.png)
 
+
 [OPTION END]
 
 Congratulations, you have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
