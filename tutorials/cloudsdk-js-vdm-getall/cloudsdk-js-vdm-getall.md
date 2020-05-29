@@ -25,7 +25,7 @@ The goal of this tutorial group is to show you how to implement a JavaScript app
 
 Most of the services exposed by SAP S/4HANA Cloud and On-Premise are OData services. OData is a [RESTful API protocol](https://www.odata.org/) that has two key features:
 
-- First, each services is described by a metadata document that lists all entities, their properties and relations, and which operations can be executed on them.
+- First, each service is described by a metadata document that lists all entities, their properties and relations, and which operations can be executed on them.
 - Second, OData defines a set of SQL-like operators that allow constructing powerful queries.
 
 However, building requests by hand can be tedious and error-prone. It's easy to mistype the name of an entity or a property, which will make the request fail. Furthermore, you have to continuously cross-check with the service's metadata to look up the spelling and types of entities and properties.
