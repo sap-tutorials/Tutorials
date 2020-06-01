@@ -276,5 +276,6 @@ If you're following the person, and the person is also following you, you have t
 [DONE]
 [ACCORDION-END]
 
-Thank you for taking this tutorial. Congratulations! You're now savvy about your SAP profile ([people.sap.com](https://people.sap.com/)).
 ---
+
+Congratulations! You're now savvy about your SAP profile ([people.sap.com](https://people.sap.com/)).
