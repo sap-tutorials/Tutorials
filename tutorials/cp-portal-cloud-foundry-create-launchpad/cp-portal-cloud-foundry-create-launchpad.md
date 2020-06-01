@@ -5,6 +5,7 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>html5, topic>sapui5, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform-portal
+author_name: Lindsay Bert
 ---
 
 ## Details
@@ -80,7 +81,7 @@ In this step you are going to do just that.
 
 Build and deploy the `MTA` project with these modules thus exposing your app to the Portal service.
 
-1. Right click on your `mta_FioriDemo` project and click **Build**.
+1. Right click on your `mta_FioriDemo` project and click **Build** and then **Build with Cloud MTA Build Tool**.
 
     ![Build your project](16_build.png)
 

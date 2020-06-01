@@ -5,6 +5,7 @@ auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform-portal, topic>cloud, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform
+author_name: Lindsay Bert
 ---
 
 ## Prerequisites

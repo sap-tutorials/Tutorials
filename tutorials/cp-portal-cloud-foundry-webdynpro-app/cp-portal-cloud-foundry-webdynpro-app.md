@@ -5,6 +5,7 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-portal
+author_name: Lindsay Bert
 ---
 
 ## Prerequisites
