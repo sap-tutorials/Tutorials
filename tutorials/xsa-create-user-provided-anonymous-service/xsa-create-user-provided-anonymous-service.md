@@ -270,7 +270,7 @@ Create a new HDB CDS artifact called `segments.hdbcds` under `db/src/data`. Use 
 
 ```sql
 using PRODUCT_SEGMENT as P_SEGMENT;
-using PurchaseOrder.Item as Item;
+using "PurchaseOrder.Item" as Item;
 
 
 context segments {
