@@ -131,7 +131,7 @@ In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteC
     >In above code there is a reference to `Customers_DeleteEntity.action` , you can navigate directly from here to the MDK file by right clicking on it.
     ![MDK](img_001.1.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add a trash button to customer details page)]
@@ -171,7 +171,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_026.1.png)
 
-2. Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Confirm the destination name and application id match where you want to deploy and click **Next**.
 
     ![MDK](img_014.1.png)
 

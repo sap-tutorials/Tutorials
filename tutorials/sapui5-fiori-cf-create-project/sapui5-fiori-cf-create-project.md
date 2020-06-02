@@ -107,7 +107,7 @@ npm start
 [ACCORDION-BEGIN [Step : ](Modify the title)]
 
 **Open** the i18n file [`webapp/i18n/i18n_en.properties`](https://sapui5.hana.ondemand.com/#/topic/91f217c46f4d1014b6dd926db0e91070). **Replace** the content of this file with the following content.
-```
+```TEXT
 title=Coming soon!
 appTitle=Product List
 appDescription=App Description

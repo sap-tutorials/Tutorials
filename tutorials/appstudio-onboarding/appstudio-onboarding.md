@@ -25,7 +25,7 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
 2. Click **Enter Your Trial Account** to access the Cloud Foundry environment.
 
-    !![Access SAP Cloud Platform Trial](2020-03 SCP Access Trial__.jpg)
+    !![Access SAP Cloud Platform Trial](2020-05 SCP Access Trial_.jpg)
 
 [DONE]
 [ACCORDION-END]
@@ -34,12 +34,14 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
 1. Select the tile of the subaccount in which you want to enable the SAP Business Application Studio subscription.
 
-    >For the trial environment, SAP Business Application Studio is only available on Amazon Web Services (AWS) - Frankfurt region.
+    >For the trial environment, SAP Business Application Studio is only available on:
 
-    >If you do not have a subaccount in this region, you need to create a new subaccount, where:
+    > - Amazon Web Services (AWS) - Europe (Frankfurt) or US East (VA) regions.
+
+    >If you do not have a subaccount in one of these regions, you need to create a new subaccount, where:
 
     > - Provider = **Amazon Web Services (AWS)**
-    > - Region = **Europe (Frankfurt)**.
+    > - Region = **Europe (Frankfurt)** or **US East (VA)**.
 
     !![subaccount](2020-03 Cockpit Select Subaccount__.jpg)
 
@@ -90,7 +92,7 @@ The developer and administrator role collections, together with their correspond
 
     !![trustconfiguration](2020-03 Cockpit Navigate to Trust Configuration__.jpg)
 
-3. Select the default IdP by clicking on the `Name` attribute. The name might be `SAP ID Service` or `Default Identity Provider`.
+3. Select the default IdP by clicking on the `Name` attribute. The name might be `SAP ID Service` or `Default Identity Provider` or `sap.default` or similar.
 
     !![idp](2020-03 Cockpit Navigate to IdP__.jpg)
 
@@ -130,15 +132,25 @@ The developer and administrator role collections, together with their correspond
 
     !![gotoapplication](2020-03 Cockpit Go to Application__.jpg)
 
-5. Enter your credentials, and click **Log On**.
-
-    !![authentication](2020-03 AppStudio Authentication__.jpg)
-
 6. You might be asked to accept the legal terms. Check the box and click **OK**.
 
     !![legalterms](2020-03 AppStudio Terms__.jpg)
 
-7. A new tab opens and SAP Business Application Studio loads.
+7. An **Access Denied** page may appear. Logout from SAP Business Application Studio and then login as depicted below.
+
+    !![Logout](2020-05 AppStudio Access Denied Logout_.jpg)
+    &nbsp;
+    !![Login](2020-05 AppStudio Access Denied Login_.jpg)
+
+8. Enter your credentials, and click **Log On**.
+
+    !![authentication](2020-03 AppStudio Authentication__.jpg)
+
+9. You might be asked to accept the legal terms. Check the box and click **OK**.
+
+    !![legalterms](2020-03 AppStudio Terms__.jpg)
+
+10. A new tab opens and SAP Business Application Studio loads.
 
     >**Bookmark this page!**
 

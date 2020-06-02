@@ -114,7 +114,7 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
 
 12. Save the changes to the `Customers_Create.page`.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add cancel button on create customer page)]
@@ -308,7 +308,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_026.1.png)
 
-2. Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Confirm the destination name and application id match where you want to deploy and click **Next**.
 
     ![MDK](img_014.1.png)
 

@@ -85,7 +85,7 @@ Field Name       | Value
 :--------------- | :-------------
 `WebIDEEnabled`  | `true`
 `WebIDESystem`   | `gateway`
-`WebIDEUsage`    | `odata_gen, odata_abap, bsp_execute_abap`
+`WebIDEUsage`    | `odata_abap`
 `sap-client`     | `002`
 
 ![creating destination](te-2016-3-03.png)

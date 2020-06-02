@@ -21,8 +21,9 @@ time: 30
 You'll need the following software installed before setting up the project:
 
 - A Git client. If you don't have on installed you can download one at [https://git-scm.com/downloads](https://git-scm.com/downloads)
-- Apache Maven, available at [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi)
+- Apache Maven, available at [http://maven.apache.org/download.cgi](http://maven.apache.org/download.cgi), version 3.5 or higher
 - A Google Cloud account
+- The [Google Cloud SDK](https://cloud.google.com/sdk/install) for deploying to the Google App Engine
 - A code editor. For example, [Eclipse](http://www.eclipse.org/downloads/packages/release/photon/r/eclipse-ide-java-ee-developers)
 - A zip tool capable of creating split zip archives
 
@@ -250,7 +251,7 @@ Now the application is ready to be deployed to the Google App Engine. To do this
 In a console, run the following command from the root directory of the project.
 
 ```
-mvn clean appengine:update
+mvn clean appengine:deploy
 ```
 
 The application will be deployed to the Google App Engine.

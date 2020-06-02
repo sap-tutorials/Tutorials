@@ -133,7 +133,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 
 11. Save the changes to the `Customers_Edit.page`.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add cancel button on the Edit Customer page)]
@@ -350,11 +350,11 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_026.1.png)
 
-2. Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Confirm the destination name and application id match where you want to deploy and click **Next**.
 
     ![MDK](img_014.1.png)
 
-[DONE]
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Test the application)]

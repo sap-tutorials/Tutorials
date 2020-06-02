@@ -153,7 +153,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >**Externals**: are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_016.png)
 
@@ -215,7 +215,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [ACCORDION-BEGIN [Step 7: ](Create & Run the MDK client)]
 
-Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device/simulator.
+Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
 
 [OPTION BEGIN [Android]]
 

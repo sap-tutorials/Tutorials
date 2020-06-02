@@ -105,7 +105,7 @@ The first time you create an extension control, a directory named `MDKExtensionC
 
 >You can find more details about registering extension control in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/bcc1a204cb614cd99f75c6b2120c5f2e.html) guide.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Consume Extension Control in MDK Metadata)]
@@ -816,12 +816,12 @@ You will add this registered control in a Form Cell page.
 
 11. Save the `tsconfig.json` file.
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Set first page as the extension page)]
 
-In the template generated project, there is already a page called `Main.page` which is also the page that opens after successful on-boarding. For this tutorial, we will change the default behavior of the app launch.
+In the template generated project, there is already a page called `Main.page` which is also the page that opens after successful onboarding. For this tutorial, we will change the default behavior of the app launch.
 
 1. Double-click the `Application.app` file, select the `SampleExtensionPage.page` for the **Main Page** field.
 
@@ -848,7 +848,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >**Externals**: are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_016.png)
 
@@ -863,9 +863,9 @@ You should see **Application deployed successfully** message in console log.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 7: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Web IDE has a feature to generate QR code for app onboarding.
 
 Right click the `mdk_extensions` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
@@ -888,7 +888,7 @@ Right click the `mdk_extensions` MDK Application in the project explorer pane an
 
     ![MDK](img_016.1.jpg)
 
-2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.png)
 
@@ -930,7 +930,7 @@ Here you see Slider control.
 
 [OPTION BEGIN [iOS]]
 
-1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.13.png)
 

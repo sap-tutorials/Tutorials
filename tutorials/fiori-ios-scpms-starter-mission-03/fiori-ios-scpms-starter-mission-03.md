@@ -5,7 +5,7 @@ auto_validation: true
 author_name: Kevin Muessig
 author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios  ]
 time: 35
 ---
 
@@ -263,6 +263,7 @@ The Product List is a Table View Controller which means the structure is similar
     }
 
     private func loadImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
             sapURLSession.dataTask(with: url, completionHandler: { data, _, error in
 
