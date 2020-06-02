@@ -11,7 +11,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download the latest version (4.2.1) of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) device
+- **Download the latest version (4.2.1) of Mobile Development Kit SDK (required to build a branded Android client)** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
 
 ## Details
 ### You will learn
@@ -134,7 +135,7 @@ The extension control that you will be creating to extend the functionality of y
 
 4. Click **Finish** to confirm.
 
-The first time you create an extension control, a directory named `MDKExtensionControls` is automatically created under the MDK app project workspace. Also, a file named `ControlName.extension` (`mdk_maps.extension`) is generated based on the control name you provided.
+The first time you create an extension control, a directory named `MDKExtensionControls` is automatically created under the MDK app project workspace. Also, a file named `mdk_maps.extension` is generated based on the control name you provided.
 
 ![MDK](img_010.png)
 
@@ -187,7 +188,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     ![MDK](img_012.png)
 
-  5. Save the changes to the `Main.page`.
+  5. Save the changes to the `Customers_Detail.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -422,7 +423,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >**Externals**: are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-  3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+  3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_016.png)
 
@@ -460,9 +461,11 @@ Since you will display the customer's address in Google Maps on Android device, 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create Your Branded MDK Client)]
+[ACCORDION-BEGIN [Step 7: ](Create Your Branded MDK Client (Required only for Android))]
 
-Follow steps 1 to 4 from [this tutorial](cp-mobile-dev-kit-build-client).
+For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK. Follow steps 1 to 4 from [this tutorial](cp-mobile-dev-kit-build-client).
+
+For iOS, you can just use the App store client. Continue with next step.
 
 [DONE]
 [ACCORDION-END]
@@ -492,7 +495,7 @@ In this step, you will run the app on an android device.
 
      ![MDK](img_3.png)
 
-   4. Provide below information at the end of this file.
+   4. Provide below information before `application` closing tag.
 
 
     ```XML
@@ -509,7 +512,7 @@ In this step, you will run the app on an android device.
 
   6. Copy the **Device Identifier** value for your device.
 
-    In terminal or command line window, navigate to the app name folder **Demo Sample App** (in `MDClient_SDK` path) and use `tns run android --device <device identifier>` command to run the MDK client on android device.
+    In terminal or command line window, navigate to the app name folder **Demo Sample App** in `MDClient_SDK` path and use `tns run android --device <device identifier>` command to run the MDK client on android device.
 
     ![MDK](img_020.4.png)
 
@@ -555,55 +558,49 @@ In this step, you will run the app on an android device.
 
 [OPTION BEGIN [iOS]]
 
-  1. In this step, you will run the app on an iOS device. Attach the device to your Mac and run `tns device ios` command to print a list of attached devices.
+  1. SAP Web IDE has a feature to generate QR code for app onboarding.
 
-    ![MDK](img_020.1.png)
+    Right click the `mdk_maps` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-  2. Copy the **Device Identifier** value for your device.
+    ![MDK](img_009.1.png)
 
-  3. In terminal window, navigate to the app name folder **Demo Sample App** (in `MDClient_SDK` path) and use `tns run ios --device <device identifier>` command to run the MDK client on iOS device.
+    >**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 5.
+
+    ![MDK](img_012.1.png)
+
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use device Camera, if you would like to scan a different onboarding URL.
+
+  2. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_020.2.png)
 
-    You can also run the app in Xcode. Open the project in Xcode with the command `open platforms/ios/<app name>.xcworkspace`, or open the workspace using the `File -> Open...` dialog in Xcode. Configure the application's code signing settings, then run the application for the target device.
+  3. Once scan is succeeded, tap **Continue**.
 
-    >To run the MDK client on iOS simulator, use `tns run ios --emulator` command.
+      ![MDK](img_013.1.png)
 
-  4. Once, above command gets successfully executed, you will see new MDK client up and running in your device.
-
-    ![MDK](img_022.png)
-
-    Here, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
-
-  5. Tap **Start** to connect MDK client to SAP Cloud Platform.
-
-  6. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+  4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_023.1.1.png)
 
-  7. Tap **Agree** on `End User License Agreement`.
+  5. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img_024.png)
 
-  8. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+  6. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img_025.png)
 
-  9. Confirm the passcode and tap **Done**.
+  7. Confirm the passcode and tap **Done**.
 
     ![MDK](img_026.png)
 
-  10. Tap **OK** to update the client with new MDK metadata.
+  8. Tap **OK** to update the client with new MDK metadata.
 
     ![MDK](img_044.png)
 
-  11. Navigate to the Customer Details page to see the Customer's address loading in Apple Maps.
+  9. Navigate to the Customer Details page to see the Customer's address loading in Apple Maps.
 
     ![MDK](img_045.gif)
-
-    >You can always interrupt running process in terminal window by pressing `control + C`.
-
-    >To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
 
 [OPTION END]
 
