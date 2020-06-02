@@ -16,7 +16,7 @@ author_name: Lindsay Bert
 ## Details
 ### You will learn
   - How to subscribe to the Portal Service
-  - How to assign users to the `Super_Admin` role so that they can design Portal sites
+  - How to assign users to the `Portal_Admin` role so that they can design Portal sites
   - How to access the Portal service
 
 In this group of tutorials our goal is to create an attractive Portal site using the SAP Cloud Platform Portal service. But before we can do this, there are some steps you need to do in the SAP Cloud Platform cockpit.
@@ -59,7 +59,7 @@ Before you can access the Portal service, you first need to subscribe to it.
 
 [ACCORDION-BEGIN [Step 2: ](Add yourself to the Portal_Admin role)]
 
-To be able to do administrative tasks in the Portal you must be assigned to the `Super_Admin` role. In this step, you will first create a role collection and then you'll assign yourself to the `Super_Admin` role.
+To be able to do administrative tasks in the Portal you must be assigned to the `Portal_Admin` role. In this step, you will first create a role collection and then you'll assign yourself to the `Portal_Admin` role.
 
 1. Click on your subaccount again using the breadcrumbs at the top.
 
