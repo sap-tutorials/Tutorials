@@ -9,13 +9,24 @@ function removeTrailingSign(string, sign) {
   return string;
 }
 
-function removeCodeEntries (content) {
+
+function removeCodeEntries(content) {
   const { validation: { codeBlock, codeLine, metaData } } = regexp;
 
   return content
     .replace(metaData, '')
     .replace(codeBlock, '')
     .replace(codeLine, '');
+}
+
+function isExcluded(link) {
+  try {
+    const urlObject = new URL(link);
+
+    return EXCLUDED_HOSTS.includes(urlObject.hostname);
+  } catch (e) {
+    return EXCLUDED_HOSTS.some(l => link.includes(l));
+  }
 }
 
 const extractLinks = (content) => {
@@ -25,28 +36,22 @@ const extractLinks = (content) => {
   const links = markdown.map((regex) => {
     const links = [];
     let match;
+    // eslint-disable-next-line no-cond-assign
     while (match = regex.exec(clearContent)) {
       links.push(match[1]);
     }
-
     return links;
   })
     .reduce((prev, curr) => prev.concat(curr), [])
-    .map((mdLink) => {
-      try {
-        const urlObject = new URL(mdLink);
+    .reduce((result, mdLink) => {
+      const isIgnored = isExcluded(mdLink);
 
-        if (EXCLUDED_HOSTS.includes(urlObject.hostname)) {
-          return;
-        }
-        const url = urlObject.toString();
-        return removeTrailingSign(url, '/');
-      } catch (e) {
-        console.warn('Not a valid url', mdLink);
-        return undefined;
+      if (isIgnored) {
+        return result;
       }
-    })
-    .filter(link => link);
+
+      return result.concat(removeTrailingSign(mdLink, '/'));
+    }, []);
   return [...(new Set(links))];
 };
 

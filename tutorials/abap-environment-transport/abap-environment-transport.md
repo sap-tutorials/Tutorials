@@ -3,7 +3,7 @@ auto_validation: true
 title: Implement the Transport for Your Factory Calendar
 description: Create a transport class and implement the save validation for your factory calendar.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45

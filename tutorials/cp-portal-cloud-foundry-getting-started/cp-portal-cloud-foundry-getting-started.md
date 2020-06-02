@@ -8,8 +8,8 @@ primary_tag: products>sap-cloud-platform-portal
 ---
 
 ## Prerequisites
-  - You've created a SAP Cloud Platform trial account in the Cloud Foundry environment on an AWS Data Center. You can create a trial account using this link: [Create a trial account](https://cockpit.hanatrial.ondemand.com).
-  - You can also use a subaccount in your SAP Cloud Platform global account. If you don't have a subaccount in the Cloud Foundry environment, refer to this topic: [Initial Setup](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
+  - If you want to use a trial environment, you need to first register it. You can register to a trial account using this link:: [Create a trial account](https://www.sap.com/cmp/td/sap-cloud-platform-trial.html).
+  - If you're using a production environment, you should have a subaccount configured. If you don't have a subaccount in the Cloud Foundry environment, refer to this topic: [Initial Setup](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
 
 ## Details
@@ -72,7 +72,7 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
     ![Name role collection](05_create_role_collection.png)
 
-4. Click your role collection to open the **Roles** screen and then click **Add Role**.
+4. Click the `Administrator` role collection that you just created to open the **Roles** screen and then click **Add Role**.
 
     ![Add role](06_add_role.png)
 
@@ -88,27 +88,25 @@ To be able to do administrative tasks in the Portal you must be assigned to the 
 
 6. Click **Save**.
 
-7. Go back to your subaccount (you can use the breadcrumbs at the top of your screen).
+7. Go back to your subaccount (you can click 'trial' in the breadcrumbs at the top of your screen).
 
 8. Click **Security > Trust Configuration** from the side menu.
 
     ![Select Trust Configuration](08_trust_configuration.png)
 
-9. Click the `SAP ID Service`.
+9. Click `sap.default` to select the SAP ID Service.
+
+    ![Click sap.default](08a_sap.default.png)
 
 10. Enter your email address and then click **Show Assignments**.
 
     ![Show Assignments](09_show_assignments.png)
 
-11. If your user is not part of the SAP ID Service you will get the following popup. Click **Add User**.
-
-      ![Add user to ID Service](9_user_idservice.png)
-
-12. Click **Assign Role Collection**.  In the dialog box, select the `Administrator` role collection that you defined above and then click **Assign Role Collection**.
+12. Click **Assign Role Collection**.  The `Administrator` role collection that you defined above and then click **Assign Role Collection**.
 
     ![Assign Role Collection](10_assign_role_collection.png)
 
-You have now been assigned to the `Super_Admin` role and you can access the Portal service and carry out all of your admin tasks.
+You have now been assigned to the `Super_Admin` role and you can access the Portal service and carry out all your admin tasks.
 
 [DONE]
 [ACCORDION-END]

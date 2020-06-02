@@ -10,13 +10,13 @@ tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
- - Make sure you have the command line tools `Curl` and `jq` installed.
- - Windows instructions: [`Curl`](https://chocolatey.org/packages/Curl) and [`jq`](https://chocolatey.org/packages/jq)
- - MacOS/Unix instructions: Curl should already be available and [`jq`](https://stedolan.github.io/jq/download/)
+ - Make sure you have the command line tools Curl and jq installed.
+ - Windows instructions: [Curl](https://chocolatey.org/packages/Curl) and [jq ](https://chocolatey.org/packages/jq)
+ - MacOS/Unix instructions: [jq ](https://stedolan.github.io/jq/download/) (Curl should already be available)
 
 ## Details
 ### You will learn  
-You have already discovered what the API Business Hub is and learned how to test it on the website. In this tutorial, you will learn how to use command line tools like `Curl` and `jq` to test REST APIs locally on your machine.
+You have already discovered what the API Business Hub is and learned how to test it on the website. In this tutorial, you will learn how to use command line tools like Curl and jq to test REST APIs locally on your machine.
 
 ---
 
@@ -48,7 +48,7 @@ Paste the content of the clipboard in a terminal or command line window.
 Hit **Enter** to run the command. It may take a few seconds before data is seen on your screen. If this is successful, it will return a data set of about 650 users.
 > You can use `CTRL+C` to stop the command from running.
 
-You'll notice that the output is not formatted. For this, you can pipe the output of `Curl` to `jq` to format it nicely.
+You'll notice that the output is not formatted. For this, you can pipe the output of Curl to jq to format it nicely.
 
 
 ![terminal with code copied in](9.png)

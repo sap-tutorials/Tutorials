@@ -28,7 +28,7 @@ In this tutorial we are using the trial subaccount but you can also open your ow
 
     ![Log on to SAP Cloud Platform](1-enter-trial-account.png)
 
-2. Click your subaccount tile.
+2. Click on the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can select it instead..
 
     ![Click trial account](2-click-trial.png)
 
