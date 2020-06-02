@@ -261,7 +261,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination , you will find list of existing application IDs, select the one you have chosen while creating the project in step 1.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_015.png)
 
@@ -274,9 +274,9 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Web IDE has a feature to generate QR code for app onboarding.
 
 Right click the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
@@ -299,7 +299,7 @@ Right click the `MDK_Styling` MDK Application in the project explorer pane and s
 
     ![MDK](img_018.jpg)
 
-2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.png)
 
@@ -351,7 +351,7 @@ Right click the `MDK_Styling` MDK Application in the project explorer pane and s
 
 [OPTION BEGIN [iOS]]
 
-1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.2.png)
 
