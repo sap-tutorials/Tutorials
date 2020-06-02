@@ -45,7 +45,7 @@ If these commands fail, ensure that the folder they are located in is included i
 
 The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.net/jeps/238) and as such supports [multiple versions](https://launchpad.support.sap.com/#/notes/2499500) of Java.  It is available in the client installation folder at `C:\SAP\hdbclient\ngdbc.jar` and in the [maven repository](https://mvnrepository.com/artifact/com.sap.cloud.db.jdbc/ngdbc).
 
-1. Run the following command for version information:
+1. Run the following command for version information.  If needed, adjust the path to match the installation location on your machine.
 
     ```Shell (Microsoft Windows)
     java -jar C:\SAP\hdbclient\ngdbc.jar -v

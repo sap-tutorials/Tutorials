@@ -103,7 +103,7 @@ The **Service Marketplace** is where you find all the services available on SAP 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a service instance)]
+[ACCORDION-BEGIN [Step 5: ](Create service instance)]
 
 You will now create an instance of your service.
 
@@ -132,7 +132,7 @@ You have successfully created a service instance for Document Information Extrac
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service Keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service keys)]
 
 You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
