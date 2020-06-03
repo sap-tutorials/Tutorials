@@ -171,6 +171,7 @@ The VDM also supports creating an entity together with related entities in a sin
 ```JavaScript / TypeScript
 import { BusinessPartner, BusinessPartnerAddress } from '@sap/cloud-sdk-vdm-business-partner-service';
 
+// build a business partner instance with one linked address
 const businessPartner = BusinessPartner.builder()
   .firstName('John')
   .lastName('Doe')
@@ -186,6 +187,7 @@ const businessPartner = BusinessPartner.builder()
   ])
   .build();
 
+// execute a create request
 BusinessPartner.requestBuilder()
   .create(businessPartner)
   .execute({

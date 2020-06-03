@@ -33,7 +33,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >The `MDK CRUD Project` template creates the offline or online actions, rules, messages, List Detail Pages with editable options.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).    
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).  
 
 3. Enter the **Project Name** as `MDKApp` and click **Next**.
 
@@ -77,7 +77,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >![MDK](img_0032.png)
 
-    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/backend-connectivity/sample.html).
 
 7. In the **Metadata Source** step, select all **Entity Type** and click **Next**.
 
@@ -122,7 +122,7 @@ These are the metadata definitions available in the editor and the format in whi
 
 - **`Application.app`**: this is the main configuration file for your application from within SAP Web IDE. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
->You can find more details about [metadata definitions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/78e21fae61044df8ae8a78a43157fe8f.html).
+>You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
 
 Open the application settings in the application editor by double clicking on the `Application.app` in the project explorer pane.
 
@@ -147,7 +147,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Click the dropdown for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_014.1.png)
 
@@ -162,9 +162,9 @@ You should see **Application deployed successfully** message in console log.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 4: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Web IDE has a feature to generate QR code for app onboarding.
 
 Right click the `MDKApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
@@ -187,7 +187,7 @@ Right click the `MDKApp` MDK Application in the project explorer pane and select
 
     ![MDK](img_016.1.jpg)
 
-2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.png)
 
@@ -231,7 +231,7 @@ Right click the `MDKApp` MDK Application in the project explorer pane and select
 
 [OPTION BEGIN [iOS]]
 
-1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.png)
 

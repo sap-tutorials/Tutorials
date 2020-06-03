@@ -45,7 +45,7 @@ Launch the SAP Web IDE and select the **MDK perspective** by clicking on the ico
 
     ![MDK](img_001.png)
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 2. Enter the **Project Name** as `mdk_extensions` and click **Next**.
 
@@ -103,7 +103,7 @@ The first time you create an extension control, a directory named `MDKExtensionC
 
 ![MDK](img_010.png)
 
->You can find more details about registering extension control in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/bcc1a204cb614cd99f75c6b2120c5f2e.html) guide.
+>You can find more details about registering extension control in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/advanced/extensions/registering-extension-in-webide.html) guide.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -120,7 +120,7 @@ You will add this registered control in a Form Cell page.
 
     >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
-    >You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+    >You can find more details about [Form Cell page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/formcell-page.html).
 
 2. Enter the **Page Name** as `SampleExtensionPage` and click **Next** and the **Finish** on the Confirmation step.
 
@@ -129,8 +129,6 @@ You will add this registered control in a Form Cell page.
 3. In MDK Page Editor, drag & drop the registered `mdk_slider` control on the page area.
 
     ![MDK](img_011.gif)
-
-    >You can find more details about the properties of a **Registered Extension Control** in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/4d5a2f75239b48789d7a9a10c0756011.html) guide.
 
 4. You will set the height and some minimum & maximum counter value for the control.
 
@@ -812,7 +810,7 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
-    >This file is used for using types defined in MDK SDK or NativeScript. You can find more details about it in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/e6f08b787bf14850ac3f2df272908eeb.html).
+    >This file is used for using types defined in MDK SDK or NativeScript. You can find more details about it in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/vscode/intellisense-and-code-nav-support-for-extensions-metadata.html).
 
 11. Save the `tsconfig.json` file.
 
@@ -821,7 +819,7 @@ You will add this registered control in a Form Cell page.
 
 [ACCORDION-BEGIN [Step 5: ](Set first page as the extension page)]
 
-In the template generated project, there is already a page called `Main.page` which is also the page that opens after successful on-boarding. For this tutorial, we will change the default behavior of the app launch.
+In the template generated project, there is already a page called `Main.page` which is also the page that opens after successful onboarding. For this tutorial, we will change the default behavior of the app launch.
 
 1. Double-click the `Application.app` file, select the `SampleExtensionPage.page` for the **Main Page** field.
 
@@ -848,7 +846,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >**Externals**: are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_016.png)
 
@@ -863,9 +861,9 @@ You should see **Application deployed successfully** message in console log.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 7: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Web IDE has a feature to generate QR code for app onboarding.
 
 Right click the `mdk_extensions` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
@@ -888,7 +886,7 @@ Right click the `mdk_extensions` MDK Application in the project explorer pane an
 
     ![MDK](img_016.1.jpg)
 
-2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.png)
 
@@ -930,7 +928,7 @@ Here you see Slider control.
 
 [OPTION BEGIN [iOS]]
 
-1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.13.png)
 
