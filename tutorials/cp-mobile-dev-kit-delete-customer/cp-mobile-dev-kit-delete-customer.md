@@ -54,7 +54,7 @@ The next step is to store deleted record locally for an offline application or d
 
 4. Next, you will create the **OData Delete action** to delete a customer record.
 
-    >You can find more details about [Delete Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a7fb91f8f07148c4bcadc4774da5e114.html).
+    >You can find more details about [Delete Entity Action](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/DeleteEntity.schema.html).
 
     Right-click the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
@@ -102,8 +102,6 @@ The next step is to store deleted record locally for an offline application or d
 [ACCORDION-BEGIN [Step 2: ](Create a new dialog confirmation)]
 
 In the MDK editor, you will write a rule in JavaScript called `Customers_DeleteConfirmation.js` to display a dialog to confirm if user wants to delete current record. On it's confirmation, _customer delete entity action_ is executed.
-
->You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
 
 1. Right click the **Rules** folder | **New** | **File**.
 

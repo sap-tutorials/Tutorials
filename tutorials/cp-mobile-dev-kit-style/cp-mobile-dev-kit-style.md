@@ -41,7 +41,7 @@ MDK Template supports Style **LESS** file for styling for `NativeScript`, Androi
 
     >_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 4. Enter the Project Name as `MDK_Styling` and click **Next**.
 
@@ -75,8 +75,6 @@ MDK Template supports Style **LESS** file for styling for `NativeScript`, Androi
 
     ![MDK](img_005.png)
 
-    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
-
 8. In **Metadata Source** step, select checkbox before **Entity Type** to select all available entities‚ and click **Next**.
 
     ![MDK](img_006.png)
@@ -94,7 +92,7 @@ MDK Template supports Style **LESS** file for styling for `NativeScript`, Androi
 
 The `LESS` stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.
 
->You can find more details about [styling in MDK](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/fb52430105254f9b8869cad9039c1529.html).
+>You can find more details about [styling in MDK](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Styles.less.html).
 
 1. In the SAP Web IDE project, expand the **Styles** folder and open the `Styles.less` file.
 

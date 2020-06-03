@@ -42,7 +42,7 @@ author_profile: https://github.com/jitendrakansal
 
     ![MDK](img_007.png)
 
-    >You will notice that there is now a dedicated workspace for MDK based applications. You can find more information on Mobile Services App Development Tools [help documentation](https://help.sap.com/viewer/product/MS_APPDEV_ON_WEBIDE/Latest/en-US).
+    >You will notice that there is now a dedicated workspace for MDK based applications. You can find more information on Mobile Services App Development Tools [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html).
 
     ![MDK](img_008.png)
 
