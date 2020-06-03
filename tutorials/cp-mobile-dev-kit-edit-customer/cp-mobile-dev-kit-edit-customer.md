@@ -27,9 +27,7 @@ For offline applications, the changes are stored locally until they are synced u
 
 First, you will create a `CloseModalPage_Cancel.action` that closes the current page and cancels or interrupts any execution in process. This will be used with the cancel button on the **Edit Customer page**.
 
->You can close pages with the option to terminate ongoing events or wait until they are complete.
-
->You can find more details about [Close Page Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/2cd05c81255f49e3ae9258f9a5222a6c.html).
+>You can close pages with the option to terminate ongoing events or wait until they are complete. Visit [documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ClosePage.schema.html)for more details about Close Page Action.
 
 1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Close Page Action** | **Next**.
 
@@ -60,7 +58,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 
     >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
-    >You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a0358d7a9c3b46e0819f28ae779def24.html).
+    >You can find more details about [Form Cell page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/formcell-page.html).
 
 2. Enter the Page Name `Customers_Edit` and click **Next** and the **Finish** on the Confirmation step.
 
@@ -73,8 +71,6 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
 4. Now, you will add the fields (like first name, last name, phone & email address) that will be editable by the end-user.
 
     In the Layout Editor, expand the **Control** | **Container Item** section.
-
-    >You can find more details about [available controls in Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a0358d7a9c3b46e0819f28ae779def24.html).
 
 5. Drag and drop a **Simple Property** onto the Page area.
 
@@ -266,7 +262,7 @@ First, define a failure message.
 
 7. Next, you will create the **OData Update action** to update entity action that will map the changes to the correct entities in the OData service and save the changes.
 
-    >You can find more details about [Update Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/20da3bdc0ced44858952f06fe63033d8.html).
+    >You can find more details about [Update Entity Action](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/UpdateEntity.schema.html).
 
     Right-click the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 

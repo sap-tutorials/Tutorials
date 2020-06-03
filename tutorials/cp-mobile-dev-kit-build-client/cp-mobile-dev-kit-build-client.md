@@ -186,7 +186,7 @@ Open the `MDKProject.json` file and update it as needed. This file has some buil
 
 >`URL Scheme`: It also needs to be unique for iOS if the user is going to use QR onboarding.
 
->You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
+>You can find more details about configuration of `MDKProject.json` file in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/custom-client/branding-custom-client.html) help documentation.
 
 Now, open the `BrandedSettings.json` file and update it with information from your MDK Mobile Services application.
 
@@ -227,8 +227,6 @@ In the last section of `BrandedSettings.json` file, make these changes:
 | `SigninButtonText` | `Start` |
 
 ![MDK](img_016.png)
-
->You can find more details about branding in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/01e70c3bd0914761bb37f800029c0e24.html) help documentation.
 
 [DONE]
 [ACCORDION-END]

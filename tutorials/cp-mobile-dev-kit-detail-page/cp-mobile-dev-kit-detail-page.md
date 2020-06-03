@@ -102,7 +102,7 @@ This page will show related details for a customer. In this page, you will add a
 
     For this tutorial, you will set the value as a combined binding of house number and street.
 
-    >You can find more details about [Target Path](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a96fd2938ed24e558c8ad0c659debbba.html).
+    >You can find more details about [Target Path](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/property-binding/target-path.html).
 
 14. Start with first part of the binding for **Address** property.
 

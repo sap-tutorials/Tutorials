@@ -33,7 +33,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >The `MDK CRUD Project` template creates the offline or online actions, rules, messages, List Detail Pages with editable options.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).    
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).  
 
 3. Enter the **Project Name** as `MDKApp` and click **Next**.
 
@@ -77,7 +77,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >![MDK](img_0032.png)
 
-    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/backend-connectivity/sample.html).
 
 7. In the **Metadata Source** step, select all **Entity Type** and click **Next**.
 
@@ -122,7 +122,7 @@ These are the metadata definitions available in the editor and the format in whi
 
 - **`Application.app`**: this is the main configuration file for your application from within SAP Web IDE. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
->You can find more details about [metadata definitions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/78e21fae61044df8ae8a78a43157fe8f.html).
+>You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
 
 Open the application settings in the application editor by double clicking on the `Application.app` in the project explorer pane.
 
