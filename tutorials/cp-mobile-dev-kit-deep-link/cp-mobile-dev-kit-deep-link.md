@@ -49,7 +49,7 @@ If you are building a custom version of Mobile development kit client, there you
 
     >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 4. Enter the Project Name as `MDKDeepLink` and click **Next**.
 
@@ -73,7 +73,7 @@ In the MDK editor, you will create 4 new JavaScript files:
   * `OpenUI5.js` to open an UI5 app running in SAP Fiori Client app
   * `OpenSAPcom.js` to open `SAP.com` web page
 
-    >You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
+    >You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
 1. Right-click the **Rules** folder | **New** | **File**.
 
@@ -194,7 +194,7 @@ In the MDK editor, you will create 4 new JavaScript files:
     ![MDK](img_009.gif)
 
     >The controls available in Container section includes controls that act as containers for other controls, such as container items. A container is constant for all pages. The size of a container depends on the controls and contents included inside.  
-    You can find more details about [Containers](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+    You can find more details about [Containers](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/ButtonTable.schema.html).
 
 2. Now, you will add items to this Container control.
 
@@ -258,7 +258,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_018.png)
 
@@ -271,9 +271,9 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 6: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Web IDE has a feature to generate QR code for app onboarding.
 
 Right-click the `MDKDeepLink` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
@@ -296,7 +296,7 @@ Right-click the `MDKDeepLink` MDK Application in the project explorer pane and s
 
     ![MDK](img_031.1.jpg)
 
-2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.png)
 
@@ -364,7 +364,7 @@ Right-click the `MDKDeepLink` MDK Application in the project explorer pane and s
 
 [OPTION BEGIN [iOS]]
 
-1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.4.png)
 
