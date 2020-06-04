@@ -113,7 +113,7 @@ export class BusinessPartnerController {
 }
 ```
 
-Restart your server and send a delete request to `http://localhost:3000/business-partners/1/address/1` (or the respective IDs you used in the previous tutorials). If everything works, you should see an empty response with status code 204 and your address should disappear in the backend.
+Restart your server and send a delete request to `http://localhost:3000/business-partners/1/address/1` (or the respective IDs you used in the previous tutorials). If everything works, you should see an empty response with status code 204 and your address should disappear from the backend.
 
 [DONE]
 [ACCORDION-END]
