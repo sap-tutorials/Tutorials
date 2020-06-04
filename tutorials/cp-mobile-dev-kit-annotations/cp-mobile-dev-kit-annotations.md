@@ -109,7 +109,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
     ![MDK](img_1.png)
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 3. Enter the Project Name as `MDK_Annotations` and click **Next**.
 
@@ -141,17 +141,17 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
 6. Click **Check Service** to validate the service properties. If all the details are fine, you will see a success message. Click **Next**.
 
-![MDK](img_005.png)
+    ![MDK](img_005.png)
 
->More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/backend-connectivity/sample.html).
 
 7. In **Features** step, click **Finish**.
 
-![MDK](img_23.png)
+    ![MDK](img_23.png)
 
-After clicking Finish, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Annotations` project in the project explorer.
+    After clicking Finish, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Annotations` project in the project explorer.
 
-![MDK](img_23.1.png)
+    ![MDK](img_23.1.png)
 
 [DONE]
 [ACCORDION-END]
