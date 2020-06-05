@@ -319,7 +319,7 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
 
     ```JavaScript
     addHistoryEntry: (function() {
-      const aHistoryEntries = [];
+      let aHistoryEntries = [];
 
       return function(oEntry, bReset) {
         if (bReset) {

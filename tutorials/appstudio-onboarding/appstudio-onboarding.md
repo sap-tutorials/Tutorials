@@ -34,12 +34,14 @@ This tutorial is based on the procedure described in the [Getting Started](https
 
 1. Select the tile of the subaccount in which you want to enable the SAP Business Application Studio subscription.
 
-    >For the trial environment, SAP Business Application Studio is only available on Amazon Web Services (AWS) - Frankfurt region.
+    >For the trial environment, SAP Business Application Studio is only available on:
 
-    >If you do not have a subaccount in this region, you need to create a new subaccount, where:
+    > - Amazon Web Services (AWS) - Europe (Frankfurt) or US East (VA) regions.
+
+    >If you do not have a subaccount in one of these regions, you need to create a new subaccount, where:
 
     > - Provider = **Amazon Web Services (AWS)**
-    > - Region = **Europe (Frankfurt)**.
+    > - Region = **Europe (Frankfurt)** or **US East (VA)**.
 
     !![subaccount](2020-03 Cockpit Select Subaccount__.jpg)
 

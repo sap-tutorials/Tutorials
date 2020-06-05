@@ -8,7 +8,7 @@ primary_tag: products>sap-api-management
 ---
 
 ## Prerequisites
-- You should have your test or sandbox tenant in `HubSpot` or any other third-party application.
+- You should have your test or sandbox tenant in `HubSpot(CRM)` or any other third-party application.
 
 ## Details
 ### You will learn
