@@ -63,7 +63,6 @@ Do you remember the parameters you set when testing in the API Business Hub? Try
 --url https://sandbox.api.sap.com/successfactors/odata/v2/User?%24top=3 \
 ```
 
-
 After your command line prints out 3 results, it should stop running.
 
 ![text editor with hint where to add the parameter](11.png)
