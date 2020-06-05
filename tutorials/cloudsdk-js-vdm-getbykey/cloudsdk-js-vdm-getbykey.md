@@ -70,7 +70,7 @@ import { BusinessPartnerService } from './business-partner.service';
 export class AppModule {}
 ```
 
-Now you can start your app again with `npm start` and open `http://localhost:3000/business-partners/TestID`. You should see the response: `My id for query is: TestID`.
+Now you can restart your app with `npm start` and open `http://localhost:3000/business-partners/TestID`. You should see the response: `My id for query is: TestID`.
 
 [DONE]
 [ACCORDION-END]
