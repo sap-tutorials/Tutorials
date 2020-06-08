@@ -14,7 +14,7 @@ author_profile: https://github.com/nedo-SAP
   - For a better understanding, it is recommended to complete the tutorials [Create a Basic Node.js App](cp-node-create-basic-app) and [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli) first.
 
 ## Details
-### You will learn
+### You will learn 
   - How to secure a basic Node.js application with user authentication
   - How to secure a certain part of your application with user authorization
   - How to assign authorizations (in the form of a role collection) to a user
