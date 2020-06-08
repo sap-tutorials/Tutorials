@@ -172,7 +172,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     ![View Scenario4](viewscenario_4.png)
 
-Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Intelligent Business Process Management services. In this mission, you learnt about SAP Cloud Platform Workflow, Business Rules and Process Visibility and how these services come together to help you automate the process and decisions, together with providing out-of-box visibility into the workflows.
+Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Workflow Management services. In this mission, you learnt about SAP Cloud Platform Workflow, Business Rules and Process Visibility and how these services come together to help you automate the process and decisions, together with providing out-of-box visibility into the workflows.
 
 [VALIDATE_6]
 [ACCORDION-END]

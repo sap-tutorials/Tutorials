@@ -14,7 +14,7 @@ author_profile: https://github.com/nedo-SAP
   - For a better understanding, it is recommended to complete the tutorials [Create a Basic Node.js App](cp-node-create-basic-app) and [Deploy Your Node.js App with the Cloud Foundry CLI](cp-node-deploy-cf-cli) first.
 
 ## Details
-### You will learn
+### You will learn 
   - How to secure a basic Node.js application with user authentication
   - How to secure a certain part of your application with user authorization
   - How to assign authorizations (in the form of a role collection) to a user
@@ -93,7 +93,7 @@ npm config set @sap:registry https://npm.sap.com
     "dependencies": {
       "express": "^4.17.1",
       "@sap/xsenv": "^2.2.0",
-      "@sap/xssec": "^2.2.4",
+      "@sap/xssec": "^3.0.0",
       "passport": "^0.4.1"    
     }
     ```
@@ -168,7 +168,7 @@ The approuter will enable you to create a secure route to your application.
     {
         "name": "approuter",
         "dependencies": {
-            "@sap/approuter": "^6.7.1"
+            "@sap/approuter": "^8.0.0"
         },
         "scripts": {
             "start": "node node_modules/@sap/approuter/approuter.js"

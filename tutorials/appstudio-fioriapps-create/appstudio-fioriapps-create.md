@@ -156,7 +156,7 @@ author_profile: https://github.com/raz-korn
 
 Open the layout editor in SAP Business Application Studio to easily make a few changes. In this case, you will make changes so that data from the backend service is displayed when the app is running.
 
-1. Choose **`FioriDemo` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file that you created with the template in a previous step.
+1. Choose **`FioriDemo` > `BusinessPartners` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file that you created with the template in a previous step.
 
 2. Choose **Open With > Layout Editor**.
 
