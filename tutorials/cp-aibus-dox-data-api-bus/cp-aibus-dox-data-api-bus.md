@@ -75,7 +75,7 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
        "value":[
           {
              "id":"BE0001",
-             "name":"DEMO - Sliced",
+             "name":"DEMO - Sliced Invoices",
              "accountNumber":"",
              "address1":"123 Somewhere Street Your AZ 12345 123 Somewhere St Melbourne, VIC 3000",
              "address2":"",
@@ -115,7 +115,7 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
 
 7. Click **Execute**.
 
-![DOX](1post_data_jobs_request.png)
+!![DOX](1post_data_jobs_request.png)
 
 > ### What just happened?
 >
@@ -123,9 +123,9 @@ Use the **POST /data/jobs** endpoint to add your own master data records to the 
 
 You should receive a response like the following with status PENDING:
 
-![DOX](1post_data_jobs_response.png)
+!![DOX](1post_data_jobs_response.png)
 
-Copy the **`id`** from the **Response body** to see the result of the enrichment data status in the **GET /data/jobs/{`uuid`}** endpoint.
+Copy the **`id`** from the **Response body** to see the result of the enrichment data status in the next step.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -133,21 +133,21 @@ Copy the **`id`** from the **Response body** to see the result of the enrichment
 
 [ACCORDION-BEGIN [Step 3: ](See created enrichment data status)]
 
-Use the **GET /data/jobs/{`uuid`}** endpoint to see the status of the uploaded enrichment data.
+Use the **GET /data/jobs/{`id`}** endpoint to see the status of the uploaded enrichment data.
 
-1. Expand the **GET /data/jobs/{`uuid`}** endpoint.
+1. Expand the **GET /data/jobs/{`id`}** endpoint.
 
 2. Click **Try it out**.
 
-3. Enter the **`id`** received in the **POST /data/jobs** endpoint as the **`uuid`**.
+3. Enter the **`id`** received in the **POST /data/jobs** endpoint as the **`id`**.
 
 4. Click **Execute**.
 
-![DOX](1get_data_jobs_uuid_request.png)
+!![DOX](1get_data_jobs_id_request.png)
 
 You should receive a response like the following with status SUCCESS:
 
-![DOX](1get_data_jobs_uuid_response.png)
+!![DOX](1get_data_jobs_id_response.png)
 
 [DONE]
 [ACCORDION-END]
@@ -157,21 +157,20 @@ You should receive a response like the following with status SUCCESS:
 
 >Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
 
-When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`uuid`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
+When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
 
-```JSON
-"enrichment": {
-    "sender": {
-      "top": 5,
-      "type": "businessEntity",
-      "subtype": "supplier"
-    },
-    "employee": {
-      "type": "employee"
-    }
-  }
-```
-
+    ```JSON
+    "enrichment": {
+        "sender": {
+          "top": 5,
+          "type": "businessEntity",
+          "subtype": "supplier"
+        },
+        "employee": {
+          "type": "employee"
+        }
+      }
+    ```
 
 Do the following:
 
@@ -184,17 +183,73 @@ Do the following:
 
 4. Upload the document PDF file you want to enrich.
 
-5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), the client id you created in step 1 (`c_29`, for example), the document type (`invoice`, for example), the enrichment data type `businessEntity` and subtype `supplier`.
+5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `taxName`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_29`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example), the enrichment data type `businessEntity` and subtype `supplier`.
+
+    ```JSON
+    {
+       "extraction":{
+          "headerFields":[
+             "documentNumber",
+             "taxId",
+             "taxName",
+             "purchaseOrderNumber",
+             "shippingAmount",
+             "netAmount",
+             "senderAddress",
+             "senderName",
+             "grossAmount",
+             "currencyCode",
+             "receiverContact",
+             "documentDate",
+             "taxAmount",
+             "taxRate",
+             "receiverName",
+             "receiverAddress",
+             "deliveryDate",
+             "paymentTerms",
+             "shipToAddress",
+             "deliveryNumber"
+          ],
+          "lineItemFields":[
+             "description",
+             "netAmount",
+             "quantity",
+             "unitPrice",
+             "materialNumber",
+             "documentNumber",
+             "documentDate",
+             "discountAmount",
+             "deductionAmount",
+             "itemNumber"
+          ]
+       },
+       "clientId":"c_29",
+       "documentType":"invoice",
+       "receivedDate":"2020-02-17",
+       "enrichment":{
+          "sender":{
+             "top":5,
+             "type":"businessEntity",
+             "subtype":"supplier"
+          },
+          "employee":{
+             "type":"employee"
+          }
+       }
+    }
+    ```
 
 6. Click **Execute**.
 
 This is how the request should look like:
 
-![DOX](1post_document_jobs_request.png)
+!![DOX](1post_document_jobs_request.png)
 
 And that's how the response looks like:
 
-![DOX](1post_document_jobs_response.png)
+!![DOX](1post_document_jobs_response.png)
+
+Copy the **`id`** from the **Response body** to get enrichment data prediction in the next step.
 
 [DONE]
 [ACCORDION-END]
@@ -202,9 +257,9 @@ And that's how the response looks like:
 
 [ACCORDION-BEGIN [Step 5: ](Get enrichment data prediction)]
 
-When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`uuid`}** endpoint.
+When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint.
 
-1. Expand the **GET /document/jobs/{`uuid`}** endpoint.
+1. Expand the **GET /document/jobs/{`id`}** endpoint.
 
 2. Click **Try it out**.
 
@@ -212,15 +267,15 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
 
 4. Enter the **`clientId`** you created in step 1 (`c_29`, for example).
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`uuid`**.
+5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
 6. Click **Execute**.
 
 The endpoint request and response look as follows:
 
-![DOX](1get_document_jobs_uuid_request.png)
+!![DOX](1get_document_jobs_id_request.png)
 
-![DOX](1get_document_jobs_uuid_response.png)
+!![DOX](1get_document_jobs_id_response.png)
 
 > ### What just happened?
 >
@@ -228,8 +283,8 @@ The endpoint request and response look as follows:
 
 This is an example of a full prediction including the enrichment data part:
 
-```JSON
-{
+    ```JSON
+    {
   "status": "DONE",
   "id": "149e33f5-7113-420e-ab8c-0b0382d660f9",
   "documentType": "invoice",
@@ -269,7 +324,7 @@ This is an example of a full prediction including the enrichment data part:
       {
         "name": "senderName",
         "category": "sender",
-        "value": "DEMO - Sliced",
+        "value": "DEMO - Sliced Invoices",
         "type": "string",
         "confidence": 0.808902713987562,
         "page": 1,
@@ -454,8 +509,8 @@ This is an example of a full prediction including the enrichment data part:
     ],
     "employee": []
   }
-}
-```
+}  
+    ```
 
 You have now successfully used the business entity to get enrichment data predictions for the document you uploaded to Document Information Extraction.
 
@@ -498,6 +553,16 @@ To delete enrichment data which has been uploaded before:
 2. Click **Try it out**.
 
 3. Define the data in the **`payload`** field, so that the system knows which data entry (using, for example, the data entry ID) should be deleted.
+
+    ```JSON
+    {
+       "value":[
+          {
+             "id":"BE0001"
+          }
+       ]
+    }
+    ```
 
 4. Choose the enrichment data **`type`** `businessEntity`.
 
