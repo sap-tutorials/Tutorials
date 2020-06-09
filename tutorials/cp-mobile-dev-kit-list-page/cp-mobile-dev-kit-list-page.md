@@ -38,7 +38,7 @@ To create the Customer List page, you will create a **Section page** and drag th
 
     ![MDK](img_001.png)
 
-    >You can find more details about [section page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+    >You can find more details about [section page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/section-page.html).
 
 2. Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** on the confirmation step.
 
@@ -139,7 +139,7 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
     >Each container type in a Section Page can contain specific controls (container items).
 
-    >You can find more details about [Container and Container Item](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+    >You can find more details about [Container and Container Item](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/SectionedTable.schema.html).
 
 3. In the Properties pane, set the **Title** of the button to **Customer List**.
 

@@ -51,7 +51,7 @@ Make sure that you have completed required pre-Prerequisites mentioned in this t
 
     !![MDK](img_009.1.png)
 
-    >Other fields are optional. For more information about these fields, see [Defining Applications](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/17ccff786448442ab2c665ed1cce1505.html) in the SAP Cloud Platform documentation.
+    >Other fields are optional. For more information about these fields, see [Creating Applications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/manage.html#creating-applications) in the SAP Cloud Platform documentation.
 
 4. Select **Mobile Development Kit Application** from the dropdown and Click **Finish**.
 
@@ -61,7 +61,7 @@ Make sure that you have completed required pre-Prerequisites mentioned in this t
 
     ![MDK](img_0013.png)
 
-    >You can find more information on available features in SAP Cloud Platform Mobile Services in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/99f9cedcd0974faeb12c20cb3efa94b3.html).
+    >You can find more information on available features in SAP Cloud Platform Mobile Services in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/admin/features.html).
 
 [VALIDATE_3]
 [ACCORDION-END]
@@ -70,15 +70,15 @@ Make sure that you have completed required pre-Prerequisites mentioned in this t
 
 A sample OData service is available for developers to use during development and testing. The sample OData service also lets you evaluate how delta tokens are handled in your test application.
 
->For more information about these fields, see [Sample Back End](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html) in the SAP Cloud Platform documentation.
+>More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/backend-connectivity/sample.html).
 
-click the **+** icon to add **Mobile Sample OData ESPM** feature to your MDK app.
+1. Click the **+** icon to add **Mobile Sample OData ESPM** feature to your MDK app.
 
-Here, you can view the root service and metadata URLs, and generate sample sales orders and purchase orders for multiple entity sets. You can view the data for each entity in a separate text file, and even can reset the sample data.
+    Here, you can view the root service and metadata URLs, and generate sample sales orders and purchase orders for multiple entity sets. You can view the data for each entity in a separate text file, and even can reset the sample data.
 
-![MDK](img_0014.gif)
+    ![MDK](img_0014.gif)
 
-Click `com.sap.mdk.demo` to navigate back to app configuration page.
+2. Click `com.sap.mdk.demo` to navigate back to app configuration page.
 
 [VALIDATE_1]
 [ACCORDION-END]

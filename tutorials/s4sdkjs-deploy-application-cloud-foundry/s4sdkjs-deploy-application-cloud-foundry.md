@@ -192,7 +192,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 
 We replaced the parameter of `execute` with an object whose key `destinationName` refers to the name of the destination we defined earlier. If you followed step 5 in the previous tutorial, your code will already refer to the correct `destinationName`. If you chose a different name than `MockServer`, make sure to use it here accordingly.
 
-Now we can recompile and redeploy the application. In your command line, run `npm run ci-build && npm run ci-package && cf push`.
+Now we can recompile and redeploy the application. In your command line, run `npm run deploy`.
 
 When you now call the `/business-partners` route of your app, the Business Partners will be retrieved from the defined destination!
 
