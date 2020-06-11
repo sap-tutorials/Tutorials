@@ -43,8 +43,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
 
     >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
-    >You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
-
 2. Enter the Page Name `SalesOrderHeaders_Create` and click **Next** and the **Finish** on the Confirmation step.
 
     ![MDK](img_002.png)
@@ -56,8 +54,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
 4. Now, you will add the fields (like Currency Code, Net Amount, Tax Amount, Gross Amount, Life cycle status, Life cycle status name and order creation date) for creating a new sales order record by the end-user.
 
     In the Layout Editor, expand the **Control** | **Container Item** section.
-
-    >You can find more details about [available controls in Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a0358d7a9c3b46e0819f28ae779def24.html).
 
 5. Drag and drop a **Simple Property** onto the Page area.
 
@@ -262,7 +258,7 @@ The next step is to store newly created record locally for an offline applicatio
 
 2. You will create the **OData action** to create a sales order entity.
 
-    >You can find more details about [Create Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/9cafb37ca8ad49e6930dba857352a3e6.html).
+    >You can find more details about [Create Entity Action](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/CreateEntity.schema.html).
 
     Right-click the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
@@ -368,7 +364,7 @@ In `Customers_Detail.page` you added total number of order counts for a given cu
 
     ![MDK](img_026.1.png)
 
-2. Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Confirm the destination name and application id match where you want to deploy and click **Next**.
 
     ![MDK](img_014.1.png)
 

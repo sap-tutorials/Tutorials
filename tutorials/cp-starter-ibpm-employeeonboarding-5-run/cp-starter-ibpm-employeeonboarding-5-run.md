@@ -19,7 +19,7 @@ First, we will import sample events & data, process these events and view them i
 
 1. Download the events `EmployeeOnboardingEvents.json` file from [here](https://github.com/SAP-samples/cloud-process-visibility/releases/download/1.0.0/Employee_OnboardingEvents.json).
 
-2. In the SAP Fiori launchpad, open the **Event Acquisition** application.
+2. In the SAP Fiori launchpad, click the **Event Acquisition** tile.
 
     >You got the launchpad link in the last step of the setup tutorial. The link would be like:  
 
@@ -50,7 +50,7 @@ First, we will import sample events & data, process these events and view them i
 
 [ACCORDION-BEGIN [Step 2: ](Process the Employee Onboarding events)]
 
-1. In the SAP Fiori launchpad, choose the **Monitor Scenarios** tile.
+1. In the SAP Fiori launchpad, click the **Monitor Visibility Scenarios** tile.
 
     ![Open Monitor Scenario1](monitorscenario.png)
 
@@ -67,7 +67,7 @@ First, we will import sample events & data, process these events and view them i
 
 [ACCORDION-BEGIN [Step 3: ](View the process visibility workspace)]
 
-1. In the SAP Fiori launchpad, choose the **Process Workspace** tile.
+1. In the SAP Fiori launchpad, click the **Process Workspace** tile.
 
     ![View Scenario1](viewscenario.png)
 
@@ -118,7 +118,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 [ACCORDION-BEGIN [Step 5: ](View process visibility workspace)]
 
-1. In the SAP Fiori launchpad, open **Monitor Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
+1. In the SAP Fiori launchpad, open **Monitor Visibility Scenarios** application, click **Process Data** and **Refresh** to see the new batch of processed events.
 
     !![New Workflow Event Processed](processworkflowevents.png)
 
@@ -135,7 +135,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 [ACCORDION-BEGIN [Step 6: ](Continue with the workflow execution)]
 
-1. Go back to **My Inbox** application, execute the `Approve Equipment` task:
+1. Go back to **My Inbox** application, click **Approve** to approve the `Approve Equipment` task:
 
     - If you do not see the task, refresh the **My Inbox** tile to see the `Approve Equipment` task.
 
@@ -145,7 +145,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
 2. **Refresh** the tasks list and execute the **Accept Workplace** task:
 
-    > As the buddy, choose **Accept** to complete the task. The workflow status is set to **Completed**.
+    > As the buddy, click the **Accept Workplace** to complete the task. The workflow status is set to **Completed**.
 
     ![Accept Equipment](accept-equipment.png)
 
@@ -172,7 +172,7 @@ Now, you will run the workflow and see how the new events and data are automatic
 
     ![View Scenario4](viewscenario_4.png)
 
-Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Intelligent Business Process Management services. In this mission, you learnt about SAP Cloud Platform Workflow, Business Rules and Process Visibility and how these services come together to help you automate the process and decisions, together with providing out-of-box visibility into the workflows.
+Congratulations. With this, you have successfully completed the mission on **Automating and Extending Employee Onboarding** process using Workflow Management services. In this mission, you learnt about SAP Cloud Platform Workflow, Business Rules and Process Visibility and how these services come together to help you automate the process and decisions, together with providing out-of-box visibility into the workflows.
 
 [VALIDATE_6]
 [ACCORDION-END]

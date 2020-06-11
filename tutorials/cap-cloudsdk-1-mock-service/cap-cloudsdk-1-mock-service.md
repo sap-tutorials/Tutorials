@@ -131,7 +131,7 @@ First, create the directory structure `external/csn/` within the `srv/` director
 
 > The name of this structure is not fixed, but is a common convention in CAP projects.
 
-Follow the link here to download the [`API_BUSINESS_PARTNER`.json](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/cap-cloudsdk-1-mock-service/API_BUSINESS_PARTNER.json) from GitHub and save it in this new `srv/external/csn/` directory. Be sure to use the **Raw** link on the GitHub page to get to the raw file contents before downloading, and keep the `.json` extension. If you opt for copy/pasting the content into a new file, make sure you only copy the JSON content, and not any comments that might otherwise be rendered by a Chrome extension.
+Follow the link here to download the [`API_BUSINESS_PARTNER.json`](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/cap-cloudsdk-1-mock-service/API_BUSINESS_PARTNER.json) file from GitHub and save it in this new `srv/external/csn/` directory. Be sure to use the **Raw** link on the GitHub page to get to the raw file contents before downloading, and keep the `.json` extension. If you opt for copy/pasting the content into a new file, make sure you only copy the JSON content, and not any comments that might otherwise be rendered by a Chrome extension.
 
 [DONE]
 [ACCORDION-END]

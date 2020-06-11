@@ -1,6 +1,6 @@
 ---
-title: Build Your First Bot with SAP Conversational AI
-description: Create a simple bot that can recognize greetings, understand when asked for a joke, provide a joke, and recognize the user's reaction to the joke.
+title: Build Your First Chatbot with SAP Conversational AI
+description: Create a simple chatbot that can recognize greetings, understand when asked for a joke, provide a joke, and recognize the user's reaction to the joke.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, products>sap-conversational-ai]
@@ -10,9 +10,9 @@ primary_tag: products>sap-conversational-ai
 ## Details
 ### You will learn
   - How to get an account with SAP Conversation AI
-  - How to create a bot project
-  - How to train your bot (to understand people)
-  - How to give your bot skills
+  - How to create a chatbot project
+  - How to train your chatbot (to understand people)
+  - How to give your chatbot skills
 
 ---
 
@@ -198,7 +198,7 @@ Put yourself in the shoes of the people talking to your bot. What could they pos
 
 We want to now test to see if the bot can detect when a user says something matching the intent we created.
 
-1. Click the fly-out tab **Test**.
+1. Click the fly-out tab **Test** on the right.
 
     ![Test panel](TestButton.png)
 

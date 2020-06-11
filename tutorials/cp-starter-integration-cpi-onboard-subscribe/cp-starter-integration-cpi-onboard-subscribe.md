@@ -14,6 +14,9 @@ author_profile: https://github.com/Vikramkulkarni01
   - How to subscribe to the Process Integration service
   - How to set up your own SAP Cloud Platform Integration tenant
 
+
+---
+
 [ACCORDION-BEGIN [Step 1: ](Enter trial account and subscribe to Process Integration)]
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
@@ -31,6 +34,7 @@ author_profile: https://github.com/Vikramkulkarni01
     >![Account setup](02_Foundation20Onboarding_Processing.png)
 
 3. From your global account page, choose the `trial` tile to access your subaccount.
+
 
 4. Select **Subscriptions** > **Process Integration**.
 
@@ -76,7 +80,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
     !![Add additional roles](2.5.add-additional-roles.png)
 
-    >**IMPORTANT**: You add these roles to grant you user the required permissions to access the Integration Flow Designer and model an integration flow. For additional information on roles in SAP Cloud Platform Integration, check out the official documentation on [Available Roles and Authorization Groups](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/07f62efe97544149bf637f9b67c2e838.html).
+    >**IMPORTANT**: You add these roles to grant you user the required permissions to access the Integration Flow Designer and model an integration flow. For additional information on roles in SAP Cloud Platform Integration, check out the official documentation on [Available Roles and Authorization Groups](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/82769d840c8d422c941a407a2243270a.html).
 
 [VALIDATE_7]
 
