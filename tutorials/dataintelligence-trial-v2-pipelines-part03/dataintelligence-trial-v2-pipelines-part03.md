@@ -20,7 +20,7 @@ Please note in this tutorial GCP refers to Google Cloud platform and AWS refers 
 
 [ACCORDION-BEGIN [Step 1: ](Add JS String operator)]
 
-Open the pipeline which you have created in the [previous tutorial](datahub-trial-v2-pipelines-part02) `(test.myFirstPipeline)`, in the modeling environment.
+Open the pipeline which you have created in the [previous tutorial](dataintelligence-trial-v2-pipelines-part02) `(test.myFirstPipeline)`, in the modeling environment.
 
 1. Remove the connection between the **Data Generator** operator and the **To File** operator.
 

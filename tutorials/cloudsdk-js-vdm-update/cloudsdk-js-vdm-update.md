@@ -78,7 +78,7 @@ import { BusinessPartnerService } from './business-partner.service';
 })
 export class AppModule {}
 ```
-Note, that we used the `PUT` method to update a business-partner address. So we need to send a `PUT` request. Restart your server and send a `PUT` request to `http://localhost:3000/business-partners/1/address/2` with some body `{"key": "Some test body."}`. The server should response with:
+Note, that we used the `PUT` method to update a business-partner address. So we need to send a `PUT` request. Restart your server and send a `PUT` request to `http://localhost:3000/business-partners/1/address/2` with some body (e. g. `{"key": "Some test body."}`). The server should response with:
 ```
 This is your request data:
 businessPartnerId: 1
