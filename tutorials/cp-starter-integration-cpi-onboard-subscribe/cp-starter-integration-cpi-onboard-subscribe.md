@@ -40,6 +40,10 @@ author_profile: https://github.com/Vikramkulkarni01
 
     !![Select process integration service](1.1.select-process-integration.png)
 
+    >**IMPORTANT**:
+    If you are creating sub-account for the fist time you need to configure entitlement for Process Integration in your subaccount. For more info, see [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html).
+    You need to add **Process Integration Runtime** and **Process Integration Trial** to the service plans.
+
 5. Select **Subscribe**.
 
     ![Select subscribe button](1.2.select-subscribe.png)
@@ -94,7 +98,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
     ![Access trust configuration](3.1.access-trust-configuration.png)
 
-2. Select the default identity provider, **SAP ID Service**.
+2. Select the default identity provider, **SAP ID Service** or **sap.default**.
 
     ![Select default IDP](3.2.select-default-idp.png)
 
@@ -123,9 +127,9 @@ author_profile: https://github.com/Vikramkulkarni01
 
     ![Login to provisioning application](5.2.login-prov-app.png)
 
-4. Choose **Provision** to provision a SAP Cloud Platform Integration tenant.
+4. Choose **Activate** to provision a SAP Cloud Platform Integration tenant.
 
-    ![Provision SAP Cloud Platform Integration tenant](5.3.provision-cpi.png)
+    ![Provision SAP Cloud Platform Integration tenant](5.3.1provision-cpi.png)
 
 5. You see a tenant URL after the provisioning is complete. This is the URL for your SAP Cloud Platform Integration tenant.
 
