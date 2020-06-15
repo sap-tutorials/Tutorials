@@ -41,7 +41,7 @@ MDK Template supports Style **LESS** file for styling for `NativeScript`, Androi
 
     >_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 4. Enter the Project Name as `MDK_Styling` and click **Next**.
 
@@ -75,8 +75,6 @@ MDK Template supports Style **LESS** file for styling for `NativeScript`, Androi
 
     ![MDK](img_005.png)
 
-    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
-
 8. In **Metadata Source** step, select checkbox before **Entity Type** to select all available entities‚ and click **Next**.
 
     ![MDK](img_006.png)
@@ -94,7 +92,7 @@ MDK Template supports Style **LESS** file for styling for `NativeScript`, Androi
 
 The `LESS` stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.
 
->You can find more details about [styling in MDK](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/fb52430105254f9b8869cad9039c1529.html).
+>You can find more details about [styling in MDK](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Styles.less.html).
 
 1. In the SAP Web IDE project, expand the **Styles** folder and open the `Styles.less` file.
 
@@ -261,7 +259,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination , you will find list of existing application IDs, select the one you have chosen while creating the project in step 1.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_015.png)
 
@@ -274,9 +272,9 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Web IDE has a feature to generate QR code for app onboarding.
 
 Right click the `MDK_Styling` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
@@ -299,7 +297,7 @@ Right click the `MDK_Styling` MDK Application in the project explorer pane and s
 
     ![MDK](img_018.jpg)
 
-2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.png)
 
@@ -351,7 +349,7 @@ Right click the `MDK_Styling` MDK Application in the project explorer pane and s
 
 [OPTION BEGIN [iOS]]
 
-1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.2.png)
 

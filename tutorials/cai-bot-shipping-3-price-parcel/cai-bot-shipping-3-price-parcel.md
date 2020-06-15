@@ -248,7 +248,7 @@ You can open a chat and test this, by entering: **How much to send package to Pa
 
 [ACCORDION-BEGIN [Step 6: ](Display confirmation)]
 
-1. In the requirements, click **New Replies** if **`@Yes`** or **`@No`** are missing).
+1. In the requirements, click **New Replies** (if **`@Yes`** or **`@No`** are missing).
 
 2. Click **Send Message | Quick Replies**.
 
