@@ -1,6 +1,7 @@
 const constants = require('../constants');
+const common = require('../utils/common');
 
-const { regexp: { validation: { done, validate } } } = constants;
+const { regexp: { validation: { done, validate, inlineCodeBlock } } } = constants;
 
 const closingPairs = {
   '}': '{',
@@ -102,6 +103,11 @@ function checkBackticks(lines, lineNumber) {
   const result = [];
   const trimmedLine = line.trim();
   const backticks = '```';
+  const isInlineCodeBlock = line.match(inlineCodeBlock);
+
+  if (isInlineCodeBlock) {
+    return result;
+  }
 
   if (trimmedLine.includes(backticks) && !trimmedLine.startsWith(backticks)) {
     result.push({
@@ -114,7 +120,9 @@ function checkBackticks(lines, lineNumber) {
 }
 
 function check(lines, lineNumber) {
-  const balancedCheckResult = checkBalanced(lines[lineNumber], lineNumber);
+  const line = lines[lineNumber];
+  const pureLine = common.removeCodeLines(line);
+  const balancedCheckResult = checkBalanced(pureLine, lineNumber);
   const doneValidateCheckResult = checkDoneValidate(lines, lineNumber);
 
   return []
