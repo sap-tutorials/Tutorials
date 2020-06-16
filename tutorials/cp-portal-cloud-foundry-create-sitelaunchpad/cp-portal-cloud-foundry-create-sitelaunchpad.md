@@ -5,6 +5,7 @@ auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform-portal, topic>cloud, products>sap-fiori ]
 primary_tag: products>sap-cloud-platform
+author_name: Lindsay Bert
 ---
 
 ## Prerequisites
@@ -35,7 +36,7 @@ When you access the Portal service, the Site Directory is in focus. From here yo
 
 You have created a Portal site called `JobCore Portal`.
 
-[VALIDATE_6]
+[VALIDATE_7]
 
 [ACCORDION-END]
 
@@ -45,7 +46,7 @@ When you create a site, you are directed to the Site Editor. The Site Editor is 
 
 Navigate back to the Site Directory to view the site tile.
 
-    ![Navigate to site directory](5_to_site_directory.png)
+  ![Navigate to site directory](5_to_site_directory.png)
 
 
 [DONE]

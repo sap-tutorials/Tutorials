@@ -5,6 +5,7 @@ auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform-portal
+author_name: Lindsay Bert
 ---
 
 ## Prerequisites
@@ -69,7 +70,7 @@ In this tutorial we are using the trial subaccount but you can also open your ow
     | `sap-client`          | `002`
     | `WebIDESystem`    | `Gateway`
     | `WebIDEUsage`           | `odata_gen, odata_abap, bsp_execute_abap`
-    | `sap-Platform`          | `ABAP`
+    | `sap-platform`          | `ABAP`
 
 6. Click **Save**.
 
