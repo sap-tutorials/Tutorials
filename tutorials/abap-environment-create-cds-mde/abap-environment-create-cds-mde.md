@@ -1,14 +1,13 @@
 ---
-title: Create an ABAP Core Data Services (CDS) View in SAP NetWeaver 7.5
-description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearance using built-in annotations
+title: Create an ABAP Core Data Services (CDS) View in SAP Cloud Platform, ABAP Environment
+description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearances using built-in annotations
 auto_validation: true
 time: 45
-tags: [ tutorial>beginner, products>sap-netweaver-7.5]
+tags: [ tutorial>beginner, products>sap-cloud-platform--abap-environment]
 primary_tag: topic>abap-development
 ---
 
 ## Prerequisites
-- You have a valid instance of an on-premise AS ABAP server, version 7.54 or higher
 - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
 - You have downloaded the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
@@ -16,10 +15,11 @@ primary_tag: topic>abap-development
 ### You will learn
 - How to create a CDS view
 - How to display your CDS view in a Fiori Elements preview
+- How to add selection fields to Fiori Elements preview
 - How to extract the metadata of your CDS view
 - How to add semantic annotations
 - How to add a search function
-- How to add selection fields to the Fiori Elements preview
+- How to add selection fields
 
 
 You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
@@ -41,7 +41,6 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Create CDS View)]
 1. In your package, create a CDS view. Select the package, then choose **New > Other** from the context menu.
@@ -68,6 +67,7 @@ Your CDS view appears in a new editor.
 [DONE]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 3: ](Define CDS View)]
 1. Add the following:
     - `sql_view_name` = **`ZCTRAVEL_003`**
@@ -83,7 +83,6 @@ Your CDS view appears in a new editor.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 4: ](Display in Data Preview)]
 1. Click anywhere in the editor and choose **Open With > Data Preview** from the context menu.
@@ -141,7 +140,6 @@ For more information, see:
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 6: ](Create service binding)]
 1. Select your service definition, then choose **Service Binding** from the context menu, then choose **Next**.
 
@@ -161,7 +159,6 @@ The service binding automatically references the service definition and thus the
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 7: ](Activate service binding)]
 1. In the editor that appears, choose **Activate**.
@@ -252,7 +249,6 @@ The service binding automatically references the service definition and thus the
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 10: ](Extract metadata)]
 At present, you only have minimal annotations. As you add more, your CDS view will start to get cluttered. So you should extract your UI annotations to a separate object, a **metadata extensions** object, as follows:
 
@@ -283,7 +279,6 @@ At present, you only have minimal annotations. As you add more, your CDS view wi
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 11: ](Add semantic metadata)]
 If you define currency amounts and currency codes semantically, then the system will apply specific rules to handle these fields appropriately.
@@ -352,7 +347,6 @@ You will now add a fuzzy search capability.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 13: ](Add selection fields)]
 As well as search fields, you can filter the list using an input field. In the next tutorial, you will provide input value help for these fields.
@@ -427,7 +421,6 @@ As well as search fields, you can filter the list using an input field. In the n
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 14: ](Check your code)]
 Your CDS entity code should look like this:
@@ -552,5 +545,8 @@ Status;
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+
+
 
 ---
