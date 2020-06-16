@@ -116,12 +116,12 @@ Click the ![MobileCardsIcon](ico_add.png) icon to add an action and provide the 
 | **Name** | `approve` |
 | **Label** | `Approve` |
 | **URL** | `/SalesOrderHeaders('${SalesOrderId}')` |
-| **Behavior after Action** | `INACTIVE` |
+| **Behavior after Action** | `ACTIVE` |
 | **HTTP Method** | `PATCH` |
 | **Consider Action As** | `Positive` |
 | **Action Body** | `{"LifeCycleStatusName": "Accepted", "LifeCycleStatus": "A"}` |
 
-> Making an action inactive action does not allow any new actions after a successful call. We make approve an inactive action because the approver should perform any actions, once the Sales Order is approved.
+> Making an action active allows the user to perform the action multiple times.
 
 !![MobileCardsImage](img_17.png)
 
