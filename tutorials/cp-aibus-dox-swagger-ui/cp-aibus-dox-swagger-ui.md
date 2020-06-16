@@ -25,7 +25,7 @@ In the service key you created for Document Information Extraction in the previo
 
 1. To access the Document Information Extraction Swagger UI, add **`/document-information-extraction/v1`** to the `url` value, paste it in any web browser and press **Enter**.
 
-    ![DOX](png-files\service-key-details.png)
+    ![DOX](png-files/service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints you need to authorize yourself. In the top right corner, click **Authorize**.
 
@@ -59,7 +59,7 @@ Click the endpoint name to expand it, click **Try it out**, and then **Execute**
 
 You should receive a response like the following:
 
-!![DOX](png-files\capabilitiesResponse.png)
+!![DOX](png-files/capabilitiesResponse.png)
 
 >If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
 
