@@ -94,7 +94,7 @@ You upload master data from the API Business Hub. Since there are already source
 
 2. On the left side choose **Availability Raw Data**.
 
-    !![API Hub](API Hub.png)
+    !![API Hub](API_Hub.png)
 
 3. Open `POST/availabilityRawData` and choose try out.
 
