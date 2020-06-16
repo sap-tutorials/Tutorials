@@ -39,6 +39,7 @@ If you are building a custom version of Mobile development kit client, there you
 
 1. Make sure that you have completed required pre-Prerequisites mentioned in this tutorial.
 
+
     This step includes creating the Mobile Development Kit project in the Editor.
 
 2. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
@@ -57,9 +58,7 @@ If you are building a custom version of Mobile development kit client, there you
 
 5. Leave the default values in _Application Creation_ step as it is, click **Finish**.
 
-    After clicking Finish, the wizard will generate your MDK Application based on your selections. You should now see the `MDKDeepLink` project in the project explorer.
-
-    ![MDK](img_003.png)
+    After clicking Finish,  the wizard will generate your MDK Application based on your selections. You should now see the `MDKDeepLink` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -258,7 +257,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Confirm the destination name and application id match where you want to deploy.
+3. Select the Destination `mobileservices_cf` from the dropdown and application id match where you want to deploy.
 
     ![MDK](img_018.png)
 

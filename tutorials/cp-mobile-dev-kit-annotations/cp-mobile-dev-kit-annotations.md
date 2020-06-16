@@ -30,7 +30,8 @@ Mobile Development Kit brings OData annotations capabilities to your native mobi
 
 [ACCORDION-BEGIN [Step 1: ](Understand the SAP Fiori Elements)]
 
-If you are a Fiori app designer, you may already be familiar with OData annotations and smart templates.  
+If you are a Fiori app designer, you may already be familiar with OData annotations and smart templates.
+
 
 SAP Fiori elements provide designs for UI patterns and predefined templates for common application use cases. App developers can use SAP Fiori elements to create SAP Fiori applications based on OData services and annotations. With little or no coding, you can create SAP Fiori applications. UI5 has a Web solution, named smart templates, that builds a starter application by parsing the annotations in your OData service.
 
@@ -212,7 +213,8 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 1. Right click the `MDK_Annotations` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-    ![MDK](img_009.png)
+
+    ![MDK](img_009.1.png)
 
 2. Let the default configuration as it is and click **Next**.
 
@@ -221,8 +223,6 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
     >_Filter Files_ will be filtered and ignored in web packing process.
 
     >_Externals_ is the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
-
-    >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
 3. Confirm the destination name and application id match where you want to deploy.
 

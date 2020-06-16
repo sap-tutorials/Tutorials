@@ -92,6 +92,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     ![MDK](img_006.gif)
 
     >Make sure, Format should be set as _Binding_.
+
     ![MDK](img_006.1.png)
 
 8. Select the second Simple Property control and provide the below information:
@@ -106,6 +107,7 @@ In this step, you will create the _Edit Customer Detail_ page as a **Form Cell P
     ![MDK](img_008.png)
 
 9. Select the third Simple Property control and provide the below information:
+
 
     | Property | Value |
     |----|----|
