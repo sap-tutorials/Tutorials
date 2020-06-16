@@ -28,17 +28,17 @@ Mobile Development Kit allows you to consume REST APIs. You need to first define
 
 A publicly available `Petstore` API from [swagger.io](https://petstore.swagger.io) is used as an example in this tutorial.
 
-![MDK](img_8.png)
+!![MDK](img_8.png)
 
 [ACCORDION-BEGIN [Step 1: ](Understand the Petstore API to retrieve data )]
 
 1. Open [`Swagger Petstore`](https://petstore.swagger.io/), find all pets with status as `available`.
 
-    ![MDK](img_1.png)
+    !![MDK](img_1.png)
 
 2. Click **Execute** to get the response.
 
-    ![MDK](img_2.png)
+    !![MDK](img_2.png)
 
     By looking at results, you now have understood
 
@@ -52,13 +52,13 @@ With above details, you will next configure an app in Mobile Services, add root 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure a new MDK app in Mobile Services cockpit)]
+[ACCORDION-BEGIN [Step 2: ](Configure new MDK app in Mobile Services cockpit)]
 
 1. Navigate to [SAP Cloud Platform Mobile Services cockpit on Cloud Foundry environment](fiori-ios-hcpms-setup).
 
 2. On the home screen, select **Create new app**.
 
-    ![MDK](img_008.1.png)
+    !![MDK](img_008.1.png)
 
 3. Provide the required information and click **Next**.
 
@@ -73,15 +73,15 @@ With above details, you will next configure an app in Mobile Services, add root 
 
 4. Select **Mobile Development Kit Application** from the dropdown and Click **Finish**.
 
-    ![MDK](img_009.2.png)
+    !![MDK](img_009.2.png)
 
 5. Click **Mobile Connectivity** to add `Petstore` root API as a destination.
 
-    ![MDK](img_009.3.png)
+    !![MDK](img_009.3.png)
 
 6. Click **Create** icon to add a new destination.  
 
-    ![MDK](img_009.4.png)
+    !![MDK](img_009.4.png)
 
 7. Provide the required information and click **Next**.
 
@@ -90,7 +90,7 @@ With above details, you will next configure an app in Mobile Services, add root 
     | `Destination Name` | `com.sap.mdk.petstore` |
     | `URL` | `https://petstore.swagger.io/v2` |
 
-    ![MDK](img_009.5.png)
+    !![MDK](img_009.5.png)
 
 8. For this tutorial, there is no Custom Headers, Annotations, Authentication required, click **Next** and Finish the form.
 
@@ -99,7 +99,7 @@ With above details, you will next configure an app in Mobile Services, add root 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a new MDK project in SAP Web IDE)]
+[ACCORDION-BEGIN [Step 3: ](Create new MDK project in SAP Web IDE)]
 
 Ensure that you have already created a new destination `mobileservices_cf` as per [this](fiori-ios-hcpms-setup) tutorial. This is required to connect SAP Web IDE (NEO) to Mobile Services in Cloud Foundry environment.
 
@@ -109,13 +109,13 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
 2. Right-click Workspace folder and select **New** | **MDK Empty Project**.
 
-    ![MDK](img_001.png)
+    !![MDK](img_001.png)
 
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 3. Enter the Project Name as `MDK_Petstore` and click **Next**.
 
-    ![MDK](img_19.png)
+    !![MDK](img_19.png)
 
 4. Leave the default values in _Application Creation_ step as it is, click **Finish**.
 
@@ -124,7 +124,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a rule to retrieve Pet information)]
+[ACCORDION-BEGIN [Step 4: ](Create rule to retrieve Pet information)]
 
 A rule will be needed to parse the response from REST API.
 
@@ -132,7 +132,7 @@ A rule will be needed to parse the response from REST API.
 
 1. Right-click the **Rules** folder | **New** | **File**.
 
-    ![MDK](img_004.png)
+    !![MDK](img_004.png)
 
 2. Enter the file name `GetPetFindByStatus.js`, click **OK**.
 
@@ -178,7 +178,7 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
 
 1. In `Main.page`, drag and drop **Object Table** control on the page.
 
-    ![MDK](img_2.gif)
+    !![MDK](img_2.gif)
 
 2. Provide the required information for **Target** section:
 
@@ -187,7 +187,7 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
     | `Select Data Type` | `String Target` |
     | `Bind to` | `/MDK_Petstore/Rules/GetPetFindByStatus.js` |
 
-    ![MDK](img_3.gif)
+    !![MDK](img_3.gif)
 
     >You can find more details on **Target** in [documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/definitions/Target.schema.html).
 
@@ -207,7 +207,7 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
     | `SubStatus` | leave it empty |
     | `Title` | `Pet ID: {{#Property:id}}` |
 
-    ![MDK](img_009.6.png)
+    !![MDK](img_009.6.png)
 
 [DONE]
 [ACCORDION-END]
@@ -217,21 +217,21 @@ You will add an **Object Table** control  item on `Main.page` to display the lis
 
 So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right click the `MDK_Petstore` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `MDK_Petstore` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-    ![MDK](img_009.1.png)
+    !![MDK](img_009.1.png)
 
 2. Let the default configuration as it is and click **Next**.
 
     !![MDK](img_010.png)
 
-    >_Filter Files_ will be filtered and ignored in web packing process.
+    >**Filter Files** will be filtered and ignored in web packing process.
 
-    >_Externals_ is the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
+    >**External** is the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
 3. Select the Destination `mobileservices_cf` from the dropdown and application id where you want to deploy.
 
-    ![MDK](img_014.1.png)
+    !![MDK](img_014.1.png)
 
     >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
@@ -246,13 +246,13 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 SAP Web IDE has a feature to generate QR code for app onboarding.
 
-Right click the `MDK_Petstore` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Right-click the `MDK_Petstore` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-![MDK](img_10.1.png)
+!![MDK](img_10.1.png)
 
 >**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 6.
 
-![MDK](img_012.1.png)
+!![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -265,45 +265,45 @@ Right click the `MDK_Petstore` MDK Application in the project explorer pane and 
 
 1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
-    ![MDK](img_016.1.jpg)
+    !![MDK](img_016.1.jpg)
 
 2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
-    ![MDK](img_013.2.png)
+    !![MDK](img_013.2.png)
 
 3. Once scan is succeeded, tap **CONTINUE**.
 
-    ![MDK](img_013.3.png)
+    !![MDK](img_013.3.png)
 
 4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-    ![MDK](img_017.1.1.png)
+    !![MDK](img_017.1.1.png)
 
 5. Tap **AGREE** on `End User License Agreement`.
 
-    ![MDK](img_018.1.png)
+    !![MDK](img_018.1.png)
 
 6. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
-    ![MDK](img_019.1.png)
+    !![MDK](img_019.1.png)
 
 7. Confirm the passcode and tap **DONE**.
 
-    ![MDK](img_020.1.png)
+    !![MDK](img_020.1.png)
 
     Optionally, you can enable fingerprint to get faster access to the app data.
 
-    ![MDK](img_021.1.png)
+    !![MDK](img_021.1.png)
 
 8. Tap **OK**.
 
-    ![MDK](img_022.1.png)
+    !![MDK](img_022.1.png)
 
     The MDK client receives deployed metadata definitions as a bundle.
 
     Now, you will see the Pets list on the **Main** page.
 
-    ![MDK](img_023.1.png)
+    !![MDK](img_023.1.png)
 
     >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
@@ -313,41 +313,41 @@ Right click the `MDK_Petstore` MDK Application in the project explorer pane and 
 
 1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
-    ![MDK](img_013.png)
+    !![MDK](img_013.png)
 
 2. Once scan is succeeded, tap **Continue**.
 
-    ![MDK](img_013.1.png)
+    !![MDK](img_013.1.png)
 
 3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-    ![MDK](img_017.png)
+    !![MDK](img_017.png)
 
 4. Tap **Agree** on `End User License Agreement`.
 
-    ![MDK](img_018.png)
+    !![MDK](img_018.png)
 
 5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
-    ![MDK](img_019.png)
+    !![MDK](img_019.png)
 
 6. Confirm the passcode and tap **Done**.
 
-    ![MDK](img_020.png)
+    !![MDK](img_020.png)
 
     Optionally, you can enable Touch ID to get faster access to the app data, click **Enable**.
 
-    ![MDK](img_021.png)
+    !![MDK](img_021.png)
 
 7. Tap **OK**.
 
-    ![MDK](img_022.png)
+    !![MDK](img_022.png)
 
     The MDK client receives deployed metadata definitions as a bundle.
 
     Now, you will see the Pets list on the **Main** page.
 
-    ![MDK](img_023.png)
+    !![MDK](img_023.png)
 
     Congratulations, you have now learned how to parse a REST API and displaying it's result in MDK page.
 
@@ -361,11 +361,11 @@ Next, you will learn how to create a new pet record.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Understand the Petstore API to create a new record)]
+[ACCORDION-BEGIN [Step 9: ](Understand the Petstore API to create new record)]
 
 1. In [`Swagger Petstore`](https://petstore.swagger.io/), add a new pet to the store.
 
-    ![MDK](img_1.1.png)
+    !![MDK](img_1.1.png)
 
     There is payload example to be passed for adding a new pet.
 
@@ -388,7 +388,7 @@ Next, you will learn how to create a new pet record.
 
 2. Click **Execute** to get the response.
 
-    ![MDK](img_2.1.png)
+    !![MDK](img_2.1.png)
 
     By looking at results, you now have understood
 
@@ -402,7 +402,7 @@ With above details, you will now create a new MDK rule to create a new Pet recor
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create a rule to POST pet record)]
+[ACCORDION-BEGIN [Step 10: ](Create rule to POST pet record)]
 
 1. Switch back to SAP Web IDE. Right-click the **Rules** folder | **New** | **File**. Enter the file name `PostPet.js`, click **OK**.
 
@@ -454,15 +454,15 @@ With above details, you will now create a new MDK rule to create a new Pet recor
 
 1. Open `Main.page`, drag & drop an action bar item to the page.
 
-    ![MDK](img_4.gif)
+    !![MDK](img_4.gif)
 
-2. In the **Properties** pane, click the **link icon** to open the object browser for the **System Item** property. Double click the **Add** type and click **OK**.
+2. In the **Properties** pane, click the **link icon** to open the object browser for the **System Item** property. Double-click the **Add** type and click **OK**.
 
-    ![MDK](img_5.png)
+    !![MDK](img_5.png)
 
 2. Navigate to **Events** tab and bind `PostPet.js` rule to `OnPress` event.
 
-    ![MDK](img_6.png)
+    !![MDK](img_6.png)
 
 3. Save the changes.
 
@@ -471,9 +471,9 @@ With above details, you will now create a new MDK rule to create a new Pet recor
 
 [ACCORDION-BEGIN [Step 12: ](Redeploy and reactivate the application)]
 
-1. Right click the `MDK_Petstore` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `MDK_Petstore` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-    ![MDK](img_009.1.png)
+    !![MDK](img_009.1.png)
 
 2. Let the default configuration as it is and click **Next**.
 
@@ -481,7 +481,7 @@ With above details, you will now create a new MDK rule to create a new Pet recor
 
 3. Confirm the destination name and application id match where you want to deploy and click **Next** to finish the deployment from SAP Web IDE.
 
-    ![MDK](img_014.1.png)
+    !![MDK](img_014.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -494,7 +494,7 @@ With above details, you will now create a new MDK rule to create a new Pet recor
 
 2. Tap **+** icon on `Main.page` to create a new Pet record. A new record has been created and results are displaying in alert pop-up.
 
-    ![MDK](img_7.png)
+    !![MDK](img_8.png)
 
 [OPTION END]
 
@@ -504,7 +504,7 @@ With above details, you will now create a new MDK rule to create a new Pet recor
 
 2. Tap **+** icon on `Main.page` to create a new Pet record. A new record has been created and results are displaying in alert pop-up.
 
-    ![MDK](img_8.png)
+    !![MDK](img_7.png)
 
 [OPTION END]
 
