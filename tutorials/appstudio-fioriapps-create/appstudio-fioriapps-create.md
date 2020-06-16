@@ -156,7 +156,7 @@ author_profile: https://github.com/raz-korn
 
 Open the layout editor in SAP Business Application Studio to easily make a few changes. In this case, you will make changes so that data from the backend service is displayed when the app is running.
 
-1. Choose **`FioriDemo` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file that you created with the template in a previous step.
+1. Choose **`FioriDemo` > `BusinessPartners` > `webapp` > `view`** and right-click the `Suppliers.view.xml` file that you created with the template in a previous step.
 
 2. Choose **Open With > Layout Editor**.
 
@@ -360,7 +360,7 @@ Access your deployed application in the SAP Cloud Platform cockpit. The steps be
 
     !![app id from manifest](10-04 AppStudio SAP Fiori Project Manifest_.jpg)
 
-    > For future reference, this is the construct of the final URL: `<URL_from_application_overview_page>/<mynamespace><project_name>/index.html`. Example: https://SUBACCOUNT-SPACE-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/nsBusinessPartners/index.html
+    > For future reference, this is the construct of the final URL: `<URL_from_application_overview_page>/<mynamespace><project_name>/index.html`. Example: `https://SUBACCOUNT-SPACE-fioridemo-approuter.cfapps.eu10.hana.ondemand.com/nsBusinessPartners/index.html`
 
     You can use this URL in any browser to access your new application.
 

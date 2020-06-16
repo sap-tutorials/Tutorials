@@ -74,7 +74,7 @@
     },
     {
       "name": "SAP API Business Hub",
-      "value": "topic>topic>sap-api-business-hub"
+      "value": "topic>sap-api-business-hub"
     },
     {
       "name": "SAP Community",

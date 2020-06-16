@@ -258,7 +258,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     [OPTION END]
 
-You can find more details about Cloud Build service in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/config.html).
+You can find more details about Cloud Build service in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/overview.html).
 
 [DONE]
 [ACCORDION-END]
@@ -303,7 +303,7 @@ You can find more details about Cloud Build service in [help documentation](http
 
     ![MDK](img_023.8.png)
 
-You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/customization.html).
+You can find more details about packaging details in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/cloud-build/customization.html#packaging-details-overview).
 
 [VALIDATE_1]
 [ACCORDION-END]
