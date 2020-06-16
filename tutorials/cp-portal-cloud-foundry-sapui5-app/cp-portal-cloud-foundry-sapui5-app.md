@@ -1,5 +1,5 @@
 ---
-title: Integrate a Custom Developed SAPUI5 App into Your Portal Site (Cloud Foundry)
+title: Integrate Your App into Your Portal Site (Cloud Foundry)
 description: Add the app that you created in SAP Web IDE to your Portal site on Cloud Foundry.
 auto_validation: true
 time: 10

@@ -31,7 +31,7 @@ You can note down the name of the bucket or container by going to the Connection
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Write File operator)]
 
-Open the pipeline which you have created in the [previous tutorial](datahub-trial-v2-pipelines-part01) `(test.myFirstPipeline)`, in the modeling environment.
+Open the pipeline which you have created in the [previous tutorial](dataintelligence-trial-v2-pipelines-part01) `(test.myFirstPipeline)`, in the modeling environment.
 
  1. From the operator tab, enter the keyword *write*
     - Add **Write File** operator.
