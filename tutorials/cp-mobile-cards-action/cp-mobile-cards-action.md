@@ -105,12 +105,6 @@ Click the **Actions** tab.
 
 !![MobileCardsImage](img_14.png)
 
-Change Behavior after Action to Active.
-
-!![MobileCardsImage](img_15.png)
-
->The default value for Behavior for an action is **INACTIVE**. An inactive action does not allow any new actions after a successful call.
-
 Add `/` as the XCSRF Token URL.
 
 !![MobileCardsImage](img_16.png)
@@ -122,9 +116,12 @@ Click the ![MobileCardsIcon](ico_add.png) icon to add an action and provide the 
 | **Name** | `approve` |
 | **Label** | `Approve` |
 | **URL** | `/SalesOrderHeaders('${SalesOrderId}')` |
+| **Behavior after Action** | `INACTIVE` |
 | **HTTP Method** | `PATCH` |
 | **Consider Action As** | `Positive` |
 | **Action Body** | `{"LifeCycleStatusName": "Accepted", "LifeCycleStatus": "A"}` |
+
+> Making an action inactive action does not allow any new actions after a successful call. We make approve an inactive action because the approver should perform any actions, once the Sales Order is approved.
 
 !![MobileCardsImage](img_17.png)
 
@@ -168,6 +165,7 @@ Click **Action 2** in the Actions table and provide the required information:
 | **Name** | `reject` |
 | **Label** | `Reject` |
 | **URL** | `/SalesOrderHeaders('${SalesOrderId}')` |
+| **Behavior after Action** | `ACTIVE` |
 | **HTTP Method** | `PATCH` |
 | **Consider Action As** | `Negative` |
 | **Action Body** | `{"LifeCycleStatusName": "Rejected: ${reasonForRejection}", "LifeCycleStatus": "R"}` |
