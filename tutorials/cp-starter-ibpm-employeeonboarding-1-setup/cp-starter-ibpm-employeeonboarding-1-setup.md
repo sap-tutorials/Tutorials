@@ -3,7 +3,7 @@ title: Set Up Business Process Management Services in Cloud Cockpit
 description:  Set up services to automate and achieve operational insights into employee onboarding processes.
 
 auto_validation: true
-time: 20
+time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
 ---
@@ -20,9 +20,9 @@ In this tutorial mission, setup and use these services to automate and achieve o
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Setup services in your account using Recipe)]
+[ACCORDION-BEGIN [Step 1: ](Check Entitlements)]
 
-You will use the **recipe** to automatically setup of workflow, business rules, and process visibility services in your account.
+To create service instances for business process management services, you need to ensure that you have the right set of entitlements in your trial account.
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -38,59 +38,59 @@ You will use the **recipe** to automatically setup of workflow, business rules, 
 
     >![Account setup](02_Foundation20Onboarding_Processing.png)
 
-3. From your global account page, choose the **Recipe** from left-hand navigation. Among the available recipes, click **Start Recipe** of **Intelligent BPM Setup** recipe.
+3. From your global account page, choose the `trial` tile to access your subaccount.
 
-    !![Start Recipe](startrecipe_2.png)
+    !![Enter Trial Subaccount](entertrialaccount.png)
 
-4. Recipe will be started with pre-configured steps.
+4. Click **Entitlements** from left panel to check if you have all the below listed entitlements in your subaccount. These entitlements are needed to run other tutorials of this mission.
 
-    !![Recipe In Progress](startrecipe_4.png)
+    |  Entitlement     | Description
+    |  :------------- | :-------------
+    |  Business Rules, Workflow and Process Visibility | These are core services of workflow management which will be needed to run the next tutorials.
+    |  Portal, Application Runtime, HTML5 Applications | These services are needed to setup and access Process Visibility and Workflow applications from Fiori Launchpad
+    |  Connectivity    | This service is needed to create and configure destinations
 
-    - Wait until you see the success dialog once the recipe completes successfully.  
+    > If you do not see these entitlements in your subaccount then follow this [tutorial](https://developers.sap.com/tutorials/cp-trial-entitlements.html) that describes how to configure entitlements in your account.
 
-    !![Recipe In Progress](startrecipe_3.png)
-
-
-    > This automatic set up will do the following:
-
-    > - Add Business Rules, Workflow, Process Visibility, Portal, Application Runtime, HTML5 Applications and Connectivity entitlements in your account.
-
-    > - Create service instance for each of Business Rules, Workflow, Process Visibility and Portal services.
-
-    > - Create a role collection with name **BPMServices** and add all the needed roles.
-
-    > - Assign this role collection to your user.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Setup Fiori Launchpad)]
-You will import, build and deploy the multitarget project that will create a Fiori Launchpad to access workflow, business rules and process visibility applications which will be used in next tutorials.
+[ACCORDION-BEGIN [Step 2: ](Download multitarget application file)]
 
-1. Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases) in your local file system.
+Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases) in your local file system.
 
->This multitarget application when deployed will create the Fiori Launchpad to access workflow, business rules and process visibility applications.
+>This multitarget application when deployed will create (a) new service instances for workflow, business rules and process visibility in the Cloud Foundry environment, and (b) an application to access the business rules editor and Fiori Launchpad for workflow and process visibility applications.
 
 !![Download MTA](downloadmta.png)
 
-2. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
-3. Choose **SAP Web IDE**.
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Access SAP Web IDE)]
+
+1. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+
+2. Choose **Launch SAP Web IDE**.
     > If you are new user then Web IDE Full-Stack will not be enabled for your account and you will see a message saying "SAP Web IDE Full-Stack is not be enabled for this account". Follow the instructions on the Web IDE page, to enable the Web IDE.
 
     !![Launch Web IDE](launchwebide.png)
 
-4. In the navigation area of **SAP Web IDE**, choose the **Preferences** icon.
+3. In the navigation area of **SAP Web IDE**, choose the **Preferences** icon.
 
     ![Open Preferences](choosepreference.png)
 
-5. Select the **Extensions** preference and search for **workflow**. Click the toggle button to switch on the **Workflow Editor** extension and **Save** the changes.
+4. Select the **Extensions** preference and search for **workflow**.
 
+5. Click the toggle button to switch on the **Workflow Editor** extension and **Save** the changes.
     > If a confirmation popup appears, then click **Refresh** to apply the changes.
 
     ![Enable Workflow Feature](wfextension.png)
 
-6. Select **Cloud Foundry** preference and enter the following details. **Save** the changes once done.
+6. Select **Cloud Foundry** preference.
+
+7. Enter the following details, and **Save** the changes:
 
     |  Field Name         | Value                    | Example  
     |  :------------------| :------------------------| :-------------
@@ -102,33 +102,47 @@ You will import, build and deploy the multitarget project that will create a Fio
 
     ![Configure Cloud Foundry](cfpreferences.png)
 
+[DONE]
+[ACCORDION-END]
 
-7. In the navigation area of the **SAP Web IDE**, choose the **Development** icon. Right-click the **Workspace** root folder, then choose **Import | File or Project**.
+
+[ACCORDION-BEGIN [Step 4: ](Import multitarget application)]
+
+1. In the navigation area of the **SAP Web IDE**, choose the **Development** icon.
+
+2. Right-click the **Workspace** root folder, then choose **Import | File or Project**.
 
     ![Open Web IDE Development](opendev.png)
 
-8. In the **Import** dialog, browse for the `BPMServicesFLP.zip` file that you downloaded in your local system and choose **OK**.
+3. In the **Import** dialog, browse for the `BPMServicesFLP.zip` file that you downloaded in your local system and choose **OK**.
 
     ![Import MTA](importzip.png)
 
-    - The multitarget application gets imported under the **Workspace** folder and the file structure is shown below.
+4. The multitarget application gets imported under the **Workspace** folder and the file structure is shown below.
 
     >Ensure you have chosen **Show Hidden Files** to be able to view the `app-router` file structure as shown.
 
     ![Open Hidden Files](openhiddenfiles.png)
 
-9. Right-click on the `BPMServicesFLP` project and choose the **Build** option.
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Build and deploy)]
+
+When you build and deploy this application, new service instance will be created for each workflow, business rules and process visibility service in Cloud Foundry.
+
+1. Right-click on the `BPMServicesFLP` project and choose any of the **Build** options.
 
     !![Build MTA](build.png)
 
-    - After the build has completed, navigate to the **`mta_archives` | `BPMServicesFLP_0.0.1.mtar`** file.
+2. After the build has completed, navigate to the **`mta_archives` | `BPMServicesFLP_0.0.1.mtar`** file.
 
     !![Build MTA](build-logs.png)
 
     !![Build MTA](buildarchives.png)
 
 
-10. Right-click `BPMServicesFLP_0.0.1.mtar` and choose **Deploy | Deploy to SAP Cloud Platform**.
+3. Right-click `BPMServicesFLP_0.0.1.mtar` and choose **Deploy | Deploy to SAP Cloud Platform**.
 
     !![Deploy MTA](deploymta.png)
 
@@ -142,67 +156,126 @@ You will import, build and deploy the multitarget project that will create a Fio
 
     > - if you have already created an instance of either workflow, business rules or process visibility created with same name. In that case, update the `modules` and `resources` section in `mta.yaml` to replace that service instance name with a new unique name.
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Assign roles)]
+
+1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
+
+2. Click **Enter Your Trial Account**
+
+3. Open **Security | Role Collections** and click **New Role Collection** to add new roles.
+
+    ![New Role Collection](newrolecollection.png)
+
+    Enter **Name** as **`BPMServices`** and **Description** as **Roles to access workflow management services**. **Save** the changes.
+
+    ![New Role Collection](createrolecollection.png)
+
+4. Click **`BPMServices`** to navigate into role collection to add roles.
+
+    ![Open Role Collection](openrolecollection.png)
+
+5. Click **Add Role** and select the following roles to add them to the role collection one by one. In **Add Role** popup, click **Save** after each selection.
+
+    > The application identifier changes depending upon the region where the BPM services are entitled from. You will notice a different number at the end of the application identifier if the region is not Europe(Frankfurt).
+
+      ![Roles](addrole.png)
+
+    |  Application Identifier     | Role Template and Role
+    |  :------------------------- | :------------------------
+    |  `bpmrulebroker`            | `RuleRepositorySuperUser`
+    |                             | `RuleRuntimeSuperUser`
+    |  `pvreuserservice`          | `PVDeveloper`
+    |                             | `PVAdmin`
+    |                             | `PVEventSender`
+    |                             | `PVOperator`
+    |                             | `PVTenantOperator`
+    | `workflow`                  | `WorkflowAdmin`
+    |                             | `WorkflowContextViewer`
+    |                             | `WorkflowDeveloper`
+    |                             | `WorkflowInitiator`
+    |                             | `WorkflowParticipant`
+
+    ![All Roles Added](allroles.png)
+
+6. To assign the role collection to your trial user, switch to **Security | Trust Configuration** and select **SAP ID Service**.
+
+    ![Roles](assignrolecollection.png)
+
+7. In the **Role Collection Assignment** page, enter your trial user email and click **Show Assignments**.
+
+    >If you are adding the role collection for first time, you will get a popup to select **Add User**.
+
+8. Click **Assign Role Collection** and select `BPMServices` role collection.
+
+    ![Roles](assignrolecollection_2.png)
+
+
 [VALIDATE_1]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 7: ](Create destination for API Business Hub)]
 
-[ACCORDION-BEGIN [Step 3: ](Create destinations)]
+The sample business rule used in this scenario is published in API Business Hub. This destination will be used in SAP Cloud Platform Business Rules to connect to API Business Hub to discover and import sample rules.
 
+1. Go back to the subaccount **trial** and switch to **Connectivity | Destinations** from the left-hand navigation.
 
-1.  Create **API Business Hub** destination
+2. Click **New Destination**.
 
-    > The sample business rule used in this scenario is published in API Business Hub. The first  destination that is created will be used in SAP Cloud Platform Business Rules application to connect to API Business Hub to discover and import sample rules.
+3. Enter the following details under **Destination Configuration**:
 
-    - From your global account page, choose the `trial` tile to access your subaccount.
+    |  Field Name     | Value
+    |  :------------- | :-------------
+    |  Name           | `BUSINESSRULES_APIHUB`
+    |  URL            | `https://api.sap.com`
+    |  Authentication | `BasicAuthentication`
+    |  User           | your trial user id
+    |  Password       | your trial password
 
-    !![Enter Trial Subaccount](entertrialaccount.png)
+    ![Create Destination](createdestination-apihub.png)
 
-    - Click **Connectivity | Destinations** from the left-hand navigation. Click **New Destination** and enter the following details under **Destination Configuration**:
+4. **Save** the destination.
 
-        |  Field Name     | Value
-        |  :------------- | :-------------
-        |  Name           | `BUSINESSRULES_APIHUB`
-        |  URL            | `https://api.sap.com`
-        |  Authentication | `BasicAuthentication`
-        |  User           | your trial user id
-        |  Password       | your trial password
-
-        ![Create Destination](createdestination-apihub.png)
-
-    - **Save** the destination.
-
-
-2.  Create **Business Rules** destination
-
-    >The sample workflow calls business rules to determine the list of equipment needed for the new hire. This another destination (`BUSINESS_RULES`) will be used while modelling the workflow to call the business rules APIs.
-
-    - Choose **New Destination**, and enter the following data:
-
-    |  Field Name        | Value
-    |  :---------------- | :-------------
-    |  Name              | `BUSINESS_RULES`
-    |  URL               | `https://bpmruleruntime.cfapps.eu10.hana.ondemand.com/rules-service`
-    |  Authentication    | `OAuth2ClientCredentials`
-    |  Client ID         | `<use your client ID from the Business Rules service instance>`
-    |  Client Secret     | `<use your secret from the Business Rules service instance>`
-    |  Token Service URL | `https://<userid>.authentication.eu10.hana.ondemand.com/oauth/token` where `userid` is your trial account user id
-
-    >Replace `eu10` with `us10` in the URLs if your trial account is in US region. For example, the URL in above destination will become:
-
-    > `https://bpmruleruntime.cfapps.us10.hana.ondemand.com/rules-service`
-
-    >To get Client ID, Client Secret and Token Service URL, (a) navigate into your **dev** space in your trial account, (b) select **Service Instances** from left panel, (c) search for **rules**, and then select **`default-businessrules`** service instance and (d) navigate into the service instance to get `clientid`, `clientsecret`, and `url`.
-
-    ![Get Security Token](getsecurity.png)
-
-    ![Configure Destination](createdestination-rules.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Access Applications from Fiori Launchpad)]
 
-The Fiori Launchpad will be used in the next tutorials to access business rules, workflow and process visibility applications.
+[ACCORDION-BEGIN [Step 8: ](Create destination for Business Rules APIs)]
+
+The sample workflow calls business rules to determine the list of equipment needed for the new hire. This destination (`BUSINESS_RULES`) will be used while modelling the workflow to call the business rules APIs.
+
+Choose **New Destination**, and enter the following data:
+
+|  Field Name        | Value
+|  :---------------- | :-------------
+|  Name              | `BUSINESS_RULES`
+|  URL               | `https://bpmruleruntime.cfapps.eu10.hana.ondemand.com/rules-service`
+|  Authentication    | `OAuth2ClientCredentials`
+|  Client ID         | `<use your client ID from the Business Rules service instance>`
+|  Client Secret     | `<use your secret from the Business Rules service instance>`
+|  Token Service URL | `https://<userid>.authentication.eu10.hana.ondemand.com/oauth/token` where `userid` is your trial account user id
+
+>Replace `eu10` with `us10` in the URLs if your trial account is in US region. For example, the URL in above destination will become:
+
+> `https://bpmruleruntime.cfapps.us10.hana.ondemand.com/rules-service`
+
+>To get Client ID, Client Secret and Token Service URL, (a) navigate into your **dev** space in your trial account, (b) select **Service Instances** from left panel, (c) search for **rules**, and then select **`businessrules`** service instance and (d) navigate into **`businessrules`** to get `clientid`, `clientsecret`, and `url`.
+![Get Security Token](getsecurity.png)
+
+![Configure Destination](createdestination-rules.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Access applications)]
+
+These applications will be used in the next tutorials to work with business rules, workflow and process visibility. One of these links is for the Fiori Launchpad which will be used to access workflow and process visibility applications and another link is to access business rules editor.
+
+You can open both the links in different browser tabs and use them in further tutorials.
 
 1. Click **Spaces** and then navigate into **dev** space.
 
@@ -220,11 +293,11 @@ The Fiori Launchpad will be used in the next tutorials to access business rules,
 
     ![Open BPM FLP](bpmFLP.png)
 
-These steps complete the setup of the starter scenario for business process management services in your trial account. In the next tutorial, you will access the sample content of these different services, set them up in your account and then run the scenario to get an integrated experience.
+These steps complete the setup of the starter scenario for workflow management services in your trial account. In the next tutorial, you will access the sample content of these different services, quickly set them up in your account and then run the scenario to get an integrated experience.
 
 [DONE]
 [ACCORDION-END]
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-starter-ibpm-employeeonboarding-1-setup" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/MSBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
