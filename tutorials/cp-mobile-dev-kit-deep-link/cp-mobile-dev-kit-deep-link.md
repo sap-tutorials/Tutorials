@@ -30,7 +30,7 @@ Deep links are used to send users directly to an app instead of a website or a s
 
 If an app is already installed, you can specify a custom URL scheme (iOS Universal Links) or an intent URL (on Android devices) that opens that app. Using deep link, you can also navigate to specific events or pages, which could tie into campaigns that you may want to run.
 
-![MDK](img_1.gif)
+!![MDK](img_1.gif)
 
 >**This tutorial has been executed using public store MDK client which has out of the box functionality to open the SAP standard apps like SAP Mobile Cards and SAP Fiori Client.
 If you are building a custom version of Mobile development kit client, there you can implement deep links by specifying related custom URL scheme.**
@@ -39,13 +39,14 @@ If you are building a custom version of Mobile development kit client, there you
 
 1. Make sure that you have completed required pre-Prerequisites mentioned in this tutorial.
 
+
     This step includes creating the Mobile Development Kit project in the Editor.
 
 2. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
 3. Right-click Workspace folder and select **New** | **MDK Empty Project**.
 
-    ![MDK](img_001.png)
+    !![MDK](img_001.png)
 
     >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
@@ -53,13 +54,11 @@ If you are building a custom version of Mobile development kit client, there you
 
 4. Enter the Project Name as `MDKDeepLink` and click **Next**.
 
-    ![MDK](img_002.png)
+    !![MDK](img_002.png)
 
 5. Leave the default values in _Application Creation_ step as it is, click **Finish**.
 
-    After clicking Finish, the wizard will generate your MDK Application based on your selections. You should now see the `MDKDeepLink` project in the project explorer.
-
-    ![MDK](img_003.png)
+    After clicking Finish,  the wizard will generate your MDK Application based on your selections. You should now see the `MDKDeepLink` project in the project explorer.
 
 [DONE]
 [ACCORDION-END]
@@ -77,7 +76,7 @@ In the MDK editor, you will create 4 new JavaScript files:
 
 1. Right-click the **Rules** folder | **New** | **File**.
 
-    ![MDK](img_004.png)
+    !![MDK](img_004.png)
 
 2. Enter the file name `OpenSAPMobileCards.js`, click **OK**.
 
@@ -101,7 +100,7 @@ In the MDK editor, you will create 4 new JavaScript files:
     });
     }
     ```
-    ![MDK](img_005.png)
+    !![MDK](img_005.png)
 
     >`openUrl` is a `NativeScript` API to open an URL on device. You can find more details about [this API](https://docs.nativescript.org/core-concepts/utils#openurl-function).
 
@@ -130,7 +129,7 @@ In the MDK editor, you will create 4 new JavaScript files:
     }
     ```
 
-    ![MDK](img_006.png)
+    !![MDK](img_006.png)
 
 4. Repeat the above step and create another new file:
 
@@ -157,7 +156,7 @@ In the MDK editor, you will create 4 new JavaScript files:
     }
     ```
 
-    ![MDK](img_007.png)
+    !![MDK](img_007.png)
 
 5. Create one more file and name it to `OpenSAPcom.js`.
 
@@ -191,7 +190,7 @@ In the MDK editor, you will create 4 new JavaScript files:
 
 1. Next, on **Main page**, drag and drop the **Section Button Table** Container control onto the Page.
 
-    ![MDK](img_009.gif)
+    !![MDK](img_009.gif)
 
     >The controls available in Container section includes controls that act as containers for other controls, such as container items. A container is constant for all pages. The size of a container depends on the controls and contents included inside.  
     You can find more details about [Containers](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/ButtonTable.schema.html).
@@ -200,19 +199,19 @@ In the MDK editor, you will create 4 new JavaScript files:
 
     Drag and drop the **Section Button** Container Item control onto the page.
 
-    ![MDK](img_010.gif)
+    !![MDK](img_010.gif)
 
 3. Repeat the above step, and drag and drop 3 more such **Section Button** Container Item controls.
 
-    ![MDK](img_011.png)
+    !![MDK](img_011.png)
 
 4. Select the first control and change its title to **Open SAP Mobile Cards**.
 
-    ![MDK](img_012.png)
+    !![MDK](img_012.png)
 
 5. Repeat the above step and change the title for other controls as below:
 
-    ![MDK](img_013.png)
+    !![MDK](img_013.png)
 
 6. Save the changes to the `Main.page`.
 
@@ -225,9 +224,9 @@ In the MDK editor, you will create 4 new JavaScript files:
 
     In `Main.page`, select **Open SAP Mobile Cards** button. In the Properties pane, click the **Events** tab, click the **link icon** for the `Handler` property to open the object browser.
 
-2. Double click the `OpenSAPMobileCards.js` and click **OK** to set it as the `OnPress` action.
+2. Double-click the `OpenSAPMobileCards.js` and click **OK** to set it as the `OnPress` action.
 
-    ![MDK](img_014.gif)
+    !![MDK](img_014.gif)
 
 3. Repeat the same and do the following:
 
@@ -248,25 +247,25 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 1. Right-click the `MDKDeepLink` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-    ![MDK](img_015.png)
+    !![MDK](img_015.png)
 
 2. Let the default configuration as it is and click **Next**.
 
-    ![MDK](img_016.png)
+    !![MDK](img_016.png)
 
     >_Filter Files_ will be filtered and ignored in web packing process.
 
     >_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Confirm the destination name and application id match where you want to deploy.
+3. Select the Destination `mobileservices_cf` from the dropdown and application id match where you want to deploy.
 
-    ![MDK](img_018.png)
+    !![MDK](img_018.png)
 
 4. Click **Next** to finish the deployment from SAP Web IDE.
 
     You should see **Application deployed successfully** message in console log.
 
-    ![MDK](img_015.1.png)
+    !![MDK](img_015.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -277,11 +276,11 @@ SAP Web IDE has a feature to generate QR code for app onboarding.
 
 Right-click the `MDKDeepLink` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-![MDK](img_013.1.png)
+!![MDK](img_013.1.png)
 
 >**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
-![MDK](img_012.1.png)
+!![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -294,69 +293,69 @@ Right-click the `MDKDeepLink` MDK Application in the project explorer pane and s
 
 1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
-    ![MDK](img_031.1.jpg)
+    !![MDK](img_031.1.jpg)
 
 2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
-    ![MDK](img_013.2.png)
+    !![MDK](img_013.2.png)
 
 3. Once scan is succeeded, tap **CONTINUE**.
 
-    ![MDK](img_013.3.png)
+    !![MDK](img_013.3.png)
 
 4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-    ![MDK](img_017.1.png)
+    !![MDK](img_017.1.png)
 
 5. Tap **AGREE** on `End User License Agreement`.
 
-    ![MDK](img_033.jpg)
+    !![MDK](img_033.jpg)
 
 6. Choose a passcode with at least 8 characters for unlocking the app and click **NEXT**.
 
-    ![MDK](img_034.png)
+    !![MDK](img_034.png)
 
 7. Confirm the passcode and tap **DONE**.
 
-    ![MDK](img_035.jpg)
+    !![MDK](img_035.jpg)
 
     Optionally, you can enable fingerprint to get faster access to the app data.
 
-    ![MDK](img_036.jpg)
+    !![MDK](img_036.jpg)
 
 8. Tap **OK**.
 
-    ![MDK](img_037.jpg)
+    !![MDK](img_037.jpg)
 
     The MDK client receives deployed metadata definitions as a bundle.
 
     Now, you will see **Main** page with the buttons you added in previous step 3.
 
-    ![MDK](img_038.1.jpg)
+    !![MDK](img_038.1.jpg)
 
 9. Tap **OPEN SAP MOBILE CARDS** and then tap **OK**.
 
-    ![MDK](img_039.jpg)
+    !![MDK](img_039.jpg)
 
     If you have already installed SAP Mobile Cards app, then MDK app will open it.
 
-    ![MDK](img_040.jpg)
+    !![MDK](img_040.jpg)
 
 10. Tapping on **OPEN SAP FIORI CLIENT** will open **SAP Fiori Client** app.
 
     >If you have access to any Fiori app or Fiori Launchpad page for example [SAP Support Launchpad](https://launchpad.support.sap.com), then enter that URL in your Fiori Client app.
 
-    ![MDK](img_041.jpg)
+    !![MDK](img_041.jpg)
 
 11. Tapping on **OPEN UI5 APP** will open a specific app running in SAP Fiori Client as per `OpenUI5.js` file.
 
     In below screenshot, there is one Software Downloads UI5 app part of SAP Support Launchpad.
 
-    ![MDK](img_042.jpg)
+    !![MDK](img_042.jpg)
 
 12. Tapping on **OPEN SAP.COM PAGE** will open SAP website.
 
-    ![MDK](img_043.jpg)
+    !![MDK](img_043.jpg)
 
     >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
@@ -366,63 +365,63 @@ Right-click the `MDKDeepLink` MDK Application in the project explorer pane and s
 
 1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
-    ![MDK](img_013.4.png)
+    !![MDK](img_013.4.png)
 
 2. Once scan is succeeded, tap **Continue**.
 
-    ![MDK](img_013.5.png)
+    !![MDK](img_013.5.png)
 
 3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-    ![MDK](img_022.png)
+    !![MDK](img_022.png)
 
 4. Tap **Agree** on `End User License Agreement`.
 
-    ![MDK](img_023.png)
+    !![MDK](img_023.png)
 
 5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
-    ![MDK](img_024.png)
+    !![MDK](img_024.png)
 
 6. Confirm the passcode and tap **Done**.
 
-    ![MDK](img_025.png)
+    !![MDK](img_025.png)
 
     Optionally, you can enable Touch ID to get faster access to the app data.
 
-    ![MDK](img_026.png)
+    !![MDK](img_026.png)
 
 7. Tap **OK**.
 
-    ![MDK](img_027.png)
+    !![MDK](img_027.png)
 
     Now, you will see **Main** page with the buttons you added in previous step 3.
 
-    ![MDK](img_028.png)
+    !![MDK](img_028.png)
 
 8. Tap **Open SAP Mobile Cards** and then tap **OK**.
 
-    ![MDK](img_028.1.png)
+    !![MDK](img_028.1.png)
 
     If you already installed SAP Mobile Cards app, then MDK app will open it.
 
-    ![MDK](img_028.2.png)
+    !![MDK](img_028.2.png)
 
 9. Tapping on **Open SAP Fiori Client** will open **SAP Fiori Client** app.
 
     >If you have access to any Fiori app or Fiori Launchpad page for example [SAP Support Launchpad](https://launchpad.support.sap.com), then enter that URL in your Fiori Client app.
 
-    ![MDK](img_028.3.png)
+    !![MDK](img_028.3.png)
 
 10. Tapping on **Open UI5 App** will open a specific app running in SAP Fiori Client as per `OpenUI5.js` file.
 
     In below screenshot, there is one Software Downloads UI5 app part of SAP Support Launchpad.
 
-    ![MDK](img_028.4.png)
+    !![MDK](img_028.4.png)
 
 11. Tapping on **Open SAP.com page** will open SAP website.
 
-    ![MDK](img_028.5.png)
+    !![MDK](img_028.5.png)
 
     >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
