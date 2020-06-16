@@ -189,8 +189,7 @@ Do the following:
              "receiverAddress",
              "deliveryDate",
              "paymentTerms",
-             "shipToAddress",
-             "deliveryNumber"
+             "shipToAddress"
           ],
           "lineItemFields":[
              "description",
