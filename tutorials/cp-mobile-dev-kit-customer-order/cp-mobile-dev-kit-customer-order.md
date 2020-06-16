@@ -34,13 +34,13 @@ To enhance your MDK app with customer order information, you need to carry out t
 
 This page will display customer orders list, you will add an **Object Table** control that is used to display information (like Sales order ID, order creation date, gross amount and life cycle status name) about an object.
 
->You can find more details about [available controls in section page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+>You can find more details about [available controls in section page](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/SectionedTable.schema.html).
 
 1. In SAP Web IDE project, right-click the **Pages** folder | **New MDK Page** | **Section Page** | **Next**.
 
     ![MDK](img_001.png)
 
-    >You can find more details about [section pages](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+    >You can find more details about [section pages](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/section-page.html).
 
 2. Enter the **Page Name** `Customers_Orders` and click **Next** and then **Finish** on the confirmation step.
 
@@ -129,7 +129,7 @@ This page will show related details for an order. In this page, you will add an 
 
 4. Next, you will add a **Static Key Value** container and its container item **Key Value Item** to display information like sales order id, life cycle status & date of order creation name.
 
-    >**Static Key Value** is a container that can display one or more key value pair items on a section page. In this container, you can include a Key Value Item, a simple key value cell that displays a label and a text pair. You can find more details [here](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/33d37d7e3e1b4d0ca7e11f0930282cf8.html) about this container.
+    >**Static Key Value** is a container that can display one or more key value pair items on a section page. In this container, you can include a Key Value Item, a simple key value cell that displays a label and a text pair. You can find more details [here](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/KeyValue.schema.html) about this container.
 
     In the Layout Editor, expand the **Controls** | **Container** section, drag and drop the **Static Key Value** control onto the page area.
 
@@ -356,7 +356,7 @@ This page will show related details for an order. In this page, you will add an 
 
 3. Save the changes to the `Customers_Detail.page`.
 
-    >You can find more details about [Header controls](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/c71b8b1f71294fcbb199613439c51222.html).
+    >You can find more details about [Header control](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Common/Header.schema.html).
 
 [DONE]
 [ACCORDION-END]
@@ -380,7 +380,7 @@ This page will show related details for an order. In this page, you will add an 
 
     ![MDK](img_029.png)
 
-    >You can find more details about [Footer controls](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/df3e0a2efa2948d2b66e8f5071f5b48e.html).
+    >You can find more details about [Footer control](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Common/Footer.schema.html).
 
 3. You may also want to open **Customer Orders** page when clicking on **See All**. For this, you will set the `OnPress` event of the **Footer** control and link it to `NavToCustomers_Orders.action` so that when an end-user clicks on **See All**, the **Customer Orders** page will open.
 

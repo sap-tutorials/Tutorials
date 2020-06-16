@@ -44,7 +44,7 @@ With Mobile Development Kit, you can also create applications that are online or
 
     >The _MDK Base Project_ template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 4. Enter the **Project Name** as `MDKOnlineApp` and click **Next**.
 
@@ -83,8 +83,6 @@ With Mobile Development Kit, you can also create applications that are online or
     >You can look in SAP Cloud Platform Mobile Services cockpit for the destination belongs to the MDK app by clicking on **Mobile Connectivity** feature.
     ![MDK](img_0032.png)
 
-    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
-
 8. Leave the default configuration as it is and click **Next** and then click **Finish**.
 
     ![MDK](img_006.png)
@@ -114,7 +112,7 @@ These are the metadata definitions available in the editor and the format in whi
 
   - **`Application.app`**: this is the main configuration file for your application from within SAP Web IDE. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
->You can find more details about [metadata definitions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/78e21fae61044df8ae8a78a43157fe8f.html).
+>You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
 
 Open the application settings in the application editor by double clicking on the Application.app in the project explorer pane.
 
@@ -125,7 +123,7 @@ Open the application settings in the application editor by double clicking on th
 >`CreateService.action` should be set at `OnLaunch` and success of this action should call `OpenService.action`.
 ![MDK](img_008.1.png)
 
->You can find more details about [OData actions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/3f462c086df846439d59fa88a2b4536b.html).
+>You can find more details about [OData actions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/Create.schema.html).
 
 [DONE]
 [ACCORDION-END]

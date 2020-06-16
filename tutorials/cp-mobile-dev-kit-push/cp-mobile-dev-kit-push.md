@@ -36,7 +36,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
     ![MDK](img_002.png)
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html)
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 2.  Enter the **Project Name** as `mdk_push` and click **Next**.
 
@@ -73,7 +73,7 @@ In this step, you will create the following actions:
 
     ![MDK](img_004.png)
 
-    >More details on _Push Notification Action_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/2c9594625f464a6aa91cd59dfbc6a04a.html).
+    >More details on _Push Notification Action_ is available in [help documentation](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/PushNotificationRegister.schema.html).
 
     Click **Next** and then **Finish** on the confirmation step.
 
