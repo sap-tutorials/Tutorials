@@ -3,7 +3,7 @@ title: Create an ABAP Core Data Services (CDS) View in SAP NetWeaver 7.5
 description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearance using built-in annotations
 auto_validation: true
 time: 45
-tags: [ tutorial>intermediate, products>sap-netweaver-7.5]
+tags: [ tutorial>beginner, products>sap-netweaver-7.5]
 primary_tag: topic>abap-development
 ---
 

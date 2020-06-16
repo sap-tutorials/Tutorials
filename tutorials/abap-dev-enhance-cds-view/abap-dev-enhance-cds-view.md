@@ -3,7 +3,7 @@ title: Enhance an ABAP Core Data Services (CDS) View in SAP NetWeaver 7.5
 description: Add features like value help, aggregations, and calculated fields to an existing CDS view
 auto_validation: true
 time: 60
-tags: [ tutorial>intermediate, products>sap-netweaver-7.5]
+tags: [ tutorial>beginner, products>sap-netweaver-7.5]
 primary_tag: topic>abap-development
 ---
 
