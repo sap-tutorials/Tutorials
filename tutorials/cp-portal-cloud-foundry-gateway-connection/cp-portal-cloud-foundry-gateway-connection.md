@@ -5,6 +5,7 @@ auto_validation: true
 time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform-portal
+author_name: Lindsay Bert
 ---
 
 ## Prerequisites
@@ -28,7 +29,7 @@ In this tutorial we are using the trial subaccount but you can also open your ow
 
     ![Log on to SAP Cloud Platform](1-enter-trial-account.png)
 
-2. Click your subaccount tile.
+2. Click on the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can select it instead..
 
     ![Click trial account](2-click-trial.png)
 
@@ -69,7 +70,7 @@ In this tutorial we are using the trial subaccount but you can also open your ow
     | `sap-client`          | `002`
     | `WebIDESystem`    | `Gateway`
     | `WebIDEUsage`           | `odata_gen, odata_abap, bsp_execute_abap`
-    | `sap-Platform`          | `ABAP`
+    | `sap-platform`          | `ABAP`
 
 6. Click **Save**.
 

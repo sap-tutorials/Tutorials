@@ -3,7 +3,7 @@ title: Set Up Business Process Management Services in Cloud Cockpit
 description:  Set up services to automate and achieve operational insights into employee onboarding processes.
 
 auto_validation: true
-time: 20
+time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
 ---
@@ -12,7 +12,7 @@ primary_tag: products>sap-cloud-platform
 ### You will learn
   - How to enable and configure workflow, business rules and process visibility services
 
-Intelligent Business Process Management is a family of services to automate business processes, manage decision logic and provide end-to-end visibility in your processes.
+Digital process automation for live processes is a family of services to automate business processes, manage decision logic and provide end-to-end visibility in your processes.
 
 Users can now use SAP Cloud Platform Workflow, SAP Cloud Platform Business Rules and SAP Cloud Platform Process Visibility services together to create process extensions on top of any business application, orchestrate tasks or build process-centric differentiating applications.
 
@@ -46,7 +46,7 @@ To create service instances for business process management services, you need t
 
     |  Entitlement     | Description
     |  :------------- | :-------------
-    |  Business Rules, Workflow and Process Visibility | These are core services of Intelligent BPM which will be needed to run the next tutorials.
+    |  Business Rules, Workflow and Process Visibility | These are core services of workflow management which will be needed to run the next tutorials.
     |  Portal, Application Runtime, HTML5 Applications | These services are needed to setup and access Process Visibility and Workflow applications from Fiori Launchpad
     |  Connectivity    | This service is needed to create and configure destinations
 
@@ -129,7 +129,7 @@ Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/
 
 [ACCORDION-BEGIN [Step 5: ](Build and deploy)]
 
-When you build and deploy this application, new service instances will be created for each workflow, business rules and process visibility service in Cloud Foundry.
+When you build and deploy this application, new service instance will be created for each workflow, business rules and process visibility service in Cloud Foundry.
 
 1. Right-click on the `BPMServicesFLP` project and choose any of the **Build** options.
 
@@ -169,7 +169,7 @@ When you build and deploy this application, new service instances will be create
 
     ![New Role Collection](newrolecollection.png)
 
-    Enter **Name** as **`BPMServices`** and **Description** as **Roles to access Intelligent BPM services**. **Save** the changes.
+    Enter **Name** as **`BPMServices`** and **Description** as **Roles to access workflow management services**. **Save** the changes.
 
     ![New Role Collection](createrolecollection.png)
 
@@ -289,17 +289,11 @@ You can open both the links in different browser tabs and use them in further tu
 
     ![Open FLP](approuterlink.png)
 
-    The app-router link will open the SAP Fiori launchpad with **Workflow** and **Process Visibility** tiles.
+    The app-router link will open the SAP Fiori launchpad with **Business Rules**, **Workflow** and **Process Visibility** applications.
 
     ![Open BPM FLP](bpmFLP.png)
 
-    In the same app-router link, copy and paste this URL fragment `/comsapbpmrule.ruleeditor/index.html` in the end to open business rules editor.
-
-    > For example: `https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/comsapbpmrule.ruleeditor/index.html`
-
-    ![Open Rule Editor](openruleeditor.png)
-
-These steps complete the setup of the starter scenario for Intelligent Business Process Management in your trial account. In the next tutorial, you will access the sample content of these different services, quickly set them up in your account and then run the scenario to get an integrated experience.
+These steps complete the setup of the starter scenario for workflow management services in your trial account. In the next tutorial, you will access the sample content of these different services, quickly set them up in your account and then run the scenario to get an integrated experience.
 
 [DONE]
 [ACCORDION-END]
