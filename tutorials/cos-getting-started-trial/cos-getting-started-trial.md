@@ -3,7 +3,7 @@ title: Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing
 description: Use SAP Customer Order Sourcing to reduce delivery costs by applying an efficient sourcing strategy.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>topic>sap-api-business-hub]
+tags: [ tutorial>beginner, products>sap-cloud-platform, topic>sap-api-business-hub, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
@@ -94,7 +94,7 @@ You upload master data from the API Business Hub. Since there are already source
 
 2. On the left side choose **Availability Raw Data**.
 
-    !![API Hub](API Hub.png)
+    !![API Hub](API_Hub.png)
 
 3. Open `POST/availabilityRawData` and choose try out.
 
