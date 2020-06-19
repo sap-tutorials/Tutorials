@@ -1,9 +1,9 @@
 ---
 title: Set Up SAP Customer Order Sourcing Manually
-description: Set up SAP Customer Order Sourcing manually.
+description: Learn to set up SAP Customer Order Sourcing start to finish, how to add Users and give them appropriate permissions.
 auto_validation: true
 time: 5
-tags: [ tutorial>beginner, topic>cloud]
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
@@ -16,9 +16,14 @@ primary_tag: topic>cloud
 ### You will learn
   - How to manually set up SAP Customer Order Sourcing
 
-In this tutorial you learn how to set up SAP Customer Order Sourcing from start to finish. This might help in giving you a better understanding how the service works and shows you the options you have, when working with it.
+In this tutorial you learn how to set up SAP Customer Order Sourcing from start to finish.
 
-If you want an easy and quick way to setup SAP Customer Order Sourcing, use this tutorial: [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial).
+This might help you in getting a better understanding on how the service works and shows you the options you have, when working with it.
+
+With this you'll learn exactly what you have to do to add Users to your service and how to give them the appropriate permissions.
+
+But if you want an easy and quick way to setup SAP Customer Order Sourcing, use this tutorial: [Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing](cos-getting-started-trial).
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Subscribe to SAP Customer Order Sourcing)]
