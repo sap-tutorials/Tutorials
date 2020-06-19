@@ -56,8 +56,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Assign required roles)]
->**IMPORTANT**:
- With this step, you define permissions for users accessing SAP Cloud Platform Integration. For different tasks, different role templates are predefined. Each role template contains the permissions for a set of tasks done by a typical persona such like the integration developer. We propose that you define an own role template that contains the most important role templates predefined by SAP.
+>With this step, you define permissions for users accessing SAP Cloud Platform Integration. For different tasks, different role templates are predefined. Each role template contains the permissions for a set of tasks done by a typical persona such like the integration developer. We propose that you define an own role template that contains the most important role templates predefined by SAP.
 
 
 1. In the breadcrumbs, select your subaccount to navigate to the subaccount level.
@@ -84,15 +83,13 @@ author_profile: https://github.com/Vikramkulkarni01
 
     !![Add additional roles](2.5.add-additional-roles.png)
 
-    >**IMPORTANT**: You add these roles to grant you user the required permissions to access the Integration Flow Designer and model an integration flow. For additional information on roles in SAP Cloud Platform Integration, check out the official documentation on [Available Roles and Authorization Groups](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/82769d840c8d422c941a407a2243270a.html).
-
 [VALIDATE_7]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure trust)]
 
->**IMPORTANT**: This newly defined role collection will be used to group all role templates predefined by SAP that you like to assign.
+>This newly defined role collection will be used to group all role templates predefined by SAP that you like to assign.
 
 1. Select your subaccount name to navigate to your subaccount level. Select **Security** > **Trust Configuration**.
 
