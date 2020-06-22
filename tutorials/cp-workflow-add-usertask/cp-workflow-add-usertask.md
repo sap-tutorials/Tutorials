@@ -1,5 +1,5 @@
 ---
-title: Add a User Task to Your Workflow
+title: Add a User Task to Your Workflow (Neo)
 description: Enhance your workflow with a user task, in this case, to add an approval.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
@@ -100,7 +100,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
 6. Under **Recipients**, define who will receive the task. Enter your user ID exactly as displayed in the user info.
     > The field is case sensitive.
 
-7. Under **User Interface**, enter dummy entries (**`test`**) for the application and component names of the SAPUI component, which displays the task in the inbox.
+7. Under **User Interface**, enter dummy entries ( **`test`** ) for the application and component names of the SAPUI component, which displays the task in the inbox.
 
     ![Add User Interface](add-user-interface.png)
 

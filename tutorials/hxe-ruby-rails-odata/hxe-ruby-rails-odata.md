@@ -3,25 +3,20 @@ title: Creata a Tiny World Ruby on Rails Application using OData services to con
 description: Create a sample Ruby on Rails application which connects to SAP HANA, Express Edition using OData Services
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition, tutorial>how-to  ]
+time: 15
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - You have Ruby and Rails installed on your development environment.
  - You have an instance of SAP HANA, Express Edition deployed and running.
  - You have an OData service deployed on the instance of SAP HANA, Express Edition as per the prerequisite OData tutorial.
- - **Tutorials:** [SAP HANA, express edition, in Google Cloud Platform Launcher](https://developers.sap.com/tutorials/hxe-gcp-getting-started-launcher.html)
+ - **Tutorials:** [SAP HANA, express edition, in Google Cloud Platform Launcher](hxe-gcp-getting-started-launcher)
 
-
-## Next Steps
- - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
 
 ## Details
 ### You will learn
 This tutorial will guide you through the process to create a sample Ruby on Rails application which connects to SAP HANA, Express Edition, using OData services. This tutorial assumes that you have already created an OData service as mentioned in the prerequisite tutorial.
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -131,6 +126,3 @@ The results should look like below.
 [ACCORDION-END]
 
 You now have a working Ruby on Rails application that connects to SAP HANA, Express Edition using OData services.
-
-
-

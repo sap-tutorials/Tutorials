@@ -152,7 +152,7 @@ As stated previously, the ***SAP HANA Automated Predictive Library*** (APL) uses
 
 SAP HANA APL provides a ***Forecast*** function that can address Time Series analysis scenarios.
 
-This algorithm will apply and combine several techniques to your data in order to find the best model. Here is are the techniques used:
+This algorithm will apply and combine several techniques to your data in order to find the best model. Here are the techniques used:
 
  - The default technique of the **SAP Predictive Analytics** Automated Analytics engine
  - The exponential smoothing technique

@@ -1,6 +1,7 @@
 ---
 title: Compare Prepared and Executed Plan
 description: Generate and compare Prepared and Executed plans.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -82,6 +83,7 @@ Click on the drop down arrow to fully expand the query plan. Keep the Prepared P
 
 > Note: Notice how you cannot expand "Remote Row Scan". The reason for this is because the Prepared Plan does not include detailed plan information from Dynamic Tiering and as such the "Remote Row Scan" does not have any information to present.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -111,6 +113,7 @@ Once the Inner Plan has been opened, you will see the following showing what ope
 
 ![Inner Plan](inner-plan.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -135,6 +138,6 @@ You can get more detailed information by hovering over an element in the plan as
 
 ![Detailed Information](detailed-information.png)
 
+[DONE]
 
 [ACCORDION-END]
-

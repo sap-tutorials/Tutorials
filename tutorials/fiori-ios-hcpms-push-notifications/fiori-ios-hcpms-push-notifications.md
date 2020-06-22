@@ -1,292 +1,350 @@
 ---
-title: Push notifications
-description: Implement push notifications into your application with SAP Cloud Platform mobile service for development and operations.
+title: Enable the Push Notification service for your iOS app
+description: Use the SAP Cloud Platform Mobile Services and Apple Developer Account to enable Push Notifications for you iOS app.
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, software-product-function>sap-cloud-platform-mobile-services ]
+time: 35
 ---
-## Prerequisites  
- - **Proficiency:** Intermediate
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Apple ID:** A paid Apple developer account is required
- - **Tutorials:** [List Report Floorplan](https://developers.sap.com/tutorials/fiori-ios-scpms-floorplan.html)
 
-## Next Steps
- - [Application logging and tracing](https://developers.sap.com/tutorials/fiori-ios-hcpms-application-logging.html)
+## Prerequisites  
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 5.0 or higher
+- [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
+- **Apple ID:** A paid Apple developer account is required
 
 ## Details
 ### You will learn  
-In this tutorial, you will implement push notifications into your application, and use the SAP Cloud Platform mobile service for development and operations push notification configuration settings.
-
-### Time to Complete
-**30 Min**.
+- How to setup your Xcode project and SAP Cloud Platform Mobile Services to send/receive notifications.
 
 ---
 
-You can use the Apple Push Notification Service to propagate information from the backend to the device. In this tutorial you use the native iOS push services to enable APNS for your iOS application. To enable your application for push notifications, you need to carry out the following tasks:
+You can use the Apple push notification Service to propagate information from the backend to the device. In this tutorial you use the native iOS push services to enable APNS for your iOS app. To enable your app for push notifications, you need to carry out the following tasks:
 
+*  Create an App ID (automated)
+*  Create provisioning profile (automated)
 *  Create CSR (Certificate Signing Request) file
-*  Create an App ID
-*  Create provisioning profile
-*  Update your application to use Push Notifications
+*  Create a CER file
+*  Install the CER file and create a p12 file
+*  Update your application to use push notifications
 *  Configure APNS in SAP Cloud Platform cockpit
 
-> In order to implement Push Notifications, a paid Apple developer account is required. Students or other developers with a personal Apple ID for their team will not be able to use push notifications, because they won't have access to the Developer Portal to generate the required certificate.
+> In order to implement push notifications, a paid Apple developer account is required. Students or other developers with a personal Apple ID for their team will not be able to use push notifications, because they won't have access to the Developer Portal to generate the required certificate.
 
-[ACCORDION-BEGIN [Step 1: ](Create CSR (Certificate Signing Request) file)]
+[ACCORDION-BEGIN [Step 1: ](Use Xcode to create an App ID and Provisioning Profile)]
 
-First, we create the **CSR file**.
+The App ID is used to identify your app and ensures the Apple push notification Servers will properly send push notifications to your app. The Provisioning Profile will be used to sign your app later on.
 
-On your Mac, open the **Keychain Access** application, and navigate to **Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority...**
+With the help of Xcode we don't have to do much manually to create those two things.
+Open up your Tutorial Sample App project in Xcode.
 
-![Keychain Access menu](fiori-ios-hcpms-push-notifications-01.png)
+We make sure everything is set up correctly.
 
-In the dialog, enter the email address you use which is associated with your Apple Developer account. Also, make sure you tick the **Request is saved to disk** option.
+1. First let's see if the project is configured correctly. Click on the `.xcodeproj` file to open the project configuration of your app. Make sure you are on the **General** tab.
 
-![Keychain Access dialog](fiori-ios-hcpms-push-notifications-02.png)
+    ![Xcode setup](fiori-ios-hcpms-push-notifications-01.png)
 
-Click **Continue**.
+    Make sure your **Bundle Identifier** is correct in the **Identify** section.
 
-Choose a folder to store the certificate -- it is good practice to store generated files in a separate folder for each project -- and click **Save**.
+2. Switch to the **signing & Capabilities** tab to make sure **Automatically manage signing** is activated and you chose the correct **Signing Certificate** & **Team**.
 
-Once you see a dialog saying the certificate is saved successfully, click **Done** to finish.
+    ![Xcode setup](fiori-ios-hcpms-push-notifications-02.png)
 
-![Keychain Access dialog](fiori-ios-hcpms-push-notifications-03.png)
+3. Next we make sure the app uses the push notification capability. For that click on the **+ Capability** button and enable **Push Notifications**.
 
-The certificate you just saved will be used to sign other certificates in the Apple Developer website.
+    ![Xcode setup](fiori-ios-hcpms-push-notifications-03.png)
 
+    You should see the **Push Notifications** capability show up in the capability list for your project.
 
-[DONE]
-[ACCORDION-END]
+    ![Xcode setup](fiori-ios-hcpms-push-notifications-04.png)
 
-[ACCORDION-BEGIN [Step 2: ](Create an App ID)]
-
-Now, you need to create a new App ID in the Apple Developer Member Center. This App ID is used to identify your app and ensures the Apple Push Notification Servers properly push notifications to your app.
-
-Open a browser, go to [https://developer.apple.com/membercenter/](https://developer.apple.com/membercenter/), and click the **Certificates, IDs and Profiles** link.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-04.png)
-
-Navigate to **Identifiers > App IDs** and click the **Plus-sign** button on the top right:
-
-![App ID creation](fiori-ios-hcpms-push-notifications-05.png)
-
-Enter the following details:
-
-|Field|Value|
-|----|----|
-| App ID Description | `SAP Cloud Platform for iOS Demo` |
-| App ID Prefix | This should be prefixed with your Apple Developer's Team ID |
-| Explicit App ID > Bundle ID | `com.sap.tutorial.demoapp.Demo` |
-
-![App ID creation](fiori-ios-hcpms-push-notifications-06.png)
-
-> You must set **Explicit App ID** to enable Push Notifications
-
-Now, scroll down to the **App Services** area, and tick **Push Notifications**:
-
-![App ID creation](fiori-ios-hcpms-push-notifications-07.png)
-
-Click **Continue**. In the next screen, review your settings, and click **Register**.
-
-You should now see a **Registration Complete** message. Click **Done**. Your App ID should now be listed:
-
-![App ID creation](fiori-ios-hcpms-push-notifications-09.png)
-
-Click on the **SAP Cloud Platform for iOS Demo** App ID. The panel should expand, and list the **Push Notification** as **Configurable** for both Development as well as Distribution (Productive) use.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-10.png)
-
-> In this tutorial, you will configure it for Development use. The steps for Distribution (productive) use are similar.
-
-Click the **Edit** button at the bottom of the panel, and scroll to the **Push Notification** section. Click the **Create Certificate...** button on the **Development SSL Certificate** panel.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-11.png)
-
-In the screen that follows, the steps to create a CSR are outlined. Since you already created a CSR, you can click **Continue**.
-
-In the next screen, click the **Choose File...** button and browse to the **CSR** file you created in Step 1 of this tutorial.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-12.png)
-
-Click **Continue**.
-
-In the next screen, you must download the generated certificate:
-
-![App ID creation](fiori-ios-hcpms-push-notifications-13.png)
-
-Click the **Download** button and save the resulting `aps_development.cer` file. Open the file, and it will be added to the **Keychain Access** in the **login** keychain:
-
-![App ID creation](fiori-ios-hcpms-push-notifications-14.png)
-
-With **login** keychain and **My Certificates** category selected in the left pane, and the new certificate selected in the main pane, choose **File > Export items...** from the top menu:
-
-![App ID creation](fiori-ios-hcpms-push-notifications-15.png)
-
-In the dialog, save it as `.p12` format to the folder you saved the CSR file.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-16.png)
-
-If it asks for specifying a password, provide one and click **OK**.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-17.png)
-
-> While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Cloud Platform mobile service for development and operations.
-
-
-[VALIDATE_2]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Import certificate into SAP Cloud Platform mobile service for development and operations)]
-
-Open your **SAP Cloud Platform Cockpit** and navigate to **Services > Development and Operations > Configure Development & Operations > Roles**
-
-Assign your user the **Notification User** role
-
-![App ID creation](fiori-ios-hcpms-push-notifications-31.png)
-
-After you have assigned the role, navigate back to to **Development & Operations** and click **Go to Service** to open **SAP Cloud Platform mobile service for development and operations**
-
-Navigate to **Applications**, select your application and from the context menu select **Configure** and switch to the **Push** tab.
-
-Scroll down a bit to the **Apple** panel and provide the following details:
-
-| Field | Value |
-|----|----|
-| APNS Endpoint | Select `Sandbox` |
-| Certificate | Browse to the `.p12` certificate you just exported |
-| Password | Enter the password you provided during the export |
-
-![App ID creation](fiori-ios-hcpms-push-notifications-32.png)     
-
+    Our App Project is now configured.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Provisioning Profile)]
+[ACCORDION-BEGIN [Step 2: ](Create the Certificate Signing Request file)]
 
-Next, you need to create a **Provisioning Profile** for Development usage which is used to code sign your application.
+In order to use the **Apple Push Notification service**, we need to create a **CSR file**.
 
-Open a browser to the **Apple Developer** page, and navigate to **Certificates, IDs and Profiles > Provisioning Profiles > Development** and click the **Plus** button in the top-right.
+1. On your Mac, open the **Keychain Access** application, and navigate to **Keychain Access > Certificate Assistant > Request a Certificate From a Certificate Authority...**
 
-Under **Development**, select **iOS App Development** and click **Continue**.
+    ![CSR creation](fiori-ios-hcpms-push-notifications-05.png)
 
-![App ID creation](fiori-ios-hcpms-push-notifications-18.png)
+2. Click on **Continue**.
 
-Select your demo application from the drop-down and click **Continue**.
+    ![CSR creation](fiori-ios-hcpms-push-notifications-06.png)
 
-![App ID creation](fiori-ios-hcpms-push-notifications-19.png)
+3. Click on **Done**.
 
-Select your **iOS Development Certificate** from the list and click **Continue**.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-20.png)
-
-Select the **device you registered for development** from the list and click **Continue**.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-21.png)
-
-Enter a name for your **Provisioning Profile** and click **Continue**.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-22.png)
-
-Your **Provisioning Profile** is now ready. Click the **Download** button and save the file locally.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-23.png)
-
+    The certificate is now saved to you hard drive and added to your Keychain as well as a public and private.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Examine your application's Push Notifications code)]
+[ACCORDION-BEGIN [Step 3: ](Create .CER file in your Apple Developer Account)]
 
-Open your application in Xcode, select the project name from the **Project Navigator** and switch to the **General** tab. Your team, provisioning profile and signing certificate should be listed:
+1. Go to your [Apple Developer Account](https://developer.apple.com) and click on **Certificates, IDs & Profiles**.
 
-![App ID creation](fiori-ios-hcpms-push-notifications-25.png)
+    ![CER creation](fiori-ios-hcpms-push-notifications-07.png)
 
-Switch to the **Capabilities** tab, and enable **Push Notifications** by flipping the switch:
+2. From there click on **Identifiers** to get the list of all your apps.
 
-![App ID creation](fiori-ios-hcpms-push-notifications-26.png)
+    ![CER creation](fiori-ios-hcpms-push-notifications-08.png)
 
-Open the `AppDelegate.swift` file and locate the `func application(_: UIApplication, willFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool` function.
+3. Now locate the `com.sap.example.TutorialApp`. Click on it to see the details.
 
-Examine the contents of this function:
+    > If by any chance you've used a different App name or/and bundle identifier, select that one in the list.
 
-```swift
-func application(_: UIApplication, willFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
-    UIApplication.shared.registerForRemoteNotifications()
-    let center = UNUserNotificationCenter.current()
-    center.requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
-        // Enable or disable features based on authorization.
+    > If in any case you can't see your app listed here please go ahead and follow the creation process of an App ID with the **Plus** icon. Make sure the app name and identifier are the same as your Xcode project.
+
+    ![CER creation](fiori-ios-hcpms-push-notifications-09.png)
+
+4. In the upcoming detail screen please scroll down until you see the **Push Notifications** in the list.
+
+    You can see Xcode also made sure that **Push Notifications** is enabled for your app. Now you have to configure this app feature.
+
+5. Click on **Configure**.
+
+    ![CER creation](fiori-ios-hcpms-push-notifications-10.png)
+
+6. Click on **Create Certificate** to start the workflow for creating the needed `.CER` file.
+
+    ![CER creation](fiori-ios-hcpms-push-notifications-10a.png)
+
+7. The workflow asks you to upload the previously created `CSR` file. Please click on **Choose File** to upload the file. To download your `CER` please click on **Continue**.
+
+    ![CER creation](fiori-ios-hcpms-push-notifications-10b.png)
+
+    Apple will now create a `.CER` file for you which is issued by the **Apple Worldwide Developer Relations Certification Authority**.
+
+8. Click on the **Download** button to download your certificate.
+
+    ![CER creation](fiori-ios-hcpms-push-notifications-10c.png)
+
+9. If you go back to the certificates list, you should see the just created certificate listed.
+
+    ![CER creation](fiori-ios-hcpms-push-notifications-11.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Install the .CER file and create the .p12 file)]
+
+In order to configure the `APNS` on **SAP Cloud Platform Mobile Services** we need to install the `.CER` file and create the needed `.p12` file.
+
+> A `.p12` file is a encrypted container for the certificate and private key. This file is needed by Mobile Services for the `APNS` configuration.
+
+1. Locate your downloaded **`.CER`** file and double click on it in order to install the certificate.
+
+    > In case the **Add Certificate** dialog pops up make sure to choose **Login** from the dropdown and click on **Add**.
+
+    If the certificate is added correctly to the Keychain you should see it in the `My Certificates` section, make sure you selected **login** as keychain.
+
+    ![P12 creation](fiori-ios-hcpms-push-notifications-12.png)
+
+2. Select the certificate ctrl-click to export those two items.
+
+    ![P12 creation](fiori-ios-hcpms-push-notifications-13.png)
+
+    Make sure that in the dropdown **Personal Information Exchange (.p12)** is selected and click on **Save**. You will be prompted to enter a password, please do that and click on **OK** to export the files.
+
+    > While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Cloud Platform Mobile Services.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Add the Mobile Push Notification feature to your app)]
+
+The iOS Assistant automatically generates the necessary code for receiving and handling push notifications in your app but how do you actually send a notification to your users? - Using the **Mobile Push Notification** feature available on SAP Cloud Platform Mobile Services.
+
+1. Open your SAP Mobile Services instance on SAP Cloud Platform and navigate to the **Features** menu.
+
+    ![Push on Mobile Services](fiori-ios-hcpms-push-notifications-15.png)
+
+2. Locate the **Mobile Push Notification** feature tile and click on **Add to Application**.
+
+    ![Push on Mobile Services](fiori-ios-hcpms-push-notifications-15a.png)
+
+3. In the upcoming window, select your app and click on **OK**.
+
+    ![Push on Mobile Services](fiori-ios-hcpms-push-notifications-15b.png)
+
+    Mobile Services will now add that feature to your mobile application.
+
+    After the process is completed the **Mobile Push Notification** screen should appear. Here you can configure all sort of different push server, see all registered users and maintain Service Keys.
+
+4. To send push notifications to an iOS app it is necessary to have an APNS Endpoint configured. Fortunately with the help of Mobile Services this is done for you.
+
+    Choose **Sandbox** as **APNS Endpoint**, **Browse...** for your previously created `.p12` file and enter the given password.
+
+    ![Push on Mobile Services](fiori-ios-hcpms-push-notifications-15c.png)
+
+5. Click on **Save**.
+
+    ![Push on Mobile Services](fiori-ios-hcpms-push-notifications-15d.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Add a new Service Key to the Mobile Push Notification feature)]
+
+1. In Mobile Service click on **Service Keys** and click on the **+** to create a new key for your application.
+
+    ![Service Keys on Mobile Services](fiori-ios-hcpms-push-notifications-16.png)
+
+2. In the upcoming dialog give the Service Key an **Alias** and add the following **Roles**:
+
+    - `push_multiple`
+    - `pushregistrations_read`
+
+    ![Service Keys on Mobile Services](fiori-ios-hcpms-push-notifications-16b.png)
+
+3. Click on **OK** to create the new Service Key.
+
+    ![Service Keys on Mobile Services](fiori-ios-hcpms-push-notifications-16c.png)
+
+4. Before we save our new Service Key click on **Enable Detailed Event Log** in the top-right corner. Now we get more detailed event logs in Mobile Services.
+
+    ![Service Keys on Mobile Services](fiori-ios-hcpms-push-notifications-16d.png)
+
+5. Click on **Save**.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Examine your application's Push Notifications code)]
+
+1. The generated code will have all push notifications code in the `AppDelegate.swift` file.
+    Open the `AppDelegate.swift` file to inspect the notifications code.
+
+    First, the device registers for remote notifications by calling the method `registerForRemoteNotifications(:)`. Then, you have specified the types of notifications your app will support, as well as added a reference to the notification settings class, which enables your application for the push notifications to be received. This will result in your application to display the **"App Name" Would Like to Send You Notifications** confirmation dialog.
+
+    Let's look at the `initializeRemoteNotification(:)` method. This method will take care of registering the app for receiving remote notifications and it will trigger the authorization request.
+
+    ```swift
+    func initializeRemoteNotification() {
+       // Registering for remote notifications
+       UIApplication.shared.registerForRemoteNotifications()
+       let center = UNUserNotificationCenter.current()
+       center.requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
+           // Enable or disable features based on authorization.
+       }
+       center.delegate = self
     }
-    center.delegate = self
-    return true
-}
-```
 
-First, the device registers for remote notifications by calling the method `registerForRemoteNotification`. Then, you have specified the types of notifications your app will support, as well as added a reference to the notification settings class, which enables your application for the push notifications to be received. This will result in your application to display the **"App Name" Would Like to Send You Notifications** confirmation dialog.
+    ```
 
-Let's look at the `registerForRemoteNotification` method. In this method, a reference to the SDK Foundation class `SAPcpmsRemoteNotificationClient` is made. With this API, you will upload the received device token to SAP Cloud Platform mobile service for development and operations:
+    The `uploadDeviceTokenForRemoteNotification(_:Data)` will take care of uploading the app's device token to the SAP Cloud Platform Mobile Services.
 
-```swift
-func registerForRemoteNotification(_ urlSession: SAPURLSession, _ settingsParameters: SAPcpmsSettingsParameters) {
-    guard let deviceToken = self.deviceToken else {
-        // Device token has not been acquired
-        return
-    }
+    ```swift
+    func uploadDeviceTokenForRemoteNotification(_ deviceToken: Data) {
+           guard let session = sessionManager.onboardingSession else {
+               // Onboarding not yet performed
+               return
+           }
+           let parameters = SAPcpmsRemoteNotificationParameters(deviceType: "iOS")
+           session.registerDeviceToken(deviceToken: deviceToken, withParameters: parameters) { error in
+               if let error = error {
+                   self.logger.error("Register DeviceToken failed", error: error)
+                   return
+               }
+               self.logger.info("Register DeviceToken succeeded")
+           }
+       }
 
-    let remoteNotificationClient = SAPcpmsRemoteNotificationClient(sapURLSession: urlSession, settingsParameters: settingsParameters)
-    remoteNotificationClient.registerDeviceToken(deviceToken) { error in
-        if let error = error {
-            self.logger.error("Register DeviceToken failed", error: error)
-            return
+    ```
+
+    The next methods located under the **`AppDelegate` method implementations for remote notification handling** mark, are delegate methods for all remote notification handling.
+
+    ```swift
+    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+            self.uploadDeviceTokenForRemoteNotification(deviceToken)
         }
-        self.logger.info("Register DeviceToken succeeded")
+
+    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        self.logger.error("Failed to register for Remote Notification", error: error)
     }
-}
 
-```
+    // Called to let your app know which action was selected by the user for a given notification.
+    func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        self.logger.info("App opened via user selecting notification: \(response.notification.request.content.body)")
+        // Here is where you want to take action to handle the notification, maybe navigate the user to a given screen.
+        completionHandler()
+    }
 
-With these two methods, you can receive notifications, but your application also needs to respond to them in a useful manner. Therefor, two delegate methods are implemented:
+    // Called when a notification is delivered to a foreground app.
+    func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        self.logger.info("Remote Notification arrived while app was in foreground: \(notification.request.content.body)")
+        // Currently we are presenting the notification alert as the application were in the background.
+        // If you have handled the notification and do not want to display an alert, call the completionHandler with empty options: completionHandler([])
+        completionHandler([.alert, .sound])
+    }
 
-```swift
-// Called to let your app know which action was selected by the user for a given notification.
-func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-    self.logger.info("App opened via user selecting notification: \(response.notification.request.content.body)")
-    // Here is where you want to take action to handle the notification, maybe navigate the user to a given screen.
-    completionHandler()
-}
+    ```
 
-// Called when a notification is delivered to a foreground app.
-func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-    self.logger.info("Remote Notification arrived while app was in forground: \(notification.request.content.body)")
-    // Currently we are presenting the notification alert as the application were in the background.
-    // If you have handled the notification and do not want to display an alert, call the completionHandle with empty options: completionHandler([])
-    completionHandler([.alert, .sound])
-}
-```
+2. If you now run the app on your physical device you have to first walk through the onboarding process to see the main screen of your app.
 
-If you now run your application from your device, you will notice it will first ask permission to display notifications:
+    You will notice the app will ask permission to receive push notifications:
 
-![App ID creation](fiori-ios-hcpms-push-notifications-29.PNG)
+    ![Push Notification test](fiori-ios-hcpms-push-notifications-15e.png)
 
-Go back to your **SAP Cloud Platform mobile service for development and operations Cockpit** and navigate to **Applications**. Click the **Action** icon next to your application, and select **Push** from the context menu.
+3. Click on **Allow**.
 
-In the **Push Desk**, find your device using the filter options, and enter the following content in the **Message** area:
+    If you look at the log outputs in Xcode you will notice that all the `registerDeviceToken(_:withParameters:completionHandler:)` got called and registered your phone's device token.
 
-```
-SAPcpms says: 'How do you like the tutorials so far?    
-```
+    ```Swift
+    2020-02-11 12:59:05.643632-0800 TutorialApp[27153:3287930] [general] # SAP.Foundation.RemoteNotificationClient.RemoteNotificationClient - INFO - (0x283415f00) - SAPcpmsRemoteNotificationClient.swift.registerDeviceToken(_:withParameters:completionHandler:) - Device token registration was successful
+    adDeviceTokenForRemoteNotification(_:) - Register DeviceToken succeeded
 
-If you click **Send**, your device should now receive a new push notification:
+    ```
 
-![App ID creation](fiori-ios-hcpms-push-notifications-30.PNG)
+[VALIDATE_7]
+[ACCORDION-END]
 
-> If you happen to have an Apple Watch, and have it configured to display push notifications received on your iPhone, the push notification you have sent via SAP Cloud Platform mobile service for development and operations will also be displayed on your Apple Watch:
+[ACCORDION-BEGIN [Step 8: ](Send push notifications to your phone)]
 
-> ![App ID creation](fiori-ios-hcpms-push-notifications-34.png)
+It is time now to send the first push notification from the **SAP Cloud Platform Mobile Services** push notification feature.
 
+1. Please login to your Mobile Services account and you will notice you can see your device being registered in the **Event Logs Today (UTC-0800)** section.
+
+    ![Push Notification Test](fiori-ios-hcpms-push-notifications-16e.png)
+
+2. Click on **Mobile Applications**, and then **Native/Hybrid** to get an overview of your existing apps.
+
+3. Select your app and then click on **Mobile Push Notification** under the **Assigned Features** section.
+
+4. Click on the **Push Registrations (1)** tab to see all the registered users. Right now the number should be one, and the one is your device.
+
+    > NOTE: In case that you walked through the onboarding process from different devices, you will have multiple **Device IDs**.
+
+5. Click on **Send Notification**.
+
+    ![Push Notification Test](fiori-ios-hcpms-push-notifications-16f.png)
+
+
+6. In the upcoming dialog you can now send a **Message** directly to your device.
+
+    Enter a message and click **Send**. The message should now be send to your device and displayed as notification.
+
+    ![Push Notification Test](fiori-ios-hcpms-push-notifications-17.png)
+
+    > If you happen to have an Apple Watch, and have it configured to display push notifications received on your iPhone, the push notification you have sent via Mobile Services will also be displayed on your Apple Watch.
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 9: ](Quick Look on the Advanced Option for Sending Push Notifications)]
+
+When you send a push notification over Mobile Services you can send it in a **General** way and in an **Advanced** one.
+
+The advanced option will provide you with the `JSON` payload of the notification you're about to send. This will give you more freedom on how the notification is going to be constructed.
+
+You can set icons, sound, change the title as well as the body message you want to send. For more information about push notification payloads, please take a look at the official documentation [Generating a Remote Notification](https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification).
+
+Congratulations you successfully setup your app, Mobile Services and send/received a push notification.
+
+[DONE]
+[ACCORDION-END]

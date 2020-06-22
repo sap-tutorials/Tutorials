@@ -1,6 +1,7 @@
 ---
 title: Setting Up SAP HANA System Replication with HANA Studio
 description: How to replicate a SAP HANA System in HANA Studio
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
@@ -29,6 +30,7 @@ The instances in the secondary system operate in recovery mode, which means all 
 
 ![System Replication Diagram](system-repl-diagram.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -55,6 +57,7 @@ System Replication enables recovery from a data center outage by switching to a 
 > `/usr/sap/<SID>/SYS/global/security/rsecssfs/key/SSFS_<SID>.KEY`
 > The copied files will become active during system restart, therefore it is recommended to copy them when the secondary HANA system is offline.
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -108,5 +111,6 @@ The secondary system will now start automatically.
 
 You have enabled system replication and registered the secondary system with the primary system. The secondary system operates in recovery mode. All secondary system services constantly communicate with their primary counterparts, replicate and persist data and logs, and load data to memory. However, the secondary system does not accept SQL connections.
 
+[DONE]
 
 [ACCORDION-END]

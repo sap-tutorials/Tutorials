@@ -16,7 +16,7 @@ In this tutorial, you will install and configure the SAP HANA Tools for Eclipse.
 
 Then, you will learn how to connect to the System database and the HXE tenant of your SAP HANA, express edition instance.
 
-For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
+For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](mlb-hxe-tools-sql).
 
 [ACCORDION-BEGIN [Prerequisite: ](Install Eclipse IDE)]
 
@@ -84,7 +84,7 @@ By default, a ***SYSTEM*** user is always created with every ***System database*
 
 Most installation will force you to setup a new password either upon the first start of the virtual machine (also referred as ***HANA Database Master*** password), during the setup with the manual binary installation or using a password configuration file with ***`Docker`***.
 
-Make you have the proper credentials, as after 5 failed login attempts, the user account will be locked for 1440 minutes which is the database default password policy).
+Make you have the proper credentials, as after 5 failed login attempts, the user account will be locked for 1440 minutes, which is the database default password policy.
 
 [DONE]
 [ACCORDION-END]

@@ -3,7 +3,7 @@ title: Tour the SAP Community
 description: Explore the various features of SAP Community, familiarize yourself with community guidelines, discover how to get the most out of your membership, and earn the Tour the Community badge.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, topic>sap-community ]
+tags: [  tutorial>beginner, topic>sap-community  ]
 primary_tag: topic>sap-community
 ---
 
@@ -74,13 +74,15 @@ Once you have set your profile to public, you can follow a person or a tag, as w
 
 Take these steps to follow tags, content, and people.
 
+In order for your blogging permissions to change from **Subscriber** to **Contributor**, you MUST perform all of the activities in this step before you click **Done**. Activities taken previously, or just clicking **Done** without doing the activities, will not enable the permission change. (If you wish to undo the activities afterwards, for example unfollow a piece of content you followed for this step, you may do so.)
+
 ### Follow a tag
 
 1. Go to the main [Questions and Answers page](https://answers.sap.com/index.html) or the [main Blogs page](https://blogs.sap.com/).
 
 2. Find **Popular Tags** on the right-hand side (expanding the list if necessary) and click **View All**.
 
-    ![How to Follow Tags in Questions](Follow-tag-questions.png)
+    ![How to Follow Tags in Questions](Follow-tags.png)
 
 3. Click a tag that interests you on the **All Tags** page to go to that tag's page.
 
@@ -194,6 +196,8 @@ Completing this tutorial will grant you the ability to write blog posts (if you 
 2. Log in.
 
 3. Go to the [Write a Blog Post](https://blogs.sap.com/wp-admin/post-new.php) page to confirm your permissions.
+
+If your blogging permissions haven't changed, please make sure that you completed all of the actions listed in Step 4 above -- you must perform all four actions during the step; clicking **Done** is not enough -- then complete Step 11 again. If you are still unable to write a blog post (after confirming that you have completed all of the actions in Step 4 at least once during your session, as well as Step 11 afterwards), please contact <a href="mailto:community@sap.com">community@sap.com</a>.
 
 [DONE]
 [ACCORDION-END]

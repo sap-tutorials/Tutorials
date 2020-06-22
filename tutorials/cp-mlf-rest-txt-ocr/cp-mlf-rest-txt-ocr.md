@@ -80,7 +80,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-fs-ocr.cfapps.eu10.hana.ondemand.com/api/v2/image/ocr`</nobr>
+<nobr>URL<nobr>          | the value for **`IMAGE_OCR_URL`** in your service key
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 
@@ -106,7 +106,7 @@ You should receive a response that includes the text found:
 ]
 ```
 
-You can also try with the following PDF file [link](ocr-test.pdf).
+You can also try with the following PDF file [link](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/cp-mlf-rest-txt-ocr/ocr-test.pdf).
 
 [DONE]
 [ACCORDION-END]

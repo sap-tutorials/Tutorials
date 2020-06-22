@@ -29,6 +29,8 @@ Log in as `hxeadm`. Depending on your version of SAP HANA, express edition, you 
 * If you do not have the update utility, use the Download Manager. Select **Binary Installer** and download the latest files for `hxe.tgz` (server-only), and `hxexsa.tgz` (Applications) if applicable.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extract the Packages)]
@@ -43,6 +45,8 @@ tar -zxf <downloaded_path>/hxe.tgz
 tar -zxf <downloaded_path>/hxexsa.tgz
 ```
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -71,7 +75,8 @@ Follow the prompts to complete the server update.
 
 
 
+[DONE]
+
 [ACCORDION-END]
 
 ---
-

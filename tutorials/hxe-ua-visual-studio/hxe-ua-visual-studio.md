@@ -12,7 +12,7 @@ time: 5
  - **Proficiency:** Beginner
 
 ## Next Steps
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://developers.sap.com/tutorials/hxe-ua-visual-studio-tables.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](hxe-ua-visual-studio-tables)
 
 ## Details
 ### You will learn
@@ -32,11 +32,13 @@ Download and install Microsoft Visual Studio directly from Microsoft. The Micros
 
 For more information, visit the [Microsoft Visual Studio](https://www.visualstudio.com/) webpage.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the SAP HANA, express edition Download Manager )]
 
-You can download the SAP HANA plugin for Microsoft Visual Studio by downloading the SAP HANA, express edition download manager. Go to the [SAP HANA, express edition](https://www.sap.com/sap-hana-express) homepage and click **Install SAP HANA, express edition**.
+You can download the SAP HANA plugin for Microsoft Visual Studio by downloading the SAP HANA, express edition download manager. Go to the [SAP HANA](https://developers.sap.com/topics/sap-hana.html) homepage and click **Install SAP HANA, express edition**.
 
 Enter your information and click **Register**.
 
@@ -48,6 +50,8 @@ Click on the appropriate Download Manager version for your system to download.
 
 > **Note:**
 > The SAP HANA Plugin works with SAP HANA and SAP HANA, express edition. For these tutorials, we use an SAP HANA, express edition installation as an example.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -62,6 +66,8 @@ Unzip `hdb_client_windows_x86_64.zip` and run `hdbinst.exe`. Follow the onscreen
 
 > **Note:**
 > Ensure that you are not running an instance of Microsoft Visual Studio while you are installing the plugin.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -87,5 +93,7 @@ Ensure that __Connect database__ is set to __System Database__.
 For __Login information__, the __User name:__ is __SYSTEM__ and the __Password:__ is the password you set when you installed SAP HANA or SAP HANA, express edition.
 
 ![Add Connection Sample](add_connection_sample.png)
+
+[DONE]
 
 [ACCORDION-END]

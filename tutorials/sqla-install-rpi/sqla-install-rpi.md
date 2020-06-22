@@ -38,7 +38,7 @@ It can take even up to one hour to finish the previous command depending on the 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Register for SAP SQL Anywhere Developer Edition)]
-Register for the SAP SQL Anywhere Developer Edition: <https://www.sap.com/cmp/syb/crm-xu15-int-sqldevft/index.html>
+Register for the SAP SQL Anywhere Developer Edition: <https://www.sap.com/cmp/td/sap-sql-anywhere-developer-edition-free-trial.html>
 
 Once you have received confirmation e-mail, check its content for links to download software packages for different versions, links to documentation and a link to user forums.
 
@@ -47,15 +47,15 @@ Once you have received confirmation e-mail, check its content for links to downl
 
 
 [ACCORDION-BEGIN [Step 3: ](Download the software)]
-Copy the link to SAP SQL Anywhere 17 `Linux for ARM` software from the registration confirmation e-mail.
-![Copy the link](sqla01_01.png)
+Copy the link to SAP SQL Anywhere 17 `Linux for ARM` software from the registration form on the web or the registration confirmation e-mail.
+![Copy the link](sqla01_01b.png)
 
 Open a shell on your Raspberry Pi (either through SSH or from the desktop). Download and extract the SQL Anywhere software.
 
 ```sh
 cd /tmp
 wget http://[hostnamefromemail].cloudfront.net/sqla17developer/bin/sqla17developerlinuxarm.tar.gz
-tar -xfv sqla17developerlinuxarm.tar.gz
+tar -xvf sqla17developerlinuxarm.tar.gz
 ls sqlany17/
 ```
 
@@ -70,6 +70,7 @@ sudo ./setup
 ```
 
 Follow installation prompts to:
+
  1. Select your location or region
  2. Read and accept the License Agreement
  3. Select an installation type **Create a new installation**
@@ -81,6 +82,7 @@ Follow installation prompts to:
  9. Review the `README` file.
 
 The setup is finished and the following components should be installed:
+
 - `SQL Anywhere Client (32-bit)`
 - `SQL Anywhere Server (32-bit)`
 - `MobiLink Client (32-bit)`
@@ -122,7 +124,7 @@ dbsrv17 -v
 
 
 [ACCORDION-BEGIN [Step 6: ](Check SAP SQL Anywhere documentation)]
-Check complete documentation: <http://dcx.sap.com/index.html#sqla170/en/html/822e707dc8624445a615b7180321d900.html>
+Check complete documentation: <https://help.sap.com/viewer/product/SAP_SQL_Anywhere/>
 
 
 [ACCORDION-END]

@@ -1,5 +1,5 @@
 ---
-title: Configure the SAP HANA R integration with SAP HANA, express edition
+title: Configure the SAP HANA R Integration with SAP HANA, express edition
 description: Provide details on the installation and configuration of the SAP HANA R integration with SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
@@ -48,7 +48,7 @@ Since the internal column-oriented data structure used within the SAP HANA datab
 
 A key benefit of having the overall control flow situated on the database side is that the database execution plans are inherently parallel and, therefore, multiple R processes can be triggered to run in parallel without having to worry about parallel execution within a single R process.
 
-[ACCORDION-BEGIN [Step 1: ](Create a Dedicated User)]
+[ACCORDION-BEGIN [Step 1: ](Create a dedicateduser)]
 
 As a best practice, it is recommended to create a dedicated user to run your R activities.
 
@@ -79,7 +79,7 @@ sudo su -l radm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Install C Compiler & Required Packages)]
+[ACCORDION-BEGIN [Step 1: ](Install C compiler & required packages)]
 
 To complete the Jupyter setup, you will need some additional packages
 
@@ -219,7 +219,7 @@ sudo yum -y install \
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Verify Your Java Installation)]
+[ACCORDION-BEGIN [Step 2: ](Verify your Java installation)]
 
 One the requirement to install and enable the SAP HANA R integration with SAP HANA, express edition is a 64-bit Java Runtime Environment (JRE) 8 or Higher.
 
@@ -299,7 +299,7 @@ No error message should be displayed.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download, Compile and Install R)]
+[ACCORDION-BEGIN [Step 4: ](Download, compile and install R)]
 
 As explained previously, we need to recompile R with `shlib` enabled in order to use it with SAP HANA, express edition.
 
@@ -338,7 +338,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Download, Compile and Install Rserve)]
+[ACCORDION-BEGIN [Step 5: ](Download, compile and install Rserve)]
 
 `Rserve` acts as a socket server (TCP/IP or local sockets) which allows binary requests to be sent to an R process.
 
@@ -389,6 +389,7 @@ Now, as we installed the `Rserve` as super user, we need to add proper rights to
 ```shell
 sudo chmod 755 /usr/lib64/R/bin/Rserve
 ```
+
 [DONE]
 [ACCORDION-END]
 

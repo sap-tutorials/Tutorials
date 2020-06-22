@@ -1,8 +1,10 @@
 ---
 title: SAP HANA XS Advanced - Package your MTA application for transport
 description: Transport your XS Advanced application for transport
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner ]
+tags: [  tutorial>beginner  ]
 time: 10
 ---
 
@@ -18,25 +20,24 @@ time: 10
 
 [ACCORDION-BEGIN [Step 1: ](Build your MTA application)]
 
-Right-click on your project and select **Build**
+Right-click on your project and select **Build->Build**
 
-![Build](export.png)
+This will take several minutes to complete.  
+![Build](build.png)
 
-You will see a file downloading from the browser. Take note of its location
-
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download and upload your MTA application)]
 
+You will find a new folder named `mta_archieves` and within a folder for your project.  Within this folder is the `MTAR` archive for your application.
+
 Export the .`mtar `file into a local directory in your computer:
 
 ![Export](export.png)
 
-Upload the `*mtar` file to a suitable directory.
-
-![Upload file GCP](upload.png)
-
+[DONE]
 
 [ACCORDION-END]
 
@@ -56,6 +57,7 @@ Use command `xs deploy` followed by the proper file:
 Make sure it finished successfully:
 ![Deploy finished](deploy2.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -69,6 +71,6 @@ And the application using `xs apps` in the corresponding space (for example, dev
 
 ![Deploy finished check](apps.png)
 
+[DONE]
 
 [ACCORDION-END]
-

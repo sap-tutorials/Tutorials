@@ -3,23 +3,23 @@ title: Create and Run an ABAP Application
 description: Create and run an ABAP application based on tables from the sample EPM data model.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5  ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
-
 ---
 
 ## Prerequisites  
-[Create an ABAP project in Eclipse](https://developers.sap.com/tutorials/abap-create-project.html)
+- You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+- **Tutorial**: [Create an ABAP Project in ABAP Development Tools (ADT)](https://developers.sap.com/tutorials/abap-create-project.html)
 
 ## Details
 ### You will learn  
-- How to create and run an ABAP application based on tables of the SAP NetWeaver Demo sample EPM Model (see also [The SAP NetWeaver Enterprise Procurement Model – An Introduction](https://www.sap.com/documents/2012/09/2a404253-5b7c-0010-82c7-eda71af511fa.html). So you can complete the tutorial on any SAP NetWeaver `7.5x` system.  
+- How to create and run an ABAP application based on tables of the SAP NetWeaver Demo sample EPM Model (see also [The SAP NetWeaver Enterprise Procurement Model – An Introduction](https://www.sap.com/documents/2012/09/2a404253-5b7c-0010-82c7-eda71af511fa.html)), so you can complete the tutorial on any SAP NetWeaver `7.5x` system.  
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create New ABAP Program)]
+[ACCORDION-BEGIN [Step 1: ](Create new ABAP program)]
 In the toolbar, choose **New** > **ABAP Program...**:
 
 ![Image depicting step1-new-program](step1-new-program.png)
@@ -87,7 +87,7 @@ Class methods are called using `=>` ; instance methods are called using `->`.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Save and Activate ABAP Program)]
+[ACCORDION-BEGIN [Step 6: ](Save and activate ABAP program)]
 Save and activate your program by choosing **Save** and **Activate** in the toolbar.
 
 ![Image depicting step6-save-and-activate-program](step6-save-and-activate-program.png)
@@ -95,7 +95,7 @@ Save and activate your program by choosing **Save** and **Activate** in the tool
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run the ABAP Program)]
+[ACCORDION-BEGIN [Step 7: ](Run the ABAP program)]
 Choose **F8** to run your program. An embedded SAP GUI will open inside an Eclipse editor. After checking the output of the report choose **Close**.
 
 ![Image depicting step7-run-program](step7-run-program.png)
@@ -103,7 +103,7 @@ Choose **F8** to run your program. An embedded SAP GUI will open inside an Eclip
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Output system variables in your program)]
+[ACCORDION-BEGIN [Step 8: ](Output system variables)]
 You will now enhance the program to output your user name and today's date. Change the `WRITE` statement to:
 
    `WRITE: 'Welcome, ', sy-uname, / 'Today is the', sy-datum.`
@@ -117,7 +117,7 @@ You will now enhance the program to output your user name and today's date. Chan
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step  9: ](Run the ABAP Program)]
+[ACCORDION-BEGIN [Step  9: ](Run the ABAP program)]
 Again, choose **F8** to run your program. Your output should now look something like this:
 
 ![Image depicting step9-run-program-2](step9-run-program-2.png)
@@ -172,7 +172,6 @@ START-OF-SELECTION.
 
 [ACCORDION-BEGIN [Step 11: ](Test yourself)]
 
-Add the event keyword that turns a report into an executable program, then directly call the class method `Main` of the class `Demo`. (Don't indent your lines of code; pay attention to space characters.) Enter the code in the box below and choose **Validate**:
 
 [VALIDATE_1]
 [ACCORDION-END]

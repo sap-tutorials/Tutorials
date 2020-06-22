@@ -1,22 +1,21 @@
 ---
 title: Download Using the Download Manager (GUI Mode)
 description: Use the Download Manager (GUI mode) to download a server-only virtual machine package, or a server + applications virtual machine package.
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 2
 ---
 
 <!-- loiof14d821d2ac14186bbf202586056e1d2 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Register](http://developers.sap.com/tutorials/hxe-ua-register.html)
+ - **Tutorials:** You have completed [Register](hxe-ua-register)
 
 ## Details
 ### You will learn
 You will learn how to download installation packages using the GUI mode Download Manager
-
-### Time to Complete
-2 min
 
 ---
 
@@ -26,19 +25,29 @@ You can also download **optional** installation packages (like the SAP Enterpris
 
 In Download Manager, from the *Platform* pull-down, select SAP HANA, express edition on `Linux/x86-64`. (Virtual machine method installation is not available for *Linux/Power (little endian)*.)
 
+![DM_platform_1](DM_platform_1.png)
+
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select the VM image)]
 
 From the *Image* pull-down, select *Virtual Machine*.
 
-![loio6ddf559c2398459da5a263bbe140197b_LowRes](loio6ddf559c2398459da5a263bbe140197b_LowRes.png)
+![DM_image_4](DM_image_4.png)
+
+[DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Specify a save directory.)]
+[ACCORDION-BEGIN [Step 3: ](Specify a save directory)]
 
 Click *Browse* and select a directory where your downloads will be saved.
+
+![DM_SaveDir_2](DM_SaveDir_2.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -46,30 +55,33 @@ Click *Browse* and select a directory where your downloads will be saved.
 
 Select one or more of the following packages:
 
--   *Getting Started with SAP HANA, express edition (Virtual Machine Method)* - Selected by default.
+|Package|Description|
+|-------|-----------|
+|Getting Started with SAP HANA, express edition (Virtual Machine Method)|Selected by default.|
+|Server + applications virtual machine|Downloads `hxexsa.ova`; the server plus XS Advanced, Web IDE, and SAP HANA Cockpit.|
+|Server only virtual machine|Downloads `hxe.ova`; the server without any applications.|
 
--   *Server only virtual machine* - Downloads `hxe.ova`; the server plus XSC, and the Application Function Library (AFL).
-
--   *Server + applications virtual machine* - Downloads `hxexsa.ova`; the server plus XS Advanced, Web IDE, and SAP HANA Cockpit.
-
+![DM_packages_0](DM_packages_0.png)
 
 > Note:
 > SAP plans to remove SAP HANA extended application services, classic model (XSC) and the corresponding SAP HANA Repository with the next major product version of SAP HANA.
->
+> 
 > These components will be removed:
->
+> 
 > -   SAP HANA extended application services, classic model
->
+> 
 > -   SAP HANA Repository (XS classic)
->
+> 
 > -   SAP HANA Studio (Development, Modeling, and Administration perspectives)
->
+> 
 > -   SAP HANA Web-based Development Workbench (XS classic)
->
->
+> 
+> 
 > SAP strongly advises you to plan the transition of existing content and applications from XSC to SAP HANA extended application services, advanced model (XS Advanced).
->
->
+> 
+> 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -78,16 +90,16 @@ Select one or more of the following packages:
 Skip to the next step unless you are an advanced user.
 
 > Note:
-> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](https://developers.sap.com/tutorials/hxe-ua-packages-vm-xsa.html) tutorial later in the installation workflow, once your server is installed and running.
->
->
+> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](hxe-ua-packages-vm-xsa) tutorial later in the installation workflow, once your server is installed and running. 
+> 
+> 
 
 If you choose to download optional installation packages now (before your server is running), note that you will need to transfer the installation files to your VM once downloaded. Transfer instructions vary depending on your hypervisor, and are not included in this documentation.
 
 > Note:
 > Concerned about memory? The memory consumption of each additional package is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/9e4243e92f244537b2164a57a405a9fd).
->
->
+> 
+> 
 
 If downloading optional installation packages now, select one or more of the following:
 
@@ -132,6 +144,8 @@ If downloading optional installation packages now, select one or more of the fol
 -   *SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)* - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Download your selections)]
@@ -140,6 +154,10 @@ Click the *Download* button.
 
 Your download is complete when a pop-up message appears confirming successful download. Make sure you wait for this message before accessing the downloaded files.
 
-![loio72b159ec598543db8f01428aff2a5b36_LowRes](loio72b159ec598543db8f01428aff2a5b36_LowRes.png)
+![hxe_downloadmanager_2_2_3](hxe_downloadmanager_2_2_3.png)
+
+[DONE]
 
 [ACCORDION-END]
+
+

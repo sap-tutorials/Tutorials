@@ -10,8 +10,8 @@ time: 15
 ## Prerequisites  
 
  - **Proficiency:** Beginner
- - SAP HANA, express edition already comes with a tenant database called `HXE`. If you are using **a different deployment**, you can create a tenant database following [this guide](https://developers.sap.com/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
- - SAP HANA, express edition already comes with a development space. If you want to create a separate one or are using another deployment, you can create a space as explained on [this tutorial](https://developers.sap.com/tutorials/xsa-setup-new-space.html).
+ - SAP HANA, express edition already comes with a tenant database called `HXE`. If you are using **a different deployment**, you can create a tenant database following [this guide](hxe-ua-dbfundamentals-tenantdb)
+ - SAP HANA, express edition already comes with a development space. If you want to create a separate one or are using another deployment, you can create a space as explained on [this tutorial](xsa-setup-new-space).
  - You have the proper administration rights
 
 ## Details

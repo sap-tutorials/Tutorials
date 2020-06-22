@@ -1,7 +1,9 @@
 ---
-title: Create a Destination for the Northwind OData Services
+title: Create a Destination for the Northwind OData Services in the Neo Environment
 description: Create a destination within the SAP Cloud Platform Connectivity service to allow access to the Northwind OData services.
 auto_validation: true
+author_name: Marius Obert
+author_profile: https://github.com/iobert
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
 time: 5
@@ -9,7 +11,7 @@ time: 5
 
 ## Details
 ### You will learn
-- How to configure a basic destination
+- How to configure a basic destination in the Neo environment
 - What some of the Web IDE specific properties are
 - How to specify the Web IDE usage parameter for a generic OData service
 
@@ -19,12 +21,12 @@ A destination has a name, a URL, authentication details, and some other configur
 
 The destination you will define here is for the set of [OData](http://www.odata.org) services known as the "Northwind" services, which are publicly available and hosted by OASIS at <https://services.odata.org>.
 
-The Northwind OData services comes in several versions.  The tutorials currently use either V2 (<https://services.odata.org/V2/Northwind/Northwind.svc/>) or V3 (<https://services.odata.org/V3/Northwind/Northwind.svc/>).  To support both versions, and other versions that may be added later, you will create a generic connection to the Northwind service.  The exact path - and exact version - will be configured in later tutorials.
+The Northwind OData services comes in several versions.  The tutorials currently use either V2 (<https://services.odata.org/V2/Northwind/Northwind.svc/>) or V4 (<https://services.odata.org/V4/Northwind/Northwind.svc/>).  To support both versions, and other versions that may be added later, you will create a generic connection to the Northwind service.  The exact path - and exact version - will be configured in later tutorials.
 
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step : ](Log into SAP Cloud Platform)]
 
 Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
@@ -33,7 +35,16 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Plat
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create new destination)]
+[ACCORDION-BEGIN [Step : ](Enter the Neo Environment)]
+
+Scroll down the page and click on **Access Neo Trial** to enter the Neo environment.
+
+![neopage](scp-neo-logon.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step : ](Create new destination)]
 
 Select the **Destinations** tab on the left side, and then click **New Destination** to open a new destination configuration form.
 
@@ -42,7 +53,7 @@ Select the **Destinations** tab on the left side, and then click **New Destinati
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Confirm data)]
+[ACCORDION-BEGIN [Step : ](Confirm data)]
 
 Enter/confirm all fields in the destination configuration section with the information below.
 
@@ -62,7 +73,7 @@ When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK trust
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add properties and save)]
+[ACCORDION-BEGIN [Step : ](Add properties and save)]
 
 
 Add three **Additional Properties** by clicking on the **New Property** button once for each property.
@@ -82,6 +93,15 @@ Field Name       | Value
 > Find out more about the possible values for the `WebIDEUsage` property in the SAP Help Portal, in the [Connect to ABAP Systems](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/Cloud/en-US/5c3debce758a470e8342161457fd6f70.html) section.
 
 When you're done, finish by saving the destination with **`Save`**.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step : ](Check the connection)]
+
+Click on the `Check Connection` icon on the newly created Destination to see if everything works.
+
+![check](./checkdest.png)
 
 [VALIDATE_4]
 [ACCORDION-END]

@@ -3,8 +3,10 @@ auto_validation: true
 title: Create Business Partner in S/4HANA Cloud using ABAP Environment Data
 description: Create a business partner in an S/4HANA Cloud system based on a business user in SAP Cloud Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>intermediate, topic>abap-development, topic>abap-extensibility, tutorial>license ]
 time: 20
+author_name: Niloofar Naseri
+author_profile: https://github.com/niloofar-naseri
 ---
 
 ### Prerequisites  
@@ -68,8 +70,8 @@ You can add your package to **Favorite Packages**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add OData client proxy)]
-  1. Mark your package under **ZLOCAL** or in **Favorite Packages** and click on **File** and choose **New** > **Other…** > **OData Client Proxy**.
+[ACCORDION-BEGIN [Step 3: ](Add service consumption model)]
+  1. Mark your package under **ZLOCAL** or in **Favorite Packages** and click on **File** and choose **New** > **Other…** > **Service Consumption Model**.
 
       ![choose OData Proxy](Picture1.png)
 
@@ -81,14 +83,14 @@ You can add your package to **Favorite Packages**.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create OData client proxy)]
-  1. Enter the package name and a name for the service definition that will be generated as part of the client proxy.
+[ACCORDION-BEGIN [Step 4: ](Create service consumption model)]
+  1. Enter a name for your service consumption model, a service definition will be generated as part of the service consumption model with this name.
 
-  2. Upload the `.edmx` file, which you saved before, in the Service Metadata File field.
+  2. Enter a description and upload the `.edmx` file, which you saved before, in the Service Metadata File field.
 
   3. Click **Next**.
 
-      ![Create OData Client Proxy](Picture3.png)
+      ![Create Service Consumption Model](Picture3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -175,7 +177,7 @@ Open service definitions in your package and make sure if your new service defin
 |  `iv_service_definition_name`     |               Data definition created as part of client proxy                     |
 Retrieve Name of `ZA_BusinessPartner_XXX` Data Definition.
 
-```swift
+```ABAP
 CLASS zcl_s4_bupa_xxx DEFINITION PUBLIC CREATE PUBLIC .
   PUBLIC SECTION.
     INTERFACES if_http_service_extension .

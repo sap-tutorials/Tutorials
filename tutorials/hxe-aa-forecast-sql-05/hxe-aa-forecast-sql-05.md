@@ -215,7 +215,7 @@ create column table pal_operation_config (
 
 [ACCORDION-BEGIN [Step 2: ](Seasonality Test)]
 
-The [Seasonality Test](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/d990dc754e714d95a30721aa1dc3f2f0.html] function tests whether a time series has a seasonality or not. If it does, the corresponding additive or multiplicative seasonality model is identified, and the series is decomposed into three components: seasonal, trend, and random.
+The [Seasonality Test](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/d990dc754e714d95a30721aa1dc3f2f0.html) function tests whether a time series has a seasonality or not. If it does, the corresponding additive or multiplicative seasonality model is identified, and the series is decomposed into three components: seasonal, trend, and random.
 
 Using this function you will be able to determine which Time Series algorithm could be applied.
 
@@ -307,7 +307,7 @@ The result should be:
 The decomposed signal will provide you value of the seasonal, the trend and the random component.
 
 ```sql
-select * from pal_seasonality_statistics_cashflow;
+select * from pal_seasonality_decomposed_cashflow;
 ```
 
 And using a generated graph from the Python Math Plot library (`matplotlib`):

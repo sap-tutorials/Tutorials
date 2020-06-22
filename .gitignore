@@ -1,4 +1,7 @@
 node_modules
+.config
+.idea
+report*
 
 # Compiled source #
 ###################
@@ -43,6 +46,3 @@ Thumbs.db
 #  validation files  #
 ######################
 rules.vr
-package-lock.json
-package.json
-package.json

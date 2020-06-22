@@ -559,8 +559,7 @@ Paste the following content:
 				</ui:table.Table>
 			</IconTabFilter>
 			<IconTabFilter text="Operation Config">
-				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" height="100%"
-					rows="{path : 'results>/tables/OPERATION_CONFIG'}">
+				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" rows="{path : 'results>/tables/OPERATION_CONFIG'}">
 					<ui:columns>
 						<ui:table.Column sortProperty="KEY" filterProperty="KEY" width="50%">
 							<Label text="Key"/>
@@ -578,7 +577,7 @@ Paste the following content:
 				</ui:table.Table>
 			</IconTabFilter>
 			<IconTabFilter text="Summary">
-				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" height="100%" rows="{path : 'results>/tables/SUMMARY'}">
+				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" rows="{path : 'results>/tables/SUMMARY'}">
 					<ui:columns>
 						<ui:table.Column sortProperty="OID" filterProperty="OID" width="50%">
 							<Label text="OID"/>
@@ -602,7 +601,7 @@ Paste the following content:
 				</ui:table.Table>
 			</IconTabFilter>
 			<IconTabFilter text="Operation Log">
-				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" height="100%" rows="{path : 'results>/tables/OPERATION_LOG'}">
+				<ui:table.Table enableBusyIndicator="true" selectionMode="None" width="100%" rows="{path : 'results>/tables/OPERATION_LOG'}">
 					<ui:columns>
 						<ui:table.Column sortProperty="TIMESTAMP" filterProperty="TIMESTAMP">
 							<Label text="TIMESTAMP"/>

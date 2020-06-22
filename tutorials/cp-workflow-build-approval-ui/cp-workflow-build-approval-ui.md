@@ -1,5 +1,5 @@
 ---
-title: Build a Simple Approval UI for Your Workflow with Workflow Forms
+title: Build a Simple Approval UI for Your Workflow with Workflow Forms (Neo)
 description: Use the forms editor to create a basic user interface for your user task workflow.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
@@ -157,11 +157,11 @@ After the successful deployment a corresponding message toast is displayed.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Open the task in My Inbox)]
-1. Go back to the Fiori launchpad homepage. The **My Inbox** tile shows one open task.
+1. Go back to the SAP Fiori launchpad homepage. The **My Inbox** tile shows one open task.
 
     ![Open Task in My Inbox](open-task.png)
 
-2. Open the inbox. The task and some header information is displayed, and the values for the Title and Price properties are shown. In addition, there are Approve and Reject actions available for this user task.
+2. Open the inbox. The task and some header information is displayed, and the values for the **Title** and **Price** properties are shown. In addition, there are **Approve** and **Reject** actions available for this user task.
 
     ![Display Task in My Inbox](form-task-inbox2.png)
 

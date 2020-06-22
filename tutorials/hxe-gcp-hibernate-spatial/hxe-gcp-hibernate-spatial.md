@@ -1,5 +1,5 @@
 ---
-title: Add advanced geospatial processing with Hibernate
+title: Add Advanced Geospatial Processing with Hibernate
 description: Make use of the SAP HANA geospatial engine via Hibernate Spatial.
 auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
@@ -263,8 +263,7 @@ After the deployment has succeeded you can navigate to `https://<your project ID
 [ACCORDION-BEGIN [Step 4: ](Learn about Spatial Reference Systems (SRS))]
 While the application now processes the incidents correctly, it does so rather slowly. The reason for this is the way that the geospatial data is stored inside the database. In the next steps you'll implement improvements for dealing with the geospatial data.
 
-For an introduction of what spatial reference systems (SRS) are, check out the tutorial [
-Spatial Reference Systems](https://developers.sap.com/tutorials/hana-spatial-intro6-srs.html).
+For an introduction of what spatial reference systems (SRS) are, check out the tutorial [Spatial Reference Systems](hana-spatial-intro6-srs).
 
 The default spatial reference system used by the application is [WGS 84](http://epsg.io/4326) (SRID 4326). It is a round-earth SRS which means that the calculations are reasonably accurate, but computationally expensive.
 
@@ -514,4 +513,3 @@ In the text area below enter the name of the Hibernate Spatial function that is 
 [VALIDATE_2]
 
 [ACCORDION-END]
-

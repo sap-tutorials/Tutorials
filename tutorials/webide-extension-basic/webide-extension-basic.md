@@ -9,7 +9,6 @@ time: 15
 
 ## Prerequisites  
   - If you don't have a Cloud Foundry account on SAP Cloud Platform, use the tutorial: [Sign up for a free trial account on SAP Cloud Platform](hcp-create-trial-account).
- - If you want to follow a tutorial that requires a new SAP Web IDE extension, check if certain project, extension, and plugin names are required.
 
 ## Details
 ### You will learn  
@@ -19,8 +18,6 @@ time: 15
 You use an extension to bundle and deliver plugins, since one extension may be composed of several plugins in order to provide a certain functionality. An extension to be deployed to SAP Cloud Platform is an application created with a multi-target application (MTA) project.
 
 You'll start by creating an extension project that contains a single plugin. You'll use the **SAP Web IDE Extension (MTA Project)** template, which generates basic extension and plugin structures in your SAP Web IDE Workspace.
-
-> Use Git for version control and environments having multiple developers. For more information, see [Commit your project files to your SAP Cloud Platform Git repository](https://developers.sap.com/tutorials/hcp-webide-commit-git.html).
 
 ---
 

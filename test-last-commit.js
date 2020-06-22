@@ -9,6 +9,9 @@ const isProduction = NODE_ENV === 'production';
 const options = {
   repo: __dirname,
   number: 1,
+  execOptions: {
+    maxBuffer: 1024 * 1024,
+  },
 };
 
 gitLog(options, function (error, commits) {
@@ -24,7 +27,11 @@ gitLog(options, function (error, commits) {
 
   const [lastCommit] = commits;
   const { files } = lastCommit;
-  const mdFiles = files.filter(f => f.toLowerCase().endsWith('.md') && !f.includes('work-in-progress'));
+  const mdFiles = files.filter(f =>
+    f.toLowerCase().endsWith('.md')
+    && !f.includes('work-in-progress')
+    && f.includes('tutorials')
+  );
 
   if (mdFiles.length > 0) {
     return testTool

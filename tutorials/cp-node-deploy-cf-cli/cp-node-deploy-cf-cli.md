@@ -26,7 +26,7 @@ Create a `manifest.yaml` file in the `nodetutorial` directory. This file is the 
 
 Copy the following content to the recently created file:
 
-```:
+```yaml
 ---
 applications:
 - name: myapp
@@ -37,6 +37,18 @@ applications:
 
 >The property `random-route` will generate a route, which does not conflict with any other application in the same Cloud Foundry instance.
 
+You should now have the following directory structure:
+
+```bash
+nodetutorial
+├── manifest.yaml
+└── myapp
+    ├── node_modules
+    ├── package-lock.json
+    ├── package.json
+    └── server.js
+```
+
 
 Explanation for the manifest properties:
 
@@ -46,6 +58,7 @@ Explanation for the manifest properties:
 |  `host`          | Where the application (subdomain of the SAP Cloud Platform region) should be reachable.
 |  `path`           | The path of the local file system from which the content/artifact has to be deployed.
 |  `memory`         | The memory quota which should be allocated for this application.
+|  `random-route`        | if this property is set to **true**, Cloud Foundry will assign a random route (URL) to the application 
 
 Refer to the [official documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html) for more fields of the manifest file.
 
@@ -55,12 +68,16 @@ Refer to the [official documentation](https://docs.cloudfoundry.org/devguide/dep
 
 [ACCORDION-BEGIN [Step 2: ](Push the app to your SAP Cloud Platform Cloud Foundry space)]
 
-Make sure you are logged in to your SAP Cloud Platform Cloud Foundry endpoint `cf login` and navigate to your space via `cf space <SPACE>`). Execute the following command inside the `nodetutorial` directory:
+Make sure you are logged in to your SAP Cloud Platform Cloud Foundry endpoint `cf login` and navigate to your space via `cf space <SPACE>`. Execute the following command inside the `nodetutorial` directory:
 
-```:
-cf push
+
+```bash
+user@host:~/nodetutorial
+=> cf push
 ```
+>**Note:**
 
+>Make sure you are logged in via **`cf login`** before, otherwise the push command will fail.
 The Cloud Foundry command line interface implicitly uses the `manifest.yaml` file to deploy the application. After the deployment process the status of the application should be displayed in the command line:
 
 ![command line output app status ](appstatus.png)
@@ -77,8 +94,9 @@ To open the application in a browser, there are two ways to figure out the accor
 
 Or you could generally access the application overview. It shows among other information the URL. Accessing the application overview is done via:
 
-```:
-cf apps
+```bash
+user@host:~/nodetutorial
+=> cf apps
 ```
 
 ![application URL in application overview](cf_apps.png)

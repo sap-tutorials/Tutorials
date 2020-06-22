@@ -1,9 +1,11 @@
 ---
 title: Install the Cloud Foundry Command Line Interface (CLI)
 description: Download and install the CLI, which allows access via the command line.
-primary_tag: products>sap-cloud-platform
 auto_validation: true
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+author_name: Marius Obert
+author_profile: https://github.com/iobert
+tags: [tutorial>beginner, topic>cloud,  products>sap-cloud-platform]
+primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 time: 15
 ---
 
@@ -17,11 +19,11 @@ time: 15
 
 [ACCORDION-BEGIN [Step](Download the Command Line interface)]
 
-Download the latest Command Line Interface (CLI) from the Cloud Foundry web site.  Use the following URL:  [https://github.com/cloudfoundry/cli#downloads](https://github.com/cloudfoundry/cli#downloads).
+Download the latest Command Line Interface (CLI) from the Cloud Foundry web site.  Use the following URL:  
 
-On the Cloud Foundry website, choose either the command line installer (if you are set up to use one), or the binary from the table listed on the webpage.  If you don't know which to use, choose the installer (not the binary) for your Operating System from the table.
+[https://github.com/cloudfoundry/cli#downloads](https://github.com/cloudfoundry/cli#downloads).
 
-![Download matrix from the Cloud Foundry website](4.png)
+On the Cloud Foundry website, choose either the command line installer, or the binary from the table listed on the webpage.  If you don't know which to use, choose the installer (not the binary) for your Operating System from the table.
 
 Open the installer on your computer, and follow the installation instructions.
 
@@ -35,7 +37,9 @@ Open the installer on your computer, and follow the installation instructions.
 Open a command prompt on your computer.  
 
 > In Windows, you can search in the start menu for the application "command prompt".  
-> On a Mac, use spotlight to find the application "terminal".  
+>
+> On a Mac, use spotlight to find the application "terminal".
+>
 > On Linux/Unix, you know how this works, just open your favorite command shell.
 
 Next, test the Cloud Foundry command line interface to make certain it is installed correctly.
@@ -46,7 +50,7 @@ To test the CLI, type in the following:
 
 You should see a list of Cloud Foundry commands.
 
-![Cloud Foundry list of Commands](2.png)
+![Cloud Foundry list of Commands](cfhelp.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -57,45 +61,46 @@ First, find the correct API URL for your region.  Select the correct region from
 
 | Region                                          | URL                                         |
 | ----------------------------------------------- | ---------------------------------------     |
-| US East (VA) running on Amazon AWS              | `https://api.cf.us10.hana.ondemand.com`     |
-| US West (CA) running on Microsoft Azure         | `https://api.cf.us20.hana.ondemand.com`     |
-| **Europe (Frankfurt) running on Amazon AWS**    | **`https://api.cf.eu10.hana.ondemand.com`** |
-| Europe (Netherlands) running on Microsoft Azure | `https://api.cf.eu20.hana.ondemand.com`     |
+| Europe (Frankfurt)        | `https://api.cf.eu10.hana.ondemand.com`     |
+| Europe (Netherlands)  | `https://api.cf.eu20.hana.ondemand.com`     |
+| US East (VA)               | `https://api.cf.us10.hana.ondemand.com`     |
+| US West (CA)        | `https://api.cf.us20.hana.ondemand.com`     |
 
 > If your region is not in this list, check the [Regions and API endpoints list](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html#loiof344a57233d34199b2123b9620d0bb41) for the most up to date list.
 
-[DONE]
-[ACCORDION-END]
+You can also identify your API Endpoint using your Cloud Foundry account:
 
-[ACCORDION-BEGIN [Step](Connect the CLI to the cloud region)]
+First, navigate to the [SAP Cloud Platform Cockpit](https://hanatrial.ondemand.com) and click **Log On**.
 
-Next, open a command line prompt on your computer.  In the command line screen, type in the following:
+Next, select **Enter Your Trial Account**
 
-    cf api [URL]
+![entertrial](entertrial.png)
 
-Replace the `[URL]` section with the URL you selected from the table.
+Next, click on the subaccount.
 
+![subaccount](subaccount.png)
 
-![Set the Command Line region URL](4-frankfurt.png)
+The **API Endpoint** is displayed on the right-hand side of the **Overview** page.
+
+![endpoint](endpoint.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step](Log in using the CLI)]
 
-In the same command prompt (from the previous step) type in the following command:
+Next, open a command line prompt on your computer.  In the command line screen, type in the following:
 
-    cf login
+```bash
+cf login -a <URL>
+```
+> Replace the `<URL>` section with the URL you selected from the table.
 
-When prompted, enter your username and password.  Once you are logged in, you should see your API endpoint, user, org, and space as shown in the screenshot.
-
-![Login to the region using the CLI](5b.png)
-
-
-[VALIDATE_2]
-[ACCORDION-END]
-
+When prompted, enter your username and password.  Once you are logged in, you should see your API endpoint, user, org, and space.
 
 You are now set up to use the Cloud Foundry systems on SAP Cloud Platform.
 
-For more information on the Command Line Interface (CLI), go to the Cloud Foundry [Getting Started with the CLI](http://docs.cloudfoundry.org/cf-cli/getting-started.html) website.
+> For more information on the Command Line Interface (CLI), go to the Cloud Foundry [Getting Started with the CLI](http://docs.cloudfoundry.org/cf-cli/getting-started.html) website.
+
+[VALIDATE_2]
+[ACCORDION-END]

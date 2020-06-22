@@ -25,6 +25,10 @@
       "value": "topic>abap-extensibility"
     },
     {
+      "name": "Artificial Intelligence",
+      "value": "topic>artificial-intelligence"
+    },
+    {
       "name": "Big Data",
       "value": "topic>big-data"
     },
@@ -49,6 +53,10 @@
       "value": "topic>java"
     },
     {
+      "name": "JavaScript",
+      "value": "topic>javascript"
+    },
+    {
       "name": "Machine Learning",
       "value": "topic>machine-learning"
     },
@@ -63,6 +71,14 @@
     {
       "name": "OData",
       "value": "topic>odata"
+    },
+    {
+      "name": "SAP API Business Hub",
+      "value": "topic>sap-api-business-hub"
+    },
+    {
+      "name": "SAP Community",
+      "value": "topic>sap-community"
     },
     {
       "name": "SAPUI5",
@@ -81,6 +97,10 @@
       "value": "topic>user-interface"
     },
     {
+      "name": "Mobile Development Kit Client",
+      "value": "products>mobile-development-kit-client"
+    },
+    {
       "name": "SAP API Management",
       "value": "products>sap-api-management"
     },
@@ -93,12 +113,40 @@
       "value": "products>build"
     },
     {
+      "name": "SAP Business Application Studio",
+      "value": "products>sap-business-application-studio"
+    },
+    {
+      "name": "SAP Cloud Application Programming Model",
+      "value": "software-product-function>sap-cloud-application-programming-model"
+    },
+    {
       "name": "SAP Cloud Platform",
       "value": "products>sap-cloud-platform"
     },
     {
+      "name": "SAP Cloud Platform, ABAP Environment",
+      "value": "products>sap-cloud-platform--abap-environment"
+    },
+    {
+      "name": "SAP Cloud Platform Business Rules",
+      "value": "products>sap-cloud-platform-business-rules"
+    },
+    {
       "name": "SAP Cloud Platform Connectivity",
       "value": "products>sap-cloud-platform-connectivity"
+    },
+    {
+      "name": "SAP Cloud Platform Enterprise Messaging",
+      "value": "products>sap-cloud-platform-enterprise-messaging"
+    },
+    {
+      "name": "SAP Cloud Platform for the Cloud Foundry environment",
+      "value": "products>sap-cloud-platform-for-the-cloud-foundry-environment"
+    },
+    {
+      "name": "SAP Cloud Platform Integration for process services",
+      "value": "products>sap-cloud-platform-integration-for-process-services"
     },
     {
       "name": "SAP Cloud Platform Internet of Things",
@@ -109,6 +157,10 @@
       "value": "products>sap-cloud-platform-portal"
     },
     {
+      "name": "SAP Cloud Platform, SAP HANA service",
+      "value": "products>sap-cloud-platform--sap-hana-service"
+    },
+    {
       "name": "SAP Cloud Platform SDK for Android",
       "value": "products>sap-cloud-platform-sdk-for-android"
     },
@@ -117,16 +169,16 @@
       "value": "products>sap-cloud-platform-sdk-for-ios"
     },
     {
-      "name": "SAP Cloud Platform for the Cloud Foundry environment",
-      "value": "products>sap-cloud-platform-for-the-cloud-foundry-environment"
+      "name": "SAP Cloud Platform Workflow",
+      "value": "products>sap-cloud-platform-workflow"
     },
     {
-      "name": "SAP Cloud Platform, ABAP Environment",
-      "value": "products>sap-cloud-platform--abap-environment"
+      "name": "SAP Cloud SDK",
+      "value": "products>sap-s-4hana-cloud-sdk"
     },
     {
-      "name": "SAP Cloud Platform, SAP HANA service",
-      "value": "products>sap-cloud-platform--sap-hana-service"
+      "name": "SAP Conversational AI",
+      "value": "products>sap-conversational-ai"
     },
     {
       "name": "SAP Data Hub",
@@ -143,6 +195,10 @@
     {
       "name": "SAP HANA",
       "value": "products>sap-hana"
+    },
+    {
+      "name": "SAP HANA Cloud",
+      "value": "products>sap-hana-cloud"
     },
     {
       "name": "SAP HANA, dynamic tiering",
@@ -185,12 +241,20 @@
       "value": "products>sap-leonardo"
     },
     {
+      "name": "SAP Leonardo IoT",
+      "value": "products>sap-leonardo-iot"
+    },
+    {
       "name": "SAP Leonardo Machine Learning Foundation",
       "value": "products>sap-leonardo-machine-learning-foundation"
     },
     {
       "name": "SAP Lumira",
       "value": "products>sap-lumira"
+    },
+    {
+      "name": "SAP Mobile Cards",
+      "value": "products>sap-mobile-cards"
     },
     {
       "name": "SAP Predictive service",
@@ -203,6 +267,10 @@
     {
       "name": "SAP S/4HANA",
       "value": "products>sap-s-4hana"
+    },
+    {
+      "name": "SAP S/4HANA Cloud",
+      "value": "products>sap-s-4hana-cloud"
     },
     {
       "name": "SAP S/4HANA Cloud SDK",
@@ -221,8 +289,16 @@
       "value": "products>sap-translation-hub>sap-translation-hub"
     },
     {
+      "name": "SAP Variant Configuration and Pricing",
+      "value": "products>sap-variant-configuration-and-pricing"
+    },
+    {
       "name": "SAP Vora",
       "value": "products>sap-vora"
+    },
+    {
+      "name": "SAP Web Analytics",
+      "value": "products>sap-web-analytics"
     },
     {
       "name": "SAP Web IDE",
@@ -243,6 +319,10 @@
     {
       "name": "Android",
       "value": "operating-system>android"
+    },
+        {
+      "name": "License Required",
+      "value": "tutorial>license"
     }
   ]
 }

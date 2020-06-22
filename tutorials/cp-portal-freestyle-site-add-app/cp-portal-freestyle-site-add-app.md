@@ -10,7 +10,7 @@ time: 10
 ---
 
 ## Prerequisites  
-  - You've opened SAP Cloud Platform Portal and from the Site Directory, you've clicked on the tile of the `Supplier Portal` site that you created. For more information, see [Create a Portal freestyle site](https://developers.sap.com/israel/tutorials/cp-portal-freestyle-site-create-site.html).
+  - You've opened SAP Cloud Platform Portal and from the Site Directory, you've clicked on the tile of the `Supplier Portal` site that you created. For more information, see [Create a Portal freestyle site](cp-portal-freestyle-site-create-site).
   - You have deployed the `Product List` SAPUI5 app to your SAP Cloud Platform subaccount.
 
 ## Details

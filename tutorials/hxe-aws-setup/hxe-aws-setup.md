@@ -16,10 +16,15 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 <div align="center">
 <b><span style="color:red;align:middle">Warning: Please read carefully before starting!</span></b>
 </div>
+&nbsp;
 
-**Before, you get started, please be aware that using SAP HANA, express AMI on AWS is not covered by the AWS Free tier, and therefore charges for both the EC2 instance and the provisioned EBS volumes used by this instance will incur.**
+<b><span style="color:red">The server-only image is being retired. Please refer to</span></b>:
 
-**Also, with the EBS volumes types in use, even if your EC2 instance running your SAP HANA, express edition is _stopped_, charges will be incurred for the provisioned EBS volumes. Only detaching and deleting the EBS volumes will prevent charges. However, this will make your  SAP HANA, express edition no longer usable.**
+ - **[Set up SAP HANA, express edition on Amazon Web Services (XS Advanced)](hxe-xsa-aws-setup)**
+
+**Also, before you get started, please be aware that using SAP HANA, express AMI on AWS is not covered by the AWS Free tier, and therefore charges for both the EC2 instance and the provisioned EBS volumes used by this instance will incur.**
+
+**With the EBS volumes types in use, even if your EC2 instance running your SAP HANA, express edition is _stopped_, charges will be incurred for the provisioned EBS volumes. Only detaching and deleting the EBS volumes will prevent charges. However, this will make your  SAP HANA, express edition no longer usable.**
 
 ---
 
@@ -27,8 +32,11 @@ This tutorial will walk you through the setup process of SAP HANA, express editi
 
 Sign in or create an account on [Amazon Web Services Portal](https://portal.aws.amazon.com/billing/signup#/start)
 
-> ### **Note:** When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.
+> ### **Information:**
+>**When creating a new account with AWS, a background validation and verification process is started. This process can take up to 2 hours.**
+
 >During this process, some AWS services, like the AWS Marketplace, will not be available.
+
 >Therefore, you will need to wait for the completion of the validation process before being able to proceed with the SAP HANA, express edition creation.
 
 Access the [Amazon Web Services Marketplace](https://aws.amazon.com/marketplace/).
@@ -219,7 +227,7 @@ Click on **Open**.
 
 When prompted, use **`ec2-user`** as user.
 
-Check the following guide for further information: [Connecting to Your Linux Instance from Windows Using PuTTY](<http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+Check the following guide for further information: [Connecting to Your Linux Instance from Windows Using PuTTY](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 
 ### **Mac or Linux platform**
 
@@ -229,7 +237,7 @@ You can use command `ssh` from a terminal as follows:
 ssh -i /path/my-key-pair.pem ec2-user@public_ip_address
 ```
 
-For more details about standalone SSH client option, you can check the [Connecting to Your Linux Instance Using SSH]( https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) guide.
+For more details about standalone SSH client option, you can check the [Connecting to Your Linux Instance Using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) guide.
 
 [DONE]
 [ACCORDION-END]

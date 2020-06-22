@@ -1,42 +1,43 @@
 ---
 title: Use JupyterLab with SAP HANA, express edition
-description: Provide details on the installation and configuration of JupyterLab to use with  SAP HANA, express edition.
+description: Provides details on the installation and configuration of JupyterLab to use with SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
-time: 20
+tags: [ tutorial>advanced, products>sap-hana\, express-edition ]
+time: 90
 ---
 
 ## Prerequisites  
+- You should be familiar with the basics of a Linux OS administration and Python programming.
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
 - [Select and Install a SQL query tool for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql.html).
-- [Optional - Configure the SAP HANA R integration with SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-setup-r.html).
 
 ## Details
 ### You will learn
-During this tutorial, you will learn how to install the `JupyterLab` application on your system and connect it to your SAP HANA, express edition.
+During this tutorial, you will learn how to install the JupyterLab application on your system and connect it to your SAP HANA, express edition.
 
-`JupyterLab` is the next-generation web-based user interface for Project Jupyter.
+JupyterLab is the next-generation web-based user interface for [the Project Jupyter](https://jupyter.org/).
 
 As an open-source web application, it allows you to create and share documents that contain live code, equations, visualizations and narrative text.
 
-`JupyterLab` can therefore be used both as SQL query based tool but also to develop in dozens of programming languages.
+JupyterLab can therefore be used as an SQL query tool, but also as an environment to develop in dozens of programming languages.
 
-For more details you can check the [`JupyterLab`](https://jupyterlab.readthedocs.io/en/stable/) web page.
+For more details you can check the [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) documentation.
 
 [ACCORDION-BEGIN [Step 1: ](Create a Dedicated User)]
 
-As a best practice, I recommended you to create a dedicated user to run Jupyter. It will help you both restrict access to your system but also help avoiding side any effect on the `hxeadm` user that is running the SAP HANA, express edition instances.
+As a best practice, we recommended you to create a dedicated OS user to run Jupyter. It will help you to restrict access to your system, and also to help avoiding side effects on the `hxeadm` user.
 
-For the rest of this tutorial, `jupyteradm` will be referred as the Jupyter administrator user.
+For the rest of this tutorial, `jupyteradm` will be referred to as the Jupyter administrator OS user.
 
-To create `jupyteradm` user you can execute the following commands:
+To create `jupyteradm` user execute the following commands in the Linux shell:
 
 ```shell
 sudo useradd -m -d /home/jupyteradm -c "Jupyter Administrator" jupyteradm     
 sudo passwd jupyteradm
 ```
 
-Then, you can execute the following command to configure properly the `jupyteradm` user to proceed will the installation:
+Execute following commands to configure the `jupyteradm` user, so that it can proceed with later installation steps:
 
 ```shell
 sudo bash -c 'echo "jupyteradm ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers'
@@ -44,7 +45,7 @@ sudo bash -c 'echo "umask 022" >>/home/jupyteradm/.bashrc'
 sudo bash -c 'echo "PATH=/home/jupyteradm/.local/bin:$PATH" >>/home/jupyteradm/.bashrc'
 ```
 
-Now, you can switch to the `jupyteradm` user if not done yet:
+Now, to the `jupyteradm` user:
 
 ```shell
 sudo su -l jupyteradm
@@ -53,15 +54,15 @@ sudo su -l jupyteradm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Install C Compiler & Required Packages)]
+[ACCORDION-BEGIN [Step 2: ](Install C Compiler & Required Packages)]
 
 To complete the Jupyter setup, you will need some additional Python utilities packages.
 
-By default, SAP HANA, express edition setup a Python 2.7 version, but this one doesn't include the `pip` or `virtualenv` package.
+By default, SAP HANA, express edition setup includes a Python version 2.7, but doesn't include the `pip` or `virtualenv` packages.
 
 Therefore, you will now add the missing packages.
 
-### **For SUSE Linux Enterprise Server (including the SAP HANA, express edition VM):**
+### **For SUSE Linux Enterprise Server** (including most of the SAP HANA, express edition, deployments):
 
 First, you will need to check your current status using the following command:
 
@@ -69,23 +70,20 @@ First, you will need to check your current status using the following command:
 sudo SUSEConnect --status-text
 ```
 
-It should return the following information in the console:
+It should return the information in the console similar to this (depending on the version of the OS):
 
 ```
 Installed Products:
 ------------------------------------------
-  SUSE Linux Enterprise Server for SAP Applications 12 SP3
-  (SLES_SAP/12.3/x86_64)
+  SUSE Linux Enterprise Server for SAP Applications 12 SP2
+  (SLES_SAP/12.2/x86_64)
 
   Registered
 ------------------------------------------
+...
 ```
 
-If your system is marked as *Not Registered*, then you will need to register  with `SUSEConnect` using your registration code and email:
-
-```shell
-sudo SUSEConnect -r <registration code> -e <registration email>
-```
+If your system is marked as *Not Registered*, then you will need to register with `SUSEConnect` program.
 
 Once registered, you will be able to list the available extensions using the following command:
 
@@ -93,45 +91,43 @@ Once registered, you will be able to list the available extensions using the fol
 sudo SUSEConnect --list-extension
 ```
 
-You can then activate these extensions/repositories using the following commands:
+You can then activate these extensions/repositories using the following commands. Make sure to adjust the version/extension name based on the result from the **`--list-extension`** result.
 
 The following extensions/repositories are required to install the Python packages dependencies:
 
-- SUSE Linux Package for SAP Applications 12 SP2
+- SUSE Linux Package for SAP Applications, e.g. for version 12 SP2
 
 	```shell
 	sudo SUSEConnect -p SLES_SAP/12.2/x86_64
 	```
 
-- SUSE Linux Enterprise Software Development Kit 12 SP2
+- SUSE Linux Enterprise Software Development Kit, e.g. for version 12 SP2
 
 	```shell
 	sudo SUSEConnect -p sle-sdk/12.2/x86_64
 	```
 
-- `Toolchain` Module
+- SUSE `Toolchain` Module, e.g. for version 12
 
 	```shell
 	sudo SUSEConnect -p sle-module-toolchain/12/x86_64
 	```
 
-Make sure to adjust the version/extension name based on the result from the ***`--list-extension`*** result.
+These commands will be successful only if you have registered your system with `SUSEConnect`.
 
-These commands will be successful only if you have registered your system with `SUSEConnect`:
-
-Then, you can clean and refresh the repository cache:
+Then, you should clean and refresh the repository cache:
 
 ```shell
 sudo zypper refresh
 ```
 
-Then, you can execute the following command to install the compiler:
+Next, execute the following command to install the compiler:
 
 ```shell
 sudo zypper install --type pattern Basis-Devel
 ```
 
-Then, install the Python `devel` package using the following command:
+Install the Python `devel` package using the following command:
 
 ```shell
 sudo zypper install python-devel
@@ -148,14 +144,14 @@ sudo subscription-manager repos --enable="rhel-7-server-extras-rpms"
 sudo subscription-manager repos --enable="rhel-7-server-optional-rpms"
 ```
 
-Then, you can clean and refresh the repository cache:
+Then, you should clean and refresh the repository cache:
 
 ```shell
 sudo yum clean all
 sudo yum repolist
 ```
 
-Then, you can execute the following command to install the compiler:
+Execute the following command to install the compiler:
 
 ```shell
 sudo yum groupinstall "Development Tools"
@@ -186,7 +182,7 @@ sudo yum install python-devel
 
 As Python Pip and Virtual Environments are not part of the default SUSE repositories, you will be building from the source.
 
-First, you will need to download the install script, run it then install `virtualenv` using the following command:
+First, still as `jupyteradm` user, download the install script, run it then install `virtualenv` using the following command:
 
 ```shell
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -205,7 +201,7 @@ The SAP HANA, express edition Download Manager is now provided as part of your S
 
 You can then download the packages using the following command:
 
-```bash
+```shell
 /usr/sap/HXE/home/bin/HXEDownloadManager_linux.bin linuxx86_64 installer \
     -d . \
 	clients_linux_x86_64.tgz
@@ -228,47 +224,38 @@ The ***SAP HANA HDB Client*** software package includes the following connectivi
  - Node.js
  - Ruby
 
-Then, you need to extract the contents of `clients_linux_x86_64.tgz` into the ***`/opt/hxe`*** directory using the following command:
+Then, you need to extract the contents of `clients_linux_x86_64.tgz` into the **`/opt/hxe`** directory using the following command:
 
-```bash
+```shell
 tar -xvzf ./clients_linux_x86_64.tgz -C .
 ```
 
-The following files will be extracted:
+The files will be extracted, including the following:
 
  - ***`hdb_client_linux_x86_64.tgz`*** : the *SAP HANA HDB Client* software package
  - ***`xs.onpremise.runtime.client_linuxx86_64.zip`*** : the *SAP HANA XS CLI* software package
 
 You need now to decompress the *SAP HANA HDB Client* package executing the following command:
 
-```bash
+```shell
 tar -xvzf ./hdb_client_linux_x86_64.tgz -C .
 ```
 
 And now you can run the installer program executing the following commands:
 
-```bash
+```shell
 cd ./HDB_CLIENT_LINUX_X86_64
-./hdbinst
+./hdbinst --path=/home/jupyteradm/sap/hdbclient
 ```
 
-Accept the prompts default values to configure your installation:
-
- - Installation Path : `/home/jupyteradm/sap/hdbclient`
-
-
-Once the installation is completed, you should get the following elements in your console:
-
-```
-Installation done
-```
+Once the installation is completed, you should get `Installation done` in the output.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Install JupyterLab)]
 
-Now that the `pip` or `virtualenv` package are installed, you have to create and activate a Python Virtual Environment (named `jupyter`) using the following commands:
+Now that the `pip` and `virtualenv` package are installed, you have to create and activate a Python Virtual Environment (named `jupyter`) using the following commands:
 
 ```shell
 cd ~/
@@ -293,11 +280,7 @@ Once the installation is completed, you can run the following command to generat
 jupyter-lab --generate-config
 ```
 
-The command should output the path to the configuration file:
-
-```
-Writing default config to: /home/jupyteradm/.jupyter/jupyter_notebook_config.py
-```
+The command should output the path to the configuration file `Writing default config to: /home/jupyteradm/.jupyter/jupyter_notebook_config.py`.
 
 Let's now create a local *dummy* certificate using `openssl`:
 
@@ -307,7 +290,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /home/jupyteradm/.ju
 
 Once the certificate is created, you can edit the generated configuration file:
 
-```
+```shell
 vi /home/jupyteradm/.jupyter/jupyter_notebook_config.py
 ```
 
@@ -336,16 +319,16 @@ Then, you should set a password to secure the environment using the following co
 jupyter notebook password
 ```
 
-You can now start `JupyterLab` using the following command where `xxx.xxx.xxx.xxx` represent the host IP address where you have just installed `JupyterLab`:
+You can now start JupyterLab using the following command:
 
 ```shell
-jupyter lab --ip=xxx.xxx.xxx.xxx  &
+jupyter lab --ip=0.0.0.0  &
 ```
 
-The following output will be displayed:
+The output similar to this will be displayed:
 
 ```
-[I 17:44:46.071 LabApp] The port 8889 is already in use, trying another port.
+[I 17:44:46.071 LabApp] The port 8888 is already in use, trying another port.
 [I 17:44:46.087 LabApp] JupyterLab extension loaded from /home/jupyteradm/jupyter/lib/python2.7/site-packages/jupyterlab
 [I 17:44:46.087 LabApp] JupyterLab application directory is /home/jupyteradm/jupyter/share/jupyter/lab
 [W 17:44:46.092 LabApp] JupyterLab server extension not enabled, manually loading...
@@ -353,13 +336,15 @@ The following output will be displayed:
 [I 17:44:46.098 LabApp] JupyterLab application directory is /home/jupyteradm/jupyter/share/jupyter/lab
 [I 17:44:46.108 LabApp] Serving notebooks from local directory: /home/jupyteradm
 [I 17:44:46.109 LabApp] The Jupyter Notebook is running at:
-[I 17:44:46.109 LabApp] https://xxx.xxx.xxx.xxx:8890/
+[I 17:44:46.109 LabApp] https://xxx.xxx.xxx.xxx:8889/
 [I 17:44:46.109 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 ```
 
+If your SAP HANA, express edition, is hosted in the cloud, then remember to add a firewall rule allowing incoming requests to reach the port, where JupyterLab is listening (`8888` by default, but `8889` in the above example).
+
 You can now open the following URL after replacing `hxehost` with the current hostname.
 
- - `https://xxx.xxx.xxx.xxx:8888/tree`
+ - `https://hxehost:8888/tree`
 
 As your certificate has been signed locally, you will receive a **Your connection is not private** message from your browser, but you can proceed.
 
@@ -373,7 +358,7 @@ As your certificate has been signed locally, you will receive a **Your connectio
 If you are planning to use a Python Kernel in Jupyter Notebooks to simply execute SQL, then you will need to install:
 
  - [`SQLAlchemy`](https://www.sqlalchemy.org/)
- - [`SQLAlchemy` for HANA](https://github.com/SAP/sqlalchemy-hana)
+ - [`SQLAlchemy for HANA`](https://github.com/SAP/sqlalchemy-hana)
  - [`IPython SQL`](https://github.com/catherinedevlin/ipython-sql)
  - SAP HANA Python driver (as installed previously)
 
@@ -389,11 +374,11 @@ Once activated, you can proceed with the Python modules installation:
 pip install \
   sqlalchemy \
   sqlalchemy-hana \
-  ipython-sql \
-  /home/jupyteradm/sap/hdbclient/hdbcli-x.y.Z.tar.gz
+  ipython-sql==0.3.9 \
+  /home/jupyteradm/sap/hdbclient/hdbcli*.tar.gz
 ```
 
-> **Note:** the `hdbcli` tar file may be with a different version than the one displayed above
+> **Note:** the `hdbcli` tar file may be with a different version than the one at the time of creating this tutorial.
 
 Once completed, you can create your first Python notebook using the **File > New > Notebook** menu:
 
@@ -413,7 +398,7 @@ import sqlalchemy
 
 %config SqlMagic.displaylimit = 5
 
-hxe_connection = 'hana://ML_USER:Welcome18Welcome18@localhost:39015';
+hxe_connection = 'hana://ML_USER:Welcome19Welcome19@localhost:39015';
 
 %sql $hxe_connection
 ```
@@ -455,7 +440,7 @@ conn = dbapi.connect(
     address="localhost",
     port=39015,
     user="ML_USER",
-    password="Welcome18Welcome18"
+    password="Welcome19Welcome19"
 )
 with conn.cursor() as cursor:
     cursor.execute("SELECT CURRENT_USER FROM DUMMY")
@@ -463,15 +448,15 @@ with conn.cursor() as cursor:
 print(result[0])
 ```
 
-Also, `SQLAlchemy` goes far beyond making your life easy running SQL in Jupyter with `IPython-sql`.
+Also, SQLAlchemy goes far beyond making your life easy running SQL in Jupyter with `IPython-sql`.
 
-`SQLAlchemy` is most famous for its object-relational mapper (ORM), an optional component that provides the data mapper pattern, where classes can be mapped to the database in open ended, multiple ways - allowing the object model and database schema to develop in a cleanly decoupled way from the beginning.
+The SQLAlchemy is the most known for its object-relational mapper (ORM), an optional component that provides the data mapper pattern, where classes can be mapped to the database in open ended, multiple ways - allowing the object model and database schema to develop in a cleanly decoupled way from the beginning.
 
 Here is an code sample you can use to instantiate a `SQLAlchemy` engine:
 
 ```python
 from sqlalchemy import create_engine
-engine = create_engine('hana://ML_USER:Welcome18Welcome18@localhost:39015')
+engine = create_engine('hana://ML_USER:Welcome19Welcome19@localhost:39015')
 
 print(type(engine))
 ```
@@ -484,9 +469,9 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step 8: ](Use R Kernel for code)]
 
-Jupyter allows you to run R, but before you will need to enable it.
+Jupyter allows you to run R, but you need to enable it first.
 
-To so, you will need to install `ÌKernel` as described in the following [installation guide](https://irkernel.github.io/installation/).
+To do so, install `IRkernel` as described in the following [installation guide](https://irkernel.github.io/installation/).
 
 For more details about the R kernel in Jupyter you can check the site : [https://irkernel.github.io/](https://irkernel.github.io/).
 
@@ -494,9 +479,9 @@ All the steps from the [installation guide](https://irkernel.github.io/installat
 
 It assumes that you have a local R installation. If not done yet, you can use the instructions from the following tutorial: [Configure the SAP HANA R integration with SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-setup-r.html)
 
-Once the installation is completed successfully, you will first need to restart `JupyterLab`.
+Once the installation is completed successfully, you will first need to reload JupyterLab in a web browser.
 
-Then you will have now the ability to create R kernels:
+Now you should have the ability to create R kernels:
 
 ![Jupyter](08-1.png)
 
@@ -508,7 +493,7 @@ When using JDBC, you will first need to install the `RJDBC` package in a R conso
 install.packages("RJDBC")
 ```
 
-Then you can use the following sample a R kernel notebook from `JupyterLab`:
+Then you can use the following sample a R kernel notebook from JupyterLab:
 
 ```R
 library("RJDBC")
@@ -517,7 +502,7 @@ jdbcConnection <- dbConnect(
     jdbcDriver,
     "jdbc:sap://localhost:39015/?autocommit=false",
     "ML_USER",
-    "Welcome18Welcome18"
+    "Welcome19Welcome19"
 )
 result <- dbGetQuery(jdbcConnection, "select CURRENT_USER from DUMMY")
 print(result)
@@ -534,14 +519,14 @@ Then you will need to configure an ODBC DSN for you target database.
 
 If not done yet, you can use the instructions from the following tutorial: [Use an ODBC based querying tools for SAP HANA, express edition](https://developers.sap.com/tutorials/mlb-hxe-tools-sql-odbc.html)
 
-Then you can use the following sample a R kernel notebook from `JupyterLab`:
+Then you can use the following sample a R kernel notebook from JupyterLab:
 
 ```R
 library("RODBC")
 odbcConnection <- odbcConnect(
     "DSN_HXE",
     uid="ML_USER",
-    pwd="Welcome18Welcome18"
+    pwd="Welcome19Welcome19"
 )
 result <- sqlQuery(odbcConnection,"select CURRENT_USER from DUMMY")
 print(result)

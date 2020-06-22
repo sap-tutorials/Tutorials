@@ -1,22 +1,21 @@
 ---
 title: Install Optional Packages
-description: Once SAP HANA, express edition is installed and running, use the server's built-in command line Download Manager to download optional installation packages directly to your VM.
+description:   Once SAP HANA, express edition (server and applications) is installed and running, use the server's built-in command line Download Manager to download optional installation packages directly to your VM.  
+author_name: John Currie
+author_profile: https://github.com/JCurrie27
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 20
 ---
 
 <!-- loio6bb4c7e861654519bb922e7e80a77a0b -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](http://developers.sap.com/tutorials/hxe-ua-getting-started-vm.html)  
+ - **Tutorials:**  You have completed [Start SAP HANA, express edition Server](hxe-ua-getting-started-vm) 
 
 ## Details
 ### You will learn
-You will learn how to use the built-in command line Download Manager to install optional installation packages.
-
-### Time to Complete
-20 min
+ You will learn how to use the VM (server plus applications) image's built-in command line Download Manager to install optional installation packages. 
 
 ---
 
@@ -41,6 +40,8 @@ Decide what optional installation packages you want to install.
 |Clients|Downloads client packages and the SAP HANA Machine Learning Python API.|
 |SAP HANA smart data integration|SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.|
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Locate the package-specific installation tutorials)]
@@ -49,13 +50,17 @@ Optional installation packages have their own tutorials. Use this table to find 
 
 |Optional Installation Package|Installation Tutorial|
 |-----------------------------|---------------------|
-|Text analysis files for additional languages|[Install the Optional Text Analysis Files Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-text-analysis-vm.html) |
-|SAP Enterprise Architecture Designer|[Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-installing-eads-vm.html) |
-|SAP HANA streaming analytics| [Get started with SAP HANA streaming analytics for SAP HANA, express edition](https://developers.sap.com/group.sds-hxe-get-started.html) |
-|SAP HANA Interactive Education| [Install the Optional SAP HANA Interactive Education Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-shine-vm.html) |
-|SAP HANA External Machine Learning Library| [Install the Optional SAP HANA External Machine Learning Library Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-eml-vm.html) |
-|SAP HANA Automated Predictive Library| [Install the Optional SAP HANA Automated Predictive Library Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-apl-vm.html) |
+|Text analysis files for additional languages|[Install the Optional Text Analysis Files Package for SAP HANA, express edition](hxe-ua-text-analysis-vm)|
+|SAP Enterprise Architecture Designer| [Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition](hxe-ua-installing-eads-vm) |
+|SAP HANA streaming analytics|[Get started with SAP HANA streaming analytics for SAP HANA, express edition](https://developers.sap.com/group.sds-hxe-get-started.html)|
+|SAP HANA Interactive Education| [Install the Optional SAP HANA Interactive Education Package for SAP HANA, express edition](hxe-ua-shine-vm) |
+|SAP HANA External Machine Learning Library|[Install the Optional SAP HANA External Machine Learning Library Package for SAP HANA, express edition](hxe-ua-eml-vm)|
+|SAP HANA Automated Predictive Library|[Install the Optional SAP HANA Automated Predictive Library Package for SAP HANA, express edition](hxe-ua-apl-vm)|
 |Clients| [Install the SAP HANA, express edition Clients](https://developers.sap.com/group.hxe-install-clients.html) |
 |SAP HANA smart data integration| [Install the Optional SAP HANA Smart Data Integration Package for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-sdi-vm.html) |
 
+[DONE]
+
 [ACCORDION-END]
+
+

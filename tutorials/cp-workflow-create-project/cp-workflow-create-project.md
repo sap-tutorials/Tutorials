@@ -1,5 +1,5 @@
 ---
-title: Create a Workflow Project from a Template
+title: Create a Workflow Project from a Template (Neo)
 description: Create a new workflow project in SAP Cloud Platform using SAP Web IDE.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
@@ -23,7 +23,7 @@ time: 5
 
     ![Search Workflow](search-workflow.png)
 
-3. On the **Workflow** tile, choose **SAP Web IDE for Full-Stack Development**.
+3. On the **Workflow** tile, choose **SAP Web IDE Full-Stack**.
 
     ![Choose Full-Stack](choose-full-stack.png)
 
@@ -39,21 +39,25 @@ time: 5
 
     ![Choose New Project](new-project.png)
 
-3. Change the **Category** to **Business Process Management**, and then select the **Workflow Project** template.
+3. Set the **Environment** to **Neo**.
 
-    ![Change Category](select-category.png)
+    ![Set Environment](set-environment.png)
 
-4. Choose **Next**.
+4. Change the **Category** to **Business Process Management**, and then select the **Workflow Project** template.
 
-5. Enter a name for the new workflow project, for example, `MyWorkflowProject`, and choose **Next**.
+    ![Change Category](select-category1.png)
+
+5. Choose **Next**.
+
+6. Enter a name for the new workflow project, for example, `MyWorkflowProject`, and choose **Next**.
 
     ![Enter Name](enter-name.png)
 
-6. Enter a name for the new workflow, for example, `MyFirstWorkflow` and a description.
+7. Enter a name for the new workflow, for example, `MyFirstWorkflow` and a description.
 
     ![Enter Workflow Name](enter-wf-name.png)
 
-7. Choose **Finish**.   
+8. Choose **Finish**.   
    You should now see a project with a workflow file in your workspace:
 
     ![Workflow Project](workflow-project.png)

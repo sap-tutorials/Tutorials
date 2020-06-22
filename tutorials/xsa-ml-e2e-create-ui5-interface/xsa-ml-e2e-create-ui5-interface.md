@@ -4,14 +4,13 @@ description: Create a SAPUI5 interface enhancing a Fiori Master-detail template
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>html5, topic>odata, topic>sapui5, products>sap-hana ]
+time: 15
 ---
 
 ## Details
 ### You will learn  
-You will create a user interface with a Fiori Master-Detail template.
+  - How to create a user interface with a Fiori Master-Detail template
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -116,7 +115,7 @@ If you want to take the code with you, remember you can **Stage All** and sync t
 The application you have created can be enhanced to add more functionalities or features, such as user authentication. Here are some links if you want to get your own system or continue learning for free:
 
 - Get your own SAP HANA, express edition, instance: <https://developers.sap.com/topics/sap-hana-express.html>
-- Tutorials for Development in XS Advanced : <https://goo.gl/ecfMDu>
+- Tutorials for Development in XS Advanced : <https://developers.sap.com/group.hana-xsa-get-started.html>
 - XS Advanced Development for (not so) dummies (blog): <https://goo.gl/vsuy2H>
 - Intro to Core Data Services (SAP `CodeTalk`): <https://goo.gl/Fpm4JT>
 - Intro to XS OData (SAP `CodeTalk`): <https://goo.gl/hQHmeK>

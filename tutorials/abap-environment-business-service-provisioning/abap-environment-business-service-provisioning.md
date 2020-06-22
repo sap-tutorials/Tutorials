@@ -3,8 +3,10 @@ auto_validation: true
 title: Expose a Standard Core Data Service for ABAP Environment
 description: Create a service definition, service binding and communication scenario to expose a Core Data Services (CDS) view in SAP Cloud Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
+author_name: Niloofar Naseri
+author_profile: https://github.com/niloofar-naseri
 ---
 
 ## Details
@@ -15,7 +17,7 @@ time: 15
 
 In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
-Create all business services with ABAP namespace `Z...`. 
+Create all business services with ABAP namespace `Z...`.
 
 ---
 
@@ -102,7 +104,7 @@ The Service definition is now created.
 Exposition of the CDS view `I_Currency` and provide Currency as alias.
 Do not forget to save and activate!
 
-```swift
+```ABAP
 @EndUserText.label: 'Demo service Definition'
 define service Z_DEF_XXX {
   expose I_Currency as Currency;
@@ -125,6 +127,7 @@ We want to create service binding to bind service to a protocol and preview.
   3. Enter data for a new service binding. Use the service definition created in last step.
       - Name: `Z_BIND_XXX`
       - Description: `service binding`
+      - Binding Type: ODATA V2 (UI - User Interface: Consumed in SAPUI5 Apps)
 
   4. Click **Next**.
 
@@ -132,10 +135,10 @@ We want to create service binding to bind service to a protocol and preview.
 
 [DONE]
 [ACCORDION-END]
+ 
 
-
-[ACCORDION-BEGIN [Step 7: ](Publish your service binding)]
-Click **Publish locally**, and then you will see the service name and service URL in the table.
+[ACCORDION-BEGIN [Step 7: ](Activate your service binding)]
+Click **Activate**, and then you will see the service name and service URL in the table.
 
 ![Publish Service Binding](Picture8a.png)
 
@@ -222,11 +225,6 @@ Navigate to the **Overview** tab and publish the scenario locally.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Test yourself)]
-Define a service definition with following information:
-
-      - annotation: `@EndUserText.label`: `Test`
-      - service name: `service Z_Testyourself `
-      - expose `I_Currency` as Currency
 
 [VALIDATE_1]
 [ACCORDION-END]

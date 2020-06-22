@@ -1,6 +1,7 @@
 ---
 title: Create a Streaming Project in SAP HANA Smart Data Streaming
 description: Part 2 of 9. Create a SAP HANA Smart Data Streaming (SDS) project in SAP HANA Studio with streaming plug-in and visual editor.
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 author_name: Bill Jiang
@@ -18,7 +19,7 @@ time: 20
 
 ---
 
-#### Create a New Streaming Project
+[ACCORDION-BEGIN [Step 1: ](Create a New Streaming Project)]    
 
 1. Click the **File** menu. You can also press **Alt+f**. Then click the **New** > **Project...**. You can also press **r**.
 
@@ -36,7 +37,11 @@ time: 20
 
     ![Click Finish](create-a-new-project/4-click-finish.png)
 
-#### Create the Required SAP HANA Tables
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Create the Required SAP HANA Tables)]    
 
 1. Go to **SAP HANA Administration Console** perspective, then **Systems** view. Right click the system you are working with.
 
@@ -116,8 +121,11 @@ time: 20
 
     ![check content](create-tables/7-check-content.png)
 
+[VALIDATE_1]
 
-#### Create an Input Stream
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Create an Input Stream)]    
 
 1. When you created the project, it created an input stream called "NEWSTREAM" by default.
 
@@ -158,3 +166,7 @@ time: 20
     Note: You can just drag the shape to a new position to organize our diagram.
 
     ![drag stream](new-stream/10-drag-stream.png)
+
+[DONE]
+
+[ACCORDION-END]

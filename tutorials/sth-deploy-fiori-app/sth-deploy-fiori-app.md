@@ -1,32 +1,24 @@
 ---
-title: Deploy an SAP Fiori app to SAP Cloud Platform
+title: Deploy an SAP Fiori App to SAP Cloud Platform
 description: Deploy an SAP Fiori app by committing and pushing it to the Git repository in your account on SAP Cloud Platform.
+auto_validation: true
 primary_tag: products>sap-translation-hub
-tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-web-ide, products>sap-translation-hub ]
+tags: [ tutorial>intermediate, products>sap-cloud-platform, products>sap-web-ide, products>sap-translation-hub ]
+time: 10
 ---
-
-## Prerequisites  
- - **Proficiency:** intermediate
- - **Tutorials:** [Prepare an SAP Fiori app for translation](https://developers.sap.com/tutorials/sth-prepare-fiori-app-translation.html)
-
-## Next Steps
- - **Tutorials:** [Translate an SAP Fiori app](https://developers.sap.com/tutorials/sth-translate-fiori-app.html)
-
 
 ## Details
 ### You will learn  
-You'll learn how to create a Git repository on SAP Cloud Platform and synchronize your project in SAP Web IDE with the Git repository on SAP Cloud Platform.
+  - How to create a Git repository on SAP Cloud Platform and synchronize your project in SAP Web IDE with the Git repository on SAP Cloud Platform
 
-These steps are required for the next tutorial: [Translate an SAP Fiori app](https://developers.sap.com/tutorials/sth-translate-fiori-app.html).
-
-
-### Time to Complete
-**10 Min**
+---
 
 [ACCORDION-BEGIN [Step 1: ](Open overview screen of cockpit)]
 
 To go to the overview screen of the SAP Cloud Platform cockpit, choose your user ID at the top of the screen.
 ![User ID in SAP Cloud Platform cockpit](sth-deploy-fiori-app-account-overview.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -34,6 +26,8 @@ To go to the overview screen of the SAP Cloud Platform cockpit, choose your user
 
 In the navigation area on the left, choose **Repositories | Git Repositories**.
 ![Git Repositories](sth-open-git-repository.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -43,19 +37,21 @@ Choose **New Repository**, and enter the following details:
 
 Field             | Value
 :---------------- | :----------------
-Repository Name   | `sampleapprovepurchaseorders`
-Description       | `Repository for Approve Purchase Order app`
+Repository Name   | `sampleshop`
+Description       | `Repository for Shop app`
 
 Make sure the **Create empty commit** box is selected.
 To create your Git repository, choose **OK**.
 
 ![Create repo image](sth-create-new-repository.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open the repository overview page)]
 
-Choose the **`sampleapprovepurchaseorders`** repository link to open the repository overview page.
+Choose the **`sampleshop`** repository link to open the repository overview page.
 
 ![Created repo](sth-open-repo.png)
 
@@ -63,11 +59,13 @@ On the repository overview page, copy the repository URL:
 
 ![Git repo URL](sth-copy-URL.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Initialize the local repository)]
 
-Open your project in **SAP Web IDE**, right-click the root folder (`sample.ApprovePurchaseOrders`) and choose **Git** | **Initialize Local Repository**.
+Open your project in **SAP Web IDE**, right-click the root folder (`sample.shop`) and choose **Git** | **Initialize Local Repository**.
 
 ![Initialize local git](sth-initialize-git.png)
 
@@ -75,6 +73,8 @@ An **alert** appears in the upper right corner of the SAP Web IDE window.
 Choose **Set Remote** in the alert.
 
 ![Initialized local git alert](sth-set-remote.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -88,15 +88,19 @@ This will initialize your local repository and link it to the Git repository on 
 When the **Changes Fetched** dialog box opens, choose **OK**.
 ![Changes fetched](sth-change-fetches.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Open the Git pane)]
 
-Open the Git pane in the right of **SAP Web IDE** and confirm that the correct repository (`sample.ApprovePurchaseOrders`) appears at the top of the Git pane.
+Open the Git pane in the right of **SAP Web IDE** and confirm that the correct repository (`sample.shop`) appears at the top of the Git pane.
 
-> If a different Git repository appears, choose your project folder (`sample.ApprovePurchaseOrders`) in the left of the SAP Web IDE window.
+> If a different Git repository appears, choose your project folder (`sample.shop`) in the left of the SAP Web IDE window.
 
 ![Git pane](sth-git.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -112,6 +116,8 @@ At this point, your Git repository is set up.
 
 In the following steps, you'll commit and push your project files to the Git repository.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Stage files)]
@@ -119,6 +125,8 @@ In the following steps, you'll commit and push your project files to the Git rep
 Commit all project files by choosing the **Stage All** checkbox.
 
 ![staging all files](sth-stage.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -128,6 +136,8 @@ Scroll down in the **Git pane** and enter a description like **`initial commit`*
 
 ![commit description](sth-commit.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Commit and push your changes)]
@@ -136,6 +146,8 @@ To add your files to the master branch, choose **Commit and Push** and select **
 
 ![commit and push](sth-master.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Enter user information)]
@@ -143,6 +155,8 @@ To add your files to the master branch, choose **Commit and Push** and select **
  If the **User Information** dialog box appears, confirm or enter your Git credentials and choose **OK** to push the changes to the remote repository.
 
 ![select origin master](sth-user.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -153,14 +167,18 @@ You'll also see the decorations change to green dots, which indicate that the fi
 
 ![green dots](sth-green.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Start the deployment to SAP Cloud Platform)]
 
 Now it's time to deploy your app.
-Right-click the root folder, `sample.ApprovePurchaseOrders`, and choose **Deploy | Deploy to SAP Cloud Platform**.
+Right-click the root folder, `sample.shop`, and choose **Deploy | Deploy to SAP Cloud Platform**.
 
 ![deploy to SAP Cloud Platformmenu](sth-deploy.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -169,6 +187,12 @@ Right-click the root folder, `sample.ApprovePurchaseOrders`, and choose **Deploy
 In the **Deploy Application to SAP Cloud Platform** dialog box, confirm that the **Deploy a new application** and **Activate** checkboxes are selected. Then choose **Deploy**.
 
 ![deploy app options](sth-deploy-popup.png)
+
+Confirm in the popup that you want to use the existing **sample shop** repository.
+
+![confirm popup](sth-1.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -179,6 +203,6 @@ You've now prepared everything for the translation step.
 
 ![successful deployment](sth-open-app.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
-

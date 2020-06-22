@@ -1,8 +1,8 @@
 ---
 title: Explore and Customize Your SAP Web IDE Full-Stack
 description: Get to know your new development environment by setting some of the preferences.
-author_name: Julia Hornik
-author_profile: Julia Hornik
+author_name: Shira Manas
+author_profile: https://github.com/shiramanas
 auto_validation: true
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
@@ -61,17 +61,7 @@ You can use the **Storyboard** tab when you are working on your user interfaces,
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Learn about SAP Web IDE)]
-If you are looking for additional learning materials on  SAP Web IDE as well as new feature guides, the 4th tab (hat icon) will take you to the **Learning Center**.
-
-![SAP Web IDE homepage with hat icon highlighted](4.png)
-
-Here, you will find short videos introducing you to many of the features of SAP Web IDE, plus some getting started videos and innovation examples. If you want to learn more about what you can do with SAP Web IDE, don't forget to explore the **Learning Center**.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Update your settings)]
+[ACCORDION-BEGIN [Step 4: ](Update your settings)]
 Any changes you need to make to the configuration of your SAP Web IDE will be done in the 5th tab (gear icon), which takes you to your **Preferences** pane.
 
 ![SAP Web IDE homepage with gear icon highlighted](5.png)
@@ -83,7 +73,7 @@ Let's start on this tab, so click the gear icon to move to your **Preferences** 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Change your theme)]
+[ACCORDION-BEGIN [Step 5: ](Change your theme)]
 You can make your SAP Web IDE your own by updating the theme used in the code editor. To do so, on the **Preferences** pane, click on **Code Editor** under the **Global Preferences** list.
 
 On the **Code Editor** screen, you will find the **Code Editor Theme** drop-down list. Feel free to update that as well as **Font**, **Font Size**, and other code settings you prefer.
@@ -92,17 +82,19 @@ When you have made all the changes you wish, don't forget to click **Save** to s
 
 ![code editor screen](6.png)
 
-[VALIDATE_6]
+[VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Enable a Cloud Foundry workspace)]
+[ACCORDION-BEGIN [Step 6: ](Enable a Cloud Foundry workspace)]
 To utilize the full-stack part of SAP Web IDE Full-Stack, you need to configure a Cloud Foundry space to run your projects. This can also be configured in the **Preferences** pane.
+
+> In the trial version of SAP Web IDE Full-Stack, Cloud Foundry is already configured. If you are using the trial version, you can skip this step.
 
 Click on the **Cloud Foundry** option under **Workspace Preferences**.
 
 Start by selecting the API Endpoint of the Cloud Foundry space you configured in a previous tutorial.
 
-![cloud foundry page with API Endpoint highlighted](9.png)
+![cloud foundry page](9.png)
 
 >When you select an endpoint, you may be prompted with a login box. If so, enter your email address and password for your SAP Cloud Platform account. Click **Log On**.
 >
@@ -114,12 +106,10 @@ Once you successfully log in, if you have a space configured, it will automatica
 
 Make sure to save to keep your Cloud Foundry space preferences.
 
->When working on applications, you may get an error about not having a builder for the space. If you need to install a builder, click **Install Builder** on this page and then **Save**.
-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Install new extensions)]
+[ACCORDION-BEGIN [Step 7: ](Install new extensions)]
 The SAP Web IDE you are exploring is the out-of-the-box version. To add extensions to your SAP Web IDE, click **Extensions** under **Workspace Preferences**.
 
 ![extension preferences highlighted](12.png)
@@ -140,10 +130,10 @@ Enabling new extensions may cause new navigation items to pop up on your SAP Web
 
 ![new navigations with new extension added](16.png)
 
-[VALIDATE_8]
+[VALIDATE_7]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Create a new workspace)]
+[ACCORDION-BEGIN [Step 8: ](Create a new workspace)]
 If you need to compartmentalize your code and extension set, SAP Web IDE enables you to create new workspaces with different extensions installed. Keep your environments clean and organized!
 
 To create a new workspace, choose **Tools** > **Workspace Manager** or click **`<Name>@Workspace`** in the upper-right corner.

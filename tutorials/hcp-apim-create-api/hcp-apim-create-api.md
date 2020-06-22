@@ -1,17 +1,13 @@
 ---
 title: Create an API Proxy
-description: In this tutorial you will learn how to create an API Proxy. You will learn how SAP Cloud Platform, API Management can leverage the OData catalog service to retrieve relevant information from a SAP Gateway system and pre-populate required information for the API Proxy
+description: Learn how SAP Cloud Platform, API Management can leverage the OData catalog service to retrieve relevant information from a SAP Gateway system and pre-populate required information for an API proxy.
 auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-api-management, products>sap-cloud-platform, products>sap-gateway ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
 - **Tutorials:**  [Create an API Provider System](https://developers.sap.com/tutorials/hcp-apim-create-provider.html)
-
-## Next Steps
-- [Add the API Proxy to a product](https://developers.sap.com/tutorials/hcp-apim-create-product.html)
-
 
 ## Details
 ### You will learn  
@@ -22,21 +18,18 @@ SAP Cloud Platform, API Management uses three main components to expose APIs.
 
 In this tutorial you will learn how to create an API Proxy based on the API Provider created in the previous step. You will learn how SAP Cloud Platform, API Management can leverage the OData catalog service to retrieve relevant information from a SAP Gateway system and pre-populate required information for the API Proxy
 
-### Time to Complete
-**15 Min**.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Learn about creating an API proxy and the Policy Editor)]
+[ACCORDION-BEGIN [Step 1: ](Learn about creating API proxy and Policy Editor)]
 
 [Create an API proxy](https://blogs.sap.com/2016/06/22/part-6-overview-of-api-proxy-policies/) and take a look at the Policy Editor. You will start to look into the details of building an API Proxy that contains some real life functionality.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access the SAP API Management API Portal )]
+[ACCORDION-BEGIN [Step 2: ](Access the SAP API Management API Portal)]
 
-Open the SAP API Management API Portal (you can get the URL from Enable the SAP Cloud Platform, API Management Service.
+Open the SAP API Management API Portal (you can get the URL from enabling the SAP Cloud Platform, API Management service).
 
 ![Access API Portal](01-access_api_portal.png)
 

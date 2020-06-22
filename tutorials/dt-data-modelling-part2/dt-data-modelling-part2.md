@@ -1,6 +1,7 @@
 ---
 title: Importing Required Calculation Views
 description: Conversion and importation of calculation views for Dynamic Tiering
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
@@ -53,6 +54,7 @@ Open it up, and you should be able to see the attribute, analytic, and calculati
 
 ![Views Imported](imported-views.PNG)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -78,5 +80,7 @@ On the next screen, ensure that all views to be activated are present in the rig
 When activated, the grey diamond, in the bottom right corner, beside each view will disappear.
 
 ![Before and after activation views](pre-activation.png)
+
+[VALIDATE_1]
 
 [ACCORDION-END]

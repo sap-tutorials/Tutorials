@@ -2,120 +2,91 @@
 title: Getting started with the SAP API Business Hub
 description: Learn how to find and test the API Business Hub.
 primary_tag: products>sap-cloud-platform
-author_name: Meredith Hassett
-author_profile: https://github.com/mhassett92
+author_name: Marius Obert
+author_profile: https://github.com/IObert
 auto_validation: true
+time: 15
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
----
-## Prerequisites  
- - **Proficiency:** Beginner
 
-## Next Steps
- - [Testing API Business Hub APIs with Curl](https://developers.sap.com/tutorials/hcp-abh-test-locally.html)
+---
 
 ## Details
 ### You will learn  
 Want to learn more about the new SAP API Business Hub? Not sure where to get started? Find more about how to find and enable the SAP API Business Hub in your SAP Cloud Platform instance. Once you are in the SAP API Business Hub, start learning about and testing one of the many available APIs.
 
-### Time to Complete
-**15 Min**.
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform Services)]
-Open your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit). If you do not have an account yet, sign up for a free trial account first.
+[ACCORDION-BEGIN [Step : ](Open SAP API Business Hub)]
+Go to the [SAP API Business Hub](https://api.sap.com/).
 
-In your SAP Cloud Platform account, select **Services** from the side menu.
+![SAP API Business Hub page](1.png)
 
-![service in SAP Cloud Platformmenu](1.png)
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Find the APIS in the Hub)]
+On the SAP API Business Hub homepage, select **APIs** under **Content Types** to see the available packages in the API Business Hub.
 
-[ACCORDION-BEGIN [Step 2: ](Open SAP API Business Hub)]
-In the **Services** catalog, search for _SAP API_. You should see 2 results. The SAP API Business Hub is the service you are looking for.
+![SAP API Business Hub homepage API tile](2.png)
 
-![API Services in HCP](2.png)
+This will take you to the APIs section on the Homepage. Select the **View More** link to see all available APIs.
 
-Select the **SAP API Business Hub** service. If it is not already enabled, do so on the service page.
+![API listing on homepage](3.png)
 
-Once the service is enabled, select **Go to Service**.
+This will take you to API listing on the SAP API Business Hub.
 
-![SAP Cloud Platform API Business Hub page](3.png)
-
-This will direct you to the homepage for the SAP API Business Hub.
-
-![SAP API Business Hub homepage](4.png)
-
-You can access the SAP API Business hub through SAP Cloud Platform or by just visiting their website by going to <http://api.sap.com>.
+![Searchable API list page](4.png)
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Select an API to use)]
 
-[ACCORDION-BEGIN [Step 3: ](Find an API Package in the Hub)]
-On the SAP API Business Hub homepage, select **APIs** to see the available packages in the API Business Hub.
+In the search box, type **`SuccessFactors`** to find the all Success Factors APIs. Click the **Search Icon** or hit **Enter** to search.
 
-![SAP API Business Hub homepage API tile](5.png)
+![Searching the discover all APIs](5.png)
 
-This will take you to the discover APIs page. Select the **All** tab.
+This will bring up all the APIs relating to SuccessFactors.
 
-![API Discover Highlighted Packages page](6.png)
+![Success Factors API search results](6.png)
 
-In the search box, type `SuccessFactors` to find the Success Factors API package. Click on the **SAP Success Factors Foundation** package.
+Click on the **SAP Success Factors Foundation/Platform** package.
 
-![Searching the discover all APIs](7.png)
+![Selecting the SuccessFactors API](7.png)
 
-This will bring you to the API documentation and overview. Select the **Artifacts** tab.
+This will bring up the SAP SuccessFactors Foundation/Platform API artifact details.
 
-![Success Factors Package overview](8.png)
-
-The Success Factors contains many APIs that can be used. APIs are grouped into Business Packages so they are easier to find.
+![SAP SuccessFactors API overview page](8.png)
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Test the API in the Hub)]
+Let's select an API to test and see some results. Select the **User Management** tile.
 
+![User Management tile on page](9.png)
 
-[ACCORDION-BEGIN [Step 4: ](Select an API to use)]
-In the Success Factors artifacts, look for the **User Management** API. It may be the last item in the artifacts list.
+In order to test the API in the API Business Hub, you need to login. Click the **Log On** button at the top of the page to do so.
 
-![User API in the Success Factors package](9.png)
+![Log On button in SAP API Business Hub](10.png)
 
-Select this API.
+When you look at the API Documentation again for the `GET /User` endpoint, you will see a **Parameters** section with a bunch of fields. To test different query parameters, you need to click the **Try Out** button on the API endpoint.
 
-Once you click the API, you will see all the available methods for the API. In the User Management API, you have 4 methods. Click on the first **Get** method, `GET /User`.
+![try out button on API](11.png)
 
-![Success Factors User Management methods](9a.png)
+This will enable to Parameter fields to make them editable. You can test different query parameters by providing a value in the input of the specified data type for that parameter.
 
-When you click the method, you are able to see all the query parameters and their corresponding documentation, such as what data type is expected and what the parameter is used for.
+![editable fields on User endpoint](12.png)
 
+The `GET /User` method will return a list of users from Success Factors. The top parameter tells the query to retrieve only the top _n_ results once all the other filtering is done. We don't want to see all a users data, only selected data points. In the `$select` parameter, using the _control_ key for Windows or _command_ key for MacOS, select `firstName`, `lastName`, and `jobTitle`. This will limit the data set returned to this 3 fields for the matching results and therefore reduce the size of the resulting data set. Also set an [OData Filtering Expression](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374625) to show only users named `Amy`: **`firstName eq 'Amy'`**.
 
-[VALIDATE_4]
-[ACCORDION-END]
+![Query parameters populated in the API Hub](13.jpg)
 
-[ACCORDION-BEGIN [Step 5: ](Test the API in the Hub)]
-In order to test the API in the API Business Hub, you need to login. Click the **Login** icon at the top of the page to do so.
+Once your parameters are all set, click the **Execute** button at the bottom of the documentation for that method.
 
-![Login link in SAP API Business Hub](9c.png)
-
-When you look at the API Documentation again for the `GET /User` method, you will see that the value field has become an editable field. You can test different query parameters by providing a value in the input of the specified data type for that parameter.
-
-![editable fields for query parameter testing](10.png)
-
-The `GET /User` method will return a list of users from Success Factors. That could be a long list, so set the `$top` parameter to **5**. The top parameter tells the query to retrieve only the top _n_ results once all the other filtering is done. In the `$select` parameter, using the _control_ key for Windows or _command_ key for Macs, select `firstName`, `lastName`, and `jobTitle`. This will limit the data set returned to this 3 fields for the matching results. If you don't need to see all a users data, only select data points, you can use the `$select` parameter to pick the data you want. This will help reduce the size of the resulting data set if performance is an issue.
-
-![Query parameters populated in the API Hub](11.png)
-
-Once your parameters are all set, click the **Try it out** button at the bottom of the documentation for that method.
-
-![Try it out button location](12.png)
+![Try it out button location](14.png)
 
 If there aren't any issues, you will see the resulting request URL and the response body (in `JSON`) on your page.
 
-![successful result from query](13.png)
-
 Feel free to keep playing around in the SAP API Business Hub to better understand the methods available in the User Management API.
 
-[DONE]
+[VALIDATE_4]
 [ACCORDION-END]
-
-

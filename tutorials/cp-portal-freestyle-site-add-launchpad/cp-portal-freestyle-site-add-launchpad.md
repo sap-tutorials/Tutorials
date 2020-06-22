@@ -34,9 +34,11 @@ In this tutorial you're going to create a launchpad page in your Portal freestyl
 
 4. In the **Create Page** wizard, enter the following:
 
-    <ol type="a"><li>Name the page `Supplier Self Service`.</li><li>Leave the **Template Source** as **This Site** (default).
-    </li><li>Select the **SAP Fiori Launchpad** page template.
-    </li><li>Click **Finish**.</li></ol>
+      - **Page Name**: `Supplier Self Service`
+      - **Template Source**: Leave as is
+      - Page template to select: `SAP Fiori Launchpad`
+
+5. Click **Finish**.
 
     ![Create page](4-create-page-wizard.png)
 

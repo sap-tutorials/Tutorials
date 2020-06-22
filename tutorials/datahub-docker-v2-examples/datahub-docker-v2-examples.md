@@ -1,6 +1,6 @@
 ---
-title: Run example pipelines in SAP Data Hub, developer edition 2.4
-description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition 2.4.
+title: Run example pipelines in SAP Data Hub, developer edition
+description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -23,10 +23,11 @@ Open the modelling environment for building pipelines via `http://localhost:8090
 ![picture_01](./datahub-docker-v2-examples_01.png)  
 
 The modelling environment consists of four main parts:
- - **Navigation (1)**: You use this part of the modelling environment to access pipelines (also known as graphs), operators and the repository.
- - **Pipeline editor (2)**: You create and edit pipelines here.
- - **Configuration / documentation (3)**: You use this part of the modelling environment to configure pipelines as well as operators inside pipelines and to access the documentation. The two buttons on the right help you to switch between configuration and documentation.
- - **Status messages, logs, traces (4)**: You use this part of the modelling environment to monitor the execution of pipelines.
+
+  1. **Navigation**: You use this part of the modelling environment to access pipelines (also known as graphs), operators and the repository.
+  2. **Pipeline editor**: You create and edit pipelines here.
+  3. **Configuration / documentation**: You use this part of the modelling environment to configure pipelines as well as operators inside pipelines and to access the documentation. The two buttons on the right help you to switch between configuration and documentation.
+  4. **Status messages, logs, traces**: You use this part of the modelling environment to monitor the execution of pipelines.
 
 [DONE]
 
@@ -41,7 +42,7 @@ When the **Status** tab indicates that the pipeline is running, use the context 
 
 ![picture_02](datahub-docker-v2-examples_02.png)
 
-Copy any row of the terminal output and paste it in the frame below and click on **Validate**.
+Copy any row of the terminal output and paste it in the text area below and click on **Submit Answer** button to complete Step 2.
 
 
 [VALIDATE_1]

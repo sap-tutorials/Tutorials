@@ -3,29 +3,24 @@ title: Build an IoT Condition Monitoring App
 description: Build a basic condition monitoring and sensor data visualization application with SAP Web IDE in 15 minutes.
 primary_tag: topic>internet-of-things
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-leonardo, topic>sapui5, products>sap-web-ide, products>sap-web-ide-plug-ins, products>sap-IoT-application-enablement, products>sap-cloud-platform  ]
+tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>sapui5, products>sap-web-ide, products>sap-web-ide-plug-ins, products>sap-IoT-application-enablement, products>sap-cloud-platform  ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [SAP IoT Application Enablement: Onboarding - Setting up Your Account](https://help.sap.com/viewer/9dfedbe95cbe4a9f9a5ceddbef7f88e5/latest/en-US/c5b72d23880240dcb4b0d7b9523b065a.html).
+ - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [Getting Started with SAP IoT](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest).
  - **Tutorials:** [Create Thing Model](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html)
 
 ## Details
 ### You will learn
-- How to use SAP Web IDE to build an application that leverages UI controls and data from IoT Application Enablement
-- How to use templates to speed up developing prototypes for certain use cases.
-- How to use the sensor chart UI control to discover patterns in your initial sensor data.
-
-
-### Time to Complete
-**15 Min**
-
+- How to use SAP Web IDE to build an application that leverages UI controls and data from SAP IoT
+- How to use templates to speed up developing prototypes for certain use cases
+- How to use the sensor chart UI control to discover patterns in your initial sensor data
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Start the Web IDE Full-Stack)]
+[ACCORDION-BEGIN [Step 1: ](Start SAP Web IDE)]
 SAP Web IDE Full-Stack is a powerful, extensible, web-based integrated development tool that simplifies end-to-end application development for SAP Cloud Platform.
 
 Start SAP Web IDE Full-Stack using the URL provided by your team administrator. The URL would look something like this: `https://webidecp-aae9c2f7b.dispatcher.hana.ondemand.com/` only that the account ID would be different. You would find it at  [http://hana.ondemand.com/](http://hana.ondemand.com/), where you should find your global account, your Neo sub-account, and SAP Web IDE Full-Stack under **Services**.
@@ -39,12 +34,12 @@ To log in, use the same email address and password you are using  within the thi
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Enable the IoT Application Enablement feature)]
+[ACCORDION-BEGIN [Step 2: ](Enable the SAP IoT feature)]
 In SAP Web IDE go to **Preferences** > **Features**.
 
 Turn on the following features:
 
-  - **IoT Application Enablement**
+  - **SAP IoT**
   - **Layout Editor**
   - **Storyboard**.
 
@@ -55,7 +50,7 @@ Turn on the following features:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Start the new project from the IoT template)]
+[ACCORDION-BEGIN [Step 3: ](Create new project from IoT template)]
 In the **Development** perspective, right-click  **Workspace** and create a new project from a template (there are other ways to do this, for example, from the home page).
 
 ![New](iotaecompappmc0030.jpg)
@@ -65,11 +60,13 @@ In the **Development** perspective, right-click  **Workspace** and create a new 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create the app using wizard)]
+[ACCORDION-BEGIN [Step 4: ](Create app using wizard)]
 Choose **IoT Application** from the **Internet of Things** category, and click **Next**.
+
 ![Choose template](iotaecompappmc0040.png)
 
 Enter `greenhousemonitor` as a project name and your user ID as the namespace, then click **Next**.
+
 ![Names](iotaecompappmc0050.png)
 
 On the **Data Source** tab, select:
@@ -90,7 +87,7 @@ SAP Web IDE will generate the code and will open the new application in the Code
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Run the application and explore your data)]
+[ACCORDION-BEGIN [Step 5: ](Run app and explore data)]
 
 You can change the generated source code afterwards as you see fit. Right now we want to explore the data that we have collected with the application. So to see a preview of the application you can start it right from SAP Web IDE. To do so, click the green button (below the **Deploy** menu in the picture above). This should bring up the application in a new tab.
 
@@ -110,7 +107,7 @@ The example below shows 2 patterns -- the light sensor in this case seems to jum
 
 You will discover that if you collect sensor data from the real world, there will always be surprises, both in that you cannot see what you thought you would find in the data, and also that you see patterns in the data that you did not expect to see.
 
-For more support on in-depth topics on building an IoT Application, refer to [http://developers.sap.com/](http://developers.sap.com/) under **IoT**.
+For more support on in-depth topics on building an IoT Application, refer to [http://developers.sap.com/](http://developers.sap.com/) and look for the SAP IoT product.
 
 [VALIDATE_1]
 

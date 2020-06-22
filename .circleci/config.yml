@@ -1,26 +1,8 @@
 version: 2
 jobs:
-  build-last-commit:
-    docker:
-      - image: circleci/node:9.6.1
-    steps:
-      - checkout
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install dependencies
-          command: npm install --production
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-          - node_modules
-      - run:
-          name: Run test tool on the last commit affected files
-          command: npm run test-last-commit
-          no_output_timeout: '15m'
   build-all:
     docker:
-      - image: circleci/node:9.6.1
+      - image: circleci/node:10.16.0
     steps:
       - checkout
       - restore_cache:
@@ -38,7 +20,7 @@ jobs:
           no_output_timeout: '15m'
   build:
     docker:
-      - image: circleci/node:9.6.1
+      - image: circleci/node:10.16.0
     steps:
       - run: echo "RUN_BUILD is ${RUN_BUILD}"
       - checkout
@@ -71,13 +53,10 @@ workflows:
   nightly:
     triggers:
     - schedule:
-        cron: "0 0 * * *"
+        cron: "0 1 * * 0-5"
         filters:
           branches:
             only:
               - master
     jobs:
       - build-all
-  commitly:
-    jobs:
-      - build-last-commit

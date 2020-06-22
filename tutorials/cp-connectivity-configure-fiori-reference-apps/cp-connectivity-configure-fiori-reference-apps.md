@@ -1,14 +1,11 @@
 ---
-title: Configure your ABAP System to Activate OData Services of Fiori Reference Apps
-description: This tutorial shows how you configure fiori reference apps in your ABAP system which is the prerequisite to be able to consume their OData services in apps of SAP Cloud Platform.
+title: Configure Your ABAP System to Activate OData Services of Fiori Reference Apps
+description: Configure SAP Fiori reference apps in your ABAP system, which is a prerequisite to consume their OData services in apps of SAP Cloud Platform.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-gateway, products>sap-fiori, topic>abap-connectivity ]
+time: 45
 ---
-
-## Prerequisites  
- - **Proficiency:** Intermediate
-
 ## Details
 ### You will learn  
 * How to configure your ABAP system to expose OData services of the [Fiori Reference apps](https://blogs.sap.com/2014/11/24/fiori-reference-apps/)
@@ -27,8 +24,6 @@ tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-
     - Create customizing requests
     - Create system aliases using the **SAP Reference IMG**
 
-### Time to Complete
-**45 Min**
 
 ---
 
@@ -60,7 +55,7 @@ If you get stuck in any step of these task lists you can also do the configurati
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Set a system alias for SAP Gateway)]
+[ACCORDION-BEGIN [Step 2: ](Set system alias for SAP Gateway)]
 SAP Gateway can be run on a hub system to connect to several ABAP backend systems. To keep it simple, the SAP Gateway hub system and our ABAP backend system shall be the same. In other words, the system that is responsible for processing (managing and storing) the data of an inbound request is the local SAP Gateway instance itself. To configure if inbound requests are managed by a remote or a local system, you need to create an SAP system alias (see the [official documentation](https://help.sap.com/viewer/68bf513362174d54b58cddec28794093/7.5.latest/en-US/63f72651c294256ee10000000a445394.html)).
 
 1. Call transaction **`SPRO`**.
@@ -97,7 +92,7 @@ SAP Gateway can be run on a hub system to connect to several ABAP backend system
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a user to access the service)]
+[ACCORDION-BEGIN [Step 3: ](Create user to access the service)]
 
 In this step we create a technical user DEMO. The purpose of this user is to restrict the access of the exposed OData services. For example, you can add user DEMO and its password to a destination of your cloud foundry subaccount to get access to the OData services from an app running on SAP Cloud Platform.
 
@@ -173,7 +168,7 @@ Congratulations! You are done with the configuration.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check your HTTP Port)]
+[ACCORDION-BEGIN [Step 5: ](Check your HTTP port)]
 To access the OData service you need to know the HTTP port of your system.
 
 1. Call transaction **`SMICM`**, and choose **`Goto`** | **`Services`** (Shift + F1).

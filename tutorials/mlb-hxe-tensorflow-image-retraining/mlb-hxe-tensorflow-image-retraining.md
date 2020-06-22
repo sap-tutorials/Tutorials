@@ -13,7 +13,7 @@ During this tutorial, you will learn how to customize a pre-trained `ImageNet` T
 
 As part of the [TensorFlow Hub](https://www.tensorflow.org/hub/), a library to foster the publication, discovery, and consumption of reusable parts of machine learning models, you can now easily import and customize a pre-trained model.
 
-You will reuse a pre-trained image recognition model from the [How to Retrain an Image Classifier for New Categories](https://www.tensorflow.org/tutorials/image_retraining) tutorial from the TensorFlow website.
+You will reuse a pre-trained image recognition model from the [How to Retrain an Image Classifier for New Categories](https://www.tensorflow.org/hub/tutorials/image_retraining) tutorial from the TensorFlow website.
 
 However, this script currently includes a step to export the model using a 3 dimensions shape as the input which is not supported by the SAP HANA External Machine Learning integration.
 
@@ -418,7 +418,7 @@ python ~/export/flowers_import_data.py \
 	--hxehost localhost \
 	--hxeport 39015 \
 	--hxeusr ML_USER \
-	--hxepwd Welcome18Welcome18
+	--hxepwd Welcome19Welcome19
 ```
 
 [DONE]
@@ -558,7 +558,7 @@ python ~/export/flowers_client.py \
 	--hxehost localhost \
 	--hxeport 39015 \
 	--hxeusr ML_USER \
-	--hxepwd Welcome18Welcome18
+	--hxepwd Welcome19Welcome19
 ```
 
 [DONE]

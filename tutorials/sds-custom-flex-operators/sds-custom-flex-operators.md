@@ -371,6 +371,7 @@ PROPERTIES
 	table = 'ACTIVITY_HIST' ;
 
 ```
+
 [DONE]
 
 [ACCORDION-END]

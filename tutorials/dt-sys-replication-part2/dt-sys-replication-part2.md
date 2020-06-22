@@ -1,6 +1,7 @@
 ---
 title: Performing a Takeover
 description: Introduction to takeovers
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio ]
 ---
@@ -62,5 +63,6 @@ The takeover will now proceed. You can select **Run in background** while the ta
 
 The secondary system is now the production system. If the system is already running, it comes out of recovery mode and becomes fully operational immediately: it replays the last transaction logs and starts to accept queries. If the system is offline, it takes over production operation when you start it.
 
+[VALIDATE_1]
 
 [ACCORDION-END]

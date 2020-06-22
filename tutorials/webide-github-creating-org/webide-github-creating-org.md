@@ -1,63 +1,77 @@
 ---
-title: Creating a GitHub organization and adding collaborators
-description: Collaborative Development Using GitHub and SAP Web IDE
+title: Create a GitHub Organization and Add Collaborators
+description: Create a GitHub organization account to support collaborative development using GitHub and SAP Web IDE.
 primary_tag: products>sap-web-ide
 tags: [ tutorial>beginner, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
-
+time: 5
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Next Steps
- - [Create a Git repository within the GitHub Organization](https://developers.sap.com/tutorials/webide-github-create-git-repo.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how to create an organization in GitHub and add collaborators.
-
-### Time to Complete
-**5 Min**.
+  - How to create an organization in GitHub and add collaborators
 
 ---
 
-1. Go to [GitHub](https://github.com)
 
-2. Click on **Sign In**, enter your account credentials and click on **Sign in**.
+[ACCORDION-BEGIN [Step 1: ](Sign into GitHub)]
 
-3. Click on the **+** icon on the top-right corner and click on **New Repository**.
+Go to [GitHub](https://github.com)
 
-    ![Create New Repository](p1_3.png)
+Click **Sign In**, enter your account credentials, and click **Sign in**.
 
-4. Enter the organization name, billing email and click on **Create an Organization**.
+[DONE]
+[ACCORDION-END]
 
-    ![Create New Organization](p1_4.png)
+[ACCORDION-BEGIN [Step 2: ](Create organization)]
 
-5.
-    a. Invite collaborators to the organization by entering their email id/GitHub username. Do ensure the collaborator has a GitHub account else the person will not be added as a collaborator. Click on **Finish** once done.
+Click the **+** icon on the top-right corner and click **New organization**.
 
-    ![Search for collaborators](p1_5a.png)
+Enter the organization name, billing email, and click  **Create an Organization**.
 
-    b. If you already have an organization click on the Organization name under the profile.
+![Create New Organization](p1_4.png)
 
-    ![Select an organization](p1_5b.png)
+[DONE]
+[ACCORDION-END]
 
-    c. Click on **Invite someone**.
+[ACCORDION-BEGIN [Step 4: ](Invite collaborators)]
 
-    ![Invite to organization](p1_5c.png)
+Invite collaborators to the organization by entering their email/GitHub username. Ensure the collaborator has a GitHub account, otherwise the person will not be added as a collaborator.
 
-    d. And enter their GitHub username or email.
+Click **Finish**.
 
-    ![enter github username](p1_5d.png)
+![Search for collaborators](p1_5a.png)
 
+If you already have an organization, click the organization name under the profile.
 
-6. Click on the appropriate role for the collaborator being added and then click on **Send Invitation**.
+![Select an organization](p1_5b.png)
 
-    ![Select a role for collaborator](p1_6.png)
+Click **Invite someone**.
 
-7. The collaborator will receive an email, follow the link on the email to accept invite.
+![Invite to organization](p1_5c.png)
 
-    ![Join the organization](p1_7.png)
+Enter their GitHub username or email.
 
-8. Click on **Join** and now the organization will have the collaborator added!
+![enter github username](p1_5d.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Assign role to collaborator)]
+
+Click the appropriate role for the collaborator and then click **Send Invitation**.
+
+![Select a role for collaborator](p1_6.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Collaborator joins organization)]
+
+The collaborator receives an email.
+
+![Join the organization](p1_7.png)
+
+The collaborator clicks **Join**, and now the collaborator is part of the organization!
+
+[DONE]
+[ACCORDION-END]

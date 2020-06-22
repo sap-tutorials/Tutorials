@@ -94,7 +94,7 @@ If you are missing some inspiration, you can use the following pictures from the
  - <a href="https://farm4.static.flickr.com/3049/2864856895_63aba50a68.jpg" target="blank" download="Apple 1.jpg">Apple 1</a>
  - <a href="https://farm3.static.flickr.com/2068/2127339915_f9ae445652.jpg" target="blank" download="Apple 2.jpg">Apple 2</a>
  - <a href="https://farm2.static.flickr.com/1138/1274351453_870429bb8e.jpg" target="blank" download="Banana 1.jpg">Banana 1</a>
- - <a href="https://farm1.static.flickr.com/142/367481160_a0d6cdf933.jpg"   target="blank" download="Banana 2.jpg">Banana 2</a>
+ - <a href="https://farm3.static.flickr.com/2105/2193164715_20e3637685.jpg" target="blank" download="Banana 2.jpg">Banana 2</a>
  - <a href="https://farm4.static.flickr.com/3592/3614068732_545a4fc3a1.jpg" target="blank" download="Cherry 1.jpg">Cherry 1</a>
  - <a href="https://farm3.static.flickr.com/2443/3704400156_5f2dc5fb07.jpg" target="blank" download="Cherry 2.jpg">Cherry 2</a>
 
@@ -115,7 +115,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-image-feature-extractor.cfapps.eu10.hana.ondemand.com/api/v2/image/feature-extraction`</nobr>
+<nobr>URL<nobr>          | the value for **`IMAGE_FEATURE_EXTRACTION_URL`** in your service key
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 
@@ -128,7 +128,7 @@ Then set the file with the downloaded images in the following order:
  - <a href="https://farm4.static.flickr.com/3049/2864856895_63aba50a68.jpg" target="blank" download="Apple 1.jpg">Apple 1</a>
  - <a href="https://farm3.static.flickr.com/2068/2127339915_f9ae445652.jpg" target="blank" download="Apple 2.jpg">Apple 2</a>
  - <a href="https://farm2.static.flickr.com/1138/1274351453_870429bb8e.jpg" target="blank" download="Banana 1.jpg">Banana 1</a>
- - <a href="https://farm1.static.flickr.com/142/367481160_a0d6cdf933.jpg"   target="blank" download="Banana 2.jpg">Banana 2</a>
+ - <a href="https://farm3.static.flickr.com/2105/2193164715_20e3637685.jpg" target="blank" download="Banana 2.jpg">Banana 2</a>
  - <a href="https://farm4.static.flickr.com/3592/3614068732_545a4fc3a1.jpg" target="blank" download="Cherry 1.jpg">Cherry 1</a>
  - <a href="https://farm3.static.flickr.com/2443/3704400156_5f2dc5fb07.jpg" target="blank" download="Cherry 2.jpg">Cherry 2</a>
 
@@ -182,7 +182,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-similarity-scoring.cfapps.eu10.hana.ondemand.com/api/v2/similarity-scoring`</nobr>
+<nobr>URL<nobr>          | the value for **`SIMILARITY_SCORING_URL`** in your service key
 
 On the **Body** tab, keep **`form-data`** selected.
 

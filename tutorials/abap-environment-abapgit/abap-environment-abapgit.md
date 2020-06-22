@@ -3,8 +3,10 @@ auto_validation: true
 title: Use abapGit to Transform ABAP Source Code to the Cloud
 description: Transform ABAP source code from on-premise SAP system to a SAP Cloud Platform ABAP Environment instance.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner,  topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner,  topic>abap-development, products>sap-cloud-platform, tutorial>license]
 time: 15
+author_name: Niloofar Naseri
+author_profile: https://github.com/niloofar-naseri
 ---
 
 ## Prerequisites  
@@ -182,6 +184,10 @@ time: 15
   4. Select a **Transport Request** and click **Finish**.
 
       ![finish](clone4.png)
+
+  6. Open the **`abapGit` repositories tab**, right-click on your package and click **pull**.
+
+      ![finish](pull.png)
 
   5. Your imported sources are now available under your package.
 

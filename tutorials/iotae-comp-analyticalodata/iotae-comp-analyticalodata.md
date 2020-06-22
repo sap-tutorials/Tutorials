@@ -1,9 +1,9 @@
 ---
-title: Using Analytical OData in IoT Application Enablement
-description: Explore the Analytical OData services in SAP IoT Application Enablement (AE) to get time series and aggregates on data
-auto_validation: true
+title: Using Analytical OData in SAP IoT
+description: Explore the Analytical OData services in SAP IoT to get time series and aggregates on data
+auto_validation: false
+tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-api-management ]
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-api-management, products>sap-iot-application-enablement ]
 ---
 
 ## Prerequisites  
@@ -11,8 +11,8 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 
 ## Details
 ### You will learn  
-- How to use the SAP API Business Hub to browse IoT AE services
-- How to use Analytical OData Services from SAP IoT Application Enablement
+- How to use the SAP API Business Hub to browse SAP IoT services
+- How to use Analytical OData Services from SAP IoT
 
 ### Time to Complete
 **30 Min**
@@ -24,7 +24,7 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 - **User in SAP IoT AE trial tenant**
   Go to <https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html> and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
 - **Tools**
-  Please check step 4 in <https://developers.sap.com/group.iotae-computer-as-thing.html> to have the Postman tooling ready.
+  Please check [Call IoT Application Enablement service APIs with Postman](iotae-api-postman) to have the Postman tooling ready.
 - **SAP API Business Hub**
   New to API Business Hub? Check <https://developers.sap.com/tutorials/hcp-abh-getting-started.html> first.
   Please note, that screenshots used in this tutorial are based on the classic design UI of the website: <https://api.sap.com/?ui=oldUI>
@@ -422,6 +422,7 @@ The result will look like this:
   }
 }
 ```
+
 [DONE]
 
 [ACCORDION-END]
