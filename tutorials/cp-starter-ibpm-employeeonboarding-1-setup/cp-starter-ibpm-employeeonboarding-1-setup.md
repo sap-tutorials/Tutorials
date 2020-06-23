@@ -3,7 +3,7 @@ title: Set Up Business Process Management Services in Cloud Cockpit
 description:  Set up services to automate and achieve operational insights into employee onboarding processes.
 
 auto_validation: true
-time: 20
+time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
 ---
@@ -22,7 +22,7 @@ In this tutorial mission, setup and use these services to automate and achieve o
 
 [ACCORDION-BEGIN [Step 1: ](Setup services in your account using Recipe)]
 
-You will use the **recipe** to automatically setup of workflow, business rules, and process visibility services in your account.
+You will use the **Recipe** to automatically set up the workflow, business rules, and process visibility services in your account.
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -51,7 +51,7 @@ You will use the **recipe** to automatically setup of workflow, business rules, 
     !![Recipe In Progress](startrecipe_3.png)
 
 
-    > This automatic set up will do the following:
+    > This automatic setup will do the following:
 
     > - Add Business Rules, Workflow, Process Visibility, Portal, Application Runtime, HTML5 Applications and Connectivity entitlements in your account.
 
@@ -67,11 +67,11 @@ You will use the **recipe** to automatically setup of workflow, business rules, 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Setup Fiori Launchpad)]
-You will import, build and deploy the multitarget project that will create a Fiori Launchpad to access workflow, business rules and process visibility applications which will be used in next tutorials.
+You will import, build and deploy the multi target project that will create a Fiori Launchpad to access workflow, business rules and process visibility applications which will be used in next tutorials.
 
 1. Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases) in your local file system.
 
->This multitarget application when deployed will create the Fiori Launchpad to access workflow, business rules and process visibility applications.
+>This multi target application when deployed will create the Fiori Launchpad to access workflow, business rules and process visibility applications.
 
 !![Download MTA](downloadmta.png)
 
@@ -113,13 +113,13 @@ You will import, build and deploy the multitarget project that will create a Fio
 
     ![Import MTA](importzip.png)
 
-    - The multitarget application gets imported under the **Workspace** folder and the file structure is shown below.
+    - The multi target application gets imported under the **Workspace** folder and the file structure is shown below.
 
     >Ensure you have chosen **Show Hidden Files** to be able to view the `app-router` file structure as shown.
 
     ![Open Hidden Files](openhiddenfiles.png)
 
-9. Right-click on the `BPMServicesFLP` project and choose the **Build** option.
+9. Right-click `BPMServicesFLP` project and choose the **Build** option.
 
     !![Build MTA](build.png)
 
@@ -161,7 +161,7 @@ You will import, build and deploy the multitarget project that will create a Fio
 
     ![Create Destination](createdestination-apihub.png)
 
-3. In **Destination Configuration** section, click on **Edit** and enter your trial password:
+3. In **Destination Configuration** section, click **Edit** and enter your trial password:
 
     ![Create Destination](savedestination-apihub.png)
 
