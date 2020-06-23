@@ -40,7 +40,7 @@ Click the next cell and click **Run**. This prints out the ground truth and the 
 
 ![Ground Truth Comparison](ground-truth.png)
 
-In the example above, the ground truth for the language is `German`. The service predicted `German` with a probability of 0.85 and it was able to eliminate `English` and `Other` completely. The service only confused it with `Both` (german and english language) but only with a very small probability. In other words, the service made a very accurate prediction here.
+In the example above, the ground truth for the language is `German`. The service predicted `German` with a probability of 0.85 and it was able to eliminate `English` and `Other` completely. The service only confused it with `Both` (German and English language) but only with a very small probability. In other words, the service made a very accurate prediction here.
 
 [DONE]
 [ACCORDION-END]
