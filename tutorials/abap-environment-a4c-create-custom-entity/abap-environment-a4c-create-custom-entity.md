@@ -15,6 +15,8 @@ primary_tag: products>sap-cloud-platform--abap-environment
 This tutorial is based on:
 
   - [Using a CDS Custom Entity for Data Modeling](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/6436a50d7d284f01af2cca7a76c7116a.html).
+  - [Implementing the Query for Service Consumption](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/c33503ae1e794e3aad0d2e122f465611.html)
+  - [Implementing Data and Count Retrieval](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/33497472ad294918b8a0184d9d8369bd.html)
 
 Therefore, this tutorial will only cover in detail those aspects that are different. In this case, you are not including both remote and local data, you are only retrieving local data. Therefore, you do not need to include the local calculated fields,  `DiscountPct` and `DiscountAbs`.
 
@@ -27,7 +29,7 @@ First, you create the class that implements the data retrieval logic.
 
 2. Enter a name and description:
     - `ZCL_TRAVELS_XXX`
-    - Show travels from A4C System
+    - Get travel data from A4C System
 
 3. Accept the default transport request, then choose **Finish**.
 
@@ -56,7 +58,7 @@ Later, you will implement the SELECT method of the interface.
 
 [ACCORDION-BEGIN [Step 3: ](Specify class in your custom entity)]
 
-1. Open your CDS custom entity **`ZCE_TRAVEL_DATA_XXX`**, created in [Create a Service Consumption Model](abap-environment-create-service-model).
+1. Open your CDS custom entity **`ZCE_TRAVEL_DATA_XXX`**, created in [Create a Service Consumption Model](abap-environment-create-service-consumption-model).
 
 2. Add the following annotation to the view (immediately after the '@EndUserText.label' annotation), pointing to the class you have just created - NOTE: Use upper case!
 
@@ -89,10 +91,9 @@ CLASS zcl_travels_xxx IMPLEMENTATION.
           """Instantiate Client Proxy
         DATA(lo_client_proxy) = zcl_proxy_travels_xxx=>get_client_proxy( ).
 
-      DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
-
       TRY.
           """Create Read Request
+          DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
           CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
             RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
               EXPORTING
@@ -202,10 +203,11 @@ CLASS zcl_travels_xxx IMPLEMENTATION.
     METHOD if_rap_query_provider~select.
           """Instantiate Client Proxy
     DATA(lo_client_proxy) = zcl_proxy_travels_xxx=>get_client_proxy( ).
-    DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
 
-    TRY.
-          """Create Read Request
+    """Create Read Request
+    TRY.      
+          DATA(lo_read_request) = lo_client_proxy->create_resource_for_entity_set( 'TRAVEL' )->create_request_for_read( ).
+
           CATCH /iwbep/cx_gateway INTO DATA(lx_gateway).
             RAISE EXCEPTION TYPE ZCX_TRAVELS_CONS_XXX
               EXPORTING

@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Continue Your OData Exploration with EPM
 description: Continue your exploration of OData with the Enterprise Procurement Model (EPM) data set in the Gateway demo system.
 auto_validation: true

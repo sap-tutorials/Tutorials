@@ -23,7 +23,7 @@ primary_tag: topic>machine-learning
 
     ![Trial global account](01_Foundation20Onboarding_Home.png)
 
-    >As most of the SAP Cloud Platform services, the Document Information Extraction trial account is only available in the Europe (Frankfurt) region. Follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and choose the Europe (Frankfurt) region.
+    >Document Information Extraction is only available in the Europe (Frankfurt) region. Follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and choose the Europe (Frankfurt) region. If this is not possible, create a new subaccount in the Europe (Frankfurt) region. You should then be able to find **Document Information Extraction Trial** in your new subaccount **Entitlements**.
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Your user profile will be set up for you automatically.
 
@@ -47,7 +47,7 @@ To try out Document Information Extraction, you need to make sure that your suba
 
 1. On the navigation side bar, click **Entitlements** to see a list of all eligible services. You are entitled to use every service in this list according to the assigned service plan.
 
-2. Search for **Document Information Extraction**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and proceed with Step 3.
+2. Search for **Document Information Extraction Trial**. If you find the service in the list, you are entitled to use it. Now you can set this step to **Done** and go to step 3.
 
     ![Entitlements](check-entitlements.png)
 
@@ -57,19 +57,21 @@ If you do not find the service in your list, proceed as follows:
 
     ![Configure Entitlements](configure-entitlements.png)
 
-  2. Click **Add Service Plans** to add service plans to your entitlements.
+  2. Click **Add Service Plans**.
 
     ![Add Service Plan](add-service-plans.png)
 
-  3. Select **Document Information Extraction**, and choose the **default** service plan. Click **Add 1 Service Plan**.
+  3. Select **Document Information Extraction Trial**, and choose the **default** service plan. Click **Add 1 Service Plan**.
 
     ![Add Service Plan](add-entitlements.png)
 
-  4. **Save** your entitlement changes.
+  4. **Save** your **Entitlements** changes.
 
     ![Add Service Plan](save-entitlements.png)    
 
-You are now entitled to use the service and to create instances of the service.
+You are now entitled to use Document Information Extraction and create instances of the service.
+
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
@@ -101,7 +103,7 @@ The **Service Marketplace** is where you find all the services available on SAP 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a service instance)]
+[ACCORDION-BEGIN [Step 5: ](Create service instance)]
 
 You will now create an instance of your service.
 
@@ -130,7 +132,7 @@ You have successfully created a service instance for Document Information Extrac
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service Keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service keys)]
 
 You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 

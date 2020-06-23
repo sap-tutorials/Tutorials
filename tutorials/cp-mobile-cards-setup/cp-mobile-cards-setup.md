@@ -94,13 +94,13 @@ Navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
 
 >If the SAP Mobile Cards Advisory screen pops up, choose **Close** to close it.
 
-Click **Initialize**. This will create a new service instance for Mobile Cards.
-
-![MobileCards](img_10.png)
-
 Click **Features**.
 
 ![MobileCards](img_11.png)
+
+> If you can't see the Features Tab, click **Initialize**. This will create a new service instance for Mobile Cards.
+
+> ![MobileCards](img_10.png)
 
 Click **Mobile Sample OData ESPM** to look into available OData Version 2 and Version 4 sample endpoints.
 
@@ -125,6 +125,8 @@ Below is a list of destinations from which the SAP Mobile Cards service can fetc
 ![MobileCards](img_16.png)
 
 Click **SAP Mobile Cards** navigation bar to go back to Mobile Cards admin page.
+
+![MobileCards](img_16_1.png)
 
 [DONE]
 [ACCORDION-END]

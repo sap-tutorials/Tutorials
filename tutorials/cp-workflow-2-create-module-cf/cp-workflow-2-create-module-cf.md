@@ -14,6 +14,7 @@ time: 15
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Create an SAP Fiori launchpad project)]
 1. In your web browser, open the cockpit of [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/cockpit).
 

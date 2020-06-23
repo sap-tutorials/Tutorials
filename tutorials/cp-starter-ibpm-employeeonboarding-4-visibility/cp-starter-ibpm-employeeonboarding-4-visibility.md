@@ -21,7 +21,7 @@ These events are persisted, correlated, and enhanced to form end-to-end process 
 
 [ACCORDION-BEGIN [Step 1: ](Create a business scenario)]
 
-1. In your web browser, open the SAP Fiori launchpad and choose **Configure Business Scenarios**.
+1. In your web browser, open the SAP Fiori launchpad and choose **Configure Visibility Scenarios**.
 
     >You should have gotten the launchpad link in the last step of the setup tutorial. The link should be like this:
 
@@ -29,7 +29,7 @@ These events are persisted, correlated, and enhanced to form end-to-end process 
 
     ![Open Scenarios](openscenarios.png)
 
-2. To create a new business scenario, choose **+**.
+2. To create a new visibility scenario, choose **+**.
 
     ![Create Scenarios](addscenario.png)
 
@@ -56,7 +56,7 @@ The business scenario will be created with **Draft** status.
 
     >*onboard* is the sample workflow that you have deployed in the previous tutorial.
 
-3. The workflow is added and all the needed **Events** and **Contexts** are  imported as well.
+3. The workflow is added and all the needed **Events** and **Context** are  imported as well.
 
     ![Workflow Added](workflowadded.png)
 

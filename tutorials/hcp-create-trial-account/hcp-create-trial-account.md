@@ -108,17 +108,17 @@ You will then see a dialog box while the account is set up.  When complete, the 
 
 You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
 
-![enter trial account](enter-trial.png)
+!![enter trial account](enter-trial.png)
 > Bookmark the link for fast and quick access to the cockpit.  
 
 The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-![enter subaccount](global-account.png)
+!![enter subaccount](global-account.png)
 
 
 To get to the space, in which your applications and services live, click on the **dev** space.
 
-![enter space](sub-account.png)
+!![enter space](sub-account.png)
 
 
 
@@ -130,11 +130,11 @@ A Cloud Foundry space is the logical container of your runtime artefacts such as
 
 The **Applications** tab is where all of your applications will be listed, and new applications can be added in to your Cloud Foundry runtime environment.  
 
-![The Applications Tab](space-apps.png)
+!![The Applications Tab](space-apps.png)
 
-The **Service Marketplace** is where you can find services to attach to any of your applications.  These services are provided by SAP Cloud Platform to make it easier to create, and produce, web applications quickly and easily. Once a service has been created, we call it a service instance.
+The **Service Marketplace** is where you can find Cloud Foundry services to attach to any of your Cloud Foundry applications. Once a service has been provisioned with a service plan, we call it a service instance.
 
-![Service Marketplace](space-marketplace.png)
+!![Service Marketplace](space-marketplace.png)
 
 [DONE]
 [ACCORDION-END]
@@ -142,11 +142,11 @@ The **Service Marketplace** is where you can find services to attach to any of y
 
 You can find a small counter on the top of the screen. This counter indicates how many days you have left in your free trial. Once the counter goes to zero, all your apps may be stopped and your subaccount will go to sleep. This means all apps will be stopped and you won't be able to log in via the CF CLI anymore (until you extend your trial).
 
-Extending the trial means you will get another 30 days until the account will go to sleep. After extending two times (e.g., 90 days) your subaccount will be deleted (i.e., all apps and services will be gone and you cannot log in via the CLI anymore). 
+Extending the trial means you will get another 30 days until the account will go to sleep. After extending two times (e.g., 90 days) your subaccount will be deleted (i.e., all apps and services will be gone and you cannot log in via the CLI anymore).
 
 After this point, you can start your new trial from scratch via the SAP Cloud Platform cockpit (see step 6).
 
-![Select trial subaccount](trial-counter.png)
+!![Select trial subaccount](trial-counter.png)
 
 
 [VALIDATE_1]

@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
 When allowing end-users to make updates to data, it is important to add validation rules to verify that they are entering valid information.
 If the Update action fails due to the validation rule, the application will display a validation failure message to the end-user. You can customize this message by creating a Message action and adding the action to the validation Failure Message field in the Update action.
 
-1. Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
     ![MDK](img_020.png)
 
@@ -49,9 +49,9 @@ If the Update action fails due to the validation rule, the application will disp
 
 In the MDK editor, you will create a new JavaScript file called `EmailValidation.js` to handle validation if a **@** symbol exists in the email address. In the validation rule, you will grab the data entered by the end-user, validate it and check for the **@** symbol then return true if the email address is of a valid format or false if it is not. The returning result of the validation rule can be used in the Update action to determine whether the action succeeds or fails.
 
->You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
+>You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right click on the **Rules** folder | **New** | **File**.
+1. Right-click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.png)
 
@@ -85,7 +85,7 @@ In the MDK editor, you will create a new JavaScript file called `EmailValidation
 
 [ACCORDION-BEGIN [Step 3: ](Add the validtion rule to the Update entity)]
 
-Now that you have created the validation rule, you will add it to the Update action. This will tell the Update action to run the validation rule before saving any data. If the validation rule is successful, the Update action will save the changes as expected. If the validation rule fails, the end-user receives the validation failure message telling them useful information so they can fix the problem before continuing.
+Now, that you have created the validation rule, you will add it to the Update action. This will tell the Update action to run the validation rule before saving any data. If the validation rule is successful, the Update action will save the changes as expected. If the validation rule fails, the end-user receives the validation failure message telling them useful information so they can fix the problem before continuing.
 
 1. Open `Customers_UpdateEntity.action` by double clicking on the action in the project explorer pane.
 
@@ -100,15 +100,15 @@ Now that you have created the validation rule, you will add it to the Update act
 
 Deploy the updated application to your MDK client.
 
-1. Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_026.1.png)
 
-2. Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Confirm the destination name and application id match where you want to deploy and click **Next**.
 
     ![MDK](img_014.1.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test the application)]
@@ -135,9 +135,10 @@ Deploy the updated application to your MDK client.
     ![MDK](img_013.png)
     ![MDK](img_012.png)
 
+
 [OPTION END]
 
-Congratulations, you have created an MDK app from scratch. You can now continue enhancing this app with some other [additional functionalities](mission.mobile-dev-kit-enhance).
+Congratulations, you have successfully completed **Create Your First Mobile App with the Mobile Development Kit (MDK)** mission and you are now all set to [Enhance Your First MDK App with Additional Functionalities](mission.mobile-dev-kit-enhance) mission.
 
 [VALIDATE_1]
 [ACCORDION-END]

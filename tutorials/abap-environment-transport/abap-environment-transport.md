@@ -3,7 +3,7 @@ auto_validation: true
 title: Implement the Transport for Your Factory Calendar
 description: Create a transport class and implement the save validation for your factory calendar.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 20
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -548,6 +548,8 @@ After you have created the global transport class for your business object you c
 
 The ABAP RESTful Programming Model supports optimistic locking using entity tags. The timestamp (last changed on) is used as ETAG-field. On save, the value of the ETAG field kept in the user interface is compared with the value of the ETAG field in the database. If the value no longer matches, another process must have changed the entity. The outdated version is detected by RAP and the saving process is aborted with an error message.
 
+>Ensure that the annotation of the ETAG field **`changedat`** in your data definition **`ZCAL_I_HOLIDAY_XXX`** is **`@Semantics.systemDateTime.lastChangedAt: true`**.
+
   1. Open your database table **`ZCAL_HOLIDAY_XXX`** and ensure that you added field **`changedat`** of type **`timestampl`**.
 
     ![lock](lock.png)
@@ -598,7 +600,7 @@ The ABAP RESTful Programming Model supports optimistic locking using entity tags
   5. Open your service binding to start your SAP Fiori Elements preview.
 
      If one entity of the factory calendar is edited from two users at the same time, an error message appears:
- 
+
       ![lock](lock3.png)
 
 [DONE]

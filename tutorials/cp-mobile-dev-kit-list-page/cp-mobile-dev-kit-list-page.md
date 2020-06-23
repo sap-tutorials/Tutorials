@@ -34,124 +34,124 @@ This page is a searchable list that displays all customers.
 To create the Customer List page, you will create a **Section page** and drag the Customer **Contact Cell Table** control onto the page. In the property palette, you will link the control to the Customer Collection and then map data and actions to different areas of the cell object in the property palette. One nice feature about the **Contact Cell Table** control is that it has icons that can activate device functionality such as phone, email, video and more.
 
 
-In SAP Web IDE project, right-click on the **Pages** | **New MDK Page** | **Section Page** | **Next**.
+1. In SAP Web IDE project, right-click the **Pages** | **New MDK Page** | **Section Page** | **Next**.
 
-![MDK](img_001.gif)
+    ![MDK](img_001.png)
 
->You can find more details about [section page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+    >You can find more details about [section page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/section-page.html).
 
-Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** on the confirmation step.
+2. Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** on the confirmation step.
 
-![MDK](img_002.png)
+    ![MDK](img_002.png)
 
-In the **Properties** pane, set the **Caption** to **Customers**.
+3. In the **Properties** pane, set the **Caption** to **Customers**.
 
-![MDK](img_3.png)
+    ![MDK](img_3.png)
 
-In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Contact Cell Table** control onto the Page area.
+4. In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Contact Cell Table** control onto the Page area.
 
-![MDK](img_003.1.gif)
+    ![MDK](img_003.1.gif)
 
->A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
+    >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
-In the Properties pane, select the previously added service from the **Service** drop down and then select **Customers** Entity Set from the dropdown. This way, the _Object Table_ has been bound to **Customers** Entity.
+5. In the Properties pane, select the previously added service from the **Service** drop down and then select **Customers** Entity Set from the dropdown. This way, the _Object Table_ has been bound to **Customers** Entity.
 
-![MDK](img_0001.png)
+    ![MDK](img_0001.png)
 
-In the **Properties** pane, click the **link icon** to open the Object Browser for the **Description** property.
+6. In the **Properties** pane, click the **link icon** to open the Object Browser for the **Description** property.
 
-Double click on the `City` property of the Customer entity to set it as the binding expression and click **OK**.
+7. Double click the `City` property of the Customer entity to set it as the binding expression and click **OK**.
 
-![MDK](img_008.gif)
+    ![MDK](img_008.gif)
 
->Be careful **not** to select `City` from `Address (ESPM.Address)`.
+    >Be careful **not** to select `City` from `Address (ESPM.Address)`.
 
->![MDK](img_009.1.png)
+    >![MDK](img_009.1.png)
 
-Repeat the above steps for `Headline` and `Subheadline` properties binding to `FirstName` and `City` properties of the Customer entity respectively.
+8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `FirstName` and `LastName` properties of the Customer entity respectively.
 
-You should have final results as below.
+    You should have final results as below.
 
-![MDK](img_009.png)
+    ![MDK](img_009.png)
 
-In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to **true**.
+9. In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to **true**.
 
-![MDK](img_014.png)
+    ![MDK](img_014.png)
 
-In the **Activity Items** section of the Properties pane, change `VideoCall` on the first activity to **Phone**.
+10. In the **Activity Items** section of the Properties pane, change `VideoCall` on the first activity to **Phone**.
 
-![MDK](img_010.gif)
+    ![MDK](img_010.gif)
 
-Click the **link icon** to open the Object browser for the **Phone** activity and bind it to the `PhoneNumber` property of the Customer entity.
+11. Click the **link icon** to open the Object browser for the **Phone** activity and bind it to the `PhoneNumber` property of the Customer entity.
 
-![MDK](img_011.png)
+    ![MDK](img_011.png)
 
-Repeat the above step for **Email** activity and bind it to `EmailAddress` property of the Customer entity.
+12. Repeat the above step for **Email** activity and bind it to `EmailAddress` property of the Customer entity.
 
-![MDK](img_012.png)
+    ![MDK](img_012.png)
 
-Click the **trash** can icon for the Detail activity to remove it from the Activity list.
+13. Click the **trash** can icon for the Detail activity to remove it from the Activity list.
 
-![MDK](img_013.png)
+    ![MDK](img_013.png)
 
-Save your changes to the `Customers_List.page`.
+14. Save your changes to the `Customers_List.page`.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create navigation action)]
 
 Now, you will create a Navigation action that opens the `Customers_List.page` when called.
 
-Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
+1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
-![MDK](img_017.gif)
+    ![MDK](img_017.gif)
 
-Provide the below information:
+2. Provide the below information:
 
-| Field | Value |
-|----|----|
-| `Action Name`| `NavToCustomers_List` |
-| `Page to Open` | select `Customers_List.page` |
+    | Field | Value |
+    |----|----|
+    | `Action Name`| `NavToCustomers_List` |
+    | `Page to Open` | select `Customers_List.page` |
 
-![MDK](img_018.png)
+    ![MDK](img_018.png)
 
-Click **Next** and then **Finish** on the confirmation step.
+3. Click **Next** and then **Finish** on the confirmation step.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add a button to view customer list)]
 
-Now that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Section Button Table** control.
+Now, that the Customer List page is created, you will add a button to the Main page to display the Customers. You will use a **Section Button Table** control.
 
-In `Main_page`, drag and drop the **Section Button Table** container control onto the Page.
+1. In `Main_page`, drag and drop the **Section Button Table** container control onto the Page.
 
-![MDK](img_019.1.gif)
+    ![MDK](img_019.1.gif)
 
->**Container** includes controls that act as containers for other controls, such as container items. A container is constant for all pages. The size of a container depends on the controls and contents included inside.
+    >**Container** includes controls that act as containers for other controls, such as container items. A container is constant for all pages. The size of a container depends on the controls and contents included inside.
 
-Expand the **Container Item** section of the Controls palette.
+2. Expand the **Container Item** section of the Controls palette.
 
-Drag and drop a **Section Button** onto the Section Button Table container on the page.
+    Drag and drop a **Section Button** onto the Section Button Table container on the page.
 
-![MDK](img_021.gif)
+    ![MDK](img_021.gif)
 
->Each container type in a Section Page can contain specific controls (container items).
+    >Each container type in a Section Page can contain specific controls (container items).
 
->You can find more details about [Container and Container Item](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+    >You can find more details about [Container and Container Item](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/SectionedTable.schema.html).
 
-In the Properties pane, set the **Title** of the button to **Customer List**.
+3. In the Properties pane, set the **Title** of the button to **Customer List**.
 
-![MDK](img_022.png)
+    ![MDK](img_022.png)
 
-Under **Events** tab, click the **link icon** for the `OnPress` Handler property to open the Object Browser.
+4. Under **Events** tab, click the **link icon** for the `OnPress` Handler property to open the Object Browser.
 
-Double Click on the `NavToCustomers_List` action and click **OK** to set it as the `OnPress` Handler Action.
+5. Double click the `NavToCustomers_List` action and click **OK** to set it as the `OnPress` Handler Action.
 
-![MDK](img_025.gif)
+    ![MDK](img_025.gif)
 
-Save the changes to the `Main_page`.
+6. Save the changes to the `Main_page`.
 
 [DONE]
 [ACCORDION-END]
@@ -160,13 +160,13 @@ Save the changes to the `Main_page`.
 
 Deploy the updated application to your MDK client.
 
-Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-![MDK](img_026.png)
+    ![MDK](img_026.png)
 
-Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Confirm the destination name and application id match where you want to deploy and click **Next**.
 
-![MDK](img_014.1.png)
+    ![MDK](img_014.1.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -177,41 +177,44 @@ Since we have deployed already both the destination and app id should be pre-sel
 
 [OPTION BEGIN [Android]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
 
-![MDK](img_027.1.jpg)
+    ![MDK](img_027.1.jpg)
 
-You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
+2. You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
 
-![MDK](img_028.1.jpg)
+    ![MDK](img_028.1.jpg)
 
-Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
+    Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
 
-![MDK](img_029.1.jpg)
+    ![MDK](img_029.1.jpg)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
 
-![MDK](img_027.png)
+    ![MDK](img_027.png)
 
-You will notice, newly added button on the main page. Tap **Customer List**.
+2. You will notice, newly added button on the main page. Tap **Customer List**.
 
-![MDK](img_028.png)
+    ![MDK](img_028.png)
 
-Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
+    Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
 
-![MDK](img_029.png)
+    ![MDK](img_029.png)
 
->Here, you may notice that **City** is not showing up on screen, this is by design. Since in portrait mode, the device width is considered _compact_ , if you change device orientation to landscape mode, you will see **City**.
+    >Here, you may notice that **City** is not showing up on screen, this is by design. Since in portrait mode, the device width is considered _compact_ , if you change device orientation to landscape mode, you will see **City**.
 
->![MDK](img_030.png)
+    >![MDK](img_030.png)
 
->If it was an iPad (where both portrait and landscape are considered _regular_ instead of _compact_) you would see **City** on either orientation.
+    >If it was an iPad (where both portrait and landscape are considered _regular_ instead of _compact_) you would see **City** on either orientation.
+
 
 [OPTION END]
+
+You have successfully created a Customer List page and you are now all set to [Create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
 
 [DONE]
 [ACCORDION-END]

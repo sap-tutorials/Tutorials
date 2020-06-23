@@ -37,13 +37,11 @@ To implement deep insert between parent and child OData entities, you need to ca
 
 In this step, you will create the _Create Order_ page as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.
 
-1. Right click on the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
+1. Right click the **Pages** folder | **New MDK Page** | **Form Cell Page** | **Next**.
 
-    ![MDK](img_001.gif)
+    ![MDK](img_001.1.png)
 
     >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
-
-    >You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
 
 2. Enter the Page Name `SalesOrderHeaders_Create` and click **Next** and the **Finish** on the Confirmation step.
 
@@ -56,8 +54,6 @@ In this step, you will create the _Create Order_ page as a **Form Cell Page**. T
 4. Now, you will add the fields (like Currency Code, Net Amount, Tax Amount, Gross Amount, Life cycle status, Life cycle status name and order creation date) for creating a new sales order record by the end-user.
 
     In the Layout Editor, expand the **Control** | **Container Item** section.
-
-    >You can find more details about [available controls in Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a0358d7a9c3b46e0819f28ae779def24.html).
 
 5. Drag and drop a **Simple Property** onto the Page area.
 
@@ -168,17 +164,17 @@ Now, you will add a button on the Create Order page and set its `onPress` to `Cl
 
 2. In the **Properties** pane, click the **link icon** to open the object browser for the **System Item** property.
 
-    Double click on the **Cancel** type and click **OK**.
+    Double click the **Cancel** type and click **OK**.
 
     ![MDK](img_015.png)
 
     >System Item are predefined system-supplied icon or text. Overwrites _Text_ and _Icon_ if specified.
 
-3. Now, you will set `onPress` to `CloseModalPage_Cancel.action`.
+3. Now, you will set the `onPress` event to `CloseModalPage_Cancel.action`.
 
     In **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-    Double click on the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
+    Double click the `CloseModalPage_Cancel.action` and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_016.png)
 
@@ -191,7 +187,7 @@ Now, you will add a button on the Create Order page and set its `onPress` to `Cl
 
 1. Now, create a navigation action that will open the `SalesOrderHeaders_Create.page` when executed.
 
-    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
 
     ![MDK](img_016.1.png)
 
@@ -224,7 +220,7 @@ You will add a toolbar item to the `Customers_Detail.page` called **Create Order
 
 3. In the Properties pane, click the **Events** tab, click the **link icon** for the `OnPress` property to open the object browser.
 
-    Double Click on the `NavToSalesOrderHeaders_Create.action` and click **OK** to set it as the `OnPress` Action.
+    Double click the `NavToSalesOrderHeaders_Create.action` and click **OK** to set it as the `OnPress` Action.
 
     ![MDK](img_020.png)
 
@@ -239,7 +235,7 @@ The next step is to store newly created record locally for an offline applicatio
 
 1. Define a failure message.
 
-    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
     ![MDK](img_020.1.png)
 
@@ -262,9 +258,9 @@ The next step is to store newly created record locally for an offline applicatio
 
 2. You will create the **OData action** to create a sales order entity.
 
-    >You can find more details about [Create Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/9cafb37ca8ad49e6930dba857352a3e6.html).
+    >You can find more details about [Create Entity Action](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/CreateEntity.schema.html).
 
-    Right-click on the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
+    Right-click the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
     ![MDK](img_023.png)
 
@@ -287,7 +283,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     Change the drop down in the object browser to `Controls & ClientData`, click the **Current Page** radio button.
 
-    In the search box start typing the control name `FCCreatedate`. The list will filter down to show the matching values. Double click on the **Value (Value)** entry under the `FCCreatedate` field and click **OK** to set binding.
+    In the search box start typing the control name `FCCreatedate`. The list will filter down to show the matching values. Double click the **Value (Value)** entry under the `FCCreatedate` field and click **OK** to set binding.
 
     ![MDK](img_025.gif)
 
@@ -324,7 +320,7 @@ The next step is to store newly created record locally for an offline applicatio
 
 8. Save the changes to the `SalesOrderHeaders_CreateEntity.action`.
 
-9. Now that the `SalesOrderHeaders_CreateEntity.action` has been created, you will need to call this action when the end-user presses the **Save** button. You will add a **Save** button on the `SalesOrderHeaders_Create.page` and link it to the `SalesOrderHeaders_CreateEntity.action`.
+9. Now, that the `SalesOrderHeaders_CreateEntity.action` has been created, you will need to call this action when the end-user presses the **Save** button. You will add a **Save** button on the `SalesOrderHeaders_Create.page` and link it to the `SalesOrderHeaders_CreateEntity.action`.
 
     In `SalesOrderHeaders_Create.page`, **drag and drop** an **Action Bar Item** to the upper right corner of the action bar.
 
@@ -332,7 +328,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     Click the **link** icon to open the object browser for the **System Item** property.
 
-    Double click on the **Save** type and click **OK**.
+    Double click the **Save** type and click **OK**.
 
     ![MDK](img_032.png)
 
@@ -349,7 +345,7 @@ The next step is to store newly created record locally for an offline applicatio
 
 In `Customers_Detail.page` you added total number of order counts for a given customer. When a new `SalesOrder` is created, this count doesn't get updated automatically unless you navigate back and forth to this page.
 
-> `DataSubscriptions` : it is a way to listen to data changes that when triggered should cause a UI element to redraw. If your control or section has a target, that target is automatically subscribed for data change events. Otherwise you can also explicitly subscribe to `DataSubscriptions` by specifying an entity set name or `readLink` in an array. You can find more details [here](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/6e173df205af4d0eb5c0592e94fc5cdb.html).
+> `DataSubscriptions` : it is a way to listen to data changes that when triggers should cause a UI element to redraw. If your control or section has a target, that target is automatically subscribed for data change events. Otherwise you can also explicitly subscribe to `DataSubscriptions` by specifying an entity set name or `readLink` in an array. You can find more details [here](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/6e173df205af4d0eb5c0592e94fc5cdb.html).
 
 1. In `Customers_Detail.page`, select **Customer Orders** Object Table control. In **Properties** section, click **+** icon under **Misc** and double click `SalesOrderHeaders` and click **OK**.
 
@@ -364,11 +360,11 @@ In `Customers_Detail.page` you added total number of order counts for a given cu
 
 1. Deploy the updated application to your MDK client.
 
-    Right-click on the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+    Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_026.1.png)
 
-2. Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Confirm the destination name and application id match where you want to deploy and click **Next**.
 
     ![MDK](img_014.1.png)
 
@@ -427,7 +423,7 @@ In `Customers_Detail.page` you added total number of order counts for a given cu
 
 [OPTION END]
 
-Congratulations, you have enhanced your MDK app with additional functionalities. You may now start exploring [other](mission.mobile-dev-kit-level-up) tutorials.
+Congratulations, you have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up)mission.
 
 
 [DONE]

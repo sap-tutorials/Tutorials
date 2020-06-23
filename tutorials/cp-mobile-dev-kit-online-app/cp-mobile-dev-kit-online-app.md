@@ -38,13 +38,13 @@ With Mobile Development Kit, you can also create applications that are online or
 
 2. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
 
-3. Right click on Workspace folder and select **New** | **MDK Base Project**.
+3. Right click Workspace folder and select **New** | **MDK Base Project**.
 
     ![MDK](img_001.png)
 
     >The _MDK Base Project_ template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 4. Enter the **Project Name** as `MDKOnlineApp` and click **Next**.
 
@@ -83,8 +83,6 @@ With Mobile Development Kit, you can also create applications that are online or
     >You can look in SAP Cloud Platform Mobile Services cockpit for the destination belongs to the MDK app by clicking on **Mobile Connectivity** feature.
     ![MDK](img_0032.png)
 
-    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
-
 8. Leave the default configuration as it is and click **Next** and then click **Finish**.
 
     ![MDK](img_006.png)
@@ -114,7 +112,7 @@ These are the metadata definitions available in the editor and the format in whi
 
   - **`Application.app`**: this is the main configuration file for your application from within SAP Web IDE. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
->You can find more details about [metadata definitions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/78e21fae61044df8ae8a78a43157fe8f.html).
+>You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
 
 Open the application settings in the application editor by double clicking on the Application.app in the project explorer pane.
 
@@ -125,7 +123,7 @@ Open the application settings in the application editor by double clicking on th
 >`CreateService.action` should be set at `OnLaunch` and success of this action should call `OpenService.action`.
 ![MDK](img_008.1.png)
 
->You can find more details about [OData actions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/3f462c086df846439d59fa88a2b4536b.html).
+>You can find more details about [OData actions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/Create.schema.html).
 
 [DONE]
 [ACCORDION-END]
@@ -134,7 +132,7 @@ Open the application settings in the application editor by double clicking on th
 
 So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right click on the `MDKOnlineApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Right click the `MDKOnlineApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
     ![MDK](img_009.png)
 
@@ -146,7 +144,7 @@ So far, you have learnt how to build an MDK application in the SAP Web IDE edito
 
     >_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_014.1.png)
 
@@ -161,56 +159,52 @@ So far, you have learnt how to build an MDK application in the SAP Web IDE edito
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Web IDE has a feature to generate QR code for app onboarding.
 
-1. Right click on the `MDKOnlineApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right click the `MDKOnlineApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-    ![MDK](img_009.png)
+![MDK](img_009.1.png)
 
-2. Let the default configuration as it is and click **Next**.
+>**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
-    ![MDK](img_010.png)
-
-3. Click on QR code icon to populate QR code for app on-boarding.
-
-    ![MDK](img_012.1.png)
+![MDK](img_012.1.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
 [OPTION BEGIN [Android]]
 
-1. On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
-
-2. Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
-
-3. Tap **Open browser**. It will open SAP Mobile Services Client app.
-
-    ![MDK](img_013.1.jpg)
-
-4. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
     ![MDK](img_016.1.jpg)
 
-5. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
+
+    ![MDK](img_013.2.png)
+
+3. Once scan is succeeded, tap **CONTINUE**.
+
+    ![MDK](img_013.3.png)
+
+4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_017.1.png)
 
-6. Tap **AGREE** on `End User License Agreement`.
+5. Tap **AGREE** on `End User License Agreement`.
 
     ![MDK](img_018.1.jpg)
 
-7. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
+6. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
     ![MDK](img_019.1.jpg)
 
-8. Confirm the passcode and tap **DONE**.
+7. Confirm the passcode and tap **DONE**.
 
     ![MDK](img_020.1.jpg)
 
@@ -218,7 +212,7 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_021.1.jpg)
 
-9. Tap **OK**.
+8. Tap **OK**.
 
     ![MDK](img_022.1.jpg)
 
@@ -228,33 +222,33 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_023.1.jpg)
 
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. On iPhone, open your camera app and start scanning the QR code, as shown below.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.png)
 
-2. Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
+2. Once scan is succeeded, tap **Continue**.
 
-3. Tap **Start** to connect MDK client to SAP Cloud Platform.
+    ![MDK](img_013.1.png)
 
-    ![MDK](img_016.png)
-
-4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_029.png)
 
-5. Tap **Agree** on `End User License Agreement`.
+4. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img_018.png)
 
-6. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img_019.png)
 
-7. Confirm the passcode and tap **Done**.
+6. Confirm the passcode and tap **Done**.
 
     ![MDK](img_020.png)
 
@@ -262,7 +256,7 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_021.png)
 
-8. Tap **OK**.
+7. Tap **OK**.
 
     ![MDK](img_022.png)
 
@@ -272,9 +266,11 @@ SAP Web IDE has a feature to generate QR code for app on-boarding.
 
     ![MDK](img_023.png)
 
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+
 [OPTION END]
 
-You can now continue creating your first page to show [customers list](https://developers.sap.com/tutorials/cp-mobile-dev-kit-list-page.html).
+You have successfully created an MDK online app and you are now all set to [Handle Error Archive in an MDK App](cp-mobile-dev-kit-error-archive).
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Cloud Platform Mobile application
   - How to capture the device's current location
 
-You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/4-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
+You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
 
@@ -40,7 +40,7 @@ Launch the SAP Web IDE and select the **MDK perspective** by clicking on the ico
 
     ![MDK](img_001.png)
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 2. Enter the **Project Name** as `mdk_geolocation` and click **Next**.
 
@@ -58,9 +58,9 @@ After clicking Finish, the wizard will generate your MDK project `mdk_geolocatio
 
 In the MDK editor, you will create a new JavaScript file called `GetCoordinates.js` to capture the device location: latitude & longitude.
 
->You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
+>You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right click on the **Rules** folder | **New** | **File**.
+1. Right click the **Rules** folder | **New** | **File**.
 
     ![MDK](img_001.1.png)
 
@@ -69,9 +69,9 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 3. Copy and paste the following code.
 
     ```JavaScript
-    export default function GetCoordinates(context) {
-    	var geolocation = require('nativescript-geolocation');
-    	var Accuracy = require('tns-core-modules/ui/enums').Accuracy;
+      import * as geolocation from "nativescript-geolocation";
+      import { Accuracy } from "tns-core-modules/ui/enums";
+      export default function GetCoordinates(context) {
     	var logger = context.getLogger();
     	console.log("Current Log Level: " + logger.getLevel());
     	// check if geolocation is not enabled
@@ -153,7 +153,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >**Externals**: are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_016.png)
 
@@ -215,7 +215,7 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 [ACCORDION-BEGIN [Step 7: ](Create & Run the MDK client)]
 
-Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device/simulator.
+Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
 
 [OPTION BEGIN [Android]]
 
@@ -249,7 +249,7 @@ In Main page, you will see device's current location.
 
 [OPTION END]
 
-Congratulations, you have learned how to capture device's current location in an MDK app.
+Congratulations, you have learned how to capture device's current location in an MDK app and you are now all set to [Extend Your MDK App With a Map Custom Control (Using Metadata Approach)](cp-mobile-dev-kit-map-extension).
 
 [DONE]
 [ACCORDION-END]

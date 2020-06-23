@@ -15,12 +15,17 @@ module.exports = {
         validate_vr: validateVr,
         done,
         codeBlock,
+        inlineCodeBlock,
         codeLine,
         messages,
       },
     } = regexp;
     const autoValidationMatch = content.match(autoValidation);
-    const accordionMatches = content.replace(codeBlock, '').replace(codeLine, '').match(accordions);
+    let clearContent = content
+      .replace(codeBlock, ' ')
+      .replace(inlineCodeBlock, ' ');
+    clearContent = (clearContent.replace(codeLine, ' '));
+    const accordionMatches = clearContent.match(accordions);
     let validationFormExists;
     let accordionsWOAnyValidation;
 
@@ -31,7 +36,6 @@ module.exports = {
         id: index + 1,
       })).filter(({ step }) => !step.match(validate) && !step.match(done));
     }
-
     if (autoValidationMatch) {
       const [, value] = autoValidationMatch;
       const dirPath = path.dirname(filePath);
@@ -49,7 +53,6 @@ module.exports = {
         } else {
           const validationsMatch = accordionMatches
             .map((step) => {
-              // TODO: remove after electron v3 release
               const matches = step.match(validate);
 
               if (matches) {
@@ -92,3 +95,4 @@ module.exports = {
     return err;
   },
 };
+

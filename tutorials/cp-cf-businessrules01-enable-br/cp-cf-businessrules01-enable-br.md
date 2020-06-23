@@ -28,7 +28,7 @@ To get started with SAP Cloud Platform Business Rules, you have to create a serv
 
 2. Choose **Enter Your Trial Account**.
 
-    ![Cockpit landing page](landing-page.png)
+    ![Cockpit landing page](landing_page.png)
 
 [DONE]
 [ACCORDION-END]
@@ -37,19 +37,19 @@ To get started with SAP Cloud Platform Business Rules, you have to create a serv
 
 1. Choose your subaccount.
 
-    ![Trial account](enablebr-1.png)
+    ![Trial account](enablebr_1.png)
 
 2. Navigate to **Spaces** and then choose your space.
 
-    ![choose spaces](enablebr-2.png)   
+    ![choose spaces](enablebr_2.png)   
 
 3. In the navigation area, choose **Services** > **Service Marketplace** , search for business rules and then choose **Business Rules** tile.
 
-    ![enable business rules](enablebr-3.png)
+    ![enable business rules](enablebr_3.png)
 
     The following service overview page opens:
 
-    ![Service overview](enablebr-4.png)
+    ![Service overview](enablebr_4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -58,7 +58,7 @@ To get started with SAP Cloud Platform Business Rules, you have to create a serv
 
 1. In the navigation area, choose **Instances** and then choose **New Instance**.
 
-    ![New Instance](enablebr-5.png)
+    ![New Instance](enablebr_5.png)
 
 2. Choose the service plan **lite** and choose **Next**.
 
@@ -80,7 +80,7 @@ To get started with SAP Cloud Platform Business Rules, you have to create a serv
 
     The new instance is displayed in the list and the status present under the **Last Operation** changes to Created.
 
-    ![Service instance created](enablebr-10.png)
+    ![Service instance created](enablebr_10.png)
 
 [DONE]
 [ACCORDION-END]
@@ -90,11 +90,11 @@ To get started with SAP Cloud Platform Business Rules, you have to create a serv
 
 1. Choose the business rules service instance that you created.
 
-    ![choose service instance](service_instance01.png)
+    ![choose service instance](service-instance01.png)
 
 2. In the navigation area, choose **Service Keys** and then choose **Create Service Key**.
 
-    ![service keys](service_instance02.png)
+    ![service keys](service-instance02.png)
 
 3. Provide a **Name** of your choice and then choose **Save**.
 
