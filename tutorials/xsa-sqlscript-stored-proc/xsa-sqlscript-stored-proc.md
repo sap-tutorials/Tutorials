@@ -10,7 +10,7 @@ time: 15
 
 ## Details
 ### You will learn  
-In this exercise, you will create a small procedure `get_po_header_data` with two implicit SELECT queries.
+- How to create a small procedure `get_po_header_data` with two implicit SELECT queries
 
 ---
 
