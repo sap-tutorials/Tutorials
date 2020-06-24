@@ -1,16 +1,16 @@
 ---
 title: Build, Deploy and Test Notification and Decision Support Application
-description: Build and deploy a multi-target application (MTA) project in SAP Web IDE, generate a test notification in SAP Leonardo IoT, and launch the decision support application.
+description: Build and deploy a multi-target application (MTA) project in SAP Web IDE, generate a test notification in SAP IoT, and launch the decision support application.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-cloud-platform-portal, products>sap-leonardo-iot, products>sap-web-ide]
-primary_tag: products>sap-cloud-platform-internet-of-things
+tags: [ tutorial>beginner, products>sap-cloud-platform-portal, products>sap-leonardo-iot, products>sap-web-ide, products>sap-cloud-platform-internet-of-things ]
+primary_tag: topic>internet-of-things
 ---
 
 ## Details
 ### You will learn
   - How to build and deploy an MTA project
-  - How to test Leonardo IoT notification
+  - How to test SAP IoT notification
   - How to test decision support application
 
 If you make any changes to an MTA project, you'll need to build and deploy the project for the changes to take effect.
@@ -67,7 +67,7 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
 
   We will need to retrieve the thing id for the next step. If you already have the thing id, please proceed to the next step.
 
-  1. From Leonardo IoT launchpad, select the **Thing Modeler** tile.
+  1. From SAP IoT launchpad, select the **Thing Modeler** tile.
 
     ![Select Thing Modeler in SAP Fiori launchpad](/images/shared/thing_modeler_tile.png)  
 
@@ -86,7 +86,7 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
 
 [ACCORDION-BEGIN [Step 4: ](Generate test notification)]
 
-  1. From Leonardo IoT launchpad, select the **Actions** tile.
+  1. From SAP IoT launchpad, select the **Actions** tile.
 
     ![Select actions from SAP Fiori launchpad](/images/shared/launchpad_tile_actions.png)
 
