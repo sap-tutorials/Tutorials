@@ -5,8 +5,8 @@ description: Create a communication user and a communication system for an OData
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 15
-author_name: Niloofar Naseri
-author_profile: https://github.com/niloofar-naseri
+author_name: Niloofar flothkoetter
+author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ## Prerequisites  
@@ -20,7 +20,7 @@ author_profile: https://github.com/niloofar-naseri
 
 
 
-In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
+Always replace `XXX` with your initials or group number.
 
 ---
 
@@ -60,7 +60,7 @@ In case you want to expose developed ABAP services for technical communication, 
 
 
 [ACCORDION-BEGIN [Step 4: ](Add communication user data)]
-  1. Enter user name `TEST_XXX` (where `XXX` is your group number) and description for your user.
+  1. Enter user name `TEST_XXX`, where `XXX` is your group number, and description for your user.
 
   2. Use **propose password** button since the password has to be 20 characters and save the generated password in a text file for the following exercises.
 
