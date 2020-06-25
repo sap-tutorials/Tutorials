@@ -13,8 +13,7 @@ time: 15
 
 ## Details
 ### You will learn  
-In this exercise we are creating a scalar UDF for generating a full name from the last, first and middle name of the employee.
-
+- How to create a scalar UDF for generating a full name from the last, first and middle name of the employee
 
 ---
 

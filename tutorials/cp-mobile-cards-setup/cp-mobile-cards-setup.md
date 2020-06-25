@@ -126,6 +126,8 @@ Below is a list of destinations from which the SAP Mobile Cards service can fetc
 
 Click **SAP Mobile Cards** navigation bar to go back to Mobile Cards admin page.
 
+![MobileCards](img_16_1.png)
+
 [DONE]
 [ACCORDION-END]
 
