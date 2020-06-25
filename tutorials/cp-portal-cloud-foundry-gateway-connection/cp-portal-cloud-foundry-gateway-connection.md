@@ -6,6 +6,7 @@ time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform-portal
 author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert 
 ---
 
 ## Prerequisites
