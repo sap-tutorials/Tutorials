@@ -27,9 +27,9 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the SAP Web IDE and select the **MDK** perspective by clicking on the icon in the left panel.
 
-2. Right click Workspace folder and select **New** | **MDK CRUD Project**.
+2. Right-click Workspace folder and select **New** | **MDK CRUD Project**.
 
-    ![MDK](img_001.png)
+    !![MDK](img_001.png)
 
     >The `MDK CRUD Project` template creates the offline or online actions, rules, messages, List Detail Pages with editable options.
 
@@ -37,7 +37,7 @@ This step includes creating the mobile development kit project in the editor.
 
 3. Enter the **Project Name** as `MDKApp` and click **Next**.
 
-    ![MDK](img_002.png)
+    !![MDK](img_002.png)
 
 4. Leave the default values in _Application Creation_ step as it is, click **Next**.
 
@@ -53,11 +53,12 @@ This step includes creating the mobile development kit project in the editor.
 
     > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
 
+
     >If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
 
     >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
-    ![MDK](img_004.png)
+    !![MDK](img_004.png)
 
     >In [previous tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
 
@@ -67,33 +68,33 @@ This step includes creating the mobile development kit project in the editor.
 
 6. Click **Check Service** to validate the service properties. If all the details are fine, you will see a success message. Click **Next**.
 
-    ![MDK](img_005.png)
+    !![MDK](img_005.png)
 
     >Wondering how _Service URL_, _Application ID_ & _Destination Name_ were populated? As part of [enabled Mobile Services](fiori-ios-hcpms-setup) tutorial, you created a destination `mobileservices_cf` in Cloud Platform Cockpit, SAP Web IDE fetches all these details based on this destination.
 
-    >![MDK](img_0031.1.png)
+    >!![MDK](img_0031.1.png)
 
     >You can look in SAP Cloud Platform Mobile Services Cockpit for the destination belongs to the MDK app by clicking on **Mobile Connectivity** feature.
 
-    >![MDK](img_0032.png)
+    >!![MDK](img_0032.png)
 
     >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/backend-connectivity/sample.html).
 
 7. In the **Metadata Source** step, select all **Entity Type** and click **Next**.
 
-    ![MDK](img_006.png)
+    !![MDK](img_006.png)
 
     >You can overwrite default binding of page elements from properties of dataset by clicking on the dropdown.
 
 8. In the **Customization** step, click **Next**, let's stick to the defaults.
 
-    ![MDK](img_006.1.png)
+    !![MDK](img_006.1.png)
 
     >In this step, You can customize your template, for instance, just ask for the first 10 customers, so that the list is not too long. You can also add other page properties or change the list of the pages that will be generated.
 
 9. In the **Feature** step, click **Finish**, let's stick to the defaults.
 
-    ![MDK](img_006.2.png)
+    !![MDK](img_006.2.png)
 
     >In this step, you can rename the Folder name which will have initialize offline data details, you can also select which defining queries you want to get initialized.
 
@@ -106,7 +107,7 @@ After clicking **Finish**, the wizard will generate your MDK Application based o
 
 This is how the project structure looks like within the workspace.
 
-![MDK](img_007.png)
+!![MDK](img_007.png)
 
 These are the metadata definitions available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
 
@@ -126,7 +127,7 @@ These are the metadata definitions available in the editor and the format in whi
 
 Open the application settings in the application editor by double clicking on the `Application.app` in the project explorer pane.
 
-![MDK](img_008.png)
+!![MDK](img_008.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -137,11 +138,11 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 1. Right-click the `MDKApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
 
-    ![MDK](img_009.png)
+    !![MDK](img_009.png)
 
 2. Let the default configuration as it is and click **Next**.
 
-    ![MDK](img_010.png)
+    !![MDK](img_010.png)
 
     >_Filter Files_ will be filtered and ignored in web packing process.
 
@@ -149,7 +150,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 3. Confirm the destination name and application id match where you want to deploy.
 
-    ![MDK](img_014.1.png)
+    !![MDK](img_014.1.png)
 
     >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
@@ -157,7 +158,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
 You should see **Application deployed successfully** message in console log.
 
-![MDK](img_015.png)
+!![MDK](img_015.png)
 
 [DONE]
 [ACCORDION-END]
@@ -166,13 +167,13 @@ You should see **Application deployed successfully** message in console log.
 
 SAP Web IDE has a feature to generate QR code for app onboarding.
 
-Right click the `MDKApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Right-click the `MDKApp` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
 >**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 3.
 
-![MDK](img_012.1.png)
+!![MDK](img_012.1.png)
 
-![MDK](img_012.png)
+!![MDK](img_012.png)
 
 [DONE]
 [ACCORDION-END]
@@ -185,45 +186,45 @@ Right click the `MDKApp` MDK Application in the project explorer pane and select
 
 1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
-    ![MDK](img_016.1.jpg)
+    !![MDK](img_016.1.jpg)
 
 2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
-    ![MDK](img_013.2.png)
+    !![MDK](img_013.2.png)
 
 3. Once scan is succeeded, tap **CONTINUE**.
 
-    ![MDK](img_013.3.png)
+    !![MDK](img_013.3.png)
 
 4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-    ![MDK](img_017.1.png)
+    !![MDK](img_017.1.png)
 
 5. Tap **AGREE** on `End User License Agreement`.
 
-    ![MDK](img_018.1.jpg)
+    !![MDK](img_018.1.jpg)
 
 6. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
 
-    ![MDK](img_019.1.jpg)
+    !![MDK](img_019.1.jpg)
 
 7. Confirm the passcode and tap **DONE**.
 
-    ![MDK](img_021.1.png)
+    !![MDK](img_021.1.png)
 
     Optionally, you can enable fingerprint to get faster access to the app data.
 
-    ![MDK](img_022.1.png)
+    !![MDK](img_022.1.png)
 
 8. Tap **OK**.
 
-    ![MDK](img_023.1.png)
+    !![MDK](img_023.1.png)
 
     The MDK client receives deployed metadata definitions as a bundle.
 
     Now, you will see the list of entities on the **Main** page, **LOGOUT** and **SYNC** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **SYNC** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
 
-    ![MDK](img_023.1.gif)
+    !![MDK](img_023.1.gif)
 
     >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 
@@ -233,42 +234,42 @@ Right click the `MDKApp` MDK Application in the project explorer pane and select
 
 1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
-    ![MDK](img_013.png)
+    !![MDK](img_013.png)
 
 2. Once scan is succeeded, tap **Continue**.
 
-    ![MDK](img_013.1.png)
+    !![MDK](img_013.1.png)
 
 
 3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
-    ![MDK](img_029.png)
+    !![MDK](img_029.png)
 
 4. Tap **Agree** on `End User License Agreement`.
 
-    ![MDK](img_018.png)
+    !![MDK](img_018.png)
 
 5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
-    ![MDK](img_019.png)
+    !![MDK](img_019.png)
 
 6. Confirm the passcode and tap **Done**.
 
-    ![MDK](img_020.png)
+    !![MDK](img_020.png)
 
 7. Optionally, you can enable Touch ID to get faster access to the app data, tap **Enable**.
 
-    ![MDK](img_021.png)
+    !![MDK](img_021.png)
 
 8. Tap **OK**.
 
-    ![MDK](img_022.png)
+    !![MDK](img_022.png)
 
     The MDK client receives deployed metadata definitions as a bundle.
 
     Now, you will see the list of entities on the **Main** page, **Logout** and **Sync** options at bottom of the page and Offline store is being initialized. click either entity, it navigates to detail page, you can create, update, delete a record. This record gets saved to offline request queue database, navigate back to main page and press **Sync** to upload local changes to the backend. Once the upload is successful, it will also download the data from the backend to the offline store to have same dataset on both ends.
 
-    ![MDK](img_023.gif)
+    !![MDK](img_023.gif)
 
     >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
 

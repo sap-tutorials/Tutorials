@@ -14,15 +14,17 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up a local mock server or get access to the API Business Hub sandbox (optional))]
+[ACCORDION-BEGIN [Step 1: ](Set up the API Server)]
 
 >**Note:** If you have access to an `SAP S/4HANA Cloud` system with a technical user, you can skip this part.
+
+There are multiple ways of setting up an API Server, you can either setup your own Mock Server or you can use the Sandbox API.
 
 In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
 
 Once it is up and running you should see the list of services at `http://localhost:3000/`.
 
-Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click on "Show API Key".
+Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click **Show API Key**.
 
 [DONE]
 [ACCORDION-END]
@@ -63,7 +65,11 @@ import { BusinessPartnerController } from './business-partner.controller';
 export class AppModule {}
 ```
 
-If you've started your application with `npm run start:dev` in the previous tutorial, it should detect the change and restart automatically. If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
+If you've started your application the following command in the previous tutorial, it should detect the change and restart automatically.
+```Shell
+npm run start:dev
+```
+If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
 
 [DONE]
 [ACCORDION-END]
@@ -91,8 +97,11 @@ Now the `BusinessPartner` entity is available for you to be used.
 
 [ACCORDION-BEGIN [Step 4: ](Execute an OData request)]
 
-In `business-partner.controller.ts` create a function `getAllBusinessPartners` and implement it as follows:
+In `business-partner.controller.ts` create a function `getAllBusinessPartners` and implement it depending on your API Server:
 
+
+[OPTION BEGIN [Mock Server]]
+In the code snippet below, we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -102,32 +111,44 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
     });
 }
 ```
+[OPTION END]
+
+
+[OPTION BEGIN [SAP S/4HANA Cloud system]]
+If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
+```JavaScript / TypeScript
+function getAllBusinessPartners(): Promise<BusinessPartner[]> {
+  return BusinessPartner.requestBuilder()
+    .getAll()
+    .execute({
+      url: '<URI of your SAP S/4HANA Cloud System>',
+      username: '<USERNAME>',
+      password: '<PASSWORD>'
+    });
+}
+```
+[OPTION END]
+
+
+[OPTION BEGIN [SAP API Business Hub sandbox]]
+To use the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
+```JavaScript / TypeScript
+function getAllBusinessPartners(): Promise<BusinessPartner[]> {
+  return BusinessPartner.requestBuilder()
+    .getAll()
+    .withCustomHeaders({ APIKey: '<YOUR-API-KEY>'})
+    .execute({
+      url: 'https://sandbox.api.sap.com/s4hanacloud'
+    });
+}
+```
+[OPTION END]
 
 - In line 2, we are creating a request builder for the business partner entity.
 - Line 3 indicates, that we want to create a request to get all the business partners.
-- Line 4 ff. takes care of the execution and sends a request to a `url` based on the given destination `url`.
+- Line 4 takes care of the execution and sends a request to an URL based on the given destination `url`.
 
-In the code snippet above we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
-
-```JavaScript / TypeScript
-.execute({
-  url: '<URI of your SAP S/4HANA Cloud System>',
-  username: '<USERNAME>',
-  password: '<PASSWORD>'
-})
-```
-
-To use the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
-
-```JavaScript / TypeScript
-return BusinessPartner.requestBuilder()
-  .getAll()
-  .withCustomHeaders({ APIKey: '<YOUR-API-KEY>'})
-  .execute({
-    url: 'https://sandbox.api.sap.com/s4hanacloud'
-  });
-}
-```
+-------------------
 
 As network requests are asynchronous by nature, the return value of this function is a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) to a list of Business Partners (`Promise<BusinessPartner[]>`).
 

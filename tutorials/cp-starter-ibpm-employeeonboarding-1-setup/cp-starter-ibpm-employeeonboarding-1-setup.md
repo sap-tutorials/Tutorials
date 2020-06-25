@@ -3,7 +3,7 @@ title: Set Up Business Process Management Services in Cloud Cockpit
 description:  Set up services to automate and achieve operational insights into employee onboarding processes.
 
 auto_validation: true
-time: 20
+time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
 ---
@@ -22,7 +22,7 @@ In this tutorial mission, setup and use these services to automate and achieve o
 
 [ACCORDION-BEGIN [Step 1: ](Setup services in your account using Recipe)]
 
-You will use the **recipe** to automatically setup of workflow, business rules, and process visibility services in your account.
+You will use the **Recipe** to automatically set up the workflow, business rules, and process visibility services in your account.
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -38,7 +38,7 @@ You will use the **recipe** to automatically setup of workflow, business rules, 
 
     >![Account setup](02_Foundation20Onboarding_Processing.png)
 
-3. From your global account page, choose the **Recipe** from left-hand navigation. Among the available recipes, click **Start Recipe** of **Intelligent BPM Setup** recipe.
+3. From your global account page, choose the **Recipe** from left-hand navigation. Among the available recipes, click **Start Recipe** of **Set up account for Workflow Management**.
 
     !![Start Recipe](startrecipe_2.png)
 
@@ -46,16 +46,18 @@ You will use the **recipe** to automatically setup of workflow, business rules, 
 
     !![Recipe In Progress](startrecipe_4.png)
 
-    - Wait until you see the success dialog once the recipe completes successfully.  
+    - Wait until you see the success popup window once the recipe completes successfully. **Close** the popup.  
 
     !![Recipe In Progress](startrecipe_3.png)
 
 
-    > This automatic set up will do the following:
+    > This automatic setup will do the following:
 
     > - Add Business Rules, Workflow, Process Visibility, Portal, Application Runtime, HTML5 Applications and Connectivity entitlements in your account.
 
     > - Create service instance for each of Business Rules, Workflow, Process Visibility and Portal services.
+
+    > - Create destinations with name **BUSINESS_RULES** and **BUSINESSRULES_APIHUB**. These destinations will be used while integration of business rules with workflow and importing business rules project from API Hub respectively.
 
     > - Create a role collection with name **BPMServices** and add all the needed roles.
 
@@ -65,11 +67,11 @@ You will use the **recipe** to automatically setup of workflow, business rules, 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Setup Fiori Launchpad)]
-You will import, build and deploy the multitarget project that will create a Fiori Launchpad to access workflow, business rules and process visibility applications which will be used in next tutorials.
+You will import, build and deploy the multi target project that will create a Fiori Launchpad to access workflow, business rules and process visibility applications which will be used in next tutorials.
 
 1. Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases) in your local file system.
 
->This multitarget application when deployed will create the Fiori Launchpad to access workflow, business rules and process visibility applications.
+>This multi target application when deployed will create the Fiori Launchpad to access workflow, business rules and process visibility applications.
 
 !![Download MTA](downloadmta.png)
 
@@ -111,13 +113,13 @@ You will import, build and deploy the multitarget project that will create a Fio
 
     ![Import MTA](importzip.png)
 
-    - The multitarget application gets imported under the **Workspace** folder and the file structure is shown below.
+    - The multi target application gets imported under the **Workspace** folder and the file structure is shown below.
 
     >Ensure you have chosen **Show Hidden Files** to be able to view the `app-router` file structure as shown.
 
     ![Open Hidden Files](openhiddenfiles.png)
 
-9. Right-click on the `BPMServicesFLP` project and choose the **Build** option.
+9. Right-click `BPMServicesFLP` project and choose the **Build** option.
 
     !![Build MTA](build.png)
 
@@ -146,61 +148,29 @@ You will import, build and deploy the multitarget project that will create a Fio
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create destinations)]
+[ACCORDION-BEGIN [Step 3: ](Configure destination)]
 
+    > The sample business rule used in this scenario is published in API Business Hub. **BUSINESSRULES_APIHUB** destination is used in SAP Cloud Platform Business Rules application to import business rules from API Business Hub.
 
-1.  Create **API Business Hub** destination
-
-    > The sample business rule used in this scenario is published in API Business Hub. The first  destination that is created will be used in SAP Cloud Platform Business Rules application to connect to API Business Hub to discover and import sample rules.
-
-    - From your global account page, choose the `trial` tile to access your subaccount.
+1. From your global account page, choose the `trial` tile to access your subaccount.
+    > If you run the recipe in different subaccount then navigate into the respective account.  
 
     !![Enter Trial Subaccount](entertrialaccount.png)
 
-    - Click **Connectivity | Destinations** from the left-hand navigation. Click **New Destination** and enter the following details under **Destination Configuration**:
+2. Click **Connectivity | Destinations** from the left-hand navigation and search for the destination with name `BUSINESSRULES_APIHUB`
 
-        |  Field Name     | Value
-        |  :------------- | :-------------
-        |  Name           | `BUSINESSRULES_APIHUB`
-        |  URL            | `https://api.sap.com`
-        |  Authentication | `BasicAuthentication`
-        |  User           | your trial user id
-        |  Password       | your trial password
+    ![Create Destination](createdestination-apihub.png)
 
-        ![Create Destination](createdestination-apihub.png)
+3. In **Destination Configuration** section, click **Edit** and enter your trial password:
+
+    ![Create Destination](savedestination-apihub.png)
 
     - **Save** the destination.
-
-
-2.  Create **Business Rules** destination
-
-    >The sample workflow calls business rules to determine the list of equipment needed for the new hire. This another destination (`BUSINESS_RULES`) will be used while modelling the workflow to call the business rules APIs.
-
-    - Choose **New Destination**, and enter the following data:
-
-    |  Field Name        | Value
-    |  :---------------- | :-------------
-    |  Name              | `BUSINESS_RULES`
-    |  URL               | `https://bpmruleruntime.cfapps.eu10.hana.ondemand.com/rules-service`
-    |  Authentication    | `OAuth2ClientCredentials`
-    |  Client ID         | `<use your client ID from the Business Rules service instance>`
-    |  Client Secret     | `<use your secret from the Business Rules service instance>`
-    |  Token Service URL | `https://<userid>.authentication.eu10.hana.ondemand.com/oauth/token` where `userid` is your trial account user id
-
-    >Replace `eu10` with `us10` in the URLs if your trial account is in US region. For example, the URL in above destination will become:
-
-    > `https://bpmruleruntime.cfapps.us10.hana.ondemand.com/rules-service`
-
-    >To get Client ID, Client Secret and Token Service URL, (a) navigate into your **dev** space in your trial account, (b) select **Service Instances** from left panel, (c) search for **rules**, and then select **`default-businessrules`** service instance and (d) navigate into the service instance to get `clientid`, `clientsecret`, and `url`.
-
-    ![Get Security Token](getsecurity.png)
-
-    ![Configure Destination](createdestination-rules.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Access Applications from Fiori Launchpad)]
+[ACCORDION-BEGIN [Step 4: ](Access Applications from Fiori Launchpad)]
 
 The Fiori Launchpad will be used in the next tutorials to access business rules, workflow and process visibility applications.
 
