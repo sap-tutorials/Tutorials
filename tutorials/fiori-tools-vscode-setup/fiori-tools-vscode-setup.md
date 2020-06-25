@@ -1,14 +1,16 @@
 ---
-title: Set Up SAP Fiori Tools in Visual Studio Code
-description: Download Microsoft Visual Studio Code and the extensions that enable SAP Fiori tools so that you can begin creating SAP Fiori apps.
+title: Set Up SAP Fiori Tools in Your Development Environment
+description: Set up your development environment and the extensions that enable SAP Fiori tools so that you can begin creating SAP Fiori apps.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>odata, topic>sapui5, topic>user-interface, products>sap-fiori]
+tags: [ tutorial>beginner, topic>odata, topic>sapui5, topic>user-interface, products>sap-fiori, products>sap-business-application-studio]
 primary_tag: products>sap-fiori
 ---
 
 ## Prerequisites
+ - You must decide whether you would like to develop your app in SAP Business Application Studio (a hosted environment) or Visual Studio Code (a local environment). SAP Business Application Studio does not require installation, so you may skip this tutorial and create your workspace based on this tutorial [Set Up SAP Business Application Studio for Development](appstudio-onboarding), then proceed with the next tutorial in this group: [Set Up and Generate a New SAP Fiori App Project](fiori-tools-generate-project). Otherwise, follow this tutorial to set up your Visual Studio Code environment.
  - You must meet the minimum system requirements for installing Visual Studio Code. You can find them here: <https://code.visualstudio.com/docs/supporting/requirements>
+ - You must have Node.js installed. You can download it here: <https://nodejs.org/en/download/>
 
 ## Details
 ### You will learn
@@ -17,7 +19,7 @@ primary_tag: products>sap-fiori
 
 SAP Fiori tools is an extension pack available for Visual Studio Code and SAP Business Application Studio that is designed to increase the efficiency of SAP Fiori elements app development. SAP Fiori is SAP's user experience, intended to provide end-users with apps that are role-based, adaptive, coherent, simple, and delightful. SAP Fiori elements provides predefined page types for SAP Fiori development, allowing users to quickly create SAPUI5 apps while taking advantage of the user interface provided by SAP. SAP Fiori tools allows users to easily generate SAP Fiori elements apps, modify the app's functionality, generate new pages, and preview the application with both backend and mock data.
 
-In this tutorial group, you will be using SAP Fiori tools in Visual Studio Code to create an app featuring a list of objects, with additional pages that provide more detailed information about the items in the list. You will be able to preview this app using real backend data provided by SAP, as well as mock data.
+In this tutorial group, you will be using SAP Fiori tools to create an app featuring a list of objects, with additional pages that provide more detailed information about the items in the list. You will be able to preview this app using real backend data provided by SAP, as well as mock data.
 
 To get started, this tutorial will introduce you to Visual Studio Code and tell you how to download the required extensions from the Visual Studio Code Marketplace.
 
