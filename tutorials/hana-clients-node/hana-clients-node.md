@@ -3,7 +3,7 @@ title: Connect Using the SAP HANA Node.js Interface
 description: Create and debug a Node.js application that connects to SAP HANA using the SAP HANA client.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
 primary_tag: products>sap-hana
 ---
 
@@ -27,9 +27,11 @@ The first step is to check if you have Node.js installed and what version it is.
 node -v  
 ```  
 
-If Node.js is installed, it will return the currently installed version, such as v12.16.1.  
+If Node.js is installed, it will return the currently installed version, such as v12.16.3.  
 
 If node is not installed, download the long-term support (LTS) version of Node.js from [Node.js Download](https://nodejs.org/en/download/).
+
+>An install is not provided on Linux.  The installation instructions can be found [here](https://nodejs.org/en/download/).
 
 During the installation, there is no need to check the following box as you do not need to install Chocolatey.  
 
@@ -48,8 +50,11 @@ Node.js packages are available using [NPM](https://www.npmjs.com/), which is the
 
     ![Search for hana-client](search-hana-client.png)  
 
-    The @sap/hana-client package in npm.
+    The page for the SAP HANA Node.js package on npm is shown below.
+
     ![npm page for hana-client](npm-hana-client.png)  
+
+     It contains additional sample code, a weekly download counter, information about previous versions and the command to install the package using the npm command line interface (`cli`).
 
 2. Create a folder named `node` and enter the newly created directory.
 
@@ -140,12 +145,14 @@ npm list
 1. Open an editor on a file named nodeQuery.js.
 
     ```Shell (Microsoft Windows)
+    cd %HOMEPATH%\HANAClientsTutorial\node
     notepad nodeQuery.js
     ```
 
     Substitute `pico` below for your preferred text editor.  
 
     ```Shell (Linux or Mac)
+    cd $HOME/HANAClientsTutorial/node
     pico nodeQuery.js
     ```
 
@@ -165,6 +172,12 @@ npm list
         encrypt: 'true',  //Must be set to true when connecting to SAP HANA Cloud
         sslValidateCertificate: 'false',  //Must be set to false when connecting
         //to a HANA, express instance that uses a self signed certificate.
+
+        //Below setting is used to specify where the trust store is
+        //ssltruststore: '/home/dan/.ssl/trust2.pem',
+
+        //Alternatively provide the contents of the certificate directly (DigiCertGlobalRootCA.pem)
+        //ssltruststore: '-----BEGIN CERTIFICATE-----MIIDrzCCApegAwIBAgIQCDvgVpBCRrGhdWrJWZHHSjANBgkqhkiG9w0BAQUFADBhMQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBDQTAeFw0wNjExMTAwMDAwMDBaFw0zMTExMTAwMDAwMDBaMGExCzAJBgNVBAYTAlVTMRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5jb20xIDAeBgNVBAMTF0RpZ2lDZXJ0IEdsb2JhbCBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4jvhEXLeqKTTo1eqUKKPC3eQyaKl7hLOllsBCSDMAZOnTjC3U/dDxGkAV53ijSLdhwZAAIEJzs4bg7/fzTtxRuLWZscFs3YnFo97nh6Vfe63SKMI2tavegw5BmV/Sl0fvBf4q77uKNd0f3p4mVmFaG5cIzJLv07A6Fpt43C/dxC//AH2hdmoRBBYMql1GNXRor5H4idq9Joz+EkIYIvUX7Q6hL+hqkpMfT7PT19sdl6gSzeRntwi5m3OFBqOasv+zbMUZBfHWymeMr/y7vrTC0LUq7dBMtoM1O/4gdW7jVg/tRvoSSiicNoxBN33shbyTApOB6jtSj1etX+jkMOvJwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUA95QNVbRTLtm8KPiGxvDl7I90VUwHwYDVR0jBBgwFoAUA95QNVbRTLtm8KPiGxvDl7I90VUwDQYJKoZIhvcNAQEFBQADggEBAMucN6pIExIK+t1EnE9SsPTfrgT1eXkIoyQY/EsrhMAtudXH/vTBH1jLuG2cenTnmCmrEbXjcKChzUyImZOMkXDiqw8cvpOp/2PV5Adg06O/nVsJ8dWO41P0jmP6P6fbtGbfYmbW0W5BjfIttep3Sp+dWOIrWcBAI+0tKIJFPnlUkiaY4IBIqDfv8NZ5YBberOgOzW6sRBc4L0na4UU+Krk2U886UAb3LujEV0lsYSEY1QSteDwsOoBrp+uvFRTp2InBuThs4pFsiv9kuXclVzDAGySj4dzp30d8tbQkCAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=-----END CERTIFICATE-----'
     };
 
     var connection = hana.createConnection();
@@ -190,7 +203,7 @@ npm list
     ```  
 
 
-4. Run the app.
+4. Run the app.  
 
     ```Shell
     node nodeQuery.js
@@ -204,7 +217,7 @@ In nodeQuery.js, the asynchronous versions of these methods are used because the
 >To enable debug logging of the SAP  HANA Node.js client, enter the following command and then rerun the app.
 
 >```Shell (Microsoft Windows)
->SET DEBUG=*
+>set DEBUG=*
 >```  
 
 >```Shell (Linux or Mac)
@@ -212,6 +225,21 @@ export DEBUG=*
 >```    
 
 > ![debug output](debug_flag.png)
+
+> The value of the environment variable DEBUG can be seen and removed with the commands below.
+
+>```Shell (Microsoft Windows)
+>set DEBUG
+>set DEBUG=
+>set DEBUG
+>```  
+
+>```Shell (Linux or Mac)
+>printenv | grep DEBUG
+>unset DEBUG
+>printenv | grep DEBUG
+>```
+
 
 [DONE]
 [ACCORDION-END]

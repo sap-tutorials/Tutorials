@@ -54,7 +54,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
     >_The MDK CRUD Project_ template creates the offline or online actions, rules, messages and list detail pages along with editable capability in respective pages. You can use such template to handle error archive situation.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
 3. Enter the Project Name as `MDK_ErrorArchive` and click **Next**.
 
@@ -88,7 +88,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
     ![MDK](img_005.png)
 
-    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/backend-connectivity/sample.html).
 
 7. In **Metadata Source** step, select `PurchaseOrderHeaders` and `PurchaseOrderItems`‚ and click **Next**.
 
@@ -113,7 +113,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     ![MDK](img_1.png)
 
-    >You can find more details about [section pages](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/65c0ed1f448346cb89fa84992dc5df9c.html).
+    >You can find more details about [section pages](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/section-page.html).
 
 3. Enter the **Page Name** as `ErrorList` and click **Next** and then **Finish** on the confirmation step.
 
@@ -159,7 +159,7 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     ![MDK](img_007.5.png)
 
-    >You can find more details about [`ErrorArchive` Entity Properties](https://help.sap.com/viewer/42dc90f1e1ed45d9aafad60c80646d10/3.0.15/en-US/ff35db37335f4bb8a1e188b997a2b111.html).
+    >You can find more details about [`ErrorArchive` Entity Properties](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html#errorarchive-entity-properties).
 
 9. In **Search** section, update below properties:
 
@@ -264,8 +264,6 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
 
     ![MDK](img_007.14.png)
 
-    >`@odata.id`: an annotation that contains the entity-id. More details can be found [here](http://docs.oasis-open.org/odata/odata-json-format/v4.0/cs01/odata-json-format-v4.0-cs01.html#_Toc36546468).
-
 11. In **Behavior** section, update below properties:
 
     | Property | Value |
@@ -336,8 +334,6 @@ Generated project is offline enabled and includes two entity sets (`PurchaseOrde
     You should have final binding for all key value items as below:
 
     ![MDK](img_007.21.png)
-
-    >>More details on _`ErrorArchive` Entity Properties_ is available in [help documentation](https://help.sap.com/viewer/fc1a59c210d848babfb3f758a6f55cb1/Latest/en-US/ff35db37335f4bb8a1e188b997a2b111.html).
 
 15. Save your changes to the **Error Details** page.
 
@@ -528,11 +524,11 @@ So far, you have learnt how to build an MDK application in the SAP Web IDE edito
 
     >_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
-
-    >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
+3.  Confirm the destination name and application id match where you want to deploy and click **Next**.
 
     ![MDK](img_014.1.png)
+
+    >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
 
 4. Click **Next** to finish the deployment from SAP Web IDE.
 
@@ -543,9 +539,9 @@ So far, you have learnt how to build an MDK application in the SAP Web IDE edito
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 8: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Web IDE has a feature to generate QR code for app onboarding.
 
 Right click the `MDK_ErrorArchive` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
@@ -564,13 +560,11 @@ Right click the `MDK_ErrorArchive` MDK Application in the project explorer pane 
 
 [OPTION BEGIN [Android]]
 
-On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
-
 1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
 
     ![MDK](img_016.1.jpg)
 
-2. Tap **QR CODE SCAN** to start the device camera for scanning the on-boarding QR code.
+2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.2.png)
 
@@ -660,7 +654,7 @@ On Android, the camera app does not support scanning the QR-code. As alternative
 
 [OPTION BEGIN [iOS]]
 
-1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the on-boarding QR code.
+1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_013.png)
 

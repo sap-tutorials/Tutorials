@@ -5,6 +5,8 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori]
 primary_tag: topic>html5
+author_name: Lukas Harbarth
+author_profile: https://github.com/Lukas742
 ---
 
 ## Details
@@ -17,7 +19,7 @@ So far, you have built your first `Card` component. Now to take things further, 
 
 ---
 
-[ACCORDION-BEGIN [Step   ](Add necessary imports)]
+[ACCORDION-BEGIN [Step 1: ](Add necessary imports)]
 To make things easier, first import all the components you will need in this step. Just copy the code below and replace the previous imported components in `MyApp.jsx`.
 
 ```JavaScript / JSX
@@ -45,7 +47,7 @@ import {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step: ](Add a ShellBar)]
+[ACCORDION-BEGIN [Step 2: ](Add a ShellBar)]
 
 The `ShellBar` is the central navigation element in your Web Application and should therefore be visible on all pages.
 
@@ -208,7 +210,7 @@ export function MyApp() {
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add a List)]
+[ACCORDION-BEGIN [Step 3: ](Add a List)]
 
 1. To wrap the `List` add a `Card` (right after the first one).
 
@@ -333,7 +335,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Add an AnalyticalTable)]
+[ACCORDION-BEGIN [Step 4: ](Add an AnalyticalTable)]
 
 1. The last tile should contain a `AnalyticalTable` component. Again, create a `Card` to wrap the Table and set the `max-width` to `900px`.
 
@@ -409,7 +411,7 @@ Now the components inside the card fit (we'll arrange the cards themselves later
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step : ](Dashboard layout)]
+[ACCORDION-BEGIN [Step 5: ](Dashboard layout)]
 
 At the moment, the dashboard doesn't really look like a dashboard. The components are way too close to each other and not aligned correctly. Let's change that.
 

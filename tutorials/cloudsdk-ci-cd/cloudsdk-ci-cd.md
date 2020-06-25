@@ -146,8 +146,7 @@ As of today, the following options can be customized:
 - **`http_port`**: The port on which your Cx-server will be reachable.
 - **`jenkins_home`** : The resource to be used as Jenkins home directory. You can use an absolute path pointing to a folder on your host machine, for example, `jenkins_home="/var/jenkins_home"`.  Alternatively, you can use a named Docker data volume such as the default value `jenkins_home="jenkins_home_volume"`.
 - **x`_java_opts`**: Custom java options to be passed to the Jenkins Java VM. You can use it to adapt the maximum heap size of its Java VM, for example, `java_opts="-Xmx1024m"`
-- **`http_proxy`, `https_proxy`, `no_proxy`**: Proxy settings to be passed as environment variables to the Docker container, for example: `http_proxy="http://proxy:8080", http_proxy="http://proxy:8080",
-no_proxy="localhost,.corp"`
+- **`http_proxy`, `https_proxy`, `no_proxy`**: Proxy settings to be passed as environment variables to the Docker container, for example: `http_proxy="http://proxy:8080", http_proxy="http://proxy:8080", no_proxy="localhost,.corp"`
 
 >If you choose to store Jenkins home in a local folder, you have to ensure that the Jenkins user within the Cx-server container, which is fixed to `uid=1000`, is able to read and write within the specified folder. To avoid permission related issues, we recommend to use named Docker volumes.
 

@@ -33,7 +33,7 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
 
     >A Form Cell Page is suitable for pages that generate new objects or modify existing objects. It includes a form cell container by default. You can add form sections, multiple containers or action controls to this page. Under each container section, you can add various container items.
 
-    >You can find more details about [Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a0358d7a9c3b46e0819f28ae779def24.html).
+    >You can find more details about [Form Cell page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/formcell-page.html).
 
 2. Enter the Page Name `Customers_Create` and click **Next** and the **Finish** on the Confirmation step.
 
@@ -47,7 +47,7 @@ In this step, you will create the `Customers_Create.page` as a **Form Cell Page*
 
 4. In the Layout Editor, expand the **Control** | **Container Item** section.
 
-    >You can find more details about [available controls in Form Cell page](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/a0358d7a9c3b46e0819f28ae779def24.html).
+    >You can find more details about [available controls in Form Cell page](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/FormCell/Container.schema.html).
 
 5. Drag and drop a **Simple Property** onto the Page area.
 
@@ -223,7 +223,7 @@ The next step is to store newly created record locally for an offline applicatio
 
     Next, you will create the **OData Create action** to update entity action that will map the changes to the correct entities in the OData service and save the changes.
 
-    >You can find more details about [Create Entity Action](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/9cafb37ca8ad49e6930dba857352a3e6.html).
+    >You can find more details about [Create Entity Action](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/CreateEntity.schema.html).
 
 4. Right-click the **Actions** folder | **New MDK Action** | choose **MDK Data Actions** in **Category** | click **OData Action** | **Next**.
 
@@ -308,7 +308,7 @@ Deploy the updated application to your MDK client.
 
     ![MDK](img_026.1.png)
 
-2. Since we have deployed already both the destination and app id should be pre-selected based on the last time you deployed our application.  Confirm the **Destination Name** is `mobileservices_cf` and the **Application Id** is `com.sap.mdk.demo` and click **Next**.
+2. Confirm the destination name and application id match where you want to deploy and click **Next**.
 
     ![MDK](img_014.1.png)
 

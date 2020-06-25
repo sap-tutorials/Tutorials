@@ -2,7 +2,7 @@
 title: Set Up a Workflow With Extended Employee Onboarding
 description: Set up the Employee Onboarding sample workflow application and integrate with business rules service.
 auto_validation: true
-time: 20
+time: 10
 tags: [ tutorial>beginner, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform
 ---
@@ -22,7 +22,7 @@ Download `Employee Onboarding` sample application from [GitHub](https://github.c
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import sample application)]
+[ACCORDION-BEGIN [Step 2: ](Import sample application)]
 
 1. Choose **Launch SAP Web IDE**.
 
@@ -53,12 +53,11 @@ Download `Employee Onboarding` sample application from [GitHub](https://github.c
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Build and deploy sample application)]
+[ACCORDION-BEGIN [Step 3: ](Build and deploy sample application)]
 
 1. Right-click the `cf-onboarding-sample` project, and choose the **Build** option.
-    > Use the deprecated option to build the resources.
 
-    ![Build mta File](build-mta.png)
+    ![Build mta File](build-wf-mta.png)
 
 
 2. In the build archive, right-click the `sample-onboarding.mta_<xxx>.mtar` file and choose **Deploy** | **Deploy to SAP Cloud Platform**.

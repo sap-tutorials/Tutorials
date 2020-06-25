@@ -2,17 +2,17 @@
 title: Create a Sample iOS App
 description: Create and examine your first Fiori for iOS app using the SAP Cloud Platform SDK for iOS Assistant connecting against a sample service.
 auto_validation: true
-author_name: Kevin Muessig
-author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, software-product-function>sap-cloud-platform-mobile-services ]
 time: 15
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites  
+- Completed the previous tutorial(s) in this group.
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
-- Completed the previous tutorials in this Group.
+- **SAP Cloud Platform SDK for iOS:** Have downloaded Version 5.0 or higher from [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)  
 
 ## Details
 ### You will learn  
@@ -47,42 +47,32 @@ In the upcoming pop-up, fill in the fields as seen in the following table and cl
 
 ![Mobile Services](fiori-ios-scpms-create-sample-app-03.png)
 
-The mobile app configuration is now created.
+In the next window, you can select the features for you application. Some features are pre-selected for you.
 
-[DONE]
-[ACCORDION-END]
+Select **Mobile Sample OData ESPM** and click Finish.
 
+![Feature Selection Window](fiori-ios-scpms-create-sample-app-04.png)
 
-[ACCORDION-BEGIN [Step 2: ](Add the Mobile Sample OData ESPM)]
+> For most of the tutorials, you will use this cloud app configuration which is based on the **Mobile Sample OData ESPM** service. This service provides you with an OData backend containing a product, supplier and customer catalog.
 
-For most of the tutorials, you will use this cloud app configuration which is based on the **Mobile Sample OData ESPM** service. This service provides you with an OData backend containing a product, supplier and customer catalog.
-
-Click on the **Features** tab on the left-hand side.
-
-![Mobile Services](fiori-ios-scpms-create-sample-app-04.png)
-
- In the upcoming screen, click on **Add to Application** for the **Mobile Sample OData ESPM** tile.
+In the confirmation dialog that appears, click **OK**.
 
 ![Mobile Services](fiori-ios-scpms-create-sample-app-05.png)
 
-Select the just created mobile application and click on **OK**.
+The mobile app configuration is now created.
 
 ![Mobile Services](fiori-ios-scpms-create-sample-app-06.png)
-
-After you've added that backend service to your application the application detail screen should show up displaying the added OData service. Click on **Save**.
-
-![Mobile Services](fiori-ios-scpms-create-sample-app-07.png)
 
 Your work is done in Mobile Services now. The following steps will describe how to use the iOS Assistant to take that cloud app configuration to generate your first app.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Use the SAP Cloud Platform SDK for iOS Assistant to create your first Xcode iOS project)]
+[ACCORDION-BEGIN [Step 2: ](Use the SAP Cloud Platform SDK for iOS Assistant to create your first Xcode iOS project)]
 
-On your MacBook, open the iOS Assistant and click on **Create New** to start the creation workflow.
+On your MacBook, open the iOS Assistant and click **Create New** to start the creation workflow.
 
-![Assistant](fiori-ios-scpms-create-sample-app-08a.png)
+![Assistant](fiori-ios-scpms-create-sample-app-07.png)
 
 The initial step of the workflow asks you to choose whether to create a sample app, use an existing cloud app configuration, or create a new one.
 
@@ -132,5 +122,46 @@ The iOS Assistant will now connect to Mobile Services and fetches the defined co
 
 Your Xcode project should automatically open up and you can run the app.
 
+![Assistant](fiori-ios-scpms-create-sample-app-14.png)
+
 [VALIDATE_3]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Run the App Created by iOS Assistant on an iOS Simulator )]
+
+In the Xcode Tool Bar, click **Set the active scheme**.
+
+![Assistant](fiori-ios-scpms-create-sample-app-15.png)
+
+Select a simulator of your choice.
+
+![Assistant](fiori-ios-scpms-create-sample-app-16.png)
+
+> You can run the application on your physical device too.
+
+In the Xcode Tool Bar, Click **Run**.
+
+![Assistant](fiori-ios-scpms-create-sample-app-17.png)
+
+Upon successful build, the simulator will be launched and the application will be started.
+
+![Assistant](fiori-ios-scpms-create-sample-app-18.png)
+
+Click **Start** and enter your SAP Cloud Platform credentials to login.
+
+![Assistant](fiori-ios-scpms-create-sample-app-19.gif)
+
+Finish the setup of your application.
+
+![Assistant](fiori-ios-scpms-create-sample-app-20.gif)
+
+Explore the application created.
+
+![Assistant](fiori-ios-scpms-create-sample-app-21.gif)
+
+> Since we used the *Mobile Sample OData ESPM* service. The assistant builds an application using the data returned by this service.
+
+You have successfully built an iOS application using the iOS Assistant that seamlessly connects to SAP Cloud Platform Mobile Services.
+
+[DONE]
 [ACCORDION-END]
