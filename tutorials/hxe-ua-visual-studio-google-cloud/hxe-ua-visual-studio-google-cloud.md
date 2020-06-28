@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform
-description: This tutorial explains how to deploy your SAP HANA, express edition installation to the Google Cloud Platform by using the SAP HANA plugin for Microsoft Visual Studio.
+title: SAP HANA Plugin for Microsoft Visual Studio 2017 - Deploy to the Google Cloud Platform
+description: This tutorial explains how to deploy your SAP HANA, express edition installation to the Google Cloud Platform by using the SAP HANA plugin for Microsoft Visual Studio 2017.
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
@@ -9,17 +9,17 @@ time: 10
 ---
 
 ## Prerequisites
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://developers.sap.com/tutorials/hxe-ua-visual-studio-word-mapping.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio 2017 - Word Mapping Project](https://developers.sap.com/tutorials/hxe-ua-visual-studio-word-mapping.html)
 
 ## Details
 ### You will learn
-  - How to deploy your SAP HANA, express edition installation to the Google Cloud Platform by using the SAP HANA plugin for Microsoft Visual Studio
+  - How to deploy your SAP HANA, express edition installation to the Google Cloud Platform by using the SAP HANA plugin for Microsoft Visual Studio 2017.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Microsoft Visual Studio)]
+[ACCORDION-BEGIN [Step 1: ](Open Microsoft Visual Studio 2017)]
 
-Launch Microsoft Visual Studio. Ensure that the SAP HANA plugin is installed by going to **Tools** then **Extensions and Updates...**. In your **Installed** list, confirm that **SAP HANA Explorer for Visual Studio** is installed.
+Launch Microsoft Visual Studio 2017. Ensure that the SAP HANA plugin is installed by going to **Tools** then **Extensions and Updates...**. In your **Installed** list, confirm that **SAP HANA Explorer for Visual Studio** is installed.
 
 [DONE]
 
