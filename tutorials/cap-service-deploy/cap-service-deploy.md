@@ -37,14 +37,13 @@ It's now time to switch to SAP HANA as a database.
         }
       }
     ```
-
->`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
-
+    >`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
+    `
 3. In the command line add the SAP HANA driver as a dependency to your project:
 
-    ```Shell/Bash
-    npm add @sap/hana-client --save
-    ```
+```Shell/Bash
+npm add @sap/hana-client --save
+```
 
 [DONE]
 
@@ -160,4 +159,4 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cap-service-deploy" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://s.userzoom.com/m/MiBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
