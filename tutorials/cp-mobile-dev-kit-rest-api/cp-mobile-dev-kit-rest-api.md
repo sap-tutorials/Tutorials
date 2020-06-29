@@ -115,7 +115,7 @@ Ensure that you have already [Set Up SAP Business Application Studio for Develop
 
     !![MDK](img_0.1.png)
 
-3. When it is ready, open your dev space by clicking on the name.
+3. When it is ready, open your dev space by clicking its name.
 
     !![MDK](img_0.2.png)
 
@@ -683,7 +683,7 @@ Right-click the `Application.app` file in the project explorer pane and select *
 
     !![MDK](img_9.png)
 
-3.  Fill-up the details to create a new Pet record.
+3.  Fill out the details to create a new Pet record.
 
     !![MDK](img_10.1.1.png)
 
@@ -701,7 +701,7 @@ Right-click the `Application.app` file in the project explorer pane and select *
 
     !![MDK](img_9.1.1.png)
 
-3.  Fill-up the details to create a new Pet record.
+3.  Fill out the details to create a new Pet record.
 
     !![MDK](img_9.1.2.png)
 
