@@ -25,7 +25,6 @@ In this tutorial, you will build a basic UI5 application that uses data from the
 
 [ACCORDION-BEGIN [Step : ](Open the project wizard)]
 
-> Please double check that your subaccount lives in the eu10 region. If not, please follow [this tutorial](cp-ui5-webide-new-app) to create the project instead. Don't forget the use the module name and name space mentioned here.
 
 Select **File** --> **New** --> **Project From Template**
 
