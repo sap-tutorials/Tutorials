@@ -55,14 +55,17 @@ author_profile: https://github.com/raz-korn
 
 [ACCORDION-BEGIN [Step 3: ](Open the SAP Fiori dev space)]
 
-1.  Click the name of the dev space you created.
+**Click** the name of the dev space you created.
 
-    !![Open Dev Space](AppStudio Open Dev Space_.jpg)
 
-    The SAP Fiori dev space opens and the **Welcome** tab appears.
-    !![Open Dev Space](03-01-02 AppStudio Welcome Tab.jpg)
+!![Open Dev Space](AppStudio Open Dev Space_.jpg)
 
-    >The purple color of the status bar indicates that there is no open workspace.
+
+The SAP Fiori dev space opens and the **Welcome** tab appears.
+
+!![Open Dev Space](03-01-02 AppStudio Welcome Tab.jpg)
+
+>The purple color of the status bar indicates that there is no open workspace.
 
 [DONE]
 [ACCORDION-END]
