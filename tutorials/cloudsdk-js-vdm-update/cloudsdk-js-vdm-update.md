@@ -126,7 +126,7 @@ export class BusinessPartnerController {
 }
 ```
 
-Restart your server and send a `PUT` request to `http://localhost:3000/business-partners/1/address/1` with the following body (or replace the IDs with the ones you used in the previous tutorial):
+Restart your server and send a `PUT` request to `http://localhost:3000/business-partners/1003764/address/28238` with the following body (or replace the IDs with the ones you used in the previous tutorial):
 
 ```JSON
 {
