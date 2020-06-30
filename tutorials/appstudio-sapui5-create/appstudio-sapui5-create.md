@@ -137,7 +137,8 @@ Now that you created a `mtar` archive, you are all set to deploy the application
     !![success](./deploysuccess.png)
 
 > You can also see the URL of the deployed app when running `cf apps` in a new terminal session.
-    !![cfapps](./cfapps.png)
+
+> !![cfapps](./cfapps.png)
 
 [DONE]
 [ACCORDION-END]
