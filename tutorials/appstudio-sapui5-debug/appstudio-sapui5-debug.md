@@ -192,9 +192,7 @@ Running your application has several advantages over deploying it. Among others,
     !![running](./running.png)
 
 
-Run `console.log(message.replace("random", "Hello-World"))` in the console of the DevTools.
-
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Stop at the breakpoint)]
 Open the Chrome DevTools (or the [dev tools of your favorite browser](https://www.lifewire.com/web-browser-developer-tools-3988965)) by clicking **F12**. **Refresh the page** to run the script one more time.
@@ -203,12 +201,13 @@ You should now see that the app reached the breakpoint (the dev tools automatica
 
 ![stopped](./stopped.png)
 
-[DONE]
-[ACCORDION-END]
+Run `console.log(message.replace("random", "Hello-World"))` in the console of the DevTools.
 
+[VALIDATE_1]
+[ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Check the log message)]
 
-Click **F8** to jump over the breakpoint and switch to the `Console` tab. 
+Click **F8** to jump over the breakpoint and switch to the `Console` tab.
 Now you should see your error message printed in red.
 
 Can you spot the line in which you invoked the error message?
