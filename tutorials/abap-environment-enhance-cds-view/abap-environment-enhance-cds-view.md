@@ -16,7 +16,6 @@ primary_tag: topic>abap-development
 - How to add textual information using associations
 - How to concatenate two elements, using a built-in function for CDS
 - How to convert currencies using a built-in function for CDS
-- How to use grouping and aggregation
 - How to evaluate conditions using a CASE statement
 
 You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
@@ -185,7 +184,7 @@ It would be nice to find out how much money each **Agency** has received in tota
 
     You need to cast the character value **` 'USD' `** to the correct type and length, **` abap.cuky( 5 ) `**.
 
-    You may get a warning: "Reference information missing...". Ignore this.
+    You may get a warning: "Reference information missing...". Ignore this for now.
 
     ```CDS
     currency_conversion(
@@ -203,50 +202,25 @@ It would be nice to find out how much money each **Agency** has received in tota
 
     !![step16a-currency-conversion](step16a-currency-conversion.png)
 
-[DONE]
-[ACCORDION-END]
+4. Now you will remove the warning. If you select the warning, then choose **Problem Description** from the context menu, you will see that you need to add an annotation,  **`•Semantics.amount.currencyCode`**. However, this will simply add the original currency code (e.g. `NOK`) to the `PriceInUSD` column. Also, you can only add an element name to the annotation, not a literal such as `'NOK'`. So you need to:
 
-[ACCORDION-BEGIN [Step 5: ](Add aggregation and grouping)]
-1. Add the following annotation to the element **`total_price`**, using Auto-complete (**`Ctrl+Space`**):
+    - Create a column, **`TargetCurrency`**
+    - Give it the value of the literal
+    - Cast the string literal to a currency type, **`abap.cuky`**
+    - Add the semantic annotation to **`PriceInUSD`**
 
-    ```ABAP
-    @DefaultAggregation: #SUM
-    ```
-    By using Auto-complete, you can see the various possibilities for aggregation, e.g. `AVG`, COUNT, SUM. In this case, we aggregate the SUM payable to each company.
-
-2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+3`** ).
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Test aggregation and grouping)]
-1. Refresh your Fiori Elements preview. You may notice that a different grid control is used.
-2. Right-click on **Agency ID** and choose Group:
-
-    .
-    !![step7a-test-grouping](step7a-test-grouping.png)
-
-    This groups and aggregates the entries (Travels) by Agency ID. You can also see the sum of all travels for each agency, in US dollars.
-
-    !![step7b-group-by-AgencyID](step7b-group-by-AgencyID.png)
-
-3. Now, right-click on the Customer ID header and again choose Group.
-This displays a two-step grouping. You can browse and expand the companies and browse / expand the associated sales orders.
-
-    !![step7c-group-by-custid](step7c-group-by-custid.png)
-
-> The grouping will be gone each time you refresh the application. To avoid this, add the following annotation to the metadata extension definition on view level (at the top):
+    Your code should now look like this:
 
     ```CDS
-    @UI.presentationVariant: [{groupBy: [ 'AgencyID' , 'CustomerID' ]}]
-
+    //Conversion to USD
+    @Semantics.currencyCode: true
+      cast( 'USD' as abap.cuky ) as TargetCurrency,
     ```
 
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 7: ](Add CASE statement)]
+[ACCORDION-BEGIN [Step 5: ](Add CASE statement)]
 1. You will now create a bonus scheme, where the most expensive trips priced in US dollars are categorized as "Gold" or "Silver" trips. You can do this by adding the following CASE statement to the SELECT list, assigning the alias **`Premium`**.
 
     ```CDS
@@ -269,13 +243,13 @@ This displays a two-step grouping. You can browse and expand the companies and b
 
 The updated preview should look like this:
 
-    !![step8d-fep](step8d-fep.png)
+!![step8d-fep](step8d-fep.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Check code)]
+[ACCORDION-BEGIN [Step 6: ](Check code)]
 The code for your CDS entity should look like this:
 
 ```CDS
@@ -312,7 +286,6 @@ define view Z_C_TRAVELS_xxx
       EndDate,
       BookingFee,
 
-      @DefaultAggregation: #SUM
       @Semantics.amount.currencyCode: 'CurrencyCode'
       TotalPrice,
 
@@ -358,7 +331,7 @@ define view Z_C_TRAVELS_xxx
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test yourself)]
+[ACCORDION-BEGIN [Step 7: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]

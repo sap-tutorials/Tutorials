@@ -13,7 +13,7 @@ primary_tag: topic>abap-development
 
 ## Details
 ### You will learn
-- How to create a CDS view
+- How to create a CDS view with parameters
 - How to display your CDS view in a Fiori Elements preview
 - How to add selection fields to Fiori Elements preview
 - How to extract the metadata of your CDS view
@@ -58,7 +58,9 @@ Throughout this tutorial, object names may include a suffix or group number, suc
 
 3. Choose or create a transport request, then choose **Next**. Do not choose **Finish.**
 
-4. Finally, choose **Use template** then choose **Define view**. Then choose **Finish**.
+4. Finally, choose **Use template** then choose **Define view with parameters**. Then choose **Finish**.
+
+    !![step2b-view-with-params](step2b-view-with-params.png)
 
 Your CDS view appears in a new editor.
 
