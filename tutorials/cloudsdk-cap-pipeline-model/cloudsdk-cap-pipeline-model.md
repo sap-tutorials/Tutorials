@@ -1,58 +1,51 @@
 ---
 title: Continuous Delivery Pipeline for SAP Cloud Application Programming Model
 description: Use the SAP Cloud SDK Continuous Integration and Continuous Delivery toolkit for SAP Cloud Application Programming Model.
-time: 15
+time: 20
+auto_validation: true
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
 primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites
  - [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html)
- - Please have a look for setting up a [SAP Cloud Application Programming Model](https://cap.cloud.sap/docs/get-started/)
 
 ## Details
 ### You will learn
-  - How to set up CI/CD pipeline for SAP Cloud Application Programming Model on SAP Cloud Platform
+  - How to set up a CI/CD pipeline for projects based on the SAP Cloud Application Programming Model on SAP Cloud Platform
 
 SAP Cloud Application Programming Model enables you to quickly create business applications by allowing you to focus on your business domain. It offers a consistent end-to-end programming model for full-stack development on SAP Cloud Platform.
 
-You can use a sophisticated CI/CD pipeline without having to write or maintain the pipeline yourself. Rather, you can take advantage of an open-sourced pipeline, maintained by the SAP Cloud SDK team on [GitHub](https://github.com/SAP/cloud-s4-sdk-pipeline).
+You can use a sophisticated CI/CD pipeline without having to write or maintain the pipeline yourself. Rather, you can take advantage of the open sourced SAP Cloud SDK pipeline from project "Piper", maintained by the SAP Cloud SDK team on [GitHub](https://sap.github.io/jenkins-library/pipelines/cloud-sdk/introduction/).
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a project)]
-
->If you had already set up a project you can skip this step.
+[ACCORDION-BEGIN [Step 1: ](Create a project based on the SAP Cloud Application Programming Model)]
 
 For local development, you need to install the `cds` command line tools once, which in turn require Node.js , as follows:
 
 1. Install Node.js from <https://nodejs.org>
   (use the latest LTS release)
 
-2. Set the NPM registry for @sap packages
-
-    ```
-    npm set @sap:registry=https://npm.sap.com
-    ```
-
-3. Install the `cds` development kit globally
+2. Install the `cds` development kit globally
 
     ```
     npm i -g @sap/cds-dk
     cds  #> test-run it
     ```
-4. Get the sample project
+
+3. Get the sample project
 
     ```
     cds init --add java,mta,bookshop
     ```
 
-For more details regarding a project, please refer to [Cloud Application Model](https://cap.cloud.sap/docs/get-started/)
+Please find more information about the SAP Cloud Application Programming Model in its [documentation](https://cap.cloud.sap/docs/get-started/).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up a pipeline)]
+[ACCORDION-BEGIN [Step 2: ](Setup a Continuous Delivery pipeline)]
 
 SAP offers a pipeline which helps you to implement continuous delivery out-of-the-box. To add this pipeline to your project run the following command
 
@@ -63,18 +56,18 @@ cds add pipeline
 Now, you can see that your project contains two new files.
 
 -  Jenkinsfile
--  pipeline_config.yml
+-  .pipeline/config.yml or pipeline_config.yml in older versions of `cds`
 
 
 The SAP Cloud SDK for Continuous Delivery is based on Jenkins. Jenkins offers the possibility to implement build pipelines as code. However, as explained before, you don't have to write any line of code. As you can see in `Jenkinsfile`, the actual pipeline implemented as open source and executed here. We call this approach a centrally maintained pipeline.
 
 !![Jenkinsfile](jenkinsFile.png)
 
-Set `pipelineVersion` to a fixed released version (e.g. "v15") when running in a productive environment.
+Set `pipelineVersion` to a fixed released version (e.g. "v34") when running in a productive environment.
 
-To find out about available versions and release notes, visit: <https://github.com/SAP/cloud-s4-sdk-pipeline/releases>
+For available versions and release notes please visit: <https://github.com/SAP/cloud-s4-sdk-pipeline/releases>
 
-However, You still want to control the behavior of this pipeline. Therefore, the command adds a configuration file `pipeline_config.yml`, which new location will be `.pipeline/config.yml`.
+However, You still want to control the behavior of this pipeline. Therefore, the command adds a configuration file in `.pipeline/config.yml`. Please note that in older versions of `cds` the file is named  `pipeline_config.yml` and is located in the root of the project.
 
 You can use the `config.yml`, for example, to control where to deploy your application productively. Of course, there are many more configuration options you can use in order to control the behavior of the pipeline. You will find more information about this in the pipeline documentation.
 
@@ -140,38 +133,7 @@ Please have a look at this sample visual representation of the pipeline:
 
 !![Cloud SDK](cappipeline.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Set up credentials)]
-
-As an option, if you already built integration tests that require credentials, you also need to create corresponding records in the Jenkins credentials store and map them via an appropriate entry in the configuration file. Credentials can be created by navigating to **Credentials > System > Global Credentials**.
-
-!![Jenkins System](jenkins-system.png)
-
-On this screen, click **Add Credentials** and enter username, password, as well as an ID for your credentials record.
-
-!![Add Credentials](jenkis-add-credentials.png)
-
-As a result, navigating to **Credentials** should show your freshly created entry.
-
-!![Jenkins Credentials](jenkins-credentials.png)
-
-Finally, you can now leverage this credentials record by adding the credentials configuration property to the `integrationTests` stage of your `config.yml`.
-
-The example below shows the mapping to the system alias `MyErpSystem`, which you defined earlier in your `systems.yml` file.
-
-```YAML
-stages:
-  integrationTests:
-    credentials:
-      - alias: 'MyErpSystem'
-        credentialId: 'MY-ERP'
-```
-
-To learn more about pipeline configuration, feel free to have a look on our [documentation on GitHub](https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/configuration.md).
-
-Alternatively, you can run SAP Cloud SDK Continuous Delivery Pipeline also on a Kubernetes cluster, if you wish to do so. An in-depth guide can be found in this [blog post](https://blogs.sap.com/2018/09/26/autoscaling-of-sap-s4hana-cloud-sdk-continuous-delivery-toolkit-on-kubernetes/).
+[VALIDATE_1]
 
 
 [DONE]
@@ -193,56 +155,35 @@ Now click the `Home` button in the upper navigation bar and then click `Start Cl
 
 After selecting your region, your account will be automatically set up for development with `Cloud Foundry`.
 
-Now that your account is activated and configured.
+![Cloud foundry view](cftrial.png)
 
-In order to deploy applications on `SAP Cloud Foundry` you need to provide the API endpoint. The API endpoint depends on the region you chose for your account:
+In order to deploy applications on `SAP Cloud Foundry` you need to provide the API endpoint and other properties. You can get them by going inside your trial.
 
-  - for EU: `https://api.cf.eu10.hana.ondemand.com`
-  - for US EAST: `https://api.cf.us10.hana.ondemand.com`
-  - for US CENTRAL: `https://api.cf.us20.hana.ondemand.com`
+![Cloud foundry properties](cloudfoundry.png)
 
-
-Configure the `Jenkinsfile` and `config.yml` for Cloud Foundry settings.
-
-```
-#Jenkinsfile
-general:
-  cloudFoundry:
-    org: 'myorg'
-    space: 'Prod'
-    apiEndpoint: '<Cloud Foundry API endpoint>'
-    credentialsId: 'CF-DEPLOY-DEFAULT'
-    manifestVariablesFiles: ['manifest-variables.yml']
-stages:
-  productionDeployment:
-    appUrls:
-      - url: <application url>
-        credentialId: e2e-test-user-cf
-    cfCreateServices:
-      - serviceManifest: 'services-manifest.yml'
-      - serviceManifest: 'services-manifest.yml'
-        space: 'Prod2'
-        org: 'myorg2'
-    cfTargets:
-        space: 'my-space'
-        org: 'my-org'
-        credentialsId: 'credentials'
-        apiEndpoint: '<Cloud Foundry API endpoint>'
-```        
+Configure `config.yml` for Cloud Foundry settings.
 
 ```
 #config.yml
 productionDeployment:
-  appUrls:
-   - url: <application url>
-     credentialId: e2e-test-user-cf
   cfTargets:
    - space: 'my-space'
      org: 'my-org'
-     manifest: 'manifest.yml'
      credentialsId: 'credentials'
      apiEndpoint: '<Cloud Foundry API endpoint>'
 ```
+
+Now you require credentials. It can be created in the Jenkins by navigating to **Credentials > System > Global Credentials**.
+
+!![Jenkins System](jenkins-system.png)
+
+On this screen, click **Add Credentials** and enter username, password, as well as an ID for your credentials record.
+
+you can now leverage this credentials record by adding the credentials configuration property to the `productionDeployment` stage of your `config.yml`.
+
+Pipeline will look like this after production deployment stage:
+
+!![Production Deployment](productionDeployment.png)
 
 For further details regarding stage production deployment, Please refer to [pipeline documentation]( https://github.com/SAP/cloud-s4-sdk-pipeline/blob/master/configuration.md#productiondeployment)
 
