@@ -24,7 +24,7 @@ You can use many different tools to build and deploy apps on the SAP Cloud Platf
 
 Open your SAP Cloud Platform account (if you have a free developer account, click [here](https://account.hanatrial.ondemand.com/) to open the home page).
 
- Click on **Launch SAP Web IDE** to see navigate further.
+Click on **SAP Web IDE** to open the tool.
 
 ![open webide](./open-webide.png)
 

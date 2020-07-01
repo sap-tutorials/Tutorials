@@ -1,10 +1,10 @@
 ---
 title: Extend Decision Support Application with Custom SAPUI5 View
-description: Extend the SAP Leonardo IoT Decision Support application using SAP Web IDE by adding a custom SAPUI5 view to display device event payload data.
+description: Extend the SAP IoT Decision Support application using SAP Web IDE by adding a custom SAPUI5 view to display device event payload data.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, topic>sapui5, products>sap-web-ide, products>sap-leonardo-iot]
-primary_tag: products>sap-cloud-platform-internet-of-things
+tags: [ tutorial>beginner, topic>sapui5, products>sap-web-ide, products>sap-leonardo-iot, products>sap-cloud-platform-internet-of-things ]
+primary_tag: topic>internet-of-things
 ---
 
 ## Prerequisites
@@ -22,7 +22,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
   In order to display device event payload data to a custom SAPUI5 view, the person configuring the decision support action must explicitly expose the data by defining externalized data configuration in decision support definition.
 
-  1. From Leonardo IoT launchpad, launch the **Decision Support Definition** application.
+  1. From SAP IoT launchpad, launch the **Decision Support Definition** application.
 
     ![Select Decision Support from SAP Fiori launchpad](/images/launchpad_tile_ds.png)
 
@@ -268,7 +268,7 @@ Decision support application with a custom SAPUI5 view displaying data from the 
 
 You can provide a link as part of the action history entry that allows a user to navigate to a page which has additional information about the result of the executed option. To enter a link for action history:
 
-  1. From Leonardo IoT launchpad, select the **Decision Support Definition** tile.
+  1. From SAP IoT launchpad, select the **Decision Support Definition** tile.
 
     ![Select Decision Support in SAP Fiori launchpad](/images/launchpad_tile_ds.png)
 

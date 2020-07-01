@@ -19,6 +19,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
   - How to expose the business partners in a `NestJS` application
 
 The goal of this tutorial group is to show you how to implement a JavaScript application that allows you to manage the addresses of business partners. This application will be using `NestJS` and the SAP Cloud SDK for JavaScript. In this tutorial, we introduce the SAP Cloud SDK's OData Virtual Data Model and teach you how to use it to query business partners from an SAP S/4HANA Cloud system.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](What is the SAP Cloud SDK's Virtual Data Model?)]
@@ -103,7 +104,11 @@ import { BusinessPartnerService } from './business-partner.service';
 export class AppModule {}
 ```
 
-Now you can start your application using `npm start`. When the server is running, you should see a message like: `[NestApplication] Nest application successfully started` and some mappings related to the listed controllers. Open the URL `http://localhost:3000/business-partners` and you should see `Not yet implemented.`
+Now you can start your application using:
+```Shell
+npm start
+```
+When the server is running, you should see a message like: `[NestApplication] Nest application successfully started` and some mappings related to the listed controllers. Open the URL `http://localhost:3000/business-partners` and you should see `Not yet implemented.`
 
 [DONE]
 [ACCORDION-END]
