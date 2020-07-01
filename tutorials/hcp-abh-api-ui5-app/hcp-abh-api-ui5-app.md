@@ -1,12 +1,12 @@
 ---
 title: Call API Business Hub API from a SAPUI5 Application
-description: Incorporate an SAP API into your SAPUI5 application using Web IDE.
+description: Incorporate an SAP API into your SAPUI5 application using SAP Business Application Studio.
 primary_tag: products>sap-cloud-platform
 auto_validation: false
 author_name: Marius Obert
 author_profile: https://github.com/IObert
 time: 20
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-business-application-studio]
 ---
 
 
@@ -129,7 +129,7 @@ Pick the **SAPUI5** tab and then copy the entire code up to the `oModel.loadData
 [VALIDATE_2]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Call the API from your application)]
-Back in your Web IDE, open the controller file `webapp/webapp/controller/View1.controller.js`.
+Back in the SAP Business Application Studio, open the controller file `webapp/webapp/controller/View1.controller.js`.
 
 1. **Paste** the copied code from the API Business Hub to your `onInit` function. This code will load the data from the API Business Hub in a JSON model.
 2. Add the following line after the code you pasted to use the created model in the view.
