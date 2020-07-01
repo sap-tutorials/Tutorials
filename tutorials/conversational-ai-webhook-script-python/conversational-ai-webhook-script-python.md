@@ -3,7 +3,7 @@ title: Build a Webhook for a Chatbot using Python
 description: Create a Python script (with Flask), deploy it to SAP Cloud Platform, and use it as a webhook to be called by an SAP Conversational AI chatbot.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
 primary_tag: products>sap-conversational-ai
 ---
 
