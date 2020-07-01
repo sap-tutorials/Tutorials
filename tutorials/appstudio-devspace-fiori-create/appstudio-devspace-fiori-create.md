@@ -27,7 +27,7 @@ author_profile: https://github.com/raz-korn
 
 2. Locate the **SAP Business Application Studio** tile.
 
-3. Click **Go to Application**.
+3. Click **Go to Application**. 
 
 [DONE]
 [ACCORDION-END]
