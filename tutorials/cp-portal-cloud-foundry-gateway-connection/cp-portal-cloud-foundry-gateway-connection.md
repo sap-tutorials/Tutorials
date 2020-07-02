@@ -74,6 +74,15 @@ author_profile: https://github.com/LindsayBert
 
     !![Destination Properties](5-destination-properties.png)
 
+7. Click **Check Connection** to make sure that everything is working.
+
+    ![Check connection](6-check-connection.png)
+
+    You'll get confirmation that the connection is established.
+
+    ![Connection established](7-connection-established.png)
+
+    >Note: This is not an error. The check connection operation tries to open the ES5 URL and gets redirected to the login page.
 
 [VALIDATE_6]
 [ACCORDION-END]
