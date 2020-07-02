@@ -11,8 +11,7 @@ author_profile: https://github.com/raz-korn
 
 ## Prerequisites
  - You have access to SAP Business Application Studio (see [Set Up SAP Business Application Studio for Development](appstudio-onboarding)).
- - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
-
+ 
 
 ## Details
 ### You will learn
@@ -27,7 +26,7 @@ author_profile: https://github.com/raz-korn
 
 2. Locate the **SAP Business Application Studio** tile.
 
-3. Click **Go to Application**. 
+3. Click **Go to Application**.
 
 [DONE]
 [ACCORDION-END]
