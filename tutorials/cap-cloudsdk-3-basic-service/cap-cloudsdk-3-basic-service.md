@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Create a Basic CAP-Based Service
 description: Initialize a CAP-based service, which you will later extend via SAP Cloud SDK.
 auto_validation: true

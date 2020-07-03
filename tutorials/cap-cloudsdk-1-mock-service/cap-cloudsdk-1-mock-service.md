@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Set Up a Basic Mock S/4HANA Service
 description: Create a simple mock SAP S/4HANA business partner service using the SAP Cloud Application Programming Model (Node.js).
 auto_validation: true
