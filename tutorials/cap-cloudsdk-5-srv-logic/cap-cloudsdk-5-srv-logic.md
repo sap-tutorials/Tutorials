@@ -37,23 +37,14 @@ The implementation logic will use SAP Cloud SDK to consume the remote mock SAP S
 
 [ACCORDION-BEGIN [Step 1: ](Install SAP Cloud SDK)]
 
-You won't get very far without SAP Cloud SDK for this tutorial, so in this first step you should install it into your `consumer-app` project. The SDK is available in the SAP NPM Registry and therefore you should first ensure that `npm` knows to look there for packages in the `@sap` scope.
-
 > We recommend that you complete all the command line instructions in VS Code's integrated terminal.
 
-Do this as follows (you may have already done this in a previous tutorial in this mission, in which case you can skip doing it again):
-
-```Bash
-npm config set @sap:registry https://npm.sap.com
-```
-
-Now you should install the SAP Cloud SDK support for the Business Partner API for this project like this:
+You won't get very far without SAP Cloud SDK for this tutorial, so in this first step you should install it in your `consumer-app` project. Install the SAP Cloud SDK support for the Business Partner API for this project as shown here (this will also cause the SAP Cloud SDK core libraries to be installed, along with others -- you can see the corresponding directories by looking inside the project's `node_modules/` directory, in the `@sap/` subdirectory):
 
 ```Bash
 npm install @sap/cloud-sdk-vdm-business-partner-service
 ```
 
-This will also cause the SAP Cloud SDK core libraries to be installed, along with others -- you can see the corresponding directories by looking inside the project's `node_modules/` directory, in the `@sap/` subdirectory.
 
 [VALIDATE_1]
 [ACCORDION-END]
