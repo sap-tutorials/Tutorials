@@ -35,14 +35,6 @@ The first step is to create a new app using the `cds` command line tool which is
 
 > Originally the Node.js package incarnation of CAP was in the form of a single top-level module `@sap/cds`. Today we also have `@sap/cds-dk`, where the "dk" refers to "development kit". This is the package that you'll want to install to develop with CAP, taking advantage of all the tools that it includes; in parallel there is `@sap/cds` which you can think of as the leaner "runtime" package.
 
-The `@sap` part of `@sap/cds-dk` is a Node Package Manager (NPM) scope, which can be associated with a particular NPM registry. In this case the `@sap` scope is associated with the SAP NPM registry, so set your global NPM configuration to reflect this, by running the following command:
-
-```Bash
-npm set @sap:registry=https://npm.sap.com
-```
-
-Now you can run the following command to install `@sap/cds-dk` globally, knowing that `npm` will request the package from the correct registry:
-
 Execute the following commands in a command prompt (even one in an integrated terminal within VS Code will do).
 
 ```Bash
