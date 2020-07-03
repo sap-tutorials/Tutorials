@@ -62,13 +62,7 @@ Now open the the `package.json` file to have a look inside. It should look simil
 
 ![looking at the package.json file in VS Code](vscode-open.png)
 
-Note the two main dependencies for this project are `@sap/cds` and `express`. The `express` package is the popular [web framework for Node.js](https://expressjs.com/). The `@sap/cds` package is the main runtime Node.js package for the SAP Cloud Application Programming Model, and is available from the [SAP NPM Registry](https://blogs.sap.com/2017/05/16/sap-npm-registry-launched-making-the-lives-of-node.js-developers-easier/).
-
-In the `.npmrc` file in this project, you will see configuration for `npm` (the Node.js package manager) that directs it to use the SAP NPM Registry for packages in the `@sap` scope. The entry in this file is a package-level configuration equivalent of what you may have seen elsewhere like this:
-
-```Bash
-npm set @sap:registry=https://npm.sap.com
-```
+Note the two main dependencies for this project are `@sap/cds` and `express`. The `express` package is the popular [web framework for Node.js](https://expressjs.com/). The `@sap/cds` package is the main runtime Node.js package for the SAP Cloud Application Programming Model.
 
 Now open the `server.js` file and take a brief look. This is the script that will be executed when you run `npm start` in a later step to start the service. You'll see something like this at the start:
 
