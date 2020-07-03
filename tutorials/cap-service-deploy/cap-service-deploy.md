@@ -16,7 +16,7 @@ time: 30
 
 ## Details
 ### You will learn  
-  - How to deploy your business service on SAP Cloud Platform using the SAP Cloud Application Programming Model (CAP) and binding appropriate service instances (see the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/)).
+  - How to deploy your business service on SAP Cloud Platform using the SAP Cloud Application Programming Model (CAP) and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details.
 
 ---
 
