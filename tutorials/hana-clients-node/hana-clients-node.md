@@ -37,7 +37,7 @@ During the installation, there is no need to check the following box as you do n
 
 ![Chocolatey](Chocolatey.png)
 
->The SAP HANA client provides a 32-bt and a 64-bit install, as does Node.js.  It is important that both versions are the same (i.e., 64-bit).  For additional details see SAP note [2499500 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/2499500).
+>The SAP HANA client provides a 32-bt and a 64-bit install, as does Node.js.  It is important that both versions are the same (i.e., 64-bit).  For additional details see SAP note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).
 
 [DONE]
 [ACCORDION-END]
@@ -166,9 +166,10 @@ npm list
     var hana = require('@sap/hana-client');
 
     var connOptions = {
-        serverNode: 'your host:your port',
-        UID: 'USER1',
-        PWD: 'Password1',
+        serverNode: '@User1UserKey',
+        //serverNode: 'your host:your port',
+        //UID: 'USER1',
+        //PWD: 'Password1',
         encrypt: 'true',  //Must be set to true when connecting to SAP HANA Cloud
         sslValidateCertificate: 'false',  //Must be set to false when connecting
         //to a HANA, express instance that uses a self signed certificate.
@@ -257,6 +258,8 @@ Visual Studio Code can be used to run and debug a Node.js application.
 3. Open the file `nodeQuery.js`.
 
 4. Place a breakpoint inside the `connection.exec` callback.  Select **Run | Start Debugging**.  
+
+    Notice that the debug view becomes active and that the RUN option is Node.js.  
 
     Notice that the program stops running at the breakpoint that was set. Observe the variable values in the leftmost pane.  Step through code.
 
