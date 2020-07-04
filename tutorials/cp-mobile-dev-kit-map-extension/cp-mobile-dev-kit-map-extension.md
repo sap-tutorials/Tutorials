@@ -11,7 +11,8 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download the latest version (4.2.1) of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) device
+- **Download the latest version (4.2.1) of Mobile Development Kit SDK (required to build a branded Android client)** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73555000100900002601&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MDK%20CLIENT%203.0) if you are a SAP Cloud Platform Mobile Services customer
 
 ## Details
 ### You will learn
@@ -44,7 +45,7 @@ Launch the SAP Web IDE and select the **MDK perspective** by clicking on the ico
 
     ![MDK](img_001.png)
 
-    > More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
 
   2. Enter the **Project Name** as `mdk_maps` and click **Next**.
 
@@ -128,17 +129,17 @@ The extension control that you will be creating to extend the functionality of y
 
 3. In **Schema Information** window, click **Next**. For this tutorial, you will not need any schema.
 
-      ![MDK](img_009.png)
+    ![MDK](img_009.png)
 
     >Here you can define the properties of the extension control or import a property sample.
 
 4. Click **Finish** to confirm.
 
-The first time you create an extension control, a directory named `MDKExtensionControls` is automatically created under the MDK app project workspace. Also, a file named `ControlName.extension` (`mdk_maps.extension`) is generated based on the control name you provided.
+    The first time you create an extension control, a directory named `MDKExtensionControls` is automatically created under the MDK app project workspace. Also, a file named `mdk_maps.extension` is generated based on the control name you provided.
 
-![MDK](img_010.png)
+    ![MDK](img_010.png)
 
->You can find more details about registering extension control in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/bcc1a204cb614cd99f75c6b2120c5f2e.html) guide.
+    >You can find more details about registering extension control in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/advanced/extensions/registering-extension-in-webide.html) guide.
 
 [DONE]
 [ACCORDION-END]
@@ -157,7 +158,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     ![MDK](img_004.gif)
 
-    >You can find more details about the **Section Extension** in [this](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/6152a1276ad2442ca9bcd0fb08029284.html) guide.
+    >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/Extension.schema.html) guide.
 
   4. You will now set the height and  bind it the registered Extension control properties.
 
@@ -187,7 +188,7 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     ![MDK](img_012.png)
 
-  5. Save the changes to the `Main.page`.
+  5. Save the changes to the `Customers_Detail.page`.
 
 [DONE]
 [ACCORDION-END]
@@ -210,195 +211,198 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     ```JavaScript / TypeScript
     import * as app from 'tns-core-modules/application';
-    import { IControl } from 'mdk-core/controls/IControl';
-    import { BaseObservable } from 'mdk-core/observables/BaseObservable';
-    import { EventHandler } from 'mdk-core/EventHandler'
+    import {IControl} from 'mdk-core/controls/IControl';
+    import {BaseObservable} from 'mdk-core/observables/BaseObservable';
+    import {EventHandler} from 'mdk-core/EventHandler'
 
     export class MyMapClass extends IControl {
-    private _observable: BaseObservable;
-    private _mapView: any;
-    private _geo: any;
-    private _gMap: any;
-    private _marker: any;
-    private _customerInfo = {
-        lastName: "",
-        houseNumber: "",
-        street: "",
-        city: "",
-        country: "",
-        postalCode: "",
-        latitiude: "",
-        longitude: ""
+    	private _observable: BaseObservable;
+    	private _mapView: any;
+    	private _geo: any;
+    	private _gMap: any;
+    	private _marker: any;
+    	private _customerInfo = {
+    		lastName: "",
+    		houseNumber: "",
+    		street: "",
+    		city: "",
+    		country: "",
+    		postalCode: "",
+    		latitiude: "",
+    		longitude: ""
+    	}
+
+    	public initialize(props: any): any {
+    		super.initialize(props);
+
+    		//Access the properties passed from Customers_Detail.page to the extension control.
+    		//in this tutorial, you will be accessing the customer's last name and address
+    		if (this.definition().data.ExtensionProperties.Prop) {
+    			var property = this.definition().data.ExtensionProperties.Prop;
+    			this._customerInfo.lastName = property.LastName;
+    			this._customerInfo.houseNumber = property.HouseNumber;
+    			this._customerInfo.street = property.Street;
+    			this._customerInfo.city = property.City;
+    			this._customerInfo.country = property.Country;
+    			this._customerInfo.postalCode = property.PostalCode;
+    		}
+
+    		if (app.android) {
+    			//You will display the Google Maps in a MapView.For more details on Google Maps API for android, visit
+    			//https://developers.google.com/android/reference/com/google/android/gms/maps/package-summary
+
+    			this._mapView = new com.google.android.gms.maps.MapView(this.androidContext());
+    			var localeLanguage = java.util.Locale;
+
+    			//GeoCoder is required to convert a location to get latitude and longitude
+    			this._geo = new android.location.Geocoder(this.androidContext(), localeLanguage.ENGLISH);
+    			this._mapView.onCreate(null);
+    			this._mapView.onResume();
+
+    			//when mapview control is used, all the lifecycle activities has to be frowaded to below methods.
+    			app.android.on(app.AndroidApplication.activityPausedEvent, this.onActivityPaused, this);
+    			app.android.on(app.AndroidApplication.activityResumedEvent, this.onActivityResumed, this);
+    			app.android.on(app.AndroidApplication.saveActivityStateEvent, this.onActivitySaveInstanceState, this);
+    			app.android.on(app.AndroidApplication.activityDestroyedEvent, this.onActivityDestroyed, this);
+    			var that = this;
+
+    			//A GoogleMap must be acquired using getMapAsync(OnMapReadyCallback).
+    			//The MapView automatically initializes the maps system and the view
+
+    			var mapReadyCallBack = new com.google.android.gms.maps.OnMapReadyCallback({
+    				onMapReady: (gMap) => {
+    					console.log("inside onMapReady function");
+    					that._gMap = gMap;
+    					var zoomValue = 6.0;
+    					that._gMap.setMinZoomPreference = zoomValue;
+    					var customerAddress = that._customerInfo.houseNumber + ' ' + that._customerInfo.street + ' ' + that._customerInfo.city + ' ' +
+    						that._customerInfo.country + ' ' + that._customerInfo.postalCode;
+    					var data = that._geo.getFromLocationName(customerAddress, 1);
+    					var latLng = new com.google.android.gms.maps.model.LatLng(data.get(0).getLatitude(), data.get(0).getLongitude());
+    					that._gMap.addMarker(new com.google.android.gms.maps.model.MarkerOptions().position(latLng).title(this._customerInfo.lastName +
+    						"'s " + "location"));
+    					that._gMap.moveCamera(new com.google.android.gms.maps.CameraUpdateFactory.newLatLng(latLng));
+    				}
+    			});
+    			this._mapView.getMapAsync(mapReadyCallBack);
+    		}
+
+    		if (app.ios) {
+
+    			/*initiating Apple Maps
+    			For more details on the Apple Maps visit
+    			https://developer.apple.com/documentation/mapkit */
+    			this._mapView = MKMapView.alloc().initWithFrame(CGRectMake(0, 0, 1000, 1000));
+    		}
+    	}
+
+    	private onActivityPaused(args) {
+    		console.log("onActivityPaused()");
+    		if (!this._mapView || this != args.activity) return;
+    		this._mapView.onPause();
+    	}
+
+    	private onActivityResumed(args) {
+    		console.log("onActivityResumed()");
+    		if (!this._mapView || this != args.activity) return;
+    		this._mapView.onResume();
+    	}
+
+    	private onActivitySaveInstanceState(args) {
+    		console.log("onActivitySaveInstanceState()");
+    		if (!this._mapView || this != args.activity) return;
+    		this._mapView.onSaveInstanceState(args.bundle);
+    	}
+
+    	private onActivityDestroyed(args) {
+    		console.log("onActivityDestroyed()");
+    		if (!this._mapView || this != args.activity) return;
+    		this._mapView.onDestroy();
+    	}
+
+    	//In case of iOS you'll use CLGeocoder API to convert a address to get latitude and longitude.
+    	//NOTE - API getlatlang is called only on ios devices
+
+    	private getlatlang(customerAddress) {
+    		const that = this;
+    		return new Promise((resolve, reject) => {
+    			var latLng = new CLGeocoder();
+    			latLng.geocodeAddressStringCompletionHandler(customerAddress, function (placemarks, error) {
+    				if (error === null && placemarks && placemarks.count > 0) {
+    					var pm = placemarks[0];
+    					var cordinates = {
+    						latitiude: "",
+    						longitude: ""
+    					}
+    					cordinates.latitiude = pm.location.coordinate.latitude;
+    					cordinates.longitude = pm.location.coordinate.longitude;
+    					resolve(cordinates);
+    				} else {
+    					reject();
+    				}
+    			});
+    		});
+    	}
+
+    	public view() {
+    		this.valueResolver().resolveValue([this._customerInfo.houseNumber, this._customerInfo.street, this._customerInfo.city, this._customerInfo
+    				.country, this._customerInfo.postalCode, this._customerInfo.lastName
+    			], this.context)
+    			.then((address) => {
+
+    				this._customerInfo.houseNumber = address[0];
+    				this._customerInfo.street = address[1];
+    				this._customerInfo.city = address[2];
+    				this._customerInfo.country = address[3];
+    				this._customerInfo.postalCode = address[4];
+    				this._customerInfo.lastName = address[5];
+
+    				var customerAddress = address[0] + ' ' + address[1] + ' ' + address[2] + ' ' + address[3] + ' ' + address[4];
+    				console.log("customer's address = " + customerAddress);
+
+    				if (app.ios) {
+    					return this.getlatlang(customerAddress)
+    						.then((cordinates) => {
+    							/* below code is for the apple maps */
+    							var latlong = CLLocationCoordinate2DMake(cordinates.latitiude, cordinates.longitude);
+    							var annotation = MKPointAnnotation.alloc().init();
+    							annotation.coordinate = latlong;
+    							annotation.title = this._customerInfo.lastName + "'s" + " location";
+    							this._mapView.centerCoordinate = latlong;
+    							this._mapView.addAnnotation(annotation);
+    						});
+    				}
+    			});
+
+    		if (app.android) {
+    			return this._mapView;
+    		}
+    		if (app.ios) {
+    			return this._mapView;
+    		}
+    	}
+
+    	public viewIsNative() {
+    		return true;
+    	}
+
+    	public observable() {
+    		if (!this._observable) {
+    			this._observable = new BaseObservable(this, this.definition(), this.page());
+    		}
+    		return this._observable;
+    	}
+
+    	public setContainer(container: IControl) {
+    		// do nothing
+    	}
+
+    	public setValue(value: any, notify: boolean, isTextValue ? : boolean): Promise < any > {
+    		// do nothing
+    		return Promise.resolve();
+    	}
     }
 
-    public initialize(props: any): any {
-        super.initialize(props);
-
-         //Access the properties passed from Customers_Detail.page to the extension control.
-         //in this tutorial, you will be accessing the customer's last name and address
-        if (this.definition().data.ExtensionProperties.Prop) {
-            var property = this.definition().data.ExtensionProperties.Prop;
-            this._customerInfo.lastName = property.LastName;
-            this._customerInfo.houseNumber = property.HouseNumber;
-            this._customerInfo.street = property.Street;
-            this._customerInfo.city = property.City;
-            this._customerInfo.country = property.Country;
-            this._customerInfo.postalCode = property.PostalCode;
-        }
-
-        if (app.android) {    
-            //You will display the Google Maps in a MapView.For more details on Google Maps API for android, visit
-            //https://developers.google.com/android/reference/com/google/android/gms/maps/package-summary
-
-            this._mapView = new com.google.android.gms.maps.MapView(this.androidContext());
-            var localeLanguage = java.util.Locale;
-
-            //GeoCoder is required to convert a location to get latitude and longitude
-            this._geo = new android.location.Geocoder(this.androidContext(), localeLanguage.ENGLISH);
-            this._mapView.onCreate(null);
-            this._mapView.onResume();
-
-            //when mapview control is used, all the lifecycle activities has to be frowaded to below methods.
-            app.android.on(app.AndroidApplication.activityPausedEvent, this.onActivityPaused, this);
-            app.android.on(app.AndroidApplication.activityResumedEvent, this.onActivityResumed, this);
-            app.android.on(app.AndroidApplication.saveActivityStateEvent, this.onActivitySaveInstanceState, this);
-            app.android.on(app.AndroidApplication.activityDestroyedEvent, this.onActivityDestroyed, this);
-            var that = this;
-
-            //A GoogleMap must be acquired using getMapAsync(OnMapReadyCallback).
-            //The MapView automatically initializes the maps system and the view
-
-            var mapReadyCallBack = new com.google.android.gms.maps.OnMapReadyCallback({
-                onMapReady: (gMap) => {
-                    console.log("inside onMapReady function");
-                    that._gMap = gMap;
-                    var zoomValue = 6.0;
-                    that._gMap.setMinZoomPreference = zoomValue;
-                    var customerAddress = that._customerInfo.houseNumber + ' ' + that._customerInfo.street + ' ' + that._customerInfo.city + ' ' + that._customerInfo.country + ' ' + that._customerInfo.postalCode;
-                    var data = that._geo.getFromLocationName(customerAddress, 1);
-                    var latLng = new com.google.android.gms.maps.model.LatLng(data.get(0).getLatitude(), data.get(0).getLongitude());
-                    that._gMap.addMarker(new com.google.android.gms.maps.model.MarkerOptions().position(latLng).title(this._customerInfo.lastName + "'s " + "location"));
-                    that._gMap.moveCamera(new com.google.android.gms.maps.CameraUpdateFactory.newLatLng(latLng));
-                }
-            });
-            this._mapView.getMapAsync(mapReadyCallBack);
-        }
-
-
-        if (app.ios) {
-
-            /*initiating Apple Maps
-            For more details on the Apple Maps visit
-            https://developer.apple.com/documentation/mapkit */
-            this._mapView = MKMapView.alloc().initWithFrame(CGRectMake(0, 0, 1000, 1000));  
-        }
-    }
-
-    private onActivityPaused(args) {
-        console.log("onActivityPaused()");
-        if (!this._mapView || this != args.activity) return;
-        this._mapView.onPause();
-    }
-
-    private onActivityResumed(args) {
-        console.log("onActivityResumed()");
-        if (!this._mapView || this != args.activity) return;
-        this._mapView.onResume();
-    }
-
-    private onActivitySaveInstanceState(args) {
-        console.log("onActivitySaveInstanceState()");
-        if (!this._mapView || this != args.activity) return;
-        this._mapView.onSaveInstanceState(args.bundle);
-    }
-
-    private onActivityDestroyed(args) {
-        console.log("onActivityDestroyed()");
-        if (!this._mapView || this != args.activity) return;
-        this._mapView.onDestroy();
-    }
-
-    //In case of iOS you'll use CLGeocoder API to convert a address to get latitude and longitude.
-    //NOTE - API getlatlang is called only on ios devices
-
-    private getlatlang(customerAddress) {
-        const that = this;
-        return new Promise((resolve, reject) => {
-        var latLng = new CLGeocoder();
-            latLng.geocodeAddressStringCompletionHandler(customerAddress, function (placemarks, error){
-                if(error === null && placemarks && placemarks.count > 0) {
-                    var pm = placemarks[0];
-                    var cordinates = {
-                        latitiude: "",
-                        longitude: ""
-                    }
-                    cordinates.latitiude = pm.location.coordinate.latitude;
-                    cordinates.longitude = pm.location.coordinate.longitude;
-                    resolve(cordinates);
-                }
-                else {
-                    reject();
-                }
-            });
-        });
-    }
-
-    public view() {
-        this.valueResolver().resolveValue([this._customerInfo.houseNumber, this._customerInfo.street, this._customerInfo.city, this._customerInfo.country, this._customerInfo.postalCode, this._customerInfo.lastName], this.context)
-        .then((address) => {
-
-            this._customerInfo.houseNumber = address[0];
-            this._customerInfo.street = address[1];
-            this._customerInfo.city = address[2];
-            this._customerInfo.country = address[3];
-            this._customerInfo.postalCode = address[4];
-            this._customerInfo.lastName = address[5];
-
-            var customerAddress = address[0] + ' ' + address[1] + ' ' + address[2] + ' ' + address[3] + ' ' + address[4];
-            console.log("customer's address = " + customerAddress);
-
-            if (app.ios){
-                return this.getlatlang(customerAddress)
-                    .then((cordinates) => {   
-                        /* below code is for the apple maps */
-                        var latlong = CLLocationCoordinate2DMake(cordinates.latitiude, cordinates.longitude);
-                        var annotation = MKPointAnnotation.alloc().init();
-                        annotation.coordinate = latlong;
-                        annotation.title = this._customerInfo.lastName + "'s" + " location";
-                        this._mapView.centerCoordinate = latlong;
-                        this._mapView.addAnnotation(annotation);
-                    });
-            }
-        });
-
-        if (app.android) {
-            return this._mapView;
-        }
-        if (app.ios) {
-            return this._mapView;
-        }
-    }
-
-    public viewIsNative() {
-        return true;
-    }
-
-    public observable() {
-        if (!this._observable) {
-            this._observable = new BaseObservable(this, this.definition(), this.page());
-        }
-        return this._observable;
-    }
-
-    public setContainer(container: IControl) {
-        // do nothing
-    }
-
-    public setValue(value: any, notify: boolean, isTextValue?: boolean): Promise<any> {
-        // do nothing
-        return Promise.resolve();
-    }
-}
     ```
 
 3. Save the `MyMapExtension.ts` file.
@@ -422,7 +426,7 @@ So far, you have learned how to build an MDK application in the SAP Web IDE edit
 
     >**Externals**: are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
 
-  3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
+  3. Confirm the destination name and application id match where you want to deploy.
 
     ![MDK](img_016.png)
 
@@ -460,9 +464,11 @@ Since you will display the customer's address in Google Maps on Android device, 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create Your Branded MDK Client)]
+[ACCORDION-BEGIN [Step 7: ](Create Your Branded MDK Client (Required only for Android))]
 
-Follow steps 1 to 4 from [this tutorial](cp-mobile-dev-kit-build-client).
+For Android, you will pass the API key to the MDK client, there is no way public store client can access it, hence you will create a branded client using MDK SDK. Follow steps 1 to 4 from [this tutorial](cp-mobile-dev-kit-build-client).
+
+For iOS, you can just use the App store client. Continue with next step.
 
 [DONE]
 [ACCORDION-END]
@@ -492,7 +498,7 @@ In this step, you will run the app on an android device.
 
      ![MDK](img_3.png)
 
-   4. Provide below information at the end of this file.
+   4. Provide below information before `application` closing tag.
 
 
     ```XML
@@ -509,7 +515,7 @@ In this step, you will run the app on an android device.
 
   6. Copy the **Device Identifier** value for your device.
 
-    In terminal or command line window, navigate to the app name folder **Demo Sample App** (in `MDClient_SDK` path) and use `tns run android --device <device identifier>` command to run the MDK client on android device.
+    In terminal or command line window, navigate to the app name folder **Demo Sample App** in `MDClient_SDK` path and use `tns run android --device <device identifier>` command to run the MDK client on android device.
 
     ![MDK](img_020.4.png)
 
@@ -555,55 +561,49 @@ In this step, you will run the app on an android device.
 
 [OPTION BEGIN [iOS]]
 
-  1. In this step, you will run the app on an iOS device. Attach the device to your Mac and run `tns device ios` command to print a list of attached devices.
+  1. SAP Web IDE has a feature to generate QR code for app onboarding.
 
-    ![MDK](img_020.1.png)
+    Right click the `mdk_maps` MDK Application in the project explorer pane and select **MDK Show QR Code**.
 
-  2. Copy the **Device Identifier** value for your device.
+    ![MDK](img_009.1.png)
 
-  3. In terminal window, navigate to the app name folder **Demo Sample App** (in `MDClient_SDK` path) and use `tns run ios --device <device identifier>` command to run the MDK client on iOS device.
+    >**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 5.
+
+    ![MDK](img_012.1.png)
+
+    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use device Camera, if you would like to scan a different onboarding URL.
+
+  2. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
 
     ![MDK](img_020.2.png)
 
-    You can also run the app in Xcode. Open the project in Xcode with the command `open platforms/ios/<app name>.xcworkspace`, or open the workspace using the `File -> Open...` dialog in Xcode. Configure the application's code signing settings, then run the application for the target device.
+  3. Once scan is succeeded, tap **Continue**.
 
-    >To run the MDK client on iOS simulator, use `tns run ios --emulator` command.
+      ![MDK](img_013.1.png)
 
-  4. Once, above command gets successfully executed, you will see new MDK client up and running in your device.
-
-    ![MDK](img_022.png)
-
-    Here, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.
-
-  5. Tap **Start** to connect MDK client to SAP Cloud Platform.
-
-  6. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
+  4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
 
     ![MDK](img_023.1.1.png)
 
-  7. Tap **Agree** on `End User License Agreement`.
+  5. Tap **Agree** on `End User License Agreement`.
 
     ![MDK](img_024.png)
 
-  8. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
+  6. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
 
     ![MDK](img_025.png)
 
-  9. Confirm the passcode and tap **Done**.
+  7. Confirm the passcode and tap **Done**.
 
     ![MDK](img_026.png)
 
-  10. Tap **OK** to update the client with new MDK metadata.
+  8. Tap **OK** to update the client with new MDK metadata.
 
     ![MDK](img_044.png)
 
-  11. Navigate to the Customer Details page to see the Customer's address loading in Apple Maps.
+  9. Navigate to the Customer Details page to see the Customer's address loading in Apple Maps.
 
     ![MDK](img_045.gif)
-
-    >You can always interrupt running process in terminal window by pressing `control + C`.
-
-    >To build an **IPA for an iOS device**, use `tns build ios --for-device --release`. This can also be accomplished in Xcode by opening the workspace and selecting the Archive option. More information about archiving can be found in Apple's documentation [here](https://developer.apple.com/library/content/documentation/IDEs/Conceptual/AppDistributionGuide/UploadingYourApptoiTunesConnect/UploadingYourApptoiTunesConnect.html).
 
 [OPTION END]
 

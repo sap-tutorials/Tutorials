@@ -269,15 +269,15 @@ Switch to the *Code Editor* view by clicking on **Code Editor**
 
 [ACCORDION-BEGIN [Step 18: ](Add code)]
 
-Search for **`sap.ui5`** and go to the **models** section. There add the following code snipped right after the **"sap-documentation": "heading" }** entry:
+Search for `sap.ui5` and go to the **models** section. There add the following code snipped right after the `"sap-documentation": "heading" }` entry:
 
-```javascript
+```JavaScript
       ,
 			"headers": {
 				"APIKey": "<yourAPIKey>"
 			}
 ```
-> Make sure not to forget the first ","
+> Make sure not to forget the first `,`
 
 ![Add Code snippet](26-AddCodeTemplate.png)
 

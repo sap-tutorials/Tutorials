@@ -30,13 +30,7 @@ time: 50
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Set the NPM registry for `@sap` packages by executing the following command in a command line window:
-
-    ```Shell/Bash
-    npm set @sap:registry=https://npm.sap.com
-    ```
-
-2. Install the `cds` development kit globally by executing the following command:
+1. Install the `cds` development kit globally by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -516,4 +510,4 @@ You can now see the generic handlers shipped with CAP in action.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://s.userzoom.com/m/OCBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-apm-nodejs-create-service" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
