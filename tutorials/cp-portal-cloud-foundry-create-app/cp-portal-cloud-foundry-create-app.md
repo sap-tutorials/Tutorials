@@ -6,6 +6,7 @@ time: 45
 tags: [ tutorial>beginner, products>sap-cloud-platform, topic>sapui5, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform-portal
 author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
