@@ -1,99 +1,111 @@
-const https = require('https');
-const url = require('url');
-const fetch = require('node-fetch');
+const checkLinks = require('check-links');
+const {
+  getStatusText,
+  GATEWAY_TIMEOUT,
+  BAD_GATEWAY,
+  NOT_ACCEPTABLE,
+  BAD_REQUEST,
+  TOO_MANY_REQUESTS,
+  MOVED_PERMANENTLY,
+  MOVED_TEMPORARILY,
+} = require('http-status-codes');
 
-const { regexp: { content: { internalLink } }, linkCheck } = require('../constants');
-const { domains } = require('../../config/trusted.links.json');
-const { linkUtils } = require('../utils');
+const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
+const { domains } = require('../../../data/trusted.links.json');
 
 process.env.UV_THREADPOOL_SIZE = linkCheck.UV_THREADPOOL_SIZE;
 
-const checkLinks = async (links, onCheck) => {
-  let processingLinks = links.map(link => checkLink(link));
-  if (onCheck) {
-    processingLinks = processingLinks.map(checkPromise => checkPromise.then(result => {
-      onCheck(result);
-      return result;
-    }));
-  }
-  const processedResults = await Promise.all(processingLinks);
-  const results = processedResults.filter(({ err, code }) => err || !linkUtils.is2xx(code)).map(({ link, code, err}) => {
-    const isTrusted = !!domains.find(domain => link.includes(domain));
-    return {
-      link,
-      code,
-      isTrusted,
-      reason: (err && (err.message || err )),
-    };
-  });
-  return results;
-};
+const isAlive = (status) => status === 'alive';
 
-const checkLink = (link, reqOptions = {}, maxAttempts = 2) => {
-  const { hostname } = url.parse(link);
-
-  if (internalLink.regexp.test(hostname)) {
-    return {
-      link,
-      code: 0,
-      err: internalLink.message,
-    };
-  }
-
-  return checkAttempt({ ...reqOptions, uri: link }, 1, maxAttempts);
-};
-
-const checkAttempt = async (options, attempt, maxAttempts) => {
-  const httpsAgent = new https.Agent({
-    rejectUnauthorized: false,
-  });
-
-  const fetchOptions = {
-    ...linkCheck.defaultClientOptions,
-    ...options,
-    agent: (linkUtils.isHttps(options.uri) ? httpsAgent : null),
-  };
-
+const getErrorMessage = (statusCode) => {
   try {
-    let response = await fetch(options.uri, { ...fetchOptions, method: 'head' });
-
-    if (!response.ok) {
-      response = await fetch(options.uri, { ...fetchOptions, method: 'get' });
+    if (statusCode === MOVED_PERMANENTLY || statusCode === MOVED_TEMPORARILY) {
+      return 'Too Many Redirects';
     }
+    return getStatusText(statusCode);
+  } catch (e) {
+    return 'Unreachable link';
+  }
+};
 
-    return {
-      link: options.uri,
-      code: response.status
-    };
-  } catch (error) {
-    if (error.message.startsWith('Protocol')) {
-      fetchOptions.agent = null;
-    }
+const retryStatusCodes = [TOO_MANY_REQUESTS, GATEWAY_TIMEOUT, BAD_GATEWAY];
+const verifyLinks = async (links) => {
+  const processedResults = await checkLinks(links, {
+    retry: {
+      timeout: linkCheck.TIMEOUT,
+      statusCodes: retryStatusCodes,
+      retries: (iterations, error) => {
+        const shouldRetry = retryStatusCodes.includes(error.statusCode);
+        if (linkCheck.MAX_RETRIES < iterations || !shouldRetry) {
+          return 0;
+        }
 
-    try {
-      const response = await fetch(options.uri, { ...fetchOptions, method: 'get' });
+        return linkCheck.TIMEOUT;
+      }
+    },
+  });
+  return Object
+    .entries(processedResults)
+    .filter(([link, { status }]) => !isAlive(status))
+    .map(([link, { statusCode }]) => {
+      const isTrusted = domains.some(domain => link.includes(domain));
+      const isInternal = internalLink.regexp.test(link);
 
       return {
-        link: options.uri,
-        code: response.status,
+        link,
+        isTrusted,
+        code: statusCode || 0,
+        reason: isInternal ? internalLink.message : getErrorMessage(statusCode),
       };
-    } catch (error) {
-      if (attempt <= maxAttempts) {
-        // some sites will work without user-agent header
-        return checkAttempt({ ...options, headers: {} }, ++attempt, maxAttempts);
-      } else {
-        return {
-          link: options.uri,
-          code: 0,
-          err: error,
-        };
-      }
+    });
+};
+
+const checkImageLink = async (link) => {
+  const result = await checkLinks([link], {
+    hooks: {
+      afterResponse: [(response) => {
+        const contentType = (response.headers['Content-Type'] || response.headers['content-type'] || '');
+
+        if (contentType.includes('image/')) {
+          return response;
+        }
+
+        response.statusCode = NOT_ACCEPTABLE;
+        return response;
+      }]
     }
+  });
+  const linkResult = result[link];
+  const { status, statusCode = BAD_REQUEST } = linkResult;
+
+  if (`${statusCode}` === `${NOT_ACCEPTABLE}`) {
+    result.error = remoteImage.message;
+    return result;
   }
+
+  linkResult.error = isAlive(status) ? undefined : getErrorMessage(statusCode);
+  if (linkResult.error) {
+    // ignore, in case of error link checker will throw it
+    delete linkResult.error;
+    return linkResult;
+  }
+
+  return result;
+};
+
+const checkLink = async (link) => {
+  const result = await checkLinks([link]);
+  const linkResult = result[link];
+  const { status, statusCode } = linkResult;
+  linkResult.error = isAlive(status) ? undefined : getErrorMessage(statusCode);
+  linkResult.code = statusCode;
+  linkResult.link = link;
+
+  return linkResult;
 };
 
 module.exports = {
-  checkLinks,
   checkLink,
+  checkImageLink,
+  checkLinks: verifyLinks,
 };
-

@@ -1,6 +1,8 @@
 ---
 title: SAP HANA XS Advanced - Text Bundles within Node.js SAP HANA applications
 description: Working with text bundles in Node.js
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
@@ -23,23 +25,27 @@ Working with text bundles in Node.js
 
 [ACCORDION-BEGIN [Step 1: ](Add a new route for a text bundle module)]
 
-Add a new route for `/routes/textBundle` in `/routerìndex.js`
+Add a new route for `/routes/textBundle` in `/router/index.js`
 
 ```javascript
+/*eslint no-console: 0, no-unused-vars: 0, no-undef:0, no-process-exit:0*/
+/*eslint-env node, es6 */
 "use strict";
-module.exports = function(app, server){
-	app.use("/node", require("./routes/myNode")());
-	app.use("/node/excAsync", require("./routes/exerciseAsync")(server));
+
+module.exports = (app, server) => {
+	app.use("/node", require("./routes/myNode")());
+	app.use("/node/excAsync", require("./routes/exerciseAsync")(server));
 	app.use("/node/textBundle", require("./routes/textBundle")());
+
+	app.use( (err, req, res, next) => {
+		console.error(JSON.stringify(err));
+		res.status(500).send(`System Error ${JSON.stringify(err)}`);
+	});
 };
 
 ```
 
-As follows:
-
-![Routes](1.png)
-
-
+[DONE]
 
 [ACCORDION-END]
 
@@ -49,51 +55,48 @@ As you can guess from the code in the first step, you need a file called `textBu
 
 ```javascript
 /*eslint no-console: 0, no-unused-vars: 0, consistent-return: 0, new-cap: 0*/
+/*eslint-env node, es6 */
 "use strict";
-var express = require("express");
-var app = express.Router();
-var os = require("os");
-var TextBundle = require("@sap/textbundle").TextBundle;
-var langparser = require("accept-language-parser");
+let express = require("express");
+let app = express.Router();
+let os = require("os");
+let TextBundle = require("@sap/textbundle").TextBundle;
 
 function getLocale(req) {
-	var lang = req.headers["accept-language"];
-	if (!lang) {
-		return;
-	}
-	var arr = langparser.parse(lang);
-	if (!arr || arr.length < 1) {
-		return;
-	}
-	var locale = arr[0].code;
-	if (arr[0].region) {
-		locale += "_" + arr[0].region;
-	}
-	return locale;
+		let langparser = require("accept-language-parser");
+		let lang = req.headers["accept-language"];
+		if (!lang) {
+			return null;
+		}
+		let arr = langparser.parse(lang);
+		if (!arr || arr.length < 1) {
+			return null;
+		}
+		let locale = arr[0].code;
+		if (arr[0].region) {
+			locale += "_" + arr[0].region;
+		}
+		return locale;
 }
 
 module.exports = function() {
 
-	app.get("/", function(req, res) {
-		var bundle = new TextBundle(global.__base + "i18n/messages", getLocale(req));
+
+	app.get("/", (req, res) => {
+		let bundle = new TextBundle(global.__base + "i18n/messages", getLocale(req));
 		res.writeHead(200, {
 			"Content-Type": "text/plain; charset=utf-8"
 		});
-		var greeting = bundle.getText("greeting", [os.hostname(), os.type()]);
+		let greeting = bundle.getText("greeting", [os.hostname(), os.type()]);
 		res.end(greeting, "utf-8");
 	});
 	return app;
 };
-
 ```
 
 ![textBundle](2.png)
 
-Take a look at the code you have just added. First, you can see there are two new modules you will need to add as dependencies. Go to your `package.json` file and add them:
-
-![dependencies](3.png)
-
-
+[DONE]
 
 [ACCORDION-END]
 
@@ -125,12 +128,13 @@ This is what the files should look like:
 
 ![Internationalization](4.png)
 
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test the translations)]
 
-You can now run the `js` and `web` module. In the running tab, change the path to `/node/textBundle`:
+You can now run the `core_node` and `web` module. In the running tab, change the path to `/node/textBundle`:
 
 ![change URL](5.png)
 
@@ -146,7 +150,6 @@ Repeat the process raising Japanese `[ja]` to the top of the list and refresh th
 
 ![new language](17.png)
 
-
+[DONE]
 
 [ACCORDION-END]
-

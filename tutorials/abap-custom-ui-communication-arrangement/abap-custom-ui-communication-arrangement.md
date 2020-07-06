@@ -1,6 +1,6 @@
 ---
 title:  Connect SAP Web IDE with S/4HANA Cloud System
-description: Expose needed services (scenario `SAP_COM_0013`) of S/4HANA Cloud system to SAP Web IDE and maintain S/4HANA Cloud system access in SAP Cloud Platform Subaccount
+description: Expose needed services (scenario SAP_COM_0013) of S/4HANA Cloud system to SAP Web IDE and maintain S/4HANA Cloud system access in SAP Cloud Platform Subaccount
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
@@ -74,7 +74,7 @@ You will need following data
 | Client ID	| Client Key | Communications System's Inbound User
 | User Name |	Token Service User | Communications System's Inbound User
 | Token Service URL	| Token Service URL | |
-| Token Service URL: first parts (protocol + domain, for example: https://myXXXXXX-api.s4hana.ondemand.com) | URL | |
+| Token Service URL: first parts (protocol + domain, for example: `https://myXXXXXX-api.s4hana.ondemand.com`) | URL | |
 | SAML2 Audience| Audience | |
 
 [DONE]
@@ -157,5 +157,6 @@ Now you can see a list of all custom services in the S/4HANA Cloud system. But i
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Test yourself)]
+
 [VALIDATE_1]
 [ACCORDION-END]

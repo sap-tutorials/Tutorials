@@ -28,6 +28,8 @@ You will add a new `<List>` element, and define how every item will be displayed
 
 ![View1.view.xml file](1.png)
 
+> Besides using the text editor to manipulate the view, you can also make use of the graphical layout editor
+
 
 [DONE]
 [ACCORDION-END]
@@ -62,6 +64,7 @@ sap.ui.define([
 ```
 
 ![controller](2.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -73,6 +76,7 @@ Now **Run** your application again.
 > This time the deploy job should be way faster.
 
 ![Running application with list view](4.png)
+
 [DONE]
 [ACCORDION-END]
 

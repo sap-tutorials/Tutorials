@@ -3,15 +3,17 @@ auto_validation: true
 title: Create Your First ABAP Console Application
 description: Create an ABAP package and an ABAP class in the SAP Cloud Platform ABAP Environment with the ABAP Development Tools (ADT) in Eclipse.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 5
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
 -	You have purchased an entitlement to [SAP Cloud Platform, ABAP environment](https://cloudplatform.sap.com/capabilities/product-info.SAP-Cloud-Platform-ABAP-environment.4d0a6f95-42aa-4157-9932-d6014a68d825.html)
 -	You have set up your ABAP environment as described in [Getting Started with a Customer Account: Workflow in the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e34a329acc804c0e874496548183682f.html)
 - You have a user in the ABAP Environment [Connect to the ABAP System](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
-- You have downloaded the ABAP Development Tools (ADT), version 2.96 or later. See [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
+- You have downloaded the ABAP Development Tools (ADT). SAP recommends the latest version of ADT, available from [ABAP Development Tools](https://tools.hana.ondemand.com/#abap)
 
 ## Details
 ### You will learn
@@ -50,25 +52,35 @@ or the icon:
 
     ![Select ABAP Cloud Project](abap.png)
 
-3. In the next wizard screen, select SAP Cloud Platform Cloud Foundry Environment and click **Next**.
+3. If you are using your **SAP Cloud Platform ABAP environment trial user**, then select **Service Key** and click **Next >**.
+
+    If you want to use your **license user**, then skip **step 2.3** and move on with **step 2.4**.
+
+    ![Create ABAP cloud project](project2.png)
+
+    Paste your service key from the SAP Cloud Platform Trial Cockpit you created in [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding) in **Step 3.5**. Click **Next >** and move on with **step 2.5**.
+
+    ![Create ABAP cloud project](project3.png)
+
+4. As a **licensed user** select SAP Cloud Platform Cloud Foundry Environment and click **Next**.
 
     ![Select service instance connection](servicekey.png)
 
-4. Maintain the SAP Cloud Platform Foundry connection information and click **Next**:
-    - Region: **`<your_region>`**
-    - Email: **`<your_email_address>`**
-    - Password: **`<your_password>`**
+    Maintain the SAP Cloud Platform Foundry connection information and click **Next**:
+     - Region: **`<your_region>`**
+     - Email: **`<your_email_address>`**
+     - Password: **`<your_password>`**
 
      ![Setup connection settings](connect.png)
 
-5. Maintain the required Service Instance details by selecting the appropriate values from the drop-down lists and move on with **Next**.
-    - Organization: **`<your_organization>`**
-    - Space: **`<your_space>`**
-    - Service Instance: **`<your_service_instance>`**
+     Maintain the required Service Instance details by selecting the appropriate values from the drop-down lists and move on with **Next**.
+      - Organization: **`<your_organization>`**
+      - Space: **`<your_space>`**
+      - Service Instance: **`<your_service_instance>`**
 
     ![Select service instance details](details.png)
 
-6. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press Log On.
+5. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press Log On.
 
     ![Enter login credentials](login.png)
 

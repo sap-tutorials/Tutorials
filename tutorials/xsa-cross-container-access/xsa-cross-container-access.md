@@ -1,6 +1,8 @@
 ---
 title: SAP HANA XS Advanced - Cross-container access
 description: Access objects in an HDI container from another application
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate,, products>sap-web-ide  ]
 ---
@@ -22,11 +24,22 @@ You will learn how to set up the roles, synonyms and deployment configuration to
 
 [ACCORDION-BEGIN [Step 1: ](Create the target container as a resource)]
 
-This tutorial uses the SAP HANA `INteractive` Education model as an example for a target container. You can learn how to import the SHINE model [in this tutorial](http://developers.sap.com/tutorials/xsa-ml-e2e-access-shine.html). This tutorial will refer to this container as the **target** container.
+This tutorial uses the SAP HANA `INteractive` Education model as an example of a target HDI container. Create this
+target container by following the XSA-specific instructions found in the [SHINE source code repository](https://github.com/SAP/hana-shine-xsa/blob/master/SHINE-XSA.md). In this tutorial, we will refer to this container as the **target** container.
 
 Your current database module will use two containers, the `hdi-container` created with the database module and the target container from the SHINE application.
 
-- If you are using SAP HANA 2.0 SPS03, right-click on the `db` module and choose **Add External SAP HANA service**
+- If you are using SAP HANA 2.0 SPS04 or later, right-click on the `db` module and choose **New->SAP HANA Service Connection**
+
+  ![Add external SAP HANA Service](sps04.png)
+
+  Choose the service from within the list and click **Finish**
+  ![Add external SAP HANA Service](sps03_2.png)
+
+  Continue with step 2.
+
+
+- If you are using SAP HANA 2.0 SPS03, right-click on the `db` module and choose **Modeling Actions->Add External SAP HANA service**
 
   ![Add external SAP HANA Service](sps03.png)
 
@@ -69,7 +82,7 @@ Your current database module will use two containers, the `hdi-container` create
 
 As a reference, the relevant parts of the `mta.yaml` file in this example look like this:
 
-```
+```yaml
 modules:
   - name: form_data
     type: hdb
@@ -99,6 +112,7 @@ resources:
       consumed-service-name: '${service-name}'
 ```
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -113,6 +127,8 @@ In the SHINE application, the available roles are `admin.hdbrole` and `core-db`.
 
 >The `#` (pound) sign at the end of the name of a role means it contains privileges with grant option and will be assigned to the schema owner technical user.
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -126,7 +142,7 @@ Create a file with extension `.hdbgrants` in a folder called `cfg` in your modul
 
 Here is a sample file to grant permissions to both an administration and application user. The names of the roles match the roles created in the target container as noted in the first step:
 
-```text
+```json
 {
   "consumed-db": {
     "object_owner" : {
@@ -141,7 +157,9 @@ Here is a sample file to grant permissions to both an administration and applica
 ```
 
 >## Further restrictions and different roles between the owner and application user should be applied in productive applications.
-> See the current documentation about [creating design-time roles](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/625d7733c30b4666b4a522d7fa68a550.html) or about [`.hdbgrants`](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/f49c1f5c72ee453788bf79f113d83bf9.html)
+> See the current documentation about [creating design-time roles](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/625d7733c30b4666b4a522d7fa68a550.html) or about [`.hdbgrants`](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/f49c1f5c72ee453788bf79f113d83bf9.html)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -158,7 +176,9 @@ For example:
 Build the consuming database module.
 
 > ### **Check the optional synonym configuration files**
-> You can move the configuration to a `.hdbsynonymconfig` file. This will allow you to reference the target schema dynamically, without indicating the name explicitly, among other options. Check the [documentation for your version on the Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/4adba34bd86544a880db8f9f1e32efb7.html).
+> You can move the configuration to a `.hdbsynonymconfig` file. This will allow you to reference the target schema dynamically, without indicating the name explicitly, among other options. Check the [documentation for your version on the Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/4adba34bd86544a880db8f9f1e32efb7.html).
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -166,7 +186,7 @@ Build the consuming database module.
 
 Here is a sample view using the synonyms for the target `hdi-container`. You can create one in a new or existing `.hdbcds` artifact
 
-```text
+```cds
 using "PO.Header" as HEADER;
 
 context quality{
@@ -196,5 +216,7 @@ You can check the synonyms first
 Or the view you have created
 
 ![See database explorer](db2.png)
+
+[DONE]
 
 [ACCORDION-END]

@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Plugin for Microsoft Visual Studio - Working with Tables
-description: This tutorial describes how to create and modify tables by using the SAP HANA plugin for Microsoft Visual Studio.
+title: SAP HANA Plugin for Microsoft Visual Studio 2017 - Working with Tables
+description: This tutorial describes how to create and modify tables by using the SAP HANA plugin for Microsoft Visual Studio 2017.
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
@@ -9,14 +9,14 @@ time: 5
 ---
 
 ## Prerequisites
- - **Tutorials:** [Setup the SAP HANA Plugin for Microsoft Visual Studio](https://developers.sap.com/tutorials/hxe-ua-visual-studio.html)
+ - **Tutorials:** [Setup the SAP HANA Plugin for Microsoft Visual Studio 2017](https://developers.sap.com/tutorials/hxe-ua-visual-studio.html)
 
 ## Next Steps
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio 2017 - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
 
 ## Details
 ### You will learn
-  - How to create and debug sample tables by using the SAP HANA plugin for Microsoft Visual Studio
+  - How to create and debug sample tables by using the SAP HANA plugin for Microsoft Visual Studio 2017.
 
 ---
 
@@ -28,6 +28,8 @@ Right-click on your SAP HANA or SAP HANA, express edition connection in the **Se
 
 > **Note:**
 > The SAP HANA Plugin works with SAP HANA and SAP HANA, express edition. For these tutorials, we use an SAP HANA, express edition installation as an example.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -51,6 +53,8 @@ Click ![Play Button](execute_button.png) **Execute** to execute the statements.
 > **Note:**
 > If this is your first time going through this tutorial, then this step will not yield a positive result. It ensures that the rest of the tutorial will run successfully if you have run through the tutorial previously.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Make Student Score Table)]
@@ -73,6 +77,8 @@ Click ![Play Button](execute_button.png) **Execute** to execute the statements.
 > If this is the first time you are running the script, then you will receive an error if you verify the script because the _INSERT_ statements add values to the table the first statement makes.
 
 This table is the basis for the rest of the tutorial.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -144,6 +150,8 @@ BEGIN
 END;
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Fixing Errors)]
@@ -159,5 +167,7 @@ DECLARE CURSOR C_HISTORY_SCORES FOR SELECT SCORE_HISTORY FROM SYSTEM.DEMO_STUDEN
 ```
 
 When you run the code again, it runs successfully and calculates the average History and Math class scores.
+
+[DONE]
 
 [ACCORDION-END]

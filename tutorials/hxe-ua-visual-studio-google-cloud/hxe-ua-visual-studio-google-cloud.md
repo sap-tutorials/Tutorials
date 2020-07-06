@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform
-description: This tutorial explains how to deploy your SAP HANA, express edition installation to the Google Cloud Platform by using the SAP HANA plugin for Microsoft Visual Studio.
+title: SAP HANA Plugin for Microsoft Visual Studio 2017 - Deploy to the Google Cloud Platform
+description: This tutorial explains how to deploy your SAP HANA, express edition installation to the Google Cloud Platform by using the SAP HANA plugin for Microsoft Visual Studio 2017.
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
@@ -9,17 +9,19 @@ time: 10
 ---
 
 ## Prerequisites
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://developers.sap.com/tutorials/hxe-ua-visual-studio-word-mapping.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio 2017 - Word Mapping Project](https://developers.sap.com/tutorials/hxe-ua-visual-studio-word-mapping.html)
 
 ## Details
 ### You will learn
-  - How to deploy your SAP HANA, express edition installation to the Google Cloud Platform by using the SAP HANA plugin for Microsoft Visual Studio
+  - How to deploy your SAP HANA, express edition installation to the Google Cloud Platform by using the SAP HANA plugin for Microsoft Visual Studio 2017.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Microsoft Visual Studio)]
+[ACCORDION-BEGIN [Step 1: ](Open Microsoft Visual Studio 2017)]
 
-Launch Microsoft Visual Studio. Ensure that the SAP HANA plugin is installed by going to **Tools** then **Extensions and Updates...**. In your **Installed** list, confirm that **SAP HANA Explorer for Visual Studio** is installed.
+Launch Microsoft Visual Studio 2017. Ensure that the SAP HANA plugin is installed by going to **Tools** then **Extensions and Updates...**. In your **Installed** list, confirm that **SAP HANA Explorer for Visual Studio** is installed.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -32,6 +34,8 @@ In the **Server Explorer** window, click the ![Deploy to the Cloud](deploy_cloud
 In the new window, click the ![New Profile](new_profile.png) **New Profile** button, which opens an internet browser page.
 
 ![Notice Window](notice_window.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -50,6 +54,8 @@ The success page opens.
 
 ![Successfully Allow Access](successful_google_authorize.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a New Instance)]
@@ -63,6 +69,8 @@ Click **New Instance** once you have made your choices.
 
 > **Note:**
 > You must enable the **Google Compute Engine API** for use in your project. To enable the API, go to `https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=<project_number>`.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -81,6 +89,8 @@ When you are prompted to connect to the instance via an SSH connection, click **
 
 ![SSH Connection](ssh_connection_1.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Install SAP HANA, express edition onto Google Cloud Platform)]
@@ -94,6 +104,8 @@ su - hxeadm
 The installation process begins. Follow the prompts to install SAP HANA, express edition. Once the installation is completed, the following line appears:
 
 `*** Congratulations! SAP HANA, express edition 2.0 is configured. ***`
+
+[DONE]
 
 [ACCORDION-END]
 

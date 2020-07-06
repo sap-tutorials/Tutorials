@@ -2,7 +2,7 @@
 title: How to connect to SAP HANA using Data Provider for Microsoft .NET
 description: A tutorial that explains how to setup a sample database in Visual Studio using the ado.net data provider
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition , tutorial>how-to ]
+tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition , tutorial>how-to  ]
 ---
 
 ## Prerequisites  
@@ -12,10 +12,6 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 
 - **Setup:** You must have Microsoft Visual Studio 2010 or later installed on your computer.
 - **Setup:** You must have Microsoft .NET Framework installed on your computer (Generally .NET     Framework will be installed when you install Microsoft Visual Studio).
-
-## Next Steps
- - This is a standalone How-To on establishing basic connectivity to ADO and ODBC compliant SAP database servers.[View similar How-Tos](http://developers.sap.com/tutorials.html) or [View all How-Tos](http://developers.sap.com/tutorials.html)
-
 
 ## How-To Details
 A Microsoft visual studio project can connect to SAP database using SAP HANA Client that has data providers for Microsoft .NET Framework. In this How-To you will use a demo database table setup project to learn about connecting to SAP HANA database servers from Visual Studio.
@@ -66,4 +62,5 @@ A Microsoft visual studio project can connect to SAP database using SAP HANA Cli
 
 - If for any reason you want to remove the tables, views, and procedures set up in the previous step, then click **Remove demo objects**.
 
-
+### Additional Information
+ - View additional .NET [sample projects](http://scn.sap.com/docs/DOC-53652).

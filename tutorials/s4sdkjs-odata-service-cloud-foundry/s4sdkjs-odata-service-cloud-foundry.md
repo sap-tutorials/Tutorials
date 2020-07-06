@@ -14,131 +14,79 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up a local mock server or get access to the API Business Hub sandbox (optional))]
+[ACCORDION-BEGIN [Step 1: ](Set up the API Server)]
 
 >**Note:** If you have access to an `SAP S/4HANA Cloud` system with a technical user, you can skip this part.
+
+There are multiple ways of setting up an API Server, you can either setup your own Mock Server or you can use the Sandbox API.
 
 In order to make a call to an `OData` service, there needs to be a service to call. You can setup a local mock server that mimics the business partner and a custom service by following the instructions [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html). This mock server does not support all the features of the actual `OData` services, but it suffices to try it out locally.
 
 Once it is up and running you should see the list of services at `http://localhost:3000/`.
 
-Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click on "Show API Key".
+Alternatively, many APIs can also be tested using the sandbox of the SAP API Business Hub. To use the sandbox, you need an an API key. Go to [https://api.sap.com](https://api.sap.com) and click "Log On" in the top right corner. If you do not have an account, you will need to register first. When you are logged in, click on "Hi <your name>" in the top right corner and then click on "Preferences" in the dropdown menu that just opened. On the preferences page, click **Show API Key**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add a custom route)]
 
-[OPTION BEGIN [TypeScript]]
+Initially, the app only contains the `index` and `hello-world` routes. We will add another route for `business-parters` that will list all available business partners.
 
-Initially, the app only contains the `index` and `hello-world` routes. We will add another route for `business-parters` that will simply list all available business partners.
-
-First, create a new file `business-partner-route.ts` in the `src/` directory and add an implementation for this route, like so:
+First, create a new file `business-partner.controller.ts` in the `src/` directory and add an implementation for this route, like so:
 
 ```JavaScript / TypeScript
-import { Request, Response } from 'express';
+import { Controller, Get } from '@nestjs/common';
 
-export function businessPartners(req: Request, res: Response) {
-  res.status(200).send('We will implement this in a minute');
+@Controller()
+export class BusinessPartnerController {
+  @Get('business-partners')
+  getBusinessPartners() {
+    return 'We will implement this in a minute.';
+  }
 }
 ```
 
-The `businessPartners` function is a callback function that we will register for a specific route. It writes the status `200` and a placeholder message to the response.
+The `@Controller()` decorator marks our class as controller (i.e. a thing that handles requests), and the `@Get('business-partners')` decorator marks the `getBusinessPartners` method as handler for `GET` requests on the path `/business-partners`. The `@Controller()` decorator allows [providing more configuration](https://docs.nestjs.com/controllers), but this is beyond the scope of this tutorial.
 
-Then, add this route to the routes of your application in `application.ts` (see `// add the following line to your code`):
+In order for the controller to work, we also need to register it in our application. Open `app.module.ts`, import the controller class you just created and add it to the `controllers` declaration. Your file should look like this:
 
 ```JavaScript / TypeScript
-private routes(): void {
-  const router = express.Router();
+import { Module } from '@nestjs/common';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { BusinessPartnerController } from './business-partner.controller';
 
-  router.get('/', indexRoute);
-  router.get('/hello', helloWorld);
-  // add the following line to your code
-  router.get('/business-partners', businessPartners);
-  this.app.use('/', router);
-}
+@Module({
+  imports: [],
+  controllers: [AppController, BusinessPartnerController],
+  providers: [AppService],
+})
+export class AppModule {}
 ```
 
-Should your editor not offer you to automatically add the correct import, add the following line to your import statements:
-
-```JavaScript / TypeScript
-import { businessPartners } from './business-partner-route';
+If you've started your application the following command in the previous tutorial, it should detect the change and restart automatically.
+```Shell
+npm run start:dev
 ```
-
-You can start your application by running `npm run start:local`. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
-
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-
-Initially, the app only contains the `index` and `hello-world` routes. We will add another route for `business-parters` that will simply list all available business partners.
-
-First, create a new file `business-partner-route.js` in the `src/` directory and add an implementation for this route, like so:
-
-```JavaScript
-function businessPartners(req, res) {
-  res.status(200).send('We will implement this in a minute');
-}
-
-module.exports.businessPartners = businessPartners;
-```
-
-The `businessPartners` function is a callback function that we will register for a specific route. It writes the status `200` and a placeholder message to the response.
-
-Then, add this route to the routes of your application in `application.js` (see `// add the following line to your code`):
-
-```JavaScript
-private routes() {
-  const router = express.Router();
-
-  router.get('/', indexRoute);
-  router.get('/hello', helloWorld);
-  // add the following line to your code
-  router.get('/business-partners', businessPartners);
-  this.app.use('/', router);
-}
-```
-
-Should your editor not offer you to automatically add the correct import, add the following line to your import statements:
-
-```JavaScript
-const { businessPartners } = require('./business-partner-route');
-```
-
-You can start your application by running `npm run start:local`. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
-
-[OPTION END]
+If you've terminated your application, you can restart it by running the start command again. Now, calling `http://localhost:8080/business-partners` should return our placeholder string.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import service entities)]
 
-In order to use the `SAP Cloud SDK for JavaScript` to make a call to an `OData` service add the `virtual data model` (`VDM`) for this service to your dependencies. For this tutorial we are using the `VDM` for the business partner service. Install it with the following:
+In order to use the `SAP Cloud SDK for JavaScript` to make a call to an `OData` service, add the `virtual data model` (`VDM`) for this service to your dependencies. For this tutorial we are using the `VDM` for the business partner service. Install it with the following command:
 
 ```Shell
 npm install @sap/cloud-sdk-vdm-business-partner-service
 ```
 
-[OPTION BEGIN [TypeScript]]
-
-Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner-route.ts`.
+Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner.controller.ts`.
 
 ```JavaScript / TypeScript
 import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 ```
-
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-
-Import the entity you want to make a call to into your application. In this tutorial we are importing the business partner entity of the business partner service. Add the following line to the top of the `business-partner-route.js`.
-
-```JavaScript
-const { BusinessPartner } = require('@sap/cloud-sdk-vdm-business-partner-service');
-```
-
-[OPTION END]
 
 Now the `BusinessPartner` entity is available for you to be used.
 
@@ -149,10 +97,11 @@ Now the `BusinessPartner` entity is available for you to be used.
 
 [ACCORDION-BEGIN [Step 4: ](Execute an OData request)]
 
-[OPTION BEGIN [TypeScript]]
+In `business-partner.controller.ts` create a function `getAllBusinessPartners` and implement it depending on your API Server:
 
-In the `business-partner-route` create a function `getAllBusinessPartners` and implement it as follows:
 
+[OPTION BEGIN [Mock Server]]
+If you are running a mock server locally on port 3000, use the following example. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -162,165 +111,99 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
     });
 }
 ```
+[OPTION END]
 
-- In line 1, we are creating a request builder for the business partner entity.
-- Line 2 indicates, that we want to create a request to get all the business partners.
-- Line 3 ff. takes care of the execution and sends a request to a `url` based on the given destination `url`.
 
-In the code snippet above we assume that you have a mock server running locally. If you are using an actual `SAP S/4HANA Cloud` system, you can replace the third line with a different destination configuration:
-
+[OPTION BEGIN [SAP S/4HANA Cloud system]]
+If you are using an actual `SAP S/4HANA Cloud` system, you can replace the fourth line with a different destination configuration:
 ```JavaScript / TypeScript
-.execute({
-  url: '<URI of your SAP S/4HANA Cloud System>',
-  username: '<USERNAME>',
-  password: '<PASSWORD>'
-})
+function getAllBusinessPartners(): Promise<BusinessPartner[]> {
+  return BusinessPartner.requestBuilder()
+    .getAll()
+    .execute({
+      url: '<URI of your SAP S/4HANA Cloud System>',
+      username: '<USERNAME>',
+      password: '<PASSWORD>'
+    });
+}
 ```
+[OPTION END]
 
-To use the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
+
+[OPTION BEGIN [SAP API Business Hub sandbox]]
+If you are using the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations.
+```JavaScript / TypeScript
+function getAllBusinessPartners(): Promise<BusinessPartner[]> {
+  return BusinessPartner.requestBuilder()
+    .getAll()
+    .withCustomHeaders({ APIKey: '<YOUR-API-KEY>'})
+    .execute({
+      url: 'https://sandbox.api.sap.com/s4hanacloud'
+    });
+}
+```
+[OPTION END]
+
+- We apply `requestBuilder` on the business partner entity. Every entity has a `requestBuilder` function that allows to chain all types of request builders that are available for this entity.
+- We use the `GetAll` request builder to create a request that retrieves all of the business partners.
+- The SAP Cloud SDK automatically sets some necessary request headers on every request, but you can specify additional custom headers using the `withCustomHeaders` function.
+- The last step when making a request is the request execution, chain the `execute` function and pass a destination to it. It can contain information like an URL, Authentication and Proxy Settings.
+
+-------------------
+
+As network requests are asynchronous by nature, the return value of this function is a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) to a list of Business Partners (`Promise<BusinessPartner[]>`).
+
+Let's add the execution of this request to `getBusinessPartners` method:
 
 ```JavaScript / TypeScript
-return BusinessPartner.requestBuilder()
-  .getAll()
-  .withCustomHeaders({ APIKey: '<YOUR-API-KEY>'})
-  .execute({
-    url: 'https://sandbox.api.sap.com/s4hanacloud'
-  });
+import { Controller, Get, HttpException } from '@nestjs/common';
+import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
+
+@Get('business-partners')
+getBusinessPartners() {
+  return getAllBusinessPartners()
+    .catch(error => {
+      throw new HttpException(`Failed to get business partners - ${error.message}`, 500);
+    });
 }
 ```
 
-As network requests are asynchronous by nature, the return value of this function is a Promise to a list of Business Partners (`Promise<BusinessPartner[]>`).
-
-Let's add the execution of this request to the callback for our `business-partners` route by making the callback **`async`** and writing the resolved return value of the `getAllBusinessPartners` function to the response:
+`nest.js` will handle the `Promise` we return automatically. We add a `.catch` handler to specify how errors are handled (otherwise it would only show "internal server error" when something goes wrong). Here is what your `business-partner.constroller.ts` should look like, if you are using the mock server:
 
 ```JavaScript / TypeScript
-export async function businessPartners(req: Request, res: Response) {
-  getAllBusinessPartners()
-    .then(businessPartners => res.status(200).send(businessPartners))
-    .catch(error => res.status(500).send(error));
-}
-```
-Here is what your `business-partner-route.ts` should look like, if you are using the mock server:
+import { Controller, Get, HttpException } from '@nestjs/common';
+import { BusinessPartner } from '@sap/cloud-sdk-vdm-business-partner-service';
 
-```JavaScript / TypeScript
-import { BusinessPartner } from "@sap/cloud-sdk-vdm-business-partner-service";
-import { Request, Response } from "express";
-
-export async function businessPartners(req: Request, res: Response) {
-  getAllBusinessPartners()
-    .then(businessPartners => res.status(200).send(businessPartners))
-    .catch(error => res.status(500).send(error));
+@Controller()
+export class BusinessPartnerController {
+  @Get('business-partners')
+  getBusinessPartners() {
+    return getAllBusinessPartners()
+      .catch(error => {
+        throw new HttpException(`Failed to get business partners - ${error.message}`, 500);
+      });
+  }
 }
 
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
     .getAll()
     .execute({
-      url: 'http://localhost:3000'
+      url: 'http://localhost:3000',
     });
 }
 ```
 
-Now restart your server and reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
+Reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
 
 Congratulations, you just made your first call with the SAP Cloud SDK!
-
-[OPTION END]
-
-[OPTION BEGIN [JavaScript]]
-
-In the `business-partner-route` create a function `getAllBusinessPartners` and implement it as follows:
-
-```JavaScript
-function getAllBusinessPartners() {
-  return BusinessPartner.requestBuilder()
-    .getAll()
-    .execute({
-      url: 'http://localhost:3000'
-    });
-}
-```
-
-- In line 1, we are creating a request builder for the business partner entity.
-- Line 2 indicates, that we want to create a request to get all the business partners.
-- Line 3 ff. takes care of the execution and sends a request to a `url` based on the given destination `url`.
-
-In the code snippet above we assume that you have a mock server running locally. If you are using an actual `SAP S/4HANA Cloud` system, you can replace the third line with a different destination configuration:
-
-```JavaScript
-.execute({
-  url: '<URI of your SAP S/4HANA Cloud System>',
-  username: '<USERNAME>',
-  password: '<PASSWORD>'
-})
-```
-
-To use the sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
-
-```JavaScript
-return BusinessPartner.requestBuilder()
-  .getAll()
-  .withCustomHeaders({ APIKey: '<YOUR-API-KEY>'})
-  .execute({
-    url: 'https://sandbox.api.sap.com/s4hanacloud'
-  });
-}
-```
-
-As network requests are asynchronous by nature, the return value of this function is a Promise to a list of Business Partners (`Promise<BusinessPartner[]>`).
-
-Let's add the execution of this request to the callback for our `business-partners` route by making the callback **`async`** and writing the resolved return value of the `getAllBusinessPartners` function to the response:
-
-```JavaScript
-async function businessPartners(req, res) {
-  getAllBusinessPartners()
-    .then(businessPartners => res.status(200).send(businessPartners))
-    .catch(error => res.status(500).send(error));
-}
-
-module.exports.businessPartners = businessPartners;
-```
-Here is what your `business-partner-route.js` should look like, if you are using the mock server:
-
-```JavaScript
-const { BusinessPartner } = require("@sap/cloud-sdk-vdm-business-partner-service");
-
-async function businessPartners(req, res) {
-  getAllBusinessPartners()
-    .then(businessPartners => res.status(200).send(businessPartners))
-    .catch(error => res.status(500).send(error));
-}
-
-module.exports.businessPartners = businessPartners;
-
-function getAllBusinessPartners() {
-  return BusinessPartner.requestBuilder()
-    .getAll()
-    .execute({
-      url: 'http://localhost:3000'
-    });
-}
-```
-
-Now restart your server and reload the `http://localhost:8080/business-partners` ` url`  to retrieve a list of business partners.
-
-Congratulations, you just made your first call with the SAP Cloud SDK!
-
-[OPTION END]
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Manage destinations centrally (optional))]
 
-In order to not repeat your destination configuration for every request execution, you can set a `destinations` environment variable to manage your destinations. If you prefer, you can set system wide environment variables. However, we will show you how to set them non-invasively for one project only.
-
-We will use the `dotenv` npm module to facilitate setting environment variables on a node process.
-```Shell
-# install dotenv as a devDependency
-npm install --save-dev dotenv
-```
-Then create a `.env` file in the root directory of your project and define your a `destinations` environment variable as follows:
+In order to not repeat your destination configuration for every request execution, you can set a `destinations` environment variable to manage your destinations. In `Node.js` application, it is common to use a `.env` file to maintain such environment variables for a given project. Create a `.env` file in the root directory of your project and define the `destinations` environment variable as follows:
 
 ```
 destinations=[{"name": "<DESTINATIONNAME>", "url": "<URL to your system>", "username": "<USERNAME>", "password": "<PASSWORD>"}]
@@ -332,9 +215,30 @@ This is what it would look like for the mock server:
 destinations=[{"name": "MockServer", "url": "http://localhost:3000"}]
 ```
 
-Now to reference a destination in the request execution, simply replace the `url` with a `destinationName` - `MockServer` in our example:
+Now that we have defined our destinations, we need to make sure that they are available in our process. For this we use the `config` package provided by `nest.js`. You can install it with the following command:
 
-[OPTION BEGIN [TypeScript]]
+```
+npm install @nestjs/config
+```
+
+In order to load the environment variables defined in the `.env` file, we need to add the `ConfigModule` provided by the `config` package to the application's `@Module` definition. Open `app.module.ts` and update it with the following code:
+
+```JavaScript / TypeScript
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
+import { BusinessPartnerController } from './business-partner.controller';
+
+@Module({
+  imports: [ConfigModule.forRoot()],
+  controllers: [AppController, BusinessPartnerController],
+  providers: [AppService],
+})
+export class AppModule {}
+```
+
+In line 2, `ConfigModule` is imported from the `config` package and in line 8 we add it to the module's `imports`. If no arguments are passed to the `forRoot()` method, the `.env` file has to be located in the project root. For details on the possible configuration see the [nest documentation](https://docs.nestjs.com/techniques/configuration).  To reference a destination in the request execution, simply replace the `url` with a `destinationName` - `MockServer` in our example:
 
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
@@ -345,28 +249,8 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
     });
 }
 ```
-[OPTION END]
 
-[OPTION BEGIN [JavaScript]]
-
-```JavaScript
-function getAllBusinessPartners() {
-  return BusinessPartner.requestBuilder()
-    .getAll()
-    .execute({
-      destinationName: 'MockServer'
-    });
-}
-```
-[OPTION END]
 Note, that every environment variable in the `.env` file has to be defined *on one line*. You can add more destinations to the array.
-
-In order to register the `.env` file in your node process, adjust the `"start:local"` script in the `package.json` as follows:
-
-```Shell
-"start:local": "npx ts-node -r dotenv/config src/"
-```
-Now, when you execute `npm run start:local` and call `localhost:8080/business-partners`, you can also use your remote destination locally.
 
 [DONE]
 [ACCORDION-END]

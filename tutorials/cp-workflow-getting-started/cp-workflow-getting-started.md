@@ -1,5 +1,5 @@
 ---
-title: Prepare to Create Workflows in SAP Cloud Platform
+title: Prepare to Create Workflows in SAP Cloud Platform (Neo)
 description: Enable and configure services and assign the user roles you'll need for creating workflows.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
@@ -21,7 +21,7 @@ time: 5
 
 1. In your Web browser, open the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit) cockpit. If you do not have a trial account, see Prerequisites.
 
-2. Choose **Neo Trial**.
+2. Scroll down to **Environments**, and choose **Access Neo Trial**.
 
     ![Choose Neo Trial](choose-neo-trial.png)
 
@@ -64,7 +64,22 @@ Search for the **Portal** service. Then select it, and choose **Enable**.
 [VALIDATE_4]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Set up the workflow editor)]
+[ACCORDION-BEGIN [Step 5: ](Assign roles)]
+
+1. On the **Workflow** tile, choose **Configure Service**.
+2. In the navigation area, choose **Roles**. Select each of the following roles and in the **Individual User** table, choose **Assign** and enter your user ID:
+    - `WorkflowDeveloper`: Required to edit and deploy workflow models
+    - `WorkflowAdmin`: Required to manage workflows and tasks
+    - `WorkflowParticipant`: Required to process tasks in My Inbox
+    - `WorkflowInitiator`: Required to start new workflow instances
+![Roles](roles.png)
+3. Log off and log on again for the changes to take effect.
+> Note: If you are not sure what your user ID is, see the person icon in the header toolbar of the SAP Cloud Platform cockpit.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Set up the workflow editor)]
 
 To use the workflow editor, you need to first activate the extension in the SAP Web IDE.
 

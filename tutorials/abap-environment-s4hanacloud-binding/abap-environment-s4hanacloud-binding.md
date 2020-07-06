@@ -3,7 +3,7 @@ auto_validation: true
 title: Create Service Binding for Bonus Plan Scenario with SAP Cloud Platform ABAP environment
 description: Create service binding for bonus plan scenario with SAP Cloud Platform ABAP environment based on SAP S/4HANA Cloud data.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
 time: 45
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
@@ -90,6 +90,7 @@ author_profile: https://github.com/mervey45
 
       }
     ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -494,7 +495,6 @@ author_profile: https://github.com/mervey45
 
       ![Create lock object for bonus calculation](lock4.png)
 
-
 [DONE]
 [ACCORDION-END]
 
@@ -728,7 +728,6 @@ author_profile: https://github.com/mervey45
         ENDMETHOD.
       ENDCLASS.
     ```
-
 
 [DONE]
 [ACCORDION-END]

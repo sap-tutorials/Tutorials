@@ -110,7 +110,7 @@ Change the aggregation for `SALARY` to `COUNT` to answer the question below.
 
 If you have a tenant in SAP Analytics Cloud or a reporting tool such as Analysis for Office, you can configure the SAP HANA Analytics Adapter. The adapter is a Java application that exposes Calculation Views for consumption through Information Access (or `InA`).
 
-Follow the steps in the following blog post if you want to set up the HANA Analytics Adapter: (https://blogs.sap.com/2019/04/24/connecting-the-sap-hana-service-on-cloud-foundry-to-sap-analytics-cloud-the-lazy-approach-pt1/)[https://blogs.sap.com/2019/04/24/connecting-the-sap-hana-service-on-cloud-foundry-to-sap-analytics-cloud-the-lazy-approach-pt1/].
+Follow the steps in the following blog post if you want to set up the HANA Analytics Adapter: <https://blogs.sap.com/2019/04/24/connecting-the-sap-hana-service-on-cloud-foundry-to-sap-analytics-cloud-the-lazy-approach-pt1/>
 
 [DONE]
 [ACCORDION-END]

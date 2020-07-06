@@ -1,4 +1,6 @@
 ---
+author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Create User and Tenant
 description: Create a user and tenant in the Internet of Things Service Cockpit.
 auto_validation: true
@@ -6,7 +8,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud, tutorial>license ]
 ---
 
-<!-- loio027ae38c64974f4ea914bdfe5b323702 -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -27,7 +28,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 [ACCORDION-BEGIN [Step 1: ](Create a User)]
 
->You need an instance of the SAP Cloud Platform Internet of Things Service. You need the `<HOST_NAME>` and the `<INSTANCE_ID`, which you can use to access the system. In addition, you get the instance owner credentials (`name`, `password`).
+>You need an instance of the SAP Cloud Platform Internet of Things Service. You need the `<HOST_NAME>` and the `<INSTANCE_ID`, which you can use to access the system. In addition, you need the instance owner credentials (`name`, `password`).
 
 1.  Log on to the Internet of Things Service Cockpit with the instance owner credentials:
 

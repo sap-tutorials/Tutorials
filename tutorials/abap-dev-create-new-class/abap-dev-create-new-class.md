@@ -3,12 +3,13 @@ title: Create a Global ABAP Class
 description: You will learn how to create a global ABAP class, in which you  will retrieve data from a database.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 45  
 
 ---
 ## Prerequisites
-- You have generated the data for the relevant database table by running the transaction `SEPM_DG_OIA_NEW` (or program  `RS_EPM_DGC_HANA_NEW` ).
+- You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+- You have generated the data for the relevant database table by running the transaction **`SEPM_DG`**.
 
 ## Details
 ### You will learn  
@@ -83,7 +84,7 @@ This method does not yet exist so we will create it with a Quick Assist as follo
 
     ```
 
-2. Since the method does not exist, you will get an error. Position the cursor on the name of the missing method and choose **Quick Assist (`Ctrl+1`)**. In the Quick Assist menu, choose **Create method `get_items_from_db`**
+2. Since the method does not exist, you will get an error. Position the cursor on the name of the missing method and choose **Quick Assist, i.e. `Ctrl+1`**. In the Quick Assist menu, choose **Create method `get_items_from_db`**
 
     ![Image depicting step6a-create-method](step6a-create-method.png)
 
@@ -242,7 +243,7 @@ Now, in your program, declare an inline declared variable, `data(invoice_items)`
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Generating the ALV Grid)]
-Finally, you can display the invoice items as a SAP List Viewer ("`ALV Grid`")using the class `cl_salv_table`.
+Finally, you can display the invoice items as a SAP List Viewer - or "`ALV Grid`" - using the class `cl_salv_table`.
 
 In your program, `ZSO_INVOICE_ITEMS_EURO`:
 
@@ -378,6 +379,7 @@ CLASS zcl_invoice_retrieval IMPLEMENTATION.
 ENDCLASS.
 
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -393,7 +395,7 @@ Now run the program. You should get a SAP List Viewer roughly like this:
 
 
 [ACCORDION-BEGIN [Step 17: ](Test yourself)]
-Using the METHODS statement, create the definition of an instance method `get_customers_from_db` that returns a value `result` of type `ty_table_of_customers` (similar to `get_items_from_db` above. Do not define any new types).
+Using the METHODS statement, create the definition of an instance method `get_customers_from_db` that returns a value `result` of type `ty_table_of_customers` - similar to `get_items_from_db` above. Do not define any new types.
 
 Do not indent your code.
 

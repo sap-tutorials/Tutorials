@@ -1,6 +1,6 @@
 ---
-title: Take a Tour of the SAP Cloud Platform Cockpit
-description: Find out what's available in SAP Cloud Platform by exploring the main user interface -- the cockpit.
+title: Take a Tour of the SAP Cloud Platform Cockpit - Neo Environment
+description: Find out what's available in the Neo environment by exploring the main user interface.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
@@ -13,17 +13,25 @@ time: 15
   - How to navigate the cockpit
   - How to move between SAP Cloud Platform landscapes
 
-The SAP Cloud Platform cockpit is your central point of command when doing cloud development. It is important to understand how to use all the controls at your finger tips to get the most out of the SAP Cloud Platform.
+The SAP Cloud Platform Neo environment cockpit is your central point of command when doing cloud development. It is important to understand how to use all the controls at your finger tips to get the most out of the SAP Cloud Platform Neo environment.
+
+> **Note:** This tutorial covers the Neo environment. If you are interested in the most recent environment, please refer to [this tutorial](https://developers.sap.com/tutorials/cp-trial-quick-onboarding.html).
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Welcome to your cockpit)]
 
-Welcome to your SAP Cloud Platform cockpit for your trial account. In the following steps you will explore many of the options on the left navigation pane, the details of the System Status section, and how to move around using the breadcrumbs.
+Welcome to your SAP Cloud Platform cockpit for your Neo trial account. In the following steps you will explore many of the options on the left navigation pane, the details of the System Status section, and how to move around using the breadcrumbs.
 
 Before you move on to the next steps, make sure you are on this **Cockpit Overview** page.
 
 ![SAP Cloud Platform cockpit overview](1.png)
+
+> If not, go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
+
+> Scroll down the page and click on "Access Neo Trial" to access the Neo environment.
+
+>    ![accessneo](accessneo.png)
 
 [DONE]
 [ACCORDION-END]
@@ -123,7 +131,7 @@ Go ahead and navigate back to your SAP Cloud Platform cockpit.
 [ACCORDION-BEGIN [Step 7: ](What are services?)]
 The SAP Cloud Platform provides an abundance of services for you to use. Future tutorials cover some of these in depth, but sometimes it is fun to peruse what is available.
 
-To see the list of services available with the SAP Cloud Platform, click the **Services** tab in the left menu.
+To see the list of services available in the Neo environment, click the **Services** tab in the left menu.
 
 ![services highlighted in left menu](13.png)
 

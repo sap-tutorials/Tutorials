@@ -69,7 +69,7 @@ Enter **`Bonusplan Scenario`** as description and click **New**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add inbound service to scenario)]
-Add your CDS view **`YY1_BONUSPLAN_CDS`** by clicking **+** and **Publish** it.
+Add service **`YY1_BONUSPLAN_CDS`** by clicking **+** and **Publish** it.
 
 ![Add inbound service to scenario](s4_customScenario_publish.png)
 
@@ -105,5 +105,6 @@ By exposing the service via custom communication scenario and communication arra
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
+
 [VALIDATE_1]
 [ACCORDION-END]

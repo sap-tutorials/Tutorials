@@ -9,8 +9,8 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 
 ## Prerequisites
 - You have a productive account in SAP Cloud Platform, a subaccount in Cloud Foundry and a space.
-- You have [created an instance of the SAP Cloud Platform, SAP HANA Service](https://developers.sap.com/tutorials/haas-dm-deploying-haas.html)
-- You have [access to the database cockpit for your SAP HANA service database instance](https://developers.sap.com/tutorials/haas-dm-connect-hana-cockpit.html).
+- You have [created an instance of the SAP Cloud Platform, SAP HANA Service](haas-dm-deploying-haas)
+- You have [access to the database cockpit for your SAP HANA service database instance](haas-dm-connect-hana-cockpit).
 - You have enabled Data Provisioning Server in your SAP HANA service during setup or from the cockpit.
 - You have administration rights in your local computer.
 
@@ -25,7 +25,7 @@ primary_tag: products>sap-cloud-platform\,-sap-hana-service
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect to the database using the Database Cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Connect to database with Database Cockpit)]
 
 Navigate into the space in which you are developing in your subaccount.
 
@@ -66,7 +66,7 @@ The Database Explorer will automatically open a SQL console connected to your da
 
 
 
-[ACCORDION-BEGIN [Step 2: ](Download and install the Data Provisioning Agent))]
+[ACCORDION-BEGIN [Step 2: ](Download and install the Data Provisioning Agent)]
 
 Download the Data Provisioning Agent from [the SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/HANA%2520DP%2520Agent). Choose `SPS3` Patch 52 or higher.
 

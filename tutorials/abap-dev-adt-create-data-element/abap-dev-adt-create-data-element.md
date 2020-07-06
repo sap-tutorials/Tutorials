@@ -1,22 +1,24 @@
 ---
 title: Create a Data Element
-description: You will learn how to create a data element, which you will use in a later tutorial.
+description: Create a data element, which you will use in a later tutorial.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 5
 ---
 
+## Prerequisites  
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 
 ## Details
 ### You will learn  
 - How to create a data element.
-- How to use this data element to provide boolean logic to one of the columns in the table
+- How to use this data element to provide Boolean logic to one of the columns in the table
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Change the field type (to a new data element))]
+[ACCORDION-BEGIN [Step 1: ](Change field type to new data element)]
 Go back to your ABAP Dictionary structure `zso_invoice_item` and change the type of field `payment_status` to **`zso_invoice_payment_status`**:
 
 ![Image depicting step24-change-field-type](step24-change-field-type.png)
@@ -88,10 +90,12 @@ The ABAP Dictionary structure `zso_invoice_item` is now activated.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Use your data element in the ABAP class)]
-Go back to the class, `**ZCL_INVOICE_RETRIEVAL**`, which you created in the previous tutorial, ([Create an ABAP class](https://developers.sap.com/tutorials/abap-dev-create-new-class.html)
+Go back to the class, `**ZCL_INVOICE_RETRIEVAL**`, which you created in the previous tutorial, ([Create an ABAP class](https://developers.sap.com/tutorials/abap-dev-create-new-class.html)).
+
 You will now transform the values of `payment_status` from **P** to a flag that is set to **X** (true) when the invoice has been paid.
-You will do this by looping through each row of the table using a `field-symbol`, which acts as a place-holder for each row of the internal table `lt_result`.
-The `field-symbol` is declared inline.
+
+You will do this by looping through each row of the table using a `field-symbol`, which acts as a place-holder for each row of the internal table `lt_result`. The `field-symbol` is declared inline.
+
 Enter the following code after the `ORDER BY` clause of the `SELECT` statement:
 
 ```ABAP
@@ -188,11 +192,9 @@ Go back to your report and execute it by choosing **F8**. Your SAP List Viewer s
 The `field-symbol` `booking` has been defined as follows. Rewrite the `LOOP AT` statement using an inline declaration. Enter your code in the box below and choose **Submit Answer**:
 
 ```ABAP
-
 FIELD-SYMBOLS <booking> TYPE sbook.
 LOOP AT Booking_List ASSIGNING <booking>.
-
-
 ```
+
 [VALIDATE_1]
 [ACCORDION-END]

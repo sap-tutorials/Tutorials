@@ -21,11 +21,8 @@ author_profile: https://github.com/BrianMcKellar
 
 SAP Cloud Platform is an open platform as a service for developing cloud business applications, such as SAP's blockchain services, in a fully provisioned environment. SAP Cloud Platform is effectively an umbrella over several cloud environments, providing the infrastructure for SAP and SAP's customers for enabling best-of-breed cloud experience.
 
-![Image depicting SCP Overview](08--SCP-Overview.png)
+SAP Cloud Platform supports the following environments: Cloud Foundry, Kubernetes, and ABAP.
 
-SAP Cloud Platform supports the following environments: Neo, Cloud Foundry, Kubernetes, and ABAP.
-
-- **Neo**: Custom SAP developed cloud infrastructure for running cloud-centric Java applications
 - **Cloud Foundry**: Environment for scalable web applications running in the cloud
 - **Kubernetes**: For hosting container landscapes
 - **ABAP**: Complete ABAP systems running in a cloud environment

@@ -1,6 +1,6 @@
 ---
-title: SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project
-description: This tutorial describes how to build a word map project by using the SAP HANA Plugin for Microsoft Visual Studio.
+title: SAP HANA Plugin for Microsoft Visual Studio 2017 - Word Mapping Project
+description: This tutorial describes how to build a word map project by using the SAP HANA Plugin for Microsoft Visual Studio 2017.
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
@@ -9,15 +9,15 @@ time: 10
 ---
 
 ## Prerequisites
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio 2017 - Debugging Procedures](https://developers.sap.com/tutorials/hxe-ua-visual-studio-debugging.html)
 
 ## Next Steps
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform](https://developers.sap.com/tutorials/hxe-ua-visual-studio-google-cloud.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio 2017 - Deploy to the Google Cloud Platform](https://developers.sap.com/tutorials/hxe-ua-visual-studio-google-cloud.html)
 
 
 ## Details
 ### You will learn
-  - How to use the SAP HANA plugin for Microsoft Visual Studio to create a Twitter Word Map.
+  - How to use the SAP HANA plugin for Microsoft Visual Studio 2017 to create a Twitter Word Map.
 
 ---
 
@@ -39,6 +39,8 @@ For this project select *HANA Express Tweets Analysis Application*. Choose a nam
 > **Note:**
 > This project requires some external packages. Follow the prompt to install these packages and then continue with the tutorial.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Load the Python Scripts and Open Solution Explorer)]
@@ -49,6 +51,8 @@ At the top of the Microsoft Visual Studio window, select **View** and then click
 
 > **Note:**
 > This application is compatible with Python version 3.6 and later. If you have multiple Python environments, you will need to set the appropriate environment and load the corresponding SAP HANA client driver libraries in the **Solution Explorer** window.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -63,6 +67,8 @@ To generate the word map, you require the proper Twitter credentials (listed bel
     * Access Secret
 
 You need these values for the next step.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -106,6 +112,8 @@ HANA_USER = "SYSTEM"
 HANA_PASSWORD = "HXEHana1"
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Execute the Project)]
@@ -113,5 +121,7 @@ HANA_PASSWORD = "HXEHana1"
 To run the project, go to **Debug** at the top of the window. Click **Start Without Debugging**. A command prompt window opens and executes the program.
 
 After a few moments, the word map for your Twitter account displays.
+
+[DONE]
 
 [ACCORDION-END]

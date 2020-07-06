@@ -1,6 +1,6 @@
 ---
-title: Set Up SAP Data Hub, Developer Edition 2.4
-description: Download and install SAP Data Hub, developer edition 2.4.
+title: Set Up SAP Data Hub, Developer Edition
+description: Download and install SAP Data Hub, developer edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -41,6 +41,7 @@ docker run hello-world
 You see an output similar to the following:
 
 ![picture_01](./datahub-docker-v2-setup_01.png)
+
 [VALIDATE_1]
 
 [ACCORDION-END]
@@ -49,7 +50,7 @@ You see an output similar to the following:
 Download SAP Data Hub, developer edition and unpack the archive to your disk. You find it via the following link.
 
 ```sh
-https://www.sap.com/developer/trials-downloads/additional-downloads/sap-data-hub-developer-edition-15004.html
+https://www.sap.com/registration/trial.f47300f6-63b8-4f22-b189-dbadd3c903d6.html?id=0050000001302052018&external-site=aHR0cHM6Ly9kZXZlbG9wZXJzLnNhcC5jb20vdHJpYWxzLWRvd25sb2Fkcy5odG1s
 ```
 
 Carefully read the `README.html` as well as the license agreement prior to continuing with the tutorial.
@@ -130,7 +131,7 @@ Open a web browser and test the following URLs (replace `localhost` with the IP 
 * `http://localhost:9225` (SAP Vora Tools)
 * `http://localhost:50070` (Apache Hadoop User Interface)
 
- Where necessary enter **Username** and **Password** which you have set while building the Docker image.
+ Where necessary enter **Username** and **Password** which you have set while starting the Container using the Docker built image (`VORA_USERNAME` and `VORA_PASSWORD` environment variables)
 
 If all URLs are working, you can assume that you have successfully set up SAP Data Hub, developer edition on your local computer.
 
@@ -159,6 +160,7 @@ If you like to see what is going on (after you have issued a `start` command) yo
 ```sh
 docker logs datahub
 ```
+
 [DONE]
 
 [ACCORDION-END]

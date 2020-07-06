@@ -1,6 +1,8 @@
 ---
 title: Consume your Iris TensorFlow Model from SAP HANA, express edition
 description: Provide details on the consumption from SAP HANA, express edition of the model trained using Amazon SageMaker, then deployed in Amazon ECS with the TensorFlow Serving Docker image.
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: topic>machine-learning
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning, products>sap-hana\,-express-edition, products>sap-hana ]
@@ -172,7 +174,7 @@ SELECT
 FROM
   (SELECT *, ROW_NUMBER() OVER() AS RN FROM IRIS_RESULTS) R
 JOIN
-  (SELECT *, ROW_NUMBER() OVER() AS RN FROM IRIS.IRIS_TEST) D ON R.RN = D.RN;
+  (SELECT *, ROW_NUMBER() OVER() AS RN FROM IRIS_TEST) D ON R.RN = D.RN;
 ```  
 
 [VALIDATE_2]

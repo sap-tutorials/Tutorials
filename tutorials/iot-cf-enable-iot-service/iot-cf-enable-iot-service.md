@@ -1,4 +1,6 @@
 ---
+author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Enable SAP Cloud Platform Internet of Things for Cloud Foundry
 description: Create a service instance and a service key to enable the Internet of Things service.
 auto_validation: true
@@ -6,7 +8,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things,topic>internet-of-things, topic>cloud, tutorial>license ]
 ---
 
-<!-- loio86b94ea5deab476d92d377cf988d046e -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -34,11 +35,11 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things,topic>
 
 2.  If you work in an enterprise account, add quotas to the services you purchased in your subaccount to make them visible on the **Service Marketplace**.
 
-    For more information, please refer to section [Add Quotas to Subaccounts Using the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html) in the SAP Cloud Platform documentation.
+    For more information, please refer to section [Configure Entitlements and Quotas for Subaccounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5ba357b4fa1e4de4b9fcc4ae771609da.html) in the SAP Cloud Platform documentation.
 
 3.  Navigate to the space in which you want to create a service instance.
 
-    For more information, please refer to section [Navigate to Orgs and Spaces in the Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5bf87353bf994819b8803e5910d8450f.html) in the SAP Cloud Platform documentation.
+    For more information, please refer to section [Navigate to Orgs and Spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5bf87353bf994819b8803e5910d8450f.html) in the SAP Cloud Platform documentation.
 
 4.  Choose **Services** > **Service Marketplace**.
 
@@ -54,9 +55,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things,topic>
 
 9.  Optional:
 
-    You can enable and disable the SQL and HTTP processing services with the following parameters. For more information, please refer to the [Internet of Things Message Processing](https://help.sap.com/viewer/a7172eb02bf54229add4664fff702676/Cloud/en-US) documentation.
+    You can enable and disable the internal SQL (Internet of Things Service internal database) and the HTTP processing services with the following parameters. For more information, please refer to the [Internet of Things Message Processing](https://help.sap.com/viewer/a7172eb02bf54229add4664fff702676/Cloud/en-US) documentation.
 
-    **Specify Parameters** for the SQL and HTTP processing services in the JSON format or by selecting a JSON file. If no parameters are specified, the SQL processing service is activated by default.
+    **Specify Parameters** for the internal SQL and HTTP processing services in the JSON format or by selecting a JSON file. If no parameters are specified, the internal SQL processing service is activated by default.
 
     ```JSON
         {

@@ -1,12 +1,13 @@
 ---
 title: Create Extended Storage
 description: Create extended storage for Dynamic Tiering.
+auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. 
+ - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed.
  - **Credentials:** Connection details to initially connect as the "SYSTEM" user.
  - **Integrated Development Environment:** Basic working knowledge of SAP HANA Studio. E.g. You should be able to connect to your HANA instance from SAP HANA Studio and feel comfortable with executing simple queries.
 
@@ -37,6 +38,7 @@ Enter "`SYSTEM`" as the **User Name** and enter your **Password**. Click the **S
 
 ![Credentials](credentials.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -54,6 +56,7 @@ In the **Overview** tab and under **General Information**, check the status of *
 
 ![Check Dynamic Tiering](check-dynamic-tiering.png)
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -74,12 +77,13 @@ Click the Execute button to run the SQL script and create the extended storage `
 
 ![Run](run.png)
 
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Additional Information)]
 The "CREATE EXTENDED STORAGE" statement creates the warm store and the required `dbspaces`. A `dbspace` is a logical name for a container of files used to store the Dynamic Tiering table data and related objects. `Dbspaces` are specialized to manage specific types of data. Types of `dbspaces` used by Dynamic Tiering include `ES_SYSTEM`, `ES_USER`, `ES_DELTA` etc. Creating the extended storage `dbspace` is a prerequisite to creating extended tables.
 
+[DONE]
 
 [ACCORDION-END]
-

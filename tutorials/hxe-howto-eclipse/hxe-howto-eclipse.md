@@ -1,7 +1,7 @@
 ---
 title: How to download and install the HANA Eclipse plugin
 description: Provide details on the install the HANA Eclipse Plugin and setup for using Eclipse to connect to SAP HANA, express edition.
-primary_tag: products>sap-hana\, express-edition
+primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana\, express-edition ]
 ---
 ## Prerequisites  
@@ -35,6 +35,7 @@ Select SAP Development Tools for Eclipse
 
 - Neon (4.6), add the URL <https://tools.hana.ondemand.com/neon/>
 - Mars (4.5), add the URL <https://tools.hana.ondemand.com/mars/>
+- `2019-03`, add the URL <https://tools.hana.ondemand.com/2019-03>
 
 
 [ACCORDION-END]
@@ -80,7 +81,9 @@ Change perspective to SAP HANA Administrative Console Window > Perspective > SAP
 
 [ACCORDION-BEGIN [Step 7A: ](Specify system)]
 
-For Docker environments follow instructions in 7B.
+For Docker environments follow instructions in 8.
+
+[OPTION BEGIN [Virtual Machine]]
 
 Add your `HANAExpress` Add System > Specify System
 
@@ -93,9 +96,9 @@ Configuration:
 
 ![image 1](new_system.png)
 
-[ACCORDION-END]
+[OPTION END]
 
-[ACCORDION-BEGIN [Step 7B: ](Specify system - Docker)]
+[OPTION BEGIN [Docker]]
 
 For Docker containers follow these instructions to add a connection your HANA Express `SystemDB` database.
 
@@ -110,6 +113,8 @@ Configuration:
 - Description: `HANAExpress` Edition
 
 ![image 1](new_system_docker.png)
+
+[OPTION END]
 
 [ACCORDION-END]
 

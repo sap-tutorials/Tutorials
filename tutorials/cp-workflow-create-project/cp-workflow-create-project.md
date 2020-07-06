@@ -1,5 +1,5 @@
 ---
-title: Create a Workflow Project from a Template
+title: Create a Workflow Project from a Template (Neo)
 description: Create a new workflow project in SAP Cloud Platform using SAP Web IDE.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
@@ -45,7 +45,7 @@ time: 5
 
 4. Change the **Category** to **Business Process Management**, and then select the **Workflow Project** template.
 
-    ![Change Category](select-category.png)
+    ![Change Category](select-category1.png)
 
 5. Choose **Next**.
 

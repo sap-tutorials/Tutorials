@@ -59,6 +59,7 @@ public void setInvoiceLink(String invoiceLink) {
 ```
 
 ![eCommerce app](getter setter.PNG)
+
 [DONE]
 [ACCORDION-END]
 
@@ -136,6 +137,7 @@ public void setInvoiceLink(String invoiceLink) {
 ```
 
 ![eCommerce app](ResourcRef.PNG)
+
 [DONE]
 [ACCORDION-END]
 
@@ -166,6 +168,7 @@ This file will read properties from `config.properties` for the document service
       Package: `com.sap.espm.model.util`
 
       Use [the following code](https://github.com/SAP/cloud-espm-v2/blob/master/espm-cloud-web/src/main/java/com/sap/espm/model/util/ReadProperties.java) to implement the class.
+
 [DONE]
 [ACCORDION-END]
 
@@ -231,6 +234,7 @@ The following steps describe how to create classes for generating the Invoice PD
 ```
 
 ![ServMap](ServMap.PNG)
+
 [DONE]
 [ACCORDION-END]
 
@@ -336,6 +340,7 @@ private void updateSalesOrderHeader(String reportPath, List<SalesOrderItem> soiL
 ```
 
 ![Entity Manager](EntityManager.PNG)
+
 [DONE]
 [ACCORDION-END]
 
@@ -373,7 +378,7 @@ This view is shown on click of the **View my sales orders** button in the home p
 [ACCORDION-BEGIN [Step 9: ](Document Service Demo)]
 **Prerequisite:** In order to be able to download the pdf version of the sales order you have to place an order first.
 
-1. From the application home page choose ![Sales Order](VMSO2.PNG) (**_View my sales orders_**) in the upper right corner.
+1. From the application home page choose ![Sales Order](VMSO2.PNG) -- **_View my sales orders_** -- in the upper-right corner.
 2. In the **Email address** box that appears enter the registered email ID and choose the **Get sales orders list** button.
 3. Once the **Sales order** list appears select the sales order you placed and information about the customer and the selected product will be displayed on the right side of the screen.
 4. Choose the **Download PDF file** button in the bottom right corner.

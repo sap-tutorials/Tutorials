@@ -26,7 +26,7 @@ Open the SQL Editor of your choice (web or desktop based) connected to your SAP 
 
 Type and execute the following SQL statement.
 ```sql
-SELECT NEW ST_Polygon('Polygon ((0 0, 4 0, 0 3, 0 0), (0.5 0.5, 0.5 1.5, 1.5 1.5, 1 0.5, 0.5 0.5))').ST_asSVG() FROM dummy;
+SELECT NEW ST_Polygon('Polygon ((0 0, 4 0, 0 3, 0 0), (0.5 0.5, 0.5 1.5, 1.5 1.5, 1.5 0.5, 0.5 0.5))').ST_asSVG() FROM dummy;
 ```
 This query instantiates a surface in the 2-dimensional Euclidean space and returns its dimensions. In the example above it is a polygon defined by an external ring with the shape of a triangle connecting points (0, 0); i.e., `X=0` and `Y=0`, with points (4, 0) and (4, 3) and an internal ring with the shape of a square. The constructor is using ___Well-known text (WKT)___. As explained in the previous tutorial, WKT is a text markup language for representing vector geometry objects defined by the Open Geospatial Consortium (OGC).
 

@@ -57,25 +57,30 @@ const checkTutorialGrouping = async ({ projectPath, interceptors, checkResult, r
   });
 };
 
-const setLinkCheckResult = ({ linkCheckResult, checkResult, uniqueLinksToFiles, files, results }) => {
+const setLinkCheckResult = (options) => {
+  const { linkCheckResult, checkResult, uniqueLinksToFiles, files, results } = options;
   const filesPaths = uniqueLinksToFiles.get(linkCheckResult.link);
   if (filesPaths) {
-    filesPaths.forEach(filePath => {
-      const { contentLines } = files.get(filePath);
+    filesPaths.forEach((filePath) => {
+      const { noCodeContentLines: contentLines } = files.get(filePath);
       const isTutorialDoc = common.isTutorialDoc(filePath);
       const isTrusted = isTutorialDoc || linkCheckResult.isTrusted;
-      const fileLinkResult = { ...linkCheckResult, isTrusted };
+      const fileLinkResult = {
+        ...linkCheckResult,
+        isTrusted
+      };
       if (checkResult.passed && !isTrusted) {
         checkResult.passed = isTrusted;
       }
-      contentLines.some((line, ind) => {
+      const foundLines = contentLines.reduce((result, line, ind) => {
         if (line.includes(linkCheckResult.link)) {
-          fileLinkResult.line = ind + 1;
-          return true;
+          result.push({ ...fileLinkResult, line: ind + 1 });
         }
-      });
+
+        return result;
+      }, []);
       const fileResult = results.get(filePath);
-      fileResult.linkCheckResult.push(fileLinkResult);
+      fileResult.linkCheckResult.push(...foundLines);
     });
   }
 };
@@ -118,16 +123,20 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
       contentCheckResult,
       tagsCheckResult,
       stepSpellCheckResult,
+      syntaxCheckResult,
+      linkCheckResult: contentLinkCheckResult,
     } = await contentChecker.check(filePath, contentLines, allTutorials);
 
     if (checkResult.passed) {
       checkResult.passed = !(fileNameCheckResult
-          || spellCheckResult.length
-          || stepSpellCheckResult.length
-          || contentCheckResult.length
-          || tagsCheckResult.length
-          || optionsCheckResult.length
-          || validationsCheckResult.length);
+        || spellCheckResult.length
+        || stepSpellCheckResult.length
+        || contentCheckResult.length
+        || tagsCheckResult.length
+        || syntaxCheckResult.length
+        || contentLinkCheckResult.length
+        || optionsCheckResult.length
+        || validationsCheckResult.length);
     }
 
     results.set(filePath, {
@@ -138,8 +147,9 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
       contentCheckResult: [...contentCheckResult, ...optionsCheckResult],
       tagsCheckResult: tagsCheckResult.length > 0 ? tagsCheckResult : null,
       validationsCheckResult,
+      syntaxCheckResult,
       spellCheckResult: spellCheckResult.concat(stepSpellCheckResult),
-      linkCheckResult: [],
+      linkCheckResult: contentLinkCheckResult,
     });
     if (interceptors.onAction) {
       interceptors.onAction();
@@ -168,7 +178,7 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
   }
 
   return {
-    results: Array.from(results.values()),
+    results: common.orderByAlphabet(Array.from(results.values())),
     passed: checkResult.passed,
   };
 };

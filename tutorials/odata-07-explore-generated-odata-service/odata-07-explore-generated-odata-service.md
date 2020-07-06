@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Explore Your Generated OData Service
 description: Explore the product data in your OData service you've just generated.
 auto_validation: true
@@ -60,12 +62,15 @@ executed in 2 ms - Rows Affected: 3
 
 You can import the Northwind product data by providing a couple of files -- a CSV file containing the data, and a file that defines the data source and how the fields map between the data source and the target table in the database.
 
-Back in the Development perspective, within the `db/src` folder, create a new folder called **`csv`**. Import into this new folder the following two files:
+Back in the Development perspective, within the `db/src` folder, find or create a new folder called **`csv`**. If the folder was already there, it may contain some CSV files (such as `my.bookshop-Authors.csv`). These were generated when you created the project; you don't need them so delete the existing CSV files before proceeding.
+
+Import into this new folder the following two files:
 
 - [`Products.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/odata-07-explore-generated-odata-service/csv/Products.csv): Product data in CSV format
 - [`Data.hdbtabledata`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/odata-07-explore-generated-odata-service/csv/Data.hdbtabledata): Definition of data source and field mappings
 
 > Make sure you choose the `src` folder within the `db` folder, not the one within the `srv` folder.
+
 
 When you've done this, you should see these files in the explorer, thus:
 
@@ -147,3 +152,4 @@ As you can see, the OData service, for which you haven't had to write a single l
 
 [VALIDATE_4]
 [ACCORDION-END]
+

@@ -196,5 +196,6 @@ More information about Hibernate can be found using the following links:
  - [Hibernate ORM website](http://hibernate.org/orm/)
  - [Hibernate documentation](http://hibernate.org/orm/documentation/),
  - [Hibernate user guide](http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html).
+
 [DONE]
 [ACCORDION-END]

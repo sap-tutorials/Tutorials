@@ -22,9 +22,11 @@ The `server machine` in these instructions refers to the machine on which SAP HA
 
 [ACCORDION-BEGIN [Step 1: ](XS CLI client info.)]
 
-The XS advanced client-tools bundle (`xs.onpremise.runtime.client_<platform>-<version>.zip`) also includes the `Javascript` bundle (`xs_javascript-1.3.0-bundle.tar.gz`), which includes a selection of mandatory `Node.js` packages developed by SAP for use with the `Node.js` applications running XS Advanced runtime.
+The XS advanced `client-tools` bundle (`xs.onpremise.runtime.client_<platform>-<version>.zip`) also includes the `Javascript` bundle (`xs_javascript-1.3.0-bundle.tar.gz`), which includes a selection of mandatory `Node.js` packages developed by SAP for use with the `Node.js` applications running XS Advanced runtime.
 
 You can use the XS command line client to perform a wide variety of developer- and administrator-related tasks. For example, in the role of a developer, you can use the XS CLI to connect to the XS Advanced runtime installed on the server machine, log on as a specific user, and deploy and manage your applications.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -46,13 +48,11 @@ Install the Download Manager to your client machine and download the client pack
 
     -   For Windows and Mac machines, use a compression utility.
 
-    -   For Linux, navigate to the directory in which you wish to extract the client files and use the tar command.
+    -   For Linux machines, navigate to the directory in which you wish to extract the client files and use the `tar` command:
 
-        ```bash
-        cd <preferred_filepath>
-        sudo tar <download_filepath>/clients_<OS>.zip
-        ```
-
+```cd <preferred_filepath>
+sudo tar -xzf <download_filepath>/clients_<OS>.tgz
+```            
 
 These files are extracted:
 
@@ -86,6 +86,8 @@ These files are extracted:
 -   `xs.onpremise.runtime.client_darwinintel64.zip`
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Install the XS CLI client.)]
@@ -107,6 +109,8 @@ The system creates this folder:
 xs.onpremise.runtime.client_<version>
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add the bin folder to the PATH environment variable.)]
@@ -124,6 +128,8 @@ xs.onpremise.runtime.client_<version>
 
 -   (Power PC) Run `export PATH=$PATH:/<extracted_filepath>/bin`
 
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -143,6 +149,8 @@ https://my.hana.server:39030/v2/info
 
 The response displayed in the Web browser is a JSON string with details that indicate whether there was a successful connection to the XSA controller. The connection must exists before you can connect from within the API command.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Confirm XS Advanced is Available)]
@@ -158,6 +166,8 @@ On Linux, run these as `<sid>adm`.
 
 You see the `Client Version` in the output. If not, you cannot connect to XS Advanced runtime on SAP HANA to deploy your XS Advanced applications.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Connect to XS Advanced controller.)]
@@ -172,6 +182,8 @@ xs api https://<hostname>:3<instance_number>30
 > If this step fails, it may be due to a missing SSL certificate. Continue on to the next step to add the SSL certificate, otherwise skip the next step.
 >
 >
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -222,6 +234,8 @@ xs login -u XSA_ADMIN -p "<password>"
 >
 >
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test the XS Advanced connection.)]
@@ -231,5 +245,7 @@ To test your connection to XS Advanced by running the following command on the S
 ```bash
 xs apps
 ```
+
+[DONE]
 
 [ACCORDION-END]

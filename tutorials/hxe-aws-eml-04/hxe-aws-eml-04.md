@@ -1,4 +1,6 @@
 ---
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 title: Setup SAP HANA, express edition - Prepare for Machine Learning (AWS / EML)
 description: In your SageMaker Notebook instance, download and install the SAP HANA client and the Python driver to connect to your SAP HANA, express edition instance.
 primary_tag: topic>machine-learning
@@ -37,7 +39,7 @@ Open the following URL in your browser:
 https://hxehost:53075
 ```
 
-Login using **`XSA_DEV`** as user and the ***database master password*** as provided during the initialization process.
+Login using **`XSA_DEV`** as user "SYSTEM" and the ***database master password*** as provided during the initialization process.
 
 Switch to the **Database Explorer**.
 

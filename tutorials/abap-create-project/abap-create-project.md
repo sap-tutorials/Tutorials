@@ -3,7 +3,7 @@ title: Create an ABAP Project in ABAP Development Tools (ADT)
 description: Configure the Eclipse IDE with the ABAP Development Tools for SAP NetWeaver (ADT) and create an ABAP project.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 15
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
@@ -11,6 +11,7 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites  
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
  - You have downloaded and installed the latest Eclipse IDE from [Eclipse IDE for Java Developers ](http://www.eclipse.org/) site, and opened the application.
 
 ## Details
@@ -22,12 +23,7 @@ author_profile: https://github.com/julieplummer20
 
 [ACCORDION-BEGIN [Step 1: ](Install the ABAP Development Tools for SAP NetWeaver (ADT))]
 
-1. In the Eclipse menu bar, select: **Help > Install New Software...**.
-2. In the dialog box add the URL for the latest version, for example [https://tools.hana.ondemand.com/photon/](https://tools.hana.ondemand.com/photon/) for Eclipse Photon (4.8)
-3. Display the available features by choosing **Enter**
-4. Select **ABAP Development Tools for SAP NetWeaver**, then choose **Next**.
-5. On the next wizard page, you get an overview of the features to be installed. Choose **Next**.
-6. Confirm the license agreements and start the installation by choosing **Finish**.
+Follow the instructions on the [ABAP Development Tools](https://tools.hana.ondemand.com/#abap) site.
 
 [DONE]
 [ACCORDION-END]

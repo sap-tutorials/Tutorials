@@ -8,8 +8,9 @@ const generateReport = (checkResult, filesCount) => {
         fileNameError,
         fileError,
         linkError,
-        reportStructure,
     } = logTemplates;
+
+    const reportStructure = JSON.parse(JSON.stringify(logTemplates.reportStructure));
 
     checkResult.results.map(result => {
         const {
@@ -19,6 +20,7 @@ const generateReport = (checkResult, filesCount) => {
             fileNameCheckResult,
             spellCheckResult,
             contentCheckResult,
+            syntaxCheckResult,
             tagsCheckResult,
             validationsCheckResult,
             linkCheckResult,
@@ -40,8 +42,13 @@ const generateReport = (checkResult, filesCount) => {
             }
         }
         if(tagsCheckResult) {
-            reportStructure.props.tagCheck.messages.push(commonError(tagsCheckResult, fileName));
+            reportStructure.props.tagCheck.messages.push(...tagsCheckResult.map(e => fileError(e.msg, fileName, e.line)));
         }
+
+        if(syntaxCheckResult) {
+            reportStructure.props.syntaxCheck.messages.push(...syntaxCheckResult.map(e => fileError(e.msg, fileName, e.line)));
+        }
+
         if(validationsCheckResult) {
             validationsCheckResult.forEach(msg => reportStructure.props.validationsCheck.messages.push(commonError(msg, fileName)));
         }
@@ -52,12 +59,12 @@ const generateReport = (checkResult, filesCount) => {
                 const critical = linkCheckResult.filter(result => result.code == 404 && !result.isTrusted);
                 const common = linkCheckResult.filter(result => result.code != 404 && !result.isTrusted);
                 const warn = linkCheckResult.filter(result => result.isTrusted);
-              files.push({
-                fileName,
-                criticalDeadLink: critical.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
-                deadLink: common.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
-                warnDeadLink: warn.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
-              });
+                files.push({
+                    fileName,
+                    criticalDeadLink: critical.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
+                    deadLink: common.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
+                    warnDeadLink: warn.map(({ link, code, line, reason }) => linkError(link, code, line, reason)),
+                });
             }
         }
     });
@@ -75,7 +82,7 @@ const outputReportToConsole = (report, filesCount) => {
     } = logTemplates;
 
     if (filesCount === 0) {
-      return logger.warn('No files tested');
+        return logger.warn('No files tested');
     }
 
     Object.values(report.props).forEach(logProp => {

@@ -1,14 +1,14 @@
 ---
 title: Assemble and Configure Device Hardware
 description: Assemble device hardware, configure device firmware and deploy it in the field.
-primary_tag: products>sap-cloud-platform-internet-of-things
+primary_tag: topic>internet-of-things
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform]
+tags: [  tutorial>beginner, products>sap-leonardo-iot, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform]
+time: 30
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Create a Simple IoT Device Model](https://developers.sap.com/tutorials/iot-express-2-create-device-model.html)
+ - **Tutorials:** [Create a Simple IoT Device Model](iot-express-2-create-device-model)
  - **Hardware:** Laptop, monitor, HDMI cable, USB mouse and keyboard
 
 
@@ -18,37 +18,29 @@ tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things,
 - How to read sensor values from device firmware
 - How to securely send data to the cloud using certificates
 
-### Time to Complete
-**30 Min**
-
-
-
-## Next Steps
-  - [Create a Thing Model and Bind Your Device into a Business Context](https://developers.sap.com/tutorials/iot-express-4-create-thing-model.html)
-
 ---
 [ACCORDION-BEGIN [Step 1: ](Assemble the hardware)]
 
-  If you are using the [SAP Leonardo IoT Foundation Starter Kit](https://www.sparkfun.com/products/14659?custom_code=SAP) or a similar kit, assemble it based on the following pictures and instructions.
+Assemble a raspberry pi based on the following pictures and instructions.
 
-  ![Pinout of the Raspberry Pi](pipinout.png)
+![Pinout of the Raspberry Pi](pipinout.png)
 
-  ![Sensors](sensor.jpg)
+![Sensors](sensor.jpg)
 
-  In the above pictures, you see a Raspberry Pi and the logical pins that allow you to connect to other hardware and sensors. The second image shows the temperature/humidity sensor and a light sensor. Instead of the DHT22, you can also use the DHT11 on a break-out board -- simply change the code below from DHT22 to DHT11.
+In the above pictures, you see a Raspberry Pi and the logical pins that allow you to connect to other hardware and sensors. The second image shows the temperature/humidity sensor and a light sensor. Instead of the DHT22, you can also use the DHT11 on a break-out board -- simply change the code below from DHT22 to DHT11.
 
-  Using the provided wires, connect GND (or - on some boards) from the temperature/humidity sensor board to GND on the Pi (e.g. pin 9). Also connect VCC (on + on some boards) to the `3.3V PWR` on the Pi (e.g pin 1). Lastly connect the DATA pin of he temperature/humidity sensor to GPIO4 (pin 7) on the Pi.
+Using the provided wires, connect GND (or - on some boards) from the temperature/humidity sensor board to GND on the Pi (e.g. pin 9). Also connect VCC (on + on some boards) to the `3.3V PWR` on the Pi (e.g pin 1). Lastly connect the DATA pin of he temperature/humidity sensor to GPIO4 (pin 7) on the Pi.
 
 [DONE]
 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Install the operating system for the PI)]
+[ACCORDION-BEGIN [Step 2: ](Install the operating system for the Pi)]
 
-  The last step missing before you can use the Raspberry Pi is to install an operating system on the micro SD card. On Windows and Mac, we recommend you use the etcher application available from [http://etcher.io](http://etcher.io). Download the latest `Raspbian` image (with desktop) from [https://www.raspberrypi.org/downloads/raspbian/](https://www.raspberrypi.org/downloads/raspbian/) and burn it onto the micro SD card using Etcher. Then, plug the micro SD card into the Raspberry Pi at the bottom.
+The last step missing before you can use the Raspberry Pi is to install an operating system on the micro SD card. On Windows and Mac, we recommend you use the etcher application available from [http://etcher.io](http://etcher.io). Download the latest `Raspbian` image (with desktop) from [https://www.raspberrypi.org/downloads/raspbian/](https://www.raspberrypi.org/downloads/raspbian/) and burn it onto the micro SD card using Etcher. Then, plug the micro SD card into the Raspberry Pi at the bottom.
 
-  Your Pi is now in a factory default state. The next step will be to install firmware and configure it based on a device created in IoT Service for Cloud Foundry.
+Your Pi is now in a factory default state. The next step will be to install firmware and configure it based on a device created in IoT Service for Cloud Foundry.
 
 [DONE]
 
@@ -57,19 +49,19 @@ tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things,
 
 [ACCORDION-BEGIN [Step 3: ](Log into Pi and install certificate and firmware)]
 
-  To be able to program the Raspberry Pi, you need to hook it up via USB to a mouse and a keyboard and via a standard HDMI cable to a monitor. When you now power it up, you should see the `Raspbian OS` desktop on the monitor.
+To be able to program the Raspberry Pi, you need to hook it up via USB to a mouse and a keyboard and via a standard HDMI cable to a monitor. When you now power it up, you should see the `Raspbian OS` desktop on the monitor.
 
-  If you are working on this tutorial from your company's office, getting an internet connection via LAN or WLAN might require to contact your network administrator, for example, to whitelist your MAC address for WLAN or approve your device in the LAN. For fast testing, you can also use your mobile phone's hotspot.
+If you are working on this tutorial from your company's office, getting an internet connection via LAN or WLAN might require to contact your network administrator, for example, to whitelist your MAC address for WLAN or approve your device in the LAN. For fast testing, you can also use your mobile phone's hotspot.
 
-  Once you have established a connection to the internet open a browser window and access the IoT Service for Cloud Foundry cockpit (check the previous tutorial on where to find it; the fastest way to get there is to open [http://hana.ondemand.com/](http://hana.ondemand.com/) and then navigate to your Cloud Foundry sub-account, from there to your space and in there you can find the `dashboard` in the service instances list). Download the certificate from your device to the `Downloads` folder on the Pi and take note of the secret provided.
+Once you have established a connection to the internet open a browser window and access the IoT Service for Cloud Foundry cockpit (check the previous tutorial on where to find it; the fastest way to get there is to open [http://hana.ondemand.com/](http://hana.ondemand.com/) and then navigate to your Cloud Foundry sub-account, from there to your space and in there you can find the `dashboard` in the service instances list). Download the certificate from your device to the `Downloads` folder on the Pi and take note of the secret provided.
 
 ![IoT Cockpit and Certificate](certificate.png)
 
-  Access this tutorial from the browser on the Raspberry Pi and copy the following node files as `app.js` and as `certificate_parser.js` into the `Downloads` folder:
+Access this tutorial from the browser on the Raspberry Pi and copy the following node files as `app.js` and as `certificate_parser.js` into the `Downloads` folder:
 
-  1. Content of `app.js`:
+1. Content of `app.js`:
 
-    ```javascript
+    ```JavaScript
     const fs = require("fs");
     const mqtt = require("mqtt");
     const certificateParser = require("./certificate_parser.js");
@@ -138,10 +130,10 @@ tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things,
     });
     ```
 
-  2. Content of file `certificate_parser.js` :
+2. Content of file `certificate_parser.js` :
 
 
-    ```javascript
+    ```JavaScript
     const fs = require("fs");
 
     const states = {
@@ -187,9 +179,9 @@ tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things,
     };
     ```
 
-  3. To download the required libraries execute the following 9 commands from a terminal window:
+3. To download the required libraries execute the following 9 commands from a terminal window:
 
-    ```
+    ```Shell
     sudo apt-get update
     curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash –
     sudo apt-get install -y nodejs
@@ -203,10 +195,13 @@ tags: [  tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things,
 
 Finally, adjust the node script in the following places:
 
-  1. The tenant name in `settings` variable - this is the instance name for IoT Service (in `https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/` it's `76eae3d3-9de6-4345-b26c-ff35be052652`)
-  2. The alternate IDs of your device, sensor and capability in the `settings` variable.
-  3. The secret for your certificate
-  4. The name of your certificate file
+1. The tenant name in `settings` variable, which is the instance name for IoT Service (in `https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/` it's `76eae3d3-9de6-4345-b26c-ff35be052652`)
+
+2. The alternate IDs of your device, sensor and capability in the `settings` variable
+
+3. The secret for your certificate
+
+4. The name of your certificate file
 
 Now the firmware is ready to be run. Normally, it would be nice to be executed automatically when the device boots but in this case we will start it manually in the next step.
 
@@ -215,18 +210,18 @@ Now the firmware is ready to be run. Normally, it would be nice to be executed a
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Run the firmware)]
+[ACCORDION-BEGIN [Step 4: ](Run the firmware)]
 
 To run the firmware execute the following commands in a terminal or command line window:
 
-```
+```Shell
 cd Downloads
 sudo node app.js
 ```
 
-This will now continuously read sensor values, print them and send the data to IoT Service for Cloud Foundry. The data is not beeing picked up by anyone. It is forwarded to Leonardo IoT but while there is no thing mapped the data is not persisted.
+This will now continuously read sensor values, print them and send the data to IoT Service for Cloud Foundry. The data is not beeing picked up by anyone. It is forwarded to SAP IoT but while there is no thing mapped the data is not persisted.
 
-![Output on the PI](sensoroutput.png)
+!![Output on the PI](sensoroutput.png)
 
 [VALIDATE_1]
 
@@ -238,20 +233,20 @@ This will now continuously read sensor values, print them and send the data to I
 In the following picture you have a diagram of how the final connection configuration between the Raspberry Pi and the sensors should be.
 ![Connection diagram of pi and the sensors](finalelectricaldiagram.png)
 
-Proceed by connecting the light sensor to your Raspberry Pi.
+Proceed by connecting the light sensor to your Raspberry Pi. If you use a different sensor (based on the `i2c` bus) then the one shown in the picture above then simply change `i2cAddress` below and the address of the `d0low`/`d1high` below based on the sensors data sheet and wire it up accordingly. For many sensors you can find instructions and tutorials on how to hook them up with a raspberry pi online.
 
 Start by hooking up the `3.3V PWR` of the sensor to pin no. 1 of the pi and connect the GND of the sensor to the GND of the Raspberry.
 Next, you want to connect the SCL pin of the sensor (pin no. 4) to the SCL pin of the pi (pin no. 5) and the SDA pin of the sensor (pin no. 5) to the SDA pin of the pi (pin no. 3).
 
 You will need to add the `raspi-i2c` package to you project. Do this by running the following commands in a terminal while beeing in the app folder.
 
-```
+```Shell
 npm install --save raspi-i2c
 ```
 
 1. Lastly, you will want to modify the code by adding the following snippets in order to read data from the sensor.
 
-    ```javascript
+    ```JavaScript
 
     // Add this to the required packages. This package enables us to access the pins and read the data
     const I2C = require('raspi-i2c').I2C;
@@ -267,7 +262,7 @@ npm install --save raspi-i2c
 
 2. Add this `getLuxValue` function to compute the sensor reading value. This formula is described in the sensor documentation file.
 
-    ```javascript
+    ```JavaScript
 
     function getLuxValue(d0low, d1low){
         var lux = 0;
@@ -299,9 +294,9 @@ npm install --save raspi-i2c
 
     ```
 
-3. Replace the previous implementation of the **`readSensor`** function with the definition bellow
+3. Replace the previous implementation of the **`readSensor`** function with the definition below:
 
-    ```javascript
+    ```JavaScript
 
     // This definition adds the required functionality for reading the light sensor and returning its value
     function readSensor() {
@@ -324,7 +319,7 @@ npm install --save raspi-i2c
 
 4. Your final **`app.js`** should look like this:
 
-    ```javascript
+    ```JavaScript
     const fs = require("fs");
     const mqtt = require("mqtt");
     const certificateParser = require("./certificate_parser.js");

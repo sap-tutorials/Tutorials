@@ -2,13 +2,15 @@
 title: SAP HANA XS Advanced - Consume the OData service in a basic HTML5 module
 description: Use SAPUI5 as a micro-service to display data from an OData service
 auto_validation: true
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - Create a Node.js module to expose an OData service (https://developers.sap.com/tutorials/xsa-xsodata.html)
+ - Create a Node.js module to expose an OData service (https://developers.sap.com/tutorials/xsa-xsjs-xsodata.html)
 
 ## Details
 ### You will learn  
@@ -25,7 +27,7 @@ Open the file `index.html` under resources. You will find the default code creat
 
 ![Default code](1.gif)
 
-Remove the logics for the button
+Remove the logic for the button
 
 ![Default code](2.gif)
 
@@ -48,18 +50,18 @@ Add the following script to your `index.html` file, where the logics for the but
 
 <script>
 
-	var oModel = new sap.ui.model.odata.ODataModel("/xsodata/purchaseOrder.xsodata", true);
+	var oModel = new sap.ui.model.odata.v2.ODataModel("/xsodata/purchaseOrder.xsodata", true);
 	var oTable = new sap.ui.table.Table({ title: "My first table" });
 	oTable.addColumn(new sap.ui.table.Column({ label: "PO ID", template: "PURCHASEORDERID" }));
 	oTable.setModel(oModel);
-  oTable.bindRows("/POHeader");
+	oTable.bindRows("/POHeader");
 	oTable.placeAt("uiArea");
 
 	</script>
 ```
 
 > ### More about binding
-> You are using an OData model that will load data as required by the client and delegate the sorting and filtering operations to the server-side. This model will provide the data from the service you defined before. You are then creating a table and binding the model to the table, so that all changes in the data are reflected also in the table.  Check the Help for [more information about SAPUI5 and binding](https://help.sap.com/viewer/40826922922346f890185c8ff02d30da/1.19/en-US/91f0ca956f4d1014b6dd926db0e91070.html)
+> You are using an OData model that will load data as required by the client and delegate the sorting and filtering operations to the server-side. This model will provide the data from the service you defined before. You are then creating a table and binding the model to the table, so that all changes in the data are reflected also in the table.  Check the Help for [more information about SAPUI5 and binding](https://help.sap.com/viewer/40826922922346f890185c8ff02d30da/latest/en-US/91f0ca956f4d1014b6dd926db0e91070.html)
 
 Save and run the HTML5 module. You should get an error. Press `F12` in your browser and look at the errors in the console.
 
@@ -94,54 +96,14 @@ Add `sap.ui.table` to the `index.html` file as a required library.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create an instance of SAPUI5)]
-
-You will see that the source of the SAP UI5 library is a public, remote resource.
-
-![Default code](3.gif)
-
-In a productive scenario, there are many reasons to use a local version of the library. As of SAP HANA 2.0, SPS01, SAP UI5 was incorporated to XS Advanced as a micro-service for local consumption. You need to create an instance of the service to use on your Multi-Target Application just like you did with the UAA service.
-
-Alternate between normal and incognito mode or use another browser to log in to the XSA Cockpit with the user `XSA_ADMIN`. In an SAP HANA, express edition instance this application has been incorporated in SPS03 and is found on port 51036 (i.e., `https://hxehost:51036` ).
-
-Navigate to the service marketplace for the space where your application is deployed and click on the `sapui5` service
-
-![New UI5](4.gif)
-
-Click **instances** and create a **New instance**
-
-![New UI5](5.gif)
-
-Choose plan `sapui5-1.52` and click **Next**
-
-![New UI5](6.gif)
-
-Call it `ui5`. When asked to specify parameters, you can click **Next**.
-
-![New UI5](7.png)
-
-> Note: If you do not have SPS03 yet, add the following resource to your `mta.yaml` file, adjusting the UI5 version accordingly instead of running the previous wizard, which is not available. The following example works for SPS02
-
-> ```txt
-- name: ui5
-    type: configuration
-    parameters:
-      provider-id: 'com.sap.ui5.dist.sapui5-dist-xsa.XSAC_UI5_FESV3:sapui5_fesv3'
-      version: '>=1.44.0'
-
-> ```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Add the SAPUI5 service as a dependency)]
+[ACCORDION-BEGIN [Step 4: ](Add the SAPUI5 service as a dependency)]
 
 Just like with the UAA service, you want to bind the instance you have created to your Multi-Target Application. Open the `MTA.yaml` file and click **add a new resource** called `ui5`.
 
-Use `org.cloudfoundry.managed-service` as the type and the following key-value pairs under parameters:
+Use `org.cloudfoundry.managed-service` as the type and the following key-value pairs under parameters for HANA 2.0 SPS04 (for other releases, use the `xs marketplace` command to view the available service-plans):
 
 - service : `sapui5_sb`
-- `service-plan` : `sapui5-1.52`
+- `service-plan` : `sapui5-1.60`
 
 ![New UI5](8.png)
 
@@ -152,19 +114,10 @@ Use `org.cloudfoundry.managed-service` as the type and the following key-value p
 
 ![New UI5](9.png)
 
-> Note: If you do not have SPS03 yet, skip the previous configuration and add the following dependency to the web module in the `yaml` file instead
->
-> ```txt
-- name: ui5
-  properties:
-    url: ~{url}
-
-> ```
-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Adjust the AppRouter replacement)]
+[ACCORDION-BEGIN [Step 5: ](Adjust the AppRouter replacement)]
 
 Open the file `xs-app.json` and add the following code at the end of the route declarations
 
@@ -193,14 +146,14 @@ You will need to add a comma before adding the new route with the replacement va
 > Take a look at the `package.json` file. You will notice a node module,`approuter.js`, is called. This module will read the file `xs-app.json`, use the `welcomeFile` value to redirect to `index.html` by default, and interpret the routes requests should take according to the regular expressions in the `source` key.
 > It can also replace placeholders in static text resources, such as a placeholder for the URL to the UI5 service in `index.html`. In this case, the `AppRouter` finds the service with tag `ui5` like  you created in step 4, bound to the web application. If you use command `xs env APP`, where APP is the name of your web application, you will see the configuration details for the UI5 service.
 >  ![VCAP_SERVICES](env.png)
-> You can find more information about the AppRouter in the [SAP Help portal](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/6ba89596e3a64a5480c3977d4ea7fdba.html)
+> You can find more information about the AppRouter in the [SAP Help portal](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/6ba89596e3a64a5480c3977d4ea7fdba.html)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Call the micro-service in your HTML file)]
+[ACCORDION-BEGIN [Step 6: ](Call the micro-service in your HTML file)]
 
-Open the `index.html` file and replace the remote URL with the variable `{{{sapui5_sb.url}}}`.
+Open the `index.html` file and replace the remote URL with the variable `{{{sapui5_sb.url}}}`.  
 
 ![New UI5](ui5.png)
 

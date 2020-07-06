@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Define a Simple Data Model and OData Service with CDS
 description: Use core data and services (CDS) to define a simple entity and generate an OData service from it.
 auto_validation: true
@@ -19,7 +21,7 @@ time: 20
 
 [Core Data & Services (CDS)](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/855e00bd559742a3b8276fbed4af1008.html) powers a significant part of the [Application Programming Model for SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/855e00bd559742a3b8276fbed4af1008.html). CDS has many features, and in this tutorial you'll encounter a couple of fundamental ones - the ability to declaratively define a data model and service, and to have those declarations turned into artefacts for a persistence layer (in this case a HANA database) and a running OData service (in this case a Java-based app).
 
-You'll use SAP Web IDE, and a particular feature relating to building business apps with CDS.
+You'll use SAP Web IDE, and a particular extension relating to building business apps with CDS.
 
 The model and service you'll create is deliberately a very simple one, based on a small subset of something you've seen before if you've followed previous OData tutorials (in particular the [Learn about OData Fundamentals](https://developers.sap.com/tutorials/odata-01-intro-origins.html) tutorial) - the product information from the Northwind service.
 
@@ -40,11 +42,11 @@ You can find out more about accessing SAP Web IDE in the Help Portal, specifical
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Ensure the required feature is enabled)]
+[ACCORDION-BEGIN [Step 2: ](Ensure the required extension is enabled)]
 
-You'll make use of the SAP Cloud Platform Business Application Development Tools feature within SAP Web IDE in this tutorial. In SAP Web IDE, select the Preferences perspective either with the cog icon or via menu path **Tools** > **Preferences**. At the **Workspace Preferences** level, select **Features** and make sure that this feature is enabled:
+You'll make use of the SAP Cloud Platform Business Application Development Tools extension within SAP Web IDE in this tutorial. In SAP Web IDE, select the Preferences perspective either with the cog icon or via menu path **Tools** > **Preferences**. At the **Workspace Preferences** level, select **Extensions** and make sure that this extension is enabled:
 
-![SAP Cloud Platform Business Application Development Tools feature](bus-app-dev-tools-feature.png)
+![SAP Cloud Platform Business Application Development Tools extension](bus-app-dev-tools-extension.png)
 
 [DONE]
 [ACCORDION-END]
@@ -57,14 +59,6 @@ While still in the **Preferences** perspective, select the **Cloud Foundry** set
 
 ![CF preferences](cf-preferences.png)
 
-> You need a builder to facilitate the build and deploy activities that are triggered from the CDS features in SAP Web IDE; the builder is installed in your Cloud Foundry environment.
-
-Still in the **Preferences** perspective, select the **Core Data Services** settings at the **Global Preferences** level and make sure that the **Perform CDS Build upon save** option is checked:
-
-![CDS Build preference](cds-build-preference.png)
-
-This means that the CDS facilities in SAP Web IDE will do the right things at the right time for you automatically.
-
 [DONE]
 [ACCORDION-END]
 
@@ -74,13 +68,13 @@ Before proceeding, it's worth checking that you have enough quota available for 
 
 ![Subaccount overview](subaccount-overview.png)
 
-Select the **Spaces** menu item on the left to see the space(s) within the Cloud Foundry organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something like this:
+Select the **Spaces** menu item on the left to see the space(s) within the Cloud Foundry organization that's associated with it. If you've just started with a new Cloud Foundry trial on SAP Cloud Platform, you should see something similar to this:
 
 ![CF space quota details](cf-space-quota-details.png)
 
 In this example, there is 1GB memory free, which is more than enough for the OData service app that will be generated and deployed.
 
-[VALIDATE_4]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the SAP Web IDE console)]
@@ -98,13 +92,13 @@ Notice there's also a **Run Console** option too -- you'll be switched to that a
 
 [ACCORDION-BEGIN [Step 6: ](Start a new project)]
 
-Use the project wizard to start a new project, using menu path **File** > **New** > **Project from Template**. In the **Template Selection** step, find and choose the _SAP Cloud Business Application_ template -- you may have to choose _All categories_ in the **Category** filter.
+Use the project wizard to start a new project, using menu path **File** > **New** > **Project from Template**. In the **Template Selection** step, find and choose the _SAP Cloud Business Application_ template -- you may have to choose _Cloud Foundry_ in the **Environment** filter and _All categories_ in the **Category** filter.
 
 ![SAP Cloud Platform Business Application template](bus-app-template.png)
 
 In the **Basic Information** step, enter **`Products`** for the project name.
 
-In the **Project Details** step, select **`Java`** for the Service, **`my.app`** for the Java Package, and **`SAP HANA Database`** for the Database.
+In the **Project Details** step, ensure **`Java`** is selected for the Service, specify **`my.app`** for the Java Package, and ensure **`SAP HANA Database`** is selected for the Database.
 
 When you finish the template wizard, you should have a project in your workspace that looks something like this:
 
@@ -152,7 +146,7 @@ entity Products {
 }
 ```
 
-> You can either copy-paste the definition from here, or type it into the editor directly. In the latter case, you will see useful CDS specific autocomplete and syntax checking features provided by the SAP Cloud Platform Business Application Development Tools feature you enabled earlier.
+> You can either copy-paste the definition from here, or type it into the editor directly. In the latter case, you will see useful CDS specific autocomplete and syntax checking features provided by the SAP Cloud Platform Business Application Development Tools extension you enabled earlier.
 >&nbsp;
 > ![CDS autocomplete and syntax checking](cds-autocomplete-and-syntax-checking.png)
 
@@ -165,7 +159,7 @@ Remember - at this stage you should *not* save the file.
 
 In a similar way to how you defined the data model, you should now define the service.
 
-From within the `srv` folder, open the **`my-service.cds`** file, and you'll see some default content, including some comment lines. Replace the entire content with this:
+From within the `srv` folder, open the **`cat-service.cds`** file, and you'll see some default content, including some comment lines. Replace the entire content with this:
 
 ```
 using my.app from '../db/data-model';
@@ -177,9 +171,7 @@ service CatalogService {
 
 The first line creates a reference to the information in the data model you defined earlier, and the service, which will be an OData service called `CatalogService`, has a single entity type `Products` which is based upon the `Products` entity definition in that data model.
 
-At this point you should have two files open, **`data-model.cds`** and **`my-service.cds`**, both with unsaved changes. It's now time to save both of them at the same time - use menu path **File** > **Save All** to do this.
-
-> Because of the **Perform CDS Build upon save** preference you checked earlier, a build of the project is triggered automatically. And as the changes to both these files reference each other, it makes more sense to save them at the same time - otherwise you'd encounter some build errors due to missing references.
+At this point you should have two files open, **`data-model.cds`** and **`cat-service.cds`**, both with unsaved changes. It's now time to save both of them at the same time - use menu path **File** > **Save All** to do this.
 
 [DONE]
 [ACCORDION-END]
@@ -190,7 +182,7 @@ It's worth spending a bit of time looking at the build results in the Console. I
 
 ![Generated files](generated-files.png)
 
-Indeed, if you open the `CatalogService.xml` file (in the `srv/src/resources/edmx/` folder), you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. It reflects your new service definition, and looks like this:
+Indeed, if you open the `CatalogService.xml` file (in the `srv/src/main/resources/edmx/` folder), you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. It reflects your new service definition, and looks like this:
 
 ![CatalogService metadata](catalogservice-metadata.png)
 
@@ -209,19 +201,6 @@ Do this by using the context menu on the `db` folder and choosing **Build** > **
 ![choosing context menu path Build > Build](build-build.png)
 
 This will cause all sorts of informational messages to be written to the Console; keep an eye on them to get a feel for what's going on. Towards the end of the messages you'll notice a deployment taking place.
-
-> If the build is unsuccessful, check the console log for errors. Errors similar to this one: `Warning: Could not find a configured library that contains the "com.sap.hana.di.afllangprocedure" build plugin in a version compatible to version 2.0.30.0 at "src/.hdiconfig"` can be addressed as follows:
-
-> 1. Ensure all files in the project are shown, with menu path **View** > **Show Hidden Files**.
-
-> 1. Expand the folder `db/src/` to find the file `.hdiconfig`.
-![finding the .hdiconfig file](hdiconfig.png)
-
-> 1. Open the file and check the value of the `plugin_version` property at the top of the file. It needs to be `2.0.2.0`.
-
-> 1. Change the value to `2.0.2.0` if necessary, being careful to maintain the structure and integrity of the rest of the file (basically, just change the value inside the double quotes).
-like
-> 1. **Save** the file, and re-try the build.
 
 You may wish to check the results of this activity in the Cloud Foundry environment from the SAP Cloud Platform cockpit. Navigate there to your space (see earlier in this tutorial) and request a list of the service instances from the menu. You should see your database instance listed, something like this:
 
@@ -257,3 +236,4 @@ Congratulations! You have your own SAP HANA backed OData service up and running!
 
 [DONE]
 [ACCORDION-END]
+

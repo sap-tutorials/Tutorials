@@ -28,6 +28,7 @@ This tutorial focuses on creating an OAuth communication system. To create such 
 Navigate to **Communication Systems** tile to start the application.
 
 ![Open communication system application](s4_communicationSystems_tile.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -35,6 +36,7 @@ Navigate to **Communication Systems** tile to start the application.
 Create a new communication system by clicking **New**.
 
 ![Create communication system](s4_communicationSystem_newButton.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -42,6 +44,7 @@ Create a new communication system by clicking **New**.
 By adding a system ID, system name and clicking **Create**, you are able to register a new communication system.
 
 ![Add system ID and system name](s4_communicationSystem_createPopUp.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -49,6 +52,7 @@ By adding a system ID, system name and clicking **Create**, you are able to regi
 Switch to your SAP Cloud Platform cockpit, go to **Services** and select **SAP Web IDE**. Copy the link address of **Go to Service**, paste it to some text editor and remove `https://` from that SAP Web IDE's URL. This will be needed in the creation process of the communication system.
 
 ![Get SAP Web IDE URL](sapcp_WebIDE_getServiceLink.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -63,6 +67,7 @@ Switch back to the communication system maintenance in SAP S/4HANA Cloud system.
 Click **`+`** to add a user for inbound communication. Inbound communication means that the here defined system is used from a communication partner to call from external into the S/4HANA system. Doing this, the user that will be added next has to be used to get authorized.
 
 ![Add inbound communication user to system](s4_communicationSystem_addInboundUserButton.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -70,6 +75,7 @@ Click **`+`** to add a user for inbound communication. Inbound communication mea
 Click **New User** to create one.
 
 ![Create communication user](s4_addUserPopUp_newButton.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -77,6 +83,7 @@ Click **New User** to create one.
 Enter a **user name** and **description** for your user. Give your user a password and click **Create**.
 
 ![Add user data and password](s4_userCreate.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -84,6 +91,7 @@ Enter a **user name** and **description** for your user. Give your user a passwo
 The new user will be taken as inbound communication user by clicking **OK**.
 
 ![Confirm user to add](s4_addUserPopUp_okButton.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -91,6 +99,7 @@ The new user will be taken as inbound communication user by clicking **OK**.
 Switch to your SAP Cloud Platform subaccount. Open trust settings, copy all data from the Signing Certificate field ( in windows: click inside and press `CTRL+a`) and paste it to some text editor.
 
 ![Get SAP Cloud Platform subaccount's signing certificate](sapcp_getSigningCertificate.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -118,5 +127,6 @@ With this step, you've uploaded your certificate to your communication system. N
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Test yourself)]
+
 [VALIDATE_1]
 [ACCORDION-END]

@@ -5,20 +5,18 @@ auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, software-product-function>sap-cloud-platform-mobile-services ]
 time: 5
-author_name: Jitendra Kansal
-author_profile: https://github.com/jitendrakansal
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites  
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
- - **SAP Cloud Platform SDK for iOS:** [Download](https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-ios-14485.html) version 3.0 SP01 PL02
-
-## Next Steps
- - [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+- Completed the previous tutorial(s) in this group.
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Download Version 5.0 or higher from [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)
 
 ## Details
 ### You will learn  
-  - In this small tutorial, you will learn to add the SAP Cloud Platform SDK for iOS framework files to your project, and set the correct references.
+  - Add the SAP Cloud Platform SDK for iOS framework files to your project, and set the correct references
 
 ---
 

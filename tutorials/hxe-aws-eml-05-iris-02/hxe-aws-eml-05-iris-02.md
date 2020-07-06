@@ -1,6 +1,8 @@
 ---
 title: Upload the Iris dataset in Amazon S3
 description: Tryout different methods to upload your dataset to an Amazon S3 bucket
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: topic>machine-learning
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
@@ -154,15 +156,24 @@ import boto3
 # Create an S3 client
 s3cli = boto3.client('s3')
 
-aws_account=boto3.client('sts').get_caller_identity().get('Account')
+aws_account = boto3.client('sts').get_caller_identity().get('Account')
+current_region = boto3.session.Session().region_name
 
-bucket_name='sagemaker-{}-boto'.format(aws_account)
+# Print out the bucket list
+bucket_name='sagemaker-{}-{}'.format(current_region, aws_account)
+print("Default Bucket name: %s" % bucket_name)
 
 # Create an S3 bucket
-bucket=s3cli.create_bucket(Bucket=bucket_name)
+bucket=s3cli.create_bucket(Bucket=bucket_name,  CreateBucketConfiguration={
+        'LocationConstraint': current_region
+    } )
+
+
+
 
 # upload files to the s3 bucket
-s3cli.upload_file('~/data/iris_training.csv', bucket_name, 'data/iris_training.csv')
+s3cli.upload_file('./iris_training_estimation.csv', bucket_name, 'data/iris_training_estimation.csv')
+s3cli.upload_file('./iris_training_validation.csv', bucket_name, 'data/iris_training_validation.csv')
 
 # Call S3 to list current buckets
 response = s3cli.list_objects(Bucket=bucket_name)

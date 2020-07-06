@@ -3,8 +3,10 @@ auto_validation: true
 title: Create a Developer User in SAP Cloud Platform ABAP Environment
 description: Create a developer user with the developer role in SAP Cloud Platform ABAP Environment.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development,  products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development,  products>sap-cloud-platform, tutorial>license ]
 time: 10
+author_name: Niloofar Flothkoetter
+author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ## Prerequisites  
@@ -54,7 +56,34 @@ To be connected to your system in ADT, expose an ABAP service and consume this s
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Navigate to Maintain Employees application)]
-Navigate to **Maintain Employees** application.
+Navigate to **Maintain Employees** application (if you are an admin and want to use your existing business user you can skip this step).
+
+![Maintain Employees](Picture2.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Define Role for Admin)]
+If you are an admin and want to use your existing business user you need to do this step.
+
+1. Navigate to **Maintain Roles**.
+
+   ![Open Eclipse](Picture17.png)
+
+2. Navigate to **ABAP Development** and copy the **System URL**.
+
+   ![System URL](Picture18.png)
+
+3. Copy this URL in a browser and change the URL like this:
+
+   Add `-web` after `.abap` and `/ui` at the end of URL.
+   `https://<your-system>.abap-web.eu10.hana.ondemand.com/ui`
+
+   ![Change URL](Picture20.png)
+
+4. Login with admin user and password in SAP Fiori Launchpad.
+
+   ![Login to SAP Fiori Launchpad](Picture19.png)
 
 ![Maintain Employees](Picture2.png)
 
@@ -62,7 +91,7 @@ Navigate to **Maintain Employees** application.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a new employee)]
-Create a new employee by clicking **New**.
+Create a new employee by clicking **New** (If you are an admin and want to use your existing business user you can skip this step).
 
 ![Create a new employee](Picture3.png)
 
@@ -70,7 +99,8 @@ Create a new employee by clicking **New**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Enter user data)]
-  1. Enter user data and a valid Email address.
+If you are an admin and want to use your existing business user you can skip this step.
+  1. Enter user data and a valid Email address .
       - Employee ID: `DEVELOPER_XXX`
       - Last Name: `DEVELOPER_XXX`
       - E-Mail: `developer_xxx@example.com`
@@ -83,6 +113,7 @@ Create a new employee by clicking **New**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create business user)]
+If you are an admin and want to use your existing business user, you can skip this step.
   1. Select the newly created entry in the employee list.
 
   2. Press **Create Business User**.

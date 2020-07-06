@@ -3,9 +3,17 @@ title: Display Database Content and Run SQL Queries
 description: Use Data Preview to display the content of tables and SQL Console to perform ad-hoc SQL queries
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
+tags: [  tutorial>beginner, topic>abap-development ]
 time: 15
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
+
+## Prerequisites
+- You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+- You have generated the data for the relevant database table by running the transaction `SEPM_DG_OIA_NEW` (or program  `RS_EPM_DGC_HANA_NEW` ).
+
+
 ## Details
 ### You will learn  
 - How to display the content of tables and views using Data Preview
@@ -52,7 +60,7 @@ First click **Deselect All**. Only select the fields `GROSS_AMOUNT` and `CURRENC
 
 The Data Preview is refreshed accordingly.
 
-![data preview](abap-02-4b.png)
+![step4-data preview](step4-data-preview.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -70,11 +78,11 @@ Press **Add Filter** and choose `CURRENCY_CODE`.
 
 Enter `USD` in the text field to filter the items that are in US dollars and press the **Enter** key.
 
-![data filter](abap-02-6a.png)
+![step6-filter-usd](step6-filter-usd.PNG)
 
 The Data Preview is refreshed accordingly.
 
-![filtered result](abap-02-6b.png)
+![step6b-result](step6b-result.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -92,7 +100,7 @@ Click the **SQL Console** button to open the SQL Console.
 
 The SQL Console shows the `SELECT` statement which was used to retrieve the data for the Data Preview. In the following steps you will adjust the `SELECT` statement to read the payment status of the order and the company name from the buyer.
 
-![initial sql select statement](abap-02-8.png)
+![step7-curr-code-usd](step7-curr-code-usd.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -121,7 +129,7 @@ Modify the WHERE clause to match the following:
 ```sql
 SNWD_SO_INV_ITEM~CURRENCY_CODE = 'USD'
 ```
-![where clause](abap-02-10.png)
+![where clause](step10-where-clause.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -148,7 +156,7 @@ Click **Run** to execute the current query or press **F8**.
 
 Check that the output on the right hand side contains the payment status.
 
-![results](abap-02-13.png)
+![results](step13-payment-status-label.png)
 
 [DONE]
 [ACCORDION-END]
@@ -191,8 +199,6 @@ Add an `ORDER BY` clause to sort the result by the company name of the buyer.
 ORDER BY SNWD_BPA~company_name
 ```
 
-![order by](abap-02-16.png)
-
 [DONE]
 [ACCORDION-END]
 
@@ -207,17 +213,14 @@ Click **Run** to execute the current query or press `F8`.
 
 [ACCORDION-BEGIN [Step 18: ](Review updated results)]
 
-Check that the output on the right hand side contains the company name. You will reuse this `SELECT` statement later for data retrieval in an ABAP class. So just leave the SQL Console open.
+Check that the output contains the company name. You will reuse this `SELECT` statement later for data retrieval in an ABAP class. So just leave the SQL Console open.
 
-![run button](abap-02-18.png)
+![step18-run-button](step18-run-button.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Test yourself)]
-
-
-
 
 [VALIDATE_1]
 [ACCORDION-END]

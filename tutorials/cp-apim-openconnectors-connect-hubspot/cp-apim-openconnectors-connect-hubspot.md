@@ -8,7 +8,7 @@ primary_tag: products>sap-api-management
 ---
 
 ## Prerequisites
-- You should have your test or sandbox tenant in `HubSpot` or any other third-party application.
+- You should have your test or sandbox tenant in `HubSpot(CRM)` or any other third-party application.
 
 ## Details
 ### You will learn
@@ -17,14 +17,14 @@ primary_tag: products>sap-api-management
 
 [ACCORDION-BEGIN [Step 1: ](Get integration key to access HubSpot)]
 
-1. Log on to your `HubSpot` tenant.
+1. Log on to your `HubSpot` [tenant](https://www.hubspot.com/) by providing your login credentials.
     - Click **Setting** and then click **Integrations**.
 
     ![Navigate Settings](01-settings.png)
 
-2. Click the **Your integrations** tab.
+2. Expand the **Integrations** from menu item.
 
-3. Select **API key** and then click **Show Key**.
+3. Select **API key** menu item and then click **Show**.
 
     >You will get the API Key that can be used to connect securely from SAP Cloud Platform Open Connectors.
 
@@ -34,20 +34,22 @@ primary_tag: products>sap-api-management
 
     ![Copy API Key](03-copy-api-key.png)
 
+    >If you have not created API Key already click on Create to create one that can be used to connect securely from SAP Cloud Platform Open Connectors
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Connect to third-party application)]
 
-1. Log on to your [SAP Cloud Platform trial](https://account.hanatrial.ondemand.com/).
+1. Enter your [SAP Cloud Platform trial](https://account.hanatrial.ondemand.com/).
 
-    - Navigate to the **Neo** environment.
+    - Navigate to the **Cloud Foundry** environment by clicking on **Enter Your Trial Account** and click on **trial**.
 
-    ![Logon CP Trial](04-SAP-CP-trial.png)
+    ![Logon CP Trial](00-Login-trial-account.png)
 
-2. From the **Services** tab, search and select **Open Connectors** tile.
+2. From the **Subscriptions** tab, search and select **Open Connectors** tile.
 
-3. Click **Go to Service**.
+3. Click **Go to Application**.
 
     ![OCN Service Enable](05-OCN-Service-enable.png)
 

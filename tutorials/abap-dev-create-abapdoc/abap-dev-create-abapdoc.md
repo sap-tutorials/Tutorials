@@ -1,19 +1,28 @@
 ---
-title: Create ABAPDoc Comments in Your Class
-description: Learn how to maintain ABAPDoc documentation for your class
+title: Create ABAPDoc Comments in Your Class (On-Premise)
+description: Learn how to maintain ABAPDoc documentation for your class so your comments appear in the Outline view.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development  ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 5
 ---
+
+## Prerequisites  
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+ - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
 
 ## Details
 ### You will learn  
 - How to make your program more readable by learning how to maintain `ABAPDoc` comments.
 - How to synchronize the documentation and to display it, both in the ABAP Development Tools (ADT) and in SAP GUI.
 
+ABAPDoc comments are used to document your code. This makes it more readable. If other developers use one of your development objects, they can find out more about it by selecting the object name in the code and choosing **Element Info ( `F2` )**
+All ABAPDoc comments begin with **`"!`**.
+
+Always replace `XXX` or `001` with your initials or group number.
+
 ### Time to Complete
-**5 Min**
+**10 Min**
 
 ---
 
@@ -26,7 +35,7 @@ First, open your ABAP class.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add an ABAPDoc comment)]
-To improve readability, add an ABAPDoc comment to the class immediately before the method definition, for example:
+Immediately before the method definition, add an ABAPDoc comment to the class:
 **`"! Method reads invoice items from database`** .
 
 **NOTE**: You must insert the ABAPDoc comment **immediately** before the declaration; otherwise you will get a warning from ADT.
@@ -40,7 +49,7 @@ ABAPDoc comments can be used to document APIs and are displayed in the Element I
 
 
 [ACCORDION-BEGIN [Step 3: ](Add parameters to ABAPDoc)]
-You can also use ABAPDoc to document method parameters with a Quick Assist. Place the cursor inside of the ABAPDoc comment. Then choose `**Ctrl+1**` to open the Quick Assist menu and double-click on **Add missing parameters to documentation**:
+You can also use ABAPDoc to document method parameters using **Quick Assist**. Place the cursor inside of the ABAPDoc comment. Then open the Quick Assist menu using `**Ctrl+1**` and double-click on **Add missing parameters to documentation**.
 
 ![Image depicting step3-add-parameters](step3-add-parameters.png)
 
@@ -171,13 +180,16 @@ ENDCLASS.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-
-Create an ABAPDoc comment for the parameter `PLANETYPE`, including the explanatory text **`Type of plane`**.
+Create an ABAPDoc comment for the parameter `PLANETYPE`. The explanatory text should read **`Type of plane`**.
 
 Enter the comment in the box below and choose **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+### More Information
+- SAP Help Portal: [Editing ABAP Doc Comments](https://help.sap.com/viewer/c238d694b825421f940829321ffa326a/7.52.2/en-US/a7b235922f6944bbaf3b36949e500b12.html)
+- SAP Keyword Documentation: [ABAPDoc](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abendoccomment.htm)
 
 
 ---

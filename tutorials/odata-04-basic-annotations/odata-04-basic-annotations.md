@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Learn Annotation Basics for OData and Fiori
 description: Learn about annotations for OData and how they can power an SAP Fiori app.
 auto_validation: true
@@ -70,7 +72,7 @@ Here, `XYZ` represents your trial subaccount name, such as `p999999trial`.
 
 [ACCORDION-BEGIN [Step 3: ](Initiate a new project from template)]
 
-Once you start the SAP Web IDE, use menu path **File** > **New** > **Project from Template** to start the template wizard. In the **Template Selection** step, choose the category **SAP Fiori Elements**, select the **List Report Application** template and proceed with **Next**.
+Once you start the SAP Web IDE, use menu path **File** > **New** > **Project from Template** to start the template wizard. In the **Template Selection** step, choose the environment **Neo**, category **SAP Fiori Elements**, select the **List Report Application** template and proceed with **Next**.
 
 ![choosing the List Report Application](list-report-application-template.png)
 
@@ -254,9 +256,9 @@ Rerun or refresh the app and you should see the same display as before, but with
 
 [ACCORDION-BEGIN [Step 13: ](Add header information annotations)]
 
-The final annotation you will add is one that will adorn the app display with appropriate header information. So far the app is displaying a list of names and addresses, but it's not clear what type of business entities they are.
+The final annotations you will add are ones that will adorn the app display with appropriate header information.
 
-In a similar way to the previous two steps, add a `UI.HeaderInfo` annotation by using the plus symbol at the `Local Annotations` level again. You'll see that you need to specify three different values, so complete them as shown here:
+So far the app is displaying a list of names and addresses, but it's not clear what type of business entities they are. In a similar way to the previous two steps, add a `UI.HeaderInfo` annotation by using the plus symbol at the `Local Annotations` level again. You'll see that you need to specify two different values, so complete them as shown here:
 
 ![values for the UI.HeaderInfo annotation](headerinfo.png)
 
@@ -264,13 +266,32 @@ The values are:
 
 - the singular form of the entity type ("Supplier")
 - the plural form of the entity type ("Suppliers")
-- the property that is to be displayed in the Title section of the page that the app navigates to when an individual item is selected
 
-Save the annotations and rerun or refresh the app again. Note that now, there is a header at the top of the list:
+Save the annotations file.
+
+Note that now, there is a header at the top of the list:
 
 ![the Suppliers header](suppliers.png)
 
-Also, when an individual item from the list is selected, the app navigates to the display of the individual object, and the value of the supplier's `Name` property is displayed as that object page's title:
+You can add one more annotation, but this time, get a sense for what annotations really feel like underneath, in their XML form. Switch from the **Annotation Modeler** view to the **Code Editor** view of the same `annotation0.xml` file, catch your breath as you take in the nested XML structures, and then get ready to add another `PropertyValue` section in the annotations for the `Metadata.Supplier` target.
+
+First, take a look at where your new annotation (highlighted in this screenshot) is about to go:
+
+![the new annotation, in situ in the XML file](annotation-xml.png)
+
+Now copy this new annotation stanza and paste it into the right spot, as shown above, i.e. "next to" the two other `PropertyValue`s for `TypeName` and `TypeNamePlural`:
+
+```xml
+<PropertyValue Property="Title">
+	<Record Type="UI.DataField">
+		<PropertyValue Property="Value" Path="Name" />
+	</Record>
+</PropertyValue>
+```
+
+Save the annotation file again and rerun or refresh the app once more.
+
+Now, when an individual item from the list is selected, the app navigates to the display of the individual object, and the value of the supplier's `Name` property is displayed as that object page's title:
 
 ![the supplier name as title](supplier-name-as-title.png)
 

@@ -9,74 +9,87 @@ time: 10
 
 ## Details
 ### You will learn  
-In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/s4hana-cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
+In this tutorial, you will go through the steps required to install the [SDK](https://developers.sap.com/topics/cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
 
-For a complete overview visit the [SAP Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
+For a complete overview, visit the [SAP Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Prepare the Infrastructure)]
+[ACCORDION-BEGIN [Step 1: ](Prepare infrastructure)]
 
-### On Windows (Windows 7+ / Windows Server 2003+)
+To develop with the SAP Cloud SDK for Java you will need to have two things installed:
 
-**Install Chocolatey (a package manager for Windows)**
+- Java 8 or 11
+- Maven 3
 
-```
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-```
+If you have the required software installed already you can skip this step. You can check your the versions of your installations via the commands listed at the end of this step.
 
-**Install Java Development Kit; if not yet available, install a specific JDK (e.g. JDK 8)**
+> Note: Java 11 is only available on SAP Cloud Platform: Cloud Foundry
 
-```
-choco install jdk8
-```
+[OPTION BEGIN [On Windows]]
 
-**Install Maven**
+For Windows 7+ or Windows Server 2003+ adhere to the following steps:
 
-```
-choco install maven
-```
+1. Install `Chocolatey`. `Chocolatey` is a package manager for Windows which will be useful for installing necessary components. Install it by opening a console and issuing the following command:
 
-### On Mac
+    ```shell
+    @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+    ```
 
-**Install `Homebrew` (Mac package manager to help with the remaining installation)**
+2. Install the Java Development Kit:
 
-```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+    ```shell
+    choco install adoptopenjdk8
+    ```
 
-**2. Install Java Development Kit, if it is not yet available**
+    > In case you want to develop with Java 11 please install [SapMachine](https://sap.github.io/SapMachine/).
 
-```
-brew update
-brew tap AdoptOpenJDK/openjdk
-brew cask install java
-```
+3. Install Maven:
 
-_Tip: Install a specific JDK if you like (e.g. JDK 8)_
+    ```shell
+    choco install maven
+    ```
 
-```
-brew cask install caskroom/versions/java8
-```
+[OPTION END]
 
-**Install Maven**
 
-```
-brew update
-brew install maven
-```
-To validate that everything is installed correctly, you can use command `javac -version` and `mvn -version`, the output should look similar to the following (you may have the newer version of the software, thought):
+[OPTION BEGIN [On Mac]]
+
+For Mac OS adhere to the following steps:
+
+1. Install `Homebrew`. `Homebrew` is a package manager for Mac which will be useful for installing necessary components. Install it by opening a terminal and issuing the following command:
+
+    ```bash
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    ```
+
+2. Install Java Development Kit 8:
+
+    ```bash
+    brew update
+    brew tap AdoptOpenJDK/openjdk
+    brew cask install adoptopenjdk8
+    ```
+
+    > In case you want to develop with Java 11 please install [SapMachine](https://sap.github.io/SapMachine/).
+
+3. Install Maven:
+
+    ```bash
+    brew update
+    brew install maven
+    ```
+
+[OPTION END]
+
+
+To validate that everything is installed correctly you can use the following commands:
 
 ```bash
 javac -version
-```
-
-```bash
 mvn -version
 ```
-
-Check that the environment variable `JAVA_HOME` points to the path of your JDK installation, e.g. `C:\Program Files\path\to\java\jdk1.8.0_72`.
 
 [DONE]
 
@@ -92,7 +105,7 @@ We recommend using [`Intellij IDEA`](https://www.jetbrains.com/idea/#chooseYourE
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Troubleshooting with Corporate Proxies)]
+[ACCORDION-BEGIN [Step 3: ](Troubleshoot with corporate proxies)]
 
 Some of the steps in the upcoming tutorial blogs will fail if you sit behind a corporate proxy. If you cannot escape the proxy, you need to tell Maven where your proxy is located.
 To do this, you need to cd to your `~/.m2 directory` (e.g. on Windows: `C:/Users/<username>/.m2"`") and create a file called `settings.xml`. Then you paste the following content:

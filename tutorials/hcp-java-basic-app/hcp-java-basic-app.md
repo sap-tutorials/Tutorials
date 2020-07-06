@@ -1,6 +1,6 @@
 ---
-title: Developing and deploying a basic Java application on SAP Cloud Platform
-description: Develop and deploy your first Java application using the SAP Cloud Platform Tools for Java
+title: Develop a Basic Java App on SAP Cloud Platform
+description: Develop and deploy your first Java application using the SAP Cloud Platform Tools for Java.
 primary_tag: topic>java
 tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform ]
 time: 15
@@ -10,10 +10,16 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to create a Dynamic Web project, a servlet to respond to a browser request and after running it in your local development environment, deploy it to SAP Cloud Platform
+  - How to create a Dynamic Web project, a servlet to respond to a browser request
+  - How to run the project in your local development environment
+  - How to deploy the project to SAP Cloud Platform
+
+> ### DEPRECATED
+>This tutorial, which deals with writing Java in the Neo environment of SAP Cloud Platform, is deprecated.
+
+>If you are interested in building Java applications using the SAP Cloud Platform's Cloud Foundry Environment, please see [Build a Business Application Using CAP for Java](mission.cap-java-app).
 
 ---
-
 
 [ACCORDION-BEGIN [Step 1: ](Open your Eclipse IDE)]
 
@@ -21,7 +27,7 @@ The first step in building your application is to create a new Dynamic Web Proje
 
 ![open other perspective](jav100-2-open_other_perspective.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Choose Java EE (Default))]
@@ -34,7 +40,7 @@ The J2EE perspective is now open.
 
 ![J2EE perspective is open](jav100-2-java_ee_perspective_open.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open Dynamic Web Project )]
@@ -43,7 +49,7 @@ In the Eclipse main menu choose **File > New > Dynamic Web Project** to open the
 
 ![open wizard](jav100-2-new_dynamic_web_project.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Set project name)]
@@ -56,7 +62,7 @@ The `helloworld` project is now ready for your code.
 
 ![hello world project](jav100-2-helloworld_project_available.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create new servlet)]
@@ -65,7 +71,7 @@ In Java EE, web applications are implemented as `Servlets`. On the newly created
 
 ![open servlet wizard](jav100-2-new_servlet.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Set class name)]
@@ -74,7 +80,7 @@ In the Create Servlet wizard enter `helloworld` as Java package and `HelloWorldS
 
 ![create servlet wizard](jav100-2-create_servlet_wizard_1.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Set URL mapping)]
@@ -83,7 +89,7 @@ You will want this Servlet to be accessible via the URL `<servername>/helloworld
 
 ![create servlet wizard](jav100-2-create_servlet_wizard_2.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Change URL pattern)]
@@ -92,7 +98,7 @@ In the **Pattern** field, replace the current value with just `/`. Confirm with 
 
 ![URL mapping](jav100-2-url_mapping.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Generate servlet)]
@@ -101,7 +107,7 @@ Click **Finish** to generate the servlet.
 
 ![finish servlet wizard](jav100-2-create_servlet_wizard_3.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Servlet opening)]
@@ -110,7 +116,7 @@ The Java Editor will open the corresponding `HelloWorldServlet` class in the edi
 
 ![servlet in editor](jav100-2-helloworld_servlet_open.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Write hello world code)]
@@ -118,7 +124,7 @@ The Java Editor will open the corresponding `HelloWorldServlet` class in the edi
 Next, you will edit the Servlet to output the classical "Hello World". For this you will modify the `doGet()` method and add the following code and save your changes.
 
 
-```java
+```Java
 /**
  * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
  */
@@ -132,7 +138,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 The application is now ready to run.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run on server)]
@@ -144,7 +150,7 @@ Navigate to your `HelloWorldServlet.java` via the **`helloworld` project node > 
 ![run on server](jav100-2-run_on_server.png)
 
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Manually define server)]
@@ -153,7 +159,7 @@ Make sure that **Manually define a new server** is selected and choose **SAP > J
 
 ![Create local server](jav100-2-create_local_server.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](View running server)]
@@ -162,7 +168,7 @@ A local server will start with your `helloworld` application deployed. After the
 
 ![App running](jav100-2-helloworld_local.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Run on the SAP Cloud Platform)]
@@ -171,7 +177,7 @@ To run your application on the SAP Cloud Platform you will choose a different se
 
 ![run on server](jav100-2-run_on_server.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Select SAP Cloud Platform as server type)]
@@ -182,7 +188,7 @@ As before, make sure that **Manually define a new server** is selected. This tim
 
 > Note: The used Landscape host `hanatrial.ondemand.com` is only valid if you are using a free Developer Account. Please change the landscape host if you want to use a productive account. The respective landscape hosts can be found in the [official documentation](https://help.hana.ondemand.com/help/frameset.htm?e4986153bb571014a2ddc2fdd682ee90.html).
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Specify the Application name)]
@@ -197,7 +203,7 @@ Username       | Your SAP Cloud Platform account name, for example `p1234567890`
 
 ![app name](jav100-2-cloud_server_data.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](View running server)]
@@ -208,7 +214,7 @@ A Cloud server will start that has your `helloworld` application deployed. After
 
 Congratulations: You have your first application running on the SAP Cloud Platform!
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -223,4 +229,3 @@ Related Information
 - (Official documentation) [Deploying Locally from Eclipse IDE](https://help.hana.ondemand.com/help/frameset.htm?0f16c9db4a9c407abb1b4987c0afe714.html)
 - (Official documentation) [Deploying on the Cloud from Eclipse IDE](https://help.hana.ondemand.com/help/frameset.htm?60ab35d9edde43a1b38cf48174a3dca2.html)
 - (Official documentation) [SDK Samples](https://help.hana.ondemand.com/help/frameset.htm?937ce0d172bb101490cf767db0e91070.html)
-

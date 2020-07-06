@@ -1,6 +1,8 @@
 ---
 title: Deploy and Run the Iris Docker image in Amazon Fargate
 description: After deploying the Iris container to Amazon Elastic Registry (ECR), you will create a Fargate cluster and service in Amazon Elastic Container Service (ECS) to test your model
+author_name: Josh Bentley
+author_profile: https://github.com/jarjarbentley
 primary_tag: topic>machine-learning
 auto_validation: true
 tags: [ tutorial>intermediate, topic>cloud, topic>machine-learning ]
@@ -79,8 +81,9 @@ In the first cell, paste the following code then press **SHIFT** + **ENTER** to 
 
 ```Python
 %%sh
-aws ecr create-repository --repository-name hxe-eml
+aws ecr create-repository --repository-name hxe-eml/iris
 aws ecr describe-repositories
+
 ```
 
 The above code will create a new repository named ***`hxe-eml`***. You can check that it was properly created by accessing the Amazon ECR dashboard: <https://console.aws.amazon.com/ecr/repositories>
@@ -230,12 +233,11 @@ In the next cell, paste the following code then press **SHIFT** + **ENTER** to e
 aws ecs create-cluster --cluster-name hxe-eml-cluster
 ```
 
-The above code will create a new cluster named ***`hxe-eml-cluster`***. You can check that the cluster was properly created by accessing the Amazon ECS dashboard: <https://console.aws.amazon.com/ecs/home?#/clusters/>(
-){2}> ### **Note:**
+The above code will create a new cluster named ***`hxe-eml-cluster`***. You can check that the cluster was properly created by accessing the Amazon ECS dashboard: <https://console.aws.amazon.com/ecs/home?#/clusters/>
 
 >If the cluster already exists, you can drop it before using the following command:
 >
-```
+```Python
 aws ecs delete-cluster --cluster hxe-eml-cluster
 ```
 
@@ -254,8 +256,6 @@ In the next cell, paste the following code then press **SHIFT** + **ENTER** to e
 
 ```Python
 %%sh
-aws ec2 delete-security-group --group-name hxe-eml-tf-serving
-
 aws ec2 create-security-group --group-name hxe-eml-tf-serving --description "My security group For TF Serving"
 
 aws ec2 authorize-security-group-ingress --group-name "hxe-eml-tf-serving" --ip-permissions IpProtocol=tcp,FromPort=8500,ToPort=8501,Ipv6Ranges='[{CidrIpv6=::/0}]',IpRanges='[{CidrIp=0.0.0.0/0}]'
@@ -286,14 +286,14 @@ In the next cell, paste the following code then press **SHIFT** + **ENTER** to e
 
 ```Python
 %%sh
-vpc_id=$(aws ec2 describe-security-groups --group-names "hxe-eml-ecs" | jq -r ".SecurityGroups[0].VpcId")
+vpc_id=$(aws ec2 describe-security-groups --group-names "hxe-eml-tf-serving" | jq -r ".SecurityGroups[0].VpcId")
 subnet=$(aws ec2 describe-subnets --filters Name=vpc-id,Values=$vpc_id | jq -r ".Subnets[0].SubnetId")
-security_group=$(aws ec2 describe-security-groups --group-names "hxe-eml-ecs" | jq -r ".SecurityGroups[0].GroupId")
+security_group=$(aws ec2 describe-security-groups --group-names "hxe-eml-tf-serving" | jq -r ".SecurityGroups[0].GroupId")
 
 aws ecs create-service \
     --cluster hxe-eml-cluster \
     --service-name service-hxe-eml-iris \
-    --task-definition task-hxe-eml-iris \
+    --task-definition task-hxe-eml-iris:(version number)
     --desired-count 1 \
     --launch-type FARGATE \
     --platform-version LATEST \
@@ -301,6 +301,8 @@ aws ecs create-service \
 ```
 
 You can now check that the service was properly created here: <https://console.aws.amazon.com/ecs/home?#/clusters/hxe-eml-cluster/services>
+
+![Security Group 1](_securitygroup1.png)
 
 Provide an answer to the question below then click on **Validate**.
 

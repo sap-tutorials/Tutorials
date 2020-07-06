@@ -10,10 +10,11 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
-- You have opened an ABAP service instance named `Tnn`, open in SAP Cloud Cockpit
-[Connect to the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
 - A business role has been created containing the business catalog `SAP_CORE_BC_COM`, and is assigned to your user [How to Create a Business Role from Scratch](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f65e51a7203443efb58fe535c3d13e5f.html)
 - You have opened the SAP Cloud Platform cockpit and navigated to the correct space. See [SAP Help Portal: SAP Cloud Platform Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e47748b5bb571014afedc70595804f3e.html)
+- You have opened an ABAP service instance in SAP Cloud Cockpit
+[Connect to the ABAP Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7379dbd2e1684119bc1dd28874bbbb7b.html)
+- **Tutorial**: [Create Your First ABAP Console Application](https://developers.sap.com/tutorials/abap-environment-console-application.html), steps 1-3
 
 
 ## Details
@@ -24,16 +25,6 @@ author_profile: https://github.com/julieplummer20
   The communication scenario `SAP_COM_0276` is predefined by SAP. It allow you to, for example, exchange data between an ABAP Environment instance and an on-premise S/4HANA System, or a third-party API.
   A communication arrangement specifies the metadata for a specific communication scenario, such as your host system and the authentication method. This metadata is contained in a service key.  You can then define one or more specific destinations for this arrangement.
 
-  For more information, see:
-
-  - [SAP Help Portal: Creating a Communication Arrangement...](https://help.sap.com/viewer/a96b1df8525f41f79484717368e30626/Cloud/en-US/7c1b45781c6f4d9ca23177b61805d179.html)
-
-  - [SAP Help Portal: Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html)
-
-  - [Cloud Foundry: Managing Service Keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html)
-
-For more information on SAP Cloud Platform, accounts, and environments, see [SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
-
 Throughout this tutorial, objects name include the suffix `2` or `XXX`. Replace this suffix with your group number or initials.
 
 ---
@@ -43,17 +34,17 @@ Throughout this tutorial, objects name include the suffix `2` or `XXX`. Replace 
 
     ![Image depicting step1-space](step1-space.png)
 
-2. Choose **Service Marketplace > Destination**
+2. Choose **Service Marketplace > Destination**.
 
     ![Image depicting step1b-service-marketplace](step1b-service-marketplace.png)
 
-3. Choose **Instances**, then choose **`EXTERNAL_API_XXX`**
+3. Choose **Instances > New Instance**.
 
     ![Image depicting step1c-destination-external-api](step1c-destination-new-instance.png)
 
 4. Accept the defaults and choose **Next > Next > Next.**
 
-5. On the **Confirm** screen, enter an instance name and choose **Finish**.
+5. On the **Confirm** screen, enter an instance name **`EXTERNAL_API_XXX`**, then choose **Finish**.
 
     ![Image depicting step1d-destination-instance-name](step1d-destination-instance-name.png)
 
@@ -66,7 +57,7 @@ The new instance appears in the list.
 
 [ACCORDION-BEGIN [Step 2: ](Create a new specific destination for the service instance)]
 
-1. Open your destination, **`EXTERNAL_API_XXX`***, by double-clicking it, then choose **Destinations > New Destination**:
+1. Open your destination, **`EXTERNAL_API_XXX`**, by double-clicking it, then choose **Destinations > New Destination**:
 
     ![Image depicting step2-new-destination](step2-new-destination.png)
 
@@ -89,7 +80,24 @@ Check the connection:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open the dashboard for your ABAP service instance)]
+[ACCORDION-BEGIN [Step 4: ](Create a service key)]
+
+1. Choose **Service Keys > Create Service Key**.
+
+     ![Image depicting step4e-create-service-key](step4e-create-service-key.png)
+
+2. Enter the service instance name `EXTERNAL_API_XXX`.
+
+     ![Image depicting step4f-enter-service-instance-name](step4f-enter-service-instance-name.png)
+
+3. Copy the service key to a text file, since you will need it later.
+
+     ![Image depicting step4g-copy-service-key](step4g-copy-service-key.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Open the dashboard for your ABAP service instance)]
 1. Go back to your space, `Dev` and choose **Service Instances >  `your_ABAP_service_instance`**.
 
     ![Image depicting step3a-abap-service-instance](step3a-abap-service-instance.png)
@@ -103,7 +111,7 @@ The dashboard opens.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a communication arrangement using the service key)]
+[ACCORDION-BEGIN [Step 6: ](Create a communication arrangement using the service key)]
 1. Choose **Communication Arrangements > New**.
 
     ![Image depicting step3c-create-comm-arr](step3c-create-comm-arr.png)
@@ -131,17 +139,26 @@ A communication arrangement is created, along with an identically-named communic
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add the service instance name)]
-Still in the Communication Arrangement, in the **Additional Properties** panel, enter a **Service Instance Name**, such as **`OutboundComm_for_RFCDemo_XXX`**. (To avoid confusion, make the Communication Arrangement name and the service instance name different).
+[ACCORDION-BEGIN [Step 7: ](Add the service instance name)]
+Still in the **Communication Arrangement**, in the **Additional Properties** panel, replace the default value **`EXTERNAL_API_XXX`** of the property **Service Instance Name**, with another value such as `OutboundComm_for_RFCDemo_XXX`.  (To avoid confusion, make the Communication Arrangement name and the service instance name different).
 
 ![Image depicting step6-service-instance-name](step6-service-instance-name.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
+[ACCORDION-BEGIN [Step 8: ](Test yourself)]
 
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+### More Information
+- [SAP Help Portal: Creating a Communication Arrangement...](https://help.sap.com/viewer/a96b1df8525f41f79484717368e30626/Cloud/en-US/7c1b45781c6f4d9ca23177b61805d179.html)
+
+- [SAP Help Portal: Using Services in the Cloud Foundry Environment](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f22029f0e7404448ab65f71ff5b0804d.html)
+
+- [Cloud Foundry: Managing Service Keys](https://docs.cloudfoundry.org/devguide/services/service-keys.html)
+
+For more information on SAP Cloud Platform, accounts, and environments, see [SAP Help Portal: What is SAP Cloud Platform](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/73beb06e127f4e47b849aa95344aabe1.html)
 ---

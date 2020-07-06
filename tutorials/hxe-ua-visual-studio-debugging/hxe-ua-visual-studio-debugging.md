@@ -1,5 +1,5 @@
 ---
-title: SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures
+title: SAP HANA Plugin for Microsoft Visual Studio 2017 - Debugging Procedures
 description: This tutorial describes how to debug stored procedures.
 author_name: Adrian Plata
 author_profile: https://github.com/aplata-sap
@@ -9,15 +9,15 @@ time: 15
 ---
 
 ## Prerequisites
- - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://developers.sap.com/tutorials/hxe-ua-visual-studio-tables.html)
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio 2017 - Working with Tables](https://developers.sap.com/tutorials/hxe-ua-visual-studio-tables.html)
 
 ## Next Steps
- - [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://developers.sap.com/tutorials/hxe-ua-visual-studio-word-mapping.html)
+ - [SAP HANA Plugin for Microsoft Visual Studio 2017 - Word Mapping Project](https://developers.sap.com/tutorials/hxe-ua-visual-studio-word-mapping.html)
 
 
 ## Details
 ### You will learn
-  - How to open and use the debugging features of the SAP HANA plugin for Microsoft Visual Studio
+  - How to open and use the debugging features of the SAP HANA plugin for Microsoft Visual Studio 2017.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open a Stored Procedure)]
@@ -27,6 +27,8 @@ Open the __Server Explorer__ window. Under your server, cascade from your server
 ![Select Debug Stored Procedure](select_debug.png)
 
 The Debugging mode is activated.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -44,6 +46,8 @@ Step over until you have the following debugging line selected:
 CALL system.calcmathaverage(MATH_AVERAGE => MATH_AVERAGE_SCORE);
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Mark a Breakpoint)]
@@ -53,6 +57,8 @@ To mark a line as a **Breakpoint**, click the left side of the code line. A red 
 ![Breakpoint Location](breakpoint_location.png)
 
 If you click the ![Continue Button](continue_button.png) **Continue Button** you will be taken to the most recent **Breakpoint** that you have not stepped over.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -84,6 +90,8 @@ BEGIN
 END;
 ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Local, Call Stack, and Watch Windows)]
@@ -96,6 +104,8 @@ The __Watch__ window displays any values that you have added to it. Highlight `S
 
 Once you are finished, ![Step Out](step_out.png) __Step Out__ of the procedure.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Ending the Debugging Mode)]
@@ -103,5 +113,7 @@ Once you are finished, ![Step Out](step_out.png) __Step Out__ of the procedure.
 To exit Debugging Mode, ![Step Over](step_over.png) __Step Over__ the remaining steps of the procedures.
 
 You can also click the ![Stop Debugging](stop_debugging.png) __Stop Debugging__ button.
+
+[DONE]
 
 [ACCORDION-END]

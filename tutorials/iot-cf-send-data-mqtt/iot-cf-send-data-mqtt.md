@@ -1,4 +1,6 @@
 ---
+author_name: Supriya Cherukunnathu
+author_profile: https://github.com/SupriyaCherukunnathu
 title: Send Data with MQTT
 description: Send data to the SAP Cloud Platform Internet of Things Service Cloud using MQTT. As a sample client for MQTT the Paho client is used.
 auto_validation: true
@@ -6,7 +8,6 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud, tutorial>license ]
 ---
 
-<!-- loiofa221f5ebf8d46cca04a4a875787aacb -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -231,7 +232,7 @@ You have installed OpenSSL. A description on how to install OpenSSL can be found
 
 9.  Choose the **MQTT** tab of the connection.
 
-10. Add the **Server URI** as follows: `ssl://<HOST_NAME>:8883` → `ssl://demo.eu10.cp.iot.sap:8883`
+10. Add the **Server URI** as follows: `ssl://<HOST_NAME>:8883`
 
 11. Add the **Client ID**: The Alternate ID of the device as a string: `22334455`
 

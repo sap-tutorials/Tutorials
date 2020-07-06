@@ -77,7 +77,7 @@ Nevertheless, there are quite a few pitfalls you can fall into when using the pl
 
 [ACCORDION-BEGIN [Step 3: ](Virtual Data Model: The new way to OData)]
 
-Now that we have explained the possible pitfalls of the current `aproach`, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
+Now that we have explained the possible pitfalls of the current approach, let's take a look at how the OData VDM of the SAP Cloud SDK simplifies the same task, as the SDK is able to incorporate more knowledge about the system that is being called.
 
 ```Java
 final List<BusinessPartner> businessPartners =
@@ -224,7 +224,7 @@ Replace `URL` with the URL to your SAP ERP system (host and, if necessary, port)
 
 Maven will then prompt you for your username and password that is going to be used to connect to `SAP S/4HANA`. Alternatively, you can also set these values as command parameters: `-Derp.username=USER -Derp.password=PASSWORD`
 
-If you now deploy the project and visit the page `http://localhost:8080/businesspartners` you should be seeing a list of cost centers that was retrieved from the ERP system. Note: Please login with `test` / `test`).
+If you now deploy the project and visit the page `http://localhost:8080/businesspartners` you should be seeing a list of cost centers that was retrieved from the ERP system. **Please login with `test` / `test`**.
 
 ![list of cost center from ERP](post-4-costcenters-result.png)
 

@@ -5,98 +5,173 @@ auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
 time: 20
-author_name: Jitendra Kansal
-author_profile: https://github.com/jitendrakansal
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites
 
 ## Details
 ### You will learn
- - How to generate mobile cards with the Automatic Instance Generation type
+ - How to create a Card template that shows one card instance for each record.
+ - How to work with Automatic Instance Generation Card and Query URLs.
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get familiar with real world use case)]
 
-A company wants to show the last three pay slips to your employee on a mobile device. The query for this solution would ask for the top 3 pay slips sorted by date.
+A sales manager in a company usually needs to log into her computer to see the details of a Sales Order. Since she is constantly on the move, she wants a way to see the latest 3 sales orders on her phone.
 
-The Automatic Instance card will show three cards with pay slip information. Each card would be one of the last three months (April, May, June). As soon as the result set changes (when a new pay slip is available), the cards will be updated. The new month plus the last two months would show (May, June, July).
+In this tutorial, you will see how you can quickly mobilize this use-case using SAP Mobile Cards. The Automatic Instance card will show three cards with the sales order information. Each card would have the details of one sales order.
+
+!![MobileCardsImage](img_1.gif)
+!![MobileCardsImage](img_2.gif)
 
 >For this tutorial, you will use Mobile Services sample backend to retrieve top 3 sales orders.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Automatic Instance card)]
+[ACCORDION-BEGIN [Step 2: ](Create an Automatic Instance card)]
 
 Make sure you have logged in to SAP Cloud Platform Mobile Services cockpit. Navigate to **SAP Mobile Cards** to look into Mobile Cards configuration.
 
-![SAP Cloud Platform Mobile Services - Opera](img_000.png)
+![MobileCardsImage](img_3.png)
 
-Click on the **Create a New Card** icon.
+Click the **Create Card Template** icon ![MobileCardsIcon](ico_new_card.png).
 
-![SAP Cloud Platform Mobile Services - Opera](img_001.png)
+![MobileCardsImage](img_4.png)
 
 Provide the required information:
 
 | Field | Value |
 |----|----|
-| **Name** | `AutomaticInstanceCard` |
+| **Name** | `Automatic Instance Card` |
 | **Destination** | `com.sap.edm.sampleservice.v2` |
 | **Template Source** | `Template Manager` |
 | **HTML Template** | `Sample Sales Orders Template` |
+| **Card Template** | `Automatic Instance Generation` |
 
 > If you see a pop-up, click **OK** for the confirmation.
 
-![SAP Cloud Platform Mobile Services - Opera](img_010.png)
+![MobileCardsImage](img_5.png)
 
 > **Destination** defines the root for the queries to be used for this card.
 
 >The Type **Automatic Instance Generation** will create a card instance for each result in the result set returned by the query. The query is based on the destination. This query returns a result set of three sales orders from the sample services.
 
-Click **URLs** to view the sample JSON response. The JSON response here represents one result set from the three cards the query would return. This data is used by the data mapper to render a sample card in the editor.
+Click the **URLs** tab, to view the sample JSON response. The JSON response here represents one result set out of the three that the query would return. This data is used by the data mapper to render a sample card in the editor.
 
-![SAP Cloud Platform Mobile Services - Opera](img_012.gif)
+![MobileCardsImage](img_6.gif)
+
+We store the `SalesOrderId` returned from the `SalesOrderHeader` URL in a **URL Parameter**. We then use this URL Parameter to fetch the details of the `SalesOrderItems`. The `SalesOrderItems` URL is queried 3 times, one for each `SalesOrderHeader` fetched in the first URL. The URL Parameter allows us to dynamically fetch the details.
+
+![MobileCardsImage](img_7.gif)
 
 Click **Editor** to view the HTML that builds this card. The HTML describes the layout of the card. The [Handlebars](https://handlebarsjs.com/) `{{}}` are the placeholders where the data mapper will put the actual JSON response values during runtime.
 
-![SAP Cloud Platform Mobile Services - Opera](img_014.png)
+![MobileCardsImage](img_8.png)
 
-Click **Save** to save the card and make it available for the SAP Mobile Cards application.
+Click **Save**.
+
+![MobileCardsImage](img_9.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Subscribe to the card in SAP Mobile Cards)]
+[ACCORDION-BEGIN [Step 3: ](Set card status to productive)]
 
-Click **More** in the client app | **Subscriptions**.
+By default, the status of newly created cards is **Development**. Cards can be subscribed to only when they are in a **Productive** state.
 
-![Chrome Remote Desktop](img_020.gif)
+Click **Automatic Instance Card** in the Card Templates tab.
 
-Click `AutomaticInstanceCard` under the **All** tab.
+![MobileCardsImage](img_10.png)
 
-![ Chrome Remote Desktop](img_022.png)
+Under **Actions**, click the check mark icon ![MobileCardsIcon](ico_check.png) to change the state to **Productive**.
 
-Click **Subscribe** to trigger the download of the Automatic Instance cards in your SAP Mobile Cards app.
+![MobileCardsImage](img_11.png)
 
-![ Chrome Remote Desktop](img_023.png)
+Choose **Yes** to confirm.
 
-Click **New Cards** to to see latest cards download on the device.
+![MobileCards](img_12.png)
 
-![ Chrome Remote Desktop](img_023.1.png)
+You will notice that the **State** has been changed to **Productive**.
 
-Click a card to open it.
+![MobileCardsImage](img_13.png)
 
-![ Chrome Remote Desktop](img_024.png)
+[DONE]
+[ACCORDION-END]
 
-Congratulations, you have built a query-based card that creates an instance of a card for each query result set.
+[ACCORDION-BEGIN [Step 4: ](Subscribe to the card in SAP Mobile Cards)]
 
-![ Chrome Remote Desktop](img_025.png)
+>Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
-Here you can view respective sales order items details by clicking on the flip-back icon at the bottom-right.
+[OPTION BEGIN [Android]]
 
-![Chrome Remote Desktop](img_026.png)
+In the SAP Mobile Cards Android client, tap **+** | **Subscriptions**.
+
+![MobileCardsImage](img_14.png)
+
+Tap `Automatic Instance Card` under the **All Subscriptions** tab.
+
+![MobileCardsImage](img_15.png)
+
+Tap **Subscribe** to trigger the download of the Automatic Instance cards in your SAP Mobile Cards app.
+
+![MobileCardsImage](img_16.png)
+
+Tap ![MobileCardsIcon](ico_android_back.png) 'Back' to to see latest cards downloaded on the device.
+
+![MobileCardsImage](img_17.png)
+
+> The data is dynamically generated by the sample service on SAP Cloud Platform Mobile Service server. Thus, the data inside the card on your device may be different than what you see in the screenshot.
+
+Tap a card to open it.
+
+![MobileCardsImage](img_18.png)
+
+Tap on the **flip** button ![MobileCardsIcon](ico_android_flip.png) to view the other side of the card.
+
+![MobileCardsImage](img_19.png)
+
+[OPTION END]
+
+[OPTION BEGIN [iOS]]
+
+In the SAP Mobile Cards iOS client, tap **More** | **Subscriptions**.
+
+![MobileCardsImage](img_20.png)
+
+Tap `Automatic Instance Card` under the **All** tab.
+
+![MobileCardsImage](img_21.png)
+
+Tap **Subscribe** to trigger the download of the Automatic Instance cards in your SAP Mobile Cards app.
+
+![MobileCardsImage](img_22.png)
+
+Tap **New Cards** to to see latest cards downloaded on the device.
+
+![MobileCardsImage](img_23.png)
+
+> The data is dynamically generated by the sample service on SAP Cloud Platform Mobile Service server. Thus, the data inside the card on your device may be different than what you see in the screenshot.
+
+Tap on **All Cards**.
+
+![MobileCardsImage](img_24.png)
+
+Tap a card to open it.
+
+![MobileCardsImage](img_25.png)
+
+Tap on the **flip** button ![MobileCardsIcon](ico_ios_flip.png) to view the other side of the card.
+
+![MobileCardsImage](img_26.png)
+
+
+[OPTION END]
+
+Congratulations, you have built a query-based card that creates an instance of a card for each query result set. The sales manager can now view the latest sales order on her mobile device.
 
 [DONE]
 [ACCORDION-END]

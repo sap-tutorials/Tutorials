@@ -3,148 +3,165 @@ title: Create a Sample iOS App
 description: Create and examine your first Fiori for iOS app using the SAP Cloud Platform SDK for iOS Assistant connecting against a sample service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios software-product-function>sap-cloud-platform-mobile-services ]
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, software-product-function>sap-cloud-platform-mobile-services ]
 time: 15
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 10 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 3.0 SP01
-- [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html)
-- [Enable SAP Cloud Platform Mobile Services](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
-- [Install the SAP Cloud Platform SDK for iOS](https://developers.sap.com/tutorials/fiori-ios-hcpms-install-sdk.html)
-- [Configure Mobile Services in the iOS Assistant](https://developers.sap.com/tutorials/fiori-ios-hcpms-setup.html)
+- Completed the previous tutorial(s) in this group.
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Have downloaded Version 5.0 or higher from [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)  
 
 ## Details
 ### You will learn  
-  - How to create a Fiori for iOS application
+  - How to create a Fiori for iOS app
   - What the SAP Cloud Platform SDK for iOS Assistant can generate.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Run the SAP Cloud Platform SDK for iOS Assistant)]
+[ACCORDION-BEGIN [Step 1: ](Use SAP Cloud Platform Mobile Service to create an Mobile Application configuration)]
 
-> This app will be the foundation for most of the iOS tutorials on the [Tutorial Navigator](https://developers.sap.com/tutorial-navigator.html)
+Using SAP Cloud Platform Mobile Services (Mobile Services) allows you to manage your mobile apps. It also enables you to create mobile application configurations, not the real iOS app, to be later being consumed by the SAP Cloud Platform SDK for iOS Assistant (iOS Assistant).
 
+The iOS Assistant will let you then consume that configuration and generate an Xcode project out of it, containing the data model classes and convenience data service. More in detail at a later point in the tutorial.
 
-Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the application. If no applications have been generated previously, you will see the initial screen:
+Open up your Mobile Services instance which should be running as service instance on your Cloud Foundry landscape.
 
-![SDK Assistant](fiori-ios-scpms-create-sample-app-01.png)
+Click on **Mobile Applications** to expand that navigation node.
+
+![Mobile Services](fiori-ios-scpms-create-sample-app-01.png)
+
+Click on **Native/Hybrid** to be able to create a new mobile application. Within the new screen on the right-hand side, you should see a button **New**. Click on it to start the creation flow.
+
+![Mobile Services](fiori-ios-scpms-create-sample-app-02.png)
+
+In the upcoming pop-up, fill in the fields as seen in the following table and click on **Save**:
+
+| Field        | Value           |
+| ------------- | ------------- |
+| ID      |  `com.example.tutorialapp`
+| Name      | `TutorialApp`      |
+| Description | Describe the usage of that app configuration |
+
+![Mobile Services](fiori-ios-scpms-create-sample-app-03.png)
+
+In the next window, you can select the features for you application. Some features are pre-selected for you.
+
+Select **Mobile Sample OData ESPM** and click Finish.
+
+![Feature Selection Window](fiori-ios-scpms-create-sample-app-04.png)
+
+> For most of the tutorials, you will use this cloud app configuration which is based on the **Mobile Sample OData ESPM** service. This service provides you with an OData backend containing a product, supplier and customer catalog.
+
+In the confirmation dialog that appears, click **OK**.
+
+![Mobile Services](fiori-ios-scpms-create-sample-app-05.png)
+
+The mobile app configuration is now created.
+
+![Mobile Services](fiori-ios-scpms-create-sample-app-06.png)
+
+Your work is done in Mobile Services now. The following steps will describe how to use the iOS Assistant to take that cloud app configuration to generate your first app.
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Use the SAP Cloud Platform SDK for iOS Assistant to create your first Xcode iOS project)]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new cloud application)]
+On your MacBook, open the iOS Assistant and click **Create New** to start the creation workflow.
 
-For this tutorial, you will create a new cloud application configuration in Mobile Services, which will be configured to access data of the sample service.
+![Assistant](fiori-ios-scpms-create-sample-app-07.png)
 
-Click the **Create new** button in the **First Steps** section. The first step of the workflow asks you to choose whether to create a sample app, use an existing cloud app configuration, or create a new one.
+The initial step of the workflow asks you to choose whether to create a sample app, use an existing cloud app configuration, or create a new one.
 
-![Project Properties](fiori-ios-scpms-create-sample-app-02.png)
+![Assistant](fiori-ios-scpms-create-sample-app-08.png)
 
-Click the **Create new Application** tile on the right side of the **Create a new App** step. This will allow us to create both a server-side configuration for the app, and it will generate a new Xcode project for an iOS app.
+Click the **Reuse Existing Application** tile in the middle of the **Create a new App** step. This will allow us to use the previously defined cloud app configuration.
 
-Next select your **SAP Cloud Platform Mobile Services account** and click **Next**.
-![Project Properties](fiori-ios-scpms-create-sample-app-03.png)
+The first step in the **Reuse Existing Application** workflow wants you to select the Mobile Services account you want to use. You could have multiple accounts here for different landscapes you might use.
 
-In the **Add an SAP Cloud Platform Mobile Services application** step, add the needed application details to create an application in your mobile services account.
+Select your account and click on **Next**.
 
-Enter the following details:
+![Assistant](fiori-ios-scpms-create-sample-app-09.png)
 
-| Field | Value |
-|----|----|
-| Application Name | `MyProductApp` |
-| Identifier | `com.example.product` |
-| Authentication | `OAuth2` |
+Step 2 lets you select the **Cloud Application** you want to base your Xcode iOS project on.
 
-![Project Properties](fiori-ios-scpms-create-sample-app-04.png)
+Select the `com.example.tutorialapp` and click on **Next**.
+
+![Assistant](fiori-ios-scpms-create-sample-app-10.png)
+
+If you look closely at the UI you can see a clear distinction between the **Cloud Configuration** and the **Client Configuration**. So right now you're transitioning into the definition of your Xcode project and the way the iOS Assistant generates your app.
+
+Fill in the fields as seen in the following table:
+
+| Field        | Value           |
+| ------------- | ------------- |
+| Product Name      |  `TutorialApp`
+| Organization Name      | Fill in your org name |
+| Organization Identifier | `com.sap.example` |
 
 > **Note:** The name of the cloud application does not need to match your iOS app name, and often won't; your iOS app may access multiple cloud applications. The Application Identifier, however, must be unique across all of your configured cloud applications, and typically follows a reverse-DNS format.
 
-Click **Next** to advance to the **Destinations** step.
+Choose a path where to save the project to and click **Next** to advance to the **Proxy Classes** step.
 
-[DONE]
+![Assistant](fiori-ios-scpms-create-sample-app-11.png)
+
+Here you can see what destination is going to be used to pull the Metadata of the OData Service to generate the OData Proxy Classes. If you hover over the displayed service identifier you can make changes to the way the iOS Assistant generates these classes. You won't touch this feature in most of the tutorials.
+
+![Assistant](fiori-ios-scpms-create-sample-app-12.png)
+
+Click **Next** to go to the **UI Configuration** step.
+
+The UI Configuration step will let you define what the iOS Assistant should generate on top of the Proxy Classes and convenience data service. For most tutorials, you will replace the generated UI with your own but to get an understanding of the iOS Assistant's power, make sure all the checkboxes are selected and click on **Finish**.
+
+![Assistant](fiori-ios-scpms-create-sample-app-13.png)
+
+The iOS Assistant will now connect to Mobile Services and fetches the defined configuration and the Metadata document of the sample service. With that information, it will create an Xcode project for you including the selected UI, Proxy Classes which will represent the entities in the service, as well as a convenience data service for easy backend communication.
+
+Your Xcode project should automatically open up and you can run the app.
+
+![Assistant](fiori-ios-scpms-create-sample-app-14.png)
+
+[VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add the sample service as an destination endpoint)]
+[ACCORDION-BEGIN [Step 3: ](Run the App Created by iOS Assistant on an iOS Simulator )]
 
-In the **Destinations** step, you can define the backend connection. You will select the `com.sap.edm.sampleservice.v2` destination as a backend endpoint.
+In the Xcode Tool Bar, click **Set the active scheme**.
 
-![Destinations](fiori-ios-scpms-create-sample-app-05.png)
+![Assistant](fiori-ios-scpms-create-sample-app-15.png)
 
-Click **Next** to advance to the **Features** step.
+Select a simulator of your choice.
 
-[DONE]
-[ACCORDION-END]
+![Assistant](fiori-ios-scpms-create-sample-app-16.png)
 
-[ACCORDION-BEGIN [Step 4: ](Enable features)]
+> You can run the application on your physical device too.
 
-In the **Optional Features** step, you have the option to enable **logging** and **log uploads**, enable **remote notifications**, use **Discovery Service** and whether to use **Online** or **Offline** OData.
+In the Xcode Tool Bar, Click **Run**.
 
-![Features](fiori-ios-scpms-create-sample-app-06.png)
+![Assistant](fiori-ios-scpms-create-sample-app-17.png)
 
-Make sure the checkboxes **Enable Log Upload**, **Enable Remote Notifications** and **Use Discovery Service for Application bootstrapping** are selected, and the **OData Provider** radio button is set to **Enable Online OData** and click **Next** to proceed to the **Xcode Project** step.
+Upon successful build, the simulator will be launched and the application will be started.
 
-[DONE]
-[ACCORDION-END]
+![Assistant](fiori-ios-scpms-create-sample-app-18.png)
 
-[ACCORDION-BEGIN [Step 5: ](Set up the Xcode Project)]
+Click **Start** and enter your SAP Cloud Platform credentials to login.
 
-In the **Xcode Project configuration** step you will set up your actual Xcode project for development later on.
-Enter the following details:
+![Assistant](fiori-ios-scpms-create-sample-app-19.gif)
 
-| Field | Value |
-|----|----|
-| Product Name | `MyProductApp` |
-| Organization Name | `<your company name>` |
-| Organization Identifier | `com.sap.mobile.example` |
-| Path | `<choose a local destination>` |
+Finish the setup of your application.
 
-![Project Properties](fiori-ios-scpms-create-sample-app-07.png)
+![Assistant](fiori-ios-scpms-create-sample-app-20.gif)
 
-Click **Next** to advance to the **Proxy Classes** step. Here you can see what destination is going to be used to pull the Metadata of the OData Service to generate the OData Proxy Classes.
+Explore the application created.
 
-![Project Properties](fiori-ios-scpms-create-sample-app-08.png)
+![Assistant](fiori-ios-scpms-create-sample-app-21.gif)
 
-Click **Next** to go to the **UI Configuration** step. Set the **Destination** radio button to **Master / Detail View with Onboarding for destination:** and click finish.
+> Since we used the *Mobile Sample OData ESPM* service. The assistant builds an application using the data returned by this service.
 
-![Project Properties](fiori-ios-scpms-create-sample-app-09.png)
+You have successfully built an iOS application using the iOS Assistant that seamlessly connects to SAP Cloud Platform Mobile Services.
 
 [DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Generate the Xcode project)]
-
-After you have clicked **Finish** in the previous step, the SDK Assistant now loads the OData service's metadata. This metadata describes the data model, and can be accessed via `<service URL>$metadata`. For the sample service, the metadata URL is `https://hcmps-<your_user_id>trial/hanatrial/ondemand.com/mobileservices/origin/hcpms/ESPM.svc/v2/$metadata`
-Based on this metadata, the OData proxy classes will be generated for the Xcode project.
-
-In addition, the configuration settings you have provided in the SDK Assistant are now being sent to SAP Cloud Platform Mobile Services.
-
-> **Note:** If you have already 5 native applications defined in SAP Cloud Platform Mobile Services, the SDK Assistant will give you an error.
-
-> In that case, log on to your **SAP Cloud Platform mobile Services** account at `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete it in order for the SDK Assistant to add the new application configuration.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Examine the generated Xcode project)]
-
-You can now select the `MyProductApp` application project under **Recent Projects** in the SDK Assistant's starting screen.
-
-> If Xcode does not open automatically to show your project, click on the project name in the SDK Assistant and click **Open**.
-
-In Xcode, the left-hand sidebar of the window shows various Navigators for exploring your project, source control, debugging, and so on. If it's not already selected, select the **Project Navigator** by clicking on the folder icon above the left-hand sidebar. This shows all of the files in the project.
-
-![Xcode project overview](fiori-ios-scpms-create-sample-app-10.png)
-
-The `Main.storyboard` file shows a split-view setup for the generated Master-Detail views.
-
-The `MyProductApp/Onboarding` folder contains logic for the user onboarding, authentication and handling of `passcodes` and Touch ID.
-
-The `MyProductApp/Proxy Classes` folder contains the OData proxy classes generated from the OData service. The `ESPMContainer.swift` file in the `Proxy Classes/public` folder acts as a data service provider to gain access to the OData entities. The `ESPMContainerMetadata` represents the metadata definition of the service.
-
-The `ViewControllers` folders contain the master and detail view controllers as well as a storyboard for the entities, respectively.
-
-[VALIDATE_1]
 [ACCORDION-END]

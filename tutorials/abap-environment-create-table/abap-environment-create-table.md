@@ -3,7 +3,7 @@ auto_validation: true
 title: Create a Simple Database Table for ABAP Environment
 description: Create a database table in SAP Cloud Platform ABAP Environment and prefill it with data.
 primary_tag: products>sap-cloud-platform--abap-environment  
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 10
 ---
 
@@ -23,7 +23,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 Open Eclipse, and select **New** > **ABAP Package**.
 
 ![Open Eclipse](package.png)
- 
+
 [DONE]
 [ACCORDION-END]
 
@@ -206,14 +206,6 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Define a table (without metadata) with following information in the correct order:
-
- - Name: `ztestyourself`
- - Key-Element: `key client`: `abap.clnt not null`
- - Elements:
-    - `customername`: `abap.char(50)`
-    - `country`: `abap.char(50)`
-    - `emailaddress`: `abap.char(50)`
-
+ 
 [VALIDATE_1]
 [ACCORDION-END]

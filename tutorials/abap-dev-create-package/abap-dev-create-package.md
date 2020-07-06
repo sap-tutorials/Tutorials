@@ -3,11 +3,12 @@ title: Create an ABAP Package
 description: Create an ABAP package, which will enable you to structure your development objects.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 10
 ---
 ##Prerequisites
-- Either: **Tutorial**: [Create an ABAP project](abap-dev-create-package)
+- You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
+- **Tutorial**: [Create an ABAP project](abap-dev-create-package)
 
 ## Details
 ### You will learn  
@@ -84,7 +85,7 @@ Select the project you created previously, then choose *<Project>* > **New > ABA
 
     ![Image depicting step4-add-fave-package](step4-add-fave-package.png)
 
-2. Enter the first three characters of your package (**`Zxx`**, where **`xx`** = your initials), then choose the package, then choose **OK**:
+2. Enter the first three characters of your package -- **`Zxx`**, where **`xx`** = your initials. Then choose the package, then choose **OK**.
 
     ![Image depicting step4b-choose-package](step4b-choose-package.png)
 

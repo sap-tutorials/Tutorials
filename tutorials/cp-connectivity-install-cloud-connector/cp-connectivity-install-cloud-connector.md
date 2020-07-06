@@ -4,10 +4,8 @@ description: Install the Cloud Connector to securely connect applications on SAP
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
+time: 20
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
@@ -16,9 +14,6 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-plat
 * How to start and stop the Cloud Connector
 * How to log on to the Cloud Connector administration UI
 * First steps to secure your installed Cloud Connector
-
-### Time to Complete
-**20 Min**
 
 ---
 
@@ -138,7 +133,7 @@ What is the standard port for accessing the Cloud Connector administration UI?
 
 [ACCORDION-BEGIN [Step 4: ](Log on to the Cloud Connector)]
 
-1. To access the Cloud Connector administration UI, open a Web browser and go to https://localhost:8443/ (adjust the port if you specified another one during the installation).
+1. To access the Cloud Connector administration UI, open a Web browser and go to <https://localhost:8443/> (adjust the port if you specified another one during the installation).
 
 2. Your browser will show a certificate error. Depending on what browser you use, the way to continue anyway will be different. In Chrome, you first have to choose **ADVANCED**.
 
@@ -158,7 +153,7 @@ What is the standard port for accessing the Cloud Connector administration UI?
 
 > You can use LDAP (Lightweight Directory Access Protocol) to configure Cloud Connector authentication. For more information, see the [official documentation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/120ceecfd84145a181ac160d588a7a3d.html).
 
-After the installation of the Cloud Connector you can see that its **Security Status** is red (**Risk**). We will show in the next two steps how to achieve a level of low risk for the Cloud Connector.
+After the installation of the Cloud Connector you can see that its **Security Status** is red -- **Risk**. We will show in the next two steps how to achieve a level of low risk for the Cloud Connector.
 
 [DONE]
 

@@ -36,9 +36,9 @@ You will see how a special security token known as the "API Key" or "Application
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Log onto the SAP Cloud Platform Cockpit)]
+[ACCORDION-BEGIN [Step 4: ](Navigate to the SAP Cloud Platform Cockpit)]
 
-Log onto your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit).
+Open your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit) and select **Access Neo Trial**.
 
 ![Log on to CP Cockpit](01-hcp.png)
 
@@ -269,15 +269,15 @@ Switch to the *Code Editor* view by clicking on **Code Editor**
 
 [ACCORDION-BEGIN [Step 18: ](Add code)]
 
-Search for **`sap.ui5`** and go to the **models** section. There add the following code snipped right after the **"sap-documentation": "heading" }** entry:
+Search for `sap.ui5` and go to the **models** section. There add the following code snipped right after the `"sap-documentation": "heading" }` entry:
 
-```javascript
+```JavaScript
       ,
 			"headers": {
 				"APIKey": "<yourAPIKey>"
 			}
 ```
-> Make sure not to forget the first ","
+> Make sure not to forget the first `,`
 
 ![Add Code snippet](26-AddCodeTemplate.png)
 
@@ -352,5 +352,3 @@ You should see a Fiori app connecting via SAP API Management to the SAP Gateway 
 [DONE]
 
 [ACCORDION-END]
-
-

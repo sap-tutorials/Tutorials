@@ -2,6 +2,8 @@
 title: Create a CRUD Master-Detail App
 description: Create a CRUD Master-Detail app using the template provided by SAP Web IDE, and get it ready to be built as a hybrid app.
 auto_validation: true
+author_name: Ludo Noens
+author_profile: https://github.com/lnoenssap
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>mobile, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 time: 15
@@ -20,21 +22,25 @@ time: 15
 
 [ACCORDION-BEGIN [Step 1: ](Log in to SAP Cloud Platform)]
 
-Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
+Go to <https://cockpit.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit and select **Enter Your Trial Account**.
 
 ![Some alternative text](step1.png)
+
+SAP offers SAP Cloud Platform Trial on both Cloud Foundry as well as Neo. For this tutorial and the subsequent mobile tutorial please select the Neo Trial environment. On the cockpit page, scroll down to the Environments section and select **Access Neo Trial**.
+
+![Some alternative text](step1-part2.png)
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Enable mobile service for development and operations)]
+[ACCORDION-BEGIN [Step 2: ](Enable Mobile Services)]
 
-Choose **Services** on the left pane, scroll down and then choose **Development & Operations, std**.
+Choose **Services** on the left pane, scroll down and then choose **Mobile Services, users**. You can also search for **mobile**.
 
 ![Some alternative text](step2.png)
 
-On the **Service: Development & Operations, std - Overview** page, click **Enable**.
+On the **Service: Mobile Services, users - Overview** page, click **Enable**.
 
 Use this service to access the destination that you create, and to build your app as a mobile app using the cloud build service.
 
@@ -55,9 +61,9 @@ Provide the following configuration values for the new destination:
 |  Name           | **`MobileServiceSampleData`**
 |  Type           | **`HTTP`**
 |  Description    | **`Mobile Service Sample OData Service`**
-|  URL            | **`https://hcpms-<your account number>trial.hanatrial.ondemand.com/SampleServices/ESPM.svc`**
+|  URL            | **`https://hcpms-<your account number>trial.hanatrial.ondemand.com/mobileservices/origin/hcpms/ESPM.svc/v2`**
 |  Proxy Type     | **`Internet`**
-|  Authentication | **`BasicAuthentication`**
+|  Authentication | **`App2AppSSO`**
 
 ![Some alternative text](step3-part2.png)
 
@@ -65,9 +71,7 @@ Add the following additional properties by clicking the **New Property** button 
 
 |  Field Name     | Value
 |  :------------- | :-------------
-|  **`TrustAll`** | **`true`**
 |  **`WebIDEEnabled`** | **`true`**
-|  **`WebIDESystem`** |  **`ms`**
 |  **`WebIDEUsage`** | **`odata_gen`**
 
 ![Some alternative text](step3-part3.png)
@@ -96,8 +100,8 @@ From the **Service: Web IDE Full-Stack - Overview** page, choose **Go to Service
 
 [ACCORDION-BEGIN [Step 5: ](Choose a new project template)]
 
-Select **File** > **New** > **Project from Template**.
-On the **Template Selection** page, choose **All Categories** from the **Category** list.
+In SAP Web IDE, please Select **File** > **New** > **Project from Template**.
+On the **Template Selection** page, choose **Neo** from the Environment list and **All Categories** from the **Category** list.
 From the displayed templates, choose the CRUD Master-Detail Application template and select **Next**.
 
 ![Some alternative text](step5.png)
@@ -136,7 +140,7 @@ If the `MobileServiceSampleData` service doesn't appear in the dropdown menu, re
 
 [ACCORDION-BEGIN [Step 8: ](Test the data connection)]
 
-Enter **/** as the relative URL and select **Test**.
+Enter **`/mobileservices/origin/hcpms/ESPM.svc/v2`** as the relative URL and select **Test**.
 
 ![Some alternative text](step8-part1.png)
 
@@ -199,6 +203,7 @@ On the **Testing Overview** page, choose **`test/flpSandbox.html`** to launch th
 Your app opens in a Web IDE preview pane.
 
 ![Some alternative text](step11-part3.png)
+
 [DONE]
 [ACCORDION-END]
 

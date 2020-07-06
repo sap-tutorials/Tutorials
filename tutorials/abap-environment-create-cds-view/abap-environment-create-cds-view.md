@@ -3,7 +3,7 @@ auto_validation: true
 title: Create and Expose Core Data Services Based on a Database Table
 description: Build a list report app with the ABAP RESTful programming model for SAP Fiori and test your UI for demo usage.
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform  ]
 time: 10
 ---
 
@@ -23,6 +23,7 @@ In this tutorial, wherever `XXX` appears, use a number (e.g. `000`).
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
 Select to your ABAP package created in tutorial **Create Simple Database Table for ABAP Environment** and create a Core Data Services (CDS) data definition.
+Therefore right-click on your package **`Z_BOOKING_XXX`** and select **New** > **Other Repository Object**.
 
 ![Open Eclipse](object.png)
 
@@ -116,6 +117,23 @@ Select to your ABAP package created in tutorial **Create Simple Database Table f
   2. Replace your code with following:
 
     ```ABAP
+    @AbapCatalog.sqlViewName: 'ZV_BOOKING_XXX'
+    @AbapCatalog.compiler.compareFilter : true
+    @AbapCatalog.preserveKey: true
+    @AccessControl.authorizationCheck: #CHECK
+    @EndUserText.label : 'Data Definition Booking'
+    @Search.searchable : true
+
+    @UI:
+    {
+     headerInfo:
+      {
+        typeName: 'Booking',
+        typeNamePlural: 'Bookings',
+        title: { type: #STANDARD, value: 'Booking' }
+      }
+     }
+
     define view ZI_Booking_XXX
       as select from ztbooking_xxx as Booking
       association [0..1] to I_Country  as _Country  on $projection.country = _Country.Country
@@ -184,7 +202,7 @@ Select to your ABAP package created in tutorial **Create Simple Database Table f
           @UI: { identification:[ { position: 100, label: 'Last Changed At' } ] }
           lastchangedat                          as LastChangedAt,
 
-          //publich associations
+          //public associations
           _Country,
           _Currency
     }
@@ -197,18 +215,11 @@ Select to your ABAP package created in tutorial **Create Simple Database Table f
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Open other repository object)]
-Right-click on your package and navigate to **New** > **Other ABAP Repository Object** from the appearing context menu.
+ 
+[ACCORDION-BEGIN [Step 5: ](Create service definition)]
+  1. Right-click on your data definition **`ZI_BOOKING_XXX`** and select **New Service Definition**
 
-![Open other repository object](object.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Create service definition)]
-  1. Search for **service definition**, select the appropriate entry and click **Next**.
-
-      ![Create service definition](service.png)
+      ![Create service definition](servicedef.png)
 
   2. Create a service definition and call it **`Z_I_BOOKING_XXX`**.
 
@@ -221,7 +232,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Expose entities)]
+[ACCORDION-BEGIN [Step 6: ](Expose entities)]
   1. Expose the **`ZI_Booking_XXX`** and the **`I_Country`** view entities.
 
     ```ABAP
@@ -240,22 +251,17 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Open other repository object)]
-Right-click on your package and navigate to **New** > **Other ABAP Repository Object** from the appearing context menu.
 
-![Open other repository object](object.png)
+[ACCORDION-BEGIN [Step 7: ](Create service binding)]
+  1. Right-click on your service definition **`Z_I_BOOKING_XXX`** and select **New Service Binding**.
 
-[DONE]
-[ACCORDION-END]
+      ![Create service binding](servicebinding.png)
 
-[ACCORDION-BEGIN [Step 9: ](Create service binding)]
-  1. Search for **service binding**, select the appropriate entry and click **Next**.
-
-      ![Create service binding](binding.png)
-
-  2. Create a service binding definition and call it **`Z_I_BOOKING_XXX`**.
+  2. Create a service binding and name it **`Z_I_BOOKING_XXX`**.
+     Make sure that **`OData V2 - UI`** is selected as binding type.
 
       ![Create service binding](binding2.png)
+      Click **Next >**.
 
   3. Click **Finish** to complete your transport request.
 
@@ -264,7 +270,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Activate your service binding)]
+[ACCORDION-BEGIN [Step 8: ](Activate your service binding)]
 Click **Activate** to publish your service binding.
 
 ![Publish locally](activate.png)
@@ -272,7 +278,7 @@ Click **Activate** to publish your service binding.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Check your metadata)]
+[ACCORDION-BEGIN [Step 9: ](Check your metadata)]
   1. Click on the Service URL to see your result.
 
       ![Check your metadata](serviceurl.png)
@@ -288,7 +294,7 @@ Click **Activate** to publish your service binding.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Open SAP Fiori elements view)]
+[ACCORDION-BEGIN [Step 10: ](Open SAP Fiori elements view)]
   1. Go back to your service binding **`Z_I_BOOKING_XXX`**
    Open the preview for SAP Fiori elements app on the right side with double-clicking or right click.
 
@@ -309,15 +315,15 @@ Click **Activate** to publish your service binding.
   5. Click on **GO**.
 
       ![GO button](fiori5.png)
- 
+
   6. Check your result:
 
-      ![Open SPA Fiori elements view](fiori6.png)
+      ![Open SAP Fiori elements view](fiori6.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Test yourself)]
+[ACCORDION-BEGIN [Step 11: ](Test yourself)]
 Write following UI annotation as a header Information:
 
 - `typeName`: `Test`

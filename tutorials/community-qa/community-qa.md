@@ -14,7 +14,7 @@ primary_tag: topic>sap-community
   - Ways to find and answer questions
   - How to build your reputation by answering questions
 
-**Please Note:** We recommend that you complete the [Tour the SAP Community tutorial](https://developers.sap.com/tutorials/community-start.html) before taking this one. Tour the SAP Community covers many Q&A basics, so it's the perfect introduction   to this tutorial.
+We recommend that you complete the [Tour the SAP Community tutorial](https://developers.sap.com/tutorials/community-start.html) before taking this one. Tour the SAP Community covers many Q&A basics, so it's the perfect introduction to this tutorial. You can also learn more about Q&A on the SAP Community [Questions and Answers](https://community.sap.com/resources/questions-and-answers) resources page and in the [Help us to help you – good questions beget good answers](https://blogs.sap.com/2019/11/25/help-us-to-help-you-good-questions-beget-good-answers/) blog post.
 
 ---
 

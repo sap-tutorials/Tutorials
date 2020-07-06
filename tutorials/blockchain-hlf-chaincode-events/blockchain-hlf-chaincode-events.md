@@ -20,7 +20,7 @@ A blockchain network is a distributed system where multiple parties interact wit
 
 ![Image depicting chaincode event overview](01--Event-Overview.png)
 
-Each Hyperledger Fabric transaction can have one event attached to it. In a chaincode you can set an event via the [`stub.SetEvent(name string, payload []byte)`](https://godoc.org/github.com/hyperledger/fabric/core/chaincode/shim#ChaincodeStub.SetEvent) function of the shim interface.
+Each Hyperledger Fabric transaction can have one event attached to it. In a chaincode you can set an event via the [`stub.SetEvent(name string, payload []byte)`](https://godoc.org/github.com/hyperledger/fabric/core/chaincode) function of the shim interface.
 
 Example:
 ```Go
