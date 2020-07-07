@@ -37,7 +37,7 @@ During the installation, there is no need to check the following box as you do n
 
 ![Chocolatey](Chocolatey.png)
 
->The SAP HANA client provides a 32-bt and a 64-bit install, as does Node.js.  It is important that both versions are the same (i.e., 64-bit).  For additional details see SAP note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).
+>The SAP HANA client provides a 32-bt and a 64-bit install, as does Node.js.  The Node.js driver provIded with the SAP HANA client is available for 64-bit only.  For additional details see SAP note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).
 
 [DONE]
 [ACCORDION-END]
@@ -172,7 +172,7 @@ npm list
         //PWD: 'Password1',
         encrypt: 'true',  //Must be set to true when connecting to SAP HANA Cloud
         sslValidateCertificate: 'false',  //Must be set to false when connecting
-        //to a HANA, express instance that uses a self signed certificate.
+        //to an SAP HANA, express edition instance that uses a self signed certificate.
 
         //Below setting is used to specify where the trust store is
         //ssltruststore: '/home/dan/.ssl/trust2.pem',

@@ -9,7 +9,7 @@ primary_tag: products>sap-hana
 
 ## Prerequisites
  - A Microsoft Windows, Linux or Mac computer
- - Access or the license to create an SAP HANA Cloud database or access to a machine that can run SAP HANA, express edition
+ - A machine that can run SAP HANA, express edition if the SAP HANA Cloud trial is not used
 
 ## Details
 ### You will learn
@@ -33,7 +33,7 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 |  Version     | Notes
 |  :------------- | :-------------
 |  [SAP HANA Platform 1.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/1.0.12/en-US)           | Released in 2010.  Current version is 1.0 SPS (Support Package Stack) 12.
-|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US)           | Released in November 2016. Current version is 2.0 SPS 05 which was released on June 26, 2020.
+|  [SAP HANA Platform 2.0](https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/latest/en-US)           | Released in November 2016. Current version is 2.0 SPS 05, which was released on June 26, 2020.
 |  **[SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US)**    | Released in September 2016.  Current version is 2.0 SPS 04.
 |  [SAP Cloud Platform, SAP HANA Service](https://help.sap.com/viewer/product/HANA_SERVICE_CF/Cloud/en-US)          | Cloud version of SAP HANA and updated monthly.
 |  **[SAP HANA Cloud](https://help.sap.com/viewer/product/HANA_CLOUD/cloud/en-US)**   | Released in March 2020 and the successor of the SAP HANA service.
@@ -44,7 +44,7 @@ There are multiple versions of SAP HANA.  The information below is a list of lin
 
 [ACCORDION-BEGIN [Step 2: ](SAP HANA Cloud)]
 
-Here are a few benefits of using SAP HANA in the cloud:
+Here are a few benefits of using SAP HANA Cloud:
 
 * Software updates are automatically applied by SAP.
 
