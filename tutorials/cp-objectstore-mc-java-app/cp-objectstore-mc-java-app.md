@@ -11,7 +11,7 @@ primary_tag: topic>java
  - [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
  - [Maven 3.3+](https://maven.apache.org/download.cgi)
  - [Eclipse](https://www.eclipse.org/downloads/)
- - [Cloud Foundry CLI](hcp-cf-getting-started)
+ - [Cloud Foundry CLI](cp-cf-download-cli)
  - SAP Cloud Platform account
  - [Provision Object Store Service](https://discovery-center.cloud.sap/#/serviceCatalog/object-store-service)
  - Basic knowledge of spring
