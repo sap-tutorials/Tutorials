@@ -6,7 +6,7 @@ description: This tutorial shows you how to deploy your SAP Cloud Application Pr
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
-time: 20
+time: 30
 ---
 
 ## Prerequisites
@@ -16,7 +16,7 @@ time: 20
 
 ## Details
 ### You will learn  
-  - How to deploy your business service on SAP Cloud Platform using the SAP Cloud Application Programming Model (CAP) and binding appropriate service instances (see the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/)).
+  - How to deploy your business service on SAP Cloud Platform using the SAP Cloud Application Programming Model (CAP) and binding appropriate service instances. See the [Developer Guide for Cloud Foundry](https://docs.cloudfoundry.org/devguide/) for more details.
 
 ---
 
@@ -24,7 +24,9 @@ time: 20
 
 It's now time to switch to SAP HANA as a database.
 
-1. In Visual Studio Code add the following configuration in the file **`package.json`** of your `my-bookshop` project. Overwrite any existing `cds` configuration:
+1. If `cds watch` is still running in Visual Studio Code, press **CTRL+C** in the command line to stop the service.
+
+2. In Visual Studio Code add the following configuration in the file `package.json` of your `my-bookshop` project. Overwrite any existing `cds` configuration:
 
     ```JSON
     "cds": {
@@ -35,14 +37,13 @@ It's now time to switch to SAP HANA as a database.
         }
       }
     ```
+    >`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
+    `
+3. In the command line add the SAP HANA driver as a dependency to your project:
 
->`kind:sql` declares the requirement for an SQL database. It evaluates to `sqlite` in the `development` profile (active by default), while in `production` it equals `hana`. This way you don't need to modify this file if you want to switch between the two databases.
-
-2. In the command line add the SAP HANA driver as a dependency to your project:
-
-    ```Shell/Bash
-    npm add @sap/hana-client --save
-    ```
+```Shell/Bash
+npm add @sap/hana-client --save
+```
 
 [DONE]
 
@@ -76,7 +77,7 @@ cf login
 
 [ACCORDION-BEGIN [Step 3: ](Deploy using cf push)]
 
-Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https://docs.cloudfoundry.org/devguide/push.html) command to deploy applications. It needs the application files plus an optional **`manifest.yml`** file to push the application code and to bind the relevant services to the application.
+Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https://docs.cloudfoundry.org/devguide/push.html) command to deploy applications. It needs the application files plus an optional `manifest.yml` file to push the application code and to bind the relevant services to the application.
 
 [OPTION BEGIN [Windows]]
 

@@ -227,7 +227,7 @@ Click on **Open**.
 
 When prompted, use **`ec2-user`** as user.
 
-Check the following guide for further information: [Connecting to Your Linux Instance from Windows Using PuTTY](<http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+Check the following guide for further information: [Connecting to Your Linux Instance from Windows Using PuTTY](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
 
 ### **Mac or Linux platform**
 
@@ -237,7 +237,7 @@ You can use command `ssh` from a terminal as follows:
 ssh -i /path/my-key-pair.pem ec2-user@public_ip_address
 ```
 
-For more details about standalone SSH client option, you can check the [Connecting to Your Linux Instance Using SSH]( https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) guide.
+For more details about standalone SSH client option, you can check the [Connecting to Your Linux Instance Using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) guide.
 
 [DONE]
 [ACCORDION-END]

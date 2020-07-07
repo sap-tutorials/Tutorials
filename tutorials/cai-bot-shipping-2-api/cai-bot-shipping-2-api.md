@@ -1,14 +1,14 @@
 ---
-title: Add Webhook to Bot to Retrieve Tracking Info
-description: Add a webhook call in the package-tracking bot to retrieve information for a specific tracking number.
+title: Add Webhook to Chatbot to Retrieve Tracking Info
+description: Add a webhook call in the package-tracking chatbot to retrieve information for a specific tracking number, using SAP Conversational AI.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
 primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - You have created the bot for letting customers request information on their packages, as described in [Create a Bot that Lets Customers Track Packages](cai-bot-shipping-1-track-bot).
+ - You have created the chatbot for letting customers request information on their packages, as described in [Create a Chatbot that Lets Customers Track Packages](cai-bot-shipping-1-track-bot).
 
 ## Details
 ### You will learn
@@ -16,9 +16,9 @@ primary_tag: products>sap-conversational-ai
   - How to call a webhook during a conversation
   - How to display the response
 
-The previous tutorial created a bot to detect the intent of customers who want to track a package, and to get the needed information.
+The previous tutorial created a chatbot to detect the intent of customers who want to track a package, and to get the needed information.
 
-In this tutorial, you will modify the bot so it calls an API to retrieve information on the package, based on a tracking number, and displays that information to the customer.
+In this tutorial, you will modify the chatbot so it calls an API to retrieve information on the package, based on a tracking number, and displays that information to the customer.
 
 ---
 
@@ -30,7 +30,7 @@ In this tutorial, you will modify the bot so it calls an API to retrieve informa
 
     ![Endpoint](Endpoint_Settings.png)
 
-3. Click **Versions**, and then click the arrow to the right of **v1**.
+3. Click **Versions**, and then click the arrow to the right of **`v1`**.
 
     ![Versions](Endpoint_Edit.png)
 

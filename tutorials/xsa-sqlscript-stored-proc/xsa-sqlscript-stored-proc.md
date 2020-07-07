@@ -1,5 +1,5 @@
 ---
-title: Creating Stored Procedures
+title: Create Stored Procedures
 description: Leveraging SQLScript in Stored Procedures, User Defined Functions, and User Defined Libraries
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
@@ -7,12 +7,10 @@ primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 time: 15
 ---
-## Next Steps
-- [Parallel Processing and Parameters](https://developers.sap.com/tutorials/xsa-sqlscript-parallel.html)
 
 ## Details
 ### You will learn  
-In this exercise you will create a small procedure `get_po_header_data` with two implicit SELECT queries.
+- How to create a small procedure `get_po_header_data` with two implicit SELECT queries
 
 ---
 
@@ -51,7 +49,6 @@ SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID"
                           FROM "PO.Item"
           WHERE "PRODUCT.PRODUCTID" IS NOT NULL)
 GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";
-
 ```
 
 [DONE]
@@ -60,6 +57,7 @@ GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";
 [ACCORDION-BEGIN [Step 3: ](Review Complete Code)]
 
 The completed code should look similar to this.
+
 ```
 PROCEDURE "get_po_header_data"( )
    LANGUAGE SQLSCRIPT
@@ -83,7 +81,6 @@ SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID"
 GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";
 
 END
-
 ```
 
 [DONE]

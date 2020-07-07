@@ -91,51 +91,9 @@ Use these [instructions to deploy the XS Advanced HANA Analytics Adapter](https:
 
 > Note: For on-premise SAP HANA systems or SAP HANA, express edition, follow the instructions in this [series of blog posts](https://blogs.sap.com/2018/12/24/from-zero-to-analytics-pt1-setting-up-your-own-sap-hana-instance/) instead.
 
-
-Finally, download the templates [from the repository.](https://github.com/SAP-samples/hana-xsa-live-reporting/blob/pictures/SAC.tgz)
-
+Once connected you can continue by creating reports in SAC to consume the Calculation Views deployed in earlier steps.
 
 [DONE]
 [ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Import the models into SAP Analytics Cloud)]
-
-> You will need the following roles for the import and deployment: Admin, Analytics Hub Admin, BI Admin
-
-Navigate into `Deployment -> Import`.
-
-![Import into SAC](10.png)
-
-Choose **Upload**.
-
-![Import into SAC](11.png)
-
-Select the source file downloaded [from the repository](https://github.com/SAP-samples/hana-xsa-live-reporting/blob/pictures/SAC.tgz) and confirm the upload.
-
-![Import into SAC](12.png)
-
-Confirm the import.
-
-![Import into SAC](14.png)
-
-You will see a success message next to the import job...
-
-![Import into SAC](15.png)
-
-... And the details of the imported artifacts if you click on the job:
-
-![Import into SAC](16.png)
-
-Navigate into **Browse -> Files**. The `Public` folder will contain the imported models and stories
-
-![Import into SAC](17.png)
-
-Click on any report to log in through the SAP HANA Analytics Adapter and fetch the test data from SAP HANA
-
-![Import into SAC](report1.png)
-
-[DONE]
-[ACCORDION-END]
-
 
 ---

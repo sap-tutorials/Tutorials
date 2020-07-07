@@ -5,6 +5,8 @@ auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-portal
+author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert 
 ---
 
 ## Prerequisites
@@ -86,7 +88,7 @@ You've configured the app. Now you need to assign it to a group so that users wi
 
 In this step, we will first create a new group and then assign the app to it.
 
-1. Use the back arrow to get back to the Content Manager.
+1. Go back to the Content Manager.
 
     ![Go back to Content Manager](8-go-to-content-manager.png)
 
@@ -98,11 +100,12 @@ In this step, we will first create a new group and then assign the app to it.
 
 4. In the **Assignments** panel on the right, type in `se` to find the `Search POs` app.  Then next to the app name, click the **+** icon to assign the app to the group.
 
-    ![Assign app to group](10-assign-to-group.png)
-
 5. Click **Save**.
 
-6. Use the back arrow to go back to the Content Manager to see your new group in the list.
+    ![Assign app to group](10-assign-to-group.png)
+
+
+6. Go back to the Content Manager to see your new group in the list.
 
 
 [DONE]
@@ -141,9 +144,7 @@ In this step you will assign the app to the `Everyone` role so that users can ac
 
 3. Enter your logon details if prompted to do so.
 
-4. Click **My Apps** in the menu bar. You will see the two groups that you created.
-
-5. In the `Purchase Orders` group, click the Web Dynpro ABAP app called `Search POs` to launch it.
+4. In the `Purchase Orders` group, click the Web Dynpro ABAP app called `Search POs` to launch it.
 
     ![View my apps](15-my-apps.png)
 

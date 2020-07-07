@@ -12,8 +12,9 @@ time: 15
 
 ## Details
 ### You will learn  
-In this exercise we will modify the code of procedure `get_po_header_data`  so that it takes full advantage of the parallel processing within HANA by using table variables.
+- How to take full advantage of parallel processing in SAP HANA by using table variables
 
+In this exercise, we will modify the code of procedure `get_po_header_data`  so that it takes full advantage of the parallel processing within HANA by using table variables.
 
 ---
 
