@@ -5,8 +5,8 @@ description: Create a developer user with the developer role in SAP Cloud Platfo
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development,  products>sap-cloud-platform, tutorial>license ]
 time: 10
-author_name: Niloofar Naseri
-author_profile: https://github.com/niloofar-naseri
+author_name: Niloofar Flothkoetter
+author_profile: https://github.com/niloofar-flothkoetter
 ---
 
 ## Prerequisites  
@@ -113,7 +113,7 @@ If you are an admin and want to use your existing business user you can skip thi
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create business user)]
-If you are an admin and want to use your existing business user you can skip this step.
+If you are an admin and want to use your existing business user, you can skip this step.
   1. Select the newly created entry in the employee list.
 
   2. Press **Create Business User**.
