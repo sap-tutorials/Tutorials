@@ -1,5 +1,5 @@
 ---
-title: Get Started with SAP Integration Suite Trial
+title: Onboard to SAP Integration Suite Trial
 description: Get onboarded to SAP Cloud Platform Integration Suite trial account to make the most of your trial experience.
 auto_validation: true
 time: 20
@@ -23,9 +23,8 @@ author_profile: https://github.com/Vikramkulkarni01
 Before you start using this learning material, you must sign up for a free trial account on SAP Cloud Platform. Let's learn about it from the tutorial [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html). So now you've signed up for a trial on SAP Cloud Platform. This learning material help to onboard trial users to experience the capabilities offered by SAP Cloud Platform Integration Suite.
 
 If you already have access to SAP Cloud Platform trial, start your learning from **Step 2**.
-
 >**IMPORTANT**:
- The Cloud Platform Integration Trial account is intended for personal exploration, and not for production use or team development. They allow restricted use of the platform resources and services.
+The Cloud Platform Integration Trial account is intended for personal exploration, and not for production use or team development. They allow restricted use of the platform resources and services.
 
 
 [DONE]
@@ -66,7 +65,7 @@ Navigate to your subaccount and click Subscriptions. Where you can find **Integr
     !![Select Integration Suite](2.1.Integration_Suite_Tile.png)
 
 2. Select **Subscribe**.
-    !![Select subscribe button](2.2.Subscribe.png)
+!![Select subscribe button](2.2.Subscribe.png)
 
 
 [DONE]
@@ -74,17 +73,14 @@ Navigate to your subaccount and click Subscriptions. Where you can find **Integr
 
 
 [ACCORDION-BEGIN [Step 4: ](Configure Administrator Access)]
-
 >Do this step to authorizes a user to access the Integration Suite Provisioning application and to activate its capabilities. The assigned user will also be able to add users to the access activated Integration Suite capabilities.
 
 1. Go to **Security** > **Trust Configuration** and click **sap.default**, as shown in the following image.
-    !![Trust_configuration](4.1.1_Adminstrator_Access.png)
-
+!![Trust_configuration](4.1.1_Adminstrator_Access.png)
 2. Enter the users e-mail address and click on **Show Assignments**. In the confirmation dialog, click **Add User**.
-    !![Add User](4.1.2_Adduser.png)
-
+!![Add User](4.1.2_Adduser.png)
 3. Click  **Assign Role Collections** and select **Integration Provisioner** role collection.
-    !![Role collection](4.1.3_Rolecollection.png)
+!![Role collection](4.1.3_Rolecollection.png)
 
 [DONE]
 [ACCORDION-END]
@@ -149,11 +145,9 @@ After giving authorization to a user. Go to the **Integration Suite Provisioning
 [ACCORDION-END]
 
  [ACCORDION-BEGIN [Step 7: ](Deactivate Capabilities)]
+Now you might see a need to deactivate a capability. Go to the Integration Suite **Provisioning** application.  and click on the URL to launch the capability. In this page, under the relevant capability section  click on **Deactivate**.
 
-1.  Now you might see a need to deactivate a capability. Go to the Integration Suite **Provisioning** application.  and click on the URL to launch the capability. In this page, under the relevant capability section  click on **Deactivate**.
-
-     !![Deactivate](7.1_Deactivate.png)
-
+!![Deactivate](7.1_Deactivate.png)
 
 
 [DONE]
