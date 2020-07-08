@@ -144,7 +144,7 @@ After giving authorization to a user. Go to the **Integration Suite Provisioning
 [DONE]
 [ACCORDION-END]
 
- [ACCORDION-BEGIN [Step 7: ](Deactivate Capabilities)]
+ [ACCORDION-BEGIN [Step 7: ]((Optional) Deactivate Capabilities)]
 Now you might see a need to deactivate a capability. Go to the Integration Suite **Provisioning** application.  and click on the URL to launch the capability. In this page, under the relevant capability section  click on **Deactivate**.
 
 !![Deactivate](7.1_Deactivate.png)
@@ -152,10 +152,4 @@ Now you might see a need to deactivate a capability. Go to the Integration Suite
 
 [DONE]
 [ACCORDION-END]
-
-
-
-
-
-
 ---
