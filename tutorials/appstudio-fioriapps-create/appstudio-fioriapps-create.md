@@ -1,5 +1,5 @@
 ---
-title: Develop an SAP Fiori App Using SAP Business Application Studio High Productivity Tools
+title: Create an SAP Fiori App Using SAP Business Application Studio
 description: Create an SAP Fiori application in SAP Business Application Studio and deploy it to your SAP Cloud Platform, Cloud Foundry environment.
 auto_validation: true
 time: 25
