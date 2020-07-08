@@ -13,8 +13,9 @@ time: 10
 
 ## Details
 ### You will learn  
-In the following exercise we will show how to debug a procedure using the SQLScript debugger. This includes setting breakpoints, evaluating expressions and intermediate results.
+- How to debug a procedure using the SQLScript debugger
 
+The debugging shown in this tutorial includes setting breakpoints, evaluating expressions and intermediate results.
 
 ---
 

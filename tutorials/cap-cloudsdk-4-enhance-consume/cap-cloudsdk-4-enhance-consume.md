@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Enhance CAP-Based Service to Refer to Remote Addresses
 description: Enhance the CAP-based service, extending it to be ready to consume business partner addresses from the mock S/4HANA service.
 auto_validation: true
