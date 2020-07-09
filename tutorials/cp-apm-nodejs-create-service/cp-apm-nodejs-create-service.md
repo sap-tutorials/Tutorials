@@ -64,6 +64,8 @@ Before you start, make sure that you've completed the prerequisites.
 
 2. Choose **Install**. The `vsix` file for CDS Language Support will be added as an extension in Visual Studio Code.
 
+![Folder structure](VSCode_extension.png)
+
 [DONE]
 
 [ACCORDION-END]
