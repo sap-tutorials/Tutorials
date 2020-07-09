@@ -34,7 +34,7 @@ For example, create a space named "E-commerce" to which you register your shoppi
 
 In the [home page](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) of SAP Cloud Platform cockpit trial, select **Enter Your Trial Account**.
 
-![Cloud Foundry](Step 1_New.png)
+![Cloud Foundry](Step_1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -55,7 +55,7 @@ Skip this step if you already have a trial subaccount.
     |  **Region**           | **`Europe (Frankfurt)`** or **`US East (VA)`**
     |  **Subdomain**        | **`web-analytics`** (provide a generic value for your organization; this value will be prefixed to the URL that SAP Web Analytics provides for the application)
 
-    ![Subaccount](Step 2.png)
+    ![Subaccount](Step_2.png)
 
 
 [DONE]
@@ -69,7 +69,7 @@ Skip this step if you already have a trial subaccount.
 4. From the list of entitlements, select **Web Analytics** and choose an available plan. Select **Add 1 Service Plan**.
 5. Select **Save** to save your entitlements.
 
-![Entitlements](Step 3.png)
+![Entitlements](Step_3.png)
 
 
 [DONE]
@@ -82,7 +82,7 @@ Skip this step if you already have a trial subaccount.
 3. Look out for **Web Analytics** in the list of services. Select the service to open it.
 4. Select **Subscribe**. You'll see that you are now subscribed.
 
-![Subscribe](Step 4.png)
+![Subscribe](Step_4.png)
 
 
 [DONE]
@@ -103,7 +103,7 @@ Skip this step if you already have a trial subaccount.
     |  Name             | **SAP Web Analytics Customer Admin**
     |  Description      | **Customer Admin**
 
-    ![New Role](Step 5.1.png)
+    ![New Role](Step_5.1.png)
 
 5. Click the newly created role and select **Add Role**.
 
@@ -115,7 +115,7 @@ Skip this step if you already have a trial subaccount.
     |  Description              | **`_WebAnalyticsAdmin`**
     |  Description              | **`_WebAnalyticsAdmin`**
 
-    ![Add Role](Step 5.2.png)
+    ![Add Role](Step_5.2.png)
 
 
 7. Select **Save**.
@@ -133,7 +133,7 @@ Skip this step if you already have a trial subaccount.
 6. Select **Assign Role Collection**.
 7. In the **Role Collection** dropdown, select the new role that you created for SAP Web Analytics and select **Assign Role Collection**.
 
-![Create Trust Configuration](Step 6.png)
+![Create Trust Configuration](Step_6.png)
 
 
 [VALIDATE_1]

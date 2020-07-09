@@ -2,7 +2,7 @@
 title: Set Up Business Rules for Determining Equipment
 description: Import, configure, and deploy business rules to determine equipment for new employees using SAP Cloud Platform Business Rules.
 auto_validation: true
-time: 10
+time: 5
 tags: [ tutorial>beginner, products>sap-cloud-platform]
 primary_tag: products>sap-cloud-platform
 ---
