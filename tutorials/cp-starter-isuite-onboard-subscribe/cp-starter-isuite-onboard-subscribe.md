@@ -1,5 +1,5 @@
 ---
-title: Onboard to SAP Integration Suite Trial
+title: Setup your Integration Suite Trial
 description: Get onboarded to SAP Cloud Platform Integration Suite trial account to make the most of your trial experience.
 auto_validation: true
 time: 20
