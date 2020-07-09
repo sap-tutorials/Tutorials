@@ -101,7 +101,7 @@ In the SAP Cloud Platform Mobile Services Cockpit, you will now see the *Booster
 
 Welcome cards are auto subscribed by default and downloaded automatically after registration.
 
-You should see two Welcome Card in your Mobile application. One created through the cockpit, and the other created using SAP Cloud Platform Booster for SAP Mobile Cards.
+You should see two Welcome Card in your Mobile application. One created through the cockpit, and the other created using SAP Cloud Platform Boosters for SAP Mobile Cards.
 
 > To view the card immediately, perform a pull refresh.
 
