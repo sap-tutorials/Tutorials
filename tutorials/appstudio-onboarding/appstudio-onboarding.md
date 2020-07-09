@@ -100,7 +100,7 @@ The developer and administrator role collections, together with their correspond
 
     !![rolecollections](2020-03 Cockpit Role Collections Show Assignments__.jpg)
 
-5. Click **Assign Role Collection**.
+5. Click **Assign Role Collection**. 
 
     !![assignrolecollections](2020-03 Cockpit Role Collections Assign Role Collection__.jpg)
 
