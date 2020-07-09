@@ -60,18 +60,11 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
 
-1. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloud-vscodecds) and download the `vsix` file for CDS Language Support for Visual Studio Code.
+1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds#overview).
 
-2. Open Visual Studio Code. Choose **View** > **Extensions** > **Install from VSIX...** and and install the extension by choosing the `vsix` file you have downloaded before:
+2. Choose **Install**. The `vsix` file for CDS Language Support will be added as an extension in Visual Studio Code.
 
-    ![Visual Studio extension](visual-studio-extension.png)
-
-    &nbsp;
-
-    ![Visual Studio extension](visual-studio-extension-vsix.png)
-
-
-    >If you see a compatibility error, make sure that you have the latest version of Visual Studio Code.
+![Folder structure](VSCode_extension.png)
 
 [DONE]
 
