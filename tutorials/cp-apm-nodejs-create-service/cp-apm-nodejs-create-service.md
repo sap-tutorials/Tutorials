@@ -30,7 +30,7 @@ time: 50
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Install the `cds` development kit globally by executing the following command:
+1. Open a command line window and install the `cds` development kit globally by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
