@@ -62,6 +62,15 @@ URL            | `https://services.odata.org`
 Proxy Type     | `Internet`
 Authentication | `NoAuthentication`
 
+And the following *Additional Properties*
+
+Property Name     | Value
+:------------- | :-------------
+`HTML5.DynamicDestination`           | `true`
+`WebIDEEnabled`           | `true`
+`WebIDESystem`    | `Northwind`
+`WebIDEUsage`            | `odata_gen`
+
 > Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`
 
 When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK truststore** will appear. Ensure that this is checked.
