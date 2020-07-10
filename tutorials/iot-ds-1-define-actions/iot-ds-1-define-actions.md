@@ -1,10 +1,10 @@
 ---
 title: Model the Needed Decision Support Based on IoT Data
-description: Create actions, rules and configurations using SAP Leonardo IoT.
+description: Create actions, rules and configurations using SAP IoT.
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-leonardo-iot, topic>internet-of-things ]
-primary_tag: products>sap-cloud-platform-internet-of-things
+primary_tag: topic>internet-of-things
 ---
 
 ## Details
@@ -23,7 +23,7 @@ In this tutorial, you'll create a streaming rule for high greenhouse temperature
 [ACCORDION-BEGIN [Step 1: ](Create rule context)]
   Please complete the prerequisites before starting this step. If you already have created a rule context for `greenhouse`, you can skip to the next step **Create streaming rule**.
 
-  1. From Leonardo IoT launchpad, select the **Rule Contexts** tile.
+  1. From SAP IoT launchpad, select the **Rule Contexts** tile.
 
     ![Select rule contexts on SAP Fiori launchpad](/images/launchpad_tile_rulecontexts.png)
 
@@ -55,9 +55,9 @@ In this tutorial, you'll create a streaming rule for high greenhouse temperature
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create streaming rule)]
-This tutorial is based on the greenhouse device used in the Leonardo IoT Foundation tutorials.  You can find these tutorials under prerequisites.  Please complete them before continuing with this tutorial.
+This tutorial is based on the greenhouse device used in the SAP IoT Foundation tutorials.  You can find these tutorials under prerequisites.  Please complete them before continuing with this tutorial.
 
-1. From Leonardo IoT launchpad, select the **Rules** tile.
+1. From SAP IoT launchpad, select the **Rules** tile.
 
     ![Select rule on SAP Fiori launchpad](/images/launchpad_tile_rules.png)
 
@@ -102,7 +102,7 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
 [ACCORDION-BEGIN [Step 3: ](Create decision support action)]
 
-  1. From Leonardo IoT launchpad, select the **Actions** tile.
+  1. From SAP IoT launchpad, select the **Actions** tile.
 
     ![Actions tile on SAP Fiori launchpad](/images/launchpad_tile_actions.png)
 
@@ -195,7 +195,7 @@ This tutorial is based on the greenhouse device used in the Leonardo IoT Foundat
 
 [ACCORDION-BEGIN [Step 5: ](Create decision support configuration)]
 
-  1. From Leonardo IoT launchpad, select the **Decision Support Definition** tile.
+  1. From SAP IoT launchpad, select the **Decision Support Definition** tile.
 
     ![Select Decision Support tile in SAP Fiori launchpad](/images/launchpad_tile_ds.png)
 

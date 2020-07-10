@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Create a Basic CAP-Based Service
 description: Initialize a CAP-based service, which you will later extend via SAP Cloud SDK.
 auto_validation: true
@@ -32,14 +34,6 @@ To keep things simple, the consumer service will be based on the simple bookshop
 The first step is to create a new app using the `cds` command line tool which is part of the `@sap/cds-dk` package. While you've already used the `@sap/cds` package in the preceding tutorials in this mission, it's been within the context of an individual project directory where `@sap/cds` was referenced locally. Node.js packages can be installed globally, too, and that's what you'll do now with `@sap/cds-dk` so that the `cds` command line client is available everywhere.
 
 > Originally the Node.js package incarnation of CAP was in the form of a single top-level module `@sap/cds`. Today we also have `@sap/cds-dk`, where the "dk" refers to "development kit". This is the package that you'll want to install to develop with CAP, taking advantage of all the tools that it includes; in parallel there is `@sap/cds` which you can think of as the leaner "runtime" package.
-
-The `@sap` part of `@sap/cds-dk` is a Node Package Manager (NPM) scope, which can be associated with a particular NPM registry. In this case the `@sap` scope is associated with the SAP NPM registry, so set your global NPM configuration to reflect this, by running the following command:
-
-```Bash
-npm set @sap:registry=https://npm.sap.com
-```
-
-Now you can run the following command to install `@sap/cds-dk` globally, knowing that `npm` will request the package from the correct registry:
 
 Execute the following commands in a command prompt (even one in an integrated terminal within VS Code will do).
 
