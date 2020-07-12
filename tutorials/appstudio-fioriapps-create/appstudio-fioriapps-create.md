@@ -1,5 +1,5 @@
 ---
-title: Develop an SAP Fiori App Using SAP Business Application Studio High Productivity Tools
+title: Create an SAP Fiori App Using SAP Business Application Studio
 description: Create an SAP Fiori application in SAP Business Application Studio and deploy it to your SAP Cloud Platform, Cloud Foundry environment.
 auto_validation: true
 time: 25
@@ -12,6 +12,7 @@ author_profile: https://github.com/raz-korn
 ## Prerequisites
   - You have created an SAP Fiori dev space in SAP Business Application Studio. See [Create a preconfigured dev space for developing SAP Fiori apps](appstudio-devspace-fiori-create).
   - The SAP Fiori dev space is in status `RUNNING` and you opened it.
+  - You configured a destination to SAP Gateway Demo System (ES5) (see [Connect SAP Cloud Platform to Your SAP Gateway Demo System Account (ES5)](cp-portal-cloud-foundry-gateway-connection)).
   - For the deployment step, additional prerequisites apply. You need to have the following available in the Cloud Foundry space to which you will log on (see [Add a New Entitlement to Your Subaccount](cp-cf-entitlements-add)):
       - Application Runtime: 1GB free
       - Destination: 1 free
