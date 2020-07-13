@@ -12,7 +12,7 @@ primary_tag: products>sap-hana
 ### You will learn
 
   - How to start with your own free SAP HANA Cloud instance in the trial account of SAP Cloud platform
-  - How to leverage Web IDE to use advanced analytics features in SAP HANA, including the JSON document store, geospatial, graph and linguistic text search functions
+  - How to leverage Web IDE to use advanced analytics features in SAP HANA: including JSON table, geospatial, graph and text search functions
 
 ## Details
 
@@ -23,7 +23,7 @@ SAP HANA is a complete database and application development platform. It lets yo
 
 By combining in-memory storage with columnar store, data operations are performed faster than in a traditional database with a disk-based storage. SAP HANA is also `translytical`, which means that developers can perform both transactional and analytical operations from the same structure, in real time, and without creating additional copies of the data such as materialized views.
 
-> ### This tutorial is based on an SAP HANA instance that you get in a free trial account at SAP Cloud Platform.
+> ### This tutorial is based on an SAP HANA Cloud instance that you get in a free trial account at SAP Cloud Platform.
 > If you do not want to use this method, you can check other [available options to download or install SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html), and corresponding tutorials.
 
 ## How do we help Thomas?
@@ -190,13 +190,13 @@ You can see your container with a schema and the table `COMMUNITY`. They were ge
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ]( NoSQL time! Load data into your document store)]
+[ACCORDION-BEGIN [Step 7: ]( NoSQL time! Load data into your JSON table)]
 
 Open an SQL console.
 
 ![SAP Web IDE](20.png)
 
-Paste the following statements to insert new JSON documents into your collection and run ![run](run.png) the statements.
+Paste the following statements to insert new JSON documents into your table and run ![run](run.png) the statements.
 
 > ### Note: The statements may be marked with errors by the editor. You can ignore the errors.
 
@@ -271,8 +271,7 @@ column table "DEVS"(
 > SAP HANA creates columnar tables by default. The `column` keyword is optional, but is used in the example to remind about the native column-based storage of tables in SAP HANA.
 >
 
-Save you content and right mouse click on the `db` folder. Choose Build->Build. Upon completion of the build return to the database explorer view of your HDI container.
-You should see the new table listed under `TABLES`:
+Save you content and right mouse click on the `db` folder. Choose Build->Build. Upon completion of the build return to the database explorer view of your HDI container. You should see the new table listed under `TABLES`:
 
 ![SAP Web IDE](22.png)
 
@@ -351,7 +350,7 @@ In SAP HANA, graphs are represented by vertices (in this example, developers) an
 
 ![Graph](a3.png)
 
-> Find more information about the graph data model in the [SAP HANA reference](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/7734f2cfafdb4e8a9d49de5f6829dc32.html) and [how to apply to text analytics](https://help.sap.com/viewer/62e301bb1872437cbb2a8c4209f74a65/2.0.03/en-US/f585411bd05c49c58bdd2b99710f66c3.html).
+> Find more information about the graph data model in the [SAP HANA reference](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/latest/en-US/7734f2cfafdb4e8a9d49de5f6829dc32.html).
 
 Create a graph workspace to define a graph in terms of tables and columns by returning to the Web IDE editor and creating a file with the extension `hdbgraphworkspace`:
 
