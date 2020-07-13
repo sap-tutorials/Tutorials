@@ -3,13 +3,15 @@ title: Help Thomas Get Started with SAP HANA
 description: Use SAP HANA to help Thomas get started with help from other developers in the community using in-database text analytics, graph algorithms and geospatial processing.
 auto_validation: true
 time: 45
-tags: [tutorial>beginner, products>sap-hana]
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana-cloud]
 primary_tag: products>sap-hana
 ---
 
 ### You will learn
 
-  - How to start with your own free SAP HANA instance in the trial account of SAP Cloud platform
+  - How to start with your own free SAP HANA Cloud instance in the trial account of SAP Cloud platform
   - How to leverage Web IDE to use advanced analytics features in SAP HANA, including the JSON document store, geospatial, graph and linguistic text search functions
 
 ## Details
@@ -27,11 +29,11 @@ By combining in-memory storage with columnar store, data operations are performe
 ## How do we help Thomas?
 Like most developers, Thomas wants to stay on top of the latest technologies. His first step is to get started with free tutorials, like this one. The second step is to connect with other developers and experts in the community to share knowledge and learn together.
 
-Fellow developers from all around the world connect daily to exchange information. And we are going to find out if they share Thomas' interest for SAP HANA and related topics by using **text analytics** on their opinions in the community.
+Fellow developers from all around the world connect daily to exchange information. And we are going to find out if they share Thomas' interest for SAP HANA and related topics by using **text processing** on their opinions in the community.
 
-Thanks to the multiple engines in SAP HANA, we will also combine text analytics with **graph algorithms** to find out how community members are connected.
+Thanks to the multiple engines in SAP HANA, we will also combine text processing with **graph algorithms** to find out how community members are connected.
 
-Finally, we will use the **geospatial capabilities** in SAP HANA to find out developers closer to Thomas' location in Munich.
+Finally, we will use the **geospatial capabilities** in SAP HANA to find developers closer to Thomas' location in Munich.
 
 ![How do we help Thomas](thomas.png)
 
@@ -71,18 +73,23 @@ If you haven't already, you will be prompted to validate your account using a ph
 
 ![Validation](1.png)
 
-After completing the validation, click **Log On** again and choose **US East (VA)** and **Create Account**.
+After completing the validation, click **Log On** again and choose your preferred region and **Create Account**.
 
 ![Validation](02_200117.jpg)
-
-> ### Already have an account in another data center?
-> To transfer your trial entitlements to the new subaccount in `US East (VA)`, refer to the [instructions in this blog post](https://blogs.sap.com/2019/04/16/how-to-change-the-region-in-your-cloud-foundry-trial/).
 
 Once the provisioning is finished, click **Continue**:
 
 ![Cloud trial](3.png)
 
-Click **Launch SAP Web IDE** back in the main landing page.
+Follow the instructions at [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/784a1dbb421a4da29fb1e3bdf5f198ec.html) to create your free SAP HANA Cloud instance.
+
+You should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
+
+![HANA Cloud Instance](3_2.png)
+
+Once the SAP HANA Cloud instance is created, take note of the admin user as well as the endpoint (host:port) needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
+
+Return to the SAP Cloud Platform Trial Home and Click **Launch SAP Web IDE**.
 
 ![Cloud trial](4.png)
 
@@ -108,7 +115,7 @@ After SAP Web IDE has refreshed, Click **Cloud Foundry** in **Preferences**.
 
 ![SAP Web IDE](8.png)
 
-Choose `US10` as the **API Endpoint**, if not selected by default.
+Choose `US10` as the **API Endpoint** if you chose US East as your Trial region. Choose `EU10` as the **API Endpoint** if you chose Europe as your Trial region.
 
 ![SAP Web IDE](9.png)
 
@@ -118,7 +125,7 @@ Enter your credentials for the trial when prompted and **Log on**.
 
 The subaccount and space will populate automatically.
 
-Finally, configure the **Database Explorer**. Choose the region `US10` and click **Save**.
+Finally, configure the **Database Explorer**. Choose the region matching region `US10` or `EU10` and click **Save**.
 
 ![SAP Web IDE](11.png)
 
@@ -137,12 +144,14 @@ Right-click on the Workspace and choose **Git > Clone Repository**.
 Enter the following URL and click **Clone**.
 
 ```URL
-https://github.com/SAP-samples/hana-cf-get-started-trial/
+https://github.com/SAP-samples/hana-cf-get-started-trial
 ```
 
 ![SAP Web IDE](14.png)
 
 When prompted about ignoring system files, choose **Do it later**.
+
+> Note: At any time if you get stuck, you can view the completed solution in `Github` as well at this URL: [Project Solution](https://github.com/SAP-samples/hana-cf-get-started-trial/tree/solution)
 
 [DONE]
 [ACCORDION-END]
@@ -174,7 +183,7 @@ Right-click on the `db` module and choose **Open HDI container**.
 
 The database explorer will start loading. If asked to add a database connection, click **No**.
 
-You can see your container with a schema and the JSON collection `COMMUNITY`. They were generated from definitions in the cloned repository.
+You can see your container with a schema and the table `COMMUNITY`. They were generated from definitions in the cloned repository.
 
 ![SAP Web IDE](19.png)
 
@@ -192,19 +201,19 @@ Paste the following statements to insert new JSON documents into your collection
 > ### Note: The statements may be marked with errors by the editor. You can ignore the errors.
 
 ```SQL
-insert into "COMMUNITY" values({"name" : 'Sol' , "hint" :'I love using SAP HANA to develop applications', "learns_from" :'Sam', "office" :'Toronto', "tenure" :17, "geolocation" : 'Point( -79.380186 43.647944 )' });
-insert into "COMMUNITY" values({"name" :'Sam', "hint" :'I like developing in different languages and SQLScript', "learns_from" :'Sol', "office" :'Walldorf', "tenure" :3, "geolocation" : 'Point( 8.636789 49.29487 )' });
-insert into "COMMUNITY" values({"name" :'Jose', "hint" :'I use SAP Cloud platform to deploy cloud-native applications', "learns_from" :'Sol', "office" :'Palo Alto', "tenure" :5, "geolocation" : 'Point( -122.146603 37.398989 )' });
-insert into "COMMUNITY" values({"name" :'Charlotte', "hint" :'Developing apps with SAP HANA has been a game changer. I used to need several databases, now I only need one', "learns_from" :'Sam', "office" :'Australia', "tenure" :6, "geolocation" : 'Point( 151.209092 -33.834509 )' });
-insert into "COMMUNITY" values({"name" :'Maria', "hint" :'I am a coder. In my country, we say developing with SAP HANA is muito legal', "learns_from" :'Charlotte', "office" :'Sao Leopoldo', "tenure" :3, "geolocation" : 'Point( -51.148393 -29.796256 )' });
-insert into "COMMUNITY" values({"name" :'Wei', "hint" :'System administrator here, excited to learn you technologies', "learns_from" :'Sam', "office" :'Beijing', "tenure" :12, "geolocation" : 'Point( 121.601862 31.20235 )' });
-insert into "COMMUNITY" values({"name" :'Hiroshi', "hint" :'I developed many applications with both HANA and SQL Anywhere. I like both', "learns_from" :'Sol', "office" :'Fukuoka', "tenure" :8, "geolocation" : 'Point( 130.399091 33.592314 )' });
-insert into "COMMUNITY" values({"name" :'Saanvi', "hint" :'Developing apps from bangalore to the world', "learns_from" :'Sol', "office" :'Bangalore', "tenure" :7, "geolocation" : 'Point( 77.637116 12.972402 )' });
-insert into "COMMUNITY" values({"name" :'Rick', "hint" :'My team plays with databases regularly. HANA is one of the favorites', "learns_from" :'Maria', "office" :'Irving', "tenure" :11, "geolocation" : 'Point( -96.938460 32.873744 )' });
-insert into "COMMUNITY" values({"name" :'Ann', "hint" :'I like meeting other fellow coders', "learns_from" :'Casey', "office" :'San Ramon', "tenure" :1, "geolocation" : 'Point( -121.961661 37.766586 )' });
-insert into "COMMUNITY" values({"name" :'Hugo', "hint" :'I had never developed such cool apps before', "learns_from" :'Maria', "office" :'Monterrey', "tenure" :2, "geolocation" : 'Point( -100.353643 25.64757 )' });
-insert into "COMMUNITY" values({"name" :'Sofia', "hint" :'I connected SAP Analytics Cloud to HANA', "learns_from" :'Hiroshi', "office" :'Copenhagen', "tenure" :1, "geolocation" : 'Point( 12.589387 55.710640 )' });
-insert into "COMMUNITY" values({"name" :'Muhammed', "hint" :'I used to prefer Excel spreadsheets but Lumira changed that for me', "learns_from" :'Charlotte', "office" :'Ra anana', "tenure" :11, "geolocation" : 'Point( 34.882402 32.201905 )' });
+insert into "COMMUNITY" (DATA)  values('{"name" : "Sol" , "hint" :"I love using SAP HANA to develop applications", "learns_from" :"Sam", "office" :"Toronto", "tenure" :17, "geolocation" : "Point( -79.380186 43.647944 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Sam", "hint" :"I like developing in different languages and SQLScript", "learns_from" :"Sol", "office" :"Walldorf", "tenure" :3, "geolocation" : "Point( 8.636789 49.29487 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Jose", "hint" :"I use SAP Cloud platform to deploy cloud-native applications", "learns_from" :"Sol", "office" :"Palo Alto", "tenure" :5, "geolocation" : "Point( -122.146603 37.398989 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Charlotte", "hint" :"Developing apps with SAP HANA has been a game changer. I used to need several databases, now I only need one", "learns_from" :"Sam", "office" :"Australia", "tenure" :6, "geolocation" : "Point( 151.209092 -33.834509 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Maria", "hint" :"I am a coder. In my country, we say developing with SAP HANA is muito legal", "learns_from" :"Charlotte", "office" :"Sao Leopoldo", "tenure" :3, "geolocation" : "Point( -51.148393 -29.796256 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Wei", "hint" :"System administrator here, excited to learn you technologies", "learns_from" :"Sam", "office" :"Beijing", "tenure" :12, "geolocation" : "Point( 121.601862 31.20235 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Hiroshi", "hint" :"I developed many applications with both HANA and SQL Anywhere. I like both", "learns_from" :"Sol", "office" :"Fukuoka", "tenure" :8, "geolocation" : "Point( 130.399091 33.592314 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Saanvi", "hint" :"Developing apps from bangalore to the world", "learns_from" :"Sol", "office" :"Bangalore", "tenure" :7, "geolocation" : "Point( 77.637116 12.972402 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Rick", "hint" :"My team plays with databases regularly. HANA is one of the favorites", "learns_from" :"Maria", "office" :"Irving", "tenure" :11, "geolocation" : "Point( -96.938460 32.873744 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Ann", "hint" :"I like meeting other fellow coders", "learns_from" :"Casey", "office" :"San Ramon", "tenure" :1, "geolocation" : "Point( -121.961661 37.766586 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Hugo", "hint" :"I had never developed such cool apps before", "learns_from" :"Maria", "office" :"Monterrey", "tenure" :2, "geolocation" : "Point( -100.353643 25.64757 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Sofia", "hint" :"I connected SAP Analytics Cloud to HANA", "learns_from" :"Hiroshi", "office" :"Copenhagen", "tenure" :1, "geolocation" : "Point( 12.589387 55.710640 )" }');
+insert into "COMMUNITY" (DATA) values('{"name" :"Muhammed", "hint" :"I used to prefer Excel spreadsheets but Lumira changed that for me", "learns_from" :"Charlotte", "office" :"Ra anana", "tenure" :11, "geolocation" : "Point( 34.882402 32.201905 )" }');
 ```
 
 You should get success messages as in the following example:
@@ -213,23 +222,25 @@ You should get success messages as in the following example:
 
 > ### What is going on?
 
-> Document store allows you to store all of the information related to the same record in the same document. These documents do not have a predefined format or number of fields like a typical relational table.
->
-> A document store in SAP HANA does not have tables and rows, but collections and documents. Documents in the same collection may have different structures and data types.
+> Tables with JSON columns allow you to store all of the information related to the same record in the same document. These documents do not have a predefined format or number of fields like a typical relational table.
 >
 > This is particularly useful when relationships across documents are not too relevant and data structure needs to be flexible. For example, data for user accounts where fields like the phone number may not be entered and may not be stored at all. In this same scenario, there is no need for foreign keys and relations between the user records.
 >
-> This type of database is also referred to as `NoSQL` because it stores Not-only Structured data. SAP HANA uses SQL for CRUD operations in JSON document store.
+> This type of database is also referred to as `NoSQL` because it stores Not-only Structured data. SAP HANA uses SQL for CRUD operations in JSON columns.
 >
-> For more information about the document store in SAP HANA, [refer to the help](https://help.sap.com/viewer/3e48dd3ad36e41efbdf534a89fdf278f/2.0.04/en-US/b4518419653e44daad99c285039b29c5.html).
 
 
 The following statement demonstrates a use of the JSON Object Expression in the `select` statement. Run this statement to complete the validation below:
 
 ```SQL
-select {office : "office"} as "location"
-from "COMMUNITY"
-where "name"  = 'Maria';
+SELECT *
+	FROM JSON_TABLE(COMMUNITY.DATA, '$'
+	COLUMNS
+    (
+        LOCATION NVARCHAR(200) PATH '$.office',
+        NAME NVARCHAR(200) PATH '$.name'
+    )
+	) AS JT where NAME = 'Maria'
 ```
 
 > ### Note: You can clear the statements before entering new ones in SQL console (recommended).
@@ -244,23 +255,23 @@ Free resources, like this tutorial, are a great way to get started. People in th
 
 You will select people whose experience is 2 years or more. You'll also need to move those records into a columnar table so that you can perform advanced analytics that are only available in the columnar store.
 
-Create the columnar table first:
+Create the columnar table first by returning to the Web IDE editor view and creating a file named `DEVS.hdbtable` in the `db/src` folder. Here is the content for this file.
 
 ```SQL
-create column table "DEVS"(
+column table "DEVS"(
   "DEVNAME" nvarchar(100) PRIMARY KEY,
   "LEARNS_FROM" nvarchar(100),
-  "HINT_TEXT" text FAST PREPROCESS OFF ASYNC,
+  "HINT_TEXT" nvarchar(1000),
   "CITY" nvarchar(100),
   "LON_LAT" nvarchar(200)
-);
+)
 ```
 
 > ### Please note `column` table definition in the statement.
 > SAP HANA creates columnar tables by default. The `column` keyword is optional, but is used in the example to remind about the native column-based storage of tables in SAP HANA.
 >
-> The columnar table has a text index on the field `HINT_TEXT`.
 
+Save you content and right mouse click on the `db` folder. Choose Build->Build. Upon completion of the build return to the database explorer view of your HDI container.
 You should see the new table listed under `TABLES`:
 
 ![SAP Web IDE](22.png)
@@ -268,10 +279,20 @@ You should see the new table listed under `TABLES`:
 Insert the data from the documents store into the columnar table, filtering out community members with tenure below 1 year:
 
 ```SQL
-insert into "DEVS"
-select "name", "learns_from", "hint", "office", "geolocation"
-from "COMMUNITY"
-where to_bigint("tenure") > 1
+insert into DEVS
+SELECT NAME, LEARNS_FROM, HINT, OFFICE, GEOLOCATION
+	FROM JSON_TABLE(COMMUNITY.DATA, '$'
+	COLUMNS
+    (
+        LOCATION NVARCHAR(200) PATH '$.office',
+        NAME NVARCHAR(200) PATH '$.name',
+        LEARNS_FROM NVARCHAR(200) PATH '$.learns_from',
+        HINT NVARCHAR(200) PATH '$.hint',
+        OFFICE NVARCHAR(200) PATH '$.office',
+        GEOLOCATION NVARCHAR(200) PATH '$.geolocation',
+        TENURE NVARCHAR(30) PATH '$.tenure'
+    )
+	) AS JT where to_bigint(TENURE) > 1
 ```
 
 Count the inserted records in the new columnar table:
@@ -285,42 +306,37 @@ Insert the result of the previous SQL command in the box below to complete the f
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Use linguistic text search to find developers who can help)]
+[ACCORDION-BEGIN [Step 9: ](Use text search to find developers who can help)]
 
 There are plenty of different ways to work with SAP HANA. Some developers are interested in its analytics, some keep it running smoothly through system and database administration, and others use it to create data-driven applications. In order to help Thomas, you'll need to look for people who like to develop applications.
 
-You'll use a linguistic text search to find out who has said anything related developing applications.
+You'll use a `contains` text search to find out who has said anything related developing applications.
 
 ```SQL
-select "DEVNAME", TO_NVARCHAR("HINT_TEXT") as "testimony", "LEARNS_FROM"
-from "DEVS"
-where contains("HINT_TEXT", 'develop', linguistic)
+select DEVNAME, TO_NVARCHAR(HINT_TEXT) as "testimony", LEARNS_FROM
+from DEVS
+where contains(HINT_TEXT, '%develop%')
 ```
-
-A linguistic search finds all words that have the same word stem - here `develop` - as the search term.
 
 ![Connect to SQLpad](34.png)
 
-> ### Other functions such as fuzzy search, text mining and sentiment analysis can be applied using the text engine in SAP HANA.
-> To learn more about linguistic and other types of search, visit [the official documentation](https://help.sap.com/viewer/691cb949c1034198800afde3e5be6570/2.0.04/en-US/ce86ef2fd97610149eaaaa0244ca4d36.html)
-
-You will use these results to create a table to show who learns from whom. This table will be used to create a graph workspace. Create it using the following SQL statement:
+You will use these results to create a table (as a new `hdbtable` artifact as you did earlier) to show who learns from whom. This table will be used to create a graph workspace. Create it using the following syntax in a new `hdbtable` file. Remember to build your `db` module again:
 
 ```SQL
-create table "LEARNING_RELATION"(
-	"ID" int NOT NULL UNIQUE GENERATED ALWAYS AS IDENTITY (START WITH 10 INCREMENT BY 1),
-	"SOURCE" nvarchar(100) NOT NULL,
-	"TARGET" nvarchar(100) NOT NULL
-);
+column table LEARNING_RELATION(
+	ID int NOT NULL UNIQUE GENERATED ALWAYS AS IDENTITY (START WITH 10 INCREMENT BY 1),
+	SOURCE nvarchar(100) NOT NULL,
+	TARGET nvarchar(100) NOT NULL
+)
 ```
 
 Insert the records into the new table:
 
 ```SQL
-insert into "LEARNING_RELATION"
-("SOURCE", "TARGET")
-select "LEARNS_FROM", "DEVNAME"
-from "DEVS"
+insert into LEARNING_RELATION
+(SOURCE, TARGET)
+select LEARNS_FROM, DEVNAME
+from DEVS
 ```
 How many records were inserted into the new table?
 
@@ -337,31 +353,24 @@ In SAP HANA, graphs are represented by vertices (in this example, developers) an
 
 > Find more information about the graph data model in the [SAP HANA reference](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/2.0.04/en-US/7734f2cfafdb4e8a9d49de5f6829dc32.html) and [how to apply to text analytics](https://help.sap.com/viewer/62e301bb1872437cbb2a8c4209f74a65/2.0.03/en-US/f585411bd05c49c58bdd2b99710f66c3.html).
 
-Create a graph workspace to define a graph in terms of tables and columns:
+Create a graph workspace to define a graph in terms of tables and columns by returning to the Web IDE editor and creating a file with the extension `hdbgraphworkspace`:
 
 ```SQL
-create graph workspace "HANA_GRAPH"
-  edge table "LEARNING_RELATION"
-    source column "SOURCE"
-    target column "TARGET"
-    key column "ID"
-  vertex table "DEVS"
-    key column "DEVNAME";
+graph workspace HANA_GRAPH
+  edge table LEARNING_RELATION
+    source column SOURCE
+    target column TARGET
+    key column ID
+  vertex table DEVS
+    key column DEVNAME
 ```
 
 You can preview the graph by navigating into **Graph Workspaces**, selecting the graph you have just created and choosing **View Graph**.
 
 ![Graph](23.png)
 
-There are some known algorithms to apply on a graph. One of them is the `Strongly Connected Components`.
-
-Click **Algorithm**, choose **Strongly Connected** and click **Apply**.
 
 ![Graph](24.png)
-
-The names connected in both directions in the directed graph are marked in the same color:
-
-![Graph](26.png)
 
 [DONE]
 [ACCORDION-END]
@@ -381,11 +390,11 @@ Thomas is located in Munich, Germany. The geolocation of the city is:
 Use the following query to calculate distance to Thomas' location:
 
 ```SQL
-select "DEVNAME",
-round(st_geomFromText( 'Point( 11.57548 48.13702 )', 4326).st_distance(st_geomFromtext( "LON_LAT", 4326), 'kilometer'),0) as "DISTANCE_KM"
-from "DEVS"
-where contains("HINT_TEXT", 'develop', linguistic)
-order by "DISTANCE_KM"
+select DEVNAME,
+round(st_geomFromText('Point( 11.57548 48.13702 )', 4326).st_distance(st_geomFromtext(LON_LAT, 4326), 'kilometer'),0) as DISTANCE_KM
+from DEVS
+where contains(HINT_TEXT, '%develop%')
+order by DISTANCE_KM
 ```
 
 [VALIDATE_5]
@@ -395,16 +404,17 @@ order by "DISTANCE_KM"
 
 Congratulations on helping Thomas find and collaborate with other developers!
 
-If you are ready to explore more features without limitations, you can download SAP HANA, express edition. SAP HANA, express editions, is **free** up to 32 GB of RAM, **even for productive use**. You can either:
+If you are ready to explore more features with your own local copy of SAP HANA, you can also download SAP HANA, express edition. SAP HANA, express editions, is **free** up to 32 GB of RAM, **even for productive use**. You can:
 
-  -  [Register for a free download](https://www.sap.com/cmp/td/sap-hana-express-edition.html), or
-  -  [Deploy an instance in the cloud](https://developers.sap.com/tutorials/hxe-database-xs-advanced.html)
+  -  [Register for a free download](https://www.sap.com/cmp/td/sap-hana-express-edition.html)
+
+Or you can continue to use the free SAP HANA Cloud trial as a part of your overall SAP Cloud Platform trial.
 
 Here's how you can get started with any developer-focused topic in SAP HANA and more:
 
 -   **SAP Developer Center**: You'll find plenty of free downloads and tutorials to help you with different topics on [developers.sap.com](http://developers.sap.com). You can learn new topics like [machine learning](https://developers.sap.com/group.hxe-aa-movielens-SQL.html), dive into [geospatial](https://developers.sap.com/group.hana-aa-spatial-get-started.html) or switch to a full SAP HANA, express edition, image with XS Advanced, to [create cloud native applications with micro-services](https://developers.sap.com/mission.xsa-get-started.html)
 -   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](https://blogs.sap.com/), and many are willing to answer your questions [in the Q&A](https://answers.sap.com)
--   **Community events**: You can also check out [events](https://www.sap.com/community/events.html) closest to you in order to meet other developers.
+-   **Community events**: You can also check out [events](https://community.sap.com/events) closest to you in order to meet other developers.
 
 
 [DONE]
