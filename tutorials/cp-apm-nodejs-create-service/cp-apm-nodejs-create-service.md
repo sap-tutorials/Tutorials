@@ -30,7 +30,7 @@ time: 50
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Install the `cds` development kit globally by executing the following command:
+1. Open a command line window and install the `cds` development kit globally by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -62,9 +62,17 @@ Before you start, make sure that you've completed the prerequisites.
 
 1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds#overview).
 
-2. Choose **Install**. The `vsix` file for CDS Language Support will be added as an extension in Visual Studio Code.
+2. Choose **Install**.
 
 ![Folder structure](VSCode_extension.png)
+
+   Visual Studio Code opens the extensions details page.
+
+![Folder structure](VSCode_view_extension.png)
+
+3. In Visual Studio Code choose **Install** to enable the extension for CDS Language Support.
+
+> If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
 [DONE]
 
