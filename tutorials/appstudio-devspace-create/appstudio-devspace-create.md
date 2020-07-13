@@ -24,21 +24,21 @@ author_profile: https://github.com/Paolaufer
 
 2. Choose **Create Dev Space**.
 
-    ![Create DEV Space](step2-newicon-create-dev-space.png)
+    !![Create DEV Space](step2-newicon-create-dev-space.png)
 
 3. Choose a name for your dev space.
 
-    ![Choose Name](choose-name.png)
+    !![Choose Name](choose-name.png)
 
 4. Choose **SAP Cloud Business Application** as the application type.
 
-    ![Choose SAP Cloud](choose-dev-space.png)
+    !![Choose SAP Cloud](choose-dev-space.png)
 
     >By selecting SAP Cloud Business Application, your dev space comes with several extensions out-of-the-box that you need to develop CAP applications. For example, CDS tools, Java Tools, and MTA Tools.
 
 5. Choose **Create Dev Space**.
 
-    ![Create Dev](click-create-dev-space.png)
+    !![Create Dev](click-create-button.png)
 
     >The creation of the dev space takes a while. You see that the status for your dev space will change from **STARTING** to **RUNNING**.
 
