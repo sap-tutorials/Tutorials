@@ -14,7 +14,6 @@ author_profile: https://github.com/LindsayBert
   - If you're using a production environment, you should have a subaccount configured. If you don't have a subaccount in the Cloud Foundry environment, refer to this topic: [Initial Setup](https://help.sap.com/viewer/ad4b9f0b14b0458cad9bd27bf435637d/Cloud/en-US/fd79b232967545569d1ae4d8f691016b.html).
 
 
-
 ## Details
 ### You will learn
   - How to subscribe to the Portal Service
