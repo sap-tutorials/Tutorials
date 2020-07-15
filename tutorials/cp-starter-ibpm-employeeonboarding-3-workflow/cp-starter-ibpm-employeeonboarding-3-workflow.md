@@ -2,7 +2,7 @@
 title: Set Up a Workflow With Extended Employee Onboarding
 description: Set up the Employee Onboarding sample workflow application and integrate with business rules service.
 auto_validation: true
-time: 20
+time: 10
 tags: [ tutorial>beginner, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform
 ---

@@ -1,6 +1,6 @@
 ---
 title: Set Up SAP Fiori launchpad in Cloud Foundry to Get Notifications
-description: Create and configure an SAP Fiori launchpad site to receive notifications from Leonardo IoT using SAP Web IDE.
+description: Create and configure an SAP Fiori launchpad site to receive notifications from SAP IoT using SAP Web IDE.
 auto_validation: true
 time: 40
 tags: [ tutorial>beginner, products>sap-leonardo-iot, products>sap-cloud-platform-internet-of-things, products>sap-cloud-platform-portal, products>sap-web-ide, products>sap-web-ide-plug-ins]
@@ -122,7 +122,7 @@ An SAP Fiori launchpad site provides a user with access to their notifications a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure Leonardo IoT Notification service)]
+[ACCORDION-BEGIN [Step 3: ](Configure SAP IoT Notification service)]
 
   1. Open `CommonDataModel.json` in **Code Editor**.
 
@@ -365,7 +365,7 @@ To comment out the references to `UI Deployer`:
 
   We will need to retrieve the thing id for the next Step. If you already have the thing id, please proceed to the next step.
 
-  1. From Leonardo IoT launchpad, select the **Thing Modeler** tile.
+  1. From SAP IoT launchpad, select the **Thing Modeler** tile.
 
     ![Select Thing Modeler in SAP Fiori launchpad](/images/shared/thing_modeler_tile.png)  
 
@@ -384,7 +384,7 @@ To comment out the references to `UI Deployer`:
 
 [ACCORDION-BEGIN [Step 11: ](Generate test notification)]
 
-  1. From Leonardo IoT launchpad, select the **Actions** tile.
+  1. From SAP IoT launchpad, select the **Actions** tile.
 
     ![Select Actions from SAP Fiori launchpad](/images/shared/launchpad_tile_actions.png)
 

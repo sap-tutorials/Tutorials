@@ -74,7 +74,11 @@ Following the best practices for RESTful APIs, we used the `POST` method to crea
 
 ![Example POST request using Postman](postman.png)
 
-Start your server using `npm start` and create a  `POST` request to `http://localhost:3000/business-partners/testID/address` with a JSON body: `{"key":"Some test body."}`. The server should respond with the ID and body from the request. In our case you should get `This is my id: testID and body for address creation: {"key":"Some test body."}`
+Start your server using
+```Shell
+npm start
+```
+And create a  `POST` request to `http://localhost:3000/business-partners/testID/address` with a JSON body: `{"key":"Some test body."}`. Don't forget to change the body type to JSON in the dropdown menu. The server should respond with the ID and body from the request. In our case you should get `This is my id: testID and body for address creation: {"key":"Some test body."}`
 
 [DONE]
 [ACCORDION-END]
@@ -147,7 +151,7 @@ export class BusinessPartnerController {
 
 `buildAddress()` takes the body of the incoming request as well as the ID from the URL and passes it to the SDK builder methods to construct a `BusinessPartnerAddress` entity. This is then passed to `createAddress()` to send the create request to SAP S/4HANA Cloud.
 
-Restart your server and send a `POST` request to `http://localhost:3000/business-partners/1/address` with the following body:
+Restart your server and send a `POST` request to `http://localhost:3000/business-partners/1003764/address` with the following body:
 
 ```JSON
 {
@@ -159,7 +163,7 @@ Restart your server and send a `POST` request to `http://localhost:3000/business
 }
 ```
 
-If there is a business partner with ID "1" in your destination system, this will create a new address. Alternatively, replace the ID in the URL with the ID of an existing business partner in your system.
+If there is a business partner with ID "1003764" in your destination system, this will create a new address. Alternatively, replace the ID in the URL with the ID of an existing business partner in your system.
 
 [DONE]
 [ACCORDION-END]
