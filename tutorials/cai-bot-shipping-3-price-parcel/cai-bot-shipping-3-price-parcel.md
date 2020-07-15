@@ -40,7 +40,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
       ![parcel-size](Entity_Restricted2.png)
 
-2. Now enter the valid values for this entity.
+2. Enter the valid values for this entity.
 
     And instead of you entering each size separately, we have supplied the sizes in a CSV file. Do the following:
 
