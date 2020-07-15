@@ -237,7 +237,7 @@ Now we will write the main part of the app, which creates the endpoints.
 
     Save the file.
 
-    You can test this by opening Postman, and calling the endpoint `https://localhost:5000/bot` (with **POST** method and no body).
+    You can test this by opening Postman, and calling the endpoint `localhost:5000/bot` (with **POST** method and no body).
 
     ![VS Code test bot endpoint](vscode-test-bot.png)
 
