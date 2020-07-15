@@ -10,7 +10,7 @@ author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
- - You have provisioned your SAP Cloud Platform Integration tenant. For more information, see [Set Up Your SAP Cloud Platform Integration Tenant](cp-starter-integration-cpi-onboard-subscribe)
+ - You have provisioned your SAP Cloud Platform Integration Suite tenant. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
  - You have created an integration package and an integration flow. For more information, see [Create your First Integration Package and Integration Flow](cp-starter-integration-cpi-create-iflow)
  - You have [downloaded](https://www.getpostman.com/downloads/) and installed the Postman client.
 
@@ -126,7 +126,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
 4. Select the **Connection** tab. In the **Address** field, enter **`https://espmrefapps.hana.ondemand.com/espm-cloud-web/espm.svc`**. This is the URL of the online web shop from which you will fetch the product details.
 
-    !![Enter connection details for OData adapter](6.4.odata-connection-details.png)
+    !![Enter connection details for OData adapter](6.4.Odata-connection-details.png)
 
 5. Select the **Processing** tab and choose **Select** in the **Resource Path** field.
 
