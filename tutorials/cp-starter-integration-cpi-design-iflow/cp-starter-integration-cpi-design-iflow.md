@@ -53,7 +53,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 3. Select the **Connection** tab. In the **Address** field, enter **`/CloudIntegrationTrial`**.
 
-    Optionally, you can enter any value of your choice, but ensure that you use the **"/"** symbol before specifying the endpoint name. Deselect the **CSRF Protected** checkbox (this will be selected by default).
+    Optionally, you can enter any value of your choice, but ensure that you use **"/"** symbol before specifying the endpoint name. Deselect the **CSRF Protected** checkbox (this will be selected by default).
 
     !![Link text e.g., Destination screen](2.3.configure-http-connection.png)
 
@@ -126,7 +126,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
 4. Select the **Connection** tab. In the **Address** field, enter **`https://espmrefapps.hana.ondemand.com/espm-cloud-web/espm.svc`**. This is the URL of the online web shop from which you will fetch the product details.
 
-    !![Enter connection details for OData adapter](6.4.Odata-connection-details.png)
+    !![Enter connection details for OData adapter](6.4.odata-connection-details.png)
 
 5. Select the **Processing** tab and choose **Select** in the **Resource Path** field.
 
