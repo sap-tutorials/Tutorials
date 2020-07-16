@@ -116,7 +116,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
     !![Add Capabilities](5.1.1Addcapapbilities.png)
 
-    !![Additional functions selection](5.2.1Addfunctions_new.png)
+    <!---!![Additional functions selection](5.2.1Addfunctions_new.png)--->
 
 4. Click **Activate** to provision the selected capabilities.
 
@@ -134,7 +134,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
     >To access the URL, you must assign roles to the user. Continue with the next step.
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
  [ACCORDION-BEGIN [Step 5: ](Assign roles for the capabilities)]
@@ -162,7 +162,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
 3. After giving authorization to a user. Go to the **Integration Suite Provisioning** application and click the URL to launch the capability. Refer to **Step 4.4**.
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 ---
