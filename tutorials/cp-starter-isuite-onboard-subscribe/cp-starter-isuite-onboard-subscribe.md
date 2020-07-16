@@ -145,6 +145,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     !![Trust configuration](6.1_Trust_configuration.png)
 
  2. Enter the user's e-mail address and click on **Show Assignments** to see the role collections that are currently assigned to this user. Then click **Assign Role Collection** and select relevant roles based on the activated capability.
+>**IMPORTANT**: For this starer scenario to work, assign the role collections only for *Cloud Integration* capability.
 
     !![Role Collections](6.2_RoleCollections.png)
 
@@ -158,7 +159,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     | API Management | `APIPortal.Administrator` | Access the API portal user interface (UI) and services. |
     |                | `APIManagement.Selfservice.Administrator` | Get onboard to API Portal and access its settings page. |
     | Integration Advisor | `iadv-content-developer` | Access Integration Content advisor to create and deploy interfaces and mappings. |
-    | Open Connectors | `IntegrationSuite-OpenConnectors-Consumer` | Access pre build connectors to integrate with non-SAP applications. To gain access to the Open Connectors application and its features, you must have relevant capability-specific roles assigned to your user. |
+    | Open Connectors | `IntegrationSuite-OpenConnectors-Consumer` | View the Open Connectors capability tile on the Integration Suite Launchpad. |
 
 3. After giving authorization to a user. Go to the **Integration Suite Provisioning** application and click the URL to launch the capability. Refer to **Step 4.4**.
 
