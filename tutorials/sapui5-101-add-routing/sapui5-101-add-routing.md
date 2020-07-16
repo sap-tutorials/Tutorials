@@ -1,6 +1,6 @@
 ---
 title: Add Views and Define Routes to Access Them
-description: Add new views to the SAPUI5 web application and declare them im the manifest.
+description: Add new views to the SAPUI5 web application and declare them in the manifest. Add a list to the XML view to display data from the data model, that got filled with data from the Northwind data service. Every list element will represent a product entity in the data model. Thanks to the data binding, SAPUI5 takes the path of the aggregation and automatically creates as many list items as the aggregation includes (all the product entities). For now, you will just display the product names, more specifically the attribute `ProductName`.
 auto_validation: true
 primary_tag: topic>sapui5
 author_name: Marius Obert
@@ -12,6 +12,7 @@ time: 20
 ## Details
 ### You will learn  
 - How to add additional views
+- How to use data binding
 - How to define routes and targets
 - How to add additional controller
 
