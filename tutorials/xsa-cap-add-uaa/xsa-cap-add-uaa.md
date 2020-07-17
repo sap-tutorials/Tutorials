@@ -1,5 +1,5 @@
 ---
-title: XS Advanced, Add User Authentication to Your Application
+title: HANA Native, Add User Authentication to Your Application
 description: Define security and enable user authentication and authorization.
 time: 15
 author_name: Thomas Jung
