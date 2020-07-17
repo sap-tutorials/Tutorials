@@ -28,7 +28,7 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
     >Ensure that you choose the 64-bit version assuming that you have the 64-bit version of the SAP HANA client installed.
 
-    !![start ODBC Administrator](start-odbc.png)
+    ![start ODBC Administrator](start-odbc.png)
 
 2. Click on the **Drivers** tab and view the installed drivers.  
 
