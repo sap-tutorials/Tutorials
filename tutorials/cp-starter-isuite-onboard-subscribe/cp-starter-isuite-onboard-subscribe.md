@@ -169,7 +169,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](Create service instance and key)]
+[ACCORDION-BEGIN [Step 6: ](Create service instance and key (For Cloud Platform Integration capability only))]
 
 1. Navigate back to your SAP Cloud Platform's subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
 
