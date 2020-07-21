@@ -105,6 +105,8 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
     >The first command creates the SAP HANA table and view definitions along with `manifest.yaml` files in both in `gen/db` and `gen/srv` folders. Look at `gen/db/manifest.yaml` and see that it binds to the `my-bookshop-db-hdi-container` service that you've created in the previous step.
 
+    >See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) for more details.
+
 4. In the deploy log, find the application URL in the `routes` line at the end:
 
     ```
