@@ -6,7 +6,7 @@ time: 15
 tags: [  tutorial>beginner, products>sap-cloud-platform-portal ]
 primary_tag: products>sap-cloud-platform-portal
 author_name: Lindsay Bert
-author_profile: https://github.com/LindsayBert 
+author_profile: https://github.com/LindsayBert
 ---
 
 
@@ -144,9 +144,9 @@ In this step, you'll create a new group and assign your app to it.
 
 
 
-[ACCORDION-BEGIN [Step 7: ](Review the site)]
+[ACCORDION-BEGIN [Step 6: ](Review the site)]
 
-1. Click the Site Directory icon in the left panel.
+1. Click the Site Directory icon in the left panel.  
 
     !![Open the Site Directory](8a-open-site-directory.png)
 

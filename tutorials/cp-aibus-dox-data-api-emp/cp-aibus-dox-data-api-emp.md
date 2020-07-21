@@ -165,7 +165,7 @@ Do the following:
 
 4. Upload the document PDF file you want to enrich.
 
-5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `taxName`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_27`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example) and the enrichment data type `employee`.
+5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_27`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example) and the enrichment data type `employee`.
 
     ```JSON
     {
@@ -173,7 +173,6 @@ Do the following:
           "headerFields":[
              "documentNumber",
              "taxId",
-             "taxName",
              "purchaseOrderNumber",
              "shippingAmount",
              "netAmount",
@@ -186,22 +185,14 @@ Do the following:
              "taxAmount",
              "taxRate",
              "receiverName",
-             "receiverAddress",
-             "deliveryDate",
-             "paymentTerms",
-             "shipToAddress"
+             "receiverAddress"
           ],
           "lineItemFields":[
              "description",
              "netAmount",
              "quantity",
              "unitPrice",
-             "materialNumber",
-             "documentNumber",
-             "documentDate",
-             "discountAmount",
-             "deductionAmount",
-             "itemNumber"
+             "materialNumber"
           ]
        },
        "clientId":"c_27",

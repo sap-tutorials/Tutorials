@@ -41,12 +41,14 @@ Provide the required information:
 | Field | Value |
 |----|----|
 | **Name** | `Content Action Card` |
+| **Version** | `1.0` |
 | **Destination** | `com.sap.edm.sampleservice.v2` |
 | **Template Source** | `Template Manager` |
 | **HTML Template** | `Sample Product Template` |
 | **Card Template** | `Server Managed Card` |
 
-> If you see a pop-up, click **OK** for the confirmation.
+> If you see a notification, click **`X`** to close it.
+  ![MobileCardsImage](img_5_1.png)
 
 ![MobileCardsImage](img_5.png)
 
