@@ -10,7 +10,7 @@ primary_tag: products>sap-hana
 ---
 
 ### You will learn
-  - How to start with your own free SAP HANA Cloud instance in the trial account of SAP Cloud platform
+  - How to start with your own free SAP HANA Cloud instance in the trial account of SAP Cloud platform 
   - How to leverage SAP Web IDE to use advanced analytics features in SAP HANA, including JSON table, geospatial, graph and text search functions
 
 Ready to explore SAP HANA? As a fun exercise, you can first help our fictional developer, Thomas, work with other developers in the community to create his own database schema on SAP HANA to use text, graph and geospatial processing inside the database.
