@@ -143,7 +143,8 @@ Running your application has several advantages over deploying it. Among others,
 
 
 > In case you run into this error:
-  !![errorPath](./errorPath.png)
+
+>!![errorPath](./errorPath.png)
 
 >  You can fix this by running the following command in a **Terminal|New Terminal**:
 
