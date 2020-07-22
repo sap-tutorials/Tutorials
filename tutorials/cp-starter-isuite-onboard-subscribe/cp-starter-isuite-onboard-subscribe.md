@@ -145,6 +145,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     !![Trust configuration](6.1_Trust_configuration.png)
 
  2. Enter the user's e-mail address and click on **Show Assignments** to see the role collections that are currently assigned to this user. Then click **Assign Role Collection** and select relevant roles based on the activated capability.
+>**IMPORTANT**: For this starter scenario to work, assign the role collections only for *Cloud Integration* capability.
 
     !![Role Collections](6.2_RoleCollections.png)
 
@@ -158,11 +159,74 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     | API Management | `APIPortal.Administrator` | Access the API portal user interface (UI) and services. |
     |                | `APIManagement.Selfservice.Administrator` | Get onboard to API Portal and access its settings page. |
     | Integration Advisor | `iadv-content-developer` | Access Integration Content advisor to create and deploy interfaces and mappings. |
-    | Open Connectors | `IntegrationSuite-OpenConnectors-Consumer` | Access pre build connectors to integrate with non-SAP applications. To gain access to the Open Connectors application and its features, you must have relevant capability-specific roles assigned to your user. |
+    | Open Connectors | `IntegrationSuite-OpenConnectors-Consumer` | View the Open Connectors capability tile on the Integration Suite Launchpad. |
 
-3. After giving authorization to a user. Go to the **Integration Suite Provisioning** application and click the URL to launch the capability. Refer to **Step 4.4**.
+    >**IMPORTANT**: If you are facing access issues after assigning the role collection, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Please include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
+
+  3. After giving authorization to a user. Go to the **Integration Suite Provisioning** application and click the URL to launch the capability. Refer to **Step 4.4**.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 6: ](Create service instance and key (For Cloud Platform Integration capability only))]
+
+1. Navigate back to your SAP Cloud Platform's subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
+
+    ![Access space](4.1.access-space.png)
+
+2. Choose **Services** > **Service Marketplace** > **Process Integration Runtime**.
+
+    !![Access PI Runtime](4.2.access-process-integration-runtime.png)
+
+    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
+
+3. Select **Instances** > **New Instance**.
+
+    !![Create new instance](4.3.create.new.instance.png)
+
+4. Choose **Next** to select the default service plan. In the **Specify Parameters** tab, enter:
+
+    ```JSON
+    {
+     "roles":[
+       "ESBMessaging.send"
+     ]
+    }
+    ```
+Service plan integration-flow is the only option which is preset because processing integration flows is what a remote system is doing when calling SAP Cloud Platform Integration.
+
+    !![Specify JSON for user role](4.4.specify-json-instance.png)
+
+5. Choose **Next** until you have to specify the instance name. Provide any name of your choice and choose **Finish**.
+
+    ![Specify instance name](4.5.specify-instance-name.png)
+
+6. Select the newly created service instance.
+
+    ![Select service key](4.6.select-service-instance.png)
+
+    You create this service instance to enable inbound HTTP calls to your SAP Cloud Platform Integration tenant.
+
+7. Choose **Create Service Key** to create a new service key.
+
+    ![Create service key](4.7.create-service-key.png)
+
+    This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Cloud Platform Integration suite tenant.
+
+8. Specify a name for the service key and choose **Save**.
+
+    ![Enter service key name](4.8.create-service-key-2.png)
+
+9. Copy the values of **`clientid`** and **`clientsecret`** parameters. These are the credentials that you use to make a request to your integration flow after you deploy it.
+
+    ![Copy clientid and clientsecret](4.9.copy-clientid-secret.png)
+
+    Make a note of these credentials. You will use it when you make HTTP calls to integration flows deployed on your tenant with HTTP endpoints.
+
+
+[DONE]
+[ACCORDION-END]
+
 
 ---
