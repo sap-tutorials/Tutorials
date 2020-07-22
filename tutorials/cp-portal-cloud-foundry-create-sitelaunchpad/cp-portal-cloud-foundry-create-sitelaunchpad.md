@@ -14,7 +14,7 @@ You have subscribed to the Portal service.
 
 
 ### You will learn
-  - How to create a Portal site
+  - How to create an Portal site.
 
 In this group of tutorials our goal is to create a Portal site for a recruiting company called `JobCore Recruiting`. We will then add business apps to this site.
 
