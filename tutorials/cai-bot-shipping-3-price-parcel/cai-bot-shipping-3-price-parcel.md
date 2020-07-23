@@ -3,7 +3,7 @@ title: Let Customers Ask Chatbot for Shipping Price
 description: Create an intent for requesting the price of shipping a package, use carousel for selecting package size, call API to retrieve Google map, retrieve memory data and put in message.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -40,7 +40,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
       ![parcel-size](Entity_Restricted2.png)
 
-2. Now enter the valid values for this entity.
+2. Enter the valid values for this entity.
 
     And instead of you entering each size separately, we have supplied the sizes in a CSV file. Do the following:
 

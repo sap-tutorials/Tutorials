@@ -10,7 +10,8 @@ author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
-- You have provisioned and logged into your SAP Cloud Platform Integration tenant. For more information see [Set Up Your SAP Cloud Platform Integration Tenant](cp-starter-integration-cpi-onboard-subscribe)
+- You have provisioned your SAP Cloud Platform Integration Suite tenant. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
+- You have activated the **Cloud Integration** capability and click the URL to launch it.
 
 ## Details
 ### You will learn
