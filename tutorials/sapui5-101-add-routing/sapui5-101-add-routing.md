@@ -1,6 +1,6 @@
 ---
 title: Add Views and Define Routes to Access Them
-description: Add new views to the SAPUI5 web application and declare them im the manifest.
+description: Add new views to the SAPUI5 web application and declare them in the manifest. 
 auto_validation: true
 primary_tag: topic>sapui5
 author_name: Marius Obert
@@ -12,6 +12,7 @@ time: 20
 ## Details
 ### You will learn  
 - How to add additional views
+- How to use data binding
 - How to define routes and targets
 - How to add additional controller
 
@@ -58,8 +59,10 @@ In SAPUI5, each view is represented by a dedicated file in the `view` folder.
     ```
 
 > Hint: You don't need to rely on the code editor to edit the views. Right-click on any view and select **Open with | Layout Editor** to access the [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) layout editor:
-    !![detailView](detailView.png)
-    !![listView](listView.png)
+
+>!![detailView](detailView.png)
+
+>!![listView](listView.png)
 
 
 [DONE]
@@ -218,6 +221,8 @@ This is the crucial step of this tutorial that ties everything together. Each vi
 If you already stopped the web app, restart the saved configuration. **Open** the running web app to see the changes.
 
 You should be able to see a list of products and navigate to and from the detail pages.
+
+
 !![demo](./navigation.gif)
 
 

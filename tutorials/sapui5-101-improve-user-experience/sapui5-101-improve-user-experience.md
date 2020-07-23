@@ -1,6 +1,6 @@
 ---
 title: Improve User Experience of the List and Detail Page
-description: So far, the web app is working, but it doesn't show much information yet. In this tutorial, you'll add multiple control to improve the user experience.
+description: Display more detailed information for each list item and on the detail page.
 time: 15
 auto_validation: true
 primary_tag: topic>sapui5
@@ -12,9 +12,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-cloud-pl
 ### You will learn  
 - About localized strings in SAPUI5
 - How to import new modules in a controller
+- How to improve the user experience of the list with a search field
 - Many new controls that come with SAPUI5
 
-
+So far, the web app is working, but it doesn't show much information yet. In order to improve our web app, you can display more detailed information for each list item and on the detail page.
 
 ---
 
@@ -24,7 +25,7 @@ tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-cloud-pl
 
 **Replace** the content of the `webapp/webapp/i18n/i18n.properties` file with the following lines.
 
-```I18N
+```i18n
 appTitle=Products
 appDescription=Displays products
 

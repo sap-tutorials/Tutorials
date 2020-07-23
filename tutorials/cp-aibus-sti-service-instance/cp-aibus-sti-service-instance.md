@@ -1,5 +1,5 @@
 ---
-title: Create service instance for Service Ticket Intelligence
+title: Create Service Instance for Service Ticket Intelligence
 description: Create a service instance and the associated service keys for Service Ticket Intelligence, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
 auto_validation: true
 time: 15
