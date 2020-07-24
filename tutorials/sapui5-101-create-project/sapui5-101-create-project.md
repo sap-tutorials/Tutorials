@@ -57,7 +57,7 @@ Make sure you are connected to a Cloud Foundry endpoint to deploy the SAPUI5 app
 
     !![newproject](./newproject.png)
 
-2. Select **Fiori Project** as the template category you want to use and click **Next**.
+2. Select **SAP Fiori Freestyle - Project Generator** as the template category you want to use and click **Next**.
 
     !![fioriTemplate](./fioriTemplate.png)
 
