@@ -354,7 +354,7 @@ In SAP HANA, graphs are represented by vertices (in this example, developers) an
 
 ![Graph](a3.png)
 
-> Find more information about the graph data model in the [SAP HANA reference](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/latest/en-US/7734f2cfafdb4e8a9d49de5f6829dc32.html).
+> Find more information about the graph data model in the [SAP HANA reference](https://help.sap.com/viewer/f381aa9c4b99457fb3c6b53a2fd29c02/latest/en-US).
 
 Create a graph workspace to define a graph in terms of tables and columns by returning to the SAP Web IDE editor and creating a file with the extension `hdbgraphworkspace`:
 
