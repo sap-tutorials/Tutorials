@@ -1,26 +1,19 @@
 ---
-title: Setup SAP HANA, express edition, in Amazon Web Services or Microsoft Azure using SAP Cloud Appliance Library
-description: Setup SAP HANA, express edition, in Amazon Web Services or Microsoft Azure with the SAP Cloud Appliance Library
+title: Set Up SAP HANA, express edition in Amazon Web Services or Microsoft Azure using SAP Cloud Appliance Library
+description: Set up SAP HANA, express edition, in Amazon Web Services or Microsoft Azure with the SAP Cloud Appliance Library.
 primary_tag:  products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
- - Have an account in Amazon Web Services or Microsoft Azure
+ - You have an account in Amazon Web Services or Microsoft Azure.
 
-
-## Next Steps
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](https://developers.sap.com/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://developers.sap.com/tutorials/xsa-explore-basics.html)
 
 ## Details
 ### You will learn  
-SAP HANA Express Edition on MS Azure or Amazon Web Services via SAP Cloud Appliance Library
+  - How to set up SAP HANA Express Edition on MS Azure or Amazon Web Services via SAP Cloud Appliance Library
 
-### Time to Complete
-**15 Min**
 
 ---
 
@@ -239,4 +232,4 @@ In order to change the XS Advanced users or if you want to check on the progress
 ## Next Steps
 -  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
 - [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)

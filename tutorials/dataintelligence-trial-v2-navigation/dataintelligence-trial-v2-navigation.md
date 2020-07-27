@@ -50,6 +50,8 @@ Check the below screenshot and answer the question based on the same screenshot:
 
 [VALIDATE_1]
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](SAP Data Intelligence Metadata Explorer)]

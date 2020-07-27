@@ -10,7 +10,7 @@ author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
- - You have provisioned your SAP Cloud Platform Integration tenant. For more information, see [Set Up Your SAP Cloud Platform Integration Tenant](cp-starter-integration-cpi-onboard-subscribe)
+ - You have provisioned your SAP Cloud Platform Integration Suite tenant. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
  - You have created an integration package and an integration flow. For more information, see [Create your First Integration Package and Integration Flow](cp-starter-integration-cpi-create-iflow)
  - You have [downloaded](https://www.getpostman.com/downloads/) and installed the Postman client.
 
@@ -53,7 +53,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 3. Select the **Connection** tab. In the **Address** field, enter **`/CloudIntegrationTrial`**.
 
-    Optionally, you can enter any value of your choice, but ensure that you use the **"/"** symbol before specifying the endpoint name. Deselect the **CSRF Protected** checkbox (this will be selected by default).
+    Optionally, you can enter any value of your choice, but ensure that you use **"/"** symbol before specifying the endpoint name. Deselect the **CSRF Protected** checkbox (this will be selected by default).
 
     !![Link text e.g., Destination screen](2.3.configure-http-connection.png)
 
@@ -186,7 +186,7 @@ You will use this endpoint in the Postman client to test your integration flow.
 
     ![Create new postman request](8.1.create-new-postman-request.png)
 
-2. Select the **Authorization** tab and choose **Basic Auth** in the **Type** dropdown list. In the **Username** and **Password** field, enter the **`clientid`** and **`clientsecret`** that you copied from the service key that you created when you provisioned the SAP Cloud Platform Integration tenant.
+2. Select the **Authorization** tab and choose **Basic Auth** in the **Type** dropdown list. In the **Username** and **Password** field, enter the **`clientid`** and **`clientsecret`** that you copied from the service key that you created when you provisioned the SAP Cloud Platform Integration Suite tenant.
 
     ![Provide Authorization details](8.2.provide-auth-details.png)
 

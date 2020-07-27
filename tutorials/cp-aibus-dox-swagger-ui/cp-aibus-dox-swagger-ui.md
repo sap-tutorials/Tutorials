@@ -149,7 +149,51 @@ Do the following:
 
 3. Upload a document PDF file.
 
-4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `taxName`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the default value.
+4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the following:
+
+    ```JSON
+    {
+       "extraction":{
+          "headerFields":[
+             "documentNumber",
+             "taxId",
+             "purchaseOrderNumber",
+             "shippingAmount",
+             "netAmount",
+             "senderAddress",
+             "senderName",
+             "grossAmount",
+             "currencyCode",
+             "receiverContact",
+             "documentDate",
+             "taxAmount",
+             "taxRate",
+             "receiverName",
+             "receiverAddress"
+          ],
+          "lineItemFields":[
+             "description",
+             "netAmount",
+             "quantity",
+             "unitPrice",
+             "materialNumber"
+          ]
+       },
+       "clientId":"c_00",
+       "documentType":"invoice",
+       "receivedDate":"2020-02-17",
+       "enrichment":{
+          "sender":{
+             "top":5,
+             "type":"businessEntity",
+             "subtype":"supplier"
+          },
+          "employee":{
+             "type":"employee"
+          }
+       }
+    }
+    ```
 
 5. Click **Execute**.
 

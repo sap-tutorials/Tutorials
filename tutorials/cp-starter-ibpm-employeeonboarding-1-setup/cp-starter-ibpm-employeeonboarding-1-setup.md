@@ -1,5 +1,5 @@
 ---
-title: Set Up Business Process Management Services in Cloud Cockpit
+title: Set Up Workflow Management in Cloud Cockpit
 description:  Set up services to automate and achieve operational insights into employee onboarding processes.
 
 auto_validation: true
@@ -20,9 +20,9 @@ In this tutorial mission, setup and use these services to automate and achieve o
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Setup services in your account using Recipe)]
+[ACCORDION-BEGIN [Step 1: ](Setup your account using Booster)]
 
-You will use the **Recipe** to automatically set up the workflow, business rules, and process visibility services in your account.
+You will use the **Boosters** to automatically set up the workflow, business rules, and process visibility services in your account.
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -38,15 +38,17 @@ You will use the **Recipe** to automatically set up the workflow, business rules
 
     >![Account setup](02_Foundation20Onboarding_Processing.png)
 
-3. From your global account page, choose the **Recipe** from left-hand navigation. Among the available recipes, click **Start Recipe** of **Set up account for Workflow Management**.
+3. From your global account page, choose the **Boosters** from left-hand navigation. Among the available options, click **Start** of **Set up account for Workflow Management**.
 
-    !![Start Recipe](startrecipe_2.png)
+    !![Start Booster](startrecipe_2.png)
 
-4. Recipe will be started with pre-configured steps.
+4. Automated onboarding will be started with pre-configured steps.
+
+    > It with take 4-5 minutes to complete the entire setup.
 
     !![Recipe In Progress](startrecipe_4.png)
 
-    - Wait until you see the success popup window once the recipe completes successfully. **Close** the popup.  
+    - Wait until you see the success popup window once the booster completes successfully. **Close** the popup.  
 
     !![Recipe In Progress](startrecipe_3.png)
 
@@ -136,6 +138,8 @@ You will import, build and deploy the multi target project that will create a Fi
 
     > In the popup, select the Cloud Foundry API Endpoint, Organisation and Space where you would want to deploy the application.
 
+    > It with take 5-10 minutes to deploy the multi target application.
+
     ![Deploy MTA](deploydialog.png)
 
     >There could be deployment errors:
@@ -144,7 +148,7 @@ You will import, build and deploy the multi target project that will create a Fi
 
     > - if you have already created an instance of either workflow, business rules or process visibility created with same name. In that case, update the `modules` and `resources` section in `mta.yaml` to replace that service instance name with a new unique name.
 
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 
@@ -153,7 +157,7 @@ You will import, build and deploy the multi target project that will create a Fi
     > The sample business rule used in this scenario is published in API Business Hub. **BUSINESSRULES_APIHUB** destination is used in SAP Cloud Platform Business Rules application to import business rules from API Business Hub.
 
 1. From your global account page, choose the `trial` tile to access your subaccount.
-    > If you run the recipe in different subaccount then navigate into the respective account.  
+    > If you run the booster in different subaccount then navigate into the respective account.  
 
     !![Enter Trial Subaccount](entertrialaccount.png)
 
@@ -192,7 +196,7 @@ The Fiori Launchpad will be used in the next tutorials to access business rules,
 
 These steps complete the setup of the starter scenario for business process management services in your trial account. In the next tutorial, you will access the sample content of these different services, set them up in your account and then run the scenario to get an integrated experience.
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>

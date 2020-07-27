@@ -1,5 +1,5 @@
 ---
-title: Get Ready to Develop on Your Local Machine
+title: Get Ready for UI5-Development on Your Local Machine
 description: Prepare you local development environment to implement successful SAPUI5 projects.
 auto_validation: true
 time: 5
