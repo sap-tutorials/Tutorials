@@ -71,7 +71,7 @@ Add the following line to the `webapp/webapp/index.html` file to change to log l
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Write a log message to the console)]
 
-Import the logger to the file `webapp/webapp/controller/View1.controller.xml` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
+Import the logger to the file `webapp/webapp/controller/View1.controller.js` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
 
 Replace the highlighted lines from this snippet:
 ```JavaScript [2,3,8,14-19]
