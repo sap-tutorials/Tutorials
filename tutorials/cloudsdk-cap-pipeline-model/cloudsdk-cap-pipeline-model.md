@@ -1,5 +1,5 @@
 ---
-title: Continuous Delivery Pipeline for SAP Cloud Application Programming Model
+title: Build a Continuous Delivery Pipeline for SAP Cloud Application Programming Model
 description: Use the SAP Cloud SDK Continuous Integration and Continuous Delivery toolkit for SAP Cloud Application Programming Model.
 time: 20
 auto_validation: true
@@ -13,6 +13,8 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ## Details
 ### You will learn
   - How to set up a CI/CD pipeline for projects based on the SAP Cloud Application Programming Model on SAP Cloud Platform
+  - How to set up Jenkins Server
+  - How to deploy project on cloud foundry
 
 SAP Cloud Application Programming Model enables you to quickly create business applications by allowing you to focus on your business domain. It offers a consistent end-to-end programming model for full-stack development on SAP Cloud Platform.
 
@@ -20,23 +22,23 @@ You can use a sophisticated CI/CD pipeline without having to write or maintain t
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a project based on the SAP Cloud Application Programming Model)]
+[ACCORDION-BEGIN [Step 1: ](Create project based on SAP Cloud Application Programming Model)]
 
-For local development, you need to install the `cds` command line tools once, which in turn require Node.js , as follows:
+For local development, you need to install the `cds` command line tools once, which in turn require Node.js, as follows:
 
 1. Install Node.js from <https://nodejs.org>
   (use the latest LTS release)
 
 2. Install the `cds` development kit globally
 
-    ```
+    ```Shell/Bash
     npm i -g @sap/cds-dk
     cds  #> test-run it
     ```
 
 3. Get the sample project
 
-    ```
+    ```Shell/Bash
     cds init --add java,mta,bookshop
     ```
 
@@ -45,11 +47,11 @@ Please find more information about the SAP Cloud Application Programming Model i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Setup a Continuous Delivery pipeline)]
+[ACCORDION-BEGIN [Step 2: ](Set up continuous delivery pipeline)]
 
-SAP offers a pipeline which helps you to implement continuous delivery out-of-the-box. To add this pipeline to your project run the following command
+SAP offers a pipeline which helps you to implement continuous delivery out-of-the-box. To add this pipeline to your project run the following command:
 
-```
+```Shell/Bash
 cds add pipeline
 ```
 
@@ -86,7 +88,7 @@ Next, start your build server instance. We'll utilize the so called Cx-Server fo
 
 To start the build server, you just need a machine which has Docker installed. Create a new directory and initialize Cx-Server by using this `docker run` command:
 
-```
+```Shell/Bash
 docker run -it --rm -u $(id -u):$(id -g) -v "${PWD}":/cx-server/mount/ ppiper/cx-server-companion:latest init-cx-server
 ```
 
@@ -94,7 +96,7 @@ This creates a few files in your current working directory. The shell script Cx-
 
 Now, you can start the Jenkins server by using the following command:
 
-```
+```Shell/Bash
 chmod +x ./cx-server
 ./cx-server start
 ```
@@ -111,17 +113,20 @@ Jenkins should welcome you with the following screen:
 
 Next, you can continue with the basic setup and start building your project by adding your source code repository.
 
->For configure the SAP cloud SDK Cx-Server, please follow the [Cx-Server operations guide](https://github.com/SAP/devops-docker-cx-server/blob/master/docs/operations/cx-server-operations-guide.md).
+> For configure the SAP cloud SDK Cx-Server, please follow the [Cx-Server operations guide](https://github.com/SAP/devops-docker-cx-server/blob/master/docs/operations/cx-server-operations-guide.md).
 
+[DONE]
+[ACCORDION-END]
 
-### Create a Jenkins job for your project
+[ACCORDION-BEGIN [Step 4: ](Create Jenkins job)]
+
 To create a build job for your project, navigate to **New Item** in the Jenkins main menu. On the following screen, choose **Multi-branch Pipeline** and specify a name for your project´s build job.
 
 ![Jenkins Create Build](jenkins_create_build.png)
 
 If your repository is set to private, please also create and use a pair of suitable credentials and choose them for your repository. If you are using github.com, this will also protect you from running into rate limitations.
 
-Next, you need to connect your project on Jenkins for running the build. Switch to Git and copy the `URL` of project repository. Look for **Branch Sources** at Jenkins screen and go to **Add Source** and add the link of your Git repository and click **Save**.
+Next, you need to connect your project on Jenkins for running the build. Switch to Git and copy the URL of project repository. Look for **Branch Sources** at Jenkins screen and go to **Add Source** and add the link of your Git repository and click **Save**.
 
 Jenkins will now scan your repository and trigger a build.
 
@@ -134,9 +139,6 @@ Please have a look at this sample visual representation of the pipeline:
 !![Cloud SDK](cappipeline.png)
 
 [VALIDATE_1]
-
-
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Production deployment)]
@@ -145,19 +147,19 @@ As explained you can configure the behaviour of the pipeline using the file `.pi
 
 In order to deploy applications, you need to create a free trial account. You can create your account by visiting [SCP Cloud Foundry](https://cloudplatform.sap.com/try.html)
 
-After creating your account and activating it via email, you can log in to your personal `Cloud Cockpit`. For your first visit, it should look like this:
+After creating your account and activating it via email, you can log in to your personal **Cloud Cockpit**. For your first visit, it should look like this:
 
 ![SAP Cloud Platform Cockpit first view](cloudplatform-cockpit-first-view.png)
 
-Now click the `Home` button in the upper navigation bar and then click `Start Cloud Foundry Trial`.
+Now click the **Home** button in the upper navigation bar and then click **Start Cloud Foundry Trial**.
 
 ![SAP Cloud Platform Cockpit start trial view](cloudplatform-cockpit-start-cf-trial1.png)
 
-After selecting your region, your account will be automatically set up for development with `Cloud Foundry`.
+After selecting your region, your account will be automatically set up for development with **Cloud Foundry**.
 
 ![Cloud foundry view](cftrial.png)
 
-In order to deploy applications on `SAP Cloud Foundry` you need to provide the API endpoint and other properties. You can get them by going inside your trial.
+In order to deploy applications on **SAP Cloud Foundry** you need to provide the API endpoint and other properties. You can get them by going inside your trial.
 
 ![Cloud foundry properties](cloudfoundry.png)
 
@@ -193,7 +195,29 @@ For a detailed documentation of the individual properties please consult the [St
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ](More information)]
+[ACCORDION-BEGIN [Step 6: ](Integrate Cloud SDK)]
+
+You can add the following dependency to integrate Cloud SDK in your project.
+
+```
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.sap.cloud.sdk</groupId>
+            <artifactId>sdk-bom</artifactId>
+            <version>use-latest-version-here</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>        
+</dependencyManagement>
+```
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 7: ](More information)]
 
 This picture puts everything into context of the broader SAP ecosystem:
 
@@ -202,7 +226,6 @@ This picture puts everything into context of the broader SAP ecosystem:
 As you can see, [SAP Cloud SDK](https://developers.sap.com/topics/cloud-sdk.html) is a natural companion for SAP Cloud Application Programming Model applications, providing useful features like tight integration with SAP LoB solutions such as SAP S/4HANA and SAP SuccessFactors.
 
 More detailed information on the qualities checked by the pipeline can be found [here](https://sap.github.io/jenkins-library/pipelines/cloud-sdk/cloud-qualities/)
-
 
 [DONE]
 [ACCORDION-END]
