@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Next Steps
 -  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
 - [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)
 
 ## Details
 ### You will learn  
@@ -60,7 +60,7 @@ You can now enter a password or generate an SSH key. Complete all the fields and
 
 ![Create instance](create3.png)
 
->Note: Alternatively, you can follow [these steps](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-ssh-from-windows) if you prefer to generate an SSH key
+>Note: Alternatively, you can follow [these steps](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) if you prefer to generate an SSH key
 
 [ACCORDION-END]
 
@@ -200,7 +200,7 @@ Log in with `XSA_DEV` and the master password. You will see the Web IDE.
 
 You can now start to use your SAP HANA, express edition. The additional steps in this tutorial are only required if you are using additional components.
 
-You can get started with your [first end-to-end XS Advanced application](https://developers.sap.com/group.hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/sap-hana-express.tutorials.html).
+You can get started with your [first end-to-end XS Advanced application](https://developers.sap.com/group.hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/hana.html).
 
 
 [ACCORDION-END]
@@ -348,4 +348,4 @@ You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
 ### Additional Information
 -  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
 - [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)
