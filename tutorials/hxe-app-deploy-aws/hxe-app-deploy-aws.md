@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
  - You have a `HANA, express edition` database that can be reached from the AWS Elastic Beanstalk environment. If you do not have one set up, see the [HANA Express database deploy tutorial](https://developers.sap.com/tutorials/hxe-db-deploy.html).
 
 ## Next Steps
- - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
+ - Go to [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) tutorials page
 
 ## Details
 ### You will learn  
@@ -271,4 +271,3 @@ This tutorial will guide you through the process of deploying a sample `HANA, ex
 [ACCORDION-END]
 
 ---
-

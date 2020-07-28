@@ -3,7 +3,7 @@ title: Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing
 description: Use SAP Customer Order Sourcing to reduce delivery costs by applying an efficient sourcing strategy.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, topic>topic>sap-api-business-hub]
+tags: [ tutorial>beginner, products>sap-cloud-platform, topic>sap-api-business-hub, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
@@ -18,6 +18,9 @@ primary_tag: topic>cloud
   - How to upload master data using the API Business Hub
   - How to create a sourcing strategy
   - How to create a sourcing request to test your sourcing strategy
+
+ If you're interested in the demo data included in every **SAP Customer Order Sourcing** trial system, you can learn more [here](https://help.sap.com/viewer/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US/227454caf28d47aa94683a6a0d749ebd.html).
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get to know the business scenario)]
@@ -34,15 +37,15 @@ You are the owner of an e-commerce business or a web shop in the fashion industr
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up SAP Customer Order Sourcing via Recipe)]
+[ACCORDION-BEGIN [Step 2: ](Set up SAP Customer Order Sourcing via Booster)]
 
 1. Log on to the **SAP Cloud Platform trial** cockpit and open your global account for the Cloud Foundry environment.
 
-2. In the navigation pane of the SAP Cloud Platform cockpit, choose **Recipes**.
+2. In the navigation pane of the SAP Cloud Platform cockpit, choose **Boosters**.
 
-3. Choose the recipe **Prepare an Account for SAP Customer Order Sourcing**.
+3. Choose the booster **Prepare an Account for SAP Customer Order Sourcing**.
 
-4. Choose **Start Recipe**.
+4. Choose **Start**.
 
 The configuration and set-up of your new **SAP Customer Order Sourcing** trial system starts and finishes automatically.
 
@@ -94,7 +97,7 @@ You upload master data from the API Business Hub. Since there are already source
 
 2. On the left side choose **Availability Raw Data**.
 
-    !![API Hub](API Hub.png)
+    !![API Hub](API_Hub.png)
 
 3. Open `POST/availabilityRawData` and choose try out.
 
