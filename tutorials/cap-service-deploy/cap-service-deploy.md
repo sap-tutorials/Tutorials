@@ -44,6 +44,7 @@ It's now time to switch to SAP HANA as a database.
 ```Shell/Bash
 npm add @sap/hana-client --save
 ```
+In case of problems, see the [Troubleshooting guide](https://cap.cloud.sap/docs/advanced/troubleshooting#npm-installation) for CAP and check that you've installed the latest long-term support (LTS) version of [Node.js](https://nodejs.org/en/).
 
 [DONE]
 
