@@ -57,7 +57,7 @@ Make sure you are connected to a Cloud Foundry endpoint to deploy the SAPUI5 app
 
     !![newproject](./newproject.png)
 
-2. Select **Fiori Project** as the template category you want to use and click **Next**.
+2. Select **SAP Fiori Freestyle - Project Generator** as the template category you want to use and click **Next**.
 
     !![fioriTemplate](./fioriTemplate.png)
 
@@ -143,7 +143,8 @@ Running your application has several advantages over deploying it. Among others,
 
 
 > In case you run into this error:
-  !![errorPath](./errorPath.png)
+
+>!![errorPath](./errorPath.png)
 
 >  You can fix this by running the following command in a **Terminal|New Terminal**:
 

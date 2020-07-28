@@ -19,7 +19,6 @@ Entitlements are the heart of all subaccounts in the Cloud Foundry environment. 
 
 [ACCORDION-BEGIN [Step: ](Log into SAP Cloud Platform)]
 
-
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
 2. Click on "Enter Your Access Trial Account" to access the Cloud Foundry environment.
