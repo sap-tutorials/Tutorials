@@ -1,6 +1,6 @@
 ---
-title: Install the MultiApps Cloud Foundry CLI Plugin
-description: Download and install the Command Line Interface (CLI) plugin. This plugin allows you to deploy MTA archives from the command line.
+title: Install the HTML5 Applications Repository Cloud Foundry CLI Plugin
+description: Download and install the Command Line Interface (CLI) plugin. This plugin allows you to read from and write to the HTML5 Applications Repository.
 auto_validation: true
 time: 5
 tags: [ tutorial>beginner, topic>cloud]
@@ -11,7 +11,7 @@ primary_tag: products>sap-cloud-platform-for-the-cloud-foundry-environment
 ### You will learn
   - How to add the community repository to the  Cloud Foundry CLI
   - How to install a Cloud Foundry CLI plugin
-  - How to use the [MTA (aka MultiApps) plugin](https://github.com/cloudfoundry-incubator/multiapps-cli-plugin)
+  - How to use the [HTML5 Applications Repository plugin](https://github.com/SAP/cf-html5-apps-repo-cli-plugin)
 
 
 ---
@@ -31,12 +31,12 @@ Now you should see the release number of the CLI you are using.
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Install the plugin)]
+[ACCORDION-BEGIN [Step 2: ](Install the plugin)]
 
 
 Install the plugin, using the following command:
 ```Bash
-cf install-plugin multiapps
+cf install-plugin -r CF-Community "html5-plugin"
 ```
 
 > If you do not have the community repository in your CF CLI, you can add it first by executing.
@@ -44,13 +44,14 @@ cf install-plugin multiapps
 cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
 ```
 
+
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 4: ](Verify the installation of the plugin)]
+[ACCORDION-BEGIN [Step 3: ](Verify the installation of the plugin)]
 
 List all Cloud Foundry CLI plugins to see whether the installation worked.
 ```Bash
-cf plugins | grep multiapps
+cf plugins | grep html5   
 ```
 You should now see the following output:
 
@@ -60,12 +61,13 @@ You should now see the following output:
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 5: ](Inspect the deploy command options)]
-Run the following command to inspect all options for the `cf deploy` command:
+[ACCORDION-BEGIN [Step 4: ](Inspect the deploy command options)]
+Run the following command to inspect all options for the `cf cf html5-push` command:
 ```Bash
-cf deploy --help
+cf html5-push --help
 ```
 
+> Visit the [GitHub Repo](https://sap.github.io/cf-html5-apps-repo-cli-plugin/) to learn about more commands that are offered by this tool.
 
 [VALIDATE_1]
 [ACCORDION-END]
