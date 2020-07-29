@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide
 ---
 
 ## Prerequisites  
-  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://developers.sap.com/topics/sap-hana-express.html#details)
+  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://developers.sap.com/topics/hana.html)
   - **Recommended**: It is recommended to map the development space to a tenant database. Follow [these instructions](https://developers.sap.com/tutorials/xsa-tenant-db-space.html) before creating your first database module.
 
 ## Details

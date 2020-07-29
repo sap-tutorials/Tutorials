@@ -158,8 +158,8 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     |  | `PI_Integration_Developer` | Create Integration Flows. Monitoring integration flows and the status of integration artifacts. Deploying integration content (such like integration flows, for example). |
     | API Management | `APIPortal.Administrator` | Access the API portal user interface (UI) and services. |
     |                | `APIManagement.Selfservice.Administrator` | Get onboard to API Portal and access its settings page. |
-    | Integration Advisor | `iadv-content-developer` | Access Integration Content advisor to create and deploy interfaces and mappings. |
-    | Open Connectors | `IntegrationSuite-OpenConnectors-Consumer` | View the Open Connectors capability tile on the Integration Suite Launchpad. |
+    | Integration Advisor | `trial-content-developer` | Access Integration Content advisor to create and deploy interfaces and mappings. |
+    | Open Connectors | `OpenConnectors_User` | To access Open Connectors capability. |
 
     >**IMPORTANT**: If you are facing access issues after assigning the role collection, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Please include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
 

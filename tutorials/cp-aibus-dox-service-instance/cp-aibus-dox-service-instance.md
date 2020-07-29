@@ -21,9 +21,7 @@ primary_tag: topic>machine-learning
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    ![Trial global account](01_Foundation20Onboarding_Home.png)
-
-    >Document Information Extraction is only available in the Europe (Frankfurt) region. Follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and choose the Europe (Frankfurt) region. If this is not possible, create a new subaccount in the Europe (Frankfurt) region. You should then be able to find **Document Information Extraction Trial** in your new subaccount **Entitlements**.
+    !![Trial global account](01_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Your user profile will be set up for you automatically.
 
@@ -31,7 +29,7 @@ primary_tag: topic>machine-learning
 
     >Choose **Continue**.
 
-    >![Account setup](02_Foundation20Onboarding_Processing.png)
+    >!![Account setup](02_Foundation20Onboarding_Processing.png)
 
 3. From your global account page, choose the `trial` tile to access your subaccount.
 
