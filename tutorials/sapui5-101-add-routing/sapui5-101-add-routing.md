@@ -212,7 +212,14 @@ This is the crucial step of this tutorial that ties everything together. Each vi
     ```
 
 
+> You might notice that some global variables will be underlined red. Don't worry, this is just a type warning and your application will still work fine.
 
+> !![typeError](typeError.png)
+
+> Run `npm install` from the project root (`/home/user/projects/tutorial`) to install the type definitions and the resolve the warnings
+
+
+> !![typeSuccess](typeSuccess.png)
 
 [DONE]
 [ACCORDION-END]
