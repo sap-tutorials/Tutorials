@@ -31,8 +31,10 @@ Open SAP Web Analytics application. If you're the space admin, you must have rec
 
 [ACCORDION-BEGIN [Step 2: ](Register your website)]
 
+> If you don't have a web application, you can create a simple one with **SAP Business Application Studio**. Refer to this [tutorial](https://developers.sap.com/tutorials/sapui5-101-create-project.html).
+
 1. Select **Add Site**.
-2. Enter the domain name of your website. Don't include http:// or https:// (you saved the website URL at the end of the previous tutorial).
+2. Enter the domain name of your website. Don't include http:// or https:// for the domain name.
 3. Enter a meaningful name or description that describes the website.
 4. Leave **Tracking Status** as its default, active (green).
 
@@ -46,7 +48,7 @@ Under the **Privacy Settings** header, do the following:
 1. Leave **Site Used by Employees Only** as its default, inactive (red).
 > In the production landscape, you can use this toggle if your website is used by employees only.
 
-2. Enter the number of days to remember the visitors. Do not enable **Set as session**.
+2. Enter the number of days to remember the visitors based on your organization's data protection and privacy regulations. Do not enable **Set as session** for trial usage.
 >If you enable **Set as session**, a new visitor ID is generated for every visit. Hence, you won't be able to differentiate new and returning visitors.
 
     |  Field Name       | Value

@@ -1,6 +1,6 @@
 ---
-title: Deploy Your ChatBot on Facebook Messenger
-description: Create, test, and publish a Facebook Messenger chatbot with SAP Conversational AI.
+title: Deploy an SAP Conversational AI ChatBot on Facebook Messenger
+description: Create, test, and publish an SAP Conversational AI chatBot on Facebook Messenger.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
