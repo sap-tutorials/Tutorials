@@ -1,5 +1,5 @@
 ---
-title: Prepare the local development environment
+title: Prepare the Local Development Environment
 description: Install essential runtimes and tools for local development.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
