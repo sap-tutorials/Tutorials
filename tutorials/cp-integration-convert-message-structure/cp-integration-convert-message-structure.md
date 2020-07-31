@@ -86,8 +86,6 @@ to:
 </orders>
 ```
 
-Please copy the aforementioned lines of code to a text editor and save them as `source.xml` for the 1st block `target.xml` for the 2nd block and save it on your local file system
-
 
 ---
 
@@ -111,14 +109,16 @@ Please copy the aforementioned lines of code to a text editor and save them as `
 
     ![Define MMap Str](Define MMap Str.png)
 
+    * Download the [Source XSD File](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/data/Source.xsd) and [Target XSD file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/data/Target.xsd)
+
     * On the following screen, upload the source and target XSD into your message map:
 
-        * Click on __Add source message__.
-        * Click __Upload from File System__ in the next window.
+        * Click on **Add source message**.
+        * Click **Upload from File System** in the next window.
         * Choose the file from the location where you saved the files before you started the exercise.
         * Repeat the above steps for the target message structure.
 
-    * Finally you should get the following screen:
+    * You should get the following screen:
 
     ![Source Target added](Source Target added.png)
 
