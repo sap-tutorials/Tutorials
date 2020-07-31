@@ -1,14 +1,14 @@
 ---
-title: Create a Bot that Lets Customers Track Packages
-description: Create a bot that calls an API, in this case to let customers track their packages, and see how to make use of the memory.
+title: Create a Chatbot that Lets Customers Track Packages
+description: With SAP Conversational AI, create a chatbot that calls an API, in this case to let customers track their packages, and see how to make use of the memory, using SAP Conversational AI.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
 primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - You understand the basics of creating a bot, as described in the tutorial [Build Your First Bot with SAP Conversational AI](cai-bot-getting-started).
+ - You understand the basics of creating a chatbot, as described in the tutorial [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
 ## Details
 ### You will learn
@@ -92,6 +92,8 @@ Our bot must be able to extract the parcel number from within the conversation. 
 
 5. Enter the following values for the **List of values**.
 
+    The values give the bot the valid format for a tracking number.
+
     >**CAREFUL**: Enter the values in the field where it says **Add a new entity value**. After entering the value, press **Enter**.
 
     - 1Z2220060291994175
@@ -119,7 +121,7 @@ Customers will have to indicate whether they accept or reject certain requests f
 
 You do not have to create these yourself. Instead, you can fork them from others who have already created them.
 
->Forking is simply copying, and does not create a relationship between your bot and the source of what you forked. You can fork intents, entities, skills or an entire bot. For more information, see [Forking Bots, Skills, Intents, and Entities](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/eaa5dceaa83946f487c403b0bd6b6217.html)
+>Forking is simply copying, and does not create a relationship between your bot and the source of what you forked. You can fork intents, entities, skills or an entire bot. For more information, see [Forking Bots, Skills, Intents, and Entities](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/eaa5dceaa83946f487c403b0bd6b6217.html).
 
 1. In a different browser tab, go to [cai-adoption / ups-bot / intents / @yes](https://cai.tools.sap/cai-adoption/ups-bot/train/intents/yes).
 
@@ -154,7 +156,7 @@ You do not have to create these yourself. Instead, you can fork them from others
 
 Customers will be indicating that they want information on a parcel, so you need to create an intent for that.
 
-Again, you do not have to create this intent yourself, but can fork an existing intent.
+Again, you do not have to create this intent yourself, but you can fork an existing intent.
 
 1. In a different browser tab, go to [cai-adoption / ups-bot / intents / @track-parcel](https://cai.tools.sap/cai-adoption/ups-bot/train/intents/track-parcel).
 
@@ -188,7 +190,7 @@ Again, you do not have to create this intent yourself, but can fork an existing 
 
 [ACCORDION-BEGIN [Step 5: ](Create skill for tracking parcel)]
 
-After you determined that the user wants to track a package, you have to build a skill so the bot knows what to do in response to this intent.
+After you've determined that the user wants to track a package, you have to build a skill so the bot knows what to do in response to this intent.
 
 1. On the **Build** tab, click **Create skill**.
 

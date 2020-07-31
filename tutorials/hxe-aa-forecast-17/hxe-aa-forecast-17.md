@@ -14,7 +14,7 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 ## Details
 ### You will learn
-- How to create a XSUAA service with its security descriptor
+- How to create a XSUAA service with its security descriptor 
 - How to configure users and role in the XSA Administration Cockpit
 - How to add the required security configuration to your MTA project
 
@@ -212,7 +212,7 @@ Switch to the **Resources** tab.
 
 Use the ![Web IDE](00-webide-plus.png) icon to add a new entry.
 
-Enter the name of the XSUAA service **`forecast-uaa`** and select **`com.sap.xs.uaa-space`** as type.
+Enter the name of the XSUAA service **`forecast-uaa`** and select **`org.cloudfoundry.existing-service`** as type.
 
 Add the following parameter:
 
@@ -229,7 +229,7 @@ This will result in the addition of the following content in the **`mta.yaml`** 
 
 ```
   - name: forecast-uaa
-    type: com.sap.xs.uaa-space
+    type: org.cloudfoundry.existing-service
     parameters:
       path: ./xs-security.json
 ```
@@ -373,7 +373,7 @@ Replace the current file content with the following code:
   "routes": [{
     "source": "/xsjs/(.*)(.xsjs)",
     "destination": "forecast_api",
-    "csrfProtection": true,
+    "csrfProtection": false,
     "authenticationType": "xsuaa",
     "scope": "$XSAPPNAME.USER"
   }, {

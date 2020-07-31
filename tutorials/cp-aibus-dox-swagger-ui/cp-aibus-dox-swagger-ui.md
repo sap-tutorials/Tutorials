@@ -25,7 +25,7 @@ In the service key you created for Document Information Extraction in the previo
 
 1. To access the Document Information Extraction Swagger UI, add **`/document-information-extraction/v1`** to the `url` value, paste it in any web browser and press **Enter**.
 
-    ![DOX](png-files\service-key-details.png)
+    ![DOX](png-files/service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints you need to authorize yourself. In the top right corner, click **Authorize**.
 
@@ -59,7 +59,7 @@ Click the endpoint name to expand it, click **Try it out**, and then **Execute**
 
 You should receive a response like the following:
 
-![DOX](png-files\capabilitiesResponse.png)
+!![DOX](png-files/capabilitiesResponse.png)
 
 >If you get an error response code 401 (Unauthorized), your token is probably incorrect. Check if you have added the word **`bearer`** before the token and if the token value is complete and has been properly copied from the **`access_token`** value you received in the previous tutorial: [Get OAuth Access Token for Document Information Extraction via Web Browser](cp-aibus-dox-web-oauth-token).
 
@@ -149,17 +149,61 @@ Do the following:
 
 3. Upload a document PDF file.
 
-4. Enter the list of fields to be extracted from the uploaded file (`documentNumber,taxId,purchaseOrder,shippingAmount,subTotalAmount,vendorAddress,vendorName,totalAmount,currencyCode`, for example), a client id or multiple client ids (`c_00`, for example), and the document type (`invoice`, for example).
+4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the following:
+
+    ```JSON
+    {
+       "extraction":{
+          "headerFields":[
+             "documentNumber",
+             "taxId",
+             "purchaseOrderNumber",
+             "shippingAmount",
+             "netAmount",
+             "senderAddress",
+             "senderName",
+             "grossAmount",
+             "currencyCode",
+             "receiverContact",
+             "documentDate",
+             "taxAmount",
+             "taxRate",
+             "receiverName",
+             "receiverAddress"
+          ],
+          "lineItemFields":[
+             "description",
+             "netAmount",
+             "quantity",
+             "unitPrice",
+             "materialNumber"
+          ]
+       },
+       "clientId":"c_00",
+       "documentType":"invoice",
+       "receivedDate":"2020-02-17",
+       "enrichment":{
+          "sender":{
+             "top":5,
+             "type":"businessEntity",
+             "subtype":"supplier"
+          },
+          "employee":{
+             "type":"employee"
+          }
+       }
+    }
+    ```
 
 5. Click **Execute**.
 
-    ![DOX](png-files/testInvoice.png)
+!![DOX](png-files/testInvoice.png)
 
 After you have clicked **Execute**, you should receive a response like the following:
 
-![DOX](png-files/testInvoiceResult.png)
+!![DOX](png-files/testInvoiceResult.png)
 
-Copy the **`id`** from the **Response body** to see the result of the extraction in the **GET /document/jobs/{`uuid`}** endpoint.
+Copy the **`id`** from the **Response body** to see the result of the extraction in the next step.
 
 [DONE]
 [ACCORDION-END]
@@ -167,9 +211,9 @@ Copy the **`id`** from the **Response body** to see the result of the extraction
 
 [ACCORDION-BEGIN [Step 6: ](See extracted fields)]
 
-You can now use the **GET /document/jobs/{`uuid`}** endpoint to receive the prediction.
+You can now use the **GET /document/jobs/{`id`}** endpoint to receive the prediction.
 
-1. Expand the **GET /document/jobs/{`uuid`}** endpoint.
+1. Expand the **GET /document/jobs/{`id`}** endpoint.
 
 2. Click **Try it out**.
 
@@ -177,17 +221,21 @@ You can now use the **GET /document/jobs/{`uuid`}** endpoint to receive the pred
 
 4. Enter the **`clientId`** you used in the previous step (`c_00`, for example).
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`uuid`**.
+5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
 6. Click **Execute**.
 
-    ![DOX](png-files/getResults.png)
+!![DOX](png-files/getResults.png)
 
 You should receive a response like the following:
 
-![DOX](png-files/getResultsResponse.png)
+!![DOX](png-files/getResultsResponse.png)
 
-In the response, you will find some general information about the document you uploaded. In the `headerFields`, such as `documentType` and `fieldName`, you will find the prediction for the extracted fields. If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE**, then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
+In the response, you will find some general information about the document you uploaded. In `headerFields`, such as `documentDate` and `taxAmount`, and in `lineItems`, such as `description` and `quantity`, you will find the prediction for the extracted fields.
+
+The prediction is made with a probability indicated by the **confidence** field which represents how certain the model is about its prediction. A confidence of 1 means that the model is 100% sure about its prediction.
+
+If the status of the document (indicated by the **status** field) is **PENDING** instead of **DONE**, then it means that the service is still extracting some fields and the returned JSON file does not yet contain all the requested fields.
 
 You have now successfully used our machine learning model to get field value predictions for the document you uploaded to Document Information Extraction.
 
@@ -203,7 +251,7 @@ If you want to delete a client you created in Step 3, use the **DELETE /clients*
 
 2. Click **Try it out**.
 
-3. Enter in the **payload** field the client id or multiple client ids (`c_00`, for example) you want to delete.
+3. Enter in the **payload** field the client id you want to delete (`c_00`, for example).
 
 4. Click **Execute**.
 

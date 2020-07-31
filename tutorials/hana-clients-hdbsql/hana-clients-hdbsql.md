@@ -3,7 +3,7 @@ title: Create a User, Tables and Import Data Using SAP HANA HDBSQL
 description: Use the command line tool HDBSQL to connect to a SAP HANA database, create a user, and create tables which will be used in subsequent tutorials in this mission.
 auto_validation: true
 time: 15
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
 primary_tag: products>sap-hana
 ---
 
@@ -18,7 +18,7 @@ HDBSQL is used in this tutorial as it is part of the SAP HANA client install.  H
 
 [ACCORDION-BEGIN [Step 1: ](Connect to SAP HANA using hdbsql)]
 
-This section demonstrates how to connect to a SAP HANA instance using [`HDBSQL`](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.4/en-US/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
+This section demonstrates how to connect to a SAP HANA instance using [HDBSQL](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.4/en-US/c22c67c3bb571014afebeb4a76c3d95d.html) from the SAP HANA client installation.
 
 1. Copy and paste the following command to see the command line options and press the space bar to advance though the information.  
 
@@ -49,7 +49,7 @@ This section demonstrates how to connect to a SAP HANA instance using [`HDBSQL`]
         >
         >_Cannot create SSL context:  SSL trust store cannot be found: `/Users/user1/.ssl/trust.pem`_
 
-        > A public root certificate to validate the server's certificate is needed.  More information about the DigiCert root certificate required can be found at  [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).  
+        > A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at  [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).  
         >
         > It can be downloaded from [Download PEM](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem), renamed to trust.pem and saved to the specified location.  For further details, see [Secure connection from HDBSQL to SAP HANA Cloud](https://blogs.sap.com/2020/04/14/secure-connection-from-hdbsql-to-sap-hana-cloud/).
 
@@ -145,7 +145,7 @@ For further information on SQL to create a user or schema, see [CREATE USER Stat
 
 [ACCORDION-BEGIN [Step 3:](Store connection details in secure user store (hdbuserstore))]
 
-Remembering and entering IP addresses, ports, user IDs and passwords can be difficult. [Secure User Store (`hdbuserstore`)](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/dd95ac9dbb571014a7d7f0234d762fdb.html) offers a convenient means of storing this information and making it available to the SAP HANA client interfaces.
+Remembering and entering IP addresses, ports, user IDs and passwords can be difficult. [Secure User Store](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/dd95ac9dbb571014a7d7f0234d762fdb.html) offers a convenient means of storing this information and making it available to the SAP HANA client interfaces.
 
 1. Exit out of `hdbsql` and type `hdbuserstore` to see a list of available commands such as Set, List and Delete.
 
@@ -153,8 +153,9 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     \q
     hdbuserstore
     ```
+    `hdbuserstore` is included with the install of the SAP HANA database clients.
 
-2. Using `hdbuserstore`, specify a key named `USER1UserKey` that has the host, port and credentials.  Note the port is 443 for the HANA Cloud and 39015 for the express edition.
+2. Using `hdbuserstore`, specify a key named `USER1UserKey` that has the host, port and credentials.  Details on where to find these values are covered in [first tutorial](hana-clients-choose-hana-instance) in this mission.
 
     ```Shell
     hdbuserstore Set USER1UserKey <host name>:<port> USER1 Password1
@@ -237,7 +238,7 @@ DROP USER USER1 CASCADE;
 > ---
 
 
-> `HDBSQL` can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.4/en-US/6097e699826343d0879244185d680a0d.html) in three different modes; interactive, non-interactive, and batch.  An example of each is shown below.
+> HDBSQL can [run commands](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.4/en-US/6097e699826343d0879244185d680a0d.html) in three different modes; interactive, non-interactive, and batch.  An example of each is shown below.
 > ```SQL
 > SELECT * FROM HOTEL.CITY; -- interactive
 > hdbsql -attemptencrypt -U USER1UserKey "SELECT * FROM HOTEL.CITY"; -- non-interactive
