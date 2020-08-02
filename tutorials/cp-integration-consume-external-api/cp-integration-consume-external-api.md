@@ -80,7 +80,7 @@ Feel free to replace the same with any externally available API.
 
     Field   | Value
     ------------- | -------------
-    Address      | ```/getWarehouseCode```
+    Address      | **`/getWarehouseCode`**
     Service Definition| Manual
     Use WS-Addressing | Not checked
     Message Exchange Pattern| Request-Reply    
@@ -91,7 +91,7 @@ Feel free to replace the same with any externally available API.
 
     ![Sender connector configure](Sender connector configure.png)    
 
-9. Retrieve the ```OrderID``` from the incoming message and store it into a header:
+9. Retrieve the **`OrderID`** from the incoming message and store it into a header:
 
     * Click on the design Palette.
     * Choose __Message Transformers__.
@@ -108,10 +108,10 @@ Feel free to replace the same with any externally available API.
     Field     | Value    
     ------------- | -------------
     Action       | Create       
-    Name | `orderID`
-    Type | `XPath`
-    Data Type | java.lang.String
-    Value | `/orders/order/orderID`
+    Name | **`orderID`**
+    Type | **`XPath`**
+    Data Type | **`java.lang.String`**
+    Value | **`/orders/order/orderID`**
 
 
     ![Configure Content Modifier Header](Configure Content Modifier Header.png)
@@ -203,7 +203,7 @@ Feel free to replace the same with any externally available API.
         Field     | Value    
         ------------- | -------------
         Type       | Expression       
-        Body | ``<?xml version="1.0" encoding="utf-8"?> <order><code>${in.body}</code><orderID>${headers.OrderID}</orderID></order>``
+        Body | **`<?xml version="1.0" encoding="utf-8"?> <order><code>${in.body}</code><orderID>${headers.OrderID}</orderID></order>`**
 
         ![Configure Content Modifier Body](Configure Content Modifier Body.png)
 
@@ -242,7 +242,7 @@ Feel free to replace the same with any externally available API.
 
 In order to call the above flow from the basic flow, you need a user who has ESBMessaging.send. This is what was configured in the SOAP channel.
 
-Assign ESBMessaging.send to a user and then add the corresponding user as a credential in  the tenant:
+Assign ESBMessaging.send to a user and then add the corresponding user as a credential in  the tenant. You can do this by following **Step 6** in the [Integration Suite Onboarding Tutorial](cp-starter-isuite-onboard-subscribe).
 
 > A _User Credential_ is an artifact created in the secure store of SAP Cloud Platform Integration to securely store user/passwords. The credential artifact is always stored as encrypted and hence keeps the password safe.
 
@@ -251,7 +251,7 @@ Assign ESBMessaging.send to a user and then add the corresponding user as a cred
     - Click on __Security Material__.
     - Add __User Credential__.
     - Set __Name__ to __user__.
-    - Configure the tenant user's name and passwords.
+    - Enter the __Client ID__ in the **User** and __Client Secret__ in the **Password** fields respectively.
 
     ![Sender mail credential](Sender mail credential.png)
 
@@ -266,7 +266,7 @@ Assign ESBMessaging.send to a user and then add the corresponding user as a cred
 
 1. Open the basic flow __Manage Freight Logistics__.
 2. Click on __Edit__ to start editing the flow.
-3. Add a ```RequestReply``` step to the message pipeline:
+3. Add a **Request Reply** step to the message pipeline:
     * Click on the design palette.
     * Choose __Call__.
     * Choose __External Call__.
@@ -289,8 +289,8 @@ Assign ESBMessaging.send to a user and then add the corresponding user as a cred
 
     ![Add receiver](Add Receiver.png)
 
-    * Rename the receiver ```ExternalAPI```.  
-    * Click on ```RequestReply``` and drag the connector to the Receiver.
+    * Rename the receiver **`ExternalAPI`**.  
+    * Click on **`RequestReply`** and drag the connector to the Receiver.
     * Choose the SOAP connector because we exposed an SOAP endpoint in the flow creates in step 1.
 
     ![Connect Receiver](Connect Receiver.png)
