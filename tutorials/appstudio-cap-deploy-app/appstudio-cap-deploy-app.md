@@ -90,7 +90,7 @@ The result should look as follows:
 
 10. When prompted, click **Open**.
 
-The application opens in the browser and you can click to see the metadata and entities of the service. The data is now retrieved from the SAP HANA database in your Cloud Foundry space.
+    The application opens in the browser and you can click to see the metadata and entities of the service. The data is now retrieved from the SAP HANA database in your Cloud Foundry space.
 
 11. Stop the application by clicking **Stop** in the Debug pane.
 
