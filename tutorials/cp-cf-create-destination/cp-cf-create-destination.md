@@ -10,8 +10,8 @@ time: 5
 ## Details
 ### You will learn
 - How to configure a basic destination
-- What some of the Web IDE specific properties are
-- How to specify the Web IDE usage parameter for a generic OData service
+- What some of the additional properties are for
+- How to specify the SAP Business Application Studio usage parameter for a generic OData service
 
 Destinations are key building blocks in SAP Cloud Platform, and are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
 
@@ -55,12 +55,21 @@ Enter/confirm all fields in the destination configuration section with the infor
 
 Field Name     | Value
 :------------- | :-------------
-Name           | `Northwind`
-Type           | `HTTP`
-Description    | `Northwind OData services`
-URL            | `https://services.odata.org`
-Proxy Type     | `Internet`
-Authentication | `NoAuthentication`
+Name           | **`Northwind`**
+Type           | **`HTTP`**
+Description    | **`Northwind OData services`**
+URL            | **`https://services.odata.org`**
+Proxy Type     | **`Internet`**
+Authentication | **`NoAuthentication`**
+
+And the following *Additional Properties*
+
+Property Name     | Value
+:------------- | :-------------
+`HTML5.DynamicDestination`           | **`true`** (enter this property manually as it is not available in the dropdown list)
+`WebIDEEnabled`           | **`true`**
+`WebIDESystem`    | **`Northwind`**
+`WebIDEUsage`            | **`odata_gen`**
 
 > Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`
 

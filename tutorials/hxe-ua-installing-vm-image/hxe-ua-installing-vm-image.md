@@ -63,7 +63,7 @@ If you're familiar with the older 1.0 SPS 12 version, note this important change
 -   The instance number has changed from 00 to 90.
 
 
-See the [release notes](https://developers.sap.com/topics/sap-hana-express.resources.html#releaseNotes) for information on what's new and changed in this release of SAP HANA 2.0, express edition.
+See the [release notes](https://developers.sap.com/topics/hana.resources.html#releaseNotes) for information on what's new and changed in this release of SAP HANA 2.0, express edition.
 
 [DONE]
 
