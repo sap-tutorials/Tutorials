@@ -8,7 +8,7 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance)
+- [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster)
 - [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token)
 - [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) (step 1 only)
 
@@ -26,7 +26,7 @@ When you finish this tutorial, you will have explored all Data API functionaliti
 
 [ACCORDION-BEGIN [Step 1: ](Create client)]
 
-After completing the prerequisite tutorials [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
+After completing the prerequisite tutorials [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
 
 You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
 
