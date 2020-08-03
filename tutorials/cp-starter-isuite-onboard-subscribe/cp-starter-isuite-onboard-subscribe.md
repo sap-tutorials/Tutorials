@@ -73,7 +73,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
     !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
 
 2. Select **Subscribe**.
->**IMPORTANT**: Trial accounts are not intended for production use and have certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
+    >**IMPORTANT**: Trial accounts are not intended for production use and has certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
 
   !![Select subscribe button](2.2.Subscribe.png)
 
@@ -130,7 +130,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
     >**IMPORTANT**: From the **Provisioning** application you can navigate back to the Integration Suite Launchpad by choosing the **Integration Suite** button on the header.
 
-    After the activation is successful you will view the activated capability tiles appear on the launchpad. Click on the relevant tile to access the capability.  
+5. After successful activation, you can view the activated capability tiles on the launchpad. Click on the relevant tile to access the capability.  
 
     !![URL](Isuite_launch_new_capab.png)
 
