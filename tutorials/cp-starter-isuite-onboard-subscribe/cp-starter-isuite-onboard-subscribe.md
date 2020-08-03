@@ -73,7 +73,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
     !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
 
 2. Select **Subscribe**.
-    >**IMPORTANT**: Trial accounts are not intended for production use and has certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
+    >**IMPORTANT**: Trial accounts are not intended for production use and have certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
 
   !![Select subscribe button](2.2.Subscribe.png)
 
