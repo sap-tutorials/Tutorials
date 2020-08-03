@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 
 [ACCORDION-BEGIN [Step 1: ](Get OAuth access token details)]
 
-To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance).
+To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster).
 
 ![DOX Service Keys](service-key-details.png)
 
@@ -25,7 +25,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 [ACCORDION-BEGIN [Step 2: ](Get OAuth access token)]
 
-1. Add **`/oauth/token/?grant_type=client_credentials&cache-control=no-cache&content-type=application/x-www-form-urlencoded`** to the `url` value (from inside the `uaa` section of the service key), paste it in any web browser and choose **Enter**.
+1. Add **`/oauth/token?grant_type=client_credentials`** to the `url` value (from inside the `uaa` section of the service key), paste it in any web browser and choose **Enter**.
 
 2. Enter the **`clientid`** value from your service key as **Username**.
 

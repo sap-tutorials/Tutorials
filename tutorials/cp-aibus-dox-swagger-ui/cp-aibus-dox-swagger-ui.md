@@ -21,7 +21,7 @@ The core functionality of Document Information Extraction is to automatically ex
 
 You will use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
 
-In the service key you created for Document Information Extraction in the previous tutorial: [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
+In the service key you created for Document Information Extraction in the previous tutorial: [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
 1. To access the Document Information Extraction Swagger UI, add **`/document-information-extraction/v1`** to the `url` value, paste it in any web browser and press **Enter**.
 
