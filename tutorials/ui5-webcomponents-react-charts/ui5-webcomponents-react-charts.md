@@ -186,7 +186,7 @@ export function MyApp() {
 [ACCORDION-BEGIN [Step 3: ](Add conditional rendering)]
 Two charts in one `Card` is a bit too much, don't you think? It would be nicer if the charts could be toggled by clicking on the header. Let's implement that!
 
-1. First add a state. It should control which chart is going to be rendered. Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
+1. First add a state. It should control, which chart is going to be rendered. Use the [State Hook logic](https://reactjs.org/docs/hooks-state.html) to implement the state and set `"lineChart"` as default value. Don't forget to import `useState` from React, otherwise you will get an error.
     - Import the `useState` function in the header of the `MyApp.jsx` file (replace the current import of React).
     ```JavaScript / JSX
       import React, { useState } from "react";
