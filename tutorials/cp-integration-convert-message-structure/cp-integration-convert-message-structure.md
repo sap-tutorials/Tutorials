@@ -21,7 +21,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
 
 In this exercise, you shall convert the message structure from:
 
-```xml
+```XML
 <orders>
 	<order>
 		<orderID>BS00010023</orderID>
@@ -109,7 +109,7 @@ to:
 
     ![Define MMap Str](Define MMap Str.png)
 
-    * Download the [Source XSD File](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/data/Source.xsd) and [Target XSD file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/data/Target.xsd)
+    * Download the [Source XSD File](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/Source.xsd) and [Target XSD file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/Target.xsd)
 
     * On the following screen, upload the source and target XSD into your message map:
 
