@@ -111,21 +111,22 @@ Create your HTTP Request by using the following configuration:
 
 * Request Type & URL
 
-|HTTP Method Type|URL|
-|---|---|
-|`POST`| `<The URL you copied from the service key table>/mobileservices/origin/hcpms/CARDS/v1/register/templated` |
+|HTTP Method Type|`POST`|
+| --- | --- |
+|URL|`<The URL you copied from the service key table>/mobileservices/origin/hcpms/CARDS/v1/register/templated`|
 
 * Authorization
 
-|Authorization Type|Username|Password|
-|---|---|---|
-|`BASIC`| `<The Alias you copied from the service key table>` <br> `SalesPushCardKey` | `<The API Key you copied from the service key table>`|
+|Authorization Type|`BASIC`|
+| --- | --- |
+|Username|`<The Alias you copied from the service key table>` <br> `SalesPushCardKey`|
+|Password| `<The API Key you copied from the service key table>`|
 
 * Headers
 
-|Key|Value|
+|Key|`Content-Type`|
 |---|---|
-|`Content-Type`| `application/json` |
+|Value| `application/json` |
 
 * Body - Raw + JSON
 
