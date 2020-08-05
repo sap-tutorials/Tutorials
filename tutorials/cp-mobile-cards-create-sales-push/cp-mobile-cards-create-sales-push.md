@@ -396,9 +396,7 @@ Tap **Subscribe** to trigger the download of the card in your SAP Mobile Cards a
 
 [OPTION END]
 
-**Congratulations!** You have completed this tutorial.
-
-Web Page Matching Cards appear only when they are pushed to the device. Thus, you can now **either terminate the app or send it to background**, and proceed to the next tutorial in the mission.
+You have completed this tutorial. Web Page Matching Cards appear only when they are pushed to the device. Thus, you can now **either terminate the app or send it to background**, and proceed to the next tutorial in the mission.
 
 [DONE]
 [ACCORDION-END]
