@@ -13,7 +13,7 @@ primary_tag: products>sap-mobile-cards
 
 ## Details
 ### You will learn
-  - Create a card using a template in Business Application Studio
+  - Create a card using a template in Business Application Studio. [Click here to learn more about SAP Mobile Cards in SAP Business Application Studio.](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-2-2-development-bas.html)
   - Design and develop SAP Mobile Cards in Business Application Studio
   - Deploy a card to SAP Cloud Platform Mobile Services from Business Application Studio
 ---
