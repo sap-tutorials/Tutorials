@@ -15,7 +15,7 @@ primary_tag: software-product-function>sap-cloud-platform-mobile-services
   - How to create a development space in Business Application Studio
   - How to connect to your Cloud Foundry Target in SAP Business Application Studio
 
-SAP Business Application Studio is the next generation web based IDE hosted on SAP Cloud Platform in the Cloud Foundry environment. In this tutorial, you will learn how to create your first card in SAP Business Application Studio. [Click here to learn more about SAP Mobile Cards in SAP Business Application Studio.](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mck/mck-2-2-development-bas.html)
+SAP Business Application Studio is the next generation web based IDE hosted on SAP Cloud Platform in the Cloud Foundry environment. In this tutorial, you will set up your SAP Business Application Studio for developing Mobile Technologies.
 
 ---
 
@@ -65,7 +65,7 @@ Verify the URL and **Click Enter** on your keyboard.
 
 !![CF API End-Point](img_3_2.png)
 
-> SAP Business Application Studio pre-populates the end-point of the environment it is running in.
+> SAP Business Application Studio pre-populates the end-point of the environment it is running in. If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP Cloud Platform account: *SAP Cloud Platform Cockpit &rarr; Sub-account &rarr; API Endpoint*
 
 When prompted, **enter your e-mail address** you use to log in to the SAP Cloud Platform account.
 
@@ -94,8 +94,6 @@ Upon successful setup, you will see a toast message at the bottom right corner o
 [DONE]
 [ACCORDION-END]
 
-**Congratulations!** You have completed this tutorial.
-
-You have configured SAP Business Application Studio to build mobile apps.
+**Congratulations!** You have successfully configured SAP Business Application Studio to build mobile apps.
 
 ---
