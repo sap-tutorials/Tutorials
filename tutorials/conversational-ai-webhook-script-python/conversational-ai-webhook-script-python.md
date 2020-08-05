@@ -3,7 +3,7 @@ title: Build a Webhook for a Chatbot using Python
 description: Create a Python script (with Flask), deploy it to SAP Cloud Platform, and use it as a webhook to be called by an SAP Conversational AI chatbot.
 auto_validation: true
 time: 20
-tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -95,13 +95,17 @@ Create a bot that asks the user to select an animal to get a fun fact about.
 
 [ACCORDION-BEGIN [Step 3: ](Create Python project)]
 
-1. Open VS Code.
+1. In the file explorer, create a new folder for the project and call it `chatbot-webhook`.
+
+2. Open VS Code.
 
     >Make sure you have installed the Microsoft extension for Python, as well as Python and the Flask and requests packages.
 
-2. Create a new folder for the project and call it `chatbot-webhook`.
+3. Go to **File > Add Folder to Workspace**, and select the project folder.
 
-3. Inside the folder, create the helper files for the project
+    ![New file](vscode-new-file.png)
+
+4. Inside the folder, create the helper files for the project
 
     #### `manifest.yml`
 
@@ -134,6 +138,8 @@ Create a bot that asks the user to select an animal to get a fun fact about.
     ```Text
     python-3.8.1
     ```
+
+    >You need to verify what Python versions are supported by SAP CLoud Platform. At the time of the writing of this tutorial, 3.8.1 was supported.
 
     #### `static` (folder)
     Create the folder `static`. Download the SAP Conversational AI [icon](https://www.sap.com/content/dam/application/imagelibrary/pictograms/283000/283370-pictogram-purple.svg) and place it in the folder.
@@ -176,7 +182,9 @@ Now we will write the main part of the app, which creates the endpoints.
 
     ```
 
-    If you want, you can test this in VS Code by running the `.py` file. You will get the following:
+    Save the file.
+
+    If you want, you can test this in VS Code by running the `.py` file -- either by right-clicking the file and choosing **Run Python File in Terminal** or clicking the green arrow ![Link text e.g., Destination screen](vscode-run-button.png) in the upper right. You will get the following:
 
     ![VS Code test default endpoint](vscode-test-default.png)
 
@@ -184,7 +192,7 @@ Now we will write the main part of the app, which creates the endpoints.
 
     ![VS Code test default endpoint](vscode-test-default2.png)
 
-3. Add the following code for the main endpoint right after the default one.
+3. Add the following code for the main endpoint right after the default one -- and before the `if __name__ == '__main__':` line.
 
     This endpoint takes the data from the chatbot, makes the call to the API to get the fun fact, and then returns the next message to the chatbot.
 
@@ -227,11 +235,13 @@ Now we will write the main part of the app, which creates the endpoints.
       )
     ```
 
-    You can test this by opening Postman, and calling the endpoint `https://localhost:5000` (with **POST** method and no body).
+    Save the file.
+
+    You can test this by opening Postman, and calling the endpoint `localhost:5000/bot` (with **POST** method and no body).
 
     ![VS Code test bot endpoint](vscode-test-bot.png)
 
-    Test it again but this time sending the following body, to simulate as if the chatbot were sending the request:
+    Test it again but this time sending the following (raw) body, to simulate as if the chatbot were sending the request:
 
     ```JSON
     {
@@ -305,7 +315,7 @@ Now that you deployed your webhook, let's attach it to the chatbot.
 
 1. In the **Build** tab, open the `answer` skill.
 
-2. Click **Add New Message Group**, and then click **Connect External Service > Call Webhook**.
+2. In the **Actions** tab, click **Add New Message Group**, and then click **Connect External Service > Call Webhook**.
 
     - For the URL, enter the name of your endpoint with `/bot` at the end. Make sure the method is **POST**.
 
@@ -343,7 +353,7 @@ Enter an animal 2 more times -- must be cat, dog, snail, or horse. The extra mes
 
 ![Lots of animals](Test3.png)
 
-Click on the yellow **i** icon to see the JSON of the conversation, and there you can see that the webhook added to the memory the value for `funfacts`.
+Click on the yellow **i** icon to see the JSON of the conversation. Scroll down and you can see that the webhook added to the memory the value for `funfacts`.
 
 ![Memory](Test4.png)
 

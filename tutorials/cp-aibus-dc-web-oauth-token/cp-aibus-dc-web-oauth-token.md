@@ -35,7 +35,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 ![OAuth Token](web-browser.png)
 
-You should receive a similar response:
+You should receive a response like the following:
 
 ```JSON
 {
