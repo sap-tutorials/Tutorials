@@ -2,7 +2,7 @@
 title: Set Up SAP Business Application Studio for Development
 description: Before you can start developing using SAP Business Application Studio, administrators must perform the required onboarding steps that are described in this tutorial.
 auto_validation: true
-time: 20
+time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
 primary_tag: products>sap-business-application-studio
 ---
