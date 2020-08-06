@@ -22,15 +22,15 @@ Once SAP Cloud Platform Mobile Services is available, you can use its features i
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP Cloud Platform cockpit)]
 
-1. Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com). Click on the **Enter Your Trial Account** to see your global account.
+1. Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com). Click the **Enter Your Trial Account** to see your global account.
 
     !![enter trial account](img_1.1.png)
 
-2. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
+2. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking the tile named **trial** (this name may vary if you created the subaccount manually).
 
     !![enter subaccount](img_1.2.png)
 
-3. To get to the space, in which your applications and services live, click on the **dev** space.
+3. To get to the space, in which your applications and services live, choose the **dev** space.
 
     !![enter space](img_1.3.png)
 

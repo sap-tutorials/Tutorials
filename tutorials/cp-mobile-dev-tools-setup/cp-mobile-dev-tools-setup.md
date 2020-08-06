@@ -17,7 +17,7 @@ author_profile: https://github.com/jitendrakansal
 
 [ACCORDION-BEGIN [Step 1: ](Enable Mobile Services App Development Tools extension)]
 
-1. In SAP Web IDE, open **Preferences** window by clicking on the gear icon and click **Extensions**.
+1. In SAP Web IDE, open **Preferences** window by clicking the gear icon and click **Extensions**.
 
     ![MDK](img_005.png)
 
