@@ -22,49 +22,49 @@ Once SAP Cloud Platform Mobile Services is available, you can use its features i
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP Cloud Platform cockpit)]
 
-Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com). Click on the **Enter Your Trial Account** to see your global account.
+1. Go to your [SAP Cloud Platform cockpit landing page](https://cockpit.hanatrial.ondemand.com). Click on the **Enter Your Trial Account** to see your global account.
 
-!![enter trial account](img_1.1.png)
+    !![enter trial account](img_1.1.png)
 
-The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
+2. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
-!![enter subaccount](img_1.2.png)
+    !![enter subaccount](img_1.2.png)
 
-To get to the space, in which your applications and services live, click on the **dev** space.
+3. To get to the space, in which your applications and services live, click on the **dev** space.
 
-!![enter space](img_1.3.png)
+    !![enter space](img_1.3.png)
 
-In the left pane, choose **Services** > **Service Marketplace**.
+4. In the left pane, choose **Services** > **Service Marketplace**.
 
->The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create, and produce applications quickly and easily. Once a service has been created, it is known as a `service instance`.
+    >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create, and produce applications quickly and easily. Once a service has been created, it is known as a `service instance`.
 
-!![service marketplace](img_1.4.png)
+    !![service marketplace](img_1.4.png)
 
-Search for **Mobile**, and click **Mobile Services** tile.  
+5. Search for **Mobile**, and click **Mobile Services** tile.  
 
-!![mobile service tile](img_1.5.png)
+    !![mobile service tile](img_1.5.png)
 
-Choose **Support** to open **SAP Cloud Platform Mobile Services Cockpit**.
+6. Choose **Support** to open **SAP Cloud Platform Mobile Services Cockpit**.
 
-!![support button click](img_1.6.png)
+    !![support button click](img_1.6.png)
 
-Enter your Email or Username to sign in to continue and click **Next**.
+7. Enter your Email or Username to sign in to continue and click **Next**.
 
-!![cf_trial](img_1.7.png)
+    !![cf_trial](img_1.7.png)
 
->**Organization:** Organizations in CF enable collaboration among users and enable grouping of resources.
+8. Choose the relevant **Organization** and **Space** from the dropdown list, and then select **Open**.
 
->**Space:** Cloud Foundry has a standard working environment for individual applications: it is called a space. Spaces are individual working areas, which normally contain a single application.
+    >**Organization:** Organizations in CF enable collaboration among users and enable grouping of resources.
 
-Choose the relevant **Organization** and **Space** from the dropdown list, and then select **Open**.
+    >**Space:** Cloud Foundry has a standard working environment for individual applications: it is called a space. Spaces are individual working areas, which normally contain a single application.
 
-!![cf Trial](img_1.8.png)
+    !![cf Trial](img_1.8.png)
 
-You have now logged in to the SAP Mobile Services cockpit.
+    You have now logged in to the SAP Mobile Services cockpit.
 
-!![cf Trial](img_1.9.png)
+    !![cf Trial](img_1.9.png)
 
-Bookmark the **Mobile Services cockpit URL** for quick access.
+    Bookmark the **Mobile Services cockpit URL** for quick access.
 
 [VALIDATE_3]
 [ACCORDION-END]
