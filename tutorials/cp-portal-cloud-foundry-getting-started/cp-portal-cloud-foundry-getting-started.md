@@ -38,7 +38,7 @@ Before you can access the Portal service, you first need to subscribe to it.
 
     ![Processing](2_Foundation20Onboarding_Processing.png)
 
-3. Click on the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can select it instead.
+3. Click the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can select it instead.
 
       ![Open trial account](3_open_subaccount.png)
 
