@@ -187,7 +187,7 @@ The Fiori Launchpad will be used in the next tutorials to access business rules,
 
 1. Click **Spaces** and then navigate into **dev** space.
 
-2. In **dev** space, click **Applications** and from among the available applications select `BPMServicesFLP_appRouter` application.
+2. In **dev** space, click **Applications** and from among the available applications select `WorkflowManagementFLP_appRouter` application.
 
     ![Open Application](openapprouter.png)
 
