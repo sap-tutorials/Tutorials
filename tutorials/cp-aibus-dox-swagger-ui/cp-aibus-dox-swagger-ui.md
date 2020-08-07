@@ -21,7 +21,7 @@ The core functionality of Document Information Extraction is to automatically ex
 
 You will use Swagger UI, via any web browser, to call the Document Information Extraction APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
 
-In the service key you created for Document Information Extraction in the previous tutorial: [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
+In the service key you created for Document Information Extraction in the previous tutorial: [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
 1. To access the Document Information Extraction Swagger UI, add **`/document-information-extraction/v1`** to the `url` value, paste it in any web browser and press **Enter**.
 
@@ -149,7 +149,51 @@ Do the following:
 
 3. Upload a document PDF file.
 
-4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `taxName`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the default value.
+4. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 3 (`c_00`, for example), and the document type (`invoice`, for example). In this case, you can use the following:
+
+    ```JSON
+    {
+       "extraction":{
+          "headerFields":[
+             "documentNumber",
+             "taxId",
+             "purchaseOrderNumber",
+             "shippingAmount",
+             "netAmount",
+             "senderAddress",
+             "senderName",
+             "grossAmount",
+             "currencyCode",
+             "receiverContact",
+             "documentDate",
+             "taxAmount",
+             "taxRate",
+             "receiverName",
+             "receiverAddress"
+          ],
+          "lineItemFields":[
+             "description",
+             "netAmount",
+             "quantity",
+             "unitPrice",
+             "materialNumber"
+          ]
+       },
+       "clientId":"c_00",
+       "documentType":"invoice",
+       "receivedDate":"2020-02-17",
+       "enrichment":{
+          "sender":{
+             "top":5,
+             "type":"businessEntity",
+             "subtype":"supplier"
+          },
+          "employee":{
+             "type":"employee"
+          }
+       }
+    }
+    ```
 
 5. Click **Execute**.
 

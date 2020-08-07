@@ -1,6 +1,6 @@
 ---
 title: Deploy the Fiori App to Cloud Foundry
-description: Now that the app is ready, it's time to deploy the application to the Cloud Foundry environment of the SAP Cloud Platform. After deploying, test the application in a non-test environment and to share it with coworkers.
+description: Deploy the application to the Cloud Foundry environment to be able to share it with your coworkers.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-fiori, topic>odata, topic>sapui5,  products>sap-cloud-platform-portal, topic>user-interface, topic>html5, topic>cloud]

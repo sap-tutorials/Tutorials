@@ -27,7 +27,7 @@ Therefore, the **Server only** is the minimum required.
 
 However, if you have a **Server + Apps** instance, you can use it too.
 
-You can check the [SAP HANA, express edition installation flowchart](https://developers.sap.com/topics/sap-hana-express.html#flowchart) to find all the installation details.
+You can check the [SAP HANA, express edition installation](https://developers.sap.com/topics/hana.html) to find all the installation details.
 
 If you don't have an instance up and running, be aware that you don't need to complete the installation of all the optional packages (this will be described when needed in the series).
 
