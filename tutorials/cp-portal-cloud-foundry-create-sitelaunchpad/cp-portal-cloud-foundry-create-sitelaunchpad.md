@@ -14,7 +14,7 @@ You have subscribed to the Portal service.
 
 
 ### You will learn
-  - How to create a Portal site
+  - How to create an Portal site.
 
 In this group of tutorials our goal is to create a Portal site for a recruiting company called `JobCore Recruiting`. We will then add business apps to this site.
 
@@ -56,15 +56,11 @@ Navigate back to the Site Directory to view the site tile.
 [ACCORDION-BEGIN [Step 3: ](View the site)]
 
 
-1. Go back to the Site Directory to see the site tile.
+From the site tile, click the **Go to site** icon to see your site at runtime.
 
-      ![View site](3_view_site_tile.png)
+  ![Go to site](4_go_to_site.png)
 
-2. Click the **Go to site** icon to see your site at runtime.
-
-    ![Go to site](4_go_to_site.png)
-
-    Your site is empty for now. In the next tutorials, you're going to add business apps to your Portal site.
+  Your site is empty for now. In the next tutorials, you're going to add business apps to your Portal site.
 
 
 

@@ -40,23 +40,17 @@ For production landscape, please follow the instructions provided in the [offici
 
 [ACCORDION-BEGIN [Step 2: ](Add the tracking snippet to your website)]
 
-1. Locate the **index.html** file in your sample web application.
-
-    ![Index](Index file.png)
+1. Locate the **index.html** file in your web application.
 
 2. Open the file and paste the SAP Web Analytics tracking snippet within the **body** tag.
 
     ![Paste Snippet](Paste snippet.png)
 
-3. Save the file.
+3. Save the changes and redeploy your application
 
-4. Right-click the app folder and select **Deploy** > **Deploy to SAP Cloud Platform**.
+4. After successful redeployment, open the application.
 
-    ![Redeploy](Redeploy.png)
-
-5. After successful deployment, open the application.
-
-6. You'll see a consent banner appearing at the top of the page. Click **Allow** to start tracking.
+5. You'll see a consent banner appearing at the top of the page. Click **Allow** to start tracking.
 
     ![Consent Banner](Consent Banner.png)
 
