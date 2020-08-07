@@ -28,7 +28,7 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    !![Trial global account](01_Foundation20Onboarding_Home.png)
+    !![Trial global account](02_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.  
 
@@ -71,82 +71,89 @@ You will use the **Boosters** to automatically set up the workflow, business rul
 [ACCORDION-BEGIN [Step 2: ](Setup Fiori Launchpad)]
 You will import, build and deploy the multi target project that will create a Fiori Launchpad to access workflow, business rules and process visibility applications which will be used in next tutorials.
 
-1. Download the `BPMServicesFLP.zip` from  [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases) in your local file system.
+1. Download the `WorkflowManagementFLP.tar.zip` from  [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-workflowmanagement-flp/resources/WorkflowManagementFLP.tar.zip) in your local file system and extract the zip.
 
 >This multi target application when deployed will create the Fiori Launchpad to access workflow, business rules and process visibility applications.
 
-!![Download MTA](downloadmta.png)
+!![Download MTA](downloadflp.png)
 
 2. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
-3. Choose **SAP Web IDE**.
-    > If you are new user then Web IDE Full-Stack will not be enabled for your account and you will see a message saying "SAP Web IDE Full-Stack is not be enabled for this account". Follow the instructions on the Web IDE page, to enable the Web IDE.
+3. Choose **SAP Business Application Studio**.
+    > SAP Business Application Studio is already enabled in your trial account. This would not be the case in your productive account and you need to enable the Subscription to access the studio.
 
-    !![Launch Web IDE](launchwebide.png)
+    !![Launch Web IDE](launchbas.png)
 
-4. In the navigation area of **SAP Web IDE**, choose the **Preferences** icon.
+4. In the application studio, create a **Dev Space** of **SAP Fiori** type with **Workflow Management**  extension, if not already available.
 
-    ![Open Preferences](choosepreference.png)
+    ![Create Dev Space](CreateDevSpace.png)
 
-5. Select the **Extensions** preference and search for **workflow**. Click the toggle button to switch on the **Workflow Editor** extension and **Save** the changes.
+    > Wait until the dev space is created and you see running status.
+    !![Dev Space Created](DevSpaceCreated.png)
 
-    > If a confirmation popup appears, then click **Refresh** to apply the changes.
+5. Click on the **Dev Space** to go into the workspace.
+    > It takes 2-3 minutes first time to initialize your dev workspace. You will see a Welcome Page once the dev space is initialized.
 
-    ![Enable Workflow Feature](wfextension.png)
+    -  Next, click **Open Workspace** and then click **Open** in the popup.
 
-6. Select **Cloud Foundry** preference and enter the following details. **Save** the changes once done.
+    ![Open Workspace](OpenWorkspace.png)
 
-    |  Field Name         | Value                    | Example  
-    |  :------------------| :------------------------| :-------------
-    |  **API End Point**  | Your trial API End point | `https://api.cf.eu10.hana.ondemand.com` or `https://api.cf.us10.hana.ondemand.com` depending upon the region of your trial account
-    |  **Organization**   | Your trial organisation  | trial_P237800
-    |  **Space**          | Your trial space         | dev
+    > The **PROJECTS** explorer gets opened.
 
-    > In the credentials popup, enter your trial user email and password. If you normally login via single-sign on, login with your domain password.
+6. Right-click anywhere on the empty space of the **PROJECTS** explorer and select **Upload Files...**.
 
-    ![Configure Cloud Foundry](cfpreferences.png)
+      ![Import MTA](ImportFile.png)
 
+      - In the **Import** dialog, browse for the `WorkflowManagementFLP.tar` file that you extracted in your local system and choose **Open**.
 
-7. In the navigation area of the **SAP Web IDE**, choose the **Development** icon. Right-click the **Workspace** root folder, then choose **Import | File or Project**.
+      - The multi target application gets imported under the **PROJECTS** explorer.
 
-    ![Open Web IDE Development](opendev.png)
+      - Next, we need to extract the **tar** file. For this, open the new terminal window and enter the commands one-by-one to uncompress the uploaded file.
 
-8. In the **Import** dialog, browse for the `BPMServicesFLP.zip` file that you downloaded in your local system and choose **OK**.
+      ![Uncompress Files 1](UncompressFile1.png)
 
-    ![Import MTA](importzip.png)
+    ```
+    mkdir WorkflowManagementFLP
 
-    - The multi target application gets imported under the **Workspace** folder and the file structure is shown below.
+    tar -C WorkflowManagementFLP -xvf WorkflowManagementFLP.tar
 
-    >Ensure you have chosen **Show Hidden Files** to be able to view the `app-router` file structure as shown.
+    ```
 
-    ![Open Hidden Files](openhiddenfiles.png)
+      ![Uncompress Files 2](UncompressTar.png)
 
-9. Right-click `BPMServicesFLP` project and choose the **Build** option.
+7. Right-click **mta.yaml** file inside **`WorkflowManagementFLP`** project and choose the **Build MTA** option.
 
-    !![Build MTA](build.png)
+    !![Build MTA](Build1.png)
 
-    - After the build has completed, navigate to the **`mta_archives` | `BPMServicesFLP_0.0.1.mtar`** file.
+    - After the build has completed, navigate to the **`mta_archives` | `WorkflowManagementFLP_0.0.1.mtar`** file.
 
-    !![Build MTA](build-logs.png)
+    !![Build MTA](Build2.png)
 
-    !![Build MTA](buildarchives.png)
+8. Open new terminal and run this command to setup cloud foundry organisation and space where you will deploy the FLP MTA project.
 
+    > You need to enter the **API Endpoint URL**, **Organisation Name** and **Space Name** of your trial account.
 
-10. Right-click `BPMServicesFLP_0.0.1.mtar` and choose **Deploy | Deploy to SAP Cloud Platform**.
+    > You can get the trial API Endpoint, organisation name and space name from your trial account overview page.
+        !![Set Env](SetOrgName.png)
+
+    ```
+    HISTFILE= && cf login -a <your trial account API End Point> -u <your trial email ID> -p <your trial user password> -o <your trial organisation name> -s <your trial space name>
+
+    ```
+
+    ```
+    For example: HISTFILE= && cf login -a https://api.cf.us10.hana.ondemand.com -u mytestworkflow@sap.com -p hello123 -o 008a0765trial -s dev
+
+    ```
+
+9. Right-click `WorkflowManagementFLP_0.0.1.mtar` and choose **Deploy MTA Archive**.
 
     !![Deploy MTA](deploymta.png)
 
-    > In the popup, select the Cloud Foundry API Endpoint, Organisation and Space where you would want to deploy the application.
-
-    > It with take 5-10 minutes to deploy the multi target application.
+    > It with take approximately 5 minutes to deploy the multi target application.
 
     ![Deploy MTA](deploydialog.png)
 
-    >There could be deployment errors:
-
-    > - if you have not enabled the entitlements of `workflow`, `business rules`, `process visibility` and `portal`. Ensure that you have followed Step 1 to do the necessary entitlements.
-
-    > - if you have already created an instance of either workflow, business rules or process visibility created with same name. In that case, update the `modules` and `resources` section in `mta.yaml` to replace that service instance name with a new unique name.
 
 [DONE]
 [ACCORDION-END]
