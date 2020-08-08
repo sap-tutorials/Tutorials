@@ -5,8 +5,8 @@ auto_validation: true
 primary_tag: software-product-function>sap-cloud-platform-mobile-services
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, software-product-function>sap-cloud-platform-mobile-services, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards, products>mobile-development-kit-client]
 time: 5
-author_name: Sandeep TDS
-author_profile: https://github.com/sandeep-tds
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
  - **Tutorial:** If you're new to SAP Cloud Platform, follow the tutorial [View the SAP Cloud Platform from 10,000 Meters](cp-explore-cloud-platform).

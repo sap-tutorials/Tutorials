@@ -80,6 +80,8 @@ A sample OData service is available for developers to use during development and
 
     !![MDK](img_3.1.png)
 
+    !![MDK](img_3.2.png)
+
     >If you see a _Confirm Save_ window, click **OK**.
 
 2. Click `com.sap.mdk.demo` to navigate back to app configuration page.

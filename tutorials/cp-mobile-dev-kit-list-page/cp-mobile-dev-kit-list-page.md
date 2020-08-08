@@ -3,7 +3,7 @@ title: Create a Customer List Page in an MDK App
 description: Use the mobile development kit page editor to create a new page for displaying a customer list.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
 time: 10
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -34,67 +34,67 @@ This page is a searchable list that displays all customers.
 To create the Customer List page, you will create a **Section page** and drag the Customer **Contact Cell Table** control onto the page. In the property palette, you will link the control to the Customer Collection and then map data and actions to different areas of the cell object in the property palette. One nice feature about the **Contact Cell Table** control is that it has icons that can activate device functionality such as phone, email, video and more.
 
 
-1. In SAP Web IDE project, right-click the **Pages** | **New MDK Page** | **Section Page** | **Next**.
+1. In SAP Business Application Studio project, right-click the **Pages** | **MDK: New Page**.
 
-    ![MDK](img_001.png)
+    !![MDK](img_1.1.png)
+
+2. Select | **Section Page** and click **Next**.
+
+    !![MDK](img_1.2.png)
 
     >You can find more details about [section page](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/mdk/section-page.html).
 
-2. Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** on the confirmation step.
+3. Enter the **Page Name** `Customers_List` and click **Next** and the **Finish** on the confirmation step.
 
-    ![MDK](img_002.png)
+    !![MDK](img_1.3.png)
 
-3. In the **Properties** pane, set the **Caption** to **Customers**.
+4. In the **Properties** pane, set the **Caption** to **Customers**.
 
-    ![MDK](img_3.png)
+    !![MDK](img_1.4.png)
 
-4. In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Contact Cell Table** control onto the Page area.
+5. In the Layout Editor, expand the **Controls** | **Compound** section, drag and drop the **Contact Cell Table** control onto the Page area.
 
-    ![MDK](img_003.1.gif)
+    !![MDK](img_1.5.gif)
 
     >A **Compound** control contains a group of other controls. Unlike in a container control where you can add your own child controls (container items), the child controls in a compound control are fixed. You can populate each of its child control by defining its data binding, depending on which the child controls are created.
 
-5. In the Properties pane, select the previously added service from the **Service** drop down and then select **Customers** Entity Set from the dropdown. This way, the _Object Table_ has been bound to **Customers** Entity.
+6. In the Properties pane, select the previously added service from the **Service** drop down and then select **Customers** Entity Set from the dropdown. This way, the _Object Table_ has been bound to **Customers** Entity.
 
-    ![MDK](img_0001.png)
+    !![MDK](img_1.6.png)
 
-6. In the **Properties** pane, click the **link icon** to open the Object Browser for the **Description** property.
+7. In the **Properties** pane, click the **link icon** to open the Object Browser for the **Description** property. Double click the `City` property of the Customer entity to set it as the binding expression and click **OK**.
 
-7. Double click the `City` property of the Customer entity to set it as the binding expression and click **OK**.
-
-    ![MDK](img_008.gif)
+    !![MDK](img_1.7.gif)
 
     >Be careful **not** to select `City` from `Address (ESPM.Address)`.
 
-    >![MDK](img_009.1.png)
+    >!![MDK](img_1.7.1.png)
 
 8. Repeat the above steps for `Headline` and `Subheadline` properties binding to `FirstName` and `LastName` properties of the Customer entity respectively.
 
     You should have final results as below.
 
-    ![MDK](img_009.png)
+    !![MDK](img_1.8.png)
 
 9. In the **Search** section of the Properties pane, change both the **Search Enabled** property and **Barcode Scanner** property to **true**.
 
-    ![MDK](img_014.png)
+    !![MDK](img_1.9.png)
 
 10. In the **Activity Items** section of the Properties pane, change `VideoCall` on the first activity to **Phone**.
 
-    ![MDK](img_010.gif)
+    !![MDK](img_1.10.gif)
 
 11. Click the **link icon** to open the Object browser for the **Phone** activity and bind it to the `PhoneNumber` property of the Customer entity.
 
-    ![MDK](img_011.png)
+    !![MDK](img_1.11.png)
 
 12. Repeat the above step for **Email** activity and bind it to `EmailAddress` property of the Customer entity.
 
-    ![MDK](img_012.png)
+    !![MDK](img_1.12.png)
 
 13. Click the **trash** can icon for the Detail activity to remove it from the Activity list.
 
-    ![MDK](img_013.png)
-
-14. Save your changes to the `Customers_List.page`.
+    !![MDK](img_1.13.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -103,18 +103,22 @@ To create the Customer List page, you will create a **Section page** and drag th
 
 Now, you will create a Navigation action that opens the `Customers_List.page` when called.
 
-1. Right-click the **Actions** folder | **New MDK Action** | choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
+1. In SAP Business Application Studio project, right-click the **Actions** | **MDK: New Action**.
 
-    ![MDK](img_017.gif)
+    !![MDK](img_2.1.png)
+
+2. Choose **MDK UI Actions** in **Category** | click **Navigation Action** | **Next**.
+
+    !![MDK](img_2.2.png)
 
 2. Provide the below information:
 
     | Field | Value |
     |----|----|
     | `Action Name`| `NavToCustomers_List` |
-    | `Page to Open` | select `Customers_List.page` |
+    | `PageToOpen` | Select `Customers_List.page` from the dropdown |
 
-    ![MDK](img_018.png)
+    !![MDK](img_2.3.png)
 
 3. Click **Next** and then **Finish** on the confirmation step.
 
@@ -127,7 +131,7 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
 1. In `Main_page`, drag and drop the **Section Button Table** container control onto the Page.
 
-    ![MDK](img_019.1.gif)
+    !![MDK](img_3.1.gif)
 
     >**Container** includes controls that act as containers for other controls, such as container items. A container is constant for all pages. The size of a container depends on the controls and contents included inside.
 
@@ -135,7 +139,7 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
     Drag and drop a **Section Button** onto the Section Button Table container on the page.
 
-    ![MDK](img_021.gif)
+    !![MDK](img_3.2.gif)
 
     >Each container type in a Section Page can contain specific controls (container items).
 
@@ -143,15 +147,11 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
 3. In the Properties pane, set the **Title** of the button to **Customer List**.
 
-    ![MDK](img_022.png)
+    !![MDK](img_3.3.png)
 
-4. Under **Events** tab, click the **link icon** for the `OnPress` Handler property to open the Object Browser.
+4. Under **Events** tab, click the **link icon** for the `OnPress Handler` property to open the Object Browser. Double click the `NavToCustomers_List` action and click **OK** to set it as the `OnPress Handler` Action.
 
-5. Double click the `NavToCustomers_List` action and click **OK** to set it as the `OnPress` Handler Action.
-
-    ![MDK](img_025.gif)
-
-6. Save the changes to the `Main_page`.
+    !![MDK](img_3.4.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -160,13 +160,13 @@ Now, that the Customer List page is created, you will add a button to the Main p
 
 Deploy the updated application to your MDK client.
 
-1. Right-click the `DemoSampleApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right-click `Application.app` and select **MDK: Deploy**.
 
-    ![MDK](img_026.png)
+!![MDK](img_4.1.png)
 
-2. Confirm the destination name and application id match where you want to deploy and click **Next**.
+You should see **Deploy Succeeded** message.
 
-    ![MDK](img_014.1.png)
+!![MDK](img_4.2.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -179,15 +179,15 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    ![MDK](img_027.1.jpg)
+    ![MDK](img_5.1.png)
 
 2. You will notice, newly added button on the main page. Tap **CUSTOMER LIST**.
 
-    ![MDK](img_028.1.jpg)
+    ![MDK](img_5.2.png)
 
     Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
 
-    ![MDK](img_029.1.jpg)
+    ![MDK](img_5.3.png)
 
 [OPTION END]
 
@@ -195,19 +195,19 @@ Deploy the updated application to your MDK client.
 
 1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
 
-    ![MDK](img_027.png)
+    ![MDK](img_6.1.png)
 
 2. You will notice, newly added button on the main page. Tap **Customer List**.
 
-    ![MDK](img_028.png)
+    ![MDK](img_6.2.png)
 
     Here, you will see list of all the Customers. You can search a record by by First Name or Last Name or City. Controls are rendered natively on device, you can email to the customer, make a phone call etc.
 
-    ![MDK](img_029.png)
+    ![MDK](img_6.3.png)
 
     >Here, you may notice that **City** is not showing up on screen, this is by design. Since in portrait mode, the device width is considered _compact_ , if you change device orientation to landscape mode, you will see **City**.
 
-    >![MDK](img_030.png)
+    >!![MDK](img_6.4.png)
 
     >If it was an iPad (where both portrait and landscape are considered _regular_ instead of _compact_) you would see **City** on either orientation.
 
