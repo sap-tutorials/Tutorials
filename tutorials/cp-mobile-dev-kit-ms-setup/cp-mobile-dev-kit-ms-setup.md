@@ -32,6 +32,7 @@ You can find more details in the [Mobile Development Kit developer page](https:/
 [VALIDATE_2]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 2: ](Configure a new MDK application in Mobile Services cockpit)]
 
 Make sure that you have completed required pre-Prerequisites mentioned in this tutorial.
