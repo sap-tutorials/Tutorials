@@ -42,7 +42,7 @@ This step includes creating the mobile development kit project in the editor.
 
     | Field | Value |
     |----|----|
-    | `MDK Template Type`| `Base` |
+    | `MDK Template Type`| Select `Base` from the dropdown |
     | `Your Project Name` | `DemoSampleApp` |
     | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
 
@@ -76,13 +76,9 @@ This step includes creating the mobile development kit project in the editor.
 
     Since you will create an offline based app, hence **Enable Offline** option is selected.
 
-8. In *OData Collections* step, select `Customers`, `Products`, `SalesOrderHeaders` and `SalesOrderItems`. Click **Next** to finish the project creation.
-
-    !![MDK](img_1.8.png)
-
 9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `DemoSampleApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
 
-    !![MDK](img_1.10.png)
+    !![MDK](img_1.9.png)
 
 [DONE]
 [ACCORDION-END]

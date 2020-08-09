@@ -27,11 +27,10 @@ Mobile Development Kit provides robust online and offline capabilities, business
 
 You can find more details in the [Mobile Development Kit developer page](https://developers.sap.com/topics/mobile-development-kit.html).
 
-![MDK](MDK.png)
+!![MDK](MDK.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Configure a new MDK application in Mobile Services cockpit)]
 
@@ -68,6 +67,7 @@ Make sure that you have completed required pre-Prerequisites mentioned in this t
 
 [VALIDATE_3]
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 3: ](Add a sample backend to your MDK app)]
 
