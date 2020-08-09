@@ -42,7 +42,7 @@ This step includes creating the mobile development kit project in the editor.
 
     | Field | Value |
     |----|----|
-    | `MDK Template Type`| `CRUD` |
+    | `MDK Template Type`| Select `CRUD` from the dropdown |
     | `Your Project Name` | `MDKApp` |
     | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
 
@@ -64,7 +64,7 @@ This step includes creating the mobile development kit project in the editor.
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
-    | `Enable Offline` | choose `Yes` |
+    | `Enable Offline` | Choose `Yes` |
 
     >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
@@ -156,8 +156,6 @@ Once you accept app update, you will see the list of entities on the **Main** pa
 
 ![MDK](img_5.1.gif)
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
-
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
@@ -168,9 +166,9 @@ Once you accept app update, you will see the list of entities on the **Main** pa
 
 ![MDK](img_5.2.gif)
 
->Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
-
 [OPTION END]
+
+>Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 **Congratulations**! You have created an MDK app with just couple of clicks. You may now follow [these tutorials](mission.mobile-dev-kit-get-started) to create an MDK app from scratch.
 
