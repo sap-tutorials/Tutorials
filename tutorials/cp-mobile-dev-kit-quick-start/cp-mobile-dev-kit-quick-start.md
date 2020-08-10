@@ -20,7 +20,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
+[ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
 
 This step includes creating the mobile development kit project in the editor.
 
