@@ -37,7 +37,7 @@ author_profile: https://github.com/raz-korn
 
 2. Make sure that the target folder is `/home/user/projects`, select the **Fiori Project** template, and click **Next**.
 
-    !![Fiori project template](03-03 AppStudio Fiori Project Template_.png)
+    !![Fiori project template](03-03 AppStudio Fiori Project Template_.jpg)
 
 3. For **Target Running Environment**, select the following, and click **Next**.
 
@@ -80,10 +80,10 @@ author_profile: https://github.com/raz-korn
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Select a system | **My SAP systems** |
-    | B | Select a source | **`ES5_BASIC_AUTH [Catalog]`** |
+    | B | Select a source | **`ES5 [Catalog]`** |
     | C | Select a service | **`GWSAMPLE_BASIC`** |
 
-    !![Fiori project template - consume services](03-08 AppStudio Fiori Project Providers.png)
+    !![Fiori project template - consume services](03-08 AppStudio Fiori Project Providers.jpg)
 
     >A notification that the project has been generated appears at the bottom right of the screen.
 
@@ -196,7 +196,7 @@ Run your new application to test it.
     | A | What would you like to run | **`BusinessPartners`** |
     | B | Select a runnable file | **`index.html`** |
     | C | Select a UI5 version | **latest** |
-    | D | Enter a name | **Run ES5** |
+    | D | Enter a name | `Run BusinessPartners (ES5)` |
 
     >A new run configuration is generated for the `FioriDemo` project.
 
@@ -210,18 +210,18 @@ Run your new application to test it.
 to get a list of available destinations.
     !![Bind to Destination](06-05 AppStudio Run Configurations Bind Destination_.jpg)
 
-6. Select the `ES5_BASIC_AUTH` destination from the list.
-    !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination_.png)
+6. Select the `ES5` destination from the list.
+    !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination_.jpg)
 
     >Once the destination has been bound, the **Bind** icon turns green.
 
     >To unbind the destination, click the **Unbind** icon.
 
-    >!![Destination is bound](06-05-03 AppStudio Run Configurations Bind Destination_.png)
+    >!![Destination is bound](06-05-03 AppStudio Run Configurations Bind Destination_.jpg)
 
 7. Hover over the run configuration and click the Run Module icon.  
 
-    !![Running the app locally](06-06 AppStudio Run Configurations Run_.png)
+    !![Running the app locally](06-06 AppStudio Run Configurations Run_.jpg)
 
 8. Wait for the **A service is listening to port 6004** notification and then click the button to open the app.
 
@@ -229,7 +229,7 @@ to get a list of available destinations.
 
     >If you are running the app for the first time, the button in the notification will say **Expose and Open**. Otherwise it will say **Open in New Tab**.
 
-    !![App is running locally](06-07 AppStudio Run Configurations Run.png)
+    !![App is running locally](06-07 AppStudio Run Configurations Run.jpg)
 
     >You may optionally add a port description.
 
