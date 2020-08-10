@@ -35,7 +35,7 @@ author_profile: https://github.com/raz-korn
 
     >Using the UI wizard you can at any point click the `reset` button to reset the wizard at the top-right of the wizard screen, click the `Back` button to go back to the previous step, or click the specific wizard step to go back to that step.
 
-2. Make sure that the target folder is `/home/user/projects`, select the **Fiori Project** template, and click **Next**.
+2. Make sure that the target folder is `/home/user/projects`, select the **SAP Fiori Freestyle - Project Generator** template, and click **Next**.
 
     !![Fiori project template](03-03 AppStudio Fiori Project Template_.jpg)
 
@@ -126,7 +126,7 @@ Open the layout editor in SAP Business Application Studio to easily make a few c
 
     !![Drag-Drop editor](04-04 AppStudio Drag-Drop Code Editor.jpg)
 
-    >The **Layout Editor** and code editor are stacked so you can see how making change to one will be reflected on the other.
+    >The **Layout Editor** and code editor are stacked so you can see how making changes to one will be reflected on the other.
 
     >!![Editor dropped](04-04-02 AppStudio Drag-Drop Code Editor.jpg)
 
@@ -206,8 +206,7 @@ Run your new application to test it.
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-5. To bind to the destination, click the **Bind** icon to the right of the destination resource
-to get a list of available destinations.
+5. To bind to the destination, click the **Bind** icon to the right of the destination resource to get a list of available destinations.
     !![Bind to Destination](06-05 AppStudio Run Configurations Bind Destination_.jpg)
 
 6. Select the `ES5` destination from the list.
@@ -269,7 +268,7 @@ to get a list of available destinations.
 
 Before you can deploy your new application, set your Cloud Foundry preferences.
 
-1. In the menu bar, select **View** | **Find Command** to open the **command palette**.
+1. In the menu bar, select **View | Find Command** to open the **command palette**.
 
     !![Command Palette-Login to CF](08-01 AppStudio CF Login_.jpg)
 
