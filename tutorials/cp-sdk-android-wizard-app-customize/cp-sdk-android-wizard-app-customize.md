@@ -543,7 +543,7 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 
 [OPTION BEGIN [Java]]
 
-1.  First, right-click on the `res/drawable` folder to create a new **Drawable Resource File** **`ic_search_icon.xml`**, and use the following XML content.
+1.  First, right-click the `res/drawable` folder to create a new **Drawable Resource File** **`ic_search_icon.xml`**, and use the following XML content.
 
     ![Create a new Drawable Resource File](create-new-drawable-resource-file.png)
 
@@ -562,7 +562,7 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 
     The current menu `res/menu/itemlist_menu.xml` is shared among all list screens. We will now use a new XML file for the **Product Categories** screen.
 
-2.  Right-click on the `res/menu` folder to add a new **Menu Resource File** named **`product_categories_menu.xml`**, and use the following XML for its contents.
+2.  Right-click the `res/menu` folder to add a new **Menu Resource File** named **`product_categories_menu.xml`**, and use the following XML for its contents.
 
     ![Add a new Menu Resource File](add-new-menu-resource-file.png)
 
@@ -656,7 +656,7 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 
 [OPTION BEGIN [Kotlin]]
 
-1.  First, right-click on the `res/drawable` folder to create a new **Drawable Resource File** **`ic_search_icon.xml`**, and use the following XML content.
+1.  First, right-click the `res/drawable` folder to create a new **Drawable Resource File** **`ic_search_icon.xml`**, and use the following XML content.
 
     ![Create a new Drawable Resource File](create-new-drawable-resource-file.png)
 
@@ -675,7 +675,7 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 
     The current menu `res/menu/itemlist_menu.xml` is shared among all list screens. We will now use a new XML file for the **Product Categories** screen.
 
-2.  Right-click on the `res/menu` folder to add a new **Menu Resource File** named **`product_categories_menu.xml`**, and use the following XML for its contents.
+2.  Right-click the `res/menu` folder to add a new **Menu Resource File** named **`product_categories_menu.xml`**, and use the following XML for its contents.
 
     ![Add a new Menu Resource File](add-new-menu-resource-file.png)
 
