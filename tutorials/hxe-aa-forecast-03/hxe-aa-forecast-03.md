@@ -19,10 +19,10 @@ time: 20
 
 In order to build your time series model, you will be using the sample datasets from SAP Predictive Analytics made available as part of the [online documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS).
 
-The datasets archive structure for the [**Sample Time Series**](https://help.sap.com/http.svc/download?deliverable_id=20555051) is the following:
+The dataset's [Sample Time Series](https://help.sap.com/http.svc/download?deliverable_id=20555051) archive structure is the following:
 
 ```
-|--sample_time_series_3.3.1_en-us_production.zip
+|--sample_time_series_3.3.1_en-us_production
    |-- Time series.zip
    |   |-- Time series
    |       |-- CashFlows.txt
@@ -71,17 +71,11 @@ Each observation is characterized by 2 variables, a time and a signal value.
 
 There are multiple ways to import data set files inside of your SAP HANA, express edition instance.
 
-- ***Eclipse IDE***
+### Web IDE
 
-The ***SAP HANA Tools*** plugin for Eclipse provides an ***Import/Export*** feature which would allow you to create the appropriate physical tables first and then import the data.
+**Database Explorer** tool in Web IDE provides an ***Import Data*** feature which would allow you to create the appropriate physical tables first and then import the data.
 
-However, this would require the ***Eclipse IDE*** to be locally installed and properly configured with the ***SAP HANA Tools*** plugin.
-
-Then, you would need to know the complete data file format description in order to create the tables with the proper columns structure. And, last but not least, any changes would require to recreate the all structure and reload the data.
-
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://developers.sap.com/tutorials/mlb-hxe-import-data-eclipse.html)
-
-- ***SAP HANA HDB Client***
+### SAP HANA HDB Client
 
 The **SAP HANA HDB Client** provides an ***IMPORT FROM*** statement allowing you to import CSV files physically located on your SAP HANA, express edition host using a SQL command.
 
@@ -89,7 +83,7 @@ However, this method requires that the table are created before the execution of
 
 If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://developers.sap.com/tutorials/mlb-hxe-import-data-sql-import.html)
 
-- ***SAP HANA Persistence Model***
+### SAP HANA Persistence Model
 
 The **SAP HANA extended application services, advanced model**, (XS advanced) provide a comprehensive platform for the development and execution of native data-intensive applications.
 
@@ -101,26 +95,18 @@ At the same time, you can also create procedures and functions using SQLScript, 
 
 #### ***Solution***
 
-As the purpose of this tutorial series is to discover how to use Machine Learning algorithms to build an end to end solution including a native SAP HANA application, you will be using the ***SAP HANA Persistence Model*** with the ***Core Data Service*** (CDS) artifacts in a ***SAP HANA Database Module***.
+As the purpose of this tutorial series is to discover how to use Machine Learning algorithms to build an end to end solution including a native SAP HANA application, you will be using the *SAP HANA Persistence Model* with the *Core Data Service* (CDS) artifacts in a *SAP HANA Database Module*.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create a SAP HANA Database Module)]
 
-Open the Web IDE, and login using the **`XSA_DEV`** credentials.
+Open the Web IDE, and login using the `XSA_DEV` credentials.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
 ![Web IDE](01-01.png)
-
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
 
 In the left panel, right click on the **`forecast`** project folder, then select **New > SAP HANA Database Module**.
 
@@ -132,16 +118,16 @@ Set the name to **`db`** and click on **Next**.
 
 Set the following details on the next screen:
 
-| Name                        | Value               |
+| Attribute                   | Value               |
 |:----------------------------|--------------------:|
 | Name Space                  | `aa.forecast.db`    |
 | Schema Name                 | `ml`                |
-| SAP HANA Database Version   | `2.0 SPS 03`        |
+| SAP HANA Database Version   | `2.0 SPS 04`        |
 | Build module after creation | `checked`           |
 
 Click on **Finish**.
 
-![Web IDE](01-04.png)
+![Web IDE](01-04__2020-08-07_16-28-34.png)
 
 [DONE]
 [ACCORDION-END]
@@ -171,6 +157,8 @@ You can use the right click on the target folder and select **New > Folder**.
 
 Enter the folder name, then click on **OK**.
 
+![Web IDE - folder structure](02-01__2020-08-07_16-36-13.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -197,24 +185,15 @@ Right click on the **`data`** folder, and use the **Import** > **File or Project
 
 Select one of the previously downloaded files.
 
-![Web IDE](02-03.png)
+![Web IDE](02-03__2020-08-07_16-51-10.png)
 
 Click on **OK**.
 
-Repeat the operation for all the previously downloaded files:
-
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/CashFlows.csv" target="new">`CashFlows.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/KxDesc_CashFlows.csv" target="new">`KxDesc_CashFlows.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Lag1AndCycles.csv" target="new">`Lag1AndCycles.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Lag1AndCyclesAndWn.csv" target="new">`Lag1AndCyclesAndWn.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Ozone.csv" target="new">`Ozone.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclic.csv" target="new">`TrendAndCyclic.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclicAndWn.csv" target="new">`TrendAndCyclicAndWn.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclicAnd_4Wn.csv" target="new">`TrendAndCyclicAnd_4Wn.csv`</a>
+Repeat the operation for all the previously downloaded files.
 
 Your package structure should now look like this:
 
-![Web IDE](02-04.png)
+![Web IDE](02-04__2020-08-07_17-10-43.png)
 
 > ### **Note**:
 >You should close the tabs that got opened for each of the imported files in order to release the resources used by your browser.
@@ -228,17 +207,13 @@ Your package structure should now look like this:
 >
 >The XS advanced deployment infrastructure supports a wide variety of database artifact types, for example, tables, types, views.
 >
->For additional details, check the [HDI Table Artifacts](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/453d48e28f6747799546236b4b432e58.html) documentation.
+>For additional details, check the [HDI Table Artifacts](https://help.sap.com/viewer/3823b0f33420468ba5f1cf7f59bd6bd9/2.0.latest/en-US/453d48e28f6747799546236b4b432e58.html) documentation.
 
-### **Cash Flows**
+### Cash Flows
 
-Create a new file named **`CashFlows.hdbtable`** in the **`forecast/db/src/data`** folder.
+Create a new file named `CashFlows.hdbtable` in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/CashFlows.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/CashFlows.hdbtable`.
 
 Paste the following content:
 
@@ -256,11 +231,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Create a new file named **`CashFlows_extrapredictors.hdbtable`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/CashFlows_extrapredictors.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/CashFlows_extrapredictors.hdbtable`.
 
 Paste the following content:
 
@@ -301,11 +272,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Create a new file named **`KxDesc_CashFlows_extrapredictors.hdbtable`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/KxDesc_CashFlows_extrapredictors.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/KxDesc_CashFlows_extrapredictors.hdbtable`.
 
 Paste the following content:
 
@@ -334,11 +301,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Create a new file named **`Lag1AndCycles.hdbtable`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/Lag1AndCycles.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/Lag1AndCycles.hdbtable`.
 
 Paste the following content:
 
@@ -356,11 +319,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Create a new file named **`Lag1AndCyclesAndWn.hdbtable`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/Lag1AndCyclesAndWn.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/Lag1AndCyclesAndWn.hdbtable`.
 
 Paste the following content:
 
@@ -380,11 +339,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Create a new file named **`Ozone.hdbtable`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/Ozone.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/Ozone.hdbtable`
 
 Paste the following content:
 
@@ -404,11 +359,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Create a new file named **`TrendAndCyclic.hdbtable`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/TrendAndCyclic.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/TrendAndCyclic.hdbtable`.
 
 Paste the following content:
 
@@ -426,11 +377,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Create a new file named **`TrendAndCyclicAndWn.hdbtable`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/TrendAndCyclicAndWn.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/TrendAndCyclicAndWn.hdbtable`.
 
 Paste the following content:
 
@@ -448,11 +395,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 Create a new file named **`TrendAndCyclicAnd_4Wn.hdbtable`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/TrendAndCyclicAnd_4Wn.hdbtable
-```
+This is the full path of the created file: `forecast/db/src/data/TrendAndCyclicAnd_4Wn.hdbtable`.
 
 Paste the following content:
 
@@ -475,21 +418,17 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 > #### **Table Data Artifact**
 >
->The Table Data plug-in can be used to insert data defined in other design-time artifacts into database tables which are managed by SAP HANA DI and are not system-versioned, temporary, or virtual tables.
+>The Table Data plug-in can be used to insert data defined in other design-time artifacts into database tables which are managed by SAP HANA Deployment Infrastructure and are not system-versioned, temporary, or virtual tables.
 >&nbsp;
->For additional details, check the [Table Data in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/35c4dd829d2046f29fc741505302f74d.html) documentation.
+>For additional details, check the [Table Data in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.latest/en-US/35c4dd829d2046f29fc741505302f74d.html) documentation.
 
-In the scenario, you will load the data in ***generic*** to avoid the creation of additional views.
+In the scenario, you will load the data in *generic* to avoid the creation of additional views.
 
-For example, the ***time*** and signal columns will all be named the same way across dataset.
+For example, the time and signal columns will all be named the same way across dataset.
 
 Create a new file named **`upload_tabledata.hdbtabledata`** in the **`forecast/db/src/data`** folder.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/data/upload_tabledata.hdbtabledata
-```
+This is the full path of the created file: `forecast/db/src/data/upload_tabledata.hdbtabledata`.
 
 Paste the following content:
 
@@ -609,6 +548,7 @@ Right click on the **`db`** folder and select **Build**.
 The console should display at the end the following message:
 
 ```
+...
 (Builder) Build of /forecast/db completed successfully.
 ```
 
@@ -617,19 +557,19 @@ The console should display at the end the following message:
 
 [ACCORDION-BEGIN [Step 1: ](Open the Database Explorer)]
 
-On the left side bar, click on the Database Explorer icon ![Web IDE](00-dbexplorer-icon.png) icon.
+On the left side bar, click on the **Database Explorer** tool's icon ![Web IDE](00-dbexplorer-icon.png) icon.
 
 ![Web IDE](00-dbexplorer.png)
 
-Use the ***Add a database to the Database Explorer*** icon ![Web IDE](00-dbexplorer-plus.png).
+Use the **Add a database to the Database Explorer** icon ![Web IDE](00-dbexplorer-plus.png).
 
-Select **HDI Container** as ***Database Type*** and pick the entry that starts with ***`XSA_DEV`*** and ends with ***`forecast-hdi_db`*** that belongs to the **development** ***Space***, then click on **OK**.
+Select **HDI Container** as **Database Type** and pick the entry that starts with **`XSA_DEV`** and ends with **`forecast-hdi_db`** that belongs to the **development** space. Click on **OK**.
 
-![Web IDE](06-01.png)
+![Web IDE](06-01__2020-08-07_17-39-01.png)
 
 Select the **Tables** element, and your tables should appear in the list.
 
-![Web IDE](06-02.png)
+![Web IDE](06-02__2020-08-07_17-41-58.png)
 
 [DONE]
 [ACCORDION-END]
@@ -638,7 +578,7 @@ Select the **Tables** element, and your tables should appear in the list.
 
 Let's now validate that the data was properly loaded.
 
-Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
+Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon. Make sure it is connected to your HDI container with data from `forecast` project.
 
 Paste the following content in the console, and use the execute icon ![run](00-dbexplorer-run.png).
 
@@ -665,9 +605,15 @@ Based on the result returned by the above SQL statement, provide an answer to th
 
 [ACCORDION-BEGIN [Step 1: ](Commit your changes)]
 
+Switch back to the **Development** tool.
+
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 
 Click on **Stage All**, enter a commit comment, then click on **Commit and Push > origin master**.
+
+Go back to your `forecast` repository on GitHub, where you should see all changes updated as well.
+
+![GitHub forecast repository](07-01__2020-08-07_17-50-49.png)
 
 [DONE]
 [ACCORDION-END]
