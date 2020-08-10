@@ -15,11 +15,11 @@ time: 20
 - Add a connection in the Database Explorer
 - Enable the Script Server to allow the execution of `AFL`s functions
 
-[ACCORDION-BEGIN [Step 1: ](Which SAP HANA flavor and version?)]
+[ACCORDION-BEGIN [Info: ](Which SAP HANA flavor and version?)]
 
 In order to complete this tutorial series, you need to use as a minimum version:
 
- - **SAP HANA, express edition 2.0 SPS03**
+ - **SAP HANA, express edition 2.0 SPS04**
 
 This version will allow you to complete all the steps described in the series. And thanks to the availability of the SAP HANA Automated Predictive Library (APL), you will be able to compare different predictive libraries.
 
@@ -38,7 +38,7 @@ If you don't have an instance up and running, be aware that you don't need to co
 
 In order to complete the next steps, you will be using the XS CLI client which is locally installed with your SAP HANA 2.0, express edition instance.
 
-Therefore, you can run these commands directly from the server using a SSH client like `PuTTY` for example.
+Therefore, you can run these commands directly from the machine running SAP HANA.
 
 First, make sure to switch to the `hxeadm` user:
 
@@ -56,9 +56,9 @@ Execute the following XS CLI command.
 xs login -a https://hxehost:39030 -o HANAExpress -s SAP -u XSA_ADMIN --cacert /hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
 ```
 
-You will be prompted for the ***`XSA_ADMIN`*** password (which is initially set to the master password during the first boot initialization).
+You will be prompted for the `XSA_ADMIN` password (which is initially set to the master password during the first boot initialization).
 
-> ### **Note:** if you receive the following error when executing the previous command:
+> ### **Note:** if you receive the following error when executing the previous command (for example, when running it on your local computer):
 >&nbsp;
 ```
 FAILED: SSL connection error (supposedly untrusted connection, check the certificates)
@@ -133,7 +133,7 @@ You can now access the application ***`urls`*** displayed in the previous comman
 
 From the previous output, the URL is: `https://hxehost:510XX` (make sure to adjust the URL based on your current output).
 
-Login using the **`XSA_ADMIN`** credentials.
+Login using the `XSA_ADMIN` credentials.
 
 ![Login](02-01.png)
 
@@ -158,15 +158,15 @@ Based on the outputs returned previously, provide an answer to the question belo
 
 [ACCORDION-BEGIN [Step 4: ](Access the SAP HANA XS Advanced Cockpit)]
 
-From the XSA Controller page, access the **SAP HANA XS Advanced Cockpit**.
+From the XSA Controller page `https://hxehost:39030`, access the **SAP HANA XS Advanced Cockpit** by clicking on `xsa-cockpit`.
 
 As a reminder the default URL for the SAP HANA XS Advanced Cockpit is:
 
- - `https://hxehost:39030`
+ -
 
 ![XSA Controller](04-01.png)
 
-Login using the **`XSA_ADMIN`** credentials.
+Login using the `XSA_ADMIN` credentials.
 
 ![Login](04-02.png)
 
@@ -177,25 +177,25 @@ Once logged in, you will get access to the SAP HANA XS Advanced Cockpit:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Update the XSA tenant configuration)]
+[ACCORDION-BEGIN [Step 5: ](Update the XSA tenant configuration)]
 
-By default, the ***SYSTEMDB*** will be used when deploying or running your XSA application using HDI containers.
+By default, the `SYSTEMDB` system database will be used when deploying or running your XSA application using HDI containers.
 
-However, in order to leverage the SAP HANA AFL libraries, you will need to enable the *Script Server*, which is not possible on the ***SYSTEMDB***.
+However, in order to leverage the SAP HANA AFL libraries, you will need to enable the auxiliary *Script Server*, which is not possible on the `SYSTEMDB`.
 
-Therefore, you will need to map the HXE tenant to your development space.
+Therefore, you will need to map the `HXE` tenant database to your XSA `development` space.
 
 On the left side bar, click on **Tenant Databases**.
 
 ![SAP HANA XS Advanced Cockpit](05-01.png)
 
-As you can notice, by default, the HXE tenant is not enabled for XSA and is not mapped for the development space.
+As you can notice, by default, the `HXE` tenant is not enabled for XSA and is not mapped for the development space.
 
 ![SAP HANA XS Advanced Cockpit](05-02.png)
 
 Click on the **Enable** icon ![SAP HANA XS Advanced Cockpit](00-xsa-tenant-enable.png) for the **HXE** tenant.
 
-Provide the ***SYSTEM*** user credentials for the HXE tenant (in the ***Tenant Database*** section) and the SYSTEMDB (in the ***Physical Database*** section).
+Provide the `SYSTEM` user credentials for the `HXE` tenant (in the **Tenant Database** section) and the `SYSTEMDB` (in the **Physical Database** section).
 
 ![SAP HANA XS Advanced Cockpit](05-03.png)
 
@@ -203,7 +203,7 @@ Wait for the activation process to complete.
 
 Click on the **Map** icon ![SAP HANA XS Advanced Cockpit](00-xsa-tenant-map.png) for the **HXE** tenant.
 
-Set the following details:
+Set the following values:
 
 Property     | Value
 -------------|---------------
@@ -218,16 +218,18 @@ Once completed, the configuration should look like this:
 
 ![SAP HANA XS Advanced Cockpit](05-05.png)
 
+Log off `XSA_ADMIN` user from the XSA Cockpit.
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Access the Web IDE)]
+[ACCORDION-BEGIN [Step 6: ](Access the Web IDE)]
 
-From the XSA Controller page, access the ***Web IDE***.
+Back to the XSA Controller page click on **`webide`** to access the **Web IDE** application.
 
 ![XSA Controller](06-01.png)
 
-Login using the **`XSA_DEV`** credentials.
+Login using the `XSA_DEV` credentials.
 
 ![Login](06-02.png)
 
@@ -235,20 +237,18 @@ Once logged in, you will get access to the Web IDE:
 
 ![Web IDE](06-03.png)
 
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
+As a reminder the default URL for the Web IDE in SAP HANA, express edition, is: `https://hxehost:53075`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Add the database connection)]
+[ACCORDION-BEGIN [Step 7: ](Add the database connection)]
 
 On the left side bar, click on the Database Explorer icon ![Web IDE](00-dbexplorer-icon.png) icon.
 
 ![Web IDE](00-dbexplorer.png)
 
-#### Add the SYSTEMDB connection
+### Add the SYSTEMDB connection
 
 If you don't have any database listed you will receive the following popup message:
 
@@ -256,17 +256,17 @@ If you don't have any database listed you will receive the following popup messa
 
 Click on **Yes**.
 
-If not, then use the ***Add a database to the Database Explorer*** icon ![Web IDE](00-dbexplorer-plus.png).
+If not, then use the *Add a database to the Database Explorer* icon ![Web IDE](00-dbexplorer-plus.png).
 
-Select **SAP HANA Database (Multitenant)** as ***Database Type***.
+Select **SAP HANA Database (Multitenant)** from the **Database Type** drop-down list.
 
-Enter the HXE host name and instance number (default value is 90).
+Enter the HXE host name (`hxehost` by default) and the instance number (the default value is `90`).
 
 Select **System Database**.
 
-Enter the **SYSTEM** user name and password (which is initially set to the master password during the first boot initialization).
+Enter the `SYSTEM` user name and password (which is initially set to the master password during the first boot initialization).
 
-You can also check the ***Save user and password*** to avoid entering credentials in the future.
+You can also check the **Save user and password** to avoid entering credentials in the future.
 
 ![Web IDE](07-01.png)
 
@@ -274,19 +274,19 @@ Click on **OK**.
 
 ![Web IDE](07-02.png)
 
-#### Add the HXE tenant connection
+### Add the HXE tenant connection
 
-Use the ***Add a database to the Database Explorer*** icon ![Web IDE](00-dbexplorer-plus.png).
+Use the *Add a database to the Database Explorer* icon ![Web IDE](00-dbexplorer-plus.png).
 
-Select **SAP HANA Database (Multitenant)** as ***Database Type***.
+Select **SAP HANA Database (Multitenant)** as **Database Type**.
 
-Enter the HXE host name and instance number (default value is 90).
+Enter the same HXE host name and instance number as above.
 
-Select **Tenant Database** and enter **HXE** as name.
+Select **Tenant Database** and enter `HXE` as name.
 
-Enter the **SYSTEM** user name and password (which is initially set to the master password during the first boot initialization).
+Enter the `SYSTEM` user name and password.
 
-You can also check the ***Save user and password*** to avoid entering credentials in the future.
+You can also check the **Save user and password** to avoid entering credentials in the future.
 
 Click on **OK**.
 
@@ -295,37 +295,37 @@ Click on **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Check the Script Server)]
+[ACCORDION-BEGIN [Step 8: ](Check the Script Server)]
 
-The **Script Server** is an auxiliary service that is required to execute **Application Function Libraries** ( **AFL** ).
+The **Script Server** is an auxiliary service that is required to execute *Application Function Libraries* (AFL).
 
-For example, this applies to the SAP HANA AFL component like the ***SAP HANA Predictive Analysis Library*** (PAL) and other similar libraries.
+For example, this applies to the SAP HANA AFL component like the *SAP HANA Predictive Analysis Library* (PAL) and other similar libraries.
 
-By default, the Script Server is not activated on the **HXE** tenant.
+By default, the Script Server is not activated on the HXE tenant.
 
-Select the **HXE** tenant connection in the ***Database Explorer*** panel, then click on the **Open SQL Console** icon ![Database Explorer](00-dbexplorer-sql.png) (or press ***CTRL+ALT+C***).
+Right-click the **HXE** tenant connection in the **Database Explorer** tool, then click on the **Open SQL Console** icon ![Database Explorer](00-dbexplorer-sql.png).
 
-Paste the following SQL statement in the console and click on the ***Run*** icon ![Database Explorer](00-dbexplorer-run.png) icon:
+Paste the following SQL statement in the console and click on the **Run** icon ![Database Explorer](00-dbexplorer-run.png) icon:
 
 ```sql
 SELECT SERVICE_NAME, PORT, ACTIVE_STATUS FROM SYS.M_SERVICES ORDER BY 1;
 ```
 
-If no rows is returned for the `scriptserver`, then it means that the **Script Server** is not enabled on the **HXE** tenant.
+If no row is returned for the `scriptserver` in the `SERVICE_NAME` column, then it means that the Script Server is not enabled on the HXE tenant.
 
-To enable it, you will have to run the following SQL statement on the **SYSTEMDB**.
+To enable it, you will have to run the following SQL statement on the **SYSTEMDB** tenant.
 
-Select the **SYSTEMDB** connection in the ***Database Explorer*** panel, then click on the **Open SQL Console** icon ![Database Explorer](00-dbexplorer-sql.png) (or press ***CTRL+ALT+C***).
+Select the **SYSTEMDB** connection in the **Database Explorer** tool, then click on the **Open SQL Console** icon ![Database Explorer](00-dbexplorer-sql.png).
 
-Paste the following SQL statement in the console and click on the ***Run*** icon ![Database Explorer](00-dbexplorer-run.png) icon:
+Paste the following SQL statement in the console and click on the **Run** icon ![Database Explorer](00-dbexplorer-run.png) icon:
 
 ```sql
 ALTER DATABASE HXE ADD 'scriptserver';
 ```
 
-Select the **HXE** tenant connection in the ***Database Explorer*** panel, then click on the **Open SQL Console** icon ![Database Explorer](00-dbexplorer-sql.png) (or press ***CTRL+ALT+C***).
+Select the **HXE** tenant connection in the **Database Explorer** panel, then click on the **Open SQL Console** icon ![Database Explorer](00-dbexplorer-sql.png).
 
-Now, you can now verify that the service is started using the following SQL statement:
+Now, you can now verify that the service is started using the following SQL statement.
 
 ```sql
 SELECT SERVICE_NAME, PORT, ACTIVE_STATUS FROM SYS.M_SERVICES ORDER BY 1;
@@ -338,10 +338,9 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_2]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Run the memory collector script)]
 
-If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands at any time to collect back unused process memory.
+If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following command in the shell of the machine running SAP HANA, express edition, at any time to free unused process memory.
 
 ```shell
 /usr/sap/HXE/home/bin/hxe_gc.sh
