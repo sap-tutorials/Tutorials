@@ -19,9 +19,9 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](SAP HANA Predictive Analytics Library)]
 
-The ***SAP HANA Predictive Analytics Library*** (PAL) is an ***Application Function Library*** (AFL) which defines a set of functions that can be called from within ***SAP HANA SQL Script*** (an extension of SQL) to perform analytic algorithms.
+The **SAP HANA Predictive Analytics Library** (PAL) is an Application Function Library (AFL) which defines a set of functions that can be called from within SAP HANA SQLScript (an extension of SQL) to perform analytic algorithms.
 
-The Predictive Analysis Library (PAL) defines functions that can be called from within ***SQL Script*** procedures to perform analytic algorithms and includes classic and universal predictive analysis algorithms in the following data-mining categories:
+The Predictive Analysis Library (PAL) defines functions that can be called from within SQLScript procedures to perform analytic algorithms and includes classic and universal predictive analysis algorithms in the following data-mining categories:
 
 - Clustering
 - Classification
@@ -33,28 +33,28 @@ The Predictive Analysis Library (PAL) defines functions that can be called from 
 - Social Network Analysis
 - Miscellaneous
 
-With over 90 algorithm functions across the above data-mining categories, the ***SAP HANA Predictive Analytics Library*** has been built and enhanced upon on the following goals:
+With over 100 algorithm functions across the above data-mining categories, the SAP HANA Predictive Analytics Library has been built and enhanced upon on the following goals:
 
-- provide the required algorithms for SAP HANA applications features
-- provide the most commonly used algorithms based on market surveys
-- provide a set of algorithms generally available in other database or processing platforms
+- provide the required algorithms for SAP HANA applications features,
+- provide the most commonly used algorithms based on market surveys,
+- provide a set of algorithms generally available in other database or processing platforms.
 
-For more details about the PAL function, check the online <a href="https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/f652a8186a144e929a1ade7a3cb7abe8.html" target="new">documentation</a>..
+For more details about the PAL function, check the online <a href="https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/2.0.04/en-US/f652a8186a144e929a1ade7a3cb7abe8.html" target="new">documentation</a>..
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Calling AFL functions from HDI containers)]
 
-In order to use an ***SAP HANA PAL*** function in SAP HANA, ultimately an AFL wrapper must be created and then invoked.
+In order to use a PAL function in SAP HANA, ultimately an AFL wrapper must be created and then invoked.
 
-Creating and invoking the AFL wrapper is performed by executing ***SAP HANA `SQLScript`***.
+Creating and invoking the AFL wrapper is performed by executing SQLScript.
 
 Other database objects also need to be created, such as table types or signature table.
 
-Just like with the SAP HANA APL, there are two techniques for calling APL functions, the ***direct technique*** and the ***procedure technique***.
+Just like with the SAP HANA APL, there are two techniques for calling APL functions, the *direct technique* and the *procedure technique*.
 
-However, since you are working in an HDI container with CDS artifacts, you will be creating AFLLANG procedures to surface the APL functions.
+However, since you are working in an HDI container with CDS artifacts, you will be creating `AFLLANG` procedures to surface the PAL functions.
 
 Therefore, you won't need to create table types or signature table using SQL, but using design time artifacts, like CDS Entities and others.
 
@@ -63,20 +63,20 @@ Therefore, you won't need to create table types or signature table using SQL, bu
 
 [ACCORDION-BEGIN [Step 1: ](Time Series with SAP HANA PAL)]
 
-As stated above, the ***SAP HANA Predictive Analytics Library*** (PAL) delivers over a hundred of ***best in class industry standard*** algorithms.
+As stated above, the SAP HANA Predictive Analytics Library delivers over a hundred of best in class industry standard algorithms.
 
-There are multiple Time Series algorithms that can be used in PAL, but here are the one you will be looking at:
+There are multiple Time Series algorithms that can be used in PAL, but here are the ones you will be looking at:
 
- - **ARIMA** (Auto Regressive Integrated Moving Average)
- - **Auto ARIMA**: identifies the orders of an ARIMA model
+ - **ARIMA** (Auto Regressive Integrated Moving Average).
+ - **Auto ARIMA**: identifies the orders of an ARIMA model.
  - **Single Exponential Smoothing**: suitable to model the time series without a trend and a seasonal component.
  - **Double Exponential Smoothing**: suitable to model the time series with a trend but without a seasonal component.
  - **Triple Exponential Smoothing**: suitable to model the time series containing a trend and a seasonal component.
- - **Auto Exponential Smoothing**: calculate optimal parameters for Single, Double and Triple Exponential Smoothing functions
+ - **Auto Exponential Smoothing**: calculate optimal parameters for Single, Double and Triple Exponential Smoothing functions.
 
 However, before selecting one, you will need to address the existence of a trend, a seasonal component or white noise which can be achieved using the **Seasonality Test** function.
 
-For more details about the SAP HANA PAL function, please refer to the [online documentation](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/f652a8186a144e929a1ade7a3cb7abe8.html).
+For more details about the SAP HANA PAL function, please refer to the [online documentation](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/2.0.04/en-US/f652a8186a144e929a1ade7a3cb7abe8.html).
 
 [DONE]
 [ACCORDION-END]
@@ -89,44 +89,24 @@ Switch to the ***Development*** perspective using the ![Web IDE Development](00-
 
 ![Web IDE](01-01.png)
 
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
-
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create the CDS Table Type Artifacts)]
 
-In order to execute the APL algorithm, a series of table types and entities will be required to process the AFL calls.
+In order to execute a PAL algorithm, a series of table types and entities will be required to process the AFL calls. Some of these table types are standard whereas some are bound to the dataset structure.
 
-These table types maps the input and output table structure for the <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/latest/en-US/0bc196486e4047c2a7671ccf529167b6.html" target="new"><b>Create Recommendation Model and Train</b></a> function signature.
+In the left side panel, expand the **`forecast/db/src/hdb`** tree node.
 
-Some of these table types are standard whereas some are bound to the dataset structure.
+![Web IDE](02-01__2020-08-11_12-25-06.png)
 
-In the left side panel, expand the **`forecast/db/src`** tree node.
+Right click on the **`hdb`** folder and select **New > File**.
 
-![Web IDE](02-01.png)
+Enter **`pal/common.hdbcds`** as the file name, then click on **OK**.
 
-Right click on the **`src`** folder and select **New > Folder**.
+This is the full path of the created file: `forecast/db/src/hdb/pal/common.hdbcds`.
 
-Enter **`hdb`** as the folder name, then click on **OK**.
-
-Right click on the **`hdb`** folder node from the tree, and select **New > File**.
-
-Enter **`pal`** as the folder name, then click on **OK**.
-
-Enter **`common.hdbcds`** as the file name, then click on **OK**.
-
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/common.hdbcds
-```
+If a message ***"Cannot open empty file via Graphical CDS editor. Open the file with code editor?"*** is displayed, click **OK**.
 
 Paste the following content:
 
@@ -222,7 +202,7 @@ Once the CDS artifacts are created for the entities and table types, you can now
 
 In the left side panel, expand the **`forecast/db/src/hdb/pal`** tree.
 
-![Web IDE](03-01.png)
+![Web IDE](03-01__2020-08-11_12-31-15.png)
 
 Right click on the **`pal`** folder node from the tree, and select **New > Folder**.
 
@@ -234,11 +214,7 @@ Right click on the **`afllang`** folder and select **New > File**.
 
 Enter **`seasonality_test.hdbafllangprocedure`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/afllang/seasonality_test.hdbafllangprocedure
-```
+This is the full path of the created file:`forecast/db/src/hdb/pal/afllang/seasonality_test.hdbafllangprocedure`.
 
 Paste the following content:
 
@@ -263,11 +239,7 @@ Right click on the **`afllang`** folder and select **New > File**.
 
 Enter **`auto_smoothing.hdbafllangprocedure`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/afllang/auto_smoothing.hdbafllangprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/afllang/auto_smoothing.hdbafllangprocedure`.
 
 Paste the following content:
 
@@ -292,11 +264,7 @@ Right click on the **`afllang`** folder and select **New > File**.
 
 Enter **`auto_arima.hdbafllangprocedure`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/afllang/auto_arima.hdbafllangprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/afllang/auto_arima.hdbafllangprocedure`.
 
 Paste the following content:
 
@@ -321,11 +289,7 @@ Right click on the **`afllang`** folder and select **New > File**.
 
 Enter **`auto_arima_forecast.hdbafllangprocedure`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/afllang/auto_arima_forecast.hdbafllangprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/afllang/auto_arima_forecast.hdbafllangprocedure`.
 
 Paste the following content:
 
@@ -355,7 +319,7 @@ Therefore, to accommodate this, you will need to create a series of SQL views.
 
 In the left side panel, expand the **`forecast/db/src/hdb/pal`** tree.
 
-![Web IDE](03-01.png)
+![Web IDE](03-01__2020-08-11_12-31-15.png)
 
 Right click on the **`pal`** folder node from the tree, and select **New > Folder**.
 
@@ -367,11 +331,7 @@ Right click on the **`views`** folder and select **New > File**.
 
 Enter **`CashFlows.hdbview`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/views/CashFlows.hdbview
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/views/CashFlows.hdbview`.
 
 Paste the following content:
 
@@ -393,11 +353,7 @@ Right click on the **`views`** folder and select **New > File**.
 
 Enter **`CashFlows_extrapredictors.hdbview`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/views/CashFlows_extrapredictors.hdbview
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/views/CashFlows_extrapredictors.hdbview`.
 
 Paste the following content:
 
@@ -444,11 +400,7 @@ Right click on the **`views`** folder and select **New > File**.
 
 Enter **`Ozone.hdbview`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/views/Ozone.hdbview
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/views/Ozone.hdbview`.
 
 Paste the following content:
 
@@ -470,11 +422,7 @@ Right click on the **`views`** folder and select **New > File**.
 
 Enter **`Lag1AndCycles.hdbview`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/views/Lag1AndCycles.hdbview
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/views/Lag1AndCycles.hdbview`.
 
 Paste the following content:
 
@@ -496,11 +444,7 @@ Right click on the **`views`** folder and select **New > File**.
 
 Enter **`Lag1AndCyclesAndWn.hdbview`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/views/Lag1AndCyclesAndWn.hdbview
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/views/Lag1AndCyclesAndWn.hdbview`.
 
 Paste the following content:
 
@@ -524,11 +468,7 @@ Right click on the **`views`** folder and select **New > File**.
 
 Enter **`TrendAndCyclic.hdbview`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/views/TrendAndCyclic.hdbview
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/views/TrendAndCyclic.hdbview`.
 
 Paste the following content:
 
@@ -550,11 +490,7 @@ Right click on the **`views`** folder and select **New > File**.
 
 Enter **`TrendAndCyclicAndWn.hdbview`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/views/TrendAndCyclicAndWn.hdbview
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/views/TrendAndCyclicAndWn.hdbview`.
 
 Paste the following content:
 
@@ -576,11 +512,7 @@ Right click on the **`views`** folder and select **New > File**.
 
 Enter **`TrendAndCyclicAnd_4Wn.hdbview`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/views/TrendAndCyclicAnd_4Wn.hdbview
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/views/TrendAndCyclicAnd_4Wn.hdbview`.
 
 Paste the following content:
 
@@ -620,11 +552,11 @@ The console should display at the end the following message:
 
 You can now test one of the AFL Procedure like the seasonality test with the Cash Flow dataset.
 
-Switch to the ***Database Explorer*** perspective using the ![Database Explorer](00-dbexplorer-icon.png) icon.
+Switch to the **Database Explorer** tool using the ![Database Explorer](00-dbexplorer-icon.png) icon.
 
 ![Web IDE](00-dbexplorer.png)
 
-Select **HDI Container** created previously with a name starting with ***`XSA_DEV`***.
+Select **HDI Container** created previously with a name starting with **`XSA_DEV`**.
 
 Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 
@@ -671,13 +603,7 @@ The output results will provide you a series of statistical indicator about the 
 
 ##### **The statistics**
 
-The output statistics will provide you the following details:
-
-**Key**  | **Description**
----------|-------------
-type     | The decomposition model (additive or multiplicative)
-period   | The length of seasonality cycle
-ACF      | The auto correlation factor
+The output statistics will provide you some more details:
 
 ```sql
 select * from #seasonality_statistics;
@@ -685,11 +611,11 @@ select * from #seasonality_statistics;
 
 The result should be:
 
-| Key    | Value
-|--------|-------------
-| type   | additive
-| period | 20
-| ACF    | 0.340072
+| Key    | Value       | **Explanation**
+|--------|-------------|-------------
+| type   | additive    | The decomposition model (additive or multiplicative)
+| period | 20          | The length of seasonality cycle
+| ACF    | 0.340072    | The auto correlation factor
 
 ##### **The decomposed signal**
 
@@ -699,15 +625,15 @@ The decomposed signal will provide you value of the seasonal, the trend and the 
 select * from #decomposed_seasonality;
 ```
 
-And using a generated graph from the Python Math Plot library (`matplotlib`):
+If visualized with the Python Math Plot library `matplotlib` (not a part of the exercise):
 
 ![Jupyter](06-01.png)
 
-Where you have:
+Where you see:
 
- - the seasonal component (green)
- - the trend component (blue)
- - the random component (orange)
+ - the seasonal component (green),
+ - the trend component (blue),
+ - the random component (orange).
 
 ##### **Conclusion**
 
@@ -715,14 +641,15 @@ As the test demonstrated that the data embeds a seasonal component some algorith
 
 A few interesting information can be extracted here:
 
- - the seasonal cycle length is 20
- - the decomposition is additive
-
-In some situation, you might be tempted to separately model the decomposed trend and random and add it back manual to the seasonal component in order to produce your forecast, but some algorithms can achieve that for you.
+ - the seasonal cycle length is 20,
+ - the decomposition is additive.
 
 ### **Seasonality Test on Ozone**
 
 ```sql
+truncate table #seasonality_statistics;
+truncate table #decomposed_seasonality;
+
 call "aa.forecast.db.hdb.pal.afllang::seasonality_test" (
   "aa.forecast.db.hdb.pal.views::Ozone",
   #function_parameter,
@@ -745,22 +672,22 @@ select * from #seasonality_statistics;
 select * from #decomposed_seasonality;
 ```
 
-And using a generated graph from the Python Math Plot library (`matplotlib`):
+If visualized with the Python Math Plot library `matplotlib` (not a part of the exercise):
 
 ![Jupyter](06-02.png)
 
 Where you have:
 
- - the seasonal component (green)
- - the trend component (blue)
- - the random component (orange)
+ - the seasonal component (green),
+ - the trend component (blue),
+ - the random component (orange).
 
 ##### **Conclusion**
 
 A few interesting information can be extracted here:
 
- - the seasonal cycle length is 12
- - the decomposition is multiplicative
+ - the seasonal cycle length is 12,
+ - the decomposition is multiplicative.
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -771,7 +698,7 @@ Provide an answer to the question below then click on **Validate**.
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 
-Click on **Stage All**, enter a commit comment, then click on **Commit and Push > origin master**.
+Click on **Stage All**, enter a commit comment `Added PAL artifacts`, then click on **Commit and Push > origin master**.
 
 [DONE]
 [ACCORDION-END]
