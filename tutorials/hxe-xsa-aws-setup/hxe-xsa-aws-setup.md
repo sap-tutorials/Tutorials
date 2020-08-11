@@ -345,7 +345,7 @@ You should see (at least) the following processes:
 
 Although the database is running, the XS Advanced applications and services may still be loading. Check the progress by running the following command in the XS Command Line Interface.
 
-> ### **Note**: You can also execute the CLI locally from your computer. Make sure to download it from the [download site using the Download Manager](https://developers.sap.com/topics/sap-hana-express.html) and to map your hosts file as explained in step 9.
+> ### **Note**: You can also execute the CLI locally from your computer. Make sure to download it from the [download site using the Download Manager](https://developers.sap.com/topics/hana.html) and to map your hosts file as explained in step 9.
 
 ```
 xs-admin-login
