@@ -19,91 +19,83 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](SAP HANA Automated Predictive Library)]
 
-The ***SAP HANA Automated Predictive Library*** (APL) is an ***Application Function Library*** (AFL) which lets you use the data mining capabilities of the ***SAP Predictive Analytics*** automated analytics engine on your SAP HANA stored data.
+The **SAP HANA Automated Predictive Library** (APL) is an *Application Function Library* (AFL) which lets you use the data mining capabilities of the Predictive Analytics automated engine on your data stored in SAP HANA.
 
 With the APL, you can create the following types of models to answer your business questions:
 
-- Classification/Regression models
-- Clustering models
-- Time series analysis models
-- Recommendation models
-- Social network analysis models
+- Classification/Regression models,
+- Clustering models,
+- Time series analysis models,
+- Recommendation models,
+- Social network analysis models.
 
-For more details about the SAP HANA APL function, check the online <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/latest/en-US/59b79cbb6beb4607875fa3fe116a8eef.html" target="new">documentation</a>.
+For more details about the SAP HANA APL function, check the <a href="https://help.sap.com/viewer/product/apl/1911/en-US" target="new">documentation</a>.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Calling AFL functions from HDI containers)]
 
-In order to use any ***SAP HANA APL*** functions, ultimately an AFL wrapper must be created and then invoked.
+In order to use any of SAP HANA APL functions, an AFL wrapper must be created and then invoked.
 
-Creating and invoking the AFL wrapper is performed by executing ***SAP HANA `SQLScript`***.
+Creating and invoking the AFL wrapper is performed by executing SAP HANA `SQLScript`.
 
-Other database objects also need to be created, such as table types or signature table.
+Other database objects also need to be created, such as table types or a signature table.
 
-There are two techniques for calling APL functions, the ***direct technique*** and the ***procedure technique***.
+There are two techniques for calling APL functions, the *direct technique* and the *procedure technique*.
 
-However, since you are working in an **HDI container** with CDS artifacts, you will be creating an ***AFLLANG procedures*** artefacts to surface the APL functions and call them with table types or signature table defined using design time artifacts, like CDS Entities and others.
+However, since you are working in an HDI container with CDS artifacts, you will be creating an *AFLLANG procedures* artefacts to surface the APL functions and to call them with table types or signature tables defined using design-time artifacts, like CDS Entities and others.
 
-For more details, you can check the [AFL Language Procedures](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/7f630904dfe045beb114a6c25896649f.html) documentation.
+For more details, you can check the [AFL Language Procedures](https://help.sap.com/viewer/3823b0f33420468ba5f1cf7f59bd6bd9/2.0.04/en-US/7f630904dfe045beb114a6c25896649f.html) documentation.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Time Series analysis with SAP HANA APL)]
 
-As stated previously, the ***SAP HANA Automated Predictive Library*** (APL) uses the data mining capabilities provided by the ***SAP Predictive Analytics*** automated analytics engine.
-
-SAP HANA APL provides a ***Forecast*** function that can address Time Series analysis scenarios.
+SAP HANA APL provides a *Forecast* function that can address Time Series analysis scenarios.
 
 This algorithm will apply and combine several techniques to your data in order to find the best model. Here are the techniques used:
 
- - The default technique of the **SAP Predictive Analytics** Automated Analytics engine
+ - The default technique of the Automated Analytics engine
  - The exponential smoothing technique
  - The linear regressions technique
 
-For more information please refer to the online <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/latest/en-US/6fd6134bd3974edf8392cc540df47d72.html" target="new">documentation</a>.
+For more information please refer to the online <a href="https://help.sap.com/viewer/7223667230cb471ea916200712a9c682/1911/en-US/6fd6134bd3974edf8392cc540df47d72.html" target="new">documentation</a>.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](SAP HANA APL Forecast function)]
 
-The **SAP HANA APL** function that you will be using is:
+The **SAP HANA APL** function that you will be using is <a href="https://help.sap.com/viewer/7223667230cb471ea916200712a9c682/1911/en-US/34ec8a14b4a442a29351bb26bb082e6e.html" target="new"><b>Forecast</b></a>.
 
-- <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/latest/en-US/34ec8a14b4a442a29351bb26bb082e6e.html" target="new"><b>Forecast</b></a>
-
-The ***Forecast*** function provides multiple configuration options like:
+The Forecast function provides multiple configuration options like:
 
 Name                         | Description
 -----------------------------|-----------------------------
 **Time Point Column Name**   | Name of the column in the dataset that contains the time points of the time series
 **Horizon**                  | Number of forecast time points
 **Last Training Time Point** | Value in the time point column which represents the last point in time for the training dataset
-**Cutting Strategy**         | The Cutting Strategy defines how a training set is cut under three subsets (training, validation and testing datasets) when needed. Depending on the model (model type, number of targets ...) not all Cutting Strategies can be used. See Automated Analytics documentation for details. ( **optional**)
+**Cutting Strategy**         | The Cutting Strategy defines how a training set is cut under three subsets (training, validation and testing datasets) when needed. Depending on the model (model type, number of targets ...) not all Cutting Strategies can be used. See Automated Analytics documentation for details. (optional)
 **Apply Extra Mode**         | Includes error bars with the forecast values. The error bar columns are `kts_1_lowerlimit_95%` and `kts_1_upperlimit_95%`
-**Forecast Method**          | Uses a forecast method different from the default Automated Analytics time-series algorithm ( **optional**)
-**Forecast Fallback Method** | Sets the method that will be used if the one specified with **Forecast Method** fails, for example when there are too few data points ( **optional**)
-**Smoothing Cycle Length**   | Sets the cycle/seasonal length to be used for the smoothing instead of the cycle length candidates automatically determined by the Automated Analytics engine based on the time granularity, for example: month -> 4 (quarterly) or 12 (yearly). ( **optional**)
+**Forecast Method**          | Uses a forecast method different from the default Automated Analytics time-series algorithm (optional)
+**Forecast Fallback Method** | Sets the method that will be used if the one specified with **Forecast Method** fails, for example when there are too few data points (optional)
+**Smoothing Cycle Length**   | Sets the cycle/seasonal length to be used for the smoothing instead of the cycle length candidates automatically determined by the Automated Analytics engine based on the time granularity, for example: month -> 4 (quarterly) or 12 (yearly). (optional)
 **Force Positive Forecast**  | Activates a mode where the negative forecasts are ignored, that is, replaced with zero.
-**Forecast Max Cyclic**      | Length of the longest cycle the model will try to detect. Controls the way that the model analyzes the periodicities in the signal. Also limited by the size of the training dataset. You can disable the cyclic analysis by setting this parameter to 0. ( **optional**)
-**Forecast Max Lags**        | Defines the maximum dependency of the signal on its own past values. Controls the way that the model analyzes the random fluctuations in the signal. You can set this parameter to 0 to disable the fluctuations analysis. ( **optional**)
+**Forecast Max Cyclic**      | Length of the longest cycle the model will try to detect. Controls the way that the model analyzes the periodicities in the signal. Also limited by the size of the training dataset. You can disable the cyclic analysis by setting this parameter to 0. (optional)
+**Forecast Max Lags**        | Defines the maximum dependency of the signal on its own past values. Controls the way that the model analyzes the random fluctuations in the signal. You can set this parameter to 0 to disable the fluctuations analysis. (optional)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Pre-requisite: ](Install SAP HANA APL package)]
 
-The installation requires you to have access to the system using a SSH client like ***`PuTTY`***, but also to have access to the ***`hxeadm`*** user with ***`sudo`*** rights configured.
-
-To run the download manager you will need Java t be installed on the system.
-
 The installation will trigger a restart of your SAP HANA instance, so make sure to save your current work before.
 
-Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
+If not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-apl-binary.html).
 
-So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://developers.sap.com/tutorials/hxe-ua-apl-binary.html).
+Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
 [DONE]
 [ACCORDION-END]
@@ -112,17 +104,9 @@ So if not done yet, you will need to complete the [SAP HANA Automated Predictive
 
 Open the Web IDE, and login using the **`XSA_DEV`** credentials.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tools using the ![Web IDE Development](00-development.png) icon.
 
 ![Web IDE](01-01.png)
-
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
 
 [DONE]
 [ACCORDION-END]
@@ -139,21 +123,13 @@ In the left side panel, expand the **`forecast/db/src`** tree node.
 
 ![Web IDE](02-01.png)
 
-Right click on the **`src`** folder and select **New > Folder**.
-
-Enter **`hdb`** as the folder name, then click on **OK**.
-
-Right click on the **`hdb`** folder node from the tree, and select **New > File**.
-
-Enter **`apl`** as the folder name, then click on **OK**.
+Right click on the **`src`** folder and select **New > File**.
 
 Enter **`common.hdbcds`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
+If a message ***"Cannot open empty file via Graphical CDS editor. Open the file with code editor?"*** is displayed, click **OK**.
 
-```
-forecast/db/src/hdb/apl/common.hdbcds
-```
+This is the full path of the created file: `forecast/db/src/hdb/apl/common.hdbcds`.
 
 Paste the following content:
 
@@ -263,19 +239,11 @@ However, as the Cash Flow dataset includes a series of extra predictors attribut
 
 In the left side panel, expand the **`forecast/db/src/hdb/apl`** tree node.
 
-Right click on the **`apl`** folder and select **New > Folder**.
+Right click on the **`apl`** folder and select **New > File**.
 
-Enter **`afllang`** as the folder name, then click on **OK**.
+Enter **`afllang/forecast.hdbafllangprocedure`** as the file name, then click on **OK**.
 
-Right click on the **`afllang`** folder node from the tree, and select **New > File**.
-
-Enter **`forecast.hdbafllangprocedure`** as the file name, then click on **OK**.
-
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/apl/afllang/forecast.hdbafllangprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/apl/afllang/forecast.hdbafllangprocedure`.
 
 Paste the following content:
 
@@ -301,11 +269,7 @@ Right click on the **`afllang`** folder node from the tree, and select **New > F
 
 Enter **`forecast_CashFlows_extrapredictors.hdbafllangprocedure`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/apl/afllang/forecast_CashFlows_extrapredictors.hdbafllangprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/apl/afllang/forecast_CashFlows_extrapredictors.hdbafllangprocedure`
 
 Paste the following content:
 
@@ -341,6 +305,7 @@ Right click on the **`db`** folder and select **Build**.
 The console should display at the end the following message:
 
 ```
+...
 (Builder) Build of /forecast/db completed successfully.
 ```
 
@@ -459,25 +424,21 @@ select * from #operation_log where message like '%outlier%';
 
  - **Final Model selection**
 
- At the end of the process, you will get details about the selected model, its performance, and components (trend, fluctuation, cycles, etc.)
+ At the end of the process, you will get details about the selected model, its performance, and components (trend, fluctuation, cycles, etc.), similar to this:
 
 ```
-The final model is (Sum(Regression[CASH][CASHDATE,SquareTime,SquareRootTime],Sum(dayOfMonth(NotSmoothed)))).
-The final model maximal horizon is (21), its complexity is (4).
-The final model Minimum Pearson (P2) over the horizon is (0.16883962105749536), its cumulative mean square error is (69473.283402336485).
-Other performance indicators for the final model are: L1=(39846.556124256829) and MAPE=(5.3496095143430846).
-Fit performance on validation: P2=0.16883962105749536 L2=3308.2515905874502
-Last forecast(=21) performance on validation: \tP2=0.16883962105749536 L2=3308.2515905874502
-Chosen model is (Polynomial)
-Chosen trend is (Polynom( CASHDATE))
-Chosen periodicity is (dayOfMonth(NotSmoothed))
+...
+The final predictive model is (Sum(Regression[signal_value][signal_time,SquareTime,SquareRootTime])).
+The final model maximal horizon is (21), its complexity is (3).
+The final model Minimum Pearson (P2) over the horizon is (0.060384058565248096), its cumulative root mean square error is (75947.688205741069).
+Other performance indicators for the final model are: L1=(33723.794287028133) and MAPE=(3.7390354688254024).
+Fit performance on validation:                 P2=0.060384058565248096 L2=3616.5565812257651
+Last forecast(=21) performance on validation: 	P2=0.060384058565248096 L2=3616.5565812257651
+The chosen predictive model is (Polynomial)
+Chosen trend is (Polynom( signal_time))
+No Periodicity chosen
 No modeled fluctuations
 Time series learning phase finished
-Learning time: 2 seconds
-Total elapsed time: 2 seconds.
-Checking internal state.
-Beginning of applying model. Please wait...
-Total elapsed time: 0 seconds.
 ```
 
 #### **The summary**
@@ -493,8 +454,6 @@ select * from #summary;
 ```
 
 One of the interesting information here is the **`ModelTimeSeriesMAPE`** which inform you about the overall prediction performance.
-
-With the current setting the value is around **0.25**.
 
 #### **The indicators**
 
@@ -544,9 +503,9 @@ You can notice that:
 
  - The forecast ( **`kts_1`** value) is provided for almost all data points in the training set (where cash is not null).
  However, this is not always the case. A forecast ( **`kts_1`** value) is provided only for data points that are finally used during the training as all input data points are not always used in the final model.
- - The error bar (**`kts_1_lowerlimit_95%`** and **`kts_1_upperlimit_95%`**) are only provided for the actual predictions
+ - The error bar (**`kts_1_lowerlimit_95%`** and **`kts_1_upperlimit_95%`**) is only provided for the actual predictions
 
-And using a generated graph from the Python Math Plot library (`matplotlib`):
+A graph from the Python Math Plot library (`matplotlib`, not a part of this exercise) would be:
 
 ![Jupyter](07-01.png)
 
