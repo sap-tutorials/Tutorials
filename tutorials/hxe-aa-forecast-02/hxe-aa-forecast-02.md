@@ -9,6 +9,8 @@ time: 15
 
 ## Prerequisites
  - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
+ - You are familiar with git version management,
+ - You have an access to a personal account on [GitHub](https://github.com/).
 
 ## Details
 ### You will learn
@@ -27,34 +29,30 @@ Enter **`forecast`** as **Repository Name**, check **Initialize this repository 
 
 ![GitHub](01-02.png)
 
-Once the repository is created, get the repository URL by clicking on **Clone or Download**.
+Once the repository is created, get the repository web URL from **Clone with HTTS** field by clicking on **Code**.
 
 ![GitHub](01-03.png)
 
 Save this URL locally or keep the GitHub repository page open.
 
-Follow the instruction below then click on **Validate**.
+Follow the instruction below, then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Set your Preferences)]
 
-Open the Web IDE and login using the **`XSA_DEV`** credentials.
+Open the Web IDE and login using the `XSA_DEV` credentials.
 
-As a reminder the default URL for the Web IDE is:
+As a reminder the default URL for the Web IDE is `https://hxehost:53075`.
 
- - `https://hxehost:53075`
+A link to the Web IDE can also be found on the XSA Controller web page at `https://hxehost:39030`.
 
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
+In Web IDE switch to the **Preferences** tool using the ![Web IDE Preference](00-preference.png) icon.
 
- - `https://hxehost:39030`
+### Enable Extensions
 
-Switch to the ***Preference*** perspective using the ![Web IDE Preference](00-preference.png) icon.
-
-#### Enable Features
-
-Select **Features** and turn on the following features:
+Select **Extensions** and turn on the following, if needed:
 
  - Tools for SAP HANA Database Development
  - Tools for Node.js Development
@@ -63,13 +61,13 @@ Select **Features** and turn on the following features:
 
 Click on **Save**. The Web IDE will need to refresh.
 
-![Web IDE](02-01.png)
+![Web IDE](02-01__2020-08-07_15-07-28.png)
 
-#### Set your Git Settings
+#### Set your Git Committer
 
-Select **Git Settings** and enter your Git email address and user name.
+Click on **Git Committer** and select **Use the following user name and e-mail:**. Enter your Git email address and the user name.
 
-![Web IDE](02-02.png)
+![Web IDE](02-02__2020-08-07_15-16-01.png)
 
 Click on **Save**.
 
@@ -78,7 +76,7 @@ Click on **Save**.
 
 [ACCORDION-BEGIN [Step 1: ](Create your project)]
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+In Web IDE switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
 ![Web IDE](03-01.png)
 
@@ -88,11 +86,13 @@ Select **Multi-Target Application Project**, then click on **Next**.
 
 ![MTA](03-02.png)
 
-Set your project name to **`forecast`**, then click on **Next**.
+Set your project name to `forecast`, then click on **Next**.
 
 ![MTA](03-03.png)
 
-Leave the MTA details by default, set the **Space** to ***development*** and click on **Finish**.
+Leave the MTA default details, set the **Space** to **development**.
+
+Click on **Finish**.
 
 ![MTA](03-04.png)
 
@@ -103,9 +103,7 @@ The console should output the following:
 ```
 2:35:40 PM (Project Space) Workspace settings set successfully
 2:41:13 PM (Builder) Build of /forecast started.
-2:41:16 PM (DIBuild) [INFO] Target platform is XSA[INFO] Reading mta.yaml[INFO] Processing mta.yaml[INFO] Creating MTA archive[INFO] Saving MTA archive forecast_0.0.1.mtar[INFO] Done
-2:41:16 PM (DIBuild) ********** End of /forecast Build Log **********
-2:41:16 PM (DIBuild) Build results link: https://hxehost:53075/che/builder/workspaceb17f2iulenl46tib/download-all/53fd1280-3828-4a77-bcc2-8eedfdb6ea54?arch=zip
+...
 2:41:16 PM (Builder) Build of /forecast completed successfully.
 ```
 
@@ -121,25 +119,20 @@ The console should output the following:
 
 Before linking your project to your GitHub repository, you will need to initialize a local repository.
 
-Right click on the **`forecast`** project and select **Git > Initialize Local Repository**.
+Right click on the `forecast` project and select **Git > Initialize Local Repository**.
 
 ![Web IDE](04-01.png)
 
 The console should output the following:
 
 ```
-2:40:13 PM (git) Project : Initialize repository request sent
+...
 2:40:14 PM (git) Project : Initialize repository completed successfully
-2:40:15 PM (git) Project forecast: Status request completed successfully
 ```
 
-Right click on the `forecast` project and select **Project Setting**.
+Right click on the `forecast` project and select **Project > Project Setting**.
 
-![Web IDE](04-02.png)
-
-Under the **Git Repository Configuration** section, make sure the **`user.email`** is not set to **`null`**. If so, update the value with your email address.
-
-![Web IDE](04-03.png)
+You should see the new **Git Repository** section added there under **Project** category. Make sure the **`user.email`** is not set to `null`. If so, update the value with your email address.
 
 [DONE]
 [ACCORDION-END]
@@ -148,17 +141,20 @@ Under the **Git Repository Configuration** section, make sure the **`user.email`
 
 Right click on the **`forecast`** project and select **Git > Set Remote**.
 
-![Web IDE](05-01.png)
+![Web IDE](05-01__2020-08-07_15-31-41.png)
 
-Enter the GitHub repository URL, and click on **OK**.
+Enter the URL of previously created GitHub `forecast` repository , and click on **OK**.
 
 ![Web IDE](05-02.png)
 
-Enter your GitHub credentials, and click on **OK**.
+Enter your GitHub credentials, if requested, and click on **OK**.
+
+> ### **Note:**
+> Make sure you use a **token authentication**, if a two-factor authentication is enabled in your GitHub account!
 
 ![Web IDE](05-03.png)
 
-Click on **OK** on the ***Changes Fetched*** window.
+Click on **OK** on the **Changes Fetched** window.
 
 [DONE]
 [ACCORDION-END]
@@ -171,7 +167,7 @@ On the icon bar located on the right side of the Web IDE, click on the **Git Pan
 
 Click on **Pull** ![Web IDE](00-webide-git-pull.png).
 
-Click on **Stage All**, enter a commit comment, then click on **Commit and Push > origin master**.
+Click on **Stage All**, enter a **Commit message** `initial commit`, then click on **Commit and Push > origin master**.
 
 [DONE]
 [ACCORDION-END]
