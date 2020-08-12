@@ -8,7 +8,8 @@ time: 15
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
+ - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html),
+ - You have access to a REST client (like `cURL` or Postman) and you are familiar with using it.
 
 ## Details
 ### You will learn
@@ -21,17 +22,9 @@ time: 15
 
 Open the Web IDE, and login using the **`XSA_DEV`** credentials.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
 ![Web IDE](01-01.png)
-
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
 
 [DONE]
 [ACCORDION-END]
@@ -65,7 +58,7 @@ Select the **`js`** module.
 
 ![Web IDE](03-02.png)
 
-Under the **Requires** section, add your ***SAP HANA Database Module*** resource (most likely named **`hdi_db`**).
+Under the **Requires** section, add your Database Module resource (most likely named **`hdi_db`**).
 
 ![Web IDE](03-03.png)
 
@@ -84,10 +77,10 @@ Create the following directory structure:
 
 ```
 |-- forecast/js/lib
-    |-- xsodata
-    |-- xsjs
-        |-- apl
-        |-- pal
+                |-- xsodata
+                |-- xsjs
+                    |-- apl
+                    |-- pal
 ```
 
 [DONE]
@@ -103,11 +96,7 @@ Right click on the **`xsodata`** folder node from the tree, and select **New > F
 
 Enter **`data.xsodata`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/js/lib/xsodata/data.xsodata
-```
+This is the full path of the created file: `forecast/js/lib/xsodata/data.xsodata`.
 
 Paste the following content in the console.
 
@@ -156,13 +145,9 @@ Right click on the **`apl`** folder node from the tree, and select **New > File*
 
 Enter **`forecast.xsjs`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
+This is the full path of the created file: `forecast/js/lib/xsjs/apl/forecast.xsjs`.
 
-```
-forecast/js/lib/xsjs/apl/forecast.xsjs
-```
-
-Paste the following content in the console.
+Paste the following content.
 
 ```JavaScript
 /*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/
@@ -270,11 +255,7 @@ Right click on the **`pal`** folder node from the tree, and select **New > File*
 
 Enter **`auto_arima.xsjs`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/js/lib/xsjs/pal/auto_arima.xsjs
-```
+This is the full path of the created file: `forecast/js/lib/xsjs/pal/auto_arima.xsjs`.
 
 Paste the following content in the console.
 
@@ -357,11 +338,7 @@ Right click on the **`pal`** folder node from the tree, and select **New > File*
 
 Enter **`auto_smoothing.xsjs`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/js/lib/xsjs/pal/auto_smoothing.xsjs
-```
+This is the full path of the created file: `forecast/js/lib/xsjs/pal/auto_smoothing.xsjs`.
 
 Paste the following content in the console.
 
@@ -447,11 +424,7 @@ Right click on the **`pal`** folder node from the tree, and select **New > File*
 
 Enter **`seasonality_test.xsjs`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/js/lib/xsjs/pal/seasonality_test.xsjs
-```
+This is the full path of the created file: `forecast/js/lib/xsjs/pal/seasonality_test.xsjs`.
 
 Paste the following content in the console.
 
@@ -534,6 +507,7 @@ Right click on the **`js`** folder and select **Build**.
 The console should display at the end the following message:
 
 ```
+...
 (Builder) Build of /forecast/js completed successfully.
 ```
 
@@ -543,7 +517,7 @@ Once the application is started, you can click on the application URL:
 
 ![Web IDE](08-02.png)
 
-This should open the ***`index.xsjs`*** page.
+This should open the **`index.xsjs`** page.
 
 ![Web IDE](08-03.png)
 
@@ -554,23 +528,19 @@ This should open the ***`index.xsjs`*** page.
 
 Now, let's test your **XS OData** service.
 
-From the ***`index.xsjs`*** page, replace ***`index.xsjs`***  from the URL by:
+In the URL replace **`index.xsjs`** with **`xsodata/data.xsodata?$format=json`**.
 
-```HTML
-xsodata/data.xsodata?$format=json
-```
+You should now get the list of XS OData services available from the deployed application.
 
-You should now get the list of XS OData services available.
+![Web IDE](09-01__2020-08-12_15-15-26.png)
 
-![Web IDE](09-01.png)
-
-Replace ***`xsodata/data.xsodata?$format=json`***  from the URL by:
+Replace **`xsodata/data.xsodata?$format=json`**  from the URL with:
 
 ```url
 xsodata/data.xsodata/apl_CashFlows_extrapredictors?$inlinecount=allpages&$filter=ReverseWorkingDaysIndices eq 21&$format=json
 ```
 
-You should get the rows where the ***`ReverseWorkingDaysIndices`*** is equal to 21 including the row count.
+You should get the rows where the **`ReverseWorkingDaysIndices`** is equal to `21` including the row count.
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -581,16 +551,16 @@ Provide an answer to the question below then click on **Validate**.
 
 Open your preferred REST client, like **`cURL`**, and if don't have one yet you can [install and use Postman](https://developers.sap.com/tutorials/api-tools-postman-install.html).
 
-#### Using Postman
+### Using Postman
 
-Open a new tab, and set the following information:
+Open a new request tab, and set the following information (replacing `XXXXX` with the port used by your application from the URL in the previous step):
 
 Name           | Value
 :------------- | :--------------
 Request Method | POST
-URL            | `https://hxehost:51xxx/xsjs/apl/forecast.xsjs`
+URL            | `https://hxehost:XXXXX/xsjs/apl/forecast.xsjs`
 
-Select the **Body** tab, enable the **raw** mode, select **`JSON (application/json)`** in the drop down (instead of ***Text***), then past the following content:
+Select the **Body** tab, enable the **raw** format, select **`JSON`** in the drop down (instead of the default `Text`). Paste the following content:
 
 ```JSON
 {
@@ -602,24 +572,22 @@ Select the **Body** tab, enable the **raw** mode, select **`JSON (application/js
 
 Click on **Send**.
 
-![Postman](10-01.png)
+![Postman](10-01__2020-08-12_15-33-31.png)
 
-#### Using `cURL`
+### Using `cURL`
 
 With `cURL`, you can use the following command:
 
 ```shell
 curl --request POST \
-  --url https://hxehost:51047/xsjs/apl/forecast.xsjs \
+  --url https://hxehost:XXXXX/xsjs/apl/forecast.xsjs \
   --header 'cache-control: no-cache' \
   --header 'content-type: application/json' \
   --data '{"DATASETNAME" : "CashFlows", "HORIZON" : "21", "LASTTRAININGTIMEPOINT" : "2001-12-28"}'
 ```
 
-> ### **Note:** Make sure to adjust the host and port number used in the URL to your local environment.
-&nbsp;
-> You might also need to add the following parameters when using `cURL`  to ignore certificate signature origin and proxy:
-> ```
+> ### **Note:** You might need to add the following parameters when using `cURL` to ignore certificate signature origin and proxy:
+> ```shell
 --insecure --noproxy "*"
 ```
 
@@ -633,7 +601,7 @@ Provide an answer to the question below then click on **Validate**.
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 
-Click on **Stage All**, enter a commit comment, then click on **Commit and Push > origin master**.
+Click on **Stage All**, enter a commit comment `Added js module`, then click on **Commit and Push > origin master**.
 
 [DONE]
 [ACCORDION-END]
