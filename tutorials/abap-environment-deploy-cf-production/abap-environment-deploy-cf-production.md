@@ -23,11 +23,23 @@ time: 15
 ---
 [ACCORDION-BEGIN [Step 1: ](Create multi-target application)]
 
-  1. If you are using your trial user, then login to your [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/) and select **Launch SAP Web IDE**.
+  1. If you are using your trial user, then login to your [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/) and select your **trial** subaccount.
 
-      ![open web ide](WebIDE0.png)
+      ![open web ide](welcometrial.png)
 
-     Otherwise login to your [SAP Cloud Platform cockpit](https://account.hana.ondemand.com/), click **Services**, choose **SAP Web IDE Full-Stack** and click **Go to Service**.
+     Select **Subscriptions** on the left menu and select **SAP Web IDE Full-Stack**.
+
+      ![open web ide](web1.png)
+
+     Click **Subscribe**.
+
+      ![open web ide](web2.png)
+
+     Select **Go to Application**.
+
+      ![open web ide](web3.png)
+
+     If you are using a licensed system, then login to your [SAP Cloud Platform cockpit](https://account.hana.ondemand.com/), click **Services**, choose **SAP Web IDE Full-Stack** and click **Go to Service**.
 
       ![open web ide](WebIDE.png)
 
