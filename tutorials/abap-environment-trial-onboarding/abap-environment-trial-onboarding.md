@@ -20,7 +20,7 @@ author_profile: https://github.com/mervey45
   - How to create an ABAP Cloud project
 
 >You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) or US East (VA)** as Region.
-
+ 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
