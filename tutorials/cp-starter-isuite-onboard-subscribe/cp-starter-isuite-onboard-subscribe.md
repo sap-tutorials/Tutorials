@@ -40,7 +40,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
 
 2. Navigate to the trial  global account by clicking **Enter Your Trial Account**.
 
-      !![Trial global account](01_Foundation20Onboarding_Home.png)
+      !![Trial global account](01_FoundationsCockpit_trial page.png)
 
 3. Click **Create Account** to create a subaccount in the selected geographical region.
 
