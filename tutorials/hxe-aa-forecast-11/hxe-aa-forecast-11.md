@@ -1,6 +1,6 @@
 ---
 title: Configure your SAPUI5 HTML Module (Forecast App)
-description: Configure your SAPUI5 application and your connect it to your SAP HANA XS OData service to consume your Forecasting application
+description: Configure your SAPUI5 application and connect it to your SAP HANA XS OData service to consume in Forecasting application
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
@@ -28,17 +28,9 @@ For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.
 
 Open the Web IDE, and login using the **`XSA_DEV`** credentials.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
 ![Web IDE](01-01.png)
-
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
 
 [DONE]
 [ACCORDION-END]
@@ -78,28 +70,27 @@ Create the following folder structure:
 
 ```
 |-- forecast/html/resources/webapp/
-  |-- base
-  |   |-- algorithms
-  |-- controller
-  |   |-- algorithms
-  |      |-- apl
-  |      |-- pal
-  |-- fragment
-  |   |-- algorithms
-  |   |  |-- apl
-  |   |  |-- pal
-  |   |-- data
-  |-- model
-  |   |-- algorithms
-  |      |-- apl
-  |      |-- pal
-  |-- view
-  |   |-- algorithms
-  |      |-- apl
-  |      |-- pal
+                                  |-- base
+                                  |   |-- algorithms
+                                  |-- controller
+                                  |      |-- apl
+                                  |      |-- pal
+                                  |-- fragment
+                                  |   |-- algorithms
+                                  |   |  |-- apl
+                                  |   |  |-- pal
+                                  |   |-- data
+                                  |-- model
+                                  |   |-- algorithms
+                                  |      |-- apl
+                                  |      |-- pal
+                                  |-- view
+                                  |   |-- algorithms
+                                  |      |-- apl
+                                  |      |-- pal
 ```
 
-![Web IDE](03-01.png)
+![Web IDE](03-01__2020-08-12_16-01-40.png)
 
 [DONE]
 [ACCORDION-END]
@@ -116,11 +107,9 @@ Select the **`html`** module.
 
 ![Web IDE](04-02.png)
 
-Under the **Requires** section, add your ***Node.js API provider*** (most likely named **`js_api` (provider)**).
+Under the **Requires** section, add your *Node.js API provider* (most likely named **`js_api` (provider)**).
 
-Set the **Group** value to **destinations**.
-
-![Web IDE](04-03.png)
+Set the **Group** value to **`destinations`**.
 
 Add the following properties to the **`js_api`** entry:
 
@@ -130,7 +119,7 @@ Key                 | Value
 `url`               | `~{url}`
 `timeout`           | 3000000
 
-![Web IDE](04-04.png)
+![Web IDE](04-04__2020-08-12_16-08-36.png)
 
 Save the file using the ![save](00-save.png) icon from the menu.
 
@@ -167,7 +156,7 @@ This will open a web page with the following content:
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 
-Click on **Stage All**, enter a commit comment, then click on **Commit and Push > origin master**.
+Click on **Stage All**, enter a commit comment `Added html module`, then click on **Commit and Push > origin master**.
 
 [DONE]
 [ACCORDION-END]
