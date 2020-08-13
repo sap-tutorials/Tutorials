@@ -18,6 +18,7 @@ author_profile: https://github.com/Vikramkulkarni01
 -	How to subscribe to the service and assign user roles
 -	How to provision and activate the capabilities
 
+SAP Cloud Platform Integration Suite combines integration capabilities such as Process Integration, API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. These services are no longer available separately, but part of the Integration Suite service plans. The Integration Suite includes all integration capabilities in simple service plans such as standard, premium, and digital, with simple metrics of instance and messages.
 
 This tutorial series lets you experience the capabilities offered by SAP Cloud Platform Integration Suite.
 
