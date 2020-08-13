@@ -3,7 +3,7 @@ title: Display from the XS OData service (Forecast App)
 description: Understand and implement the basics of an SAPUI5 application to display your Forecasting results exposed with an XS OData service
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
 time: 15
 ---
 
@@ -127,7 +127,7 @@ sap.ui.define([
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -154,7 +154,7 @@ Paste the following content:
  }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 
 Enter **`default.json`** as the file name, then click on **OK**.
@@ -310,7 +310,7 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -370,7 +370,7 @@ sap.ui.define([], function() {
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -403,7 +403,7 @@ Replace the current content by the following:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -497,7 +497,7 @@ Update the **`"routing"`** section like that:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -552,7 +552,7 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file **`display_data.fragment.xml`**.
 
@@ -605,7 +605,7 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Expand the **`forecast/html/resources/webapp/fragment/data`** folder.
 
@@ -681,7 +681,7 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -751,7 +751,7 @@ sap.ui.define([
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -790,7 +790,7 @@ Open the **`demo.view.xml`** file and replace the existing code with the followi
 </mvc:View>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]

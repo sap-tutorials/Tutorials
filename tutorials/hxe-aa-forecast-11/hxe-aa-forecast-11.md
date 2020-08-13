@@ -3,14 +3,11 @@ title: Configure your SAPUI5 HTML Module (Forecast App)
 description: Configure your SAPUI5 application and connect it to your SAP HANA XS OData service to consume in Forecasting application
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
 ---
 
 ## Prerequisites
  - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn
@@ -121,7 +118,7 @@ Key                 | Value
 
 ![Web IDE](04-04__2020-08-12_16-08-36.png)
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]

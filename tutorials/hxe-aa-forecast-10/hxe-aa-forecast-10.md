@@ -3,7 +3,7 @@ title: Expose procedures as XSJS and views as XS OData (Forecast App)
 description: Understand and implement some of the options available with SAP HANA to expose your algorithm procedures and views
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 15
 ---
 
@@ -62,7 +62,7 @@ Under the **Requires** section, add your Database Module resource (most likely n
 
 ![Web IDE](03-03.png)
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -124,7 +124,7 @@ settings {
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -238,7 +238,7 @@ switch ($.request.method) {
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -330,7 +330,7 @@ switch ($.request.method) {
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 #### Auto Smoothing
 
@@ -416,7 +416,7 @@ switch ($.request.method) {
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 #### Seasonality Test
 
@@ -493,7 +493,7 @@ switch ($.request.method) {
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]

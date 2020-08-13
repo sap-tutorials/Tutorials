@@ -3,7 +3,7 @@ title: Check your environment (Forecast App)
 description: Check your environment before starting the Forecast tutorial series for SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 20
 ---
 
