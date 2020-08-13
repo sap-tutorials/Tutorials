@@ -28,7 +28,7 @@ Throughout this tutorial, objects name include the suffix `XXX`. Always replace 
 You should be familiar with ABAP Managed Database Procedures (AMDP). Briefly, AMDP allows you to optimize your ABAP code (for ABAP on SAP HANA) by calling HANA database procedures from a global ABAP class.
 For more details, see:
 
-- [Short introductory blog with two videos and code snippets](https://blogs.sap.com/2014/01/22/abap-managed-database-procedures-introduction/)
+- [ABAP Managed Database Procedures (AMDP): Short introductory blog with two videos and code snippets](https://blogs.sap.com/2014/01/22/abap-managed-database-procedures-introduction/)
 - [SAP Help Portal: ABAP Managed Database Procedures (AMDP)](https://help.sap.com/viewer/6811c09434084fd1bc4f40e66913ce11/7.52.0/en-US/3e7ce62892d243eca44499d3f5a54bff.html)
 - [ABAP Keyword Documentation: AMDP - ABAP Managed Database Procedures](https://help.sap.com/doc/abapdocu_753_index_htm/7.53/en-US/index.htm?file=abenamdp.htm)
 - [Working with the AMDP Profiler](https://help.sap.com/viewer/DRAFT/090a7cb96c1f45428741601c5c520be8/Dev/en-US/fe9233b2584b45e987b1993b4a9faef3.html?q=loiofe9233b2584b45e987b1993b4a9faef3)
@@ -152,7 +152,7 @@ Both of these are AMDP methods.
       using
         /dmo/flight
         /dmo/carrier
-        zcl_amdp_xxx=>convert_currency.
+        ZCL_AMDP_DEMO_XXX=>convert_currency.
 
     ```
 
@@ -196,7 +196,7 @@ Both of these are AMDP methods.
       USING
         /dmo/flight
         /dmo/carrier
-        zcl_amdp_xxx=>convert_currency.
+        ZCL_AMDP_DEMO_XXX=>convert_currency.
 
       flights = select distinct
         c.name as airline,
@@ -207,7 +207,7 @@ Both of these are AMDP methods.
         inner join "/DMO/CARRIER" as c
           on f.carrier_id = c.carrier_id;
 
-      call "ZCL_AMDP_XXX=>CONVERT_CURRENCY"( :flights, result );
+      call "ZCL_AMDP_DEMO_XXX=>CONVERT_CURRENCY"( :flights, result );
 
     ENDMETHOD.
 ```
@@ -307,7 +307,7 @@ ENDMETHOD.
 Your code should look like this.
 
 ```ABAP
-CLASS zcl_amdp_xxx DEFINITION
+CLASS ZCL_AMDP_DEMO_XXX DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
@@ -356,7 +356,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_amdp_xxx IMPLEMENTATION.
+CLASS ZCL_AMDP_DEMO_XXX IMPLEMENTATION.
   METHOD get_flights BY DATABASE PROCEDURE
     FOR HDB
     LANGUAGE SQLSCRIPT
@@ -364,7 +364,7 @@ CLASS zcl_amdp_xxx IMPLEMENTATION.
     USING
       /dmo/flight
       /dmo/carrier
-      zcl_amdp_xxx=>convert_currency.
+      ZCL_AMDP_DEMO_XXX=>convert_currency.
 
 
     flights = select distinct
@@ -376,7 +376,7 @@ CLASS zcl_amdp_xxx IMPLEMENTATION.
       inner join "/DMO/CARRIER" as c
         on f.carrier_id = c.carrier_id;
 
-    call "ZCL_AMDP_XXX=>CONVERT_CURRENCY"( :flights, result );
+    call "ZCL_AMDP_DEMO_XXX=>CONVERT_CURRENCY"( :flights, result );
 
   ENDMETHOD.
 
