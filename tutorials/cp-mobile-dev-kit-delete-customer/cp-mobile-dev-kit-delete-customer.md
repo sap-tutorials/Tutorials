@@ -232,7 +232,7 @@ You can cross verify if this record has been deleted in the backend.
 
 >Mobile Applications | Native/Hybrid | click the MDK App com.sap.mdk.demo | Mobile Sample OData ESPM | click Root URL `v2` | add `/Customers`/ at the end of the URL
 
-**Congratulations**! You have successfully deleted a Customer Record and you are now all set to [Upload Logs from an MDK App](cp-mobile-dev-kit-upload-logs).
+**Congratulations!** You have successfully deleted a Customer Record and you are now all set to [Upload Logs from an MDK App](cp-mobile-dev-kit-upload-logs).
 
 [VALIDATE_1]
 [ACCORDION-END]

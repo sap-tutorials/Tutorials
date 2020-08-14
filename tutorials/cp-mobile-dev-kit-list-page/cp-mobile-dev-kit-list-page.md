@@ -214,7 +214,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION END]
 
-You have successfully created a Customer List page and you are now all set to [Create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
+**Congratulations**! You have successfully created a Customer List page and you are now all set to [Create a Customer Detail Page](cp-mobile-dev-kit-detail-page).
 
 [DONE]
 [ACCORDION-END]

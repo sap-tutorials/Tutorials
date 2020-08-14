@@ -427,7 +427,7 @@ Now, refresh the URL to check if record has been updated in the backend. As Sync
 
 ![MDK](img_8.11.png)
 
-**Congratulations**! You have successfully modified a Customer Record and you are now all set to [Define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
+**Congratulations!** You have successfully modified a Customer Record and you are now all set to [Define a Validation Rule in an MDK App](cp-mobile-dev-kit-add-validation).
 
 [VALIDATE_1]
 [ACCORDION-END]

@@ -451,7 +451,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION END]
 
-You have successfully extended MDK app with Customer orders and you are now all set to [Implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
+**Congratulations**! You have successfully extended MDK app with Customer orders and you are now all set to [Implement Create Entity and Linking Entities in an MDK App](cp-mobile-dev-kit-link-entity).
 
 [DONE]
 [ACCORDION-END]

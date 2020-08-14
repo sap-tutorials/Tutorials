@@ -405,7 +405,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION END]
 
-**Congratulations**! You have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
+**Congratulations!** You have successfully completed **Enhance Your First MDK App with Additional Functionalities** mission and you are now all set to [Level Up with the Mobile Development Kit](mission.mobile-dev-kit-level-up) mission.
 
 
 [DONE]

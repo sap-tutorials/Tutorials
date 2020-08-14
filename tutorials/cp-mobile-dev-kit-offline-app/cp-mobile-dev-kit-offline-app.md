@@ -166,7 +166,7 @@ Once you accept app update, you will see the **Main** page (with **Logout** and 
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations**! You have successfully created an MDK offline app and you are now all set to [Create a Customer List Page](cp-mobile-dev-kit-list-page).
+**Congratulations!** You have successfully created an MDK offline app and you are now all set to [Create a Customer List Page](cp-mobile-dev-kit-list-page).
 
 [VALIDATE_1]
 [ACCORDION-END]

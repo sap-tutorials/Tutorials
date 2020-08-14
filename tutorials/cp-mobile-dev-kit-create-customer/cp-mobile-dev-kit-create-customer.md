@@ -363,7 +363,7 @@ You can cross verify if a record has been updated in the backend.
 
 ![MDK](img_7.9.png)
 
-**Congratulations**! You have successfully created a Customer Record and you are now all set to [Delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
+**Congratulations!** You have successfully created a Customer Record and you are now all set to [Delete a Customer Record in an MDK App](cp-mobile-dev-kit-delete-customer).
 
 [VALIDATE_1]
 [ACCORDION-END]
