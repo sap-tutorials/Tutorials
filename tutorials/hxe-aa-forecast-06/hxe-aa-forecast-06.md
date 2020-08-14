@@ -3,7 +3,7 @@ title: Time Series with SAP HANA PAL (Forecast App)
 description: Understand the capabilities and options made available with the SAP HANA SAP HANA Predictive Analytics Library (PAL), find the algorithm to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 30
 ---
 
@@ -191,7 +191,7 @@ context arima {
 };
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -231,7 +231,7 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 ### **Auto Exponential Smoothing**
 
@@ -256,7 +256,7 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 ### **Auto ARIMA**
 
@@ -281,7 +281,7 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 ### **ARIMA Forecasting**
 
@@ -306,7 +306,7 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -347,7 +347,7 @@ VIEW "aa.forecast.db.hdb.pal.views::CashFlows" as
     order by 1 asc
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Right click on the **`views`** folder and select **New > File**.
 
@@ -392,7 +392,7 @@ VIEW "aa.forecast.db.hdb.pal.views::CashFlows_extrapredictors" as
     order by 1 asc
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 ### **Ozone**
 
@@ -438,7 +438,7 @@ VIEW "aa.forecast.db.hdb.pal.views::Lag1AndCycles" as
     order by 1 asc
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Right click on the **`views`** folder and select **New > File**.
 
@@ -460,7 +460,7 @@ VIEW "aa.forecast.db.hdb.pal.views::Lag1AndCyclesAndWn" as
     order by 1 asc
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 ### **Trend And Cycles**
 
@@ -484,7 +484,7 @@ VIEW "aa.forecast.db.hdb.pal.views::TrendAndCyclic" as
     order by 1 asc
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Right click on the **`views`** folder and select **New > File**.
 
@@ -506,7 +506,7 @@ VIEW "aa.forecast.db.hdb.pal.views::TrendAndCyclicAndWn" as
     order by 1 asc
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Right click on the **`views`** folder and select **New > File**.
 
@@ -528,7 +528,7 @@ VIEW "aa.forecast.db.hdb.pal.views::TrendAndCyclicAnd_4Wn" as
     order by 1 asc
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]

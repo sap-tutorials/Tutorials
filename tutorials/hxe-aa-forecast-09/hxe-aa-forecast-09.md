@@ -3,7 +3,7 @@ title: Create additional database artifacts (Forecast App)
 description: Create a series of SQL Views that will be used in a SAPUI5 application
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 20
 ---
 
@@ -148,7 +148,7 @@ END;
 
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Right click on **`forecast.hdbprocedure`**  and select **Build Selected Files**.
 
@@ -264,7 +264,7 @@ BEGIN
 END;
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 #### PAL Auto ARIMA
 
@@ -353,7 +353,7 @@ BEGIN
 END;
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 #### PAL Auto Smoothing
 
@@ -425,7 +425,7 @@ BEGIN
 END;
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 
 Right-click on the `procedures` folder under `pal`, then use the **Build > Build Selected Files** menu.
