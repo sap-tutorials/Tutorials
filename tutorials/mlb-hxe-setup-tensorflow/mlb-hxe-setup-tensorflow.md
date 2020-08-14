@@ -9,16 +9,11 @@ time: 30
 
 ## Prerequisites  
 - [Prepare your SAP HANA, express edition instance for Machine Learning](mlb-hxe-setup-basic)
+- Basic knowledge of Docker
 
 ## Details
 ### You will learn
-During this tutorial, you will learn how to install and configure the TensorFlow integration with SAP HANA, express edition.
-
-First, you will download and install the required SAP HANA components.
-
-Then, as the TensorFlow Serving binaries are only available for a few Linux distribution like `Debian`, you will learn how to use the provided Docker containers to run TensorFlow Serving.
-
-Finally, you will learn how to configure your SAP HANA, express edition instance to consume the exposed TensorFlow models.
+How to install and configure the TensorFlow integration with SAP HANA, express edition.
 
 [ACCORDION-BEGIN [Info: ](SAP HANA External Machine Learning Library)]
 
@@ -30,18 +25,18 @@ This allows the application developer to elegantly embed TensorFlow function def
 
 The figure above shows the main components of the integrated solution:
 
-- ***AFL Framework***:
-     Allows predefined TensorFlow models to be remotely invoked through `gRPC` calls encapsulated inside AFL procedures
-- ***EML AFL***:
-     The TensorFlow Serving client implementation for SAP HANA
-- ***TensorFlow Serving Server***:
-     Makes TensorFlow exported models accessible for execution through `gRPC` remote procedure calls
-- ***Active Models***:
-    The models currently served and therefore available for execution
-- ***`gRPC` Server***:
-    The `gRPC` server interface for communication with the TensorFlow Serving `ModelServer` client
-- ***Model Persistence***:
-    The exported models persisted in a format in a given TensorFlow Serving `ModelServer`
+- *AFL Framework*: Allows predefined TensorFlow models to be remotely invoked through `gRPC` calls encapsulated inside AFL procedures
+- *EML AFL*: The TensorFlow Serving client implementation for SAP HANA
+- *TensorFlow Serving Server*: Makes TensorFlow exported models accessible for execution through `gRPC` remote procedure calls
+- *Active Models*: The models currently served and therefore available for execution
+- *`gRPC` Server*: The `gRPC` server interface for communication with the TensorFlow Serving `ModelServer` client
+- *Model Persistence*: The exported models persisted in a format in a given TensorFlow Serving `ModelServer`
+
+First, you will download and install the required SAP HANA components.
+
+Then, as the TensorFlow Serving binaries are only available for a few Linux distribution, you will learn how to use the provided Docker containers to run TensorFlow Serving.
+
+Finally, you will learn how to configure your SAP HANA, express edition instance to consume the exposed TensorFlow models.
 
 [DONE]
 [ACCORDION-END]
@@ -54,11 +49,9 @@ Nodes in the graph represent mathematical operations, while the graph edges repr
 
 As a data scientist, you can use TensorFlow to create, train, and evaluate machine learning models.
 
-TensorFlow Serving (`a.k.a.` TensorFlow Serving `ModelServer`) provides out-of-the-box integration with TensorFlow models, and can be easily extended to serve other types of models and data.
+TensorFlow Serving (`ModelServer`) provides the out-of-the-box integration with TensorFlow models, and can be easily extended to serve other types of models and data.
 
 TensorFlow Serving makes it easy to deploy new algorithms and run experiments, while keeping the same server architecture and APIs.
-
-TensorFlow Serving is a flexible, high-performance serving system for machine learning models, designed for production environments.
 
 A TensorFlow `ModelServer` (TMS) makes TensorFlow exported models accessible for execution through the `gRPC` (Remote Procedure Call) mechanism which involves a separate process that serves the actual machine learning functionality.
 
@@ -69,19 +62,19 @@ A TensorFlow `ModelServer` (TMS) makes TensorFlow exported models accessible for
 
 As a best practice, it is recommended to create a dedicated user to run your TensorFlow activities.
 
-This will help avoiding side any effect on the `hxeadm` user that is running the SAP HANA, express edition instance.
+This will help avoiding any side effects on the `hxeadm` user that is running the SAP HANA, express edition instance.
 
-To create a dedicated TensorFlow Serving administrator user `tmsadm`, you can execute the following commands:
+To create a dedicated TensorFlow Serving administrator user `tmsadm`, execute the following commands:
 
 ```shell
 sudo useradd -m -d /home/tmsadm -c "TensorFlow Administrator" tmsadm  
 sudo passwd tmsadm
 ```
 
-Then, you can execute the following command to add the `tmsadm` user to the `sudoer` list which will be required to proceed will the installation:
+Then, execute the following command to add the `tmsadm` user to the `sudoer` list which will be required to proceed will the installation:
 
 ```shell
-sudo bash -c 'echo "tmsadm ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers'
+sudo sh -c 'echo "tmsadm ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers'
 ```
 
 Now, you can switch to the `tmsadm` user:
@@ -97,13 +90,13 @@ sudo su -l tmsadm
 
 In order to connect to your SAP HANA, express edition instances using Python, you will need to download the SAP HANA Client.
 
-to do so, you can use the Download Manager either with the GUI mode or the command line mode as documented in one of the setup tutorials.
+You can use the Download Manager either with the GUI mode or the command line mode as documented in one of the setup tutorials.
 
 The SAP HANA, express edition Download Manager is now provided as part of your SAP HANA, express edition installation in: `/usr/sap/HXE/home/bin/`.
 
 You can download the SAP HANA Client packages for Linux x64 using the following command:
 
-```bash
+```shell
 /usr/sap/HXE/home/bin/HXEDownloadManager_linux.bin linuxx86_64 installer \
     -d ~ \
 	clients_linux_x86_64.tgz
@@ -111,7 +104,7 @@ You can download the SAP HANA Client packages for Linux x64 using the following 
 
 You can now extract the content into the current home directory using the following command:
 
-```bash
+```shell
 tar -xvzf ~/clients_linux_x86_64.tgz -C ~/.
 rm ~/clients_linux_x86_64.tgz
 ```
@@ -125,30 +118,29 @@ The downloaded archive for the SAP HANA Client package contains more than just t
 
 However, you will only install the SAP HANA HDB Client for now.
 
-You need now to decompress the *SAP HANA HDB Client* package executing the following command:
+You need now to uncompress the SAP HANA HDB Client package with the following command:
 
-```bash
+```shell
 tar -xvzf ~/hdb_client_linux_x86_64.tgz -C ~
 ```
 
 And now you can run the installer program executing the following commands:
 
-```bash
-~/HDB_CLIENT_LINUX_X86_64/hdbinst
+```shell
+~/HDB_CLIENT_LINUX_X86_64/hdbinst --path=/home/tmsadm/sap/hdbclient
 ```
 
-Accept the prompts default values to configure your installation:
-
- - Installation Path : `/home/tmsadm/sap/hdbclient`
-
+Installation path: `/home/tmsadm/sap/hdbclient`
 
 Once the installation is completed, you should get the following elements in your console:
 
 ```
+...
 Installation done
+...
 ```
 
-In order to permanently add the SAP HANA Client executable to your user path, you will add the binary directory path in your profile file:
+In order to permanently add the SAP HANA Client executable to your `tmsadm` user path, you will add the binary directory path in user's profile:
 
 ```shell
 cd ~/
@@ -158,7 +150,7 @@ source .profile
 
 You can then run the following cleanup commands:
 
-```bash
+```shell
 rm -r ~/HDB_CLIENT_LINUX_X86_64
 ```
 
@@ -203,20 +195,20 @@ more eml-result.txt
 rm eml-result.txt
 ```
 
-The `AFL_AREAS` & `AFL_PACKAGES` should return 1 row each, and the `AFL_FUNCTIONS` should return 10 rows.
+The `AFL_AREAS` & `AFL_PACKAGES` should return 1 row each, and the `AFL_FUNCTIONS` should return multiple rows.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Run the Memory Management Script)]
 
-After the installation is completed, it is recommended to run the ***Memory Management Script*** as described in the ***Best Practice*** to release all unused resources and free up some memory.
+After the installation is completed, it is recommended to run the *Memory Management Script* to release all unused resources and free up some memory.
 
-```bash
+```shell
 sudo su - hxeadm -c '/usr/sap/HXE/home/bin/hxe_gc.sh'
 ```
 
-Provide the ***System database user (SYSTEM)***.
+Provide the *"System database user (SYSTEM)" password*, when requested.
 
 [DONE]
 [ACCORDION-END]
@@ -245,11 +237,7 @@ Installed Products:
 ------------------------------------------
 ```
 
-If your system is marked as *Not Registered*, then you will need to register  with `SUSEConnect` using your registration code and email:
-
-```shell
-sudo SUSEConnect -r <registration code> -e <registration email>
-```
+If your system is marked as *Not Registered*, then you will need to register it with `SUSEConnect`. The registration details depend on your system. The registration process is not a part of this tutorial.
 
 Once registered, you will be able to list the available extensions using the following command:
 
@@ -259,17 +247,15 @@ sudo SUSEConnect --list-extension
 
 You can then activate these extensions/repositories using the following commands:
 
-The following extensions/repositories are required to install the Python packages dependencies:
+The following extensions/repositories are required to install the dependencies (Make sure to adjust the version/extension name based on the result from the **`--list-extension`** result!):
 
-- SUSE Linux Enterprise Software Development Kit 12 SP2
+- SUSE Linux Enterprise Software Development Kit
 
-	```shell
-	sudo SUSEConnect -p sle-sdk/12.2/x86_64
-	```
+```shell
+sudo SUSEConnect -p sle-sdk/12.2/x86_64
+```
 
-Make sure to adjust the version/extension name based on the result from the ***`--list-extension`*** result.
-
-These commands will be successful only if you have registered your system with `SUSEConnect`:
+These commands will be successful only if you have registered your system with `SUSEConnect`!
 
 Then, you can clean and refresh the repository cache:
 
@@ -325,6 +311,7 @@ cd ~
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py --user
 rm get-pip.py
+pip install --upgrade pip
 ```
 
 In order to permanently add the Pip executable to your user path, you will add the binary directory path in your profile file:
@@ -380,25 +367,25 @@ Your terminal prompt should now look like the following:
 (tms) tmsadm@hxehost:~>
 ```
 
-#### SAP HANA HDBCLI Python driver package:
+#### **SAP HANA HDBCLI Python driver package:**
 
-You can install SAP HANA HDBCLI Python driver using the following command (the `tar.gz` file name may differ):
+Install SAP HANA HDBCLI Python driver using the following command:
 
-```bash
-pip install --user /home/tmsadm/sap/hdbclient/hdbcli-2.3.119.tar.gz
+```shell
+pip install --user /home/tmsadm/sap/hdbclient/hdbcli-2.*.tar.gz
 ```
 
-#### TensorFlow package:
+#### **TensorFlow package:**
 
-Then you can install TensorFlow using the following command:
+Install TensorFlow using the following command:
 
 ```shell
 pip install --user 'tensorflow==1.8'
 ```
 
-#### TensorFlow Serving API package:
+#### **TensorFlow Serving API package:**
 
-the TensorFlow Serving API:
+Install TensorFlow Serving API:
 
 ```shell
 pip install --user 'tensorflow-serving-api==1.12.0'
@@ -470,11 +457,11 @@ docker ps -a | grep "tensorflow/serving" | grep -v grep | awk '{print $1}' | xar
 You can now start the TensorFlow Serving container using the following command:
 
 ```shell
-docker run \
+docker run -d \
   -p 8500:8500 \
   --mount type=bind,source=/home/tmsadm/export/models.config,target=/tf_models/config/models.config \
   --mount type=bind,source=/home/tmsadm/export,target=/tf_models \
-  --entrypoint "/bin/sh" tensorflow/serving:1.6.1 -c "tensorflow_model_server --port=8500 --model_config_file=/tf_models/config/models.config" &
+  --entrypoint "/bin/sh" tensorflow/serving:1.6.1 -c "tensorflow_model_server --port=8500 --model_config_file=/tf_models/config/models.config"
 ```
 
 [DONE]
