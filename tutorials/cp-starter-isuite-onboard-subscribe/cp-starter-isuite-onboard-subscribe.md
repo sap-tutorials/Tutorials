@@ -20,7 +20,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
 SAP Cloud Platform Integration Suite combines the integration capabilities such as Process Integration, API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite service plan.
 
-The Integration Suite includes all integration capabilities in simple service plans such as standard, premium, and digital, with simple metrics of instance and messages.
+The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/f810c887-8d25-4942-9849-354837951066) service catalog.
 
 This tutorial series lets you experience the capabilities offered by SAP Cloud Platform Integration Suite.
 
