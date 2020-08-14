@@ -23,7 +23,7 @@ Entitlements are the heart of all subaccounts in the Cloud Foundry environment. 
 
 2. Click on "Enter Your Access Trial Account" to access the Cloud Foundry environment.
 
-    ![accesstrial](accesstrial.png)
+    !![accesstrial](accesstrial.png)
 
 [DONE]
 [ACCORDION-END]
@@ -78,6 +78,7 @@ Congratulations, you just enabled the SAP HANA service in your Cloud Foundry env
 |HTML5 Applications|app-host|To store web applications in the HTML5 Application Repository.|
 |Portal|standard|The connect your SAPUI5 components to the Fiori Launchpad.|
 |Workflow|lite|To use the SAP Cloud Platform Workflow service within the Cloud Foundry environment.|
+|SAP Web IDE for HANA development|TRIAL(Subscription)|The development tools for HANA contain the SAP Web IDE Full-Stack aimed for HANA native development targeting your Cloud Foundry trial environment.|
 > This is an incomplete enumeration.
 
 Follow the instructions from the previous step to add these new entitlements to your subaccount.
