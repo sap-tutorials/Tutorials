@@ -40,7 +40,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
 
 2. Navigate to the trial  global account by clicking **Enter Your Trial Account**.
 
-      !![Trial global account](01_Foundation20Onboarding_Home.png)
+      !![Trial global account](01_FoundationsCockpit_trial page.png)
 
 3. Click **Create Account** to create a subaccount in the selected geographical region.
 
@@ -73,7 +73,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
     !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
 
 2. Select **Subscribe**.
-    >**IMPORTANT**: Trial accounts are not intended for production use and have certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
+    >**IMPORTANT**: Trial accounts are not intended for production use and has certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
 
   !![Select subscribe button](2.2.Subscribe.png)
 
@@ -103,6 +103,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
 
 [ACCORDION-BEGIN [Step 4: ](Provision the capabilities)]
+>**IMPORTANT**: Ensure that you unsubscribe to the standalone services (like Open Connectors, Process Integration or APIM service )if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
 1. Launch SAP Cloud Platform Integration provisioning application by choosing your subaccount, and then **Subscriptions**.
 
