@@ -6,7 +6,7 @@ author_name: Marius Obert
 author_profile: https://github.com/iobert
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide  ]
-time: 5
+time: 10
 ---
 
 ## Details
