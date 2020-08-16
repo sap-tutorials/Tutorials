@@ -25,6 +25,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls using the following:
 
 -  NativeScript (TypeScript/JavaScript applicable for both Android and iOS)
