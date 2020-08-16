@@ -20,7 +20,7 @@ author_profile: https://github.com/mervey45
   - How to create an ABAP Cloud project
 
 >You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) or US East (VA)** as Region.
- 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -37,7 +37,7 @@ author_profile: https://github.com/mervey45
 
     >Choose **Continue**.
 
-    >![Account setup](organization1.png)
+    >![Account setup](organization2.png)
 
 3. From your global account page, choose the **`trial`** tile to access your subaccount. The region is **Europe (Frankfurt) or US East (VA)** and the Environment **Multi Environment**.
 
@@ -47,7 +47,7 @@ author_profile: https://github.com/mervey45
    Therefore choose in your trial subaccount your space **dev** to navigate to it.
 
     ![Select ABAP Trial](dev.png)
-
+ 
 5. Click **Service Marketplace** to get to the service overview, where you can select ABAP Trial as a service.
 
     ![Select ABAP Trial](account4.png)

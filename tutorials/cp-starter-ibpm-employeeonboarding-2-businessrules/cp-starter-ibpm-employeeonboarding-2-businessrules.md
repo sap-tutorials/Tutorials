@@ -26,7 +26,7 @@ To import the business rules project from API Business Hub, you need to configur
 
     >You got the launchpad link in the last step of the setup tutorial. The link would be like:  
 
-    > `https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
+    > `https://trial-userid-dev-workflowmanagementflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
 
     ![Rule Editor](ruleeditor.png)
 
