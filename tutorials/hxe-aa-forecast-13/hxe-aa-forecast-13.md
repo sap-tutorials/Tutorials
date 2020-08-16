@@ -3,19 +3,16 @@ title: Execute the APL Forecast algorithm (Forecast App)
 description: Understand and implement the basics of an SAPUI5 application to generate your Forecast results using XSJS services and Machine Learning algorithm in SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
 ---
 
 ## Prerequisites
  - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
 
-## Prerequisites
- - **Proficiency:** Beginner
-
 ## Details
 ### You will learn
 - How to use inheritance in controller
-- How use JSON models
+- How to use JSON models
 - Create and use Formatters
 - Use the SAPUI5 Router
 - Configure the Application Manifest
@@ -29,35 +26,24 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 Open the Web IDE, and login using the **`XSA_DEV`** credentials.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
 ![Web IDE](01-01.png)
-
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Create a Base Controller)]
+[ACCORDION-BEGIN [Step 1: ](Create a Base Controller for algorithms)]
 
-In order to reuse some JavaScript functions over different algorithms controllers, you will define a ***base*** controller that will be reused over replacing the ***`forecast/html/base/Controller`*** controller.
+The default application controller is located in: `forecast/html/resources/webapp/base/algorithms/Controller.js`.
+
+In order to reuse some JavaScript functions over **different algorithms controllers**, you will define a *base* controller that will be reused over replacing the `forecast/html/base/Controller` controller.
 
 In the left side panel, expand the **`forecast/html/resources/webapp/base/algorithms`** tree node.
 
-Right click on the **`base`** folder node from the tree, and select **New > File**.
+Right click on the **`algorithms`** folder node from the tree, and select **New > File**.
 
 Enter **`Controller.js`** as the file name, then click on **OK**.
-
-
-The default application controller is located in:
-
- - **`forecast/html/resources/webapp/base/algorithms/Controller.js`**
 
 These updates are made in preparation for the next steps.
 
@@ -161,7 +147,7 @@ sap.ui.define([
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -176,15 +162,11 @@ Right click on the **`apl`** folder node from the tree, and select **New > File*
 
 Enter **`forecast.json`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/model/algorithms/apl/forecast.json
-```
+This is the full path of the created file: `forecast/html/resources/webapp/model/algorithms/apl/forecast.json`.
 
 Paste the following content:
 
-```JavaScript
+```JSON
 {
 	"key": "forecast",
 	"library": "apl",
@@ -280,19 +262,13 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 1: ](Edit the Application Descriptor)]
-
-The descriptor file (`manifest.json`) for applications, components, and libraries is inspired by the Web Application Manifest concept introduced by the W3C.
-
-The descriptor provides a central, machine-readable and easy-to-access location for storing metadata associated with an application, an application component, or a library.
-
-It includes the definition of OData data sources and models used by SAPUI5 applications.
 
 Open the **`manifest.json`** file located in the **`forecast/html/resources/webapp`** folder.
 
@@ -326,7 +302,7 @@ and extend the **`"targets"`** element and add the following element:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -337,11 +313,7 @@ Expand the **`forecast/html/resources/webapp/controller/algorithms/apl`** folder
 
 Create a new file **`forecast.controller.js`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/controller/algorithms/apl/forecast.controller.js
-```
+This is the full path of the created file: `forecast/html/resources/webapp/controller/algorithms/apl/forecast.controller.js`.
 
 Paste the following content:
 
@@ -375,26 +347,18 @@ sap.ui.define([
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create the Fragments)]
 
-Using fragments in SAPUI5 application enables re-usability of display components but it's also a good way to keep your code shorter and easily maintainable.
-
-The XS JS forms and services results are one good example of components that could be defined as fragments and re-used over and over.
-
 Expand the **`forecast/html/resources/webapp/fragment/algorithms/apl`** folder.
 
 Create a new file **`forecast_parameters.fragment.xml`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/fragment/algorithms/apl/forecast_parameters.fragment.xml
-```
+This is the full path of the created file: `forecast/html/resources/webapp/fragment/algorithms/apl/forecast_parameters.fragment.xml`.
 
 Paste the following content:
 
@@ -483,15 +447,11 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file **`forecast_results.fragment.xml`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/fragment/algorithms/apl/forecast_results.fragment.xml
-```
+This is the full path of the created file: `forecast/html/resources/webapp/fragment/algorithms/apl/forecast_results.fragment.xml`.
 
 Paste the following content:
 
@@ -635,7 +595,7 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -646,11 +606,7 @@ Expand the **`forecast/html/resources/webapp/view/algorithms/apl`** folder.
 
 Create a new file **`forecast.view.xml`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/view/algorithms/apl/forecast.view.xml
-```
+This is the full path of the created file: `forecast/html/resources/webapp/view/algorithms/apl/forecast.view.xml`.
 
 Paste the following content:
 
@@ -693,7 +649,7 @@ Paste the following content:
 </mvc:View>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -708,7 +664,7 @@ Once the application is started, the application will open in a new tab/window o
 
 This will open a web page with the following content:
 
-![Web IDE](05-02.png)
+![Web IDE](05-02__2020-08-13_12-51-41.png)
 
 [DONE]
 [ACCORDION-END]
@@ -729,9 +685,7 @@ Leave the parameters with their default values and click on **Execute**.
 
 ![Applications](06-03.png)
 
-The **Results** tab will be activated.
-
-Et Voilà!
+The **Results** tab will be activated once the algorithm is executed.
 
 ![Applications](06-04.png)
 
@@ -744,7 +698,7 @@ Provide an answer to the question below then click on **Validate**.
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 
-Click on **Stage All**, enter a commit comment, then click on **Commit and Push > origin master**.
+Click on **Stage All**, enter a commit comment `APL Forecast algorithm`, then click on **Commit and Push > origin master**.
 
 [DONE]
 [ACCORDION-END]

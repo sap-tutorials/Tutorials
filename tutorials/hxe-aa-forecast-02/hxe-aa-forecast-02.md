@@ -3,7 +3,7 @@ title: Create a Multi-Target Application Project and Modules in the Web IDE (For
 description: Learn how to create a Multi-Target Application Project and link it to your GitHub repository
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 15
 ---
 

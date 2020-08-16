@@ -35,9 +35,9 @@ author_profile: https://github.com/raz-korn
 
     >Using the UI wizard you can at any point click the `reset` button to reset the wizard at the top-right of the wizard screen, click the `Back` button to go back to the previous step, or click the specific wizard step to go back to that step.
 
-2. Make sure that the target folder is `/home/user/projects`, select the **Fiori Project** template, and click **Next**.
+2. Make sure that the target folder is `/home/user/projects`, select the **SAP Fiori Freestyle - Project Generator** template, and click **Next**.
 
-    !![Fiori project template](03-03 AppStudio Fiori Project Template_.png)
+    !![Fiori project template](03-03 AppStudio Fiori Project Template_.jpg)
 
 3. For **Target Running Environment**, select the following, and click **Next**.
 
@@ -80,10 +80,10 @@ author_profile: https://github.com/raz-korn
     | Step | Parameter | Value |
     |:-----|:----------|:------|
     | A | Select a system | **My SAP systems** |
-    | B | Select a source | **`ES5_BASIC_AUTH [Catalog]`** |
+    | B | Select a source | **`ES5 [Catalog]`** |
     | C | Select a service | **`GWSAMPLE_BASIC`** |
 
-    !![Fiori project template - consume services](03-08 AppStudio Fiori Project Providers.png)
+    !![Fiori project template - consume services](03-08 AppStudio Fiori Project Providers.jpg)
 
     >A notification that the project has been generated appears at the bottom right of the screen.
 
@@ -126,7 +126,7 @@ Open the layout editor in SAP Business Application Studio to easily make a few c
 
     !![Drag-Drop editor](04-04 AppStudio Drag-Drop Code Editor.jpg)
 
-    >The **Layout Editor** and code editor are stacked so you can see how making change to one will be reflected on the other.
+    >The **Layout Editor** and code editor are stacked so you can see how making changes to one will be reflected on the other.
 
     >!![Editor dropped](04-04-02 AppStudio Drag-Drop Code Editor.jpg)
 
@@ -196,7 +196,7 @@ Run your new application to test it.
     | A | What would you like to run | **`BusinessPartners`** |
     | B | Select a runnable file | **`index.html`** |
     | C | Select a UI5 version | **latest** |
-    | D | Enter a name | **Run ES5** |
+    | D | Enter a name | `Run BusinessPartners (ES5)` |
 
     >A new run configuration is generated for the `FioriDemo` project.
 
@@ -206,22 +206,21 @@ Run your new application to test it.
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-5. To bind to the destination, click the **Bind** icon to the right of the destination resource
-to get a list of available destinations.
+5. To bind to the destination, click the **Bind** icon to the right of the destination resource to get a list of available destinations.
     !![Bind to Destination](06-05 AppStudio Run Configurations Bind Destination_.jpg)
 
-6. Select the `ES5_BASIC_AUTH` destination from the list.
-    !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination_.png)
+6. Select the `ES5` destination from the list.
+    !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination_.jpg)
 
     >Once the destination has been bound, the **Bind** icon turns green.
 
     >To unbind the destination, click the **Unbind** icon.
 
-    >!![Destination is bound](06-05-03 AppStudio Run Configurations Bind Destination_.png)
+    >!![Destination is bound](06-05-03 AppStudio Run Configurations Bind Destination_.jpg)
 
 7. Hover over the run configuration and click the Run Module icon.  
 
-    !![Running the app locally](06-06 AppStudio Run Configurations Run_.png)
+    !![Running the app locally](06-06 AppStudio Run Configurations Run_.jpg)
 
 8. Wait for the **A service is listening to port 6004** notification and then click the button to open the app.
 
@@ -229,7 +228,7 @@ to get a list of available destinations.
 
     >If you are running the app for the first time, the button in the notification will say **Expose and Open**. Otherwise it will say **Open in New Tab**.
 
-    !![App is running locally](06-07 AppStudio Run Configurations Run.png)
+    !![App is running locally](06-07 AppStudio Run Configurations Run.jpg)
 
     >You may optionally add a port description.
 
@@ -269,7 +268,7 @@ to get a list of available destinations.
 
 Before you can deploy your new application, set your Cloud Foundry preferences.
 
-1. In the menu bar, select **View** | **Find Command** to open the **command palette**.
+1. In the menu bar, select **View | Find Command** to open the **command palette**.
 
     !![Command Palette-Login to CF](08-01 AppStudio CF Login_.jpg)
 
