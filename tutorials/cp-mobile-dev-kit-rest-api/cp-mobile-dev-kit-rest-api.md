@@ -25,6 +25,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 Mobile Development Kit allows you to consume REST APIs. You need to first define REST endpoint as a destination in Mobile Services and then need to write MDK rules (JavaScript) to consume it. A rule will be needed to parse the response and then decide what to do.
 
 A publicly available `Petstore` API from [swagger.io](https://petstore.swagger.io) is used as an example in this tutorial.

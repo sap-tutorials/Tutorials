@@ -24,6 +24,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing NativeScript plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
 In this tutorial, you will use the existing NativeScript plugin nativescript-geolocation to capture the device location: latitude & longitude.
