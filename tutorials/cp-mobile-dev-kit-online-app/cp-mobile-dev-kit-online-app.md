@@ -22,6 +22,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Get familiar with use case)]
 
 With Mobile Development Kit, you can also create applications that are online or always connected and make calls to the backend servers for each action you take in the application.

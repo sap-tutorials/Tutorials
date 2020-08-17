@@ -18,6 +18,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+
 Once SAP Cloud Platform Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP Cloud Platform SDK for iOS & Android apps.
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP Cloud Platform cockpit)]

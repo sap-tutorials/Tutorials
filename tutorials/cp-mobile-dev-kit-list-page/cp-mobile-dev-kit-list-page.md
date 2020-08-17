@@ -16,6 +16,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+
 To enhance your MDK app with customer list information, you need to carry out the following tasks:
 
 *  Create a new customer list page
