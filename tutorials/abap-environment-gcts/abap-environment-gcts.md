@@ -1,6 +1,6 @@
 ---
 auto_validation: true
-title: Transport a Software Component Between Development and Test Systems
+title: Transport a Software Component Between two Systems
 description: Create and import a new software component into an SAP Cloud Platform ABAP Environment instance, add ABAP sources and export it to a new SAP Cloud Platform ABAP Environment instance.
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
@@ -153,7 +153,7 @@ author_profile: https://github.com/niloofar-flothkoetter
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Update or import software component again)]
-  1. Open **Manage Software Components** app on your **test systems Fiori launchpad**.
+  1. Open **Manage Software Components** app on your **second systems Fiori launchpad**.
 
       ![manage SC](SC1.png)
 
