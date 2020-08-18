@@ -17,8 +17,10 @@ author_profile: https://github.com/Vikramkulkarni01
 -	How to start your SAP Cloud Platform Integration Suite trial
 -	How to subscribe to the service and assign user roles
 -	How to provision and activate the capabilities
--	How to access and deactivate the capabilities
 
+SAP Cloud Platform Integration Suite combines the integration capabilities such as Process Integration, API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite service plan.
+
+The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/f810c887-8d25-4942-9849-354837951066) service catalog.
 
 This tutorial series lets you experience the capabilities offered by SAP Cloud Platform Integration Suite.
 
@@ -41,7 +43,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
 
 2. Navigate to the trial  global account by clicking **Enter Your Trial Account**.
 
-      !![Trial global account](01_Foundation20Onboarding_Home.png)
+      !![Trial global account](01_FoundationsCockpit_trial page.png)
 
 3. Click **Create Account** to create a subaccount in the selected geographical region.
 
@@ -74,6 +76,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
     !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
 
 2. Select **Subscribe**.
+    >**IMPORTANT**: Trial accounts are not intended for production use and has certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
 
   !![Select subscribe button](2.2.Subscribe.png)
 
@@ -103,20 +106,21 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
 
 [ACCORDION-BEGIN [Step 4: ](Provision the capabilities)]
+>**IMPORTANT**: Ensure that you unsubscribe to the standalone services (like Open Connectors, Process Integration or APIM service )if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
 1. Launch SAP Cloud Platform Integration provisioning application by choosing your subaccount, and then **Subscriptions**.
 
-2. Click **Go to Application** in the **Integration Suite** tile.
+2. Click **Go to Application** in the **Integration Suite** overview page.
 
     !![Access integration suite provisioning application](3.1.Access_Prov_App.png)
 
-3. Now you are directed to the provisioning application, where you find the list of capabilities and choose the relevant capabilities you wish to activate.
+3. Now you are directed to the **Integration Suite Launchpad**. Choose **Add Capabilities** to activate the capabilities offered by Integration Suite.
+
+    !![Integratiosuite_launchpad](Isuite_launch_new1.png)
 
     Let's assume you have made your selection, so you now have to click **Next**.
 
     !![Add Capabilities](5.1.1Addcapapbilities.png)
-
-    <!---!![Additional functions selection](5.2.1Addfunctions_new.png)--->
 
 4. Click **Activate** to provision the selected capabilities.
 
@@ -128,11 +132,15 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
     !![Activation dialog](5.3Activation_Dial.png)
 
-    After the activation is successful you will see the **Status** of the capability as **Active** and the URL displayed.
+    >**IMPORTANT**: From the **Provisioning** application you can navigate back to the Integration Suite Launchpad by choosing the **Integration Suite** button on the header.
 
-    !![URL](5.4_URL.png)
+5. After successful activation, you can view the activated capability tiles on the launchpad. Click on the relevant tile to access the capability.  
 
-    >To access the URL, you must assign roles to the user. Continue with the next step.
+    !![URL](Isuite_launch_new_capab.png)
+
+    >To know more about resources offered by the Integration Suite Launchpad, see [Working with Integration Suite Launchpad](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/a53dce3b57ba4915b055343f783300a5.html).
+
+    >To access the capability tile, you must assign capability-specific roles to the user. Continue with the next step.
 
 [DONE]
 [ACCORDION-END]
@@ -158,12 +166,12 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     |  | `PI_Integration_Developer` | Create Integration Flows. Monitoring integration flows and the status of integration artifacts. Deploying integration content (such like integration flows, for example). |
     | API Management | `APIPortal.Administrator` | Access the API portal user interface (UI) and services. |
     |                | `APIManagement.Selfservice.Administrator` | Get onboard to API Portal and access its settings page. |
-    | Integration Advisor | `iadv-content-developer` | Access Integration Content advisor to create and deploy interfaces and mappings. |
-    | Open Connectors | `IntegrationSuite-OpenConnectors-Consumer` | View the Open Connectors capability tile on the Integration Suite Launchpad. |
+    | Integration Advisor | `trial-content-developer` | Access Integration Content advisor to create and deploy interfaces and mappings. |
+    | Open Connectors | `OpenConnectors_User` | To view and access the Open Connectors capability. |
 
     >**IMPORTANT**: If you are facing access issues after assigning the role collection, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Please include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
 
-  3. After giving authorization to a user. Go to the **Integration Suite Provisioning** application and click the URL to launch the capability. Refer to **Step 4.4**.
+  3. After giving authorization to a user. Go to the **Integration Suite Launchpad** application and click the tile to launch the capability.
 
 [VALIDATE_1]
 [ACCORDION-END]
