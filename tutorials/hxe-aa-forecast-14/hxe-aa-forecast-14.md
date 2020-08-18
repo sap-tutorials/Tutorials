@@ -3,14 +3,11 @@ title: Execute the PAL Auto ARIMA algorithm (Forecast App)
 description: Understand and implement the basics of an SAPUI5 application to generate your Forecast results using XSJS services and Machine Learning algorithm in SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
 ---
 
 ## Prerequisites
  - [Use Machine Learning to Build a Forecasting application using the XS advanced development model](https://developers.sap.com/group.hxe-aa-forecast.html)
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn
@@ -33,14 +30,6 @@ Switch to the ***Development*** perspective using the ![Web IDE Development](00-
 
 ![Web IDE](01-01.png)
 
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
-
 [DONE]
 [ACCORDION-END]
 
@@ -50,19 +39,15 @@ In order to drive some of the UI elements, you will define a JSON model. This mo
 
 In the left side panel, expand the **`forecast/html/resources/webapp/model/algorithms/pal`** tree node.
 
-Right click on the **`apl`** folder node from the tree, and select **New > File**.
+Right click on the **`pal`** folder node from the tree, and select **New > File**.
 
 Enter **`auto_arima.json`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/model/algorithms/pal/auto_arima.json
-```
+This is the full path of the created file: `forecast/html/resources/webapp/model/algorithms/pal/auto_arima.json`.
 
 Paste the following content:
 
-```JavaScript
+```JSON
 {
 	"key": "auto_arima",
 	"library": "pal",
@@ -110,19 +95,13 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 1: ](Edit the Application Descriptor)]
-
-The descriptor file (`manifest.json`) for applications, components, and libraries is inspired by the Web Application Manifest concept introduced by the W3C.
-
-The descriptor provides a central, machine-readable and easy-to-access location for storing metadata associated with an application, an application component, or a library.
-
-It includes the definition of OData data sources and models used by SAPUI5 applications.
 
 Open the **`manifest.json`** file located in the **`forecast/html/resources/webapp`** folder.
 
@@ -155,7 +134,7 @@ and extend the **`"targets"`** element and add the following element:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -166,11 +145,7 @@ Expand the **`forecast/html/resources/webapp/controller/algorithms/pal`** folder
 
 Create a new file **`auto_arima.controller.js`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/controller/algorithms/pal/auto_arima.controller.js
-```
+This is the full path of the created file: `forecast/html/resources/webapp/controller/algorithms/pal/auto_arima.controller.js`.
 
 Paste the following content:
 
@@ -189,7 +164,7 @@ sap.ui.define([
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -200,11 +175,7 @@ Expand the **`forecast/html/resources/webapp/fragment/algorithms/pal`** folder.
 
 Create a new file **`auto_arima_parameters.fragment.xml`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/fragment/algorithms/pal/auto_arima_parameters.fragment.xml
-```
+This is the full path of the created file: `forecast/html/resources/webapp/fragment/algorithms/pal/auto_arima_parameters.fragment.xml`.
 
 Paste the following content:
 
@@ -249,7 +220,7 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file **`auto_arima_results.fragment.xml`**.
 
@@ -414,7 +385,7 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -425,11 +396,7 @@ Expand the **`forecast/html/resources/webapp/view/algorithms/pal`** folder.
 
 Create a new file **`auto_arima.view.xml`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/view/algorithms/pal/auto_arima.view.xml
-```
+This is the full path of the created file: `forecast/html/resources/webapp/view/algorithms/pal/auto_arima.view.xml`.
 
 Paste the following content:
 
@@ -465,7 +432,7 @@ Paste the following content:
 </mvc:View>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -480,7 +447,7 @@ Once the application is started, the application will open in a new tab/window o
 
 This will open a web page with the following content:
 
-![Web IDE](05-02.png)
+![Web IDE](05-02__2020-08-13_12-51-41.png)
 
 [DONE]
 [ACCORDION-END]
@@ -489,17 +456,15 @@ This will open a web page with the following content:
 
 Select **PAL Auto ARIMA Algorithm**, then pick the **Cash Flows with date & cash flow value only** dataset.
 
-Click on **Next**.
-
 ![Applications](06-01.png)
+
+Click on **Next**.
 
 Leave the parameters with their default values and click on **Execute**.
 
 ![Applications](06-02.png)
 
-The **Results** tab will be activated.
-
-Et Voilà!
+Once the algorithm is executed, the **Results** tab will be activated.
 
 ![Applications](06-03.png)
 
@@ -512,7 +477,7 @@ Provide an answer to the question below then click on **Validate**.
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 
-Click on **Stage All**, enter a commit comment, then click on **Commit and Push > origin master**.
+Click on **Stage All**, enter a commit comment `PAL Auto ARIMA algorithm`, then click on **Commit and Push > origin master**.
 
 [DONE]
 [ACCORDION-END]

@@ -274,7 +274,7 @@ primary_tag: products>sap-cloud-platform-integration-for-process-services
     * Ensure you are in the _Manage Integration Content_ view.
     * Locate your integration flow.
     * Make sure it is in started state.
-    * Select the flow to view  the endpoint details on the right hand pane.
+    * Select the flow to view  the endpoint details on the right hand pane. 
     * Copy the endpoint URL with the speed button on the right.
 
     ![Endpoint](Endpoint.png)  

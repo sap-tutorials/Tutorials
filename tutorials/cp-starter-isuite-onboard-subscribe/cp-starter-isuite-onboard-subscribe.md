@@ -18,6 +18,9 @@ author_profile: https://github.com/Vikramkulkarni01
 -	How to subscribe to the service and assign user roles
 -	How to provision and activate the capabilities
 
+SAP Cloud Platform Integration Suite combines the integration capabilities such as Process Integration, API Management, Integration Advisor, and Open Connectors into a cohesive and simplified toolkit for enterprise integrations. To provide a comprehensive integration experience, these services are not available separately, but only as part of the Integration Suite service plan.
+
+The Integration Suite includes all integration capabilities in simple service plans. To know more on these plans, see [Integration Suite](https://discovery-center.cloud.sap/#/serviceCatalog/f810c887-8d25-4942-9849-354837951066) service catalog.
 
 This tutorial series lets you experience the capabilities offered by SAP Cloud Platform Integration Suite.
 
@@ -40,7 +43,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
 
 2. Navigate to the trial  global account by clicking **Enter Your Trial Account**.
 
-      !![Trial global account](01_Foundation20Onboarding_Home.png)
+      !![Trial global account](01_FoundationsCockpit_trial page.png)
 
 3. Click **Create Account** to create a subaccount in the selected geographical region.
 
@@ -73,7 +76,7 @@ This tutorial series lets you experience the capabilities offered by SAP Cloud P
     !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
 
 2. Select **Subscribe**.
-    >**IMPORTANT**: Trial accounts are not intended for production use and have certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
+    >**IMPORTANT**: Trial accounts are not intended for production use and has certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
 
   !![Select subscribe button](2.2.Subscribe.png)
 
@@ -103,6 +106,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
 
 [ACCORDION-BEGIN [Step 4: ](Provision the capabilities)]
+>**IMPORTANT**: Ensure that you unsubscribe to the standalone services (like Open Connectors, Process Integration or APIM service )if you have already subscribed to it.  If the standalone subscription exists, you will be unable to activate respective capability via the Integration Suite.
 
 1. Launch SAP Cloud Platform Integration provisioning application by choosing your subaccount, and then **Subscriptions**.
 

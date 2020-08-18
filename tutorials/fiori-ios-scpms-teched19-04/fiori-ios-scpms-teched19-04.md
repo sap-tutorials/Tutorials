@@ -2,6 +2,8 @@
 title: Implement the Customer Detail
 description: Use the SAP Cloud Platform SDK for iOS to implement a Profile Header and Charts into the Customer Detail View.
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 15
@@ -132,7 +134,7 @@ In the last tutorial, you implemented the Overview View Controller and the segue
 
     Don't worry, you will fix the compile time errors in a second.
 
-6. First call the `updateTable()` in the `viewDidLoad(:)` method:
+6. Call the `updateTable()` in the `viewDidLoad(:)` method:
 
     ```Swift
 
@@ -146,13 +148,6 @@ In the last tutorial, you implemented the Overview View Controller and the segue
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-            AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-            logger.error("OData service is nil. Please check onboarding.")
-            return
-        }
-        self.dataService = dataService
 
         updateTable()
     }
@@ -467,7 +462,7 @@ Remember in the `updateTable()` method where the `setupProfileHeader()` method g
         }
     }
     ```
-    
+
 [DONE]
 [ACCORDION-END]
 
