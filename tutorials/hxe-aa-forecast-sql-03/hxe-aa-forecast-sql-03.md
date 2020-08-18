@@ -56,7 +56,7 @@ The Cash Flows file (`CashFlows.txt`) presents daily measures of cash flows from
 | <nobr>`LastWMonth`</nobr>, </br><nobr>`BeforeLastWMonth`</nobr>                   | Boolean variables that indicate if the information is true or false | 1 if the information is true.
 | <nobr>`WorkingDaysIndices`</nobr>, </br><nobr>`ReverseWorkingDaysIndices`</nobr>  | Indices or reverse indices of the working days | An integer value
 | <nobr>`MondayMonthInd`</nobr>, </br><nobr>`TuesdayMonthInd`</nobr>, </br><nobr>`WednesdayMonthInd`</nobr>, </br><nobr>`ThursdayMonthInd`</nobr>, </br><nobr>`FridayMonthInd`</nobr> | Indices of the week days in the month | An integer value
-| <nobr>`Last5WDaysInd`</nobr>, </br><nobr>`Last4WDaysInd`</nobr>                   | Indices of the 5 or 4 last working days of the month | An integer value 
+| <nobr>`Last5WDaysInd`</nobr>, </br><nobr>`Last4WDaysInd`</nobr>                   | Indices of the 5 or 4 last working days of the month | An integer value
 
 #### **Los Angeles Ozone**
 
@@ -661,27 +661,35 @@ Now, let's have a look at some additional statistical elements using the followi
 
 ```sql
 with data as (
-  select l1cnn.signal as value_nn, l1cwn.signal  as value_wn
-  from forecast_lag_1_and_cycles l1cnn join forecast_lag_1_and_cycles_and_wn l1cwn on l1cnn.time = l1cwn.time
+  select tcnn."signal_value" as value_nn, tcwn."signal_value"  as value_wn, tc4n."signal_value"  as value_4n
+  from  "aa.forecast.db.data::TrendAndCyclic"         tcnn
+join "aa.forecast.db.data::TrendAndCyclicAndWn"  tcwn on tcnn."signal_time" = tcwn."signal_time"
+join "aa.forecast.db.data::TrendAndCyclicAnd_4Wn" tc4n on tcnn."signal_time" = tc4n."signal_time"
 )
 select 'max' as indicator , round(max(value_nn), 2) as value_nn        
-                          , round(max(value_wn), 2) as value_wn     from data union all
+                          , round(max(value_wn), 2) as value_wn        
+                          , round(max(value_4n), 2) as value_4n     from data union all
 select 'min'              , round(min(value_nn), 2)
-                          , round(min(value_wn), 2)                 from data union all
+                          , round(min(value_wn), 2)
+                          , round(min(value_4n), 2)                 from data union all
 select 'delta min/max'    , round(max(value_nn) - min(value_nn), 2)
-                          , round(max(value_wn) - min(value_wn), 2) from data union all
+                          , round(max(value_wn) - min(value_wn), 2)
+                          , round(max(value_4n) - min(value_4n), 2) from data union all
 select 'avg'              , round(avg(value_nn), 2)
-                          , round(avg(value_wn), 2)                 from data union all
+                          , round(avg(value_wn), 2)
+                          , round(avg(value_4n), 2)                 from data union all
 select 'median'           , round(median(value_nn), 2)
-                          , round(median(value_wn), 2)              from data union all
+                          , round(median(value_wn), 2)
+                          , round(median(value_4n), 2)              from data union all
 select 'stddev'           , round(stddev(value_nn), 2)
-                          , round(stddev(value_wn), 2)              from data
+                          , round(stddev(value_wn), 2)
+                          , round(stddev(value_4n), 2)              from data
 ```
 
 The result should be:
 
 **indicator**        | **value without White Noise** | **value with White Noise** | **value with 4 x White Noise**
---------------------:|------------------------------:|---------------------------:|------------------------------
+--------------------:|-------------------------------|----------------------------|------------------------------
 **`max`**            | 159.84                        | 161.12                     | 167.49
 **`min`**            | 0.83                          | -0.54                      | -3.28
 **`delta min/max`**  | 159.01                        | 161.66                     | 170.76
@@ -697,7 +705,7 @@ Here is a graph which can help you visualize the signal values in ascending orde
 
 ### **Data Distribution**
 
-Now let's have a look at the data distribution using the NTILE function.
+Now let's have a look at the data distribution using the `NTILE` function.
 
 The following SQL will partition the data into 8 groups and get the same generic statistics as before but for each group:
 

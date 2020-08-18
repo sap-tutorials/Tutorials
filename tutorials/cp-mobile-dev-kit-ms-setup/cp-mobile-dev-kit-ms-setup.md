@@ -19,6 +19,7 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Understand the mobile development kit feature)]
 
 Mobile Development Kit (MDK) allows developers and technical business users to build new native mobile apps and customize select SAP native mobile applications in a highly productive environment. It's architecture is based on `NativeScript`, so it supports native cross platform development which means you build your native mobile application once and deploy it to Android and iOS devices.
@@ -27,7 +28,7 @@ Mobile Development Kit provides robust online and offline capabilities, business
 
 You can find more details in the [Mobile Development Kit developer page](https://developers.sap.com/topics/mobile-development-kit.html).
 
-![MDK](MDK.png)
+!![MDK](MDK.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -68,6 +69,7 @@ Make sure that you have completed required pre-Prerequisites mentioned in this t
 [VALIDATE_3]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 3: ](Add a sample backend to your MDK app)]
 
 A sample OData service is available for developers to use during development and testing. The sample OData service also lets you evaluate how delta tokens are handled in your test application.
@@ -79,6 +81,8 @@ A sample OData service is available for developers to use during development and
     Here, you can view the root service and metadata URLs, and generate sample sales orders and purchase orders for multiple entity sets. You can view the data for each entity in a separate text file, and even can reset the sample data.
 
     !![MDK](img_3.1.png)
+
+    !![MDK](img_3.2.png)
 
     >If you see a _Confirm Save_ window, click **OK**.
 
