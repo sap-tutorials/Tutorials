@@ -176,7 +176,9 @@ To become a blogger in the SAP Community, you must follow a process that will he
 
 [ACCORDION-BEGIN [Step 10: ](Learn how to publish a blog post)]
 
-The more you know about writing a blog post in the community, the faster your first blog post will be processed. (Note: After submitting a post, a Contributor may need to wait up to 72 business hours before moderator review occurs. Contributors should wait for their first post to be published before submitting a second.)
+The more you know about writing a blog post in the community, the faster your first blog post will be processed. 
+
+>Note: After submitting a post, a Contributor may need to wait up to 72 business hours before moderator review occurs. Contributors should wait for their first post to be published before submitting a second.
 
 1. Go to the main [Blogging](https://community.sap.com/resources/blogging) resource page.
 
