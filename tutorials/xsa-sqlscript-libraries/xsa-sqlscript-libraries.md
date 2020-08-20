@@ -4,21 +4,18 @@ description: Leveraging SQLScript in Stored Procedures, User Defined Functions, 
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud   ]
+time: 15
 ---
 
 ## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Creating Table User Defined Functions](https://developers.sap.com/tutorials/xsa-sqlscript-table-user.html)
-## Next Steps
-- [Anonymous Blocks](https://developers.sap.com/tutorials/xsa-sqlscript-anonymous.html)
+- **Tutorials:** [Creating Table User Defined Functions](xsa-sqlscript-table-user)
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn how to create SQLScript User Defined Libraries. Libraries are designed to group related variables, functions, and procedures together within a common object. These library members can either be exposed using the PULBIC keyword, or set to only be consumable from within the library itself using the PRIVATE keyword.
+- How to create SQLScript User Defined Libraries
 
-### Time to Complete
-**15 Min**.
+Libraries are designed to group related variables, functions, and procedures together within a common object. These library members can either be exposed using the PULBIC keyword, or set to only be consumable from within the library itself using the PRIVATE keyword.
 
 ---
 

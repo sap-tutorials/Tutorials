@@ -3,7 +3,7 @@ title: Use OData Annotations to Add CRUD Functionality to an MDK App
 description: Create a fully functional CRUD native mobile application for iOS and Android.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>intermediate, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio]
 time: 25
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -12,7 +12,6 @@ author_profile: https://github.com/jitendrakansal
 ## Prerequisites
 - **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
-- **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
 
 ## Details
 ### You will learn
@@ -26,7 +25,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 Mobile Development Kit brings OData annotations capabilities to your native mobile applications. MDK editor supports generating List-Detail pages based on annotations. List-Detail pages are similar to a Master-Detail page, but it is two pages instead of one. The MDK editor parses existing annotations to give you a huge leap forward in your native mobile application.
 
-!![MDK](img_1.gif)
+![MDK](img_1.gif)
 
 [ACCORDION-BEGIN [Step 1: ](Understand the SAP Fiori Elements)]
 
@@ -50,144 +49,142 @@ As admin changes to the default sample service destinations (`com.sap.edm.sample
 
 1. In SAP MDK Demo App configuration, click **Mobile Connectivity**.
 
-    !![MDK](img_10.png)
+    !![MDK](img_2.1.png)
 
 2. Copy the destination URL from the sample service destination `com.sap.edm.sampleservice.v2`.
 
-    !![MDK](img_12.png)
+    !![MDK](img_2.2.png)
 
 3. Click create icon to create a new destination.
 
-    !![MDK](img_12.1.png)
+    !![MDK](img_2.3.png)
 
 4. Enter a new destination name `com.sap.mdk.annotation` and paste the URL. Click **Next**.
 
-    !![MDK](img_12.2.png)
+    !![MDK](img_2.4.png)
 
 5. For this tutorial, there is no Custom Headers required, click **Next**.
 
-    !![MDK](img_13.png)
+    !![MDK](img_2.5.png)
 
 6. Click **Add Annotation URL** to add OData Annotations to the Sample service.
 
-    !![MDK](img_14.png)
+    !![MDK](img_2.6.png)
 
-7. Provide the below information and click **Next**:
+    Provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
     | `Annotation Name`| `Product` |
     | `Path/File` | `/annotations/Products` |
 
-    !![MDK](img_15.png)
+    !![MDK](img_2.6.png)
 
-8. In **Create Destination** screen, select **SSO Mechanism** as Forward Authentication and click **Next**.
+7. In **Create Destination** screen, select **SSO Mechanism** as `Forward Authentication` and click **Next**.
 
-    !![MDK](img_15.1.png)
+    !![MDK](img_2.7.png)
 
 9. In the following screen, let the default settings as it is. Click **Finish**.
 
-    !![MDK](img_15.2.png)
+    !![MDK](img_2.8.png)
 
     You should see a Toast Message **Destination Created** at bottom of the page.
 
     Here you can see that OData Annotation information is available in the new destination.
 
-    !![MDK](img_11.png)
+    !![MDK](img_2.9.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create new MDK project)]
+[ACCORDION-BEGIN [Step 3: ](Create a new MDK project in SAP Business Application Studio)]
 
-Ensure that you have already created a new destination `mobileservices_cf` as per [this](fiori-ios-hcpms-setup) tutorial. This is required to connect SAP Web IDE to Mobile Services in Cloud Foundry environment.
+This step includes creating the mobile development kit project in the editor.
 
-This step includes creating the Mobile Development Kit project in the Editor.
+1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-1. Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
+2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
 
-2. Right-click Workspace folder and select **New** | **MDK Base Project**.
+    !![MDK](img_3.2.gif)
 
-    !![MDK](img_1.png)
+3. In Welcome page, click **New project from template** .
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
+    !![MDK](img_3.3.png)
 
-3. Enter the Project Name as `MDK_Annotations` and click **Next**.
+4. Select **MDK Project** and click **Next**.
 
-    !![MDK](img_19.png)
+    !![MDK](img_3.4.png)
 
-4. Leave the default values in _Application Creation_ step as it is, click **Next**.
-
-5. In _Service Creation_ step, provide and select the below information:
+5. In *Basic Information* step, select or provide the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Name`| `SampleServiceV2` |
-    | `Service URL` | `/destinations/mobileservices_cf` |
-    | `Application ID` | `com.sap.mdk.demo` |
-    | `Destination Name` | `com.sap.mdk.annotation` |
-    | `Enable Offline Store` | `Uncheck it` |
+    | `MDK Template Type`| Select `Base` from the dropdown |
+    | `Your Project Name` | `MDK_Annotations` |
+    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
 
-    !![MDK](img_2.png)
+    !![MDK](img_3.5.png)
 
-    > If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-    >If a pop-up appears then enter your cloud platform User Name and password to authenticate.
+6. In *SAP Cloud Platform Connection* step, you will see your Cloud Foundry Organization and Space information. If you are not logged on yet, provide required credentials to retrieve your details. Click **Next**.
 
-    >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
+    !![MDK](img_3.6.png)
+
+7. In *Service Configuration* step, provide or select the below information and click **Next**:
+
+    | Field | Value |
+    |----|----|
+    | `Service File Name`| `<You can continue with default name or provide any name of your choice>` |
+    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
+    | `Destination` | Select `com.sap.mdk.annotation` from the dropdown |
+    | `Enable Offline` | Choose `No` |            
+
+    !![MDK](img_3.7.png)
 
     Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
 
     Since you will create an online based app, hence _Enable Offline Store_ option is unchecked.
 
-6. Click **Check Service** to validate the service properties. If all the details are fine, you will see a success message. Click **Next**.
+8. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Annotations` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
 
-    !![MDK](img_005.png)
-
-    >More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/backend-connectivity/sample.html).
-
-7. In **Features** step, click **Finish**.
-
-    !![MDK](img_23.png)
-
-    After clicking Finish, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Annotations` project in the project explorer.
-
-    !![MDK](img_23.1.png)
+    !![MDK](img_3.8.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add MDK Annotation component to MDK project)]
 
-1. Right-click the `MDK_Annotations` MDK Application in the project explorer pane and click **New MDK Annotation Component**.
+1. Right-click `Application.app` and select **MDK:New MDK Annotation Component**.
 
-    !![MDK](img_31.png)
+    !![MDK](img_4.1.png)
 
 2. MDK editor fetches annotation details, select **Product** Annotation and click **Next**.
 
-    !![MDK](img_32.png)
+    !![MDK](img_4.2.png)
 
 3. In **Template Customization** step, click **Next**.
 
-    !![MDK](img_33.png)
+    !![MDK](img_4.3.png)
 
 4. Click **Finish** to create list detail from OData Annotation.
 
-    !![MDK](img_34.png)
+    !![MDK](img_4.4.png)
 
     In MDK project, you will see new pages, actions, rules have been generated for **Product**.
 
-    !![MDK](img_35.png)
+    !![MDK](img_4.4.1.png)
 
 5. Next, you will add a Toolbar item on `Main.page` to navigate to `Product_List.page`.
 
     In `Main.page`, drag and drop **Toolbar Item** control on the page.
 
-    !![MDK](img_36.png)
+    !![MDK](img_4.5.gif)
 
 6. Change its **Caption** to **Products**.
 
-    !![MDK](img_37.png)
+    !![MDK](img_4.6.png)
 
 7. Now, you will set the `onPress` event to `NavToProduct_List.action`.
 
@@ -195,7 +192,7 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
     Double-click the `NavToProduct_List.action` and click **OK** to set it as the `OnPress` action.
 
-    !![MDK](img_38.png)
+    !![MDK](img_4.7.gif)
 
     Pages, actions and rules created are a starting point. You can edit those pages and make it your own.  At this point the MDK editor is no longer reading the annotations from OData.
 
@@ -209,154 +206,67 @@ This step includes creating the Mobile Development Kit project in the Editor.
 
 [ACCORDION-BEGIN [Step 5: ](Deploy and activate the application)]
 
-So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
-1. Right-click the `MDK_Annotations` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right-click `Application.app` and select **MDK: Deploy**.
 
+!![MDK](img_5.1.png)
 
-    !![MDK](img_009.1.png)
+You should see **Deploy Succeeded** message.
 
-2. Let the default configuration as it is and click **Next**.
-
-    !![MDK](img_010.png)
-
-    >_Filter Files_ will be filtered and ignored in web packing process.
-
-    >_Externals_ is the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
-
-3. Confirm the destination name and application id match where you want to deploy.
-
-    !![MDK](img_014.1.png)
-
-    >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
-
-4. Click **Next** to finish the deployment from SAP Web IDE.
-
-    You should see **Application deployed successfully** message in console log.
+!![MDK](img_5.2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app onboarding.
+SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Right-click the `MDK_Annotations` MDK Application in the project explorer pane and select **MDK Show QR Code**.
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
 
-!![MDK](img_009.png)
+!![MDK](img_6.1.png)
 
->**MDK Show QR Code** option is greyed out if MDK project is not yet deployed and activated as per step 5.
-
-!![MDK](img_012.1.png)
+!![MDK](img_6.2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION BEGIN [Android]]
 
-1. Launch **`Mobile Svcs`** app on your Android device. Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
+1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-    !![MDK](img_016.1.jpg)
+    Once you accept app update, you will see the **Main** page with **LOGOUT** and **PRODUCTS** options at bottom of the page. Tap **PRODUCTS**, you will navigate to Product List page.
 
-2. Tap **QR CODE SCAN** to start the device camera for scanning the onboarding QR code.
-
-    !![MDK](img_013.2.png)
-
-3. Once scan is succeeded, tap **CONTINUE**.
-
-    !![MDK](img_013.3.png)
-
-4. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
-
-    !![MDK](img_017.1.1.png)
-
-5. Tap **AGREE** on `End User License Agreement`.
-
-    !![MDK](img_018.1.png)
-
-6. Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
-
-    !![MDK](img_019.1.png)
-
-7. Confirm the passcode and tap **DONE**.
-
-    !![MDK](img_020.1.png)
-
-    Optionally, you can enable fingerprint to get faster access to the app data.
-
-    !![MDK](img_021.1.png)
-
-8. Tap **OK**.
-
-    !![MDK](img_022.1.png)
-
-    The MDK client receives deployed metadata definitions as a bundle.
-
-    Now, you will see the **Main** page with **LOGOUT** and **PRODUCTS** options at bottom of the page. Tap **PRODUCTS**, you will navigate to Product List page.
-
-    !![MDK](img_023.1.png)
+    ![MDK](img_7.1.png)
 
 9. In following pages, you can create a new record, modify an existing record and even delete the record.
 
-    !![MDK](img_041.1.png)
-    !![MDK](img_042.1.png)
-
-    >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, same onboarding URL settings will be reused without the need to scan. You will need to use 3rd party QR scanner app in Android or device Camera in iOS, if you would like to scan a different onboarding URL.
+    ![MDK](img_7.2.png)
+    ![MDK](img_7.3.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-1. Launch **`Mobile Svcs`** app on your iOS device. Tap **Scan** to start the device camera for scanning the onboarding QR code.
+1. Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-    !![MDK](img_013.png)
+    Once you accept app update, you will see the **Main** page with **Logout** and **Products** options at bottom of the page. Tap **Products**, you will navigate to Product List page.
 
-2. Once scan is succeeded, tap **Continue**.
-
-    !![MDK](img_013.1.png)
-
-3. Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
-
-    !![MDK](img_017.png)
-
-4. Tap **Agree** on `End User License Agreement`.
-
-    !![MDK](img_018.png)
-
-5. Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
-
-    !![MDK](img_019.png)
-
-6. Confirm the passcode and tap **Done**.
-
-    !![MDK](img_020.png)
-
-    Optionally, you can enable Touch ID to get faster access to the app data, click **Enable**.
-
-    !![MDK](img_021.png)
-
-7. Tap **OK**.
-
-    !![MDK](img_022.png)
-
-    The MDK client receives deployed metadata definitions as a bundle.
-
-    Now, you will see the **Main** page with **Logout** and **Products** options at bottom of the page. Tap **Products**, you will navigate to Product List page.
-
-    !![MDK](img_023.png)
+    ![MDK](img_7.4.png)
 
 8. In following pages, you can create a new record, modify an existing record and even delete the record.
 
-    !![MDK](img_024.png)
-    !![MDK](img_025.png)
+    ![MDK](img_7.5.png)
+    ![MDK](img_7.6.png)
 
 [OPTION END]
 
-Congratulations, you have successfully created a fully functional CRUD native mobile application based on OData annotations and you are now continue with next tutorial.
+**Congratulations!** You have successfully created a fully functional CRUD native mobile application based on OData annotations and you are now all set to [Enable Push Notifications in the MDK Public Store Client](cp-mobile-dev-kit-push).
 
 [DONE]
 [ACCORDION-END]

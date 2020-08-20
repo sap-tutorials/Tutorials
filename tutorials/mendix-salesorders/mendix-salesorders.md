@@ -23,7 +23,7 @@ This tutorial also showcases the [SAP OData Model Creator](https://appstore.home
 
 **Before starting this tutorial, make sure you have followed the prerequisites**.
 
->This tutorial is applicable whether you have a productive or trial Neo environment, but assumes that you are using a trial Cloud Foundry environment.
+>This tutorial is applicable if you have a productive Neo environment, but assumes that you are using a trial Cloud Foundry environment.
 &nbsp;
 > The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 

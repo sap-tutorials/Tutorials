@@ -3,7 +3,7 @@ title: Add Webhook to Chatbot to Retrieve Tracking Info
 description: Add a webhook call in the package-tracking chatbot to retrieve information for a specific tracking number, using SAP Conversational AI.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -16,7 +16,7 @@ primary_tag: products>sap-conversational-ai
   - How to call a webhook during a conversation
   - How to display the response
 
-The previous tutorial created a chatbot to detect the intent of customers who want to track a package, and to get the needed information.
+In the previous tutorial, you created a chatbot to detect the intent of customers who want to track a package and to get the needed information.
 
 In this tutorial, you will modify the chatbot so it calls an API to retrieve information on the package, based on a tracking number, and displays that information to the customer.
 
@@ -26,7 +26,7 @@ In this tutorial, you will modify the chatbot so it calls an API to retrieve inf
 
 1. Open your `shippingbot` bot.
 
-2. At the top left, click **Settings**.
+2. At the top right, click **Settings**.
 
     ![Endpoint](Endpoint_Settings.png)
 
@@ -49,7 +49,7 @@ In this tutorial, you will modify the chatbot so it calls an API to retrieve inf
 
 3. Go to **Actions**.
 
-4. Click **Add a New Message Group** (at the bottom).
+4. Click **Add New Message Group** (at the bottom).
 
     ![Add group](CallAPI_AddGroup.png)
 

@@ -85,40 +85,37 @@ Enter your phone number and click **New Code** to retrieve a code. Please enter 
 
 [DONE]
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step](Select region for trial account)]
+[ACCORDION-BEGIN [Step](Access the welcome screen)]
 
 Click on **Log on** to log on to your verified account.
 
  ![Log on again](logon-again.png)
 
-Here, you can now create a subaccount which lives in a geographic region. Choose one of regions from this list.    
+ You will see one main button on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to navigate to your global account.
 
-> We suggest the *Europe (Frankfurt)* region because it has the largest list of services.  If you want to use a region closer to you, [check to be certain it has the services you want before selecting it](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html?3b642f68227b4b1398d2ce1a5351389a.html).
+ !![enter trial account](enter-trial.png)
 
-![Choose a nearby region](select-region.png)
 
-You will then see a dialog box while the account is set up.  When complete, the dialog box will look like this.  Click **Continue** to close to popup.
-
-![Dialog setting up space](trial-created.png)
+> Bookmark the link for fast and quick access to the cockpit.  
 
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Navigate to the Cloud Foundry space)]
 
-You will see two buttons on the welcome screen of the SAP Cloud Platform Cockpit. Click on **Enter Your Trial Account** to see your global account.
+1. Here, you can now create a subaccount which lives in a geographic region. **Choose a region** from this list and click **Create Account** to trigger the provisioning process.
 
-!![enter trial account](enter-trial.png)
-> Bookmark the link for fast and quick access to the cockpit.  
+    ![Choose a nearby region](select-region.png)
 
-The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
+2. You will then see a dialog box while the account is set up.  When complete, click **Continue** to close to popup and to navigate to the new account.
 
-!![enter subaccount](global-account.png)
+3. The global trial account contains **one** subaccount and space. Navigate to subaccount by clicking on the tile named **trial** (this name may vary if you created the subaccount manually).
 
+    ![Dialog setting up space](trial-created.png)
 
-To get to the space, in which your applications and services live, click on the **dev** space.
+4. To get to the space, in which your applications and services live, click on the **dev** space.
 
-!![enter space](sub-account.png)
+    !![enter space](sub-account.png)
 
 
 

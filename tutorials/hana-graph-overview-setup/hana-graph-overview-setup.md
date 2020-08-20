@@ -8,7 +8,7 @@ primary_tag: products>sap-hana
 ---
 
 ## Prerequisites
- - Min. SAP HANA 2.0 SPS 03 with XSA, e.g. [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html)
+ - Min. SAP HANA 2.0 SPS 03 with XSA, e.g. [SAP HANA, express edition](https://developers.sap.com/topics/hana.html)
 
 ## Details
 ### You will learn
