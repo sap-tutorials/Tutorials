@@ -101,7 +101,7 @@ In `business-partner.controller.ts` create a function `getAllBusinessPartners` a
 
 
 [OPTION BEGIN [Mock Server]]
-In the code snippet below, we assume that you have a mock server running locally on port 3000. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
+If you are running a mock server locally on port 3000, use the following example. Documentation on the mock server can be found [here](https://sap.github.io/cloud-s4-sdk-book/pages/mock-odata.html).
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -131,7 +131,7 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 
 
 [OPTION BEGIN [SAP API Business Hub sandbox]]
-To use the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations. Checkout the following example:
+If you are using the SAP API Business Hub sandbox for your requests, you will need to pass the API key to the VDM requests using the `withCustomHeaders` method, and you will need to add the correct URL to your destinations.
 ```JavaScript / TypeScript
 function getAllBusinessPartners(): Promise<BusinessPartner[]> {
   return BusinessPartner.requestBuilder()
@@ -144,9 +144,10 @@ function getAllBusinessPartners(): Promise<BusinessPartner[]> {
 ```
 [OPTION END]
 
-- In line 2, we are creating a request builder for the business partner entity.
-- Line 3 indicates, that we want to create a request to get all the business partners.
-- Line 4 takes care of the execution and sends a request to an URL based on the given destination `url`.
+- We apply `requestBuilder` on the business partner entity. Every entity has a `requestBuilder` function that allows to chain all types of request builders that are available for this entity.
+- We use the `GetAll` request builder to create a request that retrieves all of the business partners.
+- The SAP Cloud SDK automatically sets some necessary request headers on every request, but you can specify additional custom headers using the `withCustomHeaders` function.
+- The last step when making a request is the request execution, chain the `execute` function and pass a destination to it. It can contain information like an URL, Authentication and Proxy Settings.
 
 -------------------
 

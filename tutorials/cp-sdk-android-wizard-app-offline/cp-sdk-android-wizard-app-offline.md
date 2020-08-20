@@ -34,7 +34,7 @@ time: 30
 
     ![Entity list screen](entities_screen.png)
 
-    The **Products** screen makes a data request to display the available products. Notice that it succeeds without a working network connection. The data request is fulfilled from the offline store that was previously created and populated on the device.
+    The **Products** screen makes a data request to display the available products. Notice that it succeeds without a working network connection. The data request is fulfilled from the offline store that was previously created and populated on the device. Tap the **Accessories** item to display the detail screen.
 
     ![Select the second product](select_second_product.png)
 
@@ -67,9 +67,8 @@ time: 30
 
 >Make sure you are selecting the right language above.
 
-The offline store is populated based on objects called in using `OfflineODataDefiningQuery`. The defining queries are located in `SAPServiceManager.java`, in the `initializeOffline` method.
-
 [OPTION BEGIN [Java]]
+The offline store is populated based on objects called in using `OfflineODataDefiningQuery`. The defining queries are located in `SAPServiceManager.java`, in the `initializeOffline` method.
 
 ```Java
 OfflineODataDefiningQuery customersQuery = new OfflineODataDefiningQuery("Customers", "Customers", false);
@@ -79,6 +78,7 @@ OfflineODataDefiningQuery productsQuery = new OfflineODataDefiningQuery("Product
 [OPTION END]
 
 [OPTION BEGIN [Kotlin]]
+The offline store is populated based on objects called in using `OfflineODataDefiningQuery`. The defining queries are located in `SAPServiceManager.kt`, in the `initializeOffline` method.
 
 ```Kotlin
 val customersQuery = OfflineODataDefiningQuery("Customers", "Customers", false)
@@ -87,7 +87,7 @@ val productsQuery = OfflineODataDefiningQuery("Products", "Products", true)
 
 [OPTION END]
 
-Defining queries tell the `OfflineODataProvider` (the class that manages the offline store) which entity sets to store on the device. In the case of the wizard-generated application, there is a defining query for each available entity by default, meaning that each entity is stored offline and available if the user doesn't have an internet connection. For more information, see [Defining Queries](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Defining_Application_Configuration_File.html#defining-queries).
+Defining queries tell the `OfflineODataProvider` (the class that manages the offline store) which entity sets to store on the device. In the case of the wizard-generated application, there is a defining query for each available entity by default, meaning that each entity is stored offline and available if the user doesn't have an internet connection. For more information, see [Defining Queries](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-defining-application-configuration-file.html#defining-queries).
 
 >With an offline-enabled app, requests made against the entity sets that are included in the defining requests will always be fulfilled from the local offline store.
 
@@ -110,7 +110,7 @@ The application allows users to make changes against a local offline store and s
 
     ![Implementation of open and download store](implementation_open_and_download_java.png)
 
-    The `openStore` method is called by `LogonActivity.java` when the user logs into the application and binds the `OfflineODataSyncService`. For more information, see [Creating a Bound Service](https://developer.android.com/guide/components/services#CreatingBoundService).
+    The `openStore` method is called by `MainBusinessActivity.java` when the user logs into the application and binds the `OfflineODataSyncService`. For more information, see [Creating a Bound Service](https://developer.android.com/guide/components/services#CreatingBoundService).
 
     ![LogonActivity calls openStore](logon_calls_open_store_java.png)
 
@@ -130,7 +130,7 @@ The application allows users to make changes against a local offline store and s
 
     ![Implementation of open and download store](implementation_open_and_download_kotlin.png)
 
-    The `openStore` method is called by `LogonActivity.kt` when the user logs into the application and binds the `OfflineODataSyncService`. For more information, see [Creating a Bound Service](https://developer.android.com/guide/components/services#CreatingBoundService).
+    The `openStore` method is called by `MainBusinessActivity.kt` when the user logs into the application and binds the `OfflineODataSyncService`. For more information, see [Creating a Bound Service](https://developer.android.com/guide/components/services#CreatingBoundService).
 
     ![LogonActivity calls openStore](logon_calls_open_store_kotlin.png)
 
@@ -140,14 +140,14 @@ The application allows users to make changes against a local offline store and s
 
 [OPTION END]
 
-For more information about how the offline store works, see the [Offline API](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Introduction.html).
+For more information about how the offline store works, see the [Offline API](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-introduction.html).
 
 [VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Introduce a synchronization error)]
 
-When syncing changes made while offline, conflicts can occur. One example might be if two people attempted to update a description field for the same product. Another might be updating a record that was deleted by another user. The [`ErrorArchive`](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html#accessing-the-errorarchive) provides a way to see details of any of the conflicts that may have occurred. The following instructions demonstrate how to use `ErrorArchive`.
+When syncing changes made while offline, conflicts can occur. One example might be if two people attempted to update a description field for the same product. Another might be updating a record that was deleted by another user. The [`ErrorArchive`](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html#accessing-the-errorarchive) provides a way to see details of any of the conflicts that may have occurred. The following instructions demonstrate how to use `ErrorArchive`.
 
 1.  Update a **SalesOrderItem** and change its quantity to be zero and save it. Update a second item and change its quantity to a different non-zero number and save it.
 
@@ -187,9 +187,9 @@ In this section we will create an **Error Information** screen that displays the
     <string name="request_url">Request URL</string>
     ```
 
-3.  Create a new activity in the `mdui` folder by right-clicking, then selecting **New** > **Activity** > **Empty Activity**. Name the new activity **`ErrorActivity`**.
+3.  Create a new activity in the `app/java/com.sap.wizapp/mdui` folder by right-clicking, then selecting **New** > **Activity** > **Empty Activity**. Name the new activity **`ErrorActivity`**.
 
-4.  Press **`Shift`** twice and type **`activity_error`** to open `res/layout/activity_error.xml`. (Click **Text** to switch to code view.)
+4.  Press **`Shift`** twice and type **`activity_error`** to open `res/layout/activity_error.xml`.
 
 5.  Replace its contents with the following XML.
 
@@ -202,6 +202,21 @@ In this section we will create an **Error Information** screen that displays the
         android:layout_height="match_parent"
         tools:context=".mdui.ErrorActivity"
         android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextColor="@color/colorWhite" />
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -355,6 +370,7 @@ In this section we will create an **Error Information** screen that displays the
     package com.sap.wizapp.mdui;
 
     import androidx.appcompat.app.AppCompatActivity;
+    import androidx.appcompat.widget.Toolbar;
     import android.os.Bundle;
     import android.view.MenuItem;
     import android.widget.TextView;
@@ -367,6 +383,8 @@ In this section we will create an **Error Information** screen that displays the
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_error);
+            Toolbar toolbar = findViewById(R.id.toolbar);
+            setSupportActionBar(toolbar);
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             int errorCode = getIntent().getIntExtra("ERROR_CODE", 0);
             String errorMethod = getIntent().getStringExtra("ERROR_METHOD");
@@ -453,7 +471,7 @@ In this section we will create an **Error Information** screen that displays the
 
     ![Error screen](error_screen.png)
 
-    You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks, produced a `DataServiceException`, and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html).
+    You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks, produced a `DataServiceException`, and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-failed-requests.html).
 
 [OPTION END]
 
@@ -472,9 +490,9 @@ In this section we will create an **Error Information** screen that displays the
     <string name="request_url">Request URL</string>
     ```
 
-3.  Create a new activity in the `mdui` folder by right-clicking, then selecting **New** > **Activity** > **Empty Activity**. Name the new activity **`ErrorActivity`**.
+3.  Create a new activity in the `app/java/com.sap.wizapp/mdui` folder by right-clicking, then selecting **New** > **Activity** > **Empty Activity**. Name the new activity **`ErrorActivity`**.
 
-4.  Press **`Shift`** twice and type **`activity_error`** to open `res/layout/activity_error.xml`. (Click **Text** to switch to code view.)
+4.  Press **`Shift`** twice and type **`activity_error`** to open `res/layout/activity_error.xml`.
 
 5.  Replace its contents with the following XML.
 
@@ -487,6 +505,21 @@ In this section we will create an **Error Information** screen that displays the
         android:layout_height="match_parent"
         tools:context=".mdui.ErrorActivity"
         android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:titleTextColor="@color/colorWhite" />
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <ScrollView
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -652,6 +685,7 @@ In this section we will create an **Error Information** screen that displays the
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_error)
+            setSupportActionBar(findViewById(R.id.toolbar))
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
             val errorCode = intent.getIntExtra("ERROR_CODE", 0)
             val errorMethod = intent.getStringExtra("ERROR_METHOD")
@@ -692,7 +726,7 @@ In this section we will create an **Error Information** screen that displays the
 
     ```Kotlin
     val serviceManager = (application as SAPWizardApplication).sapServiceManager
-    val provider = serviceManager.retrieveProvider()
+    val provider = serviceManager!!.retrieveProvider()
 
     try {
         val errorArchive = provider!!.errorArchive
@@ -742,7 +776,7 @@ In this section we will create an **Error Information** screen that displays the
 
     ![Error screen](error_screen.png)
 
-    You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Failed_Requests.html).
+    You can see that the HTTP status code, method, and message are included. When the application attempted a sync, the entity being updated didn't pass the backend checks and produced a `DataServiceException` and is now in the error state. All entities that did not produce errors are successfully synced. One way to correct the exception would be to change the quantity from 0 to a valid positive number. Another would be to delete the `ErrorArchive` entry, reverting the entity to its previous state. For more information on error handling, see [Handling Errors and Conflicts](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-errors-and-conflicts.html) and [Handling Failed Requests](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/offline/android/offline-odata-handling-failed-requests.html).
 
 [OPTION END]
 

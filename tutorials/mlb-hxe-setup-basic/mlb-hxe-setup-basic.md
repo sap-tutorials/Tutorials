@@ -18,7 +18,7 @@ In this tutorial, you will enable your SAP HANA, express edition instance to use
 
 In order to complete this tutorial series, you need to use as a minimum version:
 
- - **SAP HANA, express edition 2.0 SPS03**
+ - **SAP HANA, express edition 2.0 SPS04**
 
 This version will allow you to complete all the steps described in the series.
 
@@ -26,11 +26,11 @@ As you may already know, SAP HANA, express edition comes in two different flavor
 
 In this series, you will be leveraging the SAP Web IDE to complete both the execution of SQL and SAP HANA XSA development tasks. Therefore, you will need:
 
- - **Server only**
+ - **Server only + Applications**
 
 If you don't have an instance up and running, be aware that you don't need to complete the installation of all optional packages (this will be described when needed).
 
-You can check the [SAP HANA, express edition installation flowchart](https://developers.sap.com/topics/sap-hana-express.html#flowchart) to find all the installation details.
+You can check the [SAP HANA, express edition installation](https://developers.sap.com/topics/hana.html) to find all the installation details.
 
 [DONE]
 [ACCORDION-END]
@@ -54,7 +54,7 @@ Connect to the **SYSTEMDB** using the **SYSTEM** user credentials and execute th
 SELECT DATABASE_NAME, DESCRIPTION, ACTIVE_STATUS, RESTART_MODE FROM SYS.M_DATABASES ORDER BY 1;
 ```
 
-The result should return:
+The result should return at least these two records:
 
 |---------------------|-----------------------|---------------------|--------------------|
 | **`DATABASE_NAME`** | **`DESCRIPTION`**     | **`ACTIVE_STATUS`** | **`RESTART_MODE`** |
@@ -67,7 +67,7 @@ If the **HXE** tenant is not listed, you can run the following statement to crea
 CREATE DATABASE HXE SYSTEM USER PASSWORD <password>;
 ```
 
-If the **HXE** tenant is listed, but with the **`ACTIVE_STATUS`** set to **NO**, then you can run the following statement to start it:
+If the **HXE** tenant is listed, but with the **`ACTIVE_STATUS`** set to **`NO`**, then you can run the following statement to start it:
 
 ```sql
 ALTER SYSTEM START DATABASE HXE;
@@ -78,19 +78,19 @@ ALTER SYSTEM START DATABASE HXE;
 
 [ACCORDION-BEGIN [Step 2: ](Enable the Script Server)]
 
-The **Script Server** is an auxiliary service that is required to execute **Application Function Libraries** (**AFL**).
+The **Script Server** is an auxiliary service that is required to execute **Application Function Libraries (AFL)**.
 
-For example, this applies to the SAP HANA AFL component like the ***SAP HANA Predictive Analysis Library*** (PAL) and other similar libraries.
+For example, this applies to the SAP HANA AFL library like the **SAP HANA Predictive Analysis Library (PAL)**.
 
-By default, the Script Server is not activated on the **HXE** tenant.
+By default, the Script Server is not activated in the **HXE** tenant.
 
-Connect to the **SYSTEMDB** using the **SYSTEM** user credentials and execute the following SQL statement:
+Connect to the **SYSTEMDB** using the **SYSTEM** database user and execute the following SQL statement:
 
 ```sql
 ALTER DATABASE HXE ADD 'scriptserver';
 ```
 
-Now, you can now verify that the service is started;
+Now, you can now verify that the service is started.
 
 Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
 
@@ -115,18 +115,18 @@ Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute 
 SELECT * FROM SYS.AFL_PACKAGES;
 ```
 
-The pre-installed AFL includes:
+The pre-installed AFL packages include:
 
- - ***Business Function Library (BFL)***: contains pre-built parameter-driven functions in the financial area
- - ***Predictive Analysis Library (PAL)***: defines functions that can be called to perform analytic algorithms.
- - ***Optimization Function Library (OFL)*** : defines a series of optimization function like Simplex
+ - *Business Function Library (BFL)*: contains pre-built parameter-driven functions in the financial area,
+ - *Predictive Analysis Library (PAL)*: defines functions that can be called to perform predictive analytic algorithms,
+ - *Optimization Function Library (OFL)*: defines a series of optimization functions, like Simplex.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a dedicated user)]
 
-In order to perform your Machine Learning activities, it is recommended to create a dedicated user account on your SAP HANA, express edition instance.
+In order to perform your Machine Learning activities, create a dedicated user on your SAP HANA, express edition instance.
 
 Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
 
@@ -149,22 +149,17 @@ GRANT IMPORT TO ML_USER;
 GRANT EXECUTE on _SYS_REPO.GRANT_ACTIVATED_ROLE TO ML_USER;
 ```
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials (default password is ***`Welcome19Welcome19`*** )
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials (default password is `Welcome19Welcome19`)
 
-> You should be prompted to update you password on the first connection.
+> You might be prompted to change user's password on the first connection.
 &nbsp;
-
-
-```sql
-SELECT * FROM SYS.PROCEDURES WHERE SCHEMA_NAME = '_SYS_AFL';
-```
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a dedicated schema)]
 
-In order to perform your Machine Learning activities, it is recommended to create a dedicated schema that will host your data sets on your SAP HANA, express edition instance.
+In order to perform your Machine Learning activities, create a dedicated schema `ML_DATA` that will host your data sets on your SAP HANA instance.
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement:
 

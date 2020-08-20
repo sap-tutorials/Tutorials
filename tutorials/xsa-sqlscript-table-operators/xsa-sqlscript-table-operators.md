@@ -4,7 +4,7 @@ description: Leveraging SQLScript in Stored Procedures, User Defined Functions, 
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud  ]
 time: 10
 ---
 
