@@ -39,7 +39,7 @@ time: 60
 
     ![Product metadata](product-metadata.png)
 
-    Each product is displayed in an [object cell](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/object_cell.html), which is one of the Fiori UI for Android controls.
+    Each product is displayed in an [object cell](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/object-cell.html), which is one of the Fiori UI for Android controls.
 
     ![object cell](object-cell.png)
 
@@ -68,13 +68,12 @@ In this section, you will configure the object cell to display a product's name,
     ```Java
     viewHolder.objectCell.setSubheadline("Subheadline goes here");
     viewHolder.objectCell.setFootnote("Footnote goes here");
-
     if (masterPropertyValue == null || masterPropertyValue.isEmpty()) {
         viewHolder.objectCell.setIcon("?", 0);
     } else {
         viewHolder.objectCell.setIcon(masterPropertyValue.substring(0,1), 0);
     }
-    viewHolder.objectCell.setIcon(R.drawable.default_dot, 1, "Attachment item");
+    viewHolder.objectCell.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
     viewHolder.objectCell.setIcon("!", 2);
     ```
 
@@ -138,7 +137,7 @@ In this section, you will configure the object cell to display a product's name,
     }
     ```
 
-10.  Run the app and notice that the **Products** screen has been formatted to show the product's name, category, description, and price and the entries are now sorted by category and then name.
+10.  Re-run (quit first) the app and notice that the **Products** screen has been formatted to show the product's name, category, description, and price and the entries are now sorted by category and then name.
 
     ![Nicely formatted product list](reformatted-product-list.png)
 
@@ -212,7 +211,7 @@ In this section, you will configure the object cell to display a product's name,
     }
     ```
 
-9.  Run the app and notice that the **Products** screen has been formatted to show the product's name, category, description, and price and the entries are now sorted by category and then name.
+9.  Re-run (quit first) the app and notice that the **Products** screen has been formatted to show the product's name, category, description, and price and the entries are now sorted by category and then name.
 
     ![Nicely formatted product list](reformatted-product-list.png)
 
@@ -271,9 +270,9 @@ In this section, you will update the screen's title, configure the object cell t
     if (masterPropertyValue == null || masterPropertyValue.isEmpty()) {
         viewHolder.objectCell.setIcon("?", 0);
     } else {
-        viewHolder.objectCell.setIcon(masterPropertyValue.substring(0,1), 0);
+        viewHolder.objectCell.setIcon(masterPropertyValue.substring(0, 1), 0);
     }
-    viewHolder.objectCell.setIcon(R.drawable.default_dot, 1, "Attachment item");
+    viewHolder.objectCell.setIcon(R.drawable.default_dot, 1, R.string.attachment_item_content_desc);
     viewHolder.objectCell.setIcon("!", 2);
     ```
 
@@ -372,23 +371,23 @@ In this section, you will modify the app to initially show the **Product Categor
 
 [OPTION BEGIN [Java]]
 
-1.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`LogonActivity`**, to open `LogonActivity.java`.
+1.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`MainBusinessActivity`**, to open `MainBusinessActivity.java`.
 
 2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`startEntitySetListActivity`**, to move to the `startEntitySetListActivity` method.
 
 3.  Add the following line below the other Intent declaration:
 
     ```Java
-    Intent pcIntent = new Intent(LogonActivity.this, ProductCategoriesActivity.class);
+    Intent pcIntent = new Intent(this, ProductCategoriesActivity.class);
     ```
 
-4.  After the call to `startActivityForResult`, add the following line:
+4.  After the call to `startActivity(intent)`, add the following line:
 
     ```Java
     startActivity(pcIntent);
     ```
 
-    This will cause the **Product Categories** screen to be the first screen seen when opening the app, but because the **EntityList** screen is opened first it can be navigated to by pressing the **up** or **back** button. The **EntityList** screen contains the **Settings** menu so, to simplify things, this screen is still displayed.
+    This will cause the **Product Categories** screen to be the first screen seen when opening the app, but because the **EntityList** screen is opened first, it can be navigated to by pressing the **Back** button. The **EntityList** screen contains the **Settings** menu so, to simplify things, this screen is still displayed.
 
 5.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductCategoriesListFragment`**, to open `ProductCategoriesListFragment.java`.
 
@@ -460,23 +459,23 @@ In this section, you will modify the app to initially show the **Product Categor
 
 [OPTION BEGIN [Kotlin]]
 
-1.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`LogonActivity`**, to open `LogonActivity.kt`.
+1.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`MainBusinessActivity`**, to open `MainBusinessActivity.kt`.
 
 2.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`startEntitySetListActivity`**, to move to the `startEntitySetListActivity` method.
 
 3.  Add the following line below the other Intent declaration:
 
     ```Kotlin
-    val pcIntent = Intent(this@LogonActivity, ProductCategoriesActivity::class.java)
+    val pcIntent = Intent(this, ProductCategoriesActivity::class.java)
     ```
 
-4.  After the call to `startActivityForResult`, add the following line:
+4.  After the call to `startActivity(intent)`, add the following line:
 
     ```Kotlin
     startActivity(pcIntent)
     ```
 
-    This will cause the **Product Categories** screen to be the first screen seen when opening the app, but because the **EntityList** screen is opened first, it can be navigated to by pressing the **up** or **back** button. The **EntityList** screen contains the **Settings** menu so, to simplify things, this screen is still displayed.
+    This will cause the **Product Categories** screen to be the first screen seen when opening the app, but because the **EntityList** screen is opened first, it can be navigated to by pressing the **Back** button. The **EntityList** screen contains the **Settings** menu so, to simplify things, this screen is still displayed.
 
 5.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductCategoriesListFragment`**, to open `ProductCategoriesListFragment.kt`.
 
@@ -544,7 +543,9 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 
 [OPTION BEGIN [Java]]
 
-1.  First, create a new **Drawable resource file** **`res/drawable/ic_search_icon.xml`** and use the following XML.
+1.  First, right-click the `res/drawable` folder to create a new **Drawable Resource File** **`ic_search_icon.xml`**, and use the following XML content.
+
+    ![Create a new Drawable Resource File](create-new-drawable-resource-file.png)
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -561,7 +562,9 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 
     The current menu `res/menu/itemlist_menu.xml` is shared among all list screens. We will now use a new XML file for the **Product Categories** screen.
 
-2.  Add a new **Menu resource file** named **`res/menu/product_categories_menu.xml`** and use the following XML for its contents. (Click **Text** to switch to the Code Editor view of the `menu.xml` file.)
+2.  Right-click the `res/menu` folder to add a new **Menu Resource File** named **`product_categories_menu.xml`**, and use the following XML for its contents.
+
+    ![Add a new Menu Resource File](add-new-menu-resource-file.png)
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -639,14 +642,13 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
           return false;
       }
     });
-    return;
     ```
 
 9.  Run the app again and notice that there is now a search toolbar item.
 
     ![Filter Categories in action 1](search-view.png)
 
-10.  Try it out: click the **search** item, enter some text, press **Enter**, and notice that the product categories that are displayed in the list are now filtered.
+10.  Try it out: click the **search** item, enter some text, press **`Enter`**, and notice that the product categories that are displayed in the list are now filtered.
 
     ![Filter Categories in action 2](filter-in-action.png)
 
@@ -654,7 +656,9 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 
 [OPTION BEGIN [Kotlin]]
 
-1.  First, create a new **Drawable resource file** **`res/drawable/ic_search_icon.xml`** and use the following XML.
+1.  First, right-click the `res/drawable` folder to create a new **Drawable Resource File** **`ic_search_icon.xml`**, and use the following XML content.
+
+    ![Create a new Drawable Resource File](create-new-drawable-resource-file.png)
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -671,7 +675,9 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
 
     The current menu `res/menu/itemlist_menu.xml` is shared among all list screens. We will now use a new XML file for the **Product Categories** screen.
 
-2.  Add a new **Menu resource file** named **`res/menu/product_categories_menu.xml`** and use the following XML for its contents. (Click **Text** to switch to the Code Editor view of the `menu.xml` file.)
+2.  Right-click the `res/menu` folder to add a new **Menu Resource File** named **`product_categories_menu.xml`**, and use the following XML for its contents.
+
+    ![Add a new Menu Resource File](add-new-menu-resource-file.png)
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -753,20 +759,19 @@ In this section you will add a search field to `ProductCategoriesListActivity`, 
           } ?: return false
       }
     })
-    return
     ```
 
 9.  Run the app again and notice that there is now a search toolbar item.
 
     ![Filter Categories in action 1](search-view.png)
 
-10.  Try it out: click the **search** item, enter some text, press **Enter**, and notice that the product categories that are displayed in the list are now filtered.
+10.  Try it out: click the **search** item, enter some text, press **`Enter`**, and notice that the product categories that are displayed in the list are now filtered.
 
     ![Filter Categories in action 2](filter-in-action.png)
 
 [OPTION END]
 
->Further information on the Fiori search UI can be found at [SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/search-2/) and [Fiori Search User Interface](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_search_ui.html).
+>Further information on the Fiori search UI can be found at [SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/search-2/) and [Fiori Search User Interface](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/fiori-search-ui.html).
 
 [DONE]
 [ACCORDION-END]
@@ -781,21 +786,17 @@ First, we'll generate additional sales data in the sample OData service.
 
 [OPTION BEGIN [Java]]
 
-1.  In SAP Cloud Platform Mobile Services cockpit, navigate to **Mobile Applications** > **Native/Hybrid** > **Wiz App** and add an **Assigned Feature**.
+1.  In [SAP Cloud Platform Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** and go to **Mobile Sample OData ESPM**.
 
-    ![Adding Feature to Wiz App on Mobile Services](add-feature.png)
+    ![Sample OData feature on Mobile Services](sample-odata-feature.png)
 
-2.  Choose **Sample Back End** and click **OK**.
-
-    ![Adding Sample Back End on Mobile Services](sample-back-end.png)
-
-3.  Change the **Entity Sets** dropdown to **`SalesOrderItems`** and then click the **generate sample sales orders** icon five times. This will create additional sales order items, which we can use to base our top products on, based on the quantity sold.
+2.  Change the **Entity Sets** dropdown to **`SalesOrderItems`** and then click the **generate sample sales orders** icon five times. This will create additional sales order items, which we can use to base our top products on, based on the quantity sold.
 
     ![Generating Sample Sales Orders on Mobile Services](generate-sample-sales.png)
 
-4.  In Android Studio, on Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`fragment_entityitem_list`**, to open `fragment_entityitem_list.xml`.
+3.  In Android Studio, on Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`fragment_entityitem_list`**, to open `fragment_entityitem_list.xml`.
 
-5.  Click **Text** to switch to the Code Editor view, then replace the `fragment_entityitem_list.xml` content with the following code. This adds the `CollectionView` to the **Products** pane when created.
+4.  Replace the `fragment_entityitem_list.xml` content with the following code. This adds the `CollectionView` to the **Products** pane when created.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -830,7 +831,7 @@ First, we'll generate additional sales data in the sample OData service.
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_below="@id/toolbar"
-                android:background="@color/background"
+                android:background="@color/transparent"
                 tools:minHeight="200dp">
             </com.sap.cloud.mobile.fiori.object.CollectionView>
 
@@ -855,13 +856,11 @@ First, we'll generate additional sales data in the sample OData service.
     </FrameLayout>
     ```
 
-6.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductsListFragment`**, to open `ProductsListFragment.java`.
+5.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductsListFragment`**, to open `ProductsListFragment.java`.
 
-7.  Add the following import libraries to the top of the document:
+6.  Add the following import libraries to the top of the document:
 
     ```Java
-    import android.widget.ListView;
-    import android.content.Intent;
     import android.widget.LinearLayout;
     import com.sap.cloud.android.odata.espmcontainer.ESPMContainer;
     import com.sap.cloud.android.odata.espmcontainer.SalesOrderItem;
@@ -880,7 +879,7 @@ First, we'll generate additional sales data in the sample OData service.
     import java.util.Map;
     ```
 
-8.  Add the following variables to the top of the `ProductsListFragment` class:
+7.  Add the following variables to the top of the `ProductsListFragment` class:
 
     ```Java
     private List<Product> productList = new ArrayList<>();
@@ -888,7 +887,7 @@ First, we'll generate additional sales data in the sample OData service.
     private HashMap<String, Product> productTracker = new HashMap<>();
     ```
 
-9.  Add the following methods to the class:
+8.  Add the following methods to the class:
 
     ```Java
     // Function to sort hashmap by values
@@ -1005,7 +1004,7 @@ First, we'll generate additional sales data in the sample OData service.
         }
 
         @Override
-        public void onBindViewHolder(@NonNull CollectionView.CollectionViewAdapter.CollectionViewItemHolder collectionViewItemHolder, int i) {
+        public void onBindViewHolder(@NonNull CollectionViewItemHolder collectionViewItemHolder, int i) {
             CollectionViewItem cvi = collectionViewItemHolder.collectionViewItem;
             Product prod = products.get(i);
             String productName = prod.getName();
@@ -1038,18 +1037,18 @@ First, we'll generate additional sales data in the sample OData service.
     }
     ```
 
-10.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`prepareViewModel`**, to move to the `prepareViewModel` method.
+9.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`prepareViewModel`**, to move to the `prepareViewModel` method.
 
-11.  Add the following code to the first "else"-block of the method:
+10.  Add the following code to the first "else"-block of the method:
 
     ```Java
     CollectionView cv = currentActivity.findViewById(R.id.collectionView);
     createCollectionView(cv);
     ```
 
-12.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreate`**, to move to the `onCreate` method.
+11.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreate`**, to move to the `onCreate` method.
 
-13.  Add the following lines of code after the `currentActivity.getApplication()).getErrorHandler();` line in the method:
+12.  Add the following lines of code at the end of the method:
 
     ```Java
     // Get the DataService class, which we will use to query the back-end OData service
@@ -1082,33 +1081,29 @@ First, we'll generate additional sales data in the sample OData service.
     });
     ```
 
-14.  Run the app and notice that the **Products** screen now has a component at the top of the screen that allows horizontal scrolling to view the top products. Tap a product to see more details. Alternatively, tap **SEE ALL** to see all the products.
+13.  Run the app and notice that the **Products** screen now has a component at the top of the screen that allows horizontal scrolling to view the top products. Tap a product to see more details. Alternatively, tap **SEE ALL** to see all the products.
 
     ![Collection View on Products Screen](collection-view.png)
 
-    >For more details, see [Collection View in SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/collection-view/) and [Collection View](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/collection_view.html)
+    >For more details, see [Collection View in SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/collection-view/) and [Collection View](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/collection-view.html)
 
-    >For more information on SAP Fiori for Android and the generated app, see [Fiori UI Overview](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html), [SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/explore/), [Fiori UI Demo Application](https://github.com/SAP/cloud-sdk-android-fiori-ui-components) and the `WizardAppReadme.md` file located in the generated app.
+    >For more information on SAP Fiori for Android and the generated app, see [Fiori UI Overview](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/overview.html), [SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/explore/), [Fiori UI Demo Application](https://github.com/SAP/cloud-sdk-android-fiori-ui-components) and the `WizardAppReadme.md` file located in the generated app.
 
 [OPTION END]
 
 [OPTION BEGIN [Kotlin]]
 
-1.  In SAP Cloud Platform Mobile Services cockpit, navigate to **Mobile Applications** > **Native/Hybrid** > **Wiz App** and add an **Assigned Feature**.
+1.  In [SAP Cloud Platform Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** and go to **Mobile Sample OData ESPM**.
 
-    ![Adding Feature to Wiz App on Mobile Services](add-feature.png)
+    ![Sample OData feature on Mobile Services](sample-odata-feature.png)
 
-2.  Choose **Sample Back End** and click **OK**.
-
-    ![Adding Sample Back End on Mobile Services](sample-back-end.png)
-
-3.  Change the **Entity Sets** dropdown to **`SalesOrderItems`** and then click the **generate sample sales orders** icon five times. This will create additional sales order items, which we can use to base our top products on, based on the quantity sold.
+2.  Change the **Entity Sets** dropdown to **`SalesOrderItems`** and then click the **generate sample sales orders** icon five times. This will create additional sales order items, which we can use to base our top products on, based on the quantity sold.
 
     ![Generating Sample Sales Orders on Mobile Services](generate-sample-sales.png)
 
-4.  In Android Studio, on Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`fragment_entityitem_list`**, to open `fragment_entityitem_list.xml`.
+3.  In Android Studio, on Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`fragment_entityitem_list`**, to open `fragment_entityitem_list.xml`.
 
-5.  Click **Text** to switch to the Code Editor view, then replace the `fragment_entityitem_list.xml` content with the following code. This adds the `CollectionView` to the **Products** pane when created.
+4.  Replace the `fragment_entityitem_list.xml` content with the following code. This adds the `CollectionView` to the **Products** pane when created.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -1143,7 +1138,7 @@ First, we'll generate additional sales data in the sample OData service.
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_below="@id/toolbar"
-                android:background="@color/background"
+                android:background="@color/transparent"
                 tools:minHeight="200dp">
             </com.sap.cloud.mobile.fiori.object.CollectionView>
 
@@ -1168,9 +1163,9 @@ First, we'll generate additional sales data in the sample OData service.
     </FrameLayout>
     ```
 
-6.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductsListFragment`**, to open `ProductsListFragment.kt`.
+5.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`ProductsListFragment`**, to open `ProductsListFragment.kt`.
 
-7.  Add the following import libraries to the top of the document:
+6.  Add the following import libraries to the top of the document:
 
     ```Kotlin
     import android.widget.ListView
@@ -1187,9 +1182,10 @@ First, we'll generate additional sales data in the sample OData service.
     import java.util.*
     import kotlin.collections.ArrayList
     import kotlin.collections.HashMap
+    import kotlin.collections.LinkedHashMap
     ```
 
-8.  Add the following variables to the top of the `ProductsListFragment` class:
+7.  Add the following variables to the top of the `ProductsListFragment` class:
 
     ```Kotlin
     private val productList = arrayListOf<Product>()
@@ -1197,13 +1193,13 @@ First, we'll generate additional sales data in the sample OData service.
     private val productTracker = HashMap<String, Product>()
     ```
 
-9.  On Windows, press **`ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`resetSelected`**, to move to the `resetSelected` method.
+8.  On Windows, press **`ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`resetSelected`**, to move to the `resetSelected` method.
 
-10. Change the modifier from `private` to `internal`
+9. Change the modifier from `private` to `internal`
 
-11. Do the same to `resetPreviouslyClicked` method.
+10. Do the same to `resetPreviouslyClicked` method.
 
-12.  Add the following method to the `companion object` section:
+11.  Add the following method to the `companion object` section:
 
     ```Kotlin
     // Function to sort hashmap by values
@@ -1227,7 +1223,7 @@ First, we'll generate additional sales data in the sample OData service.
 
     ```
 
-13.  Add the following methods to the class:
+12.  Add the following methods to the class:
 
     ```Kotlin
     // Function to query the products
@@ -1235,20 +1231,21 @@ First, we'll generate additional sales data in the sample OData service.
         val sapServiceManager = (currentActivity.application as SAPWizardApplication).sapServiceManager
         val query = DataQuery().orderBy(Product.productID)
         LOGGER.debug("CollectionView $query")
-        sapServiceManager.eSPMContainer?.let {
-          it.getProductsAsync(query, {queryProducts: List<Product> ->
-              LOGGER.debug("CollectionView: executed query in onCreate")
-              for (product in queryProducts) {
-                  LOGGER.debug("CollectionView ${product.name} : ${product.productID} : ${product.price}")
-                  productTracker[product.productID] = product
-              }
+        val espmContainer = sapServiceManager?.eSPMContainer
+        espmContainer?.let {
+            it.getProductsAsync(query, {queryProducts: List<Product> ->
+                LOGGER.debug("CollectionView: executed query in onCreate")
+                for (product in queryProducts) {
+                    LOGGER.debug("CollectionView ${product.name} : ${product.productID} : ${product.price}")
+                    productTracker[product.productID] = product
+                }
 
-              LOGGER.debug("CollectionView: size of topProducts = ${queryProducts.size}")
-              createTopProductsList()
-              val cv: CollectionView = currentActivity.findViewById(R.id.collectionView)
-              createCollectionView(cv)
-          }, {re: RuntimeException -> LOGGER.debug("CollectionView: An error occurred during products async query: ${re.message}")
-          })
+                LOGGER.debug("CollectionView: size of topProducts = ${queryProducts.size}")
+                createTopProductsList()
+                val cv: CollectionView = currentActivity.findViewById(R.id.collectionView)
+                createCollectionView(cv)
+            }, {re: RuntimeException -> LOGGER.debug("CollectionView: An error occurred during products async query: ${re.message}")
+            })
         }
     }
 
@@ -1311,7 +1308,7 @@ First, we'll generate additional sales data in the sample OData service.
         }
     }
 
-    private class CollectionViewAdapter(current_activity: FragmentActivity, product_list: List<Product>) : CollectionView.CollectionViewAdapter() {
+    private class CollectionViewAdapter(activity: FragmentActivity, productList: List<Product>) : CollectionView.CollectionViewAdapter() {
         private val products: List<Product>
         private val currentActivity: FragmentActivity
 
@@ -1325,13 +1322,15 @@ First, we'll generate additional sales data in the sample OData service.
                 subheadline = prod.categoryName + ""
                 imageOutlineShape = AbstractEntityCell.IMAGE_SHAPE_OVAL
                 prod.pictureUrl?.let {
-                  val sapServiceManager = (currentActivity.application as SAPWizardApplication).sapServiceManager
-                  prepareDetailImageView().scaleType = ImageView.ScaleType.FIT_CENTER
-                  Glide.with(currentActivity.applicationContext)
-                          .load(EntityMediaResource.getMediaResourceUrl(prod, sapServiceManager.serviceRoot)) // Import com.bumptech.glide.Glide for RequestOptions()
-                          .apply(RequestOptions().fitCenter())
-                          .transition(DrawableTransitionOptions.withCrossFade())
-                          .into(prepareDetailImageView())
+                    val sapServiceManager = (currentActivity.application as SAPWizardApplication).sapServiceManager
+                    prepareDetailImageView().scaleType = ImageView.ScaleType.FIT_CENTER
+                    sapServiceManager?.let {sapServiceManager ->
+                        Glide.with(currentActivity.applicationContext)
+                                .load(EntityMediaResource.getMediaResourceUrl(prod, sapServiceManager.serviceRoot)) // Import com.bumptech.glide.Glide for RequestOptions()
+                                .apply(RequestOptions().fitCenter())
+                                .transition(DrawableTransitionOptions.withCrossFade())
+                                .into(prepareDetailImageView())
+                    }
                 } ?: run { // No picture is available, so use a character from the product string as the image thumbnail
                     detailImageCharacter = productName?.substring(0, 1)
                     setDetailCharacterBackgroundTintList(com.sap.cloud.mobile.fiori.R.color.sap_ui_contact_placeholder_color_1)
@@ -1344,35 +1343,41 @@ First, we'll generate additional sales data in the sample OData service.
         }
 
         init {
-            products = product_list
-            currentActivity = current_activity
+            products = productList
+            currentActivity = activity
         }
     }
     ```
 
-14.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`prepareViewModel`**, to move to the `prepareViewModel` method.
+13.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`prepareViewModel`**, to move to the `prepareViewModel` method.
 
-15.  Add the following code to the first "else"-block of the method:
+14.  Replace the `ViewModelProvider(currentActivity).get(ProductViewModel::class.java).also {` block of the first "else"-block of the method with the following code:
 
     ```Kotlin
-    val cv: CollectionView = currentActivity.findViewById(R.id.collectionView)
-    createCollectionView(cv)
+    ViewModelProvider(currentActivity).get(ProductViewModel::class.java).also {
+        it.initialRead{errorMessage ->
+            showError(errorMessage)
+        }
+        val cv: CollectionView = currentActivity.findViewById(R.id.collectionView)
+        createCollectionView(cv)
+    }
     ```
 
-16.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreate`**, to move to the `onCreate` method.
+15.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreate`**, to move to the `onCreate` method.
 
-17.  Add the following lines of code after the `errorHandler = (currentActivity.application as SAPWizardApplication).errorHandler` line in the method:
+16.  Add the following lines of code at the end of the method:
 
     ```Kotlin
     // Query the SalesOrderItems and order by gross amount received from sales
     // Change the orderBy arguments to SalesOrderItem.property_name to rearrange the CollectionView order of products
     val dq = DataQuery().orderBy(SalesOrderItem.productID)
     // Get the DataService class, which we will use to query the back-end OData service
-    sapServiceManager.eSPMContainer?.let {
+    val espmContainer = sapServiceManager?.eSPMContainer
+    espmContainer?.let {
       it.getSalesOrderItemsAsync(dq, { querySales: List<SalesOrderItem>? ->
           LOGGER.debug("CollectionView: executed sales order query in onCreate")
-          querySales?.let { query_sales ->
-              for (sale in query_sales) {
+          querySales?.let { querysales ->
+              for (sale in querysales) {
                   if (salesList.containsKey(sale.productID)) {
                       salesList[sale.productID] = salesList[sale.productID]!!.toInt() + sale.quantity!!.intValueExact()
                   } else {
@@ -1389,13 +1394,13 @@ First, we'll generate additional sales data in the sample OData service.
 
     ```
 
-18.  Run the app and notice that the **Products** screen now has a component at the top of the screen that allows horizontal scrolling to view the top products. Tap a product to see more details. Alternatively, tap **SEE ALL** to see all the products.
+17.  Run the app and notice that the **Products** screen now has a component at the top of the screen that allows horizontal scrolling to view the top products. Tap a product to see more details. Alternatively, tap **SEE ALL** to see all the products.
 
     ![Collection View on Products Screen](collection-view.png)
 
-    >For more details, see [Collection View in SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/collection-view/) and [Collection View](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/collection_view.html)
+    >For more details, see [Collection View in SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/collection-view/) and [Collection View](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/collection-view.html)
 
-    >For more information on SAP Fiori for Android and the generated app, see [Fiori UI Overview](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html), [SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/explore/), [Fiori UI Demo Application](https://github.com/SAP/cloud-sdk-android-fiori-ui-components) and the `WizardAppReadme.md` file located in the generated app.
+    >For more information on SAP Fiori for Android and the generated app, see [Fiori UI Overview](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/fiori-ui/android/overview.html), [SAP Fiori for Android Design Guidelines](https://experience.sap.com/fiori-design-android/explore/), [Fiori UI Demo Application](https://github.com/SAP/cloud-sdk-android-fiori-ui-components) and the `WizardAppReadme.md` file located in the generated app.
 
 [OPTION END]
 
