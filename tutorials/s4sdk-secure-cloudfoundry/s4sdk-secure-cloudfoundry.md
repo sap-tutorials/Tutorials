@@ -98,7 +98,7 @@ We will let Cloud Foundry retrieve the App Router automatically on deployment. T
         - nodejs_buildpack
       env:
         TENANT_HOST_PATTERN: 'approuter-(.*).cfapps.<region_id>.hana.ondemand.com'
-        destinations: '[{"name":"app-destination", "url" :<APPLICATION_URL>, "forwardAuthToken": true}]'
+        destinations: '[{"name":"app-destination", "url":"<APPLICATION_URL>", "forwardAuthToken": true}]'
       services:
         - my-xsuaa
     ```
