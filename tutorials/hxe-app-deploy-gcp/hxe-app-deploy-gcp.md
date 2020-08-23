@@ -14,7 +14,7 @@ tags: [  tutorial>how-to, tutorial>beginner, topic>big-data, topic>cloud, produc
 
 
 ## Next Steps
- - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
+ - Go to [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) tutorials page
 
 ## Details
 ### You will learn  
@@ -311,4 +311,3 @@ gcloud app browse
 
 [ACCORDION-END]
 ---
-

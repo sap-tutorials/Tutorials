@@ -8,7 +8,7 @@ time: 8
 ---
 
 ## Prerequisites  
- - Install or deploy [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html#flowchart)
+ - Install or deploy [SAP HANA, express edition](https://developers.sap.com/topics/hana.html)
 
 ## Details
 ### You will learn  

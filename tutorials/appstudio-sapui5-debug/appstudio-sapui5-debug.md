@@ -71,7 +71,7 @@ Add the following line to the `webapp/webapp/index.html` file to change to log l
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step : ](Write a log message to the console)]
 
-Import the logger to the file `webapp/webapp/controller/View1.controller.xml` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
+Import the logger to the file `webapp/webapp/controller/View1.controller.js` and add this `onBeforeRendering` as well. This `Log` object allows you to write messages to the console.
 
 Replace the highlighted lines from this snippet:
 ```JavaScript [2,3,8,14-19]
@@ -110,7 +110,7 @@ sap.ui.define([
 [ACCORDION-BEGIN [Step: ](Add a breakpoint)]
 
 Add this `onAfterRendering` hook to the same file to place a breakpoint in your code. A breakpoint will cause your app to stop when the execution thread reaches it. This gives you the chance to inspect the state of your app.
-```JavaScript [20-22]
+```JavaScript [21-23]
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/base/Log"
@@ -128,11 +128,11 @@ sap.ui.define([
 
             onBeforeRendering: function () {
                 window.message = "A random log message";
-                Log.info(window.message);;
+                Log.info(window.message);
             },
 
             onAfterRendering: function () {
-                debugger
+                debugger;
             }
         });
     });
@@ -156,17 +156,21 @@ Create a run configuration to be able to run the web app. This configuration nee
     !![runconfig](./runconfig.png)
 
 
-2. In the prompt, select **index.html** to add a new run configuration for your app.
+2. The first prompt will ask you which module you want to run, select **`webapp (html5)`** to continue.
+
+    !![webapp](./webapp.png)
+
+3. In the prompt, select **`index.html`** to add a new run configuration for your app.
 
     !![runFile](./runFile.png)
 
 
-3. Choose the latest UI5 version.
+4. Choose the latest UI5 version.
 
     !![latestUI5](./latestUI5.png)
 
 
-3. Choose **`Run Web App`** as the name of the configuration.
+5. Choose **`Run Web App`** as the name of the configuration.
 
     !![saveConfig](./saveConfig.png)
 

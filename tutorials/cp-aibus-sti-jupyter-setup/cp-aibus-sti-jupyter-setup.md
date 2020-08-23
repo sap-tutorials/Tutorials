@@ -41,7 +41,7 @@ You have successfully installed Anaconda.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Clone the respository)]
+[ACCORDION-BEGIN [Step 2: ](Clone the repository)]
 
 All you will need throughout the tutorial is within this [repository](https://github.com/SAP-samples/service-ticket-intelligence-jupyter-notebook-sample) on GitHub. It includes two Jupyter notebooks, one for each of the use cases of Service Ticket Intelligence, as well as some dataset that can be used. In the following, you will clones this repository to your local computer.
 

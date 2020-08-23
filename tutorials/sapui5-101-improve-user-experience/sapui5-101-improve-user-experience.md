@@ -55,7 +55,7 @@ OrderDialogSuccessMsg=The product has been ordered
 [ACCORDION-BEGIN [Step : ](Improve the list view)]
 In this step, we will add a search field on the top of the list to make it searchable and more appealing by using [custom list items](https://sapui5.hana.ondemand.com/#/api/sap.m.ObjectListItem). You will add a `<SearchField>` control to the initial page of the application. We'll add it as a child within the pages `subHeader` aggregation, which expects a `<Bar>` control.
 
-1.	Open the `webapp/webapp/view/List.view.xml` file, and **replace** the highlighted lines.
+1.	Open the `webapp/webapp/view/List.view.xml` file, and **change** the highlighted lines.
 
 	```XML[5-11,13-20]
 	<mvc:View controllerName="sap.cp.webapp.controller.List"
@@ -84,40 +84,45 @@ In this step, we will add a search field on the top of the list to make it searc
 	```
 
 
-2.	To handle the search, we'll specify a handler for the search field's 'search' event. This handler `handleSearch` is defined in the view's controller, and the search effect is achieved by adding a 'contains string' filter to the binding of the List control's items aggregation. **Add** a listener for the search event in the  `webapp/webapp/controller/List.controller.js`.
+2.	To handle the search, we'll specify a handler for the search field's 'search' event. This handler, `handleSearch`, is defined in the view's controller, and the search effect is achieved by adding a 'contains string' filter to the binding of the List control's items aggregation. **Add** a listener for the search event in the  `webapp/webapp/controller/List.controller.js`.
 
-	```JavaScript[8-22]
-		sap.ui.define([
-	    "sap/ui/core/mvc/Controller"
-	],
-	    function (Controller) {
-	        "use strict";
+	```JavaScript[2-4,10-26]
+	sap.ui.define([
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+],
+    function (Controller, Filter, FilterOperator) {
+        "use strict";
 
-	        return Controller.extend("sap.cp.webapp.controller.List", {
-	            handleSearch: function (evt) {
-	                // create model filter
-	                var filters = [];
-	                var query = evt.getParameter("query");
-	                if (query && query.length > 0) {
-	                    var filter = new sap.ui.model.Filter("ProductName", sap.ui.model.FilterOperator.Contains, query);
-	                    filters.push(filter);
-	                }
+        return Controller.extend("sap.cp.webapp.controller.List", {
+            handleSearch: function (evt) {
+                // create model filter
+                var filters = [];
+                var query = evt.getParameter("query");
+                if (query && query.length > 0) {
+                    filters.push(new Filter({
+                        path: "ProductName",
+                        operator: FilterOperator.Contains,
+                        value1: query
+                    }));
+                }
 
-	                // update list binding
-	                var list = this.getView().byId("list");
-	                var binding = list.getBinding("items");
-	                binding.filter(filters);
-	            },
+                // update list binding
+                var list = this.getView().byId("list");
+                var binding = list.getBinding("items");
+                binding.filter(filters);
+            },
 
-	            handleListItemPress: function (oEvent) {
-	                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-	                var selectedProductId = oEvent.getSource().getBindingContext().getProperty("ProductID");
-	                oRouter.navTo("detail", {
-	                    productId: selectedProductId
-	                });
-	            }
-	        });
-	    });
+            handleListItemPress: function (oEvent) {
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                var selectedProductId = oEvent.getSource().getBindingContext().getProperty("ProductID");
+                oRouter.navTo("detail", {
+                    productId: selectedProductId
+                });
+            }
+        });
+    });
 	```
 
 [DONE]

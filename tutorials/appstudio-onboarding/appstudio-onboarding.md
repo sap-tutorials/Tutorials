@@ -2,7 +2,7 @@
 title: Set Up SAP Business Application Studio for Development
 description: Before you can start developing using SAP Business Application Studio, administrators must perform the required onboarding steps that are described in this tutorial.
 auto_validation: true
-time: 20
+time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-workflow, software-product-function>sap-cloud-application-programming-model, topic>mobile, products>sap-mobile-cards, products>mobile-development-kit-client]
 primary_tag: products>sap-business-application-studio
 ---
@@ -87,7 +87,7 @@ In this step, you will add the SAP Business Application Studio subscription to a
 
     !![legalterms](2020-03 AppStudio Terms__.jpg)
 
-5. An **Access Denied** page may appear. Logout from SAP Business Application Studio and then login as depicted below.
+5. An **Access Denied** page may appear. Log out from SAP Business Application Studio and then log in as depicted below.
 
     !![Logout](2020-05 AppStudio Access Denied Logout_.jpg)
     &nbsp;

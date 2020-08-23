@@ -9,7 +9,7 @@ primary_tag: products>sap-cloud-platform--sap-hana-service
 ## Prerequisites
 >**This tutorial cannot currently be completed with a trial account.**
 
- - You have a productive instance of the [SAP Cloud Platform, SAP HANA Service on Cloud Foundry](https://developers.sap.com/group.hana-service-setup.html) **or** have signed up for a [trial account in SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) **or** an on-premise instance of SAP HANA with XS Advanced (e.g., [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html))
+ - You have a productive instance of the [SAP Cloud Platform, SAP HANA Service on Cloud Foundry](https://developers.sap.com/group.hana-service-setup.html) **or** have signed up for a [trial account in SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html) **or** an on-premise instance of SAP HANA with XS Advanced (e.g., [SAP HANA, express edition](https://developers.sap.com/topics/hana.html))
  - You will need administration access to a tenant SAP Analytics Cloud to import the pre-built models
 
 ## Details

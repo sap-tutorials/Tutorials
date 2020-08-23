@@ -32,7 +32,7 @@ primary_tag: products>sap-web-ide
 2. In the template wizard that opens, in the **Environment** dropdown list, make sure that **Cloud Foundry** is selected and **Category** should be **Featured** otherwise the SAPUI5 Application tile will not appear.
 
     ![Select environment](step1-environment.png)
-  
+
 
 3. Scroll down and click the **SAPUI5 Application** tile and then click **Next**.
 
@@ -216,9 +216,9 @@ Now you can access your deployed application in the SAP Cloud Platform cockpit. 
 
     ![Get URL](step8-url.png)
 
-9. In your text editor you need to add the following suffix to the URL that you saved in step 8: `/mynamespaceFioriDemo/index.html`
+9. In your text editor you need to add the following suffix to the URL that you saved in step 8: `/mynamespaceFioriDemo-1.0.0/index.html`
 
-> For future reference, bear in mind that this is the construct of the final URL: `<URL_from_application_overview_page>/<mynamespace><project_name>/index.html`
+> The construct of the final URL is: `<URL_from_application_overview_page>/<project_name>-<application_version>/index.html`
 
 You can use this URL in any browser to access your new application.
 
