@@ -32,6 +32,8 @@ author_profile: https://github.com/LindsayBert
 
 [ACCORDION-BEGIN [Step 2: ](Create destination to SAP Gateway Demo System)]
 
+In this step, you'll create connectivity between SAP Cloud Platform and the SAP Gateway Demo system account.
+
 1.  In the left navigation panel, click **Destinations** under **Connectivity**.
 
     !![Open destinations](3-open-destinations.png)
