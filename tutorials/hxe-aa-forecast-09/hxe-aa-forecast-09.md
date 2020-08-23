@@ -3,7 +3,7 @@ title: Create additional database artifacts (Forecast App)
 description: Create a series of SQL Views that will be used in a SAPUI5 application
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 20
 ---
 
@@ -20,24 +20,16 @@ time: 20
 
 Open the Web IDE, and login using the **`XSA_DEV`** credentials.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
 ![Web IDE](01-01.png)
-
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create the APL procedures)]
 
-In order to expose in your application the ability to execute the APL Forecast algorithm and get the results, you will need create a series of stored procedure, that you will later expose as XSJS services.
+In order to expose in your application the ability to execute the APL Forecast algorithm and get the results, you will need to create a series of stored procedures, that you will later expose as XSJS services.
 
 In this procedure, you will expose a series of parameters from the APL function:
 
@@ -51,25 +43,15 @@ In this procedure, you will expose a series of parameters from the APL function:
 - Forecast Max Cycles
 - Forecast Max Lags
 
-The complete description of these parameters is available in the [`FORECAST` function](https://help.sap.com/viewer/4055990955524bb2bc61ee75de3b08ff/latest/en-US/34ec8a14b4a442a29351bb26bb082e6e.html) documentation.
+The complete description of these parameters is available in the [`FORECAST` function](https://help.sap.com/viewer/7223667230cb471ea916200712a9c682/1911/en-US/34ec8a14b4a442a29351bb26bb082e6e.html) documentation.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
-Right click on the **`apl`** folder (from **`forecast/db/src/hdb`** ) and select **New > Folder**.
+Right click on the **`apl`** folder (from **`forecast/db/src/hdb`** ) and select **New > File**.
 
-Enter **`procedures`** as the folder name, then click on **OK**.
+Enter **`procedures/forecast.hdbprocedure`** as the file name, then click on **OK**.
 
-#### The execution procedure
-
-Right click on the **`procedures`** folder node from the tree, and select **New > File**.
-
-Enter **`forecast.hdbprocedure`** as the file name, then click on **OK**.
-
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/apl/procedures/forecast.hdbprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/apl/procedures/forecast.hdbprocedure`.
 
 Paste the following content:
 
@@ -166,13 +148,14 @@ END;
 
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Right click on **`forecast.hdbprocedure`**  and select **Build Selected Files**.
 
 The console should display at the end the following message:
 
 ```
+...
 (Builder) Build of /forecast/db completed successfully.
 ```
 
@@ -183,7 +166,7 @@ The console should display at the end the following message:
 
 You can now test the procedure.
 
-Switch to the ***Database Explorer*** perspective using the ![explorer](00-dbexplorer-icon.png) icon.
+Switch to the **Database Explorer** tool using the ![explorer](00-dbexplorer-icon.png) icon.
 
 Select your **HDI Container** connection, and open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 
@@ -225,7 +208,7 @@ Provide an answer to the question below then click on **Validate**.
 
 In order to expose in your application the ability to execute the PAL algorithms, you will need create a stored procedure, that you will later expose in a XSJS service.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
 Right click on the **`pal`** folder (from **`forecast/db/src/hdb`** ) and select **New > Folder**.
 
@@ -237,17 +220,13 @@ In this procedure, you will expose a series of parameters from the PAL Seasonali
 
   - Alpha
 
-The complete description of these parameters is available in the [Seasonality Test function](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/d990dc754e714d95a30721aa1dc3f2f0.html) documentation.
+The complete description of these parameters is available in the [Seasonality Test function](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/2.0.04/en-US/d990dc754e714d95a30721aa1dc3f2f0.html) documentation.
 
 Right click on the **`procedures`** folder node from the tree, and select **New > File**.
 
 Enter **`seasonality_test.hdbprocedure`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/procedures/seasonality_test.hdbprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/procedures/seasonality_test.hdbprocedure`.
 
 Paste the following content:
 
@@ -285,7 +264,7 @@ BEGIN
 END;
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 #### PAL Auto ARIMA
 
@@ -295,17 +274,13 @@ In this procedure, you will expose a series of parameters from the PAL Auto ARIM
  - Seasonal Period
  - Forecast Length
 
-The complete description of these parameters is available in the [Auto ARIMA function](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/9f2574e9ad4b4536aa4ddcc8d0d35a78.html) documentation.
+The complete description of these parameters is available in the [Auto ARIMA function](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/2.0.04/en-US/9f2574e9ad4b4536aa4ddcc8d0d35a78.html) documentation.
 
 Right click on the **`procedures`** folder node from the tree, and select **New > File**.
 
 Enter **`auto_arima.hdbprocedure`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/procedures/auto_arima.hdbprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/procedures/auto_arima.hdbprocedure`.
 
 Paste the following content:
 
@@ -378,7 +353,7 @@ BEGIN
 END;
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 #### PAL Auto Smoothing
 
@@ -390,17 +365,13 @@ In this procedure, you will expose a series of parameters from the PAL Auto ARIM
 - Seasonality
 - Seasonal
 
-The complete description of these parameters is available in the [Auto Smoothing function](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/latest/en-US/60471b0920104ca3a112dd54d74774ad.html) documentation.
+The complete description of these parameters is available in the [Auto Smoothing function](https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/2.0.04/en-US/60471b0920104ca3a112dd54d74774ad.html) documentation.
 
 Right click on the **`procedures`** folder node from the tree, and select **New > File**.
 
 Enter **`auto_smoothing.hdbprocedure`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/db/src/hdb/pal/procedures/auto_smoothing.hdbprocedure
-```
+This is the full path of the created file: `forecast/db/src/hdb/pal/procedures/auto_smoothing.hdbprocedure`.
 
 Paste the following content:
 
@@ -454,20 +425,17 @@ BEGIN
 END;
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 
-Using the CTRL button on the keyboard, select the following files:
+Right-click on the `procedures` folder under `pal`, then use the **Build > Build Selected Files** menu.
 
-- **`auto_arima.hdbprocedure`**
-- **`auto_smoothing.hdbprocedure`**
-- **`seasonality_test.hdbprocedure`**
-
-Then, right click the selection, then use the **Build Selected Files** menu.
+![Web IDE](04-01__2020-08-11_14-17-05.png)
 
 The console should display at the end the following message:
 
 ```
+...
 (Builder) Build of /forecast/db completed successfully.
 ```
 
@@ -478,7 +446,7 @@ The console should display at the end the following message:
 
 You can now check how many users will get recommendation for the collaborative filtering approach.
 
-Switch to the ***Database Explorer*** perspective using the ![explorer](00-dbexplorer-icon.png) icon.
+Switch to the **Database Explorer** tool using the ![explorer](00-dbexplorer-icon.png) icon.
 
 Select your **HDI Container** connection, and open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 
@@ -561,7 +529,7 @@ Provide an answer to the question below then click on **Validate**.
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 
-Click on **Stage All**, enter a commit comment, then click on **Commit and Push > origin master**.
+Click on **Stage All**, enter a commit comment `Added PAL hdb procedures`, then click on **Commit and Push > origin master**.
 
 [DONE]
 [ACCORDION-END]

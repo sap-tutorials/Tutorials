@@ -109,7 +109,7 @@ to:
 
     ![Define MMap Str](Define MMap Str.png)
 
-    * Download the [Source XSD File](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/Source.xsd) and [Target XSD file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/Target.xsd)
+    * Right-click the [Source XSD File](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/Source.xsd) and [Target XSD file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-integration-convert-message-structure/Target.xsd) links and save them on your local folder. You will need them for the next steps.
 
     * On the following screen, upload the source and target XSD into your message map:
 

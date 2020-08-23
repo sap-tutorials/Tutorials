@@ -30,20 +30,20 @@ Throughout this tutorial, objects name include a suffix, such as `XXX`. Always r
 [ACCORDION-BEGIN [Step 1: ](Add value help)]
 To make the input fields more useful, you will now add input value help to the field **`AgencyID`**.
 
-1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency_U`**. Add the following annotation to your field **`AgencyID`**.
+1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency`**. Add the following annotation to your field **`AgencyID`**.
 
     ```CDS
-    @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency_U', element: 'AgencyID'}  }]
+    @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency', element: 'AgencyID'}  }]
 
     ```
 
-2. You also need to expose this second entity in the OData service. To do this, add the entity **`/DMO/I_Agency_U`** to your service definition, so the complete definition looks like this:
+2. You also need to expose this second entity in the OData service. To do this, add the entity **`/DMO/I_Agency`** to your service definition, so the complete definition looks like this:
 
     ```CDS
     @EndUserText.label: 'Service exposes Travel Data 005'
     define service Z_EXPOSE_TRAVEL_005 {
       expose Z_C_TRAVEL_DATA_005 as Travel;
-      expose /DMO/I_Agency_U as Agency;
+      expose /DMO/I_Agency as Agency;
     }
 
     ```
@@ -154,7 +154,7 @@ You will use a simple one to easily merge two fields. The two fields are provide
         association [1..1] to /DMO/I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
     ```
 
-2. After `CustomerID`, add a comma, then add the function **`concat_with_space`** using auto-complete ( **`Ctrl+Space`** ); then add the alias **`as Addressee`**.
+2. Ensure there is a comma after `CustomerID`, then add the function **`concat_with_space`** using auto-complete ( **`Ctrl+Space`** ); then add the alias **`as Addressee`**.
 
     ```CDS
       concat_with_space(_Customer.Title, _Customer.LastName, 1) as Addressee,
