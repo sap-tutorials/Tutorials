@@ -30,18 +30,7 @@ primary_tag: products>sap-analytics-cloud
 
   The challenging part is how to handle the login screen of the identity provider assigned to your SAP Analytics Cloud system. A mandatory step is to authenticate the user on whose behalf the app wants to access the user's protected SAP Analytics Cloud content before the story data can be rendered in the `<iframe>` element.
 
-  SAP Analytics Cloud runs on SAP Cloud Platform which provides two different environments: Cloud Foundry and Neo. Neo is supported by SAP data centers and Cloud Foundry by data centers of SAP partner vendors like AWS. The user authorization UI workflow differs depending on the environment.
-
-  **Neo environment (SAP data centers):**
-  If SAP Analytics Cloud runs in an `<iframe>` and redirects to an identity provider, this will happen in the same `<iframe>`. However, by default identity providers do not allow their content to be displayed in an `<iframe>` as a protection from clickjacking attacks. In this case user authentication screens are suppressed and it is not possible to authorize the app to access the protected SAP Analytics Cloud content. So, the flow of our application is broken.
-
-  There are two ways to enable the login to the identity provider:
-
-  1.	To disable the clickjacking protection by adding the domain of your app to the list of trusted domains of your identity provider, which additionally requires admin rights for your identity provider.
-
-  2.	To separate the user authentication from the rendering of the SAP Analytics Cloud story in the `<iframe>` and to create an active session with the SAP Analytics Cloud system prior to loading the story in the `<iframe>`.
-
-  The second option is implemented in this tutorial.
+  SAP Analytics Cloud runs on SAP Cloud Platform which provide the environment Cloud Foundry. Cloud Foundry is supported by data centers of SAP partner vendors like AWS.
 
   **Cloud Foundry environment (non-SAP data centers):**
   The redirect to the identity provider happens not in the `<iframe>` but in a separate popup window, so clickjacking is not relevant. However, we want to avoid this interruption in the UI experience (separate browser window). In this scenario, we achieve a seamless experience again by separating the user authentication from the rendering of the SAP Analytics Cloud story in the `<iframe>`.
@@ -59,7 +48,7 @@ You need to prepare SAP Analytics Cloud to enable the app to read the protected 
 
 1.	To enable the embedding  of SAP Analytics Cloud into an `<iframe>`, check the instructions in the corresponding chapter of the [URL API documentation](https://help.sap.com/viewer/a4406994704e4af5a8559a640b496468/release/en-US/9e147121f2254300b308c21b968a77f2.html). You enable this by adding the domain of the app to the list of **Trusted Origins** of the SAP Analytics Cloud system, which is **`localhost`** for this tutorial. Since **`localhost`** in not a valid name for this field, you need to set the flag **`Allow all origins`**.
 
-2.	You need to create an OAuth client on SAP Analytics Cloud to give the application access to your SAP Analytics Cloud story. The procedure for creating an OAuth client depends on whether your SAP Analytics Cloud system runs on a Neo or a Cloud Foundry environment. The following is valid for both environments:
+2.	You need to create an OAuth client on SAP Analytics Cloud to give the application access to your SAP Analytics Cloud story. Please follow the below steps:
 
     - Log in to your SAP Analytics Cloud system and go to **Main Menu** > **System** > **Administration** > **App Integration**.
 
@@ -71,19 +60,17 @@ You need to prepare SAP Analytics Cloud to enable the app to read the protected 
 
     -	Specify the **Redirect URI**. For this tutorial we use `http://localhost:<port>/callback`. For `<port>` choose any free port (for example, `8081`).
 
-    The remaining part of the OAuth client creation task differs between the SAP Cloud Platform environments. Please check the part of the [Managing OAuth Clients documentation](https://help.sap.com/doc/00f68c2e08b941f081002fd3691d86a7/release/en-US/4f43b54398fc4acaa5efa32badfe3df6.html) relevant for your environment. In general, the OAuth client creation process on Cloud Foundry is a bit leaner because more parameters are created automatically (e.g. OAuth Client ID and Secret). In the Neo environment, the **Authorization Grant** has to be set to **`Authorization Code`**.
+    For the remaining part of the OAuth client creation please check the part of the [Managing OAuth Clients documentation](https://help.sap.com/doc/00f68c2e08b941f081002fd3691d86a7/release/en-US/4f43b54398fc4acaa5efa32badfe3df6.html) documentation.
 
     When you set up the OAuth client later in the `server.js` file, you need:
 
     - The OAuth client ID
 
-    - The secret (for Neo, this is not required if **Confidential** is not set)
+    - The secret
 
     - The redirect URI
 
->Note that the ID and the secret are generated when saving the new OAuth client in the case of **Cloud Foundry**.
-
->If your system is hosted on a **Neo environment**, you must set those values manually.
+>Note that the ID and the secret are generated when saving the new OAuth client.
 
   If you are using the SAP Analytics Cloud, embedded edition, please refer to this [documentation](https://help.sap.com/viewer/8c9fe042688a4354876cc536267d442f/1.0/en-US/cfb3204772034009bcff19f6c753c619.html).
 
@@ -165,19 +152,17 @@ After performing the preparatory steps, you can now create the app.
 
         - for the `client` object get the values for the `id` and `secret` attributes from the OAuth client you have created on the SAP Analytics Cloud system administration page in step 1 ( **Main Menu** > **System** > **Administration** > **App Integration** > **Edit OAuth Client**). Replace the placeholders in the sample code.
 
-        - for the `auth` object get the values from the **OAuth Clients** chapter of the same SAP Analytics Cloud system administration page and replace the placeholders in the sample code. Please note that the values of attributes `authorizePath` and `tokenPath` differ depending on whether your SAP Analytics Cloud system runs on a Neo or on a Cloud Foundry environment.
+        - for the `auth` object get the values from the **OAuth Clients** chapter of the same SAP Analytics Cloud system administration page and replace the placeholders in the sample code.
 
             **`authorizePath`**
 
             |-|-|
-            |`/oauth2/api/v1/authorize`|Neo|
-            |`/oauth/authorize`|Cloud Foundry|
+            |`/oauth/authorize`|
 
             **`tokenPath`**
 
             |-|-|
-            |`/oauth2/api/v1/token`|Neo|
-            |`/oauth/token`|Cloud Foundry|
+            |`/oauth/token`|
 
 
     If you are using the SAP Analytics Cloud, embedded edition, please refer to this [documentation](https://help.sap.com/viewer/8c9fe042688a4354876cc536267d442f/1.0/en-US/878a785ea23a412199a9bbd1bda78482.html).
@@ -224,9 +209,6 @@ Now you can start the application.
 
     Now that the SAP Analytics Cloud user is identified, the SAP Analytics Cloud authorization server displays a screen to authorize the app or, more precisely, to authorize the OAuth client to access the user's SAP Analytics Cloud data. The user confirms this by pressing the button **Authorize**.
 
-    >Note that this screen is displayed only for the Neo environment.
-
-    ![Neo Platform Authorization Screen](auhtorization_screen.png)
 
 5.	SAP Analytics Cloud creates the authorization code (AC) and sends a response to the redirect URL `http://localhost:<port>/callback`. Again, a handler function is triggered by this request to the `/callback` path.
 
