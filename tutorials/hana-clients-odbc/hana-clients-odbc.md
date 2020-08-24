@@ -28,7 +28,7 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
     >Ensure that you choose the 64-bit version assuming that you have the 64-bit version of the SAP HANA client installed.
 
-    !![start ODBC Administrator](start-odbc.png)
+    ![start ODBC Administrator](start-odbc.png)
 
 2. Click on the **Drivers** tab and view the installed drivers.  
 
@@ -77,11 +77,11 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
     ![YaST installer](unixODBC-install.png)
 
-2. On a Mac, unixODBC can be installed using [Homebrew](https://brew.sh/).
+2. On a Mac, unixODBC can be installed using [Homebrew](https://brew.sh).  
 
-     ```Shell (Mac)    
-     brew install unixodbc
-     ```
+    ```Shell (Mac)
+    brew install unixodbc
+    ```
 
 3. The following commands can be used to confirm that unixODBC is installed, the location of the .odbc.ini file, and to confirm the location of the SAP HANA client install that contains the ODBC driver.
 
@@ -110,7 +110,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 5.  unixODBC provides a basic SQL query tool called `isql` that can be used to validate a data source.
 
     ```Shell (Linux or Mac)
-    isql HANA_Express User1 Password1
+    isql -v HANA_Cloud User1 Password1
     ```
 
     ![isql](isqlQuery.png)
@@ -123,7 +123,7 @@ The following instructions demonstrate how [unixODBC](http://www.unixodbc.org/) 
 
 [ACCORDION-BEGIN [Step 4: ](Use a SAP HANA data source from another program)]
 
-An application that supports ODBC can now make use of the created data source.  One example is Microsoft Excel.  
+An application that supports ODBC can now make use of the created data source.  One example on Windows is Microsoft Excel.  
 
 > Note that Microsoft Excel can be 32 or 64 bit.  This can be seen under **File | Account | About Excel**.    
 >
@@ -154,6 +154,10 @@ The following steps demonstrate how to use Microsoft Excel to query data in SAP 
 6. The selected data is now imported into a Microsoft Excel spreadsheet.
 
     ![Excel Show Data](ExcelShowData.png)  
+
+7. One further option for some tools is to provide the connection details directly to an ODBC enabled application as shown below.
+
+    ![Excel ODBC Connection String](ExcelCS.png)  
 
 For further information on programming an application to use the ODBC client driver, see [ODBC Application Programming](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/73f03d62240f435880ade3bc1242cc05.html).
 

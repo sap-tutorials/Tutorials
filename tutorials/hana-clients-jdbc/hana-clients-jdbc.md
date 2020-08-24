@@ -22,7 +22,7 @@ primary_tag: products>sap-hana
 
 [ACCORDION-BEGIN [Step 1: ](Install a JDK)]
 
-Ensure that you installed a Java Development Kit (JDK) and make sure it is accessible from your path.  Details on which Java versions are supported can be found in  SAP note [2499500 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/2499500) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).
+Ensure that you installed a Java Development Kit (JDK) and make sure it is accessible from your path.  Details on which Java versions are supported can be found in  SAP note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501) and [Oracle Java SE Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html).
 
 * [Java JDK](https://www.oracle.com/technetwork/java/javase/overview/index.html) such as [Java SE 11 (LTS)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 
@@ -45,7 +45,7 @@ If these commands fail, ensure that the folder they are located in is included i
 
 The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.net/jeps/238) and as such supports [multiple versions](https://launchpad.support.sap.com/#/notes/2499500) of Java.  It is available in the client installation folder at `C:\SAP\hdbclient\ngdbc.jar` and in the [maven repository](https://mvnrepository.com/artifact/com.sap.cloud.db.jdbc/ngdbc).
 
-1. Run the following command for version information:
+1. Run the following command for version information.  If needed, adjust the path to match the installation location on your machine.
 
     ```Shell (Microsoft Windows)
     java -jar C:\SAP\hdbclient\ngdbc.jar -v
@@ -74,7 +74,7 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
     java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
     ```
 
-See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/2.4/en-US/9ac4e1eedbbc4961bce0db6ad64b3612.html) for additional details on parameters of `ngdbc.jar`.
+See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/9ac4e1eedbbc4961bce0db6ad64b3612.html) for additional details on parameters of `ngdbc.jar`.
 
 [DONE]
 [ACCORDION-END]

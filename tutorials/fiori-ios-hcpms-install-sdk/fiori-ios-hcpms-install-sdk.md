@@ -5,14 +5,14 @@ auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, software-product-function>sap-cloud-platform-mobile-services ]
 time: 5
-author_name: Jitendra Kansal
-author_profile: https://github.com/jitendrakansal
+author_name: Sandeep TDS
+author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites  
-- **Development environment:** Apple Mac running macOS High Sierra or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Download your preferred version at [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)
-- Completed the previous tutorials in this group.
+- Completed the previous tutorial(s) in this group.
+- **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
+- **SAP Cloud Platform SDK for iOS:** Download Version 5.0 or higher from [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)
 
 ## Details
 ### You will learn  

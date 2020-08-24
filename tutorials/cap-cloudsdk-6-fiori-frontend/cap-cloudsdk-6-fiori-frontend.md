@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Create a Frontend with SAP Fiori Elements and Annotations
 description: Put together a simple frontend for the consumer application using the built-in SAP Fiori Elements-powered "Fiori preview" and some Core Data Services annotations.
 auto_validation: true

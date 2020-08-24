@@ -9,16 +9,17 @@ author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
 
-## Prerequisites  
- - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
- - You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**.
+## Prerequisites
+  - You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
+  - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+  - You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
 
 ## Details
 ### You will learn  
   - How to create a trial user
   - How to create an ABAP Cloud project
 
->You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt)** or **US East (VA)** as Region.
+>You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) or US East (VA)** as Region.
 
 ---
 
@@ -28,17 +29,17 @@ author_profile: https://github.com/mervey45
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    !![Trial global account](01_Foundation20Onboarding_Home.png)
+    !![Trial global account](trial_home.png)
 
-    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region (select the region closest to you). Your user profile will be set up for you automatically.  
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Please select **Europe (Frankfurt) or US (VA) as a region**. Your user profile will be set up for you automatically.  
 
     >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
 
     >Choose **Continue**.
 
-    >![Account setup](02_Foundation20Onboarding_Processing.png)
+    >![Account setup](organization2.png)
 
-3. From your global account page, choose the **`trial`** tile to access your subaccount. The region is either **Europe (Frankfurt)** or **US East (VA)**.
+3. From your global account page, choose the **`trial`** tile to access your subaccount. The region is **Europe (Frankfurt) or US East (VA)** and the Environment **Multi Environment**.
 
     ![Select ABAP Trial](welcometrial.png)
 
@@ -46,7 +47,7 @@ author_profile: https://github.com/mervey45
    Therefore choose in your trial subaccount your space **dev** to navigate to it.
 
     ![Select ABAP Trial](dev.png)
-
+ 
 5. Click **Service Marketplace** to get to the service overview, where you can select ABAP Trial as a service.
 
     ![Select ABAP Trial](account4.png)
@@ -190,4 +191,4 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://s.userzoom.com/m/NCBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-trial-onboarding" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

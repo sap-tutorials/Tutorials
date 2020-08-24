@@ -30,13 +30,7 @@ time: 50
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Set the NPM registry for `@sap` packages by executing the following command in a command line window:
-
-    ```Shell/Bash
-    npm set @sap:registry=https://npm.sap.com
-    ```
-
-2. Install the `cds` development kit globally by executing the following command:
+1. Open a command line window and install the `cds` development kit globally by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -66,18 +60,19 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
 
-1. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloud-vscodecds) and download the `vsix` file for CDS Language Support for Visual Studio Code.
+1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds#overview).
 
-2. Open Visual Studio Code. Choose **View** > **Extensions** > **Install from VSIX...** and and install the extension by choosing the `vsix` file you have downloaded before:
+2. Choose **Install**.
 
-    ![Visual Studio extension](visual-studio-extension.png)
+![Folder structure](VSCode_extension.png)
 
-    &nbsp;
+   Visual Studio Code opens the extensions details page.
 
-    ![Visual Studio extension](visual-studio-extension-vsix.png)
+![Folder structure](VSCode_view_extension.png)
 
+3. In Visual Studio Code choose **Install** to enable the extension for CDS Language Support.
 
-    >If you see a compatibility error, make sure that you have the latest version of Visual Studio Code.
+> If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
 [DONE]
 
@@ -516,4 +511,4 @@ You can now see the generic handlers shipped with CAP in action.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://s.userzoom.com/m/OCBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-apm-nodejs-create-service" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
