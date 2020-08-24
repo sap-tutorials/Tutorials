@@ -112,6 +112,8 @@ yo easy-ui5:newmodel
 
 Again, please accept the modification of the manifest file.
 
+> The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.yaml` if you don't like it.
+
 
 [DONE]
 [ACCORDION-END]
@@ -194,8 +196,6 @@ In this step, you will add a detail page that shows some additional information.
       ]
     }
     ```
-
-    !![new route](newroute.png)
 
 3. Change the type of the list items and an event listener in the `webapp/view/Products.view.xml` file.
     ```XML

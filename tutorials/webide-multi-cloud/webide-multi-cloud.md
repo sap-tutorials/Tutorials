@@ -1,5 +1,5 @@
 ---
-title: Open SAP Web IDE for HANA development
+title: Open SAP Web IDE for SAP HANA Development
 description: Access SAP Web IDE Full-Stack from your browser.
 primary_tag: products>sap-web-ide
 author_name: Marius Obert
