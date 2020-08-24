@@ -23,70 +23,51 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Configure the SAP Cloud Platform for push notifications)]
+[ACCORDION-BEGIN [Step 1: ](Configure Mobile Services for push notifications)]
 
-1.  Open [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com), scroll down to the **Environments** section and click **Access Neo Trial**.
+1.  Go to [SAP Cloud Platform Mobile cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), select the **com.sap.wizapp** application.
 
-    ![Neo Trial button](neo-trial-button.png)
+    ![Application page in CF cockpit](cf-trial-application-page.png)
 
-2.  Select **Services**, then choose **Digital Experience** from the dropdown. Then click **Mobile Services, users**.
+2.  Select **Mobile Push Notification**
 
-    ![Mobile Services](mobile-services-in-cloud-cockpit.png)
+    ![Mobile Push Notification](push-notification.png)
 
-3.  Click the **Configure Mobile Services** link.
+    >If you don't see the option, follow the screenshots to add this feature:
+    > - ![Add assigned features](add-assigned-features.png)
+    > - ![Add push notification](add-push-notification.png)
+    > - ![Confirm save](confirm-change.png)
 
-    ![Configure Mobile Services](mobile-services-configure.png)
+3.  The **Mobile Push Notification** screen requires information from [Firebase](https://firebase.google.com/).
 
-4.  On the **Roles** tab, select the **Notification User** role and click **Assign** to assign your **User ID**.
+    ![Push notification](push-notification-blank.png)
 
-    ![Setting Notification User role](assigning-notification-user-role.png)
+4.  In the [Firebase console](https://console.firebase.google.com/), select project **Wiz App**, and then go to **Project settings**.
+
+    - ![Firebase console page](firebase-console-page.png)
+
+    - ![Project settings](firebase-project-settings.png)
+
+5.  Select the **Cloud Messaging** tab and copy the **Server Key** and **Sender ID** values from Firebase to the SAP Mobile Services **Mobile Push Notification** settings screen. Click **Save** to save changes.
+
+    - ![Server key and Sender ID](serverkey-and-senderid.png)
+
+    - ![Push notification android](push-notification-android.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Configure Mobile Services for push notifications)]
+[ACCORDION-BEGIN [Step 2: ](Send a notification)]
 
-1.  Return to the **Mobile Services** screen.
+1.  Switch to **Push Registrations** on the **Mobile Push Notification** settings page.
 
-    ![Back to mobile services](back-to-mobile-services.png)
+    ![Push registrations page](push-registrations.png)
 
-2.  Click the **Go to Service** link.
-
-    ![Go to Service link](go-to-mobile-services.png)
-
-3.  In SAP Cloud Platform Mobile Services, select the **com.sap.wizapp** application and click **Push Notification**.
-
-    ![Push notification link on home page](push-notification-button.png)
-
-    This screen requires information from [Firebase](https://firebase.google.com/).
-
-    ![Push notification](push-notification-blank.png)
-
-4.  In the [Firebase console](https://console.firebase.google.com/), go to **Project settings**.
-
-    ![Project settings](firebase-project-settings-button.png)
-
-
-5.  Select the **Cloud Messaging** tab and copy the **Server Key** and **Sender ID** values from Firebase to the SAP Mobile Services **Android Push Notification** settings screen.
-
-    ![Server key and Sender ID](serverkey-and-senderid.png)
-
-    ![Push notification android](push-notification-android.png)
-
-[VALIDATE_2]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Send a notification)]
-
-1.  Under **Mobile Applications**, select the application.
-
-    ![Management cockpit](management-cockpit.png)
-
-2.  Select the **User Registrations** tab to send the notification to your app.
+2.  Select certain registration to send notifications.
 
     ![Send notification](send-notification.png)
 
-    >It may be difficult to tell which registration to choose. The **Last Connection** field shows the last time a given registration made a request.  If you are unsure which registration to choose, navigate through a few screens in the application and then press the **GO** button to refresh the display, or select all of them and send a greeting to all the registrations.
+    >It may be difficult to tell which registration to choose. The last field on the page shows the last time a given registration made a request. If you are unsure which registration to choose, navigate through a few screens in the application and then press the **GO** button to refresh the display, or select all of them and send a greeting to all the registrations.
 
     >If you don't see the **Send Notifications** button, try logging out and back into the management cockpit.
 
@@ -97,7 +78,7 @@ time: 20
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Foreground notification)]
+[ACCORDION-BEGIN [Step 3: ](Foreground notification)]
 
 Notice that the app shows the notification.
 
@@ -106,7 +87,7 @@ Notice that the app shows the notification.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Background notification)]
+[ACCORDION-BEGIN [Step 4: ](Background notification)]
 
 >Make sure you are selecting the right language above.
 
@@ -138,7 +119,7 @@ You can add custom logic to the app to decide on the action to take, such as dis
 
 [OPTION END]
 
->For further information on push, see [Push Notifications](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/remotenotification.html), [Push API Notification Scenarios](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html), and [About FCM Messages](https://firebase.google.com/docs/cloud-messaging/concept-options).
+>For further information on push, see [Push Notifications](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/push/android/push.html#support-for-baidu-push), [Push API Notification Scenarios](https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html), and [About FCM Messages](https://firebase.google.com/docs/cloud-messaging/concept-options).
 
 Congratulations! You have seen how an app can make use of foreground and background notifications.
 

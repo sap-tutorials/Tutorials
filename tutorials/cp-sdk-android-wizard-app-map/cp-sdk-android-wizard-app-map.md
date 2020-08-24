@@ -31,13 +31,13 @@ In this section you will create a new activity to display a map.
 
 3.  Set **Activity Name** to be **`CustomersMapActivity`**.
 
-    ![Creating map activity](map-create-dialog.png)
+    ![Creating map activity](map-create-dialog-java.png)
 
 4.  Click **Finish**.
 
 5.  In the **`google_maps_api.xml`**, on line 7 correct the package name at the end of the line to be **`com.sap.wizapp`** only.
 
-6.  Paste the URL (line 7) into a browser to register the application with the Maps SDK for Android. Follow the instructions to get an API key and paste it into line 23 of `google_maps_api.xml` in place of the text **`YOUR_KEY_HERE`**.
+6.  Paste the URL (line 7) into a browser to register the application with the Maps SDK for Android. Follow the instructions to get an **API Key** and paste it into line 23 of `google_maps_api.xml` in place of the text **`YOUR_KEY_HERE`**.
 
 7.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
 
@@ -71,7 +71,7 @@ In this section you will create a new activity to display a map.
 
 2.  Right-click and choose **`New > Activity > Gallery... > Google Maps Activity`**.
 
-    ![Adding Google Map from gallery](add-maps-activity-kotlin.png)
+    ![Adding Google Map from gallery](add-maps-activity.png)
 
 3.  Set **Activity Name** to be **`CustomersMapActivity`**.
 
@@ -244,7 +244,8 @@ In this section, you will add code to place a marker on the map for each custome
                         .or(Customer.country.equal("CA"))
                         .or(Customer.country.equal("MX")))
         val sapServiceManager = (application as SAPWizardApplication).sapServiceManager
-        sapServiceManager.eSPMContainer?.let {
+        val eSPMContainer = sapServiceManager?.eSPMContainer
+        eSPMContainer?.let {
             it.getCustomersAsync(query, { customers: List<Customer> ->
                 for (customer in customers) {
                     Log.d("", "Adding a marker for " + customer.city)
@@ -365,7 +366,7 @@ In this section, you will add code to display the customer detail screen when th
 
 5.  On Windows, press **`Ctrl+F12`**, or, on a Mac, press **`command+F12`**, and type **`onCreate`** to navigate to the `onCreate` method.
 
-6.  Replace the `else` block in the `onCreate` method with the following code:
+6.  Replace the content of the `else` block in the `onCreate` method with the following code:
 
     ```Java
     CustomersListFragment listFragment = new CustomersListFragment();
@@ -430,7 +431,7 @@ In this section, you will add code to display the customer detail screen when th
 2.  Add the following method to the class:
 
     ```Kotlin
-    override fun onInfoWindowClick(marker: Marker) {
+    override fun onInfoWindowClick(marker: Marker) {//import com.google.android.gms.maps.model.Marker
         val customer = marker.tag as Customer
         val intent = Intent(this, CustomersActivity::class.java)
         intent.putExtra(BundleKeys.ENTITY_INSTANCE, customer)
@@ -452,7 +453,7 @@ In this section, you will add code to display the customer detail screen when th
 
     ```Kotlin
     if (savedInstanceState == null) {
-        var listFragment = CustomersListFragment()
+        val listFragment = CustomersListFragment()
         intent.extras?.let {
             if (it.containsKey(BundleKeys.ENTITY_INSTANCE)) {
                 listFragment.arguments = it
@@ -516,7 +517,15 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
 [OPTION BEGIN [Java]]
 
-1.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
+1.  Press **`Shift`** twice, and type **`styles.xml`** to open `styles.xml`.
+
+2.  Declare the style of `AppTheme` as:
+
+    ```XML
+    <style name="AppTheme" parent="FioriTheme">
+    ```
+
+3.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'google-maps', version: sdkVersion
@@ -524,7 +533,9 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     ![Add Map Dependency](app-build-gradle.png)
 
-2.  Create a new **Layout resource file** in `res/layout` called **`detail_panel.xml`** and select **Text** in the lower left corner of the window (if it's on **Design** view), to switch to **Code** view to replace its contents with the following code.
+4.  Create a new **Layout Resource File** in `res/layout` called **`detail_panel.xml`** and replace its contents with the following code.
+
+    ![Create new Layout Resource File](create-new-layout-resource-file.png)
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -544,7 +555,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-3.  Create a new **Layout resource file** in `res/layout` called **`search_auto_complete.xml`** and replace its contents with the following code:
+5.  Create a new **Layout resource file** in `res/layout` called **`search_auto_complete.xml`** and replace its contents with the following code:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -561,17 +572,17 @@ In this section, you will create a new activity that uses the Fiori Map control.
     ```
 
 
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+6.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
-5.  Right-click and choose **New** > **Activity** > **Empty Activity**.
+7.  Right-click and choose **New** > **Activity** > **Empty Activity**.
 
-6.  Set **Activity Name** to be **`CustomersFioriMapActivity`**.
+8.  Set **Activity Name** to be **`CustomersFioriMapActivity`**.
 
-7.  Click **Finish**.
+9.  Click **Finish**.
 
     ![Dialog to create Fiori map activity](create-fiori-map-activity.png)
 
-8.  Replace the file contents in the newly created `CustomersFioriMapActivity.java` with the following code:
+10.  Replace the file contents in the newly created `CustomersFioriMapActivity.java` with the following code:
 
     ```Java
     package com.sap.wizapp.mdui.customers;
@@ -826,9 +837,9 @@ In this section, you will create a new activity that uses the Fiori Map control.
     }
     ```
 
-9.  Press **Shift** twice and type **`activity_customers_fiori_map.xml`** to open `activity_customers_fiori_map.xml`.
+11.  Press **Shift** twice and type **`activity_customers_fiori_map.xml`** to open `activity_customers_fiori_map.xml`.
 
-10.  Replace its contents with the following code:
+12.  Replace its contents with the following code:
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -848,17 +859,17 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-11.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
+13.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.java`.
 
-12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersMapActivity.class`**.
+14.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersMapActivity.class`**.
 
-13.  Replace `CustomersMapActivity.class` with **`CustomersFioriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori map on it.
+15.  Replace `CustomersMapActivity.class` with **`CustomersFioriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori map on it.
 
-14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
+16.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
 
-15.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity`**.
+17.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity`**.
 
-16.  Modify the activity so it specifies the theme `NoActionBar`, which will cause the activity to not display an action bar.
+18.  Modify the activity so it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
 
     ```XML
     <activity android:name=".mdui.customers.CustomersFioriMapActivity"
@@ -866,7 +877,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </activity>
     ```
 
-17.  Run the app.
+19.  Run the app.
 
     You should be able to see markers on the screen representing customers.
 
@@ -888,7 +899,15 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
 [OPTION BEGIN [Kotlin]]
 
-1.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
+1.  Press **`Shift`** twice, and type **`styles.xml`** to open `styles.xml`.
+
+2.  Declare the style of `AppTheme` as:
+
+    ```XML
+    <style name="AppTheme" parent="FioriTheme">
+    ```
+
+3.  Add the following dependency in the app's `build.gradle` file in the dependencies object.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'google-maps', version: sdkVersion
@@ -896,7 +915,9 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     ![Add Map Dependency](app-build-gradle.png)
 
-2.  Create a new **Layout resource file** in `res/layout` called **`detail_panel.xml`** and select **Text** in the lower left corner of the window (if it's on **Design** view), to switch to **Code** view to replace its contents with the following code.
+4.  Create a new **Layout Resource File** in `res/layout` called **`detail_panel.xml`** and replace its contents with the following code.
+
+    ![Create new Layout Resource File](create-new-layout-resource-file.png)
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -916,7 +937,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-3.  Create a new **Layout resource file** in `res/layout` called **`search_auto_complete.xml`** and replace its contents with the following code.
+5.  Create a new **Layout Resource File** in `res/layout` called **`search_auto_complete.xml`** and replace its contents with the following code.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -932,18 +953,17 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </LinearLayout>
     ```
 
+6.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
 
-4.  In Android Studio, using the project explorer, navigate to **`app > java > com.sap.wizapp > mdui > customers`**.
+7.  Right-click and choose **New** > **Activity** > **Empty Activity**.
 
-5.  Right-click and choose **New** > **Activity** > **Empty Activity**.
+8.  Set **Activity Name** to be **`CustomersFioriMapActivity`**.
 
-6.  Set **Activity Name** to be **`CustomersFioriMapActivity`**.
-
-7.  Click **Finish**.
+9.  Click **Finish**.
 
     ![Dialog to create Fiori map activity](create-fiori-map-activity-kotlin.png)
 
-8.  Replace the file contents in the newly created `CustomersFioriMapActivity.kt` with the following code:
+10.  Replace the file contents in the newly created `CustomersFioriMapActivity.kt` with the following code:
 
     ```Kotlin
     package com.sap.wizapp.mdui.customers
@@ -1164,7 +1184,8 @@ In this section, you will create a new activity that uses the Fiori Map control.
                             .or(Customer.country.equal("CA"))
                             .or(Customer.country.equal("MX")))
             val sapServiceManager = (application as SAPWizardApplication).sapServiceManager
-            sapServiceManager.eSPMContainer?.let {
+            val eSPMContainer = sapServiceManager?.eSPMContainer
+            eSPMContainer?.let {
                 it.getCustomersAsync(query, { customers: List<Customer> ->
                     for (customer in customers)
                     {
@@ -1178,9 +1199,9 @@ In this section, you will create a new activity that uses the Fiori Map control.
 
     ```
 
-9.  Press **Shift** twice and type **`activity_customers_fiori_map.xml`** to open `activity_customers_fiori_map.xml`.
+11.  Press **Shift** twice and type **`activity_customers_fiori_map.xml`** to open `activity_customers_fiori_map.xml`.
 
-10.  Replace its contents with the following code.
+12.  Replace its contents with the following code.
 
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -1200,17 +1221,17 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </androidx.constraintlayout.widget.ConstraintLayout>
     ```
 
-11.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
+13.  On Windows, press **`Ctrl+N`**, or, on a Mac, press **`command+O`**, and type **`EntitySetListActivity`** to open `EntitySetListActivity.kt`.
 
-12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersMapActivity::class`**.
+14.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersMapActivity::class`**.
 
-13.  Replace `CustomersMapActivity::class` with **`CustomersFioriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori map on it.
+15.  Replace `CustomersMapActivity::class` with **`CustomersFioriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori map on it.
 
-14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
+16.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
 
-15.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity`**.
+17.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity`**.
 
-16.  Modify the activity so it specifies the theme `NoActionBar` theme, which will cause the activity to not display an action bar.
+18.  Modify the activity so it specifies the `NoActionBar` theme, which will cause the activity to not display an action bar.
 
     ```XML
     <activity android:name=".mdui.customers.CustomersFioriMapActivity"
@@ -1218,7 +1239,7 @@ In this section, you will create a new activity that uses the Fiori Map control.
     </activity>
     ```
 
-17.  Run the app.
+19.  Run the app.
 
     You should be able to see markers on the screen that represent customers.
 
@@ -1668,7 +1689,9 @@ In this section you will implement the settings dialog to include a map type set
 
 7.  Tap on the settings icon in the toolbar.
 
-8.  Change the map type to **Hybrid** and turn the **Clustering** on.
+    ![Setting icon in toolbal](setting-icon-in-toolbar.png)
+
+8.  Change the map type to **Hybrid** and turn **Clustering** on.
 
     ![Settings](settings.png)
 
@@ -1786,7 +1809,9 @@ In this section you will implement the settings dialog to include a map type set
 
 7.  Tap on the settings icon in the toolbar.
 
-8.  Change the map type to **Hybrid** and turn the **Clustering** on.
+    ![Setting icon in toolbal](setting-icon-in-toolbar.png)
+
+8.  Change the map type to **Hybrid** and turn **Clustering** on.
 
     ![Settings](settings.png)
 
@@ -1883,30 +1908,27 @@ In this section, you will test the three different types of annotations.
 
     ![Emulator toolbar settings button](emulator-settings.png)
 
-6.  Under **Location**, change **Latitude** to **`43.4723`** and **Longitude** to **`-80.5449`**. Tap **Send** to save these new coordinates.
+6.  Under **Location** > **Single points**, search for **`University of Waterloo`** and select the first instance.
 
-    ![Changing default co-ordinates in emulator settings](emulator-location-settings.png)
-
-    >If your screen looks like the following, perform the following steps.
     ![Up to date emulator location settings screen 1](up-to-date-emulator-location-settings-1.png)
 
-    >1.  Under **Location** > **Single points**, search for **`University of Waterloo`** and select the first instance.
+7.  Tap **SAVE POINT**.
 
-    >2.  Tap **SAVE POINT**.
     ![Up to date emulator location settings screen 2](up-to-date-emulator-location-settings-2.png)
 
-    >3.  Set the name you want to save as.
+8.  Set the name you want to save as.
+
     ![Up to date emulator location settings screen 3](up-to-date-emulator-location-settings-3.png)
 
-    >4.  Select the saved point and tap **SET LOCATION** to set the default location.
+9.  Select the saved point and tap **SET LOCATION** to set the default location.
+
     ![Up to date emulator location settings screen 4](up-to-date-emulator-location-settings-4.png)
 
-
-7.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
+10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
 
     ![Zoom into current location](current-location-effect.png)
 
-8.  To annotate the map, tap on the floating action button in the corner.
+11.  To annotate the map, tap on the floating action button in the corner.
 
     ![Floating action button to edit annotations](fab.png)
 
@@ -1914,7 +1936,7 @@ In this section, you will test the three different types of annotations.
 
     ![Edit annotations panel](edit-annotations.png)
 
-9.  To add the current location as a point:
+12.  To add the current location as a point:
     -	Tap on the **Add Point** option in the panel. Note that it may take a few moments for the emulator to process the new coordinates from before.
 
         ![Add point button in panel](add-point.png)
@@ -1929,6 +1951,7 @@ In this section, you will test the three different types of annotations.
 
     > If an API error occurs, such as `Failed to get location addresscom.google.android.gms.common.api.ApiException`, or nothing happens after tapping **Current Location**, ensure that the **Places API** is enabled on the [Google Cloud Platform](https://console.developers.google.com/). Type **`Places API`** in the search bar and you'll be redirected to the following page.
     ![Google Cloud Platform Places API page](places-api.png)
+
     > If you enabled **Places API** but still nothing happens after tapping, use
     ```URL
     https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=YOUR_API_KEY
@@ -1939,11 +1962,11 @@ In this section, you will test the three different types of annotations.
 
     ![Point added onto map](added-point.png)
 
-10.  To add a `polyline` to the map, select the **`Polyline`** option and tap different places on the map to add multiple points. The added points will be connected with a line.
+13.  To add a `polyline` to the map, select the **`Polyline`** option and tap different places on the map to add multiple points. The added points will be connected with a line.
 
     ![Add polyline to map](add-polyline.png)
 
-11.  To add a polygon, select the **Polygon** option and tap different places on the map to add multiple points. The points are connected in the order that they appear in the list within the panel and take up the least amount of area.
+14.  To add a polygon, select the **Polygon** option and tap different places on the map to add multiple points. The points are connected in the order that they appear in the list within the panel and take up the least amount of area.
 
     ![Add polygon to map](add-polygon.png)
 
@@ -2019,29 +2042,24 @@ In this section, you will test the three different types of annotations.
 
     ![Emulator toolbar settings button](emulator-settings.png)
 
-6.  Under **Location**, change **Latitude** to **`43.4723`** and **Longitude** to **`-80.5449`**. Tap **Send** to save these new coordinates.
+6.  Under **Location** > **Single points**, search for **`University of Waterloo`** and select the first instance.
 
-    ![Changing default co-ordinates in emulator settings](emulator-location-settings.png)
-
-    >If your screen looks like the following, perform the following steps.
     ![Up to date emulator location settings screen 1](up-to-date-emulator-location-settings-1.png)
 
-    >1.  Under **Location** > **Single points**, search for **`University of Waterloo`** and select the first instance.
-
-    >2.  Tap **SAVE POINT**.
+7.  Tap **SAVE POINT**.
     ![Up to date emulator location settings screen 2](up-to-date-emulator-location-settings-2.png)
 
-    >3.  Set the name you want to save as.
+8.  Set the name you want to save as.
     ![Up to date emulator location settings screen 3](up-to-date-emulator-location-settings-3.png)
 
-    >4.  Select the saved point and tap **SET LOCATION** to set the default location.
+9.  Select the saved point and tap **SET LOCATION** to set the default location.
     ![Up to date emulator location settings screen 4](up-to-date-emulator-location-settings-4.png)
 
-7.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
+10.  Tap the current location button to zoom into the University of Waterloo and you should see the screen below.
 
     ![Zoom into current location](current-location-effect.png)
 
-8.  To annotate the map, tap on the floating action button in the corner.
+11.  To annotate the map, tap on the floating action button in the corner.
 
     ![Floating action button to edit annotations](fab.png)
 
@@ -2049,7 +2067,7 @@ In this section, you will test the three different types of annotations.
 
     ![Edit annotations panel](edit-annotations.png)
 
-9.  To add the current location as a point:
+12.  To add the current location as a point:
     -	Tap on the **Add Point** option in the panel. Note that it may take a few moments for the emulator to process the new coordinates from before.
 
         ![Add point button in panel](add-point.png)
@@ -2064,6 +2082,7 @@ In this section, you will test the three different types of annotations.
 
     > If an API error occurs, such as `Failed to get location addresscom.google.android.gms.common.api.ApiException`, or nothing happens after tapping **Current Location**, ensure that the **Places API** is enabled on the [Google Cloud Platform](https://console.developers.google.com/). Type **`Places API`** in the search bar and you'll be redirected to the following page.
     ![Google Cloud Platform Places API page](places-api.png)
+
     > If you enabled **Places API** but still nothing happens after tapping, use
     ```URL
     https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=YOUR_API_KEY
@@ -2074,11 +2093,11 @@ In this section, you will test the three different types of annotations.
 
     ![Point added onto map](added-point.png)
 
-10.  To add a `polyline` to the map, select the **`Polyline`** option and tap different places on the map to add multiple points. The added points will be connected with a line.
+13.  To add a `polyline` to the map, select the **`Polyline`** option and tap different places on the map to add multiple points. The added points will be connected with a line.
 
     ![Add polyline to map](add-polyline.png)
 
-11.  To add a polygon, select the **Polygon** option and tap different places on the map to add multiple points. The points are connected in the order that they appear in the list within the panel and take up the least amount of area.
+14.  To add a polygon, select the **Polygon** option and tap different places on the map to add multiple points. The points are connected in the order that they appear in the list within the panel and take up the least amount of area.
 
     ![Add polygon to map](add-polygon.png)
 
@@ -2136,7 +2155,7 @@ In this section you will customize the map markers based on the customer's count
 
     ![Marker Legend](legend.png)
 
-    With clustering enabled, notice that clustered markers turn grey if the markers in the cluster are located in different countries.
+    With clustering enabled, notice that clustered markers turn white if the markers in the cluster are located in different countries.
 
 [OPTION END]
 
@@ -2180,7 +2199,7 @@ In this section you will customize the map markers based on the customer's count
 
     ![Marker Legend](legend.png)
 
-    With clustering enabled, notice that clustered markers turn grey if the markers in the cluster are located in different countries.
+    With clustering enabled, notice that clustered markers turn white if the markers in the cluster are located in different countries.
 
 [OPTION END]
 
@@ -2209,7 +2228,7 @@ In this section, an `EsriFioriMapView` will be used.
     }
     ```
 
-3.  Add the following dependency to the app's `build.gradle` file:
+3.  Add the following dependency to the app's `build.gradle` file and click **Sync Now**.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
@@ -2445,7 +2464,7 @@ In this section, an `EsriFioriMapView` will be used.
 
 12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity.class`**.
 
-13.  Replace `CustomersMapActivity.class` with **`CustomersFioriEsriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
+13.  Replace `CustomersFioriMapActivity.class` with **`CustomersFioriEsriMapActivity.class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
 
 14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
 
@@ -2484,7 +2503,7 @@ In this section, an `EsriFioriMapView` will be used.
     }
     ```
 
-3.  Add the following dependency to the app's `build.gradle` file.
+3.  Add the following dependency to the app's `build.gradle` file and click **Sync Now**.
 
     ```Gradle
     implementation group: 'com.sap.cloud.android', name: 'esri-maps', version: sdkVersion
@@ -2494,7 +2513,7 @@ In this section, an `EsriFioriMapView` will be used.
 
 5.  Right-click and choose **`New > Activity > Empty Activity`**.
 
-6.  Set the Activity Name to be **`CustomersFioriEsriMapActivity`**.
+6.  Set **Activity Name** to be **`CustomersFioriEsriMapActivity`**.
 
 7.  Click **Finish**.
 
@@ -2666,7 +2685,7 @@ In this section, an `EsriFioriMapView` will be used.
                             .or(Customer.country.equal("CA"))
                             .or(Customer.country.equal("MX")))
             val sapServiceManager = (application as SAPWizardApplication).sapServiceManager
-            val espmContainer = sapServiceManager.eSPMContainer
+            val espmContainer = sapServiceManager?.eSPMContainer
             espmContainer?.getCustomersAsync(query, { customers: List<Customer> ->
                 for (customer in customers) {
                     addCustomerMarkerToMap(customer)
@@ -2706,7 +2725,7 @@ In this section, an `EsriFioriMapView` will be used.
 
 12.  On Windows, press **`Ctrl+F`**, or, on a Mac, press **`command+F`**, and search for **`CustomersFioriMapActivity::class`**.
 
-13.  Replace `CustomersMapActivity::class` with **`CustomersFioriEsriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
+13.  Replace `CustomersFioriMapActivity::class` with **`CustomersFioriEsriMapActivity::class`** so that when the user taps on **Customers**, the app will navigate to the newly added activity with the Fiori-Esri map on it.
 
 14.  On Windows, press **`Ctrl+Shift+N`**, or, on a Mac, press **`command+Shift+O`**, and type **`AndroidManifest`** to open `AndroidManifest.xml`.
 
@@ -2728,7 +2747,7 @@ In this section, an `EsriFioriMapView` will be used.
 
 [OPTION END]
 
->Because `Esri` maps use a native library. And some Android devices have 64-bit processors, these devices generate and check the `arm64` folder to load a native library. So, if you cannot run the app properly in this step, try the following solution:
+>Because `Esri` maps use a native library, and some Android devices have 64-bit processors, these devices generate and check the `arm64` folder to load a native library. So, if you cannot run the app properly in this step, try the following solution:
 
 >1.  Add the following filters to the `defaultConfig` section in your app module's `build.gradle` file. When your device tries to run your app, it will not generate any folders and will use the existing native library.
     ```Gradle
