@@ -112,6 +112,8 @@ yo easy-ui5:newmodel
 
 Again, please accept the modification of the manifest file.
 
+> The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.yaml` if you don't like it.
+
 
 [DONE]
 [ACCORDION-END]
