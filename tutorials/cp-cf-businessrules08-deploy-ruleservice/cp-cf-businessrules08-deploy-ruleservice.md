@@ -12,7 +12,6 @@ primary_tag: products>sap-cloud-platform-business-rules
 ### You will learn
   - How to deploy a rule service to the consumer application to implement the decision logic
 
-
 Once you have modelled the rule services, you can deploy them to execute the rule set associated to them. In this tutorial, we will deploy the rule services we have created. Using the next tutorial, you can test the decision logic using the Business Rules APIs in SAP API Business Hub.
 
 ---
