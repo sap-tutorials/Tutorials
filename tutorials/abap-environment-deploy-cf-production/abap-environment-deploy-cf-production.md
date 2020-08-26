@@ -5,6 +5,8 @@ description: Run your SAP Fiori application with SAP Business Application Studio
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
@@ -153,10 +155,13 @@ time: 15
 
   5. Configure data source, system and service:
      - Data source: **Connect to SAP System**
-     - System: **`your_abap_trial_instance`**
+     - System: **`New System`**
+     - ABAP Environment: **`<your_abap_trial_instance>`**
      - Service: **`ZUI_C_TRAVEL_M_XXX`**
 
      Click **Next >**.
+
+     The destination service is: **`abap-cloud-<your_abap_trial_instance>(SCP)`**.
 
     ![object](studio19.png)
 
@@ -173,7 +178,7 @@ time: 15
 
     ![object](studio21.png)
 
-    HINT: Your **application name must** be in **lowercase letters**.
+    HINT: Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
 [DONE]
 [ACCORDION-END]

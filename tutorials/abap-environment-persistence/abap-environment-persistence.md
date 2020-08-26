@@ -189,11 +189,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![save and activate](activate2.png)
 
-  6. Switch to your database table and press `F8` to see your data.
+  6. Check your result. Therefore open your database table **`ZTRAVEL_XXX`** and press `F8` to see your data.
+     Now the dictionary tables are filled with data.
 
       ![Create ABAP class](class4.png)
-
-     Now the dictionary tables are filled with data.
 
 [DONE]
 [ACCORDION-END]
