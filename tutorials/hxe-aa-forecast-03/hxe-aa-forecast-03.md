@@ -3,7 +3,7 @@ title: Import the Time series datasets  (Forecast App)
 description: Learn how to easily import flat dataset files in your SAP HANA, express edition instance using the Design-Time objects and Core Data Services (CDS) features
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 20
 ---
 
@@ -227,7 +227,7 @@ COLUMN TABLE "aa.forecast.db.data::CashFlows" (
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file named **`CashFlows_extrapredictors.hdbtable`** in the **`forecast/db/src/data`** folder.
 
@@ -268,7 +268,7 @@ COLUMN TABLE "aa.forecast.db.data::CashFlows_extrapredictors" (
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file named **`KxDesc_CashFlows_extrapredictors.hdbtable`** in the **`forecast/db/src/data`** folder.
 
@@ -294,7 +294,7 @@ COLUMN TABLE "aa.forecast.db.data::KxDesc_CashFlows_extrapredictors" (
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 
 ### **Lag 1 And Cycles**
@@ -315,7 +315,7 @@ COLUMN TABLE "aa.forecast.db.data::Lag1AndCycles" (
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file named **`Lag1AndCyclesAndWn.hdbtable`** in the **`forecast/db/src/data`** folder.
 
@@ -333,7 +333,7 @@ COLUMN TABLE "aa.forecast.db.data::Lag1AndCyclesAndWn" (
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 ### **Ozone**
 
@@ -353,7 +353,7 @@ COLUMN TABLE "aa.forecast.db.data::Ozone"(
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 ### **Trend And Cycles**
 
@@ -373,7 +373,7 @@ COLUMN TABLE "aa.forecast.db.data::TrendAndCyclic"(
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file named **`TrendAndCyclicAndWn.hdbtable`** in the **`forecast/db/src/data`** folder.
 
@@ -391,7 +391,7 @@ COLUMN TABLE "aa.forecast.db.data::TrendAndCyclicAndWn"(
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file named **`TrendAndCyclicAnd_4Wn.hdbtable`** in the **`forecast/db/src/data`** folder.
 
@@ -409,7 +409,7 @@ COLUMN TABLE "aa.forecast.db.data::TrendAndCyclicAnd_4Wn" (
 );
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -534,7 +534,7 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![plus](00-save.png) icon from the menu.
+Save the file using the ![plus](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]

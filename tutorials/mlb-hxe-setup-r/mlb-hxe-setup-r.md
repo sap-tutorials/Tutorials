@@ -9,18 +9,23 @@ time: 40
 
 ## Prerequisites  
 - [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html)
+- Understanding of the basic Linux administration
 
 ## Details
 ### You will learn
-The pre-built version of R are not compiled with dynamic/shared libraries enable which is required for the SAP HANA integration.
+How to install and to configure the R integration with SAP HANA, express edition.
+
+[ACCORDION-BEGIN [Step 1: ](Understand the setup)]
+
+The pre-built versions of R are not compiled with dynamic/shared libraries, which are required for the SAP HANA integration.
 
 Therefore, you must compile the R package from its source code with the dynamic/shared libraries (`--enable-R-shlib`).
 
-At the end, you will also test the configuration by uploading one of the R built-in dataset (Iris).
+At the end, you will also test the configuration by uploading one of the R built-in datasets (`Iris`).
 
 Some elements of configuration, such as authentication or SSL, will not be covered in this tutorial.
 
-For further details, you can consult the [SAP HANA R Integration Guide](https://help.sap.com/viewer/a78d7f701c3341339fafe4031b64f015/2.0.02/en-US/dbad714484d242789688a551fbdf5573.html).
+For further details, you can consult the [SAP HANA R Integration Guide](https://help.sap.com/viewer/a78d7f701c3341339fafe4031b64f015/2.0.04/en-US/dbad714484d242789688a551fbdf5573.html).
 
 It also includes a section dedicated to debugging and tracing.
 
@@ -28,17 +33,17 @@ To process R code in the context of the SAP HANA database, the R code is embedde
 
 The SAP HANA database uses an external R environment to execute this R code, similarly to native database operations like joins or aggregations.
 
-This allows the application developer to elegantly embed R function definitions and calls within `SQLScript` and submit the entire code as part of a query to the database.
+This allows the application developer to elegantly embed R function definitions and calls within SAP HANA SQLScript and to submit the entire code as part of a query to the database.
 
 ![SAP HANA R integration](00-0.png)
 
 The figure above shows three main components of the integrated solution:
 
- - the SAP HANA based application
- - the SAP HANA database
+ - the SAP HANA based application,
+ - the SAP HANA database,
  - the R environment.
 
-When the calculation model plan execution reaches an R-operator, the calculation engine's R-client issues a request through the `Rserve` mechanism to create a dedicated R process on the R host.
+When the calculation model plan execution reaches an R-operator, the SAP HANA calculation engine's R-client issues a request to the `Rserve` service that creates a dedicated R process on the R host.
 
 Then, the R-Client efficiently transfers the R function code and its input tables to this R process, and triggers R execution.
 
@@ -48,7 +53,10 @@ Since the internal column-oriented data structure used within the SAP HANA datab
 
 A key benefit of having the overall control flow situated on the database side is that the database execution plans are inherently parallel and, therefore, multiple R processes can be triggered to run in parallel without having to worry about parallel execution within a single R process.
 
-[ACCORDION-BEGIN [Step 1: ](Create a dedicateduser)]
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Create a dedicated user)]
 
 As a best practice, it is recommended to create a dedicated user to run your R activities.
 
@@ -81,7 +89,7 @@ sudo su -l radm
 
 [ACCORDION-BEGIN [Step 1: ](Install C compiler & required packages)]
 
-To complete the Jupyter setup, you will need some additional packages
+To complete the setup, you will need some additional packages
 
 |-----------------------|-------------------|-------------------|
 |`xorg-x11-devel` 		|`gcc-fortran` 		|`texinfo` 			|
@@ -110,11 +118,7 @@ Installed Products:
 ------------------------------------------
 ```
 
-If your system is marked as *Not Registered*, then you will need to register  with `SUSEConnect` using your registration code and email:
-
-```shell
-sudo SUSEConnect -r <registration code> -e <registration email>
-```
+If your system is marked as *Not Registered*, then you will need to register it with `SUSEConnect`. The registration details depend on your system, and the registration process is not a part of this tutorial.
 
 Once registered, you will be able to list the available extensions using the following command:
 
@@ -124,29 +128,17 @@ sudo SUSEConnect --list-extension
 
 You can then activate these extensions/repositories using the following commands:
 
-The following extensions/repositories are required to install the Python packages dependencies:
+```
+sudo SUSEConnect -p <module>
+```
 
-- SUSE Linux Package for SAP Applications 12 SP2
+Make sure to adjust the module/version name `<module>` based on the output from the **`--list-extension`** executed previously.
 
-	```shell
-	sudo SUSEConnect -p SLES_SAP/12.2/x86_64
-	```
+The following extensions/repositories are required to install the required dependencies:
 
-- SUSE Linux Enterprise Software Development Kit 12 SP2
-
-	```shell
-	sudo SUSEConnect -p sle-sdk/12.2/x86_64
-	```
-
-- `Toolchain` Module
-
-	```shell
-	sudo SUSEConnect -p sle-module-toolchain/12/x86_64
-	```
-
-Make sure to adjust the version/extension name based on the result from the ***`--list-extension`*** result.
-
-These commands will be successful only if you have registered your system with `SUSEConnect`:
+- SUSE Linux Enterprise Software Development Kit,
+- Tool chain Module,
+- SUSE Linux Package for SAP Applications.
 
 Then, you can clean and refresh the repository cache:
 
@@ -154,7 +146,7 @@ Then, you can clean and refresh the repository cache:
 sudo zypper refresh
 ```
 
-Then, you can execute the following command to install the compiler:
+Execute the following command to install the compiler:
 
 ```shell
 sudo zypper install --type pattern Basis-Devel
@@ -233,10 +225,12 @@ which should return:
 
 ```
 java version "1.8.0_xx"
-Java(TM) SE Runtime Environment (build 1.8.0_xx-yyy)
+...
 ```
 
-If you don't have it yet installed, you can check the following link for download link and installation instructions : <https://tools.hana.ondemand.com/#cloud>
+### If you don't have `java` installed...
+
+... you can check the following link for download link and installation instructions : <https://tools.hana.ondemand.com/#cloud>
 
 Using the RPM option is most likely the easiest, as you will have to simply run the following command from your terminal console (where **<version>** needs to be adjusted based on the downloaded version):
 
@@ -246,7 +240,7 @@ sudo rpm -ivh <rpm directory>/sapjvm-<version>-linux-x64.rpm
 
 Then you will need to update the "alternatives" and enable your flavor of java using the following commands:
 
-```bash
+```shell
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/java/sapjvm_8_latest/bin/java" 1
 sudo update-alternatives --set java /usr/java/sapjvm_8_latest/bin/java
 ```
@@ -275,16 +269,16 @@ tar -xf ~/texinfo-6.5.tar.gz
 
 cd ~/texinfo-6.5
 
-./configure --prefix=/usr --disable-static > install.log
+./configure --prefix=/usr --disable-static > install-texinfo.log
 
-make clean >> install-textinfo.log
-make >> install-textinfo.log
-make info >> install-textinfo.log
+make clean >> install-texinfo.log
+make >> install-texinfo.log
+make info >> install-texinfo.log
 
-sudo make install >> install-textinfo.log
+sudo make install >> install-texinfo.log
 sudo chmod -R 755 /usr/share/texinfo
 
-make clean >> install-textinfo.log
+make clean >> install-texinfo.log
 rm ~/texinfo-6.5.tar.gz
 ```
 
@@ -303,7 +297,7 @@ No error message should be displayed.
 
 As explained previously, we need to recompile R with `shlib` enabled in order to use it with SAP HANA, express edition.
 
-In this example we will be using a newer version than the one listed in the PAM.
+In this example we will be using a version 3.4.3 of R. Please note that the version 4.x of R will not work with the current tutorial yet.
 
 In the below script, `curl` is used to download the package, but if your machine is not connected to the Internet, you can download manually the `R` package from [https://cran.r-project.org/](https://cran.r-project.org/) and transfer it.
 
@@ -327,7 +321,7 @@ make clean >> install-r.log
 rm ~/R-3.4.3.tar.gz
 ```
 
-To verify that your setups is correct you can run the following command:
+To verify that your setup is correct run the following command:
 
 ```shell
 echo "R.version.string" | R --save -q
@@ -340,7 +334,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step 5: ](Download, compile and install Rserve)]
 
-`Rserve` acts as a socket server (TCP/IP or local sockets) which allows binary requests to be sent to an R process.
+`Rserve` acts as a server (TCP/IP or local sockets) which allows binary requests to be sent to an R process.
 
 Every connection has a separate workspace and working directory.
 
@@ -357,7 +351,7 @@ sudo R
 ```
 Then you can use the following command if your server is connected to the internet:
 
-```shell
+```Rscript
 install.packages("Rserve")
 ```
 
@@ -374,17 +368,17 @@ You can find the archive on the cloud mirror: [https://cloud.r-project.org/src/c
 
 You can pick version 1.7-3.
 
-Type `q()` to quit your R session as super user.
-
 To verify that the `Rserve` package is properly installed, open a new R session and execute the following command:
 
-```shell
+```Rscript
 library("Rserve")
 ```
 
 You should not receive any message after executing the command.
 
-Now, as we installed the `Rserve` as super user, we need to add proper rights to any users executing the following command:
+Type `q()` to quit your R session as super user.
+
+Now that you installed the `Rserve` as a super user, you need to add proper rights to any users executing the following command:
 
 ```shell
 sudo chmod 755 /usr/lib64/R/bin/Rserve
@@ -490,7 +484,7 @@ CREATE COLUMN TABLE IRIS (
 	"Species" VARCHAR(5000)
 );
 
-CREATE PROCEDURE LOAD_IRIS(OUT iris "IRIS")
+CREATE PROCEDURE LOAD_IRIS_RDATAFRAME (OUT iris "IRIS")
 LANGUAGE RLANG AS
 BEGIN
   library(datasets)
@@ -498,17 +492,17 @@ BEGIN
   iris <- cbind(iris)
 END;
 
-CREATE PROCEDURE DISPLAY_IRIS()
+CREATE PROCEDURE SAVE_IRIS_HANATABLE ()
 AS BEGIN
-	CALL LOAD_IRIS(iris);
+	CALL LOAD_IRIS_RDATAFRAME (iris);
 	INSERT INTO IRIS SELECT * FROM  :iris;
 END;
 
-CALL DISPLAY_IRIS();
+CALL SAVE_IRIS_HANATABLE();
 SELECT * FROM IRIS;
 ```
 
-The Iris dataset will display the measurements in centimeters of the sepal length and width and petal length and width  for about 50 flowers from each of 3 species of iris. Therefore, the result should display 150 rows.
+The Iris dataset will display the measurements in centimeters of the sepal length and width and petal length and width for about 50 flowers from each of 3 species of iris.
 
 Execute the following SQL and provide an answer to the question below then click on **Validate**.
 

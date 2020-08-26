@@ -256,7 +256,7 @@ In the manifest file you have to define a hostname for your application and add 
       instances: 1
       memory: 128M
       routes:
-        - route: product-list-ap25.cf.eu10.hana.ondemand.com
+        - route: product-list-ap25.cfapps.eu10.hana.ondemand.com
       path: myapp
       buildpacks:
         - nodejs_buildpack  

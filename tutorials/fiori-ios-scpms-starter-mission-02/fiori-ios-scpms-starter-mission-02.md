@@ -379,24 +379,60 @@ Before we continue implementing the Table View's data source and delegate method
 
 Thanks to the generated data service and proxy classes, we don't have to implement much to load data from the sample OData service.
 
-1. Before you can actually call the data service, you need to retrieve an instance of the `ESPMContainer`. The data service is globally accessible through the onboarding session. Implement the following lines of code directly below the logger instance as class properties:
+1. You need to retrieve an instance of the `ESPMContainer` to be able to have access to the generated data layer. The data service is globally accessible through the onboarding session. Depending on how you generated your Xcode project you might support Online or Offline OData. This has an effect on what OData controller you use to retrieve the data service.
 
-    ```Swift
-    /// First retrieve the destinations your app can talk to from the AppParameters.
-    let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+**For Online OData**
 
-    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course we only have one destination here. Handle the errors in case the OData controller is nil. We are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
-    var dataService: ESPMContainer<OnlineODataProvider>? {
-        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-            AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
-            return nil
-        }
-        return dataService
+Add the following import statement to your class:
+
+```Swift
+import SAPOData
+
+```
+
+Implement the following lines of code directly below the logger instance as class properties:
+
+```Swift
+/// First retrieve the destinations your app can talk to from the AppParameters.
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+/// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course we only have one destination here. Handle the errors in case the OData controller is nil. We are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
+var dataService: ESPMContainer<OnlineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
     }
+    return dataService
+}
 
-    ```
+```
 
-    > Important here is that the class `Comsapedmsampleservicev2OnlineODataController` can vary in name depending on your destination and if you're using online or offline OData. In example I am using Online OData as I have removed the Offline capability before generating the app, which is why my class name has Online in it. By default, the SAP Mobile Services creates each mobile app configuration with Offline OData, which changes the name to `Comsapedmsampleservicev2OfflineODataController` in the case of using the Sample ESPM Service.
+**For Offline OData**
+
+Add the following import statement to your class:
+
+```Swift
+import SAPOfflineOData
+
+```
+
+Implement the following lines of code directly below the logger instance as class properties:
+
+```Swift
+
+/// First retrieve the destinations your app can talk to from the AppParameters.
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+var dataService: ESPMContainer<OfflineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
+}
+
+```
+
 
 2. To fetch available customers, implement the following method below the closing bracket of the `viewDidLoad()` method:
 

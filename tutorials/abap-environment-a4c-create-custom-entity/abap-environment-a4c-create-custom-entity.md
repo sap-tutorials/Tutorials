@@ -7,6 +7,9 @@ tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-clo
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
+##Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+
 ## Details
 ### You will learn
   - How to implement a query manually for your CDS custom entity

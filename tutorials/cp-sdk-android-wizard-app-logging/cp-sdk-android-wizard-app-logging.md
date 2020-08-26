@@ -103,7 +103,7 @@ time: 15
 
     ![Settings menu opened](settings_menu.png)
 
-6.  Examine the **Logcat** (Located at the bottom of Android Studio, click it and you can see logs). In the filter, add the name of the class that we are interested in seeing the log from: **`com.sap.wizapp.mdui.EntitySetListActivity`**.
+6.  Examine the **Logcat** (located at the bottom of the Android Studio screen, click it and you can see the logs). In the filter, add the name of the class that we are interested in seeing the log from: **`com.sap.wizapp.mdui.EntitySetListActivity`**.
 
     Notice that the messages were logged since the log level of the app was set to **Debug** or **Path**.
 
@@ -132,29 +132,28 @@ The SDK libraries also log output based on the app's log level.
 
     ![Log upload succeeded](log_uploaded.png)
 
-2.  In the Mobile Services cockpit, navigate to **Analytics** > **Logs** > **Technical Logs**.
+2.  In the [Mobile Services cockpit](https://mobile-service-cockpit-web.cfapps.eu10.hana.ondemand.com/), navigate to **Mobile Applications** > **Native/Hybrid** > **com.sap.wizapp** > **Mobile Client Log Upload**.
 
-    ![Analytics > Logs > Technical Logs](select_and_download_log.png)
+    ![Mobile Applications > Native/Hybrid > com.sap.wizapp > Mobile Client Log Upload](select_and_download_log.png)
 
-3.  You should be able to see the log you just uploaded in the list of technical logs. You can inspect the log in the browser by clicking on its table entry, or you can download the text version by selecting it and clicking **Download**. If the log doesn't appear immediately, wait for a few moments, then click **Go** to refresh the view.
+3.  Select the **Logs** tab and you will see the log you just uploaded in the list. You can download the text messages of the logs by clicking the **Download** sign. If the log doesn't appear immediately, wait for a few moments, then click **Go** to refresh the view.
 
     ![View log](view_log.png)
 
-4.  Additionally, you can access the logs locally on an emulator. You can browse the file system of an Android emulator using the **Device File Explorer** to view the log files as shown below, in **data** > **data** > **com.sap.wizapp** (or the package name of your project) > **files**.
+4.  You can inspect the log details in the browser by clicking on its table entry. The following screenshot contains the details of the first log.
+
+    ![View log details](view_log_details.png)
+
+5.  Additionally, you can access the logs locally on an emulator. You can browse the file system of an Android emulator using the **Device File Explorer** to view the log files as shown below, in **data** > **data** > **com.sap.wizapp** (or the package name of your project) > **files**.
 
     ![View logs in emulator](local_log_location.png)
 
-5.  You can manage the initial log level of the application and the ability for mobile services to accept logs using the **Client Policies** feature, as shown below.
+6.  You can manage the initial log level of the application and the ability for mobile services to accept logs on the **Configuration** page, as shown below.
 
     ![Log Policy](client_policies.png)
 
-6.  You can also set the log level of an individual registration in the **Management Cockpit**, as shown below. Click **User Registrations** and then select certain **Registration ID** to change **Log Settings**. In the pop-up, you can set the log level for this specific registration.
 
-    ![User Registrations](log_settings.png)
-
-    ![User Registration Log Settings](user_reg_log_setting.png)
-
->For further information on logging, see [Logging](https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/logging.html).
+>For further information on logging, see [Logging](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/features/logging/overview.html).
 
 Congratulations! You have explored how you can use the logging feature to debug or support a deployed application.
 

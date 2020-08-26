@@ -3,7 +3,7 @@ title: Analyze the Time series datasets (Forecast App)
 description: Understanding the data set structure and content by extracting some statistics will allow you to better pick your algorithm and the associated setting
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 30
 ---
 
