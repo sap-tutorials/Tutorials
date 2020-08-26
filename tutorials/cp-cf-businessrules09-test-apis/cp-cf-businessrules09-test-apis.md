@@ -46,7 +46,7 @@ Note the following parameters from the service keys of your business rules insta
 
 [ACCORDION-BEGIN [Step 2: ](Configure the environment)]
 
-Here, you need to configure the environment to link it to the business rules project which you have created in Manage Rules Project application. Since Business Rules APIs are based on OAuth 2.0 authentication, you need to provide the authentication details too.
+Here, you need to configure the environment to link it to the business rules project which you have created in Manage Rule Projects application. Since Business Rules APIs are based on OAuth 2.0 authentication, you need to provide the authentication details too.
 
 1. Choose **Configure Environments**.
 
@@ -82,7 +82,7 @@ Then, choose **Save**.
 
     ![Configure environment](testing8.png)
 
-2. Fetch the rule service ID from Manage Rules Project application. This is required for the API JSON payload.
+2. Fetch the rule service ID from Manage Rule Projects application. This is required for the API JSON payload.
 
     In the **Rule services** tab, choose **Settings** icon.
 
