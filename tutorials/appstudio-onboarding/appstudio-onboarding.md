@@ -103,8 +103,6 @@ In this step, you will add the SAP Business Application Studio subscription to a
 
     !![sapbusinessapplicationstudioloaded](2020-03 AppStudio Loaded_.jpg)
 
-Congratulations. With this, you have successfully completed the setup of SAP Business Application Studio.
-
 [VALIDATE_4]
 [ACCORDION-END]
 
