@@ -13,6 +13,7 @@ primary_tag: products>sap-cloud-platform-business-rules
   - How to configure the value help for a data object
 
 Data objects are the building blocks of a project. It can hold the input as well as output information of a business rule.
+
 In this tutorial, we will create data objects which hold the employee details and the details of the equipment assigned to the employee.
 
 ---
