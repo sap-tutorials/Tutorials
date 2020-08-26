@@ -109,3 +109,6 @@ Congratulations. With this, you have successfully completed the setup of SAP Bus
 [ACCORDION-END]
 
 ---
+Congratulations. With this, you have successfully completed the setup of SAP Business Application Studio.
+
+---
