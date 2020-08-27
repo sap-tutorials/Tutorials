@@ -11,9 +11,9 @@ primary_tag: products>sap-cloud-platform-business-rules
 ### You will learn
   - How to create role collections and assign it to a user
 
+Add the roles required to access the **Manage Rule Projects** application to the role collection and assign the role collection to your users.
 
 ---
-Add the roles required to access the **Manage Rules Project** application to the role collection and assign the role collection to your users.
 
 [ACCORDION-BEGIN [Step 1: ](Create a role collection)]
 

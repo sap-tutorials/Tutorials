@@ -363,14 +363,14 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
     }
     ```
 
-3. Add a new history item when the controller of the list view (`webapp/controller/Products.controller.js`.) is initialized.
+3. Add a new history item when the controller of the list view (`webapp/controller/Products.controller.js`) is initialized.
 
     ```JavaScript
     onInit : function () {
       this.addHistoryEntry({
         title: "All Products",
         icon: "sap-icon://product",
-        intent: "#display-data"
+        intent: "#display-uimodule"
       }, true);
     },
     ```
@@ -395,7 +395,7 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
             this.addHistoryEntry({
               title: "Product - " + oView.getBindingContext().getProperty("ProductName"),
               icon: "sap-icon://product",
-              intent: "#display-data&/Product/" + iProductId
+              intent: "#display-uimodule&/Product/" + iProductId
             });
           }.bind(this)
         }
