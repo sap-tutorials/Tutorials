@@ -3,7 +3,7 @@ title: Display from the XS OData service (Forecast App)
 description: Understand and implement the basics of an SAPUI5 application to display your Forecasting results exposed with an XS OData service
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
 time: 15
 ---
 
@@ -13,7 +13,7 @@ time: 15
 ## Details
 ### You will learn
 - How to use inheritance in controller
-- How use JSON models
+- How to use JSON models
 - Create and use Formatters
 - Configure the Application Router
 - Configure the Application Manifest
@@ -24,24 +24,16 @@ time: 15
 
 Open the Web IDE, and login using the **`XSA_DEV`** credentials.
 
-Switch to the ***Development*** perspective using the ![Web IDE Development](00-development.png) icon.
+Switch to the **Development** tool using the ![Web IDE Development](00-development.png) icon.
 
 ![Web IDE](01-01.png)
-
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create a Base Controller)]
 
-In order to reuse some JavaScript functions over different controllers, you will define a ***base*** controller that will be reused over replacing the ***`sap/ui/core/mvc/Controller`*** controller.
+In order to reuse some JavaScript functions over different controllers, you will define a *base* controller that will be reused over replacing the **`sap/ui/core/mvc/Controller`** controller.
 
 In the left side panel, expand the **`forecast/html/resources/webapp/base`** tree node.
 
@@ -50,9 +42,7 @@ Right click on the **`base`** folder node from the tree, and select **New > File
 Enter **`Controller.js`** as the file name, then click on **OK**.
 
 
-The default application controller is located in:
-
- - **`forecast/html/resources/webapp/base/Controller.js`**
+The default application controller is located in: **`forecast/html/resources/webapp/base/Controller.js`**
 
 These updates are made in preparation for the next steps.
 
@@ -137,7 +127,7 @@ sap.ui.define([
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -152,15 +142,11 @@ Right click on the **`model`** folder node from the tree, and select **New > Fil
 
 Enter **`config.json`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/model/config.json
-```
+This is the full path of the created file: `forecast/html/resources/webapp/model/config.json`.
 
 Paste the following content:
 
-```JavaScript
+```JSON
  {
  	"enableSelectAlgorithm": true,
  	"enableSelectDataset": false,
@@ -168,20 +154,16 @@ Paste the following content:
  }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 
 Enter **`default.json`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/model/default.json
-```
+This is the full path of the created file: `forecast/html/resources/webapp/model/default.json`.
 
 Paste the following content:
 
-```JavaScript
+```JSON
 {
 	"algorithms": {
 		"label": "Algorithms",
@@ -328,7 +310,7 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -343,11 +325,7 @@ Right click on the **`model`** folder node from the tree, and select **New > Fil
 
 Enter **`formatter.js`** as the file name, then click on **OK**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/model/formatter.js
-```
+This is the full path of the created file: `forecast/html/resources/webapp/model/formatter.js`.
 
 Paste the following content:
 
@@ -392,7 +370,7 @@ sap.ui.define([], function() {
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -401,7 +379,7 @@ Save the file using the ![save](00-save.png) icon from the menu.
 
 The XS Advanced Application Router Configuration file (`xs-app.json`) contains the configuration information used by the application router.
 
-For more details on the syntax, please check the online [documentation](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/5f77e58ec01b46f6b64ee1e2afe3ead7.html).
+For more details on the syntax, please check the online [documentation](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.04/en-US/5f77e58ec01b46f6b64ee1e2afe3ead7.html).
 
 Open the **`xs-app.json`** file located in the **`forecast/html`** folder.
 
@@ -425,7 +403,7 @@ Replace the current content by the following:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -519,7 +497,7 @@ Update the **`"routing"`** section like that:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -534,11 +512,7 @@ Expand the **`forecast/html/resources/webapp/fragment`** folder.
 
 Create a new file **`display_list.fragment.xml`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/fragment/display_list.fragment.xml
-```
+This is the full path of the created file: `forecast/html/resources/webapp/fragment/display_list.fragment.xml`.
 
 Paste the following content:
 
@@ -578,15 +552,11 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Create a new file **`display_data.fragment.xml`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/fragment/display_data.fragment.xml
-```
+This is the full path of the created file: `forecast/html/resources/webapp/fragment/display_data.fragment.xml`.
 
 Paste the following content:
 
@@ -635,17 +605,13 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 Expand the **`forecast/html/resources/webapp/fragment/data`** folder.
 
 Create a new file **`CashFlows_extrapredictors.fragment.xml`**.
 
-This is the full path of the created file:
-
-```
-forecast/html/resources/webapp/fragment/data/CashFlows_extrapredictors.fragment.xml
-```
+This is the full path of the created file: `forecast/html/resources/webapp/fragment/data/CashFlows_extrapredictors.fragment.xml`.
 
 Paste the following content:
 
@@ -715,16 +681,14 @@ Paste the following content:
 </core:FragmentDefinition>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Update the default controller)]
 
-The default application controller is located in:
-
- - **`forecast/html/resources/webapp/controller/demo.controller.js`**
+The default application controller is located in **`forecast/html/resources/webapp/controller/demo.controller.js`**.
 
 These updates are made in preparation for the next steps.
 
@@ -787,16 +751,14 @@ sap.ui.define([
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Update the default view)]
 
-The default application controller is located in:
-
- - **`forecast/html/resources/webapp/view/demo.view.xml`**
+The default application controller is located in **`forecast/html/resources/webapp/view/demo.view.xml`**.
 
 These updates are made in preparation for the next steps.
 
@@ -828,7 +790,7 @@ Open the **`demo.view.xml`** file and replace the existing code with the followi
 </mvc:View>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu.
+Save the file using the ![save](00-save_hxe2-0-04.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -843,7 +805,7 @@ Once the application is started, the application will open in a new tab/window o
 
 This will open a web page with the following content:
 
-![Web IDE](05-02.png)
+![Web IDE](05-02__2020-08-12_16-48-59.png)
 
 [DONE]
 [ACCORDION-END]
@@ -854,7 +816,7 @@ Select **APL Forecast Algorithm**, then pick the **Cash Flows with date & cash f
 
 Click on **Next**.
 
-![Applications](06-01.png)
+![Applications](06-01__2020-08-12_16-58-12.png)
 
 Provide an answer to the question below then click on **Validate**.
 

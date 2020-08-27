@@ -30,20 +30,20 @@ Throughout this tutorial, objects name include a suffix, such as `XXX`. Always r
 [ACCORDION-BEGIN [Step 1: ](Add value help)]
 To make the input fields more useful, you will now add input value help to the field **`AgencyID`**.
 
-1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency_U`**. Add the following annotation to your field **`AgencyID`**.
+1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency`**. Add the following annotation to your field **`AgencyID`**.
 
     ```CDS
-    @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency_U', element: 'AgencyID'}  }]
+    @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency', element: 'AgencyID'}  }]
 
     ```
 
-2. You also need to expose this second entity in the OData service. To do this, add the entity **`/DMO/I_Agency_U`** to your service definition, so the complete definition looks like this:
+2. You also need to expose this second entity in the OData service. To do this, add the entity **`/DMO/I_Agency`** to your service definition, so the complete definition looks like this:
 
     ```CDS
     @EndUserText.label: 'Service exposes Travel Data 005'
     define service Z_EXPOSE_TRAVEL_005 {
       expose Z_C_TRAVEL_DATA_005 as Travel;
-      expose /DMO/I_Agency_U as Agency;
+      expose /DMO/I_Agency as Agency;
     }
 
     ```
@@ -81,8 +81,7 @@ Next, you will make the **Agency** field more readable by adding the agency name
 CDS associations are simply specifications of joins, always in the same place in the syntax. The main advantage of an association is reuse: Once you have specified an association once, you can conveniently string several associations together in a path. In this case, however, you will use a simple association.
 
 For more information, see:
-  - ABAP Keyword Documentation: [CDS - Associations](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abencds.htm)
-  - By Horst Keller: [From Open SQL Joins to CDS Associations](https://blogs.sap.com/2016/08/12/from-open-sql-joins-to-cds-associations/)
+- ABAP Keyword Documentation: [CDS - Associations](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abencds.htm)
 
 1. Add the following 2 statements to your CDS view, **`Z_C_TRAVEL_DATA_XXX`**, just before the list of fields. The first statement creates an association from the source CDS entity **`Z_C_TRAVEL_DATA_XXX`** to the target CDS entity **`/DMO/I_Agency`**, joined on the field **`AgencyID`**. The source entity is represented by the alias **`$projection`**, because you cannot use the original name in a path statement. The target entity is represented by its alias name **`_Agency`**.
 
@@ -155,7 +154,7 @@ You will use a simple one to easily merge two fields. The two fields are provide
         association [1..1] to /DMO/I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
     ```
 
-2. After `CustomerID`, add a comma, then add the function **`concat_with_space`** using auto-complete ( **`Ctrl+Space`** ); then add the alias **`as Addressee`**.
+2. Ensure there is a comma after `CustomerID`, then add the function **`concat_with_space`** using auto-complete ( **`Ctrl+Space`** ); then add the alias **`as Addressee`**.
 
     ```CDS
       concat_with_space(_Customer.Title, _Customer.LastName, 1) as Addressee,
@@ -179,7 +178,7 @@ You will use a simple one to easily merge two fields. The two fields are provide
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add currency conversion)]
-It would be nice to find out how much money each **Agency** has received in total. To do this, you first need to convert all the sums paid to one currency. To do this, you will again use a built-in function. For more information, see the ABAP Keyword Documentation: [ABAP CDS - Conversion Functions for Units and Currencies](abencds_f1_conv_func_unit_curr.htm#!ABAP_VARIANT_2@2@)
+It would be nice to find out how much money each **Agency** has received in total. To do this, you first need to convert all the sums paid to one currency. To do this, you will again use a built-in function. For more information, see the ABAP Keyword Documentation: [ABAP CDS - Conversion Functions for Units and Currencies](https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/index.htm?file=abencds_f1_conv_func_unit_curr.htm)
 
 1. Convert the price (**`TotalPrice`**) of each line item to US Dollars. Again, you do this using a built-in conversion function. You simply have to define the variables you are using for amount, source currency, etc, and the built-in function does the rest.
 
@@ -363,5 +362,7 @@ define view Z_C_TRAVELS_xxx
 [VALIDATE_1]
 [ACCORDION-END]
 
+### More information
+[From Open SQL Joins to CDS Associations](https://blogs.sap.com/2016/08/12/from-open-sql-joins-to-cds-associations/)
 
 ---

@@ -32,6 +32,8 @@ author_profile: https://github.com/LindsayBert
 
 [ACCORDION-BEGIN [Step 2: ](Create destination to SAP Gateway Demo System)]
 
+In this step, you'll create connectivity between SAP Cloud Platform and the SAP Gateway Demo system account.
+
 1.  In the left navigation panel, click **Destinations** under **Connectivity**.
 
     !![Open destinations](3-open-destinations.png)
@@ -76,13 +78,13 @@ author_profile: https://github.com/LindsayBert
 
 7. Click **Check Connection** to make sure that everything is working.
 
-    ![Check connection](6-check-connection.png)
+    !![Check connection](6-check-connection.png)
 
     You'll get confirmation that the connection is established.
 
     ![Connection established](7-connection-established.png)
 
-    >Note: This is not an error. The check connection operation tries to open the ES5 URL and gets redirected to the login page.
+    >This is not an error. The check connection operation tries to open the ES5 URL and gets redirected to the login page.
 
 [VALIDATE_6]
 [ACCORDION-END]
