@@ -1,5 +1,5 @@
 ---
-title: Build and deploy Your SAP Fiori App to SAP Cloud Platform Cloud Foundry Environment
+title: Build and Deploy Your SAP Fiori App to SAP Cloud Platform
 description: Build and deploy your SAP Fiori MTA project to your SAP Cloud Platform, Cloud Foundry environment.
 auto_validation: true
 time: 20
