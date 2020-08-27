@@ -218,9 +218,11 @@ Run your new application to test it.
     >SAP Business Application Studio allows you to test your app with resources.
 
 5. To bind to the destination, click the **Bind** icon to the right of the destination resource to get a list of available destinations.
+
     !![Bind to Destination](06-05 AppStudio Run Configurations Bind Destination_.jpg)
 
 6. Select the `ES5` destination from the list.
+
     !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination_.jpg)
 
     >Once the destination has been bound, the **Bind** icon turns green.
@@ -266,9 +268,11 @@ Run your new application to test it.
 
     >You can re-run the app clicking the Start Debugging icon in the **Debug** view or clicking the Run Module icon in the **Run Configurations** view.
 
-Congratulations. With this, you have successfully completed the development of an SAP Fiori app using SAP Business Application Studio, including test-running the app locally in the dev space. In this tutorial, you learned about high productivity tools that are available out-of-the-box in SAP Business Applications Studio, such as: templates and wizards, command palette, Layout Editor, local run, and more.
-
 [DONE]
 [ACCORDION-END]
 
 ---
+
+Congratulations!
+
+With this, you have successfully completed the development of an SAP Fiori app using SAP Business Application Studio, including test-running the app locally in the dev space. In this tutorial, you learned about high productivity tools that are available out-of-the-box in SAP Business Applications Studio, such as: templates and wizards, command palette, Layout Editor, local run, and more.

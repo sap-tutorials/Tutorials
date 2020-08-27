@@ -118,7 +118,9 @@ Access your deployed application in the SAP Cloud Platform cockpit. The steps be
 
 ---
 
-Congratulations. With this, you have successfully completed the deployment of your SAP Fiori app to SAP Cloud Platform using SAP Business Application Studio.
+Congratulations!
+
+With this, you have successfully completed the deployment of your SAP Fiori app to SAP Cloud Platform using SAP Business Application Studio.
 
 In this tutorial, you used high productivity tools that are available out-of-the-box in SAP Business Applications Studio that make it easy to build and deploy applications as well as work in the Cloud Foundry environment.
 

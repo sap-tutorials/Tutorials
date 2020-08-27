@@ -107,6 +107,7 @@ In this step, you will add the SAP Business Application Studio subscription to a
 [ACCORDION-END]
 
 ---
-Congratulations. With this, you have successfully completed the setup of SAP Business Application Studio.
 
----
+Congratulations!
+
+With this, you have successfully completed the setup of SAP Business Application Studio.
