@@ -36,9 +36,9 @@ Verify all of your user information on the web page.   Please be certain your em
 
 Next, read the Terms and Conditions, and check the box next to the line **I have read and understood the Terms and Conditions**.
 
-When ready, click **Register**.
+When ready, click **Register**. This might take a couple of seconds.
 
-The screen will change and the word **Success** will appear.
+The screen will change and the word **Success** will appear.  
 
 ![Gateway Web sign up success](2.png)
 
@@ -65,7 +65,7 @@ The system will request that you change your initial password to a new password 
 
 ![Initial login - change your password](5.png)
 
-When your password is changed, you will see a confirmation dialog.
+When your password is changed, you will see a confirmation dialog. Click **Continue**.
 
 ![Initial login - password change confirmation](6.png)
 
@@ -98,6 +98,6 @@ Enter the URL of the SAP Easy Access page below and click **Validate**.
 ### Problems?  Need Help?
 There are two different forums, depending on what type of trouble you are experiencing.  *Please use the correct one, or it will take longer to answer your questions.*
 
-- For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP NetWeaver Gateway Community](https://www.sap.com/community/topics/gateway.html) Q&A system.  
+- For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP NetWeaver Gateway Community](https://community.sap.com/topics/gateway) Q&A system.  
 
 - For any problems with registration, or password changes, please email <rac-support@sap.com>.

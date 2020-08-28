@@ -3,7 +3,7 @@ title: Analyze the Time series datasets (Forecast App)
 description: Understanding the data set structure and content by extracting some statistics will allow you to better pick your algorithm and the associated setting
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition, topic>machine-learning ]
 time: 30
 ---
 
@@ -19,11 +19,12 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](Time series analysis)]
 
-Most of the content for this steps has been extracted from the Wikipedia article on [**Time series**](https://en.wikipedia.org/wiki/Time_series)
+Most of the content for this steps has been extracted from the Wikipedia article on [**Time series**](https://en.wikipedia.org/wiki/Time_series).
+
 First, here is quick definition of a time series:
 
->  *A time series is a series of indexed data points using a time order.
-  Most commonly, a time series is a sequence taken at successive equally spaced points in time.*
+> A *time series* is a series of indexed data points using a time order.
+  Most commonly, a time series is a sequence taken at successive equally spaced points in time.
 
 Time series are used in statistics, signal processing, pattern recognition, econometrics, mathematical finance, weather forecasting, earthquake prediction, electroencephalography, control engineering, astronomy, communications engineering, and largely in any domain of applied science and engineering which involves temporal measurements.
 
@@ -33,11 +34,7 @@ Time series forecasting is the use of a model to predict future values based on 
 
 Time series data have usually a natural temporal ordering.
 
-In addition, time series models will often make use of the natural one-way ordering of time so that values for a given period will be expressed as deriving in some way from past values, rather than from future values (see time reversibility).
-
 Time series analysis can be applied to real-value, continuous data, discrete numeric data, or discrete symbolic data (i.e. sequences of characters, such as letters and words in the English language).
-
-Time series are very frequently plotted via line charts.
 
 [DONE]
 [ACCORDION-END]
@@ -46,11 +43,11 @@ Time series are very frequently plotted via line charts.
 
 #### **Cash Flows**
 
-The Cash Flows file (`CashFlows.txt`) presents daily measures of cash flows from January 2, 1998 to September, 30 1998. Each observation is characterized by 25 variables described in the following table.
+The Cash Flows file (`CashFlows.csv`) presents daily measures of cash flows from 2001-01-02 to 2002-01-31. Each observation is characterized by 25 variables described in the following table.
 
 | Variable                                                                        | Description                                                        | Example of values
 :---------------------------------------------------------------------------------|--------------------------------------------------------------------|--------------------------
-| Date                                                                            | Day, month and year of the readings                                | A date
+| `Date`                                                                            | Day, month and year of the readings                                | A date
 | <nobr>`Cash`</nobr>                                                             | Cash flow                                                          | A numerical value with n decimals
 | <nobr>`BeforeLastMonday`</nobr>, </br> <nobr>`LastMonday`</nobr>, </br><nobr>`BeforeLastTuesday`</nobr>, </br><nobr>`LastTuesday`</nobr>, </br><nobr>`BeforeLastWednesday`</nobr>, </br><nobr>`LastWednesday`</nobr>, </br><nobr>`BeforeLastThursday`</nobr>, </br><nobr>`LastThursday`</nobr>, </br><nobr>`BeforeLastFriday`</nobr>, </br><nobr>`LastFriday`</nobr> | Boolean variables that indicate if the information is true or false   | 1 if the information is true.
 | <nobr>`Last5WDays`</nobr>, </br><nobr>`Last4WDays`</nobr>                         | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
@@ -61,7 +58,7 @@ The Cash Flows file (`CashFlows.txt`) presents daily measures of cash flows from
 
 #### **Los Angeles Ozone**
 
-The Los Angeles Ozone file (`R_ozone-la.txt`) presents monthly averages of hourly ozone (O3) readings in downtown Los Angeles from 1955 to 1972.
+The Los Angeles Ozone file (`Ozone.csv`) presents monthly averages of hourly ozone (O3) readings in downtown Los Angeles from 1955 to 1972.
 
 Each observation is characterized by 2 variables described in the following table:
 
@@ -88,19 +85,11 @@ Each observation is characterized by 2 variables described in the following tabl
 
 Open the Web IDE, and login using the **`XSA_DEV`** credentials.
 
-Switch to the ***Database Explorer*** perspective using the ![Database Explorer](00-dbexplorer-icon.png) icon.
+Switch to the **Database Explorer** tool using the ![Database Explorer](00-dbexplorer-icon.png) icon.
 
 ![Web IDE](00-dbexplorer.png)
 
-As a reminder the default URL for the Web IDE is:
-
- - `https://hxehost:53075`
-
-A link to the Web IDE can also be found on the ***XSA Controller page*** at:
-
-- `https://hxehost:39030`
-
-Select **HDI Container** connection created previously with a name starting with ***`XSA_DEV`***.
+Select **HDI Container** connection created previously with a name starting with **`XSA_DEV`**.
 
 Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 
@@ -112,7 +101,7 @@ Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 
 [ACCORDION-BEGIN [Step 1: ](Check the row counts)]
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement to check the number of rows:
+Execute the following SQL statement to check the number of rows:
 
 ```SQL
 select 'CashFlow'              as "table name", count(1) as "row count" from "aa.forecast.db.data::CashFlows"  
@@ -147,9 +136,9 @@ The result should be:
 
 [ACCORDION-BEGIN [Step 1: ](Cash Flow)]
 
-As stated earlier, the **Cash Flow** dataset presents daily measures of "cash" flows from January 2, 1998 to September, 30 1998. Each observation is characterized by 25 variables described in the following table.
+As stated earlier, the **Cash Flow** dataset presents daily measures of "cash" flows from 2001-01-02 to 2002-01-31. Each observation is characterized by 25 variables.
 
-### **Visualize the data**
+### **Explore the data**
 
 Let's have a look at the data using the following SQL:
 
@@ -159,7 +148,7 @@ from   "aa.forecast.db.data::CashFlows"
 order by "signal_time" asc;
 ```
 
-And using a generated graph from the Python Math Plot library (`matplotlib`):
+If visualized using Python Math Plot library `matplotlib` (not a part of this exercise; the graph provided for your convenience):
 
 ![Jupyter](02-01.png)
 
@@ -169,7 +158,7 @@ As you can visually notice, it includes:
  - a repeating pattern but with irregular gaps/intervals
  - the trend tends to slightly decline then rise at the end
 
-Also, you can notice that the **peaks** happens at certain intervals, and the data include some kind of ***trend*** that is slightly going down then rising.
+Also, you can notice that the *peaks* happens at certain intervals, and the data include some kind of *trend* that is slightly going down then rising.
 
 ### **Dates & intervals**
 
@@ -252,7 +241,7 @@ The result should be:
 
 As you can notice the average and median values are not in the same range of values which may imply a skewed data distribution.
 
-And using a generated graph from the Python Math Plot library (`matplotlib`), the values in ascending order:
+If the values visualized in ascending order using Python Math Plot library `matplotlib` (not a part of this exercise; the graph provided for your convenience).
 
 ![Jupyter](02-02.png)
 
@@ -260,7 +249,7 @@ As you can notice, at the end of the curve, a small set of data point have reall
 
 ### **Data Distribution**
 
-Now let's have a look at the data distribution using the NTILE function that will partition the dataset into a number of groups based on the value order.
+Now let's have a look at the data distribution using the `NTILE` function that will partition the dataset into a number of groups based on the value order.
 
 This usually helps finding issues with the first and/or the last groups (outliers).
 
@@ -287,7 +276,7 @@ group by tile
 The result should be:
 
 | tile | max     | min     | delta  | `avg`   | median  | delta | `stddev`
-|-----:|--------:|--------:|-------:|--------:|--------:|------:|--------
+|-----:|--------:|--------:|-------:|--------:|--------:|------:|-------:
 | 1    | 2957    | 1580    | 1378   | 2535    | 2665    | 130   | 382
 | 2    | 3513    | 2976    | 538    | 3248    | 3281    | 33    | 183
 | 3    | 3874    | 3521    | 353    | 3695    | 3695    | 0     | 114
@@ -301,7 +290,7 @@ The result should be:
 
 As you can notice the first and last groups both have the delta between min and max but also between average and median higher than any other groups.
 
-The last groups most likely represent all the **peaks** that you saw earlier.
+The last groups most likely represent all the peaks that you saw earlier.
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -312,9 +301,9 @@ Provide an answer to the question below then click on **Validate**.
 
 As stated earlier, the **Los Angeles Ozone** dataset presents monthly averages of hourly ozone (O3) readings in downtown Los Angeles from 1955 to 1972.
 
-Each observation is characterized by 2 variables, a ozone reading value and an average of the hourly ozone readings for the month.
+Each observation is characterized by 2 variables, an ozone reading value and an average of the hourly ozone readings for the month.
 
-### **Visualize the data**
+### **Explore the data**
 
 Let's have a look at the data using the following SQL:
 
@@ -322,14 +311,14 @@ Let's have a look at the data using the following SQL:
 select "signal_time", "signal_value" from "aa.forecast.db.data::Ozone" order by "signal_time" asc;
 ```
 
-And using a generated graph from the Python Math Plot library (`matplotlib`):
+If visualized using Python Math Plot library `matplotlib` (not a part of this exercise; the graph provided for your convenience):
 
 ![Jupyter](03-01.png)
 
 As you can visually notice, the data includes:
- - an irregular sine pattern
- - the oldest data range looks larger than the later data points
- - the trend tends to slightly decline
+ - an irregular sine pattern,
+ - the oldest data range looks larger than the later data points,
+ - the trend tends to slightly decline.
 
 ### **Dates & intervals**
 
@@ -340,7 +329,7 @@ select 'max' as indicator, to_varchar(max("signal_time")) as value
 from   "aa.forecast.db.data::Ozone" union all
 select 'min'             , to_varchar(min("signal_time"))
 from   "aa.forecast.db.data::Ozone" union all
-select 'delta days'      , to_varchar(days_between(min("signal_time"), max("signal_time")))
+select 'delta months'      , to_varchar(months_between(min("signal_time"), max("signal_time")))
 from   "aa.forecast.db.data::Ozone" union all
 select 'count'           , to_varchar(count(1))
 from   "aa.forecast.db.data::Ozone"
@@ -384,12 +373,12 @@ The fact that every month don't have the same duration may impact certain algori
 Now, let's have a look at some additional statistical elements using the following SQL:
 
 ```sql
-select 'max' as indicator , round(max("signal_value")) as value        from "aa.forecast.db.data::Ozone" union all
-select 'min'              , round(min("signal_value"))                 from "aa.forecast.db.data::Ozone" union all
-select 'delta min/max'    , round(max("signal_value") - min("signal_value")) from "aa.forecast.db.data::Ozone" union all
-select 'avg'              , round(avg("signal_value"))                 from "aa.forecast.db.data::Ozone" union all
-select 'median'           , round(median("signal_value"))              from "aa.forecast.db.data::Ozone" union all
-select 'stddev'           , round(stddev("signal_value"))              from "aa.forecast.db.data::Ozone"
+select 'max' as indicator , round(max("signal_value"),2) as value        from "aa.forecast.db.data::Ozone" union all
+select 'min'              , round(min("signal_value"),2)                 from "aa.forecast.db.data::Ozone" union all
+select 'delta min/max'    , round(max("signal_value") - min("signal_value"),2) from "aa.forecast.db.data::Ozone" union all
+select 'avg'              , round(avg("signal_value"),2)                 from "aa.forecast.db.data::Ozone" union all
+select 'median'           , round(median("signal_value"),2)              from "aa.forecast.db.data::Ozone" union all
+select 'stddev'           , round(stddev("signal_value"),2)              from "aa.forecast.db.data::Ozone"
 ```
 
 The result should be:
@@ -405,13 +394,13 @@ The result should be:
 
 As you can notice the average and median values are in the same range of values.
 
-And using a generated graph from the Python Math Plot library (`matplotlib`), the ozone values in ascending order:
+The ozone values in ascending order:
 
 ![Jupyter](03-02.png)
 
 ### **Data Distribution**
 
-Now let's have a look at the data distribution using the NTILE function.
+Now let's have a look at the data distribution using the `NTILE` function.
 
 The following SQL will partition the data into 10 groups and get the same generic statistics as before but for each group:
 
@@ -437,7 +426,7 @@ The result should be:
 
 | tile | max     | min     | delta  | `avg`   | median  | delta | `stddev`
 |-----:|--------:|--------:|--------:|--------:|--------:|--------:|--------
-| 1    | 1.92    | 1.17    | 0.75    | 1.62    | 1.71    | 0.09    | 0.23
+| 1    | 1.92    | 1.17    | 0.75    | 1.63    | 1.71    | 0.08    | 0.23
 | 2    | 2.42    | 1.94    | 0.48    | 2.2     | 2.25    | 0.05    | 0.15
 | 3    | 2.81    | 2.42    | 0.39    | 2.59    | 2.58    | 0.01    | 0.13
 | 4    | 3.29    | 2.81    | 0.48    | 3.05    | 3.06    | 0.01    | 0.15
@@ -446,9 +435,9 @@ The result should be:
 | 7    | 4.5     | 4.17    | 0.33    | 4.35    | 4.35    | 0       | 0.12
 | 8    | 4.88    | 4.52    | 0.36    | 4.73    | 4.76    | 0.03    | 0.13
 | 9    | 5.48    | 4.88    | 0.6     | 5.22    | 5.27    | 0.05    | 0.2
-| 10   | 8.13    | 5.5     | 2.63    | 6.33    | 6       | 0.33    | 0.88
+| 10   | 8.13    | 5.5     | 2.63    | 6.34    | 6       | 0.34    | 0.88
 
-As you can notice, the last group have both the delta between min and max but also between average and median higher than any other groups.
+As you can notice, the last group have both the delta between min and max, but also between average and median higher than any other groups.
 
 The last groups most likely represent some peaks that you saw earlier in the graph.
 
@@ -465,7 +454,7 @@ Each observation is characterized by 2 variables, a time and a signal value.
 
 In this step, you will analyze the data with and without White Noise at the same time.
 
-### **Visualize the data**
+### **Explore the data**
 
 Let's have a look at the data using the following SQL:
 
@@ -478,7 +467,7 @@ join "aa.forecast.db.data::Lag1AndCyclesAndWn" l1cwn
 on l1cnn."signal_time" = l1cwn."signal_time"
 ```
 
-And using a generated graph from the Python Math Plot library (`matplotlib`):
+If visualized using Python Math Plot library `matplotlib` (not a part of this exercise; the graph provided for your convenience):
 
 ![Jupyter](04-01.png)
 
@@ -540,7 +529,7 @@ select 'stddev'           , round(stddev(value_nn), 2)
 The result should be:
 
 **indicator**        | **value without White Noise** | **value with White Noise**
---------------------:|------------------------------:|------------------
+--------------------:|------------------------------:|-----------------:
 **`max`**            | 6.08                          | 13.95
 **`min`**            | -7.73                         | -21.68
 **`delta min/max`**  | 13.8                          | 35.63
@@ -550,13 +539,13 @@ The result should be:
 
 As you can notice the average and median values are in the same range of values for both datasets.
 
-And using a generated graph from the Python Math Plot library (`matplotlib`), the values in ascending order:
+The values in ascending order:
 
 ![Jupyter](04-02.png)
 
 ### **Data Distribution**
 
-Now let's have a look at the data distribution using the NTILE function.
+Now let's have a look at the data distribution using the `NTILE` function.
 
 The following SQL will partition the data into 10 groups and get the same generic statistics as before but for each group:
 
@@ -581,7 +570,7 @@ group by tile
 The result should be:
 
 | tile | max      | min      | delta   | `avg`    | median   | delta   | `stddev`
-|-----:|---------:|---------:|--------:|---------:|---------:|--------:|--------
+|-----:|---------:|---------:|--------:|---------:|---------:|--------:|-------:
 | 1    | -5.59    | -7.73    | 2.14    | -6.44    | -6.39    | 0.05    | 0.73
 | 2    | -4.57    | -5.58    | 1.01    | -5.07    | -5.04    | 0.03    | 0.31
 | 3    | -3.55    | -4.54    | 0.99    | -4.07    | -4.07    | 0.01    | 0.3
@@ -622,11 +611,11 @@ group by tile
 
 As stated earlier, just like the **Lag 1 And Cycles**, **Trend and Cyclic** has been built to analyze certain phenomenon in the data.
 
-Each observation is characterized by 2 variables, a "time" and a "signal" value.
+Each observation is characterized by 2 variables, a `time` and a `signal` values.
 
 In this step, you will analyze the data with and without White Noise at the same time.
 
-### **Visualize the data**
+### **Explore the data**
 
 Let's have a look at the data using the following SQL:
 
@@ -644,7 +633,7 @@ join "aa.forecast.db.data::TrendAndCyclicAndWn"  tcwn on tcnn."signal_time" = tc
 join "aa.forecast.db.data::TrendAndCyclicAnd_4Wn" tc4n on tcnn."signal_time" = tc4n."signal_time"
 ```
 
-And using a generated graph from the Python Math Plot library (`matplotlib`):
+If visualized using Python Math Plot library `matplotlib` (not a part of this exercise; the graph provided for your convenience):
 
 ![Jupyter](05-01.png)
 
@@ -687,27 +676,35 @@ Now, let's have a look at some additional statistical elements using the followi
 
 ```sql
 with data as (
-  select l1cnn."signal_value" as value_nn, l1cwn."signal_value"  as value_wn
-  from "aa.forecast.db.data::Lag1AndCycles" l1cnn join "aa.forecast.db.data::Lag1AndCyclesAndWn" l1cwn on l1cnn."signal_time" = l1cwn."signal_time"
+  select tcnn."signal_value" as value_nn, tcwn."signal_value"  as value_wn, tc4n."signal_value"  as value_4n
+  from  "aa.forecast.db.data::TrendAndCyclic"         tcnn
+join "aa.forecast.db.data::TrendAndCyclicAndWn"  tcwn on tcnn."signal_time" = tcwn."signal_time"
+join "aa.forecast.db.data::TrendAndCyclicAnd_4Wn" tc4n on tcnn."signal_time" = tc4n."signal_time"
 )
 select 'max' as indicator , round(max(value_nn), 2) as value_nn        
-                          , round(max(value_wn), 2) as value_wn     from data union all
+                          , round(max(value_wn), 2) as value_wn        
+                          , round(max(value_4n), 2) as value_4n     from data union all
 select 'min'              , round(min(value_nn), 2)
-                          , round(min(value_wn), 2)                 from data union all
+                          , round(min(value_wn), 2)
+                          , round(min(value_4n), 2)                 from data union all
 select 'delta min/max'    , round(max(value_nn) - min(value_nn), 2)
-                          , round(max(value_wn) - min(value_wn), 2) from data union all
+                          , round(max(value_wn) - min(value_wn), 2)
+                          , round(max(value_4n) - min(value_4n), 2) from data union all
 select 'avg'              , round(avg(value_nn), 2)
-                          , round(avg(value_wn), 2)                 from data union all
+                          , round(avg(value_wn), 2)
+                          , round(avg(value_4n), 2)                 from data union all
 select 'median'           , round(median(value_nn), 2)
-                          , round(median(value_wn), 2)              from data union all
+                          , round(median(value_wn), 2)
+                          , round(median(value_4n), 2)              from data union all
 select 'stddev'           , round(stddev(value_nn), 2)
-                          , round(stddev(value_wn), 2)              from data
+                          , round(stddev(value_wn), 2)
+                          , round(stddev(value_4n), 2)              from data
 ```
 
 The result should be:
 
 **indicator**        | **value without White Noise** | **value with White Noise** | **value with 4 x White Noise**
---------------------:|------------------------------:|---------------------------:|------------------------------
+--------------------:|------------------------------:|---------------------------:|-----------------------------:
 **`max`**            | 159.84                        | 161.12                     | 167.49
 **`min`**            | 0.83                          | -0.54                      | -3.28
 **`delta min/max`**  | 159.01                        | 161.66                     | 170.76
@@ -717,13 +714,13 @@ The result should be:
 
 As you can notice the average and median values are all in the same range of values for each datasets.
 
-And using a generated graph from the Python Math Plot library (`matplotlib`), the values in ascending order:
+The values in ascending order:
 
 ![Jupyter](05-02.png)
 
 ### **Data Distribution**
 
-Now let's have a look at the data distribution using the NTILE function.
+Now let's have a look at the data distribution using the `NTILE` function.
 
 The following SQL will partition the data into 8 groups and get the same generic statistics as before but for each group:
 
@@ -750,7 +747,7 @@ The reason you are using 8 tiles here is because the signal has 4 waves. Each wa
 The result should be:
 
 | tile | max      | min      | delta   | `avg`    | median   | delta   | `stddev`
-|-----:|---------:|---------:|--------:|---------:|---------:|--------:|--------
+|-----:|---------:|---------:|--------:|---------:|---------:|--------:|-------:
 | 1    | 18.14    | 0.83     | 17.31   | 13.69    | 15.33    | 1.64    | 4.56
 | 2    | 41.71    | 18.27    | 23.43   | 24.68    | 20.52    | 4.17    | 7.06
 | 3    | 54.4     | 42.49    | 11.91   | 51.03    | 51.35    | 0.32    | 2.73
