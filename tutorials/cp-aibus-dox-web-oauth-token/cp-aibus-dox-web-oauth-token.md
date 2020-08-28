@@ -42,8 +42,8 @@ You should receive a response like the following:
     "access_token": "<< your access token >>",
     "token_type": "bearer",
     "expires_in": 43199,
-    "scope": "uaa.resource",
-    "jti": "1acd879bb9474a04975e0e171df445a7"
+    "scope": "uaa.resource na-9e50499f-78dd-40ca-ad8d-60acf02cff8b!b30417.technicalscope",
+    "jti": "55899d7c07024ef2848d7ca6d5688050"
 }
 ```
 
