@@ -17,7 +17,7 @@ primary_tag: topic>machine-learning
 
 To get your OAuth access token you will need the values listed below from the service key you created in the previous tutorial: [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster).
 
-![DOX Service Keys](service-key-details.png)
+!![DOX Service Keys](service-key-details.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -33,7 +33,7 @@ To get your OAuth access token you will need the values listed below from the se
 
 4. Click **Sign in** or **OK** (depending on the web browser you work with).
 
-![DOX TOKEN](web-browser.png)
+!![DOX TOKEN](web-browser.png)
 
 You should receive a response like the following:
 

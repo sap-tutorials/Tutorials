@@ -25,11 +25,11 @@ In the service key you created for Document Information Extraction in the previo
 
 1. To access the Document Information Extraction Swagger UI, add the `swagger` value (**`/document-information-extraction/v1`**) to the `url` value, paste it in any web browser and press **Enter**.
 
-    ![DOX](png-files/service-key-details.png)
+    !![DOX](png-files/service-key-details.png)
 
 2. To be able to use the Swagger UI endpoints you need to authorize yourself. In the top right corner, click **Authorize**.
 
-    ![DOX](png-files/swagger0.png)
+    !![DOX](png-files/swagger0.png)
 
 3. Get the `access_token` value created in the previous tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), then add **bearer** in front of it, and enter in the **Value** field.
 
@@ -37,11 +37,11 @@ In the service key you created for Document Information Extraction in the previo
     bearer <access_token>
     ```
 
-    ![DOX](png-files/Authorize.png)
+    !![DOX](png-files/Authorize.png)
 
 4. Click **Authorize**, and then click **Close**.
 
-    ![DOX](png-files/Authorize2.png)
+    !![DOX](png-files/Authorize2.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -53,9 +53,9 @@ Use the **GET /capabilities** endpoint to see a list of document fields you can 
 
 Click the endpoint name to expand it, click **Try it out**, and then **Execute**.
 
-![DOX](png-files/capabilities.png)
+!![DOX](png-files/capabilities.png)
 
-![DOX](png-files/capabilities2.png)
+!![DOX](png-files/capabilities2.png)
 
 You should receive a response like the following:
 
@@ -81,11 +81,11 @@ You can either create a single client or multiple clients in the **payload** fie
 
 4. Click **Execute**.
 
-![DOX](png-files/createClient.png)
+!![DOX](png-files/createClient.png)
 
 You should receive a response like the following:
 
-![DOX](png-files/createClientResponse.png)
+!![DOX](png-files/createClientResponse.png)
 
 
 >**CAUTION:**
@@ -115,11 +115,11 @@ To see a list of the clients you have created:
 
 4. Click **Execute**.
 
-![DOX](png-files/listClient.png)
+!![DOX](png-files/listClient.png)
 
 You should receive a response like the following:
 
-![DOX](png-files/listClientResponse.png)
+!![DOX](png-files/listClientResponse.png)
 
 [DONE]
 [ACCORDION-END]
@@ -255,11 +255,11 @@ If you want to delete a client you created in Step 3, use the **DELETE /clients*
 
 4. Click **Execute**.
 
-![DOX](png-files/deleteClient.png)
+!![DOX](png-files/deleteClient.png)
 
 You should receive a response like the following:
 
-![DOX](png-files/deleteClientResponse.png)
+!![DOX](png-files/deleteClientResponse.png)
 
 Congratulations, you have completed this tutorial.
 
