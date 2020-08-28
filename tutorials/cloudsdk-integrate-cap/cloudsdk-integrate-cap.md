@@ -1,6 +1,6 @@
 ---
 title: Use the SAP Cloud SDK in the SAP Cloud Application Programming Model
-description: Integrate the SAP Cloud SDK into the SAP Cloud Application Programming Model.
+description: Create a SAP Cloud Application Programming Model project to call OData services using the SAP Cloud SDK on Cloud Foundry.
 time: 40
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
@@ -78,7 +78,6 @@ In this step, you'll define a data model, which defines the entity.
 3. Add the following service definition to the file.
 
 ```CDS
-
 namespace my.bookshop;
 
 entity CapBusinessPartner {
@@ -87,7 +86,6 @@ entity CapBusinessPartner {
   surname  : String;
   sourceDestination: String;
 }
-
 ```
 
 [DONE]
@@ -107,23 +105,19 @@ In this step, you'll define a simple service, which exposes a projection on the 
 3. Add the following service definition to the `cat-service.cds`
 
     ```CDS
-
     using my.bookshop as my from '../db/data-model';
 
     service cloud.sdk.capng {
          entity CapBusinessPartner as projection on my.CapBusinessPartner;
     }
-
     ```
 
 Run the following command in the terminal to trigger the maven build process:
 
-    ```Shell/Bash
-        mvn clean install
+    ```  mvn clean install
     ```
 
 If you see in your project directory, data model has auto generated the classes.
-
 
 !![generated file](genFile.png)
 
@@ -164,7 +158,6 @@ Since your application is running on SAP Cloud Platform: Cloud Foundry please in
     <groupId>com.sap.cloud.sdk.s4hana</groupId>
     <artifactId>s4hana-all</artifactId>
 </dependency>
-
 ```
 
 For more information please visit the documentation of the [SAP Cloud SDK](https://sap.github.io/cloud-sdk/docs/java/getting-started/#integrate-the-cloud-sdk-for-java-into-your-project)
@@ -180,7 +173,6 @@ For more information please visit the documentation of the [SAP Cloud SDK](https
 2. Create the Java class file `BusinessPartnerListener` in the created folder, with the following content:
 
 ```Java
-
 package handlers;
 
 import cds.gen.cloud.sdk.capng.CapBusinessPartner;
@@ -253,7 +245,6 @@ public class BusinessPartnerReadListener implements EventHandler {
         return capBusinessPartners;
     }
 }
-
 ```
 
 [CDS Query Notation](https://cap.cloud.sap/docs/cds/cqn) (CQN) is the common language in CAP to run queries against services. It can be used to talk to the services defined by your model, but also remote services, such as the database.
@@ -307,7 +298,6 @@ public void onCreate(CdsCreateEventContext context) throws ODataException {
 
     service.createBusinessPartner(bp).execute(httpDestination);
 }
-
 ```
 
 Here we initialize the `BusinessPartnerService` instance and then prepare the query and call the `execute` function which creates the new `businessPartner` in mock server.
@@ -368,15 +358,14 @@ Be aware that the variable is only available in your current terminal session.
 1. Go to the root of your project by running the following command in the terminal:
 
     ```Shell/Bash
-    cd ~/projects/cap-business-service
+      cd ~/projects/cap-business-service
     ```
 
 2. Start the application:
 
     ```Shell/Bash
-    mvn clean spring-boot:run
+      mvn clean spring-boot:run
     ```
-
     A notification message saying "A service is listening to port 8080" will appear in the bottom right.
 
 3. Go to <http://localhost:8080>.
@@ -419,13 +408,12 @@ You can read the data by doing the **GET** request on same URL .
 
 [ACCORDION-BEGIN [Step 10: ](Deploy and configure mock server on cloud foundry)]
 
-
 First of all you have to configure mock server instance to cloud foundry.
 
 You can do this by going inside mock server directory and push the instance to cloud by running
 
 ```Shell/Bash
-cf push
+  cf push
 ```
 
 Here you need to do the following in order to configure mock server destination in cloud foundry
@@ -457,9 +445,7 @@ You can get mock server URL by running
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 11: ](Deploy application to cloud foundry)]
-
 
 1. Go to the `~/projects/cap-business-service` folder and **create a new file** called **`manifest.yml`** and make sure you **Save** the file.
 
@@ -473,11 +459,9 @@ You can get mock server URL by running
         random-route: true
       services:
         - MyErpSystem
-
     ```
 
 The manifest describes the name of the application and the path where the application archive can be found. Spring Boot applications can be deployed from a single JAR archive, which is what you are making use of here.
-
 
 3. Open the `pom.xml` file in the `srv` directory.
 
@@ -497,15 +481,14 @@ The manifest describes the name of the application and the path where the applic
 5. Build your application once by running:
 
     ```Shell/Bash
-      mvn clean install
+      mvn clean
+      install
     ```
-
 6. Push the application to the cloud by running
 
     ```Shell/Bash
       cf push
     ```
-
      The manifest will be automatically picked up.
 
 >Provide the credentials you usually log in to SAP Cloud Platform if you are asked to log in.
