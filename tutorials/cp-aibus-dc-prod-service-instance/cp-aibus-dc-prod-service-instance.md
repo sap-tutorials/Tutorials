@@ -157,13 +157,5 @@ You have successfully created a service key for your service instance. Make a lo
 
 ![Service Key](service-key.png)
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
-
-In the text area below, paste the `tenantmode` value from the service keys you created for your service instance, then click **Submit Answer**.
-
 [VALIDATE_1]
 [ACCORDION-END]
