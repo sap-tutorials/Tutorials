@@ -12,7 +12,7 @@ primary_tag: topic>machine-learning
   - How to access your trial account
   - What are interactive guided boosters
   - How to use the **Set up account for Document Information Extraction** booster to assign entitlements, update your subaccount, create a service instance and the associated service keys for Document Information Extraction.
- 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -57,7 +57,7 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
     !![Service Key](booster-success.png)
 
->If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once before being able to see the **Success** pop-up box and click **Navigate to Service Key**.
+>If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** pop-up box and click **Navigate to Service Key**.
 
 You have successfully used the booster **Set up account for Document Information Extraction** to create service keys for Document Information Extraction. Make a local copy of the service keys. You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
 

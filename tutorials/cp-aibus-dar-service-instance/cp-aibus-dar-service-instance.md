@@ -15,21 +15,33 @@ primary_tag: topic>machine-learning
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access your Cloud Foundry trial environment)]
+[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-Access the [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and log in if necessary. Click **Enter Your Trial Account** to access your global account created in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
+1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-![Trial Home](cockpit-home.png)
+2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-On the navigation sidebar, click **Subaccounts** and select your **trial** subaccount.
+    !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-![Subaccounts](enter-trial-account.png)
+    >Data Attribute Recommendation is only available in the Europe (Frankfurt) region. Follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and choose the Europe (Frankfurt) region. If this is not possible, create a new subaccount in the Europe (Frankfurt) region. You should then be able to find **Data Attribute Recommendation Trial** in your new subaccount **Entitlements**.
+
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Your user profile will be set up for you automatically.
+
+    >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
+
+    >Choose **Continue**.
+
+    >!![Account setup](02_Foundation20Onboarding_Processing.png)
+
+3. From your global account page, choose the `trial` tile to access your subaccount.
+
+    !![Subaccounts](enter-trial-account.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Check your entitlements)]
+[ACCORDION-BEGIN [Step 2: ](Check entitlements)]
 
 To try out Data Attribute Recommendation, you need to make sure that your account is properly configured.
 
@@ -63,7 +75,7 @@ You are now entitled to use the service and to create instances of the service.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access your space)]
+[ACCORDION-BEGIN [Step 3: ](Access space)]
 
 All applications and services live in spaces. By default, trial accounts only have the **dev** space available.
 
@@ -93,7 +105,7 @@ Next, search for **Data Attribute Recommendation**. Click the tile named `data-a
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create a service instance)]
+[ACCORDION-BEGIN [Step 5: ](Create service instance)]
 
 You will now create an instance of your service.
 
@@ -143,11 +155,11 @@ You have successfully created service keys for your service instance. Make a loc
 
 ![Service Key](service-key.png)
 
-[DONE]
+[VALIDATE_1]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](List your service instances)]
+[ACCORDION-BEGIN [Step 7: ](List service instances)]
 
 To list and access your service instances, there is no need to access the service via the Service Marketplace every time. In your **Space**, you can see a list of all your service instances.
 
@@ -164,12 +176,4 @@ Back in your space, click **Service Instances** on the navigation sidebar.
 The list shows all your service instances across all services, including the service instance you have just created. You find here information on the service plan, referencing applications, created service keys and the current status of your instances. From here, you can manage your service instances, access or delete them, for example.
 
 [DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 8: ](Validate your service key)]
-
-In the text area below, paste the `tenantmode` value from the service keys you created for your service instance, then click **Submit Answer**.
-
-[VALIDATE_1]
 [ACCORDION-END]

@@ -77,7 +77,7 @@ You are now entitled to use Business Entity Recognition and create instances of 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access your space)]
+[ACCORDION-BEGIN [Step 3: ](Access space)]
 
 You will find all applications and services in spaces. By default, trial accounts only have the **dev** space available.
 
@@ -160,7 +160,7 @@ You have successfully created service keys for your service instance. Make a loc
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](List your service instances)]
+[ACCORDION-BEGIN [Step 7: ](List service instances)]
 
 To list and access your service instances, there is no need to access the service via the Service Marketplace every time. In your space, you can see a list of all your service instances.
 

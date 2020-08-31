@@ -411,10 +411,9 @@ Like in the previous tutorial [Modify the Way Story is Displayed](sac-embed-stor
     ```
 
 6. Adjust the variable `url`. Add the following filter parameters after the story ID:
-Please be aware that the format of variable `url` depends on whether your SAP Analytics Cloud tenant runs on a Neo or a Cloud Foundry environment. The sample story `Sample - Revenue Analysis` is available in every SAC tenant. In this tutorial we use this story but you can, of course, use your own story.
+The sample story `Sample - Revenue Analysis` is available in every SAC tenant. In this tutorial we use this story but you can, of course, use your own story.
 
-- Neo:  `https://<TENANT>/sap/fpa/ui/tenants/<TENANT_ID>/bo/+ sStory + mode + "&pageBar=" + pageBar +  "&lang=" + lang + "&f01Model="  + sModel + "&f01Dim=" + sDimension + "&f01Val=" + sValue + "&f01Op=" + sOperator`
-- Cloud Foundry: `https://<TENANT_URL>/sap/fpa/ui/bo/ + sStory + mode + "&pageBar=" + pageBar +  "&lang=" + lang + "&f01Model="  + sModel + "&f01Dim=" + sDimension + "&f01Val=" + sValue + "&f01Op=" + sOperator`
+- `https://<TENANT_URL>/sap/fpa/ui/bo/ + sStory + mode + "&pageBar=" + pageBar +  "&lang=" + lang + "&f01Model="  + sModel + "&f01Dim=" + sDimension + "&f01Val=" + sValue + "&f01Op=" + sOperator`
 
 [DONE]
 [ACCORDION-END]
