@@ -71,6 +71,8 @@ If you do not find the service in your list, proceed as follows:
 
 You are now entitled to use the service and to create instances of the service.
 
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+
 [DONE]
 [ACCORDION-END]
 
