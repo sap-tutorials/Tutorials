@@ -7,12 +7,14 @@ tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence,
 primary_tag: topic>machine-learning
 ---
 
+## Prerequisites
+- You must have registered for a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+
 ## Details
 ### You will learn
   - How to access your trial account
   - What are interactive guided boosters
   - How to use the **Set up account for Document Information Extraction** booster to assign entitlements, update your subaccount, create a service instance and the associated service keys for Document Information Extraction.
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -30,6 +32,8 @@ primary_tag: topic>machine-learning
     >Choose **Continue**.
 
     >!![Account setup](02_Foundation20Onboarding_Processing.png)
+
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
