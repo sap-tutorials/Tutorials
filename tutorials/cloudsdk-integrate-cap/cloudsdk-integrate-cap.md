@@ -325,17 +325,16 @@ Be aware that the variable is only available in your current terminal session.
 [ACCORDION-BEGIN [Step 8: ](Run the application)]
 
 
-
 1. Go to the root of your project by running the following command in the terminal:
 
     ```Shell/Bash
-      cd ~/projects/cap-business-service
+    cd ~/projects/cap-business-service
     ```
 
 2. Start the application:
 
     ```Shell/Bash
-      mvn clean spring-boot:run
+    mvn clean spring-boot:run
     ```
     A notification message saying "A service is listening to port 8080" will appear in the bottom right.
 
@@ -374,7 +373,6 @@ You can read the data by doing the **GET** request on same URL .
 
 [DONE]
 [ACCORDION-END]
-
 
 
 [ACCORDION-BEGIN [Step 10: ](Deploy and configure mock server on cloud foundry)]
@@ -425,7 +423,7 @@ cf create-service destination lite MyErpSystem
 
     Save the file.
 
-2. Add the following code to the newly created file.
+2. Add the following code to the newly created file:
 
     ```YAML
       ---
@@ -462,7 +460,7 @@ cf create-service destination lite MyErpSystem
     mvn clean
     install
     ```
-6. Push the application to the cloud by running
+6. Push the application to the cloud by running:
 
     ```Shell/Bash
     cf push
@@ -478,7 +476,7 @@ cf create-service destination lite MyErpSystem
 7. To retrieve the application URL run the following command:
 
     ```Shell/Bash
-      cf app cap-business-service
+    cf app cap-business-service
     ```
 
     You can find URL, next to routes.
