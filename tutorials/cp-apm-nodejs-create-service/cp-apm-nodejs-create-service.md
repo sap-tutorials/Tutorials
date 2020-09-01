@@ -428,9 +428,9 @@ Instead of using in-memory, you can also use persistent databases.
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
     [cds] - connect to messaging > local-messaging {}
-    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 966.819ms
+    [cds] - launched in: 1341.398ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
