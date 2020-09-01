@@ -67,7 +67,7 @@ If you do not find the service in your list, proceed as follows:
 
   4. **Save** your **Entitlements** changes.
 
-    !![Add Service Plan](png-files\save-entitlements.png)    
+    !![Add Service Plan](png-files/save-entitlements.png)    
 
 You are now entitled to use Business Entity Recognition and create instances of the service.
 
@@ -154,7 +154,7 @@ You are now able to create service keys for your new service instance. Service k
 
 You have successfully created service keys for your service instance. Make a local copy of the service keys. You will need the service keys values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Business Entity Recognition Using Any Web Browser](cp-aibus-ber-web-oauth-token).
 
-!![Service Key](png-files\service-key.png)
+!![Service Key](png-files/service-key.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
