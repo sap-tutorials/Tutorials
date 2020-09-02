@@ -108,15 +108,17 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
 
     >See the section [Deploy using cf push](https://cap.cloud.sap/docs/advanced/deploy-to-cloud#deploy-using-cf-push) for more details.
 
-4. In the deploy log, find the application URL in the `routes` line at the end:
+3. In the deploy log, find the application URL in the `routes` line at the end:
 
     ```
     name:              my-bookshop-srv
     requested state:   started
-    routes:            my-bookshop-srv-....cfapps.sap.hana.ondemand.com
+    routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
     ```
 
-5. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
+
+!![application](application_running.png)
 
 [OPTION END]
 
@@ -149,13 +151,12 @@ Cloud Foundry environment of SAP Cloud Platform has a built-in [cf push](https:/
         ```
         name:              my-bookshop-srv
         requested state:   started
-        routes:            my-bookshop-srv-....cfapps......hana.ondemand.com
+        routes:            my-bookshop-srv-....cfapps.....hana.ondemand.com
         ```
 
 4. Open this URL in the browser and try out the provided links, for example, `.../catalog/Books`. Application data is fetched from SAP HANA.
 
-    !![application](application.png)
-
+    !![application](application_running.png)
 
 [OPTION END]
 
