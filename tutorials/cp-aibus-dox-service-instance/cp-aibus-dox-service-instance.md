@@ -7,12 +7,14 @@ tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence,
 primary_tag: topic>machine-learning
 ---
 
+## Prerequisites
+- You must have registered for a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+
 ## Details
 ### You will learn
   - How to check your Document Information Extraction entitlements
   - How to create a service instance of Document Information Extraction
   - How to create service keys for your service instance
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]

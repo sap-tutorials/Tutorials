@@ -22,7 +22,7 @@ Create all business services with ABAP namespace `Z...`.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Overview)]
-You need to create an OData service by defining and binding a service based on the corresponding CDS view. As soon as the OData service is published in the local system repository, it is ready to be consumption using an OData client, such as a SAP Fiori app. To be able to use this exposed service and related service binding, you need to create a published Communication Scenario. This published Communication Scenario will be assigned in to a Communication Arrangement.
+You need to create an OData service by defining and binding a service based on the corresponding CDS view. As soon as the OData service is published in the local system repository, it is ready to be consumed by an OData client, such as a SAP Fiori app. To be able to use this exposed service and its related service binding, you need to create a published Communication Scenario. This published Communication Scenario will be assigned to a Communication Arrangement.
 
 ![Create ABAP package](Picture15.png)
 
