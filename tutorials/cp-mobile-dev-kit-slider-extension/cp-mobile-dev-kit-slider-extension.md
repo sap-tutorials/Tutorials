@@ -290,7 +290,7 @@ You will add this registered control in a Form Cell page.
     ```JavaScript / TypeScript
     import { Observable } from 'tns-core-modules/data/observable';
     import { View } from 'tns-core-modules/ui/core/view';
-    import { layout } from ''tns-core-modules/ui/core/view';
+    import { layout } from 'tns-core-modules/ui/core/view';
     import { device as Device } from 'tns-core-modules/platform';
     /*
       This is a way to keep iOS and Android implementation of your extension separate
