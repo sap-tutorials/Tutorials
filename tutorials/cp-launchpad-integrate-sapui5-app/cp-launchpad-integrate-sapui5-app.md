@@ -1,6 +1,6 @@
 ---
 title: Integrate Your SAPUI5 App into Your Launchpad Site
-description: Add your SAPUI5 app to an SAP Cloud Platform Launchpad site.
+description: Add an SAPUI5 app to an SAP Cloud Platform Launchpad site.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-fiori, topic>html5, topic>sapui5]
@@ -16,13 +16,13 @@ author_profile: https://github.com/LindsayBert
 
 ## Details
 ### You will learn
-  - How to add a deployed, custom-developed SAPUI5 app to your SAP Cloud Platform Launchpad site.
+  - How to add a deployed, custom-developed SAPUI5 app to your SAP Cloud Platform Launchpad site
 
 ---
 Once you've deployed your SAPUI5 app to SAP Cloud Platform, it becomes available to add to a Launchpad site.
 
 
-[ACCORDION-BEGIN [Step 1: ](Open the Content Manager of the SAP Cloud Platform Launchpad service)]
+[ACCORDION-BEGIN [Step 1: ](Open Content Manager)]
 
 1. In the side navigation panel of your subaccount, click **Subscriptions** and enter **Launchpad** in the search bar.
 
@@ -38,14 +38,14 @@ Once you've deployed your SAPUI5 app to SAP Cloud Platform, it becomes available
 
 3. Click the **Content Manager** icon in the side panel to open the **Content Manager**.
 
-    ![Open Content Editor](1-open-content-editor.png)
+    !![Open Content Editor](1-open-content-editor.png)
 
 >The **Content Manager** has two tabs: **My Content** where you can manually configure content items and view any other available content items, and the **Content Explorer** where you can explore exposed content from available content providers, select the content, and add it to your own content.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Your SAPUI5 App to the Site)]
+[ACCORDION-BEGIN [Step 2: ](Add SAPUI5 app to site)]
 
 1. Click the **Content Explorer** tab to explore content from the available content providers.
 
@@ -55,11 +55,11 @@ Once you've deployed your SAPUI5 app to SAP Cloud Platform, it becomes available
 
     >The **HTML5 Apps** content provider is created automatically. Any app that you deploy to SAP Cloud Platform is automatically added as content to this provider.
 
-    ![Select the HTML5 Provider](3-HTML5-provider.png)
+    !![Select the HTML5 Provider](3-HTML5-provider.png)
 
 3. You'll see that your `Suppliers` app that you've just created in SAP Business Application Studio, already exists in this provider. Select it and click **+ Add to My Content**.
 
-    ![Add app to My Content](4-add-app-my-content.png)
+    !![Add app to My Content](4-add-app-my-content.png)
 
 4. Click the **My Content** tab.
 
@@ -71,7 +71,7 @@ Once you've deployed your SAPUI5 app to SAP Cloud Platform, it becomes available
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a group and assign your app to it)]
+[ACCORDION-BEGIN [Step 3: ](Create group and assign app to it)]
 
 In this step you'll create a new group and you'll assign the `Suppliers` app to it.
 
@@ -97,7 +97,7 @@ In this step you'll create a new group and you'll assign the `Suppliers` app to 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Assign your app to the Everyone role)]
+[ACCORDION-BEGIN [Step 4: ](Assign app to Everyone role)]
 
 In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is a default role - content assigned to the `Everyone` role is visible to all users.
 
@@ -132,7 +132,7 @@ In this step, you'll assign the `Suppliers` app to the `Everyone` role. This is 
 
 3. Click the app to launch it.
 
-![View app](13-suppliers-app.png)
+    ![View app](13-suppliers-app.png)
 
 [VALIDATE_6]
 [ACCORDION-END]
