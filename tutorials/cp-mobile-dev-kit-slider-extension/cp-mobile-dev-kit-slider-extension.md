@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
-- **Download and install** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
 
 ## Details
 ### You will learn
@@ -288,9 +288,9 @@ You will add this registered control in a Form Cell page.
 2. In `MySliderPlugin/android/MySlider.ts` file, copy and paste the following code.
 
     ```JavaScript / TypeScript
-    import { Observable } from "tns-core-modules/data/observable";
-    import { View } from "tns-core-modules/ui/core/view";
-    import { layout } from "tns-core-modules/ui/core/view";
+    import { Observable } from 'tns-core-modules/data/observable';
+    import { View } from 'tns-core-modules/ui/core/view';
+    import { layout } from 'tns-core-modules/ui/core/view';
     import { device as Device } from 'tns-core-modules/platform';
     /*
       This is a way to keep iOS and Android implementation of your extension separate
@@ -461,12 +461,14 @@ You will add this registered control in a Form Cell page.
     }
     ```
 
+    >In your import function, if you see errors related to `tns-core-modules` or `mdk-core`, you can ignore them. There is currently no reference of such libraries in the MDK editor.
+
 3. Save the `MySliderPlugin/android/MySlider.ts` file.
 
 4. In `MySliderPlugin/iOS/MySlider.ts` file, copy and paste the following code.
 
     ```JavaScript / TypeScript
-    import { View } from "tns-core-modules/ui/core/view";
+    import { View } from 'tns-core-modules/ui/core/view';
 
     /*
       This is a way to keep iOS and Android implementation of your extension separate

@@ -14,12 +14,12 @@ author_profile: https://github.com/jitendrakansal
 
 ## Details
 ### You will learn
-  - How to create a customer record with information such as name, email, phone number & date of birth
+  - How to create a customer record
   - How to store this record locally
   - How to sync local changes with backend
 
 
-You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
+If you didn't follow the pre-Prerequisite then you may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/2-Create-Your-First-Mobile-App-with-the-Mobile-Development-Kit) to start with this tutorial.
 
 ---
 
