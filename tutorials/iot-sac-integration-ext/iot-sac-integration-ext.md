@@ -35,7 +35,7 @@ primary_tag: topic>internet-of-things
 
     !![clone](clone.png)
 
-3. Open Postman and click **Import** button on top left. Upload the unzipped Postman collection and environment files from folder **`iot-sac-integration-samples`**.
+3. Open Postman and click **Import** on top left. Upload the unzipped Postman collection and environment files from folder **`iot-sac-integration-samples`**.
 
     !![envVariable](envVariable.png)
 
