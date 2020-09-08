@@ -365,7 +365,7 @@ To consume the above generated calculation view in SAP Analytics Cloud, you need
     | **Connection Type** | **Direct** |
     | **Host** | **<<tenant name>>.leonardo-iot.cfapps.eu10.hana.ondemand.com/cm** (IoT launchpad URL suffixed with **/cm** and without https://)|
     | **HTTPS Port** | **443** |
-    | **Default Language** (Optional)|  Once you have clicked **OK** to save the live connection, the default language can only be changed by the administrator. If the language you choose is not installed on your SAP Analytics Cloud system, SAP Analytics Cloud will choose the default language. |
+    | **Default Language** (Optional)|  Once you have clicked **OK** to save the live connection, the default language can only be changed by the administrator. If the language you choose is not installed on your SAP Analytics Cloud system, SAP Analytics Cloud will use the default language. |
     | **Authentication Method** | **SAML Single Sign On** system will prompt to authenticate IoT launchpad URL (entered in same table above) |
     | **Save** | Click **OK** |
 
