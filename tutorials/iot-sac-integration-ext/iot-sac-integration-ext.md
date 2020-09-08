@@ -61,7 +61,7 @@ primary_tag: topic>internet-of-things
 
 8. Click **Update**.
 
-    Upon updating the Postman environment parameters successfully, you are done with the Postman set up.
+    Upon updating the Postman environment parameters successfully, you are done with the Postman setup.
 
 
 [DONE]
