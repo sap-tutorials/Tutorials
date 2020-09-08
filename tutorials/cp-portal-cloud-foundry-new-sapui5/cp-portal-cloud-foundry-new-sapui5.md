@@ -6,6 +6,7 @@ time: 10
 tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, topic>cloud]
 primary_tag: products>sap-cloud-platform-portal
 author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
@@ -32,9 +33,10 @@ In this tutorial, you're going to add an SAPUI5 app to your Portal site.
 
 [ACCORDION-BEGIN [Step 2: ](Create and configure new app)]
 
-1.  Click **+ New** and select **App** from the list.
+1.  Click **+ New** and select **App** from the list.  
 
     ![Add an app](2-add-app.png)
+
 
     The App editor opens on the **PROPERTIES** tab.
 

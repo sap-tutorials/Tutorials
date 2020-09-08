@@ -1,11 +1,12 @@
 ---
-title: Integrate a Custom Developed SAPUI5 App into Your Portal Site (Cloud Foundry)
+title: Integrate Your App into Your Portal Site (Cloud Foundry)
 description: Add the app that you created in SAP Web IDE to your Portal site on Cloud Foundry.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, topic>cloud, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform-portal
 author_name: Lindsay Bert
+author_profile: https://github.com/LindsayBert 
 ---
 
 ## Prerequisites

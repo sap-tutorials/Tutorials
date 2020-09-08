@@ -23,7 +23,7 @@ primary_tag: topic>sap-community
 
 [ACCORDION-BEGIN [Step 1: ](Set your profile to public)]
 
-In order to participate fully in the SAP Community, you need to set your account privacy settings to opt in to display your profile publicly. If you don't, you will still be able to read SAP Community content, but you won't be able to ask questions, write blog posts, or engage in any other way in the community. To learn more, please see our [Privacy - FAQ](https://www.sap.com/community/resources/privacy.html) page.
+In order to participate fully in the SAP Community, you need to set your account privacy settings to opt in to display your profile publicly. If you don't, you will still be able to read SAP Community content, but you won't be able to ask questions, write blog posts, or engage in any other way in the community. To learn more, please see our [Privacy - FAQ](https://community.sap.com/resources/privacy) page.
 
 1. Watch this SAP Community video [Changing Privacy Settings](https://www.youtube.com/watch?v=tfuKtUfPrCc).
 
@@ -42,7 +42,7 @@ In order to participate fully in the SAP Community, you need to set your account
 
 Replacing your placeholder avatar image with a profile picture humanizes you and helps you connect better with other SAP Community members. If you choose to participate in the community, your photo will appear as an avatar on your posts, drawing readers to and into your content.
 
-1. Go to the **Community Videos** page, accessible from the general [Community Resources](https://www.sap.com/community/resources.html) section.
+1. Go to the **Community Videos** page, accessible from the general [Community Resources](https://community.sap.com/resources) section.
 
 2. Find the video on **Uploading a Profile Photo**.
 
@@ -104,14 +104,14 @@ In order for your blogging permissions to change from **Subscriber** to **Contri
 
 1.	Open a question.
 
-2.	Click the **Follow** button (on the right-hand side).
+2.	Click the **Follow** button (on the left-hand side).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Review the Rules of Engagement - Part 1)]
 
-Understanding the [SAP Community Rules of Engagement](https://www.sap.com/community/resources/rules-of-engagement.html) will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or blog post. For example, when you try to publish a blog post, if you have not read the Rules of Engagement, the publishing process may be postponed because the blog post does not follow the Rules of Engagement.
+Understanding the [SAP Community Rules of Engagement](https://community.sap.com/resources/rules-of-engagement) will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or blog post. For example, when you try to publish a blog post, if you have not read the Rules of Engagement, the publishing process may be postponed because the blog post does not follow the Rules of Engagement.
 
 There are two sections of the Rules of Engagement: **Participation Etiquette** and **Unacceptable Content**. This step covers **Participation Etiquette**.
 
@@ -124,7 +124,7 @@ There are two sections of the Rules of Engagement: **Participation Etiquette** a
 
 [ACCORDION-BEGIN [Step 6: ](Review the Rules of Engagement - Part 2)]
 
-Understanding the [SAP Community Rules of Engagement](https://www.sap.com/community/resources/rules-of-engagement.html) will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or  blog post. For example, when you try to publish a blog post, if you have not read the Rules of Engagement, the publishing process may be postponed because the blog post does not follow the Rules of Engagement.
+Understanding the [SAP Community Rules of Engagement](https://community.sap.com/resources/rules-of-engagement) will allow you to be active in the community without encountering issues or negative feedback when you post a question, answer, or  blog post. For example, when you try to publish a blog post, if you have not read the Rules of Engagement, the publishing process may be postponed because the blog post does not follow the Rules of Engagement.
 
 There are two sections of the Rules of Engagement: **Participation Etiquette** and **Unacceptable Content**. This step covers **Unacceptable Content**.
 
@@ -139,7 +139,7 @@ There are two sections of the Rules of Engagement: **Participation Etiquette** a
 
 By learning how to post a question correctly, you ensure that other users can help you in a timely manner. For example, if you post a very brief question with no details other than the title and a partial sentence in the body, then users may not know how to help you.
 
-1. Go to the [Questions and Answers](https://www.sap.com/community/resources/questions-and-answers.html) resource page.
+1. Go to the [Questions and Answers](https://community.sap.com/resources/questions-and-answers) resource page.
 
 2. Read and learn how to ask and post a question.
 
@@ -150,7 +150,7 @@ By learning how to post a question correctly, you ensure that other users can he
 
 [ACCORDION-BEGIN [Step 8: ](Learn about language options)]
 
-English is the official language of SAP Community, but for certain tags, it's possible to ask questions and publish blog posts in other languages. If you speak one of these languages, you may wish to post (or respond to) content in this language.
+English is the official language of SAP Community, but it's possible to ask questions and publish blog posts in other languages. If you speak one of these languages, you may wish to post (or respond to) content in this language.
 
 1. Go to the [Ask a Question](https://answers.sap.com/questions/ask.html) page.
 
@@ -165,7 +165,7 @@ English is the official language of SAP Community, but for certain tags, it's po
 
 To become a blogger in the SAP Community, you must follow a process that will help familiarize you with our culture and rules -- and ensure quality content for our members.
 
-1. Go to the main [Blogging](https://www.sap.com/community/resources/blogging.html) resource page.
+1. Go to the main [Blogging](https://community.sap.com/resources/blogging) resource page.
 
 2. Learn about the different blogger levels in the community, so you can better understand the process and start blogging.
 
@@ -176,9 +176,11 @@ To become a blogger in the SAP Community, you must follow a process that will he
 
 [ACCORDION-BEGIN [Step 10: ](Learn how to publish a blog post)]
 
-The more you know about writing a blog post in the community, the faster your first blog post will be processed.
+The more you know about writing a blog post in the community, the faster your first blog post will be processed. 
 
-1. Go to the main [Blogging](https://www.sap.com/community/resources/blogging.html) resource page.
+>Note: After submitting a post, a Contributor may need to wait up to 72 business hours before moderator review occurs. Contributors should wait for their first post to be published before submitting a second.
+
+1. Go to the main [Blogging](https://community.sap.com/resources/blogging) resource page.
 
 2. Learn more about how to blog in the community (beyond the blogger levels), so that you can get your blog post published in a timely manner.
 

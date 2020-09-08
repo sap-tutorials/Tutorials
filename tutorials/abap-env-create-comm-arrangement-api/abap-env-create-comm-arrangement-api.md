@@ -10,6 +10,7 @@ author_profile: https://github.com/julieplummer20
 ---
 
 ## Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
 - A business role has been created containing the business catalog `SAP_CORE_BC_COM`, and is assigned to your user [How to Create a Business Role from Scratch](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/f65e51a7203443efb58fe535c3d13e5f.html)
 - You have opened the SAP Cloud Platform cockpit and navigated to the correct space. See [SAP Help Portal: SAP Cloud Platform Cockpit](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e47748b5bb571014afedc70595804f3e.html)
 - You have opened an ABAP service instance in SAP Cloud Cockpit

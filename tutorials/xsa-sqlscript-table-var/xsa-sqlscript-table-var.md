@@ -4,21 +4,16 @@ description: Leveraging SQLScript in Stored Procedures, User Defined Functions, 
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud ]
+time: 15
 ---
-## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Parallel Processing and Parameters](https://developers.sap.com/tutorials/xsa-sqlscript-parallel.html)
 
-## Next Steps
-- [Creating Scalar User Defined Functions](https://developers.sap.com/tutorials/xsa-sqlscript-scalar.html)
+## Prerequisites  
+- **Tutorials:** [Parallel Processing and Parameters](xsa-sqlscript-parallel)
 
 ## Details
 ### You will learn  
 In this exercise you will modify the code of procedure `get_po_header_data` again to use a single tabular output. Existing queries will be reused based on intermediate table variables.
-
-### Time to Complete
-**15 Min**.
 
 ---
 

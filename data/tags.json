@@ -74,7 +74,7 @@
     },
     {
       "name": "SAP API Business Hub",
-      "value": "topic>topic>sap-api-business-hub"
+      "value": "topic>sap-api-business-hub"
     },
     {
       "name": "SAP Community",
@@ -141,8 +141,12 @@
       "value": "products>sap-cloud-platform-enterprise-messaging"
     },
     {
-      "name": "SAP Cloud Platform for the Cloud Foundry environment",
-      "value": "products>sap-cloud-platform-for-the-cloud-foundry-environment"
+      "name": "SAP Cloud Platform Enterprise Messaging",
+      "value": "products>sap-cloud-platform-enterprise-messaging"
+    },
+    {
+      "name": "SAP Cloud Platform Extension Factory, Kyma Runtime",
+      "value": "products>sap-cloud-platform-extension-factory\, kyma-runtime"
     },
     {
       "name": "SAP Cloud Platform Integration for process services",

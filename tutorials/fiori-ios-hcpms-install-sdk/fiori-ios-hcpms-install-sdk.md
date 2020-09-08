@@ -10,13 +10,14 @@ author_profile: https://github.com/sandeep-tds
 ---
 
 ## Prerequisites  
-- Completed the previous tutorial(s) in this group.
+- You completed the previous tutorial(s) in this group.
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Download Version 5.0 or higher from [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)
+- **SAP Cloud Platform SDK for iOS:** Download Version 5.1.0 or higher from [Trials and Downloads](https://developers.sap.com/trials-downloads.html?search=sdk%20for%20ios)
 
 ## Details
 ### You will learn  
-  - Add the SAP Cloud Platform SDK for iOS framework files to your project, and set the correct references
+  - How to add the SAP Cloud Platform SDK for iOS framework files to your project
+  - How to set the correct references
 
 ---
 
@@ -37,6 +38,12 @@ The **SAP Cloud Platform SDK for iOS Assistant** will be covered in detail in on
 >It is not necessary to extract the frameworks but if is needed then click **Export Frameworks**, select a folder where you wish the frameworks to be exported.
 
 > ![Adding files dialog](fiori-ios-hcpms-install-sdk-02.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
