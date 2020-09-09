@@ -112,9 +112,9 @@ This is described in the following steps.
 
     ![Edit](8a-click-edit.png)
 
-3. In the **Assignments** panel on the right, type `In` to search for your app.
+3. Click the search box in the **Assignments** panel on the right, any available apps are shown in the list below.
 
-4. In the **Results** list, click **+** to assign the `Innovation at SAP` app to this role.
+4. Click **+** to assign the `Innovation at SAP` app to this role.
 
     !![Role editor assign app](8-role-editor-assign-app.png)
 
@@ -132,9 +132,9 @@ This is described in the following steps.
 
     !![Add a new group](7-add-group.png)
 
-2. Enter the **Title** `SAP` and in the **Assignments** panel on the right of the screen, type 2 letters of your app (for example, `In`), to search for your app.
+2. Enter the **Title** `SAP` and in the **Assignments** panel on the right of the screen, click the search box to see any available apps in the list below.
 
-3. In the **Results** list, click **+** to assign the `Innovation at SAP` app to this group.
+3. Click **+** to assign the `Innovation at SAP` app to this group.
 
     !![7 group editor assign app](7-group-editor-assign-app.png)
 
@@ -155,7 +155,7 @@ This is described in the following steps.
 
     !![Go to site](9-go-to-site-icon.png)
 
-The **Home** page opens. You'll see that your new app is displayed in the `SAP` group.
+You'll see that your new app is displayed in the `SAP` group.
 
 !![Site with one group and one app](10-site-with-groups.png)
 
