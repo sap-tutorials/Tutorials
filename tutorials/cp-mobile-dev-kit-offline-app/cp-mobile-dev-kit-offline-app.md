@@ -145,6 +145,7 @@ Double-click the `Application.app` to open it in MDK Application Editor and clic
 
 >Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
+
 [OPTION BEGIN [Android]]
 
 Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
