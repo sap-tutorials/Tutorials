@@ -1,12 +1,12 @@
 ---
 auto_validation: true
-title: Run and Deploy SAP Fiori Application With SAP Business Application Studio
-description: Run and deploy your SAP Fiori application with SAP Business Application Studio
+title: Develop and Run SAP Fiori Application With SAP Business Application Studio
+description: Develop and run your SAP Fiori application with SAP Business Application Studio
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, products>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
-author_profile: https://github.com/mervey45
+author_profile: https://github.com/mervey45 
 ---
 
 ## Prerequisites  
@@ -285,7 +285,7 @@ author_profile: https://github.com/mervey45
   1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**.
 
     ![library](library.png)
- 
+
 [DONE]
 [ACCORDION-END]
 
