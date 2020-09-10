@@ -25,6 +25,7 @@ If you didn't follow the pre-Prerequisite then you may clone an existing project
 
 ![MDK](img_1.gif)
 
+
 [ACCORDION-BEGIN [Step 1: ](Create new page for new customer record)]
 
 In this step, you will create the `Customers_Create.page` as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.

@@ -21,6 +21,7 @@ author_profile: https://github.com/jitendrakansal
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/2-Handle-Error-Archive-in-an-MDK-App) and start directly with step 7 in this tutorial.
 
+
 ---
 
 

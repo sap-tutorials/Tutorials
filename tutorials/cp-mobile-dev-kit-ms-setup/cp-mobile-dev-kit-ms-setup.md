@@ -19,7 +19,6 @@ author_profile: https://github.com/jitendrakansal
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Understand the mobile development kit feature)]
 
 Mobile Development Kit (MDK) allows developers and technical business users to build new native mobile apps and customize select SAP native mobile applications in a highly productive environment. It's architecture is based on `NativeScript`, so it supports native cross platform development which means you build your native mobile application once and deploy it to Android and iOS devices.
