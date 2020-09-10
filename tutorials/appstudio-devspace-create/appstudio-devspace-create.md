@@ -44,5 +44,10 @@ author_profile: https://github.com/Paolaufer
 
 6. Once the dev space is running, click the dev space name to open it.
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Test yourself)]
+
 [VALIDATE_6]
 [ACCORDION-END]

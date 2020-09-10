@@ -97,7 +97,7 @@ export function Detail() {
       return (
         <div>
           <ShellBar
-            logo={"reactLogo.png"}
+            logo={<img src="reactLogo.png" />}
             profile={<Avatar image="profilePictureExample.png" />}
             primaryTitle={"My App"}
           >
@@ -325,7 +325,7 @@ export function Detail() {
     return (
         <>
             <ShellBar
-                logo={"reactLogo.png"}
+                logo={<img src="reactLogo.png" />}
                 profile={<Avatar image="profilePictureExample.png" />}
                 primaryTitle={"My App"}>
                 <ShellBarItem src="sap-icon://add" text="Add" />

@@ -20,7 +20,7 @@ author_profile: https://github.com/mervey45
   - How to create an ABAP Cloud project
 
 >You should have a subaccount on Cloud Foundry Trial with **Europe (Frankfurt) or US East (VA)** as Region.
- 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -37,7 +37,7 @@ author_profile: https://github.com/mervey45
 
     >Choose **Continue**.
 
-    >![Account setup](organization1.png)
+    >![Account setup](organization2.png)
 
 3. From your global account page, choose the **`trial`** tile to access your subaccount. The region is **Europe (Frankfurt) or US East (VA)** and the Environment **Multi Environment**.
 
@@ -167,15 +167,11 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
 
       ![Create ABAP cloud project](project3.png)
 
-  6. Logon to your ABAP trial account with your e-mail address and password.
-
-      ![Create ABAP cloud project](project4.png)
-
-  7. Click Finish.
+  6. Now you've been authenticated automatically. Click Finish.
 
       ![Create ABAP cloud project](project5.png)
 
-  8. Your trial system appears on the project explorer.
+  7. Your trial system appears on the project explorer.
 
       ![Create ABAP cloud project](project6.png)
 
