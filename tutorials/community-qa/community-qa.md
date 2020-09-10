@@ -34,13 +34,13 @@ If searching doesn't yield the answer you need, then you'll want to ask a questi
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Select a primary tag)]
+[ACCORDION-BEGIN [Step 3: ](Select tags)]
 
-Before you submit a question, you must select a primary tag. Tags identify the main topic of your question. Selecting the right tag will help you get an answer to your question faster by helping other members with the right expertise in the topic area to more easily find your question. Additional managed tags and user tags are optional, but a primary tag is mandatory.
+Before you submit a question, you must select at least one SAP managed tag. Tags identify the main topic of your question. Selecting the right tag will help you get an answer to your question faster by helping other members with the right expertise in the topic area to more easily find your question. 
 
-  ![Tags in Questions and Answers](qa-tags.png)
+You may select up to seven SAP managed tags and seven user tags (which are tags that you can create). The first SAP managed tag you select will be the one that triggers notifications for members who follow that tag.
 
-You can learn more on the [About Tags](https://www.sap.com/community/resources/using-tags.html) page, and you can find the full list of tags on the [Questions and Answers All Tags](https://answers.sap.com/tags.html) page.
+You can learn more on the [About Tags](https://community.sap.com/resources/using-tags) page, and you can find the full list of tags on the [Questions and Answers All Tags](https://answers.sap.com/tags.html) page.
 
 [VALIDATE_3]
 [ACCORDION-END]
@@ -49,7 +49,7 @@ You can learn more on the [About Tags](https://www.sap.com/community/resources/u
 
 When responding to a question, members may leave comments or submit answers. As the person who posted the question, you have several options for interacting with them, such as providing additional details (when they request clarification) and indicating when someone has answered your question correctly.
 
-Please watch the **Engage with Comments and Answers to Your Questions** video. (To get more tips, please visit the [Community Videos](https://www.sap.com/community/resources/tip-in-a-minute.html#Videos) page.)
+Please watch the **Engage with Comments and Answers to Your Questions** video. (To get more tips, please visit the [Community Videos](https://community.sap.com/resources/tip-in-a-minute#Videos) page.)
 
 (*90*)
 
@@ -73,7 +73,7 @@ Find a question in [SAP Community](https://answers.sap.com/index.html) in the **
 
 [ACCORDION-BEGIN [Step 6: ](Follow the Rules of Engagement when answering)]
 
-Before answering a question, you should familiarize yourself with the [SAP Community Rules of Engagement](https://www.sap.com/community/resources/rules-of-engagement.html). The rules explain the etiquette that you should follow when interacting with other members. They also outline which content is considered unacceptable. You should take these rules into account before posting anything.
+Before answering a question, you should familiarize yourself with the [SAP Community Rules of Engagement](https://community.sap.com/resources/rules-of-engagement). The rules explain the etiquette that you should follow when interacting with other members. They also outline which content is considered unacceptable. You should take these rules into account before posting anything.
 
 [VALIDATE_6]
 [ACCORDION-END]
@@ -82,7 +82,7 @@ Before answering a question, you should familiarize yourself with the [SAP Commu
 
 If you're interested in answering questions about your area of specialty, you have several ways to find them. And once you find them, you can use Comments and Answers to assist the members looking for solutions.
 
-Watch the **How to Get Started with Q&A to Answer Questions** video. (To get more tips, please visit the [Community Videos](https://www.sap.com/community/resources/tip-in-a-minute.html#Videos) page.)
+Watch the **How to Get Started with Q&A to Answer Questions** video. (To get more tips, please visit the [Community Videos](https://community.sap.com/resources/tip-in-a-minute#Videos) page.)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lE-pYOmhXNw" frameborder="0" allowfullscreen></iframe>
 
@@ -94,7 +94,7 @@ Watch the **How to Get Started with Q&A to Answer Questions** video. (To get mor
 
 Our reputation program allows members to complete missions and earn badges by making valuable contributions to SAP Community. If members upvote your answers or your answers are accepted, you can receive recognition via our Q&A missions.
 
-Visit the [Missions and Badges](https://www.sap.com/community/resources/missions-badges.html) page.
+Visit the [Missions and Badges](https://community.sap.com/resources/missions-badges) page.
 
 [VALIDATE_8]
 [ACCORDION-END]

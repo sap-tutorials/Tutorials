@@ -5,11 +5,13 @@ const {
   BAD_GATEWAY,
   NOT_ACCEPTABLE,
   BAD_REQUEST,
-  TOO_MANY_REQUESTS
+  TOO_MANY_REQUESTS,
+  MOVED_PERMANENTLY,
+  MOVED_TEMPORARILY,
 } = require('http-status-codes');
 
 const { regexp: { content: { internalLink, remoteImage } }, linkCheck } = require('../constants');
-const { domains } = require('../../config/trusted.links.json');
+const { domains } = require('../../../data/trusted.links.json');
 
 process.env.UV_THREADPOOL_SIZE = linkCheck.UV_THREADPOOL_SIZE;
 
@@ -17,6 +19,9 @@ const isAlive = (status) => status === 'alive';
 
 const getErrorMessage = (statusCode) => {
   try {
+    if (statusCode === MOVED_PERMANENTLY || statusCode === MOVED_TEMPORARILY) {
+      return 'Too Many Redirects';
+    }
     return getStatusText(statusCode);
   } catch (e) {
     return 'Unreachable link';
@@ -38,18 +43,6 @@ const verifyLinks = async (links) => {
         return linkCheck.TIMEOUT;
       }
     },
-    hooks: {
-      beforeRetry: [(options, error, retryCount) => {
-        console.log(
-          'Before retry: error',
-          (error.statusCode || 'Unknown') || error.code,
-          ', retryCount is ',
-          retryCount,
-          ', URL is ',
-          error.url
-        );
-      }],
-    }
   });
   return Object
     .entries(processedResults)

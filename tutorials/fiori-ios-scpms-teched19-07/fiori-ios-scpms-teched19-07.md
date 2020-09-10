@@ -9,7 +9,7 @@ time: 25
 
 ## Prerequisites
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -57,10 +57,19 @@ Add the following properties right above the `viewDidLoad(_:)` method:
 
 ```Swift
 
-private var dataService: ESPMContainer<OnlineODataProvider>?
-private let appDelegate = UIApplication.shared.delegate as! AppDelegate
-
 private let logger = Logger.shared(named: "ProductClassificationTableViewController")
+
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+// Retrieve the data service using the destinations dictionary and return it.
+var dataService: ESPMContainer<OnlineODataProvider>? {
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
+}
 
 private var products = [Product]()
 
@@ -98,14 +107,6 @@ tableView.estimatedRowHeight = 80
 tableView.rowHeight = UITableView.automaticDimension
 
 tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
-
-guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-    AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-    logger.error("OData service is nil. Please check onboarding.")
-    return
-}
-
-self.dataService = dataService
 
 ```
 
@@ -311,14 +312,6 @@ override func viewDidLoad() {
 
     tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
 
-    guard let dataService = appDelegate.sessionManager.onboardingSession?.odataController.espmContainer else {
-        AlertHelper.displayAlert(with: "OData service is not reachable, please onboard again.", error: nil, viewController: self)
-        logger.error("OData service is nil. Please check onboarding.")
-        return
-    }
-
-    self.dataService = dataService
-
     updateClassifications(for: image)
 }
 
@@ -351,6 +344,16 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 ```
 
+Before you go ahead and implement the `tableView(_:viewDidLoad:)`, you need to retrieve the URL of your service. The data task we're going to use will use the URL to download the needed product images.
+
+Open your Mobile Services instance and select your app configuration in the `Native/Hybrid` screen. There you click  **Mobile Sample OData ESPM** in the **Assigned Features** section.
+
+!![MS APIs](fiori-ios-scpms-teched19-00.png)
+
+The detail screen for the `Mobile Sample OData ESPM` will open. There you find the **`Runtime Root URL`** for this service, copy the whole URL as you will need it in a second.
+
+!![MS APIs](fiori-ios-scpms-teched19-00a.png)
+
 Next implement the `tableView(_:cellForRowAt:)` method and read the inline comments carefully:
 
 ```Swift
@@ -381,8 +384,8 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
     // The data service will return the image url in the following format: /imgs/HT-2000.jpg
     // In order to build together the URL you have to define the base URL.
-    // The Base URL is found in the Mobile Services API tab.
-    let baseURL = "https://hcpms-d061070trial.hanatrial.ondemand.com/com.sap.edm.sampleservice.v2"
+    // The Base URL is found in the Mobile Services App configuration's service.
+    let baseURL = <YOUR URL>
     let url = URL(string: baseURL.appending(productImageURLs[indexPath.row]))
 
     // Safe unwrap the URL, the code above could fail when the URL is not in the correct format, so you have to make sure it is safely unwrapped so you can react accordingly. You won't show the product image if the URL is nil.
@@ -408,6 +411,8 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 ```
 
+Inside the just implemented method, assign the copied `URL` to the `baseURL` instead of `<YOUR URL>` placeholder.
+
 Before you will implement the `loadProductImageFrom(_:)` method, you have to define an image cache. As a cache you will simply use a dictionary.
 
 Add the following property definition to below the `private var productImageURLs = [String]()` property:
@@ -424,13 +429,10 @@ Implement the method right below the `viewDidLoad(_:)` method and read the inlin
 
 ```Swift
 
-private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
-
-    // Retrieve an instance of the SAPURLSession
+private func loadImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
-
-        // Use a data task on the SAPURLSession to load the product images
-        sapURLSession.dataTask(with: url, completionHandler: { (data, response, error) in
+        sapURLSession.dataTask(with: url, completionHandler: { data, _, error in
 
             if let error = error {
                 self.logger.error("Failed to load image!", error: error)

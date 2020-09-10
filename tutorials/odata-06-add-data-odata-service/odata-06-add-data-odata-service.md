@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Add Data to Your OData Service
 description: Use the Database Explorer to manually add data to your simple OData service.
 auto_validation: true
@@ -138,3 +140,4 @@ Congratulations!
 
 [DONE]
 [ACCORDION-END]
+

@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-fiori]
 primary_tag: topic>html5
+author_name: Lukas Harbarth
+author_profile: https://github.com/Lukas742
 ---
 
 ## Details
@@ -19,7 +21,7 @@ There you can try out the different components and also take a look at the codin
 
 ---
 
-[ACCORDION-BEGIN [Step : ](Add components to MyApp.jsx)]
+[ACCORDION-BEGIN [Step 1:](Add components to MyApp.jsx)]
 First you need to import the components you want to use.
 
 You can check out all available components in the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/welcome-getting-started--page). Take your time to play around a little, change some `props` and take a look at the coding.
@@ -36,7 +38,7 @@ You can check out all available components in the [Storybook](https://sap.github
 
 2. So, you imported the `Card` component. Now it's time to use it. Replace the content of your `<div>` with a `<Card>`.
 
-    In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/ui5-web-components-card--default-story), you can see that Cards can receive different props. For now only add `heading='Card'`.
+    In the [Storybook](https://sap.github.io/ui5-webcomponents-react/?path=/story/4-ui5-web-components-card--default-story), you can see that Cards can receive different props. For now only add `heading='Card'`.
 
     ```JavaScript / JSX
     <div>
@@ -66,7 +68,7 @@ export function MyApp() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step : ](Add content to the Card component)]
+[ACCORDION-BEGIN [Step 2:](Add content to the Card component)]
 The content area of the `Card` component is empty, this is because it didn't receive any children. Children of `Cards` should be `ReactNodes` or an array of `ReactNodes`.
 
 1. Add the following lines to your Card component:
@@ -99,7 +101,7 @@ The `font-family` of the content now corresponds to the `font-family` of the hea
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step : ](Style your component)]
+[ACCORDION-BEGIN [Step 3:](Style your component)]
 In this step, we will only apply [inline-styling](https://reactjs.org/docs/dom-elements.html#style). You can also style your component using [JSS](https://cssinjs.org/?v=v10.0.0), but this will be covered in [Tutorial 6](ui5-webcomponents-react-styling) of the tutorial series.
 
 The Card now spreads across the whole screen, this behavior is intended so it takes up the whole space of its container.
@@ -162,7 +164,7 @@ And your application like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step ](Event handling)]
+[ACCORDION-BEGIN [Step 4:](Event handling)]
 
 1. The Card header can also be clickable. For this you need to set the `headerInteractive` prop to true.
 

@@ -22,7 +22,7 @@ primary_tag: topic>sap-community
 -	How to connect with your audience
 -	Which blogging missions you can complete
 
-Awarded on a weekly basis, **Blogging Savvy** may not appear immediately in the **Reputation** section of your profile, so please expect a slight delay before you see the badge.
+Awarded on a weekly basis, **Blogging Savvy** may not appear in the **Reputation** section of your profile immediately, so please expect a slight delay before you see the badge.
 
 ---
 
@@ -53,8 +53,6 @@ You must select a blog category before publishing a blog post. Please read the *
 [ACCORDION-BEGIN [Step 3: ](Use tags)]
 
 As explained on the [Blogging](https://community.sap.com/resources/blogging) resources page, once you decide what to write about, you'll need to select tags that match the topics that your blog post covers. Please read the **Using tags** section of the [Blogging](https://community.sap.com/resources/blogging) resources page, then answer the following.
-
-![Tags](tags.png)
 
 [VALIDATE_3]
 [ACCORDION-END]

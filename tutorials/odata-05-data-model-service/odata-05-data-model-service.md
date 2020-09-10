@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Define a Simple Data Model and OData Service with CDS
 description: Use core data and services (CDS) to define a simple entity and generate an OData service from it.
 auto_validation: true
@@ -234,3 +236,4 @@ Congratulations! You have your own SAP HANA backed OData service up and running!
 
 [DONE]
 [ACCORDION-END]
+

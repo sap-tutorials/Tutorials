@@ -13,6 +13,7 @@ primary_tag: products>sap-cloud-platform-business-rules
   - How to create a rule set and associate rules to a rule service
 
 A rule service is an interface or an end point that enables an application to invoke a decision logic. A rule set is a collection of rules related to a particular scenario. A rule set can be linked to a rule service so that the set of rules in the rule set gets executed when the rule service is deployed.
+
 In this tutorial, we will create the rule services and rule sets required to deploy the decision logic.
 
 
@@ -93,6 +94,8 @@ In this tutorial, we will create the rule services and rule sets required to dep
     |  Description    | **`Ruleset that contain the rules needed to determine the equipment required for a new hire.`**
     |  Rule Service   |  **`DetermineEquipmentRuleservice`**
 
+    >You can leave the **Priority** and **Policy** fields and **Vocabulary** section as it is.
+
     ![Ruleset details](create_ruleset2.png)
 
 3. Choose the **Rules** tab, choose **Add Rule** > **Insert First**.
@@ -111,6 +114,8 @@ In this tutorial, we will create the rule services and rule sets required to dep
     |  Label         | **`EquipmentApprovalRuleset`**
     |  Description    | **`Ruleset to contain rules that determine if the approval is needed for the list of equipment order or not.`**
     |  Rule Service   |  **`EquipmentApprovalRuleservice`**
+
+    >You can leave the **Priority** and **Policy** fields and **Vocabulary** section as it is.
 
     In the **Rules** tab, choose **`EquipmentApprovalRules`** from the dropdown list and then choose **Activate**.
 

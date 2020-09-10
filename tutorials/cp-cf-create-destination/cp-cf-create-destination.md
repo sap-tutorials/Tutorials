@@ -10,8 +10,8 @@ time: 5
 ## Details
 ### You will learn
 - How to configure a basic destination
-- What some of the Web IDE specific properties are
-- How to specify the Web IDE usage parameter for a generic OData service
+- What some of the additional properties are for
+- How to specify the SAP Business Application Studio usage parameter for a generic OData service
 
 Destinations are key building blocks in SAP Cloud Platform, and are used to define connections for outbound communication from your application to remote systems. These remote systems can be on-premises or in the cloud.
 
@@ -24,67 +24,59 @@ The Northwind OData services comes in several versions.  The tutorials currently
 ---
 
 
-[ACCORDION-BEGIN [Step : ](Log into SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step : ](Enter your trial account)]
 
-Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
+Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit. Click the **Enter Your Trial Account** button.
 
-![SAP Cloud Platform log in page](./scp-trial-logon.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Go to the Cloud Foundry Environment)]
-
-Click the **Cloud Foundry Trial** tile.
-
-![Trial](./trial.png)
+!![SAP Cloud Platform log in page](./scp-trial-logon.png)
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step : ](Access your subaccount)]
 
-[ACCORDION-BEGIN [Step : ](Access your sub-account)]
+Click on the tile of your Cloud Foundry subaccount.
 
-Click on the tile of your Cloud Foundry sub-account.
-
-![subaccount](./subaccount.png)
+!![subaccount](./subaccount.png)
 
 [DONE]
 [ACCORDION-END]
-
 [ACCORDION-BEGIN [Step : ](Open the Destinations view)]
 
-Click on the **Destinations** button on the left panel.
+Click on the **Destinations** button on the left panel and click **New Destination** to open a new destination configuration form.
 
-![destination](./destination.png)
+!![destination](./destination.png)
 
 [DONE]
 [ACCORDION-END]
-
 [ACCORDION-BEGIN [Step : ](Create new destination)]
 
-Click **New Destination** to open a new destination configuration form.
 
-![newdest](./newdest.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step : ](Confirm data)]
-
-Enter/confirm all fields in the destination configuration section with the information below.
+Enter/confirm all fields in the destination configuration section with the information below and confirm with **Save**.
 
 Field Name     | Value
 :------------- | :-------------
-Name           | `Northwind`
-Type           | `HTTP`
-Description    | `Northwind OData services`
-URL            | `https://services.odata.org`
-Proxy Type     | `Internet`
-Authentication | `NoAuthentication`
+Name           | **`Northwind`**
+Type           | **`HTTP`**
+Description    | **`Northwind OData services`**
+URL            | **`https://services.odata.org`**
+Proxy Type     | **`Internet`**
+Authentication | **`NoAuthentication`**
+
+And the following *Additional Properties*
+
+Property Name     | Value
+:------------- | :-------------
+`HTML5.DynamicDestination`           | **`true`** (enter this property manually as it is not available in the dropdown list)
+`WebIDEEnabled`           | **`true`**
+`WebIDESystem`    | **`Northwind`**
+`WebIDEUsage`            | **`odata_gen`**
 
 > Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`
 
 When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK truststore** will appear. Ensure that this is checked.
+
+!![new destination entered](./newdest.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -93,7 +85,7 @@ When you specify a URL with the HTTPS scheme, a checkbox **Use default JDK trust
 
 Click on the `Check Connection` icon on the newly created Destination to see if everything works.
 
-![check](./checkdest.png)
+!![check destination function](./checkDestination.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

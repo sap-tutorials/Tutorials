@@ -2,21 +2,21 @@
 title: SAP HANA XS Advanced, Connecting to SAP Web IDE and cloning a Git Repository to begin development
 description: Connect to Web IDE and Clone a Git Repository to create a Multi-Target Application
 auto_validation: true
-author_name: Lucia Subatin
-author_profile: https://github.com/lsubatin
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
-  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://developers.sap.com/topics/sap-hana-express.html#details)
+  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://developers.sap.com/topics/hana.html)
   - **Recommended**: It is recommended to map the development space to a tenant database. Follow [these instructions](https://developers.sap.com/tutorials/xsa-tenant-db-space.html) before creating your first database module.
 
 ## Details
 SAP HANA Extended Application Services, advanced model is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures.
 To begin with you will need see how to connect to the SAP Web IDE for SAP HANA and clone a Git Repository.
 
-As of SPS12, all design-time artifacts are stored in Git instead of the HANA database. We need to setup the repository so development can be collaborative.
+With XSA and HDI (HANA Deployment Infrastructure), all design-time artifacts are stored in Git instead of the HANA database. We need to setup the repository so development can be collaborative.
 
 Check [this series of blogs posts](https://blogs.sap.com/2017/09/04/xs-advanced-for-not-so-dummies/) to get introduced to the basic concepts in XS Advanced development, such as Multi-target Applications and micro-services.
 
@@ -29,7 +29,7 @@ Check [this series of blogs posts](https://blogs.sap.com/2017/09/04/xs-advanced-
 
 > It is **recommended** that you map the development space to the default tenant in SAP HANA, express edition. Follow [these instructions](https://developers.sap.com/tutorials/xsa-tenant-db-space.html) before getting started..
 
-By default, in SAP HANA, express edition, SAP Web IDE for SAP HANA can be accessed using `https://hxehost:53075/`. If you are using a different system, you can check the URL using command `xs apps | grep webide` in the [XS Command Line Interface](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/addd59069e6f444ca6ccc064d131feec.html).
+By default, in SAP HANA, express edition, SAP Web IDE for SAP HANA can be accessed using `https://hxehost:53075/`. If you are using a different system, you can check the URL using command `xs apps | grep webide` in the [XS Command Line Interface](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/addd59069e6f444ca6ccc064d131feec.html).
 
 User: `XSA_DEV`
 Password: The password provided when you set up HANA Express
@@ -87,7 +87,7 @@ Enter authentication details:
 - User:  `<Your GitHub User ID>`
 - Password:  `<You've guessed: Your GitHub password!>`
 
-Tick the **Remember me** box so it will not ask again for the remainder of the session.
+Tick the **Remember me** box so it will not ask again for the remainder of the session. If you receive a Git Ignore System Files message, please choose Do it later.
 
 If successful, you will see the repository folder in your workspace, which is now connected to the git repository.
 ![Git is cloned into SAP HANA Web IDE](4_3.png)
@@ -100,7 +100,7 @@ If successful, you will see the repository folder in your workspace, which is no
 
 Last, you need to configure the space for the repository you have just linked.
 
->Introduced in SPS12, spaces enable applications to access shared resources that can be used to develop, deploy, and maintain applications.
+>Spaces enable applications to access shared resources that can be used to develop, deploy, and maintain applications.
 
 Right-click on the folder for the repository and select **Project Settings**
 

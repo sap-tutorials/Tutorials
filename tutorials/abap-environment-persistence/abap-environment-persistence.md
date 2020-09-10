@@ -27,7 +27,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [ACCORDION-BEGIN [Step 1: ](Create ABAP package)]
   1. Open **ABAP Development Tools (ADT)** and select your **ABAP Cloud Project** you created in [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding).
 
-     Right-click on `ZLOCAL` and select **ABAP Package**.
+     Right-click on `ZLOCAL` and select **New > ABAP Package**.
 
       ![Create ABAP package](package.png)
 
@@ -41,20 +41,16 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create ABAP package](package2.png)
 
-  3. `ZLOCAL` will be added as software component. Click **Next >**.
-
-      ![Create ABAP package](package3.png)
-
-  4. Select **Create new request** and enter a request description.
+  3. Select **Create new request** and enter a request description.
 
       ![Create ABAP package](package4.png)
 
 
-  5. Right-click on **Favorite Packages** and select **Add Package**.
+  4. Right-click on **Favorite Packages** and select **Add Package**.
 
       ![Create ABAP package](package5.png)
 
-  6. Search for `ZTRAVEL_APP_XXX`, select it and click **OK** to add your package in the favorite packages section.
+  5. Search for `ZTRAVEL_APP_XXX`, select it and click **OK** to add your package in the favorite packages section.
 
       ![Create ABAP package](package6.png)
 
@@ -90,11 +86,11 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     @AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
     @AbapCatalog.tableCategory : #TRANSPARENT
     @AbapCatalog.deliveryClass : #A
-    @AbapCatalog.dataMaintenance : #LIMITED
-    define table ztravel_xxx
-    {
+    @AbapCatalog.dataMaintenance : #RESTRICTED
+    define table ztravel_xxx {
       key client      : abap.clnt not null;
-      key travel_id   : /dmo/travel_id not null;
+      key mykey       : sysuuid_x16 not null;
+      travel_id       : /dmo/travel_id;
       agency_id       : /dmo/agency_id;
       customer_id     : /dmo/customer_id;
       begin_date      : /dmo/begin_date;
@@ -110,6 +106,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       created_at      : timestampl;
       last_changed_by : syuname;
       last_changed_at : timestampl;
+
     }   
     ```
 
@@ -144,59 +141,58 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     CLASS zcl_generate_travel_data_xxx DEFINITION
-     PUBLIC
-     FINAL
-     CREATE PUBLIC .
+      PUBLIC
+      FINAL
+      CREATE PUBLIC .
 
-     PUBLIC SECTION.
-       INTERFACES if_oo_adt_classrun.
-     PROTECTED SECTION.
-     PRIVATE SECTION.
+      PUBLIC SECTION.
+        INTERFACES if_oo_adt_classrun.
+      PROTECTED SECTION.
+      PRIVATE SECTION.
     ENDCLASS.
 
 
-    CLASS ZCL_GENERATE_TRAVEL_DATA_XXX IMPLEMENTATION.
 
-     METHOD if_oo_adt_classrun~main.
-       DATA:itab TYPE TABLE OF ztravel_xxx.
+    CLASS zcl_generate_travel_data_xxx IMPLEMENTATION.
+      METHOD if_oo_adt_classrun~main.
+        DATA:itab TYPE TABLE OF ztravel_xxx.
 
     *   read current timestamp
-       GET TIME STAMP FIELD DATA(zv_tsl).
+        GET TIME STAMP FIELD DATA(zv_tsl).
 
     *   fill internal travel table (itab)
-       itab = VALUE #(
-     ( travel_id = '00000022' agency_id = '070001' customer_id = '000077' begin_date = '20190624' end_date = '20190628' booking_fee = '60.00' total_price =  '750.00' currency_code = 'USD'
-       description = 'mv' overall_status = 'A' created_by = 'MUSTERMANN' created_at = '20190612133945.5960060' last_changed_by = 'MUSTERFRAU' last_changed_at = '20190702105400.3647680'  )
-     ( travel_id = '00000106' agency_id = '070005' customer_id = '000005' begin_date = '20190613' end_date = '20190716' booking_fee = '17.00' total_price = '650.00' currency_code = 'AFN'
-       description = 'Enter your comments here' overall_status = 'A' created_by = 'MUSTERMANN' created_at = '20190613111129.2391370' last_changed_by = 'MUSTERMANN' last_changed_at = '20190711140753.1472620' )
-     ( travel_id = '00000103' agency_id = '070010' customer_id = '000011' begin_date = '20190610' end_date = '20190714' booking_fee = '17.00' total_price = '800.00' currency_code = 'AFN'
-       description = 'Enter your comments here' overall_status = 'X' created_by = 'MUSTERFRAU' created_at = '20190613105654.4296640' last_changed_by = 'MUSTERFRAU' last_changed_at = '20190613111041.2251330' )
-    ).
+        itab = VALUE #(
+      ( mykey = '02D5290E594C1EDA93815057FD946624' travel_id = '00000022' agency_id = '070001' customer_id = '000077' begin_date = '20190624' end_date = '20190628' booking_fee = '60.00' total_price =  '750.00' currency_code = 'USD'
+        description = 'mv' overall_status = 'A' created_by = 'MUSTERMANN' created_at = '20190612133945.5960060' last_changed_by = 'MUSTERFRAU' last_changed_at = '20190702105400.3647680'  )
+      ( mykey = '02D5290E594C1EDA93815C50CD7AE62A' travel_id = '00000106' agency_id = '070005' customer_id = '000005' begin_date = '20190613' end_date = '20190716' booking_fee = '17.00' total_price = '650.00' currency_code = 'AFN'
+        description = 'Enter your comments here' overall_status = 'A' created_by = 'MUSTERMANN' created_at = '20190613111129.2391370' last_changed_by = 'MUSTERMANN' last_changed_at = '20190711140753.1472620' )
+      ( mykey = '02D5290E594C1EDA93858EED2DA2EB0B' travel_id = '00000103' agency_id = '070010' customer_id = '000011' begin_date = '20190610' end_date = '20190714' booking_fee = '17.00' total_price = '800.00' currency_code = 'AFN'
+        description = 'Enter your comments here' overall_status = 'X' created_by = 'MUSTERFRAU' created_at = '20190613105654.4296640' last_changed_by = 'MUSTERFRAU' last_changed_at = '20190613111041.2251330' )
+      ).
 
     *   delete existing entries in the database table
-       DELETE FROM ztravel_xxx.
+        DELETE FROM ztravel_xxx.
 
     *   insert the new table entries
-       INSERT ztravel_xxx FROM TABLE @itab.
+        INSERT ztravel_xxx FROM TABLE @itab.
 
     *   check the result
-       SELECT * FROM ztravel_xxx INTO TABLE @itab.
-       out->write( sy-dbcnt ).
-       out->write( 'Travel data inserted successfully!').
+        SELECT * FROM ztravel_xxx INTO TABLE @itab.
+        out->write( sy-dbcnt ).
+        out->write( 'Travel data inserted successfully!').
 
-     ENDMETHOD.
-    ENDCLASS.          
+      ENDMETHOD.
+    ENDCLASS.
     ```
 
   5. Save, activate and click `F9` to run your ABAP class.
 
       ![save and activate](activate2.png)
 
-  6. Switch to your database table and press `F8` to see your data.
+  6. Check your result. Therefore open your database table **`ZTRAVEL_XXX`** and press `F8` to see your data.
+     Now the dictionary tables are filled with data.
 
       ![Create ABAP class](class4.png)
-
-     Now the dictionary tables are filled with data.
 
 [DONE]
 [ACCORDION-END]
@@ -209,4 +205,4 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://s.userzoom.com/m/NSBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-persistence" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
