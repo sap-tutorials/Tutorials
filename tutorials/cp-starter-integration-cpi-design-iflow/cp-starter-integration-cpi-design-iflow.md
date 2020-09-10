@@ -2,7 +2,7 @@
 title: Design and Test Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details. Your request will be sent via Postman client.
 auto_validation: true
-time: 15
+time: 25
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-integration-for-process-services
 author_name: Vikram Kulkarni
