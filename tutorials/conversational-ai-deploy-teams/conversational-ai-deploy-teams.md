@@ -5,6 +5,9 @@ auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-conversational-ai]
 primary_tag: products>sap-conversational-ai
+author_name: Daniel Wroblewski
+author_profile: https://github.com/thecodester
+
 ---
 
 ## Prerequisites
