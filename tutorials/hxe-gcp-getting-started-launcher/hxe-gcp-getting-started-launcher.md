@@ -13,7 +13,7 @@ time: 15
 ## Next Steps
 - **Drivers and connectors for Python, Node.js, .NET, Java and others**: Write your [first application using advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html) or check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
 - **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html). Alternatively, use a plugin for Eclipse to connect to your SAP HANA, express edition [system database instance](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database](https://developers.sap.com/tutorials/hxe-gcp-eclipse-tenant-connect.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)
 - **OPTIONAL:** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 ## Disclaimer
@@ -127,7 +127,7 @@ Alternatively, click on the `Learn more` and follow the steps to create a static
 
 ![IP Address](7.png)
 
-Your SAP HANA, express edition instance is now up and running. You can continue to [explore tutorials to get you started](https://developers.sap.com/topics/sap-hana-express.tutorials.html) or perform the optional steps below.
+Your SAP HANA, express edition instance is now up and running. You can continue to [explore tutorials to get you started](https://developers.sap.com/topics/hana.html) or perform the optional steps below.
 
 [DONE]
 [ACCORDION-END]
@@ -219,5 +219,5 @@ hdbsql -i 90 -d HXE -u SYSTEM
 ### Additional Information
 - **Drivers and connectors for Python, Node.js, .NET, Java and others**: Write your [first application using advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html) or check sample applications using different drivers and languages [such as Node.js, Python ](https://developers.sap.com/group.hxe-tiny-world.html)
 - **Database clients**: Use a SQL client and the JDBC drivers to [connect to the database](https://developers.sap.com/tutorials/hxe-cj1-download-sql-client.html). Alternatively, use a plugin for Eclipse to connect to your SAP HANA, express edition [system database instance](https://developers.sap.com/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database](https://developers.sap.com/tutorials/hxe-gcp-eclipse-tenant-connect.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)
 - **OPTIONAL:** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

@@ -7,6 +7,9 @@ tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-clo
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
+##Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+
 ## Details
 ### You will learn
   - How to create an HTTP client in an ABAP class
@@ -42,6 +45,8 @@ First, you create the class that instantiates the client proxy.
 
 [ACCORDION-BEGIN [Step 2: ](Copy code)]
 Copy the following code.
+
+**IMPORTANT**: Always specify the authentication mode using the interface `if_a4c_cp_service`. Never hard-code your password in the class.
 
 ```ABAP
 
