@@ -1,6 +1,6 @@
 ---
 title: Design and Test Your First Integration Flow
-description: Design an integration flow to integrate an online webshop that exposes data via OData service, and test it using Postman client.
+description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details. Your request will be sent via Postman client.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -11,17 +11,121 @@ author_profile: https://github.com/Vikramkulkarni01
 
 ## Prerequisites
  - You have provisioned your SAP Cloud Platform Integration Suite tenant. For more information, see [Set Up Integration Suite Trial](cp-starter-isuite-onboard-subscribe).
- - You have created an integration package and an integration flow. For more information, see [Create your First Integration Package and Integration Flow](cp-starter-integration-cpi-create-iflow)
  - You have [downloaded](https://www.getpostman.com/downloads/) and installed the Postman client.
 
 ## Details
 ### You will learn
+  - How to create service instance and key
   - How to design and deploy an integration flow using the web-based integration flow designer
   - How to design an integration flow to query data from an online web shop that is available as an OData service
 
 
+  [ACCORDION-BEGIN [Step 1: ](Create service instance and key)]
 
-[ACCORDION-BEGIN [Step 1: ](Edit integration flow)]
+>**IMPORTANT**: You should execute this step after the **`Cloud Platform Integration`** tenant is active. Please ensure that you can access your tenant. If you create a service instance and key before that it might lead to an issue.
+
+  1. Navigate back to your SAP Cloud Platform's subaccount and access your subaccount's space by choosing **Spaces** > **dev**. If you have intentionally specified any other space name, you can choose the space of your choice.
+
+      !![Access space](4.1.access-space.png)
+
+  2. Choose **Services** > **Service Marketplace** > **Process Integration Runtime**.
+
+      !![Access PI Runtime](4.2.access-process-integration-runtime.png)
+
+    >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
+
+  3. Select **Instances** > **New Instance**.
+
+      !![Create new instance](4.3.create.new.instance.png)
+
+  4. Choose **Next** to select the default service plan. In the **Specify Parameters** tab, enter:
+
+    ```JSON
+      {
+       "roles":[
+         "ESBMessaging.send"
+       ]
+      }
+    ```
+
+      Service plan integration-flow is the only option which is preset because processing integration flows is what a remote system is doing when calling SAP Cloud Platform Integration.
+
+      !![Specify JSON for user role](4.4.specify-json-instance.png)
+
+  5. Choose **Next** until you have to specify the instance name. Provide any name of your choice and choose **Finish**.
+
+      !![Specify instance name](4.5.specify-instance-name.png)
+
+  6. Select the newly created service instance.
+
+      !![Select service key](4.6.select-service-instance.png)
+
+      You create this service instance to enable inbound HTTP calls to your SAP Cloud Platform Integration tenant.
+
+  7. Choose **Create Service Key** to create a new service key.
+
+      !![Create service key](4.7.create-service-key.png)
+
+    >**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Cloud Platform Integration suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
+
+  8. Specify a name for the service key and choose **Save**.
+
+      !![Enter service key name](4.8.create-service-key-2.png)
+
+  9. Copy the values of **`clientid`** and **`clientsecret`** parameters. These are the credentials that you use to make a request to your integration flow after you deploy it.
+
+      ![Copy clientid and clientsecret](4.9.copy-clientid-secret.png)
+
+      Make a note of these credentials. You will use it when you make HTTP calls to integration flows deployed on your tenant with HTTP endpoints.
+
+[DONE]
+[ACCORDION-END]
+
+  [ACCORDION-BEGIN [Step 2: ](Access your workspace)]
+
+  Click the **Design** tab (pencil icon) to access your workspace. This is where you will create your integration package and integration flow.
+
+  ![Access workspace](1.1.access-workspace.png)
+
+  This is the space where you will work on your integration flows and where you can access all your integration projects.
+
+[DONE]
+[ACCORDION-END]
+
+  [ACCORDION-BEGIN [Step 3: ](Create an integration package and integration flow)]
+
+  1. Choose **Create** to create a new integration package.
+
+    >An integration flow should be associated with an integration package.
+
+      ![Create integration package](2.1.create-integration-package.png)
+
+      In the **Header** tab, provide a **Name** and **Short Description** for your integration package.
+
+    >The **Technical Name** gets populated automatically based on the name that you provide.
+
+      Choose **Save** and then choose **Artifacts** to navigate to the artifacts tab. In this tab, you will create your first integration flow.
+
+      ![Provide package details and navigate to artifacts](2.2.enter-integration-package.details.png)
+
+  2. Choose **Add** > **Integration Flow**.
+
+      ![Add integration flow artifact](2.3.add-integration-flow.png)
+
+      Enter the **Name** for integration flow and choose **OK**.
+
+      ![Enter integration flow details and confirm](2.4.enter-iflow-details.png)
+
+  3. Save the integration package by choosing **Save** and open the integration flow by selecting it.
+
+      You can then edit the integration flow to add the required steps to create your integration scenario.
+
+      ![Save integration package and open integration flow](2.5.save-open-iflow.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Edit the integration flow)]
 1. Access your integration package by choosing **Design** > **(Integration package name)**.
 
     !![Access integration package](1.1.access-integration-package.png)
@@ -40,7 +144,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Connect sender channel with HTTPS adapter)]
+[ACCORDION-BEGIN [Step 5: ](Connect sender channel with HTTPS adapter)]
 
 1. Create the sender channel by clicking the arrow icon on **Sender** and dragging it to the **Start Message** step.
 
@@ -61,7 +165,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Add JSON to XML converter)]
+[ACCORDION-BEGIN [Step 6: ](Add JSON to XML converter)]
 
 1. From the palette (the grey sidebar containing integration flow steps), choose **Message Transformers > Converter > JSON to XML Converter**.
 
@@ -77,7 +181,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add and configure content modifier)]
+[ACCORDION-BEGIN [Step 7: ](Add and configure content modifier)]
 
 1. Choose **Message Transformers** > **Content Modifier** and add it to the message path, as you did for the **JSON to XML Converter**.
 
@@ -98,7 +202,7 @@ author_profile: https://github.com/Vikramkulkarni01
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add request reply step)]
+[ACCORDION-BEGIN [Step 8: ](Add request reply step)]
 
 From the palette, choose **Call** > **External Call** > **Request Reply**. Connect it to the message path, similar to the previous steps.
 
@@ -108,7 +212,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Connect request reply to receiver)]
+[ACCORDION-BEGIN [Step 9: ](Connect request reply to receiver)]
 
 1. Move the **Receiver** step below the **Request Reply** step by selecting it and dragging it to the desired position on the palette. You do this to ensure that your integration flow is elegantly designed.
 
@@ -161,7 +265,7 @@ In this step, you have configured the OData adapter to fetch the details of the 
 [VALIDATE_6]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Deploy the integration flow)]
+[ACCORDION-BEGIN [Step 10: ](Deploy the integration flow)]
 
 1. Choose **Deploy** to deploy the integration flow. Choose **Yes** in the confirmation dialog for deployment. Once you see the deployment confirmation, choose the **Monitor** tab to access the monitoring view.
 
@@ -180,7 +284,7 @@ You will use this endpoint in the Postman client to test your integration flow.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test integration flow using Postman)]
+[ACCORDION-BEGIN [Step 11: ](Test integration flow using Postman)]
 
 1. Launch the Postman client that you have installed on your local machine. In the **Enter request URL** field, enter the integration flow endpoint that you copied after deploying the integration flow. Then, select the **POST** operation from the dropdown list.
 
