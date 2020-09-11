@@ -3,7 +3,7 @@ title: Install the SAP HANA Client
 description: Learn about the multiple ways to install the SAP HANA client.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition]
+tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-hana-cloud]
 primary_tag: products>sap-hana
 ---
 
@@ -25,7 +25,7 @@ The SAP HANA client provides a set of utilities and drivers to connect to and qu
 
 For a list of newly added features, see [SAP HANA Client Interfaces (New and Changed)](https://help.sap.com/viewer/42668af650f84f9384a3337bcd373692/latest/en-US/cfd0b10e42a047c7bc8d6135dc6b9f4c.html), [New and Changed Features in the SAP HANA Client](https://help.sap.com/viewer/79ae9d3916b84356a89744c65793b924/latest/en-US), or the [release notes](https://launchpad.support.sap.com/#/notes/2829936).
 
-The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a current 2.4.x client can connect to SAP HANA Cloud, SAP HANA Service, SAP HANA 2.0 or an SAP HANA 1.0 SPS 09 or higher server.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
+The SAP HANA client can be used to connect to different versions of SAP HANA.  For example, a current `2.4.x` client can connect to SAP HANA Cloud, SAP HANA Service, SAP HANA 2.0 or an SAP HANA 1.0 SPS 09 or higher server.  For more information, see [SAP HANA client and server cross-version compatibility](https://launchpad.support.sap.com/#/notes/0001906576).
 
 [DONE]
 [ACCORDION-END]
@@ -33,6 +33,7 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 [ACCORDION-BEGIN [Step 2: ](Install from SAP Development Tools)]
 
 1. Download the client installer for your platform (Microsoft Windows, Linux, or Mac) from the [SAP Development Tools](https://tools.hana.ondemand.com/#hanatools) website under the HANA tab and the SAP HANA Client 2.0 section.
+>An alternate location to download the client installer is given in step 3.  
 
     ![Client Download](Client-install.png)
 
@@ -44,10 +45,10 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
     tar -zxvf hanaclient*.tar.gz
     ```  
 
-3. Start the graphical installer (or use the command line installer `hdbinst`).  
+3. Start the graphical installer `hdbsetup` or use the command line installer `hdbinst`.  
 
     ```Shell (Microsoft Windows)
-    dbsetup.execut
+    hdbsetup.exe
     ```
 
     ```Shell (Linux or Mac)
@@ -58,15 +59,15 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
     ![Client-install](client-installer.png)
 
-    >This tutorial mission covers Microsoft Windows, Linux and Mac.  If there are commands that are different depending on the platform, two sets of commands will be provided and the title will say Shell (Microsoft Windows) or Shell (Linux or Mac).  Note that on Microsoft Windows, the shell used when creating this tutorial was the Command Prompt.
+    >This tutorial mission covers Microsoft Windows, Linux and Mac.  If there are commands that are different depending on the platform, multiple sets of commands will be provided and the title will say Shell (Microsoft Windows) or Shell (Linux or Mac).  Note that on Microsoft Windows, the shell used is the Command Prompt.
 
-4. After the installation process is completed, update your path environment variable so that the SAP HANA client programs such as `hdbsql.exe` can be found on your path.  On Microsoft Windows, click the **Start** icon and search for environment variables.
+4. After the installation process is completed, update your path environment variable so that the SAP HANA client programs such as `hdbsql` can be found on your path.  On Microsoft Windows, click the **Start** icon and search for environment variables.
 
     ![Environment variable](env-variable.png)
 
     >For details on how to configure your path on a Mac see [this](https://blogs.sap.com/2020/04/03/quick-tip-how-to-add-hdbsql-to-a-path-on-macos/) blog post.
 
-5. In the `hdbclient` folder, notice that files such as `hdbsql.exe` and the client database drivers are available.  
+5. In the `hdbclient` folder, notice that files such as `hdbsql` and the client database drivers are available.  
 
     ![Clients Post Installation](Clients-post-installation.png)
 
@@ -79,7 +80,7 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
     ![Version of HDBSQL](command-Prompt.png)
 
-    > To uninstall at a later time, run `hdbuninst`.  
+    > To uninstall at a later time, run `hdbuninst` from the folder where the client is installed.  For example `c:\sap\hdbclient\install\hdbuninst`.  
 
 
 The install from  SAP Development Tools does not contain the SAP Cryptographic Library.  This can be seen by examining the `C:\SAP\hdbclient\manifest.mf` file.  
@@ -99,9 +100,9 @@ The SAP Cryptographic Library is only required when client-side data encryption 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Install from SAP Software Downloads)]
+[ACCORDION-BEGIN [Step 3: ](Alternate Install Option, SAP Software Downloads)]
 
-Another download location is the [Software Downloads](https://support.sap.com/en/my-support/software-downloads.html) site, which requires signing in before downloading.  This version of the SAP HANA client download includes the SAP Common Crypto.  
+Another download location is the [Software Downloads](https://support.sap.com/en/my-support/software-downloads.html) site, which requires signing in before downloading.  This version of the SAP HANA client download includes the SAP Common Crypto Library.  
 
 If you have a license for SAP HANA Cloud, follow the instructions at [Download and Install the SAP HANA Client](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/16155c86453943a5b62236535ecc7429.html).   
 
@@ -116,12 +117,12 @@ The downloaded file is a `.sar` file and the utility SAPCAR is needed to extract
 The command to extract a `.sar` file is shown below.  The command options are extract, verbose and file.
 
 ```Shell (Microsoft Windows Command Prompt)
-SAPCAR*.EXE -xvf IMDB_CLIENT*.SAR
+SAPCAR.EXE -xvf IMDB_CLIENT20_005_86.SAR
 ```
 
 ```Shell (Linux or Mac)
-chmod u+e SAPCAR
-./SAPCAR*.EXE -xvf IMDB_CLIENT*.SAR
+chmod u+x SAPCAR
+./SAPCAR.EXE -xvf IMDB_CLIENT20_005_86.SAR
 ```
 
 

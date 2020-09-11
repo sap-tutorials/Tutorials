@@ -27,7 +27,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 [ACCORDION-BEGIN [Step 1: ](Create ABAP package)]
   1. Open **ABAP Development Tools (ADT)** and select your **ABAP Cloud Project** you created in [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding).
 
-     Right-click on `ZLOCAL` and select **ABAP Package**.
+     Right-click on `ZLOCAL` and select **New > ABAP Package**.
 
       ![Create ABAP package](package.png)
 
@@ -41,20 +41,16 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![Create ABAP package](package2.png)
 
-  3. `ZLOCAL` will be added as software component. Click **Next >**.
-
-      ![Create ABAP package](package3.png)
-
-  4. Select **Create new request** and enter a request description.
+  3. Select **Create new request** and enter a request description.
 
       ![Create ABAP package](package4.png)
 
 
-  5. Right-click on **Favorite Packages** and select **Add Package**.
+  4. Right-click on **Favorite Packages** and select **Add Package**.
 
       ![Create ABAP package](package5.png)
 
-  6. Search for `ZTRAVEL_APP_XXX`, select it and click **OK** to add your package in the favorite packages section.
+  5. Search for `ZTRAVEL_APP_XXX`, select it and click **OK** to add your package in the favorite packages section.
 
       ![Create ABAP package](package6.png)
 
@@ -90,7 +86,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     @AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
     @AbapCatalog.tableCategory : #TRANSPARENT
     @AbapCatalog.deliveryClass : #A
-    @AbapCatalog.dataMaintenance : #LIMITED
+    @AbapCatalog.dataMaintenance : #RESTRICTED
     define table ztravel_xxx {
       key client      : abap.clnt not null;
       key mykey       : sysuuid_x16 not null;
@@ -193,11 +189,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
       ![save and activate](activate2.png)
 
-  6. Switch to your database table and press `F8` to see your data.
+  6. Check your result. Therefore open your database table **`ZTRAVEL_XXX`** and press `F8` to see your data.
+     Now the dictionary tables are filled with data.
 
       ![Create ABAP class](class4.png)
-
-     Now the dictionary tables are filled with data.
 
 [DONE]
 [ACCORDION-END]
@@ -210,4 +205,4 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://s.userzoom.com/m/NSBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-persistence" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

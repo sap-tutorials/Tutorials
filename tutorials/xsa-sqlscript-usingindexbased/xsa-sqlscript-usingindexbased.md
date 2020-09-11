@@ -4,20 +4,15 @@ description: Leveraging SQLScript in Stored Procedures, User Defined Functions, 
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud ]
+time: 10
+
 ---
-## Prerequisites  
-- **Proficiency:** Intermediate
-
-## Next Steps
-- [Using Table Variable Operators](https://developers.sap.com/tutorials/xsa-sqlscript-table-operators.html)
-
 ## Details
 ### You will learn  
-This solution shows how to use index-based cell access to manipulate table data. This approach is faster than using cursors or arrays.
+- How to use index-based cell access to manipulate table data.
 
-### Time to Complete
-**10 Min**.
+Using index-based cell access to manipulate table data is faster than using cursors or arrays.
 
 ---
 

@@ -6,7 +6,7 @@ description: Develop a sample business service using Core Data & Services (CDS),
 auto_validation: true
 primary_tag: software-product-function>sap-cloud-application-programming-model
 tags: [  tutorial>beginner, topic>node-js, software-product-function>sap-cloud-application-programming-model  ]
-time: 40
+time: 50
 ---
 
 
@@ -30,13 +30,7 @@ time: 40
 
 Before you start, make sure that you've completed the prerequisites.
 
-1. Set the NPM registry for `@sap` packages by executing the following command in a command line window:
-
-    ```Shell/Bash
-    npm set @sap:registry=https://npm.sap.com
-    ```
-
-2. Install the `cds` development kit globally by executing the following command:
+1. Open a command line window and install the `cds` development kit globally by executing the following command:
 
     ```Shell/Bash
     npm i -g @sap/cds-dk
@@ -56,7 +50,7 @@ Before you start, make sure that you've completed the prerequisites.
     cds
     ```
 
-    ![cds commands](cds-commands.png)
+    ![cds commands](cds_commands.png)
 
     >This lists the available `cds` commands.  For example, use `cds version` to check the version that you've installed. To know what is the latest version, see the [Release Notes](https://cap.cloud.sap/docs/releases/) for CAP.
 
@@ -66,18 +60,19 @@ Before you start, make sure that you've completed the prerequisites.
 
 [ACCORDION-BEGIN [Step 2: ](Install Visual Studio Code extension)]
 
-1. Go to [SAP Development Tools](https://tools.hana.ondemand.com/#cloud-vscodecds) and download the `vsix` file for CDS Language Support for Visual Studio Code.
+1. Go to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-cds#overview).
 
-2. Open Visual Studio Code. Choose **View** > **Extensions** > **Install from VSIX...** and and install the extension by choosing the `vsix` file you have downloaded before:
+2. Choose **Install**.
 
-    ![Visual Studio extension](visual-studio-extension.png)
+![Folder structure](VSCode_extension.png)
 
-    &nbsp;
+   Visual Studio Code opens the extensions details page.
 
-    ![Visual Studio extension](visual-studio-extension-vsix.png)
+![Folder structure](VSCode_view_extension.png)
 
+3. In Visual Studio Code choose **Install** to enable the extension for CDS Language Support.
 
-    >If you see a compatibility error, make sure that you have the latest version of Visual Studio Code.
+> If the extension is already installed and enabled in VS Code, it will be updated automatically.
 
 [DONE]
 
@@ -86,6 +81,8 @@ Before you start, make sure that you've completed the prerequisites.
 [ACCORDION-BEGIN [Step 3: ](Start project)]
 
 [OPTION BEGIN [Windows]]
+
+With your installed CDS command line tool, you can now create a new CAP-based project, in the form of a new directory with various things preconfigured.
 
 1. Open a command line window and run the following command in a folder of your choice to create the project:
 
@@ -113,9 +110,11 @@ Before you start, make sure that you've completed the prerequisites.
 
     ```
     [cds] - running nodemon...
-    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
+    --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml,env
+    --exec cds serve all --with-mocks --in-memory?
 
-        No models found at db/,srv/,app/,schema,services,.
+
+        No models found at db/,srv/,app/,schema,services.
         Waiting for some to arrive...
     ```
 
@@ -149,7 +148,7 @@ Before you start, make sure that you've completed the prerequisites.
     [cds] - running nodemon...
     --ext cds,csn,csv,ts,mjs,cjs,js,json,properties,edmx,xml
 
-        No models found at db/,srv/,app/,schema,services,.
+        No models found at db/,srv/,app/,schema,services.
         Waiting for some to arrive...
     ```
 
@@ -167,11 +166,11 @@ After initializing the project, you should see the following empty folders:
 - `db`: for the database level schema model
 - `srv`: for the service definition layer
 
-![Folder structure](folder-structure.png)
+![Folder structure](folder_structure.png)
 
-1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`cat-service.cds`**.
+1. Let's feed it by adding a simple domain model. In the **`srv`** folder choose the **New File** icon in Visual Studio Code and create a new file called `cat-service.cds`.
 
-2. Add the following code to the file **`cat-service.cds`**:
+2. Add the following code to the file `cat-service.cds`:
 
     ```CDS
     using { Country, managed } from '@sap/cds/common';
@@ -206,12 +205,14 @@ After initializing the project, you should see the following empty folders:
 3. As soon as you've saved your file, the still running `cds watch` reacts immediately with some new output as shown below:
 
     ```
-    [cds] - connect to db { database: ':memory:' }
+    [cds] - using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect to db > sqlite { database: ':memory:' }
     /> successfully deployed to sqlite in-memory db
 
+    [cds] - connect to messaging > local-messaging {}
     [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 696.753ms
+    [cds] - launched in: 777.366ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -229,9 +230,9 @@ After initializing the project, you should see the following empty folders:
 
 Add service provider logic to return mock data.
 
-1. In the **`srv`** folder, create a new file called **`cat-service.js`**.
+1. In the **`srv`** folder, create a new file called `cat-service.js`.
 
-2. Add the following code to the file **`cat-service.js`**:
+2. Add the following code to the file `cat-service.js`:
 
     ```JavaScript
     module.exports = (srv) => {
@@ -272,9 +273,9 @@ Add service provider logic to return mock data.
 
 To get started quickly, you've already added a simplistic all-in-one service definition. However, you would usually put normalized entity definitions into a separate data model and have your services expose potentially de-normalized views on those entities.
 
-1. In the **`db`** folder choose the **New File** icon in Visual Studio Code and create a new file called **`data-model.cds`**.
+1. In the **`db`** folder choose the **New File** icon in Visual Studio Code and create a new file called `data-model.cds`.
 
-2. Add the following code to the file **`data-model.cds`**:
+2. Add the following code to the file `data-model.cds`:
 
     ```CDS
     namespace my.bookshop;
@@ -301,7 +302,7 @@ To get started quickly, you've already added a simplistic all-in-one service def
     }
     ```
 
-3. Open the file **`cat-service.cds`** and replace the existing code with:
+3. Open the file `cat-service.cds` and replace the existing code with:
 
     ```CDS
     using my.bookshop as my from '../db/data-model';
@@ -321,9 +322,9 @@ To get started quickly, you've already added a simplistic all-in-one service def
 
 [ACCORDION-BEGIN [Step 7: ](Add initial data)]
 
-In Visual Studio Code add plain CSV files under **`db/csv`** to fill your database tables with initial data.
+In Visual Studio Code you will add plain CSV files in folder `db/csv` to fill your database tables with initial data.
 
-1. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Authors.csv`**. Add the following to the file:
+1. In the `db` folder, choose **New File** and enter `csv/my.bookshop-Authors.csv` to create a new folder `csv` with the file named `my.bookshop-Authors.csv`. Add the following to the file:
 
     ```CSV
     ID;name
@@ -333,7 +334,7 @@ In Visual Studio Code add plain CSV files under **`db/csv`** to fill your databa
     170;Richard Carpenter
     ```
 
-2. In the `db` folder, choose **New File** and enter **`csv/my.bookshop-Books.csv`**. Add the following to the file:
+2. In the newly created `csv` folder, choose **New File** and create a file called `my.bookshop-Books.csv`. Add the following to the file:
 
     ```CSV
     ID;title;author_ID;stock
@@ -348,13 +349,18 @@ In Visual Studio Code add plain CSV files under **`db/csv`** to fill your databa
     >Make sure that you now have a folder hierarchy `db/csv/...`. Remember that the `csv` files must be named like the entities in your data model and must be located inside the `db/csv` folder.
 
     >After you added these files, `cds watch`restarts the server with an output, telling that the files have been detected and their content been loaded into the database automatically:
+
     ```
-    [cds] - connect to sqlite db { database: ':memory:' }
+    [cds] - using bindings from: { registry: '~/.cds-services.json' }
+    [cds] - connect to db > sqlite { database: ':memory:' }
      > filling my.bookshop.Authors from db/csv/my.bookshop-Authors.csv
      > filling my.bookshop.Books from db/csv/my.bookshop-Books.csv
     /> successfully deployed to sqlite in-memory db
+
+    [cds] - connect to messaging > local-messaging {}
     [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
-    [cds] - launched in: 751.073ms
+
+    [cds] - launched in: 783.749ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -378,6 +384,8 @@ In Visual Studio Code add plain CSV files under **`db/csv`** to fill your databa
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add persistent database)]
+
+Before you continue, make sure that you've completed the prerequisites and installed SQLite (for Windows users only).
 
 Instead of using in-memory, you can also use persistent databases.
 
@@ -418,11 +426,11 @@ Instead of using in-memory, you can also use persistent databases.
 
     ```
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
-    [cds] - connect to db { database: 'db/my-bookshop.db' }
-    [cds] - connect to sqlite db { database: 'db/my-bookshop.db' }
-    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+    [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
+    [cds] - connect to messaging > local-messaging {}
+    [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 610.318ms
+    [cds] - launched in: 1341.398ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -462,7 +470,7 @@ You can now see the generic handlers shipped with CAP in action.
 
 [ACCORDION-BEGIN [Step 10: ](Add custom logic)]
 
-1. In Visual Studio Code add the following code in the file **`srv/cat-service.js`**:
+1. In Visual Studio Code open the file `cat-service.js` and replace the existing code with:
 
     ```JavaScript
       module.exports = (srv) => {
@@ -513,4 +521,4 @@ You can now see the generic handlers shipped with CAP in action.
 
 <p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
 
-<p style="text-align: center;"><a href="https://s.userzoom.com/m/OCBDODgzUzQxNiAg" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=cp-apm-nodejs-create-service" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

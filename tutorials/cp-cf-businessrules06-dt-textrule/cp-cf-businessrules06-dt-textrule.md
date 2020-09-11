@@ -13,6 +13,7 @@ primary_tag: products>sap-cloud-platform-business-rules
   - How to create text rules
 
 A decision table rule is the collection of rule expressions in tabular format and sequentially executes each rule in the table.
+
 A text rule is a decision logic in simple if-then format. The **If** condition of the text rule is evaluated by the system once the rule is triggered. Based on the result of the condition, the rule performs a set of operations.
 
 In this tutorial, we will create the decision logic required to assign equipment for the new hire, both as text rule as well as decision table.
