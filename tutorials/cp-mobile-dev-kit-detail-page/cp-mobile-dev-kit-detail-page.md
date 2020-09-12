@@ -69,7 +69,8 @@ This page will show related details for a customer. In this page, you will add a
     | `Subhead` | `FirstName` |
 
     >Make sure to select values for the mentioned properties only from **Customer** Entity. You may find similar values from other entities. For example,
-    !![MDK](img_1.6.png)
+
+    >!![MDK](img_1.6.png)
 
 7. As enough fields have been selected to be displayed on the detail page, `SubStatus` and `Tags` are not required for this tutorial. In a real use case, you may need these properties.
 

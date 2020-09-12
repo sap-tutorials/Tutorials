@@ -47,7 +47,7 @@ author_profile: https://github.com/mervey45
    Therefore choose in your trial subaccount your space **dev** to navigate to it.
 
     ![Select ABAP Trial](dev.png)
- 
+
 5. Click **Service Marketplace** to get to the service overview, where you can select ABAP Trial as a service.
 
     ![Select ABAP Trial](account4.png)
@@ -167,15 +167,11 @@ Click **>>** on your windows taskbar and select **SAP Development Tools** > **AB
 
       ![Create ABAP cloud project](project3.png)
 
-  6. Logon to your ABAP trial account with your e-mail address and password.
-
-      ![Create ABAP cloud project](project4.png)
-
-  7. Click Finish.
+  6. Now you've been authenticated automatically. Click Finish.
 
       ![Create ABAP cloud project](project5.png)
 
-  8. Your trial system appears on the project explorer.
+  7. Your trial system appears on the project explorer.
 
       ![Create ABAP cloud project](project6.png)
 

@@ -26,6 +26,7 @@ Regardless of whether your application is online or offline, you can allow users
 
 For online applications, the changes are saved to the backend immediately.
 
+
 For offline applications, the changes are stored locally until they are synced using an Upload action.
 
 In this step, you will create the _Edit Customer Detail_ page as a **Form Cell Page**. This type of page allows for form input style changes. The page will provide only a subset of items available on the Customer Detail page. You will add the fields that will be editable by the end-user.

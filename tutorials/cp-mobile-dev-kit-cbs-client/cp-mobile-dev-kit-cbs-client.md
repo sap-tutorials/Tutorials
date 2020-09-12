@@ -329,6 +329,7 @@ You can install this new custom MDK client app either by scanning QR code from A
 
 [OPTION END]
 
+
 [OPTION BEGIN [iOS]]
 
 You can install this new custom MDK client app either by scanning QR code from iPhone phone camera app (click **Install**) or download binary (IPA) locally and install in your device via IDEs like Xcode or via other means.

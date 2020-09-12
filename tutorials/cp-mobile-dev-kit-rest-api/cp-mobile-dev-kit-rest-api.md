@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial:** [Set Up Business Application Studio for Mobile Technologies](cp-mobile-bas-setup)
-- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
 
 ## Details
 ### You will learn
@@ -24,6 +24,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 
 ---
+
 
 
 Mobile Development Kit allows you to consume REST APIs. You need to first define REST endpoint as a destination in Mobile Services and then need to write MDK rules (JavaScript) to consume it. A rule will be needed to parse the response and then decide what to do.
