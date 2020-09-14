@@ -59,7 +59,7 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
     ![Client-install](client-installer.png)
 
-    >This tutorial mission covers Microsoft Windows, Linux and Mac.  If there are commands that are different depending on the platform, two sets of commands will be provided and the title will say Shell (Microsoft Windows) or Shell (Linux or Mac).  Note that on Microsoft Windows, the shell used when creating this tutorial was the Command Prompt.
+    >This tutorial mission covers Microsoft Windows, Linux and Mac.  If there are commands that are different depending on the platform, multiple sets of commands will be provided and the title will say Shell (Microsoft Windows) or Shell (Linux or Mac).  Note that on Microsoft Windows, the shell used is the Command Prompt.
 
 4. After the installation process is completed, update your path environment variable so that the SAP HANA client programs such as `hdbsql` can be found on your path.  On Microsoft Windows, click the **Start** icon and search for environment variables.
 
@@ -80,7 +80,7 @@ The SAP HANA client can be used to connect to different versions of SAP HANA.  F
 
     ![Version of HDBSQL](command-Prompt.png)
 
-    > To uninstall at a later time, run `hdbuninst` from the folder where the client is installed.  For example ~/sap/hdbclient/install/hdbuninst.  
+    > To uninstall at a later time, run `hdbuninst` from the folder where the client is installed.  For example `c:\sap\hdbclient\install\hdbuninst`.  
 
 
 The install from  SAP Development Tools does not contain the SAP Cryptographic Library.  This can be seen by examining the `C:\SAP\hdbclient\manifest.mf` file.  
@@ -117,12 +117,12 @@ The downloaded file is a `.sar` file and the utility SAPCAR is needed to extract
 The command to extract a `.sar` file is shown below.  The command options are extract, verbose and file.
 
 ```Shell (Microsoft Windows Command Prompt)
-SAPCAR*.EXE -xvf IMDB_CLIENT*.SAR
+SAPCAR.EXE -xvf IMDB_CLIENT20_005_86.SAR
 ```
 
 ```Shell (Linux or Mac)
-chmod u+e SAPCAR
-./SAPCAR*.EXE -xvf IMDB_CLIENT*.SAR
+chmod u+x SAPCAR
+./SAPCAR.EXE -xvf IMDB_CLIENT20_005_86.SAR
 ```
 
 

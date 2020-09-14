@@ -4,7 +4,7 @@ description: Create your own welcome card in the SAP Cloud Platform Mobile Servi
 auto_validation: true
 primary_tag: products>sap-mobile-cards
 tags: [  tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>sap-mobile-cards, software-product-function>sap-cloud-platform-mobile-services ]
-time: 5
+time: 10
 author_name: Sandeep TDS
 author_profile: https://github.com/sandeep-tds
 ---
@@ -12,7 +12,7 @@ author_profile: https://github.com/sandeep-tds
 
 ## Details
 ### You will learn
-- How to create a Welcome card
+- How to create an SAP Mobile Card using SAP Cloud Platform Boosters
 
 ---
 
@@ -25,81 +25,106 @@ Welcome Cards are Server Managed Cards that are automatically subscribed. When s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a Welcome card)]
-Make sure you have logged into SAP Cloud Platform Mobile Services cockpit. In the cockpit, navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
+[ACCORDION-BEGIN [Step 2: ](Create A Welcome Card using Boosters)]
 
-!![MobileCards](img_1.png)
+SAP Mobile Cards can be created in multiple ways. In this tutorial, you will create a card using SAP Cloud Platform Boosters.
 
-Click the **Create Card Template** icon ![MobileCardsIcon](ico_new_card.png) to create a new card.
+> SAP Cloud Platform Boosters are sets of guided interactive steps which help you achieve specific goals.
 
-!![MobileCards](img_2.png)
+In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-Provide the required information as indicated in the table below.
+Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-| Field | Value |
-|----|----|
-| **Name** | `WelcomeCard` |
-| **Template Source** | `Template Manager` |
-| **HTML Template** | `Sample Template Welcome Card` |
-| **Card Template** | `Welcome Card` |
+!![Trial global account](img_1.png)
 
->If you see a pop-up, click **OK** for the confirmation.
+In the side navigation bar, click **Boosters**.
 
-Click **Save**.
+!![CP CF Trial Account](img_2.png)
 
-!![MobileCards](img_3.png)
+Click the **Build a Micro App for SAP Mobile Cards** tile.
 
-You will then see a list of existing mobile cards created in your account.
+!![Booster View](img_3.png)
 
-!![MobileCards](img_4.png)
+Go through the details mentioned and click **Start**.
 
-[VALIDATE_1]
-[ACCORDION-END]
+!![Booster View](img_4.png)
 
-[ACCORDION-BEGIN [Step 3: ](Set card status to productive)]
+In the *Check Prerequisites* tab of the wizard, click **Next**.
 
-By default, the status of newly created cards is **Development**. Cards can be subscribed to only when they are in a **Productive** state.
+!![Booster Wizard Tab 1](img_5.png)
 
-Click `WelcomeCard` in the Card Templates Tab.
+In the *Select Subaccount* tab of the wizard, select the following and click **Next**.
 
-!![MobileCardsImage](img_5.png)
+|Field|Value|
+|----|---|
+|Subaccount| trial |
+|Space| dev |
 
-Under **Actions**, click the check mark icon ![MobileCardsIcon](ico_check.png) to change the state to **Productive**.
+!![Booster Wizard Tab 2](img_6.png)
 
-!![MobileCardsImage](img_6.png)
+> If your Mobile Card Kit status is not **Available** please complete the [previous tutorial](https://developers.sap.com/tutorials/cp-mobile-cards-setup.html) in this mission.
 
-Choose **Yes** to confirm.
+In the *Select Cards* tab of the wizard, select the **Sample Template Welcome Card** and click **Next**.
 
-!![MobileCards](img_7.png)
+!![Booster Wizard Tab 3](img_7.png)
 
-You will notice that the **State** has been changed to **Productive**.
+In the *Configure Cards* tab of the wizard, enter the name as following and click **Next**.
 
-!![MobileCardsImage](img_8.png)
+|Field|Value|
+|----|---|
+|Name| Booster Welcome Card |
+
+!![Booster Wizard Tab 4](img_8.png)
+
+In the *Review* tab of the wizard, review the details you've entered and click **Finish**.
+
+!![CPMS cockpit with 2 cards](img_9.png)
+
+Upon successful creation you will see a success message; click **Close** and proceed to the next step.
+
+!![CPMS cockpit with 2 cards](img_10.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](View the Welcome Card in Mobile Cards client)]
+[ACCORDION-BEGIN [Step 3: ](View the Created Card in Mobile Services Cockpit)]
+Log into SAP Cloud Platform Mobile Services cockpit and navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
+
+!![MobileCards](img_11.png)
+
+In the SAP Cloud Platform Mobile Services Cockpit, you will now see the *Booster Welcome Card* we have created.
+
+!![Booster Wizard Tab 5](img_12.png)
+
+[VALIDATE_2]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](View the Welcome Card in Mobile Cards Client)]
 
 >Make sure you are choosing the right device platform tab ( **Android** or **iOS** ) **above**.
 
 Welcome cards are auto subscribed by default and downloaded automatically after registration.
 
-You should see a Welcome Card in your Mobile application.
+You should see the Welcome Card created using SAP Cloud Platform Booster for SAP Mobile Cards.
+
+> To view the card immediately, perform a pull refresh.
 
 [OPTION BEGIN [Android]]
 
-!![MobileCards](img_9.png)
+!![MobileCards](img_13.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-!![MobileCards](img_10.png)
+!![MobileCards](img_14.png)
 
 [OPTION END]
 
-Congratulations, you can now view your first SAP Mobile card on the device.
+You can now view your first SAP Mobile card on the device.
+
+**Congratulations!** You have learnt how to create an SAP Mobile Card using a Booster. In the [next tutorial](https://developers.sap.com/tutorials/cp-mobile-cards-automatic-instance-generation.html) you will learn how to create the card manually.
+
 
 [DONE]
 [ACCORDION-END]

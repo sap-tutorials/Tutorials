@@ -41,12 +41,14 @@ Provide the required information:
 | Field | Value |
 |----|----|
 | **Name** | `Content Action Card` |
+| **Version** | `1.0` |
 | **Destination** | `com.sap.edm.sampleservice.v2` |
 | **Template Source** | `Template Manager` |
 | **HTML Template** | `Sample Product Template` |
 | **Card Template** | `Server Managed Card` |
 
-> If you see a pop-up, click **OK** for the confirmation.
+> If you see a notification, click **`X`** to close it.
+  ![MobileCardsImage](img_5_1.png)
 
 ![MobileCardsImage](img_5.png)
 
@@ -189,13 +191,9 @@ Tap on the **flip** button ![MobileCardsIcon](ico_android_flip.png) to view the 
 
 !![MobileCardsImage](img_20.png)
 
-Tap on the **Action Bar** button ![MobileCardsIcon](ico_android_action_menu.png) to view the content based actions.
+Tap on the **Action Bar** button ![MobileCardsIcon](ico_android_action_menu.png), and then tap **Open Maps**.
 
 !![MobileCardsImage](img_21.png)
-
-Tap on **Open Maps** action to view the location of the supplier on the default maps client.
-
-!![MobileCardsImage](img_22.png)
 
 > SAP Mobile Cards App passes the supplier's address to the maps application.
 

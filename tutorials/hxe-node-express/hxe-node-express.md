@@ -10,7 +10,7 @@ time: 30
 
 ## Prerequisites and Assumptions
  - User knows how to install packages and develop using Node.js
- - Setup: `HANA, express edition` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](hxe-db-deploy).
+ - Setup: `HANA, express edition` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](hxe-database-server).
  - This tutorial assumes that you have a database login that can access the `M_DATABASE` view in the `HANA, express edition` `SystemDB`.
  - **Tutorials:** [Setup Node.js to connect to HXE](hxe-nodejs-setup)
 
@@ -254,4 +254,4 @@ npm start
 ---
 ### Additional Information
  - [View similar How-Tos](http://developers.sap.com/tutorials.html) or [View all How-Tos](http://developers.sap.com/tutorials.html)
- - Go to [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.tutorials.html) tutorials page
+ - Go to [SAP HANA, express edition](https://developers.sap.com/topics/hana.html) tutorials page

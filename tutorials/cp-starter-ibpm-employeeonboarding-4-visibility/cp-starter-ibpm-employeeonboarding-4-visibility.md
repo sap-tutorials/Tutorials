@@ -25,7 +25,7 @@ These events are persisted, correlated, and enhanced to form end-to-end process 
 
     >You should have gotten the launchpad link in the last step of the setup tutorial. The link should be like this:
 
-    >`https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
+    >`https://trial-userid-dev-flp-workflowmanagementflp.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
 
     ![Open Scenarios](openscenarios.png)
 

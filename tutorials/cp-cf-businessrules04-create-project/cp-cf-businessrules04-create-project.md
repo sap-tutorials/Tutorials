@@ -9,17 +9,17 @@ author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
 ## Prerequisites
- - You have accessed the **Manage Rules Project** application. For more information, see [Set up the Manage Rules Project Application](cp-cf-businessrules03-setup-mrp).
+ - You have accessed the **Manage Rule Projects** application. For more information, see [Set up the Manage Rule Projects Application](cp-cf-businessrules03-setup-mrp).
 
 ## Details
 ### You will learn
   - How to create a project to author rules
 
-A project is used to configure and manage the entities of business rules. It contains data objects, rules, rule sets, and rule services. You can create projects in the **Manage Rules Project** application.
+A project is used to configure and manage the entities of business rules. It contains data objects, rules, rule sets, and rule services. You can create projects in the **Manage Rule Projects** application.
 
 [ACCORDION-BEGIN [Step 1: ](Open Manage Rules Project application)]
 
- Open the **Manage Rules Project** application. In the **Manage Rules Project** screen, choose +.
+ Open the **Manage Rule Projects** application. In the **Manage Projects** screen, choose +.
 
 ![Manage Rule Project Application](create_project0.png)
 
