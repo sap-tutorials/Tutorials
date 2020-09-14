@@ -24,6 +24,7 @@ If the Update action fails due to the validation rule, the application will disp
 
 1. Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Message Actions** in **Category** | click **Message Action** | **Next**.
 
+
     !![MDK](img_1.1.png)
 
 2. Provide the below information:
