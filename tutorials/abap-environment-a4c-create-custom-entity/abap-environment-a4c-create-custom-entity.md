@@ -3,7 +3,7 @@ title: Implement a CDS Custom Entity and Query Implementation Class
 description: In the SAP Cloud Platform, ABAP Environment, implement a CDS custom entity and query implementation class.
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
