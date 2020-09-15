@@ -23,6 +23,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 ---
 
 
+
 MDK Template supports Style **LESS** file for styling for `NativeScript`, Android SDK & iOS SDK controls.
 
 ![MDK](img_1.gif)

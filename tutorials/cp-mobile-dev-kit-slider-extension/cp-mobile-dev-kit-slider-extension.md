@@ -24,6 +24,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
+
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls using the following:
 
 -  NativeScript (TypeScript/JavaScript applicable for both Android and iOS)
@@ -290,7 +291,7 @@ You will add this registered control in a Form Cell page.
     ```JavaScript / TypeScript
     import { Observable } from 'tns-core-modules/data/observable';
     import { View } from 'tns-core-modules/ui/core/view';
-    import { layout } from ''tns-core-modules/ui/core/view';
+    import { layout } from 'tns-core-modules/ui/core/view';
     import { device as Device } from 'tns-core-modules/platform';
     /*
       This is a way to keep iOS and Android implementation of your extension separate

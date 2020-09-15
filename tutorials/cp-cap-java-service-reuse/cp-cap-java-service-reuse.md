@@ -37,7 +37,7 @@ cd ~/projects
 3. Now that you are in the correct folder, run the following command:
 ```Shell/Bash
 mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
--DarchetypeVersion=1.3.0 -DcdsVersion=3.31.2 \
+-DarchetypeVersion=Release \
 -DgroupId=com.sap.cap -DartifactId=bookstore
 ```
 
@@ -171,7 +171,7 @@ You'll now define the services, that should expose the entities you've defined i
     // Define Orders Service
     service OrdersService {
         entity Orders as projection on db.Orders;
-        // OrderItems are auto exposed
+        // entity OrderItems as projection on db.OrderItems;
     }
 
     // Reuse Admin Service
@@ -262,7 +262,7 @@ npm install --save-dev sqlite3
 
 3. To initialize the bookstore database with the defined domain model and sample data, run:
 ```Shell/Bash
-npm run deploy
+cds deploy --to sqlite
 ```
 
 This will create a file called `sqlite.db` in your project root. The name of this database, is defined by an entry in your `package.json`.

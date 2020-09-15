@@ -20,7 +20,6 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 ---
 
-
 For this tutorial, you will use [Mobile Services sample backend](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#39e06c4c-f56a-4fde-b220-d1696631c468) which has parent-child relationship setup among entities. For example, A customer can have `n` (>=0) number of sales orders.
 
 To implement deep insert between parent and child OData entities, you need to carry out the following tasks:

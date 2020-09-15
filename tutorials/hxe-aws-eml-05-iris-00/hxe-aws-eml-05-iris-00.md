@@ -119,7 +119,7 @@ When using HDBSQL, you need to enable the multi-line mode using the following co
 
 In order to import the Iris dataset files, you will be using ***IMPORT FROM SQL command***.
 
-For more details, you can check the [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](mlb-hxe-import-data-sql-import) tutorial.
+For more details, you can check the [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) online help.
 
 Using the **HXE** connection with the **`ML_USER`** user credentials, execute the following SQL statement:
 
