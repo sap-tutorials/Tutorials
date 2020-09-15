@@ -78,17 +78,43 @@ Once the provisioning is finished, click **Continue**:
 
 ![Cloud trial](3.png)
 
-Follow the instructions at [SAP HANA Cloud Trial](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/784a1dbb421a4da29fb1e3bdf5f198ec.html) to create your free SAP HANA Cloud instance.
+Follow the instructions at [SAP HANA Cloud Trial Enablement](https://saphanajourney.com/hana-cloud/learning-article/starting-a-sap-hana-cloud-trial-when-you-have-an-existing-sap-cloud-platform-trial/) to prepare your SAP Cloud Platform trial account if you are using an existing trial account and didn't create it fresh in the previous steps. During this action please make sure that when adding the entitlements to your account that you add both the **SAP HANA Cloud** and **SAP HANA Schemas & HDI Containers** if they aren't already assigned.
 
-You should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
+![HANA Cloud Entitlements](entitlements.png)
 
-!![HANA Cloud Instance](3_2.png)
+From the SAP Cloud Platform entry page, click Subaccounts and then the tile for your Subaccount named **trial**
+![Subaccount](subaccount.png)
+
+Next click the space which should be named **dev**.
+![Space](space.png)
+
+From the space level, now please follow the instructions at [SAP HANA Cloud Trial Creation](https://saphanajourney.com/hana-cloud/learning-article/how-to-create-your-trial-sap-hana-cloud-instance/) to create the HANA Cloud instance.
+
+After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
+
+![HANA Cloud Instance](3_2.png)
 
 Once the SAP HANA Cloud instance is created, take note of the admin user as well as the endpoint (host:port) needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
 
-Return to the SAP Cloud Platform Trial Home and click **Launch SAP Web IDE**.
+Return to the Subaccount level in the SAP Cloud Platform Cockpit. Click on **Entitlements** in the left hand navigation.  Click on **Configure Entitlements**. Then click on **Add Service Plans**.  Search for entitlements with **web** in the name. Choose **SAP Web IDE for HANA development**. Select the **TRIAL (Subscription)** plan.  Press the **Add 1 Service Plan** button.
 
-!![Cloud trial](4.png)
+![Add Service Plan for Web IDE](ide1.png)
+
+When the Entitlements dialog closes be sure to press the **Save** button.
+
+![Save Entitlements](ide2.png)
+
+Now please choose **Subscriptions** from the left hand menu.  Click on the SAP Web IDE Full-Stack Subscription.
+
+![Choose Subscription](ide3.png)
+
+In the subscription detail screen, please press the **Subscribe** button.
+
+![Subscribe](ide4.png)
+
+Now you can click on **Go to Application** in order to launch the SAP Web IDE Full-Stack.
+
+![Go to Application](ide5.png)
 
 [DONE]
 [ACCORDION-END]

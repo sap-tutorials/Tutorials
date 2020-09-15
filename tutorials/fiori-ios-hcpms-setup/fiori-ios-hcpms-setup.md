@@ -5,8 +5,8 @@ auto_validation: true
 primary_tag: software-product-function>sap-cloud-platform-mobile-services
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment, software-product-function>sap-cloud-platform-mobile-services, products>sap-cloud-platform-sdk-for-ios, products>sap-cloud-platform-sdk-for-android, products>sap-mobile-cards, products>mobile-development-kit-client]
 time: 5
-author_name: Sandeep TDS
-author_profile: https://github.com/sandeep-tds
+author_name: Jitendra Kansal
+author_profile: https://github.com/jitendrakansal
 ---
 ## Prerequisites  
  - **Tutorial:** If you're new to SAP Cloud Platform, follow the tutorial [View the SAP Cloud Platform from 10,000 Meters](cp-explore-cloud-platform).
@@ -17,6 +17,7 @@ author_profile: https://github.com/sandeep-tds
 - How to access SAP Cloud Platform Mobile Services in your Cloud Foundry account
 
 ---
+
 
 Once SAP Cloud Platform Mobile Services is available, you can use its features in your Mobile development kit, Mobile Cards, SAP Cloud Platform SDK for iOS & Android apps.
 
@@ -30,17 +31,13 @@ Once SAP Cloud Platform Mobile Services is available, you can use its features i
 
     !![enter subaccount](img_1.2.png)
 
-3. To get to the space, in which your applications and services live, choose the **dev** space.
-
-    !![enter space](img_1.3.png)
-
-4. In the left pane, choose **Services** > **Service Marketplace**.
+3. In the left pane, choose **Services** > **Service Marketplace**.
 
     >The **Service Marketplace** is where you can find services to attach to any of your applications. These services are provided by SAP Cloud Platform to create, and produce applications quickly and easily. Once a service has been created, it is known as a `service instance`.
 
     !![service marketplace](img_1.4.png)
 
-5. Search for **Mobile**, and click **Mobile Services** tile.  
+4. Search for **Mobile**, and click **Mobile Services** tile.  
 
     !![mobile service tile](img_1.5.png)
 

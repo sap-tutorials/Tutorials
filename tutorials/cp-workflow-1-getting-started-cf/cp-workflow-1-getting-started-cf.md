@@ -1,6 +1,6 @@
 ---
 title: Prepare to Create Workflows in SAP Cloud Platform
-description: Enable and configure services and assign the user roles you'll need for creating workflows.
+description: Enable and configure services and assign the user roles you'll need for creating workflows. 
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
