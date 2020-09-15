@@ -3,7 +3,7 @@ title: Enhance the Handler Class With Filtering
 description: Add filtering by three values - product ID, supplier name, or category
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
