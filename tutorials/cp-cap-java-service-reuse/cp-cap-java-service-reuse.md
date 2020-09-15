@@ -37,7 +37,7 @@ cd ~/projects
 3. Now that you are in the correct folder, run the following command:
 ```Shell/Bash
 mvn -B archetype:generate -DarchetypeArtifactId=cds-services-archetype -DarchetypeGroupId=com.sap.cds \
--DarchetypeVersion=Release \
+-DarchetypeVersion=RELEASE \
 -DgroupId=com.sap.cap -DartifactId=bookstore
 ```
 
@@ -171,7 +171,7 @@ You'll now define the services, that should expose the entities you've defined i
     // Define Orders Service
     service OrdersService {
         entity Orders as projection on db.Orders;
-        // entity OrderItems as projection on db.OrderItems;
+        entity OrderItems as projection on db.OrderItems;
     }
 
     // Reuse Admin Service
@@ -280,7 +280,7 @@ To configure your Java application to use the `sqlite.db` database:
 
 3. Set the value of `initialization-mode` from `always` to `never`.
 
-    > You can update this value to `never`, because you have already initialized the database when running `npm run deploy`.
+    > You can update this value to `never`, because you have already initialized the database when running `cds deploy --to sqlite`.
 
     !![state of application yaml](application-yaml.png)
 
