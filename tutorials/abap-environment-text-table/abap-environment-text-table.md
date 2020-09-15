@@ -310,7 +310,7 @@ Many business configuration objects use text tables for providing translatable a
 
   2. Save and activate.
 
-  3.  Open **`ZCAL_I_HOLITXT_XXX`** and add line times
+  3.  Open **`ZCAL_I_HOLITXT_XXX`** and add line items
 
     ```ABAP
      @UI.lineItem: [{ position: 1 }]
