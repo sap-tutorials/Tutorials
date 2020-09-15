@@ -232,11 +232,9 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
 
 3. Set **`extractedValues`** to `true` to get the extracted values.
 
-4. Enter the **`clientId`** you created in step 1 (`c_27`, for example).
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
-
-6. Click **Execute**.
+5. Click **Execute**.
 
 The endpoint request and response look as follows:
 

@@ -33,7 +33,7 @@ primary_tag: topic>machine-learning
 
     >!![Account setup](02_Foundation20Onboarding_Processing.png)
 
->For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+    >For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
 
 [DONE]
 [ACCORDION-END]
@@ -57,17 +57,17 @@ Now, you will use the **Set up account for Document Information Extraction** boo
 
     !![Service Key](booster-start.png)
 
+    >If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** pop-up box and click **Navigate to Service Key**.
+
 4. Click **Navigate to Service Key**.
 
     !![Service Key](booster-success.png)
 
->If you have more than one subaccount, the booster will choose automatically the correct subaccount and space, but this will require that you click **Next** twice and **Finish** once, before being able to see the **Success** pop-up box and click **Navigate to Service Key**.
+    You have successfully used the booster **Set up account for Document Information Extraction** to create service keys for Document Information Extraction. Make a local copy of the service keys. You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
 
-You have successfully used the booster **Set up account for Document Information Extraction** to create service keys for Document Information Extraction. Make a local copy of the service keys. You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
+    !![Service Key](booster-service-key.png)
 
-!![Service Key](booster-service-key.png)
-
->If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) to create service keys for Document Information Extraction manually.
+    >If you face any issue with the booster **Set up account for Document Information Extraction**, you can alternatively follow the steps in [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) to create service keys for Document Information Extraction manually.
 
 [VALIDATE_1]
 [ACCORDION-END]
