@@ -10,7 +10,7 @@ author_profile: https://github.com/LindsayBert
 ---
 
 ## Prerequisites
-You have subscribed to the Launchpad service.
+You have subscribed to the Launchpad service and assigned yourself to the `Launchpad_Admin` role.
 
 
 ### You will learn
@@ -22,10 +22,10 @@ In this tutorial we'll create a launchpad site for a recruiting company called `
 
 When you access the **Launchpad** service, the Site Directory is in focus. From here you will create your new launchpad site.
 
-> Note: in the side panel you'll see three icons. The first opens the **Site Directory** where you are going to create a new site. All sites that you create will be displayed here. The second icon opens the **Content Manager** where you configure your content or explore and add predefined content from available content providers. The third icon opens the **Provider Manager** where you manage content providers. These content providers expose business content that you can integrate into your launchpad sites.
+> Note: in the side panel of the Launchpad service, you'll see three tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your launchpad sites.
 
 
-1. In the Site Directory, click **Create New Site**.
+1. Click **Create Site**.
 
     ![Create site](1_create_new_site.png)
 
@@ -45,23 +45,10 @@ When you create a site, you are directed to the **Site Settings** screen where y
 
 Navigate back to the **Site Directory** to view the site tile.
 
-  ![Navigate to site directory](5_to_site_directory.png)
+  ![Navigate to site directory](3_to_site_directory.png)
 
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](View the site)]
-
-
-From the site tile, click the **Go to site** icon to see your site at runtime.
-
-  ![Go to site](4_go_to_site.png)
 
   Your site is empty for now. In the next tutorials, you're going to add business apps to your launchpad site.
-
-
-
 
 
 [DONE]

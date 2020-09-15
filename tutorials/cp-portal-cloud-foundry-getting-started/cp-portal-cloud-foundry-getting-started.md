@@ -38,19 +38,24 @@ Before you can access the **Launchpad** service, you first need to subscribe to 
 
     ![Processing](2_Foundation20Onboarding_Processing.png)
 
+
 3. Click the **trial** tile to navigate to your trial subaccount in the SAP Cloud Platform cockpit. If you are using your own subaccount, you can select it instead.
 
       ![Open trial account](3_open_subaccount.png)
 
-4. Click **Subscriptions** from the side menu.
+4. Click the hamburger icon at the top of the left navigation panel to expand it.
+
+    ![Expand navigation menu](2a-expand-navigation-menu.png)
+
+5. Click **Subscriptions** from the side menu.
 
     ![Click Subscriptions](4_click_subscriptions.png)
 
-5. Enter `Launchpad` in the search box and click the **Launchpad** service tile.
+6. Enter `Launchpad` in the search box and click the **Launchpad** service tile.
 
     ![Click Launchpad tile](5_unsubscribed_launchpad.png)
 
-6. Click **Subscribe** and wait for the status to change to **Subscribed**.
+7. Click **Subscribe** and wait for the status to change to **Subscribed**.
 
     ![Subscribe to the Portal](6_subscribe.png)
 
@@ -60,10 +65,9 @@ Before you can access the **Launchpad** service, you first need to subscribe to 
 
 [ACCORDION-BEGIN [Step 2: ](Add yourself to the Launchpad_Admin role)]
 
-To be able to do administrative tasks in the **Launchpad**, you must be assigned to the `Launchpad_Admin` role. In this step, you'll first create a role collection and then you'll assign yourself to the `Launchpad_Admin` role.
+To be able to access the **Launchpad** service, users must be assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to the `Launchpad_Admin` role so that you can later create launchpad sites.
 
-1. Click on your trial account (or a different subaccount)
-using the breadcrumbs at the top.
+1. Click on your trial account (or your own subaccount) using the breadcrumbs at the top.
 
     ![Open subaccount using breadcrumbs](7_use_breadcrumbs.png)
 

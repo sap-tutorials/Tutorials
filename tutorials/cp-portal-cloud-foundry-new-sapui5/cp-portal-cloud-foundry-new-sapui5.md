@@ -114,7 +114,9 @@ This is described in the following steps.
 
     ![Click Edit](11-edit.png)
 
-3. In the **Assignments** panel on the right, type 2 letters of your app, (for example, `Or`) to search for the app.
+3. Click the search box in the **Assignments** panel on the right. Any available apps are shown in the list below.
+
+    >If you have many apps, you can type some letters of your app name in the search bar, (for example, `Or`) to search for the app.
 
 4. In the **Results** list, click the **+** icon next to the `New Orders` app to assign this role to your app.
 
@@ -139,7 +141,7 @@ This is described in the following steps.
 
     !![Add a new group](8-add-group.png)
 
-2. Enter `Purchasing` as the **Title** and in the **Assignments** panel on the right of the screen, type in 2 letters of your app (for example, `Ne`), to search for your app. You should see `New Orders`.
+2. Enter `Purchasing` as the **Title** and in the **Assignments** panel, click inside the search box on the right of the screen, to show all available apps. You should see `New Orders`.
 
 3. In the **Results** list, click **+** to assign the `New Orders` app to your group.
 

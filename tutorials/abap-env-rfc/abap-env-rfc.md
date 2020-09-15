@@ -3,7 +3,7 @@ title: Call a Remote Function Module From SAP Cloud Platform, ABAP Environment
 description: Call a remote function module located in an on-premise system, such as a SAP S/4HANA System, from the ABAP Environment
 auto_validation: true
 time: 60
-tags: [ tutorial>advanced, products>sap-cloud-platform, products>sap-cloud-platform--abap-environment, tutorial>license]
+tags: [ tutorial>advanced, products>sap-cloud-platform, products>sap-cloud-platform--abap-environment, topic>abap-connectivity, tutorial>license]
 primary_tag: topic>abap-development
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20
