@@ -1,23 +1,24 @@
 ---
-title: Let Customers Ask Bot for Shipping Price
-description: Create an intent for requesting the price of shipping a package, use carousel for selecting package size, call API to retrieve Google map, retrieve memory data and put in message.
+title: Let Customers Ask Chatbot for Shipping Price
+description: Create an intent for requesting the price of shipping a package, use the carousel for selecting a package size, call an API to retrieve a Google map, retrieve memory data and put in the message.
 auto_validation: true
 time: 30
-tags: [ tutorial>beginner, products>sap-conversational-ai, products>sap-cloud-platform]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
 primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
- - You created a bot that enables customers to track packages, as described in the tutorial [Add API Call to Webhook to Retrieve Tracking Info](cai-bot-shipping-2-api).
+ - You created a chatbot with SAP Conversational AI that enables customers to track packages, as described in the tutorial [Add Webhook to Chatbot to Retrieve Tracking Info](cai-bot-shipping-2-api).
 
 ## Details
 ### You will learn
   - How to create a restricted entity
   - How to enrich data in an entity
-  - How to call an webhook to retrieve a Google
-  - How to retrieve data from memory, and to reset memory
+  - How to call an webhook to retrieve a Google map
+  - How to retrieve data from memory, and to reset the memory
 
-You will add features to your bot to let customers ask to price a package, require them to include a size and location, validate the location, show a Google map when a location is validated, and display a message with data from the memory.
+You will add features to your chatbot to answer customer questions about pricing a package, require customers to include a size and location, to validate the location, show a Google map when a location is validated, and to display a message with data from the memory.
+
 
 ---
 
@@ -40,7 +41,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
       ![parcel-size](Entity_Restricted2.png)
 
-2. Now enter the valid values for this entity.
+2. Enter the valid values for this entity.
 
     And instead of you entering each size separately, we have supplied the sizes in a CSV file. Do the following:
 
@@ -98,7 +99,7 @@ So create an entity for the parcel size. But in this case, create a restricted e
 
 You now want to define an intent so the bot can know when the customer is asking for pricing information.
 
-For this intent, you can also fork it.
+You can also fork this intent.
 
 1. Go to [`cai-adoption / ups-bot / intents / @rate-parcel`](https://cai.tools.sap/cai-adoption/ups-bot/train/intents/rate-parcel).
 
@@ -138,7 +139,7 @@ Build a skill that:
   - Makes an API call to get a map of the location.
   - Displays the map plus the price from memory based on the enrichments you created earlier.
 
-In this step, you'll simple create the skill and add the trigger.
+In this step, you'll simply create the skill and add the trigger.
 
 
 1. In the **Build** tab, click **Create Skill** and create a new floating skill called **`price-parcel`**, and click **Create Skill**
@@ -154,7 +155,7 @@ In this step, you'll simple create the skill and add the trigger.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add requirements to skill)]
-You must require that the bot know the size and location, and in addition get a confirmation of either yes or no.
+You must require that the bot knows the size and location, and in addition get a confirmation of either yes or no.
 
 
 1. In the **Requirements** subtab, add the requirements as follows:
@@ -175,7 +176,7 @@ You must require that the bot know the size and location, and in addition get a 
 
     - Click **Send Message | Carousel**.
 
-    - Add a card for the user to specify the small size (use the `postback` button type).
+    - Add a card for the user to specify the small size (use the `postback` button type), and add the texts as show below.
 
         ![Carousel small](Carousel_card.png)
 
@@ -226,7 +227,7 @@ You must require that the bot know the size and location, and in addition get a 
 
 A nice feature would be to get a Google map for the delivery location. Our application deployed to SAP Cloud Platform also has a call for retrieving a Google map based on the location in memory.
 
-Your default endpoint is already set up, because you used it earlier to retrieve tracking information.
+Your default endpoint is already set up because you used it earlier to retrieve tracking information.
 
 1. In the **`price-parcel`**  skill, go to the **Requirements** subtab.
 
@@ -248,7 +249,7 @@ You can open a chat and test this, by entering: **How much to send package to Pa
 
 [ACCORDION-BEGIN [Step 6: ](Display confirmation)]
 
-1. In the requirements, click **New Replies** if **`@Yes`** or **`@No`** are missing).
+1. In the requirements, click **New Replies** (if **`@Yes`** or **`@No`** are missing).
 
 2. Click **Send Message | Quick Replies**.
 
@@ -276,7 +277,7 @@ Finally, you want to display to the customer the results of the query.
 2. Click **Add Condition**.
 
     - Select **`_memory`**
-    - Type **`.yes`**.
+    - Enter **`.yes`**.
     - Click **Save**.
     - Select **`is-present`**.
 

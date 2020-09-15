@@ -69,6 +69,10 @@ SAP Cloud Platform Mobile Services provides services to mobile applications, suc
 
 ![MobileCards](img_6.png)
 
+Provide your Cloud Platform login credentials and proceed.
+
+![MobileCards](img_6_1.png)
+
 Choose the relevant **Organization** and **Space** from the dropdown list, and then select **Open**.
 
 ![MobileCards](img_7.png)
@@ -94,13 +98,13 @@ Navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
 
 >If the SAP Mobile Cards Advisory screen pops up, choose **Close** to close it.
 
-Click **Initialize**. This will create a new service instance for Mobile Cards.
-
-![MobileCards](img_10.png)
-
 Click **Features**.
 
 ![MobileCards](img_11.png)
+
+> If you can't see the Features Tab, click **Initialize**. This will create a new service instance for Mobile Cards.
+
+> ![MobileCards](img_10.png)
 
 Click **Mobile Sample OData ESPM** to look into available OData Version 2 and Version 4 sample endpoints.
 
@@ -126,6 +130,8 @@ Below is a list of destinations from which the SAP Mobile Cards service can fetc
 
 Click **SAP Mobile Cards** navigation bar to go back to Mobile Cards admin page.
 
+![MobileCards](img_16_1.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -139,33 +145,33 @@ You will configure the SAP Mobile Cards client with your SAP Cloud Platform acco
 
 Click **APIs** and scan the respective QR Card to onboard your SAP Mobile Cards client.
 
-![MobileCards](img_17.png)
+!![MobileCards](img_17.png)
 
 [OPTION BEGIN [Android]]
 
 Tap **SCAN QR CODE**.
 
-![MobileCards](img_18.png)
+!![MobileCards](img_18.png)
 
 Tap **I AGREE** on `End User License Agreement`.
 
-![MobileCards](img_19.png)
+!![MobileCards](img_19.png)
 
 Enter your SAP Cloud Platform credentials and tap **Log On**.
 
-![MobileCards](img_20.png)
+!![MobileCards](img_20.png)
 
 Choose a passcode with at least 8 characters to unlock the app, and tap **NEXT**.
 
-![MobileCards](img_21.png)
+!![MobileCards](img_21.png)
 
 Confirm the passcode and tap **DONE**.
 
-![MobileCards](img_22.png)
+!![MobileCards](img_22.png)
 
 You now have connected your SAP Mobile Cards client with your SAP Cloud Platform account.
 
-![MobileCards](img_23.png)
+!![MobileCards](img_23.png)
 
 [OPTION END]
 
@@ -173,23 +179,23 @@ You now have connected your SAP Mobile Cards client with your SAP Cloud Platform
 
 Scan the QR code with your camera and select the toast message to launch the SAP Mobile Cards app.
 
-![MobileCards](img_24.png)
+!![MobileCards](img_24.png)
 
 Enter your SAP Cloud Platform credentials and tap **Log On**.
 
-![MobileCards](img_25.png)
+!![MobileCards](img_25.png)
 
 Choose a passcode with at least 8 characters to unlock the app and tap Next.
 
-![MobileCards](img_26.png)
+!![MobileCards](img_26.png)
 
 Confirm the passcode and choose **Done**.
 
-![MobileCards](img_27.png)
+!![MobileCards](img_27.png)
 
 You now have connected your SAP Mobile Cards client with your SAP Cloud Platform account.
 
-![MobileCards](img_28.png)
+!![MobileCards](img_28.png)
 
 [OPTION END]
 

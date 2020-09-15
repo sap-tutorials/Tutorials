@@ -1,6 +1,8 @@
 ---
 title: Customize the Overview View Controller to Display Customers and Products
 description: Use the Swift programming language and the SAP Cloud Platform SDK for iOS to implement data loading from the sample data service and display the results in a Table View in your app. Also add Table View Section Headers and Footers to give the data more structure and a nice clean UI.
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -34,6 +36,8 @@ This is fairly simple thanks to the SAP CP SDK for iOS and the generated model l
     import SAPFiori
     import SAPOData
     import SAPCommon
+    import SAPFoundation
+    import SAPFioriFlows
 
     ```
 

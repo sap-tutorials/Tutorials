@@ -7,12 +7,14 @@ tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence,
 primary_tag: topic>machine-learning
 ---
 
+## Prerequisites
+- You must have registered for a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+
 ## Details
 ### You will learn
   - How to check your Document Information Extraction entitlements
   - How to create a service instance of Document Information Extraction
   - How to create service keys for your service instance
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -21,9 +23,7 @@ primary_tag: topic>machine-learning
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    ![Trial global account](01_Foundation20Onboarding_Home.png)
-
-    >As most of the SAP Cloud Platform services, the Document Information Extraction trial account is only available in the Europe (Frankfurt) region. Follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and choose the Europe (Frankfurt) region.
+    !![Trial global account](01_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Your user profile will be set up for you automatically.
 
@@ -31,7 +31,7 @@ primary_tag: topic>machine-learning
 
     >Choose **Continue**.
 
-    >![Account setup](02_Foundation20Onboarding_Processing.png)
+    >!![Account setup](02_Foundation20Onboarding_Processing.png)
 
 3. From your global account page, choose the `trial` tile to access your subaccount.
 
@@ -103,7 +103,7 @@ The **Service Marketplace** is where you find all the services available on SAP 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a service instance)]
+[ACCORDION-BEGIN [Step 5: ](Create service instance)]
 
 You will now create an instance of your service.
 
@@ -132,7 +132,7 @@ You have successfully created a service instance for Document Information Extrac
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service Keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service keys)]
 
 You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 

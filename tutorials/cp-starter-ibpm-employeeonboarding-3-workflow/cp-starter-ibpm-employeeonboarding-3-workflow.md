@@ -2,7 +2,7 @@
 title: Set Up a Workflow With Extended Employee Onboarding
 description: Set up the Employee Onboarding sample workflow application and integrate with business rules service.
 auto_validation: true
-time: 20
+time: 10
 tags: [ tutorial>beginner, products>sap-web-ide]
 primary_tag: products>sap-cloud-platform
 ---
@@ -15,32 +15,35 @@ primary_tag: products>sap-cloud-platform
 
 [ACCORDION-BEGIN [Step 1: ](Download a sample application)]
 
-Download `Employee Onboarding` sample application from [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-onboarding-sample/resources/cf-onboarding-sample.zip) in your local file system.
+Download **cf-onboarding-sample.zip**  project from [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-onboarding-sample/resources/cf-onboarding-sample.zip) in your local file system and extract the files.
 
 !![Download Sample Workflow](downloadsample.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import sample application)]
+[ACCORDION-BEGIN [Step 2: ](Import sample application)]
 
-1. Choose **Launch SAP Web IDE**.
+1. Choose **SAP Business Application Studio**.
 
-    > If you are a new user then Web IDE Full-Stack will not be enabled for your account and you will see a message saying "SAP Web IDE Full-Stack is not be enabled for this account". Follow the instructions on the Web IDE page, to enable the Web IDE.
+    !![Launch Studio](launchbas.png)
 
-    !![Launch Web IDE](launchwebide.png)
+2. Click on the **Dev Space** to go into the workspace and from **File** menu choose **Open Workspace**
 
-2. In the navigation area of the **SAP Web IDE**, choose the **Development** icon.
+    >If the dev-space status is STOPPED then click on the run button to start the space
+    !![Start Workspace](startspace.png)
 
-3. Right-click the **Workspace** folder and choose **Import | File or Project**.
+    !![Open Workspace](openworkspace.png)
 
-    ![Open Web IDE Development](opendev.png)
+3. Drag and drop the extracted **cf-onboarding-sample** project in the dialog and click **Open**.
 
-4. In the **Import** dialog, browse for the `cf-onboarding-sample.zip` file that you downloaded in your local system and choose **OK**.
+    !![Import Sample MTA 1](dragDropProject.png)
 
-    ![Import Sample MTA](importsamplezip.png)
+    !![Import Sample MTA 2](opensamplemta.png)
 
-5. You will see that the sample `Employee Onboarding` application is imported into your workspace.
+5. You will see that the sample **cf-onboarding-sample** project is imported into your workspace.
+
+    ![Workflow Added](sampleworkflowadded.png)
 
     > This sample workflow has:
 
@@ -48,30 +51,24 @@ Download `Employee Onboarding` sample application from [GitHub](https://github.c
 
     > - **User Tasks** for confirmation of the equipment selected via business rules and for the approval of equipment. You can find these user tasks with the names `Confirm and Change Equipment` and `Approve Equipment` respectively.  The user interface associated with these user tasks have been built as SAPUI component and you can find these modules bundled under `confirmEquip` and `approveEquip` respectively in the same multi target application.
 
-    ![Workflow Added](sampleworkflowadded.png)
+
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Build and deploy sample application)]
+[ACCORDION-BEGIN [Step 3: ](Build and deploy sample application)]
 
-1. Right-click the `cf-onboarding-sample` project, and choose the **Build** option.
-    > Use the deprecated option to build the resources.
+1. Right-click the **mta.yml** file inside the **cf-onboarding-sample** project, and choose the **Build MTA** option.
 
-    ![Build mta File](build-mta.png)
+    ![Build mta File](build-wf-mta.png)
 
 
-2. In the build archive, right-click the `sample-onboarding.mta_<xxx>.mtar` file and choose **Deploy** | **Deploy to SAP Cloud Platform**.
+2. Once the build is completed successfully, right-click on the **`mta_archives` | `sample-onboarding.mta_0.0.1.mtar`** file and choose **Deploy MTA Archives**.
 
     ![Deploy Workflow](deployworkflow.png)
 
-    > In the popup, select the Cloud Foundry API Endpoint, Organisation and Space where you would want to deploy the application.
-
-    ![Deploy MTA](deploydialog.png)
-
-A successful deployment message will be shown at the top-right corner once the deployment has completed successfully.
-
-![View Success Messages](success-message.png)
+    >A successful deployment message will be shown in the terminal once the deployment has completed successfully.
+    ![View Success Messages](success-message.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

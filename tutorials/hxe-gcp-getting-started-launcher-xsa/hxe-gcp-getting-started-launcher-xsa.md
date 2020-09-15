@@ -14,7 +14,7 @@ time: 15
 ## Next Steps
 -  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
 - [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)
 - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 
@@ -174,7 +174,7 @@ Log in with `XSA_DEV` and the master password.
 
 ![test web ide](12.png)
 
-You can now start to use your SAP HANA, express edition or continue with the optional steps. You can learn how to [connect to the development and administration tools](https://developers.sap.com/tutorials/xsa-explore-basics.html) or you can get started with your [first end-to-end XS Advanced application or calculation views](https://developers.sap.com/mission.xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/sap-hana-express.tutorials.html).
+You can now start to use your SAP HANA, express edition or continue with the optional steps. You can learn how to [connect to the development and administration tools](https://developers.sap.com/tutorials/xsa-explore-basics.html) or you can get started with your [first end-to-end XS Advanced application or calculation views](https://developers.sap.com/mission.xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://developers.sap.com/topics/hana.html).
 
 
 [DONE]
@@ -199,5 +199,5 @@ sudo passwd hxeadm
 ### Additional Information
 -  **Build your first app:** [Get started with XS Advanced development](https://developers.sap.com/mission.xsa-get-started.html)
 - [Explore the basic tools in the XS Advanced platform](https://developers.sap.com/tutorials/xsa-explore-basics.html)
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/sap-hana-express.tutorials.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://developers.sap.com/topics/hana.html)
 - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://developers.sap.com/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

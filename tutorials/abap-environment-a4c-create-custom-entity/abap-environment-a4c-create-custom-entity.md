@@ -7,6 +7,9 @@ tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-clo
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
+##Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+
 ## Details
 ### You will learn
   - How to implement a query manually for your CDS custom entity
@@ -29,7 +32,7 @@ First, you create the class that implements the data retrieval logic.
 
 2. Enter a name and description:
     - `ZCL_TRAVELS_XXX`
-    - Show travels from A4C System
+    - Get travel data from A4C System
 
 3. Accept the default transport request, then choose **Finish**.
 
@@ -58,7 +61,7 @@ Later, you will implement the SELECT method of the interface.
 
 [ACCORDION-BEGIN [Step 3: ](Specify class in your custom entity)]
 
-1. Open your CDS custom entity **`ZCE_TRAVEL_DATA_XXX`**, created in [Create a Service Consumption Model](abap-environment-create-service-model).
+1. Open your CDS custom entity **`ZCE_TRAVEL_DATA_XXX`**, created in [Create a Service Consumption Model](abap-environment-create-service-consumption-model).
 
 2. Add the following annotation to the view (immediately after the '@EndUserText.label' annotation), pointing to the class you have just created - NOTE: Use upper case!
 

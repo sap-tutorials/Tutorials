@@ -45,7 +45,7 @@ Once you start the SAP Web IDE, use the menu path **File** > **New** > **Project
 
 You'll be presented with a multi-step wizard.
 
-In the **Template Selection** step, choose the category **SAP Fiori Application**, select the **SAP Fiori Worklist** application template, and proceed with **Next**.
+In the **Template Selection** step, choose the category **SAP Fiori Application** from the **Neo** environment, select the **SAP Fiori Worklist** application template, and proceed with **Next**.
 
 ![the Template Selection step](template-selection.png)
 
