@@ -49,8 +49,7 @@ Download **cf-onboarding-sample.zip**  project from [GitHub](https://github.com/
 
     > - **Business Rules** integrated into it. You can find the integration as part of service task with name `Determine Equipment`.
 
-    > - **User Tasks** for confirmation of the equipment selected via business rules and for the approval of equipment. You can find these user tasks with the names `Confirm and Change Equipment`, `Approve Equipment` and `Accept Workplace` respectively.  The user interface associated with these user tasks have been built using Workflow Form and you can find these under **forms** folder in the same multi target application.
-
+    > - **User Tasks** for confirmation of the equipment selected via business rules and for the approval of equipment. You can find these user tasks with the names `Confirm and Change Equipment`, `Approve Equipment` and `Accept Workplace` respectively.  The user interface associated with these user tasks has been built using Workflow Form and you can find these under **forms** folder in the same multi target application.
 
 
 [DONE]

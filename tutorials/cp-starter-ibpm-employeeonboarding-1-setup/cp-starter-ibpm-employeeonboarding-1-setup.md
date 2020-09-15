@@ -12,7 +12,13 @@ primary_tag: products>sap-cloud-platform
 ### You will learn
   - How to enable and configure workflow, business rules, process visibility and process flexibility capabilities
 
-**SAP Cloud Platform Workflow Management** is a cloud offering that helps you digitize structured processes with workflows and decision logic, flexibly extend and adapt business processes running in your packaged applications, manage process variants and decision logic, and monitor end-to-end process metrics in real time.
+**SAP Cloud Platform Workflow Management** is a cloud offering that helps you:
+
+-	digitize structured processes with workflows and decision logic.
+-	flexibly extend and adapt business processes running in your packaged applications.
+-	manage process variants and decision logic.
+- monitor end-to-end process metrics in real time.
+
 
 By combining workflows, business rules, process visibility, live process content packages and process flexibility into a single unified offering, the service helps you increase enterprise efficiency and agility.
 
