@@ -24,6 +24,7 @@ You may clone an existing project from [GitHub repository](https://github.com/SA
 
 [ACCORDION-BEGIN [Step 1: ](Store the deleted record locally)]
 
+
 The next step is to store deleted record locally for an offline application or delete directly back to the backed for online applications. You will now create an OData delete action to delete a customer record. You will also show a failure message if the delete action fails.
 
 1. Define a failure message action for displaying a message in case deleting of a customer fails.

@@ -428,9 +428,9 @@ Instead of using in-memory, you can also use persistent databases.
     [cds] - using bindings from: { registry: '~/.cds-services.json' }
     [cds] - connect to db > sqlite { database: 'db/my-bookshop.db' }
     [cds] - connect to messaging > local-messaging {}
-    [cds] - serving CatalogService { at: '/catalog', impl: 'srv/cat-service.js' }
+    [cds] - serving CatalogService { at: '/catalog' }
 
-    [cds] - launched in: 966.819ms
+    [cds] - launched in: 1341.398ms
     [cds] - server listening on { url: 'http://localhost:4004' }
     [ terminate with ^C ]
     ```
@@ -448,13 +448,13 @@ You can now see the generic handlers shipped with CAP in action.
     >You can use any other HTTP client than Postman.
 
 
-2. Click on the following link and save the file to a folder of your choice: ['postman.json'](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
+2. Click on the following link and save the file to a folder of your choice: [postman.json](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-nodejs-create-service/postman.json).
 
 3. In the Postman app, use the **Import** button in the toolbar:
 
     ![Postman import](postman-import.png)
 
-4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before.
+4. Choose **Import File** in the wizard. Click on **Choose Files** and select the file that you've saved before or add it per drag & drop  directly.
 
     ![Postman import from file](postman-import-from-file.png)
 

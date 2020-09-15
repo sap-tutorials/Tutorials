@@ -32,6 +32,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 [OPTION BEGIN [Android]]
 
+
 1. Open the [Firebase console](https://console.firebase.google.com/u/0/?pli=1), login with your Google account and click **Create Project** or **Add Project** (you will see this option if you already have any existing projects).
 
     !![MDK](img_1.1.png)
