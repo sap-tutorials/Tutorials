@@ -72,7 +72,7 @@ You'll learn how to define the annotations for the detail screen. This screen is
     @EndUserText.label: 'CDS View for Public Holidays'
     define root view ZCAL_I_HOLIDAY_XXX as select from zcal_holiday_xxx {
 
-    @UI.facet: [
+      @UI.facet: [
             {
               id: 'PublicHoliday',
               label: 'Public Holiday',
@@ -89,20 +89,21 @@ You'll learn how to define the annotations for the detail screen. This screen is
             }]
 
 
-      @UI.fieldGroup: [ { qualifier: 'General', position: 1 } ]
-      @UI.lineItem:   [ { position: 1 } ]
-      key holiday_id,
+        @UI.fieldGroup: [ { qualifier: 'General', position: 1 } ]
+        @UI.lineItem:   [ { position: 1 } ]
+        key holiday_id,
 
-      @UI.fieldGroup: [ { qualifier: 'General', position: 2 } ]
-      @UI.lineItem:   [ { position: 2 } ]
-      month_of_holiday,
+        @UI.fieldGroup: [ { qualifier: 'General', position: 2 } ]
+        @UI.lineItem:   [ { position: 2 } ]
+        month_of_holiday,
 
-      @UI.fieldGroup: [ { qualifier: 'General', position: 3 } ]
-      @UI.lineItem:   [ { position: 3 } ]
-      day_of_holiday,
-
-      changedat
+        @UI.fieldGroup: [ { qualifier: 'General', position: 3 } ]
+        @UI.lineItem:   [ { position: 3 } ]
+        day_of_holiday,
+        changedat,
+        configdeprecationcode
     }
+
     ```
 
   3. Switch to your service binding and open the preview.
@@ -149,6 +150,24 @@ Now we want to add the column definition. Therefore we need to add the  **`@UI.l
 
   2. Save, activate and test your business object.
 
+  3. Add header information to **`ZCAL_I_HOLIDAY_XXX`**
+
+    ```ABAP
+    @UI: {
+    headerInfo: {
+      typeName: 'Holiday',
+      typeNamePlural: 'Holidays',
+      title: {
+        type: #STANDARD,
+        value: 'holiday_id'
+        }
+      }
+    }
+
+    ```
+
+    ![header](header1.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -180,11 +199,22 @@ Many business configuration objects use text tables for providing translatable a
     @AbapCatalog.preserveKey: true
     @AccessControl.authorizationCheck: #CHECK
     @EndUserText.label: 'CDS View for Public Holidays Text Table'
+    @UI: {
+    headerInfo: {
+      typeName: 'Translation',
+      typeNamePlural: 'Translations',
+      title: {
+        type: #STANDARD,
+        value: 'spras'
+        }
+      }
+    }
+
     define view ZCAL_I_HOLITXT_XXX
-      as select from ZCAL_HOLITXT_XXX
+      as select from zcal_holitxt_xxx
       association to parent ZCAL_I_HOLIDAY_XXX as _PublicHoliday on $projection.holiday_id = _PublicHoliday.holiday_id
     {
-          //zfcal_holidaytxt
+          //zcal_holitxt_xxx
       key spras,
       key holiday_id,
           fcal_description,
@@ -200,7 +230,7 @@ Many business configuration objects use text tables for providing translatable a
 
       ![table](table5.png)
 
-  7. Add a comma after **`changedat`** and add **`_HolidayTxt`** underneath.
+  7. Add a comma after **`configdeprecationcode`** and add **`_HolidayTxt`** underneath.
 
       ![table](table6.png)
 
@@ -230,11 +260,12 @@ Many business configuration objects use text tables for providing translatable a
 
     define behavior for ZCAL_I_HOLITXT_XXX alias HolidayText
     persistent table zcal_holitxt_xxx
-    lock dependent ( holiday_id = holiday_id )
+    lock dependent by _PublicHoliday
     {
       update; delete;
       field( readonly ) holiday_id;
     }
+
     ```
 
   12. Open your service definition **`ZCAL_I_HOLIDAY_SD_XXX`** and add following:
@@ -264,7 +295,7 @@ Many business configuration objects use text tables for providing translatable a
 [ACCORDION-BEGIN [Step 4: ](Add separate text tables)]
 
   1. Open your root view **`ZCAL_I_HOLIDAY_XXX`**. Add a comma and following code into the corresponding place:
- 
+
     ```ABAP
     {
             id: 'Translation',
@@ -279,42 +310,46 @@ Many business configuration objects use text tables for providing translatable a
 
   2. Save and activate.
 
-  3. Let's now continue and directly add the annotations for table display. Open your text table CDS view **`ZCAL_I_HOLITXT_XXX`**.
+  3.  Open **`ZCAL_I_HOLITXT_XXX`** and add line items
 
     ```ABAP
      @UI.lineItem: [{ position: 1 }]
      @UI.lineItem: [{ position: 2, label: 'Translation' }]
     ```
 
-      ![separate](separate2.png)
+      ![uiheader](ui0.png)
 
-  4. Save and activate.
+    Save and activate.
 
-  5. Open your service binding **`ZCAL_I_HOLIDAY_XXX`**. Select **`to_HolidayRoot`** and open the preview. In your preview open one entry. Your overview should look like following:
+  4. Open your service binding **`ZCAL_I_HOLIDAY_XXX`**. Select **`to_HolidayRoot`** and open the preview. In your preview open one entry. Your overview should look like following:
 
       ![separate](separate3.png)
 
-  6. Open your text table CDS view **`ZCAL_I_HOLITXT_XXX`**. Add a new facet for the translation screen to the view. Use type **`#FIELDGROUP_REFERENCE`**.
+
+  5. Add the UI facet to **`ZCAL_I_HOLITXT_XXX`**.
 
     ```ABAP
-    @UI.facet: [
-       {
-         id: 'HolidayText',
-         label: 'Translation',
-         targetQualifier: 'Translation',
-         type: #FIELDGROUP_REFERENCE,
-         position: 1
-       }
-     ]
-    ```
-      ![separate](separate4.png)
+     @UI.facet: [
+          {
+            id: 'HolidayText',
+            label: 'Translation',
+            targetQualifier: 'Translation',
+            type: #FIELDGROUP_REFERENCE,
+            position: 1
+          }
+        ]
 
-  7. Define the fields of the facet. Therefore, add annotations for the fields `SPRAS`, `HOLIDAY_ID` and `FCAL_DESCRIPTION`.
+    ```
+
+    ![uiheader](ui6.png)
+
+  6. Let's now continue and directly add the annotations for table display. Open your text table CDS view **`ZCAL_I_HOLITXT_XXX`**.
 
     ```ABAP
     @UI.fieldGroup: [{ position: 1,
                         qualifier: 'Translation',
                         label: 'Language Key'}]
+    @UI.lineItem: [{ position: 1 }]
     key spras,
     key holiday_id,
     @UI.fieldGroup: [{ position: 2,
@@ -322,16 +357,19 @@ Many business configuration objects use text tables for providing translatable a
                         label: 'Translated Text' }]
     @UI.lineItem: [{ position: 2, label: 'Translation' }]
     fcal_description,
-    _PublicHoliday
+    _PublicHoliday  
     ```
 
-  8. Save and activate.
+      ![separate](ui3.png)
 
-  9. Open your service binding **`ZCAL_I_HOLIDAY_XXX`**, deactivate and activate your service again. Open your preview again by selecting **`to_HolidayTxt`** in your service binding. Open one entry and add a new translation by selecting **Create**. Now you can add the Italian translation and click **Save**.
+  7. Save and activate.
+
+  8. Open your service binding **`ZCAL_I_HOLIDAY_XXX`**, deactivate and activate your service again. Open your preview again by selecting **`to_HolidayTxt`** in your service binding. Open one entry and add a new translation by selecting **Create**. Now you can add the Italian translation and click **Save**.
 
       ![separate](separate5.png)
 
- 10. Open view **`ZCAL_I_HOLITXT_XXX`**. Add annotation **`@Consumption.valueHelpDefinition`** to field **`SPRAS`**. Use search help `I_Language`.
+
+ 11. Open view **`ZCAL_I_HOLITXT_XXX`**. Add annotation **`@Consumption.valueHelpDefinition`** to field **`SPRAS`**. Use search help `I_Language`.
 
     ```ABAP
      @Consumption.valueHelpDefinition: [
@@ -351,35 +389,44 @@ Many business configuration objects use text tables for providing translatable a
     @AbapCatalog.preserveKey: true
     @AccessControl.authorizationCheck: #CHECK
     @EndUserText.label: 'CDS View for Public Holidays Text Table'
+    @UI: {
+      headerInfo: {
+        typeName: 'Translation',
+        typeNamePlural: 'Translations',
+        title: {
+         type: #STANDARD,
+         value: 'spras'
+          }
+        }
+      }
+
     define view ZCAL_I_HOLITXT_XXX
       as select from zcal_holitxt_xxx
       association to parent ZCAL_I_HOLIDAY_XXX as _PublicHoliday on $projection.holiday_id = _PublicHoliday.holiday_id
     {
-
-                @UI.facet: [
-            {
-              id: 'HolidayText',
-              label: 'Translation',
-              targetQualifier: 'Translation',
-              type: #FIELDGROUP_REFERENCE,
-              position: 1
-            }
-          ]
-
-          @UI.lineItem: [{ position: 1 }]
-          @UI.fieldGroup: [{ position: 1,
-                             qualifier: 'Translation',
-                             label: 'Language Key'}]
-          @Consumption.valueHelpDefinition: [{entity: {name: 'I_Language', element: 'Language' }}]            
-      key spras,
-      key holiday_id,
-          @UI.lineItem: [{ position: 2, label: 'Translation' }]
-          @UI.fieldGroup: [{ position: 2,
-                             qualifier: 'Translation',
-                             label: 'Translated Text' }]
-
-          fcal_description,
-          _PublicHoliday
+       @UI.facet: [
+              {
+                id: 'HolidayText',
+                label: 'Translation',
+                targetQualifier: 'Translation',
+                type: #FIELDGROUP_REFERENCE,
+                position: 1
+              }
+            ]
+        //zcal_holitxt_xxx
+        @UI.fieldGroup: [{ position: 1,
+                            qualifier: 'Translation',
+                            label: 'Language Key'}]
+        @UI.lineItem: [{ position: 1 }]
+        @Consumption.valueHelpDefinition: [{entity: {name: 'I_Language', element: 'Language' }}]            
+        key spras,
+        key holiday_id,
+        @UI.fieldGroup: [{ position: 2,
+                            qualifier: 'Translation',
+                            label: 'Translated Text' }]
+        @UI.lineItem: [{ position: 2, label: 'Translation' }]
+        fcal_description,
+        _PublicHoliday  
     }
     ```
 
