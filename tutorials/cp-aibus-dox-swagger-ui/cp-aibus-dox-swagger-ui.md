@@ -219,11 +219,9 @@ You can now use the **GET /document/jobs/{`id`}** endpoint to receive the predic
 
 3. Set **`extractedValues`** to `true` to get the extracted values.
 
-4. Enter the **`clientId`** you used in the previous step (`c_00`, for example).
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
-
-6. Click **Execute**.
+5. Click **Execute**.
 
 !![DOX](png-files/getResults.png)
 
