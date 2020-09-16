@@ -3,7 +3,7 @@ title: Create an Outbound Communication Arrangement
 description: In an instance of the SAP Cloud Platform, ABAP Environment (client system), create all the communication objects you need, so it can communicate with a second instance (provisioning system).
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 

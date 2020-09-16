@@ -125,7 +125,7 @@ Replace the `<HOSTNAME FROM AZURE REDIS CACHE>` placeholders (there are two!) wi
 >Replace `<name-redis-cache>` with your unique `Redis Cache` name from the previous tutorial. `[hostName]` is not a placeholder and should not be replaced.
 
 ```Bash
-az redis show --name <name-redis-cache> --resource-group SAPTechEd --query [hostName] --output tsv
+az redis show --name <name-redis-cache> --resource-group SAPCloudPlatform --query [hostName] --output tsv
 ```
 
 ![insert the hostname from azure redis cache](redis-cache-name-replacement.png)
@@ -135,7 +135,7 @@ Replace the `<PRIMARYKEY FROM AZURE REDIS CACHE>` placeholders (there are two!) 
 >Replace `<name-redis-cache>` with your unique `Redis Cache` name from the previous tutorial.
 
 ```Bash
-az redis list-keys -n <name-redis-cache> -g SAPTechEd --query [primaryKey] --output tsv
+az redis list-keys -n <name-redis-cache> -g SAPCloudPlatform --query [primaryKey] --output tsv
 ```
 
 ![insert primary key from azure redis cache](redis-primary-key.png)
