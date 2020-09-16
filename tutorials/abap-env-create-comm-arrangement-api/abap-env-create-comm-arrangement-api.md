@@ -3,7 +3,7 @@ title: Create a Communication Arrangement for Outbound Communication
 description: Create a communication arrangement to connect your ABAP Environment to an external system - either SAP or third-party.
 auto_validation: true
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform, tutorial>license ]
+tags: [  tutorial>intermediate, topic>abap-development, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, topic>abap-connectivity, tutorial>license ]
 time: 30
 author_name: Julie Plummer
 author_profile: https://github.com/julieplummer20  

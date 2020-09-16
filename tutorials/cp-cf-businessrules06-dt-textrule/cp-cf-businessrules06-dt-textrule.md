@@ -5,6 +5,8 @@ auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud, topic>cloud,products>sap-cloud-platform,products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-business-rules
+author_name: Vandana Vasudevan
+author_profile: https://github.com/VandanaVasudevan
 ---
 
 ## Details
@@ -57,6 +59,8 @@ In this tutorial, we will create the decision logic required to assign equipment
     ![Autosuggestion list](create_dt_5.png)
 
 6. Choose the attribute **`countryofCompany`** from the **Vocabulary** section.
+
+    > The label **`Country or Region of Company`** of the attribute **`countryofCompany`**, is displayed in the list.
 
     ![Attribute in autosuggestion list](create_dt_6.png)
 
@@ -113,11 +117,11 @@ In this tutorial, we will create the decision logic required to assign equipment
 
     ![Company details](create_dt_13.png)
 
-11. Select the first row, then choose **Add Row** > **Insert After**.
+13. Select the first row, then choose **Add Row** > **Insert First**.
 
     ![Company details](create_dt_14.png)
 
-12. Enter the following values in the condition and result columns of the new row:
+14. Enter the following values in the condition and result columns of the new row:
 
     |  Field Name     | Value
     |  :------------- | :-------------
