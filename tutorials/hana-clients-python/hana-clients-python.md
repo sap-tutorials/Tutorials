@@ -17,7 +17,7 @@ primary_tag: products>sap-hana
 
 In the 2019 Stack Overflow's annual developer survey, Python ranked 4th in the [Most Popular Technologies](https://insights.stackoverflow.com/survey/2019#technology) section.  For further information on Python, see [Introduction to Python 3](https://realpython.com/python-introduction/).
 
-The [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) supports Python 3.4+ and  Python 2.7.  For further details see SAP note [2499500 - SAP HANA Client Supported Platforms](https://launchpad.support.sap.com/#/notes/2499500).  
+The [SAP HANA client for Python](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/f3b8fabf34324302b123297cdbe710f0.html) supports Python 3.4+ and  Python 2.7.  For further details see SAP note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).  
 
 The following steps will create a simple Python app that can connect to and query an SAP HANA database.  
 
@@ -81,7 +81,7 @@ pip install hdbcli
 >
 > ```Shell
 > cd C:\SAP\hdbclient
-> pip install hdbcli-2.4.182.zip
+> pip install hdbcli-2.5.86.zip
 > ```
 
 > ---
@@ -205,7 +205,9 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
 5. Select **Run | Start Debugging**.
 
-6. Select **Python File** from the debug configuration options.  
+6. Select **Python Current File** from the debug configuration options.  
+
+    Notice that the debug view becomes active and that the RUN option is Python: Current File.  
 
     Notice that the program stops running at the breakpoint that was set.
 

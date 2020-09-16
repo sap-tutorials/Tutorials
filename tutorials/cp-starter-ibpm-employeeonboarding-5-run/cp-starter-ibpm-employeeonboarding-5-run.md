@@ -23,7 +23,7 @@ First, we will import sample events & data, process these events and view them i
 
     >You got the launchpad link in the last step of the setup tutorial. The link would be like:  
 
-    > `https://trial-userid-dev-bpmservicesflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
+    > `https://trial-userid-dev-workflowmanagementflp-approuter.cfapps.eu10.hana.ondemand.com/cp.portal/site#Shell-home`
 
     ![Import Events](eventaquisition_1.png)
 
@@ -35,7 +35,7 @@ First, we will import sample events & data, process these events and view them i
 
     ![Import Events](importevents.png)
 
-5. Once the events are imported successfully, choose **Filter** and enter `onboard` as **Process Definition ID** to see all the imported events.
+5. Once the events are imported successfully, choose **Filter**, select **Process Definition ID** and enter `onboard` to see all the imported events.
 
     ![See Events](eventaquisition_3.png)
 

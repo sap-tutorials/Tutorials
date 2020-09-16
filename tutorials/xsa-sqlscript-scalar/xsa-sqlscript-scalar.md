@@ -4,7 +4,7 @@ description: Leveraging SQLScript in Stored Procedures, User Defined Functions, 
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud  ]
 time: 15
 ---
 
@@ -13,8 +13,7 @@ time: 15
 
 ## Details
 ### You will learn  
-In this exercise we are creating a scalar UDF for generating a full name from the last, first and middle name of the employee.
-
+- How to create a scalar UDF for generating a full name from the last, first and middle name of the employee
 
 ---
 

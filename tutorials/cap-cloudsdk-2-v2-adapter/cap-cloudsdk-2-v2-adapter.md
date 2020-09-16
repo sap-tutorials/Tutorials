@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Install an OData V2 Adapter
 description: Enable your mock server to return OData V2 responses for consumption with the SAP Cloud SDK.
 auto_validation: true
