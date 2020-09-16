@@ -103,7 +103,7 @@ In this step, you'll define a simple service, which exposes a projection on the 
 3. Add the following service definition to the `cat-service.cds`:
 
     ```CDS
-    using my.bookshop as my from '../db/data-model';
+    using my.bookshop as my from '../db/datamodel';
 
     service cloud.sdk.capng {
          entity CapBusinessPartner as projection on my.CapBusinessPartner;
@@ -142,10 +142,9 @@ For integrating the SAP Cloud SDK in SAP Cloud Application Programming Model, yo
 </dependencyManagement>
 ```
 
->Please make sure to always use the latest version available on Maven Central.
-Check out [release notes](https://sap.github.io/cloud-sdk/docs/java/release-notes-sap-cloud-sdk-for-java/).
+>Please make sure to always use the latest version available on Maven Central. Check out the [release notes](https://sap.github.io/cloud-sdk/docs/java/release-notes-sap-cloud-sdk-for-java/).
 
-Since your application is running on SAP Cloud Platform Cloud Foundry, include the following dependencies to your `pom.xml` in `srv` directory:
+Since your application is running on SAP Cloud Platform Cloud Foundry, include the following dependencies to your `pom.xml` in the `srv` directory:
 
 ```XML
 <dependency>
@@ -167,32 +166,9 @@ For more information, visit the documentation of the [SAP Cloud SDK](https://sap
 
 [ACCORDION-BEGIN [Step 5: ](Create Java class for event handler)]
 
-1. Create the Java package, by creating a new folder called `com.sap.cap.capbusinessservice` under `main/java`.
+1. Create a new Java class `BusinessPartnerReadListener` with the following content:
 
-2. Create the Java class file `BusinessPartnerListener` in the created folder, with the following content:
-
-```Java[28-42,44-52]
-package handlers;
-
-import cds.gen.cloud.sdk.capng.CapBusinessPartner;
-import com.sap.cds.services.cds.CdsCreateEventContext;
-import com.sap.cds.services.cds.CdsReadEventContext;
-import com.sap.cds.services.cds.CdsService;
-import com.sap.cds.services.handler.EventHandler;
-import com.sap.cds.services.handler.annotations.On;
-import com.sap.cds.services.handler.annotations.ServiceName;
-import com.sap.cloud.sdk.cloudplatform.connectivity.DestinationAccessor;
-import com.sap.cloud.sdk.cloudplatform.connectivity.HttpDestination;
-import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.namespaces.businesspartner.BusinessPartner;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.BusinessPartnerService;
-import com.sap.cloud.sdk.s4hana.datamodel.odata.services.DefaultBusinessPartnerService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-
-import java.util.*;
-
+```Java[7-21,23-31]
 @Component
 @ServiceName("cloud.sdk.capng")
 public class BusinessPartnerReadListener implements EventHandler {
@@ -427,9 +403,9 @@ cf create-service destination lite MyErpSystem
     ```YAML
       ---
       applications:
-      - name: cap-business-service
-        path: srv/target/cds-services-archetype-exec.jar
-        random-route: true
+        - name: cap-business-service
+          path: srv/target/cds-services-archetype-exec.jar
+          random-route: true
       services:
         - MyErpSystem
     ```
