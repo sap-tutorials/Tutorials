@@ -10,9 +10,9 @@ author_profile: https://github.com/Deeksha-R
 ---
 
 ## Prerequisites
- 1. Ensure that you setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ 1. Set up the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
  2. You have a deployed workflow. If you do not have a workflow deployed, then refer to the [Set Up a Workflow With Extended Employee Onboarding](cp-starter-ibpm-employeeonboarding-3-workflow) tutorial.
- 3. You have set up the business rules for determining equipment. To set the business rules up, see the [Set Up Business Rules for Determining Equipment](cp-starter-ibpm-employeeonboarding-2-businessrules) tutorial.
+ 3. You have set up the business rules for determining equipment. To set up the business rules, see the [Set Up Business Rules for Determining Equipment](cp-starter-ibpm-employeeonboarding-2-businessrules) tutorial.
 
 ## Details
 ### You will learn

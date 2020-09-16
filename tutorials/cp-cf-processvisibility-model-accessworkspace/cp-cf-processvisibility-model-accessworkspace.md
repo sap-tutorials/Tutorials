@@ -10,7 +10,7 @@ author_profile: https://github.com/Deeksha-R
 ---
 
 ## Prerequisites
- - Ensure that you setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ - Setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
  - Process the data by using Monitor Visibility Scenarios application. For more information, see the [Monitor Your Visibility Scenarios](cp-cf-processvisibility-model-monitorscenario) tutorial.
 
 ## Details

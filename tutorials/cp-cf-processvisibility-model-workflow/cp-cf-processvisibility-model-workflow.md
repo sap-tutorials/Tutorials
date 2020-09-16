@@ -9,7 +9,7 @@ author_name: Deeksha R
 author_profile: https://github.com/Deeksha-R
 ---
 ## Prerequisites
- - Ensure that you setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ - Set up the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
  - You have set up the business rules for determining equipment. To set the business rules up, see the [Set Up Business Rules for Determining Equipment](cp-starter-ibpm-employeeonboarding-2-businessrules) tutorial.
 
 ## Details
@@ -26,7 +26,7 @@ Once you have modelled and activated the visibility scenario, navigate to the Mo
 
     !![Home screen](FLP.png)
 
-2. Search and select the workflow definition **onboard** for which you want to create an instance and click on **Start New Instance**.
+2. Search and select the workflow definition **onboard** for which you want to create an instance and click **Start New Instance**.
 
     !![New instance creation](Start-New-Instance-03.png)
 
@@ -34,7 +34,7 @@ Once you have modelled and activated the visibility scenario, navigate to the Mo
 
     !![Payload](Payload-04.png)
 
-3. Click on **Show Instances** to view the created instance.
+3. Click **Show Instances** to view the created instance.
 
     !![Show instances](Show-Instance-05.png)
 
@@ -42,7 +42,7 @@ Once you have modelled and activated the visibility scenario, navigate to the Mo
 
     !![Show instance details](Show-instances-06.png)
 
-4. Click on **Home** and navigate to the home screen.
+4. Click **Home** and navigate to the home screen.
 
     !![Home](home.png)
 

@@ -10,7 +10,7 @@ author_profile: https://github.com/Deeksha-R
 ---
 
 ## Prerequisites
-Ensure that you setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+Set up the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
 
 ## Details
 ### You will learn
@@ -115,7 +115,7 @@ In this step, you will import the `LeadtoCash.zip` file to the Configure Visibil
 
 In this step, you can process the data of the activated business scenarios using the Monitor Visibility Scenarios application.
 
-1. Click on the **Monitor Visibility Scenarios** tile by navigating to the home screen.
+1. Click the **Monitor Visibility Scenarios** tile by navigating to the home screen.
 
       !![monitor scenarios](monitor-flp.png)
 
@@ -134,7 +134,7 @@ In this step, you can process the data of the activated business scenarios using
 
 In this step, you will be able to track the progress of the sample scenario using the visual representation of the Process Workspace application.
 
-1. Click on the **Process Workspace** tile by navigating to the home screen.
+1. Click the **Process Workspace** tile by navigating to the home screen.
 
     !![process workspace](processworkspace_flp.png)
 

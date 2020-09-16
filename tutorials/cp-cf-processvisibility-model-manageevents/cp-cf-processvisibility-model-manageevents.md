@@ -10,7 +10,7 @@ author_profile: https://github.com/Deeksha-R
 ---
 
 ## Prerequisites
- - Ensure that you setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ - Setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
 
 ## Details
 ### You will learn
@@ -38,7 +38,7 @@ The Event Acquisition application opens with no events.
 
     You can filter the events based on Process Definition ID, Process Instance ID, Event Type, and Timestamp.
 
-2. Click on the required filter and provide the value you used in your business scenario. In this tutorial, we apply the filter based on **Process Definition ID** and we use the value **onboard**.
+2. Click the required filter and provide the value you used in your business scenario. In this tutorial, we apply the filter based on **Process Definition ID** and we use the value **onboard**.
 
     !![Filter values](Filter-Values-03.png)
 

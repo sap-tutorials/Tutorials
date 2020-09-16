@@ -10,7 +10,7 @@ author_profile: https://github.com/Deeksha-R
 ---
 
 ## Prerequisites
- - Ensure that you setup the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
+ - Set up the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
 
 ## Details
 ### You will learn
@@ -34,7 +34,7 @@ Log on to the Workflow Management home screen and choose the **Monitor Visibilit
 
     !![Employee Onboarding Process](Employee-Onboarding-Process-3.png)
 
-2. Click on **Process Data** to process the events manually.
+2. Click **Process Data** to process the events manually.
 
     !![Processing Data](Process-Data-04.png)
 
