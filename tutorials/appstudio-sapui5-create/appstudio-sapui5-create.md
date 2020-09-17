@@ -53,7 +53,7 @@ Make sure you are connected to a Cloud Foundry endpoint to which you will deploy
 
     !![newproject](./newproject.png)
 
-2. Select **Fiori Project** as the template category you want to use and click **Next**.
+2. Select **SAP Fiori Freestyle - Project Generator** as the template category you want to use and click **Next**.
 
     !![fioriTemplate](./fioriTemplate.png)
 
