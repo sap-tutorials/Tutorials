@@ -78,7 +78,7 @@ In this tutorial, you'll use the **Content Manager** of the SAP Cloud Platform L
 
 [ACCORDION-BEGIN [Step 3: ](View the app that you created)]
 
-Click the **Content Manager** icon in the left side panel to open the **Content Manager**.
+Click the Content Manager icon in the left side panel to open the **Content Manager**.
 
  ![Go back to Content Manager](8-go-to-content-manager.png)
 
