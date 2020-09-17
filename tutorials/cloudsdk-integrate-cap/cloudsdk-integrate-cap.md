@@ -4,6 +4,7 @@ description: Create a SAP Cloud Application Programming Model project to call OD
 time: 40
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
+author: Matthias Kuhr
 ---
 
 ## Prerequisites
@@ -352,8 +353,6 @@ You can read the data by doing the **GET** request on same URL .
 
 [ACCORDION-BEGIN [Step 10: ](Deploy and configure mock server on cloud foundry)]
 
-First of all you have to .
-
 You can configure a mock server instance to Cloud Foundry by going inside the mock server directory and pushing the instance to cloud. Do this by running:
 
 ```Shell/Bash
@@ -427,15 +426,21 @@ cf create-service destination lite MyErpSystem
       </dependency>
     ```
 
-    Save the file.
+5. Add the following annotation to your `Application` class:
 
-5. Build your application once by running:
+    ```Java
+    @EnableAutoConfiguration(exclude = DataSourceAutoConfiguration.class)
+    ```
+
+    This will allow you to deploy to Cloud Foundry without any database service binding.
+
+6. Build your application once by running:
 
     ```Shell/Bash
     mvn clean
     install
     ```
-6. Push the application to the cloud by running:
+7. Push the application to the cloud by running:
 
     ```Shell/Bash
     cf push
@@ -448,7 +453,7 @@ cf create-service destination lite MyErpSystem
 
     !![applicationDeployed](appDeploy.png)
 
-7. To retrieve the application URL run the following command:
+8. To retrieve the application URL run the following command:
 
     ```Shell/Bash
     cf app cap-business-service
