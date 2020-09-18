@@ -4,7 +4,8 @@ description: Create a SAP Cloud Application Programming Model project to call OD
 time: 40
 tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk]
 primary_tag: software-product-function>sap-cloud-application-programming-model
-author: Matthias Kuhr
+author_name: Matthias Kuhr
+author_profile: https://github.com/MatKuhr
 ---
 
 ## Prerequisites
@@ -23,7 +24,7 @@ SAP Cloud Application Programming Model enables you to quickly create business a
 
 However, this raises the question how this interacts and integrates with other SAP frameworks that SAP has introduced over the past year such as the SAP Cloud SDK.
 
-In particular, you will learn how to integrate the SAP Cloud SDK into the SAP Cloud Application Programming Model. And how SAP Cloud SDK allow you to develop, extend and communicate with other SAP solutions.
+In particular, you will learn how to integrate the SAP Cloud SDK into the SAP Cloud Application Programming Model. And how the SAP Cloud SDK allows you to develop, extend and communicate with other SAP solutions.
 
 ---
 
@@ -240,14 +241,14 @@ The above class handles the READ and CREATE events (highlighted above).
 
 - The READ operation just returns the business partners from the remote OData service.
 
-    Here we are using the OData VDM from SAP Cloud SDK to fetch business partners from the target system. We can call this service `getAllBusinessPartner()` function to retrieve a list of all the business partners from the system. In this tutorial our destination is called `MyErpSystem` and you will learn a little later where it is set up.
+    Here you are using the OData VDM from SAP Cloud SDK to fetch business partners from the target system. You can call this service `getAllBusinessPartner()` function to retrieve a list of all the business partners from the system. In this tutorial the destination is called `MyErpSystem` and you will learn a little later where it is set up.
 
-    Later we transform `BusinessPartner` to `CapBusinessPartner` according to our requirements.
+    Later you will transform `BusinessPartner` to `CapBusinessPartner`.
 
 
 - The CREATE event extracts the payload from the CQN representation and saves into `businessPartner` object.
 
-    Here we initialize the `BusinessPartnerService` instance and then prepare the query and call the `execute` function which creates the new `businessPartner` in mock server.
+    Here you initialize the `BusinessPartnerService` instance and then prepare the query and call the `execute` function which creates the new `businessPartner`.
 
 [DONE]
 [ACCORDION-END]
