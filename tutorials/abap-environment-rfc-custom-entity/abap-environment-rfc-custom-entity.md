@@ -3,7 +3,7 @@ title: Get Data from a Remote System Using a Custom Entity
 description: Get data from an on-Premise System Using RFC, by Implementing a Custom Entity in ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity,tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
@@ -217,6 +217,8 @@ Go back to the class.
 [ACCORDION-BEGIN [Step 7: ](Define the connection to the on-premise system)]
 If your are working in the full version of ABAP Environment: Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
 
+**IMPORTANT**: Always specify the authentication mode using the interface `if_a4c_cp_service`. Never hard-code your password in the class.
+
     ```ABAP
 
     IF lv_abap_trial = abap_false.
@@ -225,6 +227,7 @@ If your are working in the full version of ABAP Environment: Define the connecti
         DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
                                     i_name                  = 'ES5_RFC_XXX'
                                     i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
+                                    i_authn_mode            = if_a4c_cp_service=>service_specific
            ).
 
         DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).

@@ -1,6 +1,6 @@
 ---
 title: Add Rich Enterprise Controls to the User Interface
-description: The current user interface is an MVP to show how routing works in SAPUI5 apps. In this tutorial, you replace basic UI controls with rich controls that abstract enterprise features to leverage the OData protocol.
+description: Replace the current  UI controls with more complex controls that fully leverage the OData protocol.
 auto_validation: true
 time: 25
 tags: [ tutorial>intermediate, topic>odata, topic>sapui5,  products>sap-cloud-platform-portal, topic>user-interface, topic>html5, topic>cloud ]
@@ -363,14 +363,14 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
     }
     ```
 
-3. Add a new history item when the controller of the list view (`webapp/controller/Products.controller.js`.) is initialized.
+3. Add a new history item when the controller of the list view (`webapp/controller/Products.controller.js`) is initialized.
 
     ```JavaScript
     onInit : function () {
       this.addHistoryEntry({
         title: "All Products",
         icon: "sap-icon://product",
-        intent: "#display-data"
+        intent: "#display-uimodule"
       }, true);
     },
     ```
@@ -395,7 +395,7 @@ In this step, we add hierarchy information to the `Shellbar` to enable fast navi
             this.addHistoryEntry({
               title: "Product - " + oView.getBindingContext().getProperty("ProductName"),
               icon: "sap-icon://product",
-              intent: "#display-data&/Product/" + iProductId
+              intent: "#display-uimodule&/Product/" + iProductId
             });
           }.bind(this)
         }

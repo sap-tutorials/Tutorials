@@ -7,12 +7,14 @@ tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence,
 primary_tag: topic>machine-learning
 ---
 
+## Prerequisites
+- You must have registered for a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+
 ## Details
 ### You will learn
   - How to check your Document Information Extraction entitlements
   - How to create a service instance of Document Information Extraction
   - How to create service keys for your service instance
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -21,9 +23,7 @@ primary_tag: topic>machine-learning
 
 2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-    ![Trial global account](01_Foundation20Onboarding_Home.png)
-
-    >Document Information Extraction is only available in the Europe (Frankfurt) region. Follow the steps described in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and choose the Europe (Frankfurt) region. If this is not possible, create a new subaccount in the Europe (Frankfurt) region. You should then be able to find **Document Information Extraction Trial** in your new subaccount **Entitlements**.
+    !![Trial global account](01_Foundation20Onboarding_Home.png)
 
     >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. Your user profile will be set up for you automatically.
 
@@ -31,7 +31,7 @@ primary_tag: topic>machine-learning
 
     >Choose **Continue**.
 
-    >![Account setup](02_Foundation20Onboarding_Processing.png)
+    >!![Account setup](02_Foundation20Onboarding_Processing.png)
 
 3. From your global account page, choose the `trial` tile to access your subaccount.
 
@@ -107,25 +107,17 @@ The **Service Marketplace** is where you find all the services available on SAP 
 
 You will now create an instance of your service.
 
-1. Click **Instances** on the navigation side bar.
+Click **Create Instance** to start the creation dialog.
 
-2. Click **New Instance** to start the creation dialog.
+![Service Instance](create-instance.png)
 
-    ![Service Instances](create-instance.png)
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `doc-info-extraction-inst` and click **Create Instance** to skip the other steps and create the instance.
 
-    - In the dialog, leave the default value for the service plan and click **Next**.
+![Create Instance](create-instance-dialog.png)
 
-      ![Create Instance](create-instance-service-plan.png)
+In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
-      - Leave the parameters empty and click **Next**.
-
-      - Do not assign any application and click **Next**.
-
-      - Finally, enter a name for your new instance as `doc-info-extraction-inst`.
-
-      - Click **Finish** to create the instance.
-
-        ![Create Instance](create-instance-name.png)
+![View Instances](view-instances.png)
 
 You have successfully created a service instance for Document Information Extraction.
 
@@ -136,45 +128,19 @@ You have successfully created a service instance for Document Information Extrac
 
 You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
-1. To create service keys, first access your service instance by clicking its name.
+  1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-    ![Service Instances](access-instance.png)
+      ![Service Keys](create-service-keys.png)
 
-2. Now select **Service Keys** on the navigation side bar.
+  2. In the dialog, enter `doc-info-extraction-keys` as the name of your service key. Click **Create** to create the service key.
 
-3. Click **Create Service Key** to start the creation dialog.
+      ![Create Service Key](create-service-key-name.png)
 
-    ![Service Keys](create-service-keys.png)
+You have successfully created service keys for your service instance. You can now either view the service key in the browser or download it.
 
-    - In the dialog, enter `doc-info-extraction-keys` as the name for your service keys. Leave the **Configuration Parameters (JSON)** box empty.
+![View Service Key](view-service-key.png)
 
-    - Click **Save** to create the service keys.
-
-        ![Create Service Key](create-service-key-name.png)
-
-You have successfully created service keys for your service instance. Make a local copy of the service keys. You will need the service keys values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
-
-![Service Key](service-key.png)
+You will need the service keys values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
 
 [VALIDATE_1]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](List your service instances)]
-
-To list and access your service instances, there is no need to access the service via the Service Marketplace every time. In your space, you can see a list of all your service instances.
-
-1. Go to your **dev** space using the breadcrumbs at the top of the page.
-
-    As you navigate through SAP Cloud Platform trial and dig into more detail the breadcrumbs at the top of the page show you the hierarchy of your navigation. You can use them to go back to previous steps.
-
-    ![Breadcrumbs](nav-back-breadcrumbs.png)
-
-2. Back in your space, click **Service Instances** on the navigation side bar.
-
-    ![Service Instances List](instance-list.png)
-
-The list shows all your service instances across all services, including the service instance you have just created. Here, you find information on the service plan, referencing applications, created service keys and the current status of your instances. You can also manage your service instances, access or delete them, for example.
-
-[DONE]
 [ACCORDION-END]

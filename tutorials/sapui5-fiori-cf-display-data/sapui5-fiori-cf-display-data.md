@@ -1,6 +1,6 @@
 ---
 title: Display Data from the Northwind Service
-description: The current web app already contains one view. This `MainView` serves as the outermost container, which includes two other views (each of which is a page). This tutorial shows how to add new views and data to the application.
+description: Learn how to add new views, to display more data, and how to navigate between them.
 auto_validation: true
 time: 20
 tags: [ tutorial>beginner, topic>sapui5,  products>sap-cloud-platform-portal, products>sap-fiori, topic>user-interface, topic>html5, topic>cloud]
@@ -112,6 +112,8 @@ yo easy-ui5:newmodel
 
 Again, please accept the modification of the manifest file.
 
+> The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.yaml` if you don't like it.
+
 
 [DONE]
 [ACCORDION-END]
@@ -194,8 +196,6 @@ In this step, you will add a detail page that shows some additional information.
       ]
     }
     ```
-
-    !![new route](newroute.png)
 
 3. Change the type of the list items and an event listener in the `webapp/view/Products.view.xml` file.
     ```XML

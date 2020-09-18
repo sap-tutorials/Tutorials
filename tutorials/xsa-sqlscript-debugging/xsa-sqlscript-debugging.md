@@ -4,7 +4,7 @@ description: Leveraging SQLScript in stored procedures, user-defined functions, 
 author_name: Rich Heilman
 author_profile: https://github.com/rich-heilman
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-cloud    ]
 time: 10
 ---
 
@@ -13,8 +13,9 @@ time: 10
 
 ## Details
 ### You will learn  
-In the following exercise we will show how to debug a procedure using the SQLScript debugger. This includes setting breakpoints, evaluating expressions and intermediate results.
+- How to debug a procedure using the SQLScript debugger
 
+The debugging shown in this tutorial includes setting breakpoints, evaluating expressions and intermediate results.
 
 ---
 

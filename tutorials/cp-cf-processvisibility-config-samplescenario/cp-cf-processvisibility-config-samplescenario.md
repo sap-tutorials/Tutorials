@@ -10,8 +10,7 @@ author_profile: https://github.com/Deeksha-R
 ---
 
 ## Prerequisites
- - You have setup the Process Visibility service. For more information, see [Set Up the Process Visibility Service](https://developers.sap.com/group.cp-visibility-setup.html).
- - You have the **`PVEventSender`**, **`PVAdmin`**, **`PVOperator`**, **`PVDeveloper`**, role assigned to you. For more information, see [Assign Process Visibility Roles to Users](cp-cf-processvisibility-setup-assignroles).
+ Set up the Workflow Management service. For more information, see the [Set Up Workflow Management in Cloud Cockpit](cp-starter-ibpm-employeeonboarding-1-setup) tutorial.
 
 ## Details
 ### You will learn
@@ -42,7 +41,7 @@ In this step, you will download the sample design-to-operate business scenario a
 
     >This downloads the `DesigntoOperate.zip` file to your local system.
 
-    You now have the two downloaded files in your local system with the events and business scenario relevant to design-to-operate process.
+    You now have the two downloaded files in your local system with the events and scenario relevant to design-to-operate process.
 
 [DONE]
 [ACCORDION-END]
@@ -51,7 +50,7 @@ In this step, you will download the sample design-to-operate business scenario a
 
 In this step, you will import the `DesignToOperateEvents.json` to the Event Acquisition application.
 
-1. Log onto the **Event Acquisition** tile on SAP Fiori launchpad.
+1. Log onto the **Event Acquisition** tile using the Workflow Management home screen.
 
     ![Event Aquisition App](event-flp.png)
 
@@ -88,49 +87,50 @@ In this step, you will import the `DesignToOperateEvents.json` to the Event Acqu
 
 In this step, you will import the `DesigntoOperate.zip` file to the Configure Business Scenarios application.
 
-1. Log on to the **Configure Business Scenarios** tile on SAP Fiori launchpad.
+1. Log on to the **Configure Visibility Scenarios** tile by navigating to the home screen.
 
-    ![config scenario](config_flp.png)
+    !![config scenario](config_flp.png)
 
-2. Choose the **Import Business Scenario** icon.
+2. Choose the **Import Scenario** icon.
 
-    ![import scenario](screen8-importbusinessscaenrio.png)
+    !![import scenario](screen8-importbusinessscaenrio.png)
 
-3. In the **Import Business Scenario** dialog, browse for the `DesigntoOperate.zip` file from your local system. Then choose **Import**.
+3. In the **Import Scenario** dialog, browse for the `DesigntoOperate.zip` file from your local system. Then choose **Import**.
 
-    ![browse](screen8-save.png)
+    !![Browse screen](screen8-browse.png)
 
     You can now see the imported business scenario as shown.
 
-      ![imported scenario](screen9-d2o.png)
+      !![imported scenario](screen9-d2o.png)
 
 4. Choose the **Design to Operate** business scenario.
 
-    ![imported scenario](screen9-d2o.png)
+    !![imported scenario](screen9-d2o.png)
 
+5. Click **Activate**.
 
-    ![Activate](screen9-activate.png)
+    !![Activate](screen9-activate.png)
 
-    > You will see a message upon successful activation of the business scenario.
+    > You will see a message upon successful activation of the scenario.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Process the data)]
 
-In this step, you can process the data of the activated business scenario using the Monitor Scenarios application.
+In this step, you can process the data of the activated business scenario using the Monitor Visibility Scenarios application.
 
-1. Log on to the **Monitor Scenarios** tile on SAP Fiori launchpad.
+1. Click the **Monitor Visibility Scenarios** tile by navigating to the home screen.
 
-      ![monitor scenarios](monitor-flp.png)
+      !![monitor scenarios](monitor-flp.png)
 
 2. Choose the **Design to Operate** scenario definition, then choose **Process Data**.
 
-      ![Process Data](screen10-monitor.png)
+      !![Process Data](screen10-monitor.png)
 
 3. On successful processing of data, choose the refresh icon to view the processing information listed out under **Processing Information**.
 
-      ![Refresh](screen10-refresh.png)
+      !![Refresh](screen10-refresh.png)
 
 [DONE]
 [ACCORDION-END]
@@ -139,19 +139,19 @@ In this step, you can process the data of the activated business scenario using 
 
 In this step, you will be able to track the progress of the sample design-to-operate business scenario using the visual representation of the Process Workspace application.
 
-1. Log on to the **Process Workspace** tile on SAP Fiori launchpad.
+1. Click the **Process Workspace** tile by navigating to the home screen.
 
-    ![process workspace](processworkspace_flp.png)
+    !![process workspace](processworkspace_flp.png)
 
 2. Choose the **Design to Operate** business scenario.
 
-    ![D2O](screen11-processworkspace.png)
+    !![D2O](screen11-processworkspace.png)
 
     You can view the overview page for the **Design to Operate** business scenario as shown below. You can view information such as open orders, cycle time, open orders by product category and so on.
 
-    ![D2O](screen11-overviewpws.png)
+    !![D2O](screen11-overviewpws.png)
 
-    >You can customize the cards displayed on the overview page by modifying the business scenario in the **Configure Business Scenario** application. For more information, see [SAP Help](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
+    >You can customize the cards displayed on the overview page by modifying the business scenario in the **Configure Visibility Scenario** application. For more information, see [SAP Help](https://help.sap.com/viewer/62fd39fa3eae4046b23dba285e84bfd4/Cloud/en-US/df284fd12073454392c5db8913f82d81.html).
 
 [VALIDATE_1]
 [ACCORDION-END]

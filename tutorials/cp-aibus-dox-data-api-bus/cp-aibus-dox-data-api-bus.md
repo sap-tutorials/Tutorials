@@ -8,7 +8,7 @@ primary_tag: topic>machine-learning
 ---
 
 ## Prerequisites
-- [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance)
+- [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster)
 - [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token)
 - [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) (step 1 only)
 
@@ -26,7 +26,7 @@ When you finish this tutorial, you will have explored all Data API functionaliti
 
 [ACCORDION-BEGIN [Step 1: ](Create client)]
 
-After completing the prerequisite tutorials [Create Service Instance for Document Information Extraction](cp-aibus-dox-service-instance) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
+After completing the prerequisite tutorials [Create Service Keys for Document Information Extraction](cp-aibus-dox-service-instance-booster) and [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token), and performing at least step 1 in the tutorial [Use Machine Learning to Extract Information from Documents](cp-aibus-dox-swagger-ui) to access and authorize the Document Information Extraction Swagger UI, you need to create a client. This client is used in most of the endpoints to distinguish and separate data.
 
 You can either create a single client or multiple clients in the **payload** field of the **POST /clients** endpoint. The **`clientId`** values created here will be used in other service endpoints.
 
@@ -183,7 +183,7 @@ Do the following:
 
 4. Upload the document PDF file you want to enrich.
 
-5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `taxName`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_29`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example), the enrichment data type `businessEntity` and subtype `supplier`.
+5. In **options**, enter the list of fields to be extracted from the uploaded file (`documentNumber`, `taxId`, `purchaseOrderNumber`, `shippingAmount`, `netAmount`, `senderAddress`, `senderName`, `grossAmount`, for example), the client id you created in step 1 (`c_29`, for example), the document type (`invoice`, for example), `receivedDate` (2020-02-17, for example), the enrichment data type `businessEntity` and subtype `supplier`.
 
     ```JSON
     {
@@ -191,7 +191,6 @@ Do the following:
           "headerFields":[
              "documentNumber",
              "taxId",
-             "taxName",
              "purchaseOrderNumber",
              "shippingAmount",
              "netAmount",
@@ -204,22 +203,14 @@ Do the following:
              "taxAmount",
              "taxRate",
              "receiverName",
-             "receiverAddress",
-             "deliveryDate",
-             "paymentTerms",
-             "shipToAddress"
+             "receiverAddress"
           ],
           "lineItemFields":[
              "description",
              "netAmount",
              "quantity",
              "unitPrice",
-             "materialNumber",
-             "documentNumber",
-             "documentDate",
-             "discountAmount",
-             "deductionAmount",
-             "itemNumber"
+             "materialNumber"
           ]
        },
        "clientId":"c_29",
@@ -264,11 +255,9 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
 
 3. Set **`extractedValues`** to `true` to get the extracted values.
 
-4. Enter the **`clientId`** you created in step 1 (`c_29`, for example).
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
-
-6. Click **Execute**.
+5. Click **Execute**.
 
 The endpoint request and response look as follows:
 
@@ -285,7 +274,7 @@ This is an example of a full prediction including the enrichment data part:
     ```JSON
     {
       "status": "DONE",
-      "id": "cefda9f3-5f76-4553-a245-f19e5cd6752a",
+      "id": "97a96f7c-ea6a-456c-a58c-1cee1121a210",
       "fileName": "sample-invoice-1.pdf",
       "documentType": "invoice",
       "created": "2020-06-15T09:59:04.091971+00:00",
