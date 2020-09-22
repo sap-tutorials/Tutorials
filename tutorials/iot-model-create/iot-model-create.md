@@ -101,7 +101,7 @@ In above example we have a package with a globally unique name called `com.sap.s
 
 A silo has 2 capabilities: one to store measures in it and one to store process or application data in it. For measures one of the common things for a silo is the current fill level.
 
-Lastly the model above defines a type of silo that has both of the capabilities linked to it. One will be for measures to store time series data of measurements coming from the device. And the other will be for data for which the values changing over time would be coming from a backend application. For example the equipment number would remain constant throughout the lifecycle of a silo (relative to your company's ownership and maintenance of the silo) whereas the handling unit id changes as the same silo acts as a handling unit for one order and then as another handling unit for another order.
+Lastly the model above defines a type of silo that has both of the capabilities linked to it. One will be for measures to store time series data of measurements coming from the device. And the other will be for data for which the values that are changing over time would be coming from a backend application. For example the equipment number would remain constant throughout the lifecycle of a silo (relative to your company's ownership and maintenance of the silo) whereas the handling unit id changes as the same silo acts as a handling unit for one order and then as another handling unit for another order.
 
 If you are OK with above example model please continue with the next step.
 
