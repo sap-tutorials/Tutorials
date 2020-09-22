@@ -30,7 +30,7 @@ primary_tag: topic>internet-of-things
 
 SAP IoT allows you to put sensor data into business context during data ingestion and at rest. The tutorial helps you with the first steps of setting it up, and enables you to start considering onboarding devices into the system.
 
-IoT is all about sensors and the data they generate. So when you have a use case on your mind you probably already are thinking about which sensor you want to use. A sensor can generate one or multiple measurements that are sent to the cloud.
+IoT is all about sensors and the data they generate. So when you have a use case on your mind you are probably already thinking about which sensor you want to use. A sensor can generate one or multiple measurements that are sent to the cloud.
 
 In this case let's assume we want to track a silo. The sensors we have in mind would collect the following information from the inside of the silo: temperature, humidity, fill level. Additionally you might want to know, where the (portable) silo is during its use. This would be done with a GPS sensor which provides as measurements latitude, longitude. The GPS sensor is hooked up to satellites with powerful clocks running on them - this gives you also a timestamp in UTC time. Machines do not care about timezones - hence all times they talk about are in UTC (which is basically the same as GMT time). We call this part of the data model the ´device model´.
 
