@@ -19,9 +19,9 @@ primary_tag: topic>internet-of-things
 
 [ACCORDION-BEGIN [Step 1: ](Decide which devices to onboard)]
 
-Onboarding of devices is not just something that you do one-time when establishing a data model for your IoT application. You do this continuously (and also off-boarding) during the operation of your IoT application. To make this a smooth process where you can be sure the device works but also all other systems are aware fo the device automating this with scripts is essential. We will also use a script in this tutorial.
+Onboarding of devices is not just something that you do one-time when establishing a data model for your IoT application. You do this continuously (and also off-boarding) during the operation of your IoT application. To make this a smooth process where you can be sure the device works but also all other systems are aware of the device automating this with scripts is essential. You will also use a script in this tutorial.
 
-When onboarding a device and when doing this in the context of a business application you need to bring together the technical activation and the application integration into a coherent process. For example a sim card might need to be activated or a handling unit in ERP might need to know, that there is now a tracker which is supposed to send data on the geographic position of the handling unit.
+When onboarding a device and when doing this in the context of a business application you need to bring together the technical activation and the application integration into a coherent process. For example a SIM card might need to be activated or a handling unit in ERP might need to know, that there is now a tracker which is supposed to send data on the geographic position of the handling unit.
 
 So to be able to do this one first has to collect the technical ids of the involved devices and the application ids of the involved application objects as a basis. Such a list could look like this:
 
@@ -34,18 +34,18 @@ So to be able to do this one first has to collect the technical ids of the invol
 ]
 ```
 
-In above case we have 2 process application identifiers, one for equipment maintenance and one for handling units used during sales order processing. And then there is a technical id that refers to a telemetry module's IMEI number (check your mobile phone system properties for a similar IMEI number). Both the IMEI and the EQUI number could be used as the device id as both will be assigned long-term to the device - which one you use really depends on what the device is capable of using. Let's assume for now the device "knows" its equipment id. The HANU id is subject to change or might be unknown during onboarding as the silos, we are considering in this example, could be used as a handling unit with one id on Monday and get a different one on Tuesday assigned dynamically. So this would not be a good device id.
+In above case there are 2 process application identifiers, one for equipment maintenance and one for handling units used during sales order processing. Then there is a technical id that refers to a telemetry module's IMEI number (check your mobile phone system properties for a similar IMEI number). Both the IMEI and the EQUI number could be used as the device id as both will be assigned long-term to the device - which one you use really depends on what the device is capable of using. Let's assume for now the device "knows" its equipment id. The HANU id is subject to change or might be unknown during onboarding as the silos, considered in this example, could be used as a handling unit with one id on Monday and get a different one on Tuesday assigned dynamically. So this would not be a good device id.
 
-Now that we have figured out, which devices to onboard and what the business context is the next step is to onboard devices.
+Now that you have figured out, which devices to onboard and what the business context is the next step is to onboard devices.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Onboard some example devices using a script)]
 
-The script we use is part of the same set of scripts used in the previous tutorial.
+The script you can use is part of the same set of scripts used in the previous tutorial.
 
-The folder with the scripts also contains a file `devices.json` that includes above list. Feel free to add additional devices with additional, unique ids. If the devices exist already in the tenant that you use the onboarding script will fail. To prevent this from happening you might want to change the id used for identifying the device. If you are the 2nd person using the script we suggest you modify the `devices.json` file to this (replace 0001 with 0002):
+The folder with the scripts also contains a file `devices.json` that includes above list. Feel free to add additional devices with additional, unique ids. If the devices exist already in the tenant that you use the onboarding script will fail. To prevent this from happening you might want to change the id used for identifying the device. If you are the 2nd person using the script we suggest for you to modify the `devices.json` file to this (replace 0001 with 0002):
 
 ```
 [

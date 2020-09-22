@@ -28,13 +28,13 @@ primary_tag: topic>internet-of-things
 
 [ACCORDION-BEGIN [Step 1: ](Figure out what your application model and your device model is)]
 
-SAP IoT allows you to put sensor data into business context during data ingestion and at rest. The tutorial helps you with the first steps of setting it up, and enables you to start considering onboarding devices into the system.
+SAP IoT allows you to put sensor data into business context during data ingestion and at rest. The tutorial helps you with the first steps of setting it up, and enables you to start onboarding devices into the system in subsequent tutorials.
 
 IoT is all about sensors and the data they generate. So when you have a use case on your mind you are probably already thinking about which sensor you want to use. A sensor can generate one or multiple measurements that are sent to the cloud.
 
-In this case let's assume we want to track a silo. The sensors we have in mind would collect the following information from the inside of the silo: temperature, humidity, fill level. Additionally you might want to know, where the (portable) silo is during its use. This would be done with a GPS sensor which provides as measurements latitude, longitude. The GPS sensor is hooked up to satellites with powerful clocks running on them - this gives you also a timestamp in UTC time. Machines do not care about timezones - hence all times they talk about are in UTC (which is basically the same as GMT time). We call this part of the data model the ´device model´.
+In this case let's assume you want to track a silo. The sensors you have in mind would collect the following information from the inside of the silo: temperature, humidity, fill level. Additionally you might want to know, where the (portable) silo is during its use. This would be done with a GPS sensor which provides as measurements latitude, longitude. The GPS sensor is hooked up to satellites with powerful clocks running on them - this gives you also a timestamp in UTC time. Machines do not care about timezones - hence all times they talk about are in UTC (which is basically the same as GMT time). This part of the data model is called the ´device model´.
 
-Now the other part of tracking the silo is the application side. Applications care about the silo as an asset with an equipment id. This would for example be used for maintenance and cleaning if its empty. Other applications (for example SAP S/4) consider the silo a ´handling unit´ from the point of view of transporting it. All of these master data attributes are relevant to understand what the fill level or the GPS location really means. We call this part of the data model the ´thing model´.
+Now the other part of tracking the silo is the application side. Applications care about the silo as an asset with an equipment id. This would for example be used for maintenance and cleaning if its empty. Other applications (for example SAP S/4) consider the silo a ´handling unit´ from the point of view of transporting it. All of these master data attributes are relevant to understand what the fill level or the GPS location really means. This part of the data model is called the ´thing model´.
 
 We provided an example of a combined declarative device and application model below:
 
@@ -97,11 +97,11 @@ We provided an example of a combined declarative device and application model be
 	}]
 }
 ```
-In above example we have a package with a globally unique name called `com.sap.silo9960`. Using a package name enables this model to not be in conflict with other models referring to silos.
+In above example is a package with a globally unique name called `com.sap.silo9960`. Using a package name enables this model to not be in conflict with other models referring to silos.
 
 A silo has 2 capabilities: one to store measures in it and one to store process or application data in it. For measures one of the common things for a silo is the current fill level.
 
-Lastly the model above defines a type of silo that has both of the capabilities linked to it. One will be for measures to store time series data of measurements coming from the device. And the other will be for data for which the values that are changing over time would be coming from a backend application. For example the equipment number would remain constant throughout the lifecycle of a silo (relative to your company's ownership and maintenance of the silo) whereas the handling unit id changes as the same silo acts as a handling unit for one order and then as another handling unit for another order.
+Lastly the model above defines a type of silo that has both of the capabilities linked to it. One will be for measures to store time series data of measurements coming from the device. The other will be for data for which the values that are changing over time would be coming from a backend application. For example the equipment number would remain constant throughout the lifecycle of a silo (relative to your company's ownership/maintenance of the silo) whereas the handling unit id changes as the same silo acts as a handling unit for one order and later as another handling unit for another order.
 
 If you are OK with above example model please continue with the next step.
 
@@ -177,7 +177,7 @@ npm install
 
 In the provided sample code the included `.npmrc` sets the `npm` registry like this `@sap:registry = "https://npm.sap.com"` which will allow you to simply download the SAP IoT SDK for `Node.js` from `github`.
 
-Now we come to the final step: to create the data model. Do this by running this command:
+Now you come to the final step: to create the data model. Do this by running this command:
 
 ```
 node create-data-models.js
@@ -204,7 +204,7 @@ Then go the thing modeler app, switch to the `com.sap.silo0001` (or if you are t
 
 [ACCORDION-BEGIN [Step 4: ](Check that device model and application model are mapped 1:1)]
 
-For many reasons the device model and the application model can have a different lifecycle from each other. You might not be able to alter the firmware of the device sending data. Or the changes on the application side are happening more frequently. For this reason one of the possibilities to deal with this real-life problem is the flexible mapping between those 2 worlds that SAP IoT provides. In this step we will check how this mapping looks like for our simple example.
+For many reasons the device model and the application model can have a different lifecycle from each other. You might not be able to alter the firmware of the device sending data. Or the changes on the application side are happening more frequently. For this reason one of the possibilities to deal with this real-life problem is the flexible mapping between those 2 worlds that SAP IoT provides. In this step you will check how this mapping looks like for our simple example.
 
 Go again to the Thing Modeler and look at the connectivity tab of the thing type. Here you can see the below image for the mapping called 'default'.
 
