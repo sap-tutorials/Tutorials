@@ -28,7 +28,7 @@ primary_tag: topic>internet-of-things
 
 [ACCORDION-BEGIN [Step 1: ](Figure out what your application model and your device model is)]
 
-SAP IoT allows you to put sensor data into business context during data ingestion and at rest. The tutorial helps you with the first steps of setting it up to be able to start considering to onboard devices into the system.
+SAP IoT allows you to put sensor data into business context during data ingestion and at rest. The tutorial helps you with the first steps of setting it up, and enables you to start considering onboarding devices into the system.
 
 IoT is all about sensors and the data they generate. So when you have a use case on your mind you probably already are thinking about which sensor you want to use. A sensor can generate one or multiple measurements that are sent to the cloud.
 
