@@ -12,7 +12,7 @@ primary_tag: topic>internet-of-things
  - Git installed on your computer. check by running `git --version`. Version 2.19 and higher should work.
  - Your company has licensed SAP IoT, has a Cloud Platform Enterprise Agreement or you have purchased SAP IoT at the sapstore.com ([http://www.sapstore.com/](https://www.sapstore.com/solutions/40108/SAP-Internet-of-Things))
  - Your project team has setup the subscription for SAP IoT in your company's global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [http://help.sap.com/](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/2007a/en-US/bfe6a46a13d14222949072bf330ff2f4.html))
- - Your SAP User from accounts.sap.com has been added to the cloud foundry space in this tenant as a Space Developer so you can retrieve the required credentials for accessing the APIs
+ - Your SAP User from accounts.sap.com has been added to the Cloud Foundry space in this tenant as a Space Developer so you can retrieve the required credentials for accessing the APIs
  - Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles
 
 
