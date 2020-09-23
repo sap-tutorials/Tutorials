@@ -212,7 +212,7 @@ Go again to the Thing Modeler and look at the connectivity tab of the thing type
 
 So all properties are mapped 1:1 between the device model and the application model. Once you define the lifecycle for both models in your implementation you can start using the ability to do this mapping differently.
 
-Besides doing this mapping in the cloud with this mapping capability it is possible to do this on the Edge with a 'Edge Gateway Adapter' or you can do this in your firmware. Each approach has advantages in regards of where you want to make decisions on the data, and which other data you need to make those decisions. This is also where Edge Services comes in that will allow you to have your application model at the Edge for e.g. doing streaming processing and even calls to business applications on the Edge.
+Besides doing this mapping in the cloud with this mapping capability it is possible to do this on the Edge with a 'Edge Gateway Adapter' or you can do this in your firmware. Each approach has advantages in regards of where you want to make decisions on the data, and which other data you need to make those decisions. This is also where Edge Services comes in that will allow you to have your application model at the Edge e.g., for doing streaming processing and even calls to business applications on the Edge.
 
 The next tutorial to consider doing might be this one to create devices and start ingesting data: [Create virtual devices and start ingesting data](iotae-api-postman)
 
