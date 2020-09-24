@@ -6,7 +6,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, products>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
-author_profile: https://github.com/mervey45 
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
@@ -54,7 +54,7 @@ author_profile: https://github.com/mervey45
   6. Click **Assign Role Collection** .
 
       ![assign role collection](bas6.png)
-
+ 
   7. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
 
       ![assign role collection](bas7.png)
