@@ -75,7 +75,7 @@ So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar`later on, you need 
 
 Once the form editor opens, add form data by choosing **Add Field**.
 
-These expressions refer to the attributes in the JSON file that we have created in the previous step.
+These expressions refer to the attributes in the JSON file that you have created in the previous step.
 
 | Label/Title    | Type       | Context Path                         |
 | :--------------| :----------| :------------------------------------|
@@ -149,7 +149,7 @@ To access custom workflow applications, for example, start forms, you can't use 
 
     - The multitarget application gets imported under the **PROJECTS** explorer.
 
-    - Next, we need to extract the **tar** file. For this, open the new terminal window and enter the commands one-by-one to uncompress the uploaded file.
+    - Next, you need to extract the **tar** file. For this, open the new terminal window and enter the commands one-by-one to uncompress the uploaded file.
 
     ![Uncompress Files 1](UncompressFile1.png)
 
