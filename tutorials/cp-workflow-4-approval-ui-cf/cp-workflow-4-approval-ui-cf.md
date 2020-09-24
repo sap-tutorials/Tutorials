@@ -11,7 +11,6 @@ time: 15
 - You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://developers.sap.com/group.cp-workflow-cf.html).
 - Make sure that you use a dev space with the extension **Launchpad Module**.
 
-
 ## Details
 ### You will learn  
   - How to start an instance of the workflow definition that you have defined using a start form
@@ -373,7 +372,6 @@ After deployment is finished, open the SAP Fiori launchpad site that contains th
 
 [VALIDATE_5]
 [ACCORDION-END]
-
 
 ---
 Summary

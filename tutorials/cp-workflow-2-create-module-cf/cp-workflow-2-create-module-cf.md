@@ -16,7 +16,6 @@ time: 5
   - How to create a basic workflow
 
 ---
-
 [ACCORDION-BEGIN [Step 1: ](Set up SAP Business Application Studio)]
 You create your workspace where you will later build the workflow.
 
