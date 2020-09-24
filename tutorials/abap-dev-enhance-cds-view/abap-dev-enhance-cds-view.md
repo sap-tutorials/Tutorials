@@ -1,5 +1,5 @@
 ---
-title: Enhance an ABAP Core Data Services (CDS) View in SAP NetWeaver 7.5
+title: Enhance an ABAP Core Data Services (CDS) View in ABAP On-Premise
 description: Add features like value help, aggregations, and calculated fields to an existing CDS view
 auto_validation: true
 time: 60
@@ -8,7 +8,7 @@ primary_tag: topic>abap-development
 ---
 
 ## Prerequisites
-**Tutorial**: [Create an ABAP Core Data Services (CDS) View in SAP NetWeaver 7.5](abap-dev-create-cds-view)
+**Tutorial**: [Create an ABAP Core Data Services (CDS) View in ABAP On-Premise](abap-dev-create-cds-view)
 
 ## Details
 ### You will learn
