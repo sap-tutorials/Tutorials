@@ -3,22 +3,22 @@ title: Create an MDK Online App
 description: Use the mobile development kit editor to create a mobile app for online use case.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
 time: 20
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
 ---
 
 ## Prerequisites
-- - **Tutorial:** [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- - **Tutorial:** [Enable Mobile Services App Development Tools](cp-mobile-dev-tools-setup)
-- **Download and install** **SAP Mobile Services Client** on your [iOS](https://itunes.apple.com/us/app/sap-mobile-services-client/id1413653544?mt=8) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device
-- **Download and install** [Barcode Scanner](https://play.google.com/store/apps/details?id=com.google.zxing.client.android&hl=en) (required only for Android device)
+- **Tutorial group:** [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
+- **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) or [Android](https://play.google.com/store/apps/details?id=com.sap.mobileservices.client) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
 
 ## Details
 ### You will learn
-  - How to create an MDK Online app using an existing template in SAP Web IDE
+  - How to create an MDK Online app using an existing template in SAP Business Application Studio
   - How to deploy an MDK app to Mobile Services and run it in a client
+
+You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/4-Level-Up-with-the-Mobile-Development-Kit/1-Create-an-MDK-Online-App) and start directly with step 4 in this tutorial.
 
 ---
 
@@ -29,66 +29,67 @@ With Mobile Development Kit, you can also create applications that are online or
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Set up the application foundation)]
+[ACCORDION-BEGIN [Step 2: ](Create a new MDK project in SAP Business Application Studio)]
 
-Make sure that you have already created a new destination `mobileservices_cf` as per [previous tutorial](fiori-ios-hcpms-setup). This is required to connect SAP Web IDE to Mobile Services  on Cloud Foundry environment.
+This step includes creating the mobile development kit project in the editor.
 
-This step includes creating the Mobile Development Kit project in the Editor.
+1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
+2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
 
-Right click on Workspace folder and select **New** | **MDK Base Project**.
+    !![MDK](img_2.1.gif)
 
-![MDK](img_001.png)
+3. In Welcome page, click **New project from template** .
 
->The _MDK Base Project_ template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
+    !![MDK](img_2.3.png)
 
->More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+4. Select **MDK Project** and click **Next**.
 
-Enter the **Project Name** as `MDKOnlineApp` and click **Next**.
+    !![MDK](img_2.4.png)
 
-![MDK](img_002.png)
+5. In *Basic Information* step, select or provide the below information and click **Next**:
 
-Leave the default values in _Application Creation_ step as it is, click **Next**.
+    | Field | Value |
+    |----|----|
+    | `MDK Template Type`| Select `Base` from the dropdown |
+    | `Your Project Name` | `MDKOnlineApp` |
+    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
 
-In _Service Creation_ step, provide and select the below information:
+    !![MDK](img_2.5.png)
 
-| Field | Value |
-|----|----|
-| `Name`| `SampleServiceV2` |
-| `Service URL` | `/destinations/mobileservices_cf` |
-| `Application ID` | `com.sap.mdk.demo` |
-| `Service URL` | `com.sap.edm.sampleservice.v2` |
+    >The `Base` template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
-> If you do not find `mobileservices_cf` destination, please ensure that you have followed [this tutorial](fiori-ios-hcpms-setup) to setup this destination in SAP Cloud Platform cockpit.
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
->If you see a _Authentication Required_ pop-up, then enter your cloud platform User Name and password to authenticate.
+6. In *SAP Cloud Platform Connection* step, you will see your Cloud Foundry Organization and Space information. If you are not logged on yet, provide required credentials to retrieve your details. Click **Next**.
 
->For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
+    !![MDK](img_2.6.png)
 
-![MDK](img_004.1.png)
+7. In *Service Configuration* step, provide or select the below information and click **Next**:
 
->In [previous tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.
+    | Field | Value |
+    |----|----|
+    | `Service File Name`| `<You can continue with default name or provide any name of your choice>` |
+    | `OData Source` | Select `Mobile Services` from the dropdown |
+    | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
+    | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
+    | `Enable Offline` | Choose `No` |
 
-Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
+    >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
 
-Click **Check Service** to validate the service properties. If all the details are fine, you will see a success message. Click **Next**.
+    !![MDK](img_2.7.png)
 
-![MDK](img_005.png)
+    >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.  
 
->Wondering how _Service URL_, _Application ID_ & _Destination Name_ were populated? As part of [this](fiori-ios-hcpms-setup) tutorial, you created a destination `mobileservices_cf` in Cloud Platform cockpit, SAP Web IDE fetches all these details based on this destination.
-![MDK](img_0031.1.png)
+    >Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services.
 
->You can look in SAP Cloud Platform Mobile Services cockpit for the destination belongs to the MDK app by clicking on **Mobile Connectivity** feature.
-![MDK](img_0032.png)
+8. In **OData Collections** step, select `Customers`, `Product`, `SalesOrderHeaders` and `SaelesOrderItems` data collections. Click **Finish**.
 
->More details on _Sample Back End_ is available in [help documentation](https://help.sap.com/viewer/468990a67780424a9e66eb096d4345bb/Cloud/en-US/1c2e51a24361487f8b0649702d59dd0f.html).
+    !![MDK](img_2.8.png)
 
-Leave the default configuration as it is and click **Next** and then click **Finish**.
+9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `DemoSampleApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
 
-![MDK](img_006.png)
-
-After clicking Finish, the wizard will generate your MDK Application based on your selections. You should now see the `MDKOnlineApp` project in the project explorer.
+    !![MDK](img_2.9.png)
 
 [DONE]
 [ACCORDION-END]
@@ -97,7 +98,7 @@ After clicking Finish, the wizard will generate your MDK Application based on yo
 
 This is how the project structure looks like within the workspace.
 
-![MDK](img_007.png)
+!![MDK](img_3.1.png)
 
 These are the metadata definitions available in the editor and the format in which these metadata definitions are stored in the editor. Just to brief on some of these:
 
@@ -111,169 +112,80 @@ These are the metadata definitions available in the editor and the format in whi
 
   - **`OnWillUpdate.js`**: MDK applications automatically download updates and apply them to the client without the end-user needing to take any action. The `OnWillUpdate` rule empowers the user to run business logic before the new definitions are applied. This allows the application designer to include logic to prompt the user to accept or defer applying the new definitions based on their current activity. For example, if the end-user is currently adding new customer details or in the middle of a transaction, they will be able to defer the update. The application will prompt again the next time it checks for updates.
 
-  - **`Application.app`**: this is the main configuration file for your application from within SAP Web IDE. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
+- **`Application.app`**: this is the main configuration file for your application from within SAP Business Application Studio. Here you set your start page (here in this tutorial, it is main.page), action settings for different stages of the application session lifecycle, push notifications, and more.
 
->You can find more details about [metadata definitions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/78e21fae61044df8ae8a78a43157fe8f.html).
+>You can find more details about [metadata definitions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/App.schema.html).
 
-Open the application settings in the application editor by double clicking on the Application.app in the project explorer pane.
+Open the application settings in the application editor by double clicking on the `Application.app`.
 
-![MDK](img_008.png)
+!![MDK](img_3.2.png)
 
 >In MDK online use case, you need **create** and **open** service actions chained together for your online provider.
 
 >`CreateService.action` should be set at `OnLaunch` and success of this action should call `OpenService.action`.
-![MDK](img_008.1.png)
+!![MDK](img_3.3.png)
 
->You can find more details about [OData actions](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/3f462c086df846439d59fa88a2b4536b.html).
+>You can find more details about [OData actions](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Action/ODataService/Create.schema.html).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy and activate the application)]
 
-So far, you have learnt how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
-Right click on the `MDKOnlineApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Right-click `Application.app` and select **MDK: Deploy**.
 
-![MDK](img_009.png)
+!![MDK](img_4.1.png)
 
-Let the default configuration as it is and click **Next**.
+You should see **Deploy Succeeded** message.
 
-![MDK](img_010.png)
+!![MDK](img_4.2.png)
 
->_Filter Files_ will be filtered and ignored in web packing process.
-
->_Externals_ are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
-
-Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
-
-![MDK](img_014.1.png)
-
->By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
-
-Click **Next** to finish the deployment from SAP Web IDE.
-
-You should see **Application deployed successfully** message in console log.
-
-![MDK](img_015.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app on-boarding)]
+[ACCORDION-BEGIN [Step 5: ](Populate the QR code for app onboarding)]
 
-SAP Web IDE has a feature to generate QR code for app on-boarding.
+SAP Business Application Studio has a feature to generate QR code for app onboarding.
 
-Right click on the `MDKOnlineApp` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+Double-click the `Application.app` to open it in MDK Application Editor and click **Application QR Code** icon to populate the QR code.
 
-![MDK](img_009.png)
+!![MDK](img_5.1.png)
 
-Let the default configuration as it is and click **Next**.
-
-![MDK](img_010.png)
-
-Click on QR code icon to populate QR code for app on-boarding.
-
-![MDK](img_012.1.png)
+!![MDK](img_5.2.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the app in MDK client)]
 
->Make sure you are choosing the right device platform tab above.
+>Make sure you are choosing the right device platform tab above. Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
 [OPTION BEGIN [Android]]
 
-On Android, the camera app does not support scanning the QR-code. As alternative you can use the [Barcode scanner app](https://play.google.com/store/apps/details?id=com.application_4u.qrcode.barcode.scanner.reader.flashlight&hl=en_IN) to scan it.
+Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-Android-client/Onboarding-Android-client.md) to on-board the MDK client.
 
-Open the Barcode scanner app and start scanning the QR code showing in SAP Web IDE.
+Once you accept app update, you will see **Main** page being displayed and application data service is initialized.
 
-Tap **Open browser**. It will open SAP Mobile Services Client app.
-
-![MDK](img_013.1.jpg)
-
-Tap **GET STARTED** to connect MDK client to SAP Cloud Platform.
-
-![MDK](img_016.1.jpg)
-
-Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
-
-![MDK](img_017.1.png)
-
-Tap **AGREE** on `End User License Agreement`.
-
-![MDK](img_018.1.jpg)
-
-Choose a passcode with at least 8 characters for unlocking the app and tap **NEXT**.
-
-![MDK](img_019.1.jpg)
-
-Confirm the passcode and tap **DONE**.
-
-![MDK](img_020.1.jpg)
-
-Optionally, you can enable fingerprint to get faster access to the app data.
-
-![MDK](img_021.1.jpg)
-
-Tap **OK**.
-
-![MDK](img_022.1.jpg)
-
-The MDK client receives deployed metadata definitions as a bundle.
-
-Now, you will see **Main** page being displayed and application data service is initialized.
-
-![MDK](img_023.1.jpg)
+![MDK](img_6.1.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-On iPhone, open your camera app and start scanning the QR code, as shown below.
+Follow [these steps](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Onboarding-iOS-client/Onboarding-iOS-client.md) to on-board the MDK client.
 
-![MDK](img_013.png)
+Once you accept app update, you will see **Main** page being displayed and application data service is initialized.
 
-Tap the toast message to launch **SAP Mobile Services Client**. It will open SAP Mobile Services Client app.
-
-Tap **Start** to connect MDK client to SAP Cloud Platform.
-
-![MDK](img_016.png)
-
-Enter Email address and password to login to SAP Cloud Platform and tap **Log On** to authenticate.
-
-![MDK](img_029.png)
-
-Tap **Agree** on `End User License Agreement`.
-
-![MDK](img_018.png)
-
-Choose a passcode with at least 8 characters for unlocking the app and tap **Next**.
-
-![MDK](img_019.png)
-
-Confirm the passcode and tap **Done**.
-
-![MDK](img_020.png)
-
-Optionally, you can enable Touch ID to get faster access to the app data, tap **Enable**.
-
-![MDK](img_021.png)
-
-Tap **OK**.
-
-![MDK](img_022.png)
-
-The MDK client receives deployed metadata definitions as a bundle.
-
-Now, you will see **Main** page being displayed and application data service is initialized.
-
-![MDK](img_023.png)
+![MDK](img_6.2.png)
 
 [OPTION END]
 
-You can now continue creating your first page to show [customers list](https://developers.sap.com/tutorials/cp-mobile-dev-kit-list-page.html).
+>Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
+
+**Congratulations!** You have successfully created an MDK online app and you are now all set to [Handle Error Archive in an MDK App](cp-mobile-dev-kit-error-archive).
 
 [VALIDATE_1]
 [ACCORDION-END]

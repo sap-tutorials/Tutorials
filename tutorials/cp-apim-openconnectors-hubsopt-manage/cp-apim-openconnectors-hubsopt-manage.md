@@ -17,9 +17,10 @@ primary_tag: products>sap-api-management
 
 [ACCORDION-BEGIN [Step 1: ](Create API provider)]
 
-1. Navigate to your API Portal.
+1. Navigate to your API Management.
 
-    ![Open API Portal](01-open-API-Portal.png)
+    ![Access API Management](01-open-API-Portal.png)
+    ![Open API Portal](09-access-APIM_API_Portal_URL.png)
 
 2. Click **Configure** and then click **Create**.
 
@@ -49,11 +50,15 @@ primary_tag: products>sap-api-management
 
     Click **Save**.
 
+    >If the region is not available in the drop down list you can always manually edit the host field and provide the value.
+
+    ![Edit Host](05_Edit_host.png)
+
 6. Click **Test Connection**.
 
     ![Test Connection](06-test-connection.png)
 
-    >If successful, the response code is **200**.
+    >If successful, the response code is **200** and you might see 404 error even if the system is up and running. Do not get confuse with it. Your system is up and running, you can proceed.
 
 [DONE]
 [ACCORDION-END]
@@ -99,9 +104,9 @@ primary_tag: products>sap-api-management
 
 2. Try out the URL of the proxy to get the details of accounts from HubSpot instances in the browser.
 
-    ![Try Out](12-Try-out.png)
+    `https://<HostAlias><id>trial<API Base Path>/accounts`
 
-    >`https://<HostAlias><id>trial<API Base Path>/accounts`
+    ![Try Out](12-Try-out.png)
 
 [DONE]
 [ACCORDION-END]

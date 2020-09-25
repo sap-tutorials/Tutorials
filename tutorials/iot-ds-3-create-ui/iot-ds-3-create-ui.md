@@ -1,10 +1,10 @@
 ---
 title: Build a Decision Support UI in SAP Web IDE
-description: Create a decision support application using the SAP Leonardo IoT extension for SAP Web IDE.  
+description: Create a decision support application using the SAP IoT extension for SAP Web IDE.  
 auto_validation: true
 time: 30
 tags: [ tutorial>beginner, products>sap-web-ide-plug-ins, topic>sapui5, products>sap-web-ide, products>sap-leonardo-iot]
-primary_tag: products>sap-cloud-platform-internet-of-things
+primary_tag: topic>internet-of-things
 ---
 
 ## Details
@@ -13,7 +13,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable SAP Leonardo IoT extension in SAP Web IDE)]
+[ACCORDION-BEGIN [Step 1: ](Enable SAP IoT extension in SAP Web IDE)]
 
   1. In SAP Web IDE, go to **Preferences > Extensions**, search for `iot`.
 
@@ -21,7 +21,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
   3. Click **Save**.
 
-    ![Enable SAP Leonardo IoT extension in SAP Web IDE](images/webide_iot_feature.png)
+    ![Enable SAP IoT extension in SAP Web IDE](images/webide_iot_feature.png)
 
 
 [DONE]
@@ -48,7 +48,7 @@ primary_tag: products>sap-cloud-platform-internet-of-things
 
     ![Enter basic information](images/webide_create_ds_3_a.png)
 
-  7. The Leonardo IoT decision support module is added to the project. Now open any of the subfolders to examine the generated source files.  You can also toggle the visibility of hidden files.
+  7. The SAP IoT decision support module is added to the project. Now open any of the subfolders to examine the generated source files.  You can also toggle the visibility of hidden files.
 
     ![New IoT Decision Support application is created](images/webide_ds_4.png)
 

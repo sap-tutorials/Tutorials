@@ -28,14 +28,13 @@ Choose the following responses for the prompted parameters.
 
 |  Parameter     | Value
 |  :------------- | :-------------
-| On which platform would you like to host the application | **`Application Router @ Cloud Foundry`**
-|  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
-|  Would you like to create a new directory for the project?    | **`Yes`**
-|  Would you like to create a new directory for the project?          | **`myUI5App`**
+|  How do you want to name this project?          | **`myUI5App`**
 |  Which namespace do you want to use?    | **`com.myorg`**
+|  On which platform would you like to host the application | **`Application Router @ Cloud Foundry`**
 |  Which view type do you want to use? | **`XML`**
 |  How do you want to name your main view? | **`MainView`**
-
+|  Where should your UI5 libs be served from?            | **`Content delivery network (SAPUI5)`**
+|  Would you like to create a new directory for the project?    | **`Yes`**
 
 
 ![yeomangen](./yo.png)

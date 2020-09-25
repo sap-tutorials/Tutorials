@@ -1,394 +1,469 @@
 ---
 auto_validation: true
-title: Create and Deploy HTML5 and SAP Fiori Launchpad Site Modules
-description: Create HTML5 Module and SAP Fiori Launchpad Site Module. Deploy your UI to Cloud Foundry and run your application as a business user.
+title: Develop and Run SAP Fiori Application With SAP Business Application Studio
+description: Develop and run your SAP Fiori application with SAP Business Application Studio
 primary_tag: products>sap-cloud-platform--abap-environment
-tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
-time: 15
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, products>sap-business-application-studio ]
+time: 25
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
 - You need a SAP Cloud Platform ABAP Environment trial user or a license.
-- You need to have enough quota for HTML5 application and portal services. These services can be found in the entitlements of your subaccount.  
 
 
 ## Details
 ### You will learn  
-- How to add ABAP services to multi-target application
-- How to create HTML5 module
-- How to create SAP Fiori launchpad site module
-- How to deploy UI to Cloud Foundry
-- How to run application as business user
+- How to assign role collections
+- How to create dev spaces
+- How to set up organization and space
+- How to create list report object pages
+- How to run SAP Fiori applications
+- How to deploy applications
+- How to check BSP library in Eclipse
+- How to create IAM apps and business catalogs
+- How to create index.html
+- How to run index.html
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Create multi-target application)]
+[ACCORDION-BEGIN [Step 1: ](Assign role collection to user)]
 
-  1. If you are using your trial user, then login to your [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/) and select **Launch SAP Web IDE**.
+  1. Login to [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/) and click **Enter Your Trial Account**.
 
-      ![open web ide](WebIDE0.png)
+      ![assign role collection](bas1.png)
 
-     Otherwise login to your [SAP Cloud Platform cockpit](https://account.hana.ondemand.com/), click **Services**, choose **SAP Web IDE Full-Stack** and click **Go to Service**.
+  2. Select your subaccount **trial**.
 
-      ![open web ide](WebIDE.png)
+      ![assign role collection](bas2.png)
 
-      ![go to service](gotoservice.png)
+  3. Click **Trust Configuration** to set up your trust.
 
-  2. In your SAP Web IDE account select **File** > **New** > **Project from Template**.
+      ![assign role collection](bas3.png)
 
-      ![template](fromTemplate.png)
+      HINT: If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
-  3. Search for multi-target, select **Multi-Target Application** and click **Next**.
+  4. Select **sap.default**.
 
-      ![multi target](MultiTarget.png)
+      ![assign role collection](bas4.png)
 
-  4. Enter project name **`MTA_Project_XXX`** and click **Next**.
+  5. Enter your e-mail address and click **Show Assignments**.
 
-      ![project name](projectName.png)
+      ![assign role collection](bas5.png)
 
-  5. Enter **`MTA_Project_XXX`** as application ID, select **`0.0.1`** as application version.
-  Check **Use HTML5 Application Repository** and click **Finish**.
+  6. Click **Assign Role Collection** .
 
-      ![HTML5 app](AppID.png)
+      ![assign role collection](bas6.png)
+ 
+  7. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
 
-[DONE]
-[ACCORDION-END]
+      ![assign role collection](bas7.png)
 
-[ACCORDION-BEGIN [Step 2: ](Copy API endpoint)]
+  8. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
 
-  1.  Login to your **SAP Cloud Platform cockpit trial** and select **trial**.
+      ![assign role collection](bas8.png)
 
-      ![global](trial2.png)
+      You are now able to develop on SAP Business Application Studio.
 
-     Or Login to your **SAP Cloud Platform cockpit** and select your global account. Select **Subaccounts** and your **subaccount**.
-
-      ![global](global.png)
-
-      ![subaccount](subaccount.png)
-
-      ![sub2](sub2.png)
-
-  4. Copy your API endpoint for later use.
-
-      ![global](endpoint2.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure project settings)]
+[ACCORDION-BEGIN [Step 2: ](Create dev space)]
 
-  1. Switch to SAP Web IDE and right-click on your project **`MTA_Project_XXX`** select **Project** > **Project Settings**.
+  1.  Select **trial** > **Subscriptions** > **SAP Business Application Studio** and click **Go to Application**.
 
-      ![open web ide](setting.png)
+      ![dev](studio.png)
 
-  2. Select **Cloud Foundry** as Project and custom Cloud Foundry settings.
-     - API Endpoint: **`<your_api_endpoint>`**
-     - Organization: **`<your_organization>`**
-     - Space: **`<your_space>`**
+  2.  Check the privacy statement and click **OK**.
 
-     Click **Save**.
+      ![dev](studio2.png)
 
-      ![open web ide](builder.png)
+  3. Now the SAP Business Application Studio has started. Click **Create Dev Space**.
 
-[DONE]
-[ACCORDION-END]
+      ![dev](studio3.png)
 
-[ACCORDION-BEGIN [Step 4: ](Add ABAP service to multi-target application)]
+  4. Create a new dev space:
+       - Name: **Fiori**
+       - Type: **SAP Fiori**
+       - Additional SAP Extensions: **Launchpad Module**
 
-  1. Select your project **`MTA_Project_XXX`** > **New** > **SAP Cloud Platform Service**.
+       Click **Create Dev Space**.
 
-      ![open web ide](new.png)
+     ![dev](studio4.png)
 
-  2. If you are using the SAP Cloud Platform trial cockpit, search for **ABAP**, select **`abap-trial`** and click **Next**.
+  5. When your status is **Running**, select your dev space **Fiori**.
 
-      ![open web ide](abaptrial.png)
-
-     If you are using the SAP Cloud Platform cockpit, then search for **ABAP**, select it and click **Next**.
-
-      ![open web ide](abap.png)
-
-  3. Select **Reuse instance**, your instance, provide a resource name and click **Finish**.
-
-      ![open web ide](instance.png)
-
-[DONE] 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Create HTML5 module)]
-
-  1. Right-click on your project **`MTA_Project_XXX`** and select **New** > **HTML5 Module**.
-
-      ![HTML5 Module](HTML5.png)
-
-  2. Choose **List Report Application** and click **Next**.
-
-      ![Module](module1.png)
-
-  3. Provide following information:
-     - Module Name: **`TRAVEL_APP_XXX`**
-     - Title: **`TRAVEL_APP_XXX`**
-     - Namespace: **`namespace_xxx`**
-
-     Click **Next**.
-
-      ![Module](module2.png)
-
-  4. Select **SAP Cloud Platform Service**, then click on your resource.
-
-      ![Choose service catalog](ServiceCatalog.png)
-
-  5. Logon to SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment and switch back to SAP Web IDE.
-
-      ![Environment](environment.png)
-
-  6. Select your resource **`ZUI_C_TRAVEL_M_XXX`** and click **Next**.
-
-      ![Service](service2.png)
-
-  7. Check **Selected Service Metadata** and click **Next**.
-
-      ![Service](service3.png)
-
-  8. Select **`TravelProcessor`** as OData collection and click **Finish**.
-
-      ![Service](service4.png)
+      ![dev](studio5.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Remove destination service resource)]
+[ACCORDION-BEGIN [Step 3: ](Set up organization and space)]
 
-  1. Open your **`mta.yaml`** file, click on **MTA Editor** and **Resources**.
+  1. Now you are in your **Fiori** dev space in SAP Business Application Studio.
+     Select **Open Workspace** to set your workspace.
 
-      ![HTML5 Module](destination.png)
+      ![organization](studio6.png)
 
-  2. Select your destination resource **`dest_MTA_Project_XXX`** and delete it.
+  2. Select **projects** and click **Open**.
 
-      ![Module](destination2.png)
+      ![organization](studio7.png)
 
-  3. Save your **`mta.yaml`** file.
+  3. Select **The organization and space in Cloud Foundry have not been set.**
+
+      ![organization](studio8.png)
+
+  4. Press enter to set your Cloud Foundry endpoint.
+
+      ![organization](studio9.png)
+
+  5. Enter the same e-mail address you set in your trial instance and press enter.
+      ![organization](studio10.png)
+
+  6. Enter your password and press enter.
+
+      ![organization](studio11.png)
+
+  7. Select your global account and press enter.
+
+      ![organization](studio12.png)
+
+  8. Select dev as your space and press enter.
+
+      ![organization](studio13.png)
+
+  9. Check your result. Now your organization and space have been set.
+
+     ![organization](studio14.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Create list report object page)]
+
+  1. Select **View** > **Find Command**.
+
+    ![object](studio15.png)
+
+  2. Search for **Yeoman UI Generators** and select it.
+
+    ![object](studio16.png)
+
+  3. Select **SAP Fiori elements application** and click **Next >**.
+
+    ![object](studio17.png)
+
+  4. Select **List Report Object Page** and click **Next >**.
+
+    ![object](studio18.png)
+
+  5. Configure data source, system and service:
+     - Data source: **Connect to SAP System**
+     - System: **`New System`**
+     - ABAP Environment: **`<your_abap_trial_instance>`**
+     - Service: **`ZUI_C_TRAVEL_M_XXX`**
+
+     Click **Next >**.
+
+     The destination service is: **`abap-cloud-<your_abap_trial_instance>(SCP)`**.
+
+    ![object](studio19.png)
+
+  6. Select your main entity **`TravelProcessor`** and click **Next >**.
+
+    ![object](studio20.png)
+
+  7. Configure project attributes:
+     - Name: **`ztravel_app_xxx`**
+     - Title: **Travel App XXX**
+     - Description: **A Fiori application.**
+
+     Click **Finish**.
+
+    ![object](studio21.png)
+
+    HINT: Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Run SAP Fiori application for data preview)]
+
+  1. Close the wizard.
+
+      ![run](studio22.png)
+
+  2. Press the run button and select press button for **`Start ztravel_app_xxx`**  to run your SAP Fiori application.
+
+      ![run](studio24.png)
+
+      HINT: An alternative to run the application is to open the terminal and enter: `npm start`.
+
+  3. Click **Expose and Open**.
+
+      ![run](studio25.png)
+
+  4. Enter **travel** and press enter.
+
+      ![run](studio26.png)
+
+  5. Select **`test/`**.
+
+      ![run](studio27.png)
+
+  6. Select **`flpSandbox.html`**.
+
+      ![run](studio28.png)
+
+  7. Now your SAP Fiori application runs. Select your application **Travel App XXX**.
+
+      ![run](studio29.png)
+
+  8. Click **Go** to see your result.
+
+      ![run](studio30.png)
+
+  9. Check your result.
+
+     ![run](studio31.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Deploy your application)]
+
+  1. Go back to SAP Business Application Studio, select projects, right-click on your project **`ztravel_app_xxx`** and select **Open in Terminal**.
+
+      ![deploy](deploy.png)
+
+  2. To add Fiori Launchpad content use this command, enter **`npx fiori add flp-config`**.
+
+     Add following information:
+
+       - Semantic Object: **`ztravel_app_xxx`**
+       - Action: display
+       - Title: Travel App XXX
+       - Subtitle (optional): press enter
+
+       ![deploy](deploy2.png)
+
+  3.  Open eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
+
+      ![deploy](deploy3.png)
+
+  4. To add `deploy config` details enter **`npx fiori add deploy-config`**.
+
+     Add following information:
+
+      - Please choose the target: ABAP
+      - Target System URL: press enter for default
+      - Is this an ABAP Cloud System?: Y
+      - Name: press enter for default
+      - Package: **`ztravel_app_xxx`**
+      - Transport Request: **`<your_transport_request>`**
+      - Generate standalone index.html during deployment: y
+
+      ![deploy](deploy4.png)
+
+      The `ui5-deploy.yaml` will be generated as part of this `deploy config` command.
+
+  5. Enter **`npm run deploy`** to deploy your application.
+     When prompted, check deployment configuration and press y.
+     Open the URL at the end of the deployment log in browser to preview the application.
+
+      ![deploy](deploy5.png)
+
+      When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse)]
+
+  1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**.
+
+    ![library](library.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Disable csrfProtection)]
+[ACCORDION-BEGIN [Step 8: ](Create IAM App and business catalog)]
 
-  1. 	In the HTML5 module open the file **`xs-app.json`**.
+  1. In Eclipse right-click on your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
 
-      ![run](disable.png)
+      ![iam](iam.png)
 
-  2. Add the **`csrfProtection`** property to the route in order to disable `csrf` token protection in the UI. Create your run configuration. Therefore add the `csrfProtection` property in your **`xs-app.json`** file.
+  2. Search for **IAM App**, select it and click **Next >**.
 
-      ![add](disable3.png)
+      ![iam](iam2.png)
 
-  3. Your code should like following:
+  3. Create a new IAM App:
+     - Name: **`ZTRAVEL_IAM_XXX`**
+     - Description: IAM App
 
-    ```JSON
-     {
-      "welcomeFile": "/test/flpSandbox.html",
-      "authenticationMethod": "route",
-      "logout": {
-        "logoutEndpoint": "/do/logout"
-      },
-      "routes": [
-        {
-          "source": "^/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(.*)$",
-          "target": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations$1",
-          "authenticationType": "xsuaa",
-          "service": "com.sap.cloud.abap",
-          "endpoint": "abap"
-        },
-        {
-          "source": "^/sap/opu/odata/sap/Z_I_BOOKING_XXX/(.*)$",
-          "target": "/sap/opu/odata/sap/Z_I_BOOKING_XXX/$1",
-          "authenticationType": "xsuaa",
-          "service": "com.sap.cloud.abap",
-          "endpoint": "abap",
-          "csrfProtection": false
-        },
-        {
-          "source": "^(.*)$",
-          "target": "$1",
-          "service": "html5-apps-repo-rt",
-          "authenticationType": "xsuaa"
-        }
-      ]
-    }
+      ![iam](iam3.png)
+
+      Click **Next >**.
+
+  4. Click **Finish**.
+
+      ![iam](iam4.png)
+
+  5. Select **Services** and add a new one.
+
+      ![iam](iam5.png)
+
+  6. Select following:
+      - Service Type: `OData V2`
+      - Service Name: `ZUI_C_TRAVEL_M_XXX_0001`    
+
+      ![iam](iam6.png)
+
+      Click **OK**.
+
+      **Save** and **activate** your IAM app.
+
+  7. Right-click on your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
+
+      ![catalog](catalog.png)
+
+  8. Search for **Business Catalog**, select it and click **Next >**.
+
+      ![catalog](catalog2.png)
+
+  9. Create a new business catalog:
+     - Name: **`ZTRAVEL_BC_XXX`**
+     - Description: Business catalog
+
+      ![catalog](catalog3.png)
+
+      Click **Next >**.
+
+ 10. Click **Finish**.
+
+      ![catalog](catalog4.png)
+
+ 11. Select **Apps** and add a new one.
+
+      ![catalog](catalog5.png)
+
+ 12. Create a new business catalog:
+     - IAM App: `ZTRAVEL_IAM_XXX_EXT`
+     - Name: `ZTRAVEL_BC_XXX_0001`
+
+      ![catalog](catalog6.png)
+
+      Click **Next >**.
+
+ 13. Click **Finish**.
+
+       ![catalog](catalog7.png)
+
+ 14. Click **Publish Locally** to publish your business catalog.
+
+       ![catalog](catalog8.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 9: ](Create index.html and run SAP Fiori application)]
+
+  1. Go back to SAP Business Application Studio, select projects and open your project **`ztravel_app_xxx`**.Right-click your **`webapp`** folder and select **New File**.
+
+      ![index](index.png)
+
+  2. Create a new file:
+     - Name: **`index.html`**
+
+      ![run](index2.png)
+
+      Click **OK**.
+
+  3. Copy and paste following code:
+
+    ```ABAP
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BonusPlan_MD_CXT_TECH_Standalone</title>
+    <!-- Bootstrapping UI5 -->
+    <script id="sap-ui-bootstrap"
+            src="resources/sap-ui-core.js"
+            data-sap-ui-libs="sap.m"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-preload="async"
+            data-sap-ui-resourceroots='{"ztravel_app_xxx": "."}'
+            data-sap-ui-frameOptions="trusted">
+    </script> 
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "sap/m/Shell",
+                "sap/ui/core/ComponentContainer"
+            ], function (Shell, ComponentContainer) {
+                // initialize the UI component
+                new Shell({
+                    app: new ComponentContainer({
+                        height : "100%",
+                        name : "ztravel_app_xxx"
+                    })
+                }).placeAt("content");
+            });
+            });
+     </script>
+    </head>
+    <!-- UI Content -->
+    <body class="sapUiBody" id="content">
+    </body>
+    </html>
+
     ```
 
-  4. Save your file.
+  5. Save **`index.html`**.
 
-[DONE]
-[ACCORDION-END]
+  6. Deploy your changes, therefore right-click on your project **`ztravel_app_xxx`** again and select **Open in Terminal**.
 
-[ACCORDION-BEGIN [Step 8: ](Test UI on Cloud Foundry)]
+    ![url](url.png)
 
-  1. Right-click on **`TRAVEL_APP_XXX`** and select **Run** > **Run Configurations**.
 
-      ![run](run.png)
+  7.  Enter **`npm run deploy`**. When prompted, check deployment configuration and press y.
 
-  2. Click **`+`** to add a new run configuration.
+      ![url](url2.png)
 
-      ![add](add.png)
+  7. Press **`CTRL and click on the following link`** to open the URL in a browser.
 
-  3. Select **Run as Web Application**.
+      ![url](url3.png)
 
-      ![run](run2.png)
+  8. Login to ABAP Trial.
 
-  4. Create your run configuration.
-     - Name: **`Run TRAVEL APP XXX on Cloud Foundry`**
-     - Select your **`flpSandbox.html`** file.
+      ![url](url4.png)
 
-     Click **Run on Cloud Foundry**, select **Without Frame** and click **Save and Run**.
+  9. Click **Go**.
 
-     ![run](run3.png)
+      ![url](url5.png)
 
-  5. Logon to your SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment.
+ 10. Check your result.
 
-      ![run](environment.png)
-
-  6. Select the **`TRAVEL_APP_XXX`** tile to test your application.
-
-      ![test](test.png)
-
-  7. Select **Go**, to see your result.
-
-      ![run](test4.png)
-
-  8. Check your result.
-
-      ![run](test5.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Create SAP Fiori launchpad site module)]
-
-  1. Open SAP Web IDE and right-click on your project **`MTA_Project_XXX`** and select **New** > **SAP Fiori Launchpad Site Module**.
-
-      ![Define inbound tile](site.png)
-
-  2. Create a SAP Fiori launchpad site module:
-     - Module name: **`FLP_Site_Module_XXX`**
-
-    ![Define inbound tile](site2.png)
-
-      Click **Finish**.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Create inbound tile)]
-
-1. Open **`manifest.json`** and select **Navigation**.
-
-    Create semantic object:
-
-    - Semantic object: `Travel_App_XXX`
-    - Action: display
-
-    Create inbound tile:
-
-    - Title: `Travel_App_XXX`
-    - Subtitle: `Travel_booking_application`
-    - icon: `sap-icon://sap-logo-shape`
-
-      ![Define inbound tile](manitile.png)
-
-2. Save your changes.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 11: ](Create SAP Fiori launchpad site module)]
-  1. Open the **`CommonDataModel.json`** file in **`FLP_Site_Module_XXX`** and click **Add Group**.
-
-    ![Define inbound tile](tile.png)
-
-  2. Create new group:
-     - Group name: **`Travel App XXX`**
-
-    ![Define inbound tile](tile2.png)
-
-  3. Click on your group.
-
-    ![Define inbound tile](tile3.png)
-
-  4. Add your project app **`Travel_App_XXX`** to your group and click **Select**.
-
-    ![Define inbound tile](tile4.png)
-
-  5. Now your project app **`Travel_App_XXX`** is added to your group.
-
-    ![Define inbound tile](tile5.png)
+      ![url](url6.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 12: ](Deploy UI to Cloud Foundry)]
-
-  1. Right click on **`MTA_Project_XXX`** and select **Build** > **Build with Cloud MTA Build Tool (recommended)**.
-
-      ![Deploy UI to Cloud Foundry](Build22.png)
-
-  2.  Open **`mta_archives`**.
-
-      ![Deploy UI to Cloud Foundry](build2.png)
-
-  3.  Right-click on **`MTA_Project_XXX_0.0.1.mtar`**, select **Deploy** > **Deploy to SAP Cloud Platform**.
-
-      ![Deploy UI to Cloud Foundry](build3.png)
-
-  4.  Deploy your **`mtar`** file to SAP Cloud Platform.
-
-       - Cloud Foundry API Endpoint: **`<your_api_endpoint>`**
-       - Organization: **`<your_organization>`**
-       - Space: **`<your_space>`**
-
-       Click **Deploy**.
-
-      ![Deploy UI to Cloud Foundry](build4.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 13: ](Run application on Cloud Foundry as business user)]
-
-  1. Open SAP Cloud Platform cockpit trial or SAP Cloud Platform cockpit and navigate to your **trial subaccount**.  
-     Select your space **dev**.
-
-      ![Deploy UI to Cloud Foundry](dev.png)
-
-  2.  Select **`MTA_Project_XXX_appRouter`**.
-
-      ![Deploy UI to Cloud Foundry](dev2.png)
-
-  3.  Click on your application routes to open your application in your launchpad.
-
-      ![Deploy UI to Cloud Foundry](dev3.png)
-
-  4. Logon to your SAP Cloud Platform ABAP environment trial or SAP Cloud Platform ABAP environment system.
-
-      ![Deploy UI to Cloud Foundry](environment.png)
-
-  5. You application is now available as a tile in the launchpad. Select your application **`Travel_App_XXX`**.
-
-      ![Deploy UI to Cloud Foundry](app.png)
-
-  6. Click **Go** to see your result.
-
-      ![Deploy UI to Cloud Foundry](app2.png)
-
-  7. Check your result.
-
-      ![Deploy UI to Cloud Foundry](app3.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 14: ](Test yourself)]
+[ACCORDION-BEGIN [Step 10: ](Test yourself)]
 
 [VALIDATE_1]
 [ACCORDION-END]
----
+
+<p style="text-align: center;">Give us 55 seconds of your time to help us improve</p>
+
+<p style="text-align: center;"><a href="https://sapinsights.eu.qualtrics.com/jfe/form/SV_0im30RgTkbEEHMV?TutorialID=abap-environment-deploy-cf-production" target="_blank"><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/data/images/285738_Emotion_Faces_R_purple.png"></a></p>

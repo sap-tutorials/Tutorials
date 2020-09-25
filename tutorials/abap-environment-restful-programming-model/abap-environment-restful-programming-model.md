@@ -64,7 +64,7 @@ To develop a read-only application you need to carry out the steps contain in th
 
 ![Create ABAP class](layer2.png)
 
-[DONE]
+[DONE] 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Get to know the transactional behavior)]

@@ -2,8 +2,6 @@
 title: Create a List Report Floorplan
 description: Use the SAP Cloud Platform SDK for iOS to build a simple List Report Floorplan containing an FUISearchBar
 auto_validation: true
-author_name: Kevin Muessig
-author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 60
@@ -12,7 +10,7 @@ time: 60
 ## Prerequisites
 - **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account) and [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup)
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 4.0.10
+- **SAP Cloud Platform SDK for iOS:** Version 5.0
 
 ## Details
 ### You will learn  
@@ -125,18 +123,24 @@ var loadingIndicator: FUILoadingIndicatorView?
 
 ```
 
-The way the iOS Assistant generates the project you need the `AppDelegate.swift` to retrieve an instance of the generated convenience data service. Implement the following lines of code directly below the loading indicator property:
+Implement the following lines of code directly below the loading indicator property:
 
 ```Swift
-private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
+// Retrieve the data service using the destinations dictionary and return it.
 var dataService: ESPMContainer<OnlineODataProvider>? {
-  return OnboardingSessionManager.shared.onboardingSession?.odataController.espmContainer ?? nil
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
 }
 
 ```
 
-> NOTE: In case you're using an `ODataOfflineProvider` you have to change the above-mentioned code to use `ODataOfflineProvider` instead of `ODataOnlineProvider`. You have to also import `SAPOfflineOData` in addition to the `SAPOData` framework.
+> In case you're using an `ODataOfflineProvider` you have to change the above-mentioned code to use `ODataOfflineProvider` instead of `ODataOnlineProvider`. You have to also import `SAPOfflineOData` in addition to the `SAPOData` framework.
 
 Because we're good citizens we want to use an app logger to log important information. Fortunately, SAP is offering a simple-to-use Logging API with the `SAPCommon` framework.
 
@@ -156,7 +160,7 @@ private var suppliers = [Supplier]()
 
 ```
 
-> NOTE: From now on bigger code blocks are explained with inline comments. Read the inline comments carefully to fully understand what the code is doing and why we're implementing it.
+> From now on bigger code blocks are explained with inline comments. Read the inline comments carefully to fully understand what the code is doing and why we're implementing it.
 
 Loading all available suppliers is fairly easy using the generated data service. The generated code will handle all authentication and authorization challenges for you and the data service will construct all necessary requests to load, create and update entities in your backend.
 
@@ -350,7 +354,7 @@ Tapping on one of the `FUIActivityItem` will result in an alert dialogue showing
 In this step, we will implement a second `UITableViewController` displaying all products a supplier provides.
 For this, we will use a storyboard segue to navigate to the `SupplierProductsTableViewController` and pass through the selected supplier.
 
-> NOTE: In case you're not familiar with segues please visit, and carefully read the official documentation before continuing. [Using Segues](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
+> In case you're not familiar with segues please visit, and carefully read the official documentation before continuing. [Using Segues](https://developer.apple.com/library/archive/featuredarticles/ViewControllerPGforiPhoneOS/UsingSegues.html)
 
 Open up the `Main.storyboard` and add a new `UITableViewController` from the **Object Library** directly next to the `SupplierTableViewController`. Create a new segue from one of the prototype cells inside of the `SupplierTableViewController` to the newly added `UITableViewController`.
 
@@ -408,6 +412,15 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 ```
 
+You can utilize the `tableView(_:didSelectRowAt:)` method to trigger the navigation. Implement the override method:
+
+```Swift
+override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueIdentifier, sender: tableView)
+}
+
+```
+
 You can now navigate back and forth between the `SupplierTableViewController` and the `SupplierProductsTableViewController`.
 
 [DONE]
@@ -438,10 +451,16 @@ private let logger = Logger.shared(named: "SupplierProductsViewController")
 Add a couple of class properties necessary for the data service instance and the fetched products. Implement the following lines of code:
 
 ```Swift
-private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+// The available destinations from Mobile Services are hold in the FileConfigurationProvider. Retrieve it to find the correct data service
+let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
+// Retrieve the data service using the destinations dictionary and return it.
 var dataService: ESPMContainer<OnlineODataProvider>? {
-    return OnboardingSessionManager.shared.onboardingSession?.odataController.espmContainer ?? nil
+    guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+        AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+        return nil
+    }
+    return dataService
 }
 
 private var products = [Product]()
@@ -466,7 +485,7 @@ Let's load some data!
 
 We're using the same style we've used in the `SupplierTableViewController`. Implement the following two methods and read the inline comments carefully because you will see that we utilize the `DataQuery` object for making a filter as well as an expand.
 
-> NOTE: If you're not familiar with those OData specific terms please make yourself familiar with the OData specification:
+> If you're not familiar with those OData specific terms please make yourself familiar with the OData specification:
 - [URI Conventions (OData Version 2.0)](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
 - [OData Version 4.01. Part 2: URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
 
@@ -543,6 +562,7 @@ Now implement a method responsible for fetching the product images and caching t
 private func loadProductImageFrom(_ url: URL, completionHandler: @escaping (_ image: UIImage) -> Void) {
 
     // Retrieve the SAP URLSession from the onboarding session.
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     if let sapURLSession = appDelegate.sessionManager.onboardingSession?.sapURLSession {
 
         // Create a data task, this is the same as the URLSession data task.
@@ -668,7 +688,7 @@ Run the app and navigate to the `SupplierProductsTableViewController`.
 
 Wouldn't it be cool to also have a `FUISearchBar` which is inheriting from `UISearchBar`? - Of course, it would be, so let's implement that.
 
-> NOTE: In case you're not familiar with the `UISearchBar` or `UISearchController` read the official documentation:
+> In case you're not familiar with the `UISearchBar` or `UISearchController` read the official documentation:
 
 - [`UISearchBar`](https://developer.apple.com/documentation/uikit/uisearchbar)
 - [`UISearchController`](https://developer.apple.com/documentation/uikit/uisearchcontroller)

@@ -1,6 +1,7 @@
 const constants = require('../constants');
+const common = require('../utils/common');
 
-const { regexp: { validation: { done, validate } } } = constants;
+const { regexp: { validation: { done, validate, inlineCodeBlock } } } = constants;
 
 const closingPairs = {
   '}': '{',
@@ -97,8 +98,31 @@ function checkDoneValidate(lines, lineNumber) {
   return result;
 }
 
+function checkBackticks(lines, lineNumber) {
+  const line = lines[lineNumber];
+  const result = [];
+  const trimmedLine = line.trim();
+  const backticks = '```';
+  const isInlineCodeBlock = line.match(inlineCodeBlock);
+
+  if (isInlineCodeBlock) {
+    return result;
+  }
+
+  if (trimmedLine.includes(backticks) && !trimmedLine.startsWith(backticks)) {
+    result.push({
+      line: lineNumber + 1,
+      msg: 'Code block tag (```) must be on its own line',
+    });
+  }
+
+  return result;
+}
+
 function check(lines, lineNumber) {
-  const balancedCheckResult = checkBalanced(lines[lineNumber], lineNumber);
+  const line = lines[lineNumber];
+  const pureLine = common.removeCodeLines(line);
+  const balancedCheckResult = checkBalanced(pureLine, lineNumber);
   const doneValidateCheckResult = checkDoneValidate(lines, lineNumber);
 
   return []
@@ -108,4 +132,5 @@ function check(lines, lineNumber) {
 
 module.exports = {
   check,
+  checkBackticks,
 };

@@ -3,9 +3,14 @@ title: Create a New ABAP Dictionary Structure
 description: Create an ABAP Dictionary structure for retrieving data from a database
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, products>sap-netweaver-7.5 ]
 time: 15
+author_name: Julie Plummer
+author_profile: https://github.com/julieplummer20
 ---
+
+## Prerequisites  
+ - You have a valid instance of an on-premise AS ABAP server, version 7.51 or higher (some ABAP Development Tools may not be available in earlier versions)
 
 ## Details
 ### You will learn  
@@ -118,7 +123,11 @@ define type zso_invoice_item {
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Test yourself)]
-Define a field `netAmount`. The data element you need is `snwd_ttl_net_amount`. Use the same semantic annotation for the currency code. Enter your code in the box below and choose **Submit answer**:
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+### More information
+[From Open SQL Joins to CDS Associations](https://blogs.sap.com/2016/08/12/from-open-sql-joins-to-cds-associations/)
+
+---

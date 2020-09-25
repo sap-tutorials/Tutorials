@@ -25,6 +25,10 @@
       "value": "topic>abap-extensibility"
     },
     {
+      "name": "Artificial Intelligence",
+      "value": "topic>artificial-intelligence"
+    },
+    {
       "name": "Big Data",
       "value": "topic>big-data"
     },
@@ -70,7 +74,7 @@
     },
     {
       "name": "SAP API Business Hub",
-      "value": "topic>topic>sap-api-business-hub"
+      "value": "topic>sap-api-business-hub"
     },
     {
       "name": "SAP Community",
@@ -137,8 +141,12 @@
       "value": "products>sap-cloud-platform-enterprise-messaging"
     },
     {
-      "name": "SAP Cloud Platform for the Cloud Foundry environment",
-      "value": "products>sap-cloud-platform-for-the-cloud-foundry-environment"
+      "name": "SAP Cloud Platform Enterprise Messaging",
+      "value": "products>sap-cloud-platform-enterprise-messaging"
+    },
+    {
+      "name": "SAP Cloud Platform Extension Factory, Kyma Runtime",
+      "value": "products>sap-cloud-platform-extension-factory\, kyma-runtime"
     },
     {
       "name": "SAP Cloud Platform Integration for process services",
@@ -191,6 +199,10 @@
     {
       "name": "SAP HANA",
       "value": "products>sap-hana"
+    },
+    {
+      "name": "SAP HANA Cloud",
+      "value": "products>sap-hana-cloud"
     },
     {
       "name": "SAP HANA, dynamic tiering",

@@ -1,5 +1,5 @@
 ---
-title: Set Up the Manage Rules Project Application
+title: Set Up the Manage Rule Projects Application
 description: Access the Manage Rules Project application to author rules by deploying a multi-target application using SAP Web IDE Full-Stack.
 auto_validation: true
 time: 10
@@ -11,9 +11,9 @@ author_profile: https://github.com/VandanaVasudevan
 
 ## Details
 ### You will learn
-  -  How to configure a multi-target application to access Manage Rules Project application
+  -  How to configure a multi-target application to access Manage Rule Projects application
 
-The **Manage Rules Project** application is a web-based tool which is used to create projects where you can author and execute business rules. In this tutorial, you will learn how to access **Manage Rules Project** application by deploying a multi-target application in SAP Web-IDE Full Stack.
+The **Manage Rule Projects** application is a web-based tool which is used to create projects where you can author and execute business rules. In this tutorial, you will learn how to access **Manage Rule Projects** application by deploying a multi-target application in SAP Web-IDE Full Stack.
 
 ---
 
@@ -34,7 +34,7 @@ The **`cf-businessruleseditor.zip`** is downloaded to your file system.
 
 1. Log on to [SAP Cloud Platform Cockpit](http://cockpit.hanatrial.ondemand.com) and choose **Launch SAP Web IDE**.
 
-    ![Lauch Web IDE](MTA_1.png)
+    ![Lauch Web IDE](MTA-1.png)
 
 2. In SAP Web IDE Full-Stack, open the **Development** perspective.
 
@@ -64,15 +64,19 @@ The **`cf-businessruleseditor.zip`** is downloaded to your file system.
 
 [ACCORDION-BEGIN [Step 3: ](Modify mta.yaml file (optional))]
 
-If you have created a service instance with the name other than **`business-rules`**, you need to perform the following procedure.
+If you have created a service instance with the name other than **`business-rules`**, you need to change the name of the service instance in the `mta.yaml` file. Ensure that you provide the name of the service instance created during [Create a Service Instance of SAP Cloud Platform Business Rules](cp-cf-businessrules03-setup-mrp).
 
 1. Right-click the `mta.yaml` file and choose **Open MTA Editor**.
 
     ![Open MTA editor](MTA_7.png)
 
-2. Under the **Resources** tab, add the name of your business rules service instance as shown:
+2. Under the **Resources** tab, add the name of your business rules service instance in the field as shown:
 
     ![Resources](MTA_8.png)
+
+    Alternatively, you can also edit the `mta.yaml` file in the **Code Editor**. Open the file in the **Code Editor**, and change the name of your service instance in the `requires` section of the `approuter` module, and the `resources` module.
+
+      ![MTA in code editor](mta_code_editor.png)
 
 [DONE]
 [ACCORDION-END]
@@ -99,7 +103,7 @@ If you have created a service instance with the name other than **`business-rule
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Access Manage Rules Project Application)]
+[ACCORDION-BEGIN [Step 5: ](Access Manage Rule Projects Application)]
 
 Open the job console at the end of the deployment process, and search for the application URL. It should appear in the console as follows:
 
@@ -109,7 +113,7 @@ Application "`<app name>_appRouter`" started and available at "`<application URL
 
 ![MRP link](MTA_13.png)
 
-Use this URL to access the **Manage Rules Project** application. The next set of tutorials guide you on using this application to author and execute business rules.
+Use this URL to access the **Manage Rule Projects** application. The next set of tutorials guide you on using this application to author and execute business rules.
 
 >You can bookmark this link for later use.
 

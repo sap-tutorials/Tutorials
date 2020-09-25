@@ -4,6 +4,8 @@ description: Create a user-provided service to access data from a plain or repli
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
+author_name: Thomas Jung
+author_profile: https://github.com/jung-thomas
 ---
 
 ## Prerequisites   
@@ -95,9 +97,12 @@ INSERT INTO "PLAIN"."PRODUCT_SEGMENT" VALUES ('HT-1004','A');
 
 If you are using SAP HANA, express edition SPS03, the process has been simplified and you can now execute a wizard that will complete many of the steps required to access a plain schema from your database module.
 
-Right-click on the database module and choose `Modeling actions -> Add external SAP HANA Service`
+Right-click on the database module and choose `Modeling actions -> Add external SAP HANA Service` Note: In newer versions of the Web IDE, this menu option has changed to `New -> SAP HANA Service Connection`
 
 ![Add external SAP HANA service](mo1.png)
+or
+
+![Add external SAP HANA service](mo2.png)
 
 Use the following values to complete the wizard
 - Service name: `CROSS_SCHEMA_PRODUCTS`
@@ -267,7 +272,7 @@ Create a new HDB CDS artifact called `segments.hdbcds` under `db/src/data`. Use 
 
 ```sql
 using PRODUCT_SEGMENT as P_SEGMENT;
-using PurchaseOrder.Item as Item;
+using "PurchaseOrder.Item" as Item;
 
 
 context segments {

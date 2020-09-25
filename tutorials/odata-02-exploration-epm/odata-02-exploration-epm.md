@@ -1,4 +1,6 @@
 ---
+author_name: DJ Adams
+author_profile: https://github.com/qmacro
 title: Continue Your OData Exploration with EPM
 description: Continue your exploration of OData with the Enterprise Procurement Model (EPM) data set in the Gateway demo system.
 auto_validation: true
@@ -16,9 +18,7 @@ time: 15
 
 The Enterprise Procurement Model (EPM) represents a typical business scenario that is complex enough to have meaning in an enterprise context but still simple enough to use for exploring technologies and techniques at a beginner level.
 
-EPM exists as data in a set of related tables and views, and there are also various OData services that marshal that data and provide business functionality. There are reference apps that you may come across further on in your learning journey; some of these are available in the SAP Web IDE. These reference apps make use of EPM OData services, so a by-product of using EPM in this tutorial is that you'll be more familiar with the data model in general when you discover and make use of the reference apps.
-
-The EPM and the related OData services are available in the SAP Gateway demo system, and there is a specific EPM OData service for the "Shop" reference app that will be used in this tutorial.
+EPM exists as data in a set of related tables and views, and there are also various OData services that marshal that data and provide business functionality. The EPM and the related OData services are available in the SAP Gateway demo system, and there is a specific EPM OData service, intended for use in a reference app called "Shop", that will be used in this tutorial.
 
 ---
 
@@ -26,7 +26,7 @@ The EPM and the related OData services are available in the SAP Gateway demo sys
 
 In this step you'll find the EPM OData service by looking for it via the maintenance transaction for the Internet Communication Framework (ICF), to understand how web-based resources in general and OData services in particular are managed within an ABAP system.
 
-Log on to the SAP Gateway Demo system via the [Web GUI](https://sapes5.sapdevcenter.com/). If necessary, use the menu path `Gui Actions and Settings -> Show OK Code Field` to make the OK Code field appear, so you can enter transaction codes.
+Log on to the SAP Gateway Demo system via the [Web GUI](https://sapes5.sapdevcenter.com/). If necessary, use the arrow button to make the OK Code field appear, so you can enter transaction codes.
 
 ![menu option to show the OK Code field](show-okcode-field.png)
 
