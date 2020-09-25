@@ -13,6 +13,7 @@ time: 15
   - How to deploy the workflow.
 
 ---
+
 [ACCORDION-BEGIN [Step 1: ](Add a user task)]
 1. In SAP Business Application Studio SAP, access the `onboard.workflow` you created in the **projects** folder.
 
