@@ -17,11 +17,11 @@ Set up the Workflow Management service. For more information, see the [Set Up Wo
 - How to import a sample lead-to-cash business scenario
 - How to import the events for sample lead-to-cash business process
 - How to gain visibility on the lead-to-cash business process
-- How to quickly get started with the process visibility service using a sample lead-to-cash business process
+- How to quickly get started with the process visibility capability using a sample lead-to-cash business process
 
 Lead-to-cash is a business process that provides sales insights, eliminates process inefficiencies, and ensures accurate reporting on business performance and future trends.
 
-In this tutorial, you can learn how to gain visibility on a sample lead-to-cash business process using the Process Visibility service. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
+In this tutorial, you can learn how to gain visibility on a sample lead-to-cash business process using Process Visibility capability. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
 
 [ACCORDION-BEGIN [Step 1: ](Download files from GitHub)]
 1. Use the following link to access [GitHub](https://github.com/SAP-samples/cloud-process-visibility/releases).
