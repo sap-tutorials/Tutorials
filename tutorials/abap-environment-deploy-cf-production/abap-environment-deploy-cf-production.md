@@ -54,7 +54,7 @@ author_profile: https://github.com/mervey45
   6. Click **Assign Role Collection** .
 
       ![assign role collection](bas6.png)
- 
+
   7. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
 
       ![assign role collection](bas7.png)
@@ -161,7 +161,7 @@ author_profile: https://github.com/mervey45
   5. Configure data source, system and service:
      - Data source: **Connect to SAP System**
      - System: **`New System`**
-     - ABAP Environment: **`<your_abap_trial_instance>`**
+     - ABAP Environment: **`abap-cloud-default_abap-trial`**
      - Service: **`ZUI_C_TRAVEL_M_XXX`**
 
      Click **Next >**.
@@ -257,8 +257,8 @@ author_profile: https://github.com/mervey45
      Add following information:
 
       - Please choose the target: ABAP
-      - Target System URL: press enter for default
       - Is this an ABAP Cloud System?: Y
+      - Destination: press enter for default
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
       - Transport Request: **`<your_transport_request>`**
