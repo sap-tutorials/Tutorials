@@ -17,11 +17,11 @@ primary_tag: topic>abap-development
 - How to concatenate two elements, using a built-in function for CDS
 - How to convert currencies using a built-in function for CDS
 - How to use grouping and aggregation
-- How to evaluate conditions using a CASE statement
+
 
 You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
-!![fep-final-enhance](fep-final-enhance.png)
+!![fep-final-enhance](fep-final-enhance-no-CASE.png)
 
 Throughout this tutorial, objects name include a suffix, such as `XXX`. Always replace this with your group number or initials.
 
@@ -245,33 +245,6 @@ This displays a two-step grouping. You can browse and expand the companies and b
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Add CASE statement)]
-1. You will now create a bonus scheme, where the most expensive trips priced in US dollars are categorized as "Gold" or "Silver" trips. You can do this by adding the following CASE statement to the SELECT list, assigning the alias **`Premium`**.
-
-    ```CDS
-    case
-     when CurrencyCode = 'USD' and TotalPrice >= 5000 then 'Gold'
-     when CurrencyCode = 'USD' and TotalPrice < 5000 and TotalPrice >= 2000 then 'Silver'
-     else ' '
-     end as Premium,    
-
-    ```
-2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ).
-
-3. In your Fiori Elements preview, select the **`Premium`** and **`CurrencyCode`** fields in **Settings > Columns**. (You may wish to deselect **`PriceInUSD`** for clarity.) In **Sort**, choose **Currency Code** and **Descending**. Choose **Go**.
-
-    !![step8a-settings-1](step8a-settings-1.png)
-    .
-    !![step8b-settings-columnn](step8b-settings-columns.png)
-    .
-    !![step8c-settings-sort](step8c-settings-sort.png)
-
-The updated preview should look like this:
-
-    !![step8d-fep](step8d-fep.png)
-
-[DONE]
-[ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 8: ](Check code)]
@@ -328,12 +301,6 @@ define view Z_C_TRAVELS_xxx
       @ObjectModel.text.association: '_CurrencyText'
       CurrencyCode,
 
-      //Evaluate Premium status for customers paying in USD
-      case
-      when CurrencyCode = 'USD' and TotalPrice >= 5000 then 'Gold'
-      when CurrencyCode = 'USD' and TotalPrice < 5000 and TotalPrice >= 2000 then 'Silver'
-      else ' '
-      end                                                       as Premium,
 
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.90
