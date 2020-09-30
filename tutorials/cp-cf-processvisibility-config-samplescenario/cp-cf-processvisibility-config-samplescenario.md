@@ -1,6 +1,6 @@
 ---
 title: Set Up a Sample Design-to-Operate Business Process
-description: Set up a pre-configured design-to-operate business process to experience the Process Visibility service.
+description: Set up a pre-configured design-to-operate business process to experience the Process Visibility.
 auto_validation: true
 time: 15
 tags: [ tutorial>beginner, topic>cloud]
@@ -17,12 +17,12 @@ author_profile: https://github.com/Deeksha-R
   - How to import a sample design-to-operate business scenario
   - How to import the events for sample design-to-operate business process
   - How to gain visibility on sample design-to-operate business process
-  - How to quickly get started with the Process Visibility service using the sample design-to-operate business process
+  - How to quickly get started with the Process Visibility capability using the sample design-to-operate business process
 
 
 Design-to-operate is a supply chain centric business process that enables companies to connect digitally to perfect reality across their product and asset lifecycle. This end-to-end business process consists of stages from design, planning, manufacturing, logistics, and operations.
 
-In this tutorial, you can learn how to gain visibility on a sample design-to-operate business process using the Process Visibility service. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
+In this tutorial, you can learn how to gain visibility on a sample design-to-operate business process using Process Visibility. You are provided with JSON files with events and zip files that contain the business scenario using which you can easily try out the capabilities of the service.
 
 [ACCORDION-BEGIN [Step 1: ](Download files from GitHub)]
 In this step, you will download the sample design-to-operate business scenario and the respective events from GitHub to your local file system.
