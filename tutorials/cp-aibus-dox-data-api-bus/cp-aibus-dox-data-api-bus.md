@@ -255,11 +255,9 @@ When enrichment data has been uploaded and fits to a certain prediction it is ad
 
 3. Set **`extractedValues`** to `true` to get the extracted values.
 
-4. Enter the **`clientId`** you created in step 1 (`c_29`, for example).
+4. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
 
-5. Enter the **`id`** received in the **POST /document/jobs** endpoint as the **`id`**.
-
-6. Click **Execute**.
+5. Click **Execute**.
 
 The endpoint request and response look as follows:
 
@@ -276,7 +274,7 @@ This is an example of a full prediction including the enrichment data part:
     ```JSON
     {
       "status": "DONE",
-      "id": "cefda9f3-5f76-4553-a245-f19e5cd6752a",
+      "id": "97a96f7c-ea6a-456c-a58c-1cee1121a210",
       "fileName": "sample-invoice-1.pdf",
       "documentType": "invoice",
       "created": "2020-06-15T09:59:04.091971+00:00",

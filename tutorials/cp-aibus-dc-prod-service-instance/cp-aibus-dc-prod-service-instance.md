@@ -38,7 +38,7 @@ Next, access your subaccount that will be used throughout the tutorial. Therefor
 >If you don't have a subaccount or you want to create a new one, follow the procedure outlined [here](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/05280a123d3044ae97457a25b3013918.html).
 
 [DONE]
-[ACCORDION-END]
+[ACCORDION-END] 
 
 
 [ACCORDION-BEGIN [Step 2: ](Check your entitlements)]
@@ -156,14 +156,6 @@ In the dialog, proceed as follows:
 You have successfully created a service key for your service instance. Make a local copy of the service key. You will need the service key values in the following tutorials.
 
 ![Service Key](service-key.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](Test yourself)]
-
-In the text area below, paste the `tenantmode` value from the service keys you created for your service instance, then click **Submit Answer**.
 
 [VALIDATE_1]
 [ACCORDION-END]
