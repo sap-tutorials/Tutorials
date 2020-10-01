@@ -1,5 +1,5 @@
 ---
-title: Onboard Virtual Devices sending Data from your Computer
+title: Onboard Virtual Devices Sending Data from Your Computer
 description: Allows you to to register new devices in SAP IoT to allow it to send data.
 auto_validation: true
 time: 10
@@ -8,7 +8,7 @@ primary_tag: topic>internet-of-things
 ---
 
 ## Prerequisites
- - **Tutorials:** [Create Model for your devices in the DEV tenant](iotae-api-postman)
+ - **Tutorials:** [Create Model for your devices in the DEV tenant](iot-model-create)
 
 ## Details
 ### You will learn
