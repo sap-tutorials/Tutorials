@@ -1,5 +1,5 @@
 ---
-title: Onboard Virtual Devices Sending Data from Your Computer
+title: Onboard Virtual Devices sending Data from your Computer
 description: Allows you to to register new devices in SAP IoT to allow it to send data.
 auto_validation: true
 time: 10

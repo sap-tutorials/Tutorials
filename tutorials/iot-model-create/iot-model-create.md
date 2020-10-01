@@ -12,7 +12,7 @@ primary_tag: topic>internet-of-things
  - Git installed on your computer. check by running `git --version`. Version 2.19 and higher should work.
  - Your company has licensed SAP IoT, has a Cloud Platform Enterprise Agreement or you have purchased SAP IoT at the sapstore.com ([http://www.sapstore.com/](https://www.sapstore.com/solutions/40108/SAP-Internet-of-Things))
  - Your project team has setup the subscription for SAP IoT in your company's global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [http://help.sap.com/](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/bfe6a46a13d14222949072bf330ff2f4.html) )
- - Your SAP User from accounts.sap.com has been added to the cloud foundry space in this tenant as a Space Developer so you can retrieve the required credentials for accessing the APIs
+ - Your SAP User from accounts.sap.com has been added to the Cloud Foundry space in this tenant as a Space Developer so you can retrieve the required credentials for accessing the APIs
  - Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles
 
 
@@ -212,7 +212,7 @@ Go again to the Thing Modeler and look at the connectivity tab of the thing type
 
 So all properties are mapped 1:1 between the device model and the application model. Once you define the lifecycle for both models in your implementation you can start using the ability to do this mapping differently.
 
-Besides doing this mapping in the cloud with this mapping capability it is possible to do this on the Edge with a 'Edge Gateway Adapter' or you can do this in your firmware. Each approach has advantages in regards of where you want to make decisions on the data, and which other data you need to make those decisions. This is also where Edge Services comes in that will allow you to have your application model at the Edge for e.g. doing streaming processing and even calls to business applications on the Edge.
+Besides doing this mapping in the cloud with this mapping capability it is possible to do this on the Edge with a 'Edge Gateway Adapter' or you can do this in your firmware. Each approach has advantages in regards of where you want to make decisions on the data, and which other data you need to make those decisions. This is also where Edge Services comes in that will allow you to have your application model at the Edge e.g., for  doing streaming processing and even calls to business applications on the Edge.
 
 The next tutorial to consider doing might be this one to create devices and start ingesting data: [Create virtual devices and start ingesting data](iot-onboard-device).
 
