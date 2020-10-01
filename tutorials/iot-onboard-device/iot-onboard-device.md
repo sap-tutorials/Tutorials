@@ -8,7 +8,7 @@ primary_tag: topic>internet-of-things
 ---
 
 ## Prerequisites
- - **Tutorials:** [Create Model for your devices in the DEV tenant](iotae-api-postman)
+ - **Tutorials:** [Create Model for your devices in the DEV tenant](iot-model-create)
 
 ## Details
 ### You will learn
