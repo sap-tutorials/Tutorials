@@ -129,15 +129,16 @@ The file then looks similar to this:
         "tags": [
           "leonardoiot"
         ],
-        "credentials":
-        {
-	         "tmcomposite": "https://tmcomposite.cfapps.eu10.hana.ondemand.com",
-	          "events-sap": "https://events-sap.cfapps.eu10.hana.ondemand.com",
-            ...
-            "tenantid": "cfed4026-5472-40f7-ada8-5d643b2936bd",
-            "url": "https://iot-training-f954-d.authentication.eu10.hana.ondemand.com"
-          }
-        }
+        "credentials": {
+  "tmcomposite": "https://tmcomposite.cfapps.eu10.hana.ondemand.com",
+  "events-sap": "https://events-sap.cfapps.eu10.hana.ondemand.com",
+  ...
+  "iot-device-connectivity": {
+    "tenantid": "1050480728",
+    "mqtt": "mqtts://64fd0e5a-714b-428a-b652-02e2e77d78ad.eu10.cp.iot.sap:8883",
+    "rest": "https://64fd0e5a-714b-428a-b652-02e2e77d78ad.eu10.cp.iot.sap:443"
+  }
+}
       }
     ],
     "user-provided": []
