@@ -63,7 +63,7 @@ Here are a few differences between SAP HANA Cloud and an on-premise version:
 
 * Connections to an SAP HANA Cloud instance must be secure and require a minimum SAP HANA Client version of 2.4.167.
 
-* The administration user for SAP HANA Cloud is named DBADMIN while for an SAP HANA 2.0 database it is SYSTEM.  For additional details see [Predefined Users](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/de4ee8bbbb5710148a04f023da147c8d.html) and [Predefined Users in HANA 2.0](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/de4ee8bbbb5710148a04f023da147c8d.html).  
+* The administration user for SAP HANA Cloud is named DBADMIN while for an SAP HANA 2.0 database it is SYSTEM.  For additional details see [Predefined Users](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/de4ee8bbbb5710148a04f023da147c8d.html), [SAP HANA Cloud Administrator DBADMIN](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/5b35402c47b344d882ac13c661aff1c0.html), and [Predefined Users in HANA 2.0](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/de4ee8bbbb5710148a04f023da147c8d.html).  
 
 [DONE]
 [ACCORDION-END]
@@ -139,7 +139,7 @@ Congratulations! You have connected to SAP HANA Cloud and performed a few querie
 
 SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).
 
-SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs.  There are many different install options that are explained at [Try SAP HANA, express edition](https://developers.sap.com/topics/sap-hana.html).  The currently available version can be seen in the [release notes](https://developers.sap.com/topics/sap-hana.html#releaseNotes).  
+SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs as described at [SAP HANA, express edition - Implement](https://help.sap.com/viewer/product/DRAFT/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task).  A database only option and a database + XS Advanced Applications options are available.  The Database + XS Advanced Applications install, includes the SAP HANA Cockpit, the SAP Database Explorer and the SAP HANA Web IDE.  Further details about a version can be found in the [release notes](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup).    
 
 Choose an option and proceed to install SAP HANA, express edition.  The server-only install, which requires less memory, is sufficient to complete the tutorials in this mission.  Be sure to note the SAP HANA database master password, as it will be needed later for connecting.
 

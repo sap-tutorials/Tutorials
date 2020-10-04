@@ -23,7 +23,7 @@ In this tutorial, you will learn how to create routes to different paths of your
 [ACCORDION-BEGIN [Step 1: ](Create a Detail page)]
 In `src` create a `Detail.jsx` file.
 
-Inside of that file, create the `Detail` component that will return a title to your linking.
+Inside of that file, create the `Detail` component that will return a title to your liking.
 
 ```JavaScript / JSX
 import React from "react";
@@ -97,7 +97,7 @@ export function Detail() {
       return (
         <div>
           <ShellBar
-            logo={"reactLogo.png"}
+            logo={<img src="reactLogo.png" />}
             profile={<Avatar image="profilePictureExample.png" />}
             primaryTitle={"My App"}
           >
@@ -154,20 +154,35 @@ export function Detail() {
           }, 2000);
         }
       };
-      const datasets = [
+      const dataset = [
         {
-          label: "Stock Price",
-          data: [65, 59, 80, 81, 56, 55, 40]
+          month: "January",
+          data: 65
+        },
+        {
+          month: "February",
+          data: 59
+        },
+        {
+          month: "March",
+          data: 80
+        },
+        {
+          month: "April",
+          data: 81
+        },
+        {
+          month: "May",
+          data: 56
+        },
+        {
+          month: "June",
+          data: 55
+        },
+        {
+          month: "July",
+          data: 40
         }
-      ];
-      const labels = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July"
       ];
       const tableData = new Array(500).fill(null).map((_, index) => {
         return {
@@ -206,6 +221,7 @@ export function Detail() {
         <FlexBox
           justifyContent={FlexBoxJustifyContent.Center}
           wrap={FlexBoxWrap.Wrap}
+          style={spacing.sapUiContentPadding}
         >
           <Card
             avatar={
@@ -218,16 +234,26 @@ export function Detail() {
               />
             }
             heading="Stock Price"
+            style={{ width: "300px" }}
             headerInteractive
             onHeaderClick={handleHeaderClick}
             subheading={`Click here to switch to ${switchToChart}`}
-            style={{ width: "300px", ...spacing.sapUiContentPadding }}
           >
             <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
             {toggleCharts === "lineChart" ? (
-              <LineChart datasets={datasets} labels={labels} loading={loading} />
+              <LineChart
+                dimensions={[{ accessor: "month" }]}
+                measures={[{ accessor: "data", label: "Stock Price" }]}
+                dataset={dataset}
+                loading={loading}
+              />
             ) : (
-              <BarChart datasets={datasets} labels={labels} loading={loading} />
+              <BarChart
+                dimensions={[{ accessor: "month" }]}
+                measures={[{ accessor: "data", label: "Stock Price" }]}
+                dataset={dataset}
+                loading={loading}
+              />
             )}
           </Card>
           <Card
@@ -250,12 +276,7 @@ export function Detail() {
               >
                 <FlexBox direction={FlexBoxDirection.Column}>
                   <Title level={TitleLevel.H5}>Activity 3</Title>
-                  <ProgressIndicator
-                    displayValue="89%"
-                    percentValue={89}
-                    width="180px"
-                    state={ValueState.Success}
-                  />
+                  <ProgressIndicator value={89} valueState={ValueState.Success} />
                 </FlexBox>
               </StandardListItem>
               <StandardListItem
@@ -265,12 +286,7 @@ export function Detail() {
               >
                 <FlexBox direction={FlexBoxDirection.Column}>
                   <Title level={TitleLevel.H5}>Activity 4</Title>
-                  <ProgressIndicator
-                    displayValue="5%"
-                    percentValue={5}
-                    width="180px"
-                    state={ValueState.Error}
-                  />
+                  <ProgressIndicator value={5} valueState={ValueState.Error} />
                 </FlexBox>
               </StandardListItem>
             </List>
@@ -309,7 +325,7 @@ export function Detail() {
     return (
         <>
             <ShellBar
-                logo={"reactLogo.png"}
+                logo={<img src="reactLogo.png" />}
                 profile={<Avatar image="profilePictureExample.png" />}
                 primaryTitle={"My App"}>
                 <ShellBarItem src="sap-icon://add" text="Add" />
@@ -377,10 +393,10 @@ Except for changing the URL of the App the user doesn't have options to navigate
 
     ```JavaScript / JSX
     <ShellBar
-      logo={"reactLogo.png"}
-      onLogoClick={handleLogoClick}
+      logo={<img src="reactLogo.png" />}
       profile={<Avatar image="profilePictureExample.png" />}
-      primaryTitle={"My App"}
+      primaryTitle="My App"
+      onLogoClick={handleLogoClick}
     >
     ```
 
@@ -388,18 +404,18 @@ Except for changing the URL of the App the user doesn't have options to navigate
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 6: ](Code overview)]
 
-If needed, you can compare your files with the following solutions:
+If needed, you can compare your files with the following code references:
 
 `MyApp.jsx`:
 
 ```JavaScript / JSX
 import React from "react";
-import { ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
+import { Avatar, ShellBar, ShellBarItem } from "@ui5/webcomponents-react";
 import "@ui5/webcomponents-icons/dist/icons/add.js";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Home } from "./Home";
 import { Detail } from "./Detail";
-import { useHistory } from "react-router-dom";
 
 export function MyApp() {
   const history = useHistory();
@@ -409,12 +425,12 @@ export function MyApp() {
   return (
     <>
       <ShellBar
-        logo={"reactLogo.png"}
-        onLogoClick={handleLogoClick}
+        logo={<img src="reactLogo.png" />}
         profile={<Avatar image="profilePictureExample.png" />}
-        primaryTitle={"My App"}
+        primaryTitle="My App"
+        onLogoClick={handleLogoClick}
       >
-        <ShellBarItem icon="add" text="Add" />
+        <ShellBarItem src="sap-icon://add" text="Add" />
       </ShellBar>
       <Switch>
         <Route path="/home" component={Home} />
@@ -447,16 +463,20 @@ import {
   Icon
 } from "@ui5/webcomponents-react";
 import { spacing } from "@ui5/webcomponents-react-base";
+import { useHistory } from "react-router-dom";
 import { BarChart, LineChart } from "@ui5/webcomponents-react-charts";
 import "@ui5/webcomponents-icons/dist/icons/horizontal-bar-chart.js";
 import "@ui5/webcomponents-icons/dist/icons/line-chart.js";
 import "@ui5/webcomponents-icons/dist/icons/list.js";
 import "@ui5/webcomponents-icons/dist/icons/table-view.js";
-import { useHistory } from "react-router-dom";
 
 export function Home() {
   const [toggleCharts, setToggleCharts] = useState("lineChart");
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
+  const handleProgressHeaderClick = () => {
+    history.push("/detail");
+  };
 
   const handleHeaderClick = () => {
     if (toggleCharts === "lineChart") {
@@ -473,24 +493,35 @@ export function Home() {
       }, 2000);
     }
   };
-  const history = useHistory();
-  const handleProgressHeaderClick = () => {
-    history.push("/detail");
-  };
-  const datasets = [
+  const dataset = [
     {
-      label: "Stock Price",
-      data: [65, 59, 80, 81, 56, 55, 40]
+      month: "January",
+      data: 65
+    },
+    {
+      month: "February",
+      data: 59
+    },
+    {
+      month: "March",
+      data: 80
+    },
+    {
+      month: "April",
+      data: 81
+    },
+    {
+      month: "May",
+      data: 56
+    },
+    {
+      month: "June",
+      data: 55
+    },
+    {
+      month: "July",
+      data: 40
     }
-  ];
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July"
   ];
   const tableData = new Array(500).fill(null).map((_, index) => {
     return {
@@ -529,6 +560,7 @@ export function Home() {
     <FlexBox
       justifyContent={FlexBoxJustifyContent.Center}
       wrap={FlexBoxWrap.Wrap}
+      style={spacing.sapUiContentPadding}
     >
       <Card
         avatar={
@@ -541,25 +573,35 @@ export function Home() {
           />
         }
         heading="Stock Price"
+        style={{ width: "300px" }}
         headerInteractive
         onHeaderClick={handleHeaderClick}
         subheading={`Click here to switch to ${switchToChart}`}
-        style={{ width: "300px", ...spacing.sapUiContentPadding }}
       >
         <Text style={spacing.sapUiContentPadding}>{contentTitle}</Text>
         {toggleCharts === "lineChart" ? (
-          <LineChart datasets={datasets} labels={labels} loading={loading} />
+          <LineChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data", label: "Stock Price" }]}
+            dataset={dataset}
+            loading={loading}
+          />
         ) : (
-          <BarChart datasets={datasets} labels={labels} loading={loading} />
+          <BarChart
+            dimensions={[{ accessor: "month" }]}
+            measures={[{ accessor: "data", label: "Stock Price" }]}
+            dataset={dataset}
+            loading={loading}
+          />
         )}
       </Card>
       <Card
         heading="Progress"
         subheading="List"
         style={{ width: "300px", ...spacing.sapUiContentPadding }}
+        avatar={<Icon name="list" />}
         headerInteractive
         onHeaderClick={handleProgressHeaderClick}
-        avatar={<Icon name="list" />}
       >
         <List>
           <StandardListItem info="finished" infoState={ValueState.Success}>
@@ -575,12 +617,7 @@ export function Home() {
           >
             <FlexBox direction={FlexBoxDirection.Column}>
               <Title level={TitleLevel.H5}>Activity 3</Title>
-              <ProgressIndicator
-                displayValue="89%"
-                percentValue={89}
-                width="180px"
-                state={ValueState.Success}
-              />
+              <ProgressIndicator value={89} valueState={ValueState.Success} />
             </FlexBox>
           </StandardListItem>
           <StandardListItem
@@ -590,12 +627,7 @@ export function Home() {
           >
             <FlexBox direction={FlexBoxDirection.Column}>
               <Title level={TitleLevel.H5}>Activity 4</Title>
-              <ProgressIndicator
-                displayValue="5%"
-                percentValue={5}
-                width="180px"
-                state={ValueState.Error}
-              />
+              <ProgressIndicator value={5} valueState={ValueState.Error} />
             </FlexBox>
           </StandardListItem>
         </List>

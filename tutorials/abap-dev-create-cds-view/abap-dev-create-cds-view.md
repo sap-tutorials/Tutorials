@@ -1,5 +1,5 @@
 ---
-title: Create an ABAP Core Data Services (CDS) View in SAP NetWeaver 7.5
+title: Create an ABAP Core Data Services (CDS) View in ABAP On-Premise
 description: Create a CDS View, display it in Fiori Elements preview, and enhance its appearance using built-in annotations
 auto_validation: true
 time: 45
@@ -8,7 +8,7 @@ primary_tag: topic>abap-development
 ---
 
 ## Prerequisites
-- You have a valid instance of an on-premise AS ABAP server, version 7.54 or higher
+- You have a valid instance of SAP S/4HANA 1909 or later, on-premise
 - You have installed [ABAP Development Tools](https://tools.hana.ondemand.com/#abap), latest version
 - You have downloaded the ABAP Flight Reference Scenario. To pull this reference scenario from `Github`, see [ Downloading the ABAP Flight Reference Scenario](https://help.sap.com/viewer/923180ddb98240829d935862025004d6/Cloud/en-US/def316685ad14033b051fc4b88db07c8.html)
 
