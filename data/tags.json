@@ -145,8 +145,8 @@
       "value": "products>sap-cloud-platform-enterprise-messaging"
     },
     {
-      "name": "SAP Cloud Platform Extension Factory, Kyma Runtime",
-      "value": "products>sap-cloud-platform-extension-factory\\, kyma-runtime"
+      "name": "SAP Cloud Platform, Kyma runtime",
+      "value": "products>sap-cloud-platform\\, kyma-runtime"
     },
     {
       "name": "SAP Cloud Platform Integration for process services",
