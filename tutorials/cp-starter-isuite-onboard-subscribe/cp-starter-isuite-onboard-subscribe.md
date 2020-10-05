@@ -174,7 +174,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     | Integration Advisor | `trial-content-developer` | Access Integration Content advisor to create and deploy interfaces and mappings. |
     | Open Connectors | `OpenConnectors_User` | To view and access the Open Connectors capability. |
 
-    >**IMPORTANT**: After assigning the role collections clear the browser cache and reload the page. Try log out and login to get the roles activated. If you are still facing any issues, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
+    >**IMPORTANT**: After assigning the role collections clear the browser cache and reload the page. Try logout and login to get the roles activated. If you are still facing any issues, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
 
 [VALIDATE_1]
 [ACCORDION-END]
