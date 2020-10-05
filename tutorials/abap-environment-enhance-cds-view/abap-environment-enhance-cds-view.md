@@ -16,11 +16,11 @@ primary_tag: topic>abap-development
 - How to add textual information using associations
 - How to concatenate two elements, using a built-in function for CDS
 - How to convert currencies using a built-in function for CDS
-- How to evaluate conditions using a CASE statement
+
 
 You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
-!![fep-final-enhance](fep-final-enhance.png)
+!![fep-final-enhance](fep-final-enhance-no-CASE.png)
 
 Throughout this tutorial, objects name include a suffix, such as `XXX`. Always replace this with your group number or initials.
 
@@ -29,20 +29,20 @@ Throughout this tutorial, objects name include a suffix, such as `XXX`. Always r
 [ACCORDION-BEGIN [Step 1: ](Add value help)]
 To make the input fields more useful, you will now add input value help to the field **`AgencyID`**.
 
-1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency_U`**. Add the following annotation to your field **`AgencyID`**.
+1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency`**. Add the following annotation to your field **`AgencyID`**.
 
     ```CDS
-    @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency_U', element: 'AgencyID'}  }]
+    @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency', element: 'AgencyID'}  }]
 
     ```
 
-2. You also need to expose this second entity in the OData service. To do this, add the entity **`/DMO/I_Agency_U`** to your service definition, so the complete definition looks like this:
+2. You also need to expose this second entity in the OData service. To do this, add the entity **`/DMO/I_Agency`** to your service definition, so the complete definition looks like this:
 
     ```CDS
     @EndUserText.label: 'Service exposes Travel Data 005'
     define service Z_EXPOSE_TRAVEL_005 {
       expose Z_C_TRAVEL_DATA_005 as Travel;
-      expose /DMO/I_Agency_U as Agency;
+      expose /DMO/I_Agency as Agency;
     }
 
     ```
@@ -301,12 +301,7 @@ define view Z_C_TRAVELS_xxx
       @ObjectModel.text.association: '_CurrencyText'
       CurrencyCode,
 
-      //Evaluate Premium status for customers paying in USD
-      case
-      when CurrencyCode = 'USD' and TotalPrice >= 5000 then 'Gold'
-      when CurrencyCode = 'USD' and TotalPrice < 5000 and TotalPrice >= 2000 then 'Silver'
-      else ' '
-      end                                                       as Premium,
+
 
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.90
