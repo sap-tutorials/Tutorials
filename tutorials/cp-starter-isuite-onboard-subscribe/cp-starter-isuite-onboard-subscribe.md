@@ -47,7 +47,7 @@ This part of the series lets you experience the capabilities offered by SAP Clou
 
 3. Click **Create Account** to create a subaccount. Choose the geographical region that's closest to you.
 
-    !![Select region](1.3.0Region.png)
+    !![Select region](1.3.1Region.png)
 
 4. Choose **Continue**.
 
