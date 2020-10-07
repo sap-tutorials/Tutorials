@@ -100,7 +100,11 @@ In some tenants the ingestion takes a few minutes but the data will arrive with 
 
 For both the measurements and the master data (e.g. handling unit id) a time series is created which means for all values you will have the value and the timestamp when this value was ingested.
 
-You can now use batch or streaming rules to react to the incoming data across time windows or as they come in. Or you can for example use analytical applications that allow you to do dashboards or reports on the aggregation of the measured data and on the master data it relates to. Please refer to the other tutorials with 'IoT' in their name to get up to speed on these topics.
+You can now use batch or streaming rules to react to the incoming data across time windows or as they come in. Or you can for example use analytical applications that allow you to do dashboards or reports on the aggregation of the measured data and on the master data it relates to.
+
+Please refer to the other tutorials with 'IoT' in their name to get up to speed on these topics.
+
+If you remove `greenhouse.` from the file names of the provided `greenhouse.model.json` and `greenhouse.devices.json` and then run the 3 scripts again you get data that directly works with the following tutorial group: [Create a Decision Support App and Enable Notification in SAP Fiori Launchpad](https://developers.sap.com/group.iot-app-decision-support.html).
 
 [VALIDATE_7]
 [ACCORDION-END]
