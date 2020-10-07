@@ -105,7 +105,6 @@ Now, you are ready to build and deploy the workflow.
 1. Update the **mta.yaml** file of your **onboarding** project by double-clicking it.
 
     - In  lines 9 and 13, replace `workflow_mta` with `wm_workflow`.
-    - In line 15, replace the service plan replace `standard` with `lite`.
     - In line 19, replace `org.cloudfoundry.managed-service` with `org.cloudfoundry.existing-service`.
 
     ![Update YAML File](update-service-plan.png)
