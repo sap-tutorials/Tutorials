@@ -18,7 +18,7 @@ time: 15
 ---
 [ACCORDION-BEGIN [Step 1: ](Assign entitlements to your subaccount)]
 
-So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar`later on, you need to assign the Application Runtime and Portal entitlements to your subaccount.
+So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar` later on, you need to assign the Application Runtime and Portal entitlements to your subaccount.
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -163,7 +163,6 @@ To access custom workflow applications, for example, start forms, you can't use 
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 7: ](Configure the visualization for your custom tile)]
 
