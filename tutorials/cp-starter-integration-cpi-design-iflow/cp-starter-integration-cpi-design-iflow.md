@@ -74,7 +74,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
     >**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Cloud Platform Integration suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
 
-  8. Specify a name for the service key and choose **create**.
+  8. Specify a name for the service key and choose **Create**.
 
       !![Enter service key name](4.8.create-service-key-2.png)
 
