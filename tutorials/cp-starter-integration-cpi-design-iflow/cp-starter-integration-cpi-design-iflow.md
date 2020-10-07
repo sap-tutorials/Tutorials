@@ -110,11 +110,11 @@ author_profile: https://github.com/Vikramkulkarni01
 
   2. Choose **Add** > **Integration Flow**.
 
-      ![Add integration flow artifact](2.3.add-integration-flow.png)
+      !![Add integration flow artifact](2.3.add_integration_flow_new.png)
 
       Enter the **Name** for integration flow and choose **OK**.
 
-      ![Enter integration flow details and confirm](2.4.enter-iflow-details.png)
+      !![Enter integration flow details and confirm](2.4.enter-iflow-details.png)
 
   3. Save the integration package by choosing **Save** and open the integration flow by selecting it.
 
@@ -130,7 +130,6 @@ author_profile: https://github.com/Vikramkulkarni01
 
     !![Access integration package](1.1.access-integration-package.png)
 
-    If you have not created an integration package and integration flow, complete the tutorial [Create your First Integration Package and Integration Flow](cp-starter-integration-cpi-create-iflow) first before proceeding.
 
 2. Access your integration flow by choosing **Artifacts** > **(Integration flow name)**.
 
