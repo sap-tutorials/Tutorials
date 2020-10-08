@@ -58,13 +58,13 @@ The folder with the scripts also contains a file `devices.json` that includes ab
 
 To run the script go to your command prompt and enter the following to create a new directory for the certificates to be used for the devices.
 
-```command
+```Shell
 mkdir certificates
 ```
 
 Then enter the following to start the script.
 
-```command
+```Shell
 node create-devices-and-sensors.js
 ```
 
@@ -85,7 +85,7 @@ In reality, you would now configure the firmware of the devices or of an edge to
 
 To run the script enter:
 
-```command
+```Shell
 node create-measurements-via-ingestion.js
 ```
 

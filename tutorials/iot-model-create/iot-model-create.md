@@ -167,13 +167,13 @@ Now to start the scripts please open up a terminal window on your computer (call
 
 Go to the directory, where you cloned or unzipped the repository for example like this:
 
-```command
+```Shell
 cd sap-iot-samples/iot-bootstrap-scripts
 ```
 
 Then download all the necessary dependent node libraries  by running the following command:
 
-```command
+```Shell
 npm install
 ```
 
@@ -181,7 +181,7 @@ In the provided sample code the included `.npmrc` sets the `npm` registry like t
 
 Now you come to the final step: to create the data model. Do this by running this command:
 
-```command
+```Shell
 node create-data-models.js
 ```
 
