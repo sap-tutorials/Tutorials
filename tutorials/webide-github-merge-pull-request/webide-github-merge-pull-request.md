@@ -2,9 +2,13 @@
 title: Merge Branches into Master Branch in GitHub using Pull Requests
 description: Merge a feature branch back into the master branch in GitHub, and fetch the updates in SAP Web IDE.
 primary_tag: products>sap-web-ide
-tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform, tutorial>license ]
 time: 10
 ---
+
+## Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
+
 
 ## Details
 ### You will learn  

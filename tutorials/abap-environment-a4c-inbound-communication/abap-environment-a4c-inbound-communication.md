@@ -3,7 +3,7 @@ title: Create Inbound Communication Objects for an OData Service
 description: Create an inbound communication scenario, arrangement, system, and user in the provisioning system of SAP Cloud Platform, ABAP Environment.
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 

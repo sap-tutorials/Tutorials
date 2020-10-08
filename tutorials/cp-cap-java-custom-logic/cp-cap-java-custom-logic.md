@@ -265,7 +265,7 @@ public class OrdersService implements EventHandler {
 10. To reset the database to the initial state, run the following command from the root of your project:
 
     ```Shell/Bash
-    cd ~/projects/bookstore && npm run deploy
+    cd ~/projects/bookstore && cds deploy --to sqlite
     ```
 
 [VALIDATE_1]
