@@ -58,12 +58,13 @@ The period for idle time for Factory accounts is different than for trial accoun
 
     !![Fiori project template - project name](03-05 AppStudio Fiori Project Template Project Name.jpg)
 
-5. For **HTML5 Applications**, select **Standalone Approuter**, and click **Next**.
+5. For **HTML5 Applications**, if you plan to integrate the app to a launchpad site, select **Managed by SAP Cloud Platform** and provide a unique service name. Otherwise, select **Standalone Approuter**, and click **Next**.
 
     !![Standalone Approuter](03-06-01 AppStudio HTML5 Applications Runtime.png)
 
     >The application router is the single point-of-entry for an application running in the Cloud Foundry environment on SAP Cloud Platform. The application router is used to serve static content, authenticate users, rewrite URLs, and forward or proxy requests to other micro services while propagating user information.
-    >To simplify the tutorial the Standalone Approuter option is used .
+
+    >To simplify the tutorial the Standalone Approuter option is used.
 
 6. For **Basic Attributes**, select the following, and click **Next**.
 
@@ -72,6 +73,7 @@ The period for idle time for Factory accounts is different than for trial accoun
     | A | Enter an HTML5 module name | **`BusinessPartners`** |
     | B | Do you want to add authentication | **No** |
     | C | Enter a namespace | **`ns`** |
+    | D | Do you want to enable Karma tests? | **No** |
 
     !![Fiori project template - basic attributes](03-06 AppStudio Fiori Project Basic Attributes.jpg)
 
@@ -100,7 +102,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
 9. Click **Open in New Workspace** in the notification or **File > Open Workspace**, and choose `FioriDemo`.
 
-    !![AppStudio open workspace](03-09 AppStudio Open Workspace_.png)
+    !![AppStudio open workspace](03-09 AppStudio Open Workspace_.jpg)
 
     >The **Explorer** view opens and you can see the `FioriDemo` project, its folder structure, and files. If not, you can click the **Explorer** view button at the top left of the screen.
 
@@ -157,7 +159,7 @@ Make some changes using the layout editor, with no need to do any coding.
 
     !![Drag and drop](05-02 AppStudio Layout Editor List Dropped_.jpg)
 
-3. Select the **Standard List Item** control and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
+3. Select the **Standard List Item** control (the breadcrumb indicates which control is selected) and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
 
     !![Open entity set bind window](05-03 AppStudio Layout Editor Bind to Entity Set_.jpg)
 
@@ -200,14 +202,17 @@ Run your new application to test it.
 
     !![Create new run configuration](06-02 AppStudio Run Configurations_.jpg)
 
+    >When "What would you like to run?" question appears, select **`BusinessPartners`**.
+
+    >!![run configuration select BusinessPartners](06-02-01 AppStudio Run Configurations_.jpg)
+
 3. For the next steps of the wizard, select the following:
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
-    | A | What would you like to run | **`BusinessPartners`** |
-    | B | Select a runnable file | **`index.html`** |
-    | C | Select a UI5 version | **latest** |
-    | D | Enter a name | `Run BusinessPartners (ES5)` |
+    | A | Select a runnable file | **`index.html`** |
+    | B | Select a UI5 version | **latest** |
+    | C | Enter a name | `Run BusinessPartners (ES5)` |
 
     >A new run configuration is generated for the `FioriDemo` project.
 

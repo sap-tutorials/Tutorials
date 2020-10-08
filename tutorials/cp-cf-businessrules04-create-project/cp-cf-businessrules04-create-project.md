@@ -9,19 +9,25 @@ author_name: Vandana Vasudevan
 author_profile: https://github.com/VandanaVasudevan
 ---
 ## Prerequisites
- - You have accessed the **Manage Rule Projects** application. For more information, see [Set up the Manage Rule Projects Application](cp-cf-businessrules03-setup-mrp).
+ - Ensure that you setup the **Workflow Management** service to access the **Manage Rule Projects** application. For more information, see [Set Up Workflow Management in Cloud Cockpit](https://developers.sap.com/tutorials/cp-starter-ibpm-employeeonboarding-1-setup.html).
 
 ## Details
 ### You will learn
   - How to create a project to author rules
 
-A project is used to configure and manage the entities of business rules. It contains data objects, rules, rule sets, and rule services. You can create projects in the **Manage Rule Projects** application.
+SAP Cloud Platform Business Rules is an Intelligent Business Process Management service that lets you digitize and automate decision making. You can author and manage your decisions using the **Manage Rule Projects** application of business rules service.
+
+A project is used to configure and manage the entities of business rules. Entities of business rules include data objects, rules, rule sets, and rule services. You can create projects in the **Manage Rule Projects** application, which can be accessed from the **Workflow Management** home screen. For more information, see [SAP Cloud Platform Business Rules](https://help.sap.com/viewer/product/BUSINESS_RULES/Cloud/en-US).
 
 [ACCORDION-BEGIN [Step 1: ](Open Manage Rules Project application)]
 
- Open the **Manage Rule Projects** application. In the **Manage Projects** screen, choose +.
+1. Log on to **Workflow Management** home screen, and choose **Manage Rule Projects** application tile.
 
-![Manage Rule Project Application](create_project0.png)
+    ![Workflow Management Home Screen](workflow_management_hs.png)
+
+2. In the **Manage Projects** screen, choose +.
+
+    ![Manage Rule Project Application](create_project0.png)
 
 [DONE]
 [ACCORDION-END]

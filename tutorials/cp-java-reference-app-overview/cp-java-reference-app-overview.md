@@ -3,7 +3,7 @@ title: The ESPM Application
 description: In this tutorial series you will go through the process of developing a Java-based e-commerce application on SAP Cloud Platform. A reference app is used in order to demonstrate the development steps. The tutorials start with the basics and gradually build upon the functionality of the application.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>java, products>build>build, products>sap-cloud-platform, products>sap-jam, products>sap-jam-collaboration ]
+tags: [  tutorial>beginner, topic>java, products>build>build, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites  

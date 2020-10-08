@@ -111,23 +111,17 @@ Next, search for **Document Classification**. Click the tile to access the servi
 
 You will now create an instance of your service.
 
-To create an instance, click **Instances** on the navigation side bar.
+Click **Create Instance** to start the creation dialog.
 
-Next, click **New Instance** to start the creation dialog.
+![Service Instance](create-instance.png)
 
-![Service Instances](create-instance.png)
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `dc-inst` and click **Create Instance** to skip the other steps and create the instance.
 
-  1. In the dialog, leave the default value for the service plan and click **Next**.
+![Create Instance](create-instance-dialog.png)
 
-    ![Create Instance](create-instance-service-plan.png)
+In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
-  2. Leave the parameters empty and click **Next**.
-
-  3. Do not assign any application and click **Next**.
-
-  4. Finally, enter the name `dc-inst` for your new instance. Click **Finish** to create the instance.
-
-    ![Create Instance](create-instance-name.png)
+![View Instances](view-instances.png)
 
 You have successfully created a service instance for Document Classification.
 
@@ -137,43 +131,21 @@ You have successfully created a service instance for Document Classification.
 
 [ACCORDION-BEGIN [Step 6: ](Create service keys)]
 
-Finally, you are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
+You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
-To create service keys, first access your service instance by clicking its name.
+  1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-![Service Instances](access-instance.png)
+      ![Service Keys](create-service-keys.png)
 
-Now select **Service Keys** on the navigation side bar. Then click **Create Service Key** to start the creation dialog.
+  2. In the dialog, enter `dc-key` as the name of your service key. Click **Create** to create the service key.
 
-![Service Keys](create-service-keys.png)
+      ![Create Service Key](create-service-key-name.png)
 
-In the dialog, enter the name `dc-key` for your service key. Leave empty the "Configuration Parameters (JSON)" box. Click **Save** to create the service keys.
+You have successfully created service keys for your service instance. You can now either view the service key in the browser or download it.
 
-![Create Service Key](create-service-key-name.png)
+![View Service Key](view-service-key.png)
 
-You have successfully created service keys for your service instance. Make a local copy of the service keys. You will need the service keys values in the next tutorial.
-
-![Service Key](service-key.png)
+You will need the service keys values in the next tutorial.
 
 [VALIDATE_1]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](List service instances)]
-
-To list and access your service instances, there is no need to access the service via the Service Marketplace every time. In your **Space** you can see a list of all your service instances.
-
-**Go back** to your **dev** space using the breadcrumbs at the top of the page.
-
-As you navigate through the SAP Cloud Platform Cockpit and dig into more detail the breadcrumbs at the top of the page show you the hierarchy of your navigation. You can use them to go back to previous steps.
-
-![Breadcrumbs](nav-back-breadcrumbs.png)
-
-Back in your space, click **Service Instances** on the navigation side bar.
-
-![Service Instances List](service-instances-list.png)
-
-The list shows all your service instances across all services, including the service instance you have just created. You find here information on the service plan, referencing applications, created service keys and the current status of your instances. From here, you can manage your service instances, access or delete them, for example.
-
-[DONE]
 [ACCORDION-END]

@@ -35,11 +35,11 @@ author_profile: https://github.com/Paolaufer
 
 [ACCORDION-BEGIN [Step 1: ](Create new CAP project)]
 
-1. From the SAP Business Application Studio Welcome page, click **New project from template**.
+1. From the SAP Business Application Studio Welcome page, click **Create project from template**.
 
     >You can also go to the Command Palette and choose **SAP Business Application Studio: Create Project From Template**.
 
-    !![Create Project from Template](welcome-page.png)
+    !![Create Project from Template](welcome2.png)
 
 2. Leave the default target folder path.
 
@@ -177,14 +177,15 @@ In the `srv` folder, create a new file called `cat-service.js`, and populate it 
 /**
 * Implementation for CatalogService defined in ./cat-service.cds
 */
-module.exports = (srv) => {
-
-  // Add some discount for overstocked books
-  srv.after('READ', 'Books', (each) => {
-      if (each.stock > 111) each.title += ' -- 11% discount!'
-      })
-
+const cds = require('@sap/cds')
+module.exports = function (){
+  // Register your event handlers in here, e.g....
+  this.after ('READ','Books', each => {
+    if (each.stock > 111) {
+      each.title += ` -- 11% discount!`
     }
+  })
+}
 
 ```
 
@@ -217,7 +218,6 @@ You will first add all required dependencies, and the create and run a run confi
 
         ```NPM
         npm install
-        npm add sqlite3 --save-dev
 
         ```
 
