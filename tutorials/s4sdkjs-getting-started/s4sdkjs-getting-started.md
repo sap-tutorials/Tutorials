@@ -61,7 +61,6 @@ The project contains the following files and folders, among others, to get you s
 ### NPM / Project
 
 - **`package.json`**: Specifies dependencies, metadata and user-defined scripts. The application comes with some predefined scripts and dependencies, that will be explained in detail in the course of this group of tutorials.
-- **`.npmrc`**: The **`npm`** configuration file. The SAP Cloud SDK consists of some generic libraries, that are available as Open Source Software and service libraries for the whitelisted SAP S/4HANA APIs, referred to as the Virtual Data Model (VDM). In the scaffolding we specify the registry for the `@sap` scope, where the VDM libraries are published.
 
 ### TypeScript
 

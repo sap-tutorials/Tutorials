@@ -33,6 +33,7 @@ To enhance your MDK app with customer order information, you need to carry out t
 
 [ACCORDION-BEGIN [Step 1: ](Create a new order list page)]
 
+
 This page will display customer orders list, you will add an **Object Table** control that is used to display information (like Sales order ID, order creation date, gross amount and life cycle status name) about an object.
 
 >You can find more details about [available controls in section page](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/SectionedTable.schema.html).
