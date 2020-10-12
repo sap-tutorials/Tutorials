@@ -10,7 +10,8 @@ author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
-- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- You have created a **trial account on SAP Cloud Platform:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
 
 ## Details
 ### You will learn
@@ -45,7 +46,7 @@ This part of the series lets you experience the capabilities offered by SAP Clou
 
       !![Trial global account](01_FoundationsCockpit_trial page.png)
 
-3. Click **Create Account** to create a subaccount. Choose the geographical region that's closest to you.
+3. Click **Create Account** to create a subaccount. Choose either **US East (VA) – AWS** or **Europe (Frankfurt) – AWS**.
 
     !![Select region](1.3.1Region.png)
 
