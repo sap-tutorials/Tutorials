@@ -1,9 +1,9 @@
 ---
-title: Onboard Virtual Devices sending Data from your Computer
-description: Allows you to to register new devices in SAP IoT to allow it to send data.
+title: Onboard Virtual Devices and have them send Data continuously
+description: Use scripts to register new devices in SAP Internet of Things, download authentication certificates and then have data sent from those "virtual" devices from your computer.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-leonardo-iot]
+tags: [ tutorial>beginner, products>sap-leonardo-iot, tutorial>license]
 primary_tag: topic>internet-of-things
 ---
 
@@ -25,7 +25,7 @@ When onboarding a device and when doing this in the context of a business applic
 
 So to be able to do this one first has to collect the technical ids of the involved devices and the application ids of the involved application objects as a basis. Such a list could look like this:
 
-```
+```JSON
 [
   {"id":"EQUI0001_01","EQUI":"EQUI0001_01","HANU":"HANU5658","IMEI":"0456456580934"},
   {"id":"EQUI0001_02","EQUI":"EQUI0001_02","HANU":"HANU4234","IMEI":"9823065469902"},
@@ -47,7 +47,7 @@ The script you can use is part of the same set of scripts used in the previous t
 
 The folder with the scripts also contains a file `devices.json` that includes above list. Feel free to add additional devices with additional, unique ids. If the devices exist already in the tenant that you use the onboarding script will fail. To prevent this from happening you might want to change the id used for identifying the device. If you are the 2nd person using the script we suggest for you to modify the `devices.json` file to this (replace 0001 with 0002):
 
-```
+```JSON
 [
   {"id":"EQUI0002_01","EQUI":"EQUI0002_01","HANU":"HANU5658","IMEI":"0456456580934"},
   {"id":"EQUI0002_02","EQUI":"EQUI0002_02","HANU":"HANU4234","IMEI":"9823065469902"},
@@ -58,13 +58,13 @@ The folder with the scripts also contains a file `devices.json` that includes ab
 
 To run the script go to your command prompt and enter the following to create a new directory for the certificates to be used for the devices.
 
-```
+```Shell
 mkdir certificates
 ```
 
 Then enter the following to start the script.
 
-```
+```Shell
 node create-devices-and-sensors.js
 ```
 
@@ -85,7 +85,7 @@ In reality, you would now configure the firmware of the devices or of an edge to
 
 To run the script enter:
 
-```
+```Shell
 node create-measurements-via-ingestion.js
 ```
 
@@ -100,7 +100,11 @@ In some tenants the ingestion takes a few minutes but the data will arrive with 
 
 For both the measurements and the master data (e.g. handling unit id) a time series is created which means for all values you will have the value and the timestamp when this value was ingested.
 
-You can now use batch or streaming rules to react to the incoming data across time windows or as they come in. Or you can for example use analytical applications that allow you to do dashboards or reports on the aggregation of the measured data and on the master data it relates to. Please refer to the other tutorials with 'IoT' in their name to get up to speed on these topics.
+You can now use batch or streaming rules to react to the incoming data across time windows or as they come in. Or you can for example use analytical applications that allow you to do dashboards or reports on the aggregation of the measured data and on the master data it relates to.
+
+Please refer to the other tutorials with 'IoT' in their name to get up to speed on these topics.
+
+If you remove `greenhouse.` from the file names of the provided `greenhouse.model.json` and `greenhouse.devices.json` and then run the 3 scripts again you get data that directly works with the following tutorial group: [Create a Decision Support App and Enable Notification in SAP Fiori Launchpad](https://developers.sap.com/group.iot-app-decision-support.html).
 
 [VALIDATE_7]
 [ACCORDION-END]
