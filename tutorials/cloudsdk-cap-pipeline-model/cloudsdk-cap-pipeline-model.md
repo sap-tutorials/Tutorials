@@ -209,7 +209,7 @@ Create and run a build job for your project in Jenkins.
 
 6. To view the status of your build, choose **Open Blue Ocean** from the navigation pane.
 
-7. Click on your job to see a detailed log of your job as well as a graphical representation of your pipeline.
+7. Choose on your job to see a detailed log of your job as well as a graphical representation of your pipeline.
 
     When the build job has finished successfully, your pipeline should look as follows:
 
@@ -223,7 +223,7 @@ Create and run a build job for your project in Jenkins.
 
 Configure the *Production Deployment* stage of your CI/CD pipeline.
 
-1. In your SAP Cloud Platform trial account, click on your subaccount tile.
+1. In your SAP Cloud Platform trial account, choose your subaccount tile.
 
     You now get an overview of the information related to your subaccount:
 
