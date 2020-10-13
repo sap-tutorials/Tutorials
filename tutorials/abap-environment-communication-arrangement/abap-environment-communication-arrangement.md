@@ -190,7 +190,7 @@ You can check your service URL via Postman. In Step 12 you'll learn how to check
 
     ![check scenario](subaccount.png)
 
-  5. Select Service Instances and find your Instance and open it with clicking arrow.
+  5. Select Service Instances and find your Instance and open it by clicking the arrow.
 
     ![check scenario](serviceInstances.png)
 
@@ -198,7 +198,7 @@ You can check your service URL via Postman. In Step 12 you'll learn how to check
 
     ![check scenario](actions.png)
 
-  7. Create Service key with following parameters:
+  7. Create Service key with the following parameters:
       - Name: ADT
       - Configuration Parameters (JSON):
 
@@ -211,7 +211,7 @@ You can check your service URL via Postman. In Step 12 you'll learn how to check
 
     ![check scenario](serviceKey.png)
 
-  8. Now your new service key is listed under Service Keys. The successful creation of the service key proved the existence of the communication scenario.
+  8. Now, your new service key is listed under Service Keys. The successful creation of the service key proves the existence of the communication scenario.
 
 
 
