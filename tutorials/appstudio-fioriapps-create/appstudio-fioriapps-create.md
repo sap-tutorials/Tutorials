@@ -28,7 +28,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
 [ACCORDION-BEGIN [Step 1: ](Create new SAP Fiori project)]
 
-1. In the **Welcome Page** click on **Create project from a template**.
+1. In the **Welcome Page** click **Create project from a template**.
 
     !![Open Dev Space](03-01-02 AppStudio Welcome Tab withOUT Extensions Loaded Notification_.jpg)
 
