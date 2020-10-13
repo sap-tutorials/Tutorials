@@ -1,6 +1,6 @@
 ---
 title: Create an SAP Fiori App Using SAP Business Application Studio
-description: Develop a simple SAP Fiori application in SAP Business Application Studio. The application will present a list of suppliers from an on-premise backend. The suppliers data will be retrieved from the BusinessPartnerSet collection in the GWSAMPLE_BASIC OData service that is available from SAP's ES5 demo gateway.
+description: Develop a simple SAP Fiori application in SAP Business Application Studio. The application will present a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the BusinessPartnerSet collection in the GWSAMPLE_BASIC OData service that is available from SAP's ES5 demo gateway.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
