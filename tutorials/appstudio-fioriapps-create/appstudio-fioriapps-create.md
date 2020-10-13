@@ -161,7 +161,7 @@ Make some changes using the layout editor, with no need to do any coding.
 
     !![Drag and drop](05-02 AppStudio Layout Editor List Dropped_.jpg)
 
-3. Select the **Standard List Item** control by clicking on it (the breadcrumb indicates which control is selected) and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
+3. Select the **Standard List Item** control by clicking it (the breadcrumb indicates which control is selected) and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
 
     !![Open entity set bind window](05-03 AppStudio Layout Editor Bind to Entity Set_.jpg)
 
