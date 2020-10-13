@@ -2,7 +2,7 @@
 title: Set Up Integration Suite Trial
 description: Get onboarded to SAP Cloud Platform Integration Suite trial account.
 auto_validation: true
-time: 20
+time: 30
 tags: [ tutorial>beginner, products>sap-cloud-platform-integration-for-process-services]
 primary_tag: products>sap-cloud-platform
 author_name: Vikram Kulkarni
@@ -10,7 +10,8 @@ author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
-- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- You have created a **trial account on SAP Cloud Platform:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
 
 ## Details
 ### You will learn
@@ -45,9 +46,9 @@ This part of the series lets you experience the capabilities offered by SAP Clou
 
       !![Trial global account](01_FoundationsCockpit_trial page.png)
 
-3. Click **Create Account** to create a subaccount. Choose the geographical region that's closest to you.
+3. Click **Create Account** to create a subaccount. Choose either **US East (VA) – AWS** or **Europe (Frankfurt) – AWS**.
 
-    !![Select region](1.3.0Region.png)
+    !![Select region](1.3.1Region.png)
 
 4. Choose **Continue**.
 
@@ -94,6 +95,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     !![Trust_configuration](4.1.1_Adminstrator_Access.png)
 
 2. Enter the user's e-mail address and click **Show Assignments**. In the confirmation dialog, click **Add User**.
+>**IMPORTANT**: The confirmation message appears only when an email address is not added to the account.
 
     !![Add User](4.1.2_Adduser.png)
 
@@ -120,7 +122,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
     Let's assume you have made your selection, so you now have to click **Next**.
 
-    !![Add Capabilities](5.1.1Addcapapbilities.png)
+    !![Add Capabilities](5.1.2Addcapapbilities.png)
 
     Click **Next**.
     !![Intermidiate Step](4.1intermidiate_step.png)
@@ -173,7 +175,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
     | Integration Advisor | `trial-content-developer` | Access Integration Content advisor to create and deploy interfaces and mappings. |
     | Open Connectors | `OpenConnectors_User` | To view and access the Open Connectors capability. |
 
-    >**IMPORTANT**: Clear the browser cache and reload the page. If you are still facing any access issues after assigning the role collection and clearing the cache, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
+    >**IMPORTANT**: After assigning the role collections clear the browser cache and reload the page. Try logout and login to get the roles activated. If you are still facing any issues, please send an email to <a href="mailto:cpitrialfeedback@sap.com">CPI trial feedback</a>. Include the **URL** of the **subaccount** in which you are facing access issues to help the trial experience team investigate and resolve the issue.
 
 [VALIDATE_1]
 [ACCORDION-END]

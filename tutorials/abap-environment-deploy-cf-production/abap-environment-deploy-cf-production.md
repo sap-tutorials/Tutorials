@@ -6,7 +6,7 @@ primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform, products>sap-business-application-studio ]
 time: 25
 author_name: Merve Temel
-author_profile: https://github.com/mervey45 
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
@@ -161,7 +161,7 @@ author_profile: https://github.com/mervey45
   5. Configure data source, system and service:
      - Data source: **Connect to SAP System**
      - System: **`New System`**
-     - ABAP Environment: **`<your_abap_trial_instance>`**
+     - ABAP Environment: **`abap-cloud-default_abap-trial`**
      - Service: **`ZUI_C_TRAVEL_M_XXX`**
 
      Click **Next >**.
@@ -257,8 +257,8 @@ author_profile: https://github.com/mervey45
      Add following information:
 
       - Please choose the target: ABAP
-      - Target System URL: press enter for default
       - Is this an ABAP Cloud System?: Y
+      - Destination: press enter for default
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
       - Transport Request: **`<your_transport_request>`**
