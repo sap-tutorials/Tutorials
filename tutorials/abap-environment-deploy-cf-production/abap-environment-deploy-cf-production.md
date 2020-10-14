@@ -227,7 +227,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 6: ](Deploy your application)]
 
-  1. Go back to SAP Business Application Studio, select projects, right-click on your project **`ztravelappxxx`** and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravelappxxx`** and select **Open in Terminal**.
 
       ![deploy](deploy1.png)
 
