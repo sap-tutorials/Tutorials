@@ -46,7 +46,6 @@ In the service key you created for Document Information Extraction in the previo
 [VALIDATE_1]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 2: ](See list of document fields you can extract)]
 
 Use the **GET /capabilities** endpoint to see a list of document fields you can extract with Document Information Extraction.
@@ -65,7 +64,6 @@ You should receive a response like the following:
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Create client)]
 
