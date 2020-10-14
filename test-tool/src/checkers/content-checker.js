@@ -23,7 +23,7 @@ const {
     remoteImage,
     codeBlockInNote,
   },
-  validation: { accordions, codeLine },
+  validation: { accordions, codeLine, inlineCodeBlock },
   link: {
     pure: pureLink,
   },
@@ -150,7 +150,8 @@ module.exports = {
 
       const trimmedLine = line.trim();
       const isCodeInNote = trimmedLine.match(codeBlockInNote);
-      if (trimmedLine.startsWith('```') || isCodeInNote) {
+      const isInlineCodeBlock = trimmedLine.match(inlineCodeBlock);
+      if (!isInlineCodeBlock && (trimmedLine.startsWith('```') || isCodeInNote)) {
         isCodeBlock = !isCodeBlock;
       }
 
