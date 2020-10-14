@@ -1,19 +1,19 @@
 ---
 title: Create Application and Device Model
-description: Shows you how to create an application model (thing model) and a device model in a tenant.
+description: Create an application model (for your business objects) and a device model (for physical devices) in SAP IoT based on a script and a model definition file.
 auto_validation: true
 time: 10
-tags: [ tutorial>beginner, products>sap-leonardo-iot]
+tags: [ tutorial>beginner, products>sap-leonardo-iot, tutorial>license]
 primary_tag: topic>internet-of-things
 ---
 
 ## Prerequisites
- - `Node.js` installed on your computer. Check by calling `node -v` and `npm -v`. Version 12.16 respectively 6.13 and higher should work.
+ - `Node.js` is installed on your computer. Check by calling `node -v` and `npm -v`. Version 12.16 respectively 6.13 and higher should work.
  - Git installed on your computer. check by running `git --version`. Version 2.19 and higher should work.
- - Your company has licensed SAP IoT, has a Cloud Platform Enterprise Agreement or you have purchased SAP IoT at the sapstore.com ([http://www.sapstore.com/](https://www.sapstore.com/solutions/40108/SAP-Internet-of-Things))
- - Your project team has setup the subscription for SAP IoT in your company's global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [http://help.sap.com/](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/2007a/en-US/bfe6a46a13d14222949072bf330ff2f4.html))
- - Your SAP User from accounts.sap.com has been added to the Cloud Foundry space in this tenant as a Space Developer so you can retrieve the required credentials for accessing the APIs
- - Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles
+ - Your company has licensed SAP IoT with the new capacity unit based licensing introduced in August 2020 or your company has a Cloud Platform Enterprise Agreement and you have subscribed to the `oneproduct` service plan.
+ - Your project team has setup the subscription for SAP IoT in your company's global account in a tenant (e.g. in the DEV tenant, the guide for the basic setup is at [http://help.sap.com/](https://help.sap.com/viewer/195126f4601945cba0886cbbcbf3d364/latest/en-US/bfe6a46a13d14222949072bf330ff2f4.html) ).
+ - Your SAP User from accounts.sap.com has been added to the Cloud Foundry space in this tenant as a Space Developer so you can retrieve the required credentials for accessing the APIs.
+ - Your SAP User has at a minimum the `iot_role_collection` created during onboarding of your tenant and the associated roles.
 
 
 ## Details
@@ -38,7 +38,7 @@ Now the other part of tracking the silo is the application side. Applications ca
 
 We provided an example of a combined declarative device and application model below:
 
-```JavaScript
+```JSON
 {
 	"package": "com.sap.silo0000",
 	"version": 1,
@@ -120,7 +120,7 @@ Please edit this file as described in the "Node.JS" SDK for SAP IoT at [https://
 
 The file then looks similar to this:
 
-```
+```JSON
 {
   "VCAP_SERVICES": {
     "iotae": [
@@ -129,15 +129,16 @@ The file then looks similar to this:
         "tags": [
           "leonardoiot"
         ],
-        "credentials":
-        {
-	         "tmcomposite": "https://tmcomposite.cfapps.eu10.hana.ondemand.com",
-	          "events-sap": "https://events-sap.cfapps.eu10.hana.ondemand.com",
-            ...
-            "tenantid": "cfed4026-5472-40f7-ada8-5d643b2936bd",
-            "url": "https://iot-training-f954-d.authentication.eu10.hana.ondemand.com"
-          }
-        }
+        "credentials": {
+  "tmcomposite": "https://tmcomposite.cfapps.eu10.hana.ondemand.com",
+  "events-sap": "https://events-sap.cfapps.eu10.hana.ondemand.com",
+  ...
+  "iot-device-connectivity": {
+    "tenantid": "1050480728",
+    "mqtt": "mqtts://64fd0e5a-714b-428a-b652-02e2e77d78ad.eu10.cp.iot.sap:8883",
+    "rest": "https://64fd0e5a-714b-428a-b652-02e2e77d78ad.eu10.cp.iot.sap:443"
+  }
+}
       }
     ],
     "user-provided": []
@@ -149,10 +150,11 @@ Now save this file.
 
 The last configuration step, that is important, is to change the name of the package to one, that does not collide with an existing data model in the system. We recommend you change it to something unique. If you are for example the second person doing this in a shared tenant please change model.json as follows:
 
-```
+```JSON
 {
   "package": "com.sap.silo0002",
   ...
+}
 ```
 
 [DONE]
@@ -165,13 +167,13 @@ Now to start the scripts please open up a terminal window on your computer (call
 
 Go to the directory, where you cloned or unzipped the repository for example like this:
 
-```
+```Shell
 cd sap-iot-samples/iot-bootstrap-scripts
 ```
 
 Then download all the necessary dependent node libraries  by running the following command:
 
-```
+```Shell
 npm install
 ```
 
@@ -179,7 +181,7 @@ In the provided sample code the included `.npmrc` sets the `npm` registry like t
 
 Now you come to the final step: to create the data model. Do this by running this command:
 
-```
+```Shell
 node create-data-models.js
 ```
 
@@ -212,11 +214,9 @@ Go again to the Thing Modeler and look at the connectivity tab of the thing type
 
 So all properties are mapped 1:1 between the device model and the application model. Once you define the lifecycle for both models in your implementation you can start using the ability to do this mapping differently.
 
-Besides doing this mapping in the cloud with this mapping capability it is possible to do this on the Edge with a 'Edge Gateway Adapter' or you can do this in your firmware. Each approach has advantages in regards of where you want to make decisions on the data, and which other data you need to make those decisions. This is also where Edge Services comes in that will allow you to have your application model at the Edge e.g., for doing streaming processing and even calls to business applications on the Edge.
+Besides doing this mapping in the cloud with this mapping capability it is possible to do this on the Edge with a 'Edge Gateway Adapter' or you can do this in your firmware. Each approach has advantages in regards of where you want to make decisions on the data, and which other data you need to make those decisions. This is also where Edge Services comes in that will allow you to have your application model at the Edge e.g., for  doing streaming processing and even calls to business applications on the Edge.
 
-The next tutorial to consider doing might be this one to create devices and start ingesting data: [Create virtual devices and start ingesting data](iotae-api-postman)
-
-(the previous link will need to be updated once both tutorials are in production with the real link!)
+The next tutorial to consider doing might be this one to create devices and start ingesting data: [Create virtual devices and start ingesting data](iot-onboard-device).
 
 If you have any question about SAP IoT in general please consider checking for it in our online community at [https://community.sap.com/topics/internet-of-things](https://community.sap.com/topics/internet-of-things).
 
