@@ -376,7 +376,7 @@ author_profile: https://github.com/mervey45
 
       ![url](url21.png)
 
-  3. Press **`CTRL and click on the following link`** to open the URL in a browser.
+  3. Press **`CTRL and click the following link`** to open the URL in a browser.
 
       ![url](url3.png)
 
