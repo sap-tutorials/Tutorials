@@ -14,6 +14,7 @@ primary_tag: topic>machine-learning
   - How to extract information from files with Document Information Extraction
 
 The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
