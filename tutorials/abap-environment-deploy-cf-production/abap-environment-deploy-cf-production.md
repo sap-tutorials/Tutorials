@@ -367,7 +367,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 9: ](Run SAP Fiori application)]
 
-  1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click on your project **`ztravelappxxx`** and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`ztravelappxxx`** and select **Open in Terminal**.
 
     ![url](url1.png)
 
