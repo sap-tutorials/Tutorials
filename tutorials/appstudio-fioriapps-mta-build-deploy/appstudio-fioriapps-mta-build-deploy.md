@@ -91,6 +91,8 @@ Right-click the `mtar` file and select **Deploy MTA Archive**.
 
 [ACCORDION-BEGIN [Step 4: ](Get URL to access the application)]
 
+This step is only applicable to apps that use **Standalone Approuter** (see [Create an SAP Fiori App Using SAP Business Application Studio](appstudio-fioriapps-create) > Create new SAP Fiori project > **HTML5 Applications**).
+
 Access your deployed application in the SAP Cloud Platform cockpit. The steps below show you how to create a URL that you can use to access your new application.
 
 1. Access the space to where the app is deployed and go to the **Applications** tab.
