@@ -34,6 +34,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   2. Create a new ABAP package:
      - Name: `ZTRAVEL_APP_XXX`
      - Description: `Package for travel XXX`
+     - `Superpackage`: `ZLOCAL`
 
      Use your number instead of `XXX`.
 
@@ -44,6 +45,8 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   3. Select **Create new request** and enter a request description.
 
       ![Create ABAP package](package4.png)
+
+      Click **Finish**.
 
 
   4. Right-click on **Favorite Packages** and select **Add Package**.
