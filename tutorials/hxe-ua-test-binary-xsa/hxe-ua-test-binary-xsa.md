@@ -57,15 +57,15 @@ xs apps
 
 > Note:
 > When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
-> 
-> 
+>
+>
 
 Check that the application `cockpit-admin-web-app` shows `STARTED` with 1/1 instances in the list of XSA applications.
 
 > Note:
 > Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show `STARTED` and doesn't show `1/1` instances, keep waiting until the service is enabled.
-> 
-> 
+>
+>
 
 Make a note of the URL for `cockpit-admin-web-app`.
 
@@ -81,13 +81,13 @@ If your site uses a proxy for connecting to HTTP and HTTPS servers, select *Cock
 
 > Note:
 > To find your proxy server information, in a terminal, enter `env | grep PROXY`.
-> 
-> 
+>
+>
 
 > Note:
 > If you are using HANA Cockpit to register a resource, both HANA Cockpit and the SAP HANA, express edition server must be from the same release. SAP does not recommend using a newer HANA Cockpit to register an older version of SAP HANA, express edition.
-> 
-> 
+>
+>
 
 [DONE]
 
@@ -128,8 +128,8 @@ Check that the application `webide` shows `STARTED` with 1/1 instances in the li
 
 > Note:
 > Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show `STARTED` and doesn't show `1/1` instances, keep waiting until the service is enabled.
-> 
-> 
+>
+>
 
 Make a note of the URL for `webide`.
 
@@ -151,10 +151,6 @@ Follow the Eclipse installer prompts.
 
 Launch when prompted, or go to the Eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the `eclipse` executable file.
 
-Follow the tutorial [How to download and install the HANA Eclipse plugin](hxe-howto-eclipse) to connect to your SAP HANA, express edition client machine.
-
 [DONE]
 
 [ACCORDION-END]
-
-

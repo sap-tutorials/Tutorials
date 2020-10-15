@@ -1,9 +1,9 @@
 ---
-title: Enable Mobile Services App Development Tools in NEO Environment
+title: Enable Mobile Services App Development Tools in Neo Environment
 description: Find the Mobile Services related extension in SAP Web IDE, enable it, save it, and refresh the browser.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>beginner, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, tutorials>license ]
 time: 5
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal

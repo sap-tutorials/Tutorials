@@ -105,12 +105,14 @@ yo easy-ui5:newmodel
 |  Parameter     | Value
 |  :------------- | :-------------
 |  What is the name of your model, press enter if it is the default model?        | **keep blank**
-|  Which type of model do you want to add?     | **`OData`**
+|  Which type of model do you want to add?     | **`OData v2`**
 |  Which binding mode do you want to use?    | **`TwoWay`**
 |  What is the data source URL?   | **`/V2/Northwind/Northwind.svc/`**
 |  Which count mode do you want to use?   | **`Inline`**
 
 Again, please accept the modification of the manifest file.
+
+> The generator will name the data source based on the URL you specified. You can replace the name in the `manifest.yaml` if you don't like it.
 
 
 [DONE]
@@ -194,8 +196,6 @@ In this step, you will add a detail page that shows some additional information.
       ]
     }
     ```
-
-    !![new route](newroute.png)
 
 3. Change the type of the list items and an event listener in the `webapp/view/Products.view.xml` file.
     ```XML

@@ -5,7 +5,7 @@ auto_validation: true
 author_name: Ludo Noens
 author_profile: https://github.com/lnoenssap
 primary_tag: products>sap-web-ide
-tags: [  tutorial>beginner, topic>mobile, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
+tags: [  tutorial>beginner, topic>mobile, products>sap-cloud-platform, products>sap-web-ide ]
 time: 10
 ---
 

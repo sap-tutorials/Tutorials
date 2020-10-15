@@ -1,5 +1,5 @@
 ---
-title: Enhance an ABAP Core Data Services (CDS) View in SAP NetWeaver 7.5
+title: Enhance an ABAP Core Data Services (CDS) View in ABAP On-Premise
 description: Add features like value help, aggregations, and calculated fields to an existing CDS view
 auto_validation: true
 time: 60
@@ -8,7 +8,7 @@ primary_tag: topic>abap-development
 ---
 
 ## Prerequisites
-**Tutorial**: [Create an ABAP Core Data Services (CDS) View in SAP NetWeaver 7.5](abap-dev-create-cds-view)
+**Tutorial**: [Create an ABAP Core Data Services (CDS) View in ABAP On-Premise](abap-dev-create-cds-view)
 
 ## Details
 ### You will learn
@@ -17,11 +17,11 @@ primary_tag: topic>abap-development
 - How to concatenate two elements, using a built-in function for CDS
 - How to convert currencies using a built-in function for CDS
 - How to use grouping and aggregation
-- How to evaluate conditions using a CASE statement
+
 
 You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
-!![fep-final-enhance](fep-final-enhance.png)
+!![fep-final-enhance](fep-final-enhance-no-CASE.png)
 
 Throughout this tutorial, objects name include a suffix, such as `XXX`. Always replace this with your group number or initials.
 
@@ -30,20 +30,20 @@ Throughout this tutorial, objects name include a suffix, such as `XXX`. Always r
 [ACCORDION-BEGIN [Step 1: ](Add value help)]
 To make the input fields more useful, you will now add input value help to the field **`AgencyID`**.
 
-1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency_U`**. Add the following annotation to your field **`AgencyID`**.
+1. Specify the source of the value help. This works a bit like a join: You need to point to an entity, and field common to both the entity and your CDS view. In this case, you will point to **`AgencyID`** in the CDS entity **`/DMO/I_Agency`**. Add the following annotation to your field **`AgencyID`**.
 
     ```CDS
-    @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency_U', element: 'AgencyID'}  }]
+    @Consumption.valueHelpDefinition: [{  entity: {name: '/DMO/I_Agency', element: 'AgencyID'}  }]
 
     ```
 
-2. You also need to expose this second entity in the OData service. To do this, add the entity **`/DMO/I_Agency_U`** to your service definition, so the complete definition looks like this:
+2. You also need to expose this second entity in the OData service. To do this, add the entity **`/DMO/I_Agency`** to your service definition, so the complete definition looks like this:
 
     ```CDS
     @EndUserText.label: 'Service exposes Travel Data 005'
     define service Z_EXPOSE_TRAVEL_005 {
       expose Z_C_TRAVEL_DATA_005 as Travel;
-      expose /DMO/I_Agency_U as Agency;
+      expose /DMO/I_Agency as Agency;
     }
 
     ```
@@ -154,7 +154,7 @@ You will use a simple one to easily merge two fields. The two fields are provide
         association [1..1] to /DMO/I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
     ```
 
-2. After `CustomerID`, add a comma, then add the function **`concat_with_space`** using auto-complete ( **`Ctrl+Space`** ); then add the alias **`as Addressee`**.
+2. Ensure there is a comma after `CustomerID`, then add the function **`concat_with_space`** using auto-complete ( **`Ctrl+Space`** ); then add the alias **`as Addressee`**.
 
     ```CDS
       concat_with_space(_Customer.Title, _Customer.LastName, 1) as Addressee,
@@ -245,33 +245,6 @@ This displays a two-step grouping. You can browse and expand the companies and b
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Add CASE statement)]
-1. You will now create a bonus scheme, where the most expensive trips priced in US dollars are categorized as "Gold" or "Silver" trips. You can do this by adding the following CASE statement to the SELECT list, assigning the alias **`Premium`**.
-
-    ```CDS
-    case
-     when CurrencyCode = 'USD' and TotalPrice >= 5000 then 'Gold'
-     when CurrencyCode = 'USD' and TotalPrice < 5000 and TotalPrice >= 2000 then 'Silver'
-     else ' '
-     end as Premium,    
-
-    ```
-2. Format, save, and activate ( **`Shift+F1, Ctrl+S, Ctrl+F3`** ).
-
-3. In your Fiori Elements preview, select the **`Premium`** and **`CurrencyCode`** fields in **Settings > Columns**. (You may wish to deselect **`PriceInUSD`** for clarity.) In **Sort**, choose **Currency Code** and **Descending**. Choose **Go**.
-
-    !![step8a-settings-1](step8a-settings-1.png)
-    .
-    !![step8b-settings-columnn](step8b-settings-columns.png)
-    .
-    !![step8c-settings-sort](step8c-settings-sort.png)
-
-The updated preview should look like this:
-
-    !![step8d-fep](step8d-fep.png)
-
-[DONE]
-[ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 8: ](Check code)]
@@ -328,12 +301,6 @@ define view Z_C_TRAVELS_xxx
       @ObjectModel.text.association: '_CurrencyText'
       CurrencyCode,
 
-      //Evaluate Premium status for customers paying in USD
-      case
-      when CurrencyCode = 'USD' and TotalPrice >= 5000 then 'Gold'
-      when CurrencyCode = 'USD' and TotalPrice < 5000 and TotalPrice >= 2000 then 'Silver'
-      else ' '
-      end                                                       as Premium,
 
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.90
