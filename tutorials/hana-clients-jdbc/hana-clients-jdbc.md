@@ -64,9 +64,9 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
     The trace options are further described at [JDBC Tracing and Trace Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/4033f8e603504c0faf305ab77627af03.html).
 
 
-3. Run the following after replacing `your_host` and `your_port` to execute a simple query:
+3. Run the following after replacing `your_host` and `your_port` to execute a simple query:  
 
-    ```Shell
+    ```Shell (Windows)
     java -jar C:\SAP\hdbclient\ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
     ```  
 
@@ -104,9 +104,13 @@ See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded
     public class JavaQuery {
         public static void main(String[] argv) {
             Connection connection = null;
-            try {  //encrypt and validateCertificate should be true for HANA Cloud connections
+            try {  
                 connection = DriverManager.getConnection(  
                     //"jdbc:sap://10.11.123.134:39015/?encrypt=true&validateCertificate=false", "User1", "Password1");
+                    //As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
+                    //validateCertificate should be set to false when connecting
+                    //to an SAP HANA, express edition instance that uses a self-signed certificate.
+
                     //The below URL gets the host, port and credentials from the hdbuserstore.
                     "jdbc:sap://dummy_host:0/?KEY=USER1UserKey&encrypt=true&validateCertificate=false");  
             }
@@ -165,15 +169,15 @@ Eclipse is a popular integrated development environment (IDE) for Java applicati
 
 1. Unzip the downloaded file and start the Eclipse IDE.  
 
+    >Eclipse shows views appropriate to a certain task.  For Java development, it provides a Java perspective.  You may wish to change the perspective to the Java perspective via **Window | Perspective | Open Perspective | Java**
+
+>![Java Perspective](perspective.png)
+
 2. Create a new Java project via the **File | New | Java Project** wizard.
 
     Add the JDBC driver as an external jar file.  
 
     ![Create project](externalJar.png)
-
-    >Eclipse shows views appropriate to a certain task.  For Java development, it provides a Java perspective.  You may wish to change the perspective to the Java perspective via **Window | Perspective | Open Perspective | Java**
-
-    >![Java Perspective](perspective.png)
 
 2. Add a new Java class named `JavaQuery` and replace its contents with the previous code.
 
@@ -196,23 +200,31 @@ The Eclipse IDE for Enterprise Java Developers includes a database source explor
 The following steps demonstrate how to configure it to enable connections to SAP HANA.
 
 
-1. Open the Data Source Explorer.  
+1. Open the Data Source Explorer by choosing **Window | Show View | Other | Data Management | Data Source Explorer**
 
     ![Data Source Explorer](data-explorer.png)
 
-2. Create a profile for SAP HANA.
+2. Create a connection profile for SAP HANA.
 
     ![Data Source](datasource1.png)
 
-3. Specify where to find the SAP HANA JDBC driver.  
+3. Left-click on **New Driver Definition**.
+
+    ![edit definition](editDefinition.png)
+
+4. Specify where to find the SAP HANA JDBC driver.  
 
     ![Data Source](datasource2.png)
 
-4. Specify the driver class name and the Connection URL.  
+5. Specify the driver class name as `com.sap.db.jdbc.Driver` and the Connection URL.  
 
-    ![Data Source](datasource3.png)
+    ```Java
+    jdbc:sap://dummy_host:0/?KEY=USER1UserKey&encrypt=true&validateCertificate=false
+    ```
 
-5. Browse the database catalog and execute SQL queries.
+    ![Data Source](datasource3.png)  
+
+6. Browse the database catalog and execute SQL queries.
 
     ![Results from Data Source Explorer](results-from-data-source-explorer.png)
 
