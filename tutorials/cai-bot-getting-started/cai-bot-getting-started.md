@@ -24,6 +24,9 @@ Create an account with your email address, or with your [GitHub](http://github.c
 
 ![Sign up](Signup.png)
 
+<img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cai-bot-getting-started/Signup.png" /> 
+
+
 You will get an email with a link to validate your account.
 
 [DONE]
