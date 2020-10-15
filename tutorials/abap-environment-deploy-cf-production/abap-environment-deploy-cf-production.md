@@ -249,7 +249,7 @@ author_profile: https://github.com/mervey45
   4. To add `deploy config` details enter **`npx fiori add deploy-config`**.
 
      Add following information:
- 
+
       - Please choose the target: ABAP
       - Is this an ABAP Cloud System?: Y
       - Destination: press enter for default
@@ -286,7 +286,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 8: ](Create IAM App and business catalog)]
 
-  1. In Eclipse right-click on your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
+  1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
 
       ![iam](iam.png)
 
@@ -320,7 +320,7 @@ author_profile: https://github.com/mervey45
 
       **Save** and **activate** your IAM app.
 
-  7. Right-click on your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
+  7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
 
       ![catalog](catalog.png)
 
@@ -380,7 +380,7 @@ author_profile: https://github.com/mervey45
 
       ![url](url3.png)
 
-  4. Login to ABAP Trial.
+  4. Log in to ABAP Trial.
 
       ![url](url4.png)
 
