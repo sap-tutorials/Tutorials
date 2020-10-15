@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Deploy CAP Java App to SAP Cloud Platform
 description: Deploy the recently built bookstore application to SAP Cloud Platform using the Cloud Foundry CLI.
 auto_validation: true

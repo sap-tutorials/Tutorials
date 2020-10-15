@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Reuse a CAP Java Service
 description: Create a new application and reuse the existing CAP Java service.
 auto_validation: true

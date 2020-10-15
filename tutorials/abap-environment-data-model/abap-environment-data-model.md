@@ -50,18 +50,15 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. Define root view for `ZI_TRAVEL_M_XXX` and database table as source.
 
     ```ABAP
-    define root view ZI_TRAVEL_M_XXX as select from ztravel_xxx            
+    define root view entity ZI_TRAVEL_M_XXX as select from ztravel_xxx            
     ```
 
   6. Your result should look like this. Replace your code with following:
 
     ```ABAP
-    @AbapCatalog.sqlViewName: 'ZVI_TRAVEL_M_XXX'
-    @AbapCatalog.compiler.compareFilter: true
-    @AbapCatalog.preserveKey: true
-    @AccessControl.authorizationCheck: #CHECK
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
     @EndUserText.label: 'Travel data - XXX'
-    define root view ZI_TRAVEL_M_XXX
+    define root view entity ZI_TRAVEL_M_XXX
 
       as select from ztravel_xxx as Travel
 
@@ -81,7 +78,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           booking_fee,
           @Semantics.amount.currencyCode: 'currency_code'
           total_price,
-          @Semantics.currencyCode: true
           currency_code,
           overall_status,
           description,
@@ -144,7 +140,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
     ```ABAP
     @EndUserText.label: 'Travel projection view - Processor'
-    @AccessControl.authorizationCheck: #CHECK
+    @AccessControl.authorizationCheck: #NOT_REQUIRED
 
     @UI: {
      headerInfo: { typeName: 'Travel', typeNamePlural: 'Travels', title: { type: #STANDARD, value: 'TravelID' } } }
@@ -226,7 +222,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           last_changed_at    as LastChangedAt
 
     }
-
     ```
 
   7. Save and activate.

@@ -23,8 +23,6 @@ author_profile: https://github.com/mervey45
 - How to deploy applications
 - How to check BSP library in Eclipse
 - How to create IAM apps and business catalogs
-- How to create index.html
-- How to run index.html
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Assign role collection to user)]
@@ -161,12 +159,12 @@ author_profile: https://github.com/mervey45
   5. Configure data source, system and service:
      - Data source: **Connect to SAP System**
      - System: **`New System`**
-     - ABAP Environment: **`abap-cloud-default_abap-trial`**
-     - Service: **`ZUI_C_TRAVEL_M_XXX`**
+     - ABAP Environment: **`default_abap-trial`**
+     - Service: **`ZUI_C_TRAVEL_M_XXX(1) - odata v2`**
 
      Click **Next >**.
 
-     The destination service is: **`abap-cloud-<your_abap_trial_instance>(SCP)`**.
+     A destination for the `abap-trial` service instance is generated automatically. The naming convention is `abap-cloud-<your abap-trial service instance>`, for example, `abap-cloud-abap-trial`.
 
     ![object](studio19.png)
 
@@ -175,13 +173,13 @@ author_profile: https://github.com/mervey45
     ![object](studio20.png)
 
   7. Configure project attributes:
-     - Name: **`ztravel_app_xxx`**
+     - Name: **`ztravelappxxx`**
      - Title: **Travel App XXX**
      - Description: **A Fiori application.**
 
      Click **Finish**.
 
-    ![object](studio21.png)
+    ![object](studio211.png)
 
     HINT: Your **application name must** begin with a `z letter` and **must** be in **lowercase letters**.
 
@@ -192,31 +190,27 @@ author_profile: https://github.com/mervey45
 
   1. Close the wizard.
 
-      ![run](studio22.png)
+      ![run](studio221.png)
 
-  2. Press the run button and select press button for **`Start ztravel_app_xxx`**  to run your SAP Fiori application.
+  2. Press the run button and select press button for **`Start ztravelappxxx`**  to run your SAP Fiori application.
 
-      ![run](studio24.png)
+      ![run](studio241.png)
 
       HINT: An alternative to run the application is to open the terminal and enter: `npm start`.
 
-  3. Click **Expose and Open**.
+  3. Click **Open in New Tab**.
 
-      ![run](studio25.png)
+      ![run](studio251.png)
 
-  4. Enter **travel** and press enter.
-
-      ![run](studio26.png)
-
-  5. Select **`test/`**.
+  4. Select **`test/`**.
 
       ![run](studio27.png)
 
-  6. Select **`flpSandbox.html`**.
+  5. Select **`flpSandbox.html`**.
 
       ![run](studio28.png)
 
-  7. Now your SAP Fiori application runs. Select your application **Travel App XXX**.
+  6. Now your SAP Fiori application runs. Select your application **Travel App XXX**.
 
       ![run](studio29.png)
 
@@ -233,9 +227,9 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 6: ](Deploy your application)]
 
-  1. Go back to SAP Business Application Studio, select projects, right-click on your project **`ztravel_app_xxx`** and select **Open in Terminal**.
+  1. Go back to SAP Business Application Studio, select projects, right-click your project **`ztravelappxxx`** and select **Open in Terminal**.
 
-      ![deploy](deploy.png)
+      ![deploy](deploy1.png)
 
   2. To add Fiori Launchpad content use this command, enter **`npx fiori add flp-config`**.
 
@@ -246,7 +240,7 @@ author_profile: https://github.com/mervey45
        - Title: Travel App XXX
        - Subtitle (optional): press enter
 
-       ![deploy](deploy2.png)
+       ![deploy](deploy21.png)
 
   3.  Open eclipse, search your package **`ZTRAVEL_APP_XXX`** and open it. Open your transport organizer to see your transport request. Copy your transport request for later use. You can find your **transport request** underneath the **Modifiable** folder.
 
@@ -264,7 +258,7 @@ author_profile: https://github.com/mervey45
       - Transport Request: **`<your_transport_request>`**
       - Generate standalone index.html during deployment: y
 
-      ![deploy](deploy4.png)
+      ![deploy](deploy41.png)
 
       The `ui5-deploy.yaml` will be generated as part of this `deploy config` command.
 
@@ -272,7 +266,7 @@ author_profile: https://github.com/mervey45
      When prompted, check deployment configuration and press y.
      Open the URL at the end of the deployment log in browser to preview the application.
 
-      ![deploy](deploy5.png)
+      ![deploy](deploy51.png)
 
       When the deployment is successful, you will get these two information back as a result: **UIAD details** and **deployment successful**.
 
@@ -292,7 +286,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 8: ](Create IAM App and business catalog)]
 
-  1. In Eclipse right-click on your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
+  1. In Eclipse right-click your package **`ZTRAVEL_APP_XXX`** and select **New** > **Other Repository Object**.
 
       ![iam](iam.png)
 
@@ -326,7 +320,7 @@ author_profile: https://github.com/mervey45
 
       **Save** and **activate** your IAM app.
 
-  7. Right-click on your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
+  7. Right-click your package **`ZTRAVEL_APP_XXX`** and select  **New** > **Other Repository Object**.
 
       ![catalog](catalog.png)
 
@@ -371,87 +365,30 @@ author_profile: https://github.com/mervey45
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Create index.html and run SAP Fiori application)]
+[ACCORDION-BEGIN [Step 9: ](Run SAP Fiori application)]
 
-  1. Go back to SAP Business Application Studio, select projects and open your project **`ztravel_app_xxx`**.Right-click your **`webapp`** folder and select **New File**.
+  1. Go back to SAP Business Application Studio and deploy your changes. Therefore right-click your project **`ztravelappxxx`** and select **Open in Terminal**.
 
-      ![index](index.png)
-
-  2. Create a new file:
-     - Name: **`index.html`**
-
-      ![run](index2.png)
-
-      Click **OK**.
-
-  3. Copy and paste following code:
-
-    ```ABAP
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BonusPlan_MD_CXT_TECH_Standalone</title>
-    <!-- Bootstrapping UI5 -->
-    <script id="sap-ui-bootstrap"
-            src="resources/sap-ui-core.js"
-            data-sap-ui-libs="sap.m"
-            data-sap-ui-theme="sap_bluecrystal"
-            data-sap-ui-compatVersion="edge"
-            data-sap-ui-preload="async"
-            data-sap-ui-resourceroots='{"ztravel_app_xxx": "."}'
-            data-sap-ui-frameOptions="trusted">
-    </script> 
-    <script>
-        sap.ui.getCore().attachInit(function () {
-            sap.ui.require([
-                "sap/m/Shell",
-                "sap/ui/core/ComponentContainer"
-            ], function (Shell, ComponentContainer) {
-                // initialize the UI component
-                new Shell({
-                    app: new ComponentContainer({
-                        height : "100%",
-                        name : "ztravel_app_xxx"
-                    })
-                }).placeAt("content");
-            });
-            });
-     </script>
-    </head>
-    <!-- UI Content -->
-    <body class="sapUiBody" id="content">
-    </body>
-    </html>
-
-    ```
-
-  5. Save **`index.html`**.
-
-  6. Deploy your changes, therefore right-click on your project **`ztravel_app_xxx`** again and select **Open in Terminal**.
-
-    ![url](url.png)
+    ![url](url1.png)
 
 
-  7.  Enter **`npm run deploy`**. When prompted, check deployment configuration and press y.
+  2. Enter **`npm run deploy`**. When prompted, check deployment configuration and press y.
 
-      ![url](url2.png)
+      ![url](url21.png)
 
-  7. Press **`CTRL and click on the following link`** to open the URL in a browser.
+  3. Press **`CTRL and click the following link`** to open the URL in a browser.
 
       ![url](url3.png)
 
-  8. Login to ABAP Trial.
+  4. Log in to ABAP Trial.
 
       ![url](url4.png)
 
-  9. Click **Go**.
+  5. Click **Go**.
 
       ![url](url5.png)
 
- 10. Check your result.
+  6. Check your result.
 
       ![url](url6.png)
 

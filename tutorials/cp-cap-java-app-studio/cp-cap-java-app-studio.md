@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Set Up SAP Business Application Studio for CAP Java
 description: Set up the SAP Business Application Studio and create a first service implementation.
 auto_validation: true
