@@ -15,7 +15,7 @@ author_profile: https://github.com/mervey45
 - You have downloaded Eclipse Photon or Oxygen and installed ABAP Development Tools (ADT). See <https://tools.hana.ondemand.com/#abap>.
 
 ## Details
-### You will learn  
+### You will learn   
   - How to create CDS based data model
   - How to create projection view
   - How to create service definition
@@ -50,7 +50,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   5. Define root view for `ZI_TRAVEL_M_XXX` and database table as source.
 
     ```ABAP
-    define root view entity ZI_TRAVEL_M_XXX as select from ztravel_xxx            
+    define root view entity ZI_TRAVEL_M_XXX as select from ztravel_xxx as Travel       
     ```
 
   6. Your result should look like this. Replace your code with following:
