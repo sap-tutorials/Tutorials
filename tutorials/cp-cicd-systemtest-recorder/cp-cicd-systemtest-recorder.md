@@ -6,7 +6,7 @@ time: 60
 tags: [ tutorial>beginner, topic>cloud, topic>sapui5, products>sap-fiori]
 primary_tag: products>sap-cloud-platform
 author_name: Sarah Noack
-author_profile: https://github.com/SarahNoack
+author_profile: https://github.com/SarahLendle
 ---
 
 ## Prerequisites
@@ -16,7 +16,7 @@ author_profile: https://github.com/SarahNoack
 -	You have installed [Visual Studio Code](https://code.visualstudio.com/).
 -	You have installed UIVeri5 using the following command:
     ```
-    npm install@ui5/uiveri5 -g
+    npm install @ui5/uiveri5 -g
     ```
 -	Your Google Chrome version is up to date. See [Update Google Chrome](https://support.google.com/chrome/answer/95414?co=GENIE.Platform%3DDesktop&hl=en).
 -	You have a [Jenkins](https://jenkins.io/) instance that is preconfigured for using project "Piper". See [Configuration](https://sap.github.io/jenkins-library/configuration/).

@@ -172,7 +172,7 @@ Open the file `pom.xml` in the project's root directory and update the build pro
 
 You'll have to update the properties `jdbc.host`, and `jdbc.port` to match the actual connection data of your database instance.
 
-> **Note:** Check out the tutorial [Connect to SAP HANA, express edition using JDBC](hxe-connect-hxe-using-jdbc) for information about which values to use for `jdbc.host`, and `jdbc.port`.
+> **Note:** Check out step 1 of the tutorial [Create a User, Tables and Import Data Using SAP HANA HDBSQL](hana-clients-hdbsql) for information about which values to use for the database host (`jdbc.host`), and the database port (`jdbc.port`).
 
 You'll also have to update the properties `jdbc.username` and `jdbc.password` with valid user credentials.
 

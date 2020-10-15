@@ -12,6 +12,12 @@ author_profile: https://github.com/Paolaufer
 
 ## Prerequisites
  - You have an SAP HANA service (SAP HANA as a Service or SAP HANA Cloud) available in your space.
+    To create a new instance in your trial account:
+    1. Go to your space in the SAP Cloud Platform cockpit.
+    2. Go to **Service Marketplace**.
+    3. Select **SAP HANA Schemas & HDI Containers (SAP HANA Trial)**.
+    4. Select the **Instances** tab.
+    5. Click **Create New Instance**.
 
 
 ## Details
