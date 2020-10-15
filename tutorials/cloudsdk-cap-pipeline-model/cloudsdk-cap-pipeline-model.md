@@ -11,7 +11,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 ## Prerequisites
  - You have set up CI/CD for the SAP Cloud SDK. See [Set Up Continuous Integration and Delivery for SAP Cloud SDK](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html).
- - You have installed the latest LTS release of [Node JS](https://nodejs.org/en).
+ - You have installed the latest LTS release of [Node.js](https://nodejs.org/en).
  - You have installed [Apache Maven](https://maven.apache.org/).
  - You have installed [Java](https://www.java.com/en/).
  - You have an account and repository in [GitHub](https://github.com/).
@@ -36,7 +36,7 @@ The tutorial consists of 3 main stages:
 
 1. Prepare your setup, create a sample project, and set up your CI/CD pipeline.
 
-2. Start the Jenkins build server, and create and run a job for your pipeline.
+2. Start the Jenkins build server, create and run a job for your pipeline.
 
 3. Add production deployment to your CI/CD pipeline.
 
