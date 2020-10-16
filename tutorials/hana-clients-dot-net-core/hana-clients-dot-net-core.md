@@ -35,7 +35,7 @@ If the .NET Core SDK is not installed, download it from [Download .NET](https://
 
 On Linux, follow the instructions for the appropriate Linux version such as [openSUSE 15 Package Manager - Install .NET Core](https://docs.microsoft.com/en-us/dotnet/core/install/linux-package-manager-opensuse15).
 
-In order for the shell to recognize that the .NET Core SDK was installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
+In order for the shell to recognize that the .NET Core SDK is installed and for any `dotnet` commands in future steps to be recognized, a new shell window needs to be opened.
 
 >For further details on supported versions, see SAP Note [2939501 - SAP HANA Client Supported Platforms for 2.5 and later](https://launchpad.support.sap.com/#/notes/2939501).
 
@@ -53,9 +53,9 @@ In order for the shell to recognize that the .NET Core SDK was installed and for
 
     On Linux or Mac, you need to modify the `HDBDOTNETCORE` variable to point to the location of the `libadonetHDB.so` or `libadonetHDB.dylib` file before creating a new console app. There are two ways to set an environment variable.
 
-    You can either set it using the export command on a Shell window or in a user's profile script. When an environment variable is modified from the Shell, its existence ends when the user's sessions ends. This could become an issue when we want the variable to persist across multiple user sessions.
+    You can either set it using the export command on a Shell window or in a user's profile script. When an environment variable is modified from the Shell, its existence ends when the user's sessions ends. This could become an issue when you want the variable to persist across multiple user sessions.
 
-    Hence, we will choose the second option to set `HDBDOTNETCORE`.
+    Hence, choose the second option to set `HDBDOTNETCORE`.
 
     Open an editor to edit the file `.bash_profile` or `.profile`.
 

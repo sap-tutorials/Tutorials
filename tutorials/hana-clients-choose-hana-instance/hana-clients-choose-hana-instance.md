@@ -20,6 +20,10 @@ This tutorial will provide guidance on setting up an instance of [SAP HANA](http
 
 For more information on SAP HANA, consult [What Is SAP HANA](https://help.sap.com/viewer/eb3777d5495d46c5b2fa773206bbfb46/latest/en-US/d3b1adcdbb571014a93eff11ad9a1d89.html).
 
+>Note, for connections from additional sources such as SAP Analytics Cloud, Jupyter Notebooks, SAP Business Warehouse, SAP Data Intelligence Cloud, and SAP ERP Central Component see [Connection Guides for SAP HANA Cloud](https://saphanajourney.com/hana-cloud/learning-track/connecting-guides-for-sap-hana-cloud).
+
+>---
+
 >**IMPORTANT**: Complete the first 3 tutorials, and then you can select any of the following tutorials about connecting with different client interfaces.
 
 ---
@@ -59,7 +63,7 @@ Here are a few benefits of using SAP HANA Cloud:
 
 Here are a few differences between SAP HANA Cloud and an on-premise version:  
 
-* Every SAP HANA Cloud instance is one SAP HANA database.  An on-premise version can have multiple databases per install which is known as multi-tenant.  
+* Every SAP HANA Cloud instance is one SAP HANA database.  An on-premise version can have multiple databases per install, which is known as multi-tenant.  
 
 * Connections to an SAP HANA Cloud instance must be secure and require a minimum SAP HANA client version of 2.4.167.
 
@@ -140,7 +144,7 @@ Congratulations! You have connected to SAP HANA Cloud and performed a few querie
 
 SAP provides a free streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).
 
-SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs as described at [SAP HANA, express edition - Implement](https://help.sap.com/viewer/product/DRAFT/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task).  In terms of availability, a choice between either the server or the server + applications can be made.  The applications includes the SAP HANA cockpit, the SAP HANA database explorer and the SAP HANA Web IDE.  Further details about a specific version can be found in the [release notes](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup).    
+SAP HANA runs on a few versions of Linux.  SAP HANA, express edition provides virtual machine images that can be run on Microsoft Windows, macOS and Linux machines as well as binary installs as described at [SAP HANA, express edition - Implement](https://help.sap.com/viewer/product/DRAFT/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task).  In terms of availability, a choice between either the server or the server + applications can be made.  The applications include the SAP HANA cockpit, the SAP HANA database explorer and the SAP HANA Web IDE.  Further details about a specific version can be found in the [release notes](https://search.sap.com/search.html?t=%22SAP%20HANA%2C%20express%20edition%202.0%20SPS%200%25%20Revision%22&n=1&s=boost&src=defaultSourceGroup).    
 
 Choose an option and proceed to install SAP HANA, express edition.  The server-only install, which requires less memory, is sufficient to complete the tutorials in this mission.  Be sure to note the SAP HANA database master password, as it will be needed later for connecting.
 
@@ -170,7 +174,7 @@ The following steps will demonstrate connecting to and examining a SAP HANA, exp
 
     Notice that the database being connected to is SYSTEMDB.
 
-    The example above uses localhost since hdbsql is running on the same machine that the database is trying to connect to.  The host name `hxehost`, is seen in the terminal above.  
+    The example above uses localhost since hdbsql is running on the same machine that the database is trying to connect to.  The host name, `hxehost`, is seen in the terminal above.  
 
     >If hdbsql is not found and you are logged in with another user, try connecting as the user `hxeadm` and run the command again.
     ```Shell

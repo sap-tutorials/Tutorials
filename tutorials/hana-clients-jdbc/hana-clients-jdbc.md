@@ -208,7 +208,7 @@ The following steps demonstrate how to configure it to enable connections to SAP
 
     ![Data Source](datasource1.png)
 
-3. Left-click on **New Driver Definition**.
+3. Select **New Driver Definition**.
 
     ![edit definition](editDefinition.png)
 
