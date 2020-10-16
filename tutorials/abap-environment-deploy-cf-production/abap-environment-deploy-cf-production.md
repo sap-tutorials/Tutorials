@@ -11,6 +11,7 @@ author_profile: https://github.com/mervey45
 
 ## Prerequisites  
 - You need a SAP Cloud Platform ABAP Environment trial user or a license.
+- In a licensed system, the business catalog `SAP_A4C_BC_DEV_UID_PC` (Development - UI Deployment) needs to be assigned to a business role of the developer user. For an existing ABAP systems, the business catalog needs to be added manually to the existing developer business role.
 
 
 ## Details
@@ -35,29 +36,37 @@ author_profile: https://github.com/mervey45
 
       ![assign role collection](bas2.png)
 
-  3. Click **Trust Configuration** to set up your trust.
+  3. Select **Subscriptions** and click **SAP Business Application Studio**.
+
+      ![assign role collection](bas21.png)
+
+  4. Click **Subscribe**. You have now subscribed the SAP Business Application Studio and can assign the corresponding role to your user.
+
+      ![assign role collection](bas22.png)
+
+  5. Click **Trust Configuration** to set up your trust.
 
       ![assign role collection](bas3.png)
 
       HINT: If you are using a licensed system, make sure you have the trust administrator role assigned to your user.
 
-  4. Select **sap.default**.
+  6. Select **sap.default**.
 
       ![assign role collection](bas4.png)
 
-  5. Enter your e-mail address and click **Show Assignments**.
+  7. Enter your e-mail address and click **Show Assignments**.
 
       ![assign role collection](bas5.png)
 
-  6. Click **Assign Role Collection** .
+  8. Click **Assign Role Collection** .
 
       ![assign role collection](bas6.png)
 
-  7. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
+  9. Select **`Business_Application_Studio_Developer`** and click **Assign Role Collection**.
 
       ![assign role collection](bas7.png)
 
-  8. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
+  10. Check your result. Now your user should have the **`Business_Application_Studio_Developer`** role collection assigned.
 
       ![assign role collection](bas8.png)
 
@@ -192,7 +201,7 @@ author_profile: https://github.com/mervey45
 
       ![run](studio221.png)
 
-  2. Press the run button and select press button for **`Start ztravelappxxx`**  to run your SAP Fiori application.
+  2. Press the run button on the left side and select the **`Start ztravelappxxx`** run button to start your SAP Fiori application.
 
       ![run](studio241.png)
 
@@ -251,7 +260,7 @@ author_profile: https://github.com/mervey45
      Add following information:
 
       - Please choose the target: ABAP
-      - Is this an ABAP Cloud System?: Y
+      - Is this an SAP Cloud Platform system?: Y
       - Destination: press enter for default
       - Name: press enter for default
       - Package: **`ztravel_app_xxx`**
@@ -276,7 +285,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 7: ](Check BSP library and SAP Fiori Launchpad app descriptor item in Eclipse)]
 
-  1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**.
+  1. Open Eclipse and check the **BSP library** and **SAP Fiori Launchpad app descriptor item folder** in your package **`ZTRAVEL_APP_XXX`**. If you are not able to see BSP applications and SAP Fiori Launchpad app description items, refresh your package `ZTRAVEL_APP_XXX` by pressing `F5`.
 
     ![library](library.png)
 
