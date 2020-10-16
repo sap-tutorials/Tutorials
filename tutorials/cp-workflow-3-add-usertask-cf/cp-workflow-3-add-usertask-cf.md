@@ -55,6 +55,8 @@ Define the form, which is shown when the task is opened in the My Inbox.
 
 3. Choose **Create**.
 
+    The form file is created in the **forms** folder under **onboarding** | **approvals**.
+
 4. Once the form editor opens, add form data by choosing **Add Field**.
 
     These expressions refer to the attributes in the JSON file that we have created in the previous step. The context path refers to the task context.
