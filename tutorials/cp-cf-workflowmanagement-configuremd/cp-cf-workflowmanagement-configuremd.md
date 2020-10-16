@@ -36,7 +36,7 @@ You configure the auto approval policy using this tutorial. This policy is used 
 
     !![PFC](cp-cf-wm-configuredecision-home2.png)
 
-    !![Capital Expenditure](cp-cf-wm-discover-importedcapex.png)
+    !![Capital Expenditure](cp-cf-wm-discover-importedcapex0.png)
 
 3. Choose the **Determine All Approvers** decision.
 
