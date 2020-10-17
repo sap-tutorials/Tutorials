@@ -90,7 +90,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
     The results are shown in the screenshot below:
     ![Result of copying source](hana-client-in-go-src.png)
 
-4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  Preferably, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bashrc` file so these values persist and can be seen by other applications such as Visual Studio Code.
+4. Set the `CGO_LDFLAGS` environment variable to point to the location of `libdbcapiHDB` library as shown below.  Preferably, set these values in the Microsoft Windows environment variables dialog or on Linux/Mac in the `.profile` or `.bash_profile` file so these values persist and can be seen by other applications such as Visual Studio Code.
 
     ```Shell (Windows)
     set CGO_LDFLAGS=c:\sap\hdbclient\libdbcapiHDB.dll
@@ -188,7 +188,7 @@ The SAP HANA Client interface for Go, like the other SAP HANA client interfaces,
 
     Once the `goQuery.go` file has been updated, save and close the file.
 
-3. On Linux or Mac, add the `libdbcapiHDB` library to the path so that the Go driver can find it:
+3. On Linux or Mac, add the `libdbcapiHDB` library to the path so that the Go driver can find it.  You may do this by adding the following lines to the `.profile` or `.bash_profile` files:
 
     ```Shell (Linux)
     export LD_LIBRARY_PATH=~/sap/hdbclient

@@ -36,7 +36,7 @@ java -version
 javac -version
 ```
 
-If these commands fail, ensure that the folder they are located in is included in your path.  
+If these commands fail, ensure that the folder they are located in, is included in your path.  
 
 [DONE]
 [ACCORDION-END]
@@ -57,9 +57,9 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
 
 2. Run the command again without the `-v` to open the configuration window, which provides driver information and the ability to set trace information:
 
-    >The JDBC driver has a different version number than the rest of the SAP HANA interfaces.
-
     ![JDBC-Driver-Trace-Config](JDBC-Driver-Trace-Config.png)
+
+    >The JDBC driver has a different version number than the rest of the SAP HANA interfaces.
 
     The trace options are further described at [JDBC Tracing and Trace Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/4033f8e603504c0faf305ab77627af03.html).
 
@@ -73,6 +73,7 @@ The SAP HANA driver for JDBC is a [Multi-Release JAR file](https://openjdk.java.
     ```Shell (Linux or Mac)
     java -jar ~/sap/hdbclient/ngdbc.jar -u USER1,Password1 -n your_host:your_port -o encrypt=True -o validatecertificate=false -c "SELECT  * FROM HOTEL.CUSTOMER"
     ```
+    ![Link text e.g., Destination screen](java-driver-result.png)
 
 See [JDBC Command-Line Connection Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/9ac4e1eedbbc4961bce0db6ad64b3612.html) for additional details on parameters of `ngdbc.jar`.
 
@@ -173,7 +174,7 @@ Eclipse is a popular integrated development environment (IDE) for Java applicati
 
 >![Java Perspective](perspective.png)
 
-2. Create a new Java project via the **File | New | Java Project** wizard.
+2. Create a new Java project named `JavaQuery` via the **File | New | Java Project** wizard.
 
     Add the JDBC driver as an external jar file.  
 
@@ -222,11 +223,20 @@ The following steps demonstrate how to configure it to enable connections to SAP
     jdbc:sap://dummy_host:0/?KEY=USER1UserKey&encrypt=true&validateCertificate=false
     ```
 
-    ![Data Source](datasource3.png)  
+    ![Data Source](datasource3.png)
+
+    Validate the settings by selecting `Test Connection` before finishing the wizard.
 
 6. Browse the database catalog and execute SQL queries.
 
     ![Results from Data Source Explorer](results-from-data-source-explorer.png)
+
+    >To execute SQL queries in eclipse, open SQL Scrapbook. SQL Scrapbook is similar to a SQL command line and allows you to query tables from inside eclipse.
+
+    >It can be opened by selecting the SQL Scrapbook icon from the right corner of the Data Source Explorer window.
+
+    >![Link text e.g., Destination screen](SQL_Scrapbook.png)
+
 
 Congratulations! You have now created and debugged a Java application that connects to and queries an SAP HANA database.
 
