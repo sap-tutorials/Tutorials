@@ -29,7 +29,7 @@ The following steps will create sample objects for a hotel database.
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;
     ```
 
-    For additional details see on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_03_QRC/en-US/20d5ddb075191014b594f7b11ff08ee2.html).
+    For additional details see on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html).
 
 
     >The following statement deletes the user in case it already exists or if you wish to remove the user after completing the mission.  Make sure you really wish to delete USER1 and the objects it owns before proceeding, as this operation cannot be undone.

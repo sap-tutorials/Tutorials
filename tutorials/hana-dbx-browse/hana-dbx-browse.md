@@ -119,7 +119,7 @@ primary_tag: products>sap-hana-cloud
 
     ![Object Displayed In Catalog](ObjectOpenedInCatalog.png)
 
-2.  A list of objects that make use of a selected object can be found using the **Where-Used Browser**.  
+2.  A list of objects that make use of a selected object can be found using the **Where-Used Browser** or in more recent versions **Find Dependencies** menu item.  
 
     Right-click on the ROOM table and choose **Where-Used Browser**.
 

@@ -67,8 +67,6 @@ The image below shows the SAP HANA database explorer running in SAP HANA Cloud.
 
 ![latest available version in HANA Cloud](dbx-hana-cloud-version.png)
 
-The first 6 digits of the version number above (200723) indicate the year (2020), month (07 - July) and day (23).
-
 The image below shows the SAP HANA database explorer running in an on-premise installation.  
 
 ![latest available version for on-premise](dbx-on-premise-version.png)
