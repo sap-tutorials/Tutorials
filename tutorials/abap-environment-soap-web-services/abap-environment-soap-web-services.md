@@ -260,7 +260,7 @@ author_profile: https://github.com/mervey45
 
       ![model](model5.png)
 
-  7. Your project explorer should look like following. If you don't see the changes yet, select your package `ZSC_SOAP_XXX` press `F5` to refresh.
+  7. Your project explorer should look like following. If you don't see the changes yet, select your package `ZSC_SOAP_XXX` and press `F5` to refresh.
 
       ![model](result.png)
 
