@@ -202,7 +202,7 @@ Run your new application to test it.
 
     !![Open Run Configurations](06-01 AppStudio Run Configurations_.jpg)
 
-2. Click **+** to create a new **Run Configurations**. and select **`BusinessPartners`**.
+2. Click **+** to create a new **Run Configurations**.
 
     !![Create new run configuration](06-02 AppStudio Run Configurations_.jpg)
 
