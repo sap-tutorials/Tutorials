@@ -201,7 +201,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 2: ](Create ABAP package)]
 
-  1.  Open Eclipse, logon to your trial account and right-click **`ZLOCAL`**, select **New** > **ABAP Package**.
+  1.  Open Eclipse, log on to your trial account and right-click **`ZLOCAL`**, select **New** > **ABAP Package**.
 
       ![package](package.png)
 
