@@ -348,7 +348,7 @@ This step shows a simple example of a web service consumption.
   9. Add following response message type to your coding:
 
     ```ABAP
-        out->write( |{ response-res_msg_type-price } { response-res_msg_type-currency }| ).
+    out->write( |{ response-res_msg_type-price } { response-res_msg_type-currency }| ).
     ```   
 
      Save and activate.
