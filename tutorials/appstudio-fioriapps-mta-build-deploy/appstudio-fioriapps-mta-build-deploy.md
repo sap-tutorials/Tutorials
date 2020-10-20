@@ -42,7 +42,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
     !![Command palette build mta](01-03 AppStudio Command Palette Build MTA-1_.jpg)
 
-    >The build process creates a multitarget archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `DemoFiori/mta_archives` folder.
+    >The build process creates a multitarget archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `FioriDemo/mta_archives` folder.
 
     !![terminal mbt build results](07-02-02 AppStudio Terminal MBT Build_.jpg)
 
