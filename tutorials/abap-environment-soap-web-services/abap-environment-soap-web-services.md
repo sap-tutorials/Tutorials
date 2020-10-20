@@ -201,7 +201,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 2: ](Create ABAP package)]
 
-  1.  Open Eclipse, log on to your trial account and right-click **`ZLOCAL`**, select **New** > **ABAP Package**.
+  1.  Open Eclipse, logon to your trial account and right-click **`ZLOCAL`**, select **New** > **ABAP Package**.
 
       ![package](package.png)
 
@@ -260,15 +260,15 @@ author_profile: https://github.com/mervey45
 
       ![model](model5.png)
 
-  7. Your project explorer should look like following. If you don't see the changes yet, select your package `ZSC_SOAP_XXX` and press `F5` to refresh.
+  7. Open your service consumption model `ZSC_SCM_XXX` and **activate** it.
+
+    ![model](activate.png)
+
+  8. In the Project Explorer you see all the dependent objects generated along with the Service Consumption Model. Your project explorer should look like following. If you don't see the changes yet, select your package `ZSC_SOAP_XXX` press `F5` to refresh.
 
       ![model](result.png)
 
-  8. Open your service consumption model `ZSC_SCM_XXX` and **activate** it.
-
-      ![model](activate.png)
-
-  9. Click **Copy to Clipboard**. The web service has only one service operation, for which the code snipped is needed.   
+  9. The web service has a single operation, for which a code snippet is presented. Click **Copy to Clipboard**.  
 
       ![model](model6.png)
 
@@ -278,7 +278,7 @@ author_profile: https://github.com/mervey45
 
 [ACCORDION-BEGIN [Step 4: ](Consume web service)]
 
-This step shows an simple example of a web service consumption.
+This step shows a simple example of a web service consumption.
 
   1. Right-click **Source Code Library** and select **New ABAP Class**.
 
@@ -296,7 +296,7 @@ This step shows an simple example of a web service consumption.
 
     ![class](class3.png)
 
-  4. Replace your code with following:
+  4. Implement the interface `if_oo_adt_classrun`:
 
     ```ABAP
     CLASS zsc_call_service_xxx DEFINITION
@@ -320,47 +320,8 @@ This step shows an simple example of a web service consumption.
     ENDCLASS.
     ```   
 
-  5. Paste inside your main method `if_oo_adt_classrun~main` your service operation (service consumption model), which you've copied earlier.
-    Your code should look like following:
+  5. Paste the copied code snippet inside the main method.
 
-    ```ABAP
-    CLASS zsc_call_service_xxx DEFINITION
-      PUBLIC
-      FINAL
-      CREATE PUBLIC .
-
-      PUBLIC SECTION.
-        INTERFACES if_oo_adt_classrun.
-      PROTECTED SECTION.
-      PRIVATE SECTION.
-    ENDCLASS.
-
-
-
-    CLASS zsc_call_service_xxx IMPLEMENTATION.
-
-      METHOD if_oo_adt_classrun~main.
-        TRY.
-            DATA(destination) = cl_soap_destination_provider=>create_by_cloud_destination(
-                                  i_name = '<Name of your Cloud Destination>'
-                                  i_service_instance_name = '<Service Instance Name>'
-                                ).
-            DATA(proxy) = NEW zsc_co_epm_product_soap(
-                            destination = destination
-                          ).
-            DATA(request) = VALUE zsc_req_msg_type( ).
-            proxy->get_price(
-              EXPORTING
-                input = request
-              IMPORTING
-                output = DATA(response)
-            ).
-
-        ENDTRY.
-
-      ENDMETHOD.
-    ENDCLASS.
-    ```    
 
   6. Adjust your code, change your `DATA(destination)` to:
 
@@ -378,19 +339,16 @@ This step shows an simple example of a web service consumption.
 
       ![class](destination2.png)
 
-  8. Change your error handling to following:
+  8. So far the request payload is empty. Provide a valid product to retrieve the price for, e.g. `HT-1000`:
 
     ```ABAP
-       "handle error
-     catch zsc_cx_fault_msg_type.
-    ```   
-
-      ![class](class7.png)
+    DATA(request) = VALUE zsc_req_msg_type( req_msg_type-product = 'HT-1000' ).
+    ```
 
   9. Add following response message type to your coding:
 
     ```ABAP
-        out->write( |{ response-res_msg_type-price } { response-res_msg_type-currency }| ).
+    out->write( |{ response-res_msg_type-price } { response-res_msg_type-currency }| ).
     ```   
 
      Save and activate.
@@ -427,6 +385,12 @@ This step shows an simple example of a web service consumption.
                 output = DATA(response)
             ).
             out->write( |{ response-res_msg_type-price } { response-res_msg_type-currency }| ).
+
+            "handle response
+          CATCH cx_soap_destination_error.
+            "handle error
+          CATCH cx_ai_system_fault.
+            "handle error
           CATCH zsc_cx_fault_msg_type.
             "handle error
         ENDTRY.
@@ -435,7 +399,7 @@ This step shows an simple example of a web service consumption.
     ENDCLASS.
     ```   
 
-11. Save and activate your coding. Press `F9` again to run your console application. The price should come back as a result.
+11. Save and activate your coding. Press `F9` to run your console application. The price should come back as a result.
 
     ![class](class6.png)
 
