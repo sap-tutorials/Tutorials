@@ -92,16 +92,21 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](project3.png)
 
-  6. Now you've been authenticated automatically. Click Finish.
+  6. Now you've been authenticated automatically.
+     Provide your credentials if requested.
+     The credentials are the same you used to create your trial account on SAP Cloud Platform.
 
       ![Create ABAP cloud project](project5.png)
+
+      Click **Finish**.
+
 
   7. Your trial system appears on the project explorer.
 
       ![Create ABAP cloud project](project6.png)
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 4: ](Test yourself)]
