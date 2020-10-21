@@ -12,6 +12,13 @@ author_profile: https://github.com/Paolaufer
 
 ## Prerequisites
  - You have an SAP HANA service (SAP HANA as a Service or SAP HANA Cloud) available in your space.
+    To create a new instance in your trial account:
+    1. Go to your space in the SAP Cloud Platform cockpit.
+    2. Go to **Service Marketplace**.
+    3. Select **SAP HANA Schemas & HDI Containers (SAP HANA Trial)**.
+    4. Click **Create New Instance**.
+    5. Select `hdi-shared` as the service plan and provide a name for the new instance.
+    6. Click **Create Instance**.
 
 
 ## Details
@@ -102,6 +109,8 @@ The result should look as follows:
 
 1.	From the terminal on the bookshop folder, run `cds add mta`.
 This adds an `mta.yaml` file to the root of your application.
+
+    Note: If you are working on a trial account, open the `mta.yaml` file, and in the `resources` section change the `service` parameter to `hanatrial`. Save your changes.
 
 2.	Right-click the `mta.yaml` file and choose **Build MTA**.
 

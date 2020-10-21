@@ -25,7 +25,7 @@ When you access the **Launchpad** service, the Site Directory is in focus. From 
 > Note: in the side panel of the Launchpad service, you'll see three tools. The **Site Directory** where you're going to create a new site. All sites that you create will be displayed here. The **Content Manager** where you'll manage cross-site content such as business apps. The **Provider Manager** where you manage content providers. Content providers expose business content that you can integrate into your launchpad sites.
 
 
-1. Click **Create New Site**.
+1. Click **Create Site**.
 
     ![Create site](1_create_new_site.png)
 
