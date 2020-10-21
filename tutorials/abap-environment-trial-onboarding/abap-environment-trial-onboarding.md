@@ -45,6 +45,8 @@ author_profile: https://github.com/mervey45
     ![Select ABAP Trial](boosters.png)
 
 4. Search the **Prepare an Account for ABAP Trial** tile and press **Start** to start your booster.
+  If you already created a service instance and service key, then please skip this step and move on with Step 2.
+  Only one service instance can be created at a time.
 
     ![Select ABAP Trial](boosters2.png)
 
