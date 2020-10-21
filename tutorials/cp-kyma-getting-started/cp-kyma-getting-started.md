@@ -22,25 +22,25 @@ In case the entitlements for the Kyma runtime are not enabled yet you need to do
 
 Click on the **Entitlements** menu item on the left-hand-side.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-01.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-01.png)
 
 Use the search field to search for **Kyma** in order to check if you have the needed entitlements already enabled. If you have a fairly new trial account the entitlement should automatically be added to your account as seen in the screenshot below.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-02.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-02.png)
 
 In case you don't have the entitlement in your account you need to add it now in order to continue. Without the entitlement you won't be able to enable the Kyma runtime for your SAP Cloud Platform account.
 
 Click on **Configure Entitlements**.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-02b.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-02b.png)
 
 Click on **Add Service Plans** to add the Kyma Runtime entitlement to your account.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-02c.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-02c.png)
 
 Search for **Kyma**, check the trial checkbox and click on **Add 1 Service Plan**.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-02d.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-02d.png)
 
 > In case you see the message **You have already used all the global account quota for this service plan. To add this service plan, purchase more quota or remove quota from other subaccounts** You already have the Kyma Runtime entitlement used in another subaccount. Look for the subaccount where the Kyma runtime entitlement is assigned too and delete it or use it there.
 
@@ -57,11 +57,11 @@ Go back to the **Overview** with help of the menu item on the left-hand-side. Yo
 
 Now that you've made sure the Kyma entitlement is existing, you can click on the **Enable Kyma** button to trigger the enablement of the Kyma environment on your SAP Cloud Platform account. This will cause the SAP Cloud Platform to prepare everything for you to create a new cluster at a later point where you can use your Kyma environment on.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-03.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-03.png)
 
 In the upcoming dialogue enter your cluster name of choice and click **Create**.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-03b.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-03b.png)
 
 What happens now is that, in the background, a fresh and new Kubernetes cluster is spinning up where the Kyma runtime and all its components are being installed. This might take a while until it's finished with the setup process.
 
@@ -69,7 +69,7 @@ Kyma itself is a runtime deployed on a Kubernetes cluster and is using all sorts
 
 You need to wait until this process is finished before you can continue with this tutorial.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-03c.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-03c.png)
 
 To learn more about the Kyma environment and its functionality you can visit the official documentation under the following links:
 
@@ -91,33 +91,33 @@ To do so you need to create a Role Collection where you assign the needed role. 
 
 Click on the **Security** menu item on the left-hand-side and navigate into **Role Collections**. From there click on the **+** icon to create a new collection.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-04.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-04.png)
 
 In the upcoming dialogue, provide a name for the collection and click on **Create**.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-05.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-05.png)
 
 Locate your created role collection in the table below and click on its name to open the collection detail screen.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-06.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-06.png)
 
 In the role collection detail screen, click on **Edit** to add new roles to it.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-07.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-07.png)
 
 Locate the two-box-icon in order to open up the roles catalogue. The roles catalogue contains all available roles on SAP Cloud Platform including the Kyma runtime roles.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-08.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-08.png)
 
 Search for the role `KymaRuntimeNamespaceAdmin` and add it to your collection by checking the checkbox. Click on **Add** to finish up the process.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-09.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-09.png)
 
 While still in edit mode we want to assign your user id to the role collection. Locate the **Users** section and enter your email address/ user id into the **ID** field, the UI should give you a nice autocompletion.
 
 Click on **Save**.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-10.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-10.png)
 
 [DONE]
 [ACCORDION-END]
@@ -126,11 +126,11 @@ Click on **Save**.
 
 Go back to the overview of your subaccount, if not already done. From there click on **Link to Dashboard**.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-11.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-11.png)
 
 The dashboard or Kyma console UI is your graphical playground for managing and deploying applications or services on the Kyma runtime. With the dashboard you can not only deploy or delete deployments but also manage them for scale, expose them over self-defined API Rules and much more. To learn more about the capabilities and features of the Kyma runtime follow the Kyma tutorials, blog posts, read the documentation or check out the YouTube Videos. If you haven't know it yet, there is also a [Kyma slack channel](https://kyma-community.slack.com/) where you can ask questions to the active community.
 
-![SAP-Cloud-Platform-Trial](kyma-getting-started-12.png)
+!![SAP-Cloud-Platform-Trial](kyma-getting-started-12.png)
 
 [VALIDATE_5]
 
