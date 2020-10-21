@@ -18,7 +18,7 @@ time: 15
 ---
 [ACCORDION-BEGIN [Step 1: ](Assign entitlements to your subaccount)]
 
-So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar`later on, you need to assign the Application Runtime and Portal entitlements to your subaccount.
+So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar` later on, you need to assign the Application Runtime and Portal entitlements to your subaccount.
 
 1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
@@ -47,15 +47,15 @@ So that you can deploy the `WorkflowManagementFLP_0.0.1.mtar`later on, you need 
 
 2. Choose **SAP Business Application Studio** and access your dev space.
 
-1. In your workspace, select **onboarding** | **forms**, then start the forms creation.
+3. In your workspace, select **onboarding** | **approvals** | **forms**, then start the forms creation.
 
-    On a `Windows` PC, choose **F1** | **Workflow: Create New Form**.
+    On a Windows PC, choose **F1** | **Workflow: Create New Form**.
 
-    On a `MAC` PC, enter **COMMAND + SHIFT + P** and then choose **Workflow: Create New Form**.
+    On a MAC PC, enter **`COMMAND + SHIFT + P`** and then choose **Workflow: Create New Form**.
 
     ![Create Form](create-new-form.png)
 
-2. You are prompted to enter the following:
+4. You are prompted to enter the following:
 
     | **Field**            | **Value**                         |
     | :--------------------| :-------------------------------- |
@@ -122,52 +122,36 @@ These expressions refer to the attributes in the JSON file that you have created
 [ACCORDION-BEGIN [Step 6: ](Set up SAP Fiori launchpad)]
 To access custom workflow applications, for example, start forms, you can't use the standard apps of Workflow Management. Therefore, you now import, build, and deploy the multitarget project that creates your custom SAP Fiori launchpad.
 
-1. Download the `WorkflowManagementFLP.tar.zip` from  [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-workflowmanagement-flp/resources/WorkflowManagementFLP.tar.zip) in your local file system and extract the zip.
-
-    >This multitarget application when deployed will create the Fiori launchpad to access workflow, business rules, and process visibility applications.
+1. Download the `WorkflowManagementFLP.zip` from  [GitHub](https://github.com/SAP-samples/cloud-workflow-samples/blob/master/cf-workflowmanagement-flp/resources/WorkflowManagementFLP.zip) in your local file system.
 
     ![Download MTA](downloadflp.png)
 
-2. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
+2. Extract the zip file.
 
-3. Choose **SAP Business Application Studio**.
+    >This multitarget application when deployed will create the Fiori launchpad to access workflow, business rules, and process visibility applications.
 
-4. If you have never accessed the workspace before, open it with the **Open Workspace** button.
+3. In your web browser, open the [SAP Cloud Platform Trial cockpit](https://account.hanatrial.ondemand.com/cockpit).
 
-5. Select the **projects** folder and choose **Open**.
+4. Choose **SAP Business Application Studio**.
+
+5. If you have never accessed the workspace before, open it with the **Open Workspace** button.
+
+6. Select the **projects** folder and choose **Open**.
 
     ![See Projects Folder](see-result-projects-folder.png)
 
     > The **PROJECTS** explorer is opened.
 
-6. Right-click anywhere on the empty space of the **PROJECTS** explorer and select **Upload Files...**.
+7. Pull the extracted file anywhere on the empty space of the **PROJECTS** explorer. Now, the multitarget application is imported under the **PROJECTS** explorer.
 
-    ![Import MTA](upload-files-mtar.png)
-
-    - In the **Import** dialog, browse for the `WorkflowManagementFLP.tar` file that you extracted in your local system and choose **Open**.
-
-    - The multitarget application gets imported under the **PROJECTS** explorer.
-
-    - Next, you need to extract the **tar** file. For this, open the new terminal window and enter the commands one-by-one to uncompress the uploaded file.
-
-    ![Uncompress Files 1](UncompressFile1.png)
-
-    ```
-    mkdir WorkflowManagementFLP
-
-    tar -C WorkflowManagementFLP -xvf WorkflowManagementFLP.tar
-
-    ```
-
-    ![Uncompress Files 2](UncompressTar.png)
+    ![Import Project](import-mta.png)
 
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 7: ](Configure the visualization for your custom tile)]
 
-1. In **`WorkflowManagementFLP`** that you have imported in the first tutorial, select **`portal-site`** | **business-apps** folder and right-click it.
+1. Select **`WorkflowManagementFLP`** | **portal-site** | **business-apps** folder and right-click it.
 
 2. Choose **New File**.
 

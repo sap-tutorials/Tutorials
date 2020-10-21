@@ -105,7 +105,7 @@ yo easy-ui5:newmodel
 |  Parameter     | Value
 |  :------------- | :-------------
 |  What is the name of your model, press enter if it is the default model?        | **keep blank**
-|  Which type of model do you want to add?     | **`OData`**
+|  Which type of model do you want to add?     | **`OData v2`**
 |  Which binding mode do you want to use?    | **`TwoWay`**
 |  What is the data source URL?   | **`/V2/Northwind/Northwind.svc/`**
 |  Which count mode do you want to use?   | **`Inline`**

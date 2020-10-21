@@ -8,7 +8,7 @@ time: 15
 author_name: Merve Temel
 author_profile: https://github.com/mervey45
 ---
- 
+
 ## Prerequisites
   - You have read the blog post [It's Trial Time for ABAP in SAP Cloud Platform](https://blogs.sap.com/2019/09/28/its-trialtime-for-abap-in-sap-cloud-platform/), including the section "Rules of the Game"
   - You have created a **trial account on SAP Cloud Platform**:  [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
@@ -84,7 +84,7 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](projectx1.png)
 
-  4. You can find your service key in your default download folder. Search for **`ADT.json`**, select it and click **Open**.
+  4. You can find your service key in your default download folder. Search for **`default_key.json`**, select it and click **Open**.
 
       ![Create ABAP cloud project](projectx2.png)
 
@@ -101,7 +101,7 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
       ![Create ABAP cloud project](project6.png)
 
 [DONE]
-[ACCORDION-END]
+[ACCORDION-END] 
 
 
 [ACCORDION-BEGIN [Step 4: ](Test yourself)]

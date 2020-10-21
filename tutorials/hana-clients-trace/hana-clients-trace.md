@@ -164,7 +164,7 @@ printenv | grep HDB_SQLDBC_TRACE
 
 [ACCORDION-BEGIN [Step 3: ](Tracing a JDBC Connection)]
 
-Java must be installed in order to complete the following steps. To check if it is installed run the following commands:
+Java must be installed in order to complete the following steps. To check if it is installed, run the following commands:
 ```Shell
 java -version
 javac -version
@@ -192,7 +192,7 @@ javac -version
     java -jar c:\sap\hdbclient\ngdbc.jar TRACE API ON
     ```
 
-    >The different command-line option keywords can be found at [JDBC Trace Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/4033f8e603504c0faf305ab77627af03.html).
+    >The different command-line option keywords can be found at [JDBC Tracing and Trace Options](https://help.sap.com/viewer/f1b440ded6144a54ada97ff95dac7adf/latest/en-US/4033f8e603504c0faf305ab77627af03.html).
 
 3.  Execute a query which will generate a trace file.  Change the host and port below to match your SAP HANA host and port.
 

@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition, products>sap-han
 primary_tag: products>sap-hana
 ---
 
+## Prerequisites
+ - You have completed the first 2 tutorials in this mission.
+
 ## Details
 ### You will learn
   - How to connect to SAP HANA from a client machine using HDBSQL
@@ -29,7 +32,7 @@ This section demonstrates how to connect to a SAP HANA instance using [HDBSQL](h
 2. Connect to either SAP HANA Cloud or SAP HANA, express edition using host, port, and credentials. As mentioned previously, the host and port can be found in the SAP Cloud Platform cockpit.   
 
     - To connect to SAP HANA Cloud, see the following general command.  
-    >Note: the connection must be encrypted (-e).
+    >Note: the connection must be encrypted (-e).  Starting with the 2.6 SAP HANA client, connections on port 443 enable encryption by default so the -e parameter is not needed for SAP HANA Cloud connections.
 
         ```Shell
         hdbsql -e -n <host name>:<port> -u <user> -p <password>
@@ -38,12 +41,12 @@ This section demonstrates how to connect to a SAP HANA instance using [HDBSQL](h
         The following is a connection example for the SAP HANA Cloud.  
 
         ```Shell
-        hdbsql -e -n 61964be8-39e8-4622-9a2b-ba3a38be2f75.hana.canary-eu10.hanacloud.ondemand.com:443 -u DBADMIN -p your_password
+        hdbsql -e -n 69964be8-39e8-4622-9a2b-ba3a38be2f75.hana.canary-eu10.hanacloud.ondemand.com:443 -u DBADMIN -p your_password
         ```
 
         > The HANA Cloud instance can be configured to enable applications running from outside the SAP Cloud Platform to connect.  The current setting is shown in the screenshot below.  
 
-        ![screenshot showing the whitelist](whitelist.png)
+        ![screenshot showing the allowlist](allowlist.png)
 
         > If you are on a Linux or Mac machine and the hdbsql connection fails with the error message below, it indicates that the client could not locate a trust store in the default location.  
         >
@@ -51,7 +54,9 @@ This section demonstrates how to connect to a SAP HANA instance using [HDBSQL](h
 
         > A public root certificate to validate the server's certificate is needed.  More information about the required DigiCert root certificate can be found at  [Secure Communication Between SAP HANA Cloud and JDBC/ODBC Clients](https://help.sap.com/viewer/c82f8d6a84c147f8b78bf6416dae7290/cloud/en-US/dbd3d887bb571014bf05ca887f897b99.html).  
         >
-        > It can be downloaded from [Download PEM](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem), renamed to trust.pem and saved to the specified location.  For further details, see [Secure connection from HDBSQL to SAP HANA Cloud](https://blogs.sap.com/2020/04/14/secure-connection-from-hdbsql-to-sap-hana-cloud/).
+        > It can be downloaded from [Download PEM](https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem), renamed to `trust.pem` and saved to the specified location.  For further details, see [Secure connection from HDBSQL to SAP HANA Cloud](https://blogs.sap.com/2020/04/14/secure-connection-from-hdbsql-to-sap-hana-cloud/).
+        >
+        >Starting with the 2.6 SAP HANA client, if the root certificate is available to OpenSSL, it is no longer required to also be in `trust.pem`.
 
     - For SAP HANA, express edition, there are two options shown below to connect.
 
@@ -93,13 +98,13 @@ This section demonstrates how to connect to a SAP HANA instance using [HDBSQL](h
 
 In this section, create a user named `USER1`.  `USER1` will be the owner of the tables that will be created in a subsequent section and will be used to connect to the database.
 
-On Linux or a Mac, turn off page by page scroll output.  Also consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
+On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` `hdbsql` option.  This enables multiple commands to be pasted at one time and does not require each result to be exited by pressing q.  
 
 ```HDBSQL (Linux or Mac)
-\pa on
+\pa off
 ```
 
-1. Create `USER1`.  Note that the message  _'0 rows affected'_ means that query was successful.
+1. Create `USER1`.  Select the command below based on the version of SAP HANA being used.  Note that the message  _'0 rows affected'_ means that query was successful.
 
     ```SQL for SAP HANA Cloud
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change SET USERGROUP DEFAULT;
@@ -155,22 +160,24 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     ```
     `hdbuserstore` is included with the install of the SAP HANA database clients.
 
-2. Using `hdbuserstore`, specify a key named `USER1UserKey` that has the host, port and credentials.  Details on where to find these values are covered in [first tutorial](hana-clients-choose-hana-instance) in this mission.
+2. Using `hdbuserstore`, specify a key named `USER1UserKey` that has the host, port and credentials.  Details on where to find these values are covered in the third and fifth steps of the [first tutorial](hana-clients-choose-hana-instance) in this mission.
 
     ```Shell
     hdbuserstore Set USER1UserKey <host name>:<port> USER1 Password1
     hdbuserstore List
     ```
 
-3. Connect with `USER1` as the username.
+3. Connect with `USER1` as the username.  
 
     ```Shell
-    hdbsql -attemptencrypt -U User1UserKey
+    hdbsql -attemptencrypt -U USER1UserKey
     ```
 
-    >Uppercase U is for specifying a key from the user store, lower case u is for user.  
+    > Uppercase U is for specifying a key from the user store, lower case u is for user.  
 
-    >When connecting using `-U`, a connection is not attempted until a query is issued.  <!-- This will be corrected in 2.5 https://git.wdf.sap.corp/#/c/4482920/ -->
+    >---
+
+    > Starting with the 2.6 SAP HANA client, connections on port 443 enable encryption by default so the `attemptencrypt` parameter is not needed for SAP HANA Cloud connections.
 
 [Using Stored Connection Information](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/latest/en-US/dd95ac9dbb571014a7d7f0234d762fdb.html) contains details on how an application can use a `hdbuserstore` key.
 
@@ -197,7 +204,163 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     pico hotel.sql
     ```
 
-3. The instructions at [SAP HANA Cloud SQL Demo Data](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/7d9fafec64a749d1a9bcf11c121077da.html) provide SQL statements to create the Hotels demo tables and populate them with data.  Copy all the SQL statements, **except for the first line** which creates the schema hotel, into `hotel.sql`.  The schema hotel was created in a previous step.
+3. Copy the following SQL into the file `hotel.sql`.  
+
+    ```SQL
+    CREATE COLUMN TABLE hotel.city(
+    	zip CHAR(5) PRIMARY KEY,
+    	name VARCHAR(30) NOT NULL,
+    	state CHAR(2) NOT NULL
+    );
+    CREATE COLUMN TABLE hotel.customer(
+    	cno INTEGER PRIMARY KEY,
+    	title CHAR(7),
+    	firstname VARCHAR(20),
+    	name VARCHAR(40) NOT NULL,
+    	zip CHAR(5),
+    	address VARCHAR(40) NOT NULL
+    );
+    CREATE COLUMN TABLE hotel.hotel(
+    	hno INTEGER PRIMARY KEY,
+    	name VARCHAR(50) NOT NULL,
+    	zip CHAR(5),
+    	address VARCHAR(40) NOT NULL
+    );
+    CREATE COLUMN TABLE hotel.room(
+    	hno INTEGER,
+    	type CHAR(6),
+    	free NUMERIC(3),
+    	price NUMERIC(6, 2),
+    	PRIMARY KEY (hno, type)
+    );
+    CREATE COLUMN TABLE hotel.reservation(
+      resno INTEGER NOT NULL GENERATED BY DEFAULT AS IDENTITY,
+    	rno INTEGER NOT NULL,
+    	cno INTEGER,
+    	hno INTEGER,
+    	type CHAR(6),
+    	arrival DATE NOT NULL,
+    	departure DATE NOT NULL,
+    	PRIMARY KEY (
+    		"RESNO", "ARRIVAL"
+    	)
+    );
+
+    INSERT INTO hotel.city VALUES('12203', 'Albany', 'NY');
+    INSERT INTO hotel.city VALUES('60601', 'Chicago', 'IL');
+    INSERT INTO hotel.city VALUES('60615', 'Chicago', 'IL');
+    INSERT INTO hotel.city VALUES('45211', 'Cincinnati', 'OH');
+    INSERT INTO hotel.city VALUES('33575', 'Clearwater', 'FL');
+    INSERT INTO hotel.city VALUES('75243', 'Dallas', 'TX');
+    INSERT INTO hotel.city VALUES('32018', 'Daytona Beach', 'FL');
+    INSERT INTO hotel.city VALUES('33441', 'Deerfield Beach', 'FL');
+    INSERT INTO hotel.city VALUES('48226', 'Detroit', 'MI');
+    INSERT INTO hotel.city VALUES('90029', 'Hollywood', 'CA');
+    INSERT INTO hotel.city VALUES('92714', 'Irvine', 'CA');
+    INSERT INTO hotel.city VALUES('90804', 'Long Beach', 'CA');
+    INSERT INTO hotel.city VALUES('11788', 'Long Island', 'NY');
+    INSERT INTO hotel.city VALUES('90018', 'Los Angeles', 'CA');
+    INSERT INTO hotel.city VALUES('70112', 'New Orleans', 'LA');
+    INSERT INTO hotel.city VALUES('10580', 'New York', 'NY');
+    INSERT INTO hotel.city VALUES('10019', 'New York', 'NY');
+    INSERT INTO hotel.city VALUES('92262', 'Palm Springs', 'CA');
+    INSERT INTO hotel.city VALUES('97213', 'Portland', 'OR');
+    INSERT INTO hotel.city VALUES('60018', 'Rosemont', 'IL');
+    INSERT INTO hotel.city VALUES('95054', 'Santa Clara', 'CA');
+    INSERT INTO hotel.city VALUES('20903', 'Silver Spring', 'MD');
+    INSERT INTO hotel.city VALUES('20037', 'Seattle', 'WA');
+    INSERT INTO hotel.city VALUES('20005', 'Seattle', 'WA');
+    INSERT INTO hotel.city VALUES('20019', 'Seattle', 'WA');
+    INSERT INTO hotel.city VALUES('45455', 'San Diego', 'CA');
+    INSERT INTO hotel.city VALUES('33344', 'Boston', 'MD');
+    INSERT INTO hotel.city VALUES('88811', 'Springfield', 'WA');
+    INSERT INTO hotel.city VALUES('15505', 'Twin Peaks', 'MO');
+    INSERT INTO hotel.city VALUES('77709', 'Gardner', 'MA');
+
+    INSERT INTO hotel.customer VALUES(1000, 'Mrs', 'Jenny', 'Porter', '10580', '1340 N. Ash Street, #3');
+    INSERT INTO hotel.customer VALUES(1001, 'Mr', 'Peter', 'Brown', '48226', '1001 34th St., APT.3');
+    INSERT INTO hotel.customer VALUES(1002, 'Company', NULL, 'Datasoft', '90018', '486 Maple St.');
+    INSERT INTO hotel.customer VALUES(1003, 'Mrs', 'Rose', 'Brian', '75243', '500 Yellowstone Drive, #2');
+    INSERT INTO hotel.customer VALUES(1004, 'Mrs', 'Mary', 'Griffith', '20005', '3401 Elder Lane');
+    INSERT INTO hotel.customer VALUES(1005, 'Mr', 'Martin', 'Randolph', '60615', '340 MAIN STREET, #7');
+    INSERT INTO hotel.customer VALUES(1006, 'Mrs', 'Sally', 'Smith', '75243', '250 Curtis Street');
+    INSERT INTO hotel.customer VALUES(1007, 'Mr', 'Mike', 'Jackson', '45211', '133 BROADWAY APT. 1');
+    INSERT INTO hotel.customer VALUES(1008, 'Mrs', 'Rita', 'Doe', '97213', '2000 Humboldt St., #6');
+    INSERT INTO hotel.customer VALUES(1009, 'Mr', 'George', 'Howe', '75243', '111 B Parkway, #23');
+    INSERT INTO hotel.customer VALUES(1010, 'Mr', 'Frank', 'Miller', '95054', '27 5th St., 76');
+    INSERT INTO hotel.customer VALUES(1011, 'Mrs', 'Susan', 'Baker', '90018', '200 MAIN STREET, #94');
+    INSERT INTO hotel.customer VALUES(1012, 'Mr', 'Joseph', 'Peters', '92714', '700 S. Ash St., APT.12');
+    INSERT INTO hotel.customer VALUES(1013, 'Company', NULL, 'TOOLware', '20019', '410 Mariposa St., #10');
+    INSERT INTO hotel.customer VALUES(1014, 'Mr', 'Antony', 'Jenkins', '20903', '55 A Parkway, #15');
+
+    INSERT INTO hotel.hotel VALUES(10, 'Congress', '20005', '155 Beechwood St.');
+    INSERT INTO hotel.hotel VALUES(11, 'Regency', '20037', '477 17th Avenue');
+    INSERT INTO hotel.hotel VALUES(12, 'Long Island', '11788', '1499 Grove Street');
+    INSERT INTO hotel.hotel VALUES(13, 'Empire State', '12203', '65 Yellowstone Dr.');
+    INSERT INTO hotel.hotel VALUES(14, 'Midtown', '10019', '12 Barnard St.');
+    INSERT INTO hotel.hotel VALUES(15, 'Eighth Avenue', '10019', '112 8th Avenue');
+    INSERT INTO hotel.hotel VALUES(16, 'Lake Michigan', '60601', '354 OAK Terrace');
+    INSERT INTO hotel.hotel VALUES(17, 'Airport', '60018', '650 C Parkway');
+    INSERT INTO hotel.hotel VALUES(18, 'Sunshine', '33575', '200 Yellowstone Dr.');
+    INSERT INTO hotel.hotel VALUES(19, 'Beach', '32018', '1980 34th St.');
+    INSERT INTO hotel.hotel VALUES(20, 'Atlantic', '33441', '111 78th St.');
+    INSERT INTO hotel.hotel VALUES(21, 'Long Beach', '90804', '35 Broadway');
+    INSERT INTO hotel.hotel VALUES(22, 'Indian Horse', '92262', '16 MAIN STREET');
+    INSERT INTO hotel.hotel VALUES(23, 'Star', '90029', '13 Beechwood Place');
+    INSERT INTO hotel.hotel VALUES(24, 'River Boat', '70112', '788 MAIN STREET');
+    INSERT INTO hotel.hotel VALUES(25, 'Ocean Star', '44332', '16 MAIN STREET');
+    INSERT INTO hotel.hotel VALUES(26, 'Bella Ciente', '77111', '13 Beechwood Place');
+
+    INSERT INTO hotel.room VALUES(10, 'single', 20, 135.00);
+    INSERT INTO hotel.room VALUES(10, 'double', 45, 200.00);
+    INSERT INTO hotel.room VALUES(13, 'single', 12, 45.00);
+    INSERT INTO hotel.room VALUES(13, 'double', 15, 80.00);
+    INSERT INTO hotel.room VALUES(12, 'single', 10, 70.00);
+    INSERT INTO hotel.room VALUES(12, 'double', 13, 100.00);
+    INSERT INTO hotel.room VALUES(17, 'single', 4, 115.00);
+    INSERT INTO hotel.room VALUES(17, 'double', 11, 180.00);
+    INSERT INTO hotel.room VALUES(18, 'single', 15, 90.00);
+    INSERT INTO hotel.room VALUES(18, 'double', 19, 150.00);
+    INSERT INTO hotel.room VALUES(18, 'suite', 5, 400.00);
+    INSERT INTO hotel.room VALUES(14, 'single', 20, 85.00);
+    INSERT INTO hotel.room VALUES(14, 'double', 35, 140.00);
+    INSERT INTO hotel.room VALUES(15, 'single', 50, 105.00);
+    INSERT INTO hotel.room VALUES(15, 'double', 230, 180.00);
+    INSERT INTO hotel.room VALUES(15, 'suite', 12, 500.00);
+    INSERT INTO hotel.room VALUES(16, 'single', 10, 120.00);
+    INSERT INTO hotel.room VALUES(16, 'double', 39, 200.00);
+    INSERT INTO hotel.room VALUES(16, 'suite', 20, 500.00);
+    INSERT INTO hotel.room VALUES(19, 'single', 45, 90.00);
+    INSERT INTO hotel.room VALUES(19, 'double', 145, 150.00);
+    INSERT INTO hotel.room VALUES(19, 'suite', 60, 300.00);
+    INSERT INTO hotel.room VALUES(20, 'single', 11, 60.00);
+    INSERT INTO hotel.room VALUES(20, 'double', 24, 100.00);
+    INSERT INTO hotel.room VALUES(21, 'single', 2, 70.00);
+    INSERT INTO hotel.room VALUES(21, 'double', 10, 130.00);
+    INSERT INTO hotel.room VALUES(22, 'single', 34, 80.00);
+    INSERT INTO hotel.room VALUES(22, 'double', 78, 140.00);
+    INSERT INTO hotel.room VALUES(22, 'suite', 55, 350.00);
+    INSERT INTO hotel.room VALUES(25, 'single', 44, 100.00);
+    INSERT INTO hotel.room VALUES(25, 'double', 115, 190.00);
+    INSERT INTO hotel.room VALUES(25, 'suite', 6, 450.00);
+    INSERT INTO hotel.room VALUES(23, 'single', 89, 160.00);
+    INSERT INTO hotel.room VALUES(23, 'double', 300, 270.00);
+    INSERT INTO hotel.room VALUES(23, 'suite', 100, 700.00);
+    INSERT INTO hotel.room VALUES(24, 'single', 10, 125.00);
+    INSERT INTO hotel.room VALUES(24, 'double', 9, 200.00);
+    INSERT INTO hotel.room VALUES(24, 'suite', 78, 600.00);
+
+    INSERT INTO hotel.reservation VALUES(1, 100, 1000, 18, 'single', '2019-11-13', '2019-11-15');
+    INSERT INTO hotel.reservation VALUES(2, 110, 1001, 20, 'double', '2019-12-24', '2020-01-06');
+    INSERT INTO hotel.reservation VALUES(3, 120, 1002, 15, 'suite', '2004-11-14', '2004-11-18');
+    INSERT INTO hotel.reservation VALUES(4, 130, 1009, 21, 'single', '2019-02-01', '2019-02-03');
+    INSERT INTO hotel.reservation VALUES(5, 150, 1006, 17, 'double', '2019-03-14', '2019-03-24');
+    INSERT INTO hotel.reservation VALUES(6, 140, 1013, 18, 'double', '2004-04-12', '2004-04-30');
+    INSERT INTO hotel.reservation VALUES(7, 160, 1011, 17, 'single', '2004-04-12', '2004-04-15');
+    INSERT INTO hotel.reservation VALUES(8, 170, 1014, 25, 'suite', '2004-09-01', '2004-09-03');
+    INSERT INTO hotel.reservation VALUES(9, 180, 1001, 22, 'double', '2004-12-23', '2005-01-08');
+    INSERT INTO hotel.reservation VALUES(10, 190, 1013, 24, 'double', '2004-11-14', '2004-11-17');
+    ```
 
 4. Execute the SQL with the command below.  This is an example of running commands in non-interactive mode.
 
@@ -210,6 +373,8 @@ Remembering and entering IP addresses, ports, user IDs and passwords can be diff
     ```Shell
     hdbsql -attemptencrypt -U USER1UserKey "SELECT COUNT(*) FROM HOTEL.CITY";
     ```
+
+    ![result](select.png)
 
     View the inserted data using the following query.  
 
