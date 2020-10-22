@@ -510,7 +510,7 @@ Alternate ways to import data include the [IMPORT FROM](https://help.sap.com/vie
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Export & import catalog objects (optional))]
+[ACCORDION-BEGIN [Step 7: ](Export and import catalog objects (optional))]
 
 >Note, this section is optional and does not need to be followed to complete the subsequent tutorials in this mission.
 

@@ -8,20 +8,20 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
-  - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+- An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
 
 ## Details
 ### You will learn
-  - How to add different SAP HANA database types in the SAP HANA database explorer
-  - Additional operations that can be performed on a database
+- How to add different SAP HANA database types in the SAP HANA database explorer
+- Additional operations that can be performed on a database
 
 Database connections in the database explorer represent SAP HANA databases that you browse and interact with.  
 
-  ![SAP HANA Connections](connections.png)  
+![SAP HANA Connections](connections.png)  
 
-  SQL consoles are associated with a database connection.
+SQL consoles are associated with a database connection.
 
-  ![sql console connection](sql-console-connection.png)
+![sql console connection](sql-console-connection.png)
 
 ---
 
@@ -35,7 +35,7 @@ Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can 
 
     or
 
-    ![Open from cockpit](open-from-cockpit.png)
+    !![Open from cockpit](open-from-cockpit.png)
 
     >You may be prompted to enter database login credentials at this point.  Enter the DBADMIN or SYSTEM user credentials that were set during the SAP HANA instance setup process.
 
@@ -54,17 +54,18 @@ Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can 
 
     >With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  The SAP HANA Cloud Cockpit contains in its URL, a parameter that indicates the unique name (GUID) for the space.  
 
-    >```
+    >
+    ```
    https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
    ```   
 
-    >Note: In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
+    >In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
 
     >![group by space](group-by-space.png)
 
     >The spaces that contain SAP HANA Cloud instances appear when running SQL against multiple databases.  Executing commands in the SQL console will be covered in a subsequent tutorial.
 
-    >![run on multiple](run-on-multiple.png)  
+    >!![run on multiple](run-on-multiple.png)  
 
     >The space dev is represented by its GUID in the selection dialog below along with a predefined group named ALL.    
 
@@ -110,7 +111,7 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     The host and port values can be copied from the SAP HANA Cloud Platform Cockpit.  
 
-    ![copy host and port](host-and-port.png)
+    !![copy host and port](host-and-port.png)
 
     >Remember to remove the colon and port number from the host name and add it to the port field.
 
@@ -140,7 +141,8 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     >An example of what can be configured is shown below.
 
-    >```
+    >
+    ```
     isolationLevel=SERIALIZABLE;locale=fr_FR;schema=HOTEL;client=55
     ```
 
@@ -165,7 +167,7 @@ Databases have additional actions that can be performed on them such as renaming
 
      You may wish to rename the default database display name. Press **OK** to save the changes and close the window.
 
-    ![renaming a connection](properties2.png)
+    !![renaming a connection](properties2.png)
 
 2.  To clone a database and change the user name and password, right-click on a database and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same SAP HANA database but with a different set of credentials.
 
@@ -173,7 +175,7 @@ Databases have additional actions that can be performed on them such as renaming
 
 3.  When a SQL console opens, it connects to the currently selected database connection and displays the current schema and connection.  
 
-    ![SQL Console connections](SQL-Console-Connections.png)
+    !![SQL Console connections](SQL-Console-Connections.png)
 
     It is possible to connect, disconnect, or change the connection via the toolbar items highlighted above.  
 
@@ -227,7 +229,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
     The space can be found on the subaccount page of the SAP Cloud Platform Cockpit.
 
-    ![subaccount](org-and-space.png)
+    !![subaccount](org-and-space.png)
 
 4.  Open the development pane.
 
