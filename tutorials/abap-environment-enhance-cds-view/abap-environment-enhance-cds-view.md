@@ -16,11 +16,11 @@ primary_tag: topic>abap-development
 - How to add textual information using associations
 - How to concatenate two elements, using a built-in function for CDS
 - How to convert currencies using a built-in function for CDS
-- How to evaluate conditions using a CASE statement
+
 
 You can then use some of these features in productive development to make your applications more powerful and more user-friendly. By the end of this tutorial, your application should look like this.
 
-!![fep-final-enhance](fep-final-enhance.png)
+!![fep-final-enhance](fep-final-enhance-no-CASE.png)
 
 Throughout this tutorial, objects name include a suffix, such as `XXX`. Always replace this with your group number or initials.
 
@@ -301,12 +301,7 @@ define view Z_C_TRAVELS_xxx
       @ObjectModel.text.association: '_CurrencyText'
       CurrencyCode,
 
-      //Evaluate Premium status for customers paying in USD
-      case
-      when CurrencyCode = 'USD' and TotalPrice >= 5000 then 'Gold'
-      when CurrencyCode = 'USD' and TotalPrice < 5000 and TotalPrice >= 2000 then 'Silver'
-      else ' '
-      end                                                       as Premium,
+
 
       @Search.defaultSearchElement: true
       @Search.fuzzinessThreshold: 0.90

@@ -141,13 +141,15 @@ pip install hdbcli
 
     #Initialize your connection
     conn = dbapi.connect(
+        key='USER1UserKey', # address, port, user and password are retrieved from the hdbuserstore
         #address='10.7.168.11',
         #port='39015',
         #user='User1',
         #password='Password1',
-        key='USER1UserKey', # address, port, user and password are retreived from the hdbuserstore
         encrypt=True, # must be set to True when connecting to HANA Cloud
-        sslValidateCertificate=False # True HC, False for HANA Express.
+        #As of SAP HANA Client 2.6, connections on port 443 enable encryption by default
+        sslValidateCertificate=False #Must be set to false when connecting
+        #to an SAP HANA, express edition instance that uses a self-signed certificate.
     )
     #If no errors, print connected
     print('connected')
@@ -171,6 +173,8 @@ pip install hdbcli
     ```Shell
     python pythonQuery.py
     ```
+
+    You may replace `python` with `python3` if the above command doesn't work.
 
     ![python Query](python_app.png)
 
@@ -201,9 +205,9 @@ Visual Studio Code provides plugins for Python and can be used to debug an appli
 
     Visual Studio Code will recognize the `py` file extension and will suggest installing the Python extension.  Click **Install**.
 
-4. Place a breakpoint.
+4. Place a breakpoint on line the line `for row in rows:`.
 
-5. Select **Run | Start Debugging**.
+5. Select **Run | Start Debugging | Python File Debug the currently active Python file**.
 
 6. Select **Python Current File** from the debug configuration options.  
 

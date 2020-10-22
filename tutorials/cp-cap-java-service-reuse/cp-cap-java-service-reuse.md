@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Reuse a CAP Java Service
 description: Create a new application and reuse the existing CAP Java service.
 auto_validation: true
@@ -191,7 +191,7 @@ The `services.cds` file defines three services:
 
 The `BooksService` is used to provide a read-only view on the `Books` and `Authors` data. Modifications of these entities isn't possible via this service.
 
-The `OrdersService` allows to view, create, and delete orders. The entity `OrderItems` isn't explicitly listed in the `OrdersService`. However, it will be automatically added to the service (auto-exposed), as the `Orders` entity defines a composition of `OrderItems`.
+The `OrdersService` allows to view, create, and delete orders. 
 
 The `AdminService` is reused from the products service. But we've added the `Authors` entity to it. It can be used to create, update, and delete products and authors.
 
