@@ -1,4 +1,6 @@
 ---
+author_name: Prachi Tiwari
+author_profile: https://github.com/PrachiTiwari-SAP
 title: Create Geolocations and Trigger Geomatch
 description: Create geolocations and trigger geomatch for things using SAP Internet of Things (IoT).
 auto_validation: true
