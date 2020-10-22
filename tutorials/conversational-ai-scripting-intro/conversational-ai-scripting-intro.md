@@ -8,25 +8,25 @@ primary_tag: products>sap-conversational-ai
 ---
 
 ## Prerequisites
-  - You'll need an SAP Conversational AI trial account. See [Build Your First Chatbot with SAP Conversational AI](https://developers.sap.com/tutorials/cai-bot-getting-started.html).
+  - You'll need an SAP Conversational AI trial account. See [Build Your First Chatbot with SAP Conversational AI](cai-bot-getting-started).
 
 ## Details
 ### You will learn
-  - How to fetch entity values through an external (OData) service
-  - Hot to build a custom message using scripting
-  - How to set up an end-user skill trigger from a button
+  - How to fetch entity values with an external (OData) service
+  - How to build a custom message using scripting
+  - How to create a button that lets the end user trigger a skill
 
-You will build a bot so customers can order a product from categories like food, beverages or electronics -- simulating a convenience store digital commercial chatbot. Here it goes a sneak peek:
+You will build a bot so customers can order a product from categories like food, beverages or electronics -- simulating a convenience store digital commercial chatbot. Here's a sneak peek:
 
-  !![bot's sneak peek](intro_pic.png)
+!![bot's sneak peek](intro_pic.png)
 
 To build the bot, you start by creating an intent for ordering a product, which then gives the customer a dynamically generated list of products depending on the category the customer chose. This is done by calling an OData service.
 
-The main purpose of this tutorial is to demonstrate how to make API requests and handling its responses by using scripting capabilities to show the content the user is asking for in different UI elements (e.g., Cards or Buttons).
+The main purpose of this tutorial is to demonstrate how to make API requests and handle the responses with scripting. Scripting enables you to show the content the user is asking for in different UI elements (e.g., Cards or Buttons).
 
 - For more information on the scripting syntax, see [Scripting with Variables](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/5b86debf32444658b29db44733d8d81a.html).
 
-- For more information on how to make API calls and webhooks, see [Connect Your SAP Conversational AI Chatbot to External Services](https://developers.sap.com/group.conversational-ai-external-services.html).
+- For more information on how to make API calls and webhooks, see [Connect Your SAP Conversational AI Chatbot to External Services](group.conversational-ai-external-services).
 
 ---
 
@@ -71,7 +71,7 @@ You will create entities to represent the categories of products, and another en
 
     ![Create an category entity](categoryentity.png)
 
-2. In this entity, we'll add the values manually as there are only 3.
+2. In this entity, you'll add the values manually as there are only 3.
 
     Open the entity, and add the following values:
 
@@ -81,9 +81,9 @@ You will create entities to represent the categories of products, and another en
 
     !![Add values to category entity](categoryvalues.png)
 
-3. Create another entity for products, but in this case, we are going to fetch the data from an external (OData) service.
+3. Create another entity for products, but in this case, you are going to fetch the data from an external (OData) service.
 
-    Go back to the **Entities** tab (you can click on **entities** in the breadcrumb) and click **Create**.
+    Go back to the **Entities** tab (you can click **entities** in the breadcrumb) and click **Create**.
 
     Make the entity **Restricted**, call it `product`, and click **Create**.
 
@@ -133,9 +133,9 @@ You will create entities to represent the categories of products, and another en
 
     !![Create skill 2](forsaleskill2.png)
 
-3. Click on the skill and go to the **Triggers** tab.
+3. Click the skill and go to the **Triggers** tab.
 
-    We want the skill to be executed when someone wants to order a product.
+    You want the skill to be executed when someone wants to order a product.
 
 4. Click the box next to **If**, select the **`categoriesforsale`** intent, and click **Save**.
 
@@ -156,7 +156,7 @@ To order, the customer must provide a category and a product. These will be set 
 
     !![Requirement for category](ifcategorymissing.png)
 
-    Click **Connect External Service > Consume API Service**. We will use the service, and then use scripting on its response, to tell the user to select a category.
+    Click **Connect External Service > Consume API Service**. You will use the service, and then use scripting on its response, to tell the user to select a category.
 
     ![Connect external service](connectexternalservice.png)
 
@@ -210,7 +210,7 @@ To order, the customer must provide a category and a product. These will be set 
 
 1. Go back to **Requirements** tab.
 
-    Add a new requirement by click the first **+** sign (**Add a new requirement**) immediately below the category requirement we just added.
+    Add a new requirement by click the first **+** sign (**Add a new requirement**) immediately below the category requirement you just added.
 
     !![New requirement](newrequirement.png)
 
@@ -218,7 +218,7 @@ To order, the customer must provide a category and a product. These will be set 
 
 3. Expand this requirement and click **if #product is missing**.
 
-    Click **Connect External Service > Consume API Service**. We will use the service, and then use scripting on its response, to tell the user to select a product.
+    Click **Connect External Service > Consume API Service**. You will use the service, and then use scripting on its response, to tell the user to select a product.
 
 4. Select **GET**, and copy and paste this API endpoint
 
@@ -226,7 +226,7 @@ To order, the customer must provide a category and a product. These will be set 
     https://services.odata.org/V3/(S(vnym1b3ehndm0p4fr0bdtbon))/OData/OData.svc/Products/?$filter=%20Categories/any(Category:Category/Name%20eq%20%27{{memory.category.raw}}%27)&&$format=json
     ```
 
-    In this URL you can see that we are getting from the chatbot's memory the category the user selected using this syntax inside the URL endpoint: `{{memory.category.raw}}`.
+    In this URL you can see that you are getting from the chatbot's memory the category the user selected using this syntax inside the URL endpoint: `{{memory.category.raw}}`.
 
     Click **Save**.
 
@@ -236,7 +236,7 @@ To order, the customer must provide a category and a product. These will be set 
     {{#if (length api_service_response.default.body.value)}} Availability: {{pluralize 'product' quantity=(length api_service_response.default.body.value) }}. {{/if}}
     ```
 
-    >This scripting is to customize the message in case we have more than one product, so it can be shown as a plural response. For more information, see [Scripting Syntax](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/b4f08a9a66434327a405b6934880445c.html).
+    >This scripting is to customize the message in case you have more than one product, so it can be shown as a plural response. For more information, see [Scripting Syntax](https://help.sap.com/viewer/a4522a393d2b4643812b7caadfe90c18/latest/en-US/b4f08a9a66434327a405b6934880445c.html).
 
     Click **Save**.
 
@@ -270,7 +270,7 @@ To order, the customer must provide a category and a product. These will be set 
 
     ![Custom message](productscript.png)
 
-    >If you want, you can start testing the chatbot by clicking on the **Chat Preview** button. Text *See Categories for Sale* and see how the chatbot shares the categories available, select one and later you'll see its products.
+    >You can start testing the chatbot by clicking **Chat Preview**. Type in **See Categories for Sale** and see how the chatbot shares the categories available. Then select one and you'll see its products.
 
 [DONE]
 [ACCORDION-END]
@@ -337,15 +337,13 @@ Once the customer selects a product, you'll want to let the customer checkout an
 
 [ACCORDION-BEGIN [Step 7: ](Let user trigger checkout skill)]
 
-Now we'll connect the skills `forsale` and `checkout` together, for the checkout process.
+Now you'll connect the skills `forsale` and `checkout` together, for the checkout process.
 
-1. Let's go back to the **`forsale`** skill.
+1. In the **Build** tab, open the `forsale` skill.
 
-2. In the **Build** tab, open the `forsale` skill.
+2. In the **Action** tab, click **Add New Message Group**.
 
-3. In the **Action** tab, click **Add New Message Group**.
-
-4. Click **Send Message > Buttons**.
+3. Click **Send Message > Buttons**.
 
     For the message, copy and paste the following:
 
@@ -353,7 +351,7 @@ Now we'll connect the skills `forsale` and `checkout` together, for the checkout
     You've selected this product {{memory.product.raw}} in your cart. To proceed with your purchase, click here to checkout.
     ```
 
-5. Click **Add a Button > Trigger Skill**.
+4. Click **Add a Button > Trigger Skill**.
 
     !![Add an end-user skill trigger](triggerskillbutton.png)
 
@@ -366,7 +364,7 @@ Now we'll connect the skills `forsale` and `checkout` together, for the checkout
 
     Click **Save**.
 
-    >As you can see, we're enabling an end-user skill trigger feature by selecting the `checkout` skill as a button's action. In this way, the chatbot will trigger the `checkout` skill automatically when the user selects this option.
+    >As you can see, you're enabling an end-user skill trigger feature by selecting the `checkout` skill as a button's action. In this way, the chatbot triggers the `checkout` skill automatically when the user selects this option.
 
 [DONE]
 [ACCORDION-END]
@@ -405,9 +403,9 @@ You should see the following:
 
 2. Go to the **Actions** tab.
 
-    Notice that this skill and its responses are already configured because at the beginning we selected **Greetings** as a predefined skill for the bot.
+    Notice that this skill and its responses are already configured because at the beginning you selected **Greetings** as a predefined skill for the bot.
 
-3. **Delete** all the messages (not the message groups), since we will define our own.
+3. **Delete** all the messages (not the message groups), since you will define your own.
 
     !![Delete Messages](deletegreetingsmessages.png)
 
@@ -427,7 +425,7 @@ You should see the following:
 
     !![Postback 1](addintentgreetings.png)
 
-    Notice that here we can also set up a end-user skill trigger feature to trigger the `forsale` skill. But in this case we will "link" the intent `categoriesforsale` with its main expression **See Categories for Sale** using the **Postback** option.
+    Notice that here you can also set up a end-user skill trigger feature to trigger the `forsale` skill. But in this case you will "link" the intent `categoriesforsale` with its main expression **See Categories for Sale** using the **Postback** option.
 
     Enter `See Categories for Sale` for both the **Button Title** and **Postback** values.
 
@@ -437,7 +435,7 @@ You should see the following:
 
     Enter `Ask for an Order Tracking` for both the **Button Title** and **Postback** values.
 
-    >We're going to leave it 'til here, using **see categories for sale** as the main intent for this exercise. However this is an example of how we can put more options for the user to select and interact with the chatbot.
+    >We're going to leave it 'til here, using **see categories for sale** as the main intent for this exercise. However this is an example of how you can put more options for the user to select and interact with the chatbot.
 
     !![Postback 3](postback_3.png)
 
@@ -456,7 +454,7 @@ You should see the following:
 
     !![Test Bot](bot_test.png)
 
-3. Check out the bot's memory by clicking on the yellow *i* for the last message. You'll be able to see the whole entities saved in the bot's memory, like this:
+3. Check out the bot's memory by clicking the yellow *i* for the last message. You'll be able to see the whole entities saved in the bot's memory, like this:
 
     ![Bot Memory](memorybot.png)
 
@@ -480,10 +478,11 @@ You should see the following:
 ---
 
 ### Now you've learned:
-  - How to fetch entity values through an external service, in this case using an OData service.
-  - How to build custom messages and also enabling scripting syntax for dynamic responses while using an external service.
-  - How to set up end-user skill triggers from a button.
 
-  Hope you'd enjoyed this exercise! 😊
+- How to fetch entity values through an external service, in this case, using an OData service.
+- How to build custom messages and also enable scripting syntax for dynamic responses while using an external service.
+- How to set up end-user skill triggers from a button.
+
+Hope you enjoyed this tutorial! 😊
 
 ---
