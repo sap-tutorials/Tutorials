@@ -9,7 +9,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Prerequisites
  - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
- - You have completed the first 3 tutorials in this mission
+ - You have completed the first 3 tutorials in this group.
 
 ## Details
 ### You will learn

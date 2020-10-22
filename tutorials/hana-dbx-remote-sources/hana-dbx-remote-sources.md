@@ -9,7 +9,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Prerequisites
  - Two SAP HANA databases and an SAP HANA Data Lake instance
- - You have completed the first 3 tutorials in this mission
+ - You have completed the first 3 tutorials in this group.
 
 ## Details
 ### You will learn
@@ -28,7 +28,7 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a tourist review table in SAP HANA Cloud)]
+[ACCORDION-BEGIN [Step 1: ](Create tourist review table in SAP HANA Cloud)]
 
 1. From the SAP HANA Cloud Cockpit, open the SAP HANA database explorer.
 
@@ -65,7 +65,7 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a remote source from SAP HANA, express edition to SAP HANA Cloud)]
+[ACCORDION-BEGIN [Step 2: ](Create remote source from SAP HANA, express edition to SAP HANA Cloud)]
 
 1. To create a remote source from SAP HANA, express edition to SAP HANA Cloud, open the SAP HANA database explorer from the SAP HANA, express edition.
 
@@ -101,7 +101,7 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a virtual table and execute a federated query)]
+[ACCORDION-BEGIN [Step 3: ](Create virtual table and execute a federated query)]
 In this step, a virtual table named `vt_tourist_reviews` will be created in SAP HANA, express edition. This will enable access to the `tourist_reviews` table that was created in SAP HANA Cloud.
 
 

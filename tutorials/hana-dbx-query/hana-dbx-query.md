@@ -1,5 +1,5 @@
 ---
-title: Query with the SQL console in SAP HANA Database Explorer
+title: Query with the SQL Console in SAP HANA Database Explorer
 description: Explore features of the SQL console and see how it facilitates querying an SAP HANA database.
 auto_validation: true
 time: 10
@@ -9,16 +9,16 @@ primary_tag: products>sap-hana-cloud
 
 ## Prerequisites
  - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
- - You have completed the first 3 tutorials in this mission
+ - You have completed the first 3 tutorials in this group.
 
 ## Details
 ### You will learn
-  - How to run SQL queries using the SQL console and add filters to the results.
-  - How to use different features of the SQL console including keyboard shortcuts, autocomplete, statement help, and the statement library.
+  - How to run SQL queries using the SQL console and add filters to the results
+  - How to use different features of the SQL console including keyboard shortcuts, autocomplete, statement help, and the statement library
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Executing SQL)]
+[ACCORDION-BEGIN [Step 1: ](Execute SQL)]
 
 1. Select a connection and open the SQL console.
 
