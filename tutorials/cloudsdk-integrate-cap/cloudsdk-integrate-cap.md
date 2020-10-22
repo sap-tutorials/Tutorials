@@ -18,7 +18,7 @@ author_profile: https://github.com/MatKuhr
   - How to integrate the  SAP Cloud SDK into the SAP Cloud Application Programming Model
   - How to write a custom event handler for CAP Java
   - How to deploy an application to SAP Cloud Platform Cloud Foundry
-  - How to create service that reads/writes business partners from S/5HANA and exposes them as SAP Cloud Application Programming Model
+  - How to create service that reads/writes business partners from S/4HANA and exposes them as SAP Cloud Application Programming Model
 
 SAP Cloud Application Programming Model enables you to quickly create business applications by allowing you to focus on your business domain. It offers a consistent end-to-end programming model for full-stack development on SAP Cloud Platform.
 
@@ -47,7 +47,7 @@ For local development, you need to do the following:
     -DartifactId=cap-business-service
     ```    
 
-    This will initialize the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
+    This will initialise the application using the [maven archetype](http://maven.apache.org/guides/introduction/introduction-to-archetypes.html) `cds-services-archetype` and create your project as follows:
 
     - The project is named `cap-business-service`.
     - The `db` folder stores database-related artifacts.
