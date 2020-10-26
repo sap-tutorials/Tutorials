@@ -9,7 +9,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Prerequisites
  - Two SAP HANA databases and an SAP HANA Data Lake instance
- - You have completed the first 3 tutorials in this group
+ - You have completed the first 3 tutorials in this group.
 
 ## Details
 ### You will learn
