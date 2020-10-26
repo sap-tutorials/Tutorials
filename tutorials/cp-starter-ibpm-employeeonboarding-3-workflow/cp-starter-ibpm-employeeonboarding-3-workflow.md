@@ -37,7 +37,7 @@ Download **cf-onboarding-sample.zip**  project from [GitHub](https://github.com/
     !![Add Extension](editdevspace1.png)
     !![Add Extension](editdevspace2.png)
 
-    > - If you have the dev-space with Workflow Management extension added, and the dev-space status is STOPPED then click on the run button to start the space.
+    > - If you have the dev-space with Workflow Management extension added, and the dev-space status is STOPPED then click run to start the space.
     !![Start Workspace](startspace.png)
 
     !![Open Workspace](openworkspace.png)
