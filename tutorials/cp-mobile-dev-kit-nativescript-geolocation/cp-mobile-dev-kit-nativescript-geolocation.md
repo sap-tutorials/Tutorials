@@ -3,7 +3,7 @@ title: Add NativeScript Plugins in an MDK App
 description: Build and run the Mobile Development Kit client with a non-visual extension functionality for Android and iOS platforms.
 auto_validation: true
 primary_tag: products>mobile-development-kit-client
-tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services ]
+tags: [ tutorial>advanced, operating-system>ios, operating-system>android, topic>mobile, products>sap-cloud-platform, products>mobile-development-kit-client, software-product-function>sap-cloud-platform-mobile-services, products>sap-business-application-studio ]
 time: 35
 author_name: Jitendra Kansal
 author_profile: https://github.com/jitendrakansal
@@ -20,35 +20,50 @@ author_profile: https://github.com/jitendrakansal
   - How to build a Mobile development kit client for iOS & Android and connect to SAP Cloud Platform Mobile application
   - How to capture the device's current location
 
-You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/5-Brand-Your-Customized-App-with-Mobile-Development-Kit-SDK/4-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
+You may clone an existing metadata project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/2-Add-NativeScript-Plugin-in-an-MDK-App) and start directly with step 4 in this tutorial.
 
 ---
+
 
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can use the existing NativeScript plugins like nativescript-geolocation, nativescript-nfc etc. , add this to the client and reference it from a rule.
 
 In this tutorial, you will use the existing NativeScript plugin nativescript-geolocation to capture the device location: latitude & longitude.
 
-![MDK](img_046.png)
+![MDK](img_8.2.png)
 
-[ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
+[ACCORDION-BEGIN [Step 1: ](Create a new MDK project in SAP Business Application Studio)]
 
-This step includes creating the Mobile Development Kit project in the Editor.
+1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-Launch the SAP Web IDE and select the **MDK perspective** by clicking on the icon in the left panel.
+2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
 
-1. Right-click the workspace folder and select **New** | **MDK Empty Project**.
+    !![MDK](img_1.2.gif)
 
-    ![MDK](img_001.png)
+3. In Welcome page, click **New project from template** .
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/cfd84e66bde44d8da09f250f1b8ecee6.html).
+    !![MDK](img_1.3.png)
 
-2. Enter the **Project Name** as `mdk_geolocation` and click **Next**.
+4. Select **MDK Project** and click **Next**.
 
-    ![MDK](img_002.png)
+    !![MDK](img_1.4.png)
 
-3. Leave the default values in _Application Creation_ step as it is, click **Finish**.
+5. In *Basic Information* step, select or provide the below information and click **Next**:
 
-After clicking Finish, the wizard will generate your MDK project `mdk_geolocation` based on your selections.
+    | Field | Value |
+    |----|----|
+    | `MDK Template Type`| Select `Empty` from the dropdown |
+    | `Your Project Name` | `MDK_Geolocation` |
+    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
+
+    !![MDK](img_1.5.png)
+
+    >The _MDK Empty Project_ template creates a Logout action, Close page action, rule and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
+
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/webide.html#creating-a-new-project).
+
+6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Geolocation` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
+
+    !![MDK](img_1.6.png)
 
 [DONE]
 [ACCORDION-END]
@@ -58,49 +73,49 @@ After clicking Finish, the wizard will generate your MDK project `mdk_geolocatio
 
 In the MDK editor, you will create a new JavaScript file called `GetCoordinates.js` to capture the device location: latitude & longitude.
 
->You can find more details about [writing a Rule](https://help.sap.com/viewer/977416d43cd74bdc958289038749100e/Latest/en-US/ef1e3404ff5f4ca68676acbda10e4bd0.html).
+>You can find more details about [writing a Rule](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/development/rules.html).
 
-1. Right click on the **Rules** folder | **New** | **File**.
+1. Right-click the **Rules** folder | **New File**.
 
-    ![MDK](img_001.1.png)
+    !![MDK](img_2.1.png)
 
 2. Enter the file name `GetCoordinates.js`, click **OK**.
 
 3. Copy and paste the following code.
 
     ```JavaScript
+    import * as geolocation from "nativescript-geolocation";
+    import { Accuracy } from "tns-core-modules/ui/enums";
     export default function GetCoordinates(context) {
-    	var geolocation = require('nativescript-geolocation');
-    	var Accuracy = require('tns-core-modules/ui/enums').Accuracy;
-    	var logger = context.getLogger();
-    	console.log("Current Log Level: " + logger.getLevel());
-    	// check if geolocation is not enabled
-    	if (!geolocation.isEnabled()) {
-    		// request for the user to enable it
-    		geolocation.enableLocationRequest();
-    	}
-    	// Get current location with high accuracy
-    	return geolocation.getCurrentLocation({
-    		desiredAccuracy: Accuracy.high, //This will return the finest location available
-    		updateDistance: 5, //Update distance filter in meters.
-    		timeout: 11000 //How long to wait for a location in ms.
-    	}).then(function (loc) {
-    		if (loc) {
-    			console.log(loc);
-    			console.log('\nCurrent Location: (' + loc.latitude + ',' + loc.longitude + ')');
-    			logger.log(loc.toString());
+        var logger = context.getLogger();
+        console.log("Current Log Level: " + logger.getLevel());
+        // check if geolocation is not enabled
+        if (!geolocation.isEnabled()) {
+            // request for the user to enable it
+            geolocation.enableLocationRequest();
+        }
+        // Get current location with high accuracy
+        return geolocation.getCurrentLocation({
+            desiredAccuracy: Accuracy.high, //This will return the finest location available
+            updateDistance: 5, //Update distance filter in meters.
+            timeout: 11000 //How long to wait for a location in ms.
+        }).then(function (loc) {
+            if (loc) {
+                console.log(loc);
+                console.log('\nCurrent Location: (' + loc.latitude + ',' + loc.longitude + ')');
+                logger.log(loc.toString());
 
-    			var locMessage = '(' + "Latitude:" + loc.latitude + ',' + "Longitude:" + loc.longitude + ')';
-    			logger.log('Current Location: ' + locMessage, 'INFO');
-    			return locMessage;
-    		}
-    	}, function (e) {
-    		logger.log(e.message, 'ERROR');
-    	});
+                var locMessage = '(' + "Latitude:" + loc.latitude + ',' + "Longitude:" + loc.longitude + ')';
+                logger.log('Current Location: ' + locMessage, 'INFO');
+                return locMessage;
+            }
+        }, function (e) {
+            logger.log(e.message, 'ERROR');
+        });
     }
     ```
 
-  4. Save the changes.
+  4. Save your changes to the `GetCoordinates.js` file.
 
 [DONE]
 [ACCORDION-END]
@@ -110,17 +125,17 @@ In the MDK editor, you will create a new JavaScript file called `GetCoordinates.
 
 You will add this registered control in a Form Cell page.
 
-  1. Double-click the Main.page, drag & drop **Static Key Value** container control to the page area.
+  1. Double-click the `Main.page`, drag & drop **Static Key Value** container control to the page area.
 
-    ![MDK](img_003.gif)
+    !![MDK](img_3.1.gif)
 
   2. In **Properties** | **Layout**, change `NumberOfColumns` to 1.
 
-    ![MDK](img_003.png)
+    !![MDK](img_3.2.png)
 
   3. Drag & drop **Key Value Item** to the container.
 
-    ![MDK](img_002.gif)
+    !![MDK](img_3.3.gif)
 
   4. Provide the following information:
 
@@ -129,46 +144,71 @@ You will add this registered control in a Form Cell page.
     | `KeyName`| `Coordinates` |
     | `Value`| Bind it to `GetCoordinates.js` |
 
-    ![MDK](img_004.png)
-
-
-  5. Save the changes to the `Main.page`.
+    !![MDK](img_3.4.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Deploy and activate application)]
+[ACCORDION-BEGIN [Step 4: ](List the NPM modules as external reference)]
 
-So far, you have learned how to build an MDK application in the SAP Web IDE editor. Now, we deploy this application definition to Mobile Services.
+In `GetCoordinates.js` file, you referred `nativescript-geolocation` and `tns-core-modules/ui/enums`. You now need to list these modules as external references in BAS configuration so when bundling, MDK editor knows not to worry about these references.
 
-1. Right-click the `mdk_geolocation` MDK Application in the project explorer pane and select **MDK Deploy and Activate**.
+1. Navigate **File** menu | **Settings** | **Open Preferences**.
 
-    ![MDK](img_014.1.png)
+    !![MDK](img_3.5.png)
 
-2. Add `;nativescript-geolocation;ui/enums` in the **Externals** and click **Next**.
+2. Search with `mdk`, click **Edit in settings.json**.
 
-    ![MDK](img_015.png)
+    !![MDK](img_3.6.png)
 
-    >**Filter Files**: will be filtered and ignored in web packing process.
+3. Include below references in `mdk.bundlerExternals` and save the changes.
 
-    >**Externals**: are the list of NPM modules that are part of the MDK Client application and should not be validated in the bundle.
+    ```JSON
+    "nativescript-geolocation",
+    "tns-core-modules/ui/enums"
+    ```
 
-3. Click the drop down for Destination Name and select the `mobileservices_cf` destination, you will find list of existing application IDs, select the one you have chosen while creating the project.
-
-    ![MDK](img_016.png)
-
-    >By default, automatically deploy option is selected, In other words, the application is automatically deployed from Mobile Services to your MDK client.
-
-4. Click **Next** to finish the deployment from SAP Web IDE.
-
-You should see **Application deployed successfully** message in console log.
-
-![MDK](img_017.png)
+     !![MDK](img_3.7.png)        
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add NativeScript plugin and External dependencies in your local .mdkproject)]
+[ACCORDION-BEGIN [Step 5: ](Deploy and activate application)]
+
+So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
+
+1. Right-click `Application.app` and select **MDK: Deploy**.
+
+    !![MDK](img_4.1.png)
+
+2. Verify the URL and **Click Enter** on your keyboard.
+
+    !![MDK](img_4.2.png)   
+
+    >SAP Business Application Studio pre-populates the end-point of the environment it is running in. If you want to connect to a different environment, modify the API endpoint by copying it from your target SAP Cloud Platform account: *SAP Cloud Platform Cockpit &rarr; Sub-account &rarr; API Endpoint*
+
+3. Select the organisation in which you have enabled Mobile Services.
+
+    !![MDK](img_4.3.png)   
+
+4. Select the space in which you have enabled Mobile Services.
+
+    !![MDK](img_4.4.png)   
+
+5. Select the an application from Mobile Services.
+
+    !![MDK](img_4.5.png)   
+
+    Upon successful setup, you should see **Deploy Succeeded** message.
+
+    !![MDK](img_4.6.png)
+
+    >MDK editor stores deployment details in `.project.json` file. When you deploy to same configuration next time, you will not be asked for above details, MDK editor will pick up these details from `.project.json` file.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Add NativeScript plugin and External dependencies in your local .mdkproject)]
 
 In order to use the existing NativeScript plugin in MDK client, you will need to first add it in `.mdkproject` and then create your branded MDK client.
 
@@ -178,7 +218,7 @@ In order to use the existing NativeScript plugin in MDK client, you will need to
 
     ```JSON
     {
-      "AppName": "Demo Sample App",
+      "AppName": "DemoSampleApp",
       "AppVersion": "1.0.0",
       "BundleID": "com.sap.mdk.demo",
       "Externals": ["nativescript-geolocation","ui/enums"],
@@ -187,16 +227,18 @@ In order to use the existing NativeScript plugin in MDK client, you will need to
     }
     ```
 
+!![MDK](img_5.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add googlePlayServicesVersion in Android App Resources (Required only for Android client))]
+[ACCORDION-BEGIN [Step 7: ](Add googlePlayServicesVersion in Android App Resources (Required only for Android client))]
 
 With [Google Play services](https://developers.google.com/android/guides/overview), your app can take advantage of the latest, Google-powered features such as Maps, Google+, and more.
 
-1. Navigate to `/demosampleapp.mdkproject/App_Resources/Android` and create a new file `before-plugins.gradle`.
+1. Navigate to `/DemoSampleApp.mdkproject/App_Resources/Android` and create a new file `before-plugins.gradle`.
 
-    ![MDK](img_014.png)
+    !![MDK](img_6.png)
 
 2. Provide the below information:
 
@@ -213,43 +255,37 @@ With [Google Play services](https://developers.google.com/android/guides/overvie
 
 
 
-[ACCORDION-BEGIN [Step 7: ](Create & Run the MDK client)]
-
-Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device/simulator.
+[ACCORDION-BEGIN [Step 8: ](Create & Run the MDK client)]
 
 [OPTION BEGIN [Android]]
 
-Tap **OK** to update the client with new MDK metadata.
+1. Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
 
-![MDK](img_023.1.png)
+2. Once you have accepted the app update, allow your app to access your location.
 
-Allow your app to access your location.
+    ![MDK](img_8.1.png)
 
-![MDK](img_041.png)
+    In Main page, you will see device's current location.
 
-In Main page, you will see device's current location.
-
-![MDK](img_042.png)
+    ![MDK](img_8.2.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-Tap **OK** to update the client with new MDK metadata.
+1. Follow steps 4 & 5 from [this](cp-mobile-dev-kit-build-client) tutorial to create your branded MDK client and run it in your device.
 
-![MDK](img_044.png)
+2. Once you have accepted the app update, allow your app to access your location.
 
-Allow your app to access your location.
+    ![MDK](img_8.3.png)
 
-![MDK](img_045.png)
+    In Main page, you will see device's current location.
 
-In Main page, you will see device's current location.
-
-![MDK](img_046.png)
+    ![MDK](img_8.4.png)
 
 [OPTION END]
 
-Congratulations, you have learned how to capture device's current location in an MDK app.
+**Congratulations!** You have learned how to capture device's current location in an MDK app and you are now all set to [Extend Your MDK App With a Map Custom Control (Using Metadata Approach)](cp-mobile-dev-kit-map-extension).
 
 [DONE]
 [ACCORDION-END]

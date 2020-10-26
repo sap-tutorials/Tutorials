@@ -5,6 +5,8 @@ description: Create an ABAP package and an ABAP class in the SAP Cloud Platform 
 primary_tag: products>sap-cloud-platform--abap-environment
 tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 5
+author_name: Merve Temel
+author_profile: https://github.com/mervey45
 ---
 
 ## Prerequisites  
@@ -50,25 +52,35 @@ or the icon:
 
     ![Select ABAP Cloud Project](abap.png)
 
-3. In the next wizard screen, select SAP Cloud Platform Cloud Foundry Environment and click **Next**.
+3. If you are using your **SAP Cloud Platform ABAP environment trial user**, then select **Service Key** and click **Next >**.
+
+    If you want to use your **license user**, then skip **step 2.3** and move on with **step 2.4**.
+
+    ![Create ABAP cloud project](project2.png)
+
+    Paste your service key from the SAP Cloud Platform Trial Cockpit you created in [Create an SAP Cloud Platform ABAP Environment Trial User](abap-environment-trial-onboarding) in **Step 3.5**. Click **Next >** and move on with **step 2.5**.
+
+    ![Create ABAP cloud project](project3.png)
+
+4. As a **licensed user** select SAP Cloud Platform Cloud Foundry Environment and click **Next**.
 
     ![Select service instance connection](servicekey.png)
 
-4. Maintain the SAP Cloud Platform Foundry connection information and click **Next**:
-    - Region: **`<your_region>`**
-    - Email: **`<your_email_address>`**
-    - Password: **`<your_password>`**
+    Maintain the SAP Cloud Platform Foundry connection information and click **Next**:
+     - Region: **`<your_region>`**
+     - Email: **`<your_email_address>`**
+     - Password: **`<your_password>`**
 
      ![Setup connection settings](connect.png)
 
-5. Maintain the required Service Instance details by selecting the appropriate values from the drop-down lists and move on with **Next**.
-    - Organization: **`<your_organization>`**
-    - Space: **`<your_space>`**
-    - Service Instance: **`<your_service_instance>`**
+     Maintain the required Service Instance details by selecting the appropriate values from the drop-down lists and move on with **Next**.
+      - Organization: **`<your_organization>`**
+      - Space: **`<your_space>`**
+      - Service Instance: **`<your_service_instance>`**
 
     ![Select service instance details](details.png)
 
-6. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press Log On.
+5. Now provide your login credentials of the SAP Cloud Platform Identity Authentication Service (IAS) tenant to connect to the system and press Log On.
 
     ![Enter login credentials](login.png)
 
@@ -135,22 +147,22 @@ or the icon:
 `out->write('Hello World!').`
 
     ```ABAP
-      class Z_CLASS_XXX definition
-      public
-      final
-      create public .
+    CLASS z_class_xxx DEFINITION
+      PUBLIC
+      FINAL
+      CREATE PUBLIC .
 
-      public section.
-      interfaces if_oo_adt_classrun.
-      protected section.
-      private section.
-      ENDCLASS.
+      PUBLIC SECTION.
+        INTERFACES if_oo_adt_classrun.
+      PROTECTED SECTION.
+      PRIVATE SECTION.
+    ENDCLASS.
 
-      CLASS Z_CLASS_XXX IMPLEMENTATION.
-      METHOD IF_OO_ADT_CLASSRUN~MAIN.
-      out->write('Hello world!').
+    CLASS z_class_xxx IMPLEMENTATION.
+      METHOD if_oo_adt_classrun~main.
+        out->write('Hello world!').
       ENDMETHOD.
-      ENDCLASS.
+    ENDCLASS.
     ```
 
   2. Save and activate your changes.

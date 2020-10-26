@@ -34,6 +34,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     // validations
     validation validateCustomer on save { field customer_id; }
     validation validateDates on save { field begin_date, end_date; }
+    validation validateAgency on save { field agency_id; }
 
     // determination
     determination CalculateTravelKey on modify
@@ -43,7 +44,6 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
   2. Your result should look like this. Replace your code with following:
 
     ```ABAP
-
     managed implementation in class ZCL_BP_I_TRAVEL_M_XXX unique;
 
     define behavior for ZI_TRAVEL_M_XXX alias Travel
@@ -63,6 +63,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       // mandatory fields that are required to create a travel
       field ( mandatory ) agency_id, overall_status, booking_fee, currency_code;
 
+      // mandatory fields that are required to create a travel
+      field ( mandatory ) Begin_Date, End_Date, Customer_ID;
+
+
       // standard operations for travel entity
       create;
       update;
@@ -74,8 +78,10 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       // validations
       validation validateCustomer on save { field customer_id; }
       validation validateDates on save { field begin_date, end_date; }
+      validation validateAgency on save
+      { field agency_id; }
 
-      // determination
+        // determination
         determination CalculateTravelKey on modify
         { create; }
 
@@ -104,16 +110,12 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
     define behavior for ZC_TRAVEL_M_XXX alias TravelProcessor
     use etag
     {
-    // scenario specific field control
-    field ( mandatory ) BeginDate, EndDate, CustomerID;
+      use create;
+      use update;
+      use delete;
 
-    use create;
-    use update;
-    use delete;
-
-    use action acceptTravel;
+      use action acceptTravel;
     }
-
     ```
 
   3. Save and activate.
@@ -124,17 +126,57 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
      By using **actions** your are able to change the status of your booking status.
 
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Create implementation class)]
+  1. In your behavior definition `ZI_Travel_M_XXX` set the cursor before the implementation class `ZCL_BP_I_TRAVEL_M_XXX` and click **`CTRL` + 1**. Double-click on **Create behavior implementation class `zcl_bp_i_travel_m_xxx`** to create your implementation class.
+
+      ![Create behavior implementation](implementationx.png)
+
+  2. Create a new behavior implementation:
+
+     - Description: Behavior implementation for `ZI_TRAVEL_M_XXX`
+
+     Click **Next >**.
+
+      ![Create behavior implementation](implementationx2.png)
+
+  3. Click **Finish** to use your transport request.
+
+      ![Create behavior implementation](implementation3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Enhance behavior implementation)]
-  1. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to local types to replace your code.
+[ACCORDION-BEGIN [Step 4: ](Enhance behavior implementation)]
+
+  1. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to **global class** to replace your code.
+
+      ![Enhance behavior implementation](implementation4.png)
+
+
+  2. In your **global class** replace your code with following:
+
+    ```ABAP
+    CLASS zcl_bp_i_travel_m_xxx DEFINITION
+    PUBLIC
+    ABSTRACT
+    FINAL
+    FOR BEHAVIOR OF ZI_Travel_M_XXX.
+
+    ENDCLASS.
+
+    CLASS zcl_bp_i_travel_m_xxx IMPLEMENTATION.
+    ENDCLASS.
+
+    ```
+
+  3. Open your behavior implementation `ZCL_BP_I_TRAVEL_M_XXX` and switch to **local types** to replace your code.
 
       ![Enhance behavior implementation](implementation.png)
 
-  2. In your **local types** replace your code with following:
+  4. In your **local types** replace your code with following:
 
     ```ABAP
     *"* use this source file for the definition and implementation of
@@ -147,14 +189,14 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
         TYPES tt_travel_update TYPE TABLE FOR UPDATE zi_travel_m_xxx.
 
-        METHODS validate_customer          FOR VALIDATION travel~validateCustomer IMPORTING keys FOR travel.
-        METHODS validate_dates             FOR VALIDATION travel~validateDates    IMPORTING keys FOR travel.
+        METHODS validate_customer          FOR VALIDATE ON SAVE IMPORTING keys FOR travel~validateCustomer.
+        METHODS validate_dates             FOR VALIDATE ON SAVE IMPORTING keys FOR travel~validateDates.
+        METHODS validate_agency             FOR VALIDATE ON SAVE IMPORTING keys FOR travel~validateAgency.
+
         METHODS set_status_completed       FOR MODIFY IMPORTING   keys FOR ACTION travel~acceptTravel              RESULT result.
         METHODS get_features               FOR FEATURES IMPORTING keys REQUEST    requested_features FOR travel    RESULT result.
 
-
-
-        METHODS CalculateTravelKey FOR DETERMINATION Travel~CalculateTravelKey IMPORTING keys FOR Travel.
+        METHODS CalculateTravelKey         FOR DETERMINE ON MODIFY IMPORTING keys FOR Travel~CalculateTravelKey.
 
 
     ENDCLASS.
@@ -169,7 +211,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       METHOD validate_customer.
 
         READ ENTITY zi_travel_m_xxx\\travel FROM VALUE #(
-            FOR <root_key> IN keys ( %key     = <root_key>
+            FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
                                      %control = VALUE #( customer_id = if_abap_behv=>mk-on ) ) )
             RESULT DATA(lt_travel).
 
@@ -189,13 +231,13 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
         " Raise msg for non existing customer id
         LOOP AT lt_travel INTO DATA(ls_travel).
           IF ls_travel-customer_id IS NOT INITIAL AND NOT line_exists( lt_customer_db[ customer_id = ls_travel-customer_id ] ).
-            APPEND VALUE #(  mykey = ls_travel-mykey ) TO failed.
+            APPEND VALUE #(  mykey = ls_travel-mykey ) TO failed-travel.
             APPEND VALUE #(  mykey = ls_travel-mykey
                              %msg      = new_message( id       = /dmo/cx_flight_legacy=>customer_unkown-msgid
                                                       number   = /dmo/cx_flight_legacy=>customer_unkown-msgno
                                                       v1       = ls_travel-customer_id
                                                       severity = if_abap_behv_message=>severity-error )
-                             %element-customer_id = if_abap_behv=>mk-on ) TO reported.
+                             %element-customer_id = if_abap_behv=>mk-on ) TO reported-travel.
           ENDIF.
 
         ENDLOOP.
@@ -211,7 +253,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
       METHOD validate_dates.
 
         READ ENTITY zi_travel_m_xxx\\travel FROM VALUE #(
-            FOR <root_key> IN keys ( %key     = <root_key>
+            FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
                                      %control = VALUE #( begin_date = if_abap_behv=>mk-on
                                                          end_date   = if_abap_behv=>mk-on ) ) )
             RESULT DATA(lt_travel_result).
@@ -221,7 +263,7 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
           IF ls_travel_result-end_date < ls_travel_result-begin_date.  "end_date before begin_date
 
             APPEND VALUE #( %key        = ls_travel_result-%key
-                            mykey   = ls_travel_result-mykey ) TO failed.
+                            mykey   = ls_travel_result-mykey ) TO failed-travel.
 
             APPEND VALUE #( %key     = ls_travel_result-%key
                             %msg     = new_message( id       = /dmo/cx_flight_legacy=>end_date_before_begin_date-msgid
@@ -231,19 +273,19 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
                                                     v3       = ls_travel_result-travel_id
                                                     severity = if_abap_behv_message=>severity-error )
                             %element-begin_date = if_abap_behv=>mk-on
-                            %element-end_date   = if_abap_behv=>mk-on ) TO reported.
+                            %element-end_date   = if_abap_behv=>mk-on ) TO reported-travel.
 
           ELSEIF ls_travel_result-begin_date < cl_abap_context_info=>get_system_date( ).  "begin_date must be in the future
 
             APPEND VALUE #( %key        = ls_travel_result-%key
-                            mykey   = ls_travel_result-mykey ) TO failed.
+                            mykey   = ls_travel_result-mykey ) TO failed-travel.
 
             APPEND VALUE #( %key = ls_travel_result-%key
                             %msg = new_message( id       = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgid
                                                 number   = /dmo/cx_flight_legacy=>begin_date_before_system_date-msgno
                                                 severity = if_abap_behv_message=>severity-error )
                             %element-begin_date = if_abap_behv=>mk-on
-                            %element-end_date   = if_abap_behv=>mk-on ) TO reported.
+                            %element-end_date   = if_abap_behv=>mk-on ) TO reported-travel.
           ENDIF.
 
         ENDLOOP.
@@ -321,36 +363,83 @@ In this tutorial, wherever XXX appears, use a number (e.g. 000).
 
 
       METHOD calculatetravelkey.
-        SELECT FROM ztravel_xxx
-            FIELDS MAX( travel_id ) INTO @DATA(lv_max_travel_id).
-
-        LOOP AT keys INTO DATA(ls_key).
-          lv_max_travel_id = lv_max_travel_id + 1.
-          MODIFY ENTITIES OF zi_travel_m_xxx  IN LOCAL MODE
+        READ ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
             ENTITY Travel
-              UPDATE SET FIELDS WITH VALUE #( ( mykey     = ls_key-mykey
-                                                travel_id = lv_max_travel_id ) )
-              REPORTED DATA(ls_reported).
-          APPEND LINES OF ls_reported-travel TO reported-travel.
+              FIELDS ( travel_id )
+              WITH CORRESPONDING #( keys )
+            RESULT DATA(lt_travel).
+
+        DELETE lt_travel WHERE travel_id IS NOT INITIAL.
+        CHECK lt_travel IS NOT INITIAL.
+
+        "Get max travelID
+        SELECT SINGLE FROM ztravel_xxx FIELDS MAX( travel_id ) INTO @DATA(lv_max_travelid).
+
+        "update involved instances
+        MODIFY ENTITIES OF zi_travel_m_xxx IN LOCAL MODE
+          ENTITY Travel
+            UPDATE FIELDS ( travel_id )
+            WITH VALUE #( FOR ls_travel IN lt_travel INDEX INTO i (
+                               %key      = ls_travel-%key
+                               travel_id  = lv_max_travelid + i ) )
+        REPORTED DATA(lt_reported).
+
+
+      ENDMETHOD.
+
+      METHOD validate_agency.
+
+        READ ENTITY zi_travel_m_xxx\\travel FROM VALUE #(
+            FOR <root_key> IN keys ( %key-mykey     = <root_key>-mykey
+                                     %control = VALUE #( agency_id = if_abap_behv=>mk-on ) ) )
+            RESULT DATA(lt_travel).
+
+        DATA lt_agency TYPE SORTED TABLE OF /dmo/agency WITH UNIQUE KEY agency_id.
+
+        " Optimization of DB select: extract distinct non-initial customer IDs
+        lt_agency = CORRESPONDING #( lt_travel DISCARDING DUPLICATES MAPPING agency_id = agency_id EXCEPT * ).
+        DELETE lt_agency WHERE agency_id IS INITIAL.
+        CHECK lt_agency IS NOT INITIAL.
+
+        " Check if customer ID exist
+        SELECT FROM /dmo/agency FIELDS agency_id
+          FOR ALL ENTRIES IN @lt_agency
+          WHERE agency_id = @lt_agency-agency_id
+          INTO TABLE @DATA(lt_agency_db).
+
+        " Raise msg for non existing customer id
+        LOOP AT lt_travel INTO DATA(ls_travel).
+          IF ls_travel-agency_id IS NOT INITIAL AND NOT line_exists( lt_agency_db[ agency_id = ls_travel-agency_id ] ).
+            APPEND VALUE #(  mykey = ls_travel-mykey ) TO failed-travel.
+            APPEND VALUE #(  mykey = ls_travel-mykey
+                             %msg      = new_message( id       = /dmo/cx_flight_legacy=>agency_unkown-msgid
+                                                      number   = /dmo/cx_flight_legacy=>agency_unkown-msgno
+                                                      v1       = ls_travel-agency_id
+                                                      severity = if_abap_behv_message=>severity-error )
+                             %element-agency_id = if_abap_behv=>mk-on ) TO reported-travel.
+          ENDIF.
+
         ENDLOOP.
+
 
       ENDMETHOD.
 
     ENDCLASS.
     ```
 
-  3. Save and activate.
+  5. Save and activate.
 
       ![save and activate](activate.png)
 
-  4. Now switch to your service binding and double click on `TravelProcessor`.
+  6. Now switch to your service binding and double click on `TravelProcessor`.
 
       ![Enhance behavior definition for projection view](projection.png)
 
-  5. Check your result.
+  7. Check your result.
 
+      The behavior implementation is created for travel booking. By using the managed approach, the implementation of create, update and delete is done automatically.
 
-     The accept travel button appears, but this can take a few minutes.
+     The accept travel button appears.
      Create a new travel booking with the booking status O.
      O stands for open. Save your travel booking and you are able to accept your created travel booking.
 

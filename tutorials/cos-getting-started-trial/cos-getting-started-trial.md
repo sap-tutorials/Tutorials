@@ -2,8 +2,8 @@
 title: Create a Personalized Sourcing Strategy with SAP Customer Order Sourcing
 description: Use SAP Customer Order Sourcing to reduce delivery costs by applying an efficient sourcing strategy.
 auto_validation: true
-time: 30
-tags: [ tutorial>beginner, topic>topic>sap-api-business-hub]
+time: 15
+tags: [ tutorial>beginner, products>sap-cloud-platform, topic>sap-api-business-hub, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: topic>cloud
 ---
 
@@ -18,6 +18,9 @@ primary_tag: topic>cloud
   - How to upload master data using the API Business Hub
   - How to create a sourcing strategy
   - How to create a sourcing request to test your sourcing strategy
+
+ If you're interested in the demo data included in every **SAP Customer Order Sourcing** trial system, you can learn more [here](https://help.sap.com/viewer/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US/227454caf28d47aa94683a6a0d749ebd.html).
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Get to know the business scenario)]
@@ -34,82 +37,24 @@ You are the owner of an e-commerce business or a web shop in the fashion industr
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Subscribe to SAP Customer Order Sourcing)]
+[ACCORDION-BEGIN [Step 2: ](Set up SAP Customer Order Sourcing via Booster)]
 
+1. Log on to the **SAP Cloud Platform trial** cockpit and open your global account for the Cloud Foundry environment.
 
-1. In the [SAP Cloud Platform trial space](https://account.hanatrial.ondemand.com), enter your trial account.
+2. In the navigation pane of the SAP Cloud Platform cockpit, choose **Boosters**.
 
-2. Navigate to your subaccount, probably named `trial`.
+3. Choose the booster **Prepare an Account for SAP Customer Order Sourcing**.
 
-3. In the navigation pane, open **Subscriptions**.
+4. Choose **Start**.
 
-4. Search for **SAP Customer Order Sourcing** and click on it to open the **Overview** page.
+The configuration and set-up of your new **SAP Customer Order Sourcing** trial system starts and finishes automatically.
 
-5. **Subscribe** to the service.
-
-    **Go to Application** will be available once the subscription is activated. Later in this post, you can use this link to access the Strategy Builder.
-
-!![Subscribe to SAP Customer Order Sourcing](SubscribeToCustomerOrderSourcing.png)
+You want to learn how to setup SAP Customer Order Sourcing yourself? This tutorial can help: [Set Up SAP Customer Order Sourcing Manually](cos-manual-setup).
 
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 3: ](Assign read/write permissions to your user)]
-
-You have successfully subscribed to SAP Customer Order Sourcing, but to be able to use it you have to assign read and write permissions to your user:
-
-1. Navigate back to your subaccount.
-
-2. In the navigation pane, open **Security > Trust Configuration**.
-
-3. Open the **SAP ID Service**.
-
-4. Enter your email address (the one you used to register for a SAP Cloud Platform trial account) and search for already existing assignments via **Show Assignments**.
-
-5. Choose **Assign Role Collection** and assign the role collection `StrategyBuilder_ReadWrite`.
-
-![Trust Configuration](TrustConfiguration.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Create a service instance)]
-
-1. Navigate to your subaccount.
-
-2. In the navigation pane, open **Spaces**.
-
-3. Open your already existing space, probably called `dev`.
-
-4. In the navigation pane, open **Services > Service Marketplace**.
-
-5. Search for **SAP Customer Order Souring** and click on the tile.
-
-6. In the navigation pane, open **Instances**.
-
-7. Create a new instance by clicking **New Instance** and then **Next** three times and inserting an instance name on the last page. Click **Finish**.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Create credentials)]
-
-1. Open your newly created service instance.
-
-2. In the navigation pane, open **Service Keys**.
-
-3. Click **Create Service Key**. In the pop-up window, just enter a name for your service key. Click **Save**.
-
-Your service key will look something like this. Important for the next step are `clientid`, `identityzone` and `clientsecret`.
-
-!![Service Key](ServiceKey.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 6: ](Create a new environment)]
+[ACCORDION-BEGIN [Step 3: ](Create a new environment)]
 
 Having created a service instance and the corresponding credentials, you can now upload master data into SAP Customer Order Sourcing. You do this via a REST API.
 
@@ -121,22 +66,30 @@ Having created a service instance and the corresponding credentials, you can now
 
 4. Enter a name for your environment, for example `trial_test`.
 
-5. Go back to your recently created service key in your trial space of SAP Cloud Platform, and copy the following fields to your new environment:
+5. In your **SAP Cloud Platform trial** **Subaccount** open **Spaces** and your already existing space, probably called `dev`.
+
+6. In the navigation pane, open **Services > Service Marketplace**.
+
+7. Search for **SAP Customer Order Souring** and click on the tile.
+
+8. In the navigation pane, open **Instances** and open the already existing instance, probably called `default_customer-order-sourcing-trial`.
+
+9. From your instance copy the following fields to your new environment in the API Business Hub:
 
     - `clientid`
     - `clientsecret` (called just **Secret** in environment)
     - `identityzone`
 
-9. Scroll down and choose the **Save this environment for future sessions** radio button.
+10. Scroll down and choose the **Save this environment for future sessions** radio button.
 
-10. Click **Save**.
+11. Click **Save**.
 
 ![Configure Environments](Config_Environments.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Upload master data)]
+[ACCORDION-BEGIN [Step 4: ](Upload master data)]
 
 You upload master data from the API Business Hub. Since there are already sources included in the trial, you only need to add availability raw data:
 
@@ -144,7 +97,7 @@ You upload master data from the API Business Hub. Since there are already source
 
 2. On the left side choose **Availability Raw Data**.
 
-    !![API Hub](API Hub.png)
+    !![API Hub](API_Hub.png)
 
 3. Open `POST/availabilityRawData` and choose try out.
 
@@ -184,7 +137,7 @@ You upload master data from the API Business Hub. Since there are already source
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Model your sourcing strategy)]
+[ACCORDION-BEGIN [Step 5: ](Model your sourcing strategy)]
 
 Those were a lot of steps already and you didn't get the chance to do anything with SAP Customer Order Sourcing yet.
 
@@ -212,7 +165,7 @@ The order of the sources determines their priority within the sourcing. That mea
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test your strategy)]
+[ACCORDION-BEGIN [Step 6: ](Test your strategy)]
 
 **Scenario**: A customer located in a suburb of Munich orders a `black_sports_shoe`.
 
@@ -230,21 +183,22 @@ Let's check if this is the case:
 
 5. Post the following sourcing request:
 
-```JSON
-{
-  "strategyId": "Test",
-  "items": [ { "productId": "black_sports_shoe", "quantity": 1 } ],
-  "destinationCoordinates": { "latitude": 48.1500,"longitude": 11.5736 }
-}
-```
-This is the response you should get:
+    ```JSON
+    {
+      "strategyId": "Test",
+      "items": [ { "productId": "black_sports_shoe", "quantity": 1 } ],
+      "destinationCoordinates": { "latitude": 48.1500,"longitude": 11.5736 }
+    }
+    ```
 
-!![Sourcing Result](Sourcing_Response.png)
+    This is the response you should get:
+
+    !![Sourcing Result](Sourcing_Response.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
 
-## Additional Information
+### Additional Information
 
 - [Official Product Documentation](https://help.sap.com/viewer/product/SAP_CUSTOMER_ORDER_SOURCING/Cloud/en-US)
 - [Trial Documentation](https://help.sap.com/viewer/DRAFT/cd03af1a94a440f1b5dbc0dc50a0989b/Cloud/en-US)

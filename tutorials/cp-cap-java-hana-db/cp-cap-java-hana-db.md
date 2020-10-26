@@ -1,7 +1,7 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
-title: Use SAP HANA as the database for a CAP Java application.
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
+title: Use SAP HANA as the Database for a CAP Java Application
 description: Use SAP HANA in SAP Cloud Platform as database for your CAP Java application instead of SQLite.
 auto_validation: true
 time: 20

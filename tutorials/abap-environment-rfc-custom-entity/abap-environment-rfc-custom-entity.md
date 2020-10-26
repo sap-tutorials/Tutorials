@@ -3,7 +3,7 @@ title: Get Data from a Remote System Using a Custom Entity
 description: Get data from an on-Premise System Using RFC, by Implementing a Custom Entity in ABAP Environment
 auto_validation: true
 time: 45
-tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>cloud, topic>abap-development, products>sap-cloud-platform, topic>abap-connectivity,tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
 
@@ -203,11 +203,11 @@ Go back to the class.
 
     ```
 
-2. Create a variable, `lv_abap_trial`. **If** you are using the trial version, set it to **true**, otherwise false.
+2. Create a variable, `lv_abap_trial`. **If** you are using the full version of SAP Cloud Platform, ABAP Environment, set it to **false**, otherwise **true**.
 
     ```ABAP
 
-    DATA(lv_abap_trial) = abap_true.  
+    DATA(lv_abap_trial) = abap_false.  
 
     ```
 
@@ -215,7 +215,9 @@ Go back to the class.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Define the connection to the on-premise system)]
-Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
+If your are working in the full version of ABAP Environment: Define the connection as follows, replacing `XXX` in both `i_name` and `i_service_instance_name` to your initials or group number. Ignore the warning for now. Wrap this in a `TRY. ...CATCH... ENDTRY.`
+
+**IMPORTANT**: Always specify the authentication mode using the interface `if_a4c_cp_service`. Never hard-code your password in the class.
 
     ```ABAP
 
@@ -225,6 +227,7 @@ Define the connection as follows, replacing `XXX` in both `i_name` and `i_servic
         DATA(lo_rfc_dest) = cl_rfc_destination_provider=>create_by_cloud_destination(
                                     i_name                  = 'ES5_RFC_XXX'
                                     i_service_instance_name = 'OutboundComm_for_RFCDemo_XXX'
+                                    i_authn_mode            = if_a4c_cp_service=>service_specific
            ).
 
         DATA(lv_rfc_dest_name) = lo_rfc_dest->get_destination_name( ).
@@ -235,10 +238,12 @@ Define the connection as follows, replacing `XXX` in both `i_name` and `i_servic
     ENDIF.
 
     ```
-
+If you are working in the trial version, omit this step.
 
 [DONE]
 [ACCORDION-END]
+
+
 
 [ACCORDION-BEGIN [Step 8: ](Call the remote BAPI or insert the mock data)]
 1. Check whether data is being requested.
@@ -430,8 +435,8 @@ Start with the Service Definition:
     ![Image depicting step12-choose-service-def](step12-choose-service-def.png)
 
 2. Choose a name and description:
-    - `ZSD_PRODUCT_XXX`
-    - Expose product data from on-Premise
+    - **`Z_EXPOSE_PRODUCTS_XXX`**
+    - Expose product data via RFC
 
 3. Choose the transport request; choose **Next**.
 
@@ -441,8 +446,6 @@ Start with the Service Definition:
 
 5. Save and activate ( **`Ctrl+S, Ctrl+F3`** ) the service definition.
 
-
-
 [DONE]
 [ACCORDION-END]
 
@@ -450,23 +453,21 @@ Start with the Service Definition:
 1. Select your service definition, then choose **Service Binding** from the context menu, then choose **Next**.
 
 2. Choose:
-    - Name = `ZSB_PRODUCT_XXX`
+    - Name = **`Z_BIND_PRODUCTS_XXX`**
     - Description = Bind product data via RFC
     - Binding Type = ODATA V2 (UI...)
     - Service Definition = `ZSD_PRODUCT_XXX`
 
       ![Image depicting step12-choose-binding-type](step12-choose-binding-type.png)
 
-3. Choose the transport request; choose **Next**.
-
-4. Use the selected template; choose **Finish**.
+3. Choose the transport request; choose **Finish**.
 
 The service binding automatically references the service definition and thus the exposed custom entity.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Activate the service binding)]
+[ACCORDION-BEGIN [Step 14: ](Activate service binding)]
 1. In the editor that appears, choose **Activate**.
 
     ![Image depicting step13-activate-service-endpoint](step13-activate-service-endpoint.png)
@@ -477,9 +478,11 @@ The service binding automatically references the service definition and thus the
 
 3. You can open the Service Document (`XML`) in your browser, by choosing **Service URL**.
 
-2shotsbla
+    !![step14c-service-url-in-browser](step14c-service-url-in-browser.png)
 
 4. In the browser, you can also see the **Metadata Document** of the Business Service by adding $metadata to the URL: `sap/opu/odata/sap/Z_BIND_PRODUCT_TEST_001/$metadata`.
+
+    !![step14d-service-metadata-in-browser](step14d-service-metadata-in-browser.png)
 
 [DONE]
 [ACCORDION-END]

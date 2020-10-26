@@ -3,9 +3,12 @@ title: Create a Remote Client Proxy
 description: In the SAP Cloud Platform, ABAP Environment, create a local class that instantiates a proxy, which passes an OData request to a remote service.
 auto_validation: true
 time: 30
-tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, tutorial>license]
+tags: [ tutorial>advanced, topic>abap-development, topic>cloud, products>sap-cloud-platform, topic>abap-connectivity, tutorial>license]
 primary_tag: products>sap-cloud-platform--abap-environment
 ---
+
+##Prerequisites
+- **IMPORTANT**: This tutorial cannot be completed on a trial account
 
 ## Details
 ### You will learn
@@ -42,6 +45,8 @@ First, you create the class that instantiates the client proxy.
 
 [ACCORDION-BEGIN [Step 2: ](Copy code)]
 Copy the following code.
+
+**IMPORTANT**: Always specify the authentication mode using the interface `if_a4c_cp_service`. Never hard-code your password in the class.
 
 ```ABAP
 
