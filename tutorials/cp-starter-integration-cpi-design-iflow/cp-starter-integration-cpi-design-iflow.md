@@ -78,7 +78,7 @@ author_profile: https://github.com/Vikramkulkarni01
 
       !![Enter service key name](4.8.create-service-key-2.png)
 
-  9. Click on 3 dots under service keys section and choose **View**.
+  9. Click the 3 dots under service keys section and choose **View**.
 
       !![view key](1.8.key_view.png)
 
