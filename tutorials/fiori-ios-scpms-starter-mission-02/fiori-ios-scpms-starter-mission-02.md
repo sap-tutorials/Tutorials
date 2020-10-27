@@ -33,9 +33,9 @@ For this tutorial, you will implement an overview screen displaying a KPI Table 
 
 ![Overview Screen](fiori-ios-scpms-starter-mission-02-14.png)
 
-In [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup), you learned how to create an Xcode project using the SAP Cloud Platform SDK for iOS Assistant. You let the iOS Assistant generate a master-detail screen. Now you will change the generated UI to match the screen shown above, the overview screen of your app.
+In the [Set Up the SAP Cloud Platform SDK for iOS](group.ios-sdk-setup), you've learned how to create an Xcode project using the SAP Cloud Platform SDK for iOS Assistant. The result of the generation process of the iOS Assistant can be a split view screen if chosen. In this tutorial you will change the generated UI to match the screen shown above, the overview screen of your app.
 
-1. First, open you Xcode project if not opened already and select the **`Main.storyboard`**. This will open the `Main.storyboard` in the Interface Builder of Xcode.
+1. First, open you Xcode project if not opened already and select the **`Main.storyboard`**, this will open the `Main.storyboard` in the Interface Builder of Xcode.
 
     > The Interface Builder allows you to create complete app flows including the UI for each screen of those flows.
 
@@ -104,7 +104,7 @@ In order to display the newly added overview screen right after the onboarding p
 
 2. Change the method code to the following:
 
-    ```Swift
+    ```Swift[15-16]
     func showApplicationScreen(completionHandler: @escaping (Error?) -> Void) {
         // Check if an application screen has already been presented
         guard self.isSplashPresented else {
@@ -132,7 +132,7 @@ In order to display the newly added overview screen right after the onboarding p
 
     ```
 
-Great you did all necessary steps to replace the generated UI with your own. Go ahead and run the app on **`iPhone 11 Pro Max`** or any other simulator to see the result.
+Great you did all necessary steps to replace the generated UI with your own. Go ahead and run the app on **`iPhone 12 Pro`** or any other simulator to see the result.
 
 > In case you haven't onboarded yet, go through the onboarding process before seeing your Overview Screen appear.
 
@@ -199,7 +199,7 @@ You will now implement some code to set up the `OverviewTableViewController` for
 
     Implement the needed methods below the `viewDidLoad()` method, so that your class looks like that:
 
-    ```Swift
+    ```Swift[32-81]
     //
     //  OverviewTableViewController.swift
     //  TutorialApp
@@ -295,7 +295,7 @@ To finish building the screen's layout we are going to implement the dividers an
 
 1. First, register the `FUITableViewHeaderFooterView` in the `viewDidLoad()` method:
 
-    ```Swift
+    ```Swift[4]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -590,7 +590,7 @@ Before we do this we have to take care of the product image lazy loading. We're 
 
 4. Before we can start dequeuing the needed cells, complete the `viewDidLoad()` method:
 
-    ```Swift
+    ```Swift[4-15]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -622,7 +622,7 @@ Before we do this we have to take care of the product image lazy loading. We're 
 
 7. Let's bring some life into our screen:
 
-    ```Swift
+    ```Swift[19]
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
       switch indexPath.section {
@@ -690,9 +690,9 @@ Before we do this we have to take care of the product image lazy loading. We're 
 
     ```
 
-    Inside the just implemented method, assign the copied `URL` to the `baseURL` instead of `<YOUR URL>` placeholder.
+    Inside the just implemented method, assign the copied `URL` as String to the `baseURL` instead of `<YOUR URL>` placeholder.
 
-8. At the moment won't compile because your class doesn't conform to the `UICollectionViewDataSource` or the `UICollectionViewDelegate` protocol.
+8. At the moment the code won't compile because your class doesn't conform to the `UICollectionViewDataSource` or the `UICollectionViewDelegate` protocol.
 
     To conform to these protocols we will implement a class extension where we will implement the protocol methods.
     Swift Extensions are declared outside the class's scope. Add the following extensions after the closing bracket of the `OverviewTableViewController` class:
@@ -728,6 +728,15 @@ Before we do this we have to take care of the product image lazy loading. We're 
 [ACCORDION-BEGIN [Step 7: ](Implement UICollectionViewDataSource)]
 
 To complete the UI, you need to implement the `UICollectionViewDataSource` protocol.
+
+Replace the `collectionView(_:numberOfItemsInSection:)` method in the class extension:
+
+```Swift
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return customers.count
+    }
+
+```
 
 Replace the `collectionView(_:cellForItemAt:)` method in the class extension:
 
@@ -815,7 +824,7 @@ To make the overview screen complete, we're going to add an `FUIKPIHeader` to th
 
 3. Call the method in the `viewDidLoad()` method:
 
-    ```Swift
+    ```Swift[13]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -836,7 +845,7 @@ To make the overview screen complete, we're going to add an `FUIKPIHeader` to th
 
 4. Also you have to call the `setupKPIHeader()` method as soon as the data is loaded to update the `KPIs`. Add the method call to the `loadData()` method:
 
-    ```Swift
+    ```Swift[12]
     func loadData() {
         showFioriLoadingIndicator()
 

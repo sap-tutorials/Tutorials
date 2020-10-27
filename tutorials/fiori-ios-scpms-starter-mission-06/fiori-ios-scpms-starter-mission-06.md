@@ -21,14 +21,14 @@ time: 35
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Implement the master-detail view)]
+[ACCORDION-BEGIN [Step 1: ](Implement a Split View)]
 
 In the last tutorial you made changes to your Xcode project settings to enable Mac Catalyst for your app project.
 This tutorial is about making some changes to the project to fit better on MacOS without changing the appearance on iPhone or iOS.
 
 We are going to cover the basics for Mac Catalyst and the SAP Cloud Platform SDK for iOS but using the previously mentioned documentation in combination with this tutorial series you should be well suited to build great business apps.
 
-In the beginning we want to change the app flow to have a split view in place when running on Mac Catalyst. The split view or Master-Detail View allows Mac Catalyst to display a sidebar similar to Apple's Music or Stocks applications on MacOS.
+In the beginning we want to change the app flow to have a split view in place when running on Mac Catalyst. The split view or Split View allows Mac Catalyst to display a sidebar similar to Apple's Music or Stocks applications on MacOS.
 
 If you look at the current app structure the user will end up on the Overview screen right after finishing the onboarding process. On MacOS this is going to be the same way with the difference that the user will have a sidebar available where he or she can switch between Overview, Customer and Product list directly.
 
@@ -54,13 +54,13 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-4.gif)
 
-5. Make the Master View Controller the initial view controller for the app by selecting the Master View controller and using the **Attributes Inspector** to check the box for **Is Initial View Controller**.
+5. Make the Main Split View Controller the initial view controller for the app by selecting the View controller and using the **Attributes Inspector** to check the box for **Is Initial View Controller**.
 
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-5.png)
 
     Let's quickly go over what we did here. First we added a new Split View Controller which is a standard Apple UI control. Then we added our app flow to the Split View Controller through a **detail view controller** segue. This allows the Split View Controller to automatically manage your Split View lifecycle. We leave the Navigation Controller in as we want to maintain our regular app flow.
 
-    Because the Master View Controller is the new initial view controller we have to change the `ApplicationUIManager` code accordingly.
+    Because the Main View Controller is the new initial view controller we have to change the `ApplicationUIManager` code accordingly.
 
     To ensure that we will see the standard app flow while running on iOS and displaying the Split View when running on Mac Catalyst we can use environmental conditions to distinct different initialization code.
 
@@ -72,7 +72,7 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
 6. Open the `ApplicationUIManager.swift` file and locate the `showApplicationScreen(completionHandler:)` method. Right now you can see that we're initializing the Navigation Controller as our initial screen but you have to change that to be adaptable to Mac Catalyst. Change the implement code to the following and read the inline comments carefully:
 
-    ```Swift
+    ```Swift[14-25]
     func showApplicationScreen(completionHandler: @escaping (Error?) -> Void) {
         // Check if an application screen has already been presented
         guard self.isSplashPresented else {
@@ -112,6 +112,8 @@ To implement the new flow we can attach our current app flow in storyboard to a 
 
 7. Run the app on the **My Mac** scheme and you should see you app being in Split View now and you can see that beautiful empty sidebar. Also if you have noticed the system automatically knows that your app wants to receive Push Notifications and the Mac Catalyst makes sure that MacOS displays it accordingly.
 
+    > In case you run into the issue "Apple Development Identity is Ambiguous. Multiple Certificates are found in your keychain for identity Apple Development", you can follow this blog post for resolution of the problem [Handling Ambiguous Apple Developer Identity](https://blogs.sap.com/2020/03/09/sdk-5.0-handling-ambiguous-apple-developer-identity/).
+
     !![Split View Controller](fiori-ios-scpms-starter-mission-06-6.png)
 
 [DONE]
@@ -125,6 +127,8 @@ The Root View Controller represents the list you can see in the sidebar. This is
 We're going to display a list with three cells containing the navigation possibilities for the user including a nice system image using `SF Symbols`.
 
 1. Create a new Table View Controller Cocoa Touch Class using the project navigator and make sure it inherits of `UITableViewController` and name it `SidebarTableViewController`.
+
+    !![Split View Controller](fiori-ios-scpms-starter-mission-06-7a.png)
 
 2. Open the `Main.storyboard` and set the `SidebarTableViewController` as **Custom Class** on the **`Root View Controller`**.
 
@@ -149,7 +153,7 @@ We're going to display a list with three cells containing the navigation possibi
 
 6. In the `viewDidLoad()` method register an `FUIObjectTableViewCell` to be used by the Table View:
 
-    ```Swift
+    ```Swift[4]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -274,13 +278,15 @@ In order to let the user have interactions with the list items we have to write 
 
 4. Repeat that procedure for the **Products Table View Controller** with `ProductsTableViewController` and **Customers Table View Controller** with `CustomersTableViewController`.
 
-5. Important is that you set an identity for the `original` Navigation Controller. In the `Main.storyboard`, click on the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
+    !![Menu Bar](fiori-ios-scpms-starter-mission-06-20a.png)
+
+5. Important is that you set an identity for the original **Navigation Controller**. In the `Main.storyboard`, click on the Navigation Controller which is the detail view controller for the split view controller. Change the **Identity** to `SubNavigationController`.
 
     !![Storyboard ID](fiori-ios-scpms-starter-mission-06-21.png)
 
     And that's it, you have a working split view controller with a sidebar and working navigation.
 
-6. The last step we want to do is change the navigation item's title from **Root View Controller** to **Navigation**. Add the following line of code to the `viewDidLoad()` method:
+6. The last step we want to do is change the navigation item's title from **`SidebarTableViewController`** to **Navigation**. Add the following line of code to the `viewDidLoad()` method:
 
     ```Swift
     navigationItem.title = NSLocalizedString("Navigation", comment: "")
@@ -307,6 +313,8 @@ We can create an extension swift file containing an `AppDelegate` extension cont
 > This would be also the way to generically have the Table View Data Source implemented.
 
 1. Use the **Project Navigator** to create a **Swift** file and name it `AppDelegate+MenuBuilder`.
+
+    !![Storyboard ID](fiori-ios-scpms-starter-mission-06-22.png)
 
 2. Open the `AppDelegate+MenuBuilder.swift` file and change the import statement from `Foundation` to `UIKit`:
 
