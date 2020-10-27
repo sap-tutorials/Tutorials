@@ -10,13 +10,13 @@ class CsvHelper {
     this.fileName = reportFileName
       .replace('{{type}}', type)
       .replace('{{date}}', Date.now());
+    this.fullFilePath = path.join('analyze', 'reports', this.fileName);
   }
 
   save(rows) {
     const csv = this.prepare(rows);
-    const filePath = path.join('analyze', 'reports', this.fileName);
 
-    return fs.writeFile(filePath, csv);
+    return fs.writeFile(this.fullFilePath, csv);
   }
 
   prepare() {
