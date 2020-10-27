@@ -167,7 +167,7 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 [ACCORDION-BEGIN [Step 4: ](Additional database connection features)]
 Databases have additional actions that can be performed on them such as renaming, connecting as a different user, changing the connection of a SQL console, and viewing an overview of the connected database.  
 
-1.  To rename a connection, right-click on a database and choose **Properties**.
+1.  To rename a connection, right-click a database and choose **Properties**.
 
     ![database properties](properties.png)
 
@@ -175,7 +175,7 @@ Databases have additional actions that can be performed on them such as renaming
 
     !![renaming a connection](properties2.png)
 
-2.  To add the same database but with different credentials, right-click on a database and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same SAP HANA database but with a different set of credentials perhaps because you need elevated permissions.
+2.  To add the same database but with different credentials, right-click a database and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same SAP HANA database but with a different set of credentials perhaps because you need elevated permissions.
 
     ![connecting as a different user](clone.png)
 
@@ -187,7 +187,7 @@ Databases have additional actions that can be performed on them such as renaming
 
     > Subsequent tutorials assume the connected user is DBADMIN or SYSTEM.
 
-4.  To see information about a database, right-click on a database and choose **Show Overview**.  This provides a quick overview of the database that you are connected to.
+4.  To see information about a database, right-click a database and choose **Show Overview**.  This provides a quick overview of the database that you are connected to.
 
     ![database overview](overview.png)
 
@@ -243,7 +243,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
 5.  Create a new HANA database project.
 
-    Right-click on **Workspace** and choose **New** | **Project from Template**.
+    Right-click **Workspace** and choose **New** | **Project from Template**.
 
     In the **Search** field, enter **HANA**.  
 
@@ -278,7 +278,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
     ![test table](test-table.png)
 
-7.  Deploy the HDI container.  Right-click on the **db** folder and choose **Build** | **Build**.
+7.  Deploy the HDI container.  Right-click the **db** folder and choose **Build** | **Build**.
 
     ![Build and deploy the HDI container](build.png)
 

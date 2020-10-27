@@ -38,7 +38,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 
     ![Set Breakpoints](DebuggerBreakpoints.png)
 
-  4. Right-click on the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement** or **Generate Call Statement with UI**.
+  4. Right-click the procedure named `RESERVATION_GENERATOR` in the database browser and select **Generate Call Statement** or **Generate Call Statement with UI**.
 
     ![Generate Call Statement](GenerateCallStatement.png)
 
@@ -66,7 +66,7 @@ The debugger can be used to help find issues in procedures, functions, or anonym
 [ACCORDION-BEGIN [Step 2: ](Code coverage)]
 The code coverage tool shows statements that have been run.  This can be helpful when used in conjunction with a set of tests, as it can show the amount of statements that the tests have covered.
 
-1. Right-click on the procedure `RESERVATION_GENERATOR` and choose **Generate CALL Statement**.
+1. Right-click the procedure `RESERVATION_GENERATOR` and choose **Generate CALL Statement**.
 
     ![Generate Call Statement](GenerateCallStatement.png)
 
@@ -158,7 +158,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
     ![call resvation_generator2](generateSuite.png)
 
-3. Right-click on the procedure and choose **Analyze SQLScript Code**.
+3. Right-click the procedure and choose **Analyze SQLScript Code**.
 
     ![Analyze procedure](AnalyzeSQLScriptCode.png)
 
@@ -172,7 +172,7 @@ The [SQLScript code analyzer](https://help.sap.com/viewer/d1cb63c8dd8e4c35a0f18a
 
 5. To address these issues, make the following changes and rerun the SQL.  The first issue can be resolved by commenting out `unusedVar` on lines 19 and 23.  The second issue can be resolved by checking the input parameter `rmType` with the [IS SQL INJECTION SAFE](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/2020_02_QRC/en-US/4496cc5717e847feb7daa41516047df9.html) function.  Uncomment lines 24 - 26 to try this.
 
-3. Right-click on the procedure and choose **Analyze SQLScript Code**.
+3. Right-click the procedure and choose **Analyze SQLScript Code**.
 
     Notice that only one warning remains
 
@@ -240,7 +240,7 @@ The SQL Analyzer provides a graphical view of how an analyzed SQL statement was 
 [ACCORDION-BEGIN [Step 6: ](Tracing)]
 Tracing can be helpful when debugging a problem or in identifying SQL statements that a particular application is using.  SAP support may also ask for specific trace files when attempting to help diagnose an issue.  The following steps demonstrate an example of enabling a trace and then viewing the resulting trace file by using the SAP HANA database explorer.
 
-1. The database overview presents general information about a database.  Right-click on a database and choose **Show Overview**.
+1. The database overview presents general information about a database.  Right-click a database and choose **Show Overview**.
 
     ![Database overview menu](tracingShowOverview.png)
 
