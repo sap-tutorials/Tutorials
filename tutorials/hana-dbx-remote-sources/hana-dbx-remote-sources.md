@@ -22,13 +22,13 @@ To illustrate these concepts, a table will be created in an SAP HANA Cloud or Da
 
 For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Data Integration (SDI), consult [Connecting SAP HANA Cloud to Remote Data Sources](https://help.sap.com/viewer/db19c7071e5f4101837e23f06e576495/cloud/en-US/afa3769a2ecb407695908cfb4e3a9463.html) and [Data Access with SAP HANA Cloud](https://help.sap.com/viewer/f9c5015e72e04fffa14d7d4f7267d897/cloud/en-US/7791e61775f949d9989eafc443158cdb.html).
 
->Note that this tutorial requires two SAP HANA databases and an SAP HANA Data Lake to complete.  The examples are shown using an SAP HANA, express edition database connecting to an SAP HANA Cloud trial database.  It is not necessary to complete this tutorial to continue to the next tutorial in this mission.  
+>Note that this tutorial requires two SAP HANA databases and an SAP HANA Data Lake to complete.  The examples are shown using an SAP HANA, express edition database connecting to an SAP HANA Cloud trial database.  It is not necessary to complete this tutorial to continue to the next tutorial in this group.  
 
 >Note that the SAP HANA Cloud trial is limited to creating one SAP HANA database per trial account.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create tourist review table in SAP HANA Cloud)]
+[ACCORDION-BEGIN [Step 1: ](Create a tourist review table in SAP HANA Cloud)]
 
 1. From the SAP HANA Cloud Cockpit, open the SAP HANA database explorer.
 
@@ -65,7 +65,7 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create remote source from SAP HANA, express edition to SAP HANA Cloud)]
+[ACCORDION-BEGIN [Step 2: ](Create a remote source from SAP HANA, express edition to SAP HANA Cloud)]
 
 1. To create a remote source from SAP HANA, express edition to SAP HANA Cloud, open the SAP HANA database explorer from the SAP HANA, express edition.
 
@@ -101,8 +101,10 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create virtual table and execute a federated query)]
-In this step, a virtual table named `vt_tourist_reviews` will be created in SAP HANA, express edition. This will enable access to the `tourist_reviews` table that was created in SAP HANA Cloud.
+[ACCORDION-BEGIN [Step 3: ](Create a virtual table and execute a federated query)]
+In this step, a virtual table named `vt_tourist_reviews` will be created in SAP HANA, express edition. This will enable access to the `tourist_reviews` table that was created in SAP HANA Cloud.   This can be visualized as follows:
+
+  ![cloud and on-premise remote connection](cloud_onprem_connection.png)
 
 
 1. Open the SAP HANA database explorer from the SAP HANA, express edition.  If needed, create the HOTEL schema and a user who can access the schema.
@@ -132,6 +134,8 @@ In this step, a virtual table named `vt_tourist_reviews` will be created in SAP 
     ```SQL
     CREATE VIRTUAL TABLE HOTEL.VT_TOURIST_REVIEWS2 AT "REMOTE_HC"."Dans_HC_Trial_US-hana"."HOTEL"."TOURIST_REVIEWS";
     ```
+
+
 
 5. Open the virtual table `VT_TOURIST_REVIEWS` and notice that its type is virtual.
 
@@ -208,6 +212,10 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 
     ![virtual data lake table](virtual_table_data_lake.png)
 
+    This can be visualized as follows:
+
+    ![data lake and on-premise remote connection](dl_cloud_connection.png)
+
 5. Query the local SAP HANA table and the equivalent SAP HANA Data Lake table.
 
     ```SQL
@@ -220,6 +228,10 @@ A benefit of a virtual table is that there is no data movement.  There is only o
 6. Another SAP HANA instance such as the SAP HANA, express edition can also access tables in the SAP HANA Cloud database and the SAP HANA Data Lake via a remote connection.  
 
      ![virtual table to DL from on-premise](virtual_table_data_lake2.png)
+
+     This can be visualized as follows:
+
+     ![data lake and on-premise remote connection](cloud_dl_onprem_connection.png)
 
 7. Query a few local tables, a remote table in SAP HANA Cloud, and a remote table in the SAP HANA Data Lake.
 
