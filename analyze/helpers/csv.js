@@ -1,4 +1,5 @@
 'use strict';
+const path = require('path');
 
 const { reportFileName } = require('../constants');
 const fs = require('./fs');
@@ -13,8 +14,9 @@ class CsvHelper {
 
   save(rows) {
     const csv = this.prepare(rows);
+    const filePath = path.join('analyze', 'reports', this.fileName);
 
-    return fs.writeFile(this.fileName, csv);
+    return fs.writeFile(filePath, csv);
   }
 
   prepare() {
