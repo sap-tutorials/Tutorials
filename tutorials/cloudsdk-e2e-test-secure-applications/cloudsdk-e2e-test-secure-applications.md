@@ -62,7 +62,7 @@ module.exports = {
 };
 ```
 
-As a next step, you have to trigger the login before the test execution. This can be configured in the file `e2e-tests/cucumber.conf.js` which you created in [e2e-test](cloudsdk-e2e-test). The updated content looks as follows:
+As a next step, you have to trigger the login before the test execution. This can be configured in the file `e2e-tests/cucumber.conf.js`, which you created in [e2e-test](cloudsdk-e2e-test). The updated content looks as follows:
 
 ```
 BeforeAll(async () => {
