@@ -24,15 +24,15 @@ time: 15
     ![Insert User Task](insert-user-task2.png)
 
 3. Enter the following data:
-    - In the **GENERAL** tab of the **User Task Properties**, enter *Assign and Approve Equipment* in the **Name** field.
+    - In the **GENERAL** tab of the **User Task Properties**, enter **`Assign and Approve Equipment`** in the **Name** field.
 
-    - Switch to the **DETAILS** tab, enter *Assign and Approve Equipment for ${context.empData.firstName} ${context.empData.lastName}* in the **Subject** field.
+    - Switch to the **DETAILS** tab, enter **`Assign and Approve Equipment for ${context.empData.firstName} ${context.empData.lastName}`** in the **Subject** field.
 
         The subject will be shown in the task list in My Inbox.
 
-    - Enter a description *The manager assigns and approves equipment and relocation of the newly onboarded employee*.
+    - Enter a description **`The manager assigns and approves equipment and relocation of the newly onboarded employee`**.
 
-    - Assign a recipient for the task. In the **Users** field, enter `${info.startedBy}`.
+    - Assign a recipient for the task. In the **Users** field, enter **`${info.startedBy}`**.
 
         With this recipient information everyone who starts the workflow will then receive the task.
 
@@ -49,15 +49,17 @@ Define the form, which is shown when the task is opened in the My Inbox.
 
     ![Create Form File](create-form-file.png)
 
-2. Enter the name *`approvalform`*, keep the ID. For the revision enter *1.0*. Keep the **Task Form** type.
+2. Enter the name **`approvalform`**, keep the ID. For the revision enter **`1.0`**. Keep the **Task Form** type.
 
     ![Create Form File](create-approval-form.png)
 
 3. Choose **Create**.
 
+    The form file is created in the **forms** folder under **onboarding** | **approvals**.
+
 4. Once the form editor opens, add form data by choosing **Add Field**.
 
-    These expressions refer to the attributes in the JSON file that we have created in the previous step.
+    These expressions refer to the attributes in the JSON file that we have created in the previous step. The context path refers to the task context.
 
     | Label/Title    | Type       | Context Path                         |
     | :--------------| :----------| :------------------------------------|
@@ -69,9 +71,9 @@ Define the form, which is shown when the task is opened in the My Inbox.
     | **Relocation** | **String** | **`${context.empData.relocation}`**  |      
     | **Equipment**  | **String** | **`${context.empData.equipment}`**   |      
 
-    For **Relocation**, select **Radio Buttons** under **Control** in the right side-panel. Then add **Yes** in the first line and **No** in the second line both as string and as display values.
+    For **Relocation**, select **Radio Buttons** under **Control** in the right side-panel. Then add **`Yes`** in the first line and **`No`** in the second line both as string and as display values.
 
-    For **Equipment**, select **Dropdown** under **Control** in the right side-panel. Then add **Notebook** in the first line and **Cables and Accessories** in the second line both as string and as display values.
+    For **Equipment**, select **Dropdown** under **Control** in the right side-panel. Then add **`Notebook`** in the first line and **`Cables and Accessories`** in the second line both as string and as display values.
 
     The filled form looks like this:
 
@@ -149,7 +151,7 @@ After deployment is finished, open the SAP Fiori launchpad site that contains th
 
     ![Go to Application](go-to-application.png)
 
-6. In the SAP Fiori launchpad, open the **Monitor Workflows (Workflow Definitions)** application and select the **`onboard`** workflow definition.
+6. In the SAP Fiori launchpad, open the **Monitor Workflows (Workflow Definitions)** application and select the **onboard** workflow definition.
 
 7. Choose **Start New Instance**.
 
