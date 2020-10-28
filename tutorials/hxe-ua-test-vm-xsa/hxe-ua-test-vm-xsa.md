@@ -180,7 +180,7 @@ You recorded the IP address earlier in [Start SAP HANA, express edition Server](
 
 [ACCORDION-BEGIN [Step 6: ](Next steps)]
 
--   **Drivers and connectors for Python, Node.js, .NET, Java and others**: Write your [first application using advanced analytics](https://developers.sap.com/mission.xsa-analytics-advanced.html) or check sample applications using different drivers and languages [such as Node.js and Python](https://developers.sap.com/mission.xsa-analytics-advanced.html).
+-   **Drivers and connectors for Python, Node.js, .NET, Java and others**: Check sample applications using different drivers and languages [such as Node.js and Python](https://developers.sap.com/mission.hana-cloud-clients.html).
 
 -   **Learn XS Advanced basics**: Explore the basics of XS Advanced tools, such as the administration cockpit or SAP Web IDE for SAP HANA. This tutorial includes a step for mapping the tenant database to the development space. See [SAP HANA XS Advanced, explore the basic tools](xsa-explore-basics).
 
