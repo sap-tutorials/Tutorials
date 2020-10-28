@@ -57,7 +57,7 @@ In the MDK editor, you will create a new JavaScript file called `EmailValidation
 
     !![MDK](img_2.1.png)
 
-2. Enter the Rule name `EmailValidation.js`, click **OK**.
+2. Enter the Rule name `EmailValidation.js`, press `Enter`.
 
     !![MDK](img_2.2.png)
 
