@@ -30,7 +30,7 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
     ![start ODBC Administrator](start-odbc.png)
 
-2. Click on the **Drivers** tab and view the installed drivers.  
+2. Click the **Drivers** tab and view the installed drivers.  
 
     ![odbc-admin-drivers](drivers.png)
 
@@ -58,7 +58,7 @@ The ODBC Data Source Administrator lists the ODBC drivers installed and the conf
 
     To connect to SAP HANA, express edition, **Multitenant** should be checked and the **Validate TLS/SSL certificate** option can be unchecked.  For more information on this topic, see [How to Configure TLS/SSL in SAP HANA 2.0](https://blogs.sap.com/2018/11/13/how-to-configure-tlsssl-in-sap-hana-2.0/).  
 
-8. Click on Test connection.  
+8. Click **Test connection**.  
 
     ![Test Succeeded](testODBCWin.png)
 

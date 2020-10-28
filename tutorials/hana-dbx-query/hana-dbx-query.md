@@ -24,7 +24,7 @@ primary_tag: products>sap-hana-cloud
 
     ![open SQL console](open-sql-console.png)
 
-2. Notice that the database connection the SQL console is connected to is displayed and that toolbar items are shown after a left-click on the **...** button.  There are options to connect, disconnect, or change the connection.
+2. Notice that the database connection the SQL console is connected to is displayed and that toolbar items are shown after a left-click the **...** button.  There are options to connect, disconnect, or change the connection.
 
     ![Connected SQL console](connectedSQLConsole.png)  
 
@@ -129,11 +129,11 @@ primary_tag: products>sap-hana-cloud
 
     ![Open Keyboard Shortcuts Settings](KeyboardShortcutsSettings.png)
 
-4. A SQL console can be toggled to enter full-screen mode.  Double-click on a SQL console tab to enter this mode.  
+4. A SQL console can be toggled to enter full-screen mode.  Double-click a SQL console tab to enter this mode.  
 
     ![Full Screen](FullScreen.png)
 
-    To exit full screen, double-click on the SQL console tab again.
+    To exit full screen, double-click the SQL console tab again.
 
 5. When the Run button is pressed with a portion of the statements selected, only the selected statements are run.  In the example below, only the SELECT statement was run.  
 
@@ -191,7 +191,7 @@ primary_tag: products>sap-hana-cloud
 
     ![Statement Syntax Helper](StatementSyntaxHelper.png)
 
-    > If you click on the name of the statement being displayed in the Statement/Syntax dropdown (blue link), you will be redirected to an SAP document providing more information on that particular statement.
+    > If you left-click the name of the statement being displayed in the Statement/Syntax dropdown (blue link), you will be redirected to an SAP document providing more information on that particular statement.
     >
     >![Statement Help Document](StatementHelpDocument.png)
 
@@ -223,7 +223,7 @@ primary_tag: products>sap-hana-cloud
 
     ![SQL Function Referenced](SQLFunctionsReferenced.png)
 
-    >Click on the name of the SQL function name in the SQL Functions section to open the SAP help showing detailed information on the function.
+    >Left-click the name of the SQL function in the SQL Functions section to open the SAP help showing detailed information on the function.
 
 
 [DONE]
@@ -266,7 +266,7 @@ primary_tag: products>sap-hana-cloud
 
 The statement library contains a mix of pre-populated statements, to help with monitoring, and user-saved statements.
 
-1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click on the **Add to Statement Library** button.
+1. Frequently used statements can be saved to the statement library for easy access.  Enter the statement below into the SQL console and click the **Add to Statement Library** button.
 
     ```SQL
     /*
@@ -288,7 +288,7 @@ The statement library contains a mix of pre-populated statements, to help with m
 
     ![Add Statement to Library](AddToStatementLibrary2.png)
 
-3. To view the statement library, right click on a database connection and select **Show Statement Library**.
+3. To view the statement library, right click a database connection and select **Show Statement Library**.
 
     ![Show Statement Library](ShowStatementLibrary.png)
 
