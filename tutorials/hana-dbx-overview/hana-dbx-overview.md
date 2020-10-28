@@ -12,7 +12,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Details
 ### You will learn
-  - An overview of the features provided by the SAP HANA database explorer
+  - About the features provided by the SAP HANA database explorer
   - Details about the version differences between the SAP HANA database explorer in SAP HANA Cloud and in an on-premise installation (SAP HANA, express edition)
   - How to get started with the SAP HANA Cloud trial or SAP HANA, express edition
 
@@ -87,15 +87,15 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 [ACCORDION-BEGIN [Step 3: ](SAP HANA Cloud trial)]
 
->To complete the tutorials in this mission, an SAP HANA instance is needed. Step 3 and 4 in this tutorial provide two different, free, options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
+>To complete the tutorials in this group, an SAP HANA instance is needed. Step 3 and 4 in this tutorial provide two different, free, options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
 
 This step provides pointers on how to setup a free SAP HANA Cloud trial that can be used in subsequent tutorials.
 
 To sign up for an SAP Cloud Platform trial account, complete [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
 
-Continue on to the next tutorial in this mission once you have followed the first 2 or 3 articles in the [learning track](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/) and have created an SAP HANA Cloud instance in the SAP Cloud Platform Cockpit.
+Continue on to the next tutorial in this group once you have followed the first 2 or 3 articles in the [learning track](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/) and have created an SAP HANA Cloud instance in the SAP Cloud Platform Cockpit.
 
-![SAP HANA Cloud Trial instance](hana-cloud-instance.png)  
+!![SAP HANA Cloud Trial instance](hana-cloud-instance.png)  
 
 
 [DONE]
@@ -109,8 +109,9 @@ An alternative option to using the SAP HANA Cloud trial is to use the SAP HANA, 
 
 SAP provides a free, streamlined version of SAP HANA that runs on developer laptops called [SAP HANA, express edition](https://www.sap.com/cmp/td/sap-hana-express-edition.html).
 
-SAP HANA runs on certain versions of Linux.  SAP HANA, express edition provides a binary install as well as virtual machine images that can be run on Microsoft Windows, macOS, and Linux machines.  This is described in the [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task) documentation under the implement section.  A database-only option and a database + XS Advanced Applications option are available. The database + XS Advanced Applications install includes the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.  
->Note: Database + XS Advanced Applications, requires sufficient disk space and memory (32 GB).
+SAP HANA runs on certain versions of Linux.  SAP HANA, express edition provides a binary install as well as virtual machine images that can be run on Microsoft Windows, macOS, and Linux machines.  This is described in the [SAP HANA, express edition](https://help.sap.com/viewer/product/SAP_HANA,_EXPRESS_EDITION/latest/en-US?task=implement_task) documentation under the implement section.  A database-only option and a database + XS Advanced Applications option are available. The database + XS Advanced Applications install includes the SAP HANA cockpit, the SAP HANA database explorer, and the SAP HANA Web IDE for SAP HANA.
+
+>Database + XS Advanced Applications, requires sufficient disk space and memory (32 GB).
 
 Once installed, a useful starting point is the page below.  
 
@@ -118,10 +119,12 @@ Once installed, a useful starting point is the page below.
 
 It contains links to the SAP Web IDE for SAP HANA, SAP HANA cockpit, the SAP HANA cockpit manager, and the SAP HANA database explorer.
 
-Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial or SAP HANA, express edition.  
-
 [VALIDATE_1]
 [ACCORDION-END]
+
+---
+
+Congratulations!  You have configured an instance of SAP HANA, either through the SAP HANA Cloud trial or SAP HANA, express edition.  
 
 
 

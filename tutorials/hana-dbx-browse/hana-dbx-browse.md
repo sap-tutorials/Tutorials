@@ -1,6 +1,6 @@
 ---
 title: Browse Schema with the Database Browser in SAP HANA Database Explorer
-description: See how the database browser can be used to explore and  examine objects in an SAP HANA database.
+description: See how the database browser can be used to explore and examine objects in an SAP HANA database.
 auto_validation: true
 time: 10
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition]
@@ -9,7 +9,7 @@ primary_tag: products>sap-hana-cloud
 
 ## Prerequisites
 - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
-- You have completed the first 3 tutorials in this mission
+- You have completed the first 3 tutorials in this group
 
 ## Details
 ### You will learn
@@ -55,7 +55,7 @@ primary_tag: products>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 2: ](Table editor)]
 
-1. Right-click on **Tables** in the catalog tree and choose **Show Tables**.  
+1. Right-click **Tables** in the catalog tree and choose **Show Tables**.  
 
     ![Show Tables](ShowTables.png)
 
@@ -72,7 +72,7 @@ primary_tag: products>sap-hana-cloud
 
     ![select columns to show](hide-show-columns.png)
 
-4. Right-click on the name of a table in the tree and select **Open**.  The editor for the table opens in a new tab.
+4. Right-click the name of a table in the tree and select **Open**.  The editor for the table opens in a new tab.
 
     ![Table Details](TableDetails.png)
 
@@ -80,7 +80,7 @@ primary_tag: products>sap-hana-cloud
 
     ![Table Runtime Information](TableRuntimeInfo.png)
 
-6. Click on the button **Open Data**.  The table's rows are shown.
+6. Click the button **Open Data**.  The table's rows are shown.
 
     ![Table Editor](TableEditor.png)
 
@@ -111,7 +111,7 @@ primary_tag: products>sap-hana-cloud
 
 [ACCORDION-BEGIN [Step 3: ](Additional features)]
 
-1. Right-click on the tab of an open object such as CITY and choose  **Display In Database Browser** to reveal the object in the database browser.
+1. Right-click the tab of an open object such as CITY and choose  **Display In Database Browser** to reveal the object in the database browser.
 
     ![Display In Database Browser](DisplayInDatabaseBrowser.png)
 
@@ -121,7 +121,7 @@ primary_tag: products>sap-hana-cloud
 
 2.  A list of objects that make use of a selected object can be found using the **Where-Used Browser** or in more recent versions **Find Dependencies** menu item.  
 
-    Right-click on the ROOM table and choose **Where-Used Browser**.
+    Right-click the ROOM table and choose **Where-Used Browser**.
 
     ![where used browser](where-used.png)
 
@@ -131,7 +131,7 @@ primary_tag: products>sap-hana-cloud
 
 3. The SAP HANA database explorer has the ability to search for an object in one or more databases.
 
-    Click on the magnifying glass in the top right.  
+    Click the magnifying glass in the top right.  
 
     Enter **hotel** in the search field.  
 

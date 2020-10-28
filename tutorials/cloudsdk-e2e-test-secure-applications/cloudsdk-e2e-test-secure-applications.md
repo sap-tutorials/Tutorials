@@ -10,9 +10,9 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 ---
 
 ## Prerequisites
-  - [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html)
-  - [End to end test](https://developers.sap.com/tutorials/cloudsdk-e2e-testing.html)
-  - [Secure your application](https://developers.sap.com/tutorials/s4sdk-secure-cloudfoundry.html)
+  - [Set up CI/CD](cloudsdk-ci-cd)
+  - [End to end test](cloudsdk-e2e-test)
+  - [Secure your application](s4sdk-secure-cloudfoundry)
 
 
 ## Details
@@ -25,7 +25,7 @@ primary_tag: products>sap-s-4hana-cloud-sdk
 
 [ACCORDION-BEGIN [Step 1: ](Add authentication to E2E tests)]
 
-The basic idea is that the first part of the test is to log in into the application as a user. You created an application which is secured as explained in [Secure your application](https://developers.sap.com/tutorials/s4sdk-secure-cloudfoundry.html). The first page you see accessing the application is the app-router showing a login form. You adapt the tests in a way that they first visit the login page, enter the credentials and then press the login button.
+The basic idea is that the first part of the test is to log in into the application as a user. You created an application which is secured as explained in [Secure your application](s4sdk-secure-cloudfoundry). The first page you see accessing the application is the app-router showing a login form. You adapt the tests in a way that they first visit the login page, enter the credentials and then press the login button.
 
 First, you create the following page object in `e2e-tests/page_objects/login.js`. This page object reads the credentials from the configuration and enters them into the input fields. The selectors of these fields are specified in the elements section. These selectors are working for the standard app-router. For other forms, e.g. on Cloud Platform Neo, or customized forms these selectors need to be updated.
 
@@ -62,7 +62,7 @@ module.exports = {
 };
 ```
 
-As a next step, you have to trigger the login before the test execution. This can be configured in the file `e2e-tests/cucumber.conf.js` which you created in [e2e-test]((https://developers.sap.com/tutorials/cloudsdk-e2e-testing.html)). The updated content looks as follows:
+As a next step, you have to trigger the login before the test execution. This can be configured in the file `e2e-tests/cucumber.conf.js`, which you created in [e2e-test](cloudsdk-e2e-test). The updated content looks as follows:
 
 ```
 BeforeAll(async () => {
@@ -94,7 +94,7 @@ AfterAll(async () => {
 >There are two new lines in the `BeforeAll` block to log into the application.
 
 Furthermore, you have to specify the `username` and `password`. In our case they come from environment variables.
-The updated file `e2e-tests/nightwatch.conf.js` from [e2e-test]((https://developers.sap.com/tutorials/cloudsdk-e2e-testing.html)) looks as follows:
+The updated file `e2e-tests/nightwatch.conf.js` from [e2e-test](cloudsdk-e2e-test) looks as follows:
 
 ```
 const chromedriver = require('chromedriver');
@@ -176,7 +176,7 @@ module.exports = {
 
 [ACCORDION-BEGIN [Step 2: ](Run E2E test locally)]
 
-To run the tests locally you can use the same command as used in [End to End Test]((https://developers.sap.com/tutorials/cloudsdk-e2e-testing.html)). However, in SAP Cloud Platform Cloud Foundry the application URL `launchUrl` should point to the `app-router`. In the Neo environment, it should point to the `application` because the user is redirected to the login form automatically.
+To run the tests locally you can use the same command as used in [End to End Test](cloudsdk-e2e-test). However, in SAP Cloud Platform Cloud Foundry the application URL `launchUrl` should point to the `app-router`. In the Neo environment, it should point to the `application` because the user is redirected to the login form automatically.
 
 Furthermore, the `username` and `password` environment variables have to be set. On Windows you can use the command set to do that. The final command looks as follows:
 
@@ -196,7 +196,7 @@ npm run ci-e2e -- --launchUrl=https://path/to/your/running/app-router
 
 !![S4SDK Pipeline](e2epipeline.png)
 
-To run the tests in our pipeline you have to adapt the `.pipeline/config.yml`. In [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html) you learned that this file configures the behavior of the pipeline. To execute the E2E test you have to add a section called `endToEndTests` representing a stage in the section `stages`. The final configuration is shown below.
+To run the tests in our pipeline you have to adapt the `.pipeline/config.yml`. In [Set up CI/CD](cloudsdk-ci-cd) you learned that this file configures the behavior of the pipeline. To execute the E2E test you have to add a section called `endToEndTests` representing a stage in the section `stages`. The final configuration is shown below.
 
 ```
 #Project Setup
@@ -221,7 +221,7 @@ stages:
 
 The section `endToEndTests` consists of two sections. Before you can run the E2E tests, you first have to deploy our application to the SAP Cloud Platform. As for the productive deployment, you define a section called `cfTargets` or `neoTargets` to configure the deployment. Afterwards in `appUrls` you define a list of URL and credential ids specifying the launch URL for the tests and the credentials used as username and password environment variables.
 
-The tests are executed once per entry in the list. For each entry the URL is passed as `launchUrl` to the test. The `credentialsId` is used to read the corresponding credentials from the credentials store in Jenkins. Thus, you have to create these credentials, as explained in [Set up CI/CD](https://developers.sap.com/tutorials/cloudsdk-ci-cd.html). The `username` and `password` is read from the credentials store and passed as environment variable to the test.
+The tests are executed once per entry in the list. For each entry the URL is passed as `launchUrl` to the test. The `credentialsId` is used to read the corresponding credentials from the credentials store in Jenkins. Thus, you have to create these credentials, as explained in [Set up CI/CD](cloudsdk-ci-cd). The `username` and `password` is read from the credentials store and passed as environment variable to the test.
 
 You can also run the E2E tests after the productive deployment. These tests can be called smoke tests to check that your application is running after the deployment. It is usually a subset of the E2E tests, but can also be the full test suite.
 >For the smoke test the command `npm ci-smoke` is used instead of `npm ci-e2e`. Thus, you have to define this command in the file `package.json`. To run the same tests you can just copy the configuration from the command `ci-e2e` in the section scripts as shown below. To run a subset of the tests you can use [tags](https://github.com/cucumber/cucumber-js/blob/master/docs/cli.md#tags).
