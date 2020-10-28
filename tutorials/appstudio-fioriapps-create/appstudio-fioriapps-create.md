@@ -1,6 +1,6 @@
 ---
 title: Create an SAP Fiori App Using SAP Business Application Studio
-description: Create an SAP Fiori application in SAP Business Application Studio and deploy it to your SAP Cloud Platform, Cloud Foundry environment.
+description: Develop a simple SAP Fiori application in SAP Business Application Studio. The application will present a list of suppliers from an on-premise backend. The suppliers' data will be retrieved from the BusinessPartnerSet collection in the GWSAMPLE_BASIC OData service that is available from SAP's ES5 demo gateway.
 auto_validation: true
 time: 25
 tags: [ tutorial>beginner, topic>sapui5, products>sap-fiori, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -28,11 +28,11 @@ The period for idle time for Factory accounts is different than for trial accoun
 
 [ACCORDION-BEGIN [Step 1: ](Create new SAP Fiori project)]
 
-1. Create a new SAP Fiori project from a template.
+1. In the **Welcome Page** click **Create project from a template**.
 
     !![Open Dev Space](03-01-02 AppStudio Welcome Tab withOUT Extensions Loaded Notification_.jpg)
 
-    >If the Welcome Page does not appear, in the menu bar, select **View | Find Command** to open the **command palette** and select the command **SAP Business Application Studio: Welcome Page**.
+    >If the Welcome Page does not appear, in the menu bar, select **View | Find Command** to open the **command palette** and select the command **SAP Business Application Studio: Welcome Page**. The command palette is opened at the top-center of the SAP Business Application Studio window.
 
     >!![Welcome Page from command palette](03-01-03 AppStudio Welcome Page from Command Palette_.jpg)
 
@@ -41,7 +41,9 @@ The period for idle time for Factory accounts is different than for trial accoun
     >Using the UI wizard you can at any point click the `reset` button to reset the wizard at the top-right of the wizard screen, click the `Back` button to go back to the previous step, or click the specific wizard step to go back to that step.
     >For convenience, click the **Explorer** view button to close the `Explorer` view.
 
-2. Make sure that the target folder is `/home/user/projects`, select the **SAP Fiori Freestyle - Project Generator** template, and click **Next**.
+    > You can also create a project from the terminal using Yeoman.
+
+2. Make sure that the target folder is `/home/user/projects`, select the **SAP Fiori Freestyle Project** template, and click **Next**.
 
     !![Fiori project template](03-03 AppStudio Fiori Project Template_.jpg)
 
@@ -159,7 +161,7 @@ Make some changes using the layout editor, with no need to do any coding.
 
     !![Drag and drop](05-02 AppStudio Layout Editor List Dropped_.jpg)
 
-3. Select the **Standard List Item** control (the breadcrumb indicates which control is selected) and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
+3. Select the **Standard List Item** control by clicking it (the breadcrumb indicates which control is selected) and, in the **Entity Set** property in the **Properties** pane, click the Bind icon.
 
     !![Open entity set bind window](05-03 AppStudio Layout Editor Bind to Entity Set_.jpg)
 
@@ -168,6 +170,8 @@ Make some changes using the layout editor, with no need to do any coding.
 4. Select the **Define entity set and set the selected control as template** option, and in the **Entity Set** dropdown list, choose the `BusinessPartnerSet` entity set. Click **Bind** to complete the operation.
 
     !![entity set bind window](05-04 AppStudio Layout Editor Bind to Entity Set_.jpg)
+
+    >The space of the **Select Entity Set** view may be to narrow to show all options. In case you do not see the **Define entity set and set the selected control as template** option, scroll down in the **Select Entity Set** view to make it available.
 
     >The bind operation is reflected in both the **Layout Editor** and the code editor.
 
@@ -198,15 +202,17 @@ Run your new application to test it.
 
     !![Open Run Configurations](06-01 AppStudio Run Configurations_.jpg)
 
-2. Click **+** and select **`BusinessPartners`**.
+2. Click **+** to create a new **Run Configurations**.
 
     !![Create new run configuration](06-02 AppStudio Run Configurations_.jpg)
 
-    >When "What would you like to run?" question appears, select **`BusinessPartners`**.
+    >Creating a new **Run Configuration** launches the command palette, a text-based mini wizard. The command palette is opened at the top-center of the SAP Business Application Studio window.
+
+3. When "What would you like to run?" question appears, select **`BusinessPartners`**.
 
     >!![run configuration select BusinessPartners](06-02-01 AppStudio Run Configurations_.jpg)
 
-3. For the next steps of the wizard, select the following:
+4. For the next steps of the wizard, select the following:
 
     | Step | Parameter | Value |
     |:-----|:----------|:------|
@@ -216,17 +222,17 @@ Run your new application to test it.
 
     >A new run configuration is generated for the `FioriDemo` project.
 
-4. Expand the run configuration to display the services that can be bound.
+5. Expand the run configuration to display the services that can be bound.
 
     !![Bindable objects](06-04 AppStudio Run Configurations_.jpg)
 
     >SAP Business Application Studio allows you to test your app with resources.
 
-5. To bind to the destination, click the **Bind** icon to the right of the destination resource to get a list of available destinations.
+6. To bind to the destination, click the **Bind** icon to the right of the destination resource to get a list of available destinations.
 
     !![Bind to Destination](06-05 AppStudio Run Configurations Bind Destination_.jpg)
 
-6. Select the `ES5` destination from the list.
+7. Select the `ES5` destination from the list.
 
     !![Select Destination](06-05-02 AppStudio Run Configurations Bind Destination_.jpg)
 
@@ -236,11 +242,11 @@ Run your new application to test it.
 
     >!![Destination is bound](06-05-03 AppStudio Run Configurations Bind Destination_.jpg)
 
-7. Hover over the run configuration and click the Run Module icon.  
+8. Hover over the run configuration and click the Run Module icon.  
 
     !![Running the app locally](06-06 AppStudio Run Configurations Run_.jpg)
 
-8. Wait for the **A service is listening to port 6004** notification and then click the button to open the app.
+9. Wait for the **A service is listening to port 6004** notification and then click the button to open the app.
 
     >The left side view changes to the debug view and the status bar color changes to orange to indicate that the app is running in debug mode.
 

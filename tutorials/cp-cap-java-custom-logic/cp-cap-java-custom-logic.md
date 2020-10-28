@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Extend the Bookstore with Custom Code
 description: Extend the previously built bookstore with custom coding, for example, to validate requests.
 auto_validation: true

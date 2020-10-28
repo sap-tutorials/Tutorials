@@ -42,7 +42,11 @@ In this step, you'll create connectivity between SAP Cloud Platform and the SAP 
 
     !![New destination](4-create-destination.png)
 
+
+
 3.  Add the following destination properties:
+
+    >Important: If you haven't already created a user in ES5 as explained in the prerequisites above, please do so now and follow the steps in this topic:  [Create an Account on the Gateway Demo System](https://developers.sap.com/tutorials/gateway-demo-signup.html).
 
     |  Field     | Value
     |  :------------- | :-------------

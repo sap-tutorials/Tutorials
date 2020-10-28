@@ -2,7 +2,7 @@
 title: Design and Test Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details. Your request will be sent via Postman client.
 auto_validation: true
-time: 25
+time: 45
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-integration-for-process-services
 author_name: Vikram Kulkarni
@@ -34,11 +34,21 @@ author_profile: https://github.com/Vikramkulkarni01
 
     >**TIP:** If you do not see the **Process Integration Runtime** service in the list, at the subaccount level, choose **Entitlements** > **Configure Entitlements** > **Add Service Plans**. Choose **Process Integration Runtime** and select the **integration-flow** service plan checkbox and choose **Add 1 Service Plan**.
 
-  3. Select **Instances** > **New Instance**.
+  3. Select **Create Instance**.
 
       !![Create new instance](4.3.create.new.instance.png)
 
-  4. Choose **Next** to select the default service plan. In the **Specify Parameters** tab, enter:
+  4. Select the following details and choose **Next**.
+
+    |  Field Name     | Details
+    |  :------------- | :-------------
+    |  **Service**           | **`Process Integration Runtime`**
+    |  **Service Plan**           | Select **`integration-flow`** from the dropdown list
+    |  **Instance Name**    | Enter **`Test`** or name of your choice
+
+    !![New instance wizard](4.4Createnewinstance.png)
+
+  5.  In the **Specify Parameters** tab, enter the following **`JSON`** code snippet:
 
     ```JSON
       {
@@ -47,32 +57,32 @@ author_profile: https://github.com/Vikramkulkarni01
        ]
       }
     ```
+    !![Jsoncode](4.5Jsoncode.png)
 
-      Service plan integration-flow is the only option which is preset because processing integration flows is what a remote system is doing when calling SAP Cloud Platform Integration.
+    Choose **Next** > **Create Instance**.
 
-      !![Specify JSON for user role](4.4.specify-json-instance.png)
+    !![finalstep](1.4.8CreateInstancefinal.png)
 
-  5. Choose **Next** until you have to specify the instance name. Provide any name of your choice and choose **Finish**.
+  6. Upon successful creation of an instance, a dialog opens. Choose **View Instance**.
+    !![view instances](1.4.9viewinstance.png)
 
-      !![Specify instance name](4.5.specify-instance-name.png)
-
-  6. Select the newly created service instance.
+  7. Select the newly created service instance and choose **Create Service Key** to create a new service key.
 
       !![Select service key](4.6.select-service-instance.png)
 
       You create this service instance to enable inbound HTTP calls to your SAP Cloud Platform Integration tenant.
 
-  7. Choose **Create Service Key** to create a new service key.
-
-      !![Create service key](4.7.create-service-key.png)
-
     >**TIP**: This service key will provide you the credentials for making inbound HTTP calls to integration flows deployed on your SAP Cloud Platform Integration suite tenant. You use the credentials of the service key that is `clientid` and `clientsecret` to call an integration flow as an HTTP endpoint. For more information, see [Setting Up Basic Inbound Authentication with `clientId` and `clientsecret` from a Service Key](https://help.sap.com/viewer/368c481cd6954bdfa5d0435479fd4eaf/Cloud/en-US/647eeb3eca5d4c299009cacd1332247e.html).
 
-  8. Specify a name for the service key and choose **Save**.
+  8. Specify a name for the service key and choose **Create**.
 
       !![Enter service key name](4.8.create-service-key-2.png)
 
-  9. Copy the values of **`clientid`** and **`clientsecret`** parameters. These are the credentials that you use to make a request to your integration flow after you deploy it.
+  9. Click the 3 dots under service keys section and choose **View**.
+
+      !![view key](1.8.key_view.png)
+
+  10. Copy the values of **`clientid`** and **`clientsecret`** parameters. These are the credentials that you use to make a request to your integration flow after you deploy it.
 
       ![Copy clientid and clientsecret](4.9.copy-clientid-secret.png)
 
@@ -110,11 +120,11 @@ author_profile: https://github.com/Vikramkulkarni01
 
   2. Choose **Add** > **Integration Flow**.
 
-      ![Add integration flow artifact](2.3.add-integration-flow.png)
+      !![Add integration flow artifact](2.3.add_integration_flow_new.png)
 
       Enter the **Name** for integration flow and choose **OK**.
 
-      ![Enter integration flow details and confirm](2.4.enter-iflow-details.png)
+      !![Enter integration flow details and confirm](2.4.enter-iflow-details.png)
 
   3. Save the integration package by choosing **Save** and open the integration flow by selecting it.
 
@@ -130,7 +140,6 @@ author_profile: https://github.com/Vikramkulkarni01
 
     !![Access integration package](1.1.access-integration-package.png)
 
-    If you have not created an integration package and integration flow, complete the tutorial [Create your First Integration Package and Integration Flow](cp-starter-integration-cpi-create-iflow) first before proceeding.
 
 2. Access your integration flow by choosing **Artifacts** > **(Integration flow name)**.
 
