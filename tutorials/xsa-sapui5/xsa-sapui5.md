@@ -264,9 +264,9 @@ sap.ui.require(["sap/ui/core/Core", "sap/ui/core/Component"], (oCore, Component)
 
 You also reference some images in this HTML page. They aren't critical, but if you want you can create an images folder inside resources and then upload these images from our GIT repository:
 
-1. [SAP icon](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/master/web/resources/images/favicon.ico)
+1. [SAP icon](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/main/web/resources/images/favicon.ico)
 
-2. [SAP logo](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/master/web/resources/images/sap_18.png)
+2. [SAP logo](https://github.com/SAP-samples/hana-xsa-opensap-hana7/raw/main/web/resources/images/sap_18.png)
 
 ![new images](6.png)
 

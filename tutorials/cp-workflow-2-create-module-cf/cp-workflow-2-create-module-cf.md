@@ -48,7 +48,6 @@ You create your workspace where you will later build the workflow.
 
     > The **PROJECTS** explorer is opened.
 
-
 [DONE]
 [ACCORDION-END]
 

@@ -10,7 +10,8 @@ author_profile: https://github.com/Vikramkulkarni01
 ---
 
 ## Prerequisites
-- [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- You have created a **trial account on SAP Cloud Platform:** [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- You have a **subaccount and dev space with Europe (Frankfurt) or US East (VA) as region**
 
 ## Details
 ### You will learn
@@ -45,9 +46,9 @@ This part of the series lets you experience the capabilities offered by SAP Clou
 
       !![Trial global account](01_FoundationsCockpit_trial page.png)
 
-3. Click **Create Account** to create a subaccount. Choose the geographical region that's closest to you.
+3. Click **Create Account** to create a subaccount. Choose either **US East (VA) – AWS** or **Europe (Frankfurt) – AWS**.
 
-    !![Select region](1.3.0Region.png)
+    !![Select region](1.3.1Region.png)
 
 4. Choose **Continue**.
 
@@ -76,7 +77,7 @@ This part of the series lets you experience the capabilities offered by SAP Clou
     !![Select Integration Suite](2.1.Integration_Suite_Tile.png)    
 
 2. Select **Subscribe**.
-    >**IMPORTANT**: Trial accounts are not intended for production use and has certain limitations. To know more, see [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
+    >**IMPORTANT**: Trial accounts are not intended for productive use and offer a certain scope only. See: [Trial Scope](https://help.sap.com/viewer/51ab953548be4459bfe8539ecaeee98d/sap.cp.integration.suite/en-US/5cc6987511104c418b7cb4c25f3d9cb0.html).
 
   !![Select subscribe button](2.2.Subscribe.png)
 
@@ -119,7 +120,7 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
     !![Integratiosuite_launchpad](4.3.1isuitenewlaunchpage.png)
 
-    Let's assume you have made your selection, so you now have to click **Next**.
+    Let's assume you have made your selection, you can select any of the capabilities. For this tutorial, select **Design, Develop and operate integration Scenarios** and click **Next**.
 
     !![Add Capabilities](5.1.2Addcapapbilities.png)
 
@@ -182,9 +183,11 @@ In this step, you authorize a user to access the Integration Suite Provisioning 
 
 [ACCORDION-BEGIN [Step 6: ](Verify the activated capabilities)]
 
-After giving authorization to a user, go to the **Integration Suite Launchpad** application. Click on the URLs of all the activated capabilities and verify if you can able to successfully access it.
+1. After giving authorization to a user, go to the **Integration Suite Launchpad** application and choose **Manage Capabilities** tile. 
+    !![Link text e.g., Destination screen](1.6.1VerifyActivatedCapab.png)
 
-!![Verify](6.1Verifycapabilities.png)
+2. Click the URLs of all the activated capabilities and verify if you can successfully access it.
+    !![Verify](6.1Verifycapabilities.png)
 
 [DONE]
 [ACCORDION-END]

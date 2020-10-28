@@ -22,7 +22,7 @@ Dev spaces are like isolated virtual machines in the cloud that can be instantly
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Business Application Studio)]
-1. Go to your Cloud Foundry environment subaccount and click the **Subscriptions** tab.
+1. Go to your Cloud Foundry environment subaccount and click the **Subscriptions** tab. 
 
     !![AppStudio Tile in SAP Cloud Platform Cockpit](01-01 SCP Subscriptions_.jpg)
 
