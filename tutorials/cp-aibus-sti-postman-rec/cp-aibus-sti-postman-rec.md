@@ -64,7 +64,7 @@ Select the request `Activate model` and click **Send**. This will start the acti
 
 !![Activate Model](activate-model.png)
 
-Use the request `Get model status` from the previous step again to observe the process. Once the status of the model changes to `ACTIVE`, the model is ready and activated.
+Use the request `Get model status` from the previous step again to observe the process. The model status will change from `READY` to `LOADING` as the model is being loaded and deployed. This process may take up to 15 minutes on the first activation of your subaccount. Once the status of the model changes to `ACTIVE`, the model is ready and activated.
 
 !![Activate Model](activate-model-response.png)
 
