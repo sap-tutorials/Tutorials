@@ -200,8 +200,6 @@ SAP HANA 2.0, express edition is now running.
 
 -   **Drivers and connectors for Python, Node.js, .NET, Java and others** – check sample applications using different drivers and languages [such as Node.js, and Python]. See [Create Tiny World App in SAP HANA, express edition](https://developers.sap.com/group.hxe-tiny-world.html).
 
--   **Database clients** – Use a SQL client and the JDBC drivers to connect to the database. See [Download a SQL client and connect to your instance (SAP HANA, express edition, server-only)](hxe-cj1-download-sql-client). Alternately, use a plugin for Eclipse to connect to your SAP HANA, express edition system database instance. See [How to download and install the HANA Eclipse plugin](hxe-howto-eclipse).
-
 
 [DONE]
 

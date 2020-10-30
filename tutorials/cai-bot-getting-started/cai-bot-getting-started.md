@@ -3,7 +3,7 @@ title: Build Your First Chatbot with SAP Conversational AI
 description: Create a simple chatbot that can recognize greetings, understand when asked for a joke, provide a joke, and recognize the user's reaction to the joke.
 auto_validation: true
 time: 25
-tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning]
+tags: [ tutorial>beginner, products>sap-conversational-ai, topic>artificial-intelligence, topic>machine-learning ]
 primary_tag: products>sap-conversational-ai
 ---
 
@@ -15,7 +15,6 @@ primary_tag: products>sap-conversational-ai
   - How to give your chatbot skills
 
 ---
-
 
 [ACCORDION-BEGIN [Step 1: ](Create SAP Conversational AI account)]
 
@@ -123,7 +122,7 @@ As SAP Conversational AI is collaborative, you do not have to re-create each int
 
 4. Explore the intent by clicking on it.
 
-    >In the intent we forked, there are 2 expressions to discern if someone wants to be told a joke.
+    >In the intent we forked, there are 2 expressions to discern if someone wants to be told a joke. In yours, you may receive more expressions.
 
     ![Joke intent](ExploreJokeIntent.png)
 
@@ -281,9 +280,9 @@ Now let's build a skill to tell a joke.
 
 4. Click the new **tell-me-a-joke** skill, and open the **Triggers** tab.
 
-5. Add 3 **`If`** statements, one for each of the `@ask-joke`, `@laugh`, and `@lame` intents.
+5. Add 3 **`If`** statements, one for each of the `@joke`, `@laugh`, and `@lame` intents.
 
-    - Click in the empty space right after `If`, select the `@ask-joke` intent, and then click **Save**.
+    - Click in the empty space right after `If`, select the `@joke` intent, and then click **Save**.
 
     ![Skill trigger condition](SkillCondition.png)
 
@@ -299,7 +298,7 @@ Now let's build a skill to tell a joke.
 
 7. Click **Add New Message Group**, then **Add Condition**.
 
-    After the `If`, select the `@ask-joke` intent, and click **Save**.
+    After the `If`, select the `@joke` intent, and click **Save**.
 
 8. Click **Send Message**, choose the **Text** format, and type in a really good joke.
 

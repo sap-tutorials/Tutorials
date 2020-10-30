@@ -42,7 +42,7 @@ The period for idle time for Factory accounts is different than for trial accoun
 
     !![Command palette build mta](01-03 AppStudio Command Palette Build MTA-1_.jpg)
 
-    >The build process creates a multitarget archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `DemoFiori/mta_archives` folder.
+    >The build process creates a multitarget archive (`MTAR`) file in your project that packages all the project modules for deployment. You can find the `MTAR` file in the `FioriDemo/mta_archives` folder.
 
     !![terminal mbt build results](07-02-02 AppStudio Terminal MBT Build_.jpg)
 
@@ -90,6 +90,8 @@ Right-click the `mtar` file and select **Deploy MTA Archive**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Get URL to access the application)]
+
+This step is only applicable to apps that use **Standalone Approuter** (see [Create an SAP Fiori App Using SAP Business Application Studio](appstudio-fioriapps-create) > Create new SAP Fiori project > **HTML5 Applications**).
 
 Access your deployed application in the SAP Cloud Platform cockpit. The steps below show you how to create a URL that you can use to access your new application.
 
