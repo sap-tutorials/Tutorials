@@ -29,6 +29,8 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
 2. Use the project navigator to create a new Table View Controller Cocoa Touch Class  **`TutorialApp > New File ... > Cocoa Touch Class`**. Name the class **`CustomersTableViewController`**.
 
+    !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2a.png)
+
 3. Open the **`Main.storyboard`** and set the **Custom Class** of the newly added Table View Controller to `CustomersTableViewController`.
 
     !![Main Storyboard Customer VC](fiori-ios-scpms-starter-mission-04-2.png)
@@ -164,13 +166,13 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
         let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
-        var dataService: ESPMContainer<OnlineODataProvider>? {
-            guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
-                AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
-                return nil
-            }
-            return dataService
-        }
+        var dataService: ESPMContainer<OfflineODataProvider>? {
+          guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
+              AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+              return nil
+          }
+          return dataService
+    }
 
         private let appDelegate = UIApplication.shared.delegate as! AppDelegate
         private let logger = Logger.shared(named: "ProductsTableViewController")
@@ -287,7 +289,7 @@ Because we already implemented a similar screen, the Product List, we can copy m
 
     ```
 
-    If you compile now, there shouldn't be any compile time errors. What you basically did is pasted a modified code copied from the `ProductsTableViewController.swift` class. You had to simply replace all the product definitions with customer and adjust the `tableView(_:cellForRowAt:)` method to use the product data similar to the Overview Screen.
+    If you compile now, there shouldn't be any compile time errors, if you get a compile time error for the `odataController` remember to make the `import SAPOfflineOData` import statement. What you basically did is pasted a modified code copied from the `ProductsTableViewController.swift` class. You had to simply replace all the product definitions with customer and adjust the `tableView(_:cellForRowAt:)` method to use the product data similar to the Overview Screen.
 
     Also, the `loadProductImages()` method is not necessary anymore so we deleted that.
 
@@ -324,7 +326,7 @@ You can store the segue identifier in a class property for cleaner code and use 
 
 2. Locate the `prepareForSegue(for:Sender:)` method and add another case statement for the `customerSegueIdentifier`. Replace the code with the following:
 
-    ```Swift
+    ```Swift[6-8]
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -345,7 +347,7 @@ You can store the segue identifier in a class property for cleaner code and use 
 
     Locate the `tableView(_:viewForHeaderInSection:)` method and change the code to call the needed method:
 
-    ```Swift
+    ```Swift[15]
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerFooterView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FUITableViewHeaderFooterView.reuseIdentifier) as! FUITableViewHeaderFooterView
 
