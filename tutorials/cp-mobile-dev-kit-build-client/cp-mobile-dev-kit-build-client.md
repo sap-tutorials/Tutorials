@@ -11,7 +11,7 @@ author_profile: https://github.com/jitendrakansal
 
 ## Prerequisites
 - **Tutorial**: [Set Up Initial Configuration for an MDK App](cp-mobile-dev-kit-ms-setup)
-- **Download the latest version (4.3.1) of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Cloud Platform Mobile Services customer
+- **Download the latest version of Mobile Development Kit SDK** either from community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Cloud Platform Mobile Services customer
 
 ## Details
 ### You will learn
@@ -71,9 +71,9 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
     >You will also find other files in the extracted folder. The README file contains information about the version requirements, dependencies and some getting started links.
 
-2. Extract `MDKDependenciesInstallerWindows.zip` file.
+2. Extract `MDKDependenciesInstallerWindows` zip file.
 
-    MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click `MDK_Dependencies_Installer.exe` file to open it.
+    MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click `MDK_Dependencies_Installer` application file to open it.
 
     !![MDK](img_1.6.png)
 
@@ -85,7 +85,11 @@ Make sure that you have download latest version of MDK SDK as described in Prere
     There might be some issue due to Security Policy. It can be fixed by executing this in `PowerShell`:
     >`Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser`
 
+    >You might see different software versions depending on MDK SDK version you are using.
+
 [OPTION END]
+
+>You might see different software versions depending on MDK SDK version you are using.
 
 >You can look into console by clicking **Show Log** for execution of each dependencies.
 
@@ -118,7 +122,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
 [OPTION BEGIN [Windows]]
 
-1. To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK.zip` if it is not already extracted.
+1. To use the SDK to generate a mobile development kit client, the first step is to setup the SDK to create a client. Unzip `MDKClient_SDK` if it is not already extracted.
 
     !![MDK](img_2.3.png)
 
@@ -318,7 +322,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_4.3.1.png)
 
-    You will also find your app created under the `MDKClient_SDK` folder.
+    You will also find your MDK Client app created under the `MDKClient_SDK` folder.
 
     !![MDK](img_4.3.2.png)
 
@@ -371,7 +375,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.3.1.png)
 
-4. Tap **AGREE** on End User License Agreement.
+4. Tap **AGREE** on `End User License Agreement`.
 
 5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.3 & 3.5.
 
@@ -391,7 +395,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.9.png)
 
-    Optionally, you can enable fingerprint to get faster access to the app data.
+    Optionally, you can enable biometric authentication to get faster access to the app data.
 
     ![MDK](img_5.9.1.png)
 
@@ -425,7 +429,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.13.png)
 
-4. Tap **Agree** on End User License Agreement.
+4. Tap **Agree** on `End User License Agreement`.
 
 5. In Welcome screen, you will notice that **app name**, **detailed label text** and **signing button text** have been updated as per changes done in step 3.3 & 3.5.
 
@@ -445,7 +449,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     ![MDK](img_5.16.png)
 
-    Optionally, you can enable Touch ID to get faster access to the app data, tap **Enable**.
+    Optionally, you can enable biometric authentication to get faster access to the app data, tap **Enable**.
 
     ![MDK](img_5.17.png)
 
