@@ -71,10 +71,10 @@ Log into the Cloud Foundry Environment using the Cloud Foundry CLI, as follows.
 2. Run the following command to install the necessary node packages:
 
     ```Shell/Bash
-    npm install --save-dev --save-exact @sap/hdi-deploy@3.7.0
+    npm install --save-dev @sap/hdi-deploy
     ```
 
-3. Create an SAP HANA service instance and implicitly push all artefacts to the database using:
+3. Create an SAP HANA service instance and implicitly push all artifacts to the database using:
 
     ```Shell/Bash
     cds deploy --to hana:bookstore-hana
