@@ -47,7 +47,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >The `Base` template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application. More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry target again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.
 
 6. In *Service Configuration* step, provide or select the below information and click **Next**:
 
@@ -123,7 +123,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     !![MDK](img_3.2.png)
 
-3. You should see **Deploy succeeded** message.
+    You should see **Deploy succeeded** message.
 
     !![MDK](img_3.3.png)
 

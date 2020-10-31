@@ -53,7 +53,7 @@ Select projects, Click **Open**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry target)]
+[ACCORDION-BEGIN [Step 3: ](Configure Cloud Foundry environment)]
 
 In the bottom left corner of your status bar, click the message **`The organization and space in Cloud Foundry have not been set.`**.
 

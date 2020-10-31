@@ -35,61 +35,53 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
+2. Navigate to *File* menu &rarr; click **New Project from Template**.
 
-    !![MDK](img_2.1.gif)
+    !![MDK](img_2.2.png)
 
-3. In Welcome page, click **New project from template** .
+3. Select **MDK Project** and click **Next**.
 
     !![MDK](img_2.3.png)
 
-4. Select **MDK Project** and click **Next**.
+4. In *Basic Information* step, select or provide the below information and click **Next**:
+
+    | Field | Value |
+    |----|----|
+    | `MDK template type`| Select `Base` from the dropdown |
+    | `Your project name` | `MDKOnlineApp` |
+    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |
 
     !![MDK](img_2.4.png)
 
-5. In *Basic Information* step, select or provide the below information and click **Next**:
-
-    | Field | Value |
-    |----|----|
-    | `MDK Template Type`| Select `Base` from the dropdown |
-    | `Your Project Name` | `MDKOnlineApp` |
-    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
-
-    !![MDK](img_2.5.png)
-
     >The `Base` template creates the offline or online actions, rules, messages and an empty page (`Main.page`). After using this template, you can focus on creating your pages, other actions, and rules needed for your application.
 
-    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
+    >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).
 
-6. In *SAP Cloud Platform Connection* step, you will see your Cloud Foundry Organization and Space information. If you are not logged on yet, provide required credentials to retrieve your details. Click **Next**.
+    >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.  
 
-    !![MDK](img_2.6.png)
-
-7. In *Service Configuration* step, provide or select the below information and click **Next**:
+5. In *Service Configuration* step, provide or select the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<You can continue with default name or provide any name of your choice>` |
+    | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
+    | `Enter a path to the OData service` | Leave it as it is |
+    | `Language URL` | Leave it with the default value |
     | `Enable Offline` | Choose `No` |
 
-    >For Offline OData capability only OData V2 is supported. OData V2 and V4 are supported for Online OData.
+    >Offline supports only OData V2 while online supports both OData V2 and V4.
 
-    !![MDK](img_2.7.png)
+    !![MDK](img_2.5.png)
 
     >In [this tutorial](cp-mobile-dev-kit-ms-setup), server-side configuration for this MDK app were already done.  
 
     >Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services.
 
-8. In **OData Collections** step, select `Customers`, `Product`, `SalesOrderHeaders` and `SaelesOrderItems` data collections. Click **Finish**.
+6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKOnlineApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
-    !![MDK](img_2.8.png)
-
-9. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `DemoSampleApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
-
-    !![MDK](img_2.9.png)
+    !![MDK](img_2.6.png)
 
 [DONE]
 [ACCORDION-END]
@@ -134,13 +126,17 @@ Open the application settings in the application editor by double clicking on th
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_4.1.png)
+    !![MDK](img_4.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_4.2.png)
+    !![MDK](img_4.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_4.3.png)
 
 
 [DONE]
@@ -185,7 +181,7 @@ Once you accept app update, you will see **Main** page being displayed and appli
 
 >Once you have scanned and onboarded using the onboarding URL, it will be remembered. When you Log out and onboard again, you will be asked either to continue to use current application or to scan new QR code.
 
-**Congratulations!** You have successfully created an MDK online app and you are now all set to [Handle Error Archive in an MDK App](cp-mobile-dev-kit-error-archive).
+**Congratulations!** You have successfully created an MDK online app and you are now all set to [Create a Customer List Page in an MDK App](cp-mobile-dev-kit-list-page).
 
 [VALIDATE_1]
 [ACCORDION-END]

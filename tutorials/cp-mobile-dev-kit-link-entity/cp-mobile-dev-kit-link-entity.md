@@ -26,7 +26,7 @@ To create an entity and then link it to another entity, you need to carry out th
 
 *  Create a new page for creating an order
 *  Add an action bar item to the new page for cancelling the current activity
-*  Create a new `CreateEntity` OData action to  create a new sales order  
+*  Create a new `CreateRelatedEntity` OData action to  create a new sales order  
 *  Create a new message action for displaying failure message if order creation fails
 *  Create a navigation action to show order creation page from Customer detail page
 *  Implement data subscription to update count value when a new sales order is created
