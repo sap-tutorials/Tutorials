@@ -123,7 +123,7 @@ So far, you have learned how to build an MDK application in the SAP Business App
 
     !![MDK](img_3.2.png)
 
-3. You should see **Deploy Succeeded** message.
+3. You should see **Deploy succeeded** message.
 
     !![MDK](img_3.3.png)
 
