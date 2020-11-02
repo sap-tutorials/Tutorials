@@ -219,7 +219,7 @@ After you've determined that the user wants to track a package, you have to buil
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add requirement (parcel-number) to skill)]
+[ACCORDION-BEGIN [Step 6: ](Add requirement to skill (parcel-number))]
 
 The requirements for the **track-parcel** skill indicate the data the bot needs to extract from the conversation before executing the skill's action.
 
@@ -272,7 +272,7 @@ You will have several requirements. In this step, you will add the requirement f
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 1: ](Add requirement (yes/no) to skill)]
+[ACCORDION-BEGIN [Step 1: ](Add requirement to skill (yes/no) )]
 Now you'll add a second set of requirements -- the user's confirmation that they want to track the package.
 
 1. Add a second requirement by clicking the plus sign ( **+** ) -- the second one that when you hover it says **Add a new list of requirements**.
