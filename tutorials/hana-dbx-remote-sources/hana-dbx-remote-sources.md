@@ -69,7 +69,7 @@ For additional details on SAP HANA Smart Data Access (SDA) and SAP HANA Smart Da
 
 1. To create a remote source from SAP HANA, express edition to SAP HANA Cloud, open the SAP HANA database explorer from the SAP HANA, express edition.
 
-     Right-click on **Remote Sources** and select **Add Remote Source**.  
+     Right-click **Remote Sources** and select **Add Remote Source**.  
 
      ![Add remote source](add_remote_source.png)
 
@@ -115,7 +115,7 @@ In this step, a virtual table named `vt_tourist_reviews` will be created in SAP 
     GRANT ALL PRIVILEGES ON SCHEMA HOTEL TO USER1;
     ```
 
-2. Right-click on the remote source named `Remote_HC` and choose **Open**.  
+2. Right-click the remote source named `Remote_HC` and choose **Open**.  
 
 3. Set the **Schema** to be **`HOTEL`** and press the **Search** button.
 
