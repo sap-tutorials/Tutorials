@@ -142,7 +142,7 @@ This step includes creating the mobile development kit project in the editor.
 
     Since you will create an online based app, hence _Enable Offline Store_ option is unchecked.
 
-6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Annotations` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace. Ignore the pop-up or click the cross icon to hide the window.
+6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Annotations` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
     !![MDK](img_3.6.png)
 

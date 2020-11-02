@@ -73,7 +73,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
     >If you see *Cloud foundry token expired, continue without mobile services connection?* message, then set the Cloud Foundry environment again by clicking at bottom left corner of your status bar to initiate a valid session and repeat above steps.      
 
-5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Push` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace. Ignore the pop-up or click the cross icon to hide the window.
+5. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Push` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
     !![MDK](img_2.5.png)
 

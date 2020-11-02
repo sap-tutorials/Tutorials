@@ -73,7 +73,7 @@ Make sure that you have download latest version of MDK SDK as described in Prere
 
 2. Extract `MDKDependenciesInstallerWindows` zip file.
 
-    MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click `MDK_Dependencies_Installer` application file to open it.
+    MDK Dependencies Installer checks the status of the MDK dependencies and will install or upgrade the dependencies for you. Double click the  `MDK_Dependencies_Installer` application file to open it.
 
     !![MDK](img_1.6.png)
 

@@ -77,7 +77,7 @@ This step includes creating the mobile development kit project in the editor.
 
     >Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services.
 
-6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKOnlineApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace. Ignore the pop-up or click the cross icon to hide the window.
+6. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDKOnlineApp` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
     !![MDK](img_2.6.png)
 

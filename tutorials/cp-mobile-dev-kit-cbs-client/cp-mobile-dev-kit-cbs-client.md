@@ -238,7 +238,7 @@ To enable your app for push notifications, you need to carry out the following t
 
     !![MDK](img_2.2.png)
 
-    Or you have an option to to upload Android Signing profile, if you already have one.
+    Or you have an option to to upload an Android Signing profile, if you already have one.
 
     !![MDK](img_2.3.png)
 
