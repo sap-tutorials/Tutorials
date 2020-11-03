@@ -182,7 +182,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_3.4.png)
 
-    To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#1294a03f-3bd6-41e7-9173-c2284ca2854a) and find your MDK application that you want to link to this client.
+    To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
     Click `com.sap.mdk.demo` > **Security** tab.
 
@@ -254,7 +254,7 @@ Once you've installed these prerequisites, your machine is ready to generate and
 
     !![MDK](img_3.4.png)
 
-    To find the correct URLs for your client, you should go to [Mobile Services cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#1294a03f-3bd6-41e7-9173-c2284ca2854a) and find your MDK application that you want to link to this client.
+    To find the correct URLs for your client, you should navigate to  [Mobile Services cockpit](cp-mobile-dev-kit-ms-setup) and find your MDK application that you want to link to this client.
 
     Click `com.sap.mdk.demo` > **Security** tab.
 

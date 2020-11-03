@@ -42,7 +42,7 @@ You can also check out more information on the Fiori elements [List Report](http
 
 Sample backend in SAP Cloud Platform Mobile Services provides annotation functionality for **Products**. If you add annotation path in given backend endpoint, the same annotation information can be leveraged by MDK editor to generate related CRUD pages.
 
-Make sure you have already configured an app in Mobile Services cockpit and have added Sample service as per [this](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html#44007b61-2d8b-4cca-a53a-7f13c24396f7) tutorial.
+Make sure you have already configured an app in Mobile Services cockpit and have added Sample service as per step 3 in [this](cp-mobile-dev-kit-ms-setup) tutorial.
 
 As admin changes to the default sample service destinations (`com.sap.edm.sampleservice.v2` and `com.sap.edm.sampleservice.v4`) are not allowed, you need to copy the destination URL from the sample service destination `com.sap.edm.sampleservice.v2` and create a new destination with the new name e.g., `com.sap.mdk.annotation` and add the required annotations.
 
