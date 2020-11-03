@@ -25,34 +25,34 @@ author_profile: https://github.com/Vikramkulkarni01
  In this step, you create a required role collection for executing this scenario.
 
  1. In your subaccount, go to **Security > Role Collections** and click **+** button to add new role collections.
-  !![Link text e.g., Destination screen](St1.1Add Role Collections.png)
+  !![Add Role Collections](St1.1Add Role Collections.png)
 
  2. Enter the name **`EsbMessagingSend`** and click **Create**.
-  !![Link text e.g., Destination screen](St1.2Create Role Collection.png)
+  !![Create Role Collection](St1.2Create Role Collection.png)
 
- 3. In the **Role Collections** page, search for the role **`EsbMessagingSend`** created in the previous step and click on it.
-  !![Link text e.g., Destination screen](St1.3Search Role Collection.png)
+ 3. In the **Role Collections** page, search for the role **`EsbMessagingSend`** created in the previous step and click it.
+  !![Search Role Collection](St1.3Search Role Collection.png)
 
  4. Choose **Edit**.
-    !![Link text e.g., Destination screen](St1.4 Edit Role Collection.png)
+    !![Edit Role Collection](St1.4 Edit Role Collection.png)
 
- 5. In the **Role Name** field, click on **Search** button to search for the role name.
-    !![Link text e.g., Destination screen](St1.5 Search Role Name.png)
+ 5. In the **Role Name** field, click **Search** button to search for the role name.
+    !![Search Role Name](St1.5 Search Role Name.png)
 
  6. Search for the role name **`MessagingSend` > Select Role** and click **Add**.
-    !![Link text e.g., Destination screen](St1.6 ADD Role Name.png)
+    !![Add Role name](St1.6 ADD Role Name.png)
 
  7. Choose **Save**.
-    !![Link text e.g., Destination screen](St1.7 Save Role Name.png)
+    !![Save Role Name](St1.7 Save Role Name.png)
 
  8. Go to **Security > Trust Configuration** and click **sap.default**.
-    !![Link text e.g., Destination screen](St1.8 Trust Configuration.png)
+    !![Trust Configuration page 1](St1.8 Trust Configuration.png)
 
- 9. Enter the user's e-mail address and click on **Show Assignments** to see the role collections that are currently assigned to this user. Then click **Assign Role Collection**.
-    !![Link text e.g., Destination screen](St1.9 Trust Configuration_part1.png)
+ 9. Enter the user's e-mail address and click **Show Assignments** to see the role collections that are currently assigned to this user. Then click **Assign Role Collection**.
+    !![Trust Configuration Initial Screen](St1.9 Trust Configuration_part1.png)
 
  10. Select role **`EsbMessagingSend`** and Click **Assign Role Collection**.
-    !![Link text e.g., Destination screen](St1.10 Assigning Role Collection.png)
+    !![Assigning Role ](St1.10 Assigning Role Collection.png)
 
 [DONE]
 [ACCORDION-END]
@@ -215,7 +215,7 @@ From the palette, choose **Call** > **External Call** > **Request Reply**. Conne
 
     !![OData processing resource path selection - 2](6.6.odata-processing-2.png)
 
-7. Click on the **Select Entity** field and choose **Products** from the dropdown list.
+7. Click the **Select Entity** field and choose **Products** from the dropdown list.
 
     !![OData processing resource path selection - 3](6.7.odata-processing-3.png)
 
