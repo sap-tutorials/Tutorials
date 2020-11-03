@@ -377,6 +377,8 @@
     "v2",
     "watchOS",
     "Webchat",
+    "WebGUI",
+    "WebGUIConnector",
     "webhook",
     "Webhook",
     "webhooks",
