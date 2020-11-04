@@ -2,6 +2,8 @@
 title: Get an Understanding of CoreML
 description: Understand what CoreML is and how it works.
 auto_validation: true
+author_name: Kevin Muessig
+author_profile: https://github.com/KevinMuessig
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 time: 5
@@ -9,7 +11,7 @@ time: 5
 
 ## Prerequisites  
 - **Development environment:** Apple Mac running macOS Catalina or higher with Xcode 11 or higher
-- **SAP Cloud Platform SDK for iOS:** Version 5.0
+- **SAP Cloud Platform SDK for iOS:** Version 5.0 or newer
 
 ## Details
 ### You will learn  
