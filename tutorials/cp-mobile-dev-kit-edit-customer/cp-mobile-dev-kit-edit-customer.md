@@ -371,7 +371,7 @@ Deploy the updated application to your MDK client.
 
 4. You can cross verify if the record has been updated in the backend.
 
-    >Backend endpoint can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
+    >Backend endpoint can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
 
     >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 
@@ -411,7 +411,7 @@ Deploy the updated application to your MDK client.
 
 4. You can cross verify if the record has been updated in the backend.
 
-    >Backend endpoint can be found in [Mobile Services Cockpit](https://developers.sap.com/tutorials/cp-mobile-dev-kit-ms-setup.html).
+    >Backend endpoint can be found in [Mobile Services Cockpit](cp-mobile-dev-kit-ms-setup).
 
     >**Mobile Applications** | **Native/Hybrid** | click the MDK App **com.sap.mdk.demo** | **Mobile Connectivity** | click **Launch in Browser** icon
 

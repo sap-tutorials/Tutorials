@@ -12,7 +12,7 @@ author_profile: https://github.com/jitendrakansal
 ## Prerequisites
 - **Tutorial**: [Set Up for the Mobile Development Kit (MDK)](group.mobile-dev-kit-setup)
 - **Download and install:** **SAP Mobile Services Client** on your [iOS](https://apps.apple.com/us/app/sap-mobile-services-client/id1413653544) device (If you are connecting to `AliCloud` accounts then you will need to brand your [custom MDK client](cp-mobile-dev-kit-build-client) by whitelisting custom domains as allowed domains restrictions that exist by default in App store clients.)
-- **Download the latest version (4.3.1) of Mobile Development Kit SDK** either from [SAP Software Content Downloads](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Marketplace](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Cloud Platform Mobile Services customer
+- **Download the latest version of Mobile Development Kit SDK** either from community [download page](https://developers.sap.com/trials-downloads.html?search=Mobile%20development%20kit) or [SAP Software Center](https://launchpad.support.sap.com/#/softwarecenter/search/Mobile%2520development%2520kit) if you are a SAP Cloud Platform Mobile Services customer
 
 
 ## Details
@@ -26,12 +26,7 @@ You may clone an existing metadata project from [GitHub repository](https://gith
 
 ---
 
-
-To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls using the following:
-
--  NativeScript (TypeScript/JavaScript applicable for both Android and iOS)
-
--  Swift class (iOS only)
+To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
 
 In this tutorial, you will create a Map extension via NativeScript (in TypeScript language), you will view the Map in Apple Maps on iOS devices and in Google Maps on Android devices.
 
@@ -43,57 +38,51 @@ This step includes creating the mobile development kit project in the editor.
 
 1. Launch the [Dev space](cp-mobile-bas-setup) in SAP Business Application Studio.
 
-2. If you do not see the **Welcome** page, navigate to *View* menu &rarr; *Find Command* &rarr; search with *Welcome* to launch the Welcome page.
+2. Navigate to *File* menu &rarr; click **New Project from Template**.
 
-    !![MDK](img_1.2.gif)
+    !![MDK](img_1.2.png)
 
-3. In Welcome page, click **New project from template** .
+3. Select **MDK Project** and click **Next**.
 
-    !![MDK](img_1.3.png)
+    !![MDK](img_1.3.png)  
 
-4. Select **MDK Project** and click **Next**.
+4. In *Basic Information* step, select or provide the below information and click **Next**:
+
+    | Field | Value |
+    |----|----|
+    | `MDK template type`| Select `List Detail` from the dropdown |
+    | `Your project name` | `MDK_Maps` |
+    | `Your application name` | <default name is same as project name, you can provide any name of your choice> |    
 
     !![MDK](img_1.4.png)
 
-5. In *Basic Information* step, select or provide the below information and click **Next**:
-
-    | Field | Value |
-    |----|----|
-    | `MDK Template Type`| Select `List Detail` from the dropdown |
-    | `Your Project Name` | `MDK_Maps` |
-    | `Your Project Name` | <default name is same as Project name, you can provide any name of your choice> |
-
-    !![MDK](img_1.5.png)
-
     >More details on _MDK template_ is available in [help documentation](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/bas.html#creating-a-new-project-cloud-foundry).  
 
-6. In *SAP Cloud Platform Connection* step, you will see your Cloud Foundry Organization and Space information. If you are not logged on yet, provide required credentials to retrieve your details. Click **Next**.
-
-    !![MDK](img_1.6.png)
-
-7. In *Service Configuration* step, provide or select the below information and click **Next**:
+5. In *Service Configuration* step, provide or select the below information and click **Next**:
 
     | Field | Value |
     |----|----|
-    | `Service File Name`| `<You can continue with default name or provide any name of your choice>` |
+    | `Service File Name`| `<Provide any name of your choice>` |
     | `OData Source` | Select `Mobile Services` from the dropdown |
     | `Application Id` | Select `com.sap.mdk.demo` from the dropdown |
     | `Destination` | Select `com.sap.edm.sampleservice.v2` from the dropdown |
-    | `Enable Offline` | Choose `No` |            
+    | `Enter a path to the OData service` | Leave it as it is |
+    | `Language URL` | Leave it with the default value |
+    | `Enable Offline` | Choose `No` |  
 
-    !![MDK](img_1.7.png)
+    !![MDK](img_1.5.png)
 
     Regardless of whether you are creating an online or offline application, this step is needed app to connect to an OData service. When building an Mobile Development Kit application, it assumes the OData service created and the destination that points to this service is setup in Mobile Services and SAP Cloud Platform.
 
     Since you will create an online based app, hence _Enable Offline Store_ option is unchecked.
 
-8. In *OData Collections* step, select `Customers` (if not selected by default). Click **Next** to finish the project creation.
+6. In *OData Collections* step, select `Customers` (if not selected by default). Click **Next** to finish the project creation.
 
-    !![MDK](img_1.8.png)    
+    !![MDK](img_1.6.png)    
 
-9. After clicking **Next**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Maps` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in new workspace or to add it to workspace. Ignore the pop-up or click the cross icon to hide the window.
+7. After clicking **Finish**, the wizard will generate your MDK Application based on your selections. You should now see the `MDK_Maps` project in the project explorer. As you have already opened the workspace, there is no need to open the generated project in a new workspace. Ignore the pop-up or click the cross icon to hide the window.
 
-    !![MDK](img_1.9.png)
+    !![MDK](img_1.7.png)
 
 [DONE]
 [ACCORDION-END]
@@ -408,13 +397,17 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
 So far, you have learned how to build an MDK application in the SAP Business Application Studio editor. Now, we deploy this application definition to Mobile Services.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_5.1.png)
+    !![MDK](img_5.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_5.2.png)
+    !![MDK](img_5.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_5.3.png)
 
 
 [DONE]
