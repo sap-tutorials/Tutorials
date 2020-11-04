@@ -2,9 +2,11 @@
 title: Tour the SAP Community
 description: Explore the various features of SAP Community, familiarize yourself with community guidelines, discover how to get the most out of your membership, and earn the Tour the Community badge.
 auto_validation: true
-time: 25
+time: 25  
 tags: [  tutorial>beginner, topic>sap-community  ]
 primary_tag: topic>sap-community
+author_name: Lena Stodal
+author_profile: https://github.com/lenastodal
 ---
 
 ## Prerequisites
@@ -26,7 +28,7 @@ In order to participate fully in the SAP Community, you need to set your account
 
 1. Watch this SAP Community video [Changing Privacy Settings](https://www.youtube.com/watch?v=9BnkWDfjVlU&feature=youtu.be).
 
-    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=9BnkWDfjVlU&feature=youtu.be"frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9BnkWDfjVlU"frameborder="0" allowfullscreen></iframe>
 
 2. Go to your SAP.com profile **Dashboard** (accessible by clicking your avatar in the upper right and using the **My Profile** feature), select **Privacy** (found under **Account & Settings** on the left-hand side), and make sure that **I want my profile to be visible to public** is switched to **`Allow`**.
 
