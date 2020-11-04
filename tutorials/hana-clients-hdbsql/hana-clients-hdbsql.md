@@ -106,14 +106,7 @@ On Linux or a Mac, turn off page by page scroll output.  Also, consult the `-j` 
 
 1. Create `USER1`.  Select the command below based on the version of SAP HANA being used.  Note that the message  _'0 rows affected'_ means that query was successful.
 
-    ```SQL for SAP HANA Cloud
-    CREATE USER USER1 PASSWORD Password1 no force_first_password_change SET USERGROUP DEFAULT;
-    ```
-
-    The `SET USERGROUP` command is only required for SAP HANA Cloud as the `DBADMIN` user does not have the privilege `USER ADMIN`.  
-
-
-    ```SQL for SAP HANA, express edition
+    ```SQL
     CREATE USER USER1 PASSWORD Password1 no force_first_password_change;
     ```
 

@@ -87,13 +87,13 @@ The SAP Software download links (requires an S-User ID to access) below are for 
 
 [ACCORDION-BEGIN [Step 3: ](SAP HANA Cloud trial)]
 
->To complete the tutorials in this mission, an SAP HANA instance is needed. Step 3 and 4 in this tutorial provide two different, free, options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
+>To complete the tutorials in this group, an SAP HANA instance is needed. Step 3 and 4 in this tutorial provide two different, free, options that can be used to set up an SAP HANA instance.  Only one of these steps needs to be completed if you currently do not have access to an SAP HANA instance.
 
 This step provides pointers on how to setup a free SAP HANA Cloud trial that can be used in subsequent tutorials.
 
 To sign up for an SAP Cloud Platform trial account, complete [Get a Free Trial Account on SAP Cloud Platform](https://developers.sap.com/tutorials/hcp-create-trial-account.html).
 
-Continue on to the next tutorial in this mission once you have followed the first 2 or 3 articles in the [learning track](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/) and have created an SAP HANA Cloud instance in the SAP Cloud Platform Cockpit.
+Continue on to the next tutorial in this group once you have followed the first 2 or 3 articles in the [learning track](https://saphanajourney.com/hana-cloud/learning-track/getting-started-with-your-trial-of-sap-hana-cloud/) and have created an SAP HANA Cloud instance in the SAP Cloud Platform Cockpit.
 
 !![SAP HANA Cloud Trial instance](hana-cloud-instance.png)  
 

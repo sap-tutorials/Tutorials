@@ -2,7 +2,7 @@
 title: Design and Test Your First Integration Flow
 description: Design an integration flow to integrate an online webshop that exposes data via OData service and fetch the product details. Your request will be sent via Postman client.
 auto_validation: true
-time: 25
+time: 45
 tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-cloud-platform-integration-for-process-services
 author_name: Vikram Kulkarni
@@ -78,7 +78,11 @@ author_profile: https://github.com/Vikramkulkarni01
 
       !![Enter service key name](4.8.create-service-key-2.png)
 
-  9. Copy the values of **`clientid`** and **`clientsecret`** parameters. These are the credentials that you use to make a request to your integration flow after you deploy it.
+  9. Click the 3 dots under service keys section and choose **View**.
+
+      !![view key](1.8.key_view.png)
+
+  10. Copy the values of **`clientid`** and **`clientsecret`** parameters. These are the credentials that you use to make a request to your integration flow after you deploy it.
 
       ![Copy clientid and clientsecret](4.9.copy-clientid-secret.png)
 
