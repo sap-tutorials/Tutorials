@@ -45,6 +45,8 @@ author_profile: https://github.com/mervey45
     ![Select ABAP Trial](boosters.png)
 
 4. Search the **Prepare an Account for ABAP Trial** tile and press **Start** to start your booster.
+  If you already created a service instance and service key, then please skip this step and move on with Step 2.
+  Only one service instance can be created at a time.
 
     ![Select ABAP Trial](boosters2.png)
 
@@ -92,16 +94,21 @@ Open your local ABAP Development Tools (ADT). You can download the latest versio
 
       ![Create ABAP cloud project](project3.png)
 
-  6. Now you've been authenticated automatically. Click Finish.
+  6. Now you've been authenticated automatically.
+     Provide your credentials if requested.
+     The credentials are the same you used to create your trial account on SAP Cloud Platform.
 
       ![Create ABAP cloud project](project5.png)
+
+      Click **Finish**.
+
 
   7. Your trial system appears on the project explorer.
 
       ![Create ABAP cloud project](project6.png)
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 4: ](Test yourself)]
