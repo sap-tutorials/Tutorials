@@ -91,15 +91,21 @@ This step includes creating the mobile development kit project in the editor.
 
 The extension control that you will be creating to extend the functionality of your app can be used as base controls by registering it using the MDK editor.
 
-1. Expand `MDK_Maps` project, right-click **Extensions** | select **MDK: Register Extension Control**.
+1. Download [this](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Images/map.png) image and save it locally. This image will be used as a display image on the page editor to represent the extension control.
 
-    !![MDK](img_2.1.png)
-
-2. In `Template Selection` step, select **New and register Metadata Extension Control**. Click **Next**.
+2. Drag & drop `map.png` file on **Images** folders.
 
     !![MDK](img_2.2.png)
 
-3. Provide the below information:
+3. Right-click **Extensions** | select **MDK: Register Extension Control**.
+
+    !![MDK](img_2.3.png)
+
+4. In `Template Selection` step, select **New and register Metadata Extension Control**. Click **Next**.
+
+    !![MDK](img_2.4.png)
+
+5. Provide the below information:
 
     | Field | Value |
     |----|----|
@@ -107,7 +113,7 @@ The extension control that you will be creating to extend the functionality of y
     | `Module` | `MyMapModule` |
     | `Control` | `MyMapExtension` |
     | `Class` | `MyMapClass` |
-    | `Display` | leave it blank |
+    | `Display` | bind it to `map.png` file  |
 
     Here is the basic definition for properties you defined above:
 
@@ -118,25 +124,62 @@ The extension control that you will be creating to extend the functionality of y
 
     **Class**: The class name of your custom extension class. The client will check for this class at runtime and if it's found, your extension will be instantiated. Otherwise, a stub with an error message will be shown.
 
-    **Display**: This property is used for the image to be displayed on the page editor to represent the extension control. Use the binding button to select an image from the `\MDK_Maps\Images` folder.
-
-    !![MDK](img_2.3.png)
-
-    >You will refer all these properties in step 4.
-
-4. In **Schema Information** window, click **Next**. For this tutorial, you will not need any schema.
-
-    !![MDK](img_2.4.png)
-
-    >Here you can define the properties of the extension control or import a property sample.
-
-5. Click **Finish** to confirm.
-
-    Some additional files and folders are added to the **Extensions** folder. You will learn more about it in following steps.
+    **Display**: This property is used for the image to be displayed on the page editor to represent the extension control.
 
     !![MDK](img_2.5.png)
 
-    >You can find more details about registering extension control in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/advanced/extensions/registering-extension-in-webide.html) guide.
+6. In **Schema Information** step, provide below schema and click **Next**.
+
+    ```JSON
+    {
+    	"type": "object",
+    	"BindType": "",
+    	"properties": {
+    		"Prop": {
+    			"type": "object",
+    			"BindType": "",
+    			"properties": {
+    				"City": {
+    					"type": "string",
+    					"BindType": ""
+    				},
+    				"Country": {
+    					"type": "string",
+    					"BindType": ""
+    				},
+    				"HouseNumber": {
+    					"type": "string",
+    					"BindType": ""
+    				},
+    				"LastName": {
+    					"type": "string",
+    					"BindType": ""
+    				},
+    				"PostalCode": {
+    					"type": "string",
+    					"BindType": ""
+    				},
+    				"Street": {
+    					"type": "string",
+    					"BindType": ""
+    				}
+    			}
+    		}
+    	}
+    }
+    ```
+
+    !![MDK](img_2.6.png)
+
+    >Above schema will add these predefined properties (`City`, `Country`, `HouseNumber`, `LastName`, `PostalCode`, `Street`) in the map extension control which you will bind to **Customer** entity properties in next step.
+
+7. Click **Finish** to confirm.
+
+    Some additional files and folders are added to the **Extensions** folder. You will learn more about it in following steps.
+
+    !![MDK](img_2.7.png)
+
+    >You can find more details about registering extension control in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/advanced/extensions/registering-extension-in-bas.html) guide.
 
 [DONE]
 [ACCORDION-END]
@@ -151,39 +194,28 @@ You will add this registered control in the generated `Customers_Detail.page`.
 
     !![MDK](img_3.2.gif)
 
-  3. Expand **Compound**, drag & drop **Section Extension** control on the page area.
+  3. Drag & drop the registered `mdk_maps` control on the page area.
 
     !![MDK](img_3.3.gif)
 
     >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/Extension.schema.html) guide.
 
-  4. You will now set the height and  bind it the registered Extension control properties.
+  4. In the **Properties** section, set the **Height** to 600.
 
-    In the **Properties** section, provide the below information:
+    !![MDK](img_3.4.png)  
 
-    | Field | Value |
-    |----|----|
-    | `Height`| `600` |
-    | `Module` | `MyMapModule` |
-    | `Control` | `MyMapExtension` |
-    | `Class` | `MyMapClass` |
+  5. Bind the registered Extension control properties to **Customers** properties.
 
-    Scroll down to the **Extension Properties**, and paste the following information:
+    Under **Extension Properties** section, expand `Prop{}`, click the **link** icon to open the Object Browser for the **City** property. Double click the **City** property of the **Customer** entity to set it as the binding expression and click **OK**.
 
-    ```JSON
-    {
-  	"Prop": {
-  	"City": "{City}",
-  	"Country": "{Country}",
-  	"HouseNumber": "{HouseNumber}",
-  	"LastName": "{LastName}",
-  	"PostalCode": "{PostalCode}",
-  	"Street": "{Street}"
-  	  }
-    }
-    ```
+    !![MDK](img_3.5.gif)
 
-    !![MDK](img_3.4.png)
+    Repeat the above step and bind other properties.
+
+    !![MDK](img_3.5.png)  
+
+    >Be careful not to bind properties from Address (ESPM.Address).
+
 
 [DONE]
 [ACCORDION-END]
