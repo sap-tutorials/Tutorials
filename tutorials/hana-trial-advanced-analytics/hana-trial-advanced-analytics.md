@@ -82,7 +82,7 @@ From the SAP Cloud Platform entry page, press the `?` icon in the upper right co
 
 ![Guided Tour](guide_tour1.png)
 
-This guided tour will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup (right before you select "Create Instance"), that you select "Allow all IP addresses" in the "Whitelisted connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
+This guided tour will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup (right before you select "Create Instance"), that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
 
 After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
 
