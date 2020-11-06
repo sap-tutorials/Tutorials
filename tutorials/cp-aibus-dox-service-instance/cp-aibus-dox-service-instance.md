@@ -1,6 +1,6 @@
 ---
 title: Create Service Instance for Document Information Extraction
-description: Create a service instance and the associated service keys for Document Information Extraction, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
+description: Create a service instance and the associated service key for Document Information Extraction, one of the SAP AI Business Services, using the SAP Cloud Platform trial cockpit.
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence, topic>cloud, products>sap-cloud-platform, products>sap-ai-business-services, products>document-information-extraction]
@@ -15,7 +15,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to check your Document Information Extraction entitlements
   - How to create a service instance of Document Information Extraction
-  - How to create service keys for your service instance
+  - How to create a service key for your service instance
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
@@ -33,7 +33,7 @@ primary_tag: topic>machine-learning
     >Choose **Continue**.
 
     >!![Account setup](02_Foundation20Onboarding_Processing.png)
-  
+
 3. From your global account page, choose the `trial` tile to access your subaccount.
 
     ![Subaccounts](enter-trial-account.png)
@@ -125,23 +125,23 @@ You have successfully created a service instance for Document Information Extrac
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create service keys)]
+[ACCORDION-BEGIN [Step 6: ](Create service key)]
 
-You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
+You are now able to create a service key for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
   1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-      ![Service Keys](create-service-keys.png)
+      ![Service Key](create-service-keys.png)
 
   2. In the dialog, enter `doc-info-extraction-keys` as the name of your service key. Click **Create** to create the service key.
 
       ![Create Service Key](create-service-key-name.png)
 
-You have successfully created service keys for your service instance. You can now either view the service key in the browser or download it.
+You have successfully created a service key for your service instance. You can now either view the service key in the browser or download it.
 
 ![View Service Key](view-service-key.png)
 
-You will need the service keys values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
+You will need the service key values to create your `access_token` in the next tutorial: [Get OAuth Access Token for Document Information Extraction Using Any Web Browser](cp-aibus-dox-web-oauth-token).
 
 [VALIDATE_1]
 [ACCORDION-END]
