@@ -71,9 +71,9 @@ This page will show related details for a customer. In this page, you will add a
 
     >!![MDK](img_1.6.png)
 
-7. As enough fields have been selected to be displayed on the detail page, `SubStatus` and `Tags` are not required for this tutorial. In a real use case, you may need these properties.
+7. As enough fields have been selected to be displayed on the detail page, `Substatus` and `Tags` are not required for this tutorial. In a real use case, you may need these properties.
 
-    Remove the default value for `SubStatus` properties.
+    Remove the default value for `Substatus` properties.
 
 8. Also, delete items under `Tags`.
 

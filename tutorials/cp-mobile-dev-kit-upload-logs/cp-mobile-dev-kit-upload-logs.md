@@ -62,7 +62,7 @@ You will create 3 actions:
 
 1. Create a log action of type `SetState`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     !![MDK](img_2.1.png)
 
@@ -80,7 +80,7 @@ You will create 3 actions:
 
 2. Create a log action of type `SetLevel`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     Provide the below information:
 
@@ -98,7 +98,7 @@ You will create 3 actions:
 
 3. Create a log action of type `Upload`:
 
-    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**. **Next**.
+    Right-click the **Actions** folder | **MDK: New Action** | choose **MDK Log Actions** in **Category** | click **Log Action** | **Next**.
 
     Provide the below information:
 
@@ -223,13 +223,17 @@ You will add a toolbar item to the _main page_ called **Upload Logs**. You will 
 
 Deploy the updated application to your MDK client.
 
-Right-click `Application.app` and select **MDK: Deploy**.
+1. Right-click `Application.app` and select **MDK: Deploy**.
 
-!![MDK](img_7.1.png)
+    !![MDK](img_7.1.png)
 
-You should see **Deploy Succeeded** message.
+2. Select deploy target as **Mobile Services**.
 
-!![MDK](img_7.2.png)
+    !![MDK](img_7.2.png)
+
+    You should see **Deploy succeeded** message.
+
+    !![MDK](img_7.3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -238,7 +242,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [Android]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Fingerprint. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
     At `OnLaunch` event, app starts gathering logs.
 
@@ -252,7 +256,7 @@ You should see **Deploy Succeeded** message.
 
 [OPTION BEGIN [iOS]]
 
-1. Re-launch the app on your device, you may asked to authenticate with passcode or Touch ID. You will see a _Confirmation_ pop-up, tap **OK**.
+1. Re-launch the app on your device, you may asked to authenticate with passcode or Biometric authentication. You will see a _Confirmation_ pop-up, tap **OK**.
 
     At `OnLaunch` event, app starts gathering logs.
 
@@ -269,7 +273,7 @@ You should see **Deploy Succeeded** message.
 
 [ACCORDION-BEGIN [Step 9: ](Examine uploaded logs in Mobile Services cockpit)]
 
-Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click MDK app | **Mobile Client Log Upload** | **Logs**.
+Open SAP Cloud Platform Mobile Services Cockpit, click **Mobile Applications** | **Native/Hybrid** | click `com.sap.mdk.demo` app | **Mobile Client Log Upload** | **Logs**.
 
 !![MDK](img_9.png)
 
