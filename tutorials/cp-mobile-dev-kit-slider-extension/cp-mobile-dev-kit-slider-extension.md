@@ -17,20 +17,17 @@ author_profile: https://github.com/jitendrakansal
 ### You will learn
   - How to register and consume an Extension control in MDK Metadata
   - How to write an extension via NativeScript
-  - How to build a Mobile development kit client for iOS and Android
   - How to connect to SAP Cloud Platform Mobile application
 
 You may clone an existing project from [GitHub repository](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/tree/master/6-Create-Extension-Controls-in-Mobile-Development-Kit-Apps/1-Create-a-Slider-Custom-Control-Using-Metadata-Approach) and start directly with step 6 in this tutorial.
 
 ---
 
-
 To extend the functionality, or customize the look and feel, and behavior of your client app, you can create extension controls other than the already existing MDK built-in controls by using **NativeScript** (TypeScript/JavaScript applicable for both Android and iOS)
 
 In this tutorial, you will create a Slider extension via NativeScript (in TypeScript language) which will be common for both device platforms.
 
 ![MDK](img_8.gif)
-
 
 [ACCORDION-BEGIN [Step 1: ](Set up the application foundation)]
 
@@ -69,15 +66,21 @@ In this tutorial, you will create a Slider extension via NativeScript (in TypeSc
 
 The extension control that you will be creating to extend the functionality of your app can be used as base controls by registering it using the MDK editor.
 
-1. Expand `MDK_Slider` project, right-click **Extensions** | select **MDK: Register Extension Control**.
+1. Download [this](https://github.com/SAP-samples/cloud-mdk-tutorial-samples/blob/master/Images/slider.png) image and save it locally. This image will be used as a display image on the page editor to represent the extension control.
+
+2. Drag & drop `slider.png` file on **Images** folders.
+
+    !![MDK](img_2.0.png)
+
+3. Right-click **Extensions** | select **MDK: Register Extension Control**.
 
     !![MDK](img_2.1.png)
 
-2. In `Template Selection` step, select **New and register Metadata Extension Control**. Click **Next**.
+4. In `Template Selection` step, select **New and register Metadata Extension Control**. Click **Next**.
 
     !![MDK](img_2.2.png)
 
-3. Provide the below information:
+5. Provide the below information:
 
     | Field | Value |
     |----|----|
@@ -85,7 +88,7 @@ The extension control that you will be creating to extend the functionality of y
     | `Module` | `MySliderModule` |
     | `Control` | `MySliderExtension` |
     | `Class` | `MySliderClass` |
-    | `Display` | leave it blank |
+    | `Display` | bind it to `slider.png` file  |
 
     Here is the basic definition for properties you defined above:
 
@@ -95,25 +98,45 @@ The extension control that you will be creating to extend the functionality of y
 
     **Class**: The class name of your custom extension class. The client will check for this class at runtime and if it's found, your extension will be instantiated. Otherwise, a stub with an error message will be shown.
 
-    **Display**: This property is used for the image to be displayed on the page editor to represent the extension control. Use the binding button to select an image from the `\MDK_Slider\Images` folder.
+    **Display**: This property is used for the image to be displayed on the page editor to represent the extension control.
 
     !![MDK](img_2.3.png)
 
-    >You will refer all these properties in step 4.
 
-4. In `Schema Information` step, click **Next**. For this tutorial, you will not need any schema.
+6. In **Schema Information** step, provide below schema and click **Next**.
+
+    ```JSON
+    {
+    	"type": "object",
+    	"BindType": "",
+    	"properties": {
+    		"MaxValue": {
+    			"type": "number",
+    			"BindType": ""
+    		},
+    		"MinValue": {
+    			"type": "number",
+    			"BindType": ""
+    		},
+    		"Title": {
+    			"type": "string",
+    			"BindType": ""
+    		}
+    	}
+    }
+    ```
 
     !![MDK](img_2.4.png)
 
-    >Here you can define the properties of the extension control or import a property sample.
+    >Above schema will add these predefined properties (`MaxValue`, `MinValue` and `Title`) in the map extension control. You will provide values for these properties in next step.
 
-5. Click **Finish** to confirm.
+7. Click **Finish** to confirm.
 
     Some additional files and folders are added to the **Extensions** folder. You will learn more about it in following steps.
 
     !![MDK](img_2.5.png)
 
-    >You can find more details about registering extension control in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/advanced/extensions/registering-extension-in-webide.html) guide.
+    >You can find more details about registering extension control in [this](https://help.sap.com/doc/f53c64b93e5140918d676b927a3cd65b/Cloud/en-US/docs-en/guides/getting-started/mdk/advanced/extensions/registering-extension-in-bas.html) guide.
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -140,23 +163,19 @@ You will add this registered control in a Form Cell page.
 
     !![MDK](img_3.3.gif)
 
-4. You will set the height for the control.
+    >You can find more details about the **Section Extension** in [this](https://help.sap.com/doc/69c2ce3e50454264acf9cafe6c6e442c/Latest/en-US/docs-en/reference/schemadoc/Page/SectionedTable/Container/Extension.schema.html) guide.    
 
-    In the **Properties** section, scroll down to the **Dimension** section and set the **Height** to 72.
+4. In the **Properties** section, set the **Height** to 72.
 
     !![MDK](img_3.4.png)
 
-5. You will now set minimum & maximum counter value for the control.
+5. Scroll down to the **Extension Properties**, and provide minimum & maximum counter value for the Extension control properties.
 
-    Scroll down to the **Extension Properties**, and paste the following information:
-
-    ```JSON
-    {
-      "MaxValue": 200,
-      "MinValue": 10,
-      "Title": "Counter"
-    }
-    ```
+    | Field | Value |
+    |----|----|
+    | `MaxValue`| 200 |
+    | `MinValue` | 10 |
+    | `Title` | Counter |  
 
     !![MDK](img_3.5.png)
 
