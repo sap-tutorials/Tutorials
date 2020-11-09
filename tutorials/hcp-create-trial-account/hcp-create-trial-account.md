@@ -114,6 +114,8 @@ Click on **Log on** to log on to your verified account.
 
 4. This page will display the currently state of the subaccount. You can also use this page to jump in the different environments on SAP Cloud Platform.
 
+    ![subaccount](sub-account.png)
+
 
 
 [DONE]
