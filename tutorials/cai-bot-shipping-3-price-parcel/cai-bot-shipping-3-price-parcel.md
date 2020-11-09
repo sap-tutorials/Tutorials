@@ -176,7 +176,7 @@ You must require that the bot knows the size and location, and in addition get a
 
     - Click **Send Message | Carousel**.
 
-    - Add a card for the user to specify the small size (use the `postback` button type), and add the texts as show below.
+    - Add a card for the user to specify the small size, adding a **Postback** button type, and adding the texts as show below. When done, click **Add Card**.
 
         ![Carousel small](Carousel_card.png)
 

@@ -1,5 +1,5 @@
 ---
-title: Create, Import and Export with SAP HANA Database Explorer
+title: Create, Import, and Export Database Objects with SAP HANA Database Explorer
 description: Create a sample dataset and other database objects using the SQL console, the import data wizard, and the import catalog wizard.
 auto_validation: true
 time: 20
@@ -32,7 +32,7 @@ The following steps will create sample objects for a hotel database.
     For additional details see on creating users see [CREATE USER Statement (Access Control)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20d5ddb075191014b594f7b11ff08ee2.html).
 
 
-    >The following statement deletes the user in case it already exists or if you wish to remove the user after completing the mission.  Make sure you really wish to delete USER1 and the objects it owns before proceeding, as this operation cannot be undone.
+    >The following statement deletes the user in case it already exists or if you wish to remove the user after completing the group.  Make sure you really wish to delete USER1 and the objects it owns before proceeding, as this operation cannot be undone.
 
     >
     ```SQL
@@ -52,7 +52,7 @@ The following steps will create sample objects for a hotel database.
     GRANT ALL PRIVILEGES ON SCHEMA HOTEL TO USER1;
     ```
 
-    >The following statement deletes the schema in case it already exists or if you wish to remove the schema  after completing the mission.  Make sure you really wish to delete the HOTEL schema and the objects it contains before proceeding, as this operation cannot be undone.
+    >The following statement deletes the schema in case it already exists or if you wish to remove the schema  after completing the group.  Make sure you really wish to delete the HOTEL schema and the objects it contains before proceeding, as this operation cannot be undone.
     >
     ```SQL
     DROP SCHEMA HOTEL CASCADE;
@@ -259,11 +259,11 @@ Another way to add data into tables is to use the import data wizard which can b
     24,suite,78,600
     ```
 
-3. In the database explorer, right-click on **Tables** and choose **Import Data**.
+3. In the database explorer, right-click **Tables** and choose **Import Data**.
 
     ![Open Import Wizard](OpenImportWizard.png)
 
-    Click on **Browse** and choose hotel_room.csv.
+    Click **Browse** and choose hotel_room.csv.
 
     There is an option to either create a new table for the information in the file or to add it to an existing table. The table was created in a previous step, so select **Add to an existing table**. Then choose the schema **HOTEL**, and choose the table **ROOM**.
 
@@ -285,9 +285,9 @@ Another way to add data into tables is to use the import data wizard which can b
 
     ![select from room](room.png)
 
-Further details about the import wizard can be found at  [Import Data Into a New or Existing Table](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html).
+Further details about the import wizard including file size limits can be found at  [Import Data Into a New or Existing Table](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/ee0e1389fde345fa8ccf937f19c99c30.html).  
 
-Alternate ways to import data include the [IMPORT FROM](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20f712e175191014907393741fadcb97.html) SQL statement and [Smart Data Integration](https://help.sap.com/viewer/product/HANA_SMART_DATA_INTEGRATION/latest).
+Alternate ways to import larger CSV files include the [IMPORT FROM Statement(Data Import Export)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/cloud/en-US/20f712e175191014907393741fadcb97.html) from the SAP HANA Cloud SQL Reference Guide using AWS or Azure, [IMPORT FROM Statement (Data Import Export)](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html) from SAP HANA SQL Reference Guide for SAP HANA Platform using the SAP HANA file system, and [Smart Data Integration](https://help.sap.com/viewer/product/HANA_SMART_DATA_INTEGRATION/latest).
 
 [DONE]
 [ACCORDION-END]
@@ -498,7 +498,7 @@ Alternate ways to import data include the [IMPORT FROM](https://help.sap.com/vie
 
     Once the procedure has been successfully executed, notice that dates both in the past and future are generated.  
 
-    Another way to run this procedure is to generate a CALL statement using the UI. Right-click on the procedure name and select **Generate CALL Statement With UI**.  
+    Another way to run this procedure is to generate a CALL statement using the UI. Right-click the procedure name and select **Generate CALL Statement With UI**.  
 
     ![Generate Call Statement With UI](GenerateCallStatementWithUI.png)
 
@@ -510,17 +510,21 @@ Alternate ways to import data include the [IMPORT FROM](https://help.sap.com/vie
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Export & import catalog objects (optional))]
+[ACCORDION-BEGIN [Step 7: ](Export and import catalog objects (optional))]
 
->Note, this section is optional and does not need to be followed to complete the subsequent tutorials in this mission.
+>Note, this section is optional and does not need to be followed to complete the subsequent tutorials in this group.
 
-1. It is possible to export an entire schema or selected objects into a compressed file (tar.gz).  Right-click on a database connected and select **Export Catalog Objects*.
+1. It is possible to export an entire schema or selected objects into a compressed (tar.gz) file.  Right-click a database connected and select **Export Catalog Objects**.
 
     ![Export Catalog Objects](ExportCatalogObjects.png)
 
     The Export Catalog Objects wizard will open in a new window.
 
     ![Export Catalog Object Wizard](ExportWizard.png)
+
+    >One difference between the import and export catalog wizards in the SAP HANA Cloud and SAP HANA on-premise is that with SAP HANA Cloud, you do not have access to the file system where the SAP HANA Cloud system is running. The option to import objects from an SAP HANA Server is disabled.  Note that with SAP HANA Cloud, new options to import and export from Amazon S3 and Azure are available.
+
+    >![Import Objects From](importObjectsFrom.png)
 
 2. The **Add Catalog Objects** button opens up a search panel that shows all objects that are available to export. Select the **HOTEL** schema and choose **Add to export**.
 
@@ -530,7 +534,11 @@ Alternate ways to import data include the [IMPORT FROM](https://help.sap.com/vie
 
     ![Add Catalog Objects](AddCatalogObjects.png)
 
-3. The inverse operation is to import objects. If you do not have another SAP HANA system to import to, one way to try the import operation is to first delete the existing objects in the schema `HOTEL` and then open the Import Catalog Objects wizard.  To do so, right-click on the schema named `HOTEL`, and select **Delete**.
+    Further details about the export wizard including file size limits can be found at [Export Schemas, Tables, and Other Catalog Objects](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/1f20a6c4364c4b0680596e74e4ba281d.html).  
+
+    It is also possible to use the export statement directly as described at [EXPORT Statement (Data Import Export)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) from the SAP HANA Cloud SQL Reference Guide using AWS or Azure, and [EXPORT Statement (Data Import Export)](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20da0bec751910148e69c9668ea3ccb8.html) from the SQL HANA SQL Reference Guide for SAP HANA Platform using the SAP HANA file system.
+
+3. The inverse operation is to import objects. If you do not have another SAP HANA system to import to, one way to try the import operation is to first delete the existing objects in the schema `HOTEL` and then open the Import Catalog Objects wizard.  To do so, right-click the schema named `HOTEL`, and select **Delete**.
 
     ![Delete Objects](DeleteObjects.png)
 
@@ -538,7 +546,7 @@ Alternate ways to import data include the [IMPORT FROM](https://help.sap.com/vie
 
     ![Drop Schema And Any Dependent Objects](DropSchema.png)
 
-4. To import the previously exported objects, right-click on the database connection and select **Import Catalog Objects**.
+4. To import the previously exported objects, right-click the database connection and select **Import Catalog Objects**.
 
     ![Import Catalog Objects](ImportCatalogObjects.png)
 
@@ -556,10 +564,9 @@ Alternate ways to import data include the [IMPORT FROM](https://help.sap.com/vie
 
     ![Import success tables](importSuccess.png)
 
+    Further details about the import catalog objects wizard including file size limits can be found at [Import Schemas, Tables, and Other Catalog Objects](https://help.sap.com/viewer/a2cea64fa3ac4f90a52405d07600047b/cloud/en-US/80f63855e7854cd3a6144e0021b5f748.html).  
 
-    >One difference between the import and export catalog wizards in the SAP HANA Cloud and SAP HANA on-premise is that with SAP HANA Cloud, you do not have access to the file system where the SAP HANA Cloud system is running. The option to import objects from an SAP HANA Server is disabled.  Note that with SAP HANA Cloud, new options to import and export from Amazon S3 and Azure are available.
-
-    >![Import Objects From](importObjectsFrom.png)
+    It is also possible to use the import statement directly as described at [IMPORT Statement (Data Import Export)](https://help.sap.com/viewer/c1d3f60099654ecfb3fe36ac93c121bb/latest/en-US/20f75ade751910148492a90e5e375b8f.html) from the SAP HANA Cloud SQL Reference Guide using AWS or Azure, and [IMPORT Statement (Data Import Export)](https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.06/en-US/20f75ade751910148492a90e5e375b8f.html) from the SQL HANA SQL Reference Guide for SAP HANA Platform using the SAP HANA file system.
 
 Congratulations! You have now created tables and inserted data, as well as created partitions, views, functions, and stored procedures.  You have also imported and exported catalog objects.
 

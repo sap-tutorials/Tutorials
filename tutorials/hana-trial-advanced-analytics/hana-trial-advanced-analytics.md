@@ -78,21 +78,19 @@ Once the provisioning is finished, click **Continue**:
 
 ![Cloud trial](3.png)
 
-Follow the instructions at [SAP HANA Cloud Trial Enablement](https://saphanajourney.com/hana-cloud/learning-article/starting-a-sap-hana-cloud-trial-when-you-have-an-existing-sap-cloud-platform-trial/) to prepare your SAP Cloud Platform trial account if you are using an existing trial account and didn't create it fresh in the previous steps. During this action please make sure that when adding the entitlements to your account that you add both the **SAP HANA Cloud** and **SAP HANA Schemas & HDI Containers** if they aren't already assigned.
+From the SAP Cloud Platform entry page, press the `?` icon in the upper right corner. Then press the `Guided Tours` button. Finally select the `Create a SAP HANA Cloud Instance` guided tour.
 
-![HANA Cloud Entitlements](entitlements.png)
+![Guided Tour](guide_tour1.png)
 
-From the SAP Cloud Platform entry page, click Subaccounts and then the tile for your Subaccount named **trial**
-![Subaccount](subaccount.png)
-
-Next click the space which should be named **dev**.
-![Space](space.png)
-
-From the space level, now please follow the instructions at [SAP HANA Cloud Trial Creation](https://saphanajourney.com/hana-cloud/learning-article/how-to-create-your-trial-sap-hana-cloud-instance/) to create the HANA Cloud instance.
+This guided tour will walk you through the process of navigating to your development space and creating a HANA Cloud Instance. Just one note as you go through this guided tour: Make sure that in the "Advanced Settings" part of the setup (right before you select "Create Instance"), that you select "Allow all IP addresses" in the "Allowed connections" setting. This setting will allow you to develop against your HANA Cloud trial using a variety of external development tools.
 
 After completing the previous step, you should now have a new SAP HANA Cloud instance created in the SAP Cloud Platform.
 
 ![HANA Cloud Instance](3_2.png)
+
+If you get stuck at any point in this process, there is also this short video you can watch and follow along.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GSNQpfxPuLU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Once the SAP HANA Cloud instance is created, take note of the admin user as well as the endpoint (host:port) needed to connect to the database. This will be needed in subsequent tutorials in this tutorial.
 
@@ -442,7 +440,7 @@ Or you can continue to use the free SAP HANA Cloud trial as a part of your overa
 
 Here's how you can get started with any developer-focused topic in SAP HANA and more:
 
--   **SAP Developer Center**: You'll find plenty of free downloads and tutorials to help you with different topics on [developers.sap.com](http://developers.sap.com). You can learn new topics like [machine learning](group.hxe-aa-movielens-SQL), dive into [geospatial](group.hana-aa-spatial-get-started), working with the various [HANA client interfaces](mission.hana-cloud-clients) or switch to a full SAP HANA, express edition, image with XS Advanced, to [create cloud native applications with micro-services](mission.xsa-get-started).
+-   **SAP Developer Center**: You'll find plenty of free downloads and tutorials to help you with different topics on [developers.sap.com](http://developers.sap.com). You can learn new topics like [geospatial](group.hana-aa-spatial-get-started), working with the various [HANA client interfaces](mission.hana-cloud-clients) or switch to a full SAP HANA, express edition, image with XS Advanced, to [create cloud native applications with micro-services](mission.xsa-get-started).
 -   **The community**: Fellow developers write about their experiences and recommendations in [blog posts](https://blogs.sap.com/), and many are willing to answer your questions [in the Q&A](https://answers.sap.com).
 -   **Community events**: You can also check out [events](https://community.sap.com/events) closest to you in order to meet other developers.
 

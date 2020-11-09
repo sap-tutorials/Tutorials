@@ -120,7 +120,7 @@ The relationship between these Dictionary objects looks like this:
 
 [ACCORDION-BEGIN [Step 6: ](Table types and internal tables)]
 
-These are a very powerful feature of ABAP. You will explore them in a later tutorial group, [Get started with ABAP development](https://developers.sap.com/group.abap-basic-app.html).
+These are a very powerful feature of ABAP. You will explore them in a later tutorial group, [Start Developing ABAP Tables](group.abap-dev-tables).
 
   - A **table type** describes the data type of an internal table in ABAP. You can create an internal table, based on the structure of a database table, and then use this internal table to manipulate the data in your application.
   - A **structure** is a data type that consists of a single row of one or more components, such as elementary types. This is a powerful concept: You can create a structure representing a single row of a table, and then use it to manipulate table data in your application.
