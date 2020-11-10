@@ -198,7 +198,7 @@ After authentication works with the App Router, your java backend service is sti
 
 **The following steps apply to the `TomEE` runtimes. For Spring please select the relevant tab at the top of this section.**
 
-In the following, we will use the security capabilities of the [SAP Java Buildpack](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/samples/sap-java-buildpack-api-usage) to protect the microservices.
+In the following, you will use the security capabilities of the [SAP Java Buildpack](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/samples/sap-java-buildpack-api-usage) to protect the microservices.
 
 In your `application/src/main/webapp/WEB-INF/web.xml` file, add the following login configuration:
 
@@ -252,7 +252,7 @@ This will allow only users with the provided role to have access to the annotate
 
 **The following steps apply to the Spring runtimes. For `TomEE` please select the relevant tab at the top of this section.**
 
-In the following, we will use the security capabilities of the [SAP CP Spring XSUAA Security Library](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/spring-xsuaa#setup-security-context-for-http-requests) to protect the microservices.
+In the following, you will use the security capabilities of the [SAP CP Spring XSUAA Security Library](https://github.com/SAP/cloud-security-xsuaa-integration/tree/master/spring-xsuaa#setup-security-context-for-http-requests) to protect the microservices.
 
 In your applications `pom.xml` ensure the following dependency is present:
 
