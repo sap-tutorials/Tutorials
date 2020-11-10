@@ -144,6 +144,17 @@ The Product List is a Table View Controller which means the structure is similar
 
     Implement the following lines of code directly below the logger instance as class properties:
 
+    **For Online OData**
+
+    Add the following import statement to your class:
+
+    ```Swift
+    import SAPOData
+
+    ```
+
+    Implement the following lines of code directly below the logger instance as class properties:
+
     ```Swift
     /// First retrieve the destinations your app can talk to from the AppParameters.
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary

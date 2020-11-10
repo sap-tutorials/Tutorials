@@ -8,20 +8,20 @@ primary_tag: products>sap-hana-cloud
 ---
 
 ## Prerequisites
-  - An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
+- An SAP HANA database such as SAP HANA Cloud trial or the SAP HANA, express edition that includes the SAP HANA database explorer
 
 ## Details
 ### You will learn
-  - How to add different SAP HANA database types in the SAP HANA database explorer
-  - Additional operations that can be performed on a database
+- How to add different SAP HANA database types in the SAP HANA database explorer
+- Additional operations that can be performed on a database
 
 Database connections in the database explorer represent SAP HANA databases that you browse and interact with.  
 
-  ![SAP HANA Connections](connections.png)  
+![SAP HANA Connections](connections.png)  
 
-  SQL consoles are associated with a database connection.
+SQL consoles are associated with a database connection.
 
-  ![sql console connection](sql-console-connection.png)
+![sql console connection](sql-console-connection.png)
 
 ---
 
@@ -35,9 +35,9 @@ Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can 
 
     or
 
-    ![Open from cockpit](open-from-cockpit.png)
+    !![Open from cockpit](open-from-cockpit.png)
 
-    >You may be prompted to enter database login credentials at this point.  Enter the DBADMIN or SYSTEM user credentials that were set during the SAP HANA instance setup process.
+    >You may be prompted to enter database login credentials at this point.  Enter the DBADMIN or SYSTEM user credentials that were set during the SAP HANA Cloud trial or express edition setup process, or the credentials provided by your database administrator.
 
     Notice that when the SAP HANA database explorer opens, the selected database is the one from the selected tile or administered database.  Also note that the URL contains a `?databaseid=`.  
 
@@ -47,40 +47,47 @@ Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can 
 
     Hover over the database to see a summary and note that the type is Cockpit Database.
 
+[DONE]
+[ACCORDION-END]
 
-2. SAP HANA Cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
+[ACCORDION-BEGIN [Step 2: ](Database groups)]
+SAP HANA Cockpit databases can be grouped together.  This enables SQL statements to be run against a group of databases.
 
-    ![Run SQL on Multiple Databases](run-on-multiple-hxe.png)
+!![run on multiple](run-on-multiple.png)  
 
-    >With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  The SAP HANA Cloud Cockpit contains in its URL, a parameter that indicates the unique name (GUID) for the space.  
+![Run SQL on Multiple Databases](run-on-multiple-hxe.png)
 
-    >```
-   https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
-   ```   
+1. With SAP HANA Cloud, all databases created in a space are placed in a group.  As seen below, the space name is dev.  The SAP HANA Cloud Cockpit contains in its URL, a parameter that indicates the unique name (GUID) for the space.  
 
-    >Note: In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
+    ```
+    https://host/trial/#/globalaccount/GUID/subaccount/GUID/org/GUID/space/GUID/hanaCloud
+    ```   
 
-    >![group by space](group-by-space.png)
+    In the SAP HANA Cloud trial, only one SAP HANA Cloud instance can be created.
 
-    >The spaces that contain SAP HANA Cloud instances appear when running SQL against multiple databases.  Executing commands in the SQL console will be covered in a subsequent tutorial.
+    ![group by space](group-by-space.png)
 
-    >![run on multiple](run-on-multiple.png)  
+    The spaces that contain SAP HANA Cloud instances appear when running SQL against multiple databases.  Executing commands in the SQL console will be covered in a subsequent tutorial.
 
-    >The space dev is represented by its GUID in the selection dialog below along with a predefined group named ALL.    
+    !![run on multiple](run-on-multiple.png)  
 
-    >![run on multiple databases in HXE](run-on-multiple-hc.png)
+    The space dev is represented by its GUID in the selection dialog below along with a predefined group named ALL.    
 
-    >With SAP HANA, express edition or an on-premise install, a tool called SAP HANA cockpit manager can be used to register databases and organize them into groups.
+    ![run on multiple databases in HXE](run-on-multiple-hc.png)
 
-    >![registered resources](cockpit-manager.png)
+2. With SAP HANA, express edition or an on-premise install, a tool called SAP HANA cockpit manager can be used to register databases and organize them into groups.
 
-    >Two user defined groups are shown below.  
+    ![registered resources](cockpit-manager.png)
 
-    >![groups](cockpit-manager2.png)  
+    Two user defined groups are shown below.  
 
-    >These groups appear when running SQL against multiple databases. There are also three predefined groups named DEVELOPMENT, ALL, and PRODUCTION.
+    ![groups](cockpit-manager2.png)  
 
-    >![run on multiple databases in HXE](run-on-multiple-hxe.png)
+    These groups appear when running SQL against multiple databases. There are also three predefined groups named DEVELOPMENT, ALL, and PRODUCTION.
+
+    !![run on multiple](run-on-multiple.png)  <br><br>
+
+    ![run on multiple databases in HXE](run-on-multiple-hxe.png)
 
     >Note that the ability to see groups in the SAP HANA database explorer that have been created using the SAP HANA cockpit manager requires the SAP HANA database explorer to be opened from the SAP HANA Cockpit.
 
@@ -91,7 +98,7 @@ Databases defined in the SAP Cloud Platform cockpit or the SAP HANA cockpit can 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add an SAP HANA database)]
+[ACCORDION-BEGIN [Step 3: ](Add an SAP HANA database)]
 Databases can be added directly to the SAP HANA database explorer.  To connect to an SAP HANA Cloud or on-premise database, the host, port, user name, and  password must be provided.  
 
 1.  In the SAP HANA database explorer, press the **+** button to add a new database.
@@ -110,7 +117,7 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     The host and port values can be copied from the SAP HANA Cloud Platform Cockpit.  
 
-    ![copy host and port](host-and-port.png)
+    !![copy host and port](host-and-port.png)
 
     >Remember to remove the colon and port number from the host name and add it to the port field.
 
@@ -140,7 +147,8 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 
     >An example of what can be configured is shown below.
 
-    >```
+    >
+    ```
     isolationLevel=SERIALIZABLE;locale=fr_FR;schema=HOTEL;client=55
     ```
 
@@ -156,42 +164,42 @@ Databases can be added directly to the SAP HANA database explorer.  To connect t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Additional database connection features)]
+[ACCORDION-BEGIN [Step 4: ](Additional database connection features)]
 Databases have additional actions that can be performed on them such as renaming, connecting as a different user, changing the connection of a SQL console, and viewing an overview of the connected database.  
 
-1.  To rename a connection, right-click on a database and choose **Properties**.
+1.  To rename a connection, right-click a database and choose **Properties**.
 
     ![database properties](properties.png)
 
      You may wish to rename the default database display name. Press **OK** to save the changes and close the window.
 
-    ![renaming a connection](properties2.png)
+    !![renaming a connection](properties2.png)
 
-2.  To clone a database and change the user name and password, right-click on a database and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same SAP HANA database but with a different set of credentials.
+2.  To add the same database but with different credentials, right-click a database and choose **Add Database with Different User**.  This can be useful when you wish to connect to the same SAP HANA database but with a different set of credentials perhaps because you need elevated permissions.
 
     ![connecting as a different user](clone.png)
 
 3.  When a SQL console opens, it connects to the currently selected database connection and displays the current schema and connection.  
 
-    ![SQL Console connections](SQL-Console-Connections.png)
+    !![SQL Console connections](SQL-Console-Connections.png)
 
     It is possible to connect, disconnect, or change the connection via the toolbar items highlighted above.  
 
     > Subsequent tutorials assume the connected user is DBADMIN or SYSTEM.
 
-4.  To see information about a database, right-click on a database and choose **Show Overview**.  This provides a quick overview of the database that you are connected to.
+4.  To see information about a database, right-click a database and choose **Show Overview**.  This provides a quick overview of the database that you are connected to.
 
     ![database overview](overview.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create and connect to an HDI container (optional))]
+[ACCORDION-BEGIN [Step 5: ](Create and connect to an HDI container (optional))]
 
 
 An SAP HANA Deployment Infrastructure (HDI) container can be created by using the SAP HANA Web IDE.  An HDI container can contain database objects such as tables, views, functions, stored procedures, and calculation views.  HDI containers support the use case where multiple versions of the same data model are deployed into the same database instance. This might be done by multiple developers working on a project.  Objects within an HDI container all share the same schema and are accessed by a technical user.  The following steps demonstrate how to use the SAP HANA Web IDE to create and deploy an HDI container containing a table and then add the container as a database in the SAP HANA database explorer.  
 
->Note: This section is optional and does not need to be followed to complete the subsequent tutorials in this mission.
+>Note: This section is optional and does not need to be followed to complete the subsequent tutorials in this group.
 
 1.  Open the SAP HANA Web IDE for HANA Development if using SAP HANA Cloud or SAP HANA Web IDE for SAP HANA if using SAP HANA, express edition or an on-premise install.
 
@@ -227,7 +235,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
     The space can be found on the subaccount page of the SAP Cloud Platform Cockpit.
 
-    ![subaccount](org-and-space.png)
+    !![subaccount](org-and-space.png)
 
 4.  Open the development pane.
 
@@ -235,7 +243,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
 5.  Create a new HANA database project.
 
-    Right-click on **Workspace** and choose **New** | **Project from Template**.
+    Right-click **Workspace** and choose **New** | **Project from Template**.
 
     In the **Search** field, enter **HANA**.  
 
@@ -270,7 +278,7 @@ An SAP HANA Deployment Infrastructure (HDI) container can be created by using th
 
     ![test table](test-table.png)
 
-7.  Deploy the HDI container.  Right-click on the **db** folder and choose **Build** | **Build**.
+7.  Deploy the HDI container.  Right-click the **db** folder and choose **Build** | **Build**.
 
     ![Build and deploy the HDI container](build.png)
 
@@ -298,7 +306,7 @@ For an example of creating a calculation view inside an HDI container, see the v
 
 The mission [Get Started with XS Advanced Development](https://developers.sap.com/mission.xsa-get-started.html) provides further examples of using an HDI container.
 
-In the next tutorial, additional tables, views, functions, and procedures that will be used in subsequent tutorials in this mission will be created directly in the database rather than in an HDI container.
+In the next tutorial, additional tables, views, functions, and procedures that will be used in subsequent tutorials in this group will be created directly in the database rather than in an HDI container.
 
 Congratulations! You have added different databases to the SAP HANA database explorer.
 
