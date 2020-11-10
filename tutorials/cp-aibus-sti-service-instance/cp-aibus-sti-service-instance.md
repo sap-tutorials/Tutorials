@@ -7,29 +7,42 @@ tags: [tutorial>beginner, topic>machine-learning, topic>artificial-intelligence,
 primary_tag: topic>machine-learning
 ---
 
+## Prerequisites
+- You have created a trial account on SAP Cloud Platform: [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account)
+- You have a subaccount and dev space with **Europe (Frankfurt)** as region: [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements). See also [Create a Subaccount](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/261ba9ca868f469baf64c22257324a75.html).
+
 ## Details
 ### You will learn
   - How to check your Service Ticket Intelligence entitlements
   - How to create a service instance of Service Ticket Intelligence
   - How to create service keys for your service instance
-
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Access your Cloud Foundry trial environment)]
+[ACCORDION-BEGIN [Step 1: ](Enter your trial account)]
 
-Access the [SAP Cloud Platform Cockpit](https://cockpit.hanatrial.ondemand.com/cockpit/#/home/trial) and log in if necessary. Click **Enter Your Trial Account** to access your global account created in [Get a Free Trial Account on SAP Cloud Platform](hcp-create-trial-account).
+1. In your web browser, open the [SAP Cloud Platform trial cockpit](https://cockpit.hanatrial.ondemand.com/).
 
-![Trial Home](cockpit-home.png)
+2. Navigate to the trial global account by clicking **Enter Your Trial Account**.
 
-On the navigation sidebar, click **Subaccounts** and select your **trial** subaccount.
+    !![Trial global account](01_Foundation20Onboarding_Home.png)
 
-![Subaccounts](enter-trial-account.png)
+    >If this is your first time accessing your trial account, you'll have to configure your account by choosing a region. **Please select Europe (Frankfurt)**. Your user profile will be set up for you automatically.
+
+    >Wait till your account is set up and ready to go. Your global account, your subaccount, your organization, and your space are launched. This may take a couple of minutes.
+
+    >Choose **Continue**.
+
+    >!![Account setup](02_Foundation20Onboarding_Processing.png)
+
+3. From your global account page, choose the `trial` tile to access your subaccount.
+
+    !![Subaccounts](enter-trial-account.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Check your entitlements)]
+[ACCORDION-BEGIN [Step 2: ](Check entitlements)]
 
 To try out Service Ticket Intelligence, you need to make sure that your account is properly configured.
 
@@ -59,11 +72,13 @@ If you do not find the service in your list, proceed as follows:
 
 You are now entitled to use the service and to create instances of the service.
 
+>For more details on how to configure entitlements, quotas, subaccounts and service plans on SAP Cloud Platform Trial, see [Manage Entitlements on SAP Cloud Platform Trial](cp-trial-entitlements).
+
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Access your space)]
+[ACCORDION-BEGIN [Step 3: ](Access space)]
 
 All applications and services live in spaces. By default, trial accounts only have the **dev** space available.
 
@@ -93,27 +108,21 @@ Next, search for **Service Ticket Intelligence**. Click the tile named `service-
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Create a service instance)]
+[ACCORDION-BEGIN [Step 5: ](Create service instance)]
 
 You will now create an instance of your service.
 
-To create an instance, click **Instances** on the navigation sidebar.
+Click **Create Instance** to start the creation dialog.
 
-Next, click **New Instance** to start the creation dialog.
+![Service Instance](create-instance.png)
 
-![Service Instances](create-instance.png)
+In the dialog, leave the default value for the service and the service plan. Enter a name for your new instance as `sti-demo` and click **Create Instance** to skip the other steps and create the instance.
 
-  1. In the dialog, leave the default value for the service plan and click **Next**.
+![Create Instance](create-instance-dialog.png)
 
-    ![Create Instance](create-instance-service-plan.png)
+In the following dialog, click on **View Instance** to be navigated to the list of your service instances.
 
-  2. Leave the parameters empty and click **Next**.
-
-  3. Do not assign any application and click **Next**.
-
-  4. Finally, enter the name `sti-demo` for your new instance. Click **Finish** to create the instance.
-
-    ![Create Instance](create-instance-name.png)
+![View Instances](view-instances.png)
 
 You have successfully created a service instance for Service Ticket Intelligence.
 
@@ -125,51 +134,19 @@ You have successfully created a service instance for Service Ticket Intelligence
 
 You are now able to create service keys for your new service instance. Service keys are used to generate credentials to enable apps to access and communicate with the service instance.
 
-To create service keys, first access your service instance by clicking its name.
+  1. Click the navigation arrow to open the details of your service instance. Then, click the dots to open the menu and select **Create Service Key**.
 
-![Service Instances](access-instance.png)
+      ![Service Keys](create-service-keys.png)
 
-Now, select **Service Keys** on the navigation sidebar, and click **Create Service Key** to start the creation dialog.
+  2. In the dialog, enter `sti-demo-key` as the name of your service key. Click **Create** to create the service key.
 
-![Service Keys](create-service-keys.png)
+      ![Create Service Key](create-service-key-name.png)
 
-In the dialog, enter the name **`sti-demo-key`** for your service keys. Leave empty the **Configuration Parameters (JSON)** box.
+You have successfully created service keys for your service instance. You can now either view the service key in the browser or download it.
 
- Click **Save** to create the service keys.
+![View Service Key](view-service-key.png)
 
-![Create Service Key](create-service-key-name.png)
-
-You have successfully created service keys for your service instance. Make a local copy of the service keys. You will need the service keys values in [Set Up Postman Environment and Collection to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
-
-![Service Key](service-key.png)
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 7: ](List your service instances)]
-
-To list and access your service instances, there is no need to access the service via the Service Marketplace every time. In your **Space**, you can see a list of all your service instances.
-
-**Go back** to your **dev** space using the breadcrumbs at the top of the page.
-
-As you navigate through the SAP Cloud Platform Cockpit and dig into more detail, the breadcrumbs at the top of the page show you the hierarchy of your navigation. You can use them to go back to previous steps.
-
-![Breadcrumbs](nav-back-breadcrumbs.png)
-
-Back in your space, click **Service Instances** on the navigation sidebar.
-
-![Service Instances List](service-instances-list.png)
-
-The list shows all your service instances across all services, including the service instance you have just created. You find here information on the service plan, referencing applications, created service keys and the current status of your instances. From here, you can manage your service instances, access or delete them, for example.
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 8: ](Validate your service key)]
-
-In the text area below, paste the `tenantmode` value from the service keys you created for your service instance, then click **Submit Answer**.
+You will need the service keys values in [Set Up Postman Environment and Collection to Call Service Ticket Intelligence APIs](cp-aibus-sti-setup-postman).
 
 [VALIDATE_1]
 [ACCORDION-END]

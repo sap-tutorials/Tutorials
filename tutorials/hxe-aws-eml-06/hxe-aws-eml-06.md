@@ -118,7 +118,30 @@ For operational systems when configuring your SAP HANA system, it is highly reco
 
 Each type of user will require dedicated roles to be granted.
 
-In your case, you will be reusing the `ML_USER` created during the [Prepare your SAP HANA, express edition instance for Machine Learning](mlb-hxe-setup-basic) tutorial for both roles.
+In your case, you will create a user called `ML_USER` for both roles.
+
+In order to perform your Machine Learning activities, create a dedicated user on your SAP HANA, express edition instance.
+
+Connect to the HXE tenant using the SYSTEM user credentials and execute the following SQL statement:
+
+```SQL
+-- Uncomment this if you want to start from scratch
+-- DROP USER ML_USER CASCADE;
+
+CREATE USER ML_USER PASSWORD Welcome19Welcome19;
+
+-- Use this if you don't want to be forced to update your password on the first connection.
+-- CREATE USER ML_USER PASSWORD Welcome19Welcome19 NO FORCE_FIRST_PASSWORD_CHANGE;
+-- or
+ALTER USER ML_USER DISABLE PASSWORD LIFETIME;
+
+GRANT AFLPM_CREATOR_ERASER_EXECUTE TO ML_USER;
+GRANT AFL__SYS_AFL_AFLPAL_EXECUTE TO ML_USER;
+GRANT DATA ADMIN TO ML_USER;
+GRANT IMPORT TO ML_USER;
+
+GRANT EXECUTE on _SYS_REPO.GRANT_ACTIVATED_ROLE TO ML_USER;
+```
 
 Make also sure that the Script Server has been enabled for your instance.
 

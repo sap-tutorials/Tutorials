@@ -39,7 +39,6 @@ If you make any changes to an MTA project, you'll need to build and deploy the p
     Entitlement | Unit
     ------------ | -------------
     Portal|1 (or unlimited)
-    HTML5 Application|2
     Application Runtime Memory| 1 Gib (Minimum)
     Destination|1
 

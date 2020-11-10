@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA, express edition](https://developers.sap.com/topics/sap-hana-express.html), or [SAP HANA MDC instance in SAP Cloud Platform Trial account](https://developers.sap.com/tutorials/hana-web-development-workbench.html).
+- **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA, express edition](https://developers.sap.com/topics/hana.html)
 
 ## Next Steps
 - [Strings](https://developers.sap.com/tutorials/hana-spatial-intro2-string.html)

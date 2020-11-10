@@ -80,17 +80,21 @@ In the *Review* tab of the wizard, review the details you've entered and click *
 
 !![CPMS cockpit with 2 cards](img_9.png)
 
+Upon successful creation you will see a success message; click **Close** and proceed to the next step.
+
+!![CPMS cockpit with 2 cards](img_10.png)
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](View the Created Card in Mobile Services Cockpit)]
 Log into SAP Cloud Platform Mobile Services cockpit and navigate to **SAP Mobile Cards** to look into the Mobile Cards configuration.
 
-!![MobileCards](img_10.png)
+!![MobileCards](img_11.png)
 
 In the SAP Cloud Platform Mobile Services Cockpit, you will now see the *Booster Welcome Card* we have created.
 
-!![Booster Wizard Tab 5](img_11.png)
+!![Booster Wizard Tab 5](img_12.png)
 
 [VALIDATE_2]
 [ACCORDION-END]
@@ -101,19 +105,19 @@ In the SAP Cloud Platform Mobile Services Cockpit, you will now see the *Booster
 
 Welcome cards are auto subscribed by default and downloaded automatically after registration.
 
-You should see two Welcome Card in your Mobile application. One created through the cockpit, and the other created using SAP Cloud Platform Boosters for SAP Mobile Cards.
+You should see the Welcome Card created using SAP Cloud Platform Booster for SAP Mobile Cards.
 
 > To view the card immediately, perform a pull refresh.
 
 [OPTION BEGIN [Android]]
 
-!![MobileCards](img_12.png)
+!![MobileCards](img_13.png)
 
 [OPTION END]
 
 [OPTION BEGIN [iOS]]
 
-!![MobileCards](img_13.png)
+!![MobileCards](img_14.png)
 
 [OPTION END]
 
