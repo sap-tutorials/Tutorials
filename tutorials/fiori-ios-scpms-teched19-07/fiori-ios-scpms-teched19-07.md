@@ -345,7 +345,7 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 
 ```
 
-Before you go ahead and implement the `tableView(_:viewDidLoad:)`, you need to retrieve the URL of your service. The data task we're going to use will use the URL to download the needed product images.
+Before you go ahead and implement the `tableView(_:viewDidLoad:)`, you need to retrieve the URL of your service. The data task you're going to use will use the URL to download the needed product images.
 
 Open your Mobile Services instance and select your app configuration in the `Native/Hybrid` screen. There you click  **Mobile Sample OData ESPM** in the **Assigned Features** section.
 

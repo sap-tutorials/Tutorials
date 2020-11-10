@@ -76,7 +76,7 @@ In the last tutorial, you implemented the Overview Table View Controller and the
 
     ```
 
-    All that code is pretty much the same as in the Overview View Controller. Instead of fetching all customers we want only the data of the customer matching the provided ID.
+    All that code is pretty much the same as in the Overview View Controller. Instead of fetching all customers you want only the data of the customer matching the provided ID.
 
 5. Add the following lines of code right below the `viewDidLoad(:)` method and read the inline comments for more details about the implemented code:
 
@@ -148,7 +148,7 @@ In the last tutorial, you implemented the Overview Table View Controller and the
 
     To fix the rest of the compile-time errors, you have to implement the additional properties for storing the fetched customer, the flag `isDataLoaded`, as well as a computed property for the Sales Order Headers.
 
-7. As we want to display the total net amount of the Customers Sales Orders, you will implement that as a computed property to make the needed calculations.
+7. As you want to display the total net amount of the Customers Sales Orders, you will implement that as a computed property to make the needed calculations.
 
     Add the following lines of code right below the `var customerId: String` property, read the inline comments for more explanation:
 
@@ -188,7 +188,7 @@ In the last tutorial, you implemented the Overview Table View Controller and the
 
     ```
 
-    You're done for now, we will go into detail about how the Chart data is structured at a later point.
+    You're done for now, you will go into detail about how the Chart data is structured at a later point.
 
 [DONE]
 [ACCORDION-END]
@@ -423,7 +423,7 @@ Remember in the `updateTable()` method where the `setupProfileHeader()` method g
 
     private func setupProfileHeader() {
 
-        // first format the birthday of the customer as we want to display that date in the Profile Header
+        // first format the birthday of the customer as you want to display that date in the Profile Header
         let dateOfBirth = customer.dateOfBirth?.utc()
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

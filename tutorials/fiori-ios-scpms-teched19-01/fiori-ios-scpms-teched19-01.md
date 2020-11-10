@@ -103,13 +103,13 @@ Let's get started by creating a cloud application definition on Mobile Services 
 
     !![Project creation](fiori-ios-scpms-teched19-10.png)
 
-9. For step 4, labeled **Proxy Classes**, you should see the sample service name `com.sap.edm.sampleservice.v2` that we selected in step 2 of the workflow.
+9. For step 4, labeled **Proxy Classes**, you should see the sample service name `com.sap.edm.sampleservice.v2` that you selected in step 2 of the workflow.
 
     Click **Next**.
 
     !![Project creation](fiori-ios-scpms-teched19-11.png)
 
-10. The last and final step is **UI configuration**. Here you can choose from a number of iOS app types the Assistant can generate. For this tutorial, we want a `Splitscreen` that includes the on-boarding flow, so make sure the **Master / Detail Screens for all Destinations** and **Onboarding** radio button are selected.
+10. The last and final step is **UI configuration**. Here you can choose from a number of iOS app types the Assistant can generate. For this tutorial, you want a `Splitscreen` that includes the on-boarding flow, so make sure the **Master / Detail Screens for all Destinations** and **Onboarding** radio button are selected.
 
     Click **Finish**.
 

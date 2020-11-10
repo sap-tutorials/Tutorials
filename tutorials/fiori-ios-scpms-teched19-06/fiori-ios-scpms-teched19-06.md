@@ -100,7 +100,7 @@ In order for the user to pick an image for the classification you will implement
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
 
-        // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. We can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
+        // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. You can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         tableView.register(FUITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FUITableViewHeaderFooterView.reuseIdentifier)
 
@@ -167,7 +167,7 @@ In order for the user to pick an image for the classification you will implement
 
 5. Last step is to create the segue from the Bar Button Item inside the Overview View Controller to the Product Classification Table View Controller.
 
-    Select the `OverviewViewController` and **control + drag** to the Product Classification Table View Controller, choose **Present Modally** as we want to display this Table View Controller in a modal fashion.
+    Select the `OverviewViewController` and **control + drag** to the Product Classification Table View Controller, choose **Present Modally** as you want to display this Table View Controller in a modal fashion.
 
     ![Product Classification VC](fiori-ios-scpms-teched19-08.png)
 
@@ -227,7 +227,7 @@ In order for the user to pick an image for the classification you will implement
 
     ```
 
-8. Remember that we want to pass on the selected image to the `ProductClassificationTableViewController`. You have to implement that property to the `ProductClassificationTableViewController` class first to make the compiler happy.
+8. Remember that you want to pass on the selected image to the `ProductClassificationTableViewController`. You have to implement that property to the `ProductClassificationTableViewController` class first to make the compiler happy.
 
     Open the `ProductClassificationTableViewController` class and add the following line of code right above the `viewDidLoad(_:)` method:
 
@@ -258,7 +258,7 @@ When the user taps on the Bar Button Item it should show an Action Sheet or a Po
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
 
-        // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. We can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
+        // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. You can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         tableView.register(FUITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FUITableViewHeaderFooterView.reuseIdentifier)
 

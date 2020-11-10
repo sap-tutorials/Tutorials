@@ -25,7 +25,7 @@ You will add Table View Section Headers and Footers to give the data more struct
 
 [ACCORDION-BEGIN [Step 1: ](Implement loading of customer and product data)]
 
-In the previous tutorials you've built the foundation for implementing the logic behind the Overview View Controller. Before we can implement the data source and delegate logic for loading the Table View, we'll need to retrieve some data.
+In the previous tutorials you've built the foundation for implementing the logic behind the Overview View Controller. Before you can implement the data source and delegate logic for loading the Table View, you'll need to retrieve some data.
 
 This is fairly simple thanks to the SAP CP SDK for iOS and the generated model layer and convenience data service.
 
@@ -44,13 +44,13 @@ This is fairly simple thanks to the SAP CP SDK for iOS and the generated model l
 
     These import statements will import SAP's UI framework, the OData Online as well as the Offline framework, and the Common framework containing the Logging API.
 
-2. Next we'll add a couple of properties required for storing a data service instance, the App Delegate instance, a Logger instance, and two arrays used to store the customer and product data.
+2. Next you'll add a couple of properties required for storing a data service instance, the App Delegate instance, a Logger instance, and two arrays used to store the customer and product data.
 
     Add the following lines of code inside the class brackets and right below the class definition:
 
     ```Swift
 
-    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why we can easily can get an instance here.
+    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why you can easily can get an instance here.
     private let logger = Logger.shared(named: "OverviewViewController")
 
     private var customers = [Customer]()
@@ -136,7 +136,7 @@ This is fairly simple thanks to the SAP CP SDK for iOS and the generated model l
         // Define a Data Query which is a class of the SAPOData framework. This query will tell the OData Service to also load the available Sales Orders for each Customer
         let query = DataQuery().expand(Customer.salesOrders)
 
-        // Now call the data service and fetch the customers matching the above defined query. When during runtime the block gets entered we expect a result or an error. Also you want to hold a weak reference of self to not run into object reference issues during runtime.
+        // Now call the data service and fetch the customers matching the above defined query. When during runtime the block gets entered you expect a result or an error. Also you want to hold a weak reference of self to not run into object reference issues during runtime.
         dataService?.fetchCustomers(matching: query) { [weak self] result, error in
 
             // If there is an error show an AlertDialog using the generated convenience class AlertHelper. Also log the error to the console and leave the /group.
@@ -216,7 +216,7 @@ Now that the `OverviewViewController` is loading data, it's time to implement th
            tableView.estimatedRowHeight = 80
            tableView.rowHeight = UITableView.automaticDimension
 
-           // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. We can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
+           // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. You can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
            tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
            tableView.register(FUITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FUITableViewHeaderFooterView.reuseIdentifier)
 
@@ -281,7 +281,7 @@ import SAPFioriFlows
 
 class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicator {
 
-    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why we can easily can get an instance here.
+    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why you can easily can get an instance here.
     private let logger = Logger.shared(named: "OverviewViewController")
     var loadingIndicator: FUILoadingIndicatorView?
 
@@ -309,7 +309,7 @@ class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicat
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
 
-        // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. We can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
+        // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. You can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         tableView.register(FUITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FUITableViewHeaderFooterView.reuseIdentifier)
 
@@ -342,7 +342,7 @@ class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicat
         // Define a Data Query which is a class of the SAPOData framework. This query will tell the OData Service to also load the available Sales Orders for each Customer
         let query = DataQuery().expand(Customer.salesOrders)
 
-        // Now call the data service and fetch the customers matching the above defined query. When during runtime the block gets entered we expect a result or an error. Also you want to hold a weak reference of self to not run into object reference issues during runtime.
+        // Now call the data service and fetch the customers matching the above defined query. When during runtime the block gets entered you expect a result or an error. Also you want to hold a weak reference of self to not run into object reference issues during runtime.
         dataService?.fetchCustomers(matching: query) { [weak self] result, error in
 
             // If there is an error show an AlertDialog using the generated convenience class AlertHelper. Also log the error to the console and leave the /group.
@@ -563,7 +563,7 @@ import SAPFioriFlows
 
 class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicator {
 
-    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why we can easily can get an instance here.
+    // The Logger is already setup in the AppDelegate through the SAP iOS Assistant, that's why you can easily can get an instance here.
     private let logger = Logger.shared(named: "OverviewViewController")
     var loadingIndicator: FUILoadingIndicatorView?
 
@@ -591,7 +591,7 @@ class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicat
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
 
-        // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. We can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
+        // Register an FUIObjectTableViewCell and a FUITableViewHeaderFooterView. You can use the convenience reuse identifier defined in the cell classes to later dequeue the cells.
         tableView.register(FUIObjectTableViewCell.self, forCellReuseIdentifier: FUIObjectTableViewCell.reuseIdentifier)
         tableView.register(FUITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: FUITableViewHeaderFooterView.reuseIdentifier)
 
@@ -624,7 +624,7 @@ class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicat
         // Define a Data Query which is a class of the SAPOData framework. This query will tell the OData Service to also load the available Sales Orders for each Customer
         let query = DataQuery().expand(Customer.salesOrders)
 
-        // Now call the data service and fetch the customers matching the above defined query. When during runtime the block gets entered we expect a result or an error. Also you want to hold a weak reference of self to not run into object reference issues during runtime.
+        // Now call the data service and fetch the customers matching the above defined query. When during runtime the block gets entered you expect a result or an error. Also you want to hold a weak reference of self to not run into object reference issues during runtime.
         dataService?.fetchCustomers(matching: query) { [weak self] result, error in
 
             // If there is an error show an AlertDialog using the generated convenience class AlertHelper. Also log the error to the console and leave the /group.
@@ -766,7 +766,7 @@ class OverviewTableViewController: UITableViewController, SAPFioriLoadingIndicat
 
 The Overview View Controller is almost implemented. The last thing missing is the navigation to the Customer Detail View Controller.
 
-In theory you might want the user to see a list of all customers and products, but for this tutorial series we won't implement that. This series is focusing on the machine learning capabilities, so that's why you only will implement the Customer Detail Screen. For that, you will implement the defined delegate method in this step.
+In theory you might want the user to see a list of all customers and products, but for this tutorial series you won't implement that. This series is focusing on the machine learning capabilities, so that's why you only will implement the Customer Detail Screen. For that, you will implement the defined delegate method in this step.
 
 In the iOS world, there are so-called **segues**, which can be used to perform navigation from one View Controller to another. Segues also allows you to access the so-called destination View Controller, this enables you to hand over data and do other setups for that View Controller. Let's define the segues to give you a better understanding.
 You will create a segue that goes from the Table View Cell that contains the customer data to the actual Customer Detail View Controller.

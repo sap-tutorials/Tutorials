@@ -112,7 +112,7 @@ To create a Core ML model you just have to hit **Train** located on the top of C
 
 After Core ML runs the training you will get results similar to the following screenshot. This data allows you to understand your model, how accurate it is and how you might need to tweak the training to get better results.
 
-The model should work just fine and we can export it onto the hard-drive or directly into Xcode.
+The model should work just fine and you can export it onto the hard-drive or directly into Xcode.
 
 !![Create ML](fiori-ios-scpms-teched19-08.png)
 
