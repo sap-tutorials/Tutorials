@@ -14,6 +14,7 @@ primary_tag: products>sap-conversational-ai
   - How to train your chatbot (to understand people)
   - How to give your chatbot skills
 
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create SAP Conversational AI account)]
@@ -25,6 +26,8 @@ Create an account with your email address, or with your [GitHub](http://github.c
 ![Sign up](Signup.png)
 
 You will get an email with a link to validate your account.
+
+
 
 [DONE]
 [ACCORDION-END]
