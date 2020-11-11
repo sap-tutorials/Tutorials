@@ -22,7 +22,7 @@ Business Entity Recognition is a customizable machine learning service. In the t
 
 See [Extracted Entities by Pre-trained Model](https://help.sap.com/viewer/b43f8f61368d455793a241d2b10baeb2/SHIP/en-US/7eb1408001564d679adcd3bc4796800f.html)
 
-This tutorial gives you an introduction to the service using a trial account and the available pre-trained machine learning models. If you want to try out the Business Entity Recognition training endpoints to create your own model, you can use an Enterprise Account (see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) versus [Enterprise Accounts](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/171511cc425c4e079d0684936486eee6.html)) or a paid SAP Cloud Platform global account.
+This tutorial gives you an introduction to the service using a trial account and the available pre-trained machine learning models. If you want to try out the Business Entity Recognition training endpoints to create your own model, you can use an Enterprise Account (see [Trial Accounts](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/046f127f2a614438b616ccfc575fdb16.html) versus [Enterprise Accounts](https://help.sap.com/viewer/3504ec5ef16548778610c7e89cc0eac3/Cloud/en-US/171511cc425c4e079d0684936486eee6.html)) or a paid SAP Cloud Platform global account.  
 
 ---
 

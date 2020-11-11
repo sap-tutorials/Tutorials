@@ -107,13 +107,9 @@ The system automatically logs the SAP HANA HDB client installation. The log file
 
 [ACCORDION-BEGIN [Step 4: ](Connect to SAP HANA, express edition)]
 
-Connect to a SAP HANA 2.0, express edition system using either JDBC or Python.
+Connect to a SAP HANA 2.0, express edition system using either JDBC or Python:
 
-See these `Tutorials`:
-
--   [Connect to SAP HANA, express edition using JDBC](http://developers.sap.com/tutorials/hxe-connect-hxe-using-jdbc.html)
-
--   [Connect to SAP HANA, express edition using Python](http://developers.sap.com/tutorials/hxe-python-connection.html)
+[Use Clients to Query an SAP HANA Database](https://developers.sap.com/mission.hana-cloud-clients.html)
 
 
 [DONE]

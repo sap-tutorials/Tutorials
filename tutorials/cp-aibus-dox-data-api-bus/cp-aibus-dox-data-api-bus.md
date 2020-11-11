@@ -16,7 +16,7 @@ primary_tag: topic>machine-learning
 ### You will learn
   - How to create, update, list and delete enrichment data using the business entity
 
-After completing the tutorial mission [Get Started with Document Information Extraction](https://developers.sap.com/mission.cp-aibus-extract-document-service.html), you can also use Document Information Extraction to enrich the information extracted from documents with your own master data. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
+After completing the tutorial mission [Use Machine Learning to Process Business Documents](https://developers.sap.com/mission.cp-aibus-extract-document-service.html), you can also use Document Information Extraction to enrich the information extracted from documents with your own master data. You can, for example, match enrichment data entities, such as supplier IDs, with the document [Extracted Header Fields](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/b1c07d0c51b64580881d11b4acb6a6e6.html), such as sender names.
 
 When enriching data with Document Information Extraction, you use 2 types of entities that you find in business documents. The `business entity` represents different kinds of organizations with which you deal as a company. It can represent, for example, suppliers and customers. The `employee entity` represents an employee in the company.
 
@@ -49,7 +49,7 @@ You should receive a response like the following:
 
 >Be aware of the following Document Information Extraction trial account limitations:​
 
->- Maximum 40 uploaded documents per week​
+>- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
 
 >- Maximum 1 created `clientId`
 
@@ -155,7 +155,7 @@ You should receive a response like the following with status SUCCESS:
 
 [ACCORDION-BEGIN [Step 4: ](Upload document to get prediction with enrichment data)]
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint. To have the enrichment data in the prediction, you need to have the following part in the query of the **POST /document/jobs** endpoint (it is usually already there by default):
 
@@ -248,6 +248,8 @@ Copy the **`id`** from the **Response body** to get enrichment data prediction i
 [ACCORDION-BEGIN [Step 5: ](Get enrichment data prediction)]
 
 When enrichment data has been uploaded and fits to a certain prediction it is added to the results from the **GET /document/jobs/{`id`}** endpoint.
+
+> Enrichment data is refreshed automatically every 4 hours. It might take up to 4 hours until the enrichment data prediction is available in the response.
 
 1. Expand the **GET /document/jobs/{`id`}** endpoint.
 

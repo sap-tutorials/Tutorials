@@ -66,7 +66,7 @@ You can store the segue identifier in a class property for cleaner code and use 
 
     ```
 
-2. Before the closing class bracket, add the `prepareForSegue(for:Sender:)` method which will be called by the system right before the navigation finishes it's completion and the destination View Controller is loaded into memory.
+2. Before the closing class bracket, add the `prepareForSegue(for:Sender:)` method or if existent replace, which will be called by the system right before the navigation finishes it's completion and the destination View Controller is loaded into memory.
 
     ```Swift
     /**
@@ -133,11 +133,58 @@ The Product List is a Table View Controller which means the structure is similar
 
 2. Now we will add parts of the class properties we already have used in the Overview Table View Controller. Implement the following lines of code at the top of the class:
 
+    **For Online OData**
+
+    Add the following import statement to your class:
+
     ```Swift
+    import SAPOData
+
+    ```
+
+    Implement the following lines of code directly below the logger instance as class properties:
+
+    ```Swift
+    /// First retrieve the destinations your app can talk to from the AppParameters.
     let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
 
+    /// Create a computed property that uses the OnboardingSessionManager to retrieve the onboarding session and uses the destinations dictionary to pull the correct destination. Of course we only have one destination here. Handle the errors in case the OData controller is nil. We are using the AlertHelper to display an AlertDialogue to the user in case of an error. The AlertHelper is a utils class provided through the iOS Assistant.
     var dataService: ESPMContainer<OnlineODataProvider>? {
         guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OnlineODataController, let dataService = odataController.espmContainer else {
+            AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
+            return nil
+        }
+        return dataService
+    }
+
+    private let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    private let logger = Logger.shared(named: "ProductsTableViewController")
+
+    private var imageCache = [String: UIImage]()
+    private var productImageURLs = [String]()
+    private var products = [Product]()
+
+    ```
+
+    **For Offline OData**
+
+    Add the following import statement to your class:
+
+    ```Swift
+    import SAPOfflineOData
+    import SAPOData
+
+    ```
+
+    Implement the following lines of code directly below the logger instance as class properties:
+
+    ```Swift
+
+    /// First retrieve the destinations your app can talk to from the AppParameters.
+    let destinations = FileConfigurationProvider("AppParameters").provideConfiguration().configuration["Destinations"] as! NSDictionary
+
+    var dataService: ESPMContainer<OfflineODataProvider>? {
+        guard let odataController = OnboardingSessionManager.shared.onboardingSession?.odataControllers[destinations["com.sap.edm.sampleservice.v2"] as! String] as? Comsapedmsampleservicev2OfflineODataController, let dataService = odataController.espmContainer else {
             AlertHelper.displayAlert(with: NSLocalizedString("OData service is not reachable, please onboard again.", comment: ""), error: nil, viewController: self)
             return nil
         }
@@ -186,7 +233,7 @@ The Product List is a Table View Controller which means the structure is similar
 
 5. Add the following lines of code below the closing bracket of the `viewDidLoad()` method:
 
-    ```Swift
+    ```Swift[20]
     override func numberOfSections(in tableView: UITableView) -> Int {
             return 1
         }
@@ -307,7 +354,7 @@ The Product List is a Table View Controller which means the structure is similar
 
 The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearchBar` inside but enhances the whole search controller with a barcode reader. We're not going to implement the barcode reader in this tutorial series but if you're interested in how to do so take a look at the [Use the Barcode Scanner API](fiori-ios-scpms-barcode) tutorial at a later point.
 
-1. In order to add a search bar to the view you need a `FUISearchController` instance, implement the following two class properties to hold on an instance of the search controller as well as the search results.
+1. In order to add a search bar to the view you need a `FUISearchController` instance, implement the following two class properties in the `ProductsTableViewController.swift` class to hold on an instance of the search controller as well as the search results.
 
     ```Swift
     private var searchController: FUISearchController?
@@ -336,7 +383,7 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
 3. The code won't compile at the moment because you haven't conformed to the `UISearchResultsUpdating` protocol. We will fix that at a later point but first call the `setupSearchBar()` method right below the `loadData()` call in the `viewDidLoad()` method.
 
-    ```Swift
+    ```Swift[9]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -428,7 +475,68 @@ The SAP Fiori for iOS Search Bar control inherits is using the standard `UISearc
 
     ```
 
-9. Run the app now and you should be able to search for products.
+9. Change the `tableView(_:numberOfRowsInSection:)` method to adapt to the `searchedProducts` array. In the data source method you have to check if the user is searching, and if yes then return the number of searched products instead of the complete product list. Replace the existing method with the following code:
+
+```Swift[2]
+override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+           return isSearching() ? searchedProducts.count : products.count
+      }
+```
+
+10. Like the `tableView(_:numberOfRowsInSection:)` method, you need to also adapt in the `tableView(_:cellForRowAt:)` method to the search feature. Replace the line:
+
+```Swift
+let product = products[indexPath.row]
+
+```
+
+with the following code where you use the Swift ternary operator to check if the user is searching or not:
+
+```Swift
+let product = isSearching() ? searchedProducts[indexPath.row] : products[indexPath.row]
+
+```
+
+The `tableView(_:cellForRowAt:)` method should look like this now:
+
+```Swift[2]
+
+override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let product = isSearching() ? searchedProducts[indexPath.row] : products[indexPath.row]
+    let productCell = tableView.dequeueReusableCell(withIdentifier: FUIObjectTableViewCell.reuseIdentifier) as! FUIObjectTableViewCell
+    productCell.accessoryType = .detailDisclosureButton
+    productCell.headlineText = product.name ?? "-"
+    productCell.subheadlineText = product.categoryName ?? "-"
+    productCell.footnoteText = product.stockDetails?.quantity?.intValue() != 0 ? NSLocalizedString("In Stock", comment: "") : NSLocalizedString("Out", comment: "")
+    // set a placeholder image
+    productCell.detailImageView.image = FUIIconLibrary.system.imageLibrary
+
+    // This URL is found in Mobile Services
+    let baseURL = "https://a9366ac9trial-dev-com-example.cfapps.eu10.hana.ondemand.com/SampleServices/ESPM.svc/v2"
+    let url = URL(string: baseURL.appending(productImageURLs[indexPath.row]))
+
+    guard let unwrapped = url else {
+        logger.info("URL for product image is nil. Returning cell without image.")
+        return productCell
+    }
+    // check if the image is already in the cache
+    if let img = imageCache[unwrapped.absoluteString] {
+        productCell.detailImageView.image = img
+    } else {
+        // The image is not cached yet, so download it.
+        loadImageFrom(unwrapped) { image in
+            productCell.detailImageView.image = image
+        }
+    }
+    // Only visible on regular
+    productCell.descriptionText = product.longDescription ?? ""
+
+    return productCell
+}
+```
+
+
+11. Run the app now and you should be able to search for products.
 
     !![Main Storyboard Product List](fiori-ios-scpms-starter-mission-03-8.gif)
 

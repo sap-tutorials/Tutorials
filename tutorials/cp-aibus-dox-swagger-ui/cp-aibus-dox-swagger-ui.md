@@ -14,6 +14,7 @@ primary_tag: topic>machine-learning
   - How to extract information from files with Document Information Extraction
 
 The core functionality of Document Information Extraction is to automatically extract structured information from documents using machine learning. When you finish this tutorial, you will get field value predictions for the documents you upload to Document Information Extraction.
+
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
@@ -45,7 +46,6 @@ In the service key you created for Document Information Extraction in the previo
 [VALIDATE_1]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 2: ](See list of document fields you can extract)]
 
 Use the **GET /capabilities** endpoint to see a list of document fields you can extract with Document Information Extraction.
@@ -64,7 +64,6 @@ You should receive a response like the following:
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Create client)]
 
@@ -91,7 +90,7 @@ You should receive a response like the following:
 
 >Be aware of the following Document Information Extraction trial account limitations:​
 
->- Maximum 40 uploaded documents per week​
+>- Maximum 40 uploaded document pages per week​ (the documents can have more than 1 page)
 
 >- Maximum 1 created `clientId`
 
@@ -126,7 +125,7 @@ You should receive a response like the following:
 
 [ACCORDION-BEGIN [Step 5: ](Upload document)]
 
->Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in English. The team is working to support additional document types and languages in the near future.
+>Document Information Extraction uses a globally pre-trained machine learning model that currently obtains better accuracy results with invoices and payment advices in the languages listed in [Supported Languages and Countries](https://help.sap.com/viewer/5fa7265b9ff64d73bac7cec61ee55ae6/SHIP/en-US/5bf847f7d1a848dcb3513eff9ec70412.html). The team is working to support additional document types and languages in the near future.
 
 Use the **POST /document/jobs** endpoint to upload to the service any document file in PDF or single-page PNG and JPEG format that has content in headers and tables, such as an invoice.
 

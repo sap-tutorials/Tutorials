@@ -1,6 +1,6 @@
 ---
-author_name: Max Streifeneder
-author_profile: https://github.com/maxstreifeneder
+author_name: Iwona Hahn
+author_profile: https://github.com/iwonahahn
 title: Create a Reusable Service
 description: Create a service that will later on be reused in another CAP Java project.
 auto_validation: true

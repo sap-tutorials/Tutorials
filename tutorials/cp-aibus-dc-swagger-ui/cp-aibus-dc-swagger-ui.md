@@ -21,7 +21,7 @@ In the trial version of Document Classification, however, a predefined and pre-t
 
 [ACCORDION-BEGIN [Step 1: ](Authorize Swagger UI)]
 
-You will use Swagger UI, via all major web browser, to call the Document Classification APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).  
+You will use Swagger UI, via all major web browser, to call the Document Classification APIs. Swagger UI allows developers to effortlessly interact and try out every single operation an API exposes for easy consumption. For more information, see [Swagger UI](https://swagger.io/tools/swagger-ui/).
 
 In the service key you created for Document Classification in the previous tutorial: [Create Service Instance for Document Classification with Trial Account](cp-aibus-dc-service-instance), you should find (outside the `uaa` section of the service key) an entry called `url` (as highlighted in the image below).
 
